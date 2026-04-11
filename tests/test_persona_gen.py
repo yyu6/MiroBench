@@ -96,3 +96,26 @@ def test_product_list_included_in_prompt():
                                       products=products, client=client,
                                       model="gpt-4o-mini", seed=42)
     assert "Sony XM5" in prompt
+
+
+def test_created_at_injected_when_missing():
+    """Verify the created_at fallback works when LLM omits it."""
+    profiles_without_created_at = [
+        {
+            "user_id": i + 1,
+            "username": f"user_{i}",
+            "name": f"Person {i}",
+            "bio": "bio",
+            "persona": "persona text",
+            "karma": 1000,
+        }
+        for i in range(3)
+    ]
+    client = MagicMock()
+    completion = MagicMock()
+    completion.choices[0].message.content = json.dumps({"personas": profiles_without_created_at})
+    client.chat.completions.create.return_value = completion
+    profiles, _, _ = generate_personas(ANALYSIS, n_agents=3, products=[], client=client,
+                                        model="gpt-4o-mini", seed=42)
+    for p in profiles:
+        assert "created_at" in p

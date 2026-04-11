@@ -2,10 +2,8 @@
 from __future__ import annotations
 
 import json
-import math
 import random
 from datetime import date
-from typing import Optional
 
 from openai import OpenAI
 
@@ -22,7 +20,6 @@ def generate_personas(
     seed: int,
 ) -> tuple[list[dict], str, str]:
     """Return (profiles_list, prompt, raw_llm_response)."""
-    rng = random.Random(seed + 1)
     distribution = _distribute_agents(analysis.persona_archetypes, n_agents)
     product_summary = _build_product_summary(products)
     prompt = _build_prompt(analysis, distribution, product_summary)
@@ -35,6 +32,8 @@ def generate_personas(
     )
     raw = response.choices[0].message.content
     data = json.loads(raw)
+    if "personas" not in data:
+        raise ValueError(f"LLM response missing 'personas' key. Raw: {raw[:200]}")
     profiles = data["personas"]
 
     # Enforce sequential user_ids starting from 1
@@ -52,6 +51,10 @@ def _distribute_agents(
 ) -> dict[str, int]:
     """Distribute n agents across archetypes proportional to weight.
     Every archetype gets at least 1 agent."""
+    if n < len(archetypes):
+        raise ValueError(
+            f"n_agents ({n}) must be >= number of archetypes ({len(archetypes)})"
+        )
     distribution: dict[str, int] = {}
     remaining = n
     for arch in archetypes[:-1]:
@@ -66,8 +69,8 @@ def _distribute_agents(
 def _build_product_summary(products: list[NormalizedProduct]) -> str:
     lines = []
     for p in products[:40]:
-        price_str = f"${p.price}" if p.price else "price unknown"
-        rating_str = f"{p.rating}/5" if p.rating else "unrated"
+        price_str = f"${p.price}" if p.price is not None else "price unknown"
+        rating_str = f"{p.rating}/5" if p.rating is not None else "unrated"
         lines.append(f"- {p.title} ({p.brand}, {price_str}, {rating_str})")
     return "\n".join(lines) if lines else "No products provided."
 
