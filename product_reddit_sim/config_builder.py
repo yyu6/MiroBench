@@ -138,7 +138,7 @@ def _generate_seed_posts(
     product_lines = "\n".join(
         f"- {p.title} | ${p.price} | Rating: {p.rating}/5 | "
         + (", ".join(p.features[:3]) if p.features else "")
-        for p in products[:50]
+        for p in products[:50]  # limit to 50 for LLM context window
     )
     persona_lines = "\n".join(
         f"- agent_id={p['user_id']} username={p['username']} archetype={p.get('archetype', '')}"
@@ -182,7 +182,10 @@ RULES:
         response_format={"type": "json_object"},
     )
     raw = response.choices[0].message.content
-    data = json.loads(raw)
+    try:
+        data = json.loads(raw)
+    except json.JSONDecodeError as e:
+        raise ValueError(f"LLM returned invalid JSON for seed posts: {e}. Raw: {raw[:500]}") from e
     if "seed_posts" not in data:
         raise ValueError(f"LLM response missing 'seed_posts' key. Raw: {raw[:200]}")
     return data["seed_posts"], prompt, raw

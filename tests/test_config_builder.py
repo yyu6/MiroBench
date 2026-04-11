@@ -88,3 +88,24 @@ def test_agent_activity_scales_with_karma():
     high_karma_activity = next(c["activity_level"] for c in configs if c["agent_id"] == 1)
     low_karma_activity = next(c["activity_level"] for c in configs if c["agent_id"] == 2)
     assert high_karma_activity > low_karma_activity
+
+
+def test_archetype_key_stripped_from_profiles():
+    with tempfile.TemporaryDirectory() as tmp:
+        build_config(ANALYSIS, PROFILES, PRODUCTS, tmp,
+                     cli_args={"hours": 48, "rounds": 30, "model": "gpt-4o-mini", "base_url": ""},
+                     client=_mock_client(), model="gpt-4o-mini", seed=42)
+        with open(os.path.join(tmp, "reddit_profiles.json")) as f:
+            saved_profiles = json.load(f)
+        for p in saved_profiles:
+            assert "archetype" not in p, f"archetype key should be stripped but found in {p}"
+
+
+def test_returns_seed_prompt_and_raw():
+    with tempfile.TemporaryDirectory() as tmp:
+        seed_prompt, seed_raw = build_config(
+            ANALYSIS, PROFILES, PRODUCTS, tmp,
+            cli_args={"hours": 48, "rounds": 30, "model": "gpt-4o-mini", "base_url": ""},
+            client=_mock_client(), model="gpt-4o-mini", seed=42)
+    assert len(seed_prompt) > 0
+    assert len(seed_raw) > 0
