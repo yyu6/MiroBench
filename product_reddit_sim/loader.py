@@ -43,7 +43,8 @@ def _normalize(raw: dict) -> NormalizedProduct:
     # Price: Best Buy stores {"currentPrice": float}, others store float directly
     price_raw = raw.get("price")
     if isinstance(price_raw, dict):
-        price = price_raw.get("currentPrice") or price_raw.get("regularPrice")
+        current = price_raw.get("currentPrice")
+        price = current if current is not None else price_raw.get("regularPrice")
     elif isinstance(price_raw, (int, float)):
         price = float(price_raw)
     else:
