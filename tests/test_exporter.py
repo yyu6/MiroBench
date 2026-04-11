@@ -84,7 +84,7 @@ def test_json_contains_posts():
         json_path, _ = export_discussion(db, pf, tmp, META)
         with open(json_path) as f:
             data = json.load(f)
-    assert len(data["posts"]) >= 1
+    assert len(data["posts"]) == 2
 
 
 def test_author_names_resolved():
@@ -95,7 +95,7 @@ def test_author_names_resolved():
         with open(json_path) as f:
             data = json.load(f)
     authors = {p["author"] for p in data["posts"]}
-    assert "AudiophileMax" in authors or "BudgetHunter99" in authors
+    assert "AudiophileMax" in authors and "BudgetHunter99" in authors
 
 
 def test_handles_uppercase_action_types():

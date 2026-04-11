@@ -5,7 +5,6 @@ import json
 import os
 import sqlite3
 from datetime import datetime
-from typing import Optional
 
 
 def export_discussion(
@@ -40,26 +39,36 @@ def _load_profiles(profiles_path: str) -> dict[int, dict]:
 
 def _load_from_db(db_path: str) -> tuple[list, list]:
     conn = sqlite3.connect(db_path)
-    conn.row_factory = sqlite3.Row
-    cur = conn.cursor()
+    try:
+        conn.row_factory = sqlite3.Row
+        cur = conn.cursor()
 
-    # Case-insensitive match: OASIS versions differ (create_post vs CREATE_POST)
-    cur.execute("""
-        SELECT user_id, info, created_at FROM trace
-        WHERE LOWER(action) = 'create_post'
-        ORDER BY created_at ASC
-    """)
-    posts = [dict(r) for r in cur.fetchall()]
+        # Case-insensitive match: OASIS versions differ (create_post vs CREATE_POST)
+        cur.execute("""
+            SELECT user_id, info, created_at FROM trace
+            WHERE LOWER(action) = 'create_post'
+            ORDER BY created_at ASC
+        """)
+        posts = [dict(r) for r in cur.fetchall()]
 
-    cur.execute("""
-        SELECT user_id, info, created_at FROM trace
-        WHERE LOWER(action) = 'create_comment'
-        ORDER BY created_at ASC
-    """)
-    comments = [dict(r) for r in cur.fetchall()]
+        cur.execute("""
+            SELECT user_id, info, created_at FROM trace
+            WHERE LOWER(action) = 'create_comment'
+            ORDER BY created_at ASC
+        """)
+        comments = [dict(r) for r in cur.fetchall()]
 
-    conn.close()
-    return posts, comments
+        return posts, comments
+    finally:
+        conn.close()
+
+
+def _first_present(info: dict, *keys: str) -> str:
+    """Return the first non-None value from info for any of the given keys."""
+    for k in keys:
+        if k in info and info[k] is not None:
+            return str(info[k])
+    return str(info)
 
 
 def _build_thread(
@@ -76,7 +85,7 @@ def _build_thread(
             "post_id": i + 1,
             "author": profile.get("username", f"user_{row['user_id']}"),
             "author_karma": profile.get("karma", 0),
-            "content": info.get("content") or info.get("post_content") or str(info),
+            "content": _first_present(info, "content", "post_content"),
             "timestamp": row["created_at"],
             "likes": 0,
             "dislikes": 0,
@@ -93,17 +102,24 @@ def _build_thread(
             "comment_id": j + 1,
             "author": profile.get("username", f"user_{row['user_id']}"),
             "author_karma": profile.get("karma", 0),
-            "content": info.get("content") or info.get("comment") or str(info),
+            "content": _first_present(info, "content", "comment"),
             "timestamp": row["created_at"],
             "likes": 0,
             "dislikes": 0,
         }
-        # Attach to the post this comment references, or the latest post as fallback
         target_idx = oasis_post_id_map.get(info.get("post_id"))
         if target_idx is not None:
             post_list[target_idx]["comments"].append(comment)
         elif post_list:
+            import warnings
+            warnings.warn(
+                f"Comment {j + 1} references unknown post_id {info.get('post_id')!r}; "
+                "attaching to last post as fallback."
+            )
             post_list[-1]["comments"].append(comment)
+        else:
+            import warnings
+            warnings.warn(f"Comment {j + 1} dropped: no posts exist to attach it to.")
 
     return post_list
 
@@ -158,11 +174,11 @@ def _render_markdown(discussion: dict) -> str:
     return "\n".join(lines)
 
 
-def _fmt_ts(ts: Optional[str]) -> str:
+def _fmt_ts(ts: str | None) -> str:
     if not ts:
         return ""
     try:
         dt = datetime.fromisoformat(str(ts))
         return dt.strftime("%I:%M %p").lstrip("0")
-    except Exception:
+    except ValueError:
         return str(ts)
