@@ -23,7 +23,7 @@ def generate_personas(
 ) -> tuple[list[dict], str, str]:
     """Return (profiles_list, prompt, raw_llm_response)."""
     rng = random.Random(seed + 1)
-    distribution = _distribute_agents(analysis.persona_archetypes, n_agents, rng)
+    distribution = _distribute_agents(analysis.persona_archetypes, n_agents)
     product_summary = _build_product_summary(products)
     prompt = _build_prompt(analysis, distribution, product_summary)
 
@@ -48,7 +48,7 @@ def generate_personas(
 
 
 def _distribute_agents(
-    archetypes: list[PersonaArchetype], n: int, rng: random.Random
+    archetypes: list[PersonaArchetype], n: int
 ) -> dict[str, int]:
     """Distribute n agents across archetypes proportional to weight.
     Every archetype gets at least 1 agent."""

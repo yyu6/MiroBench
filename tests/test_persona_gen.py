@@ -64,7 +64,7 @@ def test_required_oasis_fields_present():
     profiles, _, _ = generate_personas(ANALYSIS, n_agents=3,
                                         products=[], client=client,
                                         model="gpt-4o-mini", seed=42)
-    required = {"user_id", "username", "name", "bio", "persona", "karma"}
+    required = {"user_id", "username", "name", "bio", "persona", "karma", "created_at"}
     for p in profiles:
         assert required.issubset(p.keys()), f"Missing fields in {p}"
 
@@ -79,16 +79,12 @@ def test_prompt_and_raw_returned():
 
 
 def test_distribute_agents_sums_to_n():
-    import random
-    rng = random.Random(42)
-    dist = _distribute_agents(ARCHETYPES, n=10, rng=rng)
+    dist = _distribute_agents(ARCHETYPES, n=10)
     assert sum(dist.values()) == 10
 
 
 def test_distribute_agents_all_archetypes_get_at_least_one():
-    import random
-    rng = random.Random(42)
-    dist = _distribute_agents(ARCHETYPES, n=10, rng=rng)
+    dist = _distribute_agents(ARCHETYPES, n=10)
     for arch in ARCHETYPES:
         assert dist[arch.name] >= 1
 
