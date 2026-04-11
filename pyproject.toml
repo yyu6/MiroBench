@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "geo-stage1"
+version = "0.1.0"
+description = "Stage 1 data collection for GEO credit card simulation."
+requires-python = ">=3.9"
+dependencies = [
+  "beautifulsoup4>=4.12.3",
+  "openai>=1.0.0",
+  "praw>=7.8.1",
+  "python-dotenv>=1.0.1",
+  "requests>=2.32.3",
+]
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
