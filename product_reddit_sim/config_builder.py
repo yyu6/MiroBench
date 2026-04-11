@@ -47,7 +47,7 @@ def build_config(
         "time_config": {
             "total_simulation_hours": cli_args["hours"],
             "minutes_per_round": 60,
-            "agents_per_hour_min": 5,
+            "agents_per_hour_min": min(5, len(profiles)),
             "agents_per_hour_max": min(20, len(profiles)),
             "peak_hours": [18, 19, 20, 21, 22],
             "peak_activity_multiplier": 1.5,
@@ -136,7 +136,7 @@ def _generate_seed_posts(
     model: str,
 ) -> tuple[list[dict], str, str]:
     product_lines = "\n".join(
-        f"- {p.title} | ${p.price} | Rating: {p.rating}/5 | "
+        f"- {p.title} | ${p.price if p.price is not None else 'N/A'} | Rating: {f'{p.rating}/5' if p.rating is not None else 'unrated'} | "
         + (", ".join(p.features[:3]) if p.features else "")
         for p in products[:50]  # limit to 50 for LLM context window
     )
