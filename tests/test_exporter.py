@@ -128,7 +128,7 @@ def test_markdown_contains_usernames():
         _, md_path = export_discussion(db, pf, tmp, META)
         with open(md_path) as f:
             md = f.read()
-    assert "AudiophileMax" in md or "BudgetHunter99" in md
+    assert "AudiophileMax" in md and "BudgetHunter99" in md
 
 
 def test_markdown_has_header():

@@ -4,6 +4,7 @@ from __future__ import annotations
 import json
 import os
 import sqlite3
+import warnings
 from datetime import datetime
 
 
@@ -111,14 +112,12 @@ def _build_thread(
         if target_idx is not None:
             post_list[target_idx]["comments"].append(comment)
         elif post_list:
-            import warnings
             warnings.warn(
                 f"Comment {j + 1} references unknown post_id {info.get('post_id')!r}; "
                 "attaching to last post as fallback."
             )
             post_list[-1]["comments"].append(comment)
         else:
-            import warnings
             warnings.warn(f"Comment {j + 1} dropped: no posts exist to attach it to.")
 
     return post_list
