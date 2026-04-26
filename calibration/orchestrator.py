@@ -161,10 +161,22 @@ def run_calibration_loop(
     train_baseline = compute_baseline_from_csv(real_train_csv, metrics)
     val_baseline = compute_baseline_from_csv(real_val_csv, metrics)
 
-    # Save train medians (used by reasoner)
-    train_medians = {m: v["median"] for m, v in train_baseline.items()}
+    # Save train baseline summary (used by reasoner for full context)
+    train_summary = {}
+    for m, v in train_baseline.items():
+        arr = np.asarray(v["values"], dtype=float)
+        train_summary[m] = {
+            "median": v["median"],
+            "mean": v["mean"],
+            "std": float(np.std(arr)) if arr.size > 0 else 0.0,
+            "p25": float(np.percentile(arr, 25)) if arr.size > 0 else float("nan"),
+            "p75": float(np.percentile(arr, 75)) if arr.size > 0 else float("nan"),
+            "min": float(np.min(arr)) if arr.size > 0 else float("nan"),
+            "max": float(np.max(arr)) if arr.size > 0 else float("nan"),
+            "n": int(arr.size),
+        }
     (output_dir / "real_train_baseline_metrics.json").write_text(
-        json.dumps(train_medians, indent=2), encoding="utf-8",
+        json.dumps(train_summary, indent=2), encoding="utf-8",
     )
     val_medians = {m: v["median"] for m, v in val_baseline.items()}
     (output_dir / "real_val_baseline_metrics.json").write_text(
@@ -219,7 +231,7 @@ def run_calibration_loop(
                 registry=registry,
                 current_overlay=state.current_best_overlay,
                 current_diagnostic=state.current_best_diagnostic or {},
-                real_baseline=train_medians,
+                real_baseline=train_summary,
                 trajectory=log.trajectory(),
                 failed_strategies=log.failed_strategies(),
                 metric_definitions=metric_definitions,

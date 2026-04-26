@@ -202,8 +202,12 @@ def build_reasoner_prompt(
         sections.append(json.dumps(metric_rows, indent=2))
     sections.append("")
 
-    # ── Real baseline medians ──────────────────────────────────────────────
-    sections.append("## Real Baseline Medians\n")
+    # ── Real baseline statistics (from train split) ─────────────────────────
+    sections.append("## Real Baseline Statistics (train split)\n")
+    sections.append(
+        "Each metric shows: median, mean, std, p25, p75, min, max, n (sample size).\n"
+        "Use these to understand the real distribution shape, not just the center."
+    )
     sections.append(json.dumps(real_baseline, indent=2))
     sections.append("")
 
