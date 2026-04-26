@@ -117,6 +117,8 @@ def parse_args():
                    help="Number of few-shot discussion examples to inject into generation prompts (default: 0)")
     p.add_argument("--few-shot-comments", type=int, default=2,
                    help="Visible comments kept per few-shot example (default: 2)")
+    p.add_argument("--few-shot-thread-ids", type=str, default=None,
+                   help="JSON file listing allowed thread IDs for few-shot selection (train-only filtering)")
     p.add_argument("--seed", type=int, default=42,
                    help="Random seed for reproducibility (default: 42)")
     p.add_argument(
@@ -197,6 +199,7 @@ def main():
         "few_shot_source": args.few_shot_source,
         "few_shot_count": args.few_shot_count,
         "few_shot_comments": args.few_shot_comments,
+        "few_shot_thread_ids": args.few_shot_thread_ids,
         "model": model,
         "base_url": base_url,
         "discussion_backbone": args.discussion_backbone,
@@ -316,6 +319,7 @@ def main():
         "few_shot_source": args.few_shot_source,
         "few_shot_count": args.few_shot_count,
         "few_shot_comments": args.few_shot_comments,
+        "few_shot_thread_ids": args.few_shot_thread_ids,
         "seed": args.seed,
         "discussion_backbone": args.discussion_backbone,
         "llm_model": model,

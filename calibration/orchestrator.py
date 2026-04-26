@@ -104,34 +104,31 @@ def run_calibration_loop(
     metric_definitions: str = "",
     device: str = "cpu",
     final_sim_runs: int = 12,
+    vanilla_scores_csv: Path | None = None,
 ) -> dict:
     """Main calibration loop with train/val/test splits.
 
+    Phases
+    ------
+    Phase 0  Before-calibration group evaluation (vanilla vs real_test).
+    Phase 1  Calibration loop (per-thread empirical p-value diagnostics).
+    Phase 2  After-calibration group evaluation (calibrated vs real_test).
+    Phase 3  Improvement analysis (before vs after).
+
     Parameters
     ----------
-    output_dir : Path
-        Root directory for all calibration artefacts.
     real_train_csv : Path
-        Thread scores CSV for the train split — used by the LLM reasoner to
-        build baseline context (medians) and diagnostics.
+        Thread scores CSV for the train split — used by the LLM reasoner.
     real_val_csv : Path
-        Thread scores CSV for the validation split — used to score candidates
-        and select the best overlay each iteration.
+        Thread scores CSV for the validation split — used for candidate scoring.
     real_test_csv : Path
-        Thread scores CSV for the test split — used only for the final
-        post-calibration evaluation.
-    reference_run_config : dict
-        Simulation parameters forwarded to ``run_discussion.py``
-        (keys: ``input_file``, ``agents``, ``hours``, ``rounds``,
-        ``seed_posts``, ``seed``, ``hint``, ``discussion_backbone``,
-        ``few_shot_source``, ``few_shot_count``).
+        Thread scores CSV for the test split — used for before/after evaluation.
+    vanilla_scores_csv : Path | None
+        Pre-existing vanilla simulation scores CSV.  If provided, used as the
+        before-calibration baseline for the improvement analysis.  If absent,
+        the improvement analysis is skipped.
     final_sim_runs : int
-        Number of fresh simulations for the final test evaluation.
-
-    Returns
-    -------
-    dict with keys: ``best_overlay``, ``best_score``, ``completed_iterations``,
-    ``output_dir``, ``final_evaluation``.
+        Number of fresh simulations for the after-calibration evaluation.
     """
     output_dir = Path(output_dir)
     output_dir.mkdir(parents=True, exist_ok=True)
@@ -166,7 +163,31 @@ def run_calibration_loop(
     )
 
     # -----------------------------------------------------------------------
-    # Main loop
+    # Extract train thread IDs for few-shot filtering (no val/test leakage)
+    # -----------------------------------------------------------------------
+    train_df = pd.read_csv(real_train_csv)
+    if "thread_id" in train_df.columns:
+        train_thread_ids = train_df["thread_id"].dropna().astype(str).tolist()
+        train_ids_path = output_dir / "train_thread_ids.json"
+        train_ids_path.write_text(
+            json.dumps(train_thread_ids, ensure_ascii=False), encoding="utf-8",
+        )
+        reference_run_config["few_shot_thread_ids"] = str(train_ids_path)
+
+    # -----------------------------------------------------------------------
+    # Phase 0: Before-calibration group evaluation (vanilla vs real_test)
+    # -----------------------------------------------------------------------
+    before_eval: dict[str, dict] | None = None
+    if vanilla_scores_csv is not None:
+        before_eval = _run_before_calibration_evaluation(
+            vanilla_scores_csv=vanilla_scores_csv,
+            real_test_csv=real_test_csv,
+            metrics=metrics,
+            output_dir=output_dir,
+        )
+
+    # -----------------------------------------------------------------------
+    # Phase 1: Calibration loop
     # -----------------------------------------------------------------------
     for iteration in range(state.completed_iterations, max_iterations):
         iter_dir = output_dir / f"iter_{iteration:03d}"
@@ -177,10 +198,12 @@ def run_calibration_loop(
         # -------------------------------------------------------------------
         parsed: dict = {}
         if iteration == 0:
+            # Iteration 0: single candidate with default overlay to establish
+            # a baseline diagnostic for the reasoner.
             strategy_label = "defaults"
             diagnosis = "Initial baseline run using default knob values."
             overlay_diff: dict = {}
-            overlays = [dict(state.current_best_overlay) for _ in range(candidates_per_iter)]
+            overlays = [dict(state.current_best_overlay)]
         else:
             # Build prompt — uses TRAIN baseline for context
             prompt = build_reasoner_prompt(
@@ -221,7 +244,7 @@ def run_calibration_loop(
         )
 
         # -------------------------------------------------------------------
-        # Run candidates
+        # Run candidates (different overlays share the same seed)
         # -------------------------------------------------------------------
         candidate_results = run_candidates(
             overlays=overlays,
@@ -234,7 +257,7 @@ def run_calibration_loop(
         )
 
         # -------------------------------------------------------------------
-        # Score candidates against VALIDATION baseline
+        # Score candidates against VALIDATION baseline (per-thread empirical p)
         # -------------------------------------------------------------------
         scored: list[dict] = []
         for result in candidate_results:
@@ -317,9 +340,9 @@ def run_calibration_loop(
     save_overlay(state.current_best_overlay, output_dir / "best_overlay.json")
 
     # -----------------------------------------------------------------------
-    # Final evaluation on TEST split
+    # Phase 2: After-calibration group evaluation (calibrated vs real_test)
     # -----------------------------------------------------------------------
-    final_eval = _run_final_evaluation(
+    after_eval = _run_after_calibration_evaluation(
         output_dir=output_dir,
         best_overlay=state.current_best_overlay,
         real_test_csv=real_test_csv,
@@ -331,12 +354,30 @@ def run_calibration_loop(
         device=device,
     )
 
+    # -----------------------------------------------------------------------
+    # Phase 3: Improvement analysis (before vs after)
+    # -----------------------------------------------------------------------
+    improvement: dict | None = None
+    if before_eval is not None and after_eval.get("group_eval") is not None:
+        improvement = compare_before_after(before_eval, after_eval["group_eval"])
+        (output_dir / "before_after_improvement_summary.json").write_text(
+            json.dumps(improvement, indent=2, ensure_ascii=False),
+            encoding="utf-8",
+        )
+        _print_improvement_summary(improvement)
+
+    # -----------------------------------------------------------------------
+    # Final summary
+    # -----------------------------------------------------------------------
     summary = {
         "best_overlay": state.current_best_overlay,
         "best_score": state.current_best_score,
         "completed_iterations": state.completed_iterations,
         "output_dir": str(output_dir),
-        "final_evaluation": final_eval,
+        "after_calibration_evaluation": {
+            k: v for k, v in after_eval.items() if k != "group_eval"
+        },
+        "improvement": improvement,
     }
     (output_dir / "calibration_summary.json").write_text(
         json.dumps(summary, indent=2, ensure_ascii=False),
@@ -346,10 +387,43 @@ def run_calibration_loop(
 
 
 # ---------------------------------------------------------------------------
-# Final post-calibration evaluation
+# Phase 0: Before-calibration group evaluation
 # ---------------------------------------------------------------------------
 
-def _run_final_evaluation(
+def _run_before_calibration_evaluation(
+    vanilla_scores_csv: Path,
+    real_test_csv: Path,
+    metrics: list[str],
+    output_dir: Path,
+) -> dict[str, dict]:
+    """Load pre-existing vanilla scores and evaluate against real_test.
+
+    Returns the output of ``evaluate_group_vs_real()`` (dict[metric -> stats]).
+    """
+    print(f"\n{'='*60}")
+    print("PHASE 0: Before-calibration group evaluation (vanilla vs real_test)")
+    print(f"{'='*60}")
+
+    real_test_df = pd.read_csv(real_test_csv)
+    vanilla_df = pd.read_csv(vanilla_scores_csv)
+    print(f"  real_test threads: {len(real_test_df)}")
+    print(f"  vanilla threads:   {len(vanilla_df)}")
+
+    before_eval = evaluate_group_vs_real(real_test_df, vanilla_df, metrics)
+
+    (output_dir / "before_calibration_group_eval.json").write_text(
+        json.dumps(before_eval, indent=2, ensure_ascii=False),
+        encoding="utf-8",
+    )
+    print(f"  → Saved before_calibration_group_eval.json")
+    return before_eval
+
+
+# ---------------------------------------------------------------------------
+# Phase 2: After-calibration group evaluation
+# ---------------------------------------------------------------------------
+
+def _run_after_calibration_evaluation(
     output_dir: Path,
     best_overlay: dict,
     real_test_csv: Path,
@@ -360,26 +434,30 @@ def _run_final_evaluation(
     repo_root: Path,
     device: str = "cpu",
 ) -> dict:
-    """Generate fresh simulations with best_overlay, score against test split.
+    """Generate fresh simulations with best_overlay, evaluate against real_test.
 
-    Returns a dict with keys: fail_rate, mean_abs_delta, per_metric, sim_runs.
+    Each run uses a different seed (base_seed + i) since the overlay is the
+    same across all runs.
+
+    Returns a dict with:
+      - ``group_eval``: output of evaluate_group_vs_real (for improvement analysis)
+      - ``fail_rate``, ``mean_abs_delta``: aggregated per-thread diagnostics
+      - ``sim_runs``, ``total_threads``: counts
     """
-    final_dir = output_dir / "final_evaluation"
+    final_dir = output_dir / "after_calibration"
     final_dir.mkdir(parents=True, exist_ok=True)
 
     # Save the overlay used
-    overlay_path = final_dir / "overlay.json"
-    save_overlay(best_overlay, overlay_path)
+    save_overlay(best_overlay, final_dir / "overlay.json")
 
-    # Build test baseline
-    test_baseline = compute_baseline_from_csv(real_test_csv, metrics)
-
-    # Run fresh simulations
     print(f"\n{'='*60}")
-    print(f"FINAL EVALUATION: Generating {sim_runs} fresh simulations with best overlay")
+    print(f"PHASE 2: After-calibration evaluation ({sim_runs} fresh sims with best overlay)")
     print(f"{'='*60}")
 
+    # Each run gets a different seed (same overlay → must differ by seed)
     overlays = [dict(best_overlay) for _ in range(sim_runs)]
+    seed_offsets = list(range(sim_runs))
+
     results = run_candidates(
         overlays=overlays,
         iter_dir=final_dir,
@@ -388,48 +466,105 @@ def _run_final_evaluation(
         python=python,
         repo_root=repo_root,
         device=device,
+        seed_offsets=seed_offsets,
     )
 
-    # Score all successful runs against test baseline
-    scored: list[dict] = []
+    # Collect all thread metrics from successful runs into one DataFrame
+    frames: list[pd.DataFrame] = []
+    for result in results:
+        if not result["success"] or result["sim_dir"] is None:
+            continue
+        sim_dir = Path(result["sim_dir"])
+        try:
+            df = load_thread_metrics(sim_dir)
+            df["_run_id"] = result["candidate_id"]
+            frames.append(df)
+        except Exception:
+            pass
+
+    if not frames:
+        print("[WARN] No successful after-calibration simulations.")
+        return {
+            "group_eval": None,
+            "fail_rate": None,
+            "mean_abs_delta": None,
+            "sim_runs": 0,
+            "total_threads": 0,
+        }
+
+    all_sim_df = pd.concat(frames, ignore_index=True)
+    real_test_df = pd.read_csv(real_test_csv)
+
+    print(f"  calibrated threads: {len(all_sim_df)}")
+    print(f"  real_test threads:  {len(real_test_df)}")
+
+    # Group-level evaluation: MWU, KS, Cliff's delta per metric
+    group_eval = evaluate_group_vs_real(real_test_df, all_sim_df, metrics)
+
+    (final_dir / "after_calibration_group_eval.json").write_text(
+        json.dumps(group_eval, indent=2, ensure_ascii=False),
+        encoding="utf-8",
+    )
+
+    # Also compute aggregate per-thread empirical diagnostics
+    test_baseline = compute_baseline_from_csv(real_test_csv, metrics)
+    all_fail_rates: list[float] = []
+    all_abs_deltas: list[float] = []
     for result in results:
         if not result["success"] or result["sim_dir"] is None:
             continue
         sim_dir = Path(result["sim_dir"])
         try:
             sc = score_candidate(sim_dir, test_baseline, metrics)
-            sc["candidate_id"] = result["candidate_id"]
-            scored.append(sc)
+            all_fail_rates.append(sc["fail_rate"])
+            all_abs_deltas.append(sc["mean_abs_delta"])
         except Exception:
             pass
 
-    if not scored:
-        print("[WARN] No successful final simulations to evaluate.")
-        return {"fail_rate": None, "mean_abs_delta": None, "sim_runs": 0}
-
-    # Aggregate across all scored runs
-    all_fail_rates = [s["fail_rate"] for s in scored]
-    all_abs_deltas = [s["mean_abs_delta"] for s in scored]
-
-    final_result = {
-        "fail_rate": float(np.mean(all_fail_rates)),
-        "mean_abs_delta": float(np.mean(all_abs_deltas)),
-        "sim_runs": len(scored),
-        "per_run": [
-            {"candidate_id": s["candidate_id"],
-             "fail_rate": s["fail_rate"],
-             "mean_abs_delta": s["mean_abs_delta"]}
-            for s in scored
-        ],
+    after_result = {
+        "group_eval": group_eval,
+        "fail_rate": float(np.mean(all_fail_rates)) if all_fail_rates else None,
+        "mean_abs_delta": float(np.mean(all_abs_deltas)) if all_abs_deltas else None,
+        "sim_runs": len(frames),
+        "total_threads": len(all_sim_df),
     }
 
-    (final_dir / "test_evaluation.json").write_text(
-        json.dumps(final_result, indent=2, ensure_ascii=False),
+    (final_dir / "after_calibration_evaluation.json").write_text(
+        json.dumps(
+            {k: v for k, v in after_result.items() if k != "group_eval"},
+            indent=2, ensure_ascii=False,
+        ),
         encoding="utf-8",
     )
 
-    print(f"Final test fail rate:   {final_result['fail_rate']:.4f}")
-    print(f"Final test |delta|:     {final_result['mean_abs_delta']:.4f}")
-    print(f"Successful runs:        {final_result['sim_runs']}/{sim_runs}")
+    print(f"  avg fail rate:    {after_result['fail_rate']:.4f}" if after_result["fail_rate"] else "")
+    print(f"  avg |delta|:      {after_result['mean_abs_delta']:.4f}" if after_result["mean_abs_delta"] else "")
+    print(f"  successful runs:  {after_result['sim_runs']}/{sim_runs}")
+    print(f"  → Saved after_calibration_group_eval.json")
 
-    return final_result
+    return after_result
+
+
+# ---------------------------------------------------------------------------
+# Improvement summary printer
+# ---------------------------------------------------------------------------
+
+def _print_improvement_summary(improvement: dict) -> None:
+    """Print a concise terminal summary of before vs after improvement."""
+    s = improvement.get("summary", {})
+
+    print(f"\n{'='*60}")
+    print("IMPROVEMENT ANALYSIS (before vs after calibration)")
+    print(f"{'='*60}")
+    print(f"  Metrics sig. different before: {s.get('metrics_sig_different_before', '?')}")
+    print(f"  Metrics sig. different after:  {s.get('metrics_sig_different_after', '?')}")
+    print(f"  Avg |Cliff's delta| before:    {s.get('avg_abs_cliffs_delta_before', 0):.4f}")
+    print(f"  Avg |Cliff's delta| after:     {s.get('avg_abs_cliffs_delta_after', 0):.4f}")
+    print(f"  Overall fail rate before:      {s.get('overall_fail_rate_before', 0):.4f}")
+    print(f"  Overall fail rate after:       {s.get('overall_fail_rate_after', 0):.4f}")
+    print(f"  Overall pass rate before:      {s.get('overall_pass_rate_before', 0):.4f}")
+    print(f"  Overall pass rate after:       {s.get('overall_pass_rate_after', 0):.4f}")
+
+    pm = improvement.get("per_metric", {})
+    improved_count = sum(1 for v in pm.values() if v.get("improved"))
+    print(f"\n  Metrics improved: {improved_count}/{len(pm)}")

@@ -30,6 +30,7 @@ _FIELD_TO_FLAG: dict[str, str] = {
     "few_shot_source": "--few-shot-source",
     "few_shot_count": "--few-shot-count",
     "few_shot_comments": "--few-shot-comments",
+    "few_shot_thread_ids": "--few-shot-thread-ids",
 }
 
 
@@ -205,6 +206,7 @@ def run_candidates(
     python: str = sys.executable,
     repo_root: Path | None = None,
     device: str = "cpu",
+    seed_offsets: list[int] | None = None,
 ) -> list[dict[str, Any]]:
     """Run candidate simulations, score each, one per overlay.
 
@@ -229,6 +231,11 @@ def run_candidates(
         package (two levels up from ``calibration/runner.py``).
     device:
         Torch device for metric scripts (``cpu``, ``cuda``, ``mps``).
+    seed_offsets:
+        Optional per-candidate seed offsets.  When provided, candidate *i*
+        runs with ``base_seed + seed_offsets[i]`` instead of the base seed.
+        Use this for multi-run evaluations of the same overlay so each run
+        gets a different seed.
 
     Returns
     -------
@@ -243,6 +250,15 @@ def run_candidates(
 
     iter_dir = Path(iter_dir)
 
+    def _config_for(i: int) -> dict[str, Any]:
+        """Return reference_run_config, optionally with seed offset applied."""
+        if seed_offsets is None:
+            return reference_run_config
+        cfg = dict(reference_run_config)
+        base_seed = cfg.get("seed", 42)
+        cfg["seed"] = base_seed + seed_offsets[i]
+        return cfg
+
     if parallel <= 1:
         results = []
         for i, overlay in enumerate(overlays):
@@ -250,7 +266,7 @@ def run_candidates(
                 candidate_id=i,
                 overlay=overlay,
                 iter_dir=iter_dir,
-                reference_run_config=reference_run_config,
+                reference_run_config=_config_for(i),
                 python=python,
                 repo_root=repo_root,
                 device=device,
@@ -269,7 +285,7 @@ def run_candidates(
                 candidate_id=i,
                 overlay=overlay,
                 iter_dir=iter_dir,
-                reference_run_config=reference_run_config,
+                reference_run_config=_config_for(i),
                 python=python,
                 repo_root=repo_root,
                 device=device,

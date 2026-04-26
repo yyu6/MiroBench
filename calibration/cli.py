@@ -27,6 +27,16 @@ def main() -> None:
         help="Real thread scores CSV for the TEST split (used only for final post-calibration evaluation).",
     )
 
+    # ── Vanilla baseline (for before/after comparison) ───────────────────────
+    parser.add_argument(
+        "--vanilla-scores-csv",
+        default="",
+        help=(
+            "Pre-existing vanilla simulation scores CSV (from run_baseline_evaluation.py). "
+            "If provided, enables before/after improvement analysis against real_test."
+        ),
+    )
+
     # ── Few-shot source (real discussion directory) ───────────────────────────
     parser.add_argument(
         "--few-shot-dir",
@@ -73,7 +83,7 @@ def main() -> None:
         "--final-sim-runs",
         type=int,
         default=12,
-        help="Number of fresh simulation runs for the final post-calibration evaluation (default: 12, ~50 threads).",
+        help="Number of fresh simulation runs for the after-calibration evaluation (default: 12, ~50 threads).",
     )
 
     args = parser.parse_args()
@@ -85,6 +95,13 @@ def main() -> None:
     real_val_csv = Path(args.real_val_csv).resolve()
     real_test_csv = Path(args.real_test_csv).resolve()
     few_shot_dir = Path(args.few_shot_dir).resolve()
+
+    vanilla_scores_csv = None
+    if args.vanilla_scores_csv:
+        vanilla_scores_csv = Path(args.vanilla_scores_csv).resolve()
+        if not vanilla_scores_csv.exists():
+            print(f"ERROR: Vanilla scores CSV not found: {vanilla_scores_csv}")
+            sys.exit(1)
 
     for csv_path in [real_train_csv, real_val_csv, real_test_csv]:
         if not csv_path.exists():
@@ -144,6 +161,7 @@ def main() -> None:
         metric_definitions=metric_definitions,
         device=args.device,
         final_sim_runs=args.final_sim_runs,
+        vanilla_scores_csv=vanilla_scores_csv,
     )
 
     print(f"\n{'='*60}")
@@ -151,11 +169,14 @@ def main() -> None:
     print(f"{'='*60}")
     print(f"Output: {output_dir}")
     best_score = summary.get("best_score") or {}
-    print(f"Best fail rate (val):   {best_score.get('fail_rate', 'N/A')}")
+    print(f"Best fail rate (val):    {best_score.get('fail_rate', 'N/A')}")
     print(f"Best mean |delta| (val): {best_score.get('mean_abs_delta', 'N/A')}")
-    print(f"Iterations run:         {summary.get('completed_iterations', 'N/A')}")
-    print(f"Best overlay:           {output_dir / 'best_overlay.json'}")
-    final = summary.get("final_evaluation")
-    if final:
-        print(f"Final test fail rate:   {final.get('fail_rate', 'N/A')}")
-        print(f"Final test |delta|:     {final.get('mean_abs_delta', 'N/A')}")
+    print(f"Iterations run:          {summary.get('completed_iterations', 'N/A')}")
+    print(f"Best overlay:            {output_dir / 'best_overlay.json'}")
+    after = summary.get("after_calibration_evaluation") or {}
+    if after.get("fail_rate") is not None:
+        print(f"After-cal fail rate:     {after['fail_rate']:.4f}")
+        print(f"After-cal |delta|:       {after['mean_abs_delta']:.4f}")
+    if summary.get("improvement"):
+        s = summary["improvement"].get("summary", {})
+        print(f"Improvement: fail rate {s.get('overall_fail_rate_before', 0):.4f} → {s.get('overall_fail_rate_after', 0):.4f}")

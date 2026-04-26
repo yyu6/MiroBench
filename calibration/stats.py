@@ -260,19 +260,31 @@ def compare_before_after(
         b = before_results[metric]
         a = after_results.get(metric, {})
 
+        b_mwu_p = b.get("mwu_p_value", 1.0)
+        a_mwu_p = a.get("mwu_p_value", 1.0)
+        b_ks_p = b.get("ks_p_value", 1.0)
+        a_ks_p = a.get("ks_p_value", 1.0)
+        b_cd = b.get("cliffs_delta", 0.0)
+        a_cd = a.get("cliffs_delta", 0.0)
         b_fail = b.get("empirical_fail_rate", 0.0)
         a_fail = a.get("empirical_fail_rate", 0.0)
-        b_cd = abs(b.get("cliffs_delta", 0.0))
-        a_cd = abs(a.get("cliffs_delta", 0.0))
 
+        abs_delta_reduction = abs(b_cd) - abs(a_cd)
         fail_rate_reduction = b_fail - a_fail
-        abs_delta_reduction = b_cd - a_cd
-        improved = (fail_rate_reduction > 0) or (abs_delta_reduction > 0)
+        improved = (abs(a_cd) < abs(b_cd)) and (a_fail < b_fail)
 
         per_metric[metric] = {
-            "improved": improved,
+            "before_mwu_p": b_mwu_p,
+            "after_mwu_p": a_mwu_p,
+            "before_ks_p": b_ks_p,
+            "after_ks_p": a_ks_p,
+            "before_cliffs_delta": b_cd,
+            "after_cliffs_delta": a_cd,
             "abs_delta_reduction": abs_delta_reduction,
+            "before_fail_rate": b_fail,
+            "after_fail_rate": a_fail,
             "fail_rate_reduction": fail_rate_reduction,
+            "improved": improved,
         }
 
     # Summary statistics

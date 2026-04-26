@@ -37,6 +37,7 @@ def select_generation_few_shot_examples(
     max_examples: int = 2,
     max_comments: int = 2,
     seed: int = 42,
+    allowed_thread_ids: set[str] | None = None,
 ) -> list[dict[str, Any]]:
     """Select compact discussion examples relevant to one simulation run.
 
@@ -47,6 +48,8 @@ def select_generation_few_shot_examples(
         max_examples: Maximum number of examples to keep.
         max_comments: Maximum visible comments kept per example.
         seed: Deterministic tiebreak seed.
+        allowed_thread_ids: If provided, only threads whose ID is in this set
+            are eligible. Used to restrict few-shot examples to the train split.
     """
 
     if not source_path or max_examples <= 0:
@@ -59,6 +62,12 @@ def select_generation_few_shot_examples(
     )
     if not threads:
         return []
+
+    # Filter to allowed thread IDs (e.g., train-only)
+    if allowed_thread_ids is not None:
+        threads = [t for t in threads if str(t.thread_id) in allowed_thread_ids]
+        if not threads:
+            return []
 
     rng = random.Random(seed)
     query_tokens = _tokenize(query_text)
