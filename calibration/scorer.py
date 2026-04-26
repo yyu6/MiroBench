@@ -244,13 +244,30 @@ def score_candidate(
         else:
             metric_direction = "generated_lower"
 
-        # Generated median
+        # Generated summary stats
         sim_arr = np.asarray(sim_vals, dtype=float)
-        generated_median = float(np.median(sim_arr)) if sim_arr.size > 0 else float("nan")
+        if sim_arr.size > 0:
+            generated_summary = {
+                "mean": float(np.mean(sim_arr)),
+                "median": float(np.median(sim_arr)),
+                "std": float(np.std(sim_arr)),
+                "p05": float(np.percentile(sim_arr, 5)),
+                "p25": float(np.percentile(sim_arr, 25)),
+                "p75": float(np.percentile(sim_arr, 75)),
+                "p95": float(np.percentile(sim_arr, 95)),
+                "n": int(sim_arr.size),
+            }
+        else:
+            generated_summary = {
+                "mean": float("nan"), "median": float("nan"),
+                "std": 0.0, "p05": float("nan"), "p25": float("nan"),
+                "p75": float("nan"), "p95": float("nan"), "n": 0,
+            }
 
         per_metric[metric] = {
             "real_median": real_median,
-            "generated_median": generated_median,
+            "generated_summary": generated_summary,
+            "generated_median": generated_summary["median"],
             "cliffs_delta": cd,
             "fail_rate": metric_fail_rate,
             "direction": metric_direction,

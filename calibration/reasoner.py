@@ -100,6 +100,49 @@ CALIBRATION_PRINCIPLES = """
 
 
 # ---------------------------------------------------------------------------
+# Metric interpretation helpers
+# ---------------------------------------------------------------------------
+
+# Domain lookup: metric name prefix → human-readable domain
+_METRIC_DOMAIN: dict[str, str] = {
+    "self_bleu": "content repetitiveness",
+    "self_bertscore": "content repetitiveness",
+    "semantic": "content repetitiveness",
+    "toxicity": "toxicity",
+    "severe_toxicity": "toxicity",
+    "obscene": "toxicity",
+    "threat": "toxicity",
+    "insult": "toxicity",
+    "identity_attack": "toxicity",
+    "aggression": "aggressiveness",
+    "length": "comment length diversity",
+    "max_depth": "thread structure",
+    "avg_depth": "thread structure",
+    "avg_branching": "thread structure",
+    "structural_virality": "thread structure",
+}
+
+
+def _metric_interpretation(metric: str, direction: str, tier: str) -> str:
+    """Generate a short human-readable interpretation for the reasoner."""
+    if tier == "acceptable":
+        return "Within acceptable range of real baseline."
+
+    # Find domain
+    domain = "metric"
+    for prefix, d in _METRIC_DOMAIN.items():
+        if metric.startswith(prefix):
+            domain = d
+            break
+
+    if direction == "generated_higher":
+        return f"Generated discussions have {domain} values too high compared to real."
+    elif direction == "generated_lower":
+        return f"Generated discussions have {domain} values too low compared to real."
+    return f"Generated discussions deviate from real baseline on {domain}."
+
+
+# ---------------------------------------------------------------------------
 # Prompt assembly
 # ---------------------------------------------------------------------------
 
@@ -157,7 +200,9 @@ def build_reasoner_prompt(
     sections.append(json.dumps(current_overlay, indent=2))
     sections.append("")
 
-    # ── Current diagnostic (per-metric with tier classification) ──────────
+    # ── Combined per-metric diagnostic ──────────────────────────────────────
+    # Merges real train stats + generated stats + diagnostic into one view
+    # so the LLM sees the full picture per metric.
     sections.append("## Current Diagnostic\n")
     fail_rate = current_diagnostic.get("fail_rate", "N/A")
     mean_abs_delta = current_diagnostic.get("mean_abs_delta", "N/A")
@@ -166,49 +211,68 @@ def build_reasoner_prompt(
     sections.append("")
 
     per_metric = current_diagnostic.get("per_metric", {})
-    if per_metric:
-        sections.append("Per-metric breakdown (pre-classified by tier):")
-        metric_rows: list[dict] = []
-        for metric, info in per_metric.items():
-            if metric == "threads":
-                continue
-            fr = info.get("fail_rate", 0.0)
-            cd = info.get("cliffs_delta", 0.0)
-            direction = info.get("direction", "")
-            gen_median = info.get("generated_median", "")
-            real_median = info.get("real_median", "")
+    sections.append("## Per-Metric Analysis (real train baseline + generated + diagnostic)\n")
+    sections.append(
+        "Each entry combines: real train distribution stats, current generated "
+        "distribution stats, and the diagnostic (fail_rate, effect size, tier).\n"
+        "Sorted by severity: CRITICAL first, then SECONDARY, then acceptable."
+    )
 
-            # Classify tier
-            if fr > 0.50 or abs(cd) >= 0.474:
-                tier = "CRITICAL"
-            elif fr >= 0.20 or abs(cd) >= 0.33:
-                tier = "SECONDARY"
-            else:
-                tier = "acceptable"
+    metric_entries: list[dict] = []
+    for metric in sorted(per_metric.keys()):
+        if metric == "threads":
+            continue
+        info = per_metric[metric]
+        fr = info.get("fail_rate", 0.0)
+        cd = info.get("cliffs_delta", 0.0)
+        direction = info.get("direction", "")
 
-            metric_rows.append({
-                "metric": metric,
-                "tier": tier,
+        # Classify tier
+        if fr > 0.50 or abs(cd) >= 0.474:
+            tier = "CRITICAL"
+        elif fr >= 0.20 or abs(cd) >= 0.33:
+            tier = "SECONDARY"
+        else:
+            tier = "acceptable"
+
+        # Interpretation based on metric domain and direction
+        interpretation = _metric_interpretation(metric, direction, tier)
+
+        # Real train stats (from real_baseline dict)
+        real_stats = real_baseline.get(metric, {})
+
+        # Generated stats (from scorer's generated_summary)
+        gen_summary = info.get("generated_summary", {})
+        if not gen_summary:
+            gen_summary = {"mean": info.get("generated_median", ""), "median": info.get("generated_median", "")}
+
+        entry = {
+            "metric": metric,
+            "real_train_summary": {
+                k: round(v, 4) if isinstance(v, float) else v
+                for k, v in real_stats.items()
+            },
+            "current_generated_summary": {
+                k: round(v, 4) if isinstance(v, float) else v
+                for k, v in gen_summary.items()
+            },
+            "diagnostic": {
                 "fail_rate": round(fr, 3),
                 "cliffs_delta": round(cd, 3),
                 "direction": direction,
-                "generated_median": gen_median,
-                "real_median": real_median,
-            })
+                "tier": tier,
+                "interpretation": interpretation,
+            },
+        }
+        metric_entries.append(entry)
 
-        # Sort: CRITICAL first, then SECONDARY, then acceptable
-        tier_order = {"CRITICAL": 0, "SECONDARY": 1, "acceptable": 2}
-        metric_rows.sort(key=lambda r: (tier_order.get(r["tier"], 3), -abs(r.get("cliffs_delta", 0))))
-        sections.append(json.dumps(metric_rows, indent=2))
-    sections.append("")
-
-    # ── Real baseline statistics (from train split) ─────────────────────────
-    sections.append("## Real Baseline Statistics (train split)\n")
-    sections.append(
-        "Each metric shows: median, mean, std, p25, p75, min, max, n (sample size).\n"
-        "Use these to understand the real distribution shape, not just the center."
-    )
-    sections.append(json.dumps(real_baseline, indent=2))
+    # Sort: CRITICAL first, then SECONDARY, then acceptable
+    tier_order = {"CRITICAL": 0, "SECONDARY": 1, "acceptable": 2}
+    metric_entries.sort(key=lambda r: (
+        tier_order.get(r["diagnostic"]["tier"], 3),
+        -abs(r["diagnostic"].get("cliffs_delta", 0)),
+    ))
+    sections.append(json.dumps(metric_entries, indent=2))
     sections.append("")
 
     # ── Calibration trajectory ────────────────────────────────────────────
