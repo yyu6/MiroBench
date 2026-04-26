@@ -44,12 +44,18 @@ _SUMMARY_CSV = "thread_metrics_summary.csv"
 # ---------------------------------------------------------------------------
 
 def load_thread_metrics(directory: Path) -> pd.DataFrame:
-    """Read thread_metrics_summary.csv from *directory*.
+    """Read thread_metrics_summary.csv from *directory* or all its subdirs.
+
+    If *directory* contains a ``thread_metrics_summary.csv`` directly, that
+    file is returned.  Otherwise every immediate subdirectory is scanned for
+    the same file and the results are concatenated.  This lets callers pass
+    either a single-product directory or a whole category directory (e.g.,
+    ``data/raw/discussions/credit_cards``).
 
     Parameters
     ----------
     directory : Path
-        Directory that contains ``thread_metrics_summary.csv``.
+        Single-product dir or category dir.
 
     Returns
     -------
@@ -58,14 +64,29 @@ def load_thread_metrics(directory: Path) -> pd.DataFrame:
     Raises
     ------
     FileNotFoundError
-        If the CSV does not exist.
+        If no ``thread_metrics_summary.csv`` is found anywhere.
     """
-    csv_path = Path(directory) / _SUMMARY_CSV
-    if not csv_path.exists():
+    directory = Path(directory)
+    direct_csv = directory / _SUMMARY_CSV
+    if direct_csv.exists():
+        return pd.read_csv(direct_csv)
+
+    # Walk immediate subdirectories (one level deep)
+    frames: list[pd.DataFrame] = []
+    for sub in sorted(directory.iterdir()):
+        if not sub.is_dir():
+            continue
+        sub_csv = sub / _SUMMARY_CSV
+        if sub_csv.exists():
+            df = pd.read_csv(sub_csv)
+            df["_product_dir"] = sub.name
+            frames.append(df)
+
+    if not frames:
         raise FileNotFoundError(
-            f"thread_metrics_summary.csv not found in {directory}"
+            f"No thread_metrics_summary.csv found in {directory} or its subdirs"
         )
-    return pd.read_csv(csv_path)
+    return pd.concat(frames, ignore_index=True)
 
 
 # ---------------------------------------------------------------------------
@@ -73,7 +94,7 @@ def load_thread_metrics(directory: Path) -> pd.DataFrame:
 # ---------------------------------------------------------------------------
 
 def compute_real_baseline(real_dir: Path, metrics: list[str]) -> dict[str, dict]:
-    """Compute baseline statistics from real data.
+    """Compute baseline statistics from real discussion data.
 
     For each metric returns a dict with:
       - ``median``  : float
@@ -83,7 +104,10 @@ def compute_real_baseline(real_dir: Path, metrics: list[str]) -> dict[str, dict]
     Parameters
     ----------
     real_dir : Path
-        Directory containing the real ``thread_metrics_summary.csv``.
+        Category dir (e.g., ``data/raw/discussions/credit_cards``) whose
+        immediate subdirs each contain a ``thread_metrics_summary.csv``, OR a
+        single product dir that contains the CSV directly.  All found CSVs are
+        concatenated so that statistics are computed over the full dataset.
     metrics : list[str]
         Metric column names to include.
 

@@ -68,6 +68,17 @@ class TestLoadThreadMetrics:
         with pytest.raises(FileNotFoundError):
             load_thread_metrics(tmp_path)
 
+    def test_aggregates_category_subdirs(self, tmp_path: Path) -> None:
+        """Category dir with multiple product subdirs is aggregated."""
+        for product in ("product_a", "product_b"):
+            sub = tmp_path / product
+            sub.mkdir()
+            _write_csv(sub / "thread_metrics_summary.csv", _make_real_rows(5))
+
+        df = load_thread_metrics(tmp_path)
+        assert len(df) == 10  # 5 + 5
+        assert "_product_dir" in df.columns
+
 
 # ---------------------------------------------------------------------------
 # TestComputeRealBaseline

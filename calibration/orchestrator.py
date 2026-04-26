@@ -137,9 +137,14 @@ def run_calibration_loop(
     output_dir : Path
         Root directory for all calibration artefacts.
     real_dir : Path
-        Directory containing the real ``thread_metrics_summary.csv``.
+        Category dir (e.g., ``data/raw/discussions/credit_cards``) whose
+        subdirs each contain a ``thread_metrics_summary.csv``, or a single
+        product dir with that file directly.  All CSVs are aggregated into the
+        real baseline distribution.
     reference_run_config : dict
-        Baseline run parameters forwarded to ``run_discussion.py``.
+        Baseline run parameters forwarded to ``run_discussion.py``
+        (keys: ``input_file``, ``agents``, ``hours``, ``rounds``,
+        ``seed_posts``, ``seed``, ``hint``, ``discussion_backbone``).
     max_iterations : int
         Maximum number of calibration iterations.
     candidates_per_iter : int
