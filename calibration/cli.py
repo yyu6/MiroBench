@@ -5,7 +5,10 @@ from dotenv import load_dotenv
 
 
 def main() -> None:
-    load_dotenv()
+    # Load .env from repo root or third_party/MiroFish/.env (where keys live)
+    repo_root = Path(__file__).resolve().parent.parent
+    load_dotenv(repo_root / ".env")
+    load_dotenv(repo_root / "third_party" / "MiroFish" / ".env")
     parser = argparse.ArgumentParser(
         description="Iterative LLM-driven calibration for Reddit discussion simulation."
     )
