@@ -17,7 +17,10 @@ from typing import Any
 
 import numpy as np
 import pandas as pd
-from openai import OpenAI
+try:
+    from openai import OpenAI
+except ImportError:
+    OpenAI = None  # type: ignore[assignment,misc]
 
 from .log import CalibrationLog
 from .overlay import diff_overlay, merge_overlay, save_overlay
@@ -144,7 +147,12 @@ def run_calibration_loop(
     registry = KnobRegistry()
     log = CalibrationLog(output_dir / "calibration_log.json")
     state = CalibrationState(output_dir=output_dir)
-    client = OpenAI(api_key=api_key, base_url=base_url)
+    if OpenAI is not None:
+        client = OpenAI(api_key=api_key, base_url=base_url)
+    else:
+        # openai < 1.0: store credentials on a simple namespace
+        import types
+        client = types.SimpleNamespace(api_key=api_key, base_url=base_url)
 
     # -----------------------------------------------------------------------
     # Compute baselines from train and val splits

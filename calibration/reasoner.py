@@ -13,7 +13,10 @@ import json
 import random
 from typing import Any
 
-from openai import OpenAI
+try:
+    from openai import OpenAI
+except ImportError:
+    OpenAI = None  # type: ignore[assignment,misc]
 
 from .overlay import merge_overlay
 from .registry import KnobRegistry
@@ -278,16 +281,33 @@ def build_reasoner_prompt(
 # LLM call
 # ---------------------------------------------------------------------------
 
-def call_reasoner(client: OpenAI, model: str, prompt: str) -> str:
-    """Call the OpenAI API with the reasoner prompt."""
-    response = client.chat.completions.create(
-        model=model,
-        messages=[{"role": "user", "content": prompt}],
-        temperature=0.4,
-        response_format={"type": "json_object"},
-        timeout=120,
-    )
-    return response.choices[0].message.content
+def call_reasoner(client, model: str, prompt: str) -> str:
+    """Call the OpenAI-compatible API with the reasoner prompt.
+
+    Supports both openai >= 1.0 (client.chat.completions.create) and
+    openai < 1.0 (openai.ChatCompletion.create).
+    """
+    if OpenAI is not None and isinstance(client, OpenAI):
+        # openai >= 1.0
+        response = client.chat.completions.create(
+            model=model,
+            messages=[{"role": "user", "content": prompt}],
+            temperature=0.4,
+            response_format={"type": "json_object"},
+            timeout=120,
+        )
+        return response.choices[0].message.content
+    else:
+        # openai < 1.0 or compatible client
+        import openai as _openai
+        response = _openai.ChatCompletion.create(
+            model=model,
+            messages=[{"role": "user", "content": prompt}],
+            temperature=0.4,
+            api_key=getattr(client, "api_key", None),
+            api_base=getattr(client, "base_url", None),
+        )
+        return response["choices"][0]["message"]["content"]
 
 
 # ---------------------------------------------------------------------------
