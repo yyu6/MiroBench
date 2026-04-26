@@ -108,6 +108,7 @@ def run_calibration_loop(
     device: str = "cpu",
     final_sim_runs: int = 12,
     vanilla_scores_csv: Path | None = None,
+    min_sim_threads: int = 0,
 ) -> dict:
     """Main calibration loop with train/val/test splits.
 
@@ -360,6 +361,7 @@ def run_calibration_loop(
         python=python,
         repo_root=repo_root,
         device=device,
+        min_sim_threads=min_sim_threads,
     )
 
     # -----------------------------------------------------------------------
@@ -441,6 +443,7 @@ def _run_after_calibration_evaluation(
     python: str,
     repo_root: Path,
     device: str = "cpu",
+    min_sim_threads: int = 0,
 ) -> dict:
     """Generate fresh simulations with best_overlay, evaluate against real_test.
 
@@ -475,6 +478,7 @@ def _run_after_calibration_evaluation(
         repo_root=repo_root,
         device=device,
         seed_offsets=seed_offsets,
+        min_threads=min_sim_threads,
     )
 
     # Collect all thread metrics from successful runs into one DataFrame

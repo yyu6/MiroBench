@@ -83,7 +83,13 @@ def main() -> None:
         "--final-sim-runs",
         type=int,
         default=12,
-        help="Number of fresh simulation runs for the after-calibration evaluation (default: 12, ~50 threads).",
+        help="Max simulation runs for after-calibration evaluation (default: 12).",
+    )
+    parser.add_argument(
+        "--min-sim-threads",
+        type=int,
+        default=50,
+        help="Stop after-calibration runs early once this many threads are collected (default: 50, 0=no limit).",
     )
 
     args = parser.parse_args()
@@ -162,6 +168,7 @@ def main() -> None:
         device=args.device,
         final_sim_runs=args.final_sim_runs,
         vanilla_scores_csv=vanilla_scores_csv,
+        min_sim_threads=args.min_sim_threads,
     )
 
     print(f"\n{'='*60}")

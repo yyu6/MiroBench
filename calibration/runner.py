@@ -207,6 +207,7 @@ def run_candidates(
     repo_root: Path | None = None,
     device: str = "cpu",
     seed_offsets: list[int] | None = None,
+    min_threads: int = 0,
 ) -> list[dict[str, Any]]:
     """Run candidate simulations, score each, one per overlay.
 
@@ -236,6 +237,10 @@ def run_candidates(
         runs with ``base_seed + seed_offsets[i]`` instead of the base seed.
         Use this for multi-run evaluations of the same overlay so each run
         gets a different seed.
+    min_threads:
+        Early-stop threshold.  When > 0 and running sequentially, stop
+        launching new candidates once the cumulative thread count across
+        all successful runs reaches this value.  Ignored in parallel mode.
 
     Returns
     -------
@@ -261,6 +266,7 @@ def run_candidates(
 
     if parallel <= 1:
         results = []
+        cumulative_threads = 0
         for i, overlay in enumerate(overlays):
             result = _run_one(
                 candidate_id=i,
@@ -272,6 +278,16 @@ def run_candidates(
                 device=device,
             )
             results.append(result)
+
+            # Early stop once we have enough threads
+            if min_threads > 0 and result["success"] and result["sim_dir"]:
+                summary_csv = Path(result["sim_dir"]) / "thread_metrics_summary.csv"
+                if summary_csv.exists():
+                    import pandas as _pd
+                    cumulative_threads += len(_pd.read_csv(summary_csv))
+                    if cumulative_threads >= min_threads:
+                        print(f"  [early stop] {cumulative_threads} threads collected (>= {min_threads})")
+                        break
         return results
 
     # Parallel execution

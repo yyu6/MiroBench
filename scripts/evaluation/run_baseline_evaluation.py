@@ -229,6 +229,7 @@ def main() -> None:
             device=args.device,
             self_bertscore_model_type=args.self_bertscore_model_type,
             self_bertscore_batch_size=args.self_bertscore_batch_size,
+            min_threads=args.min_sim_threads,
         )
         sim_rows = read_csv(sim_csv)
         print(f"\n→ {len(sim_rows)} simulated threads scored.")
@@ -337,6 +338,7 @@ def parse_args() -> argparse.Namespace:
         help="Train/val/test split ratios for real threads (default: 0.70,0.15,0.15).",
     )
     p.add_argument("--split-seed", type=int, default=42, help="Random seed for train/val/test split (default: 42).")
+    p.add_argument("--min-sim-threads", type=int, default=50, help="Stop simulation runs early once this many threads are collected (default: 50, 0=no limit).")
     return p.parse_args()
 
 
@@ -517,8 +519,13 @@ def generate_and_score_simulations(
     device: str,
     self_bertscore_model_type: str,
     self_bertscore_batch_size: int,
+    min_threads: int = 0,
 ) -> Path:
-    """Generate N simulation runs, score each, and merge into one CSV."""
+    """Generate N simulation runs, score each, and merge into one CSV.
+
+    If *min_threads* > 0, stop launching new runs once the cumulative
+    thread count reaches the threshold.
+    """
 
     all_rows: list[dict[str, str]] = []
 
@@ -578,7 +585,11 @@ def generate_and_score_simulations(
         for row in rows:
             row["product"] = sim_dir.name
         all_rows.extend(rows)
-        print(f"  → {len(rows)} threads scored")
+        print(f"  → {len(rows)} threads scored (total: {len(all_rows)})")
+
+        if min_threads > 0 and len(all_rows) >= min_threads:
+            print(f"  [early stop] {len(all_rows)} threads collected (>= {min_threads})")
+            break
 
     write_scored_csv(output_csv, all_rows)
     print(f"\nMerged simulated scores → {output_csv} ({len(all_rows)} threads)")
