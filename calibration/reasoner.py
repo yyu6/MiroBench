@@ -366,14 +366,18 @@ def call_reasoner(client, model: str, prompt: str) -> str:
         )
         return response.choices[0].message.content
     else:
-        # openai < 1.0 or compatible client
+        # openai < 1.0 — set module-level credentials
         import openai as _openai
+        _api_key = getattr(client, "api_key", None)
+        _base_url = getattr(client, "base_url", None)
+        if _api_key:
+            _openai.api_key = _api_key
+        if _base_url:
+            _openai.api_base = str(_base_url)
         response = _openai.ChatCompletion.create(
             model=model,
             messages=[{"role": "user", "content": prompt}],
             temperature=0.4,
-            api_key=getattr(client, "api_key", None),
-            api_base=getattr(client, "base_url", None),
         )
         return response["choices"][0]["message"]["content"]
 
