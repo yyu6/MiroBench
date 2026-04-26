@@ -72,8 +72,8 @@ def main() -> None:
     parser.add_argument(
         "--final-sim-runs",
         type=int,
-        default=25,
-        help="Number of fresh simulation runs for the final post-calibration evaluation (default: 25).",
+        default=12,
+        help="Number of fresh simulation runs for the final post-calibration evaluation (default: 12, ~50 threads).",
     )
 
     args = parser.parse_args()

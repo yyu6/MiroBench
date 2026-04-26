@@ -3,11 +3,10 @@ Runner for candidate simulations in the calibration module.
 
 Provides ``run_candidates()``, which launches one ``run_discussion.py``
 subprocess per candidate overlay, optionally in parallel via
-``ProcessPoolExecutor``.
+``ProcessPoolExecutor``, then scores each sim dir with the full metric suite.
 """
 from __future__ import annotations
 
-import json
 import subprocess
 import sys
 from concurrent.futures import ProcessPoolExecutor, as_completed
@@ -76,6 +75,78 @@ def _detect_sim_dir(output_dir: Path) -> Path | None:
     return max(subdirs, key=lambda p: p.stat().st_mtime)
 
 
+def _score_sim_dir(
+    sim_dir: Path,
+    python: str,
+    repo_root: Path,
+    device: str = "cpu",
+) -> None:
+    """Run the full metric suite on *sim_dir* and produce thread_metrics_summary.csv.
+
+    Mirrors the logic in scripts/evaluation/run_baseline_evaluation.py.
+    Individual metric JSONs are skipped if they already exist (idempotent).
+    The summarize step always runs so the CSV is up-to-date.
+    """
+    script_dir = repo_root / "scripts" / "evaluation"
+    summarize_script = script_dir / "summarize_thread_metrics.py"
+    td = str(sim_dir)
+
+    metric_commands: list[tuple[str, list[str]]] = [
+        (
+            "stance_disagreement_results.json",
+            [python, str(script_dir / "score_thread_disagreement.py"), td,
+             "--target-kind", "generated", "--device", device],
+        ),
+        (
+            "self_bleu_results.json",
+            [python, str(script_dir / "score_thread_self_bleu.py"), td,
+             "--target-kind", "generated"],
+        ),
+        (
+            "self_bertscore_results.json",
+            [python, str(script_dir / "score_thread_self_bertscore.py"), td,
+             "--target-kind", "generated", "--device", device],
+        ),
+        (
+            "semantic_uniformity_results.json",
+            [python, str(script_dir / "score_thread_semantic_uniformity.py"), td,
+             "--target-kind", "generated", "--device", device],
+        ),
+        (
+            "storyseeker_results.json",
+            [python, str(script_dir / "score_thread_storyseeker.py"), td,
+             "--target-kind", "generated", "--device", device],
+        ),
+        (
+            "go_emotions_results.json",
+            [python, str(script_dir / "score_thread_go_emotions.py"), td,
+             "--target-kind", "generated", "--device", device],
+        ),
+        (
+            "politeness_results.json",
+            [python, str(script_dir / "score_thread_politeness.py"), td,
+             "--target-kind", "generated", "--device", device],
+        ),
+        (
+            "thread_structure_results.json",
+            [python, str(script_dir / "score_thread_structure.py"), td,
+             "--target-kind", "generated"],
+        ),
+        (
+            "detoxify_results.json",
+            [python, str(script_dir / "score_thread_detoxify.py"), td,
+             "--target-kind", "generated", "--device", device],
+        ),
+    ]
+
+    for output_name, cmd in metric_commands:
+        if not (sim_dir / output_name).exists():
+            subprocess.run(cmd, check=True)
+
+    # Always re-summarize to produce/refresh thread_metrics_summary.csv.
+    subprocess.run([python, str(summarize_script), td], check=True)
+
+
 def _run_one(
     candidate_id: int,
     overlay: dict[str, Any],
@@ -83,8 +154,9 @@ def _run_one(
     reference_run_config: dict[str, Any],
     python: str,
     repo_root: Path,
+    device: str = "cpu",
 ) -> dict[str, Any]:
-    """Run a single candidate simulation and return the result dict."""
+    """Run a single candidate simulation, score it, and return the result dict."""
     candidate_dir = iter_dir / "candidates" / f"candidate_{candidate_id}"
     candidate_dir.mkdir(parents=True, exist_ok=True)
 
@@ -101,6 +173,16 @@ def _run_one(
 
     success = proc.returncode == 0
     sim_dir = _detect_sim_dir(output_dir) if success else None
+
+    # Score the simulation so thread_metrics_summary.csv exists for the scorer.
+    if sim_dir is not None:
+        try:
+            _score_sim_dir(sim_dir, python=python, repo_root=repo_root, device=device)
+        except subprocess.CalledProcessError as exc:
+            # Scoring failure → treat as unsuccessful so the candidate is skipped.
+            (candidate_dir / "scoring_error.log").write_text(str(exc), encoding="utf-8")
+            success = False
+            sim_dir = None
 
     return {
         "candidate_id": candidate_id,
@@ -122,8 +204,9 @@ def run_candidates(
     parallel: int = 1,
     python: str = sys.executable,
     repo_root: Path | None = None,
+    device: str = "cpu",
 ) -> list[dict[str, Any]]:
-    """Run candidate simulations, one per overlay.
+    """Run candidate simulations, score each, one per overlay.
 
     Parameters
     ----------
@@ -144,6 +227,8 @@ def run_candidates(
     repo_root:
         Repository root directory.  Defaults to the parent of this file's
         package (two levels up from ``calibration/runner.py``).
+    device:
+        Torch device for metric scripts (``cpu``, ``cuda``, ``mps``).
 
     Returns
     -------
@@ -168,6 +253,7 @@ def run_candidates(
                 reference_run_config=reference_run_config,
                 python=python,
                 repo_root=repo_root,
+                device=device,
             )
             results.append(result)
         return results
@@ -186,6 +272,7 @@ def run_candidates(
                 reference_run_config=reference_run_config,
                 python=python,
                 repo_root=repo_root,
+                device=device,
             )
             futures[future] = i
 

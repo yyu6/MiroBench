@@ -103,7 +103,7 @@ def run_calibration_loop(
     metrics: list[str] | None = None,
     metric_definitions: str = "",
     device: str = "cpu",
-    final_sim_runs: int = 25,
+    final_sim_runs: int = 12,
 ) -> dict:
     """Main calibration loop with train/val/test splits.
 
@@ -230,6 +230,7 @@ def run_calibration_loop(
             parallel=parallel,
             python=python,
             repo_root=repo_root,
+            device=device,
         )
 
         # -------------------------------------------------------------------
@@ -327,6 +328,7 @@ def run_calibration_loop(
         metrics=metrics,
         python=python,
         repo_root=repo_root,
+        device=device,
     )
 
     summary = {
@@ -356,6 +358,7 @@ def _run_final_evaluation(
     metrics: list[str],
     python: str,
     repo_root: Path,
+    device: str = "cpu",
 ) -> dict:
     """Generate fresh simulations with best_overlay, score against test split.
 
@@ -384,6 +387,7 @@ def _run_final_evaluation(
         parallel=1,
         python=python,
         repo_root=repo_root,
+        device=device,
     )
 
     # Score all successful runs against test baseline
