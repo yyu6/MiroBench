@@ -56,6 +56,9 @@ class CalibrationState:
     current_best_overlay : dict
     current_best_score : dict | None
     current_best_diagnostic : dict | None
+    current_best_sim_dir : str | None
+        Path to the sim output directory of the current best candidate.
+        Used as the ``--few-shot-source`` for the next iteration.
     completed_iterations : int
     """
 
@@ -65,6 +68,7 @@ class CalibrationState:
         self.current_best_overlay: dict = {}
         self.current_best_score: dict | None = None
         self.current_best_diagnostic: dict | None = None
+        self.current_best_sim_dir: str | None = None
         self.completed_iterations: int = 0
 
         if self.state_path.exists():
@@ -81,6 +85,7 @@ class CalibrationState:
             "current_best_overlay": self.current_best_overlay,
             "current_best_score": self.current_best_score,
             "current_best_diagnostic": self.current_best_diagnostic,
+            "current_best_sim_dir": self.current_best_sim_dir,
             "completed_iterations": self.completed_iterations,
         }
         self.state_path.write_text(
@@ -98,6 +103,7 @@ class CalibrationState:
         self.current_best_overlay = raw.get("current_best_overlay", {})
         self.current_best_score = raw.get("current_best_score")
         self.current_best_diagnostic = raw.get("current_best_diagnostic")
+        self.current_best_sim_dir = raw.get("current_best_sim_dir")
         self.completed_iterations = raw.get("completed_iterations", 0)
 
 
@@ -121,6 +127,8 @@ def run_calibration_loop(
     metrics: list[str] | None = None,
     metric_definitions: str = "",
     device: str = "cpu",
+    baseline_sim_dir: Path | None = None,
+    few_shot_count: int = 3,
 ) -> dict:
     """Main calibration loop.
 
@@ -157,6 +165,15 @@ def run_calibration_loop(
         Plain-text descriptions of each metric for the LLM prompt.
     device : str
         Device hint (e.g. ``"cpu"`` / ``"cuda"``).
+    baseline_sim_dir : Path | None
+        A pre-existing simulation directory (e.g. from the baseline evaluation
+        run) to use as the few-shot source for iteration 0.  If ``None``,
+        iteration 0 runs without few-shot examples.  Subsequent iterations
+        always use the best candidate sim dir from the previous iteration.
+    few_shot_count : int
+        Number of few-shot examples injected into each candidate simulation
+        (``--few-shot-count`` flag).  Applied whenever a few-shot source is
+        available.  Default: 3.
 
     Returns
     -------
@@ -195,11 +212,28 @@ def run_calibration_loop(
     )
 
     # -----------------------------------------------------------------------
+    # Initialise few-shot source tracking
+    # -----------------------------------------------------------------------
+    # Restored from state on resume; otherwise seed from baseline_sim_dir if
+    # provided (converts to str for JSON serializability).
+    if state.current_best_sim_dir is None and baseline_sim_dir is not None:
+        state.current_best_sim_dir = str(baseline_sim_dir)
+
+    # -----------------------------------------------------------------------
     # Main loop
     # -----------------------------------------------------------------------
     for iteration in range(state.completed_iterations, max_iterations):
         iter_dir = output_dir / f"iter_{iteration:03d}"
         iter_dir.mkdir(parents=True, exist_ok=True)
+
+        # -------------------------------------------------------------------
+        # Build per-iteration run config with few-shot injection
+        # -------------------------------------------------------------------
+        # We copy so the original reference_run_config is never mutated.
+        iter_run_config = dict(reference_run_config)
+        if state.current_best_sim_dir is not None:
+            iter_run_config["few_shot_source"] = state.current_best_sim_dir
+            iter_run_config["few_shot_count"] = few_shot_count
 
         # -------------------------------------------------------------------
         # Build candidate overlays
@@ -257,7 +291,7 @@ def run_calibration_loop(
         candidate_results = run_candidates(
             overlays=overlays,
             iter_dir=iter_dir,
-            reference_run_config=reference_run_config,
+            reference_run_config=iter_run_config,
             parallel=parallel,
             python=python,
             repo_root=repo_root,
@@ -314,6 +348,16 @@ def run_calibration_loop(
                     k: v for k, v in winner.items()
                     if k not in ("candidate_id", "candidate_dir", "overlay")
                 }
+                # Track the winning sim dir so next iteration uses it as
+                # few-shot source.
+                winner_candidate_id = winner.get("candidate_id")
+                if winner_candidate_id is not None:
+                    matching = [
+                        r for r in candidate_results
+                        if r["candidate_id"] == winner_candidate_id and r.get("sim_dir")
+                    ]
+                    if matching:
+                        state.current_best_sim_dir = matching[0]["sim_dir"]
 
         # -------------------------------------------------------------------
         # Prepare log entry (candidates without thread-level data to keep log small)

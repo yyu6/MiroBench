@@ -21,6 +21,22 @@ def main() -> None:
     parser.add_argument("--resume", action="store_true", help="Resume a previous run.")
     parser.add_argument("--device", default="cpu", choices=["cpu", "cuda", "mps", "auto"], help="Device for torch-based metrics.")
     parser.add_argument("--python", default=sys.executable, help="Python executable.")
+    parser.add_argument(
+        "--baseline-sim-dir",
+        default=None,
+        help=(
+            "Path to a simulation output directory (e.g. from the baseline "
+            "evaluation run) used as the few-shot source for calibration "
+            "iteration 0.  Subsequent iterations automatically use the best "
+            "candidate sim dir from the previous iteration."
+        ),
+    )
+    parser.add_argument(
+        "--few-shot-count",
+        type=int,
+        default=3,
+        help="Number of few-shot examples injected per candidate simulation (default: 3).",
+    )
     args = parser.parse_args()
 
     repo_root = Path(__file__).resolve().parent.parent
@@ -52,6 +68,12 @@ def main() -> None:
 
     from .orchestrator import run_calibration_loop
 
+    baseline_sim_dir = (
+        Path(args.baseline_sim_dir).resolve()
+        if args.baseline_sim_dir
+        else None
+    )
+
     summary = run_calibration_loop(
         output_dir=output_dir,
         real_dir=real_dir,
@@ -67,6 +89,8 @@ def main() -> None:
         repo_root=repo_root,
         metric_definitions=metric_definitions,
         device=args.device,
+        baseline_sim_dir=baseline_sim_dir,
+        few_shot_count=args.few_shot_count,
     )
 
     print(f"\n{'='*60}")
