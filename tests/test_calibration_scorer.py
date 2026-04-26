@@ -13,6 +13,7 @@ import pytest
 from calibration.scorer import (
     load_thread_metrics,
     compute_real_baseline,
+    compute_baseline_from_csv,
     score_candidate,
     select_best_candidate,
     DEFAULT_METRICS,
@@ -78,6 +79,41 @@ class TestLoadThreadMetrics:
         df = load_thread_metrics(tmp_path)
         assert len(df) == 10  # 5 + 5
         assert "_product_dir" in df.columns
+
+
+# ---------------------------------------------------------------------------
+# TestComputeRealBaseline
+# ---------------------------------------------------------------------------
+
+
+class TestComputeBaselineFromCsv:
+    def test_reads_csv_directly(self, tmp_path: Path) -> None:
+        rows = _make_real_rows(30)
+        csv_path = tmp_path / "thread_scores_val.csv"
+        _write_csv(csv_path, rows)
+
+        baseline = compute_baseline_from_csv(csv_path, MINIMAL_METRICS)
+
+        assert isinstance(baseline, dict)
+        for metric in MINIMAL_METRICS:
+            assert metric in baseline
+            info = baseline[metric]
+            assert "median" in info
+            assert "mean" in info
+            assert "values" in info
+            assert len(info["values"]) == 30
+            expected_median = float(np.median([r[metric] for r in rows]))
+            assert info["median"] == pytest.approx(expected_median)
+
+    def test_missing_column_returns_empty(self, tmp_path: Path) -> None:
+        rows = [{"toxicity_mean": 0.1}]
+        csv_path = tmp_path / "partial.csv"
+        _write_csv(csv_path, rows)
+
+        baseline = compute_baseline_from_csv(csv_path, MINIMAL_METRICS)
+        assert baseline["toxicity_mean"]["values"] == [0.1]
+        assert baseline["length_std"]["values"] == []
+        assert baseline["max_depth"]["values"] == []
 
 
 # ---------------------------------------------------------------------------

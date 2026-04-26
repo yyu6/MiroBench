@@ -9,6 +9,7 @@ run_calibration_loop  : Main calibration loop.
 from __future__ import annotations
 
 import json
+import subprocess
 import sys
 from datetime import datetime
 from pathlib import Path
@@ -30,7 +31,7 @@ from .registry import KnobRegistry
 from .runner import run_candidates
 from .scorer import (
     DEFAULT_METRICS,
-    compute_real_baseline,
+    compute_baseline_from_csv,
     load_thread_metrics,
     score_candidate,
     select_best_candidate,
@@ -46,20 +47,6 @@ class CalibrationState:
     """Persistent state for a calibration run, with resume support.
 
     The state is serialised to ``output_dir/calibration_state.json``.
-    If that file already exists on construction the state is loaded from it,
-    enabling resumption of a previously interrupted run.
-
-    Attributes
-    ----------
-    output_dir : Path
-    state_path : Path
-    current_best_overlay : dict
-    current_best_score : dict | None
-    current_best_diagnostic : dict | None
-    current_best_sim_dir : str | None
-        Path to the sim output directory of the current best candidate.
-        Used as the ``--few-shot-source`` for the next iteration.
-    completed_iterations : int
     """
 
     def __init__(self, output_dir: Path) -> None:
@@ -68,24 +55,17 @@ class CalibrationState:
         self.current_best_overlay: dict = {}
         self.current_best_score: dict | None = None
         self.current_best_diagnostic: dict | None = None
-        self.current_best_sim_dir: str | None = None
         self.completed_iterations: int = 0
 
         if self.state_path.exists():
             self._load()
 
-    # ------------------------------------------------------------------
-    # Public API
-    # ------------------------------------------------------------------
-
     def save(self) -> None:
-        """Write current state to JSON."""
         self.output_dir.mkdir(parents=True, exist_ok=True)
         data = {
             "current_best_overlay": self.current_best_overlay,
             "current_best_score": self.current_best_score,
             "current_best_diagnostic": self.current_best_diagnostic,
-            "current_best_sim_dir": self.current_best_sim_dir,
             "completed_iterations": self.completed_iterations,
         }
         self.state_path.write_text(
@@ -93,17 +73,11 @@ class CalibrationState:
             encoding="utf-8",
         )
 
-    # ------------------------------------------------------------------
-    # Internal helpers
-    # ------------------------------------------------------------------
-
     def _load(self) -> None:
-        """Read state from JSON."""
         raw = json.loads(self.state_path.read_text(encoding="utf-8"))
         self.current_best_overlay = raw.get("current_best_overlay", {})
         self.current_best_score = raw.get("current_best_score")
         self.current_best_diagnostic = raw.get("current_best_diagnostic")
-        self.current_best_sim_dir = raw.get("current_best_sim_dir")
         self.completed_iterations = raw.get("completed_iterations", 0)
 
 
@@ -113,7 +87,9 @@ class CalibrationState:
 
 def run_calibration_loop(
     output_dir: Path,
-    real_dir: Path,
+    real_train_csv: Path,
+    real_val_csv: Path,
+    real_test_csv: Path,
     reference_run_config: dict,
     max_iterations: int = 10,
     candidates_per_iter: int = 5,
@@ -127,72 +103,41 @@ def run_calibration_loop(
     metrics: list[str] | None = None,
     metric_definitions: str = "",
     device: str = "cpu",
-    baseline_sim_dir: Path | None = None,
-    few_shot_count: int = 3,
+    final_sim_runs: int = 25,
 ) -> dict:
-    """Main calibration loop.
+    """Main calibration loop with train/val/test splits.
 
     Parameters
     ----------
     output_dir : Path
         Root directory for all calibration artefacts.
-    real_dir : Path
-        Category dir (e.g., ``data/raw/discussions/credit_cards``) whose
-        subdirs each contain a ``thread_metrics_summary.csv``, or a single
-        product dir with that file directly.  All CSVs are aggregated into the
-        real baseline distribution.
+    real_train_csv : Path
+        Thread scores CSV for the train split — used by the LLM reasoner to
+        build baseline context (medians) and diagnostics.
+    real_val_csv : Path
+        Thread scores CSV for the validation split — used to score candidates
+        and select the best overlay each iteration.
+    real_test_csv : Path
+        Thread scores CSV for the test split — used only for the final
+        post-calibration evaluation.
     reference_run_config : dict
-        Baseline run parameters forwarded to ``run_discussion.py``
+        Simulation parameters forwarded to ``run_discussion.py``
         (keys: ``input_file``, ``agents``, ``hours``, ``rounds``,
-        ``seed_posts``, ``seed``, ``hint``, ``discussion_backbone``).
-    max_iterations : int
-        Maximum number of calibration iterations.
-    candidates_per_iter : int
-        Number of candidate overlays to evaluate per iteration (iteration 0
-        runs this many copies of the default overlay).
-    parallel : int
-        Worker count for candidate simulation.
-    calibration_model : str
-        OpenAI model for the LLM reasoner.
-    api_key : str
-        OpenAI API key.
-    base_url : str
-        OpenAI API base URL.
-    seed : int
-        Random seed for reproducibility.
-    python : str
-        Python executable to use for subprocesses.
-    repo_root : Path | None
-        Repository root (inferred if None).
-    metrics : list[str] | None
-        Metrics to evaluate. Defaults to ``DEFAULT_METRICS``.
-    metric_definitions : str
-        Plain-text descriptions of each metric for the LLM prompt.
-    device : str
-        Device hint (e.g. ``"cpu"`` / ``"cuda"``).
-    baseline_sim_dir : Path | None
-        A pre-existing simulation directory (e.g. from the baseline evaluation
-        run) to use as the few-shot source for iteration 0.  If ``None``,
-        iteration 0 runs without few-shot examples.  Subsequent iterations
-        always use the best candidate sim dir from the previous iteration.
-    few_shot_count : int
-        Number of few-shot examples injected into each candidate simulation
-        (``--few-shot-count`` flag).  Applied whenever a few-shot source is
-        available.  Default: 3.
+        ``seed_posts``, ``seed``, ``hint``, ``discussion_backbone``,
+        ``few_shot_source``, ``few_shot_count``).
+    final_sim_runs : int
+        Number of fresh simulations for the final test evaluation.
 
     Returns
     -------
-    dict
-        Calibration summary with keys: ``best_overlay``, ``best_score``,
-        ``completed_iterations``, ``output_dir``.
+    dict with keys: ``best_overlay``, ``best_score``, ``completed_iterations``,
+    ``output_dir``, ``final_evaluation``.
     """
     output_dir = Path(output_dir)
-    real_dir = Path(real_dir)
     output_dir.mkdir(parents=True, exist_ok=True)
 
     if metrics is None:
         metrics = DEFAULT_METRICS
-
     if repo_root is None:
         repo_root = Path(__file__).parent.parent
 
@@ -205,24 +150,20 @@ def run_calibration_loop(
     client = OpenAI(api_key=api_key, base_url=base_url)
 
     # -----------------------------------------------------------------------
-    # Compute real baseline
+    # Compute baselines from train and val splits
     # -----------------------------------------------------------------------
-    real_baseline = compute_real_baseline(real_dir, metrics)
+    train_baseline = compute_baseline_from_csv(real_train_csv, metrics)
+    val_baseline = compute_baseline_from_csv(real_val_csv, metrics)
 
-    # Save baseline medians for reference
-    baseline_medians = {m: v["median"] for m, v in real_baseline.items()}
-    (output_dir / "real_baseline_metrics.json").write_text(
-        json.dumps(baseline_medians, indent=2),
-        encoding="utf-8",
+    # Save train medians (used by reasoner)
+    train_medians = {m: v["median"] for m, v in train_baseline.items()}
+    (output_dir / "real_train_baseline_metrics.json").write_text(
+        json.dumps(train_medians, indent=2), encoding="utf-8",
     )
-
-    # -----------------------------------------------------------------------
-    # Initialise few-shot source tracking
-    # -----------------------------------------------------------------------
-    # Restored from state on resume; otherwise seed from baseline_sim_dir if
-    # provided (converts to str for JSON serializability).
-    if state.current_best_sim_dir is None and baseline_sim_dir is not None:
-        state.current_best_sim_dir = str(baseline_sim_dir)
+    val_medians = {m: v["median"] for m, v in val_baseline.items()}
+    (output_dir / "real_val_baseline_metrics.json").write_text(
+        json.dumps(val_medians, indent=2), encoding="utf-8",
+    )
 
     # -----------------------------------------------------------------------
     # Main loop
@@ -232,31 +173,21 @@ def run_calibration_loop(
         iter_dir.mkdir(parents=True, exist_ok=True)
 
         # -------------------------------------------------------------------
-        # Build per-iteration run config with few-shot injection
-        # -------------------------------------------------------------------
-        # We copy so the original reference_run_config is never mutated.
-        iter_run_config = dict(reference_run_config)
-        if state.current_best_sim_dir is not None:
-            iter_run_config["few_shot_source"] = state.current_best_sim_dir
-            iter_run_config["few_shot_count"] = few_shot_count
-
-        # -------------------------------------------------------------------
         # Build candidate overlays
         # -------------------------------------------------------------------
-        parsed: dict = {}  # populated only for iteration > 0
+        parsed: dict = {}
         if iteration == 0:
-            # Default overlays — no LLM call
             strategy_label = "defaults"
             diagnosis = "Initial baseline run using default knob values."
             overlay_diff: dict = {}
             overlays = [dict(state.current_best_overlay) for _ in range(candidates_per_iter)]
         else:
-            # Build prompt from current best state
+            # Build prompt — uses TRAIN baseline for context
             prompt = build_reasoner_prompt(
                 registry=registry,
                 current_overlay=state.current_best_overlay,
                 current_diagnostic=state.current_best_diagnostic or {},
-                real_baseline=baseline_medians,
+                real_baseline=train_medians,
                 trajectory=log.trajectory(),
                 failed_strategies=log.failed_strategies(),
                 metric_definitions=metric_definitions,
@@ -278,17 +209,14 @@ def run_calibration_loop(
                 conservative_diff=parsed.get("conservative_diff"),
             )
 
-        # Save diagnosis for this iteration
+        # Save diagnosis
         (iter_dir / "diagnosis.json").write_text(
-            json.dumps(
-                {
-                    "iteration": iteration,
-                    "strategy_label": strategy_label,
-                    "diagnosis": diagnosis,
-                    "overlay_diff": overlay_diff,
-                },
-                indent=2,
-            ),
+            json.dumps({
+                "iteration": iteration,
+                "strategy_label": strategy_label,
+                "diagnosis": diagnosis,
+                "overlay_diff": overlay_diff,
+            }, indent=2),
             encoding="utf-8",
         )
 
@@ -298,14 +226,14 @@ def run_calibration_loop(
         candidate_results = run_candidates(
             overlays=overlays,
             iter_dir=iter_dir,
-            reference_run_config=iter_run_config,
+            reference_run_config=reference_run_config,
             parallel=parallel,
             python=python,
             repo_root=repo_root,
         )
 
         # -------------------------------------------------------------------
-        # Score successful candidates
+        # Score candidates against VALIDATION baseline
         # -------------------------------------------------------------------
         scored: list[dict] = []
         for result in candidate_results:
@@ -313,22 +241,18 @@ def run_calibration_loop(
                 continue
             sim_dir = Path(result["sim_dir"])
             try:
-                sc = score_candidate(sim_dir, real_baseline, metrics)
+                sc = score_candidate(sim_dir, val_baseline, metrics)
                 sc["candidate_id"] = result["candidate_id"]
                 sc["candidate_dir"] = result["candidate_dir"]
                 sc["overlay"] = overlays[result["candidate_id"]]
                 scored.append(sc)
             except Exception:
-                # Missing CSV or other scoring error — skip
                 pass
 
         # -------------------------------------------------------------------
-        # Select best candidate this iteration
+        # Select best candidate
         # -------------------------------------------------------------------
-        if scored:
-            winner = select_best_candidate(scored)
-        else:
-            winner = None
+        winner = select_best_candidate(scored) if scored else None
 
         # -------------------------------------------------------------------
         # Check if winner beats current best
@@ -338,11 +262,10 @@ def run_calibration_loop(
             if state.current_best_score is None:
                 beat_current_best = True
             else:
-                prev_fail = state.current_best_score["fail_rate"]
-                prev_delta = state.current_best_score["mean_abs_delta"]
-                new_fail = winner["fail_rate"]
-                new_delta = winner["mean_abs_delta"]
-                if (new_fail, new_delta) < (prev_fail, prev_delta):
+                prev = (state.current_best_score["fail_rate"],
+                        state.current_best_score["mean_abs_delta"])
+                new = (winner["fail_rate"], winner["mean_abs_delta"])
+                if new < prev:
                     beat_current_best = True
 
             if beat_current_best:
@@ -355,22 +278,11 @@ def run_calibration_loop(
                     k: v for k, v in winner.items()
                     if k not in ("candidate_id", "candidate_dir", "overlay")
                 }
-                # Track the winning sim dir so next iteration uses it as
-                # few-shot source.
-                winner_candidate_id = winner.get("candidate_id")
-                if winner_candidate_id is not None:
-                    matching = [
-                        r for r in candidate_results
-                        if r["candidate_id"] == winner_candidate_id and r.get("sim_dir")
-                    ]
-                    if matching:
-                        state.current_best_sim_dir = matching[0]["sim_dir"]
 
         # -------------------------------------------------------------------
-        # Prepare log entry (candidates without thread-level data to keep log small)
+        # Log entry
         # -------------------------------------------------------------------
-        def _slim_candidate(c: dict) -> dict:
-            """Strip 'threads' from per_metric dicts to keep log small."""
+        def _slim(c: dict) -> dict:
             slim = {k: v for k, v in c.items() if k != "per_metric"}
             slim["per_metric_summary"] = {
                 m: {sk: sv for sk, sv in md.items() if sk != "threads"}
@@ -378,49 +290,142 @@ def run_calibration_loop(
             }
             return slim
 
-        slim_candidates = [_slim_candidate(c) for c in scored]
-
-        best_fail_rate = winner["fail_rate"] if winner else None
-        best_delta = winner["mean_abs_delta"] if winner else None
-
-        log_entry: dict[str, Any] = {
+        log.append({
             "iteration": iteration,
             "timestamp": datetime.utcnow().isoformat() + "Z",
             "strategy_label": strategy_label,
-            "primary_layer": parsed.get("primary_layer", "") if iteration > 0 else "",
+            "primary_layer": parsed.get("primary_layer", ""),
             "diagnosis": diagnosis,
             "overlay_diff": overlay_diff,
-            "candidate_rationale": parsed.get("candidate_rationale", []) if iteration > 0 else [],
-            "candidates": slim_candidates,
+            "candidate_rationale": parsed.get("candidate_rationale", []),
+            "candidates": [_slim(c) for c in scored],
             "selection": {
                 "winner_candidate_id": winner["candidate_id"] if winner else None,
                 "beat_current_best": beat_current_best,
-                "best_fail_rate": best_fail_rate,
-                "best_mean_abs_delta": best_delta,
+                "best_fail_rate": winner["fail_rate"] if winner else None,
+                "best_mean_abs_delta": winner["mean_abs_delta"] if winner else None,
             },
-        }
-        log.append(log_entry)
+        })
 
-        # -------------------------------------------------------------------
-        # Advance state
-        # -------------------------------------------------------------------
         state.completed_iterations = iteration + 1
         state.save()
 
     # -----------------------------------------------------------------------
-    # Export final artefacts
+    # Export best overlay
     # -----------------------------------------------------------------------
     save_overlay(state.current_best_overlay, output_dir / "best_overlay.json")
+
+    # -----------------------------------------------------------------------
+    # Final evaluation on TEST split
+    # -----------------------------------------------------------------------
+    final_eval = _run_final_evaluation(
+        output_dir=output_dir,
+        best_overlay=state.current_best_overlay,
+        real_test_csv=real_test_csv,
+        reference_run_config=reference_run_config,
+        sim_runs=final_sim_runs,
+        metrics=metrics,
+        python=python,
+        repo_root=repo_root,
+    )
 
     summary = {
         "best_overlay": state.current_best_overlay,
         "best_score": state.current_best_score,
         "completed_iterations": state.completed_iterations,
         "output_dir": str(output_dir),
+        "final_evaluation": final_eval,
     }
     (output_dir / "calibration_summary.json").write_text(
         json.dumps(summary, indent=2, ensure_ascii=False),
         encoding="utf-8",
     )
-
     return summary
+
+
+# ---------------------------------------------------------------------------
+# Final post-calibration evaluation
+# ---------------------------------------------------------------------------
+
+def _run_final_evaluation(
+    output_dir: Path,
+    best_overlay: dict,
+    real_test_csv: Path,
+    reference_run_config: dict,
+    sim_runs: int,
+    metrics: list[str],
+    python: str,
+    repo_root: Path,
+) -> dict:
+    """Generate fresh simulations with best_overlay, score against test split.
+
+    Returns a dict with keys: fail_rate, mean_abs_delta, per_metric, sim_runs.
+    """
+    final_dir = output_dir / "final_evaluation"
+    final_dir.mkdir(parents=True, exist_ok=True)
+
+    # Save the overlay used
+    overlay_path = final_dir / "overlay.json"
+    save_overlay(best_overlay, overlay_path)
+
+    # Build test baseline
+    test_baseline = compute_baseline_from_csv(real_test_csv, metrics)
+
+    # Run fresh simulations
+    print(f"\n{'='*60}")
+    print(f"FINAL EVALUATION: Generating {sim_runs} fresh simulations with best overlay")
+    print(f"{'='*60}")
+
+    overlays = [dict(best_overlay) for _ in range(sim_runs)]
+    results = run_candidates(
+        overlays=overlays,
+        iter_dir=final_dir,
+        reference_run_config=reference_run_config,
+        parallel=1,
+        python=python,
+        repo_root=repo_root,
+    )
+
+    # Score all successful runs against test baseline
+    scored: list[dict] = []
+    for result in results:
+        if not result["success"] or result["sim_dir"] is None:
+            continue
+        sim_dir = Path(result["sim_dir"])
+        try:
+            sc = score_candidate(sim_dir, test_baseline, metrics)
+            sc["candidate_id"] = result["candidate_id"]
+            scored.append(sc)
+        except Exception:
+            pass
+
+    if not scored:
+        print("[WARN] No successful final simulations to evaluate.")
+        return {"fail_rate": None, "mean_abs_delta": None, "sim_runs": 0}
+
+    # Aggregate across all scored runs
+    all_fail_rates = [s["fail_rate"] for s in scored]
+    all_abs_deltas = [s["mean_abs_delta"] for s in scored]
+
+    final_result = {
+        "fail_rate": float(np.mean(all_fail_rates)),
+        "mean_abs_delta": float(np.mean(all_abs_deltas)),
+        "sim_runs": len(scored),
+        "per_run": [
+            {"candidate_id": s["candidate_id"],
+             "fail_rate": s["fail_rate"],
+             "mean_abs_delta": s["mean_abs_delta"]}
+            for s in scored
+        ],
+    }
+
+    (final_dir / "test_evaluation.json").write_text(
+        json.dumps(final_result, indent=2, ensure_ascii=False),
+        encoding="utf-8",
+    )
+
+    print(f"Final test fail rate:   {final_result['fail_rate']:.4f}")
+    print(f"Final test |delta|:     {final_result['mean_abs_delta']:.4f}")
+    print(f"Successful runs:        {final_result['sim_runs']}/{sim_runs}")
+
+    return final_result

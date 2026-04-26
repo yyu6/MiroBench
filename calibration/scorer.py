@@ -116,8 +116,23 @@ def compute_real_baseline(real_dir: Path, metrics: list[str]) -> dict[str, dict]
     dict[metric_name -> {median, mean, values}]
     """
     df = load_thread_metrics(real_dir)
-    baseline: dict[str, dict] = {}
+    return _baseline_from_df(df, metrics)
 
+
+def compute_baseline_from_csv(csv_path: Path, metrics: list[str]) -> dict[str, dict]:
+    """Compute baseline statistics from a pre-split CSV file.
+
+    Same output format as :func:`compute_real_baseline` but reads directly from
+    a thread-scores CSV (e.g. ``thread_scores_train.csv``) rather than walking
+    a directory tree.
+    """
+    df = pd.read_csv(csv_path)
+    return _baseline_from_df(df, metrics)
+
+
+def _baseline_from_df(df: pd.DataFrame, metrics: list[str]) -> dict[str, dict]:
+    """Build {metric: {median, mean, values}} from a DataFrame."""
+    baseline: dict[str, dict] = {}
     for metric in metrics:
         if metric not in df.columns:
             vals: list[float] = []
@@ -130,7 +145,6 @@ def compute_real_baseline(real_dir: Path, metrics: list[str]) -> dict[str, dict]
             "mean": float(np.mean(arr)) if arr.size > 0 else float("nan"),
             "values": vals,
         }
-
     return baseline
 
 
