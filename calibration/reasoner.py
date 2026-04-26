@@ -376,10 +376,16 @@ def call_reasoner(client, model: str, prompt: str) -> str:
             _openai.api_base = str(_base_url)
         response = _openai.ChatCompletion.create(
             model=model,
-            messages=[{"role": "user", "content": prompt}],
+            messages=[
+                {"role": "system", "content": "You are a calibration reasoner. Always respond with valid JSON."},
+                {"role": "user", "content": prompt},
+            ],
             temperature=0.4,
         )
-        return response["choices"][0]["message"]["content"]
+        content = response["choices"][0]["message"]["content"]
+        if not content or not content.strip():
+            raise RuntimeError(f"LLM returned empty response. Full response: {response}")
+        return content
 
 
 # ---------------------------------------------------------------------------
@@ -395,7 +401,18 @@ def parse_reasoner_response(raw: str) -> dict:
                     overlay_diff, conservative_diff, prompt_alternatives,
                     candidate_rationale, constraints.
     """
-    data = json.loads(raw)
+    if not raw or not raw.strip():
+        raise ValueError("Reasoner returned empty response")
+
+    # Strip markdown fences if the LLM wrapped JSON in ```json ... ```
+    cleaned = raw.strip()
+    if cleaned.startswith("```"):
+        lines = cleaned.split("\n")
+        # Drop first line (```json) and last line (```)
+        lines = [l for l in lines if not l.strip().startswith("```")]
+        cleaned = "\n".join(lines)
+
+    data = json.loads(cleaned)
 
     required = ("diagnosis", "strategy", "strategy_label", "overlay_diff")
     for field in required:
