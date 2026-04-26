@@ -20,6 +20,83 @@ from .registry import KnobRegistry
 
 
 # ---------------------------------------------------------------------------
+# Static calibration knowledge injected into every reasoner prompt
+# ---------------------------------------------------------------------------
+
+METRIC_INTERPRETATION = """
+## Metric Interpretation Guide
+
+### P-value tier classification (apply to each metric's fail_rate and cliffs_delta)
+- CRITICAL  : fail_rate > 0.50  OR  |cliffs_delta| >= 0.474  →  clearly deviating from real baseline
+- SECONDARY : fail_rate 0.20–0.50  OR  0.33 <= |cliffs_delta| < 0.474  →  mildly suspicious
+- ACCEPTABLE: fail_rate < 0.20  AND  |cliffs_delta| < 0.33  →  within normal range
+
+### Content diversity metrics
+- self_bleu_4:
+  - generated_higher → comments are too lexically repetitive or templated; increase viewpoint variety
+  - generated_lower  → comments are overly scattered; improve topical coherence
+- self_bertscore_mean_f1:
+  - generated_higher → comments are too semantically similar; add more distinct perspectives
+  - generated_lower  → comments may be incoherent or off-topic; align to discussion context
+- semantic_mean_cosine:
+  - generated_higher → discussion is too semantically homogeneous; diversify viewpoints
+  - generated_lower  → discussion lacks shared topic focus; improve topical anchoring
+
+### Structural complexity metrics
+- length_std / length_cv:
+  - generated_higher → comment lengths vary too much; narrow the length distribution
+  - generated_lower  → comments are mechanically uniform; allow more natural length variation
+- avg_depth:
+  - generated_higher → discussion is too deeply nested; reduce back-and-forth chains
+  - generated_lower  → discussion is too flat; encourage reply chains and nested responses
+- avg_branching_factor:
+  - generated_higher → too many replies branch from single comments; reduce branching
+  - generated_lower  → discussion lacks branching interactions; encourage more direct replies
+- structural_virality:
+  - generated_higher → reply tree is too chain-like; make thread more compact
+  - generated_lower  → discussion is too flat/broadcast-like; add reply interactions
+
+### Toxicity / aggression metrics
+- toxicity_mean:
+  - generated_higher → discussion is too toxic; reduce hostile language
+  - generated_lower  → discussion may be too sanitized; add mild disagreement or skepticism
+- insult_mean:
+  - generated_higher → too many insults; reduce direct personal attacks
+  - generated_lower  → too polite or conflict-avoidant; allow blunter pushback
+- obscene_mean:
+  - generated_higher → too much obscene language; reduce
+  - generated_lower  → may lack casual harsh Reddit-style language
+- aggression_score_mean:
+  - generated_higher → discussion is too aggressive; soften tone
+  - generated_lower  → discussion is too agreeable; add natural skepticism or bluntness
+- threat_mean / severe_toxicity_mean / identity_attack_mean:
+  - generated_higher → over-generated; reduce immediately
+  - generated_lower  → ACCEPTABLE — do NOT optimize upward; never recommend adding threats,
+                       hate speech, severe toxicity, or identity attacks as a strategy
+""".strip()
+
+CALIBRATION_PRINCIPLES = """
+## Calibration Principles
+
+1. Prioritize CRITICAL metrics first. Address SECONDARY metrics only if CRITICAL ones are resolved.
+2. Do not overcorrect. Suggest moderate changes unless many metrics in the same dimension fail.
+3. Identify the PRIMARY LAYER to change for each issue:
+   - Persona layer (distributions, sentiment_bias): controls WHO speaks and with what attitude
+   - Prompt layer (text instructions): controls HOW agents write their responses
+   - Use persona layer for: fixing diversity/repetition, stance balance, aggression/politeness levels
+   - Use prompt layer for: fixing structural patterns, length uniformity, paraphrasing, consensus artifacts
+4. Content diversity too high → increase viewpoint diversity via stance/conflict_style/motivation distributions
+5. Content diversity too low  → improve topical anchoring via tone_guidance and depth instructions
+6. Structural metrics too low → encourage reply chains via structure_preference_weight and prompt instructions
+7. Structural metrics too high → reduce excessive nesting via depth_soft_cap and structure_preference_weight
+8. Toxicity/aggression too low  → shift conflict_style toward blunt/skeptical/argumentative; add pushback instructions
+9. Toxicity/aggression too high → shift conflict_style toward calm/avoidant; soften tone_guidance
+10. Never recommend adding identity_attack, threats, hate speech, or severe toxicity. If those are too low, mark as acceptable.
+11. For the 5 candidates, explore a gradient: conservative → primary → aggressive, plus prompt variants.
+""".strip()
+
+
+# ---------------------------------------------------------------------------
 # Prompt assembly
 # ---------------------------------------------------------------------------
 
@@ -37,78 +114,111 @@ def build_reasoner_prompt(
     Parameters
     ----------
     registry : KnobRegistry
-        The knob registry providing knob descriptions.
     current_overlay : dict
-        Current active overlay (knob name → value).
     current_diagnostic : dict
-        Diagnostic from the last evaluation run, containing keys:
-        ``fail_rate``, ``mean_abs_delta``, ``per_metric``.
+        Output of score_candidate: {fail_rate, mean_abs_delta, per_metric}.
     real_baseline : dict
-        Median values from real Reddit data (metric name → float).
+        Median values from real Reddit data {metric_name: float}.
     trajectory : list[dict]
-        History of iterations, each with ``iteration``, ``fail_rate``,
-        ``strategy_label``.
+        Per-iteration history.
     failed_strategies : list[str]
-        Strategy labels that have already been tried and did not improve.
+        Strategy labels already tried without improvement.
     metric_definitions : str
-        Plain-text description of each metric.
+        Optional external metric reference (may be empty).
 
     Returns
     -------
     str
-        The assembled prompt string.
     """
     sections: list[str] = []
 
-    # --- Metric definitions ---
-    sections.append("# Metric Definitions\n")
-    sections.append(metric_definitions.strip())
+    # ── Metric interpretation and calibration principles ──────────────────
+    sections.append(METRIC_INTERPRETATION)
+    sections.append("")
+    sections.append(CALIBRATION_PRINCIPLES)
     sections.append("")
 
-    # --- Tunable Knobs ---
-    sections.append("# Tunable Knobs\n")
+    # ── Optional external metric definitions ──────────────────────────────
+    if metric_definitions and metric_definitions.strip():
+        sections.append("## Additional Metric Reference\n")
+        sections.append(metric_definitions.strip())
+        sections.append("")
+
+    # ── Tunable knobs ─────────────────────────────────────────────────────
+    sections.append("## Tunable Knobs\n")
     sections.append(registry.for_llm_context().strip())
     sections.append("")
 
-    # --- Current Overlay ---
-    sections.append("# Current Overlay\n")
+    # ── Current overlay ───────────────────────────────────────────────────
+    sections.append("## Current Overlay\n")
     sections.append(json.dumps(current_overlay, indent=2))
     sections.append("")
 
-    # --- Current Diagnostic ---
-    sections.append("# Current Diagnostic\n")
+    # ── Current diagnostic (per-metric with tier classification) ──────────
+    sections.append("## Current Diagnostic\n")
     fail_rate = current_diagnostic.get("fail_rate", "N/A")
     mean_abs_delta = current_diagnostic.get("mean_abs_delta", "N/A")
-    per_metric = current_diagnostic.get("per_metric", {})
-    # Exclude threads key if present
-    per_metric_filtered = {
-        k: v for k, v in per_metric.items() if k != "threads"
-    }
-    sections.append(f"fail_rate: {fail_rate}")
-    sections.append(f"mean_abs_delta: {mean_abs_delta}")
-    sections.append("per_metric:")
-    sections.append(json.dumps(per_metric_filtered, indent=2))
+    sections.append(f"overall_fail_rate : {fail_rate}")
+    sections.append(f"mean_abs_delta    : {mean_abs_delta}")
     sections.append("")
 
-    # --- Real Baseline Medians ---
-    sections.append("# Real Baseline Medians\n")
+    per_metric = current_diagnostic.get("per_metric", {})
+    if per_metric:
+        sections.append("Per-metric breakdown (pre-classified by tier):")
+        metric_rows: list[dict] = []
+        for metric, info in per_metric.items():
+            if metric == "threads":
+                continue
+            fr = info.get("fail_rate", 0.0)
+            cd = info.get("cliffs_delta", 0.0)
+            direction = info.get("direction", "")
+            gen_median = info.get("generated_median", "")
+            real_median = info.get("real_median", "")
+
+            # Classify tier
+            if fr > 0.50 or abs(cd) >= 0.474:
+                tier = "CRITICAL"
+            elif fr >= 0.20 or abs(cd) >= 0.33:
+                tier = "SECONDARY"
+            else:
+                tier = "acceptable"
+
+            metric_rows.append({
+                "metric": metric,
+                "tier": tier,
+                "fail_rate": round(fr, 3),
+                "cliffs_delta": round(cd, 3),
+                "direction": direction,
+                "generated_median": gen_median,
+                "real_median": real_median,
+            })
+
+        # Sort: CRITICAL first, then SECONDARY, then acceptable
+        tier_order = {"CRITICAL": 0, "SECONDARY": 1, "acceptable": 2}
+        metric_rows.sort(key=lambda r: (tier_order.get(r["tier"], 3), -abs(r.get("cliffs_delta", 0))))
+        sections.append(json.dumps(metric_rows, indent=2))
+    sections.append("")
+
+    # ── Real baseline medians ──────────────────────────────────────────────
+    sections.append("## Real Baseline Medians\n")
     sections.append(json.dumps(real_baseline, indent=2))
     sections.append("")
 
-    # --- Trajectory ---
-    sections.append("# Calibration Trajectory\n")
+    # ── Calibration trajectory ────────────────────────────────────────────
+    sections.append("## Calibration Trajectory\n")
     if trajectory:
         for entry in trajectory:
-            iter_num = entry.get("iteration", "?")
-            fr = entry.get("fail_rate", "?")
-            label = entry.get("strategy_label", "?")
-            sections.append(f"  iteration {iter_num}: fail_rate={fr}, strategy={label}")
+            sections.append(
+                f"  iteration {entry.get('iteration','?')}: "
+                f"fail_rate={entry.get('fail_rate','?')}, "
+                f"strategy={entry.get('strategy_label','?')}"
+            )
     else:
         sections.append("  (no history yet)")
     sections.append("")
 
-    # --- Failed Strategies ---
-    sections.append("# Failed Strategies (do not repeat these)\n")
+    # ── Failed strategies ─────────────────────────────────────────────────
+    sections.append("## Failed Strategies (do not repeat these)\n")
     if failed_strategies:
         for s in failed_strategies:
             sections.append(f"  - {s}")
@@ -116,30 +226,49 @@ def build_reasoner_prompt(
         sections.append("  (none yet)")
     sections.append("")
 
-    # --- Instructions ---
-    sections.append("# Instructions\n")
+    # ── Task instructions ─────────────────────────────────────────────────
+    sections.append("## Task\n")
     sections.append(
         "You are a calibration reasoner for a Reddit discussion simulator. "
         "Your job is to close the gap between simulated and real Reddit metrics.\n"
         "\n"
-        "Based on the information above, please:\n"
-        "1. Diagnose the root cause of the current metric failures.\n"
-        "2. Propose a concrete calibration strategy (different from any failed strategies above).\n"
-        "3. Output an `overlay_diff` — a partial overlay containing only the knobs you want to change "
-        "and their new values.\n"
-        "4. Provide `prompt_alternatives` — a dict mapping prompt knob names to alternative text "
-        "strings to try (may be empty).\n"
-        "5. List any `constraints` you recommend the system enforce.\n"
+        "Step 1 — DIAGNOSE: For each CRITICAL and SECONDARY metric, explain why it is "
+        "failing, referencing its tier, direction (too_high/too_low), and what that "
+        "implies about the generated discussions.\n"
         "\n"
-        "Respond with a single JSON object with the following keys:\n"
-        "  - `diagnosis` (str): root cause analysis\n"
-        "  - `strategy` (str): what you propose to do and why\n"
-        "  - `strategy_label` (str): a short snake_case identifier for this strategy\n"
-        "  - `overlay_diff` (dict): the partial overlay diff to apply\n"
-        "  - `prompt_alternatives` (dict): prompt knob name → alternative text (may be {})\n"
-        "  - `constraints` (list[str]): any constraints to enforce (may be [])\n"
+        "Step 2 — TARGET LAYER: Decide whether to change the persona layer, the prompt "
+        "layer, or both. Explain your reasoning. Use persona for attitude/distribution "
+        "problems; use prompt for structural/length/paraphrase problems.\n"
         "\n"
-        "Return valid JSON only. Do not include any commentary outside the JSON object."
+        "Step 3 — PRIMARY STRATEGY: Propose a concrete overlay_diff with specific knob "
+        "changes. Values must be valid per the knob registry.\n"
+        "\n"
+        "Step 4 — CONSERVATIVE STRATEGY: Propose a conservative_diff — a smaller version "
+        "of the same strategy (roughly half the magnitude of changes) for safer candidates.\n"
+        "\n"
+        "Step 5 — PROMPT ALTERNATIVES: Provide up to 2 alternative text values for prompt "
+        "knobs (prompt_alternatives dict). Each alternative should differ meaningfully in "
+        "approach, not just wording.\n"
+        "\n"
+        "Step 6 — CANDIDATE PLAN: Briefly describe how each of the 5 candidates will differ:\n"
+        "  candidate_0: primary strategy (overlay_diff)\n"
+        "  candidate_1: conservative strategy (conservative_diff)\n"
+        "  candidate_2: aggressive version (primary strategy with larger perturbations)\n"
+        "  candidate_3: primary strategy + first prompt alternative\n"
+        "  candidate_4: primary strategy + second prompt alternative (or aggressive if none)\n"
+        "\n"
+        "Respond with a single JSON object with these keys:\n"
+        "  - diagnosis        (str)         : root cause analysis with p-value tier references\n"
+        "  - primary_layer    (str)         : 'persona', 'prompt', or 'both'\n"
+        "  - strategy         (str)         : what you propose to change and why\n"
+        "  - strategy_label   (str)         : short snake_case identifier\n"
+        "  - overlay_diff     (dict)        : primary knob changes\n"
+        "  - conservative_diff(dict)        : conservative version (smaller changes)\n"
+        "  - prompt_alternatives (dict)     : prompt knob name → alternative text (may be {})\n"
+        "  - candidate_rationale (list[str]): one sentence per candidate explaining its role\n"
+        "  - constraints      (list[str])   : any hard constraints to enforce (may be [])\n"
+        "\n"
+        "Return valid JSON only. No commentary outside the JSON object."
     )
 
     return "\n".join(sections)
@@ -150,22 +279,7 @@ def build_reasoner_prompt(
 # ---------------------------------------------------------------------------
 
 def call_reasoner(client: OpenAI, model: str, prompt: str) -> str:
-    """Call the OpenAI API with the reasoner prompt.
-
-    Parameters
-    ----------
-    client : OpenAI
-        Authenticated OpenAI client.
-    model : str
-        Model identifier (e.g. ``"gpt-4o"``).
-    prompt : str
-        The assembled reasoner prompt.
-
-    Returns
-    -------
-    str
-        Raw response content string (expected to be JSON).
-    """
+    """Call the OpenAI API with the reasoner prompt."""
     response = client.chat.completions.create(
         model=model,
         messages=[{"role": "user", "content": prompt}],
@@ -183,28 +297,14 @@ def call_reasoner(client: OpenAI, model: str, prompt: str) -> str:
 def parse_reasoner_response(raw: str) -> dict:
     """Parse and validate the LLM's JSON response.
 
-    Parameters
-    ----------
-    raw : str
-        Raw JSON string from the LLM.
-
     Returns
     -------
-    dict
-        Parsed response with keys: ``diagnosis``, ``strategy``,
-        ``strategy_label``, ``overlay_diff``, ``prompt_alternatives``,
-        ``constraints``.
-
-    Raises
-    ------
-    json.JSONDecodeError
-        If ``raw`` is not valid JSON.
-    KeyError
-        If required fields are missing.
+    dict with keys: diagnosis, primary_layer, strategy, strategy_label,
+                    overlay_diff, conservative_diff, prompt_alternatives,
+                    candidate_rationale, constraints.
     """
     data = json.loads(raw)
 
-    # Validate required fields — will raise KeyError if missing
     required = ("diagnosis", "strategy", "strategy_label", "overlay_diff")
     for field in required:
         if field not in data:
@@ -212,10 +312,13 @@ def parse_reasoner_response(raw: str) -> dict:
 
     return {
         "diagnosis": data["diagnosis"],
+        "primary_layer": data.get("primary_layer", "both"),
         "strategy": data["strategy"],
         "strategy_label": data["strategy_label"],
         "overlay_diff": data["overlay_diff"],
+        "conservative_diff": data.get("conservative_diff", {}),
         "prompt_alternatives": data.get("prompt_alternatives", {}),
+        "candidate_rationale": data.get("candidate_rationale", []),
         "constraints": data.get("constraints", []),
     }
 
@@ -224,49 +327,31 @@ def parse_reasoner_response(raw: str) -> dict:
 # Variant generation
 # ---------------------------------------------------------------------------
 
-def _perturb_distribution(dist: dict, rng: random.Random) -> dict:
-    """Jitter distribution values ±10% then renormalize to sum=1.
-
-    Parameters
-    ----------
-    dist : dict
-        Original distribution (str → float).
-    rng : random.Random
-        Random source for reproducibility.
-
-    Returns
-    -------
-    dict
-        Perturbed and renormalized distribution.
-    """
+def _perturb_distribution(dist: dict, rng: random.Random, scale: float = 0.10) -> dict:
+    """Jitter distribution values ±scale then renormalize to sum=1."""
     jittered = {
-        k: max(0.0, v * (1.0 + rng.uniform(-0.10, 0.10)))
+        k: max(0.0, v * (1.0 + rng.uniform(-scale, scale)))
         for k, v in dist.items()
     }
     total = sum(jittered.values())
     if total == 0.0:
-        # Fallback: uniform
         n = len(jittered)
         return {k: 1.0 / n for k in jittered}
     return {k: v / total for k, v in jittered.items()}
 
 
-def _perturb_overlay(overlay: dict, registry: KnobRegistry, rng: random.Random) -> dict:
+def _perturb_overlay(
+    overlay: dict,
+    registry: KnobRegistry,
+    rng: random.Random,
+    scale: float = 0.15,
+) -> dict:
     """Return a copy of overlay with numeric/distribution knobs jittered.
 
     Parameters
     ----------
-    overlay : dict
-        Full overlay to perturb.
-    registry : KnobRegistry
-        Registry used to determine knob types.
-    rng : random.Random
-        Random source.
-
-    Returns
-    -------
-    dict
-        Perturbed overlay copy.
+    scale : float
+        Maximum relative jitter (e.g. 0.15 = ±15%).
     """
     result = dict(overlay)
     for name, value in overlay.items():
@@ -276,14 +361,13 @@ def _perturb_overlay(overlay: dict, registry: KnobRegistry, rng: random.Random) 
             continue
 
         if knob["type"] == "float":
-            jitter = rng.uniform(-0.05, 0.10)
+            jitter = rng.uniform(-scale * 0.5, scale)
             new_val = value * (1.0 + jitter)
-            # Clamp to knob bounds
             new_val = max(knob["min"], min(knob["max"], new_val))
             result[name] = new_val
 
         elif knob["type"] == "distribution" and isinstance(value, dict):
-            result[name] = _perturb_distribution(value, rng)
+            result[name] = _perturb_distribution(value, rng, scale=scale)
 
     return result
 
@@ -294,60 +378,56 @@ def generate_variants(
     prompt_alternatives: dict,
     registry: KnobRegistry,
     seed: int = 42,
+    conservative_diff: dict | None = None,
 ) -> list[dict]:
     """Generate 5 candidate overlays for evaluation.
 
-    Candidate generation strategy:
-      - 0: Exact merge of ``current_overlay`` + ``base_diff``
-      - 1-2: Numeric/distribution perturbations (±5-10% jitter)
-      - 3-4: Prompt alternatives (if provided), else more perturbations
+    Candidate layout:
+      0 — Primary   : exact merge of current_overlay + base_diff
+      1 — Conservative: merge of current_overlay + conservative_diff
+                       (falls back to light jitter of candidate 0 if not provided)
+      2 — Aggressive : heavy jitter (±20%) of candidate 0
+      3 — Prompt alt 1: candidate 0 + first prompt alternative
+                        (falls back to medium jitter if no alternatives)
+      4 — Prompt alt 2: candidate 0 + second prompt alternative
+                        (falls back to combo jitter if fewer than 2 alternatives)
 
     Parameters
     ----------
-    current_overlay : dict
-        The current active overlay.
-    base_diff : dict
-        The overlay diff proposed by the reasoner.
-    prompt_alternatives : dict
-        Prompt knob alternatives from the reasoner (may be empty).
-    registry : KnobRegistry
-        Registry for knob metadata.
-    seed : int
-        Random seed for reproducibility.
-
-    Returns
-    -------
-    list[dict]
-        Five candidate overlay dicts.
+    conservative_diff : dict | None
+        Smaller version of base_diff from the LLM. When None, light jitter is
+        used for candidate 1.
     """
     rng = random.Random(seed)
 
-    # Candidate 0: exact
+    # Candidate 0: exact primary strategy
     candidate_0 = merge_overlay(current_overlay, base_diff)
 
-    # Candidates 1-2: perturbations of candidate 0
-    candidate_1 = _perturb_overlay(candidate_0, registry, rng)
-    candidate_2 = _perturb_overlay(candidate_0, registry, rng)
+    # Candidate 1: conservative — use LLM-provided conservative_diff if available
+    if conservative_diff:
+        candidate_1 = merge_overlay(current_overlay, conservative_diff)
+    else:
+        candidate_1 = _perturb_overlay(candidate_0, registry, rng, scale=0.07)
 
-    # Candidates 3-4: prompt alternatives or more perturbations
+    # Candidate 2: aggressive — heavy jitter of candidate 0
+    candidate_2 = _perturb_overlay(candidate_0, registry, rng, scale=0.20)
+
+    # Candidates 3–4: prompt alternatives or fallback jitter
     alt_keys = list(prompt_alternatives.keys())
 
     if len(alt_keys) >= 1:
-        # Candidate 3: apply first prompt alternative on top of candidate 0
         first_alt = {alt_keys[0]: prompt_alternatives[alt_keys[0]]}
         candidate_3 = merge_overlay(candidate_0, first_alt)
     else:
-        candidate_3 = _perturb_overlay(candidate_0, registry, rng)
+        candidate_3 = _perturb_overlay(candidate_0, registry, rng, scale=0.12)
 
     if len(alt_keys) >= 2:
-        # Candidate 4: apply second prompt alternative on top of candidate 0
         second_alt = {alt_keys[1]: prompt_alternatives[alt_keys[1]]}
         candidate_4 = merge_overlay(candidate_0, second_alt)
     elif len(alt_keys) == 1:
-        # Only one alternative — apply it combined with a perturbation
         first_alt = {alt_keys[0]: prompt_alternatives[alt_keys[0]]}
-        candidate_4 = _perturb_overlay(merge_overlay(candidate_0, first_alt), registry, rng)
+        candidate_4 = _perturb_overlay(merge_overlay(candidate_0, first_alt), registry, rng, scale=0.12)
     else:
-        candidate_4 = _perturb_overlay(candidate_0, registry, rng)
+        candidate_4 = _perturb_overlay(candidate_0, registry, rng, scale=0.12)
 
     return [candidate_0, candidate_1, candidate_2, candidate_3, candidate_4]

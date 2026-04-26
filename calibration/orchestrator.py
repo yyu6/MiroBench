@@ -243,6 +243,7 @@ def run_calibration_loop(
         # -------------------------------------------------------------------
         # Build candidate overlays
         # -------------------------------------------------------------------
+        parsed: dict = {}  # populated only for iteration > 0
         if iteration == 0:
             # Default overlays — no LLM call
             strategy_label = "defaults"
@@ -274,6 +275,7 @@ def run_calibration_loop(
                 prompt_alternatives=parsed.get("prompt_alternatives", {}),
                 registry=registry,
                 seed=seed + iteration,
+                conservative_diff=parsed.get("conservative_diff"),
             )
 
         # Save diagnosis for this iteration
@@ -385,8 +387,10 @@ def run_calibration_loop(
             "iteration": iteration,
             "timestamp": datetime.utcnow().isoformat() + "Z",
             "strategy_label": strategy_label,
+            "primary_layer": parsed.get("primary_layer", "") if iteration > 0 else "",
             "diagnosis": diagnosis,
             "overlay_diff": overlay_diff,
+            "candidate_rationale": parsed.get("candidate_rationale", []) if iteration > 0 else [],
             "candidates": slim_candidates,
             "selection": {
                 "winner_candidate_id": winner["candidate_id"] if winner else None,
