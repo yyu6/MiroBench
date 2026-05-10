@@ -14,6 +14,7 @@ MiroBench provides:
 - **9 scorer families** covering 57 fine-grained metrics across lexical diversity, semantic similarity, toxicity, emotion, politeness, disagreement, narrativity, and thread structure
 - **Statistical comparison tools** to measure how closely generated threads match real discussion patterns (MWU test, KS test, Cliff's delta, Wasserstein distance)
 - **Product descriptions** for each domain to use as generation context
+- **Iterative LLM-driven calibration system** that automatically tunes simulation parameters to close the gap between generated and real discussion distributions
 
 ## Domains
 
@@ -173,10 +174,11 @@ If the model is not available, the disagreement scorer will be skipped and the r
 ## Available Commands
 
 ```bash
-mirobench score <dir>       # Score generated threads
-mirobench compare <csv>     # Compare against real references
-mirobench domains           # List available domains with thread counts
-mirobench --version         # Show version
+mirobench score <dir>                        # Score generated threads
+mirobench compare <csv>                      # Compare against real references
+mirobench domains                            # List available domains with thread counts
+mirobench --version                          # Show version
+python -m mirobench.calibration [args]       # Run calibration pipeline
 ```
 
 ## Data Structure
@@ -202,6 +204,97 @@ mirobench/data/
     ...
   example_thread_format.json   # Reference JSON schema
 ```
+
+## Calibration System
+
+MiroBench includes an iterative LLM-driven calibration system that automatically tunes simulation parameters (prompt overlays) to minimize distributional gaps between generated and real discussion threads. The calibration loop uses an LLM reasoner to analyze metric-level discrepancies and propose parameter adjustments across iterations.
+
+### How It Works
+
+The calibration pipeline runs in three phases:
+
+1. **Phase 0 — Baseline Evaluation**: Scores vanilla (uncalibrated) simulation output against real data to establish the before-calibration baseline.
+2. **Phase 1 — Iterative Calibration Loop**: Over multiple iterations, an LLM reasoner examines per-metric statistical gaps (Cliff's delta, Wasserstein distance, quantile error) between generated and real threads, then proposes prompt overlay adjustments (tone, verbosity, controversy level, structural parameters, etc.). Each iteration generates candidate overlays, runs simulations, scores them, and selects the best-performing candidate.
+3. **Phase 2 — Final Evaluation**: Runs multiple simulations with the best overlay found in Phase 1 and computes a comprehensive before/after statistical comparison.
+
+### Calibration CLI
+
+```bash
+python -m mirobench.calibration \
+    --real-train-csv <path/to/real_train.csv> \
+    --real-val-csv <path/to/real_val.csv> \
+    --real-test-csv <path/to/real_test.csv> \
+    --few-shot-dir <path/to/real_discussions/> \
+    --products-json <path/to/products.json> \
+    --output-dir <output_dir> \
+    --calibration-model gpt-4o-mini \
+    --iterations 12 \
+    --candidates 5 \
+    --seed-posts 6 \
+    --final-sim-runs 9 \
+    --min-sim-threads 50 \
+    --device cpu
+```
+
+### Key Arguments
+
+| Argument | Description | Default |
+|----------|-------------|---------|
+| `--real-train-csv` | Real thread scores CSV (train split) — used for qualitative context | required |
+| `--real-val-csv` | Real thread scores CSV (validation split) — used for candidate ranking | required |
+| `--real-test-csv` | Real thread scores CSV (test split) — used only for final evaluation | required |
+| `--few-shot-dir` | Directory with real discussion threads (`.comments.jsonl` files) for few-shot examples | required |
+| `--products-json` | Product descriptions JSON file for simulation | required |
+| `--calibration-model` | LLM model for the calibration reasoner | `gpt-4o-mini` |
+| `--iterations` | Number of calibration iterations in Phase 1 | `12` |
+| `--candidates` | Number of candidate overlays per iteration | `5` |
+| `--seed-posts` | Number of seed posts per simulation run | `4` |
+| `--final-sim-runs` | Number of simulation runs for Phase 2 final evaluation | `12` |
+| `--min-sim-threads` | Minimum threads to collect in final evaluation | `50` |
+| `--device` | Device for metric scoring (`cpu`, `cuda`, `mps`) | `cpu` |
+| `--vanilla-scores-csv` | Pre-existing vanilla baseline scores for before/after comparison | optional |
+| `--resume` | Resume a previously interrupted calibration run | `false` |
+
+### Evaluate an Existing Overlay
+
+To skip Phase 1 and directly evaluate a previously found overlay:
+
+```bash
+python -m mirobench.calibration \
+    --evaluate-overlay-json <path/to/best_overlay.json> \
+    --before-group-eval-json <path/to/before_calibration_group_eval.json> \
+    --real-train-csv <real_train.csv> \
+    --real-val-csv <real_val.csv> \
+    --real-test-csv <real_test.csv> \
+    --vanilla-scores-csv <vanilla_scores.csv> \
+    --few-shot-dir <real_discussions/> \
+    --products-json <products.json> \
+    --output-dir <output_dir> \
+    --final-sim-runs 9 \
+    --seed-posts 6 \
+    --min-sim-threads 50
+```
+
+### Output
+
+The calibration system produces:
+
+```
+output_dir/
+  before_calibration/              # Phase 0 baseline results
+    before_calibration_group_eval.json
+  iterations/                      # Phase 1 per-iteration data
+    iter_00/
+    iter_01/
+    ...
+  best_overlay.json                # Best-performing prompt overlay
+  after_calibration/               # Phase 2 final evaluation
+    after_calibration_group_eval.json
+  before_after_improvement_summary.json   # Statistical comparison
+  calibration_summary.json                # Full run summary
+```
+
+The `before_after_improvement_summary.json` contains per-metric comparisons including Cliff's delta reduction, Wasserstein distance improvement, quantile error changes, and fail rate improvements.
 
 ## Citation
 
