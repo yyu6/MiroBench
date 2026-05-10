@@ -1,0 +1,37 @@
+{
+  "meta": {
+    "input": "/Users/yaoningyu/Desktop/UIUC/GEO/data/raw/discussions/cell_phone_product/apple_iphone_16_128gb_apple_intelligence_unlocked_pink",
+    "target_kind": "real",
+    "model_dir": "/Users/yaoningyu/Desktop/UIUC/GEO/Stance_Rel/RoBERT_rel_1.5e-05",
+    "model_note": "Uses local Stance_Rel RoBERTa stance head plus available RGCN user embeddings. Missing authors fall back to a zero graph feature because the original graph inference code is not present.",
+    "label_order": [
+      "disagree",
+      "neutral",
+      "agree"
+    ],
+    "graph_author": "reply",
+    "graph_feature_coverage": {
+      "known_author_pairs": 0,
+      "total_pairs": 0,
+      "coverage": 0.0
+    },
+    "pair_count": 0,
+    "thread_count": 0,
+    "source": {
+      "folder": "/Users/yaoningyu/Desktop/UIUC/GEO/data/raw/discussions/cell_phone_product/apple_iphone_16_128gb_apple_intelligence_unlocked_pink",
+      "posts_path": "/Users/yaoningyu/Desktop/UIUC/GEO/data/raw/discussions/cell_phone_product/apple_iphone_16_128gb_apple_intelligence_unlocked_pink/apple_iphone_16_128gb_apple_intelligence_unlocked_pink.jsonl",
+      "comments_path": "/Users/yaoningyu/Desktop/UIUC/GEO/data/raw/discussions/cell_phone_product/apple_iphone_16_128gb_apple_intelligence_unlocked_pink/apple_iphone_16_128gb_apple_intelligence_unlocked_pink.comments.jsonl",
+      "post_count": 0,
+      "raw_comment_count": 0
+    }
+  },
+  "overall": {
+    "pair_count": 0,
+    "thread_count": 0,
+    "mean_disagree_probability": 0.0,
+    "hard_disagree_rate": 0.0,
+    "label_counts": {}
+  },
+  "threads": [],
+  "pairs": []
+}

@@ -1,0 +1,138 @@
+{
+  "meta": {
+    "input": "/Users/yaoningyu/Desktop/UIUC/GEO/data/raw/discussions/headphone_product/apple_airpods_max_2_usb_c_midnight",
+    "target_kind": "real",
+    "metric": "Self-BLEU",
+    "orders": [
+      2,
+      3,
+      4
+    ],
+    "aggregation": "unordered comment pairs within each thread; pair score is mean(BLEU(a,b), BLEU(b,a))",
+    "smoothing": "add-one modified n-gram precision",
+    "interpretation": "higher Self-BLEU means more surface-form uniformity",
+    "thread_count": 8,
+    "comment_count": 109,
+    "include_comment_scores": false,
+    "source": {
+      "folder": "/Users/yaoningyu/Desktop/UIUC/GEO/data/raw/discussions/headphone_product/apple_airpods_max_2_usb_c_midnight",
+      "posts_path": "/Users/yaoningyu/Desktop/UIUC/GEO/data/raw/discussions/headphone_product/apple_airpods_max_2_usb_c_midnight/apple_airpods_max_2_usb_c_midnight.jsonl",
+      "comments_path": "/Users/yaoningyu/Desktop/UIUC/GEO/data/raw/discussions/headphone_product/apple_airpods_max_2_usb_c_midnight/apple_airpods_max_2_usb_c_midnight.comments.jsonl",
+      "post_count": 9,
+      "raw_comment_count": 120
+    }
+  },
+  "overall": {
+    "comment_count": 109,
+    "thread_count": 8,
+    "pair_count": 1574,
+    "weighted_self_bleu_2": 0.05907364688694546,
+    "weighted_self_bleu_3": 0.050927721210051305,
+    "weighted_self_bleu_4": 0.04892106261551967,
+    "mean_thread_self_bleu_2": 0.05998716969066447,
+    "mean_thread_self_bleu_3": 0.05105958366830824,
+    "mean_thread_self_bleu_4": 0.048007621213987495,
+    "median_thread_self_bleu_2": 0.056811981329067944,
+    "median_thread_self_bleu_3": 0.04785056934698489,
+    "median_thread_self_bleu_4": 0.045188358776877026,
+    "max_thread_self_bleu_4": 0.08144928458635241
+  },
+  "threads": [
+    {
+      "thread_id": "1q7kvo4",
+      "thread_title": "[USA-FL] [H] Airpods Max (USB Type-C) Midnight, Black Titanium Apple Watch Ultra 3 [W] PayPal",
+      "comment_count": 3,
+      "pair_count": 3,
+      "self_bleu_2": 0.096317144169341,
+      "self_bleu_3": 0.08721054426446312,
+      "self_bleu_4": 0.08144928458635241,
+      "mean_comment_tokens": 138.0,
+      "median_comment_tokens": 174.0,
+      "note": ""
+    },
+    {
+      "thread_id": "1gxxfnu",
+      "thread_title": "Unboxing pics - Airpod Max Midnight Blue with USB-C from Earhive",
+      "comment_count": 46,
+      "pair_count": 1035,
+      "self_bleu_2": 0.0653861750271334,
+      "self_bleu_3": 0.059893138813104534,
+      "self_bleu_4": 0.059779311169993084,
+      "mean_comment_tokens": 22.32608695652174,
+      "median_comment_tokens": 13.5,
+      "note": ""
+    },
+    {
+      "thread_id": "1fmb0n1",
+      "thread_title": "The new Airpods Max are not blacker than the Space Grey Airpods",
+      "comment_count": 14,
+      "pair_count": 91,
+      "self_bleu_2": 0.060828141531313586,
+      "self_bleu_3": 0.05645021623421061,
+      "self_bleu_4": 0.05605966186706654,
+      "mean_comment_tokens": 30.5,
+      "median_comment_tokens": 13.0,
+      "note": ""
+    },
+    {
+      "thread_id": "1keugkj",
+      "thread_title": "My Review of Airpods Max after 2 weeks of usage",
+      "comment_count": 27,
+      "pair_count": 351,
+      "self_bleu_2": 0.0527958211268223,
+      "self_bleu_3": 0.03925092245975917,
+      "self_bleu_4": 0.03431705568668751,
+      "mean_comment_tokens": 36.18518518518518,
+      "median_comment_tokens": 32.0,
+      "note": ""
+    },
+    {
+      "thread_id": "1sal8nn",
+      "thread_title": "Apple AirPods Max 2 (Midnight) - Brand New with 2yrs AppleCare+ (Latest Release)",
+      "comment_count": 14,
+      "pair_count": 91,
+      "self_bleu_2": 0.044845124765116685,
+      "self_bleu_3": 0.03561947062471898,
+      "self_bleu_4": 0.03269459278917225,
+      "mean_comment_tokens": 37.714285714285715,
+      "median_comment_tokens": 29.5,
+      "note": ""
+    },
+    {
+      "thread_id": "1jp8qha",
+      "thread_title": "Which is a better value ? iPad Air M2 Or AirPods Max",
+      "comment_count": 3,
+      "pair_count": 3,
+      "self_bleu_2": 0.0397506115242598,
+      "self_bleu_3": 0.027933209613593107,
+      "self_bleu_4": 0.02374582118465321,
+      "mean_comment_tokens": 29.0,
+      "median_comment_tokens": 27.0,
+      "note": ""
+    },
+    {
+      "thread_id": "1s617le",
+      "thread_title": "PRE-ORDER LIVE! AIRPODS MAX 2",
+      "comment_count": 1,
+      "pair_count": 0,
+      "self_bleu_2": 0.0,
+      "self_bleu_3": 0.0,
+      "self_bleu_4": 0.0,
+      "mean_comment_tokens": 24.0,
+      "median_comment_tokens": 24.0,
+      "note": "Self-BLEU requires at least two usable comments."
+    },
+    {
+      "thread_id": "1q7l508",
+      "thread_title": "[USA-FL] [H] Airpods Max (USB Type-C) Midnight, Black Titanium Apple Watch Ultra 3 [W] PayPal",
+      "comment_count": 1,
+      "pair_count": 0,
+      "self_bleu_2": 0.0,
+      "self_bleu_3": 0.0,
+      "self_bleu_4": 0.0,
+      "mean_comment_tokens": 279.0,
+      "median_comment_tokens": 279.0,
+      "note": "Self-BLEU requires at least two usable comments."
+    }
+  ]
+}

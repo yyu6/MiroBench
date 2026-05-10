@@ -1,0 +1,74 @@
+{
+  "meta": {
+    "product_category": "credit_cards",
+    "hint": null,
+    "agent_count": 5,
+    "seed": 42,
+    "simulated_hours": 48,
+    "rounds": 3,
+    "run_id": "example_thread_001"
+  },
+  "posts": [
+    {
+      "post_id": 1,
+      "author": "CreditCardEnthusiast",
+      "author_karma": 5200,
+      "content": "I've been looking at the Chase Sapphire Preferred for a while now. The 60k signup bonus sounds great but I'm wondering if the $95 annual fee is worth it compared to no-fee cards. Anyone have experience with this card?",
+      "timestamp": "2024-01-15T10:30:00Z",
+      "likes": 12,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": 1,
+          "author": "FrequentTraveler99",
+          "author_karma": 8900,
+          "content": "Absolutely worth it if you travel at all. The points transfer to airlines at 1:1 which makes them incredibly valuable. I've gotten over $2000 in value from the card in the past year alone.",
+          "timestamp": "2024-01-15T11:15:00Z",
+          "likes": 8,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": 2,
+              "author": "BudgetMinded",
+              "author_karma": 3400,
+              "content": "That's great if you travel, but for someone who mostly does everyday spending, wouldn't a 2% flat cashback card be better? No annual fee and simpler math.",
+              "timestamp": "2024-01-15T12:00:00Z",
+              "likes": 5,
+              "dislikes": 1,
+              "parent_comment_id": 1,
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": 3,
+                  "author": "FrequentTraveler99",
+                  "author_karma": 8900,
+                  "content": "Fair point for non-travelers. But even for dining alone (3x points), the CSP can beat 2% cashback when you value points at 1.5-2 cents each through transfer partners.",
+                  "timestamp": "2024-01-15T13:30:00Z",
+                  "likes": 3,
+                  "dislikes": 0,
+                  "parent_comment_id": 2,
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": 4,
+          "author": "PointsHacker",
+          "author_karma": 12000,
+          "content": "One thing people overlook: the $50 annual hotel credit effectively makes it a $45/year card. Plus the DoorDash credits. The math works out even for moderate spenders.",
+          "timestamp": "2024-01-15T14:00:00Z",
+          "likes": 15,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    }
+  ]
+}

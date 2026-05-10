@@ -1,0 +1,2968 @@
+{
+  "meta": {
+    "input": "/Users/yaoningyu/Desktop/UIUC/GEO/data/raw/discussions/cell_phone_product/apple_iphone_15_128gb_unlocked_blue",
+    "target_kind": "real",
+    "metric": "StorySeeker personal-story likelihood",
+    "model_name": "mariaantoniak/storyseeker",
+    "model_source": "https://huggingface.co/mariaantoniak/storyseeker",
+    "device": "mps",
+    "max_length": 512,
+    "threshold": 0.5,
+    "label_map": {
+      "0": "not_story",
+      "1": "story"
+    },
+    "label_note": "Model config uses LABEL_0/LABEL_1. Sanity examples indicate LABEL_0=not_story and LABEL_1=story.",
+    "comment_count": 175,
+    "thread_count": 9,
+    "include_comment_text": true,
+    "source": {
+      "folder": "/Users/yaoningyu/Desktop/UIUC/GEO/data/raw/discussions/cell_phone_product/apple_iphone_15_128gb_unlocked_blue",
+      "posts_path": "/Users/yaoningyu/Desktop/UIUC/GEO/data/raw/discussions/cell_phone_product/apple_iphone_15_128gb_unlocked_blue/apple_iphone_15_128gb_unlocked_blue.jsonl",
+      "comments_path": "/Users/yaoningyu/Desktop/UIUC/GEO/data/raw/discussions/cell_phone_product/apple_iphone_15_128gb_unlocked_blue/apple_iphone_15_128gb_unlocked_blue.comments.jsonl",
+      "post_count": 9,
+      "raw_comment_count": 234
+    }
+  },
+  "overall": {
+    "comment_count": 175,
+    "thread_count": 9,
+    "story_count": 49,
+    "not_story_count": 126,
+    "story_rate": 0.28,
+    "weighted_mean_story_probability": 0.31240992514150484,
+    "mean_thread_story_rate": 0.18094930478651408,
+    "median_thread_story_rate": 0.25,
+    "max_thread_story_rate": 0.4,
+    "mean_thread_story_probability": 0.24138641896475566,
+    "median_thread_story_probability": 0.29965298548340796
+  },
+  "threads": [
+    {
+      "thread_id": "1hc6kba",
+      "thread_title": "[USA-CA][H] BNIB Pixel 9 Pro, iPad Pro 11” M1, iPhone 16 Pro, iPhone 15 Pro, 3x AW Series 9 [W] PayPal",
+      "comment_count": 5,
+      "story_count": 2,
+      "not_story_count": 3,
+      "story_rate": 0.4,
+      "mean_story_probability": 0.29965298548340796,
+      "median_story_probability": 0.0834202691912651,
+      "max_story_probability": 0.73720782995224,
+      "min_story_probability": 0.04016800597310066,
+      "comments": [
+        {
+          "thread_id": "1hc6kba",
+          "thread_title": "[USA-CA][H] BNIB Pixel 9 Pro, iPad Pro 11” M1, iPhone 16 Pro, iPhone 15 Pro, 3x AW Series 9 [W] PayPal",
+          "comment_id": "t1_m1lqoln",
+          "parent_id": "t3_1hc6kba",
+          "author": "hwsbot",
+          "depth": 0,
+          "not_story_probability": 0.959831953048706,
+          "story_probability": 0.04016800597310066,
+          "pred_label": "not_story",
+          "raw_label_probabilities": {
+            "LABEL_0": 0.959831953048706,
+            "LABEL_1": 0.04016800597310066
+          },
+          "text": "* Username: /u/dreissy * [Click here to send a PM to this user](https://www.reddit.com/message/compose/?to=dreissy) * Join date: 2018-12-17 03:31:23 * Link karma: 1392 * Comment karma: 2159 * Confirmed trades: Trades: 43 * Heatware: None ^^This ^^information ^^does ^^not ^^guarantee ^^a ^^successful ^^swap. ^^It ^^is ^^being ^^provided ^^to ^^help ^^potential ^^trade ^^partners ^^have ^^more ^^immediate ^^background ^^information ^^about ^^with ^^whom ^^they ^^are ^^swapping. ^^Please ^^be ^^sure ^^to ^^familiarize ^^yourself ^^with ^^the ^^[RULES](https://www.reddit.com/r/hardwareswap/wiki/rules/rules) ^^and ^^other ^^guides ^^on ^^the ^^[WIKI](https://www.reddit.com/r/hardwareswap/wiki/index)"
+        },
+        {
+          "thread_id": "1hc6kba",
+          "thread_title": "[USA-CA][H] BNIB Pixel 9 Pro, iPad Pro 11” M1, iPhone 16 Pro, iPhone 15 Pro, 3x AW Series 9 [W] PayPal",
+          "comment_id": "t1_m1nbjr5",
+          "parent_id": "t3_1hc6kba",
+          "author": "charredfella",
+          "depth": 0,
+          "not_story_probability": 0.42972052097320557,
+          "story_probability": 0.5702794790267944,
+          "pred_label": "story",
+          "raw_label_probabilities": {
+            "LABEL_0": 0.42972052097320557,
+            "LABEL_1": 0.5702794790267944
+          },
+          "text": "pm was not replied to"
+        },
+        {
+          "thread_id": "1hc6kba",
+          "thread_title": "[USA-CA][H] BNIB Pixel 9 Pro, iPad Pro 11” M1, iPhone 16 Pro, iPhone 15 Pro, 3x AW Series 9 [W] PayPal",
+          "comment_id": "t1_m1ndits",
+          "parent_id": "t3_1hc6kba",
+          "author": "Lucky_Baker_8310",
+          "depth": 0,
+          "not_story_probability": 0.9165797233581543,
+          "story_probability": 0.0834202691912651,
+          "pred_label": "not_story",
+          "raw_label_probabilities": {
+            "LABEL_0": 0.9165797233581543,
+            "LABEL_1": 0.0834202691912651
+          },
+          "text": "watchout this is a top tier scammer do not deal with him let him delete his account at least https://preview.redd.it/galqcs80pc6e1.jpeg?width=485&format=pjpg&auto=webp&s=ba59a0df4ee19147306477778f7e53e138f783f6"
+        },
+        {
+          "thread_id": "1hc6kba",
+          "thread_title": "[USA-CA][H] BNIB Pixel 9 Pro, iPad Pro 11” M1, iPhone 16 Pro, iPhone 15 Pro, 3x AW Series 9 [W] PayPal",
+          "comment_id": "t1_m3x8t61",
+          "parent_id": "t1_m1ndits",
+          "author": "i4k20z3",
+          "depth": 1,
+          "not_story_probability": 0.9328107237815857,
+          "story_probability": 0.06718934327363968,
+          "pred_label": "not_story",
+          "raw_label_probabilities": {
+            "LABEL_0": 0.9328107237815857,
+            "LABEL_1": 0.06718934327363968
+          },
+          "text": "what does this mean?"
+        },
+        {
+          "thread_id": "1hc6kba",
+          "thread_title": "[USA-CA][H] BNIB Pixel 9 Pro, iPad Pro 11” M1, iPhone 16 Pro, iPhone 15 Pro, 3x AW Series 9 [W] PayPal",
+          "comment_id": "t1_m39tp8x",
+          "parent_id": "t3_1hc6kba",
+          "author": "reppitydeputy45",
+          "depth": 0,
+          "not_story_probability": 0.26279217004776,
+          "story_probability": 0.73720782995224,
+          "pred_label": "story",
+          "raw_label_probabilities": {
+            "LABEL_0": 0.26279217004776,
+            "LABEL_1": 0.73720782995224
+          },
+          "text": "PM’d with question"
+        }
+      ]
+    },
+    {
+      "thread_id": "1lbdjob",
+      "thread_title": "[USA-CA][H] 3x iPhone 15 128gb, iPhone 15 Pro Max 256gb, iPhone 16 128gb [W] PayPal",
+      "comment_count": 8,
+      "story_count": 3,
+      "not_story_count": 5,
+      "story_rate": 0.375,
+      "mean_story_probability": 0.29966485244221985,
+      "median_story_probability": 0.12693236023187637,
+      "max_story_probability": 0.8098056316375732,
+      "min_story_probability": 0.020332710817456245,
+      "comments": [
+        {
+          "thread_id": "1lbdjob",
+          "thread_title": "[USA-CA][H] 3x iPhone 15 128gb, iPhone 15 Pro Max 256gb, iPhone 16 128gb [W] PayPal",
+          "comment_id": "t1_mxrok80",
+          "parent_id": "t3_1lbdjob",
+          "author": "AutoModerator",
+          "depth": 0,
+          "not_story_probability": 0.9796673059463501,
+          "story_probability": 0.020332710817456245,
+          "pred_label": "not_story",
+          "raw_label_probabilities": {
+            "LABEL_0": 0.9796673059463501,
+            "LABEL_1": 0.020332710817456245
+          },
+          "text": "###**Remember:** Friends & Family/Gift payments, Venmo, gift cards, Zelle and cryptocurrency are non-refundable and offer NO BUYER PROTECTION. - If as a buyer, you choose to pay through the \"Friends and Family\" option, or agree to send Gift Cards, Venmo, or cryptocurrency as payment, please understand that you will not be able to open a claim should something go wrong in the transaction. [Click here](https://www.reddit.com/r/appleswap/wiki/confirming_transactions) to learn how to confirm a transaction, leave feedback for your partner, and increase your flair score! *I am a bot, and this action was performed automatically. Please [contact the moderators of this subreddit](/message/compose/?to=/r/appleswap) if you have any questions or concerns.*"
+        },
+        {
+          "thread_id": "1lbdjob",
+          "thread_title": "[USA-CA][H] 3x iPhone 15 128gb, iPhone 15 Pro Max 256gb, iPhone 16 128gb [W] PayPal",
+          "comment_id": "t1_mxrokb9",
+          "parent_id": "t3_1lbdjob",
+          "author": "AutoModerator",
+          "depth": 0,
+          "not_story_probability": 0.48053672909736633,
+          "story_probability": 0.519463300704956,
+          "pred_label": "story",
+          "raw_label_probabilities": {
+            "LABEL_0": 0.48053672909736633,
+            "LABEL_1": 0.519463300704956
+          },
+          "text": "Post information archive: **Title:** [USA-CA][H] 3x iPhone 15 128gb, iPhone 15 Pro Max 256gb, iPhone 16 128gb [W] PayPal **Username:** /u/dreissy **Body:** Hi everyone, Got some iPhones up for sale. iPhone 15: 2 blue, 1 yellow - All unlocked - good condition (have screen protector on) - 90%/94% battery health - come with charging cable (and original box if needed). - **Asking $475 each** 1x Blue Titanium iPhone 15 Pro Max - replacement from Apple - Blue Titanium - 256gb, fully unlocked - 0 cycles - Phone only **Asking $715** iPhone 16 128gb Ultramarine - mint condition - 100% battery health/15 cycle count - US Reseller Flex Policy (locks to first US carrier connects to) - **Asking $610** Priced to sell. Shipping price determined by buyer’s ZIP. Comment and PM me if interested/ready to buy. Repairs: none https://imgur.com/a/4tN03En *I am a bot, and this action was performed automatically. Please [contact the moderators of this subreddit](/message/compose/?to=/r/appleswap) if you have any questions or concerns.*"
+        },
+        {
+          "thread_id": "1lbdjob",
+          "thread_title": "[USA-CA][H] 3x iPhone 15 128gb, iPhone 15 Pro Max 256gb, iPhone 16 128gb [W] PayPal",
+          "comment_id": "t1_mxropac",
+          "parent_id": "t3_1lbdjob",
+          "author": "Dog__Meat",
+          "depth": 0,
+          "not_story_probability": 0.19019433856010437,
+          "story_probability": 0.8098056316375732,
+          "pred_label": "story",
+          "raw_label_probabilities": {
+            "LABEL_0": 0.19019433856010437,
+            "LABEL_1": 0.8098056316375732
+          },
+          "text": "PM Edit: Paid for iphone 15 Pro Max"
+        },
+        {
+          "thread_id": "1lbdjob",
+          "thread_title": "[USA-CA][H] 3x iPhone 15 128gb, iPhone 15 Pro Max 256gb, iPhone 16 128gb [W] PayPal",
+          "comment_id": "t1_mz35ngl",
+          "parent_id": "t3_1lbdjob",
+          "author": "Dog__Meat",
+          "depth": 0,
+          "not_story_probability": 0.2584300935268402,
+          "story_probability": 0.7415699362754822,
+          "pred_label": "story",
+          "raw_label_probabilities": {
+            "LABEL_0": 0.2584300935268402,
+            "LABEL_1": 0.7415699362754822
+          },
+          "text": "u/AppleSwapBot purchased iPhone 15 Pro Max from u/dreissy"
+        },
+        {
+          "thread_id": "1lbdjob",
+          "thread_title": "[USA-CA][H] 3x iPhone 15 128gb, iPhone 15 Pro Max 256gb, iPhone 16 128gb [W] PayPal",
+          "comment_id": "t1_mz35w6l",
+          "parent_id": "t1_mz35ngl",
+          "author": "AppleSwapBot",
+          "depth": 1,
+          "not_story_probability": 0.971825361251831,
+          "story_probability": 0.028174694627523422,
+          "pred_label": "not_story",
+          "raw_label_probabilities": {
+            "LABEL_0": 0.971825361251831,
+            "LABEL_1": 0.028174694627523422
+          },
+          "text": "Hello, u/Dog__Meat. This comment is now being tracked. Your flair will update once your partner replies to your comment. u/dreissy, please reply to the above comment with your feedback **ONLY AFTER YOUR TRANSACTION IS COMPLETE** and *both* sides have received their end of the transaction. Once you reply, you will both get credit and your flair scores will increase. u/dreissy, if you did **NOT** complete a transaction with this person, please **DO NOT** reply to their comment as this will confirm the transaction. Instead, please [message the moderators](https://www.reddit.com/message/compose/?to=r/appleswap&subject=Incorrectly%20Tagged%20Confirmation&message=u%2FDog__Meat%20incorrectly%20tagged%20me%20in%20this%20comment%3A%20https%3A%2F%2Fwww.reddit.com%2Fcomments%2F1lbdjob%2F-%2Fmz35ngl) so we can contact the user and handle the situation. Thank you! --- [^(Buy the developer a coffee)](https://kofi.regexr.tech) ^or [^(support this project monthly)](https://patreon.regexr.tech)"
+        },
+        {
+          "thread_id": "1lbdjob",
+          "thread_title": "[USA-CA][H] 3x iPhone 15 128gb, iPhone 15 Pro Max 256gb, iPhone 16 128gb [W] PayPal",
+          "comment_id": "t1_mz9dbm3",
+          "parent_id": "t1_mz35ngl",
+          "author": "AppleSwapBot",
+          "depth": 1,
+          "not_story_probability": 0.975892186164856,
+          "story_probability": 0.02410782501101494,
+          "pred_label": "not_story",
+          "raw_label_probabilities": {
+            "LABEL_0": 0.975892186164856,
+            "LABEL_1": 0.02410782501101494
+          },
+          "text": "Hello, u/Dog__Meat. u/dreissy, please reply to the comment above once both parties have received their end of the transaction to confirm with your trade partner. This comment has been around for more than a day without a response. The bot will still track this comment but it will only check it once a day. This means that if your trade partner replies to your comment, it will take up to 24 hours before your comment is confirmed. Please wait that long before messaging the mods for help. If you are getting this message but your partner has already confirmed, please message the mods for assistance. --- [^(Buy the developer a coffee)](https://kofi.regexr.tech) ^or [^(support this project monthly)](https://patreon.regexr.tech)"
+        },
+        {
+          "thread_id": "1lbdjob",
+          "thread_title": "[USA-CA][H] 3x iPhone 15 128gb, iPhone 15 Pro Max 256gb, iPhone 16 128gb [W] PayPal",
+          "comment_id": "t1_mzalo5j",
+          "parent_id": "t1_mz9fgcu",
+          "author": "AppleSwapBot",
+          "depth": 2,
+          "not_story_probability": 0.9653435945510864,
+          "story_probability": 0.03465642035007477,
+          "pred_label": "not_story",
+          "raw_label_probabilities": {
+            "LABEL_0": 0.9653435945510864,
+            "LABEL_1": 0.03465642035007477
+          },
+          "text": "Hello, u/dreissy. Trade Confirmed! --- * u/dog__meat -> 3 Trades * u/dreissy -> 22 Trades --- [^(Buy the developer a coffee)](https://kofi.regexr.tech) ^or [^(support this project monthly)](https://patreon.regexr.tech)"
+        },
+        {
+          "thread_id": "1lbdjob",
+          "thread_title": "[USA-CA][H] 3x iPhone 15 128gb, iPhone 15 Pro Max 256gb, iPhone 16 128gb [W] PayPal",
+          "comment_id": "t1_nk2ztu0",
+          "parent_id": "t3_1lbdjob",
+          "author": "chaoticpinoy89",
+          "depth": 0,
+          "not_story_probability": 0.780791699886322,
+          "story_probability": 0.21920830011367798,
+          "pred_label": "not_story",
+          "raw_label_probabilities": {
+            "LABEL_0": 0.780791699886322,
+            "LABEL_1": 0.21920830011367798
+          },
+          "text": "Any iphone 15s left?"
+        }
+      ]
+    },
+    {
+      "thread_id": "1kjulgz",
+      "thread_title": "Apple has started to sell refurbished iPhone 15s",
+      "comment_count": 129,
+      "story_count": 41,
+      "not_story_count": 88,
+      "story_rate": 0.3178294573643411,
+      "mean_story_probability": 0.34134283863989884,
+      "median_story_probability": 0.08816149085760117,
+      "max_story_probability": 0.9815558791160583,
+      "min_story_probability": 0.01904391497373581,
+      "comments": [
+        {
+          "thread_id": "1kjulgz",
+          "thread_title": "Apple has started to sell refurbished iPhone 15s",
+          "comment_id": "t1_mrpv60n",
+          "parent_id": "t3_1kjulgz",
+          "author": "Ok-Pineapple2365",
+          "depth": 0,
+          "not_story_probability": 0.9237558245658875,
+          "story_probability": 0.07624415308237076,
+          "pred_label": "not_story",
+          "raw_label_probabilities": {
+            "LABEL_0": 0.9237558245658875,
+            "LABEL_1": 0.07624415308237076
+          },
+          "text": "1189 $ for refurbished phones???? Wtf"
+        },
+        {
+          "thread_id": "1kjulgz",
+          "thread_title": "Apple has started to sell refurbished iPhone 15s",
+          "comment_id": "t1_mrqel0h",
+          "parent_id": "t1_mrpv60n",
+          "author": "[deleted]",
+          "depth": 1,
+          "not_story_probability": 0.9215363264083862,
+          "story_probability": 0.07846369594335556,
+          "pred_label": "not_story",
+          "raw_label_probabilities": {
+            "LABEL_0": 0.9215363264083862,
+            "LABEL_1": 0.07846369594335556
+          },
+          "text": "And yet, $300 cheaper than a 16 Pro 1TB"
+        },
+        {
+          "thread_id": "1kjulgz",
+          "thread_title": "Apple has started to sell refurbished iPhone 15s",
+          "comment_id": "t1_mrufxcq",
+          "parent_id": "t1_mrpv60n",
+          "author": "runForestRun17",
+          "depth": 1,
+          "not_story_probability": 0.9528623819351196,
+          "story_probability": 0.0471375472843647,
+          "pred_label": "not_story",
+          "raw_label_probabilities": {
+            "LABEL_0": 0.9528623819351196,
+            "LABEL_1": 0.0471375472843647
+          },
+          "text": "Tbh it has a new battery and outer casing.. basically a new phone. But yeah still an insane price for a refurbished phone."
+        },
+        {
+          "thread_id": "1kjulgz",
+          "thread_title": "Apple has started to sell refurbished iPhone 15s",
+          "comment_id": "t1_ngr5j6b",
+          "parent_id": "t1_mrpv60n",
+          "author": "circadiggmigration",
+          "depth": 1,
+          "not_story_probability": 0.029373297467827797,
+          "story_probability": 0.9706266522407532,
+          "pred_label": "story",
+          "raw_label_probabilities": {
+            "LABEL_0": 0.029373297467827797,
+            "LABEL_1": 0.9706266522407532
+          },
+          "text": "I just bought one for 679.00, four months later."
+        },
+        {
+          "thread_id": "1kjulgz",
+          "thread_title": "Apple has started to sell refurbished iPhone 15s",
+          "comment_id": "t1_mrpyopx",
+          "parent_id": "t1_mrpv60n",
+          "author": "Shazen_de",
+          "depth": 1,
+          "not_story_probability": 0.9360029101371765,
+          "story_probability": 0.0639970451593399,
+          "pred_label": "not_story",
+          "raw_label_probabilities": {
+            "LABEL_0": 0.9360029101371765,
+            "LABEL_1": 0.0639970451593399
+          },
+          "text": "Yeah lol got my S25 Ultra for 100 more, brand spanking new. Apple is a joke of a company."
+        },
+        {
+          "thread_id": "1kjulgz",
+          "thread_title": "Apple has started to sell refurbished iPhone 15s",
+          "comment_id": "t1_mrqau3p",
+          "parent_id": "t1_mrpyopx",
+          "author": "shocktribe",
+          "depth": 2,
+          "not_story_probability": 0.7753682136535645,
+          "story_probability": 0.22463177144527435,
+          "pred_label": "not_story",
+          "raw_label_probabilities": {
+            "LABEL_0": 0.7753682136535645,
+            "LABEL_1": 0.22463177144527435
+          },
+          "text": "The 1TB S25 Ultra is $1659 retail and $1429 on sale."
+        },
+        {
+          "thread_id": "1kjulgz",
+          "thread_title": "Apple has started to sell refurbished iPhone 15s",
+          "comment_id": "t1_mrtgvsz",
+          "parent_id": "t1_mrqau3p",
+          "author": "Snipexx51",
+          "depth": 3,
+          "not_story_probability": 0.967459499835968,
+          "story_probability": 0.03254054859280586,
+          "pred_label": "not_story",
+          "raw_label_probabilities": {
+            "LABEL_0": 0.967459499835968,
+            "LABEL_1": 0.03254054859280586
+          },
+          "text": "You can already buy the base 25 Ultra for 1 grand lol. Androids price stabillity is so bad"
+        },
+        {
+          "thread_id": "1kjulgz",
+          "thread_title": "Apple has started to sell refurbished iPhone 15s",
+          "comment_id": "t1_mrrwlkx",
+          "parent_id": "t1_mrpyopx",
+          "author": "Diormybodyyy",
+          "depth": 2,
+          "not_story_probability": 0.9487264752388,
+          "story_probability": 0.05127350986003876,
+          "pred_label": "not_story",
+          "raw_label_probabilities": {
+            "LABEL_0": 0.9487264752388,
+            "LABEL_1": 0.05127350986003876
+          },
+          "text": "S25 Ultra is more expensive bro lmao"
+        },
+        {
+          "thread_id": "1kjulgz",
+          "thread_title": "Apple has started to sell refurbished iPhone 15s",
+          "comment_id": "t1_mrrtc85",
+          "parent_id": "t1_mrpyopx",
+          "author": "DickBeDublin",
+          "depth": 2,
+          "not_story_probability": 0.975534200668335,
+          "story_probability": 0.024465829133987427,
+          "pred_label": "not_story",
+          "raw_label_probabilities": {
+            "LABEL_0": 0.975534200668335,
+            "LABEL_1": 0.024465829133987427
+          },
+          "text": "May we all hope to one day have a company worth trillions of dollars and be considered a joke."
+        },
+        {
+          "thread_id": "1kjulgz",
+          "thread_title": "Apple has started to sell refurbished iPhone 15s",
+          "comment_id": "t1_mrrxy23",
+          "parent_id": "t1_mrpyopx",
+          "author": "ZoeticLock",
+          "depth": 2,
+          "not_story_probability": 0.8051088452339172,
+          "story_probability": 0.1948910802602768,
+          "pred_label": "not_story",
+          "raw_label_probabilities": {
+            "LABEL_0": 0.8051088452339172,
+            "LABEL_1": 0.1948910802602768
+          },
+          "text": "Congrats on your Android slop"
+        },
+        {
+          "thread_id": "1kjulgz",
+          "thread_title": "Apple has started to sell refurbished iPhone 15s",
+          "comment_id": "t1_mrutul1",
+          "parent_id": "t1_mrrxy23",
+          "author": "Rosselman",
+          "depth": 3,
+          "not_story_probability": 0.6245595812797546,
+          "story_probability": 0.37544041872024536,
+          "pred_label": "not_story",
+          "raw_label_probabilities": {
+            "LABEL_0": 0.6245595812797546,
+            "LABEL_1": 0.37544041872024536
+          },
+          "text": "As someone who just switched from Android, lmao. It’s not slop at all, actually I was pretty disappointed because the internet hyped iOS as the superior OS, and the experience is basically… identical. Same apps, same features. What makes the iPhone worth it is the ecosystem integration. I already had a MacBook and it works great with my iPhone."
+        },
+        {
+          "thread_id": "1kjulgz",
+          "thread_title": "Apple has started to sell refurbished iPhone 15s",
+          "comment_id": "t1_mruwde8",
+          "parent_id": "t1_mrutul1",
+          "author": "ZoeticLock",
+          "depth": 4,
+          "not_story_probability": 0.8906609416007996,
+          "story_probability": 0.10933908820152283,
+          "pred_label": "not_story",
+          "raw_label_probabilities": {
+            "LABEL_0": 0.8906609416007996,
+            "LABEL_1": 0.10933908820152283
+          },
+          "text": "I spent 2 years on Android, went from an iPhone 12 to a S23+ then S24 Ultra and Pixel 9 Pro. Android sucks ass compared to IOS and Samsung and Google customer service are both dogshit compared to Apple customer support."
+        },
+        {
+          "thread_id": "1kjulgz",
+          "thread_title": "Apple has started to sell refurbished iPhone 15s",
+          "comment_id": "t1_mrw37sf",
+          "parent_id": "t1_mruwde8",
+          "author": "Rosselman",
+          "depth": 5,
+          "not_story_probability": 0.9779734015464783,
+          "story_probability": 0.02202661521732807,
+          "pred_label": "not_story",
+          "raw_label_probabilities": {
+            "LABEL_0": 0.9779734015464783,
+            "LABEL_1": 0.02202661521732807
+          },
+          "text": "I just fail to see the big usability difference between the OSes. I’m still scrolling exactly the same Reddit app."
+        },
+        {
+          "thread_id": "1kjulgz",
+          "thread_title": "Apple has started to sell refurbished iPhone 15s",
+          "comment_id": "t1_mrx47dx",
+          "parent_id": "t1_mrw37sf",
+          "author": "schu2470",
+          "depth": 6,
+          "not_story_probability": 0.9753140807151794,
+          "story_probability": 0.024685878306627274,
+          "pred_label": "not_story",
+          "raw_label_probabilities": {
+            "LABEL_0": 0.9753140807151794,
+            "LABEL_1": 0.024685878306627274
+          },
+          "text": "There's no real difference other than how it feels to use the different operating systems. I've had both over the past 2 decades and while I prefer iOS there's nothing wrong with Android software or hardware."
+        },
+        {
+          "thread_id": "1kjulgz",
+          "thread_title": "Apple has started to sell refurbished iPhone 15s",
+          "comment_id": "t1_mru1dh2",
+          "parent_id": "t1_mrpyopx",
+          "author": "AerAU01",
+          "depth": 2,
+          "not_story_probability": 0.9270134568214417,
+          "story_probability": 0.07298655807971954,
+          "pred_label": "not_story",
+          "raw_label_probabilities": {
+            "LABEL_0": 0.9270134568214417,
+            "LABEL_1": 0.07298655807971954
+          },
+          "text": "S25 Ultra is more expensive, Android boy"
+        },
+        {
+          "thread_id": "1kjulgz",
+          "thread_title": "Apple has started to sell refurbished iPhone 15s",
+          "comment_id": "t1_mrtp3e3",
+          "parent_id": "t1_mrpyopx",
+          "author": "ChickHicks_86",
+          "depth": 2,
+          "not_story_probability": 0.9099740982055664,
+          "story_probability": 0.09002585709095001,
+          "pred_label": "not_story",
+          "raw_label_probabilities": {
+            "LABEL_0": 0.9099740982055664,
+            "LABEL_1": 0.09002585709095001
+          },
+          "text": "How much memory?"
+        },
+        {
+          "thread_id": "1kjulgz",
+          "thread_title": "Apple has started to sell refurbished iPhone 15s",
+          "comment_id": "t1_mrtaqqx",
+          "parent_id": "t1_mrpyopx",
+          "author": "blue0231",
+          "depth": 2,
+          "not_story_probability": 0.9526637196540833,
+          "story_probability": 0.04733622819185257,
+          "pred_label": "not_story",
+          "raw_label_probabilities": {
+            "LABEL_0": 0.9526637196540833,
+            "LABEL_1": 0.04733622819185257
+          },
+          "text": "S25 is a joke a phone. FOH"
+        },
+        {
+          "thread_id": "1kjulgz",
+          "thread_title": "Apple has started to sell refurbished iPhone 15s",
+          "comment_id": "t1_mrqhdxa",
+          "parent_id": "t1_mrpv60n",
+          "author": "Serhide",
+          "depth": 1,
+          "not_story_probability": 0.9563159942626953,
+          "story_probability": 0.04368402808904648,
+          "pred_label": "not_story",
+          "raw_label_probabilities": {
+            "LABEL_0": 0.9563159942626953,
+            "LABEL_1": 0.04368402808904648
+          },
+          "text": "You must now know anything to say that"
+        },
+        {
+          "thread_id": "1kjulgz",
+          "thread_title": "Apple has started to sell refurbished iPhone 15s",
+          "comment_id": "t1_mrpuyzv",
+          "parent_id": "t3_1kjulgz",
+          "author": "kiwi-kaiser",
+          "depth": 0,
+          "not_story_probability": 0.06703484058380127,
+          "story_probability": 0.9329651594161987,
+          "pred_label": "story",
+          "raw_label_probabilities": {
+            "LABEL_0": 0.06703484058380127,
+            "LABEL_1": 0.9329651594161987
+          },
+          "text": "I still wish I waited one year. Switched from the 13 mini to the 15 Pro. Main reasons: Battery life life and overheating issues. Now I have a bigger phone with exactly the same problems. Replaced it two times now with Apple Care and the problems are still there. I now have a 15 Pro that was manufactured in January 2025 and the problems are still the same. Never heard of these issues from the 14 Pro or 15 Pro. So I should've just waited another year. Still try to rock this hand warmer for another 2-3 years. Even if it's the worst iPhone I ever had. But the titanium at least feels nice. 😅"
+        },
+        {
+          "thread_id": "1kjulgz",
+          "thread_title": "Apple has started to sell refurbished iPhone 15s",
+          "comment_id": "t1_mrqd5m9",
+          "parent_id": "t1_mrpuyzv",
+          "author": "keylu",
+          "depth": 1,
+          "not_story_probability": 0.06184452399611473,
+          "story_probability": 0.938155472278595,
+          "pred_label": "story",
+          "raw_label_probabilities": {
+            "LABEL_0": 0.06184452399611473,
+            "LABEL_1": 0.938155472278595
+          },
+          "text": "Hmm, I did the exact same switch (13 mini - 15 pro) and I'm very happy with the battery life + no overheating... Weird. Maybe you were just unlucky with your devices... Three times 😅"
+        },
+        {
+          "thread_id": "1kjulgz",
+          "thread_title": "Apple has started to sell refurbished iPhone 15s",
+          "comment_id": "t1_mrupcrr",
+          "parent_id": "t1_mrpuyzv",
+          "author": "deej628",
+          "depth": 1,
+          "not_story_probability": 0.026962285861372948,
+          "story_probability": 0.9730377197265625,
+          "pred_label": "story",
+          "raw_label_probabilities": {
+            "LABEL_0": 0.026962285861372948,
+            "LABEL_1": 0.9730377197265625
+          },
+          "text": "I did the same upgrade and got a refurb with 88% capacity. This thing drinks battery even after making every tweak in the settings I could find. Crazy."
+        },
+        {
+          "thread_id": "1kjulgz",
+          "thread_title": "Apple has started to sell refurbished iPhone 15s",
+          "comment_id": "t1_mzlpvo6",
+          "parent_id": "t1_mrupcrr",
+          "author": "CityOfSins2",
+          "depth": 2,
+          "not_story_probability": 0.8538178205490112,
+          "story_probability": 0.14618214964866638,
+          "pred_label": "not_story",
+          "raw_label_probabilities": {
+            "LABEL_0": 0.8538178205490112,
+            "LABEL_1": 0.14618214964866638
+          },
+          "text": "Did u get refurbished from apple? I’m looking to get my niece a refurbished iPhone 14 or 15 but not trying to get an 88-80% battery life. I thought apple replaces batteries but maybe I’m wrong?"
+        },
+        {
+          "thread_id": "1kjulgz",
+          "thread_title": "Apple has started to sell refurbished iPhone 15s",
+          "comment_id": "t1_mzlq6c2",
+          "parent_id": "t1_mzlpvo6",
+          "author": "deej628",
+          "depth": 3,
+          "not_story_probability": 0.04395795240998268,
+          "story_probability": 0.9560419917106628,
+          "pred_label": "story",
+          "raw_label_probabilities": {
+            "LABEL_0": 0.04395795240998268,
+            "LABEL_1": 0.9560419917106628
+          },
+          "text": "Got it from back market. Was in great shape outside of the 88% when it should have been at least 90 for the condition I chose. Apple does replace batteries at their stores as does Best Buy."
+        },
+        {
+          "thread_id": "1kjulgz",
+          "thread_title": "Apple has started to sell refurbished iPhone 15s",
+          "comment_id": "t1_mzluxc0",
+          "parent_id": "t1_mzlq6c2",
+          "author": "CityOfSins2",
+          "depth": 4,
+          "not_story_probability": 0.48496270179748535,
+          "story_probability": 0.5150373578071594,
+          "pred_label": "story",
+          "raw_label_probabilities": {
+            "LABEL_0": 0.48496270179748535,
+            "LABEL_1": 0.5150373578071594
+          },
+          "text": "Ok thanks! But it’s what, $100? Been looking at back market but that’s my concern abt the battery. I see some people on there get 100% but others 85% which is a huge difference lol"
+        },
+        {
+          "thread_id": "1kjulgz",
+          "thread_title": "Apple has started to sell refurbished iPhone 15s",
+          "comment_id": "t1_mzm1o26",
+          "parent_id": "t1_mzluxc0",
+          "author": "deej628",
+          "depth": 5,
+          "not_story_probability": 0.9633395075798035,
+          "story_probability": 0.03666054084897041,
+          "pred_label": "not_story",
+          "raw_label_probabilities": {
+            "LABEL_0": 0.9633395075798035,
+            "LABEL_1": 0.03666054084897041
+          },
+          "text": "They have a couple different conditions you can buy so that’s why the differences in battery level. Less than 100 to replace the battery."
+        },
+        {
+          "thread_id": "1kjulgz",
+          "thread_title": "Apple has started to sell refurbished iPhone 15s",
+          "comment_id": "t1_n9fifaj",
+          "parent_id": "t1_mrpuyzv",
+          "author": "Conscious-Club-2167",
+          "depth": 1,
+          "not_story_probability": 0.03151746466755867,
+          "story_probability": 0.968482494354248,
+          "pred_label": "story",
+          "raw_label_probabilities": {
+            "LABEL_0": 0.03151746466755867,
+            "LABEL_1": 0.968482494354248
+          },
+          "text": "My 13 mini's battery just dropped to 0% this morning, unable to charge at all, just had the battery replaced from a third party"
+        },
+        {
+          "thread_id": "1kjulgz",
+          "thread_title": "Apple has started to sell refurbished iPhone 15s",
+          "comment_id": "t1_mrr6g0m",
+          "parent_id": "t3_1kjulgz",
+          "author": "anom27",
+          "depth": 0,
+          "not_story_probability": 0.9445021152496338,
+          "story_probability": 0.05549781396985054,
+          "pred_label": "not_story",
+          "raw_label_probabilities": {
+            "LABEL_0": 0.9445021152496338,
+            "LABEL_1": 0.05549781396985054
+          },
+          "text": "I hate my 15 Pro - you can literally watch the battery drain in real time with normal use."
+        },
+        {
+          "thread_id": "1kjulgz",
+          "thread_title": "Apple has started to sell refurbished iPhone 15s",
+          "comment_id": "t1_mrwbjo5",
+          "parent_id": "t1_mrr6g0m",
+          "author": "FitExplanation4005",
+          "depth": 1,
+          "not_story_probability": 0.9703636169433594,
+          "story_probability": 0.029636358842253685,
+          "pred_label": "not_story",
+          "raw_label_probabilities": {
+            "LABEL_0": 0.9703636169433594,
+            "LABEL_1": 0.029636358842253685
+          },
+          "text": "I have the same phone and mine runs beautifully.(battery) Most of you people who have bad battery is because you leave it to charge all night whilst you’re sleeping. If you check battery health and not battery percentage then you can see how much health is left on your iPhone, mines still at 100% since I bought the phone and let me mention again that’s the battery health not the charger percentage or charge inside the phone"
+        },
+        {
+          "thread_id": "1kjulgz",
+          "thread_title": "Apple has started to sell refurbished iPhone 15s",
+          "comment_id": "t1_mrwu4kd",
+          "parent_id": "t1_mrwbjo5",
+          "author": "ImportantAd848",
+          "depth": 2,
+          "not_story_probability": 0.954928457736969,
+          "story_probability": 0.045071519911289215,
+          "pred_label": "not_story",
+          "raw_label_probabilities": {
+            "LABEL_0": 0.954928457736969,
+            "LABEL_1": 0.045071519911289215
+          },
+          "text": "you must work for apple"
+        },
+        {
+          "thread_id": "1kjulgz",
+          "thread_title": "Apple has started to sell refurbished iPhone 15s",
+          "comment_id": "t1_mrxwwk8",
+          "parent_id": "t1_mrwbjo5",
+          "author": "[deleted]",
+          "depth": 2,
+          "not_story_probability": 0.7576761245727539,
+          "story_probability": 0.2423238903284073,
+          "pred_label": "not_story",
+          "raw_label_probabilities": {
+            "LABEL_0": 0.7576761245727539,
+            "LABEL_1": 0.2423238903284073
+          },
+          "text": "I'm with you, I just don't charge it at night unless it's below 10%, woke up at 5 am, it's 11am and I still have 82%"
+        },
+        {
+          "thread_id": "1kjulgz",
+          "thread_title": "Apple has started to sell refurbished iPhone 15s",
+          "comment_id": "t1_n3sjjvw",
+          "parent_id": "t1_mrxwwk8",
+          "author": "SkitariusOfMars",
+          "depth": 3,
+          "not_story_probability": 0.9797641038894653,
+          "story_probability": 0.02023591659963131,
+          "pred_label": "not_story",
+          "raw_label_probabilities": {
+            "LABEL_0": 0.9797641038894653,
+            "LABEL_1": 0.02023591659963131
+          },
+          "text": "Not charging unless below 10% is actually damaging it more. Lithium battery damage is highest close to 100% or 0%. When lithium batteries are used on spacecraft they're literally cycled between 45 and 55% - this is the only way they can survive 15 charge-discharge cycles per day for many years."
+        },
+        {
+          "thread_id": "1kjulgz",
+          "thread_title": "Apple has started to sell refurbished iPhone 15s",
+          "comment_id": "t1_ms54o8y",
+          "parent_id": "t1_mrwbjo5",
+          "author": "[deleted]",
+          "depth": 2,
+          "not_story_probability": 0.9671193957328796,
+          "story_probability": 0.03288063779473305,
+          "pred_label": "not_story",
+          "raw_label_probabilities": {
+            "LABEL_0": 0.9671193957328796,
+            "LABEL_1": 0.03288063779473305
+          },
+          "text": "making excuses for bad battery life just stop. I have no issues with my 15 pro only becasue i have low screen time not becasue the battery life is good."
+        },
+        {
+          "thread_id": "1kjulgz",
+          "thread_title": "Apple has started to sell refurbished iPhone 15s",
+          "comment_id": "t1_mrpmfze",
+          "parent_id": "t3_1kjulgz",
+          "author": "OopsIHadAnAccident",
+          "depth": 0,
+          "not_story_probability": 0.1325998455286026,
+          "story_probability": 0.8674001693725586,
+          "pred_label": "story",
+          "raw_label_probabilities": {
+            "LABEL_0": 0.1325998455286026,
+            "LABEL_1": 0.8674001693725586
+          },
+          "text": "Worst iPhone I’ve had. Upgraded to the 16 Pro just to escape the atrocious battery performance/degradation."
+        },
+        {
+          "thread_id": "1kjulgz",
+          "thread_title": "Apple has started to sell refurbished iPhone 15s",
+          "comment_id": "t1_mrpmqjd",
+          "parent_id": "t1_mrpmfze",
+          "author": "[deleted]",
+          "depth": 1,
+          "not_story_probability": 0.5742174386978149,
+          "story_probability": 0.4257825016975403,
+          "pred_label": "not_story",
+          "raw_label_probabilities": {
+            "LABEL_0": 0.5742174386978149,
+            "LABEL_1": 0.4257825016975403
+          },
+          "text": "Yeah the battery performance and degradation has been very poor. Already on 86% and it lasts half a day"
+        },
+        {
+          "thread_id": "1kjulgz",
+          "thread_title": "Apple has started to sell refurbished iPhone 15s",
+          "comment_id": "t1_mrqhylr",
+          "parent_id": "t1_mrpmqjd",
+          "author": "PM_Sexy_Leg_Pics",
+          "depth": 2,
+          "not_story_probability": 0.02534324862062931,
+          "story_probability": 0.9746568202972412,
+          "pred_label": "story",
+          "raw_label_probabilities": {
+            "LABEL_0": 0.02534324862062931,
+            "LABEL_1": 0.9746568202972412
+          },
+          "text": "My launch week 15 Pro Max had horrible battery degradation as well. It got to 87% health a year in. Swapped the battery for a fresh one and this new battery is holding up so much better. Still at 100% health with 154 cycles with no charge limit. Maybe the early batteries were defective in some way."
+        },
+        {
+          "thread_id": "1kjulgz",
+          "thread_title": "Apple has started to sell refurbished iPhone 15s",
+          "comment_id": "t1_mrry8sk",
+          "parent_id": "t1_mrqhylr",
+          "author": "AuelDole",
+          "depth": 3,
+          "not_story_probability": 0.018444180488586426,
+          "story_probability": 0.9815558791160583,
+          "pred_label": "story",
+          "raw_label_probabilities": {
+            "LABEL_0": 0.018444180488586426,
+            "LABEL_1": 0.9815558791160583
+          },
+          "text": "I had a launch day 15pro max that the battery expanded in, took it into repair and it apparently vented when they tried to replace it, so I got a new one. Get the 16pm when it came out and haven’t had any issues yet, 224 cycles, 100% capacity as well. Gave my 15pm to my grandma to replace her xr."
+        },
+        {
+          "thread_id": "1kjulgz",
+          "thread_title": "Apple has started to sell refurbished iPhone 15s",
+          "comment_id": "t1_ms54xwf",
+          "parent_id": "t1_mrry8sk",
+          "author": "[deleted]",
+          "depth": 4,
+          "not_story_probability": 0.9472207427024841,
+          "story_probability": 0.05277923122048378,
+          "pred_label": "not_story",
+          "raw_label_probabilities": {
+            "LABEL_0": 0.9472207427024841,
+            "LABEL_1": 0.05277923122048378
+          },
+          "text": "At how many cycles? mine is 801 cycles and 89 percent."
+        },
+        {
+          "thread_id": "1kjulgz",
+          "thread_title": "Apple has started to sell refurbished iPhone 15s",
+          "comment_id": "t1_mrpn4q6",
+          "parent_id": "t1_mrpmqjd",
+          "author": "OopsIHadAnAccident",
+          "depth": 2,
+          "not_story_probability": 0.04287513345479965,
+          "story_probability": 0.9571248888969421,
+          "pred_label": "story",
+          "raw_label_probabilities": {
+            "LABEL_0": 0.04287513345479965,
+            "LABEL_1": 0.9571248888969421
+          },
+          "text": "I was at 83% after one year of use and never made it through the day without recharging. My 16 pro ends the day with 30-50% left and after 8 months, it’s still at 100% battery health"
+        },
+        {
+          "thread_id": "1kjulgz",
+          "thread_title": "Apple has started to sell refurbished iPhone 15s",
+          "comment_id": "t1_mrqaajb",
+          "parent_id": "t1_mrpn4q6",
+          "author": "flux8",
+          "depth": 3,
+          "not_story_probability": 0.9482985138893127,
+          "story_probability": 0.05170150101184845,
+          "pred_label": "not_story",
+          "raw_label_probabilities": {
+            "LABEL_0": 0.9482985138893127,
+            "LABEL_1": 0.05170150101184845
+          },
+          "text": "Hmm, interesting. Why would the 16 have so much better battery efficiency than the 15?"
+        },
+        {
+          "thread_id": "1kjulgz",
+          "thread_title": "Apple has started to sell refurbished iPhone 15s",
+          "comment_id": "t1_mrqx5kz",
+          "parent_id": "t1_mrqaajb",
+          "author": "ICEman_c81",
+          "depth": 4,
+          "not_story_probability": 0.9716159701347351,
+          "story_probability": 0.02838396281003952,
+          "pred_label": "not_story",
+          "raw_label_probabilities": {
+            "LABEL_0": 0.9716159701347351,
+            "LABEL_1": 0.02838396281003952
+          },
+          "text": "Different supplier and/or battery chemistry, better thermal performance, more efficient SoC. I wonder if a new battery performs better or the same in a 15 series phone, maybe initial batches were worse due to something?"
+        },
+        {
+          "thread_id": "1kjulgz",
+          "thread_title": "Apple has started to sell refurbished iPhone 15s",
+          "comment_id": "t1_mrve8ql",
+          "parent_id": "t1_mrqx5kz",
+          "author": "frockinbrock",
+          "depth": 5,
+          "not_story_probability": 0.08688442409038544,
+          "story_probability": 0.9131155610084534,
+          "pred_label": "story",
+          "raw_label_probabilities": {
+            "LABEL_0": 0.08688442409038544,
+            "LABEL_1": 0.9131155610084534
+          },
+          "text": "I replaced the battery in my 15 Pro because even at home on WiFi, barely using it, it would drop from 90% to 20% within a few hours; (I don’t believe the Battery Health screen is honest at all btw). New battery from Apple Store, yes it’s better, but it’s still worse than my ORIGINAL 12 Pro, that I use for camera and app testing. And the 15 gets WAY hotter than the 12 ever did. I’m pretty sure the 16 Peo has a better optimized SoC, and the chassis has better heat management. One of the technical reviewer had said that, but I can’t find it."
+        },
+        {
+          "thread_id": "1kjulgz",
+          "thread_title": "Apple has started to sell refurbished iPhone 15s",
+          "comment_id": "t1_mrvg4st",
+          "parent_id": "t1_mrve8ql",
+          "author": "ICEman_c81",
+          "depth": 6,
+          "not_story_probability": 0.9593818187713623,
+          "story_probability": 0.04061821103096008,
+          "pred_label": "not_story",
+          "raw_label_probabilities": {
+            "LABEL_0": 0.9593818187713623,
+            "LABEL_1": 0.04061821103096008
+          },
+          "text": "My 15 Pro Max isn’t that bad, but after a year I only get like 4 and a bit hours of screen time. When new I could get like 8-9 hours off a charge. So in my book battery is like 50% as good, but battery health is 86% 🤷‍♂️"
+        },
+        {
+          "thread_id": "1kjulgz",
+          "thread_title": "Apple has started to sell refurbished iPhone 15s",
+          "comment_id": "t1_mrt5jtl",
+          "parent_id": "t1_mrpn4q6",
+          "author": "warman12363",
+          "depth": 3,
+          "not_story_probability": 0.925818681716919,
+          "story_probability": 0.07418133318424225,
+          "pred_label": "not_story",
+          "raw_label_probabilities": {
+            "LABEL_0": 0.925818681716919,
+            "LABEL_1": 0.07418133318424225
+          },
+          "text": "That’s crazy, launch day 16 pro here with 350 cycles and 96% and falling Battery health"
+        },
+        {
+          "thread_id": "1kjulgz",
+          "thread_title": "Apple has started to sell refurbished iPhone 15s",
+          "comment_id": "t1_mrpn8hl",
+          "parent_id": "t1_mrpmqjd",
+          "author": "OopsIHadAnAccident",
+          "depth": 2,
+          "not_story_probability": 0.7698187828063965,
+          "story_probability": 0.2301812767982483,
+          "pred_label": "not_story",
+          "raw_label_probabilities": {
+            "LABEL_0": 0.7698187828063965,
+            "LABEL_1": 0.2301812767982483
+          },
+          "text": "https://preview.redd.it/3on4203hn30f1.jpeg?width=1320&format=pjpg&auto=webp&s=93c34f9e73c5aa0a87ca1731941bbfe78065b7ff This is my 16 pro max after 8 months with a 95% charge limit"
+        },
+        {
+          "thread_id": "1kjulgz",
+          "thread_title": "Apple has started to sell refurbished iPhone 15s",
+          "comment_id": "t1_mrqdb5j",
+          "parent_id": "t1_mrpn8hl",
+          "author": "renorosales",
+          "depth": 3,
+          "not_story_probability": 0.8162984848022461,
+          "story_probability": 0.18370157480239868,
+          "pred_label": "not_story",
+          "raw_label_probabilities": {
+            "LABEL_0": 0.8162984848022461,
+            "LABEL_1": 0.18370157480239868
+          },
+          "text": "https://preview.redd.it/iiwnrdhez40f1.jpeg?width=1320&format=pjpg&auto=webp&s=b44b445d96db5c7f45d00f2f7c729f1a9190abe5 Same amount of time, no charge limit."
+        },
+        {
+          "thread_id": "1kjulgz",
+          "thread_title": "Apple has started to sell refurbished iPhone 15s",
+          "comment_id": "t1_mrqsy9d",
+          "parent_id": "t1_mrqdb5j",
+          "author": "the-biggest-brain-04",
+          "depth": 4,
+          "not_story_probability": 0.6888297200202942,
+          "story_probability": 0.3111702799797058,
+          "pred_label": "not_story",
+          "raw_label_probabilities": {
+            "LABEL_0": 0.6888297200202942,
+            "LABEL_1": 0.3111702799797058
+          },
+          "text": "https://preview.redd.it/2wy8vavjk50f1.jpeg?width=1320&format=pjpg&auto=webp&s=2671634ccad45d0e43aaadf64714b2471e7838a3 4 months"
+        },
+        {
+          "thread_id": "1kjulgz",
+          "thread_title": "Apple has started to sell refurbished iPhone 15s",
+          "comment_id": "t1_mrrwtq1",
+          "parent_id": "t1_mrqsy9d",
+          "author": "Diormybodyyy",
+          "depth": 5,
+          "not_story_probability": 0.9433815479278564,
+          "story_probability": 0.056618496775627136,
+          "pred_label": "not_story",
+          "raw_label_probabilities": {
+            "LABEL_0": 0.9433815479278564,
+            "LABEL_1": 0.056618496775627136
+          },
+          "text": "After 250 cycles, it dips like crazy. Just wait."
+        },
+        {
+          "thread_id": "1kjulgz",
+          "thread_title": "Apple has started to sell refurbished iPhone 15s",
+          "comment_id": "t1_mrsd0jg",
+          "parent_id": "t1_mrrwtq1",
+          "author": "SlendyTheMan",
+          "depth": 6,
+          "not_story_probability": 0.9570507407188416,
+          "story_probability": 0.042949236929416656,
+          "pred_label": "not_story",
+          "raw_label_probabilities": {
+            "LABEL_0": 0.9570507407188416,
+            "LABEL_1": 0.042949236929416656
+          },
+          "text": "https://i.imgur.com/oCUN8Ur.jpeg Agreed. Mine is terrible. Battery life isn’t that great. 16 Pro"
+        },
+        {
+          "thread_id": "1kjulgz",
+          "thread_title": "Apple has started to sell refurbished iPhone 15s",
+          "comment_id": "t1_mrr15fq",
+          "parent_id": "t1_mrqsy9d",
+          "author": "TSQ_T1lted",
+          "depth": 5,
+          "not_story_probability": 0.10228807479143143,
+          "story_probability": 0.8977119326591492,
+          "pred_label": "story",
+          "raw_label_probabilities": {
+            "LABEL_0": 0.10228807479143143,
+            "LABEL_1": 0.8977119326591492
+          },
+          "text": "Sad to say, this isn't really accurate as the phone is just \"guesstimating\" the actual life of the phone. The reason the 80% limit may look like it actually saves your battery health is because it prevents the phone from recalibrating the actual health. This normally happens when the phone goes from 0 to 100 and if you're actively limiting the battery from let's say 20% - 80% then it can't update the battery health. This actually happened on my iPhone 12 mini (RIP) where I was about 300 cycles in and it still said 100 battery health. When I started using the battery from 0 - 100, it started to update the battery health and the battery health went down a percent a day until it stopped around 85."
+        },
+        {
+          "thread_id": "1kjulgz",
+          "thread_title": "Apple has started to sell refurbished iPhone 15s",
+          "comment_id": "t1_mrpufrh",
+          "parent_id": "t1_mrpmqjd",
+          "author": "Samjey",
+          "depth": 2,
+          "not_story_probability": 0.9767374396324158,
+          "story_probability": 0.023262543603777885,
+          "pred_label": "not_story",
+          "raw_label_probabilities": {
+            "LABEL_0": 0.9767374396324158,
+            "LABEL_1": 0.023262543603777885
+          },
+          "text": "What do you do with your phone and what kind of climate you live in? Most of battery degradation is caused by how and which temperature you use it at, no matter which phone/battery you have. For example, I use my phone as my Internet device on my PC which causes a lot more heat than the battery is designated to, which results into faster degradation"
+        },
+        {
+          "thread_id": "1kjulgz",
+          "thread_title": "Apple has started to sell refurbished iPhone 15s",
+          "comment_id": "t1_mrpo9o6",
+          "parent_id": "t1_mrpmqjd",
+          "author": "REIGNx777",
+          "depth": 2,
+          "not_story_probability": 0.06371994316577911,
+          "story_probability": 0.9362800717353821,
+          "pred_label": "story",
+          "raw_label_probabilities": {
+            "LABEL_0": 0.06371994316577911,
+            "LABEL_1": 0.9362800717353821
+          },
+          "text": "Huh. I’ve had mine 9 months and health is still 100%… Been using the 80% charging limit. Seems to be working."
+        },
+        {
+          "thread_id": "1kjulgz",
+          "thread_title": "Apple has started to sell refurbished iPhone 15s",
+          "comment_id": "t1_mrpqmdt",
+          "parent_id": "t1_mrpo9o6",
+          "author": "[deleted]",
+          "depth": 3,
+          "not_story_probability": 0.9168089032173157,
+          "story_probability": 0.08319113403558731,
+          "pred_label": "not_story",
+          "raw_label_probabilities": {
+            "LABEL_0": 0.9168089032173157,
+            "LABEL_1": 0.08319113403558731
+          },
+          "text": "I used the 80% limit for a long time. Now I just use optimized battery and keep it between 40-90% usually. Has been worse performing than my iPhone X and 12 battery personally. But every phone and use case is different"
+        },
+        {
+          "thread_id": "1kjulgz",
+          "thread_title": "Apple has started to sell refurbished iPhone 15s",
+          "comment_id": "t1_mrpqvoq",
+          "parent_id": "t1_mrpqmdt",
+          "author": "pawner",
+          "depth": 4,
+          "not_story_probability": 0.8956440091133118,
+          "story_probability": 0.10435599833726883,
+          "pred_label": "not_story",
+          "raw_label_probabilities": {
+            "LABEL_0": 0.8956440091133118,
+            "LABEL_1": 0.10435599833726883
+          },
+          "text": "I’m 91% owned since release, 428 cycle count. 80% charge limit the whole time. No worries about capacity. Still feels insanely fast. This iphone feels great still."
+        },
+        {
+          "thread_id": "1kjulgz",
+          "thread_title": "Apple has started to sell refurbished iPhone 15s",
+          "comment_id": "t1_mrq8pvw",
+          "parent_id": "t1_mrpmqjd",
+          "author": "SmokedUp_Corgi",
+          "depth": 2,
+          "not_story_probability": 0.1264444887638092,
+          "story_probability": 0.8735555410385132,
+          "pred_label": "story",
+          "raw_label_probabilities": {
+            "LABEL_0": 0.1264444887638092,
+            "LABEL_1": 0.8735555410385132
+          },
+          "text": "I never had any problems 90% at 554 cycles since launch. Usually I charge via MagSafe and maybe once a day for a little wired."
+        },
+        {
+          "thread_id": "1kjulgz",
+          "thread_title": "Apple has started to sell refurbished iPhone 15s",
+          "comment_id": "t1_mrqgz54",
+          "parent_id": "t1_mrpmqjd",
+          "author": "Coolpop52",
+          "depth": 2,
+          "not_story_probability": 0.9743996858596802,
+          "story_probability": 0.02560025453567505,
+          "pred_label": "not_story",
+          "raw_label_probabilities": {
+            "LABEL_0": 0.9743996858596802,
+            "LABEL_1": 0.02560025453567505
+          },
+          "text": "I think it has to do with how poor the 15 pro heat management system is. Using it in the sun and it heating up is understandable, but why is it getting warm during normal use."
+        },
+        {
+          "thread_id": "1kjulgz",
+          "thread_title": "Apple has started to sell refurbished iPhone 15s",
+          "comment_id": "t1_mrprgyf",
+          "parent_id": "t1_mrpmfze",
+          "author": "[deleted]",
+          "depth": 1,
+          "not_story_probability": 0.9119750261306763,
+          "story_probability": 0.08802495896816254,
+          "pred_label": "not_story",
+          "raw_label_probabilities": {
+            "LABEL_0": 0.9119750261306763,
+            "LABEL_1": 0.08802495896816254
+          },
+          "text": "Said every person about every iPhone they have ever had."
+        },
+        {
+          "thread_id": "1kjulgz",
+          "thread_title": "Apple has started to sell refurbished iPhone 15s",
+          "comment_id": "t1_mrqxky1",
+          "parent_id": "t1_mrprgyf",
+          "author": "___unknownuser",
+          "depth": 2,
+          "not_story_probability": 0.09846886992454529,
+          "story_probability": 0.9015311002731323,
+          "pred_label": "story",
+          "raw_label_probabilities": {
+            "LABEL_0": 0.09846886992454529,
+            "LABEL_1": 0.9015311002731323
+          },
+          "text": "The 15 pro is the only iPhone I’ve had with battery problems. I’ve had an iPhone since the 4 (pro models whenever they started). I really think the 15 pro was an anomaly."
+        },
+        {
+          "thread_id": "1kjulgz",
+          "thread_title": "Apple has started to sell refurbished iPhone 15s",
+          "comment_id": "t1_mrprlsc",
+          "parent_id": "t1_mrprgyf",
+          "author": "OopsIHadAnAccident",
+          "depth": 2,
+          "not_story_probability": 0.029200775548815727,
+          "story_probability": 0.9707992076873779,
+          "pred_label": "story",
+          "raw_label_probabilities": {
+            "LABEL_0": 0.029200775548815727,
+            "LABEL_1": 0.9707992076873779
+          },
+          "text": "Nah. Loved almost every one I’ve had and my 16 pro is excellent. The 15 pro just had some serious battery problems, otherwise it was okay."
+        },
+        {
+          "thread_id": "1kjulgz",
+          "thread_title": "Apple has started to sell refurbished iPhone 15s",
+          "comment_id": "t1_mrrtjt3",
+          "parent_id": "t1_mrprgyf",
+          "author": "codersfocus",
+          "depth": 2,
+          "not_story_probability": 0.16219373047351837,
+          "story_probability": 0.837806224822998,
+          "pred_label": "story",
+          "raw_label_probabilities": {
+            "LABEL_0": 0.16219373047351837,
+            "LABEL_1": 0.837806224822998
+          },
+          "text": "No, the iPhone 15 specifically had a chip issue. The earlier half of the models were using chips that were poorly manufactured as the technology was new for the manufacturer TSMC, leading to excessive energy use. They fixed the process mid way through the iPhone 15 production cycle, so depending on which one you got, your chip literally uses more power and overheats."
+        },
+        {
+          "thread_id": "1kjulgz",
+          "thread_title": "Apple has started to sell refurbished iPhone 15s",
+          "comment_id": "t1_mrtfukz",
+          "parent_id": "t1_mrrtjt3",
+          "author": "VaishakhD",
+          "depth": 3,
+          "not_story_probability": 0.027856681495904922,
+          "story_probability": 0.972143292427063,
+          "pred_label": "story",
+          "raw_label_probabilities": {
+            "LABEL_0": 0.027856681495904922,
+            "LABEL_1": 0.972143292427063
+          },
+          "text": "I have a launch day 15 pro max and have had zero issues. It’s so exaggerated."
+        },
+        {
+          "thread_id": "1kjulgz",
+          "thread_title": "Apple has started to sell refurbished iPhone 15s",
+          "comment_id": "t1_mrpx2fe",
+          "parent_id": "t1_mrpmfze",
+          "author": "Kasziel1",
+          "depth": 1,
+          "not_story_probability": 0.1353185474872589,
+          "story_probability": 0.8646814823150635,
+          "pred_label": "story",
+          "raw_label_probabilities": {
+            "LABEL_0": 0.1353185474872589,
+            "LABEL_1": 0.8646814823150635
+          },
+          "text": "This is my 15 pro max after 1 year https://preview.redd.it/mysa6om6540f1.jpeg?width=1290&format=pjpg&auto=webp&s=ed5710416c51c6ff157684d9a808d948c8492980 I had that with a 14. It went from 94 to 84% in two months, but also only to 83 in the following 6.."
+        },
+        {
+          "thread_id": "1kjulgz",
+          "thread_title": "Apple has started to sell refurbished iPhone 15s",
+          "comment_id": "t1_mrqj1ra",
+          "parent_id": "t1_mrpx2fe",
+          "author": "Hannan_A",
+          "depth": 2,
+          "not_story_probability": 0.1429896056652069,
+          "story_probability": 0.8570104241371155,
+          "pred_label": "story",
+          "raw_label_probabilities": {
+            "LABEL_0": 0.1429896056652069,
+            "LABEL_1": 0.8570104241371155
+          },
+          "text": "Did yours just go down to 99 recently? I noticed mine went down to 98 yesterday after being on 100 since I bought it and it’s gone down to 97 overnight. I feel like iOS reports the battery health decreasing much more rapidly after it loses a single percent for some reason."
+        },
+        {
+          "thread_id": "1kjulgz",
+          "thread_title": "Apple has started to sell refurbished iPhone 15s",
+          "comment_id": "t1_mrqjbnx",
+          "parent_id": "t1_mrqj1ra",
+          "author": "Kasziel1",
+          "depth": 3,
+          "not_story_probability": 0.14614929258823395,
+          "story_probability": 0.8538506627082825,
+          "pred_label": "story",
+          "raw_label_probabilities": {
+            "LABEL_0": 0.14614929258823395,
+            "LABEL_1": 0.8538506627082825
+          },
+          "text": "No, it has been a while. I have the phone set to 80% and seem to be working well"
+        },
+        {
+          "thread_id": "1kjulgz",
+          "thread_title": "Apple has started to sell refurbished iPhone 15s",
+          "comment_id": "t1_mrqm6v8",
+          "parent_id": "t1_mrqjbnx",
+          "author": "Hannan_A",
+          "depth": 4,
+          "not_story_probability": 0.9740694165229797,
+          "story_probability": 0.025930557399988174,
+          "pred_label": "not_story",
+          "raw_label_probabilities": {
+            "LABEL_0": 0.9740694165229797,
+            "LABEL_1": 0.025930557399988174
+          },
+          "text": "I see, I have been wirelessly charging my 15PM every night and using 27W wired charging other times so even with the charging limit the heat generated won’t be great. Either way a battery replacement isn’t too expensive for it so it’s fine."
+        },
+        {
+          "thread_id": "1kjulgz",
+          "thread_title": "Apple has started to sell refurbished iPhone 15s",
+          "comment_id": "t1_mrqoma6",
+          "parent_id": "t1_mrqm6v8",
+          "author": "Kasziel1",
+          "depth": 5,
+          "not_story_probability": 0.9755682349205017,
+          "story_probability": 0.024431796744465828,
+          "pred_label": "not_story",
+          "raw_label_probabilities": {
+            "LABEL_0": 0.9755682349205017,
+            "LABEL_1": 0.024431796744465828
+          },
+          "text": "Yeah I do the same too, if I charge at night is wireless, otherwise by cable."
+        },
+        {
+          "thread_id": "1kjulgz",
+          "thread_title": "Apple has started to sell refurbished iPhone 15s",
+          "comment_id": "t1_mrqkpdl",
+          "parent_id": "t1_mrqj1ra",
+          "author": "SeriousMongoose2290",
+          "depth": 3,
+          "not_story_probability": 0.9763750433921814,
+          "story_probability": 0.023624999448657036,
+          "pred_label": "not_story",
+          "raw_label_probabilities": {
+            "LABEL_0": 0.9763750433921814,
+            "LABEL_1": 0.023624999448657036
+          },
+          "text": "That’s because a new battery can really have 103-105% (or more) but only 100% is displayed. So you have to lose 4-6% capacity before it shows up."
+        },
+        {
+          "thread_id": "1kjulgz",
+          "thread_title": "Apple has started to sell refurbished iPhone 15s",
+          "comment_id": "t1_mrqm3nm",
+          "parent_id": "t1_mrqkpdl",
+          "author": "Hannan_A",
+          "depth": 4,
+          "not_story_probability": 0.0403602309525013,
+          "story_probability": 0.959639847278595,
+          "pred_label": "story",
+          "raw_label_probabilities": {
+            "LABEL_0": 0.0403602309525013,
+            "LABEL_1": 0.959639847278595
+          },
+          "text": "Hmm, makes sense. It happened to my old 6S twice each time I replaced the battery as well."
+        },
+        {
+          "thread_id": "1kjulgz",
+          "thread_title": "Apple has started to sell refurbished iPhone 15s",
+          "comment_id": "t1_mrs6aum",
+          "parent_id": "t1_mrqj1ra",
+          "author": "mushiexl",
+          "depth": 3,
+          "not_story_probability": 0.4509764313697815,
+          "story_probability": 0.5490235090255737,
+          "pred_label": "story",
+          "raw_label_probabilities": {
+            "LABEL_0": 0.4509764313697815,
+            "LABEL_1": 0.5490235090255737
+          },
+          "text": "Ive had that same thing too it was around 200 cycles before it dropped to 99%, now im at 277 cycles and its at 95%"
+        },
+        {
+          "thread_id": "1kjulgz",
+          "thread_title": "Apple has started to sell refurbished iPhone 15s",
+          "comment_id": "t1_mrpo59m",
+          "parent_id": "t1_mrpmfze",
+          "author": "inspectorjozef",
+          "depth": 1,
+          "not_story_probability": 0.48779889941215515,
+          "story_probability": 0.5122010707855225,
+          "pred_label": "story",
+          "raw_label_probabilities": {
+            "LABEL_0": 0.48779889941215515,
+            "LABEL_1": 0.5122010707855225
+          },
+          "text": "Does the 16 pro actually solve that problem? If that’s the case I might upgrade to the 16 pro because I was on a holiday recently and oh my days the absolute fear of my power bank not being charged. Not to mention the Middle East heat and charging at the same time where the 15 pro max had the WORST overheating I’ve seen in an iPhone in quite a long time and I’ve been an iPhone user since 4s…"
+        },
+        {
+          "thread_id": "1kjulgz",
+          "thread_title": "Apple has started to sell refurbished iPhone 15s",
+          "comment_id": "t1_mrpqzhq",
+          "parent_id": "t1_mrpo59m",
+          "author": "OopsIHadAnAccident",
+          "depth": 2,
+          "not_story_probability": 0.9617661237716675,
+          "story_probability": 0.03823380172252655,
+          "pred_label": "not_story",
+          "raw_label_probabilities": {
+            "LABEL_0": 0.9617661237716675,
+            "LABEL_1": 0.03823380172252655
+          },
+          "text": "Night and day difference. Zero heating up when charging or in heavy use."
+        },
+        {
+          "thread_id": "1kjulgz",
+          "thread_title": "Apple has started to sell refurbished iPhone 15s",
+          "comment_id": "t1_mrqkho0",
+          "parent_id": "t1_mrpo59m",
+          "author": "JonathanBro",
+          "depth": 2,
+          "not_story_probability": 0.6289006471633911,
+          "story_probability": 0.3710993230342865,
+          "pred_label": "not_story",
+          "raw_label_probabilities": {
+            "LABEL_0": 0.6289006471633911,
+            "LABEL_1": 0.3710993230342865
+          },
+          "text": "I could fry eggs on my 15 Pro when charging or on FaceTime. Upgraded to the 16 Pro Max and I don’t even remember the last time this thing got hot (8 months in)"
+        },
+        {
+          "thread_id": "1kjulgz",
+          "thread_title": "Apple has started to sell refurbished iPhone 15s",
+          "comment_id": "t1_mrpol1w",
+          "parent_id": "t1_mrpmfze",
+          "author": "Vast-Mud3009",
+          "depth": 1,
+          "not_story_probability": 0.03541291505098343,
+          "story_probability": 0.9645870923995972,
+          "pred_label": "story",
+          "raw_label_probabilities": {
+            "LABEL_0": 0.03541291505098343,
+            "LABEL_1": 0.9645870923995972
+          },
+          "text": "This, also it would heat up very often. I returned mine and waited for the 16 Pro and I’m happy with it"
+        },
+        {
+          "thread_id": "1kjulgz",
+          "thread_title": "Apple has started to sell refurbished iPhone 15s",
+          "comment_id": "t1_mrptd0c",
+          "parent_id": "t1_mrpmfze",
+          "author": "Syclus",
+          "depth": 1,
+          "not_story_probability": 0.9654342532157898,
+          "story_probability": 0.03456573188304901,
+          "pred_label": "not_story",
+          "raw_label_probabilities": {
+            "LABEL_0": 0.9654342532157898,
+            "LABEL_1": 0.03456573188304901
+          },
+          "text": "Worst camera for me, the micro camera auto swapping is terrible and way to noticable. Ruins the experience lots of times"
+        },
+        {
+          "thread_id": "1kjulgz",
+          "thread_title": "Apple has started to sell refurbished iPhone 15s",
+          "comment_id": "t1_mrpthzj",
+          "parent_id": "t1_mrptd0c",
+          "author": "OopsIHadAnAccident",
+          "depth": 2,
+          "not_story_probability": 0.9513494968414307,
+          "story_probability": 0.04865046590566635,
+          "pred_label": "not_story",
+          "raw_label_probabilities": {
+            "LABEL_0": 0.9513494968414307,
+            "LABEL_1": 0.04865046590566635
+          },
+          "text": "You can turn that off"
+        },
+        {
+          "thread_id": "1kjulgz",
+          "thread_title": "Apple has started to sell refurbished iPhone 15s",
+          "comment_id": "t1_mrptv05",
+          "parent_id": "t1_mrpthzj",
+          "author": "Syclus",
+          "depth": 3,
+          "not_story_probability": 0.8218153119087219,
+          "story_probability": 0.17818473279476166,
+          "pred_label": "not_story",
+          "raw_label_probabilities": {
+            "LABEL_0": 0.8218153119087219,
+            "LABEL_1": 0.17818473279476166
+          },
+          "text": "I know, I have it off for most of the time unless I need a picture of something up close. The thing is I shouldn't have to turn it off. Didn't have any trouble with my 12 pro max"
+        },
+        {
+          "thread_id": "1kjulgz",
+          "thread_title": "Apple has started to sell refurbished iPhone 15s",
+          "comment_id": "t1_mrpu4to",
+          "parent_id": "t1_mrptv05",
+          "author": "InfiniteNinja6728",
+          "depth": 4,
+          "not_story_probability": 0.9574719667434692,
+          "story_probability": 0.04252800717949867,
+          "pred_label": "not_story",
+          "raw_label_probabilities": {
+            "LABEL_0": 0.9574719667434692,
+            "LABEL_1": 0.04252800717949867
+          },
+          "text": "Because 12 pros didn't have macro capability!?"
+        },
+        {
+          "thread_id": "1kjulgz",
+          "thread_title": "Apple has started to sell refurbished iPhone 15s",
+          "comment_id": "t1_mrpuhg2",
+          "parent_id": "t1_mrpu4to",
+          "author": "Syclus",
+          "depth": 5,
+          "not_story_probability": 0.05592549592256546,
+          "story_probability": 0.9440745115280151,
+          "pred_label": "story",
+          "raw_label_probabilities": {
+            "LABEL_0": 0.05592549592256546,
+            "LABEL_1": 0.9440745115280151
+          },
+          "text": "Oh for real? I got close up shots with it as well, didn't even notice much of a difference with the micro camera on the 15 😂"
+        },
+        {
+          "thread_id": "1kjulgz",
+          "thread_title": "Apple has started to sell refurbished iPhone 15s",
+          "comment_id": "t1_mrprgej",
+          "parent_id": "t1_mrpmfze",
+          "author": "[deleted]",
+          "depth": 1,
+          "not_story_probability": 0.7204060554504395,
+          "story_probability": 0.27959388494491577,
+          "pred_label": "not_story",
+          "raw_label_probabilities": {
+            "LABEL_0": 0.7204060554504395,
+            "LABEL_1": 0.27959388494491577
+          },
+          "text": "My 15 Pro is still at 100% after > 200 cycles."
+        },
+        {
+          "thread_id": "1kjulgz",
+          "thread_title": "Apple has started to sell refurbished iPhone 15s",
+          "comment_id": "t1_mrs2873",
+          "parent_id": "t1_mrpmfze",
+          "author": "rolin1999",
+          "depth": 1,
+          "not_story_probability": 0.9674788117408752,
+          "story_probability": 0.03252125531435013,
+          "pred_label": "not_story",
+          "raw_label_probabilities": {
+            "LABEL_0": 0.9674788117408752,
+            "LABEL_1": 0.03252125531435013
+          },
+          "text": "16 pro battery life is also pretty bad. 16 pro max is where it'd at"
+        },
+        {
+          "thread_id": "1kjulgz",
+          "thread_title": "Apple has started to sell refurbished iPhone 15s",
+          "comment_id": "t1_mrqkbea",
+          "parent_id": "t1_mrpmfze",
+          "author": "JonathanBro",
+          "depth": 1,
+          "not_story_probability": 0.19483035802841187,
+          "story_probability": 0.8051697015762329,
+          "pred_label": "story",
+          "raw_label_probabilities": {
+            "LABEL_0": 0.19483035802841187,
+            "LABEL_1": 0.8051697015762329
+          },
+          "text": "Yeah, mine would overheat all the time. It was annoying because it would constantly dim the screen. Haven’t really had that issue with my 16 Pro Max."
+        },
+        {
+          "thread_id": "1kjulgz",
+          "thread_title": "Apple has started to sell refurbished iPhone 15s",
+          "comment_id": "t1_mrs847q",
+          "parent_id": "t1_mrpmfze",
+          "author": "PetrZee",
+          "depth": 1,
+          "not_story_probability": 0.9592355489730835,
+          "story_probability": 0.04076438769698143,
+          "pred_label": "not_story",
+          "raw_label_probabilities": {
+            "LABEL_0": 0.9592355489730835,
+            "LABEL_1": 0.04076438769698143
+          },
+          "text": "Hello, I have 15P for about year and I still have like 96% battery health, even with using it with 5G only.......yeah Its still a one day phone, but thats like almost every flagship. Well 17pro Is rumored to have much bigger battery so if Its true I will switch then"
+        },
+        {
+          "thread_id": "1kjulgz",
+          "thread_title": "Apple has started to sell refurbished iPhone 15s",
+          "comment_id": "t1_mrs8sq9",
+          "parent_id": "t1_mrs847q",
+          "author": "OopsIHadAnAccident",
+          "depth": 2,
+          "not_story_probability": 0.7374830842018127,
+          "story_probability": 0.26251694560050964,
+          "pred_label": "not_story",
+          "raw_label_probabilities": {
+            "LABEL_0": 0.7374830842018127,
+            "LABEL_1": 0.26251694560050964
+          },
+          "text": "It seems like the batteries are better on newer units. Mine was received on launch day for the 15 series."
+        },
+        {
+          "thread_id": "1kjulgz",
+          "thread_title": "Apple has started to sell refurbished iPhone 15s",
+          "comment_id": "t1_mrt7517",
+          "parent_id": "t1_mrpmfze",
+          "author": "[deleted]",
+          "depth": 1,
+          "not_story_probability": 0.025362566113471985,
+          "story_probability": 0.9746374487876892,
+          "pred_label": "story",
+          "raw_label_probabilities": {
+            "LABEL_0": 0.025362566113471985,
+            "LABEL_1": 0.9746374487876892
+          },
+          "text": "I have a 2nd hand iPhone 15 pro bought from giff gaff with 90 % battery for £500 and it has been rock solid"
+        },
+        {
+          "thread_id": "1kjulgz",
+          "thread_title": "Apple has started to sell refurbished iPhone 15s",
+          "comment_id": "t1_mrty4lc",
+          "parent_id": "t1_mrpmfze",
+          "author": "AmbitiousExit7774",
+          "depth": 1,
+          "not_story_probability": 0.05627422407269478,
+          "story_probability": 0.9437258243560791,
+          "pred_label": "story",
+          "raw_label_probabilities": {
+            "LABEL_0": 0.05627422407269478,
+            "LABEL_1": 0.9437258243560791
+          },
+          "text": "Likewise on the battery degradation; I was at 91 percent after only 230 cycles."
+        },
+        {
+          "thread_id": "1kjulgz",
+          "thread_title": "Apple has started to sell refurbished iPhone 15s",
+          "comment_id": "t1_mru825b",
+          "parent_id": "t1_mrpmfze",
+          "author": "handymanny131003",
+          "depth": 1,
+          "not_story_probability": 0.02699996903538704,
+          "story_probability": 0.9730000495910645,
+          "pred_label": "story",
+          "raw_label_probabilities": {
+            "LABEL_0": 0.02699996903538704,
+            "LABEL_1": 0.9730000495910645
+          },
+          "text": "Yep, been on a 15 Pro since launch and I'm at 89%. Up until 91 I never used wireless charging, used the Apple brick overnight, kept the phone out of the heat, etc. After it hit low 90s in the first year I gave up."
+        },
+        {
+          "thread_id": "1kjulgz",
+          "thread_title": "Apple has started to sell refurbished iPhone 15s",
+          "comment_id": "t1_mrue3kc",
+          "parent_id": "t1_mru825b",
+          "author": "OopsIHadAnAccident",
+          "depth": 2,
+          "not_story_probability": 0.9009139537811279,
+          "story_probability": 0.09908607602119446,
+          "pred_label": "not_story",
+          "raw_label_probabilities": {
+            "LABEL_0": 0.9009139537811279,
+            "LABEL_1": 0.09908607602119446
+          },
+          "text": "Ah. I only charge my iPhones with MagSafe. Doesn’t seem to be negatively effecting the 16 pro max though"
+        },
+        {
+          "thread_id": "1kjulgz",
+          "thread_title": "Apple has started to sell refurbished iPhone 15s",
+          "comment_id": "t1_mrwjx4b",
+          "parent_id": "t1_mrpmfze",
+          "author": "iiGhillieSniper",
+          "depth": 1,
+          "not_story_probability": 0.9241272211074829,
+          "story_probability": 0.07587277889251709,
+          "pred_label": "not_story",
+          "raw_label_probabilities": {
+            "LABEL_0": 0.9241272211074829,
+            "LABEL_1": 0.07587277889251709
+          },
+          "text": "It’s wild it took Apple two phone generations (14 and 15) to fix the heat issue"
+        },
+        {
+          "thread_id": "1kjulgz",
+          "thread_title": "Apple has started to sell refurbished iPhone 15s",
+          "comment_id": "t1_mrprudh",
+          "parent_id": "t3_1kjulgz",
+          "author": "ArtifexHS",
+          "depth": 0,
+          "not_story_probability": 0.09967232495546341,
+          "story_probability": 0.9003276824951172,
+          "pred_label": "story",
+          "raw_label_probabilities": {
+            "LABEL_0": 0.09967232495546341,
+            "LABEL_1": 0.9003276824951172
+          },
+          "text": "I love my 15 pm the best iphone Ive ever had and the battery is still going strong"
+        },
+        {
+          "thread_id": "1kjulgz",
+          "thread_title": "Apple has started to sell refurbished iPhone 15s",
+          "comment_id": "t1_mshslhq",
+          "parent_id": "t1_mrprudh",
+          "author": "DavidEvans2",
+          "depth": 1,
+          "not_story_probability": 0.04087454453110695,
+          "story_probability": 0.9591254591941833,
+          "pred_label": "story",
+          "raw_label_probabilities": {
+            "LABEL_0": 0.04087454453110695,
+            "LABEL_1": 0.9591254591941833
+          },
+          "text": "Same. My 15 has been great so far with no battery issues. I had a refurbished 12 before that and it was also ok, however battery on the 15 I feel is a big improvement from what I can tell."
+        },
+        {
+          "thread_id": "1kjulgz",
+          "thread_title": "Apple has started to sell refurbished iPhone 15s",
+          "comment_id": "t1_mrpwi2u",
+          "parent_id": "t3_1kjulgz",
+          "author": "Soggy-Page6710",
+          "depth": 0,
+          "not_story_probability": 0.8297837972640991,
+          "story_probability": 0.17021624743938446,
+          "pred_label": "not_story",
+          "raw_label_probabilities": {
+            "LABEL_0": 0.8297837972640991,
+            "LABEL_1": 0.17021624743938446
+          },
+          "text": "https://preview.redd.it/et1oni0g440f1.jpeg?width=1290&format=pjpg&auto=webp&s=c449d960bb7b671cd28a0f65b82d57f50f2d3fa8 Iph. 15 P.Max Can’t we claim?"
+        },
+        {
+          "thread_id": "1kjulgz",
+          "thread_title": "Apple has started to sell refurbished iPhone 15s",
+          "comment_id": "t1_mrrwxfy",
+          "parent_id": "t1_mrpwi2u",
+          "author": "zerbey",
+          "depth": 1,
+          "not_story_probability": 0.049815986305475235,
+          "story_probability": 0.9501839876174927,
+          "pred_label": "story",
+          "raw_label_probabilities": {
+            "LABEL_0": 0.049815986305475235,
+            "LABEL_1": 0.9501839876174927
+          },
+          "text": "Apple will not replace your battery until it goes below 80%, I'm not sure what the cost of replacement is in your country but it's $99 for a new battery here if you want to pay for it. My 13 is over 3 years old now and the original battery is sitting at 87%. I just recently had the screen fixed through AppleCare and figured it wouldn't hurt to ask if they could swap the battery too since it's 3 years old, they gave me a curt No."
+        },
+        {
+          "thread_id": "1kjulgz",
+          "thread_title": "Apple has started to sell refurbished iPhone 15s",
+          "comment_id": "t1_mrpv32z",
+          "parent_id": "t3_1kjulgz",
+          "author": "SuspiciouslyB",
+          "depth": 0,
+          "not_story_probability": 0.8491889834403992,
+          "story_probability": 0.15081103146076202,
+          "pred_label": "not_story",
+          "raw_label_probabilities": {
+            "LABEL_0": 0.8491889834403992,
+            "LABEL_1": 0.15081103146076202
+          },
+          "text": "iPhone 15 Pro Max user here. With causal use I only charge my phone every 2 days."
+        },
+        {
+          "thread_id": "1kjulgz",
+          "thread_title": "Apple has started to sell refurbished iPhone 15s",
+          "comment_id": "t1_mrqhmua",
+          "parent_id": "t1_mrpv32z",
+          "author": "Serhide",
+          "depth": 1,
+          "not_story_probability": 0.932319700717926,
+          "story_probability": 0.06768032163381577,
+          "pred_label": "not_story",
+          "raw_label_probabilities": {
+            "LABEL_0": 0.932319700717926,
+            "LABEL_1": 0.06768032163381577
+          },
+          "text": "Thats great"
+        },
+        {
+          "thread_id": "1kjulgz",
+          "thread_title": "Apple has started to sell refurbished iPhone 15s",
+          "comment_id": "t1_mrqeppt",
+          "parent_id": "t3_1kjulgz",
+          "author": "Dramatic-Bottle-1289",
+          "depth": 0,
+          "not_story_probability": 0.06378532946109772,
+          "story_probability": 0.9362146854400635,
+          "pred_label": "story",
+          "raw_label_probabilities": {
+            "LABEL_0": 0.06378532946109772,
+            "LABEL_1": 0.9362146854400635
+          },
+          "text": "Bought a 15 pro recently and returned it, my 11 pro at 74% battery lasts way longer."
+        },
+        {
+          "thread_id": "1kjulgz",
+          "thread_title": "Apple has started to sell refurbished iPhone 15s",
+          "comment_id": "t1_mrupah6",
+          "parent_id": "t1_mrqeppt",
+          "author": "[deleted]",
+          "depth": 1,
+          "not_story_probability": 0.9081265926361084,
+          "story_probability": 0.09187336266040802,
+          "pred_label": "not_story",
+          "raw_label_probabilities": {
+            "LABEL_0": 0.9081265926361084,
+            "LABEL_1": 0.09187336266040802
+          },
+          "text": "How does that even make sense"
+        },
+        {
+          "thread_id": "1kjulgz",
+          "thread_title": "Apple has started to sell refurbished iPhone 15s",
+          "comment_id": "t1_mruy3dz",
+          "parent_id": "t1_mrupah6",
+          "author": "_EllieLOL_",
+          "depth": 2,
+          "not_story_probability": 0.9714780449867249,
+          "story_probability": 0.02852191962301731,
+          "pred_label": "not_story",
+          "raw_label_probabilities": {
+            "LABEL_0": 0.9714780449867249,
+            "LABEL_1": 0.02852191962301731
+          },
+          "text": "Probably the older chip is slow so it doesn’t have the ability to process fast enough to drain the battery"
+        },
+        {
+          "thread_id": "1kjulgz",
+          "thread_title": "Apple has started to sell refurbished iPhone 15s",
+          "comment_id": "t1_ms0zjpg",
+          "parent_id": "t1_mruy3dz",
+          "author": "[deleted]",
+          "depth": 3,
+          "not_story_probability": 0.9727720022201538,
+          "story_probability": 0.02722797356545925,
+          "pred_label": "not_story",
+          "raw_label_probabilities": {
+            "LABEL_0": 0.9727720022201538,
+            "LABEL_1": 0.02722797356545925
+          },
+          "text": "No because the newer chip is way more efficient."
+        },
+        {
+          "thread_id": "1kjulgz",
+          "thread_title": "Apple has started to sell refurbished iPhone 15s",
+          "comment_id": "t1_ms15k57",
+          "parent_id": "t1_ms0zjpg",
+          "author": "_EllieLOL_",
+          "depth": 4,
+          "not_story_probability": 0.9771344065666199,
+          "story_probability": 0.022865580394864082,
+          "pred_label": "not_story",
+          "raw_label_probabilities": {
+            "LABEL_0": 0.9771344065666199,
+            "LABEL_1": 0.022865580394864082
+          },
+          "text": "Sure, it uses less power per relative performance, but it also provides a lot more performance, so it draws more power. A13 has a sustained power draw of 6 watts vs A17 Pro at 8 watts. So the A17 Pro still draws more power"
+        },
+        {
+          "thread_id": "1kjulgz",
+          "thread_title": "Apple has started to sell refurbished iPhone 15s",
+          "comment_id": "t1_mrqkfux",
+          "parent_id": "t3_1kjulgz",
+          "author": "[deleted]",
+          "depth": 0,
+          "not_story_probability": 0.9118385314941406,
+          "story_probability": 0.08816149085760117,
+          "pred_label": "not_story",
+          "raw_label_probabilities": {
+            "LABEL_0": 0.9118385314941406,
+            "LABEL_1": 0.08816149085760117
+          },
+          "text": "The price increases are getting crazy"
+        },
+        {
+          "thread_id": "1kjulgz",
+          "thread_title": "Apple has started to sell refurbished iPhone 15s",
+          "comment_id": "t1_mrrzdcu",
+          "parent_id": "t1_mrqkfux",
+          "author": "[deleted]",
+          "depth": 1,
+          "not_story_probability": 0.9628608226776123,
+          "story_probability": 0.03713918849825859,
+          "pred_label": "not_story",
+          "raw_label_probabilities": {
+            "LABEL_0": 0.9628608226776123,
+            "LABEL_1": 0.03713918849825859
+          },
+          "text": "What are you looking at? The prices have remained the same and the refurbished price for a 128gb 15 Pro are 24% off of new price. If you go with the price is down $100 since the new one came out it’s still 15.5% off of that."
+        },
+        {
+          "thread_id": "1kjulgz",
+          "thread_title": "Apple has started to sell refurbished iPhone 15s",
+          "comment_id": "t1_mrq6n55",
+          "parent_id": "t3_1kjulgz",
+          "author": "antonfts",
+          "depth": 0,
+          "not_story_probability": 0.9688172936439514,
+          "story_probability": 0.031182734295725822,
+          "pred_label": "not_story",
+          "raw_label_probabilities": {
+            "LABEL_0": 0.9688172936439514,
+            "LABEL_1": 0.031182734295725822
+          },
+          "text": "I think, the proper name for \"iPhone 15s\" is \"iPhone 16\""
+        },
+        {
+          "thread_id": "1kjulgz",
+          "thread_title": "Apple has started to sell refurbished iPhone 15s",
+          "comment_id": "t1_mrs8lcc",
+          "parent_id": "t1_mrq6n55",
+          "author": "UnmakingTheBan2022",
+          "depth": 1,
+          "not_story_probability": 0.9651919603347778,
+          "story_probability": 0.03480801358819008,
+          "pred_label": "not_story",
+          "raw_label_probabilities": {
+            "LABEL_0": 0.9651919603347778,
+            "LABEL_1": 0.03480801358819008
+          },
+          "text": "He’s saying that it’s plural = many iPhone 15’s. Not “15S”"
+        },
+        {
+          "thread_id": "1kjulgz",
+          "thread_title": "Apple has started to sell refurbished iPhone 15s",
+          "comment_id": "t1_mrsaeea",
+          "parent_id": "t1_mrs8lcc",
+          "author": "antonfts",
+          "depth": 2,
+          "not_story_probability": 0.9204114675521851,
+          "story_probability": 0.07958853244781494,
+          "pred_label": "not_story",
+          "raw_label_probabilities": {
+            "LABEL_0": 0.9204114675521851,
+            "LABEL_1": 0.07958853244781494
+          },
+          "text": "Let me introduce you to the concept called \"Joke\""
+        },
+        {
+          "thread_id": "1kjulgz",
+          "thread_title": "Apple has started to sell refurbished iPhone 15s",
+          "comment_id": "t1_mrtpv9c",
+          "parent_id": "t1_mrsaeea",
+          "author": "UnmakingTheBan2022",
+          "depth": 3,
+          "not_story_probability": 0.9679558277130127,
+          "story_probability": 0.03204423561692238,
+          "pred_label": "not_story",
+          "raw_label_probabilities": {
+            "LABEL_0": 0.9679558277130127,
+            "LABEL_1": 0.03204423561692238
+          },
+          "text": "Let me tell you that you know nothing about the concept of a joke."
+        },
+        {
+          "thread_id": "1kjulgz",
+          "thread_title": "Apple has started to sell refurbished iPhone 15s",
+          "comment_id": "t1_mrr6i17",
+          "parent_id": "t3_1kjulgz",
+          "author": "trele_morele",
+          "depth": 0,
+          "not_story_probability": 0.9568067789077759,
+          "story_probability": 0.04319328814744949,
+          "pred_label": "not_story",
+          "raw_label_probabilities": {
+            "LABEL_0": 0.9568067789077759,
+            "LABEL_1": 0.04319328814744949
+          },
+          "text": "What does apple refurb mean? Do they come with fresh batteries?"
+        },
+        {
+          "thread_id": "1kjulgz",
+          "thread_title": "Apple has started to sell refurbished iPhone 15s",
+          "comment_id": "t1_mrrxbls",
+          "parent_id": "t1_mrr6i17",
+          "author": "zerbey",
+          "depth": 1,
+          "not_story_probability": 0.91204434633255,
+          "story_probability": 0.08795564621686935,
+          "pred_label": "not_story",
+          "raw_label_probabilities": {
+            "LABEL_0": 0.91204434633255,
+            "LABEL_1": 0.08795564621686935
+          },
+          "text": "Refurbished means a phone that was returned for whatever reason, and they tested it to ensure it was still within specifications and fixed whatever was not. So yep, could have a new battery or screen, or whatever else it required. It could also have nothing new. I've never had an issue buying refurbished stuff, it's always as good as new."
+        },
+        {
+          "thread_id": "1kjulgz",
+          "thread_title": "Apple has started to sell refurbished iPhone 15s",
+          "comment_id": "t1_mrrzp0k",
+          "parent_id": "t1_mrrxbls",
+          "author": "[deleted]",
+          "depth": 2,
+          "not_story_probability": 0.8364042639732361,
+          "story_probability": 0.1635957509279251,
+          "pred_label": "not_story",
+          "raw_label_probabilities": {
+            "LABEL_0": 0.8364042639732361,
+            "LABEL_1": 0.1635957509279251
+          },
+          "text": "Also full warranty and option for AppleCare."
+        },
+        {
+          "thread_id": "1kjulgz",
+          "thread_title": "Apple has started to sell refurbished iPhone 15s",
+          "comment_id": "t1_mrt2oh3",
+          "parent_id": "t3_1kjulgz",
+          "author": "BidAccomplished7720",
+          "depth": 0,
+          "not_story_probability": 0.9343161582946777,
+          "story_probability": 0.06568387150764465,
+          "pred_label": "not_story",
+          "raw_label_probabilities": {
+            "LABEL_0": 0.9343161582946777,
+            "LABEL_1": 0.06568387150764465
+          },
+          "text": "I personally love my 15 pro max. Was the best upgraded phone they did. Introducing the c port. I definitely knew I was skipping the 16, might even the 17 depending on what the actually upgrade is. Just know the iPhone 16e fits the iPhone 13 cases like a gem 🤫 you gotta know when to get in and when to skip over."
+        },
+        {
+          "thread_id": "1kjulgz",
+          "thread_title": "Apple has started to sell refurbished iPhone 15s",
+          "comment_id": "t1_mrti76e",
+          "parent_id": "t3_1kjulgz",
+          "author": "[deleted]",
+          "depth": 0,
+          "not_story_probability": 0.15354789793491364,
+          "story_probability": 0.8464521169662476,
+          "pred_label": "story",
+          "raw_label_probabilities": {
+            "LABEL_0": 0.15354789793491364,
+            "LABEL_1": 0.8464521169662476
+          },
+          "text": "I don’t get it. Why is the 15 pro max so “bad”? I love mine. Got it a couple days after launch. Went from 12 to 15 pro max. Still love it. Battery is 86% with 355 cycle count. Idk, works great for me"
+        },
+        {
+          "thread_id": "1kjulgz",
+          "thread_title": "Apple has started to sell refurbished iPhone 15s",
+          "comment_id": "t1_mruqo9x",
+          "parent_id": "t3_1kjulgz",
+          "author": "[deleted]",
+          "depth": 0,
+          "not_story_probability": 0.9421862959861755,
+          "story_probability": 0.05781366303563118,
+          "pred_label": "not_story",
+          "raw_label_probabilities": {
+            "LABEL_0": 0.9421862959861755,
+            "LABEL_1": 0.05781366303563118
+          },
+          "text": "People hate on the 16 pros but my 16 pro max is probably my favourite phone so far and I've had both Androids and iPhones. Absolutely phenomenal but also expensive af."
+        },
+        {
+          "thread_id": "1kjulgz",
+          "thread_title": "Apple has started to sell refurbished iPhone 15s",
+          "comment_id": "t1_mrpmyzh",
+          "parent_id": "t3_1kjulgz",
+          "author": "EyesEyez",
+          "depth": 0,
+          "not_story_probability": 0.053510457277297974,
+          "story_probability": 0.9464895129203796,
+          "pred_label": "story",
+          "raw_label_probabilities": {
+            "LABEL_0": 0.053510457277297974,
+            "LABEL_1": 0.9464895129203796
+          },
+          "text": "The 15 pro was the worst iPhone I ever used relevant to when it came out (other iPhones being 11 base, 13 base, and 14 plus) The 15 pro got 6 hours sot I'm glad I switched away to the s24 base and eventually now the pixel 9 pro xl, much better everything,"
+        },
+        {
+          "thread_id": "1kjulgz",
+          "thread_title": "Apple has started to sell refurbished iPhone 15s",
+          "comment_id": "t1_mrreuxx",
+          "parent_id": "t1_mrqqe81",
+          "author": "EyesEyez",
+          "depth": 2,
+          "not_story_probability": 0.968692421913147,
+          "story_probability": 0.031307585537433624,
+          "pred_label": "not_story",
+          "raw_label_probabilities": {
+            "LABEL_0": 0.968692421913147,
+            "LABEL_1": 0.031307585537433624
+          },
+          "text": "No, the os is awful (too much like iOS)"
+        },
+        {
+          "thread_id": "1kjulgz",
+          "thread_title": "Apple has started to sell refurbished iPhone 15s",
+          "comment_id": "t1_mrrnch6",
+          "parent_id": "t1_mrrmy7q",
+          "author": "EyesEyez",
+          "depth": 4,
+          "not_story_probability": 0.9663504362106323,
+          "story_probability": 0.033649515360593796,
+          "pred_label": "not_story",
+          "raw_label_probabilities": {
+            "LABEL_0": 0.9663504362106323,
+            "LABEL_1": 0.033649515360593796
+          },
+          "text": "Yeah you can look up an oxygenOS showcase it looks just like it's trying to copy iOS"
+        },
+        {
+          "thread_id": "1kjulgz",
+          "thread_title": "Apple has started to sell refurbished iPhone 15s",
+          "comment_id": "t1_mrprzm1",
+          "parent_id": "t3_1kjulgz",
+          "author": "[deleted]",
+          "depth": 0,
+          "not_story_probability": 0.9809561371803284,
+          "story_probability": 0.01904391497373581,
+          "pred_label": "not_story",
+          "raw_label_probabilities": {
+            "LABEL_0": 0.9809561371803284,
+            "LABEL_1": 0.01904391497373581
+          },
+          "text": "Only the Pro/Max, right? They don't sell the base models after a year AFAIK. Still, some good deals. People comparing the 15 and 16 series like it matters. If you're phone works, hold onto it. I honestly get comparative performance and even camera quality (!!!) out of my 2024 iPhone 16 Pro Max and my 2019 Galaxy S10. (Battery life is another story though, which is why the S10 is just a backup phone, but 5.8\" is a great size we can't get with Apple anymore. Same size as the X through 11 Pro.) Until we take a giant leap forward into M-series or something (note: iPad already has!), iPhone has plateaued. Get the one you need and hold it as long as you can."
+        },
+        {
+          "thread_id": "1kjulgz",
+          "thread_title": "Apple has started to sell refurbished iPhone 15s",
+          "comment_id": "t1_mrpsxyh",
+          "parent_id": "t1_mrprzm1",
+          "author": "JamesEdward34",
+          "depth": 1,
+          "not_story_probability": 0.12631303071975708,
+          "story_probability": 0.8736870288848877,
+          "pred_label": "story",
+          "raw_label_probabilities": {
+            "LABEL_0": 0.12631303071975708,
+            "LABEL_1": 0.8736870288848877
+          },
+          "text": "I went from 13Pro to 16Pro I do notice a moderate improvement in basically everything."
+        },
+        {
+          "thread_id": "1kjulgz",
+          "thread_title": "Apple has started to sell refurbished iPhone 15s",
+          "comment_id": "t1_mrpyi4t",
+          "parent_id": "t1_mrpsxyh",
+          "author": "[deleted]",
+          "depth": 2,
+          "not_story_probability": 0.9642428159713745,
+          "story_probability": 0.035757169127464294,
+          "pred_label": "not_story",
+          "raw_label_probabilities": {
+            "LABEL_0": 0.9642428159713745,
+            "LABEL_1": 0.035757169127464294
+          },
+          "text": "Same, except I went from a 13 Pro to a 16 Pro Max. I felt like the titanium was lighter, I wanted the bigger screen, I wanted more storage, and I wanted a 5x camera. I didn't mean upgrades can't be worth it. It also depends on how much you make and if you can really justify the cost. I paid for my 16PM up front. But, just because I can doesn't mean I will. I could go preorder a Switch 2 bundle with the Mario Kart World game. $500. I still might. I think it's a bit expensive and I wonder if, at that price, it wouldn't suit me better to just get a Steam Deck. So for example, the Switch 2 runs Cyberpunk 2077, and so does the Steam Deck. I own the game on Steam. So, already the Deck is something like $80 less, because that's what the game will likely cost on Switch 2. (Skyrim was also about five years old when it came to Switch, and it was $60, and still is right about that, despite the fact you can commonly get it for as low as $10 on Steam.) But anyway, cost analysis and considering how much I will actually use a product is part of why I was able to buy a 16PM straight up (well, with the value of my 13P trade). I don't just buy everything I can. I do buy what I want, but I consider my needs and wants carefully. Also makes what I do buy seem like more of a treat and not just \"I'm entitled to this because I work hard, so I play hard, so I get what I want.\""
+        },
+        {
+          "thread_id": "1kjulgz",
+          "thread_title": "Apple has started to sell refurbished iPhone 15s",
+          "comment_id": "t1_mrqmm2t",
+          "parent_id": "t3_1kjulgz",
+          "author": "NotAnRSPlayer",
+          "depth": 0,
+          "not_story_probability": 0.9239298105239868,
+          "story_probability": 0.07607021927833557,
+          "pred_label": "not_story",
+          "raw_label_probabilities": {
+            "LABEL_0": 0.9239298105239868,
+            "LABEL_1": 0.07607021927833557
+          },
+          "text": "I love looking at these prices and living in Australia, just paid A$1443 / £695 for a iPhone 16 Pro due to a price match"
+        },
+        {
+          "thread_id": "1kjulgz",
+          "thread_title": "Apple has started to sell refurbished iPhone 15s",
+          "comment_id": "t1_mrqrndu",
+          "parent_id": "t3_1kjulgz",
+          "author": "M1A1Death",
+          "depth": 0,
+          "not_story_probability": 0.9334636926651001,
+          "story_probability": 0.0665363073348999,
+          "pred_label": "not_story",
+          "raw_label_probabilities": {
+            "LABEL_0": 0.9334636926651001,
+            "LABEL_1": 0.0665363073348999
+          },
+          "text": "Just go to Swappa"
+        },
+        {
+          "thread_id": "1kjulgz",
+          "thread_title": "Apple has started to sell refurbished iPhone 15s",
+          "comment_id": "t1_mrrmr8x",
+          "parent_id": "t3_1kjulgz",
+          "author": "Heym21",
+          "depth": 0,
+          "not_story_probability": 0.8871233463287354,
+          "story_probability": 0.11287665367126465,
+          "pred_label": "not_story",
+          "raw_label_probabilities": {
+            "LABEL_0": 0.8871233463287354,
+            "LABEL_1": 0.11287665367126465
+          },
+          "text": "Waiting for 17 to come out"
+        },
+        {
+          "thread_id": "1kjulgz",
+          "thread_title": "Apple has started to sell refurbished iPhone 15s",
+          "comment_id": "t1_mrrw9ks",
+          "parent_id": "t3_1kjulgz",
+          "author": "zerbey",
+          "depth": 0,
+          "not_story_probability": 0.11396458745002747,
+          "story_probability": 0.8860354423522949,
+          "pred_label": "story",
+          "raw_label_probabilities": {
+            "LABEL_0": 0.11396458745002747,
+            "LABEL_1": 0.8860354423522949
+          },
+          "text": "My cell phone provider keeps sending me emails saying I can have a \"free\" 15 Pro, which really means a 15 Pro with 0 down payment of course. I'm tempted, but I may just hold out and see what the 17 is like at this point. Apple just fixed my 13's screen after it started to give me issues, so I guess it's telling me it's time to upgrade. Also, AppleCare finally paid for itself with that, but I imagine I've spent more than $280 over the 3 years I've had the phone by now."
+        },
+        {
+          "thread_id": "1kjulgz",
+          "thread_title": "Apple has started to sell refurbished iPhone 15s",
+          "comment_id": "t1_mrtuxal",
+          "parent_id": "t3_1kjulgz",
+          "author": "HamsterOk484",
+          "depth": 0,
+          "not_story_probability": 0.35064658522605896,
+          "story_probability": 0.6493535041809082,
+          "pred_label": "story",
+          "raw_label_probabilities": {
+            "LABEL_0": 0.35064658522605896,
+            "LABEL_1": 0.6493535041809082
+          },
+          "text": "confused about this and 16e"
+        },
+        {
+          "thread_id": "1kjulgz",
+          "thread_title": "Apple has started to sell refurbished iPhone 15s",
+          "comment_id": "t1_mrvfxog",
+          "parent_id": "t3_1kjulgz",
+          "author": "Short_Classy_Name",
+          "depth": 0,
+          "not_story_probability": 0.9278486371040344,
+          "story_probability": 0.07215133309364319,
+          "pred_label": "not_story",
+          "raw_label_probabilities": {
+            "LABEL_0": 0.9278486371040344,
+            "LABEL_1": 0.07215133309364319
+          },
+          "text": "What currency is this?"
+        },
+        {
+          "thread_id": "1kjulgz",
+          "thread_title": "Apple has started to sell refurbished iPhone 15s",
+          "comment_id": "t1_ms54f5l",
+          "parent_id": "t3_1kjulgz",
+          "author": "[deleted]",
+          "depth": 0,
+          "not_story_probability": 0.9555718898773193,
+          "story_probability": 0.04442811384797096,
+          "pred_label": "not_story",
+          "raw_label_probabilities": {
+            "LABEL_0": 0.9555718898773193,
+            "LABEL_1": 0.04442811384797096
+          },
+          "text": "Apple refurbished is usless and a bad deal, best quality but prices are just horrible. i've seen 2018 ipad pros selling for more then a m1 ipad on sale."
+        },
+        {
+          "thread_id": "1kjulgz",
+          "thread_title": "Apple has started to sell refurbished iPhone 15s",
+          "comment_id": "t1_msyfnkn",
+          "parent_id": "t3_1kjulgz",
+          "author": "Remote-Influence7339",
+          "depth": 0,
+          "not_story_probability": 0.8116125464439392,
+          "story_probability": 0.1883874386548996,
+          "pred_label": "not_story",
+          "raw_label_probabilities": {
+            "LABEL_0": 0.8116125464439392,
+            "LABEL_1": 0.1883874386548996
+          },
+          "text": "I never had a MacBook but windows has me tired since the updates destroy the pc so much. The processor can't keep up anymore. I kinda want a iPhone again but I don't have a Mac so I don't want to get it yet."
+        },
+        {
+          "thread_id": "1kjulgz",
+          "thread_title": "Apple has started to sell refurbished iPhone 15s",
+          "comment_id": "t1_mzlq8qh",
+          "parent_id": "t3_1kjulgz",
+          "author": "deej628",
+          "depth": 0,
+          "not_story_probability": 0.9595118165016174,
+          "story_probability": 0.0404881127178669,
+          "pred_label": "not_story",
+          "raw_label_probabilities": {
+            "LABEL_0": 0.9595118165016174,
+            "LABEL_1": 0.0404881127178669
+          },
+          "text": "If you get an apple return it’s damn near good as new minus the original box!"
+        },
+        {
+          "thread_id": "1kjulgz",
+          "thread_title": "Apple has started to sell refurbished iPhone 15s",
+          "comment_id": "t1_mrpmg3e",
+          "parent_id": "t3_1kjulgz",
+          "author": "lskdaaru",
+          "depth": 0,
+          "not_story_probability": 0.97483891248703,
+          "story_probability": 0.02516111359000206,
+          "pred_label": "not_story",
+          "raw_label_probabilities": {
+            "LABEL_0": 0.97483891248703,
+            "LABEL_1": 0.02516111359000206
+          },
+          "text": "Well if they’re available they’ll sell it"
+        },
+        {
+          "thread_id": "1kjulgz",
+          "thread_title": "Apple has started to sell refurbished iPhone 15s",
+          "comment_id": "t1_mrpou3y",
+          "parent_id": "t3_1kjulgz",
+          "author": "Substantial_Cod_830",
+          "depth": 0,
+          "not_story_probability": 0.9771717190742493,
+          "story_probability": 0.022828230634331703,
+          "pred_label": "not_story",
+          "raw_label_probabilities": {
+            "LABEL_0": 0.9771717190742493,
+            "LABEL_1": 0.022828230634331703
+          },
+          "text": "This isn’t new, could always buy refurbished Apple products. I, too love too make up random BS for clout"
+        },
+        {
+          "thread_id": "1kjulgz",
+          "thread_title": "Apple has started to sell refurbished iPhone 15s",
+          "comment_id": "t1_mrpxniu",
+          "parent_id": "t1_mrpou3y",
+          "author": "Jazzlike-Spare3425",
+          "depth": 1,
+          "not_story_probability": 0.11748737841844559,
+          "story_probability": 0.882512629032135,
+          "pred_label": "story",
+          "raw_label_probabilities": {
+            "LABEL_0": 0.11748737841844559,
+            "LABEL_1": 0.882512629032135
+          },
+          "text": "\"refurbished iPhone 15s\" looks like someone skipped over the last word in the title before starting to complain in the comments. :/"
+        },
+        {
+          "thread_id": "1kjulgz",
+          "thread_title": "Apple has started to sell refurbished iPhone 15s",
+          "comment_id": "t1_mrrtds3",
+          "parent_id": "t3_1kjulgz",
+          "author": "[deleted]",
+          "depth": 0,
+          "not_story_probability": 0.9735994935035706,
+          "story_probability": 0.0264004934579134,
+          "pred_label": "not_story",
+          "raw_label_probabilities": {
+            "LABEL_0": 0.9735994935035706,
+            "LABEL_1": 0.0264004934579134
+          },
+          "text": "Look at the price 🤣🤣 you can find the same devices for half the price, even Apple scrap is expensive"
+        }
+      ]
+    },
+    {
+      "thread_id": "1hzyfqd",
+      "thread_title": "[USA-CA][H] iPhone 15, iPhone 15 Pro, 2x iPhone 15 Pro Max, Apple Watch Series 10 [W] PayPal ",
+      "comment_count": 7,
+      "story_count": 2,
+      "not_story_count": 5,
+      "story_rate": 0.2857142857142857,
+      "mean_story_probability": 0.31482861350689617,
+      "median_story_probability": 0.06917575746774673,
+      "max_story_probability": 0.9419820308685303,
+      "min_story_probability": 0.020332710817456245,
+      "comments": [
+        {
+          "thread_id": "1hzyfqd",
+          "thread_title": "[USA-CA][H] iPhone 15, iPhone 15 Pro, 2x iPhone 15 Pro Max, Apple Watch Series 10 [W] PayPal ",
+          "comment_id": "t1_m6ti7zk",
+          "parent_id": "t3_1hzyfqd",
+          "author": "AutoModerator",
+          "depth": 0,
+          "not_story_probability": 0.9796673059463501,
+          "story_probability": 0.020332710817456245,
+          "pred_label": "not_story",
+          "raw_label_probabilities": {
+            "LABEL_0": 0.9796673059463501,
+            "LABEL_1": 0.020332710817456245
+          },
+          "text": "###**Remember:** Friends & Family/Gift payments, Venmo, gift cards, Zelle and cryptocurrency are non-refundable and offer NO BUYER PROTECTION. - If as a buyer, you choose to pay through the \"Friends and Family\" option, or agree to send Gift Cards, Venmo, or cryptocurrency as payment, please understand that you will not be able to open a claim should something go wrong in the transaction. [Click here](https://www.reddit.com/r/appleswap/wiki/confirming_transactions) to learn how to confirm a transaction, leave feedback for your partner, and increase your flair score! *I am a bot, and this action was performed automatically. Please [contact the moderators of this subreddit](/message/compose/?to=/r/appleswap) if you have any questions or concerns.*"
+        },
+        {
+          "thread_id": "1hzyfqd",
+          "thread_title": "[USA-CA][H] iPhone 15, iPhone 15 Pro, 2x iPhone 15 Pro Max, Apple Watch Series 10 [W] PayPal ",
+          "comment_id": "t1_m6ti817",
+          "parent_id": "t3_1hzyfqd",
+          "author": "AutoModerator",
+          "depth": 0,
+          "not_story_probability": 0.21011517941951752,
+          "story_probability": 0.7898848056793213,
+          "pred_label": "story",
+          "raw_label_probabilities": {
+            "LABEL_0": 0.21011517941951752,
+            "LABEL_1": 0.7898848056793213
+          },
+          "text": "Post information archive: **Title:** [USA-CA][H] iPhone 15, iPhone 15 Pro, 2x iPhone 15 Pro Max, Apple Watch Series 10 [W] PayPal **Username:** /u/dreissy **Body:** iPhone 15 Blue 128gb - Paid off, on US Flex Policy: locked to the first US carrier it connects to and then unlocks based on carrier’s unlock policy - Great condition aside from minor blessing on bottom left corner - **Asking $440** iPhone 15 pro 128gb Blue - Paid off, locked to Verizon (until 60 days service from user activation have passed which will be around mid February) - good condition, some scratches on screen - 100% battery health - **Asking $565** 2x iPhone 15 pro Max 256gb Natural - Paid off, one of them on flex policy and other locked to Verizon (until 60 days service from user activation have passed which will be around mid February) - Both in great condition - 100% battery health - **Asking $710** Apple Watch Series 10 46mm Jet Black - GPS only model - Great condition, barely used - Watch and band only - **Asking $275** Repairs: none https://imgur.com/a/bNdAt0L *I am a bot, and this action was performed automatically. Please [contact the moderators of this subreddit](/message/compose/?to=/r/appleswap) if you have any questions or concerns.*"
+        },
+        {
+          "thread_id": "1hzyfqd",
+          "thread_title": "[USA-CA][H] iPhone 15, iPhone 15 Pro, 2x iPhone 15 Pro Max, Apple Watch Series 10 [W] PayPal ",
+          "comment_id": "t1_m6tj7hh",
+          "parent_id": "t3_1hzyfqd",
+          "author": "[deleted]",
+          "depth": 0,
+          "not_story_probability": 0.6783158779144287,
+          "story_probability": 0.3216840624809265,
+          "pred_label": "not_story",
+          "raw_label_probabilities": {
+            "LABEL_0": 0.6783158779144287,
+            "LABEL_1": 0.3216840624809265
+          },
+          "text": "PM’d you"
+        },
+        {
+          "thread_id": "1hzyfqd",
+          "thread_title": "[USA-CA][H] iPhone 15, iPhone 15 Pro, 2x iPhone 15 Pro Max, Apple Watch Series 10 [W] PayPal ",
+          "comment_id": "t1_m6vxwoe",
+          "parent_id": "t3_1hzyfqd",
+          "author": "Scuba_514",
+          "depth": 0,
+          "not_story_probability": 0.9308242797851562,
+          "story_probability": 0.06917575746774673,
+          "pred_label": "not_story",
+          "raw_label_probabilities": {
+            "LABEL_0": 0.9308242797851562,
+            "LABEL_1": 0.06917575746774673
+          },
+          "text": "Is the iPhone 15 on Verizon?"
+        },
+        {
+          "thread_id": "1hzyfqd",
+          "thread_title": "[USA-CA][H] iPhone 15, iPhone 15 Pro, 2x iPhone 15 Pro Max, Apple Watch Series 10 [W] PayPal ",
+          "comment_id": "t1_m8gsd4z",
+          "parent_id": "t1_m7dpydr",
+          "author": "GeneralKlinger",
+          "depth": 1,
+          "not_story_probability": 0.0580180287361145,
+          "story_probability": 0.9419820308685303,
+          "pred_label": "story",
+          "raw_label_probabilities": {
+            "LABEL_0": 0.0580180287361145,
+            "LABEL_1": 0.9419820308685303
+          },
+          "text": "Confirming I purchased the Apple Watch from u/dreissy and it has arrived safely and as described. u/AppleSwapBot"
+        },
+        {
+          "thread_id": "1hzyfqd",
+          "thread_title": "[USA-CA][H] iPhone 15, iPhone 15 Pro, 2x iPhone 15 Pro Max, Apple Watch Series 10 [W] PayPal ",
+          "comment_id": "t1_m8gsodq",
+          "parent_id": "t1_m8gsd4z",
+          "author": "AppleSwapBot",
+          "depth": 2,
+          "not_story_probability": 0.9736831188201904,
+          "story_probability": 0.026316912844777107,
+          "pred_label": "not_story",
+          "raw_label_probabilities": {
+            "LABEL_0": 0.9736831188201904,
+            "LABEL_1": 0.026316912844777107
+          },
+          "text": "Hello, u/GeneralKlinger. This comment is now being tracked. Your flair will update once your partner replies to your comment. u/dreissy, please reply to the above comment with your feedback **ONLY AFTER YOUR TRANSACTION IS COMPLETE** and *both* sides have received their end of the transaction. Once you reply, you will both get credit and your flair scores will increase. u/dreissy, if you did **NOT** complete a transaction with this person, please **DO NOT** reply to their comment as this will confirm the transaction. Instead, please [message the moderators](https://www.reddit.com/message/compose/?to=r/appleswap&subject=Incorrectly%20Tagged%20Confirmation&message=u%2FGeneralKlinger%20incorrectly%20tagged%20me%20in%20this%20comment%3A%20https%3A%2F%2Fwww.reddit.com%2Fcomments%2F1hzyfqd%2F-%2Fm8gsd4z) so we can contact the user and handle the situation. Thank you! --- [^(Buy the developer a coffee)](https://kofi.regexr.tech) ^or [^(support this project monthly)](https://patreon.regexr.tech)"
+        },
+        {
+          "thread_id": "1hzyfqd",
+          "thread_title": "[USA-CA][H] iPhone 15, iPhone 15 Pro, 2x iPhone 15 Pro Max, Apple Watch Series 10 [W] PayPal ",
+          "comment_id": "t1_m8gtfq8",
+          "parent_id": "t1_m8gtbr0",
+          "author": "AppleSwapBot",
+          "depth": 3,
+          "not_story_probability": 0.9655759334564209,
+          "story_probability": 0.03442401438951492,
+          "pred_label": "not_story",
+          "raw_label_probabilities": {
+            "LABEL_0": 0.9655759334564209,
+            "LABEL_1": 0.03442401438951492
+          },
+          "text": "Hello, u/dreissy. Trade Confirmed! --- * u/generalklinger -> 3 Trades * u/dreissy -> 19 Trades --- [^(Buy the developer a coffee)](https://kofi.regexr.tech) ^or [^(support this project monthly)](https://patreon.regexr.tech)"
+        }
+      ]
+    },
+    {
+      "thread_id": "1hzyexo",
+      "thread_title": "[USA-CA][H] iPhone 15, iPhone 15 Pro, 2x iPhone 15 Pro Max, Apple Watch Series 10 [W] PayPal ",
+      "comment_count": 4,
+      "story_count": 1,
+      "not_story_count": 3,
+      "story_rate": 0.25,
+      "mean_story_probability": 0.31233279686421156,
+      "median_story_probability": 0.24078647792339325,
+      "max_story_probability": 0.7282176613807678,
+      "min_story_probability": 0.039540570229291916,
+      "comments": [
+        {
+          "thread_id": "1hzyexo",
+          "thread_title": "[USA-CA][H] iPhone 15, iPhone 15 Pro, 2x iPhone 15 Pro Max, Apple Watch Series 10 [W] PayPal ",
+          "comment_id": "t1_m6ti0rl",
+          "parent_id": "t3_1hzyexo",
+          "author": "hwsbot",
+          "depth": 0,
+          "not_story_probability": 0.9604593515396118,
+          "story_probability": 0.039540570229291916,
+          "pred_label": "not_story",
+          "raw_label_probabilities": {
+            "LABEL_0": 0.9604593515396118,
+            "LABEL_1": 0.039540570229291916
+          },
+          "text": "* Username: /u/dreissy * [Click here to send a PM to this user](https://www.reddit.com/message/compose/?to=dreissy) * Join date: 2018-12-17 03:31:23 * Link karma: 1412 * Comment karma: 2159 * Confirmed trades: Trades: 43 * Heatware: None ^^This ^^information ^^does ^^not ^^guarantee ^^a ^^successful ^^swap. ^^It ^^is ^^being ^^provided ^^to ^^help ^^potential ^^trade ^^partners ^^have ^^more ^^immediate ^^background ^^information ^^about ^^with ^^whom ^^they ^^are ^^swapping. ^^Please ^^be ^^sure ^^to ^^familiarize ^^yourself ^^with ^^the ^^[RULES](https://www.reddit.com/r/hardwareswap/wiki/rules/rules) ^^and ^^other ^^guides ^^on ^^the ^^[WIKI](https://www.reddit.com/r/hardwareswap/wiki/index)"
+        },
+        {
+          "thread_id": "1hzyexo",
+          "thread_title": "[USA-CA][H] iPhone 15, iPhone 15 Pro, 2x iPhone 15 Pro Max, Apple Watch Series 10 [W] PayPal ",
+          "comment_id": "t1_m6u2fr3",
+          "parent_id": "t3_1hzyexo",
+          "author": "0nlythebest",
+          "depth": 0,
+          "not_story_probability": 0.9281731247901917,
+          "story_probability": 0.07182681560516357,
+          "pred_label": "not_story",
+          "raw_label_probabilities": {
+            "LABEL_0": 0.9281731247901917,
+            "LABEL_1": 0.07182681560516357
+          },
+          "text": "battery health on the 15 blue ?"
+        },
+        {
+          "thread_id": "1hzyexo",
+          "thread_title": "[USA-CA][H] iPhone 15, iPhone 15 Pro, 2x iPhone 15 Pro Max, Apple Watch Series 10 [W] PayPal ",
+          "comment_id": "t1_m6udr3w",
+          "parent_id": "t1_m6u2fr3",
+          "author": "0nlythebest",
+          "depth": 1,
+          "not_story_probability": 0.2717823088169098,
+          "story_probability": 0.7282176613807678,
+          "pred_label": "story",
+          "raw_label_probabilities": {
+            "LABEL_0": 0.2717823088169098,
+            "LABEL_1": 0.7282176613807678
+          },
+          "text": "oh shows in the photos, my bad! PMD"
+        },
+        {
+          "thread_id": "1hzyexo",
+          "thread_title": "[USA-CA][H] iPhone 15, iPhone 15 Pro, 2x iPhone 15 Pro Max, Apple Watch Series 10 [W] PayPal ",
+          "comment_id": "t1_m7eq7az",
+          "parent_id": "t3_1hzyexo",
+          "author": "mrdulicious",
+          "depth": 0,
+          "not_story_probability": 0.5902538895606995,
+          "story_probability": 0.4097461402416229,
+          "pred_label": "not_story",
+          "raw_label_probabilities": {
+            "LABEL_0": 0.5902538895606995,
+            "LABEL_1": 0.4097461402416229
+          },
+          "text": "Sent Chat"
+        }
+      ]
+    },
+    {
+      "thread_id": "1hc6jcz",
+      "thread_title": "[USA-CA][H] BNIB Pixel 9 Pro, iPad Pro 11” M1, iPhone 16 Pro, iPhone 15 Pro, 3x AW Series 9 [W] PayPal",
+      "comment_count": 11,
+      "story_count": 0,
+      "not_story_count": 11,
+      "story_rate": 0.0,
+      "mean_story_probability": 0.13565308329733936,
+      "median_story_probability": 0.044038232415914536,
+      "max_story_probability": 0.42760398983955383,
+      "min_story_probability": 0.020332710817456245,
+      "comments": [
+        {
+          "thread_id": "1hc6jcz",
+          "thread_title": "[USA-CA][H] BNIB Pixel 9 Pro, iPad Pro 11” M1, iPhone 16 Pro, iPhone 15 Pro, 3x AW Series 9 [W] PayPal",
+          "comment_id": "t1_m1lqgmd",
+          "parent_id": "t3_1hc6jcz",
+          "author": "AutoModerator",
+          "depth": 0,
+          "not_story_probability": 0.9796673059463501,
+          "story_probability": 0.020332710817456245,
+          "pred_label": "not_story",
+          "raw_label_probabilities": {
+            "LABEL_0": 0.9796673059463501,
+            "LABEL_1": 0.020332710817456245
+          },
+          "text": "###**Remember:** Friends & Family/Gift payments, Venmo, gift cards, Zelle and cryptocurrency are non-refundable and offer NO BUYER PROTECTION. - If as a buyer, you choose to pay through the \"Friends and Family\" option, or agree to send Gift Cards, Venmo, or cryptocurrency as payment, please understand that you will not be able to open a claim should something go wrong in the transaction. [Click here](https://www.reddit.com/r/appleswap/wiki/confirming_transactions) to learn how to confirm a transaction, leave feedback for your partner, and increase your flair score! *I am a bot, and this action was performed automatically. Please [contact the moderators of this subreddit](/message/compose/?to=/r/appleswap) if you have any questions or concerns.*"
+        },
+        {
+          "thread_id": "1hc6jcz",
+          "thread_title": "[USA-CA][H] BNIB Pixel 9 Pro, iPad Pro 11” M1, iPhone 16 Pro, iPhone 15 Pro, 3x AW Series 9 [W] PayPal",
+          "comment_id": "t1_m1lqgnp",
+          "parent_id": "t3_1hc6jcz",
+          "author": "AutoModerator",
+          "depth": 0,
+          "not_story_probability": 0.572395920753479,
+          "story_probability": 0.42760398983955383,
+          "pred_label": "not_story",
+          "raw_label_probabilities": {
+            "LABEL_0": 0.572395920753479,
+            "LABEL_1": 0.42760398983955383
+          },
+          "text": "Post information archive: **Title:** [USA-CA][H] BNIB Pixel 9 Pro, iPad Pro 11” M1, iPhone 16 Pro, iPhone 15 Pro, 3x AW Series 9 [W] PayPal **Username:** /u/dreissy **Body:** Hi everyone, have some unneeded items up for sale: 1. BNIB Porcelain Pixel 9 pro 128gb Unlocked - **Asking $670** 2. Cracked iPad Pro 11” M1 128gb WiFi with Apple Pencil - has hairline crack across display, can’t really feel it except for the corner one - fully functional - **Asking $400** 3. Lightly used iPhone 16 Pro 256gb Natural Titanium - Paid off, locked to Verizon (until 60 days service from user have passed) - **Asking $920** 4. iPhone 15 pro 128gb Blue - Paid off, locked to Verizon (until 60 days service from user have passed) - **Asking $640** **All phones have 100% battery health** 5. 3x Apple Watch Series 9 - 1 pink 41mm WiFi only- mint condition: **Asking $200 - 2 midnight 45mm WiFi+Cellular- mint condition: **Asking $230 each** - Watches come with charging cable too Priced to be competitive, open to offers if you find any to be unreasonable. Timestamp: https://imgur.com/a/3hduhMR Repairs: none *I am a bot, and this action was performed automatically. Please [contact the moderators of this subreddit](/message/compose/?to=/r/appleswap) if you have any questions or concerns.*"
+        },
+        {
+          "thread_id": "1hc6jcz",
+          "thread_title": "[USA-CA][H] BNIB Pixel 9 Pro, iPad Pro 11” M1, iPhone 16 Pro, iPhone 15 Pro, 3x AW Series 9 [W] PayPal",
+          "comment_id": "t1_m1lt3ep",
+          "parent_id": "t3_1hc6jcz",
+          "author": "Ma1ngo",
+          "depth": 0,
+          "not_story_probability": 0.6311793327331543,
+          "story_probability": 0.3688207268714905,
+          "pred_label": "not_story",
+          "raw_label_probabilities": {
+            "LABEL_0": 0.6311793327331543,
+            "LABEL_1": 0.3688207268714905
+          },
+          "text": "pm with question"
+        },
+        {
+          "thread_id": "1hc6jcz",
+          "thread_title": "[USA-CA][H] BNIB Pixel 9 Pro, iPad Pro 11” M1, iPhone 16 Pro, iPhone 15 Pro, 3x AW Series 9 [W] PayPal",
+          "comment_id": "t1_m28j7by",
+          "parent_id": "t1_m1lurkd",
+          "author": "mihirpatel14",
+          "depth": 1,
+          "not_story_probability": 0.8105095624923706,
+          "story_probability": 0.189490407705307,
+          "pred_label": "not_story",
+          "raw_label_probabilities": {
+            "LABEL_0": 0.8105095624923706,
+            "LABEL_1": 0.189490407705307
+          },
+          "text": "/u/AppleSwapBot /u/dreissy"
+        },
+        {
+          "thread_id": "1hc6jcz",
+          "thread_title": "[USA-CA][H] BNIB Pixel 9 Pro, iPad Pro 11” M1, iPhone 16 Pro, iPhone 15 Pro, 3x AW Series 9 [W] PayPal",
+          "comment_id": "t1_m28jg63",
+          "parent_id": "t1_m28j7by",
+          "author": "AppleSwapBot",
+          "depth": 2,
+          "not_story_probability": 0.9723560214042664,
+          "story_probability": 0.027643950656056404,
+          "pred_label": "not_story",
+          "raw_label_probabilities": {
+            "LABEL_0": 0.9723560214042664,
+            "LABEL_1": 0.027643950656056404
+          },
+          "text": "Hello, u/mihirpatel14. This comment is now being tracked. Your flair will update once your partner replies to your comment. u/dreissy, please reply to the above comment with your feedback **ONLY AFTER YOUR TRANSACTION IS COMPLETE** and *both* sides have received their end of the transaction. Once you reply, you will both get credit and your flair scores will increase. u/dreissy, if you did **NOT** complete a transaction with this person, please **DO NOT** reply to their comment as this will confirm the transaction. Instead, please [message the moderators](https://www.reddit.com/message/compose/?to=r/appleswap&subject=Incorrectly%20Tagged%20Confirmation&message=u%2Fmihirpatel14%20incorrectly%20tagged%20me%20in%20this%20comment%3A%20https%3A%2F%2Fwww.reddit.com%2Fcomments%2F1hc6jcz%2F-%2Fm28j7by) so we can contact the user and handle the situation. Thank you! --- [^(Buy the developer a coffee)](https://kofi.regexr.tech) ^or [^(support this project monthly)](https://patreon.regexr.tech)"
+        },
+        {
+          "thread_id": "1hc6jcz",
+          "thread_title": "[USA-CA][H] BNIB Pixel 9 Pro, iPad Pro 11” M1, iPhone 16 Pro, iPhone 15 Pro, 3x AW Series 9 [W] PayPal",
+          "comment_id": "t1_m28rur7",
+          "parent_id": "t1_m28rht6",
+          "author": "AppleSwapBot",
+          "depth": 3,
+          "not_story_probability": 0.9656751751899719,
+          "story_probability": 0.0343247689306736,
+          "pred_label": "not_story",
+          "raw_label_probabilities": {
+            "LABEL_0": 0.9656751751899719,
+            "LABEL_1": 0.0343247689306736
+          },
+          "text": "Hello, u/dreissy. Trade Confirmed! --- * u/mihirpatel14 -> 3 Trades * u/dreissy -> 16 Trades --- [^(Buy the developer a coffee)](https://kofi.regexr.tech) ^or [^(support this project monthly)](https://patreon.regexr.tech)"
+        },
+        {
+          "thread_id": "1hc6jcz",
+          "thread_title": "[USA-CA][H] BNIB Pixel 9 Pro, iPad Pro 11” M1, iPhone 16 Pro, iPhone 15 Pro, 3x AW Series 9 [W] PayPal",
+          "comment_id": "t1_m1ms0aq",
+          "parent_id": "t3_1hc6jcz",
+          "author": "FirePlug12",
+          "depth": 0,
+          "not_story_probability": 0.9559618234634399,
+          "story_probability": 0.044038232415914536,
+          "pred_label": "not_story",
+          "raw_label_probabilities": {
+            "LABEL_0": 0.9559618234634399,
+            "LABEL_1": 0.044038232415914536
+          },
+          "text": "By any chance does the watch have boxes?"
+        },
+        {
+          "thread_id": "1hc6jcz",
+          "thread_title": "[USA-CA][H] BNIB Pixel 9 Pro, iPad Pro 11” M1, iPhone 16 Pro, iPhone 15 Pro, 3x AW Series 9 [W] PayPal",
+          "comment_id": "t1_m2shuyw",
+          "parent_id": "t3_1hc6jcz",
+          "author": "GnrlyMrly",
+          "depth": 0,
+          "not_story_probability": 0.7947539687156677,
+          "story_probability": 0.20524604618549347,
+          "pred_label": "not_story",
+          "raw_label_probabilities": {
+            "LABEL_0": 0.7947539687156677,
+            "LABEL_1": 0.20524604618549347
+          },
+          "text": "Hi! Do you still have the 15 Pro?"
+        },
+        {
+          "thread_id": "1hc6jcz",
+          "thread_title": "[USA-CA][H] BNIB Pixel 9 Pro, iPad Pro 11” M1, iPhone 16 Pro, iPhone 15 Pro, 3x AW Series 9 [W] PayPal",
+          "comment_id": "t1_m34d0qg",
+          "parent_id": "t3_1hc6jcz",
+          "author": "diisd",
+          "depth": 0,
+          "not_story_probability": 0.8828773498535156,
+          "story_probability": 0.11712264269590378,
+          "pred_label": "not_story",
+          "raw_label_probabilities": {
+            "LABEL_0": 0.8828773498535156,
+            "LABEL_1": 0.11712264269590378
+          },
+          "text": "u/AppleSwapBot u/dreissy Got the apple watch"
+        },
+        {
+          "thread_id": "1hc6jcz",
+          "thread_title": "[USA-CA][H] BNIB Pixel 9 Pro, iPad Pro 11” M1, iPhone 16 Pro, iPhone 15 Pro, 3x AW Series 9 [W] PayPal",
+          "comment_id": "t1_m34d31i",
+          "parent_id": "t1_m34d0qg",
+          "author": "AppleSwapBot",
+          "depth": 1,
+          "not_story_probability": 0.9752936363220215,
+          "story_probability": 0.024706292897462845,
+          "pred_label": "not_story",
+          "raw_label_probabilities": {
+            "LABEL_0": 0.9752936363220215,
+            "LABEL_1": 0.024706292897462845
+          },
+          "text": "Hello, u/diisd. This comment is now being tracked. Your flair will update once your partner replies to your comment. u/dreissy, please reply to the above comment with your feedback **ONLY AFTER YOUR TRANSACTION IS COMPLETE** and *both* sides have received their end of the transaction. Once you reply, you will both get credit and your flair scores will increase. u/dreissy, if you did **NOT** complete a transaction with this person, please **DO NOT** reply to their comment as this will confirm the transaction. Instead, please [message the moderators](https://www.reddit.com/message/compose/?to=r/appleswap&subject=Incorrectly%20Tagged%20Confirmation&message=u%2Fdiisd%20incorrectly%20tagged%20me%20in%20this%20comment%3A%20https%3A%2F%2Fwww.reddit.com%2Fcomments%2F1hc6jcz%2F-%2Fm34d0qg) so we can contact the user and handle the situation. Thank you! --- [^(Buy the developer a coffee)](https://kofi.regexr.tech) ^or [^(support this project monthly)](https://patreon.regexr.tech)"
+        },
+        {
+          "thread_id": "1hc6jcz",
+          "thread_title": "[USA-CA][H] BNIB Pixel 9 Pro, iPad Pro 11” M1, iPhone 16 Pro, iPhone 15 Pro, 3x AW Series 9 [W] PayPal",
+          "comment_id": "t1_m37xzlj",
+          "parent_id": "t1_m37xmqf",
+          "author": "AppleSwapBot",
+          "depth": 2,
+          "not_story_probability": 0.9671458005905151,
+          "story_probability": 0.032854147255420685,
+          "pred_label": "not_story",
+          "raw_label_probabilities": {
+            "LABEL_0": 0.9671458005905151,
+            "LABEL_1": 0.032854147255420685
+          },
+          "text": "Hello, u/dreissy. Trade Confirmed! --- * u/diisd -> 6 Trades * u/dreissy -> 17 Trades --- [^(Buy the developer a coffee)](https://kofi.regexr.tech) ^or [^(support this project monthly)](https://patreon.regexr.tech)"
+        }
+      ]
+    },
+    {
+      "thread_id": "1hrch3e",
+      "thread_title": "[USA-CA][H] 2x iPhone 16 Pro Max, iPhone 15 Pro, iPhone 15 Pro Max, Apple Watch Series 10, iPad Pro 12.9, 512gb Meta Quest 3 [W] PayPal ",
+      "comment_count": 6,
+      "story_count": 0,
+      "not_story_count": 6,
+      "story_rate": 0.0,
+      "mean_story_probability": 0.16299323520312706,
+      "median_story_probability": 0.05420255288481712,
+      "max_story_probability": 0.41770538687705994,
+      "min_story_probability": 0.020332710817456245,
+      "comments": [
+        {
+          "thread_id": "1hrch3e",
+          "thread_title": "[USA-CA][H] 2x iPhone 16 Pro Max, iPhone 15 Pro, iPhone 15 Pro Max, Apple Watch Series 10, iPad Pro 12.9, 512gb Meta Quest 3 [W] PayPal ",
+          "comment_id": "t1_m4wl6wd",
+          "parent_id": "t3_1hrch3e",
+          "author": "AutoModerator",
+          "depth": 0,
+          "not_story_probability": 0.9796673059463501,
+          "story_probability": 0.020332710817456245,
+          "pred_label": "not_story",
+          "raw_label_probabilities": {
+            "LABEL_0": 0.9796673059463501,
+            "LABEL_1": 0.020332710817456245
+          },
+          "text": "###**Remember:** Friends & Family/Gift payments, Venmo, gift cards, Zelle and cryptocurrency are non-refundable and offer NO BUYER PROTECTION. - If as a buyer, you choose to pay through the \"Friends and Family\" option, or agree to send Gift Cards, Venmo, or cryptocurrency as payment, please understand that you will not be able to open a claim should something go wrong in the transaction. [Click here](https://www.reddit.com/r/appleswap/wiki/confirming_transactions) to learn how to confirm a transaction, leave feedback for your partner, and increase your flair score! *I am a bot, and this action was performed automatically. Please [contact the moderators of this subreddit](/message/compose/?to=/r/appleswap) if you have any questions or concerns.*"
+        },
+        {
+          "thread_id": "1hrch3e",
+          "thread_title": "[USA-CA][H] 2x iPhone 16 Pro Max, iPhone 15 Pro, iPhone 15 Pro Max, Apple Watch Series 10, iPad Pro 12.9, 512gb Meta Quest 3 [W] PayPal ",
+          "comment_id": "t1_m4wl70y",
+          "parent_id": "t3_1hrch3e",
+          "author": "AutoModerator",
+          "depth": 0,
+          "not_story_probability": 0.5934910774230957,
+          "story_probability": 0.4065089523792267,
+          "pred_label": "not_story",
+          "raw_label_probabilities": {
+            "LABEL_0": 0.5934910774230957,
+            "LABEL_1": 0.4065089523792267
+          },
+          "text": "Post information archive: **Title:** [USA-CA][H] 2x iPhone 16 Pro Max, iPhone 15 Pro, iPhone 15 Pro Max, Apple Watch Series 10, iPad Pro 12.9, 512gb Meta Quest 3 [W] PayPal **Username:** /u/dreissy **Body:** Hi everyone, Selling lots of goodies I want to try to clear out: 2x iPhone 16 Pro Max Desert Titanium 256gb - Fully paid off, Flex Unlock Policy (locks to first carrier it connects to and then unlocks based on your carriers unlock policy) - Good condition- some surface scratches on display - 100% battery health - Phone only **Asking $1000 each** Apple Watch Series 10 46mm Jet Black - GPS only model - Great condition, barely used - Watch and band only - **Asking $295** iPhone 15 pro 128gb Blue - Paid off, locked to Verizon (until 60 days service from user activation have passed which will be around mid January) - good condition, some scratches on screen - 100% battery health - **Asking $615** iPhone 15 pro Max 256gb Natural - Paid off, locked to Verizon (until 60 days service from user activation have passed which will be around mid February) - Great condition - 100% battery health - **Asking $750** iPad Pro 12.9 128gb 4th gen WiFi+Cellular - good condition - Still on iPadOS 15 - Apple pencil can be included for a small charge - **Asking $450** Meta Quest 3 512gb - bought during Black Friday, barely used - comes with original packaging - **Asking $410** Repairs: none https://imgur.com/a/1hANpHS *I am a bot, and this action was performed automatically. Please [contact the moderators of this subreddit](/message/compose/?to=/r/appleswap) if you have any questions or concerns.*"
+        },
+        {
+          "thread_id": "1hrch3e",
+          "thread_title": "[USA-CA][H] 2x iPhone 16 Pro Max, iPhone 15 Pro, iPhone 15 Pro Max, Apple Watch Series 10, iPad Pro 12.9, 512gb Meta Quest 3 [W] PayPal ",
+          "comment_id": "t1_m4yuxxl",
+          "parent_id": "t3_1hrch3e",
+          "author": "Obinna_",
+          "depth": 0,
+          "not_story_probability": 0.9245902895927429,
+          "story_probability": 0.07540976256132126,
+          "pred_label": "not_story",
+          "raw_label_probabilities": {
+            "LABEL_0": 0.9245902895927429,
+            "LABEL_1": 0.07540976256132126
+          },
+          "text": "Which ones are available?"
+        },
+        {
+          "thread_id": "1hrch3e",
+          "thread_title": "[USA-CA][H] 2x iPhone 16 Pro Max, iPhone 15 Pro, iPhone 15 Pro Max, Apple Watch Series 10, iPad Pro 12.9, 512gb Meta Quest 3 [W] PayPal ",
+          "comment_id": "t1_m5twzf4",
+          "parent_id": "t1_m5197su",
+          "author": "dreissy",
+          "depth": 1,
+          "not_story_probability": 0.5822945833206177,
+          "story_probability": 0.41770538687705994,
+          "pred_label": "not_story",
+          "raw_label_probabilities": {
+            "LABEL_0": 0.5822945833206177,
+            "LABEL_1": 0.41770538687705994
+          },
+          "text": "Sold 2x iPhone to u/margalolwut u/AppleSwapBot"
+        },
+        {
+          "thread_id": "1hrch3e",
+          "thread_title": "[USA-CA][H] 2x iPhone 16 Pro Max, iPhone 15 Pro, iPhone 15 Pro Max, Apple Watch Series 10, iPad Pro 12.9, 512gb Meta Quest 3 [W] PayPal ",
+          "comment_id": "t1_m5tx2lc",
+          "parent_id": "t1_m5twzf4",
+          "author": "AppleSwapBot",
+          "depth": 2,
+          "not_story_probability": 0.9749926924705505,
+          "story_probability": 0.025007255375385284,
+          "pred_label": "not_story",
+          "raw_label_probabilities": {
+            "LABEL_0": 0.9749926924705505,
+            "LABEL_1": 0.025007255375385284
+          },
+          "text": "Hello, u/dreissy. This comment is now being tracked. Your flair will update once your partner replies to your comment. u/margalolwut, please reply to the above comment with your feedback **ONLY AFTER YOUR TRANSACTION IS COMPLETE** and *both* sides have received their end of the transaction. Once you reply, you will both get credit and your flair scores will increase. u/margalolwut, if you did **NOT** complete a transaction with this person, please **DO NOT** reply to their comment as this will confirm the transaction. Instead, please [message the moderators](https://www.reddit.com/message/compose/?to=r/appleswap&subject=Incorrectly%20Tagged%20Confirmation&message=u%2Fdreissy%20incorrectly%20tagged%20me%20in%20this%20comment%3A%20https%3A%2F%2Fwww.reddit.com%2Fcomments%2F1hrch3e%2F-%2Fm5twzf4) so we can contact the user and handle the situation. Thank you! --- [^(Buy the developer a coffee)](https://kofi.regexr.tech) ^or [^(support this project monthly)](https://patreon.regexr.tech)"
+        },
+        {
+          "thread_id": "1hrch3e",
+          "thread_title": "[USA-CA][H] 2x iPhone 16 Pro Max, iPhone 15 Pro, iPhone 15 Pro Max, Apple Watch Series 10, iPad Pro 12.9, 512gb Meta Quest 3 [W] PayPal ",
+          "comment_id": "t1_m5vmwk5",
+          "parent_id": "t1_m5vmgxa",
+          "author": "AppleSwapBot",
+          "depth": 3,
+          "not_story_probability": 0.967004656791687,
+          "story_probability": 0.03299534320831299,
+          "pred_label": "not_story",
+          "raw_label_probabilities": {
+            "LABEL_0": 0.967004656791687,
+            "LABEL_1": 0.03299534320831299
+          },
+          "text": "Hello, u/margalolwut. Trade Confirmed! --- * u/dreissy -> 18 Trades * u/margalolwut -> 2 Trades --- [^(Buy the developer a coffee)](https://kofi.regexr.tech) ^or [^(support this project monthly)](https://patreon.regexr.tech)"
+        }
+      ]
+    },
+    {
+      "thread_id": "1hrcicy",
+      "thread_title": "[USA-CA][H] 2x iPhone 16 Pro Max, iPhone 15 Pro, iPhone 15 Pro Max, Apple Watch Series 10, iPad Pro 12.9, 512gb Meta Quest 3 [W] PayPal ",
+      "comment_count": 3,
+      "story_count": 0,
+      "not_story_count": 3,
+      "story_rate": 0.0,
+      "mean_story_probability": 0.20763342827558517,
+      "median_story_probability": 0.2675953805446625,
+      "max_story_probability": 0.31500524282455444,
+      "min_story_probability": 0.040299661457538605,
+      "comments": [
+        {
+          "thread_id": "1hrcicy",
+          "thread_title": "[USA-CA][H] 2x iPhone 16 Pro Max, iPhone 15 Pro, iPhone 15 Pro Max, Apple Watch Series 10, iPad Pro 12.9, 512gb Meta Quest 3 [W] PayPal ",
+          "comment_id": "t1_m4wlj1k",
+          "parent_id": "t3_1hrcicy",
+          "author": "hwsbot",
+          "depth": 0,
+          "not_story_probability": 0.9597002863883972,
+          "story_probability": 0.040299661457538605,
+          "pred_label": "not_story",
+          "raw_label_probabilities": {
+            "LABEL_0": 0.9597002863883972,
+            "LABEL_1": 0.040299661457538605
+          },
+          "text": "* Username: /u/dreissy * [Click here to send a PM to this user](https://www.reddit.com/message/compose/?to=dreissy) * Join date: 2018-12-17 03:31:23 * Link karma: 1398 * Comment karma: 2159 * Confirmed trades: Trades: 43 * Heatware: None ^^This ^^information ^^does ^^not ^^guarantee ^^a ^^successful ^^swap. ^^It ^^is ^^being ^^provided ^^to ^^help ^^potential ^^trade ^^partners ^^have ^^more ^^immediate ^^background ^^information ^^about ^^with ^^whom ^^they ^^are ^^swapping. ^^Please ^^be ^^sure ^^to ^^familiarize ^^yourself ^^with ^^the ^^[RULES](https://www.reddit.com/r/hardwareswap/wiki/rules/rules) ^^and ^^other ^^guides ^^on ^^the ^^[WIKI](https://www.reddit.com/r/hardwareswap/wiki/index)"
+        },
+        {
+          "thread_id": "1hrcicy",
+          "thread_title": "[USA-CA][H] 2x iPhone 16 Pro Max, iPhone 15 Pro, iPhone 15 Pro Max, Apple Watch Series 10, iPad Pro 12.9, 512gb Meta Quest 3 [W] PayPal ",
+          "comment_id": "t1_m59mdae",
+          "parent_id": "t3_1hrcicy",
+          "author": "jasonvazdel",
+          "depth": 0,
+          "not_story_probability": 0.7324045896530151,
+          "story_probability": 0.2675953805446625,
+          "pred_label": "not_story",
+          "raw_label_probabilities": {
+            "LABEL_0": 0.7324045896530151,
+            "LABEL_1": 0.2675953805446625
+          },
+          "text": "PM incoming"
+        },
+        {
+          "thread_id": "1hrcicy",
+          "thread_title": "[USA-CA][H] 2x iPhone 16 Pro Max, iPhone 15 Pro, iPhone 15 Pro Max, Apple Watch Series 10, iPad Pro 12.9, 512gb Meta Quest 3 [W] PayPal ",
+          "comment_id": "t1_m9ugpgb",
+          "parent_id": "t3_1hrcicy",
+          "author": "Blackaguru",
+          "depth": 0,
+          "not_story_probability": 0.6849947571754456,
+          "story_probability": 0.31500524282455444,
+          "pred_label": "not_story",
+          "raw_label_probabilities": {
+            "LABEL_0": 0.6849947571754456,
+            "LABEL_1": 0.31500524282455444
+          },
+          "text": "Pm with a question"
+        }
+      ]
+    },
+    {
+      "thread_id": "1lbdk5r",
+      "thread_title": "[USA-CA][H] 3x iPhone 15 128gb, iPhone 15 Pro Max 256gb, iPhone 16 128gb [W] PayPal",
+      "comment_count": 2,
+      "story_count": 0,
+      "not_story_count": 2,
+      "story_rate": 0.0,
+      "mean_story_probability": 0.09837593697011471,
+      "median_story_probability": 0.09837593697011471,
+      "max_story_probability": 0.1587563455104828,
+      "min_story_probability": 0.03799552842974663,
+      "comments": [
+        {
+          "thread_id": "1lbdk5r",
+          "thread_title": "[USA-CA][H] 3x iPhone 15 128gb, iPhone 15 Pro Max 256gb, iPhone 16 128gb [W] PayPal",
+          "comment_id": "t1_mxrooq1",
+          "parent_id": "t3_1lbdk5r",
+          "author": "hwsbot",
+          "depth": 0,
+          "not_story_probability": 0.9620044827461243,
+          "story_probability": 0.03799552842974663,
+          "pred_label": "not_story",
+          "raw_label_probabilities": {
+            "LABEL_0": 0.9620044827461243,
+            "LABEL_1": 0.03799552842974663
+          },
+          "text": "* Username: /u/dreissy * [Click here to send a PM to this user](https://www.reddit.com/message/compose/?to=dreissy) * Join date: 2018-12-17 03:31:23 * Link karma: 1421 * Comment karma: 2160 * Confirmed trades: Trades: 51 * Heatware: None ^^This ^^information ^^does ^^not ^^guarantee ^^a ^^successful ^^swap. ^^It ^^is ^^being ^^provided ^^to ^^help ^^potential ^^trade ^^partners ^^have ^^more ^^immediate ^^background ^^information ^^about ^^with ^^whom ^^they ^^are ^^swapping. ^^Please ^^be ^^sure ^^to ^^familiarize ^^yourself ^^with ^^the ^^[RULES](https://www.reddit.com/r/hardwareswap/wiki/rules/rules) ^^and ^^other ^^guides ^^on ^^the ^^[WIKI](https://www.reddit.com/r/hardwareswap/wiki/index)"
+        },
+        {
+          "thread_id": "1lbdk5r",
+          "thread_title": "[USA-CA][H] 3x iPhone 15 128gb, iPhone 15 Pro Max 256gb, iPhone 16 128gb [W] PayPal",
+          "comment_id": "t1_my6ae5h",
+          "parent_id": "t3_1lbdk5r",
+          "author": "GnrlyMrly",
+          "depth": 0,
+          "not_story_probability": 0.8412436246871948,
+          "story_probability": 0.1587563455104828,
+          "pred_label": "not_story",
+          "raw_label_probabilities": {
+            "LABEL_0": 0.8412436246871948,
+            "LABEL_1": 0.1587563455104828
+          },
+          "text": "Any flexibility on the iPhone 15?"
+        }
+      ]
+    }
+  ]
+}

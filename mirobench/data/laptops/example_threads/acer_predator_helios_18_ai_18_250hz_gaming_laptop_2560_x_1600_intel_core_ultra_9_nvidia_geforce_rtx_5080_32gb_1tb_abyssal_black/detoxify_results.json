@@ -1,0 +1,55 @@
+{
+  "meta": {
+    "input": "/Users/yaoningyu/Desktop/UIUC/GEO/data/raw/discussions/laptop_product/acer_predator_helios_18_ai_18_250hz_gaming_laptop_2560_x_1600_intel_core_ultra_9_nvidia_geforce_rtx_5080_32gb_1tb_abyssal_black",
+    "target_kind": "real",
+    "metric": "Detoxify toxicity/aggression",
+    "detoxify_repo": "/Users/yaoningyu/Desktop/UIUC/GEO/detoxify",
+    "model_name": "unbiased",
+    "device": "mps",
+    "dimensions": [
+      "toxicity",
+      "severe_toxicity",
+      "obscene",
+      "threat",
+      "insult",
+      "identity_attack"
+    ],
+    "aggression_score_note": "Per-comment aggression_score is the unweighted mean of toxicity, severe_toxicity, obscene, threat, insult, and identity_attack.",
+    "comment_count": 0,
+    "thread_count": 0,
+    "include_comment_text": true,
+    "source": {
+      "folder": "/Users/yaoningyu/Desktop/UIUC/GEO/data/raw/discussions/laptop_product/acer_predator_helios_18_ai_18_250hz_gaming_laptop_2560_x_1600_intel_core_ultra_9_nvidia_geforce_rtx_5080_32gb_1tb_abyssal_black",
+      "posts_path": "/Users/yaoningyu/Desktop/UIUC/GEO/data/raw/discussions/laptop_product/acer_predator_helios_18_ai_18_250hz_gaming_laptop_2560_x_1600_intel_core_ultra_9_nvidia_geforce_rtx_5080_32gb_1tb_abyssal_black/acer_predator_helios_18_ai_18_250hz_gaming_laptop_2560_x_1600_intel_core_ultra_9_nvidia_geforce_rtx_5080_32gb_1tb_abyssal_black.jsonl",
+      "comments_path": "/Users/yaoningyu/Desktop/UIUC/GEO/data/raw/discussions/laptop_product/acer_predator_helios_18_ai_18_250hz_gaming_laptop_2560_x_1600_intel_core_ultra_9_nvidia_geforce_rtx_5080_32gb_1tb_abyssal_black/acer_predator_helios_18_ai_18_250hz_gaming_laptop_2560_x_1600_intel_core_ultra_9_nvidia_geforce_rtx_5080_32gb_1tb_abyssal_black.comments.jsonl",
+      "post_count": 0,
+      "raw_comment_count": 0
+    }
+  },
+  "overall": {
+    "comment_count": 0,
+    "thread_count": 0,
+    "toxicity_mean": 0.0,
+    "toxicity_max": 0.0,
+    "toxicity_p90": 0.0,
+    "severe_toxicity_mean": 0.0,
+    "severe_toxicity_max": 0.0,
+    "severe_toxicity_p90": 0.0,
+    "obscene_mean": 0.0,
+    "obscene_max": 0.0,
+    "obscene_p90": 0.0,
+    "threat_mean": 0.0,
+    "threat_max": 0.0,
+    "threat_p90": 0.0,
+    "insult_mean": 0.0,
+    "insult_max": 0.0,
+    "insult_p90": 0.0,
+    "identity_attack_mean": 0.0,
+    "identity_attack_max": 0.0,
+    "identity_attack_p90": 0.0,
+    "aggression_score_mean": 0.0,
+    "aggression_score_max": 0.0,
+    "aggression_score_p90": 0.0
+  },
+  "threads": []
+}

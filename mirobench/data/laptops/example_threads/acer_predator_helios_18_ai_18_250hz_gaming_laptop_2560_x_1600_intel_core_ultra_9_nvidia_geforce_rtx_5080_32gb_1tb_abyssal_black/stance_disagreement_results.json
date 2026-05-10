@@ -1,0 +1,37 @@
+{
+  "meta": {
+    "input": "/Users/yaoningyu/Desktop/UIUC/GEO/data/raw/discussions/laptop_product/acer_predator_helios_18_ai_18_250hz_gaming_laptop_2560_x_1600_intel_core_ultra_9_nvidia_geforce_rtx_5080_32gb_1tb_abyssal_black",
+    "target_kind": "real",
+    "model_dir": "/Users/yaoningyu/Desktop/UIUC/GEO/Stance_Rel/RoBERT_rel_1.5e-05",
+    "model_note": "Uses local Stance_Rel RoBERTa stance head plus available RGCN user embeddings. Missing authors fall back to a zero graph feature because the original graph inference code is not present.",
+    "label_order": [
+      "disagree",
+      "neutral",
+      "agree"
+    ],
+    "graph_author": "reply",
+    "graph_feature_coverage": {
+      "known_author_pairs": 0,
+      "total_pairs": 0,
+      "coverage": 0.0
+    },
+    "pair_count": 0,
+    "thread_count": 0,
+    "source": {
+      "folder": "/Users/yaoningyu/Desktop/UIUC/GEO/data/raw/discussions/laptop_product/acer_predator_helios_18_ai_18_250hz_gaming_laptop_2560_x_1600_intel_core_ultra_9_nvidia_geforce_rtx_5080_32gb_1tb_abyssal_black",
+      "posts_path": "/Users/yaoningyu/Desktop/UIUC/GEO/data/raw/discussions/laptop_product/acer_predator_helios_18_ai_18_250hz_gaming_laptop_2560_x_1600_intel_core_ultra_9_nvidia_geforce_rtx_5080_32gb_1tb_abyssal_black/acer_predator_helios_18_ai_18_250hz_gaming_laptop_2560_x_1600_intel_core_ultra_9_nvidia_geforce_rtx_5080_32gb_1tb_abyssal_black.jsonl",
+      "comments_path": "/Users/yaoningyu/Desktop/UIUC/GEO/data/raw/discussions/laptop_product/acer_predator_helios_18_ai_18_250hz_gaming_laptop_2560_x_1600_intel_core_ultra_9_nvidia_geforce_rtx_5080_32gb_1tb_abyssal_black/acer_predator_helios_18_ai_18_250hz_gaming_laptop_2560_x_1600_intel_core_ultra_9_nvidia_geforce_rtx_5080_32gb_1tb_abyssal_black.comments.jsonl",
+      "post_count": 0,
+      "raw_comment_count": 0
+    }
+  },
+  "overall": {
+    "pair_count": 0,
+    "thread_count": 0,
+    "mean_disagree_probability": 0.0,
+    "hard_disagree_rate": 0.0,
+    "label_counts": {}
+  },
+  "threads": [],
+  "pairs": []
+}

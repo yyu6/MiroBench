@@ -1,0 +1,41 @@
+{
+  "meta": {
+    "input": "/Users/yaoningyu/Desktop/UIUC/GEO/data/raw/discussions/cell_phone_product/apple_iphone_16_128gb_apple_intelligence_unlocked_ultramarine",
+    "target_kind": "real",
+    "metric": "StorySeeker personal-story likelihood",
+    "model_name": "mariaantoniak/storyseeker",
+    "model_source": "https://huggingface.co/mariaantoniak/storyseeker",
+    "device": "mps",
+    "max_length": 512,
+    "threshold": 0.5,
+    "label_map": {
+      "0": "not_story",
+      "1": "story"
+    },
+    "label_note": "Model config uses LABEL_0/LABEL_1. Sanity examples indicate LABEL_0=not_story and LABEL_1=story.",
+    "comment_count": 0,
+    "thread_count": 0,
+    "include_comment_text": true,
+    "source": {
+      "folder": "/Users/yaoningyu/Desktop/UIUC/GEO/data/raw/discussions/cell_phone_product/apple_iphone_16_128gb_apple_intelligence_unlocked_ultramarine",
+      "posts_path": "/Users/yaoningyu/Desktop/UIUC/GEO/data/raw/discussions/cell_phone_product/apple_iphone_16_128gb_apple_intelligence_unlocked_ultramarine/apple_iphone_16_128gb_apple_intelligence_unlocked_ultramarine.jsonl",
+      "comments_path": "/Users/yaoningyu/Desktop/UIUC/GEO/data/raw/discussions/cell_phone_product/apple_iphone_16_128gb_apple_intelligence_unlocked_ultramarine/apple_iphone_16_128gb_apple_intelligence_unlocked_ultramarine.comments.jsonl",
+      "post_count": 0,
+      "raw_comment_count": 0
+    }
+  },
+  "overall": {
+    "comment_count": 0,
+    "thread_count": 0,
+    "story_count": 0,
+    "not_story_count": 0,
+    "story_rate": 0.0,
+    "weighted_mean_story_probability": 0.0,
+    "mean_thread_story_rate": 0.0,
+    "median_thread_story_rate": 0.0,
+    "max_thread_story_rate": 0.0,
+    "mean_thread_story_probability": 0.0,
+    "median_thread_story_probability": 0.0
+  },
+  "threads": []
+}

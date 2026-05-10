@@ -1,0 +1,46 @@
+{
+  "meta": {
+    "input": "/Users/yaoningyu/Desktop/UIUC/GEO/data/raw/discussions/cell_phone_product/apple_iphone_16_128gb_apple_intelligence_unlocked_ultramarine",
+    "target_kind": "real",
+    "metric": "Polite-Guard politeness classification",
+    "model_name": "Intel/polite-guard",
+    "model_source": "https://huggingface.co/Intel/polite-guard",
+    "device": "mps",
+    "max_length": 256,
+    "canonical_labels": [
+      "polite",
+      "somewhat_polite",
+      "neutral",
+      "impolite"
+    ],
+    "model_label_map": {
+      "0": "polite",
+      "1": "somewhat polite",
+      "2": "neutral",
+      "3": "impolite"
+    },
+    "comment_count": 0,
+    "thread_count": 0,
+    "include_comment_text": true,
+    "source": {
+      "folder": "/Users/yaoningyu/Desktop/UIUC/GEO/data/raw/discussions/cell_phone_product/apple_iphone_16_128gb_apple_intelligence_unlocked_ultramarine",
+      "posts_path": "/Users/yaoningyu/Desktop/UIUC/GEO/data/raw/discussions/cell_phone_product/apple_iphone_16_128gb_apple_intelligence_unlocked_ultramarine/apple_iphone_16_128gb_apple_intelligence_unlocked_ultramarine.jsonl",
+      "comments_path": "/Users/yaoningyu/Desktop/UIUC/GEO/data/raw/discussions/cell_phone_product/apple_iphone_16_128gb_apple_intelligence_unlocked_ultramarine/apple_iphone_16_128gb_apple_intelligence_unlocked_ultramarine.comments.jsonl",
+      "post_count": 0,
+      "raw_comment_count": 0
+    }
+  },
+  "overall": {
+    "comment_count": 0,
+    "thread_count": 0,
+    "polite_count": 0,
+    "polite_rate": 0.0,
+    "somewhat_polite_count": 0,
+    "somewhat_polite_rate": 0.0,
+    "neutral_count": 0,
+    "neutral_rate": 0.0,
+    "impolite_count": 0,
+    "impolite_rate": 0.0
+  },
+  "threads": []
+}

@@ -1,0 +1,150 @@
+{
+  "meta": {
+    "input": "/Users/yaoningyu/Desktop/UIUC/GEO/data/raw/discussions/cell_phone_product/apple_iphone_15_128gb_unlocked_blue",
+    "target_kind": "real",
+    "metric": "Self-BLEU",
+    "orders": [
+      2,
+      3,
+      4
+    ],
+    "aggregation": "unordered comment pairs within each thread; pair score is mean(BLEU(a,b), BLEU(b,a))",
+    "smoothing": "add-one modified n-gram precision",
+    "interpretation": "higher Self-BLEU means more surface-form uniformity",
+    "thread_count": 9,
+    "comment_count": 175,
+    "include_comment_scores": false,
+    "source": {
+      "folder": "/Users/yaoningyu/Desktop/UIUC/GEO/data/raw/discussions/cell_phone_product/apple_iphone_15_128gb_unlocked_blue",
+      "posts_path": "/Users/yaoningyu/Desktop/UIUC/GEO/data/raw/discussions/cell_phone_product/apple_iphone_15_128gb_unlocked_blue/apple_iphone_15_128gb_unlocked_blue.jsonl",
+      "comments_path": "/Users/yaoningyu/Desktop/UIUC/GEO/data/raw/discussions/cell_phone_product/apple_iphone_15_128gb_unlocked_blue/apple_iphone_15_128gb_unlocked_blue.comments.jsonl",
+      "post_count": 9,
+      "raw_comment_count": 234
+    }
+  },
+  "overall": {
+    "comment_count": 175,
+    "thread_count": 9,
+    "pair_count": 8395,
+    "weighted_self_bleu_2": 0.057845106393585644,
+    "weighted_self_bleu_3": 0.047699596031751036,
+    "weighted_self_bleu_4": 0.04403543192919008,
+    "mean_thread_self_bleu_2": 0.06301313132371048,
+    "mean_thread_self_bleu_3": 0.05752609244212134,
+    "mean_thread_self_bleu_4": 0.05624986676154407,
+    "median_thread_self_bleu_2": 0.059630453776489296,
+    "median_thread_self_bleu_3": 0.04751248526937119,
+    "median_thread_self_bleu_4": 0.04900281493039505,
+    "max_thread_self_bleu_4": 0.10823228205853096
+  },
+  "threads": [
+    {
+      "thread_id": "1hrcicy",
+      "thread_title": "[USA-CA][H] 2x iPhone 16 Pro Max, iPhone 15 Pro, iPhone 15 Pro Max, Apple Watch Series 10, iPad Pro 12.9, 512gb Meta Quest 3 [W] PayPal ",
+      "comment_count": 3,
+      "pair_count": 3,
+      "self_bleu_2": 0.09040298180476421,
+      "self_bleu_3": 0.09807180597267118,
+      "self_bleu_4": 0.10823228205853096,
+      "mean_comment_tokens": 84.33333333333333,
+      "median_comment_tokens": 4.0,
+      "note": ""
+    },
+    {
+      "thread_id": "1hc6jcz",
+      "thread_title": "[USA-CA][H] BNIB Pixel 9 Pro, iPad Pro 11” M1, iPhone 16 Pro, iPhone 15 Pro, 3x AW Series 9 [W] PayPal",
+      "comment_count": 11,
+      "pair_count": 55,
+      "self_bleu_2": 0.09998101644772639,
+      "self_bleu_3": 0.08948557358080762,
+      "self_bleu_4": 0.08298250994613846,
+      "mean_comment_tokens": 109.0909090909091,
+      "median_comment_tokens": 74.0,
+      "note": ""
+    },
+    {
+      "thread_id": "1hc6kba",
+      "thread_title": "[USA-CA][H] BNIB Pixel 9 Pro, iPad Pro 11” M1, iPhone 16 Pro, iPhone 15 Pro, 3x AW Series 9 [W] PayPal",
+      "comment_count": 5,
+      "pair_count": 10,
+      "self_bleu_2": 0.07000264523934592,
+      "self_bleu_3": 0.07245020770498119,
+      "self_bleu_4": 0.07894123426885287,
+      "mean_comment_tokens": 62.0,
+      "median_comment_tokens": 5.0,
+      "note": ""
+    },
+    {
+      "thread_id": "1lbdjob",
+      "thread_title": "[USA-CA][H] 3x iPhone 15 128gb, iPhone 15 Pro Max 256gb, iPhone 16 128gb [W] PayPal",
+      "comment_count": 8,
+      "pair_count": 28,
+      "self_bleu_2": 0.08987230401911651,
+      "self_bleu_3": 0.07406436096526765,
+      "self_bleu_4": 0.06547526799518195,
+      "mean_comment_tokens": 120.0,
+      "median_comment_tokens": 121.0,
+      "note": ""
+    },
+    {
+      "thread_id": "1hzyexo",
+      "thread_title": "[USA-CA][H] iPhone 15, iPhone 15 Pro, 2x iPhone 15 Pro Max, Apple Watch Series 10 [W] PayPal ",
+      "comment_count": 4,
+      "pair_count": 6,
+      "self_bleu_2": 0.04547924114603158,
+      "self_bleu_3": 0.046623508174115876,
+      "self_bleu_4": 0.04900281493039505,
+      "mean_comment_tokens": 66.5,
+      "median_comment_tokens": 8.5,
+      "note": ""
+    },
+    {
+      "thread_id": "1hrch3e",
+      "thread_title": "[USA-CA][H] 2x iPhone 16 Pro Max, iPhone 15 Pro, iPhone 15 Pro Max, Apple Watch Series 10, iPad Pro 12.9, 512gb Meta Quest 3 [W] PayPal ",
+      "comment_count": 6,
+      "pair_count": 15,
+      "self_bleu_2": 0.059630453776489296,
+      "self_bleu_3": 0.04751248526937119,
+      "self_bleu_4": 0.041342312221003014,
+      "mean_comment_tokens": 150.5,
+      "median_comment_tokens": 124.0,
+      "note": ""
+    },
+    {
+      "thread_id": "1hzyfqd",
+      "thread_title": "[USA-CA][H] iPhone 15, iPhone 15 Pro, 2x iPhone 15 Pro Max, Apple Watch Series 10 [W] PayPal ",
+      "comment_count": 7,
+      "pair_count": 21,
+      "self_bleu_2": 0.05540455807975225,
+      "self_bleu_3": 0.045068294108440154,
+      "self_bleu_4": 0.04003852395707038,
+      "mean_comment_tokens": 119.14285714285714,
+      "median_comment_tokens": 74.0,
+      "note": ""
+    },
+    {
+      "thread_id": "1kjulgz",
+      "thread_title": "Apple has started to sell refurbished iPhone 15s",
+      "comment_count": 129,
+      "pair_count": 8256,
+      "self_bleu_2": 0.05230456911485732,
+      "self_bleu_3": 0.041245216193101106,
+      "self_bleu_4": 0.03736523862219597,
+      "mean_comment_tokens": 36.47286821705426,
+      "median_comment_tokens": 26.0,
+      "note": ""
+    },
+    {
+      "thread_id": "1lbdk5r",
+      "thread_title": "[USA-CA][H] 3x iPhone 15 128gb, iPhone 15 Pro Max 256gb, iPhone 16 128gb [W] PayPal",
+      "comment_count": 2,
+      "pair_count": 1,
+      "self_bleu_2": 0.004040412285310665,
+      "self_bleu_3": 0.0032133800103362462,
+      "self_bleu_4": 0.0028686168545281098,
+      "mean_comment_tokens": 127.0,
+      "median_comment_tokens": 127.0,
+      "note": ""
+    }
+  ]
+}

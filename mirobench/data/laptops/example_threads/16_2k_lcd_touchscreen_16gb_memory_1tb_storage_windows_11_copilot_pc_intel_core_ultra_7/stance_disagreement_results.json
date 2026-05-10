@@ -1,0 +1,1522 @@
+{
+  "meta": {
+    "input": "/Users/yaoningyu/Desktop/UIUC/GEO/data/raw/discussions/laptop_product/16_2k_lcd_touchscreen_16gb_memory_1tb_storage_windows_11_copilot_pc_intel_core_ultra_7",
+    "target_kind": "real",
+    "model_dir": "/Users/yaoningyu/Desktop/UIUC/GEO/Stance_Rel/RoBERT_rel_1.5e-05",
+    "model_note": "Uses local Stance_Rel RoBERTa stance head plus available RGCN user embeddings. Missing authors fall back to a zero graph feature because the original graph inference code is not present.",
+    "label_order": [
+      "disagree",
+      "neutral",
+      "agree"
+    ],
+    "graph_author": "reply",
+    "graph_feature_coverage": {
+      "known_author_pairs": 0,
+      "total_pairs": 51,
+      "coverage": 0.0
+    },
+    "pair_count": 51,
+    "thread_count": 16,
+    "source": {
+      "folder": "/Users/yaoningyu/Desktop/UIUC/GEO/data/raw/discussions/laptop_product/16_2k_lcd_touchscreen_16gb_memory_1tb_storage_windows_11_copilot_pc_intel_core_ultra_7",
+      "posts_path": "/Users/yaoningyu/Desktop/UIUC/GEO/data/raw/discussions/laptop_product/16_2k_lcd_touchscreen_16gb_memory_1tb_storage_windows_11_copilot_pc_intel_core_ultra_7/16_2k_lcd_touchscreen_16gb_memory_1tb_storage_windows_11_copilot_pc_intel_core_ultra_7.jsonl",
+      "comments_path": "/Users/yaoningyu/Desktop/UIUC/GEO/data/raw/discussions/laptop_product/16_2k_lcd_touchscreen_16gb_memory_1tb_storage_windows_11_copilot_pc_intel_core_ultra_7/16_2k_lcd_touchscreen_16gb_memory_1tb_storage_windows_11_copilot_pc_intel_core_ultra_7.comments.jsonl",
+      "post_count": 26,
+      "raw_comment_count": 55
+    }
+  },
+  "overall": {
+    "pair_count": 51,
+    "thread_count": 16,
+    "mean_disagree_probability": 0.3085259292639938,
+    "median_thread_disagree_probability": 0.30660348683595656,
+    "hard_disagree_rate": 0.0196078431372549,
+    "label_counts": {
+      "agree": 14,
+      "neutral": 36,
+      "disagree": 1
+    }
+  },
+  "threads": [
+    {
+      "thread_id": "1s8ouh3",
+      "thread_title": "[Amazon] Samsung 16” Galaxy Book5 Pro 360 Copilot+ PC, AI Computer, Intel Core 7 Ultra Processor, 3K AMOLED (2880x1800) Touchscreen, S Pen, 120Hz, 16GB RAM | 1TB SSD, All-Day Battery Life. Now: $1,469 After 14% Off",
+      "pair_count": 1,
+      "mean_disagree_probability": 0.3509412407875061,
+      "hard_disagree_rate": 0.0,
+      "label_counts": {
+        "agree": 1
+      },
+      "top_disagreement_pairs": [
+        {
+          "reply_id": "t1_odislyk",
+          "parent_author": "fifa2003",
+          "reply_author": "1rubyglass",
+          "pred_label": "agree",
+          "disagree_probability": 0.3509412407875061,
+          "parent_text": "[Amazon] Samsung 16” Galaxy Book5 Pro 360 Copilot+ PC, AI Computer, Intel Core 7 Ultra Processor, 3K AMOLED (2880x1800) Touchscreen, S Pen, 120Hz, 16GB RAM | 1TB SSD, All-Day Battery Life. Now: $1,469 After 14% Off",
+          "reply_text": "$1500 for a PC with 16gb ram? No thanks."
+        }
+      ]
+    },
+    {
+      "thread_id": "1qw4zkr",
+      "thread_title": "[eBay] HP OMEN Gaming Laptop: 16\" 2K (1920 x 1200) FHD+ 144Hz Display, Intel Core Ultra 7 255H w/ AI Boost, NVIDIA GeForce RTX 5060, 16GGB RAM, 1TB SSD, Shadow Black. Now: $1,024.99 After 31% Off #ad",
+      "pair_count": 5,
+      "mean_disagree_probability": 0.3258921980857849,
+      "hard_disagree_rate": 0.2,
+      "label_counts": {
+        "neutral": 3,
+        "agree": 1,
+        "disagree": 1
+      },
+      "top_disagreement_pairs": [
+        {
+          "reply_id": "t1_o3qaav3",
+          "parent_author": "blakemoranbass",
+          "reply_author": "MrNo_Balls",
+          "pred_label": "disagree",
+          "disagree_probability": 0.3766966462135315,
+          "parent_text": "The eBay seller IS Best Buy lol",
+          "reply_text": "LMAO no wonder!"
+        },
+        {
+          "reply_id": "t1_o3q8g0d",
+          "parent_author": "MrNo_Balls",
+          "reply_author": "blakemoranbass",
+          "pred_label": "agree",
+          "disagree_probability": 0.32956525683403015,
+          "parent_text": "same item and price on best buy... how does the ebay seller make a profit?",
+          "reply_text": "The eBay seller IS Best Buy lol"
+        },
+        {
+          "reply_id": "t1_o3r8hmy",
+          "parent_author": "AL0411",
+          "reply_author": "eleffdee",
+          "pred_label": "neutral",
+          "disagree_probability": 0.32928118109703064,
+          "parent_text": "[eBay] HP OMEN Gaming Laptop: 16\" 2K (1920 x 1200) FHD+ 144Hz Display, Intel Core Ultra 7 255H w/ AI Boost, NVIDIA GeForce RTX 5060, 16GGB RAM, 1TB SSD, Shadow Black. Now: $1,024.99 After 31% Off #ad",
+          "reply_text": "Are these good laptops? Anyone have experience with them?"
+        },
+        {
+          "reply_id": "t1_o3q5z85",
+          "parent_author": "AL0411",
+          "reply_author": "MrNo_Balls",
+          "pred_label": "neutral",
+          "disagree_probability": 0.31089356541633606,
+          "parent_text": "[eBay] HP OMEN Gaming Laptop: 16\" 2K (1920 x 1200) FHD+ 144Hz Display, Intel Core Ultra 7 255H w/ AI Boost, NVIDIA GeForce RTX 5060, 16GGB RAM, 1TB SSD, Shadow Black. Now: $1,024.99 After 31% Off #ad",
+          "reply_text": "same item and price on best buy... how does the ebay seller make a profit?"
+        },
+        {
+          "reply_id": "t1_o3qoc9t",
+          "parent_author": "AL0411",
+          "reply_author": "FinalFantasyZed",
+          "pred_label": "neutral",
+          "disagree_probability": 0.2830243408679962,
+          "parent_text": "[eBay] HP OMEN Gaming Laptop: 16\" 2K (1920 x 1200) FHD+ 144Hz Display, Intel Core Ultra 7 255H w/ AI Boost, NVIDIA GeForce RTX 5060, 16GGB RAM, 1TB SSD, Shadow Black. Now: $1,024.99 After 31% Off #ad",
+          "reply_text": "5070 version with 32GB DDR5 for $1299 still available if you have a microcenter near you. https://www.microcenter.com/product/696098/hp-omen-16-slim-16-an0003nr-16-gaming-laptop-computer-shadow-black"
+        }
+      ]
+    },
+    {
+      "thread_id": "1q3hni8",
+      "thread_title": "Walmart] HP OmniBook 5 AI PC Laptop: 16\" (1920 x 1200) 2K Touch Display, Intel Core Ultra 7 255U, Intel Graphics, 16GB RAM, 1TB SSD $386 off, for $594",
+      "pair_count": 2,
+      "mean_disagree_probability": 0.32007694244384766,
+      "hard_disagree_rate": 0.0,
+      "label_counts": {
+        "neutral": 1,
+        "agree": 1
+      },
+      "top_disagreement_pairs": [
+        {
+          "reply_id": "t1_nxn63r8",
+          "parent_author": "Jovie311",
+          "reply_author": "techstar2000",
+          "pred_label": "agree",
+          "disagree_probability": 0.3429013192653656,
+          "parent_text": "Is the graphics card good? I'm thinking about getting it.",
+          "reply_text": "It doesn't have a dedicated graphics card. Integrated graphics which is only ideal for certain tasks.."
+        },
+        {
+          "reply_id": "t1_nxmgeg6",
+          "parent_author": "techstar2000",
+          "reply_author": "Jovie311",
+          "pred_label": "neutral",
+          "disagree_probability": 0.2972525656223297,
+          "parent_text": "Walmart] HP OmniBook 5 AI PC Laptop: 16\" (1920 x 1200) 2K Touch Display, Intel Core Ultra 7 255U, Intel Graphics, 16GB RAM, 1TB SSD $386 off, for $594",
+          "reply_text": "Is the graphics card good? I'm thinking about getting it."
+        }
+      ]
+    },
+    {
+      "thread_id": "1qh57y6",
+      "thread_title": "[Walmart] HP OmniBook 5 AI PC Laptop: 16\" (1920 x 1200) 2K Touch Display, Intel Core Ultra 7 255U, Intel Graphics, 16GB RAM, 1TB SSD, Glacier Silver, Now: $599 After $390 Off",
+      "pair_count": 1,
+      "mean_disagree_probability": 0.3158932328224182,
+      "hard_disagree_rate": 0.0,
+      "label_counts": {
+        "neutral": 1
+      },
+      "top_disagreement_pairs": [
+        {
+          "reply_id": "t1_o0jbxrl",
+          "parent_author": "fifa2003",
+          "reply_author": "yellowsubmarine2016",
+          "pred_label": "neutral",
+          "disagree_probability": 0.3158932328224182,
+          "parent_text": "[Walmart] HP OmniBook 5 AI PC Laptop: 16\" (1920 x 1200) 2K Touch Display, Intel Core Ultra 7 255U, Intel Graphics, 16GB RAM, 1TB SSD, Glacier Silver, Now: $599 After $390 Off",
+          "reply_text": "Why do specifications state AMD CPU? MD Ryzen™ 5 8540U processor:"
+        }
+      ]
+    },
+    {
+      "thread_id": "1ph90dl",
+      "thread_title": "[Walmart] HP OmniBook 5 AI PC Laptop: 16\" (1920 x 1200) 2K Touch Display, Intel Core Ultra 7 255U, Intel Graphics, 16GB RAM, 1TB SSD, Glacier Silver, Now: $549.95 After $430 Off",
+      "pair_count": 2,
+      "mean_disagree_probability": 0.31130295991897583,
+      "hard_disagree_rate": 0.0,
+      "label_counts": {
+        "agree": 1,
+        "neutral": 1
+      },
+      "top_disagreement_pairs": [
+        {
+          "reply_id": "t1_nt0hgab",
+          "parent_author": "seanddd99",
+          "reply_author": "fifa2003",
+          "pred_label": "neutral",
+          "disagree_probability": 0.3139406442642212,
+          "parent_text": "How is build quality ?",
+          "reply_text": "Decent for professionals and students that would love a beautiful display and a simple general use laptop."
+        },
+        {
+          "reply_id": "t1_nt06qvu",
+          "parent_author": "fifa2003",
+          "reply_author": "seanddd99",
+          "pred_label": "agree",
+          "disagree_probability": 0.30866527557373047,
+          "parent_text": "[Walmart] HP OmniBook 5 AI PC Laptop: 16\" (1920 x 1200) 2K Touch Display, Intel Core Ultra 7 255U, Intel Graphics, 16GB RAM, 1TB SSD, Glacier Silver, Now: $549.95 After $430 Off",
+          "reply_text": "How is build quality ?"
+        }
+      ]
+    },
+    {
+      "thread_id": "1qvc8t4",
+      "thread_title": "[Lenovo] Lenovo IdeaPad Pro 5i Laptop: 16\" 2.8K OLED Touchscreen, Ultra 7 255H, RTX 5050, 16GB RAM, 1TB SSD with 52% off using coupon code IDEAFEBFUN3,for $900",
+      "pair_count": 16,
+      "mean_disagree_probability": 0.31114616990089417,
+      "hard_disagree_rate": 0.0,
+      "label_counts": {
+        "neutral": 10,
+        "agree": 6
+      },
+      "top_disagreement_pairs": [
+        {
+          "reply_id": "t1_o3gv4oo",
+          "parent_author": "Qminsage",
+          "reply_author": "techstar2000",
+          "pred_label": "neutral",
+          "disagree_probability": 0.3453449010848999,
+          "parent_text": "This one has a dedicated GPU. Would this be alright for creators?",
+          "reply_text": "Yes it would be."
+        },
+        {
+          "reply_id": "t1_o3kth34",
+          "parent_author": "techstar2000",
+          "reply_author": "[deleted]",
+          "pred_label": "neutral",
+          "disagree_probability": 0.34313321113586426,
+          "parent_text": "[Lenovo] Lenovo IdeaPad Pro 5i Laptop: 16\" 2.8K OLED Touchscreen, Ultra 7 255H, RTX 5050, 16GB RAM, 1TB SSD with 52% off using coupon code IDEAFEBFUN3,for $900",
+          "reply_text": "This was on sale on blackfriday for 1000 usd it was 32gb i bought one this is absolutely monster amazing battery display everything i loved it"
+        },
+        {
+          "reply_id": "t1_o3jhgrq",
+          "parent_author": "lintstah1337",
+          "reply_author": "techstar2000",
+          "pred_label": "agree",
+          "disagree_probability": 0.3380964994430542,
+          "parent_text": "The Legion 5 with 5060, 15\" 1600P 165Hz OLED and 16GB SODIMM for $949 is way better deal. https://old.reddit.com/r/LaptopDeals/comments/1qlcbsd/lenovo_lenovo_legion_5i_gen_10_laptop_15_1600p/",
+          "reply_text": "Legion 5 isn't available. The Ideapad is also touchscreen which can make a difference for some people. This is not a gaming laptop really."
+        },
+        {
+          "reply_id": "t1_o3hqsyk",
+          "parent_author": "shield_x",
+          "reply_author": "Memexploder",
+          "pred_label": "agree",
+          "disagree_probability": 0.32572391629219055,
+          "parent_text": "Deal breaker is the 16gb of soldered ram",
+          "reply_text": "Ain't affording proper RAM anyways"
+        },
+        {
+          "reply_id": "t1_o4qo1x1",
+          "parent_author": "techstar2000",
+          "reply_author": "Blazin115",
+          "pred_label": "neutral",
+          "disagree_probability": 0.3183702528476715,
+          "parent_text": "Legion 5 isn't available. The Ideapad is also touchscreen which can make a difference for some people. This is not a gaming laptop really.",
+          "reply_text": "This deal is expired. Is a new code available? Thx."
+        }
+      ]
+    },
+    {
+      "thread_id": "1rkbhqo",
+      "thread_title": "Looking for daily carry laptop",
+      "pair_count": 2,
+      "mean_disagree_probability": 0.3107132762670517,
+      "hard_disagree_rate": 0.0,
+      "label_counts": {
+        "neutral": 1,
+        "agree": 1
+      },
+      "top_disagreement_pairs": [
+        {
+          "reply_id": "t1_o8jii9r",
+          "parent_author": "ElephantPirate",
+          "reply_author": "Remarkable-Dark2840",
+          "pred_label": "neutral",
+          "disagree_probability": 0.31801486015319824,
+          "parent_text": "Looking for daily carry laptop \\*\\*LAPTOP QUESTIONNAIRE\\*\\* \\* \\*\\*Total budget (in local currency) and country of purchase. Please do not use USD unless purchasing in the US:\\*\\* \\-1000-1800 usd \\* \\*\\*Are you open to…",
+          "reply_text": "You can check these laptops out. https://theaitechpulse.com/best-laptops-for-small-business-2026. Or buy any budget Macbook"
+        },
+        {
+          "reply_id": "t1_o8kf9hl",
+          "parent_author": "ElephantPirate",
+          "reply_author": "D2ultima",
+          "pred_label": "agree",
+          "disagree_probability": 0.30341169238090515,
+          "parent_text": "Looking for daily carry laptop \\*\\*LAPTOP QUESTIONNAIRE\\*\\* \\* \\*\\*Total budget (in local currency) and country of purchase. Please do not use USD unless purchasing in the US:\\*\\* \\-1000-1800 usd \\* \\*\\*Are you open to…",
+          "reply_text": "There's a couple of options that might be good for you. \\- [Lenovo Yoga Slim 7i Aura Edition](https://amzn.to/4spwILP), with 32GB of RAM and a great and efficient Lunar Lake processor. It's built quite well. This is an…"
+        }
+      ]
+    },
+    {
+      "thread_id": "1cj7ngt",
+      "thread_title": "Suggestions for HP - Envy 2-in-1 16\" Wide Ultra XGA Touch-Screen Laptop - Intel Core Ultra 7 - 16GB Memory - 1TB SSD - Glacier Silver",
+      "pair_count": 2,
+      "mean_disagree_probability": 0.30696170032024384,
+      "hard_disagree_rate": 0.0,
+      "label_counts": {
+        "agree": 1,
+        "neutral": 1
+      },
+      "top_disagreement_pairs": [
+        {
+          "reply_id": "t1_lg23bij",
+          "parent_author": "darkvader572",
+          "reply_author": "No_oNK",
+          "pred_label": "agree",
+          "disagree_probability": 0.32272565364837646,
+          "parent_text": "Suggestions for HP - Envy 2-in-1 16\" Wide Ultra XGA Touch-Screen Laptop - Intel Core Ultra 7 - 16GB Memory - 1TB SSD - Glacier Silver Hey Guys! I am not well versed in this area and need some suggestions regarding the a…",
+          "reply_text": "Is it any good?"
+        },
+        {
+          "reply_id": "t1_lvlym4o",
+          "parent_author": "No_oNK",
+          "reply_author": "darkvader572",
+          "pred_label": "neutral",
+          "disagree_probability": 0.2911977469921112,
+          "parent_text": "Is it any good?",
+          "reply_text": "Just saw this. Not in my opinion since it is super loud and drains the battery like insane. I sold it after a month."
+        }
+      ]
+    },
+    {
+      "thread_id": "1rm6mtt",
+      "thread_title": "How to Decide Between the HP Omnibook X Flip 16 and the Lenovo Yoga 7i?",
+      "pair_count": 5,
+      "mean_disagree_probability": 0.3062452733516693,
+      "hard_disagree_rate": 0.0,
+      "label_counts": {
+        "neutral": 5
+      },
+      "top_disagreement_pairs": [
+        {
+          "reply_id": "t1_o9g73gi",
+          "parent_author": "D2ultima",
+          "reply_author": "LifeInAction",
+          "pred_label": "neutral",
+          "disagree_probability": 0.3295603096485138,
+          "parent_text": "Omnibook Ultra flip or Yoga 9i 2-in-1 with the 256V or 258V is probably good options.",
+          "reply_text": "Cool, I'll take a look into those, thanks so much, especially for responding so quickly!"
+        },
+        {
+          "reply_id": "t1_o9g4opz",
+          "parent_author": "D2ultima",
+          "reply_author": "LifeInAction",
+          "pred_label": "neutral",
+          "disagree_probability": 0.3291221857070923,
+          "parent_text": "You're looking at a last gen Yoga. Look for one with the Core Ultra 258V processor for 32GB of RAM. It shouldn't be much more expensive than the HP but I think it's a better unit. Do you need a 2 in 1 specifically?",
+          "reply_text": "Yeah preferably a 2 in 1, since I like using the tablet feature on it. Any recommendations? Might go shopping around more in the coming days."
+        },
+        {
+          "reply_id": "t1_o940z32",
+          "parent_author": "LifeInAction",
+          "reply_author": "D2ultima",
+          "pred_label": "neutral",
+          "disagree_probability": 0.29676562547683716,
+          "parent_text": "How to Decide Between the HP Omnibook X Flip 16 and the Lenovo Yoga 7i? I've been researching buying a new laptop and found these 2 laptops with similar stats shown below. The HP Omnibook X is about $300 more expensive…",
+          "reply_text": "You're looking at a last gen Yoga. Look for one with the Core Ultra 258V processor for 32GB of RAM. It shouldn't be much more expensive than the HP but I think it's a better unit. Do you need a 2 in 1 specifically?"
+        },
+        {
+          "reply_id": "t1_o9g4tip",
+          "parent_author": "LifeInAction",
+          "reply_author": "D2ultima",
+          "pred_label": "neutral",
+          "disagree_probability": 0.29339727759361267,
+          "parent_text": "Yeah preferably a 2 in 1, since I like using the tablet feature on it. Any recommendations? Might go shopping around more in the coming days.",
+          "reply_text": "Omnibook Ultra flip or Yoga 9i 2-in-1 with the 256V or 258V is probably good options."
+        },
+        {
+          "reply_id": "t1_o9g78e3",
+          "parent_author": "LifeInAction",
+          "reply_author": "D2ultima",
+          "pred_label": "neutral",
+          "disagree_probability": 0.28238096833229065,
+          "parent_text": "Cool, I'll take a look into those, thanks so much, especially for responding so quickly!",
+          "reply_text": "Ah I'm terminally online I happened to be on my phone when the alert came through trying to procrastinate killing godrick the grafted with my new ER character"
+        }
+      ]
+    },
+    {
+      "thread_id": "1r36flw",
+      "thread_title": "[Lenovo] Lenovo IdeaPad Pro 5i Laptop: 16\" 2.8K OLED Touchscreen, Ultra 7 255H, RTX 5050, 16GB RAM, 1TB SSD with 52% off using coupon code LENOVOLOVE1,for $900",
+      "pair_count": 3,
+      "mean_disagree_probability": 0.30301738778750104,
+      "hard_disagree_rate": 0.0,
+      "label_counts": {
+        "neutral": 3
+      },
+      "top_disagreement_pairs": [
+        {
+          "reply_id": "t1_o526h7j",
+          "parent_author": "techstar2000",
+          "reply_author": "Blazin115",
+          "pred_label": "neutral",
+          "disagree_probability": 0.32051777839660645,
+          "parent_text": "[Lenovo] Lenovo IdeaPad Pro 5i Laptop: 16\" 2.8K OLED Touchscreen, Ultra 7 255H, RTX 5050, 16GB RAM, 1TB SSD with 52% off using coupon code LENOVOLOVE1,for $900",
+          "reply_text": "Just the Code I was looking for. Thanks!!!!"
+        },
+        {
+          "reply_id": "t1_o57ai1x",
+          "parent_author": "techstar2000",
+          "reply_author": "theatheon",
+          "pred_label": "neutral",
+          "disagree_probability": 0.3078426420688629,
+          "parent_text": "[Lenovo] Lenovo IdeaPad Pro 5i Laptop: 16\" 2.8K OLED Touchscreen, Ultra 7 255H, RTX 5050, 16GB RAM, 1TB SSD with 52% off using coupon code LENOVOLOVE1,for $900",
+          "reply_text": "How do you find these lenovo coupon codes?"
+        },
+        {
+          "reply_id": "t1_o591505",
+          "parent_author": "techstar2000",
+          "reply_author": "snakey08",
+          "pred_label": "neutral",
+          "disagree_probability": 0.2806917428970337,
+          "parent_text": "[Lenovo] Lenovo IdeaPad Pro 5i Laptop: 16\" 2.8K OLED Touchscreen, Ultra 7 255H, RTX 5050, 16GB RAM, 1TB SSD with 52% off using coupon code LENOVOLOVE1,for $900",
+          "reply_text": "used the link and went to put the coupon code in it said it was already applied. The price is 1309.99"
+        }
+      ]
+    },
+    {
+      "thread_id": "1s6l461",
+      "thread_title": "Laptop for light gaming and medical residency ($1000 budget)",
+      "pair_count": 3,
+      "mean_disagree_probability": 0.2993125816186269,
+      "hard_disagree_rate": 0.0,
+      "label_counts": {
+        "agree": 2,
+        "neutral": 1
+      },
+      "top_disagreement_pairs": [
+        {
+          "reply_id": "t1_od3qb0x",
+          "parent_author": "sanitationengineer",
+          "reply_author": "naineshbhagat_9080",
+          "pred_label": "agree",
+          "disagree_probability": 0.3165472745895386,
+          "parent_text": "Laptop for light gaming and medical residency ($1000 budget) **Total budget (in local currency) and country of purchase. Please do not use USD unless purchasing in the US:** USA, up to $1000 **Are you open to refurbs/us…",
+          "reply_text": "Hey, for your use (medical + light gaming), don’t overcomplicate it You need something that is: Reliable for long hours (battery + thermals) Smooth for daily work (no lag with multiple tabs/apps) Can handle light gaming…"
+        },
+        {
+          "reply_id": "t1_od35xmk",
+          "parent_author": "sanitationengineer",
+          "reply_author": "plentongreddit",
+          "pred_label": "agree",
+          "disagree_probability": 0.3088434934616089,
+          "parent_text": "Laptop for light gaming and medical residency ($1000 budget) **Total budget (in local currency) and country of purchase. Please do not use USD unless purchasing in the US:** USA, up to $1000 **Are you open to refurbs/us…",
+          "reply_text": "Thinkpad would be a good choice, L series would suit your needs just fine. Preferably with ultra 7 258v"
+        },
+        {
+          "reply_id": "t1_od3953w",
+          "parent_author": "sanitationengineer",
+          "reply_author": "LonerIM2",
+          "pred_label": "neutral",
+          "disagree_probability": 0.2725469768047333,
+          "parent_text": "Laptop for light gaming and medical residency ($1000 budget) **Total budget (in local currency) and country of purchase. Please do not use USD unless purchasing in the US:** USA, up to $1000 **Are you open to refurbs/us…",
+          "reply_text": "The Lenovo is a very good option which i usually recommend but Since you are not going to game too much, and you don't need 2 in 1, I would recommend this deal [Acer Aspire Go](https://www.amazon.com/Aspire-Copilot-WUXG…"
+        }
+      ]
+    },
+    {
+      "thread_id": "1ou7xu1",
+      "thread_title": "[eBay] Cert. Refurb Acer Swift 16 AI : 16\" 3K OLED 120Hz Touchscreen, Intel Ultra 7 256V CPU, 16GB LPDDR5 RAM, 1TB SSD with 48% off, for $620  #ad",
+      "pair_count": 4,
+      "mean_disagree_probability": 0.29472948610782623,
+      "hard_disagree_rate": 0.0,
+      "label_counts": {
+        "neutral": 4
+      },
+      "top_disagreement_pairs": [
+        {
+          "reply_id": "t1_noadqbf",
+          "parent_author": "techstar2000",
+          "reply_author": "kalidori",
+          "pred_label": "neutral",
+          "disagree_probability": 0.302365243434906,
+          "parent_text": "[eBay] Cert. Refurb Acer Swift 16 AI : 16\" 3K OLED 120Hz Touchscreen, Intel Ultra 7 256V CPU, 16GB LPDDR5 RAM, 1TB SSD with 48% off, for $620 #ad",
+          "reply_text": "Is ram upgradable?"
+        },
+        {
+          "reply_id": "t1_nof70a6",
+          "parent_author": "techstar2000",
+          "reply_author": "_-Lewis",
+          "pred_label": "neutral",
+          "disagree_probability": 0.3001895546913147,
+          "parent_text": "[eBay] Cert. Refurb Acer Swift 16 AI : 16\" 3K OLED 120Hz Touchscreen, Intel Ultra 7 256V CPU, 16GB LPDDR5 RAM, 1TB SSD with 48% off, for $620 #ad",
+          "reply_text": "One note about this laptop is that it has a spare unused m.2 available."
+        },
+        {
+          "reply_id": "t1_noar3ag",
+          "parent_author": "kalidori",
+          "reply_author": "Zentick-",
+          "pred_label": "neutral",
+          "disagree_probability": 0.2995307445526123,
+          "parent_text": "Is ram upgradable?",
+          "reply_text": "Unfortunately not."
+        },
+        {
+          "reply_id": "t1_noepwhx",
+          "parent_author": "kalidori",
+          "reply_author": "InsideMap3625",
+          "pred_label": "neutral",
+          "disagree_probability": 0.2768324017524719,
+          "parent_text": "Is ram upgradable?",
+          "reply_text": "The RAM is beyond soldered, its on-package."
+        }
+      ]
+    },
+    {
+      "thread_id": "1ik8gdp",
+      "thread_title": "HP Omnibook Ultra Flip performance issue",
+      "pair_count": 1,
+      "mean_disagree_probability": 0.2906650900840759,
+      "hard_disagree_rate": 0.0,
+      "label_counts": {
+        "neutral": 1
+      },
+      "top_disagreement_pairs": [
+        {
+          "reply_id": "t1_mgp1y3r",
+          "parent_author": "Keptforgetting",
+          "reply_author": "Djenthead",
+          "pred_label": "neutral",
+          "disagree_probability": 0.2906650900840759,
+          "parent_text": "I've installed all updates including the optional ones and done a whole battery cycle too just to eliminate any kind of weirdness from that and it's still been persisting A reinstall of windows is the only thing I haven…",
+          "reply_text": "Any news?"
+        }
+      ]
+    },
+    {
+      "thread_id": "1r92ur3",
+      "thread_title": "intel® coretm ultra 7 258v processor vs amd ryzen ai 7 350",
+      "pair_count": 1,
+      "mean_disagree_probability": 0.2895488142967224,
+      "hard_disagree_rate": 0.0,
+      "label_counts": {
+        "neutral": 1
+      },
+      "top_disagreement_pairs": [
+        {
+          "reply_id": "t1_o69lx8v",
+          "parent_author": "PhotographAdept505",
+          "reply_author": "GiveMeNews",
+          "pred_label": "neutral",
+          "disagree_probability": 0.2895488142967224,
+          "parent_text": "intel® coretm ultra 7 258v processor vs amd ryzen ai 7 350 help me choose between: LENOVO Yoga 7 16\" 2 in 1 Laptop, Copilot+ PC - Intel® Core™ Ultra 7, 1 TB SSD, Luna Grey [ASUS](https://www.johnlewis.com/brand/asus/_/N…",
+          "reply_text": "Intel has a bit better iGPU and support for Thunderbolt ports. The Ryzen 7 has better multicore performance. If you are running programs that benefit from multicore performance, the Ryzen 7 would be better. If you want…"
+        }
+      ]
+    },
+    {
+      "thread_id": "1ru9i0a",
+      "thread_title": "Elitebook vs Omni",
+      "pair_count": 2,
+      "mean_disagree_probability": 0.2890745848417282,
+      "hard_disagree_rate": 0.0,
+      "label_counts": {
+        "neutral": 2
+      },
+      "top_disagreement_pairs": [
+        {
+          "reply_id": "t1_oali2lh",
+          "parent_author": "astins1019",
+          "reply_author": "Geodesicz",
+          "pred_label": "neutral",
+          "disagree_probability": 0.29071101546287537,
+          "parent_text": "Elitebook vs Omni Looking to finally upgrade my HP Pavilion that I have had since 2020. Trying to decide between these two and figure out pros and cons. Will use it for my eBay business mainly. Laptop screen will not ma…",
+          "reply_text": "Avoid the elitebook 200 and 300 series. While technically in the commercial lineup, the hardware is consumer leveraged. If you want quality, always go commercial grade hardware. Omnibook is consumer as another here alre…"
+        },
+        {
+          "reply_id": "t1_oajzqqr",
+          "parent_author": "astins1019",
+          "reply_author": "daviiiiiid",
+          "pred_label": "neutral",
+          "disagree_probability": 0.28743815422058105,
+          "parent_text": "Elitebook vs Omni Looking to finally upgrade my HP Pavilion that I have had since 2020. Trying to decide between these two and figure out pros and cons. Will use it for my eBay business mainly. Laptop screen will not ma…",
+          "reply_text": "Those are just names of whole series and not a particular model. Share full specs for people to be able to help. But generally, elite book will be a business level product while omnibook is retail consumer oriented."
+        }
+      ]
+    },
+    {
+      "thread_id": "1qb5hrr",
+      "thread_title": "[Walmart] HP OmniBook 5 AI PC Laptop: 16\" (1920 x 1200) 2K Touch Display, Intel Core Ultra 7 255U, Intel Graphics, 16GB RAM, 1TB SSD, Glacier Silver, Now: $599 After $390 Off",
+      "pair_count": 1,
+      "mean_disagree_probability": 0.2865811586380005,
+      "hard_disagree_rate": 0.0,
+      "label_counts": {
+        "neutral": 1
+      },
+      "top_disagreement_pairs": [
+        {
+          "reply_id": "t1_nzko9l5",
+          "parent_author": "AL0411",
+          "reply_author": "bklnclark",
+          "pred_label": "neutral",
+          "disagree_probability": 0.2865811586380005,
+          "parent_text": "[Walmart] HP OmniBook 5 AI PC Laptop: 16\" (1920 x 1200) 2K Touch Display, Intel Core Ultra 7 255U, Intel Graphics, 16GB RAM, 1TB SSD, Glacier Silver, Now: $599 After $390 Off",
+          "reply_text": "Product specs say 512g and 8g ram"
+        }
+      ]
+    }
+  ],
+  "pairs": [
+    {
+      "thread_id": "1cj7ngt",
+      "thread_title": "Suggestions for HP - Envy 2-in-1 16\" Wide Ultra XGA Touch-Screen Laptop - Intel Core Ultra 7 - 16GB Memory - 1TB SSD - Glacier Silver",
+      "parent_id": "t3_1cj7ngt",
+      "reply_id": "t1_lg23bij",
+      "parent_author": "darkvader572",
+      "reply_author": "No_oNK",
+      "parent_text": "Suggestions for HP - Envy 2-in-1 16\" Wide Ultra XGA Touch-Screen Laptop - Intel Core Ultra 7 - 16GB Memory - 1TB SSD - Glacier Silver Hey Guys! I am not well versed in this area and need some suggestions regarding the above HP Laptop. My primary use for a laptop is for college and professional work. Both of these involve multitasking, excel, powerpoint, word, emails, downloading files and running reports. This seems to be a good option as it as 16GB RAM and 1TB ROM with an Ultra I7, but I am not sure. Please provide me with your suggestions as I have heard that the hinges and battery life for HP ENVY is not that great. I will not be using this laptop for gaming, editing, or any other heavy processor use applications.",
+      "reply_text": "Is it any good?",
+      "depth": 0,
+      "stance_probs": {
+        "disagree": 0.32272565364837646,
+        "neutral": 0.326307088136673,
+        "agree": 0.35096728801727295
+      },
+      "pred_label": "agree",
+      "disagree_probability": 0.32272565364837646
+    },
+    {
+      "thread_id": "1cj7ngt",
+      "thread_title": "Suggestions for HP - Envy 2-in-1 16\" Wide Ultra XGA Touch-Screen Laptop - Intel Core Ultra 7 - 16GB Memory - 1TB SSD - Glacier Silver",
+      "parent_id": "t1_lg23bij",
+      "reply_id": "t1_lvlym4o",
+      "parent_author": "No_oNK",
+      "reply_author": "darkvader572",
+      "parent_text": "Is it any good?",
+      "reply_text": "Just saw this. Not in my opinion since it is super loud and drains the battery like insane. I sold it after a month.",
+      "depth": 1,
+      "stance_probs": {
+        "disagree": 0.2911977469921112,
+        "neutral": 0.3681516647338867,
+        "agree": 0.34065064787864685
+      },
+      "pred_label": "neutral",
+      "disagree_probability": 0.2911977469921112
+    },
+    {
+      "thread_id": "1s6l461",
+      "thread_title": "Laptop for light gaming and medical residency ($1000 budget)",
+      "parent_id": "t3_1s6l461",
+      "reply_id": "t1_od35xmk",
+      "parent_author": "sanitationengineer",
+      "reply_author": "plentongreddit",
+      "parent_text": "Laptop for light gaming and medical residency ($1000 budget) **Total budget (in local currency) and country of purchase. Please do not use USD unless purchasing in the US:** USA, up to $1000 **Are you open to refurbs/used?** No **How would you prioritize form factor (ultrabook, 2-in-1, etc.), build quality, performance, and battery life?** Don't care about 2-in-1, have it on my current laptop and make no use of it. But I'm not going to complain if it's there. Performance and build quality would be more important. Battery life not super important because I will be using it mostly plugged in. **How important is weight and thinness to you?** Nice to have but not a priority, most days will just be in a loop of drive to work -> walk from parking lot to hospital. Prefer not to have a gaming laptop. **Do you have a preferred screen size? If indifferent, put N/A.** No, plan to have it plugged into monitors most of the time **Are you doing any CAD/video editing/photo editing/gaming? List which programs/games you desire to run.** Light gaming (League of Legends, Maplestory), no plans for higher intensity gaming within a typical laptop lifespan. Otherwise, just some light coding, Excel work, EMR use, working across multiple tabs **If you're gaming, do you have certain games you want to play? At what settings and FPS do you want?** As above, fine with lower quality settings **Any specific requirements such as good keyboard, reliable build quality, touch-screen, finger-print reader, optical drive or good input devices (keyboard/touchpad)?** Ideally I'd like a Thunderbolt port because I would like to just have one thing to plug into my laptop. I currently use a Lenovo IdeaPad Flex 5 purchased in June 2021. It's been giving me performance issues over the past year (crashing during low spec games, blue screens), and I have to do some workarounds to run dual monitors since the sole USB-C port is only for charging. I am looking at the [Lenovo Yoga 7i](https://www.bestbuy.com/product/lenovo-yoga-7i-2-in-1-16-2k-touchscreen-laptop-intel-core-ultra-7-155u-2023-16gb-memory-1tb-ssd-storm-grey/JJGYCX6PWR) but would appreciate any recommendations.",
+      "reply_text": "Thinkpad would be a good choice, L series would suit your needs just fine. Preferably with ultra 7 258v",
+      "depth": 0,
+      "stance_probs": {
+        "disagree": 0.3088434934616089,
+        "neutral": 0.33483144640922546,
+        "agree": 0.3563251197338104
+      },
+      "pred_label": "agree",
+      "disagree_probability": 0.3088434934616089
+    },
+    {
+      "thread_id": "1s6l461",
+      "thread_title": "Laptop for light gaming and medical residency ($1000 budget)",
+      "parent_id": "t3_1s6l461",
+      "reply_id": "t1_od3953w",
+      "parent_author": "sanitationengineer",
+      "reply_author": "LonerIM2",
+      "parent_text": "Laptop for light gaming and medical residency ($1000 budget) **Total budget (in local currency) and country of purchase. Please do not use USD unless purchasing in the US:** USA, up to $1000 **Are you open to refurbs/used?** No **How would you prioritize form factor (ultrabook, 2-in-1, etc.), build quality, performance, and battery life?** Don't care about 2-in-1, have it on my current laptop and make no use of it. But I'm not going to complain if it's there. Performance and build quality would be more important. Battery life not super important because I will be using it mostly plugged in. **How important is weight and thinness to you?** Nice to have but not a priority, most days will just be in a loop of drive to work -> walk from parking lot to hospital. Prefer not to have a gaming laptop. **Do you have a preferred screen size? If indifferent, put N/A.** No, plan to have it plugged into monitors most of the time **Are you doing any CAD/video editing/photo editing/gaming? List which programs/games you desire to run.** Light gaming (League of Legends, Maplestory), no plans for higher intensity gaming within a typical laptop lifespan. Otherwise, just some light coding, Excel work, EMR use, working across multiple tabs **If you're gaming, do you have certain games you want to play? At what settings and FPS do you want?** As above, fine with lower quality settings **Any specific requirements such as good keyboard, reliable build quality, touch-screen, finger-print reader, optical drive or good input devices (keyboard/touchpad)?** Ideally I'd like a Thunderbolt port because I would like to just have one thing to plug into my laptop. I currently use a Lenovo IdeaPad Flex 5 purchased in June 2021. It's been giving me performance issues over the past year (crashing during low spec games, blue screens), and I have to do some workarounds to run dual monitors since the sole USB-C port is only for charging. I am looking at the [Lenovo Yoga 7i](https://www.bestbuy.com/product/lenovo-yoga-7i-2-in-1-16-2k-touchscreen-laptop-intel-core-ultra-7-155u-2023-16gb-memory-1tb-ssd-storm-grey/JJGYCX6PWR) but would appreciate any recommendations.",
+      "reply_text": "The Lenovo is a very good option which i usually recommend but Since you are not going to game too much, and you don't need 2 in 1, I would recommend this deal [Acer Aspire Go](https://www.amazon.com/Aspire-Copilot-WUXGA-Display-Processor/dp/B0DWNLQLL6/?tag=lonerim2-20)** because it comes with : **Specs:** * Screen: 14\" WUXGA * CPU : Core Ultra 7 * Ram : 16GB LPDDR4X * Storage : 1TB SSD And I have recommended this because of * Long battery life. * Powerful CPU for general use, and light gaming. * Great value for money. * Lightweight . If u want to look into other options make sure [Check out my list of best laptops for each budget](https://old.reddit.com/user/LonerIM2/comments/1s626fe/best_laptops_for_every_usage_updated/) Please note I'm using affiliate links which means I'll receive a small percent of the purchase if you use this link at no extra cost to you",
+      "depth": 0,
+      "stance_probs": {
+        "disagree": 0.2725469768047333,
+        "neutral": 0.3810577392578125,
+        "agree": 0.3463953137397766
+      },
+      "pred_label": "neutral",
+      "disagree_probability": 0.2725469768047333
+    },
+    {
+      "thread_id": "1s6l461",
+      "thread_title": "Laptop for light gaming and medical residency ($1000 budget)",
+      "parent_id": "t3_1s6l461",
+      "reply_id": "t1_od3qb0x",
+      "parent_author": "sanitationengineer",
+      "reply_author": "naineshbhagat_9080",
+      "parent_text": "Laptop for light gaming and medical residency ($1000 budget) **Total budget (in local currency) and country of purchase. Please do not use USD unless purchasing in the US:** USA, up to $1000 **Are you open to refurbs/used?** No **How would you prioritize form factor (ultrabook, 2-in-1, etc.), build quality, performance, and battery life?** Don't care about 2-in-1, have it on my current laptop and make no use of it. But I'm not going to complain if it's there. Performance and build quality would be more important. Battery life not super important because I will be using it mostly plugged in. **How important is weight and thinness to you?** Nice to have but not a priority, most days will just be in a loop of drive to work -> walk from parking lot to hospital. Prefer not to have a gaming laptop. **Do you have a preferred screen size? If indifferent, put N/A.** No, plan to have it plugged into monitors most of the time **Are you doing any CAD/video editing/photo editing/gaming? List which programs/games you desire to run.** Light gaming (League of Legends, Maplestory), no plans for higher intensity gaming within a typical laptop lifespan. Otherwise, just some light coding, Excel work, EMR use, working across multiple tabs **If you're gaming, do you have certain games you want to play? At what settings and FPS do you want?** As above, fine with lower quality settings **Any specific requirements such as good keyboard, reliable build quality, touch-screen, finger-print reader, optical drive or good input devices (keyboard/touchpad)?** Ideally I'd like a Thunderbolt port because I would like to just have one thing to plug into my laptop. I currently use a Lenovo IdeaPad Flex 5 purchased in June 2021. It's been giving me performance issues over the past year (crashing during low spec games, blue screens), and I have to do some workarounds to run dual monitors since the sole USB-C port is only for charging. I am looking at the [Lenovo Yoga 7i](https://www.bestbuy.com/product/lenovo-yoga-7i-2-in-1-16-2k-touchscreen-laptop-intel-core-ultra-7-155u-2023-16gb-memory-1tb-ssd-storm-grey/JJGYCX6PWR) but would appreciate any recommendations.",
+      "reply_text": "Hey, for your use (medical + light gaming), don’t overcomplicate it You need something that is: Reliable for long hours (battery + thermals) Smooth for daily work (no lag with multiple tabs/apps) Can handle light gaming without heating too much At ~$1000, avoid going all-in on gaming laptops — many of them have poor battery and unnecessary bulk. A balanced setup works better: i5 / Ryzen 5 (latest gen) 16GB RAM RTX 3050 or even good integrated graphics if gaming is light That’ll give you a much better daily experience. If you want, I can suggest a couple of safe options that fit your use perfectly 👍",
+      "depth": 0,
+      "stance_probs": {
+        "disagree": 0.3165472745895386,
+        "neutral": 0.3181433379650116,
+        "agree": 0.3653094470500946
+      },
+      "pred_label": "agree",
+      "disagree_probability": 0.3165472745895386
+    },
+    {
+      "thread_id": "1rm6mtt",
+      "thread_title": "How to Decide Between the HP Omnibook X Flip 16 and the Lenovo Yoga 7i?",
+      "parent_id": "t3_1rm6mtt",
+      "reply_id": "t1_o940z32",
+      "parent_author": "LifeInAction",
+      "reply_author": "D2ultima",
+      "parent_text": "How to Decide Between the HP Omnibook X Flip 16 and the Lenovo Yoga 7i? I've been researching buying a new laptop and found these 2 laptops with similar stats shown below. The HP Omnibook X is about $300 more expensive than the Lenovo Yoga 7i, but includes 32 GBs of RAM instead of 16 GBs of RAM, but besides that, they seem to be super similar, both with 2 TBs SSD Hard Drives and Intel Core 7 Processors. Any thoughts on these laptops and their differences? 1) The HP Omnibook X Flip 16 on Best Buys: https://www.bestbuy.com/product/hp-omnibook-x-flip-2-in-1-copilot-pc-16-2k-touch-screen-laptop-intel-core-ultra-7-258v-2024-32gb-memory-2tb-ssd-eclipse-gray/JJGQJRKGQR 2) The Lenovo Yoga 7i on Amazon: https://www.amazon.com/gp/product/B0FSQ784JX/ref=ox_sc_act_title_1?smid=A2R87W6XPBZ1J4&th=1 If it's important, I use my laptop for super heavy multitasking, could be running over 100 tabs on Google Chrome at once, on top of video editing, since I do filmmaking for social media and content, DJing, and playing music.",
+      "reply_text": "You're looking at a last gen Yoga. Look for one with the Core Ultra 258V processor for 32GB of RAM. It shouldn't be much more expensive than the HP but I think it's a better unit. Do you need a 2 in 1 specifically?",
+      "depth": 0,
+      "stance_probs": {
+        "disagree": 0.29676562547683716,
+        "neutral": 0.37215113639831543,
+        "agree": 0.3310832381248474
+      },
+      "pred_label": "neutral",
+      "disagree_probability": 0.29676562547683716
+    },
+    {
+      "thread_id": "1rm6mtt",
+      "thread_title": "How to Decide Between the HP Omnibook X Flip 16 and the Lenovo Yoga 7i?",
+      "parent_id": "t1_o940z32",
+      "reply_id": "t1_o9g4opz",
+      "parent_author": "D2ultima",
+      "reply_author": "LifeInAction",
+      "parent_text": "You're looking at a last gen Yoga. Look for one with the Core Ultra 258V processor for 32GB of RAM. It shouldn't be much more expensive than the HP but I think it's a better unit. Do you need a 2 in 1 specifically?",
+      "reply_text": "Yeah preferably a 2 in 1, since I like using the tablet feature on it. Any recommendations? Might go shopping around more in the coming days.",
+      "depth": 1,
+      "stance_probs": {
+        "disagree": 0.3291221857070923,
+        "neutral": 0.3753430247306824,
+        "agree": 0.29553475975990295
+      },
+      "pred_label": "neutral",
+      "disagree_probability": 0.3291221857070923
+    },
+    {
+      "thread_id": "1rm6mtt",
+      "thread_title": "How to Decide Between the HP Omnibook X Flip 16 and the Lenovo Yoga 7i?",
+      "parent_id": "t1_o9g4opz",
+      "reply_id": "t1_o9g4tip",
+      "parent_author": "LifeInAction",
+      "reply_author": "D2ultima",
+      "parent_text": "Yeah preferably a 2 in 1, since I like using the tablet feature on it. Any recommendations? Might go shopping around more in the coming days.",
+      "reply_text": "Omnibook Ultra flip or Yoga 9i 2-in-1 with the 256V or 258V is probably good options.",
+      "depth": 2,
+      "stance_probs": {
+        "disagree": 0.29339727759361267,
+        "neutral": 0.39474228024482727,
+        "agree": 0.31186044216156006
+      },
+      "pred_label": "neutral",
+      "disagree_probability": 0.29339727759361267
+    },
+    {
+      "thread_id": "1rm6mtt",
+      "thread_title": "How to Decide Between the HP Omnibook X Flip 16 and the Lenovo Yoga 7i?",
+      "parent_id": "t1_o9g4tip",
+      "reply_id": "t1_o9g73gi",
+      "parent_author": "D2ultima",
+      "reply_author": "LifeInAction",
+      "parent_text": "Omnibook Ultra flip or Yoga 9i 2-in-1 with the 256V or 258V is probably good options.",
+      "reply_text": "Cool, I'll take a look into those, thanks so much, especially for responding so quickly!",
+      "depth": 3,
+      "stance_probs": {
+        "disagree": 0.3295603096485138,
+        "neutral": 0.3763073682785034,
+        "agree": 0.2941322326660156
+      },
+      "pred_label": "neutral",
+      "disagree_probability": 0.3295603096485138
+    },
+    {
+      "thread_id": "1rm6mtt",
+      "thread_title": "How to Decide Between the HP Omnibook X Flip 16 and the Lenovo Yoga 7i?",
+      "parent_id": "t1_o9g73gi",
+      "reply_id": "t1_o9g78e3",
+      "parent_author": "LifeInAction",
+      "reply_author": "D2ultima",
+      "parent_text": "Cool, I'll take a look into those, thanks so much, especially for responding so quickly!",
+      "reply_text": "Ah I'm terminally online I happened to be on my phone when the alert came through trying to procrastinate killing godrick the grafted with my new ER character",
+      "depth": 4,
+      "stance_probs": {
+        "disagree": 0.28238096833229065,
+        "neutral": 0.3876762390136719,
+        "agree": 0.32994282245635986
+      },
+      "pred_label": "neutral",
+      "disagree_probability": 0.28238096833229065
+    },
+    {
+      "thread_id": "1rkbhqo",
+      "thread_title": "Looking for daily carry laptop",
+      "parent_id": "t3_1rkbhqo",
+      "reply_id": "t1_o8jii9r",
+      "parent_author": "ElephantPirate",
+      "reply_author": "Remarkable-Dark2840",
+      "parent_text": "Looking for daily carry laptop \\*\\*LAPTOP QUESTIONNAIRE\\*\\* \\* \\*\\*Total budget (in local currency) and country of purchase. Please do not use USD unless purchasing in the US:\\*\\* \\-1000-1800 usd \\* \\*\\*Are you open to refurbs/used?\\*\\* \\-maybe? never done one. \\* \\*\\*How would you prioritize form factor (ultrabook, 2-in-1, etc.), build quality, performance, and battery life?\\*\\* \\-quality is top, performance next. Its usually plugged in so battery is not a major issue. \\* \\*\\*How important is weight and thinness to you?\\*\\* \\-medium. Its a daily carry, dont want a 10lb monster. \\* \\*\\*Do you have a preferred screen size? If indifferent, put N/A.\\*\\* \\-16-17in \\* \\*\\*Are you doing any CAD/video editing/photo editing/gaming? List which programs/games you desire to run.\\*\\* \\-coding and engineering school work, microsoft office suite,, Movies. Most codes will use a cluster so i wont need massive data processing power. \\* \\*\\*If you're gaming, do you have certain games you want to play? At what settings and FPS do you want?\\*\\* \\-NA \\* \\*\\*Any specific requirements such as good keyboard, reliable build quality, touch-screen, finger-print reader, optical drive or good input devices (keyboard/touchpad)?\\*\\* \\-good keyboard for typing and good/big monitor for coding. No macs. Overall looking for a pleasant daily carry laptop that is solid and can carry me through 3-4years of work. Currently looking at: [ https://www.bestbuy.com/product/lg-gram-17-touch-screen-laptop-copilot-pc-intel-core-ultra-7-series-2-with-32gb-memory-1tb-ssd-obsidian-black/JJ8VPZW8XL?extStoreId=1092&utm\\_source=chatgpt.com ](https://www.bestbuy.com/product/lg-gram-17-touch-screen-laptop-copilot-pc-intel-core-ultra-7-series-2-with-32gb-memory-1tb-ssd-obsidian-black/JJ8VPZW8XL?extStoreId=1092&utm_source=chatgpt.com)",
+      "reply_text": "You can check these laptops out. https://theaitechpulse.com/best-laptops-for-small-business-2026. Or buy any budget Macbook",
+      "depth": 0,
+      "stance_probs": {
+        "disagree": 0.31801486015319824,
+        "neutral": 0.34850895404815674,
+        "agree": 0.3334762156009674
+      },
+      "pred_label": "neutral",
+      "disagree_probability": 0.31801486015319824
+    },
+    {
+      "thread_id": "1rkbhqo",
+      "thread_title": "Looking for daily carry laptop",
+      "parent_id": "t3_1rkbhqo",
+      "reply_id": "t1_o8kf9hl",
+      "parent_author": "ElephantPirate",
+      "reply_author": "D2ultima",
+      "parent_text": "Looking for daily carry laptop \\*\\*LAPTOP QUESTIONNAIRE\\*\\* \\* \\*\\*Total budget (in local currency) and country of purchase. Please do not use USD unless purchasing in the US:\\*\\* \\-1000-1800 usd \\* \\*\\*Are you open to refurbs/used?\\*\\* \\-maybe? never done one. \\* \\*\\*How would you prioritize form factor (ultrabook, 2-in-1, etc.), build quality, performance, and battery life?\\*\\* \\-quality is top, performance next. Its usually plugged in so battery is not a major issue. \\* \\*\\*How important is weight and thinness to you?\\*\\* \\-medium. Its a daily carry, dont want a 10lb monster. \\* \\*\\*Do you have a preferred screen size? If indifferent, put N/A.\\*\\* \\-16-17in \\* \\*\\*Are you doing any CAD/video editing/photo editing/gaming? List which programs/games you desire to run.\\*\\* \\-coding and engineering school work, microsoft office suite,, Movies. Most codes will use a cluster so i wont need massive data processing power. \\* \\*\\*If you're gaming, do you have certain games you want to play? At what settings and FPS do you want?\\*\\* \\-NA \\* \\*\\*Any specific requirements such as good keyboard, reliable build quality, touch-screen, finger-print reader, optical drive or good input devices (keyboard/touchpad)?\\*\\* \\-good keyboard for typing and good/big monitor for coding. No macs. Overall looking for a pleasant daily carry laptop that is solid and can carry me through 3-4years of work. Currently looking at: [ https://www.bestbuy.com/product/lg-gram-17-touch-screen-laptop-copilot-pc-intel-core-ultra-7-series-2-with-32gb-memory-1tb-ssd-obsidian-black/JJ8VPZW8XL?extStoreId=1092&utm\\_source=chatgpt.com ](https://www.bestbuy.com/product/lg-gram-17-touch-screen-laptop-copilot-pc-intel-core-ultra-7-series-2-with-32gb-memory-1tb-ssd-obsidian-black/JJ8VPZW8XL?extStoreId=1092&utm_source=chatgpt.com)",
+      "reply_text": "There's a couple of options that might be good for you. \\- [Lenovo Yoga Slim 7i Aura Edition](https://amzn.to/4spwILP), with 32GB of RAM and a great and efficient Lunar Lake processor. It's built quite well. This is an affiliate link, please bear in mind, but you can always search for it yourself if you don't wish to click that. I know you said you wanted 16\" or 17\" and this is a 15.3\", but it's difficult to find 16\" or higher without it having a dGPU which you won't use, and as a result sacrificing on things like keyboard and build quality to fit in the price range. \\- [GeekBook X16 Pro](https://www.geekompc.com/geekbook-x16-pro-laptop-16-inch/), with 32GB of RAM and a not-as-efficient-but-still-good Meteor Lake processor. I recently reviewed its 14\" little brother and quite liked it, and while it lacks the lovely OLED monitor in the 16\" model, I would assume the X16 Pro is otherwise rather similar. You can see my review pinned to the SAL page community highlights for the X14 Pro if you'd like to see what to expect from GEEKOM. \\- [Thinkpad T16 Gen 2](https://amzn.to/4r7FpJK), with 32GB of RAM and an older but still useful raptor lake ULV processor. It's not as new as the above two models, but build quality and keyboard are excellent and it comes with a warranty despite being an older model. Its price looks a bit high but I think for how recent it is and the specs it's a good deal. You can get them much cheaper if you look around but they probably will only have 16GB of RAM and a 512GB SSD or somesuch. It's up to you if you want that. This link is an affiliate link! I think any of these three should suit you well. It was actually a little harder to find something above 14\" for you since you only wanted effectively an office and multimedia machine.",
+      "depth": 0,
+      "stance_probs": {
+        "disagree": 0.30341169238090515,
+        "neutral": 0.3451172709465027,
+        "agree": 0.3514709770679474
+      },
+      "pred_label": "agree",
+      "disagree_probability": 0.30341169238090515
+    },
+    {
+      "thread_id": "1r92ur3",
+      "thread_title": "intel® coretm ultra 7 258v processor vs amd ryzen ai 7 350",
+      "parent_id": "t3_1r92ur3",
+      "reply_id": "t1_o69lx8v",
+      "parent_author": "PhotographAdept505",
+      "reply_author": "GiveMeNews",
+      "parent_text": "intel® coretm ultra 7 258v processor vs amd ryzen ai 7 350 help me choose between: LENOVO Yoga 7 16\" 2 in 1 Laptop, Copilot+ PC - Intel® Core™ Ultra 7, 1 TB SSD, Luna Grey [ASUS](https://www.johnlewis.com/brand/asus/_/N-1z0exsk)Zenbook 14 Laptop, AMD Ryzen AI 7 Processor, 16GB RAM, 1TB SSD, 14” 3K OLED, Black",
+      "reply_text": "Intel has a bit better iGPU and support for Thunderbolt ports. The Ryzen 7 has better multicore performance. If you are running programs that benefit from multicore performance, the Ryzen 7 would be better. If you want better gaming performance, the Ultra 7.",
+      "depth": 0,
+      "stance_probs": {
+        "disagree": 0.2895488142967224,
+        "neutral": 0.38794204592704773,
+        "agree": 0.32250916957855225
+      },
+      "pred_label": "neutral",
+      "disagree_probability": 0.2895488142967224
+    },
+    {
+      "thread_id": "1qvc8t4",
+      "thread_title": "[Lenovo] Lenovo IdeaPad Pro 5i Laptop: 16\" 2.8K OLED Touchscreen, Ultra 7 255H, RTX 5050, 16GB RAM, 1TB SSD with 52% off using coupon code IDEAFEBFUN3,for $900",
+      "parent_id": "t3_1qvc8t4",
+      "reply_id": "t1_o3hd508",
+      "parent_author": "techstar2000",
+      "reply_author": "shield_x",
+      "parent_text": "[Lenovo] Lenovo IdeaPad Pro 5i Laptop: 16\" 2.8K OLED Touchscreen, Ultra 7 255H, RTX 5050, 16GB RAM, 1TB SSD with 52% off using coupon code IDEAFEBFUN3,for $900",
+      "reply_text": "Deal breaker is the 16gb of soldered ram",
+      "depth": 0,
+      "stance_probs": {
+        "disagree": 0.28857874870300293,
+        "neutral": 0.37505775690078735,
+        "agree": 0.3363634943962097
+      },
+      "pred_label": "neutral",
+      "disagree_probability": 0.28857874870300293
+    },
+    {
+      "thread_id": "1qvc8t4",
+      "thread_title": "[Lenovo] Lenovo IdeaPad Pro 5i Laptop: 16\" 2.8K OLED Touchscreen, Ultra 7 255H, RTX 5050, 16GB RAM, 1TB SSD with 52% off using coupon code IDEAFEBFUN3,for $900",
+      "parent_id": "t1_o3hd508",
+      "reply_id": "t1_o3hqsyk",
+      "parent_author": "shield_x",
+      "reply_author": "Memexploder",
+      "parent_text": "Deal breaker is the 16gb of soldered ram",
+      "reply_text": "Ain't affording proper RAM anyways",
+      "depth": 1,
+      "stance_probs": {
+        "disagree": 0.32572391629219055,
+        "neutral": 0.32218512892723083,
+        "agree": 0.3520909547805786
+      },
+      "pred_label": "agree",
+      "disagree_probability": 0.32572391629219055
+    },
+    {
+      "thread_id": "1qvc8t4",
+      "thread_title": "[Lenovo] Lenovo IdeaPad Pro 5i Laptop: 16\" 2.8K OLED Touchscreen, Ultra 7 255H, RTX 5050, 16GB RAM, 1TB SSD with 52% off using coupon code IDEAFEBFUN3,for $900",
+      "parent_id": "t3_1qvc8t4",
+      "reply_id": "t1_o3gubl1",
+      "parent_author": "techstar2000",
+      "reply_author": "Qminsage",
+      "parent_text": "[Lenovo] Lenovo IdeaPad Pro 5i Laptop: 16\" 2.8K OLED Touchscreen, Ultra 7 255H, RTX 5050, 16GB RAM, 1TB SSD with 52% off using coupon code IDEAFEBFUN3,for $900",
+      "reply_text": "This one has a dedicated GPU. Would this be alright for creators?",
+      "depth": 0,
+      "stance_probs": {
+        "disagree": 0.3097474277019501,
+        "neutral": 0.36492490768432617,
+        "agree": 0.32532769441604614
+      },
+      "pred_label": "neutral",
+      "disagree_probability": 0.3097474277019501
+    },
+    {
+      "thread_id": "1qvc8t4",
+      "thread_title": "[Lenovo] Lenovo IdeaPad Pro 5i Laptop: 16\" 2.8K OLED Touchscreen, Ultra 7 255H, RTX 5050, 16GB RAM, 1TB SSD with 52% off using coupon code IDEAFEBFUN3,for $900",
+      "parent_id": "t1_o3gubl1",
+      "reply_id": "t1_o3gv4oo",
+      "parent_author": "Qminsage",
+      "reply_author": "techstar2000",
+      "parent_text": "This one has a dedicated GPU. Would this be alright for creators?",
+      "reply_text": "Yes it would be.",
+      "depth": 1,
+      "stance_probs": {
+        "disagree": 0.3453449010848999,
+        "neutral": 0.3680478036403656,
+        "agree": 0.2866073250770569
+      },
+      "pred_label": "neutral",
+      "disagree_probability": 0.3453449010848999
+    },
+    {
+      "thread_id": "1qvc8t4",
+      "thread_title": "[Lenovo] Lenovo IdeaPad Pro 5i Laptop: 16\" 2.8K OLED Touchscreen, Ultra 7 255H, RTX 5050, 16GB RAM, 1TB SSD with 52% off using coupon code IDEAFEBFUN3,for $900",
+      "parent_id": "t1_o3gv4oo",
+      "reply_id": "t1_o3h199c",
+      "parent_author": "techstar2000",
+      "reply_author": "Blazin115",
+      "parent_text": "Yes it would be.",
+      "reply_text": "Appreciate the great deals at lenovo. Anything for the yogas?",
+      "depth": 2,
+      "stance_probs": {
+        "disagree": 0.31661948561668396,
+        "neutral": 0.38940319418907166,
+        "agree": 0.2939773201942444
+      },
+      "pred_label": "neutral",
+      "disagree_probability": 0.31661948561668396
+    },
+    {
+      "thread_id": "1qvc8t4",
+      "thread_title": "[Lenovo] Lenovo IdeaPad Pro 5i Laptop: 16\" 2.8K OLED Touchscreen, Ultra 7 255H, RTX 5050, 16GB RAM, 1TB SSD with 52% off using coupon code IDEAFEBFUN3,for $900",
+      "parent_id": "t3_1qvc8t4",
+      "reply_id": "t1_o3kth34",
+      "parent_author": "techstar2000",
+      "reply_author": "[deleted]",
+      "parent_text": "[Lenovo] Lenovo IdeaPad Pro 5i Laptop: 16\" 2.8K OLED Touchscreen, Ultra 7 255H, RTX 5050, 16GB RAM, 1TB SSD with 52% off using coupon code IDEAFEBFUN3,for $900",
+      "reply_text": "This was on sale on blackfriday for 1000 usd it was 32gb i bought one this is absolutely monster amazing battery display everything i loved it",
+      "depth": 0,
+      "stance_probs": {
+        "disagree": 0.34313321113586426,
+        "neutral": 0.36949965357780457,
+        "agree": 0.2873671054840088
+      },
+      "pred_label": "neutral",
+      "disagree_probability": 0.34313321113586426
+    },
+    {
+      "thread_id": "1qvc8t4",
+      "thread_title": "[Lenovo] Lenovo IdeaPad Pro 5i Laptop: 16\" 2.8K OLED Touchscreen, Ultra 7 255H, RTX 5050, 16GB RAM, 1TB SSD with 52% off using coupon code IDEAFEBFUN3,for $900",
+      "parent_id": "t3_1qvc8t4",
+      "reply_id": "t1_o3i40sl",
+      "parent_author": "techstar2000",
+      "reply_author": "lintstah1337",
+      "parent_text": "[Lenovo] Lenovo IdeaPad Pro 5i Laptop: 16\" 2.8K OLED Touchscreen, Ultra 7 255H, RTX 5050, 16GB RAM, 1TB SSD with 52% off using coupon code IDEAFEBFUN3,for $900",
+      "reply_text": "The Legion 5 with 5060, 15\" 1600P 165Hz OLED and 16GB SODIMM for $949 is way better deal. https://old.reddit.com/r/LaptopDeals/comments/1qlcbsd/lenovo_lenovo_legion_5i_gen_10_laptop_15_1600p/",
+      "depth": 0,
+      "stance_probs": {
+        "disagree": 0.2792021930217743,
+        "neutral": 0.3551337420940399,
+        "agree": 0.3656640350818634
+      },
+      "pred_label": "agree",
+      "disagree_probability": 0.2792021930217743
+    },
+    {
+      "thread_id": "1qvc8t4",
+      "thread_title": "[Lenovo] Lenovo IdeaPad Pro 5i Laptop: 16\" 2.8K OLED Touchscreen, Ultra 7 255H, RTX 5050, 16GB RAM, 1TB SSD with 52% off using coupon code IDEAFEBFUN3,for $900",
+      "parent_id": "t1_o3i40sl",
+      "reply_id": "t1_o3jcswa",
+      "parent_author": "lintstah1337",
+      "reply_author": "Qminsage",
+      "parent_text": "The Legion 5 with 5060, 15\" 1600P 165Hz OLED and 16GB SODIMM for $949 is way better deal. https://old.reddit.com/r/LaptopDeals/comments/1qlcbsd/lenovo_lenovo_legion_5i_gen_10_laptop_15_1600p/",
+      "reply_text": "It does seem better on paper. Only issue seems to be availability for me currently. Is there any caveats to it being a gaming laptop rather than not?",
+      "depth": 1,
+      "stance_probs": {
+        "disagree": 0.30220460891723633,
+        "neutral": 0.378752738237381,
+        "agree": 0.3190426528453827
+      },
+      "pred_label": "neutral",
+      "disagree_probability": 0.30220460891723633
+    },
+    {
+      "thread_id": "1qvc8t4",
+      "thread_title": "[Lenovo] Lenovo IdeaPad Pro 5i Laptop: 16\" 2.8K OLED Touchscreen, Ultra 7 255H, RTX 5050, 16GB RAM, 1TB SSD with 52% off using coupon code IDEAFEBFUN3,for $900",
+      "parent_id": "t1_o3jcswa",
+      "reply_id": "t1_o3jtkfu",
+      "parent_author": "Qminsage",
+      "reply_author": "bobith5",
+      "parent_text": "It does seem better on paper. Only issue seems to be availability for me currently. Is there any caveats to it being a gaming laptop rather than not?",
+      "reply_text": "If you’re looking for an ultra book that can game on the side and or you’re more focused on creative workflows than gaming the Ideapad Pro might be better. If you’re looking for a powerful desktop type replacement and you’ll spend the majority of your time plugged in the Legion is upgradable and probably better value for $. It’s worth noting Costco had this laptop with the stronger CPU and 32GBs of RAM on sale for $999 recently so while this deal is good it isn’t world breaking. Likewise the Legion 7i goes on sale for $1200 semi frequently and is a much better laptop than the 5i imo.",
+      "depth": 2,
+      "stance_probs": {
+        "disagree": 0.2810017466545105,
+        "neutral": 0.3755785822868347,
+        "agree": 0.3434195816516876
+      },
+      "pred_label": "neutral",
+      "disagree_probability": 0.2810017466545105
+    },
+    {
+      "thread_id": "1qvc8t4",
+      "thread_title": "[Lenovo] Lenovo IdeaPad Pro 5i Laptop: 16\" 2.8K OLED Touchscreen, Ultra 7 255H, RTX 5050, 16GB RAM, 1TB SSD with 52% off using coupon code IDEAFEBFUN3,for $900",
+      "parent_id": "t1_o3jtkfu",
+      "reply_id": "t1_o3k0ikf",
+      "parent_author": "bobith5",
+      "reply_author": "Qminsage",
+      "parent_text": "If you’re looking for an ultra book that can game on the side and or you’re more focused on creative workflows than gaming the Ideapad Pro might be better. If you’re looking for a powerful desktop type replacement and you’ll spend the majority of your time plugged in the Legion is upgradable and probably better value for $. It’s worth noting Costco had this laptop with the stronger CPU and 32GBs of RAM on sale for $999 recently so while this deal is good it isn’t world breaking. Likewise the Legion 7i goes on sale for $1200 semi frequently and is a much better laptop than the 5i imo.",
+      "reply_text": "I am looking for something with a dedicated GPU. So I had assumed a 5060 would perform better for modeling work overall. But yeah, not looking for something to game on exclusively. More looking for a decent creative workstation that isn’t Mac-bound.",
+      "depth": 3,
+      "stance_probs": {
+        "disagree": 0.3168124556541443,
+        "neutral": 0.36908668279647827,
+        "agree": 0.31410086154937744
+      },
+      "pred_label": "neutral",
+      "disagree_probability": 0.3168124556541443
+    },
+    {
+      "thread_id": "1qvc8t4",
+      "thread_title": "[Lenovo] Lenovo IdeaPad Pro 5i Laptop: 16\" 2.8K OLED Touchscreen, Ultra 7 255H, RTX 5050, 16GB RAM, 1TB SSD with 52% off using coupon code IDEAFEBFUN3,for $900",
+      "parent_id": "t1_o3jtkfu",
+      "reply_id": "t1_o3tvgm9",
+      "parent_author": "bobith5",
+      "reply_author": "Ok-Pin9628",
+      "parent_text": "If you’re looking for an ultra book that can game on the side and or you’re more focused on creative workflows than gaming the Ideapad Pro might be better. If you’re looking for a powerful desktop type replacement and you’ll spend the majority of your time plugged in the Legion is upgradable and probably better value for $. It’s worth noting Costco had this laptop with the stronger CPU and 32GBs of RAM on sale for $999 recently so while this deal is good it isn’t world breaking. Likewise the Legion 7i goes on sale for $1200 semi frequently and is a much better laptop than the 5i imo.",
+      "reply_text": "Send the link for Costco deal pls",
+      "depth": 3,
+      "stance_probs": {
+        "disagree": 0.29114940762519836,
+        "neutral": 0.38238319754600525,
+        "agree": 0.3264674246311188
+      },
+      "pred_label": "neutral",
+      "disagree_probability": 0.29114940762519836
+    },
+    {
+      "thread_id": "1qvc8t4",
+      "thread_title": "[Lenovo] Lenovo IdeaPad Pro 5i Laptop: 16\" 2.8K OLED Touchscreen, Ultra 7 255H, RTX 5050, 16GB RAM, 1TB SSD with 52% off using coupon code IDEAFEBFUN3,for $900",
+      "parent_id": "t1_o3jcswa",
+      "reply_id": "t1_o3jv2q5",
+      "parent_author": "Qminsage",
+      "reply_author": "ScallionImmediate243",
+      "parent_text": "It does seem better on paper. Only issue seems to be availability for me currently. Is there any caveats to it being a gaming laptop rather than not?",
+      "reply_text": "I checked the specs and the ideapad is not lighter than the legion 5 in terms of weight(you do get a bigger screen, 15 vs 16 inch) You get the \"legion\" logo in the back instead of the \"lenovo\" logo, but if none of you colleagues care to poke their nose then it would matter.",
+      "depth": 2,
+      "stance_probs": {
+        "disagree": 0.29478856921195984,
+        "neutral": 0.3237360715866089,
+        "agree": 0.38147541880607605
+      },
+      "pred_label": "agree",
+      "disagree_probability": 0.29478856921195984
+    },
+    {
+      "thread_id": "1qvc8t4",
+      "thread_title": "[Lenovo] Lenovo IdeaPad Pro 5i Laptop: 16\" 2.8K OLED Touchscreen, Ultra 7 255H, RTX 5050, 16GB RAM, 1TB SSD with 52% off using coupon code IDEAFEBFUN3,for $900",
+      "parent_id": "t1_o3jv2q5",
+      "reply_id": "t1_o3k0vgn",
+      "parent_author": "ScallionImmediate243",
+      "reply_author": "Qminsage",
+      "parent_text": "I checked the specs and the ideapad is not lighter than the legion 5 in terms of weight(you do get a bigger screen, 15 vs 16 inch) You get the \"legion\" logo in the back instead of the \"lenovo\" logo, but if none of you colleagues care to poke their nose then it would matter.",
+      "reply_text": "Weight isn’t a huge concern of mine. For a laptop, I would prefer a solid build and display.",
+      "depth": 3,
+      "stance_probs": {
+        "disagree": 0.31763729453086853,
+        "neutral": 0.3231319189071655,
+        "agree": 0.3592308461666107
+      },
+      "pred_label": "agree",
+      "disagree_probability": 0.31763729453086853
+    },
+    {
+      "thread_id": "1qvc8t4",
+      "thread_title": "[Lenovo] Lenovo IdeaPad Pro 5i Laptop: 16\" 2.8K OLED Touchscreen, Ultra 7 255H, RTX 5050, 16GB RAM, 1TB SSD with 52% off using coupon code IDEAFEBFUN3,for $900",
+      "parent_id": "t1_o3i40sl",
+      "reply_id": "t1_o3jhgrq",
+      "parent_author": "lintstah1337",
+      "reply_author": "techstar2000",
+      "parent_text": "The Legion 5 with 5060, 15\" 1600P 165Hz OLED and 16GB SODIMM for $949 is way better deal. https://old.reddit.com/r/LaptopDeals/comments/1qlcbsd/lenovo_lenovo_legion_5i_gen_10_laptop_15_1600p/",
+      "reply_text": "Legion 5 isn't available. The Ideapad is also touchscreen which can make a difference for some people. This is not a gaming laptop really.",
+      "depth": 1,
+      "stance_probs": {
+        "disagree": 0.3380964994430542,
+        "neutral": 0.3067189157009125,
+        "agree": 0.3551846146583557
+      },
+      "pred_label": "agree",
+      "disagree_probability": 0.3380964994430542
+    },
+    {
+      "thread_id": "1qvc8t4",
+      "thread_title": "[Lenovo] Lenovo IdeaPad Pro 5i Laptop: 16\" 2.8K OLED Touchscreen, Ultra 7 255H, RTX 5050, 16GB RAM, 1TB SSD with 52% off using coupon code IDEAFEBFUN3,for $900",
+      "parent_id": "t1_o3jhgrq",
+      "reply_id": "t1_o4qo1x1",
+      "parent_author": "techstar2000",
+      "reply_author": "Blazin115",
+      "parent_text": "Legion 5 isn't available. The Ideapad is also touchscreen which can make a difference for some people. This is not a gaming laptop really.",
+      "reply_text": "This deal is expired. Is a new code available? Thx.",
+      "depth": 2,
+      "stance_probs": {
+        "disagree": 0.3183702528476715,
+        "neutral": 0.3500451445579529,
+        "agree": 0.3315845727920532
+      },
+      "pred_label": "neutral",
+      "disagree_probability": 0.3183702528476715
+    },
+    {
+      "thread_id": "1qvc8t4",
+      "thread_title": "[Lenovo] Lenovo IdeaPad Pro 5i Laptop: 16\" 2.8K OLED Touchscreen, Ultra 7 255H, RTX 5050, 16GB RAM, 1TB SSD with 52% off using coupon code IDEAFEBFUN3,for $900",
+      "parent_id": "t1_o3i40sl",
+      "reply_id": "t1_o3len7s",
+      "parent_author": "lintstah1337",
+      "reply_author": "sheikhsabdullah",
+      "parent_text": "The Legion 5 with 5060, 15\" 1600P 165Hz OLED and 16GB SODIMM for $949 is way better deal. https://old.reddit.com/r/LaptopDeals/comments/1qlcbsd/lenovo_lenovo_legion_5i_gen_10_laptop_15_1600p/",
+      "reply_text": "that promocode doesn't work",
+      "depth": 1,
+      "stance_probs": {
+        "disagree": 0.3099279999732971,
+        "neutral": 0.3170449435710907,
+        "agree": 0.3730270266532898
+      },
+      "pred_label": "agree",
+      "disagree_probability": 0.3099279999732971
+    },
+    {
+      "thread_id": "1s8ouh3",
+      "thread_title": "[Amazon] Samsung 16” Galaxy Book5 Pro 360 Copilot+ PC, AI Computer, Intel Core 7 Ultra Processor, 3K AMOLED (2880x1800) Touchscreen, S Pen, 120Hz, 16GB RAM | 1TB SSD, All-Day Battery Life. Now: $1,469 After 14% Off",
+      "parent_id": "t3_1s8ouh3",
+      "reply_id": "t1_odislyk",
+      "parent_author": "fifa2003",
+      "reply_author": "1rubyglass",
+      "parent_text": "[Amazon] Samsung 16” Galaxy Book5 Pro 360 Copilot+ PC, AI Computer, Intel Core 7 Ultra Processor, 3K AMOLED (2880x1800) Touchscreen, S Pen, 120Hz, 16GB RAM | 1TB SSD, All-Day Battery Life. Now: $1,469 After 14% Off",
+      "reply_text": "$1500 for a PC with 16gb ram? No thanks.",
+      "depth": 0,
+      "stance_probs": {
+        "disagree": 0.3509412407875061,
+        "neutral": 0.2962585985660553,
+        "agree": 0.3528001308441162
+      },
+      "pred_label": "agree",
+      "disagree_probability": 0.3509412407875061
+    },
+    {
+      "thread_id": "1r36flw",
+      "thread_title": "[Lenovo] Lenovo IdeaPad Pro 5i Laptop: 16\" 2.8K OLED Touchscreen, Ultra 7 255H, RTX 5050, 16GB RAM, 1TB SSD with 52% off using coupon code LENOVOLOVE1,for $900",
+      "parent_id": "t3_1r36flw",
+      "reply_id": "t1_o526h7j",
+      "parent_author": "techstar2000",
+      "reply_author": "Blazin115",
+      "parent_text": "[Lenovo] Lenovo IdeaPad Pro 5i Laptop: 16\" 2.8K OLED Touchscreen, Ultra 7 255H, RTX 5050, 16GB RAM, 1TB SSD with 52% off using coupon code LENOVOLOVE1,for $900",
+      "reply_text": "Just the Code I was looking for. Thanks!!!!",
+      "depth": 0,
+      "stance_probs": {
+        "disagree": 0.32051777839660645,
+        "neutral": 0.3781789541244507,
+        "agree": 0.30130329728126526
+      },
+      "pred_label": "neutral",
+      "disagree_probability": 0.32051777839660645
+    },
+    {
+      "thread_id": "1r36flw",
+      "thread_title": "[Lenovo] Lenovo IdeaPad Pro 5i Laptop: 16\" 2.8K OLED Touchscreen, Ultra 7 255H, RTX 5050, 16GB RAM, 1TB SSD with 52% off using coupon code LENOVOLOVE1,for $900",
+      "parent_id": "t3_1r36flw",
+      "reply_id": "t1_o591505",
+      "parent_author": "techstar2000",
+      "reply_author": "snakey08",
+      "parent_text": "[Lenovo] Lenovo IdeaPad Pro 5i Laptop: 16\" 2.8K OLED Touchscreen, Ultra 7 255H, RTX 5050, 16GB RAM, 1TB SSD with 52% off using coupon code LENOVOLOVE1,for $900",
+      "reply_text": "used the link and went to put the coupon code in it said it was already applied. The price is 1309.99",
+      "depth": 0,
+      "stance_probs": {
+        "disagree": 0.2806917428970337,
+        "neutral": 0.38291874527931213,
+        "agree": 0.3363895118236542
+      },
+      "pred_label": "neutral",
+      "disagree_probability": 0.2806917428970337
+    },
+    {
+      "thread_id": "1r36flw",
+      "thread_title": "[Lenovo] Lenovo IdeaPad Pro 5i Laptop: 16\" 2.8K OLED Touchscreen, Ultra 7 255H, RTX 5050, 16GB RAM, 1TB SSD with 52% off using coupon code LENOVOLOVE1,for $900",
+      "parent_id": "t3_1r36flw",
+      "reply_id": "t1_o57ai1x",
+      "parent_author": "techstar2000",
+      "reply_author": "theatheon",
+      "parent_text": "[Lenovo] Lenovo IdeaPad Pro 5i Laptop: 16\" 2.8K OLED Touchscreen, Ultra 7 255H, RTX 5050, 16GB RAM, 1TB SSD with 52% off using coupon code LENOVOLOVE1,for $900",
+      "reply_text": "How do you find these lenovo coupon codes?",
+      "depth": 0,
+      "stance_probs": {
+        "disagree": 0.3078426420688629,
+        "neutral": 0.3642309904098511,
+        "agree": 0.327926367521286
+      },
+      "pred_label": "neutral",
+      "disagree_probability": 0.3078426420688629
+    },
+    {
+      "thread_id": "1qw4zkr",
+      "thread_title": "[eBay] HP OMEN Gaming Laptop: 16\" 2K (1920 x 1200) FHD+ 144Hz Display, Intel Core Ultra 7 255H w/ AI Boost, NVIDIA GeForce RTX 5060, 16GGB RAM, 1TB SSD, Shadow Black. Now: $1,024.99 After 31% Off #ad",
+      "parent_id": "t3_1qw4zkr",
+      "reply_id": "t1_o3q5z85",
+      "parent_author": "AL0411",
+      "reply_author": "MrNo_Balls",
+      "parent_text": "[eBay] HP OMEN Gaming Laptop: 16\" 2K (1920 x 1200) FHD+ 144Hz Display, Intel Core Ultra 7 255H w/ AI Boost, NVIDIA GeForce RTX 5060, 16GGB RAM, 1TB SSD, Shadow Black. Now: $1,024.99 After 31% Off #ad",
+      "reply_text": "same item and price on best buy... how does the ebay seller make a profit?",
+      "depth": 0,
+      "stance_probs": {
+        "disagree": 0.31089356541633606,
+        "neutral": 0.35465192794799805,
+        "agree": 0.33445459604263306
+      },
+      "pred_label": "neutral",
+      "disagree_probability": 0.31089356541633606
+    },
+    {
+      "thread_id": "1qw4zkr",
+      "thread_title": "[eBay] HP OMEN Gaming Laptop: 16\" 2K (1920 x 1200) FHD+ 144Hz Display, Intel Core Ultra 7 255H w/ AI Boost, NVIDIA GeForce RTX 5060, 16GGB RAM, 1TB SSD, Shadow Black. Now: $1,024.99 After 31% Off #ad",
+      "parent_id": "t1_o3q5z85",
+      "reply_id": "t1_o3q8g0d",
+      "parent_author": "MrNo_Balls",
+      "reply_author": "blakemoranbass",
+      "parent_text": "same item and price on best buy... how does the ebay seller make a profit?",
+      "reply_text": "The eBay seller IS Best Buy lol",
+      "depth": 1,
+      "stance_probs": {
+        "disagree": 0.32956525683403015,
+        "neutral": 0.31162363290786743,
+        "agree": 0.3588111996650696
+      },
+      "pred_label": "agree",
+      "disagree_probability": 0.32956525683403015
+    },
+    {
+      "thread_id": "1qw4zkr",
+      "thread_title": "[eBay] HP OMEN Gaming Laptop: 16\" 2K (1920 x 1200) FHD+ 144Hz Display, Intel Core Ultra 7 255H w/ AI Boost, NVIDIA GeForce RTX 5060, 16GGB RAM, 1TB SSD, Shadow Black. Now: $1,024.99 After 31% Off #ad",
+      "parent_id": "t1_o3q8g0d",
+      "reply_id": "t1_o3qaav3",
+      "parent_author": "blakemoranbass",
+      "reply_author": "MrNo_Balls",
+      "parent_text": "The eBay seller IS Best Buy lol",
+      "reply_text": "LMAO no wonder!",
+      "depth": 2,
+      "stance_probs": {
+        "disagree": 0.3766966462135315,
+        "neutral": 0.3591758906841278,
+        "agree": 0.2641274333000183
+      },
+      "pred_label": "disagree",
+      "disagree_probability": 0.3766966462135315
+    },
+    {
+      "thread_id": "1qw4zkr",
+      "thread_title": "[eBay] HP OMEN Gaming Laptop: 16\" 2K (1920 x 1200) FHD+ 144Hz Display, Intel Core Ultra 7 255H w/ AI Boost, NVIDIA GeForce RTX 5060, 16GGB RAM, 1TB SSD, Shadow Black. Now: $1,024.99 After 31% Off #ad",
+      "parent_id": "t3_1qw4zkr",
+      "reply_id": "t1_o3qoc9t",
+      "parent_author": "AL0411",
+      "reply_author": "FinalFantasyZed",
+      "parent_text": "[eBay] HP OMEN Gaming Laptop: 16\" 2K (1920 x 1200) FHD+ 144Hz Display, Intel Core Ultra 7 255H w/ AI Boost, NVIDIA GeForce RTX 5060, 16GGB RAM, 1TB SSD, Shadow Black. Now: $1,024.99 After 31% Off #ad",
+      "reply_text": "5070 version with 32GB DDR5 for $1299 still available if you have a microcenter near you. https://www.microcenter.com/product/696098/hp-omen-16-slim-16-an0003nr-16-gaming-laptop-computer-shadow-black",
+      "depth": 0,
+      "stance_probs": {
+        "disagree": 0.2830243408679962,
+        "neutral": 0.3933320939540863,
+        "agree": 0.3236435353755951
+      },
+      "pred_label": "neutral",
+      "disagree_probability": 0.2830243408679962
+    },
+    {
+      "thread_id": "1qw4zkr",
+      "thread_title": "[eBay] HP OMEN Gaming Laptop: 16\" 2K (1920 x 1200) FHD+ 144Hz Display, Intel Core Ultra 7 255H w/ AI Boost, NVIDIA GeForce RTX 5060, 16GGB RAM, 1TB SSD, Shadow Black. Now: $1,024.99 After 31% Off #ad",
+      "parent_id": "t3_1qw4zkr",
+      "reply_id": "t1_o3r8hmy",
+      "parent_author": "AL0411",
+      "reply_author": "eleffdee",
+      "parent_text": "[eBay] HP OMEN Gaming Laptop: 16\" 2K (1920 x 1200) FHD+ 144Hz Display, Intel Core Ultra 7 255H w/ AI Boost, NVIDIA GeForce RTX 5060, 16GGB RAM, 1TB SSD, Shadow Black. Now: $1,024.99 After 31% Off #ad",
+      "reply_text": "Are these good laptops? Anyone have experience with them?",
+      "depth": 0,
+      "stance_probs": {
+        "disagree": 0.32928118109703064,
+        "neutral": 0.3399989604949951,
+        "agree": 0.33071982860565186
+      },
+      "pred_label": "neutral",
+      "disagree_probability": 0.32928118109703064
+    },
+    {
+      "thread_id": "1qh57y6",
+      "thread_title": "[Walmart] HP OmniBook 5 AI PC Laptop: 16\" (1920 x 1200) 2K Touch Display, Intel Core Ultra 7 255U, Intel Graphics, 16GB RAM, 1TB SSD, Glacier Silver, Now: $599 After $390 Off",
+      "parent_id": "t3_1qh57y6",
+      "reply_id": "t1_o0jbxrl",
+      "parent_author": "fifa2003",
+      "reply_author": "yellowsubmarine2016",
+      "parent_text": "[Walmart] HP OmniBook 5 AI PC Laptop: 16\" (1920 x 1200) 2K Touch Display, Intel Core Ultra 7 255U, Intel Graphics, 16GB RAM, 1TB SSD, Glacier Silver, Now: $599 After $390 Off",
+      "reply_text": "Why do specifications state AMD CPU? MD Ryzen™ 5 8540U processor:",
+      "depth": 0,
+      "stance_probs": {
+        "disagree": 0.3158932328224182,
+        "neutral": 0.3428284525871277,
+        "agree": 0.3412783443927765
+      },
+      "pred_label": "neutral",
+      "disagree_probability": 0.3158932328224182
+    },
+    {
+      "thread_id": "1q3hni8",
+      "thread_title": "Walmart] HP OmniBook 5 AI PC Laptop: 16\" (1920 x 1200) 2K Touch Display, Intel Core Ultra 7 255U, Intel Graphics, 16GB RAM, 1TB SSD $386 off, for $594",
+      "parent_id": "t3_1q3hni8",
+      "reply_id": "t1_nxmgeg6",
+      "parent_author": "techstar2000",
+      "reply_author": "Jovie311",
+      "parent_text": "Walmart] HP OmniBook 5 AI PC Laptop: 16\" (1920 x 1200) 2K Touch Display, Intel Core Ultra 7 255U, Intel Graphics, 16GB RAM, 1TB SSD $386 off, for $594",
+      "reply_text": "Is the graphics card good? I'm thinking about getting it.",
+      "depth": 0,
+      "stance_probs": {
+        "disagree": 0.2972525656223297,
+        "neutral": 0.3681022822856903,
+        "agree": 0.33464515209198
+      },
+      "pred_label": "neutral",
+      "disagree_probability": 0.2972525656223297
+    },
+    {
+      "thread_id": "1q3hni8",
+      "thread_title": "Walmart] HP OmniBook 5 AI PC Laptop: 16\" (1920 x 1200) 2K Touch Display, Intel Core Ultra 7 255U, Intel Graphics, 16GB RAM, 1TB SSD $386 off, for $594",
+      "parent_id": "t1_nxmgeg6",
+      "reply_id": "t1_nxn63r8",
+      "parent_author": "Jovie311",
+      "reply_author": "techstar2000",
+      "parent_text": "Is the graphics card good? I'm thinking about getting it.",
+      "reply_text": "It doesn't have a dedicated graphics card. Integrated graphics which is only ideal for certain tasks..",
+      "depth": 1,
+      "stance_probs": {
+        "disagree": 0.3429013192653656,
+        "neutral": 0.31391698122024536,
+        "agree": 0.3431816101074219
+      },
+      "pred_label": "agree",
+      "disagree_probability": 0.3429013192653656
+    },
+    {
+      "thread_id": "1qb5hrr",
+      "thread_title": "[Walmart] HP OmniBook 5 AI PC Laptop: 16\" (1920 x 1200) 2K Touch Display, Intel Core Ultra 7 255U, Intel Graphics, 16GB RAM, 1TB SSD, Glacier Silver, Now: $599 After $390 Off",
+      "parent_id": "t3_1qb5hrr",
+      "reply_id": "t1_nzko9l5",
+      "parent_author": "AL0411",
+      "reply_author": "bklnclark",
+      "parent_text": "[Walmart] HP OmniBook 5 AI PC Laptop: 16\" (1920 x 1200) 2K Touch Display, Intel Core Ultra 7 255U, Intel Graphics, 16GB RAM, 1TB SSD, Glacier Silver, Now: $599 After $390 Off",
+      "reply_text": "Product specs say 512g and 8g ram",
+      "depth": 0,
+      "stance_probs": {
+        "disagree": 0.2865811586380005,
+        "neutral": 0.38781142234802246,
+        "agree": 0.32560741901397705
+      },
+      "pred_label": "neutral",
+      "disagree_probability": 0.2865811586380005
+    },
+    {
+      "thread_id": "1ph90dl",
+      "thread_title": "[Walmart] HP OmniBook 5 AI PC Laptop: 16\" (1920 x 1200) 2K Touch Display, Intel Core Ultra 7 255U, Intel Graphics, 16GB RAM, 1TB SSD, Glacier Silver, Now: $549.95 After $430 Off",
+      "parent_id": "t3_1ph90dl",
+      "reply_id": "t1_nt06qvu",
+      "parent_author": "fifa2003",
+      "reply_author": "seanddd99",
+      "parent_text": "[Walmart] HP OmniBook 5 AI PC Laptop: 16\" (1920 x 1200) 2K Touch Display, Intel Core Ultra 7 255U, Intel Graphics, 16GB RAM, 1TB SSD, Glacier Silver, Now: $549.95 After $430 Off",
+      "reply_text": "How is build quality ?",
+      "depth": 0,
+      "stance_probs": {
+        "disagree": 0.30866527557373047,
+        "neutral": 0.3342689573764801,
+        "agree": 0.3570657968521118
+      },
+      "pred_label": "agree",
+      "disagree_probability": 0.30866527557373047
+    },
+    {
+      "thread_id": "1ph90dl",
+      "thread_title": "[Walmart] HP OmniBook 5 AI PC Laptop: 16\" (1920 x 1200) 2K Touch Display, Intel Core Ultra 7 255U, Intel Graphics, 16GB RAM, 1TB SSD, Glacier Silver, Now: $549.95 After $430 Off",
+      "parent_id": "t1_nt06qvu",
+      "reply_id": "t1_nt0hgab",
+      "parent_author": "seanddd99",
+      "reply_author": "fifa2003",
+      "parent_text": "How is build quality ?",
+      "reply_text": "Decent for professionals and students that would love a beautiful display and a simple general use laptop.",
+      "depth": 1,
+      "stance_probs": {
+        "disagree": 0.3139406442642212,
+        "neutral": 0.351024866104126,
+        "agree": 0.33503457903862
+      },
+      "pred_label": "neutral",
+      "disagree_probability": 0.3139406442642212
+    },
+    {
+      "thread_id": "1ou7xu1",
+      "thread_title": "[eBay] Cert. Refurb Acer Swift 16 AI : 16\" 3K OLED 120Hz Touchscreen, Intel Ultra 7 256V CPU, 16GB LPDDR5 RAM, 1TB SSD with 48% off, for $620  #ad",
+      "parent_id": "t3_1ou7xu1",
+      "reply_id": "t1_noadqbf",
+      "parent_author": "techstar2000",
+      "reply_author": "kalidori",
+      "parent_text": "[eBay] Cert. Refurb Acer Swift 16 AI : 16\" 3K OLED 120Hz Touchscreen, Intel Ultra 7 256V CPU, 16GB LPDDR5 RAM, 1TB SSD with 48% off, for $620 #ad",
+      "reply_text": "Is ram upgradable?",
+      "depth": 0,
+      "stance_probs": {
+        "disagree": 0.302365243434906,
+        "neutral": 0.3500458598136902,
+        "agree": 0.34758883714675903
+      },
+      "pred_label": "neutral",
+      "disagree_probability": 0.302365243434906
+    },
+    {
+      "thread_id": "1ou7xu1",
+      "thread_title": "[eBay] Cert. Refurb Acer Swift 16 AI : 16\" 3K OLED 120Hz Touchscreen, Intel Ultra 7 256V CPU, 16GB LPDDR5 RAM, 1TB SSD with 48% off, for $620  #ad",
+      "parent_id": "t1_noadqbf",
+      "reply_id": "t1_noepwhx",
+      "parent_author": "kalidori",
+      "reply_author": "InsideMap3625",
+      "parent_text": "Is ram upgradable?",
+      "reply_text": "The RAM is beyond soldered, its on-package.",
+      "depth": 1,
+      "stance_probs": {
+        "disagree": 0.2768324017524719,
+        "neutral": 0.3831232786178589,
+        "agree": 0.34004440903663635
+      },
+      "pred_label": "neutral",
+      "disagree_probability": 0.2768324017524719
+    },
+    {
+      "thread_id": "1ou7xu1",
+      "thread_title": "[eBay] Cert. Refurb Acer Swift 16 AI : 16\" 3K OLED 120Hz Touchscreen, Intel Ultra 7 256V CPU, 16GB LPDDR5 RAM, 1TB SSD with 48% off, for $620  #ad",
+      "parent_id": "t1_noadqbf",
+      "reply_id": "t1_noar3ag",
+      "parent_author": "kalidori",
+      "reply_author": "Zentick-",
+      "parent_text": "Is ram upgradable?",
+      "reply_text": "Unfortunately not.",
+      "depth": 1,
+      "stance_probs": {
+        "disagree": 0.2995307445526123,
+        "neutral": 0.3573787212371826,
+        "agree": 0.3430905342102051
+      },
+      "pred_label": "neutral",
+      "disagree_probability": 0.2995307445526123
+    },
+    {
+      "thread_id": "1ou7xu1",
+      "thread_title": "[eBay] Cert. Refurb Acer Swift 16 AI : 16\" 3K OLED 120Hz Touchscreen, Intel Ultra 7 256V CPU, 16GB LPDDR5 RAM, 1TB SSD with 48% off, for $620  #ad",
+      "parent_id": "t3_1ou7xu1",
+      "reply_id": "t1_nof70a6",
+      "parent_author": "techstar2000",
+      "reply_author": "_-Lewis",
+      "parent_text": "[eBay] Cert. Refurb Acer Swift 16 AI : 16\" 3K OLED 120Hz Touchscreen, Intel Ultra 7 256V CPU, 16GB LPDDR5 RAM, 1TB SSD with 48% off, for $620 #ad",
+      "reply_text": "One note about this laptop is that it has a spare unused m.2 available.",
+      "depth": 0,
+      "stance_probs": {
+        "disagree": 0.3001895546913147,
+        "neutral": 0.3718956708908081,
+        "agree": 0.3279147446155548
+      },
+      "pred_label": "neutral",
+      "disagree_probability": 0.3001895546913147
+    },
+    {
+      "thread_id": "1ru9i0a",
+      "thread_title": "Elitebook vs Omni",
+      "parent_id": "t3_1ru9i0a",
+      "reply_id": "t1_oajzqqr",
+      "parent_author": "astins1019",
+      "reply_author": "daviiiiiid",
+      "parent_text": "Elitebook vs Omni Looking to finally upgrade my HP Pavilion that I have had since 2020. Trying to decide between these two and figure out pros and cons. Will use it for my eBay business mainly. Laptop screen will not matter since I use a 24” monitor for it. Any advice is appreciated! UPDATE: I decided to go with HP Omnibook 5 16\" WUXGA Touch Screen Laptop| Intel Core Ultra 7 255U |Intel Graphics| Copilot |Backlit | Silver | 16GB RAM DDR5 | 1024GB SSD |Windows 11 Home |Bundle with HDMI Cable It is just the right amount of computer I need. Below is what I currently use so really anything newer is better than what I have been using: HP - Pavilion x360 2-in-1 11.6\" Touch-Screen Laptop - Intel Pentium - 4GB Memory - 128GB Solid State Drive - Ash Silver Thank you for all the input and advice, I greatly appreciate it!",
+      "reply_text": "Those are just names of whole series and not a particular model. Share full specs for people to be able to help. But generally, elite book will be a business level product while omnibook is retail consumer oriented.",
+      "depth": 0,
+      "stance_probs": {
+        "disagree": 0.28743815422058105,
+        "neutral": 0.38558146357536316,
+        "agree": 0.3269802927970886
+      },
+      "pred_label": "neutral",
+      "disagree_probability": 0.28743815422058105
+    },
+    {
+      "thread_id": "1ru9i0a",
+      "thread_title": "Elitebook vs Omni",
+      "parent_id": "t3_1ru9i0a",
+      "reply_id": "t1_oali2lh",
+      "parent_author": "astins1019",
+      "reply_author": "Geodesicz",
+      "parent_text": "Elitebook vs Omni Looking to finally upgrade my HP Pavilion that I have had since 2020. Trying to decide between these two and figure out pros and cons. Will use it for my eBay business mainly. Laptop screen will not matter since I use a 24” monitor for it. Any advice is appreciated! UPDATE: I decided to go with HP Omnibook 5 16\" WUXGA Touch Screen Laptop| Intel Core Ultra 7 255U |Intel Graphics| Copilot |Backlit | Silver | 16GB RAM DDR5 | 1024GB SSD |Windows 11 Home |Bundle with HDMI Cable It is just the right amount of computer I need. Below is what I currently use so really anything newer is better than what I have been using: HP - Pavilion x360 2-in-1 11.6\" Touch-Screen Laptop - Intel Pentium - 4GB Memory - 128GB Solid State Drive - Ash Silver Thank you for all the input and advice, I greatly appreciate it!",
+      "reply_text": "Avoid the elitebook 200 and 300 series. While technically in the commercial lineup, the hardware is consumer leveraged. If you want quality, always go commercial grade hardware. Omnibook is consumer as another here already said. Elitebook 800 series or up imo. Or if you really want/need something nice, you could spring for a Zbook.",
+      "depth": 0,
+      "stance_probs": {
+        "disagree": 0.29071101546287537,
+        "neutral": 0.35906264185905457,
+        "agree": 0.35022634267807007
+      },
+      "pred_label": "neutral",
+      "disagree_probability": 0.29071101546287537
+    },
+    {
+      "thread_id": "1ik8gdp",
+      "thread_title": "HP Omnibook Ultra Flip performance issue",
+      "parent_id": "t1_mbmfjcj",
+      "reply_id": "t1_mgp1y3r",
+      "parent_author": "Keptforgetting",
+      "reply_author": "Djenthead",
+      "parent_text": "I've installed all updates including the optional ones and done a whole battery cycle too just to eliminate any kind of weirdness from that and it's still been persisting A reinstall of windows is the only thing I haven't tried yet but it looks like I'll have to give it a go as nothing else has worked",
+      "reply_text": "Any news?",
+      "depth": 2,
+      "stance_probs": {
+        "disagree": 0.2906650900840759,
+        "neutral": 0.3589494824409485,
+        "agree": 0.350385457277298
+      },
+      "pred_label": "neutral",
+      "disagree_probability": 0.2906650900840759
+    }
+  ]
+}

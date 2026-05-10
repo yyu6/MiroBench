@@ -1,0 +1,37 @@
+{
+  "meta": {
+    "input": "/Users/yaoningyu/Desktop/UIUC/GEO/data/raw/discussions/laptop_product/acer_predator_helios_18_ai_18_250hz_gaming_laptop_2560_x_1600_intel_core_ultra_9_nvidia_geforce_rtx_5080_32gb_1tb_abyssal_black",
+    "target_kind": "real",
+    "metric": "Self-BLEU",
+    "orders": [
+      2,
+      3,
+      4
+    ],
+    "aggregation": "unordered comment pairs within each thread; pair score is mean(BLEU(a,b), BLEU(b,a))",
+    "smoothing": "add-one modified n-gram precision",
+    "interpretation": "higher Self-BLEU means more surface-form uniformity",
+    "thread_count": 0,
+    "comment_count": 0,
+    "include_comment_scores": false,
+    "source": {
+      "folder": "/Users/yaoningyu/Desktop/UIUC/GEO/data/raw/discussions/laptop_product/acer_predator_helios_18_ai_18_250hz_gaming_laptop_2560_x_1600_intel_core_ultra_9_nvidia_geforce_rtx_5080_32gb_1tb_abyssal_black",
+      "posts_path": "/Users/yaoningyu/Desktop/UIUC/GEO/data/raw/discussions/laptop_product/acer_predator_helios_18_ai_18_250hz_gaming_laptop_2560_x_1600_intel_core_ultra_9_nvidia_geforce_rtx_5080_32gb_1tb_abyssal_black/acer_predator_helios_18_ai_18_250hz_gaming_laptop_2560_x_1600_intel_core_ultra_9_nvidia_geforce_rtx_5080_32gb_1tb_abyssal_black.jsonl",
+      "comments_path": "/Users/yaoningyu/Desktop/UIUC/GEO/data/raw/discussions/laptop_product/acer_predator_helios_18_ai_18_250hz_gaming_laptop_2560_x_1600_intel_core_ultra_9_nvidia_geforce_rtx_5080_32gb_1tb_abyssal_black/acer_predator_helios_18_ai_18_250hz_gaming_laptop_2560_x_1600_intel_core_ultra_9_nvidia_geforce_rtx_5080_32gb_1tb_abyssal_black.comments.jsonl",
+      "post_count": 0,
+      "raw_comment_count": 0
+    }
+  },
+  "overall": {
+    "comment_count": 0,
+    "thread_count": 0,
+    "pair_count": 0,
+    "weighted_self_bleu_2": 0.0,
+    "weighted_self_bleu_3": 0.0,
+    "weighted_self_bleu_4": 0.0,
+    "median_thread_self_bleu_2": 0.0,
+    "median_thread_self_bleu_3": 0.0,
+    "median_thread_self_bleu_4": 0.0
+  },
+  "threads": []
+}

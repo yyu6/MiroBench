@@ -1,0 +1,31 @@
+{
+  "meta": {
+    "input": "/Users/yaoningyu/Desktop/UIUC/GEO/data/raw/discussions/cell_phone_product/apple_iphone_16_128gb_apple_intelligence_unlocked_ultramarine",
+    "target_kind": "real",
+    "model_name": "sentence-transformers/all-mpnet-base-v2",
+    "embedding_backend": "sentence_transformers",
+    "device": "mps:0",
+    "max_length": 256,
+    "top_k": 10,
+    "comment_count": 0,
+    "thread_count": 0,
+    "embedding_dim": 0,
+    "include_embeddings": true,
+    "source": {
+      "folder": "/Users/yaoningyu/Desktop/UIUC/GEO/data/raw/discussions/cell_phone_product/apple_iphone_16_128gb_apple_intelligence_unlocked_ultramarine",
+      "posts_path": "/Users/yaoningyu/Desktop/UIUC/GEO/data/raw/discussions/cell_phone_product/apple_iphone_16_128gb_apple_intelligence_unlocked_ultramarine/apple_iphone_16_128gb_apple_intelligence_unlocked_ultramarine.jsonl",
+      "comments_path": "/Users/yaoningyu/Desktop/UIUC/GEO/data/raw/discussions/cell_phone_product/apple_iphone_16_128gb_apple_intelligence_unlocked_ultramarine/apple_iphone_16_128gb_apple_intelligence_unlocked_ultramarine.comments.jsonl",
+      "post_count": 0,
+      "raw_comment_count": 0
+    }
+  },
+  "overall": {
+    "comment_count": 0,
+    "thread_count": 0,
+    "pair_count": 0,
+    "weighted_mean_cosine_similarity": 0.0,
+    "median_thread_cosine_similarity": 0.0,
+    "weighted_top_k_mean_cosine_similarity": 0.0
+  },
+  "threads": []
+}

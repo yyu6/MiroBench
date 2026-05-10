@@ -1,0 +1,47 @@
+{
+  "meta": {
+    "input": "/Users/yaoningyu/Desktop/UIUC/GEO/data/raw/discussions/laptop_product/acer_predator_helios_18_ai_18_250hz_gaming_laptop_2560_x_1600_intel_core_ultra_9_nvidia_geforce_rtx_5080_32gb_1tb_abyssal_black",
+    "target_kind": "real",
+    "metric": "Self-BERTScore",
+    "aggregation": "unordered comment pairs within each thread; thread summary reports mean / median / max pair F1",
+    "interpretation": "higher Self-BERTScore F1 means more semantic uniformity",
+    "bert_score_path": "/Users/yaoningyu/Desktop/UIUC/GEO/bert_score-master",
+    "requested_model_type": "microsoft/deberta-xlarge-mnli",
+    "requested_num_layers": null,
+    "model_type": "microsoft/deberta-xlarge-mnli",
+    "num_layers": 40,
+    "fallback_used": false,
+    "fallback_model_type": "",
+    "bert_hash": "microsoft/deberta-xlarge-mnli_L40_no-idf_version=0.3.12(hug_trans=4.48.0)",
+    "device": "mps",
+    "batch_size": 16,
+    "idf": false,
+    "rescale_with_baseline": false,
+    "include_pairs": false,
+    "local_files_only": false,
+    "thread_count": 0,
+    "comment_count": 0,
+    "pair_count": 0,
+    "source": {
+      "folder": "/Users/yaoningyu/Desktop/UIUC/GEO/data/raw/discussions/laptop_product/acer_predator_helios_18_ai_18_250hz_gaming_laptop_2560_x_1600_intel_core_ultra_9_nvidia_geforce_rtx_5080_32gb_1tb_abyssal_black",
+      "posts_path": "/Users/yaoningyu/Desktop/UIUC/GEO/data/raw/discussions/laptop_product/acer_predator_helios_18_ai_18_250hz_gaming_laptop_2560_x_1600_intel_core_ultra_9_nvidia_geforce_rtx_5080_32gb_1tb_abyssal_black/acer_predator_helios_18_ai_18_250hz_gaming_laptop_2560_x_1600_intel_core_ultra_9_nvidia_geforce_rtx_5080_32gb_1tb_abyssal_black.jsonl",
+      "comments_path": "/Users/yaoningyu/Desktop/UIUC/GEO/data/raw/discussions/laptop_product/acer_predator_helios_18_ai_18_250hz_gaming_laptop_2560_x_1600_intel_core_ultra_9_nvidia_geforce_rtx_5080_32gb_1tb_abyssal_black/acer_predator_helios_18_ai_18_250hz_gaming_laptop_2560_x_1600_intel_core_ultra_9_nvidia_geforce_rtx_5080_32gb_1tb_abyssal_black.comments.jsonl",
+      "post_count": 0,
+      "raw_comment_count": 0
+    }
+  },
+  "overall": {
+    "comment_count": 0,
+    "thread_count": 0,
+    "pair_count": 0,
+    "weighted_mean_bert_precision": 0.0,
+    "weighted_mean_bert_recall": 0.0,
+    "weighted_mean_bert_f1": 0.0,
+    "mean_thread_bert_f1": 0.0,
+    "median_thread_bert_f1": 0.0,
+    "weighted_top_k_mean_bert_f1": 0.0,
+    "max_thread_mean_bert_f1": 0.0,
+    "max_thread_max_bert_f1": 0.0
+  },
+  "threads": []
+}

@@ -1,0 +1,2347 @@
+{
+  "meta": {
+    "input": "/Users/yaoningyu/Desktop/UIUC/GEO/data/raw/discussions/headphone_product/apple_airpods_max_2_usb_c_midnight",
+    "target_kind": "real",
+    "metric": "Polite-Guard politeness classification",
+    "model_name": "Intel/polite-guard",
+    "model_source": "https://huggingface.co/Intel/polite-guard",
+    "device": "mps",
+    "max_length": 256,
+    "canonical_labels": [
+      "polite",
+      "somewhat_polite",
+      "neutral",
+      "impolite"
+    ],
+    "model_label_map": {
+      "0": "polite",
+      "1": "somewhat polite",
+      "2": "neutral",
+      "3": "impolite"
+    },
+    "comment_count": 109,
+    "thread_count": 8,
+    "include_comment_text": true,
+    "source": {
+      "folder": "/Users/yaoningyu/Desktop/UIUC/GEO/data/raw/discussions/headphone_product/apple_airpods_max_2_usb_c_midnight",
+      "posts_path": "/Users/yaoningyu/Desktop/UIUC/GEO/data/raw/discussions/headphone_product/apple_airpods_max_2_usb_c_midnight/apple_airpods_max_2_usb_c_midnight.jsonl",
+      "comments_path": "/Users/yaoningyu/Desktop/UIUC/GEO/data/raw/discussions/headphone_product/apple_airpods_max_2_usb_c_midnight/apple_airpods_max_2_usb_c_midnight.comments.jsonl",
+      "post_count": 9,
+      "raw_comment_count": 120
+    }
+  },
+  "overall": {
+    "comment_count": 109,
+    "thread_count": 8,
+    "polite_count": 30,
+    "polite_rate": 0.27522935779816515,
+    "somewhat_polite_count": 7,
+    "somewhat_polite_rate": 0.06422018348623854,
+    "neutral_count": 19,
+    "neutral_rate": 0.1743119266055046,
+    "impolite_count": 53,
+    "impolite_rate": 0.48623853211009177
+  },
+  "threads": [
+    {
+      "thread_id": "1keugkj",
+      "thread_title": "My Review of Airpods Max after 2 weeks of usage",
+      "comment_count": 27,
+      "comments": [
+        {
+          "thread_id": "1keugkj",
+          "thread_title": "My Review of Airpods Max after 2 weeks of usage",
+          "comment_id": "t1_mqlo9g7",
+          "parent_id": "t3_1keugkj",
+          "author": "Gamerxx13",
+          "depth": 0,
+          "pred_label": "polite",
+          "polite_probability": 0.9974082112312317,
+          "somewhat_polite_probability": 0.001111073768697679,
+          "neutral_probability": 0.00022129480203147978,
+          "impolite_probability": 0.0012594569707289338,
+          "class_probabilities": {
+            "polite": 0.9974082112312317,
+            "somewhat_polite": 0.001111073768697679,
+            "neutral": 0.00022129480203147978,
+            "impolite": 0.0012594569707289338
+          },
+          "text": "I’ve had the Sony xm5 and just have so many Apple devices I switched, and man these just sound so much better and integrate so well with Apple. I agree with this review 100%"
+        },
+        {
+          "thread_id": "1keugkj",
+          "thread_title": "My Review of Airpods Max after 2 weeks of usage",
+          "comment_id": "t1_mqyy1e3",
+          "parent_id": "t1_mqlo9g7",
+          "author": "Typical-Orange6467",
+          "depth": 1,
+          "pred_label": "impolite",
+          "polite_probability": 0.0028673342894762754,
+          "somewhat_polite_probability": 0.43046054244041443,
+          "neutral_probability": 0.04241277277469635,
+          "impolite_probability": 0.5242593884468079,
+          "class_probabilities": {
+            "polite": 0.0028673342894762754,
+            "somewhat_polite": 0.43046054244041443,
+            "neutral": 0.04241277277469635,
+            "impolite": 0.5242593884468079
+          },
+          "text": "Yeah but they break after like 6 months"
+        },
+        {
+          "thread_id": "1keugkj",
+          "thread_title": "My Review of Airpods Max after 2 weeks of usage",
+          "comment_id": "t1_mqlupum",
+          "parent_id": "t3_1keugkj",
+          "author": "Original_East1271",
+          "depth": 0,
+          "pred_label": "impolite",
+          "polite_probability": 0.027941880747675896,
+          "somewhat_polite_probability": 0.04264796897768974,
+          "neutral_probability": 0.05952833220362663,
+          "impolite_probability": 0.869881808757782,
+          "class_probabilities": {
+            "polite": 0.027941880747675896,
+            "somewhat_polite": 0.04264796897768974,
+            "neutral": 0.05952833220362663,
+            "impolite": 0.869881808757782
+          },
+          "text": "What’d you use for the magnetic stand?"
+        },
+        {
+          "thread_id": "1keugkj",
+          "thread_title": "My Review of Airpods Max after 2 weeks of usage",
+          "comment_id": "t1_mqlo63w",
+          "parent_id": "t3_1keugkj",
+          "author": "Ok-Refrigerator3607",
+          "depth": 0,
+          "pred_label": "polite",
+          "polite_probability": 0.999396562576294,
+          "somewhat_polite_probability": 0.00023739637981634587,
+          "neutral_probability": 0.00015027991321403533,
+          "impolite_probability": 0.00021581468172371387,
+          "class_probabilities": {
+            "polite": 0.999396562576294,
+            "somewhat_polite": 0.00023739637981634587,
+            "neutral": 0.00015027991321403533,
+            "impolite": 0.00021581468172371387
+          },
+          "text": "Great review!"
+        },
+        {
+          "thread_id": "1keugkj",
+          "thread_title": "My Review of Airpods Max after 2 weeks of usage",
+          "comment_id": "t1_mqlttvi",
+          "parent_id": "t3_1keugkj",
+          "author": "[deleted]",
+          "depth": 0,
+          "pred_label": "impolite",
+          "polite_probability": 0.0067812176421284676,
+          "somewhat_polite_probability": 0.0009405692690052092,
+          "neutral_probability": 0.00013657580711878836,
+          "impolite_probability": 0.992141604423523,
+          "class_probabilities": {
+            "polite": 0.0067812176421284676,
+            "somewhat_polite": 0.0009405692690052092,
+            "neutral": 0.00013657580711878836,
+            "impolite": 0.992141604423523
+          },
+          "text": "Well I love mine I have the usbc edition and I don’t look back to those headphones of 1000 and more euros I’m totally fine with them!"
+        },
+        {
+          "thread_id": "1keugkj",
+          "thread_title": "My Review of Airpods Max after 2 weeks of usage",
+          "comment_id": "t1_mqmygmc",
+          "parent_id": "t3_1keugkj",
+          "author": "Misael_91",
+          "depth": 0,
+          "pred_label": "impolite",
+          "polite_probability": 0.0009901832090690732,
+          "somewhat_polite_probability": 0.0009074672125279903,
+          "neutral_probability": 0.0003190042625647038,
+          "impolite_probability": 0.997783362865448,
+          "class_probabilities": {
+            "polite": 0.0009901832090690732,
+            "somewhat_polite": 0.0009074672125279903,
+            "neutral": 0.0003190042625647038,
+            "impolite": 0.997783362865448
+          },
+          "text": "Fine you convince me to get one ☺️"
+        },
+        {
+          "thread_id": "1keugkj",
+          "thread_title": "My Review of Airpods Max after 2 weeks of usage",
+          "comment_id": "t1_mqm9cmp",
+          "parent_id": "t3_1keugkj",
+          "author": "coresme2000",
+          "depth": 0,
+          "pred_label": "polite",
+          "polite_probability": 0.9694015979766846,
+          "somewhat_polite_probability": 0.029271718114614487,
+          "neutral_probability": 0.0005767904222011566,
+          "impolite_probability": 0.0007499632192775607,
+          "class_probabilities": {
+            "polite": 0.9694015979766846,
+            "somewhat_polite": 0.029271718114614487,
+            "neutral": 0.0005767904222011566,
+            "impolite": 0.0007499632192775607
+          },
+          "text": "I’m glad it’s not just pros as it reads like a press release otherwise lol. I find the sound quite good, but about on the same level as Air Pods Pro 2’s, and worse for watching connected to an Apple TV in spatial which just sounds very weightless and tinny. Beautiful design justifies the spend but I would not say audio quality does."
+        },
+        {
+          "thread_id": "1keugkj",
+          "thread_title": "My Review of Airpods Max after 2 weeks of usage",
+          "comment_id": "t1_mqnxznh",
+          "parent_id": "t3_1keugkj",
+          "author": "AnAffinityForTurtles",
+          "depth": 0,
+          "pred_label": "impolite",
+          "polite_probability": 0.02915673889219761,
+          "somewhat_polite_probability": 0.008363114669919014,
+          "neutral_probability": 0.011074268259108067,
+          "impolite_probability": 0.951405942440033,
+          "class_probabilities": {
+            "polite": 0.02915673889219761,
+            "somewhat_polite": 0.008363114669919014,
+            "neutral": 0.011074268259108067,
+            "impolite": 0.951405942440033
+          },
+          "text": "This reads like AI lol"
+        },
+        {
+          "thread_id": "1keugkj",
+          "thread_title": "My Review of Airpods Max after 2 weeks of usage",
+          "comment_id": "t1_mqluqdb",
+          "parent_id": "t3_1keugkj",
+          "author": "hninja3k",
+          "depth": 0,
+          "pred_label": "polite",
+          "polite_probability": 0.9793305993080139,
+          "somewhat_polite_probability": 0.010064699687063694,
+          "neutral_probability": 0.00225270283408463,
+          "impolite_probability": 0.008351937867701054,
+          "class_probabilities": {
+            "polite": 0.9793305993080139,
+            "somewhat_polite": 0.010064699687063694,
+            "neutral": 0.00225270283408463,
+            "impolite": 0.008351937867701054
+          },
+          "text": "i also came from a pair of old qc35ii’s and agree with just about everything you said!"
+        },
+        {
+          "thread_id": "1keugkj",
+          "thread_title": "My Review of Airpods Max after 2 weeks of usage",
+          "comment_id": "t1_mqm57gj",
+          "parent_id": "t3_1keugkj",
+          "author": "stevieZzZ",
+          "depth": 0,
+          "pred_label": "polite",
+          "polite_probability": 0.9618946313858032,
+          "somewhat_polite_probability": 0.011609763838350773,
+          "neutral_probability": 0.0008556206012144685,
+          "impolite_probability": 0.025639956817030907,
+          "class_probabilities": {
+            "polite": 0.9618946313858032,
+            "somewhat_polite": 0.011609763838350773,
+            "neutral": 0.0008556206012144685,
+            "impolite": 0.025639956817030907
+          },
+          "text": "I've only had mine for around the same time. I haven't really been able to sit and try everything with them but I'm also pleasantly surprised with the quality. I knew it would be great quality based on reviews but they really are some of the smoothest and clearest audio I've ever heard from a pair of headphones. I will say the bass isn't as strong as I'd prefer but it's for sure the smoothest sounding bass. Some songs it's perfect, but other songs I used to listen to no problem it seems overpowered by other frequencies."
+        },
+        {
+          "thread_id": "1keugkj",
+          "thread_title": "My Review of Airpods Max after 2 weeks of usage",
+          "comment_id": "t1_mqn8z1b",
+          "parent_id": "t3_1keugkj",
+          "author": "Downtown_Ambition680",
+          "depth": 0,
+          "pred_label": "impolite",
+          "polite_probability": 0.3699985146522522,
+          "somewhat_polite_probability": 0.022043069824576378,
+          "neutral_probability": 0.003468151902779937,
+          "impolite_probability": 0.6044902801513672,
+          "class_probabilities": {
+            "polite": 0.3699985146522522,
+            "somewhat_polite": 0.022043069824576378,
+            "neutral": 0.003468151902779937,
+            "impolite": 0.6044902801513672
+          },
+          "text": "I’ve had the first gen for over three years now. -the lack of off button con to you is a pro to me as I loathe having to power things on when I’ve experienced so many things just being ready to go. - the headband stands up incredibly!! I was surprised, it does get dirty but the shape and elasticity is the same as when I first got it."
+        },
+        {
+          "thread_id": "1keugkj",
+          "thread_title": "My Review of Airpods Max after 2 weeks of usage",
+          "comment_id": "t1_mqnmgw5",
+          "parent_id": "t3_1keugkj",
+          "author": "priedits",
+          "depth": 0,
+          "pred_label": "neutral",
+          "polite_probability": 0.009355425834655762,
+          "somewhat_polite_probability": 0.006554457824677229,
+          "neutral_probability": 0.7025237679481506,
+          "impolite_probability": 0.281566321849823,
+          "class_probabilities": {
+            "polite": 0.009355425834655762,
+            "somewhat_polite": 0.006554457824677229,
+            "neutral": 0.7025237679481506,
+            "impolite": 0.281566321849823
+          },
+          "text": "audio quality of Airpods Max is mediocre , lol. Have you ever heard any high end headphones?"
+        },
+        {
+          "thread_id": "1keugkj",
+          "thread_title": "My Review of Airpods Max after 2 weeks of usage",
+          "comment_id": "t1_mqr8c3n",
+          "parent_id": "t1_mqnmgw5",
+          "author": "ibuxus",
+          "depth": 1,
+          "pred_label": "impolite",
+          "polite_probability": 0.0001918155758175999,
+          "somewhat_polite_probability": 0.0011973552173003554,
+          "neutral_probability": 0.0029149267356842756,
+          "impolite_probability": 0.9956958293914795,
+          "class_probabilities": {
+            "polite": 0.0001918155758175999,
+            "somewhat_polite": 0.0011973552173003554,
+            "neutral": 0.0029149267356842756,
+            "impolite": 0.9956958293914795
+          },
+          "text": "No and I’m not interested to hi-fi since I don’t use Hi-Fi services"
+        },
+        {
+          "thread_id": "1keugkj",
+          "thread_title": "My Review of Airpods Max after 2 weeks of usage",
+          "comment_id": "t1_mqo0ehp",
+          "parent_id": "t3_1keugkj",
+          "author": "Street_Classroom1271",
+          "depth": 0,
+          "pred_label": "impolite",
+          "polite_probability": 3.201610525138676e-05,
+          "somewhat_polite_probability": 3.540613761288114e-05,
+          "neutral_probability": 2.9598255423479713e-05,
+          "impolite_probability": 0.9999029636383057,
+          "class_probabilities": {
+            "polite": 3.201610525138676e-05,
+            "somewhat_polite": 3.540613761288114e-05,
+            "neutral": 2.9598255423479713e-05,
+            "impolite": 0.9999029636383057
+          },
+          "text": "you don't need an off button at all. Really the headband is also completely fine. Ive had the same one for 4 years"
+        },
+        {
+          "thread_id": "1keugkj",
+          "thread_title": "My Review of Airpods Max after 2 weeks of usage",
+          "comment_id": "t1_mqoeviq",
+          "parent_id": "t3_1keugkj",
+          "author": "spvcecxwbxy_",
+          "depth": 0,
+          "pred_label": "impolite",
+          "polite_probability": 0.00019588110444601625,
+          "somewhat_polite_probability": 0.000132595538161695,
+          "neutral_probability": 0.00010033167927758768,
+          "impolite_probability": 0.9995711445808411,
+          "class_probabilities": {
+            "polite": 0.00019588110444601625,
+            "somewhat_polite": 0.000132595538161695,
+            "neutral": 0.00010033167927758768,
+            "impolite": 0.9995711445808411
+          },
+          "text": "How did u get Siri to work? Doesn’t work on mine after exhausting all possibilities with no avail."
+        },
+        {
+          "thread_id": "1keugkj",
+          "thread_title": "My Review of Airpods Max after 2 weeks of usage",
+          "comment_id": "t1_mru6tb2",
+          "parent_id": "t1_mqoeviq",
+          "author": "Muadiv",
+          "depth": 1,
+          "pred_label": "impolite",
+          "polite_probability": 0.005792989395558834,
+          "somewhat_polite_probability": 0.014120037667453289,
+          "neutral_probability": 0.004573408979922533,
+          "impolite_probability": 0.9755135774612427,
+          "class_probabilities": {
+            "polite": 0.005792989395558834,
+            "somewhat_polite": 0.014120037667453289,
+            "neutral": 0.004573408979922533,
+            "impolite": 0.9755135774612427
+          },
+          "text": "I got mines a week ago, paired, tried to say Siri, that was all, worked right away. I have an IPhone 13."
+        },
+        {
+          "thread_id": "1keugkj",
+          "thread_title": "My Review of Airpods Max after 2 weeks of usage",
+          "comment_id": "t1_mqopagg",
+          "parent_id": "t3_1keugkj",
+          "author": "NIVE70073",
+          "depth": 0,
+          "pred_label": "impolite",
+          "polite_probability": 0.006638089194893837,
+          "somewhat_polite_probability": 0.08385451138019562,
+          "neutral_probability": 0.007633856497704983,
+          "impolite_probability": 0.9018735289573669,
+          "class_probabilities": {
+            "polite": 0.006638089194893837,
+            "somewhat_polite": 0.08385451138019562,
+            "neutral": 0.007633856497704983,
+            "impolite": 0.9018735289573669
+          },
+          "text": "I’ve had APM’s for about a month and I agree with what your saying, if u don’t want the headband to get loose don’t hang them on something but instead lay them down"
+        },
+        {
+          "thread_id": "1keugkj",
+          "thread_title": "My Review of Airpods Max after 2 weeks of usage",
+          "comment_id": "t1_mqq6f93",
+          "parent_id": "t3_1keugkj",
+          "author": "Spirit_Bear_123",
+          "depth": 0,
+          "pred_label": "polite",
+          "polite_probability": 0.9953634738922119,
+          "somewhat_polite_probability": 0.0037765398155897856,
+          "neutral_probability": 0.00022918292961549014,
+          "impolite_probability": 0.0006308107986114919,
+          "class_probabilities": {
+            "polite": 0.9953634738922119,
+            "somewhat_polite": 0.0037765398155897856,
+            "neutral": 0.00022918292961549014,
+            "impolite": 0.0006308107986114919
+          },
+          "text": "Great review. I just picked up Midnight AP Max last week and absolutely love them. Only thing is I feel like my fingers will pop through the headband mesh eventually, doesn't feel very durable. Noise cancelling and transparency modes are incredible!"
+        },
+        {
+          "thread_id": "1keugkj",
+          "thread_title": "My Review of Airpods Max after 2 weeks of usage",
+          "comment_id": "t1_mqqmx9z",
+          "parent_id": "t3_1keugkj",
+          "author": "actually_I_am_human9",
+          "depth": 0,
+          "pred_label": "impolite",
+          "polite_probability": 0.15733866393566132,
+          "somewhat_polite_probability": 0.08228392153978348,
+          "neutral_probability": 0.17045438289642334,
+          "impolite_probability": 0.589923083782196,
+          "class_probabilities": {
+            "polite": 0.15733866393566132,
+            "somewhat_polite": 0.08228392153978348,
+            "neutral": 0.17045438289642334,
+            "impolite": 0.589923083782196
+          },
+          "text": "Tbh a review without comparison doesn’t give me much. Sound quality is extraordinary, what’s ordinary for OP? But anyways, I was very curious about call microphone quality experience, I checked it myself. It sounds terrible, I would love to hear from someone else if there is anyone have real life experience.(also with comparison.)"
+        },
+        {
+          "thread_id": "1keugkj",
+          "thread_title": "My Review of Airpods Max after 2 weeks of usage",
+          "comment_id": "t1_mqsw5vf",
+          "parent_id": "t3_1keugkj",
+          "author": "h0neylemonade",
+          "depth": 0,
+          "pred_label": "impolite",
+          "polite_probability": 0.0003186781541444361,
+          "somewhat_polite_probability": 0.01026212889701128,
+          "neutral_probability": 0.0007823301129974425,
+          "impolite_probability": 0.9886369109153748,
+          "class_probabilities": {
+            "polite": 0.0003186781541444361,
+            "somewhat_polite": 0.01026212889701128,
+            "neutral": 0.0007823301129974425,
+            "impolite": 0.9886369109153748
+          },
+          "text": "I just got a pair last week, and it’s giving me issues with transparency mode. I was planning on returning them, but maybe I just need to swap it out."
+        },
+        {
+          "thread_id": "1keugkj",
+          "thread_title": "My Review of Airpods Max after 2 weeks of usage",
+          "comment_id": "t1_mqxpgcj",
+          "parent_id": "t3_1keugkj",
+          "author": "Tall_Morning_96",
+          "depth": 0,
+          "pred_label": "impolite",
+          "polite_probability": 0.10934213548898697,
+          "somewhat_polite_probability": 0.020911263301968575,
+          "neutral_probability": 0.19419945776462555,
+          "impolite_probability": 0.6755471229553223,
+          "class_probabilities": {
+            "polite": 0.10934213548898697,
+            "somewhat_polite": 0.020911263301968575,
+            "neutral": 0.19419945776462555,
+            "impolite": 0.6755471229553223
+          },
+          "text": "When you slam your heel while wearing them does it interrupt the music? + is it super stable on your head or normal?"
+        },
+        {
+          "thread_id": "1keugkj",
+          "thread_title": "My Review of Airpods Max after 2 weeks of usage",
+          "comment_id": "t1_mr8okmx",
+          "parent_id": "t3_1keugkj",
+          "author": "Arjihad",
+          "depth": 0,
+          "pred_label": "impolite",
+          "polite_probability": 0.00013222965935710818,
+          "somewhat_polite_probability": 0.001102059381082654,
+          "neutral_probability": 0.000341154751367867,
+          "impolite_probability": 0.9984246492385864,
+          "class_probabilities": {
+            "polite": 0.00013222965935710818,
+            "somewhat_polite": 0.001102059381082654,
+            "neutral": 0.000341154751367867,
+            "impolite": 0.9984246492385864
+          },
+          "text": "I get very nervous when reading about them tend to break after 4-5 years and them not really being repairable."
+        },
+        {
+          "thread_id": "1keugkj",
+          "thread_title": "My Review of Airpods Max after 2 weeks of usage",
+          "comment_id": "t1_mru734h",
+          "parent_id": "t1_mr8okmx",
+          "author": "Muadiv",
+          "depth": 1,
+          "pred_label": "impolite",
+          "polite_probability": 0.010497083887457848,
+          "somewhat_polite_probability": 0.004833703860640526,
+          "neutral_probability": 0.024170564487576485,
+          "impolite_probability": 0.9604986310005188,
+          "class_probabilities": {
+            "polite": 0.010497083887457848,
+            "somewhat_polite": 0.004833703860640526,
+            "neutral": 0.024170564487576485,
+            "impolite": 0.9604986310005188
+          },
+          "text": "Everything break after 4/5 years in wearable devices…. It’s almost a miracle if they survive more. And also depends the care that you take on them."
+        },
+        {
+          "thread_id": "1keugkj",
+          "thread_title": "My Review of Airpods Max after 2 weeks of usage",
+          "comment_id": "t1_mrv4wuf",
+          "parent_id": "t1_mru734h",
+          "author": "Arjihad",
+          "depth": 2,
+          "pred_label": "impolite",
+          "polite_probability": 0.00010585445852484554,
+          "somewhat_polite_probability": 0.000508269586134702,
+          "neutral_probability": 0.00017151571228168905,
+          "impolite_probability": 0.9992142915725708,
+          "class_probabilities": {
+            "polite": 0.00010585445852484554,
+            "somewhat_polite": 0.000508269586134702,
+            "neutral": 0.00017151571228168905,
+            "impolite": 0.9992142915725708
+          },
+          "text": "Even if devices break after 4/5 years (which i dont think they have to) the real question is if the manufacturer designed them to be repairable or not. I dont mind if expensive headphones have parts that have to be replaced after a few years if i CAN replace them! Otherwise its just expensive waste."
+        },
+        {
+          "thread_id": "1keugkj",
+          "thread_title": "My Review of Airpods Max after 2 weeks of usage",
+          "comment_id": "t1_msbbiqt",
+          "parent_id": "t1_mrv4wuf",
+          "author": "Muadiv",
+          "depth": 3,
+          "pred_label": "impolite",
+          "polite_probability": 0.05162498354911804,
+          "somewhat_polite_probability": 0.01477441843599081,
+          "neutral_probability": 0.0009789523901417851,
+          "impolite_probability": 0.9326216578483582,
+          "class_probabilities": {
+            "polite": 0.05162498354911804,
+            "somewhat_polite": 0.01477441843599081,
+            "neutral": 0.0009789523901417851,
+            "impolite": 0.9326216578483582
+          },
+          "text": "Well normally I’m expect to them to break in 5 years or less, then perfect excuse to buy new ones, that happened to my XM3, I’m almost broke at purpose to have the excuse 😎 ( and my wife don’t complain too much 🥹)"
+        },
+        {
+          "thread_id": "1keugkj",
+          "thread_title": "My Review of Airpods Max after 2 weeks of usage",
+          "comment_id": "t1_mr9j37r",
+          "parent_id": "t3_1keugkj",
+          "author": "Blablabene",
+          "depth": 0,
+          "pred_label": "polite",
+          "polite_probability": 0.7115474343299866,
+          "somewhat_polite_probability": 0.03455589711666107,
+          "neutral_probability": 0.002675438765436411,
+          "impolite_probability": 0.2512211799621582,
+          "class_probabilities": {
+            "polite": 0.7115474343299866,
+            "somewhat_polite": 0.03455589711666107,
+            "neutral": 0.002675438765436411,
+            "impolite": 0.2512211799621582
+          },
+          "text": "Yes they're great. Good for their prize. Having said that, mine started to fault after couple of months of use. So I ended up buying b&o h100. And my oh God do those sound angelic to my ears."
+        },
+        {
+          "thread_id": "1keugkj",
+          "thread_title": "My Review of Airpods Max after 2 weeks of usage",
+          "comment_id": "t1_mrfg5du",
+          "parent_id": "t3_1keugkj",
+          "author": "Lost_Salamander6317",
+          "depth": 0,
+          "pred_label": "polite",
+          "polite_probability": 0.8926282525062561,
+          "somewhat_polite_probability": 0.10562779009342194,
+          "neutral_probability": 0.0012845996534451842,
+          "impolite_probability": 0.00045933990622870624,
+          "class_probabilities": {
+            "polite": 0.8926282525062561,
+            "somewhat_polite": 0.10562779009342194,
+            "neutral": 0.0012845996534451842,
+            "impolite": 0.00045933990622870624
+          },
+          "text": "I love the interconnectivity with other Apple products, and the sound quality is great. But, I find them uncomfortable as heck and I cannot wear them for hours. They’re incredibly heavy. Also, the ear pads stunk after 2 months."
+        }
+      ],
+      "polite_count": 8,
+      "polite_rate": 0.2962962962962963,
+      "somewhat_polite_count": 0,
+      "somewhat_polite_rate": 0.0,
+      "neutral_count": 1,
+      "neutral_rate": 0.037037037037037035,
+      "impolite_count": 18,
+      "impolite_rate": 0.6666666666666666
+    },
+    {
+      "thread_id": "1gxxfnu",
+      "thread_title": "Unboxing pics - Airpod Max Midnight Blue with USB-C from Earhive",
+      "comment_count": 46,
+      "comments": [
+        {
+          "thread_id": "1gxxfnu",
+          "thread_title": "Unboxing pics - Airpod Max Midnight Blue with USB-C from Earhive",
+          "comment_id": "t1_lyka9xd",
+          "parent_id": "t3_1gxxfnu",
+          "author": "AutoModerator",
+          "depth": 0,
+          "pred_label": "polite",
+          "polite_probability": 0.9155182242393494,
+          "somewhat_polite_probability": 0.019589515402913094,
+          "neutral_probability": 0.06474392116069794,
+          "impolite_probability": 0.000148413484566845,
+          "class_probabilities": {
+            "polite": 0.9155182242393494,
+            "somewhat_polite": 0.019589515402913094,
+            "neutral": 0.06474392116069794,
+            "impolite": 0.000148413484566845
+          },
+          "text": "Make sure to join the [AirReps DISCORD](https://discord.gg/7G6kTHM) for the latest information, the fastest help, and more! *I am a bot, and this action was performed automatically. Please [contact the moderators of this subreddit](/message/compose/?to=/r/AirReps) if you have any questions or concerns.*"
+        },
+        {
+          "thread_id": "1gxxfnu",
+          "thread_title": "Unboxing pics - Airpod Max Midnight Blue with USB-C from Earhive",
+          "comment_id": "t1_lykabhz",
+          "parent_id": "t3_1gxxfnu",
+          "author": "marcEmarc1966",
+          "depth": 0,
+          "pred_label": "polite",
+          "polite_probability": 0.7416224479675293,
+          "somewhat_polite_probability": 0.09424816817045212,
+          "neutral_probability": 0.1625574231147766,
+          "impolite_probability": 0.001571875298395753,
+          "class_probabilities": {
+            "polite": 0.7416224479675293,
+            "somewhat_polite": 0.09424816817045212,
+            "neutral": 0.1625574231147766,
+            "impolite": 0.001571875298395753
+          },
+          "text": "This is the newest version of The Airpods Max with USB-C charging port in the midnight blue color from Earhive. The Airpods ship in their original packaging within a generic headphones box which I presume helps pass any inspections on route. I have never owned a retail pair so I am not here to review or compare any details but rather just share pics so you can see what you get for $110. There are 2 issues I have found so far. The first is that these as mentioned are USB-C but they ship with a lightning cable. The second issue although not a problem for me is that the box description has them as 'Space Grey' Time permitting I will try to do a full review but I will just add that these feel in hand very premium quaity and are most definately value for money."
+        },
+        {
+          "thread_id": "1gxxfnu",
+          "thread_title": "Unboxing pics - Airpod Max Midnight Blue with USB-C from Earhive",
+          "comment_id": "t1_m3b3p8k",
+          "parent_id": "t1_lykabhz",
+          "author": "eyeeatdogs",
+          "depth": 1,
+          "pred_label": "neutral",
+          "polite_probability": 0.003526409389451146,
+          "somewhat_polite_probability": 0.0015831716591492295,
+          "neutral_probability": 0.9944267272949219,
+          "impolite_probability": 0.0004637767851818353,
+          "class_probabilities": {
+            "polite": 0.003526409389451146,
+            "somewhat_polite": 0.0015831716591492295,
+            "neutral": 0.9944267272949219,
+            "impolite": 0.0004637767851818353
+          },
+          "text": "Have you had any issues since receiving them?"
+        },
+        {
+          "thread_id": "1gxxfnu",
+          "thread_title": "Unboxing pics - Airpod Max Midnight Blue with USB-C from Earhive",
+          "comment_id": "t1_m3bxjqr",
+          "parent_id": "t1_m3b3p8k",
+          "author": "marcEmarc1966",
+          "depth": 2,
+          "pred_label": "polite",
+          "polite_probability": 0.9838060140609741,
+          "somewhat_polite_probability": 0.0015129175735637546,
+          "neutral_probability": 0.003991098143160343,
+          "impolite_probability": 0.010689969174563885,
+          "class_probabilities": {
+            "polite": 0.9838060140609741,
+            "somewhat_polite": 0.0015129175735637546,
+            "neutral": 0.003991098143160343,
+            "impolite": 0.010689969174563885
+          },
+          "text": "None at all. Very happy with them."
+        },
+        {
+          "thread_id": "1gxxfnu",
+          "thread_title": "Unboxing pics - Airpod Max Midnight Blue with USB-C from Earhive",
+          "comment_id": "t1_m41bysg",
+          "parent_id": "t1_m3bxjqr",
+          "author": "eyeeatdogs",
+          "depth": 3,
+          "pred_label": "polite",
+          "polite_probability": 0.9884678721427917,
+          "somewhat_polite_probability": 0.010182737372815609,
+          "neutral_probability": 0.0012518877629190683,
+          "impolite_probability": 9.754249913385138e-05,
+          "class_probabilities": {
+            "polite": 0.9884678721427917,
+            "somewhat_polite": 0.010182737372815609,
+            "neutral": 0.0012518877629190683,
+            "impolite": 9.754249913385138e-05
+          },
+          "text": "Cool thanks for letting me know mine arrive soon"
+        },
+        {
+          "thread_id": "1gxxfnu",
+          "thread_title": "Unboxing pics - Airpod Max Midnight Blue with USB-C from Earhive",
+          "comment_id": "t1_meffr4f",
+          "parent_id": "t1_m41bysg",
+          "author": "CreamyBeaner",
+          "depth": 4,
+          "pred_label": "neutral",
+          "polite_probability": 0.3603602945804596,
+          "somewhat_polite_probability": 0.013215271756052971,
+          "neutral_probability": 0.5617093443870544,
+          "impolite_probability": 0.06471516191959381,
+          "class_probabilities": {
+            "polite": 0.3603602945804596,
+            "somewhat_polite": 0.013215271756052971,
+            "neutral": 0.5617093443870544,
+            "impolite": 0.06471516191959381
+          },
+          "text": "how is the noise cancelling, transparency, audio, and overall quality"
+        },
+        {
+          "thread_id": "1gxxfnu",
+          "thread_title": "Unboxing pics - Airpod Max Midnight Blue with USB-C from Earhive",
+          "comment_id": "t1_lypz580",
+          "parent_id": "t3_1gxxfnu",
+          "author": "DOMO1995",
+          "depth": 0,
+          "pred_label": "polite",
+          "polite_probability": 0.528925895690918,
+          "somewhat_polite_probability": 0.03995078429579735,
+          "neutral_probability": 0.42664802074432373,
+          "impolite_probability": 0.004475336521863937,
+          "class_probabilities": {
+            "polite": 0.528925895690918,
+            "somewhat_polite": 0.03995078429579735,
+            "neutral": 0.42664802074432373,
+            "impolite": 0.004475336521863937
+          },
+          "text": "Is the sound good and do things like anc and spatial work well?"
+        },
+        {
+          "thread_id": "1gxxfnu",
+          "thread_title": "Unboxing pics - Airpod Max Midnight Blue with USB-C from Earhive",
+          "comment_id": "t1_lylvtpu",
+          "parent_id": "t3_1gxxfnu",
+          "author": "mcherry82",
+          "depth": 0,
+          "pred_label": "impolite",
+          "polite_probability": 7.439181354129687e-05,
+          "somewhat_polite_probability": 0.000661368714645505,
+          "neutral_probability": 9.83860736596398e-05,
+          "impolite_probability": 0.9991657733917236,
+          "class_probabilities": {
+            "polite": 7.439181354129687e-05,
+            "somewhat_polite": 0.000661368714645505,
+            "neutral": 9.83860736596398e-05,
+            "impolite": 0.9991657733917236
+          },
+          "text": "Maybe this is my issue. I could not get them to charge with the lightening cable. It fits in kinda lose but no charge"
+        },
+        {
+          "thread_id": "1gxxfnu",
+          "thread_title": "Unboxing pics - Airpod Max Midnight Blue with USB-C from Earhive",
+          "comment_id": "t1_lyly25r",
+          "parent_id": "t1_lylvtpu",
+          "author": "yuraokay",
+          "depth": 1,
+          "pred_label": "impolite",
+          "polite_probability": 0.00012735958443954587,
+          "somewhat_polite_probability": 0.00010365513298893347,
+          "neutral_probability": 0.0009191270801238716,
+          "impolite_probability": 0.9988497495651245,
+          "class_probabilities": {
+            "polite": 0.00012735958443954587,
+            "somewhat_polite": 0.00010365513298893347,
+            "neutral": 0.0009191270801238716,
+            "impolite": 0.9988497495651245
+          },
+          "text": "You can’t charge a USB-C port with a lightning cable bro"
+        },
+        {
+          "thread_id": "1gxxfnu",
+          "thread_title": "Unboxing pics - Airpod Max Midnight Blue with USB-C from Earhive",
+          "comment_id": "t1_lylydaq",
+          "parent_id": "t1_lyly25r",
+          "author": "mcherry82",
+          "depth": 2,
+          "pred_label": "impolite",
+          "polite_probability": 0.0029673927929252386,
+          "somewhat_polite_probability": 0.2562953531742096,
+          "neutral_probability": 0.3424186706542969,
+          "impolite_probability": 0.39831864833831787,
+          "class_probabilities": {
+            "polite": 0.0029673927929252386,
+            "somewhat_polite": 0.2562953531742096,
+            "neutral": 0.3424186706542969,
+            "impolite": 0.39831864833831787
+          },
+          "text": "I noticed. But usb-c doesn’t fit. I found another charger that did but still not showing it’s charging on my phone. So idk"
+        },
+        {
+          "thread_id": "1gxxfnu",
+          "thread_title": "Unboxing pics - Airpod Max Midnight Blue with USB-C from Earhive",
+          "comment_id": "t1_lyncc9q",
+          "parent_id": "t1_lylydaq",
+          "author": "yuraokay",
+          "depth": 3,
+          "pred_label": "impolite",
+          "polite_probability": 0.004091894254088402,
+          "somewhat_polite_probability": 0.00771587947383523,
+          "neutral_probability": 0.005240606609731913,
+          "impolite_probability": 0.9829517006874084,
+          "class_probabilities": {
+            "polite": 0.004091894254088402,
+            "somewhat_polite": 0.00771587947383523,
+            "neutral": 0.005240606609731913,
+            "impolite": 0.9829517006874084
+          },
+          "text": "So you can’t charge them at all?"
+        },
+        {
+          "thread_id": "1gxxfnu",
+          "thread_title": "Unboxing pics - Airpod Max Midnight Blue with USB-C from Earhive",
+          "comment_id": "t1_lyngla6",
+          "parent_id": "t1_lyncc9q",
+          "author": "mcherry82",
+          "depth": 4,
+          "pred_label": "impolite",
+          "polite_probability": 0.0008987656910903752,
+          "somewhat_polite_probability": 0.0053665065206587315,
+          "neutral_probability": 0.00032568557071499527,
+          "impolite_probability": 0.9934090375900269,
+          "class_probabilities": {
+            "polite": 0.0008987656910903752,
+            "somewhat_polite": 0.0053665065206587315,
+            "neutral": 0.00032568557071499527,
+            "impolite": 0.9934090375900269
+          },
+          "text": "Nope. A whole dub. I let them die completely and then placed them on the lighting charger again and they actually came on so it’s doing something I guess. It’s on 5% I’ll just leave them on there and hope for the best."
+        },
+        {
+          "thread_id": "1gxxfnu",
+          "thread_title": "Unboxing pics - Airpod Max Midnight Blue with USB-C from Earhive",
+          "comment_id": "t1_lyp7vil",
+          "parent_id": "t1_lyngla6",
+          "author": "Mr_wockUK",
+          "depth": 5,
+          "pred_label": "neutral",
+          "polite_probability": 0.3131060004234314,
+          "somewhat_polite_probability": 0.0756257176399231,
+          "neutral_probability": 0.5294144153594971,
+          "impolite_probability": 0.08185391873121262,
+          "class_probabilities": {
+            "polite": 0.3131060004234314,
+            "somewhat_polite": 0.0756257176399231,
+            "neutral": 0.5294144153594971,
+            "impolite": 0.08185391873121262
+          },
+          "text": "Go buy a proper charger for them."
+        },
+        {
+          "thread_id": "1gxxfnu",
+          "thread_title": "Unboxing pics - Airpod Max Midnight Blue with USB-C from Earhive",
+          "comment_id": "t1_lyp80cd",
+          "parent_id": "t1_lyp7vil",
+          "author": "mcherry82",
+          "depth": 6,
+          "pred_label": "impolite",
+          "polite_probability": 0.21909314393997192,
+          "somewhat_polite_probability": 0.05300552025437355,
+          "neutral_probability": 0.0021999257151037455,
+          "impolite_probability": 0.7257014513015747,
+          "class_probabilities": {
+            "polite": 0.21909314393997192,
+            "somewhat_polite": 0.05300552025437355,
+            "neutral": 0.0021999257151037455,
+            "impolite": 0.7257014513015747
+          },
+          "text": "I have plenty proper chargers. Hardware issue not a lack of charger issue. Appreciate your input though, Wock. I fixed it and am now charged up and ready to go"
+        },
+        {
+          "thread_id": "1gxxfnu",
+          "thread_title": "Unboxing pics - Airpod Max Midnight Blue with USB-C from Earhive",
+          "comment_id": "t1_lyp87c8",
+          "parent_id": "t1_lyp80cd",
+          "author": "Mr_wockUK",
+          "depth": 7,
+          "pred_label": "impolite",
+          "polite_probability": 3.315735739306547e-05,
+          "somewhat_polite_probability": 5.309917469276115e-05,
+          "neutral_probability": 2.699690048757475e-05,
+          "impolite_probability": 0.9998867511749268,
+          "class_probabilities": {
+            "polite": 3.315735739306547e-05,
+            "somewhat_polite": 5.309917469276115e-05,
+            "neutral": 2.699690048757475e-05,
+            "impolite": 0.9998867511749268
+          },
+          "text": "Misread, my mistake. Didn’t know it they didn’t show on your phone… my mistake it’s late and am tired haha"
+        },
+        {
+          "thread_id": "1gxxfnu",
+          "thread_title": "Unboxing pics - Airpod Max Midnight Blue with USB-C from Earhive",
+          "comment_id": "t1_lyp8b1k",
+          "parent_id": "t1_lyp87c8",
+          "author": "mcherry82",
+          "depth": 8,
+          "pred_label": "polite",
+          "polite_probability": 0.9985408782958984,
+          "somewhat_polite_probability": 0.0007829582900740206,
+          "neutral_probability": 0.00015606233500875533,
+          "impolite_probability": 0.0005201398162171245,
+          "class_probabilities": {
+            "polite": 0.9985408782958984,
+            "somewhat_polite": 0.0007829582900740206,
+            "neutral": 0.00015606233500875533,
+            "impolite": 0.0005201398162171245
+          },
+          "text": "All good! I’m just happy I could get them to work. For them to be reps they are outstanding."
+        },
+        {
+          "thread_id": "1gxxfnu",
+          "thread_title": "Unboxing pics - Airpod Max Midnight Blue with USB-C from Earhive",
+          "comment_id": "t1_lyp8dsj",
+          "parent_id": "t1_lyp8b1k",
+          "author": "Mr_wockUK",
+          "depth": 9,
+          "pred_label": "impolite",
+          "polite_probability": 0.039255451411008835,
+          "somewhat_polite_probability": 0.02178085595369339,
+          "neutral_probability": 0.03998450189828873,
+          "impolite_probability": 0.898979127407074,
+          "class_probabilities": {
+            "polite": 0.039255451411008835,
+            "somewhat_polite": 0.02178085595369339,
+            "neutral": 0.03998450189828873,
+            "impolite": 0.898979127407074
+          },
+          "text": "Yea they’re mint send me some photos and videos of them. Not seen them in action yet"
+        },
+        {
+          "thread_id": "1gxxfnu",
+          "thread_title": "Unboxing pics - Airpod Max Midnight Blue with USB-C from Earhive",
+          "comment_id": "t1_lysm31w",
+          "parent_id": "t3_1gxxfnu",
+          "author": "EmbarrassedMix9349",
+          "depth": 0,
+          "pred_label": "neutral",
+          "polite_probability": 0.001167592708952725,
+          "somewhat_polite_probability": 0.4152929484844208,
+          "neutral_probability": 0.5737771987915039,
+          "impolite_probability": 0.009762215428054333,
+          "class_probabilities": {
+            "polite": 0.001167592708952725,
+            "somewhat_polite": 0.4152929484844208,
+            "neutral": 0.5737771987915039,
+            "impolite": 0.009762215428054333
+          },
+          "text": "I’ve heard the usb c doesn’t charge"
+        },
+        {
+          "thread_id": "1gxxfnu",
+          "thread_title": "Unboxing pics - Airpod Max Midnight Blue with USB-C from Earhive",
+          "comment_id": "t1_lyst0cp",
+          "parent_id": "t1_lysm31w",
+          "author": "marcEmarc1966",
+          "depth": 1,
+          "pred_label": "impolite",
+          "polite_probability": 6.444990867748857e-05,
+          "somewhat_polite_probability": 0.00014284159988164902,
+          "neutral_probability": 8.555620297556743e-05,
+          "impolite_probability": 0.999707043170929,
+          "class_probabilities": {
+            "polite": 6.444990867748857e-05,
+            "somewhat_polite": 0.00014284159988164902,
+            "neutral": 8.555620297556743e-05,
+            "impolite": 0.999707043170929
+          },
+          "text": "You heard wrong."
+        },
+        {
+          "thread_id": "1gxxfnu",
+          "thread_title": "Unboxing pics - Airpod Max Midnight Blue with USB-C from Earhive",
+          "comment_id": "t1_lzltkkf",
+          "parent_id": "t1_lyst0cp",
+          "author": "EmbarrassedMix9349",
+          "depth": 2,
+          "pred_label": "impolite",
+          "polite_probability": 0.002296298975124955,
+          "somewhat_polite_probability": 0.0039701908826828,
+          "neutral_probability": 0.009336205199360847,
+          "impolite_probability": 0.9843973517417908,
+          "class_probabilities": {
+            "polite": 0.002296298975124955,
+            "somewhat_polite": 0.0039701908826828,
+            "neutral": 0.009336205199360847,
+            "impolite": 0.9843973517417908
+          },
+          "text": "There’s threads in here that say otherwise"
+        },
+        {
+          "thread_id": "1gxxfnu",
+          "thread_title": "Unboxing pics - Airpod Max Midnight Blue with USB-C from Earhive",
+          "comment_id": "t1_lzm1ao7",
+          "parent_id": "t1_lzltkkf",
+          "author": "marcEmarc1966",
+          "depth": 3,
+          "pred_label": "impolite",
+          "polite_probability": 0.0007565061678178608,
+          "somewhat_polite_probability": 0.0023164236918091774,
+          "neutral_probability": 0.00588222173973918,
+          "impolite_probability": 0.9910448789596558,
+          "class_probabilities": {
+            "polite": 0.0007565061678178608,
+            "somewhat_polite": 0.0023164236918091774,
+            "neutral": 0.00588222173973918,
+            "impolite": 0.9910448789596558
+          },
+          "text": "Mine charges just fine."
+        },
+        {
+          "thread_id": "1gxxfnu",
+          "thread_title": "Unboxing pics - Airpod Max Midnight Blue with USB-C from Earhive",
+          "comment_id": "t1_lyst0yz",
+          "parent_id": "t3_1gxxfnu",
+          "author": "gasmanjay",
+          "depth": 0,
+          "pred_label": "impolite",
+          "polite_probability": 0.0173967182636261,
+          "somewhat_polite_probability": 0.024401050060987473,
+          "neutral_probability": 0.032073214650154114,
+          "impolite_probability": 0.9261289834976196,
+          "class_probabilities": {
+            "polite": 0.0173967182636261,
+            "somewhat_polite": 0.024401050060987473,
+            "neutral": 0.032073214650154114,
+            "impolite": 0.9261289834976196
+          },
+          "text": "That’s a lightening cable"
+        },
+        {
+          "thread_id": "1gxxfnu",
+          "thread_title": "Unboxing pics - Airpod Max Midnight Blue with USB-C from Earhive",
+          "comment_id": "t1_lystj42",
+          "parent_id": "t1_lyst0yz",
+          "author": "marcEmarc1966",
+          "depth": 1,
+          "pred_label": "impolite",
+          "polite_probability": 0.0010434126015752554,
+          "somewhat_polite_probability": 0.0004644594737328589,
+          "neutral_probability": 0.005685845855623484,
+          "impolite_probability": 0.9928063154220581,
+          "class_probabilities": {
+            "polite": 0.0010434126015752554,
+            "somewhat_polite": 0.0004644594737328589,
+            "neutral": 0.005685845855623484,
+            "impolite": 0.9928063154220581
+          },
+          "text": "Correct. Shipped by mistake."
+        },
+        {
+          "thread_id": "1gxxfnu",
+          "thread_title": "Unboxing pics - Airpod Max Midnight Blue with USB-C from Earhive",
+          "comment_id": "t1_lyxq4gi",
+          "parent_id": "t3_1gxxfnu",
+          "author": "J0nGarrett",
+          "depth": 0,
+          "pred_label": "neutral",
+          "polite_probability": 0.011703278869390488,
+          "somewhat_polite_probability": 0.0022157595958560705,
+          "neutral_probability": 0.9845097661018372,
+          "impolite_probability": 0.00157123280223459,
+          "class_probabilities": {
+            "polite": 0.011703278869390488,
+            "somewhat_polite": 0.0022157595958560705,
+            "neutral": 0.9845097661018372,
+            "impolite": 0.00157123280223459
+          },
+          "text": "Link to where you purchased them."
+        },
+        {
+          "thread_id": "1gxxfnu",
+          "thread_title": "Unboxing pics - Airpod Max Midnight Blue with USB-C from Earhive",
+          "comment_id": "t1_lyxrtag",
+          "parent_id": "t1_lyxqd6w",
+          "author": "J0nGarrett",
+          "depth": 2,
+          "pred_label": "impolite",
+          "polite_probability": 7.19964227755554e-05,
+          "somewhat_polite_probability": 0.00048827030695974827,
+          "neutral_probability": 9.128163947025314e-05,
+          "impolite_probability": 0.9993483424186707,
+          "class_probabilities": {
+            "polite": 7.19964227755554e-05,
+            "somewhat_polite": 0.00048827030695974827,
+            "neutral": 9.128163947025314e-05,
+            "impolite": 0.9993483424186707
+          },
+          "text": "Thanks, I was all set to order but I'm not paying in crypto. Not taking that risk."
+        },
+        {
+          "thread_id": "1gxxfnu",
+          "thread_title": "Unboxing pics - Airpod Max Midnight Blue with USB-C from Earhive",
+          "comment_id": "t1_lyxs269",
+          "parent_id": "t1_lyxrtag",
+          "author": "marcEmarc1966",
+          "depth": 3,
+          "pred_label": "neutral",
+          "polite_probability": 0.00022895497386343777,
+          "somewhat_polite_probability": 0.00038979624514468014,
+          "neutral_probability": 0.9982805252075195,
+          "impolite_probability": 0.0011007055873051286,
+          "class_probabilities": {
+            "polite": 0.00022895497386343777,
+            "somewhat_polite": 0.00038979624514468014,
+            "neutral": 0.9982805252075195,
+            "impolite": 0.0011007055873051286
+          },
+          "text": "Is that the only payment method available?"
+        },
+        {
+          "thread_id": "1gxxfnu",
+          "thread_title": "Unboxing pics - Airpod Max Midnight Blue with USB-C from Earhive",
+          "comment_id": "t1_lyxtm57",
+          "parent_id": "t1_lyxs269",
+          "author": "J0nGarrett",
+          "depth": 4,
+          "pred_label": "impolite",
+          "polite_probability": 0.0166228748857975,
+          "somewhat_polite_probability": 0.03400329872965813,
+          "neutral_probability": 0.06982976198196411,
+          "impolite_probability": 0.8795440196990967,
+          "class_probabilities": {
+            "polite": 0.0166228748857975,
+            "somewhat_polite": 0.03400329872965813,
+            "neutral": 0.06982976198196411,
+            "impolite": 0.8795440196990967
+          },
+          "text": "That's all they have yes. Last time I purchased was with my credit card that way I had recourse in case they didn't ship."
+        },
+        {
+          "thread_id": "1gxxfnu",
+          "thread_title": "Unboxing pics - Airpod Max Midnight Blue with USB-C from Earhive",
+          "comment_id": "t1_lyy6joz",
+          "parent_id": "t1_lyxtm57",
+          "author": "marcEmarc1966",
+          "depth": 5,
+          "pred_label": "polite",
+          "polite_probability": 0.9951351284980774,
+          "somewhat_polite_probability": 0.0021380723919719458,
+          "neutral_probability": 0.0005084259901195765,
+          "impolite_probability": 0.00221836706623435,
+          "class_probabilities": {
+            "polite": 0.9951351284980774,
+            "somewhat_polite": 0.0021380723919719458,
+            "neutral": 0.0005084259901195765,
+            "impolite": 0.00221836706623435
+          },
+          "text": "I thought CC was as option. I personally use wise. This was my 6th purchase. Been happy with them all."
+        },
+        {
+          "thread_id": "1gxxfnu",
+          "thread_title": "Unboxing pics - Airpod Max Midnight Blue with USB-C from Earhive",
+          "comment_id": "t1_m93md0f",
+          "parent_id": "t1_lyxtm57",
+          "author": "Amstboyz",
+          "depth": 5,
+          "pred_label": "impolite",
+          "polite_probability": 3.045024823222775e-05,
+          "somewhat_polite_probability": 0.00010141490929527208,
+          "neutral_probability": 7.643417484359816e-05,
+          "impolite_probability": 0.99979168176651,
+          "class_probabilities": {
+            "polite": 3.045024823222775e-05,
+            "somewhat_polite": 0.00010141490929527208,
+            "neutral": 7.643417484359816e-05,
+            "impolite": 0.99979168176651
+          },
+          "text": "crypto or paypal you wont risk anyway if the seller is legit. earhive is legit just bought a month ago."
+        },
+        {
+          "thread_id": "1gxxfnu",
+          "thread_title": "Unboxing pics - Airpod Max Midnight Blue with USB-C from Earhive",
+          "comment_id": "t1_lyyus7t",
+          "parent_id": "t1_lyxrtag",
+          "author": "Lucky_Newt_6495",
+          "depth": 3,
+          "pred_label": "impolite",
+          "polite_probability": 6.515928544104099e-05,
+          "somewhat_polite_probability": 0.00015312599134631455,
+          "neutral_probability": 0.0001470348797738552,
+          "impolite_probability": 0.9996346235275269,
+          "class_probabilities": {
+            "polite": 6.515928544104099e-05,
+            "somewhat_polite": 0.00015312599134631455,
+            "neutral": 0.0001470348797738552,
+            "impolite": 0.9996346235275269
+          },
+          "text": "you can just buy the same thing from hicity he has more payment options"
+        },
+        {
+          "thread_id": "1gxxfnu",
+          "thread_title": "Unboxing pics - Airpod Max Midnight Blue with USB-C from Earhive",
+          "comment_id": "t1_lzbfnbt",
+          "parent_id": "t3_1gxxfnu",
+          "author": "disemb",
+          "depth": 0,
+          "pred_label": "neutral",
+          "polite_probability": 0.015087869018316269,
+          "somewhat_polite_probability": 0.002901965519413352,
+          "neutral_probability": 0.9569470286369324,
+          "impolite_probability": 0.025063255801796913,
+          "class_probabilities": {
+            "polite": 0.015087869018316269,
+            "somewhat_polite": 0.002901965519413352,
+            "neutral": 0.9569470286369324,
+            "impolite": 0.025063255801796913
+          },
+          "text": "how long they take to arrive?"
+        },
+        {
+          "thread_id": "1gxxfnu",
+          "thread_title": "Unboxing pics - Airpod Max Midnight Blue with USB-C from Earhive",
+          "comment_id": "t1_lzyotzr",
+          "parent_id": "t1_lzbfnbt",
+          "author": "marcEmarc1966",
+          "depth": 1,
+          "pred_label": "neutral",
+          "polite_probability": 0.0051957531832158566,
+          "somewhat_polite_probability": 0.005455557722598314,
+          "neutral_probability": 0.9759482741355896,
+          "impolite_probability": 0.013400419615209103,
+          "class_probabilities": {
+            "polite": 0.0051957531832158566,
+            "somewhat_polite": 0.005455557722598314,
+            "neutral": 0.9759482741355896,
+            "impolite": 0.013400419615209103
+          },
+          "text": "11 days."
+        },
+        {
+          "thread_id": "1gxxfnu",
+          "thread_title": "Unboxing pics - Airpod Max Midnight Blue with USB-C from Earhive",
+          "comment_id": "t1_m04h6dc",
+          "parent_id": "t3_1gxxfnu",
+          "author": "Beginning_Layer_7379",
+          "depth": 0,
+          "pred_label": "neutral",
+          "polite_probability": 0.02476932853460312,
+          "somewhat_polite_probability": 0.01136969868093729,
+          "neutral_probability": 0.9517167806625366,
+          "impolite_probability": 0.012144251726567745,
+          "class_probabilities": {
+            "polite": 0.02476932853460312,
+            "somewhat_polite": 0.01136969868093729,
+            "neutral": 0.9517167806625366,
+            "impolite": 0.012144251726567745
+          },
+          "text": "Is the shell metal ?"
+        },
+        {
+          "thread_id": "1gxxfnu",
+          "thread_title": "Unboxing pics - Airpod Max Midnight Blue with USB-C from Earhive",
+          "comment_id": "t1_m9ui5qx",
+          "parent_id": "t3_1gxxfnu",
+          "author": "SearchRoutine3622",
+          "depth": 0,
+          "pred_label": "neutral",
+          "polite_probability": 0.019540492445230484,
+          "somewhat_polite_probability": 0.005790390074253082,
+          "neutral_probability": 0.8607801198959351,
+          "impolite_probability": 0.11388898640871048,
+          "class_probabilities": {
+            "polite": 0.019540492445230484,
+            "somewhat_polite": 0.005790390074253082,
+            "neutral": 0.8607801198959351,
+            "impolite": 0.11388898640871048
+          },
+          "text": "Is the headband removable?"
+        },
+        {
+          "thread_id": "1gxxfnu",
+          "thread_title": "Unboxing pics - Airpod Max Midnight Blue with USB-C from Earhive",
+          "comment_id": "t1_m9ujlru",
+          "parent_id": "t1_m9ui5qx",
+          "author": "marcEmarc1966",
+          "depth": 1,
+          "pred_label": "impolite",
+          "polite_probability": 0.0020511371549218893,
+          "somewhat_polite_probability": 0.009469691663980484,
+          "neutral_probability": 0.0007536728517152369,
+          "impolite_probability": 0.9877254366874695,
+          "class_probabilities": {
+            "polite": 0.0020511371549218893,
+            "somewhat_polite": 0.009469691663980484,
+            "neutral": 0.0007536728517152369,
+            "impolite": 0.9877254366874695
+          },
+          "text": "Sorry but I don't know and I gave this pair away as a gift."
+        },
+        {
+          "thread_id": "1gxxfnu",
+          "thread_title": "Unboxing pics - Airpod Max Midnight Blue with USB-C from Earhive",
+          "comment_id": "t1_m9uknoh",
+          "parent_id": "t1_m9ujlru",
+          "author": "SearchRoutine3622",
+          "depth": 2,
+          "pred_label": "impolite",
+          "polite_probability": 0.04081578552722931,
+          "somewhat_polite_probability": 0.35276979207992554,
+          "neutral_probability": 0.06826400011777878,
+          "impolite_probability": 0.5381503701210022,
+          "class_probabilities": {
+            "polite": 0.04081578552722931,
+            "somewhat_polite": 0.35276979207992554,
+            "neutral": 0.06826400011777878,
+            "impolite": 0.5381503701210022
+          },
+          "text": "Aw okay thanks anyway"
+        },
+        {
+          "thread_id": "1gxxfnu",
+          "thread_title": "Unboxing pics - Airpod Max Midnight Blue with USB-C from Earhive",
+          "comment_id": "t1_mhckjq2",
+          "parent_id": "t3_1gxxfnu",
+          "author": "Mission-Republic-611",
+          "depth": 0,
+          "pred_label": "impolite",
+          "polite_probability": 0.012090424075722694,
+          "somewhat_polite_probability": 0.0238853357732296,
+          "neutral_probability": 0.13862301409244537,
+          "impolite_probability": 0.825401246547699,
+          "class_probabilities": {
+            "polite": 0.012090424075722694,
+            "somewhat_polite": 0.0238853357732296,
+            "neutral": 0.13862301409244537,
+            "impolite": 0.825401246547699
+          },
+          "text": "I was told the boxes are suppose to say 2020 not 2024"
+        },
+        {
+          "thread_id": "1gxxfnu",
+          "thread_title": "Unboxing pics - Airpod Max Midnight Blue with USB-C from Earhive",
+          "comment_id": "t1_mlf9o6r",
+          "parent_id": "t1_mhckjq2",
+          "author": "cybershawtyyy",
+          "depth": 1,
+          "pred_label": "somewhat_polite",
+          "polite_probability": 0.009692941792309284,
+          "somewhat_polite_probability": 0.8435593247413635,
+          "neutral_probability": 0.0658705085515976,
+          "impolite_probability": 0.0808771476149559,
+          "class_probabilities": {
+            "polite": 0.009692941792309284,
+            "somewhat_polite": 0.8435593247413635,
+            "neutral": 0.0658705085515976,
+            "impolite": 0.0808771476149559
+          },
+          "text": "I think thats for lightening not usb c"
+        },
+        {
+          "thread_id": "1gxxfnu",
+          "thread_title": "Unboxing pics - Airpod Max Midnight Blue with USB-C from Earhive",
+          "comment_id": "t1_lyn2jrg",
+          "parent_id": "t3_1gxxfnu",
+          "author": "[deleted]",
+          "depth": 0,
+          "pred_label": "impolite",
+          "polite_probability": 9.776664228411391e-05,
+          "somewhat_polite_probability": 0.0007236067322082818,
+          "neutral_probability": 0.00010589801968308166,
+          "impolite_probability": 0.9990726709365845,
+          "class_probabilities": {
+            "polite": 9.776664228411391e-05,
+            "somewhat_polite": 0.0007236067322082818,
+            "neutral": 0.00010589801968308166,
+            "impolite": 0.9990726709365845
+          },
+          "text": "What’s the point of these to pretend to people you’re not broke (but you are because you’re buying rep electronics) they’ll sound like shit but you’ll feel cool wearing them?"
+        },
+        {
+          "thread_id": "1gxxfnu",
+          "thread_title": "Unboxing pics - Airpod Max Midnight Blue with USB-C from Earhive",
+          "comment_id": "t1_lyrlvlz",
+          "parent_id": "t1_lyn2jrg",
+          "author": "SheaLemur",
+          "depth": 1,
+          "pred_label": "polite",
+          "polite_probability": 0.9528844952583313,
+          "somewhat_polite_probability": 0.04286883398890495,
+          "neutral_probability": 0.0037713951896876097,
+          "impolite_probability": 0.0004752659588120878,
+          "class_probabilities": {
+            "polite": 0.9528844952583313,
+            "somewhat_polite": 0.04286883398890495,
+            "neutral": 0.0037713951896876097,
+            "impolite": 0.0004752659588120878
+          },
+          "text": "Not sure what you're on about. I've been very happy with my AirPod 2 reps that I got a few years back. Couldn't care less if people thought they were real. Quality sounds great to me, and they work"
+        },
+        {
+          "thread_id": "1gxxfnu",
+          "thread_title": "Unboxing pics - Airpod Max Midnight Blue with USB-C from Earhive",
+          "comment_id": "t1_lyqi0n5",
+          "parent_id": "t1_lyn2jrg",
+          "author": "MVP_Troll",
+          "depth": 1,
+          "pred_label": "impolite",
+          "polite_probability": 0.10675077140331268,
+          "somewhat_polite_probability": 0.14499643445014954,
+          "neutral_probability": 0.017112044617533684,
+          "impolite_probability": 0.7311407327651978,
+          "class_probabilities": {
+            "polite": 0.10675077140331268,
+            "somewhat_polite": 0.14499643445014954,
+            "neutral": 0.017112044617533684,
+            "impolite": 0.7311407327651978
+          },
+          "text": "For earbuds I have to disagree since there's better earbuds at the price range of apple, u paying for ios integration rather than actual sound experience. And Max is overpriced be it retail or reps so I would choose to go for other over the head, and reps for airpods 2 airpods 3 airpods 4. pro 1 pro 2 can argue for anc - if not important factor then rep will do."
+        },
+        {
+          "thread_id": "1gxxfnu",
+          "thread_title": "Unboxing pics - Airpod Max Midnight Blue with USB-C from Earhive",
+          "comment_id": "t1_lyxqwus",
+          "parent_id": "t1_lyn2jrg",
+          "author": "J0nGarrett",
+          "depth": 1,
+          "pred_label": "impolite",
+          "polite_probability": 1.584313031344209e-05,
+          "somewhat_polite_probability": 6.674254109384492e-05,
+          "neutral_probability": 5.486632289830595e-05,
+          "impolite_probability": 0.999862551689148,
+          "class_probabilities": {
+            "polite": 1.584313031344209e-05,
+            "somewhat_polite": 6.674254109384492e-05,
+            "neutral": 5.486632289830595e-05,
+            "impolite": 0.999862551689148
+          },
+          "text": "The point is that spending $600 for a pair of headphones is stupid."
+        },
+        {
+          "thread_id": "1gxxfnu",
+          "thread_title": "Unboxing pics - Airpod Max Midnight Blue with USB-C from Earhive",
+          "comment_id": "t1_lz6rbd1",
+          "parent_id": "t1_lyxqwus",
+          "author": "[deleted]",
+          "depth": 2,
+          "pred_label": "impolite",
+          "polite_probability": 0.0011619727592915297,
+          "somewhat_polite_probability": 0.00256826588883996,
+          "neutral_probability": 0.0015967132057994604,
+          "impolite_probability": 0.9946730732917786,
+          "class_probabilities": {
+            "polite": 0.0011619727592915297,
+            "somewhat_polite": 0.00256826588883996,
+            "neutral": 0.0015967132057994604,
+            "impolite": 0.9946730732917786
+          },
+          "text": "But pretending you did to play the part isn’t? Clown answer 😂"
+        },
+        {
+          "thread_id": "1gxxfnu",
+          "thread_title": "Unboxing pics - Airpod Max Midnight Blue with USB-C from Earhive",
+          "comment_id": "t1_lz88oim",
+          "parent_id": "t1_lz6rbd1",
+          "author": "J0nGarrett",
+          "depth": 3,
+          "pred_label": "somewhat_polite",
+          "polite_probability": 0.06934812664985657,
+          "somewhat_polite_probability": 0.6773247718811035,
+          "neutral_probability": 0.09116712957620621,
+          "impolite_probability": 0.16215994954109192,
+          "class_probabilities": {
+            "polite": 0.06934812664985657,
+            "somewhat_polite": 0.6773247718811035,
+            "neutral": 0.09116712957620621,
+            "impolite": 0.16215994954109192
+          },
+          "text": "Bru if I want a pair of authentic headphones I could buy several pairs of them. I just have better things I can do with $600."
+        },
+        {
+          "thread_id": "1gxxfnu",
+          "thread_title": "Unboxing pics - Airpod Max Midnight Blue with USB-C from Earhive",
+          "comment_id": "t1_lzl9qoe",
+          "parent_id": "t1_lz88oim",
+          "author": "[deleted]",
+          "depth": 4,
+          "pred_label": "somewhat_polite",
+          "polite_probability": 0.026484420523047447,
+          "somewhat_polite_probability": 0.834319531917572,
+          "neutral_probability": 0.04368701949715614,
+          "impolite_probability": 0.09550903737545013,
+          "class_probabilities": {
+            "polite": 0.026484420523047447,
+            "somewhat_polite": 0.834319531917572,
+            "neutral": 0.04368701949715614,
+            "impolite": 0.09550903737545013
+          },
+          "text": "Yeah you could 😂😂😂😂"
+        },
+        {
+          "thread_id": "1gxxfnu",
+          "thread_title": "Unboxing pics - Airpod Max Midnight Blue with USB-C from Earhive",
+          "comment_id": "t1_m4mczm8",
+          "parent_id": "t1_lzlc6iw",
+          "author": "AirReps-ModTeam",
+          "depth": 6,
+          "pred_label": "neutral",
+          "polite_probability": 0.0009368873434141278,
+          "somewhat_polite_probability": 0.0003620106144808233,
+          "neutral_probability": 0.9979470372200012,
+          "impolite_probability": 0.0007540863007307053,
+          "class_probabilities": {
+            "polite": 0.0009368873434141278,
+            "somewhat_polite": 0.0003620106144808233,
+            "neutral": 0.9979470372200012,
+            "impolite": 0.0007540863007307053
+          },
+          "text": "Your post in r/AirReps has been removed due to a broken rule. If you feel like this is incorrect, please let the staff team know through Modmail. Have a good day, The AirReps Staff Team."
+        }
+      ],
+      "polite_count": 8,
+      "polite_rate": 0.17391304347826086,
+      "somewhat_polite_count": 3,
+      "somewhat_polite_rate": 0.06521739130434782,
+      "neutral_count": 11,
+      "neutral_rate": 0.2391304347826087,
+      "impolite_count": 24,
+      "impolite_rate": 0.5217391304347826
+    },
+    {
+      "thread_id": "1sal8nn",
+      "thread_title": "Apple AirPods Max 2 (Midnight) - Brand New with 2yrs AppleCare+ (Latest Release)",
+      "comment_count": 14,
+      "comments": [
+        {
+          "thread_id": "1sal8nn",
+          "thread_title": "Apple AirPods Max 2 (Midnight) - Brand New with 2yrs AppleCare+ (Latest Release)",
+          "comment_id": "t1_odzqzeb",
+          "parent_id": "t3_1sal8nn",
+          "author": "Red859859",
+          "depth": 0,
+          "pred_label": "impolite",
+          "polite_probability": 0.0007433174178004265,
+          "somewhat_polite_probability": 0.010171093046665192,
+          "neutral_probability": 0.001404306385666132,
+          "impolite_probability": 0.9876813888549805,
+          "class_probabilities": {
+            "polite": 0.0007433174178004265,
+            "somewhat_polite": 0.010171093046665192,
+            "neutral": 0.001404306385666132,
+            "impolite": 0.9876813888549805
+          },
+          "text": "You do realise that if I put in 5k more I will get an unboxed one and when I am ready to put 65k, 70 is not that much."
+        },
+        {
+          "thread_id": "1sal8nn",
+          "thread_title": "Apple AirPods Max 2 (Midnight) - Brand New with 2yrs AppleCare+ (Latest Release)",
+          "comment_id": "t1_odzuxp7",
+          "parent_id": "t1_odzqzeb",
+          "author": "[deleted]",
+          "depth": 1,
+          "pred_label": "impolite",
+          "polite_probability": 0.011593037284910679,
+          "somewhat_polite_probability": 0.059161607176065445,
+          "neutral_probability": 0.008023185655474663,
+          "impolite_probability": 0.9212222099304199,
+          "class_probabilities": {
+            "polite": 0.011593037284910679,
+            "somewhat_polite": 0.059161607176065445,
+            "neutral": 0.008023185655474663,
+            "impolite": 0.9212222099304199
+          },
+          "text": "there’s ac+ too so maybe that"
+        },
+        {
+          "thread_id": "1sal8nn",
+          "thread_title": "Apple AirPods Max 2 (Midnight) - Brand New with 2yrs AppleCare+ (Latest Release)",
+          "comment_id": "t1_oe08lhr",
+          "parent_id": "t1_odzqzeb",
+          "author": "cnwach",
+          "depth": 1,
+          "pred_label": "polite",
+          "polite_probability": 0.8193436861038208,
+          "somewhat_polite_probability": 0.12392503768205643,
+          "neutral_probability": 0.055032819509506226,
+          "impolite_probability": 0.001698437612503767,
+          "class_probabilities": {
+            "polite": 0.8193436861038208,
+            "somewhat_polite": 0.12392503768205643,
+            "neutral": 0.055032819509506226,
+            "impolite": 0.001698437612503767
+          },
+          "text": "Thanks for you're reply. It comes with 2yrs apple care + for headphones too. This bundle will cost ~10k more to get brand new."
+        },
+        {
+          "thread_id": "1sal8nn",
+          "thread_title": "Apple AirPods Max 2 (Midnight) - Brand New with 2yrs AppleCare+ (Latest Release)",
+          "comment_id": "t1_odztw26",
+          "parent_id": "t3_1sal8nn",
+          "author": "[deleted]",
+          "depth": 0,
+          "pred_label": "impolite",
+          "polite_probability": 0.0001358904701191932,
+          "somewhat_polite_probability": 0.000408925989177078,
+          "neutral_probability": 0.0003034271067008376,
+          "impolite_probability": 0.9991518259048462,
+          "class_probabilities": {
+            "polite": 0.0001358904701191932,
+            "somewhat_polite": 0.000408925989177078,
+            "neutral": 0.0003034271067008376,
+            "impolite": 0.9991518259048462
+          },
+          "text": "buy xm6s n save 30k yall im a certified apple fanboy but this ain’t worth it"
+        },
+        {
+          "thread_id": "1sal8nn",
+          "thread_title": "Apple AirPods Max 2 (Midnight) - Brand New with 2yrs AppleCare+ (Latest Release)",
+          "comment_id": "t1_oe0ksyi",
+          "parent_id": "t1_odztw26",
+          "author": "Ruthvik_08",
+          "depth": 1,
+          "pred_label": "polite",
+          "polite_probability": 0.985296905040741,
+          "somewhat_polite_probability": 0.012773673981428146,
+          "neutral_probability": 0.0010663524735718966,
+          "impolite_probability": 0.0008630580268800259,
+          "class_probabilities": {
+            "polite": 0.985296905040741,
+            "somewhat_polite": 0.012773673981428146,
+            "neutral": 0.0010663524735718966,
+            "impolite": 0.0008630580268800259
+          },
+          "text": "Used Bose QC Ultra, Sony XM6, and AirPods Max (USB-C. Bose is easily the most comfortable, Sony sounds really good but feels a bit plasticky for something that costs around 40K, and AirPods Max feels super premium with the best ANC plus that Apple ecosystem convenience. But if you only care about pure sound, XM6 wins."
+        },
+        {
+          "thread_id": "1sal8nn",
+          "thread_title": "Apple AirPods Max 2 (Midnight) - Brand New with 2yrs AppleCare+ (Latest Release)",
+          "comment_id": "t1_odzv3zs",
+          "parent_id": "t1_odztw26",
+          "author": "Significant-Tower259",
+          "depth": 1,
+          "pred_label": "polite",
+          "polite_probability": 0.8811337351799011,
+          "somewhat_polite_probability": 0.032446444034576416,
+          "neutral_probability": 0.04380970820784569,
+          "impolite_probability": 0.042610183358192444,
+          "class_probabilities": {
+            "polite": 0.8811337351799011,
+            "somewhat_polite": 0.032446444034576416,
+            "neutral": 0.04380970820784569,
+            "impolite": 0.042610183358192444
+          },
+          "text": "+1 Got it for like 40k They are the best man"
+        },
+        {
+          "thread_id": "1sal8nn",
+          "thread_title": "Apple AirPods Max 2 (Midnight) - Brand New with 2yrs AppleCare+ (Latest Release)",
+          "comment_id": "t1_oe0rnj6",
+          "parent_id": "t3_1sal8nn",
+          "author": "crushing_rocks",
+          "depth": 0,
+          "pred_label": "polite",
+          "polite_probability": 0.9185550808906555,
+          "somewhat_polite_probability": 0.005778038874268532,
+          "neutral_probability": 0.002145316218957305,
+          "impolite_probability": 0.07352155447006226,
+          "class_probabilities": {
+            "polite": 0.9185550808906555,
+            "somewhat_polite": 0.005778038874268532,
+            "neutral": 0.002145316218957305,
+            "impolite": 0.07352155447006226
+          },
+          "text": "I have AirPods Max gen 1. I’ve tried my friend’s Max gen 2(what this guy is selling) and trust me when I say this, there’s absolutely no difference in music quality or anc to the points it’s comical . — OP clearly realise what 95% other apple AirPods Max users feel, it’s too heavy and the sound quality is not that different from even xm5/xm4(few generations behind)"
+        },
+        {
+          "thread_id": "1sal8nn",
+          "thread_title": "Apple AirPods Max 2 (Midnight) - Brand New with 2yrs AppleCare+ (Latest Release)",
+          "comment_id": "t1_oe0sq34",
+          "parent_id": "t1_oe0rnj6",
+          "author": "cnwach",
+          "depth": 1,
+          "pred_label": "polite",
+          "polite_probability": 0.7643002271652222,
+          "somewhat_polite_probability": 0.20291449129581451,
+          "neutral_probability": 0.011648502200841904,
+          "impolite_probability": 0.021136721596121788,
+          "class_probabilities": {
+            "polite": 0.7643002271652222,
+            "somewhat_polite": 0.20291449129581451,
+            "neutral": 0.011648502200841904,
+            "impolite": 0.021136721596121788
+          },
+          "text": "Interesting, I felt the opposite. The low ends now sounded more separated, deep and tighter to me. The soundstage opened up quite a bit...especially over USB-C with lossless. Not night-and-day, but definitely noticeable if you're listening for it. I listen to a lot of live music and indian film music and the auto EQ works fantastically. The ANC is the best I've experienced."
+        },
+        {
+          "thread_id": "1sal8nn",
+          "thread_title": "Apple AirPods Max 2 (Midnight) - Brand New with 2yrs AppleCare+ (Latest Release)",
+          "comment_id": "t1_oe0tsdy",
+          "parent_id": "t1_oe0sq34",
+          "author": "crushing_rocks",
+          "depth": 2,
+          "pred_label": "impolite",
+          "polite_probability": 0.009194111451506615,
+          "somewhat_polite_probability": 0.02300362102687359,
+          "neutral_probability": 0.0049240062944591045,
+          "impolite_probability": 0.9628782868385315,
+          "class_probabilities": {
+            "polite": 0.009194111451506615,
+            "somewhat_polite": 0.02300362102687359,
+            "neutral": 0.0049240062944591045,
+            "impolite": 0.9628782868385315
+          },
+          "text": "The things you are mentioning, I can confidently attest 95% of the people interested in buying this won’t be able to notice. They just won’t. Considering I can just put 8k more and get a new pair of headphones myself, why would I bother with these( you’ve priced these in an awkward spot.) hope u can find a buyer for these but not at this price lol."
+        },
+        {
+          "thread_id": "1sal8nn",
+          "thread_title": "Apple AirPods Max 2 (Midnight) - Brand New with 2yrs AppleCare+ (Latest Release)",
+          "comment_id": "t1_oe0vo8y",
+          "parent_id": "t1_oe0tsdy",
+          "author": "cnwach",
+          "depth": 3,
+          "pred_label": "somewhat_polite",
+          "polite_probability": 0.030396200716495514,
+          "somewhat_polite_probability": 0.48929449915885925,
+          "neutral_probability": 0.03010479174554348,
+          "impolite_probability": 0.4502045214176178,
+          "class_probabilities": {
+            "polite": 0.030396200716495514,
+            "somewhat_polite": 0.48929449915885925,
+            "neutral": 0.03010479174554348,
+            "impolite": 0.4502045214176178
+          },
+          "text": "Yeah, audio is super subjective and depends a lot on source and listening habits. I'm already getting offers close to 60k in DMs, so I'm not in a hurry. Would prefer around 63k given it's brand new and should hold value well since it's Max2"
+        },
+        {
+          "thread_id": "1sal8nn",
+          "thread_title": "Apple AirPods Max 2 (Midnight) - Brand New with 2yrs AppleCare+ (Latest Release)",
+          "comment_id": "t1_oe0w5n7",
+          "parent_id": "t1_oe0vo8y",
+          "author": "crushing_rocks",
+          "depth": 4,
+          "pred_label": "polite",
+          "polite_probability": 0.8602182269096375,
+          "somewhat_polite_probability": 0.08320913463830948,
+          "neutral_probability": 0.018853500485420227,
+          "impolite_probability": 0.03771914169192314,
+          "class_probabilities": {
+            "polite": 0.8602182269096375,
+            "somewhat_polite": 0.08320913463830948,
+            "neutral": 0.018853500485420227,
+            "impolite": 0.03771914169192314
+          },
+          "text": "I agree, audio is super subjective. Hope u find the right buyer. Peace!"
+        },
+        {
+          "thread_id": "1sal8nn",
+          "thread_title": "Apple AirPods Max 2 (Midnight) - Brand New with 2yrs AppleCare+ (Latest Release)",
+          "comment_id": "t1_oe6qa8i",
+          "parent_id": "t1_oe0w5n7",
+          "author": "cnwach",
+          "depth": 5,
+          "pred_label": "polite",
+          "polite_probability": 0.9988166093826294,
+          "somewhat_polite_probability": 0.0006706881686113775,
+          "neutral_probability": 0.0002483176358509809,
+          "impolite_probability": 0.00026437966153025627,
+          "class_probabilities": {
+            "polite": 0.9988166093826294,
+            "somewhat_polite": 0.0006706881686113775,
+            "neutral": 0.0002483176358509809,
+            "impolite": 0.00026437966153025627
+          },
+          "text": "Thanks man! Sold it for 64k"
+        },
+        {
+          "thread_id": "1sal8nn",
+          "thread_title": "Apple AirPods Max 2 (Midnight) - Brand New with 2yrs AppleCare+ (Latest Release)",
+          "comment_id": "t1_oe6qfc0",
+          "parent_id": "t3_1sal8nn",
+          "author": "cnwach",
+          "depth": 0,
+          "pred_label": "polite",
+          "polite_probability": 0.9955090284347534,
+          "somewhat_polite_probability": 0.0010772290406748652,
+          "neutral_probability": 0.0029888348653912544,
+          "impolite_probability": 0.00042496295645833015,
+          "class_probabilities": {
+            "polite": 0.9955090284347534,
+            "somewhat_polite": 0.0010772290406748652,
+            "neutral": 0.0029888348653912544,
+            "impolite": 0.00042496295645833015
+          },
+          "text": "Update - Sold! Thanks hyd!"
+        },
+        {
+          "thread_id": "1sal8nn",
+          "thread_title": "Apple AirPods Max 2 (Midnight) - Brand New with 2yrs AppleCare+ (Latest Release)",
+          "comment_id": "t1_oe75pnf",
+          "parent_id": "t3_1sal8nn",
+          "author": "Dry_Wrangler92",
+          "depth": 0,
+          "pred_label": "impolite",
+          "polite_probability": 0.0039828685112297535,
+          "somewhat_polite_probability": 0.011245151050388813,
+          "neutral_probability": 0.1591576337814331,
+          "impolite_probability": 0.825614333152771,
+          "class_probabilities": {
+            "polite": 0.0039828685112297535,
+            "somewhat_polite": 0.011245151050388813,
+            "neutral": 0.1591576337814331,
+            "impolite": 0.825614333152771
+          },
+          "text": "It's listed on Amazon for 67900, if you say I bought from apple store so it's more expensive god help you ofc you have apple care plus thats optional and won't fetch resale value."
+        }
+      ],
+      "polite_count": 8,
+      "polite_rate": 0.5714285714285714,
+      "somewhat_polite_count": 1,
+      "somewhat_polite_rate": 0.07142857142857142,
+      "neutral_count": 0,
+      "neutral_rate": 0.0,
+      "impolite_count": 5,
+      "impolite_rate": 0.35714285714285715
+    },
+    {
+      "thread_id": "1fmb0n1",
+      "thread_title": "The new Airpods Max are not blacker than the Space Grey Airpods",
+      "comment_count": 14,
+      "comments": [
+        {
+          "thread_id": "1fmb0n1",
+          "thread_title": "The new Airpods Max are not blacker than the Space Grey Airpods",
+          "comment_id": "t1_lo99gcc",
+          "parent_id": "t3_1fmb0n1",
+          "author": "LongAd7331",
+          "depth": 0,
+          "pred_label": "neutral",
+          "polite_probability": 0.012690259143710136,
+          "somewhat_polite_probability": 0.019195346161723137,
+          "neutral_probability": 0.9466851353645325,
+          "impolite_probability": 0.021429216489195824,
+          "class_probabilities": {
+            "polite": 0.012690259143710136,
+            "somewhat_polite": 0.019195346161723137,
+            "neutral": 0.9466851353645325,
+            "impolite": 0.021429216489195824
+          },
+          "text": "In the pictures the iphone captures more of the dark blackish but in real life you immediately see the blue, atleast under flourescent light"
+        },
+        {
+          "thread_id": "1fmb0n1",
+          "thread_title": "The new Airpods Max are not blacker than the Space Grey Airpods",
+          "comment_id": "t1_lo9j7mw",
+          "parent_id": "t3_1fmb0n1",
+          "author": "kmjy",
+          "depth": 0,
+          "pred_label": "polite",
+          "polite_probability": 0.9231493473052979,
+          "somewhat_polite_probability": 0.025777075439691544,
+          "neutral_probability": 0.03166009858250618,
+          "impolite_probability": 0.019413478672504425,
+          "class_probabilities": {
+            "polite": 0.9231493473052979,
+            "somewhat_polite": 0.025777075439691544,
+            "neutral": 0.03166009858250618,
+            "impolite": 0.019413478672504425
+          },
+          "text": "If I interpreted your post correctly in saying that the new AirPods Max in Midnight are less black than the old AirPods Max in Space Grey, then yes, you are correct! Midnight is a very slight blueish tint to Space Grey. Space Grey alone is a greyish black tint. It is even more noticeable if you compare HomePod and HomePod (2nd Generation) side by side, one is basically grey/black and the other is quite blue. Or compare iPhone 8 in Space Grey to iPhone SE (3rd Generation) in Midnight!"
+        },
+        {
+          "thread_id": "1fmb0n1",
+          "thread_title": "The new Airpods Max are not blacker than the Space Grey Airpods",
+          "comment_id": "t1_loc78iu",
+          "parent_id": "t3_1fmb0n1",
+          "author": "Erakko",
+          "depth": 0,
+          "pred_label": "impolite",
+          "polite_probability": 0.04019107669591904,
+          "somewhat_polite_probability": 0.40288209915161133,
+          "neutral_probability": 0.04114634171128273,
+          "impolite_probability": 0.515780508518219,
+          "class_probabilities": {
+            "polite": 0.04019107669591904,
+            "somewhat_polite": 0.40288209915161133,
+            "neutral": 0.04114634171128273,
+            "impolite": 0.515780508518219
+          },
+          "text": "Yes. Expected more black. But I am happy with the color anyways"
+        },
+        {
+          "thread_id": "1fmb0n1",
+          "thread_title": "The new Airpods Max are not blacker than the Space Grey Airpods",
+          "comment_id": "t1_lojsxp9",
+          "parent_id": "t3_1fmb0n1",
+          "author": "Mysterious-Toe-5694",
+          "depth": 0,
+          "pred_label": "impolite",
+          "polite_probability": 0.004701905883848667,
+          "somewhat_polite_probability": 0.003325976198539138,
+          "neutral_probability": 0.0012429022463038564,
+          "impolite_probability": 0.9907292723655701,
+          "class_probabilities": {
+            "polite": 0.004701905883848667,
+            "somewhat_polite": 0.003325976198539138,
+            "neutral": 0.0012429022463038564,
+            "impolite": 0.9907292723655701
+          },
+          "text": "Idk why it’s so hard for Apple to just make a black headset. Let’s just hope the Max 2 will get space black"
+        },
+        {
+          "thread_id": "1fmb0n1",
+          "thread_title": "The new Airpods Max are not blacker than the Space Grey Airpods",
+          "comment_id": "t1_loa7ohh",
+          "parent_id": "t3_1fmb0n1",
+          "author": "[deleted]",
+          "depth": 0,
+          "pred_label": "neutral",
+          "polite_probability": 0.20026865601539612,
+          "somewhat_polite_probability": 0.021380869671702385,
+          "neutral_probability": 0.7381579279899597,
+          "impolite_probability": 0.040192607790231705,
+          "class_probabilities": {
+            "polite": 0.20026865601539612,
+            "somewhat_polite": 0.021380869671702385,
+            "neutral": 0.7381579279899597,
+            "impolite": 0.040192607790231705
+          },
+          "text": "Did you see starlight? How did it look?"
+        },
+        {
+          "thread_id": "1fmb0n1",
+          "thread_title": "The new Airpods Max are not blacker than the Space Grey Airpods",
+          "comment_id": "t1_loa7qyx",
+          "parent_id": "t1_loa7ohh",
+          "author": "LongAd7331",
+          "depth": 1,
+          "pred_label": "neutral",
+          "polite_probability": 0.009597115218639374,
+          "somewhat_polite_probability": 0.0028851618990302086,
+          "neutral_probability": 0.9819697141647339,
+          "impolite_probability": 0.005547906272113323,
+          "class_probabilities": {
+            "polite": 0.009597115218639374,
+            "somewhat_polite": 0.0028851618990302086,
+            "neutral": 0.9819697141647339,
+            "impolite": 0.005547906272113323
+          },
+          "text": "The pictures are starlight"
+        },
+        {
+          "thread_id": "1fmb0n1",
+          "thread_title": "The new Airpods Max are not blacker than the Space Grey Airpods",
+          "comment_id": "t1_loa7ux7",
+          "parent_id": "t1_loa7qyx",
+          "author": "[deleted]",
+          "depth": 2,
+          "pred_label": "impolite",
+          "polite_probability": 0.018450509756803513,
+          "somewhat_polite_probability": 0.01485201995819807,
+          "neutral_probability": 0.07672956585884094,
+          "impolite_probability": 0.8899679183959961,
+          "class_probabilities": {
+            "polite": 0.018450509756803513,
+            "somewhat_polite": 0.01485201995819807,
+            "neutral": 0.07672956585884094,
+            "impolite": 0.8899679183959961
+          },
+          "text": "They’re midnight"
+        },
+        {
+          "thread_id": "1fmb0n1",
+          "thread_title": "The new Airpods Max are not blacker than the Space Grey Airpods",
+          "comment_id": "t1_loa7xe2",
+          "parent_id": "t1_loa7ux7",
+          "author": "LongAd7331",
+          "depth": 3,
+          "pred_label": "impolite",
+          "polite_probability": 0.001428126939572394,
+          "somewhat_polite_probability": 0.00417484063655138,
+          "neutral_probability": 0.006559520959854126,
+          "impolite_probability": 0.987837553024292,
+          "class_probabilities": {
+            "polite": 0.001428126939572394,
+            "somewhat_polite": 0.00417484063655138,
+            "neutral": 0.006559520959854126,
+            "impolite": 0.987837553024292
+          },
+          "text": "Oh my gosh my brain glitched lol, nope havent seen them"
+        },
+        {
+          "thread_id": "1fmb0n1",
+          "thread_title": "The new Airpods Max are not blacker than the Space Grey Airpods",
+          "comment_id": "t1_loa812n",
+          "parent_id": "t1_loa7xe2",
+          "author": "[deleted]",
+          "depth": 4,
+          "pred_label": "neutral",
+          "polite_probability": 0.06986616551876068,
+          "somewhat_polite_probability": 0.03978000208735466,
+          "neutral_probability": 0.6041867733001709,
+          "impolite_probability": 0.28616705536842346,
+          "class_probabilities": {
+            "polite": 0.06986616551876068,
+            "somewhat_polite": 0.03978000208735466,
+            "neutral": 0.6041867733001709,
+            "impolite": 0.28616705536842346
+          },
+          "text": "Haha nws they are similar names"
+        },
+        {
+          "thread_id": "1fmb0n1",
+          "thread_title": "The new Airpods Max are not blacker than the Space Grey Airpods",
+          "comment_id": "t1_lohtz5a",
+          "parent_id": "t3_1fmb0n1",
+          "author": "CSlov23",
+          "depth": 0,
+          "pred_label": "neutral",
+          "polite_probability": 0.0808131992816925,
+          "somewhat_polite_probability": 0.0202301274985075,
+          "neutral_probability": 0.8938268423080444,
+          "impolite_probability": 0.005129820667207241,
+          "class_probabilities": {
+            "polite": 0.0808131992816925,
+            "somewhat_polite": 0.0202301274985075,
+            "neutral": 0.8938268423080444,
+            "impolite": 0.005129820667207241
+          },
+          "text": "Is the midnight usb c one sale for $499?"
+        },
+        {
+          "thread_id": "1fmb0n1",
+          "thread_title": "The new Airpods Max are not blacker than the Space Grey Airpods",
+          "comment_id": "t1_loiv0gp",
+          "parent_id": "t1_lohtz5a",
+          "author": "LongAd7331",
+          "depth": 1,
+          "pred_label": "impolite",
+          "polite_probability": 0.0017591860378161073,
+          "somewhat_polite_probability": 0.0102455522865057,
+          "neutral_probability": 0.0016723833978176117,
+          "impolite_probability": 0.9863228797912598,
+          "class_probabilities": {
+            "polite": 0.0017591860378161073,
+            "somewhat_polite": 0.0102455522865057,
+            "neutral": 0.0016723833978176117,
+            "impolite": 0.9863228797912598
+          },
+          "text": "Oh I guess it is, still not getting it😔😜"
+        },
+        {
+          "thread_id": "1fmb0n1",
+          "thread_title": "The new Airpods Max are not blacker than the Space Grey Airpods",
+          "comment_id": "t1_loa0275",
+          "parent_id": "t3_1fmb0n1",
+          "author": "Mztrspookiiszn",
+          "depth": 0,
+          "pred_label": "polite",
+          "polite_probability": 0.9649845957756042,
+          "somewhat_polite_probability": 0.0020859765354543924,
+          "neutral_probability": 0.005585663486272097,
+          "impolite_probability": 0.027343807741999626,
+          "class_probabilities": {
+            "polite": 0.9649845957756042,
+            "somewhat_polite": 0.0020859765354543924,
+            "neutral": 0.005585663486272097,
+            "impolite": 0.027343807741999626
+          },
+          "text": "I’m in love with mine. Spot on with my midnight macbook"
+        },
+        {
+          "thread_id": "1fmb0n1",
+          "thread_title": "The new Airpods Max are not blacker than the Space Grey Airpods",
+          "comment_id": "t1_loa068d",
+          "parent_id": "t1_loa0275",
+          "author": "LongAd7331",
+          "depth": 1,
+          "pred_label": "somewhat_polite",
+          "polite_probability": 0.08783517777919769,
+          "somewhat_polite_probability": 0.8465142846107483,
+          "neutral_probability": 0.013949548825621605,
+          "impolite_probability": 0.05170093849301338,
+          "class_probabilities": {
+            "polite": 0.08783517777919769,
+            "somewhat_polite": 0.8465142846107483,
+            "neutral": 0.013949548825621605,
+            "impolite": 0.05170093849301338
+          },
+          "text": "Yeah, i’m strongly in love with the space black ecosystem right now for me"
+        },
+        {
+          "thread_id": "1fmb0n1",
+          "thread_title": "The new Airpods Max are not blacker than the Space Grey Airpods",
+          "comment_id": "t1_loa8m9n",
+          "parent_id": "t1_loa068d",
+          "author": "Mztrspookiiszn",
+          "depth": 2,
+          "pred_label": "polite",
+          "polite_probability": 0.9697108864784241,
+          "somewhat_polite_probability": 0.014696280471980572,
+          "neutral_probability": 0.0009629617561586201,
+          "impolite_probability": 0.014629920944571495,
+          "class_probabilities": {
+            "polite": 0.9697108864784241,
+            "somewhat_polite": 0.014696280471980572,
+            "neutral": 0.0009629617561586201,
+            "impolite": 0.014629920944571495
+          },
+          "text": "I am too. And I have the “space black” m4 iPad 13” pro and wanted the black iPhone 16, but didn’t have a choice only thing that was shipping 9/20 was desert titanium in 512 gb 😔 I completely blew it during pre order day being so busy with work. I was gonna just keep my blue titanium 15 but it fell in a trash chute w no insurance (hadn’t had ins since 2011ish) 2 weeks before the announcement of the 16. Most viable situation financially for me was to just pay off my 15 pm and wait to upgrade to the 16. So i was using a Walmart android for the past month- I was desperate and didn’t wanna wait til October. Desert titanium isn’t so bad she’s my red headed step child with the rest of my dark line up."
+        }
+      ],
+      "polite_count": 3,
+      "polite_rate": 0.21428571428571427,
+      "somewhat_polite_count": 1,
+      "somewhat_polite_rate": 0.07142857142857142,
+      "neutral_count": 5,
+      "neutral_rate": 0.35714285714285715,
+      "impolite_count": 5,
+      "impolite_rate": 0.35714285714285715
+    },
+    {
+      "thread_id": "1jp8qha",
+      "thread_title": "Which is a better value ? iPad Air M2 Or AirPods Max",
+      "comment_count": 3,
+      "comments": [
+        {
+          "thread_id": "1jp8qha",
+          "thread_title": "Which is a better value ? iPad Air M2 Or AirPods Max",
+          "comment_id": "t1_mkxz16y",
+          "parent_id": "t3_1jp8qha",
+          "author": "Nick6540",
+          "depth": 0,
+          "pred_label": "somewhat_polite",
+          "polite_probability": 0.0011356220347806811,
+          "somewhat_polite_probability": 0.4885272681713104,
+          "neutral_probability": 0.2788110375404358,
+          "impolite_probability": 0.23152606189250946,
+          "class_probabilities": {
+            "polite": 0.0011356220347806811,
+            "somewhat_polite": 0.4885272681713104,
+            "neutral": 0.2788110375404358,
+            "impolite": 0.23152606189250946
+          },
+          "text": "I’m not sure but if you’re going to get an iPad Air I’d get the new one with the m3 chip"
+        },
+        {
+          "thread_id": "1jp8qha",
+          "thread_title": "Which is a better value ? iPad Air M2 Or AirPods Max",
+          "comment_id": "t1_mky0ogq",
+          "parent_id": "t3_1jp8qha",
+          "author": "WindingRoad10",
+          "depth": 0,
+          "pred_label": "somewhat_polite",
+          "polite_probability": 0.07771845161914825,
+          "somewhat_polite_probability": 0.8092341423034668,
+          "neutral_probability": 0.1106531098484993,
+          "impolite_probability": 0.0023941979743540287,
+          "class_probabilities": {
+            "polite": 0.07771845161914825,
+            "somewhat_polite": 0.8092341423034668,
+            "neutral": 0.1106531098484993,
+            "impolite": 0.0023941979743540287
+          },
+          "text": "I think it would depend on which would you'd probably use the most on a day to day basis? Do you currently have either or tablet or headphones that you use and are happy with? If so, just go with the one the device you feel isn't represented in your current set up."
+        },
+        {
+          "thread_id": "1jp8qha",
+          "thread_title": "Which is a better value ? iPad Air M2 Or AirPods Max",
+          "comment_id": "t1_mkxocbk",
+          "parent_id": "t3_1jp8qha",
+          "author": "Super_Candidate7809",
+          "depth": 0,
+          "pred_label": "impolite",
+          "polite_probability": 0.0009318118100054562,
+          "somewhat_polite_probability": 0.0010316838743165135,
+          "neutral_probability": 0.0010902630165219307,
+          "impolite_probability": 0.9969462752342224,
+          "class_probabilities": {
+            "polite": 0.0009318118100054562,
+            "somewhat_polite": 0.0010316838743165135,
+            "neutral": 0.0010902630165219307,
+            "impolite": 0.9969462752342224
+          },
+          "text": "Get the Max"
+        }
+      ],
+      "polite_count": 0,
+      "polite_rate": 0.0,
+      "somewhat_polite_count": 2,
+      "somewhat_polite_rate": 0.6666666666666666,
+      "neutral_count": 0,
+      "neutral_rate": 0.0,
+      "impolite_count": 1,
+      "impolite_rate": 0.3333333333333333
+    },
+    {
+      "thread_id": "1q7l508",
+      "thread_title": "[USA-FL] [H] Airpods Max (USB Type-C) Midnight, Black Titanium Apple Watch Ultra 3 [W] PayPal",
+      "comment_count": 1,
+      "comments": [
+        {
+          "thread_id": "1q7l508",
+          "thread_title": "[USA-FL] [H] Airpods Max (USB Type-C) Midnight, Black Titanium Apple Watch Ultra 3 [W] PayPal",
+          "comment_id": "t1_nygcfqg",
+          "parent_id": "t3_1q7l508",
+          "author": "hwsbot",
+          "depth": 0,
+          "pred_label": "polite",
+          "polite_probability": 0.9584527015686035,
+          "somewhat_polite_probability": 0.013136005960404873,
+          "neutral_probability": 0.027655471116304398,
+          "impolite_probability": 0.0007558228680863976,
+          "class_probabilities": {
+            "polite": 0.9584527015686035,
+            "somewhat_polite": 0.013136005960404873,
+            "neutral": 0.027655471116304398,
+            "impolite": 0.0007558228680863976
+          },
+          "text": "* Username: /u/zora981 * [Click here to start a chat with this user](https://www.reddit.com/message/compose/?to=zora981) - Don't forget to enable [persistent messaging](https://support.reddithelp.com/hc/en-us/articles/37493947776276-What-is-persistent-messaging) * Join date: 2021-11-08 02:51:38 * Link karma: 457 * Comment karma: 2259 * Confirmed trades: Trades: 20 * Heatware: None ^^This ^^information ^^does ^^not ^^guarantee ^^a ^^successful ^^swap. ^^It ^^is ^^being ^^provided ^^to ^^help ^^potential ^^trade ^^partners ^^have ^^more ^^immediate ^^background ^^information ^^about ^^with ^^whom ^^they ^^are ^^swapping. ^^Please ^^be ^^sure ^^to ^^familiarize ^^yourself ^^with ^^the ^^[RULES](https://www.reddit.com/r/hardwareswap/wiki/rules/rules) ^^and ^^other ^^guides ^^on ^^the ^^[WIKI](https://www.reddit.com/r/hardwareswap/wiki/index)"
+        }
+      ],
+      "polite_count": 1,
+      "polite_rate": 1.0,
+      "somewhat_polite_count": 0,
+      "somewhat_polite_rate": 0.0,
+      "neutral_count": 0,
+      "neutral_rate": 0.0,
+      "impolite_count": 0,
+      "impolite_rate": 0.0
+    },
+    {
+      "thread_id": "1q7kvo4",
+      "thread_title": "[USA-FL] [H] Airpods Max (USB Type-C) Midnight, Black Titanium Apple Watch Ultra 3 [W] PayPal",
+      "comment_count": 3,
+      "comments": [
+        {
+          "thread_id": "1q7kvo4",
+          "thread_title": "[USA-FL] [H] Airpods Max (USB Type-C) Midnight, Black Titanium Apple Watch Ultra 3 [W] PayPal",
+          "comment_id": "t1_nyga7ly",
+          "parent_id": "t3_1q7kvo4",
+          "author": "AutoModerator",
+          "depth": 0,
+          "pred_label": "polite",
+          "polite_probability": 0.9296029806137085,
+          "somewhat_polite_probability": 0.010618743486702442,
+          "neutral_probability": 0.059020426124334335,
+          "impolite_probability": 0.000757818401325494,
+          "class_probabilities": {
+            "polite": 0.9296029806137085,
+            "somewhat_polite": 0.010618743486702442,
+            "neutral": 0.059020426124334335,
+            "impolite": 0.000757818401325494
+          },
+          "text": "###**Remember:** Friends & Family/Gift payments, Venmo, gift cards, Zelle and cryptocurrency are non-refundable and offer NO BUYER PROTECTION. - If as a buyer, you choose to pay through the \"Friends and Family\" option, or agree to send Gift Cards, Venmo, or cryptocurrency as payment, please understand that you will not be able to open a claim should something go wrong in the transaction. [Click here](https://www.reddit.com/r/appleswap/wiki/confirming_transactions) to learn how to confirm a transaction, leave feedback for your partner, and increase your flair score! *I am a bot, and this action was performed automatically. Please [contact the moderators of this subreddit](/message/compose/?to=/r/appleswap) if you have any questions or concerns.*"
+        },
+        {
+          "thread_id": "1q7kvo4",
+          "thread_title": "[USA-FL] [H] Airpods Max (USB Type-C) Midnight, Black Titanium Apple Watch Ultra 3 [W] PayPal",
+          "comment_id": "t1_nyga7nk",
+          "parent_id": "t3_1q7kvo4",
+          "author": "AutoModerator",
+          "depth": 0,
+          "pred_label": "polite",
+          "polite_probability": 0.7598799467086792,
+          "somewhat_polite_probability": 0.01584456115961075,
+          "neutral_probability": 0.2234412282705307,
+          "impolite_probability": 0.0008342675864696503,
+          "class_probabilities": {
+            "polite": 0.7598799467086792,
+            "somewhat_polite": 0.01584456115961075,
+            "neutral": 0.2234412282705307,
+            "impolite": 0.0008342675864696503
+          },
+          "text": "Post information archive: **Title:** [USA-FL] [H] Airpods Max (USB Type-C) Midnight, Black Titanium Apple Watch Ultra 3 [W] PayPal **Username:** /u/zora981 **Body:** Timestamp: [https://imgur.com/a/EUYXkBO](https://imgur.com/a/EUYXkBO) I am selling a couple of items below: 1. Airpods Max (USB Type-C) Midnight - comes with original packaging. USB-C to USB-C cable, and 3.5 mm to USB-C cable. Still under limited warranty until July 2026. Excellent condition. Repairs: none Asking Price: $375 OBO 2. Black Titanium Apple Watch Ultra 3 - In good condition. Has a few microscratches on the screen (tried to show via the pictures) but otherwise no other defects. Comes with a Black Natural Titanium Ocean Band and charging cable. Repairs: none Asking Price: $550 OBO Thanks! *I am a bot, and this action was performed automatically. Please [contact the moderators of this subreddit](/message/compose/?to=/r/appleswap) if you have any questions or concerns.*"
+        },
+        {
+          "thread_id": "1q7kvo4",
+          "thread_title": "[USA-FL] [H] Airpods Max (USB Type-C) Midnight, Black Titanium Apple Watch Ultra 3 [W] PayPal",
+          "comment_id": "t1_nygooan",
+          "parent_id": "t3_1q7kvo4",
+          "author": "jasonvazdel",
+          "depth": 0,
+          "pred_label": "neutral",
+          "polite_probability": 0.0017243933398276567,
+          "somewhat_polite_probability": 0.0004748768697027117,
+          "neutral_probability": 0.9963743090629578,
+          "impolite_probability": 0.001426340197212994,
+          "class_probabilities": {
+            "polite": 0.0017243933398276567,
+            "somewhat_polite": 0.0004748768697027117,
+            "neutral": 0.9963743090629578,
+            "impolite": 0.001426340197212994
+          },
+          "text": "PM incoming"
+        }
+      ],
+      "polite_count": 2,
+      "polite_rate": 0.6666666666666666,
+      "somewhat_polite_count": 0,
+      "somewhat_polite_rate": 0.0,
+      "neutral_count": 1,
+      "neutral_rate": 0.3333333333333333,
+      "impolite_count": 0,
+      "impolite_rate": 0.0
+    },
+    {
+      "thread_id": "1s617le",
+      "thread_title": "PRE-ORDER LIVE! AIRPODS MAX 2",
+      "comment_count": 1,
+      "comments": [
+        {
+          "thread_id": "1s617le",
+          "thread_title": "PRE-ORDER LIVE! AIRPODS MAX 2",
+          "comment_id": "t1_ocyh2hf",
+          "parent_id": "t3_1s617le",
+          "author": "thedealsguy_",
+          "depth": 0,
+          "pred_label": "neutral",
+          "polite_probability": 0.00557374395430088,
+          "somewhat_polite_probability": 0.0017319584731012583,
+          "neutral_probability": 0.9908599853515625,
+          "impolite_probability": 0.0018343387637287378,
+          "class_probabilities": {
+            "polite": 0.00557374395430088,
+            "somewhat_polite": 0.0017319584731012583,
+            "neutral": 0.9908599853515625,
+            "impolite": 0.0018343387637287378
+          },
+          "text": "Walmart has them for $529 others listing at $549 https://walmrt.us/4rXP4Tu #WalmartPartner #Ad"
+        }
+      ],
+      "polite_count": 0,
+      "polite_rate": 0.0,
+      "somewhat_polite_count": 0,
+      "somewhat_polite_rate": 0.0,
+      "neutral_count": 1,
+      "neutral_rate": 1.0,
+      "impolite_count": 0,
+      "impolite_rate": 0.0
+    }
+  ]
+}
