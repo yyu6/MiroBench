@@ -1,6 +1,10 @@
 # MiroBench
 
+**Benchmarking Realism in Agentic Simulation of Real-world Discussions**
+
 A benchmark for evaluating synthetic online product discussion threads against real Reddit data across 5 consumer product domains.
+
+<!-- Paper link (to be added after acceptance) -->
 
 ## Overview
 
@@ -40,7 +44,7 @@ MiroBench evaluates generated threads across 9 scorer families:
 ## Installation
 
 ```bash
-git clone https://github.com/your-org/MiroBench.git
+git clone https://github.com/yyu6/MiroBench.git
 cd MiroBench
 pip install -e .
 ```
@@ -206,7 +210,7 @@ mirobench/data/
   title={MiroBench: A Benchmark for Evaluating Synthetic Online Product Discussions},
   author={MiroBench Authors},
   year={2026},
-  url={https://github.com/your-org/MiroBench}
+  url={https://github.com/yyu6/MiroBench}
 }
 ```
 
