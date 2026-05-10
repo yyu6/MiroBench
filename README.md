@@ -178,7 +178,7 @@ mirobench score <dir>                        # Score generated threads
 mirobench compare <csv>                      # Compare against real references
 mirobench domains                            # List available domains with thread counts
 mirobench --version                          # Show version
-python -m mirobench.calibration [args]       # Run calibration pipeline
+python -m calibration [args]       # Run calibration pipeline
 ```
 
 ## Data Structure
@@ -220,7 +220,7 @@ The calibration pipeline runs in three phases:
 ### Calibration CLI
 
 ```bash
-python -m mirobench.calibration \
+python -m calibration \
     --real-train-csv <path/to/real_train.csv> \
     --real-val-csv <path/to/real_val.csv> \
     --real-test-csv <path/to/real_test.csv> \
@@ -260,7 +260,7 @@ python -m mirobench.calibration \
 To skip Phase 1 and directly evaluate a previously found overlay:
 
 ```bash
-python -m mirobench.calibration \
+python -m calibration \
     --evaluate-overlay-json <path/to/best_overlay.json> \
     --before-group-eval-json <path/to/before_calibration_group_eval.json> \
     --real-train-csv <real_train.csv> \
