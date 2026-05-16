@@ -6,7 +6,7 @@
 
 MiroBench is a benchmark for evaluating whether LLM-generated online discussion threads match real Reddit discussion patterns.
 
-[PDF](./paper/MiroBench_preprint.pdf) | [Code](https://github.com/yyu6/MiroBench) | Huggingface(coming soon)
+[PDF](https://raw.githubusercontent.com/yyu6/MiroBench/main/paper/MiroBench_preprint.pdf) | [Code](https://github.com/yyu6/MiroBench) | Huggingface(coming soon)
 
 </div>
 
