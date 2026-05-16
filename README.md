@@ -1,10 +1,14 @@
+<div align="center">
+
 # MiroBench
 
-**Benchmarking Realism in Agentic Simulation of Real-world Discussions**
+**Benchmarking Realism in Agentic Simulation of Real-world Discussions**  
 
-A benchmark for evaluating synthetic online product discussion threads against real Reddit data across 5 consumer product domains.
+MiroBench is a benchmark for evaluating whether LLM-generated online discussion threads match real Reddit discussion patterns.
 
-<!-- Paper link (to be added after acceptance) -->
+[PDF](./paper/MiroBench_preprint.pdf) | [Code](https://github.com/yyu6/MiroBench) | Huggingface(coming soon)
+
+</div>
 
 ## Overview
 
