@@ -573,12 +573,21 @@ tailwind.config = {
       </table>
     </div>
 
-    <p class="font-mono text-[11.5px] text-mute2 mt-4 max-w-[80ch] leading-relaxed">
-      Family columns: average |Cliff's δ| vs real-Reddit (5 domains).
-      <span class="text-text">p&gt;0.05 column</span>: # of (metric × domain) cells where the Mann-Whitney U test
-      cannot reject equal distribution, out of 19 selected metrics × 5 domains = 95 total.
-      Toxicity sub-metrics are real-Reddit near-zero and therefore low-signal.
-    </p>
+    <div class="font-mono text-[11.5px] text-mute2 mt-5 max-w-[90ch] leading-relaxed space-y-2">
+      <p>
+        Numbers are average |Cliff's δ| between generated and real Reddit
+        across the 5 domains. <span class="text-text">p&gt;0.05 column</span>: passes out of
+        <span class="text-text">19 metrics × 5 domains = 95</span> cells (MWU test).
+      </p>
+      <p>
+        <span class="text-mute">19 selected metrics:</span>
+        <span class="text-text">Diversity</span> = self_bleu_4, semantic_mean_cosine, self_bertscore_mean_f1 ·
+        <span class="text-text">Tone</span> = hard_disagree_rate, polite_rate, impolite_rate, neutral_rate ·
+        <span class="text-text">Structure</span> = length_cv, avg_depth, structural_virality ·
+        <span class="text-text">Content</span> = mean_story_probability, emotion_entropy ·
+        <span class="text-text">Toxicity</span> = toxicity_mean, severe_toxicity_mean, obscene_mean, threat_mean, insult_mean, identity_attack_mean, aggression_score_mean.
+      </p>
+    </div>
 
   </div>
 </section>
