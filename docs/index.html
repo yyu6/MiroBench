@@ -333,7 +333,7 @@ tailwind.config = {
       <span>MiroBench</span>
     </a>
     <nav class="hidden md:flex items-center gap-7 text-[13.5px] text-mute">
-      <a href="#overview" class="link-uline">Overview</a>
+      <a href="#leaderboard" class="link-uline">Leaderboard</a>
       <a href="#domains" class="link-uline">Domains</a>
       <a href="#metrics" class="link-uline">Metrics</a>
       <a href="#start" class="link-uline">Quick Start</a>
@@ -436,13 +436,160 @@ tailwind.config = {
   </div>
 </section>
 
+<!-- ════════════════════════════════════════════════════════ LEADERBOARD ════════════════════════════════════════════════════════ -->
+<section id="leaderboard" class="py-16 lg:py-20 border-b border-line">
+  <div class="max-w-[1280px] mx-auto px-6 lg:px-10">
+
+    <div class="flex items-baseline justify-between mb-8 reveal">
+      <div>
+        <div class="sec-num">§ 01 — Leaderboard</div>
+        <h2 class="mt-3 text-[28px] lg:text-[34px] leading-[1.1] tracking-[-0.02em] font-medium">
+          Realism scores · <span class="serif-italic text-gold2">lower is better.</span>
+        </h2>
+      </div>
+      <div class="hidden md:block text-right font-mono text-[11px] text-mute2 max-w-[28ch] leading-relaxed">
+        avg |Cliff's δ| vs real Reddit<br>across 5 domains × per-family metrics
+      </div>
+    </div>
+
+    <!-- Leaderboard table -->
+    <div class="reveal reveal-d1 card overflow-x-auto">
+      <table class="w-full text-[13.5px] min-w-[820px]">
+        <thead>
+          <tr class="border-b border-line text-left font-mono text-[11px] tracking-widest text-mute2 uppercase">
+            <th class="px-5 py-4 font-medium">#</th>
+            <th class="px-5 py-4 font-medium">Model</th>
+            <th class="px-5 py-4 font-medium text-right">Diversity</th>
+            <th class="px-5 py-4 font-medium text-right">Tone</th>
+            <th class="px-5 py-4 font-medium text-right">Structure</th>
+            <th class="px-5 py-4 font-medium text-right">Content</th>
+            <th class="px-5 py-4 font-medium text-right">Toxicity</th>
+            <th class="px-5 py-4 font-medium text-right border-l border-line">Overall ↓</th>
+            <th class="px-5 py-4 font-medium text-right border-l border-line">p&gt;0.05&nbsp;↑</th>
+          </tr>
+        </thead>
+        <tbody class="font-mono">
+          <!-- Rank 1 -->
+          <tr class="border-b border-line/60 hover:bg-surface/60 transition-colors">
+            <td class="px-5 py-5 text-gold">01</td>
+            <td class="px-5 py-5">
+              <div class="flex items-center gap-3">
+                <span class="w-7 h-7 rounded-md bg-surface2 border border-line2 flex items-center justify-center text-[10px] text-text">DS</span>
+                <div>
+                  <div class="text-text text-[14px] font-medium font-sans">DeepSeek-V4-Flash</div>
+                  <div class="text-mute2 text-[11px]">deepseek-v4-flash</div>
+                </div>
+              </div>
+            </td>
+            <td class="px-5 py-5 text-right text-text">0.67</td>
+            <td class="px-5 py-5 text-right text-text">0.47</td>
+            <td class="px-5 py-5 text-right text-text">0.77</td>
+            <td class="px-5 py-5 text-right text-text">0.32</td>
+            <td class="px-5 py-5 text-right text-text">0.13</td>
+            <td class="px-5 py-5 text-right border-l border-line">
+              <span class="text-gold text-[16px]">0.41</span>
+            </td>
+            <td class="px-5 py-5 text-right border-l border-line">
+              <span class="text-gold text-[14px]">34/95</span>
+              <div class="text-mute2 text-[11px]">35.8%</div>
+            </td>
+          </tr>
+          <!-- Rank 2 -->
+          <tr class="border-b border-line/60 hover:bg-surface/60 transition-colors">
+            <td class="px-5 py-5 text-mute">02</td>
+            <td class="px-5 py-5">
+              <div class="flex items-center gap-3">
+                <span class="w-7 h-7 rounded-md bg-surface2 border border-line2 flex items-center justify-center text-[10px] text-text">DS</span>
+                <div>
+                  <div class="text-text text-[14px] font-medium font-sans">DeepSeek-Chat</div>
+                  <div class="text-mute2 text-[11px]">deepseek-chat</div>
+                </div>
+              </div>
+            </td>
+            <td class="px-5 py-5 text-right text-text">0.65</td>
+            <td class="px-5 py-5 text-right text-text">0.45</td>
+            <td class="px-5 py-5 text-right text-text">0.78</td>
+            <td class="px-5 py-5 text-right text-text">0.50</td>
+            <td class="px-5 py-5 text-right text-text">0.16</td>
+            <td class="px-5 py-5 text-right border-l border-line">
+              <span class="text-text text-[16px]">0.43</span>
+            </td>
+            <td class="px-5 py-5 text-right border-l border-line">
+              <span class="text-text text-[14px]">22/95</span>
+              <div class="text-mute2 text-[11px]">23.2%</div>
+            </td>
+          </tr>
+          <!-- Rank 3 -->
+          <tr class="border-b border-line/60 hover:bg-surface/60 transition-colors">
+            <td class="px-5 py-5 text-mute">03</td>
+            <td class="px-5 py-5">
+              <div class="flex items-center gap-3">
+                <span class="w-7 h-7 rounded-md bg-surface2 border border-line2 flex items-center justify-center text-[10px] text-text">OA</span>
+                <div>
+                  <div class="text-text text-[14px] font-medium font-sans">GPT-5-mini</div>
+                  <div class="text-mute2 text-[11px]">gpt-5-mini · OpenAI</div>
+                </div>
+              </div>
+            </td>
+            <td class="px-5 py-5 text-right text-text">0.69</td>
+            <td class="px-5 py-5 text-right text-text">0.63</td>
+            <td class="px-5 py-5 text-right text-text">0.78</td>
+            <td class="px-5 py-5 text-right text-text">0.76</td>
+            <td class="px-5 py-5 text-right text-text">0.21</td>
+            <td class="px-5 py-5 text-right border-l border-line">
+              <span class="text-text text-[16px]">0.52</span>
+            </td>
+            <td class="px-5 py-5 text-right border-l border-line">
+              <span class="text-text text-[14px]">14/95</span>
+              <div class="text-mute2 text-[11px]">14.7%</div>
+            </td>
+          </tr>
+          <!-- Rank 4 -->
+          <tr class="hover:bg-surface/60 transition-colors">
+            <td class="px-5 py-5 text-mute">04</td>
+            <td class="px-5 py-5">
+              <div class="flex items-center gap-3">
+                <span class="w-7 h-7 rounded-md bg-surface2 border border-line2 flex items-center justify-center text-[10px] text-text">OA</span>
+                <div>
+                  <div class="text-text text-[14px] font-medium font-sans">GPT-4o-mini</div>
+                  <div class="text-mute2 text-[11px]">gpt-4o-mini · OpenAI</div>
+                </div>
+              </div>
+            </td>
+            <td class="px-5 py-5 text-right text-text">0.83</td>
+            <td class="px-5 py-5 text-right text-text">0.61</td>
+            <td class="px-5 py-5 text-right text-text">0.81</td>
+            <td class="px-5 py-5 text-right text-text">0.51</td>
+            <td class="px-5 py-5 text-right text-text">0.68</td>
+            <td class="px-5 py-5 text-right border-l border-line">
+              <span class="text-red text-[16px]">0.69</span>
+            </td>
+            <td class="px-5 py-5 text-right border-l border-line">
+              <span class="text-red text-[14px]">3/95</span>
+              <div class="text-mute2 text-[11px]">3.2%</div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p class="font-mono text-[11.5px] text-mute2 mt-4 max-w-[80ch] leading-relaxed">
+      Family columns: average |Cliff's δ| vs real-Reddit (5 domains).
+      <span class="text-text">p&gt;0.05 column</span>: # of (metric × domain) cells where the Mann-Whitney U test
+      cannot reject equal distribution, out of 19 selected metrics × 5 domains = 95 total.
+      Toxicity sub-metrics are real-Reddit near-zero and therefore low-signal.
+    </p>
+
+  </div>
+</section>
+
 <!-- ════════════════════════════════════════════════════════ OVERVIEW ════════════════════════════════════════════════════════ -->
 <section id="overview" class="py-16 lg:py-20">
   <div class="max-w-[1280px] mx-auto px-6 lg:px-10">
 
     <div class="grid grid-cols-12 gap-x-8 mb-10">
       <div class="col-span-12 lg:col-span-4 reveal">
-        <div class="sec-num">§ 01 — Overview</div>
+        <div class="sec-num">§ 02 — Overview</div>
         <h2 class="mt-4 text-[28px] lg:text-[34px] leading-[1.1] tracking-[-0.02em] font-medium max-w-[14ch]">
           What LLMs <span class="serif-italic text-gold2">don't</span> get right.
         </h2>
@@ -507,7 +654,7 @@ tailwind.config = {
   <div class="max-w-[1280px] mx-auto px-6 lg:px-10">
 
     <div class="mb-8 reveal">
-      <div class="sec-num">§ 02 — Domains</div>
+      <div class="sec-num">§ 03 — Domains</div>
     </div>
 
     <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -588,9 +735,9 @@ tailwind.config = {
 
     <div class="grid grid-cols-12 gap-x-8 mb-10">
       <div class="col-span-12 lg:col-span-4 reveal">
-        <div class="sec-num">§ 03 — Metrics</div>
+        <div class="sec-num">§ 04 — Metrics</div>
         <h2 class="mt-4 text-[28px] lg:text-[34px] leading-[1.1] tracking-[-0.02em] font-medium max-w-[16ch]">
-          The 12 that actually <span class="serif-italic text-gold2">discriminate.</span>
+          Metrics by <span class="serif-italic text-gold2">family.</span>
         </h2>
       </div>
       <div class="col-span-12 lg:col-span-7 lg:col-start-6 mt-8 lg:mt-0 reveal reveal-d1">
@@ -691,6 +838,44 @@ tailwind.config = {
         </div>
       </div>
 
+      <!-- 05 Toxicity (low signal) -->
+      <div class="reveal">
+        <div class="flex items-baseline gap-4 mb-7 pb-3 border-b border-line">
+          <span class="font-mono text-[11px] text-mute tracking-widest">TOXICITY</span>
+          <span class="font-mono text-[11px] text-mute2 italic">low signal · real ≈ 0</span>
+        </div>
+        <div class="grid sm:grid-cols-3 lg:grid-cols-4 gap-6">
+          <div>
+            <div class="font-mono text-[13px] text-text">toxicity_mean</div>
+            <div class="bar-track mt-4"><div class="bar-fill" style="width: 30%; opacity: 0.5;"></div></div>
+          </div>
+          <div>
+            <div class="font-mono text-[13px] text-text">severe_toxicity_mean</div>
+            <div class="bar-track mt-4"><div class="bar-fill" style="width: 22%; opacity: 0.5;"></div></div>
+          </div>
+          <div>
+            <div class="font-mono text-[13px] text-text">obscene_mean</div>
+            <div class="bar-track mt-4"><div class="bar-fill" style="width: 28%; opacity: 0.5;"></div></div>
+          </div>
+          <div>
+            <div class="font-mono text-[13px] text-text">threat_mean</div>
+            <div class="bar-track mt-4"><div class="bar-fill" style="width: 18%; opacity: 0.5;"></div></div>
+          </div>
+          <div>
+            <div class="font-mono text-[13px] text-text">insult_mean</div>
+            <div class="bar-track mt-4"><div class="bar-fill" style="width: 32%; opacity: 0.5;"></div></div>
+          </div>
+          <div>
+            <div class="font-mono text-[13px] text-text">identity_attack_mean</div>
+            <div class="bar-track mt-4"><div class="bar-fill" style="width: 18%; opacity: 0.5;"></div></div>
+          </div>
+          <div>
+            <div class="font-mono text-[13px] text-text">aggression_score_mean</div>
+            <div class="bar-track mt-4"><div class="bar-fill" style="width: 38%; opacity: 0.5;"></div></div>
+          </div>
+        </div>
+      </div>
+
     </div>
 
   </div>
@@ -701,7 +886,7 @@ tailwind.config = {
   <div class="max-w-[1280px] mx-auto px-6 lg:px-10">
 
     <div class="mb-8 reveal">
-      <div class="sec-num">§ 04 — Quick start</div>
+      <div class="sec-num">§ 05 — Quick start</div>
     </div>
 
     <div class="grid lg:grid-cols-2 gap-6">
@@ -794,7 +979,7 @@ cameras (14 metrics):
 
     <div class="grid grid-cols-12 gap-x-8 mb-10">
       <div class="col-span-12 lg:col-span-4 reveal">
-        <div class="sec-num">§ 05 — Calibration</div>
+        <div class="sec-num">§ 06 — Calibration</div>
         <h2 class="mt-4 text-[28px] lg:text-[34px] leading-[1.1] tracking-[-0.02em] font-medium max-w-[14ch]">
           An LLM that <span class="serif-italic text-gold2">tunes</span> your overlay.
         </h2>
@@ -871,7 +1056,7 @@ cameras (14 metrics):
 
     <div class="grid grid-cols-12 gap-x-8">
       <div class="col-span-12 lg:col-span-4 reveal">
-        <div class="sec-num">§ 06 — Citation</div>
+        <div class="sec-num">§ 07 — Citation</div>
       </div>
       <div class="col-span-12 lg:col-span-7 lg:col-start-6 mt-8 lg:mt-0 reveal reveal-d1">
         <div class="terminal">
