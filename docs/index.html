@@ -569,6 +569,46 @@ tailwind.config = {
               <div class="text-mute2 text-[11px]">3.2%</div>
             </td>
           </tr>
+          <!-- Pending: Gemini -->
+          <tr class="border-t border-line/60 opacity-50">
+            <td class="px-5 py-5 text-mute2">—</td>
+            <td class="px-5 py-5">
+              <div class="flex items-center gap-3">
+                <span class="w-7 h-7 rounded-md bg-surface2 border border-line2 flex items-center justify-center text-[10px] text-mute">G</span>
+                <div>
+                  <div class="text-mute text-[14px] font-medium font-sans">Gemini 2.5 Pro</div>
+                  <div class="text-mute2 text-[11px]">running · pending results</div>
+                </div>
+              </div>
+            </td>
+            <td class="px-5 py-5 text-right text-mute2">—</td>
+            <td class="px-5 py-5 text-right text-mute2">—</td>
+            <td class="px-5 py-5 text-right text-mute2">—</td>
+            <td class="px-5 py-5 text-right text-mute2">—</td>
+            <td class="px-5 py-5 text-right text-mute2">—</td>
+            <td class="px-5 py-5 text-right border-l border-line text-mute2">—</td>
+            <td class="px-5 py-5 text-right border-l border-line text-mute2">—</td>
+          </tr>
+          <!-- Pending: DeepSeek-V3.2 -->
+          <tr class="opacity-50">
+            <td class="px-5 py-5 text-mute2">—</td>
+            <td class="px-5 py-5">
+              <div class="flex items-center gap-3">
+                <span class="w-7 h-7 rounded-md bg-surface2 border border-line2 flex items-center justify-center text-[10px] text-mute">DS</span>
+                <div>
+                  <div class="text-mute text-[14px] font-medium font-sans">DeepSeek-V3.2</div>
+                  <div class="text-mute2 text-[11px]">running · pending results</div>
+                </div>
+              </div>
+            </td>
+            <td class="px-5 py-5 text-right text-mute2">—</td>
+            <td class="px-5 py-5 text-right text-mute2">—</td>
+            <td class="px-5 py-5 text-right text-mute2">—</td>
+            <td class="px-5 py-5 text-right text-mute2">—</td>
+            <td class="px-5 py-5 text-right text-mute2">—</td>
+            <td class="px-5 py-5 text-right border-l border-line text-mute2">—</td>
+            <td class="px-5 py-5 text-right border-l border-line text-mute2">—</td>
+          </tr>
         </tbody>
       </table>
     </div>
@@ -751,140 +791,24 @@ tailwind.config = {
       </div>
       <div class="col-span-12 lg:col-span-7 lg:col-start-6 mt-8 lg:mt-0 reveal reveal-d1">
         <p class="text-[17px] text-mute leading-relaxed">
-          The other 45 are redundant or near-zero on both real and generated data. Bars show
-          average normalized gap across the four models tested.
+          Hover any wedge for the metric definition. Inner ring: five families. Outer ring: 19 metrics.
         </p>
       </div>
     </div>
 
-    <!-- Metric families -->
-    <div class="space-y-10">
-
-      <!-- 01 Diversity -->
-      <div class="reveal reveal-d2">
-        <div class="flex items-baseline gap-4 mb-7 pb-3 border-b border-line">
-          <span class="font-mono text-[11px] text-gold tracking-widest">DIVERSITY</span>
-        </div>
-        <div class="grid sm:grid-cols-3 gap-6">
-          <div>
-            <div class="font-mono text-[13px] text-text">self_bleu_4</div>
-            <div class="bar-track mt-4"><div class="bar-fill" style="width: 88%;"></div></div>
-            <div class="flex justify-between mt-2 font-mono text-[11px] text-mute2"><span>real ≈ 0.03</span><span>LLM ≈ 0.04–0.12</span></div>
-          </div>
-          <div>
-            <div class="font-mono text-[13px] text-text">semantic_mean_cosine</div>
-            <div class="bar-track mt-4"><div class="bar-fill" style="width: 96%;"></div></div>
-            <div class="flex justify-between mt-2 font-mono text-[11px] text-mute2"><span>real ≈ 0.27</span><span>LLM ≈ 0.65–0.83</span></div>
-          </div>
-          <div>
-            <div class="font-mono text-[13px] text-text">self_bertscore_mean_f1</div>
-            <div class="bar-track mt-4"><div class="bar-fill" style="width: 74%;"></div></div>
-            <div class="flex justify-between mt-2 font-mono text-[11px] text-mute2"><span>real ≈ 0.48</span><span>LLM ≈ 0.55–0.69</span></div>
-          </div>
+    <!-- Sunburst chart + info panel -->
+    <div class="grid lg:grid-cols-[1fr_360px] gap-10 items-center reveal reveal-d2">
+      <div class="flex justify-center">
+        <svg id="sunburst" width="540" height="540" viewBox="-270 -270 540 540" class="max-w-full"></svg>
+      </div>
+      <div id="sunburst-info" class="card p-7 min-h-[220px] transition-all">
+        <div id="sb-family" class="font-mono text-[11px] text-gold tracking-widest mb-2">MIROBENCH</div>
+        <div id="sb-name" class="text-[24px] font-medium tracking-tight leading-tight mb-3">19 selected metrics</div>
+        <div id="sb-desc" class="text-[14px] text-mute leading-relaxed">
+          Hover any wedge to see the metric's description. The center holds <span class="text-text">MiroBench</span>;
+          the inner ring shows the 5 families; the outer ring shows the 19 individual metrics.
         </div>
       </div>
-
-      <!-- 02 Tone -->
-      <div class="reveal">
-        <div class="flex items-baseline gap-4 mb-7 pb-3 border-b border-line">
-          <span class="font-mono text-[11px] text-gold tracking-widest">TONE</span>
-        </div>
-        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          <div>
-            <div class="font-mono text-[13px] text-text">hard_disagree_rate</div>
-            <div class="bar-track mt-4"><div class="bar-fill" style="width: 92%;"></div></div>
-          </div>
-          <div>
-            <div class="font-mono text-[13px] text-text">polite_rate</div>
-            <div class="bar-track mt-4"><div class="bar-fill" style="width: 99%;"></div></div>
-          </div>
-          <div>
-            <div class="font-mono text-[13px] text-text">impolite_rate</div>
-            <div class="bar-track mt-4"><div class="bar-fill" style="width: 98%;"></div></div>
-          </div>
-          <div>
-            <div class="font-mono text-[13px] text-text">neutral_rate</div>
-            <div class="bar-track mt-4"><div class="bar-fill" style="width: 95%;"></div></div>
-          </div>
-        </div>
-      </div>
-
-      <!-- 03 Structure -->
-      <div class="reveal">
-        <div class="flex items-baseline gap-4 mb-7 pb-3 border-b border-line">
-          <span class="font-mono text-[11px] text-gold tracking-widest">STRUCTURE</span>
-        </div>
-        <div class="grid sm:grid-cols-3 gap-6">
-          <div>
-            <div class="font-mono text-[13px] text-text">length_cv</div>
-            <div class="bar-track mt-4"><div class="bar-fill" style="width: 84%;"></div></div>
-          </div>
-          <div>
-            <div class="font-mono text-[13px] text-text">avg_depth</div>
-            <div class="bar-track mt-4"><div class="bar-fill" style="width: 100%;"></div></div>
-          </div>
-          <div>
-            <div class="font-mono text-[13px] text-text">structural_virality</div>
-            <div class="bar-track mt-4"><div class="bar-fill" style="width: 100%;"></div></div>
-          </div>
-        </div>
-      </div>
-
-      <!-- 04 Content -->
-      <div class="reveal">
-        <div class="flex items-baseline gap-4 mb-7 pb-3 border-b border-line">
-          <span class="font-mono text-[11px] text-gold tracking-widest">CONTENT</span>
-        </div>
-        <div class="grid sm:grid-cols-2 gap-6">
-          <div>
-            <div class="font-mono text-[13px] text-text">mean_story_probability</div>
-            <div class="bar-track mt-4"><div class="bar-fill" style="width: 71%;"></div></div>
-          </div>
-          <div>
-            <div class="font-mono text-[13px] text-text">emotion_entropy</div>
-            <div class="bar-track mt-4"><div class="bar-fill" style="width: 65%;"></div></div>
-          </div>
-        </div>
-      </div>
-
-      <!-- 05 Toxicity (low signal) -->
-      <div class="reveal">
-        <div class="flex items-baseline gap-4 mb-7 pb-3 border-b border-line">
-          <span class="font-mono text-[11px] text-mute tracking-widest">TOXICITY</span>
-          <span class="font-mono text-[11px] text-mute2 italic">low signal · real ≈ 0</span>
-        </div>
-        <div class="grid sm:grid-cols-3 lg:grid-cols-4 gap-6">
-          <div>
-            <div class="font-mono text-[13px] text-text">toxicity_mean</div>
-            <div class="bar-track mt-4"><div class="bar-fill" style="width: 30%; opacity: 0.5;"></div></div>
-          </div>
-          <div>
-            <div class="font-mono text-[13px] text-text">severe_toxicity_mean</div>
-            <div class="bar-track mt-4"><div class="bar-fill" style="width: 22%; opacity: 0.5;"></div></div>
-          </div>
-          <div>
-            <div class="font-mono text-[13px] text-text">obscene_mean</div>
-            <div class="bar-track mt-4"><div class="bar-fill" style="width: 28%; opacity: 0.5;"></div></div>
-          </div>
-          <div>
-            <div class="font-mono text-[13px] text-text">threat_mean</div>
-            <div class="bar-track mt-4"><div class="bar-fill" style="width: 18%; opacity: 0.5;"></div></div>
-          </div>
-          <div>
-            <div class="font-mono text-[13px] text-text">insult_mean</div>
-            <div class="bar-track mt-4"><div class="bar-fill" style="width: 32%; opacity: 0.5;"></div></div>
-          </div>
-          <div>
-            <div class="font-mono text-[13px] text-text">identity_attack_mean</div>
-            <div class="bar-track mt-4"><div class="bar-fill" style="width: 18%; opacity: 0.5;"></div></div>
-          </div>
-          <div>
-            <div class="font-mono text-[13px] text-text">aggression_score_mean</div>
-            <div class="bar-track mt-4"><div class="bar-fill" style="width: 38%; opacity: 0.5;"></div></div>
-          </div>
-        </div>
-      </div>
-
     </div>
 
   </div>
@@ -1149,6 +1073,223 @@ cameras (14 metrics):
 </footer>
 
 <!-- ════════════════════════════════════════════════════════ SCRIPTS ════════════════════════════════════════════════════════ -->
+<script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js"></script>
+<script>
+// ── Sunburst data ──
+const sbData = {
+  name: "MiroBench",
+  family: "MIROBENCH",
+  desc: "19 selected metrics across 5 families that quantify the gap between LLM-generated and real Reddit discussions.",
+  children: [
+    { name: "Diversity", desc: "Lexical and semantic similarity between comments inside a thread.", children: [
+      { name: "self_bleu_4",            desc: "4-gram surface repetition across comments (lower = more diverse)." },
+      { name: "semantic_mean_cosine",   desc: "Sentence-embedding cosine similarity between comments." },
+      { name: "self_bertscore_mean_f1", desc: "Token-level semantic similarity (BERTScore F1)." },
+    ]},
+    { name: "Tone", desc: "Civility, disagreement, and tone variation in the thread.", children: [
+      { name: "hard_disagree_rate", desc: "Fraction of pairs with strong disagreement (stance classifier)." },
+      { name: "polite_rate",        desc: "Polite-tone fraction (Intel polite-guard)." },
+      { name: "impolite_rate",      desc: "Impolite-tone fraction; LLMs trend to zero." },
+      { name: "neutral_rate",       desc: "Neutral-tone fraction; LLMs are almost never neutral." },
+    ]},
+    { name: "Structure", desc: "Comment-length variance and thread-tree topology.", children: [
+      { name: "length_cv",            desc: "Comment-length coefficient of variation." },
+      { name: "avg_depth",            desc: "Average reply nesting depth (LLMs ≈ 1.0, real ≈ 1.8)." },
+      { name: "structural_virality",  desc: "Wiener index of the thread tree — how branched it is." },
+    ]},
+    { name: "Content", desc: "Narrativity and emotional variation across comments.", children: [
+      { name: "mean_story_probability", desc: "Narrative-content density (StorySeeker classifier)." },
+      { name: "emotion_entropy",        desc: "Diversity of emotion labels per thread (GoEmotions)." },
+    ]},
+    { name: "Toxicity", desc: "Mean toxicity scores across 7 sub-dimensions. Low-signal because real Reddit is near-zero.", children: [
+      { name: "toxicity_mean",         desc: "Mean toxicity probability (Detoxify)." },
+      { name: "severe_toxicity_mean",  desc: "Mean severe-toxicity probability." },
+      { name: "obscene_mean",          desc: "Mean obscenity probability." },
+      { name: "threat_mean",           desc: "Mean threat-content probability." },
+      { name: "insult_mean",           desc: "Mean insult-content probability." },
+      { name: "identity_attack_mean",  desc: "Mean identity-attack probability." },
+      { name: "aggression_score_mean", desc: "Mean aggression score." },
+    ]},
+  ]
+};
+
+// ── Color per family ──
+const familyColors = {
+  Diversity: "#F0A040",
+  Tone:      "#E66C5C",
+  Structure: "#FFB561",
+  Content:   "#D4A574",
+  Toxicity:  "#56524C",
+};
+
+// ── Render sunburst ──
+(function renderSunburst() {
+  const svgEl = document.getElementById("sunburst");
+  if (!svgEl || !window.d3) return;
+  const svg = d3.select(svgEl);
+  const radius = 270;
+
+  const root = d3.hierarchy(sbData)
+    .sum(d => d.children ? 0 : 1)
+    .sort((a, b) => b.value - a.value);
+
+  d3.partition().size([2 * Math.PI, radius])(root);
+
+  // The center is the root; family ring at depth 1; metric ring at depth 2
+  const arc = d3.arc()
+    .startAngle(d => d.x0)
+    .endAngle(d => d.x1)
+    .padAngle(0.005)
+    .padRadius(radius / 2)
+    .innerRadius(d => {
+      // root: skip, family ring 70-150, metric ring 150-260
+      if (d.depth === 0) return 0;
+      if (d.depth === 1) return 80;
+      return 160;
+    })
+    .outerRadius(d => {
+      if (d.depth === 0) return 0;
+      if (d.depth === 1) return 155;
+      return 255;
+    })
+    .cornerRadius(2);
+
+  const nodes = root.descendants().filter(d => d.depth > 0);
+
+  const g = svg.append("g");
+
+  const colorFor = (d) => {
+    const fam = d.depth === 1 ? d.data.name : d.parent.data.name;
+    const base = familyColors[fam] || "#F0A040";
+    if (d.depth === 1) return base;
+    // Outer ring: same hue, lower lightness
+    return d3.color(base).darker(0.5).formatHex();
+  };
+
+  const paths = g.selectAll("path")
+    .data(nodes)
+    .enter().append("path")
+    .attr("d", arc)
+    .attr("fill", d => colorFor(d))
+    .attr("fill-opacity", d => d.depth === 1 ? 0.85 : 0.65)
+    .attr("stroke", "#0A0908")
+    .attr("stroke-width", 1.2)
+    .style("cursor", "pointer")
+    .style("transition", "fill-opacity 200ms, transform 200ms")
+    .on("mouseenter", function(_e, d) {
+      d3.select(this).attr("fill-opacity", 1);
+      updateInfo(d);
+    })
+    .on("mouseleave", function(_e, d) {
+      d3.select(this).attr("fill-opacity", d.depth === 1 ? 0.85 : 0.65);
+    });
+
+  // Family-ring labels (curved)
+  const labelArc = d3.arc()
+    .startAngle(d => d.x0)
+    .endAngle(d => d.x1)
+    .innerRadius(115)
+    .outerRadius(115);
+
+  g.append("defs").selectAll("path")
+    .data(nodes.filter(d => d.depth === 1))
+    .enter().append("path")
+    .attr("id", d => "fam-path-" + d.data.name)
+    .attr("d", labelArc)
+    .attr("fill", "none");
+
+  g.selectAll(".fam-label")
+    .data(nodes.filter(d => d.depth === 1))
+    .enter().append("text")
+    .attr("class", "fam-label")
+    .attr("dy", 4)
+    .style("font-family", "Geist, sans-serif")
+    .style("font-size", "12px")
+    .style("font-weight", "600")
+    .style("letter-spacing", "0.05em")
+    .style("fill", "#0A0908")
+    .style("pointer-events", "none")
+    .append("textPath")
+      .attr("href", d => "#fam-path-" + d.data.name)
+      .attr("startOffset", "50%")
+      .attr("text-anchor", "middle")
+      .text(d => d.data.name);
+
+  // Metric labels (only show if wedge wide enough)
+  g.selectAll(".metric-label")
+    .data(nodes.filter(d => d.depth === 2))
+    .enter().append("text")
+    .attr("class", "metric-label")
+    .attr("transform", d => {
+      const ang = (d.x0 + d.x1) / 2;
+      const r = 207;
+      const x = Math.sin(ang) * r;
+      const y = -Math.cos(ang) * r;
+      const rot = (ang * 180 / Math.PI) - 90;
+      const flip = ang > Math.PI ? 180 : 0;
+      return `translate(${x},${y}) rotate(${rot + flip})`;
+    })
+    .attr("text-anchor", "middle")
+    .attr("dy", 4)
+    .style("font-family", "Geist Mono, monospace")
+    .style("font-size", "9.5px")
+    .style("fill", "#0A0908")
+    .style("pointer-events", "none")
+    .text(d => {
+      const ang = d.x1 - d.x0;
+      const minAng = 0.10;
+      if (ang < minAng) return "";
+      const name = d.data.name;
+      if (ang < 0.18) return name.slice(0, 8);
+      return name.length > 18 ? name.slice(0, 18) : name;
+    });
+
+  // Center label
+  g.append("text")
+    .attr("text-anchor", "middle")
+    .attr("dy", -2)
+    .style("font-family", "Instrument Serif, serif")
+    .style("font-style", "italic")
+    .style("font-size", "22px")
+    .style("fill", "#F0A040")
+    .style("pointer-events", "none")
+    .text("MiroBench");
+  g.append("text")
+    .attr("text-anchor", "middle")
+    .attr("dy", 18)
+    .style("font-family", "Geist Mono, monospace")
+    .style("font-size", "9px")
+    .style("letter-spacing", "0.15em")
+    .style("fill", "#7E7A72")
+    .style("pointer-events", "none")
+    .text("19 METRICS");
+
+  // Default state on mouseleave from whole chart
+  svg.on("mouseleave", () => updateInfo(null));
+
+  function updateInfo(d) {
+    const famEl  = document.getElementById("sb-family");
+    const nameEl = document.getElementById("sb-name");
+    const descEl = document.getElementById("sb-desc");
+    if (!d) {
+      famEl.textContent  = "MIROBENCH";
+      nameEl.textContent = "19 selected metrics";
+      descEl.innerHTML   = 'Hover any wedge to see the metric\'s description. The center holds <span class="text-text">MiroBench</span>; the inner ring shows the 5 families; the outer ring shows the 19 individual metrics.';
+      return;
+    }
+    if (d.depth === 1) {
+      famEl.textContent  = "FAMILY · " + d.data.name.toUpperCase();
+      nameEl.textContent = d.data.name;
+      descEl.textContent = d.data.desc;
+    } else {
+      famEl.textContent  = "FAMILY · " + d.parent.data.name.toUpperCase();
+      nameEl.textContent = d.data.name;
+      descEl.textContent = d.data.desc;
+    }
+  }
+})();
+</script>
+
 <script>
   // Nav blur on scroll
   const nav = document.getElementById('nav');
