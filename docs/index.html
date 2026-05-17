@@ -1,0 +1,1070 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>MiroBench — Benchmarking Realism in Agentic Simulation of Real-world Discussions</title>
+<meta name="description" content="A benchmark for evaluating synthetic online product discussion threads against real Reddit data across 5 consumer product domains, with 12 core discriminative metrics and an LLM-driven calibration system.">
+
+<meta property="og:title" content="MiroBench">
+<meta property="og:description" content="Benchmarking realism in agentic simulation of real-world discussions.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://mirobench.com">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600;9..144,700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      fontFamily: {
+        display: ['Fraunces', 'serif'],
+        sans: ['IBM Plex Sans', 'system-ui', 'sans-serif'],
+        mono: ['IBM Plex Mono', 'ui-monospace', 'monospace'],
+      },
+      colors: {
+        paper:  '#F5F1E8',
+        paper2: '#EEE9DC',
+        ink:    '#16110D',
+        muted:  '#6E6357',
+        rule:   '#D7CFBE',
+        ox:     '#8B2727',
+        ox2:    '#A23535',
+        moss:   '#3D4F2E',
+        terminal: '#15110D',
+      },
+    },
+  },
+}
+</script>
+
+<style>
+  :root {
+    --paper:  #F5F1E8;
+    --paper2: #EEE9DC;
+    --ink:    #16110D;
+    --muted:  #6E6357;
+    --rule:   #D7CFBE;
+    --ox:     #8B2727;
+  }
+
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-feature-settings: "ss01" 1, "ss02" 1, "kern" 1;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Subtle ruled-paper background */
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-image:
+      radial-gradient(rgba(22, 17, 13, 0.04) 1px, transparent 1px);
+    background-size: 28px 28px;
+    background-position: 0 0;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* Grain texture overlay */
+  body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.08  0 0 0 0 0.06  0 0 0 0 0.05  0 0 0 0.07 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+    opacity: 0.5;
+    pointer-events: none;
+    z-index: 0;
+    mix-blend-mode: multiply;
+  }
+
+  main, header, footer { position: relative; z-index: 1; }
+
+  .display {
+    font-family: 'Fraunces', serif;
+    font-variation-settings: "opsz" 144, "SOFT" 50;
+    letter-spacing: -0.02em;
+  }
+  .display-italic {
+    font-style: italic;
+    font-variation-settings: "opsz" 144, "SOFT" 100;
+  }
+
+  .small-caps {
+    font-variant-caps: all-small-caps;
+    letter-spacing: 0.14em;
+    font-weight: 500;
+  }
+
+  /* Underline ink scratch */
+  .ink-link {
+    background-image: linear-gradient(to right, currentColor 0%, currentColor 100%);
+    background-size: 0% 1px;
+    background-repeat: no-repeat;
+    background-position: 0 100%;
+    transition: background-size 320ms cubic-bezier(.25,.46,.45,.94);
+  }
+  .ink-link:hover { background-size: 100% 1px; }
+
+  .underline-now {
+    background-image: linear-gradient(to right, currentColor 0%, currentColor 100%);
+    background-size: 100% 1px;
+    background-repeat: no-repeat;
+    background-position: 0 100%;
+  }
+
+  /* Vertical rule */
+  .vr { width: 1px; background: var(--rule); }
+
+  /* Section number marker */
+  .sec-num {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    color: var(--muted);
+    display: inline-block;
+    border-left: 1px solid var(--rule);
+    padding-left: 0.75rem;
+  }
+
+  /* Card paper edge */
+  .paper-card {
+    background: var(--paper2);
+    border: 1px solid var(--rule);
+    transition: transform 240ms cubic-bezier(.25,.46,.45,.94), box-shadow 240ms;
+  }
+  .paper-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 24px -16px rgba(22, 17, 13, 0.18);
+  }
+
+  /* Terminal block */
+  .terminal {
+    background: #15110D;
+    color: #E7DEC9;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13.5px;
+    line-height: 1.65;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 24px 48px -32px rgba(22, 17, 13, 0.40);
+  }
+  .terminal pre {
+    padding: 1.25rem 1.25rem 1.25rem 1.25rem;
+    overflow-x: auto;
+    white-space: pre;
+  }
+  .term-comment { color: #8c826b; }
+  .term-flag    { color: #d39563; }
+  .term-cmd     { color: #e9c46a; font-weight: 500; }
+  .term-str     { color: #b5cea8; }
+
+  /* Stats cards */
+  .stat-num {
+    font-family: 'Fraunces', serif;
+    font-variation-settings: "opsz" 144;
+    font-weight: 400;
+    letter-spacing: -0.03em;
+    line-height: 1;
+  }
+
+  /* Reveal animation */
+  .reveal {
+    opacity: 0;
+    transform: translateY(14px);
+    transition: opacity 700ms cubic-bezier(.25,.46,.45,.94),
+                transform 700ms cubic-bezier(.25,.46,.45,.94);
+  }
+  .reveal.in {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .reveal-delay-1 { transition-delay: 60ms; }
+  .reveal-delay-2 { transition-delay: 120ms; }
+  .reveal-delay-3 { transition-delay: 180ms; }
+  .reveal-delay-4 { transition-delay: 240ms; }
+  .reveal-delay-5 { transition-delay: 300ms; }
+
+  /* Nav blur on scroll */
+  .nav-blur {
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    background-color: rgba(245, 241, 232, 0.78);
+    border-bottom: 1px solid var(--rule);
+  }
+
+  /* Domain index hover */
+  .index-row {
+    border-bottom: 1px solid var(--rule);
+    transition: background 200ms, padding-left 200ms;
+  }
+  .index-row:hover {
+    background: rgba(139, 39, 39, 0.04);
+    padding-left: 0.5rem;
+  }
+
+  /* Family badge */
+  .family-badge {
+    display: inline-block;
+    padding: 2px 8px;
+    border: 1px solid var(--rule);
+    border-radius: 2px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10.5px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    background: var(--paper);
+  }
+
+  /* Phase circle indicator */
+  .phase-num {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: var(--paper);
+    border: 1.5px solid var(--ox);
+    color: var(--ox);
+    font-family: 'Fraunces', serif;
+    font-size: 18px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  /* Selection */
+  ::selection { background: rgba(139, 39, 39, 0.20); color: var(--ink); }
+
+  /* Copy button */
+  .copy-btn {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    color: #8c826b;
+    border: 1px solid rgba(231, 222, 201, 0.18);
+    background: rgba(231, 222, 201, 0.05);
+    padding: 2px 9px;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: all 180ms;
+  }
+  .copy-btn:hover {
+    color: #E7DEC9;
+    background: rgba(231, 222, 201, 0.10);
+    border-color: rgba(231, 222, 201, 0.30);
+  }
+  .copy-btn.copied {
+    color: #b5cea8;
+    border-color: rgba(181, 206, 168, 0.30);
+  }
+
+  /* Hero ornamental flourish */
+  .hero-meta {
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+  }
+
+  /* Bar chart for metrics severity */
+  .bar-track {
+    height: 4px;
+    background: var(--paper2);
+    border-radius: 2px;
+    overflow: hidden;
+  }
+  .bar-fill {
+    height: 100%;
+    background: var(--ox);
+    border-radius: 2px;
+    transition: width 1.2s cubic-bezier(.25,.46,.45,.94);
+  }
+</style>
+</head>
+
+<body class="font-sans text-[15px] leading-relaxed">
+
+<!-- ─────────────────────────────────────────────  NAV  ───────────────────────────────────────────── -->
+<header id="nav" class="sticky top-0 z-50 transition-all duration-300">
+  <div class="max-w-[1280px] mx-auto px-6 lg:px-10 py-4 flex items-center justify-between">
+    <a href="#top" class="display text-[22px] tracking-tight">
+      Miro<span class="display-italic text-ox">Bench</span>
+    </a>
+    <nav class="hidden md:flex items-center gap-7 text-[13px] text-muted">
+      <a href="#overview" class="ink-link hover:text-ink">Overview</a>
+      <a href="#domains" class="ink-link hover:text-ink">Domains</a>
+      <a href="#metrics" class="ink-link hover:text-ink">Metrics</a>
+      <a href="#quickstart" class="ink-link hover:text-ink">Quick&nbsp;Start</a>
+      <a href="#calibration" class="ink-link hover:text-ink">Calibration</a>
+      <a href="#cite" class="ink-link hover:text-ink">Citation</a>
+    </nav>
+    <a href="https://github.com/yyu6/MiroBench" target="_blank" rel="noopener"
+       class="hidden md:inline-flex items-center gap-2 text-[13px] text-ink hover:text-ox transition-colors">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8a8 8 0 0 0 5.47 7.59c.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+      <span>yyu6/MiroBench</span>
+    </a>
+  </div>
+</header>
+
+<!-- ─────────────────────────────────────────────  HERO  ───────────────────────────────────────────── -->
+<section id="top" class="max-w-[1280px] mx-auto px-6 lg:px-10 pt-16 lg:pt-24 pb-16">
+  <div class="grid grid-cols-12 gap-x-6 lg:gap-x-10 items-start">
+
+    <!-- Left: title -->
+    <div class="col-span-12 lg:col-span-8 reveal">
+      <div class="flex items-baseline gap-4 mb-4">
+        <span class="small-caps text-muted text-[11px]">Benchmark · 2026</span>
+        <span class="text-rule">·</span>
+        <span class="font-mono text-[12px] text-muted">v0.1.0</span>
+      </div>
+      <h1 class="display text-[64px] sm:text-[88px] lg:text-[120px] leading-[0.92] tracking-tight font-light">
+        Miro<span class="display-italic font-normal text-ox">Bench</span><span class="text-ox">.</span>
+      </h1>
+      <p class="display text-[24px] sm:text-[32px] lg:text-[38px] leading-tight mt-6 max-w-[28ch]">
+        Benchmarking realism in <span class="display-italic">agentic simulation</span> of real-world discussions.
+      </p>
+      <p class="mt-7 text-[16px] text-muted max-w-[58ch]">
+        A scientific benchmark for evaluating synthetic online product-discussion threads
+        against real Reddit data — across five consumer product domains, twelve core discriminative
+        metrics, and an iterative LLM-driven calibration system that closes distributional gaps.
+      </p>
+
+      <!-- CTA row -->
+      <div class="mt-9 flex flex-wrap items-center gap-3">
+        <a href="paper/MiroBench_preprint.pdf" target="_blank"
+           class="group inline-flex items-center gap-3 bg-ink text-paper px-5 py-3 text-[13px] tracking-wide hover:bg-ox transition-colors duration-200">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M8 1H2.5a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1V5.5L8 1z"/><path d="M8 1v4.5h4.5"/></svg>
+          <span class="small-caps text-[11px]">Read paper</span>
+          <span class="text-paper/60 font-mono text-[11px]">PDF · 1.5 MB</span>
+        </a>
+        <a href="https://github.com/yyu6/MiroBench" target="_blank" rel="noopener"
+           class="inline-flex items-center gap-3 border border-ink/30 text-ink px-5 py-3 text-[13px] tracking-wide hover:border-ink hover:bg-ink hover:text-paper transition-colors duration-200">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8a8 8 0 0 0 5.47 7.59c.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+          <span class="small-caps text-[11px]">Source · GitHub</span>
+        </a>
+        <a href="#quickstart"
+           class="inline-flex items-center gap-2 text-ink px-2 py-3 text-[13px] hover:text-ox transition-colors">
+          <span class="small-caps text-[11px]">Quick&nbsp;start</span>
+          <span aria-hidden="true">→</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Right: metadata block -->
+    <aside class="col-span-12 lg:col-span-4 mt-12 lg:mt-2 reveal reveal-delay-2">
+      <div class="hero-meta py-5 grid grid-cols-2 gap-y-4 gap-x-6 font-mono text-[12.5px]">
+        <div class="small-caps text-muted text-[10.5px]">Domains</div>
+        <div class="text-ink">5</div>
+
+        <div class="small-caps text-muted text-[10.5px]">Real&nbsp;threads</div>
+        <div class="text-ink">4 306</div>
+
+        <div class="small-caps text-muted text-[10.5px]">Products</div>
+        <div class="text-ink">≈ 200/domain</div>
+
+        <div class="small-caps text-muted text-[10.5px]">Core&nbsp;metrics</div>
+        <div class="text-ink">12 / 57</div>
+
+        <div class="small-caps text-muted text-[10.5px]">Models&nbsp;tested</div>
+        <div class="text-ink">4 LLMs</div>
+
+        <div class="small-caps text-muted text-[10.5px]">License</div>
+        <div class="text-ink">MIT</div>
+      </div>
+
+      <!-- Author / institution byline-style block -->
+      <div class="mt-6 text-[13px] text-muted leading-relaxed">
+        <p>
+          A research artifact accompanying the MiroBench paper. Inspired by and built on
+          <a href="https://github.com/camel-ai/oasis" target="_blank" class="ink-link text-ink">OASIS</a>
+          and
+          <a href="https://github.com/666ghj/MiroFish" target="_blank" class="ink-link text-ink">MiroFish</a>.
+        </p>
+      </div>
+    </aside>
+
+  </div>
+</section>
+
+<!-- ─────────────────────────────────────────────  STATS  ───────────────────────────────────────────── -->
+<section class="border-t border-rule">
+  <div class="max-w-[1280px] mx-auto px-6 lg:px-10 py-12 lg:py-16">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-x-6 gap-y-10">
+      <div class="reveal">
+        <div class="stat-num text-[72px] text-ox">5</div>
+        <div class="small-caps text-[10.5px] text-muted mt-1">Product&nbsp;domains</div>
+        <div class="text-[13px] text-muted mt-2 max-w-[18ch]">Credit cards, cameras, phones, headphones, laptops.</div>
+      </div>
+      <div class="reveal reveal-delay-1">
+        <div class="stat-num text-[72px]">4,306</div>
+        <div class="small-caps text-[10.5px] text-muted mt-1">Scored&nbsp;real&nbsp;threads</div>
+        <div class="text-[13px] text-muted mt-2 max-w-[18ch]">Reddit and product-forum discussions, hand-curated.</div>
+      </div>
+      <div class="reveal reveal-delay-2">
+        <div class="stat-num text-[72px]">12</div>
+        <div class="small-caps text-[10.5px] text-muted mt-1">Core&nbsp;metrics</div>
+        <div class="text-[13px] text-muted mt-2 max-w-[18ch]">Curated from 57 raw scorer outputs; the rest are noise.</div>
+      </div>
+      <div class="reveal reveal-delay-3">
+        <div class="stat-num text-[72px]">4</div>
+        <div class="small-caps text-[10.5px] text-muted mt-1">LLMs&nbsp;evaluated</div>
+        <div class="text-[13px] text-muted mt-2 max-w-[18ch]">GPT-4o-mini, GPT-5-mini, DeepSeek-Chat, DeepSeek-V4-Flash.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────────────────────────────────────────  OVERVIEW  ───────────────────────────────────────────── -->
+<section id="overview" class="border-t border-rule">
+  <div class="max-w-[1280px] mx-auto px-6 lg:px-10 py-20 lg:py-28">
+    <div class="grid grid-cols-12 gap-x-6 lg:gap-x-10">
+      <div class="col-span-12 lg:col-span-3 reveal">
+        <span class="sec-num">§ 01 · OVERVIEW</span>
+      </div>
+      <div class="col-span-12 lg:col-span-9 reveal reveal-delay-1">
+        <h2 class="display text-[40px] sm:text-[52px] leading-[1.02] tracking-tight max-w-[20ch]">
+          Real discussions are <span class="display-italic">structurally</span> and <span class="display-italic">stylistically</span> different from what LLMs produce.
+        </h2>
+        <div class="mt-10 grid sm:grid-cols-2 gap-x-10 gap-y-6 text-[15px] leading-relaxed">
+          <p>
+            MiroBench scores generated discussion threads on the dimensions where LLMs reliably <em>fail</em> —
+            comment-tree branching, neutral-tone production, lexical diversity, length variance, and stance
+            disagreement — and computes statistical distance to a held-out distribution of real human threads.
+          </p>
+          <p>
+            Of the 57 raw metrics computed by our nine scoring families, only <strong>12 truly discriminate</strong>
+            between real and synthetic. The rest are either redundant or near-zero on both real and generated data
+            (toxicity sub-variants, for example). We report all 57 but recommend the 12.
+          </p>
+        </div>
+
+        <!-- Three pillars -->
+        <div class="mt-14 grid sm:grid-cols-3 gap-6">
+          <div class="paper-card p-6 reveal reveal-delay-2">
+            <div class="font-mono text-[11px] text-ox tracking-widest mb-3">01 — SCORE</div>
+            <div class="display text-[22px] leading-tight">Run 9 scorer families across your generated threads</div>
+            <div class="text-[13px] text-muted mt-3">A single CLI command. Outputs <span class="font-mono text-[12px]">thread_scores.csv</span> with all 57 metrics.</div>
+          </div>
+          <div class="paper-card p-6 reveal reveal-delay-3">
+            <div class="font-mono text-[11px] text-ox tracking-widest mb-3">02 — COMPARE</div>
+            <div class="display text-[22px] leading-tight">Statistical comparison against real reference data</div>
+            <div class="text-[13px] text-muted mt-3">MWU, KS, Cliff's δ, Wasserstein distance, empirical fail-rate.</div>
+          </div>
+          <div class="paper-card p-6 reveal reveal-delay-4">
+            <div class="font-mono text-[11px] text-ox tracking-widest mb-3">03 — CALIBRATE</div>
+            <div class="display text-[22px] leading-tight">LLM-driven iterative prompt overlay tuning</div>
+            <div class="text-[13px] text-muted mt-3">A reasoner agent reads metric gaps and proposes overlay edits.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────────────────────────────────────────  DOMAINS  ───────────────────────────────────────────── -->
+<section id="domains" class="border-t border-rule bg-paper2/40">
+  <div class="max-w-[1280px] mx-auto px-6 lg:px-10 py-20 lg:py-28">
+    <div class="grid grid-cols-12 gap-x-6 lg:gap-x-10">
+      <div class="col-span-12 lg:col-span-3 reveal">
+        <span class="sec-num">§ 02 · DOMAINS</span>
+      </div>
+      <div class="col-span-12 lg:col-span-9">
+        <h2 class="display text-[40px] sm:text-[52px] leading-[1.02] tracking-tight reveal max-w-[20ch]">
+          Five consumer product categories with real Reddit threads as ground truth.
+        </h2>
+
+        <!-- Domain index -->
+        <div class="mt-12 reveal reveal-delay-1">
+          <div class="grid grid-cols-12 text-[11px] small-caps text-muted py-2 border-y border-rule">
+            <div class="col-span-1 font-mono">#</div>
+            <div class="col-span-4">Domain</div>
+            <div class="col-span-3 text-right">Real threads</div>
+            <div class="col-span-2 text-right">Products</div>
+            <div class="col-span-2 text-right">Source</div>
+          </div>
+
+          <a href="https://github.com/yyu6/MiroBench/tree/main/mirobench/data/credit_cards" target="_blank" class="index-row grid grid-cols-12 items-baseline py-5 group">
+            <div class="col-span-1 font-mono text-[12px] text-muted">01</div>
+            <div class="col-span-4">
+              <div class="display text-[26px] leading-tight group-hover:text-ox transition-colors">Credit&nbsp;cards</div>
+              <div class="text-[12.5px] text-muted mt-1">Reward and travel credit-card discussions.</div>
+            </div>
+            <div class="col-span-3 text-right">
+              <span class="display text-[28px]">2,650</span>
+            </div>
+            <div class="col-span-2 text-right font-mono text-[13px]">200</div>
+            <div class="col-span-2 text-right font-mono text-[12px] text-muted">r/CreditCards</div>
+          </a>
+
+          <a href="https://github.com/yyu6/MiroBench/tree/main/mirobench/data/cameras" target="_blank" class="index-row grid grid-cols-12 items-baseline py-5 group">
+            <div class="col-span-1 font-mono text-[12px] text-muted">02</div>
+            <div class="col-span-4">
+              <div class="display text-[26px] leading-tight group-hover:text-ox transition-colors">Cameras</div>
+              <div class="text-[12.5px] text-muted mt-1">DSLR, mirrorless, and point-and-shoot camera discussions.</div>
+            </div>
+            <div class="col-span-3 text-right">
+              <span class="display text-[28px]">738</span>
+            </div>
+            <div class="col-span-2 text-right font-mono text-[13px]">200</div>
+            <div class="col-span-2 text-right font-mono text-[12px] text-muted">B&amp;H&nbsp;Photo</div>
+          </a>
+
+          <a href="https://github.com/yyu6/MiroBench/tree/main/mirobench/data/cell_phones" target="_blank" class="index-row grid grid-cols-12 items-baseline py-5 group">
+            <div class="col-span-1 font-mono text-[12px] text-muted">03</div>
+            <div class="col-span-4">
+              <div class="display text-[26px] leading-tight group-hover:text-ox transition-colors">Cell&nbsp;phones</div>
+              <div class="text-[12.5px] text-muted mt-1">Smartphone reviews and recommendations.</div>
+            </div>
+            <div class="col-span-3 text-right">
+              <span class="display text-[28px]">358</span>
+            </div>
+            <div class="col-span-2 text-right font-mono text-[13px]">200</div>
+            <div class="col-span-2 text-right font-mono text-[12px] text-muted">Best&nbsp;Buy</div>
+          </a>
+
+          <a href="https://github.com/yyu6/MiroBench/tree/main/mirobench/data/headphones" target="_blank" class="index-row grid grid-cols-12 items-baseline py-5 group">
+            <div class="col-span-1 font-mono text-[12px] text-muted">04</div>
+            <div class="col-span-4">
+              <div class="display text-[26px] leading-tight group-hover:text-ox transition-colors">Headphones</div>
+              <div class="text-[12.5px] text-muted mt-1">Wireless headphones, earbuds, and audio gear.</div>
+            </div>
+            <div class="col-span-3 text-right">
+              <span class="display text-[28px]">255</span>
+            </div>
+            <div class="col-span-2 text-right font-mono text-[13px]">200</div>
+            <div class="col-span-2 text-right font-mono text-[12px] text-muted">Best&nbsp;Buy</div>
+          </a>
+
+          <a href="https://github.com/yyu6/MiroBench/tree/main/mirobench/data/laptops" target="_blank" class="index-row grid grid-cols-12 items-baseline py-5 group">
+            <div class="col-span-1 font-mono text-[12px] text-muted">05</div>
+            <div class="col-span-4">
+              <div class="display text-[26px] leading-tight group-hover:text-ox transition-colors">Laptops</div>
+              <div class="text-[12.5px] text-muted mt-1">Gaming, productivity, and budget laptop discussions.</div>
+            </div>
+            <div class="col-span-3 text-right">
+              <span class="display text-[28px]">305</span>
+            </div>
+            <div class="col-span-2 text-right font-mono text-[13px]">200</div>
+            <div class="col-span-2 text-right font-mono text-[12px] text-muted">Best&nbsp;Buy</div>
+          </a>
+        </div>
+
+        <p class="text-[13px] text-muted mt-6 max-w-[60ch]">
+          Each domain ships with a full reference <span class="font-mono text-[12px]">thread_scores.csv</span>,
+          train / val / test splits for calibration, and the underlying product descriptions used as
+          generation context.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────────────────────────────────────────  METRICS  ───────────────────────────────────────────── -->
+<section id="metrics" class="border-t border-rule">
+  <div class="max-w-[1280px] mx-auto px-6 lg:px-10 py-20 lg:py-28">
+    <div class="grid grid-cols-12 gap-x-6 lg:gap-x-10">
+      <div class="col-span-12 lg:col-span-3 reveal">
+        <span class="sec-num">§ 03 · METRICS</span>
+      </div>
+      <div class="col-span-12 lg:col-span-9">
+        <h2 class="display text-[40px] sm:text-[52px] leading-[1.02] tracking-tight max-w-[22ch] reveal">
+          The 12 metrics that <span class="display-italic">consistently</span> distinguish LLM from human discussion.
+        </h2>
+        <p class="mt-8 text-[15px] text-muted max-w-[60ch] reveal reveal-delay-1">
+          Of the 57 raw metrics computed by MiroBench's nine scoring families, these twelve fail
+          significance tests across <em>every</em> (model × domain) cell we tested. They capture
+          the real structural gap between synthetic and real Reddit.
+        </p>
+
+        <!-- Metric families -->
+        <div class="mt-14 space-y-12">
+
+          <!-- Diversity -->
+          <div class="reveal reveal-delay-2">
+            <div class="flex items-baseline gap-4 mb-5 border-b border-rule pb-3">
+              <span class="family-badge">FAMILY 01</span>
+              <h3 class="display text-[26px]">Diversity</h3>
+              <span class="text-[12px] text-muted ml-auto font-mono">3 metrics</span>
+            </div>
+            <div class="grid sm:grid-cols-3 gap-x-6 gap-y-4">
+              <div>
+                <div class="font-mono text-[13px] text-ink">self_bleu_4</div>
+                <div class="text-[13px] text-muted mt-1">4-gram surface repetition across comments.</div>
+                <div class="bar-track mt-3"><div class="bar-fill" style="width: 88%;"></div></div>
+              </div>
+              <div>
+                <div class="font-mono text-[13px] text-ink">semantic_mean_cosine</div>
+                <div class="text-[13px] text-muted mt-1">Sentence-embedding similarity between comments.</div>
+                <div class="bar-track mt-3"><div class="bar-fill" style="width: 96%;"></div></div>
+              </div>
+              <div>
+                <div class="font-mono text-[13px] text-ink">self_bertscore_mean_f1</div>
+                <div class="text-[13px] text-muted mt-1">Token-level semantic similarity (BERTScore).</div>
+                <div class="bar-track mt-3"><div class="bar-fill" style="width: 74%;"></div></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tone -->
+          <div class="reveal">
+            <div class="flex items-baseline gap-4 mb-5 border-b border-rule pb-3">
+              <span class="family-badge">FAMILY 02</span>
+              <h3 class="display text-[26px]">Tone &amp; civility</h3>
+              <span class="text-[12px] text-muted ml-auto font-mono">4 metrics</span>
+            </div>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-4">
+              <div>
+                <div class="font-mono text-[13px] text-ink">hard_disagree_rate</div>
+                <div class="text-[13px] text-muted mt-1">Strong disagreement fraction.</div>
+                <div class="bar-track mt-3"><div class="bar-fill" style="width: 92%;"></div></div>
+              </div>
+              <div>
+                <div class="font-mono text-[13px] text-ink">polite_rate</div>
+                <div class="text-[13px] text-muted mt-1">Over-politeness signal.</div>
+                <div class="bar-track mt-3"><div class="bar-fill" style="width: 99%;"></div></div>
+              </div>
+              <div>
+                <div class="font-mono text-[13px] text-ink">impolite_rate</div>
+                <div class="text-[13px] text-muted mt-1">Sanitization signal — LLMs trend to zero.</div>
+                <div class="bar-track mt-3"><div class="bar-fill" style="width: 98%;"></div></div>
+              </div>
+              <div>
+                <div class="font-mono text-[13px] text-ink">neutral_rate</div>
+                <div class="text-[13px] text-muted mt-1">Tone variation; LLMs almost never neutral.</div>
+                <div class="bar-track mt-3"><div class="bar-fill" style="width: 95%;"></div></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Structure -->
+          <div class="reveal">
+            <div class="flex items-baseline gap-4 mb-5 border-b border-rule pb-3">
+              <span class="family-badge">FAMILY 03</span>
+              <h3 class="display text-[26px]">Structure</h3>
+              <span class="text-[12px] text-muted ml-auto font-mono">3 metrics</span>
+            </div>
+            <div class="grid sm:grid-cols-3 gap-x-6 gap-y-4">
+              <div>
+                <div class="font-mono text-[13px] text-ink">length_cv</div>
+                <div class="text-[13px] text-muted mt-1">Comment-length variation.</div>
+                <div class="bar-track mt-3"><div class="bar-fill" style="width: 84%;"></div></div>
+              </div>
+              <div>
+                <div class="font-mono text-[13px] text-ink">avg_depth</div>
+                <div class="text-[13px] text-muted mt-1">Reply nesting depth.</div>
+                <div class="bar-track mt-3"><div class="bar-fill" style="width: 100%;"></div></div>
+              </div>
+              <div>
+                <div class="font-mono text-[13px] text-ink">structural_virality</div>
+                <div class="text-[13px] text-muted mt-1">Tree branching shape (Wiener index).</div>
+                <div class="bar-track mt-3"><div class="bar-fill" style="width: 100%;"></div></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Content -->
+          <div class="reveal">
+            <div class="flex items-baseline gap-4 mb-5 border-b border-rule pb-3">
+              <span class="family-badge">FAMILY 04</span>
+              <h3 class="display text-[26px]">Content</h3>
+              <span class="text-[12px] text-muted ml-auto font-mono">2 metrics</span>
+            </div>
+            <div class="grid sm:grid-cols-2 gap-x-6 gap-y-4">
+              <div>
+                <div class="font-mono text-[13px] text-ink">mean_story_probability</div>
+                <div class="text-[13px] text-muted mt-1">Narrative content density.</div>
+                <div class="bar-track mt-3"><div class="bar-fill" style="width: 71%;"></div></div>
+              </div>
+              <div>
+                <div class="font-mono text-[13px] text-ink">emotion_entropy</div>
+                <div class="text-[13px] text-muted mt-1">Diversity of emotion labels per thread.</div>
+                <div class="bar-track mt-3"><div class="bar-fill" style="width: 65%;"></div></div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <p class="text-[12px] text-muted mt-10 font-mono leading-relaxed max-w-[80ch]">
+          Bar fill ≈ average relative gap (real ↔ generated) across the four models tested.
+          Higher = more discriminative for benchmarking. Avg-depth and structural-virality saturate
+          because every LLM tested produces avg_depth = 1.0 and virality = 0.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────────────────────────────────────────  QUICK START  ───────────────────────────────────────────── -->
+<section id="quickstart" class="border-t border-rule bg-paper2/40">
+  <div class="max-w-[1280px] mx-auto px-6 lg:px-10 py-20 lg:py-28">
+    <div class="grid grid-cols-12 gap-x-6 lg:gap-x-10">
+      <div class="col-span-12 lg:col-span-3 reveal">
+        <span class="sec-num">§ 04 · QUICK START</span>
+      </div>
+      <div class="col-span-12 lg:col-span-9">
+        <h2 class="display text-[40px] sm:text-[52px] leading-[1.02] tracking-tight max-w-[22ch] reveal">
+          Three commands from <span class="display-italic">install</span> to a per-metric statistical comparison.
+        </h2>
+
+        <div class="mt-12 space-y-7">
+          <!-- Step 1 -->
+          <div class="reveal reveal-delay-1">
+            <div class="flex items-baseline gap-3 mb-3">
+              <span class="display text-[22px] text-ox">1</span>
+              <span class="display text-[22px]">Install</span>
+            </div>
+            <div class="terminal">
+              <div class="px-4 py-2 border-b border-paper/10 flex items-center justify-between bg-black/30">
+                <div class="flex items-center gap-1.5">
+                  <span class="w-2.5 h-2.5 rounded-full bg-[#4a4133]"></span>
+                  <span class="w-2.5 h-2.5 rounded-full bg-[#4a4133]"></span>
+                  <span class="w-2.5 h-2.5 rounded-full bg-[#4a4133]"></span>
+                </div>
+                <span class="font-mono text-[11px] text-[#8c826b]">shell</span>
+                <button class="copy-btn" data-copy="git clone https://github.com/yyu6/MiroBench.git
+cd MiroBench
+pip install -e .">copy</button>
+              </div>
+<pre><span class="term-comment"># clone + install editable</span>
+<span class="term-cmd">git</span> clone https://github.com/yyu6/MiroBench.git
+<span class="term-cmd">cd</span> MiroBench
+<span class="term-cmd">pip</span> install -e .</pre>
+            </div>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="reveal reveal-delay-2">
+            <div class="flex items-baseline gap-3 mb-3">
+              <span class="display text-[22px] text-ox">2</span>
+              <span class="display text-[22px]">Score your generated threads</span>
+            </div>
+            <div class="terminal">
+              <div class="px-4 py-2 border-b border-paper/10 flex items-center justify-between bg-black/30">
+                <div class="flex items-center gap-1.5">
+                  <span class="w-2.5 h-2.5 rounded-full bg-[#4a4133]"></span>
+                  <span class="w-2.5 h-2.5 rounded-full bg-[#4a4133]"></span>
+                  <span class="w-2.5 h-2.5 rounded-full bg-[#4a4133]"></span>
+                </div>
+                <span class="font-mono text-[11px] text-[#8c826b]">shell</span>
+                <button class="copy-btn" data-copy="mirobench score my_generated_threads/ --device cpu">copy</button>
+              </div>
+<pre><span class="term-comment"># each thread = a directory containing discussion.json</span>
+<span class="term-cmd">mirobench</span> score my_generated_threads/ <span class="term-flag">--device</span> cpu
+
+<span class="term-comment"># → my_generated_threads/thread_scores.csv  (57 metrics × N threads)</span></pre>
+            </div>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="reveal reveal-delay-3">
+            <div class="flex items-baseline gap-3 mb-3">
+              <span class="display text-[22px] text-ox">3</span>
+              <span class="display text-[22px]">Compare against real Reddit</span>
+            </div>
+            <div class="terminal">
+              <div class="px-4 py-2 border-b border-paper/10 flex items-center justify-between bg-black/30">
+                <div class="flex items-center gap-1.5">
+                  <span class="w-2.5 h-2.5 rounded-full bg-[#4a4133]"></span>
+                  <span class="w-2.5 h-2.5 rounded-full bg-[#4a4133]"></span>
+                  <span class="w-2.5 h-2.5 rounded-full bg-[#4a4133]"></span>
+                </div>
+                <span class="font-mono text-[11px] text-[#8c826b]">shell</span>
+                <button class="copy-btn" data-copy='mirobench compare my_generated_threads/thread_scores.csv \
+    --domains credit_cards cameras \
+    --core-only \
+    --model-name "my-model"'>copy</button>
+              </div>
+<pre><span class="term-cmd">mirobench</span> compare my_generated_threads/thread_scores.csv \
+    <span class="term-flag">--domains</span> credit_cards cameras \
+    <span class="term-flag">--core-only</span> \
+    <span class="term-flag">--model-name</span> <span class="term-str">"my-model"</span>
+
+<span class="term-comment"># → mirobench_comparison.csv  (MWU / KS / Cliff's δ / Wasserstein)</span></pre>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-10 grid sm:grid-cols-3 gap-x-6 gap-y-3 text-[13px]">
+          <div>
+            <div class="small-caps text-[10.5px] text-muted">CLI Reference</div>
+            <ul class="mt-2 space-y-1.5 font-mono text-[12.5px]">
+              <li><span class="text-ox">mirobench</span> domains</li>
+              <li><span class="text-ox">mirobench</span> score &lt;dir&gt;</li>
+              <li><span class="text-ox">mirobench</span> compare &lt;csv&gt;</li>
+            </ul>
+          </div>
+          <div>
+            <div class="small-caps text-[10.5px] text-muted">Devices</div>
+            <ul class="mt-2 space-y-1.5 font-mono text-[12.5px] text-muted">
+              <li><span class="text-ink">--device</span> cpu</li>
+              <li><span class="text-ink">--device</span> cuda</li>
+              <li><span class="text-ink">--device</span> mps</li>
+            </ul>
+          </div>
+          <div>
+            <div class="small-caps text-[10.5px] text-muted">Thread format</div>
+            <p class="mt-2 text-muted">
+              See
+              <a href="https://github.com/yyu6/MiroBench/blob/main/examples/example_thread.json" target="_blank" class="ink-link text-ink">examples/example_thread.json</a>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────────────────────────────────────────  CALIBRATION  ───────────────────────────────────────────── -->
+<section id="calibration" class="border-t border-rule">
+  <div class="max-w-[1280px] mx-auto px-6 lg:px-10 py-20 lg:py-28">
+    <div class="grid grid-cols-12 gap-x-6 lg:gap-x-10">
+      <div class="col-span-12 lg:col-span-3 reveal">
+        <span class="sec-num">§ 05 · CALIBRATION</span>
+      </div>
+      <div class="col-span-12 lg:col-span-9">
+        <h2 class="display text-[40px] sm:text-[52px] leading-[1.02] tracking-tight max-w-[22ch] reveal">
+          An LLM reasoner that <span class="display-italic">reads</span> your metric gaps and rewrites your prompt overlay.
+        </h2>
+        <p class="mt-8 text-[15px] text-muted max-w-[58ch] reveal reveal-delay-1">
+          The calibration system runs a three-phase pipeline. A reasoner agent observes per-metric
+          statistical gaps, proposes overlay edits to the generation prompt, runs candidate
+          simulations, and selects the configuration with the lowest distance to real data.
+        </p>
+
+        <!-- Phases -->
+        <div class="mt-14 grid lg:grid-cols-3 gap-x-6 gap-y-10">
+          <div class="reveal reveal-delay-2">
+            <div class="flex items-center gap-4 mb-4">
+              <div class="phase-num">0</div>
+              <div class="small-caps text-[11px] text-muted">Baseline</div>
+            </div>
+            <h3 class="display text-[24px] leading-tight">Score vanilla simulation against real data</h3>
+            <p class="text-[13.5px] text-muted mt-3 leading-relaxed">
+              Run the uncalibrated generator, score on all 57 metrics, compute MWU / KS / Wasserstein
+              against the real-test split. This establishes the <em>before</em> point.
+            </p>
+          </div>
+          <div class="reveal reveal-delay-3">
+            <div class="flex items-center gap-4 mb-4">
+              <div class="phase-num">1</div>
+              <div class="small-caps text-[11px] text-muted">Iterative loop</div>
+            </div>
+            <h3 class="display text-[24px] leading-tight">Reasoner proposes overlay edits per iteration</h3>
+            <p class="text-[13.5px] text-muted mt-3 leading-relaxed">
+              For each of ~12 iterations: read the worst-failing metrics, generate 5 candidate
+              overlay diffs, run small candidate simulations, score, rank, and keep the best.
+              Candidates that improve the validation split are merged into the running overlay.
+            </p>
+          </div>
+          <div class="reveal reveal-delay-4">
+            <div class="flex items-center gap-4 mb-4">
+              <div class="phase-num">2</div>
+              <div class="small-caps text-[11px] text-muted">Final</div>
+            </div>
+            <h3 class="display text-[24px] leading-tight">Re-run with the best overlay; emit comparison</h3>
+            <p class="text-[13.5px] text-muted mt-3 leading-relaxed">
+              Generate <span class="font-mono text-[12px]">N</span> threads with the final overlay, score them,
+              and produce a per-metric <em>before</em> vs <em>after</em> comparison report with effect-size
+              reductions and improvement deltas.
+            </p>
+          </div>
+        </div>
+
+        <!-- Calibration CLI -->
+        <div class="mt-14 reveal">
+          <div class="small-caps text-[10.5px] text-muted mb-3">CLI</div>
+          <div class="terminal">
+            <div class="px-4 py-2 border-b border-paper/10 flex items-center justify-between bg-black/30">
+              <div class="flex items-center gap-1.5">
+                <span class="w-2.5 h-2.5 rounded-full bg-[#4a4133]"></span>
+                <span class="w-2.5 h-2.5 rounded-full bg-[#4a4133]"></span>
+                <span class="w-2.5 h-2.5 rounded-full bg-[#4a4133]"></span>
+              </div>
+              <span class="font-mono text-[11px] text-[#8c826b]">shell</span>
+              <button class="copy-btn" data-copy='python -m calibration \
+    --real-train-csv mirobench/data/credit_cards/reference_scores/thread_scores_train.csv \
+    --real-val-csv   mirobench/data/credit_cards/reference_scores/thread_scores_val.csv \
+    --real-test-csv  mirobench/data/credit_cards/reference_scores/thread_scores_test.csv \
+    --few-shot-dir   path/to/real_discussions/ \
+    --products-json  path/to/products.json \
+    --output-dir     calibration_runs/credit_cards \
+    --calibration-model gpt-4o-mini \
+    --iterations 12 --candidates 5 \
+    --final-sim-runs 9 --min-sim-threads 50'>copy</button>
+            </div>
+<pre><span class="term-cmd">python</span> -m calibration \
+    <span class="term-flag">--real-train-csv</span> mirobench/data/credit_cards/reference_scores/thread_scores_train.csv \
+    <span class="term-flag">--real-val-csv</span>   mirobench/data/credit_cards/reference_scores/thread_scores_val.csv \
+    <span class="term-flag">--real-test-csv</span>  mirobench/data/credit_cards/reference_scores/thread_scores_test.csv \
+    <span class="term-flag">--few-shot-dir</span>   path/to/real_discussions/ \
+    <span class="term-flag">--products-json</span>  path/to/products.json \
+    <span class="term-flag">--output-dir</span>     calibration_runs/credit_cards \
+    <span class="term-flag">--calibration-model</span> gpt-4o-mini \
+    <span class="term-flag">--iterations</span> 12 <span class="term-flag">--candidates</span> 5 \
+    <span class="term-flag">--final-sim-runs</span> 9 <span class="term-flag">--min-sim-threads</span> 50</pre>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────────────────────────────────────────  CITATION  ───────────────────────────────────────────── -->
+<section id="cite" class="border-t border-rule bg-paper2/40">
+  <div class="max-w-[1280px] mx-auto px-6 lg:px-10 py-20 lg:py-28">
+    <div class="grid grid-cols-12 gap-x-6 lg:gap-x-10">
+      <div class="col-span-12 lg:col-span-3 reveal">
+        <span class="sec-num">§ 06 · CITATION</span>
+      </div>
+      <div class="col-span-12 lg:col-span-9 reveal reveal-delay-1">
+        <h2 class="display text-[40px] sm:text-[52px] leading-[1.02] tracking-tight max-w-[22ch]">
+          If MiroBench helped your research, please <span class="display-italic">cite</span> the paper.
+        </h2>
+
+        <div class="mt-10 terminal">
+          <div class="px-4 py-2 border-b border-paper/10 flex items-center justify-between bg-black/30">
+            <div class="flex items-center gap-1.5">
+              <span class="w-2.5 h-2.5 rounded-full bg-[#4a4133]"></span>
+              <span class="w-2.5 h-2.5 rounded-full bg-[#4a4133]"></span>
+              <span class="w-2.5 h-2.5 rounded-full bg-[#4a4133]"></span>
+            </div>
+            <span class="font-mono text-[11px] text-[#8c826b]">mirobench.bib</span>
+            <button class="copy-btn" data-copy='@misc{mirobench2026,
+  title  = {MiroBench: Benchmarking Realism in Agentic Simulation of Real-world Discussions},
+  author = {MiroBench Authors},
+  year   = {2026},
+  url    = {https://github.com/yyu6/MiroBench}
+}'>copy</button>
+          </div>
+<pre><span class="term-cmd">@misc</span>{<span class="term-str">mirobench2026</span>,
+  title  = {MiroBench: Benchmarking Realism in Agentic Simulation
+            of Real-world Discussions},
+  author = {MiroBench Authors},
+  year   = {2026},
+  url    = {<span class="term-str">https://github.com/yyu6/MiroBench</span>}
+}</pre>
+        </div>
+
+        <div class="mt-10 flex flex-wrap gap-x-8 gap-y-3 text-[13px]">
+          <a href="paper/MiroBench_preprint.pdf" target="_blank" class="ink-link text-ink">Paper&nbsp;PDF&nbsp;→</a>
+          <a href="https://github.com/yyu6/MiroBench" target="_blank" class="ink-link text-ink">GitHub&nbsp;repo&nbsp;→</a>
+          <a href="https://github.com/yyu6/MiroBench/issues" target="_blank" class="ink-link text-ink">Open&nbsp;issues&nbsp;→</a>
+          <a href="https://github.com/yyu6/MiroBench/blob/main/LICENSE" target="_blank" class="ink-link text-ink">MIT&nbsp;License&nbsp;→</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────────────────────────────────────────  ACKNOWLEDGEMENTS  ───────────────────────────────────────────── -->
+<section id="ack" class="border-t border-rule">
+  <div class="max-w-[1280px] mx-auto px-6 lg:px-10 py-20">
+    <div class="grid grid-cols-12 gap-x-6 lg:gap-x-10">
+      <div class="col-span-12 lg:col-span-3 reveal">
+        <span class="sec-num">§ 07 · ACKNOWLEDGEMENTS</span>
+      </div>
+      <div class="col-span-12 lg:col-span-9 reveal reveal-delay-1">
+        <p class="display text-[28px] sm:text-[34px] leading-tight max-w-[40ch]">
+          MiroBench builds on and is inspired by prior work in agentic social-media simulation.
+        </p>
+
+        <div class="mt-10 grid sm:grid-cols-2 gap-6">
+          <a href="https://github.com/camel-ai/oasis" target="_blank" class="paper-card p-6 block">
+            <div class="flex items-baseline justify-between mb-3">
+              <span class="font-mono text-[11px] text-ox tracking-widest">CAMEL-AI</span>
+              <span class="font-mono text-[11px] text-muted">github&nbsp;↗</span>
+            </div>
+            <div class="display text-[26px]">OASIS</div>
+            <div class="text-[13.5px] text-muted mt-2 leading-relaxed">
+              Open Agent Social Interaction Simulation framework. The multi-agent discussion engine
+              that powers our generation pipeline.
+            </div>
+          </a>
+
+          <a href="https://github.com/666ghj/MiroFish" target="_blank" class="paper-card p-6 block">
+            <div class="flex items-baseline justify-between mb-3">
+              <span class="font-mono text-[11px] text-ox tracking-widest">666ghj</span>
+              <span class="font-mono text-[11px] text-muted">github&nbsp;↗</span>
+            </div>
+            <div class="display text-[26px]">MiroFish</div>
+            <div class="text-[13.5px] text-muted mt-2 leading-relaxed">
+              Runtime patches and prompt scaffolding for product-discussion threads on top of
+              OASIS. Provides the visible-comment snapshot and reply-first guard logic.
+            </div>
+          </a>
+        </div>
+
+        <p class="text-[13px] text-muted mt-10 max-w-[60ch]">
+          We thank the authors of these projects for releasing their work openly. Any errors in
+          this benchmark are our own.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────────────────────────────────────────  FOOTER  ───────────────────────────────────────────── -->
+<footer class="border-t border-rule">
+  <div class="max-w-[1280px] mx-auto px-6 lg:px-10 py-10 flex flex-col sm:flex-row items-baseline justify-between gap-4 text-[12.5px] text-muted">
+    <div class="flex items-baseline gap-3">
+      <span class="display text-[18px] text-ink">MiroBench</span>
+      <span class="font-mono text-[11px]">v0.1.0 · MIT</span>
+    </div>
+    <div class="font-mono text-[11px]">
+      mirobench.com · <a href="https://github.com/yyu6/MiroBench" class="ink-link">github.com/yyu6/MiroBench</a>
+    </div>
+  </div>
+</footer>
+
+<!-- ─────────────────────────────────────────────  SCRIPTS  ───────────────────────────────────────────── -->
+<script>
+  // Sticky nav: add blur after scroll
+  const nav = document.getElementById('nav');
+  const onScroll = () => {
+    if (window.scrollY > 12) nav.classList.add('nav-blur');
+    else nav.classList.remove('nav-blur');
+  };
+  document.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  // Reveal on scroll
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((e) => {
+      if (e.isIntersecting) {
+        e.target.classList.add('in');
+        io.unobserve(e.target);
+      }
+    });
+  }, { rootMargin: '0px 0px -10% 0px', threshold: 0.05 });
+  document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
+
+  // Copy buttons
+  document.querySelectorAll('.copy-btn').forEach((btn) => {
+    btn.addEventListener('click', async () => {
+      const text = btn.getAttribute('data-copy') || '';
+      try {
+        await navigator.clipboard.writeText(text);
+        const original = btn.textContent;
+        btn.textContent = 'copied';
+        btn.classList.add('copied');
+        setTimeout(() => {
+          btn.textContent = original;
+          btn.classList.remove('copied');
+        }, 1400);
+      } catch (err) {
+        btn.textContent = 'press ⌘C';
+        setTimeout(() => (btn.textContent = 'copy'), 1400);
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
