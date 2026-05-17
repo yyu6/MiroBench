@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>MiroBench — Benchmarking realism in agentic simulation of real-world discussions</title>
-<meta name="description" content="A benchmark for evaluating synthetic online product discussion threads against real Reddit data across 5 consumer product domains, with 12 core discriminative metrics and an LLM-driven calibration system.">
+<title>MiroBench — Benchmarking Realism in Agentic Simulation of Real-world Discussions</title>
+<meta name="description" content="A benchmark for Reddit discussion simulation built from 4,292 real threads across five product domains. Measures repetition and semantic uniformity, narrative content, toxicity and aggression, and structural complexity.">
 
 <meta property="og:title" content="MiroBench">
 <meta property="og:description" content="Benchmarking realism in agentic simulation of real-world discussions.">
@@ -13,7 +13,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500&family=Geist:wght@300;400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
 
 <script src="https://cdn.tailwindcss.com"></script>
 <script>
@@ -21,24 +21,21 @@ tailwind.config = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Geist', 'system-ui', 'sans-serif'],
-        mono: ['Geist Mono', 'ui-monospace', 'monospace'],
+        sans: ['Inter', 'system-ui', 'sans-serif'],
+        mono: ['JetBrains Mono', 'ui-monospace', 'monospace'],
         serif: ['Instrument Serif', 'Georgia', 'serif'],
       },
       colors: {
-        bg:        '#0A0908',
-        surface:   '#121110',
-        surface2:  '#1A1816',
-        text:      '#F5F2E8',
-        mute:      '#7E7A72',
-        mute2:     '#56524C',
-        line:      '#26231F',
-        line2:     '#36322C',
-        gold:      '#F0A040',
-        gold2:     '#FFB561',
-        moss:      '#7FB069',
-        red:       '#E66C5C',
-        blue:      '#6FA8DC',
+        bg:      '#FFFFFF',
+        surf:    '#FAFAF7',
+        ink:     '#0E0E0F',
+        text:    '#1A1A1A',
+        mute:    '#555555',
+        mute2:   '#888888',
+        line:    '#E4E4E0',
+        line2:   '#D0D0CC',
+        accent:  '#0F62D7',
+        red:     '#B91C1C',
       },
     },
   },
@@ -48,765 +45,508 @@ tailwind.config = {
 <style>
   html { scroll-behavior: smooth; }
   body {
-    background: #0A0908;
-    color: #F5F2E8;
+    background: #FFFFFF;
+    color: #1A1A1A;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    font-feature-settings: "ss01" 1, "ss03" 1;
   }
-
-  /* Subtle dot-grid background */
-  body::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    background-image: radial-gradient(rgba(245, 242, 232, 0.04) 1px, transparent 1px);
-    background-size: 32px 32px;
-    background-position: -1px -1px;
-    pointer-events: none;
-    z-index: 0;
-    mask-image: radial-gradient(ellipse 90% 60% at 50% 0%, #000 35%, transparent 100%);
-    -webkit-mask-image: radial-gradient(ellipse 90% 60% at 50% 0%, #000 35%, transparent 100%);
-  }
-
-  /* Gradient glow behind hero */
-  .hero-glow {
-    position: absolute;
-    inset: -20% -10% auto -10%;
-    height: 720px;
-    background:
-      radial-gradient(ellipse 60% 50% at 30% 30%, rgba(240, 160, 64, 0.14), transparent 60%),
-      radial-gradient(ellipse 50% 40% at 70% 60%, rgba(127, 176, 105, 0.08), transparent 60%);
-    filter: blur(40px);
-    z-index: 0;
-    pointer-events: none;
-  }
-
-  main, header, footer { position: relative; z-index: 1; }
-
-  /* Inline italic serif for accents */
   .serif-italic {
     font-family: 'Instrument Serif', Georgia, serif;
     font-style: italic;
     font-weight: 400;
-    letter-spacing: -0.01em;
   }
+  ::selection { background: rgba(15, 98, 215, 0.18); }
 
-  /* Selection */
-  ::selection { background: rgba(240, 160, 64, 0.30); color: #fff; }
+  /* Links */
+  .ulink {
+    color: #1A1A1A;
+    text-decoration: underline;
+    text-decoration-color: #BFBFBC;
+    text-underline-offset: 3px;
+    transition: text-decoration-color 200ms, color 200ms;
+  }
+  .ulink:hover { color: #0F62D7; text-decoration-color: #0F62D7; }
 
-  /* Animated underline link */
-  .link-uline {
-    position: relative;
-    transition: color 200ms;
+  /* Mono code chip */
+  .mono-chip {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12.5px;
+    background: #F0F0EC;
+    border: 1px solid #E4E4E0;
+    border-radius: 3px;
+    padding: 1px 6px;
+    color: #1A1A1A;
   }
-  .link-uline::after {
-    content: "";
-    position: absolute;
-    left: 0; right: 0; bottom: -2px;
-    height: 1px;
-    background: currentColor;
-    transform: scaleX(0);
-    transform-origin: 0 50%;
-    transition: transform 320ms cubic-bezier(.25,.46,.45,.94);
-  }
-  .link-uline:hover::after { transform: scaleX(1); }
-  .link-uline:hover { color: #FFB561; }
 
   /* Section number */
   .sec-num {
-    font-family: 'Geist Mono', monospace;
+    font-family: 'JetBrains Mono', monospace;
     font-size: 11px;
-    letter-spacing: 0.18em;
-    color: #56524C;
-    font-weight: 500;
+    letter-spacing: 0.16em;
+    color: #888;
     text-transform: uppercase;
   }
 
-  /* Nav blur on scroll */
-  .nav-scrolled {
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    background: rgba(10, 9, 8, 0.72);
-    border-bottom: 1px solid rgba(38, 35, 31, 0.6);
+  /* Nav */
+  .nav-bg {
+    background: rgba(255, 255, 255, 0.86);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid #E4E4E0;
   }
 
-  /* Card */
-  .card {
-    background: linear-gradient(180deg, rgba(26, 24, 22, 0.6), rgba(18, 17, 16, 0.6));
-    border: 1px solid #26231F;
-    border-radius: 14px;
-    transition: border-color 240ms, transform 240ms, background 240ms;
+  /* Tables */
+  table.bench { border-collapse: collapse; width: 100%; }
+  table.bench th, table.bench td {
+    border-bottom: 1px solid #E4E4E0;
+    padding: 14px 18px;
+    text-align: left;
+    font-size: 14px;
+    vertical-align: middle;
   }
-  .card:hover {
-    border-color: #4E4942;
-    transform: translateY(-2px);
-    background: linear-gradient(180deg, rgba(30, 28, 25, 0.8), rgba(22, 20, 18, 0.7));
-  }
-
-  /* Pill */
-  .pill {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    padding: 4px 10px;
-    border: 1px solid #36322C;
-    border-radius: 999px;
-    background: rgba(26, 24, 22, 0.5);
-    font-family: 'Geist Mono', monospace;
+  table.bench thead th {
+    font-family: 'JetBrains Mono', monospace;
     font-size: 11px;
-    letter-spacing: 0.05em;
-    color: #B8B2A4;
+    letter-spacing: 0.10em;
+    text-transform: uppercase;
+    color: #555;
+    font-weight: 500;
+    border-bottom: 1.5px solid #1A1A1A;
+    padding-top: 10px;
+    padding-bottom: 10px;
   }
-  .pill-dot {
-    width: 6px; height: 6px; border-radius: 50%;
-    background: #F0A040;
-    box-shadow: 0 0 8px rgba(240, 160, 64, 0.6);
+  table.bench tbody tr:hover {
+    background: #FAFAF7;
   }
 
-  /* Terminal */
-  .terminal {
-    background: #07060A;
-    border: 1px solid #26231F;
-    border-radius: 10px;
-    overflow: hidden;
-    font-family: 'Geist Mono', monospace;
+  /* Numeric */
+  .num { font-family: 'JetBrains Mono', monospace; font-feature-settings: "tnum" 1; }
+
+  /* Code block */
+  .code-block {
+    background: #F7F7F4;
+    border: 1px solid #E4E4E0;
+    border-radius: 6px;
+    font-family: 'JetBrains Mono', monospace;
     font-size: 13px;
     line-height: 1.7;
-    box-shadow: 0 24px 48px -20px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.03);
+    overflow: hidden;
   }
-  .terminal-bar {
-    padding: 10px 14px;
-    background: rgba(245, 242, 232, 0.025);
-    border-bottom: 1px solid #1F1C18;
+  .code-bar {
+    padding: 8px 14px;
+    background: #EFEFEB;
+    border-bottom: 1px solid #E4E4E0;
     display: flex;
     align-items: center;
     justify-content: space-between;
   }
-  .terminal pre {
-    padding: 16px 18px 18px;
-    color: #DDD6C5;
+  .code-block pre {
+    padding: 14px 18px;
     overflow-x: auto;
     white-space: pre;
+    color: #1A1A1A;
   }
-  .term-prompt  { color: #56524C; user-select: none; }
-  .term-cmd     { color: #F0A040; font-weight: 500; }
-  .term-flag    { color: #FFB561; }
-  .term-str     { color: #7FB069; }
-  .term-comment { color: #56524C; font-style: italic; }
-  .term-out     { color: #8B8579; }
+  .tok-prompt  { color: #999; user-select: none; }
+  .tok-cmd     { color: #0F62D7; font-weight: 500; }
+  .tok-flag    { color: #9333EA; }
+  .tok-str     { color: #047857; }
+  .tok-comment { color: #888; font-style: italic; }
 
   /* Copy button */
   .copy-btn {
-    font-family: 'Geist Mono', monospace;
+    font-family: 'JetBrains Mono', monospace;
     font-size: 11px;
-    letter-spacing: 0.06em;
-    color: #8B8579;
-    border: 1px solid #2B2824;
-    background: rgba(245, 242, 232, 0.02);
-    padding: 3px 10px;
+    letter-spacing: 0.04em;
+    color: #555;
+    border: 1px solid #D0D0CC;
+    background: #FFFFFF;
+    padding: 2px 9px;
     border-radius: 4px;
     cursor: pointer;
     transition: all 180ms;
   }
-  .copy-btn:hover {
-    color: #F5F2E8;
-    border-color: #4E4942;
-    background: rgba(245, 242, 232, 0.06);
-  }
-  .copy-btn.copied {
-    color: #7FB069;
-    border-color: rgba(127, 176, 105, 0.4);
-    background: rgba(127, 176, 105, 0.06);
-  }
-
-  /* Big stat number */
-  .stat-num {
-    font-family: 'Geist', sans-serif;
-    font-weight: 300;
-    letter-spacing: -0.04em;
-    line-height: 0.9;
-    background: linear-gradient(180deg, #F5F2E8 0%, #B8B2A4 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-
-  /* Bar chart fill (severity) */
-  .bar-track {
-    height: 5px;
-    background: #1A1816;
-    border-radius: 999px;
-    overflow: hidden;
-    border: 1px solid #26231F;
-  }
-  .bar-fill {
-    height: 100%;
-    background: linear-gradient(90deg, #F0A040, #FFB561);
-    border-radius: 999px;
-    transition: width 1.4s cubic-bezier(.25,.46,.45,.94);
-    box-shadow: 0 0 12px rgba(240, 160, 64, 0.25);
-  }
+  .copy-btn:hover { color: #0F62D7; border-color: #0F62D7; }
+  .copy-btn.copied { color: #047857; border-color: #047857; }
 
   /* Reveal */
-  .reveal {
-    opacity: 0;
-    transform: translateY(16px);
-    transition: opacity 700ms cubic-bezier(.16,1,.3,1),
-                transform 700ms cubic-bezier(.16,1,.3,1);
-  }
+  .reveal { opacity: 0; transform: translateY(10px); transition: opacity 600ms cubic-bezier(.16,1,.3,1), transform 600ms cubic-bezier(.16,1,.3,1); }
   .reveal.in { opacity: 1; transform: translateY(0); }
-  .reveal-d1 { transition-delay: 60ms; }
-  .reveal-d2 { transition-delay: 120ms; }
-  .reveal-d3 { transition-delay: 180ms; }
-  .reveal-d4 { transition-delay: 240ms; }
-  .reveal-d5 { transition-delay: 300ms; }
 
-  /* Domain hover */
-  .domain-card {
-    background: rgba(18, 17, 16, 0.5);
-    border: 1px solid #26231F;
-    border-radius: 14px;
-    transition: all 280ms cubic-bezier(.25,.46,.45,.94);
-    overflow: hidden;
-  }
-  .domain-card:hover {
-    border-color: rgba(240, 160, 64, 0.4);
-    background: rgba(26, 24, 22, 0.7);
-    transform: translateY(-3px);
-  }
-  .domain-card:hover .domain-num { color: #F0A040; }
-  .domain-card:hover .domain-arrow { transform: translateX(4px); opacity: 1; }
-  .domain-arrow {
-    transition: transform 240ms, opacity 240ms;
-    opacity: 0.5;
-  }
-
-  /* Phase pipeline */
-  .pipeline-line {
-    position: absolute;
-    top: 50%;
-    left: 0;
-    right: 0;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, #36322C 20%, #36322C 80%, transparent);
-    z-index: 0;
-  }
-  .phase-num-circle {
-    width: 56px;
-    height: 56px;
-    border-radius: 50%;
-    background: #0A0908;
-    border: 1px solid #36322C;
-    font-family: 'Geist Mono', monospace;
-    font-size: 18px;
-    color: #F0A040;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    z-index: 1;
-    box-shadow: 0 0 0 6px #0A0908, 0 0 24px rgba(240, 160, 64, 0.12);
-  }
-
-  /* Smooth scrollbar (webkit) */
-  ::-webkit-scrollbar { width: 10px; height: 10px; }
-  ::-webkit-scrollbar-track { background: #0A0908; }
-  ::-webkit-scrollbar-thumb {
-    background: #26231F;
-    border-radius: 999px;
-    border: 2px solid #0A0908;
-  }
-  ::-webkit-scrollbar-thumb:hover { background: #36322C; }
+  /* Sunburst panel */
+  #sunburst { display: block; max-width: 100%; height: auto; }
 </style>
 </head>
 
-<body class="font-sans text-[15px] leading-relaxed">
+<body class="font-sans text-[15px] leading-[1.65]">
 
-<!-- ════════════════════════════════════════════════════════ NAV ════════════════════════════════════════════════════════ -->
-<header id="nav" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
-  <div class="max-w-[1280px] mx-auto px-6 lg:px-10 py-4 flex items-center justify-between">
-    <a href="#top" class="flex items-center gap-2 text-[17px] font-medium tracking-tight">
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#F0A040" stroke-width="2">
+<!-- ════════ NAV ════════ -->
+<header id="nav" class="fixed top-0 left-0 right-0 z-50 nav-bg">
+  <div class="max-w-[1100px] mx-auto px-6 py-3.5 flex items-center justify-between">
+    <a href="#top" class="flex items-center gap-2 text-[16px] font-semibold tracking-tight">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0F62D7" stroke-width="2.2">
         <path d="M3 12h6l2-4 4 8 2-4h4"/>
       </svg>
       <span>MiroBench</span>
     </a>
-    <nav class="hidden md:flex items-center gap-7 text-[13.5px] text-mute">
-      <a href="#leaderboard" class="link-uline">Leaderboard</a>
-      <a href="#domains" class="link-uline">Domains</a>
-      <a href="#metrics" class="link-uline">Metrics</a>
-      <a href="#start" class="link-uline">Quick Start</a>
-      <a href="#calibration" class="link-uline">Calibration</a>
-      <a href="#cite" class="link-uline">Cite</a>
+    <nav class="hidden md:flex items-center gap-6 text-[13.5px] text-mute">
+      <a href="#motivation" class="hover:text-text">Motivation</a>
+      <a href="#leaderboard" class="hover:text-text">Leaderboard</a>
+      <a href="#domains" class="hover:text-text">Domains</a>
+      <a href="#metrics" class="hover:text-text">Metrics</a>
+      <a href="#quickstart" class="hover:text-text">Quick start</a>
+      <a href="#cite" class="hover:text-text">Cite</a>
     </nav>
     <a href="https://github.com/yyu6/MiroBench" target="_blank" rel="noopener"
-       class="inline-flex items-center gap-2 px-3 py-1.5 text-[13px] text-text border border-line2 rounded-md hover:border-gold/50 hover:text-gold transition-colors">
+       class="inline-flex items-center gap-2 px-3 py-1.5 text-[13px] border border-line2 rounded-md hover:border-text/40 transition-colors">
       <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor">
         <path d="M8 0C3.58 0 0 3.58 0 8a8 8 0 0 0 5.47 7.59c.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
       </svg>
-      <span class="font-mono text-[12px]">yyu6/MiroBench</span>
+      <span class="font-mono text-[12px]">GitHub</span>
     </a>
   </div>
 </header>
 
-<!-- ════════════════════════════════════════════════════════ HERO ════════════════════════════════════════════════════════ -->
-<section id="top" class="relative pt-32 pb-16 lg:pt-36 lg:pb-20 overflow-hidden">
-  <div class="hero-glow"></div>
-  <div class="max-w-[1280px] mx-auto px-6 lg:px-10 relative">
-
-    <!-- Top pill -->
-    <div class="reveal flex items-center gap-3">
-      <a href="paper/MiroBench_preprint.pdf" target="_blank" class="pill hover:border-gold/60 hover:text-text transition-colors">
-        <span class="pill-dot"></span>
-        <span>Read the paper</span>
-        <span class="text-gold">→</span>
-      </a>
-    </div>
-
-    <!-- Headline -->
-    <h1 class="reveal reveal-d1 mt-6 text-[44px] sm:text-[60px] lg:text-[76px] leading-[0.95] tracking-[-0.04em] font-light max-w-[18ch]">
-      Benchmarking <span class="serif-italic text-gold2">realism</span> in agentic simulation of real-world discussions.
+<!-- ════════ HERO ════════ -->
+<section id="top" class="pt-32 pb-14">
+  <div class="max-w-[1100px] mx-auto px-6">
+    <div class="sec-num">A reddit discussion simulation benchmark</div>
+    <h1 class="serif-italic mt-3 text-[44px] sm:text-[58px] lg:text-[68px] leading-[1.05] tracking-[-0.01em] max-w-[20ch]">
+      MiroBench: Benchmarking Realism in Agentic Simulation of Real-world Discussions
     </h1>
 
+    <!-- Authors -->
+    <div class="mt-7 text-[14.5px] text-mute leading-relaxed">
+      <span class="text-text">Yaoning Yu</span><sup>1</sup>
+      &nbsp;·&nbsp;
+      <span class="text-text">Ye Yu</span><sup>1</sup>
+      &nbsp;·&nbsp;
+      <span class="text-text">Haojing Luo</span><sup>2</sup>
+      &nbsp;·&nbsp;
+      <span class="text-text">Haohan Wang</span><sup>1 *</sup>
+      <div class="mt-2 text-[13px] text-mute2">
+        <sup>1</sup>University of Illinois Urbana–Champaign &nbsp;
+        <sup>2</sup>Starc.Institute &nbsp;
+        <sup>*</sup>Corresponding author
+      </div>
+    </div>
+
     <!-- CTAs -->
-    <div class="reveal reveal-d3 mt-7 flex flex-wrap items-center gap-3">
+    <div class="mt-7 flex flex-wrap gap-3">
       <a href="paper/MiroBench_preprint.pdf" target="_blank"
-         class="group inline-flex items-center gap-2.5 px-5 py-3 bg-gold text-bg rounded-md text-[14px] font-medium hover:bg-gold2 transition-colors">
-        <svg width="15" height="15" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6">
+         class="inline-flex items-center gap-2 px-4 py-2.5 bg-ink text-white rounded-md text-[13.5px] hover:bg-accent transition-colors">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6">
           <path d="M8 1H2.5a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1V5.5L8 1z"/>
           <path d="M8 1v4.5h4.5"/>
         </svg>
-        <span>Read paper</span>
-        <span class="text-bg/60 font-mono text-[12px] ml-1">PDF · 1.5 MB</span>
+        Paper&nbsp;(PDF)
       </a>
       <a href="https://github.com/yyu6/MiroBench" target="_blank" rel="noopener"
-         class="inline-flex items-center gap-2.5 px-5 py-3 border border-line2 text-text rounded-md text-[14px] font-medium hover:border-text/40 hover:bg-surface transition-colors">
-        <svg width="15" height="15" viewBox="0 0 16 16" fill="currentColor">
+         class="inline-flex items-center gap-2 px-4 py-2.5 border border-line2 rounded-md text-[13.5px] hover:border-ink transition-colors">
+        <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor">
           <path d="M8 0C3.58 0 0 3.58 0 8a8 8 0 0 0 5.47 7.59c.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
         </svg>
-        <span>GitHub</span>
+        Code
       </a>
-      <a href="#start"
-         class="inline-flex items-center gap-2 px-3 py-3 text-text text-[14px] hover:text-gold transition-colors">
-        <span>Quick start</span>
-        <span aria-hidden="true">↓</span>
+      <a href="https://github.com/yyu6/MiroBench/tree/main/mirobench/data" target="_blank"
+         class="inline-flex items-center gap-2 px-4 py-2.5 border border-line2 rounded-md text-[13.5px] hover:border-ink transition-colors">
+        Data
       </a>
     </div>
 
-    <!-- Install snippet -->
-    <div class="reveal reveal-d4 mt-8 max-w-[680px]">
-      <div class="terminal">
-        <div class="terminal-bar">
-          <div class="flex items-center gap-1.5">
-            <span class="w-2.5 h-2.5 rounded-full bg-[#3a3530]"></span>
-            <span class="w-2.5 h-2.5 rounded-full bg-[#3a3530]"></span>
-            <span class="w-2.5 h-2.5 rounded-full bg-[#3a3530]"></span>
-          </div>
-          <span class="font-mono text-[11px] text-mute2">install</span>
-          <button class="copy-btn" data-copy="git clone https://github.com/yyu6/MiroBench.git && cd MiroBench && pip install -e .">copy</button>
-        </div>
-<pre><span class="term-prompt">$ </span><span class="term-cmd">git</span> clone https://github.com/yyu6/MiroBench.git
-<span class="term-prompt">$ </span><span class="term-cmd">cd</span> MiroBench
-<span class="term-prompt">$ </span><span class="term-cmd">pip</span> install -e .
-<span class="term-out">Successfully installed mirobench-0.1.0</span></pre>
-      </div>
-    </div>
-
+    <!-- Abstract -->
+    <p class="mt-10 text-[16px] text-text leading-[1.7] max-w-[72ch]">
+      LLM agents are increasingly used to simulate real-world interactions, but it remains unclear
+      whether simulated behaviors preserve the content patterns and interaction dynamics of real
+      human behaviors. <span class="serif-italic">MiroBench</span> is a benchmark for Reddit discussion simulation built from
+      <span class="num">4,292</span> real Reddit threads across five domains, with statistical tests across four families:
+      <em class="not-italic font-medium">repetition and semantic uniformity, narrative content, toxicity and aggression,</em>
+      and <em class="not-italic font-medium">structural complexity</em>.
+    </p>
   </div>
 </section>
 
-<!-- ════════════════════════════════════════════════════════ STATS ════════════════════════════════════════════════════════ -->
-<section class="border-y border-line">
-  <div class="max-w-[1280px] mx-auto px-6 lg:px-10 py-16 lg:py-20">
-    <div class="grid grid-cols-3 gap-y-8 gap-x-8">
+<!-- ════════ MOTIVATION ════════ -->
+<section id="motivation" class="py-16 border-t border-line bg-surf">
+  <div class="max-w-[1100px] mx-auto px-6">
+    <div class="sec-num reveal">§ 01 — Motivation</div>
+    <h2 class="reveal mt-2 text-[26px] lg:text-[30px] leading-[1.2] tracking-[-0.01em] font-medium max-w-[40ch]">
+      Can LLM agents reproduce the <span class="serif-italic">distributional patterns</span> of real online discussion, or only fluent text?
+    </h2>
+
+    <div class="mt-8 grid md:grid-cols-2 gap-x-12 gap-y-5 text-[15px] text-text leading-[1.75]">
       <div class="reveal">
-        <div class="stat-num text-[56px] lg:text-[68px]">4,306</div>
-        <div class="text-[12px] tracking-widest text-mute2 uppercase mt-3">Real threads</div>
+        <p>
+          LLM-based agents are increasingly used as simulators of human behavior and online communities.
+          The promise: a controllable way to study how people discuss products, react to events, exchange
+          opinions, and form group-level patterns.
+        </p>
+        <p class="mt-4">
+          This promise requires more than generating conversations. We need to know whether simulated
+          interactions actually match the <em class="not-italic font-medium">content patterns</em> and
+          <em class="not-italic font-medium">interaction dynamics</em> of real human behavior — but
+          existing studies focus on individual responses, controlled role-playing, or task performance
+          in simulated environments.
+        </p>
       </div>
-      <div class="reveal reveal-d1">
-        <div class="stat-num text-[56px] lg:text-[68px]">12</div>
-        <div class="text-[12px] tracking-widest text-mute2 uppercase mt-3">Core metrics</div>
-      </div>
-      <div class="reveal reveal-d2">
-        <div class="stat-num text-[56px] lg:text-[68px]">4</div>
-        <div class="text-[12px] tracking-widest text-mute2 uppercase mt-3">LLMs evaluated</div>
+      <div class="reveal">
+        <p>
+          We argue Reddit discussions are a practical setting for this measurement. Reddit threads
+          are public, topic-grounded, and multi-party. They contain advice-seeking, personal
+          experience, disagreement, emotional tone, repeated talking points, and complexity in
+          structure — an observable window into broader social behavior.
+        </p>
+        <p class="mt-4">
+          MiroBench evaluates whether a set of simulated threads matches real Reddit threads
+          across repetition, semantic uniformity, narrative content, toxicity and aggression,
+          and reply-tree structure — using statistical tests rather than ad-hoc scores.
+        </p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ════════════════════════════════════════════════════════ LEADERBOARD ════════════════════════════════════════════════════════ -->
-<section id="leaderboard" class="py-16 lg:py-20 border-b border-line">
-  <div class="max-w-[1280px] mx-auto px-6 lg:px-10">
+<!-- ════════ STATS ════════ -->
+<section class="py-12 border-t border-line">
+  <div class="max-w-[1100px] mx-auto px-6">
+    <div class="grid grid-cols-3 gap-x-10">
+      <div class="reveal">
+        <div class="num text-[44px] lg:text-[52px] font-light tracking-tight">4,292</div>
+        <div class="text-[12px] tracking-widest text-mute uppercase mt-1">Real threads</div>
+      </div>
+      <div class="reveal">
+        <div class="num text-[44px] lg:text-[52px] font-light tracking-tight">12</div>
+        <div class="text-[12px] tracking-widest text-mute uppercase mt-1">Core metrics</div>
+      </div>
+      <div class="reveal">
+        <div class="num text-[44px] lg:text-[52px] font-light tracking-tight">5</div>
+        <div class="text-[12px] tracking-widest text-mute uppercase mt-1">Product domains</div>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <div class="flex items-baseline justify-between mb-8 reveal">
+<!-- ════════ LEADERBOARD ════════ -->
+<section id="leaderboard" class="py-16 border-t border-line">
+  <div class="max-w-[1100px] mx-auto px-6">
+    <div class="flex items-baseline justify-between mb-7 reveal">
       <div>
-        <div class="sec-num">§ 01 — Leaderboard</div>
-        <h2 class="mt-3 text-[28px] lg:text-[34px] leading-[1.1] tracking-[-0.02em] font-medium">
-          Realism scores · <span class="serif-italic text-gold2">lower is better.</span>
+        <div class="sec-num">§ 02 — Leaderboard</div>
+        <h2 class="mt-2 text-[26px] lg:text-[30px] leading-[1.2] tracking-[-0.01em] font-medium">
+          Models evaluated under <span class="serif-italic">OASIS</span> as simulation engine.
         </h2>
       </div>
-      <div class="hidden md:block text-right font-mono text-[11px] text-mute2 max-w-[28ch] leading-relaxed">
-        avg |Cliff's δ| vs real Reddit<br>across 5 domains × per-family metrics
-      </div>
     </div>
 
-    <!-- Leaderboard table -->
-    <div class="reveal reveal-d1 card overflow-x-auto">
-      <table class="w-full text-[13.5px] min-w-[820px]">
+    <div class="reveal border border-line rounded-lg overflow-x-auto bg-white">
+      <table class="bench min-w-[800px]">
         <thead>
-          <tr class="border-b border-line text-left font-mono text-[11px] tracking-widest text-mute2 uppercase">
-            <th class="px-5 py-4 font-medium">#</th>
-            <th class="px-5 py-4 font-medium">Model</th>
-            <th class="px-5 py-4 font-medium text-right">Diversity</th>
-            <th class="px-5 py-4 font-medium text-right">Tone</th>
-            <th class="px-5 py-4 font-medium text-right">Structure</th>
-            <th class="px-5 py-4 font-medium text-right">Content</th>
-            <th class="px-5 py-4 font-medium text-right">Toxicity</th>
-            <th class="px-5 py-4 font-medium text-right border-l border-line">Overall ↓</th>
-            <th class="px-5 py-4 font-medium text-right border-l border-line">p&gt;0.05&nbsp;↑</th>
+          <tr>
+            <th class="num">#</th>
+            <th>Model</th>
+            <th class="text-right">Repetition</th>
+            <th class="text-right">Narrative</th>
+            <th class="text-right">Toxicity</th>
+            <th class="text-right">Structure</th>
+            <th class="text-right" style="border-left:1px solid #E4E4E0;">Overall&nbsp;↓</th>
+            <th class="text-right" style="border-left:1px solid #E4E4E0;">p&gt;0.05&nbsp;↑</th>
           </tr>
         </thead>
-        <tbody class="font-mono">
-          <!-- Rank 1 -->
-          <tr class="border-b border-line/60 hover:bg-surface/60 transition-colors">
-            <td class="px-5 py-5 text-gold">01</td>
-            <td class="px-5 py-5">
-              <div class="flex items-center gap-3">
-                <span class="w-7 h-7 rounded-md bg-surface2 border border-line2 flex items-center justify-center text-[10px] text-text">DS</span>
-                <div>
-                  <div class="text-text text-[14px] font-medium font-sans">DeepSeek-V4-Flash</div>
-                  <div class="text-mute2 text-[11px]">deepseek-v4-flash</div>
-                </div>
-              </div>
+        <tbody class="num">
+          <tr>
+            <td>1</td>
+            <td>
+              <div class="font-sans"><span class="text-text font-medium">DeepSeek-V4-Flash</span></div>
+              <div class="font-mono text-[11.5px] text-mute2">deepseek-v4-flash</div>
             </td>
-            <td class="px-5 py-5 text-right text-text">0.67</td>
-            <td class="px-5 py-5 text-right text-text">0.47</td>
-            <td class="px-5 py-5 text-right text-text">0.77</td>
-            <td class="px-5 py-5 text-right text-text">0.32</td>
-            <td class="px-5 py-5 text-right text-text">0.13</td>
-            <td class="px-5 py-5 text-right border-l border-line">
-              <span class="text-gold text-[16px]">0.41</span>
-            </td>
-            <td class="px-5 py-5 text-right border-l border-line">
-              <span class="text-gold text-[14px]">34/95</span>
-              <div class="text-mute2 text-[11px]">35.8%</div>
-            </td>
+            <td class="text-right">0.67</td>
+            <td class="text-right">0.35</td>
+            <td class="text-right">0.14</td>
+            <td class="text-right">0.77</td>
+            <td class="text-right" style="border-left:1px solid #E4E4E0;"><span class="text-accent font-medium">0.45</span></td>
+            <td class="text-right" style="border-left:1px solid #E4E4E0;"><span class="text-accent">20/60</span> <span class="text-mute2 text-[11.5px]">·&nbsp;33.3%</span></td>
           </tr>
-          <!-- Rank 2 -->
-          <tr class="border-b border-line/60 hover:bg-surface/60 transition-colors">
-            <td class="px-5 py-5 text-mute">02</td>
-            <td class="px-5 py-5">
-              <div class="flex items-center gap-3">
-                <span class="w-7 h-7 rounded-md bg-surface2 border border-line2 flex items-center justify-center text-[10px] text-text">DS</span>
-                <div>
-                  <div class="text-text text-[14px] font-medium font-sans">DeepSeek-Chat</div>
-                  <div class="text-mute2 text-[11px]">deepseek-chat</div>
-                </div>
-              </div>
+          <tr>
+            <td>2</td>
+            <td>
+              <div class="font-sans"><span class="text-text font-medium">DeepSeek-Chat</span></div>
+              <div class="font-mono text-[11.5px] text-mute2">deepseek-chat</div>
             </td>
-            <td class="px-5 py-5 text-right text-text">0.65</td>
-            <td class="px-5 py-5 text-right text-text">0.45</td>
-            <td class="px-5 py-5 text-right text-text">0.78</td>
-            <td class="px-5 py-5 text-right text-text">0.50</td>
-            <td class="px-5 py-5 text-right text-text">0.16</td>
-            <td class="px-5 py-5 text-right border-l border-line">
-              <span class="text-text text-[16px]">0.43</span>
-            </td>
-            <td class="px-5 py-5 text-right border-l border-line">
-              <span class="text-text text-[14px]">22/95</span>
-              <div class="text-mute2 text-[11px]">23.2%</div>
-            </td>
+            <td class="text-right">0.65</td>
+            <td class="text-right">0.62</td>
+            <td class="text-right">0.16</td>
+            <td class="text-right">0.78</td>
+            <td class="text-right" style="border-left:1px solid #E4E4E0;">0.47</td>
+            <td class="text-right" style="border-left:1px solid #E4E4E0;">12/60 <span class="text-mute2 text-[11.5px]">·&nbsp;20.0%</span></td>
           </tr>
-          <!-- Rank 3 -->
-          <tr class="border-b border-line/60 hover:bg-surface/60 transition-colors">
-            <td class="px-5 py-5 text-mute">03</td>
-            <td class="px-5 py-5">
-              <div class="flex items-center gap-3">
-                <span class="w-7 h-7 rounded-md bg-surface2 border border-line2 flex items-center justify-center text-[10px] text-text">OA</span>
-                <div>
-                  <div class="text-text text-[14px] font-medium font-sans">GPT-5-mini</div>
-                  <div class="text-mute2 text-[11px]">gpt-5-mini · OpenAI</div>
-                </div>
-              </div>
+          <tr>
+            <td>3</td>
+            <td>
+              <div class="font-sans"><span class="text-text font-medium">GPT-5-mini</span></div>
+              <div class="font-mono text-[11.5px] text-mute2">gpt-5-mini · OpenAI</div>
             </td>
-            <td class="px-5 py-5 text-right text-text">0.69</td>
-            <td class="px-5 py-5 text-right text-text">0.63</td>
-            <td class="px-5 py-5 text-right text-text">0.78</td>
-            <td class="px-5 py-5 text-right text-text">0.76</td>
-            <td class="px-5 py-5 text-right text-text">0.21</td>
-            <td class="px-5 py-5 text-right border-l border-line">
-              <span class="text-text text-[16px]">0.52</span>
-            </td>
-            <td class="px-5 py-5 text-right border-l border-line">
-              <span class="text-text text-[14px]">14/95</span>
-              <div class="text-mute2 text-[11px]">14.7%</div>
-            </td>
+            <td class="text-right">0.69</td>
+            <td class="text-right">0.83</td>
+            <td class="text-right">0.23</td>
+            <td class="text-right">0.78</td>
+            <td class="text-right" style="border-left:1px solid #E4E4E0;">0.53</td>
+            <td class="text-right" style="border-left:1px solid #E4E4E0;">9/60 <span class="text-mute2 text-[11.5px]">·&nbsp;15.0%</span></td>
           </tr>
-          <!-- Rank 4 -->
-          <tr class="hover:bg-surface/60 transition-colors">
-            <td class="px-5 py-5 text-mute">04</td>
-            <td class="px-5 py-5">
-              <div class="flex items-center gap-3">
-                <span class="w-7 h-7 rounded-md bg-surface2 border border-line2 flex items-center justify-center text-[10px] text-text">OA</span>
-                <div>
-                  <div class="text-text text-[14px] font-medium font-sans">GPT-4o-mini</div>
-                  <div class="text-mute2 text-[11px]">gpt-4o-mini · OpenAI</div>
-                </div>
-              </div>
+          <tr>
+            <td>4</td>
+            <td>
+              <div class="font-sans"><span class="text-text font-medium">GPT-4o-mini</span></div>
+              <div class="font-mono text-[11.5px] text-mute2">gpt-4o-mini · OpenAI</div>
             </td>
-            <td class="px-5 py-5 text-right text-text">0.83</td>
-            <td class="px-5 py-5 text-right text-text">0.61</td>
-            <td class="px-5 py-5 text-right text-text">0.81</td>
-            <td class="px-5 py-5 text-right text-text">0.51</td>
-            <td class="px-5 py-5 text-right text-text">0.68</td>
-            <td class="px-5 py-5 text-right border-l border-line">
-              <span class="text-red text-[16px]">0.69</span>
-            </td>
-            <td class="px-5 py-5 text-right border-l border-line">
-              <span class="text-red text-[14px]">3/95</span>
-              <div class="text-mute2 text-[11px]">3.2%</div>
-            </td>
+            <td class="text-right">0.83</td>
+            <td class="text-right">0.85</td>
+            <td class="text-right">0.70</td>
+            <td class="text-right">0.81</td>
+            <td class="text-right" style="border-left:1px solid #E4E4E0;"><span class="text-red font-medium">0.77</span></td>
+            <td class="text-right" style="border-left:1px solid #E4E4E0;"><span class="text-red">1/60</span> <span class="text-mute2 text-[11.5px]">·&nbsp;1.7%</span></td>
           </tr>
-          <!-- Pending: Gemini -->
-          <tr class="border-t border-line/60 opacity-50">
-            <td class="px-5 py-5 text-mute2">—</td>
-            <td class="px-5 py-5">
-              <div class="flex items-center gap-3">
-                <span class="w-7 h-7 rounded-md bg-surface2 border border-line2 flex items-center justify-center text-[10px] text-mute">G</span>
-                <div>
-                  <div class="text-mute text-[14px] font-medium font-sans">Gemini 2.5 Pro</div>
-                  <div class="text-mute2 text-[11px]">running · pending results</div>
-                </div>
-              </div>
+          <tr class="text-mute2">
+            <td>—</td>
+            <td>
+              <div class="font-sans">Gemini 2.5 Pro</div>
+              <div class="font-mono text-[11.5px]">pending</div>
             </td>
-            <td class="px-5 py-5 text-right text-mute2">—</td>
-            <td class="px-5 py-5 text-right text-mute2">—</td>
-            <td class="px-5 py-5 text-right text-mute2">—</td>
-            <td class="px-5 py-5 text-right text-mute2">—</td>
-            <td class="px-5 py-5 text-right text-mute2">—</td>
-            <td class="px-5 py-5 text-right border-l border-line text-mute2">—</td>
-            <td class="px-5 py-5 text-right border-l border-line text-mute2">—</td>
+            <td class="text-right">—</td>
+            <td class="text-right">—</td>
+            <td class="text-right">—</td>
+            <td class="text-right">—</td>
+            <td class="text-right" style="border-left:1px solid #E4E4E0;">—</td>
+            <td class="text-right" style="border-left:1px solid #E4E4E0;">—</td>
           </tr>
-          <!-- Pending: DeepSeek-V3.2 -->
-          <tr class="opacity-50">
-            <td class="px-5 py-5 text-mute2">—</td>
-            <td class="px-5 py-5">
-              <div class="flex items-center gap-3">
-                <span class="w-7 h-7 rounded-md bg-surface2 border border-line2 flex items-center justify-center text-[10px] text-mute">DS</span>
-                <div>
-                  <div class="text-mute text-[14px] font-medium font-sans">DeepSeek-V3.2</div>
-                  <div class="text-mute2 text-[11px]">running · pending results</div>
-                </div>
-              </div>
+          <tr class="text-mute2">
+            <td>—</td>
+            <td>
+              <div class="font-sans">DeepSeek-V3.2</div>
+              <div class="font-mono text-[11.5px]">pending</div>
             </td>
-            <td class="px-5 py-5 text-right text-mute2">—</td>
-            <td class="px-5 py-5 text-right text-mute2">—</td>
-            <td class="px-5 py-5 text-right text-mute2">—</td>
-            <td class="px-5 py-5 text-right text-mute2">—</td>
-            <td class="px-5 py-5 text-right text-mute2">—</td>
-            <td class="px-5 py-5 text-right border-l border-line text-mute2">—</td>
-            <td class="px-5 py-5 text-right border-l border-line text-mute2">—</td>
+            <td class="text-right">—</td>
+            <td class="text-right">—</td>
+            <td class="text-right">—</td>
+            <td class="text-right">—</td>
+            <td class="text-right" style="border-left:1px solid #E4E4E0;">—</td>
+            <td class="text-right" style="border-left:1px solid #E4E4E0;">—</td>
           </tr>
         </tbody>
       </table>
     </div>
 
-    <div class="font-mono text-[11.5px] text-mute2 mt-5 max-w-[90ch] leading-relaxed space-y-2">
+    <div class="mt-5 text-[12.5px] text-mute leading-relaxed max-w-[80ch]">
       <p>
-        Numbers are average |Cliff's δ| between generated and real Reddit
-        across the 5 domains. <span class="text-text">p&gt;0.05 column</span>: passes out of
-        <span class="text-text">19 metrics × 5 domains = 95</span> cells (MWU test).
-      </p>
-      <p>
-        <span class="text-mute">19 selected metrics:</span>
-        <span class="text-text">Diversity</span> = self_bleu_4, semantic_mean_cosine, self_bertscore_mean_f1 ·
-        <span class="text-text">Tone</span> = hard_disagree_rate, polite_rate, impolite_rate, neutral_rate ·
-        <span class="text-text">Structure</span> = length_cv, avg_depth, structural_virality ·
-        <span class="text-text">Content</span> = mean_story_probability, emotion_entropy ·
-        <span class="text-text">Toxicity</span> = toxicity_mean, severe_toxicity_mean, obscene_mean, threat_mean, insult_mean, identity_attack_mean, aggression_score_mean.
+        All models were evaluated as simulation backbones inside the <a class="ulink" href="https://github.com/camel-ai/oasis" target="_blank">OASIS</a> agent-simulation engine on
+        the same 5-domain MiroBench task.
+        Family columns show the average <span class="mono-chip">|Cliff's δ|</span> between generated and real Reddit distributions
+        across 5 domains (lower = closer to real).
+        The <span class="mono-chip">p&gt;0.05</span> column is the number of (metric × domain) cells where the Mann-Whitney U test fails to reject
+        equal distributions, out of <span class="num">12 × 5 = 60</span> total.
       </p>
     </div>
-
   </div>
 </section>
 
-<!-- ════════════════════════════════════════════════════════ OVERVIEW ════════════════════════════════════════════════════════ -->
-<section id="overview" class="py-16 lg:py-20">
-  <div class="max-w-[1280px] mx-auto px-6 lg:px-10">
+<!-- ════════ DOMAINS ════════ -->
+<section id="domains" class="py-16 border-t border-line bg-surf">
+  <div class="max-w-[1100px] mx-auto px-6">
+    <div class="sec-num reveal">§ 03 — Domains</div>
+    <h2 class="reveal mt-2 mb-7 text-[26px] lg:text-[30px] leading-[1.2] tracking-[-0.01em] font-medium">
+      Five Reddit domains · <span class="serif-italic">4,292 threads.</span>
+    </h2>
 
-    <div class="grid grid-cols-12 gap-x-8 mb-10">
-      <div class="col-span-12 lg:col-span-4 reveal">
-        <div class="sec-num">§ 02 — Overview</div>
-        <h2 class="mt-4 text-[28px] lg:text-[34px] leading-[1.1] tracking-[-0.02em] font-medium max-w-[14ch]">
-          What LLMs <span class="serif-italic text-gold2">don't</span> get right.
-        </h2>
-      </div>
-      <div class="col-span-12 lg:col-span-7 lg:col-start-6 mt-8 lg:mt-0 reveal reveal-d1">
-        <p class="text-[17px] text-mute leading-relaxed">
-          LLMs fail on thread branching, neutral tone, lexical diversity, length variance, and stance
-          disagreement. MiroBench measures the gap and helps you close it.
-        </p>
-      </div>
+    <div class="reveal border border-line rounded-lg overflow-x-auto bg-white">
+      <table class="bench">
+        <thead>
+          <tr>
+            <th>Domain</th>
+            <th class="text-right">Seeds</th>
+            <th class="text-right">Threads</th>
+            <th class="text-right">Train</th>
+            <th class="text-right">Val</th>
+            <th class="text-right">Test</th>
+          </tr>
+        </thead>
+        <tbody class="num">
+          <tr>
+            <td><a class="ulink font-sans" href="https://github.com/yyu6/MiroBench/tree/main/mirobench/data/credit_cards" target="_blank">Credit Card</a></td>
+            <td class="text-right">75</td>
+            <td class="text-right">2,600</td>
+            <td class="text-right">1,819</td>
+            <td class="text-right">390</td>
+            <td class="text-right">391</td>
+          </tr>
+          <tr>
+            <td><a class="ulink font-sans" href="https://github.com/yyu6/MiroBench/tree/main/mirobench/data/laptops" target="_blank">Laptop</a></td>
+            <td class="text-right">200</td>
+            <td class="text-right">272</td>
+            <td class="text-right">186</td>
+            <td class="text-right">43</td>
+            <td class="text-right">43</td>
+          </tr>
+          <tr>
+            <td><a class="ulink font-sans" href="https://github.com/yyu6/MiroBench/tree/main/mirobench/data/cell_phones" target="_blank">Cellphone</a></td>
+            <td class="text-right">200</td>
+            <td class="text-right">392</td>
+            <td class="text-right">286</td>
+            <td class="text-right">50</td>
+            <td class="text-right">56</td>
+          </tr>
+          <tr>
+            <td><a class="ulink font-sans" href="https://github.com/yyu6/MiroBench/tree/main/mirobench/data/cameras" target="_blank">Camera</a></td>
+            <td class="text-right">200</td>
+            <td class="text-right">763</td>
+            <td class="text-right">546</td>
+            <td class="text-right">111</td>
+            <td class="text-right">106</td>
+          </tr>
+          <tr>
+            <td><a class="ulink font-sans" href="https://github.com/yyu6/MiroBench/tree/main/mirobench/data/headphones" target="_blank">Headphones</a></td>
+            <td class="text-right">200</td>
+            <td class="text-right">265</td>
+            <td class="text-right">178</td>
+            <td class="text-right">38</td>
+            <td class="text-right">49</td>
+          </tr>
+          <tr class="font-medium" style="background:#F5F5F1;">
+            <td>Total</td>
+            <td class="text-right">875</td>
+            <td class="text-right">4,292</td>
+            <td class="text-right">3,015</td>
+            <td class="text-right">632</td>
+            <td class="text-right">645</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
 
-    <!-- Three pillar cards -->
-    <div class="grid md:grid-cols-3 gap-5 mt-10">
-
-      <div class="card p-7 reveal reveal-d2">
-        <div class="flex items-center justify-between mb-6">
-          <span class="font-mono text-[12px] text-gold">01 — SCORE</span>
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="text-mute2">
-            <path d="M4 19V5m0 14h16M4 19l4-7 4 3 4-5 4 2"/>
-          </svg>
-        </div>
-        <h3 class="text-[22px] leading-tight font-medium tracking-tight">Score your generated threads</h3>
-        <div class="mt-6 pt-5 border-t border-line">
-          <code class="font-mono text-[12px] text-mute">$ mirobench score &lt;dir&gt;</code>
-        </div>
-      </div>
-
-      <div class="card p-7 reveal reveal-d3">
-        <div class="flex items-center justify-between mb-6">
-          <span class="font-mono text-[12px] text-gold">02 — COMPARE</span>
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="text-mute2">
-            <path d="M4 7h16M4 12h10M4 17h16M16 14l3-2-3-2"/>
-          </svg>
-        </div>
-        <h3 class="text-[22px] leading-tight font-medium tracking-tight">MWU · KS · Cliff's δ · Wasserstein</h3>
-        <div class="mt-6 pt-5 border-t border-line">
-          <code class="font-mono text-[12px] text-mute">$ mirobench compare scores.csv</code>
-        </div>
-      </div>
-
-      <div class="card p-7 reveal reveal-d4">
-        <div class="flex items-center justify-between mb-6">
-          <span class="font-mono text-[12px] text-gold">03 — CALIBRATE</span>
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="text-mute2">
-            <circle cx="12" cy="12" r="3"/>
-            <path d="M12 1v6m0 10v6M4.22 4.22l4.24 4.24m7.08 7.08l4.24 4.24M1 12h6m10 0h6M4.22 19.78l4.24-4.24m7.08-7.08l4.24-4.24"/>
-          </svg>
-        </div>
-        <h3 class="text-[22px] leading-tight font-medium tracking-tight">Auto-tune prompt overlays with an LLM</h3>
-        <div class="mt-6 pt-5 border-t border-line">
-          <code class="font-mono text-[12px] text-mute">$ python -m calibration</code>
-        </div>
-      </div>
-
-    </div>
+    <p class="mt-5 text-[13px] text-mute leading-relaxed max-w-[80ch]">
+      Each domain includes real train / validation / test splits and product descriptions used as standardized seed contexts.
+      Simulators use these descriptions to generate comparable discussion threads.
+    </p>
   </div>
 </section>
 
-<!-- ════════════════════════════════════════════════════════ DOMAINS ════════════════════════════════════════════════════════ -->
-<section id="domains" class="py-16 lg:py-20 border-t border-line">
-  <div class="max-w-[1280px] mx-auto px-6 lg:px-10">
+<!-- ════════ METRICS · SUNBURST ════════ -->
+<section id="metrics" class="py-16 border-t border-line">
+  <div class="max-w-[1100px] mx-auto px-6">
+    <div class="sec-num reveal">§ 04 — Metrics</div>
+    <h2 class="reveal mt-2 text-[26px] lg:text-[30px] leading-[1.2] tracking-[-0.01em] font-medium max-w-[40ch]">
+      Twelve metrics across <span class="serif-italic">four families.</span>
+    </h2>
+    <p class="reveal mt-3 text-[14.5px] text-mute leading-relaxed max-w-[80ch]">
+      Hover any wedge for the metric definition. Inner ring: four families. Outer ring: 12 metrics.
+    </p>
 
-    <div class="mb-8 reveal">
-      <div class="sec-num">§ 03 — Domains</div>
-    </div>
-
-    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-
-      <a href="https://github.com/yyu6/MiroBench/tree/main/mirobench/data/credit_cards" target="_blank"
-         class="domain-card p-7 group block">
-        <div class="flex items-baseline justify-between mb-8">
-          <span class="font-mono text-[12px] text-mute2 domain-num transition-colors">01</span>
-          <span class="domain-arrow text-mute">→</span>
-        </div>
-        <h3 class="text-[24px] font-medium tracking-tight">Credit cards</h3>
-        <div class="flex items-baseline gap-2 mt-8 pt-5 border-t border-line">
-          <span class="text-[36px] font-light tracking-tight">2,650</span>
-          <span class="text-[13px] text-mute">threads</span>
-        </div>
-      </a>
-
-      <a href="https://github.com/yyu6/MiroBench/tree/main/mirobench/data/cameras" target="_blank"
-         class="domain-card p-7 group block">
-        <div class="flex items-baseline justify-between mb-8">
-          <span class="font-mono text-[12px] text-mute2 domain-num transition-colors">02</span>
-          <span class="domain-arrow text-mute">→</span>
-        </div>
-        <h3 class="text-[24px] font-medium tracking-tight">Cameras</h3>
-        <div class="flex items-baseline gap-2 mt-8 pt-5 border-t border-line">
-          <span class="text-[36px] font-light tracking-tight">738</span>
-          <span class="text-[13px] text-mute">threads</span>
-        </div>
-      </a>
-
-      <a href="https://github.com/yyu6/MiroBench/tree/main/mirobench/data/cell_phones" target="_blank"
-         class="domain-card p-7 group block">
-        <div class="flex items-baseline justify-between mb-8">
-          <span class="font-mono text-[12px] text-mute2 domain-num transition-colors">03</span>
-          <span class="domain-arrow text-mute">→</span>
-        </div>
-        <h3 class="text-[24px] font-medium tracking-tight">Cell phones</h3>
-        <div class="flex items-baseline gap-2 mt-8 pt-5 border-t border-line">
-          <span class="text-[36px] font-light tracking-tight">358</span>
-          <span class="text-[13px] text-mute">threads</span>
-        </div>
-      </a>
-
-      <a href="https://github.com/yyu6/MiroBench/tree/main/mirobench/data/headphones" target="_blank"
-         class="domain-card p-7 group block">
-        <div class="flex items-baseline justify-between mb-8">
-          <span class="font-mono text-[12px] text-mute2 domain-num transition-colors">04</span>
-          <span class="domain-arrow text-mute">→</span>
-        </div>
-        <h3 class="text-[24px] font-medium tracking-tight">Headphones</h3>
-        <div class="flex items-baseline gap-2 mt-8 pt-5 border-t border-line">
-          <span class="text-[36px] font-light tracking-tight">255</span>
-          <span class="text-[13px] text-mute">threads</span>
-        </div>
-      </a>
-
-      <a href="https://github.com/yyu6/MiroBench/tree/main/mirobench/data/laptops" target="_blank"
-         class="domain-card p-7 group block">
-        <div class="flex items-baseline justify-between mb-8">
-          <span class="font-mono text-[12px] text-mute2 domain-num transition-colors">05</span>
-          <span class="domain-arrow text-mute">→</span>
-        </div>
-        <h3 class="text-[24px] font-medium tracking-tight">Laptops</h3>
-        <div class="flex items-baseline gap-2 mt-8 pt-5 border-t border-line">
-          <span class="text-[36px] font-light tracking-tight">305</span>
-          <span class="text-[13px] text-mute">threads</span>
-        </div>
-      </a>
-
-    </div>
-
-  </div>
-</section>
-
-<!-- ════════════════════════════════════════════════════════ METRICS ════════════════════════════════════════════════════════ -->
-<section id="metrics" class="py-16 lg:py-20 border-t border-line bg-surface/30">
-  <div class="max-w-[1280px] mx-auto px-6 lg:px-10">
-
-    <div class="grid grid-cols-12 gap-x-8 mb-10">
-      <div class="col-span-12 lg:col-span-4 reveal">
-        <div class="sec-num">§ 04 — Metrics</div>
-        <h2 class="mt-4 text-[28px] lg:text-[34px] leading-[1.1] tracking-[-0.02em] font-medium max-w-[16ch]">
-          Metrics by <span class="serif-italic text-gold2">family.</span>
-        </h2>
-      </div>
-      <div class="col-span-12 lg:col-span-7 lg:col-start-6 mt-8 lg:mt-0 reveal reveal-d1">
-        <p class="text-[17px] text-mute leading-relaxed">
-          Hover any wedge for the metric definition. Inner ring: five families. Outer ring: 19 metrics.
-        </p>
-      </div>
-    </div>
-
-    <!-- Sunburst chart + info panel -->
-    <div class="grid lg:grid-cols-[1fr_360px] gap-10 items-center reveal reveal-d2">
+    <div class="mt-10 grid lg:grid-cols-[1fr_320px] gap-10 items-center reveal">
       <div class="flex justify-center">
-        <svg id="sunburst" width="540" height="540" viewBox="-270 -270 540 540" class="max-w-full"></svg>
+        <svg id="sunburst" width="520" height="520" viewBox="-260 -260 520 520" class="max-w-full"></svg>
       </div>
-      <div id="sunburst-info" class="card p-7 min-h-[220px] transition-all">
-        <div id="sb-family" class="font-mono text-[11px] text-gold tracking-widest mb-2">MIROBENCH</div>
-        <div id="sb-name" class="text-[24px] font-medium tracking-tight leading-tight mb-3">19 selected metrics</div>
-        <div id="sb-desc" class="text-[14px] text-mute leading-relaxed">
-          Hover any wedge to see the metric's description. The center holds <span class="text-text">MiroBench</span>;
-          the inner ring shows the 5 families; the outer ring shows the 19 individual metrics.
+      <div id="sunburst-info" class="border border-line rounded-lg p-6 bg-surf min-h-[200px]">
+        <div id="sb-family" class="font-mono text-[10.5px] text-accent tracking-widest mb-2 uppercase">Family · ·</div>
+        <div id="sb-name" class="text-[20px] font-medium tracking-tight leading-tight mb-3">MiroBench · 12 metrics</div>
+        <div id="sb-desc" class="text-[13.5px] text-mute leading-[1.7]">
+          The benchmark uses a stable core subset of 12 metrics in four families: repetition and semantic uniformity, narrative content, toxicity and aggression, and structural complexity.
         </div>
       </div>
     </div>
@@ -814,91 +554,52 @@ tailwind.config = {
   </div>
 </section>
 
-<!-- ════════════════════════════════════════════════════════ QUICK START ════════════════════════════════════════════════════════ -->
-<section id="start" class="py-16 lg:py-20 border-t border-line">
-  <div class="max-w-[1280px] mx-auto px-6 lg:px-10">
+<!-- ════════ QUICK START ════════ -->
+<section id="quickstart" class="py-16 border-t border-line bg-surf">
+  <div class="max-w-[1100px] mx-auto px-6">
+    <div class="sec-num reveal">§ 05 — Quick start</div>
+    <h2 class="reveal mt-2 mb-7 text-[26px] lg:text-[30px] leading-[1.2] tracking-[-0.01em] font-medium">
+      Three commands.
+    </h2>
 
-    <div class="mb-8 reveal">
-      <div class="sec-num">§ 05 — Quick start</div>
-    </div>
-
-    <div class="grid lg:grid-cols-2 gap-6">
-
-      <!-- Step 1 -->
-      <div class="reveal reveal-d2">
-        <div class="flex items-baseline gap-3 mb-4">
-          <span class="font-mono text-[12px] text-gold">01</span>
-          <span class="text-[18px] font-medium">Install</span>
-        </div>
-        <div class="terminal">
-          <div class="terminal-bar">
-            <div class="flex items-center gap-1.5">
-              <span class="w-2.5 h-2.5 rounded-full bg-[#3a3530]"></span>
-              <span class="w-2.5 h-2.5 rounded-full bg-[#3a3530]"></span>
-              <span class="w-2.5 h-2.5 rounded-full bg-[#3a3530]"></span>
-            </div>
-            <span class="font-mono text-[11px] text-mute2">install.sh</span>
+    <div class="space-y-5">
+      <div class="reveal">
+        <div class="text-[12px] uppercase tracking-widest text-mute mb-2">1 · Install</div>
+        <div class="code-block">
+          <div class="code-bar">
+            <span class="font-mono text-[11px] text-mute">install</span>
             <button class="copy-btn" data-copy="git clone https://github.com/yyu6/MiroBench.git
 cd MiroBench
 pip install -e .">copy</button>
           </div>
-<pre><span class="term-prompt">$ </span><span class="term-cmd">git</span> clone https://github.com/yyu6/MiroBench.git
-<span class="term-prompt">$ </span><span class="term-cmd">cd</span> MiroBench
-<span class="term-prompt">$ </span><span class="term-cmd">pip</span> install -e .</pre>
+<pre><span class="tok-prompt">$ </span><span class="tok-cmd">git</span> clone https://github.com/yyu6/MiroBench.git
+<span class="tok-prompt">$ </span><span class="tok-cmd">cd</span> MiroBench
+<span class="tok-prompt">$ </span><span class="tok-cmd">pip</span> install -e .</pre>
         </div>
       </div>
 
-      <!-- Step 2 -->
-      <div class="reveal reveal-d3">
-        <div class="flex items-baseline gap-3 mb-4">
-          <span class="font-mono text-[12px] text-gold">02</span>
-          <span class="text-[18px] font-medium">Score your threads</span>
-        </div>
-        <div class="terminal">
-          <div class="terminal-bar">
-            <div class="flex items-center gap-1.5">
-              <span class="w-2.5 h-2.5 rounded-full bg-[#3a3530]"></span>
-              <span class="w-2.5 h-2.5 rounded-full bg-[#3a3530]"></span>
-              <span class="w-2.5 h-2.5 rounded-full bg-[#3a3530]"></span>
-            </div>
-            <span class="font-mono text-[11px] text-mute2">score.sh</span>
+      <div class="reveal">
+        <div class="text-[12px] uppercase tracking-widest text-mute mb-2">2 · Score generated threads</div>
+        <div class="code-block">
+          <div class="code-bar">
+            <span class="font-mono text-[11px] text-mute">score</span>
             <button class="copy-btn" data-copy="mirobench score my_threads/ --device cpu">copy</button>
           </div>
-<pre><span class="term-comment"># each thread = dir with discussion.json</span>
-<span class="term-prompt">$ </span><span class="term-cmd">mirobench</span> score my_threads/ <span class="term-flag">--device</span> cpu
-<span class="term-out">→ my_threads/thread_scores.csv</span></pre>
+<pre><span class="tok-comment"># each thread = directory with a discussion.json</span>
+<span class="tok-prompt">$ </span><span class="tok-cmd">mirobench</span> score my_threads/ <span class="tok-flag">--device</span> cpu</pre>
         </div>
       </div>
 
-      <!-- Step 3 -->
-      <div class="reveal reveal-d4 lg:col-span-2">
-        <div class="flex items-baseline gap-3 mb-4">
-          <span class="font-mono text-[12px] text-gold">03</span>
-          <span class="text-[18px] font-medium">Compare against real Reddit</span>
-        </div>
-        <div class="terminal">
-          <div class="terminal-bar">
-            <div class="flex items-center gap-1.5">
-              <span class="w-2.5 h-2.5 rounded-full bg-[#3a3530]"></span>
-              <span class="w-2.5 h-2.5 rounded-full bg-[#3a3530]"></span>
-              <span class="w-2.5 h-2.5 rounded-full bg-[#3a3530]"></span>
-            </div>
-            <span class="font-mono text-[11px] text-mute2">compare.sh</span>
-            <button class="copy-btn" data-copy='mirobench compare my_threads/thread_scores.csv --domains credit_cards cameras --core-only --model-name "my-model"'>copy</button>
+      <div class="reveal">
+        <div class="text-[12px] uppercase tracking-widest text-mute mb-2">3 · Compare against real Reddit</div>
+        <div class="code-block">
+          <div class="code-bar">
+            <span class="font-mono text-[11px] text-mute">compare</span>
+            <button class="copy-btn" data-copy='mirobench compare my_threads/thread_scores.csv --core-only --model-name "my-model"'>copy</button>
           </div>
-<pre><span class="term-prompt">$ </span><span class="term-cmd">mirobench</span> compare my_threads/thread_scores.csv \
-    <span class="term-flag">--domains</span> credit_cards cameras \
-    <span class="term-flag">--core-only</span> \
-    <span class="term-flag">--model-name</span> <span class="term-str">"my-model"</span>
-
-<span class="term-out">credit_cards (14 metrics):
-  Cliff's delta: 4 negligible, 1 small, 0 medium, 9 large
-  Avg Wasserstein distance: 0.3182
-  Avg empirical fail rate:  13.06%
-cameras (14 metrics):
-  Cliff's delta: 1 negligible, 3 small, 2 medium, 8 large
-  ...
-→ mirobench_comparison.csv  (MWU · KS · Cliff's δ · Wasserstein)</span></pre>
+<pre><span class="tok-prompt">$ </span><span class="tok-cmd">mirobench</span> compare my_threads/thread_scores.csv \
+    <span class="tok-flag">--core-only</span> \
+    <span class="tok-flag">--model-name</span> <span class="tok-str">"my-model"</span></pre>
         </div>
       </div>
     </div>
@@ -906,228 +607,110 @@ cameras (14 metrics):
   </div>
 </section>
 
-<!-- ════════════════════════════════════════════════════════ CALIBRATION ════════════════════════════════════════════════════════ -->
-<section id="calibration" class="py-16 lg:py-20 border-t border-line">
-  <div class="max-w-[1280px] mx-auto px-6 lg:px-10">
+<!-- ════════ CITATION ════════ -->
+<section id="cite" class="py-16 border-t border-line">
+  <div class="max-w-[1100px] mx-auto px-6">
+    <div class="sec-num reveal">§ 06 — Citation</div>
+    <h2 class="reveal mt-2 mb-7 text-[26px] lg:text-[30px] leading-[1.2] tracking-[-0.01em] font-medium">
+      Cite the paper.
+    </h2>
 
-    <div class="grid grid-cols-12 gap-x-8 mb-10">
-      <div class="col-span-12 lg:col-span-4 reveal">
-        <div class="sec-num">§ 06 — Calibration</div>
-        <h2 class="mt-4 text-[28px] lg:text-[34px] leading-[1.1] tracking-[-0.02em] font-medium max-w-[14ch]">
-          An LLM that <span class="serif-italic text-gold2">tunes</span> your overlay.
-        </h2>
-      </div>
-    </div>
-
-    <!-- Pipeline diagram -->
-    <div class="reveal reveal-d2 relative py-12">
-      <div class="pipeline-line hidden md:block"></div>
-      <div class="grid md:grid-cols-3 gap-10 md:gap-8 relative">
-
-        <div class="text-center md:text-left">
-          <div class="phase-num-circle mx-auto md:mx-0 mb-6">0</div>
-          <div class="font-mono text-[11px] text-mute2 tracking-widest mb-2">BASELINE</div>
-          <h3 class="text-[20px] font-medium tracking-tight leading-tight">Score vanilla simulation</h3>
-        </div>
-
-        <div class="text-center md:text-left">
-          <div class="phase-num-circle mx-auto md:mx-0 mb-6">1</div>
-          <div class="font-mono text-[11px] text-mute2 tracking-widest mb-2">ITERATE</div>
-          <h3 class="text-[20px] font-medium tracking-tight leading-tight">Reasoner edits overlay each round</h3>
-        </div>
-
-        <div class="text-center md:text-left">
-          <div class="phase-num-circle mx-auto md:mx-0 mb-6">2</div>
-          <div class="font-mono text-[11px] text-mute2 tracking-widest mb-2">FINAL</div>
-          <h3 class="text-[20px] font-medium tracking-tight leading-tight">Re-run + before/after report</h3>
-        </div>
-
-      </div>
-    </div>
-
-    <!-- Calibration CLI -->
-    <div class="reveal mt-6">
-      <div class="text-[11px] tracking-widest text-mute2 uppercase mb-3">Calibration CLI</div>
-      <div class="terminal">
-        <div class="terminal-bar">
-          <div class="flex items-center gap-1.5">
-            <span class="w-2.5 h-2.5 rounded-full bg-[#3a3530]"></span>
-            <span class="w-2.5 h-2.5 rounded-full bg-[#3a3530]"></span>
-            <span class="w-2.5 h-2.5 rounded-full bg-[#3a3530]"></span>
-          </div>
-          <span class="font-mono text-[11px] text-mute2">calibrate.sh</span>
-          <button class="copy-btn" data-copy='python -m calibration \
-    --real-train-csv mirobench/data/credit_cards/reference_scores/thread_scores_train.csv \
-    --real-val-csv   mirobench/data/credit_cards/reference_scores/thread_scores_val.csv \
-    --real-test-csv  mirobench/data/credit_cards/reference_scores/thread_scores_test.csv \
-    --few-shot-dir   path/to/real_discussions/ \
-    --products-json  path/to/products.json \
-    --output-dir     calibration_runs/credit_cards \
-    --calibration-model gpt-4o-mini \
-    --iterations 12 --candidates 5 \
-    --final-sim-runs 9 --min-sim-threads 50'>copy</button>
-        </div>
-<pre><span class="term-prompt">$ </span><span class="term-cmd">python</span> -m calibration \
-    <span class="term-flag">--real-train-csv</span> mirobench/data/credit_cards/reference_scores/thread_scores_train.csv \
-    <span class="term-flag">--real-val-csv</span>   mirobench/data/credit_cards/reference_scores/thread_scores_val.csv \
-    <span class="term-flag">--real-test-csv</span>  mirobench/data/credit_cards/reference_scores/thread_scores_test.csv \
-    <span class="term-flag">--few-shot-dir</span>   path/to/real_discussions/ \
-    <span class="term-flag">--products-json</span>  path/to/products.json \
-    <span class="term-flag">--output-dir</span>     calibration_runs/credit_cards \
-    <span class="term-flag">--calibration-model</span> gpt-4o-mini \
-    <span class="term-flag">--iterations</span> 12 <span class="term-flag">--candidates</span> 5 \
-    <span class="term-flag">--final-sim-runs</span> 9 <span class="term-flag">--min-sim-threads</span> 50</pre>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- ════════════════════════════════════════════════════════ CITATION ════════════════════════════════════════════════════════ -->
-<section id="cite" class="py-16 lg:py-20 border-t border-line bg-surface/30">
-  <div class="max-w-[1280px] mx-auto px-6 lg:px-10">
-
-    <div class="grid grid-cols-12 gap-x-8">
-      <div class="col-span-12 lg:col-span-4 reveal">
-        <div class="sec-num">§ 07 — Citation</div>
-      </div>
-      <div class="col-span-12 lg:col-span-7 lg:col-start-6 mt-8 lg:mt-0 reveal reveal-d1">
-        <div class="terminal">
-          <div class="terminal-bar">
-            <div class="flex items-center gap-1.5">
-              <span class="w-2.5 h-2.5 rounded-full bg-[#3a3530]"></span>
-              <span class="w-2.5 h-2.5 rounded-full bg-[#3a3530]"></span>
-              <span class="w-2.5 h-2.5 rounded-full bg-[#3a3530]"></span>
-            </div>
-            <span class="font-mono text-[11px] text-mute2">mirobench.bib</span>
-            <button class="copy-btn" data-copy='@misc{mirobench2026,
+    <div class="reveal code-block">
+      <div class="code-bar">
+        <span class="font-mono text-[11px] text-mute">mirobench.bib</span>
+        <button class="copy-btn" data-copy='@article{yu2026mirobench,
   title  = {MiroBench: Benchmarking Realism in Agentic Simulation of Real-world Discussions},
-  author = {MiroBench Authors},
+  author = {Yu, Yaoning and Yu, Ye and Luo, Haojing and Wang, Haohan},
   year   = {2026},
   url    = {https://github.com/yyu6/MiroBench}
 }'>copy</button>
-          </div>
-<pre><span class="term-cmd">@misc</span>{<span class="term-str">mirobench2026</span>,
+      </div>
+<pre><span class="tok-cmd">@article</span>{<span class="tok-str">yu2026mirobench</span>,
   title  = {MiroBench: Benchmarking Realism in Agentic Simulation
             of Real-world Discussions},
-  author = {MiroBench Authors},
+  author = {Yu, Yaoning and Yu, Ye and Luo, Haojing and Wang, Haohan},
   year   = {2026},
-  url    = {<span class="term-str">https://github.com/yyu6/MiroBench</span>}
+  url    = {<span class="tok-str">https://github.com/yyu6/MiroBench</span>}
 }</pre>
-        </div>
-
-        <div class="mt-7 flex flex-wrap gap-x-7 gap-y-3 text-[13.5px]">
-          <a href="paper/MiroBench_preprint.pdf" target="_blank" class="text-text link-uline">Paper PDF →</a>
-          <a href="https://github.com/yyu6/MiroBench" target="_blank" class="text-text link-uline">GitHub repo →</a>
-          <a href="https://github.com/yyu6/MiroBench/issues" target="_blank" class="text-text link-uline">Issues →</a>
-          <a href="https://github.com/yyu6/MiroBench/blob/main/LICENSE" target="_blank" class="text-text link-uline">MIT License →</a>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- ════════════════════════════════════════════════════════ ACKNOWLEDGEMENTS ════════════════════════════════════════════════════════ -->
-<section id="ack" class="py-24 border-t border-line">
-  <div class="max-w-[1280px] mx-auto px-6 lg:px-10">
-
-    <div class="reveal">
-      <div class="sec-num">Inspired by</div>
-    </div>
-
-    <div class="mt-8 grid md:grid-cols-2 gap-5">
-
-      <a href="https://github.com/camel-ai/oasis" target="_blank" class="card p-7 block group">
-        <div class="flex items-baseline justify-between">
-          <h3 class="text-[28px] font-medium tracking-tight">OASIS</h3>
-          <span class="text-mute text-[12px] font-mono group-hover:text-gold transition-colors">camel-ai&nbsp;↗</span>
-        </div>
-      </a>
-
-      <a href="https://github.com/666ghj/MiroFish" target="_blank" class="card p-7 block group">
-        <div class="flex items-baseline justify-between">
-          <h3 class="text-[28px] font-medium tracking-tight">MiroFish</h3>
-          <span class="text-mute text-[12px] font-mono group-hover:text-gold transition-colors">666ghj&nbsp;↗</span>
-        </div>
-      </a>
-
     </div>
   </div>
 </section>
 
-<!-- ════════════════════════════════════════════════════════ FOOTER ════════════════════════════════════════════════════════ -->
-<footer class="border-t border-line py-10">
-  <div class="max-w-[1280px] mx-auto px-6 lg:px-10 flex flex-col sm:flex-row items-baseline justify-between gap-4">
-    <div class="flex items-center gap-3">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#F0A040" stroke-width="2">
+<!-- ════════ ACKNOWLEDGEMENTS ════════ -->
+<section class="py-12 border-t border-line bg-surf">
+  <div class="max-w-[1100px] mx-auto px-6">
+    <div class="sec-num">Inspired by</div>
+    <p class="mt-3 text-[14.5px] text-mute leading-relaxed max-w-[80ch]">
+      MiroBench is built on prior open-source work:
+      <a class="ulink" href="https://github.com/camel-ai/oasis" target="_blank">OASIS</a> (CAMEL-AI) — the multi-agent
+      simulation engine that powers the generation pipeline — and
+      <a class="ulink" href="https://github.com/666ghj/MiroFish" target="_blank">MiroFish</a> — runtime patches and
+      prompt scaffolding for product-discussion threads.
+    </p>
+  </div>
+</section>
+
+<!-- ════════ FOOTER ════════ -->
+<footer class="py-8 border-t border-line">
+  <div class="max-w-[1100px] mx-auto px-6 flex flex-col sm:flex-row items-baseline justify-between gap-3">
+    <div class="flex items-center gap-2">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0F62D7" stroke-width="2.2">
         <path d="M3 12h6l2-4 4 8 2-4h4"/>
       </svg>
-      <span class="text-[15px] font-medium">MiroBench</span>
+      <span class="text-[14px] font-medium">MiroBench</span>
       <span class="font-mono text-[11px] text-mute2">v0.1.0 · MIT</span>
     </div>
-    <div class="font-mono text-[11.5px] text-mute2">
-      © 2026 · <a href="https://github.com/yyu6/MiroBench" target="_blank" class="link-uline text-mute">github.com/yyu6/MiroBench</a>
+    <div class="font-mono text-[11px] text-mute2">
+      © 2026 · <a class="ulink" href="https://github.com/yyu6/MiroBench" target="_blank">github.com/yyu6/MiroBench</a>
     </div>
   </div>
 </footer>
 
-<!-- ════════════════════════════════════════════════════════ SCRIPTS ════════════════════════════════════════════════════════ -->
+<!-- ════════ SCRIPTS ════════ -->
 <script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js"></script>
 <script>
-// ── Sunburst data ──
+// ── Sunburst data: paper's 4 families × 12 metrics ──
 const sbData = {
   name: "MiroBench",
   family: "MIROBENCH",
-  desc: "19 selected metrics across 5 families that quantify the gap between LLM-generated and real Reddit discussions.",
+  desc: "The benchmark uses a stable core subset of 12 metrics in four families: repetition and semantic uniformity, narrative content, toxicity and aggression, and structural complexity.",
   children: [
-    { name: "Diversity", desc: "Lexical and semantic similarity between comments inside a thread.", children: [
-      { name: "self_bleu_4",            desc: "4-gram surface repetition across comments (lower = more diverse)." },
-      { name: "semantic_mean_cosine",   desc: "Sentence-embedding cosine similarity between comments." },
-      { name: "self_bertscore_mean_f1", desc: "Token-level semantic similarity (BERTScore F1)." },
+    { name: "Repetition", desc: "Repetition and semantic uniformity — whether comments in a thread repeat similar wording or ideas.", children: [
+      { name: "self_bleu_4",            desc: "BLEU-4 4-gram overlap across comments. Higher values indicate more repeated phrasing and lower lexical diversity." },
+      { name: "self_bertscore_mean_f1", desc: "BERTScore over contextual token embeddings. Higher values indicate stronger semantic overlap even when wording differs." },
+      { name: "semantic_mean_cosine",   desc: "Sentence-transformer (all-mpnet-base-v2) cosine similarity averaged over comment pairs. Higher = narrower semantic space." },
     ]},
-    { name: "Tone", desc: "Civility, disagreement, and tone variation in the thread.", children: [
-      { name: "hard_disagree_rate", desc: "Fraction of pairs with strong disagreement (stance classifier)." },
-      { name: "polite_rate",        desc: "Polite-tone fraction (Intel polite-guard)." },
-      { name: "impolite_rate",      desc: "Impolite-tone fraction; LLMs trend to zero." },
-      { name: "neutral_rate",       desc: "Neutral-tone fraction; LLMs are almost never neutral." },
+    { name: "Narrative", desc: "How much first-hand experience and story-like detail appears in the discussion.", children: [
+      { name: "mean_story_probability", desc: "Each comment is scored by StorySeeker. Higher = more anecdotal or narrative-style content." },
     ]},
-    { name: "Structure", desc: "Comment-length variance and thread-tree topology.", children: [
-      { name: "length_cv",            desc: "Comment-length coefficient of variation." },
-      { name: "avg_depth",            desc: "Average reply nesting depth (LLMs ≈ 1.0, real ≈ 1.8)." },
-      { name: "structural_virality",  desc: "Wiener index of the thread tree — how branched it is." },
+    { name: "Toxicity & Aggression", desc: "Whether a thread contains hostile or harmful language.", children: [
+      { name: "toxicity_mean",         desc: "Detoxify unbiased — toxicity probability averaged across thread." },
+      { name: "severe_toxicity_mean",  desc: "Detoxify unbiased — severe-toxicity probability averaged across thread." },
+      { name: "obscene_mean",          desc: "Detoxify unbiased — obscenity probability averaged across thread." },
+      { name: "threat_mean",           desc: "Detoxify unbiased — threat-content probability averaged across thread." },
+      { name: "aggression_score_mean", desc: "Mean of six Detoxify dimensions per comment (toxicity, severe toxicity, obscene, threat, insult, identity attack), then averaged across the thread." },
     ]},
-    { name: "Content", desc: "Narrativity and emotional variation across comments.", children: [
-      { name: "mean_story_probability", desc: "Narrative-content density (StorySeeker classifier)." },
-      { name: "emotion_entropy",        desc: "Diversity of emotion labels per thread (GoEmotions)." },
-    ]},
-    { name: "Toxicity", desc: "Mean toxicity scores across 7 sub-dimensions. Low-signal because real Reddit is near-zero.", children: [
-      { name: "toxicity_mean",         desc: "Mean toxicity probability (Detoxify)." },
-      { name: "severe_toxicity_mean",  desc: "Mean severe-toxicity probability." },
-      { name: "obscene_mean",          desc: "Mean obscenity probability." },
-      { name: "threat_mean",           desc: "Mean threat-content probability." },
-      { name: "insult_mean",           desc: "Mean insult-content probability." },
-      { name: "identity_attack_mean",  desc: "Mean identity-attack probability." },
-      { name: "aggression_score_mean", desc: "Mean aggression score." },
+    { name: "Structure", desc: "Comment-length variation and reply-tree shape.", children: [
+      { name: "length_cv",           desc: "Coefficient of variation of comment lengths — normalizes length variation by the mean length." },
+      { name: "avg_depth",           desc: "Average comment depth across the reply tree; top-level comments are depth 1." },
+      { name: "structural_virality", desc: "Wiener index of the reply tree — measures how branched and continued the conversation is." },
     ]},
   ]
 };
 
-// ── Color per family ──
+// Plain academic palette: muted distinct hues per family
 const familyColors = {
-  Diversity: "#F0A040",
-  Tone:      "#E66C5C",
-  Structure: "#FFB561",
-  Content:   "#D4A574",
-  Toxicity:  "#56524C",
+  "Repetition":            "#7C9CC9",   // blue
+  "Narrative":             "#7FA46D",   // green
+  "Toxicity & Aggression": "#C57676",   // red
+  "Structure":             "#A88AA8",   // purple
 };
 
-// ── Render sunburst ──
 (function renderSunburst() {
   const svgEl = document.getElementById("sunburst");
   if (!svgEl || !window.d3) return;
   const svg = d3.select(svgEl);
-  const radius = 270;
+  const radius = 260;
 
   const root = d3.hierarchy(sbData)
     .sum(d => d.children ? 0 : 1)
@@ -1135,66 +718,62 @@ const familyColors = {
 
   d3.partition().size([2 * Math.PI, radius])(root);
 
-  // The center is the root; family ring at depth 1; metric ring at depth 2
   const arc = d3.arc()
     .startAngle(d => d.x0)
     .endAngle(d => d.x1)
-    .padAngle(0.005)
+    .padAngle(0.006)
     .padRadius(radius / 2)
     .innerRadius(d => {
-      // root: skip, family ring 70-150, metric ring 150-260
       if (d.depth === 0) return 0;
-      if (d.depth === 1) return 80;
-      return 160;
+      if (d.depth === 1) return 75;
+      return 150;
     })
     .outerRadius(d => {
       if (d.depth === 0) return 0;
-      if (d.depth === 1) return 155;
-      return 255;
+      if (d.depth === 1) return 148;
+      return 240;
     })
     .cornerRadius(2);
 
   const nodes = root.descendants().filter(d => d.depth > 0);
-
   const g = svg.append("g");
 
   const colorFor = (d) => {
     const fam = d.depth === 1 ? d.data.name : d.parent.data.name;
-    const base = familyColors[fam] || "#F0A040";
+    const base = familyColors[fam] || "#7C9CC9";
     if (d.depth === 1) return base;
-    // Outer ring: same hue, lower lightness
-    return d3.color(base).darker(0.5).formatHex();
+    return d3.color(base).brighter(0.5).formatHex();
   };
 
-  const paths = g.selectAll("path")
+  g.selectAll("path")
     .data(nodes)
     .enter().append("path")
     .attr("d", arc)
     .attr("fill", d => colorFor(d))
-    .attr("fill-opacity", d => d.depth === 1 ? 0.85 : 0.65)
-    .attr("stroke", "#0A0908")
-    .attr("stroke-width", 1.2)
+    .attr("fill-opacity", d => d.depth === 1 ? 0.92 : 0.78)
+    .attr("stroke", "#FFFFFF")
+    .attr("stroke-width", 1.5)
     .style("cursor", "pointer")
-    .style("transition", "fill-opacity 200ms, transform 200ms")
+    .style("transition", "fill-opacity 200ms")
     .on("mouseenter", function(_e, d) {
       d3.select(this).attr("fill-opacity", 1);
       updateInfo(d);
     })
     .on("mouseleave", function(_e, d) {
-      d3.select(this).attr("fill-opacity", d.depth === 1 ? 0.85 : 0.65);
+      d3.select(this).attr("fill-opacity", d.depth === 1 ? 0.92 : 0.78);
     });
 
   // Family-ring labels (curved)
   const labelArc = d3.arc()
     .startAngle(d => d.x0)
     .endAngle(d => d.x1)
-    .innerRadius(115)
-    .outerRadius(115);
+    .innerRadius(112)
+    .outerRadius(112);
 
   g.append("defs").selectAll("path")
     .data(nodes.filter(d => d.depth === 1))
     .enter().append("path")
-    .attr("id", d => "fam-path-" + d.data.name)
+    .attr("id", d => "fam-" + d.data.name.replace(/[^a-zA-Z]/g, ""))
     .attr("d", labelArc)
     .attr("fill", "none");
 
@@ -1203,26 +782,26 @@ const familyColors = {
     .enter().append("text")
     .attr("class", "fam-label")
     .attr("dy", 4)
-    .style("font-family", "Geist, sans-serif")
-    .style("font-size", "12px")
+    .style("font-family", "Inter, sans-serif")
+    .style("font-size", "12.5px")
     .style("font-weight", "600")
-    .style("letter-spacing", "0.05em")
-    .style("fill", "#0A0908")
+    .style("letter-spacing", "0.02em")
+    .style("fill", "#FFFFFF")
     .style("pointer-events", "none")
     .append("textPath")
-      .attr("href", d => "#fam-path-" + d.data.name)
+      .attr("href", d => "#fam-" + d.data.name.replace(/[^a-zA-Z]/g, ""))
       .attr("startOffset", "50%")
       .attr("text-anchor", "middle")
       .text(d => d.data.name);
 
-  // Metric labels (only show if wedge wide enough)
+  // Outer-ring metric labels (rotated)
   g.selectAll(".metric-label")
     .data(nodes.filter(d => d.depth === 2))
     .enter().append("text")
     .attr("class", "metric-label")
     .attr("transform", d => {
       const ang = (d.x0 + d.x1) / 2;
-      const r = 207;
+      const r = 195;
       const x = Math.sin(ang) * r;
       const y = -Math.cos(ang) * r;
       const rot = (ang * 180 / Math.PI) - 90;
@@ -1231,17 +810,16 @@ const familyColors = {
     })
     .attr("text-anchor", "middle")
     .attr("dy", 4)
-    .style("font-family", "Geist Mono, monospace")
+    .style("font-family", "JetBrains Mono, monospace")
     .style("font-size", "9.5px")
-    .style("fill", "#0A0908")
+    .style("fill", "#0E0E0F")
     .style("pointer-events", "none")
     .text(d => {
       const ang = d.x1 - d.x0;
-      const minAng = 0.10;
-      if (ang < minAng) return "";
+      if (ang < 0.10) return "";
       const name = d.data.name;
-      if (ang < 0.18) return name.slice(0, 8);
-      return name.length > 18 ? name.slice(0, 18) : name;
+      if (ang < 0.18) return name.slice(0, 10);
+      return name.length > 20 ? name.slice(0, 20) : name;
     });
 
   // Center label
@@ -1251,20 +829,19 @@ const familyColors = {
     .style("font-family", "Instrument Serif, serif")
     .style("font-style", "italic")
     .style("font-size", "22px")
-    .style("fill", "#F0A040")
+    .style("fill", "#0E0E0F")
     .style("pointer-events", "none")
     .text("MiroBench");
   g.append("text")
     .attr("text-anchor", "middle")
     .attr("dy", 18)
-    .style("font-family", "Geist Mono, monospace")
+    .style("font-family", "JetBrains Mono, monospace")
     .style("font-size", "9px")
     .style("letter-spacing", "0.15em")
-    .style("fill", "#7E7A72")
+    .style("fill", "#888")
     .style("pointer-events", "none")
-    .text("19 METRICS");
+    .text("12 METRICS");
 
-  // Default state on mouseleave from whole chart
   svg.on("mouseleave", () => updateInfo(null));
 
   function updateInfo(d) {
@@ -1273,8 +850,8 @@ const familyColors = {
     const descEl = document.getElementById("sb-desc");
     if (!d) {
       famEl.textContent  = "MIROBENCH";
-      nameEl.textContent = "19 selected metrics";
-      descEl.innerHTML   = 'Hover any wedge to see the metric\'s description. The center holds <span class="text-text">MiroBench</span>; the inner ring shows the 5 families; the outer ring shows the 19 individual metrics.';
+      nameEl.textContent = "MiroBench · 12 metrics";
+      descEl.textContent = sbData.desc;
       return;
     }
     if (d.depth === 1) {
@@ -1291,15 +868,6 @@ const familyColors = {
 </script>
 
 <script>
-  // Nav blur on scroll
-  const nav = document.getElementById('nav');
-  const onScroll = () => {
-    if (window.scrollY > 12) nav.classList.add('nav-scrolled');
-    else nav.classList.remove('nav-scrolled');
-  };
-  document.addEventListener('scroll', onScroll, { passive: true });
-  onScroll();
-
   // Reveal on scroll
   const io = new IntersectionObserver((entries) => {
     entries.forEach((e) => {
@@ -1308,7 +876,7 @@ const familyColors = {
         io.unobserve(e.target);
       }
     });
-  }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
+  }, { rootMargin: '0px 0px -8% 0px', threshold: 0.06 });
   document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
 
   // Copy buttons
