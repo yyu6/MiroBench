@@ -300,6 +300,15 @@ output_dir/
 
 The `before_after_improvement_summary.json` contains per-metric comparisons including Cliff's delta reduction, Wasserstein distance improvement, quantile error changes, and fail rate improvements.
 
+## Acknowledgements
+
+MiroBench is inspired by and builds on prior work in agentic social-media simulation:
+
+- **[OASIS](https://github.com/camel-ai/oasis)** — Open Agent Social Interaction Simulation framework from CAMEL-AI. OASIS provides the underlying multi-agent discussion engine that powers our generation pipeline.
+- **[MiroFish](https://github.com/666ghj/MiroFish)** — Provides the runtime patches and prompt scaffolding for product-discussion threads on top of OASIS.
+
+We thank the authors of these projects for releasing their work openly.
+
 ## Citation
 
 ```bibtex
