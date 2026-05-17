@@ -1,0 +1,96 @@
+{
+  "topic": "Samsung - Galaxy S26 Ultra 1TB (Unlocked) - Black",
+  "requested_posts": 50,
+  "retrieved_posts": 1,
+  "retrieved_comments": 3,
+  "generated_at_utc": "2026-04-16T14:41:23.180715+00:00",
+  "strategies": [
+    {
+      "name": "subreddit_Smartphones_relevance_all",
+      "sort": "relevance",
+      "time_filter": "all",
+      "subreddit": "Smartphones"
+    },
+    {
+      "name": "subreddit_Smartphones_new_year",
+      "sort": "new",
+      "time_filter": "year",
+      "subreddit": "Smartphones"
+    },
+    {
+      "name": "subreddit_AndroidQuestions_relevance_all",
+      "sort": "relevance",
+      "time_filter": "all",
+      "subreddit": "AndroidQuestions"
+    },
+    {
+      "name": "subreddit_AndroidQuestions_new_year",
+      "sort": "new",
+      "time_filter": "year",
+      "subreddit": "AndroidQuestions"
+    },
+    {
+      "name": "global_relevance_all",
+      "sort": "relevance",
+      "time_filter": "all",
+      "subreddit": null
+    },
+    {
+      "name": "global_new_year",
+      "sort": "new",
+      "time_filter": "year",
+      "subreddit": null
+    },
+    {
+      "name": "global_top_year",
+      "sort": "top",
+      "time_filter": "year",
+      "subreddit": null
+    },
+    {
+      "name": "global_comments_year",
+      "sort": "comments",
+      "time_filter": "year",
+      "subreddit": null
+    }
+  ],
+  "thoughtlab_status": {
+    "ok": true,
+    "status": "active",
+    "expires_at": "2027-04-09 10:52:12",
+    "usage": {
+      "tokens_today": 1,
+      "tokens_this_hour": 0,
+      "limit_per_hour": 2,
+      "limit_per_day": 3
+    }
+  },
+  "posts": [
+    {
+      "id": "1rrzmnb",
+      "fullname": "t3_1rrzmnb",
+      "query": "Samsung - Galaxy S26 Ultra 1TB (Unlocked) - Black",
+      "strategy": "global_relevance_all",
+      "subreddit": "samsunggalaxy",
+      "title": "Samsung now has the Double Store deal",
+      "author": "FAUguy",
+      "permalink": "https://www.reddit.com/r/samsunggalaxy/comments/1rrzmnb/samsung_now_has_the_double_store_deal/",
+      "url": "https://www.reddit.com/gallery/1rrzmnb",
+      "created_utc": 1773341787,
+      "created_iso": "2026-03-12T18:56:27+00:00",
+      "score": 0,
+      "upvote_ratio": 0.33,
+      "num_comments": 3,
+      "over_18": false,
+      "spoiler": false,
+      "stickied": false,
+      "is_self": false,
+      "post_hint": null,
+      "domain": "reddit.com",
+      "selftext": "During the presale, Samsung was not offering any discounts off the pricing ($1299, $1499, $1799) except for the higher trade in values ($900 off with S25U). But Amazon had the phones with a $200 gift card. Best Buy was running them at a lower price, with the 512GB at $1299 and 1TB at $1499.\n\nAll that has ended, but Samsung is now running the same \"double storage\" promo like Best Buy was doing. The 512GB is $1299 and 1TB is $1499. (You can get it for $75 less if you have Samsung Money and use their internal discount link.) You can still trade in a phone but the amounts are less. However without a trade you get $180 store credit, that would pay for a set of Buds 4 Pro. See the pictures above.\n",
+      "link_flair_text": null,
+      "search_rank": 1,
+      "is_relevant": true
+    }
+  ]
+}

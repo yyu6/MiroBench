@@ -1,0 +1,108 @@
+{
+  "topic": "Dell - 16\" FHD+ Touchscreen Laptop,Intel Core 7 150U,32GB DDR5,1TB SSD+288GB Dock Set,Backlit Keyboard,Win 11 Pro - Silver",
+  "requested_posts": 50,
+  "retrieved_posts": 1,
+  "retrieved_comments": 0,
+  "generated_at_utc": "2026-04-15T02:21:37.192143+00:00",
+  "strategies": [
+    {
+      "name": "subreddit_SuggestALaptop_relevance_all",
+      "sort": "relevance",
+      "time_filter": "all",
+      "subreddit": "SuggestALaptop"
+    },
+    {
+      "name": "subreddit_SuggestALaptop_new_year",
+      "sort": "new",
+      "time_filter": "year",
+      "subreddit": "SuggestALaptop"
+    },
+    {
+      "name": "subreddit_laptops_relevance_all",
+      "sort": "relevance",
+      "time_filter": "all",
+      "subreddit": "laptops"
+    },
+    {
+      "name": "subreddit_laptops_new_year",
+      "sort": "new",
+      "time_filter": "year",
+      "subreddit": "laptops"
+    },
+    {
+      "name": "subreddit_LaptopDeals_relevance_all",
+      "sort": "relevance",
+      "time_filter": "all",
+      "subreddit": "LaptopDeals"
+    },
+    {
+      "name": "subreddit_LaptopDeals_new_year",
+      "sort": "new",
+      "time_filter": "year",
+      "subreddit": "LaptopDeals"
+    },
+    {
+      "name": "global_relevance_all",
+      "sort": "relevance",
+      "time_filter": "all",
+      "subreddit": null
+    },
+    {
+      "name": "global_new_year",
+      "sort": "new",
+      "time_filter": "year",
+      "subreddit": null
+    },
+    {
+      "name": "global_top_year",
+      "sort": "top",
+      "time_filter": "year",
+      "subreddit": null
+    },
+    {
+      "name": "global_comments_year",
+      "sort": "comments",
+      "time_filter": "year",
+      "subreddit": null
+    }
+  ],
+  "thoughtlab_status": {
+    "ok": true,
+    "status": "active",
+    "expires_at": "2027-04-09 10:52:12",
+    "usage": {
+      "tokens_today": 2,
+      "tokens_this_hour": 0,
+      "limit_per_hour": 2,
+      "limit_per_day": 3
+    }
+  },
+  "posts": [
+    {
+      "id": "1r190ed",
+      "fullname": "t3_1r190ed",
+      "query": "Dell - 16\" FHD+ Touchscreen Laptop,Intel Core 7 150U,32GB DDR5,1TB SSD+288GB Dock Set,Backlit Keyboard,Win 11 Pro - Silver",
+      "strategy": "subreddit_laptops_new_year",
+      "subreddit": "laptops",
+      "title": "Dell 16 DC16251 16\" Laptop Computer - Platinum Silver, $699",
+      "author": "WildCatPhan",
+      "permalink": "https://www.reddit.com/r/laptops/comments/1r190ed/dell_16_dc16251_16_laptop_computer_platinum/",
+      "url": "https://www.reddit.com/r/laptops/comments/1r190ed/dell_16_dc16251_16_laptop_computer_platinum/",
+      "created_utc": 1770748573,
+      "created_iso": "2026-02-10T18:36:13+00:00",
+      "score": 2,
+      "upvote_ratio": 1.0,
+      "num_comments": 0,
+      "over_18": false,
+      "spoiler": false,
+      "stickied": false,
+      "is_self": true,
+      "post_hint": "self",
+      "domain": "self.laptops",
+      "selftext": "Micro Center: https://www.microcenter.com/product/699796/dell-16-dc16251-16-laptop-computer-platinum-silver\n\nOperating System\n\nOperating System\n\nWindows 11 Home\n\nProcessor (CPU)\n\nCPU Brand\n\nIntel\n\nCPU Model\n\nSeries 1 Core Ultra Processor\n\nCPU Type\n\nCore 7\n\nCPU Speed\n\n150U (1.8GHz)\n\nTurbo Boost Speed\n\nUp to 5.4GHz\n\nCPU Core\n\nRaptor Lake\n\nCores\n\nTen-Core\n\nPerformance Cores\n\n2 @ 1.8 GHz Base, 5.4 GHz Turbo\n\nEfficient Cores\n\n8 @ 1.2 GHz Base, 4.0 GHz Turbo\n\nCPU Threads\n\n12 Threads\n\nSmart Cache\n\n12MB\n\nCPU Main Features\n\nIntel vPro Technology\n\nMemory (RAM)\n\nTotal Memory\n\n32GB\n\nMemory Type\n\nDDR5\n\nMemory Speed\n\nDDR5-5200\n\nForm Factor\n\n262-pin SO-DIMM\n\nMemory Slots (Total)\n\n2\n\nMemory Slots (Available)\n\n0\n\nMaximum Memory Supported\n\n32GB\n\nMemory Configuration\n\n2 x 16GB\n\nSolid State Drive\n\nSSD Interface\n\nPCIe NVMe M.2\n\nSSD Capacity\n\n1TB\n\nSSD Configuration\n\n1 x 1TB\n\nDisplay\n\nScreen Size\n\n16\"\n\nDisplay Type\n\nFull HD+ IPS Touchscreen\n\nDisplay Finish\n\nMatte\n\nResolution\n\n1920x1200\n\nRefresh Rate\n\n60Hz\n\nWidescreen\n\nYes\n\nFront Camera\n\nYes\n\nFront Camera Resolution\n\n1080p\n\nFront Camera Features\n\nFHD RGB\n\nTouch Screen\n\nYes\n\nBrightness\n\n300 nits\n\nGraphics/Video\n\nGPU Type\n\nIntel Graphics\n\nGraphics/Video Memory\n\nShared",
+      "link_flair_text": "Buying help",
+      "search_rank": 86,
+      "is_relevant": true
+    }
+  ]
+}

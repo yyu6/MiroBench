@@ -1,0 +1,134 @@
+{
+  "topic": "DCU Visa\u00ae Platinum Secured Credit Card",
+  "requested_posts": 50,
+  "retrieved_posts": 2,
+  "retrieved_comments": 10,
+  "generated_at_utc": "2026-04-11T03:48:24.631272+00:00",
+  "strategies": [
+    {
+      "name": "subreddit_CreditCards_relevance_all",
+      "sort": "relevance",
+      "time_filter": "all",
+      "subreddit": "CreditCards"
+    },
+    {
+      "name": "subreddit_CreditCards_new_year",
+      "sort": "new",
+      "time_filter": "year",
+      "subreddit": "CreditCards"
+    },
+    {
+      "name": "subreddit_PersonalFinance_relevance_all",
+      "sort": "relevance",
+      "time_filter": "all",
+      "subreddit": "PersonalFinance"
+    },
+    {
+      "name": "subreddit_PersonalFinance_new_year",
+      "sort": "new",
+      "time_filter": "year",
+      "subreddit": "PersonalFinance"
+    },
+    {
+      "name": "subreddit_Churning_relevance_all",
+      "sort": "relevance",
+      "time_filter": "all",
+      "subreddit": "Churning"
+    },
+    {
+      "name": "subreddit_Churning_new_year",
+      "sort": "new",
+      "time_filter": "year",
+      "subreddit": "Churning"
+    },
+    {
+      "name": "global_relevance_all",
+      "sort": "relevance",
+      "time_filter": "all",
+      "subreddit": null
+    },
+    {
+      "name": "global_new_year",
+      "sort": "new",
+      "time_filter": "year",
+      "subreddit": null
+    },
+    {
+      "name": "global_top_year",
+      "sort": "top",
+      "time_filter": "year",
+      "subreddit": null
+    },
+    {
+      "name": "global_comments_year",
+      "sort": "comments",
+      "time_filter": "year",
+      "subreddit": null
+    }
+  ],
+  "thoughtlab_status": {
+    "ok": true,
+    "status": "active",
+    "expires_at": "2027-04-09 10:52:12",
+    "usage": {
+      "tokens_today": 1,
+      "tokens_this_hour": 0,
+      "limit_per_hour": 2,
+      "limit_per_day": 3
+    }
+  },
+  "posts": [
+    {
+      "id": "27zx23",
+      "fullname": "t3_27zx23",
+      "query": "DCU Visa\u00ae Platinum Secured Credit Card",
+      "strategy": "subreddit_PersonalFinance_relevance_all",
+      "subreddit": "personalfinance",
+      "title": "No credit, looking to build with a secured card and need help deciding between DCU and Capital One. Any help or other suggestions would be appreciated!!",
+      "author": "DisarmedSmile",
+      "permalink": "https://www.reddit.com/r/personalfinance/comments/27zx23/no_credit_looking_to_build_with_a_secured_card/",
+      "url": "https://www.reddit.com/r/personalfinance/comments/27zx23/no_credit_looking_to_build_with_a_secured_card/",
+      "created_utc": 1402607570,
+      "created_iso": "2014-06-12T21:12:50+00:00",
+      "score": 1,
+      "upvote_ratio": 0.67,
+      "num_comments": 3,
+      "over_18": false,
+      "spoiler": false,
+      "stickied": false,
+      "is_self": true,
+      "post_hint": null,
+      "domain": "self.personalfinance",
+      "selftext": "So, I have no credit. I'm still in my early 20s, just graduated college about a year and a half ago, and I think it's due time that I start building some credit for the future.  \n\nAfter reading several posts on here (thanks!) and other areas of the web, it seems that my best option is to get a secured credit card. My plan is to only put in $200-500, pay everything on-time in full, and keep my purchases under 20% of the limit. I'll probably just use it to buy gas once a month to build up my score. \n\nBased on what I've read, my top contenders right now are a [Capital One Secured MasterCard](http://www.capitalone.com/credit-cards/secured-mastercard/) or a [DCU Visa Platinum Secured Card](https://www.dcu.org/loans/visa-secured.html?utm_campaign=bazaarvoice&utm_medium=SearchVoice&utm_source=AskAndAnswer&utm_content=Default)\n\nI'm open to other suggestions, but I would appreciate any advice on my getting one of these cards, given my lack of credit. I'm not even sure that I'll get approved, honestly. \n\nI know that DCU doesn't have an annual fee, but just a one-time donation of $10 and $5 put into an account. Capital One has an annual fee of $29. I want to think about the future though and I've heard that most people can't be graduated to an unsecured card, so I don't know if I should be considering the fact that I might be stuck paying that $29/year for a while if I don't want to close that card. \n\nAnyway, any advice would be helpful. Thanks again, guys! \n\n\n\n\n",
+      "link_flair_text": null,
+      "search_rank": 1,
+      "is_relevant": true
+    },
+    {
+      "id": "2vgb0h",
+      "fullname": "t3_2vgb0h",
+      "query": "DCU Visa\u00ae Platinum Secured Credit Card",
+      "strategy": "subreddit_PersonalFinance_relevance_all",
+      "subreddit": "personalfinance",
+      "title": "Best Credit Card for Very Bad Credit?",
+      "author": "SuicideImpact",
+      "permalink": "https://www.reddit.com/r/personalfinance/comments/2vgb0h/best_credit_card_for_very_bad_credit/",
+      "url": "https://www.reddit.com/r/personalfinance/comments/2vgb0h/best_credit_card_for_very_bad_credit/",
+      "created_utc": 1423599158,
+      "created_iso": "2015-02-10T20:12:38+00:00",
+      "score": 1,
+      "upvote_ratio": 1.0,
+      "num_comments": 7,
+      "over_18": false,
+      "spoiler": false,
+      "stickied": false,
+      "is_self": true,
+      "post_hint": null,
+      "domain": "self.personalfinance",
+      "selftext": "Hi /r/PersonalFinance - we need your help.\n\nMy boyfriend and I are taking the next step in our relationship by moving into a new apartment together. While we are not completely combining finances, we are at the point where we're familiarizing ourselves with our situations.\n\nMy credit is decent at around 760 with all credit cards paid in full each month and no debt. His, however, was at 575. After hard inquiries for apartment application (accepted, as we applied together) and joint bank account at Ally (declined, despite my existing Ally accounts), he's sitting at 545.\n\nHe doesn't have a lot of debt (only a $2,400 student loan that he will be paying off once it is out of forbearance) - his problem is a long history of late payments on his student loans and a secured credit card that he closed once it was paid off. Now that we're working more on building his credit, I think the next step is to get another secured credit card and make small purchases each month followed by REGULAR payments. However, I don't know if his credit score can afford more hard inquiries with the possibility of being declined. What is the best card that offers the greatest chance of being approved? Otherwise, is it better to wait several months for his credit score to recover from the recent hard inquiries?\n\nWe currently have the following list - please let us know your thoughts:\n\n- US Bank Secured Card ($35 annual fee, but can be upgraded to unsecured card after a year and 680+ credit score)\n\n- DCU Visa Platinum Secured Credit Card (no annual fee)\n\n- US Bank Harley-Davidson Visa Secured (no annual fee)\n\nBonus question: we are currently taking Dave Ramsey's Financial Peace University, and he's a big proponent of not using credit cards at all. Does this hold any weight as long as the credit card is paid in full every month?",
+      "link_flair_text": "Credit",
+      "search_rank": 5,
+      "is_relevant": true
+    }
+  ]
+}

@@ -1,0 +1,108 @@
+{
+  "topic": "GEEKOM - GeekBook X16 Pro Laptop, 2.5K 16\" IPS LCD, Intel Core Ultra U9-185H, 32GB LPDDR5x RAM& 2TB SSD, Win 11 Pro Pre-installed - Titanium Gray",
+  "requested_posts": 50,
+  "retrieved_posts": 1,
+  "retrieved_comments": 3,
+  "generated_at_utc": "2026-04-14T23:57:11.039890+00:00",
+  "strategies": [
+    {
+      "name": "subreddit_SuggestALaptop_relevance_all",
+      "sort": "relevance",
+      "time_filter": "all",
+      "subreddit": "SuggestALaptop"
+    },
+    {
+      "name": "subreddit_SuggestALaptop_new_year",
+      "sort": "new",
+      "time_filter": "year",
+      "subreddit": "SuggestALaptop"
+    },
+    {
+      "name": "subreddit_laptops_relevance_all",
+      "sort": "relevance",
+      "time_filter": "all",
+      "subreddit": "laptops"
+    },
+    {
+      "name": "subreddit_laptops_new_year",
+      "sort": "new",
+      "time_filter": "year",
+      "subreddit": "laptops"
+    },
+    {
+      "name": "subreddit_LaptopDeals_relevance_all",
+      "sort": "relevance",
+      "time_filter": "all",
+      "subreddit": "LaptopDeals"
+    },
+    {
+      "name": "subreddit_LaptopDeals_new_year",
+      "sort": "new",
+      "time_filter": "year",
+      "subreddit": "LaptopDeals"
+    },
+    {
+      "name": "global_relevance_all",
+      "sort": "relevance",
+      "time_filter": "all",
+      "subreddit": null
+    },
+    {
+      "name": "global_new_year",
+      "sort": "new",
+      "time_filter": "year",
+      "subreddit": null
+    },
+    {
+      "name": "global_top_year",
+      "sort": "top",
+      "time_filter": "year",
+      "subreddit": null
+    },
+    {
+      "name": "global_comments_year",
+      "sort": "comments",
+      "time_filter": "year",
+      "subreddit": null
+    }
+  ],
+  "thoughtlab_status": {
+    "ok": true,
+    "status": "active",
+    "expires_at": "2027-04-09 10:52:12",
+    "usage": {
+      "tokens_today": 2,
+      "tokens_this_hour": 0,
+      "limit_per_hour": 2,
+      "limit_per_day": 3
+    }
+  },
+  "posts": [
+    {
+      "id": "1rpsm7m",
+      "fullname": "t3_1rpsm7m",
+      "query": "GEEKOM - GeekBook X16 Pro Laptop, 2.5K 16\" IPS LCD, Intel Core Ultra U9-185H, 32GB LPDDR5x RAM& 2TB SSD, Win 11 Pro Pre-installed - Titanium Gray",
+      "strategy": "subreddit_laptops_new_year",
+      "subreddit": "laptops",
+      "title": "Which one would you choose among these three OLED laptops?",
+      "author": "ruhila12",
+      "permalink": "https://www.reddit.com/r/laptops/comments/1rpsm7m/which_one_would_you_choose_among_these_three_oled/",
+      "url": "https://i.redd.it/xlh06su7w6og1.jpeg",
+      "created_utc": 1773136181,
+      "created_iso": "2026-03-10T09:49:41+00:00",
+      "score": 1,
+      "upvote_ratio": 1.0,
+      "num_comments": 4,
+      "over_18": false,
+      "spoiler": false,
+      "stickied": false,
+      "is_self": false,
+      "post_hint": "image",
+      "domain": "i.redd.it",
+      "selftext": "I\u2019m just trying to get a OLED laptop that can do content creation and video editing.I was thinking to buy a LG laptop, but then i notice i can get 32 GB and 1TB SSD with similar price. Then a thought maybe they\u2019re built poorly with some cheap plastic but i was wrong, i actually like the  magnesium body. Lenovo is another choice, i had zero experience with GEEKOM, but i can\u2019t deny the fact that they\u2019re providing better specs, moreover, better laptop at the same price. Anyone with similar experience?",
+      "link_flair_text": "Discussion",
+      "search_rank": 62,
+      "is_relevant": true
+    }
+  ]
+}

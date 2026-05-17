@@ -1,0 +1,69 @@
+{
+  "topic": "Samsung - Galaxy Z Flip7 512GB (Unlocked) - Blue Shadow",
+  "requested_posts": 50,
+  "retrieved_posts": 0,
+  "retrieved_comments": 0,
+  "generated_at_utc": "2026-04-23T21:11:39.225738+00:00",
+  "strategies": [
+    {
+      "name": "subreddit_Android_relevance_all",
+      "sort": "relevance",
+      "time_filter": "all",
+      "subreddit": "Android"
+    },
+    {
+      "name": "subreddit_Android_new_year",
+      "sort": "new",
+      "time_filter": "year",
+      "subreddit": "Android"
+    },
+    {
+      "name": "subreddit_Smartphones_relevance_all",
+      "sort": "relevance",
+      "time_filter": "all",
+      "subreddit": "Smartphones"
+    },
+    {
+      "name": "subreddit_Smartphones_new_year",
+      "sort": "new",
+      "time_filter": "year",
+      "subreddit": "Smartphones"
+    },
+    {
+      "name": "global_relevance_all",
+      "sort": "relevance",
+      "time_filter": "all",
+      "subreddit": null
+    },
+    {
+      "name": "global_new_year",
+      "sort": "new",
+      "time_filter": "year",
+      "subreddit": null
+    },
+    {
+      "name": "global_top_year",
+      "sort": "top",
+      "time_filter": "year",
+      "subreddit": null
+    },
+    {
+      "name": "global_comments_year",
+      "sort": "comments",
+      "time_filter": "year",
+      "subreddit": null
+    }
+  ],
+  "thoughtlab_status": {
+    "ok": true,
+    "status": "active",
+    "expires_at": "2027-04-09 10:52:12",
+    "usage": {
+      "tokens_today": 1,
+      "tokens_this_hour": 1,
+      "limit_per_hour": 2,
+      "limit_per_day": 3
+    }
+  },
+  "posts": []
+}

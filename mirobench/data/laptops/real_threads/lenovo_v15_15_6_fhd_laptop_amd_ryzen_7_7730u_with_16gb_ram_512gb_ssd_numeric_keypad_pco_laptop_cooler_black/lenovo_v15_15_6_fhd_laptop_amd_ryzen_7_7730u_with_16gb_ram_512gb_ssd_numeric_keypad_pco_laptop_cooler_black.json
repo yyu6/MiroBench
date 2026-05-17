@@ -1,0 +1,160 @@
+{
+  "topic": "Lenovo - V15 15.6\" FHD Laptop - AMD Ryzen 7 7730U with 16GB RAM - 512GB SSD - Numeric Keypad - PCO Laptop Cooler - Black",
+  "requested_posts": 50,
+  "retrieved_posts": 3,
+  "retrieved_comments": 22,
+  "generated_at_utc": "2026-04-15T09:04:49.389313+00:00",
+  "strategies": [
+    {
+      "name": "subreddit_SuggestALaptop_relevance_all",
+      "sort": "relevance",
+      "time_filter": "all",
+      "subreddit": "SuggestALaptop"
+    },
+    {
+      "name": "subreddit_SuggestALaptop_new_year",
+      "sort": "new",
+      "time_filter": "year",
+      "subreddit": "SuggestALaptop"
+    },
+    {
+      "name": "subreddit_LaptopDeals_relevance_all",
+      "sort": "relevance",
+      "time_filter": "all",
+      "subreddit": "LaptopDeals"
+    },
+    {
+      "name": "subreddit_LaptopDeals_new_year",
+      "sort": "new",
+      "time_filter": "year",
+      "subreddit": "LaptopDeals"
+    },
+    {
+      "name": "subreddit_Lenovo_relevance_all",
+      "sort": "relevance",
+      "time_filter": "all",
+      "subreddit": "Lenovo"
+    },
+    {
+      "name": "subreddit_Lenovo_new_year",
+      "sort": "new",
+      "time_filter": "year",
+      "subreddit": "Lenovo"
+    },
+    {
+      "name": "global_relevance_all",
+      "sort": "relevance",
+      "time_filter": "all",
+      "subreddit": null
+    },
+    {
+      "name": "global_new_year",
+      "sort": "new",
+      "time_filter": "year",
+      "subreddit": null
+    },
+    {
+      "name": "global_top_year",
+      "sort": "top",
+      "time_filter": "year",
+      "subreddit": null
+    },
+    {
+      "name": "global_comments_year",
+      "sort": "comments",
+      "time_filter": "year",
+      "subreddit": null
+    }
+  ],
+  "thoughtlab_status": {
+    "ok": true,
+    "status": "active",
+    "expires_at": "2027-04-09 10:52:12",
+    "usage": {
+      "tokens_today": 0,
+      "tokens_this_hour": 0,
+      "limit_per_hour": 2,
+      "limit_per_day": 3
+    }
+  },
+  "posts": [
+    {
+      "id": "1omd5ko",
+      "fullname": "t3_1omd5ko",
+      "query": "Lenovo - V15 15.6\" FHD Laptop - AMD Ryzen 7 7730U with 16GB RAM - 512GB SSD - Numeric Keypad - PCO Laptop Cooler - Black",
+      "strategy": "subreddit_Lenovo_relevance_all",
+      "subreddit": "Lenovo",
+      "title": "Urgent please!!! Should I buy this",
+      "author": "Zoey_jk",
+      "permalink": "https://www.reddit.com/r/Lenovo/comments/1omd5ko/urgent_please_should_i_buy_this/",
+      "url": "https://i.redd.it/m2kutbfjdtyf1.png",
+      "created_utc": 1762076317,
+      "created_iso": "2025-11-02T09:38:37+00:00",
+      "score": 5,
+      "upvote_ratio": 0.78,
+      "num_comments": 22,
+      "over_18": false,
+      "spoiler": false,
+      "stickied": false,
+      "is_self": false,
+      "post_hint": "image",
+      "domain": "i.redd.it",
+      "selftext": "Lenovo V15 Gen 4 (83CQ0006IN)\n\nI'm buying a laptop to start my clothing brand online. Only to manage the brand website. \nMy current budget is \u20b930,000 maximum.\nJust to start my business for now.\nAlso it's my first time buying a laptop. ",
+      "link_flair_text": null,
+      "search_rank": 22,
+      "is_relevant": true
+    },
+    {
+      "id": "1jynjm1",
+      "fullname": "t3_1jynjm1",
+      "query": "Lenovo - V15 15.6\" FHD Laptop - AMD Ryzen 7 7730U with 16GB RAM - 512GB SSD - Numeric Keypad - PCO Laptop Cooler - Black",
+      "strategy": "subreddit_Lenovo_relevance_all",
+      "subreddit": "Lenovo",
+      "title": "V15 case/skin",
+      "author": "Past-Philosopher-619",
+      "permalink": "https://www.reddit.com/r/Lenovo/comments/1jynjm1/v15_caseskin/",
+      "url": "https://i.redd.it/r05m3dd6gpue1.jpeg",
+      "created_utc": 1744594845,
+      "created_iso": "2025-04-14T01:40:45+00:00",
+      "score": 1,
+      "upvote_ratio": 1.0,
+      "num_comments": 0,
+      "over_18": false,
+      "spoiler": false,
+      "stickied": false,
+      "is_self": false,
+      "post_hint": "image",
+      "domain": "i.redd.it",
+      "selftext": "I\u2019m looking for a hard case and/or skins that would fit this laptop? ",
+      "link_flair_text": null,
+      "search_rank": 136,
+      "is_relevant": true
+    },
+    {
+      "id": "1mygd2x",
+      "fullname": "t3_1mygd2x",
+      "query": "Lenovo - V15 15.6\" FHD Laptop - AMD Ryzen 7 7730U with 16GB RAM - 512GB SSD - Numeric Keypad - PCO Laptop Cooler - Black",
+      "strategy": "global_relevance_all",
+      "subreddit": "bestlaptopdeals",
+      "title": "[Amazon] Lenovo Laptop V15 Gen 4 for Business (15.6\" FHD Anti-glare, AMD Ryzen 7 7730U (Beat i7-1355U), 16GB RAM, 1TB SSD), Numeric Keypad, Webcam w/Shutter, Ethernet, Win 11 Pro w/AI Copilot, Grey [Price: $549.96 after 28% off]",
+      "author": "wikiwiki62",
+      "permalink": "https://www.reddit.com/r/bestlaptopdeals/comments/1mygd2x/amazon_lenovo_laptop_v15_gen_4_for_business_156/",
+      "url": "https://laptopsdealer.com/product/lenovo-laptop-v15-gen-4-for-business-15-6-fhd-anti-glare-amd-ryzen-7-7730u-beat-i7-1355u-16gb-ram-1tb-ssd-numeric-keypad-webcam-w-shutter-ethernet-win-11-pro-w-ai-copilot-grey/",
+      "created_utc": 1755991639,
+      "created_iso": "2025-08-23T23:27:19+00:00",
+      "score": 1,
+      "upvote_ratio": 1.0,
+      "num_comments": 0,
+      "over_18": false,
+      "spoiler": false,
+      "stickied": false,
+      "is_self": false,
+      "post_hint": "link",
+      "domain": "laptopsdealer.com",
+      "selftext": "",
+      "link_flair_text": "Deals",
+      "search_rank": 125,
+      "is_relevant": true
+    }
+  ]
+}

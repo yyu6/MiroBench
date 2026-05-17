@@ -1,0 +1,134 @@
+{
+  "topic": "Dell - Inspiron 14 2-in-1 Touch Laptop - AMD Ryzen 5 Processor - AMD Radeon Graphics - 8 GB Memory - 512 GB SSD - Midnight Blue.",
+  "requested_posts": 50,
+  "retrieved_posts": 2,
+  "retrieved_comments": 8,
+  "generated_at_utc": "2026-04-14T18:46:24.327081+00:00",
+  "strategies": [
+    {
+      "name": "subreddit_SuggestALaptop_relevance_all",
+      "sort": "relevance",
+      "time_filter": "all",
+      "subreddit": "SuggestALaptop"
+    },
+    {
+      "name": "subreddit_SuggestALaptop_new_year",
+      "sort": "new",
+      "time_filter": "year",
+      "subreddit": "SuggestALaptop"
+    },
+    {
+      "name": "subreddit_laptops_relevance_all",
+      "sort": "relevance",
+      "time_filter": "all",
+      "subreddit": "laptops"
+    },
+    {
+      "name": "subreddit_laptops_new_year",
+      "sort": "new",
+      "time_filter": "year",
+      "subreddit": "laptops"
+    },
+    {
+      "name": "subreddit_LaptopDeals_relevance_all",
+      "sort": "relevance",
+      "time_filter": "all",
+      "subreddit": "LaptopDeals"
+    },
+    {
+      "name": "subreddit_LaptopDeals_new_year",
+      "sort": "new",
+      "time_filter": "year",
+      "subreddit": "LaptopDeals"
+    },
+    {
+      "name": "global_relevance_all",
+      "sort": "relevance",
+      "time_filter": "all",
+      "subreddit": null
+    },
+    {
+      "name": "global_new_year",
+      "sort": "new",
+      "time_filter": "year",
+      "subreddit": null
+    },
+    {
+      "name": "global_top_year",
+      "sort": "top",
+      "time_filter": "year",
+      "subreddit": null
+    },
+    {
+      "name": "global_comments_year",
+      "sort": "comments",
+      "time_filter": "year",
+      "subreddit": null
+    }
+  ],
+  "thoughtlab_status": {
+    "ok": true,
+    "status": "active",
+    "expires_at": "2027-04-09 10:52:12",
+    "usage": {
+      "tokens_today": 2,
+      "tokens_this_hour": 2,
+      "limit_per_hour": 2,
+      "limit_per_day": 3
+    }
+  },
+  "posts": [
+    {
+      "id": "qsmd3j",
+      "fullname": "t3_qsmd3j",
+      "query": "Dell - Inspiron 14 2-in-1 Touch Laptop - AMD Ryzen 5 Processor - AMD Radeon Graphics - 8 GB Memory - 512 GB SSD - Midnight Blue.",
+      "strategy": "subreddit_SuggestALaptop_relevance_all",
+      "subreddit": "SuggestALaptop",
+      "title": "Inspiron 14 2-in-1 Laptop (AMD) - Questions About the Build Quality and display",
+      "author": "mikmikhail",
+      "permalink": "https://www.reddit.com/r/SuggestALaptop/comments/qsmd3j/inspiron_14_2in1_laptop_amd_questions_about_the/",
+      "url": "https://www.reddit.com/r/SuggestALaptop/comments/qsmd3j/inspiron_14_2in1_laptop_amd_questions_about_the/",
+      "created_utc": 1636755488,
+      "created_iso": "2021-11-12T22:18:08+00:00",
+      "score": 1,
+      "upvote_ratio": 1.0,
+      "num_comments": 8,
+      "over_18": false,
+      "spoiler": false,
+      "stickied": false,
+      "is_self": true,
+      "post_hint": null,
+      "domain": "self.SuggestALaptop",
+      "selftext": "Hello guys! I think I finally found a decent 2-in-1 laptop that fits my needs. [These](https://gyazo.com/704f609b94a9ac0b12243f08cc097e93) are the specs.  \n\n\nNow the question: How are the display and the Build Quality?   \n\n\nI know it's not an XPS and I'm not really looking for the best. If it's decent, then I would still love it. If you do know other laptops that have better display/build quality but with lower specs in the same price range, I am willing to make the sacrifice.",
+      "link_flair_text": "Laptop Request",
+      "search_rank": 51,
+      "is_relevant": true
+    },
+    {
+      "id": "jialna",
+      "fullname": "t3_jialna",
+      "query": "Dell - Inspiron 14 2-in-1 Touch Laptop - AMD Ryzen 5 Processor - AMD Radeon Graphics - 8 GB Memory - 512 GB SSD - Midnight Blue.",
+      "strategy": "subreddit_SuggestALaptop_relevance_all",
+      "subreddit": "SuggestALaptop",
+      "title": "Dell - Inspiron 14 7000 2-in-1 Vs HP - Pavilion x360 2-in-",
+      "author": "sircroc000",
+      "permalink": "https://www.reddit.com/r/SuggestALaptop/comments/jialna/dell_inspiron_14_7000_2in1_vs_hp_pavilion_x360_2in/",
+      "url": "https://www.reddit.com/r/SuggestALaptop/comments/jialna/dell_inspiron_14_7000_2in1_vs_hp_pavilion_x360_2in/",
+      "created_utc": 1603699243,
+      "created_iso": "2020-10-26T08:00:43+00:00",
+      "score": 1,
+      "upvote_ratio": 1.0,
+      "num_comments": 0,
+      "over_18": false,
+      "spoiler": false,
+      "stickied": false,
+      "is_self": true,
+      "post_hint": null,
+      "domain": "self.SuggestALaptop",
+      "selftext": "Schoolwork, blender, and roblox/roblox studio, help!",
+      "link_flair_text": null,
+      "search_rank": 89,
+      "is_relevant": true
+    }
+  ]
+}

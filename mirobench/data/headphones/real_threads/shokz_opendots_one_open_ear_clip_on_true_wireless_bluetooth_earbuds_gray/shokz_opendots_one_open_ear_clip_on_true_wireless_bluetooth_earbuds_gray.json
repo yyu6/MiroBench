@@ -1,0 +1,122 @@
+{
+  "topic": "Shokz - OpenDots ONE Open-Ear Clip-On True Wireless Bluetooth Earbuds - Gray",
+  "requested_posts": 50,
+  "retrieved_posts": 2,
+  "retrieved_comments": 72,
+  "generated_at_utc": "2026-04-16T14:00:00.957327+00:00",
+  "strategies": [
+    {
+      "name": "subreddit_headphones_relevance_all",
+      "sort": "relevance",
+      "time_filter": "all",
+      "subreddit": "headphones"
+    },
+    {
+      "name": "subreddit_headphones_new_year",
+      "sort": "new",
+      "time_filter": "year",
+      "subreddit": "headphones"
+    },
+    {
+      "name": "subreddit_BluetoothAudio_relevance_all",
+      "sort": "relevance",
+      "time_filter": "all",
+      "subreddit": "BluetoothAudio"
+    },
+    {
+      "name": "subreddit_BluetoothAudio_new_year",
+      "sort": "new",
+      "time_filter": "year",
+      "subreddit": "BluetoothAudio"
+    },
+    {
+      "name": "global_relevance_all",
+      "sort": "relevance",
+      "time_filter": "all",
+      "subreddit": null
+    },
+    {
+      "name": "global_new_year",
+      "sort": "new",
+      "time_filter": "year",
+      "subreddit": null
+    },
+    {
+      "name": "global_top_year",
+      "sort": "top",
+      "time_filter": "year",
+      "subreddit": null
+    },
+    {
+      "name": "global_comments_year",
+      "sort": "comments",
+      "time_filter": "year",
+      "subreddit": null
+    }
+  ],
+  "thoughtlab_status": {
+    "ok": true,
+    "status": "active",
+    "expires_at": "2027-04-09 10:52:12",
+    "usage": {
+      "tokens_today": 1,
+      "tokens_this_hour": 1,
+      "limit_per_hour": 2,
+      "limit_per_day": 3
+    }
+  },
+  "posts": [
+    {
+      "id": "1kqvqxl",
+      "fullname": "t3_1kqvqxl",
+      "query": "Shokz - OpenDots ONE Open-Ear Clip-On True Wireless Bluetooth Earbuds - Gray",
+      "strategy": "subreddit_headphones_relevance_all",
+      "subreddit": "headphones",
+      "title": "Shokz Opendots One Only Plays a Single Channel Per Earbud in Mono Mode",
+      "author": "Give_Mute_ACOG",
+      "permalink": "https://www.reddit.com/r/headphones/comments/1kqvqxl/shokz_opendots_one_only_plays_a_single_channel/",
+      "url": "https://www.reddit.com/r/headphones/comments/1kqvqxl/shokz_opendots_one_only_plays_a_single_channel/",
+      "created_utc": 1747713563,
+      "created_iso": "2025-05-20T03:59:23+00:00",
+      "score": 0,
+      "upvote_ratio": 0.5,
+      "num_comments": 3,
+      "over_18": false,
+      "spoiler": false,
+      "stickied": false,
+      "is_self": true,
+      "post_hint": null,
+      "domain": "self.headphones",
+      "selftext": "I received the Opendots One today and have been honestly underwhelmed. One thing I read in reviews was that you can use each earbud independently, which sounds great HOWEVER, I didn\u2019t see anyone mention that each earbud only plays a single audio channel\u2014left or right. So if you're using just one earbud while the other is charging, you don\u2019t get a stereo mix, just one channel (hope I'm explaining it currently) which is honestly really unacceptable at this price point..\n\nFor comparison,  **other clip on open earbuds ** which costs significantly sounds nearly as good, and it mixes both channels when using one earbud.\n\nI\u2019m hoping this can be fixed via a firmware update because using a single earbud is important for me. Has anyone else experienced this issue? Are there any known fixes I\u2019ve missed?\n\nThanks",
+      "link_flair_text": "Impressions",
+      "search_rank": 11,
+      "is_relevant": true
+    },
+    {
+      "id": "1qxrson",
+      "fullname": "t3_1qxrson",
+      "query": "Shokz - OpenDots ONE Open-Ear Clip-On True Wireless Bluetooth Earbuds - Gray",
+      "strategy": "global_relevance_all",
+      "subreddit": "LinusTechTips",
+      "title": "Linus Tech Tips - Headphones with Noise Cancelling that Don\u2019t Stick in your Ear - Shokz OpenFit Pro Showcase February 6, 2026 at 10:00AM",
+      "author": "linusbottips",
+      "permalink": "https://www.reddit.com/r/LinusTechTips/comments/1qxrson/linus_tech_tips_headphones_with_noise_cancelling/",
+      "url": "https://www.youtube.com/watch?v=9bLNw6Zb_SQ",
+      "created_utc": 1770407155,
+      "created_iso": "2026-02-06T19:45:55+00:00",
+      "score": 46,
+      "upvote_ratio": 0.72,
+      "num_comments": 69,
+      "over_18": false,
+      "spoiler": false,
+      "stickied": false,
+      "is_self": false,
+      "post_hint": "rich:video",
+      "domain": "youtube.com",
+      "selftext": "",
+      "link_flair_text": "Video",
+      "search_rank": 67,
+      "is_relevant": true
+    }
+  ]
+}

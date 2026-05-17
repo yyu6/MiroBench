@@ -1,0 +1,108 @@
+{
+  "topic": "Thunderobot - ZERO 16 16\" 360Hz WQXGA Gaming Laptop - Intel Core Ultra 9 275HX - NVIDIA RTX 5070 Ti - 32GB DDR5 Memory - 1TB Storage - Black",
+  "requested_posts": 50,
+  "retrieved_posts": 1,
+  "retrieved_comments": 81,
+  "generated_at_utc": "2026-04-15T09:26:39.130532+00:00",
+  "strategies": [
+    {
+      "name": "subreddit_GamingLaptops_relevance_all",
+      "sort": "relevance",
+      "time_filter": "all",
+      "subreddit": "GamingLaptops"
+    },
+    {
+      "name": "subreddit_GamingLaptops_new_year",
+      "sort": "new",
+      "time_filter": "year",
+      "subreddit": "GamingLaptops"
+    },
+    {
+      "name": "subreddit_SuggestALaptop_relevance_all",
+      "sort": "relevance",
+      "time_filter": "all",
+      "subreddit": "SuggestALaptop"
+    },
+    {
+      "name": "subreddit_SuggestALaptop_new_year",
+      "sort": "new",
+      "time_filter": "year",
+      "subreddit": "SuggestALaptop"
+    },
+    {
+      "name": "subreddit_LaptopDeals_relevance_all",
+      "sort": "relevance",
+      "time_filter": "all",
+      "subreddit": "LaptopDeals"
+    },
+    {
+      "name": "subreddit_LaptopDeals_new_year",
+      "sort": "new",
+      "time_filter": "year",
+      "subreddit": "LaptopDeals"
+    },
+    {
+      "name": "global_relevance_all",
+      "sort": "relevance",
+      "time_filter": "all",
+      "subreddit": null
+    },
+    {
+      "name": "global_new_year",
+      "sort": "new",
+      "time_filter": "year",
+      "subreddit": null
+    },
+    {
+      "name": "global_top_year",
+      "sort": "top",
+      "time_filter": "year",
+      "subreddit": null
+    },
+    {
+      "name": "global_comments_year",
+      "sort": "comments",
+      "time_filter": "year",
+      "subreddit": null
+    }
+  ],
+  "thoughtlab_status": {
+    "ok": true,
+    "status": "active",
+    "expires_at": "2027-04-09 10:52:12",
+    "usage": {
+      "tokens_today": 0,
+      "tokens_this_hour": 0,
+      "limit_per_hour": 2,
+      "limit_per_day": 3
+    }
+  },
+  "posts": [
+    {
+      "id": "1qu9s66",
+      "fullname": "t3_1qu9s66",
+      "query": "Thunderobot - ZERO 16 16\" 360Hz WQXGA Gaming Laptop - Intel Core Ultra 9 275HX - NVIDIA RTX 5070 Ti - 32GB DDR5 Memory - 1TB Storage - Black",
+      "strategy": "subreddit_GamingLaptops_relevance_all",
+      "subreddit": "GamingLaptops",
+      "title": "Finally upgraded after 12 years, got a screaming deal.",
+      "author": "DoctorAurum",
+      "permalink": "https://www.reddit.com/r/GamingLaptops/comments/1qu9s66/finally_upgraded_after_12_years_got_a_screaming/",
+      "url": "https://i.redd.it/cebovksxp5hg1.jpeg",
+      "created_utc": 1770071025,
+      "created_iso": "2026-02-02T22:23:45+00:00",
+      "score": 597,
+      "upvote_ratio": 0.98,
+      "num_comments": 84,
+      "over_18": false,
+      "spoiler": false,
+      "stickied": false,
+      "is_self": false,
+      "post_hint": "image",
+      "domain": "i.redd.it",
+      "selftext": "Went from my faithful ROG g20 rig with a 750 ti and an i5 to this beast. 2200 MSRP, got it at microcenter for 1600 before taxes. \n\nIntel Core Ultra 9 275HX (2.1GHz) Processor\n32GB DDR5-5600 RAM\nNVIDIA GeForce RTX 5070 Graphics Card\n1TB PCIe Gen4 NVMe M.2 SSD\n16\" 2.5K IPS Anti-Glare Display\nGigabit LAN, 2x2 WiFi 7 (802.11be), Bluetooth 5.4\n6.02 lbs. (2.73 kg)\nWindows 11 Home",
+      "link_flair_text": "Deals",
+      "search_rank": 111,
+      "is_relevant": true
+    }
+  ]
+}

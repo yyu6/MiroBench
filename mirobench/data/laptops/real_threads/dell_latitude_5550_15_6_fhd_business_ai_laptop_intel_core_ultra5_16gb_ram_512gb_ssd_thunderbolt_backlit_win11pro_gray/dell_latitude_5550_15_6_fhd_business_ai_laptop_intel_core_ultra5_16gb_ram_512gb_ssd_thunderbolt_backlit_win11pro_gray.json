@@ -1,0 +1,160 @@
+{
+  "topic": "Dell - Latitude 5550 15.6\"FHD Business AI Laptop - Intel Core Ultra5 - 16GB RAM - 512GB SSD - Thunderbolt - Backlit - Win11Pro - Gray",
+  "requested_posts": 50,
+  "retrieved_posts": 3,
+  "retrieved_comments": 18,
+  "generated_at_utc": "2026-04-15T00:50:04.521685+00:00",
+  "strategies": [
+    {
+      "name": "subreddit_SuggestALaptop_relevance_all",
+      "sort": "relevance",
+      "time_filter": "all",
+      "subreddit": "SuggestALaptop"
+    },
+    {
+      "name": "subreddit_SuggestALaptop_new_year",
+      "sort": "new",
+      "time_filter": "year",
+      "subreddit": "SuggestALaptop"
+    },
+    {
+      "name": "subreddit_Dell_relevance_all",
+      "sort": "relevance",
+      "time_filter": "all",
+      "subreddit": "Dell"
+    },
+    {
+      "name": "subreddit_Dell_new_year",
+      "sort": "new",
+      "time_filter": "year",
+      "subreddit": "Dell"
+    },
+    {
+      "name": "subreddit_laptops_relevance_all",
+      "sort": "relevance",
+      "time_filter": "all",
+      "subreddit": "laptops"
+    },
+    {
+      "name": "subreddit_laptops_new_year",
+      "sort": "new",
+      "time_filter": "year",
+      "subreddit": "laptops"
+    },
+    {
+      "name": "global_relevance_all",
+      "sort": "relevance",
+      "time_filter": "all",
+      "subreddit": null
+    },
+    {
+      "name": "global_new_year",
+      "sort": "new",
+      "time_filter": "year",
+      "subreddit": null
+    },
+    {
+      "name": "global_top_year",
+      "sort": "top",
+      "time_filter": "year",
+      "subreddit": null
+    },
+    {
+      "name": "global_comments_year",
+      "sort": "comments",
+      "time_filter": "year",
+      "subreddit": null
+    }
+  ],
+  "thoughtlab_status": {
+    "ok": true,
+    "status": "active",
+    "expires_at": "2027-04-09 10:52:12",
+    "usage": {
+      "tokens_today": 2,
+      "tokens_this_hour": 0,
+      "limit_per_hour": 2,
+      "limit_per_day": 3
+    }
+  },
+  "posts": [
+    {
+      "id": "1gi8dlv",
+      "fullname": "t3_1gi8dlv",
+      "query": "Dell - Latitude 5550 15.6\"FHD Business AI Laptop - Intel Core Ultra5 - 16GB RAM - 512GB SSD - Thunderbolt - Backlit - Win11Pro - Gray",
+      "strategy": "subreddit_SuggestALaptop_relevance_all",
+      "subreddit": "SuggestALaptop",
+      "title": "For ML/DL purposes - Inference and fine-tuning. Sometimes even fine-tuning models, which laptop build is better - i7 32GB RAM with 8GB VRAM (NVIDIA GeForce RTX 4060 8GB GDDR6) (Dell) or i7 64GB RAM only (HP)",
+      "author": "No_Cartoonist8629",
+      "permalink": "https://www.reddit.com/r/SuggestALaptop/comments/1gi8dlv/for_mldl_purposes_inference_and_finetuning/",
+      "url": "https://www.reddit.com/r/SuggestALaptop/comments/1gi8dlv/for_mldl_purposes_inference_and_finetuning/",
+      "created_utc": 1730587029,
+      "created_iso": "2024-11-02T22:37:09+00:00",
+      "score": 1,
+      "upvote_ratio": 1.0,
+      "num_comments": 1,
+      "over_18": false,
+      "spoiler": false,
+      "stickied": false,
+      "is_self": true,
+      "post_hint": null,
+      "domain": "self.SuggestALaptop",
+      "selftext": "Which one should I prefer for ML/DL purposes? \n\n32GB RAM + 8GB VRAM or 64GB RAM?\n\n\n\n# Dell Inspiron 16 Plus 7640 Laptop- 16.0-inch 16:10 2.5K Display, Intel Core Ultra 7-155H, 32GB DDR5 RAM, 2TB SSD, NVIDIA GeForce RTX 4060 8GB GDDR6, Windows 11 Home, Onsite & Migrate Service- Ice Blue\n\n[https://www.amazon.com/Dell-Inspiron-Plus-Laptop-16-0-inch/dp/B0D4LJBXQ5?source=ps-sl-shoppingads-lpcontext&ref\\_=fplfs&smid=ATVPDKIKX0DER&utm\\_source=Perplexity&utm\\_medium=referral&th=1](https://www.amazon.com/Dell-Inspiron-Plus-Laptop-16-0-inch/dp/B0D4LJBXQ5?source=ps-sl-shoppingads-lpcontext&ref_=fplfs&smid=ATVPDKIKX0DER&utm_source=Perplexity&utm_medium=referral&th=1)\n\nor\n\n# HP Envy Daily Business Laptop, 17.3\" FHD Touchscreen, Intel Core Ultra 7 155H, 64GB DDR5 RAM, 4TB SSD, Numeric Keypad, HDMI, Webcam, Backlit Keyboard, Wi-Fi 7, Windows 11 Pro, Grey\n\n[https://www.amazon.com/HP-Business-Touchscreen-Numeric-Keyboard/dp/B0D98HG9WG/ref=pd\\_rhf\\_cr\\_s\\_pd\\_sbs\\_rvi\\_d\\_sccl\\_2\\_13/140-8762111-2890519?pd\\_rd\\_w=opgi1&content-id=amzn1.sym.46e2be74-be72-4d3f-86e1-1de279690c4e&pf\\_rd\\_p=46e2be74-be72-4d3f-86e1-1de279690c4e&pf\\_rd\\_r=A74WW0PZK7N28B1SXZWS&pd\\_rd\\_wg=Qj4e9&pd\\_rd\\_r=7beb3586-6bd5-4465-9013-3933080c27bc&pd\\_rd\\_i=B0D98HG9WG&th=1](https://www.amazon.com/HP-Business-Touchscreen-Numeric-Keyboard/dp/B0D98HG9WG/ref=pd_rhf_cr_s_pd_sbs_rvi_d_sccl_2_13/140-8762111-2890519?pd_rd_w=opgi1&content-id=amzn1.sym.46e2be74-be72-4d3f-86e1-1de279690c4e&pf_rd_p=46e2be74-be72-4d3f-86e1-1de279690c4e&pf_rd_r=A74WW0PZK7N28B1SXZWS&pd_rd_wg=Qj4e9&pd_rd_r=7beb3586-6bd5-4465-9013-3933080c27bc&pd_rd_i=B0D98HG9WG&th=1)\n\nor\n\n# HP Newest Envy 17.3\" 4K Ultra 7 Laptop, 17.3\" 4K UHD 3840 * 2160 Display, Intel Core Ultra 7 155H, 64GB DDR5 RAM, 2TB SSD, HDMI, Webcam, Backlit KB, Wi-Fi 7, W11H, Grey, Adata 512 External SSD Bundle\n\n[https://www.amazon.com/HP-Newest-Display-Backlit-External/dp/B0DFWRR47G/ref=pd\\_rhf\\_cr\\_s\\_pd\\_sbs\\_rvi\\_d\\_sccl\\_2\\_8/140-8762111-2890519?pd\\_rd\\_w=opgi1&content-id=amzn1.sym.46e2be74-be72-4d3f-86e1-1de279690c4e&pf\\_rd\\_p=46e2be74-be72-4d3f-86e1-1de279690c4e&pf\\_rd\\_r=A74WW0PZK7N28B1SXZWS&pd\\_rd\\_wg=Qj4e9&pd\\_rd\\_r=7beb3586-6bd5-4465-9013-3933080c27bc&pd\\_rd\\_i=B0DFWRR47G&th=1](https://www.amazon.com/HP-Newest-Display-Backlit-External/dp/B0DFWRR47G/ref=pd_rhf_cr_s_pd_sbs_rvi_d_sccl_2_8/140-8762111-2890519?pd_rd_w=opgi1&content-id=amzn1.sym.46e2be74-be72-4d3f-86e1-1de279690c4e&pf_rd_p=46e2be74-be72-4d3f-86e1-1de279690c4e&pf_rd_r=A74WW0PZK7N28B1SXZWS&pd_rd_wg=Qj4e9&pd_rd_r=7beb3586-6bd5-4465-9013-3933080c27bc&pd_rd_i=B0DFWRR47G&th=1)\n\nor\n\n# HP Elitebook 650 G10 15.6\" FHD Business Laptop Computer, 13th Gen Intel 10-Core i7-1355U, 64GB DDR4 RAM, 4TB PCIe SSD, WiFi 6E, BT 5.3, Backlit KB, Fingerprint Reader, Windows 11 Pro, AZ-XUT Cable\n\n[https://www.amazon.com/HP-Elitebook-650-G10-Fingerprint/dp/B0CBN7TWKC/ref=pd\\_rhf\\_cr\\_s\\_pd\\_sbs\\_rvi\\_d\\_sccl\\_2\\_21/140-8762111-2890519?pd\\_rd\\_w=opgi1&content-id=amzn1.sym.46e2be74-be72-4d3f-86e1-1de279690c4e&pf\\_rd\\_p=46e2be74-be72-4d3f-86e1-1de279690c4e&pf\\_rd\\_r=A74WW0PZK7N28B1SXZWS&pd\\_rd\\_wg=Qj4e9&pd\\_rd\\_r=7beb3586-6bd5-4465-9013-3933080c27bc&pd\\_rd\\_i=B0CBN7TWKC&th=1](https://www.amazon.com/HP-Elitebook-650-G10-Fingerprint/dp/B0CBN7TWKC/ref=pd_rhf_cr_s_pd_sbs_rvi_d_sccl_2_21/140-8762111-2890519?pd_rd_w=opgi1&content-id=amzn1.sym.46e2be74-be72-4d3f-86e1-1de279690c4e&pf_rd_p=46e2be74-be72-4d3f-86e1-1de279690c4e&pf_rd_r=A74WW0PZK7N28B1SXZWS&pd_rd_wg=Qj4e9&pd_rd_r=7beb3586-6bd5-4465-9013-3933080c27bc&pd_rd_i=B0CBN7TWKC&th=1)\n\nor\n\n# Dell Latitude 5550 15 Business AI Laptop, 15.6\" FHD Computer, Intel Ultra 7 155U (Beat i7-1355U), 64GB DDR5 RAM, 4TB PCIe SSD, WiFi 6, Backlit Keyboard, Fingerprint Reader, Windows 11 Pro\n\n[https://www.amazon.com/Dell-Latitude-5550-Business-Fingerprint/dp/B0CS66MXK4/ref=pd\\_rhf\\_cr\\_s\\_pd\\_sbs\\_rvi\\_d\\_sccl\\_2\\_22/140-8762111-2890519?pd\\_rd\\_w=opgi1&content-id=amzn1.sym.46e2be74-be72-4d3f-86e1-1de279690c4e&pf\\_rd\\_p=46e2be74-be72-4d3f-86e1-1de279690c4e&pf\\_rd\\_r=A74WW0PZK7N28B1SXZWS&pd\\_rd\\_wg=Qj4e9&pd\\_rd\\_r=7beb3586-6bd5-4465-9013-3933080c27bc&pd\\_rd\\_i=B0CS69V7ZJ&th=1](https://www.amazon.com/Dell-Latitude-5550-Business-Fingerprint/dp/B0CS66MXK4/ref=pd_rhf_cr_s_pd_sbs_rvi_d_sccl_2_22/140-8762111-2890519?pd_rd_w=opgi1&content-id=amzn1.sym.46e2be74-be72-4d3f-86e1-1de279690c4e&pf_rd_p=46e2be74-be72-4d3f-86e1-1de279690c4e&pf_rd_r=A74WW0PZK7N28B1SXZWS&pd_rd_wg=Qj4e9&pd_rd_r=7beb3586-6bd5-4465-9013-3933080c27bc&pd_rd_i=B0CS69V7ZJ&th=1)\n\nor\n\n# Dell 2024 Newest Inspiron 15 3530 Business Laptop, 15.6\" FHD Touchscreen, Intel 10-Core i7-1355U CPU, 64GB RAM, 4TB SSD, WiFi 6, Webcam, HDMI, with Microsoft Office Lifetime License & Windows 11 Pro\n\n[https://www.amazon.com/Dell-Inspiron-15-Touchscreen-Microsoft/dp/B0B4VFXSS4/ref=pd\\_rhf\\_cr\\_s\\_pd\\_sbs\\_rvi\\_d\\_sccl\\_2\\_26/140-8762111-2890519?pd\\_rd\\_w=opgi1&content-id=amzn1.sym.46e2be74-be72-4d3f-86e1-1de279690c4e&pf\\_rd\\_p=46e2be74-be72-4d3f-86e1-1de279690c4e&pf\\_rd\\_r=A74WW0PZK7N28B1SXZWS&pd\\_rd\\_wg=Qj4e9&pd\\_rd\\_r=7beb3586-6bd5-4465-9013-3933080c27bc&pd\\_rd\\_i=B0D4M8DRZT&th=1](https://www.amazon.com/Dell-Inspiron-15-Touchscreen-Microsoft/dp/B0B4VFXSS4/ref=pd_rhf_cr_s_pd_sbs_rvi_d_sccl_2_26/140-8762111-2890519?pd_rd_w=opgi1&content-id=amzn1.sym.46e2be74-be72-4d3f-86e1-1de279690c4e&pf_rd_p=46e2be74-be72-4d3f-86e1-1de279690c4e&pf_rd_r=A74WW0PZK7N28B1SXZWS&pd_rd_wg=Qj4e9&pd_rd_r=7beb3586-6bd5-4465-9013-3933080c27bc&pd_rd_i=B0D4M8DRZT&th=1)\n\nAnd is it reasonable if I plan to use a GPU with the 64GB RAM Laptop later if I were to take a 64GB RAM laptop?",
+      "link_flair_text": "Laptop Request",
+      "search_rank": 80,
+      "is_relevant": true
+    },
+    {
+      "id": "1hvuaoe",
+      "fullname": "t3_1hvuaoe",
+      "query": "Dell - Latitude 5550 15.6\"FHD Business AI Laptop - Intel Core Ultra5 - 16GB RAM - 512GB SSD - Thunderbolt - Backlit - Win11Pro - Gray",
+      "strategy": "subreddit_Dell_relevance_all",
+      "subreddit": "Dell",
+      "title": "Multiple Dell Laptop - Webcam stops working",
+      "author": "MrPinkfluffyCat",
+      "permalink": "https://www.reddit.com/r/Dell/comments/1hvuaoe/multiple_dell_laptop_webcam_stops_working/",
+      "url": "https://www.reddit.com/r/Dell/comments/1hvuaoe/multiple_dell_laptop_webcam_stops_working/",
+      "created_utc": 1736264794,
+      "created_iso": "2025-01-07T15:46:34+00:00",
+      "score": 6,
+      "upvote_ratio": 1.0,
+      "num_comments": 14,
+      "over_18": false,
+      "spoiler": false,
+      "stickied": false,
+      "is_self": true,
+      "post_hint": null,
+      "domain": "self.Dell",
+      "selftext": "Hello!\n\nI'm the technician for a business and we work with Dell laptop,   \nWe use Latitude 5550, 5450, etc, and for some reasons, a few laptops of one of the latest batch we ordered has the same issue.\n\n  \nRandomly, the webcam will stop working, not detected anymore, we tried updating drivers, reinstalling windows. \n\n  \nThe only workaround we found is to go into the bios, \n\nUNCHECK the webcam (it was active) \n\napply settings, \n\nCheck the webcam back, \n\nSave and Exit.\n\nEventually, it will stop working again, at random.   \nNo error messages, no logs in event viewer anywhere. \n\nAnyone else had that issue?",
+      "link_flair_text": "Help",
+      "search_rank": 68,
+      "is_relevant": true
+    },
+    {
+      "id": "1pt1n7a",
+      "fullname": "t3_1pt1n7a",
+      "query": "Dell - Latitude 5550 15.6\"FHD Business AI Laptop - Intel Core Ultra5 - 16GB RAM - 512GB SSD - Thunderbolt - Backlit - Win11Pro - Gray",
+      "strategy": "subreddit_Dell_new_year",
+      "subreddit": "Dell",
+      "title": "WD19S docks and laptops having issues with sleep",
+      "author": "Suhwayyy",
+      "permalink": "https://www.reddit.com/r/Dell/comments/1pt1n7a/wd19s_docks_and_laptops_having_issues_with_sleep/",
+      "url": "https://www.reddit.com/r/Dell/comments/1pt1n7a/wd19s_docks_and_laptops_having_issues_with_sleep/",
+      "created_utc": 1766415579,
+      "created_iso": "2025-12-22T14:59:39+00:00",
+      "score": 1,
+      "upvote_ratio": 1.0,
+      "num_comments": 2,
+      "over_18": false,
+      "spoiler": false,
+      "stickied": false,
+      "is_self": true,
+      "post_hint": null,
+      "domain": "self.Dell",
+      "selftext": "Problem is when you lock your screen or sleep your computer, after some time the dock will not wake the monitors like normal. Normally I should be able to hit the space bar on my keyboard or move the mouse and the computer wakes but I now have to un-plug the dock and re-plug it in.\n\nboth laptops are closed and connected to the WD19S dock, both docks have external monitors and keyboards and mice connected to them.\n\nnot sure if anyone else has had this issue or not.\n\nNote: this issues just started happening about a week ago, nothing obvious has changed since then and both docks were working fine and wake-able before then\n\n  \n\n\nTwo laptops in my organization so far are having this problem.\n\nBoth are Latitude 5550's\n\nFirst laptop:  \nBIOS ver. - 1.3.0  \nDock firmware - 01.00.32.01  \nDock driver - 10.0.22621.1  \n\n\nOther laptop:  \nBIOS ver. - 1.18.1  \nDock firmware - 01.01.01.01  \nDock driver - 10.0.22621.1",
+      "link_flair_text": "Help",
+      "search_rank": 84,
+      "is_relevant": true
+    }
+  ]
+}

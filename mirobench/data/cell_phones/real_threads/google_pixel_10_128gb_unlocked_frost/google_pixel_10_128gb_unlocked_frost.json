@@ -1,0 +1,96 @@
+{
+  "topic": "Google - Pixel 10 128GB (Unlocked) - Frost",
+  "requested_posts": 50,
+  "retrieved_posts": 1,
+  "retrieved_comments": 2,
+  "generated_at_utc": "2026-04-16T14:12:13.638507+00:00",
+  "strategies": [
+    {
+      "name": "subreddit_Smartphones_relevance_all",
+      "sort": "relevance",
+      "time_filter": "all",
+      "subreddit": "Smartphones"
+    },
+    {
+      "name": "subreddit_Smartphones_new_year",
+      "sort": "new",
+      "time_filter": "year",
+      "subreddit": "Smartphones"
+    },
+    {
+      "name": "subreddit_AndroidQuestions_relevance_all",
+      "sort": "relevance",
+      "time_filter": "all",
+      "subreddit": "AndroidQuestions"
+    },
+    {
+      "name": "subreddit_AndroidQuestions_new_year",
+      "sort": "new",
+      "time_filter": "year",
+      "subreddit": "AndroidQuestions"
+    },
+    {
+      "name": "global_relevance_all",
+      "sort": "relevance",
+      "time_filter": "all",
+      "subreddit": null
+    },
+    {
+      "name": "global_new_year",
+      "sort": "new",
+      "time_filter": "year",
+      "subreddit": null
+    },
+    {
+      "name": "global_top_year",
+      "sort": "top",
+      "time_filter": "year",
+      "subreddit": null
+    },
+    {
+      "name": "global_comments_year",
+      "sort": "comments",
+      "time_filter": "year",
+      "subreddit": null
+    }
+  ],
+  "thoughtlab_status": {
+    "ok": true,
+    "status": "active",
+    "expires_at": "2027-04-09 10:52:12",
+    "usage": {
+      "tokens_today": 1,
+      "tokens_this_hour": 1,
+      "limit_per_hour": 2,
+      "limit_per_day": 3
+    }
+  },
+  "posts": [
+    {
+      "id": "1ske5ic",
+      "fullname": "t3_1ske5ic",
+      "query": "Google - Pixel 10 128GB (Unlocked) - Frost",
+      "strategy": "global_relevance_all",
+      "subreddit": "Pixel9Pro",
+      "title": "SALE get 10% off your Pixel phone! - Google Store (US) lowest price ever! Superfan coupon promo code",
+      "author": "rogueone98",
+      "permalink": "https://www.reddit.com/r/Pixel9Pro/comments/1ske5ic/sale_get_10_off_your_pixel_phone_google_store_us/",
+      "url": "https://www.reddit.com/gallery/1ske5ic",
+      "created_utc": 1776093968,
+      "created_iso": "2026-04-13T15:26:08+00:00",
+      "score": 2,
+      "upvote_ratio": 0.75,
+      "num_comments": 2,
+      "over_18": false,
+      "spoiler": false,
+      "stickied": false,
+      "is_self": false,
+      "post_hint": null,
+      "domain": "reddit.com",
+      "selftext": "Here are some more Pixel 10% off Superfan codes. Use at checkout. Offer ends on 04/26\n\nYou can get Pixel 10(unlocked) for $520 and Pixel 10 Pro(unlocked) for $650. Google is running promotion for $200 off on Pixel 10 and $250 off on Pixel 10 Pro. You can further stack on Spring deals with Google superfan code on top. \n\n\n\nREF-6VXKYBRO73YK7TQT0O4K72V\n\nREF-Y7IDT8I7NM0W4DDLNSMVG96\n\nREF-CYKXTHTUP5SOSVM2MRDTIBP\n\nREF-GY8JU1ASA8S07R5GLU4Y8Z3\n\nREF-UWN62S5SPVZZEVJTE4Z9Y18\n\nREF-0CTPR88QPEH5WF2RNT2TYBC\n\nREF-35OL8VYDL0HF85MBQ89IQQS\n\nREF-HJ69OF5ZYOKXE74GXHP9R4U\n\nREF-VFALMUSDCTEQ024QFEYIUNU\n\nREF-7D5R0WRY7025R2B4538AL2H",
+      "link_flair_text": "Pro",
+      "search_rank": 1,
+      "is_relevant": true
+    }
+  ]
+}

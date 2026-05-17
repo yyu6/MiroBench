@@ -1,0 +1,81 @@
+{
+  "topic": "Acer - Predator Helios 18 AI - 18\" 250Hz Gaming Laptop - 2560 x 1600 -Intel Core Ultra 9 - NVIDIA GeForce RTX 5080 \u2013 32GB \u2013 1TB - Abyssal Black",
+  "requested_posts": 50,
+  "retrieved_posts": 0,
+  "retrieved_comments": 0,
+  "generated_at_utc": "2026-04-15T08:50:14.976796+00:00",
+  "strategies": [
+    {
+      "name": "subreddit_GamingLaptops_relevance_all",
+      "sort": "relevance",
+      "time_filter": "all",
+      "subreddit": "GamingLaptops"
+    },
+    {
+      "name": "subreddit_GamingLaptops_new_year",
+      "sort": "new",
+      "time_filter": "year",
+      "subreddit": "GamingLaptops"
+    },
+    {
+      "name": "subreddit_SuggestALaptop_relevance_all",
+      "sort": "relevance",
+      "time_filter": "all",
+      "subreddit": "SuggestALaptop"
+    },
+    {
+      "name": "subreddit_SuggestALaptop_new_year",
+      "sort": "new",
+      "time_filter": "year",
+      "subreddit": "SuggestALaptop"
+    },
+    {
+      "name": "subreddit_LaptopDeals_relevance_all",
+      "sort": "relevance",
+      "time_filter": "all",
+      "subreddit": "LaptopDeals"
+    },
+    {
+      "name": "subreddit_LaptopDeals_new_year",
+      "sort": "new",
+      "time_filter": "year",
+      "subreddit": "LaptopDeals"
+    },
+    {
+      "name": "global_relevance_all",
+      "sort": "relevance",
+      "time_filter": "all",
+      "subreddit": null
+    },
+    {
+      "name": "global_new_year",
+      "sort": "new",
+      "time_filter": "year",
+      "subreddit": null
+    },
+    {
+      "name": "global_top_year",
+      "sort": "top",
+      "time_filter": "year",
+      "subreddit": null
+    },
+    {
+      "name": "global_comments_year",
+      "sort": "comments",
+      "time_filter": "year",
+      "subreddit": null
+    }
+  ],
+  "thoughtlab_status": {
+    "ok": true,
+    "status": "active",
+    "expires_at": "2027-04-09 10:52:12",
+    "usage": {
+      "tokens_today": 0,
+      "tokens_this_hour": 0,
+      "limit_per_hour": 2,
+      "limit_per_day": 3
+    }
+  },
+  "posts": []
+}

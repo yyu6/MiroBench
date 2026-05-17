@@ -1,0 +1,96 @@
+{
+  "topic": "Samsung - Galaxy Z Flip7 256GB (Unlocked) - Coral Red",
+  "requested_posts": 50,
+  "retrieved_posts": 1,
+  "retrieved_comments": 0,
+  "generated_at_utc": "2026-04-16T15:30:29.040119+00:00",
+  "strategies": [
+    {
+      "name": "subreddit_Android_relevance_all",
+      "sort": "relevance",
+      "time_filter": "all",
+      "subreddit": "Android"
+    },
+    {
+      "name": "subreddit_Android_new_year",
+      "sort": "new",
+      "time_filter": "year",
+      "subreddit": "Android"
+    },
+    {
+      "name": "subreddit_Smartphones_relevance_all",
+      "sort": "relevance",
+      "time_filter": "all",
+      "subreddit": "Smartphones"
+    },
+    {
+      "name": "subreddit_Smartphones_new_year",
+      "sort": "new",
+      "time_filter": "year",
+      "subreddit": "Smartphones"
+    },
+    {
+      "name": "global_relevance_all",
+      "sort": "relevance",
+      "time_filter": "all",
+      "subreddit": null
+    },
+    {
+      "name": "global_new_year",
+      "sort": "new",
+      "time_filter": "year",
+      "subreddit": null
+    },
+    {
+      "name": "global_top_year",
+      "sort": "top",
+      "time_filter": "year",
+      "subreddit": null
+    },
+    {
+      "name": "global_comments_year",
+      "sort": "comments",
+      "time_filter": "year",
+      "subreddit": null
+    }
+  ],
+  "thoughtlab_status": {
+    "ok": true,
+    "status": "active",
+    "expires_at": "2027-04-09 10:52:12",
+    "usage": {
+      "tokens_today": 1,
+      "tokens_this_hour": 0,
+      "limit_per_hour": 2,
+      "limit_per_day": 3
+    }
+  },
+  "posts": [
+    {
+      "id": "1sey4y4",
+      "fullname": "t3_1sey4y4",
+      "query": "Samsung - Galaxy Z Flip7 256GB (Unlocked) - Coral Red",
+      "strategy": "global_relevance_all",
+      "subreddit": "DripDeals",
+      "title": "18% OFF - For $899.99:\n\nSamsung Galaxy Z Flip7 Cell Phone, 256GB AI Smartphone, Unlocked Android, high-res 50 MP Camera, Powerful Processor, Long Battery Life, 2025, US 1 Yr Manufacturer Warranty, Coral Red #ad",
+      "author": "Drippedsauce",
+      "permalink": "https://www.reddit.com/r/DripDeals/comments/1sey4y4/18_off_for_89999_samsung_galaxy_z_flip7_cell/",
+      "url": "https://x.com/DrippingDeals/status/2041528412527816839?s=20",
+      "created_utc": 1775573307,
+      "created_iso": "2026-04-07T14:48:27+00:00",
+      "score": 1,
+      "upvote_ratio": 1.0,
+      "num_comments": 0,
+      "over_18": false,
+      "spoiler": false,
+      "stickied": false,
+      "is_self": false,
+      "post_hint": null,
+      "domain": "x.com",
+      "selftext": "",
+      "link_flair_text": "Cell Phones & Accessories",
+      "search_rank": 1,
+      "is_relevant": true
+    }
+  ]
+}

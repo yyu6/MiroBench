@@ -1,0 +1,96 @@
+{
+  "topic": "FUJIFILM X-T30 III Mirrorless Camera (Charcoal Silver)",
+  "requested_posts": 50,
+  "retrieved_posts": 1,
+  "retrieved_comments": 6,
+  "generated_at_utc": "2026-04-18T09:50:31.237757+00:00",
+  "strategies": [
+    {
+      "name": "subreddit_cameras_relevance_all",
+      "sort": "relevance",
+      "time_filter": "all",
+      "subreddit": "cameras"
+    },
+    {
+      "name": "subreddit_cameras_new_year",
+      "sort": "new",
+      "time_filter": "year",
+      "subreddit": "cameras"
+    },
+    {
+      "name": "subreddit_photography_relevance_all",
+      "sort": "relevance",
+      "time_filter": "all",
+      "subreddit": "photography"
+    },
+    {
+      "name": "subreddit_photography_new_year",
+      "sort": "new",
+      "time_filter": "year",
+      "subreddit": "photography"
+    },
+    {
+      "name": "global_relevance_all",
+      "sort": "relevance",
+      "time_filter": "all",
+      "subreddit": null
+    },
+    {
+      "name": "global_new_year",
+      "sort": "new",
+      "time_filter": "year",
+      "subreddit": null
+    },
+    {
+      "name": "global_top_year",
+      "sort": "top",
+      "time_filter": "year",
+      "subreddit": null
+    },
+    {
+      "name": "global_comments_year",
+      "sort": "comments",
+      "time_filter": "year",
+      "subreddit": null
+    }
+  ],
+  "thoughtlab_status": {
+    "ok": true,
+    "status": "active",
+    "expires_at": "2027-04-09 10:52:12",
+    "usage": {
+      "tokens_today": 1,
+      "tokens_this_hour": 0,
+      "limit_per_hour": 2,
+      "limit_per_day": 3
+    }
+  },
+  "posts": [
+    {
+      "id": "1rz9737",
+      "fullname": "t3_1rz9737",
+      "query": "FUJIFILM X-T30 III Mirrorless Camera (Charcoal Silver)",
+      "strategy": "global_relevance_all",
+      "subreddit": "fujifilm",
+      "title": "Thoughts on X-t30 with 23mm lens?",
+      "author": "marvelouserin",
+      "permalink": "https://www.reddit.com/r/fujifilm/comments/1rz9737/thoughts_on_xt30_with_23mm_lens/",
+      "url": "https://i.redd.it/2xepu7nds9qg1.jpeg",
+      "created_utc": 1774042905,
+      "created_iso": "2026-03-20T21:41:45+00:00",
+      "score": 3,
+      "upvote_ratio": 0.71,
+      "num_comments": 5,
+      "over_18": false,
+      "spoiler": false,
+      "stickied": false,
+      "is_self": false,
+      "post_hint": "image",
+      "domain": "i.redd.it",
+      "selftext": "Thoughts on the 23mm pancake kit with the x-t30 III for a beginner travel camera? I have been photographing with film (canon ae-1) for the past 3 years and wanting to make the transition. I\u2019m also looking at the x-t50 due to the IBIS but not sure if that is worth stretching the budget for. ",
+      "link_flair_text": "Discussion",
+      "search_rank": 2,
+      "is_relevant": true
+    }
+  ]
+}

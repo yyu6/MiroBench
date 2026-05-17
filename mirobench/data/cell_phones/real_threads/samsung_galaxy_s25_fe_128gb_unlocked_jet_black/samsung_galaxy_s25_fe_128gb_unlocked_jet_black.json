@@ -1,0 +1,96 @@
+{
+  "topic": "Samsung - Galaxy S25 FE 128GB (Unlocked) - Jet Black",
+  "requested_posts": 50,
+  "retrieved_posts": 1,
+  "retrieved_comments": 0,
+  "generated_at_utc": "2026-04-16T13:38:42.695951+00:00",
+  "strategies": [
+    {
+      "name": "subreddit_Smartphones_relevance_all",
+      "sort": "relevance",
+      "time_filter": "all",
+      "subreddit": "Smartphones"
+    },
+    {
+      "name": "subreddit_Smartphones_new_year",
+      "sort": "new",
+      "time_filter": "year",
+      "subreddit": "Smartphones"
+    },
+    {
+      "name": "subreddit_AndroidQuestions_relevance_all",
+      "sort": "relevance",
+      "time_filter": "all",
+      "subreddit": "AndroidQuestions"
+    },
+    {
+      "name": "subreddit_AndroidQuestions_new_year",
+      "sort": "new",
+      "time_filter": "year",
+      "subreddit": "AndroidQuestions"
+    },
+    {
+      "name": "global_relevance_all",
+      "sort": "relevance",
+      "time_filter": "all",
+      "subreddit": null
+    },
+    {
+      "name": "global_new_year",
+      "sort": "new",
+      "time_filter": "year",
+      "subreddit": null
+    },
+    {
+      "name": "global_top_year",
+      "sort": "top",
+      "time_filter": "year",
+      "subreddit": null
+    },
+    {
+      "name": "global_comments_year",
+      "sort": "comments",
+      "time_filter": "year",
+      "subreddit": null
+    }
+  ],
+  "thoughtlab_status": {
+    "ok": true,
+    "status": "active",
+    "expires_at": "2027-04-09 10:52:12",
+    "usage": {
+      "tokens_today": 1,
+      "tokens_this_hour": 1,
+      "limit_per_hour": 2,
+      "limit_per_day": 3
+    }
+  },
+  "posts": [
+    {
+      "id": "1pdsyfb",
+      "fullname": "t3_1pdsyfb",
+      "query": "Samsung - Galaxy S25 FE 128GB (Unlocked) - Jet Black",
+      "strategy": "global_new_year",
+      "subreddit": "u_arongae",
+      "title": "SAMSUNG Galaxy S25 FE Cell Phone (2025) - Best Reviews Tablets Smartphone",
+      "author": "arongae",
+      "permalink": "https://www.reddit.com/user/arongae/comments/1pdsyfb/samsung_galaxy_s25_fe_cell_phone_2025_best/",
+      "url": "https://www.reviews-tablet.com/samsung-galaxy-s25-fe-cell-phone-2025-2/",
+      "created_utc": 1764829998,
+      "created_iso": "2025-12-04T06:33:18+00:00",
+      "score": 1,
+      "upvote_ratio": 1.0,
+      "num_comments": 0,
+      "over_18": false,
+      "spoiler": false,
+      "stickied": false,
+      "is_self": false,
+      "post_hint": "link",
+      "domain": "reviews-tablet.com",
+      "selftext": "**SAMSUNG Galaxy S25 FE Cell Phone (2025), 128GB AI Smartphone, Unlocked Android, Large Display, 4900mAh Battery, High Res-Camera, AI Photo Edits, Durable, US 1 Yr Warranty, JetBlack**\n\n",
+      "link_flair_text": null,
+      "search_rank": 1,
+      "is_relevant": true
+    }
+  ]
+}

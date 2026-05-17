@@ -1,0 +1,160 @@
+{
+  "topic": "Lenovo - ThinkPad E16 16\" FHD+ Touchscreen Laptop - Intel Core Ultra 7 155U - 32GB RAM - 2TB SSD - FP Reader - 7 in-1 USB-C Hub - Black",
+  "requested_posts": 50,
+  "retrieved_posts": 3,
+  "retrieved_comments": 16,
+  "generated_at_utc": "2026-04-14T23:19:59.393984+00:00",
+  "strategies": [
+    {
+      "name": "subreddit_thinkpad_relevance_all",
+      "sort": "relevance",
+      "time_filter": "all",
+      "subreddit": "thinkpad"
+    },
+    {
+      "name": "subreddit_thinkpad_new_year",
+      "sort": "new",
+      "time_filter": "year",
+      "subreddit": "thinkpad"
+    },
+    {
+      "name": "subreddit_SuggestALaptop_relevance_all",
+      "sort": "relevance",
+      "time_filter": "all",
+      "subreddit": "SuggestALaptop"
+    },
+    {
+      "name": "subreddit_SuggestALaptop_new_year",
+      "sort": "new",
+      "time_filter": "year",
+      "subreddit": "SuggestALaptop"
+    },
+    {
+      "name": "subreddit_LaptopDeals_relevance_all",
+      "sort": "relevance",
+      "time_filter": "all",
+      "subreddit": "LaptopDeals"
+    },
+    {
+      "name": "subreddit_LaptopDeals_new_year",
+      "sort": "new",
+      "time_filter": "year",
+      "subreddit": "LaptopDeals"
+    },
+    {
+      "name": "global_relevance_all",
+      "sort": "relevance",
+      "time_filter": "all",
+      "subreddit": null
+    },
+    {
+      "name": "global_new_year",
+      "sort": "new",
+      "time_filter": "year",
+      "subreddit": null
+    },
+    {
+      "name": "global_top_year",
+      "sort": "top",
+      "time_filter": "year",
+      "subreddit": null
+    },
+    {
+      "name": "global_comments_year",
+      "sort": "comments",
+      "time_filter": "year",
+      "subreddit": null
+    }
+  ],
+  "thoughtlab_status": {
+    "ok": true,
+    "status": "active",
+    "expires_at": "2027-04-09 10:52:12",
+    "usage": {
+      "tokens_today": 2,
+      "tokens_this_hour": 1,
+      "limit_per_hour": 2,
+      "limit_per_day": 3
+    }
+  },
+  "posts": [
+    {
+      "id": "1rn0nb2",
+      "fullname": "t3_1rn0nb2",
+      "query": "Lenovo - ThinkPad E16 16\" FHD+ Touchscreen Laptop - Intel Core Ultra 7 155U - 32GB RAM - 2TB SSD - FP Reader - 7 in-1 USB-C Hub - Black",
+      "strategy": "subreddit_thinkpad_new_year",
+      "subreddit": "thinkpad",
+      "title": "Does the ThinkPad still hold up its \"TANK\" name or is it just a branding now?",
+      "author": "Bubbly-Divide-2661",
+      "permalink": "https://www.reddit.com/r/thinkpad/comments/1rn0nb2/does_the_thinkpad_still_hold_up_its_tank_name_or/",
+      "url": "https://www.reddit.com/r/thinkpad/comments/1rn0nb2/does_the_thinkpad_still_hold_up_its_tank_name_or/",
+      "created_utc": 1772858699,
+      "created_iso": "2026-03-07T04:44:59+00:00",
+      "score": 1,
+      "upvote_ratio": 0.67,
+      "num_comments": 5,
+      "over_18": false,
+      "spoiler": false,
+      "stickied": false,
+      "is_self": true,
+      "post_hint": null,
+      "domain": "self.thinkpad",
+      "selftext": "I have a budget of around $850 for this laptop. I have heard that ThinkPads are generally built like tanks but does that still apply now or at least on the E series entry models? I'm looking for a new laptop for mainly just excel use but I need it to be extra durable, maybe even up to 10 years if possible. I'm eyeing on a custom spec ThinkPad E16 Gen 3 on the official Lenovo Website with these specs. If the E series is just a general laptop is it worth to compare with other brands?\n\n* Microsoft Productivity Software:\u00a0No Microsoft Office\n* Graphics Card:\u00a0Integrated Graphics\n* Color:\u00a0Eclipse Black\n* Base Cover Material:\u00a0Aluminum {*selected upgrade}*\n* Etching & Painting:\u00a0None\n* Ethernet:\u00a0Wired Ethernet\n* Fingerprint Reader:\u00a0Fingerprint Reader {*selected upgrade}*\n* Keyboard:\u00a0Black with Number Pad - English (US)\n* AI Agent:\u00a0No AI Agent\n\nI don't care about the AI chips bullshit but since this is still an older chip would it be worth to get it? There is a touch screen upgrade, personally I see that being somewhat helpful especially when its just a $40 upgrade but will it affect the longetivity of the laptop? Since it\u2019s another thing to repair.",
+      "link_flair_text": "Buying Advice",
+      "search_rank": 78,
+      "is_relevant": true
+    },
+    {
+      "id": "1rj2l9j",
+      "fullname": "t3_1rj2l9j",
+      "query": "Lenovo - ThinkPad E16 16\" FHD+ Touchscreen Laptop - Intel Core Ultra 7 155U - 32GB RAM - 2TB SSD - FP Reader - 7 in-1 USB-C Hub - Black",
+      "strategy": "subreddit_thinkpad_new_year",
+      "subreddit": "thinkpad",
+      "title": "Anyone using Lenovo thinkpads for music production?",
+      "author": "ResurrectedSymphony",
+      "permalink": "https://www.reddit.com/r/thinkpad/comments/1rj2l9j/anyone_using_lenovo_thinkpads_for_music_production/",
+      "url": "https://www.reddit.com/r/thinkpad/comments/1rj2l9j/anyone_using_lenovo_thinkpads_for_music_production/",
+      "created_utc": 1772479817,
+      "created_iso": "2026-03-02T19:30:17+00:00",
+      "score": 1,
+      "upvote_ratio": 1.0,
+      "num_comments": 1,
+      "over_18": false,
+      "spoiler": false,
+      "stickied": false,
+      "is_self": true,
+      "post_hint": null,
+      "domain": "self.thinkpad",
+      "selftext": "A buddy and I are trying to get laptops so we can be more portable for clients. He got an ASUS Vivobook S16 Intel 16-core Ultra 9 32gb ram 2tb storage for $1,400. Im skeptical about Asus as a brand and the longevity of its life, overheating, and screen burn in, and other stuff. \n\nI found that people really give Thinkpads high praise but their default screens with the 45%NTSC are awful and the only way to get the 100%sRGB is on their website. But the lenovo ends up being much more expensive than the Asus he got with a lower tier CPU. I found an E16 Gen 3 but i read the E series leaves much to be desired. Im kinda settling on an X9 with Ultra 7. Im really struggling to find a laptop that has the processing and ram we need for mixing music and recording. I have a big boy desktop computer with a 13900k and 128gb ram for all my vsts and stuff. But the laptops are just for mixing and recording really. Which one should I get?",
+      "link_flair_text": "Buying Advice",
+      "search_rank": 86,
+      "is_relevant": true
+    },
+    {
+      "id": "1r6yysj",
+      "fullname": "t3_1r6yysj",
+      "query": "Lenovo - ThinkPad E16 16\" FHD+ Touchscreen Laptop - Intel Core Ultra 7 155U - 32GB RAM - 2TB SSD - FP Reader - 7 in-1 USB-C Hub - Black",
+      "strategy": "subreddit_thinkpad_new_year",
+      "subreddit": "thinkpad",
+      "title": "Thinkpad E16 gen 3 intel",
+      "author": "XwingPilot_84",
+      "permalink": "https://www.reddit.com/r/thinkpad/comments/1r6yysj/thinkpad_e16_gen_3_intel/",
+      "url": "https://i.redd.it/g8dk9lqs40kg1.jpeg",
+      "created_utc": 1771310925,
+      "created_iso": "2026-02-17T06:48:45+00:00",
+      "score": 6,
+      "upvote_ratio": 0.88,
+      "num_comments": 10,
+      "over_18": false,
+      "spoiler": false,
+      "stickied": false,
+      "is_self": false,
+      "post_hint": "image",
+      "domain": "i.redd.it",
+      "selftext": "hello. I'm buying a Thinkpad E16 gen Intel version and I was wondering did anyone install Linux on it my daily driver is usually fedora but your advice is welcome if you have used any other distro",
+      "link_flair_text": "Buying Advice",
+      "search_rank": 111,
+      "is_relevant": true
+    }
+  ]
+}

@@ -1,0 +1,108 @@
+{
+  "topic": "Dell - Inspiron 3000 Series 15.6\" Touchscreen Laptop - AMD Ryzen 7 7730U, 64GB RAM - 2TB SSD - Numeric KP - PCO LT Cooler - Black",
+  "requested_posts": 50,
+  "retrieved_posts": 1,
+  "retrieved_comments": 5,
+  "generated_at_utc": "2026-04-14T21:49:45.322561+00:00",
+  "strategies": [
+    {
+      "name": "subreddit_SuggestALaptop_relevance_all",
+      "sort": "relevance",
+      "time_filter": "all",
+      "subreddit": "SuggestALaptop"
+    },
+    {
+      "name": "subreddit_SuggestALaptop_new_year",
+      "sort": "new",
+      "time_filter": "year",
+      "subreddit": "SuggestALaptop"
+    },
+    {
+      "name": "subreddit_laptops_relevance_all",
+      "sort": "relevance",
+      "time_filter": "all",
+      "subreddit": "laptops"
+    },
+    {
+      "name": "subreddit_laptops_new_year",
+      "sort": "new",
+      "time_filter": "year",
+      "subreddit": "laptops"
+    },
+    {
+      "name": "subreddit_Dell_relevance_all",
+      "sort": "relevance",
+      "time_filter": "all",
+      "subreddit": "Dell"
+    },
+    {
+      "name": "subreddit_Dell_new_year",
+      "sort": "new",
+      "time_filter": "year",
+      "subreddit": "Dell"
+    },
+    {
+      "name": "global_relevance_all",
+      "sort": "relevance",
+      "time_filter": "all",
+      "subreddit": null
+    },
+    {
+      "name": "global_new_year",
+      "sort": "new",
+      "time_filter": "year",
+      "subreddit": null
+    },
+    {
+      "name": "global_top_year",
+      "sort": "top",
+      "time_filter": "year",
+      "subreddit": null
+    },
+    {
+      "name": "global_comments_year",
+      "sort": "comments",
+      "time_filter": "year",
+      "subreddit": null
+    }
+  ],
+  "thoughtlab_status": {
+    "ok": true,
+    "status": "active",
+    "expires_at": "2027-04-09 10:52:12",
+    "usage": {
+      "tokens_today": 2,
+      "tokens_this_hour": 2,
+      "limit_per_hour": 2,
+      "limit_per_day": 3
+    }
+  },
+  "posts": [
+    {
+      "id": "qj9wsf",
+      "fullname": "t3_qj9wsf",
+      "query": "Dell - Inspiron 3000 Series 15.6\" Touchscreen Laptop - AMD Ryzen 7 7730U, 64GB RAM - 2TB SSD - Numeric KP - PCO LT Cooler - Black",
+      "strategy": "subreddit_Dell_relevance_all",
+      "subreddit": "Dell",
+      "title": "Dell Inspiron 15-3511 Review - Is the Dell Inspiron 3000-series still good enough in 2021?",
+      "author": "ThorburnJ",
+      "permalink": "https://www.reddit.com/r/Dell/comments/qj9wsf/dell_inspiron_153511_review_is_the_dell_inspiron/",
+      "url": "https://www.youtube.com/watch?v=JVkl0MrU7j8",
+      "created_utc": 1635625820,
+      "created_iso": "2021-10-30T20:30:20+00:00",
+      "score": 12,
+      "upvote_ratio": 0.87,
+      "num_comments": 5,
+      "over_18": false,
+      "spoiler": false,
+      "stickied": false,
+      "is_self": false,
+      "post_hint": "rich:video",
+      "domain": "youtube.com",
+      "selftext": "",
+      "link_flair_text": "Review",
+      "search_rank": 8,
+      "is_relevant": true
+    }
+  ]
+}

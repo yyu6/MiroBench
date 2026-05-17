@@ -1,0 +1,96 @@
+{
+  "topic": "Samsung - Galaxy S26 Ultra 512GB - Black (AT&T)",
+  "requested_posts": 50,
+  "retrieved_posts": 1,
+  "retrieved_comments": 0,
+  "generated_at_utc": "2026-04-23T21:03:28.075416+00:00",
+  "strategies": [
+    {
+      "name": "subreddit_Android_relevance_all",
+      "sort": "relevance",
+      "time_filter": "all",
+      "subreddit": "Android"
+    },
+    {
+      "name": "subreddit_Android_new_year",
+      "sort": "new",
+      "time_filter": "year",
+      "subreddit": "Android"
+    },
+    {
+      "name": "subreddit_Smartphones_relevance_all",
+      "sort": "relevance",
+      "time_filter": "all",
+      "subreddit": "Smartphones"
+    },
+    {
+      "name": "subreddit_Smartphones_new_year",
+      "sort": "new",
+      "time_filter": "year",
+      "subreddit": "Smartphones"
+    },
+    {
+      "name": "global_relevance_all",
+      "sort": "relevance",
+      "time_filter": "all",
+      "subreddit": null
+    },
+    {
+      "name": "global_new_year",
+      "sort": "new",
+      "time_filter": "year",
+      "subreddit": null
+    },
+    {
+      "name": "global_top_year",
+      "sort": "top",
+      "time_filter": "year",
+      "subreddit": null
+    },
+    {
+      "name": "global_comments_year",
+      "sort": "comments",
+      "time_filter": "year",
+      "subreddit": null
+    }
+  ],
+  "thoughtlab_status": {
+    "ok": true,
+    "status": "active",
+    "expires_at": "2027-04-09 10:52:12",
+    "usage": {
+      "tokens_today": 1,
+      "tokens_this_hour": 1,
+      "limit_per_hour": 2,
+      "limit_per_day": 3
+    }
+  },
+  "posts": [
+    {
+      "id": "1rkk4j7",
+      "fullname": "t3_1rkk4j7",
+      "query": "Samsung - Galaxy S26 Ultra 512GB - Black (AT&T)",
+      "strategy": "global_relevance_all",
+      "subreddit": "samsunggalaxy",
+      "title": "Who else pre ordered s26U from Best Buy ? Did anyone got it early yet?",
+      "author": "Ronte97",
+      "permalink": "https://www.reddit.com/r/samsunggalaxy/comments/1rkk4j7/who_else_pre_ordered_s26u_from_best_buy_did/",
+      "url": "https://i.redd.it/pbzwjbjxu0ng1.jpeg",
+      "created_utc": 1772627258,
+      "created_iso": "2026-03-04T12:27:38+00:00",
+      "score": 1,
+      "upvote_ratio": 0.56,
+      "num_comments": 5,
+      "over_18": false,
+      "spoiler": false,
+      "stickied": false,
+      "is_self": false,
+      "post_hint": "image",
+      "domain": "i.redd.it",
+      "selftext": "Who else pre ordered s26U from Best Buy ? Did anyone got it early yet ? What\u2019s the updating status shipping on anyone ? I pre ordered for trade from s25+ to s26U at Best Buy in person on Feb 28th 11am I live in Dallas , Tx it\u2019s been 4 days since I pre ordered it hopefully I can get it early before march 11\ud83d\ude2d I used to have s25+ and iphone 16 Pro and now I have s26U and IPhone 16 Pro lol also Best Buy have great deal/discount they offer me $700 for s25+ and s26U is cost $1,300\n\n$1,300 - $700 =$600.00 for trade in but I paid $650 for s26U because of taxes lol",
+      "link_flair_text": null,
+      "search_rank": 1,
+      "is_relevant": true
+    }
+  ]
+}

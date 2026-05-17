@@ -1,0 +1,96 @@
+{
+  "topic": "Motorola - moto g power 2024 5G 128GB (Unlocked) - Midnight Blue",
+  "requested_posts": 50,
+  "retrieved_posts": 1,
+  "retrieved_comments": 4,
+  "generated_at_utc": "2026-04-16T13:37:06.464811+00:00",
+  "strategies": [
+    {
+      "name": "subreddit_Smartphones_relevance_all",
+      "sort": "relevance",
+      "time_filter": "all",
+      "subreddit": "Smartphones"
+    },
+    {
+      "name": "subreddit_Smartphones_new_year",
+      "sort": "new",
+      "time_filter": "year",
+      "subreddit": "Smartphones"
+    },
+    {
+      "name": "subreddit_AndroidQuestions_relevance_all",
+      "sort": "relevance",
+      "time_filter": "all",
+      "subreddit": "AndroidQuestions"
+    },
+    {
+      "name": "subreddit_AndroidQuestions_new_year",
+      "sort": "new",
+      "time_filter": "year",
+      "subreddit": "AndroidQuestions"
+    },
+    {
+      "name": "global_relevance_all",
+      "sort": "relevance",
+      "time_filter": "all",
+      "subreddit": null
+    },
+    {
+      "name": "global_new_year",
+      "sort": "new",
+      "time_filter": "year",
+      "subreddit": null
+    },
+    {
+      "name": "global_top_year",
+      "sort": "top",
+      "time_filter": "year",
+      "subreddit": null
+    },
+    {
+      "name": "global_comments_year",
+      "sort": "comments",
+      "time_filter": "year",
+      "subreddit": null
+    }
+  ],
+  "thoughtlab_status": {
+    "ok": true,
+    "status": "active",
+    "expires_at": "2027-04-09 10:52:12",
+    "usage": {
+      "tokens_today": 1,
+      "tokens_this_hour": 1,
+      "limit_per_hour": 2,
+      "limit_per_day": 3
+    }
+  },
+  "posts": [
+    {
+      "id": "1rk6fbp",
+      "fullname": "t3_1rk6fbp",
+      "query": "Motorola - moto g power 2024 5G 128GB (Unlocked) - Midnight Blue",
+      "strategy": "global_relevance_all",
+      "subreddit": "PickAnAndroidForMe",
+      "title": "Opinions/options on replacing my broken pixel 7 pro?",
+      "author": "chron1x_",
+      "permalink": "https://www.reddit.com/r/PickAnAndroidForMe/comments/1rk6fbp/opinionsoptions_on_replacing_my_broken_pixel_7_pro/",
+      "url": "https://www.reddit.com/r/PickAnAndroidForMe/comments/1rk6fbp/opinionsoptions_on_replacing_my_broken_pixel_7_pro/",
+      "created_utc": 1772583576,
+      "created_iso": "2026-03-04T00:19:36+00:00",
+      "score": 3,
+      "upvote_ratio": 1.0,
+      "num_comments": 4,
+      "over_18": false,
+      "spoiler": false,
+      "stickied": false,
+      "is_self": true,
+      "post_hint": null,
+      "domain": "self.PickAnAndroidForMe",
+      "selftext": "Called a repair shop (only local place near me) and was quoted 350 to replace this cursed curved screen. This was my first pixel phone aside from a nexus in like 2010 and I've tried apple a few years ago with a 14 and it was not my thing. I came from samsung and the \"clean\" feeling of the stock pixel was what i remember the most. My options are a little limited and I need the phone now (in person pick up/pop in my sim). I have a best buy sort of close so I am thinking I will just buy a beater device to get through the next year or so, I have it narrowed down to two cheap units.\n\n[https://www.bestbuy.com/product/samsung-galaxy-a16-5g-128gb-unlocked-blue-black/J3ZYG2FPFL](https://www.bestbuy.com/product/samsung-galaxy-a16-5g-128gb-unlocked-blue-black/J3ZYG2FPFL)\n\n[https://www.bestbuy.com/product/motorola-moto-g-power-2024-5g-128gb-unlocked-midnight-blue/J39QWY688S](https://www.bestbuy.com/product/motorola-moto-g-power-2024-5g-128gb-unlocked-midnight-blue/J39QWY688S)\n\n\n\nI wrote earlier that I had been a samsung user pretty much exclusively - the bloated feeling is the only concern I have with the Samsung. My friend let me use his old motorola (Moto G-Fast 2020) and I have been pretty suprised with how nice the feel has been the last couple of days.\n\nTL;DR:\n\nIs the samsung software bloat still as bad as I remember it?\n\nAny other suggestions for common, similarly priced models I haven't seen yet?\n\nThanks\n\nedit: forgot a link and removed a motorola due to only having 4gigs of ram.",
+      "link_flair_text": null,
+      "search_rank": 2,
+      "is_relevant": true
+    }
+  ]
+}

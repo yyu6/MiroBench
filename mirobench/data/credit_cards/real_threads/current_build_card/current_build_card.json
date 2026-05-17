@@ -1,0 +1,160 @@
+{
+  "topic": "Current Build Card",
+  "requested_posts": 50,
+  "retrieved_posts": 3,
+  "retrieved_comments": 351,
+  "generated_at_utc": "2026-04-10T23:31:09.993032+00:00",
+  "strategies": [
+    {
+      "name": "subreddit_CreditCards_relevance_all",
+      "sort": "relevance",
+      "time_filter": "all",
+      "subreddit": "CreditCards"
+    },
+    {
+      "name": "subreddit_CreditCards_new_year",
+      "sort": "new",
+      "time_filter": "year",
+      "subreddit": "CreditCards"
+    },
+    {
+      "name": "subreddit_PersonalFinance_relevance_all",
+      "sort": "relevance",
+      "time_filter": "all",
+      "subreddit": "PersonalFinance"
+    },
+    {
+      "name": "subreddit_PersonalFinance_new_year",
+      "sort": "new",
+      "time_filter": "year",
+      "subreddit": "PersonalFinance"
+    },
+    {
+      "name": "subreddit_Churning_relevance_all",
+      "sort": "relevance",
+      "time_filter": "all",
+      "subreddit": "Churning"
+    },
+    {
+      "name": "subreddit_Churning_new_year",
+      "sort": "new",
+      "time_filter": "year",
+      "subreddit": "Churning"
+    },
+    {
+      "name": "global_relevance_all",
+      "sort": "relevance",
+      "time_filter": "all",
+      "subreddit": null
+    },
+    {
+      "name": "global_new_year",
+      "sort": "new",
+      "time_filter": "year",
+      "subreddit": null
+    },
+    {
+      "name": "global_top_year",
+      "sort": "top",
+      "time_filter": "year",
+      "subreddit": null
+    },
+    {
+      "name": "global_comments_year",
+      "sort": "comments",
+      "time_filter": "year",
+      "subreddit": null
+    }
+  ],
+  "thoughtlab_status": {
+    "ok": true,
+    "status": "active",
+    "expires_at": "2027-04-09 10:52:12",
+    "usage": {
+      "tokens_today": 1,
+      "tokens_this_hour": 0,
+      "limit_per_hour": 2,
+      "limit_per_day": 3
+    }
+  },
+  "posts": [
+    {
+      "id": "1mg5ssw",
+      "fullname": "t3_1mg5ssw",
+      "query": "Current Build Card",
+      "strategy": "subreddit_CreditCards_relevance_all",
+      "subreddit": "CreditCards",
+      "title": "Is Current Build Visa Card any good?",
+      "author": "Yung_exde2001",
+      "permalink": "https://www.reddit.com/r/CreditCards/comments/1mg5ssw/is_current_build_visa_card_any_good/",
+      "url": "https://www.reddit.com/r/CreditCards/comments/1mg5ssw/is_current_build_visa_card_any_good/",
+      "created_utc": 1754181298,
+      "created_iso": "2025-08-03T00:34:58+00:00",
+      "score": 1,
+      "upvote_ratio": 0.67,
+      "num_comments": 7,
+      "over_18": false,
+      "spoiler": false,
+      "stickied": false,
+      "is_self": true,
+      "post_hint": null,
+      "domain": "self.CreditCards",
+      "selftext": "Looking to build credit and just wondering if this would be a good option ? If not any recommendations?",
+      "link_flair_text": "Card Recommendation Request (Template NOT Used)",
+      "search_rank": 51,
+      "is_relevant": true
+    },
+    {
+      "id": "6hwr5a",
+      "fullname": "t3_6hwr5a",
+      "query": "Current Build Card",
+      "strategy": "global_relevance_all",
+      "subreddit": "playark",
+      "title": "WildCard: Why be in alpha for 2 years and *never* update the building system?",
+      "author": "Luckboy28",
+      "permalink": "https://www.reddit.com/r/playark/comments/6hwr5a/wildcard_why_be_in_alpha_for_2_years_and_never/",
+      "url": "https://www.reddit.com/r/playark/comments/6hwr5a/wildcard_why_be_in_alpha_for_2_years_and_never/",
+      "created_utc": 1497744613,
+      "created_iso": "2017-06-18T00:10:13+00:00",
+      "score": 266,
+      "upvote_ratio": 0.92,
+      "num_comments": 210,
+      "over_18": false,
+      "spoiler": false,
+      "stickied": false,
+      "is_self": true,
+      "post_hint": null,
+      "domain": "self.playark",
+      "selftext": "Because let me tell you, the current build-system is ass.  Ass, I say.\n\nHow do you not understand that three-quarters of a *million* players have subscribed to Structures Plus because you ignored the flaming shit out of your asinine building system?   Why didn't you stop and fix that at any point in the past 2 years?\n\nDidn't it ever cross your mind that building structures is a core aspect of this game, and --oh, I don't know-- shouldn't be totally ignored?\n\n</rant>\n\nJust kidding!   Fuck this building system.  Play your own game sometime and you'll see.",
+      "link_flair_text": null,
+      "search_rank": 74,
+      "is_relevant": true
+    },
+    {
+      "id": "1m0ep0l",
+      "fullname": "t3_1m0ep0l",
+      "query": "Current Build Card",
+      "strategy": "global_relevance_all",
+      "subreddit": "Warframe",
+      "title": "[Tool] - RE:FRAMED : Your Builds, Your Way",
+      "author": "justsomelegs",
+      "permalink": "https://www.reddit.com/r/Warframe/comments/1m0ep0l/tool_reframed_your_builds_your_way/",
+      "url": "https://i.redd.it/l2lt5r59r0df1.png",
+      "created_utc": 1752577029,
+      "created_iso": "2025-07-15T10:57:09+00:00",
+      "score": 2310,
+      "upvote_ratio": 0.99,
+      "num_comments": 156,
+      "over_18": false,
+      "spoiler": false,
+      "stickied": false,
+      "is_self": false,
+      "post_hint": "image",
+      "domain": "i.redd.it",
+      "selftext": "Hey r/Warframe,\n\nAfter 3 months of solo work I\u2019m pushing RE:FRAMED out into the world. \n\nIt\u2019s 100 % free with no ads, and I need your harshest feedback to decide if it\u2019s worth finishing/continuing.\n\nKeep in mind its early-access so its no where near complete :)\n\n**Some of what\u2019s live right now:** \n\n* **Build versions** \u2013 every edit auto-saves a new version; compare changes side-by-side \n* **Archon Shards** \u2013 drag-and-drop five shards, see exact stat deltas on the build card \n* **Detailed ability tooltips** \u2013 full breakdowns of strength, range, duration, energy/second, etc.\n*  **Basic screenshot importer** \u2013 upload a regular arsenal screenshot and the site spits out a build (still rough. break it, it wont be hard) \n* **Upvote/downvote**\n\n **Coming next if the community wants me to continue:** \n\n* Incarnon perk picker with live stat updates \n* 100 % accurate faction/level damage graphs \n* Nightwave / Baro / invasion alerts so you never miss a fleeting mod again\n* 100% Mobile Friendly UI - for theory-crafting on the throne\n\n(plus more...)\n\n**How to help**\n\n1. Head to [https://www.reframed.site](https://www.reframed.site)\n2. Create a build\n3. Roast the UI, the math, or anything you feel - post issues here or in the site\u2019s Discord appropriate channels\n4. Drop feature requests - this entire thing is meant to be built **on community suggestions**.\n\nIf it\u2019s useful, tell a friend.  \nIf it\u2019s trash, tell me why.\n\nSpecial shout-out to HairlessPersian - his ideas and pointers kept me from painting myself into every corner and helped shape the site to its current state.\n\no7,  \nlegs",
+      "link_flair_text": "Tool/Guide",
+      "search_rank": 101,
+      "is_relevant": true
+    }
+  ]
+}

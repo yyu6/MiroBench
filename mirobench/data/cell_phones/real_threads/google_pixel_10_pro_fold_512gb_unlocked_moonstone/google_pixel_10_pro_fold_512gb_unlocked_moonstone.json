@@ -1,0 +1,122 @@
+{
+  "topic": "Google - Pixel 10 Pro Fold 512GB (Unlocked) - Moonstone",
+  "requested_posts": 50,
+  "retrieved_posts": 2,
+  "retrieved_comments": 3,
+  "generated_at_utc": "2026-04-23T20:50:16.285562+00:00",
+  "strategies": [
+    {
+      "name": "subreddit_GooglePixel_relevance_all",
+      "sort": "relevance",
+      "time_filter": "all",
+      "subreddit": "GooglePixel"
+    },
+    {
+      "name": "subreddit_GooglePixel_new_year",
+      "sort": "new",
+      "time_filter": "year",
+      "subreddit": "GooglePixel"
+    },
+    {
+      "name": "subreddit_AndroidQuestions_relevance_all",
+      "sort": "relevance",
+      "time_filter": "all",
+      "subreddit": "AndroidQuestions"
+    },
+    {
+      "name": "subreddit_AndroidQuestions_new_year",
+      "sort": "new",
+      "time_filter": "year",
+      "subreddit": "AndroidQuestions"
+    },
+    {
+      "name": "global_relevance_all",
+      "sort": "relevance",
+      "time_filter": "all",
+      "subreddit": null
+    },
+    {
+      "name": "global_new_year",
+      "sort": "new",
+      "time_filter": "year",
+      "subreddit": null
+    },
+    {
+      "name": "global_top_year",
+      "sort": "top",
+      "time_filter": "year",
+      "subreddit": null
+    },
+    {
+      "name": "global_comments_year",
+      "sort": "comments",
+      "time_filter": "year",
+      "subreddit": null
+    }
+  ],
+  "thoughtlab_status": {
+    "ok": true,
+    "status": "active",
+    "expires_at": "2027-04-09 10:52:12",
+    "usage": {
+      "tokens_today": 1,
+      "tokens_this_hour": 1,
+      "limit_per_hour": 2,
+      "limit_per_day": 3
+    }
+  },
+  "posts": [
+    {
+      "id": "1sr1m6v",
+      "fullname": "t3_1sr1m6v",
+      "query": "Google - Pixel 10 Pro Fold 512GB (Unlocked) - Moonstone",
+      "strategy": "global_relevance_all",
+      "subreddit": "hardwareswap",
+      "title": "[USA-PA][H] 2x Google Pixel 10 Pro Fold Unlocked NEW Sealed - Moonstone 512GB [W] PayPal/Local Cash",
+      "author": "MeowchenWW",
+      "permalink": "https://www.reddit.com/r/hardwareswap/comments/1sr1m6v/usapah_2x_google_pixel_10_pro_fold_unlocked_new/",
+      "url": "https://www.reddit.com/r/hardwareswap/comments/1sr1m6v/usapah_2x_google_pixel_10_pro_fold_unlocked_new/",
+      "created_utc": 1776716245,
+      "created_iso": "2026-04-20T20:17:25+00:00",
+      "score": 0,
+      "upvote_ratio": 0.17,
+      "num_comments": 2,
+      "over_18": false,
+      "spoiler": false,
+      "stickied": false,
+      "is_self": true,
+      "post_hint": "self",
+      "domain": "self.hardwareswap",
+      "selftext": "I have 2x Google Pixel 10 pro fold new sealed 512GB Moonstone carrier unlocked.\n\nLooking for $1450 shipped or $1375 local cash. I am in Philadelphia area will have to be picked up in Philly.\n\n[Timestamp](https://imgur.com/a/lcq3Q1x)",
+      "link_flair_text": "SELLING",
+      "search_rank": 1,
+      "is_relevant": true
+    },
+    {
+      "id": "1st18u0",
+      "fullname": "t3_1st18u0",
+      "query": "Google - Pixel 10 Pro Fold 512GB (Unlocked) - Moonstone",
+      "strategy": "global_relevance_all",
+      "subreddit": "hardwareswap",
+      "title": "[USA-PA][H] Google Pixel 10 Pro Fold Unlocked open box - Moonstone 512GB [W] PayPal/Local Cash",
+      "author": "MeowchenWW",
+      "permalink": "https://www.reddit.com/r/hardwareswap/comments/1st18u0/usapah_google_pixel_10_pro_fold_unlocked_open_box/",
+      "url": "https://www.reddit.com/r/hardwareswap/comments/1st18u0/usapah_google_pixel_10_pro_fold_unlocked_open_box/",
+      "created_utc": 1776898859,
+      "created_iso": "2026-04-22T23:00:59+00:00",
+      "score": 1,
+      "upvote_ratio": 1.0,
+      "num_comments": 1,
+      "over_18": false,
+      "spoiler": false,
+      "stickied": false,
+      "is_self": true,
+      "post_hint": "self",
+      "domain": "self.hardwareswap",
+      "selftext": "I have a Google Pixel 10 pro fold open box 512GB Moonstone carrier unlocked.\n\nLooking for $1375 shipped or $1300 local cash. I am in Philadelphia area will have to be picked up in Philly.\n\nAccidentally opened the box but other than that completely unused and phone is still sealed as shown in pics\n\n[Timestamp](https://imgur.com/a/zWPP9hj)",
+      "link_flair_text": "SELLING",
+      "search_rank": 2,
+      "is_relevant": true
+    }
+  ]
+}

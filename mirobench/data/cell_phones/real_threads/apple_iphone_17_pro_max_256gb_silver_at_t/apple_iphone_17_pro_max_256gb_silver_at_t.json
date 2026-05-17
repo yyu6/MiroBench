@@ -1,0 +1,96 @@
+{
+  "topic": "Apple - iPhone 17 Pro Max 256GB - Silver (AT&T)",
+  "requested_posts": 50,
+  "retrieved_posts": 1,
+  "retrieved_comments": 7,
+  "generated_at_utc": "2026-04-23T20:51:05.135955+00:00",
+  "strategies": [
+    {
+      "name": "subreddit_iPhone_relevance_all",
+      "sort": "relevance",
+      "time_filter": "all",
+      "subreddit": "iPhone"
+    },
+    {
+      "name": "subreddit_iPhone_new_year",
+      "sort": "new",
+      "time_filter": "year",
+      "subreddit": "iPhone"
+    },
+    {
+      "name": "subreddit_AndroidQuestions_relevance_all",
+      "sort": "relevance",
+      "time_filter": "all",
+      "subreddit": "AndroidQuestions"
+    },
+    {
+      "name": "subreddit_AndroidQuestions_new_year",
+      "sort": "new",
+      "time_filter": "year",
+      "subreddit": "AndroidQuestions"
+    },
+    {
+      "name": "global_relevance_all",
+      "sort": "relevance",
+      "time_filter": "all",
+      "subreddit": null
+    },
+    {
+      "name": "global_new_year",
+      "sort": "new",
+      "time_filter": "year",
+      "subreddit": null
+    },
+    {
+      "name": "global_top_year",
+      "sort": "top",
+      "time_filter": "year",
+      "subreddit": null
+    },
+    {
+      "name": "global_comments_year",
+      "sort": "comments",
+      "time_filter": "year",
+      "subreddit": null
+    }
+  ],
+  "thoughtlab_status": {
+    "ok": true,
+    "status": "active",
+    "expires_at": "2027-04-09 10:52:12",
+    "usage": {
+      "tokens_today": 1,
+      "tokens_this_hour": 1,
+      "limit_per_hour": 2,
+      "limit_per_day": 3
+    }
+  },
+  "posts": [
+    {
+      "id": "1qh1xfp",
+      "fullname": "t3_1qh1xfp",
+      "query": "Apple - iPhone 17 Pro Max 256GB - Silver (AT&T)",
+      "strategy": "global_relevance_all",
+      "subreddit": "BangaloreMarketplace",
+      "title": "Used and New IPhone deals Chennai/banglore/hyderabad F2F",
+      "author": "AshuOnRed",
+      "permalink": "https://www.reddit.com/r/BangaloreMarketplace/comments/1qh1xfp/used_and_new_iphone_deals/",
+      "url": "https://www.reddit.com/gallery/1qh1xfp",
+      "created_utc": 1768822778,
+      "created_iso": "2026-01-19T11:39:38+00:00",
+      "score": 6,
+      "upvote_ratio": 0.75,
+      "num_comments": 7,
+      "over_18": false,
+      "spoiler": false,
+      "stickied": false,
+      "is_self": false,
+      "post_hint": null,
+      "domain": "reddit.com",
+      "selftext": "Hello All,\n\nCurrently I have used iPhone 16 128gb for sale.\n\nWarranty till may\n\nBH 100% CC- 61\n\nPrice - 50,000/-\n\nOther new iPhone 17 pro series details are below.\n\n\\*iPhone Pro Series price for the week of 19th January to 25th January:\\*\n\nBelow will be the pricing for this week. \n\niPhone 17 Pro 256gb:\n\nOrange/blue - \\*118,000/-\\*\n\nSilver - \\*119,000/-\\*\n\niPhone 17 Pro 512gb:\n\nOrange/blue - \\*134,500/-\\*\n\nSilver - \\*137,500/-\\*\n\niPhone 17 Pro Max 256gb:\n\nOrange/blue - \\*128,000/-\\*\n\nSilver - \\*130,000/-\\*\n\niPhone 17 Pro Max 512gb:\n\nOrange/blue - \\*144,000/-\\*\n\nSilver - \\*149,500/-\\*\n\nAs I\u2019m originally based out of Chennai I can delivery any where in Chennai same day if order is confirmed. \n\nKind request to people who are booking from Banglore or Hyderabad only place the order if you want to buy 100% after I ship it to Hyderabad or Banglore please don\u2019t ghost me. \n\nRules for F2F in Banglore / Hyderabad \n\n\\- once you confirm the order I will share the serial number of the iPhone and the photo of the seal and IMEI from the back of the iPhone box. \n\n\\- I will not be taking any advance money from you for shipping but please do not cancel after the iPhone is shipped as it will be a loss for me. \n\n\\- once the iPhone is delivered to my friends in Banglore or Hyderabad you can verify there with the serial number I shared and collect it. \n\n\\- before opening the seal of new iPhone you will have to pay the amount. \n\n\\- once amount is received you can open the seal verify and take it. As it is sealed iPhone you will not face any issues.",
+      "link_flair_text": null,
+      "search_rank": 6,
+      "is_relevant": true
+    }
+  ]
+}

@@ -1,0 +1,160 @@
+{
+  "topic": "Grow Credit Mastercard",
+  "requested_posts": 50,
+  "retrieved_posts": 3,
+  "retrieved_comments": 12,
+  "generated_at_utc": "2026-04-11T05:31:46.647587+00:00",
+  "strategies": [
+    {
+      "name": "subreddit_CreditCards_relevance_all",
+      "sort": "relevance",
+      "time_filter": "all",
+      "subreddit": "CreditCards"
+    },
+    {
+      "name": "subreddit_CreditCards_new_year",
+      "sort": "new",
+      "time_filter": "year",
+      "subreddit": "CreditCards"
+    },
+    {
+      "name": "subreddit_PersonalFinance_relevance_all",
+      "sort": "relevance",
+      "time_filter": "all",
+      "subreddit": "PersonalFinance"
+    },
+    {
+      "name": "subreddit_PersonalFinance_new_year",
+      "sort": "new",
+      "time_filter": "year",
+      "subreddit": "PersonalFinance"
+    },
+    {
+      "name": "subreddit_Churning_relevance_all",
+      "sort": "relevance",
+      "time_filter": "all",
+      "subreddit": "Churning"
+    },
+    {
+      "name": "subreddit_Churning_new_year",
+      "sort": "new",
+      "time_filter": "year",
+      "subreddit": "Churning"
+    },
+    {
+      "name": "global_relevance_all",
+      "sort": "relevance",
+      "time_filter": "all",
+      "subreddit": null
+    },
+    {
+      "name": "global_new_year",
+      "sort": "new",
+      "time_filter": "year",
+      "subreddit": null
+    },
+    {
+      "name": "global_top_year",
+      "sort": "top",
+      "time_filter": "year",
+      "subreddit": null
+    },
+    {
+      "name": "global_comments_year",
+      "sort": "comments",
+      "time_filter": "year",
+      "subreddit": null
+    }
+  ],
+  "thoughtlab_status": {
+    "ok": true,
+    "status": "active",
+    "expires_at": "2027-04-09 10:52:12",
+    "usage": {
+      "tokens_today": 0,
+      "tokens_this_hour": 0,
+      "limit_per_hour": 2,
+      "limit_per_day": 3
+    }
+  },
+  "posts": [
+    {
+      "id": "1f772xr",
+      "fullname": "t3_1f772xr",
+      "query": "Grow Credit Mastercard",
+      "strategy": "subreddit_CreditCards_relevance_all",
+      "subreddit": "CreditCards",
+      "title": "What do you think of grow credit?",
+      "author": "Technical-Half-9226",
+      "permalink": "https://www.reddit.com/r/CreditCards/comments/1f772xr/what_do_you_think_of_grow_credit/",
+      "url": "https://www.reddit.com/r/CreditCards/comments/1f772xr/what_do_you_think_of_grow_credit/",
+      "created_utc": 1725284639,
+      "created_iso": "2024-09-02T13:43:59+00:00",
+      "score": 3,
+      "upvote_ratio": 0.64,
+      "num_comments": 9,
+      "over_18": false,
+      "spoiler": false,
+      "stickied": false,
+      "is_self": true,
+      "post_hint": null,
+      "domain": "self.CreditCards",
+      "selftext": "I was considering getting the $150 credit line because according to customer service they offer a secured $150 line, but I wanted a second opinion beforehand though? There's a $10 monthly charge as well.",
+      "link_flair_text": "Help Needed / Question",
+      "search_rank": 117,
+      "is_relevant": true
+    },
+    {
+      "id": "1bifnsr",
+      "fullname": "t3_1bifnsr",
+      "query": "Grow Credit Mastercard",
+      "strategy": "global_relevance_all",
+      "subreddit": "referralcodes",
+      "title": "Free credit builder. It's a little mastercard you put streaming services on. No interest or fees. :-)",
+      "author": "periwinkletweet",
+      "permalink": "https://www.reddit.com/r/referralcodes/comments/1bifnsr/free_credit_builder_its_a_little_mastercard_you/",
+      "url": "https://www.reddit.com/r/referralcodes/comments/1bifnsr/free_credit_builder_its_a_little_mastercard_you/",
+      "created_utc": 1710838283,
+      "created_iso": "2024-03-19T08:51:23+00:00",
+      "score": 4,
+      "upvote_ratio": 0.83,
+      "num_comments": 2,
+      "over_18": false,
+      "spoiler": false,
+      "stickied": false,
+      "is_self": true,
+      "post_hint": null,
+      "domain": "self.referralcodes",
+      "selftext": "Grow credit.\n\nhttps://growcredit.com/invite/JADMWON",
+      "link_flair_text": null,
+      "search_rank": 18,
+      "is_relevant": true
+    },
+    {
+      "id": "gw5qvj",
+      "fullname": "t3_gw5qvj",
+      "query": "Grow Credit Mastercard",
+      "strategy": "global_relevance_all",
+      "subreddit": "signupsforpay",
+      "title": "[Offer] Sign up for Grow Credit MasterCard (free & improves your credit) I send you $1-$3 bucks once I can see the referral on my end. No catch, I just get more available credit for each sign up (ie better utilization). Cash App/Google/Apple Pay, Zelle, Crypto you name it! (USA Only)",
+      "author": "alexbarbershop",
+      "permalink": "https://www.reddit.com/r/signupsforpay/comments/gw5qvj/offer_sign_up_for_grow_credit_mastercard_free/",
+      "url": "https://www.reddit.com/r/signupsforpay/comments/gw5qvj/offer_sign_up_for_grow_credit_mastercard_free/",
+      "created_utc": 1591228085,
+      "created_iso": "2020-06-03T23:48:05+00:00",
+      "score": 0,
+      "upvote_ratio": 0.5,
+      "num_comments": 1,
+      "over_18": false,
+      "spoiler": false,
+      "stickied": false,
+      "is_self": true,
+      "post_hint": null,
+      "domain": "self.signupsforpay",
+      "selftext": "TLDR; My credit is bad & I feel bad, but we can help each other!  Or I can pay you to help me if you have an 850 already. ^.^. App pays for your existing streaming subscriptions etc.. with a tiny limit Credit MasterCard to blast your credit reports with positive info each month.  \n\nOffer status: OPEN (Will edit post when I run out of money to give away)\n\nMy referral code 1EL0R2B\n\nURL:\nhttps://growcredit.com/invite/1EL0R2B\n\nUp to $3 at my discretion only!  I will be sending more to commenters who make me LOL.  This offer is totally free and will make your credit score better! (Used; confirmed). \n\nThe app is available for iPhone or you can just use the website - google \u2018grow credit MasterCard\u2019 to poke about and determine for yourself that this is a legit way to boost your credit score if you are a skeptic. \n\nFirst couple commenters with noticeably karma to post a screenshot showing their accounts have been opened and approved I will pay right now on good  faith to show that this is a legit offer.  Everybody else will get their free beer money once they make their first s subscription payment with the Grow MasterCard and I can see the successful referral sign-up in my own account.\n\nRules:  Free money still available as long as it still says OPEN up there!  Comment when you have opened the account and made a subscription payment with the virtual card so I know when to look out for the referral confirmations and send you your money.  \n\nAvailable payment methods are Google Pay, Apple Pay, Cash App,  American Express Serve (P2P transfer), or pretty much any cryptocurrency.  I will even mail you a check if that if desired!  Please update thread with confirmation once you have received your money so readers can see that everybody is getting paid as promised.  Grow is available in the US. ***No hard credit check *** so signing up can not possibly hurt your credit.  You\u2019ll need a subscription with one of Grow\u2019s friends to use the card.  \n\nBonus: If you are super broke like I was very, very recently I will walk you through how to get the $4.99 Spotify premium+Hulu+Showtime edu bundle, which I can confirm does work with this card, and is an awesome deal either way (some tomfoolery may be necessary to qualify for the deal, glad to help if interested). \n\n\nI don\u2019t work for this company, but I have an account with them and like the people I\u2019ve talked to at the Santa Monica based company while I got my account set up.  While I technically don\u2019t get any money from this, when somebody signs up and opens a Grow Credit Mastercard Account, my available credit on the virtual card increases by $5 which should be reported to the credit agencies and improve my score over time (Read; Utilization %). \n\nOnce you have completed the steps (open Grow account, pay for one new or existing subscription with it at least once) comment how you want to get paid and private message me with your email (comment fine if crypto address) or whatever else I would need to pay you and what kind of cheap beer I helped you buy, or something?\n\nOffer status: OPEN (Will edit post when I run out of money to give away)\n\nMy referral code 1EL0R2B\n\nNo PayPal Venmo or Skrill right now.  Pretty much everything else is on the table!",
+      "link_flair_text": null,
+      "search_rank": 38,
+      "is_relevant": true
+    }
+  ]
+}

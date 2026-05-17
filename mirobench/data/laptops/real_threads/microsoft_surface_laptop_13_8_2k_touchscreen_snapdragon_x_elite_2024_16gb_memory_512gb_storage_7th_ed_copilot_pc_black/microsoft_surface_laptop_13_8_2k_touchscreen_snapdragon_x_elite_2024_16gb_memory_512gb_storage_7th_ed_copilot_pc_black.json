@@ -1,0 +1,81 @@
+{
+  "topic": "Microsoft - Surface Laptop - 13.8\" 2K Touchscreen - Snapdragon X Elite 2024 - 16GB Memory - 512GB Storage (7th Ed) - Copilot+ PC - Black",
+  "requested_posts": 50,
+  "retrieved_posts": 0,
+  "retrieved_comments": 0,
+  "generated_at_utc": "2026-04-14T21:16:30.327900+00:00",
+  "strategies": [
+    {
+      "name": "subreddit_Surface_relevance_all",
+      "sort": "relevance",
+      "time_filter": "all",
+      "subreddit": "Surface"
+    },
+    {
+      "name": "subreddit_Surface_new_year",
+      "sort": "new",
+      "time_filter": "year",
+      "subreddit": "Surface"
+    },
+    {
+      "name": "subreddit_SurfaceGaming_relevance_all",
+      "sort": "relevance",
+      "time_filter": "all",
+      "subreddit": "SurfaceGaming"
+    },
+    {
+      "name": "subreddit_SurfaceGaming_new_year",
+      "sort": "new",
+      "time_filter": "year",
+      "subreddit": "SurfaceGaming"
+    },
+    {
+      "name": "subreddit_SuggestALaptop_relevance_all",
+      "sort": "relevance",
+      "time_filter": "all",
+      "subreddit": "SuggestALaptop"
+    },
+    {
+      "name": "subreddit_SuggestALaptop_new_year",
+      "sort": "new",
+      "time_filter": "year",
+      "subreddit": "SuggestALaptop"
+    },
+    {
+      "name": "global_relevance_all",
+      "sort": "relevance",
+      "time_filter": "all",
+      "subreddit": null
+    },
+    {
+      "name": "global_new_year",
+      "sort": "new",
+      "time_filter": "year",
+      "subreddit": null
+    },
+    {
+      "name": "global_top_year",
+      "sort": "top",
+      "time_filter": "year",
+      "subreddit": null
+    },
+    {
+      "name": "global_comments_year",
+      "sort": "comments",
+      "time_filter": "year",
+      "subreddit": null
+    }
+  ],
+  "thoughtlab_status": {
+    "ok": true,
+    "status": "active",
+    "expires_at": "2027-04-09 10:52:12",
+    "usage": {
+      "tokens_today": 2,
+      "tokens_this_hour": 2,
+      "limit_per_hour": 2,
+      "limit_per_day": 3
+    }
+  },
+  "posts": []
+}

@@ -1,0 +1,96 @@
+{
+  "topic": "Apple - iPhone 17 Pro 256GB - Cosmic Orange (AT&T)",
+  "requested_posts": 50,
+  "retrieved_posts": 1,
+  "retrieved_comments": 5,
+  "generated_at_utc": "2026-04-18T09:50:45.133629+00:00",
+  "strategies": [
+    {
+      "name": "subreddit_iPhone_relevance_all",
+      "sort": "relevance",
+      "time_filter": "all",
+      "subreddit": "iPhone"
+    },
+    {
+      "name": "subreddit_iPhone_new_year",
+      "sort": "new",
+      "time_filter": "year",
+      "subreddit": "iPhone"
+    },
+    {
+      "name": "subreddit_Smartphones_relevance_all",
+      "sort": "relevance",
+      "time_filter": "all",
+      "subreddit": "Smartphones"
+    },
+    {
+      "name": "subreddit_Smartphones_new_year",
+      "sort": "new",
+      "time_filter": "year",
+      "subreddit": "Smartphones"
+    },
+    {
+      "name": "global_relevance_all",
+      "sort": "relevance",
+      "time_filter": "all",
+      "subreddit": null
+    },
+    {
+      "name": "global_new_year",
+      "sort": "new",
+      "time_filter": "year",
+      "subreddit": null
+    },
+    {
+      "name": "global_top_year",
+      "sort": "top",
+      "time_filter": "year",
+      "subreddit": null
+    },
+    {
+      "name": "global_comments_year",
+      "sort": "comments",
+      "time_filter": "year",
+      "subreddit": null
+    }
+  ],
+  "thoughtlab_status": {
+    "ok": true,
+    "status": "active",
+    "expires_at": "2027-04-09 10:52:12",
+    "usage": {
+      "tokens_today": 1,
+      "tokens_this_hour": 0,
+      "limit_per_hour": 2,
+      "limit_per_day": 3
+    }
+  },
+  "posts": [
+    {
+      "id": "1nkidrv",
+      "fullname": "t3_1nkidrv",
+      "query": "Apple - iPhone 17 Pro 256GB - Cosmic Orange (AT&T)",
+      "strategy": "global_relevance_all",
+      "subreddit": "iPhone17Pro",
+      "title": "How to get iPhone 17 Pro Max before Oct 2 in Bay Area?",
+      "author": "Otherwise_Prompt_954",
+      "permalink": "https://www.reddit.com/r/iPhone17Pro/comments/1nkidrv/how_to_get_iphone_17_pro_max_before_oct_2_in_bay/",
+      "url": "https://www.reddit.com/r/iPhone17Pro/comments/1nkidrv/how_to_get_iphone_17_pro_max_before_oct_2_in_bay/",
+      "created_utc": 1758224985,
+      "created_iso": "2025-09-18T19:49:45+00:00",
+      "score": 1,
+      "upvote_ratio": 1.0,
+      "num_comments": 6,
+      "over_18": false,
+      "spoiler": false,
+      "stickied": false,
+      "is_self": true,
+      "post_hint": null,
+      "domain": "self.iPhone17Pro",
+      "selftext": "Hi everyone,\n\nI couldn\u2019t pre-order the iPhone 17 Pro Max because I was traveling in a National Park with no network reception. Now I\u2019m trying to figure out how I can get one before October 2nd since I\u2019ll be traveling again after that.\n\nI\u2019m from India but currently in the San Jose / San Francisco area, so I\u2019d prefer to do a store pickup if possible. My top color choice is Cosmic Orange, but if that\u2019s not available, I\u2019d also be happy with Blue. Looking for the 256GB version.\n\nAlso, I have a friend who works at Apple -  does anyone know if the employee friends & family discount is available for the iPhone 17 Pro Max yet?\n\nAny tips or suggestions on how I can get my hands on it before October 2nd would be really helpful! Thanks in advance.",
+      "link_flair_text": "Question",
+      "search_rank": 4,
+      "is_relevant": true
+    }
+  ]
+}

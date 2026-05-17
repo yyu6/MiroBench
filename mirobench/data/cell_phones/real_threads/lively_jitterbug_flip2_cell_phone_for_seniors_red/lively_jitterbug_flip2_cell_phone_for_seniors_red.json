@@ -1,0 +1,96 @@
+{
+  "topic": "Lively\u00ae - Jitterbug Flip2 Cell Phone for Seniors - Red",
+  "requested_posts": 50,
+  "retrieved_posts": 1,
+  "retrieved_comments": 4,
+  "generated_at_utc": "2026-04-18T20:47:10.655631+00:00",
+  "strategies": [
+    {
+      "name": "subreddit_Smartphones_relevance_all",
+      "sort": "relevance",
+      "time_filter": "all",
+      "subreddit": "Smartphones"
+    },
+    {
+      "name": "subreddit_Smartphones_new_year",
+      "sort": "new",
+      "time_filter": "year",
+      "subreddit": "Smartphones"
+    },
+    {
+      "name": "subreddit_AndroidQuestions_relevance_all",
+      "sort": "relevance",
+      "time_filter": "all",
+      "subreddit": "AndroidQuestions"
+    },
+    {
+      "name": "subreddit_AndroidQuestions_new_year",
+      "sort": "new",
+      "time_filter": "year",
+      "subreddit": "AndroidQuestions"
+    },
+    {
+      "name": "global_relevance_all",
+      "sort": "relevance",
+      "time_filter": "all",
+      "subreddit": null
+    },
+    {
+      "name": "global_new_year",
+      "sort": "new",
+      "time_filter": "year",
+      "subreddit": null
+    },
+    {
+      "name": "global_top_year",
+      "sort": "top",
+      "time_filter": "year",
+      "subreddit": null
+    },
+    {
+      "name": "global_comments_year",
+      "sort": "comments",
+      "time_filter": "year",
+      "subreddit": null
+    }
+  ],
+  "thoughtlab_status": {
+    "ok": true,
+    "status": "active",
+    "expires_at": "2027-04-09 10:52:12",
+    "usage": {
+      "tokens_today": 1,
+      "tokens_this_hour": 0,
+      "limit_per_hour": 2,
+      "limit_per_day": 3
+    }
+  },
+  "posts": [
+    {
+      "id": "1i95299",
+      "fullname": "t3_1i95299",
+      "query": "Lively\u00ae - Jitterbug Flip2 Cell Phone for Seniors - Red",
+      "strategy": "global_relevance_all",
+      "subreddit": "ChicagoList",
+      "title": "[SELLING] Lively\u00ae - Jitterbug Flip2 Cell Phone for Seniors - Red",
+      "author": "Redman77312",
+      "permalink": "https://www.reddit.com/r/ChicagoList/comments/1i95299/selling_lively_jitterbug_flip2_cell_phone_for/",
+      "url": "https://www.reddit.com/gallery/1i95299",
+      "created_utc": 1737750345,
+      "created_iso": "2025-01-24T20:25:45+00:00",
+      "score": 3,
+      "upvote_ratio": 0.71,
+      "num_comments": 4,
+      "over_18": false,
+      "spoiler": false,
+      "stickied": false,
+      "is_self": false,
+      "post_hint": null,
+      "domain": "reddit.com",
+      "selftext": "Got it for my grams but she got an iPhone instead. Can't find receipt & I paid ~$50 cash at Best Buy, throw me a solid offer. Pickup in Pilsen at public location, non-negotiable.",
+      "link_flair_text": "Selling",
+      "search_rank": 1,
+      "is_relevant": true
+    }
+  ]
+}

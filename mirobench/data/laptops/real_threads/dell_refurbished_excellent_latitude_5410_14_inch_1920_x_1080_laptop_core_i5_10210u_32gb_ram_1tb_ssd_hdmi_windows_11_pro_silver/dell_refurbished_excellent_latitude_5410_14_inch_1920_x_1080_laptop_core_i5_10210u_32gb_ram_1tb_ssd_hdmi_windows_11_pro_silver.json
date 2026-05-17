@@ -1,0 +1,81 @@
+{
+  "topic": "Dell - Refurbished Excellent - Latitude 5410 14-Inch 1920 x 1080 Laptop, Core i5-10210U, 32GB RAM, 1TB SSD, HDMI, Windows 11 Pro - Silver",
+  "requested_posts": 50,
+  "retrieved_posts": 0,
+  "retrieved_comments": 0,
+  "generated_at_utc": "2026-04-15T01:03:57.364431+00:00",
+  "strategies": [
+    {
+      "name": "subreddit_SuggestALaptop_relevance_all",
+      "sort": "relevance",
+      "time_filter": "all",
+      "subreddit": "SuggestALaptop"
+    },
+    {
+      "name": "subreddit_SuggestALaptop_new_year",
+      "sort": "new",
+      "time_filter": "year",
+      "subreddit": "SuggestALaptop"
+    },
+    {
+      "name": "subreddit_LaptopDeals_relevance_all",
+      "sort": "relevance",
+      "time_filter": "all",
+      "subreddit": "LaptopDeals"
+    },
+    {
+      "name": "subreddit_LaptopDeals_new_year",
+      "sort": "new",
+      "time_filter": "year",
+      "subreddit": "LaptopDeals"
+    },
+    {
+      "name": "subreddit_Dell_relevance_all",
+      "sort": "relevance",
+      "time_filter": "all",
+      "subreddit": "Dell"
+    },
+    {
+      "name": "subreddit_Dell_new_year",
+      "sort": "new",
+      "time_filter": "year",
+      "subreddit": "Dell"
+    },
+    {
+      "name": "global_relevance_all",
+      "sort": "relevance",
+      "time_filter": "all",
+      "subreddit": null
+    },
+    {
+      "name": "global_new_year",
+      "sort": "new",
+      "time_filter": "year",
+      "subreddit": null
+    },
+    {
+      "name": "global_top_year",
+      "sort": "top",
+      "time_filter": "year",
+      "subreddit": null
+    },
+    {
+      "name": "global_comments_year",
+      "sort": "comments",
+      "time_filter": "year",
+      "subreddit": null
+    }
+  ],
+  "thoughtlab_status": {
+    "ok": true,
+    "status": "active",
+    "expires_at": "2027-04-09 10:52:12",
+    "usage": {
+      "tokens_today": 2,
+      "tokens_this_hour": 0,
+      "limit_per_hour": 2,
+      "limit_per_day": 3
+    }
+  },
+  "posts": []
+}

@@ -1,0 +1,108 @@
+{
+  "topic": "HP - 17.3\" Touchscreen Laptop - Intel Core Ultra 5 225U - 32GB RAM - 1TB SSD - FP Reader & Backlit KB- PCO Laptop cooler - Silver",
+  "requested_posts": 50,
+  "retrieved_posts": 1,
+  "retrieved_comments": 18,
+  "generated_at_utc": "2026-04-15T09:45:40.578813+00:00",
+  "strategies": [
+    {
+      "name": "subreddit_SuggestALaptop_relevance_all",
+      "sort": "relevance",
+      "time_filter": "all",
+      "subreddit": "SuggestALaptop"
+    },
+    {
+      "name": "subreddit_SuggestALaptop_new_year",
+      "sort": "new",
+      "time_filter": "year",
+      "subreddit": "SuggestALaptop"
+    },
+    {
+      "name": "subreddit_laptops_relevance_all",
+      "sort": "relevance",
+      "time_filter": "all",
+      "subreddit": "laptops"
+    },
+    {
+      "name": "subreddit_laptops_new_year",
+      "sort": "new",
+      "time_filter": "year",
+      "subreddit": "laptops"
+    },
+    {
+      "name": "subreddit_LaptopDeals_relevance_all",
+      "sort": "relevance",
+      "time_filter": "all",
+      "subreddit": "LaptopDeals"
+    },
+    {
+      "name": "subreddit_LaptopDeals_new_year",
+      "sort": "new",
+      "time_filter": "year",
+      "subreddit": "LaptopDeals"
+    },
+    {
+      "name": "global_relevance_all",
+      "sort": "relevance",
+      "time_filter": "all",
+      "subreddit": null
+    },
+    {
+      "name": "global_new_year",
+      "sort": "new",
+      "time_filter": "year",
+      "subreddit": null
+    },
+    {
+      "name": "global_top_year",
+      "sort": "top",
+      "time_filter": "year",
+      "subreddit": null
+    },
+    {
+      "name": "global_comments_year",
+      "sort": "comments",
+      "time_filter": "year",
+      "subreddit": null
+    }
+  ],
+  "thoughtlab_status": {
+    "ok": true,
+    "status": "active",
+    "expires_at": "2027-04-09 10:52:12",
+    "usage": {
+      "tokens_today": 0,
+      "tokens_this_hour": 0,
+      "limit_per_hour": 2,
+      "limit_per_day": 3
+    }
+  },
+  "posts": [
+    {
+      "id": "1s8xn5y",
+      "fullname": "t3_1s8xn5y",
+      "query": "HP - 17.3\" Touchscreen Laptop - Intel Core Ultra 5 225U - 32GB RAM - 1TB SSD - FP Reader & Backlit KB- PCO Laptop cooler - Silver",
+      "strategy": "subreddit_laptops_new_year",
+      "subreddit": "laptops",
+      "title": "This or Macbook Neo ?",
+      "author": "Deathskulll99",
+      "permalink": "https://www.reddit.com/r/laptops/comments/1s8xn5y/this_or_macbook_neo/",
+      "url": "https://i.redd.it/rp5w1btynfsg1.jpeg",
+      "created_utc": 1774985760,
+      "created_iso": "2026-03-31T19:36:00+00:00",
+      "score": 1,
+      "upvote_ratio": 0.57,
+      "num_comments": 21,
+      "over_18": false,
+      "spoiler": false,
+      "stickied": false,
+      "is_self": false,
+      "post_hint": "image",
+      "domain": "i.redd.it",
+      "selftext": "I am upgrading from Ideapad 1. Ryzen 3 5300U with 8/256. I liked this chip from AMD it has significantly better igpu performance than vega 6. But the build quality looks garbage tbh. Anyone used this model of HP ? Or should i buy macbook Neo ?",
+      "link_flair_text": "Buying help",
+      "search_rank": 60,
+      "is_relevant": true
+    }
+  ]
+}

@@ -1,0 +1,122 @@
+{
+  "topic": "FUJIFILM X-T30 III Mirrorless Camera with 13-33mm f/3.5-6.3 Lens (Silver)",
+  "requested_posts": 50,
+  "retrieved_posts": 2,
+  "retrieved_comments": 10,
+  "generated_at_utc": "2026-04-17T00:39:34.697370+00:00",
+  "strategies": [
+    {
+      "name": "subreddit_photography_relevance_all",
+      "sort": "relevance",
+      "time_filter": "all",
+      "subreddit": "photography"
+    },
+    {
+      "name": "subreddit_photography_new_year",
+      "sort": "new",
+      "time_filter": "year",
+      "subreddit": "photography"
+    },
+    {
+      "name": "subreddit_cameras_relevance_all",
+      "sort": "relevance",
+      "time_filter": "all",
+      "subreddit": "cameras"
+    },
+    {
+      "name": "subreddit_cameras_new_year",
+      "sort": "new",
+      "time_filter": "year",
+      "subreddit": "cameras"
+    },
+    {
+      "name": "global_relevance_all",
+      "sort": "relevance",
+      "time_filter": "all",
+      "subreddit": null
+    },
+    {
+      "name": "global_new_year",
+      "sort": "new",
+      "time_filter": "year",
+      "subreddit": null
+    },
+    {
+      "name": "global_top_year",
+      "sort": "top",
+      "time_filter": "year",
+      "subreddit": null
+    },
+    {
+      "name": "global_comments_year",
+      "sort": "comments",
+      "time_filter": "year",
+      "subreddit": null
+    }
+  ],
+  "thoughtlab_status": {
+    "ok": true,
+    "status": "active",
+    "expires_at": "2027-04-09 10:52:12",
+    "usage": {
+      "tokens_today": 1,
+      "tokens_this_hour": 0,
+      "limit_per_hour": 2,
+      "limit_per_day": 3
+    }
+  },
+  "posts": [
+    {
+      "id": "1sbxg1v",
+      "fullname": "t3_1sbxg1v",
+      "query": "FUJIFILM X-T30 III Mirrorless Camera with 13-33mm f/3.5-6.3 Lens (Silver)",
+      "strategy": "global_relevance_all",
+      "subreddit": "fujifilm",
+      "title": "Help Finding a FUJIFILM X-T30 III Mirrorless Camera with 13-33mm f/3.5-6.3 Lens (Silver)",
+      "author": "RhetoricalStrawberry",
+      "permalink": "https://www.reddit.com/r/fujifilm/comments/1sbxg1v/help_finding_a_fujifilm_xt30_iii_mirrorless/",
+      "url": "https://www.reddit.com/r/fujifilm/comments/1sbxg1v/help_finding_a_fujifilm_xt30_iii_mirrorless/",
+      "created_utc": 1775270301,
+      "created_iso": "2026-04-04T02:38:21+00:00",
+      "score": 1,
+      "upvote_ratio": 1.0,
+      "num_comments": 0,
+      "over_18": false,
+      "spoiler": false,
+      "stickied": false,
+      "is_self": true,
+      "post_hint": null,
+      "domain": "self.fujifilm",
+      "selftext": "Hello! Maybe a long shot but I am looking to buy a FUJIFILM X-T30 III Mirrorless Camera with 13-33mm f/3.5-6.3 Lens (Silver) and it is sold out EVERYWHERE I have looked. \n\n  \nDoes anyone know any reputable websites or camera stores who ship in the continental US that has one in stock? I am only willing to pay MSRP, not any markups but wanted time to play around with it before I go on a big trip in May. Just going crazy looking. \n\n  \nThanks for any potential leads!\n\n  \n",
+      "link_flair_text": "Help",
+      "search_rank": 1,
+      "is_relevant": true
+    },
+    {
+      "id": "1r2iuds",
+      "fullname": "t3_1r2iuds",
+      "query": "FUJIFILM X-T30 III Mirrorless Camera with 13-33mm f/3.5-6.3 Lens (Silver)",
+      "strategy": "global_relevance_all",
+      "subreddit": "fujifilm",
+      "title": "FujiFilm x-T30 iii",
+      "author": "No-Bat5934",
+      "permalink": "https://www.reddit.com/r/fujifilm/comments/1r2iuds/fujifilm_xt30_iii/",
+      "url": "https://i.redd.it/qxxakprohzig1.jpeg",
+      "created_utc": 1770867306,
+      "created_iso": "2026-02-12T03:35:06+00:00",
+      "score": 2,
+      "upvote_ratio": 0.75,
+      "num_comments": 10,
+      "over_18": false,
+      "spoiler": false,
+      "stickied": false,
+      "is_self": false,
+      "post_hint": "image",
+      "domain": "i.redd.it",
+      "selftext": "SHOULD I DO IT ???? Really been eyeing this camera for the last couple of months \ud83d\ude2d ",
+      "link_flair_text": "Help",
+      "search_rank": 2,
+      "is_relevant": true
+    }
+  ]
+}

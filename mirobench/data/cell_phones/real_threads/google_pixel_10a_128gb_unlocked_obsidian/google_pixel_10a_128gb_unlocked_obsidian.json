@@ -1,0 +1,122 @@
+{
+  "topic": "Google - Pixel 10a 128GB (Unlocked) - Obsidian",
+  "requested_posts": 50,
+  "retrieved_posts": 2,
+  "retrieved_comments": 13,
+  "generated_at_utc": "2026-04-16T14:10:27.193392+00:00",
+  "strategies": [
+    {
+      "name": "subreddit_GooglePixel_relevance_all",
+      "sort": "relevance",
+      "time_filter": "all",
+      "subreddit": "GooglePixel"
+    },
+    {
+      "name": "subreddit_GooglePixel_new_year",
+      "sort": "new",
+      "time_filter": "year",
+      "subreddit": "GooglePixel"
+    },
+    {
+      "name": "subreddit_AndroidQuestions_relevance_all",
+      "sort": "relevance",
+      "time_filter": "all",
+      "subreddit": "AndroidQuestions"
+    },
+    {
+      "name": "subreddit_AndroidQuestions_new_year",
+      "sort": "new",
+      "time_filter": "year",
+      "subreddit": "AndroidQuestions"
+    },
+    {
+      "name": "global_relevance_all",
+      "sort": "relevance",
+      "time_filter": "all",
+      "subreddit": null
+    },
+    {
+      "name": "global_new_year",
+      "sort": "new",
+      "time_filter": "year",
+      "subreddit": null
+    },
+    {
+      "name": "global_top_year",
+      "sort": "top",
+      "time_filter": "year",
+      "subreddit": null
+    },
+    {
+      "name": "global_comments_year",
+      "sort": "comments",
+      "time_filter": "year",
+      "subreddit": null
+    }
+  ],
+  "thoughtlab_status": {
+    "ok": true,
+    "status": "active",
+    "expires_at": "2027-04-09 10:52:12",
+    "usage": {
+      "tokens_today": 1,
+      "tokens_this_hour": 1,
+      "limit_per_hour": 2,
+      "limit_per_day": 3
+    }
+  },
+  "posts": [
+    {
+      "id": "1roepzw",
+      "fullname": "t3_1roepzw",
+      "query": "Google - Pixel 10a 128GB (Unlocked) - Obsidian",
+      "strategy": "global_relevance_all",
+      "subreddit": "PixelUsersIndia",
+      "title": "Is this a good deal ? - Pixel 10a",
+      "author": "Technical_Staff_2655",
+      "permalink": "https://www.reddit.com/r/PixelUsersIndia/comments/1roepzw/is_this_a_good_deal_pixel_10a/",
+      "url": "https://www.reddit.com/r/PixelUsersIndia/comments/1roepzw/is_this_a_good_deal_pixel_10a/",
+      "created_utc": 1772999881,
+      "created_iso": "2026-03-08T19:58:01+00:00",
+      "score": 2,
+      "upvote_ratio": 0.67,
+      "num_comments": 12,
+      "over_18": false,
+      "spoiler": false,
+      "stickied": false,
+      "is_self": true,
+      "post_hint": null,
+      "domain": "self.PixelUsersIndia",
+      "selftext": "I'm planning to get google pixel 10a with 100$ off and Pixel Buds 2a (free) for 425$  \\~ 39K INR\n\n1.  Is this a good deal?\n2. Will I get brand warranty for phone purchased in US?\n\nI plan to buy this as temporary phone for 6 months and then hand it to my sister she is using Pixel 6a. I'm currently using Oneplus Nord 1 (OG) with 64 GB storage and 6GB ram so my usage is pretty limited. I plan to get Pixel 9 Pro eventually in sale if I get it around 45-50K.\n\nLet me know your thoughts?\n\nhttps://preview.redd.it/os41im51mvng1.png?width=982&format=png&auto=webp&s=dbaeae7edec77d2f9822df4b84bdfa85272963d8\n\n",
+      "link_flair_text": null,
+      "search_rank": 1,
+      "is_relevant": true
+    },
+    {
+      "id": "1r8af3r",
+      "fullname": "t3_1r8af3r",
+      "query": "Google - Pixel 10a 128GB (Unlocked) - Obsidian",
+      "strategy": "global_relevance_all",
+      "subreddit": "Deals_Central",
+      "title": "\u2728 PREORDER GOOGLE PIXEL 10A - UNLOCKED (256 GB) @ AMAZON",
+      "author": "thedealsguy_",
+      "permalink": "https://www.reddit.com/r/Deals_Central/comments/1r8af3r/preorder_google_pixel_10a_unlocked_256_gb_amazon/",
+      "url": "https://i.redd.it/t3jc46blmakg1.png",
+      "created_utc": 1771437977,
+      "created_iso": "2026-02-18T18:06:17+00:00",
+      "score": 1,
+      "upvote_ratio": 1.0,
+      "num_comments": 1,
+      "over_18": false,
+      "spoiler": false,
+      "stickied": false,
+      "is_self": false,
+      "post_hint": "image",
+      "domain": "i.redd.it",
+      "selftext": "",
+      "link_flair_text": null,
+      "search_rank": 2,
+      "is_relevant": true
+    }
+  ]
+}
