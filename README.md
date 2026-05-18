@@ -302,10 +302,10 @@ The `before_after_improvement_summary.json` contains per-metric comparisons incl
 
 ## Acknowledgements
 
-MiroBench is inspired by and builds on prior work in agentic social-media simulation:
+MiroBench is inspired by and builds on prior work in agentic LLM simulation:
 
-- **[OASIS](https://github.com/camel-ai/oasis)** — Open Agent Social Interaction Simulation framework from CAMEL-AI. OASIS provides the underlying multi-agent discussion engine that powers our generation pipeline.
-- **[MiroFish](https://github.com/666ghj/MiroFish)** — Provides the runtime patches and prompt scaffolding for product-discussion threads on top of OASIS.
+- **[OASIS](https://github.com/camel-ai/oasis)** — Open Agent Social Interaction Simulation framework from CAMEL-AI. The multi-agent social-interaction engine that powers our generation pipeline.
+- **[MiroFish](https://github.com/666ghj/MiroFish)** — *"A Simple and Universal Swarm Intelligence Engine, Predicting Anything."* A next-generation AI prediction engine that constructs high-fidelity digital worlds populated by thousands of LLM agents with independent personalities and long-term memory, driven by real-world seed signals (breaking news, policy drafts, financial data, etc.) for forecasting, public-opinion analysis, and creative social simulation. MiroFish demonstrates that multi-agent LLM systems can serve as a general substrate for modeling collective human behavior — the broader idea that MiroBench seeks to measure.
 
 We thank the authors of these projects for releasing their work openly.
 
