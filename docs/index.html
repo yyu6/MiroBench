@@ -690,6 +690,33 @@ function renderSunburst() {
     .style("pointer-events", "none")
     .text(d => d.data.name);
 
+  // Outer-ring metric labels: radial orientation (perpendicular to arc),
+  // flipped 180° for left/bottom half so they remain right-side up.
+  const metricNodes = nodes.filter(d => d.depth === 2);
+  const outerR = 198;
+  g.selectAll(".metric-label")
+    .data(metricNodes)
+    .enter().append("text")
+    .attr("class", "metric-label")
+    .attr("transform", d => {
+      const ang  = (d.x0 + d.x1) / 2;
+      const deg  = ang * 180 / Math.PI;
+      const x    = Math.sin(ang) * outerR;
+      const y    = -Math.cos(ang) * outerR;
+      // Base rotation: text reads radially outward
+      let rot = deg - 90;
+      // Flip in the left half (angRad > π) so text stays readable
+      if (ang > Math.PI) rot += 180;
+      return `translate(${x},${y}) rotate(${rot})`;
+    })
+    .attr("text-anchor", "middle")
+    .attr("dy", "0.35em")
+    .style("font-family", "JetBrains Mono, monospace")
+    .style("font-size", "9px")
+    .style("fill", "#1A1A1A")
+    .style("pointer-events", "none")
+    .text(d => d.data.name);
+
   // Center labels
   g.append("text")
     .attr("text-anchor", "middle")
