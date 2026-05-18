@@ -78,6 +78,24 @@ tailwind.config = {
     color: #1A1A1A;
   }
 
+  /* Method badge in leaderboard */
+  .method-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10.5px;
+    letter-spacing: 0.04em;
+    background: #EEF3FB;
+    border: 1px solid #D6E1F1;
+    color: #0F62D7;
+    padding: 1px 7px;
+    border-radius: 999px;
+  }
+  .method-tag .dot {
+    width: 5px; height: 5px; border-radius: 50%; background: #0F62D7;
+  }
+
   /* Section number */
   .sec-num {
     font-family: 'JetBrains Mono', monospace;
@@ -357,7 +375,7 @@ tailwind.config = {
         <thead>
           <tr>
             <th class="num" style="width:60px;">#</th>
-            <th>Model</th>
+            <th>Method · Model</th>
             <th class="text-right" style="width:280px;">p&nbsp;&gt;&nbsp;0.05 · cells&nbsp;passing&nbsp;↑</th>
           </tr>
         </thead>
@@ -365,7 +383,8 @@ tailwind.config = {
           <tr>
             <td>1</td>
             <td>
-              <div class="font-sans"><span class="text-text font-medium">DeepSeek-V4-Flash</span></div>
+              <span class="method-tag"><span class="dot"></span>OASIS</span>
+              <div class="font-sans mt-1.5"><span class="text-text font-medium">DeepSeek-V4-Flash</span></div>
               <div class="font-mono text-[11.5px] text-mute2">deepseek-v4-flash</div>
             </td>
             <td class="text-right">
@@ -376,7 +395,8 @@ tailwind.config = {
           <tr>
             <td>2</td>
             <td>
-              <div class="font-sans"><span class="text-text font-medium">DeepSeek-Chat</span></div>
+              <span class="method-tag"><span class="dot"></span>OASIS</span>
+              <div class="font-sans mt-1.5"><span class="text-text font-medium">DeepSeek-Chat</span></div>
               <div class="font-mono text-[11.5px] text-mute2">deepseek-chat</div>
             </td>
             <td class="text-right">
@@ -387,7 +407,8 @@ tailwind.config = {
           <tr>
             <td>3</td>
             <td>
-              <div class="font-sans"><span class="text-text font-medium">GPT-5-mini</span></div>
+              <span class="method-tag"><span class="dot"></span>OASIS</span>
+              <div class="font-sans mt-1.5"><span class="text-text font-medium">GPT-5-mini</span></div>
               <div class="font-mono text-[11.5px] text-mute2">gpt-5-mini · OpenAI</div>
             </td>
             <td class="text-right">
@@ -398,7 +419,8 @@ tailwind.config = {
           <tr>
             <td>4</td>
             <td>
-              <div class="font-sans"><span class="text-text font-medium">GPT-4o-mini</span></div>
+              <span class="method-tag"><span class="dot"></span>OASIS</span>
+              <div class="font-sans mt-1.5"><span class="text-text font-medium">GPT-4o-mini</span></div>
               <div class="font-mono text-[11.5px] text-mute2">gpt-4o-mini · OpenAI</div>
             </td>
             <td class="text-right">
@@ -409,7 +431,8 @@ tailwind.config = {
           <tr class="text-mute2">
             <td>—</td>
             <td>
-              <div class="font-sans">Gemini 2.5 Pro</div>
+              <span class="method-tag" style="background:#F4F4F0;border-color:#E4E4E0;color:#888;"><span class="dot" style="background:#888;"></span>OASIS</span>
+              <div class="font-sans mt-1.5">Gemini 2.5 Pro</div>
               <div class="font-mono text-[11.5px]">pending</div>
             </td>
             <td class="text-right">—</td>
@@ -417,7 +440,8 @@ tailwind.config = {
           <tr class="text-mute2">
             <td>—</td>
             <td>
-              <div class="font-sans">DeepSeek-V3.2</div>
+              <span class="method-tag" style="background:#F4F4F0;border-color:#E4E4E0;color:#888;"><span class="dot" style="background:#888;"></span>OASIS</span>
+              <div class="font-sans mt-1.5">DeepSeek-V3.2</div>
               <div class="font-mono text-[11.5px]">pending</div>
             </td>
             <td class="text-right">—</td>
