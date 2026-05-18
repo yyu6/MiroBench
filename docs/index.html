@@ -662,40 +662,33 @@ function renderSunburst() {
       d3.select(this).attr("fill-opacity", d.depth === 1 ? 0.95 : 0.78);
     });
 
-  // ONLY family labels on inner ring (curved). No outer-ring labels at all
-  // — outer ring is intentionally text-free; hover the side panel to see
-  // each metric name + description, which avoids any overlap.
-  const labelArc = d3.arc()
-    .startAngle(d => d.x0)
-    .endAngle(d => d.x1)
-    .innerRadius(108)
-    .outerRadius(108);
-
+  // Family labels: STRAIGHT horizontal text at each wedge's centroid.
+  // (Curved labels along the arc flip upside-down in the bottom half.)
+  // Outer ring is intentionally text-free; hover the side panel.
   const famNodes = nodes.filter(d => d.depth === 1);
-
-  g.append("defs").selectAll("path")
-    .data(famNodes)
-    .enter().append("path")
-    .attr("id", (d, i) => "fam-" + i)
-    .attr("d", labelArc)
-    .attr("fill", "none");
+  const innerR = 109;
 
   g.selectAll(".fam-label")
     .data(famNodes)
     .enter().append("text")
     .attr("class", "fam-label")
-    .attr("dy", 4)
+    .attr("x", d => {
+      const ang = (d.x0 + d.x1) / 2;
+      return Math.sin(ang) * innerR;
+    })
+    .attr("y", d => {
+      const ang = (d.x0 + d.x1) / 2;
+      return -Math.cos(ang) * innerR;
+    })
+    .attr("text-anchor", "middle")
+    .attr("dy", "0.35em")
     .style("font-family", "Inter, sans-serif")
     .style("font-size", "13px")
     .style("font-weight", "600")
-    .style("letter-spacing", "0.02em")
+    .style("letter-spacing", "0.01em")
     .style("fill", "#FFFFFF")
     .style("pointer-events", "none")
-    .append("textPath")
-      .attr("href", (d, i) => "#fam-" + i)
-      .attr("startOffset", "50%")
-      .attr("text-anchor", "middle")
-      .text(d => d.data.name);
+    .text(d => d.data.name);
 
   // Center labels
   g.append("text")
