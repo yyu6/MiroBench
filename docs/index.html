@@ -191,7 +191,7 @@ tailwind.config = {
     <nav class="hidden md:flex items-center gap-6 text-[13.5px] text-mute">
       <a href="#motivation" class="hover:text-text">Motivation</a>
       <a href="#leaderboard" class="hover:text-text">Leaderboard</a>
-      <a href="#metrics" class="hover:text-text">Metrics</a>
+      <a href="#top" class="hover:text-text">Metrics</a>
       <a href="#quickstart" class="hover:text-text">Quick start</a>
       <a href="#cite" class="hover:text-text">Cite</a>
     </nav>
@@ -207,62 +207,80 @@ tailwind.config = {
 
 <!-- ════════ HERO ════════ -->
 <section id="top" class="pt-32 pb-14">
-  <div class="max-w-[1100px] mx-auto px-6">
-    <div class="sec-num">A reddit discussion simulation benchmark</div>
-    <h1 class="serif-italic mt-3 text-[44px] sm:text-[58px] lg:text-[68px] leading-[1.05] tracking-[-0.01em] max-w-[20ch]">
-      MiroBench: Benchmarking Realism in Agentic Simulation of Real-world Discussions
-    </h1>
+  <div class="max-w-[1280px] mx-auto px-6">
+    <div class="grid lg:grid-cols-[1.05fr_0.95fr] gap-x-12 gap-y-10 items-start">
 
-    <!-- Authors -->
-    <div class="mt-7 text-[14.5px] text-mute leading-relaxed">
-      <span class="text-text">Yaoning Yu</span><sup>1</sup>
-      &nbsp;·&nbsp;
-      <span class="text-text">Ye Yu</span><sup>1</sup>
-      &nbsp;·&nbsp;
-      <span class="text-text">Haojing Luo</span><sup>2</sup>
-      &nbsp;·&nbsp;
-      <span class="text-text">Haohan Wang</span><sup>1 *</sup>
-      <div class="mt-2 text-[13px] text-mute2">
-        <sup>1</sup>University of Illinois Urbana–Champaign &nbsp;
-        <sup>2</sup>Starc.Institute &nbsp;
-        <sup>*</sup>Corresponding author
+      <!-- LEFT: title + meta + abstract -->
+      <div>
+        <div class="sec-num">A reddit discussion simulation benchmark</div>
+        <h1 class="serif-italic mt-3 text-[40px] sm:text-[52px] lg:text-[58px] leading-[1.05] tracking-[-0.01em] max-w-[18ch]">
+          MiroBench: Benchmarking Realism in Agentic Simulation of Real-world Discussions
+        </h1>
+
+        <div class="mt-6 text-[14.5px] text-mute leading-relaxed">
+          <span class="text-text">Yaoning Yu</span><sup>1</sup>
+          &nbsp;·&nbsp;
+          <span class="text-text">Ye Yu</span><sup>1</sup>
+          &nbsp;·&nbsp;
+          <span class="text-text">Haojing Luo</span><sup>2</sup>
+          &nbsp;·&nbsp;
+          <span class="text-text">Haohan Wang</span><sup>1 *</sup>
+          <div class="mt-2 text-[13px] text-mute2">
+            <sup>1</sup>University of Illinois Urbana–Champaign &nbsp;
+            <sup>2</sup>Starc.Institute &nbsp;
+            <sup>*</sup>Corresponding author
+          </div>
+        </div>
+
+        <div class="mt-6 flex flex-wrap gap-3">
+          <a href="paper/MiroBench_preprint.pdf" target="_blank"
+             class="inline-flex items-center gap-2 px-4 py-2.5 bg-ink text-white rounded-md text-[13.5px] hover:bg-accent transition-colors">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6">
+              <path d="M8 1H2.5a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1V5.5L8 1z"/>
+              <path d="M8 1v4.5h4.5"/>
+            </svg>
+            Paper&nbsp;(PDF)
+          </a>
+          <a href="https://github.com/yyu6/MiroBench" target="_blank" rel="noopener"
+             class="inline-flex items-center gap-2 px-4 py-2.5 border border-line2 rounded-md text-[13.5px] hover:border-ink transition-colors">
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor">
+              <path d="M8 0C3.58 0 0 3.58 0 8a8 8 0 0 0 5.47 7.59c.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+            </svg>
+            Code
+          </a>
+          <a href="https://github.com/yyu6/MiroBench/tree/main/mirobench/data" target="_blank"
+             class="inline-flex items-center gap-2 px-4 py-2.5 border border-line2 rounded-md text-[13.5px] hover:border-ink transition-colors">
+            Data
+          </a>
+        </div>
+
+        <p class="mt-8 text-[15.5px] text-text leading-[1.7] max-w-[60ch]">
+          LLM agents are increasingly used to simulate real-world interactions, but it remains unclear
+          whether simulated behaviors preserve the content patterns and interaction dynamics of real
+          human behaviors. <span class="serif-italic">MiroBench</span> is a benchmark for Reddit discussion simulation built from
+          <span class="num">4,292</span> real Reddit threads across five domains.
+        </p>
       </div>
-    </div>
 
-    <!-- CTAs -->
-    <div class="mt-7 flex flex-wrap gap-3">
-      <a href="paper/MiroBench_preprint.pdf" target="_blank"
-         class="inline-flex items-center gap-2 px-4 py-2.5 bg-ink text-white rounded-md text-[13.5px] hover:bg-accent transition-colors">
-        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6">
-          <path d="M8 1H2.5a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1V5.5L8 1z"/>
-          <path d="M8 1v4.5h4.5"/>
-        </svg>
-        Paper&nbsp;(PDF)
-      </a>
-      <a href="https://github.com/yyu6/MiroBench" target="_blank" rel="noopener"
-         class="inline-flex items-center gap-2 px-4 py-2.5 border border-line2 rounded-md text-[13.5px] hover:border-ink transition-colors">
-        <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor">
-          <path d="M8 0C3.58 0 0 3.58 0 8a8 8 0 0 0 5.47 7.59c.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
-        </svg>
-        Code
-      </a>
-      <a href="https://github.com/yyu6/MiroBench/tree/main/mirobench/data" target="_blank"
-         class="inline-flex items-center gap-2 px-4 py-2.5 border border-line2 rounded-md text-[13.5px] hover:border-ink transition-colors">
-        Data
-      </a>
-    </div>
+      <!-- RIGHT: sunburst chart + info panel -->
+      <div id="metrics" class="flex flex-col items-center gap-4">
+        <div class="text-[11px] tracking-widest text-mute2 uppercase font-mono self-start">
+          16 metrics · 5 families · hover any wedge
+        </div>
+        <svg id="sunburst" width="430" height="430" viewBox="-215 -215 430 430" class="max-w-full"></svg>
+        <div id="sunburst-info" class="w-full border border-line rounded-lg p-4 bg-surf">
+          <div id="sb-family" class="font-mono text-[10.5px] text-accent tracking-widest uppercase">MIROBENCH</div>
+          <div id="sb-name" class="mt-1 text-[16px] font-medium tracking-tight">MiroBench · 16 metrics</div>
+          <div id="sb-desc" class="mt-2 text-[12.5px] text-mute leading-[1.55]">
+            Hover any wedge for the metric definition. Inner ring: 5 families. Outer ring: 16 individual metrics.
+          </div>
+        </div>
+      </div>
 
-    <!-- Abstract -->
-    <p class="mt-10 text-[16px] text-text leading-[1.7] max-w-[72ch]">
-      LLM agents are increasingly used to simulate real-world interactions, but it remains unclear
-      whether simulated behaviors preserve the content patterns and interaction dynamics of real
-      human behaviors. <span class="serif-italic">MiroBench</span> is a benchmark for Reddit discussion simulation built from
-      <span class="num">4,292</span> real Reddit threads across five domains, with statistical tests across four families:
-      <em class="not-italic font-medium">repetition and semantic uniformity, narrative content, toxicity and aggression,</em>
-      and <em class="not-italic font-medium">structural complexity</em>.
-    </p>
+    </div>
   </div>
 </section>
+
 
 <!-- ════════ MOTIVATION ════════ -->
 <section id="motivation" class="py-16 border-t border-line bg-surf">
@@ -418,37 +436,10 @@ tailwind.config = {
 </section>
 
 
-<!-- ════════ METRICS · SUNBURST ════════ -->
-<section id="metrics" class="py-16 border-t border-line">
-  <div class="max-w-[1100px] mx-auto px-6">
-    <div class="sec-num reveal">§ 03 — Metrics</div>
-    <h2 class="reveal mt-2 text-[26px] lg:text-[30px] leading-[1.2] tracking-[-0.01em] font-medium max-w-[40ch]">
-      Sixteen metrics across <span class="serif-italic">five families.</span>
-    </h2>
-    <p class="reveal mt-3 text-[14.5px] text-mute leading-relaxed max-w-[80ch]">
-      Hover any wedge. The inner ring shows the five families; the outer ring shows the individual metrics.
-    </p>
-
-    <div class="mt-10 grid lg:grid-cols-[1fr_320px] gap-10 items-center reveal">
-      <div class="flex justify-center">
-        <svg id="sunburst" width="560" height="560" viewBox="-280 -280 560 560" class="max-w-full"></svg>
-      </div>
-      <div id="sunburst-info" class="border border-line rounded-lg p-6 bg-surf min-h-[200px]">
-        <div id="sb-family" class="font-mono text-[10.5px] text-accent tracking-widest mb-2 uppercase">Family · ·</div>
-        <div id="sb-name" class="text-[20px] font-medium tracking-tight leading-tight mb-3">MiroBench · 16 metrics</div>
-        <div id="sb-desc" class="text-[13.5px] text-mute leading-[1.7]">
-          Diversity (3), Tone (4), Structure (3), Content (2), and Toxicity (4) — measured across five Reddit domains.
-        </div>
-      </div>
-    </div>
-
-  </div>
-</section>
-
 <!-- ════════ QUICK START ════════ -->
 <section id="quickstart" class="py-16 border-t border-line bg-surf">
   <div class="max-w-[1100px] mx-auto px-6">
-    <div class="sec-num reveal">§ 04 — Quick start</div>
+    <div class="sec-num reveal">§ 03 — Quick start</div>
     <h2 class="reveal mt-2 mb-7 text-[26px] lg:text-[30px] leading-[1.2] tracking-[-0.01em] font-medium">
       Three commands.
     </h2>
@@ -501,7 +492,7 @@ pip install -e .">copy</button>
 <!-- ════════ CITATION ════════ -->
 <section id="cite" class="py-16 border-t border-line">
   <div class="max-w-[1100px] mx-auto px-6">
-    <div class="sec-num reveal">§ 05 — Citation</div>
+    <div class="sec-num reveal">§ 04 — Citation</div>
     <h2 class="reveal mt-2 mb-7 text-[26px] lg:text-[30px] leading-[1.2] tracking-[-0.01em] font-medium">
       Cite the paper.
     </h2>
@@ -608,7 +599,7 @@ function renderSunburst() {
   if (!window.d3) { setTimeout(renderSunburst, 100); return; }
   if (svgEl.querySelector("g")) return; // already rendered
   const svg = d3.select(svgEl);
-  const radius = 270;
+  const radius = 210;
 
   const root = d3.hierarchy(sbData)
     .sum(d => d.children ? 0 : 1);
@@ -623,13 +614,13 @@ function renderSunburst() {
     .padRadius(radius / 2)
     .innerRadius(d => {
       if (d.depth === 0) return 0;
-      if (d.depth === 1) return 70;
-      return 150;
+      if (d.depth === 1) return 55;
+      return 118;
     })
     .outerRadius(d => {
       if (d.depth === 0) return 0;
-      if (d.depth === 1) return 148;
-      return 248;
+      if (d.depth === 1) return 116;
+      return 188;
     })
     .cornerRadius(2);
 
@@ -666,7 +657,7 @@ function renderSunburst() {
   // (Curved labels along the arc flip upside-down in the bottom half.)
   // Outer ring is intentionally text-free; hover the side panel.
   const famNodes = nodes.filter(d => d.depth === 1);
-  const innerR = 109;
+  const innerR = 86;
 
   g.selectAll(".fam-label")
     .data(famNodes)
@@ -683,17 +674,36 @@ function renderSunburst() {
     .attr("text-anchor", "middle")
     .attr("dy", "0.35em")
     .style("font-family", "Inter, sans-serif")
-    .style("font-size", "13px")
+    .style("font-size", "11.5px")
     .style("font-weight", "600")
     .style("letter-spacing", "0.01em")
     .style("fill", "#FFFFFF")
     .style("pointer-events", "none")
     .text(d => d.data.name);
 
-  // Outer-ring metric labels: radial orientation (perpendicular to arc),
-  // flipped 180° for left/bottom half so they remain right-side up.
+  // Outer-ring metric labels: short abbreviations, radial orientation,
+  // flipped 180° for left half so they remain right-side up.
   const metricNodes = nodes.filter(d => d.depth === 2);
-  const outerR = 198;
+  const outerR = 153;
+  // Short labels that fit the wedge depth (~70 px outer ring).
+  const shortLabel = {
+    "self_bleu_4": "BLEU-4",
+    "semantic_mean_cosine": "sem-cosine",
+    "self_bertscore_mean_f1": "BERTScore",
+    "hard_disagree_rate": "disagree",
+    "polite_rate": "polite",
+    "impolite_rate": "impolite",
+    "neutral_rate": "neutral",
+    "length_cv": "length-cv",
+    "avg_depth": "avg-depth",
+    "structural_virality": "virality",
+    "mean_story_probability": "story",
+    "emotion_entropy": "emotion",
+    "toxicity_mean": "toxicity",
+    "severe_toxicity_mean": "severe-tox",
+    "obscene_mean": "obscene",
+    "threat_mean": "threat",
+  };
   g.selectAll(".metric-label")
     .data(metricNodes)
     .enter().append("text")
@@ -703,19 +713,19 @@ function renderSunburst() {
       const deg  = ang * 180 / Math.PI;
       const x    = Math.sin(ang) * outerR;
       const y    = -Math.cos(ang) * outerR;
-      // Base rotation: text reads radially outward
-      let rot = deg - 90;
-      // Flip in the left half (angRad > π) so text stays readable
-      if (ang > Math.PI) rot += 180;
+      // Tangent orientation, flipped in the bottom half.
+      // This places short labels along the arc inside each wedge — no overflow.
+      let rot = deg;
+      if (ang > Math.PI / 2 && ang < 3 * Math.PI / 2) rot += 180;
       return `translate(${x},${y}) rotate(${rot})`;
     })
     .attr("text-anchor", "middle")
     .attr("dy", "0.35em")
     .style("font-family", "JetBrains Mono, monospace")
     .style("font-size", "9px")
-    .style("fill", "#1A1A1A")
+    .style("fill", "#1F1F1F")
     .style("pointer-events", "none")
-    .text(d => d.data.name);
+    .text(d => shortLabel[d.data.name] || d.data.name);
 
   // Center labels
   g.append("text")
@@ -723,13 +733,13 @@ function renderSunburst() {
     .attr("dy", -2)
     .style("font-family", "Instrument Serif, serif")
     .style("font-style", "italic")
-    .style("font-size", "24px")
+    .style("font-size", "20px")
     .style("fill", "#0E0E0F")
     .style("pointer-events", "none")
     .text("MiroBench");
   g.append("text")
     .attr("text-anchor", "middle")
-    .attr("dy", 18)
+    .attr("dy", 15)
     .style("font-family", "JetBrains Mono, monospace")
     .style("font-size", "9px")
     .style("letter-spacing", "0.15em")
