@@ -199,7 +199,7 @@ tailwind.config = {
 
 <!-- ════════ NAV ════════ -->
 <header id="nav" class="fixed top-0 left-0 right-0 z-50 nav-bg">
-  <div class="max-w-[1100px] mx-auto px-6 py-3.5 flex items-center justify-between">
+  <div class="max-w-[1280px] mx-auto px-6 py-3.5 flex items-center justify-between">
     <a href="#top" class="flex items-center gap-2 text-[16px] font-semibold tracking-tight">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0F62D7" stroke-width="2.2">
         <path d="M3 12h6l2-4 4 8 2-4h4"/>
@@ -274,10 +274,12 @@ tailwind.config = {
         </div>
 
         <p class="mt-8 text-[15.5px] text-text leading-[1.7] max-w-[60ch]">
-          LLM agents are increasingly used to simulate real-world interactions, but it remains unclear
-          whether simulated behaviors preserve the content patterns and interaction dynamics of real
-          human behaviors. <span class="serif-italic">MiroBench</span> is a benchmark for Reddit discussion simulation built from
-          <span class="num">4,292</span> real Reddit threads across five domains.
+          LLM agents are increasingly used to simulate human behavior and online communities.
+          But existing work measures individual responses, role-playing, or task performance — not whether
+          a <em class="not-italic font-medium">set</em> of generated conversations matches the content and
+          reply-tree dynamics of real ones. <span class="serif-italic">MiroBench</span> is a Reddit discussion benchmark
+          built from <span class="num">4,292</span> real threads across five domains, evaluating both
+          comment-derived signals and thread structure.
         </p>
       </div>
 
@@ -303,47 +305,136 @@ tailwind.config = {
 
 <!-- ════════ MOTIVATION ════════ -->
 <section id="motivation" class="py-16 border-t border-line bg-surf">
-  <div class="max-w-[1100px] mx-auto px-6">
+  <div class="max-w-[1280px] mx-auto px-6">
     <div class="sec-num reveal">§ 01 — Motivation</div>
-    <h2 class="reveal mt-2 text-[26px] lg:text-[30px] leading-[1.2] tracking-[-0.01em] font-medium max-w-[40ch]">
+    <h2 class="reveal mt-2 text-[26px] lg:text-[30px] leading-[1.2] tracking-[-0.01em] font-medium max-w-[60ch]">
       Can LLM agents reproduce the <span class="serif-italic">distributional patterns</span> of real online discussion, or only fluent text?
     </h2>
 
     <div class="mt-8 grid md:grid-cols-2 gap-x-12 gap-y-5 text-[15px] text-text leading-[1.75]">
       <div class="reveal">
         <p>
-          LLM-based agents are increasingly used as simulators of human behavior and online communities.
-          The promise: a controllable way to study how people discuss products, react to events, exchange
-          opinions, and form group-level patterns.
+          LLM-based agents are increasingly used as simulators of human behavior, social interaction,
+          and online communities. The promise: a controllable way to study how people discuss products,
+          react to events, exchange opinions, and form group-level patterns.
         </p>
         <p class="mt-4">
-          This promise requires more than generating conversations. We need to know whether simulated
-          interactions actually match the <em class="not-italic font-medium">content patterns</em> and
-          <em class="not-italic font-medium">interaction dynamics</em> of real human behavior — but
-          existing studies focus on individual responses, controlled role-playing, or task performance
-          in simulated environments.
+          But generating conversations is not enough. Existing studies focus on
+          <em class="not-italic font-medium">individual responses</em>,
+          controlled role-playing, or task performance in simulated environments — not whether a
+          <em class="not-italic font-medium">set</em> of simulated discussions reproduces the
+          content patterns and interaction dynamics of real ones, or compares progress across systems.
         </p>
       </div>
       <div class="reveal">
         <p>
-          We argue Reddit discussions are a practical setting for this measurement. Reddit threads
-          are public, topic-grounded, and multi-party. They contain advice-seeking, personal
-          experience, disagreement, emotional tone, repeated talking points, and complexity in
-          structure — an observable window into broader social behavior.
+          Reddit discussions are a practical setting for this measurement: public, topic-grounded,
+          and multi-party. They carry advice-seeking, personal experience, disagreement, emotional
+          tone, repeated talking points, and complexity in structure — an observable window into
+          broader social behavior.
         </p>
         <p class="mt-4">
-          MiroBench evaluates whether a set of simulated threads matches real Reddit threads
-          across repetition, semantic uniformity, narrative content, toxicity and aggression,
-          and reply-tree structure — using statistical tests rather than ad-hoc scores.
+          MiroBench combines <span class="num">4,292</span> real Reddit threads with matched
+          train / validation / test splits, standardized seed contexts, and a framework that compares
+          generated and real discussions through both comment-derived signals
+          <em class="not-italic font-medium">and</em> reply-tree structure.
         </p>
       </div>
+    </div>
+
+    <!-- Example thread (real-Reddit style, no logo) -->
+    <div class="mt-12 reveal grid md:grid-cols-[1fr_0.8fr] gap-x-10 gap-y-5 items-start">
+      <div>
+        <div class="text-[11px] tracking-widest text-mute2 uppercase font-mono mb-3">
+          Figure · what a real thread carries
+        </div>
+        <div class="border border-line rounded-lg bg-white overflow-hidden">
+          <div class="px-5 py-3 border-b border-line bg-[#FAFAF7]">
+            <div class="font-mono text-[10.5px] text-mute2 tracking-wider">r/cellphones · seed post</div>
+            <div class="serif-italic text-[17.5px] tracking-tight mt-0.5 text-text">
+              "Pixel 9 vs iPhone 16 for someone who hates iOS"
+            </div>
+          </div>
+          <div class="px-5 py-4 font-mono text-[12.5px] leading-[1.95] text-text">
+            <div class="flex items-start gap-3">
+              <span class="text-good w-8 shrink-0">+47</span>
+              <span class="text-mute2 w-14 shrink-0">u/aperture_</span>
+              <span class="flex-1">
+                Cameras are basically a wash now. The real difference is the software ecosystem.
+                <span class="ml-2 font-sans not-italic text-[10.5px] text-accent">└─ personal experience</span>
+              </span>
+            </div>
+            <div class="flex items-start gap-3 pl-8 mt-1.5">
+              <span class="text-good w-8 shrink-0">+12</span>
+              <span class="text-mute2 w-14 shrink-0">u/ned_</span>
+              <span class="flex-1">
+                Disagree — Pixel image processing is still ahead.
+                <span class="ml-2 font-sans not-italic text-[10.5px] text-accent">└─ disagreement</span>
+              </span>
+            </div>
+            <div class="flex items-start gap-3 pl-16 mt-1.5">
+              <span class="text-good w-8 shrink-0">+8</span>
+              <span class="text-mute2 w-14 shrink-0">u/dp_42</span>
+              <span class="flex-1">
+                For low-light maybe. Daylight is identical to my eye.
+              </span>
+            </div>
+            <div class="flex items-start gap-3 mt-2.5">
+              <span class="text-good w-8 shrink-0">+22</span>
+              <span class="text-mute2 w-14 shrink-0">u/lo_fi__</span>
+              <span class="flex-1">
+                Switched six months ago. Battery life is the single biggest QoL upgrade you'll get.
+                <span class="ml-2 font-sans not-italic text-[10.5px] text-accent">└─ advice + tone</span>
+              </span>
+            </div>
+            <div class="flex items-start gap-3 mt-1.5">
+              <span class="text-red w-8 shrink-0">−3</span>
+              <span class="text-mute2 w-14 shrink-0">u/anon_</span>
+              <span class="flex-1">
+                just get an iphone, you'll get over it.
+                <span class="ml-2 font-sans not-italic text-[10.5px] text-accent">└─ impolite</span>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="md:pt-9">
+        <p class="text-[14px] text-text leading-[1.75]">
+          A single real thread carries advice-seeking, personal experience, disagreement, emotional tone,
+          and a branching reply structure — all at once.
+        </p>
+        <p class="mt-3 text-[14px] text-text leading-[1.75]">
+          A realistic simulator must reproduce <em class="not-italic font-medium">all of them together</em>,
+          not just each comment in isolation. This is what MiroBench measures.
+        </p>
+        <div class="mt-5 text-[11px] tracking-widest text-mute2 uppercase font-mono">Signals MiroBench scores</div>
+        <ul class="mt-2 grid grid-cols-2 gap-x-4 gap-y-1 font-mono text-[12px] text-mute">
+          <li>· diversity</li>
+          <li>· tone</li>
+          <li>· structure</li>
+          <li>· content</li>
+          <li>· toxicity</li>
+          <li>· reply-tree shape</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- What we find strip -->
+    <div class="mt-12 reveal border-l-2 border-accent pl-5">
+      <div class="text-[11px] tracking-widest text-accent uppercase font-mono">What we find</div>
+      <p class="mt-2 text-[15px] text-text leading-[1.7]">
+        Current simulators remain <em class="not-italic font-medium">distributionally mismatched</em> to
+        real Reddit threads even when individual comments look fluent. Prompt-based improvement only
+        partly closes the gap. The leaderboard below makes that gap concrete, family by family.
+      </p>
     </div>
   </div>
 </section>
 
 <!-- ════════ STATS ════════ -->
 <section class="py-12 border-t border-line">
-  <div class="max-w-[1100px] mx-auto px-6">
+  <div class="max-w-[1280px] mx-auto px-6">
     <div class="grid grid-cols-3 gap-x-10">
       <div class="reveal">
         <div class="num text-[44px] lg:text-[52px] font-light tracking-tight">4,292</div>
@@ -583,7 +674,7 @@ tailwind.config = {
       </table>
     </div>
 
-    <div class="mt-5 text-[12.5px] text-mute leading-relaxed max-w-[100ch]">
+    <div class="mt-5 text-[12.5px] text-mute leading-relaxed">
       <p>
         Family columns show per-family averages across 5 domains:
         <span class="mono-chip">W₁</span> is the Wasserstein distance between generated and real Reddit
@@ -610,6 +701,15 @@ tailwind.config = {
         <a class="ulink" href="https://github.com/camel-ai/oasis" target="_blank">OASIS</a> with the same task setup.
       </p>
     </div>
+
+    <div class="mt-7 flex items-center justify-end">
+      <a href="leaderboard.html"
+         class="group inline-flex items-center gap-2 px-4 py-2 border border-line2 rounded-md text-[13.5px] hover:border-text/40 hover:bg-surf transition-colors">
+        <span>View full leaderboard</span>
+        <span class="font-mono text-mute2 text-[11px]">per-domain breakdown</span>
+        <span class="text-accent transition-transform group-hover:translate-x-0.5" aria-hidden="true">→</span>
+      </a>
+    </div>
   </div>
 </section>
 
@@ -621,7 +721,7 @@ tailwind.config = {
       <h2 class="mt-2 text-[26px] lg:text-[30px] leading-[1.2] tracking-[-0.01em] font-medium max-w-[48ch]">
         What does a <span class="serif-italic">good</span> score look like?
       </h2>
-      <p class="mt-3 text-[15px] text-mute leading-relaxed max-w-[80ch]">
+      <p class="mt-3 text-[15px] text-mute leading-relaxed">
         These figures show the noise floor of the benchmark itself — i.e., the gap you observe when
         comparing one half of <em class="not-italic font-medium">real</em> Reddit data to the other half.
         Any model's score should be read <em class="not-italic font-medium">against</em> this floor.
@@ -637,7 +737,7 @@ tailwind.config = {
       <div class="border border-line rounded-lg bg-white p-4">
         <img src="figures/realref_pvalue_heatmap.png" alt="Repeated-sample p-value pass rates across domains and metrics" class="w-full">
       </div>
-      <p class="mt-3 text-[12.5px] text-mute leading-relaxed max-w-[100ch]">
+      <p class="mt-3 text-[12.5px] text-mute leading-relaxed">
         Repeatedly drawing two equal-sized samples from the real distribution and running Mann–Whitney U / Kolmogorov–Smirnov:
         ≈95% of comparisons return <span class="mono-chip">p&nbsp;&gt;&nbsp;0.05</span>, which is the false-positive rate
         we should expect by construction. This is the "100% match" line that no model has approached.
@@ -672,7 +772,7 @@ tailwind.config = {
       <div class="border border-line rounded-lg bg-white p-4">
         <img src="figures/realref_model_gap_dotplot.png" alt="Per-model W1 and |Cliff delta| ratios over the real-vs-real baseline" class="w-full">
       </div>
-      <p class="mt-3 text-[12.5px] text-mute leading-relaxed max-w-[100ch]">
+      <p class="mt-3 text-[12.5px] text-mute leading-relaxed">
         For each family, the dotplot shows the ratio of a model's average W<sub>1</sub> (and |δ|) to the real-vs-real
         baseline. A ratio of <span class="mono-chip">1.0</span> would mean a model is indistinguishable from sampling more real data; current
         models sit at 2×–11× the floor, with the largest gaps on Structure and Repetition.
@@ -682,7 +782,7 @@ tailwind.config = {
 </section>
 
 <section id="quickstart" class="py-16 border-t border-line bg-surf">
-  <div class="max-w-[1100px] mx-auto px-6">
+  <div class="max-w-[1280px] mx-auto px-6">
     <div class="sec-num reveal">§ 04 — Quick start</div>
     <h2 class="reveal mt-2 mb-7 text-[26px] lg:text-[30px] leading-[1.2] tracking-[-0.01em] font-medium">
       Three commands.
@@ -735,7 +835,7 @@ pip install -e .">copy</button>
 
 <!-- ════════ CITATION ════════ -->
 <section id="cite" class="py-16 border-t border-line">
-  <div class="max-w-[1100px] mx-auto px-6">
+  <div class="max-w-[1280px] mx-auto px-6">
     <div class="sec-num reveal">§ 05 — Citation</div>
     <h2 class="reveal mt-2 mb-7 text-[26px] lg:text-[30px] leading-[1.2] tracking-[-0.01em] font-medium">
       Cite the paper.
@@ -764,9 +864,9 @@ pip install -e .">copy</button>
 
 <!-- ════════ ACKNOWLEDGEMENTS ════════ -->
 <section class="py-12 border-t border-line bg-surf">
-  <div class="max-w-[1100px] mx-auto px-6">
+  <div class="max-w-[1280px] mx-auto px-6">
     <div class="sec-num">Inspired by</div>
-    <p class="mt-3 text-[14.5px] text-mute leading-relaxed max-w-[80ch]">
+    <p class="mt-3 text-[14.5px] text-mute leading-relaxed">
       MiroBench builds on prior open-source work:
       <a class="ulink" href="https://github.com/camel-ai/oasis" target="_blank">OASIS</a> (CAMEL-AI) — the
       multi-agent social-interaction simulation framework that powers our generation pipeline — and
@@ -778,7 +878,7 @@ pip install -e .">copy</button>
 
 <!-- ════════ FOOTER ════════ -->
 <footer class="py-8 border-t border-line">
-  <div class="max-w-[1100px] mx-auto px-6 flex flex-col sm:flex-row items-baseline justify-between gap-3">
+  <div class="max-w-[1280px] mx-auto px-6 flex flex-col sm:flex-row items-baseline justify-between gap-3">
     <div class="flex items-center gap-2">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0F62D7" stroke-width="2.2">
         <path d="M3 12h6l2-4 4 8 2-4h4"/>

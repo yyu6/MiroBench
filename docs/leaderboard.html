@@ -1,0 +1,385 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Full Leaderboard · MiroBench</title>
+<meta name="description" content="Full per-domain MiroBench leaderboard.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: { extend: {
+    fontFamily: {
+      sans:  ['Inter','system-ui','sans-serif'],
+      mono:  ['JetBrains Mono','ui-monospace','monospace'],
+      serif: ['Instrument Serif','Georgia','serif'],
+    },
+    colors: {
+      surf: '#FAFAF7', ink:'#0E0E0F', text:'#1A1A1A',
+      mute:'#555555', mute2:'#888888',
+      line:'#E4E4E0', line2:'#D0D0CC',
+      accent:'#0F62D7', red:'#B91C1C', good:'#15803D',
+    },
+  }},
+}
+</script>
+
+<style>
+  html { scroll-behavior: smooth; }
+  body { background:#FFFFFF; color:#1A1A1A; -webkit-font-smoothing:antialiased; }
+  .serif-italic { font-family:'Instrument Serif',Georgia,serif; font-style:italic; font-weight:400; }
+  ::selection { background: rgba(15,98,215,0.18); }
+  .ulink { color:#1A1A1A; text-decoration:underline; text-decoration-color:#BFBFBC; text-underline-offset:3px; transition:color 200ms, text-decoration-color 200ms; }
+  .ulink:hover { color:#0F62D7; text-decoration-color:#0F62D7; }
+  .mono-chip { font-family:'JetBrains Mono',monospace; font-size:12.5px; background:#F0F0EC; border:1px solid #E4E4E0; border-radius:3px; padding:1px 6px; color:#1A1A1A; }
+  .sec-num { font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:0.16em; color:#888; text-transform:uppercase; }
+  .nav-bg { background:rgba(255,255,255,.86); backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px); border-bottom:1px solid #E4E4E0; }
+
+  table.bench { border-collapse:collapse; width:100%; }
+  table.bench th, table.bench td {
+    border-bottom:1px solid #E4E4E0;
+    padding:12px 14px;
+    text-align:left;
+    font-size:14px;
+    vertical-align:middle;
+  }
+  table.bench thead th {
+    font-family:'JetBrains Mono',monospace;
+    font-size:11px; letter-spacing:.10em; text-transform:uppercase;
+    color:#555; font-weight:500;
+    border-bottom:1.5px solid #1A1A1A;
+    padding-top:10px; padding-bottom:10px;
+  }
+  table.bench tbody tr:hover { background:#FAFAF7; }
+  .num { font-family:'JetBrains Mono',monospace; font-feature-settings:"tnum" 1; }
+
+  /* Per-domain mini cell */
+  .dom-cell {
+    display: flex; flex-direction: column; align-items: flex-end; gap: 1px;
+  }
+  .dom-cell .val { font-size: 14px; }
+  .dom-cell .pct { font-size: 11px; color:#888; }
+
+  /* Heat scale (for p>0.05 count out of 16) */
+  .heat-0  { color:#B91C1C; }
+  .heat-1  { color:#B91C1C; }
+  .heat-2  { color:#B91C1C; }
+  .heat-3  { color:#9A3412; }
+  .heat-4  { color:#9A3412; }
+  .heat-5  { color:#854D0E; }
+  .heat-6  { color:#854D0E; }
+  .heat-7  { color:#0F62D7; }
+  .heat-8  { color:#0F62D7; font-weight:500; }
+  .heat-10 { color:#0F62D7; font-weight:500; }
+  .heat-12 { color:#15803D; font-weight:500; }
+  .heat-14 { color:#15803D; font-weight:600; }
+  .heat-15 { color:#15803D; font-weight:600; }
+  .heat-16 { color:#15803D; font-weight:600; }
+</style>
+</head>
+
+<body class="font-sans text-[15px] leading-[1.65]">
+
+<!-- NAV -->
+<header class="fixed top-0 left-0 right-0 z-50 nav-bg">
+  <div class="max-w-[1280px] mx-auto px-6 py-3.5 flex items-center justify-between">
+    <a href="index.html" class="inline-flex items-center gap-2 text-[14px] text-mute hover:text-text">
+      <span aria-hidden="true">←</span>
+      <span>Back to MiroBench</span>
+    </a>
+    <div class="flex items-center gap-2 text-[16px] font-semibold tracking-tight">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0F62D7" stroke-width="2.2">
+        <path d="M3 12h6l2-4 4 8 2-4h4"/>
+      </svg>
+      <span>MiroBench</span>
+      <span class="font-mono text-[11px] text-mute2 ml-1">· leaderboard</span>
+    </div>
+    <a href="https://github.com/yyu6/MiroBench" target="_blank" rel="noopener"
+       class="inline-flex items-center gap-2 px-3 py-1.5 text-[13px] border border-line2 rounded-md hover:border-text/40">
+      <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor">
+        <path d="M8 0C3.58 0 0 3.58 0 8a8 8 0 0 0 5.47 7.59c.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+      </svg>
+      <span class="font-mono text-[12px]">GitHub</span>
+    </a>
+  </div>
+</header>
+
+<!-- HEADER -->
+<section class="pt-28 pb-10">
+  <div class="max-w-[1280px] mx-auto px-6">
+    <div class="sec-num">Full Leaderboard</div>
+    <h1 class="serif-italic mt-2 text-[36px] sm:text-[44px] leading-[1.1] tracking-[-0.01em] max-w-[32ch]">
+      MiroBench · all models, all domains.
+    </h1>
+    <p class="mt-3 text-[14.5px] text-mute leading-relaxed max-w-[80ch]">
+      All scores are computed on the 16 selected MiroBench metrics across 5 domains under OASIS as the simulation engine.
+      The summary mirrors the figure on the main page; the per-domain table below shows where each model passes and fails.
+    </p>
+  </div>
+</section>
+
+<!-- SUMMARY TABLE -->
+<section class="py-8 border-t border-line">
+  <div class="max-w-[1280px] mx-auto px-6">
+
+    <div class="mb-5">
+      <div class="sec-num">Summary by family</div>
+      <h2 class="mt-1 text-[22px] font-medium tracking-tight">Per-family W₁ and |Cliff's δ| across 5 domains.</h2>
+    </div>
+
+    <div class="border border-line rounded-lg overflow-x-auto bg-white">
+      <table class="bench min-w-[1080px]">
+        <thead>
+          <tr>
+            <th class="num" style="width:46px;">#</th>
+            <th style="width:200px;">Method · Model</th>
+            <th class="text-right">Diversity</th>
+            <th class="text-right">Tone</th>
+            <th class="text-right">Structure</th>
+            <th class="text-right">Content</th>
+            <th class="text-right">Toxicity</th>
+            <th class="text-right" style="border-left:1px solid #E4E4E0; width:140px;">p&nbsp;&gt;&nbsp;0.05&nbsp;↑</th>
+          </tr>
+        </thead>
+        <tbody class="num">
+
+          <tr style="background:#F7F7F4;">
+            <td class="text-mute2">—</td>
+            <td>
+              <div class="font-sans text-mute text-[12.5px]">Real reference</div>
+              <div class="font-mono text-[11px] text-mute2">held-out test · 200 repeated samples</div>
+            </td>
+            <td class="text-right text-mute"><div>W₁ <span class="text-text">0.016</span></div><div class="text-[12px]">|δ| <span class="text-text">0.060</span></div></td>
+            <td class="text-right text-mute"><div>W₁ <span class="text-text">0.034</span></div><div class="text-[12px]">|δ| <span class="text-text">0.071</span></div></td>
+            <td class="text-right text-mute"><div>W₁ <span class="text-text">0.165</span></div><div class="text-[12px]">|δ| <span class="text-text">0.100</span></div></td>
+            <td class="text-right text-mute"><div>W₁ <span class="text-text">0.074</span></div><div class="text-[12px]">|δ| <span class="text-text">0.098</span></div></td>
+            <td class="text-right text-mute"><div>W₁ <span class="text-text">0.004</span></div><div class="text-[12px]">|δ| <span class="text-text">0.043</span></div></td>
+            <td class="text-right text-mute2" style="border-left:1px solid #E4E4E0;">— baseline —</td>
+          </tr>
+
+          <tr>
+            <td>1</td>
+            <td><div class="font-sans text-text">OASIS</div><div class="font-mono text-[11.5px] text-mute2">DeepSeek-V4-Flash</div></td>
+            <td class="text-right"><div>W₁ 0.162 <span class="text-mute2 text-[11px]">×10.1</span></div><div class="text-[12px] text-mute">|δ| 0.669 <span class="text-mute2 text-[11px]">×11.2</span></div></td>
+            <td class="text-right"><div>W₁ 0.187 <span class="text-mute2 text-[11px]">×5.5</span></div><div class="text-[12px] text-mute">|δ| 0.472 <span class="text-mute2 text-[11px]">×6.6</span></div></td>
+            <td class="text-right"><div>W₁ 1.028 <span class="text-mute2 text-[11px]">×6.2</span></div><div class="text-[12px] text-mute">|δ| 0.768 <span class="text-mute2 text-[11px]">×7.7</span></div></td>
+            <td class="text-right"><div>W₁ 0.192 <span class="text-mute2 text-[11px]">×2.6</span></div><div class="text-[12px] text-mute">|δ| 0.318 <span class="text-mute2 text-[11px]">×3.2</span></div></td>
+            <td class="text-right"><div>W₁ 0.006 <span class="text-mute2 text-[11px]">×1.5</span></div><div class="text-[12px] text-mute">|δ| 0.132 <span class="text-mute2 text-[11px]">×3.1</span></div></td>
+            <td class="text-right" style="border-left:1px solid #E4E4E0;"><span class="text-accent text-[16px] font-medium">23 / 80</span><div class="text-mute2 text-[12px]">28.7%</div></td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td><div class="font-sans text-text">OASIS</div><div class="font-mono text-[11.5px] text-mute2">DeepSeek-Chat</div></td>
+            <td class="text-right"><div>W₁ 0.165 <span class="text-mute2 text-[11px]">×10.3</span></div><div class="text-[12px] text-mute">|δ| 0.647 <span class="text-mute2 text-[11px]">×10.8</span></div></td>
+            <td class="text-right"><div>W₁ 0.177 <span class="text-mute2 text-[11px]">×5.2</span></div><div class="text-[12px] text-mute">|δ| 0.447 <span class="text-mute2 text-[11px]">×6.3</span></div></td>
+            <td class="text-right"><div>W₁ 1.044 <span class="text-mute2 text-[11px]">×6.3</span></div><div class="text-[12px] text-mute">|δ| 0.778 <span class="text-mute2 text-[11px]">×7.8</span></div></td>
+            <td class="text-right"><div>W₁ 0.269 <span class="text-mute2 text-[11px]">×3.6</span></div><div class="text-[12px] text-mute">|δ| 0.496 <span class="text-mute2 text-[11px]">×5.1</span></div></td>
+            <td class="text-right"><div>W₁ 0.006 <span class="text-mute2 text-[11px]">×1.5</span></div><div class="text-[12px] text-mute">|δ| 0.164 <span class="text-mute2 text-[11px]">×3.8</span></div></td>
+            <td class="text-right" style="border-left:1px solid #E4E4E0;"><span class="text-text text-[16px]">12 / 80</span><div class="text-mute2 text-[12px]">15.0%</div></td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td><div class="font-sans text-text">OASIS</div><div class="font-mono text-[11.5px] text-mute2">GPT-5-mini</div></td>
+            <td class="text-right"><div>W₁ 0.189 <span class="text-mute2 text-[11px]">×11.8</span></div><div class="text-[12px] text-mute">|δ| 0.680 <span class="text-mute2 text-[11px]">×11.3</span></div></td>
+            <td class="text-right"><div>W₁ 0.276 <span class="text-mute2 text-[11px]">×8.1</span></div><div class="text-[12px] text-mute">|δ| 0.630 <span class="text-mute2 text-[11px]">×8.9</span></div></td>
+            <td class="text-right"><div>W₁ 1.051 <span class="text-mute2 text-[11px]">×6.4</span></div><div class="text-[12px] text-mute">|δ| 0.777 <span class="text-mute2 text-[11px]">×7.8</span></div></td>
+            <td class="text-right"><div>W₁ 0.492 <span class="text-mute2 text-[11px]">×6.6</span></div><div class="text-[12px] text-mute">|δ| 0.760 <span class="text-mute2 text-[11px]">×7.8</span></div></td>
+            <td class="text-right"><div>W₁ 0.008 <span class="text-mute2 text-[11px]">×2.0</span></div><div class="text-[12px] text-mute">|δ| 0.228 <span class="text-mute2 text-[11px]">×5.3</span></div></td>
+            <td class="text-right" style="border-left:1px solid #E4E4E0;"><span class="text-text text-[16px]">7 / 80</span><div class="text-mute2 text-[12px]">8.8%</div></td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td><div class="font-sans text-text">OASIS</div><div class="font-mono text-[11.5px] text-mute2">GPT-4o-mini</div></td>
+            <td class="text-right"><div>W₁ 0.261 <span class="text-mute2 text-[11px]">×16.3</span></div><div class="text-[12px] text-mute">|δ| 0.830 <span class="text-mute2 text-[11px]">×13.8</span></div></td>
+            <td class="text-right"><div>W₁ 0.283 <span class="text-mute2 text-[11px]">×8.3</span></div><div class="text-[12px] text-mute">|δ| 0.611 <span class="text-mute2 text-[11px]">×8.6</span></div></td>
+            <td class="text-right"><div>W₁ 1.093 <span class="text-mute2 text-[11px]">×6.6</span></div><div class="text-[12px] text-mute">|δ| 0.811 <span class="text-mute2 text-[11px]">×8.1</span></div></td>
+            <td class="text-right"><div>W₁ 0.194 <span class="text-mute2 text-[11px]">×2.6</span></div><div class="text-[12px] text-mute">|δ| 0.509 <span class="text-mute2 text-[11px]">×5.2</span></div></td>
+            <td class="text-right"><div>W₁ 0.010 <span class="text-mute2 text-[11px]">×2.5</span></div><div class="text-[12px] text-mute">|δ| 0.703 <span class="text-mute2 text-[11px]">×16.3</span></div></td>
+            <td class="text-right" style="border-left:1px solid #E4E4E0;"><span class="text-red text-[16px] font-medium">3 / 80</span><div class="text-mute2 text-[12px]">3.8%</div></td>
+          </tr>
+
+          <tr class="text-mute2">
+            <td>—</td>
+            <td><div class="font-sans">OASIS</div><div class="font-mono text-[11px]">Gemini 2.5 Pro · pending</div></td>
+            <td class="text-right">—</td><td class="text-right">—</td><td class="text-right">—</td><td class="text-right">—</td><td class="text-right">—</td>
+            <td class="text-right" style="border-left:1px solid #E4E4E0;">—</td>
+          </tr>
+          <tr class="text-mute2">
+            <td>—</td>
+            <td><div class="font-sans">OASIS</div><div class="font-mono text-[11px]">DeepSeek-V3.2 · pending</div></td>
+            <td class="text-right">—</td><td class="text-right">—</td><td class="text-right">—</td><td class="text-right">—</td><td class="text-right">—</td>
+            <td class="text-right" style="border-left:1px solid #E4E4E0;">—</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- PER-DOMAIN BREAKDOWN -->
+<section class="py-12 border-t border-line bg-surf">
+  <div class="max-w-[1280px] mx-auto px-6">
+
+    <div class="mb-5">
+      <div class="sec-num">Per-domain breakdown</div>
+      <h2 class="mt-1 text-[22px] font-medium tracking-tight">p&nbsp;&gt;&nbsp;0.05 cells passing per (model × domain).</h2>
+      <p class="mt-2 text-[13.5px] text-mute max-w-[80ch] leading-relaxed">
+        Each cell shows the number of metrics (out of 16) where the Mann–Whitney U test
+        cannot reject equal distributions for that (model, domain) pair. Colour-coded:
+        <span class="heat-2">low</span>, <span class="heat-5">mid-low</span>, <span class="heat-7">mid</span>,
+        <span class="heat-10">good</span>, <span class="heat-14">excellent</span>.
+      </p>
+    </div>
+
+    <div class="border border-line rounded-lg overflow-x-auto bg-white">
+      <table class="bench min-w-[860px]">
+        <thead>
+          <tr>
+            <th>Method · Model</th>
+            <th class="text-right">Credit cards</th>
+            <th class="text-right">Cameras</th>
+            <th class="text-right">Cell phones</th>
+            <th class="text-right">Headphones</th>
+            <th class="text-right">Laptops</th>
+            <th class="text-right" style="border-left:1px solid #E4E4E0;">Total ↑</th>
+          </tr>
+        </thead>
+        <tbody class="num">
+          <tr>
+            <td><div class="font-sans text-text">OASIS</div><div class="font-mono text-[11.5px] text-mute2">DeepSeek-V4-Flash</div></td>
+            <td class="text-right"><span class="heat-5">5/16</span></td>
+            <td class="text-right"><span class="heat-6">6/16</span></td>
+            <td class="text-right"><span class="heat-2">2/16</span></td>
+            <td class="text-right"><span class="heat-4">4/16</span></td>
+            <td class="text-right"><span class="heat-6">6/16</span></td>
+            <td class="text-right" style="border-left:1px solid #E4E4E0;"><span class="text-accent font-medium text-[15px]">23/80</span><div class="text-mute2 text-[11px]">28.7%</div></td>
+          </tr>
+          <tr>
+            <td><div class="font-sans text-text">OASIS</div><div class="font-mono text-[11.5px] text-mute2">DeepSeek-Chat</div></td>
+            <td class="text-right"><span class="heat-6">6/16</span></td>
+            <td class="text-right"><span class="heat-0">0/16</span></td>
+            <td class="text-right"><span class="heat-0">0/16</span></td>
+            <td class="text-right"><span class="heat-3">3/16</span></td>
+            <td class="text-right"><span class="heat-3">3/16</span></td>
+            <td class="text-right" style="border-left:1px solid #E4E4E0;"><span class="text-text text-[15px]">12/80</span><div class="text-mute2 text-[11px]">15.0%</div></td>
+          </tr>
+          <tr>
+            <td><div class="font-sans text-text">OASIS</div><div class="font-mono text-[11.5px] text-mute2">GPT-5-mini</div></td>
+            <td class="text-right"><span class="heat-3">3/16</span></td>
+            <td class="text-right"><span class="heat-0">0/16</span></td>
+            <td class="text-right"><span class="heat-1">1/16</span></td>
+            <td class="text-right"><span class="heat-0">0/16</span></td>
+            <td class="text-right"><span class="heat-3">3/16</span></td>
+            <td class="text-right" style="border-left:1px solid #E4E4E0;"><span class="text-text text-[15px]">7/80</span><div class="text-mute2 text-[11px]">8.8%</div></td>
+          </tr>
+          <tr>
+            <td><div class="font-sans text-text">OASIS</div><div class="font-mono text-[11.5px] text-mute2">GPT-4o-mini</div></td>
+            <td class="text-right"><span class="heat-1">1/16</span></td>
+            <td class="text-right"><span class="heat-1">1/16</span></td>
+            <td class="text-right"><span class="heat-0">0/16</span></td>
+            <td class="text-right"><span class="heat-0">0/16</span></td>
+            <td class="text-right"><span class="heat-1">1/16</span></td>
+            <td class="text-right" style="border-left:1px solid #E4E4E0;"><span class="text-red font-medium text-[15px]">3/80</span><div class="text-mute2 text-[11px]">3.8%</div></td>
+          </tr>
+          <tr class="text-mute2">
+            <td><div class="font-sans">OASIS</div><div class="font-mono text-[11px]">Gemini 2.5 Pro · pending</div></td>
+            <td class="text-right">—</td><td class="text-right">—</td><td class="text-right">—</td><td class="text-right">—</td><td class="text-right">—</td>
+            <td class="text-right" style="border-left:1px solid #E4E4E0;">—</td>
+          </tr>
+          <tr class="text-mute2">
+            <td><div class="font-sans">OASIS</div><div class="font-mono text-[11px]">DeepSeek-V3.2 · pending</div></td>
+            <td class="text-right">—</td><td class="text-right">—</td><td class="text-right">—</td><td class="text-right">—</td><td class="text-right">—</td>
+            <td class="text-right" style="border-left:1px solid #E4E4E0;">—</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p class="mt-5 text-[12.5px] text-mute leading-relaxed max-w-[100ch]">
+      No model passes more than 6/16 metrics in any single domain. The hardest domain across the board
+      is Cell phones (0–2 / 16); the easiest is Credit cards (1–6 / 16). For reference, sampling more
+      real data from the same domain produces ≈95% pass rates (≈15/16 cells per domain) — i.e., the
+      benchmark's own noise floor.
+    </p>
+
+  </div>
+</section>
+
+<!-- METRICS SCOPE -->
+<section class="py-12 border-t border-line">
+  <div class="max-w-[1280px] mx-auto px-6">
+
+    <div class="mb-5">
+      <div class="sec-num">Metrics scope</div>
+      <h2 class="mt-1 text-[22px] font-medium tracking-tight">16 metrics in 5 families.</h2>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 font-mono text-[12.5px]">
+      <div class="border border-line rounded-lg p-4 bg-white">
+        <div class="text-[11px] tracking-widest text-mute2 uppercase mb-2">Diversity · 3</div>
+        <ul class="space-y-1">
+          <li>self_bleu_4</li>
+          <li>semantic_mean_cosine</li>
+          <li>self_bertscore_mean_f1</li>
+        </ul>
+      </div>
+      <div class="border border-line rounded-lg p-4 bg-white">
+        <div class="text-[11px] tracking-widest text-mute2 uppercase mb-2">Tone · 4</div>
+        <ul class="space-y-1">
+          <li>hard_disagree_rate</li>
+          <li>polite_rate</li>
+          <li>impolite_rate</li>
+          <li>neutral_rate</li>
+        </ul>
+      </div>
+      <div class="border border-line rounded-lg p-4 bg-white">
+        <div class="text-[11px] tracking-widest text-mute2 uppercase mb-2">Structure · 3</div>
+        <ul class="space-y-1">
+          <li>length_cv</li>
+          <li>avg_depth</li>
+          <li>structural_virality</li>
+        </ul>
+      </div>
+      <div class="border border-line rounded-lg p-4 bg-white">
+        <div class="text-[11px] tracking-widest text-mute2 uppercase mb-2">Content · 2</div>
+        <ul class="space-y-1">
+          <li>mean_story_probability</li>
+          <li>emotion_entropy</li>
+        </ul>
+      </div>
+      <div class="border border-line rounded-lg p-4 bg-white">
+        <div class="text-[11px] tracking-widest text-mute2 uppercase mb-2">Toxicity · 4</div>
+        <ul class="space-y-1">
+          <li>toxicity_mean</li>
+          <li>severe_toxicity_mean</li>
+          <li>obscene_mean</li>
+          <li>threat_mean</li>
+        </ul>
+      </div>
+    </div>
+
+    <p class="mt-5 text-[12.5px] text-mute leading-relaxed max-w-[100ch]">
+      Each metric is scored on every (model, domain) pair. A "cell" in the tables above is a single
+      (metric, domain) result. Family columns on the summary table are unweighted averages across the
+      family's metrics.
+    </p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="py-8 border-t border-line">
+  <div class="max-w-[1280px] mx-auto px-6 flex flex-col sm:flex-row items-baseline justify-between gap-3">
+    <a href="index.html" class="ulink text-[14px]">← Back to MiroBench</a>
+    <div class="font-mono text-[11px] text-mute2">
+      © 2026 · <a class="ulink" href="https://github.com/yyu6/MiroBench" target="_blank">github.com/yyu6/MiroBench</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
