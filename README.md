@@ -104,13 +104,17 @@ Options:
 ### 3. Compare Against Real Data
 
 ```bash
-mirobench compare my_generated_threads/thread_scores.csv --domains credit_cards cameras
+mirobench compare my_generated_threads/thread_scores.csv \
+    --domains credit_cards cameras \
+    --core-only \
+    --model-name "my-model"
 ```
 
 This computes statistical comparisons against the real reference data and outputs `mirobench_comparison.csv` with per-metric results.
 
 Options:
 - `--domains DOMAIN [DOMAIN ...]` — compare against specific domains (default: all 5)
+- `--core-only` — restrict to the 16 core metrics across 5 families (Diversity / Tone / Structure / Content / Toxicity) used in the paper's leaderboard. Recommended for paper-style reporting.
 - `--model-name NAME` — label for your model in the output
 - `--output PATH` — custom output path
 

@@ -61,8 +61,8 @@ def main() -> None:
     )
     parser.add_argument(
         "--detoxify-repo",
-        default=str(DETOXIFY_REPO),
-        help="Path to local detoxify checkout.",
+        default="",
+        help="Path to local detoxify checkout (optional; uses pip-installed detoxify by default).",
     )
     parser.add_argument(
         "--model-name",

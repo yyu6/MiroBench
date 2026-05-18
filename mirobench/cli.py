@@ -67,8 +67,8 @@ def cmd_score(args: argparse.Namespace) -> None:
             if (td / result_file).exists() and not args.force:
                 continue
 
-            scorer_path = scorer_dir / f"{scorer_name}.py"
-            cmd = [sys.executable, str(scorer_path), str(td), "--target-kind", "generated"]
+            module_name = f"mirobench.scorers.{scorer_name}"
+            cmd = [sys.executable, "-m", module_name, str(td), "--target-kind", "generated"]
 
             if scorer_name == "score_thread_self_bertscore":
                 cmd += ["--model-type", "microsoft/deberta-xlarge-mnli",
@@ -87,12 +87,40 @@ def cmd_score(args: argparse.Namespace) -> None:
                 if args.verbose:
                     print(f"    stderr: {e.stderr[:200]}")
 
-    # Summarize
+    # Merge per-thread result JSONs into top-level merged files,
+    # then run the summarizer. Each per-thread file has a "threads"
+    # array with one element; we concatenate across all thread dirs,
+    # tagging each entry with its directory name as thread_id.
     print(f"\nAggregating scores...")
-    summarize_path = scorer_dir / "summarize_thread_metrics.py"
+    metric_files = [result_file for _, result_file in SCORERS]
+    for mf in metric_files:
+        all_threads = []
+        meta = None
+        for td in thread_dirs:
+            f = td / mf
+            if not f.exists():
+                continue
+            try:
+                data = json.loads(f.read_text(encoding="utf-8"))
+            except Exception:
+                continue
+            if meta is None:
+                meta = data.get("meta", {})
+            for t in data.get("threads", []):
+                # Override thread_id with the directory name so each
+                # thread's row keeps its original identity.
+                t["thread_id"] = td.name
+                all_threads.append(t)
+        if all_threads:
+            (input_dir / mf).write_text(
+                json.dumps({"meta": meta or {}, "threads": all_threads},
+                           ensure_ascii=False, indent=2),
+                encoding="utf-8",
+            )
+
     output_prefix = args.output_prefix or "thread_scores"
-    cmd = [sys.executable, str(summarize_path), str(input_dir),
-           "--output-prefix", output_prefix]
+    cmd = [sys.executable, "-m", "mirobench.scorers.summarize_thread_metrics",
+           str(input_dir), "--output-prefix", output_prefix]
     try:
         subprocess.run(cmd, capture_output=True, text=True, check=True)
         out_csv = input_dir / f"{output_prefix}.csv"
@@ -108,6 +136,21 @@ def cmd_score(args: argparse.Namespace) -> None:
         sys.exit(1)
 
 
+# The 16 selected MiroBench metrics: 5 families × (3+4+3+2+4) = 16.
+CORE_METRICS = {
+    # Diversity (3)
+    "self_bleu_4", "semantic_mean_cosine", "self_bertscore_mean_f1",
+    # Tone (4)
+    "hard_disagree_rate", "polite_rate", "impolite_rate", "neutral_rate",
+    # Structure (3)
+    "length_cv", "avg_depth", "structural_virality",
+    # Content (2)
+    "mean_story_probability", "emotion_entropy",
+    # Toxicity (4)
+    "toxicity_mean", "severe_toxicity_mean", "obscene_mean", "threat_mean",
+}
+
+
 def cmd_compare(args: argparse.Namespace) -> None:
     """Compare scored threads against real reference data."""
     from .compare import compare_against_reference, write_comparison_csv
@@ -119,6 +162,9 @@ def cmd_compare(args: argparse.Namespace) -> None:
 
     domains_to_compare = args.domains or list(DOMAINS.keys())
     all_rows = []
+
+    if args.core_only:
+        print(f"Filtering to the {len(CORE_METRICS)} core MiroBench metrics.")
 
     for domain in domains_to_compare:
         if domain not in DOMAINS:
@@ -137,6 +183,8 @@ def cmd_compare(args: argparse.Namespace) -> None:
             domain=domain,
             model=args.model_name or sim_csv.stem,
         )
+        if args.core_only:
+            rows = [r for r in rows if r.get("metric") in CORE_METRICS]
         all_rows.extend(rows)
         print(f"  {domain}: {len(rows)} metrics compared")
 
@@ -217,6 +265,9 @@ def main() -> None:
                            help="Model name label for the output CSV")
     p_compare.add_argument("--output", "-o", default="",
                            help="Output CSV path (default: mirobench_comparison.csv)")
+    p_compare.add_argument("--core-only", action="store_true",
+                           help="Only report the 16 core metrics (5 families: "
+                                "Diversity / Tone / Structure / Content / Toxicity)")
     p_compare.set_defaults(func=cmd_compare)
 
     # domains
