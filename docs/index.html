@@ -191,7 +191,6 @@ tailwind.config = {
     <nav class="hidden md:flex items-center gap-6 text-[13.5px] text-mute">
       <a href="#motivation" class="hover:text-text">Motivation</a>
       <a href="#leaderboard" class="hover:text-text">Leaderboard</a>
-      <a href="#domains" class="hover:text-text">Domains</a>
       <a href="#metrics" class="hover:text-text">Metrics</a>
       <a href="#quickstart" class="hover:text-text">Quick start</a>
       <a href="#cite" class="hover:text-text">Cite</a>
@@ -328,27 +327,20 @@ tailwind.config = {
 <!-- ════════ LEADERBOARD ════════ -->
 <section id="leaderboard" class="py-16 border-t border-line">
   <div class="max-w-[1100px] mx-auto px-6">
-    <div class="flex items-baseline justify-between mb-7 reveal">
-      <div>
-        <div class="sec-num">§ 02 — Leaderboard</div>
-        <h2 class="mt-2 text-[26px] lg:text-[30px] leading-[1.2] tracking-[-0.01em] font-medium">
-          Models evaluated under <span class="serif-italic">OASIS</span> as simulation engine.
-        </h2>
-      </div>
+    <div class="mb-7 reveal">
+      <div class="sec-num">§ 02 — Leaderboard</div>
+      <h2 class="mt-2 text-[26px] lg:text-[30px] leading-[1.2] tracking-[-0.01em] font-medium max-w-[42ch]">
+        Models evaluated under <span class="serif-italic">OASIS</span> as simulation engine.
+      </h2>
     </div>
 
     <div class="reveal border border-line rounded-lg overflow-x-auto bg-white">
-      <table class="bench min-w-[800px]">
+      <table class="bench min-w-[520px]">
         <thead>
           <tr>
-            <th class="num">#</th>
+            <th class="num" style="width:60px;">#</th>
             <th>Model</th>
-            <th class="text-right">Repetition</th>
-            <th class="text-right">Narrative</th>
-            <th class="text-right">Toxicity</th>
-            <th class="text-right">Structure</th>
-            <th class="text-right" style="border-left:1px solid #E4E4E0;">Overall&nbsp;↓</th>
-            <th class="text-right" style="border-left:1px solid #E4E4E0;">p&gt;0.05&nbsp;↑</th>
+            <th class="text-right" style="width:280px;">p&nbsp;&gt;&nbsp;0.05 · cells&nbsp;passing&nbsp;↑</th>
           </tr>
         </thead>
         <tbody class="num">
@@ -358,12 +350,10 @@ tailwind.config = {
               <div class="font-sans"><span class="text-text font-medium">DeepSeek-V4-Flash</span></div>
               <div class="font-mono text-[11.5px] text-mute2">deepseek-v4-flash</div>
             </td>
-            <td class="text-right">0.67</td>
-            <td class="text-right">0.35</td>
-            <td class="text-right">0.14</td>
-            <td class="text-right">0.77</td>
-            <td class="text-right" style="border-left:1px solid #E4E4E0;"><span class="text-accent font-medium">0.45</span></td>
-            <td class="text-right" style="border-left:1px solid #E4E4E0;"><span class="text-accent">20/60</span> <span class="text-mute2 text-[11.5px]">·&nbsp;33.3%</span></td>
+            <td class="text-right">
+              <span class="text-accent text-[16px] font-medium">23 / 80</span>
+              <span class="text-mute2 text-[12px] ml-2">28.7%</span>
+            </td>
           </tr>
           <tr>
             <td>2</td>
@@ -371,12 +361,10 @@ tailwind.config = {
               <div class="font-sans"><span class="text-text font-medium">DeepSeek-Chat</span></div>
               <div class="font-mono text-[11.5px] text-mute2">deepseek-chat</div>
             </td>
-            <td class="text-right">0.65</td>
-            <td class="text-right">0.62</td>
-            <td class="text-right">0.16</td>
-            <td class="text-right">0.78</td>
-            <td class="text-right" style="border-left:1px solid #E4E4E0;">0.47</td>
-            <td class="text-right" style="border-left:1px solid #E4E4E0;">12/60 <span class="text-mute2 text-[11.5px]">·&nbsp;20.0%</span></td>
+            <td class="text-right">
+              <span class="text-text text-[16px]">12 / 80</span>
+              <span class="text-mute2 text-[12px] ml-2">15.0%</span>
+            </td>
           </tr>
           <tr>
             <td>3</td>
@@ -384,12 +372,10 @@ tailwind.config = {
               <div class="font-sans"><span class="text-text font-medium">GPT-5-mini</span></div>
               <div class="font-mono text-[11.5px] text-mute2">gpt-5-mini · OpenAI</div>
             </td>
-            <td class="text-right">0.69</td>
-            <td class="text-right">0.83</td>
-            <td class="text-right">0.23</td>
-            <td class="text-right">0.78</td>
-            <td class="text-right" style="border-left:1px solid #E4E4E0;">0.53</td>
-            <td class="text-right" style="border-left:1px solid #E4E4E0;">9/60 <span class="text-mute2 text-[11.5px]">·&nbsp;15.0%</span></td>
+            <td class="text-right">
+              <span class="text-text text-[16px]">7 / 80</span>
+              <span class="text-mute2 text-[12px] ml-2">8.8%</span>
+            </td>
           </tr>
           <tr>
             <td>4</td>
@@ -397,12 +383,10 @@ tailwind.config = {
               <div class="font-sans"><span class="text-text font-medium">GPT-4o-mini</span></div>
               <div class="font-mono text-[11.5px] text-mute2">gpt-4o-mini · OpenAI</div>
             </td>
-            <td class="text-right">0.83</td>
-            <td class="text-right">0.85</td>
-            <td class="text-right">0.70</td>
-            <td class="text-right">0.81</td>
-            <td class="text-right" style="border-left:1px solid #E4E4E0;"><span class="text-red font-medium">0.77</span></td>
-            <td class="text-right" style="border-left:1px solid #E4E4E0;"><span class="text-red">1/60</span> <span class="text-mute2 text-[11.5px]">·&nbsp;1.7%</span></td>
+            <td class="text-right">
+              <span class="text-red text-[16px] font-medium">3 / 80</span>
+              <span class="text-mute2 text-[12px] ml-2">3.8%</span>
+            </td>
           </tr>
           <tr class="text-mute2">
             <td>—</td>
@@ -411,11 +395,6 @@ tailwind.config = {
               <div class="font-mono text-[11.5px]">pending</div>
             </td>
             <td class="text-right">—</td>
-            <td class="text-right">—</td>
-            <td class="text-right">—</td>
-            <td class="text-right">—</td>
-            <td class="text-right" style="border-left:1px solid #E4E4E0;">—</td>
-            <td class="text-right" style="border-left:1px solid #E4E4E0;">—</td>
           </tr>
           <tr class="text-mute2">
             <td>—</td>
@@ -424,129 +403,41 @@ tailwind.config = {
               <div class="font-mono text-[11.5px]">pending</div>
             </td>
             <td class="text-right">—</td>
-            <td class="text-right">—</td>
-            <td class="text-right">—</td>
-            <td class="text-right">—</td>
-            <td class="text-right" style="border-left:1px solid #E4E4E0;">—</td>
-            <td class="text-right" style="border-left:1px solid #E4E4E0;">—</td>
           </tr>
         </tbody>
       </table>
     </div>
 
-    <div class="mt-5 text-[12.5px] text-mute leading-relaxed max-w-[80ch]">
-      <p>
-        All models were evaluated as simulation backbones inside the <a class="ulink" href="https://github.com/camel-ai/oasis" target="_blank">OASIS</a> agent-simulation engine on
-        the same 5-domain MiroBench task.
-        Family columns show the average <span class="mono-chip">|Cliff's δ|</span> between generated and real Reddit distributions
-        across 5 domains (lower = closer to real).
-        The <span class="mono-chip">p&gt;0.05</span> column is the number of (metric × domain) cells where the Mann-Whitney U test fails to reject
-        equal distributions, out of <span class="num">12 × 5 = 60</span> total.
-      </p>
-    </div>
-  </div>
-</section>
-
-<!-- ════════ DOMAINS ════════ -->
-<section id="domains" class="py-16 border-t border-line bg-surf">
-  <div class="max-w-[1100px] mx-auto px-6">
-    <div class="sec-num reveal">§ 03 — Domains</div>
-    <h2 class="reveal mt-2 mb-7 text-[26px] lg:text-[30px] leading-[1.2] tracking-[-0.01em] font-medium">
-      Five Reddit domains · <span class="serif-italic">4,292 threads.</span>
-    </h2>
-
-    <div class="reveal border border-line rounded-lg overflow-x-auto bg-white">
-      <table class="bench">
-        <thead>
-          <tr>
-            <th>Domain</th>
-            <th class="text-right">Seeds</th>
-            <th class="text-right">Threads</th>
-            <th class="text-right">Train</th>
-            <th class="text-right">Val</th>
-            <th class="text-right">Test</th>
-          </tr>
-        </thead>
-        <tbody class="num">
-          <tr>
-            <td><a class="ulink font-sans" href="https://github.com/yyu6/MiroBench/tree/main/mirobench/data/credit_cards" target="_blank">Credit Card</a></td>
-            <td class="text-right">75</td>
-            <td class="text-right">2,600</td>
-            <td class="text-right">1,819</td>
-            <td class="text-right">390</td>
-            <td class="text-right">391</td>
-          </tr>
-          <tr>
-            <td><a class="ulink font-sans" href="https://github.com/yyu6/MiroBench/tree/main/mirobench/data/laptops" target="_blank">Laptop</a></td>
-            <td class="text-right">200</td>
-            <td class="text-right">272</td>
-            <td class="text-right">186</td>
-            <td class="text-right">43</td>
-            <td class="text-right">43</td>
-          </tr>
-          <tr>
-            <td><a class="ulink font-sans" href="https://github.com/yyu6/MiroBench/tree/main/mirobench/data/cell_phones" target="_blank">Cellphone</a></td>
-            <td class="text-right">200</td>
-            <td class="text-right">392</td>
-            <td class="text-right">286</td>
-            <td class="text-right">50</td>
-            <td class="text-right">56</td>
-          </tr>
-          <tr>
-            <td><a class="ulink font-sans" href="https://github.com/yyu6/MiroBench/tree/main/mirobench/data/cameras" target="_blank">Camera</a></td>
-            <td class="text-right">200</td>
-            <td class="text-right">763</td>
-            <td class="text-right">546</td>
-            <td class="text-right">111</td>
-            <td class="text-right">106</td>
-          </tr>
-          <tr>
-            <td><a class="ulink font-sans" href="https://github.com/yyu6/MiroBench/tree/main/mirobench/data/headphones" target="_blank">Headphones</a></td>
-            <td class="text-right">200</td>
-            <td class="text-right">265</td>
-            <td class="text-right">178</td>
-            <td class="text-right">38</td>
-            <td class="text-right">49</td>
-          </tr>
-          <tr class="font-medium" style="background:#F5F5F1;">
-            <td>Total</td>
-            <td class="text-right">875</td>
-            <td class="text-right">4,292</td>
-            <td class="text-right">3,015</td>
-            <td class="text-right">632</td>
-            <td class="text-right">645</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-
-    <p class="mt-5 text-[13px] text-mute leading-relaxed max-w-[80ch]">
-      Each domain includes real train / validation / test splits and product descriptions used as standardized seed contexts.
-      Simulators use these descriptions to generate comparable discussion threads.
+    <p class="mt-5 text-[12.5px] text-mute leading-relaxed max-w-[88ch]">
+      Each row reports cells in which the Mann–Whitney U test cannot reject equal distributions
+      (<span class="mono-chip">p&nbsp;&gt;&nbsp;0.05</span>) between generated and real Reddit, counted across
+      <span class="num">16 metrics × 5 domains = 80</span> cells. All models run under
+      <a class="ulink" href="https://github.com/camel-ai/oasis" target="_blank">OASIS</a> with the same task setup.
     </p>
   </div>
 </section>
+
 
 <!-- ════════ METRICS · SUNBURST ════════ -->
 <section id="metrics" class="py-16 border-t border-line">
   <div class="max-w-[1100px] mx-auto px-6">
-    <div class="sec-num reveal">§ 04 — Metrics</div>
+    <div class="sec-num reveal">§ 03 — Metrics</div>
     <h2 class="reveal mt-2 text-[26px] lg:text-[30px] leading-[1.2] tracking-[-0.01em] font-medium max-w-[40ch]">
-      Twelve metrics across <span class="serif-italic">four families.</span>
+      Sixteen metrics across <span class="serif-italic">five families.</span>
     </h2>
     <p class="reveal mt-3 text-[14.5px] text-mute leading-relaxed max-w-[80ch]">
-      Hover any wedge for the metric definition. Inner ring: four families. Outer ring: 12 metrics.
+      Hover any wedge. The inner ring shows the five families; the outer ring shows the individual metrics.
     </p>
 
     <div class="mt-10 grid lg:grid-cols-[1fr_320px] gap-10 items-center reveal">
       <div class="flex justify-center">
-        <svg id="sunburst" width="520" height="520" viewBox="-260 -260 520 520" class="max-w-full"></svg>
+        <svg id="sunburst" width="560" height="560" viewBox="-280 -280 560 560" class="max-w-full"></svg>
       </div>
       <div id="sunburst-info" class="border border-line rounded-lg p-6 bg-surf min-h-[200px]">
         <div id="sb-family" class="font-mono text-[10.5px] text-accent tracking-widest mb-2 uppercase">Family · ·</div>
-        <div id="sb-name" class="text-[20px] font-medium tracking-tight leading-tight mb-3">MiroBench · 12 metrics</div>
+        <div id="sb-name" class="text-[20px] font-medium tracking-tight leading-tight mb-3">MiroBench · 16 metrics</div>
         <div id="sb-desc" class="text-[13.5px] text-mute leading-[1.7]">
-          The benchmark uses a stable core subset of 12 metrics in four families: repetition and semantic uniformity, narrative content, toxicity and aggression, and structural complexity.
+          Diversity (3), Tone (4), Structure (3), Content (2), and Toxicity (4) — measured across five Reddit domains.
         </div>
       </div>
     </div>
@@ -557,7 +448,7 @@ tailwind.config = {
 <!-- ════════ QUICK START ════════ -->
 <section id="quickstart" class="py-16 border-t border-line bg-surf">
   <div class="max-w-[1100px] mx-auto px-6">
-    <div class="sec-num reveal">§ 05 — Quick start</div>
+    <div class="sec-num reveal">§ 04 — Quick start</div>
     <h2 class="reveal mt-2 mb-7 text-[26px] lg:text-[30px] leading-[1.2] tracking-[-0.01em] font-medium">
       Three commands.
     </h2>
@@ -610,7 +501,7 @@ pip install -e .">copy</button>
 <!-- ════════ CITATION ════════ -->
 <section id="cite" class="py-16 border-t border-line">
   <div class="max-w-[1100px] mx-auto px-6">
-    <div class="sec-num reveal">§ 06 — Citation</div>
+    <div class="sec-num reveal">§ 05 — Citation</div>
     <h2 class="reveal mt-2 mb-7 text-[26px] lg:text-[30px] leading-[1.2] tracking-[-0.01em] font-medium">
       Cite the paper.
     </h2>
@@ -669,69 +560,76 @@ pip install -e .">copy</button>
 <!-- ════════ SCRIPTS ════════ -->
 <script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js"></script>
 <script>
-// ── Sunburst data: paper's 4 families × 12 metrics ──
+// ── Sunburst data: 5 families × 16 metrics ──
 const sbData = {
   name: "MiroBench",
-  family: "MIROBENCH",
-  desc: "The benchmark uses a stable core subset of 12 metrics in four families: repetition and semantic uniformity, narrative content, toxicity and aggression, and structural complexity.",
+  desc: "MiroBench scores generated discussion threads on 16 metrics across 5 families and tests whether each metric's distribution matches real Reddit.",
   children: [
-    { name: "Repetition", desc: "Repetition and semantic uniformity — whether comments in a thread repeat similar wording or ideas.", children: [
+    { name: "Diversity", desc: "Lexical and semantic similarity between comments inside a thread.", children: [
       { name: "self_bleu_4",            desc: "BLEU-4 4-gram overlap across comments. Higher values indicate more repeated phrasing and lower lexical diversity." },
+      { name: "semantic_mean_cosine",   desc: "Sentence-embedding cosine similarity averaged over comment pairs. Higher = narrower semantic space." },
       { name: "self_bertscore_mean_f1", desc: "BERTScore over contextual token embeddings. Higher values indicate stronger semantic overlap even when wording differs." },
-      { name: "semantic_mean_cosine",   desc: "Sentence-transformer (all-mpnet-base-v2) cosine similarity averaged over comment pairs. Higher = narrower semantic space." },
     ]},
-    { name: "Narrative", desc: "How much first-hand experience and story-like detail appears in the discussion.", children: [
-      { name: "mean_story_probability", desc: "Each comment is scored by StorySeeker. Higher = more anecdotal or narrative-style content." },
+    { name: "Tone", desc: "Civility, disagreement, and tone variation in the thread.", children: [
+      { name: "hard_disagree_rate", desc: "Fraction of pairs with strong disagreement (stance classifier)." },
+      { name: "polite_rate",        desc: "Polite-tone fraction (Intel polite-guard)." },
+      { name: "impolite_rate",      desc: "Impolite-tone fraction." },
+      { name: "neutral_rate",       desc: "Neutral-tone fraction. LLMs almost never produce neutral comments." },
     ]},
-    { name: "Toxicity & Aggression", desc: "Whether a thread contains hostile or harmful language.", children: [
+    { name: "Structure", desc: "Comment-length variance and reply-tree shape.", children: [
+      { name: "length_cv",            desc: "Coefficient of variation of comment lengths — normalizes length variation by the mean length." },
+      { name: "avg_depth",            desc: "Average reply depth across the tree; top-level comments are depth 1." },
+      { name: "structural_virality",  desc: "Wiener index of the reply tree — how branched and continued the conversation is." },
+    ]},
+    { name: "Content", desc: "Narrativity and emotional variation across comments.", children: [
+      { name: "mean_story_probability", desc: "StorySeeker-derived narrative density. Higher = more anecdotal or story-style content." },
+      { name: "emotion_entropy",        desc: "Diversity of emotion labels per thread (GoEmotions)." },
+    ]},
+    { name: "Toxicity", desc: "Whether a thread contains hostile or harmful language.", children: [
       { name: "toxicity_mean",         desc: "Detoxify unbiased — toxicity probability averaged across thread." },
       { name: "severe_toxicity_mean",  desc: "Detoxify unbiased — severe-toxicity probability averaged across thread." },
       { name: "obscene_mean",          desc: "Detoxify unbiased — obscenity probability averaged across thread." },
       { name: "threat_mean",           desc: "Detoxify unbiased — threat-content probability averaged across thread." },
-      { name: "aggression_score_mean", desc: "Mean of six Detoxify dimensions per comment (toxicity, severe toxicity, obscene, threat, insult, identity attack), then averaged across the thread." },
-    ]},
-    { name: "Structure", desc: "Comment-length variation and reply-tree shape.", children: [
-      { name: "length_cv",           desc: "Coefficient of variation of comment lengths — normalizes length variation by the mean length." },
-      { name: "avg_depth",           desc: "Average comment depth across the reply tree; top-level comments are depth 1." },
-      { name: "structural_virality", desc: "Wiener index of the reply tree — measures how branched and continued the conversation is." },
     ]},
   ]
 };
 
-// Plain academic palette: muted distinct hues per family
 const familyColors = {
-  "Repetition":            "#7C9CC9",   // blue
-  "Narrative":             "#7FA46D",   // green
-  "Toxicity & Aggression": "#C57676",   // red
-  "Structure":             "#A88AA8",   // purple
+  "Diversity": "#7C9CC9",   // blue
+  "Tone":      "#E0A458",   // amber
+  "Structure": "#A88AA8",   // purple
+  "Content":   "#7FA46D",   // green
+  "Toxicity":  "#C57676",   // red
 };
 
-(function renderSunburst() {
+function renderSunburst() {
   const svgEl = document.getElementById("sunburst");
-  if (!svgEl || !window.d3) return;
+  if (!svgEl) return;
+  if (!window.d3) { setTimeout(renderSunburst, 100); return; }
+  if (svgEl.querySelector("g")) return; // already rendered
   const svg = d3.select(svgEl);
-  const radius = 260;
+  const radius = 270;
 
   const root = d3.hierarchy(sbData)
-    .sum(d => d.children ? 0 : 1)
-    .sort((a, b) => b.value - a.value);
+    .sum(d => d.children ? 0 : 1);
+  // preserve declared order (no .sort)
 
   d3.partition().size([2 * Math.PI, radius])(root);
 
   const arc = d3.arc()
     .startAngle(d => d.x0)
     .endAngle(d => d.x1)
-    .padAngle(0.006)
+    .padAngle(0.008)
     .padRadius(radius / 2)
     .innerRadius(d => {
       if (d.depth === 0) return 0;
-      if (d.depth === 1) return 75;
+      if (d.depth === 1) return 70;
       return 150;
     })
     .outerRadius(d => {
       if (d.depth === 0) return 0;
       if (d.depth === 1) return 148;
-      return 240;
+      return 248;
     })
     .cornerRadius(2);
 
@@ -742,93 +640,70 @@ const familyColors = {
     const fam = d.depth === 1 ? d.data.name : d.parent.data.name;
     const base = familyColors[fam] || "#7C9CC9";
     if (d.depth === 1) return base;
-    return d3.color(base).brighter(0.5).formatHex();
+    return d3.color(base).brighter(0.45).formatHex();
   };
 
+  // Wedges
   g.selectAll("path")
     .data(nodes)
     .enter().append("path")
     .attr("d", arc)
     .attr("fill", d => colorFor(d))
-    .attr("fill-opacity", d => d.depth === 1 ? 0.92 : 0.78)
+    .attr("fill-opacity", d => d.depth === 1 ? 0.95 : 0.78)
     .attr("stroke", "#FFFFFF")
-    .attr("stroke-width", 1.5)
+    .attr("stroke-width", 1.8)
     .style("cursor", "pointer")
-    .style("transition", "fill-opacity 200ms")
+    .style("transition", "fill-opacity 180ms")
     .on("mouseenter", function(_e, d) {
       d3.select(this).attr("fill-opacity", 1);
       updateInfo(d);
     })
     .on("mouseleave", function(_e, d) {
-      d3.select(this).attr("fill-opacity", d.depth === 1 ? 0.92 : 0.78);
+      d3.select(this).attr("fill-opacity", d.depth === 1 ? 0.95 : 0.78);
     });
 
-  // Family-ring labels (curved)
+  // ONLY family labels on inner ring (curved). No outer-ring labels at all
+  // — outer ring is intentionally text-free; hover the side panel to see
+  // each metric name + description, which avoids any overlap.
   const labelArc = d3.arc()
     .startAngle(d => d.x0)
     .endAngle(d => d.x1)
-    .innerRadius(112)
-    .outerRadius(112);
+    .innerRadius(108)
+    .outerRadius(108);
+
+  const famNodes = nodes.filter(d => d.depth === 1);
 
   g.append("defs").selectAll("path")
-    .data(nodes.filter(d => d.depth === 1))
+    .data(famNodes)
     .enter().append("path")
-    .attr("id", d => "fam-" + d.data.name.replace(/[^a-zA-Z]/g, ""))
+    .attr("id", (d, i) => "fam-" + i)
     .attr("d", labelArc)
     .attr("fill", "none");
 
   g.selectAll(".fam-label")
-    .data(nodes.filter(d => d.depth === 1))
+    .data(famNodes)
     .enter().append("text")
     .attr("class", "fam-label")
     .attr("dy", 4)
     .style("font-family", "Inter, sans-serif")
-    .style("font-size", "12.5px")
+    .style("font-size", "13px")
     .style("font-weight", "600")
     .style("letter-spacing", "0.02em")
     .style("fill", "#FFFFFF")
     .style("pointer-events", "none")
     .append("textPath")
-      .attr("href", d => "#fam-" + d.data.name.replace(/[^a-zA-Z]/g, ""))
+      .attr("href", (d, i) => "#fam-" + i)
       .attr("startOffset", "50%")
       .attr("text-anchor", "middle")
       .text(d => d.data.name);
 
-  // Outer-ring metric labels (rotated)
-  g.selectAll(".metric-label")
-    .data(nodes.filter(d => d.depth === 2))
-    .enter().append("text")
-    .attr("class", "metric-label")
-    .attr("transform", d => {
-      const ang = (d.x0 + d.x1) / 2;
-      const r = 195;
-      const x = Math.sin(ang) * r;
-      const y = -Math.cos(ang) * r;
-      const rot = (ang * 180 / Math.PI) - 90;
-      const flip = ang > Math.PI ? 180 : 0;
-      return `translate(${x},${y}) rotate(${rot + flip})`;
-    })
-    .attr("text-anchor", "middle")
-    .attr("dy", 4)
-    .style("font-family", "JetBrains Mono, monospace")
-    .style("font-size", "9.5px")
-    .style("fill", "#0E0E0F")
-    .style("pointer-events", "none")
-    .text(d => {
-      const ang = d.x1 - d.x0;
-      if (ang < 0.10) return "";
-      const name = d.data.name;
-      if (ang < 0.18) return name.slice(0, 10);
-      return name.length > 20 ? name.slice(0, 20) : name;
-    });
-
-  // Center label
+  // Center labels
   g.append("text")
     .attr("text-anchor", "middle")
     .attr("dy", -2)
     .style("font-family", "Instrument Serif, serif")
     .style("font-style", "italic")
-    .style("font-size", "22px")
+    .style("font-size", "24px")
     .style("fill", "#0E0E0F")
     .style("pointer-events", "none")
     .text("MiroBench");
@@ -840,7 +715,7 @@ const familyColors = {
     .style("letter-spacing", "0.15em")
     .style("fill", "#888")
     .style("pointer-events", "none")
-    .text("12 METRICS");
+    .text("16 METRICS");
 
   svg.on("mouseleave", () => updateInfo(null));
 
@@ -850,7 +725,7 @@ const familyColors = {
     const descEl = document.getElementById("sb-desc");
     if (!d) {
       famEl.textContent  = "MIROBENCH";
-      nameEl.textContent = "MiroBench · 12 metrics";
+      nameEl.textContent = "MiroBench · 16 metrics";
       descEl.textContent = sbData.desc;
       return;
     }
@@ -859,12 +734,18 @@ const familyColors = {
       nameEl.textContent = d.data.name;
       descEl.textContent = d.data.desc;
     } else {
-      famEl.textContent  = "FAMILY · " + d.parent.data.name.toUpperCase();
+      famEl.textContent  = d.parent.data.name.toUpperCase() + " · METRIC";
       nameEl.textContent = d.data.name;
       descEl.textContent = d.data.desc;
     }
   }
-})();
+}
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', renderSunburst);
+} else {
+  renderSunburst();
+}
+window.addEventListener('load', renderSunburst);
 </script>
 
 <script>
