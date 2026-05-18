@@ -209,6 +209,7 @@ tailwind.config = {
     <nav class="hidden md:flex items-center gap-6 text-[13.5px] text-mute">
       <a href="#motivation" class="hover:text-text">Motivation</a>
       <a href="#leaderboard" class="hover:text-text">Leaderboard</a>
+      <a href="#realref" class="hover:text-text">Reference</a>
       <a href="#top" class="hover:text-text">Metrics</a>
       <a href="#quickstart" class="hover:text-text">Quick start</a>
       <a href="#cite" class="hover:text-text">Cite</a>
@@ -362,108 +363,314 @@ tailwind.config = {
 
 <!-- ════════ LEADERBOARD ════════ -->
 <section id="leaderboard" class="py-16 border-t border-line">
-  <div class="max-w-[1100px] mx-auto px-6">
+  <div class="max-w-[1280px] mx-auto px-6">
     <div class="mb-7 reveal">
       <div class="sec-num">§ 02 — Leaderboard</div>
-      <h2 class="mt-2 text-[26px] lg:text-[30px] leading-[1.2] tracking-[-0.01em] font-medium max-w-[42ch]">
+      <h2 class="mt-2 text-[26px] lg:text-[30px] leading-[1.2] tracking-[-0.01em] font-medium max-w-[44ch]">
         Models evaluated under <span class="serif-italic">OASIS</span> as simulation engine.
       </h2>
     </div>
 
     <div class="reveal border border-line rounded-lg overflow-x-auto bg-white">
-      <table class="bench min-w-[520px]">
+      <table class="bench min-w-[1080px]">
         <thead>
           <tr>
-            <th class="num" style="width:60px;">#</th>
-            <th>Method · Model</th>
-            <th class="text-right" style="width:280px;">p&nbsp;&gt;&nbsp;0.05 · cells&nbsp;passing&nbsp;↑</th>
+            <th class="num" style="width:46px;">#</th>
+            <th style="width:200px;">Method · Model</th>
+            <th class="text-right">Diversity</th>
+            <th class="text-right">Tone</th>
+            <th class="text-right">Structure</th>
+            <th class="text-right">Content</th>
+            <th class="text-right">Toxicity</th>
+            <th class="text-right" style="border-left:1px solid #E4E4E0; width:140px;">p&nbsp;&gt;&nbsp;0.05&nbsp;↑</th>
           </tr>
         </thead>
         <tbody class="num">
+
+          <!-- Real-vs-real reference -->
+          <tr style="background:#F7F7F4;">
+            <td class="text-mute2">—</td>
+            <td>
+              <div class="font-sans text-mute text-[12.5px]">Real reference</div>
+              <div class="font-mono text-[11px] text-mute2">train vs test split</div>
+            </td>
+            <td class="text-right text-mute">
+              <div>W₁ <span class="text-text">0.016</span></div>
+              <div class="text-[12px]">|δ| <span class="text-text">0.060</span></div>
+            </td>
+            <td class="text-right text-mute">
+              <div>W₁ <span class="text-text">0.034</span></div>
+              <div class="text-[12px]">|δ| <span class="text-text">0.071</span></div>
+            </td>
+            <td class="text-right text-mute">
+              <div>W₁ <span class="text-text">0.165</span></div>
+              <div class="text-[12px]">|δ| <span class="text-text">0.100</span></div>
+            </td>
+            <td class="text-right text-mute">
+              <div>W₁ <span class="text-text">0.074</span></div>
+              <div class="text-[12px]">|δ| <span class="text-text">0.098</span></div>
+            </td>
+            <td class="text-right text-mute">
+              <div>W₁ <span class="text-text">0.004</span></div>
+              <div class="text-[12px]">|δ| <span class="text-text">0.043</span></div>
+            </td>
+            <td class="text-right text-mute2" style="border-left:1px solid #E4E4E0;">— baseline —</td>
+          </tr>
+
+          <!-- 1: DeepSeek-V4-Flash -->
           <tr>
             <td>1</td>
             <td>
-              <span class="method-tag"><span class="dot"></span>OASIS</span>
-              <div class="font-sans mt-1.5"><span class="text-text font-medium">DeepSeek-V4-Flash</span></div>
-              <div class="font-mono text-[11.5px] text-mute2">deepseek-v4-flash</div>
+              <div class="font-sans text-text">OASIS</div>
+              <div class="font-mono text-[11.5px] text-mute2">DeepSeek-V4-Flash</div>
             </td>
             <td class="text-right">
+              <div>W₁ 0.162</div>
+              <div class="text-[12px] text-mute">|δ| 0.669</div>
+            </td>
+            <td class="text-right">
+              <div>W₁ 0.187</div>
+              <div class="text-[12px] text-mute">|δ| 0.472</div>
+            </td>
+            <td class="text-right">
+              <div>W₁ 1.028</div>
+              <div class="text-[12px] text-mute">|δ| 0.768</div>
+            </td>
+            <td class="text-right">
+              <div>W₁ 0.192</div>
+              <div class="text-[12px] text-mute">|δ| 0.318</div>
+            </td>
+            <td class="text-right">
+              <div>W₁ 0.006</div>
+              <div class="text-[12px] text-mute">|δ| 0.132</div>
+            </td>
+            <td class="text-right" style="border-left:1px solid #E4E4E0;">
               <span class="text-accent text-[16px] font-medium">23 / 80</span>
-              <span class="text-mute2 text-[12px] ml-2">28.7%</span>
+              <div class="text-mute2 text-[12px]">28.7%</div>
             </td>
           </tr>
+
+          <!-- 2: DeepSeek-Chat -->
           <tr>
             <td>2</td>
             <td>
-              <span class="method-tag"><span class="dot"></span>OASIS</span>
-              <div class="font-sans mt-1.5"><span class="text-text font-medium">DeepSeek-Chat</span></div>
-              <div class="font-mono text-[11.5px] text-mute2">deepseek-chat</div>
+              <div class="font-sans text-text">OASIS</div>
+              <div class="font-mono text-[11.5px] text-mute2">DeepSeek-Chat</div>
             </td>
             <td class="text-right">
+              <div>W₁ 0.165</div>
+              <div class="text-[12px] text-mute">|δ| 0.647</div>
+            </td>
+            <td class="text-right">
+              <div>W₁ 0.177</div>
+              <div class="text-[12px] text-mute">|δ| 0.447</div>
+            </td>
+            <td class="text-right">
+              <div>W₁ 1.044</div>
+              <div class="text-[12px] text-mute">|δ| 0.778</div>
+            </td>
+            <td class="text-right">
+              <div>W₁ 0.269</div>
+              <div class="text-[12px] text-mute">|δ| 0.496</div>
+            </td>
+            <td class="text-right">
+              <div>W₁ 0.006</div>
+              <div class="text-[12px] text-mute">|δ| 0.164</div>
+            </td>
+            <td class="text-right" style="border-left:1px solid #E4E4E0;">
               <span class="text-text text-[16px]">12 / 80</span>
-              <span class="text-mute2 text-[12px] ml-2">15.0%</span>
+              <div class="text-mute2 text-[12px]">15.0%</div>
             </td>
           </tr>
+
+          <!-- 3: GPT-5-mini -->
           <tr>
             <td>3</td>
             <td>
-              <span class="method-tag"><span class="dot"></span>OASIS</span>
-              <div class="font-sans mt-1.5"><span class="text-text font-medium">GPT-5-mini</span></div>
-              <div class="font-mono text-[11.5px] text-mute2">gpt-5-mini · OpenAI</div>
+              <div class="font-sans text-text">OASIS</div>
+              <div class="font-mono text-[11.5px] text-mute2">GPT-5-mini</div>
             </td>
             <td class="text-right">
+              <div>W₁ 0.189</div>
+              <div class="text-[12px] text-mute">|δ| 0.680</div>
+            </td>
+            <td class="text-right">
+              <div>W₁ 0.276</div>
+              <div class="text-[12px] text-mute">|δ| 0.630</div>
+            </td>
+            <td class="text-right">
+              <div>W₁ 1.051</div>
+              <div class="text-[12px] text-mute">|δ| 0.777</div>
+            </td>
+            <td class="text-right">
+              <div>W₁ 0.492</div>
+              <div class="text-[12px] text-mute">|δ| 0.760</div>
+            </td>
+            <td class="text-right">
+              <div>W₁ 0.008</div>
+              <div class="text-[12px] text-mute">|δ| 0.228</div>
+            </td>
+            <td class="text-right" style="border-left:1px solid #E4E4E0;">
               <span class="text-text text-[16px]">7 / 80</span>
-              <span class="text-mute2 text-[12px] ml-2">8.8%</span>
+              <div class="text-mute2 text-[12px]">8.8%</div>
             </td>
           </tr>
+
+          <!-- 4: GPT-4o-mini -->
           <tr>
             <td>4</td>
             <td>
-              <span class="method-tag"><span class="dot"></span>OASIS</span>
-              <div class="font-sans mt-1.5"><span class="text-text font-medium">GPT-4o-mini</span></div>
-              <div class="font-mono text-[11.5px] text-mute2">gpt-4o-mini · OpenAI</div>
+              <div class="font-sans text-text">OASIS</div>
+              <div class="font-mono text-[11.5px] text-mute2">GPT-4o-mini</div>
             </td>
             <td class="text-right">
+              <div>W₁ 0.261</div>
+              <div class="text-[12px] text-mute">|δ| 0.830</div>
+            </td>
+            <td class="text-right">
+              <div>W₁ 0.283</div>
+              <div class="text-[12px] text-mute">|δ| 0.611</div>
+            </td>
+            <td class="text-right">
+              <div>W₁ 1.093</div>
+              <div class="text-[12px] text-mute">|δ| 0.811</div>
+            </td>
+            <td class="text-right">
+              <div>W₁ 0.194</div>
+              <div class="text-[12px] text-mute">|δ| 0.509</div>
+            </td>
+            <td class="text-right">
+              <div>W₁ 0.010</div>
+              <div class="text-[12px] text-mute">|δ| 0.703</div>
+            </td>
+            <td class="text-right" style="border-left:1px solid #E4E4E0;">
               <span class="text-red text-[16px] font-medium">3 / 80</span>
-              <span class="text-mute2 text-[12px] ml-2">3.8%</span>
+              <div class="text-mute2 text-[12px]">3.8%</div>
             </td>
           </tr>
+
+          <!-- pending: Gemini -->
           <tr class="text-mute2">
             <td>—</td>
             <td>
-              <span class="method-tag" style="background:#F4F4F0;border-color:#E4E4E0;color:#888;"><span class="dot" style="background:#888;"></span>OASIS</span>
-              <div class="font-sans mt-1.5">Gemini 2.5 Pro</div>
-              <div class="font-mono text-[11.5px]">pending</div>
+              <div class="font-sans">OASIS</div>
+              <div class="font-mono text-[11px]">Gemini 2.5 Pro · pending</div>
             </td>
             <td class="text-right">—</td>
+            <td class="text-right">—</td>
+            <td class="text-right">—</td>
+            <td class="text-right">—</td>
+            <td class="text-right">—</td>
+            <td class="text-right" style="border-left:1px solid #E4E4E0;">—</td>
           </tr>
+
+          <!-- pending: DeepSeek-V3.2 -->
           <tr class="text-mute2">
             <td>—</td>
             <td>
-              <span class="method-tag" style="background:#F4F4F0;border-color:#E4E4E0;color:#888;"><span class="dot" style="background:#888;"></span>OASIS</span>
-              <div class="font-sans mt-1.5">DeepSeek-V3.2</div>
-              <div class="font-mono text-[11.5px]">pending</div>
+              <div class="font-sans">OASIS</div>
+              <div class="font-mono text-[11px]">DeepSeek-V3.2 · pending</div>
             </td>
             <td class="text-right">—</td>
+            <td class="text-right">—</td>
+            <td class="text-right">—</td>
+            <td class="text-right">—</td>
+            <td class="text-right">—</td>
+            <td class="text-right" style="border-left:1px solid #E4E4E0;">—</td>
           </tr>
+
         </tbody>
       </table>
     </div>
 
-    <p class="mt-5 text-[12.5px] text-mute leading-relaxed max-w-[88ch]">
-      Each row reports cells in which the Mann–Whitney U test cannot reject equal distributions
-      (<span class="mono-chip">p&nbsp;&gt;&nbsp;0.05</span>) between generated and real Reddit, counted across
-      <span class="num">16 metrics × 5 domains = 80</span> cells. All models run under
-      <a class="ulink" href="https://github.com/camel-ai/oasis" target="_blank">OASIS</a> with the same task setup.
-    </p>
+    <div class="mt-5 text-[12.5px] text-mute leading-relaxed max-w-[100ch]">
+      <p>
+        Family columns show per-family averages across 5 domains:
+        <span class="mono-chip">W₁</span> is the Wasserstein distance between generated and real Reddit distributions
+        (lower = closer to real); <span class="mono-chip">|δ|</span> is the absolute Cliff's-δ effect size.
+        The top <em class="not-italic font-medium">Real reference</em> row reports the corresponding
+        real-vs-real noise floor measured by comparing the train and test splits of the real data.
+      </p>
+      <p class="mt-2">
+        The <span class="mono-chip">p&nbsp;&gt;&nbsp;0.05</span> column counts (metric × domain) cells where Mann–Whitney U cannot reject equal distributions,
+        out of <span class="num">16 metrics × 5 domains = 80</span> cells. All models run under
+        <a class="ulink" href="https://github.com/camel-ai/oasis" target="_blank">OASIS</a> with the same task setup.
+      </p>
+    </div>
   </div>
 </section>
 
+<!-- ════════ REAL-VS-REAL REFERENCE ════════ -->
+<section id="realref" class="py-16 border-t border-line bg-surf">
+  <div class="max-w-[1280px] mx-auto px-6">
+    <div class="mb-7 reveal">
+      <div class="sec-num">§ 03 — Real-vs-Real Reference</div>
+      <h2 class="mt-2 text-[26px] lg:text-[30px] leading-[1.2] tracking-[-0.01em] font-medium max-w-[48ch]">
+        What does a <span class="serif-italic">good</span> score look like?
+      </h2>
+      <p class="mt-3 text-[15px] text-mute leading-relaxed max-w-[80ch]">
+        These figures show the noise floor of the benchmark itself — i.e., the gap you observe when
+        comparing one half of <em class="not-italic font-medium">real</em> Reddit data to the other half.
+        Any model's score should be read <em class="not-italic font-medium">against</em> this floor.
+        These figures are not part of the leaderboard; they characterise the measurement.
+      </p>
+    </div>
 
-<!-- ════════ QUICK START ════════ -->
+    <!-- p-value heatmap -->
+    <div class="reveal mb-10">
+      <div class="font-mono text-[11px] tracking-widest text-mute2 uppercase mb-3">
+        Repeated-sample MWU &amp; KS p-value pass rates
+      </div>
+      <div class="border border-line rounded-lg bg-white p-4">
+        <img src="figures/realref_pvalue_heatmap.png" alt="Repeated-sample p-value pass rates across domains and metrics" class="w-full">
+      </div>
+      <p class="mt-3 text-[12.5px] text-mute leading-relaxed max-w-[100ch]">
+        Repeatedly drawing two equal-sized samples from the real distribution and running Mann–Whitney U / Kolmogorov–Smirnov:
+        ≈95% of comparisons return <span class="mono-chip">p&nbsp;&gt;&nbsp;0.05</span>, which is the false-positive rate
+        we should expect by construction. This is the "100% match" line that no model has approached.
+      </p>
+    </div>
+
+    <!-- W1 + δ radars -->
+    <div class="reveal grid md:grid-cols-2 gap-6 mb-10">
+      <div>
+        <div class="font-mono text-[11px] tracking-widest text-mute2 uppercase mb-3">
+          Real-vs-real W<sub>1</sub> (log scale)
+        </div>
+        <div class="border border-line rounded-lg bg-white p-4">
+          <img src="figures/realref_w1_radar.png" alt="Real-vs-real W1 by family and domain" class="w-full">
+        </div>
+      </div>
+      <div>
+        <div class="font-mono text-[11px] tracking-widest text-mute2 uppercase mb-3">
+          Real-vs-real |Cliff's δ|
+        </div>
+        <div class="border border-line rounded-lg bg-white p-4">
+          <img src="figures/realref_cliff_radar.png" alt="Real-vs-real Cliff's delta by family and domain" class="w-full">
+        </div>
+      </div>
+    </div>
+
+    <!-- Model gap vs real-vs-real baseline -->
+    <div class="reveal">
+      <div class="font-mono text-[11px] tracking-widest text-mute2 uppercase mb-3">
+        Model gap vs real-vs-real baseline
+      </div>
+      <div class="border border-line rounded-lg bg-white p-4">
+        <img src="figures/realref_model_gap_dotplot.png" alt="Per-model W1 and |Cliff delta| ratios over the real-vs-real baseline" class="w-full">
+      </div>
+      <p class="mt-3 text-[12.5px] text-mute leading-relaxed max-w-[100ch]">
+        For each family, the dotplot shows the ratio of a model's average W<sub>1</sub> (and |δ|) to the real-vs-real
+        baseline. A ratio of <span class="mono-chip">1.0</span> would mean a model is indistinguishable from sampling more real data; current
+        models sit at 2×–11× the floor, with the largest gaps on Structure and Repetition.
+      </p>
+    </div>
+  </div>
+</section>
+
 <section id="quickstart" class="py-16 border-t border-line bg-surf">
   <div class="max-w-[1100px] mx-auto px-6">
-    <div class="sec-num reveal">§ 03 — Quick start</div>
+    <div class="sec-num reveal">§ 04 — Quick start</div>
     <h2 class="reveal mt-2 mb-7 text-[26px] lg:text-[30px] leading-[1.2] tracking-[-0.01em] font-medium">
       Three commands.
     </h2>
@@ -516,7 +723,7 @@ pip install -e .">copy</button>
 <!-- ════════ CITATION ════════ -->
 <section id="cite" class="py-16 border-t border-line">
   <div class="max-w-[1100px] mx-auto px-6">
-    <div class="sec-num reveal">§ 04 — Citation</div>
+    <div class="sec-num reveal">§ 05 — Citation</div>
     <h2 class="reveal mt-2 mb-7 text-[26px] lg:text-[30px] leading-[1.2] tracking-[-0.01em] font-medium">
       Cite the paper.
     </h2>
