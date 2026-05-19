@@ -342,84 +342,6 @@ tailwind.config = {
       </div>
     </div>
 
-    <!-- Example thread (real-Reddit style, no logo) -->
-    <div class="mt-12 reveal grid md:grid-cols-[1fr_0.8fr] gap-x-10 gap-y-5 items-start">
-      <div>
-        <div class="text-[11px] tracking-widest text-mute2 uppercase font-mono mb-3">
-          Figure · what a real thread carries
-        </div>
-        <div class="border border-line rounded-lg bg-white overflow-hidden">
-          <div class="px-5 py-3 border-b border-line bg-[#FAFAF7]">
-            <div class="font-mono text-[10.5px] text-mute2 tracking-wider">r/cellphones · seed post</div>
-            <div class="serif-italic text-[17.5px] tracking-tight mt-0.5 text-text">
-              "Pixel 9 vs iPhone 16 for someone who hates iOS"
-            </div>
-          </div>
-          <div class="px-5 py-4 font-mono text-[12.5px] leading-[1.95] text-text">
-            <div class="flex items-start gap-3">
-              <span class="text-good w-8 shrink-0">+47</span>
-              <span class="text-mute2 w-14 shrink-0">u/aperture_</span>
-              <span class="flex-1">
-                Cameras are basically a wash now. The real difference is the software ecosystem.
-                <span class="ml-2 font-sans not-italic text-[10.5px] text-accent">└─ personal experience</span>
-              </span>
-            </div>
-            <div class="flex items-start gap-3 pl-8 mt-1.5">
-              <span class="text-good w-8 shrink-0">+12</span>
-              <span class="text-mute2 w-14 shrink-0">u/ned_</span>
-              <span class="flex-1">
-                Disagree — Pixel image processing is still ahead.
-                <span class="ml-2 font-sans not-italic text-[10.5px] text-accent">└─ disagreement</span>
-              </span>
-            </div>
-            <div class="flex items-start gap-3 pl-16 mt-1.5">
-              <span class="text-good w-8 shrink-0">+8</span>
-              <span class="text-mute2 w-14 shrink-0">u/dp_42</span>
-              <span class="flex-1">
-                For low-light maybe. Daylight is identical to my eye.
-              </span>
-            </div>
-            <div class="flex items-start gap-3 mt-2.5">
-              <span class="text-good w-8 shrink-0">+22</span>
-              <span class="text-mute2 w-14 shrink-0">u/lo_fi__</span>
-              <span class="flex-1">
-                Switched six months ago. Battery life is the single biggest QoL upgrade you'll get.
-                <span class="ml-2 font-sans not-italic text-[10.5px] text-accent">└─ advice + tone</span>
-              </span>
-            </div>
-            <div class="flex items-start gap-3 mt-1.5">
-              <span class="text-red w-8 shrink-0">−3</span>
-              <span class="text-mute2 w-14 shrink-0">u/anon_</span>
-              <span class="flex-1">
-                just get an iphone, you'll get over it.
-                <span class="ml-2 font-sans not-italic text-[10.5px] text-accent">└─ impolite</span>
-              </span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="md:pt-9">
-        <p class="text-[14px] text-text leading-[1.75]">
-          A single real thread carries advice-seeking, personal experience, disagreement, emotional tone,
-          and a branching reply structure — all at once.
-        </p>
-        <p class="mt-3 text-[14px] text-text leading-[1.75]">
-          A realistic simulator must reproduce <em class="not-italic font-medium">all of them together</em>,
-          not just each comment in isolation. This is what MiroBench measures.
-        </p>
-        <div class="mt-5 text-[11px] tracking-widest text-mute2 uppercase font-mono">Signals MiroBench scores</div>
-        <ul class="mt-2 grid grid-cols-2 gap-x-4 gap-y-1 font-mono text-[12px] text-mute">
-          <li>· diversity</li>
-          <li>· tone</li>
-          <li>· structure</li>
-          <li>· content</li>
-          <li>· toxicity</li>
-          <li>· reply-tree shape</li>
-        </ul>
-      </div>
-    </div>
-
     <!-- What we find strip -->
     <div class="mt-12 reveal border-l-2 border-accent pl-5">
       <div class="text-[11px] tracking-widest text-accent uppercase font-mono">What we find</div>
@@ -817,9 +739,13 @@ pip install -e .">copy</button>
 <section id="cite" class="py-16 border-t border-line">
   <div class="max-w-[1280px] mx-auto px-6">
     <div class="sec-num reveal">§ 05 — Citation</div>
-    <h2 class="reveal mt-2 mb-7 text-[26px] lg:text-[30px] leading-[1.2] tracking-[-0.01em] font-medium">
-      Cite the paper.
+    <h2 class="reveal mt-2 text-[26px] lg:text-[30px] leading-[1.2] tracking-[-0.01em] font-medium">
+      If you find <span class="serif-italic">MiroBench</span> useful in your research, please cite our paper.
     </h2>
+    <p class="reveal mt-3 mb-7 text-[14.5px] text-mute leading-relaxed">
+      We also welcome citations from any work that builds on the data, the evaluation framework, or the
+      reference distributions released with this benchmark.
+    </p>
 
     <div class="reveal code-block">
       <div class="code-bar">
