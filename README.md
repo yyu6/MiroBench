@@ -171,13 +171,23 @@ Required fields: `posts[].content`, `posts[].comments[].content`, `comments[].re
 
 ## Disagreement Scorer Setup
 
-The disagreement scorer uses a RoBERTa-based stance classification model. To set it up:
+The disagreement scorer uses the **Stance_Rel** RoBERTa-based stance
+classification model released by [Luo et al.][stancerel], which is the only
+scorer that requires a manual checkpoint download — the remaining eight
+scorers either need no model or pull from HuggingFace automatically.
 
-1. Download the Stance_Rel checkpoint (link TBD / contact authors)
-2. Place it in your working directory as `Stance_Rel/RoBERT_rel_1.5e-05/`
-3. The scorer will auto-detect and use it
+1. Download the Stance_Rel checkpoint from the original authors' Google Drive:
+   <https://drive.google.com/file/d/11YSO_BOpYCDR08FyxjpX3xi7M1O2LmRK/view?usp=sharing>
+2. Unzip it into your working directory as `Stance_Rel/RoBERT_rel_1.5e-05/`
+   (the folder should contain `pytorch_model.bin`, `config.json`,
+   `tokenizer_config.json`, `vocab.json`, `merges.txt`, and `_rgcn.pt`).
+3. The scorer will auto-detect this path. To use a different location, pass
+   `--model-dir <path>` to `score_thread_disagreement.py`.
 
-If the model is not available, the disagreement scorer will be skipped and the remaining 8 scorers will still run.
+If the checkpoint is not present, the disagreement scorer is skipped and the
+remaining eight scorers still run.
+
+[stancerel]: https://github.com/LuoXiaoHeics/StanceRel
 
 ## Available Commands
 
