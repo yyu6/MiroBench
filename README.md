@@ -86,7 +86,15 @@ my_generated_threads/
   ...
 ```
 
-See `mirobench/data/example_thread_format.json` for the expected JSON schema.
+See [`mirobench/data/example_thread_format.json`](mirobench/data/example_thread_format.json) for the expected JSON schema.
+
+> **Minimum sample size: ≥ 50 generated threads per domain.** MiroBench's
+> primary readings are the MWU and KS p-values, which are non-parametric
+> rank-based tests. With fewer than ~30 threads the p-values become unreliable
+> (the rank-test resolution is too coarse), so a single failed metric can be
+> noise rather than signal. **50 threads** is the smallest sample size where a
+> similarity ratio like `MWU p > 0.05: 11/16` is statistically meaningful;
+> the paper's leaderboard uses 200 per (model × domain).
 
 ### 2. Score Your Threads
 
@@ -95,6 +103,14 @@ mirobench score my_generated_threads/ --device cpu
 ```
 
 This runs all 9 scorers on each thread and produces `my_generated_threads/thread_scores.csv`.
+
+The output CSV has **one row per thread** and **61 columns** (`thread_id`,
+`product`, `comment_count`, then one column per metric across all 9 scorer
+families — including the 16 core metrics used by `mirobench compare
+--core-only`). For an exact schema reference see
+[`mirobench/data/example_thread_scores.csv`](mirobench/data/example_thread_scores.csv)
+(5 real threads, all 61 columns; the same file `mirobench compare` accepts
+verbatim).
 
 Options:
 - `--device cpu|cuda|mps` — device for model inference
@@ -120,19 +136,50 @@ Options:
 
 ### 4. Interpret Results
 
-The comparison CSV contains per-metric statistical measures:
+The **conclusion of a MiroBench run is a similarity ratio**: of the M metrics
+compared, how many have `p > 0.05` against the real Reddit reference. A
+metric with `p > 0.05` cannot be statistically distinguished from real Reddit
+at α = 0.05, so it counts as similar. Two p-values are reported because they
+test different things and answer different questions:
 
-| Measure | What It Tells You |
-|---------|------------------|
-| `mwu_p_value` | Mann-Whitney U test p-value (distribution difference significance) |
-| `ks_p_value` | Kolmogorov-Smirnov test p-value (distribution shape difference) |
-| `cliffs_delta` | Effect size (-1 to 1, how much distributions differ) |
-| `cliffs_delta_interpretation` | `negligible` / `small` / `medium` / `large` |
-| `wasserstein` | Earth Mover's Distance (lower = closer to real) |
-| `quantile_error` | Mean absolute error across quantiles (lower = better) |
-| `empirical_fail_rate` | Fraction of generated values outside the 95% CI of real data |
+| Tier | Column | Question it answers |
+|------|--------|---------------------|
+| **Primary** | `mwu_p_value` | Mann–Whitney U two-sided. **p > 0.05 ⇒ medians indistinguishable from real.** |
+| **Primary** | `ks_p_value`  | Kolmogorov–Smirnov. **p > 0.05 ⇒ full distribution shape indistinguishable from real.** |
+| Secondary | `cliffs_delta` / `abs_cliffs_delta` / `cliffs_delta_interpretation` | Signed effect size in [-1, 1]; categorised `negligible` / `small` / `medium` / `large`. |
+| Secondary | `wasserstein` | Earth Mover's Distance (lower = closer to real). |
+| Secondary | `quantile_error` | Mean absolute error across the 5 / 10 / … / 95 percentiles. |
+| Secondary | `empirical_fail_rate` | Fraction of generated values outside the real distribution's 95% CI. |
 
-**Goal:** Metrics closer to the real distribution (lower Wasserstein, lower Cliff's delta, higher p-values) indicate more realistic generated threads.
+The secondary columns only matter for the metrics that **fail** the primary
+test — they tell you *how far off* a generated distribution is when it is
+already known to be statistically different from real Reddit.
+
+After writing the per-metric CSV, `mirobench compare` prints a terminal
+SUMMARY block. The headline of each domain block is two similarity ratios
+(MWU and KS) — e.g. *5 out of 12 metrics indistinguishable from real* ⇒ a
+5 / 12 similarity at α = 0.05. The |δ| / W₁ averages are reported underneath
+as the supplementary "how far off" reading.
+
+Example terminal output (1 model · 2 domains · 50 simulated threads · core-only):
+
+```
+SUMMARY  (similarity to real Reddit = % of metrics with p > 0.05)
+======================================================================
+
+  credit_cards (16 metrics):
+    Similarity (MWU p > 0.05):  11/16   (69%)   <- medians indistinguishable from real
+    Similarity (KS  p > 0.05):  10/16   (62%)   <- distribution shapes indistinguishable from real
+    When the test rejects, how far off (effect size):
+      Avg |Cliff's δ|:  0.118   (8 neg / 5 small / 2 med / 1 large)
+      Avg Wasserstein:  0.0312
+```
+
+**Reading the result.** A simulator that "passes" MiroBench at domain D is
+one whose similarity ratios approach the **real-vs-real noise floor of
+≈ 95%** (see §03 of the website). Anything below that floor means some
+metric distributions are still statistically distinguishable from real
+Reddit; the secondary |δ| / W₁ numbers then quantify how distinguishable.
 
 ## Thread Format
 

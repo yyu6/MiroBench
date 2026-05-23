@@ -195,15 +195,33 @@ def cmd_compare(args: argparse.Namespace) -> None:
     output = Path(args.output or f"mirobench_comparison.csv")
     write_comparison_csv(all_rows, output)
     print(f"\nComparison written to: {output} ({len(all_rows)} rows)")
+    print("  Per-metric columns include mwu_p_value, ks_p_value, "
+          "cliffs_delta, wasserstein.")
 
-    # Print summary
+    # Print summary. The primary conclusion is the similarity ratio: of the M
+    # metrics compared, how many had p > 0.05 (i.e. could not be distinguished
+    # from real Reddit at α = 0.05). Two p-values are reported because they
+    # test different things (MWU = location/median; KS = full distribution
+    # shape). Cliff's δ and Wasserstein distance are secondary "how far off"
+    # readings that only matter when the p-value does reject equality.
     print(f"\n{'='*70}")
-    print("SUMMARY")
+    print("SUMMARY  (similarity to real Reddit = % of metrics with p > 0.05)")
     print(f"{'='*70}")
     for domain in domains_to_compare:
         domain_rows = [r for r in all_rows if r.get("domain") == domain]
         if not domain_rows:
             continue
+        n = len(domain_rows)
+        mwu_pass = sum(
+            1 for r in domain_rows
+            if isinstance(r.get("mwu_p_value"), float) and r["mwu_p_value"] > 0.05
+        )
+        ks_pass = sum(
+            1 for r in domain_rows
+            if isinstance(r.get("ks_p_value"), float) and r["ks_p_value"] > 0.05
+        )
+        avg_acd = sum(float(r.get("abs_cliffs_delta", 0)) for r in domain_rows) / n
+        avg_wd = sum(float(r.get("wasserstein", 0)) for r in domain_rows) / n
         negligible = sum(1 for r in domain_rows
                          if r.get("cliffs_delta_interpretation") == "negligible")
         small = sum(1 for r in domain_rows
@@ -212,13 +230,15 @@ def cmd_compare(args: argparse.Namespace) -> None:
                      if r.get("cliffs_delta_interpretation") == "medium")
         large = sum(1 for r in domain_rows
                     if r.get("cliffs_delta_interpretation") == "large")
-        avg_wd = sum(r.get("wasserstein", 0) for r in domain_rows) / len(domain_rows)
-        avg_fail = sum(r.get("empirical_fail_rate", 0) for r in domain_rows) / len(domain_rows)
-        print(f"\n  {domain} ({len(domain_rows)} metrics):")
-        print(f"    Cliff's delta: {negligible} negligible, {small} small, "
-              f"{medium} medium, {large} large")
-        print(f"    Avg Wasserstein distance: {avg_wd:.4f}")
-        print(f"    Avg empirical fail rate:  {avg_fail:.2%}")
+        print(f"\n  {domain} ({n} metrics):")
+        print(f"    Similarity (MWU p > 0.05):  {mwu_pass}/{n}   ({mwu_pass/n:.0%})   "
+              f"<- medians indistinguishable from real")
+        print(f"    Similarity (KS  p > 0.05):  {ks_pass}/{n}   ({ks_pass/n:.0%})   "
+              f"<- distribution shapes indistinguishable from real")
+        print(f"    When the test rejects, how far off (effect size):")
+        print(f"      Avg |Cliff's δ|:  {avg_acd:.3f}   "
+              f"({negligible} neg / {small} small / {medium} med / {large} large)")
+        print(f"      Avg Wasserstein:  {avg_wd:.4f}")
 
 
 def cmd_domains(args: argparse.Namespace) -> None:

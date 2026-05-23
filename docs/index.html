@@ -687,10 +687,11 @@ tailwind.config = {
   <div class="max-w-[1280px] mx-auto px-6">
     <div class="sec-num reveal">§ 04 — Quick start</div>
     <h2 class="reveal mt-2 mb-7 text-[26px] lg:text-[30px] leading-[1.2] tracking-[-0.01em] font-medium">
-      Three commands.
+      From threads to leaderboard, end-to-end.
     </h2>
 
     <div class="space-y-5">
+
       <div class="reveal">
         <div class="text-[12px] uppercase tracking-widest text-mute mb-2">1 · Install</div>
         <div class="code-block">
@@ -707,30 +708,102 @@ pip install -e .">copy</button>
       </div>
 
       <div class="reveal">
-        <div class="text-[12px] uppercase tracking-widest text-mute mb-2">2 · Score generated threads</div>
+        <div class="text-[12px] uppercase tracking-widest text-mute mb-2">2 · Disagreement-scorer weights (one-time)</div>
+        <div class="code-block">
+          <div class="code-bar">
+            <span class="font-mono text-[11px] text-mute">stance_rel</span>
+            <button class="copy-btn" data-copy="# Stance_Rel weights from Luo et al. (the only scorer needing manual download;
+# the other 8 scorers auto-fetch from HuggingFace on first use).
+# Download:  https://drive.google.com/file/d/11YSO_BOpYCDR08FyxjpX3xi7M1O2LmRK/view
+# Unzip into ./Stance_Rel/RoBERT_rel_1.5e-05/ in your working directory.">copy</button>
+          </div>
+<pre><span class="tok-comment"># Stance_Rel weights from Luo et al. — the only scorer needing manual</span>
+<span class="tok-comment"># download. The other 8 scorers auto-fetch from HuggingFace on first use.</span>
+<span class="tok-comment"># Download: drive.google.com/file/d/11YSO_BOpYCDR08FyxjpX3xi7M1O2LmRK</span>
+<span class="tok-comment"># Unzip into ./Stance_Rel/RoBERT_rel_1.5e-05/ in your working directory.</span></pre>
+        </div>
+      </div>
+
+      <div class="reveal">
+        <div class="text-[12px] uppercase tracking-widest text-mute mb-2">3 · Score generated threads</div>
         <div class="code-block">
           <div class="code-bar">
             <span class="font-mono text-[11px] text-mute">score</span>
             <button class="copy-btn" data-copy="mirobench score my_threads/ --device cpu">copy</button>
           </div>
 <pre><span class="tok-comment"># each thread = directory with a discussion.json</span>
-<span class="tok-prompt">$ </span><span class="tok-cmd">mirobench</span> score my_threads/ <span class="tok-flag">--device</span> cpu</pre>
+<span class="tok-comment"># schema:  mirobench/data/example_thread_format.json</span>
+<span class="tok-prompt">$ </span><span class="tok-cmd">mirobench</span> score my_threads/ <span class="tok-flag">--device</span> cpu
+<span class="tok-comment"># → my_threads/thread_scores.csv  (one row per thread, 61 columns)</span>
+<span class="tok-comment"># Sample of the output schema (5 rows, all 61 columns):</span>
+<span class="tok-comment">#   github.com/yyu6/MiroBench/blob/main/mirobench/data/example_thread_scores.csv</span></pre>
         </div>
       </div>
 
       <div class="reveal">
-        <div class="text-[12px] uppercase tracking-widest text-mute mb-2">3 · Compare against real Reddit</div>
+        <div class="text-[12px] uppercase tracking-widest text-mute mb-2">4 · Compare against real Reddit</div>
+        <p class="text-[12.5px] text-mute leading-relaxed mb-2">
+          <span class="font-medium text-text">Sample size note.</span>
+          MWU and KS are non-parametric rank tests; below ~30 threads the p-values get noisy.
+          Use <span class="num">≥ 50</span> threads per domain for a meaningful similarity ratio
+          (the paper's leaderboard uses <span class="num">200</span> per model × domain).
+        </p>
         <div class="code-block">
           <div class="code-bar">
             <span class="font-mono text-[11px] text-mute">compare</span>
-            <button class="copy-btn" data-copy='mirobench compare my_threads/thread_scores.csv --core-only --model-name "my-model"'>copy</button>
+            <button class="copy-btn" data-copy='mirobench compare my_threads/thread_scores.csv \
+    --core-only \
+    --model-name "my-model"'>copy</button>
           </div>
 <pre><span class="tok-prompt">$ </span><span class="tok-cmd">mirobench</span> compare my_threads/thread_scores.csv \
     <span class="tok-flag">--core-only</span> \
-    <span class="tok-flag">--model-name</span> <span class="tok-str">"my-model"</span></pre>
+    <span class="tok-flag">--model-name</span> <span class="tok-str">"my-model"</span>
+<span class="tok-comment"># → mirobench_comparison.csv (one row per metric × domain)</span>
+<span class="tok-comment">#   Primary:    mwu_p_value, ks_p_value   (p > 0.05 ⇒ indistinguishable from real)</span>
+<span class="tok-comment">#   Secondary:  cliffs_delta, wasserstein (how far off when the p-value rejects)</span>
+<span class="tok-comment">#</span>
+<span class="tok-comment"># Terminal prints a per-domain similarity ratio:</span>
+<span class="tok-comment">#   "Similarity (MWU p > 0.05):  5/12 (42%)"  <- the headline conclusion.</span>
+<span class="tok-comment"># A simulator "matches" a domain as its ratio approaches the ≈95% real-vs-real floor.</span></pre>
         </div>
       </div>
+
+      <div class="reveal">
+        <div class="text-[12px] uppercase tracking-widest text-mute mb-2">5 · Run the calibration loop (optional)</div>
+        <div class="code-block">
+          <div class="code-bar">
+            <span class="font-mono text-[11px] text-mute">calibration</span>
+            <button class="copy-btn" data-copy='python -m calibration \
+    --real-train-csv mirobench/data/credit_cards/reference_scores/thread_scores_train.csv \
+    --real-val-csv   mirobench/data/credit_cards/reference_scores/thread_scores_val.csv \
+    --real-test-csv  mirobench/data/credit_cards/reference_scores/thread_scores_test.csv \
+    --few-shot-dir   mirobench/data/credit_cards/real_threads \
+    --products-json  mirobench/data/credit_cards/products/product_descriptions.json \
+    --output-dir     calibration_output/ \
+    --calibration-model gpt-4o-mini \
+    --iterations 12 --candidates 5 --device cpu'>copy</button>
+          </div>
+<pre><span class="tok-prompt">$ </span><span class="tok-cmd">python</span> <span class="tok-flag">-m</span> calibration \
+    <span class="tok-flag">--real-train-csv</span> mirobench/data/credit_cards/reference_scores/thread_scores_train.csv \
+    <span class="tok-flag">--real-val-csv  </span> mirobench/data/credit_cards/reference_scores/thread_scores_val.csv \
+    <span class="tok-flag">--real-test-csv </span> mirobench/data/credit_cards/reference_scores/thread_scores_test.csv \
+    <span class="tok-flag">--few-shot-dir  </span> mirobench/data/credit_cards/real_threads \
+    <span class="tok-flag">--products-json </span> mirobench/data/credit_cards/products/product_descriptions.json \
+    <span class="tok-flag">--output-dir    </span> calibration_output/ \
+    <span class="tok-flag">--calibration-model</span> <span class="tok-str">gpt-4o-mini</span> \
+    <span class="tok-flag">--iterations</span> 12 <span class="tok-flag">--candidates</span> 5 <span class="tok-flag">--device</span> cpu
+<span class="tok-comment"># → calibration_output/{before_calibration/, iterations/, best_overlay.json, after_calibration/}</span></pre>
+        </div>
+      </div>
+
     </div>
+
+    <p class="reveal mt-6 text-[12.5px] text-mute leading-relaxed">
+      Full flag reference and per-step output schema in the
+      <a class="ulink" href="https://github.com/yyu6/MiroBench#readme" target="_blank">README</a>.
+      Calibration requires an <span class="mono-chip">OPENAI_API_KEY</span> and an
+      <a class="ulink" href="https://github.com/camel-ai/oasis" target="_blank">OASIS</a> install for the candidate simulations.
+    </p>
 
   </div>
 </section>
