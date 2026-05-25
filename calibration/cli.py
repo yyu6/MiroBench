@@ -22,10 +22,10 @@ def _force_vanilla_backbone(
 
 
 def main() -> None:
-    # Load .env from repo root or third_party/MiroFish/.env (where keys live)
+    # Load .env from the repo root so LLM_API_KEY / OPENAI_API_KEY etc. are
+    # available to the subprocess `mirobench generate` calls.
     repo_root = Path(__file__).resolve().parent.parent
     load_dotenv(repo_root / ".env")
-    load_dotenv(repo_root / "third_party" / "MiroFish" / ".env")
     parser = argparse.ArgumentParser(
         description="Iterative LLM-driven calibration for Reddit discussion simulation."
     )

@@ -51,8 +51,13 @@ MiroBench evaluates generated threads across 9 scorer families:
 ```bash
 git clone https://github.com/yyu6/MiroBench.git
 cd MiroBench
-pip install -e .
+pip install -e .                  # core (scoring + comparison)
+pip install -e ".[generation]"    # optional: thread generation via OASIS
 ```
+
+The `generation` extra adds [`camel-oasis`](https://github.com/camel-ai/oasis)
+and [`camel-ai`](https://github.com/camel-ai/camel) (the multi-agent
+simulation engine used to produce the leaderboard).
 
 ### Dependencies
 
@@ -75,7 +80,33 @@ pip install detoxify
 
 ### 1. Generate Discussion Threads
 
-Generate threads using your method of choice. Each thread should be saved as a `discussion.json` file in its own directory:
+You have two ways to produce the `discussion.json` files MiroBench scores:
+
+**Option A — Use MiroBench's built-in generation pipeline (recommended).**
+Install the optional `generation` extra (pulls in `camel-oasis` and
+`camel-ai`), copy `.env.example` to `.env` and set `LLM_API_KEY`, then:
+
+```bash
+pip install -e ".[generation]"
+cp .env.example .env  # then fill in LLM_API_KEY
+mirobench generate path/to/products.json \
+    --agents 30 --rounds 30 --seed-posts 3 \
+    --output-dir artifacts/simulations/ \
+    --discussion-backbone vanilla_oasis
+```
+
+This runs the same six-stage pipeline used to produce the leaderboard:
+*(load → analyse → personas → build OASIS config → run OASIS → export
+discussion.json)*. Use `--discussion-backbone geo_patched` to enable
+MiroBench's runtime patches (visible-comment snapshot, reply-first guards,
+anti-template logic). Add `--overlay best_overlay.json` to apply a
+calibration overlay produced by `python -m calibration` (see §
+[Calibration System](#calibration-system) below).
+
+**Option B — Use any other simulator** (e.g. directly with [OASIS's
+reddit_simulation cookbook](https://docs.oasis.camel-ai.org/cookbooks/reddit_simulation),
+your own generator, etc.). Save each thread as a `discussion.json` file in
+its own directory:
 
 ```
 my_generated_threads/
@@ -239,11 +270,12 @@ remaining eight scorers still run.
 ## Available Commands
 
 ```bash
+mirobench generate <products.json>           # Generate Reddit threads via OASIS
 mirobench score <dir>                        # Score generated threads
 mirobench compare <csv>                      # Compare against real references
 mirobench domains                            # List available domains with thread counts
 mirobench --version                          # Show version
-python -m calibration [args]       # Run calibration pipeline
+python -m calibration [args]                 # Run iterative calibration pipeline
 ```
 
 ## Data Structure

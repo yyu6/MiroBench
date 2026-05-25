@@ -1,7 +1,7 @@
 """
 Runner for candidate simulations in the calibration module.
 
-Provides ``run_candidates()``, which launches one ``run_discussion.py``
+Provides ``run_candidates()``, which launches one ``mirobench generate``
 subprocess per candidate overlay, optionally in parallel via
 ``ProcessPoolExecutor``, then scores each sim dir with the full metric suite.
 """
@@ -20,7 +20,7 @@ from .overlay import save_overlay
 # Internal helpers
 # ---------------------------------------------------------------------------
 
-# Fields from reference_run_config that map 1-to-1 to run_discussion.py flags.
+# Fields from reference_run_config that map 1-to-1 to `mirobench generate` flags.
 _FIELD_TO_FLAG: dict[str, str] = {
     "agents": "--agents",
     "hours": "--hours",
@@ -44,11 +44,15 @@ def _build_cmd(
     python: str,
     repo_root: Path,
 ) -> list[str]:
-    """Build the subprocess command for one candidate."""
-    script = repo_root / "run_discussion.py"
+    """Build the subprocess command for one candidate.
+
+    ``repo_root`` is kept in the signature for backward compatibility with
+    callers but is no longer used — we invoke ``mirobench generate`` via the
+    installed console script's module path, which works regardless of cwd.
+    """
     output_dir = candidate_dir / "sim_output"
 
-    cmd: list[str] = [python, str(script)]
+    cmd: list[str] = [python, "-m", "mirobench.cli", "generate"]
 
     # Positional: input_file
     input_file = reference_run_config.get("input_file", "")
@@ -74,7 +78,7 @@ def _detect_sim_dir(output_dir: Path) -> Path | None:
     subdirs = [p for p in output_dir.iterdir() if p.is_dir()]
     if not subdirs:
         return None
-    # Return the most-recently modified one (run_discussion creates a
+    # Return the most-recently modified one (mirobench generate creates a
     # timestamped directory).
     return max(subdirs, key=lambda p: p.stat().st_mtime)
 
@@ -382,7 +386,7 @@ def run_candidates(
         Root directory for this calibration iteration.  Candidate subdirs are
         created under ``iter_dir/candidates/candidate_N/``.
     reference_run_config:
-        Dict with baseline run parameters forwarded to ``run_discussion.py``
+        Dict with baseline run parameters forwarded to ``mirobench generate``
         (keys: ``input_file``, ``agents``, ``hours``, ``rounds``,
         ``seed_posts``, ``seed``, ``hint``, ``few_shot_source``,
         ``few_shot_count``, ``few_shot_comments``).

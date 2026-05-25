@@ -30,9 +30,17 @@ dependencies = [
     "nltk>=3.8",
     "scikit-learn>=1.2",
     "python-dotenv>=1.0",
+    "openai>=1.0",
+    "httpx>=0.24",
 ]
 
 [project.optional-dependencies]
+# Pulls in the OASIS Reddit simulation engine for `mirobench generate`.
+# Pinned to the versions used to produce the leaderboard.
+generation = [
+    "camel-oasis==0.2.5",
+    "camel-ai==0.2.78",
+]
 dev = ["pytest", "ruff"]
 
 [project.scripts]

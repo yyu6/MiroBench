@@ -255,6 +255,23 @@ def cmd_domains(args: argparse.Namespace) -> None:
             print(f"  {name}: (reference data not found)")
 
 
+def cmd_generate(args: argparse.Namespace) -> None:
+    """Generate one Reddit discussion thread from a product JSON file."""
+
+    # Auto-load .env from repo root so users don't need to export LLM_API_KEY by hand.
+    try:
+        from dotenv import load_dotenv
+        load_dotenv()
+    except ImportError:
+        pass
+
+    # Lazy import — the generation package pulls in camel-oasis / camel-ai,
+    # which we don't want to require for users who only need score/compare.
+    from mirobench.generation.generate import generate_one_run
+
+    generate_one_run(args)
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(
         prog="mirobench",
@@ -262,6 +279,49 @@ def main() -> None:
     )
     parser.add_argument("--version", action="version", version=f"mirobench {__version__}")
     subparsers = parser.add_subparsers(dest="command", help="Available commands")
+
+    # generate
+    p_generate = subparsers.add_parser(
+        "generate",
+        help="Generate one Reddit discussion thread from a product JSON file",
+    )
+    p_generate.add_argument("products_json", help="Path to product JSON file")
+    p_generate.add_argument("--agents", type=int, default=30,
+                             help="Number of agents (default: 30)")
+    p_generate.add_argument("--hint", type=str, default=None,
+                             help="Optional natural-language hint for persona/topic generation")
+    p_generate.add_argument("--hours", type=int, default=48,
+                             help="Simulated hours (default: 48)")
+    p_generate.add_argument("--rounds", type=int, default=30,
+                             help="Max OASIS simulation rounds (default: 30)")
+    p_generate.add_argument("--seed-posts", type=int, default=3,
+                             help="Initial seed threads (default: 3)")
+    p_generate.add_argument("--few-shot-source", type=str, default=None,
+                             help="Optional real discussion manifest/bundle for few-shot examples")
+    p_generate.add_argument("--few-shot-count", type=int, default=0,
+                             help="Number of few-shot discussion examples (default: 0)")
+    p_generate.add_argument("--few-shot-comments", type=int, default=2,
+                             help="Visible comments per few-shot example (default: 2)")
+    p_generate.add_argument("--few-shot-thread-ids", type=str, default=None,
+                             help="JSON file restricting few-shot to specific thread IDs")
+    p_generate.add_argument("--seed", type=int, default=42,
+                             help="Random seed (default: 42)")
+    p_generate.add_argument(
+        "--discussion-backbone",
+        type=str,
+        default="vanilla_oasis",
+        choices=["vanilla_oasis", "geo_patched"],
+        help=(
+            "vanilla_oasis (default): upstream OASIS baseline. "
+            "geo_patched: applies MiroBench's runtime patches "
+            "(visible-comment snapshot, reply-first guards, anti-template logic)."
+        ),
+    )
+    p_generate.add_argument("--output-dir", type=str, default="artifacts/simulations",
+                             help="Output directory (default: ./artifacts/simulations)")
+    p_generate.add_argument("--overlay", type=str, default=None,
+                             help="Optional calibration overlay JSON (from `python -m calibration`)")
+    p_generate.set_defaults(func=cmd_generate)
 
     # score
     p_score = subparsers.add_parser("score", help="Score generated discussion threads")
