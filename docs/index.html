@@ -3,13 +3,56 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>MiroBench — Benchmarking Realism in Agentic Simulation of Real-world Discussions</title>
-<meta name="description" content="A benchmark for Reddit discussion simulation built from 4,292 real threads across five product domains. Measures repetition and semantic uniformity, narrative content, toxicity and aggression, and structural complexity.">
+<title>MiroBench — Reddit Discussion Simulation Benchmark</title>
+<meta name="description" content="A benchmark for evaluating LLM-agent Reddit discussion simulators against 4,292 real threads across 5 product domains.">
+<meta name="author" content="Yaoning Yu, Ye Yu, Haojing Luo, Haohan Wang">
+<meta name="keywords" content="MiroBench, Reddit discussion simulation, LLM agents, OASIS, benchmark, agentic simulation, social simulation, evaluation">
 
-<meta property="og:title" content="MiroBench">
-<meta property="og:description" content="Benchmarking realism in agentic simulation of real-world discussions.">
-<meta property="og:type" content="website">
+<link rel="canonical" href="https://yyu6.github.io/MiroBench/">
+
+<meta property="og:title" content="MiroBench — Reddit Discussion Simulation Benchmark">
+<meta property="og:description" content="Evaluating LLM-agent Reddit discussion simulators against 4,292 real threads across 5 product domains.">
+<meta property="og:type" content="article">
 <meta property="og:url" content="https://yyu6.github.io/MiroBench/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="MiroBench — Reddit Discussion Simulation Benchmark">
+<meta name="twitter:description" content="Evaluating LLM-agent Reddit discussion simulators against 4,292 real threads across 5 product domains.">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ScholarlyArticle",
+  "headline": "MiroBench: Benchmarking Realism in Agentic Simulation of Real-world Discussions",
+  "name": "MiroBench: Benchmarking Realism in Agentic Simulation of Real-world Discussions",
+  "abstract": "MiroBench is a benchmark for Reddit discussion simulation, built from 4,292 real Reddit threads across five product domains. It evaluates whether sets of generated discussions match real human conversations across content patterns and reply-tree structure using Mann-Whitney U, Kolmogorov-Smirnov, Cliff's delta, and Wasserstein distance.",
+  "author": [
+    {"@type": "Person", "name": "Yaoning Yu", "affiliation": {"@type": "Organization", "name": "University of Illinois Urbana-Champaign"}},
+    {"@type": "Person", "name": "Ye Yu", "affiliation": {"@type": "Organization", "name": "University of Illinois Urbana-Champaign"}},
+    {"@type": "Person", "name": "Haojing Luo", "affiliation": {"@type": "Organization", "name": "Starc.Institute"}},
+    {"@type": "Person", "name": "Haohan Wang", "affiliation": {"@type": "Organization", "name": "University of Illinois Urbana-Champaign"}}
+  ],
+  "datePublished": "2026",
+  "inLanguage": "en",
+  "license": "https://opensource.org/licenses/MIT",
+  "url": "https://yyu6.github.io/MiroBench/",
+  "sameAs": [
+    "https://github.com/yyu6/MiroBench",
+    "https://yyu6.github.io/yaoningyu/files/MiroBench_preprint.pdf"
+  ],
+  "keywords": "Reddit discussion simulation, LLM agents, OASIS, benchmark, agentic simulation, social simulation",
+  "publisher": {
+    "@type": "Organization",
+    "name": "MiroBench Authors"
+  },
+  "isPartOf": {
+    "@type": "Dataset",
+    "name": "MiroBench Reddit Discussion Dataset",
+    "description": "4,292 real Reddit threads across 5 product domains (credit cards, cameras, cell phones, headphones, laptops) with matched train/validation/test splits and 16 scoring metrics in 5 families.",
+    "url": "https://github.com/yyu6/MiroBench/tree/main/mirobench/data",
+    "license": "https://opensource.org/licenses/MIT"
+  }
+}
+</script>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -248,20 +291,19 @@ tailwind.config = {
           MiroBench: Benchmarking Realism in Agentic Simulation of Real-world Discussions
         </h1>
 
-        <div class="mt-6 text-[14.5px] text-mute leading-relaxed">
-          <span class="text-text">Yaoning Yu</span><sup>1</sup>
+        <address class="mt-6 text-[14.5px] text-mute leading-relaxed not-italic" itemscope itemtype="https://schema.org/Person">
+          <span class="text-text" itemprop="author">Yaoning Yu</span><sup>1</sup>
           &nbsp;·&nbsp;
-          <span class="text-text">Ye Yu</span><sup>1</sup>
+          <span class="text-text" itemprop="author">Ye Yu</span><sup>1</sup>
           &nbsp;·&nbsp;
-          <span class="text-text">Haojing Luo</span><sup>2</sup>
+          <span class="text-text" itemprop="author">Haojing Luo</span><sup>2</sup>
           &nbsp;·&nbsp;
-          <span class="text-text">Haohan Wang</span><sup>1 *</sup>
+          <span class="text-text" itemprop="author">Haohan Wang</span><sup>1 *</sup>
           <div class="mt-2 text-[13px] text-mute2">
             <sup>1</sup>University of Illinois Urbana–Champaign &nbsp;
             <sup>2</sup>Starc.Institute &nbsp;
             <sup>*</sup>Corresponding author
-          </div>
-        </div>
+          </div></address>
 
         <div class="mt-6 flex flex-wrap gap-3">
           <a href="https://yyu6.github.io/yaoningyu/files/MiroBench_preprint.pdf" target="_blank" rel="noopener"
@@ -620,7 +662,9 @@ tailwind.config = {
       <p class="mt-2 text-[15px] text-text leading-[1.7]">
         Current simulators remain <em class="not-italic font-medium">distributionally mismatched</em> to
         real Reddit threads even when individual comments look fluent. Prompt-based improvement only
-        partly closes the gap. The leaderboard below makes that gap concrete, family by family.
+        partly closes the gap. The leaderboard below — and the
+        <a class="ulink" href="leaderboard.html">full per-domain breakdown</a> — make that gap
+        concrete, family by family.
       </p>
     </div>
   </div>
@@ -898,7 +942,10 @@ tailwind.config = {
       <p class="mt-3 text-[15px] text-mute leading-relaxed">
         These figures show the noise floor of the benchmark itself — i.e., the gap you observe when
         comparing one half of <em class="not-italic font-medium">real</em> Reddit data to the other half.
-        Any model's score should be read <em class="not-italic font-medium">against</em> this floor.
+        Any model's score on the
+        <a class="ulink" href="#leaderboard">leaderboard</a>
+        (or the <a class="ulink" href="leaderboard.html">full per-domain results</a>)
+        should be read <em class="not-italic font-medium">against</em> this floor.
         These figures are not part of the leaderboard; they characterise the measurement.
       </p>
     </div>
