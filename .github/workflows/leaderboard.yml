@@ -1,0 +1,47 @@
+name: leaderboard
+
+# Validates leaderboard submissions and guarantees the generated files
+# (docs/leaderboard.json + docs/leaderboard.html) are in sync with experiments/.
+# Pure numpy/scipy comparison — no GPU, no model checkpoints needed.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "experiments/**"
+      - "mirobench/leaderboard/**"
+      - "mirobench/compare.py"
+      - "docs/leaderboard.*"
+      - ".github/workflows/leaderboard.yml"
+  pull_request:
+    paths:
+      - "experiments/**"
+      - "mirobench/leaderboard/**"
+      - "mirobench/compare.py"
+      - "docs/leaderboard.*"
+  workflow_dispatch:
+
+jobs:
+  build-and-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install (numpy/scipy only — no torch needed for the board)
+        run: pip install numpy scipy pandas
+
+      - name: Regenerate the leaderboard
+        run: PYTHONPATH=. python -m mirobench.leaderboard update
+
+      - name: Fail if generated files are stale
+        run: |
+          PYTHONPATH=. python -m mirobench.leaderboard check || {
+            echo "::error::Leaderboard files are out of date."
+            echo "Run 'python -m mirobench.leaderboard update' locally and commit docs/leaderboard.{json,html}."
+            git --no-pager diff -- docs/leaderboard.json docs/leaderboard.html | head -200
+            exit 1
+          }

@@ -13,3 +13,9 @@ venv/
 .DS_Store
 *.log
 results/
+
+# Leaderboard submissions: keep the scored CSVs + meta, never the bulky raw
+# generated threads or per-scorer intermediates.
+experiments/**/threads/
+experiments/**/*_results.json
+output/

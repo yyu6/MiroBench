@@ -212,6 +212,29 @@ one whose similarity ratios approach the **real-vs-real noise floor of
 metric distributions are still statistically distinguishable from real
 Reddit; the secondary |δ| / W₁ numbers then quantify how distinguishable.
 
+### Submit to the leaderboard
+
+The public [leaderboard](https://yyu6.github.io/MiroBench/leaderboard.html) is
+**generated from the `experiments/` folder** — no HTML editing. Add one folder
+of scored CSVs and open a PR:
+
+```
+experiments/<model-slug>/
+├── meta.json                       # display_name, engine, submitter
+└── <domain>/thread_scores.csv      # mirobench score output (≥50 threads)
+```
+
+Then regenerate and commit the build artifacts:
+
+```bash
+python -m mirobench.leaderboard update   # experiments/ → leaderboard.json → leaderboard.html
+python -m mirobench.leaderboard check     # CI runs this; non-zero if stale
+```
+
+CI recomputes every cell from your `thread_scores.csv` (pure numpy/scipy, no
+GPU) and refreshes the site on merge. Full spec:
+[`experiments/README.md`](experiments/README.md).
+
 ## Thread Format
 
 Each generated thread must be a JSON file named `discussion.json` with this structure:
@@ -276,6 +299,8 @@ mirobench compare <csv>                      # Compare against real references
 mirobench domains                            # List available domains with thread counts
 mirobench --version                          # Show version
 python -m calibration [args]                 # Run iterative calibration pipeline
+python -m mirobench.leaderboard update       # Rebuild leaderboard from experiments/
+python -m mirobench.leaderboard check        # CI guard: fail if generated files are stale
 ```
 
 ## Data Structure

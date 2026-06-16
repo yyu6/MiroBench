@@ -1,0 +1,12 @@
+{
+  "label": "Real reference",
+  "sublabel": "held-out test · 200 repeated samples",
+  "note": "Real-vs-real noise floor. Per-family mean W1 and mean |Cliff's delta| obtained by resampling real Reddit threads against themselves. Family ratios (xN) on the board are entry_value / baseline_value.",
+  "families": {
+    "Diversity": {"w1": 0.016, "cliffs": 0.060},
+    "Tone":      {"w1": 0.034, "cliffs": 0.071},
+    "Structure": {"w1": 0.165, "cliffs": 0.100},
+    "Content":   {"w1": 0.074, "cliffs": 0.098},
+    "Toxicity":  {"w1": 0.004, "cliffs": 0.043}
+  }
+}

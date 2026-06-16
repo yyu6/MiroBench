@@ -50,4 +50,4 @@ mirobench = "mirobench.cli:main"
 include = ["mirobench*", "calibration*"]
 
 [tool.setuptools.package-data]
-mirobench = ["data/**/*.csv", "data/**/*.json"]
+mirobench = ["data/**/*.csv", "data/**/*.json", "leaderboard/*.json"]

@@ -1,0 +1,69 @@
+{
+  "_comment": "Aggregated paper results currently shown on the leaderboard. Raw per-domain thread_scores.csv for these runs are not in the repo, so they are seeded here at the family-mean + per-domain-pass level. If a raw CSV is later added under experiments/<model>/<domain>/, build.py recomputes and overrides the matching seed entry. Values mirror docs/leaderboard.html as of 2026-06.",
+  "entries": [
+    {
+      "model": "DeepSeek-V4-Flash",
+      "engine": "OASIS",
+      "tier": "paper",
+      "n_threads": 200,
+      "domains": ["credit_cards", "cameras", "cell_phones", "headphones", "laptops"],
+      "families": {
+        "Diversity": {"w1": 0.162, "cliffs": 0.669},
+        "Tone":      {"w1": 0.187, "cliffs": 0.472},
+        "Structure": {"w1": 1.028, "cliffs": 0.768},
+        "Content":   {"w1": 0.192, "cliffs": 0.318},
+        "Toxicity":  {"w1": 0.006, "cliffs": 0.132}
+      },
+      "domain_pass": {"credit_cards": 5, "cameras": 6, "cell_phones": 2, "headphones": 4, "laptops": 6}
+    },
+    {
+      "model": "DeepSeek-Chat",
+      "engine": "OASIS",
+      "tier": "paper",
+      "n_threads": 200,
+      "domains": ["credit_cards", "cameras", "cell_phones", "headphones", "laptops"],
+      "families": {
+        "Diversity": {"w1": 0.165, "cliffs": 0.647},
+        "Tone":      {"w1": 0.177, "cliffs": 0.447},
+        "Structure": {"w1": 1.044, "cliffs": 0.778},
+        "Content":   {"w1": 0.269, "cliffs": 0.496},
+        "Toxicity":  {"w1": 0.006, "cliffs": 0.164}
+      },
+      "domain_pass": {"credit_cards": 6, "cameras": 0, "cell_phones": 0, "headphones": 3, "laptops": 3}
+    },
+    {
+      "model": "GPT-5-mini",
+      "engine": "OASIS",
+      "tier": "paper",
+      "n_threads": 200,
+      "domains": ["credit_cards", "cameras", "cell_phones", "headphones", "laptops"],
+      "families": {
+        "Diversity": {"w1": 0.189, "cliffs": 0.680},
+        "Tone":      {"w1": 0.276, "cliffs": 0.630},
+        "Structure": {"w1": 1.051, "cliffs": 0.777},
+        "Content":   {"w1": 0.492, "cliffs": 0.760},
+        "Toxicity":  {"w1": 0.008, "cliffs": 0.228}
+      },
+      "domain_pass": {"credit_cards": 3, "cameras": 0, "cell_phones": 1, "headphones": 0, "laptops": 3}
+    },
+    {
+      "model": "GPT-4o-mini",
+      "engine": "OASIS",
+      "tier": "paper",
+      "n_threads": 200,
+      "domains": ["credit_cards", "cameras", "cell_phones", "headphones", "laptops"],
+      "families": {
+        "Diversity": {"w1": 0.261, "cliffs": 0.830},
+        "Tone":      {"w1": 0.283, "cliffs": 0.611},
+        "Structure": {"w1": 1.093, "cliffs": 0.811},
+        "Content":   {"w1": 0.194, "cliffs": 0.509},
+        "Toxicity":  {"w1": 0.010, "cliffs": 0.703}
+      },
+      "domain_pass": {"credit_cards": 1, "cameras": 1, "cell_phones": 0, "headphones": 0, "laptops": 1}
+    }
+  ],
+  "pending": [
+    {"model": "Gemini 2.5 Pro", "engine": "OASIS"},
+    {"model": "DeepSeek-V3.2", "engine": "OASIS"}
+  ]
+}
