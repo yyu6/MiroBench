@@ -16,28 +16,40 @@ experiments/
         └── thread_scores.csv     # required — per-thread scores (mirobench score output)
 ```
 
-`<domain>` must be one of: `credit_cards`, `cameras`, `cell_phones`,
-`headphones`, `laptops`. You may submit a single domain or all five.
+`<model-slug>` is any kebab-case identifier you choose for your run; `<domain>`
+must be one of: `credit_cards`, `cameras`, `cell_phones`, `headphones`,
+`laptops`. You may submit a single domain or all five. Nothing here is tied to a
+particular model or engine — the names below are just placeholders.
+
+A filled-in example (substitute your own names):
+
+```
+experiments/
+└── my-simulator-v1/
+    ├── meta.json
+    └── cameras/
+        └── thread_scores.csv
+```
 
 ### `meta.json`
 
 ```json
 {
-  "display_name": "SenseNova 6.7-flash-lite",
-  "engine": "OASIS",
-  "submitter": "your-github-handle",
+  "display_name": "<your model / system name>",
+  "engine": "<simulation engine or framework you used>",
+  "submitter": "<your-github-handle>",
   "tier": "community",
-  "date": "2026-05-23",
-  "link": "https://github.com/yyu6/MiroBench/pull/1"
+  "date": "<YYYY-MM-DD, optional>",
+  "link": "<URL to a writeup or repo, optional>"
 }
 ```
 
 | field | required | meaning |
 |-------|----------|---------|
-| `display_name` | ✅ | model name shown on the board |
-| `engine` | ✅ | simulation engine (e.g. `OASIS`) |
+| `display_name` | ✅ | any label for your model/system, shown verbatim on the board |
+| `engine` | ✅ | whatever produced the threads — `OASIS`, your own agent framework, a single LLM, etc. (free-form) |
 | `submitter` | ✅ | your GitHub handle |
-| `tier` | – | `community` (default) or `paper` |
+| `tier` | – | leave as `community` (the default); `paper` is reserved for the maintainers' own published rows |
 | `date`, `link` | – | optional provenance |
 
 ## What goes in `thread_scores.csv`
