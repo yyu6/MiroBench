@@ -237,6 +237,45 @@
         "headphones": 0,
         "laptops": 1
       }
+    },
+    {
+      "model": "SenseNova 6.7-flash-lite",
+      "engine": "SenseNova API",
+      "tier": "community",
+      "submitter": "GioDio1002",
+      "link": "https://github.com/GioDio1002/MiroBench/tree/feature/experiment-data",
+      "date": "2026-05-23",
+      "domains": [
+        "credit_cards"
+      ],
+      "domain_pass": {
+        "credit_cards": 2
+      },
+      "domain_n": {
+        "credit_cards": 53
+      },
+      "families": {
+        "Diversity": {
+          "w1": 0.0348993866354333,
+          "cliffs": 0.41449626201495193
+        },
+        "Tone": {
+          "w1": 0.1283295796896696,
+          "cliffs": 0.32848937937581585
+        },
+        "Structure": {
+          "w1": 1.0292943557766143,
+          "cliffs": 0.7971852379257149
+        },
+        "Content": {
+          "w1": 0.2159107350750515,
+          "cliffs": 0.34553221787112853
+        },
+        "Toxicity": {
+          "w1": 0.0067366428455187715,
+          "cliffs": 0.44987184051263795
+        }
+      }
     }
   ],
   "pending": [
