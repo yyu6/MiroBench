@@ -16,10 +16,15 @@
 | Failed (JSON parse) | 17 (24%) |
 | Runtime | ~90 min |
 
-## Core Metrics (15 metrics, credit_cards)
+## Core Metrics (16 metrics, credit_cards)
+
+`hard_disagree_rate` is unavailable because this run did not include the
+stance/disagreement checkpoint. Per leaderboard rules, it counts as a failed
+metric while the denominator remains 16.
 
 | Metric | Real | SenseNova | Δ (Cliff's) |
 |--------|------|-----------|-------------|
+| hard_disagree_rate | — | — | — |
 | avg_depth | 1.944 | 1.000 | +0.826 |
 | structural_virality | 1.695 | 0.000 | +0.826 |
 | length_cv | 0.737 | 0.299 | +0.740 |
@@ -40,7 +45,7 @@
 
 | Model | Matched Metrics | Rate |
 |-------|-----------------|------|
-| SenseNova 6.7-flash-lite | impolite_rate (p=0.061), semantic_mean_cosine (p=0.255) | 2/15 (13%) |
+| SenseNova 6.7-flash-lite | impolite_rate (p=0.061), semantic_mean_cosine (p=0.255) | 2/16 (12.5%) |
 
 ## Statistical Summary
 
@@ -48,7 +53,7 @@
 |---------|-----------|
 | Avg Wasserstein distance | 0.2691 |
 | Avg MWU p-value | 0.012 |
-| Distributional match rate | 13% |
+| Distributional match rate | 12.5% |
 
 ## Key Findings
 
@@ -62,5 +67,4 @@
 
 | File | Description |
 |------|-------------|
-| `thread_scores.csv` | 53 threads × 57 metrics |
-| `mirobench_comparison.csv` | 15 core metrics statistical comparison |
+| `credit_cards/thread_scores.csv` | 53 usable threads with per-thread scores |
