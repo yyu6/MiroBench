@@ -24,10 +24,10 @@ Options mirror the calibration runner's reference_run_config:
 from __future__ import annotations
 
 import argparse
+import logging
 import json
 import os
 import random
-import sys
 import time
 import uuid
 from pathlib import Path
@@ -36,14 +36,73 @@ from typing import Any
 from openai import OpenAI
 
 
+SERVICE = "mirobench-discussion-generator"
+
+
+class JsonFormatter(logging.Formatter):
+    """Emit structured JSON logs with stable field names."""
+
+    def format(self, record: logging.LogRecord) -> str:
+        payload = {
+            "timestamp": self.formatTime(record, "%Y-%m-%dT%H:%M:%S%z"),
+            "level": record.levelname,
+            "message": record.getMessage(),
+            "service": SERVICE,
+            "env": os.environ.get("ENV", "local"),
+            "trace_id": getattr(record, "trace_id", ""),
+            "request_id": getattr(record, "request_id", ""),
+            "user_id": getattr(record, "user_id", ""),
+            "status_code": getattr(record, "status_code", ""),
+            "duration_ms": getattr(record, "duration_ms", ""),
+        }
+        return json.dumps(payload, ensure_ascii=False)
+
+
+def _configure_logging() -> logging.Logger:
+    logger = logging.getLogger(SERVICE)
+    if not logger.handlers:
+        handler = logging.StreamHandler()
+        handler.setFormatter(JsonFormatter())
+        logger.addHandler(handler)
+    logger.setLevel(os.environ.get("LOG_LEVEL", "INFO").upper())
+    logger.propagate = False
+    return logger
+
+
+LOGGER = _configure_logging()
+
+
+def _log_event(
+    level: int,
+    message: str,
+    *,
+    trace_id: str = "",
+    request_id: str = "",
+    user_id: str = "",
+    status_code: str | int = "",
+    duration_ms: str | int | float = "",
+) -> None:
+    LOGGER.log(
+        level,
+        message,
+        extra={
+            "trace_id": trace_id,
+            "request_id": request_id,
+            "user_id": user_id,
+            "status_code": str(status_code),
+            "duration_ms": str(duration_ms),
+        },
+    )
+
+
 # ---------------------------------------------------------------------------
 # SenseNova API client
 # ---------------------------------------------------------------------------
 def _get_client() -> OpenAI:
-    api_key = os.environ.get("LLM_API_KEY", "")
+    api_key = os.environ.get("SENSENOVA_API_KEY") or os.environ.get("LLM_API_KEY", "")
     base_url = os.environ.get("LLM_BASE_URL", "https://token.sensenova.cn/v1")
     if not api_key:
-        raise RuntimeError("LLM_API_KEY not set. Configure .env or export it.")
+        raise RuntimeError("SENSENOVA_API_KEY not set. Configure .env or export it.")
     return OpenAI(api_key=api_key, base_url=base_url)
 
 
@@ -56,6 +115,7 @@ def _call_mimo(
 ) -> str:
     """Single chat completion call to MiMo."""
     for attempt in range(3):
+        started_at = time.monotonic()
         try:
             completion = client.chat.completions.create(
                 model=model,
@@ -64,9 +124,24 @@ def _call_mimo(
                 max_tokens=max_tokens,
             )
             msg = completion.choices[0].message
-            text = msg.content or getattr(msg, 'reasoning', None) or getattr(msg, 'reasoning_content', None) or ""
+            text = msg.content or getattr(msg, "reasoning", None) or getattr(msg, "reasoning_content", None) or ""
+            _log_event(
+                logging.INFO,
+                "SenseNova API call succeeded",
+                request_id=f"{model}:{attempt + 1}",
+                status_code=200,
+                duration_ms=round((time.monotonic() - started_at) * 1000, 2),
+            )
             return text
         except Exception as e:
+            duration_ms = round((time.monotonic() - started_at) * 1000, 2)
+            _log_event(
+                logging.WARNING if attempt < 2 else logging.ERROR,
+                "SenseNova API call failed",
+                request_id=f"{model}:{attempt + 1}",
+                status_code="error",
+                duration_ms=duration_ms,
+            )
             if attempt < 2:
                 time.sleep(2 ** attempt)
                 continue
@@ -319,7 +394,15 @@ def main() -> None:
     # Generate multiple threads (one per round, up to --rounds)
     all_threads = []
     for round_num in range(args.rounds):
-        print(f"  Round {round_num + 1}/{args.rounds}...", flush=True)
+        round_started_at = time.monotonic()
+        _log_event(
+            logging.INFO,
+            "generation round started",
+            trace_id=str(args.seed),
+            request_id=f"round-{round_num + 1}",
+            status_code="started",
+            duration_ms=0,
+        )
         seed = args.seed + round_num
         try:
             discussion = generate_discussion(
@@ -346,16 +429,37 @@ def main() -> None:
                 encoding="utf-8",
             )
             all_threads.append(discussion)
-            print(f"    ✓ Saved {thread_dir.name} ({len(discussion.get('posts', []))} posts)")
+            _log_event(
+                logging.INFO,
+                "generation round saved",
+                trace_id=str(args.seed),
+                request_id=thread_dir.name,
+                status_code=200,
+                duration_ms=round((time.monotonic() - round_started_at) * 1000, 2),
+            )
 
             # Rate limit
             time.sleep(1)
 
         except Exception as e:
-            print(f"    ✗ Round {round_num + 1} failed: {e}", file=sys.stderr)
+            _log_event(
+                logging.ERROR,
+                f"generation round failed: {e}",
+                trace_id=str(args.seed),
+                request_id=f"round-{round_num + 1}",
+                status_code="error",
+                duration_ms=round((time.monotonic() - round_started_at) * 1000, 2),
+            )
             continue
 
-    print(f"\nGenerated {len(all_threads)} threads in {output_dir}")
+    _log_event(
+        logging.INFO,
+        "generation completed",
+        trace_id=str(args.seed),
+        request_id=str(output_dir),
+        status_code=200,
+        duration_ms="",
+    )
 
 
 if __name__ == "__main__":
