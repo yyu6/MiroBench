@@ -12,6 +12,9 @@ on:
       - "mirobench/leaderboard/**"
       - "mirobench/compare.py"
       - "docs/leaderboard.*"
+      - "run_discussion_sensenova.py"
+      - "tests/**"
+      - "requirements.txt"
       - ".github/workflows/leaderboard.yml"
   pull_request:
     paths:
@@ -19,9 +22,27 @@ on:
       - "mirobench/leaderboard/**"
       - "mirobench/compare.py"
       - "docs/leaderboard.*"
+      - "run_discussion_sensenova.py"
+      - "tests/**"
+      - "requirements.txt"
   workflow_dispatch:
 
 jobs:
+  tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install lightweight test dependencies
+        run: pip install pytest openai python-dotenv
+
+      - name: Run unit tests
+        run: PYTHONPATH=. pytest tests
+
   build-and-check:
     runs-on: ubuntu-latest
     steps:

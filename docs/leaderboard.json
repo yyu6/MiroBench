@@ -239,6 +239,45 @@
       }
     },
     {
+      "model": "GLM-5.2",
+      "engine": "Single LLM via SenseNova API",
+      "tier": "community",
+      "submitter": "GioDio1002",
+      "link": "",
+      "date": "2026-07-01",
+      "domains": [
+        "credit_cards"
+      ],
+      "domain_pass": {
+        "credit_cards": 1
+      },
+      "domain_n": {
+        "credit_cards": 434
+      },
+      "families": {
+        "Diversity": {
+          "w1": 0.05327028675253251,
+          "cliffs": 0.3414648001623048
+        },
+        "Tone": {
+          "w1": 0.16491924713225242,
+          "cliffs": 0.4740555826823452
+        },
+        "Structure": {
+          "w1": 0.9758539698751184,
+          "cliffs": 0.7258707938440137
+        },
+        "Content": {
+          "w1": 0.2750841554223462,
+          "cliffs": 0.14158638379271365
+        },
+        "Toxicity": {
+          "w1": 0.007013664679499914,
+          "cliffs": 0.25389748717502825
+        }
+      }
+    },
+    {
       "model": "SenseNova 6.7-flash-lite",
       "engine": "SenseNova API",
       "tier": "community",
