@@ -1,0 +1,29 @@
+{
+  "domain_id": "cell_phone_product",
+  "display_name": "cell phones and mobile devices",
+  "community_context": "Reddit smartphone and mobile-device communities",
+  "raw_discussions_dir": "data/raw/discussions/cell_phone_product",
+  "real_scores_csv": "artifacts/baselines/cell_phone_product_gpt5mini/real/thread_scores.csv",
+  "min_comments": 5,
+  "topic_facets": [
+    "device comparison and buying advice",
+    "battery life, charging, and thermals",
+    "camera and video quality",
+    "operating-system and ecosystem tradeoffs",
+    "carrier, bands, eSIM, and connectivity",
+    "software updates and long-term support",
+    "display, size, durability, and repairability",
+    "performance, storage, price, and resale value",
+    "setup help and troubleshooting"
+  ],
+  "technical_terms": [
+    "Android", "iOS", "eSIM", "OLED", "LTPO", "refresh rate", "telephoto",
+    "ultrawide", "battery health", "fast charging", "wireless charging", "5G",
+    "bootloader", "security update", "thermal throttling"
+  ],
+  "protected_entity_terms": [
+    "Apple", "iPhone", "Samsung", "Galaxy", "Google", "Pixel", "OnePlus",
+    "Motorola", "Xiaomi", "Nothing", "Sony", "Asus", "Qualcomm", "Snapdragon"
+  ]
+}
+

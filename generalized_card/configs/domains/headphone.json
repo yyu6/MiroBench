@@ -1,0 +1,28 @@
+{
+  "domain_id": "headphone_product",
+  "display_name": "headphones and personal audio products",
+  "community_context": "Reddit headphone and personal-audio communities",
+  "raw_discussions_dir": "data/raw/discussions/headphone_product",
+  "real_scores_csv": "artifacts/baselines/headphone_product_gpt5mini/real/thread_scores.csv",
+  "min_comments": 5,
+  "topic_facets": [
+    "product comparison and buying advice",
+    "sound signature, tuning, and detail",
+    "comfort, fit, weight, and long-session use",
+    "noise cancellation and transparency mode",
+    "wireless codecs, latency, and connectivity",
+    "microphone and call quality",
+    "battery, durability, repairability, and support",
+    "source, amplifier, DAC, and equalization",
+    "setup help and troubleshooting"
+  ],
+  "technical_terms": [
+    "ANC", "transparency mode", "soundstage", "imaging", "bass", "treble",
+    "midrange", "codec", "LDAC", "aptX", "AAC", "DAC", "amplifier",
+    "impedance", "frequency response", "equalizer", "open back", "closed back"
+  ],
+  "protected_entity_terms": [
+    "Apple", "AirPods", "Sony", "Bose", "Sennheiser", "Audio-Technica", "Audeze",
+    "Focal", "Hifiman", "Beyerdynamic", "AKG", "JBL", "Shure", "Moondrop"
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "domain_id": "camera_product",
+  "display_name": "camera and photography products",
+  "community_context": "Reddit camera and photography communities",
+  "raw_discussions_dir": "data/raw/discussions/camera_product",
+  "real_scores_csv": "artifacts/baselines/camera_product_gpt5mini/real/thread_scores.csv",
+  "min_comments": 5,
+  "topic_facets": [
+    "product comparison and buying advice",
+    "image quality and sensor performance",
+    "autofocus and subject tracking",
+    "lens ecosystem and compatibility",
+    "ergonomics, controls, and portability",
+    "video, stabilization, and workflow",
+    "low-light, sports, wildlife, portrait, and travel use",
+    "price, used value, reliability, and support",
+    "setup help and troubleshooting"
+  ],
+  "technical_terms": [
+    "autofocus", "dynamic range", "full frame", "APS-C", "micro four thirds",
+    "IBIS", "viewfinder", "rolling shutter", "bitrate", "codec", "mount",
+    "prime lens", "zoom lens", "weather sealing", "low light", "RAW"
+  ],
+  "protected_entity_terms": [
+    "Canon", "Sony", "Nikon", "Fujifilm", "Panasonic", "Lumix", "Leica",
+    "Olympus", "OM System", "Pentax", "Sigma", "Tamron", "Hasselblad", "Kodak"
+  ],
+  "persona_expertise_dimensions": [
+    "fam_photography",
+    "ind_consumer_electronics"
+  ]
+}

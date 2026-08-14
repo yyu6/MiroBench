@@ -2,10 +2,18 @@ __pycache__/
 *.pyc
 *.pyo
 *.pyd
+.pytest_cache/
 .venv/
 *.egg-info/
 dist/
 build/
 .env
-outputs/
 *.db
+artifacts/logs/
+
+# Generation artifacts and local caches (large, regenerable)
+artifacts/
+__pycache__/
+.ruff_cache/
+.DS_Store
+.hf_models/

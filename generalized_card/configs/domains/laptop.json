@@ -1,0 +1,29 @@
+{
+  "domain_id": "laptop_product",
+  "display_name": "laptops and portable computers",
+  "community_context": "Reddit laptop and computer-hardware communities",
+  "raw_discussions_dir": "data/raw/discussions/laptop_product",
+  "real_scores_csv": "artifacts/baselines/laptop_product_gpt5mini/real/thread_scores.csv",
+  "min_comments": 5,
+  "topic_facets": [
+    "model comparison and buying advice",
+    "CPU, GPU, memory, and storage performance",
+    "battery life, charging, and portability",
+    "thermals, fan noise, and sustained performance",
+    "display quality and input devices",
+    "gaming, development, creative, school, and office use",
+    "operating-system and software compatibility",
+    "build quality, repairability, warranty, and value",
+    "setup help and troubleshooting"
+  ],
+  "technical_terms": [
+    "CPU", "GPU", "RAM", "SSD", "OLED", "IPS", "refresh rate", "Thunderbolt",
+    "USB-C", "VRAM", "TDP", "thermal throttling", "integrated graphics",
+    "dedicated graphics", "battery cycle", "soldered memory"
+  ],
+  "protected_entity_terms": [
+    "Apple", "MacBook", "Dell", "XPS", "Lenovo", "ThinkPad", "HP", "Asus",
+    "Acer", "Microsoft", "Surface", "Razer", "Framework", "Intel", "AMD", "Nvidia"
+  ]
+}
+

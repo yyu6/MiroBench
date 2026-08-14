@@ -1,0 +1,2809 @@
+from __future__ import annotations
+
+from collections import Counter
+import re
+from typing import Any
+
+from .actor_conditioning import MODE_DOMAIN_DERIVED, actor_for_task, render_actor_state
+from .branch_routing import (
+    parent_slot_schedule,
+    render_branch_requirements,
+    root_branch_schedule,
+)
+from .domain import DomainConfig
+from .domain_claim import claim_for_task, render_domain_claim_rule
+from .domain_profile import render_profile_for_planner
+from .entity_inventory import slot_equipment_options
+from .generation_distribution import (
+    TONE_CLASSES,
+    TONE_DEFINITIONS,
+    render_planner_distribution_target,
+)
+from .length_policy import local_move_scope_guidance, soft_length_guidance
+from .opener_profile import OPENER_INSTRUCTIONS
+from .long_form_planning import expected_development_beats
+from .planner_distribution import render_slot_distribution_schedule
+from .planner_schema import parse_sample_id
+from .persona_bridge import persona_marker_for_task
+from .reply_planning import (
+    REPLY_DELTA_TYPE_DEFINITIONS,
+    REPLY_DELTA_TYPES,
+    is_direct_reply_batch,
+    render_direct_reply_planner_prompt,
+)
+from .semantic_realization import (
+    opening_route_counts,
+    repeated_phrase_counts,
+    semantic_contract_values,
+    semantic_coverage_entries,
+    short_utterance_exclusions,
+    used_sentence_routes,
+)
+from .surface_contract import substantive_surface_slot, surface_only_label
+from .viewpoint_bank import render_reference_viewpoints
+
+
+GENERIC_CLAIM_FAMILIES = (
+    "direct_answer",
+    "product_comparison",
+    "recommendation",
+    "technical_explanation",
+    "troubleshooting",
+    "firsthand_datapoint",
+    "price_value",
+    "compatibility_constraint",
+    "reliability_support",
+    "availability_timing",
+    "clarification_question",
+    "correction_caveat",
+    "joke_reaction",
+    "side_tangent",
+    "community_meta",
+    "miscellaneous",
+)
+
+
+INTERNAL_CONTROL_ID_RE = re.compile(r"(?<![A-Za-z0-9])(?:P\d{2}|S\d+|B\d+)(?![A-Za-z0-9])", re.I)
+
+
+def _tone_class_definitions() -> str:
+    """Render the shared tone register definitions for Planner and Writer."""
+
+    return "\n".join(
+        f"- {label}: {TONE_DEFINITIONS[label]}"
+        for label in TONE_CLASSES
+        if label in TONE_DEFINITIONS
+    )
+
+
+def _own_equipment_block(backend: Any, task: Any) -> str:
+    """Offer this slot its own equipment from the held-out domain inventory.
+
+    Restricting every comment to the seed post's entities made a whole thread
+    circulate the same two or three products, which concentrates 4-gram mass.
+    Real commenters name their own gear instead, so a slot whose plan already
+    licenses first-person experience gets a rotating shortlist drawn from
+    evaluation-excluded threads. It is the speaker's own equipment, never a claim
+    about the seed post or another commenter.
+    """
+
+    if not _first_person_experience_slot(task):
+        return ""
+    profile = getattr(backend, "GENERALIZED_DOMAIN_PROFILE", {}) or {}
+    inventory = profile.get("entity_inventory") or {}
+    if not inventory.get("available"):
+        return ""
+    visible = [
+        str(value)
+        for value in (getattr(task, "concrete_anchors", ()) or ())
+        if str(value).strip()
+    ]
+    options = slot_equipment_options(
+        inventory,
+        slot_index=_safe_slot_index(task),
+        limit=4,
+        excluded=visible,
+    )
+    if not options:
+        return ""
+    rendered = ", ".join(options)
+    return (
+        "\n\nEquipment you may claim as your own, if this turn reports personal "
+        f"experience:\n- {rendered}\n"
+        "Name at most one, as gear you have used yourself. Do not attribute it to "
+        "the post, to another commenter, or to the discussion, and do not invent a "
+        "specification, price, measurement, or test result for it."
+    )
+
+
+def _opener_rule(assigned: str) -> str:
+    """Render the slot's assigned grammatical entry as a per-slot instruction."""
+
+    name = str(assigned or "").strip().lower()
+    instruction = OPENER_INSTRUCTIONS.get(name)
+    if not instruction:
+        return ""
+    return (
+        f"Opening grammar for this turn: {name}. {instruction} "
+        "This is the entry form, not the content; the content is the semantic "
+        "route above."
+    )
+
+
+def _short_output_slot(task: Any) -> bool:
+    """Return whether this slot could plausibly reproduce a short prior line."""
+
+    if str(getattr(task, "length_bucket", "") or "") in {"micro", "short"}:
+        return True
+    try:
+        words = int(getattr(task, "real_word_count", 0) or 0)
+    except (TypeError, ValueError):
+        words = 0
+    return 0 < words <= 20
+
+
+def _first_person_experience_slot(task: Any) -> bool:
+    """Return whether this slot's plan already licenses personal experience."""
+
+    if bool(getattr(task, "allow_first_person_frame", False)):
+        return True
+    if str(getattr(task, "evidence_mode", "") or "") == "firsthand_experience":
+        return True
+    if str(getattr(task, "story_mode", "no_story") or "no_story") != "no_story":
+        return True
+    return str(getattr(task, "payload_type", "") or "") in {
+        "personal_story",
+        "fragment_datapoint",
+    }
+
+
+def _safe_slot_index(task: Any) -> int:
+    try:
+        return int(getattr(task, "local_task_id", 0) or 0)
+    except (TypeError, ValueError):
+        return 0
+
+
+def _reply_delta_type_definitions() -> str:
+    """Render the reply increments so both Planner prompts describe one set."""
+
+    return "\n".join(
+        f"  - {name}: {REPLY_DELTA_TYPE_DEFINITIONS[name]}"
+        for name in REPLY_DELTA_TYPES
+    )
+
+
+def planner_prompt(
+    config: DomainConfig,
+    backend: Any,
+    *,
+    seed_post: Any,
+    target: Any,
+    matched_real_thread: dict[str, Any] | None,
+    matched_real_comments: int,
+    global_memory: dict[str, Any],
+    minimum_branch_count: int = 3,
+) -> str:
+    matched = _render_matched_structure(
+        matched_real_thread,
+        max_comments=matched_real_comments,
+    )
+    facets = "\n".join(f"- {item}" for item in config.topic_facets)
+    profile = getattr(backend, "GENERALIZED_DOMAIN_PROFILE", {})
+    perspectives = render_profile_for_planner(profile)
+    reference_viewpoints = render_reference_viewpoints(
+        profile,
+        seed_title=str(seed_post.title or ""),
+        seed_body=str(seed_post.body or seed_post.content or ""),
+        limit=min(36, max(18, int(target.top_level_comments) * 2)),
+    )
+    recent = backend.render_top_counts(global_memory)
+    distribution_target = render_planner_distribution_target(
+        getattr(backend, "GENERALIZED_ACTIVE_REFERENCE_TEMPLATE", {}),
+        total_comments=int(target.target_comments),
+    )
+    return f"""Plan the semantic axes of one Reddit discussion in {config.community_context}.
+
+The planner produces private controls. It does not write comments.
+
+Objectives:
+- Preserve the matched real thread's comment-count scale, reply-tree shape, local branch behavior, length variation, and mix of social roles.
+- Ground every branch in the seed post or in a parent-local issue.
+- Keep branches meaningfully different without making them unrelated.
+- Use only the supplied matched-real structural and surface labels. The matched comments' text is not provided.
+- Concrete facts must come from the seed post or later visible generated parents.
+- Allow realistic low-information turns, questions, corrections, jokes, acknowledgements, side tangents, and personal datapoints. Do not plan only polished advice.
+
+Domain: {config.display_name}
+Common facets, offered as examples rather than required coverage:
+{facets}
+
+    Frozen domain-neutral decision lenses:
+{perspectives}
+These labels describe how a comment approaches a topic. They are not topic,
+entity, feature, or product labels, and they do not replace the reference-comment
+semantic moves below.
+
+NON-TEST REFERENCE COMMENTS FOR VIEWPOINT ABSTRACTION:
+These comments come only from threads excluded from the evaluation seed pool.
+Use them as the original CARD planner used real comments: abstract reusable
+viewpoint and discourse moves, then adapt those moves to the visible seed.
+Never copy their wording, products, events, measurements, or personal facts.
+{reference_viewpoints}
+
+Seed post title:
+{seed_post.title}
+
+Seed post body:
+{backend.compact(seed_post.body or seed_post.content, 2600)}
+
+Target controls:
+- target_comments: {target.target_comments}
+- top_level_comments: {target.top_level_comments}
+- max_depth_goal: {target.max_depth_goal}
+- shape_label: {target.shape_label}
+- length_mix: {target.length_mix_note}
+
+Frozen whole-thread distribution target:
+{distribution_target}
+
+Recent generated-control counts, used only to avoid global templates:
+{recent}
+
+Matched real structural sample. Comment text and facts are intentionally hidden:
+{matched}
+
+Return strict JSON:
+{{
+  "branches": [
+    {{
+      "branch_id": 1,
+      "anchor_quote": "short seed-post anchor or abstract local hook",
+      "branch_goal": "one narrow branch goal",
+      "perspective_id": "one P## from the frozen domain profile",
+      "decision_boundary": "the one decision condition, consequence, or uncertainty this branch owns",
+      "owned_decision_subject": "one concrete seed-derived condition or variable owned only by this branch, not a P## label",
+      "branch_exclusion": "the adjacent decision axis owned by another branch that this branch must not cover"
+    }}
+  ]
+}}
+
+Planning rules:
+- Return at least {minimum_branch_count} genuinely distinct semantic branches.
+  This is a topology-derived decision-axis budget, not the number of top-level
+  comments. A narrow real discussion may have several independent roots around
+  the same axis; those roots should vary their stance, evidence, detail, or
+  social function rather than inventing a false new topic.
+- Replies inherit their root's branch. When multiple root chains are routed to
+  the same branch, use that branch as a shared local subject but give each root
+  a different conversational contribution. Do not treat every short agreement,
+  vote, question, or counterexample as a separate decision axis.
+- Each branch must stay narrow. Do not plan a complete product review.
+- Derive substantive branches from different reference viewpoint patterns. Two
+  branches may share a topic only when their claim, stance, evidence role, or
+  reply function is materially different.
+- Make ``owned_decision_subject`` and ``decision_boundary`` mutually exclusive
+  across independently rooted branches. Reuse a ``perspective_id`` only when
+  needed, but vary it wherever the frozen profile permits; a P## label is a
+  decision lens and cannot substitute for a distinct branch subject. Then write
+  ``branch_exclusion`` to name the neighboring decision axis that this branch
+  must leave to another branch. A root branch may not be a broad restatement of
+  another root branch with one adjective changed.
+- Do not split one decision into its premise and immediate consequence across
+  two root branches. If one branch owns an access, permission, compatibility,
+  or eligibility risk, another branch may not merely restate the physical or
+  practical condition as the way to satisfy that same risk. Give the other
+  branch an independently answerable everyday-use, evidence, performance,
+  value, timing, or social question instead.
+- ``owned_decision_subject`` must be a concrete condition visible in the seed,
+  such as one use constraint, uncertainty, consequence, or tradeoff. It is not
+  a topic label, product name, P## lens, or a broad request to compare options.
+- Reference comments are semantic examples, not factual sources. Every concrete
+  fact in a branch must still be visible in the seed post.
+- This is the compact root-coverage contract. The per-comment Planner assigns
+  payload, evidence, tone, story, affect, and surface behavior later; do not
+  pad each branch with those whole-thread fields.
+- Do not infer or invent hidden matched-real content from the structural labels.
+"""
+
+
+def comment_planner_prompt(
+    config: DomainConfig,
+    backend: Any,
+    *,
+    seed_post: Any,
+    target: Any,
+    branches: list[Any],
+    matched_real_thread: dict[str, Any] | None,
+    comments: list[dict[str, Any]],
+    all_comments: list[dict[str, Any]] | None = None,
+    sample_offset: int = 0,
+    prior_plans: list[dict[str, Any]] | None = None,
+    validation_feedback: str = "",
+) -> str:
+    del matched_real_thread
+    real_sample = _render_matched_slots(
+        comments,
+        all_comments=all_comments,
+        sample_offset=sample_offset,
+    )
+    requested_sample_ids = list(
+        range(sample_offset + 1, sample_offset + len(comments) + 1)
+    )
+    active_schedule = getattr(
+        backend, "GENERALIZED_ACTIVE_SLOT_DISTRIBUTION_SCHEDULE", {}
+    )
+    if is_direct_reply_batch(
+        comments=comments,
+        all_comments=all_comments or comments,
+        sample_offset=sample_offset,
+        prior_plans=prior_plans or [],
+    ):
+        return render_direct_reply_planner_prompt(
+            config=config,
+            backend=backend,
+            seed_post=seed_post,
+            comments=comments,
+            all_comments=all_comments or comments,
+            sample_offset=sample_offset,
+            prior_plans=prior_plans or [],
+            slot_distribution=render_slot_distribution_schedule(
+                active_schedule,
+                sample_ids=requested_sample_ids,
+            ),
+            social_close_allowed={
+                sample_id
+                for sample_id in requested_sample_ids
+                if str(
+                    (
+                        (active_schedule.get("assignments") or {}).get(
+                            str(sample_id),
+                            {},
+                        )
+                    ).get("affect_role")
+                    or ""
+                ).strip().lower()
+                in {"gratitude", "relief"}
+            },
+            slot_tone={
+                sample_id: str(
+                    (
+                        (active_schedule.get("assignments") or {}).get(
+                            str(sample_id),
+                            {},
+                        )
+                    ).get("tone_class")
+                    or ""
+                ).strip().lower()
+                for sample_id in requested_sample_ids
+            },
+            validation_feedback=validation_feedback,
+        )
+    schema_sample_id = requested_sample_ids[0] if requested_sample_ids else 1
+    branches_block = "\n".join(
+        f"- B{branch.branch_id}: {branch.branch_goal}; anchor={backend.compact(branch.anchor_quote, 100)}"
+        for branch in branches
+    )
+    families = " | ".join(GENERIC_CLAIM_FAMILIES)
+    profile = getattr(backend, "GENERALIZED_DOMAIN_PROFILE", {})
+    perspectives = render_profile_for_planner(profile)
+    reference_viewpoints = render_reference_viewpoints(
+        profile,
+        seed_title=str(seed_post.title or ""),
+        seed_body=str(seed_post.body or seed_post.content or ""),
+        limit=max(1, len(comments)),
+        offset=max(0, sample_offset),
+    )
+    prior_plan_block = _render_prior_comment_plans(backend, prior_plans or [])
+    distribution_target = render_planner_distribution_target(
+        getattr(backend, "GENERALIZED_ACTIVE_REFERENCE_TEMPLATE", {}),
+        total_comments=int(target.target_comments),
+        prior_plans=prior_plans or [],
+    )
+    slot_distribution = render_slot_distribution_schedule(
+        active_schedule,
+        sample_ids=requested_sample_ids,
+    )
+    branch_schedule = root_branch_schedule(
+        all_comments or comments,
+        branch_ids=[int(branch.branch_id) for branch in branches],
+    )
+    branch_goals = {
+        int(branch.branch_id): backend.compact(branch.branch_goal, 180)
+        for branch in branches
+    }
+    branch_perspectives = {
+        int(branch.branch_id): str(getattr(branch, "perspective_id", "") or "")
+        for branch in branches
+    }
+    branch_exclusions = {
+        int(branch.branch_id): backend.compact(
+            getattr(branch, "branch_exclusion", "") or "", 180
+        )
+        for branch in branches
+    }
+    branch_subjects = {
+        int(branch.branch_id): backend.compact(
+            getattr(branch, "owned_decision_subject", "")
+            or getattr(branch, "decision_boundary", ""),
+            180,
+        )
+        for branch in branches
+    }
+    required_branch_routes = render_branch_requirements(
+        branch_schedule,
+        sample_ids=requested_sample_ids,
+        branch_goals=branch_goals,
+        branch_perspectives=branch_perspectives,
+        branch_exclusions=branch_exclusions,
+        branch_subjects=branch_subjects,
+        parent_slots=parent_slot_schedule(all_comments or comments),
+    )
+    reply_delta_contracts = _render_reply_delta_contracts(
+        comments=comments,
+        all_comments=all_comments or comments,
+        sample_offset=sample_offset,
+        prior_plans=prior_plans or [],
+    )
+    feedback_block = (
+        f"\nPLAN-QUALITY REPAIR FEEDBACK:\n{validation_feedback}\n"
+        if validation_feedback
+        else ""
+    )
+    actor_enabled = (
+        str(getattr(backend, "GENERALIZED_ACTOR_MODE", "") or "")
+        == MODE_DOMAIN_DERIVED
+    )
+    actor_schema = ""
+    actor_rules = ""
+    if actor_enabled:
+        actor_schema = ''',
+      "actor": {
+        "participant_key": "thread-local A#; use OP only for an actual OP follow-up and reuse a key only when the same participant returns",
+        "knowledge_boundary": "what this participant can reasonably know from the visible seed or parent and the assigned evidence role",
+        "participation_goal": "why this participant takes this one local turn",
+        "evidence_access": "the evidence this participant can use without inventing a biography or hidden fact",
+        "attention_focus": "one seed- or parent-grounded detail this participant notices",
+        "interaction_tendency": "how this participant engages this parent or branch",
+        "context_visibility": "which part of the visible discussion this participant is responding to",
+        "realization_route": "an abstract one-shot sentence construction and cadence; never example wording"
+      }'''
+        actor_rules = '''
+- Compose every ``actor`` from the current visible discussion and the abstract
+  behavior of its selected evaluation-excluded R# pattern. There is no fixed
+  persona catalog. Do not assign demographic biography or hidden history.
+- Actor fields describe a local cognitive and interaction state. Ground
+  ``attention_focus`` in the seed or parent, and do not import facts from R#.
+- Vary ``realization_route`` across nearby slots before Writer generation. It
+  describes sentence architecture and cadence, not reusable example wording.'''
+    return f"""Assign per-comment semantic and social controls to matched-real structural slots.
+
+Domain: {config.display_name}
+
+Frozen domain-neutral decision lenses:
+{perspectives}
+Each P## states how a comment reasons about the local topic. It is not the topic,
+entity, product, feature, event, or claim itself. Derive the actual local move
+from the visible seed/parent and the non-test reference-comment pattern below.
+
+NON-TEST REFERENCE COMMENTS FOR SEMANTIC ABSTRACTION:
+The R# rows come from evaluation-excluded threads. Pair each displayed S# with
+a different R# row in order when the viewpoint pattern fits. Abstract the tiny
+semantic/discourse move and adapt it to the visible seed or parent.
+
+These rows are also this domain's knowledge. Real participants bring equipment
+knowledge they acquired elsewhere, so a slot may carry one *general* domain fact
+from its R# row into ``domain_claim``: a compatibility relation, a procedure, an
+observable behaviour, a specification class, a model comparison. Write it in your
+own words as a claim a knowledgeable participant would state. Two limits: never
+reproduce an R# row's wording, and never carry a detail that belongs to that
+discussion or its participants rather than to the domain — someone's own photos,
+their purchase, their argument with another commenter, a number tied to their
+specific situation. A fact about the seed post itself still cannot be invented.
+{reference_viewpoints}
+
+Objectives:
+- Preserve each supplied slot's depth, parent relation, approximate information density, and surface roughness.
+- Choose discourse function, stance, story/no-story role, and domain perspective from the visible seed, branch controls, and frozen non-test domain profile.
+- Produce a reusable instruction, not a comment.
+- Keep factual content grounded in the seed post or a generic parent-local relation. No matched-real comment text or facts are supplied.
+- Preserve weak comments as weak comments. Do not upgrade reactions, fragments, jokes, or questions into advice.
+- Treat the displayed anonymous word count as semantic capacity, not an output
+  word-count target. A micro slot (five words or fewer) can only support a
+  reaction, fragment, bare acknowledgement, joke, or narrow question. It
+  cannot carry a story, personal datapoint, advice, explanation, or multi-step
+  claim. A short slot can add one narrow observation or question, but not a
+  multi-step story. This does not require the Writer to match an exact count.
+
+Seed post title:
+{seed_post.title}
+
+Seed post body:
+{backend.compact(seed_post.body or seed_post.content, 2200)}
+
+Thread target:
+- target_comments: {target.target_comments}
+- max_depth_goal: {target.max_depth_goal}
+- shape_label: {target.shape_label}
+
+Frozen whole-thread distribution target:
+{distribution_target}
+
+Required template-derived labels for these displayed slots:
+{slot_distribution}
+
+Tone class definitions. These are social registers observed in real threads of
+this kind, not degrees of manners. Assign the label whose register the slot can
+actually carry:
+{_tone_class_definitions()}
+
+Available branch controls:
+{branches_block}
+
+Required structural branch routes:
+{required_branch_routes}
+
+Parent-local delta contracts for this batch:
+{reply_delta_contracts}
+
+Plans already assigned in earlier batches of this same thread:
+{prior_plan_block}
+{feedback_block}
+
+Matched-real structural slots. Use the displayed global S# values exactly:
+{real_sample}
+
+Return strict JSON:
+{{
+  "comment_plans": [
+    {{
+      "sample_id": {schema_sample_id},
+      "reference_id": "the R# used as the semantic pattern, or none",
+      "branch_id": 1,
+      "payload_type": "low_info_reaction | bare_answer | fragment_datapoint | soft_helpful | correction | narrow_question | personal_story | rant | joke | side_tangent | meta_or_template | advice",
+      "comment_function": "reaction | question_followup | correction_caveat | personal_datapoint | recommendation_advice | verdict_evaluation | explanation_analysis | offtopic_noise",
+      "content_angle": "cost_value | rules_constraints | risk_reliability_support | comparison_alternative | setup_troubleshooting | availability_timing | fit_use_case | unclear_mixed",
+      "evidence_mode": "none_assertion | firsthand_experience | technical_or_policy_reasoning | calculation_math | hearsay_consensus | link_quote_reference | small_observation",
+      "story_mode": "no_story | tiny_personal_context | specific_personal_story | messy_multi_step_story",
+      "tone_class": "polite | somewhat_polite | neutral | impolite",
+      "affect_role": "one GoEmotions label listed in the frozen target",
+      "voice": "blunt | casual_neutral | polite_soft | sarcastic | annoyed | uncertain | grateful",
+      "speaker_role": "advisor | confused_asker | op_followup | gratitude_reply | jokester | mod_meta | contrarian | datapoint_only | ranter | side_observer",
+      "semantic_move": "one concrete but non-verbatim action for the generated comment",
+      "local_topic": "seed-grounded topic or generic parent-local topic",
+      "reply_relation": "answers_parent | challenges_parent | asks_narrow_followup | adds_datapoint | jokes_aside | corrects_detail | shifts_to_side_detail",
+      "stance": "agree | disagree | mixed | uncertain | joking | neutral",
+      "detail_focus": "seed-visible detail to use, or a generic detail type if no fact is visible",
+      "avoid_repeating": "nearby discourse move to avoid",
+      "claim_family": "{families}",
+      "claim_key": "short abstract semantic key",
+      "perspective_id": "one P## from the frozen domain profile, or seed_local",
+      "domain_intent": "one short domain-grounded intent that does not import a hidden fact",
+      "domain_claim": "one concrete domain fact this slot states in your own words - a compatibility relation, procedure, observable behaviour, specification class, or model comparison - or none for a purely social slot",
+      "decision_boundary": "the one decision condition, consequence, or uncertainty this independent slot owns",
+      "reply_delta": "for a direct reply: the one new relation, evidence, consequence, or caveat it adds beyond its parent; otherwise none",
+      "reply_delta_type": "for a direct reply: {' | '.join(REPLY_DELTA_TYPES)}; otherwise none",
+      "reply_novelty_anchor": "for a direct reply: one concrete action, observation, threshold, outcome, or exception that the parent plan does not already state; otherwise none",
+      "opening_style": "one specific sentence route for this slot that realizes its assigned opener_type, such as constraint then consequence, concrete observation then caveat, or answer embedded after parent detail",
+      "development_plan": "none for a short slot; for a slot above about 100 words, use distinct connected beats separated by || that fully develop this one local contribution",
+      "context_aperture": "full_seed | seed_gist_only | title_only | semantic_only | parent_only"{actor_schema}
+    }}
+  ]
+}}
+
+Rules:
+- Output one plan per displayed S#.
+- The ``sample_id`` value shown in the JSON schema is an example from this
+  request, not a fixed constant. Return exactly these global IDs once each:
+  {", ".join(f"S{sample_id}" for sample_id in requested_sample_ids)}.
+- Use the corresponding R# as a semantic pattern where applicable. If it does
+  not fit the visible seed, choose another displayed R# or use a genuinely
+  different seed-local/social move; never import the reference's facts.
+- Use controlled vocabulary values exactly.
+- ``semantic_move``, ``local_topic``, and ``detail_focus`` must be supported by the visible seed or remain generic.
+- Never include usernames, URLs, hidden anecdotes, or facts absent from the visible seed.
+- A label explicitly listed for an S# is a fixed template contract. Select a
+  compatible role, payload, stance, and evidence mode in this first plan; do
+  not expect a later stage to replace it. For a field absent from the S# list,
+  choose a natural compatible label while satisfying the whole-thread target.
+- Equivalent local claims should share ``claim_key``; different claims must not.
+- Compare every new plan against the earlier-batch ledger. Do not hide a repeated semantic move behind a new ``claim_key`` or different wording.
+- Satisfy only the remaining story, tone_class, and affect_role counts that
+  have compatible slots. If the template says a label is unavailable, omit it
+  rather than attaching it to an unrelated substantive claim. Choose labels
+  that fit each comment's discourse role; do not change its claim to fit a
+  label.
+- A slot's ``tone_class`` constrains its whole plan, not just its wording. The
+  semantic move has to be the kind of move that register makes:
+  a ``polite`` slot agrees, corroborates from experience, endorses with a
+  reason, or thanks, so pair it with ``stance=agree``, a ``speaker_role`` of
+  datapoint_only, op_followup, gratitude_reply, or side_observer, and a
+  ``comment_function`` of personal_datapoint, reaction, or verdict_evaluation;
+  an ``impolite`` slot contradicts, limits, complains, or corrects;
+  a ``neutral`` slot states one fact or reference with no evaluation;
+  a ``somewhat_polite`` slot half-agrees with a qualification.
+  Never pair ``polite`` with ``correction_caveat`` or a disagreeing stance, and
+  never pair ``impolite`` with gratitude or endorsement. A plan whose move
+  contradicts its register is invalid; change the move, not the register.
+- Do not make every substantive slot an ``advisor``. Real discussions of this
+  kind are mostly participants reporting their own experience, reacting, and
+  asking, with advisors a minority. Reserve ``advisor`` for slots whose plan is
+  genuinely a recommendation.
+- Give most substantive slots a ``domain_claim``. Measured against a matched real
+  thread, real comments name a concrete piece of equipment or a domain noun in
+  about two thirds of cases and contain a number in about half, while a plan
+  built only from decision language produced neither. A slot whose entire content
+  is how to weigh a decision, how a learning curve feels, or whether advice is
+  trustworthy is the failure mode: it reads as commentary about the discussion
+  rather than participation in it. Vary the equipment named across slots instead
+  of returning to whichever model the seed post mentions.
+- Micro and purely social slots keep ``domain_claim=none``. Do not attach a fact
+  to a reaction that has no room for one.
+- Every S# not explicitly assigned a story_mode in the slot schedule is fixed
+  to no_story. Do not create an extra story to make a local plan sound richer.
+- The required branch route is also fixed. Each root discussion chain owns a
+  distinct decision axis; replies inherit their parent chain's branch. Do not
+  switch to another branch merely because its topic is easier to write.
+- Treat the displayed ``branch_goal`` as a semantic contract, not background
+  inspiration: ``semantic_move``, ``domain_intent``, and
+  ``decision_boundary`` must directly develop that goal. A comment that could
+  instead belong to another displayed B# is invalid.
+- ``required_perspective`` and ``branch_exclusion`` are also fixed controls.
+  The former selects the reasoning lens; the latter forbids the adjacent
+  decision axis already owned by another root branch.
+- ``owned_decision_subject`` is a fixed branch contract. Establish only that
+  condition for this chain; do not substitute one of the listed forbidden
+  subjects just because it is salient in the seed.
+- If ``direct_parent`` is shown, first respond to that parent's plan in the
+  earlier ledger. That entry is the authoritative exclusion: keep the root
+  branch's decision axis, but make a new local response rather than starting a
+  second top-level answer or restating the root claim.
+- A displayed ``root_branch_instance`` marks several independent root comments
+  routed to the same semantic axis. Keep that axis, but vary the independent
+  root's discourse contribution: for example, a concise verdict, causal reason,
+  evidence caveat, counterexample, action/timing point, narrow question, or
+  local social reaction. Do not manufacture a new topic merely to make the
+  root look unique, and do not write the same premise in a polished new form.
+- A displayed ``sibling_group`` is a joint coverage contract, not a list of
+  interchangeable replies. Plan each sibling as a distinct increment around
+  the same parent: for example, a mechanism, scope limit, evidence threshold,
+  practical consequence, counter-condition, firsthand corroboration, an omitted
+  practical detail, a reasoned endorsement, or social closure when the slot
+  permits it. Do not assign two siblings the same answer or correction with
+  different wording. ``sibling_turn`` is an ordering cue only; do not expose it.
+- For every direct reply, ``reply_delta`` must name a concrete addition beyond
+  the parent. That addition may limit the parent, but it may equally confirm it
+  from your own experience, extend it with a detail it omits, or endorse it for
+  a named reason. What is forbidden is contentless agreement: a paraphrase or
+  bare restatement of the parent's question, condition, or conclusion. Write
+  ``semantic_move`` as that increment itself, not as a summary of the branch
+  goal or parent. The downstream Writer will treat this pair as its sole new
+  proposition. For a root turn write ``none``.
+- For every direct reply, choose exactly one ``reply_delta_type`` compatible
+  with the slot's ``tone_class`` and write a ``reply_novelty_anchor`` that
+  cannot be reconstructed from the parent's semantic_move, decision_boundary,
+  or detail_focus. The increments are:
+{_reply_delta_type_definitions()}
+  Rephrasing the parent's condition with a new adjective is invalid under any
+  of them. A ``social_close`` may only acknowledge the parent without a second
+  factual claim. For a root turn both fields are ``none``.
+- Run this contrast test privately before emitting every direct-reply row. If
+  the parent asks whether X is adequate under condition Y, an invalid reply
+  merely says that X matters when it is adequate under Y. A valid
+  ``operational_test`` instead names a new observation or test that would
+  establish the answer; a valid ``corroborating_datapoint`` names what happened
+  when you personally used X under Y; a valid ``useful_extension`` names the
+  adjacent detail that changes the answer. Put that distinct object in both
+  ``semantic_move`` and ``reply_novelty_anchor``. Do not use meta-language
+  such as an instruction to "add" a condition as the semantic move.
+- Non-dependent substantive comments must not collapse to the same recommendation,
+  tradeoff, verdict, or explanation. Repetition is allowed only for a direct
+  reply that changes the relation, evidence, stance, or local detail.
+- Reuse an earlier claim only for a direct reply relation that needs it. Otherwise move to a different seed-grounded branch, detail, stance, or social function.
+- Use a frozen ``perspective_id`` only when it fits the visible seed or parent; otherwise use ``seed_local``.
+- Nearby comments should not reuse the same perspective and claim key unless the reply relation directly requires it.
+- Write ``semantic_move`` as the exact new contribution made by this slot, not
+  as a topic label or a paraphrase of the thread's current conclusion.
+- Write ``decision_boundary`` as the particular decision condition,
+  consequence, tradeoff, or uncertainty owned by this slot. Two independent
+  comments may not own the same boundary even if they use different P## labels.
+  A direct reply may revisit its parent only when it changes the relation,
+  stance, evidence, or detail.
+- Write ``avoid_repeating`` as one specific already-covered proposition or
+  sentence route that this slot must not reproduce. Do not use generic values
+  such as "avoid repetition" or "be different."
+- ``opener_type`` is a fixed grammatical contract measured from real threads of
+  this domain. Write ``opening_style`` as a concrete route that begins the way
+  that type requires. Measured on one matched pair, the Writer opened 23% of
+  comments with a bare agreement token against 4% in the real thread while
+  under-producing content-first and first-person entries, so this is the entry
+  grammar, not a suggestion.
+- The rest of the row has to be able to start that way. An assigned
+  ``opener_type`` of ``question`` needs ``comment_function=question_followup``
+  and ``payload_type=narrow_question``; ``imperative`` needs a recommending row
+  (``payload_type=advice`` with ``comment_function=recommendation_advice``);
+  ``address`` needs a row that speaks to the person it replies to. Measured over
+  520 slots, an assigned opener was realized 43.8% of the time overall but 0 of
+  23 times for ``question`` and 0 of 10 for ``imperative``, because the rest of
+  the row made that opening ungrammatical. Choose the row's function and payload
+  so the assigned entry is writable, rather than keeping both and losing one.
+- Write ``opening_style`` as a concrete one-use realization route, not one of a
+  small fixed label set. Vary clause order and discourse entry across nearby
+  rows; do not repeat routes such as "question first" or "direct answer."
+- Use the anonymous slot word count as a content-capacity cue. For a slot
+  above about 100 words, write a ``development_plan`` with roughly one distinct
+  connected beat per 35 words, capped at 16 beats and separated by ``||``.
+  Each beat is realized in about one sentence, so a 300-word slot needs roughly
+  eight or nine beats rather than three; under-planning a long slot is the
+  common failure and it collapses the thread's length spread.
+  Each beat must add a different observation, reason, consequence, caveat,
+  boundary, or reaction around the same local contribution. Do not pad with
+  paraphrases, add unrelated claims, or infer the hidden matched comment.
+- A slot labeled ``ordinary_turn`` or ``long_turn`` must retain its information
+  density. Incidental humor, a link, a quote, or a question may be embedded in
+  that turn; it must not turn the whole plan into ``joke``,
+  ``meta_or_template``, ``low_info_reaction``, or ``narrow_question``.
+- Before returning JSON, compare every row with every earlier row in this
+  response and the earlier-batch ledger. Resolve repeated answers, verdicts,
+  tradeoffs, and evidence roles in this first response; the Writer will not
+  sample alternate semantic plans.
+{actor_rules}
+- Generate the complete semantic plan in this response, plus actor fields only
+  when the schema requests them. The Writer will realize it once; do not rely
+  on later candidate sampling for diversity.
+- If an S# is assigned ``affect_role=gratitude`` or ``affect_role=relief`` by
+  the template schedule, it must be a genuine social close: use
+  ``speaker_role=gratitude_reply`` and ``comment_function=reaction``. Its
+  semantic move may only acknowledge the visible local help; it may not carry
+  a second explanation, recommendation, or correction. For every other affect
+  role, do not turn the slot into a generic thank-you.
+"""
+
+
+def _render_prior_comment_plans(backend: Any, plans: list[dict[str, Any]]) -> str:
+    if not plans:
+        return "- none; this is the first batch"
+    rows = []
+    family_counts = Counter(str(plan.get("claim_family") or "miscellaneous") for plan in plans)
+    perspective_counts = Counter(str(plan.get("perspective_id") or "seed_local") for plan in plans)
+    angle_counts = Counter(str(plan.get("content_angle") or "unclear_mixed") for plan in plans)
+    rows.append(
+        "- coverage summary: "
+        f"claim families={_render_counts(dict(family_counts))}; "
+        f"perspectives={_render_counts(dict(perspective_counts))}; "
+        f"content angles={_render_counts(dict(angle_counts))}. "
+        "Shift independent new rows away from dominant combinations when the visible discussion supports it."
+    )
+    for plan in plans[-100:]:
+        actor_suffix = ""
+        if plan.get("actor_participation_goal") or plan.get("actor_realization_route"):
+            actor_suffix = (
+                f"; actor_goal={backend.compact(plan.get('actor_participation_goal') or 'local contribution', 70)}"
+                f"; actor_route={backend.compact(plan.get('actor_realization_route') or 'local sentence route', 80)}"
+            )
+        rows.append(
+            "- "
+            f"S{plan.get('sample_id')}: "
+            f"claim={backend.compact(plan.get('claim_key') or 'local_claim', 60)}; "
+            f"perspective={backend.compact(plan.get('perspective_id') or 'seed_local', 24)}; "
+            f"relation={backend.compact(plan.get('reply_relation') or 'local_turn', 32)}; "
+            f"move={backend.compact(plan.get('semantic_move') or plan.get('local_topic') or 'local move', 120)}; "
+            f"detail={backend.compact(plan.get('detail_focus') or plan.get('domain_intent') or 'local detail', 90)}"
+            f"; boundary={backend.compact(plan.get('decision_boundary') or 'local condition', 90)}"
+            f"; reply_delta={backend.compact(plan.get('reply_delta') or 'none', 90)}"
+            f"; story={backend.compact(plan.get('story_mode') or 'no_story', 30)}"
+            f"; tone={backend.compact(plan.get('tone_class') or 'unassigned', 30)}"
+            f"; affect={backend.compact(plan.get('affect_role') or 'unassigned', 30)}"
+            f"; opening={backend.compact(plan.get('opening_style') or 'unassigned', 50)}"
+            f"; development={backend.compact(plan.get('development_plan') or 'none', 100)}"
+            f"{actor_suffix}"
+        )
+    return "\n".join(rows)
+
+
+def _render_reply_delta_contracts(
+    *,
+    comments: list[dict[str, Any]],
+    all_comments: list[dict[str, Any]],
+    sample_offset: int,
+    prior_plans: list[dict[str, Any]],
+) -> str:
+    """Make each reply's parent exclusion visible at the exact planning point.
+
+    The full prior-plan ledger remains useful for thread-level coverage, but a
+    reply should not have to recover its own parent proposition from that long
+    history. This block contains only Planner metadata, never matched-real
+    comment text.
+    """
+
+    by_sample_id: dict[int, dict[str, Any]] = {}
+    for plan in prior_plans:
+        if not isinstance(plan, dict):
+            continue
+        sample_id = parse_sample_id(plan.get("sample_id"))
+        if sample_id > 0:
+            by_sample_id[sample_id] = plan
+
+    parent_slots = parent_slot_schedule(all_comments)
+    rows: list[str] = []
+    for local_index, _comment in enumerate(comments, start=1):
+        sample_id = sample_offset + local_index
+        parent_sample_id = parent_slots.get(sample_id)
+        if parent_sample_id is None:
+            continue
+        parent = by_sample_id.get(int(parent_sample_id))
+        if parent is None:
+            rows.append(
+                f"- S{sample_id}: direct_parent=S{parent_sample_id}. "
+                "Return only a new local increment; the parent plan is unavailable, "
+                "so do not recreate a general OP answer."
+            )
+            continue
+        parent_move = str(
+            parent.get("semantic_move")
+            or parent.get("reply_delta")
+            or parent.get("local_topic")
+            or "the parent's local contribution"
+        ).strip()
+        parent_boundary = str(parent.get("decision_boundary") or "").strip()
+        row = (
+            f"- S{sample_id}: direct_parent=S{parent_sample_id}. "
+            f"Parent proposition to exclude: {parent_move}. "
+        )
+        if parent_boundary:
+            row += f"Parent boundary to exclude: {parent_boundary}. "
+        row += (
+            "reply_novelty_anchor names the concrete new object this reply "
+            "introduces: one new mechanism, scope limit, evidence threshold, "
+            "practical consequence, counter-condition, firsthand corroboration, "
+            "omitted practical detail, reasoned endorsement, or social closure, "
+            "whichever suits this slot's tone register. semantic_move is still a "
+            "full sentence stating what this reply asserts about that object, at "
+            "the same grammatical scale as a top-level slot's semantic_move -- a "
+            "bare noun phrase is not a semantic move. decision_boundary states "
+            "the question this reply settles. Do not paraphrase the parent."
+        )
+        rows.append(row)
+    return "\n".join(rows) or "- no reply slots are displayed in this batch"
+
+
+def writer_prompt(
+    config: DomainConfig,
+    backend: Any,
+    *,
+    profile: str,
+    seed_post: Any,
+    task: Any,
+    parent_comment: dict[str, Any] | None,
+    recent_openings: list[str] | None = None,
+    previous_comments: list[dict[str, Any]] | None = None,
+    retry_note: str = "",
+) -> str:
+    domain_profile = getattr(backend, "GENERALIZED_DOMAIN_PROFILE", {})
+    actor_state = actor_for_task(
+        getattr(backend, "GENERALIZED_ACTOR_ASSIGNMENTS", {}),
+        seed_post,
+        task,
+    )
+    actor_block = render_actor_state(actor_state)
+    actor_section = (
+        f"\nThread-local actor state composed by the Planner:\n{actor_block}\n"
+        if actor_state is not None
+        else ""
+    )
+    actor_hard_rule = (
+        "- Realize the thread-local actor state as a knowledge, attention, and "
+        "interaction boundary. Do not invent biography, experience, or facts."
+        if actor_state is not None
+        else ""
+    )
+    persona_marker = persona_marker_for_task(seed_post, task)
+    marker_prefix = f"{persona_marker}\n" if persona_marker else ""
+    visible = (
+        render_parent_context(config, backend, parent_comment=parent_comment, task=task)
+        if parent_comment is not None
+        else render_seed_context(config, backend, seed_post=seed_post, task=task)
+    )
+    previous = _thread_memory(
+        backend,
+        previous_comments or [],
+        current_task=task,
+        domain_profile=domain_profile,
+    )
+    # This was raised to every prior opening on the theory that a longer ledger
+    # prevents more reuse. It does not. Uncapping it (v69's 18 lines -> v71's
+    # unlimited) left `self_bleu_4` slightly *worse*, delta 0.46 -> 0.52, and the
+    # rebuilt-thread A/B held diversity with 24 entries while cutting the prompt
+    # to 13% of its size. Two dozen recent openings is what the Writer uses.
+    openings = "\n".join(
+        f"- {item}" for item in _dedupe(list(recent_openings or []), limit=400)[-24:] if item
+    ) or "- none"
+    anchors = _writer_visible_anchors(getattr(task, "concrete_anchors", ()))
+    anchors_block = "\n".join(f"- {item}" for item in anchors[:8]) or "- none"
+    retry = f"\nThe previous attempt failed these guards:\n{retry_note}\n" if retry_note else ""
+    controls = backend.controls_for_task(task)
+    controls_block = "\n".join(
+        f"- {'perspective' if key == 'perspective_id' else key}: "
+        f"{_writer_safe_control_text(value, domain_profile)}"
+        for key, value in controls.items()
+    )
+    sampled_plan = _writer_safe_control_text(
+        backend.render_sampled_plan_block(task),
+        domain_profile,
+    )
+    semantic_contract = _semantic_realization_contract(
+        backend,
+        task,
+        domain_profile=domain_profile,
+    )
+    route_lock = _semantic_route_lock(backend, task, domain_profile=domain_profile)
+    prompt_tone_slot, prompt_tone_instruction = backend.real_tone_slot_for_prompt(task)
+    tone_slot_rule = _optional_control_rule(
+        "Real tone slot",
+        prompt_tone_slot,
+        prompt_tone_instruction,
+        "Preserve the social move, not any reference wording.",
+    )
+    tone_overlay_rule = _optional_control_rule(
+        "Tone-only overlay",
+        getattr(task, "tone_overlay_slot", ""),
+        getattr(task, "tone_overlay_instruction", ""),
+        "Do not change payload, story mode, length, facts, or the local point.",
+    )
+    tone_target_rule = _optional_control_rule(
+        "Tone target selector",
+        getattr(task, "tone_target", ""),
+        getattr(task, "tone_target_instruction", ""),
+        "This controls attitude and social function only.",
+    )
+    story_rule = _optional_control_rule(
+        "Story realization",
+        getattr(task, "story_mode", ""),
+        getattr(task, "story_instruction", ""),
+        "This controls narrative evidence structure, not interpersonal tone.",
+    )
+    affect_rule = _optional_control_rule(
+        "Affect role",
+        getattr(task, "affect_role", ""),
+        getattr(task, "affect_instruction", ""),
+        "Make the reaction legible through a natural evaluation, interjection, hedge, or pacing choice. Do not name the label or add a new fact.",
+    )
+    surface_rule = _optional_control_rule(
+        "Real surface skeleton",
+        getattr(task, "surface_skeleton", ""),
+        getattr(task, "surface_instruction", ""),
+        "Use only the shape, never reference wording.",
+    )
+    hard_shape_rule = ""
+    if backend.is_hard_real_surface_shape(getattr(task, "real_surface_shape", "")):
+        hard_shape_rule = _real_surface_shape_guidance(task.real_surface_shape)
+    opener_rule = _opener_rule(
+        claim_for_task(
+            getattr(backend, "GENERALIZED_OPENER_TYPES", {}) or {}, seed_post, task
+        )
+    )
+    domain_claim_rule = render_domain_claim_rule(
+        claim_for_task(
+            getattr(backend, "GENERALIZED_DOMAIN_CLAIMS", {}) or {},
+            seed_post,
+            task,
+        )
+    )
+    guidance = "\n".join(
+        item
+        for item in (
+            soft_length_guidance(task),
+            opener_rule,
+            domain_claim_rule,
+            str(getattr(task, "must_not_do", "") or ""),
+            _voice_guidance(task.voice),
+            _speaker_role_guidance(task.speaker_role, task=task),
+            _utterance_mode_guidance(task.utterance_mode, task=task),
+            _surface_texture_guidance(task.surface_texture, task=task),
+            _tone_shape_guidance(backend.resolved_tone_shape(task), task=task),
+            hard_shape_rule,
+            surface_rule,
+            tone_slot_rule,
+            tone_overlay_rule,
+            tone_target_rule,
+            story_rule,
+            affect_rule,
+        )
+        if item
+    )
+
+    if backend.should_use_low_info_writer(task):
+        return marker_prefix + _low_info_writer_prompt(
+            config,
+            backend,
+            seed_post=seed_post,
+            task=task,
+            parent_comment=parent_comment,
+            visible=visible,
+            previous=previous,
+            openings=openings,
+            retry=retry,
+            guidance=guidance,
+            semantic_contract=semantic_contract,
+        )
+
+    return marker_prefix + f"""Write exactly one human Reddit comment in {config.community_context}.
+
+Use all controls as private constraints. Never mention them. This is one local turn, not a complete answer, product review, summary, or assistant response.
+
+What this comment says (highest priority):
+{route_lock}
+
+Visible discussion:
+{visible}
+
+Private sampled controls:
+{controls_block}
+
+{actor_section}
+
+Local anchor:
+{backend.compact(_writer_safe_control_text(task.local_anchor, domain_profile), 220)}
+
+Visible factual anchors:
+{anchors_block}{_own_equipment_block(backend, task)}
+
+Planner intent:
+{backend.compact(_writer_safe_control_text(task.planner_intent, domain_profile), 260)}
+{sampled_plan}
+
+Structured thread blackboard:
+{previous}
+
+One-shot semantic difference contract:
+{semantic_contract}
+
+Already used openings:
+{openings}
+{retry}
+
+Core metric guidance:
+{_metric_guidance_block()}
+
+Core tone and discourse guidance:
+{_tone_discourse_guidance_block(task)}
+
+Core placeholder guidance:
+{_placeholder_guidance_block()}
+
+Payload and matched-slot guidance:
+{_payload_guidance_block(backend, task)}
+
+Per-slot instructions:
+{guidance}
+
+Hard rules:
+- Use the blackboard tags and distribution pressure to avoid repeating earlier wording, role, payload, tone, and discourse shape. The current sampled slot still has priority.
+{actor_hard_rule}
+- Treat every earlier sentence- or clause-entry route in the blackboard as a
+  hard opening exclusion. Start with a different grammatical route; do not
+  begin a sentence with a listed route and merely change the ending.
+- Follow the assigned one-shot realization route. The decision boundary is the
+  only consequence or uncertainty this slot may newly establish. If an earlier
+  generated plan already states the same premise, do not restate that premise;
+  state only this slot's distinct boundary.
+{_substitution_rule(task)}
+- The branch exclusion is a hard semantic boundary. Do not establish, explain,
+  or resolve that excluded decision axis even if it is prominent in the seed;
+  another root discussion chain owns it.
+- Treat the owned decision subject as the sole branch condition. Do not make a
+  second top-level claim around any listed other-branch subject. If this is a
+  direct reply, realize the reply increment instead of rephrasing the parent's
+  condition, question, evidence, or conclusion.
+- Follow the sampled comment type while preserving the anonymous slot's information density. Only a genuinely short structural slot is forced into a fragment, bare question, or punchline.
+- {local_move_scope_guidance(task)}
+- If replying, respond to the parent only. The explicit parent contribution and
+  parent boundary are exclusions, not writing material: do not restate,
+  summarize, turn into a rhetorical question, or closely paraphrase either.
+  This bars reusing the parent's content; it does not bar the interpersonal
+  move your assigned tone register requires.
+- A gratitude or relief turn must perform a readable acknowledgment of the
+  parent/local help first. It may add only its assigned small follow-up, never
+  a replacement product verdict or a second explanatory answer.
+- Use ordinary Reddit language. Natural fragments, contractions, shorthand, uncertainty, quick thanks, and mild annoyance are allowed when the controls call for them.
+- Keep criticism directed at the product, claim, rule, interface, service, process, or tradeoff, not at the person.
+- {_story_fact_safety_rule(task, has_domain_claim=bool(domain_claim_rule))}
+- Named entities and numbers may appear only when visible in the discussion, in the visible factual anchors, or, for your own equipment, in the equipment list above.
+- Do not expose planner labels, instructions, placeholders, opaque control IDs, or the matched real thread.
+- Do not copy an earlier generated comment's opener or sentence path.
+- Output only the comment body.
+"""
+
+
+def _low_info_writer_prompt(
+    config: DomainConfig,
+    backend: Any,
+    *,
+    seed_post: Any,
+    task: Any,
+    parent_comment: dict[str, Any] | None,
+    visible: str,
+    previous: str,
+    openings: str,
+    retry: str,
+    guidance: str,
+    semantic_contract: str,
+) -> str:
+    domain_profile = getattr(backend, "GENERALIZED_DOMAIN_PROFILE", {})
+    actor_state = actor_for_task(
+        getattr(backend, "GENERALIZED_ACTOR_ASSIGNMENTS", {}),
+        seed_post,
+        task,
+    )
+    actor_block = render_actor_state(actor_state)
+    actor_section = (
+        f"\nThread-local actor state composed by the Planner:\n{actor_block}\n"
+        if actor_state is not None
+        else ""
+    )
+    actor_rule = (
+        "- Express the assigned actor's local attention and interaction tendency "
+        "without inventing biography, experience, or hidden facts."
+        if actor_state is not None
+        else ""
+    )
+    relation = "reply to the parent" if parent_comment is not None else "reply to the post"
+    cue = _writer_safe_control_text(
+        task.semantic_move or task.detail_focus or task.local_topic or task.local_anchor,
+        domain_profile,
+    )
+    local_move = f"\nRequired local move: {backend.compact(cue, 180)}" if cue else ""
+    route_lock = _semantic_route_lock(backend, task, domain_profile=domain_profile)
+    return f"""Write exactly one low-information Reddit comment in {config.community_context}.
+
+What this comment says (highest priority):
+{route_lock}
+
+Visible discussion:
+{visible}
+
+Private sampled slot:
+- payload: {task.payload_type}
+- role: {task.speaker_role}
+- tone: {getattr(task, 'tone_target', '') if getattr(task, 'tone_target', '') in TONE_CLASSES else backend.resolved_tone_shape(task)}
+- utterance: {task.utterance_mode}
+- texture: {task.surface_texture}
+- real surface shape: {task.real_surface_shape or 'none'}
+- real tone slot: {backend.real_tone_slot_for_prompt(task)[0] or 'none'}
+- tone overlay: {getattr(task, 'tone_overlay_slot', '') or 'none'}
+- tone target: {getattr(task, 'tone_target', '') or 'none'}
+- story mode: {getattr(task, 'story_mode', '') or 'no_story'}
+- affect role: {getattr(task, 'affect_role', '') or 'neutral'}
+- local cue: {backend.compact(_writer_safe_control_text(task.local_anchor or task.local_topic or seed_post.title, domain_profile), 140)}{local_move}
+- length conditioning: {soft_length_guidance(task)}
+
+{actor_section}
+
+Structured thread blackboard:
+{previous}
+
+One-shot semantic difference contract:
+{semantic_contract}
+
+Already used openings:
+{openings}
+{retry}
+
+Core metric guidance:
+{_metric_guidance_block()}
+
+Core tone and discourse guidance:
+{_tone_discourse_guidance_block(task)}
+
+Core placeholder guidance:
+{_placeholder_guidance_block()}
+
+Payload guidance:
+{_payload_guidance_block(backend, task)}
+
+Per-slot instructions:
+{guidance}
+
+Hard rules:
+- {relation} only.
+- Use the blackboard only to avoid repeated wording, function, tone, payload, and discourse shape. Do not quote or summarize it.
+- Keep the comment low-information. Do not add advice, explanation, caveats, specifications, policies, or extra facts.
+- Low-information controls the amount of text, not whether the semantic plan is
+  visible. Express the required local move and do not repeat the explicitly
+  excluded proposition or any used short utterance.
+- Preserve the sampled role, tone, payload, and social function; do not make it more helpful than planned.
+{actor_rule}
+- Keep it fragmentary when the payload is fragmentary. If one phrase is enough, use one phrase.
+- Named entities and numbers may appear only when visible in the discussion.
+- Return only the comment body.
+"""
+
+
+def render_parent_context(config: DomainConfig, backend: Any, *, parent_comment: dict[str, Any], task: Any) -> str:
+    base = f"Community context: {config.community_context}\n\n"
+    text = backend.compact(str(parent_comment.get("content") or ""), 900)
+    cue = backend.compact(task.detail_focus or task.local_topic or task.local_anchor or task.reply_relation, 240)
+    transform = task.context_transform or "normal"
+    if transform == "parent_hidden":
+        return base + f"Parent text is hidden. Local cue:\n{cue}\nUse only this cue and the sampled social relation."
+    if transform == "parent_gist":
+        return base + f"Parent gist:\nA commenter raised a local point around {cue}.\nReply only to this gist."
+    if transform == "minor_detail_focus":
+        return base + f"Visible minor parent detail:\n{cue}\nTreat it as the only visible hook."
+    if transform == "parent_jittered":
+        return base + f"Partial parent context:\n{backend.compact(mask_specifics(text), 360)}\nReply to the social move, not the wording."
+    return base + f"Parent comment:\n{text}\nReply to this parent only; it is context, not text to reuse."
+
+
+def render_seed_context(config: DomainConfig, backend: Any, *, seed_post: Any, task: Any) -> str:
+    base = f"Community context: {config.community_context}\n\n"
+    title = backend.compact(seed_post.title, 360)
+    body = backend.compact(seed_post.body or seed_post.content, 1500)
+    cue = backend.compact(task.detail_focus or task.local_topic or task.local_anchor, 260)
+    transform = task.context_transform or "normal"
+    if transform == "semantic_plan_only":
+        return base + f"Seed text is hidden. Sampled local cue:\n{cue}\nDo not reconstruct missing facts."
+    if transform == "minor_detail_focus":
+        return base + f"Seed title:\n{title}\n\nVisible minor hook:\n{cue}\nRespond only to this hook."
+    if transform == "seed_jittered":
+        return base + f"Partial seed context:\n{mask_specifics(title + ' ' + body[:500])}\n\nLocal cue:\n{cue}"
+    aperture = task.context_aperture or "seed_gist_only"
+    if aperture == "full_seed":
+        return base + f"Seed title:\n{title}\n\nSeed body:\n{body}"
+    if aperture == "title_only":
+        return base + f"Seed title:\n{title}\nOnly the title and sampled plan are visible."
+    if aperture == "semantic_only":
+        return base + f"Only this sampled local cue is visible:\n{cue}"
+    return base + f"Seed title:\n{title}\n\nSeed gist:\n{seed_gist(config, seed_post)}"
+
+
+def seed_gist(config: DomainConfig, seed_post: Any) -> str:
+    facets = ", ".join(config.topic_facets[:6])
+    return (
+        f"The OP is discussing {config.display_name} around the title "
+        f"'{str(seed_post.title).strip()}'. Plausible local branches include {facets}, "
+        "plus clarification, disagreement, personal experience, jokes, and side details."
+    )
+
+
+def system_prompt(config: DomainConfig) -> str:
+    return (
+        f"You write one human Reddit comment in {config.community_context}. "
+        "Follow the private sampled role, local context, tone, and length. Write one local turn, not a complete answer. "
+        "Do not sound like an assistant, reviewer, customer support agent, or polished explainer. "
+        "Do not invent facts, specifications, numbers, products, links, measured outcomes, or policies. "
+        "When a sampled story mode explicitly requires personal context, realize only a qualitative synthetic context around the visible local point. "
+        "Never expose controls or matched-real text. Return only the comment body."
+    )
+
+
+def generic_reviser_system(config: DomainConfig) -> str:
+    return (
+        f"You edit one generated Reddit comment in {config.community_context}. "
+        "Preserve its local claim, stance, social function, entities, numbers, story/no-story status, and parent relation. "
+        "Never add domain facts. Return only the requested JSON."
+    )
+
+
+def mask_specifics(text: str) -> str:
+    value = re.sub(r"https?://\S+|www\.\S+", "[link]", str(text), flags=re.I)
+    value = re.sub(r"[$€£]\s?\d[\d,.]*", "[amount]", value)
+    value = re.sub(r"\b\d+(?:\.\d+)?\s?%", "[rate]", value)
+    value = re.sub(r"\b\d{3,}\b", "[number]", value)
+    return " ".join(value.split())
+
+
+def strip_anchor_source(value: str) -> str:
+    return re.sub(r"\s+\((?:matched real|planner|local|seed)\)\s*$", "", str(value)).strip()
+
+
+def extract_product_anchors(config: DomainConfig, text: str) -> list[str]:
+    value = str(text or "")
+    found: list[str] = []
+    for term in config.protected_entity_terms:
+        if re.search(rf"(?<!\w){re.escape(term)}(?!\w)", value, flags=re.I):
+            found.append(term)
+    # Model names often combine letters, digits, hyphens, and Roman suffixes.
+    patterns = re.findall(
+        r"\b(?:[A-Z][A-Za-z&+.-]*\s+){0,3}(?:[A-Za-z]*\d[A-Za-z0-9+./-]*|[A-Z]{2,}(?:\s+[A-Z0-9][A-Za-z0-9+./-]*){0,2})\b",
+        value,
+    )
+    found.extend(item.strip() for item in patterns if len(item.strip()) >= 2)
+    return _dedupe(found, limit=12)
+
+
+def extract_term_anchors(config: DomainConfig, text: str) -> list[str]:
+    value = str(text or "")
+    found = [term for term in config.technical_terms if re.search(rf"(?<!\w){re.escape(term)}(?!\w)", value, flags=re.I)]
+    return _dedupe(found, limit=12)
+
+
+def extract_concrete_anchors(
+    config: DomainConfig,
+    text: str,
+    *,
+    source_label: str = "",
+    max_items: int = 12,
+) -> list[str]:
+    value = str(text or "")
+    if not value.strip():
+        return []
+    anchors: list[str] = []
+    anchors.extend(extract_product_anchors(config, value))
+    anchors.extend(extract_term_anchors(config, value))
+    anchors.extend(re.findall(r"https?://\S+|www\.\S+", value, flags=re.I))
+    anchors.extend(
+        re.findall(
+            r"(?:[$€£]\s*\d[\d,.]*|\b\d+(?:\.\d+)?\s*(?:%|mm|cm|gb|tb|mah|hz|mp|fps|w|wh|kg|g|inch(?:es)?|x)\b)",
+            value,
+            flags=re.I,
+        )
+    )
+    result = _dedupe(anchors, limit=max_items)
+    if source_label:
+        result = [f"{item} ({source_label})" for item in result]
+    return result
+
+
+def protected_entities(config: DomainConfig, text: str) -> set[str]:
+    entities = {item.lower() for item in extract_product_anchors(config, text)}
+    for domain in re.findall(r"\b(?:[a-z0-9-]+\.)+(?:com|org|net|io|co|ca|uk)\b", text, flags=re.I):
+        entities.add(domain.lower())
+    return entities
+
+
+def protected_numbers(text: str) -> set[str]:
+    pattern = r"(?<![\w.])(?:[$€£]\s*\d[\d,.]*|\d+(?:\.\d+)?\s*%|\d+\s*/\s*\d+|\d+(?:\.\d+)?\s*(?:mm|gb|tb|mah|hz|mp|fps|w|wh|kg|g|inch(?:es)?|in))\b|(?<![\w.])\d+(?:\.\d+)?(?![\w.])"
+    return {re.sub(r"\s+", "", item.lower()) for item in re.findall(pattern, str(text), flags=re.I)}
+
+
+_CARD_STATIC_DOMAIN_REPLACEMENTS = {
+    "selfbleu": (
+        ("card names", "product/model names"),
+        (
+            "new facts, cards, banks, dates, fees, percentages, URLs, or reward numbers",
+            "new facts, products, brands, dates, specifications, measurements, prices, or URLs",
+        ),
+    ),
+    "selfbert": (
+        (
+            "issuer, card, fee, reward, denial reason, recon/CLI/BT action, timing, or quoted premise",
+            "product, model, component, specification, observed behavior, workflow action, timing, or quoted premise",
+        ),
+        (
+            "new issuers, products, fees, dates, rewards, or numbers",
+            "new brands, products, models, specifications, dates, prices, measurements, or numbers",
+        ),
+        ("Bank X, Card Y, issuer X", "Brand X, Product Y, model X"),
+        ('"Yeah, that limit is tiny."', '"Yeah, that detail is pretty rough."'),
+        ('"That limit is the weird part, honestly."', '"That behavior is the weird part, honestly."'),
+        (
+            '\\"No downside\\" only works if the fee is actually zero.',
+            '\\"No downside\\" only works if the tradeoff is actually zero.',
+        ),
+        (
+            '"Nope, that is not treated like normal spend."',
+            '"Nope, that does not behave like the standard mode."',
+        ),
+        (
+            '"Did they say if it was age or utilization?"',
+            '"Did they say if it was the setting or the component?"',
+        ),
+        (
+            '"My recon letter said almost the same thing."',
+            '"My support ticket said almost the same thing."',
+        ),
+        (
+            '"The annoying part is the timing after the statement cuts."',
+            '"The annoying part is the timing after that step finishes."',
+        ),
+        (
+            '"This is also why those side perks get messy fast."',
+            '"This is also why those extra features get messy fast."',
+        ),
+    ),
+    "tone": (
+        ("new card/bank/number", "new product/brand/quantity"),
+        (
+            "numbers, card names, bank names, fees, and parent relationship",
+            "numbers, product/model names, brand/source names, specifications, and parent relationship",
+        ),
+        (
+            "numbers, card names, bank names, and parent relationship",
+            "numbers, product/model names, brand/source names, and parent relationship",
+        ),
+        (
+            "same concrete cards, banks, APRs, fees, limits, or URLs",
+            "same concrete products, brands, specifications, prices, limits, or URLs",
+        ),
+        (
+            "new card names, new banks, new numbers, new URLs",
+            "new product/model names, new brands, new numbers, new URLs",
+        ),
+        (
+            "new card names, new banks, new numbers",
+            "new product/model names, new brands, new numbers",
+        ),
+        (
+            "same card/bank/APR/fee/SUB point",
+            "same product/model/specification/price point",
+        ),
+        (
+            "same card/bank/APR/SUB detail",
+            "same product/model/specification detail",
+        ),
+        (
+            "same concrete card/bank/APR/fee detail",
+            "same concrete product/model/specification/price detail",
+        ),
+        (
+            "new facts, new cards, new banks, new numbers",
+            "new facts, new products, new brands, new numbers",
+        ),
+        (
+            "new facts, new cards, new banks, new numbers, or a new story",
+            "new facts, new products, new brands, new numbers, or a new story",
+        ),
+        (
+            "new card names, new numbers, or generic customer-service tone",
+            "new product/model names, new numbers, or generic customer-service tone",
+        ),
+        (
+            "entities, numbers, cards, banks, fees, percentages, and URLs",
+            "entities, numbers, products, brands, specifications, measurements, and URLs",
+        ),
+    ),
+    "story": (
+        ("r/CreditCards", "the target Reddit community"),
+        ("financial point", "domain point"),
+        ("concrete financial point", "concrete domain point"),
+        (
+            "card/issuer names, and financial facts",
+            "product/model and brand names, and domain facts",
+        ),
+        (
+            "financial numbers such as fees, rates, limits, rewards, balances, approval amounts, and issuer rules",
+            "domain quantities such as prices, specifications, limits, measurements, observed outcomes, and product rules",
+        ),
+        ("a financial rule", "a domain rule"),
+    ),
+}
+
+
+def adapt_card_reviser_prompt(
+    config: DomainConfig,
+    prompt: str,
+    *,
+    kind: str,
+) -> str:
+    """Keep CARD's prompt structure while replacing static finance wording.
+
+    Replacements intentionally target complete phrases rather than isolated
+    words.  This prevents changing dynamic discussion content such as "SD
+    card" while removing the finance-only instructions embedded in CARD.
+    """
+
+    adapted = str(prompt)
+    for old, new in _CARD_STATIC_DOMAIN_REPLACEMENTS.get(kind, ()):
+        adapted = adapted.replace(old, new)
+    preamble = (
+        "Domain context for this revision: "
+        f"{config.community_context}. Preserve domain-specific product/model "
+        "names, technical terms, measurements, prices, dates, links, and "
+        "parent-local facts.\n"
+    )
+    first_break = adapted.find("\n")
+    if first_break < 0:
+        return preamble + adapted
+    return adapted[: first_break + 1] + "\n" + preamble + adapted[first_break + 1 :]
+
+
+_NGRAM_STOP_WORDS = {
+    "a", "an", "and", "are", "as", "at", "be", "been", "but", "by",
+    "for", "from", "had", "has", "have", "he", "her", "his", "i", "if",
+    "in", "is", "it", "its", "me", "my", "of", "on", "or", "our", "so",
+    "that", "the", "their", "them", "they", "this", "to", "was", "we",
+    "were", "with", "you", "your",
+}
+
+
+def selfbleu_ngram_diagnostic(
+    config: DomainConfig,
+    *,
+    comments: list[Any],
+    target: Any,
+) -> str:
+    """Expose actionable 1/2-gram repetition omitted by CARD's phrase list."""
+
+    target_tokens = _ngram_tokens(str(getattr(target, "content", "") or ""))
+    other_tokens = [
+        _ngram_tokens(str(getattr(comment, "content", "") or ""))
+        for comment in comments
+        if getattr(comment, "comment_id", None) != getattr(target, "comment_id", None)
+    ]
+    unigram_counts: Counter[tuple[str, ...]] = Counter()
+    bigram_counts: Counter[tuple[str, ...]] = Counter()
+    for tokens in other_tokens:
+        unigram_counts.update((token,) for token in tokens)
+        bigram_counts.update(zip(tokens, tokens[1:]))
+
+    protected = {
+        token
+        for phrase in (*config.technical_terms, *config.protected_entity_terms)
+        for token in _ngram_tokens(phrase)
+    }
+    repeated_unigrams = Counter()
+    for token in target_tokens:
+        if (
+            unigram_counts[(token,)] > 0
+            and token not in protected
+            and token not in _NGRAM_STOP_WORDS
+            and len(token) > 2
+        ):
+            repeated_unigrams[token] += unigram_counts[(token,)]
+    repeated_bigrams = Counter()
+    for pair in zip(target_tokens, target_tokens[1:]):
+        if bigram_counts[pair] <= 0:
+            continue
+        if all(token in _NGRAM_STOP_WORDS for token in pair):
+            continue
+        repeated_bigrams[" ".join(pair)] += bigram_counts[pair]
+
+    unigrams = ", ".join(item for item, _ in repeated_unigrams.most_common(8)) or "(none)"
+    bigrams = ", ".join(item for item, _ in repeated_bigrams.most_common(8)) or "(none)"
+    return f"""Cross-domain n-gram diagnostic:
+- The exact Self-BLEU evaluator aggregates 1-, 2-, 3-, and 4-gram overlap after each candidate is inserted into the full thread.
+- CARD's thread-local phrase list above identifies actionable repeated 3/4-grams.
+- Repeated non-anchor unigrams in this target: {unigrams}.
+- Repeated bigrams in this target: {bigrams}.
+- Change repeated function wording and sentence paths first. Preserve technical anchors even when they repeat; the exact metric gate decides whether the full rewrite helps.
+"""
+
+
+def insert_reviser_guidance(prompt: str, guidance: str) -> str:
+    marker = "Return strict JSON only:"
+    if marker in prompt:
+        return prompt.replace(marker, guidance.rstrip() + "\n\n" + marker, 1)
+    return prompt.rstrip() + "\n\n" + guidance
+
+
+def _ngram_tokens(text: str) -> list[str]:
+    return re.findall(r"[a-z0-9]+(?:'[a-z0-9]+)?", text.lower())
+
+
+def selfbleu_reviser_prompt(
+    config: DomainConfig,
+    *,
+    post: dict[str, Any],
+    comments: list[Any],
+    target: Any,
+    scored: Any,
+    candidates_per_comment: int,
+    target_profile: str,
+    strategy_candidates: int,
+    controller_feedback: str = "",
+) -> str:
+    parent = next((item for item in comments if item.comment_id == target.parent_comment_id), None)
+    position = next(
+        (index for index, item in enumerate(comments) if item.comment_id == target.comment_id),
+        len(comments),
+    )
+    previous = comments[max(0, position - 12) : position]
+    repeated = "\n".join(
+        f"- {item}" for item in getattr(scored, "repeated_phrases", ())[:10]
+    ) or "- Avoid the target's current opener and the sentence paths used nearby."
+    count = max(2, strategy_candidates * 3 if strategy_candidates > 0 else candidates_per_comment)
+    profile = {
+        "high_tail": "Use substantial lexical restructuring: replace the opener, reorder clauses, and change connective paths.",
+        "middle_mass": "Use moderate lexical restructuring while retaining the original local voice.",
+        "shape_safe": "Use a conservative local rewrite with minimal semantic movement.",
+    }.get(target_profile, "Use a conservative lexical rewrite.")
+    feedback_block = (
+        f"\n{controller_feedback}\n" if controller_feedback.strip() else ""
+    )
+    return f"""Revise one generated comment from {config.community_context} for lexical diversity.
+
+Goal:
+- Lower repetition among comments in this thread without changing the comment's meaning or social role.
+- {profile}
+- Preserve the claim, stance, uncertainty, tone intensity, story/no-story status, entities, numbers, and approximate length.
+- Keep ordinary Reddit language. Do not turn the comment into a polished explanation.
+{feedback_block}
+
+Thread title:
+{_compact(post.get('title'), 420)}
+
+Seed post body:
+{_compact(post.get('content'), 720)}
+
+Parent comment:
+{_render_ref(parent)}
+
+Previous comments:
+{_render_refs(previous, limit=12, max_chars=200)}
+
+Target comment:
+id={target.comment_id}; depth={target.depth}; words={len(target.content.split())}
+{_compact(target.content, 900)}
+
+Thread-local wording to avoid:
+{repeated}
+
+Generate exactly {count} alternatives. Vary openers, clause order, and connective words across candidates.
+
+Hard rules:
+- Keep all visible product/model names, technical terms, quantities, measurements, prices, dates, and links.
+- Do not add a fact, product, specification, outcome, recommendation, question, or personal experience.
+- Advice remains advice; a correction remains a correction; a reaction remains a reaction.
+- Do not copy another comment or reveal private controls.
+- Return strict JSON only.
+
+{{
+  "candidates": [
+    {{"style": "opener_replacement", "text": "replacement body"}},
+    {{"style": "clause_reorder", "text": "replacement body"}},
+    {{"style": "connector_swap", "text": "replacement body"}}
+  ]
+}}
+"""
+
+
+def selfbert_reviser_prompt(
+    config: DomainConfig,
+    *,
+    post: dict[str, Any],
+    comments: list[Any],
+    scored_comments: list[Any],
+    target: Any,
+    thread_target: Any,
+    accepted_so_far: list[Any],
+    candidates_per_comment: int,
+    controller_feedback: str = "",
+) -> str:
+    ref = target.ref
+    parent = next((item for item in comments if item.comment_id == ref.parent_comment_id), None)
+    similar = [
+        item.ref
+        for item in scored_comments
+        if item.ref.comment_id != ref.comment_id
+    ][:8]
+    accepted_jobs = [
+        str(getattr(item, "discourse_job", "") or "")
+        for item in accepted_so_far
+        if bool(getattr(item, "accepted", False))
+    ]
+    jobs = (
+        "micro_reaction, blunt_correction, quote_challenge, narrow_followup_question, "
+        "small_datapoint, friction_detail, soft_acknowledgement, skeptical_aside, "
+        "minor_tangent, meta_comment"
+    )
+    feedback_block = (
+        f"\n{controller_feedback}\n" if controller_feedback.strip() else ""
+    )
+    return f"""Revise one generated comment from {config.community_context} for semantic discourse diversity.
+
+Distributional objective:
+- Generated thread Self-BERT: {float(thread_target.row.get('self_bertscore_mean_f1') or 0.0):.4f}.
+- Matched-real thread Self-BERT: {float(thread_target.real_row.get('self_bertscore_mean_f1') or 0.0):.4f}.
+- Generated-minus-real gap: {float(thread_target.selfbert_excess):.4f}.
+- Reduce the absolute matched-real gap. Do not minimize similarity without a lower bound.
+{feedback_block}
+
+The target comment contributes strongly to repeated semantic or discourse content. Produce alternatives that remain locally relevant while changing the local conversational move. Preserve concrete subject matter instead of replacing the comment with generic noise.
+
+Thread title:
+{_compact(post.get('title'), 420)}
+
+Seed post body:
+{_compact(post.get('content'), 850)}
+
+Parent comment:
+{_render_ref(parent)}
+
+Target comment:
+id={ref.comment_id}; depth={ref.depth}; words={len(ref.content.split())}
+{_compact(ref.content, 900)}
+
+Semantically similar comments to avoid paraphrasing:
+{_render_refs(similar, limit=8, max_chars=220)}
+
+Discourse jobs already accepted in this thread:
+{', '.join(item for item in accepted_jobs if item) or '(none)'}
+
+Generate exactly {max(3, candidates_per_comment)} alternatives. Choose a discourse_job from:
+{jobs}
+
+Required behavior:
+- Preserve the local issue, claim direction, stance, uncertainty, reply relation, story/no-story status, and tone intensity.
+- Retain product names, model names, technical terms, quantities, measurements, prices, dates, and links.
+- Change discourse shape rather than making a synonym-only paraphrase.
+- A technical correction remains a correction. A question remains locally about the same issue. A personal datapoint remains grounded in the same concrete detail.
+- Do not invent a product, specification, event, outcome, recommendation, or personal experience.
+- Avoid polished assistant-style mini essays and empty reactions.
+- Return strict JSON only.
+
+{{
+  "candidates": [
+    {{
+      "style": "short label",
+      "discourse_job": "one allowed job",
+      "preserved_tone": "yes",
+      "preserved_story_mode": "yes",
+      "preserved_stance": "yes",
+      "preserved_reply_relation": "yes",
+      "text": "replacement body",
+      "why_different": "brief discourse-level difference"
+    }}
+  ]
+}}
+"""
+
+
+def tone_reviser_prompt(
+    config: DomainConfig,
+    *,
+    post: dict[str, Any],
+    comments: list[Any],
+    target: Any,
+    candidate: Any,
+    current_rates: dict[str, float],
+    real_rates: dict[str, float],
+    gaps: dict[str, float],
+    candidates_per_comment: int,
+    accepted: list[dict[str, Any]] | None = None,
+    focus_stage: str = "balanced",
+    controller_feedback: str = "",
+) -> str:
+    del accepted
+    parent = next((item for item in comments if item.comment_id == target.parent_comment_id), None)
+    nearby = sorted(comments, key=lambda item: abs(item.comment_id - target.comment_id))[:12]
+    labels = ", ".join(getattr(candidate, "desired_labels", ()) or ("neutral", "polite"))
+    action = str(getattr(candidate, "action", "calibrate_tone"))
+    old_label = str(getattr(candidate, "old_label", "unknown"))
+    feedback_block = (
+        f"\n{controller_feedback}\n" if controller_feedback.strip() else ""
+    )
+    return f"""Revise one generated comment from {config.community_context} for tone calibration.
+
+Objective:
+- Preserve what the comment says while applying this local tone action: {action}.
+- Current label: {old_label}. Acceptable labels after revision: {labels}.
+- Focus stage: {focus_stage}.
+- Generated rates: polite={current_rates['polite']:.3f}, neutral={current_rates['neutral']:.3f}, impolite={current_rates['impolite']:.3f}.
+- Matched-real rates: polite={real_rates['polite']:.3f}, neutral={real_rates['neutral']:.3f}, impolite={real_rates['impolite']:.3f}.
+- Real-minus-generated gaps: polite={gaps['polite']:.3f}, neutral={gaps['neutral']:.3f}, impolite={gaps['impolite']:.3f}, hard_disagree={gaps['hard_disagree']:.3f}.
+{feedback_block}
+
+Thread title:
+{_compact(post.get('title'), 420)}
+
+Parent comment:
+{_render_ref(parent)}
+
+Target comment:
+id={target.comment_id}; depth={target.depth}; words={len(target.content.split())}
+{_compact(target.content, 900)}
+
+Nearby comments:
+{_render_refs(nearby, limit=12, max_chars=180)}
+
+Generate exactly {max(2, candidates_per_comment)} alternatives.
+
+Hard rules:
+- Preserve the same claim, stance direction, uncertainty, social function, entities, numbers, links, and approximate length.
+- A disagreement or correction must remain a disagreement or correction; change only its sharpness or social wrapper.
+- Do not add facts, products, advice, stories, questions, thanks, or apologies unless the original function already requires them.
+- Avoid customer-support language and generic empathy templates.
+- Keep natural Reddit directness; do not make every reply polite.
+- Return strict JSON only.
+
+{{
+  "candidates": [
+    {{"style": "same_claim_adjusted_edge", "text": "replacement body"}},
+    {{"style": "same_function_local_frame", "text": "replacement body"}}
+  ]
+}}
+"""
+
+
+def stance_reviser_prompt(
+    config: DomainConfig,
+    *,
+    post: dict[str, Any],
+    comments: list[Any],
+    target: Any,
+    candidate: Any,
+    current_rates: dict[str, float],
+    real_rates: dict[str, float],
+    gaps: dict[str, float],
+    candidates_per_comment: int,
+    controller_feedback: str = "",
+) -> str:
+    del current_rates, real_rates, gaps
+    parent = getattr(candidate, "parent_ref", None)
+    parent_text = str(getattr(candidate, "parent_text", "") or "")
+    if not parent_text and parent is not None:
+        parent_text = parent.content
+    if not parent_text:
+        parent_text = "\n\n".join([str(post.get("title") or ""), str(post.get("content") or "")])
+    nearby = sorted(comments, key=lambda item: abs(item.comment_id - target.comment_id))[:12]
+    feedback_block = (
+        f"\n{controller_feedback}\n" if controller_feedback.strip() else ""
+    )
+    return f"""Revise one generated reply from {config.community_context} to calibrate its relation to the parent.
+
+The current parent-reply pair is read as hard disagreement. Keep the useful local point, but express it as a clarification, caveat, partial agreement, or narrower condition rather than a hard contradiction.
+{feedback_block}
+
+Parent:
+{_compact(parent_text, 900)}
+
+Target reply:
+id={target.comment_id}; depth={target.depth}; words={len(target.content.split())}
+{_compact(target.content, 900)}
+
+Nearby comments:
+{_render_refs(nearby, limit=12, max_chars=180)}
+
+Generate exactly {max(2, candidates_per_comment)} alternatives.
+
+Hard rules:
+- Preserve the reply's claim, recommendation direction, uncertainty, entities, numbers, links, and approximate length.
+- Preserve a necessary correction, but frame it as a local clarification rather than deleting it.
+- Do not add facts, products, stories, advice, or questions.
+- Use ordinary Reddit language, not customer-support language.
+- Return strict JSON only.
+
+{{
+  "candidates": [
+    {{"style": "clarification_not_contradiction", "text": "replacement body"}},
+    {{"style": "partial_agreement_same_caveat", "text": "replacement body"}}
+  ]
+}}
+"""
+
+
+def story_reviser_prompt(
+    config: DomainConfig,
+    *,
+    post: dict[str, Any],
+    target: Any,
+    comments: list[Any],
+    story_probability: float,
+    real_thread_probability: float,
+    candidate_count: int,
+    strategy: str,
+    controller_feedback: str = "",
+) -> str:
+    parent = next((item for item in comments if item.comment_id == target.parent_comment_id), None)
+    previous = [
+        item for item in comments
+        if item.comment_id != target.comment_id and item.comment_id < target.comment_id
+    ][-8:]
+    action = {
+        "direct_claim": "Remove unnecessary autobiographical setup and keep the same direct local claim or reaction.",
+        "concise_factual": "Compress anecdotal framing while retaining the same concrete point and uncertainty.",
+        "question_or_caveat": "Express the same local point as a parent-specific caveat or question only when that preserves its function.",
+    }.get(strategy, "Reduce unnecessary personal-story framing while preserving the local point.")
+    feedback_block = (
+        f"\n{controller_feedback}\n" if controller_feedback.strip() else ""
+    )
+    return f"""Revise one generated comment from {config.community_context} to calibrate personal-story prevalence.
+
+Objective:
+- {action}
+- Current comment story probability: {story_probability:.4f}.
+- Matched-real thread mean story probability: {real_thread_probability:.4f}.
+{feedback_block}
+
+Seed post:
+Title: {_compact(post.get('title'), 400)}
+Body: {_compact(post.get('content'), 900)}
+
+Parent:
+{_render_ref(parent)}
+
+Previous local comments:
+{_render_refs(previous, limit=8, max_chars=220)}
+
+Target comment:
+id={target.comment_id}; words={len(target.content.split())}
+{_compact(target.content, 1000)}
+
+Generate exactly {max(2, candidate_count)} alternatives.
+
+Hard rules:
+- Preserve the same claim, stance, uncertainty, social role, product/model names, technical terms, quantities, measurements, prices, dates, and links.
+- Remove only narrative framing that is not needed for the point. Keep a firsthand datapoint when removing it would change the evidence or claim.
+- Do not invent a fact, outcome, product, personal experience, recommendation, or question.
+- Do not merely delete pronouns; rewrite the discourse move naturally.
+- Keep approximately the same length and Reddit voice.
+- Return strict JSON only.
+
+{{
+  "candidates": [
+    {{"style": "{strategy}", "text": "replacement body"}}
+  ]
+}}
+"""
+
+
+def _compact(value: Any, limit: int) -> str:
+    text = " ".join(str(value or "").split())
+    return text if len(text) <= limit else text[: max(0, limit - 3)].rstrip() + "..."
+
+
+def _render_ref(ref: Any | None) -> str:
+    if ref is None:
+        return "OP / top-level reply"
+    return f"id={ref.comment_id}; depth={ref.depth}; {_compact(ref.content, 500)}"
+
+
+def _render_refs(refs: list[Any], *, limit: int, max_chars: int) -> str:
+    rows = [
+        f"- id={ref.comment_id}; depth={ref.depth}; {_compact(ref.content, max_chars)}"
+        for ref in refs[:limit]
+    ]
+    return "\n".join(rows) or "(none)"
+
+
+def _thread_memory(
+    backend: Any,
+    comments: list[dict[str, Any]],
+    *,
+    current_task: Any,
+    domain_profile: dict[str, Any] | None = None,
+) -> str:
+    usable = [comment for comment in comments if str(comment.get("content") or "").strip()]
+    rows = []
+    tail = usable[-8:]
+    start_index = max(1, len(usable) - len(tail) + 1)
+    for index, comment in enumerate(tail, start=start_index):
+        tags = ", ".join(
+            _comment_tags(comment, domain_profile=domain_profile or {}, compact=True)
+        )
+        semantic = "; ".join(
+            value
+            for value in (
+                _memory_field(backend, "move", comment.get("semantic_move"), 70),
+                _memory_field(backend, "stance", comment.get("stance"), 20),
+            )
+            if value
+        )
+        suffix = f"; {semantic}" if semantic else ""
+        # Keep prior meaning and control coverage without replaying long text
+        # that can prime the Writer to reuse its phrasing. Exact short lines
+        # remain in the dedicated exclusion block below.
+        rows.append(
+            f"- #{index} depth={comment.get('depth', 0)} [{tags}]{suffix}"
+        )
+    rendered = "\n".join(rows) or "- none yet"
+    # Exact duplicates in long threads often come from short replies generated
+    # far earlier than the recent-text window. All current-thread short lines
+    # fit comfortably in the Writer context and must remain explicitly visible.
+    # Every ledger below is capped at a constant, not scaled by thread length.
+    # Scaled caps made the blackboard 81% of the Writer prompt by comment 140,
+    # leaving the slot's own assignment at 19%, and nothing in the rule mass was
+    # being attended to. A bounded, relevance-ranked ledger is what the Writer
+    # can actually use.
+    # A long slot cannot reproduce a five-word line, so the complete short-line
+    # ledger is kept only for the slots that can. This preserves the
+    # exact-duplicate invariant for long threads at no cost on long slots, where
+    # the same list was pure prompt mass.
+    short_exclusions = short_utterance_exclusions(
+        usable,
+        limit=max(32, len(usable)) if _short_output_slot(current_task) else 12,
+    )
+    short_block = (
+        "\n".join(f"- {backend.compact(value, 90)}" for value in short_exclusions)
+        if short_exclusions
+        else "- none yet"
+    )
+    # These caps are measured, not guessed. A whole 38-slot thread was rebuilt
+    # against a 2,523-character prompt carrying a ledger of this size, and
+    # within-thread diversity did not regress: self_bleu_4 0.0466 -> 0.0434 and
+    # self_bertscore 0.5279 -> 0.5226, both moving toward the thread's real
+    # 0.0362 / 0.494, while the converged "the part that" frame went 2.6% -> 0%
+    # and length moved from 26.3 to 28.2 words against a real 32.8. The ledger
+    # was 78% of a 19,117-character prompt and the extra mass bought nothing.
+    coverage = semantic_coverage_entries(
+        usable,
+        limit=16,
+        current_task=current_task,
+    )
+    coverage_block = (
+        "\n".join(f"- {backend.compact(value, 90)}" for value in coverage)
+        if coverage
+        else "- none yet"
+    )
+    sentence_routes = used_sentence_routes(usable, limit=12)
+    route_block = (
+        "\n".join(f"- {backend.compact(value, 60)}" for value in sentence_routes)
+        if sentence_routes
+        else "- none yet"
+    )
+    return (
+        "Earlier generated comments (generated text and private controls only):\n"
+        f"{rendered}\n\n"
+        "Short utterances already used anywhere in this thread:\n"
+        f"{short_block}\n"
+        "Do not output one of these lines again or a trivial polarity-swapped paraphrase.\n\n"
+        "Semantic contributions already covered in this thread:\n"
+        f"{coverage_block}\n\n"
+        "Sentence- or clause-entry routes already used in this thread:\n"
+        f"{route_block}\n"
+        "Do not reuse one of these clause paths; keep domain entities when the local point needs them.\n\n"
+        "Thread-level distribution pressure:\n"
+        f"{_distribution_pressure(backend, usable, current_task=current_task, domain_profile=domain_profile or {})}"
+    )
+
+
+def _semantic_realization_contract(
+    backend: Any,
+    task: Any,
+    *,
+    domain_profile: dict[str, Any],
+) -> str:
+    rows = []
+    for label, value in semantic_contract_values(task):
+        safe = _writer_safe_control_text(value, domain_profile)
+        if safe:
+            limit = 1200 if label == "development sequence" else 220
+            rows.append(f"- {label}: {backend.compact(safe, limit)}")
+    if not rows:
+        return "- make one parent- or seed-grounded local contribution"
+    rows.append(
+        "- realization rule: express this increment once; do not substitute a nearby thread conclusion, generic acknowledgement, or paraphrase"
+    )
+    return "\n".join(rows)
+
+
+def _semantic_route_lock(
+    backend: Any,
+    task: Any,
+    *,
+    domain_profile: dict[str, Any],
+) -> str:
+    """Render the one proposition a single Writer call is allowed to add.
+
+    This is intentionally shorter and earlier than the full blackboard. It
+    prevents a salient seed question or parent wording from displacing the
+    Planner's already-assigned decision boundary in high-fanout discussions.
+    """
+
+    move = _writer_safe_control_text(
+        getattr(task, "semantic_move", "")
+        or getattr(task, "decision_boundary", "")
+        or getattr(task, "planner_intent", ""),
+        domain_profile,
+    )
+    boundary = _writer_safe_control_text(
+        getattr(task, "decision_boundary", "")
+        or getattr(task, "owned_decision_subject", ""),
+        domain_profile,
+    )
+    # The framing here is what the comment ends up sounding like. Asking a model
+    # to "write the one new proposition this slot owns" and to name "the only
+    # decision boundary you may establish" produces "that's the part that
+    # actually matters": measured on v72, that frame is in 20% of generated
+    # comments and 0 times in 39,265 tokens of matched real ones, and it is
+    # already 20% in the first comment of a thread, so it is not an echo of
+    # earlier output. Say what the turn is about in ordinary words instead.
+    rows = [
+        "- Say this, and only this: " + backend.compact(move, 260),
+    ]
+    if boundary:
+        rows.append(
+            "- The question your turn settles: " + backend.compact(boundary, 240)
+        )
+    reply_delta = _writer_safe_control_text(
+        getattr(task, "reply_delta", ""), domain_profile
+    )
+    novelty_anchor = _writer_safe_control_text(
+        getattr(task, "reply_novelty_anchor", ""), domain_profile
+    )
+    reply_delta_type = _writer_safe_control_text(
+        getattr(task, "reply_delta_type", ""), domain_profile
+    ).casefold()
+    parent_move = _writer_safe_control_text(
+        getattr(task, "parent_semantic_move", ""), domain_profile
+    )
+    if getattr(task, "local_parent_task_id", None) is not None:
+        if reply_delta:
+            rows.append(
+                "- You are replying. What you add: " + backend.compact(reply_delta, 240)
+            )
+        if novelty_anchor:
+            # The previous rewording of this line ("This concrete object is what
+            # your turn adds beyond the parent") did not remove the echo; the
+            # frame was still at 20% in v72. The whole block is what the Writer
+            # imitates, so this names the thing plainly instead of describing
+            # its role in an argument.
+            rows.append("- Specifically: " + backend.compact(novelty_anchor, 220))
+        realization_by_type = {
+            "operational_test": (
+                "- Reply form: state one concrete action or observation that could decide "
+                "the issue. Do not give the parent's verdict, condition, or agreement."
+            ),
+            "observable_failure": (
+                "- Reply form: name one visible failure signal or boundary case. Do not "
+                "restate the parent's general concern."
+            ),
+            "evidence_requirement": (
+                "- Reply form: name the evidence needed before acting and what remains "
+                "unjustified without it. Do not repeat the parent's recommendation."
+            ),
+            "scope_limit": (
+                "- Reply form: state the narrower context where the parent no longer "
+                "settles the decision. Do not rephrase its main condition."
+            ),
+            "downstream_consequence": (
+                "- Reply form: state one practical effect that follows after the choice. "
+                "Do not restate why the parent thinks the choice matters."
+            ),
+            "countercondition": (
+                "- Reply form: state one exception that reverses or limits the parent's "
+                "conclusion. Do not restate the conclusion itself."
+            ),
+            "corroborating_datapoint": (
+                "- Reply form: report your own concrete experience of the parent's "
+                "situation and what it showed. The experience is the new object; do "
+                "not restate the parent's claim as your conclusion."
+            ),
+            "useful_extension": (
+                "- Reply form: supply the adjacent practical detail the parent leaves "
+                "out and say why it matters here. Do not re-argue the parent's point."
+            ),
+            "endorsement_with_reason": (
+                "- Reply form: commit to the parent's option and name the specific "
+                "reason it works. The reason is the new object; agreement alone is "
+                "not the increment."
+            ),
+            "social_close": (
+                "- Reply form: make only a brief human acknowledgement. Add no factual "
+                "claim, recommendation, evidence, or restatement."
+            ),
+        }
+        if reply_delta_type in realization_by_type:
+            rows.append(realization_by_type[reply_delta_type])
+        # The parent's proposition is rendered once, as the structured
+        # "parent contribution not to restate" field. Repeating it here made the
+        # same sentence appear three times in one prompt under three different
+        # prohibitions, and the reply-form line above already names the specific
+        # thing this increment type must not repeat.
+    else:
+        rows.append(
+            "- Do not replace this branch-specific contribution with a generic overall answer to the OP."
+        )
+    return "\n".join(rows)
+
+
+def _memory_field(backend: Any, label: str, value: Any, limit: int) -> str:
+    text = " ".join(str(value or "").split())
+    return f"{label}={backend.compact(text, limit)}" if text else ""
+
+
+def _comment_tags(
+    comment: dict[str, Any],
+    *,
+    domain_profile: dict[str, Any] | None = None,
+    compact: bool = False,
+) -> list[str]:
+    values = (
+        ("role", comment.get("speaker_role") or "commenter"),
+        ("tone", comment.get("tone_shape") or comment.get("voice") or "neutral"),
+        ("payload", comment.get("payload_type") or "local_turn"),
+        ("utterance", comment.get("utterance_mode") or "local_point"),
+        ("voice", comment.get("voice") or "casual_neutral"),
+        ("story", comment.get("story_mode") or "no_story"),
+        ("affect", comment.get("affect_role") or "neutral"),
+        ("length", comment.get("length_bucket") or "unknown"),
+        ("shape", _discourse_shape(comment)),
+        (
+            "perspective",
+            _perspective_label(domain_profile or {}, comment.get("perspective_id") or "seed_local"),
+        ),
+        ("claim", comment.get("claim_key") or "local_claim"),
+    )
+    if compact:
+        # The Writer's blackboard needs the axes it must vary against, not every
+        # recorded control. The full set is retained for audits and tests.
+        wanted = {"role", "payload", "affect", "shape", "claim"}
+        values = tuple(item for item in values if item[0] in wanted)
+    return [f"{key}={value}" for key, value in values]
+
+
+def _discourse_shape(comment: dict[str, Any]) -> str:
+    skeleton = str(comment.get("surface_skeleton") or "").strip()
+    if skeleton:
+        return skeleton
+    texture = str(comment.get("surface_texture") or "")
+    tone = str(comment.get("tone_shape") or "")
+    payload = str(comment.get("payload_type") or "")
+    role = str(comment.get("speaker_role") or "")
+    if texture == "link_reference":
+        return "reference_aside"
+    if tone == "soft_ack" or role == "gratitude_reply":
+        return "soft_acknowledgement"
+    if tone == "personal_dp" or payload in {"fragment_datapoint", "personal_story"}:
+        return "datapoint"
+    if tone == "plain_question" or payload == "narrow_question":
+        return "question_nudge"
+    if tone == "mild_caveat":
+        return "mild_caveat"
+    if tone == "direct_correction":
+        return "local_correction"
+    if tone == "rant":
+        return "complaint"
+    if tone == "light_joke":
+        return "joke_aside"
+    if tone == "bare_answer":
+        return "plain_answer"
+    return "neutral_observation"
+
+
+def _distribution_pressure(
+    backend: Any,
+    comments: list[dict[str, Any]],
+    *,
+    current_task: Any,
+    domain_profile: dict[str, Any] | None = None,
+) -> str:
+    advice_like = sum(1 for comment in comments if _is_advice_like(comment))
+    question_like = sum(1 for comment in comments if _is_question_like(comment))
+    social_like = sum(1 for comment in comments if _is_social_like(comment))
+    story_like = sum(1 for comment in comments if _is_story_like(comment))
+    blunt_like = sum(1 for comment in comments if _is_blunt_like(comment))
+    affect_counts = _count_values(comments, "affect_role")
+    story_counts = _count_values(comments, "story_mode")
+    role_counts = _count_values(comments, "speaker_role")
+    tone_counts = _count_values(comments, "tone_shape", fallback="voice")
+    payload_counts = _count_values(comments, "payload_type")
+    raw_perspective_counts = _count_values(comments, "perspective_id")
+    perspective_counts: dict[str, int] = {}
+    for perspective, count in raw_perspective_counts.items():
+        label = _perspective_label(domain_profile or {}, perspective)
+        perspective_counts[label] = perspective_counts.get(label, 0) + count
+    claim_counts = _count_values(comments, "claim_key")
+    opening_counts = opening_route_counts(comments)
+    phrase_counts = repeated_phrase_counts(comments)
+    shape_counts: dict[str, int] = {}
+    for comment in comments[-12:]:
+        shape = _discourse_shape(comment)
+        shape_counts[shape] = shape_counts.get(shape, 0) + 1
+    current = ", ".join(
+        str(value)
+        for value in (
+            current_task.speaker_role,
+            backend.resolved_tone_shape(current_task)
+            if hasattr(backend, "resolved_tone_shape")
+            else getattr(current_task, "tone_shape", "") or current_task.voice,
+            current_task.payload_type,
+            current_task.utterance_mode,
+            current_task.voice,
+            getattr(current_task, "story_mode", ""),
+            getattr(current_task, "affect_role", ""),
+            current_task.length_bucket,
+            _discourse_shape(
+                {
+                    "surface_skeleton": getattr(current_task, "surface_skeleton", ""),
+                    "surface_texture": current_task.surface_texture,
+                    "tone_shape": getattr(current_task, "tone_shape", ""),
+                    "payload_type": current_task.payload_type,
+                    "speaker_role": current_task.speaker_role,
+                }
+            ),
+            _perspective_label(
+                domain_profile or {},
+                getattr(current_task, "perspective_id", "") or "seed_local",
+            ),
+            getattr(current_task, "claim_key", ""),
+            getattr(current_task, "domain_intent", ""),
+            getattr(current_task, "opening_style", ""),
+        )
+        if value
+    )
+    return "\n".join(
+        [
+            f"- So far: total={len(comments)}, advice_like={advice_like}, question_like={question_like}, "
+            f"social_ack={social_like}, story_like={story_like}, blunt_or_annoyed={blunt_like}.",
+            f"- Role distribution: {_render_counts(role_counts)}.",
+            f"- Tone distribution: {_render_counts(tone_counts)}.",
+            f"- Story-mode distribution: {_render_counts(story_counts)}.",
+            f"- Affect-role distribution: {_render_counts(affect_counts)}.",
+            f"- Payload distribution: {_render_counts(payload_counts)}.",
+            f"- Perspective distribution: {_render_counts(perspective_counts)}.",
+            f"- Claim distribution: {_render_counts(claim_counts)}.",
+            f"- Repeated generated opening routes: {_render_counts(opening_counts)}.",
+            f"- Repeated generated four-grams: {_render_counts(phrase_counts)}.",
+            f"- Recent discourse shapes: {_render_counts(shape_counts)}.",
+            f"- Current sampled slot: {current or 'ordinary local turn'}. Obey this slot first.",
+            "- Avoid the dominant recent perspective, claim, opener, role posture, payload, tone, affect role, story shape, and discourse shape when the sampled slot permits a natural alternative.",
+            "- If the thread already leans helpful or explanatory, keep this turn narrow, local, or socially reactive when allowed.",
+            "- If the thread already leans fragmentary or noisy, keep this turn substantive when the sampled slot calls for advice, correction, datapoint, or story.",
+        ]
+    )
+
+
+def _perspective_label(profile: dict[str, Any], perspective_id: Any) -> str:
+    value = str(perspective_id or "seed_local").strip()
+    if value == "seed_local":
+        return "seed-local perspective"
+    for item in profile.get("perspectives") or []:
+        if not isinstance(item, dict):
+            continue
+        if str(item.get("perspective_id") or "").upper() == value.upper():
+            return str(item.get("label") or "domain perspective").strip() or "domain perspective"
+    if INTERNAL_CONTROL_ID_RE.fullmatch(value):
+        return "domain perspective"
+    return value
+
+
+def _writer_safe_control_text(value: Any, profile: dict[str, Any]) -> str:
+    text = str(value or "")
+    perspective_labels = {
+        str(item.get("perspective_id") or "").upper(): str(item.get("label") or "domain perspective")
+        for item in profile.get("perspectives") or []
+        if isinstance(item, dict) and item.get("perspective_id")
+    }
+
+    def replace_control(match: re.Match[str]) -> str:
+        label = match.group(0).upper()
+        if label.startswith("P"):
+            return perspective_labels.get(label, "domain perspective")
+        return "prior structural slot" if label.startswith("S") else "local branch"
+
+    return re.sub(r"\s+", " ", INTERNAL_CONTROL_ID_RE.sub(replace_control, text)).strip()
+
+
+def _writer_visible_anchors(values: Any) -> list[str]:
+    anchors = []
+    for value in values or ():
+        raw = str(value)
+        base = strip_anchor_source(raw)
+        source_is_seed = raw.rstrip().lower().endswith("(seed)")
+        if INTERNAL_CONTROL_ID_RE.fullmatch(base) and not source_is_seed:
+            continue
+        anchors.append(base)
+    return anchors
+
+
+def _render_matched_structure(
+    thread: dict[str, Any] | None,
+    *,
+    max_comments: int,
+) -> str:
+    if not thread:
+        return "(matched structural sample unavailable)"
+    rows = thread.get("comments") or []
+    id_to_slot: dict[str, int] = {}
+    visible_rows = rows if max_comments <= 0 else rows[:max_comments]
+    for index, row in enumerate(visible_rows, start=1):
+        for key in (row.get("comment_id"), row.get("id"), row.get("name")):
+            if key:
+                id_to_slot[str(key)] = index
+                id_to_slot[f"t1_{key}"] = index
+    lines = []
+    for index, row in enumerate(visible_rows, start=1):
+        body = str(row.get("body") or "").strip()
+        parent_raw = str(row.get("parent_id") or "")
+        parent = "OP" if parent_raw.startswith("t3_") else f"S{id_to_slot[parent_raw]}" if parent_raw in id_to_slot else "outside_sample"
+        lines.append(
+            f"S{index}: depth={int(row.get('depth') or 0)}; parent={parent}; "
+            f"words={len(body.split())}; surface={_surface_only_label(body)}"
+        )
+    return "\n".join(lines) or "(matched structural sample empty)"
+
+
+def _render_matched_slots(
+    comments: list[dict[str, Any]],
+    *,
+    all_comments: list[dict[str, Any]] | None,
+    sample_offset: int,
+) -> str:
+    reference = all_comments if all_comments is not None else comments
+    parent_offset = 0 if all_comments is not None else sample_offset
+    id_to_slot: dict[str, int] = {}
+    for local_index, row in enumerate(reference, start=1):
+        slot = parent_offset + local_index
+        for key in (row.get("comment_id"), row.get("id"), row.get("name")):
+            if key:
+                id_to_slot[str(key)] = slot
+                id_to_slot[f"t1_{key}"] = slot
+    lines = []
+    for local_index, row in enumerate(comments, start=1):
+        slot = sample_offset + local_index
+        body = str(row.get("body") or "").strip()
+        parent_raw = str(row.get("parent_id") or "")
+        parent = "OP" if parent_raw.startswith("t3_") else f"S{id_to_slot[parent_raw]}" if parent_raw in id_to_slot else "outside_sample"
+        words = len(body.split())
+        # Naming the required beat count per slot instead of leaving it to a
+        # general rule: long slots were silently returned with no
+        # development_plan and then realized at a fraction of their scale.
+        beats = expected_development_beats(words)
+        development = (
+            f"; development_plan={beats} beats required" if beats > 0 else ""
+        )
+        lines.append(
+            f"S{slot}: depth={int(row.get('depth') or 0)}; parent={parent}; "
+            f"words={words}; surface={_surface_only_label(body)}{development}"
+        )
+    return "\n".join(lines)
+
+
+def _surface_only_label(text: str) -> str:
+    return surface_only_label(text)
+
+
+def _count_values(
+    comments: list[dict[str, Any]],
+    key: str,
+    *,
+    fallback: str = "",
+) -> dict[str, int]:
+    counts: dict[str, int] = {}
+    for comment in comments:
+        value = str(comment.get(key) or (comment.get(fallback) if fallback else "") or "unknown")
+        counts[value] = counts.get(value, 0) + 1
+    return counts
+
+
+def _render_counts(counts: dict[str, int], *, limit: int = 5) -> str:
+    if not counts:
+        return "none"
+    ranked = sorted(counts.items(), key=lambda item: (-item[1], item[0]))[:limit]
+    return ", ".join(f"{key}={value}" for key, value in ranked)
+
+
+def _is_advice_like(comment: dict[str, Any]) -> bool:
+    role = str(comment.get("speaker_role") or "")
+    payload = str(comment.get("payload_type") or "")
+    function = str(comment.get("comment_function") or comment.get("comment_job") or "")
+    text = str(comment.get("content") or "").lower()
+    return role == "advisor" or "advice" in payload or "advice" in function or bool(
+        re.search(r"\b(you should|you can|i would|try|check|make sure|worth)\b", text)
+    )
+
+
+def _is_question_like(comment: dict[str, Any]) -> bool:
+    role = str(comment.get("speaker_role") or "")
+    payload = str(comment.get("payload_type") or "")
+    utterance = str(comment.get("utterance_mode") or "")
+    return role == "confused_asker" or "question" in payload or "question" in utterance or "?" in str(
+        comment.get("content") or ""
+    )
+
+
+def _is_social_like(comment: dict[str, Any]) -> bool:
+    role = str(comment.get("speaker_role") or "")
+    voice = str(comment.get("voice") or "")
+    texture = str(comment.get("surface_texture") or "")
+    text = str(comment.get("content") or "").lower()
+    return role == "gratitude_reply" or voice == "grateful" or texture == "gratitude_social" or bool(
+        re.search(r"\b(thanks|thank you|appreciate|good to know|that helps|fair point)\b", text)
+    )
+
+
+def _is_story_like(comment: dict[str, Any]) -> bool:
+    story_mode = str(comment.get("story_mode") or "")
+    payload = str(comment.get("payload_type") or "")
+    evidence = str(comment.get("evidence_mode") or "")
+    return (
+        story_mode not in {"", "no_story"}
+        or payload == "personal_story"
+        or evidence == "firsthand_experience"
+    )
+
+
+def _is_blunt_like(comment: dict[str, Any]) -> bool:
+    role = str(comment.get("speaker_role") or "")
+    voice = str(comment.get("voice") or "")
+    text = str(comment.get("content") or "").lower()
+    return role in {"contrarian", "ranter"} or voice in {"blunt", "annoyed", "sarcastic"} or bool(
+        re.search(r"\b(nope|hard pass|wtf|bullshit|lol|lmao|wrong|doubtful)\b", text)
+    )
+
+
+def _optional_control_rule(label: str, value: str, instruction: str, suffix: str) -> str:
+    if not value:
+        return ""
+    parts = [f"{label}: {value}."]
+    if instruction:
+        parts.append(str(instruction).strip())
+    if suffix:
+        parts.append(suffix)
+    return " ".join(parts)
+
+
+def _story_fact_safety_rule(task: Any, *, has_domain_claim: bool = False) -> str:
+    if str(getattr(task, "story_mode", "") or "") in {"", "no_story"}:
+        if has_domain_claim:
+            # A blanket ban here would cancel the planned domain fact sitting in
+            # the same prompt, which is the contradiction that made an earlier
+            # version's tone control unrealizable.
+            return (
+                "Beyond the domain fact assigned above, do not invent products, "
+                "specifications, prices, measurements, dates, outcomes, policies, "
+                "links, or personal experiences. Never state a specification, "
+                "price, or measurement for the post's own equipment unless it is "
+                "visible in the discussion."
+            )
+        return (
+            "Do not invent products, specifications, prices, measurements, dates, outcomes, policies, links, or personal experiences."
+        )
+    return (
+        "This is a synthetic story slot: make the temporal sequence legible with "
+        "an ordinary first-person situation or action followed by an observation "
+        "or reaction around the existing local point. You may synthesize that "
+        "non-verifiable personal sequence, but do not invent a product, "
+        "specification, price, measurement, date, policy, link, diagnosis, or "
+        "externally checkable outcome."
+    )
+
+
+def _metric_guidance_block() -> str:
+    return """- Lexical diversity: do not reuse previous openings, helper templates, clause rhythm, or discourse posture. Vary only when the sampled slot allows it.
+- Semantic diversity: avoid another complete explainer if the thread already has several; preserve long matched slots instead of forcing them short.
+- Local coherence: remain on the visible local hook and sampled plan. Do not add unrelated noise merely to differ.
+- Story prevalence: use a story only when the sampled story mode or role requires it. Keep synthetic personal context qualitative and never invent measured facts or definite outcomes.
+- Tone balance: preserve the sampled tone while allowing grateful, uncertain, neutral, mildly annoyed, skeptical, and corrective turns across the thread. Keep interpersonal heat local.
+- Length variation: follow the anonymous matched word-count cue as a soft scale. Do not expand micro slots or collapse substantive slots."""
+
+
+def _substitution_rule(task: Any | None = None) -> str:
+    """Forbid substituting the planned move, without forbidding the tone register.
+
+    A blanket ban on acknowledgement and first-person framing also removed the
+    only surfaces through which the warm register is realized, so the ban is
+    scoped to the registers that actually exclude those surfaces.
+    """
+
+    assigned = str(getattr(task, "tone_target", "") or "").strip().lower()
+    if assigned == "polite":
+        return (
+            "- Do not replace the planned move with a bare recommendation or a\n"
+            "  content-free agreement. An appreciative acknowledgement or a\n"
+            "  first-person positive frame is required here: carry the planned\n"
+            "  move through it rather than instead of it."
+        )
+    if assigned == "somewhat_polite":
+        return (
+            "- Do not replace the planned move with a generic recommendation. A\n"
+            "  brief qualified concession is required here, but it must lead into\n"
+            "  the planned move, not stand in for it."
+        )
+    return (
+        "- Do not replace it with a generic agreement, acknowledgement,\n"
+        "  recommendation, or first-person frame."
+    )
+
+
+def _tone_discourse_guidance_block(task: Any | None = None) -> str:
+    """Render the assigned tone register, contrasted against the others.
+
+    The registers are named explicitly because the untargeted default for this
+    kind of task is the hedged, half-agreeing register, which is a distinct
+    class rather than a mild form of warmth.
+    """
+
+    assigned = str(getattr(task, "tone_target", "") or "").strip().lower()
+    lines = [
+        "- The assigned tone class is a social register to inhabit, never wording to copy.",
+    ]
+    # Only the assigned register and the one it most easily collapses into are
+    # rendered. Listing all four for every comment repeated three irrelevant
+    # definitions per call inside a prompt where rule mass is already the problem.
+    contrast = {
+        "polite": "somewhat_polite",
+        "somewhat_polite": "polite",
+        "neutral": "somewhat_polite",
+        "impolite": "neutral",
+    }.get(assigned)
+    for label in (assigned, contrast):
+        definition = TONE_DEFINITIONS.get(label or "")
+        if not definition:
+            continue
+        marker = "  >> " if label == assigned else "  not "
+        lines.append(f"{marker}{label}: {definition}")
+    if assigned:
+        lines.append(
+            f"- This turn is {assigned}. The register is a property of the "
+            "stance you commit to, not of a fixed opening or sentence order. "
+            "Reach it by a different route from the other turns in this thread: "
+            "two comments in the same register must not share an entry pattern, "
+            "clause rhythm, or signature phrase."
+        )
+        if assigned == "polite":
+            lines.append(
+                "- Warmth here means an actual positive commitment about the "
+                "subject or the help received. A qualified maybe or a balanced "
+                "weighing is a different register and does not satisfy it."
+            )
+        elif assigned == "neutral":
+            lines.append(
+                "- Carry no evaluative stance, positive or negative, and add no "
+                "hedging frame."
+            )
+    lines.extend(
+        [
+            "- Keep thread posture varied across acknowledgement, neutral observation, caveat, datapoint, plain answer, question, reference aside, and local frustration.",
+            "- Direct corrections should correct one point and stop. Annoyance should come from concrete local friction, not performative outrage.",
+            "- Direct criticism at the product, claim, rule, interface, service, or process; do not scold the OP or another commenter.",
+            "- Never sound like an assistant summarising options for a user.",
+        ]
+    )
+    return "\n".join(lines)
+
+
+def _placeholder_guidance_block() -> str:
+    return """- Never output planner labels, control names, skeleton labels, placeholders, fake resource titles, or inferred quote headings.
+- If a source, wiki, sidebar, link, or template is requested but no exact text is visible, write a normal human reference sentence without inventing a URL.
+- Use a markdown quote marker only for exact text visible in the current discussion."""
+
+
+def _payload_guidance_block(backend: Any, task: Any) -> str:
+    lines: list[str] = []
+    if backend.is_meta_template_task(task):
+        lines.extend(
+            [
+                "- Meta/template slot: keep the reference or community nudge abrupt and local.",
+                "- Do not invent resource names, URLs, template text, or a paragraph explaining the resource.",
+            ]
+        )
+    if backend.is_gpt_long_helpful_task(task):
+        lines.extend(
+            [
+                "- Long helpful slot: earn the length with one or two visible concrete anchors, a narrow caveat, a firsthand datapoint, or a parent-specific reason.",
+                "- If no concrete anchor is visible, compress the reply instead of filling space with an abstract overview.",
+            ]
+        )
+    if substantive_surface_slot(task):
+        lines.extend(
+            [
+                "- Matched substantive slot: do not turn it into a tiny reaction, joke label, or acknowledgement.",
+                "- Preserve the local function and use visible anchors for detail density without copying reference wording.",
+            ]
+        )
+    return "\n".join(lines) or "- Preserve the sampled payload exactly; do not upgrade or broaden it."
+
+
+def _voice_guidance(voice: str) -> str:
+    mapping = {
+        "polite_soft": "Voice: show a light local acknowledgement or caveat without customer-support polish.",
+        "grateful": "Voice: use a small, specific, casual sign of appreciation.",
+        "annoyed": "Voice: let mild frustration show through the local friction, not contempt.",
+        "sarcastic": "Voice: keep any dry aside brief, low-stakes, and aimed at the situation.",
+        "blunt": "Voice: be direct and concise without becoming hostile or judge-like.",
+        "uncertain": "Voice: sound exploratory rather than authoritative.",
+    }
+    return mapping.get(voice, "Voice: use a natural Reddit tone for this local point.")
+
+
+def _speaker_role_guidance(role: str, *, task: Any | None = None) -> str:
+    substantive = substantive_surface_slot(task)
+    mapping = {
+        "confused_asker": "Role: ask from uncertainty; do not answer the question yourself.",
+        "op_followup": "Role: clarify, react, thank, or report back like an imperfect OP follow-up.",
+        "gratitude_reply": "Role: acknowledge help or report back briefly; do not add a lecture.",
+        "jokester": (
+            "Role: use humor as the posture around the assigned local contribution; preserve the substantive slot instead of reducing it to a punchline."
+            if substantive
+            else "Role: make the joke or aside the whole point and do not explain it."
+        ),
+        "mod_meta": (
+            "Role: keep the reference or community context inside the assigned substantive local contribution; do not invent template text."
+            if substantive
+            else "Role: write a community/meta/template-style comment, not product advice."
+        ),
+        "contrarian": "Role: push back on one local point without turning it into balanced advice.",
+        "datapoint_only": "Role: give one compact datapoint or lived detail, not a recommendation.",
+        "ranter": "Role: let the complaint stand without resolving it into a helpful takeaway.",
+        "side_observer": "Role: stay on the small side observation instead of solving the OP's main problem.",
+    }
+    return mapping.get(role, "Role: make one local contribution rather than acting as a general advisor.")
+
+
+def _utterance_mode_guidance(mode: str, *, task: Any | None = None) -> str:
+    substantive = substantive_surface_slot(task)
+    mapping = {
+        "fragment_only": "Utterance: write a fragment or tiny reaction without background or advice.",
+        "direct_answer": "Utterance: answer directly in one small point.",
+        "question_only": (
+            "Utterance: embed the assigned question in a substantive local turn; preserve the slot's context and pacing."
+            if substantive
+            else "Utterance: ask only the narrow question; do not answer it."
+        ),
+        "one_datapoint": "Utterance: give one datapoint or lived detail without recommendation.",
+        "op_followup": "Utterance: react, clarify, thank, or report back; do not become an advisor.",
+        "joke_only": (
+            "Utterance: let humor color the assigned substantive local move without collapsing it to a one-line joke."
+            if substantive
+            else "Utterance: make the joke or aside the whole comment."
+        ),
+        "template_notice": (
+            "Utterance: keep the reference or meta cue within the assigned substantive local move."
+            if substantive
+            else "Utterance: stay meta/template-like; do not add product advice."
+        ),
+        "complaint_only": "Utterance: let the complaint stand without a solution paragraph.",
+        "side_tangent": "Utterance: stay on the side detail.",
+        "correction_only": "Utterance: correct one local detail and stop.",
+        "local_answer_with_context": "Utterance: state the assigned answer directly, then preserve only the local context needed by this substantive slot.",
+        "question_with_context": "Utterance: ground the assigned uncertainty in its local context, then ask the question without answering it.",
+        "humorous_local_turn": "Utterance: realize the assigned substantive local move with incidental humor rather than reducing it to a punchline.",
+        "reference_with_context": "Utterance: explain the local relevance of the reference cue without inventing a source, URL, or template.",
+    }
+    return mapping.get(mode, "Utterance: make one local point; avoid broad advice unless required.")
+
+
+def _surface_texture_guidance(texture: str, *, task: Any | None = None) -> str:
+    substantive = substantive_surface_slot(task)
+    mapping = {
+        "no_punct_fragment": "Texture: use a clipped fragment that may omit final punctuation.",
+        "abbrev_shorthand": "Texture: use only natural shorthand already common or visible in this domain; never invent an acronym.",
+        "emoji_or_sarcasm": (
+            "Texture: humor or an emoji may be incidental to the substantive local turn; do not let it determine the whole sentence route."
+            if substantive
+            else "Texture: a tiny emoji, lol, lmao, or /s is allowed when natural; do not explain it."
+        ),
+        "markdown_quote": "Texture: use an informal quote-like shape only for exact visible wording.",
+        "link_reference": (
+            "Texture: a reference may be embedded in the substantive local turn, but do not invent a URL or source name."
+            if substantive
+            else "Texture: make it a bare source/wiki/old-thread reference aside without inventing a URL."
+        ),
+        "messy_punctuation": "Texture: casual punctuation, ellipses, or a clipped aside is allowed.",
+        "gratitude_social": "Texture: make the acknowledgement, thanks, or report-back visibly social and brief.",
+    }
+    return mapping.get(texture, "Texture: keep the wording natural and not overly polished.")
+
+
+def _tone_shape_guidance(shape: str, *, task: Any | None = None) -> str:
+    substantive = substantive_surface_slot(task)
+    mapping = {
+        "soft_ack": "Tone: use a human acknowledgement or report-back without a lecture.",
+        "personal_dp": "Tone: give one compact lived datapoint without generalizing it.",
+        "neutral_fact": "Tone: make a neutral local observation without a verdict.",
+        "plain_question": "Tone: ask one plain narrow question.",
+        "mild_caveat": "Tone: state a low-stakes limitation without gotcha language.",
+        "light_joke": (
+            "Tone: keep humor aimed at the situation while preserving the substantive local move."
+            if substantive
+            else "Tone: keep the joke short and aimed at the situation."
+        ),
+        "direct_correction": "Tone: correct one detail directly without a lecture or insult.",
+        "rant": "Tone: express concrete local frustration without contempt for another person.",
+        "bare_answer": "Tone: keep the answer clipped and plain, not dismissive.",
+    }
+    return mapping.get(shape, "Tone: follow the sampled local Reddit attitude.")
+
+
+def _real_surface_shape_guidance(shape: str) -> str:
+    mapping = {
+        "deleted_removed": "Real shape: output a deleted/removed-style placeholder, not an answer.",
+        "template_notice": "Real shape: make it community/meta/template-like, not personal advice.",
+        "link_reference": "Real shape: make it a short reference or link-like aside.",
+        "quote_link_reference": "Real shape: make it a short quote/reference aside using only visible text.",
+        "micro_reaction": "Real shape: use a true one-to-five-word reaction.",
+        "short_direct_answer": "Real shape: use a short direct answer, not a paragraph.",
+        "short_question": "Real shape: ask only the narrow question.",
+        "thanks_ack": "Real shape: make it an acknowledgement or thanks.",
+        "joke_reaction": "Real shape: make the joke or reaction the whole point.",
+        "side_tangent": "Real shape: stay on a small side observation.",
+    }
+    return mapping.get(shape, "")
+
+
+def _dedupe(values: list[str], *, limit: int) -> list[str]:
+    seen: set[str] = set()
+    out = []
+    for value in values:
+        cleaned = " ".join(value.split()).strip(" ,.;:()[]{}")
+        key = cleaned.lower()
+        if not cleaned or key in seen:
+            continue
+        seen.add(key)
+        out.append(cleaned)
+        if len(out) >= limit:
+            break
+    return out

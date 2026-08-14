@@ -1,0 +1,141 @@
+"""One-shot content-depth planning for anonymous long comment slots.
+
+The matched thread contributes only a word-count signal. The Planner supplies
+the domain-grounded semantic beats, and the Writer realizes them once. This
+module never reads matched comment text and never triggers candidate sampling.
+"""
+
+from __future__ import annotations
+
+import re
+from typing import Any
+
+from .planner_schema import parse_sample_id
+
+
+BEAT_SEPARATOR = " || "
+_PREFIX_RE = re.compile(r"^\s*(?:[-*]+|(?:beat\s*)?\d+[.):\-])\s*", re.I)
+
+
+# Measured on generated output, twice. At one beat per 80 words long slots came
+# out at 0.72x their matched length; at one per 35 they came out at 0.87x while
+# the Planner supplied 92% of the requested beats, so the shortfall was the
+# budget rather than the Planner. The realized rate across those slots was
+# 246/12, 179/8, and 134/6 words per beat, i.e. about 21. Budget against that.
+# Re-measured on v72: realized output is 24.8 words per beat over 77 long slots,
+# so the per-beat budget below is right. The ceiling was not. At 24 beats the
+# reachable length stopped near 500 words while matched real slots reach 845, and
+# no generated comment in the run exceeded 215 words.
+WORDS_PER_REALIZED_BEAT = 21.0
+MAX_DEVELOPMENT_BEATS = 40
+
+
+def expected_development_beats(word_count: Any) -> int:
+    """Return a soft content-capacity target for an anonymous long slot."""
+
+    words = _safe_int(word_count)
+    if words <= 100:
+        return 0
+    return min(
+        MAX_DEVELOPMENT_BEATS,
+        max(3, int(round(words / WORDS_PER_REALIZED_BEAT))),
+    )
+
+
+def normalize_development_plan(value: Any, *, max_beats: int = MAX_DEVELOPMENT_BEATS) -> str:
+    """Normalize a Planner list/string without imposing domain semantics."""
+
+    if isinstance(value, (list, tuple)):
+        raw_parts = [str(item or "") for item in value]
+    else:
+        raw_parts = re.split(r"\s*\|\|\s*|[\r\n;]+", str(value or ""))
+    result: list[str] = []
+    seen: set[str] = set()
+    for raw in raw_parts:
+        beat = " ".join(_PREFIX_RE.sub("", raw).split()).strip(" -|;")
+        if not beat or beat.casefold() in {"none", "n/a", "not needed"}:
+            continue
+        beat = beat[:220].rstrip()
+        key = beat.casefold()
+        if key in seen:
+            continue
+        seen.add(key)
+        result.append(beat)
+        if len(result) >= max(1, int(max_beats)):
+            break
+    return BEAT_SEPARATOR.join(result)
+
+
+def development_beats(value: Any) -> list[str]:
+    normalized = normalize_development_plan(value)
+    return normalized.split(BEAT_SEPARATOR) if normalized else []
+
+
+def enrich_development_plan_fields(
+    payload: dict[str, Any],
+    normalized: dict[int, dict[str, str]],
+) -> dict[int, dict[str, str]]:
+    """Carry the generalized field through the shared CARD JSON parser."""
+
+    raw_rows = payload.get("comment_plans") or payload.get("plans") or []
+    raw_by_sample: dict[int, dict[str, Any]] = {}
+    for row in raw_rows if isinstance(raw_rows, list) else []:
+        if not isinstance(row, dict):
+            continue
+        sample_id = parse_sample_id(row.get("sample_id"))
+        if sample_id > 0:
+            raw_by_sample[sample_id] = row
+    for sample_id, plan in normalized.items():
+        raw = raw_by_sample.get(sample_id, {})
+        plan["development_plan"] = normalize_development_plan(
+            raw.get("development_plan")
+        )
+    return normalized
+
+
+def development_plan_problem(plan: dict[str, Any]) -> str:
+    """Explain when a long slot lacks enough planned semantic capacity."""
+
+    words = _safe_int(plan.get("_slot_word_count"))
+    expected = expected_development_beats(words)
+    if expected <= 0:
+        return ""
+    actual = len(development_beats(plan.get("development_plan")))
+    minimum = max(2, expected - 1)
+    if actual >= minimum:
+        return ""
+    return (
+        f"the anonymous slot has {words} words but development_plan contains "
+        f"{actual} distinct beat(s); supply about {expected} connected beats "
+        "that develop the same local contribution without restating it or adding unrelated claims"
+    )
+
+
+def render_development_guidance(task: Any) -> str:
+    """Render the complete one-shot plan for the Writer."""
+
+    words = _safe_int(getattr(task, "real_word_count", 0))
+    beats = development_beats(getattr(task, "development_plan", ""))
+    expected = expected_development_beats(words)
+    if not beats:
+        if expected <= 0:
+            return ""
+        return (
+            f"Develop one local thesis through about {expected} distinct, "
+            "connected beats rather than repeating the thesis or compressing this "
+            "long-tail slot into a generic answer."
+        )
+    rows = " ".join(f"{index}. {beat}" for index, beat in enumerate(beats, start=1))
+    return (
+        "One-shot development sequence for one local thesis: "
+        f"{rows} Realize each beat once in a natural order. Combine adjacent beats "
+        "when useful, but do not omit the long-tail development, repeat the thesis, "
+        "or introduce a separate conclusion."
+    )
+
+
+def _safe_int(value: Any) -> int:
+    try:
+        return max(0, int(value or 0))
+    except (TypeError, ValueError):
+        return 0
