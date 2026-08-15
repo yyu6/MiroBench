@@ -16,7 +16,7 @@ HISTORICAL_REVISION_POLICY_VERSIONS = {
     "generalized-card-revision-v6-dynamic-coverage-history-20260807",
 }
 GENERALIZED_V2_GENERATION_POLICY_VERSION = (
-    "generalized-card-v2-affirmative-affect-uncapped-slot-shape-v73-20260814"
+    "generalized-card-v2-writer-realizes-planner-move-v75-20260814"
 )
 HISTORICAL_GENERATION_POLICY_VERSIONS = {
     "generalized-v2": {
@@ -78,6 +78,8 @@ HISTORICAL_GENERATION_POLICY_VERSIONS = {
         "generalized-card-v2-scheduled-opener-grammar-v69-20260813",
         "generalized-card-v2-domain-claim-field-survival-v70-20260813",
         "generalized-card-v2-planner-owned-reply-move-single-parent-exclusion-v71-20260813",
+        "generalized-card-v2-affirmative-affect-uncapped-slot-shape-v73-20260814",
+        "generalized-card-v2-focused-writer-prompt-v74-20260814",
     },
 }
 
@@ -94,7 +96,7 @@ CORE_FILES = {
     # pinned, so a change anywhere in the engine is still reviewed.
     "generator_generalized_v2": (
         "scripts/sampling_generator/run_sampled_reddit_generator.py",
-        "3b544b0a593acb4ece6c616b21dbdfe576ac6a77617b98e4de10c98bfd93865b",
+        "ef7c9c47a35b58229212180659754fba4afc6348e402bdb972fc185892a9e64a",
     ),
     "engine_vocabulary": (
         "scripts/sampling_generator/engine/vocabulary.py",
@@ -146,7 +148,7 @@ CORE_FILES = {
     ),
     "generator_adapter": (
         "generalized_card/generalized_card/backend.py",
-        "f3672f1f2e3cea0764eff684d89be7c2956daabc49fa4517d32e32d501e4cd96",
+        "7c2d138cf878f67e85888c1dce10d54613a25f6175e5268e70ce1abf5a082d82",
     ),
     "actor_conditioning": (
         "generalized_card/generalized_card/actor_conditioning.py",
@@ -158,7 +160,7 @@ CORE_FILES = {
     ),
     "generation_runner": (
         "generalized_card/scripts/run_generate.py",
-        "89540a8402f6a8d44af6b0654a4b421219989d1b83a2eddb4778f9c7258d5d36",
+        "40d2252cdd5834942d9da26ad6ea5ddabf926b3d82fbfdf4e802da64242c62fd",
     ),
     "domain_profile": (
         "generalized_card/generalized_card/domain_profile.py",
@@ -294,11 +296,11 @@ CORE_FILES = {
     ),
     "domain_prompt_adapter": (
         "generalized_card/generalized_card/prompts.py",
-        "288f80bf90b5044ac04d9d3c6b859791fbac6cd5d07fbf765c126cd1dc6cac89",
+        "376d34d8dffea45480610cdbb997ab8555b8bd8136fa85c1953a13d7ef9f0066",
     ),
     "reply_planning": (
         "generalized_card/generalized_card/reply_planning.py",
-        "7e943afdf4439734f3f464d32bbc8f709dcd0ec0b2f65665eb4d29535664e49e",
+        "f38ed23da758ee98e8ef19278299bcce54a0eebac8876a3b726206a3aa5745fd",
     ),
     "persona_bridge": (
         "generalized_card/generalized_card/persona_bridge.py",

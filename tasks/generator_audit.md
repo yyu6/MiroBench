@@ -644,3 +644,181 @@ a full 10-thread run ($3.4).
 At N=10 a metric needs |d| < 0.519 to pass and at N=150 it needs < 0.131, so a
 run that merely restores 7-8/12 at N=10 has not answered the real question. The
 target to steer by is effect size, not the pass count.
+
+---
+
+# v74 (`--writer-prompt focused`) content audit
+
+Run: `generalized_card_camera_gpt54_v74_focused_20260814_v1`, 10 matched seeds,
+522 slots, $2.2353 (v73: $3.3716), prompt 22,249 → 8,139 chars on the 416/522
+slots that took the focused path (106/522 still take the unconverted
+`_low_info_writer_prompt` at ~15,468 chars).
+
+## Metric outcome: 7 PASS / 2 PARTIAL / 3 FAIL
+
+Only five metrics have a p-value with room to survive N=150:
+
+| metric | MWU | Cliff | verdict |
+|---|---:|---:|---|
+| `avg_depth` | 1.00 | 0.01 | matched (sampler-determined) |
+| `structural_virality` | 1.00 | -0.01 | matched (sampler-determined) |
+| `semantic_mean_cosine` | 0.79 | 0.08 | matched (generation win) |
+| `mean_story_probability` | 0.57 | -0.16 | matched (generation win) |
+| `neutral_rate` | 0.36 | -0.25 | matched — new in v74 |
+| `hard_disagree_rate` | 0.054 | 0.52 | borderline, not matched |
+| `length_cv` | 0.054 | -0.52 | borderline, not matched |
+
+v73 had 4 genuinely matched, v74 has 5, at 33% lower cost. `self_bertscore`
+still the worst metric in every version (MWU=0.00044, Cliff=0.94).
+
+## Content diagnostics, real vs generated, all 10 threads
+
+Measured with `scratchpad/content_diag.py`. Rates are % of comments.
+
+| tell | real | gen | reading |
+|---|---:|---:|---|
+| curly `’ “ ” —` | 10.9 | **68.1** | LLM typography, model-emitted |
+| straight `'` inside a word | 44.3 | **0.7** | ditto, inverse |
+| specs/comment (`f/2.8`, `28mm`, `ISO 1600`, `$900`, `18w`) | **0.55** | 0.06 | 9× less concrete |
+| distinct new brand/model tokens per thread (not in seed post) | **47.3** | 5.8 | 8× narrower referent set |
+| contains a URL | **4.5** | 0.0 | generated never links |
+| contains an emoji | **2.1** | 0.0 | |
+| `lol/haha/lmao` | 0.6 | 0.0 | |
+| ALL-CAPS word (3+) | **22.7** | 6.6 | |
+| blank-line paragraph break | **32.8** | 3.1 | 10× — long generated comments are one wall |
+| ends without final punctuation | **26.4** | 8.4 | |
+| ellipsis `...` | 6.2 | 1.2 | |
+| analytic-frame template | 0.15 | **7.2** | up to 28% on one thread |
+| ends on a question | 5.8 | **12.2** | 2× too many |
+| max comment words (thread mean) | **262** | 153 | real maxima 845/337/331 |
+| word-count CV (pooled, per thread) | 1.01 | 0.87 | |
+
+Curly-quote rate is identical pre- and post-`gpt_cleanup` (72/72, 79/79, 83/83),
+so the typography comes from the writer model, not the cleanup pass.
+
+## Length ceiling is structural
+
+`scripts/sampling_generator/engine/vocabulary.py:195` —
+`LENGTH_BUCKET_BOUNDS["very_long"] = (120, 220)`. Real threads exceed 220 words
+in 10/10 matched threads (max 845). No planned slot can reach the real upper
+tail, which caps `wc_max` and holds `length_cv` at Cliff=-0.52.
+
+## Negative result: novel-entity deficit does NOT explain `self_bertscore`
+
+| seed | real ents | gen ents | real bert | gen bert |
+|---:|---:|---:|---:|---:|
+| 1 | 0 | 0 | 0.492 | 0.546 |
+| 6 | 13 | **18** | 0.500 | 0.534 |
+| 7 | 34 | 6 | 0.512 | 0.513 |
+| 8 | 144 | 13 | 0.489 | 0.526 |
+
+Seed 6 introduces *more* novel entities than the real thread and still
+overshoots by 0.034; seed 7 has 6 vs 34 entities and matches to 0.001. The
+overshoot is a near-uniform +0.033 offset on 9/10 threads (real range
+0.481-0.514, gen 0.505-0.546) — a shared register signature applied evenly, not
+topical narrowness. Cliff=0.94 comes from the consistent sign, not the size.
+
+## Politeness is the deepest content miss
+
+`polite_rate` real median 0.378 vs gen 0.080 (4.7× low); `impolite_rate` real
+0.435 vs gen 0.621. Generated comments are curt-analytic where real comments are
+warm and concrete, and this feeds `emotion_entropy` (real 1.76 vs gen 1.43).
+
+---
+
+# v75 change 1: the Writer realizes the Planner's move instead of transcribing it
+
+Policy version `generalized-card-v2-writer-realizes-planner-move-v75-20260814`.
+v74's version string is now in `HISTORICAL_GENERATION_POLICY_VERSIONS` so the v74
+run stays evaluable. Six pinned files changed and were re-pinned; the drift check
+reported exactly those six and nothing else.
+
+## What was wrong
+
+Two instructions, both already present in the v73 checkpoint, told the model to
+copy rather than write:
+
+- `prompts.py` route lock: `"- Say this, and only this: " + compact(move, 260)`
+- `reply_planning.py` schema: `"a full sentence stating what this reply asserts
+  ... not a bare noun phrase"`
+
+19.3% of the 522 planner moves open with the word "I", so "say this, and only
+this" sat in front of a finished first-person sentence. v74 then removed the
+counterweight -- `_focused_writer_prompt` dropped the semantic-difference
+contract on the reasoning that no metric depended on it. No metric measured plan
+echo.
+
+Longest contiguous shared word run between `semantic_move` and its own comment,
+share at 12 words or more, ~520 slots per run:
+
+| run | all comments | comments >= 25 words |
+|---|---:|---:|
+| v67 | 0.4% | **0.0%** |
+| v69 | 1.0% | 1.5% |
+| v73 | 10.2% | 11.7% |
+| v74 | **25.8%** | **34.7%** |
+
+Split by slot type in v74: reply slots 25.1%, root slots 6.4%. The root schema
+has always said "one concrete but non-verbatim action".
+
+## What changed
+
+New ablation switch `--writer-route-lock own_words|say_only`
+(`GENERALIZED_CARD_WRITER_ROUTE_LOCK`), recorded in `run_config`. `say_only`
+reproduces v74 on both the Writer and Planner side.
+
+1. Route lock reads `"- The point this comment makes, in your own words: "`.
+2. Reply schema reads `"one concrete but non-verbatim action for this reply, at
+   the same scale as a top-level slot's semantic_move - name what it asserts,
+   not a bare noun phrase and not the comment's own drafted sentence"`. The scale
+   clause is what stopped bare noun phrases, so it stays.
+3. `_realization_rule` restores the counterweight: *the point above is a
+   specification of what to say, never wording to reuse*. Rendered by **both**
+   the focused and the low-info path. 106 of 522 v74 slots took the low-info
+   branch, and applying a fix to only 80% of slots is what made the v74 result
+   impossible to attribute.
+4. `_render_reply_delta_contracts` carries the same wording change so the root
+   prompt's reply contract does not contradict the reply planner's schema.
+
+Diff of the rendered writer prompt, `say_only` -> `own_words`: two hunks, the
+route-lock line and the new rule. +192 characters on a ~8,139-character prompt.
+
+## Also fixed: `micro_reaction` was dropping comments
+
+`shape_writer_text_for_task` overwrote any over-length micro slot with
+`micro_options[local_task_id % 6]`. One v74 thread held **10** micro slots
+against a pool of 6, so tasks 26, 32 and 116 all resolved to `"This"`; the first
+was kept and the other two raised `exact_duplicate` on every repair round,
+because local repair never changes the task id. Both were dropped after the
+budget. It also poisoned `self_bleu` with a sibling similarity of 0.9999998.
+
+The pool is now 14 strings and the index also depends on the candidate's own
+text, so a fresh attempt lands elsewhere. Verified against the real collision:
+tasks 26/32/116 now give `Nah` / `Solid` / `This`.
+
+## Not done yet, deliberately
+
+`missing_concrete_anchor` (84 hits) and `lexical_overlap_high` (79 hits) stay
+advisory. Making them blocking now would fight the prompt's own
+`"Name a product, model, or number only if it is visible above"` rule, so the
+writer could not satisfy them; that is P4/P6, not P0.
+
+The plan-echo **validator** is also deliberately not added yet. Tracing the
+acceptance path: a problem code outside `REPAIRABLE_WRITER_PROBLEMS` reaches
+`backend.py:2022` and returns `skip: True`, and repair exhaustion at
+`backend.py:2205` does the same. `retry_note` is only populated inside
+`generate_writer_text`'s own loop, which runs once under `--writer-retries 0`,
+and the adapter's repair loop calls it with `writer_retries: 0` while modifying
+only `planner_intent` and `must_not_do` -- neither of which the focused prompt
+renders. So a detector added before this change would have regenerated an
+identical prompt and dropped up to 130 slots. It becomes a cheap safety net once
+echo is back near the v67 floor, and it needs `--writer-retries >= 1` to have a
+repair channel.
+
+## Verification
+
+- 224 tests pass (218 before, 6 new). The route lock had **no** test coverage
+  before, which is why it regressed twice unnoticed.
+- New: `WriterRouteLockTest` (4), `MicroReactionShapeTest` (2), plus a low-info
+  path assertion added to the existing core-path test.
+- `core_contract` drift check: none. Backend self-test: PASS.

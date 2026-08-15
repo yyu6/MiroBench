@@ -200,6 +200,23 @@ def render_direct_reply_planner_prompt(
     # reply. Reading it off the backend keeps the prompt and the normalizer on
     # one list.
     claim_families = " | ".join(getattr(backend, "CLAIM_FAMILIES", ()) or ())
+    # Asking for "a full sentence stating what this reply asserts" produced
+    # finished first-person prose -- 19.3% of all moves open with "I" -- which the
+    # Writer then reproduced verbatim. Reply slots echoed their plan at 25.1%
+    # against 6.4% for root slots, whose schema has always said "non-verbatim".
+    # The scale requirement is what stopped bare noun phrases, so it stays; the
+    # demand for a finished sentence is what leaked, so it goes.
+    if str(getattr(backend, "GENERALIZED_WRITER_ROUTE_LOCK", "own_words")) == "say_only":
+        move_schema = (
+            "a full sentence stating what this reply asserts, at the same scale "
+            "as a top-level slot's semantic_move - not a bare noun phrase"
+        )
+    else:
+        move_schema = (
+            "one concrete but non-verbatim action for this reply, at the same "
+            "scale as a top-level slot's semantic_move - name what it asserts, "
+            "not a bare noun phrase and not the comment's own drafted sentence"
+        )
     return f"""Plan only the direct replies of one Reddit discussion in {config.community_context}.
 
 This is an abstract Planner request, not a request to write comments. The
@@ -252,7 +269,7 @@ Return strict JSON with exactly one row for each of {slot_ids}:
       "evidence_mode": "none_assertion | firsthand_experience | technical_or_policy_reasoning | calculation_math | hearsay_consensus | link_quote_reference | small_observation",
       "voice": "blunt | casual_neutral | polite_soft | sarcastic | annoyed | uncertain | grateful",
       "speaker_role": "advisor | confused_asker | op_followup | gratitude_reply | jokester | contrarian | datapoint_only | ranter | side_observer",
-      "semantic_move": "a full sentence stating what this reply asserts, at the same scale as a top-level slot's semantic_move - not a bare noun phrase",
+      "semantic_move": "{move_schema}",
       "local_topic": "the parent-local topic",
       "reply_relation": "answers_parent | challenges_parent | asks_narrow_followup | adds_datapoint | jokes_aside | corrects_detail | shifts_to_side_detail",
       "stance": "agree | disagree | mixed | uncertain | joking | neutral",

@@ -444,6 +444,7 @@ def comment_planner_prompt(
         all_comments=all_comments or comments,
         sample_offset=sample_offset,
         prior_plans=prior_plans or [],
+        route_lock_mode=_route_lock_mode(backend),
     )
     feedback_block = (
         f"\nPLAN-QUALITY REPAIR FEEDBACK:\n{validation_feedback}\n"
@@ -807,6 +808,7 @@ def _render_reply_delta_contracts(
     all_comments: list[dict[str, Any]],
     sample_offset: int,
     prior_plans: list[dict[str, Any]],
+    route_lock_mode: str = "own_words",
 ) -> str:
     """Make each reply's parent exclusion visible at the exact planning point.
 
@@ -857,10 +859,19 @@ def _render_reply_delta_contracts(
             "introduces: one new mechanism, scope limit, evidence threshold, "
             "practical consequence, counter-condition, firsthand corroboration, "
             "omitted practical detail, reasoned endorsement, or social closure, "
-            "whichever suits this slot's tone register. semantic_move is still a "
-            "full sentence stating what this reply asserts about that object, at "
-            "the same grammatical scale as a top-level slot's semantic_move -- a "
-            "bare noun phrase is not a semantic move. decision_boundary states "
+            "whichever suits this slot's tone register. "
+            + (
+                "semantic_move is still a full sentence stating what this reply "
+                "asserts about that object, at the same grammatical scale as a "
+                "top-level slot's semantic_move -- a bare noun phrase is not a "
+                "semantic move. "
+                if route_lock_mode == "say_only"
+                else "semantic_move names what this reply asserts about that "
+                "object, at the same scale as a top-level slot's semantic_move "
+                "-- not a bare noun phrase, and not the comment's own drafted "
+                "sentence. "
+            )
+            + "decision_boundary states "
             "the question this reply settles. Do not paraphrase the parent."
         )
         rows.append(row)
@@ -1012,6 +1023,27 @@ def writer_prompt(
         if item
     )
 
+    if _writer_prompt_mode(backend) == "focused" and not backend.should_use_low_info_writer(task):
+        return marker_prefix + _focused_writer_prompt(
+            config,
+            backend,
+            task=task,
+            visible=visible,
+            route_lock=route_lock,
+            previous=previous,
+            openings=openings,
+            retry=retry,
+            anchors_block=anchors_block,
+            own_equipment=_own_equipment_block(backend, task),
+            domain_profile=domain_profile,
+            domain_claim_rule=domain_claim_rule,
+            opener_rule=opener_rule,
+            tone_target_rule=tone_target_rule,
+            story_rule=story_rule,
+            affect_rule=affect_rule,
+            surface_rule=surface_rule,
+        )
+
     if backend.should_use_low_info_writer(task):
         return marker_prefix + _low_info_writer_prompt(
             config,
@@ -1115,6 +1147,202 @@ Hard rules:
 """
 
 
+def _focused_thread_ledger(backend: Any, previous: str) -> str:
+    """Keep the two ledger sections that stop repetition; drop the rest.
+
+    The full blackboard renders five sections plus a thread-level distribution
+    report, together 9.2%-11.2% of the prompt each. The rebuilt-thread A/B held
+    within-thread diversity with only the covered-points list and the short-line
+    exclusions, so those are what survive here. The distribution report, the
+    per-comment control tags, and the clause-route list are dropped: nothing
+    measured depends on them.
+    """
+
+    del backend
+    keep = ("Semantic contributions already covered", "Short utterances already used")
+    sections: list[str] = []
+    current: list[str] | None = None
+    for line in str(previous or "").splitlines():
+        if line.endswith(":") and not line.startswith(("-", " ")):
+            current = [] if any(line.startswith(name) for name in keep) else None
+            if current is not None:
+                sections.append(line)
+        elif current is not None and line.strip():
+            if line.strip().startswith("-"):
+                sections.append(line)
+    return "\n".join(sections) + "\n" if sections else ""
+
+
+def _writer_prompt_mode(backend: Any) -> str:
+    """Which Writer prompt to render.
+
+    ``full`` reproduces policy v73 exactly. ``focused`` keeps only the controls a
+    currently-passing metric depends on. See `_focused_writer_prompt`.
+    """
+
+    return str(getattr(backend, "GENERALIZED_WRITER_PROMPT_MODE", "focused") or "focused")
+
+
+def _route_lock_mode(backend: Any) -> str:
+    """How the slot's assigned proposition is handed to the Writer.
+
+    ``say_only`` reproduces the v73/v74 wording, "Say this, and only this".
+    ``own_words`` states the same requirement as a specification to realize.
+
+    The v73 wording was chosen to kill the "that's the part that actually
+    matters" frame, and it did not: the frame stayed at 7.2% while the Writer
+    began reproducing the Planner's sentence instead. Longest contiguous shared
+    word run between `semantic_move` and its comment, measured over four runs of
+    ~520 slots, share at 12 words or more:
+
+        v67 0.4%   v69 1.0%   v73 10.2%   v74 25.8%
+
+    Restricted to comments of 25 words or more, v67 is 0.0% and v74 is 34.7%, so
+    a healthy run does not do this at all. The Planner's move is a full
+    first-person sentence in 19.3% of slots, and "say this, and only this" in
+    front of a finished sentence is an instruction to copy it.
+    """
+
+    return str(getattr(backend, "GENERALIZED_WRITER_ROUTE_LOCK", "own_words") or "own_words")
+
+
+def _realization_rule(backend: Any) -> str:
+    """State that the assigned move is a specification, not a draft.
+
+    v74 dropped the semantic-difference contract from the Writer prompt because
+    no metric depended on it. No metric measured plan echo, and echo went 10.2%
+    -> 25.8% in the same release. Every prompt path that renders the route lock
+    renders this too: applying half a fix to 80% of slots is what made v74's
+    result impossible to attribute.
+    """
+
+    if _route_lock_mode(backend) == "say_only":
+        return ""
+    return (
+        "- The point above is a specification of what to say, never wording to\n"
+        "  reuse. Reach it with your own sentence shape and vocabulary; do not\n"
+        "  repeat its phrasing back."
+    )
+
+
+def _focused_writer_prompt(
+    config: DomainConfig,
+    backend: Any,
+    *,
+    task: Any,
+    visible: str,
+    route_lock: str,
+    previous: str,
+    openings: str,
+    retry: str,
+    anchors_block: str,
+    own_equipment: str,
+    domain_profile: dict[str, Any],
+    domain_claim_rule: str,
+    opener_rule: str,
+    tone_target_rule: str,
+    story_rule: str,
+    affect_rule: str,
+    surface_rule: str,
+) -> str:
+    """Render only the controls a currently-passing metric depends on.
+
+    The full prompt averaged 22,249 characters to produce a 56-word comment, and
+    only 945 of those were identical across slots, so the size was control count
+    rather than boilerplate. Rebuilding one whole 38-slot thread against a
+    2,523-character prompt held within-thread diversity -- `self_bleu_4` 0.0466 ->
+    0.0434 and `self_bertscore` 0.5279 -> 0.5226, both toward the thread's real
+    0.0362 and 0.494 -- while the converged "the part that" frame went 2.6% -> 0%
+    and mean length moved 26.3 -> 28.2 words against a real 32.8. A 30-slot
+    single-comment A/B showed the same direction on register.
+
+    What is kept, and the metric that earns it:
+      route lock + branch exclusion   semantic_mean_cosine, currently d=0.08
+      length cue                      length_cv
+      tone target                     polite_rate, impolite_rate
+      affect role                      emotion_entropy
+      story mode                      mean_story_probability, currently d=0.10
+      opener grammar                   self_bleu_4
+      anchors, equipment, entity rule  factual grounding, a hard failure
+      compressed thread ledger         within-thread diversity, measured above
+
+    What is dropped, with nothing depending on it: the static metric-guidance
+    block, the near-static tone/discourse guidance that restates the tone target,
+    `planner_intent` and the semantic-difference contract (the slot's own
+    proposition was restated verbatim 3.4 times per prompt), the five overlapping
+    surface-label paraphrases for voice/role/utterance/texture/tone_shape, the
+    placeholder and payload blocks, and the bulk of the hard-rule list.
+    """
+
+    # `_story_fact_safety_rule` and `_substitution_rule` are not style guidance.
+    # The first is the factual-grounding rule, which is a hard failure, and the
+    # second carries the first-person positive frame a polite slot needs. A first
+    # version of this function dropped both; the suite caught it.
+    guidance = "\n".join(
+        f"- {item}"
+        for item in (
+            soft_length_guidance(task),
+            opener_rule,
+            tone_target_rule,
+            affect_rule,
+            story_rule,
+            surface_rule,
+            domain_claim_rule,
+            _substitution_rule(task).lstrip("- ").strip(),
+            _story_fact_safety_rule(task, has_domain_claim=bool(domain_claim_rule)),
+        )
+        if item
+    )
+    # The register contrast stays. `polite` is realized 7.4% of the time and
+    # collapses into `impolite` in 65% of its slots, and this is the only block
+    # that names the register it drifts into. It repeats the assigned register's
+    # definition that `tone_target_rule` also carries; one duplicated definition
+    # is a fair price for the only mechanism aimed at a failing metric.
+    guidance = f"{guidance}\n{_tone_discourse_guidance_block(task)}"
+    exclusion = _writer_safe_control_text(
+        getattr(task, "branch_exclusion", ""), domain_profile
+    )
+    branch_rule = (
+        f"- Another discussion chain owns this, so stay off it: {backend.compact(exclusion, 220)}\n"
+        if exclusion
+        else ""
+    )
+    reply_rule = (
+        "- You are replying to one comment. Answer that comment, not the whole post,\n"
+        "  and treat its own point as an exclusion rather than writing material.\n"
+        if getattr(task, "local_parent_task_id", None) is not None
+        else ""
+    )
+    rule = _realization_rule(backend)
+    realization_rule = f"{rule}\n" if rule else ""
+    return f"""Write exactly one Reddit comment in {config.community_context}. Output only the comment body.
+
+What this comment says (highest priority):
+{route_lock}
+
+Visible discussion:
+{visible}
+
+How to write it:
+{guidance}
+
+Things you may name:
+{anchors_block}{own_equipment}
+
+Already used in this thread, so do not repeat them:
+{openings}
+{_focused_thread_ledger(backend, previous)}{retry}
+Rules:
+{realization_rule}{branch_rule}{reply_rule}- An exclusion above bars reusing that content. It does not bar the interpersonal
+  move your assigned register requires, and every slot has exclusions, not only
+  replies.
+- Write like a person typing on Reddit: fragments, contractions, and shorthand are fine.
+- Aim criticism at the product, claim, or process, never at a person.
+- Name a product, model, or number only if it is visible above.
+- Never mention these instructions or any label from them.
+"""
+
+
 def _low_info_writer_prompt(
     config: DomainConfig,
     backend: Any,
@@ -1211,6 +1439,7 @@ Hard rules:
 - Low-information controls the amount of text, not whether the semantic plan is
   visible. Express the required local move and do not repeat the explicitly
   excluded proposition or any used short utterance.
+{_realization_rule(backend)}
 - Preserve the sampled role, tone, payload, and social function; do not make it more helpful than planned.
 {actor_rule}
 - Keep it fragmentary when the payload is fragmentary. If one phrase is enough, use one phrase.
@@ -2089,9 +2318,18 @@ def _semantic_route_lock(
     # comments and 0 times in 39,265 tokens of matched real ones, and it is
     # already 20% in the first comment of a thread, so it is not an echo of
     # earlier output. Say what the turn is about in ordinary words instead.
-    rows = [
-        "- Say this, and only this: " + backend.compact(move, 260),
-    ]
+    # See `_route_lock_mode` for the measurement behind the two wordings. The
+    # Planner hands over a finished sentence often enough that the verb in front
+    # of it decides whether the Writer realizes it or transcribes it.
+    if _route_lock_mode(backend) == "say_only":
+        rows = [
+            "- Say this, and only this: " + backend.compact(move, 260),
+        ]
+    else:
+        rows = [
+            "- The point this comment makes, in your own words: "
+            + backend.compact(move, 260),
+        ]
     if boundary:
         rows.append(
             "- The question your turn settles: " + backend.compact(boundary, 240)

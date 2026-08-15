@@ -201,6 +201,30 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--reasoning-effort", default="")
     parser.add_argument("--gpt5-reasoning-token-reserve", type=int, default=256)
     parser.add_argument(
+        "--writer-prompt",
+        choices=("focused", "full"),
+        default="focused",
+        help=(
+            "Which Writer prompt to render. 'full' reproduces policy v73 exactly "
+            "(mean 22,249 characters). 'focused' keeps only the controls a "
+            "currently-passing metric depends on; a rebuilt-thread A/B held "
+            "within-thread diversity at 13% of that size."
+        ),
+    )
+    parser.add_argument(
+        "--writer-route-lock",
+        choices=("own_words", "say_only"),
+        default="own_words",
+        help=(
+            "How the Planner's semantic_move reaches the Writer. 'say_only' "
+            "reproduces v73/v74 on both sides: the Writer is told 'Say this, and "
+            "only this', and the reply planner is asked for 'a full sentence'. "
+            "'own_words' states the move as a specification to realize. Plan echo "
+            "(longest shared word run >= 12) measured 0.4% in v67, 10.2% in v73 "
+            "and 25.8% in v74."
+        ),
+    )
+    parser.add_argument(
         "--domain-claim",
         choices=("planned", "off"),
         default="planned",
@@ -261,7 +285,29 @@ def build_parser() -> argparse.ArgumentParser:
     return parser
 
 
+def _load_env_files() -> None:
+    """Load the repo's .env files, matching `calibration/cli.py`.
+
+    API keys in this repo live in `third_party/MiroFish/.env`, which the
+    calibration CLI already loads. This entry point did not, so a run failed at
+    the credential check after the whole preflight had passed. `load_dotenv` does
+    not overwrite variables that are already set, so an exported key still wins.
+    """
+
+    try:
+        from dotenv import load_dotenv
+    except ImportError:
+        return
+    for candidate in (
+        REPO_ROOT / ".env",
+        REPO_ROOT / "third_party" / "MiroFish" / ".env",
+    ):
+        if candidate.exists():
+            load_dotenv(candidate)
+
+
 def main() -> None:
+    _load_env_files()
     args = build_parser().parse_args()
     if args.start_seed_index < 0:
         raise SystemExit("--start-seed-index must be non-negative")
@@ -519,6 +565,8 @@ def main() -> None:
         "writer_local_repair_rounds": args.writer_local_repair_rounds,
         "writer_slot_retry_limit": args.writer_slot_retry_limit,
         "domain_claim": args.domain_claim,
+        "writer_prompt": args.writer_prompt,
+        "writer_route_lock": args.writer_route_lock,
         "actor_conditioning": {
             "mode": args.actor_conditioning,
             "source": (
@@ -670,13 +718,30 @@ def main() -> None:
 
     api_key = os.environ.get(args.api_key_env, "").strip()
     if not api_key:
-        raise SystemExit(f"API key is missing: environment variable {args.api_key_env}")
+        # Name the keys that are actually set. The credential check runs after the
+        # whole preflight, so an unhelpful message here costs a full setup pass.
+        available = sorted(
+            name
+            for name in os.environ
+            if name.endswith("_API_KEY") and os.environ[name].strip()
+        )
+        hint = (
+            f" Keys present in the environment: {', '.join(available)}."
+            f" Pass --api-key-env with one of them."
+            if available
+            else " No *_API_KEY variable is set; check .env or export one."
+        )
+        raise SystemExit(
+            f"API key is missing: environment variable {args.api_key_env}.{hint}"
+        )
     env = os.environ.copy()
     env["GENERALIZED_CARD_DOMAIN"] = args.domain
     env["GENERALIZED_CARD_DOMAIN_PROFILE"] = str(domain_profile_path)
     env["GENERALIZED_CARD_GENERATOR_PROFILE"] = args.generator_profile
     env["GENERALIZED_CARD_ACTOR_CONDITIONING"] = args.actor_conditioning
     env["GENERALIZED_CARD_DOMAIN_CLAIM"] = args.domain_claim
+    env["GENERALIZED_CARD_WRITER_PROMPT"] = args.writer_prompt
+    env["GENERALIZED_CARD_WRITER_ROUTE_LOCK"] = args.writer_route_lock
     env["GENERALIZED_CARD_STORY_PERSONAL_MIN_SHARE"] = str(
         behavior_targets.get(
             "story_personal_min_share",

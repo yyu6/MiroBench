@@ -5048,6 +5048,11 @@ class GeneralizedCardTest(unittest.TestCase):
         self.assertIn("Required local move: acknowledge the useful grip detail", rendered)
         self.assertIn("Short utterances already used anywhere in this thread", rendered)
         self.assertIn("The grip felt fine to me.", rendered)
+        # The low-info path renders the same route lock, so it needs the same
+        # counterweight. 106 of 522 v74 slots took this branch; giving 80% of
+        # slots half a fix is what made the v74 result impossible to attribute.
+        self.assertIn("specification of what to say, never wording to", rendered)
+        self.assertNotIn("Say this, and only this", rendered)
         self.assertIn("Core metric guidance", rendered)
         self.assertNotIn("hard maximum:", rendered)
         self.assertNotIn("target length:", rendered.lower())
@@ -5423,3 +5428,244 @@ class GeneralizedCardTest(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class FocusedWriterPromptTest(unittest.TestCase):
+    """The focused prompt may drop rule mass, never a grounding rule.
+
+    The full prompt averaged 22,249 characters to produce a 56-word comment and
+    only 945 of those were identical across slots, so its size was control count,
+    not boilerplate. Rebuilding one 38-slot thread at 2,523 characters held
+    within-thread diversity (self_bleu_4 0.0466 -> 0.0434, self_bertscore
+    0.5279 -> 0.5226, both toward the thread's real 0.0362 / 0.494) while the
+    converged frame went 2.6% -> 0%. A first version of the focused prompt
+    dropped the factual-grounding rule and the polite register's first-person
+    frame; these assertions are what caught that.
+    """
+
+    def setUp(self) -> None:
+        self.config = load_domain_config("camera")
+
+    def _prompt(self, mode: str, tone: str, route_lock: str = "own_words") -> str:
+        from generalized_card.generation_distribution import (
+            apply_planner_distribution_fields,
+        )
+
+        module = configure_generator_backend(load_generator_backend(), self.config)
+        module.GENERALIZED_WRITER_PROMPT_MODE = mode
+        module.GENERALIZED_WRITER_ROUTE_LOCK = route_lock
+        task = module.CommentTask(
+            local_task_id=1,
+            local_parent_task_id=None,
+            depth=0,
+            branch_id=1,
+            branch_goal="assess grip comfort",
+            visible_scope="seed",
+            local_anchor="grip comfort",
+            comment_function="verdict_evaluation",
+            content_angle="fit_use_case",
+            evidence_mode="small_observation",
+            story_mode="no_story",
+            voice="casual_neutral",
+            payload_type="soft_helpful",
+            length_bucket="long",
+            speaker_role="datapoint_only",
+            utterance_mode="one_datapoint",
+            surface_texture="plain",
+            allow_first_person_frame=True,
+            allow_uncertainty_frame=False,
+            planner_intent="one local verdict",
+            must_not_do="",
+            semantic_move="commit to a verdict on grip comfort over a long shoot",
+            local_topic="grip comfort",
+            reply_relation="answers_parent",
+            stance="agree",
+            detail_focus="grip comfort",
+            avoid_repeating="complete review",
+            claim_key="grip_verdict",
+            claim_family="direct_answer",
+            opening_style="verdict then the condition",
+            context_aperture="full_seed",
+            tone_shape="neutral_fact",
+            real_word_count=140,
+        )
+        task = apply_planner_distribution_fields(task, {"tone_class": tone})
+        seed = module.SeedPost(
+            index=0,
+            title="Sony A7 IV grip question",
+            body="Is the grip comfortable over a long shoot?",
+            content="Sony A7 IV grip question\nIs the grip comfortable over a long shoot?",
+            source_raw_post_id="x",
+            real_num_comments=8,
+            metadata={},
+        )
+        return module.build_writer_prompt(
+            profile="gpt54_reddit_writer",
+            seed_post=seed,
+            task=module.finalize_rebalanced_task(task),
+            parent_comment=None,
+            previous_comments=[],
+            recent_openings=[],
+        )
+
+    def test_focused_is_far_smaller_than_full(self) -> None:
+        full = self._prompt("full", "impolite")
+        focused = self._prompt("focused", "impolite")
+        self.assertLess(len(focused), len(full) * 0.6)
+
+    def test_focused_keeps_every_control_a_passing_metric_depends_on(self) -> None:
+        focused = self._prompt("focused", "polite")
+        # factual grounding, a hard failure
+        self.assertIn("do not invent products", focused.lower())
+        self.assertIn("only if it is visible above", focused)
+        # the register the metric measures, plus the one it collapses into
+        self.assertIn("Tone target selector: polite", focused)
+        self.assertIn(">> polite", focused)
+        self.assertIn("first-person positive frame is required here", focused)
+        self.assertIn("does not bar the interpersonal", focused)
+        # story mode drives mean_story_probability, which currently passes
+        self.assertIn("Story realization", focused)
+        # the length cue drives length_cv
+        self.assertIn("roughly 140 words", focused)
+
+    def test_focused_drops_the_blocks_no_metric_depends_on(self) -> None:
+        focused = self._prompt("focused", "impolite")
+        for dropped in (
+            "Core metric guidance",
+            "Core placeholder guidance",
+            "Payload and matched-slot guidance",
+            "One-shot semantic difference contract",
+            "Planner intent:",
+            "Thread-level distribution pressure",
+        ):
+            self.assertNotIn(dropped, focused, dropped)
+
+    def test_full_mode_still_reproduces_the_v73_prompt_shape(self) -> None:
+        full = self._prompt("full", "impolite")
+        for kept in (
+            "Core metric guidance",
+            "One-shot semantic difference contract",
+            "Thread-level distribution pressure",
+        ):
+            self.assertIn(kept, full, kept)
+
+
+class WriterRouteLockTest(unittest.TestCase):
+    """The Writer must realize the Planner's move, never transcribe it.
+
+    Nothing asserted on this block before, and it regressed twice unnoticed.
+    Longest contiguous shared word run between `semantic_move` and its own
+    comment, share at 12 words or more over ~520 slots per run:
+
+        v67 0.4%   v69 1.0%   v73 10.2%   v74 25.8%
+
+    Restricted to comments of 25 words or more, v67 is 0.0% against v74's 34.7%,
+    so a healthy run does not do this at all. Two changes produced it: the Writer
+    was told "Say this, and only this" in front of a finished sentence, and the
+    reply planner was asked for "a full sentence stating what this reply
+    asserts". 19.3% of moves open with "I". Reply slots echoed at 25.1% against
+    6.4% for root slots, whose schema always said "non-verbatim".
+    """
+
+    def setUp(self) -> None:
+        self.config = load_domain_config("camera")
+
+    def _writer_prompt(self, route_lock: str) -> str:
+        helper = FocusedWriterPromptTest()
+        helper.setUp()
+        return helper._prompt("focused", "impolite", route_lock=route_lock)
+
+    def test_own_words_does_not_tell_the_writer_to_say_the_move(self) -> None:
+        prompt = self._writer_prompt("own_words")
+        self.assertNotIn("Say this, and only this", prompt)
+        self.assertIn("in your own words", prompt)
+        # the counterweight v74 dropped, restored as an explicit rule
+        self.assertIn("specification of what to say, never wording to", prompt)
+
+    def test_say_only_reproduces_the_v74_wording(self) -> None:
+        prompt = self._writer_prompt("say_only")
+        self.assertIn("Say this, and only this", prompt)
+        self.assertNotIn("specification of what to say", prompt)
+
+    def _reply_planner_prompt(self, route_lock: str) -> str:
+        from generalized_card import reply_planning
+
+        backend = SimpleNamespace(
+            compact=lambda value, limit: str(value)[:limit],
+            CLAIM_FAMILIES=("direct_answer", "tradeoff"),
+            GENERALIZED_WRITER_ROUTE_LOCK=route_lock,
+        )
+        comments = [
+            {"comment_id": "c1", "parent_id": None, "depth": 0, "body": "root turn body"},
+            {"comment_id": "c2", "parent_id": "c1", "depth": 1, "body": "a reply body"},
+        ]
+        return reply_planning.render_direct_reply_planner_prompt(
+            config=self.config,
+            backend=backend,
+            seed_post=SimpleNamespace(
+                title="Camera question", body="Autofocus issue", content="Autofocus issue"
+            ),
+            comments=[comments[1]],
+            all_comments=comments,
+            sample_offset=1,
+            prior_plans=[
+                {
+                    "sample_id": "S1",
+                    "semantic_move": "name the autofocus tradeoff",
+                    "decision_boundary": "whether autofocus is adequate",
+                    "detail_focus": "autofocus",
+                    "reply_delta_type": "root_turn",
+                }
+            ],
+            slot_distribution="- S2: tone=impolite",
+        )
+
+    def test_reply_schema_stops_asking_for_a_finished_sentence(self) -> None:
+        prompt = self._reply_planner_prompt("own_words")
+        self.assertNotIn("a full sentence stating what this reply asserts", prompt)
+        self.assertIn("one concrete but non-verbatim action for this reply", prompt)
+        # the scale requirement is what stopped bare noun phrases; it must stay
+        self.assertIn("not a bare noun phrase", prompt)
+
+    def test_reply_schema_say_only_reproduces_the_v74_request(self) -> None:
+        prompt = self._reply_planner_prompt("say_only")
+        self.assertIn("a full sentence stating what this reply asserts", prompt)
+
+
+class MicroReactionShapeTest(unittest.TestCase):
+    """A forced micro reaction must not collide itself into a dropped comment.
+
+    The pool was 6 strings indexed by `local_task_id`. One v74 thread held 10
+    micro slots, so tasks 26, 32 and 116 all resolved to "This"; the first was
+    kept and the other two raised `exact_duplicate` on every repair round,
+    because local repair never changes the task id. Both were dropped after the
+    budget, which is two comments lost to a fixable defect.
+    """
+
+    def _shaped(self, module, task_id: int, text: str) -> str:
+        task = SimpleNamespace(
+            real_surface_shape="micro_reaction",
+            local_task_id=task_id,
+            surface_texture="plain",
+            utterance_mode="one_datapoint",
+        )
+        return module.shape_writer_text_for_task(text, task)
+
+    def test_a_fresh_candidate_can_escape_a_collision(self) -> None:
+        module = load_generator_backend()
+        first = self._shaped(module, 32, "a long candidate that must be cut down to size")
+        second = self._shaped(module, 32, "a different long candidate needing the same cut")
+        self.assertNotEqual(
+            first,
+            second,
+            "same task id must not force the same fallback, or repair cannot escape",
+        )
+
+    def test_pool_is_wider_than_the_worst_observed_thread(self) -> None:
+        module = load_generator_backend()
+        produced = {
+            self._shaped(module, task_id, f"candidate number {task_id} is far too long here")
+            for task_id in range(40)
+        }
+        # v74's worst thread had 10 micro slots
+        self.assertGreaterEqual(len(produced), 10)

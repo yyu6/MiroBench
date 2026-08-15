@@ -1995,8 +1995,32 @@ def shape_writer_text_for_task(text: str, task: CommentTask) -> str:
     if task.real_surface_shape == "deleted_removed":
         return "[deleted]" if task.local_task_id % 2 else "[removed]"
     if task.real_surface_shape == "micro_reaction" and len(shaped.split()) > 6:
-        micro_options = ("Nope", "Same", "This", "Yep", "Hard pass", "Fair")
-        shaped = micro_options[task.local_task_id % len(micro_options)]
+        # Indexing on `local_task_id` alone loses comments. A thread can hold more
+        # micro slots than there are options -- one v74 thread had 10 against a
+        # pool of 6 -- so several slots resolve to the same string, the later ones
+        # raise `exact_duplicate`, and local repair cannot change the index
+        # because it never changes the task id. Two v74 comments were dropped
+        # this way after exhausting their retry budget. The pool is now wider than
+        # any observed per-thread micro count, and the index also depends on the
+        # candidate's own text, so a fresh attempt lands somewhere else.
+        micro_options = (
+            "Nope",
+            "Same",
+            "This",
+            "Yep",
+            "Hard pass",
+            "Fair",
+            "Seconded",
+            "Nah",
+            "Exactly",
+            "Pretty much",
+            "Not really",
+            "Solid",
+            "Agreed",
+            "Same here",
+        )
+        rotation = task.local_task_id + sum(ord(char) for char in shaped)
+        shaped = micro_options[rotation % len(micro_options)]
     if (
         task.surface_texture == "no_punct_fragment"
         and task.utterance_mode in LOW_INFO_UTTERANCE_MODES

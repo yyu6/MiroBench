@@ -291,6 +291,23 @@ def configure_generator_backend(
         os.environ.get("GENERALIZED_CARD_DOMAIN_CLAIM", "planned").strip().lower()
         or "planned"
     )
+    # "full" reproduces policy v73's Writer prompt exactly; "focused" keeps only
+    # the controls a currently-passing metric depends on. See
+    # `prompts._focused_writer_prompt` for the measurement behind the split.
+    module.GENERALIZED_WRITER_PROMPT_MODE = (
+        os.environ.get("GENERALIZED_CARD_WRITER_PROMPT", "focused").strip().lower()
+        or "focused"
+    )
+    # Ablation switch for how the Planner's move reaches the Writer. "say_only"
+    # reproduces v73/v74 on both sides -- the writer's "Say this, and only this"
+    # and the reply planner's "a full sentence" schema. "own_words" states the
+    # move as a specification. Measured plan echo (longest contiguous shared word
+    # run >= 12 between `semantic_move` and its comment): v67 0.4%, v73 10.2%,
+    # v74 25.8%. See `prompts._route_lock_mode`.
+    module.GENERALIZED_WRITER_ROUTE_LOCK = (
+        os.environ.get("GENERALIZED_CARD_WRITER_ROUTE_LOCK", "own_words").strip().lower()
+        or "own_words"
+    )
     module.GENERALIZED_OPENER_TYPES = {}
     module.GENERALIZED_SELF_TEST_ACTIVE = False
     # This bounds retries for one Writer slot, not the number of threads or
