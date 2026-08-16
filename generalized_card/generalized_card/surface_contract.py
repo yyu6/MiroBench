@@ -146,6 +146,51 @@ def infer_surface_skeleton(text: str) -> tuple[str, str]:
     )
 
 
+def infer_surface_texture(
+    real_text: str,
+    *,
+    payload_type: str,
+    speaker_role: str,
+    utterance_mode: str,
+) -> str:
+    """Infer typography only; social meaning remains Planner-owned.
+
+    The shared CARD classifier treated words such as ``thanks`` and
+    ``appreciate`` in the matched evaluation comment as a gratitude assignment.
+    That is tone leakage, not an anonymous surface feature. Text inspection here
+    is limited to links, quotes, emoji/sarcasm notation, capitalization,
+    terminal punctuation, and messy punctuation. Gratitude, jokes, and tangents
+    come only from the already-planned payload or speaker role.
+    """
+
+    text = str(real_text or "")
+    lowered = text.lower()
+    tokens = re.findall(r"[A-Za-z0-9/']+", text)
+    if URL_RE.search(text):
+        return "link_reference"
+    if QUOTE_RE.search(text):
+        return "markdown_quote"
+    if re.search(r"[\U0001F300-\U0001FAFF]", text) or "/s" in lowered:
+        return "emoji_or_sarcasm"
+    if speaker_role == "gratitude_reply":
+        return "gratitude_social"
+    if re.search(r"\b[A-Z]{2,}\b", text) and len(tokens) <= 30:
+        return "abbrev_shorthand"
+    if utterance_mode == "fragment_only" or (
+        len(tokens) <= 8 and not re.search(r"[.!?]\s*$", text.strip())
+    ):
+        return "no_punct_fragment"
+    if (
+        "..." in text
+        or "…" in text
+        or "!" in text
+        or payload_type in {"joke", "side_tangent"}
+        or speaker_role in {"jokester", "side_observer"}
+    ):
+        return "messy_punctuation"
+    return "plain"
+
+
 def reference_is_dominant(text: str) -> bool:
     """Return whether a reference, rather than surrounding prose, is the turn."""
 

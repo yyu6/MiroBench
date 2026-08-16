@@ -24,9 +24,10 @@ them onto the 12 metrics and onto the per-thread evidence in `HANDOFF.md` §4.3:
 Only `avg_depth` and `structural_virality` are genuinely matched per thread, and
 both are fixed by the matched sampler rather than won by generation.
 
-## v81 implementation status — 2026-08-17
+## v82 implementation status — 2026-08-17
 
-Detailed evidence and exact scorer definitions are in `tasks/v81-worklog.md`.
+Detailed evidence and exact scorer definitions are in `tasks/v81-worklog.md`;
+the completion-audit fix is recorded in `tasks/v82-worklog.md`.
 This supersedes the older idea that a repetition warning should resample one
 comment: collection-level metrics are diagnostic in first-pass generation.
 
@@ -44,7 +45,14 @@ comment: collection-level metrics are diagnostic in first-pass generation.
       instruction conflict.
 - [x] Disable per-comment distribution retries and repetition best-of-N at the
       v81 public CLI; retain bounded recovery only for non-persistable output.
-- [x] Finish source-pin/version updates and full code review: 259 tests pass,
+- [x] Restore the compact Planner discourse contract on the default focused
+      Writer path. Function, payload, role, voice, evidence, content angle, stance,
+      detail, intent, reply relation, and exclusion now survive once; a raw-plan
+      end-to-end test prevents a planned rant from collapsing into generic help.
+- [x] Remove matched-text tone leakage from surface inference: links, quotes,
+      capitalization, emoji, and punctuation remain anonymous shape, but lexical
+      gratitude no longer creates a `pure_acknowledgement` contract.
+- [x] Finish source-pin/version updates and full code review: 262 tests pass,
       backend self-test passes, and all 72 source pins have zero drift.
 - [ ] Run one large n=1 content/contract diagnostic with no metric-driven
       retries, then run a multi-thread matched evaluation for formal p-values.

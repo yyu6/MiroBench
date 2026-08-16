@@ -16,10 +16,11 @@ HISTORICAL_REVISION_POLICY_VERSIONS = {
     "generalized-card-revision-v6-dynamic-coverage-history-20260807",
 }
 GENERALIZED_V2_GENERATION_POLICY_VERSION = (
-    "generalized-card-v2-joint-story-affect-handoff-v81-20260817"
+    "generalized-card-v2-focused-discourse-contract-v82-20260817"
 )
 HISTORICAL_GENERATION_POLICY_VERSIONS = {
     "generalized-v2": {
+        "generalized-card-v2-joint-story-affect-handoff-v81-20260817",
         "generalized-card-v2-planner-contract-coherence-v80-20260816",
         "generalized-card-v2-own-fact-license-v76-20260815",
         "generalized-card-v2-frozen-domain-profile-v2-20260807",
@@ -151,7 +152,7 @@ CORE_FILES = {
     ),
     "generator_adapter": (
         "generalized_card/generalized_card/backend.py",
-        "2704f3bb0a8f3889abcfb9355b7a268ca81db6a99be61d498cb89fb2b927f63e",
+        "8ce74a6198a39301775507bc9316561c74bb8d13814e62c82aa44613a44804dd",
     ),
     # The grounding rules were smeared across eight places in the prompt adapter
     # before v76 and disagreed with each other. Pinned so the one definition
@@ -177,7 +178,7 @@ CORE_FILES = {
     ),
     "generation_runner": (
         "generalized_card/scripts/run_generate.py",
-        "80ae48b6461b40f213e6b5356ebaaa4e18e39f08c1627911420915cf11991c35",
+        "b792f2515cbde770b080026e2392b29518045fcb721bccabd7473c8aaf740f20",
     ),
     "domain_profile": (
         "generalized_card/generalized_card/domain_profile.py",
@@ -253,7 +254,7 @@ CORE_FILES = {
     ),
     "surface_contract": (
         "generalized_card/generalized_card/surface_contract.py",
-        "c6b92fb3acb8d47ff24bf952efc1ff26f10fccc06ca42ebd2032c3b0e0d7ccde",
+        "307860b157648e2192372fadf390ec09e67103fe81007c03f78200b72f981e84",
     ),
     "generation_harness": (
         "generalized_card/scripts/run_generation_harness.py",
@@ -313,7 +314,7 @@ CORE_FILES = {
     ),
     "domain_prompt_adapter": (
         "generalized_card/generalized_card/prompts.py",
-        "8e27ea07ed5264d426cdeadeb612f1ca4e996f789b3a246dbcab99d0bfdd50a8",
+        "2325345333f1f5c2fcf346629c0f3849333df974d26217e40b51a565cb4a87b8",
     ),
     "reply_planning": (
         "generalized_card/generalized_card/reply_planning.py",

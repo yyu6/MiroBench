@@ -285,3 +285,22 @@ and eventually ran a whole natural experiment on it, and the user objected.
 **How to apply.** Re-read the stated priority order before choosing what to
 measure and what to lead a report with. A metric being *interesting* or
 *explanatory* does not promote it above what the user asked for.
+
+## 2026-08-17 — A proposition-only handoff is not a complete Planner contract
+
+**What happened.** The focused Writer path retained the Planner's semantic move
+and the controls tied directly to named metrics, but dropped the comment
+function, payload, speaker role, voice, evidence, stance, and other discourse fields.
+The plan could say “rant” or “bare reaction” and the default Writer would never
+see that assignment, so its generic helpful-answer prior remained free to win.
+
+**How to apply.** Audit a Planner→Writer boundary by behavioral dimension, not
+only by checking that the main text field survives. For every default Writer
+path, prove end to end that it receives (1) what the turn says, (2) what social
+and discourse act it performs, and (3) the structural/surface constraints. Keep
+each control once; compactness is not permission to discard authority.
+
+The same boundary audit must include indirect paths. In v81, matched-real words
+were not placed directly in the Prompt, yet a shared “surface” classifier turned
+`thanks` into a gratitude tone label that did reach the Prompt. A derived label
+is still data leakage when its source is semantic matched text.

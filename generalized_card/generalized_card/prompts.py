@@ -1117,6 +1117,11 @@ def writer_prompt(
             task=task,
             visible=visible,
             route_lock=route_lock,
+            slot_contract=_focused_slot_contract(
+                backend,
+                task,
+                domain_profile=domain_profile,
+            ),
             previous=previous,
             openings=openings,
             retry=retry,
@@ -1259,8 +1264,9 @@ def _focused_thread_ledger(backend: Any, previous: str) -> str:
 def _writer_prompt_mode(backend: Any) -> str:
     """Which Writer prompt to render.
 
-    ``full`` reproduces policy v73 exactly. ``focused`` keeps only the controls a
-    currently-passing metric depends on. See `_focused_writer_prompt`.
+    ``full`` reproduces policy v73 exactly. ``focused`` keeps the compact
+    proposition, discourse-role, distribution, and grounding contracts without
+    the full prompt's repeated control paraphrases. See `_focused_writer_prompt`.
     """
 
     return str(getattr(backend, "GENERALIZED_WRITER_PROMPT_MODE", "focused") or "focused")
@@ -1315,6 +1321,7 @@ def _focused_writer_prompt(
     task: Any,
     visible: str,
     route_lock: str,
+    slot_contract: str,
     previous: str,
     openings: str,
     retry: str,
@@ -1329,7 +1336,7 @@ def _focused_writer_prompt(
     affect_rule: str,
     surface_rule: str,
 ) -> str:
-    """Render only the controls a currently-passing metric depends on.
+    """Render the minimum complete Planner and grounding contract.
 
     The full prompt averaged 22,249 characters to produce a 56-word comment, and
     only 945 of those were identical across slots, so the size was control count
@@ -1340,22 +1347,26 @@ def _focused_writer_prompt(
     and mean length moved 26.3 -> 28.2 words against a real 32.8. A 30-slot
     single-comment A/B showed the same direction on register.
 
-    What is kept, and the metric that earns it:
-      route lock + branch exclusion   semantic_mean_cosine, currently d=0.08
-      length cue                      length_cv
-      tone target                     polite_rate, impolite_rate
-      affect role                      emotion_entropy
-      story mode                      mean_story_probability, currently d=0.10
-      opener grammar                   self_bleu_4
-      anchors, equipment, entity rule  factual grounding, a hard failure
-      compressed thread ledger         within-thread diversity, measured above
+    What is kept, and why:
+      route lock + branch exclusion   preserve the assigned proposition
+      compact discourse contract      preserve the assigned conversational act
+      length cue                      preserve anonymous slot scale
+      tone target                     preserve interpersonal register
+      affect role                      preserve emotional variation
+      story mode                      preserve narrative evidence structure
+      opener grammar                   vary clause-entry routes
+      anchors, equipment, entity rule  preserve factual grounding
+      compressed thread ledger         avoid covered points and short repeats
 
     What is dropped, with nothing depending on it: the static metric-guidance
     block, the near-static tone/discourse guidance that restates the tone target,
-    `planner_intent` and the semantic-difference contract (the slot's own
+    `planner_intent` and the full semantic-difference contract (the slot's own
     proposition was restated verbatim 3.4 times per prompt), the five overlapping
-    surface-label paraphrases for voice/role/utterance/texture/tone_shape, the
-    placeholder and payload blocks, and the bulk of the hard-rule list.
+    surface-label paraphrases for voice/utterance/texture/tone_shape, the bulky
+    placeholder and payload guidance blocks, and the bulk of the hard-rule list.
+    Function, payload, speaker role, voice, evidence, stance, and the local exclusion
+    stay once in a compact contract: without them, planned rants, datapoints,
+    corrections, and bare reactions can fall back to generic helpful turns.
     """
 
     # `_story_fact_safety_rule` and `_substitution_rule` are not style guidance.
@@ -1400,6 +1411,9 @@ def _focused_writer_prompt(
 What this comment says (highest priority):
 {route_lock}
 
+What kind of turn this is:
+{slot_contract}
+
 Visible discussion:
 {visible}
 
@@ -1421,6 +1435,49 @@ Rules:
 - {_focused_path_entity_rule(backend, task)}
 - Never mention these instructions or any label from them.
 """
+
+
+def _focused_slot_contract(
+    backend: Any,
+    task: Any,
+    *,
+    domain_profile: dict[str, Any],
+) -> str:
+    """Carry the Planner's discourse role without restoring the full prompt.
+
+    The route lock owns the proposition, while tone/story/affect have dedicated
+    rules. These are the remaining controls that distinguish a rant, correction,
+    datapoint, question, or bare reaction from the Writer's helpful-answer
+    default. Values are rendered once and exact duplicates are suppressed.
+    """
+
+    fields = (
+        ("function", "comment_function", True),
+        ("payload form", "payload_type", True),
+        ("speaker role", "speaker_role", True),
+        ("voice", "voice", True),
+        ("evidence basis", "evidence_mode", True),
+        ("content angle", "content_angle", True),
+        ("stance", "stance", False),
+        ("specific detail", "detail_focus", False),
+        ("decision intent", "domain_intent", False),
+        ("reply relation", "reply_relation", False),
+        ("content to avoid", "avoid_repeating", False),
+    )
+    rows: list[str] = []
+    seen: set[str] = set()
+    for label, field, humanize in fields:
+        value = _writer_safe_control_text(
+            getattr(task, field, ""),
+            domain_profile,
+        )
+        key = value.casefold()
+        if not value or key in seen:
+            continue
+        seen.add(key)
+        rendered = value.replace("_", " ") if humanize else value
+        rows.append(f"- {label}: {backend.compact(rendered, 220)}")
+    return "\n".join(rows) or "- one local participant turn"
 
 
 def _low_info_writer_prompt(

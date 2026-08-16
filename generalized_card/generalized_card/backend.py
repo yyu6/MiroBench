@@ -75,6 +75,7 @@ from .persona_bridge import inject_persona_system
 from .surface_contract import (
     infer_surface_shape,
     infer_surface_skeleton,
+    infer_surface_texture,
     reconcile_substantive_task,
     surface_only_label,
 )
@@ -168,6 +169,7 @@ DOMAIN_ADAPTATION_BOUNDARIES = (
     "build_concrete_anchors_for_task",
     "infer_real_surface_shape",
     "infer_surface_skeleton",
+    "infer_surface_texture",
     "infer_real_tone_slot",
     "infer_real_comment_social_overrides",
     "real_text_allows_first_person_frame",
@@ -299,8 +301,8 @@ def configure_generator_backend(
         os.environ.get("GENERALIZED_CARD_DOMAIN_CLAIM", "planned").strip().lower()
         or "planned"
     )
-    # "full" reproduces policy v73's Writer prompt exactly; "focused" keeps only
-    # the controls a currently-passing metric depends on. See
+    # "full" reproduces policy v73's Writer prompt exactly; "focused" keeps the
+    # compact Planner discourse, distribution, and grounding contract. See
     # `prompts._focused_writer_prompt` for the measurement behind the split.
     module.GENERALIZED_WRITER_PROMPT_MODE = (
         os.environ.get("GENERALIZED_CARD_WRITER_PROMPT", "focused").strip().lower()
@@ -621,6 +623,7 @@ def configure_generator_backend(
     )
     module.infer_real_surface_shape = _generic_real_surface_shape
     module.infer_surface_skeleton = infer_surface_skeleton
+    module.infer_surface_texture = infer_surface_texture
     module.infer_real_comment_social_overrides = _structural_real_comment_overrides
     module.real_text_allows_first_person_frame = _allows_first_person
     module.real_text_allows_uncertainty_frame = _allows_uncertainty

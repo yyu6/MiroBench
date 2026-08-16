@@ -1,5 +1,24 @@
 # Handoff — synthetic Reddit thread generation (generalized_card)
 
+## 2026-08-17 v82 completion-audit addendum
+
+The v81 post-implementation field-survival audit found one remaining default-path
+defect before a paid v81 run: focused Writer prompts did not carry the Planner's
+discourse role. They had the proposition and tone/story/affect controls, but
+silently omitted function, payload, speaker role, voice, evidence, content angle,
+stance, detail, decision intent, reply relation, and the explicit local
+exclusion. This can turn a planned rant, correction, datapoint, question, or
+bare reaction into the model's generic helpful/customer-service answer.
+
+v82 adds one compact, deduplicated discourse contract rather than restoring the
+old full prompt. An end-to-end test now starts at raw Planner JSON and proves the
+fields survive normalization, matched-slot expansion, finalization, and the
+default focused Writer path. The same audit removed a second leak: matched-real
+words such as `thanks` and `appreciate` could assign gratitude tone through the
+shared surface classifier. Only typography remains matched-text-derived; social
+meaning is Planner-owned. Use v82, not v81, for the next paid run. Detailed
+evidence is in `tasks/v82-worklog.md`; formal metric success remains unmeasured.
+
 ## 2026-08-17 v81 current-state addendum
 
 This addendum is authoritative for the current implementation. Historical

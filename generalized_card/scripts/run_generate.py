@@ -188,9 +188,10 @@ def build_parser() -> argparse.ArgumentParser:
         default="focused",
         help=(
             "Which Writer prompt to render. 'full' reproduces policy v73 exactly "
-            "(mean 22,249 characters). 'focused' keeps only the controls a "
-            "currently-passing metric depends on; a rebuilt-thread A/B held "
-            "within-thread diversity at 13%% of that size."
+            "(mean 22,249 characters). 'focused' keeps the compact Planner "
+            "discourse, distribution, and grounding contract without repeated "
+            "control paraphrases; a rebuilt-thread A/B held within-thread "
+            "diversity at 13%% of the old size."
         ),
     )
     parser.add_argument(

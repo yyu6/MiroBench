@@ -118,6 +118,7 @@ from generalized_card.planning_quality import (
 from generalized_card.surface_contract import (
     infer_surface_shape,
     infer_surface_skeleton,
+    infer_surface_texture,
     reconcile_substantive_task,
     surface_only_label,
 )
@@ -3243,7 +3244,7 @@ class GeneralizedCardTest(unittest.TestCase):
         )
         parser = script.build_parser()
         help_text = parser.format_help()
-        self.assertIn("13% of that size", help_text)
+        self.assertIn("13% of the old size", help_text)
         self.assertIn("68% of comment mass", help_text)
         args = parser.parse_args(["--tag", "test"])
         self.assertEqual(args.generator_profile, GENERALIZED_V2_PROFILE)
@@ -3348,6 +3349,26 @@ class GeneralizedCardTest(unittest.TestCase):
             "full_answer",
         )
         self.assertEqual(surface_only_label(text), "ordinary_turn")
+
+    def test_matched_gratitude_words_do_not_assign_gratitude_tone(self) -> None:
+        self.assertEqual(
+            infer_surface_texture(
+                "Thanks, I really appreciate it. Good to know.",
+                payload_type="rant",
+                speaker_role="ranter",
+                utterance_mode="complaint_only",
+            ),
+            "plain",
+        )
+        self.assertEqual(
+            infer_surface_texture(
+                "That answered the narrow question.",
+                payload_type="bare_answer",
+                speaker_role="gratitude_reply",
+                utterance_mode="op_followup",
+            ),
+            "gratitude_social",
+        )
 
     def test_writer_provider_budget_tracks_long_tail_without_length_gate(self) -> None:
         self.assertEqual(
@@ -5447,6 +5468,7 @@ class FocusedWriterPromptTest(unittest.TestCase):
         route_lock: str = "own_words",
         license_mode: str = "off",
         story_mode: str = "no_story",
+        **task_overrides: Any,
     ) -> str:
         from generalized_card.generation_distribution import (
             apply_planner_distribution_fields,
@@ -5491,6 +5513,8 @@ class FocusedWriterPromptTest(unittest.TestCase):
             tone_shape="neutral_fact",
             real_word_count=140,
         )
+        if task_overrides:
+            task = replace(task, **task_overrides)
         task = apply_planner_distribution_fields(task, {"tone_class": tone})
         seed = module.SeedPost(
             index=0,
@@ -5529,6 +5553,36 @@ class FocusedWriterPromptTest(unittest.TestCase):
         self.assertIn("Story realization", focused)
         # the length cue drives length_cv
         self.assertIn("roughly 140 words", focused)
+
+    def test_focused_keeps_the_planned_discourse_role_once(self) -> None:
+        focused = self._prompt(
+            "focused",
+            "impolite",
+            comment_function="reaction",
+            payload_type="rant",
+            speaker_role="ranter",
+            voice="annoyed",
+            evidence_mode="none_assertion",
+            content_angle="risk_reliability_support",
+            stance="hard_disagree",
+            detail_focus="sticky shutter marker",
+            domain_intent="vent about the failed repair marker",
+            avoid_repeating="generic troubleshooting marker",
+        )
+        for row in (
+            "- function: reaction",
+            "- payload form: rant",
+            "- speaker role: ranter",
+            "- voice: annoyed",
+            "- evidence basis: none assertion",
+            "- content angle: risk reliability support",
+            "- stance: hard_disagree",
+            "- specific detail: sticky shutter marker",
+            "- decision intent: vent about the failed repair marker",
+            "- content to avoid: generic troubleshooting marker",
+        ):
+            self.assertEqual(focused.count(row), 1, row)
+        self.assertIn("What kind of turn this is:", focused)
 
     def test_focused_drops_the_blocks_no_metric_depends_on(self) -> None:
         focused = self._prompt("focused", "impolite")

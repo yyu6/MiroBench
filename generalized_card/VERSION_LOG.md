@@ -59,6 +59,43 @@ Before any run that changes behavior:
 
 ---
 
+## v82 — focused Planner discourse handoff (2026-08-17)
+
+Policy ID: `generalized-card-v2-focused-discourse-contract-v82-20260817`.
+
+The post-v81 completion audit found one remaining Planner→Writer break in the
+default path. The focused Writer received the planned proposition plus dedicated
+tone/story/affect controls, but not the planned comment function, payload form,
+speaker role, voice, evidence basis, content angle, stance, detail, decision intent,
+reply relation, or local exclusion. A planned rant, correction, datapoint, or
+bare reaction could therefore fall back to the model's generic helpful answer.
+
+Changed:
+
+- Add one compact, deduplicated discourse contract to the focused Writer. It
+  carries those fields once without restoring the old full prompt, static metric
+  guidance, overlapping surface paraphrases, or bulky payload instructions.
+- Add an end-to-end contract test from raw Planner JSON through normalization,
+  matched-slot expansion, finalization, and focused Prompt rendering. A valid
+  `rant + ranter + hard_disagree` slot must retain each planned control exactly
+  once.
+- Replace the shared surface-texture classifier on the generalized path. Matched
+  comment typography may shape typography, but words such as `thanks` and
+  `appreciate` may no longer assign gratitude tone or a
+  `pure_acknowledgement`; social meaning remains Planner-owned.
+
+Predicted direction before a paid run: fewer generic customer-service/helpful
+turns; more faithful rants, corrections, questions, datapoints, and terse social
+moves; greater lexical and emotional variety, moving Self-BLEU/Self-BERTScore
+and emotion-related rows toward real data. Story allocation and tree structure
+are unchanged. Formal result: pending a new artifact and multi-thread evaluation.
+
+Offline acceptance: the focused contract and matched-text isolation tests pass,
+prompt size remains below the existing focused/full ratio gate, and the complete
+suite passes 262 tests.
+
+---
+
 ## v81 — joint story/affect handoff and prompt-residue removal (2026-08-17)
 
 Policy ID: `generalized-card-v2-joint-story-affect-handoff-v81-20260817`.

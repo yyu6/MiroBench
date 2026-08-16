@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import inspect
+import random
 import re
 import unittest
 from types import SimpleNamespace
@@ -78,6 +79,127 @@ class PlannerFieldSurvivalTest(unittest.TestCase):
         source = inspect.getsource(prompts)
         for field in self.GENERALIZED_PLANNER_FIELDS:
             self.assertIn(f'"{field}"', source, field)
+
+    def test_discourse_contract_reaches_the_default_writer_end_to_end(self) -> None:
+        """A planned rant must not collapse into an unspecified helpful turn."""
+
+        from generalized_card.backend import (
+            configure_generator_backend,
+            load_generator_backend,
+        )
+        from generalized_card.domain import load_domain_config
+
+        module = configure_generator_backend(
+            load_generator_backend(),
+            load_domain_config("camera"),
+        )
+        module.GENERALIZED_WRITER_PROMPT_MODE = "focused"
+        branch = module.BranchPlan(
+            branch_id=1,
+            anchor_quote="visible shutter problem",
+            anchor_source="seed",
+            detour_type="none",
+            branch_goal="react to one reliability failure",
+            allowed_functions=("reaction",),
+            evidence_modes=("none_assertion",),
+            tone_palette=("annoyed",),
+            story_modes=("no_story",),
+            content_angles=("risk_reliability_support",),
+        )
+        raw_plan = {
+            "sample_id": "S1",
+            "branch_id": 1,
+            "payload_type": "rant",
+            "comment_function": "reaction",
+            "content_angle": "risk_reliability_support",
+            "evidence_mode": "none_assertion",
+            "story_mode": "no_story",
+            "voice": "annoyed",
+            "speaker_role": "ranter",
+            "semantic_move": "react to the sticky shutter failure",
+            "local_topic": "shutter reliability",
+            "reply_relation": "reacts_to_seed",
+            "stance": "hard_disagree",
+            "detail_focus": "sticky shutter end-to-end marker",
+            "avoid_repeating": "generic troubleshooting end-to-end marker",
+            "claim_family": "miscellaneous",
+            "claim_key": "sticky_shutter_failure",
+            "perspective_id": "seed_local",
+            "domain_intent": "vent about the failed repair end-to-end marker",
+            "decision_boundary": "whether the failure is acceptable",
+            "opening_style": "lead with the failure",
+            "context_aperture": "full_seed",
+            "tone_class": "impolite",
+            "affect_role": "anger",
+            "development_plan": "none",
+            "domain_claim": "none",
+        }
+        normalized = module.normalize_comment_move_plans(
+            {"comment_plans": [raw_plan]},
+            branches=[branch],
+        )
+        seed = module.SeedPost(
+            index=0,
+            title="Sticky shutter question",
+            body="The shutter keeps sticking after repair.",
+            content="Sticky shutter question\nThe shutter keeps sticking after repair.",
+            source_raw_post_id="field-survival-seed",
+            real_num_comments=1,
+            metadata={},
+        )
+        tasks = module.expand_matched_real_sample_to_tasks(
+            branches=[branch],
+            target=module.ThreadTarget(1, 1, 0, "quiet", "matched"),
+            seed_post=seed,
+            matched_real_thread={
+                "comments": [
+                    {
+                        "body": "Thanks, I appreciate it. Good to know. "
+                        + " ".join(f"shape{index}" for index in range(37)),
+                        "comment_id": "real_1",
+                        "comment_fullname": "t1_real_1",
+                        "parent_id": "t3_seed",
+                    }
+                ]
+            },
+            matched_real_comments=100,
+            comment_plans=normalized,
+            rng=random.Random(42),
+        )
+        self.assertEqual(len(tasks), 1)
+        task = tasks[0]
+        self.assertEqual(task.surface_texture, "plain")
+        self.assertNotEqual(task.real_tone_slot, "pure_acknowledgement")
+        for field in (
+            "payload_type",
+            "comment_function",
+            "content_angle",
+            "evidence_mode",
+            "speaker_role",
+            "voice",
+            "stance",
+            "detail_focus",
+            "domain_intent",
+            "avoid_repeating",
+        ):
+            self.assertEqual(getattr(task, field), normalized[1][field], field)
+        rendered = module.build_writer_prompt(
+            profile="gpt54_reddit_writer",
+            seed_post=seed,
+            task=module.finalize_rebalanced_task(task),
+            parent_comment=None,
+            previous_comments=[],
+            recent_openings=[],
+        )
+        for expected in (
+            "- payload form: rant",
+            "- speaker role: ranter",
+            "- stance: hard_disagree",
+            "- specific detail: sticky shutter end-to-end marker",
+            "- decision intent: vent about the failed repair end-to-end marker",
+            "- content to avoid: generic troubleshooting end-to-end marker",
+        ):
+            self.assertEqual(rendered.count(expected), 1, expected)
 
     def test_reply_planner_asks_for_claim_family_by_enumeration(self) -> None:
         """A closed vocabulary must be enumerated wherever it is requested.
