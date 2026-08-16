@@ -94,6 +94,12 @@ class PlannerFieldSurvivalTest(unittest.TestCase):
             load_domain_config("camera"),
         )
         module.GENERALIZED_WRITER_PROMPT_MODE = "focused"
+        self.assertFalse(
+            module.real_text_allows_first_person_frame("I used this yesterday")
+        )
+        self.assertFalse(
+            module.real_text_allows_uncertainty_frame("I think maybe it could work?")
+        )
         branch = module.BranchPlan(
             branch_id=1,
             anchor_quote="visible shutter problem",
@@ -154,8 +160,8 @@ class PlannerFieldSurvivalTest(unittest.TestCase):
             matched_real_thread={
                 "comments": [
                     {
-                        "body": "Thanks, I appreciate it. Good to know. "
-                        + " ".join(f"shape{index}" for index in range(37)),
+                        "body": "Side note: Thanks, I appreciate it. I think maybe this could work. "
+                        + " ".join(f"shape{index}" for index in range(33)),
                         "comment_id": "real_1",
                         "comment_fullname": "t1_real_1",
                         "parent_id": "t3_seed",
@@ -169,7 +175,10 @@ class PlannerFieldSurvivalTest(unittest.TestCase):
         self.assertEqual(len(tasks), 1)
         task = tasks[0]
         self.assertEqual(task.surface_texture, "plain")
+        self.assertEqual(task.real_surface_shape, "full_answer")
         self.assertNotEqual(task.real_tone_slot, "pure_acknowledgement")
+        self.assertFalse(task.allow_first_person_frame)
+        self.assertFalse(task.allow_uncertainty_frame)
         for field in (
             "payload_type",
             "comment_function",

@@ -24,10 +24,11 @@ them onto the 12 metrics and onto the per-thread evidence in `HANDOFF.md` §4.3:
 Only `avg_depth` and `structural_virality` are genuinely matched per thread, and
 both are fixed by the matched sampler rather than won by generation.
 
-## v82 implementation status — 2026-08-17
+## v83 implementation status — 2026-08-17
 
 Detailed evidence and exact scorer definitions are in `tasks/v81-worklog.md`;
-the completion-audit fix is recorded in `tasks/v82-worklog.md`.
+the completion-audit fixes are recorded in `tasks/v82-worklog.md` and
+`tasks/v83-worklog.md`.
 This supersedes the older idea that a repetition warning should resample one
 comment: collection-level metrics are diagnostic in first-pass generation.
 
@@ -52,7 +53,10 @@ comment: collection-level metrics are diagnostic in first-pass generation.
 - [x] Remove matched-text tone leakage from surface inference: links, quotes,
       capitalization, emoji, and punctuation remain anonymous shape, but lexical
       gratitude no longer creates a `pure_acknowledgement` contract.
-- [x] Finish source-pin/version updates and full code review: 262 tests pass,
+- [x] Remove the remaining indirect matched-text semantic paths: first-person,
+      uncertainty, story/rant, tangent, and template labels are no longer
+      inferred from evaluation wording. Delete the two dead frame regexes.
+- [x] Finish source-pin/version updates and full code review: 263 tests pass,
       backend self-test passes, and all 72 source pins have zero drift.
 - [ ] Run one large n=1 content/contract diagnostic with no metric-driven
       retries, then run a multi-thread matched evaluation for formal p-values.

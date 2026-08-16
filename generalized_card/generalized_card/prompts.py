@@ -2707,9 +2707,6 @@ def _real_surface_shape_guidance(shape: str) -> str:
         "micro_reaction": "Real shape: use a true one-to-five-word reaction.",
         "short_direct_answer": "Real shape: use a short direct answer, not a paragraph.",
         "short_question": "Real shape: ask only the narrow question.",
-        "thanks_ack": "Real shape: make it an acknowledgement or thanks.",
-        "joke_reaction": "Real shape: make the joke or reaction the whole point.",
-        "side_tangent": "Real shape: stay on a small side observation.",
     }
     return mapping.get(shape, "")
 

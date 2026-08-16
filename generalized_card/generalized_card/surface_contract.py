@@ -25,8 +25,6 @@ HARD_SHORT_SURFACE_SHAPES = frozenset(
         "micro_reaction",
         "short_direct_answer",
         "short_question",
-        "thanks_ack",
-        "joke_reaction",
     }
 )
 
@@ -40,7 +38,7 @@ def infer_surface_shape(row: dict[str, Any]) -> str:
     author = str(row.get("author") or "").strip().lower()
     if lowered in {"[deleted]", "[removed]"}:
         return "deleted_removed"
-    if author in {"automoderator", "moderator"} or "!template" in lowered:
+    if author in {"automoderator", "moderator"}:
         return "template_notice"
     if words <= 5:
         return "micro_reaction"
@@ -54,11 +52,9 @@ def infer_surface_shape(row: dict[str, Any]) -> str:
     if (has_link or has_quote) and reference_is_dominant(body):
         return "quote_link_reference" if has_quote else "link_reference"
     if re.search(r"\b[A-Z]{2,6}\b|\b[A-Za-z]+\d[A-Za-z0-9/-]*\b", body) and words <= 35:
-        return "compact_datapoint"
+        return "compact_identifier_turn"
     if words >= 70:
-        return "story_rant"
-    if re.search(r"^\s*(side note|unrelated|fwiw|btw)\b", lowered):
-        return "side_tangent"
+        return "long_turn"
     return "full_answer"
 
 

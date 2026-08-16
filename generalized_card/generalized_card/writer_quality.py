@@ -116,8 +116,6 @@ def substantive_length_floor_problem(text: str, task: Any) -> str:
         "micro_reaction",
         "short_direct_answer",
         "short_question",
-        "thanks_ack",
-        "joke_reaction",
     }:
         return ""
     if str(getattr(task, "payload_type", "")) in {

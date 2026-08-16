@@ -59,6 +59,42 @@ Before any run that changes behavior:
 
 ---
 
+## v83 — matched-text semantic isolation (2026-08-17)
+
+Policy ID: `generalized-card-v2-matched-text-semantic-isolation-v83-20260817`.
+
+The v82 completion audit was extended from final Prompt strings back through
+every expander callback that receives an anonymous matched-real body. Three
+remaining paths still derived semantic controls from evaluation wording:
+
+- lexical first-person and uncertainty markers temporarily licensed those
+  frames before Planner restoration;
+- a long anonymous slot was labelled `story_rant`, regardless of its plan;
+- lexical prefixes such as `side note`, `unrelated`, `FWIW`, and `BTW` assigned
+  a `side_tangent` real-surface shape, and `!template` assigned template meaning.
+
+Changed:
+
+- Matched wording can no longer license first-person or uncertainty. The two
+  dead regex classifiers were replaced by one explicit false boundary; the
+  Planner's story/evidence/stance contract remains the sole authority.
+- Real-surface inference now uses only deleted/moderator metadata, word scale,
+  question punctuation, dominant link/quote form, and identifier typography.
+  Its neutral structural labels are `long_turn`, `full_answer`, and
+  `compact_identifier_turn`, never story/rant/tangent labels.
+- The generalized anchor builder explicitly discards `real_body`; facts still
+  come only from seed, generated parent, and Planner/domain claim controls.
+
+Expected direction before a paid run: fewer hidden Planner conflicts and fewer
+comments whose story, uncertainty, gratitude, or tangent behavior mirrors the
+matched evaluation comment rather than the planned slot. The tree and length
+signals remain identical. Formal metric result is pending.
+
+Offline acceptance: semantic-marker isolation tests pass, the complete suite
+passes 263 tests, Ruff and backend self-test pass, and all 72 pins agree.
+
+---
+
 ## v82 — focused Planner discourse handoff (2026-08-17)
 
 Policy ID: `generalized-card-v2-focused-discourse-contract-v82-20260817`.

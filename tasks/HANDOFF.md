@@ -1,5 +1,18 @@
 # Handoff — synthetic Reddit thread generation (generalized_card)
 
+## 2026-08-17 v83 matched-text isolation addendum
+
+The v82 audit was extended through every callback that receives the anonymous
+matched comment body. It found that first-person/uncertainty regexes and
+`story_rant`/`side_tangent` real-surface labels still derived semantic controls
+from evaluation wording. v83 removes those paths. Matched data now contributes
+only tree linkage, speaker structure when explicitly enabled, word scale,
+punctuation, dominant link/quote form, capitalization/identifier form, and other
+non-semantic surface shape. Planner story, stance, voice, function, payload,
+affect, and tone are the sole semantic authority.
+
+Use v83—not v81/v82—for the next paid run. See `tasks/v83-worklog.md`.
+
 ## 2026-08-17 v82 completion-audit addendum
 
 The v81 post-implementation field-survival audit found one remaining default-path

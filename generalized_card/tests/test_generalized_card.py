@@ -2777,7 +2777,18 @@ class GeneralizedCardTest(unittest.TestCase):
                 },
                 2: {
                     "branch_id": "1",
+                    "payload_type": "correction",
+                    "comment_function": "correction_caveat",
+                    "content_angle": "risk_reliability_support",
+                    "evidence_mode": "small_observation",
+                    "voice": "blunt",
+                    "speaker_role": "contrarian",
                     "semantic_move": "add one new caveat about the same local tradeoff",
+                    "reply_relation": "limits_parent",
+                    "stance": "hard_disagree",
+                    "detail_focus": "loose framing at the subject edge",
+                    "avoid_repeating": "the parent's general reach verdict",
+                    "domain_intent": "name the narrower framing failure",
                     "decision_boundary": "whether another constraint changes the choice",
                     "reply_delta": "state the separate consequence of choosing too little reach",
                     "reply_delta_type": "downstream_consequence",
@@ -2826,6 +2837,34 @@ class GeneralizedCardTest(unittest.TestCase):
             child.reply_delta,
             "state the separate consequence of choosing too little reach",
         )
+        rendered = module.build_writer_prompt(
+            profile="gpt54_reddit_writer",
+            seed_post=module.SeedPost(
+                index=0,
+                title="visible post",
+                body="visible body",
+                content="visible post visible body",
+                source_raw_post_id="seed",
+                real_num_comments=2,
+                metadata={},
+            ),
+            task=module.finalize_rebalanced_task(child),
+            parent_comment={"content": "The generated parent gives a reach verdict."},
+            previous_comments=[],
+            recent_openings=[],
+        )
+        for expected in (
+            "- payload form: correction",
+            "- function: correction caveat",
+            "- speaker role: contrarian",
+            "- voice: blunt",
+            "- stance: hard_disagree",
+            "- reply relation: limits_parent",
+            "- decision intent: name the narrower framing failure",
+            "- content to avoid: the parent's general reach verdict",
+            "- You are replying. What you add: state the separate consequence",
+        ):
+            self.assertEqual(rendered.count(expected), 1, expected)
 
     def test_tree_order_plans_all_parents_before_direct_replies(self) -> None:
         module = load_generator_backend()
@@ -3349,6 +3388,41 @@ class GeneralizedCardTest(unittest.TestCase):
             "full_answer",
         )
         self.assertEqual(surface_only_label(text), "ordinary_turn")
+
+    def test_matched_lexical_roles_do_not_become_surface_shapes(self) -> None:
+        self.assertEqual(
+            infer_surface_shape(
+                {
+                    "body": "Side note: I think maybe this is unrelated to the main point, but it remains an ordinary local comment.",
+                    "author": "user",
+                }
+            ),
+            "full_answer",
+        )
+        self.assertEqual(
+            infer_surface_shape(
+                {
+                    "body": "!template this is ordinary user text with enough words to avoid a short structural label",
+                    "author": "user",
+                }
+            ),
+            "full_answer",
+        )
+        self.assertEqual(
+            infer_surface_shape(
+                {
+                    "body": " ".join("word" for _ in range(80)),
+                    "author": "user",
+                }
+            ),
+            "long_turn",
+        )
+        self.assertEqual(
+            infer_surface_shape(
+                {"body": "ordinary moderator notice", "author": "moderator"}
+            ),
+            "template_notice",
+        )
 
     def test_matched_gratitude_words_do_not_assign_gratitude_tone(self) -> None:
         self.assertEqual(

@@ -625,8 +625,8 @@ def configure_generator_backend(
     module.infer_surface_skeleton = infer_surface_skeleton
     module.infer_surface_texture = infer_surface_texture
     module.infer_real_comment_social_overrides = _structural_real_comment_overrides
-    module.real_text_allows_first_person_frame = _allows_first_person
-    module.real_text_allows_uncertainty_frame = _allows_uncertainty
+    module.real_text_allows_first_person_frame = _matched_text_never_assigns_semantic_frame
+    module.real_text_allows_uncertainty_frame = _matched_text_never_assigns_semantic_frame
     module.infer_real_tone_slot = lambda row, **kwargs: _generic_real_tone_slot(
         config,
         row,
@@ -1223,6 +1223,7 @@ def _anchor_builder(module: ModuleType):
         parent_task: Any | None,
         max_anchors: int = 10,
     ) -> tuple[str, ...]:
+        del real_body
         payload_type = str(planned.get("payload_type") or "").strip().lower()
         comment_function = str(planned.get("comment_function") or "").strip().lower()
         if payload_type in {
@@ -2323,18 +2324,11 @@ def _generic_real_surface_shape(row: dict[str, Any]) -> str:
     return infer_surface_shape(row)
 
 
-def _allows_first_person(text: str) -> bool:
-    return bool(re.search(r"\b(i|i'm|i’ve|i've|ive|my|mine|we|our)\b", str(text), flags=re.I))
+def _matched_text_never_assigns_semantic_frame(text: str) -> bool:
+    """Matched wording cannot license first-person or uncertainty semantics."""
 
-
-def _allows_uncertainty(text: str) -> bool:
-    return bool(
-        re.search(
-            r"\b(maybe|might|not sure|i think|i guess|probably|possibly|seems?|appears?|could)\b|\?",
-            str(text),
-            flags=re.I,
-        )
-    )
+    del text
+    return False
 
 
 def _sanitize_writer_text(module: ModuleType):
