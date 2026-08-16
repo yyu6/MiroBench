@@ -5446,7 +5446,14 @@ class FocusedWriterPromptTest(unittest.TestCase):
     def setUp(self) -> None:
         self.config = load_domain_config("camera")
 
-    def _prompt(self, mode: str, tone: str, route_lock: str = "own_words") -> str:
+    def _prompt(
+        self,
+        mode: str,
+        tone: str,
+        route_lock: str = "own_words",
+        license_mode: str = "off",
+        story_mode: str = "no_story",
+    ) -> str:
         from generalized_card.generation_distribution import (
             apply_planner_distribution_fields,
         )
@@ -5454,6 +5461,7 @@ class FocusedWriterPromptTest(unittest.TestCase):
         module = configure_generator_backend(load_generator_backend(), self.config)
         module.GENERALIZED_WRITER_PROMPT_MODE = mode
         module.GENERALIZED_WRITER_ROUTE_LOCK = route_lock
+        module.GENERALIZED_OWN_FACT_LICENSE = license_mode
         task = module.CommentTask(
             local_task_id=1,
             local_parent_task_id=None,
@@ -5465,7 +5473,7 @@ class FocusedWriterPromptTest(unittest.TestCase):
             comment_function="verdict_evaluation",
             content_angle="fit_use_case",
             evidence_mode="small_observation",
-            story_mode="no_story",
+            story_mode=story_mode,
             voice="casual_neutral",
             payload_type="soft_helpful",
             length_bucket="long",
@@ -5630,6 +5638,645 @@ class WriterRouteLockTest(unittest.TestCase):
     def test_reply_schema_say_only_reproduces_the_v74_request(self) -> None:
         prompt = self._reply_planner_prompt("say_only")
         self.assertIn("a full sentence stating what this reply asserts", prompt)
+
+
+class OwnFactLicenseTest(unittest.TestCase):
+    """A slot must never carry a permission and its revocation at once.
+
+    Measured over the 522 rendered slots of v75, before the split:
+
+        443 (84.9%)  "Do not invent products, specifications, prices,
+                      measurements, dates, outcomes, policies, links, or
+                      personal experiences."
+        249 (47.7%)  "Equipment you may claim as your own, if this turn reports
+                      personal experience: ..."
+        170 (32.6%)  both, in the same prompt
+
+    and every one of the 249 equipment blocks closed with "do not invent a
+    specification, price, measurement, or test result for it", so a slot could
+    name its gear and say nothing about it. Generated specifications per comment
+    were 0.08 against 0.55 in the matched real threads, and novel brand or model
+    tokens 6.6 per thread against 47.3.
+
+    The license splits the ban by *what the fact is about*, and is gated on the
+    same predicate as the equipment block so the permission and the facts it
+    needs always arrive together.
+    """
+
+    def setUp(self) -> None:
+        self.config = load_domain_config("camera")
+
+    def _prompt(self, license_mode: str, *, story_mode: str = "no_story") -> str:
+        helper = FocusedWriterPromptTest()
+        helper.setUp()
+        return helper._prompt(
+            "focused",
+            "impolite",
+            license_mode=license_mode,
+            story_mode=story_mode,
+        )
+
+    def _backend(self, license_mode: str):
+        return SimpleNamespace(
+            GENERALIZED_DOMAIN_PROFILE={},
+            GENERALIZED_OWN_FACT_LICENSE=license_mode,
+            compact=lambda text, limit: " ".join(str(text or "").split())[:limit],
+        )
+
+    def _task(self, **overrides):
+        base = dict(
+            allow_first_person_frame=True,
+            evidence_mode="firsthand_experience",
+            story_mode="no_story",
+            payload_type="soft_helpful",
+            local_task_id=1,
+            concrete_anchors=(),
+        )
+        base.update(overrides)
+        return SimpleNamespace(**base)
+
+    # --- off is a true ablation control, not an approximation ---------------
+
+    def test_off_reproduces_the_v75_blanket_ban_verbatim(self) -> None:
+        from generalized_card.writer_grounding import story_fact_rule
+
+        rule = story_fact_rule(
+            self._task(), has_domain_claim=False, mode="off"
+        )
+        self.assertEqual(
+            rule,
+            "Do not invent products, specifications, prices, measurements, "
+            "dates, outcomes, policies, links, or personal experiences.",
+        )
+
+    def test_off_reproduces_the_v75_story_rule_verbatim(self) -> None:
+        from generalized_card.writer_grounding import story_fact_rule
+
+        rule = story_fact_rule(
+            self._task(story_mode="specific_personal_story"),
+            has_domain_claim=False,
+            mode="off",
+        )
+        self.assertIn("This is a synthetic story slot", rule)
+        self.assertIn("externally checkable outcome", rule)
+
+    def test_off_keeps_the_blanket_ban_in_the_rendered_prompt(self) -> None:
+        self.assertIn("or personal experiences", self._prompt("off"))
+
+    def test_equipment_clause_tracks_the_license(self) -> None:
+        """Asserted on the clause, not the rendered prompt: the equipment block
+        only renders when the domain profile carries an entity inventory, and a
+        prompt-level assertion would pass vacuously without one."""
+
+        from generalized_card.writer_grounding import equipment_closing_clause
+
+        off = equipment_closing_clause(mode="off")
+        self.assertIn(
+            "do not invent a specification, price, measurement, or test result",
+            off,
+        )
+        own = equipment_closing_clause(mode="own")
+        self.assertNotIn("do not invent a specification", own)
+        self.assertIn("what you paid, and how it held up", own)
+        # the half that must survive either way
+        for clause in (off, own):
+            self.assertIn("Do not attribute it to the post", clause)
+
+    # --- own removes the contradiction on every writer path -----------------
+
+    def test_own_licenses_the_speakers_own_facts(self) -> None:
+        prompt = self._prompt("own")
+        self.assertIn("are yours to state", prompt)
+        self.assertNotIn("or personal experiences", prompt)
+
+    def test_own_still_grounds_the_product_under_discussion(self) -> None:
+        """The half that must not move. A wrong spec here is a catchable error,
+        and one shared invented fact is what made `domain_claim` a regression."""
+
+        prompt = self._prompt("own", story_mode="specific_personal_story")
+        self.assertIn("product under discussion", prompt)
+        self.assertIn("unless it is visible above", prompt)
+
+    def test_own_gives_a_story_its_consequence_back(self) -> None:
+        from generalized_card.writer_grounding import story_fact_rule
+
+        rule = story_fact_rule(
+            self._task(story_mode="specific_personal_story"),
+            has_domain_claim=False,
+            mode="own",
+        )
+        self.assertIn("what came of it", rule)
+        self.assertNotIn("externally checkable outcome", rule)
+
+    def test_own_does_not_license_a_slot_with_no_first_person_frame(self) -> None:
+        """Licensing own facts on a slot barred from a first-person frame would
+        replace one contradiction with another."""
+
+        from generalized_card.writer_grounding import licensed_for
+
+        task = self._task(
+            allow_first_person_frame=False,
+            evidence_mode="small_observation",
+            story_mode="no_story",
+            payload_type="soft_helpful",
+        )
+        self.assertFalse(licensed_for(self._backend("own"), task))
+        self.assertTrue(licensed_for(self._backend("own"), self._task()))
+
+    def test_the_license_gate_matches_the_equipment_gate(self) -> None:
+        """One predicate, so the permission and the facts never drift apart."""
+
+        from generalized_card import prompts
+        from generalized_card.writer_grounding import (
+            first_person_experience_slot,
+            licensed_for,
+        )
+
+        backend = self._backend("own")
+        for task in (
+            self._task(),
+            self._task(allow_first_person_frame=False, evidence_mode="small_observation"),
+            self._task(
+                allow_first_person_frame=False,
+                evidence_mode="small_observation",
+                story_mode="specific_personal_story",
+            ),
+        ):
+            self.assertEqual(
+                licensed_for(backend, task),
+                first_person_experience_slot(task),
+            )
+            self.assertEqual(
+                bool(prompts._first_person_experience_slot(task)),
+                first_person_experience_slot(task),
+            )
+
+    # --- every path, not 80% of them ----------------------------------------
+
+    def test_both_entity_rules_carry_the_split(self) -> None:
+        """v74 applied its fix to only 416 of 522 slots because the low-info
+        path was never converted, and the release could not be attributed."""
+
+        from generalized_card import prompts
+
+        backend = self._backend("own")
+        task = self._task()
+        for renderer in (
+            prompts._focused_path_entity_rule,
+            prompts._full_path_entity_rule,
+        ):
+            rule = renderer(backend, task)
+            self.assertIn("your own gear and your own history", rule)
+            self.assertIn("what is visible above", rule)
+
+    def test_low_info_metric_guidance_drops_the_qualitative_instruction(self) -> None:
+        from generalized_card import prompts
+
+        block = prompts._metric_guidance_block(self._backend("own"), self._task())
+        self.assertNotIn("Keep synthetic personal context qualitative", block)
+        self.assertIn("concrete specifics of your own kit", block)
+
+        off_block = prompts._metric_guidance_block(
+            self._backend("off"), self._task()
+        )
+        self.assertIn("Keep synthetic personal context qualitative", off_block)
+
+    def test_system_prompt_sentence_is_empty_when_off(self) -> None:
+        from generalized_card.writer_grounding import system_prompt_fact_sentence
+
+        self.assertEqual(system_prompt_fact_sentence(mode="off"), "")
+        self.assertIn(
+            "yours to state concretely",
+            system_prompt_fact_sentence(mode="own"),
+        )
+
+
+class NamedConcretenessLicenseTest(unittest.TestCase):
+    """The correction to `own`, which run v76b refuted.
+
+    v76b measured the personal-history license on seed 8 and moved concreteness
+    the wrong way: 0.05 -> 0.02 specification tokens per comment against a real
+    0.54, and 0.083 -> 0.024 on the licensed slots themselves. Two measurements
+    say why. Across the ten matched real threads, 78 of 114 spec-carrying
+    comments (68%) contain no first-person frame at all, so the gate selected the
+    wrong slots; and replacing a vague blanket ban with an explicit "about the
+    product under discussion, name only what is visible" sharpened a prohibition
+    on exactly the detail real comments are full of.
+
+    `named` is also stated without domain vocabulary, because specification-shaped
+    tokens are thread-dependent -- 0% of comments in seed 1, 64% in seed 5. What
+    holds on all ten threads is quantities (real 12.3x generated) and proper
+    nouns (real 1.85x).
+    """
+
+    def _backend(self, mode: str):
+        return SimpleNamespace(
+            GENERALIZED_DOMAIN_PROFILE={},
+            GENERALIZED_OWN_FACT_LICENSE=mode,
+            compact=lambda text, limit: " ".join(str(text or "").split())[:limit],
+        )
+
+    def _task(self, **overrides):
+        base = dict(
+            allow_first_person_frame=False,
+            evidence_mode="small_observation",
+            story_mode="no_story",
+            payload_type="soft_helpful",
+            length_bucket="long",
+            real_word_count=120,
+            local_task_id=1,
+            concrete_anchors=(),
+        )
+        base.update(overrides)
+        return SimpleNamespace(**base)
+
+    def test_named_licenses_a_slot_with_no_personal_frame(self) -> None:
+        """The case `own` got wrong: 68% of real concrete comments look like
+        this one."""
+
+        from generalized_card.writer_grounding import slot_license
+
+        task = self._task()
+        self.assertEqual(slot_license(self._backend("own"), task), "off")
+        self.assertEqual(slot_license(self._backend("named"), task), "named")
+
+    def test_named_does_not_license_a_slot_with_no_room(self) -> None:
+        """`missing_concrete_anchor` fired 84 times against slots that could not
+        satisfy it."""
+
+        from generalized_card.writer_grounding import slot_license
+
+        for task in (
+            self._task(real_word_count=6, length_bucket="micro"),
+            self._task(real_word_count=9, length_bucket="short"),
+        ):
+            self.assertEqual(slot_license(self._backend("named"), task), "off")
+
+    def test_the_named_rule_carries_no_domain_vocabulary(self) -> None:
+        """A camera word here is a domain-transfer bug: the same rule has to
+        work for news, sport, or audio."""
+
+        from generalized_card.writer_grounding import (
+            NAMED_ENTITY_RULE,
+            metric_guidance_story_line,
+            story_fact_rule,
+            system_prompt_fact_sentence,
+        )
+
+        texts = [
+            NAMED_ENTITY_RULE,
+            system_prompt_fact_sentence(mode="named"),
+            metric_guidance_story_line(mode="named"),
+            story_fact_rule(self._task(), has_domain_claim=False, mode="named"),
+            story_fact_rule(
+                self._task(story_mode="specific_personal_story"),
+                has_domain_claim=False,
+                mode="named",
+            ),
+        ]
+        banned = (
+            "gear", "camera", "lens", "shot", "shoot", "photo", "iso",
+            "aperture", "specification", "megapixel", "sensor", "product",
+        )
+        for text in texts:
+            for word in banned:
+                self.assertNotIn(word, text.lower(), f"{word!r} in {text!r}")
+
+    def test_named_guards_convergence_rather_than_detail(self) -> None:
+        """v71 injected one planned fact into 508 of 522 comments and produced
+        157 extra semantic-overlap flags. Real concreteness is the opposite
+        shape: 104 quantity tokens over 44 distinct values in one thread."""
+
+        from generalized_card.writer_grounding import NAMED_ENTITY_RULE
+
+        self.assertIn("do not repeat a name or figure another", NAMED_ENTITY_RULE)
+        self.assertIn("consistent with", NAMED_ENTITY_RULE)
+
+    def test_all_three_modes_stay_distinct_and_off_is_unchanged(self) -> None:
+        from generalized_card.writer_grounding import entity_naming_rule
+
+        rules = {
+            mode: entity_naming_rule(mode=mode) for mode in ("off", "own", "named")
+        }
+        self.assertEqual(len(set(rules.values())), 3)
+        self.assertEqual(
+            rules["off"], "Name a product, model, or number only if it is visible above."
+        )
+
+
+class RepetitionGuardTest(unittest.TestCase):
+    """The frame that survived four releases, and the check that already sees it.
+
+    In a generated 186-comment thread the 4-gram "that's the part" appears in 12
+    comments (6.5%); in its matched real thread the most-shared 4-gram appears in
+    3 of 200 (1.5%) and there is essentially no shared phrasing. The same family
+    was measured at 20% of comments at policy v72 and 0 times in 39,265 real
+    tokens, and it survived the v73 rewording, the v74 prompt rebuild and the v75
+    route lock.
+
+    `template_phrase_reused` already fires on it -- 38 slots in v76a, 40 in v76b,
+    about 21% -- and is discarded: all 186 slots ran exactly one attempt and 85
+    were accepted through `accepted_first_pass_distribution_diagnostics`.
+    """
+
+    def tearDown(self) -> None:
+        from generalized_card.writer_quality import set_repetition_guard
+
+        set_repetition_guard("off")
+
+    def test_off_keeps_repetition_advisory(self) -> None:
+        from generalized_card.writer_quality import (
+            is_single_stage_diagnostic,
+            set_repetition_guard,
+        )
+
+        set_repetition_guard("off")
+        for problem in ("template_phrase_reused", "opener_family_reused", "opening_reused"):
+            self.assertTrue(is_single_stage_diagnostic(problem), problem)
+
+    def test_blocking_makes_repetition_force_another_attempt(self) -> None:
+        from generalized_card.writer_quality import (
+            is_single_stage_diagnostic,
+            set_repetition_guard,
+        )
+
+        set_repetition_guard("blocking")
+        for problem in ("template_phrase_reused", "opener_family_reused", "opening_reused"):
+            self.assertFalse(is_single_stage_diagnostic(problem), problem)
+
+    def test_blocking_leaves_the_unsatisfiable_checks_advisory(self) -> None:
+        """`missing_concrete_anchor` cannot be met while the prompt bans unlisted
+        entities, so promoting it would make the run fight itself."""
+
+        from generalized_card.writer_quality import (
+            is_single_stage_diagnostic,
+            set_repetition_guard,
+        )
+
+        set_repetition_guard("blocking")
+        for problem in (
+            "missing_concrete_anchor",
+            "long_helpful_too_generic",
+            "question_mark_unwanted",
+            "uncertainty_frame_unwanted",
+        ):
+            self.assertTrue(is_single_stage_diagnostic(problem), problem)
+
+    def test_promoted_problems_can_never_drop_a_comment(self) -> None:
+        """A code outside REPAIRABLE_WRITER_PROBLEMS returns skip: True at
+        backend.py:2022 and the slot is lost. This is the check that had to pass
+        before the guard could be promoted at all."""
+
+        from generalized_card.writer_quality import (
+            REPAIRABLE_WRITER_PROBLEMS,
+            REPETITION_DIAGNOSTIC_PROBLEMS,
+        )
+
+        self.assertTrue(REPETITION_DIAGNOSTIC_PROBLEMS <= REPAIRABLE_WRITER_PROBLEMS)
+
+    def test_the_guard_defaults_to_off(self) -> None:
+        from generalized_card import writer_quality
+
+        self.assertEqual(writer_quality.set_repetition_guard(""), "off")
+        self.assertEqual(writer_quality.set_repetition_guard("nonsense"), "off")
+
+    # --- what run v77 got wrong -------------------------------------------
+
+    def test_the_frame_is_detected_anywhere_in_the_comment(self) -> None:
+        """v77's failure. The core signature reads `tokens[:28]`, so of the 15
+        comments carrying the "that's the part" family in run v76a it saw 4; the
+        rest sat at token 20, 52, 62 and 80. The guard therefore forced 51 slots
+        to retry against other families and left the frame at 7.6%."""
+
+        from generalized_card.writer_quality import frame_families
+
+        head = "That's the part that matters here, honestly."
+        buried = (
+            "I went back and forth on this for a while and looked at the "
+            "comparisons people posted, and after all that I came away thinking "
+            "the ergonomics carried more weight than the sensor, that's the part "
+            "that decides it for most people."
+        )
+        self.assertIn("part_frame", frame_families(head))
+        self.assertIn("part_frame", frame_families(buried))
+        self.assertEqual(frame_families("Nothing stock about this sentence."), set())
+
+    def test_curly_apostrophes_do_not_hide_a_frame(self) -> None:
+        """74% of generated comments use curly typography."""
+
+        from generalized_card.writer_quality import frame_families
+
+        self.assertIn("part_frame", frame_families("That’s the part that matters."))
+
+    def test_the_frame_check_is_silent_while_the_guard_is_off(self) -> None:
+        from generalized_card.writer_quality import (
+            repeated_frame_problem,
+            set_repetition_guard,
+        )
+
+        earlier = ["that is the part that counts", "that is the part that stings"]
+        set_repetition_guard("off")
+        self.assertEqual(repeated_frame_problem("that is the part that hurts", earlier), "")
+        set_repetition_guard("blocking")
+        self.assertEqual(
+            repeated_frame_problem("that is the part that hurts", earlier),
+            "repeated_frame:part_frame",
+        )
+
+    def test_the_frame_check_allows_a_budget_before_firing(self) -> None:
+        from generalized_card.writer_quality import (
+            repeated_frame_problem,
+            set_repetition_guard,
+        )
+
+        set_repetition_guard("blocking")
+        self.assertEqual(
+            repeated_frame_problem("that is the part that hurts", ["that is the part that counts"]),
+            "",
+        )
+
+    def test_a_repeated_frame_can_be_repaired_not_dropped(self) -> None:
+        """The trap v77 fell into: a code outside REPAIRABLE_WRITER_PREFIXES
+        returns skip: True at backend.py:2022 and the slot is lost."""
+
+        from generalized_card.writer_quality import only_repairable_writer_problems
+
+        self.assertTrue(only_repairable_writer_problems(["repeated_frame:part_frame"]))
+
+    def test_style_only_exhaustion_keeps_the_comment(self) -> None:
+        """v77 lost 14 of 186 comments. Promoting the repetition codes made them
+        non-distribution failures, so no fallback candidate was ever registered
+        and exhaustion dropped the slot. A shortened thread also damages
+        `avg_depth` and `structural_virality`, two of the four passing metrics."""
+
+        from generalized_card.writer_quality import only_style_problems
+
+        self.assertTrue(only_style_problems(["repeated_frame:part_frame"]))
+        self.assertTrue(
+            only_style_problems(["template_phrase_reused", "opener_family_reused"])
+        )
+        self.assertTrue(only_style_problems(["repeated_frame:part_frame", "length_too_long"]))
+        # What attempt 1 would have kept, attempt 5 must also keep. v78 still
+        # lost 4 slots whose residue was purely advisory.
+        self.assertTrue(only_style_problems(["missing_concrete_anchor"]))
+        self.assertTrue(only_style_problems(["question_mark_unwanted"]))
+        self.assertTrue(
+            only_style_problems(["missing_concrete_anchor", "template_phrase_reused"])
+        )
+        # never over a real fault
+        self.assertFalse(only_style_problems(["repeated_frame:part_frame", "exact_duplicate"]))
+        self.assertFalse(only_style_problems(["empty"]))
+        self.assertFalse(only_style_problems(["parent_copy"]))
+        self.assertFalse(only_style_problems(["placeholder_literal"]))
+        self.assertFalse(only_style_problems([]))
+
+    def test_the_frame_patterns_carry_no_domain_vocabulary(self) -> None:
+        from generalized_card.writer_quality import REPEATED_FRAME_PATTERNS
+
+        blob = " ".join(REPEATED_FRAME_PATTERNS).lower() + " " + " ".join(
+            REPEATED_FRAME_PATTERNS.values()
+        ).lower()
+        for word in ("camera", "lens", "photo", "iso", "sensor", "product", "gear"):
+            self.assertNotIn(word, blob)
+
+
+class SpeakerRosterTest(unittest.TestCase):
+    """A thread is people, not slots.
+
+    `run_sampled_reddit_generator.py` built the author name as a pure function of
+    the slot index, so every comment came from a different person: 186 comments,
+    186 one-shot authors. The matched real threads are 559 comments from 265
+    named participants -- 2.11 each -- with 68% of comment mass written by
+    someone who speaks more than once, and seed 8's busiest author writing 10.
+
+    Naming 186 users does not make 186 voices. It makes one voice wearing 186
+    name tags, which is what `self_bertscore`'s near-uniform +0.033 overshoot on
+    9 of 10 threads looks like.
+
+    The structure is a join, not a new sampling policy: `real_sample_id` already
+    binds each slot to one matched real comment, and that comment has an author.
+    Verified on seed 8 -- `real_word_count` agrees for 186 of 186 slots.
+    """
+
+    def _rows(self):
+        # Shape taken from a real thread: one prolific speaker, one OP, two
+        # deleted accounts, and singletons.
+        return [
+            {"author": "alice", "is_submitter": True, "body": "a"},
+            {"author": "bob", "is_submitter": False, "body": "b"},
+            {"author": "[deleted]", "is_submitter": False, "body": "c"},
+            {"author": "alice", "is_submitter": False, "body": "d"},
+            {"author": "carol", "is_submitter": False, "body": "e"},
+            {"author": "[deleted]", "is_submitter": False, "body": "f"},
+            {"author": "bob", "is_submitter": False, "body": "g"},
+            {"author": "alice", "is_submitter": False, "body": "h"},
+        ]
+
+    def _roster(self):
+        from generalized_card.speaker_roster import build_speaker_roster
+
+        return build_speaker_roster(
+            self._rows(),
+            inventory={"available": True, "terms": [{"term": f"Gear{i}"} for i in range(12)]},
+            facets=("low light", "travel", "video"),
+        )
+
+    def test_slots_group_into_the_people_who_wrote_them(self) -> None:
+        roster = self._roster()
+        alice = roster.speaker_for(1)
+        self.assertEqual(alice.slot_ids, (1, 4, 8))
+        self.assertEqual(roster.speaker_for(4).speaker_id, alice.speaker_id)
+        self.assertEqual(roster.speaker_for(8).speaker_id, alice.speaker_id)
+        self.assertEqual(roster.speaker_for(2).slot_ids, (2, 7))
+
+    def test_the_op_is_one_person_across_their_turns(self) -> None:
+        roster = self._roster()
+        self.assertTrue(roster.speaker_for(1).is_op)
+        # is_submitter is only set on their first row; the speaker still owns it
+        self.assertTrue(roster.speaker_for(8).is_op)
+        self.assertFalse(roster.speaker_for(2).is_op)
+
+    def test_deleted_accounts_never_merge_into_one_prolific_speaker(self) -> None:
+        roster = self._roster()
+        first, second = roster.speaker_for(3), roster.speaker_for(6)
+        self.assertNotEqual(first.speaker_id, second.speaker_id)
+        self.assertEqual(first.slot_ids, (3,))
+        self.assertEqual(second.slot_ids, (6,))
+        self.assertTrue(first.anonymous and second.anonymous)
+        self.assertEqual(roster.summary()["anonymous_speaker_count"], 2)
+        self.assertEqual(roster.summary()["named_speaker_count"], 3)
+
+    def test_a_speaker_keeps_one_kit_across_every_turn(self) -> None:
+        """The defect this replaces: gear rotated by `slot_index`, so the same
+        participant was handed different equipment in each of their turns."""
+
+        roster = self._roster()
+        kits = {roster.speaker_for(slot).kit for slot in (1, 4, 8)}
+        self.assertEqual(len(kits), 1)
+        self.assertTrue(all(kits))
+        self.assertNotEqual(roster.speaker_for(1).kit, roster.speaker_for(2).kit)
+
+    def test_earlier_slots_are_only_the_ones_already_written(self) -> None:
+        roster = self._roster()
+        self.assertEqual(roster.earlier_slots(1), ())
+        self.assertEqual(roster.earlier_slots(4), (1,))
+        self.assertEqual(roster.earlier_slots(8), (1, 4))
+
+    def test_the_real_author_string_never_reaches_a_speaker(self) -> None:
+        """Only the participation structure crosses the boundary, never the
+        identity itself."""
+
+        import dataclasses
+
+        roster = self._roster()
+        names = {row["author"] for row in self._rows()}
+        for speaker in roster.speakers:
+            for value in dataclasses.astuple(speaker):
+                if isinstance(value, str):
+                    self.assertNotIn(value, names)
+                    self.assertNotIn(value.lower(), {n.lower() for n in names})
+
+    def test_off_yields_no_roster_and_no_speaker_block(self) -> None:
+        from generalized_card import prompts
+        from generalized_card.speaker_roster import EMPTY_ROSTER
+
+        backend = SimpleNamespace(
+            GENERALIZED_ACTIVE_SPEAKER_ROSTER=EMPTY_ROSTER,
+            compact=lambda text, limit: str(text)[:limit],
+        )
+        task = SimpleNamespace(real_sample_id=1)
+        self.assertIsNone(prompts._speaker_for_task(backend, task))
+        self.assertEqual(prompts._speaker_identity_block(backend, task, []), "")
+
+    def test_the_block_shows_a_speaker_their_own_earlier_turns(self) -> None:
+        from generalized_card import prompts
+
+        roster = self._roster()
+        backend = SimpleNamespace(
+            GENERALIZED_ACTIVE_SPEAKER_ROSTER=roster,
+            compact=lambda text, limit: str(text)[:limit],
+        )
+        alice = roster.speaker_for(1)
+        previous = [
+            {"speaker_id": alice.speaker_id, "content": "my first take on this"},
+            {"speaker_id": roster.speaker_for(2).speaker_id, "content": "someone else"},
+        ]
+        block = prompts._speaker_identity_block(
+            backend, SimpleNamespace(real_sample_id=4), previous
+        )
+        self.assertIn("my first take on this", block)
+        self.assertNotIn("someone else", block)
+        self.assertIn("Same person, same voice", block)
+        self.assertIn("You are the person who wrote the post", block)
+
+    def test_speaker_id_survives_the_surface_rebalancer(self) -> None:
+        """`semantic_move` was lost in 347 of 347 reply slots because it was not
+        listed as an invariant. A field the surface pass can reach but does not
+        own is a field that disappears."""
+
+        from generalized_card.task_distribution import PLANNER_AND_SLOT_INVARIANTS
+
+        self.assertIn("speaker_id", PLANNER_AND_SLOT_INVARIANTS)
 
 
 class MicroReactionShapeTest(unittest.TestCase):

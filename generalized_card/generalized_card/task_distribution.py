@@ -24,6 +24,12 @@ PLANNER_AND_SLOT_INVARIANTS = (
     "real_sample_id",
     "real_parent_sample_id",
     "real_word_count",
+    # `speaker_id` is a matched-slot fact, derived from the same real comment as
+    # `real_sample_id`, so the surface rebalancer must not rewrite it. Listed
+    # here for the reason `semantic_move` is: a field the surface pass can reach
+    # but does not own is a field that silently disappears. That is exactly how
+    # a reply's planned move was lost in 347 of 347 slots.
+    "speaker_id",
     "semantic_move",
     "local_topic",
     "reply_relation",

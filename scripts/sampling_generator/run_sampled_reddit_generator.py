@@ -1405,7 +1405,14 @@ def generate_post_from_tasks(
         comment = {
             "comment_id": comment_id,
             "parent_comment_id": parent_comment.get("comment_id") if parent_comment else None,
-            "author": f"sampled_user_{run_index}_{post_slot}_{task.local_task_id}",
+            # A slot-indexed name makes every comment a different person, which
+            # is not how a real thread is shaped. When the adapter has resolved a
+            # speaker for this slot, several slots share one name on purpose.
+            "author": (
+                f"sampled_user_{run_index}_{post_slot}_{task.speaker_id}"
+                if getattr(task, "speaker_id", "")
+                else f"sampled_user_{run_index}_{post_slot}_{task.local_task_id}"
+            ),
             "author_karma": int(rng.randint(12, 84000)),
             "content": text,
             "created_at": (base_ts + timedelta(minutes=task.local_task_id * rng.randint(2, 19))).isoformat(),
@@ -1429,6 +1436,9 @@ def generate_post_from_tasks(
             "payload_type": task.payload_type,
             "length_bucket": task.length_bucket,
             "speaker_role": task.speaker_role,
+            # Carried onto the comment so a later slot held by the same person
+            # can find what they already said in this thread.
+            "speaker_id": getattr(task, "speaker_id", ""),
             "tone_shape": resolved_tone_shape(task),
             "utterance_mode": task.utterance_mode,
             "surface_texture": task.surface_texture,

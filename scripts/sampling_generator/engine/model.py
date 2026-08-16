@@ -104,4 +104,8 @@ class CommentTask:
     affect_instruction: str = ""
     distribution_assignment: str = ""
     tone_shape: str = ""
+    # Which participant holds this slot. Empty reproduces the pre-v77 behaviour,
+    # where the author name was a pure function of the slot index and no two
+    # comments in a thread shared a speaker.
+    speaker_id: str = ""
     concrete_anchors: tuple[str, ...] = ()

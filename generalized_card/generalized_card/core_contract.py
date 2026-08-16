@@ -16,7 +16,7 @@ HISTORICAL_REVISION_POLICY_VERSIONS = {
     "generalized-card-revision-v6-dynamic-coverage-history-20260807",
 }
 GENERALIZED_V2_GENERATION_POLICY_VERSION = (
-    "generalized-card-v2-writer-realizes-planner-move-v75-20260814"
+    "generalized-card-v2-own-fact-license-v76-20260815"
 )
 HISTORICAL_GENERATION_POLICY_VERSIONS = {
     "generalized-v2": {
@@ -80,6 +80,7 @@ HISTORICAL_GENERATION_POLICY_VERSIONS = {
         "generalized-card-v2-planner-owned-reply-move-single-parent-exclusion-v71-20260813",
         "generalized-card-v2-affirmative-affect-uncapped-slot-shape-v73-20260814",
         "generalized-card-v2-focused-writer-prompt-v74-20260814",
+        "generalized-card-v2-writer-realizes-planner-move-v75-20260814",
     },
 }
 
@@ -96,7 +97,7 @@ CORE_FILES = {
     # pinned, so a change anywhere in the engine is still reviewed.
     "generator_generalized_v2": (
         "scripts/sampling_generator/run_sampled_reddit_generator.py",
-        "ef7c9c47a35b58229212180659754fba4afc6348e402bdb972fc185892a9e64a",
+        "abadfd04147908e8227ad75ffb77d306b2d01639e4142f954309915baba3248c",
     ),
     "engine_vocabulary": (
         "scripts/sampling_generator/engine/vocabulary.py",
@@ -104,7 +105,7 @@ CORE_FILES = {
     ),
     "engine_model": (
         "scripts/sampling_generator/engine/model.py",
-        "cf284ea168c12f5527316534495004788bbdc4ac27688baa478a890ac9c3aa7c",
+        "13cf157f86e09583e4110ce3ee5fab633b607f1ba1d713f5bbbb09b08307b533",
     ),
     "engine_util": (
         "scripts/sampling_generator/engine/util.py",
@@ -148,7 +149,21 @@ CORE_FILES = {
     ),
     "generator_adapter": (
         "generalized_card/generalized_card/backend.py",
-        "7c2d138cf878f67e85888c1dce10d54613a25f6175e5268e70ce1abf5a082d82",
+        "aa525cd6e983991e0c5085e8a249448f756f1de482b4ae9cd95cacc3387c51ab",
+    ),
+    # The grounding rules were smeared across eight places in the prompt adapter
+    # before v76 and disagreed with each other. Pinned so the one definition
+    # cannot drift while every other pin still passes.
+    # The thread's participation structure. Pinned for the same reason
+    # `writer_grounding` is: it decides who is speaking, and a silent change
+    # there would be invisible to every other pin.
+    "speaker_roster": (
+        "generalized_card/generalized_card/speaker_roster.py",
+        "2b04220a8e30b3a417e61a2ed78fdc44f0ab0836b635feadb52e2664ec4bdf4d",
+    ),
+    "writer_grounding": (
+        "generalized_card/generalized_card/writer_grounding.py",
+        "7112e1319d5c14782b778b3299695ce2e6b5f71f1405c725af66e6ae7e30a00c",
     ),
     "actor_conditioning": (
         "generalized_card/generalized_card/actor_conditioning.py",
@@ -160,7 +175,7 @@ CORE_FILES = {
     ),
     "generation_runner": (
         "generalized_card/scripts/run_generate.py",
-        "40d2252cdd5834942d9da26ad6ea5ddabf926b3d82fbfdf4e802da64242c62fd",
+        "656cdf7ee374cd52de55d2410b89e7d9616d7f60593d6c3683adc7d2b84bae10",
     ),
     "domain_profile": (
         "generalized_card/generalized_card/domain_profile.py",
@@ -188,7 +203,7 @@ CORE_FILES = {
     ),
     "task_distribution": (
         "generalized_card/generalized_card/task_distribution.py",
-        "97818b96dd51542cee57080745c48bf0fdb19812eadee1081612689e8db6a98c",
+        "9dad1609d695feddcf9fc2c47fe1e8615b1d8804765ab43f0f5087a32f922715",
     ),
     "first_pass_policy": (
         "generalized_card/generalized_card/first_pass_policy.py",
@@ -220,7 +235,7 @@ CORE_FILES = {
     ),
     "writer_quality": (
         "generalized_card/generalized_card/writer_quality.py",
-        "863149ef6debd5bba15e9fdc4246008cff909f565ad0272201781eeac19f2b44",
+        "f339ccd6954c7016b4d521caf584f4b333643abac61b1f55bf9f54d62657c60c",
     ),
     "semantic_realization": (
         "generalized_card/generalized_card/semantic_realization.py",
@@ -296,7 +311,7 @@ CORE_FILES = {
     ),
     "domain_prompt_adapter": (
         "generalized_card/generalized_card/prompts.py",
-        "376d34d8dffea45480610cdbb997ab8555b8bd8136fa85c1953a13d7ef9f0066",
+        "a7f3c23aa46c187ff24b86632651d0f775da70be21fd0f9040b12177aa56935f",
     ),
     "reply_planning": (
         "generalized_card/generalized_card/reply_planning.py",

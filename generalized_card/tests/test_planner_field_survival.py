@@ -124,5 +124,90 @@ class PlannerFieldSurvivalTest(unittest.TestCase):
         self.assertNotIn('"claim_family": "one generic claim family"', rendered)
 
 
+class SpeakerIdSurvivalTest(unittest.TestCase):
+    """`speaker_id` has to reach the Writer through the real pipeline.
+
+    Written for the same reason as the class above. `semantic_move` was set by
+    the Planner and then silently overwritten in 347 of 347 reply slots because
+    it was missing from one tuple; the mechanism shipped, ran, and looked healthy
+    in every log. `speaker_id` is set once during task expansion and then passes
+    through the surface rebalancer, the planner-contract restore, and the task
+    finalizer before anything reads it, so each of those is asserted here rather
+    than assumed.
+    """
+
+    def _task(self, core):
+        return core.CommentTask(
+            local_task_id=3,
+            local_parent_task_id=None,
+            depth=0,
+            branch_id=1,
+            branch_goal="grip comfort",
+            visible_scope="seed",
+            local_anchor="grip",
+            comment_function="verdict_evaluation",
+            content_angle="fit_use_case",
+            evidence_mode="firsthand_experience",
+            story_mode="no_story",
+            voice="casual_neutral",
+            payload_type="soft_helpful",
+            length_bucket="long",
+            speaker_role="datapoint_only",
+            utterance_mode="one_datapoint",
+            surface_texture="plain",
+            allow_first_person_frame=True,
+            allow_uncertainty_frame=False,
+            planner_intent="one local verdict",
+            must_not_do="",
+            real_sample_id=3,
+            real_word_count=120,
+            speaker_id="S007",
+        )
+
+    def test_speaker_id_survives_the_task_finalizer(self) -> None:
+        from generalized_card.backend import load_generator_backend
+
+        core = load_generator_backend()
+        finalized = core.finalize_rebalanced_task(self._task(core))
+        self.assertEqual(finalized.speaker_id, "S007")
+
+    def test_speaker_id_survives_the_planner_contract_restore(self) -> None:
+        from generalized_card.backend import load_generator_backend
+        from generalized_card.task_distribution import restore_planner_task_contract
+
+        core = load_generator_backend()
+        restored = restore_planner_task_contract(
+            self._task(core),
+            {"semantic_move": "a different point", "stance": "disagree"},
+            core=core,
+        )
+        self.assertEqual(restored.speaker_id, "S007")
+
+    def test_speaker_id_is_a_slot_invariant(self) -> None:
+        from generalized_card.task_distribution import (
+            PLANNER_AND_SLOT_INVARIANTS,
+            PLANNER_OWNED_TASK_FIELDS,
+        )
+
+        self.assertIn("speaker_id", PLANNER_AND_SLOT_INVARIANTS)
+        # It is a matched-slot fact, not something the Planner may reassign.
+        self.assertNotIn("speaker_id", PLANNER_OWNED_TASK_FIELDS)
+
+    def test_the_author_name_falls_back_when_no_speaker_is_resolved(self) -> None:
+        """`--speaker-identity off` must reproduce the pre-v77 naming exactly."""
+
+        import inspect
+
+        from generalized_card.backend import load_generator_backend
+
+        source = inspect.getsource(load_generator_backend().generate_post_from_tasks)
+        self.assertIn(
+            'f"sampled_user_{run_index}_{post_slot}_{task.local_task_id}"', source
+        )
+        self.assertIn(
+            'f"sampled_user_{run_index}_{post_slot}_{task.speaker_id}"', source
+        )
+
+
 if __name__ == "__main__":
     unittest.main()

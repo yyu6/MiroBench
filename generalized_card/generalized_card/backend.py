@@ -87,8 +87,20 @@ from .writer_quality import (
     last_writer_problems,
     only_distribution_writer_problems,
     only_repairable_writer_problems,
+    only_style_problems,
+    set_repetition_guard,
     writer_distribution_problems,
     writer_local_repair_task,
+)
+from .writer_grounding import (
+    license_mode,
+    system_prompt_fact_sentence,
+)
+from .speaker_roster import (
+    EMPTY_ROSTER,
+    SPEAKER_IDENTITY_MATCHED,
+    SpeakerRoster,
+    build_speaker_roster,
 )
 from . import prompts
 
@@ -308,6 +320,38 @@ def configure_generator_backend(
         os.environ.get("GENERALIZED_CARD_WRITER_ROUTE_LOCK", "own_words").strip().lower()
         or "own_words"
     )
+    # Ablation switch for the fact ban. "off" reproduces policy v75: one blanket
+    # prohibition covering the seed product and the speaker's own history alike,
+    # which put a permission ("Equipment you may claim as your own") and its
+    # revocation ("do not invent ... or personal experiences") into the same
+    # prompt for 170 of 522 slots. "own" splits them -- the product under
+    # discussion stays grounded in what is visible, the speaker's own kit and
+    # history become theirs to state concretely. Measured target: 0.08
+    # specifications per comment against 0.55 real, 6.6 novel brand or model
+    # tokens per thread against 47.3. See `writer_grounding`.
+    module.GENERALIZED_OWN_FACT_LICENSE = (
+        os.environ.get("GENERALIZED_CARD_OWN_FACT_LICENSE", "off").strip().lower()
+        or "off"
+    )
+    # Ablation switch for participation structure. "off" reproduces every run up
+    # to v76: the author name is a pure function of the slot index, so a
+    # 186-comment thread is 186 people who each speak once. "matched" recovers
+    # the matched real thread's own structure through `real_sample_id`, which for
+    # the ten evaluation seeds is 265 named participants over 559 comments --
+    # 2.11 each, with 68% of comment mass written by someone who speaks more than
+    # once. See `speaker_roster`.
+    module.GENERALIZED_SPEAKER_IDENTITY = (
+        os.environ.get("GENERALIZED_CARD_SPEAKER_IDENTITY", "off").strip().lower()
+        or "off"
+    )
+    # Ablation switch for the repetition guard. "off" keeps every prior release's
+    # behaviour, in which `template_phrase_reused` fires and is discarded.
+    # "blocking" lets it force another Writer attempt. See
+    # `writer_quality.REPETITION_DIAGNOSTIC_PROBLEMS` for the measurement.
+    module.GENERALIZED_REPETITION_GUARD = set_repetition_guard(
+        os.environ.get("GENERALIZED_CARD_REPETITION_GUARD", "off")
+    )
+    module.GENERALIZED_ACTIVE_SPEAKER_ROSTER = EMPTY_ROSTER
     module.GENERALIZED_OPENER_TYPES = {}
     module.GENERALIZED_SELF_TEST_ACTIVE = False
     # This bounds retries for one Writer slot, not the number of threads or
@@ -377,10 +421,14 @@ def configure_generator_backend(
         os.environ.get("GENERALIZED_CARD_DOMAIN_PROFILE", "").strip() or None
     )
     module.CLAIM_FAMILIES = prompts.GENERIC_CLAIM_FAMILIES
+    # The core system prompt is pinned in `engine/vocabulary.py` and its own ban
+    # ("... or product details unless they are visible in the prompt") is the
+    # third layer of the fact prohibition. The license is appended here rather
+    # than edited into the pinned string, so `off` leaves the core untouched.
     module.SYSTEM_PROMPTS["gpt54_reddit_writer"] = _generalize_instruction_text(
         original_system_prompt,
         config,
-    )
+    ) + system_prompt_fact_sentence(mode=license_mode(module))
     module.run_self_test = lambda: _run_generalized_self_test(module, config)
 
     module.load_real_thread_bank = lambda raw_dir, max_threads=0, **_: load_real_thread_bank(
@@ -715,6 +763,8 @@ def configure_generator_backend(
     def expand_tasks(**kwargs: Any) -> list[Any]:
         tasks = original_expand(**kwargs)
         comment_plans = dict(kwargs.get("comment_plans") or {})
+        roster = _build_thread_speaker_roster(module, config, kwargs)
+        module.GENERALIZED_ACTIVE_SPEAKER_ROSTER = roster
         revised = []
         for task in tasks:
             must_not = str(task.must_not_do).replace(
@@ -725,6 +775,9 @@ def configure_generator_backend(
                 replace(task, must_not_do=must_not),
                 config,
             )
+            speaker = roster.speaker_for(task.real_sample_id)
+            if speaker is not None:
+                generalized = replace(generalized, speaker_id=speaker.speaker_id)
             plan = comment_plans.get(int(task.real_sample_id or task.local_task_id)) or {}
             restored = restore_planner_task_contract(generalized, plan, core=module)
             revised.append(apply_planner_distribution_fields(restored, plan))
@@ -742,6 +795,42 @@ def configure_generator_backend(
         return retained
 
     module.expand_matched_real_sample_to_tasks = expand_tasks
+
+    def _build_thread_speaker_roster(
+        core: ModuleType, domain: Any, kwargs: dict[str, Any]
+    ) -> SpeakerRoster:
+        """Recover the matched thread's participation structure for this thread.
+
+        `selected_matched_comments` is deterministic -- no rng, only
+        `evenly_spaced_indices` and sorted sets -- so calling it again here
+        returns the identical list the task expansion consumed, which is what
+        makes `real_sample_id - 1` a valid index into it. Verified on seed 8:
+        `real_word_count` agrees for 186 of 186 slots.
+        """
+
+        if str(
+            getattr(core, "GENERALIZED_SPEAKER_IDENTITY", "off") or "off"
+        ).strip().lower() != SPEAKER_IDENTITY_MATCHED:
+            return EMPTY_ROSTER
+        matched = kwargs.get("matched_real_thread")
+        target = kwargs.get("target")
+        if not matched or target is None:
+            return EMPTY_ROSTER
+        try:
+            selected = core.selected_matched_comments(
+                matched_real_thread=matched,
+                target=target,
+                matched_real_comments=int(kwargs.get("matched_real_comments") or 0),
+            )
+        except Exception:  # noqa: BLE001 - a roster is never worth failing a run
+            return EMPTY_ROSTER
+        profile = getattr(core, "GENERALIZED_DOMAIN_PROFILE", {}) or {}
+        return build_speaker_roster(
+            selected,
+            inventory=profile.get("entity_inventory") or {},
+            facets=tuple(getattr(domain, "topic_facets", ()) or ()),
+        )
+
     changed_core = [
         name
         for name, original in original_core_symbols.items()
@@ -2211,6 +2300,36 @@ def _writer_lifecycle_with_candidate_recovery(
                     final_status="accepted_best_bounded_distribution_candidate",
                 )
                 return accepted
+
+        # Exhausting the retries on phrasing alone must not cost a comment. The
+        # repetition guard made these codes non-distribution failures, so the
+        # loop above never registered such a candidate as a fallback; v77 lost
+        # 14 of 186 slots that way, which also shortens the matched thread the
+        # structural metrics are scored against.
+        if str(last_result.get("text") or "").strip() and only_style_problems(
+            last_problems
+        ):
+            retained = {
+                **last_result,
+                "skip": False,
+                "attempts": attempts,
+                "distribution_diagnostics": last_diagnostics,
+                "candidate_selection": {
+                    "reason": "accepted_style_residual_after_repair",
+                    "repair_rounds_attempted": repair_attempt,
+                    "slot_retry_limit": slot_retry_limit,
+                    "residual_problems": last_problems,
+                },
+            }
+            _append_writer_diversity_audit(
+                last_diagnostics,
+                task=original_task,
+                selected_attempt=len(attempts),
+                recovered=True,
+                attempts=attempts,
+                final_status="accepted_style_residual_after_repair",
+            )
+            return retained
 
         rejected = {
             **last_result,

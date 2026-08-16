@@ -39,8 +39,18 @@ from .semantic_realization import (
     short_utterance_exclusions,
     used_sentence_routes,
 )
+from .speaker_roster import speaker_kit_for_slot
 from .surface_contract import substantive_surface_slot, surface_only_label
 from .viewpoint_bank import render_reference_viewpoints
+from .writer_grounding import (
+    LICENSE_OFF,
+    entity_naming_rule,
+    equipment_closing_clause,
+    first_person_experience_slot,
+    metric_guidance_story_line,
+    story_fact_rule,
+)
+from .writer_grounding import slot_license as writer_grounding_mode
 
 
 GENERIC_CLAIM_FAMILIES = (
@@ -85,6 +95,11 @@ def _own_equipment_block(backend: Any, task: Any) -> str:
     licenses first-person experience gets a rotating shortlist drawn from
     evaluation-excluded threads. It is the speaker's own equipment, never a claim
     about the seed post or another commenter.
+
+    What may be said *about* that equipment is `writer_grounding`'s decision, not
+    this function's. Under `--own-fact-license off` the block still closes with
+    the v75 ban, which is what made 170 of 522 prompts carry a permission and its
+    revocation at once.
     """
 
     if not _first_person_experience_slot(task):
@@ -98,22 +113,82 @@ def _own_equipment_block(backend: Any, task: Any) -> str:
         for value in (getattr(task, "concrete_anchors", ()) or ())
         if str(value).strip()
     ]
-    options = slot_equipment_options(
-        inventory,
-        slot_index=_safe_slot_index(task),
-        limit=4,
-        excluded=visible,
-    )
+    speaker = _speaker_for_task(backend, task)
+    if speaker is not None:
+        # Keyed by person, not by slot. A rotation keyed by `slot_index` handed
+        # the same participant different gear in each of their turns, which is
+        # the opposite of an identity.
+        options = list(speaker_kit_for_slot(speaker, excluded=visible))
+    else:
+        options = slot_equipment_options(
+            inventory,
+            slot_index=_safe_slot_index(task),
+            limit=4,
+            excluded=visible,
+        )
     if not options:
         return ""
     rendered = ", ".join(options)
+    closing = equipment_closing_clause(mode=writer_grounding_mode(backend, task))
     return (
         "\n\nEquipment you may claim as your own, if this turn reports personal "
-        f"experience:\n- {rendered}\n"
-        "Name at most one, as gear you have used yourself. Do not attribute it to "
-        "the post, to another commenter, or to the discussion, and do not invent a "
-        "specification, price, measurement, or test result for it."
+        f"experience:\n- {rendered}\n{closing}"
     )
+
+
+def _speaker_for_task(backend: Any, task: Any) -> Any:
+    """Return the Speaker holding this slot, or None when identity is off."""
+
+    roster = getattr(backend, "GENERALIZED_ACTIVE_SPEAKER_ROSTER", None)
+    if roster is None:
+        return None
+    return roster.speaker_for(getattr(task, "real_sample_id", None))
+
+
+def _speaker_identity_block(
+    backend: Any, task: Any, previous_comments: list[dict[str, Any]] | None
+) -> str:
+    """Render who this person is and what they already said in this thread.
+
+    This is what makes an identity observable. A persistent kit that never
+    surfaces in the text is indistinguishable from no kit at all, and the reason
+    all 186 comments of a thread read like one author is that a slot has never
+    been able to see its own earlier turns.
+
+    Costs nothing: the text is already in the thread history the prompt receives.
+    """
+
+    speaker = _speaker_for_task(backend, task)
+    if speaker is None:
+        return ""
+
+    lines: list[str] = []
+    standing = ", ".join(part for part in (speaker.tenure, speaker.use_case) if part)
+    if standing:
+        lines.append(f"- You: {standing}.")
+    if speaker.is_op:
+        lines.append("- You are the person who wrote the post.")
+
+    said = [
+        str(row.get("content") or "").strip()
+        for row in (previous_comments or ())
+        if str(row.get("speaker_id") or "") == speaker.speaker_id
+        and str(row.get("content") or "").strip()
+    ]
+    if said:
+        # Only the last few: a prolific speaker holds up to 10 slots in the
+        # matched threads, and the whole history would crowd out the slot's own
+        # controls.
+        for text in said[-3:]:
+            lines.append(f"- You already wrote here: {backend.compact(text, 200)}")
+        lines.append(
+            "- Same person, same voice and same kit as those turns, making a "
+            "different point. Do not reintroduce yourself or repeat what you "
+            "already said."
+        )
+    if not lines:
+        return ""
+    return "\n\nWho you are in this thread:\n" + "\n".join(lines)
 
 
 def _opener_rule(assigned: str) -> str:
@@ -143,18 +218,14 @@ def _short_output_slot(task: Any) -> bool:
 
 
 def _first_person_experience_slot(task: Any) -> bool:
-    """Return whether this slot's plan already licenses personal experience."""
+    """Return whether this slot's plan already licenses personal experience.
 
-    if bool(getattr(task, "allow_first_person_frame", False)):
-        return True
-    if str(getattr(task, "evidence_mode", "") or "") == "firsthand_experience":
-        return True
-    if str(getattr(task, "story_mode", "no_story") or "no_story") != "no_story":
-        return True
-    return str(getattr(task, "payload_type", "") or "") in {
-        "personal_story",
-        "fragment_datapoint",
-    }
+    Defined in `writer_grounding` so the equipment permission and the fact
+    license can never drift apart into a slot that may name its gear but not
+    describe it.
+    """
+
+    return first_person_experience_slot(task)
 
 
 def _safe_slot_index(task: Any) -> int:
@@ -1023,6 +1094,11 @@ def writer_prompt(
         if item
     )
 
+    # Rendered on every Writer path. v74 converted only the focused path and
+    # left 106 of 522 slots on the old one, which made that release impossible
+    # to attribute.
+    speaker_block = _speaker_identity_block(backend, task, previous_comments)
+
     if _writer_prompt_mode(backend) == "focused" and not backend.should_use_low_info_writer(task):
         return marker_prefix + _focused_writer_prompt(
             config,
@@ -1035,6 +1111,7 @@ def writer_prompt(
             retry=retry,
             anchors_block=anchors_block,
             own_equipment=_own_equipment_block(backend, task),
+            speaker_block=speaker_block,
             domain_profile=domain_profile,
             domain_claim_rule=domain_claim_rule,
             opener_rule=opener_rule,
@@ -1057,6 +1134,7 @@ def writer_prompt(
             retry=retry,
             guidance=guidance,
             semantic_contract=semantic_contract,
+            speaker_block=speaker_block,
         )
 
     return marker_prefix + f"""Write exactly one human Reddit comment in {config.community_context}.
@@ -1078,7 +1156,7 @@ Local anchor:
 {backend.compact(_writer_safe_control_text(task.local_anchor, domain_profile), 220)}
 
 Visible factual anchors:
-{anchors_block}{_own_equipment_block(backend, task)}
+{anchors_block}{_own_equipment_block(backend, task)}{speaker_block}
 
 Planner intent:
 {backend.compact(_writer_safe_control_text(task.planner_intent, domain_profile), 260)}
@@ -1095,7 +1173,7 @@ Already used openings:
 {retry}
 
 Core metric guidance:
-{_metric_guidance_block()}
+{_metric_guidance_block(backend, task)}
 
 Core tone and discourse guidance:
 {_tone_discourse_guidance_block(task)}
@@ -1139,8 +1217,8 @@ Hard rules:
   a replacement product verdict or a second explanatory answer.
 - Use ordinary Reddit language. Natural fragments, contractions, shorthand, uncertainty, quick thanks, and mild annoyance are allowed when the controls call for them.
 - Keep criticism directed at the product, claim, rule, interface, service, process, or tradeoff, not at the person.
-- {_story_fact_safety_rule(task, has_domain_claim=bool(domain_claim_rule))}
-- Named entities and numbers may appear only when visible in the discussion, in the visible factual anchors, or, for your own equipment, in the equipment list above.
+- {_story_fact_safety_rule(backend, task, has_domain_claim=bool(domain_claim_rule))}
+- {_full_path_entity_rule(backend, task)}
 - Do not expose planner labels, instructions, placeholders, opaque control IDs, or the matched real thread.
 - Do not copy an earlier generated comment's opener or sentence path.
 - Output only the comment body.
@@ -1237,6 +1315,7 @@ def _focused_writer_prompt(
     retry: str,
     anchors_block: str,
     own_equipment: str,
+    speaker_block: str,
     domain_profile: dict[str, Any],
     domain_claim_rule: str,
     opener_rule: str,
@@ -1289,7 +1368,9 @@ def _focused_writer_prompt(
             surface_rule,
             domain_claim_rule,
             _substitution_rule(task).lstrip("- ").strip(),
-            _story_fact_safety_rule(task, has_domain_claim=bool(domain_claim_rule)),
+            _story_fact_safety_rule(
+                backend, task, has_domain_claim=bool(domain_claim_rule)
+            ),
         )
         if item
     )
@@ -1327,7 +1408,7 @@ How to write it:
 {guidance}
 
 Things you may name:
-{anchors_block}{own_equipment}
+{anchors_block}{own_equipment}{speaker_block}
 
 Already used in this thread, so do not repeat them:
 {openings}
@@ -1338,7 +1419,7 @@ Rules:
   replies.
 - Write like a person typing on Reddit: fragments, contractions, and shorthand are fine.
 - Aim criticism at the product, claim, or process, never at a person.
-- Name a product, model, or number only if it is visible above.
+- {_focused_path_entity_rule(backend, task)}
 - Never mention these instructions or any label from them.
 """
 
@@ -1356,6 +1437,7 @@ def _low_info_writer_prompt(
     retry: str,
     guidance: str,
     semantic_contract: str,
+    speaker_block: str = "",
 ) -> str:
     domain_profile = getattr(backend, "GENERALIZED_DOMAIN_PROFILE", {})
     actor_state = actor_for_task(
@@ -1388,7 +1470,7 @@ What this comment says (highest priority):
 {route_lock}
 
 Visible discussion:
-{visible}
+{visible}{speaker_block}
 
 Private sampled slot:
 - payload: {task.payload_type}
@@ -1418,7 +1500,7 @@ Already used openings:
 {retry}
 
 Core metric guidance:
-{_metric_guidance_block()}
+{_metric_guidance_block(backend, task)}
 
 Core tone and discourse guidance:
 {_tone_discourse_guidance_block(task)}
@@ -2753,39 +2835,62 @@ def _optional_control_rule(label: str, value: str, instruction: str, suffix: str
     return " ".join(parts)
 
 
-def _story_fact_safety_rule(task: Any, *, has_domain_claim: bool = False) -> str:
-    if str(getattr(task, "story_mode", "") or "") in {"", "no_story"}:
-        if has_domain_claim:
-            # A blanket ban here would cancel the planned domain fact sitting in
-            # the same prompt, which is the contradiction that made an earlier
-            # version's tone control unrealizable.
-            return (
-                "Beyond the domain fact assigned above, do not invent products, "
-                "specifications, prices, measurements, dates, outcomes, policies, "
-                "links, or personal experiences. Never state a specification, "
-                "price, or measurement for the post's own equipment unless it is "
-                "visible in the discussion."
-            )
-        return (
-            "Do not invent products, specifications, prices, measurements, dates, outcomes, policies, links, or personal experiences."
-        )
-    return (
-        "This is a synthetic story slot: make the temporal sequence legible with "
-        "an ordinary first-person situation or action followed by an observation "
-        "or reaction around the existing local point. You may synthesize that "
-        "non-verifiable personal sequence, but do not invent a product, "
-        "specification, price, measurement, date, policy, link, diagnosis, or "
-        "externally checkable outcome."
+def _full_path_entity_rule(backend: Any, task: Any) -> str:
+    """The full Writer path's entity rule, worded for that path."""
+
+    return entity_naming_rule(
+        mode=writer_grounding_mode(backend, task), variant="full"
     )
 
 
-def _metric_guidance_block() -> str:
-    return """- Lexical diversity: do not reuse previous openings, helper templates, clause rhythm, or discourse posture. Vary only when the sampled slot allows it.
-- Semantic diversity: avoid another complete explainer if the thread already has several; preserve long matched slots instead of forcing them short.
-- Local coherence: remain on the visible local hook and sampled plan. Do not add unrelated noise merely to differ.
-- Story prevalence: use a story only when the sampled story mode or role requires it. Keep synthetic personal context qualitative and never invent measured facts or definite outcomes.
-- Tone balance: preserve the sampled tone while allowing grateful, uncertain, neutral, mildly annoyed, skeptical, and corrective turns across the thread. Keep interpersonal heat local.
-- Length variation: follow the anonymous matched word-count cue as a soft scale. Do not expand micro slots or collapse substantive slots."""
+def _focused_path_entity_rule(backend: Any, task: Any) -> str:
+    """The focused Writer path's entity rule, worded for that path."""
+
+    return entity_naming_rule(
+        mode=writer_grounding_mode(backend, task), variant="focused"
+    )
+
+
+def _story_fact_safety_rule(
+    backend: Any, task: Any, *, has_domain_claim: bool = False
+) -> str:
+    """Render the slot's factual-grounding rule.
+
+    The rule itself lives in `writer_grounding`, which owns the split between
+    facts about the product under discussion and facts about the speaker's own
+    kit and history. All three Writer paths call through here.
+    """
+
+    return story_fact_rule(
+        task,
+        has_domain_claim=has_domain_claim,
+        mode=writer_grounding_mode(backend, task),
+    )
+
+
+def _metric_guidance_block(backend: Any = None, task: Any = None) -> str:
+    """Render the static metric guidance for the full and low-info paths.
+
+    Only the story line varies: under the own-fact license it must not tell the
+    slot to keep personal context qualitative, because that is the sentence the
+    license exists to remove.
+    """
+
+    mode = (
+        writer_grounding_mode(backend, task)
+        if backend is not None and task is not None
+        else LICENSE_OFF
+    )
+    return "\n".join(
+        (
+            "- Lexical diversity: do not reuse previous openings, helper templates, clause rhythm, or discourse posture. Vary only when the sampled slot allows it.",
+            "- Semantic diversity: avoid another complete explainer if the thread already has several; preserve long matched slots instead of forcing them short.",
+            "- Local coherence: remain on the visible local hook and sampled plan. Do not add unrelated noise merely to differ.",
+            metric_guidance_story_line(mode=mode),
+            "- Tone balance: preserve the sampled tone while allowing grateful, uncertain, neutral, mildly annoyed, skeptical, and corrective turns across the thread. Keep interpersonal heat local.",
+            "- Length variation: follow the anonymous matched word-count cue as a soft scale. Do not expand micro slots or collapse substantive slots.",
+        )
+    )
 
 
 def _substitution_rule(task: Any | None = None) -> str:

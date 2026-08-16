@@ -7,6 +7,7 @@ receives matched evaluation comments or raw held-out reference text.
 from __future__ import annotations
 
 import math
+import re
 from dataclasses import replace
 from types import ModuleType
 from typing import Any
@@ -40,6 +41,94 @@ SINGLE_STAGE_DIAGNOSTIC_PROBLEMS = frozenset(
 )
 SINGLE_STAGE_DIAGNOSTIC_PREFIXES = DISTRIBUTION_PROBLEM_MARKERS
 
+# The three repetition codes, which the guard can promote out of the advisory
+# set. They are the ones with a measured defect behind them and no dependency on
+# any other change.
+#
+# In one generated 186-comment thread the 4-gram "that's the part" occurs in 12
+# of 186 comments (6.5%); in its matched real thread the most-shared 4-gram
+# occurs in 3 of 200 (1.5%) and there is effectively no shared phrasing at all.
+# The same frame family was measured at 20% of comments back at policy v72 and
+# 0 times in 39,265 real tokens, and it has survived a rewording (v73), a prompt
+# rebuild (v74) and a route lock (v75).
+#
+# `template_phrase_reused` already fires on it -- 38 times in v76a and 40 in
+# v76b, about 21% of slots -- and is then discarded: all 186 slots ran exactly
+# one attempt and 85 were accepted through
+# `accepted_first_pass_distribution_diagnostics`, on a known-failing candidate.
+#
+# All three are already in `REPAIRABLE_WRITER_PROBLEMS`, so promoting them
+# cannot push a slot down the `skip: True` path that drops comments. They are
+# also satisfiable on their own: not reusing a phrase needs no new entity, which
+# is why `missing_concrete_anchor` stays advisory here.
+REPETITION_DIAGNOSTIC_PROBLEMS = frozenset(
+    {
+        "opening_reused",
+        "opener_family_reused",
+        "template_phrase_reused",
+    }
+)
+REPETITION_DIAGNOSTIC_PREFIXES = ("repeated_frame:",)
+
+GUARD_ADVISORY = "off"
+GUARD_BLOCKING = "blocking"
+
+#: Set by the adapter from `GENERALIZED_CARD_REPETITION_GUARD`.
+REPETITION_GUARD_MODE = GUARD_ADVISORY
+
+
+def set_repetition_guard(mode: str) -> str:
+    """Select whether repeated phrasing may force another Writer attempt."""
+
+    global REPETITION_GUARD_MODE
+    value = str(mode or "").strip().lower()
+    REPETITION_GUARD_MODE = (
+        GUARD_BLOCKING if value == GUARD_BLOCKING else GUARD_ADVISORY
+    )
+    return REPETITION_GUARD_MODE
+
+
+def advisory_problems() -> frozenset[str]:
+    """Return the problems this run tolerates on an accepted candidate."""
+
+    if REPETITION_GUARD_MODE == GUARD_BLOCKING:
+        return SINGLE_STAGE_DIAGNOSTIC_PROBLEMS - REPETITION_DIAGNOSTIC_PROBLEMS
+    return SINGLE_STAGE_DIAGNOSTIC_PROBLEMS
+
+
+def is_repetition_problem(problem: str) -> bool:
+    """Return whether a code describes reused phrasing rather than invalidity."""
+
+    return problem in REPETITION_DIAGNOSTIC_PROBLEMS or problem.startswith(
+        REPETITION_DIAGNOSTIC_PREFIXES
+    )
+
+
+def only_style_problems(problems: list[str]) -> bool:
+    """Return whether every residual failure is phrasing, not validity.
+
+    Run v77 dropped 14 of 186 comments. Promoting the repetition codes to
+    blocking made them non-distribution failures, so
+    `consider_distribution_candidate` never registered those candidates as a
+    fallback and `best_distribution_candidate` stayed None on exhaustion.
+    A comment that reuses a phrase is still a comment; losing it also breaks the
+    matched thread's structure, which is what `avg_depth` and
+    `structural_virality` -- two of the four metrics that currently pass -- are
+    measured on.
+    """
+
+    if not problems:
+        return False
+    # Anything the run would have tolerated on a first-pass acceptance counts
+    # here too. Run v78 still lost 4 slots whose final residue was
+    # `missing_concrete_anchor` or `question_mark_unwanted` -- both advisory, both
+    # accepted without comment on attempt 1. Rejecting on attempt 5 what attempt
+    # 1 would have kept is not a stricter policy, only an inconsistent one.
+    return all(
+        is_repetition_problem(problem) or is_single_stage_diagnostic(problem)
+        for problem in problems
+    )
+
 HARD_REALIZATION_PROBLEMS = frozenset(
     {
         "empty",
@@ -56,7 +145,7 @@ def is_single_stage_diagnostic(problem: str) -> bool:
 
     return (
         is_soft_length_problem(problem)
-        or problem in SINGLE_STAGE_DIAGNOSTIC_PROBLEMS
+        or problem in advisory_problems()
         or problem.startswith(SINGLE_STAGE_DIAGNOSTIC_PREFIXES)
     )
 
@@ -94,6 +183,10 @@ REPAIRABLE_WRITER_PROBLEMS = frozenset(
 )
 
 REPAIRABLE_WRITER_PREFIXES = (
+    # A new candidate can drop a stock frame without changing its assigned move.
+    # It has to be listed here or `backend.py:2022` returns skip: True and the
+    # slot is lost, which is the trap the v77 drop already demonstrated.
+    "repeated_frame:",
     "lexical_overlap_high:",
     "semantic_overlap_high:",
     "semantic_overlap_low:",
@@ -177,7 +270,76 @@ def writer_distribution_problems(
     floor_problem = substantive_length_floor_problem(text, task)
     if floor_problem:
         problems.append(floor_problem)
+    frame_problem = repeated_frame_problem(text, previous_texts)
+    if frame_problem:
+        problems.append(frame_problem)
     return diagnostics, deduplicate_problems(problems)
+
+
+# The core's `template_phrase_signature` reads only `tokens[:28]`, so it sees a
+# frame only when it opens the comment. Measured on run v76a, the "that's the
+# part" family occurs in 15 of 186 comments and the head window catches 4; the
+# other 11 sit at token 20, 52, 62, 80 of their comment. That is why promoting
+# `template_phrase_reused` to blocking in v77 forced 51 slots to retry and left
+# the frame at 7.6% -- the retries were aimed at other families.
+#
+# This check reads the whole comment. It is kept separate from the core
+# signature rather than replacing it, because that signature also decides
+# `first_person_frame_unwanted` and `uncertainty_frame_unwanted`, which are
+# genuinely about how a comment opens.
+#
+# The families are LLM discourse tics, not domain vocabulary, so this is
+# domain-neutral: it holds for any subject the writer discusses.
+REPEATED_FRAME_PATTERNS = {
+    "part_frame": r"\b(?:that'?s|that is|thats|was|is)\s+the\s+(?:annoying\s+|real\s+|only\s+)?(?:part|bit|thing)\b|\bthe\s+(?:annoying\s+|real\s+)?(?:part|bit)\s+that\b",
+    "basically_frame": r"\bbasically\s+(?:the|how|where|what|it)\b|\bthat'?s\s+basically\b",
+    "feels_like_frame": r"\b(?:feels?|felt)\s+like\b",
+    "worth_frame": r"\b(?:value\s+proposition|pays\s+for\s+itself|worth\s+it\s+if)\b",
+    "matters_frame": r"\b(?:what|that)\s+(?:actually\s+)?matters\b|\bthe\s+real\s+question\b",
+}
+
+#: How many earlier comments in this thread may already carry a frame before a
+#: new one is a repeat. Real threads share almost no phrasing at all: in the
+#: matched thread for seed 8 the most-shared 4-gram reaches 3 of 200 comments
+#: (1.5%), so a budget of 2 is still permissive.
+REPEATED_FRAME_BUDGET = 2
+
+
+def frame_families(text: str) -> set[str]:
+    """Return every stock frame family present anywhere in the comment."""
+
+    value = str(text or "").replace("’", "'").replace("‘", "'").lower()
+    if not value:
+        return set()
+    return {
+        name
+        for name, pattern in REPEATED_FRAME_PATTERNS.items()
+        if re.search(pattern, value)
+    }
+
+
+def repeated_frame_problem(text: str, previous_texts: list[str] | None) -> str:
+    """Flag a stock frame this thread has already leaned on.
+
+    Emitted only under the blocking guard, so `--repetition-guard off` renders
+    and validates exactly as every release before it did.
+    """
+
+    if REPETITION_GUARD_MODE != GUARD_BLOCKING:
+        return ""
+    families = frame_families(text)
+    if not families:
+        return ""
+    counts: dict[str, int] = {}
+    for earlier in previous_texts or ():
+        for name in frame_families(earlier):
+            counts[name] = counts.get(name, 0) + 1
+    repeated = sorted(
+        name for name in families if counts.get(name, 0) >= REPEATED_FRAME_BUDGET
+    )
+    if not repeated:
+        return ""
+    return "repeated_frame:" + ",".join(repeated)
 
 
 def substantive_length_floor_problem(text: str, task: Any) -> str:

@@ -225,6 +225,61 @@ def build_parser() -> argparse.ArgumentParser:
         ),
     )
     parser.add_argument(
+        "--own-fact-license",
+        choices=("off", "own", "named"),
+        default="off",
+        help=(
+            "How much concrete detail a slot may state beyond what is visible. "
+            "'off' reproduces v75: one blanket ban covering the seed product and "
+            "the speaker's own past alike, which put a permission ('Equipment you "
+            "may claim as your own') and its revocation ('do not invent ... or "
+            "personal experiences') in the same prompt for 170 of 522 slots. "
+            "'own' licenses the speaker's own kit and history on first-person "
+            "slots; run v76b measured it and it moved concreteness the WRONG way "
+            "(0.05 -> 0.02 per comment against a real 0.54), because 68% of real "
+            "concrete comments have no first-person frame -- kept only as a "
+            "reproducible arm. 'named' is the correction: on any slot with room, "
+            "license naming and quantifying, stated without domain vocabulary, "
+            "since quantities (real 12.3x generated) and proper nouns (1.85x) are "
+            "the two gaps that hold on all ten matched threads while "
+            "specification-shaped tokens range from 0% to 64% of comments by "
+            "thread."
+        ),
+    )
+    parser.add_argument(
+        "--repetition-guard",
+        choices=("off", "blocking"),
+        default="off",
+        help=(
+            "Whether repeated phrasing may force another Writer attempt. 'off' "
+            "keeps every prior release's behaviour: `template_phrase_reused` "
+            "fires and is discarded. Measured in v76, 38 of 186 slots raised it "
+            "and all 186 ran exactly one attempt, 85 of them accepted through "
+            "accepted_first_pass_distribution_diagnostics on a known-failing "
+            "candidate. The frame it catches -- \"that's the part\" -- is in 6.5% "
+            "of generated comments against a real thread whose most-shared "
+            "4-gram reaches 1.5%. Needs --writer-slot-retry-limit >= 1 to have "
+            "anywhere to retry."
+        ),
+    )
+    parser.add_argument(
+        "--speaker-identity",
+        choices=("off", "matched"),
+        default="off",
+        help=(
+            "Whether a thread has participants or only slots. 'off' reproduces "
+            "every run up to v76: the author name is a pure function of the slot "
+            "index, so a 186-comment thread is 186 people who each speak once. "
+            "'matched' recovers the matched real thread's own participation "
+            "structure through real_sample_id -- across the ten evaluation seeds "
+            "that is 265 named participants over 559 comments, 2.11 each, with "
+            "68% of comment mass from someone who speaks more than once. Each "
+            "participant then keeps one kit across all their turns and can see "
+            "what they already said. Targets self_bertscore, which has never "
+            "passed and overshoots by a near-uniform +0.033 on 9 of 10 threads."
+        ),
+    )
+    parser.add_argument(
         "--domain-claim",
         choices=("planned", "off"),
         default="planned",
@@ -394,6 +449,8 @@ def main() -> None:
             "long_form_planning",
             "surface_contract",
             "domain_prompt_adapter",
+            "writer_grounding",
+            "speaker_roster",
             "reply_planning",
             "persona_bridge",
             "actor_conditioning",
@@ -567,6 +624,9 @@ def main() -> None:
         "domain_claim": args.domain_claim,
         "writer_prompt": args.writer_prompt,
         "writer_route_lock": args.writer_route_lock,
+        "own_fact_license": args.own_fact_license,
+        "speaker_identity": args.speaker_identity,
+        "repetition_guard": args.repetition_guard,
         "actor_conditioning": {
             "mode": args.actor_conditioning,
             "source": (
@@ -742,6 +802,9 @@ def main() -> None:
     env["GENERALIZED_CARD_DOMAIN_CLAIM"] = args.domain_claim
     env["GENERALIZED_CARD_WRITER_PROMPT"] = args.writer_prompt
     env["GENERALIZED_CARD_WRITER_ROUTE_LOCK"] = args.writer_route_lock
+    env["GENERALIZED_CARD_OWN_FACT_LICENSE"] = args.own_fact_license
+    env["GENERALIZED_CARD_SPEAKER_IDENTITY"] = args.speaker_identity
+    env["GENERALIZED_CARD_REPETITION_GUARD"] = args.repetition_guard
     env["GENERALIZED_CARD_STORY_PERSONAL_MIN_SHARE"] = str(
         behavior_targets.get(
             "story_personal_min_share",
