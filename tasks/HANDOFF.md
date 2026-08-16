@@ -1,5 +1,35 @@
 # Handoff — synthetic Reddit thread generation (generalized_card)
 
+## 2026-08-17 v81 current-state addendum
+
+This addendum is authoritative for the current implementation. Historical
+implementations and old TODO hypotheses are **not design evidence**: use the
+current active path, scorer implementations, current run artifacts, and fresh
+offline checks. Git commits and each run's reproducibility/source snapshot are
+the mechanism for reproducing an old version; do not keep dead runtime branches
+or contradictory prompt rules merely to preserve an old arm.
+
+v81 fixes the root defects found in the v80 large-thread run:
+
+- story/no-story is now a joint semantic/evidence contract before the Writer;
+- direct replies plan with fixed story, tone, affect, and opener controls in
+  their JSON contract instead of receiving those labels after semantic design;
+- copied short-slot `development_plan` schema prose is removed;
+- deterministic normalization no longer rewrites bad plans into the same
+  gratitude move or `soft_helpful` payload;
+- tone, affect, and story marginals are assigned jointly for feasibility;
+- focused, low-info, and full Writer prompts no longer repeat static metric or
+  tone blocks, and neutral affect no longer conflicts with impolite tone;
+- metric-guided Writer retries, candidate ranking, blocking repetition guard,
+  dead CLI flags, and their old tests were deleted. Distribution metrics are
+  diagnostics; only non-persistable output has bounded recovery.
+
+Verification: complete `generalized_card/tests` suite **259 passed**; backend
+self-test passed for `camera_product`; 72 source pins have 0 missing and 0
+drifted entries. Exact metric definitions, v80 evidence, and the implementation
+audit are in `tasks/v81-worklog.md`. Formal success still requires a new
+multi-thread matched evaluation; n=1 is only the content/contract diagnostic.
+
 Written 2026-08-16. **This supersedes the 2026-08-15 handoff**, which is preserved
 at `tasks/HANDOFF-20260815.md`. Several of its load-bearing claims were measured
 this session and turned out to be wrong; §6 lists every correction.
@@ -72,12 +102,12 @@ Branch `generator/v75-writer-realizes-planner-move`. The v80 work starts from
 
 ```
 generalized_card/generalized_card/
-  backend.py              2.8k lines  the adapter: replaces ~44 core functions at runtime
-  prompts.py              3.1k lines  4 prompt builders + ~25 rule fragments
-  writer_quality.py        600 lines  candidate validation policy
-  writer_grounding.py      280 lines  NEW this session: the fact/grounding rules, in one place
+  backend.py              2.6k lines  adapter and current Planner/Writer lifecycle
+  prompts.py              2.7k lines  root/reply Planner + focused/full/low-info Writer
+  writer_quality.py        270 lines  diagnostics + hard-output recovery only
+  writer_grounding.py      323 lines  fact/grounding rules in one place
   speaker_roster.py        230 lines  NEW this session: who is speaking, across their turns
-  generation_distribution.py 557     TONE_DEFINITIONS, AFFECT_INSTRUCTIONS, tone/affect targets
+  generation_distribution.py 576     TONE_DEFINITIONS, AFFECT_INSTRUCTIONS, social targets
   task_distribution.py     260 lines  which task fields survive the surface rebalancer
   core_contract.py         520 lines  72 pinned file hashes + policy versions
 scripts/sampling_generator/
@@ -646,13 +676,11 @@ discriminator, which is what §7.3's frame check is.
 
 - **One mechanism per API run**, and predict the magnitude first so a null result
   is interpretable. Write the prediction down.
-- **Check both drop paths** before promoting any problem code to blocking:
-  membership in `REPAIRABLE_WRITER_PROBLEMS` (`backend.py:2022`) *and* what
-  happens at repair exhaustion (`backend.py:2205`). Getting one right and
-  forgetting the other cost 14 comments.
-- **Ablation flag for every behaviour change**, `off` byte-identical, recorded in
-  `run_config`. Follow `--domain-claim` / `--writer-route-lock` /
-  `--own-fact-license`.
+- **Do not use old implementations as design authority.** Reproduce them from
+  git or the run's source snapshot when needed; delete disproven, unreachable
+  controllers from the current path.
+- **Distribution diagnostics never select a Writer candidate.** Only output
+  that cannot be persisted may receive bounded hard recovery.
 - **Apply the change to every path.** v74 converted only the focused writer and
   left 106 of 522 slots on the old prompt, which made that release
   unattributable.
@@ -668,8 +696,8 @@ discriminator, which is what §7.3's frame check is.
   API-key check.
 - **Re-pin with the script, then confirm the drift list is exactly the files you
   edited.**
-- Run `cd generalized_card && python3 -m pytest tests/ -q` (**266 pass**) and
-  `GENERALIZED_CARD_DOMAIN=camera python3 generalized_card/scripts/run_generator_backend.py --self-test`.
+- Run `PYTHONPATH=generalized_card .venv/bin/python -m pytest -q generalized_card/tests`
+  (**259 pass** at v81) and the camera-product backend self-test.
 
 ## Interpreting a single-thread run
 
@@ -691,7 +719,7 @@ discriminator, which is what §7.3's frame check is.
 API keys live in `third_party/MiroFish/.env` as **`LLM_API_KEY`**;
 `run_generate.py` loads that file itself but still pass `--api-key-env LLM_API_KEY`.
 
-## Generation, seed 8 (~$0.9, ~25 min)
+## Generation, seed 8 (~$2, ~45 min on the v80 observed request volume)
 
 ```bash
 python3 -u generalized_card/scripts/run_generate.py \
@@ -701,21 +729,19 @@ python3 -u generalized_card/scripts/run_generate.py \
   --pool-size 150 --max-posts 1 --posts-per-run 1 \
   --start-seed-index 8 --sampling-seed 42 \
   --context-dropout-rate 0.42 --context-jitter-rate 0.32 \
-  --plan-quality-repairs 3 --writer-hard-recovery-rounds 0 \
-  --writer-local-repair-rounds 1 --writer-slot-retry-limit 2 \
+  --plan-quality-repairs 3 --writer-hard-recovery-rounds 2 \
   --domain-claim off --writer-prompt focused --writer-route-lock own_words \
-  --social-contract-coherence on --reply-sibling-visibility off \
-  --own-fact-license off --speaker-identity off --repetition-guard blocking \
+  --social-contract-coherence on --reply-sibling-visibility on \
+  --own-fact-license off --speaker-identity off \
   2>&1 | tee /tmp/<TAG>_gen.log
 ```
 
-`--max-posts 10 --start-seed-index 0` gives the 10-thread evaluation set (~$2.2,
-~90 min). The command above isolates the social/story contract; leave sibling
-visibility off for this first arm. v80 needs `plan-quality-repairs 3` so detected
-contract conflicts can actually be repaired. The historical v79 shape used
-`plan-quality-repairs 0`, `writer-hard-recovery-rounds 0`, `writer-local-repair-rounds 1`,
-`writer-slot-retry-limit 2`, `posts-per-run 1`, `domain-claim off`, plus the
-three new flags.
+`--max-posts 10 --start-seed-index 0` gives the 10-thread evaluation set. Its
+cost and runtime should be re-estimated from the n=1 v81 token summary before
+spending. `plan-quality-repairs 3` gives joint contract conflicts
+a bounded Planner repair budget. Hard Writer recovery handles only empty,
+duplicate/copy, placeholder, or planner-skeleton output; it does not optimize a
+metric.
 
 The seed pool is derived, not a flag:
 `artifacts/generalized_card/seed_pools/camera_product_150_seed42.json`.

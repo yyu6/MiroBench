@@ -424,6 +424,39 @@ class StoryAffectDistributionTest(unittest.TestCase):
             ),
         )
 
+    def test_forced_no_story_rejects_firsthand_evidence_without_story_payload(self) -> None:
+        problem = social_contract_problem(
+            {
+                "story_mode": "no_story",
+                "payload_type": "fragment_datapoint",
+                "comment_function": "personal_datapoint",
+                "evidence_mode": "firsthand_experience",
+            }
+        )
+        self.assertIn("evidence_mode=firsthand_experience", problem)
+
+    def test_story_slot_requires_narrative_evidence_contract(self) -> None:
+        problem = social_contract_problem(
+            {
+                "story_mode": "specific_personal_story",
+                "payload_type": "advice",
+                "comment_function": "recommendation_advice",
+                "evidence_mode": "technical_or_policy_reasoning",
+            }
+        )
+        self.assertIn("needs a coherent narrative-evidence plan", problem)
+        self.assertEqual(
+            "",
+            social_contract_problem(
+                {
+                    "story_mode": "specific_personal_story",
+                    "payload_type": "personal_story",
+                    "comment_function": "personal_datapoint",
+                    "evidence_mode": "firsthand_experience",
+                }
+            ),
+        )
+
     def test_polite_label_requires_a_coherent_social_move(self) -> None:
         self.assertIn(
             "tone_class=polite",
@@ -856,3 +889,11 @@ class AffectInstructionRegisterTest(unittest.TestCase):
         self.assertIn("without inventing a loss", AFFECT_INSTRUCTIONS["sadness"].lower())
         self.assertIn("without inventing a purchase", AFFECT_INSTRUCTIONS["desire"].lower())
         self.assertIn("without promising an outcome", AFFECT_INSTRUCTIONS["optimism"].lower())
+
+    def test_amusement_allows_an_unforced_laughter_surface(self) -> None:
+        from generalized_card.generation_distribution import AFFECT_INSTRUCTIONS
+
+        self.assertIn(
+            "natural laughter token is allowed",
+            AFFECT_INSTRUCTIONS["amusement"],
+        )

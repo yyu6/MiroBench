@@ -24,6 +24,31 @@ them onto the 12 metrics and onto the per-thread evidence in `HANDOFF.md` §4.3:
 Only `avg_depth` and `structural_virality` are genuinely matched per thread, and
 both are fixed by the matched sampler rather than won by generation.
 
+## v81 implementation status — 2026-08-17
+
+Detailed evidence and exact scorer definitions are in `tasks/v81-worklog.md`.
+This supersedes the older idea that a repetition warning should resample one
+comment: collection-level metrics are diagnostic in first-pass generation.
+
+- [x] Remove copied short-slot `development_plan` prose before the Writer.
+- [x] Make story/no-story a bidirectional Planner contract, including
+      `evidence_mode`; stop unresolved hard contracts before the Writer.
+- [x] Put story/tone/affect/opener controls into direct-reply planning rather
+      than adding them only after its semantic plan is written.
+- [x] Remove the canned gratitude semantic rewrite and automatic
+      `soft_helpful` conversion; targeted Planner repair owns those choices.
+- [x] Jointly pair tone, affect, and story marginals. On the frozen v80 large
+      template all labels remain assignable and the measured contradictory
+      pairs collapse sharply.
+- [x] Remove the duplicated focused-Writer tone block and the neutral-affect
+      instruction conflict.
+- [x] Disable per-comment distribution retries and repetition best-of-N at the
+      v81 public CLI; retain bounded recovery only for non-persistable output.
+- [x] Finish source-pin/version updates and full code review: 259 tests pass,
+      backend self-test passes, and all 72 source pins have zero drift.
+- [ ] Run one large n=1 content/contract diagnostic with no metric-driven
+      retries, then run a multi-thread matched evaluation for formal p-values.
+
 ---
 
 ## A — realize the assigned register   [dimension 4, largest gap]
@@ -78,18 +103,17 @@ Straight apostrophe inside a word: real 51%, generated 0%. Verified
 model-emitted, identical before and after `gpt_cleanup`.
 
 **Tasks**
-- [ ] Deterministic normalisation step, mixing straight and curly at a rate
-      measured from the domain's real corpus rather than emitting 100% curly.
-- [ ] Verify offline over the whole corpus — zero API.
-- [ ] **Re-score `self_bertscore` on an existing run** by re-cleaning and
-      re-scoring. No regeneration needed, so the hypothesis costs **$0** to test.
-      If the offset does not move, the hypothesis is dead and D's speaker
-      identity becomes the next candidate.
+- [x] Do not add deterministic apostrophe normalization: the actual-scorer
+      counterfactual below explains only a minority of the gap, so this is not a
+      justified primary fix and would add post-processing without fixing talk.
 - [x] Run a no-regeneration counterfactual first: on 40 v79 comments / 780 pairs,
       curly apostrophes -> ASCII moved 0.52947 to 0.52381. This explains only a
       minority of the ~0.034 gap, so do not implement a held-out-calibrated
       normalizer as the primary fix.
-- [ ] Consider the other surface gaps in the same pass, all measured on seed 8:
+- [x] Address the current rough-surface gap upstream: impolite slots explicitly
+      allow ordinary non-targeted profanity and amusement slots allow a natural
+      laughter token. Neither is required or hard-coded to one phrase.
+- [ ] Re-measure the other surface gaps after v81, all measured on seed 8:
       paragraph breaks real 25.5% vs generated 2.8%; no final punctuation 24.0%
       vs 6.6%; URLs 4.5% vs 0%; `lol/haha` 3.0% vs 0%; ALLCAPS 19.5% vs 7.7%.
       These are prompt-level, not post-processing, so keep them separate from the
@@ -118,8 +142,12 @@ per-thread story count already scales from the matched template
       only ~25% of total story probability; 25/167 `no_story` comments were
       classified as stories. Add a Writer no-sequence contract and reject
       `no_story + personal_story` plans before writing.
-- [ ] Keep first person for the slots that do tell stories: 32 of 32 real
-      experience narratives are first person.
+- [x] v81 root fix: no-story also rejects `firsthand_experience`; scheduled
+      stories require a coherent personal-datapoint evidence plan in both root
+      and direct-reply planners. v80 replay exposes 59 latent conflicts.
+- [x] Keep first person for the slots that do tell stories: every scheduled
+      story task sets `allow_first_person_frame=True`, while the joint contract
+      requires firsthand personal-datapoint semantics.
 
 ---
 
@@ -148,38 +176,39 @@ per-thread story count already scales from the matched template
       38–45 are nine near-duplicate moves that could not see each other.
 - [x] Add `--reply-sibling-visibility`; the `on` arm renders every sibling and
       already committed delta/novelty object, while `off` restores old rows.
-- [ ] Add a real `semantic_move` similarity check. The whole-plan
+- [x] Do not add a stricter `semantic_move` gate without new evidence. v80 seed
+      8 semantic cosine is already near real, sibling visibility now exposes
+      competing reply increments, and a stronger gate could over-disperse it.
+      The existing whole-plan
       `semantic_collision` check cannot catch it: `plan_similarity` is a Jaccard
       over all `SEMANTIC_FIELDS` including `development_plan`, so a ~20-token
       move is ~10% of the token mass; `_dependent_variation` exempts parent–child
-      pairs; and a caught collision only warns.
-- [ ] Fix the beat-budget contradiction: `prompts.py:733-738` says one beat per
-      35 words capped at 16, `long_form_planning.py:29-30` demands
-      `round(words/21) - 1`. For a 300-word slot: 8–9 versus 13. The surplus
-      beats are also what dilutes the collision detector.
+      pairs. Reopen only if v81 text repeats sibling moves or semantic cosine
+      moves above real.
+- [x] Fix the beat-budget contradiction: root and direct-reply prompts now use
+      the dynamic count rendered from `expected_development_beats`; no separate
+      35-word/16-beat rule remains in prompt prose.
 
 ---
 
 ## F — turn on more of the validation layer   [was P0, demoted]
 
-Kept because the layer really is mostly advisory, but demoted because the one
-piece switched on this session worked mechanically and moved no metric.
+Resolved in v81 by simplifying the policy instead of promoting more metrics:
 
-- [ ] `--writer-retries` is 0, so 519/522 slots ran one attempt in v74 and
-      231/522 were accepted through
-      `accepted_first_pass_distribution_diagnostics` on a known-failing candidate.
-      The repetition guard now raises retries for its own codes only.
-- [ ] `missing_concrete_anchor` (22–50 firings per seed-8 run) stays advisory on
-      purpose: it cannot be satisfied while the prompt bans unlisted entities.
-      **Sequencing constraint: it only becomes promotable after D's `named` arm.**
-- [ ] Add `empty` to the core blocking set (`run_sampled_reddit_generator.py:1688-1707`).
-      It survives only because `writer_quality` short-circuits on falsy text.
+- [x] Distribution and repetition findings are diagnostics and never resample,
+      rank, select, or drop a persistable comment.
+- [x] `missing_concrete_anchor` remains an audit signal, not a retry trigger.
+- [x] Empty text is explicitly classified as a hard realization failure even
+      when the shared Writer omits the problem code; bounded hard recovery
+      handles it before persistence.
+- [x] Delete the old repairability sets, candidate ranking, repetition arm, and
+      dead CLI parameters rather than retaining an unreachable controller.
 
 **Corrected from the previous version of this file:** "add the 6 missing metrics
 to the Writer's distribution target (`run_generate.py:488`)" — that line is a
 record written into `run_config.json`, not a wire. The real target is hard-coded
-in `generation_diversity.build_thread_distribution_target:40-43`, it only ranks
-candidates, and with one candidate it does nothing. Five of the six also need
+in `generation_diversity.build_thread_distribution_target:40-43`. In v81 the
+target is audit-only and no longer ranks candidates. Five of the six also need
 transformer classifiers inside the generation process. See HANDOFF §6.1.
 
 ---

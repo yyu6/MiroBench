@@ -681,19 +681,44 @@ def social_contract_problem(
     entities, or domain-specific semantic rules.
     """
 
-    story = _normalized_value(plan.get("story_mode"))
+    problems: list[str] = []
+    story = _normalized_value(plan.get("story_mode")) or "no_story"
     payload = _normalized_value(plan.get("payload_type"))
-    if enforce_coherence and story == "no_story" and payload == "personal_story":
-        return (
-            "story_mode=no_story cannot use payload_type=personal_story; keep "
-            "the local claim but plan it as one observation or datapoint without "
-            "a temporal event sequence"
-        )
+    function = _normalized_value(plan.get("comment_function"))
+    evidence = _normalized_value(plan.get("evidence_mode"))
+    if enforce_coherence and story == "no_story":
+        conflicts = []
+        if payload == "personal_story":
+            conflicts.append("payload_type=personal_story")
+        if evidence == "firsthand_experience":
+            conflicts.append("evidence_mode=firsthand_experience")
+        if conflicts:
+            problems.append(
+                "story_mode=no_story conflicts with "
+                + " and ".join(conflicts)
+                + "; preserve the local point as a present-state appraisal, "
+                "small observation, or assertion without a past action, event, "
+                "before/after change, or temporal sequence"
+            )
+    elif enforce_coherence and story:
+        required = []
+        if payload not in {"personal_story", "fragment_datapoint"}:
+            required.append("payload_type=personal_story or fragment_datapoint")
+        if function != "personal_datapoint":
+            required.append("comment_function=personal_datapoint")
+        if evidence != "firsthand_experience":
+            required.append("evidence_mode=firsthand_experience")
+        if required:
+            problems.append(
+                f"story_mode={story} needs a coherent narrative-evidence plan: "
+                + ", ".join(required)
+                + "; keep the scheduled story label and repair the surrounding "
+                "role rather than writing advice, analysis, or a bare verdict"
+            )
 
     tone = _normalized_value(plan.get("tone_class"))
     stance = _normalized_value(plan.get("stance"))
     role = _normalized_value(plan.get("speaker_role"))
-    function = _normalized_value(plan.get("comment_function"))
     if enforce_coherence and tone == "polite":
         allowed_roles = {
             "datapoint_only",
@@ -711,7 +736,7 @@ def social_contract_problem(
             or role not in allowed_roles
             or function not in allowed_functions
         ):
-            return (
+            problems.append(
                 "tone_class=polite requires stance=agree plus a personal "
                 "datapoint, reaction, or positive verdict from a compatible "
                 "participant; do not attach the label to advice, correction, "
@@ -719,17 +744,20 @@ def social_contract_problem(
             )
 
     affect = _normalized_value(plan.get("affect_role"))
-    if affect not in {"gratitude", "relief"}:
-        return ""
-    if role == "gratitude_reply" and function == "reaction":
-        return ""
-    if function == "reaction" and payload in {"low_info_reaction", "bare_answer"}:
-        return ""
-    return (
-        f"affect_role={affect} requires a social reaction contract, but "
-        f"speaker_role={role or 'unset'}, comment_function={function or 'unset'}, "
-        f"and payload_type={payload or 'unset'} describe a substantive move"
-    )
+    if affect in {"gratitude", "relief"} and not (
+        role == "gratitude_reply"
+        and function == "reaction"
+        and payload in {"low_info_reaction", "bare_answer"}
+        and story == "no_story"
+    ):
+        problems.append(
+            f"affect_role={affect} requires a social reaction contract: a no-story "
+            "reaction with "
+            "speaker_role=gratitude_reply and a low-information or bare-answer "
+            f"payload; current role={role or 'unset'}, function={function or 'unset'}, "
+            f"payload={payload or 'unset'}, story={story or 'unset'}"
+        )
+    return "; ".join(problems)
 
 
 def reply_increment_problem(
@@ -886,52 +914,6 @@ def surface_capacity_problem(plan: dict[str, Any]) -> str:
             "slot can carry; use no_story and one narrow local move"
         )
     return ""
-
-
-def normalize_substantive_plan_shape(plan: dict[str, Any]) -> dict[str, Any] | None:
-    """Correct an impossible low-information contract before Writer calls.
-
-    This is a structural normalization, not semantic rewriting: the Planner's
-    claim, perspective, evidence, stance, and local detail remain untouched.
-    A 35+ word anonymous slot cannot be realized by a whole-comment micro
-    payload, so it becomes a contextual local turn while a planned question
-    remains a question embedded in that substantive turn.
-    """
-
-    try:
-        words = int(plan.get("_slot_word_count") or 0)
-    except (TypeError, ValueError):
-        words = 0
-    surface = _normalized_value(plan.get("_slot_surface_label"))
-    payload = _normalized_value(plan.get("payload_type"))
-    if words < 35 or surface not in {"ordinary_turn", "long_turn"}:
-        return None
-    if payload not in LOW_INFORMATION_PAYLOADS:
-        return None
-    prior = {
-        "payload_type": str(plan.get("payload_type") or ""),
-        "utterance_mode": str(plan.get("utterance_mode") or ""),
-    }
-    plan["payload_type"] = "soft_helpful"
-    mode = _normalized_value(plan.get("utterance_mode"))
-    if mode in {"question_only", "question_with_context"} or payload == "narrow_question":
-        plan["utterance_mode"] = "question_with_context"
-    elif mode in {"joke_only", "humorous_local_turn"}:
-        plan["utterance_mode"] = "humorous_local_turn"
-    elif mode in {"template_notice", "reference_with_context"}:
-        plan["utterance_mode"] = "reference_with_context"
-    else:
-        plan["utterance_mode"] = "local_answer_with_context"
-    return {
-        "field": "substantive_surface_contract",
-        "words": words,
-        "surface": surface,
-        "before": prior,
-        "after": {
-            "payload_type": plan["payload_type"],
-            "utterance_mode": plan["utterance_mode"],
-        },
-    }
 
 
 def ledger_entry(sample_id: int, plan: dict[str, Any]) -> dict[str, Any]:

@@ -81,12 +81,25 @@ def build_slot_distribution_schedule(
     # Tone and affect were previously optimized independently over the same
     # slots, so a warm slot could be handed disapproval or annoyance. A plan
     # cannot satisfy both, and the negative label won.
+    affect_slots = [
+        {
+            **slot,
+            "tone": tone.get(int(slot["sample_id"]), ""),
+            "story_mode": (assignments.get(int(slot["sample_id"])) or {}).get(
+                "story_mode", "no_story"
+            ),
+        }
+        for slot in slots
+    ]
     affect, affect_unassigned = _assign_labels(
-        slots,
+        affect_slots,
         Counter(targets["affect_counts"]),
         compatibility=_affect_cost,
-        exclude=lambda label, slot: not _affect_fits_tone(
-            label, tone.get(int(slot["sample_id"]), "")
+        exclude=lambda label, slot: (
+            not _affect_fits_tone(label, str(slot.get("tone") or ""))
+            or not _affect_fits_story(
+                label, str(slot.get("story_mode") or "no_story")
+            )
         ),
     )
     for sample_id, label in tone.items():
@@ -311,6 +324,8 @@ TONE_INCOMPATIBLE_AFFECTS = {
             "disappointment",
             "disgust",
             "grief",
+            "remorse",
+            "sadness",
         }
     ),
     "impolite": frozenset(
@@ -322,6 +337,8 @@ TONE_INCOMPATIBLE_AFFECTS = {
             "excitement",
             "relief",
             "caring",
+            "approval",
+            "optimism",
         }
     ),
 }
@@ -333,6 +350,15 @@ def _affect_fits_tone(affect: str, tone: str) -> bool:
     label = str(affect or "").strip().lower()
     register = str(tone or "").strip().lower()
     return label not in TONE_INCOMPATIBLE_AFFECTS.get(register, frozenset())
+
+
+def _affect_fits_story(affect: str, story_mode: str) -> bool:
+    """Keep pure social closes out of slots reserved for a narrative."""
+
+    return not (
+        str(story_mode or "no_story") != "no_story"
+        and str(affect or "").strip().lower() in {"gratitude", "relief"}
+    )
 
 
 def _assign_labels(
@@ -446,17 +472,40 @@ def _affect_cost(label: str, slot: dict[str, Any]) -> tuple[int, int, int]:
     words = int(slot["words"])
     depth = int(slot["depth"])
     surface = str(slot["surface"])
+    tone = str(slot.get("tone") or "")
+    tone_preference = _tone_affect_preference(label, tone)
     if label in {"gratitude", "relief"}:
-        return (0 if depth > 0 and words <= 48 else 1, 0 if words <= 30 else 1, words)
+        return (0 if depth > 0 and words <= 48 else 1, tone_preference, words)
     if label in {"curiosity", "confusion"}:
-        return (0 if surface == "short_question" or depth == 0 else 1, 0 if words <= 55 else 1, words)
+        return (0 if surface == "short_question" or depth == 0 else 1, tone_preference, words)
     if label in {"amusement", "excitement", "surprise"}:
-        return (0 if words <= 32 else 1, 0 if depth > 0 else 1, words)
+        return (0 if words <= 32 else 1, tone_preference, words)
     if label in {"anger", "annoyance", "disapproval", "disappointment", "fear"}:
-        return (0 if words >= 14 and surface not in {"micro", "short_question"} else 1, 0 if depth > 0 else 1, -words)
+        return (0 if words >= 14 and surface not in {"micro", "short_question"} else 1, tone_preference, -words)
     if label in {"admiration", "approval", "optimism", "realization", "desire"}:
-        return (0 if words >= 18 else 1, 0 if depth > 0 else 1, -words)
-    return (0, 0, abs(words - 24))
+        return (0 if words >= 18 else 1, tone_preference, -words)
+    return (0, tone_preference, abs(words - 24))
+
+
+def _tone_affect_preference(label: str, tone: str) -> int:
+    """Rank feasible marginal pairings without pretending the axes coincide."""
+
+    positive = {
+        "admiration", "approval", "caring", "desire", "excitement",
+        "gratitude", "joy", "love", "optimism", "relief",
+    }
+    negative = {
+        "anger", "annoyance", "disappointment", "disapproval", "disgust",
+        "fear", "grief", "remorse", "sadness",
+    }
+    exploratory = {"amusement", "confusion", "curiosity", "realization", "surprise"}
+    preferred = {
+        "polite": positive | exploratory,
+        "somewhat_polite": exploratory | {"neutral", "approval", "optimism"},
+        "neutral": exploratory | {"neutral"},
+        "impolite": negative | {"neutral", "confusion", "curiosity"},
+    }
+    return 0 if label in preferred.get(tone, {label}) else 1
 
 
 def _scaled_complete_rate_counts(values: dict[str, float], total: int) -> Counter[str]:

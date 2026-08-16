@@ -8,6 +8,7 @@ from generalized_card.long_form_planning import (
     development_plan_problem,
     expected_development_beats,
     normalize_development_plan,
+    reconcile_development_plan_capacity,
     render_development_guidance,
 )
 
@@ -22,6 +23,23 @@ class LongFormPlanningTest(unittest.TestCase):
     def test_short_slots_do_not_receive_a_synthetic_depth_target(self) -> None:
         self.assertEqual(expected_development_beats(100), 0)
         self.assertEqual(render_development_guidance(Task(80)), "")
+
+    def test_short_slot_drops_copied_development_schema_text(self) -> None:
+        plan = {
+            "_slot_word_count": "30",
+            "development_plan": "none for a short slot || otherwise add beats",
+        }
+        event = reconcile_development_plan_capacity(plan)
+        self.assertEqual(plan["development_plan"], "")
+        self.assertEqual(event["reason"], "slot_has_no_long_form_capacity")
+
+    def test_long_slot_keeps_real_development_beats(self) -> None:
+        plan = {
+            "_slot_word_count": "180",
+            "development_plan": "show the setup || report the friction",
+        }
+        self.assertIsNone(reconcile_development_plan_capacity(plan))
+        self.assertIn("show the setup", plan["development_plan"])
 
     def test_long_tail_capacity_matches_the_observed_realization_rate(self) -> None:
         # The Writer realizes about 21 words per planned beat, measured over the
@@ -127,8 +145,22 @@ class LongFormPlanningTest(unittest.TestCase):
             sample_offset=1,
             prior_plans=[{"sample_id": "1", "semantic_move": "parent move"}],
             slot_distribution="- none",
+            slot_controls={
+                2: {
+                    "story_mode": "no_story",
+                    "tone_class": "polite",
+                    "affect_role": "approval",
+                    "opener_type": "content_phrase",
+                }
+            },
         )
         self.assertIn("development_plan: none; this slot is short", prompt)
+        self.assertIn("Story contract: no_story", prompt)
+        self.assertIn("Affect contract: approval", prompt)
+        self.assertIn("Opening grammar: content_phrase", prompt)
+        self.assertNotIn(
+            "Allowed reply_delta_type: corroborating_datapoint", prompt
+        )
 
 
 if __name__ == "__main__":

@@ -111,6 +111,32 @@ def development_plan_problem(plan: dict[str, Any]) -> str:
     )
 
 
+def reconcile_development_plan_capacity(
+    plan: dict[str, Any],
+) -> dict[str, Any] | None:
+    """Drop copied schema prose from a slot with no long-form capacity.
+
+    A development plan is meaningful only when the anonymous slot can carry
+    multiple beats. Otherwise any value is prompt residue, not semantic
+    content, and the Writer would be told to realize it as part of the comment.
+    """
+
+    words = _safe_int(plan.get("_slot_word_count"))
+    if expected_development_beats(words) > 0:
+        return None
+    value = normalize_development_plan(plan.get("development_plan"))
+    if not value:
+        return None
+    plan["development_plan"] = ""
+    return {
+        "field": "development_plan",
+        "words": words,
+        "before": value,
+        "after": "",
+        "reason": "slot_has_no_long_form_capacity",
+    }
+
+
 def render_development_guidance(task: Any) -> str:
     """Render the complete one-shot plan for the Writer."""
 

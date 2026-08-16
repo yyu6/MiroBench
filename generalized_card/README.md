@@ -127,8 +127,6 @@ python3 generalized_card/scripts/run_generate.py \
   --actor-conditioning none \
   --persona-conditioning none \
   --writer-retries 0 \
-  --writer-local-repair-rounds 0 \
-  --writer-slot-retry-limit 0 \
   --post-retry-limit 1 \
   --resume
 ```

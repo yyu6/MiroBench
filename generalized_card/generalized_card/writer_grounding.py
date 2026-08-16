@@ -264,29 +264,6 @@ def equipment_closing_clause(*, mode: str = LICENSE_OFF) -> str:
     )
 
 
-def metric_guidance_story_line(*, mode: str = LICENSE_OFF) -> str:
-    """The story line of the low-info path's core metric guidance block."""
-
-    if mode == LICENSE_OFF:
-        return (
-            "- Story prevalence: use a story only when the sampled story mode or "
-            "role requires it. Keep synthetic personal context qualitative and "
-            "never invent measured facts or definite outcomes."
-        )
-    if mode == LICENSE_NAMED:
-        return (
-            "- Story prevalence: use a story only when the sampled story mode or "
-            "role requires it. When one is called for, make it particular rather "
-            "than a general summary."
-        )
-    return (
-        "- Story prevalence: use a story only when the sampled story mode or "
-        "role requires it. When one is called for, give it the concrete "
-        "specifics of your own kit and history rather than a qualitative "
-        "summary; keep invented facts about the product under discussion out."
-    )
-
-
 def system_prompt_fact_sentence(*, mode: str = LICENSE_OFF) -> str:
     """The sentence appended to the writer system prompt under the license.
 

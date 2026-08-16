@@ -1,5 +1,57 @@
 # Lessons
 
+## 2026-08-17 — A prompt schema example is executable data
+
+**What happened.** The direct-reply Planner schema described
+`development_plan` as “none for a short slot; otherwise …”. The model copied
+that explanation as the field value in 104 short slots, and the Writer later
+treated it as planned content. A sentence intended as documentation became a
+shared semantic beat across more than half the thread.
+
+**How to apply.** JSON examples must contain valid literal values, not prose
+instructions. Put conditional rules outside the schema, normalize sentinel
+values, and reconcile a field against anonymous structural capacity before it
+reaches the Writer.
+
+## 2026-08-17 — Matching marginals is not enough; assign a feasible joint contract
+
+**What happened.** Story, tone, and affect counts each matched their template,
+but they were assigned independently. The result included `approval+impolite`,
+`neutral-affect+polite`, and story slots carrying gratitude closes. The Writer
+could not satisfy both sides of those pairs, so one label collapsed even though
+every marginal count looked correct.
+
+**How to apply.** Preserve the measured marginal totals while assigning them
+through explicit cross-field compatibility. Verify both completeness and the
+joint contingency table before generation. A quota is fulfilled only when the
+Planner can build one coherent semantic move for the whole row.
+
+## 2026-08-17 — Normalization may repair metadata, not author semantics
+
+**What happened.** Post-parse code silently converted incompatible substantive
+payloads to `soft_helpful` and rewrote every gratitude/relief problem to one
+canned semantic move. That hid Planner failures, inflated helpful/explainer
+register, and introduced repetition after the Planner had already made its
+decision.
+
+**How to apply.** Deterministic normalization may canonicalize enums or clear a
+field that has no structural capacity. If a repair changes role, evidence,
+claim, reply increment, or payload meaning, send the conflict back to the
+Planner and fail closed when bounded repair is exhausted.
+
+## 2026-08-17 — Git is the version switch; dead experiment controllers are not
+
+**What happened.** Metric-guided Writer retry code, candidate ranking, a
+blocking repetition arm, and several CLI knobs remained after the public v81
+path required them all to be disabled. They added hundreds of lines, obscured
+the actual single-realization policy, and encouraged evaluation metrics to leak
+into generation-time selection.
+
+**How to apply.** Preserve old behavior with commits and per-run source/config
+snapshots. Once an arm is disproven and unreachable in the current policy,
+remove its implementation and historical-only tests. Keep only current safety
+recovery, and make distribution metrics observational rather than selective.
+
 ## 2026-08-16 — A scheduled label is not a coherent plan
 
 **What happened.** The frozen distribution schedule overwrote `story_mode`,

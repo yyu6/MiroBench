@@ -43,11 +43,9 @@ from .speaker_roster import speaker_kit_for_slot
 from .surface_contract import substantive_surface_slot, surface_only_label
 from .viewpoint_bank import render_reference_viewpoints
 from .writer_grounding import (
-    LICENSE_OFF,
     entity_naming_rule,
     equipment_closing_clause,
     first_person_experience_slot,
-    metric_guidance_story_line,
     story_fact_rule,
 )
 from .writer_grounding import slot_license as writer_grounding_mode
@@ -410,6 +408,15 @@ def comment_planner_prompt(
         sample_offset=sample_offset,
         prior_plans=prior_plans or [],
     ):
+        assignments = active_schedule.get("assignments") or {}
+        slot_controls = {
+            sample_id: dict(
+                assignments.get(str(sample_id))
+                or assignments.get(sample_id)
+                or {}
+            )
+            for sample_id in requested_sample_ids
+        }
         return render_direct_reply_planner_prompt(
             config=config,
             backend=backend,
@@ -422,32 +429,7 @@ def comment_planner_prompt(
                 active_schedule,
                 sample_ids=requested_sample_ids,
             ),
-            social_close_allowed={
-                sample_id
-                for sample_id in requested_sample_ids
-                if str(
-                    (
-                        (active_schedule.get("assignments") or {}).get(
-                            str(sample_id),
-                            {},
-                        )
-                    ).get("affect_role")
-                    or ""
-                ).strip().lower()
-                in {"gratitude", "relief"}
-            },
-            slot_tone={
-                sample_id: str(
-                    (
-                        (active_schedule.get("assignments") or {}).get(
-                            str(sample_id),
-                            {},
-                        )
-                    ).get("tone_class")
-                    or ""
-                ).strip().lower()
-                for sample_id in requested_sample_ids
-            },
+            slot_controls=slot_controls,
             validation_feedback=validation_feedback,
         )
     schema_sample_id = requested_sample_ids[0] if requested_sample_ids else 1
@@ -657,7 +639,7 @@ Return strict JSON:
       "reply_delta_type": "for a direct reply: {' | '.join(REPLY_DELTA_TYPES)}; otherwise none",
       "reply_novelty_anchor": "for a direct reply: one concrete action, observation, threshold, outcome, or exception that the parent plan does not already state; otherwise none",
       "opening_style": "one specific sentence route for this slot that realizes its assigned opener_type, such as constraint then consequence, concrete observation then caveat, or answer embedded after parent detail",
-      "development_plan": "none for a short slot; for a slot above about 100 words, use distinct connected beats separated by || that fully develop this one local contribution",
+      "development_plan": "none",
       "context_aperture": "full_seed | seed_gist_only | title_only | semantic_only | parent_only"{actor_schema}
     }}
   ]
@@ -713,6 +695,13 @@ Rules:
   to a reaction that has no room for one.
 - Every S# not explicitly assigned a story_mode in the slot schedule is fixed
   to no_story. Do not create an extra story to make a local plan sound richer.
+- Story is a joint evidence contract. A `no_story` row must not use
+  `firsthand_experience` or `personal_story`; it may use a present-state
+  first-person appraisal or one small observation, but not a past action,
+  event, before/after change, or temporal sequence. A scheduled story row must
+  use `firsthand_experience`, `comment_function=personal_datapoint`, and a
+  personal-story or fragment-datapoint payload. The semantic move itself must
+  describe that narrative evidence rather than advice or abstract analysis.
 - The required branch route is also fixed. Each root discussion chain owns a
   distinct decision axis; replies inherit their parent chain's branch. Do not
   switch to another branch merely because its topic is easier to write.
@@ -803,14 +792,16 @@ Rules:
   small fixed label set. Vary clause order and discourse entry across nearby
   rows; do not repeat routes such as "question first" or "direct answer."
 - Use the anonymous slot word count as a content-capacity cue. For a slot
-  above about 100 words, write a ``development_plan`` with roughly one distinct
-  connected beat per 35 words, capped at 16 beats and separated by ``||``.
-  Each beat is realized in about one sentence, so a 300-word slot needs roughly
-  eight or nine beats rather than three; under-planning a long slot is the
-  common failure and it collapses the thread's length spread.
+  whose schedule says ``development_plan`` is required, return roughly the
+  displayed number of distinct connected beats separated by ``||``. That
+  number comes from the same capacity function as validation; do not replace it
+  with a different words-per-beat rule or fixed ceiling. Under-planning a long
+  slot is the common failure and collapses the thread's length spread.
   Each beat must add a different observation, reason, consequence, caveat,
   boundary, or reaction around the same local contribution. Do not pad with
   paraphrases, add unrelated claims, or infer the hidden matched comment.
+- For every slot at or below 100 anonymous words, return the literal string
+  `none` for `development_plan`; do not copy the schema's explanatory prose.
 - A slot labeled ``ordinary_turn`` or ``long_turn`` must retain its information
   density. Incidental humor, a link, a quote, or a question may be embedded in
   that turn; it must not turn the whole plan into ``joke``,
@@ -1045,8 +1036,9 @@ def writer_prompt(
     ):
         story_instruction = (
             "Do not narrate a sequence of events or repeated attempts. A "
-            "firsthand slot may state one observation, but it must not become "
-            "an anecdote with before/after or then/after pacing."
+            "first-person slot may state current ownership, preference, or one "
+            "present-state observation, but no past action, event, before/after "
+            "change, or then/after pacing."
         )
     story_rule = _optional_control_rule(
         "Story realization",
@@ -1054,11 +1046,20 @@ def writer_prompt(
         story_instruction,
         "This controls narrative evidence structure, not interpersonal tone.",
     )
+    affect_value = str(getattr(task, "affect_role", "") or "")
+    affect_suffix = (
+        "Do not add an evaluation, interjection, or hedge merely to display an "
+        "emotion; preserve the assigned interpersonal register and local move."
+        if affect_value == "neutral"
+        else "Make this reaction part of the local move through a natural "
+        "evaluation, interjection, or pacing choice. Do not name the label or "
+        "add a second fact."
+    )
     affect_rule = _optional_control_rule(
         "Affect role",
-        getattr(task, "affect_role", ""),
+        affect_value,
         getattr(task, "affect_instruction", ""),
-        "Make the reaction legible through a natural evaluation, interjection, hedge, or pacing choice. Do not name the label or add a new fact.",
+        affect_suffix,
     )
     surface_rule = _optional_control_rule(
         "Real surface skeleton",
@@ -1181,12 +1182,6 @@ One-shot semantic difference contract:
 Already used openings:
 {openings}
 {retry}
-
-Core metric guidance:
-{_metric_guidance_block(backend, task)}
-
-Core tone and discourse guidance:
-{_tone_discourse_guidance_block(task)}
 
 Core placeholder guidance:
 {_placeholder_guidance_block()}
@@ -1384,12 +1379,6 @@ def _focused_writer_prompt(
         )
         if item
     )
-    # The register contrast stays. `polite` is realized 7.4% of the time and
-    # collapses into `impolite` in 65% of its slots, and this is the only block
-    # that names the register it drifts into. It repeats the assigned register's
-    # definition that `tone_target_rule` also carries; one duplicated definition
-    # is a fair price for the only mechanism aimed at a failing metric.
-    guidance = f"{guidance}\n{_tone_discourse_guidance_block(task)}"
     exclusion = _writer_safe_control_text(
         getattr(task, "branch_exclusion", ""), domain_profile
     )
@@ -1508,12 +1497,6 @@ One-shot semantic difference contract:
 Already used openings:
 {openings}
 {retry}
-
-Core metric guidance:
-{_metric_guidance_block(backend, task)}
-
-Core tone and discourse guidance:
-{_tone_discourse_guidance_block(task)}
 
 Core placeholder guidance:
 {_placeholder_guidance_block()}
@@ -2480,31 +2463,6 @@ def _story_fact_safety_rule(
     )
 
 
-def _metric_guidance_block(backend: Any = None, task: Any = None) -> str:
-    """Render the static metric guidance for the full and low-info paths.
-
-    Only the story line varies: under the own-fact license it must not tell the
-    slot to keep personal context qualitative, because that is the sentence the
-    license exists to remove.
-    """
-
-    mode = (
-        writer_grounding_mode(backend, task)
-        if backend is not None and task is not None
-        else LICENSE_OFF
-    )
-    return "\n".join(
-        (
-            "- Lexical diversity: do not reuse previous openings, helper templates, clause rhythm, or discourse posture. Vary only when the sampled slot allows it.",
-            "- Semantic diversity: avoid another complete explainer if the thread already has several; preserve long matched slots instead of forcing them short.",
-            "- Local coherence: remain on the visible local hook and sampled plan. Do not add unrelated noise merely to differ.",
-            metric_guidance_story_line(mode=mode),
-            "- Tone balance: preserve the sampled tone while allowing grateful, uncertain, neutral, mildly annoyed, skeptical, and corrective turns across the thread. Keep interpersonal heat local.",
-            "- Length variation: follow the anonymous matched word-count cue as a soft scale. Do not expand micro slots or collapse substantive slots.",
-        )
-    )
-
-
 def _substitution_rule(task: Any | None = None) -> str:
     """Forbid substituting the planned move, without forbidding the tone register.
 
@@ -2527,67 +2485,17 @@ def _substitution_rule(task: Any | None = None) -> str:
             "  brief qualified concession is required here, but it must lead into\n"
             "  the planned move, not stand in for it."
         )
+    if bool(getattr(task, "allow_first_person_frame", False)):
+        return (
+            "- Do not replace the planned move with a generic agreement, "
+            "acknowledgement, or recommendation. A first-person frame may carry "
+            "the assigned current-state appraisal, but it must not become an "
+            "unplanned anecdote."
+        )
     return (
         "- Do not replace it with a generic agreement, acknowledgement,\n"
         "  recommendation, or first-person frame."
     )
-
-
-def _tone_discourse_guidance_block(task: Any | None = None) -> str:
-    """Render the assigned tone register, contrasted against the others.
-
-    The registers are named explicitly because the untargeted default for this
-    kind of task is the hedged, half-agreeing register, which is a distinct
-    class rather than a mild form of warmth.
-    """
-
-    assigned = str(getattr(task, "tone_target", "") or "").strip().lower()
-    lines = [
-        "- The assigned tone class is a social register to inhabit, never wording to copy.",
-    ]
-    # Only the assigned register and the one it most easily collapses into are
-    # rendered. Listing all four for every comment repeated three irrelevant
-    # definitions per call inside a prompt where rule mass is already the problem.
-    contrast = {
-        "polite": "somewhat_polite",
-        "somewhat_polite": "polite",
-        "neutral": "somewhat_polite",
-        "impolite": "neutral",
-    }.get(assigned)
-    for label in (assigned, contrast):
-        definition = TONE_DEFINITIONS.get(label or "")
-        if not definition:
-            continue
-        marker = "  >> " if label == assigned else "  not "
-        lines.append(f"{marker}{label}: {definition}")
-    if assigned:
-        lines.append(
-            f"- This turn is {assigned}. The register is a property of the "
-            "stance you commit to, not of a fixed opening or sentence order. "
-            "Reach it by a different route from the other turns in this thread: "
-            "two comments in the same register must not share an entry pattern, "
-            "clause rhythm, or signature phrase."
-        )
-        if assigned == "polite":
-            lines.append(
-                "- Warmth here means an actual positive commitment about the "
-                "subject or the help received. A qualified maybe or a balanced "
-                "weighing is a different register and does not satisfy it."
-            )
-        elif assigned == "neutral":
-            lines.append(
-                "- Carry no evaluative stance, positive or negative, and add no "
-                "hedging frame."
-            )
-    lines.extend(
-        [
-            "- Keep thread posture varied across acknowledgement, neutral observation, caveat, datapoint, plain answer, question, reference aside, and local frustration.",
-            "- Direct corrections should correct one point and stop. Annoyance should come from concrete local friction, not performative outrage.",
-            "- Direct criticism at the product, claim, rule, interface, service, or process; do not scold the OP or another commenter.",
-            "- Never sound like an assistant summarising options for a user.",
-        ]
-    )
-    return "\n".join(lines)
 
 
 def _placeholder_guidance_block() -> str:

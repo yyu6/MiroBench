@@ -162,24 +162,6 @@ def build_parser() -> argparse.ArgumentParser:
             "planner placeholders. It never optimizes soft metrics."
         ),
     )
-    parser.add_argument(
-        "--writer-local-repair-rounds",
-        type=int,
-        default=0,
-        help=(
-            "Number of distinct evaluator-aligned repair strategies rotated "
-            "for a failed Writer slot."
-        ),
-    )
-    parser.add_argument(
-        "--writer-slot-retry-limit",
-        type=int,
-        default=0,
-        help=(
-            "Maximum local candidate retries for one Writer slot. Zero uses the "
-            "bounded local-repair strategy count; it never means infinite retry."
-        ),
-    )
     parser.add_argument("--retry-delay", type=float, default=10.0)
     parser.add_argument("--call-sleep-seconds", type=float, default=0.0)
     parser.add_argument(
@@ -262,22 +244,6 @@ def build_parser() -> argparse.ArgumentParser:
             "the two gaps that hold on all ten matched threads while "
             "specification-shaped tokens range from 0%% to 64%% of comments by "
             "thread."
-        ),
-    )
-    parser.add_argument(
-        "--repetition-guard",
-        choices=("off", "blocking"),
-        default="off",
-        help=(
-            "Whether repeated phrasing may force another Writer attempt. 'off' "
-            "keeps every prior release's behaviour: `template_phrase_reused` "
-            "fires and is discarded. Measured in v76, 38 of 186 slots raised it "
-            "and all 186 ran exactly one attempt, 85 of them accepted through "
-            "accepted_first_pass_distribution_diagnostics on a known-failing "
-            "candidate. The frame it catches -- \"that's the part\" -- is in 6.5%% "
-            "of generated comments against a real thread whose most-shared "
-            "4-gram reaches 1.5%%. Needs --writer-slot-retry-limit >= 1 to have "
-            "anywhere to retry."
         ),
     )
     parser.add_argument(
@@ -395,14 +361,8 @@ def main() -> None:
         raise SystemExit("--plan-quality-repairs must be non-negative")
     if args.comment_planner_batch_size <= 0:
         raise SystemExit("--comment-planner-batch-size must be positive")
-    if (
-        args.writer_hard_recovery_rounds < 0
-        or args.writer_local_repair_rounds < 0
-        or args.writer_slot_retry_limit < 0
-    ):
-        raise SystemExit(
-            "Writer hard recovery, local repair, and slot retry values must be non-negative"
-        )
+    if args.writer_hard_recovery_rounds < 0:
+        raise SystemExit("--writer-hard-recovery-rounds must be non-negative")
     if args.post_retry_limit <= 0 or args.post_retry_delay < 0:
         raise SystemExit(
             "--post-retry-limit must be positive and --post-retry-delay non-negative"
@@ -598,9 +558,6 @@ def main() -> None:
                 "metrics": ["self_bleu_4", "semantic_mean_cosine"],
                 "target": "same-size evaluation-excluded real metric template",
                 "candidate_policy": "single Writer realization; distribution metrics are diagnostic",
-                "local_repair_rounds": args.writer_local_repair_rounds,
-                "slot_retry_limit": args.writer_slot_retry_limit,
-                "retry_context": "at most three measured nearest prior excerpts",
             },
             "length_conditioning": {
                 "mode": "anonymous_continuous_matched_scale",
@@ -637,8 +594,6 @@ def main() -> None:
             "max_perspective_share": args.max_perspective_share,
             "strict": args.strict_plan_quality,
         },
-        "writer_local_repair_rounds": args.writer_local_repair_rounds,
-        "writer_slot_retry_limit": args.writer_slot_retry_limit,
         "domain_claim": args.domain_claim,
         "writer_prompt": args.writer_prompt,
         "writer_route_lock": args.writer_route_lock,
@@ -646,7 +601,6 @@ def main() -> None:
         "reply_sibling_visibility": args.reply_sibling_visibility,
         "own_fact_license": args.own_fact_license,
         "speaker_identity": args.speaker_identity,
-        "repetition_guard": args.repetition_guard,
         "actor_conditioning": {
             "mode": args.actor_conditioning,
             "source": (
@@ -775,12 +729,6 @@ def main() -> None:
         flush=True,
     )
     print(
-        f"[generalized-config] writer_local_repair_rounds="
-        f"{args.writer_local_repair_rounds} "
-        f"writer_slot_retry_limit={args.writer_slot_retry_limit}",
-        flush=True,
-    )
-    print(
         f"[generalized-config] actor_conditioning={args.actor_conditioning} "
         "fixed_participant_catalog=0 writer_distribution_resampling=0",
         flush=True,
@@ -828,7 +776,6 @@ def main() -> None:
     env["GENERALIZED_CARD_REPLY_SIBLING_VISIBILITY"] = args.reply_sibling_visibility
     env["GENERALIZED_CARD_OWN_FACT_LICENSE"] = args.own_fact_license
     env["GENERALIZED_CARD_SPEAKER_IDENTITY"] = args.speaker_identity
-    env["GENERALIZED_CARD_REPETITION_GUARD"] = args.repetition_guard
     env["GENERALIZED_CARD_STORY_PERSONAL_MIN_SHARE"] = str(
         behavior_targets.get(
             "story_personal_min_share",
@@ -859,14 +806,8 @@ def main() -> None:
     )
     env["GENERALIZED_CARD_MAX_PERSPECTIVE_SHARE"] = str(args.max_perspective_share)
     env["GENERALIZED_CARD_STRICT_PLAN_QUALITY"] = "1" if args.strict_plan_quality else "0"
-    env["GENERALIZED_CARD_WRITER_LOCAL_REPAIRS"] = str(
-        args.writer_local_repair_rounds
-    )
     env["GENERALIZED_CARD_WRITER_HARD_RECOVERY_ROUNDS"] = str(
         args.writer_hard_recovery_rounds
-    )
-    env["GENERALIZED_CARD_WRITER_SLOT_RETRY_LIMIT"] = str(
-        args.writer_slot_retry_limit
     )
     env["GENERALIZED_CARD_PLAN_AUDIT_JSONL"] = str(
         run_root / "logs" / "planning_quality.jsonl"
@@ -1090,8 +1031,6 @@ RUN_EXPERIMENT_FIELDS = (
     "context_dropout_rate",
     "context_jitter_rate",
     "plan_quality",
-    "writer_local_repair_rounds",
-    "writer_slot_retry_limit",
     "domain_claim",
     "writer_prompt",
     "writer_route_lock",
@@ -1099,7 +1038,6 @@ RUN_EXPERIMENT_FIELDS = (
     "reply_sibling_visibility",
     "own_fact_license",
     "speaker_identity",
-    "repetition_guard",
     "actor_conditioning",
     "reasoning_effort",
     "gpt5_reasoning_token_reserve",

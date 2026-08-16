@@ -59,6 +59,64 @@ Before any run that changes behavior:
 
 ---
 
+## v81 — joint story/affect handoff and prompt-residue removal (2026-08-17)
+
+Policy ID: `generalized-card-v2-joint-story-affect-handoff-v81-20260817`.
+The implementation commit is the git entry that adds this section; every paid
+artifact additionally stores its exact source/config snapshot.
+
+v80 showed that making the Writer instruction stronger was not enough. The
+direct-reply Planner saw fixed social labels as prose but did not return them in
+its schema, 61 slots used firsthand evidence against a 17-story quota, and 104
+short replies copied the `development_plan` schema example into a real plan.
+Post-parse normalization then hid bad plans by rewriting them to one repeated
+gratitude sentence or to `soft_helpful`.
+
+Changed:
+
+- Story is now a bidirectional Planner invariant. `no_story` rejects firsthand
+  evidence and personal-story payloads; a story slot requires firsthand,
+  personal-datapoint semantics. Unresolved story/surface/long-form contracts
+  stop before the Writer instead of being logged and persisted.
+- Direct replies receive story, tone, affect, and opener controls as structured
+  per-slot contracts. A no-story row cannot choose the explicitly narrative
+  `corroborating_datapoint` route.
+- Short slots deterministically clear any copied development-plan prose. Both
+  Planner schemas now use literal `none` and explicitly require it below the
+  long-form threshold. Root and direct-reply prompts use the same dynamic beat
+  capacity function as validation; the conflicting 35-word/16-beat prose was
+  removed.
+- Removed semantic post-parse rewrites. Gratitude/relief and substantive-slot
+  conflicts go through targeted Planner repair; no shared canned semantic move
+  and no automatic `soft_helpful` conversion remain.
+- Tone/affect marginals are paired jointly before planning. On the frozen v80
+  seed-8 template the new schedule assigned every label while reducing
+  `approval+impolite` 10→0 and `neutral-affect+polite` 27→2.
+- The focused Writer renders the tone definition once, gives neutral affect a
+  non-conflicting instruction, and omits known schema defaults from its
+  semantic ledger. Impolite and amusement contracts explicitly permit
+  non-targeted profanity and natural laughter tokens, respectively, without
+  requiring a fixed phrase.
+- First-pass distribution resampling is disabled at the public CLI. Repetition,
+  Self-BLEU, Self-BERTScore, and semantic cosine are collection diagnostics;
+  only non-persistable Writer failures retain bounded recovery.
+
+Offline acceptance before the first run:
+
+- v80 replay: 104 short development residues removed; 59 latent story-contract
+  conflicts detected rather than passed through.
+- the v80 template's 186 tone/affect assignments remain complete with zero
+  unassigned labels and zero story/social-close collisions.
+- expected direction: story probability down toward the frozen template;
+  emotion realization and entropy stability improve; shared prompt scaffolding,
+  Self-BLEU, Self-BERTScore and helpful/explainer register decrease. Structure
+  is unchanged because every matched slot and parent edge is preserved.
+- complete test suite: 259 passed; backend self-test passed; 72 pinned source
+  files report zero missing and zero drifted entries.
+
+Formal acceptance still requires a multi-thread matched evaluation. An n=1 run
+is only a content and contract diagnostic.
+
 ## v80 — coherent Planner social contracts (2026-08-16)
 
 Tag: pending; do not start with a paid run.

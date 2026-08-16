@@ -135,8 +135,7 @@ def render_direct_reply_planner_prompt(
     sample_offset: int,
     prior_plans: list[dict[str, Any]],
     slot_distribution: str,
-    social_close_allowed: set[int] | None = None,
-    slot_tone: dict[int, str] | None = None,
+    slot_controls: dict[int, dict[str, str]] | None = None,
     validation_feedback: str = "",
 ) -> str:
     """Render a short semantic-planning request for direct replies only.
@@ -154,8 +153,7 @@ def render_direct_reply_planner_prompt(
         if isinstance(plan, dict) and parse_sample_id(plan.get("sample_id")) > 0
     }
     sample_ids = [sample_offset + index for index in range(1, len(comments) + 1)]
-    allowed_social = set(social_close_allowed or set())
-    tone_by_slot = dict(slot_tone or {})
+    controls_by_slot = dict(slot_controls or {})
     siblings_by_parent: dict[int, list[int]] = {}
     for child_id, parent_id in parent_slots.items():
         siblings_by_parent.setdefault(parent_id, []).append(child_id)
@@ -165,12 +163,18 @@ def render_direct_reply_planner_prompt(
     for sample_id, comment in zip(sample_ids, comments, strict=True):
         parent_id = parent_slots[sample_id]
         parent = prior_by_id[parent_id]
-        tone = str(tone_by_slot.get(sample_id) or "").strip().lower()
+        controls = controls_by_slot.get(sample_id) or {}
+        tone = str(controls.get("tone_class") or "").strip().lower()
+        story = str(controls.get("story_mode") or "").strip().lower()
+        affect = str(controls.get("affect_role") or "neutral").strip().lower()
+        opener = str(controls.get("opener_type") or "").strip().lower()
         allowed = [
             value
             for value in allowed_reply_delta_types(tone)
-            if value != "social_close" or sample_id in allowed_social
+            if value != "social_close" or affect in {"gratitude", "relief"}
         ]
+        if story == "no_story":
+            allowed = [value for value in allowed if value != "corroborating_datapoint"]
         sibling_ids = siblings_by_parent.get(parent_id, [])
         sibling_contract = ""
         if (
@@ -208,6 +212,9 @@ def render_direct_reply_planner_prompt(
                     f"  Parent detail to exclude: {backend.compact(parent.get('detail_focus') or 'parent local detail', 140)}",
                     f"  Parent reply type: {str(parent.get('reply_delta_type') or 'root_turn').strip()}",
                     f"  Tone register: {tone or 'unassigned'}",
+                    f"  Story contract: {story or 'unassigned'}",
+                    f"  Affect contract: {affect}",
+                    f"  Opening grammar: {opener or 'unassigned'}",
                     "  Allowed reply_delta_type: " + (", ".join(allowed) or "any"),
                     sibling_contract,
                     _development_requirement(comment),
@@ -299,6 +306,10 @@ Return strict JSON with exactly one row for each of {slot_ids}:
       "comment_function": "reaction | question_followup | correction_caveat | personal_datapoint | recommendation_advice | verdict_evaluation | explanation_analysis | offtopic_noise",
       "content_angle": "one local angle",
       "evidence_mode": "none_assertion | firsthand_experience | technical_or_policy_reasoning | calculation_math | hearsay_consensus | link_quote_reference | small_observation",
+      "story_mode": "copy the fixed story contract shown for this S#",
+      "tone_class": "copy the fixed tone register shown for this S#",
+      "affect_role": "copy the fixed affect contract shown for this S#",
+      "opener_type": "copy the fixed opening grammar shown for this S#",
       "voice": "blunt | casual_neutral | polite_soft | sarcastic | annoyed | uncertain | grateful",
       "speaker_role": "advisor | confused_asker | op_followup | gratitude_reply | jokester | contrarian | datapoint_only | ranter | side_observer",
       "semantic_move": "{move_schema}",
@@ -314,7 +325,7 @@ Return strict JSON with exactly one row for each of {slot_ids}:
       "reply_delta_type": "{' | '.join(REPLY_DELTA_TYPES)}",
       "reply_novelty_anchor": "the one concrete new object this reply introduces",
       "opening_style": "a one-use sentence entry route different from the parent",
-      "development_plan": "none for a short slot; otherwise the exact number of beats this row requires, separated by ||",
+      "development_plan": "none",
       "domain_claim": "one concrete domain fact this reply states in your own words, or none for a purely social reply",
       "context_aperture": "parent_only"
     }}
@@ -337,6 +348,20 @@ Rules:
   stance=agree with datapoint_only, op_followup, or gratitude_reply and a
   comment_function of personal_datapoint, reaction, or verdict_evaluation.
   Do not pair a polite register with correction_caveat or a disagreeing stance.
+- Treat the story contract as a joint semantic contract, not a Writer style.
+  For `no_story`, do not use `firsthand_experience`, `personal_story`, or
+  `corroborating_datapoint`; a first-person preference or current-state
+  observation is allowed, but no past action, event, before/after change, or
+  sequence. For any other story mode, use `firsthand_experience`,
+  `comment_function=personal_datapoint`, and a personal-story or
+  fragment-datapoint payload whose semantic move is an actual event sequence.
+- Make the affect the reaction already contained in the semantic move. It does
+  not authorize a second claim or an invented outcome. Gratitude and relief
+  require the listed `social_close`, a no-story reaction, and no factual add-on.
+- Make the opening grammar writable by the same row: a question opener needs a
+  narrow question or operational test; an imperative needs genuine advice; an
+  address needs a reply directed to the parent. Do not leave this repair to the
+  Writer.
 - Preserve the anonymous slot's information capacity without treating its word
   count as an output-length target.
 - When a row states that ``development_plan`` is required, return that many
@@ -345,6 +370,7 @@ Rules:
   out short. Every beat develops this same one increment through a different
   observation, reason, consequence, caveat, condition, or reaction; none of
   them may restate the increment or introduce an unrelated claim.
+- When a row says `development_plan: none`, return the literal string `none`.
 - Give a substantive reply a ``domain_claim``: one concrete domain fact stated in
   your own words, naming the relevant entity, action, or condition. Real replies
   are largely specific observations, procedures, relationships, and constraints;

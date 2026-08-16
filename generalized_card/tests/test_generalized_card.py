@@ -132,12 +132,9 @@ from generalized_card.text_metric_reviser import (
     validate_candidate as validate_text_metric_candidate,
 )
 from generalized_card.writer_quality import (
-    bounded_retry_evidence,
-    distribution_candidate_is_reachable,
     parse_distribution_problems,
     substantive_length_floor_problem,
-    only_repairable_writer_problems,
-    writer_local_repair_task,
+    writer_hard_recovery_task,
 )
 
 
@@ -1011,6 +1008,9 @@ class GeneralizedCardTest(unittest.TestCase):
         self.assertIn("tone_class exact counts", planner)
         self.assertIn("polite=1", comment_planner)
         self.assertIn('"tone_class"', comment_planner)
+        self.assertIn("same capacity function as validation", comment_planner)
+        self.assertNotIn("per 35 words", comment_planner)
+        self.assertNotIn("capped at 16 beats", comment_planner)
         self.assertIn('"affect_role"', comment_planner)
 
         rendered_refs = render_reference_viewpoints(
@@ -2034,6 +2034,52 @@ class GeneralizedCardTest(unittest.TestCase):
         ]
         self.assertGreater(warning["collision_rate"], 0.10)
 
+    def test_unrealizable_social_contract_never_reaches_writer(self) -> None:
+        module = SimpleNamespace(
+            GENERALIZED_COMMENT_PLAN_HISTORY=[],
+            GENERALIZED_COMMENT_PLAN_FEEDBACK="",
+            GENERALIZED_COMMENT_PLAN_REPORTS=[],
+            GENERALIZED_SOCIAL_CONTRACT_COHERENCE="on",
+            GENERALIZED_DOMAIN_PROFILE={"perspectives": [{"perspective_id": "P01"}]},
+            GENERALIZED_PLAN_QUALITY_CONFIG={
+                "repair_rounds": 0,
+                "schema_recovery_rounds": 0,
+                "similarity_threshold": 0.95,
+                "embedding_similarity_threshold": 0.95,
+                "max_collision_rate": 1.0,
+                "max_perspective_share": 1.0,
+                "strict": False,
+                "require_reply_novelty": False,
+            },
+            real_comment_keys=lambda row: (str(row.get("comment_id") or ""),),
+        )
+
+        def incompatible_plan(**_kwargs):
+            return {
+                1: {
+                    "perspective_id": "P01",
+                    "semantic_move": "report a past shooting event",
+                    "local_topic": "camera handling",
+                    "detail_focus": "one handling detail",
+                    "domain_intent": "report handling",
+                    "payload_type": "fragment_datapoint",
+                    "comment_function": "personal_datapoint",
+                    "story_mode": "no_story",
+                    "evidence_mode": "firsthand_experience",
+                }
+            }
+
+        planner = _comment_planner_batch_with_history(module, incompatible_plan, {})
+        with self.assertRaisesRegex(RuntimeError, "social_contract_conflict"):
+            planner(
+                seed_post=SimpleNamespace(
+                    source_raw_post_id="seed-social", index=0, title="seed"
+                ),
+                sample_offset=0,
+                comments=[{"comment_id": "c1", "parent_id": None, "body": "words"}],
+                all_comments=[{"comment_id": "c1", "parent_id": None, "body": "words"}],
+            )
+
     def test_invalid_branch_id_perspective_is_deterministically_normalized(self) -> None:
         plans = {
             1: {"perspective_id": "B3", "semantic_move": "compare handling"},
@@ -2251,55 +2297,21 @@ class GeneralizedCardTest(unittest.TestCase):
         self.assertEqual(diagnostics["planned_comment_count"], 2)
         self.assertFalse(diagnostics["completion_feasible"])
 
-    def test_writer_local_repair_rotates_concrete_strategies(self) -> None:
+    def test_hard_recovery_preserves_planned_move_and_failed_output(self) -> None:
         @dataclass(frozen=True)
         class Slot:
             planner_intent: str = "Keep the planned caveat."
             must_not_do: str = "Do not add facts."
 
-        problems = [
-            "lexical_overlap_high:shared=the same route;nearest=Earlier route",
-            "semantic_overlap_high:nearest=Earlier conclusion",
-        ]
-        first = writer_local_repair_task(Slot(), problems=problems, repair_round=1)
-        second = writer_local_repair_task(Slot(), problems=problems, repair_round=2)
-        self.assertIn("surface_reconstruction", first.planner_intent)
-        self.assertIn("direct_local_consequence", second.planner_intent)
-        self.assertIn("omit acknowledgements", first.planner_intent)
-        self.assertIn("Do not begin with agreement", second.planner_intent)
-        self.assertIn("Earlier route", first.planner_intent)
-        self.assertNotEqual(first.planner_intent, second.planner_intent)
-
-    def test_native_writer_failures_are_locally_repairable(self) -> None:
-        self.assertTrue(
-            only_repairable_writer_problems(
-                [
-                    "real_slot_too_short",
-                    "length_too_long",
-                    "question_mark_unwanted",
-                    "placeholder_literal",
-                ]
-            )
-        )
-        self.assertFalse(only_repairable_writer_problems(["unknown_programming_guard"]))
-
-    def test_local_repair_carries_forward_failed_candidate_route(self) -> None:
-        @dataclass(frozen=True)
-        class Slot:
-            planner_intent: str = "Keep the planned caveat."
-            must_not_do: str = "Do not add facts."
-
-        repaired = writer_local_repair_task(
+        repaired = writer_hard_recovery_task(
             Slot(),
-            problems=["empty", "question_mark_unwanted", "length_too_long"],
-            repair_round=3,
+            problems=["empty"],
             previous_candidate_text="Could this maybe be the same issue?",
         )
-        self.assertIn("constraint_first", repaired.planner_intent)
+        self.assertIn("same assigned discussion move", repaired.planner_intent)
         self.assertIn("non-empty ordinary comment", repaired.planner_intent)
-        self.assertIn("not a question", repaired.planner_intent)
         self.assertIn("Could this maybe be the same issue?", repaired.planner_intent)
-        self.assertIn("Could this maybe be the same issue?", repaired.must_not_do)
+        self.assertIn("Do not add facts.", repaired.must_not_do)
 
     def test_thread_memory_keeps_early_short_utterances_in_long_threads(self) -> None:
         comments = [
@@ -2398,73 +2410,6 @@ class GeneralizedCardTest(unittest.TestCase):
         self.assertTrue(problems[0].startswith("lexical_overlap_high:"))
         self.assertIn("target=0.03", problems[0])
         self.assertTrue(problems[1].startswith("semantic_overlap_high:"))
-        self.assertEqual(
-            bounded_retry_evidence(problems),
-            "shared=same route;nearest=Earlier lexical route || nearest=Earlier semantic route",
-        )
-
-    def test_repetition_only_failure_rewrites_the_same_slot(self) -> None:
-        module = SimpleNamespace(
-            previous_comment_texts=lambda comments: [
-                str(row.get("content") or "") for row in comments or []
-            ],
-            GENERALIZED_WRITER_DIVERSITY_CONFIG={"local_repair_rounds": 1},
-        )
-        calls = 0
-
-        def original(**_):
-            nonlocal calls
-            calls += 1
-            if calls == 2:
-                return {
-                    "skip": False,
-                    "text": "A used prime made more sense for that budget.",
-                    "raw": "A used prime made more sense for that budget.",
-                    "prompt": "repair prompt",
-                    "attempts": [
-                        {
-                            "attempt": 1,
-                            "text": "A used prime made more sense for that budget.",
-                            "problems": [],
-                        }
-                    ],
-                }
-            return {
-                "skip": True,
-                "attempts": [
-                    {
-                        "attempt": 1,
-                        "text": "Same narrow point in the same words.",
-                        "problems": ["lexical_overlap_high:test"],
-                    },
-                    {
-                        "attempt": 2,
-                        "text": "A used prime made more sense for that budget.",
-                        "problems": ["opening_reused"],
-                    },
-                ],
-                "raw": "last",
-                "prompt": "prompt",
-            }
-
-        wrapped = _writer_lifecycle_with_candidate_recovery(
-            module,
-            original,
-            calibration={
-                "prefix_mean_upper": {"tiny": 0.2},
-                "prefix_mean_median": {"tiny": 0.05},
-            },
-        )
-        result = wrapped(
-            previous_comments=[{"content": "Same narrow point in the same words."}]
-        )
-        self.assertFalse(result["skip"])
-        self.assertEqual(calls, 2)
-        self.assertEqual(result["candidate_selection"]["repair_round"], 1)
-        self.assertEqual(
-            result["candidate_selection"]["reason"],
-            "accepted_after_local_distribution_repair",
-        )
 
     def test_actor_conditioned_writer_does_not_resample_soft_distribution_failure(self) -> None:
         module = SimpleNamespace(
@@ -2558,7 +2503,7 @@ class GeneralizedCardTest(unittest.TestCase):
                 problems = ["exact_duplicate", "opening_reused"]
                 skip = True
             else:
-                self.assertIn("heat or battery?", call_kwargs["task"].must_not_do)
+                self.assertIn("heat or battery?", call_kwargs["task"].planner_intent)
                 text = "battery the actual limit here?"
                 problems = []
                 skip = False
@@ -2925,15 +2870,16 @@ class GeneralizedCardTest(unittest.TestCase):
             module.default_reply_delta("asks_narrow_followup"),
         )
 
-    def test_repetition_only_exhaustion_never_accepts_failed_candidate(self) -> None:
+    def test_distribution_diagnostic_is_audited_without_resampling(self) -> None:
         module = SimpleNamespace(
             previous_comment_texts=lambda _: [],
-            GENERALIZED_WRITER_DIVERSITY_CONFIG={"local_repair_rounds": 0},
+            GENERALIZED_WRITER_DIVERSITY_CONFIG={"hard_recovery_rounds": 2},
         )
         wrapped = _writer_lifecycle_with_candidate_recovery(
             module,
             lambda **_: {
                 "skip": True,
+                "text": "Same narrow point in the same words.",
                 "attempts": [
                     {
                         "attempt": 1,
@@ -2945,10 +2891,10 @@ class GeneralizedCardTest(unittest.TestCase):
             calibration={},
         )
         result = wrapped(previous_comments=[])
-        self.assertTrue(result["skip"])
+        self.assertFalse(result["skip"])
         self.assertEqual(
             result["candidate_selection"]["reason"],
-            "distribution_repair_exhausted",
+            "accepted_first_pass_distribution_diagnostics",
         )
 
     def test_candidate_recovery_never_bypasses_safety_failure(self) -> None:
@@ -2973,8 +2919,7 @@ class GeneralizedCardTest(unittest.TestCase):
         module = SimpleNamespace(
             previous_comment_texts=lambda _: [],
             GENERALIZED_WRITER_DIVERSITY_CONFIG={
-                "local_repair_rounds": 6,
-                "slot_retry_limit": 3,
+                "hard_recovery_rounds": 2,
             },
         )
         calls = 0
@@ -3018,7 +2963,7 @@ class GeneralizedCardTest(unittest.TestCase):
         self.assertEqual(calls, 2)
         self.assertEqual(
             result["candidate_selection"]["reason"],
-            "accepted_after_local_distribution_repair",
+            "accepted_after_hard_slot_completion",
         )
 
     def test_soft_distribution_findings_do_not_resample_writer(self) -> None:
@@ -3071,21 +3016,6 @@ class GeneralizedCardTest(unittest.TestCase):
         self.assertEqual(
             result["candidate_selection"]["reason"],
             "accepted_first_pass_distribution_diagnostics",
-        )
-
-    def test_unreachable_final_bleu_candidate_is_not_selected(self) -> None:
-        self.assertFalse(
-            distribution_candidate_is_reachable(
-                {
-                    "self_bleu": {
-                        "available": True,
-                        "planned_comment_count": 7,
-                        "processed_slot_count": 7,
-                        "proposed_mean": 0.13,
-                        "final_upper": 0.05,
-                    }
-                }
-            )
         )
 
     def test_degraded_retry_preserves_normalized_planner_slot(self) -> None:
@@ -3325,8 +3255,6 @@ class GeneralizedCardTest(unittest.TestCase):
         self.assertEqual(args.api_retries, 2)
         self.assertEqual(args.writer_retries, 0)
         self.assertEqual(args.writer_hard_recovery_rounds, 2)
-        self.assertEqual(args.writer_local_repair_rounds, 0)
-        self.assertEqual(args.writer_slot_retry_limit, 0)
         self.assertEqual(args.social_contract_coherence, "on")
         self.assertEqual(args.reply_sibling_visibility, "on")
         self.assertEqual(args.actor_conditioning, "none")
@@ -3654,7 +3582,6 @@ class GeneralizedCardTest(unittest.TestCase):
                 "reply_sibling_visibility",
                 "own_fact_license",
                 "speaker_identity",
-                "repetition_guard",
                 "actor_conditioning",
             }.issubset(script.RUN_EXPERIMENT_FIELDS)
         )
@@ -4998,25 +4925,22 @@ class GeneralizedCardTest(unittest.TestCase):
             "Do not replace it with a generic agreement, acknowledgement",
             rendered,
         )
-        self.assertIn(">> impolite:", rendered)
-        # The register must never be described as a fixed opening or sentence
-        # order: a shared entry route across same-register turns inflates
-        # within-thread lexical and semantic similarity.
-        self.assertIn("not of a fixed opening or sentence order", rendered)
+        self.assertIn("Tone target selector: impolite", rendered)
+        self.assertIn("Ordinary non-targeted profanity is allowed", rendered)
+        self.assertNotIn(">> impolite:", rendered)
         self.assertNotIn("Lead with the", rendered)
 
-    def test_writer_sees_its_register_and_the_one_it_drifts_into(self) -> None:
-        # Rendering all four definitions for every comment added three
-        # irrelevant blocks per call to a prompt whose rule mass is already the
-        # binding problem. The assigned register and its nearest confusion are
-        # what the contrast needs.
+    def test_writer_sees_one_copy_of_its_assigned_register(self) -> None:
+        # v80 repeated the assigned definition in both the selector and a
+        # contrast block. The second copy did not improve realization and
+        # competed with story and affect controls in the focused prompt.
         module = configure_generator_backend(load_generator_backend(), self.config)
         rendered = self._tone_writer_prompt(module, "polite")
-        self.assertIn(">> polite:", rendered)
-        self.assertIn("not somewhat_polite:", rendered)
+        self.assertIn("Tone target selector: polite", rendered)
+        self.assertNotIn(">> polite:", rendered)
+        self.assertNotIn("not somewhat_polite:", rendered)
         self.assertNotIn(">> impolite:", rendered)
         self.assertNotIn("not neutral:", rendered)
-        self.assertIn("This turn is polite", rendered)
 
     def test_polite_slot_keeps_the_first_person_frame_without_a_story(self) -> None:
         # The warm register is realized through personal appraisal, so a
@@ -5123,7 +5047,7 @@ class GeneralizedCardTest(unittest.TestCase):
         # slots half a fix is what made the v74 result impossible to attribute.
         self.assertIn("specification of what to say, never wording to", rendered)
         self.assertNotIn("Say this, and only this", rendered)
-        self.assertIn("Core metric guidance", rendered)
+        self.assertNotIn("Core metric guidance", rendered)
         self.assertNotIn("hard maximum:", rendered)
         self.assertNotIn("target length:", rendered.lower())
         self.assertIn("not a counted requirement", rendered.lower())
@@ -5596,9 +5520,9 @@ class FocusedWriterPromptTest(unittest.TestCase):
         # factual grounding, a hard failure
         self.assertIn("do not invent products", focused.lower())
         self.assertIn("only if it is visible above", focused)
-        # the register the metric measures, plus the one it collapses into
+        # the assigned register appears once rather than as a repeated contrast
         self.assertIn("Tone target selector: polite", focused)
-        self.assertIn(">> polite", focused)
+        self.assertNotIn(">> polite", focused)
         self.assertIn("first-person positive frame is required here", focused)
         self.assertIn("does not bar the interpersonal", focused)
         # story mode drives mean_story_probability, which currently passes
@@ -5618,14 +5542,15 @@ class FocusedWriterPromptTest(unittest.TestCase):
         ):
             self.assertNotIn(dropped, focused, dropped)
 
-    def test_full_mode_still_reproduces_the_v73_prompt_shape(self) -> None:
+    def test_full_mode_keeps_semantics_without_static_metric_boilerplate(self) -> None:
         full = self._prompt("full", "impolite")
         for kept in (
-            "Core metric guidance",
             "One-shot semantic difference contract",
             "Thread-level distribution pressure",
         ):
             self.assertIn(kept, full, kept)
+        self.assertNotIn("Core metric guidance", full)
+        self.assertNotIn("Core tone and discourse guidance", full)
 
 
 class WriterRouteLockTest(unittest.TestCase):
@@ -5899,18 +5824,6 @@ class OwnFactLicenseTest(unittest.TestCase):
             self.assertIn("your own gear and your own history", rule)
             self.assertIn("what is visible above", rule)
 
-    def test_low_info_metric_guidance_drops_the_qualitative_instruction(self) -> None:
-        from generalized_card import prompts
-
-        block = prompts._metric_guidance_block(self._backend("own"), self._task())
-        self.assertNotIn("Keep synthetic personal context qualitative", block)
-        self.assertIn("concrete specifics of your own kit", block)
-
-        off_block = prompts._metric_guidance_block(
-            self._backend("off"), self._task()
-        )
-        self.assertIn("Keep synthetic personal context qualitative", off_block)
-
     def test_system_prompt_sentence_is_empty_when_off(self) -> None:
         from generalized_card.writer_grounding import system_prompt_fact_sentence
 
@@ -5988,7 +5901,6 @@ class NamedConcretenessLicenseTest(unittest.TestCase):
 
         from generalized_card.writer_grounding import (
             NAMED_ENTITY_RULE,
-            metric_guidance_story_line,
             story_fact_rule,
             system_prompt_fact_sentence,
         )
@@ -5996,7 +5908,6 @@ class NamedConcretenessLicenseTest(unittest.TestCase):
         texts = [
             NAMED_ENTITY_RULE,
             system_prompt_fact_sentence(mode="named"),
-            metric_guidance_story_line(mode="named"),
             story_fact_rule(self._task(), has_domain_claim=False, mode="named"),
             story_fact_rule(
                 self._task(story_mode="specific_personal_story"),
@@ -6032,182 +5943,6 @@ class NamedConcretenessLicenseTest(unittest.TestCase):
         self.assertEqual(
             rules["off"], "Name a product, model, or number only if it is visible above."
         )
-
-
-class RepetitionGuardTest(unittest.TestCase):
-    """The frame that survived four releases, and the check that already sees it.
-
-    In a generated 186-comment thread the 4-gram "that's the part" appears in 12
-    comments (6.5%); in its matched real thread the most-shared 4-gram appears in
-    3 of 200 (1.5%) and there is essentially no shared phrasing. The same family
-    was measured at 20% of comments at policy v72 and 0 times in 39,265 real
-    tokens, and it survived the v73 rewording, the v74 prompt rebuild and the v75
-    route lock.
-
-    `template_phrase_reused` already fires on it -- 38 slots in v76a, 40 in v76b,
-    about 21% -- and is discarded: all 186 slots ran exactly one attempt and 85
-    were accepted through `accepted_first_pass_distribution_diagnostics`.
-    """
-
-    def tearDown(self) -> None:
-        from generalized_card.writer_quality import set_repetition_guard
-
-        set_repetition_guard("off")
-
-    def test_off_keeps_repetition_advisory(self) -> None:
-        from generalized_card.writer_quality import (
-            is_single_stage_diagnostic,
-            set_repetition_guard,
-        )
-
-        set_repetition_guard("off")
-        for problem in ("template_phrase_reused", "opener_family_reused", "opening_reused"):
-            self.assertTrue(is_single_stage_diagnostic(problem), problem)
-
-    def test_blocking_makes_repetition_force_another_attempt(self) -> None:
-        from generalized_card.writer_quality import (
-            is_single_stage_diagnostic,
-            set_repetition_guard,
-        )
-
-        set_repetition_guard("blocking")
-        for problem in ("template_phrase_reused", "opener_family_reused", "opening_reused"):
-            self.assertFalse(is_single_stage_diagnostic(problem), problem)
-
-    def test_blocking_leaves_the_unsatisfiable_checks_advisory(self) -> None:
-        """`missing_concrete_anchor` cannot be met while the prompt bans unlisted
-        entities, so promoting it would make the run fight itself."""
-
-        from generalized_card.writer_quality import (
-            is_single_stage_diagnostic,
-            set_repetition_guard,
-        )
-
-        set_repetition_guard("blocking")
-        for problem in (
-            "missing_concrete_anchor",
-            "long_helpful_too_generic",
-            "question_mark_unwanted",
-            "uncertainty_frame_unwanted",
-        ):
-            self.assertTrue(is_single_stage_diagnostic(problem), problem)
-
-    def test_promoted_problems_can_never_drop_a_comment(self) -> None:
-        """A code outside REPAIRABLE_WRITER_PROBLEMS returns skip: True at
-        backend.py:2022 and the slot is lost. This is the check that had to pass
-        before the guard could be promoted at all."""
-
-        from generalized_card.writer_quality import (
-            REPAIRABLE_WRITER_PROBLEMS,
-            REPETITION_DIAGNOSTIC_PROBLEMS,
-        )
-
-        self.assertTrue(REPETITION_DIAGNOSTIC_PROBLEMS <= REPAIRABLE_WRITER_PROBLEMS)
-
-    def test_the_guard_defaults_to_off(self) -> None:
-        from generalized_card import writer_quality
-
-        self.assertEqual(writer_quality.set_repetition_guard(""), "off")
-        self.assertEqual(writer_quality.set_repetition_guard("nonsense"), "off")
-
-    # --- what run v77 got wrong -------------------------------------------
-
-    def test_the_frame_is_detected_anywhere_in_the_comment(self) -> None:
-        """v77's failure. The core signature reads `tokens[:28]`, so of the 15
-        comments carrying the "that's the part" family in run v76a it saw 4; the
-        rest sat at token 20, 52, 62 and 80. The guard therefore forced 51 slots
-        to retry against other families and left the frame at 7.6%."""
-
-        from generalized_card.writer_quality import frame_families
-
-        head = "That's the part that matters here, honestly."
-        buried = (
-            "I went back and forth on this for a while and looked at the "
-            "comparisons people posted, and after all that I came away thinking "
-            "the ergonomics carried more weight than the sensor, that's the part "
-            "that decides it for most people."
-        )
-        self.assertIn("part_frame", frame_families(head))
-        self.assertIn("part_frame", frame_families(buried))
-        self.assertEqual(frame_families("Nothing stock about this sentence."), set())
-
-    def test_curly_apostrophes_do_not_hide_a_frame(self) -> None:
-        """74% of generated comments use curly typography."""
-
-        from generalized_card.writer_quality import frame_families
-
-        self.assertIn("part_frame", frame_families("That’s the part that matters."))
-
-    def test_the_frame_check_is_silent_while_the_guard_is_off(self) -> None:
-        from generalized_card.writer_quality import (
-            repeated_frame_problem,
-            set_repetition_guard,
-        )
-
-        earlier = ["that is the part that counts", "that is the part that stings"]
-        set_repetition_guard("off")
-        self.assertEqual(repeated_frame_problem("that is the part that hurts", earlier), "")
-        set_repetition_guard("blocking")
-        self.assertEqual(
-            repeated_frame_problem("that is the part that hurts", earlier),
-            "repeated_frame:part_frame",
-        )
-
-    def test_the_frame_check_allows_a_budget_before_firing(self) -> None:
-        from generalized_card.writer_quality import (
-            repeated_frame_problem,
-            set_repetition_guard,
-        )
-
-        set_repetition_guard("blocking")
-        self.assertEqual(
-            repeated_frame_problem("that is the part that hurts", ["that is the part that counts"]),
-            "",
-        )
-
-    def test_a_repeated_frame_can_be_repaired_not_dropped(self) -> None:
-        """The trap v77 fell into: a code outside REPAIRABLE_WRITER_PREFIXES
-        returns skip: True at backend.py:2022 and the slot is lost."""
-
-        from generalized_card.writer_quality import only_repairable_writer_problems
-
-        self.assertTrue(only_repairable_writer_problems(["repeated_frame:part_frame"]))
-
-    def test_style_only_exhaustion_keeps_the_comment(self) -> None:
-        """v77 lost 14 of 186 comments. Promoting the repetition codes made them
-        non-distribution failures, so no fallback candidate was ever registered
-        and exhaustion dropped the slot. A shortened thread also damages
-        `avg_depth` and `structural_virality`, two of the four passing metrics."""
-
-        from generalized_card.writer_quality import only_style_problems
-
-        self.assertTrue(only_style_problems(["repeated_frame:part_frame"]))
-        self.assertTrue(
-            only_style_problems(["template_phrase_reused", "opener_family_reused"])
-        )
-        self.assertTrue(only_style_problems(["repeated_frame:part_frame", "length_too_long"]))
-        # What attempt 1 would have kept, attempt 5 must also keep. v78 still
-        # lost 4 slots whose residue was purely advisory.
-        self.assertTrue(only_style_problems(["missing_concrete_anchor"]))
-        self.assertTrue(only_style_problems(["question_mark_unwanted"]))
-        self.assertTrue(
-            only_style_problems(["missing_concrete_anchor", "template_phrase_reused"])
-        )
-        # never over a real fault
-        self.assertFalse(only_style_problems(["repeated_frame:part_frame", "exact_duplicate"]))
-        self.assertFalse(only_style_problems(["empty"]))
-        self.assertFalse(only_style_problems(["parent_copy"]))
-        self.assertFalse(only_style_problems(["placeholder_literal"]))
-        self.assertFalse(only_style_problems([]))
-
-    def test_the_frame_patterns_carry_no_domain_vocabulary(self) -> None:
-        from generalized_card.writer_quality import REPEATED_FRAME_PATTERNS
-
-        blob = " ".join(REPEATED_FRAME_PATTERNS).lower() + " " + " ".join(
-            REPEATED_FRAME_PATTERNS.values()
-        ).lower()
-        for word in ("camera", "lens", "photo", "iso", "sensor", "product", "gear"):
-            self.assertNotIn(word, blob)
 
 
 class SpeakerRosterTest(unittest.TestCase):

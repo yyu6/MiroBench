@@ -33,6 +33,16 @@ SEMANTIC_CONTRACT_FIELDS = (
 )
 
 TOKEN_RE = re.compile(r"[a-z0-9]+(?:'[a-z]+)?", re.I)
+NON_SEMANTIC_DEFAULTS = frozenset(
+    {
+        "one seed-grounded local move",
+        "one local decision condition",
+        "one local thread detail",
+        "one specific detail",
+        "make one concrete local point",
+        "none",
+    }
+)
 
 
 def semantic_contract_values(task: Any) -> list[tuple[str, str]]:
@@ -43,6 +53,8 @@ def semantic_contract_values(task: Any) -> list[tuple[str, str]]:
         value = " ".join(str(getattr(task, field, "") or "").split())
         if field == "forbidden_decision_subjects":
             value = _compact_subject_exclusions(value)
+        if value.casefold() in NON_SEMANTIC_DEFAULTS:
+            continue
         if value:
             rows.append((label, value))
     return rows

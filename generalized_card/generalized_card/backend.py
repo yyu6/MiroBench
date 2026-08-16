@@ -58,7 +58,10 @@ from .length_policy import (
     writer_provider_token_budget,
     writer_safety_token_cap,
 )
-from .long_form_planning import enrich_development_plan_fields
+from .long_form_planning import (
+    enrich_development_plan_fields,
+    reconcile_development_plan_capacity,
+)
 from .planner_distribution import (
     apply_slot_distribution_schedule,
     build_slot_distribution_schedule,
@@ -67,7 +70,6 @@ from .planning_quality import (
     PlanSemanticIndex,
     evaluate_plan_batch,
     ledger_entry,
-    normalize_substantive_plan_shape,
 )
 from .persona_bridge import inject_persona_system
 from .surface_contract import (
@@ -78,20 +80,13 @@ from .surface_contract import (
 )
 from .task_distribution import rebalance_card_surfaces, restore_planner_task_contract
 from .writer_quality import (
-    LOCAL_REPAIR_STRATEGIES,
     annotate_writer_attempts,
     deduplicate_problems,
-    distribution_candidate_is_reachable,
-    distribution_candidate_rank,
     hard_realization_problems,
     is_single_stage_diagnostic,
     last_writer_problems,
-    only_distribution_writer_problems,
-    only_repairable_writer_problems,
-    only_style_problems,
-    set_repetition_guard,
     writer_distribution_problems,
-    writer_local_repair_task,
+    writer_hard_recovery_task,
 )
 from .writer_grounding import (
     license_mode,
@@ -358,30 +353,12 @@ def configure_generator_backend(
         os.environ.get("GENERALIZED_CARD_SPEAKER_IDENTITY", "off").strip().lower()
         or "off"
     )
-    # Ablation switch for the repetition guard. "off" keeps every prior release's
-    # behaviour, in which `template_phrase_reused` fires and is discarded.
-    # "blocking" lets it force another Writer attempt. See
-    # `writer_quality.REPETITION_DIAGNOSTIC_PROBLEMS` for the measurement.
-    module.GENERALIZED_REPETITION_GUARD = set_repetition_guard(
-        os.environ.get("GENERALIZED_CARD_REPETITION_GUARD", "off")
-    )
     module.GENERALIZED_ACTIVE_SPEAKER_ROSTER = EMPTY_ROSTER
     module.GENERALIZED_OPENER_TYPES = {}
     module.GENERALIZED_SELF_TEST_ACTIVE = False
-    # This bounds retries for one Writer slot, not the number of threads or
-    # comments that can be repaired.  A failed diversity candidate is never
-    # silently retained after this budget is exhausted.
+    # Distribution metrics are collection diagnostics. Only output that cannot
+    # be persisted receives bounded slot-local completion.
     module.GENERALIZED_WRITER_DIVERSITY_CONFIG = {
-        "local_repair_rounds": _env_int(
-            "GENERALIZED_CARD_WRITER_LOCAL_REPAIRS", 6, minimum=0
-        ),
-        # Candidate retries are bounded. A failed slot is escalated to the
-        # post-level recovery loop rather than spending without limit.
-        "slot_retry_limit": _env_int(
-            "GENERALIZED_CARD_WRITER_SLOT_RETRY_LIMIT", 6, minimum=0
-        ),
-        # Hard completion is independent of metric-driven candidate retries.
-        # It only replaces output that cannot be persisted at all.
         "hard_recovery_rounds": _env_int(
             "GENERALIZED_CARD_WRITER_HARD_RECOVERY_ROUNDS", 2, minimum=0
         ),
@@ -1661,6 +1638,26 @@ def _comment_planner_batch_with_history(
         reports.append(report_row)
         _append_plan_quality_report(report_row)
 
+        blocking_contract_codes = {
+            "social_contract_conflict",
+            "surface_density_conflict",
+            "surface_capacity_conflict",
+            "long_form_capacity",
+        }
+        unresolved_contracts = [
+            issue
+            for issue in best_report.repair_issues
+            if issue.code in blocking_contract_codes
+        ]
+        if unresolved_contracts:
+            summary = "; ".join(
+                f"S{issue.sample_id}:{issue.code}" for issue in unresolved_contracts
+            )
+            raise RuntimeError(
+                "Comment Planner exhausted targeted repairs with an internally "
+                f"unrealizable slot contract: {summary}"
+            )
+
         for sample_id, plan in sorted(best_plans.items()):
             ledger.append(ledger_entry(sample_id, plan))
             if getattr(module, "GENERALIZED_ACTOR_MODE", "") == MODE_DOMAIN_DERIVED:
@@ -1688,7 +1685,7 @@ def _canonicalize_plan_controls(
     perspective_ids: set[str],
     repair_attempt: int = 0,
 ) -> list[dict[str, Any]]:
-    """Repair enum-only Planner mistakes without changing semantic content.
+    """Repair deterministic metadata without changing semantic content.
 
     A branch ID such as B3 has no semantic meaning as a decision lens. Mapping
     an unknown lens to ``seed_local`` is the schema-defined fallback and avoids
@@ -1717,45 +1714,12 @@ def _canonicalize_plan_controls(
                     "repair_attempt": int(repair_attempt),
                 }
             )
-        affect = str(plan.get("affect_role") or "").strip().lower()
-        role = str(plan.get("speaker_role") or "").strip().lower()
-        function = str(plan.get("comment_function") or "").strip().lower()
-        if affect in {"gratitude", "relief"} and not (
-            role == "gratitude_reply" and function == "reaction"
-        ):
-            # Affect quotas are template controls, not permission to attach a
-            # thank-you label to a second substantive recommendation.
-            plan.update(
-                {
-                    "speaker_role": "gratitude_reply",
-                    "comment_function": "reaction",
-                    "evidence_mode": "none_assertion",
-                    "story_mode": "no_story",
-                    "voice": "grateful",
-                    "utterance_mode": "op_followup",
-                    "semantic_move": "briefly acknowledge the parent-local help without adding a factual claim",
-                    "decision_boundary": "social acknowledgement only",
-                    "reply_delta": "social close",
-                    "reply_delta_type": "social_close",
-                    "reply_novelty_anchor": "acknowledge the parent-local help without adding a factual claim",
-                    "avoid_repeating": "do not add a second factual claim or recommendation",
-                }
-            )
-            events.append(
-                {
-                    "sample_id": int(sample_id),
-                    "field": "social_contract",
-                    "reason": "affect_quota_requires_social_discourse_act",
-                    "repair_attempt": int(repair_attempt),
-                }
-            )
-        structural_event = normalize_substantive_plan_shape(plan)
+        structural_event = reconcile_development_plan_capacity(plan)
         if structural_event is not None:
             events.append(
                 {
                     "sample_id": int(sample_id),
                     "repair_attempt": int(repair_attempt),
-                    "reason": "anonymous_substantive_slot_requires_contextual_payload",
                     **structural_event,
                 }
             )
@@ -1965,13 +1929,10 @@ def _writer_lifecycle_with_candidate_recovery(
     *,
     calibration: dict[str, Any],
 ):
-    """Repair one Writer slot without accepting a failed diversity candidate.
+    """Audit one Writer result and recover only output that cannot be stored.
 
-    The CARD core retries Writer failures at the comment level.  This adapter
-    adds evaluator-aligned lexical/semantic checks after the native guards and
-    sends only the failing slot through local repairs. It never substitutes a
-    best failed candidate for an accepted one or silently drops a known,
-    repairable slot.
+    Distribution diagnostics never select, reject, or resample comments. That
+    keeps generation independent from the metrics used to evaluate it.
     """
 
     def generate_writer_text_with_guards(**kwargs: Any) -> dict[str, Any]:
@@ -2003,353 +1964,103 @@ def _writer_lifecycle_with_candidate_recovery(
         )
         native_problems = last_writer_problems(result)
         problems = deduplicate_problems([*native_problems, *dynamic_problems])
-        if not result.get("skip") and not problems:
-            result["distribution_diagnostics"] = diagnostics
-            _append_writer_diversity_audit(
-                diagnostics,
-                task=kwargs.get("task"),
-                selected_attempt=len(attempts),
-                recovered=False,
-                attempts=attempts,
-                final_status="accepted",
-            )
-            return result
-
+        if not text:
+            problems = deduplicate_problems([*problems, "empty"])
+        original_task = kwargs.get("task")
         recovery_config = dict(
             getattr(module, "GENERALIZED_WRITER_DIVERSITY_CONFIG", {}) or {}
         )
         hard_recovery_rounds = int(recovery_config.get("hard_recovery_rounds", 0))
-        original_task = kwargs.get("task")
-        hard_failures = hard_realization_problems(problems)
-        hard_recovery_attempt = 0
-        while hard_failures and hard_recovery_attempt < hard_recovery_rounds:
-            hard_recovery_attempt += 1
-            repaired_task = writer_local_repair_task(
+        recovery_round = 0
+        while hard_realization_problems(problems) and recovery_round < hard_recovery_rounds:
+            recovery_round += 1
+            recovery_task = writer_hard_recovery_task(
                 original_task,
                 problems=problems,
-                repair_round=hard_recovery_attempt,
                 previous_candidate_text=text,
             )
-            candidate = original(
-                **{
-                    **kwargs,
-                    "task": repaired_task,
-                    "writer_retries": 0,
-                }
+            result = original(
+                **{**kwargs, "task": recovery_task, "writer_retries": 0}
             )
             attempts.extend(
                 annotate_writer_attempts(
-                    candidate.get("attempts") or [],
+                    result.get("attempts") or [],
                     start_at=len(attempts),
-                    repair_round=hard_recovery_attempt,
+                    repair_round=recovery_round,
                 )
             )
-            candidate_text = str(candidate.get("text") or "").strip()
-            candidate_diagnostics, candidate_dynamic = writer_distribution_problems(
+            text = str(result.get("text") or "").strip()
+            diagnostics, dynamic_problems = writer_distribution_problems(
                 module,
-                text=candidate_text,
+                text=text,
                 previous_comments=kwargs.get("previous_comments"),
                 previous_texts=previous_texts,
                 calibration=calibration,
                 thread_target=thread_target,
-                task=repaired_task,
+                task=recovery_task,
             )
-            candidate_problems = deduplicate_problems(
-                [*last_writer_problems(candidate), *candidate_dynamic]
+            problems = deduplicate_problems(
+                [*last_writer_problems(result), *dynamic_problems]
             )
-            result = candidate
-            text = candidate_text
-            diagnostics = candidate_diagnostics
-            problems = candidate_problems
-            hard_failures = hard_realization_problems(candidate_problems)
-            if hard_failures:
-                continue
-            diagnostic_only = all(
-                is_single_stage_diagnostic(problem)
-                for problem in candidate_problems
-            )
-            if candidate_text and diagnostic_only:
-                accepted = {
-                    **candidate,
-                    "skip": False,
-                    "attempts": attempts,
-                    "distribution_diagnostics": candidate_diagnostics,
-                    "candidate_selection": {
-                        "reason": "accepted_after_hard_slot_completion",
-                        "hard_recovery_round": hard_recovery_attempt,
-                        "diagnostic_only_problems": candidate_problems,
-                    },
-                }
-                _append_writer_diversity_audit(
-                    candidate_diagnostics,
-                    task=repaired_task,
-                    selected_attempt=len(attempts),
-                    recovered=True,
-                    attempts=attempts,
-                    final_status="accepted_after_hard_slot_completion",
+            if not text:
+                problems = deduplicate_problems([*problems, "empty"])
+
+        diagnostic_only = all(is_single_stage_diagnostic(item) for item in problems)
+        if text and not hard_realization_problems(problems) and diagnostic_only:
+            status = (
+                "accepted_after_hard_slot_completion"
+                if recovery_round
+                else (
+                    "accepted_first_pass_distribution_diagnostics"
+                    if problems
+                    else "accepted"
                 )
-                return accepted
-        if (
-            text
-            and problems
-            and all(
-                is_single_stage_diagnostic(problem)
-                for problem in problems
             )
-        ):
-            acceptance_reason = "accepted_first_pass_distribution_diagnostics"
             accepted = {
                 **result,
                 "skip": False,
+                "attempts": attempts,
                 "distribution_diagnostics": diagnostics,
                 "candidate_selection": {
-                    "reason": acceptance_reason,
+                    "reason": status,
+                    "hard_recovery_round": recovery_round,
                     "diagnostic_only_problems": problems,
                 },
             }
             _append_writer_diversity_audit(
                 diagnostics,
-                task=kwargs.get("task"),
+                task=original_task,
                 selected_attempt=len(attempts),
-                recovered=False,
+                recovered=bool(recovery_round),
                 attempts=attempts,
-                final_status=acceptance_reason,
+                final_status=status,
             )
             return accepted
 
-        if not only_repairable_writer_problems(problems):
-            rejected = {
-                **result,
-                "skip": True,
-                "attempts": attempts,
-                "skip_reason": ",".join(problems),
-                "candidate_selection": {
-                    "reason": "unknown_guard_failure",
-                    "last_problems": problems,
-                },
-                "distribution_diagnostics": diagnostics,
-            }
-            _append_writer_diversity_audit(
-                diagnostics,
-                task=kwargs.get("task"),
-                selected_attempt=0,
-                recovered=False,
-                attempts=attempts,
-                final_status="rejected_unknown_guard_failure",
-            )
-            return rejected
-
-        repair_rounds = int(recovery_config.get("local_repair_rounds", 0))
-        configured_limit = int(recovery_config.get("slot_retry_limit", repair_rounds))
-        # Zero used to mean infinite and caused a single impossible prefix to
-        # consume thousands of calls. It now means one bounded pass over the
-        # configured strategy set.
-        slot_retry_limit = configured_limit if configured_limit > 0 else repair_rounds
-        last_result = result
-        last_diagnostics = diagnostics
-        last_problems = problems
-        best_distribution_candidate: tuple[
-            tuple[float, ...],
-            dict[str, Any],
-            dict[str, Any],
-            list[str],
-            int,
-        ] | None = None
-
-        def consider_distribution_candidate(
-            candidate_result: dict[str, Any],
-            candidate_diagnostics: dict[str, Any],
-            candidate_problems: list[str],
-            candidate_round: int,
-        ) -> None:
-            nonlocal best_distribution_candidate
-            if not str(candidate_result.get("text") or "").strip():
-                return
-            if not only_distribution_writer_problems(candidate_problems):
-                return
-            rank = distribution_candidate_rank(candidate_diagnostics)
-            row = (
-                rank,
-                candidate_result,
-                candidate_diagnostics,
-                candidate_problems,
-                candidate_round,
-            )
-            if best_distribution_candidate is None or rank < best_distribution_candidate[0]:
-                best_distribution_candidate = row
-
-        consider_distribution_candidate(result, diagnostics, problems, 0)
-        repair_attempt = 0
-        strategy_count = min(len(LOCAL_REPAIR_STRATEGIES), max(0, repair_rounds))
-        while strategy_count > 0 and repair_attempt < slot_retry_limit:
-            repair_attempt += 1
-            strategy_round = (repair_attempt - 1) % strategy_count + 1
-            repaired_task = writer_local_repair_task(
-                original_task,
-                problems=last_problems,
-                repair_round=strategy_round,
-                previous_candidate_text=str(last_result.get("text") or ""),
-            )
-            repaired_kwargs = {
-                **kwargs,
-                "task": repaired_task,
-                # One native attempt per local repair keeps the repair scoped
-                # to this slot rather than multiplying whole-thread retries.
-                "writer_retries": 0,
-            }
-            candidate = original(**repaired_kwargs)
-            candidate_attempts = annotate_writer_attempts(
-                candidate.get("attempts") or [],
-                start_at=len(attempts),
-                repair_round=repair_attempt,
-            )
-            attempts.extend(candidate_attempts)
-            candidate_text = str(candidate.get("text") or "").strip()
-            candidate_diagnostics, candidate_dynamic = writer_distribution_problems(
-                module,
-                text=candidate_text,
-                previous_comments=kwargs.get("previous_comments"),
-                previous_texts=previous_texts,
-                calibration=calibration,
-                thread_target=thread_target,
-                task=repaired_task,
-            )
-            candidate_problems = deduplicate_problems(
-                [*last_writer_problems(candidate), *candidate_dynamic]
-            )
-            last_result = candidate
-            last_diagnostics = candidate_diagnostics
-            last_problems = candidate_problems
-            consider_distribution_candidate(
-                candidate,
-                candidate_diagnostics,
-                candidate_problems,
-                repair_attempt,
-            )
-            if not candidate.get("skip") and not candidate_problems:
-                accepted = {
-                    **candidate,
-                    "attempts": attempts,
-                    "distribution_diagnostics": candidate_diagnostics,
-                    "candidate_selection": {
-                        "reason": "accepted_after_local_distribution_repair",
-                        "repair_round": repair_attempt,
-                        "strategy_round": strategy_round,
-                        "selected_attempt": len(attempts),
-                        "joint_target_distance": candidate_diagnostics.get(
-                            "joint_target_distance"
-                        ),
-                        "self_bleu": candidate_diagnostics.get("self_bleu"),
-                        "semantic_cosine": candidate_diagnostics.get(
-                            "semantic_cosine"
-                        ),
-                    },
-                }
-                _append_writer_diversity_audit(
-                    candidate_diagnostics,
-                    task=repaired_task,
-                    selected_attempt=len(attempts),
-                    recovered=True,
-                    attempts=attempts,
-                    final_status="accepted_after_local_distribution_repair",
-                )
-                return accepted
-            if not only_repairable_writer_problems(candidate_problems):
-                break
-            if repair_attempt == 1 or repair_attempt % 5 == 0:
-                summary = ",".join(
-                    item.split(":", 1)[0] for item in candidate_problems[:4]
-                )
-                print(
-                    f"[writer-slot-retry] task={getattr(original_task, 'local_task_id', 0)} "
-                    f"attempt={repair_attempt} problems={summary}",
-                    flush=True,
-                )
-
-        if best_distribution_candidate is not None:
-            (
-                _,
-                selected,
-                selected_diagnostics,
-                selected_problems,
-                selected_round,
-            ) = best_distribution_candidate
-            if distribution_candidate_is_reachable(selected_diagnostics):
-                accepted = {
-                    **selected,
-                    "skip": False,
-                    "attempts": attempts,
-                    "distribution_diagnostics": selected_diagnostics,
-                    "candidate_selection": {
-                        "reason": "accepted_best_bounded_distribution_candidate",
-                        "repair_round": selected_round,
-                        "candidate_budget": slot_retry_limit,
-                        "residual_distribution_problems": selected_problems,
-                        "joint_target_distance": selected_diagnostics.get(
-                            "joint_target_distance"
-                        ),
-                    },
-                }
-                _append_writer_diversity_audit(
-                    selected_diagnostics,
-                    task=original_task,
-                    selected_attempt=len(attempts),
-                    recovered=True,
-                    attempts=attempts,
-                    final_status="accepted_best_bounded_distribution_candidate",
-                )
-                return accepted
-
-        # Exhausting the retries on phrasing alone must not cost a comment. The
-        # repetition guard made these codes non-distribution failures, so the
-        # loop above never registered such a candidate as a fallback; v77 lost
-        # 14 of 186 slots that way, which also shortens the matched thread the
-        # structural metrics are scored against.
-        if str(last_result.get("text") or "").strip() and only_style_problems(
-            last_problems
-        ):
-            retained = {
-                **last_result,
-                "skip": False,
-                "attempts": attempts,
-                "distribution_diagnostics": last_diagnostics,
-                "candidate_selection": {
-                    "reason": "accepted_style_residual_after_repair",
-                    "repair_rounds_attempted": repair_attempt,
-                    "slot_retry_limit": slot_retry_limit,
-                    "residual_problems": last_problems,
-                },
-            }
-            _append_writer_diversity_audit(
-                last_diagnostics,
-                task=original_task,
-                selected_attempt=len(attempts),
-                recovered=True,
-                attempts=attempts,
-                final_status="accepted_style_residual_after_repair",
-            )
-            return retained
-
+        rejection_reason = (
+            "hard_recovery_exhausted"
+            if hard_realization_problems(problems)
+            else "unknown_guard_failure"
+        )
         rejected = {
-            **last_result,
+            **result,
             "skip": True,
             "attempts": attempts,
-            "skip_reason": ",".join(last_problems or problems),
+            "skip_reason": ",".join(problems),
             "candidate_selection": {
-                "reason": "distribution_repair_exhausted",
-                "repair_rounds_attempted": repair_attempt,
-                "slot_retry_limit": slot_retry_limit,
-                "last_problems": last_problems,
+                "reason": rejection_reason,
+                "hard_recovery_rounds_attempted": recovery_round,
+                "last_problems": problems,
             },
-            "distribution_diagnostics": last_diagnostics,
+            "distribution_diagnostics": diagnostics,
         }
         _append_writer_diversity_audit(
-            last_diagnostics,
+            diagnostics,
             task=original_task,
             selected_attempt=0,
             recovered=False,
             attempts=attempts,
-            final_status="rejected_distribution_repair_exhausted",
+            final_status=f"rejected_{rejection_reason}",
         )
         return rejected
 

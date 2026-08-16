@@ -58,7 +58,8 @@ AFFECT_INSTRUCTIONS = {
         "Thank them the way a person does in a thread: say what the help actually saved you or told you."
     ),
     "amusement": (
-        "Let it be funny. Land the aside and move on without explaining it."
+        "Let it be funny. A natural laughter token is allowed; land the aside "
+        "and move on without explaining it."
     ),
     "anger": "Let the frustration be plain, directed at the product, result, or process rather than at another commenter.",
     "annoyance": "Let the irritation show around the friction the task already has.",
@@ -492,14 +493,16 @@ TONE_DEFINITIONS = {
         "low-energy register, not warmth and not criticism."
     ),
     "neutral": (
-        "Flat and informational. State the fact, spec, reference, or correction "
-        "and stop. No positive evaluation, no complaint, no hedging stance, no "
-        "interpersonal move at all. Keep it short."
+        "Socially unmarked and direct. Do not soften for the other person and do "
+        "not attack them. The separately assigned affect may still show interest, "
+        "surprise, enthusiasm, or frustration toward the subject; neutral here "
+        "describes interpersonal register, not emotional flatness."
     ),
     "impolite": (
         "Blunt and dismissive toward the claim, product, result, or process. "
         "The negative judgement is unqualified rather than softened into a "
-        "balanced weighing. Do not use slurs, threats, or personal abuse, and do "
+        "balanced weighing. Ordinary non-targeted profanity is allowed when it "
+        "fits the reaction. Do not use slurs, threats, or personal abuse, and do "
         "not scold another commenter."
     ),
 }
