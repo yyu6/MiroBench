@@ -16,10 +16,11 @@ HISTORICAL_REVISION_POLICY_VERSIONS = {
     "generalized-card-revision-v6-dynamic-coverage-history-20260807",
 }
 GENERALIZED_V2_GENERATION_POLICY_VERSION = (
-    "generalized-card-v2-matched-text-semantic-isolation-v83-20260817"
+    "generalized-card-v2-complete-writer-coverage-v84-20260817"
 )
 HISTORICAL_GENERATION_POLICY_VERSIONS = {
     "generalized-v2": {
+        "generalized-card-v2-matched-text-semantic-isolation-v83-20260817",
         "generalized-card-v2-focused-discourse-contract-v82-20260817",
         "generalized-card-v2-joint-story-affect-handoff-v81-20260817",
         "generalized-card-v2-planner-contract-coherence-v80-20260816",
@@ -153,7 +154,7 @@ CORE_FILES = {
     ),
     "generator_adapter": (
         "generalized_card/generalized_card/backend.py",
-        "d3fed16b6df35e1f1582830818430a39f623de030ba7ec34154419a0c2b8b542",
+        "15a4a2564d04712b25b59ce55696e4974b97250918aa27a2aa9602c30efa37c4",
     ),
     # The grounding rules were smeared across eight places in the prompt adapter
     # before v76 and disagreed with each other. Pinned so the one definition
@@ -179,7 +180,7 @@ CORE_FILES = {
     ),
     "generation_runner": (
         "generalized_card/scripts/run_generate.py",
-        "b792f2515cbde770b080026e2392b29518045fcb721bccabd7473c8aaf740f20",
+        "a671442ed5d34af38be2b473345e897069edc6e29f3d0847e99ac4c048079ced",
     ),
     "domain_profile": (
         "generalized_card/generalized_card/domain_profile.py",
@@ -211,7 +212,7 @@ CORE_FILES = {
     ),
     "first_pass_policy": (
         "generalized_card/generalized_card/first_pass_policy.py",
-        "3b55eaf838c8b74b153e3eed86a90e5f22e02da239981f31941ac920ec04131c",
+        "5d29ed1e2fd6e48535f25d780c5854f792bbb4d09001dd8643535d5e877e4953",
     ),
     "domain_claim": (
         "generalized_card/generalized_card/domain_claim.py",
@@ -219,7 +220,7 @@ CORE_FILES = {
     ),
     "opener_profile": (
         "generalized_card/generalized_card/opener_profile.py",
-        "bc907859b6473e1c22ee063c3bdf93563e92188c8594f6c6e72f60cdd6558027",
+        "72914369ac04485a04a07712c13d2da78316d20bfd8a7d7b3af79a2e5000fb34",
     ),
     "entity_inventory": (
         "generalized_card/generalized_card/entity_inventory.py",
@@ -239,7 +240,7 @@ CORE_FILES = {
     ),
     "writer_quality": (
         "generalized_card/generalized_card/writer_quality.py",
-        "8488d1562ff1f7193f5701cfe75ee904134c88517850362f2421e08451252f3a",
+        "76cd22f4ad303fe54acc309f455fb38df6956da1827676648bf31c3709284e35",
     ),
     "semantic_realization": (
         "generalized_card/generalized_card/semantic_realization.py",
@@ -363,7 +364,7 @@ CORE_FILES = {
     ),
     "output_audit": (
         "generalized_card/generalized_card/audit.py",
-        "ea2a17a9260eebc842ec519e0c3e6a65f1bcf9bd665b3f4583a99cff7cc710f4",
+        "6475431efcb6bf56bba4ebe083a747bcae821533929e8cf038e6be653ae40928",
     ),
     "evaluation_runner": (
         "generalized_card/scripts/run_evaluate.py",

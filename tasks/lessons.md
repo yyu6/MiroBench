@@ -304,3 +304,24 @@ The same boundary audit must include indirect paths. In v81, matched-real words
 were not placed directly in the Prompt, yet a shared “surface” classifier turned
 `thanks` into a gratitude tone label that did reach the Prompt. A derived label
 is still data leakage when its source is semantic matched text.
+
+## 2026-08-17 — A high acceptance percentage is not structural completeness
+
+**What happened.** The v80 seed-8 artifact reported 186 generation records and
+185 comments. One hard Writer failure was persisted as `comment=null`, while the
+post wrapper printed `policy=persist_valid_comments`. The output audit used a
+minimum accepted-share threshold, so 185/186 = 99.46% could still proceed to
+evaluation even though the repository contract requires every matched slot.
+
+The immediate S99 failure was also internally deterministic: the scheduled quote
+opener required copying the exact visible parent line, while `parent_copy` was a
+hard failure. Retrying the same contradictory contract three times could not fix
+it.
+
+**How to apply.** Treat structural coverage as equality, never a quality
+percentage: planned slots = Writer records = generated comments = rendered tree
+nodes, with zero skips. Enforce it before persistence and again before evaluation.
+When a Prompt intentionally requests a syntax that resembles a guard violation,
+define a narrow, auditable exception for that syntax rather than disabling the
+guard. Here the exception requires an explicitly scheduled markdown excerpt and
+an independent response; unscheduled or whole-parent copying still fails.

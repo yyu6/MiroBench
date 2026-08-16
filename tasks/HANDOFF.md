@@ -822,8 +822,44 @@ prompt-rendering check in this session was built — no API, full corpus.
 # 11. RECOMMENDED FIRST MOVE
 
 The free checks are complete. Run the seed-8 command in §10 first, with social
-contract on and sibling visibility off. Judge it on Planner repair counts,
+contract and sibling visibility both on. Judge it on Planner repair counts,
 tone-label realization (59.2% baseline), and StorySeeker mass in `no_story`
 slots—not on an n=1 p-value. If the mechanism moves those diagnostics in the
-predicted direction, run the comparable ten-seed arm before enabling sibling
-visibility as a separate experiment.
+predicted direction, run the comparable ten-seed arm before adding a separate
+ablation.
+
+---
+
+# 12. 2026-08-17 v84 ADDENDUM — INCOMPLETE THREADS ARE NOT ARTIFACTS
+
+The paid v80 seed-8 run had 186 planned/recorded slots but only 185 rendered
+comments. S99 was skipped after three `parent_copy` failures. Its scheduled
+quote opener instructed the Writer to reproduce the exact parent line, so the
+Prompt and hard guard contradicted each other. This is current-path evidence,
+not a conclusion copied from an older implementation: the quote scheduler,
+Writer Prompt, hard guard, persistence wrapper, output audit, and evaluation
+gate were all traced in the present source.
+
+v84 makes two independent guarantees:
+
+1. A quote opener asks for a short exact markdown excerpt. `parent_copy` is
+   waived only for that scheduled form, only when the excerpt occurs in the
+   visible parent, is not the whole nontrivial parent, and is followed by an
+   independent reply. All ordinary copying remains unpersistable.
+2. Writer coverage must be exact before `generate_one_post_slot` can call
+   `replace_or_append_post`. If bounded same-slot recovery is exhausted, the
+   wrapper raises a recoverable error. With the default `post_retry_limit=1`,
+   the run fails visibly and writes no incomplete post; setting a larger limit
+   is an explicit whole-post cost choice. Output audit separately requires exact
+   record/rendered coverage for any artifact that has generation records.
+
+The old v80 artifact now audits as `evaluable=false`, with
+`accepted_share=0.9946`, `skipped_generation_slots=1`, and
+`complete_structural_coverage=false`. This is important because a missing
+comment changes the pair population for Self-BLEU, Self-BERTScore, and semantic
+cosine, can change length CV, and can remove a tree node that affects depth and
+virality. A 12-metric comparison is not meaningful until this invariant holds.
+
+Historical code is retained only for provenance and reproducibility. Do not use
+an older implementation as design authority; re-establish every causal claim
+from the current path, current scorer, and current artifact.

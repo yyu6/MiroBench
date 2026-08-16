@@ -45,7 +45,10 @@ OPENER_INSTRUCTIONS = {
     "discourse_marker": "Open with a short conversational connective before the point.",
     "polarity_token": "Open with a bare agreement or disagreement token, then the point.",
     "question": "Open with the question itself.",
-    "quote": "Open by quoting the exact visible line you are answering, then respond to it.",
+    "quote": (
+        "Open with a brief markdown quote of only the exact visible excerpt you "
+        "need, then respond in new wording. Do not quote the entire parent."
+    ),
     "conditional": "Open with the condition or circumstance, then what follows from it.",
     "address": "Open by addressing the person you are replying to.",
     "imperative": "Open with the action you are recommending.",

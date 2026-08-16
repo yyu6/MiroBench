@@ -17,9 +17,6 @@ def retain_explicitly_planned_tasks(
 
     planned_ids = {int(sample_id) for sample_id in comment_plans}
     retained = list(tasks)
-    retained_ids = {
-        int(getattr(task, "real_sample_id", 0) or 0) for task in retained
-    }
     structural_ids = {
         int(getattr(task, "real_sample_id", 0) or 0)
         for task in tasks
@@ -35,8 +32,7 @@ def retain_explicitly_planned_tasks(
         "structural_slots": len(structural_ids),
         "planner_returned_slots": len(planned_ids),
         "writer_task_slots": len(retained),
-        "omitted_structural_slot_ids": sorted(structural_ids - retained_ids),
-        "unused_plan_slot_ids": sorted(planned_ids - retained_ids),
+        "unused_plan_slot_ids": sorted(planned_ids - structural_ids),
         "policy": "require_full_planner_coverage_before_writer",
     }
 
@@ -49,10 +45,11 @@ def generation_coverage(
 
     skipped = [row for row in records if bool(row.get("skipped"))]
     generated = [row for row in records if isinstance(row.get("comment"), dict)]
+    failed = [row for row in records if not isinstance(row.get("comment"), dict)]
     failed_ids = sorted(
         {
             _safe_int((row.get("task") or {}).get("local_task_id"), 0)
-            for row in skipped
+            for row in failed
             if _safe_int((row.get("task") or {}).get("local_task_id"), 0) > 0
         }
     )
@@ -61,9 +58,14 @@ def generation_coverage(
         "writer_records": len(records),
         "generated_comments": len(generated),
         "skipped_comments": len(skipped),
+        "failed_records": len(failed),
         "failed_task_ids": failed_ids,
         "complete_share": round(len(generated) / max(1, len(tasks)), 6),
-        "complete": len(generated) == len(tasks) and not skipped,
+        "complete": (
+            len(records) == len(tasks) == len(generated)
+            and not failed
+            and not skipped
+        ),
         "policy": "require_complete_writer_coverage_for_evaluation",
     }
 

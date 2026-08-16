@@ -24,7 +24,7 @@ them onto the 12 metrics and onto the per-thread evidence in `HANDOFF.md` §4.3:
 Only `avg_depth` and `structural_virality` are genuinely matched per thread, and
 both are fixed by the matched sampler rather than won by generation.
 
-## v83 implementation status — 2026-08-17
+## v84 implementation status — 2026-08-17
 
 Detailed evidence and exact scorer definitions are in `tasks/v81-worklog.md`;
 the completion-audit fixes are recorded in `tasks/v82-worklog.md` and
@@ -58,6 +58,16 @@ comment: collection-level metrics are diagnostic in first-pass generation.
       inferred from evaluation wording. Delete the two dead frame regexes.
 - [x] Finish source-pin/version updates and full code review: 263 tests pass,
       backend self-test passes, and all 72 source pins have zero drift.
+- [x] Reject incomplete Writer coverage before persistence. The paid v80 seed-8
+      artifact contained 186 records but only 185 comments; it is now also
+      rejected by output audit even though its accepted share is 99.46%.
+- [x] Resolve the live quote-opener/parent-copy contradiction without weakening
+      the general copy guard: only a scheduled short markdown excerpt followed
+      by an independent reply is allowed.
+- [x] Delete the unreachable `omit_without_backfill` branch and correct run
+      metadata that still described obsolete omission/persistence behavior.
+- [x] Complete offline verification: 266 tests, Ruff, backend self-test, 72/72
+      pins, existing-artifact audit replay, and exact v84 `--prepare-only` pass.
 - [ ] Run one large n=1 content/contract diagnostic with no metric-driven
       retries, then run a multi-thread matched evaluation for formal p-values.
 

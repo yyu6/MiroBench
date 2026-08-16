@@ -146,7 +146,8 @@ def build_parser() -> argparse.ArgumentParser:
         default=True,
         help=(
             "Record unresolved plan-quality warnings after the configured plan "
-            "pass. Missing slots are audited and omitted without structural backfill."
+            "pass. Missing slots use bounded schema recovery and then fail before "
+            "Writer generation; they are never omitted."
         ),
     )
     parser.add_argument("--writer-max-tokens", type=int, default=260)
@@ -584,7 +585,7 @@ def main() -> None:
         "context_jitter_rate": args.context_jitter_rate,
         "plan_quality": {
             "repair_rounds": args.plan_quality_repairs,
-            "missing_slot_policy": "omit_without_backfill",
+            "missing_slot_policy": "bounded_schema_recovery_then_hard_fail",
             "comment_planner_batch_size": args.comment_planner_batch_size,
             "similarity_threshold": args.plan_similarity_threshold,
             "embedding_enabled": args.plan_embedding_quality,
@@ -618,7 +619,7 @@ def main() -> None:
             "recoverable_action": (
                 "retry_same_post"
                 if args.post_retry_limit > 1
-                else "persist_valid_slots_without_whole_post_retry"
+                else "fail_incomplete_post_without_persistence"
             ),
             "writer_hard_recovery_rounds": args.writer_hard_recovery_rounds,
         },

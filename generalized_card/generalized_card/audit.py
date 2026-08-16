@@ -59,8 +59,12 @@ def audit_generated_root(
     perspective_counts: Counter[str] = Counter()
     claim_counts: Counter[str] = Counter()
     recorded_slots = 0
+    recorded_posts = 0
     skipped_slots = 0
     backfilled_slots = 0
+    incomplete_recorded_posts = 0
+    incomplete_structural_posts = 0
+    incomplete_coverage_examples: list[dict[str, Any]] = []
     claim_collision_posts = 0
     semantic_collision_posts = 0
     semantic_colliding_comments = 0
@@ -105,10 +109,41 @@ def audit_generated_root(
                 for row in (post.get("generation_records") or [])
                 if isinstance(row, dict)
             ]
+            if records:
+                recorded_posts += 1
             recorded_slots += len(records)
-            skipped_slots += sum(bool(row.get("skipped")) for row in records)
+            post_skipped_slots = sum(bool(row.get("skipped")) for row in records)
+            skipped_slots += post_skipped_slots
             backfilled_slots += sum(row.get("backfilled_from") is not None for row in records)
-            planned_comments += int((post.get("thread_plan") or {}).get("target_comments") or len(rows))
+            post_planned_comments = int(
+                (post.get("thread_plan") or {}).get("target_comments") or len(rows)
+            )
+            planned_comments += post_planned_comments
+            generated_records = sum(
+                isinstance(row.get("comment"), dict) for row in records
+            )
+            rendered_coverage_complete = len(rows) == post_planned_comments
+            recorded_coverage_complete = not records or (
+                len(records) == post_planned_comments
+                and generated_records == len(records)
+                and post_skipped_slots == 0
+            )
+            if not rendered_coverage_complete or not recorded_coverage_complete:
+                incomplete_structural_posts += 1
+                if records:
+                    incomplete_recorded_posts += 1
+                if len(incomplete_coverage_examples) < 20:
+                    incomplete_coverage_examples.append(
+                        {
+                            "file": str(path),
+                            "post_id": post.get("post_id") or post.get("id"),
+                            "planned_comments": post_planned_comments,
+                            "rendered_comments": len(rows),
+                            "generation_records": len(records),
+                            "generated_records": generated_records,
+                            "skipped_records": post_skipped_slots,
+                        }
+                    )
             real_comments = _matched_real_comments(post, seeds=seeds, real_bank=real_bank)
             comments += len(rows)
             if not rows:
@@ -221,6 +256,7 @@ def audit_generated_root(
         and not prompt_leaks
         and not matched_real_overlap
         and not reference_viewpoint_overlap
+        and not incomplete_structural_posts
         and accepted_share >= min_accepted_share
         and unique_share >= min_unique_share
         and mean_words >= min_mean_words
@@ -243,6 +279,10 @@ def audit_generated_root(
         "unique_share": round(unique_share, 4),
         "mean_words": round(mean_words, 2),
         "recorded_generation_slots": recorded_slots,
+        "posts_with_generation_records": recorded_posts,
+        "incomplete_recorded_posts": incomplete_recorded_posts,
+        "incomplete_structural_posts": incomplete_structural_posts,
+        "complete_structural_coverage": incomplete_structural_posts == 0,
         "skipped_generation_slots": skipped_slots,
         "backfilled_generation_slots": backfilled_slots,
         "structural_slot_fidelity": round(comments / max(1, recorded_slots), 4),
@@ -280,6 +320,7 @@ def audit_generated_root(
         "matched_real_copy_examples": matched_real_overlap[:20],
         "reference_viewpoint_copy_examples": reference_viewpoint_overlap[:20],
         "duplicate_examples": duplicate_comments[:20],
+        "incomplete_coverage_examples": incomplete_coverage_examples,
         "plan_quality_examples": plan_quality_examples,
     }
 

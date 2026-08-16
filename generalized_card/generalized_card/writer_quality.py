@@ -6,6 +6,7 @@ receives matched evaluation comments or raw held-out reference text.
 
 from __future__ import annotations
 
+import re
 from dataclasses import replace
 from types import ModuleType
 from typing import Any
@@ -49,6 +50,8 @@ HARD_REALIZATION_PROBLEMS = frozenset(
     }
 )
 
+_QUOTE_TOKEN_RE = re.compile(r"[a-z0-9]+(?:'[a-z0-9]+)?", re.I)
+
 
 def is_single_stage_diagnostic(problem: str) -> bool:
     """Return whether a non-empty realization may be retained and audited."""
@@ -64,6 +67,50 @@ def hard_realization_problems(problems: list[str]) -> list[str]:
     """Return failures that cannot be persisted as a generated comment."""
 
     return [problem for problem in problems if problem in HARD_REALIZATION_PROBLEMS]
+
+
+def planned_quote_has_distinct_reply(text: str, parent_text: str) -> bool:
+    """Recognize a bounded parent excerpt followed by an independent reply.
+
+    This is a syntax exception for a Planner-assigned quote opener, not a
+    semantic copy detector.  The caller must still require the assigned
+    ``opener_type=quote`` before waiving ``parent_copy``.
+    """
+
+    quote_lines: list[str] = []
+    reply_lines: list[str] = []
+    for line in str(text or "").splitlines():
+        stripped = line.strip()
+        if stripped.startswith(">"):
+            quote_lines.append(stripped.lstrip("> "))
+        elif stripped:
+            reply_lines.append(stripped)
+    if not quote_lines or not reply_lines:
+        return False
+
+    quoted = _QUOTE_TOKEN_RE.findall(" ".join(quote_lines).lower())
+    parent = _QUOTE_TOKEN_RE.findall(str(parent_text or "").lower())
+    reply = _QUOTE_TOKEN_RE.findall(" ".join(reply_lines).lower())
+    if not quoted or len(quoted) > 24 or len(reply) < 6:
+        return False
+    if len(parent) > 5 and quoted == parent:
+        return False
+    if not _contains_token_sequence(parent, quoted):
+        return False
+    # A quote plus a second full copy of the parent is still a parent copy.
+    if len(parent) >= 6 and _contains_token_sequence(reply, parent):
+        return False
+    return True
+
+
+def _contains_token_sequence(haystack: list[str], needle: list[str]) -> bool:
+    if not needle or len(needle) > len(haystack):
+        return False
+    width = len(needle)
+    return any(
+        haystack[index : index + width] == needle
+        for index in range(len(haystack) - width + 1)
+    )
 
 
 def writer_distribution_problems(

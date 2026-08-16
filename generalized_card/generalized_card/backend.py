@@ -32,7 +32,11 @@ from .branch_routing import (
 from .data import find_matched_real_thread, load_real_thread_bank
 from .core_contract import GENERALIZED_V2_ENGINE_FILES, verify_core_contract
 from .domain import DomainConfig, REPO_ROOT
-from .domain_claim import enrich_domain_claim_fields, normalized_domain_claim
+from .domain_claim import (
+    claim_for_task,
+    enrich_domain_claim_fields,
+    normalized_domain_claim,
+)
 from .opener_profile import OPENER_TYPES
 from .domain_profile import load_domain_profile
 from .first_pass_policy import generation_coverage, retain_explicitly_planned_tasks
@@ -86,6 +90,7 @@ from .writer_quality import (
     hard_realization_problems,
     is_single_stage_diagnostic,
     last_writer_problems,
+    planned_quote_has_distinct_reply,
     writer_distribution_problems,
     writer_hard_recovery_task,
 )
@@ -777,15 +782,6 @@ def configure_generator_backend(
             revised.append(apply_planner_distribution_fields(restored, plan))
         retained, coverage = retain_explicitly_planned_tasks(revised, comment_plans)
         module.GENERALIZED_ACTIVE_PLANNER_COVERAGE = coverage
-        if coverage["omitted_structural_slot_ids"]:
-            print(
-                "[planner-coverage] "
-                f"structural={coverage['structural_slots']} "
-                f"planned={coverage['planner_returned_slots']} "
-                f"writer_tasks={coverage['writer_task_slots']} "
-                "policy=omit_without_backfill",
-                flush=True,
-            )
         return retained
 
     module.expand_matched_real_sample_to_tasks = expand_tasks
@@ -1971,6 +1967,14 @@ def _writer_lifecycle_with_candidate_recovery(
         if not text:
             problems = deduplicate_problems([*problems, "empty"])
         original_task = kwargs.get("task")
+        problems, quote_parent_copy_waived = _waive_planned_quote_parent_copy(
+            module,
+            problems=problems,
+            text=text,
+            seed_post=kwargs.get("seed_post"),
+            task=original_task,
+            parent_comment=kwargs.get("parent_comment"),
+        )
         recovery_config = dict(
             getattr(module, "GENERALIZED_WRITER_DIVERSITY_CONFIG", {}) or {}
         )
@@ -2008,6 +2012,15 @@ def _writer_lifecycle_with_candidate_recovery(
             )
             if not text:
                 problems = deduplicate_problems([*problems, "empty"])
+            problems, quote_waived = _waive_planned_quote_parent_copy(
+                module,
+                problems=problems,
+                text=text,
+                seed_post=kwargs.get("seed_post"),
+                task=original_task,
+                parent_comment=kwargs.get("parent_comment"),
+            )
+            quote_parent_copy_waived = quote_parent_copy_waived or quote_waived
 
         diagnostic_only = all(is_single_stage_diagnostic(item) for item in problems)
         if text and not hard_realization_problems(problems) and diagnostic_only:
@@ -2029,6 +2042,7 @@ def _writer_lifecycle_with_candidate_recovery(
                     "reason": status,
                     "hard_recovery_round": recovery_round,
                     "diagnostic_only_problems": problems,
+                    "planned_quote_parent_copy_waived": quote_parent_copy_waived,
                 },
             }
             _append_writer_diversity_audit(
@@ -2038,6 +2052,7 @@ def _writer_lifecycle_with_candidate_recovery(
                 recovered=bool(recovery_round),
                 attempts=attempts,
                 final_status=status,
+                planned_quote_parent_copy_waived=quote_parent_copy_waived,
             )
             return accepted
 
@@ -2065,10 +2080,35 @@ def _writer_lifecycle_with_candidate_recovery(
             recovered=False,
             attempts=attempts,
             final_status=f"rejected_{rejection_reason}",
+            planned_quote_parent_copy_waived=quote_parent_copy_waived,
         )
         return rejected
 
     return generate_writer_text_with_guards
+
+
+def _waive_planned_quote_parent_copy(
+    module: ModuleType,
+    *,
+    problems: list[str],
+    text: str,
+    seed_post: Any,
+    task: Any,
+    parent_comment: dict[str, Any] | None,
+) -> tuple[list[str], bool]:
+    """Allow only a short, explicitly planned quote plus a distinct response."""
+
+    if "parent_copy" not in problems or task is None or not parent_comment:
+        return problems, False
+    opener = claim_for_task(
+        getattr(module, "GENERALIZED_OPENER_TYPES", {}) or {},
+        seed_post,
+        task,
+    )
+    parent_text = str(parent_comment.get("content") or "")
+    if opener != "quote" or not planned_quote_has_distinct_reply(text, parent_text):
+        return problems, False
+    return [problem for problem in problems if problem != "parent_copy"], True
 
 
 def _substantive_safe_degraded_task():
@@ -2089,7 +2129,7 @@ def _substantive_safe_degraded_task():
 
 
 def _finalize_post_generation(module: ModuleType, original: Any):
-    """Annotate valid first-pass output while preserving audited omissions."""
+    """Require exact Writer coverage before a post can reach persistence."""
 
     def generate_post_from_tasks(**kwargs: Any) -> dict[str, Any]:
         tasks = list(kwargs.get("tasks") or [])
@@ -2097,7 +2137,6 @@ def _finalize_post_generation(module: ModuleType, original: Any):
         records = [
             row for row in (post.get("generation_records") or []) if isinstance(row, dict)
         ]
-        skipped = [row for row in records if bool(row.get("skipped"))]
         coverage = generation_coverage(tasks, records)
         planner_coverage = dict(
             getattr(module, "GENERALIZED_ACTIVE_PLANNER_COVERAGE", {}) or {}
@@ -2106,14 +2145,21 @@ def _finalize_post_generation(module: ModuleType, original: Any):
             **planner_coverage,
             **coverage,
         }
-        if skipped:
+        if not coverage["complete"]:
             print(
                 "[writer-coverage] "
                 f"tasks={coverage['writer_task_slots']} "
                 f"generated={coverage['generated_comments']} "
                 f"skipped={coverage['skipped_comments']} "
-                "policy=persist_valid_comments",
+                "policy=reject_incomplete_post",
                 flush=True,
+            )
+            raise RuntimeError(
+                "Writer did not realize every matched structural slot; incomplete "
+                "post was not persisted: "
+                f"generated={coverage['generated_comments']}/"
+                f"{coverage['writer_task_slots']} "
+                f"failed_task_ids={coverage['failed_task_ids']}"
             )
         if getattr(module, "GENERALIZED_ACTOR_MODE", "") == MODE_DOMAIN_DERIVED:
             seed_post = kwargs.get("seed_post")
@@ -2166,6 +2212,7 @@ def _append_writer_diversity_audit(
     recovered: bool,
     attempts: list[dict[str, Any]],
     final_status: str,
+    planned_quote_parent_copy_waived: bool,
 ) -> None:
     raw_path = os.environ.get(
         "GENERALIZED_CARD_WRITER_DIVERSITY_AUDIT_JSONL", ""
@@ -2177,6 +2224,9 @@ def _append_writer_diversity_audit(
         "selected_attempt": int(selected_attempt),
         "recovered_after_exhaustion": bool(recovered),
         "final_status": final_status,
+        "planned_quote_parent_copy_waived": bool(
+            planned_quote_parent_copy_waived
+        ),
         "attempts": [
             {
                 "attempt": _safe_int(row.get("attempt"), 0),

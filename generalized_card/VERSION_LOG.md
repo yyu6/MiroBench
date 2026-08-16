@@ -59,6 +59,52 @@ Before any run that changes behavior:
 
 ---
 
+## v84 — complete Writer coverage and quote-safe recovery (2026-08-17)
+
+Policy ID: `generalized-card-v2-complete-writer-coverage-v84-20260817`.
+
+A full replay of the paid v80 seed-8 artifact found 186 Writer tasks but only
+185 rendered comments. S99 exhausted three attempts because its scheduled quote
+opener said to copy the exact parent line while `parent_copy` correctly remained
+a hard failure. The generator then persisted the shortened thread under
+`policy=persist_valid_comments`, and the output audit still considered its
+99.46% accepted share evaluable. That silently changes comment-pair metrics and
+the sampled tree, so it is not a valid matched-thread artifact.
+
+Changed:
+
+- Quote openers now request a short exact markdown excerpt, never the whole
+  parent. A `parent_copy` finding is waived only when the Planner explicitly
+  assigned `opener_type=quote`, the quoted tokens are a strict excerpt of the
+  visible parent, and at least six words of independent reply remain. Ordinary
+  parent copying is still a hard failure.
+- Exact Writer coverage is now a pre-persistence invariant. After bounded
+  same-slot hard recovery, any missing, skipped, or malformed record raises a
+  recoverable post error; the incomplete post never reaches atomic persistence.
+  The default still performs no hidden whole-post retry or additional API spend.
+- Output audit independently rejects any recorded post whose planned slots,
+  generation records, generated records, and rendered comments are not exactly
+  equal, even when `accepted_share` exceeds the old threshold. This also protects
+  evaluation of historical artifacts.
+- Removed the unreachable `omit_without_backfill` branch and corrected run
+  metadata to describe bounded Planner schema recovery followed by hard failure.
+
+Expected metric effect before a paid run: no direct claim of better content
+quality. The required effect is measurement validity: every evaluated generated
+thread has exactly the matched structural slots, so Self-BLEU, Self-BERTScore,
+semantic cosine, length CV, depth, virality, story, emotion, and tone metrics are
+not computed on a silently shortened sample. The shorter quote instruction may
+also reduce parent-line repetition, but that is a secondary hypothesis.
+
+Offline acceptance so far: the updated audit rejects the existing v80 artifact
+at 185/186 despite `accepted_share=0.9946`; focused coverage/quote/audit tests
+pass; the complete suite passes 266 tests; Ruff and the camera-product backend
+self-test pass; all 72 source pins agree. The exact formal seed-8 command passed
+`--prepare-only` under the v84 policy with no API calls, and its temporary run
+directory was moved to Trash so the formal tag remains available.
+
+---
+
 ## v83 — matched-text semantic isolation (2026-08-17)
 
 Policy ID: `generalized-card-v2-matched-text-semantic-isolation-v83-20260817`.

@@ -134,6 +134,7 @@ from generalized_card.text_metric_reviser import (
 )
 from generalized_card.writer_quality import (
     parse_distribution_problems,
+    planned_quote_has_distinct_reply,
     substantive_length_floor_problem,
     writer_hard_recovery_task,
 )
@@ -3078,7 +3079,7 @@ class GeneralizedCardTest(unittest.TestCase):
         self.assertEqual(repaired.payload_type, "low_info_reaction")
         self.assertEqual(repaired.comment_function, "reaction")
 
-    def test_incomplete_post_is_persisted_with_coverage_audit(self) -> None:
+    def test_incomplete_post_is_rejected_before_persistence(self) -> None:
         wrapped = _finalize_post_generation(
             SimpleNamespace(GENERALIZED_ACTOR_MODE="none"),
             lambda **_: {
@@ -3089,11 +3090,83 @@ class GeneralizedCardTest(unittest.TestCase):
                 "thread_plan": {},
             },
         )
-        post = wrapped(tasks=[object(), object()])
-        coverage = post["thread_plan"]["first_pass_coverage"]
-        self.assertEqual(coverage["generated_comments"], 1)
-        self.assertEqual(coverage["skipped_comments"], 1)
-        self.assertEqual(coverage["failed_task_ids"], [2])
+        with self.assertRaisesRegex(
+            RuntimeError,
+            r"incomplete post was not persisted.*failed_task_ids=\[2\]",
+        ):
+            wrapped(tasks=[object(), object()])
+
+    def test_planned_quote_excerpt_can_survive_parent_copy_guard(self) -> None:
+        parent = "Buffer lag after switching modes is the ugly part of this workflow."
+        text = (
+            "> switching modes\n\n"
+            "That is where autofocus consistency mattered more for my use, "
+            "because the subject kept moving while the files cleared."
+        )
+        task = SimpleNamespace(
+            local_task_id=2,
+            real_sample_id=2,
+            real_word_count=25,
+            real_surface_shape="ordinary_turn",
+            payload_type="soft_helpful",
+            comment_function="explanation_analysis",
+            utterance_mode="local_answer_with_context",
+        )
+        seed = SimpleNamespace(source_raw_post_id="seed-quote")
+        module = SimpleNamespace(
+            previous_comment_texts=lambda _: [],
+            lexical_overlap_problem=lambda **_: "",
+            GENERALIZED_PLAN_SEMANTIC_INDEX=None,
+            GENERALIZED_ACTIVE_DISTRIBUTION_TARGET={},
+            GENERALIZED_WRITER_DIVERSITY_CONFIG={"hard_recovery_rounds": 0},
+            GENERALIZED_OPENER_TYPES={("seed-quote", 2): "quote"},
+            GENERALIZED_ACTOR_MODE="none",
+        )
+
+        def original(**_):
+            return {
+                "skip": True,
+                "text": text,
+                "raw": text,
+                "prompt": "prompt",
+                "attempts": [
+                    {"attempt": 1, "text": text, "problems": ["parent_copy"]}
+                ],
+            }
+
+        with tempfile.TemporaryDirectory() as directory, patch.dict(
+            os.environ,
+            {
+                "GENERALIZED_CARD_WRITER_DIVERSITY_AUDIT_JSONL": str(
+                    Path(directory) / "writer.jsonl"
+                )
+            },
+        ):
+            result = _writer_lifecycle_with_candidate_recovery(
+                module,
+                original,
+                calibration={},
+            )(
+                seed_post=seed,
+                task=task,
+                parent_comment={"content": parent},
+                previous_comments=[],
+            )
+            audit_row = json.loads(
+                (Path(directory) / "writer.jsonl").read_text(encoding="utf-8")
+            )
+        self.assertFalse(result["skip"])
+        self.assertTrue(
+            result["candidate_selection"]["planned_quote_parent_copy_waived"]
+        )
+        self.assertTrue(audit_row["planned_quote_parent_copy_waived"])
+        self.assertTrue(planned_quote_has_distinct_reply(text, parent))
+        self.assertFalse(
+            planned_quote_has_distinct_reply(
+                f"> {parent}\n\nThat is still a separate reply with enough words.",
+                parent,
+            )
+        )
 
     def test_complete_post_persists_domain_actor_provenance(self) -> None:
         seed = SimpleNamespace(source_raw_post_id="seed-actor", index=0, title="seed")
@@ -3975,6 +4048,76 @@ class GeneralizedCardTest(unittest.TestCase):
             self.assertTrue(report["evaluable"])
             self.assertFalse(report["healthy"])
             self.assertEqual(report["overconcentrated_perspective_posts"], 1)
+
+    def test_output_audit_rejects_one_skipped_slot_even_at_high_acceptance(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            run_dir = Path(directory) / "run_00_sampled_reddit"
+            run_dir.mkdir(parents=True)
+            comments = [
+                {
+                    "comment_id": index,
+                    "content": (
+                        f"Distinct camera observation number {index} stays locally grounded."
+                    ),
+                    "replies": [],
+                }
+                for index in range(1, 101)
+            ]
+            records = [
+                {"comment": comment, "skipped": False} for comment in comments
+            ] + [{"comment": None, "skipped": True}]
+            (run_dir / "discussion.json").write_text(
+                json.dumps(
+                    {
+                        "posts": [
+                            {
+                                "post_id": "p1",
+                                "thread_plan": {"target_comments": 101},
+                                "comments": comments,
+                                "generation_records": records,
+                            }
+                        ]
+                    }
+                ),
+                encoding="utf-8",
+            )
+            report = audit_generated_root(Path(directory))
+            self.assertGreater(report["accepted_share"], 0.98)
+            self.assertFalse(report["evaluable"])
+            self.assertFalse(report["complete_structural_coverage"])
+            self.assertEqual(report["incomplete_recorded_posts"], 1)
+            self.assertEqual(report["incomplete_structural_posts"], 1)
+            self.assertEqual(report["skipped_generation_slots"], 1)
+
+    def test_output_audit_rejects_legacy_target_count_mismatch(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            run_dir = Path(directory) / "run_00_sampled_reddit"
+            run_dir.mkdir(parents=True)
+            (run_dir / "discussion.json").write_text(
+                json.dumps(
+                    {
+                        "posts": [
+                            {
+                                "post_id": "legacy",
+                                "thread_plan": {"target_comments": 2},
+                                "comments": [
+                                    {
+                                        "comment_id": 1,
+                                        "content": "One complete legacy camera comment remains here.",
+                                        "replies": [],
+                                    }
+                                ],
+                            }
+                        ]
+                    }
+                ),
+                encoding="utf-8",
+            )
+            report = audit_generated_root(Path(directory))
+            self.assertFalse(report["evaluable"])
+            self.assertFalse(report["complete_structural_coverage"])
+            self.assertEqual(report["incomplete_recorded_posts"], 0)
+            self.assertEqual(report["incomplete_structural_posts"], 1)
 
     def test_output_audit_rejects_missing_direct_reply_contract(self) -> None:
         rows = [
