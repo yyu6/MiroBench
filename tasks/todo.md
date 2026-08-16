@@ -1,210 +1,212 @@
-# Plan: fix what blocks a real-looking discussion (post-v74)
+# Plan — make the discussion read like people talking
 
-Diagnosis is in `tasks/generator_audit.md` under "v74 content audit" and
-"v75 root-cause audit". Every number below is measured from the v74 run
-artifacts, not inferred.
+Rewritten 2026-08-16. Read `tasks/HANDOFF.md` first; this file is the task list,
+that file is the evidence.
 
-## The finding that reorders everything
+The previous version of this file ordered work by **where a code defect lives**.
+This one orders it by **which measured gap it moves**, because three of the last
+four paid runs fixed a real code defect and moved no metric. The old P0–P6 items
+are all still listed, at the bottom, marked kept / struck / demoted, so nothing is
+silently dropped.
 
-The validation layer measures, logs, and then accepts. It is not a tuning
-problem; it is off.
+## The ordering principle
 
-- `--writer-retries 0` -> 1 model call per slot. 519/522 slots ran exactly 1 attempt.
-- 231/522 slots (44.3%) were accepted through
-  `accepted_first_pass_distribution_diagnostics` on a **known-failing** attempt.
-- Only 4 codes can block anything: `exact_duplicate`, `parent_copy`,
-  `placeholder_literal`, `planner_skeleton_residue`. The other 16 are advisory.
-- `recovered_after_exhaustion` is False 522/522.
-- `joint_target_distance` is **worse** for the accept-anyway class (0.667) than
-  the clean class (0.498): the path systematically keeps the worse candidate.
-- Two validators that fire and are ignored map straight onto the failing
-  metrics: `missing_concrete_anchor` 84x (concreteness), `lexical_overlap_high`
-  79x (self_bleu).
+The user's target is how people talk, decomposed into four dimensions. Mapping
+them onto the 12 metrics and onto the per-thread evidence in `HANDOFF.md` §4.3:
 
-So: turn on what exists before adding anything new.
+| dimension | metrics | per-thread state |
+|---|---|---|
+| 1 semantic dispersed | `semantic_mean_cosine` | 5/10 threads within 20% — passes by cancellation |
+| 2 low lexical overlap | `self_bleu_4`, `self_bertscore` | bleu 2/10; bertscore 10/10 within 20% but fails on a uniform +0.03 |
+| 3 stories in first person | `mean_story_probability` | 3/10; overshoots 1.5–2.4× |
+| 4 tone and emotion varied | `emotion_entropy`, polite/impolite/neutral, `hard_disagree_rate` | 0–3/10 on every one |
 
-## P0 - turn the validation layer on  (no new concepts)
+Only `avg_depth` and `structural_virality` are genuinely matched per thread, and
+both are fixed by the matched sampler rather than won by generation.
 
-- [ ] The Writer's distribution target carries only two metrics
-      (`run_generate.py:488`): `["self_bleu_4", "semantic_mean_cosine"]`, and the
-      policy field next to it says `"single Writer realization; distribution
-      metrics are diagnostic"`. `polite_rate`, `impolite_rate`, `neutral_rate`,
-      `emotion_entropy`, `mean_story_probability` and `length_cv` are dropped at
-      the Writer boundary. Six of the twelve metrics have no writer-side control
-      loop at all - which is the structural reason they are the ones failing.
-- [ ] Raise `--writer-retries` above 0 and re-check cost per thread.
-- [ ] Move `lexical_overlap_high`, `missing_concrete_anchor`, and
-      `template_phrase_reused` out of `SINGLE_STAGE_DIAGNOSTIC_PROBLEMS`
-      (`writer_quality.py:28-40`) so they can force a retry.
-- [ ] Fix B4: `shape_writer_text_for_task` (`run_sampled_reddit_generator.py:1997-1999`)
-      picks `micro_options[local_task_id % 6]` deterministically, and repair never
-      changes `local_task_id`, so `exact_duplicate` recurs forever. Two comments
-      were permanently lost in v74 and it poisons `self_bleu` (similarity 0.9999998).
+---
+
+## A — realize the assigned register   [dimension 4, largest gap]
+
+**Why.** Measured on v79, 184 aligned slots: assigned `impolite` realizes at 93%,
+assigned `polite` at 13% with 59% collapsing into impolite. Overall realization
+59.2%. One register per thread explains polite ↓, impolite ↑, hard_disagree ↑ and
+emotion_entropy ↓ **simultaneously** — these are not four problems.
+
+**What the data already eliminated** (do not redo):
+- *Not length.* Real polite is 52% of 60–120 word comments; generated is 6%, and
+  0% above 120 words. Generated long comments are 73–88% impolite.
+- *Not insufficient agreement.* Real comments carry more negation than generated
+  (41.5% vs 31.2%) and are still scored polite.
+
+**What differs** (seed 8, real vs v79): warm markers 14.0% vs 11.8%; emotional
+endpoint 2.5% vs 1.1%; hedge 18.0% vs 12.9%; decision-framing nouns 0.5% vs 4.3%.
+
+**Tasks**
+- [ ] Delete the hedge and thank-you prohibitions from `TONE_DEFINITIONS["polite"]`
+      (`generation_distribution.py:480-489`). The block above the table records
+      the prediction that motivated them — collapse into `somewhat_polite`. The
+      measured collapse is into **impolite**, so the prediction was wrong.
+- [ ] License the emotional endpoint explicitly ("I love it", "never looked
+      back"): real 2.5%, generated 1.1%.
+- [ ] Cut decision-framing nouns from the Writer's own rule text — 8.6× overshoot,
+      and the Writer is substituting analysis for feeling.
+- [ ] Check `_affect_instruction` rotation (`generation_distribution.py:448-470`)
+      still reaches the prompt on the focused path; the affect rewrite was
+      bundled into v73 and never cleanly attributed.
+- [ ] Ablation flag; `off` byte-identical; recorded in `run_config`.
+- [ ] **Offline gate before any paid run:** re-render the v79 prompts from
+      `generation_records.json[].task` and confirm the banned surfaces are gone
+      and the new ones present.
+- [ ] **Judge the run on tone realization rate (59.2% baseline) and
+      `emotion_entropy`**, not on p-values. n=1 has no p-value.
+
+---
+
+## B — the global typographic signature   [dimension 2, free]
+
+**Why.** `self_bertscore` has never passed in any version, but §4.3 shows it is
+not a large error: 6.9% mean relative error, 10/10 threads inside ±20%, failing
+only because all ten overshoot by a near-uniform +0.03. That is the signature of
+one global constant, not of content.
+
+The strongest available candidate: **every generated comment carries the same
+typography.** Of comments containing an apostrophe, 100% of generated use only
+curly `’`, against 17.6% of real. Curly overall: generated 72–74%, real 11–13%.
+Straight apostrophe inside a word: real 51%, generated 0%. Verified
+model-emitted, identical before and after `gpt_cleanup`.
+
+**Tasks**
+- [ ] Deterministic normalisation step, mixing straight and curly at a rate
+      measured from the domain's real corpus rather than emitting 100% curly.
+- [ ] Verify offline over the whole corpus — zero API.
+- [ ] **Re-score `self_bertscore` on an existing run** by re-cleaning and
+      re-scoring. No regeneration needed, so the hypothesis costs **$0** to test.
+      If the offset does not move, the hypothesis is dead and D's speaker
+      identity becomes the next candidate.
+- [ ] Consider the other surface gaps in the same pass, all measured on seed 8:
+      paragraph breaks real 25.5% vs generated 2.8%; no final punctuation 24.0%
+      vs 6.6%; URLs 4.5% vs 0%; `lol/haha` 3.0% vs 0%; ALLCAPS 19.5% vs 7.7%.
+      These are prompt-level, not post-processing, so keep them separate from the
+      typography change if attribution matters.
+
+---
+
+## C — bring `mean_story_probability` down   [dimension 3]
+
+**Why.** Generated overshoots real by 1.5–2.4× on seed 8. Real per-thread
+`story_rate` ranges 0.000 (seeds 0, 3, 5) to 0.275 (seed 6), mean 0.110. The
+previous handoff said the allocation was correct and should not change; that was
+wrong.
+
+**Before changing allocation**, note how the metric is computed: StorySeeker's
+P(story) averaged over **every** comment in the thread, not only story slots. So
+non-story comments drifting narrative would produce the same overshoot. The
+per-thread story count already scales from the matched template
+(`generation_distribution.py:129-134`).
+
+**Tasks**
+- [ ] Score story-mode slots and no-story slots separately in an existing run to
+      see which class carries the overshoot. Offline, the per-comment
+      probabilities are already in `cleaned/*/storyseeker_results.json`.
+- [ ] Only then decide between allocation and realization.
+- [ ] Keep first person for the slots that do tell stories: 32 of 32 real
+      experience narratives are first person.
+
+---
+
+## D — the two arms that are built but never run
+
+- [ ] **`--own-fact-license named`.** Domain-neutral concreteness: name things
+      and give quantities. Gated on `substantive_slot` (≥25 real words, not
+      micro/short). Targets the two signals that separate real from generated on
+      all ten threads — quantities 12.3×, proper nouns 1.85×. Note the sibling
+      arm `own` was refuted; see HANDOFF §6.6.
+- [ ] **`--speaker-identity matched`.** 265 named participants over 559 real
+      comments, 2.11 each, 68% of comment mass from someone who speaks more than
+      once; the generator gives every comment a distinct one-shot author. Targets
+      `self_bertscore` through voice variation. **Run B first** — it may explain
+      the same metric for free.
+
+---
+
+## E — reply-planner sibling visibility   [was P3, kept]
+
+- [ ] Every depth ≥ 1 batch takes `render_direct_reply_planner_prompt`
+      (`prompts.py:336-381` routes there; batches never mix depths, so all of
+      them qualify). It renders no prior-plan ledger, no coverage summary, no
+      sibling contract, no branch goal, no R# rows. Each row sees only its
+      parent. Verified on seed 2: depths 3–8 are single-slot batches and tasks
+      38–45 are nine near-duplicate moves that could not see each other.
+- [ ] Add a real `semantic_move` similarity check. The whole-plan
+      `semantic_collision` check cannot catch it: `plan_similarity` is a Jaccard
+      over all `SEMANTIC_FIELDS` including `development_plan`, so a ~20-token
+      move is ~10% of the token mass; `_dependent_variation` exempts parent–child
+      pairs; and a caught collision only warns.
+- [ ] Fix the beat-budget contradiction: `prompts.py:733-738` says one beat per
+      35 words capped at 16, `long_form_planning.py:29-30` demands
+      `round(words/21) - 1`. For a 300-word slot: 8–9 versus 13. The surplus
+      beats are also what dilutes the collision detector.
+
+---
+
+## F — turn on more of the validation layer   [was P0, demoted]
+
+Kept because the layer really is mostly advisory, but demoted because the one
+piece switched on this session worked mechanically and moved no metric.
+
+- [ ] `--writer-retries` is 0, so 519/522 slots ran one attempt in v74 and
+      231/522 were accepted through
+      `accepted_first_pass_distribution_diagnostics` on a known-failing candidate.
+      The repetition guard now raises retries for its own codes only.
+- [ ] `missing_concrete_anchor` (22–50 firings per seed-8 run) stays advisory on
+      purpose: it cannot be satisfied while the prompt bans unlisted entities.
+      **Sequencing constraint: it only becomes promotable after D's `named` arm.**
 - [ ] Add `empty` to the core blocking set (`run_sampled_reddit_generator.py:1688-1707`).
+      It survives only because `writer_quality` short-circuits on falsy text.
 
-## P1 - plan-echo guard  (the v73/v74 regression)
+**Corrected from the previous version of this file:** "add the 6 missing metrics
+to the Writer's distribution target (`run_generate.py:488`)" — that line is a
+record written into `run_config.json`, not a wire. The real target is hard-coded
+in `generation_diversity.build_thread_distribution_target:40-43`, it only ranks
+candidates, and with one candidate it does nothing. Five of the six also need
+transformer classifiers inside the generation process. See HANDOFF §6.1.
 
-- [ ] New validator: first-sentence 4-gram overlap against `task.semantic_move`.
-      Register in `HARD_REALIZATION_PROBLEMS`, keep it OUT of the single-stage set.
-- [ ] Remove `task.semantic_move` from `has_task_anchor_overlap`'s anchor source
-      (`writer_validation.py:247-274`). Today copying the plan verbatim *satisfies*
-      the anchor check, so echo is rewarded.
-- [ ] Extend the audit `evaluable`/`healthy` gate (`audit.py:217-228`) to see plan
-      echo. A thread of pure echoes currently scores healthy.
+---
 
-## P2 - stop the Planner writing the comment  [DONE, v75 change 1]
+## Struck, with the measurement that struck them
 
-Shipped ahead of P0/P1 because tracing the acceptance path showed an echo
-validator added first would have dropped up to 130 slots: a code outside
-`REPAIRABLE_WRITER_PROBLEMS` returns `skip: True` at `backend.py:2022`, repair
-exhaustion does the same at `backend.py:2205`, and the only channel that reaches
-the focused prompt (`retry_note`) is empty under `--writer-retries 0`. Details in
-`tasks/generator_audit.md`, "v75 change 1".
+- **Plan-echo validator (was P1).** Echo is at 0.0% since v75 and the route lock
+  that achieved it moved no metric. Nothing left to guard.
+- **Length for polite slots (was in P5).** Real polite is length-driven; the
+  effect does not transfer. Generated 60–120 word comments are 6% polite, 120+ are
+  0%. HANDOFF §5.2.
+- **`LENGTH_BUCKET_BOUNDS["very_long"] = (120, 220)` (was in P6).** Read only by
+  `_retry_note_for_problems`, i.e. on a retry, which under `--writer-retries 0`
+  almost never happened. Dead. `length_cv` is within 3.5% of real anyway.
+- **`--own-fact-license own` (was P4a).** Refuted in v76b: 0.05 → 0.02
+  specification tokens per comment against a real 0.54. 68% of real
+  spec-carrying comments have no first-person frame, so the gate was wrong.
+  Retained only as a reproducible arm.
+- **B7 "`allocate_story_and_affect` is a no-op auditor".** Not a bug; it is a
+  deliberate auditor, documented at `generation_distribution.py:108-114`.
 
-- [x] `--writer-route-lock own_words|say_only`; `say_only` reproduces v74.
-- [x] Route lock no longer says "Say this, and only this".
-- [x] Reply schema no longer demands a finished sentence; scale clause kept.
-- [x] `_realization_rule` restores the counterweight, on the focused **and**
-      low-info paths (106/522 slots take the latter).
-- [x] `micro_reaction` pool widened and text-keyed: two v74 comments were being
-      dropped by a deterministic collision.
-- [x] 224 tests pass; the route lock previously had zero test coverage.
-- [ ] Constrain the planner's register further: `prompts.py:694-695` addresses the
-      planner as the participant ("what happened when you personally used X"), and
-      `reply_planning.py:71` defines `corroborating_datapoint` as "your own
-      concrete experience". These are why 19.3% of moves open with "I". Left for
-      after measuring change 1, so the two are separable.
+## Still open from the old audit, unranked
 
-## P2-old - original notes
+`B2` beat-budget contradiction (now in E), `B3` `allow_first_person_frame`
+computed and never read by `_substitution_rule`, `B4` `tone_overlay_*` read in
+five places and assigned nowhere, `B5` `_delexicalize_tone_examples` matches
+strings that no longer exist, `B6` `constructive_polite_helpful` unreachable,
+`B8` template overrides swallowed by `apply_slot_distribution_schedule`, `B9`
+dead validations, `B11` `perspective_id` repair impossible but budgeted, `B12`
+repair feedback references a block the reply prompt lacks, `B13`
+`--writer-hard-recovery-rounds` never exercised.
 
-- [ ] `reply_planning.py:255` asks for "a full sentence stating what this reply
-      asserts - not a bare noun phrase". Root schema (`prompts.py:572`) asks for
-      "one concrete but non-verbatim action". The two contradict; reply slots echo
-      at 25.1%, root slots at 6.4%. Align reply on the root wording.
-- [ ] Delete `"- Say this, and only this: "` (`prompts.py:2266`).
-- [ ] Restore the semantic-difference contract dropped by `_focused_writer_prompt`.
-      It was cut because "no metric depended on it" - no metric measures plan echo.
-- [ ] Constrain the planner's register: no first person, no finished sentence.
-      19.3% of 522 moves begin with "I". Source: `prompts.py:694-695` addresses the
-      planner as the participant ("what happened when you personally used X"),
-      and `reply_planning.py:71` defines `corroborating_datapoint` as "your own
-      concrete experience".
-
-## P3 - give the reply planner sibling visibility, and dedupe moves
-
-- [ ] Every depth>=1 batch takes `render_direct_reply_planner_prompt`, which
-      renders no prior-plan ledger, no coverage summary, no sibling contract, no
-      branch goal, no R# rows. Each row sees only its parent. Verified on seed 2:
-      depths 3,4,5,6,7,8 are single-slot batches, and tasks 38-45 are the nine
-      near-duplicate moves.
-- [ ] Add a `semantic_move` similarity check. There is none anywhere today; the
-      whole-plan `semantic_collision` check is diluted to ~10% token mass by
-      `development_plan`, exempts parent-child pairs via `_dependent_variation`,
-      and when it does fire it only warns (`backend.py:1531-1557`).
-- [ ] Fix the beat-budget contradiction: prompt says one beat per 35 words capped
-      at 16 (`prompts.py:733-738`); validator demands `round(words/21)-1`
-      (`long_form_planning.py:29-30`). A 300-word slot: prompt 8-9, validator 13.
-      Following the prompt guarantees failure, and the surplus beats are what
-      dilute the collision detector.
-
-## P4 - persistent speaker identity  (story + concreteness + emotion)
-
-- [ ] There is no speaker identity today: `speaker_role` is a 10-value enum,
-      `persona_conditioning=none`, and gear is a 4-item shortlist keyed by
-      `slot_index` with no continuity.
-- [ ] Split the grounding rule, which currently conflates two different things:
-      facts about the seed product must stay grounded; facts about **my own kit
-      and history** should be free to invent. Today both are banned
-      (`prompts.py:113-115`, `prompts.py:1286`), which is why 57 story slots
-      contain a spec 5% of the time, a time marker 2%, a place 4%.
-
-## P5 - polite: undo a design decision the data refuted
-
-`generation_distribution.py:473-478` records the reasoning behind the current
-`polite` definition:
-
-> A softener-and-hedge reading of "polite" produced the tentative register the
-> classifier scores as somewhat_polite, so the distinction is made explicit here
-> rather than left to the model's prior.
-
-So `TONE_DEFINITIONS["polite"]` (`generation_distribution.py:480-489`) now says
-*"Do not hedge the positive judgement into a maybe, and do not use
-customer-service phrasing or a template thank-you"*, and
-`prompts.py:2791-2793` repeats it.
-
-The prediction was that polite would collapse into `somewhat_polite`. The
-measured collapse is into **impolite**, 65% of its slots, with polite realized
-7.4% (recorded at `prompts.py:1243-1244`). Stripping hedges, thank-yous and
-customer-service phrasing does not yield warmth; it yields flat assertion, which
-polite-guard scores as impolite. The hypothesis was wrong, so the rule should go.
-
-- [ ] Restore hedges and gratitude as licensed polite surfaces.
-- [ ] Give polite slots real length. `TONE_SCOPE_HINTS`' own comment
-      (`generation_distribution.py:508-511`) records that the classifier's polite
-      class is length-dependent - 52% of 60-120 word comments, 64% above 120 -
-      and generated comments have a median of 33 words. This lever is measured
-      and currently unused. Interacts with the 220-word ceiling in P6.
-- [ ] tone_target is scheduled independently of `semantic_move`: 4.8% of slots are
-      `impolite` over a helpful move. Assigned polite 26.2% -> realized 8%.
-- [ ] `_substitution_rule` (`prompts.py:2726`) decides the first-person ban from
-      `tone_target` alone and never reads `task.allow_first_person_frame`, which
-      `run_sampled_reddit_generator.py:1022` already computed from the matched real
-      comment. 84 slots (16.1%) are banned from a frame their real counterpart used.
-- [ ] Dead tone machinery to remove or wire up: `tone_overlay_slot` /
-      `tone_overlay_instruction` are read in five places and assigned nowhere;
-      `_delexicalize_tone_examples` (`backend.py:1086-1106`) matches three strings
-      that no longer exist in `TONE_DEFINITIONS`; `tone_target ==
-      "constructive_polite_helpful"` (`run_sampled_reddit_generator.py:1299-1308`)
-      can never be true since `TONE_CLASSES` has four other values.
-
-## P5b - story: the allocation is right, the instruction is not
-
-Correcting an over-claim: `specific_personal_story` is 44 of 79 story slots
-(56%), not rare. The per-thread story **count** is scaled from the matched real
-thread's own `story_rate`, which is why `mean_story_probability` passes. The
-allocation is correct and should not change.
-
-The content is the problem. `_story_instruction`
-(`generation_distribution.py:323-329`) asks for "a setting, an action, a small
-friction or change, and a local reaction", and `_story_fact_safety_rule`
-(`prompts.py:2707-2714`) then forbids "a product, specification, price,
-measurement, date, policy, link, diagnosis, or externally checkable outcome" -
-i.e. every category that would make those specific. The system prompt
-(`prompts.py:1448`) adds "realize only a **qualitative** synthetic context".
-
-- [ ] "I've done that in a packed room before" is the *compliant* output. Measured
-      across 57 story slots: 5% contain a spec, 2% a time marker, 4% a place.
-- [ ] Fix by scoping the ban to claims about the seed product (see P4), not to the
-      speaker's own history. A consequence is currently banned as an "externally
-      checkable outcome"; a story without a consequence is not a story.
-
-## P6 - surface realism and the unconverted path  (lowest priority per user)
-
-- [ ] Convert `_low_info_writer_prompt`: 106/522 slots, mean 15,468 chars, dumps
-      11 internal labels, produced 9-word outputs.
-- [ ] `LENGTH_BUCKET_BOUNDS["very_long"] = (120, 220)`
-      (`engine/vocabulary.py:195`). Real threads exceed 220 words in 10/10.
-- [ ] Drop the single-paragraph instruction (39.1% of prompts) - real
-      multi-paragraph rate is 32.8%, generated 3.1%.
-- [ ] Straight apostrophes: 68.1% of generated comments carry curly typography vs
-      10.9% real; model-emitted, identical pre/post cleanup.
-
-## Rejected: two writers supervising each other
-
-Not as an LLM critique loop. Two reasons. Cost doubles, and critique-driven
-revision pushes text toward the balanced, hedged, "on the other hand" register,
-which is the exact failure mode. The stronger reason: the system already has 20
-validators and ignores 18 of them. Adding an LLM to generate more advice that
-gets ignored is the wrong move.
-
-The useful form of "supervision" is a deterministic discriminator on the checks
-above - free, reproducible, aimed at the measured gaps. If an LLM goes in the
-loop later, the shape is re-voicing a draft as a different speaker with a
-different kit, with no critique language in the prompt, measured on its own.
+None of these has a measured link to a failing metric. Fix them when touching the
+surrounding code, not as a campaign.
 
 ## Sequencing
 
-P0+P1 first: one variable each, both cheap, both independently attributable.
-P2+P3 next as one change with an ablation flag. P4-P6 after, one at a time.
-Every step keeps a `--writer-prompt`/`--domain-claim` style flag so the previous
-version stays reproducible.
+B (free, testable with no generation) → A (largest gap, offline-gated) → C
+(diagnose before changing) → D → E. One mechanism per paid run, prediction
+written down first, `off` byte-identical, dry-run before handing over a command.

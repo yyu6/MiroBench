@@ -1,5 +1,48 @@
 # Lessons
 
+## 2026-08-16 — Read the scorer before theorising about the metric
+
+**What happened.** I told the user the story allocation was correct and should
+not be changed, on the strength of `mean_story_probability` showing PASS at n=10.
+The user asked me to check how the metric is actually computed. It is
+StorySeeker's P(story) **averaged over every comment in the thread** — and per
+thread the generator overshoots real by 1.5–2.4×. It "passes" only because four
+threads overshoot and six undershoot, and MWU/KS are unpaired tests that cannot
+see per-thread mismatch.
+
+Extending the check to all twelve metrics changed the picture of the whole
+project. Of the four metrics that pass, only `avg_depth` and
+`structural_virality` match per thread, and both are fixed by the matched sampler
+rather than won by generation. Meanwhile `self_bertscore`, which has never passed
+in any version, has a 6.9% mean relative error with 10/10 threads inside ±20% —
+it fails on a *uniform* +0.03 offset, which is the signature of one global
+constant, not of content quality. Four releases had been aimed at it as if it
+were a content problem.
+
+**How to apply.** Before designing anything for a metric, open its scorer and
+write down what it computes and how it aggregates. Then check whether a passing
+metric passes *per thread* or by cancellation, and whether a failing metric fails
+by magnitude or by consistent sign. Those two questions change what the fix even
+looks like.
+
+## 2026-08-16 — Never approximate a metric that is cheap to compute
+
+**What happened.** I wrote my own self-BLEU (mean of each comment's maximum
+4-gram overlap against any other) to judge four runs, and reported that a change
+had closed 87% of the `self_bleu_4` gap. `score_thread_self_bleu.py` is pure
+n-gram, needs no model, and runs in seconds. Run against it, the same change
+moved the metric from 0.03775 to 0.03750 — nothing. I had to retract the claim in
+the next message.
+
+This is the mirror of the earlier "measured pooled comment-level CV instead of
+per-thread `length_cv`" error: same failure, opposite direction. A statistic that
+*resembles* a metric can differ from it by an order of magnitude in effect size,
+because aggregation is most of what a metric is.
+
+**How to apply.** Use the real scorer. If it needs a model and that is too slow
+for an inner loop, say explicitly that the proxy is a proxy, and never state a
+headline result from it.
+
 ## 2026-08-13 — Read the whole related codebase before diagnosing, not slices of it
 
 **What happened.** Diagnosing why generated long comments came out at ~0.72x their
