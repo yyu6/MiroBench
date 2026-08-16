@@ -208,7 +208,7 @@ def build_parser() -> argparse.ArgumentParser:
             "Which Writer prompt to render. 'full' reproduces policy v73 exactly "
             "(mean 22,249 characters). 'focused' keeps only the controls a "
             "currently-passing metric depends on; a rebuilt-thread A/B held "
-            "within-thread diversity at 13% of that size."
+            "within-thread diversity at 13%% of that size."
         ),
     )
     parser.add_argument(
@@ -220,8 +220,26 @@ def build_parser() -> argparse.ArgumentParser:
             "reproduces v73/v74 on both sides: the Writer is told 'Say this, and "
             "only this', and the reply planner is asked for 'a full sentence'. "
             "'own_words' states the move as a specification to realize. Plan echo "
-            "(longest shared word run >= 12) measured 0.4% in v67, 10.2% in v73 "
-            "and 25.8% in v74."
+            "(longest shared word run >= 12) measured 0.4%% in v67, 10.2%% in v73 "
+            "and 25.8%% in v74."
+        ),
+    )
+    parser.add_argument(
+        "--social-contract-coherence",
+        choices=("off", "on"),
+        default="on",
+        help=(
+            "Whether v80 rejects contradictory story/tone plans and renders the "
+            "matching Writer guidance. 'off' reproduces pre-v80 behavior."
+        ),
+    )
+    parser.add_argument(
+        "--reply-sibling-visibility",
+        choices=("off", "on"),
+        default="on",
+        help=(
+            "Whether direct-reply planning sees sibling delta coverage. 'off' "
+            "reproduces the pre-v80 parent-only rows."
         ),
     )
     parser.add_argument(
@@ -236,13 +254,13 @@ def build_parser() -> argparse.ArgumentParser:
             "personal experiences') in the same prompt for 170 of 522 slots. "
             "'own' licenses the speaker's own kit and history on first-person "
             "slots; run v76b measured it and it moved concreteness the WRONG way "
-            "(0.05 -> 0.02 per comment against a real 0.54), because 68% of real "
+            "(0.05 -> 0.02 per comment against a real 0.54), because 68%% of real "
             "concrete comments have no first-person frame -- kept only as a "
             "reproducible arm. 'named' is the correction: on any slot with room, "
             "license naming and quantifying, stated without domain vocabulary, "
             "since quantities (real 12.3x generated) and proper nouns (1.85x) are "
             "the two gaps that hold on all ten matched threads while "
-            "specification-shaped tokens range from 0% to 64% of comments by "
+            "specification-shaped tokens range from 0%% to 64%% of comments by "
             "thread."
         ),
     )
@@ -256,9 +274,9 @@ def build_parser() -> argparse.ArgumentParser:
             "fires and is discarded. Measured in v76, 38 of 186 slots raised it "
             "and all 186 ran exactly one attempt, 85 of them accepted through "
             "accepted_first_pass_distribution_diagnostics on a known-failing "
-            "candidate. The frame it catches -- \"that's the part\" -- is in 6.5% "
+            "candidate. The frame it catches -- \"that's the part\" -- is in 6.5%% "
             "of generated comments against a real thread whose most-shared "
-            "4-gram reaches 1.5%. Needs --writer-slot-retry-limit >= 1 to have "
+            "4-gram reaches 1.5%%. Needs --writer-slot-retry-limit >= 1 to have "
             "anywhere to retry."
         ),
     )
@@ -273,7 +291,7 @@ def build_parser() -> argparse.ArgumentParser:
             "'matched' recovers the matched real thread's own participation "
             "structure through real_sample_id -- across the ten evaluation seeds "
             "that is 265 named participants over 559 comments, 2.11 each, with "
-            "68% of comment mass from someone who speaks more than once. Each "
+            "68%% of comment mass from someone who speaks more than once. Each "
             "participant then keeps one kit across all their turns and can see "
             "what they already said. Targets self_bertscore, which has never "
             "passed and overshoots by a near-uniform +0.033 on 9 of 10 threads."
@@ -624,6 +642,8 @@ def main() -> None:
         "domain_claim": args.domain_claim,
         "writer_prompt": args.writer_prompt,
         "writer_route_lock": args.writer_route_lock,
+        "social_contract_coherence": args.social_contract_coherence,
+        "reply_sibling_visibility": args.reply_sibling_visibility,
         "own_fact_license": args.own_fact_license,
         "speaker_identity": args.speaker_identity,
         "repetition_guard": args.repetition_guard,
@@ -802,6 +822,10 @@ def main() -> None:
     env["GENERALIZED_CARD_DOMAIN_CLAIM"] = args.domain_claim
     env["GENERALIZED_CARD_WRITER_PROMPT"] = args.writer_prompt
     env["GENERALIZED_CARD_WRITER_ROUTE_LOCK"] = args.writer_route_lock
+    env["GENERALIZED_CARD_SOCIAL_CONTRACT_COHERENCE"] = (
+        args.social_contract_coherence
+    )
+    env["GENERALIZED_CARD_REPLY_SIBLING_VISIBILITY"] = args.reply_sibling_visibility
     env["GENERALIZED_CARD_OWN_FACT_LICENSE"] = args.own_fact_license
     env["GENERALIZED_CARD_SPEAKER_IDENTITY"] = args.speaker_identity
     env["GENERALIZED_CARD_REPETITION_GUARD"] = args.repetition_guard
@@ -1045,45 +1069,58 @@ def _load_json(path: Path) -> dict[str, Any]:
     return payload if isinstance(payload, dict) else {}
 
 
+RUN_EXPERIMENT_FIELDS = (
+    "domain",
+    "domain_config",
+    "tag",
+    "model",
+    "base_url",
+    "seed_pool",
+    "domain_profile",
+    "domain_profile_sha256",
+    "domain_profile_schema_version",
+    "reference_viewpoint_count",
+    "domain_behavior_targets",
+    "distribution_controls",
+    "generated_root",
+    "pool_size",
+    "posts_per_run",
+    "start_seed_index",
+    "sampling_seed",
+    "context_dropout_rate",
+    "context_jitter_rate",
+    "plan_quality",
+    "writer_local_repair_rounds",
+    "writer_slot_retry_limit",
+    "domain_claim",
+    "writer_prompt",
+    "writer_route_lock",
+    "social_contract_coherence",
+    "reply_sibling_visibility",
+    "own_fact_license",
+    "speaker_identity",
+    "repetition_guard",
+    "actor_conditioning",
+    "reasoning_effort",
+    "gpt5_reasoning_token_reserve",
+    "persona_conditioning",
+    "generator_profile",
+    "revision_core_policy_version",
+    "card_core_algorithm_symbols",
+    "generalized_algorithm_extensions",
+    "domain_adaptation_boundaries",
+)
+
+
 def _verify_resume_config(
     existing: dict[str, Any],
     requested: dict[str, Any],
 ) -> None:
-    immutable = (
-        "domain",
-        "domain_config",
-        "tag",
-        "model",
-        "base_url",
-        "seed_pool",
-        "domain_profile",
-        "domain_profile_sha256",
-        "domain_profile_schema_version",
-        "reference_viewpoint_count",
-        "domain_behavior_targets",
-        "distribution_controls",
-        "generated_root",
-        "pool_size",
+    immutable = RUN_EXPERIMENT_FIELDS + (
         "max_posts",
-        "posts_per_run",
-        "start_seed_index",
-        "sampling_seed",
-        "context_dropout_rate",
-        "context_jitter_rate",
-        "plan_quality",
-        "writer_local_repair_rounds",
-        "writer_slot_retry_limit",
         "post_recovery",
-        "reasoning_effort",
-        "gpt5_reasoning_token_reserve",
-        "persona_conditioning",
-        "generator_profile",
         "generator_policy_version",
-        "revision_core_policy_version",
         "generator_core_provenance",
-        "card_core_algorithm_symbols",
-        "generalized_algorithm_extensions",
-        "domain_adaptation_boundaries",
         "generation_lineage",
         "command",
     )
@@ -1124,37 +1161,8 @@ def _verify_append_extension(
     if old_max <= 0 or new_max <= old_max:
         raise RuntimeError(f"Extension must increase max_posts: {old_max}->{new_max}")
 
-    stable_fields = (
-        "domain",
-        "domain_config",
-        "tag",
-        "model",
-        "base_url",
-        "seed_pool",
-        "domain_profile",
-        "domain_profile_sha256",
-        "domain_profile_schema_version",
-        "reference_viewpoint_count",
-        "domain_behavior_targets",
-        "distribution_controls",
-        "generated_root",
-        "pool_size",
-        "posts_per_run",
-        "start_seed_index",
-        "sampling_seed",
-        "context_dropout_rate",
-        "context_jitter_rate",
-        "plan_quality",
-        "writer_local_repair_rounds",
-        "writer_slot_retry_limit",
+    stable_fields = RUN_EXPERIMENT_FIELDS + (
         "post_recovery",
-        "reasoning_effort",
-        "gpt5_reasoning_token_reserve",
-        "persona_conditioning",
-        "generator_profile",
-        "card_core_algorithm_symbols",
-        "generalized_algorithm_extensions",
-        "domain_adaptation_boundaries",
     )
     changed = [key for key in stable_fields if existing.get(key) != requested.get(key)]
     if changed:
@@ -1227,38 +1235,8 @@ def _verify_policy_upgrade(
 ) -> int:
     """Validate an explicit, append-only code-policy transition."""
 
-    stable_fields = (
-        "domain",
-        "domain_config",
-        "tag",
-        "model",
-        "base_url",
-        "seed_pool",
-        "domain_profile",
-        "domain_profile_sha256",
-        "domain_profile_schema_version",
-        "reference_viewpoint_count",
-        "domain_behavior_targets",
-        "distribution_controls",
-        "generated_root",
-        "pool_size",
+    stable_fields = RUN_EXPERIMENT_FIELDS + (
         "max_posts",
-        "posts_per_run",
-        "start_seed_index",
-        "sampling_seed",
-        "context_dropout_rate",
-        "context_jitter_rate",
-        "plan_quality",
-        "writer_local_repair_rounds",
-        "writer_slot_retry_limit",
-        "reasoning_effort",
-        "gpt5_reasoning_token_reserve",
-        "persona_conditioning",
-        "generator_profile",
-        "revision_core_policy_version",
-        "card_core_algorithm_symbols",
-        "generalized_algorithm_extensions",
-        "domain_adaptation_boundaries",
     )
     changed = [key for key in stable_fields if existing.get(key) != requested.get(key)]
     if changed:

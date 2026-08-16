@@ -16,10 +16,11 @@ HISTORICAL_REVISION_POLICY_VERSIONS = {
     "generalized-card-revision-v6-dynamic-coverage-history-20260807",
 }
 GENERALIZED_V2_GENERATION_POLICY_VERSION = (
-    "generalized-card-v2-own-fact-license-v76-20260815"
+    "generalized-card-v2-planner-contract-coherence-v80-20260816"
 )
 HISTORICAL_GENERATION_POLICY_VERSIONS = {
     "generalized-v2": {
+        "generalized-card-v2-own-fact-license-v76-20260815",
         "generalized-card-v2-frozen-domain-profile-v2-20260807",
         "generalized-card-v2-frozen-domain-profile-v3-tree-metadata-20260807",
         "generalized-card-v2-decision-lens-plan-quality-v9-20260809",
@@ -149,7 +150,7 @@ CORE_FILES = {
     ),
     "generator_adapter": (
         "generalized_card/generalized_card/backend.py",
-        "aa525cd6e983991e0c5085e8a249448f756f1de482b4ae9cd95cacc3387c51ab",
+        "694578fd4e692e98d73d1edb32e195ce99d29c297155b2e6c9f50c1a5b533c49",
     ),
     # The grounding rules were smeared across eight places in the prompt adapter
     # before v76 and disagreed with each other. Pinned so the one definition
@@ -175,7 +176,7 @@ CORE_FILES = {
     ),
     "generation_runner": (
         "generalized_card/scripts/run_generate.py",
-        "656cdf7ee374cd52de55d2410b89e7d9616d7f60593d6c3683adc7d2b84bae10",
+        "57d9ae58caf8fda8ddd18b883de749c9bf44a9350fb4f1672e34343317889fae",
     ),
     "domain_profile": (
         "generalized_card/generalized_card/domain_profile.py",
@@ -187,15 +188,15 @@ CORE_FILES = {
     ),
     "planning_quality": (
         "generalized_card/generalized_card/planning_quality.py",
-        "ef20f9c385e2be4defb43a0bd4173556058c7377a9b111c73b6d76b85bed12c8",
+        "a32881846489183add9ee62c2bf8a480519217a41787bd57e51d9cde5265c0aa",
     ),
     "generation_distribution": (
         "generalized_card/generalized_card/generation_distribution.py",
-        "5f1ed653cf8a19305d9aea9db0c355ede39aeaaa1d0590525c506ed765d71113",
+        "90a50bcd1425568c4dd0b6937d9f6416ecfce78f614546b4006b94e56040cd41",
     ),
     "planner_distribution": (
         "generalized_card/generalized_card/planner_distribution.py",
-        "adf2377d9e80849271f80752b493583d210a43bc2f1f885c31cf1fc8bf58c6f1",
+        "cf7d1abe06f4066e2d73930249566a8fede4d74560f1eb55ef7f39a04659cd59",
     ),
     "branch_routing": (
         "generalized_card/generalized_card/branch_routing.py",
@@ -203,7 +204,7 @@ CORE_FILES = {
     ),
     "task_distribution": (
         "generalized_card/generalized_card/task_distribution.py",
-        "9dad1609d695feddcf9fc2c47fe1e8615b1d8804765ab43f0f5087a32f922715",
+        "0aa93173dd410670861cc65bb3028232b88987a3d2215073ec3e4fb4e6268250",
     ),
     "first_pass_policy": (
         "generalized_card/generalized_card/first_pass_policy.py",
@@ -223,7 +224,7 @@ CORE_FILES = {
     ),
     "lexical_quality": (
         "generalized_card/generalized_card/lexical_quality.py",
-        "62137cdbf572c37ea4a7bec53eee92e089e3636766e4be8e798b18bf7ba6aeb7",
+        "748ddea8a3042ceb09364089cf406075fe9c13abafd6886ad3a99a57f4e1b69e",
     ),
     "reference_metric_calibration": (
         "generalized_card/generalized_card/reference_metric_calibration.py",
@@ -311,11 +312,11 @@ CORE_FILES = {
     ),
     "domain_prompt_adapter": (
         "generalized_card/generalized_card/prompts.py",
-        "a7f3c23aa46c187ff24b86632651d0f775da70be21fd0f9040b12177aa56935f",
+        "c398737c2ec2b63493232e11cf6fd1f125f863faf3742c74d1aef8c0684c6209",
     ),
     "reply_planning": (
         "generalized_card/generalized_card/reply_planning.py",
-        "f38ed23da758ee98e8ef19278299bcce54a0eebac8876a3b726206a3aa5745fd",
+        "09175853e782432c8c6ce14af2e7f974c62f630923891c3d86f7d5bdd7020212",
     ),
     "persona_bridge": (
         "generalized_card/generalized_card/persona_bridge.py",

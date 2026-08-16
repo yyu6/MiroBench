@@ -156,6 +156,11 @@ def render_direct_reply_planner_prompt(
     sample_ids = [sample_offset + index for index in range(1, len(comments) + 1)]
     allowed_social = set(social_close_allowed or set())
     tone_by_slot = dict(slot_tone or {})
+    siblings_by_parent: dict[int, list[int]] = {}
+    for child_id, parent_id in parent_slots.items():
+        siblings_by_parent.setdefault(parent_id, []).append(child_id)
+    for sibling_ids in siblings_by_parent.values():
+        sibling_ids.sort()
     parent_rows: list[str] = []
     for sample_id, comment in zip(sample_ids, comments, strict=True):
         parent_id = parent_slots[sample_id]
@@ -166,9 +171,34 @@ def render_direct_reply_planner_prompt(
             for value in allowed_reply_delta_types(tone)
             if value != "social_close" or sample_id in allowed_social
         ]
+        sibling_ids = siblings_by_parent.get(parent_id, [])
+        sibling_contract = ""
+        if (
+            str(getattr(backend, "GENERALIZED_REPLY_SIBLING_VISIBILITY", "on"))
+            != "off"
+            and len(sibling_ids) > 1
+        ):
+            committed_siblings = [
+                prior_by_id[sibling_id]
+                for sibling_id in sibling_ids
+                if sibling_id != sample_id and sibling_id in prior_by_id
+            ]
+            used = [
+                f"S{parse_sample_id(plan.get('sample_id'))}:"
+                f"{str(plan.get('reply_delta_type') or 'unset')} / "
+                f"{backend.compact(plan.get('reply_novelty_anchor') or 'unset', 90)}"
+                for plan in committed_siblings
+            ]
+            sibling_contract = (
+                "  Sibling coverage: "
+                + ",".join(f"S{sibling_id}" for sibling_id in sibling_ids)
+                + "; use a different delta type and novelty object for each sibling"
+                + ("; already committed: " + " | ".join(used) if used else "")
+            )
         parent_rows.append(
             "\n".join(
-                (
+                item
+                for item in (
                     f"- S{sample_id}: reply to S{parent_id}; "
                     f"depth={int(comment.get('depth') or 0)}; "
                     f"anonymous_words={len(str(comment.get('body') or '').split())}; "
@@ -179,8 +209,10 @@ def render_direct_reply_planner_prompt(
                     f"  Parent reply type: {str(parent.get('reply_delta_type') or 'root_turn').strip()}",
                     f"  Tone register: {tone or 'unassigned'}",
                     "  Allowed reply_delta_type: " + (", ".join(allowed) or "any"),
+                    sibling_contract,
                     _development_requirement(comment),
                 )
+                if item
             )
         )
     delta_definitions = "\n".join(
@@ -314,11 +346,11 @@ Rules:
   observation, reason, consequence, caveat, condition, or reaction; none of
   them may restate the increment or introduce an unrelated claim.
 - Give a substantive reply a ``domain_claim``: one concrete domain fact stated in
-  your own words, naming the equipment involved. Real replies in this kind of
-  discussion are largely equipment specifics, procedures, and compatibility
-  relations; a reply whose whole content is how to weigh a decision reads as
-  commentary about the discussion rather than participation in it. A purely
-  social reply uses ``none``.
+  your own words, naming the relevant entity, action, or condition. Real replies
+  are largely specific observations, procedures, relationships, and constraints;
+  a reply whose whole content is how to weigh a decision reads as commentary
+  about the discussion rather than participation in it. A purely social reply
+  uses ``none``.
 - Do not reproduce any real discussion's wording, and do not carry a detail that
   belongs to a particular discussion or its participants rather than to the
   domain. A fact about this seed post still cannot be invented.

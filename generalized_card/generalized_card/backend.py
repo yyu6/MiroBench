@@ -41,6 +41,7 @@ from .generation_distribution import (
     apply_planner_distribution_fields,
     enrich_distribution_plan_fields,
     select_thread_template,
+    set_social_contract_coherence,
 )
 from .generation_diversity import (
     build_thread_distribution_target,
@@ -319,6 +320,19 @@ def configure_generator_backend(
     module.GENERALIZED_WRITER_ROUTE_LOCK = (
         os.environ.get("GENERALIZED_CARD_WRITER_ROUTE_LOCK", "own_words").strip().lower()
         or "own_words"
+    )
+    module.GENERALIZED_SOCIAL_CONTRACT_COHERENCE = (
+        os.environ.get("GENERALIZED_CARD_SOCIAL_CONTRACT_COHERENCE", "on")
+        .strip()
+        .lower()
+        or "on"
+    )
+    set_social_contract_coherence(module.GENERALIZED_SOCIAL_CONTRACT_COHERENCE)
+    module.GENERALIZED_REPLY_SIBLING_VISIBILITY = (
+        os.environ.get("GENERALIZED_CARD_REPLY_SIBLING_VISIBILITY", "on")
+        .strip()
+        .lower()
+        or "on"
     )
     # Ablation switch for the fact ban. "off" reproduces policy v75: one blanket
     # prohibition covering the seed product and the speaker's own history alike,
@@ -1176,33 +1190,8 @@ def _generalize_task_instruction_language(task: Any, config: DomainConfig) -> An
             continue
         value = str(getattr(task, field, "") or "")
         generalized = _generalize_instruction_text(value, config)
-        if field in {"tone_overlay_instruction", "tone_target_instruction"}:
-            generalized = _delexicalize_tone_examples(generalized)
         updates[field] = generalized
     return replace(task, **updates)
-
-
-def _delexicalize_tone_examples(value: str) -> str:
-    text = str(value or "")
-    text = re.sub(
-        r"Use a small family such as thanks-for-DP, good-to-know, that-helps, appreciate-the-detail, or a brief report-back;",
-        "Use one brief cooperative marker whose entry wording is not already present in the thread;",
-        text,
-        flags=re.I,
-    )
-    text = re.sub(
-        r"such as thanks, appreciate the datapoint, good to know, or that helps",
-        "whose wording differs from earlier acknowledgements in the thread",
-        text,
-        flags=re.I,
-    )
-    text = re.sub(
-        r"Polite family:[^.]+\.",
-        "Use a cooperative entry shape that is not already present in the thread.",
-        text,
-        flags=re.I,
-    )
-    return text
 
 
 def _generalize_instruction_text(value: str, config: DomainConfig) -> str:
@@ -1496,6 +1485,16 @@ def _comment_planner_batch_with_history(
                     ],
                 ),
                 require_reply_novelty=bool(config.get("require_reply_novelty", False)),
+                enforce_social_contract=(
+                    str(
+                        getattr(
+                            module,
+                            "GENERALIZED_SOCIAL_CONTRACT_COHERENCE",
+                            "on",
+                        )
+                    )
+                    != "off"
+                ),
             )
 
         report = evaluate(plans)

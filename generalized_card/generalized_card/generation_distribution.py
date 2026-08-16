@@ -478,14 +478,13 @@ def _affect_instruction(role: str, *, task: Any | None = None) -> str:
 # the model's prior.
 TONE_DEFINITIONS = {
     "polite": (
-        "Warm and openly appreciative. Commit to a positive evaluation of the "
-        "product, result, suggestion, or help already visible, or give genuine "
-        "thanks for it, and let real enthusiasm show. Speak from your own "
-        "positive experience where the plan allows it and give the turn room to "
-        "develop. Do not hedge the positive judgement into a maybe, and do not "
-        "use customer-service phrasing or a template thank-you. Warmth is shown "
-        "through what you are enthusiastic about, which differs every time, not "
-        "through a recurring appreciative phrase."
+        "Warm and personally engaged. Commit to a positive evaluation of the "
+        "result, suggestion, help, or concrete subject already visible, or give "
+        "genuine thanks for it. Ordinary hedges and brief thanks are allowed when "
+        "they fit the turn; what matters is a readable positive or relieved "
+        "reaction by the end. Do not turn the response into customer-service "
+        "language or abstract decision framing such as what matters, the real "
+        "question, or whether something is worth it."
     ),
     "somewhat_polite": (
         "Agreeable but uncommitted. Concede or half-agree with the visible point "
@@ -505,11 +504,19 @@ TONE_DEFINITIONS = {
     ),
 }
 
-# Measured on evaluation-excluded threads: the classifier's polite class is
-# strongly length-dependent (52% of 60-120 word comments, 64% above 120 words),
-# while its neutral class concentrates in short comments.  The Writer receives
-# this as scope guidance, never as a word-count gate.
-TONE_SCOPE_HINTS = {
+
+SOCIAL_CONTRACT_COHERENCE = True
+_LEGACY_POLITE_DEFINITION = (
+    "Warm and openly appreciative. Commit to a positive evaluation of the "
+    "product, result, suggestion, or help already visible, or give genuine "
+    "thanks for it, and let real enthusiasm show. Speak from your own "
+    "positive experience where the plan allows it and give the turn room to "
+    "develop. Do not hedge the positive judgement into a maybe, and do not "
+    "use customer-service phrasing or a template thank-you. Warmth is shown "
+    "through what you are enthusiastic about, which differs every time, not "
+    "through a recurring appreciative phrase."
+)
+_LEGACY_TONE_SCOPE_HINTS = {
     "polite": (
         "A warm turn needs room: develop the appraisal across the slot's planned "
         "scope instead of compressing it into one line."
@@ -518,11 +525,21 @@ TONE_SCOPE_HINTS = {
 }
 
 
+def set_social_contract_coherence(mode: str) -> bool:
+    """Select v80 social guidance or the byte-stable pre-v80 arm."""
+
+    global SOCIAL_CONTRACT_COHERENCE
+    SOCIAL_CONTRACT_COHERENCE = str(mode or "on").strip().lower() != "off"
+    return SOCIAL_CONTRACT_COHERENCE
+
+
 def _tone_instruction(tone: str) -> str:
-    base = TONE_DEFINITIONS.get(tone)
-    if not base:
-        return TONE_DEFINITIONS["neutral"]
-    hint = TONE_SCOPE_HINTS.get(tone)
+    base = TONE_DEFINITIONS.get(tone, TONE_DEFINITIONS["neutral"])
+    if SOCIAL_CONTRACT_COHERENCE:
+        return base
+    if tone == "polite":
+        base = _LEGACY_POLITE_DEFINITION
+    hint = _LEGACY_TONE_SCOPE_HINTS.get(tone)
     return f"{base} {hint}" if hint else base
 
 

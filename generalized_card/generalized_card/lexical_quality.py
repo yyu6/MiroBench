@@ -431,41 +431,6 @@ def _prepared_sentence_bleu(
     return float(brevity_penalty * math.exp(log_precision_sum / max_order))
 
 
-def _sentence_bleu(hypothesis: list[str], references: list[list[str]], max_order: int) -> float:
-    if not hypothesis or not references:
-        return 0.0
-    log_precision_sum = 0.0
-    for order in range(1, max_order + 1):
-        overlap, total = _clipped_ngram_overlap(hypothesis, references, order)
-        precision = (overlap + 1.0) / (total + 1.0)
-        log_precision_sum += math.log(max(precision, 1e-12))
-    closest = min(
-        (len(reference) for reference in references),
-        key=lambda length: (abs(length - len(hypothesis)), length),
-    )
-    brevity_penalty = 1.0 if len(hypothesis) > closest else math.exp(1.0 - closest / max(1, len(hypothesis)))
-    return float(brevity_penalty * math.exp(log_precision_sum / max_order))
-
-
-def _clipped_ngram_overlap(
-    hypothesis: list[str],
-    references: list[list[str]],
-    order: int,
-) -> tuple[int, int]:
-    hypothesis_counts = _ngram_counts(hypothesis, order)
-    if not hypothesis_counts:
-        return 0, 0
-    maximum_reference_counts: Counter[tuple[str, ...]] = Counter()
-    for reference in references:
-        for ngram, count in _ngram_counts(reference, order).items():
-            maximum_reference_counts[ngram] = max(maximum_reference_counts[ngram], count)
-    overlap = sum(
-        min(count, maximum_reference_counts[ngram])
-        for ngram, count in hypothesis_counts.items()
-    )
-    return overlap, sum(hypothesis_counts.values())
-
-
 def _ngram_counts(tokens: list[str], order: int) -> Counter[tuple[str, ...]]:
     if len(tokens) < order:
         return Counter()

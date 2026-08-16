@@ -1,5 +1,31 @@
 # Lessons
 
+## 2026-08-16 — A scheduled label is not a coherent plan
+
+**What happened.** The frozen distribution schedule overwrote `story_mode`,
+tone, and affect after Planner output, but left `payload_type`, role, stance,
+function, and evidence mode untouched. In v79 this produced 21 explicit
+`no_story + personal_story` rows and 9 polite rows whose semantic job was advice,
+correction, or analysis. The Writer was then asked to satisfy contradictory
+instructions, and the metric was blamed on Writer realization alone.
+
+**How to apply.** Validate cross-field contracts after every deterministic
+overlay, at the last point before the Writer. A field-level target is not met
+merely because the desired label appears in JSON. Replay the validator on prior
+generation records to quantify how often the defect actually occurred before
+paying for another run.
+
+## 2026-08-16 — Reproducibility includes rejected experiment arms
+
+**What happened.** Several behavior flags were written to `run_config.json` but
+omitted from resume/extension comparison, and v77-v79 reused v76's policy string.
+That made artifacts readable but allowed incompatible behavior to share lineage.
+
+**How to apply.** Keep one authoritative experiment-field list, use it for every
+lineage check, bump the policy for behavioral changes, and provide an explicit
+`off` arm that restores the prior behavior. Git preserves deleted source; the
+version log explains why it was deleted and what replaced it.
+
 ## 2026-08-16 — Read the scorer before theorising about the metric
 
 **What happened.** I told the user the story allocation was correct and should

@@ -4,7 +4,7 @@ from __future__ import annotations
 
 from collections import Counter
 from dataclasses import replace
-from typing import Any, Callable
+from typing import Any
 
 
 # CARD's surface rebalancer is useful for role and answer-shape diversity, but
@@ -171,44 +171,6 @@ def rebalance_card_surfaces(
     report["restored_substantive_payload_task_ids"] = []
     report["restored_substantive_payload_count"] = 0
     return result, report
-
-
-def _collapses_substantive_slot(original: Any, candidate: Any) -> bool:
-    try:
-        real_words = int(getattr(original, "real_word_count", 0) or 0)
-    except (TypeError, ValueError):
-        real_words = 0
-    original_payload = str(getattr(original, "payload_type", "") or "")
-    candidate_payload = str(getattr(candidate, "payload_type", "") or "")
-    candidate_function = str(getattr(candidate, "comment_function", "") or "")
-    low_information = {
-        "low_info_reaction",
-        "bare_answer",
-        "narrow_question",
-        "joke",
-        "meta_or_template",
-        "side_tangent",
-    }
-    return (
-        real_words >= 35
-        and original_payload not in low_information
-        and (
-            candidate_payload in low_information
-            or candidate_function in {"reaction", "offtopic_noise"}
-        )
-    )
-
-
-def _combined_instruction(original: Any, balanced: Any, *, prefix: str) -> str:
-    original_text = " ".join(str(original or "").split())
-    balanced_text = " ".join(str(balanced or "").split())
-    if not balanced_text or balanced_text == original_text:
-        return original_text
-    if original_text and original_text in balanced_text:
-        return balanced_text
-    if not original_text:
-        return balanced_text
-    return f"{original_text} {prefix}: {balanced_text}"
 
 
 def _report(before: list[Any], after: list[Any]) -> dict[str, Any]:

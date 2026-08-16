@@ -12,6 +12,7 @@ import unittest
 from dataclasses import dataclass, replace
 from pathlib import Path
 from types import SimpleNamespace
+from typing import Any
 from unittest.mock import patch
 
 
@@ -1434,6 +1435,50 @@ class GeneralizedCardTest(unittest.TestCase):
         )
         self.assertNotIn("social_close", allowed_line)
         self.assertIn("corroborating_datapoint", allowed_line)
+
+    def test_direct_reply_planner_exposes_sibling_coverage(self) -> None:
+        prompt = prompts.comment_planner_prompt(
+            self.config,
+            SimpleNamespace(
+                compact=lambda value, limit: str(value)[:limit],
+                GENERALIZED_DOMAIN_PROFILE={},
+                GENERALIZED_ACTIVE_REFERENCE_TEMPLATE={},
+                GENERALIZED_ACTIVE_SLOT_DISTRIBUTION_SCHEDULE={},
+                GENERALIZED_WRITER_ROUTE_LOCK="own_words",
+                CLAIM_FAMILIES=("direct_answer",),
+            ),
+            seed_post=SimpleNamespace(
+                title="Camera question",
+                body="Visible seed detail",
+                content="Visible seed detail",
+            ),
+            target=SimpleNamespace(
+                target_comments=3,
+                max_depth_goal=1,
+                shape_label="normal",
+            ),
+            branches=[],
+            matched_real_thread=None,
+            comments=[
+                {"comment_id": "c2", "parent_id": "t1_c1", "depth": 1, "body": "hidden"},
+                {"comment_id": "c3", "parent_id": "t1_c1", "depth": 1, "body": "hidden"},
+            ],
+            all_comments=[
+                {"comment_id": "c1", "parent_id": None, "depth": 0, "body": "hidden"},
+                {"comment_id": "c2", "parent_id": "t1_c1", "depth": 1, "body": "hidden"},
+                {"comment_id": "c3", "parent_id": "t1_c1", "depth": 1, "body": "hidden"},
+            ],
+            sample_offset=1,
+            prior_plans=[
+                {
+                    "sample_id": "1",
+                    "semantic_move": "state the parent proposition",
+                    "decision_boundary": "parent boundary",
+                }
+            ],
+        )
+        self.assertIn("Sibling coverage: S2,S3", prompt)
+        self.assertIn("different delta type and novelty object", prompt)
 
     def test_writer_route_lock_keeps_reply_delta_ahead_of_parent_context(self) -> None:
         task = SimpleNamespace(
@@ -3266,7 +3311,11 @@ class GeneralizedCardTest(unittest.TestCase):
             "generalized_card_run_generate_defaults",
             Path(__file__).resolve().parents[1] / "scripts" / "run_generate.py",
         )
-        args = script.build_parser().parse_args(["--tag", "test"])
+        parser = script.build_parser()
+        help_text = parser.format_help()
+        self.assertIn("13% of that size", help_text)
+        self.assertIn("68% of comment mass", help_text)
+        args = parser.parse_args(["--tag", "test"])
         self.assertEqual(args.generator_profile, GENERALIZED_V2_PROFILE)
         self.assertEqual(args.comment_planner_batch_size, 8)
         self.assertEqual(args.max_comments_per_post, 0)
@@ -3278,6 +3327,8 @@ class GeneralizedCardTest(unittest.TestCase):
         self.assertEqual(args.writer_hard_recovery_rounds, 2)
         self.assertEqual(args.writer_local_repair_rounds, 0)
         self.assertEqual(args.writer_slot_retry_limit, 0)
+        self.assertEqual(args.social_contract_coherence, "on")
+        self.assertEqual(args.reply_sibling_visibility, "on")
         self.assertEqual(args.actor_conditioning, "none")
         self.assertEqual(args.retry_delay, 10.0)
         self.assertEqual(args.posts_per_run, 5)
@@ -3590,6 +3641,23 @@ class GeneralizedCardTest(unittest.TestCase):
         changed = dict(existing, posts_per_run=1)
         with self.assertRaisesRegex(RuntimeError, "posts_per_run"):
             script._verify_resume_config(existing, changed)
+
+        behavior_changed = dict(existing, writer_prompt="full")
+        with self.assertRaisesRegex(RuntimeError, "writer_prompt"):
+            script._verify_resume_config(existing, behavior_changed)
+        self.assertTrue(
+            {
+                "domain_claim",
+                "writer_prompt",
+                "writer_route_lock",
+                "social_contract_coherence",
+                "reply_sibling_visibility",
+                "own_fact_license",
+                "speaker_identity",
+                "repetition_guard",
+                "actor_conditioning",
+            }.issubset(script.RUN_EXPERIMENT_FIELDS)
+        )
 
     def test_generation_append_extension_requires_complete_prefix(self) -> None:
         script = load_script_module(
@@ -4920,6 +4988,8 @@ class GeneralizedCardTest(unittest.TestCase):
         )
         self.assertIn("first-person positive frame is required here", rendered)
         self.assertIn("does not bar the interpersonal", rendered)
+        self.assertIn("Ordinary hedges and brief thanks are allowed", rendered)
+        self.assertIn("Do not narrate a sequence of events", rendered)
 
     def test_non_polite_writer_contract_keeps_the_substitution_ban(self) -> None:
         module = configure_generator_backend(load_generator_backend(), self.config)

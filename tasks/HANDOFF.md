@@ -67,7 +67,8 @@ into four dimensions, and they map onto the metrics:
 
 # 2. WHERE THE CODE IS
 
-Branch `generator/v75-writer-realizes-planner-move`. HEAD `e9a9fbe`.
+Branch `generator/v75-writer-realizes-planner-move`. The v80 work starts from
+`4633af7`; use `git log` for the resulting implementation commit.
 
 ```
 generalized_card/generalized_card/
@@ -507,6 +508,43 @@ bump the version and move `…own-fact-license-v76-20260815` into
 un-evaluatable. `run_evaluate.py` passes `allow_historical=True`, so evaluation
 of existing runs is safe either way; `--resume` on generation is not.
 
+## 7.7 v80 continuation — implementation complete, paid run pending
+
+The active generation path, all policy modules, all twelve scorers, the
+evaluation aggregator, and the existing v79 records were read end to end before
+this change. The new policy string is
+`generalized-card-v2-planner-contract-coherence-v80-20260816`.
+
+Free replay over v79's 186 Planner records found **30 contradictions that the old
+quality gate accepted**: 21 `no_story + personal_story` plans and 9 `polite`
+plans attached to incompatible roles/functions. The StorySeeker join independently
+showed that planned story slots contributed only about 25% of total story
+probability; 25 of 167 `no_story` comments were still classified as stories.
+
+Implemented:
+
+- validate the whole story/tone semantic contract after the frozen schedule is
+  applied, before Writer execution;
+- render an explicit non-narrative rule for every `no_story` Writer path;
+- replace the refuted polite length/anti-hedge theory with measured social cues;
+- show direct-reply planners sibling delta/novelty coverage;
+- record every behavioral field in resume/extension/upgrade comparisons;
+- add `--social-contract-coherence` and `--reply-sibling-visibility`; `off`
+  preserves the pre-v80 arms and both values are recorded in `run_config.json`;
+- remove only functions proven unreferenced by repository-wide reference and AST
+  audits. Active reviser helpers remain; the user-owned evaluation/cleanup files
+  outside `generalized_card/` were not touched.
+
+The curly-apostrophe counterfactual was also run for free on 40 comments / 780
+pairs. Self-BERTScore moved 0.52947 -> 0.52381, toward real but far short of the
+full ~0.034 gap. Do not ship a held-out-test-calibrated typography transform;
+this is a secondary hypothesis requiring evaluation-excluded calibration.
+
+Verification before any paid generation: 270 full generalized tests passed,
+the backend self-test passed, CLI help renders, Ruff passed, all 72 core pins
+matched, and scoped `git diff --check` passed. No claim is made that a metric or
+p-value improved; v80 has not yet generated new text.
+
 ---
 
 # 8. THE PLAN
@@ -663,16 +701,19 @@ python3 -u generalized_card/scripts/run_generate.py \
   --pool-size 150 --max-posts 1 --posts-per-run 1 \
   --start-seed-index 8 --sampling-seed 42 \
   --context-dropout-rate 0.42 --context-jitter-rate 0.32 \
-  --plan-quality-repairs 0 --writer-hard-recovery-rounds 0 \
+  --plan-quality-repairs 3 --writer-hard-recovery-rounds 0 \
   --writer-local-repair-rounds 1 --writer-slot-retry-limit 2 \
   --domain-claim off --writer-prompt focused --writer-route-lock own_words \
+  --social-contract-coherence on --reply-sibling-visibility off \
   --own-fact-license off --speaker-identity off --repetition-guard blocking \
   2>&1 | tee /tmp/<TAG>_gen.log
 ```
 
 `--max-posts 10 --start-seed-index 0` gives the 10-thread evaluation set (~$2.2,
-~90 min). Non-default flags in the v79 shape are exactly: `plan-quality-repairs
-0`, `writer-hard-recovery-rounds 0`, `writer-local-repair-rounds 1`,
+~90 min). The command above isolates the social/story contract; leave sibling
+visibility off for this first arm. v80 needs `plan-quality-repairs 3` so detected
+contract conflicts can actually be repaired. The historical v79 shape used
+`plan-quality-repairs 0`, `writer-hard-recovery-rounds 0`, `writer-local-repair-rounds 1`,
 `writer-slot-retry-limit 2`, `posts-per-run 1`, `domain-claim off`, plus the
 three new flags.
 
@@ -722,13 +763,9 @@ prompt-rendering check in this session was built — no API, full corpus.
 
 # 11. RECOMMENDED FIRST MOVE
 
-1. Read this file, `tasks/todo.md`, `tasks/lessons.md`.
-2. **Do B first.** It is free, it is the only lever aimed at the metric that has
-   never passed, and it can be tested by re-cleaning and re-scoring an existing
-   run with no generation at all.
-3. Then A, which is the largest gap and the user's dimension 4. Judge it on the
-   tone realization rate (59.2% baseline) offline before spending anything.
-4. Bump the policy version with the first change (§7.6).
-
-Do not start with a paid run. Three of the last four paid runs tested a
-hypothesis that a free measurement would have refuted first.
+The free checks are complete. Run the seed-8 command in §10 first, with social
+contract on and sibling visibility off. Judge it on Planner repair counts,
+tone-label realization (59.2% baseline), and StorySeeker mass in `no_story`
+slots—not on an n=1 p-value. If the mechanism moves those diagnostics in the
+predicted direction, run the comparable ten-seed arm before enabling sibling
+visibility as a separate experiment.

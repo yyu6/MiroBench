@@ -563,7 +563,7 @@ The R# rows come from evaluation-excluded threads. Pair each displayed S# with
 a different R# row in order when the viewpoint pattern fits. Abstract the tiny
 semantic/discourse move and adapt it to the visible seed or parent.
 
-These rows are also this domain's knowledge. Real participants bring equipment
+These rows are also this domain's knowledge. Real participants bring domain
 knowledge they acquired elsewhere, so a slot may carry one *general* domain fact
 from its R# row into ``domain_claim``: a compatibility relation, a procedure, an
 observable behaviour, a specification class, a model comparison. Write it in your
@@ -702,13 +702,13 @@ Rules:
   asking, with advisors a minority. Reserve ``advisor`` for slots whose plan is
   genuinely a recommendation.
 - Give most substantive slots a ``domain_claim``. Measured against a matched real
-  thread, real comments name a concrete piece of equipment or a domain noun in
+  thread, real comments name a concrete domain entity or domain noun in
   about two thirds of cases and contain a number in about half, while a plan
   built only from decision language produced neither. A slot whose entire content
   is how to weigh a decision, how a learning curve feels, or whether advice is
   trustworthy is the failure mode: it reads as commentary about the discussion
-  rather than participation in it. Vary the equipment named across slots instead
-  of returning to whichever model the seed post mentions.
+  rather than participation in it. Vary the concrete entities named across slots
+  instead of returning to whichever one the seed post mentions.
 - Micro and purely social slots keep ``domain_claim=none``. Do not attach a fact
   to a reaction that has no room for one.
 - Every S# not explicitly assigned a story_mode in the slot schedule is fixed
@@ -1038,10 +1038,20 @@ def writer_prompt(
         getattr(task, "tone_target_instruction", ""),
         "This controls attitude and social function only.",
     )
+    story_instruction = str(getattr(task, "story_instruction", "") or "")
+    if (
+        str(getattr(backend, "GENERALIZED_SOCIAL_CONTRACT_COHERENCE", "on")) != "off"
+        and str(getattr(task, "story_mode", "") or "") == "no_story"
+    ):
+        story_instruction = (
+            "Do not narrate a sequence of events or repeated attempts. A "
+            "firsthand slot may state one observation, but it must not become "
+            "an anecdote with before/after or then/after pacing."
+        )
     story_rule = _optional_control_rule(
         "Story realization",
         getattr(task, "story_mode", ""),
-        getattr(task, "story_instruction", ""),
+        story_instruction,
         "This controls narrative evidence structure, not interpersonal tone.",
     )
     affect_rule = _optional_control_rule(
@@ -1577,25 +1587,6 @@ def seed_gist(config: DomainConfig, seed_post: Any) -> str:
     )
 
 
-def system_prompt(config: DomainConfig) -> str:
-    return (
-        f"You write one human Reddit comment in {config.community_context}. "
-        "Follow the private sampled role, local context, tone, and length. Write one local turn, not a complete answer. "
-        "Do not sound like an assistant, reviewer, customer support agent, or polished explainer. "
-        "Do not invent facts, specifications, numbers, products, links, measured outcomes, or policies. "
-        "When a sampled story mode explicitly requires personal context, realize only a qualitative synthetic context around the visible local point. "
-        "Never expose controls or matched-real text. Return only the comment body."
-    )
-
-
-def generic_reviser_system(config: DomainConfig) -> str:
-    return (
-        f"You edit one generated Reddit comment in {config.community_context}. "
-        "Preserve its local claim, stance, social function, entities, numbers, story/no-story status, and parent relation. "
-        "Never add domain facts. Return only the requested JSON."
-    )
-
-
 def mask_specifics(text: str) -> str:
     value = re.sub(r"https?://\S+|www\.\S+", "[link]", str(text), flags=re.I)
     value = re.sub(r"[$€£]\s?\d[\d,.]*", "[amount]", value)
@@ -1882,382 +1873,6 @@ def _ngram_tokens(text: str) -> list[str]:
     return re.findall(r"[a-z0-9]+(?:'[a-z0-9]+)?", text.lower())
 
 
-def selfbleu_reviser_prompt(
-    config: DomainConfig,
-    *,
-    post: dict[str, Any],
-    comments: list[Any],
-    target: Any,
-    scored: Any,
-    candidates_per_comment: int,
-    target_profile: str,
-    strategy_candidates: int,
-    controller_feedback: str = "",
-) -> str:
-    parent = next((item for item in comments if item.comment_id == target.parent_comment_id), None)
-    position = next(
-        (index for index, item in enumerate(comments) if item.comment_id == target.comment_id),
-        len(comments),
-    )
-    previous = comments[max(0, position - 12) : position]
-    repeated = "\n".join(
-        f"- {item}" for item in getattr(scored, "repeated_phrases", ())[:10]
-    ) or "- Avoid the target's current opener and the sentence paths used nearby."
-    count = max(2, strategy_candidates * 3 if strategy_candidates > 0 else candidates_per_comment)
-    profile = {
-        "high_tail": "Use substantial lexical restructuring: replace the opener, reorder clauses, and change connective paths.",
-        "middle_mass": "Use moderate lexical restructuring while retaining the original local voice.",
-        "shape_safe": "Use a conservative local rewrite with minimal semantic movement.",
-    }.get(target_profile, "Use a conservative lexical rewrite.")
-    feedback_block = (
-        f"\n{controller_feedback}\n" if controller_feedback.strip() else ""
-    )
-    return f"""Revise one generated comment from {config.community_context} for lexical diversity.
-
-Goal:
-- Lower repetition among comments in this thread without changing the comment's meaning or social role.
-- {profile}
-- Preserve the claim, stance, uncertainty, tone intensity, story/no-story status, entities, numbers, and approximate length.
-- Keep ordinary Reddit language. Do not turn the comment into a polished explanation.
-{feedback_block}
-
-Thread title:
-{_compact(post.get('title'), 420)}
-
-Seed post body:
-{_compact(post.get('content'), 720)}
-
-Parent comment:
-{_render_ref(parent)}
-
-Previous comments:
-{_render_refs(previous, limit=12, max_chars=200)}
-
-Target comment:
-id={target.comment_id}; depth={target.depth}; words={len(target.content.split())}
-{_compact(target.content, 900)}
-
-Thread-local wording to avoid:
-{repeated}
-
-Generate exactly {count} alternatives. Vary openers, clause order, and connective words across candidates.
-
-Hard rules:
-- Keep all visible product/model names, technical terms, quantities, measurements, prices, dates, and links.
-- Do not add a fact, product, specification, outcome, recommendation, question, or personal experience.
-- Advice remains advice; a correction remains a correction; a reaction remains a reaction.
-- Do not copy another comment or reveal private controls.
-- Return strict JSON only.
-
-{{
-  "candidates": [
-    {{"style": "opener_replacement", "text": "replacement body"}},
-    {{"style": "clause_reorder", "text": "replacement body"}},
-    {{"style": "connector_swap", "text": "replacement body"}}
-  ]
-}}
-"""
-
-
-def selfbert_reviser_prompt(
-    config: DomainConfig,
-    *,
-    post: dict[str, Any],
-    comments: list[Any],
-    scored_comments: list[Any],
-    target: Any,
-    thread_target: Any,
-    accepted_so_far: list[Any],
-    candidates_per_comment: int,
-    controller_feedback: str = "",
-) -> str:
-    ref = target.ref
-    parent = next((item for item in comments if item.comment_id == ref.parent_comment_id), None)
-    similar = [
-        item.ref
-        for item in scored_comments
-        if item.ref.comment_id != ref.comment_id
-    ][:8]
-    accepted_jobs = [
-        str(getattr(item, "discourse_job", "") or "")
-        for item in accepted_so_far
-        if bool(getattr(item, "accepted", False))
-    ]
-    jobs = (
-        "micro_reaction, blunt_correction, quote_challenge, narrow_followup_question, "
-        "small_datapoint, friction_detail, soft_acknowledgement, skeptical_aside, "
-        "minor_tangent, meta_comment"
-    )
-    feedback_block = (
-        f"\n{controller_feedback}\n" if controller_feedback.strip() else ""
-    )
-    return f"""Revise one generated comment from {config.community_context} for semantic discourse diversity.
-
-Distributional objective:
-- Generated thread Self-BERT: {float(thread_target.row.get('self_bertscore_mean_f1') or 0.0):.4f}.
-- Matched-real thread Self-BERT: {float(thread_target.real_row.get('self_bertscore_mean_f1') or 0.0):.4f}.
-- Generated-minus-real gap: {float(thread_target.selfbert_excess):.4f}.
-- Reduce the absolute matched-real gap. Do not minimize similarity without a lower bound.
-{feedback_block}
-
-The target comment contributes strongly to repeated semantic or discourse content. Produce alternatives that remain locally relevant while changing the local conversational move. Preserve concrete subject matter instead of replacing the comment with generic noise.
-
-Thread title:
-{_compact(post.get('title'), 420)}
-
-Seed post body:
-{_compact(post.get('content'), 850)}
-
-Parent comment:
-{_render_ref(parent)}
-
-Target comment:
-id={ref.comment_id}; depth={ref.depth}; words={len(ref.content.split())}
-{_compact(ref.content, 900)}
-
-Semantically similar comments to avoid paraphrasing:
-{_render_refs(similar, limit=8, max_chars=220)}
-
-Discourse jobs already accepted in this thread:
-{', '.join(item for item in accepted_jobs if item) or '(none)'}
-
-Generate exactly {max(3, candidates_per_comment)} alternatives. Choose a discourse_job from:
-{jobs}
-
-Required behavior:
-- Preserve the local issue, claim direction, stance, uncertainty, reply relation, story/no-story status, and tone intensity.
-- Retain product names, model names, technical terms, quantities, measurements, prices, dates, and links.
-- Change discourse shape rather than making a synonym-only paraphrase.
-- A technical correction remains a correction. A question remains locally about the same issue. A personal datapoint remains grounded in the same concrete detail.
-- Do not invent a product, specification, event, outcome, recommendation, or personal experience.
-- Avoid polished assistant-style mini essays and empty reactions.
-- Return strict JSON only.
-
-{{
-  "candidates": [
-    {{
-      "style": "short label",
-      "discourse_job": "one allowed job",
-      "preserved_tone": "yes",
-      "preserved_story_mode": "yes",
-      "preserved_stance": "yes",
-      "preserved_reply_relation": "yes",
-      "text": "replacement body",
-      "why_different": "brief discourse-level difference"
-    }}
-  ]
-}}
-"""
-
-
-def tone_reviser_prompt(
-    config: DomainConfig,
-    *,
-    post: dict[str, Any],
-    comments: list[Any],
-    target: Any,
-    candidate: Any,
-    current_rates: dict[str, float],
-    real_rates: dict[str, float],
-    gaps: dict[str, float],
-    candidates_per_comment: int,
-    accepted: list[dict[str, Any]] | None = None,
-    focus_stage: str = "balanced",
-    controller_feedback: str = "",
-) -> str:
-    del accepted
-    parent = next((item for item in comments if item.comment_id == target.parent_comment_id), None)
-    nearby = sorted(comments, key=lambda item: abs(item.comment_id - target.comment_id))[:12]
-    labels = ", ".join(getattr(candidate, "desired_labels", ()) or ("neutral", "polite"))
-    action = str(getattr(candidate, "action", "calibrate_tone"))
-    old_label = str(getattr(candidate, "old_label", "unknown"))
-    feedback_block = (
-        f"\n{controller_feedback}\n" if controller_feedback.strip() else ""
-    )
-    return f"""Revise one generated comment from {config.community_context} for tone calibration.
-
-Objective:
-- Preserve what the comment says while applying this local tone action: {action}.
-- Current label: {old_label}. Acceptable labels after revision: {labels}.
-- Focus stage: {focus_stage}.
-- Generated rates: polite={current_rates['polite']:.3f}, neutral={current_rates['neutral']:.3f}, impolite={current_rates['impolite']:.3f}.
-- Matched-real rates: polite={real_rates['polite']:.3f}, neutral={real_rates['neutral']:.3f}, impolite={real_rates['impolite']:.3f}.
-- Real-minus-generated gaps: polite={gaps['polite']:.3f}, neutral={gaps['neutral']:.3f}, impolite={gaps['impolite']:.3f}, hard_disagree={gaps['hard_disagree']:.3f}.
-{feedback_block}
-
-Thread title:
-{_compact(post.get('title'), 420)}
-
-Parent comment:
-{_render_ref(parent)}
-
-Target comment:
-id={target.comment_id}; depth={target.depth}; words={len(target.content.split())}
-{_compact(target.content, 900)}
-
-Nearby comments:
-{_render_refs(nearby, limit=12, max_chars=180)}
-
-Generate exactly {max(2, candidates_per_comment)} alternatives.
-
-Hard rules:
-- Preserve the same claim, stance direction, uncertainty, social function, entities, numbers, links, and approximate length.
-- A disagreement or correction must remain a disagreement or correction; change only its sharpness or social wrapper.
-- Do not add facts, products, advice, stories, questions, thanks, or apologies unless the original function already requires them.
-- Avoid customer-support language and generic empathy templates.
-- Keep natural Reddit directness; do not make every reply polite.
-- Return strict JSON only.
-
-{{
-  "candidates": [
-    {{"style": "same_claim_adjusted_edge", "text": "replacement body"}},
-    {{"style": "same_function_local_frame", "text": "replacement body"}}
-  ]
-}}
-"""
-
-
-def stance_reviser_prompt(
-    config: DomainConfig,
-    *,
-    post: dict[str, Any],
-    comments: list[Any],
-    target: Any,
-    candidate: Any,
-    current_rates: dict[str, float],
-    real_rates: dict[str, float],
-    gaps: dict[str, float],
-    candidates_per_comment: int,
-    controller_feedback: str = "",
-) -> str:
-    del current_rates, real_rates, gaps
-    parent = getattr(candidate, "parent_ref", None)
-    parent_text = str(getattr(candidate, "parent_text", "") or "")
-    if not parent_text and parent is not None:
-        parent_text = parent.content
-    if not parent_text:
-        parent_text = "\n\n".join([str(post.get("title") or ""), str(post.get("content") or "")])
-    nearby = sorted(comments, key=lambda item: abs(item.comment_id - target.comment_id))[:12]
-    feedback_block = (
-        f"\n{controller_feedback}\n" if controller_feedback.strip() else ""
-    )
-    return f"""Revise one generated reply from {config.community_context} to calibrate its relation to the parent.
-
-The current parent-reply pair is read as hard disagreement. Keep the useful local point, but express it as a clarification, caveat, partial agreement, or narrower condition rather than a hard contradiction.
-{feedback_block}
-
-Parent:
-{_compact(parent_text, 900)}
-
-Target reply:
-id={target.comment_id}; depth={target.depth}; words={len(target.content.split())}
-{_compact(target.content, 900)}
-
-Nearby comments:
-{_render_refs(nearby, limit=12, max_chars=180)}
-
-Generate exactly {max(2, candidates_per_comment)} alternatives.
-
-Hard rules:
-- Preserve the reply's claim, recommendation direction, uncertainty, entities, numbers, links, and approximate length.
-- Preserve a necessary correction, but frame it as a local clarification rather than deleting it.
-- Do not add facts, products, stories, advice, or questions.
-- Use ordinary Reddit language, not customer-support language.
-- Return strict JSON only.
-
-{{
-  "candidates": [
-    {{"style": "clarification_not_contradiction", "text": "replacement body"}},
-    {{"style": "partial_agreement_same_caveat", "text": "replacement body"}}
-  ]
-}}
-"""
-
-
-def story_reviser_prompt(
-    config: DomainConfig,
-    *,
-    post: dict[str, Any],
-    target: Any,
-    comments: list[Any],
-    story_probability: float,
-    real_thread_probability: float,
-    candidate_count: int,
-    strategy: str,
-    controller_feedback: str = "",
-) -> str:
-    parent = next((item for item in comments if item.comment_id == target.parent_comment_id), None)
-    previous = [
-        item for item in comments
-        if item.comment_id != target.comment_id and item.comment_id < target.comment_id
-    ][-8:]
-    action = {
-        "direct_claim": "Remove unnecessary autobiographical setup and keep the same direct local claim or reaction.",
-        "concise_factual": "Compress anecdotal framing while retaining the same concrete point and uncertainty.",
-        "question_or_caveat": "Express the same local point as a parent-specific caveat or question only when that preserves its function.",
-    }.get(strategy, "Reduce unnecessary personal-story framing while preserving the local point.")
-    feedback_block = (
-        f"\n{controller_feedback}\n" if controller_feedback.strip() else ""
-    )
-    return f"""Revise one generated comment from {config.community_context} to calibrate personal-story prevalence.
-
-Objective:
-- {action}
-- Current comment story probability: {story_probability:.4f}.
-- Matched-real thread mean story probability: {real_thread_probability:.4f}.
-{feedback_block}
-
-Seed post:
-Title: {_compact(post.get('title'), 400)}
-Body: {_compact(post.get('content'), 900)}
-
-Parent:
-{_render_ref(parent)}
-
-Previous local comments:
-{_render_refs(previous, limit=8, max_chars=220)}
-
-Target comment:
-id={target.comment_id}; words={len(target.content.split())}
-{_compact(target.content, 1000)}
-
-Generate exactly {max(2, candidate_count)} alternatives.
-
-Hard rules:
-- Preserve the same claim, stance, uncertainty, social role, product/model names, technical terms, quantities, measurements, prices, dates, and links.
-- Remove only narrative framing that is not needed for the point. Keep a firsthand datapoint when removing it would change the evidence or claim.
-- Do not invent a fact, outcome, product, personal experience, recommendation, or question.
-- Do not merely delete pronouns; rewrite the discourse move naturally.
-- Keep approximately the same length and Reddit voice.
-- Return strict JSON only.
-
-{{
-  "candidates": [
-    {{"style": "{strategy}", "text": "replacement body"}}
-  ]
-}}
-"""
-
-
-def _compact(value: Any, limit: int) -> str:
-    text = " ".join(str(value or "").split())
-    return text if len(text) <= limit else text[: max(0, limit - 3)].rstrip() + "..."
-
-
-def _render_ref(ref: Any | None) -> str:
-    if ref is None:
-        return "OP / top-level reply"
-    return f"id={ref.comment_id}; depth={ref.depth}; {_compact(ref.content, 500)}"
-
-
-def _render_refs(refs: list[Any], *, limit: int, max_chars: int) -> str:
-    rows = [
-        f"- id={ref.comment_id}; depth={ref.depth}; {_compact(ref.content, max_chars)}"
-        for ref in refs[:limit]
-    ]
-    return "\n".join(rows) or "(none)"
-
-
 def _thread_memory(
     backend: Any,
     comments: list[dict[str, Any]],
@@ -2425,9 +2040,6 @@ def _semantic_route_lock(
     reply_delta_type = _writer_safe_control_text(
         getattr(task, "reply_delta_type", ""), domain_profile
     ).casefold()
-    parent_move = _writer_safe_control_text(
-        getattr(task, "parent_semantic_move", ""), domain_profile
-    )
     if getattr(task, "local_parent_task_id", None) is not None:
         if reply_delta:
             rows.append(

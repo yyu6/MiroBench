@@ -318,6 +318,7 @@ def evaluate_plan_batch(
     max_perspective_share: float = 0.34,
     required_branch_ids: dict[int, int] | None = None,
     require_reply_novelty: bool = False,
+    enforce_social_contract: bool = True,
 ) -> PlanQualityReport:
     allowed_perspectives = {
         str(value).strip().upper() for value in perspective_ids if str(value).strip()
@@ -362,7 +363,10 @@ def evaluate_plan_batch(
                     message=development_problem,
                 )
             )
-        social_problem = social_contract_problem(plan)
+        social_problem = social_contract_problem(
+            plan,
+            enforce_coherence=enforce_social_contract,
+        )
         if social_problem:
             issues.append(
                 PlanQualityIssue(
@@ -666,19 +670,57 @@ def is_substantive_plan(plan: dict[str, Any]) -> bool:
     )
 
 
-def social_contract_problem(plan: dict[str, Any]) -> str:
-    """Reject labels that would force an emotion onto the wrong discourse act.
+def social_contract_problem(
+    plan: dict[str, Any],
+    *,
+    enforce_coherence: bool = True,
+) -> str:
+    """Reject social labels that contradict the rest of the planned turn.
 
     This inspects Planner metadata only. It deliberately does not use wording,
     entities, or domain-specific semantic rules.
     """
 
+    story = _normalized_value(plan.get("story_mode"))
+    payload = _normalized_value(plan.get("payload_type"))
+    if enforce_coherence and story == "no_story" and payload == "personal_story":
+        return (
+            "story_mode=no_story cannot use payload_type=personal_story; keep "
+            "the local claim but plan it as one observation or datapoint without "
+            "a temporal event sequence"
+        )
+
+    tone = _normalized_value(plan.get("tone_class"))
+    stance = _normalized_value(plan.get("stance"))
+    role = _normalized_value(plan.get("speaker_role"))
+    function = _normalized_value(plan.get("comment_function"))
+    if enforce_coherence and tone == "polite":
+        allowed_roles = {
+            "datapoint_only",
+            "op_followup",
+            "gratitude_reply",
+            "side_observer",
+        }
+        allowed_functions = {
+            "personal_datapoint",
+            "reaction",
+            "verdict_evaluation",
+        }
+        if (
+            stance != "agree"
+            or role not in allowed_roles
+            or function not in allowed_functions
+        ):
+            return (
+                "tone_class=polite requires stance=agree plus a personal "
+                "datapoint, reaction, or positive verdict from a compatible "
+                "participant; do not attach the label to advice, correction, "
+                "or abstract analysis"
+            )
+
     affect = _normalized_value(plan.get("affect_role"))
     if affect not in {"gratitude", "relief"}:
         return ""
-    role = _normalized_value(plan.get("speaker_role"))
-    function = _normalized_value(plan.get("comment_function"))
-    payload = _normalized_value(plan.get("payload_type"))
     if role == "gratitude_reply" and function == "reaction":
         return ""
     if function == "reaction" and payload in {"low_info_reaction", "bare_answer"}:

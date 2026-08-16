@@ -36,9 +36,8 @@ before drawing any comparison.
 
 
 One entry per generator policy version: what changed, why, which run tested it,
-and what happened. `generalized_card/` is not tracked in git, so this file plus
-`core_contract.py`'s `HISTORICAL_GENERATION_POLICY_VERSIONS` and the per-run
-`run_config.json` are the whole provenance chain.
+and what happened. Git history, this file, `core_contract.py`'s historical policy
+set, and each run's `run_config.json` together form the provenance chain.
 
 Machine-generated companion: [`RUN_INDEX.md`](RUN_INDEX.md), rebuilt with
 
@@ -57,6 +56,80 @@ Before any run that changes behavior:
    and the predicted direction, so a null result stays interpretable.
 4. Use a run tag containing the version number.
 5. After evaluating, fill in the result and regenerate `RUN_INDEX.md`.
+
+---
+
+## v80 — coherent Planner social contracts (2026-08-16)
+
+Tag: pending; do not start with a paid run.
+
+Measured diagnosis on the existing v79 seed-8 artifact:
+
+- Only 17 comments were assigned a story mode, and they contributed about 25%
+  of the thread's total StorySeeker probability. Among 167 `no_story` comments,
+  25 were still classified as stories. The highest-scoring rows retained
+  `payload_type=personal_story` or a temporal firsthand plan after the schedule
+  overwrote only `story_mode`.
+- Of 46 `polite` slots, only 6 realized as polite; 27 realized as impolite. The
+  Planner prompt already requires an agreeing personal datapoint, reaction, or
+  positive verdict, but mismatching roles/functions survived because the
+  post-normalization quality gate did not check that contract.
+- On 40 existing comments (780 unordered pairs), changing only curly apostrophes
+  to ASCII moved Self-BERTScore 0.52947 -> 0.52381. Curly double quotes had
+  effectively no effect. This is a real but secondary global signature, not an
+  explanation of the full 0.034 v79-vs-real gap.
+
+Changed before any API call:
+
+- Plan-quality validation now rejects `no_story + personal_story` and incoherent
+  polite role/stance/function combinations, so targeted Planner repair operates
+  on the whole semantic contract instead of relabeling one field after planning.
+- Every `no_story` Writer path now explicitly forbids a temporal event sequence
+  while still allowing one firsthand observation.
+- Polite guidance now follows the observed real-discussion cues: ordinary
+  hedging and brief thanks are allowed, an emotional endpoint is required, and
+  repeated abstract decision-framing is discouraged. The refuted generated-data
+  length hint was removed.
+- Direct-reply planning now exposes sibling coverage, including already committed
+  sibling delta types and novelty anchors.
+- Both interventions have explicit ablations:
+  `--social-contract-coherence off` and
+  `--reply-sibling-visibility off` restore the pre-v80 arms, and both fields are
+  part of the recorded and resume-checked experiment identity.
+- Resume/extension/upgrade checks share one experiment-field list that includes
+  every behavior flag. The prior implementation wrote those flags to the run
+  record but omitted them from lineage comparison.
+- Removed proven-unreferenced helpers and stale tone-example rewrites; generalized
+  Planner prose no longer assumes every domain is equipment/products.
+
+Predicted direction: planned-social-contract realization above v79's 59.2%,
+`no_story` StorySeeker mass down materially, polite realization above 13%, and no
+change to matched tree structure. Validate plan-contract counts and prompt
+snapshots before a paid run; evaluate p-values only after a comparable multi-seed
+run.
+
+## v68-v79 provenance correction (recorded 2026-08-16)
+
+The narrative log previously stopped at v67 even though run artifacts and the
+historical policy set continued through v76. The durable record is:
+
+- v68: domain-claim/entity generalization.
+- v69: scheduled opener grammar; evaluated on ten threads at 8/12, with the
+  cancellation caveats described in the handoff.
+- v70: domain-claim field survival; the recorded smoke was not fully evaluated.
+- v71: Planner-owned reply move and single-parent exclusion; ten-thread result
+  4/12.
+- `v72_noclaim` was an experiment tag, not a policy version: its run config
+  correctly retained the v71 policy string. It scored 7/12.
+- v73: affirmative affect and uncapped anonymous slot shape; 8/12.
+- v74: focused Writer prompt; 7/12.
+- v75: Writer realizes the Planner move in its own words; the evaluated repeat
+  scored 4/12.
+- v76: own-fact-license experiment arms.
+- v77, v78, and v79 changed repetition/recovery behavior but incorrectly reused
+  the v76 policy string. They are retained as artifact tags, not claimed as
+  reproducible policy releases, and must not be ranked from their one-thread
+  12/12 p-value output.
 
 ---
 

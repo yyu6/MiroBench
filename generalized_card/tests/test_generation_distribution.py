@@ -19,10 +19,12 @@ from score_thread_self_bleu import (  # noqa: E402
 )
 
 from generalized_card.generation_distribution import (  # noqa: E402
+    _tone_instruction,
     allocate_story_and_affect,
     enrich_distribution_plan_fields,
     render_planner_distribution_target,
     select_thread_template,
+    set_social_contract_coherence,
 )
 from generalized_card.planner_distribution import (  # noqa: E402
     apply_slot_distribution_schedule,
@@ -30,6 +32,7 @@ from generalized_card.planner_distribution import (  # noqa: E402
     render_slot_distribution_schedule,
 )
 from generalized_card.planning_quality import (  # noqa: E402
+    evaluate_plan_batch,
     social_contract_problem,
     surface_capacity_problem,
 )
@@ -407,6 +410,96 @@ class StoryAffectDistributionTest(unittest.TestCase):
                 }
             ),
         )
+
+    def test_forced_no_story_rejects_a_personal_story_payload(self) -> None:
+        self.assertIn(
+            "story_mode=no_story",
+            social_contract_problem(
+                {
+                    "story_mode": "no_story",
+                    "payload_type": "personal_story",
+                    "evidence_mode": "firsthand_experience",
+                    "tone_class": "neutral",
+                }
+            ),
+        )
+
+    def test_polite_label_requires_a_coherent_social_move(self) -> None:
+        self.assertIn(
+            "tone_class=polite",
+            social_contract_problem(
+                {
+                    "story_mode": "no_story",
+                    "payload_type": "soft_helpful",
+                    "tone_class": "polite",
+                    "stance": "agree",
+                    "speaker_role": "advisor",
+                    "comment_function": "explanation_analysis",
+                }
+            ),
+        )
+        self.assertEqual(
+            "",
+            social_contract_problem(
+                {
+                    "story_mode": "no_story",
+                    "payload_type": "fragment_datapoint",
+                    "tone_class": "polite",
+                    "stance": "agree",
+                    "speaker_role": "datapoint_only",
+                    "comment_function": "personal_datapoint",
+                }
+            ),
+        )
+
+    def test_social_contract_ablation_restores_pre_v80_behavior(self) -> None:
+        contradictory = {
+            1: {
+                "sample_id": 1,
+                "story_mode": "no_story",
+                "payload_type": "personal_story",
+                "tone_class": "neutral",
+                "comment_function": "personal_datapoint",
+                "semantic_move": "state one narrow firsthand observation",
+                "local_topic": "the visible condition",
+                "detail_focus": "one result",
+            }
+        }
+        report = evaluate_plan_batch(
+            contradictory,
+            enforce_social_contract=False,
+            max_perspective_share=1.0,
+        )
+        self.assertNotIn(
+            "social_contract_conflict",
+            {issue.code for issue in report.issues},
+        )
+        legacy_affect = evaluate_plan_batch(
+            {
+                1: {
+                    **contradictory[1],
+                    "payload_type": "advice",
+                    "story_mode": "no_story",
+                    "affect_role": "gratitude",
+                    "speaker_role": "advisor",
+                    "comment_function": "recommendation_advice",
+                }
+            },
+            enforce_social_contract=False,
+            max_perspective_share=1.0,
+        )
+        self.assertIn(
+            "social_contract_conflict",
+            {issue.code for issue in legacy_affect.issues},
+        )
+
+        try:
+            set_social_contract_coherence("off")
+            legacy = _tone_instruction("polite")
+        finally:
+            set_social_contract_coherence("on")
+        self.assertIn("Do not hedge", legacy)
+        self.assertIn("A warm turn needs room", legacy)
 
     def test_template_selection_and_planner_brief_are_deterministic(self) -> None:
         calibration = {

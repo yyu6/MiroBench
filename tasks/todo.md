@@ -43,22 +43,23 @@ emotion_entropy ↓ **simultaneously** — these are not four problems.
 endpoint 2.5% vs 1.1%; hedge 18.0% vs 12.9%; decision-framing nouns 0.5% vs 4.3%.
 
 **Tasks**
-- [ ] Delete the hedge and thank-you prohibitions from `TONE_DEFINITIONS["polite"]`
+- [x] Delete the hedge and thank-you prohibitions from `TONE_DEFINITIONS["polite"]`
       (`generation_distribution.py:480-489`). The block above the table records
       the prediction that motivated them — collapse into `somewhat_polite`. The
       measured collapse is into **impolite**, so the prediction was wrong.
-- [ ] License the emotional endpoint explicitly ("I love it", "never looked
+- [x] License the emotional endpoint explicitly ("I love it", "never looked
       back"): real 2.5%, generated 1.1%.
-- [ ] Cut decision-framing nouns from the Writer's own rule text — 8.6× overshoot,
+- [x] Cut decision-framing nouns from the Writer's own rule text — 8.6× overshoot,
       and the Writer is substituting analysis for feeling.
-- [ ] Check `_affect_instruction` rotation (`generation_distribution.py:448-470`)
+- [x] Check `_affect_instruction` rotation (`generation_distribution.py:448-470`)
       still reaches the prompt on the focused path; the affect rewrite was
       bundled into v73 and never cleanly attributed.
-- [ ] Ablation flag; `off` byte-identical; recorded in `run_config`.
-- [ ] **Offline gate before any paid run:** re-render the v79 prompts from
+- [x] Ablation flag; `off` restores the pre-v80 contract and is recorded in
+      `run_config` as `social_contract_coherence`.
+- [x] **Offline gate before any paid run:** re-render the v79 prompts from
       `generation_records.json[].task` and confirm the banned surfaces are gone
       and the new ones present.
-- [ ] **Judge the run on tone realization rate (59.2% baseline) and
+- [ ] **Judge the paid run on tone realization rate (59.2% baseline) and
       `emotion_entropy`**, not on p-values. n=1 has no p-value.
 
 ---
@@ -84,6 +85,10 @@ model-emitted, identical before and after `gpt_cleanup`.
       re-scoring. No regeneration needed, so the hypothesis costs **$0** to test.
       If the offset does not move, the hypothesis is dead and D's speaker
       identity becomes the next candidate.
+- [x] Run a no-regeneration counterfactual first: on 40 v79 comments / 780 pairs,
+      curly apostrophes -> ASCII moved 0.52947 to 0.52381. This explains only a
+      minority of the ~0.034 gap, so do not implement a held-out-calibrated
+      normalizer as the primary fix.
 - [ ] Consider the other surface gaps in the same pass, all measured on seed 8:
       paragraph breaks real 25.5% vs generated 2.8%; no final punctuation 24.0%
       vs 6.6%; URLs 4.5% vs 0%; `lol/haha` 3.0% vs 0%; ALLCAPS 19.5% vs 7.7%.
@@ -106,10 +111,13 @@ per-thread story count already scales from the matched template
 (`generation_distribution.py:129-134`).
 
 **Tasks**
-- [ ] Score story-mode slots and no-story slots separately in an existing run to
+- [x] Score story-mode slots and no-story slots separately in an existing run to
       see which class carries the overshoot. Offline, the per-comment
       probabilities are already in `cleaned/*/storyseeker_results.json`.
-- [ ] Only then decide between allocation and realization.
+- [x] Diagnose realization as the main failure: planned story slots supplied
+      only ~25% of total story probability; 25/167 `no_story` comments were
+      classified as stories. Add a Writer no-sequence contract and reject
+      `no_story + personal_story` plans before writing.
 - [ ] Keep first person for the slots that do tell stories: 32 of 32 real
       experience narratives are first person.
 
@@ -132,12 +140,14 @@ per-thread story count already scales from the matched template
 
 ## E — reply-planner sibling visibility   [was P3, kept]
 
-- [ ] Every depth ≥ 1 batch takes `render_direct_reply_planner_prompt`
+- [x] Every depth ≥ 1 batch takes `render_direct_reply_planner_prompt`
       (`prompts.py:336-381` routes there; batches never mix depths, so all of
       them qualify). It renders no prior-plan ledger, no coverage summary, no
       sibling contract, no branch goal, no R# rows. Each row sees only its
       parent. Verified on seed 2: depths 3–8 are single-slot batches and tasks
       38–45 are nine near-duplicate moves that could not see each other.
+- [x] Add `--reply-sibling-visibility`; the `on` arm renders every sibling and
+      already committed delta/novelty object, while `off` restores old rows.
 - [ ] Add a real `semantic_move` similarity check. The whole-plan
       `semantic_collision` check cannot catch it: `plan_similarity` is a Jaccard
       over all `SEMANTIC_FIELDS` including `development_plan`, so a ~20-token
@@ -171,6 +181,18 @@ record written into `run_config.json`, not a wire. The real target is hard-coded
 in `generation_diversity.build_thread_distribution_target:40-43`, it only ranks
 candidates, and with one candidate it does nothing. Five of the six also need
 transformer classifiers inside the generation process. See HANDOFF §6.1.
+
+---
+
+## G — simplify without erasing history
+
+- [x] Preserve v68-v80 behavioral provenance in `VERSION_LOG.md` and compare all
+      behavior fields during resume/extension/policy upgrade.
+- [x] Run repository-wide reference and AST audits before deletion.
+- [x] Remove unreferenced reviser prompt builders and stale helpers while keeping
+      every active reviser entry point.
+- [x] Re-pin all changed generalized sources and commit only the scoped files;
+      unrelated dirty worktree content belongs to other sessions.
 
 ---
 
