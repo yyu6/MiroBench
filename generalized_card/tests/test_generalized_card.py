@@ -1545,7 +1545,6 @@ class GeneralizedCardTest(unittest.TestCase):
         report = evaluate_plan_batch(
             {2: child},
             prior_plans=[parent],
-            perspective_ids={"P01"},
             require_reply_novelty=True,
         )
         self.assertIn(
@@ -1675,7 +1674,6 @@ class GeneralizedCardTest(unittest.TestCase):
         }
         report = evaluate_plan_batch(
             plans,
-            perspective_ids={"P02"},
             similarity_threshold=0.55,
         )
         self.assertEqual(report.colliding_samples, (2,))
@@ -1708,7 +1706,6 @@ class GeneralizedCardTest(unittest.TestCase):
         }
         report = evaluate_plan_batch(
             plans,
-            perspective_ids={"P06", "P10"},
             similarity_threshold=0.95,
             embedding_similarity_threshold=0.82,
             semantic_similarity=lambda _left, _right: 0.88,
@@ -1743,7 +1740,6 @@ class GeneralizedCardTest(unittest.TestCase):
         }
         report = evaluate_plan_batch(
             plans,
-            perspective_ids={"P03", "P07"},
             similarity_threshold=0.95,
         )
         self.assertEqual(report.colliding_samples, ())
@@ -1857,6 +1853,12 @@ class GeneralizedCardTest(unittest.TestCase):
         self.assertEqual(
             module.GENERALIZED_COMMENT_PLAN_REPORTS[-1]["repair_strategy"],
             "targeted_slot",
+        )
+        self.assertEqual(
+            module.GENERALIZED_COMMENT_PLAN_REPORTS[-1][
+                "initial_slot_contract_overrides"
+            ],
+            [],
         )
 
     def test_missing_planner_slots_use_bounded_structural_completion(self) -> None:
@@ -2127,12 +2129,16 @@ class GeneralizedCardTest(unittest.TestCase):
         report = evaluate_plan_batch(
             current,
             prior_plans=prior,
-            perspective_ids={"P01", "P02"},
             max_perspective_share=0.50,
         )
         self.assertEqual(report.dominant_perspective, "P01")
         self.assertEqual(report.dominant_perspective_share, 1.0)
         self.assertIn("perspective_concentration", {issue.code for issue in report.issues})
+        self.assertNotIn(
+            "perspective_concentration",
+            {issue.code for issue in report.repair_issues},
+        )
+        self.assertTrue(report.healthy)
 
     def test_plan_quality_tail_collision_uses_thread_denominator(self) -> None:
         prior = [
@@ -2164,7 +2170,6 @@ class GeneralizedCardTest(unittest.TestCase):
         report = evaluate_plan_batch(
             current,
             prior_plans=prior,
-            perspective_ids={"P01", "P02"},
         )
         self.assertEqual(report.colliding_samples, (25,))
         self.assertEqual(report.thread_substantive_count, 25)
@@ -5241,6 +5246,8 @@ class GeneralizedCardTest(unittest.TestCase):
             opening_style="bare acknowledgement",
             context_aperture="title_only",
             tone_shape="soft_ack",
+            tone_overlay_slot="legacy_soften",
+            tone_overlay_instruction="Legacy overlay text must not reach the Writer.",
         )
         seed = module.SeedPost(
             index=0,
@@ -5288,6 +5295,11 @@ class GeneralizedCardTest(unittest.TestCase):
         self.assertNotIn("Core metric guidance", rendered)
         self.assertNotIn("hard maximum:", rendered)
         self.assertNotIn("target length:", rendered.lower())
+        self.assertNotIn("tone overlay", rendered.lower())
+        self.assertNotIn("legacy_soften", rendered)
+        self.assertNotIn("Legacy overlay text", rendered)
+        self.assertNotIn("tone_overlay_slot", module.controls_for_task(task))
+        self.assertNotIn("tone_overlay_slot", module.render_sampled_plan_block(task))
         self.assertIn("not a counted requirement", rendered.lower())
         self.assertEqual(
             module.writer_token_cap(

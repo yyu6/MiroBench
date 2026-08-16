@@ -62,7 +62,6 @@ def render_sampled_plan_block(task: CommentTask) -> str:
             ("real_surface_shape", task.real_surface_shape),
             ("surface_skeleton", task.surface_skeleton),
             ("real_tone_slot", real_tone_slot_for_prompt(task)[0]),
-            ("tone_overlay_slot", task.tone_overlay_slot),
             ("tone_target", task.tone_target),
             ("story_mode", task.story_mode),
             ("affect_role", task.affect_role),
@@ -109,8 +108,6 @@ def controls_for_task(task: CommentTask) -> dict[str, str]:
     prompt_tone_slot = real_tone_slot_for_prompt(task)[0]
     if prompt_tone_slot:
         controls["real_tone_slot"] = prompt_tone_slot
-    if task.tone_overlay_slot:
-        controls["tone_overlay_slot"] = task.tone_overlay_slot
     if task.tone_target:
         controls["tone_target"] = task.tone_target
     if task.story_instruction:

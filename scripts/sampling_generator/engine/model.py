@@ -95,6 +95,8 @@ class CommentTask:
     surface_instruction: str = ""
     real_tone_slot: str = ""
     real_tone_instruction: str = ""
+    # Retained only so historical generation records still deserialize. The
+    # current Planner and Writer policy no longer assigns or consumes overlays.
     tone_overlay_slot: str = ""
     tone_overlay_instruction: str = ""
     tone_target: str = ""

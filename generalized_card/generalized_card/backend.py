@@ -280,6 +280,7 @@ def configure_generator_backend(
     comment_plan_ledgers: dict[str, list[dict[str, Any]]] = {}
     module.GENERALIZED_COMMENT_PLAN_HISTORY = []
     module.GENERALIZED_COMMENT_PLAN_FEEDBACK = ""
+    module.GENERALIZED_SLOT_CONTRACT_OVERRIDES = []
     module.GENERALIZED_COMMENT_PLAN_REPORTS = []
     module.GENERALIZED_STORY_AFFECT_REPORTS = []
     module.GENERALIZED_ACTIVE_DISTRIBUTION_TARGET = {}
@@ -559,6 +560,7 @@ def configure_generator_backend(
             return apply_slot_distribution_schedule(
                 normalized,
                 module.GENERALIZED_ACTIVE_SLOT_DISTRIBUTION_SCHEDULE,
+                events=module.GENERALIZED_SLOT_CONTRACT_OVERRIDES,
             )
 
         module.normalize_comment_move_plans = normalize_comment_plans
@@ -1159,7 +1161,6 @@ def _generalize_task_instruction_language(task: Any, config: DomainConfig) -> An
         "must_not_do",
         "surface_instruction",
         "real_tone_instruction",
-        "tone_overlay_instruction",
         "tone_target_instruction",
     ):
         if not hasattr(task, field):
@@ -1363,9 +1364,13 @@ def _comment_planner_batch_with_history(
         }
         module.GENERALIZED_COMMENT_PLAN_HISTORY = list(ledger)
         module.GENERALIZED_COMMENT_PLAN_FEEDBACK = ""
+        module.GENERALIZED_SLOT_CONTRACT_OVERRIDES = []
         repair_budget = int(config.get("repair_rounds", 0))
         control_normalizations: list[dict[str, Any]] = []
         raw_plans = original(**kwargs)
+        initial_slot_contract_overrides = list(
+            module.GENERALIZED_SLOT_CONTRACT_OVERRIDES
+        )
         sample_offset = int(kwargs.get("sample_offset") or 0)
         expected_ids = set(
             range(sample_offset + 1, sample_offset + len(kwargs.get("comments") or []) + 1)
@@ -1445,7 +1450,6 @@ def _comment_planner_batch_with_history(
             return evaluate_plan_batch(
                 candidate_plans,
                 prior_plans=ledger,
-                perspective_ids=perspective_ids,
                 similarity_threshold=float(config.get("similarity_threshold", 0.72)),
                 embedding_similarity_threshold=float(
                     config.get("embedding_similarity_threshold", 0.82)
@@ -1454,13 +1458,6 @@ def _comment_planner_batch_with_history(
                     semantic_index.similarity if semantic_index is not None else None
                 ),
                 max_perspective_share=float(config.get("max_perspective_share", 0.34)),
-                required_branch_ids=root_branch_schedule(
-                    list(kwargs.get("all_comments") or []),
-                    branch_ids=[
-                        int(getattr(branch, "branch_id", 0) or 0)
-                        for branch in list(kwargs.get("branches") or [])
-                    ],
-                ),
                 require_reply_novelty=bool(config.get("require_reply_novelty", False)),
                 enforce_social_contract=(
                     str(
@@ -1579,6 +1576,10 @@ def _comment_planner_batch_with_history(
                 for sample_id, count in sorted(repair_counts.items())
             },
             "control_normalizations": control_normalizations,
+            "initial_slot_contract_overrides": initial_slot_contract_overrides,
+            "slot_contract_overrides": list(
+                module.GENERALIZED_SLOT_CONTRACT_OVERRIDES
+            ),
             "selected": best_report.to_dict(),
             "attempts": attempts,
         }
@@ -1587,6 +1588,7 @@ def _comment_planner_batch_with_history(
             f"seed={key} offset={report_row['sample_offset']} plans={len(best_plans)} "
             f"repairs={report_row['repair_attempts']} "
             f"omitted={len(unresolved_missing_ids)} "
+            f"contract_overrides={len(initial_slot_contract_overrides)} "
             f"collisions={len(best_report.colliding_samples)} "
             f"collision_rate={best_report.collision_rate:.3f} "
             f"embedding_threshold={float(config.get('embedding_similarity_threshold', 0.82)):.3f} "
@@ -1595,17 +1597,13 @@ def _comment_planner_batch_with_history(
             flush=True,
         )
 
-        invalid_perspective = any(
-            issue.code == "invalid_perspective" for issue in best_report.issues
-        )
         excessive_concentration = (
             best_report.substantive_count >= 8
             and best_report.dominant_perspective_share
             > float(config.get("max_perspective_share", 0.34)) + 0.12
         )
         if bool(config.get("strict", False)) and (
-            invalid_perspective
-            or best_report.collision_rate > float(config.get("max_collision_rate", 0.10))
+            best_report.collision_rate > float(config.get("max_collision_rate", 0.10))
             or excessive_concentration
         ):
             # Targeted planning repairs have already been attempted above. A

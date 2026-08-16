@@ -1,5 +1,33 @@
 # Handoff — synthetic Reddit thread generation (generalized_card)
 
+## 2026-08-17 v85 current-path audit addendum
+
+Use policy `generalized-card-v2-auditable-plan-controls-v85-20260817` for the
+next run. This pass used historical commits only as provenance; every decision
+was re-established from current definitions, current call sites, the current
+v80 artifact, and current tests.
+
+The important new finding is not another Prompt heuristic. Fixed template
+story/tone/affect/opener values are applied before plan-quality evaluation, so
+the existing social-contract validator does catch semantic plans that become
+incoherent after assignment. What was missing was evidence of whether the
+Planner obeyed those values before enforcement. `planning_quality.jsonl` now
+records `initial_slot_contract_overrides` plus all repair-time overrides.
+
+The same path audit found three false repair/validation surfaces. Structural
+branch metadata rewrites every slot's `perspective_id` and `branch_id` before
+evaluation, so invalid-perspective and branch-route checks could never fail;
+perspective concentration could be observed but never changed by a slot-local
+Planner retry. The first two are deleted; concentration remains a warning but no
+longer spends repair calls. Retired tone overlays and the old
+`constructive_polite_helpful` label are removed from current Writer/finalizer
+logic while compatibility fields remain for artifact deserialization. See
+`tasks/v85-worklog.md`.
+
+This is primarily simplification, cost correctness, and diagnostic validity.
+It does not establish that the 12 metrics improved; that requires the new n=1
+content/contract run and then a multi-thread matched evaluation.
+
 ## 2026-08-17 v83 matched-text isolation addendum
 
 The v82 audit was extended through every callback that receives the anonymous
@@ -11,7 +39,8 @@ punctuation, dominant link/quote form, capitalization/identifier form, and other
 non-semantic surface shape. Planner story, stance, voice, function, payload,
 affect, and tone are the sole semantic authority.
 
-Use v83—not v81/v82—for the next paid run. See `tasks/v83-worklog.md`.
+v83 is historical; use the current policy named above. See
+`tasks/v83-worklog.md` for that release's evidence.
 
 ## 2026-08-17 v82 completion-audit addendum
 
@@ -821,7 +850,7 @@ prompt-rendering check in this session was built — no API, full corpus.
 
 # 11. RECOMMENDED FIRST MOVE
 
-The free checks are complete. Run the seed-8 command in §10 first, with social
+The free checks are complete. Run the seed-8 command in §10 first under v85, with social
 contract and sibling visibility both on. Judge it on Planner repair counts,
 tone-label realization (59.2% baseline), and StorySeeker mass in `no_story`
 slots—not on an n=1 p-value. If the mechanism moves those diagnostics in the

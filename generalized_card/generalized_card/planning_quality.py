@@ -196,6 +196,17 @@ CONTROL_FIELDS = (
     "stance",
     "evidence_mode",
 )
+NON_REPAIRABLE_ISSUES = frozenset(
+    {
+        # Reusing a reference is useful audit context, not proof that the two
+        # semantic plans collide.
+        "duplicate_reference",
+        # The structural root-branch schedule owns perspective_id and rewrites
+        # it before every evaluation, so a slot-local Planner retry cannot
+        # change the thread-level concentration.
+        "perspective_concentration",
+    }
+)
 
 
 @dataclass(frozen=True)
@@ -224,7 +235,9 @@ class PlanQualityReport:
     @property
     def repair_issues(self) -> tuple[PlanQualityIssue, ...]:
         return tuple(
-            issue for issue in self.issues if issue.code != "duplicate_reference"
+            issue
+            for issue in self.issues
+            if issue.code not in NON_REPAIRABLE_ISSUES
         )
 
     def feedback(
@@ -241,7 +254,7 @@ class PlanQualityReport:
         )
         issues = [
             issue
-            for issue in self.issues
+            for issue in self.repair_issues
             if requested is None or issue.sample_id in requested
         ]
         if not issues:
@@ -311,19 +324,13 @@ def evaluate_plan_batch(
     plans: dict[int, dict[str, Any]],
     *,
     prior_plans: Iterable[dict[str, Any]] = (),
-    perspective_ids: Iterable[str] = (),
     similarity_threshold: float = 0.72,
     embedding_similarity_threshold: float = 0.82,
     semantic_similarity: Callable[[dict[str, Any], dict[str, Any]], float] | None = None,
     max_perspective_share: float = 0.34,
-    required_branch_ids: dict[int, int] | None = None,
     require_reply_novelty: bool = False,
     enforce_social_contract: bool = True,
 ) -> PlanQualityReport:
-    allowed_perspectives = {
-        str(value).strip().upper() for value in perspective_ids if str(value).strip()
-    }
-    allowed_perspectives.add("SEED_LOCAL")
     prior = [dict(row) for row in prior_plans if isinstance(row, dict)]
     current = [
         dict(plan, sample_id=int(sample_id))
@@ -390,32 +397,6 @@ def evaluate_plan_batch(
                     other_sample_id=_parent_sample_id(plan) or None,
                 )
             )
-        perspective = str(plan.get("perspective_id") or "seed_local").strip().upper()
-        if perspective not in allowed_perspectives:
-            issues.append(
-                PlanQualityIssue(
-                    code="invalid_perspective",
-                    sample_id=sample_id,
-                    message=f"{perspective or 'empty'} is not a frozen decision-lens ID.",
-                )
-            )
-        expected_branch = (required_branch_ids or {}).get(sample_id)
-        if expected_branch is not None:
-            try:
-                actual_branch = int(plan.get("branch_id") or 0)
-            except (TypeError, ValueError):
-                actual_branch = 0
-            if actual_branch != int(expected_branch):
-                issues.append(
-                    PlanQualityIssue(
-                        code="branch_route_conflict",
-                        sample_id=sample_id,
-                        message=(
-                            f"S{sample_id} must stay on structural root branch "
-                            f"B{expected_branch}, not B{actual_branch or 'unset'}"
-                        ),
-                    )
-                )
         branch_problem = branch_goal_problem(
             plan,
             semantic_similarity=semantic_similarity,
@@ -502,13 +483,11 @@ def evaluate_plan_batch(
     collision_rate = len(colliding) / max(1, len(thread_substantive))
     issue_score = (
         10.0 * len(colliding)
-        + 7.0 * sum(issue.code == "invalid_perspective" for issue in issues)
         + 9.0 * sum(issue.code == "surface_density_conflict" for issue in issues)
         + 9.0 * sum(issue.code == "surface_capacity_conflict" for issue in issues)
         + 6.0 * sum(issue.code == "long_form_capacity" for issue in issues)
         + 8.0 * sum(issue.code == "social_contract_conflict" for issue in issues)
         + 8.0 * sum(issue.code == "reply_increment_conflict" for issue in issues)
-        + 8.0 * sum(issue.code == "branch_route_conflict" for issue in issues)
         + 8.0 * sum(issue.code == "branch_goal_conflict" for issue in issues)
         + 2.0 * sum(issue.code == "duplicate_reference" for issue in issues)
         + max(0.0, dominant_share - max_perspective_share)

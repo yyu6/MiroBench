@@ -59,6 +59,49 @@ Before any run that changes behavior:
 
 ---
 
+## v85 — auditable Planner controls and dead-path pruning (2026-08-17)
+
+Policy ID: `generalized-card-v2-auditable-plan-controls-v85-20260817`.
+
+This release is a current-path simplification and observability pass before the
+next paid run. It does not claim a direct improvement to any of the 12 metric
+values.
+
+Changed:
+
+- The existing slot-schedule override events are now retained in
+  `planning_quality.jsonl`, both for the initial Planner response and across
+  bounded repair attempts. This exposes whether the Planner originally obeyed
+  each fixed story/tone/affect/opener contract; the post-override semantic
+  coherence checks remain unchanged.
+- `perspective_concentration` remains an audit/strict warning but no longer
+  triggers a slot-local LLM repair. Structural branch ownership overwrites
+  `perspective_id` before every evaluation, so such a repair could not change
+  the concentration and only spent requests.
+- Removed two other validations that cannot fire on the active path:
+  `invalid_perspective` is deterministically canonicalized first, and
+  `branch_route_conflict` compared a topology-owned branch ID with the same ID
+  after normalization. The effective concentration, branch-goal, reply-delta,
+  social-contract, capacity, and collision checks remain.
+- Removed the retired tone-overlay control from current Writer inputs. Its two
+  dataclass/persistence fields remain solely so historical records deserialize;
+  current code neither assigns nor consumes them.
+- Removed the unreachable `constructive_polite_helpful` finalizer branches and
+  the unused scalar `projected_metric`; the live batched projection path remains.
+
+Expected paid-run effects are bounded and falsifiable: fewer impossible Planner
+repair requests, explicit counts of initial fixed-contract disagreement, and no
+`tone overlay: none` Prompt noise. Content/metric success still requires the new
+large-thread artifact followed by a sufficient-N matched evaluation.
+
+Offline acceptance: all 266 generalized tests pass; Ruff passes on the changed
+production and test files with the facade's intentional dynamic exports
+excluded; the camera-product backend self-test passes; all 72 source pins agree;
+the v80 185/186 artifact remains rejected; and the exact seed-8 configuration
+passes `--prepare-only` without an API call.
+
+---
+
 ## v84 — complete Writer coverage and quote-safe recovery (2026-08-17)
 
 Policy ID: `generalized-card-v2-complete-writer-coverage-v84-20260817`.

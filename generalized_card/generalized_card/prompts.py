@@ -1017,12 +1017,6 @@ def writer_prompt(
         prompt_tone_instruction,
         "Preserve the social move, not any reference wording.",
     )
-    tone_overlay_rule = _optional_control_rule(
-        "Tone-only overlay",
-        getattr(task, "tone_overlay_slot", ""),
-        getattr(task, "tone_overlay_instruction", ""),
-        "Do not change payload, story mode, length, facts, or the local point.",
-    )
     tone_target_rule = _optional_control_rule(
         "Tone target selector",
         getattr(task, "tone_target", ""),
@@ -1097,7 +1091,6 @@ def writer_prompt(
             hard_shape_rule,
             surface_rule,
             tone_slot_rule,
-            tone_overlay_rule,
             tone_target_rule,
             story_rule,
             affect_rule,
@@ -1536,7 +1529,6 @@ Private sampled slot:
 - texture: {task.surface_texture}
 - real surface shape: {task.real_surface_shape or 'none'}
 - real tone slot: {backend.real_tone_slot_for_prompt(task)[0] or 'none'}
-- tone overlay: {getattr(task, 'tone_overlay_slot', '') or 'none'}
 - tone target: {getattr(task, 'tone_target', '') or 'none'}
 - story mode: {getattr(task, 'story_mode', '') or 'no_story'}
 - affect role: {getattr(task, 'affect_role', '') or 'neutral'}

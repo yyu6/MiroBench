@@ -535,37 +535,6 @@ def exact_thread_metric(post: dict[str, Any], metric: str, scorer: Any, args: ar
     return float(shannon_entropy(Counter(row["dominant_emotion"] for row in rows).values()))
 
 
-def projected_metric(
-    *,
-    comments: list[CommentRef],
-    target: CommentRef,
-    candidate: str,
-    metric: str,
-    scorer: Any,
-    args: argparse.Namespace,
-) -> float:
-    texts = [candidate if ref.comment_id == target.comment_id else ref.content for ref in comments]
-    if metric == "length_cv":
-        return compute_length_cv(sorted(len(text.split()) for text in texts))
-    synthetic = [
-        CommentRef(
-            comment_id=ref.comment_id,
-            parent_comment_id=ref.parent_comment_id,
-            depth=ref.depth,
-            content=texts[idx],
-            meta=ref.meta,
-            comment=ref.comment,
-        )
-        for idx, ref in enumerate(comments)
-    ]
-    if metric == "semantic_mean_cosine":
-        embeddings = scorer.encode(texts, batch_size=max(1, args.semantic_batch_size))
-        values = pairwise_cosine_values(embeddings)
-        return float(np.mean(values)) if len(values) else 0.0
-    rows = score_emotions(synthetic, scorer, args)
-    return float(shannon_entropy(Counter(row["dominant_emotion"] for row in rows).values()))
-
-
 def score_emotions(comments: list[CommentRef], scorer: Any, args: argparse.Namespace) -> list[dict[str, Any]]:
     rows = [
         ThreadComment(

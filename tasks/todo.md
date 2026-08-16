@@ -24,7 +24,7 @@ them onto the 12 metrics and onto the per-thread evidence in `HANDOFF.md` §4.3:
 Only `avg_depth` and `structural_virality` are genuinely matched per thread, and
 both are fixed by the matched sampler rather than won by generation.
 
-## v84 implementation status — 2026-08-17
+## v85 implementation status — 2026-08-17
 
 Detailed evidence and exact scorer definitions are in `tasks/v81-worklog.md`;
 the completion-audit fixes are recorded in `tasks/v82-worklog.md` and
@@ -68,6 +68,18 @@ comment: collection-level metrics are diagnostic in first-pass generation.
       metadata that still described obsolete omission/persistence behavior.
 - [x] Complete offline verification: 266 tests, Ruff, backend self-test, 72/72
       pins, existing-artifact audit replay, and exact v84 `--prepare-only` pass.
+- [x] Audit the current dead-control candidates without treating historical
+      implementations as authority. Remove retired tone-overlay Prompt reads,
+      unreachable legacy tone-label branches, and the superseded scalar metric
+      projection helper while retaining old-record deserialization fields.
+- [x] Record initial and repair-time template-contract overrides in
+      `planning_quality.jsonl`; keep post-override story/tone/affect coherence
+      as a blocking pre-Writer contract.
+- [x] Stop impossible perspective-concentration repair calls. Perspective
+      concentration remains visible as a warning; invalid-perspective and
+      branch-route checks that normalization made unreachable are deleted.
+- [x] Verify v85 offline: 266 tests, scoped Ruff, camera-product backend
+      self-test, 72/72 pins, v80 audit replay, and exact seed-8 `--prepare-only`.
 - [ ] Run one large n=1 content/contract diagnostic with no metric-driven
       retries, then run a multi-thread matched evaluation for formal p-values.
 
@@ -264,19 +276,28 @@ transformer classifiers inside the generation process. See HANDOFF §6.1.
 - **B7 "`allocate_story_and_affect` is a no-op auditor".** Not a bug; it is a
   deliberate auditor, documented at `generation_distribution.py:108-114`.
 
-## Still open from the old audit, unranked
+## Re-audit of old B-items against the current path
 
-`B2` beat-budget contradiction (now in E), `B3` `allow_first_person_frame`
-computed and never read by `_substitution_rule`, `B4` `tone_overlay_*` read in
-five places and assigned nowhere, `B5` `_delexicalize_tone_examples` matches
-strings that no longer exist, `B6` `constructive_polite_helpful` unreachable,
-`B8` template overrides swallowed by `apply_slot_distribution_schedule`, `B9`
-dead validations, `B11` `perspective_id` repair impossible but budgeted, `B12`
-repair feedback references a block the reply prompt lacks, `B13`
-`--writer-hard-recovery-rounds` never exercised.
+- `B2` is fixed: root and direct-reply prompts use the same dynamic beat budget.
+- `B3` is false now: `allow_first_person_frame` reaches both Writer rules and
+  guards.
+- `B4`/`B6` are fixed in v85. The old overlay fields remain only for record
+  deserialization; the unreachable old tone label is gone.
+- `B5` is stale: `_delexicalize_tone_examples` no longer exists.
+- `B8` was partly wrong: schedule values are applied before semantic-quality
+  evaluation, so incoherent plans are repaired or blocked. v85 wires the
+  previously discarded initial/repair override events into the run log.
+- `B9` was partly right: invalid-perspective and branch-route validation were
+  unreachable and are removed. Planner `utterance_mode` is not a requested
+  semantic field; it is intentionally inferred during task construction.
+- `B11` is fixed: structurally owned perspective concentration is diagnostic,
+  not a slot-local repair target.
+- `B12` is false now: repair feedback reaches both root and direct-reply prompts,
+  and sibling/reference context is rendered when enabled.
+- `B13` is false now: hard recovery is wired, audited, and covered by tests.
 
-None of these has a measured link to a failing metric. Fix them when touching the
-surrounding code, not as a campaign.
+These corrections are based on current call order and tests, not on the old
+handoff's interpretation.
 
 ## Sequencing
 

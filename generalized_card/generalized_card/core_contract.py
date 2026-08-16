@@ -16,10 +16,11 @@ HISTORICAL_REVISION_POLICY_VERSIONS = {
     "generalized-card-revision-v6-dynamic-coverage-history-20260807",
 }
 GENERALIZED_V2_GENERATION_POLICY_VERSION = (
-    "generalized-card-v2-complete-writer-coverage-v84-20260817"
+    "generalized-card-v2-auditable-plan-controls-v85-20260817"
 )
 HISTORICAL_GENERATION_POLICY_VERSIONS = {
     "generalized-v2": {
+        "generalized-card-v2-complete-writer-coverage-v84-20260817",
         "generalized-card-v2-matched-text-semantic-isolation-v83-20260817",
         "generalized-card-v2-focused-discourse-contract-v82-20260817",
         "generalized-card-v2-joint-story-affect-handoff-v81-20260817",
@@ -102,7 +103,7 @@ CORE_FILES = {
     # pinned, so a change anywhere in the engine is still reviewed.
     "generator_generalized_v2": (
         "scripts/sampling_generator/run_sampled_reddit_generator.py",
-        "abadfd04147908e8227ad75ffb77d306b2d01639e4142f954309915baba3248c",
+        "6244cd391cf98bb915ebd4c4c5649a08b6917409274f22544e7e4bce662e9327",
     ),
     "engine_vocabulary": (
         "scripts/sampling_generator/engine/vocabulary.py",
@@ -110,7 +111,7 @@ CORE_FILES = {
     ),
     "engine_model": (
         "scripts/sampling_generator/engine/model.py",
-        "13cf157f86e09583e4110ce3ee5fab633b607f1ba1d713f5bbbb09b08307b533",
+        "b9782b7e3799a7e06bba8f99569261da89fb4b307c1672e2f6015bdbe84007e6",
     ),
     "engine_util": (
         "scripts/sampling_generator/engine/util.py",
@@ -142,7 +143,7 @@ CORE_FILES = {
     ),
     "engine_writer_request": (
         "scripts/sampling_generator/engine/writer_request.py",
-        "196d18e654d84be4c5eeb61b5fecdc24149233cd12f10fffbfce56c81fc5f111",
+        "64eb9b8cb154be691d5407c7376264a0a605fa67f4ecd2f448826c01640d7182",
     ),
     "engine_writer_validation": (
         "scripts/sampling_generator/engine/writer_validation.py",
@@ -154,7 +155,7 @@ CORE_FILES = {
     ),
     "generator_adapter": (
         "generalized_card/generalized_card/backend.py",
-        "15a4a2564d04712b25b59ce55696e4974b97250918aa27a2aa9602c30efa37c4",
+        "eaa9d12e19d5129773559d58713ac0363e4be1a1b6731c037487ea48e1b01d7b",
     ),
     # The grounding rules were smeared across eight places in the prompt adapter
     # before v76 and disagreed with each other. Pinned so the one definition
@@ -192,7 +193,7 @@ CORE_FILES = {
     ),
     "planning_quality": (
         "generalized_card/generalized_card/planning_quality.py",
-        "7e97ca1a11dd8d8f1bd0d2feff56e5d4a1809854c03e9c66699c872223bc4985",
+        "bd251678b667dcecfe25b0b02cb51e18201772118ea0a4300615e0a6aa2299c1",
     ),
     "generation_distribution": (
         "generalized_card/generalized_card/generation_distribution.py",
@@ -316,7 +317,7 @@ CORE_FILES = {
     ),
     "domain_prompt_adapter": (
         "generalized_card/generalized_card/prompts.py",
-        "dc3d8ad5f329ddb515f2ad59e280b782a9ff6d85feb84117d97f67d1b5716153",
+        "78c0dcfe86dbbf52fcd9bd568e0af92535882d7859e7e35f0a24a0cf526db552",
     ),
     "reply_planning": (
         "generalized_card/generalized_card/reply_planning.py",
@@ -336,7 +337,7 @@ CORE_FILES = {
     ),
     "text_metric_reviser": (
         "generalized_card/generalized_card/text_metric_reviser.py",
-        "61993555b03326ed07ab5f2a76ea4995a13a4cfe584721b9bd9670ebf0ba478f",
+        "c3dc47398bfa0aa352ba816bed648863da033a301e28f9ae1a5c0247d8c84336",
     ),
     "selfbleu_backend": (
         "generalized_card/scripts/run_selfbleu_reviser_backend.py",
@@ -364,7 +365,7 @@ CORE_FILES = {
     ),
     "output_audit": (
         "generalized_card/generalized_card/audit.py",
-        "6475431efcb6bf56bba4ebe083a747bcae821533929e8cf038e6be653ae40928",
+        "5affd1d233751447b595e0b3f56c3a598d79ab381d115f3ae27269884cbc4346",
     ),
     "evaluation_runner": (
         "generalized_card/scripts/run_evaluate.py",

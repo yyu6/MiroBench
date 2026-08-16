@@ -1297,15 +1297,9 @@ def finalize_rebalanced_task(task: CommentTask) -> CommentTask:
         surface_texture=surface_texture,
         tone_shape=tone_shape,
         allow_first_person_frame=task.allow_first_person_frame
-        and (
-            task.speaker_role in {"datapoint_only", "gratitude_reply", "op_followup"}
-            or task.tone_target == "constructive_polite_helpful"
-        ),
+        and task.speaker_role in {"datapoint_only", "gratitude_reply", "op_followup"},
         allow_uncertainty_frame=task.allow_uncertainty_frame
-        and (
-            task.speaker_role in {"confused_asker", "op_followup"}
-            or task.tone_target == "constructive_polite_helpful"
-        ),
+        and task.speaker_role in {"confused_asker", "op_followup"},
     )
 
 

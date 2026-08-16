@@ -204,13 +204,8 @@ def audit_generated_root(
             )
             if len(rows) >= 5 and post_claims and max(post_claims.values()) / len(rows) > 0.35:
                 claim_collision_posts += 1
-            observed_perspective_ids = perspective_ids or {
-                str(row.get("perspective_id") or "seed_local").strip().upper()
-                for row in rows
-            }
             plan_report = evaluate_plan_batch(
                 _planner_rows_for_audit(rows=rows, records=records),
-                perspective_ids=observed_perspective_ids,
                 max_perspective_share=max_perspective_share,
                 require_reply_novelty=True,
             )

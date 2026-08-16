@@ -325,3 +325,19 @@ When a Prompt intentionally requests a syntax that resembles a guard violation,
 define a narrow, auditable exception for that syntax rather than disabling the
 guard. Here the exception requires an explicitly scheduled markdown excerpt and
 an independent response; unscheduled or whole-parent copying still fails.
+
+## 2026-08-17 — A validator after deterministic normalization may be theatre
+
+**What happened.** Plan quality appeared to validate invalid perspectives and
+wrong branch routes, and to repair perspective concentration. On the active
+path, deterministic metadata normalization ran first: invalid perspectives were
+mapped to `seed_local`, and tree topology overwrote both branch and perspective
+ownership. Two checks therefore compared already-canonical values, while a
+slot-local concentration repair asked the Planner to change a field that the
+next normalization pass overwrote again.
+
+**How to apply.** Trace every quality check together with the mutations before
+and after it. If normalization owns a field, record the normalization event and
+test the normalizer; do not retain a downstream check that cannot see the raw
+value. A collection-level consequence of structural ownership may remain an
+audit warning, but it must not trigger an impossible per-slot LLM repair.

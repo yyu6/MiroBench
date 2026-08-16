@@ -262,7 +262,8 @@ class StoryAffectDistributionTest(unittest.TestCase):
             index: {"story_mode": "specific_personal_story", "tone_class": "", "affect_role": ""}
             for index in range(1, 11)
         }
-        apply_slot_distribution_schedule(plans, schedule)
+        events: list[dict[str, object]] = []
+        apply_slot_distribution_schedule(plans, schedule, events=events)
         tone_counts: dict[str, int] = {}
         for plan in plans.values():
             tone = plan["tone_class"]
@@ -282,6 +283,14 @@ class StoryAffectDistributionTest(unittest.TestCase):
         self.assertEqual(
             sum(plan["story_mode"] == "no_story" for plan in plans.values()),
             10 - schedule["targets"]["story_slots"],
+        )
+        self.assertTrue(events)
+        self.assertTrue(
+            all(
+                {"sample_id", "field", "planner_value", "template_contract_value"}
+                <= event.keys()
+                for event in events
+            )
         )
 
     def test_measured_fourth_class_rate_is_used_when_present(self) -> None:
