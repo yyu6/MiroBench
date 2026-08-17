@@ -38,6 +38,17 @@ _EMPTY = {"", "none", "n/a", "na", "null", "no claim", "not applicable"}
 _MAX_CHARS = 220
 
 
+def planner_claims_enabled(backend: Any) -> bool:
+    """Return whether this run plans and delivers per-slot domain claims."""
+
+    return (
+        str(getattr(backend, "GENERALIZED_DOMAIN_CLAIM_MODE", "planned") or "")
+        .strip()
+        .lower()
+        != "off"
+    )
+
+
 def normalized_domain_claim(value: Any) -> str:
     """Return a clean claim, or an empty string when the slot declares none."""
 
@@ -56,6 +67,8 @@ def normalized_domain_claim(value: Any) -> str:
 def enrich_domain_claim_fields(
     payload: dict[str, Any],
     normalized: dict[int, dict[str, str]],
+    *,
+    enabled: bool = True,
 ) -> dict[int, dict[str, str]]:
     """Retain ``domain_claim`` through the shared CARD JSON parser.
 
@@ -74,8 +87,12 @@ def enrich_domain_claim_fields(
         if sample_id > 0:
             raw_by_sample[sample_id] = row
     for sample_id, plan in normalized.items():
-        plan["domain_claim"] = normalized_domain_claim(
-            raw_by_sample.get(sample_id, {}).get("domain_claim")
+        plan["domain_claim"] = (
+            normalized_domain_claim(
+                raw_by_sample.get(sample_id, {}).get("domain_claim")
+            )
+            if enabled
+            else ""
         )
     return normalized
 

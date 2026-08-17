@@ -272,7 +272,8 @@ def build_parser() -> argparse.ArgumentParser:
         choices=("planned", "off"),
         default="planned",
         help=(
-            "Whether a planned domain claim reaches the Writer. This is an "
+            "Whether the Planner assigns and the Writer receives a separate "
+            "domain claim. This is an "
             "ablation control: the claim went from 0 of 522 comments in v69 to "
             "508 of 522 in v71, so it has to be separable from the rest of a "
             "release when attributing a metric change."

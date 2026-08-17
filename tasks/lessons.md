@@ -531,3 +531,17 @@ not repeat the behavior globally. Configure the real environment before
 capturing the system Prompt in tests, then combine it with both a licensed and
 an unlicensed final user Prompt. Measure the gate's selected share against the
 real property it is meant to reproduce before turning the arm on.
+
+## 2026-08-17 — An off flag must stop planning data that will be dropped
+
+**What happened.** `domain-claim=off` was designed as a delivery-only ablation:
+the Planner still assigned a fact, then the Writer registry discarded it. That
+kept an old experiment comparable but violated the active handoff invariant—the
+Planner could organize visible fields around content the Writer never received.
+It also paid input/output tokens for an intentionally unused field.
+
+**How to apply.** Trace optional information from Prompt request through
+normalization, storage, and final consumer. When a mode disables delivery,
+either remove the upstream request or preserve the data through the handoff; do
+not plan-and-drop. Keep the schema stable with a literal empty value, enforce it
+after parsing, and state where the complete semantic contribution must live.

@@ -59,6 +59,43 @@ Before any run that changes behavior:
 
 ---
 
+## v92 — lossless `domain-claim=off` planning (2026-08-17)
+
+Policy ID: `generalized-card-v2-lossless-domain-claim-off-v92-20260817`.
+
+The post-v91 Planner→Writer audit found that `--domain-claim off` disabled only
+delivery. Both root and direct-reply Planners still spent Prompt and output
+tokens assigning a fact that `backend.py` then withheld from the Writer. The
+Planner could consequently build `semantic_move`, `detail_focus`, or
+`domain_intent` around information absent at realization—the exact handoff gap
+this generator is supposed to eliminate.
+
+v92 makes `off` mean off at both stages. Root and reply schemas require the
+literal `none`, the domain-knowledge/claim instruction is absent, and a compact
+rule requires the complete contribution to live in fields the Writer receives.
+Normalization also clears a claim if the model ignores the rule. `planned`
+mode retains the prior claim path unchanged. This removes redundant Planner
+Prompt/output mass without weakening semantic planning from visible seed,
+parent, branch, and evaluation-excluded discourse patterns.
+
+The next configuration remains `--domain-claim off --own-fact-license named`:
+the Planner hands over the whole semantic move, while the slot-gated Writer adds
+varied local particulars instead of receiving one separately injected fact.
+Expected effects are fewer abstract/incomplete moves and lower Planner cost;
+12-metric movement remains unmeasured until the paid diagnostic.
+
+Offline acceptance is complete: 299 generalized tests and 3 focused
+Self-BERTScore scorer tests pass; Ruff is clean; active and
+active-plus-legacy parity are healthy; all 93 source pins have zero missing,
+untracked, unpinned-import, or drift findings. Rendered root and direct-reply
+Prompt tests cover both flag values, normalization clears a noncompliant
+off-mode claim, and the exact named/off seed-8 public command completed
+`--prepare-only` as
+`generalized_card_camera_gpt54_v92_named_seed8_20260817_preflight_v2` without an
+API call. No v92 content or metric result is claimed yet.
+
+---
+
 ## v91 — slot-gated concreteness permission (2026-08-17)
 
 Policy ID: `generalized-card-v2-slot-gated-fact-license-v91-20260817`.

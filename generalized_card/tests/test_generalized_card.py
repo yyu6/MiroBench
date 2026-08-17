@@ -1067,6 +1067,33 @@ class GeneralizedCardTest(unittest.TestCase):
             "Never include usernames, URLs, hidden anecdotes, or facts absent",
             comment_planner,
         )
+        self.assertIn("These rows are also this domain's knowledge", comment_planner)
+        self.assertIn("Give most substantive slots", comment_planner)
+
+        backend.GENERALIZED_DOMAIN_CLAIM_MODE = "off"
+        claim_off = prompts.comment_planner_prompt(
+            self.config,
+            backend,
+            seed_post=seed,
+            target=target,
+            branches=[
+                SimpleNamespace(
+                    branch_id=1,
+                    branch_goal="compare handling",
+                    anchor_quote="grip",
+                    allowed_functions=("reaction",),
+                    content_angles=("fit_use_case",),
+                )
+            ],
+            matched_real_thread={"comments": [{"body": "MATCHED_TEST_SECRET"}]},
+            comments=[{"body": "MATCHED_TEST_SECRET", "depth": 0}],
+            all_comments=[{"body": "MATCHED_TEST_SECRET", "depth": 0}],
+        )
+        self.assertIn("NON_TEST_VIEWPOINT_MARKER", claim_off)
+        self.assertIn('"domain_claim": "none"', claim_off)
+        self.assertIn("information that the Writer will not receive", claim_off)
+        self.assertNotIn("These rows are also this domain's knowledge", claim_off)
+        self.assertNotIn("Give most substantive slots", claim_off)
 
         rendered_refs = render_reference_viewpoints(
             profile,
@@ -6448,13 +6475,19 @@ class WriterRouteLockTest(unittest.TestCase):
         self.assertIn("Say this, and only this", prompt)
         self.assertNotIn("specification of what to say", prompt)
 
-    def _reply_planner_prompt(self, route_lock: str) -> str:
+    def _reply_planner_prompt(
+        self,
+        route_lock: str,
+        *,
+        domain_claim_mode: str = "planned",
+    ) -> str:
         from generalized_card import reply_planning
 
         backend = SimpleNamespace(
             compact=lambda value, limit: str(value)[:limit],
             CLAIM_FAMILIES=("direct_answer", "tradeoff"),
             GENERALIZED_WRITER_ROUTE_LOCK=route_lock,
+            GENERALIZED_DOMAIN_CLAIM_MODE=domain_claim_mode,
         )
         comments = [
             {
@@ -6498,6 +6531,17 @@ class WriterRouteLockTest(unittest.TestCase):
     def test_reply_schema_say_only_reproduces_the_v74_request(self) -> None:
         prompt = self._reply_planner_prompt("say_only")
         self.assertIn("a full sentence stating what this reply asserts", prompt)
+
+    def test_domain_claim_off_does_not_plan_a_fact_the_writer_cannot_see(self) -> None:
+        planned = self._reply_planner_prompt("own_words")
+        claim_off = self._reply_planner_prompt(
+            "own_words",
+            domain_claim_mode="off",
+        )
+        self.assertIn("Give a substantive reply", planned)
+        self.assertIn('"domain_claim": "none"', claim_off)
+        self.assertIn("information the Writer will not receive", claim_off)
+        self.assertNotIn("Give a substantive reply", claim_off)
 
     def test_reply_story_rule_separates_synthetic_sequence_from_seed_facts(self) -> None:
         prompt = self._reply_planner_prompt("own_words")

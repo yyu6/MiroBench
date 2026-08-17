@@ -16,10 +16,11 @@ HISTORICAL_REVISION_POLICY_VERSIONS = {
     "generalized-card-revision-v6-dynamic-coverage-history-20260807",
 }
 GENERALIZED_V2_GENERATION_POLICY_VERSION = (
-    "generalized-card-v2-slot-gated-fact-license-v91-20260817"
+    "generalized-card-v2-lossless-domain-claim-off-v92-20260817"
 )
 HISTORICAL_GENERATION_POLICY_VERSIONS = {
     "generalized-v2": {
+        "generalized-card-v2-slot-gated-fact-license-v91-20260817",
         "generalized-card-v2-reply-story-grounding-v90-20260817",
         "generalized-card-v2-realizability-first-planner-v89-20260817",
         "generalized-card-v2-structural-speakers-grounding-v88-20260817",
@@ -161,7 +162,7 @@ CORE_FILES = {
     ),
     "generator_adapter": (
         "generalized_card/generalized_card/backend.py",
-        "dea4ff9978ae723a535c41989fa41874ac8d9739cf59a793badc141c85987f8b",
+        "dc6b65dbb7c65f9c313b9d8adcee7e61d2c720fb6100d502fbb18f7b300dd4d2",
     ),
     "data_boundary": (
         "generalized_card/generalized_card/data.py",
@@ -195,7 +196,7 @@ CORE_FILES = {
     ),
     "generation_runner": (
         "generalized_card/scripts/run_generate.py",
-        "c4531f16bc7d003867e74eaa9aa3c9f81c7cffb0097093b8b98074a2eb01e61d",
+        "90962dc78a2305e0a43effde705e4b13161696227f942e4586b0b6951daaf727",
     ),
     "generation_backend_runner": (
         "generalized_card/scripts/run_generator_backend.py",
@@ -243,7 +244,7 @@ CORE_FILES = {
     ),
     "domain_claim": (
         "generalized_card/generalized_card/domain_claim.py",
-        "65362fdac664c858c6883e872be447219352a754a2218c86928ba14e3b2dc111",
+        "bf4095781d4bfde9b251114b5f390fabfb5affef75b886f4743af30bc732beab",
     ),
     "opener_profile": (
         "generalized_card/generalized_card/opener_profile.py",
@@ -347,11 +348,11 @@ CORE_FILES = {
     ),
     "domain_prompt_adapter": (
         "generalized_card/generalized_card/prompts.py",
-        "91d525be97f94b4b165c79e206051d0fbe04a84d24a225a1b008582ea21de090",
+        "c1d8394c2a17143e2d351e1e3836feb5a34c5744afbb8ff9e382a9d0876bd904",
     ),
     "reply_planning": (
         "generalized_card/generalized_card/reply_planning.py",
-        "44e7b039950e3ce635e1186550f24f57ee76bcae67aabf00f943dcd017fc93d2",
+        "d26b6931628303f4a0f09ae613d851048eef12847c655b7c71486e43989c5a67",
     ),
     "persona_bridge": (
         "generalized_card/generalized_card/persona_bridge.py",

@@ -11,7 +11,11 @@ from .branch_routing import (
     root_branch_schedule,
 )
 from .domain import DomainConfig
-from .domain_claim import claim_for_task, render_domain_claim_rule
+from .domain_claim import (
+    claim_for_task,
+    planner_claims_enabled,
+    render_domain_claim_rule,
+)
 from .domain_profile import render_profile_for_planner
 from .entity_inventory import slot_equipment_options
 from .generation_distribution import (
@@ -517,6 +521,40 @@ def comment_planner_prompt(
   ``attention_focus`` in the seed or parent, and do not import facts from R#.
 - Vary ``realization_route`` across nearby slots before Writer generation. It
   describes sentence architecture and cadence, not reusable example wording."""
+    if planner_claims_enabled(backend):
+        claim_knowledge = """
+These rows are also this domain's knowledge. Real participants bring domain
+knowledge they acquired elsewhere, so a slot may carry one *general* domain fact
+from its R# row into ``domain_claim``: a compatibility relation, a procedure, an
+observable behaviour, a specification class, a model comparison. Write it in your
+own words as a claim a knowledgeable participant would state. Two limits: never
+reproduce an R# row's wording, and never carry a detail that belongs to that
+discussion or its participants rather than to the domain — someone's own photos,
+their purchase, their argument with another commenter, a number tied to their
+specific situation. A fact about the seed post itself still cannot be invented."""
+        claim_schema = (
+            "one concrete domain fact this slot states in your own words - a "
+            "compatibility relation, procedure, observable behaviour, "
+            "specification class, or model comparison - or none for a purely "
+            "social slot"
+        )
+        claim_rules = """- Give most substantive slots a ``domain_claim``. Measured against a matched real
+  thread, real comments name a concrete domain entity or domain noun in
+  about two thirds of cases and contain a number in about half, while a plan
+  built only from decision language produced neither. A slot whose entire content
+  is how to weigh a decision, how a learning curve feels, or whether advice is
+  trustworthy is the failure mode: it reads as commentary about the discussion
+  rather than participation in it. Vary the concrete entities named across slots
+  instead of returning to whichever one the seed post mentions.
+- Micro and purely social slots keep ``domain_claim=none``. Do not attach a fact
+  to a reaction that has no room for one."""
+    else:
+        claim_knowledge = ""
+        claim_schema = "none"
+        claim_rules = """- Set ``domain_claim`` to the literal ``none`` for every row. This run does not
+  deliver a separate planned fact to the Writer. Put every required semantic
+  contribution in ``semantic_move``, ``detail_focus``, and ``domain_intent``;
+  do not build the move around information that the Writer will not receive."""
     return f"""Assign per-comment semantic and social controls to matched-real structural slots.
 
 Domain: {config.display_name}
@@ -531,16 +569,7 @@ NON-TEST REFERENCE COMMENTS FOR SEMANTIC ABSTRACTION:
 The R# rows come from evaluation-excluded threads. Pair each displayed S# with
 a different R# row in order when the viewpoint pattern fits. Abstract the tiny
 semantic/discourse move and adapt it to the visible seed or parent.
-
-These rows are also this domain's knowledge. Real participants bring domain
-knowledge they acquired elsewhere, so a slot may carry one *general* domain fact
-from its R# row into ``domain_claim``: a compatibility relation, a procedure, an
-observable behaviour, a specification class, a model comparison. Write it in your
-own words as a claim a knowledgeable participant would state. Two limits: never
-reproduce an R# row's wording, and never carry a detail that belongs to that
-discussion or its participants rather than to the domain — someone's own photos,
-their purchase, their argument with another commenter, a number tied to their
-specific situation. A fact about the seed post itself still cannot be invented.
+{claim_knowledge}
 {reference_viewpoints}
 
 Objectives:
@@ -620,7 +649,7 @@ Return strict JSON:
       "claim_key": "short abstract semantic key",
       "perspective_id": "one P## from the frozen domain profile, or seed_local",
       "domain_intent": "one short domain-grounded intent that does not import a hidden fact",
-      "domain_claim": "one concrete domain fact this slot states in your own words - a compatibility relation, procedure, observable behaviour, specification class, or model comparison - or none for a purely social slot",
+      "domain_claim": "{claim_schema}",
       "decision_boundary": "the one decision condition, consequence, or uncertainty this independent slot owns",
       "reply_delta": "for a direct reply: the one new relation, evidence, consequence, or caveat it adds beyond its parent; otherwise none",
       "reply_delta_type": "for a direct reply: {' | '.join(REPLY_DELTA_TYPES)}; otherwise none",
@@ -670,16 +699,7 @@ Rules:
   kind are mostly participants reporting their own experience, reacting, and
   asking, with advisors a minority. Reserve ``advisor`` for slots whose plan is
   genuinely a recommendation.
-- Give most substantive slots a ``domain_claim``. Measured against a matched real
-  thread, real comments name a concrete domain entity or domain noun in
-  about two thirds of cases and contain a number in about half, while a plan
-  built only from decision language produced neither. A slot whose entire content
-  is how to weigh a decision, how a learning curve feels, or whether advice is
-  trustworthy is the failure mode: it reads as commentary about the discussion
-  rather than participation in it. Vary the concrete entities named across slots
-  instead of returning to whichever one the seed post mentions.
-- Micro and purely social slots keep ``domain_claim=none``. Do not attach a fact
-  to a reaction that has no room for one.
+{claim_rules}
 - Every S# not explicitly assigned a story_mode in the slot schedule is fixed
   to no_story. Do not create an extra story to make a local plan sound richer.
 - Story is a joint evidence contract. A `no_story` row must not use

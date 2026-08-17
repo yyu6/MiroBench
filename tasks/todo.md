@@ -69,8 +69,22 @@ both are fixed by the matched sampler rather than won by generation.
       digit-bearing comments and 31.35% generated.
 - [x] Complete full offline verification, repin, and exact named-mode v91
       prepare-only before an API call.
-- [ ] Run the fresh v91 seed-8 tag with `--own-fact-license named`; inspect
-      content and realization before any sufficient-N claim.
+- [x] Supersede v91 before a paid call after proving that `domain-claim=off`
+      still planned and then discarded a separate fact.
+
+## v92 lossless-domain-claim status — 2026-08-17
+
+- [x] Trace `domain_claim` through root/reply Prompt, normalization, registry,
+      task handoff, and every Writer path under both flag values.
+- [x] Make off-mode require `domain_claim=none` on both Planner routes and omit
+      claim-only Prompt prose.
+- [x] Require the complete move to live in Writer-visible semantic fields and
+      clear a noncompliant returned claim during normalization.
+- [x] Preserve planned mode and its claim-specific Prompt/delivery path.
+- [x] Complete full verification, repin, rendered off/planned Prompt audit on
+      both Planner routes, named backend self-test, and exact v92 prepare-only.
+- [ ] Run the fresh v92 seed-8 tag with named concreteness; inspect content and
+      realization before any sufficient-N claim.
 
 ## v88 completion-audit status — 2026-08-17
 
@@ -114,7 +128,7 @@ both are fixed by the matched sampler rather than won by generation.
       replay, and exact v87 seed-8 `--prepare-only`.
 - [x] Supersede v87 with v88 before a paid run after completion audit proved a
       grounding conflict and structural-speaker/persona coupling.
-- [ ] If the v91 qualitative/realization gate is credible, keep v91 unchanged for a
+- [ ] If the v92 qualitative/realization gate is credible, keep v92 unchanged for a
       sufficient-N matched run and interpret MWU/KS only there.
 
 ---
@@ -451,10 +465,10 @@ handoff's interpretation.
 ## Sequencing
 
 The free target-selection and evaluation-integrity work is complete. Next run
-the complete v91 seed-8 thread and judge Writer realization/content, not n=1
+the complete v92 seed-8 thread and judge Writer realization/content, not n=1
 p-values. Only if coverage is exact and the content audit shows the expected
 direction should the same unchanged policy advance to a sufficient-N matched
 evaluation. Reopen A/C upstream only for target→generated failures that remain;
 do not change the reference sampler, add a reviser, or tune against final
 test-set p-values. One mechanism per later paid run, prediction written first,
-`off` byte-identical, and `--prepare-only` before spending.
+control semantics versioned, and `--prepare-only` before spending.

@@ -1,5 +1,27 @@
 # Handoff — synthetic Reddit thread generation (generalized_card)
 
+## 2026-08-17 v92 lossless-domain-claim addendum
+
+The v91 completion audit found another active Planner→Writer gap. With
+`--domain-claim off`, both Planner paths still assigned a separate domain fact,
+but `backend.py` deliberately did not register it for the Writer. This wasted
+Prompt/output tokens and allowed the visible semantic fields to depend on an
+invisible claim.
+
+v92 makes off-mode symmetric. Root and direct reply Planners set
+`domain_claim=none`, omit the claim-specific knowledge/rule blocks, and put the
+whole contribution in `semantic_move`, `detail_focus`, and `domain_intent`.
+Normalization forcibly clears a returned claim in case the model ignores the
+schema. Planned mode remains unchanged and reproducible.
+
+Do not spend under v91. The next run must use policy
+`generalized-card-v2-lossless-domain-claim-off-v92-20260817`, a fresh v92 tag,
+`--domain-claim off`, and `--own-fact-license named`. See
+`tasks/v92-worklog.md`. Offline acceptance is complete: 299 generalized tests,
+3 focused scorer tests, Ruff, both parity scopes, 93/93 clean pins, rendered
+root/direct Prompt checks, named/off backend self-test, and exact seed-8
+prepare-only all pass. No v92 API call has been made.
+
 ## 2026-08-17 v91 slot-gated concreteness addendum
 
 The zero-API audit found that `--own-fact-license named` could not safely be
@@ -17,10 +39,11 @@ boundary now protects the retained legacy `own` arm.
 This gate is data-scaled rather than arbitrary. It selects 110/186 seed-8 slots
 (59.14%); matched real comments contain a digit at 59.68%, versus 31.35% in v80
 generated text. Matched real also has 118 distinct model designators versus 29
-generated. The next run should use policy
+generated. At that stage the next run would have used policy
 `generalized-card-v2-slot-gated-fact-license-v91-20260817`, a fresh v91 tag,
 `--own-fact-license named`, and `--domain-claim off`. See
-`tasks/v91-worklog.md`. Offline acceptance is complete: 297 generalized tests,
+`tasks/v91-worklog.md`. v91 was superseded by v92 before an API call. Its offline
+acceptance was complete: 297 generalized tests,
 3 focused scorer tests, Ruff, both parity scopes, 93/93 pins, named backend
 self-test, exact 186-slot Prompt replay, and named-mode prepare-only all pass.
 
@@ -190,7 +213,7 @@ pins total), and the closure audit follows sibling scripts.
 Finally, n=1 is `DESCRIPTIVE` from the matched evaluator through console and
 content reports. Ignore the mathematical p=1 values returned for singleton
 samples; they cannot establish a pass. The pending paid step is now a complete
-v91 seed-8 Writer diagnostic, followed by sufficient N only if its realization
+v92 seed-8 Writer diagnostic, followed by sufficient N only if its realization
 and content review are credible.
 
 ## 2026-08-17 exact-matched content-audit addendum
@@ -1062,7 +1085,7 @@ prompt-rendering check in this session was built — no API, full corpus.
 
 # 11. RECOMMENDED FIRST MOVE
 
-The free checks are complete. Run the seed-8 command in §10 first under v91,
+The free checks are complete. Run the seed-8 command in §10 first under v92,
 with social contract and sibling visibility both on. Judge it on Planner repair
 counts, tone-label realization (59.2% baseline), and StorySeeker mass in
 `no_story` slots—not on an n=1 p-value. If the mechanism moves those diagnostics

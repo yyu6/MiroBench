@@ -73,6 +73,18 @@ class PlannerFieldSurvivalTest(unittest.TestCase):
         ):
             self.assertIn(enrich, body, enrich)
 
+    def test_domain_claim_off_clears_a_model_returned_claim(self) -> None:
+        payload = {
+            "comment_plans": [
+                {
+                    "sample_id": "S1",
+                    "domain_claim": "a fact the disabled arm must not retain",
+                }
+            ]
+        }
+        normalized = enrich_domain_claim_fields(payload, {1: {}}, enabled=False)
+        self.assertEqual(normalized[1]["domain_claim"], "")
+
     def test_planner_prompt_requests_every_field_it_relies_on(self) -> None:
         from generalized_card import prompts
 

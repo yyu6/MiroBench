@@ -11,6 +11,7 @@ from __future__ import annotations
 from typing import Any
 
 from .branch_routing import parent_slot_schedule
+from .domain_claim import planner_claims_enabled
 from .long_form_planning import expected_development_beats
 from .planner_schema import parse_sample_id
 from .surface_contract import surface_only_label
@@ -246,6 +247,23 @@ def render_direct_reply_planner_prompt(
     # reply. Reading it off the backend keeps the prompt and the normalizer on
     # one list.
     claim_families = " | ".join(getattr(backend, "CLAIM_FAMILIES", ()) or ())
+    if planner_claims_enabled(backend):
+        claim_schema = (
+            "one concrete domain fact this reply states in your own words, or "
+            "none for a purely social reply"
+        )
+        claim_rule = """- Give a substantive reply a ``domain_claim``: one concrete domain fact stated in
+  your own words, naming the relevant entity, action, or condition. Real replies
+  are largely specific observations, procedures, relationships, and constraints;
+  a reply whose whole content is how to weigh a decision reads as commentary
+  about the discussion rather than participation in it. A purely social reply
+  uses ``none``."""
+    else:
+        claim_schema = "none"
+        claim_rule = """- Set ``domain_claim`` to the literal ``none``. This run does not deliver a
+  separate planned fact to the Writer. Put the whole new contribution in
+  ``semantic_move``, ``detail_focus``, and ``domain_intent``; do not build the
+  reply around information the Writer will not receive."""
     # Asking for "a full sentence stating what this reply asserts" produced
     # finished first-person prose -- 19.3% of all moves open with "I" -- which the
     # Writer then reproduced verbatim. Reply slots echoed their plan at 25.1%
@@ -333,7 +351,7 @@ Return strict JSON with exactly one row for each of {slot_ids}:
       "reply_novelty_anchor": "the one concrete new object this reply introduces",
       "opening_style": "a one-use sentence entry route different from the parent",
       "development_plan": "none",
-      "domain_claim": "one concrete domain fact this reply states in your own words, or none for a purely social reply",
+      "domain_claim": "{claim_schema}",
       "context_aperture": "parent_only"
     }}
   ]
@@ -379,12 +397,7 @@ Rules:
   observation, reason, consequence, caveat, condition, or reaction; none of
   them may restate the increment or introduce an unrelated claim.
 - When a row says `development_plan: none`, return the literal string `none`.
-- Give a substantive reply a ``domain_claim``: one concrete domain fact stated in
-  your own words, naming the relevant entity, action, or condition. Real replies
-  are largely specific observations, procedures, relationships, and constraints;
-  a reply whose whole content is how to weigh a decision reads as commentary
-  about the discussion rather than participation in it. A purely social reply
-  uses ``none``.
+{claim_rule}
 - Do not reproduce any real discussion's wording, and do not carry a detail that
   belongs to a particular discussion or its participants rather than to the
   domain. A fact about this seed post still cannot be invented.

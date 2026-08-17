@@ -36,6 +36,7 @@ from .domain_claim import (
     claim_for_task,
     enrich_domain_claim_fields,
     normalized_domain_claim,
+    planner_claims_enabled,
 )
 from .opener_profile import OPENER_TYPES
 from .domain_profile import load_domain_profile
@@ -296,8 +297,9 @@ def configure_generator_backend(
     module.GENERALIZED_DOMAIN_CLAIMS = {}
     # Ablation switch. A planned domain claim reached 508 of 522 comments in
     # v71 against 0 in v69, which is a large enough intervention that it has to
-    # be separable from everything else in the same release. "off" keeps the
-    # Planner's claim out of the Writer's prompt without changing planning.
+    # be separable from everything else in the same release. "off" now disables
+    # both planning and delivery: planning a fact and dropping it at the Writer
+    # boundary made the semantic move depend on information the Writer never saw.
     module.GENERALIZED_DOMAIN_CLAIM_MODE = (
         os.environ.get("GENERALIZED_CARD_DOMAIN_CLAIM", "planned").strip().lower()
         or "planned"
@@ -567,7 +569,11 @@ def configure_generator_backend(
                 enrich_normalized_plans(payload, normalized)
             normalized = enrich_distribution_plan_fields(payload, normalized)
             normalized = enrich_development_plan_fields(payload, normalized)
-            normalized = enrich_domain_claim_fields(payload, normalized)
+            normalized = enrich_domain_claim_fields(
+                payload,
+                normalized,
+                enabled=planner_claims_enabled(module),
+            )
             return apply_slot_distribution_schedule(
                 normalized,
                 module.GENERALIZED_ACTIVE_SLOT_DISTRIBUTION_SCHEDULE,
@@ -1795,7 +1801,7 @@ def _comment_planner_batch_with_history(
             # so a planned field that the generator does not declare is carried
             # in a keyed registry instead, the same way actor state is.
             claim = normalized_domain_claim(plan.get("domain_claim"))
-            if claim and module.GENERALIZED_DOMAIN_CLAIM_MODE != "off":
+            if claim and planner_claims_enabled(module):
                 module.GENERALIZED_DOMAIN_CLAIMS[(key, int(sample_id))] = claim
             opener = str(plan.get("opener_type") or "").strip().lower()
             if opener in OPENER_TYPES:

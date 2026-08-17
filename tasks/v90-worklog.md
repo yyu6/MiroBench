@@ -31,13 +31,11 @@ is committed.
 
 ## Adjacent-boundary review
 
-The final review also traced direct Planner `domain_claim` handling under the
-formal `--domain-claim off` arm. This is intentionally a Writer-boundary
-ablation: planning remains byte-comparable, but `backend.py` does not place the
-claim in `GENERALIZED_DOMAIN_CLAIMS`, so `claim_for_task` returns nothing and no
-claim permission reaches the Writer. The story/fact rule therefore receives
-`has_domain_claim=False`. This is not a second Writer contradiction and was not
-changed.
+The final review initially classified direct Planner `domain_claim` handling
+under `--domain-claim off` as an intentional Writer-boundary ablation. v92
+corrected that conclusion: even though no claim permission reached the Writer,
+planning a fact and then dropping it still created a handoff gap and wasted
+Planner Prompt/output tokens. See `tasks/v92-worklog.md`.
 
 ## Verification status
 
