@@ -982,12 +982,7 @@ def writer_prompt(
         if parent_comment is not None
         else render_seed_context(config, backend, seed_post=seed_post, task=task)
     )
-    previous = _thread_memory(
-        backend,
-        previous_comments or [],
-        current_task=task,
-        domain_profile=domain_profile,
-    )
+    prior_comments = previous_comments or []
     # This was raised to every prior opening on the theory that a longer ledger
     # prevents more reuse. It does not. Uncapping it (v69's 18 lines -> v71's
     # unlimited) left `self_bleu_4` slightly *worse*, delta 0.46 -> 0.52, and the
@@ -1000,6 +995,23 @@ def writer_prompt(
             if item
         )
         or "- none"
+    )
+    low_info_writer = backend.should_use_low_info_writer(task)
+    focused_writer = _writer_prompt_mode(backend) == "focused"
+    previous = (
+        _focused_thread_ledger(
+            backend,
+            prior_comments,
+            current_task=task,
+            recent_openings=recent_openings or [],
+        )
+        if focused_writer or low_info_writer
+        else _thread_memory(
+            backend,
+            prior_comments,
+            current_task=task,
+            domain_profile=domain_profile,
+        )
     )
     anchors = _writer_visible_anchors(getattr(task, "concrete_anchors", ()))
     anchors_block = "\n".join(f"- {item}" for item in anchors[:8]) or "- none"
@@ -1115,11 +1127,9 @@ def writer_prompt(
     # Rendered on every Writer path. v74 converted only the focused path and
     # left 106 of 522 slots on the old one, which made that release impossible
     # to attribute.
-    speaker_block = _speaker_identity_block(backend, task, previous_comments)
+    speaker_block = _speaker_identity_block(backend, task, prior_comments)
 
-    if _writer_prompt_mode(
-        backend
-    ) == "focused" and not backend.should_use_low_info_writer(task):
+    if focused_writer and not low_info_writer:
         return marker_prefix + _focused_writer_prompt(
             config,
             backend,
@@ -1146,7 +1156,7 @@ def writer_prompt(
             surface_rule=surface_rule,
         )
 
-    if backend.should_use_low_info_writer(task):
+    if low_info_writer:
         return marker_prefix + _low_info_writer_prompt(
             config,
             backend,
@@ -1246,30 +1256,74 @@ Hard rules:
     )
 
 
-def _focused_thread_ledger(backend: Any, previous: str) -> str:
-    """Keep the two ledger sections that stop repetition; drop the rest.
+def _focused_thread_ledger(
+    backend: Any,
+    comments: list[dict[str, Any]],
+    *,
+    current_task: Any,
+    recent_openings: list[str],
+) -> str:
+    """Build only the two bounded ledgers the focused Writer consumes.
 
     The full blackboard renders five sections plus a thread-level distribution
     report, together 9.2%-11.2% of the prompt each. The rebuilt-thread A/B held
     within-thread diversity with only the covered-points list and the short-line
-    exclusions, so those are what survive here. The distribution report, the
-    per-comment control tags, and the clause-route list are dropped: nothing
-    measured depends on them.
+    exclusions, so those are what survive here. Construct them directly rather
+    than rendering the full blackboard and parsing its text back apart.
+
+    Exact-duplicate validation already retains every generated comment. The
+    Prompt therefore needs a bounded reminder, not an unbounded copy of every
+    short line in a long thread. Openings rendered immediately above are also
+    removed from the short-line section when they are identical.
     """
 
-    del backend
-    keep = ("Semantic contributions already covered", "Short utterances already used")
-    sections: list[str] = []
-    current: list[str] | None = None
-    for line in str(previous or "").splitlines():
-        if line.endswith(":") and not line.startswith(("-", " ")):
-            current = [] if any(line.startswith(name) for name in keep) else None
-            if current is not None:
-                sections.append(line)
-        elif current is not None and line.strip():
-            if line.strip().startswith("-"):
-                sections.append(line)
-    return "\n".join(sections) + "\n" if sections else ""
+    usable = [
+        comment for comment in comments if str(comment.get("content") or "").strip()
+    ]
+    visible_openings = _dedupe(list(recent_openings), limit=400)[-24:]
+    opening_keys = {
+        " ".join(str(value or "").split()).casefold()
+        for value in visible_openings
+        if str(value or "").strip()
+    }
+    short_limit = 32 if _short_output_slot(current_task) else 12
+    short_lines = [
+        value
+        for value in short_utterance_exclusions(usable, limit=short_limit)
+        if " ".join(value.split()).casefold() not in opening_keys
+    ]
+    coverage_limit = 8 if _short_output_slot(current_task) else 16
+    coverage = semantic_coverage_entries(
+        usable,
+        limit=coverage_limit,
+        current_task=current_task,
+    )
+    if str(getattr(current_task, "reply_delta_type", "") or "") == "social_close":
+        current_move = " ".join(
+            str(getattr(current_task, "semantic_move", "") or "").split()
+        ).casefold()
+        if current_move:
+            prefix = f"move={current_move}"
+            coverage = [
+                value for value in coverage if not value.casefold().startswith(prefix)
+            ]
+
+    short_block = (
+        "\n".join(f"- {backend.compact(value, 90)}" for value in short_lines)
+        if short_lines
+        else "- none yet"
+    )
+    coverage_block = (
+        "\n".join(f"- {backend.compact(value, 90)}" for value in coverage)
+        if coverage
+        else "- none yet"
+    )
+    return (
+        "Short utterances already used anywhere in this thread:\n"
+        f"{short_block}\n"
+        "Semantic contributions already covered in this thread:\n"
+        f"{coverage_block}\n"
+    )
 
 
 def _writer_prompt_mode(backend: Any) -> str:
@@ -1440,7 +1494,7 @@ Things you may name:
 
 Already used in this thread, so do not repeat them:
 {openings}
-{_focused_thread_ledger(backend, previous)}{retry}
+{previous}{retry}
 Rules:
 {realization_rule}{branch_rule}{reply_rule}- An exclusion above bars reusing that content. It does not bar the interpersonal
   move your assigned register requires, and every slot has exclusions, not only
@@ -1555,7 +1609,7 @@ How to write it:
 
 Already used in this thread, so do not repeat them:
 {openings}
-{_focused_thread_ledger(backend, previous)}
+{previous}
 {retry}
 
 Rules:

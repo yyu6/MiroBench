@@ -121,6 +121,7 @@ from generalized_card.persona_bridge import (
 from generalized_card.planner_schema import parse_sample_id
 from generalized_card.planning_quality import (
     evaluate_plan_batch,
+    social_contract_problem,
     universal_viewpoints,
 )
 from generalized_card.surface_contract import (
@@ -2206,6 +2207,34 @@ class GeneralizedCardTest(unittest.TestCase):
                 comments=[{"comment_id": "c1", "parent_id": None, "body": "words"}],
                 all_comments=[{"comment_id": "c1", "parent_id": None, "body": "words"}],
             )
+
+    def test_social_close_contract_is_bidirectional(self) -> None:
+        coherent = {
+            "speaker_role": "gratitude_reply",
+            "reply_delta_type": "social_close",
+            "affect_role": "gratitude",
+            "comment_function": "reaction",
+            "payload_type": "low_info_reaction",
+            "story_mode": "no_story",
+        }
+        self.assertEqual(social_contract_problem(coherent), "")
+
+        for mismatch in (
+            {
+                **coherent,
+                "affect_role": "neutral",
+                "payload_type": "meta_or_template",
+            },
+            {
+                **coherent,
+                "speaker_role": "side_observer",
+                "affect_role": "neutral",
+            },
+        ):
+            with self.subTest(mismatch=mismatch):
+                problem = social_contract_problem(mismatch)
+                self.assertIn("reply_delta_type=social_close", problem)
+                self.assertIn("affect_role=gratitude or relief", problem)
 
     def test_invalid_branch_id_perspective_is_deterministically_normalized(
         self,
@@ -5609,6 +5638,160 @@ class GeneralizedCardTest(unittest.TestCase):
         )
         self.assertNotIn("Required local move:", bare_rendered)
         self.assertIn("Not the whole A7 line, no", bare_rendered)
+
+    def test_short_utterance_shape_cannot_downgrade_substantive_payload(self) -> None:
+        module = configure_generator_backend(load_generator_backend(), self.config)
+        base = module.CommentTask(
+            local_task_id=1,
+            local_parent_task_id=None,
+            depth=0,
+            branch_id=1,
+            branch_goal="check one autofocus condition",
+            visible_scope="seed",
+            local_anchor="autofocus tracking",
+            comment_function="question_followup",
+            content_angle="fit_use_case",
+            evidence_mode="none_assertion",
+            story_mode="no_story",
+            voice="casual_neutral",
+            payload_type="narrow_question",
+            length_bucket="short",
+            speaker_role="op_followup",
+            utterance_mode="op_followup",
+            surface_texture="plain",
+            allow_first_person_frame=False,
+            allow_uncertainty_frame=False,
+            planner_intent="ask one short tracking question",
+            must_not_do="Do not broaden the question.",
+            real_word_count=8,
+            semantic_move="ask whether tracking holds on a sideways cut",
+            local_topic="tracking on a sideways cut",
+            reply_relation="asks_narrow_followup",
+            stance="neutral",
+            detail_focus="a sideways cut",
+            avoid_repeating="the parent verdict",
+            claim_key="sideways_cut_question",
+            claim_family="clarification_question",
+        )
+        self.assertTrue(module.should_use_low_info_writer(base))
+
+        for payload, function in (
+            ("soft_helpful", "explanation_analysis"),
+            ("correction", "correction_caveat"),
+        ):
+            task = replace(base, payload_type=payload, comment_function=function)
+            self.assertFalse(module.should_use_low_info_writer(task), payload)
+            rendered = module.build_writer_prompt(
+                profile="gpt54_reddit_writer",
+                seed_post=module.SeedPost(
+                    index=0,
+                    title="Autofocus tracking question",
+                    body="Does tracking hold when a runner cuts sideways?",
+                    content="Autofocus tracking question",
+                    source_raw_post_id="routing-test",
+                    real_num_comments=1,
+                    metadata={},
+                ),
+                task=task,
+                parent_comment=None,
+                previous_comments=[],
+                recent_openings=[],
+            )
+            self.assertNotIn("Write exactly one low-information", rendered)
+            self.assertIn("Write exactly one Reddit comment", rendered)
+            self.assertIn(f"- payload form: {payload.replace('_', ' ')}", rendered)
+
+    def test_final_task_refreshes_stale_acknowledgement_controls(self) -> None:
+        module = configure_generator_backend(load_generator_backend(), self.config)
+        task = module.CommentTask(
+            local_task_id=1,
+            local_parent_task_id=None,
+            depth=0,
+            branch_id=1,
+            branch_goal="report one autofocus datapoint",
+            visible_scope="seed",
+            local_anchor="autofocus tracking",
+            comment_function="personal_datapoint",
+            content_angle="fit_use_case",
+            evidence_mode="firsthand_experience",
+            story_mode="no_story",
+            voice="casual_neutral",
+            payload_type="fragment_datapoint",
+            length_bucket="short",
+            speaker_role="datapoint_only",
+            utterance_mode="one_datapoint",
+            surface_texture="gratitude_social",
+            allow_first_person_frame=True,
+            allow_uncertainty_frame=False,
+            planner_intent="report one short tracking datapoint",
+            must_not_do="Do not add advice.",
+            real_word_count=9,
+            real_surface_shape="short_direct_answer",
+            real_tone_slot="pure_acknowledgement",
+            real_tone_instruction="Make the social acknowledgement visible.",
+        )
+        refreshed = module.finalize_rebalanced_task(task)
+        self.assertEqual(refreshed.surface_texture, "plain")
+        self.assertEqual(refreshed.real_tone_slot, "")
+        self.assertEqual(refreshed.real_tone_instruction, "")
+
+        gratitude = module.finalize_rebalanced_task(
+            replace(
+                task,
+                speaker_role="gratitude_reply",
+                voice="grateful",
+                payload_type="bare_answer",
+                comment_function="reaction",
+                evidence_mode="none_assertion",
+                affect_role="gratitude",
+            )
+        )
+        self.assertEqual(gratitude.surface_texture, "gratitude_social")
+        self.assertEqual(gratitude.real_tone_slot, "pure_acknowledgement")
+
+    def test_focused_ledger_is_bounded_and_deduped_from_openings(self) -> None:
+        module = configure_generator_backend(load_generator_backend(), self.config)
+        comments = [
+            {
+                "content": f"short prior line {index}",
+                "semantic_move": (
+                    "briefly acknowledge the parent-local help without adding a factual claim"
+                    if index == 1
+                    else f"cover distinct local point {index}"
+                ),
+                "decision_boundary": f"boundary {index}",
+            }
+            for index in range(60)
+        ]
+        task = SimpleNamespace(
+            length_bucket="short",
+            real_word_count=8,
+            reply_delta_type="social_close",
+            semantic_move="briefly acknowledge the parent-local help without adding a factual claim",
+        )
+        ledger = prompts._focused_thread_ledger(
+            module,
+            comments,
+            current_task=task,
+            recent_openings=["short prior line 59"],
+        )
+        short_block, coverage_block = ledger.split(
+            "Semantic contributions already covered in this thread:\n",
+            1,
+        )
+        short_rows = [line for line in short_block.splitlines() if line.startswith("- ")]
+        coverage_rows = [
+            line for line in coverage_block.splitlines() if line.startswith("- ")
+        ]
+        self.assertLessEqual(len(short_rows), 32)
+        self.assertLessEqual(len(coverage_rows), 8)
+        self.assertNotIn("short prior line 59", short_block)
+        self.assertEqual(
+            ledger.count(
+                "briefly acknowledge the parent-local help without adding a factual claim"
+            ),
+            0,
+        )
 
     def test_domain_neutral_real_slot_classifiers_are_bound(self) -> None:
         module = configure_generator_backend(load_generator_backend(), self.config)

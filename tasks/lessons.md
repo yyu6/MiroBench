@@ -417,3 +417,34 @@ final rendered text. Preserve raw Planner values for audit, but translate them
 at the Writer boundary when their human-facing meaning depends on whether the
 visible target is a post or parent. A specialized Writer path should reuse the
 same compact contract primitives unless evidence requires extra information.
+
+## 2026-08-17 — Replay every slot; representative Prompts do not prove routing
+
+**What happened.** Representative root/reply and substantive/low-information
+Prompt renders looked coherent, but the router checked `utterance_mode` before
+`payload_type`. In the 186-slot thread, six `soft_helpful` tasks and one
+`correction` therefore entered a low-information Prompt that explicitly banned
+advice, explanation, and caveats. Each individual Prompt was internally
+well-formed; the task-to-Prompt choice was wrong.
+
+**How to apply.** A Prompt audit must enumerate every recorded task through the
+actual route predicate, not only render one example per intended branch. Treat
+payload semantics as the authority for specialized low-information paths;
+surface shape may refine an eligible route but must not downgrade a
+substantive contract. Report the route matrix and assert that every selected
+payload belongs to the path's allowed set.
+
+## 2026-08-17 — Recompute dependent controls after the authoritative contract
+
+**What happened.** `real_tone_slot` was derived before later surface overrides
+and restoration of Planner-owned fields. A task could finish as a neutral
+datapoint or correction while retaining `pure_acknowledgement` from an earlier
+social shape. The validator also enforced gratitude in only one direction:
+gratitude affect required a social reaction, but a `gratitude_reply` or
+`social_close` did not require gratitude/relief and a compatible payload.
+
+**How to apply.** Document which fields are authoritative and which are derived.
+After the last authoritative mutation, recompute every Writer-facing dependent
+control once. Express coherence contracts bidirectionally when either label can
+activate Writer behavior, and test both valid and reverse-invalid cases before
+the Writer boundary.

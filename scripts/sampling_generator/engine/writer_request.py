@@ -13,10 +13,19 @@ import re
 def should_use_low_info_writer(task: CommentTask) -> bool:
     if real_slot_requires_substantive_writer(task):
         return False
-    if task.utterance_mode in LOW_INFO_UTTERANCE_MODES and safe_int(task.real_word_count, 999) <= 20:
-        return True
+    # Utterance shape alone cannot downgrade a substantive payload. In v80,
+    # six `soft_helpful` slots and one `correction` slot had a short
+    # `op_followup`/`direct_answer` shape and were routed into a Prompt that
+    # explicitly forbids advice, explanation, and caveats. Keep those turns on
+    # the focused substantive path; its length rule still preserves the short
+    # matched slot.
     if task.payload_type not in LOW_INFO_PAYLOAD_TYPES:
         return False
+    if (
+        task.utterance_mode in LOW_INFO_UTTERANCE_MODES
+        and safe_int(task.real_word_count, 999) <= 20
+    ):
+        return True
     return task.length_bucket in {"micro", "short"} or safe_int(task.real_word_count, 999) <= 18
 
 def render_sampled_plan_block(task: CommentTask) -> str:

@@ -59,6 +59,49 @@ Before any run that changes behavior:
 
 ---
 
+## v87 — payload-safe Writer routing and final-contract refresh (2026-08-17)
+
+Policy ID: `generalized-card-v2-payload-safe-writer-routing-v87-20260817`.
+
+Hypothesis before the paid run: a short surface shape must not send a
+substantive Planner payload into the low-information Writer, whose correct hard
+rules prohibit advice, explanation, and caveats. Building the focused ledger
+directly from bounded records should also remove duplicated exclusions without
+weakening exact-duplicate persistence checks. Expected qualitative directions
+are more faithful short corrections/helpful turns, fewer contradictory social
+assignments, and less repeated Prompt context. No generated content or
+12-metric improvement is claimed before a paid artifact is scored.
+
+Evidence and changes:
+
+- Replayed all 186 recorded v80 tasks through every current Writer route. The
+  old routing condition selected 32 low-information slots, including six
+  `soft_helpful` payloads and one `correction`. v87 gates short utterance modes
+  by payload semantics first; the replay now selects 25/186, all from the
+  explicit low-information payload set and all `no_story`.
+- Focused/low-information Prompts no longer build a full five-section thread
+  blackboard and parse two sections back from its rendered text. They construct
+  bounded semantic and short-line ledgers from source records, omit exact
+  openings already shown nearby, and avoid restating the same social-close move
+  as both required and already covered. Replay found no exact duplicate long
+  lines and no duplicated required semantic move.
+- Writer-facing tone controls are recomputed after every Planner-owned role,
+  payload, voice, and surface contract is final. A stale
+  `pure_acknowledgement` can no longer survive on a neutral datapoint or
+  correction.
+- The social-reaction validator is now bidirectional. Gratitude/relief already
+  required a gratitude reaction; v87 also rejects a `gratitude_reply` or
+  `social_close` paired with neutral affect, an explanatory/meta payload, a
+  non-reaction function, or a story.
+
+Offline acceptance: 290 generalized tests plus 3 focused scorer tests pass;
+Ruff, camera backend self-test, active and active-plus-legacy parity pass; all
+93 declared pins agree with zero missing, untracked-active, unpinned-import, or
+drift entries. The exact seed-8 v87 command passed `--prepare-only` with no API
+call. Paid v87 generation and sufficient-N evaluation remain pending.
+
+---
+
 ## v86 — compact low-information Writer and root-relation clarity (2026-08-17)
 
 Policy ID: `generalized-card-v2-root-relation-prompt-v86-20260817`.
@@ -89,7 +132,8 @@ Changed:
 
 Offline acceptance: 286 generalized tests plus 3 focused scorer tests, Ruff,
 camera backend self-test, active and legacy parity, and 93/93 pins with zero
-active untracked or unpinned local imports. Paid v86 generation is pending.
+active untracked or unpinned local imports. v86 was superseded by v87 before a
+paid generation.
 
 ---
 

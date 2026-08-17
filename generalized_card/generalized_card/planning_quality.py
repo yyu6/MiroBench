@@ -723,17 +723,30 @@ def social_contract_problem(
             )
 
     affect = _normalized_value(plan.get("affect_role"))
-    if affect in {"gratitude", "relief"} and not (
-        role == "gratitude_reply"
+    reply_delta_type = _normalized_value(plan.get("reply_delta_type"))
+    social_close = role == "gratitude_reply" or reply_delta_type == "social_close"
+    social_reaction_contract = (
+        affect in {"gratitude", "relief"}
+        and role == "gratitude_reply"
         and function == "reaction"
         and payload in {"low_info_reaction", "bare_answer"}
         and story == "no_story"
-    ):
+    )
+    if affect in {"gratitude", "relief"} and not social_reaction_contract:
         problems.append(
             f"affect_role={affect} requires a social reaction contract: a no-story "
             "reaction with "
             "speaker_role=gratitude_reply and a low-information or bare-answer "
             f"payload; current role={role or 'unset'}, function={function or 'unset'}, "
+            f"payload={payload or 'unset'}, story={story or 'unset'}"
+        )
+    elif social_close and not social_reaction_contract:
+        problems.append(
+            "speaker_role=gratitude_reply or reply_delta_type=social_close requires "
+            "the matching social reaction contract: affect_role=gratitude or relief, "
+            "comment_function=reaction, a low-information or bare-answer payload, "
+            f"and story_mode=no_story; current affect={affect or 'unset'}, "
+            f"role={role or 'unset'}, function={function or 'unset'}, "
             f"payload={payload or 'unset'}, story={story or 'unset'}"
         )
     return "; ".join(problems)

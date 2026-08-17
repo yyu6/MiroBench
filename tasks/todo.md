@@ -24,6 +24,31 @@ them onto the 12 metrics and onto the per-thread evidence in `HANDOFF.md` §4.3:
 Only `avg_depth` and `structural_virality` are genuinely matched per thread, and
 both are fixed by the matched sampler rather than won by generation.
 
+## v87 full-route replay status — 2026-08-17
+
+- [x] Replay all 186 recorded v80 tasks through current root/reply and
+      substantive/low-info Writer paths, preserving their long-thread order.
+- [x] Gate low-information Writer routing by payload semantics before short
+      utterance shape. Remove six `soft_helpful` and one `correction` false
+      routes; retain 25 legitimate low-information slots.
+- [x] Replace full-blackboard rendering plus text parsing with direct bounded
+      focused ledgers. Dedupe nearby openings and social-close semantic moves.
+- [x] Recompute Writer-facing tone controls after the final Planner contract so
+      stale acknowledgement instructions cannot contradict the task.
+- [x] Make gratitude/social-close metadata coherence bidirectional and blocking
+      before Writer generation.
+- [x] Verify v87 offline: 290 generalized tests, 3 focused scorer tests, Ruff,
+      backend self-test, active and legacy parity, 93/93 pins, full Prompt
+      replay, and exact v87 seed-8 `--prepare-only`.
+- [ ] Run the complete seed-8 v87 thread, then inspect exact 186/186 coverage,
+      Planner→Writer realization, repeated wording, helpful/customer-service
+      default, spontaneous emotion/profanity, personal stories, and descriptive
+      12-metric distances.
+- [ ] If the qualitative/realization gate is credible, keep v87 unchanged for a
+      sufficient-N matched run and interpret MWU/KS only there.
+
+---
+
 ## v86 Prompt audit status — 2026-08-17
 
 - [x] Render representative focused Writer Prompts and check exact duplicate
@@ -37,9 +62,8 @@ both are fixed by the matched sampler rather than won by generation.
 - [x] Split 214 lines of legacy reviser-only Prompt logic out of active
       `prompts.py`; prove migrated and retained functions with AST hashes.
 - [x] Bump the generation policy to v86 before any paid run.
-- [ ] Run the complete seed-8 v86 thread, then inspect 186/186 coverage,
-      Planner→Writer realization, repeated wording, helpful/customer-service
-      default, emotion, story, and the descriptive 12-metric distances.
+- [x] Supersede v86 with v87 before a paid run after full-route replay proved a
+      payload-routing defect that representative Prompt samples did not expose.
 
 ---
 
@@ -352,7 +376,7 @@ handoff's interpretation.
 ## Sequencing
 
 The free target-selection and evaluation-integrity work is complete. Next run
-the complete v86 seed-8 thread and judge Writer realization/content, not n=1
+the complete v87 seed-8 thread and judge Writer realization/content, not n=1
 p-values. Only if coverage is exact and the content audit shows the expected
 direction should the same unchanged policy advance to a sufficient-N matched
 evaluation. Reopen A/C upstream only for target→generated failures that remain;

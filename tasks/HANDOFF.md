@@ -1,10 +1,45 @@
 # Handoff — synthetic Reddit thread generation (generalized_card)
 
+## 2026-08-17 v87 route-contract addendum
+
+v86 is reproducible but superseded before any paid run. The next paid run must
+use `generalized-card-v2-payload-safe-writer-routing-v87-20260817` and a new
+v87 tag.
+
+A zero-API replay rendered all 186 frozen v80 Writer tasks in their original
+long-thread order. It found that utterance shape was checked before payload:
+six `soft_helpful` plans and one `correction` were sent to the low-information
+Prompt, whose hard rules prohibit exactly the advice, explanation, and caveat
+those payloads need. v87 requires an explicitly low-information payload before
+any short-shape routing rule can apply. The same replay now selects 25 low-info
+tasks, all in the allowed payload set and all `no_story`.
+
+The replay also exposed a brittle Prompt implementation: focused paths built the
+full blackboard, then parsed two sections from its rendered string, with
+effectively unbounded short-line history. v87 builds only two bounded ledgers
+from source records, removes openings already displayed next to them, and does
+not tell a social-close Writer both to perform and avoid the same semantic move.
+Exact-duplicate output validation still retains the full generated history.
+Low-info Prompt mean/max fell from roughly 7,581/9,397 to 6,579/7,921
+characters; there were no repeated long Prompt lines or repeated required
+semantic moves after the change.
+
+Finally, Writer-dependent tone controls are recomputed after the final Planner
+contract, and gratitude/social-close coherence is validated in both directions.
+This prevents stale `pure_acknowledgement` instructions and blocks a neutral or
+meta `gratitude_reply` before Writer generation. See `tasks/v87-worklog.md`.
+
+All evidence so far is offline contract evidence, not output-quality evidence.
+The paid seed-8 run must still be reviewed at 186/186 coverage for natural
+Reddit voice, repetition, generic helpfulness, affect/profanity, story
+realization, and descriptive 12-metric distance. Only sufficient N may support
+MWU/KS conclusions.
+
 ## 2026-08-17 v86 Prompt-boundary addendum
 
-The next paid run must use policy
-`generalized-card-v2-root-relation-prompt-v86-20260817` and a new v86 tag. No
-v85 paid artifact exists, so the policy bump does not mix an existing run.
+This policy is retained for provenance and is superseded by v87 before any paid
+run. No v85 or v86 paid artifact exists, so the policy bump does not mix an
+existing run.
 
 The final zero-API Prompt audit found two active issues. First, root comments
 could show `reply relation: answers_parent` even though no parent was visible;
@@ -50,8 +85,8 @@ pins total), and the closure audit follows sibling scripts.
 
 Finally, n=1 is `DESCRIPTIVE` from the matched evaluator through console and
 content reports. Ignore the mathematical p=1 values returned for singleton
-samples; they cannot establish a pass. The pending paid step remains a complete
-v86 seed-8 Writer diagnostic, followed by sufficient N only if its realization
+samples; they cannot establish a pass. The pending paid step is now a complete
+v87 seed-8 Writer diagnostic, followed by sufficient N only if its realization
 and content review are credible.
 
 ## 2026-08-17 exact-matched content-audit addendum
@@ -923,7 +958,7 @@ prompt-rendering check in this session was built — no API, full corpus.
 
 # 11. RECOMMENDED FIRST MOVE
 
-The free checks are complete. Run the seed-8 command in §10 first under v86,
+The free checks are complete. Run the seed-8 command in §10 first under v87,
 with social contract and sibling visibility both on. Judge it on Planner repair
 counts, tone-label realization (59.2% baseline), and StorySeeker mass in
 `no_story` slots—not on an n=1 p-value. If the mechanism moves those diagnostics

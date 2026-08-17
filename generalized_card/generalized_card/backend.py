@@ -737,6 +737,7 @@ def configure_generator_backend(
             allow_uncertainty_frame=bool(task.allow_uncertainty_frame),
         )
         finalized = reconcile_substantive_task(finalized)
+        finalized = _refresh_prompt_dependent_controls(module, finalized)
         return _generalize_task_instruction_language(finalized, config)
 
     module.finalize_rebalanced_task = finalize_task
@@ -1213,6 +1214,40 @@ def _generic_real_tone_slot(
             "Make the social acknowledgement visible and local. Stop before advice, correction, or a new recommendation.",
         )
     return "", ""
+
+
+def _refresh_prompt_dependent_controls(module: ModuleType, task: Any) -> Any:
+    """Recompute Writer-facing controls after the Planner contract is final.
+
+    The shared expander derives ``real_tone_slot`` before hard surface
+    overrides. The generalized adapter then restores Planner-owned role,
+    payload, and voice fields. Without a final refresh, a stale
+    ``pure_acknowledgement`` can survive on a neutral datapoint or correction
+    and directly contradict its tone target in the Writer Prompt.
+    """
+
+    surface_texture = str(getattr(task, "surface_texture", "") or "")
+    social_ack = (
+        str(getattr(task, "speaker_role", "") or "") == "gratitude_reply"
+        or str(getattr(task, "affect_role", "") or "") in {"gratitude", "relief"}
+    )
+    if surface_texture == "gratitude_social" and not social_ack:
+        surface_texture = "plain"
+        task = replace(task, surface_texture=surface_texture)
+
+    tone_slot, tone_instruction = module.infer_real_tone_slot(
+        {},
+        payload_type=str(getattr(task, "payload_type", "") or ""),
+        speaker_role=str(getattr(task, "speaker_role", "") or ""),
+        voice=str(getattr(task, "voice", "") or ""),
+        real_surface_shape=str(getattr(task, "real_surface_shape", "") or ""),
+        surface_texture=surface_texture,
+    )
+    return replace(
+        task,
+        real_tone_slot=tone_slot,
+        real_tone_instruction=tone_instruction,
+    )
 
 
 def _generalize_task_instruction_language(task: Any, config: DomainConfig) -> Any:
