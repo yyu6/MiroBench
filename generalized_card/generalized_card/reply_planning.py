@@ -41,6 +41,12 @@ REPLY_DELTA_TYPES = (
     + SUPPORTIVE_REPLY_DELTA_TYPES
     + SOCIAL_REPLY_DELTA_TYPES
 )
+REPLY_ONLY_FIELDS = (
+    "reply_delta",
+    "reply_delta_type",
+    "reply_novelty_anchor",
+)
+_EMPTY_REPLY_VALUES = {"", "none", "n/a", "na", "null"}
 
 # Which increments can carry which tone register. A warm turn cannot be built
 # on a scope limit, and a blunt turn cannot be built on an endorsement.
@@ -90,6 +96,33 @@ def allowed_reply_delta_types(tone_class: str) -> tuple[str, ...]:
         str(tone_class or "").strip().lower(),
         REPLY_DELTA_TYPES,
     )
+
+
+def reconcile_root_reply_fields(plan: dict[str, Any]) -> tuple[dict[str, str], ...]:
+    """Clear reply-only controls from a structurally root plan.
+
+    Root and direct-reply batches use different Planner prompts, but the stable
+    transport schema retains these fields. The anonymous parent topology is
+    authoritative: a model-supplied reply type on a root must not create a
+    social contract, reach the Writer, or make an otherwise valid repair lose.
+    """
+
+    if parse_sample_id(plan.get("parent_sample_id")) > 0:
+        return ()
+    events: list[dict[str, str]] = []
+    for field in REPLY_ONLY_FIELDS:
+        before = " ".join(str(plan.get(field) or "").split())
+        plan[field] = ""
+        if before.casefold() not in _EMPTY_REPLY_VALUES:
+            events.append(
+                {
+                    "field": field,
+                    "before": before,
+                    "after": "",
+                    "reason": "root_slot_has_no_reply_contract",
+                }
+            )
+    return tuple(events)
 
 
 def _development_requirement(comment: dict[str, Any]) -> str:

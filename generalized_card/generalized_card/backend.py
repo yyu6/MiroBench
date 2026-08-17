@@ -78,6 +78,7 @@ from .planning_quality import (
     ledger_entry,
 )
 from .persona_bridge import inject_persona_system
+from .reply_planning import reconcile_root_reply_fields
 from .surface_contract import (
     infer_surface_shape,
     infer_surface_skeleton,
@@ -1877,6 +1878,14 @@ def _canonicalize_plan_controls(
                     "normalized_value": "seed_local",
                     "reason": "invalid_frozen_decision_lens",
                     "repair_attempt": int(repair_attempt),
+                }
+            )
+        for reply_event in reconcile_root_reply_fields(plan):
+            events.append(
+                {
+                    "sample_id": int(sample_id),
+                    "repair_attempt": int(repair_attempt),
+                    **reply_event,
                 }
             )
         structural_event = reconcile_development_plan_capacity(plan)

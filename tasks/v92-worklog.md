@@ -59,6 +59,11 @@ remain unmeasured until paid output exists.
   `generalized_card_camera_gpt54_v92_named_seed8_20260817_preflight_v2`; the
   recorded policy and flags match, and no API call was made.
 
-No v91 or v92 API call has been made. A full 186-slot Planner output cannot be
-replayed before generation because those plans do not yet exist; the two actual
-Prompt renderers and post-parse enforcement are covered offline instead.
+## Paid outcome
+
+The later v92 N=10 attempt made 95 requests and spent an estimated `$0.3740`.
+Seeds 0 and 1 persisted; seed 2 stopped on root S9 before Writer generation with
+an unresolved `long_form_capacity` contract. The new plan snapshots made the
+v93 diagnosis possible: the repair had supplied all five beats but carried an
+inapplicable root `reply_delta_type=social_close`. See `tasks/v93-worklog.md`.
+The partial v92 output must not be mixed with v93 for formal statistics.

@@ -24,6 +24,24 @@ them onto the 12 metrics and onto the per-thread evidence in `HANDOFF.md` §4.3:
 Only `avg_depth` and `structural_virality` are genuinely matched per thread, and
 both are fixed by the matched sampler rather than won by generation.
 
+## v93 root/reply-boundary status — 2026-08-18
+
+- [x] Reconstruct the paid v92 seed-2 S9 initial plan, all three repair
+      candidates, quality ranks, and structural slot contract from persisted
+      audit payloads.
+- [x] Prove the first repair supplied the required five beats and was rejected
+      only because a root row carried `reply_delta_type=social_close`.
+- [x] Make topology clear reply-only controls from roots before quality
+      selection while preserving those controls on direct replies.
+- [x] Remove the duplicate direct-reply rules and dead parent-contract renderer
+      from the root Planner Prompt; keep the stable fields as literal `none`.
+- [x] Replay the actual candidate: rank `(1,46) -> (0,41)`, blocking `1 -> 0`,
+      five beats retained.
+- [x] Complete full tests, scorer tests, Ruff, both parity scopes, 93/93 pins,
+      backend self-test, and exact v93 N=10 prepare-only.
+- [ ] Run a fresh v93 N=10 tag and evaluate content plus all 12 metrics. Do not
+      mix the two completed v92 threads with v93 output.
+
 ## v89 Planner-repair status — 2026-08-17
 
 - [x] Preserve the failed v88 run evidence: 24 Planner requests, `$0.1805`, no
@@ -83,8 +101,9 @@ both are fixed by the matched sampler rather than won by generation.
 - [x] Preserve planned mode and its claim-specific Prompt/delivery path.
 - [x] Complete full verification, repin, rendered off/planned Prompt audit on
       both Planner routes, named backend self-test, and exact v92 prepare-only.
-- [ ] Run the fresh v92 seed-8 tag with named concreteness; inspect content and
-      realization before any sufficient-N claim.
+- [x] Start the fresh v92 N=10 tag with named concreteness. It completed two
+      threads and exposed the root/reply boundary bug before seed 2 could be
+      persisted; supersede it with v93 rather than mix policies.
 
 ## v88 completion-audit status — 2026-08-17
 
@@ -128,8 +147,8 @@ both are fixed by the matched sampler rather than won by generation.
       replay, and exact v87 seed-8 `--prepare-only`.
 - [x] Supersede v87 with v88 before a paid run after completion audit proved a
       grounding conflict and structural-speaker/persona coupling.
-- [ ] If the v92 qualitative/realization gate is credible, keep v92 unchanged for a
-      sufficient-N matched run and interpret MWU/KS only there.
+- [ ] If the v93 N=10 run completes with credible realization, interpret MWU/KS
+      on that unchanged policy and use content evidence to choose any next fix.
 
 ---
 
@@ -465,9 +484,8 @@ handoff's interpretation.
 ## Sequencing
 
 The free target-selection and evaluation-integrity work is complete. Next run
-the complete v92 seed-8 thread and judge Writer realization/content, not n=1
-p-values. Only if coverage is exact and the content audit shows the expected
-direction should the same unchanged policy advance to a sufficient-N matched
+the fresh v93 N=10 arm and judge both Writer realization/content and formal
+matched statistics. Only exact 10/10 coverage is a comparable sufficient-N
 evaluation. Reopen A/C upstream only for target→generated failures that remain;
 do not change the reference sampler, add a reviser, or tune against final
 test-set p-values. One mechanism per later paid run, prediction written first,

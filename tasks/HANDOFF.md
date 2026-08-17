@@ -1,5 +1,26 @@
 # Handoff — synthetic Reddit thread generation (generalized_card)
 
+## 2026-08-18 v93 root/reply-boundary addendum
+
+The paid v92 N=10 run completed seeds 0 and 1, then stopped on seed 2 root S9
+with `long_form_capacity`. The saved attempt payloads prove that long-form
+planning was not the remaining failure: the first S9 repair supplied all five
+required beats. It was rejected only because the root row also emitted
+`reply_delta_type=social_close`, creating an unrelated blocking social contract.
+
+v93 clears all reply-only fields from structurally root plans before quality
+selection and records any nonempty override. Direct replies are unchanged. The
+root schema now requires literal `none`; its duplicate direct-reply definitions,
+contrast prose, and obsolete parent-contract renderer were deleted. Replaying
+the actual v92 candidate moves repair rank `(1,46) -> (0,41)`, leaves zero
+blocking issues, and preserves the five beats.
+
+Do not resume the v92 tag for formal evaluation: seeds 0 and 1 already use its
+older root Prompt. Start a fresh v93 N=10 tag. Offline acceptance is complete:
+300 generalized tests, 3 scorer tests, Ruff, both parity scopes, 93/93 clean
+pins, actual-candidate replay, backend self-test, and exact N=10 prepare-only all
+pass. See `tasks/v93-worklog.md`.
+
 ## 2026-08-17 v92 lossless-domain-claim addendum
 
 The v91 completion audit found another active Planner→Writer gap. With
@@ -14,13 +35,12 @@ whole contribution in `semantic_move`, `detail_focus`, and `domain_intent`.
 Normalization forcibly clears a returned claim in case the model ignores the
 schema. Planned mode remains unchanged and reproducible.
 
-Do not spend under v91. The next run must use policy
-`generalized-card-v2-lossless-domain-claim-off-v92-20260817`, a fresh v92 tag,
-`--domain-claim off`, and `--own-fact-license named`. See
-`tasks/v92-worklog.md`. Offline acceptance is complete: 299 generalized tests,
-3 focused scorer tests, Ruff, both parity scopes, 93/93 clean pins, rendered
-root/direct Prompt checks, named/off backend self-test, and exact seed-8
-prepare-only all pass. No v92 API call has been made.
+v92's offline acceptance was complete: 299 generalized tests, 3 focused scorer
+tests, Ruff, both parity scopes, 93/93 clean pins, rendered root/direct Prompt
+checks, named/off backend self-test, and exact seed-8 prepare-only. Its paid
+N=10 attempt later completed two threads and exposed the v93 root/reply boundary
+bug; do not resume it for formal evaluation. See `tasks/v92-worklog.md` and the
+v93 addendum above.
 
 ## 2026-08-17 v91 slot-gated concreteness addendum
 
@@ -212,9 +232,8 @@ pins total), and the closure audit follows sibling scripts.
 
 Finally, n=1 is `DESCRIPTIVE` from the matched evaluator through console and
 content reports. Ignore the mathematical p=1 values returned for singleton
-samples; they cannot establish a pass. The pending paid step is now a complete
-v92 seed-8 Writer diagnostic, followed by sufficient N only if its realization
-and content review are credible.
+samples; they cannot establish a pass. The pending paid step is a fresh v93
+N=10 generation and evaluation with exact 10/10 structural coverage.
 
 ## 2026-08-17 exact-matched content-audit addendum
 
@@ -1012,28 +1031,28 @@ discriminator, which is what §7.3's frame check is.
 API keys live in `third_party/MiroFish/.env` as **`LLM_API_KEY`**;
 `run_generate.py` loads that file itself but still pass `--api-key-env LLM_API_KEY`.
 
-## Generation, seed 8 (~$2, ~45 min on the v80 observed request volume)
+## Generation, fresh N=10 v93 (~$5.5–$7, roughly 2–3 hours)
 
 ```bash
 python3 -u generalized_card/scripts/run_generate.py \
-  --tag <NEW_TAG> \
+  --tag generalized_card_camera_gpt54_v93_named_n10_20260818_v1 \
   --domain camera --model gpt-5.4-mini \
   --base-url https://api.openai.com/v1 --api-key-env LLM_API_KEY \
-  --pool-size 150 --max-posts 1 --posts-per-run 1 \
-  --start-seed-index 8 --sampling-seed 42 \
+  --pool-size 150 --max-posts 10 --posts-per-run 1 \
+  --start-seed-index 0 --sampling-seed 42 \
   --context-dropout-rate 0.42 --context-jitter-rate 0.32 \
   --plan-quality-repairs 3 --writer-hard-recovery-rounds 2 \
   --post-retry-limit 1 \
   --domain-claim off --writer-prompt focused --writer-route-lock own_words \
   --social-contract-coherence on --reply-sibling-visibility on \
-  --own-fact-license named --speaker-identity matched \
-  2>&1 | tee /tmp/<TAG>_gen.log
+  --own-fact-license named --speaker-identity matched --resume \
+  2>&1 | tee /tmp/generalized_card_v93_named_n10_generation.log
 ```
 
-`--max-posts 10 --start-seed-index 0` gives the 10-thread evaluation set. Its
-cost and runtime should be re-estimated from the latest n=1 token summary before
-spending. `plan-quality-repairs 3` gives joint contract conflicts
-a bounded Planner repair budget. Hard Writer recovery handles only empty,
+This creates ten one-post run directories for seeds 0–9 and safely skips
+completed posts when the identical command is resumed. `plan-quality-repairs
+3` gives joint contract conflicts a bounded Planner repair budget. Hard Writer
+recovery handles only empty,
 duplicate/copy, placeholder, or planner-skeleton output; it does not optimize a
 metric.
 
@@ -1043,7 +1062,8 @@ The seed pool is derived, not a flag:
 ## Evaluation — zero API cost, CPU only
 
 ```bash
-python3 -u generalized_card/scripts/run_evaluate.py --tag <TAG> --device cpu
+python3 -u generalized_card/scripts/run_evaluate.py \
+  --tag generalized_card_camera_gpt54_v93_named_n10_20260818_v1 --device cpu
 ```
 
 Cheap single metric, no model, seconds:
@@ -1085,12 +1105,12 @@ prompt-rendering check in this session was built — no API, full corpus.
 
 # 11. RECOMMENDED FIRST MOVE
 
-The free checks are complete. Run the seed-8 command in §10 first under v92,
-with social contract and sibling visibility both on. Judge it on Planner repair
-counts, tone-label realization (59.2% baseline), and StorySeeker mass in
-`no_story` slots—not on an n=1 p-value. If the mechanism moves those diagnostics
-in the predicted direction, run the comparable ten-seed arm before adding a
-separate ablation.
+The free checks are complete. Run a fresh N=10 tag under v93 with social
+contract, sibling visibility, named concreteness, and matched speakers on. Do
+not reuse the v92 tag because its first two discussions have the older root
+Prompt. Require exact 10/10 coverage, then evaluate the 12 metrics and inspect
+tone realization, repetition, story mass, emotion, and customer-service advice
+before adding another mechanism.
 
 ---
 

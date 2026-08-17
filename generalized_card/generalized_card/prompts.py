@@ -27,11 +27,8 @@ from .length_policy import local_move_scope_guidance, soft_length_guidance
 from .opener_profile import OPENER_INSTRUCTIONS
 from .long_form_planning import expected_development_beats
 from .planner_distribution import render_slot_distribution_schedule
-from .planner_schema import parse_sample_id
 from .persona_bridge import persona_marker_for_task
 from .reply_planning import (
-    REPLY_DELTA_TYPE_DEFINITIONS,
-    REPLY_DELTA_TYPES,
     SYNTHETIC_STORY_PLANNER_BOUNDARY,
     is_direct_reply_batch,
     render_direct_reply_planner_prompt,
@@ -225,15 +222,6 @@ def _safe_slot_index(task: Any) -> int:
         return int(getattr(task, "local_task_id", 0) or 0)
     except (TypeError, ValueError):
         return 0
-
-
-def _reply_delta_type_definitions() -> str:
-    """Render the reply increments so both Planner prompts describe one set."""
-
-    return "\n".join(
-        f"  - {name}: {REPLY_DELTA_TYPE_DEFINITIONS[name]}"
-        for name in REPLY_DELTA_TYPES
-    )
 
 
 def planner_prompt(
@@ -484,13 +472,6 @@ def comment_planner_prompt(
         branch_subjects=branch_subjects,
         parent_slots=parent_slot_schedule(all_comments or comments),
     )
-    reply_delta_contracts = _render_reply_delta_contracts(
-        comments=comments,
-        all_comments=all_comments or comments,
-        sample_offset=sample_offset,
-        prior_plans=prior_plans or [],
-        route_lock_mode=_route_lock_mode(backend),
-    )
     feedback_block = (
         f"\nPLAN-QUALITY REPAIR FEEDBACK:\n{validation_feedback}\n"
         if validation_feedback
@@ -613,9 +594,6 @@ Available branch controls:
 Required structural branch routes:
 {required_branch_routes}
 
-Parent-local delta contracts for this batch:
-{reply_delta_contracts}
-
 Plans already assigned in earlier batches of this same thread:
 {prior_plan_block}
 {feedback_block}
@@ -641,7 +619,7 @@ Return strict JSON:
       "speaker_role": "advisor | confused_asker | op_followup | gratitude_reply | jokester | mod_meta | contrarian | datapoint_only | ranter | side_observer",
       "semantic_move": "one concrete but non-verbatim action for the generated comment",
       "local_topic": "seed-grounded topic or generic parent-local topic",
-      "reply_relation": "answers_parent | challenges_parent | asks_narrow_followup | adds_datapoint | jokes_aside | corrects_detail | shifts_to_side_detail",
+      "reply_relation": "relation to the seed post using answers_parent | challenges_parent | asks_narrow_followup | adds_datapoint | jokes_aside | corrects_detail | shifts_to_side_detail",
       "stance": "agree | disagree | mixed | uncertain | joking | neutral",
       "detail_focus": "seed-visible detail to use, or a generic detail type if no fact is visible",
       "avoid_repeating": "nearby discourse move to avoid",
@@ -651,9 +629,9 @@ Return strict JSON:
       "domain_intent": "one short domain-grounded intent that does not import a hidden fact",
       "domain_claim": "{claim_schema}",
       "decision_boundary": "the one decision condition, consequence, or uncertainty this independent slot owns",
-      "reply_delta": "for a direct reply: the one new relation, evidence, consequence, or caveat it adds beyond its parent; otherwise none",
-      "reply_delta_type": "for a direct reply: {' | '.join(REPLY_DELTA_TYPES)}; otherwise none",
-      "reply_novelty_anchor": "for a direct reply: one concrete action, observation, threshold, outcome, or exception that the parent plan does not already state; otherwise none",
+      "reply_delta": "none",
+      "reply_delta_type": "none",
+      "reply_novelty_anchor": "none",
       "opening_style": "one specific sentence route for this slot that realizes its assigned opener_type, such as constraint then consequence, concrete observation then caveat, or answer embedded after parent detail",
       "development_plan": "none",
       "context_aperture": "full_seed | seed_gist_only | title_only | semantic_only | parent_only"{actor_schema}
@@ -723,48 +701,16 @@ Rules:
 - ``owned_decision_subject`` is a fixed branch contract. Establish only that
   condition for this chain; do not substitute one of the listed forbidden
   subjects just because it is salient in the seed.
-- If ``direct_parent`` is shown, first respond to that parent's plan in the
-  earlier ledger. That entry is the authoritative exclusion: keep the root
-  branch's decision axis, but make a new local response rather than starting a
-  second top-level answer or restating the root claim.
 - A displayed ``root_branch_instance`` marks several independent root comments
   routed to the same semantic axis. Keep that axis, but vary the independent
   root's discourse contribution: for example, a concise verdict, causal reason,
   evidence caveat, counterexample, action/timing point, narrow question, or
   local social reaction. Do not manufacture a new topic merely to make the
   root look unique, and do not write the same premise in a polished new form.
-- A displayed ``sibling_group`` is a joint coverage contract, not a list of
-  interchangeable replies. Plan each sibling as a distinct increment around
-  the same parent: for example, a mechanism, scope limit, evidence threshold,
-  practical consequence, counter-condition, firsthand corroboration, an omitted
-  practical detail, a reasoned endorsement, or social closure when the slot
-  permits it. Do not assign two siblings the same answer or correction with
-  different wording. ``sibling_turn`` is an ordering cue only; do not expose it.
-- For every direct reply, ``reply_delta`` must name a concrete addition beyond
-  the parent. That addition may limit the parent, but it may equally confirm it
-  from your own experience, extend it with a detail it omits, or endorse it for
-  a named reason. What is forbidden is contentless agreement: a paraphrase or
-  bare restatement of the parent's question, condition, or conclusion. Write
-  ``semantic_move`` as that increment itself, not as a summary of the branch
-  goal or parent. The downstream Writer will treat this pair as its sole new
-  proposition. For a root turn write ``none``.
-- For every direct reply, choose exactly one ``reply_delta_type`` compatible
-  with the slot's ``tone_class`` and write a ``reply_novelty_anchor`` that
-  cannot be reconstructed from the parent's semantic_move, decision_boundary,
-  or detail_focus. The increments are:
-{_reply_delta_type_definitions()}
-  Rephrasing the parent's condition with a new adjective is invalid under any
-  of them. A ``social_close`` may only acknowledge the parent without a second
-  factual claim. For a root turn both fields are ``none``.
-- Run this contrast test privately before emitting every direct-reply row. If
-  the parent asks whether X is adequate under condition Y, an invalid reply
-  merely says that X matters when it is adequate under Y. A valid
-  ``operational_test`` instead names a new observation or test that would
-  establish the answer; a valid ``corroborating_datapoint`` names what happened
-  when you personally used X under Y; a valid ``useful_extension`` names the
-  adjacent detail that changes the answer. Put that distinct object in both
-  ``semantic_move`` and ``reply_novelty_anchor``. Do not use meta-language
-  such as an instruction to "add" a condition as the semantic move.
+- These are independent root slots. Set ``reply_delta``, ``reply_delta_type``,
+  and ``reply_novelty_anchor`` to the literal ``none``. ``reply_relation`` uses
+  the legacy relation vocabulary only to describe how the root addresses the
+  seed post; it does not create a parent or a reply contract.
 - Non-dependent substantive comments must not collapse to the same recommendation,
   tradeoff, verdict, or explanation. Repetition is allowed only for a direct
   reply that changes the relation, evidence, stance, or local detail.
@@ -876,82 +822,6 @@ def _render_prior_comment_plans(backend: Any, plans: list[dict[str, Any]]) -> st
             f"{actor_suffix}"
         )
     return "\n".join(rows)
-
-
-def _render_reply_delta_contracts(
-    *,
-    comments: list[dict[str, Any]],
-    all_comments: list[dict[str, Any]],
-    sample_offset: int,
-    prior_plans: list[dict[str, Any]],
-    route_lock_mode: str = "own_words",
-) -> str:
-    """Make each reply's parent exclusion visible at the exact planning point.
-
-    The full prior-plan ledger remains useful for thread-level coverage, but a
-    reply should not have to recover its own parent proposition from that long
-    history. This block contains only Planner metadata, never matched-real
-    comment text.
-    """
-
-    by_sample_id: dict[int, dict[str, Any]] = {}
-    for plan in prior_plans:
-        if not isinstance(plan, dict):
-            continue
-        sample_id = parse_sample_id(plan.get("sample_id"))
-        if sample_id > 0:
-            by_sample_id[sample_id] = plan
-
-    parent_slots = parent_slot_schedule(all_comments)
-    rows: list[str] = []
-    for local_index, _comment in enumerate(comments, start=1):
-        sample_id = sample_offset + local_index
-        parent_sample_id = parent_slots.get(sample_id)
-        if parent_sample_id is None:
-            continue
-        parent = by_sample_id.get(int(parent_sample_id))
-        if parent is None:
-            rows.append(
-                f"- S{sample_id}: direct_parent=S{parent_sample_id}. "
-                "Return only a new local increment; the parent plan is unavailable, "
-                "so do not recreate a general OP answer."
-            )
-            continue
-        parent_move = str(
-            parent.get("semantic_move")
-            or parent.get("reply_delta")
-            or parent.get("local_topic")
-            or "the parent's local contribution"
-        ).strip()
-        parent_boundary = str(parent.get("decision_boundary") or "").strip()
-        row = (
-            f"- S{sample_id}: direct_parent=S{parent_sample_id}. "
-            f"Parent proposition to exclude: {parent_move}. "
-        )
-        if parent_boundary:
-            row += f"Parent boundary to exclude: {parent_boundary}. "
-        row += (
-            "reply_novelty_anchor names the concrete new object this reply "
-            "introduces: one new mechanism, scope limit, evidence threshold, "
-            "practical consequence, counter-condition, firsthand corroboration, "
-            "omitted practical detail, reasoned endorsement, or social closure, "
-            "whichever suits this slot's tone register. "
-            + (
-                "semantic_move is still a full sentence stating what this reply "
-                "asserts about that object, at the same grammatical scale as a "
-                "top-level slot's semantic_move -- a bare noun phrase is not a "
-                "semantic move. "
-                if route_lock_mode == "say_only"
-                else "semantic_move names what this reply asserts about that "
-                "object, at the same scale as a top-level slot's semantic_move "
-                "-- not a bare noun phrase, and not the comment's own drafted "
-                "sentence. "
-            )
-            + "decision_boundary states "
-            "the question this reply settles. Do not paraphrase the parent."
-        )
-        rows.append(row)
-    return "\n".join(rows) or "- no reply slots are displayed in this batch"
 
 
 def writer_prompt(

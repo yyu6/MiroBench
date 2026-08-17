@@ -545,3 +545,18 @@ normalization, storage, and final consumer. When a mode disables delivery,
 either remove the upstream request or preserve the data through the handoff; do
 not plan-and-drop. Keep the schema stable with a literal empty value, enforce it
 after parsing, and state where the complete semantic contribution must live.
+
+## 2026-08-18 — Topology owns whether reply fields are applicable
+
+**What happened.** A root slot's long-form repair supplied every required beat,
+but the model also filled `reply_delta_type=social_close`. The social validator
+correctly rejected that reply contract, even though the anonymous structure said
+the slot had no parent. A generic root Prompt still contained an entire obsolete
+direct-reply rule set after direct replies had moved to their own Planner.
+
+**How to apply.** Treat parent topology as the authority for reply-only fields.
+Normalize inapplicable controls before semantic-quality selection, log nonempty
+overrides, and keep the stable schema with literal empty values. When routing a
+case to a specialized Prompt, remove the old case-specific prose and helpers
+from the generic Prompt; otherwise duplication becomes both token waste and a
+source of contradictory model output.

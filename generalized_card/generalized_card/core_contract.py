@@ -16,10 +16,11 @@ HISTORICAL_REVISION_POLICY_VERSIONS = {
     "generalized-card-revision-v6-dynamic-coverage-history-20260807",
 }
 GENERALIZED_V2_GENERATION_POLICY_VERSION = (
-    "generalized-card-v2-lossless-domain-claim-off-v92-20260817"
+    "generalized-card-v2-root-reply-boundary-v93-20260818"
 )
 HISTORICAL_GENERATION_POLICY_VERSIONS = {
     "generalized-v2": {
+        "generalized-card-v2-lossless-domain-claim-off-v92-20260817",
         "generalized-card-v2-slot-gated-fact-license-v91-20260817",
         "generalized-card-v2-reply-story-grounding-v90-20260817",
         "generalized-card-v2-realizability-first-planner-v89-20260817",
@@ -162,7 +163,7 @@ CORE_FILES = {
     ),
     "generator_adapter": (
         "generalized_card/generalized_card/backend.py",
-        "dc6b65dbb7c65f9c313b9d8adcee7e61d2c720fb6100d502fbb18f7b300dd4d2",
+        "bbc1e947f1e758bbd43beea659620c9a35081c8d9b9bd60c3fffac448856525b",
     ),
     "data_boundary": (
         "generalized_card/generalized_card/data.py",
@@ -348,11 +349,11 @@ CORE_FILES = {
     ),
     "domain_prompt_adapter": (
         "generalized_card/generalized_card/prompts.py",
-        "c1d8394c2a17143e2d351e1e3836feb5a34c5744afbb8ff9e382a9d0876bd904",
+        "45a1c4091655834b4b96d3720e8f59b3a4f363119b95ad9ccc6dfc124883debb",
     ),
     "reply_planning": (
         "generalized_card/generalized_card/reply_planning.py",
-        "d26b6931628303f4a0f09ae613d851048eef12847c655b7c71486e43989c5a67",
+        "1019aebcc73490ffa42ba8af5a03c97b869481b58951d612c777b2706a1e747d",
     ),
     "persona_bridge": (
         "generalized_card/generalized_card/persona_bridge.py",

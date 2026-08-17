@@ -59,6 +59,38 @@ Before any run that changes behavior:
 
 ---
 
+## v93 — structural root/reply boundary (2026-08-18)
+
+Policy ID: `generalized-card-v2-root-reply-boundary-v93-20260818`.
+
+The paid v92 N=10 run completed seeds 0 and 1, then stopped in seed 2 on root
+S9. Its initial 108-word slot lacked a required long-form plan. All three S9
+repairs supplied the requested five connected beats. The first otherwise-valid
+candidate also used `reply_delta_type=social_close` on this structurally root
+slot; the social validator correctly rejected that combination. A later attempt
+collapsed the long turn into a narrow question, and the third repeated the root
+`social_close`, so the old empty-development plan remained selected.
+
+v93 makes anonymous topology authoritative before quality selection. Root plans
+clear `reply_delta`, `reply_delta_type`, and `reply_novelty_anchor`, with every
+nonempty override recorded in `control_normalizations`. Direct replies preserve
+all three fields. The root Planner schema now requests literal `none`, and 138
+lines of duplicate direct-reply definitions, contrast rules, and the unreachable
+parent-contract renderer were removed from `prompts.py`; direct replies already
+use their dedicated compact Planner Prompt.
+
+Replaying the actual first v92 S9 repair under v93 changes its rank from
+`(1, 46)` to `(0, 41)`, removes the only blocking issue, and preserves all five
+development beats. Offline acceptance: 300 generalized tests and 3 focused
+Self-BERTScore tests pass; Ruff is clean; active and active-plus-legacy parity
+are healthy; 93/93 pins are clean; and the exact N=10 command completed
+`--prepare-only` as
+`generalized_card_camera_gpt54_v93_named_n10_20260818_preflight_v1` with no API
+call. Because v92 already generated two threads with the old root Prompt, the
+formal N=10 evaluation must use a fresh v93 tag rather than mix policies.
+
+---
+
 ## v92 — lossless `domain-claim=off` planning (2026-08-17)
 
 Policy ID: `generalized-card-v2-lossless-domain-claim-off-v92-20260817`.

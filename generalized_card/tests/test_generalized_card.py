@@ -1069,6 +1069,10 @@ class GeneralizedCardTest(unittest.TestCase):
         )
         self.assertIn("These rows are also this domain's knowledge", comment_planner)
         self.assertIn("Give most substantive slots", comment_planner)
+        self.assertIn('"reply_delta_type": "none"', comment_planner)
+        self.assertIn("These are independent root slots", comment_planner)
+        self.assertNotIn("Parent-local delta contracts for this batch", comment_planner)
+        self.assertNotIn("operational_test: an observation or check", comment_planner)
 
         backend.GENERALIZED_DOMAIN_CLAIM_MODE = "off"
         claim_off = prompts.comment_planner_prompt(
@@ -2412,6 +2416,56 @@ class GeneralizedCardTest(unittest.TestCase):
         self.assertEqual(len(events), 1)
         self.assertEqual(events[0]["raw_value"], "B3")
         self.assertEqual(events[0]["reason"], "invalid_frozen_decision_lens")
+
+    def test_root_slot_clears_model_supplied_reply_only_contract(self) -> None:
+        plans = {
+            9: {
+                "parent_sample_id": "",
+                "perspective_id": "P09",
+                "reply_delta": "none",
+                "reply_delta_type": "social_close",
+                "reply_novelty_anchor": "an invalid root-only reply object",
+                "affect_role": "approval",
+                "speaker_role": "side_observer",
+                "comment_function": "verdict_evaluation",
+                "payload_type": "soft_helpful",
+                "story_mode": "no_story",
+                "_slot_word_count": "108",
+                "development_plan": "one || two || three || four || five",
+            },
+            10: {
+                "parent_sample_id": "2",
+                "perspective_id": "P09",
+                "reply_delta": "acknowledge the parent",
+                "reply_delta_type": "social_close",
+                "reply_novelty_anchor": "none",
+            },
+        }
+
+        events = _canonicalize_plan_controls(
+            plans,
+            perspective_ids={"P09"},
+            repair_attempt=2,
+        )
+
+        self.assertEqual(plans[9]["reply_delta"], "")
+        self.assertEqual(plans[9]["reply_delta_type"], "")
+        self.assertEqual(plans[9]["reply_novelty_anchor"], "")
+        self.assertEqual(plans[10]["reply_delta_type"], "social_close")
+        root_events = [
+            event
+            for event in events
+            if event.get("reason") == "root_slot_has_no_reply_contract"
+        ]
+        self.assertEqual(
+            {event["field"] for event in root_events},
+            {"reply_delta_type", "reply_novelty_anchor"},
+        )
+        self.assertTrue(all(event["repair_attempt"] == 2 for event in root_events))
+        report = evaluate_plan_batch({9: plans[9]}, enforce_social_contract=True)
+        self.assertFalse(
+            any(issue.code == "social_contract_conflict" for issue in report.issues)
+        )
 
     def test_plan_quality_perspective_pressure_spans_prior_batches(self) -> None:
         prior = [
