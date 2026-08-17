@@ -28,6 +28,7 @@ from .persona_bridge import persona_marker_for_task
 from .reply_planning import (
     REPLY_DELTA_TYPE_DEFINITIONS,
     REPLY_DELTA_TYPES,
+    SYNTHETIC_STORY_PLANNER_BOUNDARY,
     is_direct_reply_batch,
     render_direct_reply_planner_prompt,
 )
@@ -688,10 +689,7 @@ Rules:
   use `firsthand_experience`, `comment_function=personal_datapoint`, and a
   personal-story or fragment-datapoint payload. The semantic move itself must
   describe that narrative evidence rather than advice or abstract analysis.
-  Synthesize an ordinary, non-verifiable first-person sequence around the
-  visible or generic local point; do not invent a product, specification,
-  price, measurement, date, policy, link, diagnosis, or externally checkable
-  outcome.
+  {SYNTHETIC_STORY_PLANNER_BOUNDARY}
 - The required branch route is also fixed. Each root discussion chain owns a
   distinct decision axis; replies inherit their parent chain's branch. Do not
   switch to another branch merely because its topic is easier to write.

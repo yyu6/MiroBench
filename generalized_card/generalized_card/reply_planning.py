@@ -74,6 +74,13 @@ REPLY_DELTA_TYPE_DEFINITIONS = {
     "social_close": "acknowledge the parent's help without a second factual claim",
 }
 
+SYNTHETIC_STORY_PLANNER_BOUNDARY = (
+    "Synthesize an ordinary, non-verifiable first-person sequence around the\n"
+    "  visible or generic local point; do not invent a product, specification,\n"
+    "  price, measurement, date, policy, link, diagnosis, or an\n"
+    "  externally checkable outcome."
+)
+
 
 def allowed_reply_delta_types(tone_class: str) -> tuple[str, ...]:
     """Return the increments compatible with one assigned tone register."""
@@ -355,6 +362,7 @@ Rules:
   sequence. For any other story mode, use `firsthand_experience`,
   `comment_function=personal_datapoint`, and a personal-story or
   fragment-datapoint payload whose semantic move is an actual event sequence.
+  {SYNTHETIC_STORY_PLANNER_BOUNDARY}
 - Make the affect the reaction already contained in the semantic move. It does
   not authorize a second claim or an invented outcome. Gratitude and relief
   require the listed `social_close`, a no-story reaction, and no factual add-on.

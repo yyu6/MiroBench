@@ -502,3 +502,17 @@ types and controls. A structural speaker owns only anonymous slot membership and
 OP status; Planner-owned evidence, story, voice, and affect supply what the
 person says. If a structural mode is requested, fail on an impossible join
 instead of silently degrading to a different structure.
+
+## 2026-08-17 — A contract fix must cover every Planner route
+
+**What happened.** v89 repaired the root Planner's contradiction between a
+required story and a blanket no-anecdote rule, but the specialized direct-reply
+Planner kept the same ambiguity in different wording. Root Prompt tests passed,
+yet reply story slots still had to guess whether any synthetic personal event
+was allowed.
+
+**How to apply.** When a semantic contract is shared across root and reply
+planning, define its invariant once and render it on every route. Test the final
+Prompt of each route for both permission and prohibition; a source-level fix in
+one large Prompt is not evidence that the Planner→Writer contract is globally
+coherent.

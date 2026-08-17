@@ -1057,9 +1057,11 @@ class GeneralizedCardTest(unittest.TestCase):
         self.assertNotIn("per 35 words", comment_planner)
         self.assertNotIn("capped at 16 beats", comment_planner)
         self.assertIn('"affect_role"', comment_planner)
-        self.assertIn(
-            "Synthesize an ordinary, non-verifiable first-person sequence",
-            comment_planner,
+        self.assertEqual(
+            comment_planner.count(
+                "Synthesize an ordinary, non-verifiable first-person sequence"
+            ),
+            1,
         )
         self.assertNotIn(
             "Never include usernames, URLs, hidden anecdotes, or facts absent",
@@ -6496,6 +6498,17 @@ class WriterRouteLockTest(unittest.TestCase):
     def test_reply_schema_say_only_reproduces_the_v74_request(self) -> None:
         prompt = self._reply_planner_prompt("say_only")
         self.assertIn("a full sentence stating what this reply asserts", prompt)
+
+    def test_reply_story_rule_separates_synthetic_sequence_from_seed_facts(self) -> None:
+        prompt = self._reply_planner_prompt("own_words")
+        self.assertEqual(
+            prompt.count(
+                "Synthesize an ordinary, non-verifiable first-person sequence"
+            ),
+            1,
+        )
+        self.assertIn("externally checkable outcome", prompt)
+        self.assertIn("A fact about this seed post still cannot be invented", prompt)
 
 
 class OwnFactLicenseTest(unittest.TestCase):

@@ -1,5 +1,26 @@
 # Handoff — synthetic Reddit thread generation (generalized_card)
 
+## 2026-08-17 v90 reply-story-grounding addendum
+
+The zero-API completion audit found one residual v89 Prompt conflict. The root
+Planner explicitly allowed the ordinary synthetic personal sequence required by
+a scheduled story, but the specialized direct-reply Planner did not. It required
+an actual event sequence while only stating the prohibitions on source
+participant details and invented seed facts.
+
+v90 moves the conservative synthetic-story boundary into one shared Planner
+definition and renders it on both root and direct-reply paths. It allows a
+non-verifiable first-person sequence around the visible or generic local point;
+it still forbids invented product facts and externally checkable outcomes. The
+Writer already enforced the same distinction, so this closes Planner→Writer
+contract drift without broadening factual permission.
+
+Do not spend under v89. The next run must use policy
+`generalized-card-v2-reply-story-grounding-v90-20260817` and a fresh v90 tag.
+Offline v90 acceptance is complete: 295 generalized tests, 3 focused scorer
+tests, Ruff, backend self-test, both parity scopes, 93/93 clean pins, and exact
+seed-8 `--prepare-only` all pass. See `tasks/v90-worklog.md`.
+
 ## 2026-08-17 v89 Planner-repair addendum
 
 The paid v88 seed-8 command did not reach Writer generation. It stopped after
@@ -22,18 +43,17 @@ personal story and bans the synthetic personal sequence needed to plan it. Its
 boundary now matches the Writer's existing conservative story rule: an ordinary
 non-verifiable sequence is allowed, externally checkable product facts are not.
 
-The next run must use policy
-`generalized-card-v2-realizability-first-planner-v89-20260817` and a fresh v89
-tag. See `tasks/v89-worklog.md`. v88 remains reproducible but has no generated
-content or metric result. Offline v89 acceptance is complete: 294 generalized
-tests, 3 scorer tests, Ruff, backend self-test, both parity scopes, 93/93 clean
-pins, and exact seed-8 `--prepare-only` all pass.
+v89 remains reproducible and its offline acceptance is complete: 294
+generalized tests, 3 scorer tests, Ruff, backend self-test, both parity scopes,
+93/93 clean pins, and exact seed-8 `--prepare-only` all passed. It was
+superseded by v90 before any v89 API call because the same story boundary had
+not yet reached the direct-reply Planner.
 
 ## 2026-08-17 v88 structural-speaker/grounding addendum
 
-v87 is reproducible but superseded before any paid run. The next paid run must
-use `generalized-card-v2-structural-speakers-grounding-v88-20260817`,
-`--speaker-identity matched`, and a new v88 tag.
+v87 is reproducible but was superseded before any paid run. At that stage v88
+became the required policy with `--speaker-identity matched`; the v88 paid
+attempt later failed before Writer generation and is historical now.
 
 The completion audit found that the formal v87 command still preserved a known
 Prompt contradiction for historical ablation: under `own-fact-license off`, 78
@@ -145,7 +165,7 @@ pins total), and the closure audit follows sibling scripts.
 Finally, n=1 is `DESCRIPTIVE` from the matched evaluator through console and
 content reports. Ignore the mathematical p=1 values returned for singleton
 samples; they cannot establish a pass. The pending paid step is now a complete
-v88 seed-8 Writer diagnostic, followed by sufficient N only if its realization
+v90 seed-8 Writer diagnostic, followed by sufficient N only if its realization
 and content review are credible.
 
 ## 2026-08-17 exact-matched content-audit addendum
@@ -222,7 +242,7 @@ fields survive normalization, matched-slot expansion, finalization, and the
 default focused Writer path. The same audit removed a second leak: matched-real
 words such as `thanks` and `appreciate` could assign gratitude tone through the
 shared surface classifier. Only typography remains matched-text-derived; social
-meaning is Planner-owned. Use v82, not v81, for the next paid run. Detailed
+meaning is Planner-owned. At that stage v82 superseded v81. Detailed
 evidence is in `tasks/v82-worklog.md`; formal metric success remains unmeasured.
 
 ## 2026-08-17 v81 current-state addendum
@@ -1017,7 +1037,7 @@ prompt-rendering check in this session was built — no API, full corpus.
 
 # 11. RECOMMENDED FIRST MOVE
 
-The free checks are complete. Run the seed-8 command in §10 first under v89,
+The free checks are complete. Run the seed-8 command in §10 first under v90,
 with social contract and sibling visibility both on. Judge it on Planner repair
 counts, tone-label realization (59.2% baseline), and StorySeeker mass in
 `no_story` slots—not on an n=1 p-value. If the mechanism moves those diagnostics

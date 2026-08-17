@@ -59,6 +59,41 @@ Before any run that changes behavior:
 
 ---
 
+## v90 — one story-grounding boundary for both Planner paths (2026-08-17)
+
+Policy ID: `generalized-card-v2-reply-story-grounding-v90-20260817`.
+
+The post-v89 completion audit found that the synthetic-story repair covered the
+root Comment Planner but not the specialized direct-reply Planner. Direct
+replies were still required to plan an actual first-person event sequence while
+also being forbidden to carry a source participant's detail or invent a fact
+about the seed. That left the model to guess whether an ordinary synthetic
+personal sequence was permitted—the same ambiguity that helped make the v88
+root story slot unrealizable.
+
+v90 defines that Planner boundary once and renders it on both root and direct
+reply paths: an ordinary, non-verifiable first-person sequence may be
+synthesized around a visible or generic local point, but product facts and other
+externally checkable outcomes may not be invented. The Writer's existing
+off-mode story rule already has this boundary, so v90 makes Planner and Writer
+agree; it does not expand the Writer's factual license. A regression test checks
+that the direct-reply Prompt contains both halves of the rule and still forbids
+inventing seed facts.
+
+Expected result: scheduled direct-reply stories should no longer consume repair
+attempts or fail because the Planner interprets the factual boundary as a ban on
+all personal sequence. This is a completion/reliability fix; movement on story
+realization and the 12 metrics remains a paid-run question.
+
+Offline acceptance: 295 generalized tests plus 3 focused Self-BERTScore tests,
+Ruff, matched-speaker backend self-test, active and active-plus-legacy parity,
+and 93/93 source pins with zero drift or closure gaps. Exact seed-8
+`--prepare-only` passed under
+`generalized_card_camera_gpt54_v90_preflight_seed8_20260817_v1`. No v90 API call
+has been made.
+
+---
+
 ## v89 — realizability-first Planner repair (2026-08-17)
 
 Policy ID: `generalized-card-v2-realizability-first-planner-v89-20260817`.

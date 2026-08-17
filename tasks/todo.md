@@ -40,7 +40,21 @@ both are fixed by the matched sampler rather than won by generation.
       repair ranks in the audit log.
 - [x] Complete full v89 verification, exact seed-8 prepare-only, and source-pin
       refresh before another paid run.
-- [ ] Run the fresh v89 seed-8 tag; inspect content and realization before any
+- [x] Supersede v89 before a paid run after the completion audit found the same
+      story-grounding ambiguity on the direct-reply Planner path.
+
+## v90 reply-story-grounding status — 2026-08-17
+
+- [x] Read the complete direct-reply Planner and Writer grounding modules and
+      compare their rendered story/fact contracts with the root Planner.
+- [x] Define the conservative synthetic-story boundary once and render it on
+      both Planner paths; retain the ban on seed facts and externally checkable
+      outcomes.
+- [x] Add a direct-reply Prompt regression for both the permission and the
+      factual boundary.
+- [x] Complete full offline verification, source-pin refresh, and exact v90
+      seed-8 `--prepare-only` before an API call.
+- [ ] Run the fresh v90 seed-8 tag; inspect content and realization before any
       sufficient-N claim about the 12 metrics.
 
 ## v88 completion-audit status — 2026-08-17
@@ -85,7 +99,7 @@ both are fixed by the matched sampler rather than won by generation.
       replay, and exact v87 seed-8 `--prepare-only`.
 - [x] Supersede v87 with v88 before a paid run after completion audit proved a
       grounding conflict and structural-speaker/persona coupling.
-- [ ] If the v88 qualitative/realization gate is credible, keep v88 unchanged for a
+- [ ] If the v90 qualitative/realization gate is credible, keep v90 unchanged for a
       sufficient-N matched run and interpret MWU/KS only there.
 
 ---
@@ -421,7 +435,7 @@ handoff's interpretation.
 ## Sequencing
 
 The free target-selection and evaluation-integrity work is complete. Next run
-the complete v88 seed-8 thread and judge Writer realization/content, not n=1
+the complete v90 seed-8 thread and judge Writer realization/content, not n=1
 p-values. Only if coverage is exact and the content audit shows the expected
 direction should the same unchanged policy advance to a sufficient-N matched
 evaluation. Reopen A/C upstream only for target→generated failures that remain;

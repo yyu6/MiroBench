@@ -16,10 +16,11 @@ HISTORICAL_REVISION_POLICY_VERSIONS = {
     "generalized-card-revision-v6-dynamic-coverage-history-20260807",
 }
 GENERALIZED_V2_GENERATION_POLICY_VERSION = (
-    "generalized-card-v2-realizability-first-planner-v89-20260817"
+    "generalized-card-v2-reply-story-grounding-v90-20260817"
 )
 HISTORICAL_GENERATION_POLICY_VERSIONS = {
     "generalized-v2": {
+        "generalized-card-v2-realizability-first-planner-v89-20260817",
         "generalized-card-v2-structural-speakers-grounding-v88-20260817",
         "generalized-card-v2-payload-safe-writer-routing-v87-20260817",
         "generalized-card-v2-root-relation-prompt-v86-20260817",
@@ -345,11 +346,11 @@ CORE_FILES = {
     ),
     "domain_prompt_adapter": (
         "generalized_card/generalized_card/prompts.py",
-        "a912355a8b80e2cdaccaccc8e3fe45a3d2d464d2f0c22ea8d4664ea03ed6d40f",
+        "91d525be97f94b4b165c79e206051d0fbe04a84d24a225a1b008582ea21de090",
     ),
     "reply_planning": (
         "generalized_card/generalized_card/reply_planning.py",
-        "278d7e1f00f57da04d630c3f7ff049d6053f0acc567c3b3d567c7c2ec58a3074",
+        "44e7b039950e3ce635e1186550f24f57ee76bcae67aabf00f943dcd017fc93d2",
     ),
     "persona_bridge": (
         "generalized_card/generalized_card/persona_bridge.py",
