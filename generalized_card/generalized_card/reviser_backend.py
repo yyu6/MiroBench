@@ -8,7 +8,7 @@ import sys
 from types import ModuleType
 from typing import Any
 
-from . import prompts
+from . import legacy_reviser_prompts, prompts
 from .core_contract import verify_core_contract
 from .domain import DomainConfig, REPO_ROOT
 
@@ -79,65 +79,77 @@ def configure_reviser_backend(
     """Adapt only CARD's domain boundary; preserve its reviser algorithms."""
 
     original_functions = {
-        name: value
-        for name, value in vars(module).items()
-        if inspect.isfunction(value)
+        name: value for name, value in vars(module).items() if inspect.isfunction(value)
     }
 
     if kind == "selfbleu":
         original_prompt = module.build_reviser_prompt
 
         def build_selfbleu_prompt(**kwargs: Any) -> str:
-            rendered = prompts.adapt_card_reviser_prompt(
+            rendered = legacy_reviser_prompts.adapt_card_reviser_prompt(
                 config,
                 original_prompt(**kwargs),
                 kind="selfbleu",
             )
-            diagnostic = prompts.selfbleu_ngram_diagnostic(
+            diagnostic = legacy_reviser_prompts.selfbleu_ngram_diagnostic(
                 config,
                 comments=kwargs["comments"],
                 target=kwargs["target"],
             )
-            return prompts.insert_reviser_guidance(rendered, diagnostic)
+            return legacy_reviser_prompts.insert_reviser_guidance(rendered, diagnostic)
 
         module.build_reviser_prompt = build_selfbleu_prompt
-        module.filtered_named_entities = lambda text: prompts.protected_entities(config, text)
+        module.filtered_named_entities = lambda text: prompts.protected_entities(
+            config, text
+        )
         module.preserves_numbers = _preserves_numbers
         module.parse_reviser_response = parse_candidate_response
     elif kind == "selfbert":
         original_prompt = module.build_rewrite_prompt
-        module.build_rewrite_prompt = lambda **kwargs: prompts.adapt_card_reviser_prompt(
-            config,
-            original_prompt(**kwargs),
-            kind="selfbert",
+        module.build_rewrite_prompt = (
+            lambda **kwargs: legacy_reviser_prompts.adapt_card_reviser_prompt(
+                config,
+                original_prompt(**kwargs),
+                kind="selfbert",
+            )
         )
         module.parse_response = parse_selfbert_candidate_response
         module.named_entities = lambda text: prompts.protected_entities(config, text)
         module.validate_rewrite = _selfbert_candidate_validator(module, config)
-        module.chat_completion_text = _retrying_chat_completion(module.chat_completion_text)
+        module.chat_completion_text = _retrying_chat_completion(
+            module.chat_completion_text
+        )
     elif kind == "tone":
         original_tone_prompt = module.build_tone_prompt
         original_stance_prompt = module.build_stance_prompt
-        module.build_tone_prompt = lambda **kwargs: prompts.adapt_card_reviser_prompt(
-            config,
-            original_tone_prompt(**kwargs),
-            kind="tone",
+        module.build_tone_prompt = (
+            lambda **kwargs: legacy_reviser_prompts.adapt_card_reviser_prompt(
+                config,
+                original_tone_prompt(**kwargs),
+                kind="tone",
+            )
         )
-        module.build_stance_prompt = lambda **kwargs: prompts.adapt_card_reviser_prompt(
-            config,
-            original_stance_prompt(**kwargs),
-            kind="tone",
+        module.build_stance_prompt = (
+            lambda **kwargs: legacy_reviser_prompts.adapt_card_reviser_prompt(
+                config,
+                original_stance_prompt(**kwargs),
+                kind="tone",
+            )
         )
         module.validate_candidate = _candidate_validator(module, config)
         module.parse_reviser_response = parse_candidate_response
     elif kind == "story":
         original_prompt = module.build_prompt
-        module.build_prompt = lambda **kwargs: prompts.adapt_card_reviser_prompt(
-            config,
-            original_prompt(**kwargs),
-            kind="story",
+        module.build_prompt = (
+            lambda **kwargs: legacy_reviser_prompts.adapt_card_reviser_prompt(
+                config,
+                original_prompt(**kwargs),
+                kind="story",
+            )
         )
-        module.protected_entities = lambda text: prompts.protected_entities(config, text)
+        module.protected_entities = lambda text: prompts.protected_entities(
+            config, text
+        )
         module.protected_numbers = prompts.protected_numbers
         module.parse_candidates = parse_candidate_response
     elif kind == "structure":
@@ -149,9 +161,7 @@ def configure_reviser_backend(
         for name, original in original_functions.items()
         if getattr(module, name) is not original
     )
-    unexpected = sorted(
-        set(changed_functions) - REVISER_DOMAIN_BOUNDARIES[kind]
-    )
+    unexpected = sorted(set(changed_functions) - REVISER_DOMAIN_BOUNDARIES[kind])
     if unexpected:
         raise RuntimeError(
             f"Generalized {kind} adapter changed functions outside the declared "
@@ -167,10 +177,14 @@ def configure_reviser_backend(
 
 
 def run_adapter_self_test(kind: str, config: DomainConfig) -> None:
-    module = configure_reviser_backend(load_reviser_backend(kind), kind=kind, config=config)
+    module = configure_reviser_backend(
+        load_reviser_backend(kind), kind=kind, config=config
+    )
     if kind == "selfbleu":
         assert callable(module.build_reviser_prompt)
-        assert module.preserves_numbers("Sony A7 IV costs $2,000", "Sony A7 IV costs $2,000")
+        assert module.preserves_numbers(
+            "Sony A7 IV costs $2,000", "Sony A7 IV costs $2,000"
+        )
         assert not module.preserves_numbers("24mm at $500", "35mm at $500")
     elif kind == "selfbert":
         assert callable(module.build_rewrite_prompt)
@@ -239,10 +253,20 @@ def _candidate_validator(module: ModuleType, config: DomainConfig):
         new_entities = prompts.protected_entities(config, candidate)
         missing = old_entities - new_entities
         if missing:
-            return False, "old_named_entities_missing:" + ",".join(sorted(missing)[:6]), overlap, ratio
+            return (
+                False,
+                "old_named_entities_missing:" + ",".join(sorted(missing)[:6]),
+                overlap,
+                ratio,
+            )
         added = new_entities - visible_entities - old_entities
         if added:
-            return False, "new_named_entities:" + ",".join(sorted(added)[:6]), overlap, ratio
+            return (
+                False,
+                "new_named_entities:" + ",".join(sorted(added)[:6]),
+                overlap,
+                ratio,
+            )
         return True, "valid", overlap, ratio
 
     return validate
@@ -360,12 +384,22 @@ def parse_selfbert_candidate_response(raw: str) -> list[dict[str, str]]:
         seen.add(key)
         output.append(
             {
-                "style": str(row.get("style") or row.get("discourse_job") or "domain_neutral_rewrite").strip(),
-                "discourse_job": str(row.get("discourse_job") or row.get("style") or "minor_tangent").strip(),
+                "style": str(
+                    row.get("style")
+                    or row.get("discourse_job")
+                    or "domain_neutral_rewrite"
+                ).strip(),
+                "discourse_job": str(
+                    row.get("discourse_job") or row.get("style") or "minor_tangent"
+                ).strip(),
                 "preserved_tone": str(row.get("preserved_tone") or "yes").strip(),
-                "preserved_story_mode": str(row.get("preserved_story_mode") or "yes").strip(),
+                "preserved_story_mode": str(
+                    row.get("preserved_story_mode") or "yes"
+                ).strip(),
                 "preserved_stance": str(row.get("preserved_stance") or "yes").strip(),
-                "preserved_reply_relation": str(row.get("preserved_reply_relation") or "yes").strip(),
+                "preserved_reply_relation": str(
+                    row.get("preserved_reply_relation") or "yes"
+                ).strip(),
                 "text": text,
                 "why_different": str(row.get("why_different") or "").strip(),
             }

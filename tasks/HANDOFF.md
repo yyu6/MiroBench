@@ -1,5 +1,26 @@
 # Handoff — synthetic Reddit thread generation (generalized_card)
 
+## 2026-08-17 v86 Prompt-boundary addendum
+
+The next paid run must use policy
+`generalized-card-v2-root-relation-prompt-v86-20260817` and a new v86 tag. No
+v85 paid artifact exists, so the policy bump does not mix an existing run.
+
+The final zero-API Prompt audit found two active issues. First, root comments
+could show `reply relation: answers_parent` even though no parent was visible;
+the Writer boundary now renders `relation to post: answers_post` while leaving
+the Planner record untouched. Second, the low-information path repeated its
+move and controls through a private-slot block, semantic contract, local-move
+line, full blackboard, payload guidance, and per-slot guidance. It now uses the
+compact focused discourse contract and bounded repetition ledger once, while
+retaining the low-information and factual hard rules.
+
+Reviser-only Prompt helpers were split into `legacy_reviser_prompts.py`, cutting
+214 lines from active `prompts.py`. AST comparison showed zero changes to the
+retained active functions and identical migrated legacy functions. See
+`tasks/v86-worklog.md`. Formal metric success remains unproven until v86 n=1
+content review and then sufficient-N matched evaluation.
+
 ## 2026-08-17 target/realization and evaluation-integrity addendum
 
 The free target audit changes the diagnosis. The evaluation-excluded reference
@@ -30,7 +51,7 @@ pins total), and the closure audit follows sibling scripts.
 Finally, n=1 is `DESCRIPTIVE` from the matched evaluator through console and
 content reports. Ignore the mathematical p=1 values returned for singleton
 samples; they cannot establish a pass. The pending paid step remains a complete
-v85 seed-8 Writer diagnostic, followed by sufficient N only if its realization
+v86 seed-8 Writer diagnostic, followed by sufficient N only if its realization
 and content review are credible.
 
 ## 2026-08-17 exact-matched content-audit addendum
@@ -50,8 +71,9 @@ the later multi-thread run may interpret MWU/KS. See `tasks/v85-worklog.md`.
 
 ## 2026-08-17 v85 current-path audit addendum
 
-Use policy `generalized-card-v2-auditable-plan-controls-v85-20260817` for the
-next run. This pass used historical commits only as provenance; every decision
+Policy `generalized-card-v2-auditable-plan-controls-v85-20260817` is preserved
+for provenance but superseded by v86 before any paid run. This pass used
+historical commits only as provenance; every decision
 was re-established from current definitions, current call sites, the current
 v80 artifact, and current tests.
 
@@ -839,6 +861,7 @@ python3 -u generalized_card/scripts/run_generate.py \
   --start-seed-index 8 --sampling-seed 42 \
   --context-dropout-rate 0.42 --context-jitter-rate 0.32 \
   --plan-quality-repairs 3 --writer-hard-recovery-rounds 2 \
+  --post-retry-limit 1 \
   --domain-claim off --writer-prompt focused --writer-route-lock own_words \
   --social-contract-coherence on --reply-sibling-visibility on \
   --own-fact-license off --speaker-identity off \
@@ -846,7 +869,7 @@ python3 -u generalized_card/scripts/run_generate.py \
 ```
 
 `--max-posts 10 --start-seed-index 0` gives the 10-thread evaluation set. Its
-cost and runtime should be re-estimated from the n=1 v81 token summary before
+cost and runtime should be re-estimated from the latest n=1 token summary before
 spending. `plan-quality-repairs 3` gives joint contract conflicts
 a bounded Planner repair budget. Hard Writer recovery handles only empty,
 duplicate/copy, placeholder, or planner-skeleton output; it does not optimize a
@@ -900,12 +923,12 @@ prompt-rendering check in this session was built — no API, full corpus.
 
 # 11. RECOMMENDED FIRST MOVE
 
-The free checks are complete. Run the seed-8 command in §10 first under v85, with social
-contract and sibling visibility both on. Judge it on Planner repair counts,
-tone-label realization (59.2% baseline), and StorySeeker mass in `no_story`
-slots—not on an n=1 p-value. If the mechanism moves those diagnostics in the
-predicted direction, run the comparable ten-seed arm before adding a separate
-ablation.
+The free checks are complete. Run the seed-8 command in §10 first under v86,
+with social contract and sibling visibility both on. Judge it on Planner repair
+counts, tone-label realization (59.2% baseline), and StorySeeker mass in
+`no_story` slots—not on an n=1 p-value. If the mechanism moves those diagnostics
+in the predicted direction, run the comparable ten-seed arm before adding a
+separate ablation.
 
 ---
 

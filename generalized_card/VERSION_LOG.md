@@ -59,6 +59,40 @@ Before any run that changes behavior:
 
 ---
 
+## v86 — compact low-information Writer and root-relation clarity (2026-08-17)
+
+Policy ID: `generalized-card-v2-root-relation-prompt-v86-20260817`.
+
+Hypothesis before the paid run: low-information slots should realize their
+assigned reaction, rant, question, acknowledgement, or bare answer more often
+when the Writer sees one compact discourse contract rather than several
+overlapping copies. Root comments should not be told that they answer a parent
+that does not exist. Expected qualitative directions are fewer generic helpful
+or customer-service-shaped turns, less Planner-language echo, and more faithful
+short social/affective realization. No 12-metric improvement is claimed until a
+new artifact is scored.
+
+Changed:
+
+- For a root slot, the focused Writer now receives `relation to post` and values
+  such as `answers_post`; direct replies retain `reply relation` and parent
+  values. The persisted Planner plan is unchanged, preserving audit evidence.
+- The low-information Writer now uses the same compact discourse contract and
+  bounded semantic/short-utterance ledger as the focused substantive path.
+  Duplicate private-slot, semantic-contract, local-move, full-blackboard,
+  placeholder, payload, tone, story, affect, and length renderings were removed.
+  Its low-information and grounding hard rules remain.
+- Reviser-only Prompt adaptation and Self-BLEU revision diagnostics moved from
+  active `prompts.py` to `legacy_reviser_prompts.py`. AST hashes prove every
+  migrated function is identical and every retained active Prompt function is
+  unchanged apart from the two v86 Writer edits.
+
+Offline acceptance: 286 generalized tests plus 3 focused scorer tests, Ruff,
+camera backend self-test, active and legacy parity, and 93/93 pins with zero
+active untracked or unpinned local imports. Paid v86 generation is pending.
+
+---
+
 ## v85 — auditable Planner controls and dead-path pruning (2026-08-17)
 
 Policy ID: `generalized-card-v2-auditable-plan-controls-v85-20260817`.

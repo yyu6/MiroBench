@@ -71,7 +71,9 @@ GENERIC_CLAIM_FAMILIES = (
 )
 
 
-INTERNAL_CONTROL_ID_RE = re.compile(r"(?<![A-Za-z0-9])(?:P\d{2}|S\d+|B\d+)(?![A-Za-z0-9])", re.I)
+INTERNAL_CONTROL_ID_RE = re.compile(
+    r"(?<![A-Za-z0-9])(?:P\d{2}|S\d+|B\d+)(?![A-Za-z0-9])", re.I
+)
 
 
 def _tone_class_definitions() -> str:
@@ -411,9 +413,7 @@ def comment_planner_prompt(
         assignments = active_schedule.get("assignments") or {}
         slot_controls = {
             sample_id: dict(
-                assignments.get(str(sample_id))
-                or assignments.get(sample_id)
-                or {}
+                assignments.get(str(sample_id)) or assignments.get(sample_id) or {}
             )
             for sample_id in requested_sample_ids
         }
@@ -505,13 +505,12 @@ def comment_planner_prompt(
         else ""
     )
     actor_enabled = (
-        str(getattr(backend, "GENERALIZED_ACTOR_MODE", "") or "")
-        == MODE_DOMAIN_DERIVED
+        str(getattr(backend, "GENERALIZED_ACTOR_MODE", "") or "") == MODE_DOMAIN_DERIVED
     )
     actor_schema = ""
     actor_rules = ""
     if actor_enabled:
-        actor_schema = ''',
+        actor_schema = """,
       "actor": {
         "participant_key": "thread-local A#; use OP only for an actual OP follow-up and reuse a key only when the same participant returns",
         "knowledge_boundary": "what this participant can reasonably know from the visible seed or parent and the assigned evidence role",
@@ -521,15 +520,15 @@ def comment_planner_prompt(
         "interaction_tendency": "how this participant engages this parent or branch",
         "context_visibility": "which part of the visible discussion this participant is responding to",
         "realization_route": "an abstract one-shot sentence construction and cadence; never example wording"
-      }'''
-        actor_rules = '''
+      }"""
+        actor_rules = """
 - Compose every ``actor`` from the current visible discussion and the abstract
   behavior of its selected evaluation-excluded R# pattern. There is no fixed
   persona catalog. Do not assign demographic biography or hidden history.
 - Actor fields describe a local cognitive and interaction state. Ground
   ``attention_focus`` in the seed or parent, and do not import facts from R#.
 - Vary ``realization_route`` across nearby slots before Writer generation. It
-  describes sentence architecture and cadence, not reusable example wording.'''
+  describes sentence architecture and cadence, not reusable example wording."""
     return f"""Assign per-comment semantic and social controls to matched-real structural slots.
 
 Domain: {config.display_name}
@@ -827,9 +826,15 @@ def _render_prior_comment_plans(backend: Any, plans: list[dict[str, Any]]) -> st
     if not plans:
         return "- none; this is the first batch"
     rows = []
-    family_counts = Counter(str(plan.get("claim_family") or "miscellaneous") for plan in plans)
-    perspective_counts = Counter(str(plan.get("perspective_id") or "seed_local") for plan in plans)
-    angle_counts = Counter(str(plan.get("content_angle") or "unclear_mixed") for plan in plans)
+    family_counts = Counter(
+        str(plan.get("claim_family") or "miscellaneous") for plan in plans
+    )
+    perspective_counts = Counter(
+        str(plan.get("perspective_id") or "seed_local") for plan in plans
+    )
+    angle_counts = Counter(
+        str(plan.get("content_angle") or "unclear_mixed") for plan in plans
+    )
     rows.append(
         "- coverage summary: "
         f"claim families={_render_counts(dict(family_counts))}; "
@@ -988,12 +993,21 @@ def writer_prompt(
     # unlimited) left `self_bleu_4` slightly *worse*, delta 0.46 -> 0.52, and the
     # rebuilt-thread A/B held diversity with 24 entries while cutting the prompt
     # to 13% of its size. Two dozen recent openings is what the Writer uses.
-    openings = "\n".join(
-        f"- {item}" for item in _dedupe(list(recent_openings or []), limit=400)[-24:] if item
-    ) or "- none"
+    openings = (
+        "\n".join(
+            f"- {item}"
+            for item in _dedupe(list(recent_openings or []), limit=400)[-24:]
+            if item
+        )
+        or "- none"
+    )
     anchors = _writer_visible_anchors(getattr(task, "concrete_anchors", ()))
     anchors_block = "\n".join(f"- {item}" for item in anchors[:8]) or "- none"
-    retry = f"\nThe previous attempt failed these guards:\n{retry_note}\n" if retry_note else ""
+    retry = (
+        f"\nThe previous attempt failed these guards:\n{retry_note}\n"
+        if retry_note
+        else ""
+    )
     controls = backend.controls_for_task(task)
     controls_block = "\n".join(
         f"- {'perspective' if key == 'perspective_id' else key}: "
@@ -1103,7 +1117,9 @@ def writer_prompt(
     # to attribute.
     speaker_block = _speaker_identity_block(backend, task, previous_comments)
 
-    if _writer_prompt_mode(backend) == "focused" and not backend.should_use_low_info_writer(task):
+    if _writer_prompt_mode(
+        backend
+    ) == "focused" and not backend.should_use_low_info_writer(task):
         return marker_prefix + _focused_writer_prompt(
             config,
             backend,
@@ -1142,11 +1158,12 @@ def writer_prompt(
             openings=openings,
             retry=retry,
             guidance=guidance,
-            semantic_contract=semantic_contract,
             speaker_block=speaker_block,
         )
 
-    return marker_prefix + f"""Write exactly one human Reddit comment in {config.community_context}.
+    return (
+        marker_prefix
+        + f"""Write exactly one human Reddit comment in {config.community_context}.
 
 Use all controls as private constraints. Never mention them. This is one local turn, not a complete answer, product review, summary, or assistant response.
 
@@ -1226,6 +1243,7 @@ Hard rules:
 - Do not copy an earlier generated comment's opener or sentence path.
 - Output only the comment body.
 """
+    )
 
 
 def _focused_thread_ledger(backend: Any, previous: str) -> str:
@@ -1262,7 +1280,9 @@ def _writer_prompt_mode(backend: Any) -> str:
     the full prompt's repeated control paraphrases. See `_focused_writer_prompt`.
     """
 
-    return str(getattr(backend, "GENERALIZED_WRITER_PROMPT_MODE", "focused") or "focused")
+    return str(
+        getattr(backend, "GENERALIZED_WRITER_PROMPT_MODE", "focused") or "focused"
+    )
 
 
 def _route_lock_mode(backend: Any) -> str:
@@ -1285,7 +1305,9 @@ def _route_lock_mode(backend: Any) -> str:
     front of a finished sentence is an instruction to copy it.
     """
 
-    return str(getattr(backend, "GENERALIZED_WRITER_ROUTE_LOCK", "own_words") or "own_words")
+    return str(
+        getattr(backend, "GENERALIZED_WRITER_ROUTE_LOCK", "own_words") or "own_words"
+    )
 
 
 def _realization_rule(backend: Any) -> str:
@@ -1464,6 +1486,12 @@ def _focused_slot_contract(
             getattr(task, field, ""),
             domain_profile,
         )
+        if (
+            field == "reply_relation"
+            and getattr(task, "local_parent_task_id", None) is None
+        ):
+            label = "relation to post"
+            value = value.replace("_parent", "_post")
         key = value.casefold()
         if not value or key in seen:
             continue
@@ -1485,7 +1513,6 @@ def _low_info_writer_prompt(
     openings: str,
     retry: str,
     guidance: str,
-    semantic_contract: str,
     speaker_block: str = "",
 ) -> str:
     domain_profile = getattr(backend, "GENERALIZED_DOMAIN_PROFILE", {})
@@ -1506,59 +1533,33 @@ def _low_info_writer_prompt(
         if actor_state is not None
         else ""
     )
-    relation = "reply to the parent" if parent_comment is not None else "reply to the post"
-    cue = _writer_safe_control_text(
-        task.semantic_move or task.detail_focus or task.local_topic or task.local_anchor,
-        domain_profile,
+    relation = (
+        "reply to the parent" if parent_comment is not None else "reply to the post"
     )
-    local_move = f"\nRequired local move: {backend.compact(cue, 180)}" if cue else ""
     route_lock = _semantic_route_lock(backend, task, domain_profile=domain_profile)
     return f"""Write exactly one low-information Reddit comment in {config.community_context}.
 
 What this comment says (highest priority):
 {route_lock}
 
+What kind of turn this is:
+{_focused_slot_contract(backend, task, domain_profile=domain_profile)}
+
 Visible discussion:
 {visible}{speaker_block}
 
-Private sampled slot:
-- payload: {task.payload_type}
-- role: {task.speaker_role}
-- tone: {getattr(task, 'tone_target', '') if getattr(task, 'tone_target', '') in TONE_CLASSES else backend.resolved_tone_shape(task)}
-- utterance: {task.utterance_mode}
-- texture: {task.surface_texture}
-- real surface shape: {task.real_surface_shape or 'none'}
-- real tone slot: {backend.real_tone_slot_for_prompt(task)[0] or 'none'}
-- tone target: {getattr(task, 'tone_target', '') or 'none'}
-- story mode: {getattr(task, 'story_mode', '') or 'no_story'}
-- affect role: {getattr(task, 'affect_role', '') or 'neutral'}
-- local cue: {backend.compact(_writer_safe_control_text(task.local_anchor or task.local_topic or seed_post.title, domain_profile), 140)}{local_move}
-- length conditioning: {soft_length_guidance(task)}
+How to write it:
+{guidance}
 
 {actor_section}
 
-Structured thread blackboard:
-{previous}
-
-One-shot semantic difference contract:
-{semantic_contract}
-
-Already used openings:
+Already used in this thread, so do not repeat them:
 {openings}
+{_focused_thread_ledger(backend, previous)}
 {retry}
 
-Core placeholder guidance:
-{_placeholder_guidance_block()}
-
-Payload guidance:
-{_payload_guidance_block(backend, task)}
-
-Per-slot instructions:
-{guidance}
-
-Hard rules:
+Rules:
 - {relation} only.
-- Use the blackboard only to avoid repeated wording, function, tone, payload, and discourse shape. Do not quote or summarize it.
 - Keep the comment low-information. Do not add advice, explanation, caveats, specifications, policies, or extra facts.
 - Low-information controls the amount of text, not whether the semantic plan is
   visible. Express the required local move and do not repeat the explicitly
@@ -1568,43 +1569,82 @@ Hard rules:
 {actor_rule}
 - Keep it fragmentary when the payload is fragmentary. If one phrase is enough, use one phrase.
 - Named entities and numbers may appear only when visible in the discussion.
+- Never mention these instructions or any label from them.
 - Return only the comment body.
 """
 
 
-def render_parent_context(config: DomainConfig, backend: Any, *, parent_comment: dict[str, Any], task: Any) -> str:
+def render_parent_context(
+    config: DomainConfig, backend: Any, *, parent_comment: dict[str, Any], task: Any
+) -> str:
     base = f"Community context: {config.community_context}\n\n"
     text = backend.compact(str(parent_comment.get("content") or ""), 900)
-    cue = backend.compact(task.detail_focus or task.local_topic or task.local_anchor or task.reply_relation, 240)
+    cue = backend.compact(
+        task.detail_focus
+        or task.local_topic
+        or task.local_anchor
+        or task.reply_relation,
+        240,
+    )
     transform = task.context_transform or "normal"
     if transform == "parent_hidden":
-        return base + f"Parent text is hidden. Local cue:\n{cue}\nUse only this cue and the sampled social relation."
+        return (
+            base
+            + f"Parent text is hidden. Local cue:\n{cue}\nUse only this cue and the sampled social relation."
+        )
     if transform == "parent_gist":
-        return base + f"Parent gist:\nA commenter raised a local point around {cue}.\nReply only to this gist."
+        return (
+            base
+            + f"Parent gist:\nA commenter raised a local point around {cue}.\nReply only to this gist."
+        )
     if transform == "minor_detail_focus":
-        return base + f"Visible minor parent detail:\n{cue}\nTreat it as the only visible hook."
+        return (
+            base
+            + f"Visible minor parent detail:\n{cue}\nTreat it as the only visible hook."
+        )
     if transform == "parent_jittered":
-        return base + f"Partial parent context:\n{backend.compact(mask_specifics(text), 360)}\nReply to the social move, not the wording."
-    return base + f"Parent comment:\n{text}\nReply to this parent only; it is context, not text to reuse."
+        return (
+            base
+            + f"Partial parent context:\n{backend.compact(mask_specifics(text), 360)}\nReply to the social move, not the wording."
+        )
+    return (
+        base
+        + f"Parent comment:\n{text}\nReply to this parent only; it is context, not text to reuse."
+    )
 
 
-def render_seed_context(config: DomainConfig, backend: Any, *, seed_post: Any, task: Any) -> str:
+def render_seed_context(
+    config: DomainConfig, backend: Any, *, seed_post: Any, task: Any
+) -> str:
     base = f"Community context: {config.community_context}\n\n"
     title = backend.compact(seed_post.title, 360)
     body = backend.compact(seed_post.body or seed_post.content, 1500)
-    cue = backend.compact(task.detail_focus or task.local_topic or task.local_anchor, 260)
+    cue = backend.compact(
+        task.detail_focus or task.local_topic or task.local_anchor, 260
+    )
     transform = task.context_transform or "normal"
     if transform == "semantic_plan_only":
-        return base + f"Seed text is hidden. Sampled local cue:\n{cue}\nDo not reconstruct missing facts."
+        return (
+            base
+            + f"Seed text is hidden. Sampled local cue:\n{cue}\nDo not reconstruct missing facts."
+        )
     if transform == "minor_detail_focus":
-        return base + f"Seed title:\n{title}\n\nVisible minor hook:\n{cue}\nRespond only to this hook."
+        return (
+            base
+            + f"Seed title:\n{title}\n\nVisible minor hook:\n{cue}\nRespond only to this hook."
+        )
     if transform == "seed_jittered":
-        return base + f"Partial seed context:\n{mask_specifics(title + ' ' + body[:500])}\n\nLocal cue:\n{cue}"
+        return (
+            base
+            + f"Partial seed context:\n{mask_specifics(title + ' ' + body[:500])}\n\nLocal cue:\n{cue}"
+        )
     aperture = task.context_aperture or "seed_gist_only"
     if aperture == "full_seed":
         return base + f"Seed title:\n{title}\n\nSeed body:\n{body}"
     if aperture == "title_only":
-        return base + f"Seed title:\n{title}\nOnly the title and sampled plan are visible."
+        return (
+            base + f"Seed title:\n{title}\nOnly the title and sampled plan are visible."
+        )
     if aperture == "semantic_only":
         return base + f"Only this sampled local cue is visible:\n{cue}"
     return base + f"Seed title:\n{title}\n\nSeed gist:\n{seed_gist(config, seed_post)}"
@@ -1628,7 +1668,9 @@ def mask_specifics(text: str) -> str:
 
 
 def strip_anchor_source(value: str) -> str:
-    return re.sub(r"\s+\((?:matched real|planner|local|seed)\)\s*$", "", str(value)).strip()
+    return re.sub(
+        r"\s+\((?:matched real|planner|local|seed)\)\s*$", "", str(value)
+    ).strip()
 
 
 def extract_product_anchors(config: DomainConfig, text: str) -> list[str]:
@@ -1648,7 +1690,11 @@ def extract_product_anchors(config: DomainConfig, text: str) -> list[str]:
 
 def extract_term_anchors(config: DomainConfig, text: str) -> list[str]:
     value = str(text or "")
-    found = [term for term in config.technical_terms if re.search(rf"(?<!\w){re.escape(term)}(?!\w)", value, flags=re.I)]
+    found = [
+        term
+        for term in config.technical_terms
+        if re.search(rf"(?<!\w){re.escape(term)}(?!\w)", value, flags=re.I)
+    ]
     return _dedupe(found, limit=12)
 
 
@@ -1681,228 +1727,19 @@ def extract_concrete_anchors(
 
 def protected_entities(config: DomainConfig, text: str) -> set[str]:
     entities = {item.lower() for item in extract_product_anchors(config, text)}
-    for domain in re.findall(r"\b(?:[a-z0-9-]+\.)+(?:com|org|net|io|co|ca|uk)\b", text, flags=re.I):
+    for domain in re.findall(
+        r"\b(?:[a-z0-9-]+\.)+(?:com|org|net|io|co|ca|uk)\b", text, flags=re.I
+    ):
         entities.add(domain.lower())
     return entities
 
 
 def protected_numbers(text: str) -> set[str]:
     pattern = r"(?<![\w.])(?:[$€£]\s*\d[\d,.]*|\d+(?:\.\d+)?\s*%|\d+\s*/\s*\d+|\d+(?:\.\d+)?\s*(?:mm|gb|tb|mah|hz|mp|fps|w|wh|kg|g|inch(?:es)?|in))\b|(?<![\w.])\d+(?:\.\d+)?(?![\w.])"
-    return {re.sub(r"\s+", "", item.lower()) for item in re.findall(pattern, str(text), flags=re.I)}
-
-
-_CARD_STATIC_DOMAIN_REPLACEMENTS = {
-    "selfbleu": (
-        ("card names", "product/model names"),
-        (
-            "new facts, cards, banks, dates, fees, percentages, URLs, or reward numbers",
-            "new facts, products, brands, dates, specifications, measurements, prices, or URLs",
-        ),
-    ),
-    "selfbert": (
-        (
-            "issuer, card, fee, reward, denial reason, recon/CLI/BT action, timing, or quoted premise",
-            "product, model, component, specification, observed behavior, workflow action, timing, or quoted premise",
-        ),
-        (
-            "new issuers, products, fees, dates, rewards, or numbers",
-            "new brands, products, models, specifications, dates, prices, measurements, or numbers",
-        ),
-        ("Bank X, Card Y, issuer X", "Brand X, Product Y, model X"),
-        ('"Yeah, that limit is tiny."', '"Yeah, that detail is pretty rough."'),
-        ('"That limit is the weird part, honestly."', '"That behavior is the weird part, honestly."'),
-        (
-            '\\"No downside\\" only works if the fee is actually zero.',
-            '\\"No downside\\" only works if the tradeoff is actually zero.',
-        ),
-        (
-            '"Nope, that is not treated like normal spend."',
-            '"Nope, that does not behave like the standard mode."',
-        ),
-        (
-            '"Did they say if it was age or utilization?"',
-            '"Did they say if it was the setting or the component?"',
-        ),
-        (
-            '"My recon letter said almost the same thing."',
-            '"My support ticket said almost the same thing."',
-        ),
-        (
-            '"The annoying part is the timing after the statement cuts."',
-            '"The annoying part is the timing after that step finishes."',
-        ),
-        (
-            '"This is also why those side perks get messy fast."',
-            '"This is also why those extra features get messy fast."',
-        ),
-    ),
-    "tone": (
-        ("new card/bank/number", "new product/brand/quantity"),
-        (
-            "numbers, card names, bank names, fees, and parent relationship",
-            "numbers, product/model names, brand/source names, specifications, and parent relationship",
-        ),
-        (
-            "numbers, card names, bank names, and parent relationship",
-            "numbers, product/model names, brand/source names, and parent relationship",
-        ),
-        (
-            "same concrete cards, banks, APRs, fees, limits, or URLs",
-            "same concrete products, brands, specifications, prices, limits, or URLs",
-        ),
-        (
-            "new card names, new banks, new numbers, new URLs",
-            "new product/model names, new brands, new numbers, new URLs",
-        ),
-        (
-            "new card names, new banks, new numbers",
-            "new product/model names, new brands, new numbers",
-        ),
-        (
-            "same card/bank/APR/fee/SUB point",
-            "same product/model/specification/price point",
-        ),
-        (
-            "same card/bank/APR/SUB detail",
-            "same product/model/specification detail",
-        ),
-        (
-            "same concrete card/bank/APR/fee detail",
-            "same concrete product/model/specification/price detail",
-        ),
-        (
-            "new facts, new cards, new banks, new numbers",
-            "new facts, new products, new brands, new numbers",
-        ),
-        (
-            "new facts, new cards, new banks, new numbers, or a new story",
-            "new facts, new products, new brands, new numbers, or a new story",
-        ),
-        (
-            "new card names, new numbers, or generic customer-service tone",
-            "new product/model names, new numbers, or generic customer-service tone",
-        ),
-        (
-            "entities, numbers, cards, banks, fees, percentages, and URLs",
-            "entities, numbers, products, brands, specifications, measurements, and URLs",
-        ),
-    ),
-    "story": (
-        ("r/CreditCards", "the target Reddit community"),
-        ("financial point", "domain point"),
-        ("concrete financial point", "concrete domain point"),
-        (
-            "card/issuer names, and financial facts",
-            "product/model and brand names, and domain facts",
-        ),
-        (
-            "financial numbers such as fees, rates, limits, rewards, balances, approval amounts, and issuer rules",
-            "domain quantities such as prices, specifications, limits, measurements, observed outcomes, and product rules",
-        ),
-        ("a financial rule", "a domain rule"),
-    ),
-}
-
-
-def adapt_card_reviser_prompt(
-    config: DomainConfig,
-    prompt: str,
-    *,
-    kind: str,
-) -> str:
-    """Keep CARD's prompt structure while replacing static finance wording.
-
-    Replacements intentionally target complete phrases rather than isolated
-    words.  This prevents changing dynamic discussion content such as "SD
-    card" while removing the finance-only instructions embedded in CARD.
-    """
-
-    adapted = str(prompt)
-    for old, new in _CARD_STATIC_DOMAIN_REPLACEMENTS.get(kind, ()):
-        adapted = adapted.replace(old, new)
-    preamble = (
-        "Domain context for this revision: "
-        f"{config.community_context}. Preserve domain-specific product/model "
-        "names, technical terms, measurements, prices, dates, links, and "
-        "parent-local facts.\n"
-    )
-    first_break = adapted.find("\n")
-    if first_break < 0:
-        return preamble + adapted
-    return adapted[: first_break + 1] + "\n" + preamble + adapted[first_break + 1 :]
-
-
-_NGRAM_STOP_WORDS = {
-    "a", "an", "and", "are", "as", "at", "be", "been", "but", "by",
-    "for", "from", "had", "has", "have", "he", "her", "his", "i", "if",
-    "in", "is", "it", "its", "me", "my", "of", "on", "or", "our", "so",
-    "that", "the", "their", "them", "they", "this", "to", "was", "we",
-    "were", "with", "you", "your",
-}
-
-
-def selfbleu_ngram_diagnostic(
-    config: DomainConfig,
-    *,
-    comments: list[Any],
-    target: Any,
-) -> str:
-    """Expose actionable 1/2-gram repetition omitted by CARD's phrase list."""
-
-    target_tokens = _ngram_tokens(str(getattr(target, "content", "") or ""))
-    other_tokens = [
-        _ngram_tokens(str(getattr(comment, "content", "") or ""))
-        for comment in comments
-        if getattr(comment, "comment_id", None) != getattr(target, "comment_id", None)
-    ]
-    unigram_counts: Counter[tuple[str, ...]] = Counter()
-    bigram_counts: Counter[tuple[str, ...]] = Counter()
-    for tokens in other_tokens:
-        unigram_counts.update((token,) for token in tokens)
-        bigram_counts.update(zip(tokens, tokens[1:]))
-
-    protected = {
-        token
-        for phrase in (*config.technical_terms, *config.protected_entity_terms)
-        for token in _ngram_tokens(phrase)
+    return {
+        re.sub(r"\s+", "", item.lower())
+        for item in re.findall(pattern, str(text), flags=re.I)
     }
-    repeated_unigrams = Counter()
-    for token in target_tokens:
-        if (
-            unigram_counts[(token,)] > 0
-            and token not in protected
-            and token not in _NGRAM_STOP_WORDS
-            and len(token) > 2
-        ):
-            repeated_unigrams[token] += unigram_counts[(token,)]
-    repeated_bigrams = Counter()
-    for pair in zip(target_tokens, target_tokens[1:]):
-        if bigram_counts[pair] <= 0:
-            continue
-        if all(token in _NGRAM_STOP_WORDS for token in pair):
-            continue
-        repeated_bigrams[" ".join(pair)] += bigram_counts[pair]
-
-    unigrams = ", ".join(item for item, _ in repeated_unigrams.most_common(8)) or "(none)"
-    bigrams = ", ".join(item for item, _ in repeated_bigrams.most_common(8)) or "(none)"
-    return f"""Cross-domain n-gram diagnostic:
-- The exact Self-BLEU evaluator aggregates 1-, 2-, 3-, and 4-gram overlap after each candidate is inserted into the full thread.
-- CARD's thread-local phrase list above identifies actionable repeated 3/4-grams.
-- Repeated non-anchor unigrams in this target: {unigrams}.
-- Repeated bigrams in this target: {bigrams}.
-- Change repeated function wording and sentence paths first. Preserve technical anchors even when they repeat; the exact metric gate decides whether the full rewrite helps.
-"""
-
-
-def insert_reviser_guidance(prompt: str, guidance: str) -> str:
-    marker = "Return strict JSON only:"
-    if marker in prompt:
-        return prompt.replace(marker, guidance.rstrip() + "\n\n" + marker, 1)
-    return prompt.rstrip() + "\n\n" + guidance
-
-
-def _ngram_tokens(text: str) -> list[str]:
-    return re.findall(r"[a-z0-9]+(?:'[a-z0-9]+)?", text.lower())
 
 
 def _thread_memory(
@@ -1912,7 +1749,9 @@ def _thread_memory(
     current_task: Any,
     domain_profile: dict[str, Any] | None = None,
 ) -> str:
-    usable = [comment for comment in comments if str(comment.get("content") or "").strip()]
+    usable = [
+        comment for comment in comments if str(comment.get("content") or "").strip()
+    ]
     rows = []
     tail = usable[-8:]
     start_index = max(1, len(usable) - len(tail) + 1)
@@ -1932,9 +1771,7 @@ def _thread_memory(
         # Keep prior meaning and control coverage without replaying long text
         # that can prime the Writer to reuse its phrasing. Exact short lines
         # remain in the dedicated exclusion block below.
-        rows.append(
-            f"- #{index} depth={comment.get('depth', 0)} [{tags}]{suffix}"
-        )
+        rows.append(f"- #{index} depth={comment.get('depth', 0)} [{tags}]{suffix}")
     rendered = "\n".join(rows) or "- none yet"
     # Exact duplicates in long threads often come from short replies generated
     # far earlier than the recent-text window. All current-thread short lines
@@ -2165,7 +2002,9 @@ def _comment_tags(
         ("shape", _discourse_shape(comment)),
         (
             "perspective",
-            _perspective_label(domain_profile or {}, comment.get("perspective_id") or "seed_local"),
+            _perspective_label(
+                domain_profile or {}, comment.get("perspective_id") or "seed_local"
+            ),
         ),
         ("claim", comment.get("claim_key") or "local_claim"),
     )
@@ -2297,7 +2136,10 @@ def _perspective_label(profile: dict[str, Any], perspective_id: Any) -> str:
         if not isinstance(item, dict):
             continue
         if str(item.get("perspective_id") or "").upper() == value.upper():
-            return str(item.get("label") or "domain perspective").strip() or "domain perspective"
+            return (
+                str(item.get("label") or "domain perspective").strip()
+                or "domain perspective"
+            )
     if INTERNAL_CONTROL_ID_RE.fullmatch(value):
         return "domain perspective"
     return value
@@ -2306,7 +2148,9 @@ def _perspective_label(profile: dict[str, Any], perspective_id: Any) -> str:
 def _writer_safe_control_text(value: Any, profile: dict[str, Any]) -> str:
     text = str(value or "")
     perspective_labels = {
-        str(item.get("perspective_id") or "").upper(): str(item.get("label") or "domain perspective")
+        str(item.get("perspective_id") or "").upper(): str(
+            item.get("label") or "domain perspective"
+        )
         for item in profile.get("perspectives") or []
         if isinstance(item, dict) and item.get("perspective_id")
     }
@@ -2317,7 +2161,9 @@ def _writer_safe_control_text(value: Any, profile: dict[str, Any]) -> str:
             return perspective_labels.get(label, "domain perspective")
         return "prior structural slot" if label.startswith("S") else "local branch"
 
-    return re.sub(r"\s+", " ", INTERNAL_CONTROL_ID_RE.sub(replace_control, text)).strip()
+    return re.sub(
+        r"\s+", " ", INTERNAL_CONTROL_ID_RE.sub(replace_control, text)
+    ).strip()
 
 
 def _writer_visible_anchors(values: Any) -> list[str]:
@@ -2351,7 +2197,13 @@ def _render_matched_structure(
     for index, row in enumerate(visible_rows, start=1):
         body = str(row.get("body") or "").strip()
         parent_raw = str(row.get("parent_id") or "")
-        parent = "OP" if parent_raw.startswith("t3_") else f"S{id_to_slot[parent_raw]}" if parent_raw in id_to_slot else "outside_sample"
+        parent = (
+            "OP"
+            if parent_raw.startswith("t3_")
+            else f"S{id_to_slot[parent_raw]}"
+            if parent_raw in id_to_slot
+            else "outside_sample"
+        )
         lines.append(
             f"S{index}: depth={int(row.get('depth') or 0)}; parent={parent}; "
             f"words={len(body.split())}; surface={_surface_only_label(body)}"
@@ -2379,15 +2231,19 @@ def _render_matched_slots(
         slot = sample_offset + local_index
         body = str(row.get("body") or "").strip()
         parent_raw = str(row.get("parent_id") or "")
-        parent = "OP" if parent_raw.startswith("t3_") else f"S{id_to_slot[parent_raw]}" if parent_raw in id_to_slot else "outside_sample"
+        parent = (
+            "OP"
+            if parent_raw.startswith("t3_")
+            else f"S{id_to_slot[parent_raw]}"
+            if parent_raw in id_to_slot
+            else "outside_sample"
+        )
         words = len(body.split())
         # Naming the required beat count per slot instead of leaving it to a
         # general rule: long slots were silently returned with no
         # development_plan and then realized at a fraction of their scale.
         beats = expected_development_beats(words)
-        development = (
-            f"; development_plan={beats} beats required" if beats > 0 else ""
-        )
+        development = f"; development_plan={beats} beats required" if beats > 0 else ""
         lines.append(
             f"S{slot}: depth={int(row.get('depth') or 0)}; parent={parent}; "
             f"words={words}; surface={_surface_only_label(body)}{development}"
@@ -2407,7 +2263,9 @@ def _count_values(
 ) -> dict[str, int]:
     counts: dict[str, int] = {}
     for comment in comments:
-        value = str(comment.get(key) or (comment.get(fallback) if fallback else "") or "unknown")
+        value = str(
+            comment.get(key) or (comment.get(fallback) if fallback else "") or "unknown"
+        )
         counts[value] = counts.get(value, 0) + 1
     return counts
 
@@ -2424,8 +2282,15 @@ def _is_advice_like(comment: dict[str, Any]) -> bool:
     payload = str(comment.get("payload_type") or "")
     function = str(comment.get("comment_function") or comment.get("comment_job") or "")
     text = str(comment.get("content") or "").lower()
-    return role == "advisor" or "advice" in payload or "advice" in function or bool(
-        re.search(r"\b(you should|you can|i would|try|check|make sure|worth)\b", text)
+    return (
+        role == "advisor"
+        or "advice" in payload
+        or "advice" in function
+        or bool(
+            re.search(
+                r"\b(you should|you can|i would|try|check|make sure|worth)\b", text
+            )
+        )
     )
 
 
@@ -2433,8 +2298,11 @@ def _is_question_like(comment: dict[str, Any]) -> bool:
     role = str(comment.get("speaker_role") or "")
     payload = str(comment.get("payload_type") or "")
     utterance = str(comment.get("utterance_mode") or "")
-    return role == "confused_asker" or "question" in payload or "question" in utterance or "?" in str(
-        comment.get("content") or ""
+    return (
+        role == "confused_asker"
+        or "question" in payload
+        or "question" in utterance
+        or "?" in str(comment.get("content") or "")
     )
 
 
@@ -2443,8 +2311,16 @@ def _is_social_like(comment: dict[str, Any]) -> bool:
     voice = str(comment.get("voice") or "")
     texture = str(comment.get("surface_texture") or "")
     text = str(comment.get("content") or "").lower()
-    return role == "gratitude_reply" or voice == "grateful" or texture == "gratitude_social" or bool(
-        re.search(r"\b(thanks|thank you|appreciate|good to know|that helps|fair point)\b", text)
+    return (
+        role == "gratitude_reply"
+        or voice == "grateful"
+        or texture == "gratitude_social"
+        or bool(
+            re.search(
+                r"\b(thanks|thank you|appreciate|good to know|that helps|fair point)\b",
+                text,
+            )
+        )
     )
 
 
@@ -2463,12 +2339,20 @@ def _is_blunt_like(comment: dict[str, Any]) -> bool:
     role = str(comment.get("speaker_role") or "")
     voice = str(comment.get("voice") or "")
     text = str(comment.get("content") or "").lower()
-    return role in {"contrarian", "ranter"} or voice in {"blunt", "annoyed", "sarcastic"} or bool(
-        re.search(r"\b(nope|hard pass|wtf|bullshit|lol|lmao|wrong|doubtful)\b", text)
+    return (
+        role in {"contrarian", "ranter"}
+        or voice in {"blunt", "annoyed", "sarcastic"}
+        or bool(
+            re.search(
+                r"\b(nope|hard pass|wtf|bullshit|lol|lmao|wrong|doubtful)\b", text
+            )
+        )
     )
 
 
-def _optional_control_rule(label: str, value: str, instruction: str, suffix: str) -> str:
+def _optional_control_rule(
+    label: str, value: str, instruction: str, suffix: str
+) -> str:
     if not value:
         return ""
     parts = [f"{label}: {value}."]
@@ -2482,9 +2366,7 @@ def _optional_control_rule(label: str, value: str, instruction: str, suffix: str
 def _full_path_entity_rule(backend: Any, task: Any) -> str:
     """The full Writer path's entity rule, worded for that path."""
 
-    return entity_naming_rule(
-        mode=writer_grounding_mode(backend, task), variant="full"
-    )
+    return entity_naming_rule(mode=writer_grounding_mode(backend, task), variant="full")
 
 
 def _focused_path_entity_rule(backend: Any, task: Any) -> str:
@@ -2576,7 +2458,10 @@ def _payload_guidance_block(backend: Any, task: Any) -> str:
                 "- Preserve the local function and use visible anchors for detail density without copying reference wording.",
             ]
         )
-    return "\n".join(lines) or "- Preserve the sampled payload exactly; do not upgrade or broaden it."
+    return (
+        "\n".join(lines)
+        or "- Preserve the sampled payload exactly; do not upgrade or broaden it."
+    )
 
 
 def _voice_guidance(voice: str) -> str:
@@ -2612,7 +2497,10 @@ def _speaker_role_guidance(role: str, *, task: Any | None = None) -> str:
         "ranter": "Role: let the complaint stand without resolving it into a helpful takeaway.",
         "side_observer": "Role: stay on the small side observation instead of solving the OP's main problem.",
     }
-    return mapping.get(role, "Role: make one local contribution rather than acting as a general advisor.")
+    return mapping.get(
+        role,
+        "Role: make one local contribution rather than acting as a general advisor.",
+    )
 
 
 def _utterance_mode_guidance(mode: str, *, task: Any | None = None) -> str:
@@ -2645,7 +2533,9 @@ def _utterance_mode_guidance(mode: str, *, task: Any | None = None) -> str:
         "humorous_local_turn": "Utterance: realize the assigned substantive local move with incidental humor rather than reducing it to a punchline.",
         "reference_with_context": "Utterance: explain the local relevance of the reference cue without inventing a source, URL, or template.",
     }
-    return mapping.get(mode, "Utterance: make one local point; avoid broad advice unless required.")
+    return mapping.get(
+        mode, "Utterance: make one local point; avoid broad advice unless required."
+    )
 
 
 def _surface_texture_guidance(texture: str, *, task: Any | None = None) -> str:
@@ -2667,7 +2557,9 @@ def _surface_texture_guidance(texture: str, *, task: Any | None = None) -> str:
         "messy_punctuation": "Texture: casual punctuation, ellipses, or a clipped aside is allowed.",
         "gratitude_social": "Texture: make the acknowledgement, thanks, or report-back visibly social and brief.",
     }
-    return mapping.get(texture, "Texture: keep the wording natural and not overly polished.")
+    return mapping.get(
+        texture, "Texture: keep the wording natural and not overly polished."
+    )
 
 
 def _tone_shape_guidance(shape: str, *, task: Any | None = None) -> str:

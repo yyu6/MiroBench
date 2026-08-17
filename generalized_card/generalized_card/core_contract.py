@@ -16,10 +16,11 @@ HISTORICAL_REVISION_POLICY_VERSIONS = {
     "generalized-card-revision-v6-dynamic-coverage-history-20260807",
 }
 GENERALIZED_V2_GENERATION_POLICY_VERSION = (
-    "generalized-card-v2-auditable-plan-controls-v85-20260817"
+    "generalized-card-v2-root-relation-prompt-v86-20260817"
 )
 HISTORICAL_GENERATION_POLICY_VERSIONS = {
     "generalized-v2": {
+        "generalized-card-v2-auditable-plan-controls-v85-20260817",
         "generalized-card-v2-complete-writer-coverage-v84-20260817",
         "generalized-card-v2-matched-text-semantic-isolation-v83-20260817",
         "generalized-card-v2-focused-discourse-contract-v82-20260817",
@@ -155,7 +156,7 @@ CORE_FILES = {
     ),
     "generator_adapter": (
         "generalized_card/generalized_card/backend.py",
-        "e1428ae4d2a3f2dc73f003b3c3c21bb98593d9a6357b3ad8c92fdddec3011ee0",
+        "06b3371123c38b74b8c6c47ab7c4a81d585e01013bea0f4d889f18f987374926",
     ),
     "data_boundary": (
         "generalized_card/generalized_card/data.py",
@@ -333,11 +334,15 @@ CORE_FILES = {
     ),
     "reviser_adapter": (
         "generalized_card/generalized_card/reviser_backend.py",
-        "68e086b169a0cc76578f144bb659217ef29f712bd2e9f79243659d7ef670b123",
+        "de61458b30395d716a280eac41d5f7f571b4424f548266224389c236051e267f",
+    ),
+    "legacy_reviser_prompts": (
+        "generalized_card/generalized_card/legacy_reviser_prompts.py",
+        "6e84767ff10ebf8125d916097c755bcfb8107fa92c4092cbd9056eaa6b31be28",
     ),
     "domain_prompt_adapter": (
         "generalized_card/generalized_card/prompts.py",
-        "78c0dcfe86dbbf52fcd9bd568e0af92535882d7859e7e35f0a24a0cf526db552",
+        "16a18f21e025563f19b36ee6385031a89e46f95df8f07f36133c54386c51e51c",
     ),
     "reply_planning": (
         "generalized_card/generalized_card/reply_planning.py",

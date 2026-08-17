@@ -34,7 +34,7 @@ from revision_memory import (  # noqa: E402
 )
 
 
-from generalized_card import prompts
+from generalized_card import legacy_reviser_prompts, prompts
 from generalized_card.actor_conditioning import (
     MODE_DOMAIN_DERIVED,
     actor_state_from_plan,
@@ -531,7 +531,7 @@ class GeneralizedCardTest(unittest.TestCase):
             "Preserve card names. Do not add new facts, cards, banks, dates, fees, "
             "percentages, URLs, or reward numbers.\nTarget: Replace the SD card."
         )
-        adapted = prompts.adapt_card_reviser_prompt(
+        adapted = legacy_reviser_prompts.adapt_card_reviser_prompt(
             self.config,
             original,
             kind="selfbleu",
@@ -5521,16 +5521,15 @@ class GeneralizedCardTest(unittest.TestCase):
             ],
         )
         self.assertIn("Write exactly one low-information Reddit comment", rendered)
-        self.assertIn("Earlier generated comments", rendered)
-        self.assertIn("Thread-level distribution pressure", rendered)
-        self.assertIn("One-shot semantic difference contract", rendered)
-        self.assertIn(
-            "required contribution: acknowledge the useful grip detail", rendered
-        )
-        self.assertIn("explicitly avoid: complete review", rendered)
-        self.assertIn(
-            "Required local move: acknowledge the useful grip detail", rendered
-        )
+        self.assertIn("What kind of turn this is:", rendered)
+        self.assertIn("- function: reaction", rendered)
+        self.assertIn("- payload form: low info reaction", rendered)
+        self.assertIn("- speaker role: gratitude reply", rendered)
+        self.assertIn("- relation to post: answers_post", rendered)
+        self.assertNotIn("Earlier generated comments", rendered)
+        self.assertNotIn("Thread-level distribution pressure", rendered)
+        self.assertNotIn("One-shot semantic difference contract", rendered)
+        self.assertNotIn("Required local move:", rendered)
         self.assertIn("Short utterances already used anywhere in this thread", rendered)
         self.assertIn("The grip felt fine to me.", rendered)
         # The low-info path renders the same route lock, so it needs the same
@@ -5547,6 +5546,7 @@ class GeneralizedCardTest(unittest.TestCase):
         self.assertNotIn("tone_overlay_slot", module.controls_for_task(task))
         self.assertNotIn("tone_overlay_slot", module.render_sampled_plan_block(task))
         self.assertIn("not a counted requirement", rendered.lower())
+        self.assertLess(len(rendered), 6000)
         self.assertEqual(
             module.writer_token_cap(
                 "short",
@@ -5600,14 +5600,14 @@ class GeneralizedCardTest(unittest.TestCase):
             previous_comments=prior_comments,
         )
         self.assertIn(
-            "required contribution: reject a price drop across the entire product line",
+            "The point this comment makes, in your own words: reject a price drop across the entire product line",
             bare_rendered,
         )
         self.assertIn(
-            "explicitly avoid: the earlier answer that only denies a whole-line drop",
+            "content to avoid: the earlier answer that only denies a whole-line drop",
             bare_rendered,
         )
-        self.assertIn("Required local move:", bare_rendered)
+        self.assertNotIn("Required local move:", bare_rendered)
         self.assertIn("Not the whole A7 line, no", bare_rendered)
 
     def test_domain_neutral_real_slot_classifiers_are_bound(self) -> None:
@@ -5918,10 +5918,6 @@ class GeneralizedCardTest(unittest.TestCase):
                 )
 
 
-if __name__ == "__main__":
-    unittest.main()
-
-
 class FocusedWriterPromptTest(unittest.TestCase):
     """The focused prompt may drop rule mass, never a grounding rule.
 
@@ -6060,6 +6056,20 @@ class FocusedWriterPromptTest(unittest.TestCase):
         ):
             self.assertEqual(focused.count(row), 1, row)
         self.assertIn("What kind of turn this is:", focused)
+
+    def test_focused_relation_names_the_actual_visible_target(self) -> None:
+        root = self._prompt("focused", "impolite", reply_relation="answers_parent")
+        self.assertIn("- relation to post: answers_post", root)
+        self.assertNotIn("- reply relation: answers_parent", root)
+
+        reply = self._prompt(
+            "focused",
+            "impolite",
+            local_parent_task_id=9,
+            reply_relation="challenges_parent",
+        )
+        self.assertIn("- reply relation: challenges_parent", reply)
+        self.assertNotIn("relation to post", reply)
 
     def test_focused_drops_the_blocks_no_metric_depends_on(self) -> None:
         focused = self._prompt("focused", "impolite")
@@ -6679,3 +6689,7 @@ class MicroReactionShapeTest(unittest.TestCase):
         }
         # v74's worst thread had 10 micro slots
         self.assertGreaterEqual(len(produced), 10)
+
+
+if __name__ == "__main__":
+    unittest.main()

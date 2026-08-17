@@ -24,6 +24,25 @@ them onto the 12 metrics and onto the per-thread evidence in `HANDOFF.md` §4.3:
 Only `avg_depth` and `structural_virality` are genuinely matched per thread, and
 both are fixed by the matched sampler rather than won by generation.
 
+## v86 Prompt audit status — 2026-08-17
+
+- [x] Render representative focused Writer Prompts and check exact duplicate
+      lines and semantic target conflicts rather than judging source strings.
+- [x] Translate root-only Planner relations at the Writer boundary from
+      parent language to post language; preserve direct-reply relations and the
+      persisted raw plan.
+- [x] Remove repeated low-information Writer blocks. Keep one route lock, one
+      compact discourse contract, one per-slot guidance section, the bounded
+      semantic/short-line ledger, and the low-information hard rules.
+- [x] Split 214 lines of legacy reviser-only Prompt logic out of active
+      `prompts.py`; prove migrated and retained functions with AST hashes.
+- [x] Bump the generation policy to v86 before any paid run.
+- [ ] Run the complete seed-8 v86 thread, then inspect 186/186 coverage,
+      Planner→Writer realization, repeated wording, helpful/customer-service
+      default, emotion, story, and the descriptive 12-metric distances.
+
+---
+
 ## v85 implementation status — 2026-08-17
 
 Detailed evidence and exact scorer definitions are in `tasks/v81-worklog.md`;
@@ -333,7 +352,7 @@ handoff's interpretation.
 ## Sequencing
 
 The free target-selection and evaluation-integrity work is complete. Next run
-the complete v85 seed-8 thread and judge Writer realization/content, not n=1
+the complete v86 seed-8 thread and judge Writer realization/content, not n=1
 p-values. Only if coverage is exact and the content audit shows the expected
 direction should the same unchanged policy advance to a sufficient-N matched
 evaluation. Reopen A/C upstream only for target→generated failures that remain;

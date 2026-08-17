@@ -401,3 +401,19 @@ active source set.
 contract edges. Pin and track those runtime sources, and make the closure audit
 follow sibling-script imports in addition to package-relative imports. Report
 declared, active, tracked, and unpinned counts separately.
+
+## 2026-08-17 — Audit rendered Prompts by path and visible target
+
+**What happened.** The normal focused Writer Prompt had no repeated long lines,
+but the low-information branch still rendered the same move and controls through
+multiple old blocks. Separately, root plans legitimately stored the shared enum
+value `answers_parent`, and the Writer displayed it even when its visible target
+was the seed post. Source-level searches did not expose either contradiction as
+clearly as rendering representative root, reply, substantive, and low-info
+Prompts.
+
+**How to apply.** Prompt review must cover every routing branch and inspect the
+final rendered text. Preserve raw Planner values for audit, but translate them
+at the Writer boundary when their human-facing meaning depends on whether the
+visible target is a post or parent. A specialized Writer path should reuse the
+same compact contract primitives unless evidence requires extra information.

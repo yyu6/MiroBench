@@ -1041,18 +1041,14 @@ def _run_generalized_self_test(module: ModuleType, config: DomainConfig) -> None
         ],
     )
     lowered = prompt.lower()
-    assert (
-        "already generated in this thread" in lowered
-        or "earlier generated comments" in lowered
-    )
-    assert "gratitude_reply" in lowered
-    assert "soft_ack" in lowered
-    assert "low_info_reaction" in lowered
-    assert (
-        "thread-level pressure for this next comment" in lowered
-        or "thread-level distribution pressure" in lowered
-    )
-    assert "current sampled slot" in lowered
+    assert "short utterances already used anywhere in this thread" in lowered
+    assert "thanks, that detail helps" in lowered
+    assert "speaker role: gratitude reply" in lowered
+    assert "payload form: low info reaction" in lowered
+    assert "relation to post: answers_post" in lowered
+    assert "earlier generated comments" not in lowered
+    assert "thread-level distribution pressure" not in lowered
+    assert "one-shot semantic difference contract" not in lowered
     assert "r/creditcards" not in lowered
     assert "bank/card" not in lowered
     assert "issuer" not in lowered
