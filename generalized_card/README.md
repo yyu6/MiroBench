@@ -207,7 +207,13 @@ python3 generalized_card/scripts/run_evaluate.py \
 The evaluation audit blocks incomplete, contaminated, copied, or leaked output.
 Planner-distribution findings such as semantic collisions or perspective
 concentration are written to `output_audit.json` and reported as warnings, then
-evaluation continues so those quality failures remain measurable.
+evaluation continues so those quality failures remain measurable. After the 12
+formal metrics and matched-seed statistics, the same command writes
+`content_profile_audit.json` and `.md`. That read-only report compares matched
+repetition/content properties, joins Planner controls to saved per-comment
+StorySeeker/GoEmotions/politeness outputs, and labels lexical customer-service
+probes as weak diagnostics. With one thread it reports distances only and never
+calls MWU/KS a pass.
 
 Run the CARD core metric order, Self-BLEU then Tone, after evaluation:
 

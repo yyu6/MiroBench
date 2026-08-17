@@ -78,8 +78,12 @@ comment: collection-level metrics are diagnostic in first-pass generation.
 - [x] Stop impossible perspective-concentration repair calls. Perspective
       concentration remains visible as a warning; invalid-perspective and
       branch-route checks that normalization made unreachable are deleted.
-- [x] Verify v85 offline: 266 tests, scoped Ruff, camera-product backend
-      self-test, 72/72 pins, v80 audit replay, and exact seed-8 `--prepare-only`.
+- [x] Verify v85 offline: 271 tests, scoped Ruff, camera-product backend
+      self-test, 76/76 pins, v80 audit replay, and exact seed-8 `--prepare-only`.
+- [x] Repair the n=1 content audit before using it for decisions. Its lexical
+      rows were matched, but real emotion/story rows came from the whole domain.
+      Evaluation now writes exact-matched 12-metric, repetition,
+      Planner→Writer, model-realization, and weak-surface JSON/Markdown reports.
 - [ ] Run one large n=1 content/contract diagnostic with no metric-driven
       retries, then run a multi-thread matched evaluation for formal p-values.
 

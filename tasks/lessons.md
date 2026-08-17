@@ -341,3 +341,17 @@ and after it. If normalization owns a field, record the normalization event and
 test the normalizer; do not retain a downstream check that cannot see the raw
 value. A collection-level consequence of structural ownership may remain an
 audit warning, but it must not trigger an impossible per-slot LLM repair.
+
+## 2026-08-17 — A report called “matched” still needs every row's join audited
+
+**What happened.** The content-profile tool correctly loaded the matched real
+comment text for lexical comparisons, then silently loaded every domain
+GoEmotions and StorySeeker file for its model-scored rows. The heading still
+said REAL target, so plausible-looking aggregate numbers could have driven the
+next Prompt change even though they described a different population.
+
+**How to apply.** Treat diagnostics as production scientific code. Trace every
+reported row back to its source key, add a distractor thread to the join test,
+and store evidence provenance in the output. When n=1 is used for qualitative
+debugging, override misleading saved test statuses with `descriptive_only_n1`;
+do not let a mathematically returned p-value become an inferential claim.

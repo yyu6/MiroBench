@@ -1,5 +1,20 @@
 # Handoff — synthetic Reddit thread generation (generalized_card)
 
+## 2026-08-17 exact-matched content-audit addendum
+
+`run_evaluate.py` now writes `content_profile_audit.json` and `.md` after the
+formal matched evaluation. This fixes a load-bearing bug in the old
+`compare_content_profile.py`: lexical comments were matched to the seed, but
+the real emotion/story target pooled the whole domain. Never quote those old
+full-domain rows as a matched n=1 target.
+
+The new report uses exact seed ID plus product directory for real scorer rows,
+shows all 12 paired distances, joins persisted Planner controls to generated
+per-comment classifier outputs, and exposes repetition phrases and planned
+helpful/advice mass. Regex surface probes are explicitly weak diagnostics, not
+semantic classifiers. At n=1 every metric status is `descriptive_only_n1`; only
+the later multi-thread run may interpret MWU/KS. See `tasks/v85-worklog.md`.
+
 ## 2026-08-17 v85 current-path audit addendum
 
 Use policy `generalized-card-v2-auditable-plan-controls-v85-20260817` for the
@@ -835,6 +850,8 @@ artifacts/generalized_card/runs/<TAG>/
   logs/writer_distribution_control.jsonl attempts, final_status, per-attempt problems
   evaluation/revised_generated_thread_scores.csv    the 12 metrics, per thread
   matched_evaluation/matched_real_thread_scores.csv real values for the matched seeds
+  content_profile_audit.json              exact-matched content/realization diagnostics
+  content_profile_audit.md                human-readable form of the same report
 ```
 
 Real ground truth: `data/raw/discussions/camera_product/<product>/<product>.comments.jsonl`,

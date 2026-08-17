@@ -369,7 +369,23 @@ CORE_FILES = {
     ),
     "evaluation_runner": (
         "generalized_card/scripts/run_evaluate.py",
-        "74c5ab6f6d09cbbef425350930e7a3d485de8f85b7879e40cba2b3f278a58d17",
+        "fd11e79ca8244b0d8676d9e94a872d71149d3ad3b036f519839c7c9bcf52c342",
+    ),
+    "content_profile": (
+        "generalized_card/generalized_card/content_profile.py",
+        "38e65608c8a2d68af93acbae512a7d3988ddf441698097ce68d1f731694668a9",
+    ),
+    "content_profile_analysis": (
+        "generalized_card/generalized_card/content_profile_analysis.py",
+        "64bf133cb449c3eb012fc6a57a1374ff4cb07ce96db904a79e61144c2d5ca5ef",
+    ),
+    "content_profile_data": (
+        "generalized_card/generalized_card/content_profile_data.py",
+        "79917445537246065d0eae3b43ef1a7667057465f11ec64d27fa4ba988713af9",
+    ),
+    "content_profile_runner": (
+        "generalized_card/scripts/compare_content_profile.py",
+        "6cfb6f51947e5e78ab270cdb42643055444cd83da7d94f74fd71bfd92607673c",
     ),
     "parity_auditor": (
         "generalized_card/scripts/audit_core_parity.py",

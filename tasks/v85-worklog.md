@@ -94,3 +94,32 @@ p-values.
 - The exact seed-8 configuration passes `--prepare-only`; no API call was made.
   Its temporary run directory was moved recoverably to
   `/Users/yaoningyu/.Trash/generalized_card_camera_gpt54_v85_audit_seed8_20260817_v1_prepare_only_final`.
+
+## Matched content-audit repair
+
+Continuation on 2026-08-17 found that the existing zero-API content comparison
+did not honor its own matched claim for two important rows. Lexical comments
+were joined to the seed correctly, but real GoEmotions and StorySeeker values
+were pooled from every camera thread. On v80 seed 8 that printed real emotion
+entropy/story probability as 2.1394/0.1556; the exact matched thread values are
+1.9459/0.1114.
+
+The print-only 355-line script is now a 49-line CLI over three focused modules:
+229 lines of orchestration/rendering, 235 lines of artifact joins, and 479 lines
+of content analysis. The report is automatically written after formal
+evaluation and includes:
+
+- all 12 paired metric values and distances, with n=1 status forced to
+  `descriptive_only_n1` regardless of saved p-values;
+- exact-matched per-comment emotion/story properties;
+- assigned-versus-realized tone, affect, and story splits;
+- repeated n-gram contributors and opener concentration;
+- separately labeled Planner helpful/advice shares and weak matched-side
+  lexical probes, never a regex claim about semantic naturalness.
+
+Five focused tests cover the matched join, n=1 interpretation, control/model
+joins, evidence boundary, and incomplete-cohort rejection. The complete suite
+is now 271/271, Ruff passes, and 76/76 pinned sources have no drift. A direct
+CLI replay on v80 produced the new JSON/Markdown successfully;
+`run_evaluate` itself still correctly refuses
+to re-evaluate that artifact because it has only 185/186 structural coverage.

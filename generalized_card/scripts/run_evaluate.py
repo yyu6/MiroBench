@@ -56,6 +56,10 @@ def main() -> None:
         (
             "output_audit",
             "evaluation_runner",
+            "content_profile",
+            "content_profile_analysis",
+            "content_profile_data",
+            "content_profile_runner",
             "cleanup",
             "score_runner",
             "metric_runner",
@@ -145,6 +149,15 @@ def main() -> None:
             ],
         )
         _print_saved_matched_results(matched)
+        _run(
+            [
+                sys.executable,
+                str(PACKAGE_ROOT / "scripts" / "compare_content_profile.py"),
+                "--tag", args.tag,
+                "--domain", str(config.get("domain_config") or "camera"),
+                "--runs-root", str(run_root.parent),
+            ]
+        )
         return_code = 0
         status = "evaluation_complete"
         current_artifact = run_root / "current_artifact.json"
@@ -156,11 +169,13 @@ def main() -> None:
                     "root": str(cleaned),
                     "scores": str(evaluation / "revised_generated_thread_scores.csv"),
                     "matched": str(matched),
+                    "content_profile": str(run_root / "content_profile_audit.json"),
                     "updated_at_epoch": time.time(),
                 },
             )
         print(f"[evaluation-done] scores={evaluation / 'revised_generated_thread_scores.csv'}", flush=True)
         print(f"[evaluation-done] matched={matched / 'matched_seed_group_eval.json'}", flush=True)
+        print(f"[evaluation-done] content={run_root / 'content_profile_audit.md'}", flush=True)
     except KeyboardInterrupt:
         return_code = 130
         status = "evaluation_interrupted"

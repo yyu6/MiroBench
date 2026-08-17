@@ -88,15 +88,22 @@ Changed:
   current code neither assigns nor consumes them.
 - Removed the unreachable `constructive_polite_helpful` finalizer branches and
   the unused scalar `projected_metric`; the live batched projection path remains.
+- Replaced the old print-only content comparison with a pinned, tested matched
+  audit automatically run after evaluation. The old tool matched lexical text
+  correctly but compared generated emotion/story against the entire domain
+  corpus. The new join uses the exact seed ID and product directory for real
+  per-comment model rows, reports all 12 paired distances, Planner→Writer
+  realization, repetition contributors, and explicitly weak helpful/profanity
+  surface probes in machine-readable JSON and Markdown.
 
 Expected paid-run effects are bounded and falsifiable: fewer impossible Planner
 repair requests, explicit counts of initial fixed-contract disagreement, and no
 `tone overlay: none` Prompt noise. Content/metric success still requires the new
 large-thread artifact followed by a sufficient-N matched evaluation.
 
-Offline acceptance: all 266 generalized tests pass; Ruff passes on the changed
+Offline acceptance: all 271 generalized tests pass; Ruff passes on the changed
 production and test files with the facade's intentional dynamic exports
-excluded; the camera-product backend self-test passes; all 72 source pins agree;
+excluded; the camera-product backend self-test passes; all 76 source pins agree;
 the v80 185/186 artifact remains rejected; and the exact seed-8 configuration
 passes `--prepare-only` without an API call.
 
