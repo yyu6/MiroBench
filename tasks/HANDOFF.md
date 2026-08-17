@@ -1,5 +1,29 @@
 # Handoff — synthetic Reddit thread generation (generalized_card)
 
+## 2026-08-17 v91 slot-gated concreteness addendum
+
+The zero-API audit found that `--own-fact-license named` could not safely be
+turned on as implemented. The per-slot resolver correctly limited the license
+to substantive comments, but the system Prompt unconditionally told every
+Writer call to name particulars and give amounts. Micro/short comments therefore
+received a global pressure to add facts while their user Prompt prohibited
+non-visible names and numbers.
+
+v91 reduces the system addition to one conditional authorization: only an
+explicitly licensed per-comment Prompt may override the generic visibility ban.
+The behavioral instruction appears once, at the substantive slot. The same
+boundary now protects the retained legacy `own` arm.
+
+This gate is data-scaled rather than arbitrary. It selects 110/186 seed-8 slots
+(59.14%); matched real comments contain a digit at 59.68%, versus 31.35% in v80
+generated text. Matched real also has 118 distinct model designators versus 29
+generated. The next run should use policy
+`generalized-card-v2-slot-gated-fact-license-v91-20260817`, a fresh v91 tag,
+`--own-fact-license named`, and `--domain-claim off`. See
+`tasks/v91-worklog.md`. Offline acceptance is complete: 297 generalized tests,
+3 focused scorer tests, Ruff, both parity scopes, 93/93 pins, named backend
+self-test, exact 186-slot Prompt replay, and named-mode prepare-only all pass.
+
 ## 2026-08-17 v90 reply-story-grounding addendum
 
 The zero-API completion audit found one residual v89 Prompt conflict. The root
@@ -15,9 +39,10 @@ it still forbids invented product facts and externally checkable outcomes. The
 Writer already enforced the same distinction, so this closes Planner→Writer
 contract drift without broadening factual permission.
 
-Do not spend under v89. The next run must use policy
-`generalized-card-v2-reply-story-grounding-v90-20260817` and a fresh v90 tag.
-Offline v90 acceptance is complete: 295 generalized tests, 3 focused scorer
+Do not spend under v89 or v90. v90 was superseded before a paid call when the
+completion audit found the global/per-slot conflict in the pending concreteness
+arm.
+Offline v90 acceptance was complete: 295 generalized tests, 3 focused scorer
 tests, Ruff, backend self-test, both parity scopes, 93/93 clean pins, and exact
 seed-8 `--prepare-only` all pass. See `tasks/v90-worklog.md`.
 
@@ -165,7 +190,7 @@ pins total), and the closure audit follows sibling scripts.
 Finally, n=1 is `DESCRIPTIVE` from the matched evaluator through console and
 content reports. Ignore the mathematical p=1 values returned for singleton
 samples; they cannot establish a pass. The pending paid step is now a complete
-v90 seed-8 Writer diagnostic, followed by sufficient N only if its realization
+v91 seed-8 Writer diagnostic, followed by sufficient N only if its realization
 and content review are credible.
 
 ## 2026-08-17 exact-matched content-audit addendum
@@ -713,7 +738,7 @@ plumbed env var → `backend.py` module attr → CLI flag.
 
 | flag | values | state |
 |---|---|---|
-| `--own-fact-license` | `off` \| `own` \| `named` | `own` refuted; **`named` never run** |
+| `--own-fact-license` | `off` \| `own` \| `named` | `own` refuted; `named` repaired in v91, not yet measured |
 | `--speaker-identity` | `off` \| `matched` | **never run** |
 | `--repetition-guard` | `off` \| `blocking` | run in v77/78/79; works mechanically, no metric effect |
 
@@ -978,7 +1003,7 @@ python3 -u generalized_card/scripts/run_generate.py \
   --post-retry-limit 1 \
   --domain-claim off --writer-prompt focused --writer-route-lock own_words \
   --social-contract-coherence on --reply-sibling-visibility on \
-  --own-fact-license off --speaker-identity matched \
+  --own-fact-license named --speaker-identity matched \
   2>&1 | tee /tmp/<TAG>_gen.log
 ```
 
@@ -1037,7 +1062,7 @@ prompt-rendering check in this session was built — no API, full corpus.
 
 # 11. RECOMMENDED FIRST MOVE
 
-The free checks are complete. Run the seed-8 command in §10 first under v90,
+The free checks are complete. Run the seed-8 command in §10 first under v91,
 with social contract and sibling visibility both on. Judge it on Planner repair
 counts, tone-label realization (59.2% baseline), and StorySeeker mass in
 `no_story` slots—not on an n=1 p-value. If the mechanism moves those diagnostics

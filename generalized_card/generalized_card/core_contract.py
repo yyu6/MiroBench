@@ -16,10 +16,11 @@ HISTORICAL_REVISION_POLICY_VERSIONS = {
     "generalized-card-revision-v6-dynamic-coverage-history-20260807",
 }
 GENERALIZED_V2_GENERATION_POLICY_VERSION = (
-    "generalized-card-v2-reply-story-grounding-v90-20260817"
+    "generalized-card-v2-slot-gated-fact-license-v91-20260817"
 )
 HISTORICAL_GENERATION_POLICY_VERSIONS = {
     "generalized-v2": {
+        "generalized-card-v2-reply-story-grounding-v90-20260817",
         "generalized-card-v2-realizability-first-planner-v89-20260817",
         "generalized-card-v2-structural-speakers-grounding-v88-20260817",
         "generalized-card-v2-payload-safe-writer-routing-v87-20260817",
@@ -182,7 +183,7 @@ CORE_FILES = {
     ),
     "writer_grounding": (
         "generalized_card/generalized_card/writer_grounding.py",
-        "97a8d98349a5e5bd6f504202e21217fec682c4e81c8c87f25d3c2451b3f43247",
+        "6500553a61bcd67d939fb2194994cd3917e1b0133508a1166e492fea8031ac24",
     ),
     "actor_conditioning": (
         "generalized_card/generalized_card/actor_conditioning.py",

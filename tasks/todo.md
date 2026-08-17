@@ -54,8 +54,23 @@ both are fixed by the matched sampler rather than won by generation.
       factual boundary.
 - [x] Complete full offline verification, source-pin refresh, and exact v90
       seed-8 `--prepare-only` before an API call.
-- [ ] Run the fresh v90 seed-8 tag; inspect content and realization before any
-      sufficient-N claim about the 12 metrics.
+- [x] Supersede v90 before a paid call after auditing the pending `named`
+      concreteness arm's global/per-slot instruction conflict.
+
+## v91 slot-gated concreteness status — 2026-08-17
+
+- [x] Trace `own-fact-license` from system Prompt through per-slot license
+      resolution and every Writer Prompt path.
+- [x] Prove the old `named` arm pressured unlicensed micro/short slots to add
+      names and amounts.
+- [x] Make the system rule a conditional authorization only; keep the concrete
+      behavior instruction once in licensed substantive Prompts.
+- [x] Measure the seed-8 gate: 110/186 slots (59.14%) versus 59.68% matched-real
+      digit-bearing comments and 31.35% generated.
+- [x] Complete full offline verification, repin, and exact named-mode v91
+      prepare-only before an API call.
+- [ ] Run the fresh v91 seed-8 tag with `--own-fact-license named`; inspect
+      content and realization before any sufficient-N claim.
 
 ## v88 completion-audit status — 2026-08-17
 
@@ -99,7 +114,7 @@ both are fixed by the matched sampler rather than won by generation.
       replay, and exact v87 seed-8 `--prepare-only`.
 - [x] Supersede v87 with v88 before a paid run after completion audit proved a
       grounding conflict and structural-speaker/persona coupling.
-- [ ] If the v90 qualitative/realization gate is credible, keep v90 unchanged for a
+- [ ] If the v91 qualitative/realization gate is credible, keep v91 unchanged for a
       sufficient-N matched run and interpret MWU/KS only there.
 
 ---
@@ -309,11 +324,12 @@ per-thread story count already scales from the matched template
 
 ## D — the two arms that are built but never run
 
-- [ ] **`--own-fact-license named`.** Domain-neutral concreteness: name things
+- [ ] **Run `--own-fact-license named`.** Domain-neutral concreteness: name things
       and give quantities. Gated on `substantive_slot` (≥25 real words, not
-      micro/short). Targets the two signals that separate real from generated on
-      all ten threads — quantities 12.3×, proper nouns 1.85×. Note the sibling
-      arm `own` was refuted; see HANDOFF §6.6.
+      micro/short). v91 fixes its global/per-slot Prompt conflict; metric and
+      content effect remain unmeasured. Targets the two signals that separate
+      real from generated on all ten threads — quantities 12.3×, proper nouns
+      1.85×. Note the sibling arm `own` was refuted; see HANDOFF §6.6.
 - [x] **`--speaker-identity matched`.** Recover only anonymous participation
       structure; v88 removes the old invented biography/kit coupling and makes
       this the default. Current seed 8 has 80 named groups over 169 named slots,
@@ -435,7 +451,7 @@ handoff's interpretation.
 ## Sequencing
 
 The free target-selection and evaluation-integrity work is complete. Next run
-the complete v90 seed-8 thread and judge Writer realization/content, not n=1
+the complete v91 seed-8 thread and judge Writer realization/content, not n=1
 p-values. Only if coverage is exact and the content audit shows the expected
 direction should the same unchanged policy advance to a sufficient-N matched
 evaluation. Reopen A/C upstream only for target→generated failures that remain;

@@ -6708,10 +6708,10 @@ class OwnFactLicenseTest(unittest.TestCase):
         from generalized_card.writer_grounding import system_prompt_fact_sentence
 
         self.assertEqual(system_prompt_fact_sentence(mode="off"), "")
-        self.assertIn(
-            "yours to state concretely",
-            system_prompt_fact_sentence(mode="own"),
-        )
+        own = system_prompt_fact_sentence(mode="own")
+        self.assertIn("may explicitly license facts about the speaker's own", own)
+        self.assertIn("only for that turn", own)
+        self.assertIn("otherwise do not invent personal history", own)
 
 
 class NamedConcretenessLicenseTest(unittest.TestCase):
@@ -6833,6 +6833,46 @@ class NamedConcretenessLicenseTest(unittest.TestCase):
         self.assertEqual(
             rules["off"],
             "Name a product, model, or number only if it is visible above.",
+        )
+
+    def test_named_system_permission_is_explicitly_slot_gated(self) -> None:
+        with patch.dict(
+            os.environ,
+            {"GENERALIZED_CARD_OWN_FACT_LICENSE": "named"},
+        ):
+            module = configure_generator_backend(
+                load_generator_backend(),
+                load_domain_config("camera"),
+            )
+        system_prompt = module.SYSTEM_PROMPTS["gpt54_reddit_writer"]
+        self.assertIn("may explicitly license particulars not visible", system_prompt)
+        self.assertIn("exception to the preceding visibility rule", system_prompt)
+        self.assertIn("otherwise do not invent a name or amount", system_prompt)
+        self.assertNotIn(
+            "name the particular things you mean and give amounts",
+            system_prompt,
+        )
+
+    def test_named_user_permission_reaches_only_substantive_slots(self) -> None:
+        helper = FocusedWriterPromptTest()
+        helper.setUp()
+        substantive = helper._prompt("focused", "neutral", license_mode="named")
+        micro = helper._prompt(
+            "focused",
+            "neutral",
+            license_mode="named",
+            real_word_count=4,
+            length_bucket="micro",
+            payload_type="low_info_reaction",
+            comment_function="reaction",
+            utterance_mode="fragment_only",
+        )
+        named_permission = "name the specific things you mean and give the amounts"
+        self.assertIn(named_permission, substantive)
+        self.assertNotIn(named_permission, micro)
+        self.assertIn(
+            "Named entities and numbers may appear only when visible",
+            micro,
         )
 
 

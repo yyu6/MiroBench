@@ -516,3 +516,18 @@ planning, define its invariant once and render it on every route. Test the final
 Prompt of each route for both permission and prohibition; a source-level fix in
 one large Prompt is not evidence that the Planner→Writer contract is globally
 coherent.
+
+## 2026-08-17 — A global permission must preserve the slot gate
+
+**What happened.** The `named` arm correctly licensed only substantive slots,
+but its system Prompt applied the concreteness instruction globally. This
+silently bypassed the resolver for micro/short comments and conflicted with
+their visible-only, no-extra-fact user rules. Per-slot unit tests did not catch
+it because they changed the module flag after the system Prompt had already
+been configured.
+
+**How to apply.** A system-level exception should authorize a lower-level rule,
+not repeat the behavior globally. Configure the real environment before
+capturing the system Prompt in tests, then combine it with both a licensed and
+an unlicensed final user Prompt. Measure the gate's selected share against the
+real property it is meant to reproduce before turning the arm on.

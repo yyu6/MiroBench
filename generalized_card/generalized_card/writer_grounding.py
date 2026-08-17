@@ -271,17 +271,18 @@ def system_prompt_fact_sentence(*, mode: str = LICENSE_OFF) -> str:
 
     if mode == LICENSE_NAMED:
         return (
-            " Name the particular things you mean and give amounts, the way "
-            "someone who deals with this every day would, staying consistent "
-            "with whatever the discussion already establishes."
+            " Per-comment instructions may explicitly license particulars not "
+            "visible above. Treat that as an exception to the preceding "
+            "visibility rule only for that turn; otherwise do not invent a name "
+            "or amount."
         )
     if mode == LICENSE_OFF:
         return ""
     return (
-        " Facts about your own equipment and your own history -- what you owned, "
-        "your settings, what you paid, when, where, and how it turned out -- are "
-        "yours to state concretely; only the product under discussion has to stay "
-        "within what is visible."
+        " Per-comment instructions may explicitly license facts about the "
+        "speaker's own equipment and history. Treat that as an exception to the "
+        "preceding visibility rule only for that turn; otherwise do not invent "
+        "personal history."
     )
 
 

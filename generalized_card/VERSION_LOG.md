@@ -59,6 +59,48 @@ Before any run that changes behavior:
 
 ---
 
+## v91 — slot-gated concreteness permission (2026-08-17)
+
+Policy ID: `generalized-card-v2-slot-gated-fact-license-v91-20260817`.
+
+The pre-run completion audit found that the built-but-unrun `named`
+concreteness arm was not safe to enable. Its slot resolver licensed only
+substantive comments (at least 25 anonymous words and not micro/short), but its
+system Prompt unconditionally told every comment to name particulars and give
+amounts. A micro reaction therefore received a global pressure to invent detail
+and a per-comment rule allowing names/numbers only when visible.
+
+v91 makes the system sentence an authorization boundary only: per-comment
+instructions may override the generic visibility ban for an explicitly
+licensed turn. The actual name/amount instruction remains once, in the
+substantive user Prompt. Unlicensed micro/short turns retain their visible-only
+rule, and the legacy `own` permission receives the same slot-gated treatment.
+
+The gate has a meaningful held-out structural scale. On the exact 186-slot
+seed-8 skeleton it licenses 110 slots (59.14%); the matched real thread has a
+digit in 59.68% of comments, while v80 generated only 31.35%. Real model
+designators were 118 versus 29 generated. The next diagnostic should therefore
+use `--own-fact-license named` with `--domain-claim off`: varied particulars are
+realized locally instead of injecting one Planner fact across nearly every
+comment.
+
+Expected direction: more varied names and quantities, lower designator
+concentration, and less abstract/advisory prose. This may move Self-BLEU,
+Self-BERTScore, and semantic cosine through varied content, but n=1 can only
+diagnose that mechanism; formal distribution claims still require sufficient N.
+
+Offline acceptance: 297 generalized tests plus 3 focused Self-BERTScore tests,
+Ruff, healthy active and active-plus-legacy parity, 93/93 clean source pins, and
+a named-mode backend self-test. Full 186-slot Prompt replay produced exactly
+110 licensed Prompts, each with one behavior instruction; all 76 unlicensed
+Prompts had zero, the system contained one conditional authorization and no
+behavior duplicate, and no invented-equipment block appeared. Exact named-mode
+seed-8 `--prepare-only` passed under
+`generalized_card_camera_gpt54_v91_named_seed8_20260817_preflight_v1`. No v91
+API call has been made.
+
+---
+
 ## v90 — one story-grounding boundary for both Planner paths (2026-08-17)
 
 Policy ID: `generalized-card-v2-reply-story-grounding-v90-20260817`.
