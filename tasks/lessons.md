@@ -1,5 +1,21 @@
 # Lessons
 
+## 2026-08-18 — Slot-local repair still loses state if it replaces the whole object
+
+**What happened.** Three repairs targeted only S9, but each returned and replaced
+the entire plan. One candidate fixed long-form capacity, the next fixed its
+story/evidence contract while erasing the long-form beats, and the last restored
+the beats while reverting the evidence contract. Every required field had been
+correct at least once, yet no whole candidate contained both repairs when the
+budget ended.
+
+**How to apply.** Once a slot has one remaining repair diagnostic with a known
+field boundary, merge only that field from the candidate and preserve healthy
+state. Use whole-object replacement while multiple semantic contracts must
+change together. Persist raw and applied candidates separately so the merge is
+auditable and never mistake one historical candidate passing for proof that a
+stochastic future repair is reliable.
+
 ## 2026-08-17 — Hard feasibility cannot share one scalar with soft quality
 
 **What happened.** Targeted Planner repair added collision, story, capacity,

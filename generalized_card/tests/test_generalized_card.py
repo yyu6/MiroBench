@@ -2003,7 +2003,7 @@ class GeneralizedCardTest(unittest.TestCase):
         )
         self.assertEqual(
             module.GENERALIZED_COMMENT_PLAN_REPORTS[-1]["repair_strategy"],
-            "targeted_slot",
+            "targeted_slot_with_blocking_field_merge",
         )
         self.assertEqual(
             module.GENERALIZED_COMMENT_PLAN_REPORTS[-1][
@@ -2308,6 +2308,101 @@ class GeneralizedCardTest(unittest.TestCase):
         self.assertEqual(
             report["selected_plans"]["1"]["evidence_mode"],
             "firsthand_experience",
+        )
+
+    def test_long_form_repair_does_not_undo_prior_social_contract_repair(
+        self,
+    ) -> None:
+        """Replay the v93 S9 failure: each full candidate fixes one field only."""
+
+        module = SimpleNamespace(
+            GENERALIZED_COMMENT_PLAN_HISTORY=[],
+            GENERALIZED_COMMENT_PLAN_FEEDBACK="",
+            GENERALIZED_COMMENT_PLAN_REPORTS=[],
+            GENERALIZED_SOCIAL_CONTRACT_COHERENCE="on",
+            GENERALIZED_DOMAIN_PROFILE={"perspectives": [{"perspective_id": "P10"}]},
+            GENERALIZED_PLAN_QUALITY_CONFIG={
+                "repair_rounds": 3,
+                "schema_recovery_rounds": 0,
+                "similarity_threshold": 0.95,
+                "embedding_similarity_threshold": 0.95,
+                "max_collision_rate": 1.0,
+                "max_perspective_share": 1.0,
+                "strict": False,
+                "require_reply_novelty": False,
+            },
+            real_comment_keys=lambda row: (str(row.get("comment_id") or ""),),
+        )
+        development = "one || two || three || four || five"
+        base = {
+            "reference_id": "R00563",
+            "claim_key": "long_term_ownership_feel",
+            "perspective_id": "P10",
+            "semantic_move": "ground the choice in one long-term ownership outcome",
+            "local_topic": "long-term ownership outcome",
+            "detail_focus": "practical ownership history",
+            "domain_intent": "ground the choice in lived long-term use",
+            "payload_type": "fragment_datapoint",
+            "comment_function": "personal_datapoint",
+            "speaker_role": "datapoint_only",
+            "story_mode": "no_story",
+        }
+        responses = [
+            {**base, "evidence_mode": "firsthand_experience", "development_plan": ""},
+            {
+                **base,
+                "evidence_mode": "firsthand_experience",
+                "development_plan": development,
+            },
+            {**base, "evidence_mode": "small_observation", "development_plan": ""},
+            {
+                **base,
+                "evidence_mode": "firsthand_experience",
+                "development_plan": development,
+            },
+        ]
+        feedback: list[str] = []
+
+        def alternating_repairs(**_kwargs):
+            feedback.append(module.GENERALIZED_COMMENT_PLAN_FEEDBACK)
+            return {9: responses[len(feedback) - 1]}
+
+        comments = [
+            {"comment_id": f"c{index}", "parent_id": None, "body": "short"}
+            for index in range(1, 9)
+        ]
+        comments.append(
+            {"comment_id": "c9", "parent_id": None, "body": "word " * 108}
+        )
+        selected = _comment_planner_batch_with_history(
+            module,
+            alternating_repairs,
+            {},
+        )(
+            seed_post=SimpleNamespace(
+                source_raw_post_id="1lt0yq3", index=2, title="seed"
+            ),
+            sample_offset=8,
+            comments=[comments[-1]],
+            all_comments=comments,
+        )
+
+        self.assertEqual(len(feedback), 4)
+        self.assertIn("Only development_plan is still failing", feedback[-1])
+        self.assertEqual(selected[9]["development_plan"], development)
+        self.assertEqual(selected[9]["evidence_mode"], "small_observation")
+        report = module.GENERALIZED_COMMENT_PLAN_REPORTS[-1]
+        self.assertEqual(report["selected"]["blocking_issue_count"], 0)
+        final_attempt = report["attempts"][-1]
+        self.assertTrue(final_attempt["repair_accepted"])
+        self.assertEqual(final_attempt["repair_merge_fields"], ["development_plan"])
+        self.assertEqual(
+            final_attempt["candidate_plan"]["evidence_mode"],
+            "firsthand_experience",
+        )
+        self.assertEqual(
+            final_attempt["applied_candidate_plan"]["evidence_mode"],
+            "small_observation",
         )
 
     def test_tone_only_mismatch_uses_one_nonblocking_repair(self) -> None:

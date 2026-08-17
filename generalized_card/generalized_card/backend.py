@@ -78,6 +78,11 @@ from .planning_quality import (
     ledger_entry,
 )
 from .persona_bridge import inject_persona_system
+from .plan_repair import (
+    apply_repair_candidate,
+    render_field_repair_instruction,
+    repair_merge_fields,
+)
 from .reply_planning import reconcile_root_reply_fields
 from .surface_contract import (
     infer_surface_shape,
@@ -1628,6 +1633,7 @@ def _comment_planner_batch_with_history(
                     continue
                 repair_counts[sample_id] += 1
                 repair_kwargs = _targeted_plan_repair_kwargs(kwargs, sample_id)
+                merge_fields = repair_merge_fields(best_report, sample_id)
                 module.GENERALIZED_COMMENT_PLAN_HISTORY = [
                     *ledger,
                     *(
@@ -1636,9 +1642,13 @@ def _comment_planner_batch_with_history(
                         if other_id != sample_id
                     ),
                 ]
-                module.GENERALIZED_COMMENT_PLAN_FEEDBACK = best_report.feedback(
+                feedback = best_report.feedback(
                     repair_attempt=repair_counts[sample_id],
                     sample_ids=(sample_id,),
+                )
+                field_instruction = render_field_repair_instruction(merge_fields)
+                module.GENERALIZED_COMMENT_PLAN_FEEDBACK = "\n".join(
+                    part for part in (feedback, field_instruction) if part
                 )
                 repaired = original(**repair_kwargs)
                 _annotate_plan_metadata(module, repaired, repair_kwargs)
@@ -1661,8 +1671,13 @@ def _comment_planner_batch_with_history(
                     )
                     attempts.append(attempt)
                     continue
+                applied_replacement = apply_repair_candidate(
+                    best_plans[sample_id],
+                    replacement,
+                    merge_fields=merge_fields,
+                )
                 candidate_plans = dict(best_plans)
-                candidate_plans[sample_id] = replacement
+                candidate_plans[sample_id] = applied_replacement
                 candidate_report = evaluate(candidate_plans)
                 # A Writer-incompatible contract is a different class of
                 # failure from a diversity warning. The old scalar score made
@@ -1676,6 +1691,10 @@ def _comment_planner_batch_with_history(
                         "repair_scope": [sample_id],
                         "repair_accepted": accepted,
                         "candidate_plan": _plan_audit_snapshot(replacement),
+                        "applied_candidate_plan": _plan_audit_snapshot(
+                            applied_replacement
+                        ),
+                        "repair_merge_fields": list(merge_fields),
                         "selected_rank_before": list(best_report.repair_rank),
                         "candidate_rank": list(candidate_report.repair_rank),
                     }
@@ -1710,7 +1729,7 @@ def _comment_planner_batch_with_history(
             },
             "schema_recovery_events": schema_recovery_events,
             "repair_attempts": sum(repair_counts.values()),
-            "repair_strategy": "targeted_slot",
+            "repair_strategy": "targeted_slot_with_blocking_field_merge",
             "repair_attempts_by_sample": {
                 str(sample_id): count
                 for sample_id, count in sorted(repair_counts.items())

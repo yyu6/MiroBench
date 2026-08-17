@@ -24,6 +24,24 @@ them onto the 12 metrics and onto the per-thread evidence in `HANDOFF.md` §4.3:
 Only `avg_depth` and `structural_virality` are genuinely matched per thread, and
 both are fixed by the matched sampler rather than won by generation.
 
+## v94 state-preserving Planner-repair status — 2026-08-18
+
+- [x] Reconstruct all v93 seed-2 S9 repair candidates from the persisted audit,
+      rather than extrapolating from the v92 candidate.
+- [x] Identify the root cause: whole-plan replacement alternately erased the
+      repaired social contract and repaired long-form beats.
+- [x] Merge only `development_plan` when `long_form_capacity` is the slot's sole
+      remaining repair issue; retain whole-plan repair for mixed-issue slots.
+- [x] Record raw and applied candidates plus merged fields in the audit log.
+- [x] Replay the exact v93 final candidate: blocking `1 -> 0`, five beats and
+      `small_observation` both retained, no remaining S9 issue.
+- [x] Add unit and active-wrapper regressions; complete 304 generalized tests,
+      Ruff, source pins, and backend self-test.
+- [ ] Run a fresh v94 seed-2 gate with two total post attempts. Do not start N=10
+      until this specific 45-comment thread passes end to end.
+- [ ] After the gate, run a fresh v94 N=10 and evaluate content plus all 12
+      metrics. Do not mix partial v92/v93 artifacts with v94.
+
 ## v93 root/reply-boundary status — 2026-08-18
 
 - [x] Reconstruct the paid v92 seed-2 S9 initial plan, all three repair
@@ -39,8 +57,9 @@ both are fixed by the matched sampler rather than won by generation.
       five beats retained.
 - [x] Complete full tests, scorer tests, Ruff, both parity scopes, 93/93 pins,
       backend self-test, and exact v93 N=10 prepare-only.
-- [ ] Run a fresh v93 N=10 tag and evaluate content plus all 12 metrics. Do not
-      mix the two completed v92 threads with v93 output.
+- [x] Attempt a fresh v93 N=10 tag. It again completed two threads, then exposed
+      repair-state loss on seed 2; supersede it with v94 and do not evaluate or
+      mix the partial artifact.
 
 ## v89 Planner-repair status — 2026-08-17
 

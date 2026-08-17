@@ -16,10 +16,11 @@ HISTORICAL_REVISION_POLICY_VERSIONS = {
     "generalized-card-revision-v6-dynamic-coverage-history-20260807",
 }
 GENERALIZED_V2_GENERATION_POLICY_VERSION = (
-    "generalized-card-v2-root-reply-boundary-v93-20260818"
+    "generalized-card-v2-state-preserving-plan-repair-v94-20260818"
 )
 HISTORICAL_GENERATION_POLICY_VERSIONS = {
     "generalized-v2": {
+        "generalized-card-v2-root-reply-boundary-v93-20260818",
         "generalized-card-v2-lossless-domain-claim-off-v92-20260817",
         "generalized-card-v2-slot-gated-fact-license-v91-20260817",
         "generalized-card-v2-reply-story-grounding-v90-20260817",
@@ -163,7 +164,7 @@ CORE_FILES = {
     ),
     "generator_adapter": (
         "generalized_card/generalized_card/backend.py",
-        "bbc1e947f1e758bbd43beea659620c9a35081c8d9b9bd60c3fffac448856525b",
+        "eedc5f7aaaed5e2d72f79f60eb839d45474cbf8964445b055e44f54166bf4c40",
     ),
     "data_boundary": (
         "generalized_card/generalized_card/data.py",
@@ -222,6 +223,10 @@ CORE_FILES = {
     "planning_quality": (
         "generalized_card/generalized_card/planning_quality.py",
         "ec55b73a092833459251560b7189640ee2d52197748f84af04b6da9f5172ae2d",
+    ),
+    "plan_repair": (
+        "generalized_card/generalized_card/plan_repair.py",
+        "b87f62ac84df604b9d3e39613570176996b87238fdafc2b3b33ef1cabe0516ed",
     ),
     "generation_distribution": (
         "generalized_card/generalized_card/generation_distribution.py",
@@ -512,6 +517,7 @@ GENERATION_ADAPTER_CORE_NAMES = (
     "domain_profile",
     "viewpoint_bank",
     "planning_quality",
+    "plan_repair",
     "generation_distribution",
     "planner_distribution",
     "branch_routing",

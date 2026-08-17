@@ -1,5 +1,33 @@
 # Handoff — synthetic Reddit thread generation (generalized_card)
 
+## 2026-08-18 v94 state-preserving-repair addendum
+
+The paid v93 N=10 run completed seeds 0 and 1 and stopped on seed 2 S9 after
+100 requests, 305 seconds, and `$0.3992`. The v93 topology fix was active and
+worked; the new failure was a different bug in repair state management.
+
+Persisted attempts show an alternating sequence. Repair 1 supplied five
+development beats but retained `no_story + firsthand_experience`; repair 2
+changed the evidence to `small_observation` but erased the beats; repair 3
+restored the beats but changed evidence back to `firsthand_experience`. The
+backend replaced the whole plan after every accepted candidate, so fixing one
+field could undo a prior fix in another field.
+
+v94 uses field-scoped merge only when a slot has exactly one remaining repair
+issue with a known field boundary. For `long_form_capacity`, only
+`development_plan` is applied. Multiple blocking issues still use whole-plan
+replacement. Audit rows now distinguish the raw model candidate from the
+applied candidate and list `repair_merge_fields`. Exact v93-log replay changes
+S9 blocking `1 -> 0`, preserves five beats, preserves
+`evidence_mode=small_observation`, and leaves no S9 issue.
+
+Do not resume or formally evaluate the two partial v93 threads. Run a fresh v94
+seed-2 gate first, then a fresh v94 N=10 only after that gate completes. The
+public `--post-retry-limit` counts total attempts, not retries; the earlier value
+`1` explicitly allowed no whole-post retry. Use `2` for the gate and formal run
+so one recoverable whole-post attempt is available after all slot-local repairs.
+See `tasks/v94-worklog.md`.
+
 ## 2026-08-18 v93 root/reply-boundary addendum
 
 The paid v92 N=10 run completed seeds 0 and 1, then stopped on seed 2 root S9

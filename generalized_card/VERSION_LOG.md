@@ -59,6 +59,42 @@ Before any run that changes behavior:
 
 ---
 
+## v94 — state-preserving Planner repair (2026-08-18)
+
+Policy ID: `generalized-card-v2-state-preserving-plan-repair-v94-20260818`.
+
+The paid v93 N=10 run again completed seeds 0 and 1, then stopped on seed 2
+root S9 after 100 requests, 305 seconds, and an estimated `$0.3992`. Unlike the
+v92 failure, topology normalization worked: no root reply-only contract
+remained. The persisted repair history exposed a separate state-loss bug.
+
+S9 initially had two blocking fields. Its first repair supplied all five
+long-form beats but retained the story/evidence conflict. Its second repair
+fixed that conflict but cleared `development_plan`. Its third restored all five
+beats but reintroduced the story/evidence conflict. Because targeted repair
+replaced the whole plan object, each successful field repair erased the prior
+one and the finite budget expired.
+
+v94 keeps whole-plan replacement while multiple repair issues remain.
+When the only remaining repair issue is `long_form_capacity`, it merges only
+`development_plan` from the candidate and ignores unrelated model drift. The
+Prompt states that boundary once, and the audit stores the raw candidate, the
+applied candidate, and the merged field names. This is hard-contract recovery,
+not metric-driven candidate selection.
+
+Replaying the exact final v93 candidate against its selected S9 changes
+blocking count `1 -> 0`, retains five beats and the already-correct
+`evidence_mode=small_observation`, and leaves no S9 issue. Offline acceptance:
+304 generalized tests pass, Ruff is clean, and the camera backend self-test
+passes. Active and active-plus-legacy parity are healthy, with 94/94 source
+pins clean. The exact seed-2 gate command also completed `--prepare-only` as
+`generalized_card_camera_gpt54_v94_named_seed2_20260818_preflight_v1`. No paid
+v94 call has been made. The predicted effect is generation
+reliability and preservation of long-tail content capacity; it does not by
+itself predict a direct gain on any of the 12 realized-text metrics.
+
+---
+
 ## v93 — structural root/reply boundary (2026-08-18)
 
 Policy ID: `generalized-card-v2-root-reply-boundary-v93-20260818`.
