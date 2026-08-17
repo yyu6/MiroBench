@@ -59,6 +59,44 @@ Before any run that changes behavior:
 
 ---
 
+## v88 — structural speakers without invented biography (2026-08-17)
+
+Policy ID: `generalized-card-v2-structural-speakers-grounding-v88-20260817`.
+
+Completion audit before the paid v87 run found two current Prompt/structure
+problems. First, `--own-fact-license off` still rendered an invented equipment
+permission before the conservative fact rule revoked personal experience. A
+full 186-task replay measured 78 equipment blocks, 144 personal-experience bans,
+and 61 Prompts containing both. Preserving that contradiction solely as a
+historical ablation violated the active Prompt rules; git already preserves it.
+v88 renders an equipment shortlist only for the explicit legacy `own` license,
+and the same replay now measures zero equipment blocks and zero conflicts.
+
+Second, `speaker-identity matched` mixed a valid matched structural join with
+invented kit, tenure, and use-case biography, so it could not safely be the
+default. v88 deletes those semantic fields and their kit-filter helper. The
+roster retains only anonymous speaker ID, OP status, slot IDs, and anonymous
+account status. The Writer may see only its own earlier generated turns and an
+instruction to keep factual self-claims consistent while still following the
+current turn's assigned voice and affect. Real author strings never cross the
+boundary. Matched recurring-speaker structure is now the default; `off` remains
+the one-author-per-slot structural ablation.
+
+Current seed-8 structural audit: 186 slots form 97 generated speaker groups,
+including 80 named-source groups and 17 anonymous one-shots; named groups
+average 2.112 turns, recurring groups own 66.7% of comment mass, and the busiest
+group has 10 turns. The active expander integration test proves repeated source
+authors receive the same anonymous `speaker_id`.
+
+Expected directions are fewer grounding contradictions, less fake persona
+boilerplate, and more realistic participant continuity. Self-BERT or other
+metric movement is a hypothesis, not a result. Offline acceptance: 292
+generalized tests plus 3 focused scorer tests, Ruff, matched-speaker backend
+self-test, active and active-plus-legacy parity, 93/93 source pins, full Prompt
+replay, and exact v88 seed-8 `--prepare-only`. No API call was made.
+
+---
+
 ## v87 — payload-safe Writer routing and final-contract refresh (2026-08-17)
 
 Policy ID: `generalized-card-v2-payload-safe-writer-routing-v87-20260817`.
@@ -98,7 +136,7 @@ Offline acceptance: 290 generalized tests plus 3 focused scorer tests pass;
 Ruff, camera backend self-test, active and active-plus-legacy parity pass; all
 93 declared pins agree with zero missing, untracked-active, unpinned-import, or
 drift entries. The exact seed-8 v87 command passed `--prepare-only` with no API
-call. Paid v87 generation and sufficient-N evaluation remain pending.
+call. v87 was superseded by v88 before a paid generation.
 
 ---
 

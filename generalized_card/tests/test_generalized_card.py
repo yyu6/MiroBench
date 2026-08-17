@@ -3569,7 +3569,7 @@ class GeneralizedCardTest(unittest.TestCase):
         parser = script.build_parser()
         help_text = parser.format_help()
         self.assertIn("13% of the old size", help_text)
-        self.assertIn("68% of comment mass", help_text)
+        self.assertIn("invented biographies never reach the Writer", help_text)
         args = parser.parse_args(["--tag", "test"])
         self.assertEqual(args.generator_profile, GENERALIZED_V2_PROFILE)
         self.assertEqual(args.comment_planner_batch_size, 8)
@@ -3582,6 +3582,7 @@ class GeneralizedCardTest(unittest.TestCase):
         self.assertEqual(args.writer_hard_recovery_rounds, 2)
         self.assertEqual(args.social_contract_coherence, "on")
         self.assertEqual(args.reply_sibling_visibility, "on")
+        self.assertEqual(args.speaker_identity, "matched")
         self.assertEqual(args.actor_conditioning, "none")
         self.assertEqual(args.retry_delay, 10.0)
         self.assertEqual(args.posts_per_run, 5)
@@ -6448,23 +6449,27 @@ class OwnFactLicenseTest(unittest.TestCase):
         self.assertIn("or personal experiences", self._prompt("off"))
 
     def test_equipment_clause_tracks_the_license(self) -> None:
-        """Asserted on the clause, not the rendered prompt: the equipment block
-        only renders when the domain profile carries an entity inventory, and a
-        prompt-level assertion would pass vacuously without one."""
-
         from generalized_card.writer_grounding import equipment_closing_clause
 
-        off = equipment_closing_clause(mode="off")
-        self.assertIn(
-            "do not invent a specification, price, measurement, or test result",
-            off,
-        )
+        with self.assertRaisesRegex(ValueError, "explicit own-fact license"):
+            equipment_closing_clause(mode="off")
         own = equipment_closing_clause(mode="own")
         self.assertNotIn("do not invent a specification", own)
         self.assertIn("what you paid, and how it held up", own)
-        # the half that must survive either way
-        for clause in (off, own):
-            self.assertIn("Do not attribute it to the post", clause)
+        self.assertIn("Do not attribute it to the post", own)
+
+    def test_unlicensed_prompt_never_offers_invented_equipment(self) -> None:
+        from generalized_card import prompts
+
+        backend = self._backend("off")
+        backend.GENERALIZED_DOMAIN_PROFILE = {
+            "entity_inventory": {
+                "available": True,
+                "terms": [{"term": "Invented Model 7"}],
+            }
+        }
+        block = prompts._own_equipment_block(backend, self._task())
+        self.assertEqual(block, "")
 
     # --- own removes the contradiction on every writer path -----------------
 
@@ -6722,14 +6727,7 @@ class SpeakerRosterTest(unittest.TestCase):
     def _roster(self):
         from generalized_card.speaker_roster import build_speaker_roster
 
-        return build_speaker_roster(
-            self._rows(),
-            inventory={
-                "available": True,
-                "terms": [{"term": f"Gear{i}"} for i in range(12)],
-            },
-            facets=("low light", "travel", "video"),
-        )
+        return build_speaker_roster(self._rows())
 
     def test_slots_group_into_the_people_who_wrote_them(self) -> None:
         roster = self._roster()
@@ -6756,15 +6754,11 @@ class SpeakerRosterTest(unittest.TestCase):
         self.assertEqual(roster.summary()["anonymous_speaker_count"], 2)
         self.assertEqual(roster.summary()["named_speaker_count"], 3)
 
-    def test_a_speaker_keeps_one_kit_across_every_turn(self) -> None:
-        """The defect this replaces: gear rotated by `slot_index`, so the same
-        participant was handed different equipment in each of their turns."""
-
+    def test_speaker_structure_carries_no_invented_biography(self) -> None:
         roster = self._roster()
-        kits = {roster.speaker_for(slot).kit for slot in (1, 4, 8)}
-        self.assertEqual(len(kits), 1)
-        self.assertTrue(all(kits))
-        self.assertNotEqual(roster.speaker_for(1).kit, roster.speaker_for(2).kit)
+        for speaker in roster.speakers:
+            for field in ("display_name", "kit", "tenure", "use_case"):
+                self.assertFalse(hasattr(speaker, field), field)
 
     def test_earlier_slots_are_only_the_ones_already_written(self) -> None:
         roster = self._roster()
@@ -6785,6 +6779,88 @@ class SpeakerRosterTest(unittest.TestCase):
                 if isinstance(value, str):
                     self.assertNotIn(value, names)
                     self.assertNotIn(value.lower(), {n.lower() for n in names})
+
+    def test_active_expander_assigns_matched_speaker_ids(self) -> None:
+        """Exercise the configured wrapper, not only the roster helper."""
+
+        with patch.dict(
+            os.environ,
+            {"GENERALIZED_CARD_SPEAKER_IDENTITY": "matched"},
+        ):
+            module = configure_generator_backend(
+                load_generator_backend(), load_domain_config("camera")
+            )
+        comments = [
+            {
+                **row,
+                "comment_id": f"c{index}",
+                "post_id": "p1",
+                "parent_id": "t3_p1",
+                "depth": 0,
+            }
+            for index, row in enumerate(self._rows(), start=1)
+        ]
+        plans = {
+            index: {
+                "branch_id": "1",
+                "semantic_move": f"make distinct local point {index}",
+                "local_topic": f"topic {index}",
+                "detail_focus": f"detail {index}",
+                "domain_intent": f"discuss point {index}",
+                "payload_type": "bare_answer",
+                "comment_function": "verdict_evaluation",
+                "story_mode": "no_story",
+                "evidence_mode": "none_assertion",
+                "speaker_role": "side_observer",
+                "voice": "casual_neutral",
+            }
+            for index in range(1, len(comments) + 1)
+        }
+        tasks = module.expand_matched_real_sample_to_tasks(
+            branches=[
+                module.BranchPlan(
+                    branch_id=1,
+                    anchor_quote="visible topic",
+                    anchor_source="seed",
+                    detour_type="none",
+                    branch_goal="discuss one local point",
+                    allowed_functions=("verdict_evaluation",),
+                    evidence_modes=("none_assertion",),
+                    tone_palette=("neutral",),
+                    story_modes=("no_story",),
+                    content_angles=("fit_use_case",),
+                )
+            ],
+            target=module.ThreadTarget(
+                target_comments=len(comments),
+                top_level_comments=len(comments),
+                max_depth_goal=0,
+                shape_label="flat",
+                length_mix_note="matched",
+            ),
+            seed_post=module.SeedPost(
+                index=0,
+                title="Visible topic",
+                body="One visible question",
+                content="Visible topic",
+                source_raw_post_id="p1",
+                real_num_comments=len(comments),
+                metadata={},
+            ),
+            matched_real_thread={"comments": comments},
+            matched_real_comments=0,
+            comment_plans=plans,
+            rng=random.Random(7),
+        )
+        self.assertEqual(len(tasks), len(comments))
+        self.assertEqual(tasks[0].speaker_id, tasks[3].speaker_id)
+        self.assertEqual(tasks[0].speaker_id, tasks[7].speaker_id)
+        self.assertEqual(tasks[1].speaker_id, tasks[6].speaker_id)
+        self.assertNotEqual(tasks[0].speaker_id, tasks[1].speaker_id)
+        self.assertEqual(
+            module.GENERALIZED_ACTIVE_SPEAKER_ROSTER.summary()["slot_count"],
+            len(comments),
+        )
 
     def test_off_yields_no_roster_and_no_speaker_block(self) -> None:
         from generalized_card import prompts
@@ -6816,7 +6892,8 @@ class SpeakerRosterTest(unittest.TestCase):
         )
         self.assertIn("my first take on this", block)
         self.assertNotIn("someone else", block)
-        self.assertIn("Same person, same voice", block)
+        self.assertIn("Same participant", block)
+        self.assertIn("follow this turn's assigned voice and affect", block)
         self.assertIn("You are the person who wrote the post", block)
 
     def test_speaker_id_survives_the_surface_rebalancer(self) -> None:

@@ -1,66 +1,21 @@
-"""Who is speaking, and what stays true about them across their turns.
+"""Recover thread participation structure without importing identity content.
 
-Before this module the generator had no concept of a person. Every slot got its
-own author name -- `run_sampled_reddit_generator.py:1408` built it as
-``f"sampled_user_{run}_{post_slot}_{task.local_task_id}"``, a pure function of
-the slot index -- so a 186-comment thread was 186 people who each spoke once.
-
-The matched real threads are not shaped like that. Across the ten evaluation
-seeds: 559 comments from 265 authors, 2.11 comments per author, and 68% of all
-comment mass written by someone who spoke more than once. Seed 8 alone is 200
-comments from 80 authors, its busiest author wrote 10, and in seed 1 the OP
-wrote 7 of 15.
-
-Naming 186 different users does not produce 186 different voices; it produces
-one voice wearing 186 name tags, which is the shape of the `self_bertscore`
-result -- a near-uniform +0.033 overshoot on 9 of 10 threads, a shared register
-signature applied evenly rather than topical narrowness.
-
-The structure is free. `expand_matched_real_sample_to_tasks` already binds each
-slot to one matched real comment through ``real_sample_id``
-(``enumerate(selected, start=1)``), and the real comment carries its author. So
-"which slots belong to the same person" is a join, not a new sampling policy,
-and it reproduces the real thread's own participation shape exactly. Verified on
-seed 8: ``real_word_count`` agrees for 186 of 186 slots.
-
-Leakage: the real author string is used **only** as a grouping key. It is never
-stored on a Speaker, never rendered, and never written to an artifact. What
-crosses the boundary is the participation structure -- how many people, which
-slots each holds, which one is the OP -- which is the same class of matched
-structural signal as comment order, parent linkage, depth and word-count bucket
-that `expand_matched_real_sample_to_tasks` already declares in its contract.
-
-The identity content is domain-derived, never domain-specific: equipment comes
-from the profile's `entity_inventory` (built from evaluation-excluded threads)
-and the use case from the domain's own `configured_facets`. Only the tenure
-ladder is domain-neutral, because "how long have you had it" needs no knowledge
-of what "it" is.
+Each matched slot already has a ``real_sample_id``. The source author is used
+only to group those slot IDs and identify the OP; it is never stored, rendered,
+or persisted. A ``Speaker`` therefore carries no invented kit, tenure, use case,
+or biography. Those semantic claims belong to the Planner, not to structural
+matching.
 """
 
 from __future__ import annotations
 
 from dataclasses import dataclass
-from typing import Any, Iterable, Sequence
-
-from .entity_inventory import slot_equipment_options
-
-
-# Domain-neutral: applies to any product, service, or tool a community discusses.
-TENURE_LADDER = (
-    "just picked it up recently",
-    "had it for about a year",
-    "used it for a few years now",
-    "been on it a long time",
-)
+from typing import Any, Sequence
 
 ANONYMOUS_AUTHORS = frozenset({"", "[deleted]", "[removed]", "none", "null"})
 
-KIT_SIZE = 3
-
-# Ablation modes. "off" reproduces the pre-v77 author naming exactly: one
-# speaker per slot, no continuity. "matched" recovers the matched real thread's
-# own participation structure.
-SPEAKER_IDENTITY_OFF = "off"
+# ``off`` is handled by the caller as an empty roster; this module only needs
+# the value that activates matched participation.
 SPEAKER_IDENTITY_MATCHED = "matched"
 
 
@@ -69,12 +24,8 @@ class Speaker:
     """One participant, stable across every slot they hold in a thread."""
 
     speaker_id: str
-    display_name: str
     is_op: bool
     slot_ids: tuple[int, ...]
-    kit: tuple[str, ...]
-    tenure: str
-    use_case: str
     anonymous: bool = False
 
     @property
@@ -148,10 +99,6 @@ EMPTY_ROSTER = SpeakerRoster(speakers=(), _by_slot={})
 
 def build_speaker_roster(
     selected_rows: Sequence[dict[str, Any]],
-    *,
-    inventory: dict[str, Any] | None = None,
-    facets: Sequence[str] = (),
-    name_prefix: str = "sampled_user",
 ) -> SpeakerRoster:
     """Group the thread's slots into the people who wrote them.
 
@@ -187,24 +134,13 @@ def build_speaker_roster(
         if is_op:
             group_is_op[position] = True
 
-    facet_list = [str(value).strip() for value in facets if str(value).strip()]
     speakers: list[Speaker] = []
     for position, slot_ids in enumerate(groups):
         speakers.append(
             Speaker(
                 speaker_id=f"S{position + 1:03d}",
-                display_name=f"{name_prefix}_{position + 1}",
                 is_op=group_is_op[position],
                 slot_ids=tuple(slot_ids),
-                kit=tuple(
-                    slot_equipment_options(
-                        inventory, slot_index=position, limit=KIT_SIZE
-                    )
-                ),
-                tenure=TENURE_LADDER[position % len(TENURE_LADDER)],
-                use_case=(
-                    facet_list[position % len(facet_list)] if facet_list else ""
-                ),
                 anonymous=group_anonymous[position],
             )
         )
@@ -214,31 +150,3 @@ def build_speaker_roster(
         for slot_id in speaker.slot_ids:
             by_slot[slot_id] = speaker
     return SpeakerRoster(speakers=tuple(speakers), _by_slot=by_slot)
-
-
-def speaker_kit_for_slot(
-    speaker: Speaker | None, *, excluded: Iterable[str] = ()
-) -> tuple[str, ...]:
-    """Return the speaker's kit minus anything already visible in this slot.
-
-    Preserves the pre-v77 property that a slot never claims an entity the
-    discussion already owns as its own gear. If the exclusion empties the kit the
-    unfiltered kit is returned, because a speaker with no equipment is a worse
-    outcome than one whose gear overlaps the thread's.
-    """
-
-    if speaker is None or not speaker.kit:
-        return ()
-    blocked = {
-        str(value).strip().casefold()
-        for value in excluded
-        if str(value).strip()
-    }
-    if not blocked:
-        return speaker.kit
-    kept = tuple(
-        item
-        for item in speaker.kit
-        if not any(part in item.casefold() for part in blocked)
-    )
-    return kept or speaker.kit

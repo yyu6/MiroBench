@@ -34,8 +34,9 @@ already gates the equipment block. Licensing own facts on a slot that another
 rule bars from a first-person frame would just replace one contradiction with
 another.
 
-`--own-fact-license off` restores the single blanket ban and reproduces policy
-v75 byte for byte.
+`--own-fact-license off` keeps the conservative fact rule but does not render an
+equipment permission. Historical byte-identical behavior remains recoverable in
+git; the active Prompt must not preserve a known contradiction for ablation.
 """
 
 from __future__ import annotations
@@ -236,20 +237,16 @@ def story_fact_rule(task: Any, *, has_domain_claim: bool, mode: str = LICENSE_OF
     )
 
 
-def equipment_closing_clause(*, mode: str = LICENSE_OFF) -> str:
+def equipment_closing_clause(*, mode: str) -> str:
     """The clause that closes the `own equipment` block.
 
-    This block is specifically about the speaker's own things, so it stays
-    first-person under either license.
+    This block is specifically about the speaker's own things and is unreachable
+    without an explicit license. Rejecting ``off`` here prevents a future caller
+    from recreating a permission/revocation Prompt conflict.
     """
 
-    if mode == LICENSE_OFF:
-        return (
-            "Name at most one, as gear you have used yourself. Do not attribute "
-            "it to the post, to another commenter, or to the discussion, and do "
-            "not invent a specification, price, measurement, or test result for "
-            "it."
-        )
+    if mode not in {LICENSE_OWN, LICENSE_NAMED}:
+        raise ValueError("an equipment block requires an explicit own-fact license")
     if mode == LICENSE_NAMED:
         return (
             "These are yours. Say what you use them for and how they have held "

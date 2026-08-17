@@ -39,7 +39,6 @@ from .semantic_realization import (
     short_utterance_exclusions,
     used_sentence_routes,
 )
-from .speaker_roster import speaker_kit_for_slot
 from .surface_contract import substantive_surface_slot, surface_only_label
 from .viewpoint_bank import render_reference_viewpoints
 from .writer_grounding import (
@@ -91,18 +90,19 @@ def _own_equipment_block(backend: Any, task: Any) -> str:
 
     Restricting every comment to the seed post's entities made a whole thread
     circulate the same two or three products, which concentrates 4-gram mass.
-    Real commenters name their own gear instead, so a slot whose plan already
-    licenses first-person experience gets a rotating shortlist drawn from
-    evaluation-excluded threads. It is the speaker's own equipment, never a claim
-    about the seed post or another commenter.
-
-    What may be said *about* that equipment is `writer_grounding`'s decision, not
-    this function's. Under `--own-fact-license off` the block still closes with
-    the v75 ban, which is what made 170 of 522 prompts carry a permission and its
-    revocation at once.
+    The legacy ``own`` experiment gives a Planner-licensed first-person slot a
+    rotating shortlist drawn from evaluation-excluded threads. No other mode
+    receives this invented kit: ``off`` is unlicensed, while ``named`` allows
+    ordinary particulars without assigning a biography.
     """
 
-    if not _first_person_experience_slot(task):
+    # This block is an explicit own-fact permission. Rendering it for the
+    # unlicensed mode produced 61 permission/revocation conflicts in the frozen
+    # 186-slot replay. The broad `named` license also does not assign a fake kit.
+    if (
+        writer_grounding_mode(backend, task) != "own"
+        or not _first_person_experience_slot(task)
+    ):
         return ""
     profile = getattr(backend, "GENERALIZED_DOMAIN_PROFILE", {}) or {}
     inventory = profile.get("entity_inventory") or {}
@@ -113,19 +113,12 @@ def _own_equipment_block(backend: Any, task: Any) -> str:
         for value in (getattr(task, "concrete_anchors", ()) or ())
         if str(value).strip()
     ]
-    speaker = _speaker_for_task(backend, task)
-    if speaker is not None:
-        # Keyed by person, not by slot. A rotation keyed by `slot_index` handed
-        # the same participant different gear in each of their turns, which is
-        # the opposite of an identity.
-        options = list(speaker_kit_for_slot(speaker, excluded=visible))
-    else:
-        options = slot_equipment_options(
-            inventory,
-            slot_index=_safe_slot_index(task),
-            limit=4,
-            excluded=visible,
-        )
+    options = slot_equipment_options(
+        inventory,
+        slot_index=_safe_slot_index(task),
+        limit=4,
+        excluded=visible,
+    )
     if not options:
         return ""
     rendered = ", ".join(options)
@@ -150,12 +143,9 @@ def _speaker_identity_block(
 ) -> str:
     """Render who this person is and what they already said in this thread.
 
-    This is what makes an identity observable. A persistent kit that never
-    surfaces in the text is indistinguishable from no kit at all, and the reason
-    all 186 comments of a thread read like one author is that a slot has never
-    been able to see its own earlier turns.
-
-    Costs nothing: the text is already in the thread history the prompt receives.
+    The only identity content is structural: OP membership and this anonymous
+    participant's own earlier turns. The text already exists in thread history;
+    no matched author string or invented biography is rendered.
     """
 
     speaker = _speaker_for_task(backend, task)
@@ -163,9 +153,6 @@ def _speaker_identity_block(
         return ""
 
     lines: list[str] = []
-    standing = ", ".join(part for part in (speaker.tenure, speaker.use_case) if part)
-    if standing:
-        lines.append(f"- You: {standing}.")
     if speaker.is_op:
         lines.append("- You are the person who wrote the post.")
 
@@ -182,9 +169,9 @@ def _speaker_identity_block(
         for text in said[-3:]:
             lines.append(f"- You already wrote here: {backend.compact(text, 200)}")
         lines.append(
-            "- Same person, same voice and same kit as those turns, making a "
-            "different point. Do not reintroduce yourself or repeat what you "
-            "already said."
+            "- Same participant: keep factual self-claims consistent with those "
+            "turns, but follow this turn's assigned voice and affect. Make a "
+            "different point; do not reintroduce yourself or repeat yourself."
         )
     if not lines:
         return ""

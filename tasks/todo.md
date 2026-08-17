@@ -24,6 +24,29 @@ them onto the 12 metrics and onto the per-thread evidence in `HANDOFF.md` §4.3:
 Only `avg_depth` and `structural_virality` are genuinely matched per thread, and
 both are fixed by the matched sampler rather than won by generation.
 
+## v88 completion-audit status — 2026-08-17
+
+- [x] Replay the exact off-mode grounding contract over all 186 frozen tasks:
+      78 equipment permissions, 144 personal-experience bans, 61 conflicts.
+- [x] Stop rendering invented equipment unless the explicit legacy `own`
+      license is selected. Replay now has zero equipment/ban conflicts.
+- [x] Separate recurring-speaker structure from semantic persona content.
+      Delete kit, tenure, use-case, display-name, and kit-filter dead weight.
+- [x] Make matched anonymous participation the default and keep `off` as the
+      one-author-per-slot ablation. Fail rather than silently dropping a
+      requested matched roster.
+- [x] Verify current seed-8 shape without source identity leakage: 186 slots,
+      97 generated speaker groups, 80 named-source groups, 17 anonymous
+      one-shots, 2.112 turns/named group, 66.7% recurring mass, max 10 turns.
+- [x] Verify v88 offline: 292 generalized tests, 3 focused scorer tests, Ruff,
+      matched backend self-test, active/legacy parity, 93/93 pins, 186-task
+      Prompt replay, and exact v88 `--prepare-only`.
+- [ ] Run complete v88 seed 8, then inspect coverage, participant continuity,
+      grounding conflicts, repetition/helpfulness, emotion/profanity, stories,
+      and descriptive 12-metric distance.
+
+---
+
 ## v87 full-route replay status — 2026-08-17
 
 - [x] Replay all 186 recorded v80 tasks through current root/reply and
@@ -40,11 +63,9 @@ both are fixed by the matched sampler rather than won by generation.
 - [x] Verify v87 offline: 290 generalized tests, 3 focused scorer tests, Ruff,
       backend self-test, active and legacy parity, 93/93 pins, full Prompt
       replay, and exact v87 seed-8 `--prepare-only`.
-- [ ] Run the complete seed-8 v87 thread, then inspect exact 186/186 coverage,
-      Planner→Writer realization, repeated wording, helpful/customer-service
-      default, spontaneous emotion/profanity, personal stories, and descriptive
-      12-metric distances.
-- [ ] If the qualitative/realization gate is credible, keep v87 unchanged for a
+- [x] Supersede v87 with v88 before a paid run after completion audit proved a
+      grounding conflict and structural-speaker/persona coupling.
+- [ ] If the v88 qualitative/realization gate is credible, keep v88 unchanged for a
       sufficient-N matched run and interpret MWU/KS only there.
 
 ---
@@ -259,11 +280,15 @@ per-thread story count already scales from the matched template
       micro/short). Targets the two signals that separate real from generated on
       all ten threads — quantities 12.3×, proper nouns 1.85×. Note the sibling
       arm `own` was refuted; see HANDOFF §6.6.
-- [ ] **`--speaker-identity matched`.** 265 named participants over 559 real
+- [x] **`--speaker-identity matched`.** Recover only anonymous participation
+      structure; v88 removes the old invented biography/kit coupling and makes
+      this the default. Current seed 8 has 80 named groups over 169 named slots,
+      2.112 turns each, with 66.7% total comment mass from recurring groups.
+      The prior hypothesis was:
+      265 named participants over 559 real
       comments, 2.11 each, 68% of comment mass from someone who speaks more than
       once; the generator gives every comment a distinct one-shot author. Targets
-      `self_bertscore` through voice variation. **Run B first** — it may explain
-      the same metric for free.
+      `self_bertscore` through voice variation. Metric effect remains unproven.
 
 ---
 
@@ -376,7 +401,7 @@ handoff's interpretation.
 ## Sequencing
 
 The free target-selection and evaluation-integrity work is complete. Next run
-the complete v87 seed-8 thread and judge Writer realization/content, not n=1
+the complete v88 seed-8 thread and judge Writer realization/content, not n=1
 p-values. Only if coverage is exact and the content audit shows the expected
 direction should the same unchanged policy advance to a sufficient-N matched
 evaluation. Reopen A/C upstream only for target→generated failures that remain;

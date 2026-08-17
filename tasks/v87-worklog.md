@@ -4,6 +4,8 @@ Date: 2026-08-17
 
 Policy: `generalized-card-v2-payload-safe-writer-routing-v87-20260817`
 
+Status: superseded by v88 before any paid generation; retained for provenance.
+
 ## Scope and evidence method
 
 This pass did not use historical implementations as design authority. It used

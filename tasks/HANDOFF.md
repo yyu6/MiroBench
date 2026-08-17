@@ -1,10 +1,39 @@
 # Handoff — synthetic Reddit thread generation (generalized_card)
 
+## 2026-08-17 v88 structural-speaker/grounding addendum
+
+v87 is reproducible but superseded before any paid run. The next paid run must
+use `generalized-card-v2-structural-speakers-grounding-v88-20260817`,
+`--speaker-identity matched`, and a new v88 tag.
+
+The completion audit found that the formal v87 command still preserved a known
+Prompt contradiction for historical ablation: under `own-fact-license off`, 78
+of 186 replayed Prompts displayed an invented equipment permission, 144 banned
+personal experiences, and 61 contained both. v88 renders the equipment block
+only under the explicit `own` license; replay is now 0 equipment blocks and 0
+permission/revocation conflicts. The ordinary off-mode fact rule remains.
+
+The existing matched-speaker arm also was not a clean structural control. It
+grouped repeated source authors correctly, but then attached rotating tenure,
+use case, and kit claims. v88 deletes those biography fields and the associated
+kit helper. A speaker now contains only anonymous ID, OP membership, owned slot
+IDs, and anonymous-account status. The Prompt may show the same anonymous
+speaker's earlier generated turns, but no source username or invented identity
+claim. Its continuity instruction explicitly yields to each turn's assigned
+voice and affect.
+
+On current seed 8, 186 matched slots become 97 generated speaker groups: 80
+named-source groups plus 17 deleted/anonymous one-shots. Named groups average
+2.112 turns, recurring groups cover 66.7% of comments, and the maximum is 10
+turns. An active-wrapper integration test verifies the grouping, not merely the
+roster helper. See `tasks/v88-worklog.md`.
+
+This fixes current structural fidelity and Prompt conflict; it does not prove
+metric movement. Paid v88 seed 8 and then sufficient N remain required.
+
 ## 2026-08-17 v87 route-contract addendum
 
-v86 is reproducible but superseded before any paid run. The next paid run must
-use `generalized-card-v2-payload-safe-writer-routing-v87-20260817` and a new
-v87 tag.
+v87 is retained for provenance and superseded by v88 before any paid run.
 
 A zero-API replay rendered all 186 frozen v80 Writer tasks in their original
 long-thread order. It found that utterance shape was checked before payload:
@@ -86,7 +115,7 @@ pins total), and the closure audit follows sibling scripts.
 Finally, n=1 is `DESCRIPTIVE` from the matched evaluator through console and
 content reports. Ignore the mathematical p=1 values returned for singleton
 samples; they cannot establish a pass. The pending paid step is now a complete
-v87 seed-8 Writer diagnostic, followed by sufficient N only if its realization
+v88 seed-8 Writer diagnostic, followed by sufficient N only if its realization
 and content review are credible.
 
 ## 2026-08-17 exact-matched content-audit addendum
@@ -899,7 +928,7 @@ python3 -u generalized_card/scripts/run_generate.py \
   --post-retry-limit 1 \
   --domain-claim off --writer-prompt focused --writer-route-lock own_words \
   --social-contract-coherence on --reply-sibling-visibility on \
-  --own-fact-license off --speaker-identity off \
+  --own-fact-license off --speaker-identity matched \
   2>&1 | tee /tmp/<TAG>_gen.log
 ```
 
@@ -958,7 +987,7 @@ prompt-rendering check in this session was built — no API, full corpus.
 
 # 11. RECOMMENDED FIRST MOVE
 
-The free checks are complete. Run the seed-8 command in §10 first under v87,
+The free checks are complete. Run the seed-8 command in §10 first under v88,
 with social contract and sibling visibility both on. Judge it on Planner repair
 counts, tone-label realization (59.2% baseline), and StorySeeker mass in
 `no_story` slots—not on an n=1 p-value. If the mechanism moves those diagnostics

@@ -259,18 +259,12 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument(
         "--speaker-identity",
         choices=("off", "matched"),
-        default="off",
+        default="matched",
         help=(
-            "Whether a thread has participants or only slots. 'off' reproduces "
-            "every run up to v76: the author name is a pure function of the slot "
-            "index, so a 186-comment thread is 186 people who each speak once. "
-            "'matched' recovers the matched real thread's own participation "
-            "structure through real_sample_id -- across the ten evaluation seeds "
-            "that is 265 named participants over 559 comments, 2.11 each, with "
-            "68%% of comment mass from someone who speaks more than once. Each "
-            "participant then keeps one kit across all their turns and can see "
-            "what they already said. Targets self_bertscore, which has never "
-            "passed and overshoots by a near-uniform +0.033 on 9 of 10 threads."
+            "Whether a thread has matched recurring participants or one author "
+            "per slot. 'matched' uses only author grouping and OP membership; "
+            "real author strings and invented biographies never reach the Writer. "
+            "'off' is the one-shot-author structural ablation."
         ),
     )
     parser.add_argument(

@@ -448,3 +448,29 @@ After the last authoritative mutation, recompute every Writer-facing dependent
 control once. Express coherence contracts bidirectionally when either label can
 activate Writer behavior, and test both valid and reverse-invalid cases before
 the Writer boundary.
+
+## 2026-08-17 — Git is the ablation archive; active Prompts do not preserve bugs
+
+**What happened.** `own-fact-license off` was called byte-compatible with an old
+policy, so the active default deliberately kept a known fact ban. But the
+equipment helper still offered invented gear on 78 of 186 Prompts, and 61 then
+revoked that permission with a personal-experience ban. Passing tests asserted
+the historical wording rather than the absence of the conflict.
+
+**How to apply.** An ablation flag may preserve a meaningful alternative, not a
+known contradictory implementation. Once the old bytes are committed and
+versioned, remove the contradiction from the active path. Test the rendered
+Prompt combination across all slots, not each helper sentence in isolation.
+
+## 2026-08-17 — Structural matching must not smuggle in semantic persona
+
+**What happened.** Matched speaker grouping was a valid leakage-safe join, but
+the same flag also assigned each speaker an invented tenure, use case, and kit.
+That made it impossible to enable realistic recurring authors without adding
+unsupported biography and another source of Prompt conflict.
+
+**How to apply.** Keep matched structure and generated semantics in separate
+types and controls. A structural speaker owns only anonymous slot membership and
+OP status; Planner-owned evidence, story, voice, and affect supply what the
+person says. If a structural mode is requested, fail on an impossible join
+instead of silently degrading to a different structure.

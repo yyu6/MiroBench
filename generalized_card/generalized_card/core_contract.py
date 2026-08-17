@@ -16,10 +16,11 @@ HISTORICAL_REVISION_POLICY_VERSIONS = {
     "generalized-card-revision-v6-dynamic-coverage-history-20260807",
 }
 GENERALIZED_V2_GENERATION_POLICY_VERSION = (
-    "generalized-card-v2-payload-safe-writer-routing-v87-20260817"
+    "generalized-card-v2-structural-speakers-grounding-v88-20260817"
 )
 HISTORICAL_GENERATION_POLICY_VERSIONS = {
     "generalized-v2": {
+        "generalized-card-v2-payload-safe-writer-routing-v87-20260817",
         "generalized-card-v2-root-relation-prompt-v86-20260817",
         "generalized-card-v2-auditable-plan-controls-v85-20260817",
         "generalized-card-v2-complete-writer-coverage-v84-20260817",
@@ -157,7 +158,7 @@ CORE_FILES = {
     ),
     "generator_adapter": (
         "generalized_card/generalized_card/backend.py",
-        "3e37be381ce0b2b1827fbe90f0afb3520ab74d46e6d5524fd68a60102b070325",
+        "c6170f61f42bdb90f95c26a43b22c494b1b79b2818b23f37591732a349682984",
     ),
     "data_boundary": (
         "generalized_card/generalized_card/data.py",
@@ -175,11 +176,11 @@ CORE_FILES = {
     # there would be invisible to every other pin.
     "speaker_roster": (
         "generalized_card/generalized_card/speaker_roster.py",
-        "2b04220a8e30b3a417e61a2ed78fdc44f0ab0836b635feadb52e2664ec4bdf4d",
+        "06ee9c36ebd4d8b489d1e9ea7a0c265873507ce47a0a6be0db3753f792c2ca0f",
     ),
     "writer_grounding": (
         "generalized_card/generalized_card/writer_grounding.py",
-        "1cca7aed4b38f02b759c79ff2c6589ec2e11d95e914c1e508dd57ecc2fa62610",
+        "97a8d98349a5e5bd6f504202e21217fec682c4e81c8c87f25d3c2451b3f43247",
     ),
     "actor_conditioning": (
         "generalized_card/generalized_card/actor_conditioning.py",
@@ -191,7 +192,7 @@ CORE_FILES = {
     ),
     "generation_runner": (
         "generalized_card/scripts/run_generate.py",
-        "e6b8cf0b68da00a1d06c59b83d105d78f0668fb6d31454782e7d3405dfaed4ec",
+        "c4531f16bc7d003867e74eaa9aa3c9f81c7cffb0097093b8b98074a2eb01e61d",
     ),
     "generation_backend_runner": (
         "generalized_card/scripts/run_generator_backend.py",
@@ -343,7 +344,7 @@ CORE_FILES = {
     ),
     "domain_prompt_adapter": (
         "generalized_card/generalized_card/prompts.py",
-        "5f725850748e4bee5ff52530cd51ecf9e2289208e8dcc42785e013589d9e0692",
+        "fd93909615647c51cc97df42d8dacc23de6f5a4bcf39de5789d21e27fb3f07c3",
     ),
     "reply_planning": (
         "generalized_card/generalized_card/reply_planning.py",

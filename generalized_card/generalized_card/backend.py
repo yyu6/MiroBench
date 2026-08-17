@@ -346,16 +346,13 @@ def configure_generator_backend(
         os.environ.get("GENERALIZED_CARD_OWN_FACT_LICENSE", "off").strip().lower()
         or "off"
     )
-    # Ablation switch for participation structure. "off" reproduces every run up
-    # to v76: the author name is a pure function of the slot index, so a
-    # 186-comment thread is 186 people who each speak once. "matched" recovers
-    # the matched real thread's own structure through `real_sample_id`, which for
-    # the ten evaluation seeds is 265 named participants over 559 comments --
-    # 2.11 each, with 68% of comment mass written by someone who speaks more than
-    # once. See `speaker_roster`.
+    # Participation structure is a matched structural signal, like parent and
+    # depth linkage. The default groups recurring slots without exposing the
+    # source author or inventing biography; "off" is the one-author-per-slot
+    # ablation. See `speaker_roster`.
     module.GENERALIZED_SPEAKER_IDENTITY = (
-        os.environ.get("GENERALIZED_CARD_SPEAKER_IDENTITY", "off").strip().lower()
-        or "off"
+        os.environ.get("GENERALIZED_CARD_SPEAKER_IDENTITY", "matched").strip().lower()
+        or "matched"
     )
     module.GENERALIZED_ACTIVE_SPEAKER_ROSTER = EMPTY_ROSTER
     module.GENERALIZED_OPENER_TYPES = {}
@@ -832,7 +829,7 @@ def configure_generator_backend(
     module.expand_matched_real_sample_to_tasks = expand_tasks
 
     def _build_thread_speaker_roster(
-        core: ModuleType, domain: Any, kwargs: dict[str, Any]
+        core: ModuleType, _domain: Any, kwargs: dict[str, Any]
     ) -> SpeakerRoster:
         """Recover the matched thread's participation structure for this thread.
 
@@ -854,20 +851,16 @@ def configure_generator_backend(
         target = kwargs.get("target")
         if not matched or target is None:
             return EMPTY_ROSTER
-        try:
-            selected = core.selected_matched_comments(
-                matched_real_thread=matched,
-                target=target,
-                matched_real_comments=int(kwargs.get("matched_real_comments") or 0),
-            )
-        except Exception:  # noqa: BLE001 - a roster is never worth failing a run
-            return EMPTY_ROSTER
-        profile = getattr(core, "GENERALIZED_DOMAIN_PROFILE", {}) or {}
-        return build_speaker_roster(
-            selected,
-            inventory=profile.get("entity_inventory") or {},
-            facets=tuple(getattr(domain, "topic_facets", ()) or ()),
+        selected = core.selected_matched_comments(
+            matched_real_thread=matched,
+            target=target,
+            matched_real_comments=int(kwargs.get("matched_real_comments") or 0),
         )
+        if not selected and int(getattr(target, "target_comments", 0) or 0) > 0:
+            raise RuntimeError(
+                "matched speaker identity could not recover any structural slots"
+            )
+        return build_speaker_roster(selected)
 
     changed_core = [
         name
