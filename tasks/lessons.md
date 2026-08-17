@@ -1,5 +1,33 @@
 # Lessons
 
+## 2026-08-17 — Hard feasibility cannot share one scalar with soft quality
+
+**What happened.** Targeted Planner repair added collision, story, capacity,
+and other issue weights into one score. A candidate that fixed S15's blocking
+story contract gained a semantic collision worth 10 points, so it lost to the
+unrealizable story conflict worth 8. The post later failed with the very
+contract the repair had already removed once.
+
+**How to apply.** Compare repair candidates lexicographically: first minimize
+the number of contracts the downstream stage cannot jointly realize, then
+optimize collision and other quality diagnostics. Persist both candidates and
+the comparison ranks; an issue summary without the rejected plan is not enough
+to audit the decision.
+
+## 2026-08-17 — A classifier label is not automatically a semantic invariant
+
+**What happened.** `polite` is produced by a four-way classifier over realized
+text, but Planner validation redefined it as only agreement, personal evidence,
+reaction, or positive verdict. Two unresolved polite pairings then aborted a
+186-comment run even though politeness is the lowest-priority metric and the
+Writer had not been called.
+
+**How to apply.** Use scorer outputs at the level they measure. A surface
+register can guide and diagnose Planner routing without becoming a hard claim
+about comment function. Reserve blocking validation for combinations no single
+output can realize, such as `no_story + firsthand_experience` or a long slot
+forced into a low-information payload.
+
 ## 2026-08-17 — A prompt schema example is executable data
 
 **What happened.** The direct-reply Planner schema described

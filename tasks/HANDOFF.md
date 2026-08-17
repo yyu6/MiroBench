@@ -1,5 +1,34 @@
 # Handoff — synthetic Reddit thread generation (generalized_card)
 
+## 2026-08-17 v89 Planner-repair addendum
+
+The paid v88 seed-8 command did not reach Writer generation. It stopped after
+24 Planner requests, 116 seconds, and `$0.1805`; therefore it produced no
+discussion that can be evaluated. The offset-8 batch retained blocking plans
+for S10, S13, and S15 after bounded repair.
+
+This was not solved by raising retries. Current-source and exact-log review
+found that scalar repair scoring preferred a Writer-incompatible story plan
+over a coherent plan with one semantic collision. The last S15 candidate in
+the v88 audit reduced the batch's blocking conflicts but was rejected because
+its total score was 56 versus the selected 54. v89 ranks blocking contract
+count before quality score. Polite role mismatch is now low-weight Planner
+feedback rather than a hard semantic contract, because the actual scorer is a
+four-way classifier over realized comment text and politeness is the user's
+lowest-priority metric. Story/affect/capacity coherence remains hard.
+
+The root Planner Prompt also no longer simultaneously requires a scheduled
+personal story and bans the synthetic personal sequence needed to plan it. Its
+boundary now matches the Writer's existing conservative story rule: an ordinary
+non-verifiable sequence is allowed, externally checkable product facts are not.
+
+The next run must use policy
+`generalized-card-v2-realizability-first-planner-v89-20260817` and a fresh v89
+tag. See `tasks/v89-worklog.md`. v88 remains reproducible but has no generated
+content or metric result. Offline v89 acceptance is complete: 294 generalized
+tests, 3 scorer tests, Ruff, backend self-test, both parity scopes, 93/93 clean
+pins, and exact seed-8 `--prepare-only` all pass.
+
 ## 2026-08-17 v88 structural-speaker/grounding addendum
 
 v87 is reproducible but superseded before any paid run. The next paid run must
@@ -29,7 +58,8 @@ turns. An active-wrapper integration test verifies the grouping, not merely the
 roster helper. See `tasks/v88-worklog.md`.
 
 This fixes current structural fidelity and Prompt conflict; it does not prove
-metric movement. Paid v88 seed 8 and then sufficient N remain required.
+metric movement. The paid v88 attempt failed in Planner and was superseded by
+v89 before any Writer content existed.
 
 ## 2026-08-17 v87 route-contract addendum
 
@@ -987,7 +1017,7 @@ prompt-rendering check in this session was built — no API, full corpus.
 
 # 11. RECOMMENDED FIRST MOVE
 
-The free checks are complete. Run the seed-8 command in §10 first under v88,
+The free checks are complete. Run the seed-8 command in §10 first under v89,
 with social contract and sibling visibility both on. Judge it on Planner repair
 counts, tone-label realization (59.2% baseline), and StorySeeker mass in
 `no_story` slots—not on an n=1 p-value. If the mechanism moves those diagnostics

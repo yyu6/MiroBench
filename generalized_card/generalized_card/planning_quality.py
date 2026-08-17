@@ -208,6 +208,18 @@ NON_REPAIRABLE_ISSUES = frozenset(
     }
 )
 
+# These conflicts describe a plan the Writer cannot realize without violating
+# another field in the same slot. Keep them separate from quality issues such
+# as semantic collisions: repair selection must establish realizability first.
+BLOCKING_PLAN_ISSUES = frozenset(
+    {
+        "social_contract_conflict",
+        "surface_density_conflict",
+        "surface_capacity_conflict",
+        "long_form_capacity",
+    }
+)
+
 
 @dataclass(frozen=True)
 class PlanQualityIssue:
@@ -239,6 +251,18 @@ class PlanQualityReport:
             for issue in self.issues
             if issue.code not in NON_REPAIRABLE_ISSUES
         )
+
+    @property
+    def blocking_issues(self) -> tuple[PlanQualityIssue, ...]:
+        return tuple(
+            issue for issue in self.repair_issues if issue.code in BLOCKING_PLAN_ISSUES
+        )
+
+    @property
+    def repair_rank(self) -> tuple[int, float]:
+        """Order candidates by realizability first, then aggregate quality."""
+
+        return (len(self.blocking_issues), self.issue_score)
 
     def feedback(
         self,
@@ -293,6 +317,7 @@ class PlanQualityReport:
     def to_dict(self) -> dict[str, Any]:
         return {
             "healthy": self.healthy,
+            "blocking_issue_count": len(self.blocking_issues),
             "warning_count": len(self.issues) - len(self.repair_issues),
             "substantive_count": self.substantive_count,
             "thread_substantive_count": self.thread_substantive_count,
@@ -380,6 +405,18 @@ def evaluate_plan_batch(
                     code="social_contract_conflict",
                     sample_id=sample_id,
                     message=social_problem,
+                )
+            )
+        tone_problem = tone_register_problem(
+            plan,
+            enforce_coherence=enforce_social_contract,
+        )
+        if tone_problem:
+            issues.append(
+                PlanQualityIssue(
+                    code="tone_role_mismatch",
+                    sample_id=sample_id,
+                    message=tone_problem,
                 )
             )
         reply_problem = reply_increment_problem(
@@ -487,6 +524,7 @@ def evaluate_plan_batch(
         + 9.0 * sum(issue.code == "surface_capacity_conflict" for issue in issues)
         + 6.0 * sum(issue.code == "long_form_capacity" for issue in issues)
         + 8.0 * sum(issue.code == "social_contract_conflict" for issue in issues)
+        + 1.0 * sum(issue.code == "tone_role_mismatch" for issue in issues)
         + 8.0 * sum(issue.code == "reply_increment_conflict" for issue in issues)
         + 8.0 * sum(issue.code == "branch_goal_conflict" for issue in issues)
         + 2.0 * sum(issue.code == "duplicate_reference" for issue in issues)
@@ -695,33 +733,7 @@ def social_contract_problem(
                 "role rather than writing advice, analysis, or a bare verdict"
             )
 
-    tone = _normalized_value(plan.get("tone_class"))
-    stance = _normalized_value(plan.get("stance"))
     role = _normalized_value(plan.get("speaker_role"))
-    if enforce_coherence and tone == "polite":
-        allowed_roles = {
-            "datapoint_only",
-            "op_followup",
-            "gratitude_reply",
-            "side_observer",
-        }
-        allowed_functions = {
-            "personal_datapoint",
-            "reaction",
-            "verdict_evaluation",
-        }
-        if (
-            stance != "agree"
-            or role not in allowed_roles
-            or function not in allowed_functions
-        ):
-            problems.append(
-                "tone_class=polite requires stance=agree plus a personal "
-                "datapoint, reaction, or positive verdict from a compatible "
-                "participant; do not attach the label to advice, correction, "
-                "or abstract analysis"
-            )
-
     affect = _normalized_value(plan.get("affect_role"))
     reply_delta_type = _normalized_value(plan.get("reply_delta_type"))
     social_close = role == "gratitude_reply" or reply_delta_type == "social_close"
@@ -750,6 +762,45 @@ def social_contract_problem(
             f"payload={payload or 'unset'}, story={story or 'unset'}"
         )
     return "; ".join(problems)
+
+
+def tone_register_problem(
+    plan: dict[str, Any],
+    *,
+    enforce_coherence: bool = True,
+) -> str:
+    """Diagnose a weak tone/function pairing without making it semantic truth.
+
+    Polite-Guard classifies realized text; it does not define the comment's
+    function. This remains useful Planner feedback because routing every warm
+    slot through advice recreates a customer-support register, but an unresolved
+    mismatch must not abort a large thread before the Writer can realize tone.
+    """
+
+    if not enforce_coherence or _normalized_value(plan.get("tone_class")) != "polite":
+        return ""
+    stance = _normalized_value(plan.get("stance"))
+    role = _normalized_value(plan.get("speaker_role"))
+    function = _normalized_value(plan.get("comment_function"))
+    allowed_roles = {
+        "datapoint_only",
+        "op_followup",
+        "gratitude_reply",
+        "side_observer",
+    }
+    allowed_functions = {
+        "personal_datapoint",
+        "reaction",
+        "verdict_evaluation",
+    }
+    if stance == "agree" and role in allowed_roles and function in allowed_functions:
+        return ""
+    return (
+        "tone_class=polite is more naturally realized as agreement, a personal "
+        "datapoint, reaction, or positive verdict than as advice, correction, "
+        "or abstract analysis; preserve the local contribution, but avoid a "
+        "customer-support role"
+    )
 
 
 def reply_increment_problem(

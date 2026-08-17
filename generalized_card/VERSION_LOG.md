@@ -59,6 +59,49 @@ Before any run that changes behavior:
 
 ---
 
+## v89 — realizability-first Planner repair (2026-08-17)
+
+Policy ID: `generalized-card-v2-realizability-first-planner-v89-20260817`.
+
+The first paid v88 seed-8 attempt stopped after 24 Planner requests, before any
+Writer call: 116 seconds and $0.1805. The offset-8 batch ended with blocking
+contracts on S10, S13, and S15. The audit proved three distinct causes.
+
+- Candidate selection used one scalar issue score. A repaired S15 removed its
+  story conflict but introduced a semantic collision (weight 10); because the
+  story conflict weighed 8, the realizable candidate was rejected and the
+  impossible plan was retained. v89 ranks candidates first by the number of
+  Writer-blocking contract issues, then by aggregate quality.
+- The root Planner required scheduled stories and firsthand evidence while a
+  blanket rule banned hidden anecdotes and all facts absent from a title-only
+  seed. v89 states the same synthetic, non-verifiable personal-sequence
+  boundary already enforced by the Writer, without licensing externally
+  checkable product facts.
+- A `polite` classifier target was treated as semantic truth and could abort a
+  186-comment post unless the plan agreed and used one of three functions.
+  Polite-Guard scores realized surface text, so v89 retains this pairing as
+  low-weight anti-customer-support feedback but removes it from the blocking
+  social contract. Story, affect/social-close, surface capacity, and long-form
+  coherence remain blocking.
+
+Planner audit rows now include JSON-safe initial, candidate, recovered, and
+selected plan snapshots plus the before/candidate repair ranks. This closes the
+v88 observability gap: its log recorded issue labels and scores but not the plan
+whose acceptance was being decided.
+
+Expected result for the replacement seed-8 run: no termination from the known
+S10/S13 polite pairings; an S15 repair that reduces blocking contracts is kept
+even if collision remains as a logged warning. This is a reliability fix, not a
+claim that any of the 12 metric distributions improved. Paid content and metric
+evidence remain pending.
+
+Offline acceptance: 294 generalized tests plus 3 focused scorer tests, Ruff,
+matched-speaker backend self-test, active and active-plus-legacy parity, 93/93
+source pins with zero drift or closure gaps, and exact v89 seed-8
+`--prepare-only`. No v89 API call has been made.
+
+---
+
 ## v88 — structural speakers without invented biography (2026-08-17)
 
 Policy ID: `generalized-card-v2-structural-speakers-grounding-v88-20260817`.
@@ -94,6 +137,10 @@ metric movement is a hypothesis, not a result. Offline acceptance: 292
 generalized tests plus 3 focused scorer tests, Ruff, matched-speaker backend
 self-test, active and active-plus-legacy parity, 93/93 source pins, full Prompt
 replay, and exact v88 seed-8 `--prepare-only`. No API call was made.
+
+Paid result: the formal seed-8 attempt failed before Writer generation after 24
+Planner requests (`$0.1805`, 116 seconds). No discussion artifact exists and no
+content or 12-metric conclusion can be drawn. v89 supersedes v88 for rerun.
 
 ---
 

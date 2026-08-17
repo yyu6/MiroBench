@@ -24,6 +24,25 @@ them onto the 12 metrics and onto the per-thread evidence in `HANDOFF.md` §4.3:
 Only `avg_depth` and `structural_virality` are genuinely matched per thread, and
 both are fixed by the matched sampler rather than won by generation.
 
+## v89 Planner-repair status — 2026-08-17
+
+- [x] Preserve the failed v88 run evidence: 24 Planner requests, `$0.1805`, no
+      Writer calls and no evaluable discussion.
+- [x] Reconstruct the exact 186-slot schedule and offset-8 failure from current
+      source plus `planning_quality.jsonl`; do not infer from the traceback.
+- [x] Rank targeted repair by blocking contract count before aggregate quality,
+      so a collision cannot make code retain a Writer-impossible story plan.
+- [x] Keep polite/helpful role drift as low-weight repair feedback, but stop
+      treating the surface classifier label as a post-blocking semantic truth.
+- [x] Remove the root Planner's story/no-anecdote contradiction while retaining
+      non-leakage and externally checkable fact boundaries.
+- [x] Persist initial, candidate, recovered, and selected Planner snapshots and
+      repair ranks in the audit log.
+- [x] Complete full v89 verification, exact seed-8 prepare-only, and source-pin
+      refresh before another paid run.
+- [ ] Run the fresh v89 seed-8 tag; inspect content and realization before any
+      sufficient-N claim about the 12 metrics.
+
 ## v88 completion-audit status — 2026-08-17
 
 - [x] Replay the exact off-mode grounding contract over all 186 frozen tasks:
@@ -41,9 +60,10 @@ both are fixed by the matched sampler rather than won by generation.
 - [x] Verify v88 offline: 292 generalized tests, 3 focused scorer tests, Ruff,
       matched backend self-test, active/legacy parity, 93/93 pins, 186-task
       Prompt replay, and exact v88 `--prepare-only`.
-- [ ] Run complete v88 seed 8, then inspect coverage, participant continuity,
-      grounding conflicts, repetition/helpfulness, emotion/profanity, stories,
-      and descriptive 12-metric distance.
+- [x] Attempt v88 seed 8. It failed in Planner before Writer generation; record
+      the cost and failure rather than treating it as a content experiment.
+- [x] Supersede the failed v88 behavior with v89; do not rerun under the same
+      policy ID after changing repair semantics.
 
 ---
 

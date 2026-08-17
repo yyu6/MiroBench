@@ -641,7 +641,7 @@ Rules:
   different seed-local/social move; never import the reference's facts.
 - Use controlled vocabulary values exactly.
 - ``semantic_move``, ``local_topic``, and ``detail_focus`` must be supported by the visible seed or remain generic.
-- Never include usernames, URLs, hidden anecdotes, or facts absent from the visible seed.
+- Never copy a hidden matched-real anecdote, username, URL, or seed-specific fact.
 - A label explicitly listed for an S# is a fixed template contract. Select a
   compatible role, payload, stance, and evidence mode in this first plan; do
   not expect a later stage to replace it. For a field absent from the S# list,
@@ -688,6 +688,10 @@ Rules:
   use `firsthand_experience`, `comment_function=personal_datapoint`, and a
   personal-story or fragment-datapoint payload. The semantic move itself must
   describe that narrative evidence rather than advice or abstract analysis.
+  Synthesize an ordinary, non-verifiable first-person sequence around the
+  visible or generic local point; do not invent a product, specification,
+  price, measurement, date, policy, link, diagnosis, or externally checkable
+  outcome.
 - The required branch route is also fixed. Each root discussion chain owns a
   distinct decision axis; replies inherit their parent chain's branch. Do not
   switch to another branch merely because its topic is easier to write.

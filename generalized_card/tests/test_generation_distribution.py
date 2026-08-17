@@ -35,6 +35,7 @@ from generalized_card.planning_quality import (  # noqa: E402
     evaluate_plan_batch,
     social_contract_problem,
     surface_capacity_problem,
+    tone_register_problem,
 )
 from generalized_card.branch_routing import (  # noqa: E402
     required_branch_count,
@@ -466,10 +467,10 @@ class StoryAffectDistributionTest(unittest.TestCase):
             ),
         )
 
-    def test_polite_label_requires_a_coherent_social_move(self) -> None:
+    def test_polite_role_mismatch_is_advisory_not_a_blocking_contract(self) -> None:
         self.assertIn(
             "tone_class=polite",
-            social_contract_problem(
+            tone_register_problem(
                 {
                     "story_mode": "no_story",
                     "payload_type": "soft_helpful",
@@ -482,7 +483,7 @@ class StoryAffectDistributionTest(unittest.TestCase):
         )
         self.assertEqual(
             "",
-            social_contract_problem(
+            tone_register_problem(
                 {
                     "story_mode": "no_story",
                     "payload_type": "fragment_datapoint",
@@ -493,6 +494,21 @@ class StoryAffectDistributionTest(unittest.TestCase):
                 }
             ),
         )
+        report = evaluate_plan_batch(
+            {
+                1: {
+                    "story_mode": "no_story",
+                    "payload_type": "soft_helpful",
+                    "tone_class": "polite",
+                    "stance": "agree",
+                    "speaker_role": "advisor",
+                    "comment_function": "explanation_analysis",
+                }
+            },
+            max_perspective_share=1.0,
+        )
+        self.assertEqual(report.repair_rank[0], 0)
+        self.assertIn("tone_role_mismatch", {issue.code for issue in report.issues})
 
     def test_social_contract_ablation_restores_pre_v80_behavior(self) -> None:
         contradictory = {

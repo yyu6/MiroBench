@@ -16,10 +16,11 @@ HISTORICAL_REVISION_POLICY_VERSIONS = {
     "generalized-card-revision-v6-dynamic-coverage-history-20260807",
 }
 GENERALIZED_V2_GENERATION_POLICY_VERSION = (
-    "generalized-card-v2-structural-speakers-grounding-v88-20260817"
+    "generalized-card-v2-realizability-first-planner-v89-20260817"
 )
 HISTORICAL_GENERATION_POLICY_VERSIONS = {
     "generalized-v2": {
+        "generalized-card-v2-structural-speakers-grounding-v88-20260817",
         "generalized-card-v2-payload-safe-writer-routing-v87-20260817",
         "generalized-card-v2-root-relation-prompt-v86-20260817",
         "generalized-card-v2-auditable-plan-controls-v85-20260817",
@@ -158,7 +159,7 @@ CORE_FILES = {
     ),
     "generator_adapter": (
         "generalized_card/generalized_card/backend.py",
-        "c6170f61f42bdb90f95c26a43b22c494b1b79b2818b23f37591732a349682984",
+        "dea4ff9978ae723a535c41989fa41874ac8d9739cf59a793badc141c85987f8b",
     ),
     "data_boundary": (
         "generalized_card/generalized_card/data.py",
@@ -216,7 +217,7 @@ CORE_FILES = {
     ),
     "planning_quality": (
         "generalized_card/generalized_card/planning_quality.py",
-        "e1fc66d6e696faa80434ab016eb6af80412ddcacd25778df6b976e01dab2f41f",
+        "ec55b73a092833459251560b7189640ee2d52197748f84af04b6da9f5172ae2d",
     ),
     "generation_distribution": (
         "generalized_card/generalized_card/generation_distribution.py",
@@ -344,7 +345,7 @@ CORE_FILES = {
     ),
     "domain_prompt_adapter": (
         "generalized_card/generalized_card/prompts.py",
-        "fd93909615647c51cc97df42d8dacc23de6f5a4bcf39de5789d21e27fb3f07c3",
+        "a912355a8b80e2cdaccaccc8e3fe45a3d2d464d2f0c22ea8d4664ea03ed6d40f",
     ),
     "reply_planning": (
         "generalized_card/generalized_card/reply_planning.py",

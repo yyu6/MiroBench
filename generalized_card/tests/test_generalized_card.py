@@ -57,6 +57,7 @@ from generalized_card.backend import (
     _finalize_post_generation,
     _is_output_limit_error,
     _next_completion_boost,
+    _sample_repair_budget,
     _substantive_safe_degraded_task,
     _writer_lifecycle_with_candidate_recovery,
     configure_generator_backend,
@@ -1056,6 +1057,14 @@ class GeneralizedCardTest(unittest.TestCase):
         self.assertNotIn("per 35 words", comment_planner)
         self.assertNotIn("capped at 16 beats", comment_planner)
         self.assertIn('"affect_role"', comment_planner)
+        self.assertIn(
+            "Synthesize an ordinary, non-verifiable first-person sequence",
+            comment_planner,
+        )
+        self.assertNotIn(
+            "Never include usernames, URLs, hidden anecdotes, or facts absent",
+            comment_planner,
+        )
 
         rendered_refs = render_reference_viewpoints(
             profile,
@@ -2161,6 +2170,128 @@ class GeneralizedCardTest(unittest.TestCase):
             "unresolved_plan_quality_warning"
         ]
         self.assertGreater(warning["collision_rate"], 0.10)
+
+    def test_repair_accepts_realizable_plan_before_optimizing_collision(self) -> None:
+        module = SimpleNamespace(
+            GENERALIZED_COMMENT_PLAN_HISTORY=[],
+            GENERALIZED_COMMENT_PLAN_FEEDBACK="",
+            GENERALIZED_COMMENT_PLAN_REPORTS=[],
+            GENERALIZED_DOMAIN_PROFILE={"perspectives": [{"perspective_id": "P01"}]},
+            GENERALIZED_PLAN_QUALITY_CONFIG={
+                "repair_rounds": 1,
+                "schema_recovery_rounds": 0,
+                "similarity_threshold": 0.95,
+                "embedding_similarity_threshold": 0.95,
+                "max_collision_rate": 1.0,
+                "max_perspective_share": 1.0,
+                "strict": False,
+                "require_reply_novelty": False,
+            },
+            real_comment_keys=lambda row: (str(row.get("comment_id") or ""),),
+        )
+        calls = 0
+
+        def plans_with_tradeoff(**call_kwargs):
+            nonlocal calls
+            calls += 1
+            if calls == 1:
+                return {
+                    1: {
+                        "claim_key": "initial_story",
+                        "perspective_id": "P01",
+                        "semantic_move": "describe a distinct first local condition",
+                        "payload_type": "advice",
+                        "comment_function": "recommendation_advice",
+                        "story_mode": "specific_personal_story",
+                        "evidence_mode": "technical_or_policy_reasoning",
+                    },
+                    2: {
+                        "claim_key": "shared_increment",
+                        "perspective_id": "P01",
+                        "semantic_move": "report the shared handling outcome",
+                        "payload_type": "soft_helpful",
+                        "comment_function": "explanation_analysis",
+                        "story_mode": "no_story",
+                        "evidence_mode": "small_observation",
+                    },
+                }
+            sample_id = int(call_kwargs["sample_offset"]) + 1
+            if sample_id == 1:
+                return {
+                    1: {
+                        "claim_key": "shared_increment",
+                        "perspective_id": "P01",
+                        "semantic_move": "report the shared handling outcome",
+                        "payload_type": "personal_story",
+                        "comment_function": "personal_datapoint",
+                        "story_mode": "specific_personal_story",
+                        "evidence_mode": "firsthand_experience",
+                    }
+                }
+            return {
+                2: {
+                    "claim_key": "shared_increment",
+                    "perspective_id": "P01",
+                    "semantic_move": "report the shared handling outcome",
+                    "payload_type": "soft_helpful",
+                    "comment_function": "explanation_analysis",
+                    "story_mode": "no_story",
+                    "evidence_mode": "small_observation",
+                }
+            }
+
+        comments = [
+            {
+                "comment_id": f"c{sample_id}",
+                "parent_id": None,
+                "body": "ordinary structural capacity " * 14,
+            }
+            for sample_id in (1, 2)
+        ]
+        selected = _comment_planner_batch_with_history(
+            module,
+            plans_with_tradeoff,
+            {},
+        )(
+            seed_post=SimpleNamespace(
+                source_raw_post_id="seed-priority", index=0, title="seed"
+            ),
+            sample_offset=0,
+            comments=comments,
+            all_comments=comments,
+        )
+
+        self.assertEqual(selected[1]["evidence_mode"], "firsthand_experience")
+        report = module.GENERALIZED_COMMENT_PLAN_REPORTS[-1]
+        self.assertEqual(report["selected"]["blocking_issue_count"], 0)
+        first_repair = report["attempts"][1]
+        self.assertTrue(first_repair["repair_accepted"])
+        self.assertEqual(first_repair["selected_rank_before"][0], 1)
+        self.assertEqual(first_repair["candidate_rank"][0], 0)
+        self.assertEqual(
+            report["initial_plans"]["1"]["evidence_mode"],
+            "technical_or_policy_reasoning",
+        )
+        self.assertEqual(
+            report["selected_plans"]["1"]["evidence_mode"],
+            "firsthand_experience",
+        )
+
+    def test_tone_only_mismatch_uses_one_nonblocking_repair(self) -> None:
+        tone_only = SimpleNamespace(
+            repair_issues=(
+                SimpleNamespace(sample_id=7, code="tone_role_mismatch"),
+            )
+        )
+        self.assertEqual(_sample_repair_budget(tone_only, 7, 3), 1)
+
+        mixed = SimpleNamespace(
+            repair_issues=(
+                SimpleNamespace(sample_id=7, code="tone_role_mismatch"),
+                SimpleNamespace(sample_id=7, code="semantic_collision"),
+            )
+        )
+        self.assertEqual(_sample_repair_budget(mixed, 7, 3), 3)
 
     def test_unrealizable_social_contract_never_reaches_writer(self) -> None:
         module = SimpleNamespace(

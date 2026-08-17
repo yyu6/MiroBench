@@ -71,6 +71,7 @@ from .planner_distribution import (
     build_slot_distribution_schedule,
 )
 from .planning_quality import (
+    BLOCKING_PLAN_ISSUES,
     PlanSemanticIndex,
     evaluate_plan_batch,
     ledger_entry,
@@ -1545,6 +1546,11 @@ def _comment_planner_batch_with_history(
                         "returned": replacement is not None,
                         "returned_sample_id": recovered_sample_id,
                         "canonicalized_single_slot_id": recovered_sample_id is not None,
+                        "recovered_plan": (
+                            _plan_audit_snapshot(replacement)
+                            if replacement is not None
+                            else None
+                        ),
                     }
                 )
                 if replacement is not None:
@@ -1555,6 +1561,7 @@ def _comment_planner_batch_with_history(
         control_normalizations.extend(
             _canonicalize_plan_controls(plans, perspective_ids=perspective_ids)
         )
+        initial_plans_snapshot = _plan_audit_snapshot_map(plans)
         semantic_index = getattr(module, "GENERALIZED_PLAN_SEMANTIC_INDEX", None)
 
         def evaluate(candidate_plans: dict[int, dict[str, Any]]):
@@ -1596,7 +1603,12 @@ def _comment_planner_batch_with_history(
                     issue.sample_id
                     for issue in best_report.repair_issues
                     if issue.sample_id in best_plans
-                    and repair_counts[issue.sample_id] < repair_budget
+                    and repair_counts[issue.sample_id]
+                    < _sample_repair_budget(
+                        best_report,
+                        issue.sample_id,
+                        repair_budget,
+                    )
                 )
             )
             if not failing_ids:
@@ -1645,12 +1657,20 @@ def _comment_planner_batch_with_history(
                 candidate_plans = dict(best_plans)
                 candidate_plans[sample_id] = replacement
                 candidate_report = evaluate(candidate_plans)
-                accepted = candidate_report.issue_score < best_report.issue_score
+                # A Writer-incompatible contract is a different class of
+                # failure from a diversity warning. The old scalar score made
+                # one new collision (weight 10) outweigh a repaired story
+                # contract (weight 8), preserving the impossible plan and then
+                # aborting the whole post. Establish realizability first.
+                accepted = candidate_report.repair_rank < best_report.repair_rank
                 attempt = candidate_report.to_dict()
                 attempt.update(
                     {
                         "repair_scope": [sample_id],
                         "repair_accepted": accepted,
+                        "candidate_plan": _plan_audit_snapshot(replacement),
+                        "selected_rank_before": list(best_report.repair_rank),
+                        "candidate_rank": list(candidate_report.repair_rank),
                     }
                 )
                 attempts.append(attempt)
@@ -1659,7 +1679,9 @@ def _comment_planner_batch_with_history(
                     best_report = candidate_report
                     accepted_in_pass = True
             if not accepted_in_pass and all(
-                repair_counts[sample_id] >= repair_budget for sample_id in failing_ids
+                repair_counts[sample_id]
+                >= _sample_repair_budget(best_report, sample_id, repair_budget)
+                for sample_id in failing_ids
             ):
                 break
         module.GENERALIZED_COMMENT_PLAN_FEEDBACK = ""
@@ -1687,9 +1709,11 @@ def _comment_planner_batch_with_history(
                 for sample_id, count in sorted(repair_counts.items())
             },
             "control_normalizations": control_normalizations,
+            "initial_plans": initial_plans_snapshot,
             "initial_slot_contract_overrides": initial_slot_contract_overrides,
             "slot_contract_overrides": list(module.GENERALIZED_SLOT_CONTRACT_OVERRIDES),
             "selected": best_report.to_dict(),
+            "selected_plans": _plan_audit_snapshot_map(best_plans),
             "attempts": attempts,
         }
         print(
@@ -1702,7 +1726,9 @@ def _comment_planner_batch_with_history(
             f"collision_rate={best_report.collision_rate:.3f} "
             f"embedding_threshold={float(config.get('embedding_similarity_threshold', 0.82)):.3f} "
             f"dominant={best_report.dominant_perspective or 'none'}:"
-            f"{best_report.dominant_perspective_share:.3f} issues={len(best_report.issues)}",
+            f"{best_report.dominant_perspective_share:.3f} "
+            f"blocking={len(best_report.blocking_issues)} "
+            f"issues={len(best_report.issues)}",
             flush=True,
         )
 
@@ -1745,24 +1771,18 @@ def _comment_planner_batch_with_history(
         reports.append(report_row)
         _append_plan_quality_report(report_row)
 
-        blocking_contract_codes = {
-            "social_contract_conflict",
-            "surface_density_conflict",
-            "surface_capacity_conflict",
-            "long_form_capacity",
-        }
         unresolved_contracts = [
             issue
             for issue in best_report.repair_issues
-            if issue.code in blocking_contract_codes
+            if issue.code in BLOCKING_PLAN_ISSUES
         ]
         if unresolved_contracts:
             summary = "; ".join(
                 f"S{issue.sample_id}:{issue.code}" for issue in unresolved_contracts
             )
             raise RuntimeError(
-                "Comment Planner exhausted targeted repairs with an internally "
-                f"unrealizable slot contract: {summary}"
+                "Comment Planner exhausted targeted repairs with unresolved "
+                f"blocking slot plans: {summary}"
             )
 
         for sample_id, plan in sorted(best_plans.items()):
@@ -1784,6 +1804,38 @@ def _comment_planner_batch_with_history(
         return best_plans
 
     return plan_comment_move_batch
+
+
+def _plan_audit_snapshot(plan: dict[str, Any]) -> dict[str, Any]:
+    """Keep one JSON-safe Planner decision without matched comment text."""
+
+    return {
+        str(key): value
+        for key, value in sorted(plan.items())
+        if value is None or isinstance(value, (str, int, float, bool))
+    }
+
+
+def _sample_repair_budget(report: Any, sample_id: int, default: int) -> int:
+    """Spend at most one retry on a non-blocking polite-role diagnostic."""
+
+    issues = [
+        issue
+        for issue in report.repair_issues
+        if int(issue.sample_id) == int(sample_id)
+    ]
+    if issues and all(issue.code == "tone_role_mismatch" for issue in issues):
+        return min(max(0, int(default)), 1)
+    return max(0, int(default))
+
+
+def _plan_audit_snapshot_map(
+    plans: dict[int, dict[str, Any]],
+) -> dict[str, dict[str, Any]]:
+    return {
+        str(sample_id): _plan_audit_snapshot(plan)
+        for sample_id, plan in sorted(plans.items())
+    }
 
 
 def _canonicalize_plan_controls(
