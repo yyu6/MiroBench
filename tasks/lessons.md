@@ -355,3 +355,49 @@ reported row back to its source key, add a distractor thread to the join test,
 and store evidence provenance in the output. When n=1 is used for qualitative
 debugging, override misleading saved test statuses with `descriptive_only_n1`;
 do not let a mathematically returned p-value become an inferential claim.
+
+## 2026-08-17 — Separate target selection from realization before changing either
+
+**What happened.** A generated metric gap was being discussed as a generic
+Planner/Writer problem. Reconstructing the exact excluded-real template draws
+showed that their distribution passes all 12 MWU and KS tests at both N=10 and
+N=150. The historical n=1 output then made the missing stage visible: polite
+target 0.249 was close to real 0.232 but Writer output was 0.059; story target
+0.128 was close to real 0.111 but Writer output was 0.249. Emotion entropy was
+the opposite case: generated 1.5358 almost exactly realized target 1.5359, while
+that single high-variance target draw differed from real 1.9459.
+
+**How to apply.** Persist every stochastic upstream target and report
+real→target separately from target→output. Validate a distribution sampler as a
+distribution, never by its per-thread correlation or one draw. Only change the
+Planner sampler when its multi-thread target distribution fails; change the
+Planner/Writer contract when the output is insensitive to a good target.
+
+## 2026-08-17 — Evaluation must not repair the artifact it claims to measure
+
+**What happened.** The formal path audited Writer output, then sent it through a
+1,177-line cleanup program before scoring. Even with GPT disabled, that program
+could normalize tree metadata and strip or naturalize text. Separately, the core
+contract pinned active evaluator hashes whose files were untracked, and one
+dirty calibration module whose pinned bytes were not present in the commit.
+Both systems could say “healthy” without proving that a checkout would reproduce
+the scored artifact or the scorer.
+
+**How to apply.** Reject contaminated output; do not clean it into eligibility.
+Stage accepted generation byte-for-byte. A source hash is provenance only when
+the source is recoverable, so verify both git tracking and the transitive local
+import closure. Keep legacy revisers out of default active parity when they are
+not part of the experiment.
+
+## 2026-08-17 — Import closure does not prove dynamic runtime closure
+
+**What happened.** The first provenance audit followed package imports and
+reported zero omissions, but active runners also launched Python files by path
+and the backend dynamically imported the token tracker after changing
+`sys.path`. Those files affected execution while remaining outside the claimed
+active source set.
+
+**How to apply.** Treat dynamic imports and subprocess entry points as explicit
+contract edges. Pin and track those runtime sources, and make the closure audit
+follow sibling-script imports in addition to package-relative imports. Report
+declared, active, tracked, and unpinned counts separately.

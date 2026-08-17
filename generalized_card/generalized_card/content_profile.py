@@ -20,10 +20,11 @@ from .content_profile_data import (
     matched_threads,
     metric_report,
     optional_float,
+    planner_reference_templates,
 )
 
 
-SCHEMA_VERSION = "matched-content-profile-v2"
+SCHEMA_VERSION = "matched-content-profile-v3"
 
 
 def build_content_profile(run_dir: Path, config: Any) -> dict[str, Any]:
@@ -47,7 +48,10 @@ def build_content_profile(run_dir: Path, config: Any) -> dict[str, Any]:
     real_all = [text for key in paired_keys for text in real[key]]
 
     models = matched_model_rows(run_dir, matches, paired_keys)
-    metrics = metric_report(run_dir)
+    planner_templates, planner_template_source = planner_reference_templates(
+        run_dir, records, paired_keys
+    )
+    metrics = metric_report(run_dir, planner_templates)
     if metrics["matched_rows"] != len(paired_keys):
         raise ValueError(
             "content profile must use the same cohort as matched evaluation; "
@@ -80,6 +84,7 @@ def build_content_profile(run_dir: Path, config: Any) -> dict[str, Any]:
             "matched_real_usable_comments": len(real_all),
             "model_thread_coverage": model_coverage,
             "missing_matches": missing_matches,
+            "planner_reference_template_source": planner_template_source,
             "note": (
                 "Lexical rows include every usable raw comment. Model rows use only "
                 "comments present in saved scorer outputs; their common loader "
@@ -90,7 +95,9 @@ def build_content_profile(run_dir: Path, config: Any) -> dict[str, Any]:
         "metrics": metrics,
         "content_properties": content_properties(real_all, generated_all, config),
         "discourse_properties": discourse_properties(real, generated, paired_keys),
-        "model_scored_properties": model_properties(models["real"], models["generated"]),
+        "model_scored_properties": model_properties(
+            models["real"], models["generated"]
+        ),
         "planner_writer_realization": realization(records, models["generated"]),
         "surface_diagnostics": surface_diagnostics(real_all, generated_all),
         "repetition": {
@@ -100,6 +107,10 @@ def build_content_profile(run_dir: Path, config: Any) -> dict[str, Any]:
         "examples": examples(records, real_all, models["generated"]),
         "evidence_boundaries": {
             "formal_metrics": "Saved matched scorer CSVs; authoritative for the 12 metrics.",
+            "planner_reference_target": (
+                "The exact evaluation-excluded aggregate template persisted for each post; "
+                "MWU/KS/Cliff/Wasserstein are recomputed with the formal test definitions."
+            ),
             "model_realization": (
                 "Saved per-comment StorySeeker, GoEmotions, and politeness outputs, "
                 "joined to the exact matched thread."
@@ -128,16 +139,19 @@ def render_markdown(report: dict[str, Any]) -> str:
         "",
         "## Twelve formal metrics",
         "",
-        "| metric | real | generated | gap | ratio | status |",
-        "|---|---:|---:|---:|---:|---|",
+        "| metric | real | Planner target | generated | target−real | generated−target | target status | generated status |",
+        "|---|---:|---:|---:|---:|---:|---|---|",
     ]
     for row in report["metrics"]["rows"]:
         lines.append(
-            f"| {row['metric']} | {fmt(row['real_mean'])} | {fmt(row['generated_mean'])} | "
-            f"{fmt(row['gap'], signed=True)} | {fmt(row['generated_over_real'])} | "
-            f"{row['inferential_status']} |"
+            f"| {row['metric']} | {fmt(row['real_mean'])} | "
+            f"{fmt(row['planner_target_mean'])} | {fmt(row['generated_mean'])} | "
+            f"{fmt(row['planner_target_minus_real'], signed=True)} | "
+            f"{fmt(row['generated_minus_planner_target'], signed=True)} | "
+            f"{row['planner_target_inferential_status']} | {row['inferential_status']} |"
         )
 
+    lines.extend(stage_statistics_lines(report["metrics"]["rows"]))
     lines.extend(["", "## Direct matched content properties", ""])
     lines.extend(comparison_table(report["content_properties"]))
     lines.extend(["", "## Exact matched model properties", ""])
@@ -148,6 +162,28 @@ def render_markdown(report: dict[str, Any]) -> str:
     lines.extend(repetition_lines(report["repetition"]))
     lines.extend(example_lines(report["examples"]))
     return "\n".join(lines) + "\n"
+
+
+def stage_statistics_lines(rows: list[dict[str, Any]]) -> list[str]:
+    lines = [
+        "",
+        "## Stage distribution tests",
+        "",
+        "Planner target and generated output are each compared with matched real. ",
+        "For n=1 these numbers are descriptive only.",
+        "",
+        "| metric | target MWU p | target KS p | target W | generated MWU p | generated KS p | generated W |",
+        "|---|---:|---:|---:|---:|---:|---:|",
+    ]
+    for row in rows:
+        lines.append(
+            f"| {row['metric']} | {fmt(row['planner_target_mwu_p_value'])} | "
+            f"{fmt(row['planner_target_ks_p_value'])} | "
+            f"{fmt(row['planner_target_wasserstein_distance'])} | "
+            f"{fmt(row['mwu_p_value'])} | {fmt(row['ks_p_value'])} | "
+            f"{fmt(row['wasserstein_distance'])} |"
+        )
+    return lines
 
 
 def realization_lines(realized: dict[str, Any]) -> list[str]:
@@ -244,9 +280,13 @@ def comparison_table(rows: list[dict[str, Any]]) -> list[str]:
     return lines
 
 
-def write_report(report: dict[str, Any], *, json_path: Path, markdown_path: Path) -> None:
+def write_report(
+    report: dict[str, Any], *, json_path: Path, markdown_path: Path
+) -> None:
     json_path.parent.mkdir(parents=True, exist_ok=True)
-    json_path.write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    json_path.write_text(
+        json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
+    )
     markdown_path.write_text(render_markdown(report), encoding="utf-8")
 
 

@@ -121,10 +121,7 @@ CARD_SNAPSHOT_BACKEND = (
     / "generator_v37_surface_tone_balanced.py"
 )
 GENERALIZED_V2_BACKEND = (
-    REPO_ROOT
-    / "scripts"
-    / "sampling_generator"
-    / "run_sampled_reddit_generator.py"
+    REPO_ROOT / "scripts" / "sampling_generator" / "run_sampled_reddit_generator.py"
 )
 DEFAULT_BACKEND = GENERALIZED_V2_BACKEND
 
@@ -257,13 +254,10 @@ def configure_generator_backend(
         raise ValueError(f"Unknown generator profile: {profile}")
 
     original_core_symbols = {
-        name: getattr(module, name)
-        for name in CORE_ALGORITHM_SYMBOLS
+        name: getattr(module, name) for name in CORE_ALGORITHM_SYMBOLS
     }
     original_functions = {
-        name: value
-        for name, value in vars(module).items()
-        if inspect.isfunction(value)
+        name: value for name, value in vars(module).items() if inspect.isfunction(value)
     }
     original_normalize_branch_plan = module.normalize_branch_plan
     original_normalize_comment_plans = module.normalize_comment_move_plans
@@ -321,7 +315,9 @@ def configure_generator_backend(
     # run >= 12 between `semantic_move` and its comment): v67 0.4%, v73 10.2%,
     # v74 25.8%. See `prompts._route_lock_mode`.
     module.GENERALIZED_WRITER_ROUTE_LOCK = (
-        os.environ.get("GENERALIZED_CARD_WRITER_ROUTE_LOCK", "own_words").strip().lower()
+        os.environ.get("GENERALIZED_CARD_WRITER_ROUTE_LOCK", "own_words")
+        .strip()
+        .lower()
         or "own_words"
     )
     module.GENERALIZED_SOCIAL_CONTRACT_COHERENCE = (
@@ -383,7 +379,8 @@ def configure_generator_backend(
         ),
         "embedding_enabled": os.environ.get(
             "GENERALIZED_CARD_PLAN_EMBEDDING_ENABLED", "1"
-        ) == "1",
+        )
+        == "1",
         "embedding_model": os.environ.get(
             "GENERALIZED_CARD_PLAN_EMBEDDING_MODEL",
             "sentence-transformers/all-mpnet-base-v2",
@@ -430,8 +427,10 @@ def configure_generator_backend(
     ) + system_prompt_fact_sentence(mode=license_mode(module))
     module.run_self_test = lambda: _run_generalized_self_test(module, config)
 
-    module.load_real_thread_bank = lambda raw_dir, max_threads=0, **_: load_real_thread_bank(
-        Path(raw_dir), max_threads=max_threads
+    module.load_real_thread_bank = (
+        lambda raw_dir, max_threads=0, **_: load_real_thread_bank(
+            Path(raw_dir), max_threads=max_threads
+        )
     )
     module.find_matched_real_thread = find_matched_real_thread
     reference_calibration = dict(
@@ -472,7 +471,9 @@ def configure_generator_backend(
         available_lenses = len(
             [
                 item
-                for item in (module.GENERALIZED_DOMAIN_PROFILE.get("perspectives") or [])
+                for item in (
+                    module.GENERALIZED_DOMAIN_PROFILE.get("perspectives") or []
+                )
                 if isinstance(item, dict) and item.get("perspective_id")
             ]
         )
@@ -494,7 +495,9 @@ def configure_generator_backend(
         if all_comments:
             module.GENERALIZED_ACTIVE_SLOT_DISTRIBUTION_SCHEDULE = (
                 build_slot_distribution_schedule(
-                    opener_profile=(module.GENERALIZED_DOMAIN_PROFILE or {}).get("opener_profile"),
+                    opener_profile=(module.GENERALIZED_DOMAIN_PROFILE or {}).get(
+                        "opener_profile"
+                    ),
                     template=dict(module.GENERALIZED_ACTIVE_REFERENCE_TEMPLATE or {}),
                     comments=all_comments,
                     total_comments=int(kwargs["target"].target_comments),
@@ -531,17 +534,27 @@ def configure_generator_backend(
                 )
             available = [
                 str(item.get("perspective_id") or "").strip().upper()
-                for item in (module.GENERALIZED_DOMAIN_PROFILE.get("perspectives") or [])
+                for item in (
+                    module.GENERALIZED_DOMAIN_PROFILE.get("perspectives") or []
+                )
                 if isinstance(item, dict) and item.get("perspective_id")
             ]
             normalized = []
             used: set[str] = set()
             for index, branch in enumerate(branches):
-                perspective = str(getattr(branch, "perspective_id", "") or "").strip().upper()
-                if not perspective or perspective == "SEED_LOCAL" or perspective in used:
+                perspective = (
+                    str(getattr(branch, "perspective_id", "") or "").strip().upper()
+                )
+                if (
+                    not perspective
+                    or perspective == "SEED_LOCAL"
+                    or perspective in used
+                ):
                     perspective = next(
                         (value for value in available if value not in used),
-                        available[index % len(available)] if available else "SEED_LOCAL",
+                        available[index % len(available)]
+                        if available
+                        else "SEED_LOCAL",
                     )
                 used.add(perspective)
                 normalized.append(replace(branch, perspective_id=perspective))
@@ -569,15 +582,19 @@ def configure_generator_backend(
             module,
             **kwargs,
         )
-        module.render_parent_context_for_writer = lambda **kwargs: prompts.render_parent_context(
-            config,
-            module,
-            **kwargs,
+        module.render_parent_context_for_writer = (
+            lambda **kwargs: prompts.render_parent_context(
+                config,
+                module,
+                **kwargs,
+            )
         )
-        module.render_seed_context_for_writer = lambda **kwargs: prompts.render_seed_context(
-            config,
-            module,
-            **kwargs,
+        module.render_seed_context_for_writer = (
+            lambda **kwargs: prompts.render_seed_context(
+                config,
+                module,
+                **kwargs,
+            )
         )
     else:
         # The card-snapshot profile audits a frozen historical artifact that
@@ -593,34 +610,46 @@ def configure_generator_backend(
             original_planner_prompt(**kwargs),
             config,
         )
-        module.build_comment_move_planner_prompt = lambda **kwargs: _generalize_instruction_text(
-            original_comment_planner_prompt(**kwargs),
-            config,
+        module.build_comment_move_planner_prompt = (
+            lambda **kwargs: _generalize_instruction_text(
+                original_comment_planner_prompt(**kwargs),
+                config,
+            )
         )
         module.build_writer_prompt = lambda **kwargs: _generalize_instruction_text(
             original_writer_prompt(**kwargs),
             config,
         )
-        module.render_parent_context_for_writer = lambda **kwargs: _generalize_instruction_text(
-            original_parent_context(**kwargs),
-            config,
+        module.render_parent_context_for_writer = (
+            lambda **kwargs: _generalize_instruction_text(
+                original_parent_context(**kwargs),
+                config,
+            )
         )
-        module.render_seed_context_for_writer = lambda **kwargs: _generalize_instruction_text(
-            original_seed_context(**kwargs),
-            config,
+        module.render_seed_context_for_writer = (
+            lambda **kwargs: _generalize_instruction_text(
+                original_seed_context(**kwargs),
+                config,
+            )
         )
     module.seed_post_gist = lambda seed_post: _generalize_instruction_text(
         original_seed_gist(seed_post),
         config,
     )
     module.mask_high_salience_context_terms = prompts.mask_specifics
-    module.extract_product_anchors = lambda text: prompts.extract_product_anchors(config, text)
-    module.extract_term_anchors = lambda text: prompts.extract_term_anchors(config, text)
-    module.extract_concrete_anchors = lambda text, source_label="", max_items=12: prompts.extract_concrete_anchors(
-        config,
-        text,
-        source_label=source_label,
-        max_items=max_items,
+    module.extract_product_anchors = lambda text: prompts.extract_product_anchors(
+        config, text
+    )
+    module.extract_term_anchors = lambda text: prompts.extract_term_anchors(
+        config, text
+    )
+    module.extract_concrete_anchors = (
+        lambda text, source_label="", max_items=12: prompts.extract_concrete_anchors(
+            config,
+            text,
+            source_label=source_label,
+            max_items=max_items,
+        )
     )
     module.build_concrete_anchors_for_task = _anchor_builder(module)
     module.plan_comment_move_batch = _comment_planner_batch_with_history(
@@ -632,8 +661,12 @@ def configure_generator_backend(
     module.infer_surface_skeleton = infer_surface_skeleton
     module.infer_surface_texture = infer_surface_texture
     module.infer_real_comment_social_overrides = _structural_real_comment_overrides
-    module.real_text_allows_first_person_frame = _matched_text_never_assigns_semantic_frame
-    module.real_text_allows_uncertainty_frame = _matched_text_never_assigns_semantic_frame
+    module.real_text_allows_first_person_frame = (
+        _matched_text_never_assigns_semantic_frame
+    )
+    module.real_text_allows_uncertainty_frame = (
+        _matched_text_never_assigns_semantic_frame
+    )
     module.infer_real_tone_slot = lambda row, **kwargs: _generic_real_tone_slot(
         config,
         row,
@@ -644,7 +677,9 @@ def configure_generator_backend(
     # for selected surface labels.  Those fixed strings are not a structural
     # contract and create artificial n-gram clusters, so generalized Writer
     # output is left semantically intact after sanitization.
-    module.shape_writer_text_for_task = lambda text, task: original_shape_writer_text(text, replace(task, surface_texture=""))
+    module.shape_writer_text_for_task = lambda text, task: original_shape_writer_text(
+        text, replace(task, surface_texture="")
+    )
     module.contains_planner_skeleton_residue = _planner_residue_check(
         module,
         original_planner_residue_check,
@@ -654,7 +689,9 @@ def configure_generator_backend(
     # implementation, and the engine no longer ships CARD's fixed-window one.
     module.lexical_overlap_problem = _evaluator_aligned_lexical_overlap_check(
         module,
-        calibration=dict(module.GENERALIZED_DOMAIN_PROFILE.get("lexical_quality") or {}),
+        calibration=dict(
+            module.GENERALIZED_DOMAIN_PROFILE.get("lexical_quality") or {}
+        ),
     )
     module.has_blocking_guard_failure = _blocking_guard_check(
         module,
@@ -674,7 +711,9 @@ def configure_generator_backend(
     module.generate_writer_text_with_guards = _writer_lifecycle_with_candidate_recovery(
         module,
         original_writer_lifecycle,
-        calibration=dict(module.GENERALIZED_DOMAIN_PROFILE.get("lexical_quality") or {}),
+        calibration=dict(
+            module.GENERALIZED_DOMAIN_PROFILE.get("lexical_quality") or {}
+        ),
     )
     module.generate_post_from_tasks = _finalize_post_generation(
         module,
@@ -752,6 +791,7 @@ def configure_generator_backend(
             module.GENERALIZED_ACTIVE_SLOT_DISTRIBUTION_SCHEDULE or {}
         )
         report["card_surface_rebalance"] = card_report
+        report["seed_key"] = str(module.GENERALIZED_ACTIVE_SEED_KEY or "")
         report["sequence_index"] = len(module.GENERALIZED_STORY_AFFECT_REPORTS)
         module.GENERALIZED_STORY_AFFECT_REPORTS.append(report)
         if not module.GENERALIZED_SELF_TEST_ACTIVE:
@@ -779,7 +819,9 @@ def configure_generator_backend(
             speaker = roster.speaker_for(task.real_sample_id)
             if speaker is not None:
                 generalized = replace(generalized, speaker_id=speaker.speaker_id)
-            plan = comment_plans.get(int(task.real_sample_id or task.local_task_id)) or {}
+            plan = (
+                comment_plans.get(int(task.real_sample_id or task.local_task_id)) or {}
+            )
             restored = restore_planner_task_contract(generalized, plan, core=module)
             revised.append(apply_planner_distribution_fields(restored, plan))
         retained, coverage = retain_explicitly_planned_tasks(revised, comment_plans)
@@ -800,9 +842,12 @@ def configure_generator_backend(
         `real_word_count` agrees for 186 of 186 slots.
         """
 
-        if str(
-            getattr(core, "GENERALIZED_SPEAKER_IDENTITY", "off") or "off"
-        ).strip().lower() != SPEAKER_IDENTITY_MATCHED:
+        if (
+            str(getattr(core, "GENERALIZED_SPEAKER_IDENTITY", "off") or "off")
+            .strip()
+            .lower()
+            != SPEAKER_IDENTITY_MATCHED
+        ):
             return EMPTY_ROSTER
         matched = kwargs.get("matched_real_thread")
         target = kwargs.get("target")
@@ -962,10 +1007,18 @@ def _run_generalized_self_test(module: ModuleType, config: DomainConfig) -> None
     finally:
         module.GENERALIZED_SELF_TEST_ACTIVE = previous_self_test_state
     distribution_report = module.GENERALIZED_STORY_AFFECT_REPORTS[-1]
-    assert distribution_report["policy"] == "audit_planner_template_contract_without_post_planner_reassignment"
+    assert (
+        distribution_report["policy"]
+        == "audit_planner_template_contract_without_post_planner_reassignment"
+    )
     assert distribution_report["task_count"] == len(distribution_tasks)
-    assert distribution_report["card_surface_rebalance"]["surface_rebalanced_count"] == 0
-    assert distribution_report["card_surface_rebalance"]["policy"] == "planner_owned_generalized_surface_contract"
+    assert (
+        distribution_report["card_surface_rebalance"]["surface_rebalanced_count"] == 0
+    )
+    assert (
+        distribution_report["card_surface_rebalance"]["policy"]
+        == "planner_owned_generalized_surface_contract"
+    )
     assert all(item.length_bucket == "medium" for item in distribution_tasks)
     prompt = module.build_writer_prompt(
         profile="gpt54_reddit_writer",
@@ -1022,26 +1075,35 @@ def _run_generalized_self_test(module: ModuleType, config: DomainConfig) -> None
     assert module.has_blocking_guard_failure(
         ["placeholder_literal", "real_slot_too_short"]
     )
-    assert module.writer_token_cap(
-        "short",
-        payload_type="low_info_reaction",
-        profile="gpt54_reddit_writer",
-        max_writer_tokens=260,
-    ) == 260
+    assert (
+        module.writer_token_cap(
+            "short",
+            payload_type="low_info_reaction",
+            profile="gpt54_reddit_writer",
+            max_writer_tokens=260,
+        )
+        == 260
+    )
     substantive_marker_text = (
         "This is a substantive local explanation with several constraints and "
         "a concrete consequence for ordinary use, followed by a caveat that "
         "keeps the recommendation narrow instead of turning it into a generic "
         "answer. The final reaction is incidental rather than the whole point lol."
     )
-    assert module.infer_real_surface_shape(
-        {"body": substantive_marker_text, "author": "user"}
-    ) == "full_answer"
+    assert (
+        module.infer_real_surface_shape(
+            {"body": substantive_marker_text, "author": "user"}
+        )
+        == "full_answer"
+    )
     skeleton, _ = module.infer_surface_skeleton(substantive_marker_text)
     assert "joke" not in skeleton
-    assert writer_provider_token_budget(
-        replace(task, real_word_count=300), configured_max=260
-    ) > 500
+    assert (
+        writer_provider_token_budget(
+            replace(task, real_word_count=300), configured_max=260
+        )
+        > 500
+    )
     story_task = next(
         (item for item in distribution_tasks if item.story_mode != "no_story"),
         None,
@@ -1145,7 +1207,10 @@ def _generic_real_tone_slot(
             "Use a community/meta/template-style move, not personal product advice or a support reply.",
         )
     if real_surface_shape == "micro_reaction":
-        return "tiny_reaction", "Use a tiny reaction or bare answer without explanation."
+        return (
+            "tiny_reaction",
+            "Use a tiny reaction or bare answer without explanation.",
+        )
     if surface_texture == "gratitude_social" or speaker_role == "gratitude_reply":
         return (
             "pure_acknowledgement",
@@ -1179,22 +1244,43 @@ def _generalize_instruction_text(value: str, config: DomainConfig) -> str:
         ("credit card", config.display_name),
         ("bank/card/process", "product/service/process"),
         ("card/bank/process", "product/service/process"),
-        ("claim, bank, card, policy, or process", "claim, product, rule, interface, service, or process"),
-        ("bank, card, policy, or process", "product, rule, interface, service, or process"),
+        (
+            "claim, bank, card, policy, or process",
+            "claim, product, rule, interface, service, or process",
+        ),
+        (
+            "bank, card, policy, or process",
+            "product, rule, interface, service, or process",
+        ),
         ("bank, card, or process", "product, service, or process"),
         ("issuer/product/process", "product/service/process"),
         ("issuer, product, or process", "product, service, or process"),
         ("issuer/card", "product/service"),
-        ("issuers, reward programs, fees, or benefits", "brands, product lines, prices, or features"),
-        ("named products, issuers, reward programs, fees, or benefits", "named products, brands, prices, or features"),
-        ("issuer rules, approval datapoints, credit-limit handling, utilization, rewards value, product comparisons, support/process details", "product rules, firsthand datapoints, setup or compatibility, price and feature tradeoffs, product comparisons, and support/process details"),
-        ("hard pull vs soft pull, credit-line transfer, USBAR limit, utilization scoring, sockdrawer joke, branch banker, card-specific DP, hidden fee", "setup difference, compatibility constraint, product limit, performance tradeoff, unused-product joke, store or support interaction, product-specific datapoint, hidden cost"),
+        (
+            "issuers, reward programs, fees, or benefits",
+            "brands, product lines, prices, or features",
+        ),
+        (
+            "named products, issuers, reward programs, fees, or benefits",
+            "named products, brands, prices, or features",
+        ),
+        (
+            "issuer rules, approval datapoints, credit-limit handling, utilization, rewards value, product comparisons, support/process details",
+            "product rules, firsthand datapoints, setup or compatibility, price and feature tradeoffs, product comparisons, and support/process details",
+        ),
+        (
+            "hard pull vs soft pull, credit-line transfer, USBAR limit, utilization scoring, sockdrawer joke, branch banker, card-specific DP, hidden fee",
+            "setup difference, compatibility constraint, product limit, performance tradeoff, unused-product joke, store or support interaction, product-specific datapoint, hidden cost",
+        ),
         ("fee_number", "price_or_measurement"),
         ("issuer_rule", "product_rule"),
         ("card-specific", "product-specific"),
         ("card names", "product names"),
         ("cards, banks", "products, brands"),
-        ("cards, dates, fees, percentages, URLs, or reward numbers", "products, dates, prices, measurements, URLs, or feature values"),
+        (
+            "cards, dates, fees, percentages, URLs, or reward numbers",
+            "products, dates, prices, measurements, URLs, or feature values",
+        ),
         ("card/process-as-subject", "product/process-as-subject"),
         ("card-as-subject", "product-as-subject"),
         ("card advice", "product advice"),
@@ -1223,12 +1309,16 @@ def _anchor_builder(module: ModuleType):
         del real_body
         payload_type = str(planned.get("payload_type") or "").strip().lower()
         comment_function = str(planned.get("comment_function") or "").strip().lower()
-        if payload_type in {
-            "low_info_reaction",
-            "joke",
-            "meta_or_template",
-            "side_tangent",
-        } or comment_function == "offtopic_noise":
+        if (
+            payload_type
+            in {
+                "low_info_reaction",
+                "joke",
+                "meta_or_template",
+                "side_tangent",
+            }
+            or comment_function == "offtopic_noise"
+        ):
             return ()
 
         parent_anchors = (
@@ -1250,17 +1340,13 @@ def _anchor_builder(module: ModuleType):
                 "reply_relation",
             )
         )
-        planner_anchors = (
-            _without_internal_control_anchors(
-                module.extract_concrete_anchors(planner_text, source_label="planner")
-            )
+        planner_anchors = _without_internal_control_anchors(
+            module.extract_concrete_anchors(planner_text, source_label="planner")
         )
-        local_anchors = (
-            _without_internal_control_anchors(
-                module.extract_concrete_anchors(
+        local_anchors = _without_internal_control_anchors(
+            module.extract_concrete_anchors(
                 " ".join([anchor, branch.anchor_quote, branch.branch_goal]),
                 source_label="local",
-                )
             )
         )
         seed_anchors: list[str] = []
@@ -1304,11 +1390,7 @@ def _select_task_anchors(
     if len(selected) < 2:
         selected.extend(_rank_relevant_anchors(parent_anchors, planner_text)[:1])
     if seed_anchors and len(selected) < max_anchors:
-        seed_index = (
-            max(0, sample_id - 1) % len(seed_anchors)
-            if sample_id > 0
-            else 0
-        )
+        seed_index = max(0, sample_id - 1) % len(seed_anchors) if sample_id > 0 else 0
         seed_anchor = seed_anchors[seed_index]
         normalized_selected = {
             prompts.strip_anchor_source(item).lower() for item in selected
@@ -1326,7 +1408,9 @@ def _rank_relevant_anchors(anchors: list[str], planner_text: str) -> list[str]:
 
 
 def _anchor_relevance(anchor: str, planner_text: str) -> int:
-    anchor_tokens = set(re.findall(r"[a-z0-9]+", prompts.strip_anchor_source(anchor).lower()))
+    anchor_tokens = set(
+        re.findall(r"[a-z0-9]+", prompts.strip_anchor_source(anchor).lower())
+    )
     plan_tokens = set(re.findall(r"[a-z0-9]+", planner_text.lower()))
     return len(anchor_tokens & plan_tokens)
 
@@ -1359,7 +1443,10 @@ def _comment_planner_batch_with_history(
         config = dict(getattr(module, "GENERALIZED_PLAN_QUALITY_CONFIG", {}) or {})
         perspective_ids = {
             str(item.get("perspective_id") or "").strip().upper()
-            for item in (getattr(module, "GENERALIZED_DOMAIN_PROFILE", {}).get("perspectives") or [])
+            for item in (
+                getattr(module, "GENERALIZED_DOMAIN_PROFILE", {}).get("perspectives")
+                or []
+            )
             if isinstance(item, dict) and item.get("perspective_id")
         }
         module.GENERALIZED_COMMENT_PLAN_HISTORY = list(ledger)
@@ -1373,7 +1460,9 @@ def _comment_planner_batch_with_history(
         )
         sample_offset = int(kwargs.get("sample_offset") or 0)
         expected_ids = set(
-            range(sample_offset + 1, sample_offset + len(kwargs.get("comments") or []) + 1)
+            range(
+                sample_offset + 1, sample_offset + len(kwargs.get("comments") or []) + 1
+            )
         )
         unexpected_ids = sorted(set(raw_plans) - expected_ids)
         plans = {
@@ -1491,8 +1580,7 @@ def _comment_planner_batch_with_history(
             accepted_in_pass = False
             for sample_id in failing_ids:
                 if not any(
-                    issue.sample_id == sample_id
-                    for issue in best_report.repair_issues
+                    issue.sample_id == sample_id for issue in best_report.repair_issues
                 ):
                     continue
                 repair_counts[sample_id] += 1
@@ -1547,8 +1635,7 @@ def _comment_planner_batch_with_history(
                     best_report = candidate_report
                     accepted_in_pass = True
             if not accepted_in_pass and all(
-                repair_counts[sample_id] >= repair_budget
-                for sample_id in failing_ids
+                repair_counts[sample_id] >= repair_budget for sample_id in failing_ids
             ):
                 break
         module.GENERALIZED_COMMENT_PLAN_FEEDBACK = ""
@@ -1577,9 +1664,7 @@ def _comment_planner_batch_with_history(
             },
             "control_normalizations": control_normalizations,
             "initial_slot_contract_overrides": initial_slot_contract_overrides,
-            "slot_contract_overrides": list(
-                module.GENERALIZED_SLOT_CONTRACT_OVERRIDES
-            ),
+            "slot_contract_overrides": list(module.GENERALIZED_SLOT_CONTRACT_OVERRIDES),
             "selected": best_report.to_dict(),
             "attempts": attempts,
         }
@@ -1592,7 +1677,7 @@ def _comment_planner_batch_with_history(
             f"collisions={len(best_report.colliding_samples)} "
             f"collision_rate={best_report.collision_rate:.3f} "
             f"embedding_threshold={float(config.get('embedding_similarity_threshold', 0.82)):.3f} "
-            f"dominant={best_report.dominant_perspective or 'none'}:" 
+            f"dominant={best_report.dominant_perspective or 'none'}:"
             f"{best_report.dominant_perspective_share:.3f} issues={len(best_report.issues)}",
             flush=True,
         )
@@ -1854,11 +1939,15 @@ def _planner_residue_check(module: ModuleType, original: Any):
             match.group(0).upper()
             for anchor in getattr(task, "concrete_anchors", ())
             if str(anchor).rstrip().lower().endswith("(seed)")
-            for match in prompts.INTERNAL_CONTROL_ID_RE.finditer(prompts.strip_anchor_source(str(anchor)))
+            for match in prompts.INTERNAL_CONTROL_ID_RE.finditer(
+                prompts.strip_anchor_source(str(anchor))
+            )
         }
         for match in prompts.INTERNAL_CONTROL_ID_RE.finditer(str(text or "")):
             label = match.group(0).upper()
-            if (label in profile_ids or label.startswith(("S", "B"))) and label not in allowed:
+            if (
+                label in profile_ids or label.startswith(("S", "B"))
+            ) and label not in allowed:
                 return True
         return False
 
@@ -1871,9 +1960,7 @@ def _blocking_guard_check(module: ModuleType, original: Any):
             problem for problem in problems if not is_soft_length_problem(problem)
         ]
         checked = [
-            problem
-            for problem in checked
-            if not is_single_stage_diagnostic(problem)
+            problem for problem in checked if not is_single_stage_diagnostic(problem)
         ]
         return original(checked)
 
@@ -1978,16 +2065,17 @@ def _writer_lifecycle_with_candidate_recovery(
         )
         hard_recovery_rounds = int(recovery_config.get("hard_recovery_rounds", 0))
         recovery_round = 0
-        while hard_realization_problems(problems) and recovery_round < hard_recovery_rounds:
+        while (
+            hard_realization_problems(problems)
+            and recovery_round < hard_recovery_rounds
+        ):
             recovery_round += 1
             recovery_task = writer_hard_recovery_task(
                 original_task,
                 problems=problems,
                 previous_candidate_text=text,
             )
-            result = original(
-                **{**kwargs, "task": recovery_task, "writer_retries": 0}
-            )
+            result = original(**{**kwargs, "task": recovery_task, "writer_retries": 0})
             attempts.extend(
                 annotate_writer_attempts(
                     result.get("attempts") or [],
@@ -2133,7 +2221,9 @@ def _finalize_post_generation(module: ModuleType, original: Any):
         tasks = list(kwargs.get("tasks") or [])
         post = original(**kwargs)
         records = [
-            row for row in (post.get("generation_records") or []) if isinstance(row, dict)
+            row
+            for row in (post.get("generation_records") or [])
+            if isinstance(row, dict)
         ]
         coverage = generation_coverage(tasks, records)
         planner_coverage = dict(
@@ -2143,6 +2233,15 @@ def _finalize_post_generation(module: ModuleType, original: Any):
             **planner_coverage,
             **coverage,
         }
+        reference_template = dict(
+            getattr(module, "GENERALIZED_ACTIVE_REFERENCE_TEMPLATE", {}) or {}
+        )
+        if reference_template:
+            post["thread_plan"]["reference_metric_template"] = reference_template
+            post["thread_plan"]["reference_metric_template_provenance"] = {
+                "source": "evaluation-excluded same-size aggregate metric template",
+                "raw_text_included": False,
+            }
         if not coverage["complete"]:
             print(
                 "[writer-coverage] "
@@ -2166,7 +2265,9 @@ def _finalize_post_generation(module: ModuleType, original: Any):
             actor_rows = []
             for row in records:
                 task_row = row.get("task") or {}
-                sample_id = task_row.get("real_sample_id") or task_row.get("local_task_id")
+                sample_id = task_row.get("real_sample_id") or task_row.get(
+                    "local_task_id"
+                )
                 state = module.GENERALIZED_ACTOR_ASSIGNMENTS.get(
                     assignment_key(seed_post, sample_id)
                 )
@@ -2222,9 +2323,7 @@ def _append_writer_diversity_audit(
         "selected_attempt": int(selected_attempt),
         "recovered_after_exhaustion": bool(recovered),
         "final_status": final_status,
-        "planned_quote_parent_copy_waived": bool(
-            planned_quote_parent_copy_waived
-        ),
+        "planned_quote_parent_copy_waived": bool(planned_quote_parent_copy_waived),
         "attempts": [
             {
                 "attempt": _safe_int(row.get("attempt"), 0),
@@ -2244,7 +2343,9 @@ def _append_writer_diversity_audit(
 
 
 def _discussion_loader(module: ModuleType, config: DomainConfig):
-    def load_or_init_discussion(*, run_dir: Path, run_index: int, args: Any) -> dict[str, Any]:
+    def load_or_init_discussion(
+        *, run_dir: Path, run_index: int, args: Any
+    ) -> dict[str, Any]:
         path = run_dir / "discussion.json"
         if path.exists() and not args.force_post:
             return json.loads(path.read_text(encoding="utf-8"))
@@ -2294,25 +2395,62 @@ def _retry_note_for_problems(module: ModuleType):
     def note(problems: list[str], task: Any) -> str:
         notes: list[str] = []
         if "exact_duplicate" in problems:
-            notes.append("Use a different opening, clause path, and local wording from every earlier comment.")
+            notes.append(
+                "Use a different opening, clause path, and local wording from every earlier comment."
+            )
         if "parent_copy" in problems:
-            notes.append("Reply to the parent without copying or continuing its wording.")
-        if any(item in problems for item in ("placeholder_literal", "planner_skeleton_residue", "meta_template_quote_heading")):
-            notes.append("Write an actual Reddit comment with no labels, fake links, bracket placeholders, or planner text.")
+            notes.append(
+                "Reply to the parent without copying or continuing its wording."
+            )
+        if any(
+            item in problems
+            for item in (
+                "placeholder_literal",
+                "planner_skeleton_residue",
+                "meta_template_quote_heading",
+            )
+        ):
+            notes.append(
+                "Write an actual Reddit comment with no labels, fake links, bracket placeholders, or planner text."
+            )
         if "long_helpful_too_generic" in problems:
-            notes.append("Use one visible product, technical term, measurement, caveat, or parent-specific detail; otherwise shorten the reply.")
+            notes.append(
+                "Use one visible product, technical term, measurement, caveat, or parent-specific detail; otherwise shorten the reply."
+            )
         if "missing_concrete_anchor" in problems:
-            notes.append("Use one or two factual anchors explicitly listed in the prompt. Do not invent replacements.")
+            notes.append(
+                "Use one or two factual anchors explicitly listed in the prompt. Do not invent replacements."
+            )
         if "length_too_long" in problems:
             low, high = module.LENGTH_BUCKET_BOUNDS.get(task.length_bucket, (8, 45))
             notes.append(f"Keep the rewrite near {low}-{high} words.")
         if "low_info_too_long" in problems:
-            notes.append(f"Keep this low-information turn within {module.low_info_word_limit(task) or 10} words.")
+            notes.append(
+                f"Keep this low-information turn within {module.low_info_word_limit(task) or 10} words."
+            )
         if "real_slot_too_short" in problems:
-            notes.append("Keep the same narrow point but match the requested substantive length bucket.")
-        if any(item in problems for item in ("opening_reused", "opener_family_reused", "template_phrase_reused")):
-            notes.append("Change the entry shape and avoid repeated acknowledgements, first-person templates, and connective phrases.")
-        overlap = next((item.split(":", 1)[1] for item in problems if item.startswith("lexical_overlap_high:")), "")
+            notes.append(
+                "Keep the same narrow point but match the requested substantive length bucket."
+            )
+        if any(
+            item in problems
+            for item in (
+                "opening_reused",
+                "opener_family_reused",
+                "template_phrase_reused",
+            )
+        ):
+            notes.append(
+                "Change the entry shape and avoid repeated acknowledgements, first-person templates, and connective phrases."
+            )
+        overlap = next(
+            (
+                item.split(":", 1)[1]
+                for item in problems
+                if item.startswith("lexical_overlap_high:")
+            ),
+            "",
+        )
         if overlap:
             notes.append(
                 "The measured lexical path is too close to this thread's held-out-real target. "
@@ -2348,22 +2486,41 @@ def _retry_note_for_problems(module: ModuleType):
                     f"Nearest prior excerpts and diagnostic: {detail}. Keep the assigned role and topic, but contribute a different implication, evidence role, stance, or decision lens. Do not paraphrase the excerpts."
                 )
         if "first_person_frame_unwanted" in problems:
-            notes.append("Remove the firsthand-experience frame and make the same direct local move.")
+            notes.append(
+                "Remove the firsthand-experience frame and make the same direct local move."
+            )
         if "uncertainty_frame_unwanted" in problems:
-            notes.append("Remove the uncertainty preface while preserving the same claim.")
+            notes.append(
+                "Remove the uncertainty preface while preserving the same claim."
+            )
         if "question_mark_unwanted" in problems:
-            notes.append("This slot is not a question; keep the same point as a statement or fragment.")
+            notes.append(
+                "This slot is not a question; keep the same point as a statement or fragment."
+            )
         if "empty" in problems:
             notes.append("Return a non-empty comment body only.")
-        return " ".join(notes) or "Keep the same local task and rewrite only the failed surface form."
+        return (
+            " ".join(notes)
+            or "Keep the same local task and rewrite only the failed surface form."
+        )
 
     return note
 
 
 def _guard_fallback_retry_note(problems: list[str]) -> str:
-    if any(item in problems for item in ("meta_template_quote_heading", "placeholder_literal", "planner_skeleton_residue")):
+    if any(
+        item in problems
+        for item in (
+            "meta_template_quote_heading",
+            "placeholder_literal",
+            "planner_skeleton_residue",
+        )
+    ):
         return " Final fallback: write one plain Reddit sentence without labels, markdown headings, placeholders, or fake links."
-    if any(item in problems for item in ("missing_concrete_anchor", "long_helpful_too_generic")):
+    if any(
+        item in problems
+        for item in ("missing_concrete_anchor", "long_helpful_too_generic")
+    ):
         return " Final fallback: use one visible factual anchor and one narrow local point; do not add any new fact."
     return " Final fallback: write a raw local Reddit reply, not a complete assistant answer."
 
@@ -2489,7 +2646,11 @@ def _endpoint_preflight_with_retry(module: ModuleType):
                     body = response.read().decode("utf-8", errors="replace")
                     content_type = str(response.headers.get("Content-Type") or "")
                 lowered = body.lower()
-                if "text/html" in content_type.lower() or "<html" in lowered or "page not found" in lowered:
+                if (
+                    "text/html" in content_type.lower()
+                    or "<html" in lowered
+                    or "page not found" in lowered
+                ):
                     raise SystemExit(
                         module.describe_bad_endpoint(
                             role=role,
@@ -2498,7 +2659,12 @@ def _endpoint_preflight_with_retry(module: ModuleType):
                             body=body,
                         )
                     )
-                if not allow_remote and "127.0.0.1" in normalized and "\"data\"" not in body and "\"object\"" not in body:
+                if (
+                    not allow_remote
+                    and "127.0.0.1" in normalized
+                    and '"data"' not in body
+                    and '"object"' not in body
+                ):
                     raise SystemExit(
                         f"{role} endpoint responded, but it does not look like an "
                         f"OpenAI-compatible `/v1/models` response:\n{base_url}"
@@ -2573,7 +2739,9 @@ def _completion_kwargs(
     return kwargs
 
 
-def _next_completion_boost(*, current: int, finish_reason: Any, reasoning_model: bool) -> int:
+def _next_completion_boost(
+    *, current: int, finish_reason: Any, reasoning_model: bool
+) -> int:
     if finish_reason != "length" or not reasoning_model:
         return current
     return min(2048, max(128, current * 2))

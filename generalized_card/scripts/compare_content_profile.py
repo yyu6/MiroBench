@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """Write a matched, read-only content and Planner→Writer realization audit."""
+
 from __future__ import annotations
 
 import argparse

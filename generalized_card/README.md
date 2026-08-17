@@ -193,9 +193,9 @@ python3 generalized_card/scripts/run_generate.py \
   --resume
 ```
 
-## Evaluation And Revision
+## Evaluation
 
-Run cleanup, all thread metrics, and exact matched-seed evaluation:
+Run the integrity audit, all thread metrics, and exact matched-seed evaluation:
 
 ```bash
 python3 generalized_card/scripts/run_evaluate.py \
@@ -205,157 +205,23 @@ python3 generalized_card/scripts/run_evaluate.py \
 ```
 
 The evaluation audit blocks incomplete, contaminated, copied, or leaked output.
+It then stages the generated tree byte-for-byte; it does not clean, rewrite,
+delete, or normalize Writer text before scoring.
 Planner-distribution findings such as semantic collisions or perspective
 concentration are written to `output_audit.json` and reported as warnings, then
 evaluation continues so those quality failures remain measurable. After the 12
 formal metrics and matched-seed statistics, the same command writes
-`content_profile_audit.json` and `.md`. That read-only report compares matched
-repetition/content properties, joins Planner controls to saved per-comment
-StorySeeker/GoEmotions/politeness outputs, and labels lexical customer-service
-probes as weak diagnostics. With one thread it reports distances only and never
-calls MWU/KS a pass.
+`content_profile_audit.json` and `.md`. That report decomposes every metric as
+matched real → selected evaluation-excluded Planner template → generated output,
+then reports Planner→Writer tone/affect/story realization, repetition, and
+matched content examples. Lexical customer-service/profanity probes remain weak
+diagnostics. With one thread, both the evaluator and report label every test
+`DESCRIPTIVE`; only N>1 can receive PASS/PARTIAL/FAIL.
 
-Run the CARD core metric order, Self-BLEU then Tone, after evaluation:
-
-```bash
-OPENAI_API_KEY="$OPENAI_API_KEY" \
-python3 generalized_card/scripts/run_full_revise.py \
-  --tag generalized_card_camera_gpt54_smoke5_v1 \
-  --model gpt-5.4-mini \
-  --base-url https://api.openai.com/v1 \
-  --revision-profile card-core \
-  --max-rounds 7 \
-  --metric-parallel 5 \
-  --resume
-```
-
-Run the extended cross-domain metric chain after evaluation:
-
-```bash
-OPENAI_API_KEY="$OPENAI_API_KEY" \
-python3 generalized_card/scripts/run_full_revise.py \
-  --tag generalized_card_camera_gpt54_smoke5_v1 \
-  --model gpt-5.4-mini \
-  --base-url https://api.openai.com/v1 \
-  --revision-profile extended \
-  --max-rounds 7 \
-  --selfbleu-rounds 7 \
-  --selfbert-rounds 7 \
-  --semantic-rounds 7 \
-  --tone-rounds 7 \
-  --emotion-rounds 7 \
-  --length-rounds 7 \
-  --story-rounds 7 \
-  --structure-rounds 7 \
-  --metric-parallel 5 \
-  --resume
-```
-
-`card-core` is the default and uses the CARD core metric order. The frozen
-paper-era snapshot used three manually staged Self-BLEU passes followed by
-seven manually staged tone passes. The current operational controllers retain
-the same candidate scoring, accepted-result chaining and rollback contract,
-while selecting their strategy from the current matched-real distribution.
-`extended` is a declared superset; it does not change the CARD core stages.
-The controller checks the latest matched evaluation before every stage. It
-runs the historical CARD Self-BLEU and coupled tone controllers, plus optional
-generalized stages for Self-BERT, exact semantic cosine, emotion entropy,
-length CV, story, and reply-tree structure when those metrics still fail. A passing
-stage is skipped. Every later stage starts from the most recent accepted
-collection produced by the previous stage. The original CARD distribution
-profiles are retained: high-tail, middle-mass, and shape-safe repair are chosen
-from matched-real quantile gaps. Self-BERT uses the same pattern with an exact
-pairwise BERTScore candidate gate.
-
-Revision coverage follows matched-real deviation rather than a fixed target
-count. In every round, all threads whose gap exceeds the active profile
-threshold are visited; the generalized wrapper does not set `max_threads` or
-a fixed selected-comment count. Within a selected thread, every eligible
-comment or safe structural move is available, and required capacity is derived
-from its gap and available content. Exact target-reached, overshoot,
-factual-preservation and local-gain gates stop the loop. The best-of-N width per
-selected comment remains finite and controls candidate search, not coverage.
-Collection-level protected-metric checks still accept or roll back the complete
-round.
-
-Semantic cosine candidates are scored with the same MPNet cosine implementation
-as evaluation. Length candidates are scored with the exact thread-level word
-count CV. Emotion candidates are scored with the same GoEmotions dominant-label
-entropy implementation. All three still pass through factual preservation and
-full-collection protected-metric gates before a round can be accepted.
-
-To run one stage explicitly:
-
-```bash
-OPENAI_API_KEY="$OPENAI_API_KEY" \
-python3 generalized_card/scripts/run_revise.py \
-  --tag generalized_card_camera_gpt54_smoke5_v1 \
-  --stage diversity \
-  --max-rounds 7 \
-  --resume
-```
-
-To apply the current reviser to a previously evaluated generation without
-changing or relabeling its Planner-Writer output, initialize a revision-only
-workspace once:
-
-```bash
-PYTHONPATH=generalized_card \
-python3 generalized_card/scripts/initialize_revision_workspace.py \
-  --source-tag generalized_card_camera_gpt54_pw50_core_v4 \
-  --tag generalized_card_camera_gpt54_core_v4_newselfloop_v1 \
-  --resume
-```
-
-The workspace imports the source generation-only token/time baseline, points
-to the source's audited initial collection, and appends only new revision
-requests. It never overwrites the source generation directory. Run
-`run_full_revise.py` against the new tag using the same extended command above.
-
-Valid stages are `diversity`, `selfbert`, `semantic`, `tone`, `emotion`,
-`length`, `story`, `structure`, and the compatibility entry point
-`story-structure`. The full controller schedules Story and Structure
-independently so each has its own attempted-round history. The global
-`--max-rounds 7` budget is shared by every stage. CARD metric order breaks ties;
-after the first proposal, still-required stages with fewer attempts run first,
-so one stubborn metric cannot consume all seven proposals.
-
-After a stage finishes, `current_artifact.json` points to its most recent
-accepted collection. The next stage automatically starts from that collection;
-a rejected round never becomes the next input. After `Ctrl-C`, all text-revision
-controllers resume from the latest accepted boundary and reuse completed thread
-work in the interrupted proposed round under the same controller prefix.
-The wrapper updates `current_artifact.json` only after the controller exits
-normally, so an interrupted partial round is not orphaned. Story/structure
-resumes from its native controller state. Attempted rounds remain capped across
-resumed calls.
-The generalized Self-BLEU controller is a thin entry point to CARD's controller;
-it does not replace profile selection, progress scoring, protected-metric
-decisions, or history-aware strategy selection. The adapter first renders the
-complete CARD prompt and replaces only static finance-domain wording. It keeps
-CARD's 3/4-gram phrase diagnosis and adds target-local 1/2-gram diagnostics for
-cross-domain wording. Every candidate is still inserted into the complete
-thread and accepted only by CARD's exact Self-BLEU, matched-real gap, factual
-preservation, and collection-level gates. Final PASS requires both MWU and KS
-p-values to be greater than `0.05`. `--dry-run` writes only
-`full_revision_dry_run.json`; it does not alter the formal revision history.
-
-Direction support is explicit. Self-BLEU, Self-BERT and story revision safely
-reduce generated values that exceed matched real values. Structure revision
-increases deficient depth or virality through reply-tree reattachment. Tone,
-semantic cosine, length CV and emotion entropy support both directions. A
-nonpassing metric in an unsupported reverse direction is recorded as
-`monitor-only`; no API calls are spent pretending to repair it.
-
-Each controller prefix has a full `*_controller_history.json`, a latest
-`*_controller_memory.json`, and one immutable `*_memory_roundNN.json` snapshot
-for every attempted round. The history is the audit source of truth; the memory
-is a reproducible compression used for strategy and prompt feedback.
-
-Runs created before the current policy cannot be resumed in place as a newer
-generator profile. They may be imported into an audited revision-only workspace.
-Reports must preserve both labels: the source generator lineage and the current
-revision lineage.
+The current research workflow ends at first-pass Planner→Writer evaluation.
+Historical reviser entry points remain only for reproducing old artifacts and
+are excluded from the default active parity audit. They are not a recommended
+way to make a failed generation look matched.
 
 ## Output Layout
 
@@ -365,11 +231,10 @@ artifacts/generalized_card/runs/<tag>/
   run_state.json
   generated/
   output_audit.json
-  cleaned/
+  cleaned/                  byte-identical scoring snapshot of generated/
   evaluation/
   matched_evaluation/
   current_artifact.json
-  revisions/
   logs/token_usage.jsonl
   logs/token_usage_summary.json
 ```

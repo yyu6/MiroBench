@@ -11,6 +11,7 @@ from types import SimpleNamespace
 from generalized_card.content_profile import build_content_profile, render_markdown
 from generalized_card.content_profile_analysis import repeated_ngram_share
 from generalized_card.content_profile_data import EVALUATION_METRICS
+from generalized_card.distribution_stats import distribution_stats
 
 
 class MatchedContentProfileTest(unittest.TestCase):
@@ -29,12 +30,29 @@ class MatchedContentProfileTest(unittest.TestCase):
                 properties["dominant-emotion entropy"]["real"], math.log(2), places=6
             )
             self.assertAlmostEqual(properties["mean story probability"]["real"], 0.2)
-            self.assertNotAlmostEqual(properties["mean story probability"]["real"], 0.99)
+            self.assertNotAlmostEqual(
+                properties["mean story probability"]["real"], 0.99
+            )
 
             metrics = {row["metric"]: row for row in report["metrics"]["rows"]}
-            self.assertEqual(metrics["self_bleu_4"]["inferential_status"], "descriptive_only_n1")
+            self.assertEqual(
+                metrics["self_bleu_4"]["inferential_status"], "descriptive_only_n1"
+            )
             self.assertAlmostEqual(metrics["self_bleu_4"]["gap"], 0.1)
-            self.assertIn("cannot validate MWU/KS", report["statistical_interpretation"])
+            self.assertAlmostEqual(metrics["self_bleu_4"]["planner_target_mean"], 0.25)
+            self.assertAlmostEqual(
+                metrics["self_bleu_4"]["planner_target_minus_real"], 0.05
+            )
+            self.assertAlmostEqual(
+                metrics["self_bleu_4"]["generated_minus_planner_target"], 0.05
+            )
+            self.assertEqual(
+                metrics["self_bleu_4"]["planner_target_inferential_status"],
+                "descriptive_only_n1",
+            )
+            self.assertIn(
+                "cannot validate MWU/KS", report["statistical_interpretation"]
+            )
 
     def test_joins_planner_controls_to_saved_comment_models(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
@@ -61,8 +79,13 @@ class MatchedContentProfileTest(unittest.TestCase):
                 report["surface_diagnostics"]["provenance"],
                 "matched-side lexical regex; diagnostic only",
             )
-            self.assertIn("never semantic ground truth", report["evidence_boundaries"]["weak_surface_probes"])
+            self.assertIn(
+                "never semantic ground truth",
+                report["evidence_boundaries"]["weak_surface_probes"],
+            )
             markdown = render_markdown(report)
+            self.assertIn("Planner target", markdown)
+            self.assertIn("Stage distribution tests", markdown)
             self.assertIn("Weak surface probes (not semantic labels)", markdown)
             self.assertIn("- No, this is bullshit.", markdown)
             self.assertNotIn("- : No, this is bullshit.", markdown)
@@ -75,12 +98,46 @@ class MatchedContentProfileTest(unittest.TestCase):
         self.assertGreater(repeated_ngram_share(texts, 3), 0.0)
         self.assertEqual(repeated_ngram_share([texts[0]], 3), 0.0)
 
+    def test_stage_stats_match_identical_distributions(self) -> None:
+        result = distribution_stats([0.0, 1.0], [0.0, 1.0])
+        self.assertEqual(result["mwu_p_value"], 1.0)
+        self.assertEqual(result["ks_p_value"], 1.0)
+        self.assertEqual(result["cliffs_delta"], 0.0)
+        self.assertEqual(result["wasserstein_distance"], 0.0)
+
     def test_rejects_a_content_cohort_without_matched_metric_rows(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
             run_dir, config = self._fixture(Path(directory))
             (run_dir / "matched_evaluation" / "matched_real_thread_scores.csv").unlink()
-            with self.assertRaisesRegex(ValueError, "same cohort"):
+            with self.assertRaisesRegex(ValueError, "score cohorts differ"):
                 build_content_profile(run_dir, config)
+
+    def test_legacy_template_log_requires_unambiguous_sequence(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            run_dir, config = self._fixture(Path(directory))
+            discussion = (
+                run_dir / "generated" / "run_00_sampled_reddit" / "discussion.json"
+            )
+            discussion.unlink()
+            log = run_dir / "logs" / "story_affect_distribution.jsonl"
+            log.parent.mkdir()
+            log.write_text(
+                json.dumps(
+                    {
+                        "sequence_index": 0,
+                        "reference_template": {
+                            metric: 0.25 for metric in EVALUATION_METRICS
+                        },
+                    }
+                )
+                + "\n",
+                encoding="utf-8",
+            )
+            report = build_content_profile(run_dir, config)
+            self.assertEqual(
+                report["scope"]["planner_reference_template_source"],
+                "legacy_audit_log_sequence",
+            )
 
     @staticmethod
     def _fixture(root: Path) -> tuple[Path, SimpleNamespace]:
@@ -91,8 +148,18 @@ class MatchedContentProfileTest(unittest.TestCase):
             encoding="utf-8",
         )
         real_comments = [
-            {"post_id": "real1", "comment_id": "r1", "body": "No, this is bullshit.", "created_utc": 1},
-            {"post_id": "real1", "comment_id": "r2", "body": "You should check that part.", "created_utc": 2},
+            {
+                "post_id": "real1",
+                "comment_id": "r1",
+                "body": "No, this is bullshit.",
+                "created_utc": 1,
+            },
+            {
+                "post_id": "real1",
+                "comment_id": "r2",
+                "body": "You should check that part.",
+                "created_utc": 2,
+            },
         ]
         (raw / "product.comments.jsonl").write_text(
             "".join(json.dumps(row) + "\n" for row in real_comments), encoding="utf-8"
@@ -100,14 +167,28 @@ class MatchedContentProfileTest(unittest.TestCase):
         write_threads(
             raw / "go_emotions_results.json",
             [
-                model_thread("real1", [{"comment_id": "r1", "dominant_emotion": "neutral"}, {"comment_id": "r2", "dominant_emotion": "anger"}]),
-                model_thread("other", [{"comment_id": "x", "dominant_emotion": "joy"}] * 10),
+                model_thread(
+                    "real1",
+                    [
+                        {"comment_id": "r1", "dominant_emotion": "neutral"},
+                        {"comment_id": "r2", "dominant_emotion": "anger"},
+                    ],
+                ),
+                model_thread(
+                    "other", [{"comment_id": "x", "dominant_emotion": "joy"}] * 10
+                ),
             ],
         )
         write_threads(
             raw / "storyseeker_results.json",
             [
-                model_thread("real1", [{"comment_id": "r1", "story_probability": 0.1}, {"comment_id": "r2", "story_probability": 0.3}]),
+                model_thread(
+                    "real1",
+                    [
+                        {"comment_id": "r1", "story_probability": 0.1},
+                        {"comment_id": "r2", "story_probability": 0.3},
+                    ],
+                ),
                 model_thread("other", [{"comment_id": "x", "story_probability": 0.99}]),
             ],
         )
@@ -164,27 +245,78 @@ class MatchedContentProfileTest(unittest.TestCase):
                     "payload_type": "soft_helpful",
                     "speaker_role": "side_observer",
                 },
-                "comment": {"comment_id": "2", "content": "You should check that part."},
+                "comment": {
+                    "comment_id": "2",
+                    "content": "You should check that part.",
+                },
             },
         ]
-        (generated / "generation_records.json").write_text(json.dumps(records), encoding="utf-8")
+        (generated / "generation_records.json").write_text(
+            json.dumps(records), encoding="utf-8"
+        )
+        (generated / "discussion.json").write_text(
+            json.dumps(
+                {
+                    "posts": [
+                        {
+                            "post_id": "gen1",
+                            "thread_plan": {
+                                "reference_metric_template": {
+                                    metric: 0.25 for metric in EVALUATION_METRICS
+                                }
+                            },
+                        }
+                    ]
+                }
+            ),
+            encoding="utf-8",
+        )
         write_threads(
             cleaned / "go_emotions_results.json",
-            [model_thread("gen1", [{"comment_id": "1", "dominant_emotion": "anger"}, {"comment_id": "2", "dominant_emotion": "neutral"}])],
+            [
+                model_thread(
+                    "gen1",
+                    [
+                        {"comment_id": "1", "dominant_emotion": "anger"},
+                        {"comment_id": "2", "dominant_emotion": "neutral"},
+                    ],
+                )
+            ],
         )
         write_threads(
             cleaned / "storyseeker_results.json",
-            [model_thread("gen1", [{"comment_id": "1", "story_probability": 0.8}, {"comment_id": "2", "story_probability": 0.7}])],
+            [
+                model_thread(
+                    "gen1",
+                    [
+                        {"comment_id": "1", "story_probability": 0.8},
+                        {"comment_id": "2", "story_probability": 0.7},
+                    ],
+                )
+            ],
         )
         write_threads(
             cleaned / "politeness_results.json",
-            [model_thread("gen1", [{"comment_id": "1", "pred_label": "impolite"}, {"comment_id": "2", "pred_label": "impolite"}])],
+            [
+                model_thread(
+                    "gen1",
+                    [
+                        {"comment_id": "1", "pred_label": "impolite"},
+                        {"comment_id": "2", "pred_label": "impolite"},
+                    ],
+                )
+            ],
         )
 
         write_metric_csv(matched / "matched_real_thread_scores.csv", 0.2)
         write_metric_csv(matched / "matched_generated_thread_scores.csv", 0.3)
         (matched / "matched_seed_group_eval.json").write_text(
-            json.dumps({metric: {"mwu_p_value": 1.0, "ks_p_value": 1.0} for metric in EVALUATION_METRICS}),
+            json.dumps(
+                {
+                    metric: {"mwu_p_value": 1.0, "ks_p_value": 1.0}
+                    for metric in EVALUATION_METRICS
+                }
+            ),
             encoding="utf-8",
         )
         config = SimpleNamespace(
@@ -195,7 +327,9 @@ class MatchedContentProfileTest(unittest.TestCase):
         return run_dir, config
 
 
-def model_thread(thread_id: str, comments: list[dict[str, object]]) -> dict[str, object]:
+def model_thread(
+    thread_id: str, comments: list[dict[str, object]]
+) -> dict[str, object]:
     return {"thread_id": thread_id, "comments": comments}
 
 

@@ -78,12 +78,32 @@ comment: collection-level metrics are diagnostic in first-pass generation.
 - [x] Stop impossible perspective-concentration repair calls. Perspective
       concentration remains visible as a warning; invalid-perspective and
       branch-route checks that normalization made unreachable are deleted.
-- [x] Verify v85 offline: 271 tests, scoped Ruff, camera-product backend
-      self-test, 76/76 pins, v80 audit replay, and exact seed-8 `--prepare-only`.
+- [x] Verify v85 offline: 285 generalized tests plus 3 focused scorer tests,
+      scoped Ruff, camera-product backend self-test, 92/92 declared hashes,
+      67/67 active sources git-tracked, zero missing active imports, v80 audit
+      replay, and exact seed-8 `--prepare-only`.
 - [x] Repair the n=1 content audit before using it for decisions. Its lexical
       rows were matched, but real emotion/story rows came from the whole domain.
       Evaluation now writes exact-matched 12-metric, repetition,
       Planner→Writer, model-realization, and weak-surface JSON/Markdown reports.
+- [x] Separate target selection from Writer realization for all 12 metrics.
+      Persist each selected excluded-real template atomically and report
+      real → target and target → generated gaps plus MWU/KS/Cliff/Wasserstein.
+      The selected-target distribution passes 12/12 at N=10 and N=150; do not
+      rewrite the sampler based on one high-variance n=1 draw.
+- [x] Stop evaluating postprocessed text. `run_evaluate` now stages the Writer
+      artifact byte-for-byte after the integrity audit; noncanonical structure
+      fails rather than being normalized.
+- [x] Make n=1 descriptive at the matched evaluator, console, JSON/Markdown,
+      and content report. A single thread can no longer print `12/12 PASS`.
+- [x] Remove active evaluation dependence on the dirty calibration candidate
+      modules. The focused metric runner, formal statistics, matched evaluator,
+      and scorer CLIs are pinned and git-recoverable; legacy revisers are not in
+      default parity or the current workflow.
+- [x] Include dynamically imported and subprocess-launched runtime sources in
+      provenance. Generation/evaluation backend runners, output-audit runner,
+      token tracker, and token summarizer are tracked and pinned; the closure
+      audit now follows sibling-script imports as well as package-relative ones.
 - [ ] Run one large n=1 content/contract diagnostic with no metric-driven
       retries, then run a multi-thread matched evaluation for formal p-values.
 
@@ -260,6 +280,13 @@ transformer classifiers inside the generation process. See HANDOFF §6.1.
       every active reviser entry point.
 - [x] Re-pin all changed generalized sources and commit only the scoped files;
       unrelated dirty worktree content belongs to other sessions.
+- [x] Replace the 1,177-line cleanup dependency and broad calibration
+      runner/scorer/stats dependencies on the active evaluation path with two
+      focused modules. Remove 140 lines of reviser instructions from the current
+      README while retaining legacy entry points for explicit reproduction.
+- [x] Prove active provenance mechanically: every current generation/evaluation
+      source is tracked, every hash agrees, and an AST import-closure audit finds
+      no unpinned local dependency.
 
 ---
 
@@ -305,6 +332,11 @@ handoff's interpretation.
 
 ## Sequencing
 
-B (free, testable with no generation) → A (largest gap, offline-gated) → C
-(diagnose before changing) → D → E. One mechanism per paid run, prediction
-written down first, `off` byte-identical, dry-run before handing over a command.
+The free target-selection and evaluation-integrity work is complete. Next run
+the complete v85 seed-8 thread and judge Writer realization/content, not n=1
+p-values. Only if coverage is exact and the content audit shows the expected
+direction should the same unchanged policy advance to a sufficient-N matched
+evaluation. Reopen A/C upstream only for target→generated failures that remain;
+do not change the reference sampler, add a reviser, or tune against final
+test-set p-values. One mechanism per later paid run, prediction written first,
+`off` byte-identical, and `--prepare-only` before spending.

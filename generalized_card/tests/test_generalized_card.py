@@ -1,5 +1,9 @@
 from __future__ import annotations
 
+# The test imports a historical script after adding the repository script
+# directory to sys.path; all package imports below must therefore follow it.
+# ruff: noqa: E402
+
 import importlib.util
 import csv
 import json
@@ -58,7 +62,11 @@ from generalized_card.backend import (
     configure_generator_backend,
     load_generator_backend,
 )
-from generalized_card.data import build_seed_pool, find_matched_real_thread, load_real_thread_bank
+from generalized_card.data import (
+    build_seed_pool,
+    find_matched_real_thread,
+    load_real_thread_bank,
+)
 from generalized_card.core_contract import (
     CORE_POLICY_VERSION,
     GENERALIZED_V2_GENERATION_POLICY_VERSION,
@@ -156,7 +164,9 @@ class GeneralizedCardTest(unittest.TestCase):
         cls.config = load_domain_config("camera")
 
     def test_domain_alias_and_seed_pool_exact_matches(self) -> None:
-        self.assertEqual(load_domain_config("camera_product").domain_id, "camera_product")
+        self.assertEqual(
+            load_domain_config("camera_product").domain_id, "camera_product"
+        )
         with tempfile.TemporaryDirectory() as directory:
             path = Path(directory) / "seeds.json"
             payload = build_seed_pool(self.config, path, count=8, seed=7)
@@ -296,7 +306,9 @@ class GeneralizedCardTest(unittest.TestCase):
             self.assertEqual(meta["matraix_commit"], AUDITED_MATRAIX_COMMIT)
             self.assertEqual(manifest["comments"], 1)
             self.assertEqual(manifest["unique_personas_used"], 1)
-            self.assertTrue((generated.parent / "persona_assignment_manifest.json").is_file())
+            self.assertTrue(
+                (generated.parent / "persona_assignment_manifest.json").is_file()
+            )
 
     def test_shared_card_core_hashes_are_pinned(self) -> None:
         self.assertEqual(
@@ -364,7 +376,9 @@ class GeneralizedCardTest(unittest.TestCase):
             historical["generator_policy_version"],
         )
 
-    def test_revision_workspace_uses_current_reviser_without_relabeling_generator(self) -> None:
+    def test_revision_workspace_uses_current_reviser_without_relabeling_generator(
+        self,
+    ) -> None:
         config = {
             "source_generation_policy_version": "unversioned-legacy-generalized-generator",
             "revision_core_policy_version": REVISION_CORE_POLICY_VERSION,
@@ -373,7 +387,9 @@ class GeneralizedCardTest(unittest.TestCase):
             verify_revision_policy(config, operation="test revision"),
             REVISION_CORE_POLICY_VERSION,
         )
-        with self.assertRaisesRegex(RuntimeError, "Initialize an audited revision workspace"):
+        with self.assertRaisesRegex(
+            RuntimeError, "Initialize an audited revision workspace"
+        ):
             verify_revision_policy({}, operation="test revision")
 
     def test_revision_memory_records_effects_and_guides_next_strategy(self) -> None:
@@ -423,9 +439,7 @@ class GeneralizedCardTest(unittest.TestCase):
             memory["aggregate"]["candidate_totals"]["generated_candidates"],
             18,
         )
-        self.assertEqual(
-            memory["rounds"][0]["modification_direction"], "high_tail"
-        )
+        self.assertEqual(memory["rounds"][0]["modification_direction"], "high_tail")
         self.assertEqual(
             memory["rounds"][0]["target_metrics_before"]["self_bleu_4"]["status"],
             "FAIL",
@@ -465,7 +479,9 @@ class GeneralizedCardTest(unittest.TestCase):
         after = {name: getattr(controller.card_controller, name) for name in names}
         self.assertEqual(before, after)
 
-    def test_selfbleu_adapter_preserves_card_prompt_and_adds_ngram_diagnostic(self) -> None:
+    def test_selfbleu_adapter_preserves_card_prompt_and_adds_ngram_diagnostic(
+        self,
+    ) -> None:
         module = load_reviser_backend("selfbleu")
         target = module.CommentRef(
             comment_id=2,
@@ -476,7 +492,9 @@ class GeneralizedCardTest(unittest.TestCase):
             comment={},
         )
         comments = [
-            module.CommentRef(1, None, 0, "The autofocus feels fine with this SD card.", {}, {}),
+            module.CommentRef(
+                1, None, 0, "The autofocus feels fine with this SD card.", {}, {}
+            ),
             target,
             module.CommentRef(3, 1, 1, "The SD card feels slow in burst mode.", {}, {}),
         ]
@@ -505,7 +523,9 @@ class GeneralizedCardTest(unittest.TestCase):
             self.assertIn(marker, rendered)
         self.assertNotIn("facts, cards, banks, dates, fees", rendered)
 
-    def test_static_domain_adaptation_does_not_rewrite_dynamic_sd_card_text(self) -> None:
+    def test_static_domain_adaptation_does_not_rewrite_dynamic_sd_card_text(
+        self,
+    ) -> None:
         original = (
             "You revise one generated Reddit comment.\n"
             "Preserve card names. Do not add new facts, cards, banks, dates, fees, "
@@ -530,7 +550,9 @@ class GeneralizedCardTest(unittest.TestCase):
             {"comment_function": "correction_caveat", "story_mode": "no_story"},
             {},
         )
-        parent = module.CommentRef(1, None, 0, "Low-light autofocus is my concern.", {}, {})
+        parent = module.CommentRef(
+            1, None, 0, "Low-light autofocus is my concern.", {}, {}
+        )
         scored = module.ScoredComment(target_ref, 0.61, 3, 0.55, 0.1, 0.71, 0.64, 0.12)
         thread_target = module.ThreadTarget(
             {"self_bertscore_mean_f1": 0.54, "semantic_mean_cosine": 0.35},
@@ -581,7 +603,12 @@ class GeneralizedCardTest(unittest.TestCase):
             candidate=candidate,
             current_rates={"polite": 0.1, "neutral": 0.2, "impolite": 0.7},
             real_rates={"polite": 0.3, "neutral": 0.4, "impolite": 0.3},
-            gaps={"polite": 0.2, "neutral": 0.2, "impolite": -0.4, "hard_disagree": -0.2},
+            gaps={
+                "polite": 0.2,
+                "neutral": 0.2,
+                "impolite": -0.4,
+                "hard_disagree": -0.2,
+            },
             candidates_per_comment=8,
             accepted=[],
             focus_stage="tone_gap_bestofn",
@@ -597,7 +624,9 @@ class GeneralizedCardTest(unittest.TestCase):
             self.assertIn(marker, rendered)
         self.assertNotIn("new card/bank/number", rendered)
 
-    def test_story_adapter_preserves_card_strategy_and_distribution_target(self) -> None:
+    def test_story_adapter_preserves_card_strategy_and_distribution_target(
+        self,
+    ) -> None:
         module = load_reviser_backend("story")
         target = module.CommentRef(
             2,
@@ -717,7 +746,10 @@ class GeneralizedCardTest(unittest.TestCase):
                                 {
                                     "style": "a",
                                     "candidate_evaluations": [
-                                        {"accepted": False, "reason": "claim_overlap_too_low:0.4"},
+                                        {
+                                            "accepted": False,
+                                            "reason": "claim_overlap_too_low:0.4",
+                                        },
                                         {"accepted": True, "reason": "accepted:gain"},
                                     ],
                                 }
@@ -801,7 +833,9 @@ class GeneralizedCardTest(unittest.TestCase):
                         }
                     )
                 )
-            (raw / "sample.jsonl").write_text("\n".join(post_rows) + "\n", encoding="utf-8")
+            (raw / "sample.jsonl").write_text(
+                "\n".join(post_rows) + "\n", encoding="utf-8"
+            )
             (raw / "sample.comments.jsonl").write_text(
                 "\n".join(comment_rows) + "\n",
                 encoding="utf-8",
@@ -848,8 +882,7 @@ class GeneralizedCardTest(unittest.TestCase):
                 CARD_CONTEXT_JITTER_RATE,
             )
             bank_text = " ".join(
-                str(row.get("text") or "")
-                for row in profile["reference_viewpoints"]
+                str(row.get("text") or "") for row in profile["reference_viewpoints"]
             )
             bank_ids = {
                 str(row.get("source_post_id") or "")
@@ -873,12 +906,20 @@ class GeneralizedCardTest(unittest.TestCase):
             )
             self.assertEqual(profile["perspectives"], universal_viewpoints())
             self.assertTrue(
-                all(row.get("axis") and row.get("decision_question") for row in profile["perspectives"])
+                all(
+                    row.get("axis") and row.get("decision_question")
+                    for row in profile["perspectives"]
+                )
             )
-            self.assertNotIn("autofocus", " ".join(row["label"] for row in profile["perspectives"]).lower())
+            self.assertNotIn(
+                "autofocus",
+                " ".join(row["label"] for row in profile["perspectives"]).lower(),
+            )
             self.assertEqual(load_domain_profile(profile_path), profile)
 
-    def test_reference_viewpoint_retrieval_is_relevant_diverse_and_deterministic(self) -> None:
+    def test_reference_viewpoint_retrieval_is_relevant_diverse_and_deterministic(
+        self,
+    ) -> None:
         profile = {
             "profile_sha256": "test-profile",
             "reference_viewpoints": [
@@ -1090,7 +1131,9 @@ class GeneralizedCardTest(unittest.TestCase):
             [],
         )
 
-    def test_generalized_rebalance_runs_card_surface_core_and_preserves_invariants(self) -> None:
+    def test_generalized_rebalance_runs_card_surface_core_and_preserves_invariants(
+        self,
+    ) -> None:
         module = load_generator_backend()
         calls = []
 
@@ -1175,7 +1218,9 @@ class GeneralizedCardTest(unittest.TestCase):
     def test_internal_planner_ids_never_become_writer_anchors(self) -> None:
         with patch(
             "generalized_card.backend.load_domain_profile",
-            return_value={"perspectives": [{"perspective_id": "P03", "label": "autofocus"}]},
+            return_value={
+                "perspectives": [{"perspective_id": "P03", "label": "autofocus"}]
+            },
         ):
             module = configure_generator_backend(load_generator_backend(), self.config)
         seed = module.SeedPost(
@@ -1210,8 +1255,12 @@ class GeneralizedCardTest(unittest.TestCase):
         self.assertNotRegex(rendered, r"\b(?:P03|S12|B02)\b")
 
         task = SimpleNamespace(surface_skeleton="", concrete_anchors=anchors)
-        self.assertTrue(module.contains_planner_skeleton_residue("P03 was the same deal", task))
-        self.assertFalse(module.contains_planner_skeleton_residue("The R5 was the same deal", task))
+        self.assertTrue(
+            module.contains_planner_skeleton_residue("P03 was the same deal", task)
+        )
+        self.assertFalse(
+            module.contains_planner_skeleton_residue("The R5 was the same deal", task)
+        )
 
     def test_cross_batch_comment_plan_ledger_is_available_to_next_prompt(self) -> None:
         module = SimpleNamespace(
@@ -1237,8 +1286,7 @@ class GeneralizedCardTest(unittest.TestCase):
         wrapped = _comment_planner_batch_with_history(module, original, ledgers)
         seed = SimpleNamespace(source_raw_post_id="seed-1", index=1, title="seed")
         all_comments = [
-            {"comment_id": f"c{index}", "parent_id": None}
-            for index in range(1, 20)
+            {"comment_id": f"c{index}", "parent_id": None} for index in range(1, 20)
         ]
         wrapped(
             seed_post=seed,
@@ -1257,9 +1305,18 @@ class GeneralizedCardTest(unittest.TestCase):
 
         prompt = prompts.comment_planner_prompt(
             self.config,
-            SimpleNamespace(compact=lambda value, limit: str(value)[:limit], GENERALIZED_DOMAIN_PROFILE={}),
-            seed_post=SimpleNamespace(title="Camera question", body="Autofocus issue", content="Autofocus issue"),
-            target=SimpleNamespace(target_comments=2, max_depth_goal=1, shape_label="normal"),
+            SimpleNamespace(
+                compact=lambda value, limit: str(value)[:limit],
+                GENERALIZED_DOMAIN_PROFILE={},
+            ),
+            seed_post=SimpleNamespace(
+                title="Camera question",
+                body="Autofocus issue",
+                content="Autofocus issue",
+            ),
+            target=SimpleNamespace(
+                target_comments=2, max_depth_goal=1, shape_label="normal"
+            ),
             branches=[
                 SimpleNamespace(
                     branch_id=1,
@@ -1270,8 +1327,12 @@ class GeneralizedCardTest(unittest.TestCase):
                 )
             ],
             matched_real_thread=None,
-            comments=[{"comment_id": "c1", "parent_id": None, "depth": 0, "body": "hidden"}],
-            all_comments=[{"comment_id": "c1", "parent_id": None, "depth": 0, "body": "hidden"}],
+            comments=[
+                {"comment_id": "c1", "parent_id": None, "depth": 0, "body": "hidden"}
+            ],
+            all_comments=[
+                {"comment_id": "c1", "parent_id": None, "depth": 0, "body": "hidden"}
+            ],
             prior_plans=module.GENERALIZED_COMMENT_PLAN_HISTORY,
         )
         self.assertIn("claim=claim_1", prompt)
@@ -1347,7 +1408,8 @@ class GeneralizedCardTest(unittest.TestCase):
             "name the local condition || trace its consequence",
         )
         self.assertEqual(
-            enriched_actor[12]["actor_attention_focus"], "the local condition",
+            enriched_actor[12]["actor_attention_focus"],
+            "the local condition",
         )
 
     def test_structural_route_overrides_planner_branch_for_replies(self) -> None:
@@ -1395,8 +1457,14 @@ class GeneralizedCardTest(unittest.TestCase):
                 GENERALIZED_ACTIVE_REFERENCE_TEMPLATE={},
                 GENERALIZED_ACTIVE_SLOT_DISTRIBUTION_SCHEDULE={},
             ),
-            seed_post=SimpleNamespace(title="Camera question", body="Visible seed detail", content="Visible seed detail"),
-            target=SimpleNamespace(target_comments=2, max_depth_goal=1, shape_label="normal"),
+            seed_post=SimpleNamespace(
+                title="Camera question",
+                body="Visible seed detail",
+                content="Visible seed detail",
+            ),
+            target=SimpleNamespace(
+                target_comments=2, max_depth_goal=1, shape_label="normal"
+            ),
             branches=[
                 SimpleNamespace(
                     branch_id=1,
@@ -1409,10 +1477,17 @@ class GeneralizedCardTest(unittest.TestCase):
                 )
             ],
             matched_real_thread=None,
-            comments=[{"comment_id": "c2", "parent_id": "t1_c1", "depth": 1, "body": "hidden"}],
+            comments=[
+                {"comment_id": "c2", "parent_id": "t1_c1", "depth": 1, "body": "hidden"}
+            ],
             all_comments=[
                 {"comment_id": "c1", "parent_id": None, "depth": 0, "body": "hidden"},
-                {"comment_id": "c2", "parent_id": "t1_c1", "depth": 1, "body": "hidden"},
+                {
+                    "comment_id": "c2",
+                    "parent_id": "t1_c1",
+                    "depth": 1,
+                    "body": "hidden",
+                },
             ],
             sample_offset=1,
             prior_plans=[
@@ -1424,7 +1499,9 @@ class GeneralizedCardTest(unittest.TestCase):
             ],
         )
         self.assertIn("Plan only the direct replies", prompt)
-        self.assertIn("Parent semantic move to exclude: state the parent proposition", prompt)
+        self.assertIn(
+            "Parent semantic move to exclude: state the parent proposition", prompt
+        )
         self.assertIn("reply_novelty_anchor", prompt)
         self.assertIn("social_close", prompt)
         # social_close is offered only to a slot whose schedule allows it, so an
@@ -1462,13 +1539,33 @@ class GeneralizedCardTest(unittest.TestCase):
             branches=[],
             matched_real_thread=None,
             comments=[
-                {"comment_id": "c2", "parent_id": "t1_c1", "depth": 1, "body": "hidden"},
-                {"comment_id": "c3", "parent_id": "t1_c1", "depth": 1, "body": "hidden"},
+                {
+                    "comment_id": "c2",
+                    "parent_id": "t1_c1",
+                    "depth": 1,
+                    "body": "hidden",
+                },
+                {
+                    "comment_id": "c3",
+                    "parent_id": "t1_c1",
+                    "depth": 1,
+                    "body": "hidden",
+                },
             ],
             all_comments=[
                 {"comment_id": "c1", "parent_id": None, "depth": 0, "body": "hidden"},
-                {"comment_id": "c2", "parent_id": "t1_c1", "depth": 1, "body": "hidden"},
-                {"comment_id": "c3", "parent_id": "t1_c1", "depth": 1, "body": "hidden"},
+                {
+                    "comment_id": "c2",
+                    "parent_id": "t1_c1",
+                    "depth": 1,
+                    "body": "hidden",
+                },
+                {
+                    "comment_id": "c3",
+                    "parent_id": "t1_c1",
+                    "depth": 1,
+                    "body": "hidden",
+                },
             ],
             sample_offset=1,
             prior_plans=[
@@ -1509,7 +1606,12 @@ class GeneralizedCardTest(unittest.TestCase):
         # not enough, and the frame was still in 20% of v72 comments against 0
         # of 39,265 matched real tokens. Nothing here may name a "part", a
         # "proposition" or an "increment".
-        for banned in ("the part that", "proposition", "increment", "decision boundary"):
+        for banned in (
+            "the part that",
+            "proposition",
+            "increment",
+            "decision boundary",
+        ):
             self.assertNotIn(banned, rendered.lower(), banned)
         self.assertIn("concrete action or observation", rendered)
         # The parent's proposition is excluded once, by the structured
@@ -1637,7 +1739,9 @@ class GeneralizedCardTest(unittest.TestCase):
         self.assertIn("development sequence", rendered)
         self.assertIn("trace the workflow consequence", rendered)
 
-    def test_plan_quality_detects_semantic_collision_behind_new_claim_keys(self) -> None:
+    def test_plan_quality_detects_semantic_collision_behind_new_claim_keys(
+        self,
+    ) -> None:
         plans = {
             1: {
                 "reference_id": "R00001",
@@ -1827,7 +1931,9 @@ class GeneralizedCardTest(unittest.TestCase):
 
         wrapped = _comment_planner_batch_with_history(module, original, {})
         selected = wrapped(
-            seed_post=SimpleNamespace(source_raw_post_id="seed-repair", index=0, title="seed"),
+            seed_post=SimpleNamespace(
+                source_raw_post_id="seed-repair", index=0, title="seed"
+            ),
             sample_offset=0,
             comments=[
                 {"comment_id": "c1", "parent_id": None},
@@ -1843,7 +1949,9 @@ class GeneralizedCardTest(unittest.TestCase):
         self.assertEqual(selected[1]["claim_key"], "first")
         self.assertEqual(selected[2]["reference_id"], "R00002")
         self.assertNotIn(99, selected)
-        self.assertEqual(module.GENERALIZED_COMMENT_PLAN_REPORTS[-1]["repair_attempts"], 1)
+        self.assertEqual(
+            module.GENERALIZED_COMMENT_PLAN_REPORTS[-1]["repair_attempts"], 1
+        )
         self.assertEqual(
             module.GENERALIZED_COMMENT_PLAN_REPORTS[-1][
                 "unexpected_sample_ids_discarded"
@@ -1882,7 +1990,9 @@ class GeneralizedCardTest(unittest.TestCase):
         def original(**call_kwargs):
             offset = int(call_kwargs.get("sample_offset") or 0)
             comment_ids = tuple(row["comment_id"] for row in call_kwargs["comments"])
-            calls.append((offset, comment_ids, module.GENERALIZED_COMMENT_PLAN_FEEDBACK))
+            calls.append(
+                (offset, comment_ids, module.GENERALIZED_COMMENT_PLAN_FEEDBACK)
+            )
             sample_ids = range(offset + 1, offset + len(comment_ids) + 1)
             if len(calls) == 1:
                 # Reproduce the observed provider response: a 24-slot request
@@ -1926,9 +2036,13 @@ class GeneralizedCardTest(unittest.TestCase):
         self.assertEqual(report["missing_sample_ids_initial"], list(range(7, 25)))
         self.assertEqual(report["omitted_sample_ids"], [])
         self.assertEqual(report["schema_recovery_attempts"], 18)
-        self.assertEqual(report["missing_slot_policy"], "bounded_schema_recovery_then_hard_fail")
+        self.assertEqual(
+            report["missing_slot_policy"], "bounded_schema_recovery_then_hard_fail"
+        )
 
-    def test_single_slot_schema_completion_canonicalizes_echoed_example_id(self) -> None:
+    def test_single_slot_schema_completion_canonicalizes_echoed_example_id(
+        self,
+    ) -> None:
         module = SimpleNamespace(
             GENERALIZED_COMMENT_PLAN_HISTORY=[],
             GENERALIZED_COMMENT_PLAN_FEEDBACK="",
@@ -1952,7 +2066,9 @@ class GeneralizedCardTest(unittest.TestCase):
             if calls == 1:
                 return {}
             self.assertEqual(call_kwargs["sample_offset"], 37)
-            self.assertEqual([row["comment_id"] for row in call_kwargs["comments"]], ["c38"])
+            self.assertEqual(
+                [row["comment_id"] for row in call_kwargs["comments"]], ["c38"]
+            )
             # Provider copied an illustrative schema ID although only S38
             # appeared in the recovery prompt.
             return {
@@ -1969,9 +2085,14 @@ class GeneralizedCardTest(unittest.TestCase):
                 }
             }
 
-        comments = [{"comment_id": f"c{sample_id}", "parent_id": None} for sample_id in range(1, 39)]
+        comments = [
+            {"comment_id": f"c{sample_id}", "parent_id": None}
+            for sample_id in range(1, 39)
+        ]
         selected = _comment_planner_batch_with_history(module, original, {})(
-            seed_post=SimpleNamespace(source_raw_post_id="seed-schema-id", index=0, title="seed"),
+            seed_post=SimpleNamespace(
+                source_raw_post_id="seed-schema-id", index=0, title="seed"
+            ),
             sample_offset=37,
             comments=[comments[-1]],
             all_comments=comments,
@@ -2021,7 +2142,9 @@ class GeneralizedCardTest(unittest.TestCase):
             }
 
         selected = _comment_planner_batch_with_history(module, repeated_plan, {})(
-            seed_post=SimpleNamespace(source_raw_post_id="seed-warning", index=0, title="seed"),
+            seed_post=SimpleNamespace(
+                source_raw_post_id="seed-warning", index=0, title="seed"
+            ),
             sample_offset=0,
             comments=[
                 {"comment_id": "c1", "parent_id": None},
@@ -2084,7 +2207,9 @@ class GeneralizedCardTest(unittest.TestCase):
                 all_comments=[{"comment_id": "c1", "parent_id": None, "body": "words"}],
             )
 
-    def test_invalid_branch_id_perspective_is_deterministically_normalized(self) -> None:
+    def test_invalid_branch_id_perspective_is_deterministically_normalized(
+        self,
+    ) -> None:
         plans = {
             1: {"perspective_id": "B3", "semantic_move": "compare handling"},
             2: {"perspective_id": "p04", "semantic_move": "compare autofocus"},
@@ -2133,7 +2258,9 @@ class GeneralizedCardTest(unittest.TestCase):
         )
         self.assertEqual(report.dominant_perspective, "P01")
         self.assertEqual(report.dominant_perspective_share, 1.0)
-        self.assertIn("perspective_concentration", {issue.code for issue in report.issues})
+        self.assertIn(
+            "perspective_concentration", {issue.code for issue in report.issues}
+        )
         self.assertNotIn(
             "perspective_concentration",
             {issue.code for issue in report.repair_issues},
@@ -2284,9 +2411,7 @@ class GeneralizedCardTest(unittest.TestCase):
             {
                 "comment_count": 10,
                 "self_bleu_4": 0.03,
-                "metric_bands": {
-                    "self_bleu_4": {"q10": 0.02, "q90": 0.05}
-                },
+                "metric_bands": {"self_bleu_4": {"q10": 0.02, "q90": 0.05}},
             },
             local_task_id=10,
         )
@@ -2418,7 +2543,9 @@ class GeneralizedCardTest(unittest.TestCase):
         self.assertIn("target=0.03", problems[0])
         self.assertTrue(problems[1].startswith("semantic_overlap_high:"))
 
-    def test_actor_conditioned_writer_does_not_resample_soft_distribution_failure(self) -> None:
+    def test_actor_conditioned_writer_does_not_resample_soft_distribution_failure(
+        self,
+    ) -> None:
         module = SimpleNamespace(
             previous_comment_texts=lambda comments: [
                 str(row.get("content") or "") for row in comments or []
@@ -2544,7 +2671,9 @@ class GeneralizedCardTest(unittest.TestCase):
             "accepted_after_hard_slot_completion",
         )
 
-    def test_actor_conditioned_writer_does_not_resample_soft_length_failure(self) -> None:
+    def test_actor_conditioned_writer_does_not_resample_soft_length_failure(
+        self,
+    ) -> None:
         module = SimpleNamespace(
             previous_comment_texts=lambda comments: [
                 str(row.get("content") or "") for row in comments or []
@@ -2641,7 +2770,10 @@ class GeneralizedCardTest(unittest.TestCase):
             module,
             original,
             calibration={},
-        )(previous_comments=[], task=SimpleNamespace(local_task_id=1, real_word_count=0))
+        )(
+            previous_comments=[],
+            task=SimpleNamespace(local_task_id=1, real_word_count=0),
+        )
         self.assertEqual(calls, 1)
         self.assertFalse(result["skip"])
         self.assertEqual(
@@ -2730,7 +2862,9 @@ class GeneralizedCardTest(unittest.TestCase):
         self.assertEqual(tasks[0].utterance_mode, "local_advice")
         self.assertIsNone(module.low_info_word_limit(tasks[0]))
 
-    def test_direct_reply_receives_parent_semantic_exclusion_without_replanning(self) -> None:
+    def test_direct_reply_receives_parent_semantic_exclusion_without_replanning(
+        self,
+    ) -> None:
         module = configure_generator_backend(load_generator_backend(), self.config)
         tasks = module.expand_matched_real_sample_to_tasks(
             branches=[
@@ -2827,15 +2961,13 @@ class GeneralizedCardTest(unittest.TestCase):
         # The parent exclusion travels as its own structured field, not as a
         # second sentence appended to the Planner's avoid list.
         self.assertEqual(child.parent_semantic_move, tasks[0].semantic_move)
-        self.assertNotIn("Do not restate the parent contribution", child.avoid_repeating)
+        self.assertNotIn(
+            "Do not restate the parent contribution", child.avoid_repeating
+        )
         serialized = module.task_to_dict(child)
         self.assertEqual(serialized["reply_delta"], child.reply_delta)
-        self.assertEqual(
-            serialized["reply_novelty_anchor"], child.reply_novelty_anchor
-        )
-        self.assertEqual(
-            serialized["parent_semantic_move"], child.parent_semantic_move
-        )
+        self.assertEqual(serialized["reply_novelty_anchor"], child.reply_novelty_anchor)
+        self.assertEqual(serialized["parent_semantic_move"], child.parent_semantic_move)
         self.assertEqual(
             serialized["parent_decision_boundary"], child.parent_decision_boundary
         )
@@ -2874,13 +3006,15 @@ class GeneralizedCardTest(unittest.TestCase):
 
     def test_tree_order_plans_all_parents_before_direct_replies(self) -> None:
         module = load_generator_backend()
-        ordered = module.order_comments_by_thread_tree([
-            {"comment_id": "root_a", "parent_id": "t3_seed", "depth": 0},
-            {"comment_id": "child_a", "parent_id": "t1_root_a", "depth": 1},
-            {"comment_id": "root_b", "parent_id": "t3_seed", "depth": 0},
-            {"comment_id": "child_b", "parent_id": "t1_root_b", "depth": 1},
-            {"comment_id": "grandchild_a", "parent_id": "t1_child_a", "depth": 2},
-        ])
+        ordered = module.order_comments_by_thread_tree(
+            [
+                {"comment_id": "root_a", "parent_id": "t3_seed", "depth": 0},
+                {"comment_id": "child_a", "parent_id": "t1_root_a", "depth": 1},
+                {"comment_id": "root_b", "parent_id": "t3_seed", "depth": 0},
+                {"comment_id": "child_b", "parent_id": "t1_root_b", "depth": 1},
+                {"comment_id": "grandchild_a", "parent_id": "t1_child_a", "depth": 2},
+            ]
+        )
         self.assertEqual(
             [row["comment_id"] for row in ordered],
             ["root_a", "root_b", "child_a", "child_b", "grandchild_a"],
@@ -2892,11 +3026,28 @@ class GeneralizedCardTest(unittest.TestCase):
 
     def test_tree_order_normalizes_missing_parent_to_effective_root(self) -> None:
         module = load_generator_backend()
-        ordered = module.order_comments_by_thread_tree([
-            {"comment_id": "root", "parent_id": "t3_seed", "depth": 0, "post_id": "seed"},
-            {"comment_id": "orphan", "parent_id": "t1_deleted", "depth": 1, "post_id": "seed"},
-            {"comment_id": "child", "parent_id": "t1_root", "depth": 1, "post_id": "seed"},
-        ])
+        ordered = module.order_comments_by_thread_tree(
+            [
+                {
+                    "comment_id": "root",
+                    "parent_id": "t3_seed",
+                    "depth": 0,
+                    "post_id": "seed",
+                },
+                {
+                    "comment_id": "orphan",
+                    "parent_id": "t1_deleted",
+                    "depth": 1,
+                    "post_id": "seed",
+                },
+                {
+                    "comment_id": "child",
+                    "parent_id": "t1_root",
+                    "depth": 1,
+                    "post_id": "seed",
+                },
+            ]
+        )
         self.assertEqual(
             [row["comment_id"] for row in ordered],
             ["root", "orphan", "child"],
@@ -2909,7 +3060,9 @@ class GeneralizedCardTest(unittest.TestCase):
             [(0, 2), (2, 3)],
         )
 
-    def test_direct_reply_replaces_planner_none_delta_with_structural_increment(self) -> None:
+    def test_direct_reply_replaces_planner_none_delta_with_structural_increment(
+        self,
+    ) -> None:
         module = load_generator_backend()
         self.assertIn(
             "different narrow follow-up",
@@ -3134,9 +3287,7 @@ class GeneralizedCardTest(unittest.TestCase):
                 "text": text,
                 "raw": text,
                 "prompt": "prompt",
-                "attempts": [
-                    {"attempt": 1, "text": text, "problems": ["parent_copy"]}
-                ],
+                "attempts": [{"attempt": 1, "text": text, "problems": ["parent_copy"]}],
             }
 
         with tempfile.TemporaryDirectory() as directory, patch.dict(
@@ -3186,6 +3337,10 @@ class GeneralizedCardTest(unittest.TestCase):
         module = SimpleNamespace(
             GENERALIZED_ACTOR_MODE=MODE_DOMAIN_DERIVED,
             GENERALIZED_ACTOR_ASSIGNMENTS={("seed-actor", 1): state},
+            GENERALIZED_ACTIVE_REFERENCE_TEMPLATE={
+                "self_bleu_4": 0.03,
+                "raw_text_included": False,
+            },
         )
         comment = {"content": "local observation"}
         wrapped = _finalize_post_generation(
@@ -3213,6 +3368,15 @@ class GeneralizedCardTest(unittest.TestCase):
             post["thread_plan"]["actor_conditioning"]["source"],
             "evaluation-excluded domain references plus visible thread",
         )
+        self.assertEqual(
+            post["thread_plan"]["reference_metric_template"]["self_bleu_4"],
+            0.03,
+        )
+        self.assertFalse(
+            post["thread_plan"]["reference_metric_template_provenance"][
+                "raw_text_included"
+            ]
+        )
 
     def test_generalized_ngram_guard_blocks_repeated_entity_sequence(self) -> None:
         with patch(
@@ -3229,8 +3393,12 @@ class GeneralizedCardTest(unittest.TestCase):
                 }
             },
         ):
-            with patch.dict(os.environ, {"GENERALIZED_CARD_ACTOR_CONDITIONING": "none"}):
-                module = configure_generator_backend(load_generator_backend(), self.config)
+            with patch.dict(
+                os.environ, {"GENERALIZED_CARD_ACTOR_CONDITIONING": "none"}
+            ):
+                module = configure_generator_backend(
+                    load_generator_backend(), self.config
+                )
         task = SimpleNamespace(length_bucket="medium", payload_type="advice")
         problem = module.lexical_overlap_problem(
             text=(
@@ -3249,7 +3417,9 @@ class GeneralizedCardTest(unittest.TestCase):
         )
         self.assertTrue(problem.startswith("lexical_overlap_high:"))
 
-    def test_active_writer_guard_uses_semantic_metric_and_targeted_retry_context(self) -> None:
+    def test_active_writer_guard_uses_semantic_metric_and_targeted_retry_context(
+        self,
+    ) -> None:
         class FakeSemanticIndex:
             vectors = {
                 "Earlier autofocus claim.": [1.0, 0.0],
@@ -3273,15 +3443,17 @@ class GeneralizedCardTest(unittest.TestCase):
                 "reference_metric_calibration": {"available": True},
             },
         ):
-            with patch.dict(os.environ, {"GENERALIZED_CARD_ACTOR_CONDITIONING": "none"}):
-                module = configure_generator_backend(load_generator_backend(), self.config)
+            with patch.dict(
+                os.environ, {"GENERALIZED_CARD_ACTOR_CONDITIONING": "none"}
+            ):
+                module = configure_generator_backend(
+                    load_generator_backend(), self.config
+                )
         module.GENERALIZED_PLAN_SEMANTIC_INDEX = FakeSemanticIndex()
         module.GENERALIZED_ACTIVE_DISTRIBUTION_TARGET = {
             "comment_count": 3,
             "semantic_mean_cosine": 0.30,
-            "metric_bands": {
-                "semantic_mean_cosine": {"q10": 0.25, "q90": 0.35}
-            },
+            "metric_bands": {"semantic_mean_cosine": {"q10": 0.25, "q90": 0.35}},
         }
         task = SimpleNamespace(length_bucket="medium", payload_type="advice")
         problem = module.lexical_overlap_problem(
@@ -3333,15 +3505,21 @@ class GeneralizedCardTest(unittest.TestCase):
         self.assertEqual(legacy["max_tokens"], 6500)
 
         self.assertEqual(
-            _next_completion_boost(current=0, finish_reason="length", reasoning_model=True),
+            _next_completion_boost(
+                current=0, finish_reason="length", reasoning_model=True
+            ),
             128,
         )
         self.assertEqual(
-            _next_completion_boost(current=128, finish_reason="length", reasoning_model=True),
+            _next_completion_boost(
+                current=128, finish_reason="length", reasoning_model=True
+            ),
             256,
         )
         self.assertEqual(
-            _next_completion_boost(current=128, finish_reason="stop", reasoning_model=True),
+            _next_completion_boost(
+                current=128, finish_reason="stop", reasoning_model=True
+            ),
             128,
         )
         self.assertTrue(
@@ -3543,9 +3721,7 @@ class GeneralizedCardTest(unittest.TestCase):
             real_surface_shape: str
             utterance_mode: str
 
-        reconciled = reconcile_substantive_task(
-            Task(55, "full_answer", "joke_only")
-        )
+        reconciled = reconcile_substantive_task(Task(55, "full_answer", "joke_only"))
         self.assertEqual(reconciled.utterance_mode, "humorous_local_turn")
 
     def test_plan_quality_rejects_short_payload_for_substantive_slot(self) -> None:
@@ -3590,7 +3766,9 @@ class GeneralizedCardTest(unittest.TestCase):
         index = command.index("--tone-personal-min-share")
         self.assertEqual(command[index + 1], "0.21")
 
-    def test_domain_actor_is_composed_from_planner_row_without_fixed_persona(self) -> None:
+    def test_domain_actor_is_composed_from_planner_row_without_fixed_persona(
+        self,
+    ) -> None:
         normalized = {
             1: {
                 "semantic_move": "separate a viewing artifact from a saved-file artifact",
@@ -3633,8 +3811,12 @@ class GeneralizedCardTest(unittest.TestCase):
                 GENERALIZED_ACTOR_MODE=MODE_DOMAIN_DERIVED,
                 compact=lambda value, limit: str(value)[:limit],
             ),
-            seed_post=SimpleNamespace(title="Visible issue", body="One visible symptom", content=""),
-            target=SimpleNamespace(target_comments=1, max_depth_goal=1, shape_label="quiet"),
+            seed_post=SimpleNamespace(
+                title="Visible issue", body="One visible symptom", content=""
+            ),
+            target=SimpleNamespace(
+                target_comments=1, max_depth_goal=1, shape_label="quiet"
+            ),
             branches=[
                 SimpleNamespace(
                     branch_id=1,
@@ -3696,7 +3878,9 @@ class GeneralizedCardTest(unittest.TestCase):
         self.assertEqual(problem, "")
         self.assertFalse(module.has_blocking_guard_failure(["opening_reused"]))
 
-    def test_endpoint_preflight_retries_transient_timeout_then_defers_to_sdk(self) -> None:
+    def test_endpoint_preflight_retries_transient_timeout_then_defers_to_sdk(
+        self,
+    ) -> None:
         module = SimpleNamespace(describe_bad_endpoint=lambda **_: "bad endpoint")
         preflight = _endpoint_preflight_with_retry(module)
         with (
@@ -3800,14 +3984,28 @@ class GeneralizedCardTest(unittest.TestCase):
                 max_posts=2,
                 generator_policy_version="old",
                 generator_core_provenance={"generator": "old"},
-                command=["python", "generator", "--runs", "1", "--max-total-posts", "2"],
+                command=[
+                    "python",
+                    "generator",
+                    "--runs",
+                    "1",
+                    "--max-total-posts",
+                    "2",
+                ],
             )
             requested = dict(
                 stable,
                 max_posts=3,
                 generator_policy_version="new",
                 generator_core_provenance={"generator": "new"},
-                command=["python", "generator", "--runs", "2", "--max-total-posts", "3"],
+                command=[
+                    "python",
+                    "generator",
+                    "--runs",
+                    "2",
+                    "--max-total-posts",
+                    "3",
+                ],
             )
             script._verify_append_extension(
                 existing=existing,
@@ -3821,7 +4019,10 @@ class GeneralizedCardTest(unittest.TestCase):
                 old_max_posts=2,
             )
             self.assertEqual(
-                [(row["seed_start"], row["seed_end_exclusive"]) for row in lineage["segments"]],
+                [
+                    (row["seed_start"], row["seed_end_exclusive"])
+                    for row in lineage["segments"]
+                ],
                 [(0, 2), (2, 3)],
             )
 
@@ -3922,7 +4123,10 @@ class GeneralizedCardTest(unittest.TestCase):
                 completed_prefix=boundary,
             )
             self.assertEqual(
-                [(row["seed_start"], row["seed_end_exclusive"]) for row in lineage["segments"]],
+                [
+                    (row["seed_start"], row["seed_end_exclusive"])
+                    for row in lineage["segments"]
+                ],
                 [(0, 2), (2, 3)],
             )
 
@@ -3956,9 +4160,7 @@ class GeneralizedCardTest(unittest.TestCase):
             )
             self.assertTrue(result)
             self.assertEqual(calls, 3)
-            retry_log = (
-                output_dir / "_generation_failures" / "post_retries.jsonl"
-            )
+            retry_log = output_dir / "_generation_failures" / "post_retries.jsonl"
             rows = [json.loads(line) for line in retry_log.read_text().splitlines()]
             self.assertEqual(len(rows), 2)
             self.assertTrue(all(row["seed_index"] == 72 for row in rows))
@@ -4006,7 +4208,11 @@ class GeneralizedCardTest(unittest.TestCase):
                             {
                                 "id": "p1",
                                 "comments": [
-                                    {"id": "c1", "content": "[placeholder response]", "replies": []}
+                                    {
+                                        "id": "c1",
+                                        "content": "[placeholder response]",
+                                        "replies": [],
+                                    }
                                 ],
                             }
                         ]
@@ -4054,7 +4260,9 @@ class GeneralizedCardTest(unittest.TestCase):
             self.assertFalse(report["healthy"])
             self.assertEqual(report["overconcentrated_perspective_posts"], 1)
 
-    def test_output_audit_rejects_one_skipped_slot_even_at_high_acceptance(self) -> None:
+    def test_output_audit_rejects_one_skipped_slot_even_at_high_acceptance(
+        self,
+    ) -> None:
         with tempfile.TemporaryDirectory() as directory:
             run_dir = Path(directory) / "run_00_sampled_reddit"
             run_dir.mkdir(parents=True)
@@ -4165,9 +4373,7 @@ class GeneralizedCardTest(unittest.TestCase):
                 }
             },
         ]
-        flattened = list(
-            row for row in rows
-        )
+        flattened = list(row for row in rows)
         flattened.extend(rows[0]["replies"])
         recovered = _planner_rows_for_audit(rows=flattened, records=records)
         self.assertEqual(recovered[2]["parent_sample_id"], 1)
@@ -4264,7 +4470,9 @@ class GeneralizedCardTest(unittest.TestCase):
         self.assertIsNone(overlap)
 
     def test_output_audit_flags_long_exact_match(self) -> None:
-        copied = "this exact camera recommendation was copied from the reference discussion"
+        copied = (
+            "this exact camera recommendation was copied from the reference discussion"
+        )
         overlap = _closest_real_overlap(copied, [copied])
         self.assertIsNotNone(overlap)
         self.assertTrue(overlap["exact_match"])
@@ -4301,10 +4509,17 @@ class GeneralizedCardTest(unittest.TestCase):
             result = script._resolve_final_artifact(
                 stage="diversity",
                 prefix=prefix,
-                fallback={"root": "initial", "scores": "initial.csv", "matched": "initial-matched"},
+                fallback={
+                    "root": "initial",
+                    "scores": "initial.csv",
+                    "matched": "initial-matched",
+                },
             )
             self.assertEqual(result["root"], "accepted-round-1")
-            self.assertEqual(result["scores"], "accepted-round-1-eval/revised_generated_thread_scores.csv")
+            self.assertEqual(
+                result["scores"],
+                "accepted-round-1-eval/revised_generated_thread_scores.csv",
+            )
             self.assertEqual(result["matched"], "accepted-round-1-matched")
 
     def test_revision_lineage_changes_with_accepted_input(self) -> None:
@@ -4312,13 +4527,21 @@ class GeneralizedCardTest(unittest.TestCase):
             "generalized_card_run_revise_lineage",
             Path(__file__).resolve().parents[1] / "scripts" / "run_revise.py",
         )
-        first = script._artifact_lineage(Path("root-a"), Path("scores-a"), Path("matched-a"))
-        repeated = script._artifact_lineage(Path("root-a"), Path("scores-a"), Path("matched-a"))
-        second = script._artifact_lineage(Path("root-b"), Path("scores-b"), Path("matched-b"))
+        first = script._artifact_lineage(
+            Path("root-a"), Path("scores-a"), Path("matched-a")
+        )
+        repeated = script._artifact_lineage(
+            Path("root-a"), Path("scores-a"), Path("matched-a")
+        )
+        second = script._artifact_lineage(
+            Path("root-b"), Path("scores-b"), Path("matched-b")
+        )
         self.assertEqual(first, repeated)
         self.assertNotEqual(first, second)
 
-    def test_cross_prefix_strategy_history_merges_without_duplicate_rounds(self) -> None:
+    def test_cross_prefix_strategy_history_merges_without_duplicate_rounds(
+        self,
+    ) -> None:
         with tempfile.TemporaryDirectory() as directory:
             history_path = Path(directory) / "strategy_history.json"
             prior = {
@@ -4329,13 +4552,19 @@ class GeneralizedCardTest(unittest.TestCase):
                 "decision": "rejected",
             }
             history_path.write_text(json.dumps([prior]), encoding="utf-8")
-            merged = merge_strategy_history(history_path, [prior, {
-                "round": 1,
-                "input_root": "root-a",
-                "output_root": "proposal-b",
-                "selected_profile": "middle_mass",
-                "decision": "accepted",
-            }])
+            merged = merge_strategy_history(
+                history_path,
+                [
+                    prior,
+                    {
+                        "round": 1,
+                        "input_root": "root-a",
+                        "output_root": "proposal-b",
+                        "selected_profile": "middle_mass",
+                        "decision": "accepted",
+                    },
+                ],
+            )
             self.assertEqual(len(merged), 2)
             memory = build_memory(
                 merged,
@@ -4374,7 +4603,9 @@ class GeneralizedCardTest(unittest.TestCase):
         parser = script.build_parser()
         args = parser.parse_args(["--tag", "test"])
 
-        def row(*, mwu: float, ks: float, generated: float, real: float) -> dict[str, float]:
+        def row(
+            *, mwu: float, ks: float, generated: float, real: float
+        ) -> dict[str, float]:
             return {
                 "mwu_p_value": mwu,
                 "ks_p_value": ks,
@@ -4404,12 +4635,15 @@ class GeneralizedCardTest(unittest.TestCase):
             script.stage_decision(stage, evaluation, args)
             for stage in ("diversity", "selfbert", "tone", "story", "structure")
         ]
-        self.assertEqual([item.stage for item in decisions if item.required], [
-            "diversity",
-            "selfbert",
-            "tone",
-            "structure",
-        ])
+        self.assertEqual(
+            [item.stage for item in decisions if item.required],
+            [
+                "diversity",
+                "selfbert",
+                "tone",
+                "structure",
+            ],
+        )
         self.assertEqual(decisions[-1].story_rounds, 0)
         self.assertEqual(decisions[-1].structure_rounds, 7)
 
@@ -4439,7 +4673,10 @@ class GeneralizedCardTest(unittest.TestCase):
         skipped_parent = Task(2, 1, 1, "parent_full")
         child = Task(3, 2, 2, "parent_full")
         grandchild = Task(4, 3, 3, "parent_full")
-        task_by_id = {task.local_task_id: task for task in (root, skipped_parent, child, grandchild)}
+        task_by_id = {
+            task.local_task_id: task
+            for task in (root, skipped_parent, child, grandchild)
+        }
         actual = {1: {"comment_id": 1, "depth": 0}}
 
         aligned_child, parent = module.align_task_to_generated_parent(
@@ -4486,7 +4723,9 @@ class GeneralizedCardTest(unittest.TestCase):
             ),
         )
 
-    def test_extended_stage_order_covers_unattempted_metrics_before_repeats(self) -> None:
+    def test_extended_stage_order_covers_unattempted_metrics_before_repeats(
+        self,
+    ) -> None:
         script = load_script_module(
             "generalized_card_run_full_revise_coverage_order",
             Path(__file__).resolve().parents[1] / "scripts" / "run_full_revise.py",
@@ -4549,8 +4788,12 @@ class GeneralizedCardTest(unittest.TestCase):
     def test_text_metric_candidate_rank_prefers_exact_gap_reduction(self) -> None:
         from generalized_card.text_metric_reviser import CandidateDecision
 
-        weaker = CandidateDecision(1, True, "a", "b", "x", "accepted", 0.5, 0.48, 0.02, 0.8, 1.0)
-        stronger = CandidateDecision(1, True, "a", "c", "x", "accepted", 0.5, 0.44, 0.06, 0.7, 1.0)
+        weaker = CandidateDecision(
+            1, True, "a", "b", "x", "accepted", 0.5, 0.48, 0.02, 0.8, 1.0
+        )
+        stronger = CandidateDecision(
+            1, True, "a", "c", "x", "accepted", 0.5, 0.44, 0.06, 0.7, 1.0
+        )
         self.assertGreater(candidate_rank(stronger), candidate_rank(weaker))
 
     def test_reviser_adapter_preserves_core_comment_budget_functions(self) -> None:
@@ -4568,7 +4811,9 @@ class GeneralizedCardTest(unittest.TestCase):
         comments = ["a", "b", "c", "d"]
         self.assertIs(module.select_candidate_comments, original_select)
         self.assertIs(module.rewrite_budget_for_thread, original_budget)
-        self.assertEqual(module.select_candidate_comments(comments=comments, limit=1), ["a"])
+        self.assertEqual(
+            module.select_candidate_comments(comments=comments, limit=1), ["a"]
+        )
         self.assertEqual(module.rewrite_budget_for_thread(comment_count=4), 1)
 
     def test_real_reviser_adapters_only_replace_domain_boundaries(self) -> None:
@@ -4603,9 +4848,7 @@ class GeneralizedCardTest(unittest.TestCase):
             for name in names:
                 self.assertIs(getattr(module, name), before[name], f"{kind}.{name}")
             self.assertEqual(
-                module.GENERALIZED_CARD_REVISER_PARITY[
-                    "unexpected_backend_functions"
-                ],
+                module.GENERALIZED_CARD_REVISER_PARITY["unexpected_backend_functions"],
                 [],
                 kind,
             )
@@ -4661,9 +4904,7 @@ class GeneralizedCardTest(unittest.TestCase):
         self.assertIn("emotion_entropy", command[protected + 1])
         improvement = command.index("--min-round-improvement")
         self.assertEqual(command[improvement + 1], "0.001")
-        self.assertTrue(
-            command[1].endswith("run_selfbleu_revision_controller.py")
-        )
+        self.assertTrue(command[1].endswith("run_selfbleu_revision_controller.py"))
         self.assertIn("--continue-after-reject", command)
         self.assertIn("--verbose-candidates", command)
         self.assertIn("--playbook", command)
@@ -4686,9 +4927,7 @@ class GeneralizedCardTest(unittest.TestCase):
             "generalized_card_run_revise_tone_thresholds",
             Path(__file__).resolve().parents[1] / "scripts" / "run_revise.py",
         )
-        args = stage.build_parser().parse_args(
-            ["--tag", "test", "--stage", "tone"]
-        )
+        args = stage.build_parser().parse_args(["--tag", "test", "--stage", "tone"])
         command = stage._controller_command(
             args=args,
             config={
@@ -4775,11 +5014,16 @@ class GeneralizedCardTest(unittest.TestCase):
         args = selfbert.build_parser().parse_args(
             [
                 "generated",
-                "--scores-csv", "scores.csv",
-                "--matched-eval-dir", "matched",
-                "--seed-post-pool-json", "seed.json",
-                "--real-scores-csv", "real.csv",
-                "--output-prefix", "revision",
+                "--scores-csv",
+                "scores.csv",
+                "--matched-eval-dir",
+                "matched",
+                "--seed-post-pool-json",
+                "seed.json",
+                "--real-scores-csv",
+                "real.csv",
+                "--output-prefix",
+                "revision",
             ]
         )
         command = selfbert.build_reviser_command(
@@ -4906,8 +5150,7 @@ class GeneralizedCardTest(unittest.TestCase):
             Path(__file__).resolve().parents[1] / "scripts" / "run_full_revise.py",
         )
         summary = {
-            metric: {"status": "PASS"}
-            for metric in script.REQUIRED_EXTENDED_METRICS
+            metric: {"status": "PASS"} for metric in script.REQUIRED_EXTENDED_METRICS
         }
         self.assertEqual(script.required_nonpassing_metrics(summary), [])
         summary["mean_story_probability"]["status"] = "PARTIAL"
@@ -4963,10 +5206,7 @@ class GeneralizedCardTest(unittest.TestCase):
             "generalized_card_run_full_revise_outer_gate",
             Path(__file__).resolve().parents[1] / "scripts" / "run_full_revise.py",
         )
-        before = {
-            metric: {"status": "PASS"}
-            for metric in script.ALL_METRICS
-        }
+        before = {metric: {"status": "PASS"} for metric in script.ALL_METRICS}
         after = {metric: dict(row) for metric, row in before.items()}
         after["neutral_rate"]["status"] = "PARTIAL"
         after["avg_depth"]["status"] = "FAIL"
@@ -5001,7 +5241,9 @@ class GeneralizedCardTest(unittest.TestCase):
         self.assertEqual(report["metrics"][0]["before"]["status"], "PASS")
         self.assertEqual(report["metrics"][0]["after"]["status"], "PARTIAL")
 
-    def test_full_revision_only_skips_truly_unsupported_reverse_directions(self) -> None:
+    def test_full_revision_only_skips_truly_unsupported_reverse_directions(
+        self,
+    ) -> None:
         script = load_script_module(
             "generalized_card_run_full_revise_directions",
             Path(__file__).resolve().parents[1] / "scripts" / "run_full_revise.py",
@@ -5282,9 +5524,13 @@ class GeneralizedCardTest(unittest.TestCase):
         self.assertIn("Earlier generated comments", rendered)
         self.assertIn("Thread-level distribution pressure", rendered)
         self.assertIn("One-shot semantic difference contract", rendered)
-        self.assertIn("required contribution: acknowledge the useful grip detail", rendered)
+        self.assertIn(
+            "required contribution: acknowledge the useful grip detail", rendered
+        )
         self.assertIn("explicitly avoid: complete review", rendered)
-        self.assertIn("Required local move: acknowledge the useful grip detail", rendered)
+        self.assertIn(
+            "Required local move: acknowledge the useful grip detail", rendered
+        )
         self.assertIn("Short utterances already used anywhere in this thread", rendered)
         self.assertIn("The grip felt fine to me.", rendered)
         # The low-info path renders the same route lock, so it needs the same
@@ -5622,8 +5868,10 @@ class GeneralizedCardTest(unittest.TestCase):
                 encoding="utf-8",
             )
             with patch("builtins.print") as print_mock:
-                script._print_saved_matched_results(root)
-            rendered = "\n".join(str(call.args[0]) for call in print_mock.call_args_list)
+                script._print_saved_matched_results(root, sample_size=10)
+            rendered = "\n".join(
+                str(call.args[0]) for call in print_mock.call_args_list
+            )
             self.assertIn("PASS/PARTIAL/FAIL: 1/1/1", rendered)
             self.assertIn("passing_metric", rendered)
 
@@ -5882,14 +6130,21 @@ class WriterRouteLockTest(unittest.TestCase):
             GENERALIZED_WRITER_ROUTE_LOCK=route_lock,
         )
         comments = [
-            {"comment_id": "c1", "parent_id": None, "depth": 0, "body": "root turn body"},
+            {
+                "comment_id": "c1",
+                "parent_id": None,
+                "depth": 0,
+                "body": "root turn body",
+            },
             {"comment_id": "c2", "parent_id": "c1", "depth": 1, "body": "a reply body"},
         ]
         return reply_planning.render_direct_reply_planner_prompt(
             config=self.config,
             backend=backend,
             seed_post=SimpleNamespace(
-                title="Camera question", body="Autofocus issue", content="Autofocus issue"
+                title="Camera question",
+                body="Autofocus issue",
+                content="Autofocus issue",
             ),
             comments=[comments[1]],
             all_comments=comments,
@@ -5978,9 +6233,7 @@ class OwnFactLicenseTest(unittest.TestCase):
     def test_off_reproduces_the_v75_blanket_ban_verbatim(self) -> None:
         from generalized_card.writer_grounding import story_fact_rule
 
-        rule = story_fact_rule(
-            self._task(), has_domain_claim=False, mode="off"
-        )
+        rule = story_fact_rule(self._task(), has_domain_claim=False, mode="off")
         self.assertEqual(
             rule,
             "Do not invent products, specifications, prices, measurements, "
@@ -6073,7 +6326,9 @@ class OwnFactLicenseTest(unittest.TestCase):
         backend = self._backend("own")
         for task in (
             self._task(),
-            self._task(allow_first_person_frame=False, evidence_mode="small_observation"),
+            self._task(
+                allow_first_person_frame=False, evidence_mode="small_observation"
+            ),
             self._task(
                 allow_first_person_frame=False,
                 evidence_mode="small_observation",
@@ -6199,8 +6454,18 @@ class NamedConcretenessLicenseTest(unittest.TestCase):
             ),
         ]
         banned = (
-            "gear", "camera", "lens", "shot", "shoot", "photo", "iso",
-            "aperture", "specification", "megapixel", "sensor", "product",
+            "gear",
+            "camera",
+            "lens",
+            "shot",
+            "shoot",
+            "photo",
+            "iso",
+            "aperture",
+            "specification",
+            "megapixel",
+            "sensor",
+            "product",
         )
         for text in texts:
             for word in banned:
@@ -6224,7 +6489,8 @@ class NamedConcretenessLicenseTest(unittest.TestCase):
         }
         self.assertEqual(len(set(rules.values())), 3)
         self.assertEqual(
-            rules["off"], "Name a product, model, or number only if it is visible above."
+            rules["off"],
+            "Name a product, model, or number only if it is visible above.",
         )
 
 
@@ -6265,7 +6531,10 @@ class SpeakerRosterTest(unittest.TestCase):
 
         return build_speaker_roster(
             self._rows(),
-            inventory={"available": True, "terms": [{"term": f"Gear{i}"} for i in range(12)]},
+            inventory={
+                "available": True,
+                "terms": [{"term": f"Gear{i}"} for i in range(12)],
+            },
             facets=("low light", "travel", "video"),
         )
 
@@ -6388,8 +6657,12 @@ class MicroReactionShapeTest(unittest.TestCase):
 
     def test_a_fresh_candidate_can_escape_a_collision(self) -> None:
         module = load_generator_backend()
-        first = self._shaped(module, 32, "a long candidate that must be cut down to size")
-        second = self._shaped(module, 32, "a different long candidate needing the same cut")
+        first = self._shaped(
+            module, 32, "a long candidate that must be cut down to size"
+        )
+        second = self._shaped(
+            module, 32, "a different long candidate needing the same cut"
+        )
         self.assertNotEqual(
             first,
             second,
@@ -6399,7 +6672,9 @@ class MicroReactionShapeTest(unittest.TestCase):
     def test_pool_is_wider_than_the_worst_observed_thread(self) -> None:
         module = load_generator_backend()
         produced = {
-            self._shaped(module, task_id, f"candidate number {task_id} is far too long here")
+            self._shaped(
+                module, task_id, f"candidate number {task_id} is far too long here"
+            )
             for task_id in range(40)
         }
         # v74's worst thread had 10 micro slots

@@ -95,17 +95,44 @@ Changed:
   per-comment model rows, reports all 12 paired distances, Planner→Writer
   realization, repetition contributors, and explicitly weak helpful/profanity
   surface probes in machine-readable JSON and Markdown.
+- Persist the exact evaluation-excluded reference metric template atomically in
+  each post's `thread_plan`. The content audit now decomposes every metric into
+  real → Planner target and Planner target → Writer output, with separate
+  MWU/KS/Cliff/Wasserstein statistics. Legacy logs are accepted only when their
+  post alignment is provably unambiguous.
+- Replace pre-score cleanup with a byte-identical scoring snapshot. The output
+  audit must reject bad Writer text or tree metadata; evaluation no longer
+  edits, deletes, or normalizes the artifact it claims to measure.
+- Move the active metric suite and formal distribution statistics behind small,
+  pinned generalized modules. The matched evaluator and all scorer CLIs are now
+  tracked in git; the recoverability audit checks both git tracking and the
+  transitive local-import closure. Default parity excludes legacy revisers.
+- Treat n=1 as descriptive at every output layer. MWU/KS numbers remain visible,
+  but neither the matched evaluator nor `run_evaluate` can print a false
+  `12/12 PASS` for one thread.
+
+A zero-API audit separated target choice from realization. Across both the
+10-thread diagnostic set and all 150 matched seeds, the selected excluded-real
+Planner templates pass both MWU and KS on all 12 metrics. That is evidence that
+the distribution sampler is working, not permission to tune against final test
+p-values. On the historical v80 n=1 thread, for example, polite target/real are
+0.249/0.232 but Writer output is 0.059; story target/real are 0.128/0.111 but
+Writer output is 0.249. The next paid run should therefore test Writer
+realization rather than rewrite the sampler.
 
 Expected paid-run effects are bounded and falsifiable: fewer impossible Planner
 repair requests, explicit counts of initial fixed-contract disagreement, and no
 `tone overlay: none` Prompt noise. Content/metric success still requires the new
 large-thread artifact followed by a sufficient-N matched evaluation.
 
-Offline acceptance: all 271 generalized tests pass; Ruff passes on the changed
-production and test files with the facade's intentional dynamic exports
-excluded; the camera-product backend self-test passes; all 76 source pins agree;
-the v80 185/186 artifact remains rejected; and the exact seed-8 configuration
-passes `--prepare-only` without an API call.
+Offline acceptance: all 285 generalized tests pass; the focused scorer test adds
+3 more passes; Ruff passes on every active changed source; the camera-product
+backend self-test passes; all 92 declared pins agree, all 67 active pins are git
+tracked, and the active local-import closure has zero omissions, including
+dynamically imported/launched runners and token tooling. The v80 185/186
+artifact remains rejected, its content report replays under the strict legacy
+join, and the exact seed-8 configuration passes `--prepare-only` without an API
+call.
 
 ---
 

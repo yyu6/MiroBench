@@ -36,6 +36,8 @@ from generalized_card.domain_profile import (  # noqa: E402
 )
 from generalized_card.core_contract import (  # noqa: E402
     CORE_POLICY_VERSION,
+    CURRENT_GENERATION_CORE_NAMES,
+    GENERATION_ADAPTER_CORE_NAMES,
     GENERALIZED_V2_GENERATION_POLICY_VERSION,
     REVISION_CORE_POLICY_VERSION,
     verify_core_contract,
@@ -57,7 +59,9 @@ DEFAULT_PRICES = {
 
 
 def build_parser() -> argparse.ArgumentParser:
-    parser = argparse.ArgumentParser(description="Run generalized CARD planner + writer generation.")
+    parser = argparse.ArgumentParser(
+        description="Run generalized CARD planner + writer generation."
+    )
     parser.add_argument("--domain", default="camera")
     parser.add_argument("--model", default="gpt-5.4-mini")
     parser.add_argument("--base-url", default="https://api.openai.com/v1")
@@ -88,7 +92,11 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--max-comments-per-post", type=int, default=0)
     parser.add_argument("--comment-count-scale", type=float, default=1.0)
     parser.add_argument("--matched-real-comments", type=int, default=0)
-    parser.add_argument("--exact-matched-thread-size", action=argparse.BooleanOptionalAction, default=True)
+    parser.add_argument(
+        "--exact-matched-thread-size",
+        action=argparse.BooleanOptionalAction,
+        default=True,
+    )
     parser.add_argument("--context-dropout-rate", type=float)
     parser.add_argument("--context-jitter-rate", type=float)
     parser.add_argument(
@@ -383,7 +391,10 @@ def main() -> None:
         raise SystemExit(
             "--extend-existing and --upgrade-generation-policy are separate lineage operations"
         )
-    if args.actor_conditioning == MODE_DOMAIN_DERIVED and args.persona_conditioning != MODE_NONE:
+    if (
+        args.actor_conditioning == MODE_DOMAIN_DERIVED
+        and args.persona_conditioning != MODE_NONE
+    ):
         raise SystemExit(
             "--actor-conditioning domain-derived cannot be combined with a fixed MatrAIx persona mode"
         )
@@ -407,35 +418,12 @@ def main() -> None:
         if args.generator_profile == "generalized-v2"
         else "generator"
     )
-    core_provenance = verify_core_contract(
-        (
-            generator_core_name,
-            "generator_adapter",
-            "planner_schema",
-            "generation_runner",
-            "domain_profile",
-            "viewpoint_bank",
-            "planning_quality",
-            "generation_distribution",
-            "planner_distribution",
-            "task_distribution",
-            "first_pass_policy",
-            "lexical_quality",
-            "reference_metric_calibration",
-            "generation_diversity",
-            "writer_quality",
-            "semantic_realization",
-            "length_policy",
-            "long_form_planning",
-            "surface_contract",
-            "domain_prompt_adapter",
-            "writer_grounding",
-            "speaker_roster",
-            "reply_planning",
-            "persona_bridge",
-            "actor_conditioning",
-        )
+    generation_core_names = (
+        CURRENT_GENERATION_CORE_NAMES
+        if args.generator_profile == "generalized-v2"
+        else (generator_core_name, *GENERATION_ADAPTER_CORE_NAMES)
     )
+    core_provenance = verify_core_contract(generation_core_names)
     generator_policy_version = (
         GENERALIZED_V2_GENERATION_POLICY_VERSION
         if args.generator_profile == "generalized-v2"
@@ -663,7 +651,9 @@ def main() -> None:
             )
         else:
             if "generation_lineage" in existing_config:
-                requested_config["generation_lineage"] = existing_config["generation_lineage"]
+                requested_config["generation_lineage"] = existing_config[
+                    "generation_lineage"
+                ]
             _verify_resume_config(existing_config, requested_config)
     _write_json(run_root / "run_config.json", requested_config)
     if append_extension:
@@ -680,7 +670,9 @@ def main() -> None:
             requested=requested_config,
             completed_prefix=completed_prefix,
         )
-    print(f"[generalized-config] domain={config.domain_id} model={args.model}", flush=True)
+    print(
+        f"[generalized-config] domain={config.domain_id} model={args.model}", flush=True
+    )
     print(f"[generalized-config] seed_pool={seed_pool}", flush=True)
     print(
         f"[generalized-config] domain_profile={domain_profile_path} "
@@ -772,9 +764,7 @@ def main() -> None:
     env["GENERALIZED_CARD_DOMAIN_CLAIM"] = args.domain_claim
     env["GENERALIZED_CARD_WRITER_PROMPT"] = args.writer_prompt
     env["GENERALIZED_CARD_WRITER_ROUTE_LOCK"] = args.writer_route_lock
-    env["GENERALIZED_CARD_SOCIAL_CONTRACT_COHERENCE"] = (
-        args.social_contract_coherence
-    )
+    env["GENERALIZED_CARD_SOCIAL_CONTRACT_COHERENCE"] = args.social_contract_coherence
     env["GENERALIZED_CARD_REPLY_SIBLING_VISIBILITY"] = args.reply_sibling_visibility
     env["GENERALIZED_CARD_OWN_FACT_LICENSE"] = args.own_fact_license
     env["GENERALIZED_CARD_SPEAKER_IDENTITY"] = args.speaker_identity
@@ -803,11 +793,11 @@ def main() -> None:
         args.plan_embedding_threshold
     )
     env["GENERALIZED_CARD_PLAN_EMBEDDING_DEVICE"] = args.plan_embedding_device
-    env["GENERALIZED_CARD_PLAN_MAX_COLLISION_RATE"] = str(
-        args.plan_max_collision_rate
-    )
+    env["GENERALIZED_CARD_PLAN_MAX_COLLISION_RATE"] = str(args.plan_max_collision_rate)
     env["GENERALIZED_CARD_MAX_PERSPECTIVE_SHARE"] = str(args.max_perspective_share)
-    env["GENERALIZED_CARD_STRICT_PLAN_QUALITY"] = "1" if args.strict_plan_quality else "0"
+    env["GENERALIZED_CARD_STRICT_PLAN_QUALITY"] = (
+        "1" if args.strict_plan_quality else "0"
+    )
     env["GENERALIZED_CARD_WRITER_HARD_RECOVERY_ROUNDS"] = str(
         args.writer_hard_recovery_rounds
     )
@@ -856,7 +846,9 @@ def main() -> None:
         print("[interrupted] completed post slots remain resumable", flush=True)
     finally:
         try:
-            persona_manifest = annotate_generated_outputs(generated_root, persona_runtime)
+            persona_manifest = annotate_generated_outputs(
+                generated_root, persona_runtime
+            )
             if persona_runtime.enabled:
                 print(
                     f"[persona-manifest] comments={persona_manifest.get('comments', 0)} "
@@ -913,62 +905,126 @@ def _generator_command(
     return [
         sys.executable,
         str(PACKAGE_ROOT / "scripts" / "run_generator_backend.py"),
-        "--seed-post-pool-json", str(seed_pool),
-        "--real-comments-dir", str(config_raw_dir),
-        "--output-dir", str(generated_root),
-        "--runs", str(runs),
-        "--posts-per-run", str(args.posts_per_run),
-        "--max-total-posts", str(args.max_posts),
-        "--start-seed-index", str(args.start_seed_index),
-        "--seed", str(args.sampling_seed),
-        "--max-comments-per-post", str(args.max_comments_per_post),
-        "--comment-count-scale", str(args.comment_count_scale),
-        "--exact-matched-thread-size" if args.exact_matched_thread_size else "--no-exact-matched-thread-size",
-        "--planner-model", args.model,
-        "--planner-base-url", args.base_url,
-        "--planner-retries", str(args.api_retries),
-        "--planner-max-tokens", str(args.planner_max_tokens),
-        "--planner-timeout", "900",
-        "--comment-planner-max-tokens", str(args.comment_planner_max_tokens),
-        "--comment-planner-batch-size", str(args.comment_planner_batch_size),
-        "--writer-model", args.model,
-        "--writer-base-url", args.base_url,
-        "--writer-timeout", "900",
-        "--writer-profile", "gpt54_reddit_writer",
-        "--writer-max-tokens", str(args.writer_max_tokens),
-        "--writer-retries", str(args.writer_retries),
-        "--post-retry-limit", str(args.post_retry_limit),
-        "--post-retry-delay", str(args.post_retry_delay),
-        "--matched-real-comments", str(args.matched_real_comments),
-        "--claim-key-budget", "1",
-        "--claim-family-max-share", "0.18",
-        "--claim-family-min-budget", "3",
-        "--opening-reuse-budget", "1",
-        "--opener-family-reuse-budget", "5",
-        "--template-phrase-reuse-budget", "4",
-        "--advisor-max-share", value("advisor_max_share", 0.28),
-        "--question-max-share", value("question_max_share", 0.18),
-        "--micro-target-share", value("micro_target_share", 0.07),
-        "--short-max-share", value("short_max_share", 0.18),
-        "--social-noise-min-share", value("social_noise_min_share", 0.18),
-        "--gratitude-min-share", value("gratitude_min_share", 0.12),
-        "--tone-harsh-max-share", value("tone_harsh_max_share", 0.14),
-        "--tone-calm-min-share", value("tone_calm_min_share", 0.30),
-        "--tone-personal-min-share", value(
+        "--seed-post-pool-json",
+        str(seed_pool),
+        "--real-comments-dir",
+        str(config_raw_dir),
+        "--output-dir",
+        str(generated_root),
+        "--runs",
+        str(runs),
+        "--posts-per-run",
+        str(args.posts_per_run),
+        "--max-total-posts",
+        str(args.max_posts),
+        "--start-seed-index",
+        str(args.start_seed_index),
+        "--seed",
+        str(args.sampling_seed),
+        "--max-comments-per-post",
+        str(args.max_comments_per_post),
+        "--comment-count-scale",
+        str(args.comment_count_scale),
+        "--exact-matched-thread-size"
+        if args.exact_matched_thread_size
+        else "--no-exact-matched-thread-size",
+        "--planner-model",
+        args.model,
+        "--planner-base-url",
+        args.base_url,
+        "--planner-retries",
+        str(args.api_retries),
+        "--planner-max-tokens",
+        str(args.planner_max_tokens),
+        "--planner-timeout",
+        "900",
+        "--comment-planner-max-tokens",
+        str(args.comment_planner_max_tokens),
+        "--comment-planner-batch-size",
+        str(args.comment_planner_batch_size),
+        "--writer-model",
+        args.model,
+        "--writer-base-url",
+        args.base_url,
+        "--writer-timeout",
+        "900",
+        "--writer-profile",
+        "gpt54_reddit_writer",
+        "--writer-max-tokens",
+        str(args.writer_max_tokens),
+        "--writer-retries",
+        str(args.writer_retries),
+        "--post-retry-limit",
+        str(args.post_retry_limit),
+        "--post-retry-delay",
+        str(args.post_retry_delay),
+        "--matched-real-comments",
+        str(args.matched_real_comments),
+        "--claim-key-budget",
+        "1",
+        "--claim-family-max-share",
+        "0.18",
+        "--claim-family-min-budget",
+        "3",
+        "--opening-reuse-budget",
+        "1",
+        "--opener-family-reuse-budget",
+        "5",
+        "--template-phrase-reuse-budget",
+        "4",
+        "--advisor-max-share",
+        value("advisor_max_share", 0.28),
+        "--question-max-share",
+        value("question_max_share", 0.18),
+        "--micro-target-share",
+        value("micro_target_share", 0.07),
+        "--short-max-share",
+        value("short_max_share", 0.18),
+        "--social-noise-min-share",
+        value("social_noise_min_share", 0.18),
+        "--gratitude-min-share",
+        value("gratitude_min_share", 0.12),
+        "--tone-harsh-max-share",
+        value("tone_harsh_max_share", 0.14),
+        "--tone-calm-min-share",
+        value("tone_calm_min_share", 0.30),
+        "--tone-personal-min-share",
+        value(
             "tone_personal_min_share",
             0.18,
         ),
-        "--tone-polite-min-share", value("tone_polite_min_share", 0.10),
-        "--context-dropout-rate", str(context_dropout),
-        "--context-jitter-rate", str(context_jitter),
+        "--tone-polite-min-share",
+        value("tone_polite_min_share", 0.10),
+        "--context-dropout-rate",
+        str(context_dropout),
+        "--context-jitter-rate",
+        str(context_jitter),
     ]
 
 
 def _set_prices(env: dict[str, str], args: argparse.Namespace) -> None:
     defaults = DEFAULT_PRICES.get(args.model.lower())
-    input_price = args.price_input_per_1m if args.price_input_per_1m is not None else defaults[0] if defaults else None
-    cached_price = args.price_cached_input_per_1m if args.price_cached_input_per_1m is not None else defaults[1] if defaults else None
-    output_price = args.price_output_per_1m if args.price_output_per_1m is not None else defaults[2] if defaults else None
+    input_price = (
+        args.price_input_per_1m
+        if args.price_input_per_1m is not None
+        else defaults[0]
+        if defaults
+        else None
+    )
+    cached_price = (
+        args.price_cached_input_per_1m
+        if args.price_cached_input_per_1m is not None
+        else defaults[1]
+        if defaults
+        else None
+    )
+    output_price = (
+        args.price_output_per_1m
+        if args.price_output_per_1m is not None
+        else defaults[2]
+        if defaults
+        else None
+    )
     if input_price is not None:
         env["TOKEN_PRICE_INPUT_PER_1M"] = str(input_price)
     if cached_price is not None:
@@ -985,8 +1041,10 @@ def _summarize_usage(run_root: Path, elapsed: float, env: dict[str, str]) -> Non
             sys.executable,
             str(REPO_ROOT / "scripts" / "summarize_token_usage.py"),
             str(token_log),
-            "--output", str(summary),
-            "--elapsed-seconds", str(elapsed),
+            "--output",
+            str(summary),
+            "--elapsed-seconds",
+            str(elapsed),
         ],
         cwd=REPO_ROOT,
         env=env,
@@ -1084,9 +1142,7 @@ def _preserve_revision_lineage(
             "revision_core_policy_version"
         ]
     if existing.get("revision_policy_history"):
-        requested["revision_policy_history"] = existing[
-            "revision_policy_history"
-        ]
+        requested["revision_policy_history"] = existing["revision_policy_history"]
 
 
 def _verify_append_extension(
@@ -1101,13 +1157,12 @@ def _verify_append_extension(
     if old_max <= 0 or new_max <= old_max:
         raise RuntimeError(f"Extension must increase max_posts: {old_max}->{new_max}")
 
-    stable_fields = RUN_EXPERIMENT_FIELDS + (
-        "post_recovery",
-    )
+    stable_fields = RUN_EXPERIMENT_FIELDS + ("post_recovery",)
     changed = [key for key in stable_fields if existing.get(key) != requested.get(key)]
     if changed:
         raise RuntimeError(
-            "Cannot extend generation with changed configuration fields: " + ", ".join(changed)
+            "Cannot extend generation with changed configuration fields: "
+            + ", ".join(changed)
         )
     if _size_neutral_command(existing.get("command")) != _size_neutral_command(
         requested.get("command")
@@ -1175,9 +1230,7 @@ def _verify_policy_upgrade(
 ) -> int:
     """Validate an explicit, append-only code-policy transition."""
 
-    stable_fields = RUN_EXPERIMENT_FIELDS + (
-        "max_posts",
-    )
+    stable_fields = RUN_EXPERIMENT_FIELDS + ("max_posts",)
     changed = [key for key in stable_fields if existing.get(key) != requested.get(key)]
     if changed:
         raise RuntimeError(
@@ -1198,9 +1251,13 @@ def _verify_policy_upgrade(
             "Cannot upgrade generation policy: existing seeds are not a contiguous prefix"
         )
     if completed_prefix >= int(requested.get("max_posts") or 0):
-        raise RuntimeError("Generation is already complete; no policy upgrade is needed")
+        raise RuntimeError(
+            "Generation is already complete; no policy upgrade is needed"
+        )
     if (run_root / "full_revision_history.json").exists():
-        raise RuntimeError("Cannot upgrade generation policy after self-loop revision started")
+        raise RuntimeError(
+            "Cannot upgrade generation policy after self-loop revision started"
+        )
     return completed_prefix
 
 
@@ -1265,7 +1322,8 @@ def _record_policy_upgrade(
     events = list(history.get("upgrades") or [])
     if not any(
         int(item.get("seed_boundary") or -1) == completed_prefix
-        and item.get("generator_policy_after") == requested.get("generator_policy_version")
+        and item.get("generator_policy_after")
+        == requested.get("generator_policy_version")
         for item in events
         if isinstance(item, dict)
     ):
@@ -1288,7 +1346,11 @@ def _record_policy_upgrade(
 
 def _resolve_repo_path(path: Path) -> Path:
     expanded = path.expanduser()
-    return expanded.resolve() if expanded.is_absolute() else (REPO_ROOT / expanded).resolve()
+    return (
+        expanded.resolve()
+        if expanded.is_absolute()
+        else (REPO_ROOT / expanded).resolve()
+    )
 
 
 def _generated_seed_indices(generated_root: Path) -> set[int]:
@@ -1299,9 +1361,13 @@ def _generated_seed_indices(generated_root: Path) -> set[int]:
             try:
                 indices.append(int(post["seed_index"]))
             except (KeyError, TypeError, ValueError):
-                raise RuntimeError(f"Generated post lacks a valid seed_index: {path}") from None
+                raise RuntimeError(
+                    f"Generated post lacks a valid seed_index: {path}"
+                ) from None
     if len(indices) != len(set(indices)):
-        raise RuntimeError("Existing generated prefix contains duplicate seed_index values")
+        raise RuntimeError(
+            "Existing generated prefix contains duplicate seed_index values"
+        )
     return set(indices)
 
 
@@ -1385,7 +1451,9 @@ def _record_append_extension(
 def _write_json(path: Path, payload: dict[str, Any]) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     temporary = path.with_suffix(path.suffix + ".tmp")
-    temporary.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    temporary.write_text(
+        json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
+    )
     temporary.replace(path)
 
 

@@ -21,12 +21,14 @@ from generalized_card.backend import (  # noqa: E402
     CORE_ALGORITHM_SYMBOLS,
     GENERATOR_PROFILES,
     GENERALIZED_V2_BACKEND,
+    GENERALIZED_V2_PROFILE,
     configure_generator_backend,
     load_generator_backend,
 )
 from generalized_card.core_contract import (  # noqa: E402
     CORE_FILES,
     CORE_POLICY_VERSION,
+    CURRENT_ACTIVE_CORE_NAMES,
     REVISION_CORE_POLICY_VERSION,
     verify_core_contract,
 )
@@ -41,68 +43,75 @@ def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--domain", default="camera")
     parser.add_argument("--output", type=Path)
+    parser.add_argument(
+        "--include-legacy",
+        action="store_true",
+        help="Also load the historical CARD snapshot and reviser adapters.",
+    )
     return parser
 
 
 def main() -> None:
     args = build_parser().parse_args()
     config = load_domain_config(args.domain)
-    core = verify_core_contract(CORE_FILES)
+    core_names = tuple(CORE_FILES) if args.include_legacy else CURRENT_ACTIVE_CORE_NAMES
+    core = verify_core_contract(core_names)
+    profiles = GENERATOR_PROFILES if args.include_legacy else (GENERALIZED_V2_PROFILE,)
     generators = {
         profile: configure_generator_backend(
             load_generator_backend(profile=profile),
             config,
             profile=profile,
         ).GENERALIZED_CARD_PARITY
-        for profile in GENERATOR_PROFILES
+        for profile in profiles
     }
     revisers: dict[str, dict[str, Any]] = {}
-    for kind in ("selfbleu", "selfbert", "tone", "story", "structure"):
-        module = configure_reviser_backend(
-            load_reviser_backend(kind),
-            kind=kind,
-            config=config,
-        )
-        revisers[kind] = module.GENERALIZED_CARD_REVISER_PARITY
+    if args.include_legacy:
+        for kind in ("selfbleu", "selfbert", "tone", "story", "structure"):
+            module = configure_reviser_backend(
+                load_reviser_backend(kind),
+                kind=kind,
+                config=config,
+            )
+            revisers[kind] = module.GENERALIZED_CARD_REVISER_PARITY
     report = {
         "healthy": (
-            all(
-                not row["unexpected_backend_functions"]
-                for row in generators.values()
-            )
+            all(not row["unexpected_backend_functions"] for row in generators.values())
             and all(
-                not row["unexpected_backend_functions"]
-                for row in revisers.values()
+                not row["unexpected_backend_functions"] for row in revisers.values()
             )
         ),
         "policy_version": CORE_POLICY_VERSION,
         "revision_policy_version": REVISION_CORE_POLICY_VERSION,
         "domain": config.to_public_dict(),
+        "scope": "active_generation_and_evaluation"
+        if not args.include_legacy
+        else "active_plus_legacy",
         "core_files": core,
         "generator_adapters": generators,
-        "historical_snapshot_comparison": _compare_generator_functions(),
+        "historical_snapshot_comparison": (
+            _compare_generator_functions()
+            if args.include_legacy
+            else {"status": "not_run; pass --include-legacy"}
+        ),
         "reviser_adapters": revisers,
-        "revision_profiles": {
-            "card-core": ["diversity", "tone"],
-            "extended": [
-                "diversity",
-                "selfbert",
-                "semantic",
-                "tone",
-                "emotion",
-                "length",
-                "story",
-                "structure",
-            ],
-        },
-        "history_contract": {
-            "outer_history": "full_revision_history.json",
-            "cross_prefix_strategy_history": "revisions/<stage>_strategy_history.json",
-            "controller_history": "<prefix>_*controller_history.json",
-            "latest_memory": "<prefix>_*controller_memory.json",
-            "immutable_round_memory": "<prefix>_*memory_roundNN.json",
-            "accepted_artifact_pointer": "current_artifact.json",
-        },
+        "legacy_revision_profiles": (
+            {
+                "card-core": ["diversity", "tone"],
+                "extended": [
+                    "diversity",
+                    "selfbert",
+                    "semantic",
+                    "tone",
+                    "emotion",
+                    "length",
+                    "story",
+                    "structure",
+                ],
+            }
+            if args.include_legacy
+            else {"status": "not_run; pass --include-legacy"}
+        ),
     }
     rendered = json.dumps(report, ensure_ascii=False, indent=2) + "\n"
     if args.output:

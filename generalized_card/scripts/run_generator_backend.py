@@ -20,7 +20,9 @@ from generalized_card.domain import load_domain_from_env  # noqa: E402
 
 def main() -> None:
     config = load_domain_from_env()
-    profile = os.environ.get("GENERALIZED_CARD_GENERATOR_PROFILE", DEFAULT_GENERATOR_PROFILE)
+    profile = os.environ.get(
+        "GENERALIZED_CARD_GENERATOR_PROFILE", DEFAULT_GENERATOR_PROFILE
+    )
     backend = configure_generator_backend(
         load_generator_backend(profile=profile),
         config,

@@ -16,7 +16,9 @@ from generalized_card.domain import load_domain_config  # noqa: E402
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="Audit generated discussions for unusable output.")
+    parser = argparse.ArgumentParser(
+        description="Audit generated discussions for unusable output."
+    )
     parser.add_argument("generated_root", type=Path)
     parser.add_argument("--output", type=Path)
     parser.add_argument("--domain", default="")
@@ -43,8 +45,13 @@ def main() -> None:
     )
     if args.output:
         args.output.parent.mkdir(parents=True, exist_ok=True)
-        args.output.write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    print("[output-audit] " + json.dumps(report, ensure_ascii=False, sort_keys=True), flush=True)
+        args.output.write_text(
+            json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
+        )
+    print(
+        "[output-audit] " + json.dumps(report, ensure_ascii=False, sort_keys=True),
+        flush=True,
+    )
     if args.require_healthy and not report["healthy"]:
         raise SystemExit(2)
 

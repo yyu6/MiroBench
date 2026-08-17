@@ -155,7 +155,15 @@ CORE_FILES = {
     ),
     "generator_adapter": (
         "generalized_card/generalized_card/backend.py",
-        "eaa9d12e19d5129773559d58713ac0363e4be1a1b6731c037487ea48e1b01d7b",
+        "e1428ae4d2a3f2dc73f003b3c3c21bb98593d9a6357b3ad8c92fdddec3011ee0",
+    ),
+    "data_boundary": (
+        "generalized_card/generalized_card/data.py",
+        "55510f6b3da3b81a2a21654d39f910947e241b3168eee54c042ecd88fa49145e",
+    ),
+    "domain_config": (
+        "generalized_card/generalized_card/domain.py",
+        "f41fb60aa316701249f2f795473fc8a53524206c39874a52e78f2c5355de185f",
     ),
     # The grounding rules were smeared across eight places in the prompt adapter
     # before v76 and disagreed with each other. Pinned so the one definition
@@ -181,7 +189,19 @@ CORE_FILES = {
     ),
     "generation_runner": (
         "generalized_card/scripts/run_generate.py",
-        "a671442ed5d34af38be2b473345e897069edc6e29f3d0847e99ac4c048079ced",
+        "e6b8cf0b68da00a1d06c59b83d105d78f0668fb6d31454782e7d3405dfaed4ec",
+    ),
+    "generation_backend_runner": (
+        "generalized_card/scripts/run_generator_backend.py",
+        "49c60fcff99c7fb706d674b8f74c19a9dd43a5929a1bcff62970e3e53c21009d",
+    ),
+    "token_usage_tracker": (
+        "scripts/token_usage_tracker.py",
+        "296675ce356ad102de410a9187fa9c6ccd145570fdfd06ccc0382ec542f3ede7",
+    ),
+    "token_usage_summarizer": (
+        "scripts/summarize_token_usage.py",
+        "83c5edf0be01d7c6b5874a5faf2207af630f189c71a90c61a1dd51b14c873cef",
     ),
     "domain_profile": (
         "generalized_card/generalized_card/domain_profile.py",
@@ -369,11 +389,15 @@ CORE_FILES = {
     ),
     "evaluation_runner": (
         "generalized_card/scripts/run_evaluate.py",
-        "fd11e79ca8244b0d8676d9e94a872d71149d3ad3b036f519839c7c9bcf52c342",
+        "40f17c008679e68565559004d8a9e8706b07a8b02eea91cb5f55caf7c38b490f",
+    ),
+    "output_audit_runner": (
+        "generalized_card/scripts/audit_output.py",
+        "1955cbf8e4fd057c6f6ada96f4e456a773eaf928cc3051fd374546302ab51335",
     ),
     "content_profile": (
         "generalized_card/generalized_card/content_profile.py",
-        "38e65608c8a2d68af93acbae512a7d3988ddf441698097ce68d1f731694668a9",
+        "ab13b1b60ebbb7f32736cdf0b6042d7cdeaab5b95b556382d3c806c4b6832df7",
     ),
     "content_profile_analysis": (
         "generalized_card/generalized_card/content_profile_analysis.py",
@@ -381,31 +405,71 @@ CORE_FILES = {
     ),
     "content_profile_data": (
         "generalized_card/generalized_card/content_profile_data.py",
-        "79917445537246065d0eae3b43ef1a7667057465f11ec64d27fa4ba988713af9",
+        "f44b50627e276ec3ee688cfd9bba1f67c94998fa982b031072169382ec3556c3",
+    ),
+    "distribution_stats": (
+        "generalized_card/generalized_card/distribution_stats.py",
+        "e71f5843538cd6be757f44104814fbbf1e3666d34e20ac0aaf11a8b1627dc47a",
+    ),
+    "thread_metric_suite": (
+        "generalized_card/generalized_card/thread_metric_suite.py",
+        "0032e510a64cd0082cd643483028908100730d5237d34667124e1c9092a08897",
     ),
     "content_profile_runner": (
         "generalized_card/scripts/compare_content_profile.py",
-        "6cfb6f51947e5e78ab270cdb42643055444cd83da7d94f74fd71bfd92607673c",
+        "560140c1dfdf68efb658045325bdf62bd4a67b55e39fed4443d12ae338daf709",
     ),
     "parity_auditor": (
         "generalized_card/scripts/audit_core_parity.py",
-        "24029279d48f1cd7f4170dfd958c41141085623b20e45754f48e9e9e5f5cd63f",
-    ),
-    "cleanup": (
-        "scripts/postprocess_generated_discussions_gpt_cleanup.py",
-        "05d035cc0792f35ad8fa01564564fb882c7689505151f45654abe88321213ffe",
+        "e768e96ec8dc2487018d02ee247fd2a81ee00ccefa708319377e4301674768fc",
     ),
     "score_runner": (
         "scripts/evaluation/score_sampled_generated_runs.py",
-        "25381c0ffe2bb386059df8b8837673b87e0795f738c39abee3c4704eaf8c3766",
+        "710625298bbd556afcfc3109f86ef2eba49025a11fc188212b3640bf3503cfe7",
     ),
-    "metric_runner": (
-        "calibration/runner.py",
-        "375c1adfeb7a73b944cff99609ee73bb7fc19927026acef50b229fb61248ebfc",
+    "score_disagreement": (
+        "scripts/evaluation/score_thread_disagreement.py",
+        "769c16db84fbf8a71e11a8ae80d5539fc136e527c06aad11f69fa54f5f5e70bf",
+    ),
+    "score_self_bleu": (
+        "scripts/evaluation/score_thread_self_bleu.py",
+        "537399a160ae841ec5ab203465b9e41f698a166523f8313515e159199ba1c1a0",
+    ),
+    "score_self_bertscore": (
+        "scripts/evaluation/score_thread_self_bertscore.py",
+        "fd8d6c3d53a1de1577216aacccd7e316f85932a5e1e2457943cc0b05a4f393f8",
+    ),
+    "score_semantic_uniformity": (
+        "scripts/evaluation/score_thread_semantic_uniformity.py",
+        "2c2edd07d259adbbdaeebef60e598faa0f089b92329d4783d38a397797b25923",
+    ),
+    "score_storyseeker": (
+        "scripts/evaluation/score_thread_storyseeker.py",
+        "76b014cd9d1199555a0cc6e6c44964b46aba02176857a23516c09e84cfa0a5fe",
+    ),
+    "score_go_emotions": (
+        "scripts/evaluation/score_thread_go_emotions.py",
+        "3c38d050d58e0fbf1d8b9d84a4c9c490fbbd0b02f759915c22c2e579656191da",
+    ),
+    "score_politeness": (
+        "scripts/evaluation/score_thread_politeness.py",
+        "d527a42abdcee750396b60dd1f45025ff80f5e397021af64e3d81ea05f3eadd2",
+    ),
+    "score_structure": (
+        "scripts/evaluation/score_thread_structure.py",
+        "8ad909d9168c3966e9dc67ae6abdf7da010687d2f7e63e978bc6afa0e37386d2",
+    ),
+    "score_detoxify": (
+        "scripts/evaluation/score_thread_detoxify.py",
+        "6d51c938579ff76cc4440257aa58f98e6519c64197bcf73933661734f9642fc3",
+    ),
+    "score_summarizer": (
+        "scripts/evaluation/summarize_thread_metrics.py",
+        "4fa192d72718f4cdafa1f8d499eff2eb390946673cc9f54531b3177f3d290490",
     ),
     "matched_evaluator": (
         "scripts/evaluate_matched_seed_group.py",
-        "b09d77e5534457df0e5bcfa7f1d3c460e8a003ce57c71cdd458c3c632dc1fa3b",
+        "325de84fc2c37f8f5d7156bd6b00ea13be4b9deb38c12fb8f707d672d53c4122",
     ),
 }
 
@@ -425,6 +489,79 @@ GENERALIZED_V2_ENGINE_FILES = (
     "engine_writer_request",
     "engine_writer_validation",
     "engine_persistence",
+)
+
+GENERATION_ADAPTER_CORE_NAMES = (
+    "generator_adapter",
+    "data_boundary",
+    "domain_config",
+    "planner_schema",
+    "generation_runner",
+    "domain_profile",
+    "viewpoint_bank",
+    "planning_quality",
+    "generation_distribution",
+    "planner_distribution",
+    "branch_routing",
+    "task_distribution",
+    "first_pass_policy",
+    "lexical_quality",
+    "reference_metric_calibration",
+    "generation_diversity",
+    "writer_quality",
+    "semantic_realization",
+    "length_policy",
+    "long_form_planning",
+    "surface_contract",
+    "domain_claim",
+    "opener_profile",
+    "entity_inventory",
+    "domain_prompt_adapter",
+    "writer_grounding",
+    "speaker_roster",
+    "reply_planning",
+    "persona_bridge",
+    "actor_conditioning",
+)
+
+CURRENT_GENERATION_CORE_NAMES = (
+    *GENERALIZED_V2_ENGINE_FILES,
+    *GENERATION_ADAPTER_CORE_NAMES,
+    "generation_backend_runner",
+    "token_usage_tracker",
+    "token_usage_summarizer",
+)
+
+CURRENT_EVALUATION_CORE_NAMES = (
+    "data_boundary",
+    "domain_config",
+    "output_audit",
+    "output_audit_runner",
+    "evaluation_runner",
+    "content_profile",
+    "content_profile_analysis",
+    "content_profile_data",
+    "distribution_stats",
+    "content_profile_runner",
+    "thread_metric_suite",
+    "score_runner",
+    "score_disagreement",
+    "score_self_bleu",
+    "score_self_bertscore",
+    "score_semantic_uniformity",
+    "score_storyseeker",
+    "score_go_emotions",
+    "score_politeness",
+    "score_structure",
+    "score_detoxify",
+    "score_summarizer",
+    "matched_evaluator",
+    "token_usage_tracker",
+    "token_usage_summarizer",
+)
+
+CURRENT_ACTIVE_CORE_NAMES = tuple(
+    dict.fromkeys((*CURRENT_GENERATION_CORE_NAMES, *CURRENT_EVALUATION_CORE_NAMES))
 )
 
 
@@ -472,7 +609,9 @@ def verify_run_policy(
     )
     if actual == expected:
         return actual
-    if allow_historical and actual in HISTORICAL_GENERATION_POLICY_VERSIONS.get(profile, set()):
+    if allow_historical and actual in HISTORICAL_GENERATION_POLICY_VERSIONS.get(
+        profile, set()
+    ):
         return actual
     if os.environ.get("GENERALIZED_CARD_ALLOW_LINEAGE_MISMATCH") == "1":
         return actual

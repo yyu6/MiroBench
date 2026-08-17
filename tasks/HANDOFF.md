@@ -1,5 +1,38 @@
 # Handoff — synthetic Reddit thread generation (generalized_card)
 
+## 2026-08-17 target/realization and evaluation-integrity addendum
+
+The free target audit changes the diagnosis. The evaluation-excluded reference
+template sampler passes both MWU and KS for all 12 metrics at N=10 and N=150.
+Low per-thread correlation is expected because this is deliberately an
+unpaired distribution draw, not matched-test fitting. Do not change the sampler
+because one n=1 template differs from its matched real thread.
+
+Every new post now persists the exact selected aggregate template in
+`thread_plan.reference_metric_template`. The content report shows real,
+Planner target, generated output, target−real, and generated−target for all 12
+metrics, with separate stage statistics. On old v80 seed 8 this attributes the
+large gaps correctly: politeness and story are Writer-realization failures;
+emotion entropy nearly equals its selected target even though that one target
+draw is low relative to matched real. Legacy sequence-only logs are accepted
+only if the mapping is complete and unique; resume ambiguity is a hard error.
+
+`run_evaluate.py` no longer runs deterministic cleanup before scoring. After
+the integrity audit it creates a byte-identical snapshot and fails on
+noncanonical metadata instead of repairing it. Formal stats and scorer CLIs are
+now tracked/pinned current sources rather than transitive untracked or dirty
+calibration dependencies. Default parity covers active generation/evaluation
+only; revisers are legacy and not part of the current research workflow.
+Dynamic runtime edges are explicit too: backend/audit runners and token
+tracking/summarization are among the 67 active tracked sources (92 declared
+pins total), and the closure audit follows sibling scripts.
+
+Finally, n=1 is `DESCRIPTIVE` from the matched evaluator through console and
+content reports. Ignore the mathematical p=1 values returned for singleton
+samples; they cannot establish a pass. The pending paid step remains a complete
+v85 seed-8 Writer diagnostic, followed by sufficient N only if its realization
+and content review are credible.
+
 ## 2026-08-17 exact-matched content-audit addendum
 
 `run_evaluate.py` now writes `content_profile_audit.json` and `.md` after the
