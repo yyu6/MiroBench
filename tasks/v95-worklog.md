@@ -87,3 +87,25 @@ These gates prove the active path and non-terminal contract policy, not provider
 availability or realized-text quality. Completion does not prove the 12 metrics:
 it makes a complete, structurally honest sample available to the unchanged
 scorers for the first time in these failed gates.
+
+## Paid result and content verdict
+
+The exact seed-2 gate completed 45/45 slots in one attempt: 86 requests,
+303,941 input tokens, 26,702 output tokens, 301 seconds, and `$0.3481`. There
+were no Writer retries, degraded comments, schema recoveries, contract warnings,
+exact duplicates, or matched-text leakage. v95 therefore confirms the
+reliability hypothesis.
+
+It falsifies the `named + domain-claim=off` content hypothesis. The exact n=1
+audit measured self-BLEU `0.0350` vs real `0.0268`, self-BERTScore `0.5306` vs
+`0.4892`, story probability `0.1015` vs `0.2321`, emotion entropy `1.6572` vs
+`1.9687`, digit-bearing comments `0.20` vs `0.60`, domain-vocabulary comments
+`0.1556` vs `0.5556`, and 5 distinct model designators vs 40. Length CV and the
+two structural metrics matched. With one thread, MWU/KS values are descriptive
+only and cannot be called passes.
+
+The generated discussion repeatedly returned to handling, long-term
+commitment, and the fixed-lens boundary. The Writer received a permission to be
+specific but usually no safe facts beyond a few seed tokens, while the `named`
+rule also forbade repeating a product name used by another comment. Do not run
+v95 N=10. The replacement design is recorded in `tasks/v96-worklog.md`.

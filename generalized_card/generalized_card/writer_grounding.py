@@ -114,9 +114,10 @@ def substantive_slot(task: Any) -> bool:
         words = int(getattr(task, "real_word_count", 0) or 0)
     except (TypeError, ValueError):
         words = 0
-    return words >= 25 and str(
-        getattr(task, "length_bucket", "") or ""
-    ) not in {"micro", "short"}
+    return words >= 25 and str(getattr(task, "length_bucket", "") or "") not in {
+        "micro",
+        "short",
+    }
 
 
 def slot_license(backend: Any, task: Any) -> str:
@@ -159,8 +160,9 @@ NAMED_ENTITY_RULE = (
     "you mean and give the amounts, and do not retreat into a general "
     "description when a particular one is what you would really say. Stay "
     "consistent with anything the discussion above already establishes about "
-    "the thing being discussed, and do not repeat a name or figure another "
-    "comment here has already used."
+    "the thing being discussed. Repeating its name is normal; reuse it when "
+    "needed, but do not repeat another comment's same fact or amount, and do "
+    "not invent a new name merely to sound different."
 )
 
 # The two Writer paths phrase the unlicensed ban differently. Both are kept
@@ -185,13 +187,17 @@ def entity_naming_rule(*, mode: str = LICENSE_OFF, variant: str = "focused") -> 
     return UNLICENSED_ENTITY_RULES.get(variant, UNLICENSED_ENTITY_RULES["focused"])
 
 
-def story_fact_rule(task: Any, *, has_domain_claim: bool, mode: str = LICENSE_OFF) -> str:
+def story_fact_rule(
+    task: Any, *, has_domain_claim: bool, mode: str = LICENSE_OFF
+) -> str:
     """Replace the single fact-safety rule with a mode-appropriate rule."""
 
     story_slot = str(getattr(task, "story_mode", "") or "") not in {"", "no_story"}
 
     if mode == LICENSE_OFF:
-        return _unlicensed_rule(story_slot=story_slot, has_domain_claim=has_domain_claim)
+        return _unlicensed_rule(
+            story_slot=story_slot, has_domain_claim=has_domain_claim
+        )
 
     if mode == LICENSE_NAMED:
         # One prohibition, and it is the one with a real failure behind it: v71
@@ -308,9 +314,7 @@ def _unlicensed_rule(*, story_slot: bool, has_domain_claim: bool) -> str:
                 "price, or measurement for the post's own equipment unless it is "
                 "visible in the discussion."
             )
-        return (
-            "Do not invent products, specifications, prices, measurements, dates, outcomes, policies, links, or personal experiences."
-        )
+        return "Do not invent products, specifications, prices, measurements, dates, outcomes, policies, links, or personal experiences."
     return (
         "This is a synthetic story slot: make the temporal sequence legible with "
         "an ordinary first-person situation or action followed by an observation "

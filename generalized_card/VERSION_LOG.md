@@ -59,6 +59,45 @@ Before any run that changes behavior:
 
 ---
 
+## v96 — selective facts and ancestor-aware reply novelty (2026-08-18)
+
+Policy ID: `generalized-card-v2-selective-facts-ancestor-novelty-v96-20260818`.
+
+The paid v95 seed-2 gate proved reliability but falsified its content arm. It
+completed 45/45 comments in one attempt for `$0.3481`, yet generated 5 distinct
+model designators against 40 real, digit-bearing comments at 0.20 against 0.60,
+domain-vocabulary comments at 0.1556 against 0.5556, self-BLEU at 0.0350
+against 0.0268, and self-BERTScore at 0.5306 against 0.4892. Story probability
+was 0.1015 against 0.2321 and emotion entropy 1.6572 against 1.9687. The single
+thread is descriptive only; its MWU/KS values are not inferential.
+
+The active data path explained the gap. Under `domain-claim=off`, root planning
+discarded excluded-reference facts, direct-reply planning received no reference
+rows, and the Writer often had only one or two seed tokens. The `named` rule
+also prohibited repeating any name another comment had used, suppressing the
+normal product-name cohesion in real discussion. Deep replies excluded only
+their immediate parent, allowing a full branch to circle one decision boundary.
+
+v96 introduces `domain-claim=selective`, derived only from anonymous slot
+capacity and evaluation-excluded reference surface roles. Only scheduled slots
+can retain one Planner-restated general fact after parsing; the Writer never
+sees raw reference text. Historical `planned` and `off` modes remain available.
+Selective direct replies receive an excluded-reference window and compact
+coverage of the full ancestor chain. Delivered claims enter Writer factual
+anchors. A personal story receives either a claim or a rotating held-out
+equipment shortlist, never two independent factual sources. Product names may
+recur naturally, while the same fact or amount may not.
+
+Predicted direction: more product/domain vocabulary, quantities, and concrete
+story actions; lower self-BLEU/self-BERTScore and fewer deep-branch semantic
+collisions; story probability and emotion entropy should move upward without
+changing length or structure. The zero-API gate passed: 316 tests, full Ruff,
+95/95 clean source pins, both parity scopes, backend self-test, and exact seed-2
+prepare-only. Realized content remains unverified until one new paid seed-2
+audit finishes. N=10 is not authorized by a successful process exit alone.
+
+---
+
 ## v95 — compiled, non-terminal Planner content contracts (2026-08-18)
 
 Policy ID: `generalized-card-v2-nonfatal-compiled-plan-contract-v95-20260818`.
@@ -103,10 +142,13 @@ far: 307 generalized tests pass; Ruff is clean; the backend self-test passes;
 active and active-plus-legacy parity are healthy with 95/95 source pins clean;
 and the exact paid seed-2 configuration completed `--prepare-only` as
 `generalized_card_camera_gpt54_v95_named_seed2_20260818_preflight_v1`. No paid
-v95 call has been made. This release predicts complete Planner progression at
-lower cost while preserving exact tree slots and the held-out distribution
-targets; the 12 realized-text metrics still require a complete generated thread
-and unchanged scorers.
+call had been made at release time.
+
+The later paid gate completed all 45 slots in one attempt: 86 requests, 303,941
+input tokens, 26,702 output tokens, 301 seconds, and `$0.3481`. Reliability is
+confirmed. Content is not: the exact n=1 gaps above and repeated abstract
+handling/fixed-lens language falsify `named + domain-claim=off` as a sufficient
+content policy. Do not run v95 N=10; it is superseded by v96.
 
 ---
 

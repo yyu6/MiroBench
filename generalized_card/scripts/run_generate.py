@@ -269,14 +269,14 @@ def build_parser() -> argparse.ArgumentParser:
     )
     parser.add_argument(
         "--domain-claim",
-        choices=("planned", "off"),
-        default="planned",
+        choices=("selective", "planned", "off"),
+        default="selective",
         help=(
-            "Whether the Planner assigns and the Writer receives a separate "
-            "domain claim. This is an "
-            "ablation control: the claim went from 0 of 522 comments in v69 to "
-            "508 of 522 in v71, so it has to be separable from the rest of a "
-            "release when attributing a metric change."
+            "How the Planner assigns separate domain claims. 'selective' is "
+            "the active policy: only capacity-compatible slots backed by an "
+            "evaluation-excluded factual reference row receive one. 'planned' "
+            "preserves the historical near-ubiquitous arm (508/522 comments), "
+            "and 'off' disables both planning and delivery."
         ),
     )
     parser.add_argument(

@@ -11,7 +11,11 @@ from __future__ import annotations
 from typing import Any
 
 from .branch_routing import parent_slot_schedule
-from .domain_claim import planner_claims_enabled
+from .domain_claim import (
+    domain_claim_mode,
+    planner_claims_enabled,
+    render_selective_claim_schedule,
+)
 from .long_form_planning import expected_development_beats
 from .planner_schema import parse_sample_id
 from .surface_contract import surface_only_label
@@ -37,9 +41,7 @@ SUPPORTIVE_REPLY_DELTA_TYPES = (
 )
 SOCIAL_REPLY_DELTA_TYPES = ("social_close",)
 REPLY_DELTA_TYPES = (
-    CRITICAL_REPLY_DELTA_TYPES
-    + SUPPORTIVE_REPLY_DELTA_TYPES
-    + SOCIAL_REPLY_DELTA_TYPES
+    CRITICAL_REPLY_DELTA_TYPES + SUPPORTIVE_REPLY_DELTA_TYPES + SOCIAL_REPLY_DELTA_TYPES
 )
 REPLY_ONLY_FIELDS = (
     "reply_delta",
@@ -177,14 +179,17 @@ def render_direct_reply_planner_prompt(
     prior_plans: list[dict[str, Any]],
     slot_distribution: str,
     slot_controls: dict[int, dict[str, str]] | None = None,
+    reference_viewpoints: str = "",
+    claim_slots: set[int] | None = None,
     validation_feedback: str = "",
 ) -> str:
     """Render a short semantic-planning request for direct replies only.
 
-    This deliberately contains no matched-real text and no reference-viewpoint
-    examples. The real structural slot contributes only depth, anonymous word
-    count, and surface category. Parent meaning comes solely from the committed
-    generated plan ledger.
+    This never contains matched-evaluation text. In selective-claim mode only,
+    it may contain evaluation-excluded reference rows whose raw wording remains
+    Planner-only. The structural slot contributes only depth, anonymous word
+    count, and surface category. Parent meaning comes from the committed plan
+    ledger.
     """
 
     parent_slots = parent_slot_schedule(all_comments)
@@ -219,8 +224,7 @@ def render_direct_reply_planner_prompt(
         sibling_ids = siblings_by_parent.get(parent_id, [])
         sibling_contract = ""
         if (
-            str(getattr(backend, "GENERALIZED_REPLY_SIBLING_VISIBILITY", "on"))
-            != "off"
+            str(getattr(backend, "GENERALIZED_REPLY_SIBLING_VISIBILITY", "on")) != "off"
             and len(sibling_ids) > 1
         ):
             committed_siblings = [
@@ -252,6 +256,12 @@ def render_direct_reply_planner_prompt(
                     f"  Parent decision boundary to exclude: {backend.compact(parent.get('decision_boundary') or 'parent local condition', 160)}",
                     f"  Parent detail to exclude: {backend.compact(parent.get('detail_focus') or 'parent local detail', 140)}",
                     f"  Parent reply type: {str(parent.get('reply_delta_type') or 'root_turn').strip()}",
+                    _ancestor_coverage(
+                        backend,
+                        parent_id=parent_id,
+                        parent_slots=parent_slots,
+                        prior_by_id=prior_by_id,
+                    ),
                     f"  Tone register: {tone or 'unassigned'}",
                     f"  Story contract: {story or 'unassigned'}",
                     f"  Affect contract: {affect}",
@@ -280,30 +290,74 @@ def render_direct_reply_planner_prompt(
     # reply. Reading it off the backend keeps the prompt and the normalizer on
     # one list.
     claim_families = " | ".join(getattr(backend, "CLAIM_FAMILIES", ()) or ())
-    if planner_claims_enabled(backend):
+    claim_mode = domain_claim_mode(backend)
+    if claim_mode == "selective":
+        selected_claims = render_selective_claim_schedule(
+            sample_ids,
+            set(claim_slots or ()),
+        )
+        claim_schema = (
+            "one general domain fact restated from the paired R# row only when "
+            "this S# is selected below; otherwise none"
+        )
+        claim_context = f"""
+EVALUATION-EXCLUDED REFERENCE ROWS FOR SELECTIVE FACTUAL GROUNDING:
+Pair these rows with the displayed S# rows in order. Their raw wording is
+Planner-only and never reaches the Writer.
+{reference_viewpoints or '- none available'}
+"""
+        claim_rule = f"""- Selective factual slots in this request: {selected_claims}.
+  Only those slots may restate one transferable general domain fact from the
+  paired R# row. That fact is the new object developed by ``semantic_move``,
+  ``decision_boundary``, and ``reply_novelty_anchor``; do not layer an unrelated
+  delta on top. Every other slot returns ``domain_claim=none``.
+- Reusing the parent's product or model name is natural. Add a different fact,
+  condition, procedure, quantity, or comparison; do not invent a new name just
+  to look different. If the paired row has no transferable fact, use ``none``."""
+        reference_safety_rule = (
+            "Do not reproduce an R# row's wording or carry its participant's "
+            "purchase, experience, dispute, URL, or situation-specific number. "
+            "A fact about this seed post still cannot be invented."
+        )
+    elif planner_claims_enabled(backend):
         claim_schema = (
             "one concrete domain fact this reply states in your own words, or "
             "none for a purely social reply"
         )
+        claim_context = ""
         claim_rule = """- Give a substantive reply a ``domain_claim``: one concrete domain fact stated in
   your own words, naming the relevant entity, action, or condition. Real replies
   are largely specific observations, procedures, relationships, and constraints;
   a reply whose whole content is how to weigh a decision reads as commentary
   about the discussion rather than participation in it. A purely social reply
   uses ``none``."""
+        reference_safety_rule = (
+            "Do not reproduce any real discussion's wording or carry a detail "
+            "that belongs to a particular discussion or its participants. A "
+            "fact about this seed post still cannot be invented."
+        )
     else:
         claim_schema = "none"
+        claim_context = ""
         claim_rule = """- Set ``domain_claim`` to the literal ``none``. This run does not deliver a
   separate planned fact to the Writer. Put the whole new contribution in
   ``semantic_move``, ``detail_focus``, and ``domain_intent``; do not build the
   reply around information the Writer will not receive."""
+        reference_safety_rule = (
+            "Do not reproduce any real discussion's wording or carry a detail "
+            "that belongs to a particular discussion or its participants. A "
+            "fact about this seed post still cannot be invented."
+        )
     # Asking for "a full sentence stating what this reply asserts" produced
     # finished first-person prose -- 19.3% of all moves open with "I" -- which the
     # Writer then reproduced verbatim. Reply slots echoed their plan at 25.1%
     # against 6.4% for root slots, whose schema has always said "non-verbatim".
     # The scale requirement is what stopped bare noun phrases, so it stays; the
     # demand for a finished sentence is what leaked, so it goes.
-    if str(getattr(backend, "GENERALIZED_WRITER_ROUTE_LOCK", "own_words")) == "say_only":
+    if (
+        str(getattr(backend, "GENERALIZED_WRITER_ROUTE_LOCK", "own_words"))
+        == "say_only"
+    ):
         move_schema = (
             "a full sentence stating what this reply asserts, at the same scale "
             "as a top-level slot's semantic_move - not a bare noun phrase"
@@ -322,6 +376,7 @@ Writer will realize each plan exactly once. Do not rely on later rewriting.
 Visible seed, only for grounding an otherwise generic parent-local addition:
 - title: {backend.compact(seed_post.title or '', 260)}
 - body: {backend.compact(seed_post.body or seed_post.content or '', 700)}
+{claim_context}
 
 The parent plan is an exclusion, never text to paraphrase. For every row,
 choose exactly one reply_delta_type and name one specific new object in
@@ -401,6 +456,9 @@ Rules:
 - If the parent is itself a reply, choose a different reply_delta_type from
   the parent unless this slot is an allowed social_close. Do not repeat the
   parent's test, evidence request, or exception under a new name.
+- Differ from every object listed in ``Ancestor coverage to exclude``. The
+  product name may recur; the fact, condition, test, consequence, or boundary
+  must not.
 - Match speaker_role, stance, voice, and comment_function to the row's tone
   register. A polite row is not an advisor adjudicating a threshold: use
   stance=agree with datapoint_only, op_followup, or gratitude_reply and a
@@ -431,7 +489,33 @@ Rules:
   them may restate the increment or introduce an unrelated claim.
 - When a row says `development_plan: none`, return the literal string `none`.
 {claim_rule}
-- Do not reproduce any real discussion's wording, and do not carry a detail that
-  belongs to a particular discussion or its participants rather than to the
-  domain. A fact about this seed post still cannot be invented.
+- {reference_safety_rule}
 - Output JSON only."""
+
+
+def _ancestor_coverage(
+    backend: Any,
+    *,
+    parent_id: int,
+    parent_slots: dict[int, int],
+    prior_by_id: dict[int, dict[str, Any]],
+) -> str:
+    """Render semantic objects already consumed above the immediate parent."""
+
+    rows: list[str] = []
+    ancestor_id = parent_slots.get(parent_id, 0)
+    while ancestor_id > 0 and ancestor_id in prior_by_id:
+        plan = prior_by_id[ancestor_id]
+        object_name = (
+            plan.get("reply_novelty_anchor")
+            or plan.get("detail_focus")
+            or plan.get("decision_boundary")
+            or plan.get("semantic_move")
+            or "committed ancestor point"
+        )
+        delta = str(plan.get("reply_delta_type") or "root_turn").strip()
+        rows.append(f"S{ancestor_id} {delta}: {backend.compact(object_name, 100)}")
+        ancestor_id = parent_slots.get(ancestor_id, 0)
+    if not rows:
+        return ""
+    return "  Ancestor coverage to exclude: " + " | ".join(rows)

@@ -3,18 +3,42 @@ from __future__ import annotations
 import unittest
 from types import SimpleNamespace
 
-from generalized_card import prompts
 from generalized_card.backend import configure_generator_backend, load_generator_backend
 from generalized_card.domain import load_domain_config
 from generalized_card.domain_claim import (
     claim_for_task,
+    domain_claim_mode,
     normalized_domain_claim,
     render_domain_claim_rule,
+    selective_claim_slots,
     seed_claim_key,
 )
 
 
 class DomainClaimTest(unittest.TestCase):
+    def test_selective_is_the_safe_default_and_all_modes_are_named(self) -> None:
+        self.assertEqual(domain_claim_mode(SimpleNamespace()), "selective")
+        for mode in ("off", "planned", "selective"):
+            backend = SimpleNamespace(GENERALIZED_DOMAIN_CLAIM_MODE=mode)
+            self.assertEqual(domain_claim_mode(backend), mode)
+
+    def test_selective_schedule_uses_capacity_and_reference_role(self) -> None:
+        comments = [
+            {"body": "word " * (10 if index == 2 else 40)} for index in range(6)
+        ]
+        references = [
+            {
+                "surface_role": "social_reaction" if index == 4 else "full_answer",
+                "word_count": 30,
+            }
+            for index in range(6)
+        ]
+        selected = selective_claim_slots(comments, references)
+        self.assertNotIn(3, selected)  # anonymous slot has no semantic capacity
+        self.assertNotIn(5, selected)  # paired reference is purely social
+        self.assertLessEqual(len(selected), round(len(comments) * 0.60))
+        self.assertTrue(selected)
+
     def test_absent_claim_normalizes_to_empty(self) -> None:
         for value in (None, "", "none", "N/A", "  NONE  ", "not applicable"):
             self.assertEqual(normalized_domain_claim(value), "")
@@ -22,7 +46,9 @@ class DomainClaimTest(unittest.TestCase):
     def test_reference_ids_and_urls_never_survive(self) -> None:
         # A claim must not expose the held-out bank it came from, and an invented
         # link is a hard Writer failure.
-        claim = normalized_domain_claim("Per R00421 see https://example.com/spec for the mount")
+        claim = normalized_domain_claim(
+            "Per R00421 see https://example.com/spec for the mount"
+        )
         self.assertNotIn("R00421", claim)
         self.assertNotIn("http", claim)
         self.assertIn("general domain knowledge", claim)
@@ -36,12 +62,16 @@ class DomainClaimTest(unittest.TestCase):
         seed = SimpleNamespace(source_raw_post_id="ABC123", index=0, title="t")
         task = SimpleNamespace(real_sample_id=7, local_task_id=99)
         registry = {(seed_claim_key(seed), 7): "EF glass adapts to RF bodies"}
-        self.assertEqual(claim_for_task(registry, seed, task), "EF glass adapts to RF bodies")
+        self.assertEqual(
+            claim_for_task(registry, seed, task), "EF glass adapts to RF bodies"
+        )
         self.assertEqual(claim_for_task({}, seed, task), "")
 
     def test_rule_is_empty_without_a_claim(self) -> None:
         self.assertEqual(render_domain_claim_rule(""), "")
-        self.assertIn("Domain fact this turn states", render_domain_claim_rule("x adapts to y"))
+        self.assertIn(
+            "Domain fact this turn states", render_domain_claim_rule("x adapts to y")
+        )
 
 
 class DomainClaimWriterContractTest(unittest.TestCase):

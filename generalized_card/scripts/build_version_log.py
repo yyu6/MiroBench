@@ -11,6 +11,7 @@ This regenerates a single sorted index from those artifacts.
 It only reads artifacts; the narrative notes live in ``VERSION_LOG.md`` and are
 never overwritten.
 """
+
 from __future__ import annotations
 
 import argparse
@@ -61,6 +62,7 @@ def main() -> None:
         "by hand; rationale for each version belongs in `VERSION_LOG.md`.",
         "",
         "`pass` counts metrics with both MWU and KS p-values above 0.05.",
+        "`descriptive` means the run has too few threads for inferential p-values.",
         "A blank result column means the run was never evaluated.",
         "",
         "A pass count is only comparable against another run with the same",
@@ -93,7 +95,16 @@ def main() -> None:
                 continue
             mwu = value.get("mwu_p_value")
             ks = value.get("ks_p_value")
-            mark = "*" if (mwu or 0) > 0.05 and (ks or 0) > 0.05 else ""
+            descriptive = (
+                "descriptive" in str(value.get("inferential_status") or "").lower()
+            )
+            mark = (
+                "*"
+                if not descriptive and (mwu or 0) > 0.05 and (ks or 0) > 0.05
+                else "d"
+                if descriptive
+                else ""
+            )
             cells.append(f"{mwu:.3f}{mark}" if mwu is not None else "-")
         lines.append(f"| `{row['tag']}` | " + " | ".join(cells) + " |")
     lines.append("")
@@ -115,16 +126,7 @@ def _row(run_dir: Path) -> dict[str, Any] | None:
     threads, comments = _generated_size(run_dir)
     coverage = _structural_coverage(run_dir, comments)
     metrics = _load(run_dir / "matched_evaluation/matched_seed_group_eval.json")
-    passes = ""
-    if metrics:
-        passes = str(
-            sum(
-                1
-                for metric in METRICS
-                if (metrics.get(metric) or {}).get("mwu_p_value", 0) > 0.05
-                and (metrics.get(metric) or {}).get("ks_p_value", 0) > 0.05
-            )
-        )
+    passes = _pass_summary(metrics)
     return {
         "tag": run_dir.name,
         "policy": policy or "(unrecorded)",
@@ -135,6 +137,28 @@ def _row(run_dir: Path) -> dict[str, Any] | None:
         "passes": passes,
         "metrics": metrics,
     }
+
+
+def _pass_summary(metrics: dict[str, Any]) -> str:
+    """Count only inferential metrics; n=1 p-values are descriptive artifacts."""
+
+    if not metrics:
+        return ""
+    inferential = [
+        metrics.get(metric) or {}
+        for metric in METRICS
+        if "descriptive"
+        not in str((metrics.get(metric) or {}).get("inferential_status") or "").lower()
+    ]
+    if not inferential:
+        return "descriptive"
+    return str(
+        sum(
+            1
+            for value in inferential
+            if value.get("mwu_p_value", 0) > 0.05 and value.get("ks_p_value", 0) > 0.05
+        )
+    )
 
 
 def _structural_coverage(run_dir: Path, comments: int) -> float:

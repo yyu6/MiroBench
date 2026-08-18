@@ -8,21 +8,17 @@ from typing import Any
 
 
 TOKEN_RE = re.compile(r"[a-z][a-z0-9+./-]{1,30}", re.I)
-STOPWORDS = {
-    "a", "about", "after", "all", "also", "am", "an", "and", "any", "are",
-    "as", "at", "be", "because", "been", "before", "being", "both", "but",
-    "by", "can", "could", "did", "do", "does", "doing", "dont", "for",
-    "from", "get", "got", "had", "has", "have", "having", "he", "her",
-    "here", "him", "how", "i", "if", "im", "in", "into", "is", "it",
-    "its", "ive", "just", "like", "ll", "make", "me", "more", "most",
-    "much", "my", "not", "now", "of", "on", "one", "only", "or", "other",
-    "our", "out", "over", "re", "really", "same", "she", "should", "so",
-    "some", "still", "than", "that", "thats", "the", "their", "them",
-    "then", "there", "theres", "these", "they", "this", "those", "through",
-    "to", "too", "up", "us", "use", "used", "using", "very", "want", "was",
-    "way", "we", "were", "what", "when", "where", "which", "while", "who",
-    "why", "will", "with", "would", "you", "your", "youre",
-}
+STOPWORDS = set(
+    """
+    a about after all also am an and any are as at be because been before being
+    both but by can could did do does doing dont for from get got had has have
+    having he her here him how i if im in into is it its ive just like ll make me
+    more most much my not now of on one only or other our out over re really same
+    she should so some still than that thats the their them then there theres
+    these they this those through to too up us use used using very want was way we
+    were what when where which while who why will with would you your youre
+    """.split()
+)
 
 
 _INDEX_CACHE: dict[str, tuple[list[dict[str, Any]], dict[str, float]]] = {}
@@ -70,7 +66,9 @@ def build_reference_viewpoints(
                     "thread_context": _compact(thread.get("body"), 420),
                     "text": text,
                     "depth": depth,
-                    "parent_scope": "op" if depth == 0 or parent_id.startswith("t3_") else "reply",
+                    "parent_scope": "op"
+                    if depth == 0 or parent_id.startswith("t3_")
+                    else "reply",
                     "word_count": len(text.split()),
                     "surface_role": _surface_role(text, depth=depth),
                 }
@@ -150,7 +148,9 @@ def retrieve_reference_viewpoints(
             for old in selected_token_sets
         ):
             return False
-        selected.append({key: value for key, value in indexed.items() if not key.startswith("_")})
+        selected.append(
+            {key: value for key, value in indexed.items() if not key.startswith("_")}
+        )
         source_counts[source] += 1
         seen_text.add(text_key)
         selected_token_sets.append(token_set)
@@ -197,15 +197,42 @@ def render_reference_viewpoints(
     limit: int,
     offset: int = 0,
 ) -> str:
+    references = reference_viewpoint_window(
+        profile,
+        seed_title=seed_title,
+        seed_body=seed_body,
+        limit=limit,
+        offset=offset,
+    )
+    return render_reference_rows(references)
+
+
+def reference_viewpoint_window(
+    profile: dict[str, Any],
+    *,
+    seed_title: str,
+    seed_body: str,
+    limit: int,
+    offset: int = 0,
+) -> list[dict[str, Any]]:
+    """Return a prefix-stable window from the excluded reference bank."""
+
+    start = max(0, int(offset))
+    width = max(0, int(limit))
     references = retrieve_reference_viewpoints(
         profile,
         seed_title=seed_title,
         seed_body=seed_body,
-        limit=max(0, offset) + max(0, limit),
+        limit=start + width,
     )
-    window = references[max(0, offset) : max(0, offset) + max(0, limit)]
+    return references[start : start + width]
+
+
+def render_reference_rows(references: list[dict[str, Any]]) -> str:
+    """Render already-selected reference rows without retrieving them again."""
+
     rows = []
-    for item in window:
+    for item in references:
         rows.append(
             f"- {item.get('reference_id')}: source_topic={_compact(item.get('thread_title'), 120)}; "
             f"depth={item.get('depth', 0)}; parent={item.get('parent_scope', 'op')}; "
@@ -222,7 +249,11 @@ def _reference_index(
     cached = _INDEX_CACHE.get(key)
     if cached is not None:
         return cached
-    raw = [row for row in (profile.get("reference_viewpoints") or []) if isinstance(row, dict)]
+    raw = [
+        row
+        for row in (profile.get("reference_viewpoints") or [])
+        if isinstance(row, dict)
+    ]
     indexed: list[dict[str, Any]] = []
     document_frequency: Counter[str] = Counter()
     for row in raw:
@@ -231,7 +262,11 @@ def _reference_index(
         copied["_context_tokens"] = _tokens(copied.get("thread_context"))
         copied["_comment_tokens"] = _tokens(copied.get("text"))
         document_frequency.update(
-            set(copied["_title_tokens"] + copied["_context_tokens"] + copied["_comment_tokens"])
+            set(
+                copied["_title_tokens"]
+                + copied["_context_tokens"]
+                + copied["_comment_tokens"]
+            )
         )
         indexed.append(copied)
     count = max(1, len(indexed))
@@ -247,10 +282,29 @@ def _select_comment_indices(comments: list[dict[str, Any]], *, limit: int) -> li
     if len(comments) <= limit:
         return list(range(len(comments)))
     categories = (
-        [index for index, row in enumerate(comments) if _safe_int(row.get("depth"), 0) >= 2],
-        [index for index, row in enumerate(comments) if len(str(row.get("body") or "").split()) <= 12],
-        [index for index, row in enumerate(comments) if "?" in str(row.get("body") or "")],
-        [index for index, row in enumerate(comments) if _surface_role(str(row.get("body") or ""), depth=_safe_int(row.get("depth"), 0)) in {"personal_datapoint", "correction", "social_reaction"}],
+        [
+            index
+            for index, row in enumerate(comments)
+            if _safe_int(row.get("depth"), 0) >= 2
+        ],
+        [
+            index
+            for index, row in enumerate(comments)
+            if len(str(row.get("body") or "").split()) <= 12
+        ],
+        [
+            index
+            for index, row in enumerate(comments)
+            if "?" in str(row.get("body") or "")
+        ],
+        [
+            index
+            for index, row in enumerate(comments)
+            if _surface_role(
+                str(row.get("body") or ""), depth=_safe_int(row.get("depth"), 0)
+            )
+            in {"personal_datapoint", "correction", "social_reaction"}
+        ],
     )
     selected: list[int] = []
     for candidates in categories:
@@ -284,7 +338,10 @@ def _surface_role(text: str, *, depth: int) -> str:
         return "social_reaction"
     if "?" in text and words <= 28:
         return "narrow_question"
-    if re.search(r"\b(no|wrong|incorrect|not true|actually|except|but)\b", lowered) and words <= 60:
+    if (
+        re.search(r"\b(no|wrong|incorrect|not true|actually|except|but)\b", lowered)
+        and words <= 60
+    ):
         return "correction"
     if re.search(r"\b(i|i'm|i've|my|we|our)\b", lowered):
         return "personal_datapoint"
@@ -306,7 +363,12 @@ def _tokens(value: Any) -> list[str]:
 
 def _usable_text(value: Any) -> bool:
     text = " ".join(str(value or "").split())
-    return bool(text) and text.lower() not in {"[deleted]", "[removed]", "deleted", "removed"}
+    return bool(text) and text.lower() not in {
+        "[deleted]",
+        "[removed]",
+        "deleted",
+        "removed",
+    }
 
 
 def _compact(value: Any, limit: int) -> str:

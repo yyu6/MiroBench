@@ -808,6 +808,45 @@ class GeneralizedCardTest(unittest.TestCase):
         self.assertEqual(len(anchors), 1)
         self.assertEqual(module.sanitize_writer_text(""), "")
 
+    def test_planned_domain_claim_becomes_a_writer_validation_anchor(self) -> None:
+        module = configure_generator_backend(load_generator_backend(), self.config)
+        branch = module.BranchPlan(
+            branch_id=1,
+            anchor_quote="camera body",
+            anchor_source="seed_detail",
+            detour_type="comparison",
+            branch_goal="compare handling",
+            allowed_functions=("reaction",),
+            evidence_modes=("none_assertion",),
+            tone_palette=("casual_neutral",),
+            story_modes=("no_story",),
+            content_angles=("fit_use_case",),
+        )
+        seed = module.SeedPost(
+            index=0,
+            title="Sony handling question",
+            body="Is the grip comfortable?",
+            content="Sony handling question\nIs the grip comfortable?",
+            source_raw_post_id="x",
+            real_num_comments=5,
+            metadata={},
+        )
+        anchors = module.build_concrete_anchors_for_task(
+            real_body="MATCHED_ONLY_SECRET",
+            seed_post=seed,
+            branch=branch,
+            planned={
+                "sample_id": "S2",
+                "semantic_move": "state the assigned compatibility fact",
+                "domain_claim": "Fujifilm X-T5 supports electronic aperture control",
+            },
+            anchor="handling",
+            parent_task=None,
+        )
+        rendered = " ".join(anchors)
+        self.assertIn("Fujifilm", rendered)
+        self.assertNotIn("MATCHED_ONLY_SECRET", rendered)
+
     def test_domain_profile_excludes_evaluation_seed_threads(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
@@ -994,6 +1033,7 @@ class GeneralizedCardTest(unittest.TestCase):
         }
         backend = SimpleNamespace(
             GENERALIZED_DOMAIN_PROFILE=profile,
+            GENERALIZED_DOMAIN_CLAIM_MODE="planned",
             GENERALIZED_ACTIVE_REFERENCE_TEMPLATE={
                 "comment_count": 1,
                 "story_count": 0,
@@ -1098,6 +1138,42 @@ class GeneralizedCardTest(unittest.TestCase):
         self.assertIn("information that the Writer will not receive", claim_off)
         self.assertNotIn("These rows are also this domain's knowledge", claim_off)
         self.assertNotIn("Give most substantive slots", claim_off)
+
+        backend.GENERALIZED_DOMAIN_CLAIM_MODE = "selective"
+        profile["reference_viewpoints"][0]["word_count"] = 30
+        profile["reference_viewpoints"][0]["text"] = (
+            "NON_TEST_VIEWPOINT_MARKER electronic aperture control remains "
+            "available through the adapter while focus behavior depends on "
+            "the body and lens combination used in practice"
+        )
+        profile["profile_sha256"] = "prompt-profile-selective"
+        anonymous_long_slot = {
+            "body": "MATCHED_TEST_SECRET " * 30,
+            "depth": 0,
+        }
+        selective = prompts.comment_planner_prompt(
+            self.config,
+            backend,
+            seed_post=seed,
+            target=target,
+            branches=[
+                SimpleNamespace(
+                    branch_id=1,
+                    branch_goal="compare handling",
+                    anchor_quote="grip",
+                    allowed_functions=("reaction",),
+                    content_angles=("fit_use_case",),
+                )
+            ],
+            matched_real_thread={"comments": [anonymous_long_slot]},
+            comments=[anonymous_long_slot],
+            all_comments=[anonymous_long_slot],
+        )
+        self.assertIn("Selective factual slots in this request: S1", selective)
+        self.assertIn("paired R# row", selective)
+        self.assertIn("NON_TEST_VIEWPOINT_MARKER", selective)
+        self.assertNotIn("MATCHED_TEST_SECRET", selective)
+        self.assertNotIn("Give most substantive slots", selective)
 
         rendered_refs = render_reference_viewpoints(
             profile,
@@ -2363,9 +2439,7 @@ class GeneralizedCardTest(unittest.TestCase):
             {"comment_id": f"c{index}", "parent_id": None, "body": "short"}
             for index in range(1, 9)
         ]
-        comments.append(
-            {"comment_id": "c9", "parent_id": None, "body": "word " * 108}
-        )
+        comments.append({"comment_id": "c9", "parent_id": None, "body": "word " * 108})
         selected = _comment_planner_batch_with_history(
             module,
             alternating_repairs,
@@ -2399,9 +2473,7 @@ class GeneralizedCardTest(unittest.TestCase):
 
     def test_nonblocking_quality_uses_one_repair(self) -> None:
         tone_only = SimpleNamespace(
-            repair_issues=(
-                SimpleNamespace(sample_id=7, code="tone_role_mismatch"),
-            )
+            repair_issues=(SimpleNamespace(sample_id=7, code="tone_role_mismatch"),)
         )
         self.assertEqual(_sample_repair_budget(tone_only, 7, 3), 1)
 
@@ -6162,7 +6234,9 @@ class GeneralizedCardTest(unittest.TestCase):
             "Semantic contributions already covered in this thread:\n",
             1,
         )
-        short_rows = [line for line in short_block.splitlines() if line.startswith("- ")]
+        short_rows = [
+            line for line in short_block.splitlines() if line.startswith("- ")
+        ]
         coverage_rows = [
             line for line in coverage_block.splitlines() if line.startswith("- ")
         ]
@@ -6741,6 +6815,11 @@ class WriterRouteLockTest(unittest.TestCase):
                 }
             ],
             slot_distribution="- S2: tone=impolite",
+            reference_viewpoints=(
+                "- R00001: source_topic=other camera; surface=full_answer; "
+                "text=The adapter preserves electronic aperture control."
+            ),
+            claim_slots={2},
         )
 
     def test_reply_schema_stops_asking_for_a_finished_sentence(self) -> None:
@@ -6765,7 +6844,71 @@ class WriterRouteLockTest(unittest.TestCase):
         self.assertIn("information the Writer will not receive", claim_off)
         self.assertNotIn("Give a substantive reply", claim_off)
 
-    def test_reply_story_rule_separates_synthetic_sequence_from_seed_facts(self) -> None:
+    def test_selective_reply_claim_has_an_excluded_source_and_fixed_slot(self) -> None:
+        prompt = self._reply_planner_prompt(
+            "own_words",
+            domain_claim_mode="selective",
+        )
+        self.assertIn("EVALUATION-EXCLUDED REFERENCE ROWS", prompt)
+        self.assertIn("R00001", prompt)
+        self.assertIn("Selective factual slots in this request: S2", prompt)
+        self.assertIn("Every other slot returns ``domain_claim=none``", prompt)
+        self.assertIn("Planner-only and never reaches the Writer", prompt)
+
+    def test_deep_reply_excludes_the_full_ancestor_chain(self) -> None:
+        from generalized_card import reply_planning
+
+        backend = SimpleNamespace(
+            compact=lambda value, limit: str(value)[:limit],
+            CLAIM_FAMILIES=("direct_answer",),
+            GENERALIZED_WRITER_ROUTE_LOCK="own_words",
+            GENERALIZED_DOMAIN_CLAIM_MODE="off",
+        )
+        comments = [
+            {"comment_id": "c1", "parent_id": None, "depth": 0, "body": "root"},
+            {"comment_id": "c2", "parent_id": "c1", "depth": 1, "body": "reply"},
+            {
+                "comment_id": "c3",
+                "parent_id": "c2",
+                "depth": 2,
+                "body": "a sufficiently developed direct reply body " * 4,
+            },
+        ]
+        prompt = reply_planning.render_direct_reply_planner_prompt(
+            config=self.config,
+            backend=backend,
+            seed_post=SimpleNamespace(
+                title="Camera question",
+                body="Autofocus issue",
+                content="Autofocus issue",
+            ),
+            comments=[comments[2]],
+            all_comments=comments,
+            sample_offset=2,
+            prior_plans=[
+                {
+                    "sample_id": "S1",
+                    "semantic_move": "compare tracking modes",
+                    "detail_focus": "subject tracking",
+                },
+                {
+                    "sample_id": "S2",
+                    "semantic_move": "test acquisition speed",
+                    "decision_boundary": "first-frame lock",
+                    "detail_focus": "acquisition speed",
+                    "reply_delta_type": "operational_test",
+                },
+            ],
+            slot_distribution="- S3: tone=neutral",
+        )
+        self.assertIn("Parent semantic move to exclude: test acquisition speed", prompt)
+        self.assertIn("Ancestor coverage to exclude: S1", prompt)
+        self.assertIn("subject tracking", prompt)
+        self.assertIn("Differ from every object listed", prompt)
+
+    def test_reply_story_rule_separates_synthetic_sequence_from_seed_facts(
+        self,
+    ) -> None:
         prompt = self._reply_planner_prompt("own_words")
         self.assertEqual(
             prompt.count(
@@ -7086,8 +7229,40 @@ class NamedConcretenessLicenseTest(unittest.TestCase):
 
         from generalized_card.writer_grounding import NAMED_ENTITY_RULE
 
-        self.assertIn("do not repeat a name or figure another", NAMED_ENTITY_RULE)
+        self.assertIn("Repeating its name is normal", NAMED_ENTITY_RULE)
+        self.assertIn("do not repeat another comment's same fact", NAMED_ENTITY_RULE)
+        self.assertNotIn("do not repeat a name", NAMED_ENTITY_RULE)
         self.assertIn("consistent with", NAMED_ENTITY_RULE)
+
+    def test_named_personal_slot_receives_grounded_equipment_options(self) -> None:
+        from generalized_card import prompts
+
+        backend = self._backend("named")
+        backend.GENERALIZED_DOMAIN_PROFILE = {
+            "entity_inventory": {
+                "available": True,
+                "terms": [
+                    {"term": "Sony a7III"},
+                    {"term": "Fujifilm X-T3"},
+                ],
+            }
+        }
+        task = self._task(
+            allow_first_person_frame=True,
+            evidence_mode="firsthand_experience",
+            story_mode="specific_personal_story",
+        )
+        rendered = prompts._own_equipment_block(backend, task)
+        self.assertIn("Equipment you may claim as your own", rendered)
+        self.assertIn("Sony a7III", rendered)
+        self.assertEqual(
+            prompts._own_equipment_block(
+                backend,
+                task,
+                has_domain_claim=True,
+            ),
+            "",
+        )
 
     def test_all_three_modes_stay_distinct_and_off_is_unchanged(self) -> None:
         from generalized_card.writer_grounding import entity_naming_rule

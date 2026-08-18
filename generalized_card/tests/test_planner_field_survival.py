@@ -85,6 +85,21 @@ class PlannerFieldSurvivalTest(unittest.TestCase):
         normalized = enrich_domain_claim_fields(payload, {1: {}}, enabled=False)
         self.assertEqual(normalized[1]["domain_claim"], "")
 
+    def test_selective_schedule_clears_an_unscheduled_model_claim(self) -> None:
+        payload = {
+            "comment_plans": [
+                {"sample_id": "S1", "domain_claim": "unscheduled fact"},
+                {"sample_id": "S2", "domain_claim": "scheduled fact"},
+            ]
+        }
+        normalized = enrich_domain_claim_fields(
+            payload,
+            {1: {}, 2: {}},
+            allowed_sample_ids={2},
+        )
+        self.assertEqual(normalized[1]["domain_claim"], "")
+        self.assertEqual(normalized[2]["domain_claim"], "scheduled fact")
+
     def test_planner_prompt_requests_every_field_it_relies_on(self) -> None:
         from generalized_card import prompts
 

@@ -302,14 +302,14 @@ def configure_generator_backend(
     )
     module.GENERALIZED_ACTOR_ASSIGNMENTS = {}
     module.GENERALIZED_DOMAIN_CLAIMS = {}
-    # Ablation switch. A planned domain claim reached 508 of 522 comments in
-    # v71 against 0 in v69, which is a large enough intervention that it has to
-    # be separable from everything else in the same release. "off" now disables
-    # both planning and delivery: planning a fact and dropping it at the Writer
-    # boundary made the semantic move depend on information the Writer never saw.
+    module.GENERALIZED_ACTIVE_SELECTIVE_CLAIM_SLOTS = set()
+    # `selective` supplies one excluded-reference-backed fact only to scheduled
+    # capacity-compatible slots. Historical `planned` reached 508/522 comments;
+    # `off` disables both planning and delivery. Keeping all three modes named
+    # makes the content intervention reproducible instead of overloading a flag.
     module.GENERALIZED_DOMAIN_CLAIM_MODE = (
-        os.environ.get("GENERALIZED_CARD_DOMAIN_CLAIM", "planned").strip().lower()
-        or "planned"
+        os.environ.get("GENERALIZED_CARD_DOMAIN_CLAIM", "selective").strip().lower()
+        or "selective"
     )
     # "full" reproduces policy v73's Writer prompt exactly; "focused" keeps the
     # compact Planner discourse, distribution, and grounding contract. See
@@ -580,6 +580,11 @@ def configure_generator_backend(
                 payload,
                 normalized,
                 enabled=planner_claims_enabled(module),
+                allowed_sample_ids=(
+                    set(module.GENERALIZED_ACTIVE_SELECTIVE_CLAIM_SLOTS)
+                    if module.GENERALIZED_DOMAIN_CLAIM_MODE == "selective"
+                    else None
+                ),
             )
             return apply_slot_distribution_schedule(
                 normalized,
@@ -1234,10 +1239,12 @@ def _refresh_prompt_dependent_controls(module: ModuleType, task: Any) -> Any:
     """
 
     surface_texture = str(getattr(task, "surface_texture", "") or "")
-    social_ack = (
-        str(getattr(task, "speaker_role", "") or "") == "gratitude_reply"
-        or str(getattr(task, "affect_role", "") or "") in {"gratitude", "relief"}
-    )
+    social_ack = str(
+        getattr(task, "speaker_role", "") or ""
+    ) == "gratitude_reply" or str(getattr(task, "affect_role", "") or "") in {
+        "gratitude",
+        "relief",
+    }
     if surface_texture == "gratitude_social" and not social_ack:
         surface_texture = "plain"
         task = replace(task, surface_texture=surface_texture)
@@ -1375,6 +1382,7 @@ def _anchor_builder(module: ModuleType):
                 "claim_key",
                 "claim_family",
                 "domain_intent",
+                "domain_claim",
                 "reply_relation",
             )
         )
@@ -1731,6 +1739,9 @@ def _comment_planner_batch_with_history(
             "schema_recovery_events": schema_recovery_events,
             "repair_attempts": sum(repair_counts.values()),
             "repair_strategy": "targeted_slot_with_blocking_field_merge",
+            "selective_claim_slots": sorted(
+                getattr(module, "GENERALIZED_ACTIVE_SELECTIVE_CLAIM_SLOTS", set())
+            ),
             "repair_attempts_by_sample": {
                 str(sample_id): count
                 for sample_id, count in sorted(repair_counts.items())
@@ -1808,8 +1819,7 @@ def _comment_planner_batch_with_history(
             print(
                 "[plan-contract-warning] continuing after bounded planning: "
                 + "; ".join(
-                    f"S{issue.sample_id}:{issue.code}"
-                    for issue in unresolved_contracts
+                    f"S{issue.sample_id}:{issue.code}" for issue in unresolved_contracts
                 ),
                 flush=True,
             )
@@ -1860,9 +1870,7 @@ def _sample_repair_budget(report: Any, sample_id: int, default: int) -> int:
         for issue in report.repair_issues
         if int(issue.sample_id) == int(sample_id)
     ]
-    has_blocking_issue = any(
-        issue.code in BLOCKING_PLAN_ISSUES for issue in issues
-    )
+    has_blocking_issue = any(issue.code in BLOCKING_PLAN_ISSUES for issue in issues)
     if issues and not has_blocking_issue:
         return min(max(0, int(default)), 1)
     return max(0, int(default))

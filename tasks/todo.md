@@ -24,6 +24,29 @@ them onto the 12 metrics and onto the per-thread evidence in `HANDOFF.md` §4.3:
 Only `avg_depth` and `structural_virality` are genuinely matched per thread, and
 both are fixed by the matched sampler rather than won by generation.
 
+## v96 selective factual-grounding status — 2026-08-18
+
+- [x] Complete and evaluate the paid v95 seed-2 gate; separate reliability
+      success from content failure.
+- [x] Compare all 12 exact n=1 metrics and direct content diagnostics without
+      treating n=1 p-values as inferential.
+- [x] Trace low specificity to a missing safe fact path, an incorrect ban on
+      normal product-name reuse, and direct replies with no excluded reference
+      knowledge.
+- [x] Add `domain-claim=selective` while retaining `planned` and `off` as named,
+      reproducible arms. Enforce the selected slot set after JSON parsing.
+- [x] Give selective direct-reply planning evaluation-excluded reference rows
+      and full ancestor semantic coverage; raw reference wording remains
+      Planner-only.
+- [x] Carry a delivered claim into Writer anchors and prevent a story slot from
+      receiving both a claim and a second equipment-fact source.
+- [x] Permit natural reuse of the thread's product name while rejecting reuse of
+      the same fact or amount.
+- [x] Complete 316 tests, full Ruff, 95/95 clean source pins, both parity scopes,
+      selective/named backend self-test, and exact seed-2 prepare-only.
+- [ ] Run one fresh v96 seed-2 paid gate, inspect every comment and the same
+      content/12-metric diagnostics. N=10 remains blocked until content passes.
+
 ## v95 compiled/non-terminal Planner-contract status — 2026-08-18
 
 - [x] Reconstruct all 19 saved v94 batch reports and all four terminal slots
@@ -44,8 +67,9 @@ both are fixed by the matched sampler rather than won by generation.
       cross-product contract stress test and complete 307 tests.
 - [x] Complete Ruff, both parity scopes, 95/95 source pins, backend self-test,
       and exact v95 seed-2 `--prepare-only`; all pass without an API call.
-- [ ] After the zero-API gate, run seed 2 once, inspect content and all available
-      n=1 diagnostics, then decide whether an N=10 metric run is justified.
+- [x] Run seed 2 once and inspect content plus n=1 diagnostics. Reliability
+      passed, but the content hypothesis failed; supersede v95 with v96 and do
+      not run v95 N=10.
 
 ## v94 state-preserving Planner-repair status — 2026-08-18
 

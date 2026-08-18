@@ -16,10 +16,11 @@ HISTORICAL_REVISION_POLICY_VERSIONS = {
     "generalized-card-revision-v6-dynamic-coverage-history-20260807",
 }
 GENERALIZED_V2_GENERATION_POLICY_VERSION = (
-    "generalized-card-v2-nonfatal-compiled-plan-contract-v95-20260818"
+    "generalized-card-v2-selective-facts-ancestor-novelty-v96-20260818"
 )
 HISTORICAL_GENERATION_POLICY_VERSIONS = {
     "generalized-v2": {
+        "generalized-card-v2-nonfatal-compiled-plan-contract-v95-20260818",
         "generalized-card-v2-state-preserving-plan-repair-v94-20260818",
         "generalized-card-v2-root-reply-boundary-v93-20260818",
         "generalized-card-v2-lossless-domain-claim-off-v92-20260817",
@@ -165,7 +166,7 @@ CORE_FILES = {
     ),
     "generator_adapter": (
         "generalized_card/generalized_card/backend.py",
-        "c409f554e395c371b9fbeb1d5eb0cad9250d54bb83364d6edc8cd2117cb2fcf9",
+        "abb881d7554880d1f0cd7718bc3be23579659921e0bf40a8529a274e37131d41",
     ),
     "data_boundary": (
         "generalized_card/generalized_card/data.py",
@@ -187,7 +188,7 @@ CORE_FILES = {
     ),
     "writer_grounding": (
         "generalized_card/generalized_card/writer_grounding.py",
-        "6500553a61bcd67d939fb2194994cd3917e1b0133508a1166e492fea8031ac24",
+        "c6e9349e8f85269ef3e70a360de7df0945f706f30a62e60421319e8601fae2c9",
     ),
     "actor_conditioning": (
         "generalized_card/generalized_card/actor_conditioning.py",
@@ -199,7 +200,7 @@ CORE_FILES = {
     ),
     "generation_runner": (
         "generalized_card/scripts/run_generate.py",
-        "90962dc78a2305e0a43effde705e4b13161696227f942e4586b0b6951daaf727",
+        "035d0922cd6c09fda13a7fdf534d22687fd4288374611868757afd140fdf1255",
     ),
     "generation_backend_runner": (
         "generalized_card/scripts/run_generator_backend.py",
@@ -219,7 +220,7 @@ CORE_FILES = {
     ),
     "viewpoint_bank": (
         "generalized_card/generalized_card/viewpoint_bank.py",
-        "baf4ede032bf67642da2026ed315b2c8b8af41fb0c8051b0b71293362cd9b2a6",
+        "27ea5d14192819fb495365c495db14e2d5d72be44240fb6bc75d3a895feb3027",
     ),
     "planning_quality": (
         "generalized_card/generalized_card/planning_quality.py",
@@ -255,7 +256,7 @@ CORE_FILES = {
     ),
     "domain_claim": (
         "generalized_card/generalized_card/domain_claim.py",
-        "bf4095781d4bfde9b251114b5f390fabfb5affef75b886f4743af30bc732beab",
+        "a75e16fb676a29a0276ded6d062d09a96ee52c38a2108d2b3da21cded7c5ec08",
     ),
     "opener_profile": (
         "generalized_card/generalized_card/opener_profile.py",
@@ -359,11 +360,11 @@ CORE_FILES = {
     ),
     "domain_prompt_adapter": (
         "generalized_card/generalized_card/prompts.py",
-        "000324adefc8c1b5468b7af1c655902949c095eb6dac1d78f37073f36a9a10c8",
+        "4b17e8c83794b4f6dc181651bf9263deb7ca7929a015995961cb26409c0c63df",
     ),
     "reply_planning": (
         "generalized_card/generalized_card/reply_planning.py",
-        "1019aebcc73490ffa42ba8af5a03c97b869481b58951d612c777b2706a1e747d",
+        "8e2b4382ad6d146f10a8d6665555b23fa68c8bfb9e55eda6f5fa986f28b09719",
     ),
     "persona_bridge": (
         "generalized_card/generalized_card/persona_bridge.py",

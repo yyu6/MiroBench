@@ -591,3 +591,29 @@ overrides, and keep the stable schema with literal empty values. When routing a
 case to a specialized Prompt, remove the old case-specific prose and helpers
 from the generic Prompt; otherwise duplication becomes both token waste and a
 source of contradictory model output.
+
+## 2026-08-18 — Permission to be concrete is not a factual supply chain
+
+**What happened.** The `named` Writer arm passed every offline Prompt gate but
+the paid v95 thread still had 5 distinct model designators against 40 real and
+20% digit-bearing comments against 60%. Most Writer turns had only a broad
+permission plus one or two seed tokens. The same rule also forbade reusing a
+name from an earlier comment, so a thread about three products was pressured to
+paraphrase their names away.
+
+**How to apply.** Audit what information is actually available at the final
+consumer, not just whether a permission sentence exists. Repeating the shared
+subject is discourse cohesion; repeating the same fact is redundancy. Supply
+bounded, source-traceable particulars upstream and test their survival through
+normalization, registries, prompt rendering, anchors, validation, and logs.
+
+## 2026-08-18 — Immediate-parent novelty does not protect a deep branch
+
+**What happened.** Every reply had a new delta label relative to its parent, yet
+a nine-turn chain repeatedly reframed the same fixed-lens/long-term boundary.
+Local pairwise novelty was true while branch-level semantic novelty was false.
+
+**How to apply.** For a deep reply, make the whole ancestor chain a compact
+exclusion ledger. Reusing the entity is allowed, but the new fact, test,
+condition, consequence, or decision boundary must differ from every ancestor,
+not only from the immediately preceding sentence.

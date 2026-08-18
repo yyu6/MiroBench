@@ -13,8 +13,11 @@ from .branch_routing import (
 from .domain import DomainConfig
 from .domain_claim import (
     claim_for_task,
+    domain_claim_mode,
     planner_claims_enabled,
     render_domain_claim_rule,
+    render_selective_claim_schedule,
+    selective_claim_slots,
 )
 from .domain_profile import render_profile_for_planner
 from .entity_inventory import slot_equipment_options
@@ -42,7 +45,11 @@ from .semantic_realization import (
     used_sentence_routes,
 )
 from .surface_contract import substantive_surface_slot, surface_only_label
-from .viewpoint_bank import render_reference_viewpoints
+from .viewpoint_bank import (
+    reference_viewpoint_window,
+    render_reference_rows,
+    render_reference_viewpoints,
+)
 from .writer_grounding import (
     entity_naming_rule,
     equipment_closing_clause,
@@ -87,22 +94,31 @@ def _tone_class_definitions() -> str:
     )
 
 
-def _own_equipment_block(backend: Any, task: Any) -> str:
+def _own_equipment_block(
+    backend: Any,
+    task: Any,
+    *,
+    has_domain_claim: bool = False,
+) -> str:
     """Offer this slot its own equipment from the held-out domain inventory.
 
     Restricting every comment to the seed post's entities made a whole thread
     circulate the same two or three products, which concentrates 4-gram mass.
     The legacy ``own`` experiment gives a Planner-licensed first-person slot a
-    rotating shortlist drawn from evaluation-excluded threads. No other mode
-    receives this invented kit: ``off`` is unlicensed, while ``named`` allows
-    ordinary particulars without assigning a biography.
+    rotating shortlist drawn from evaluation-excluded threads. ``off`` remains
+    unlicensed. The broader ``named`` mode also receives the shortlist on a
+    first-person slot; v95 showed that a bare permission to be specific still
+    left stories without safe particulars. A slot already carrying a planned
+    domain claim does not receive a second factual source.
     """
 
     # This block is an explicit own-fact permission. Rendering it for the
     # unlicensed mode produced 61 permission/revocation conflicts in the frozen
-    # 186-slot replay. The broad `named` license also does not assign a fake kit.
+    # 186-slot replay. Keep the first-person gate so the shortlist never assigns
+    # a synthetic biography to a non-personal turn.
     if (
-        writer_grounding_mode(backend, task) != "own"
+        has_domain_claim
+        or writer_grounding_mode(backend, task) not in {"own", "named"}
         or not _first_person_experience_slot(task)
     ):
         return ""
@@ -381,24 +397,49 @@ def comment_planner_prompt(
     requested_sample_ids = list(
         range(sample_offset + 1, sample_offset + len(comments) + 1)
     )
+    complete_slots = all_comments or comments
+    profile = getattr(backend, "GENERALIZED_DOMAIN_PROFILE", {})
+    direct_batch = is_direct_reply_batch(
+        comments=comments,
+        all_comments=complete_slots,
+        sample_offset=sample_offset,
+        prior_plans=prior_plans or [],
+    )
+    claim_slots: set[int] = set()
+    reference_viewpoints = ""
+    if domain_claim_mode(backend) == "selective":
+        all_references = reference_viewpoint_window(
+            profile,
+            seed_title=str(seed_post.title or ""),
+            seed_body=str(seed_post.body or seed_post.content or ""),
+            limit=len(complete_slots),
+        )
+        reference_viewpoints = render_reference_rows(
+            all_references[sample_offset : sample_offset + len(comments)]
+        )
+        claim_slots = set(selective_claim_slots(complete_slots, all_references))
+    elif not direct_batch:
+        reference_viewpoints = render_reference_rows(
+            reference_viewpoint_window(
+                profile,
+                seed_title=str(seed_post.title or ""),
+                seed_body=str(seed_post.body or seed_post.content or ""),
+                limit=max(1, len(comments)),
+                offset=max(0, sample_offset),
+            )
+        )
+    backend.GENERALIZED_ACTIVE_SELECTIVE_CLAIM_SLOTS = set(claim_slots)
     active_schedule = getattr(
         backend, "GENERALIZED_ACTIVE_SLOT_DISTRIBUTION_SCHEDULE", {}
     )
-    if is_direct_reply_batch(
-        comments=comments,
-        all_comments=all_comments or comments,
-        sample_offset=sample_offset,
-        prior_plans=prior_plans or [],
-    ):
+    if direct_batch:
         assignments = active_schedule.get("assignments") or {}
         defaults = active_schedule.get("defaults") or {}
         slot_controls = {
             sample_id: {
                 **defaults,
                 **dict(
-                    assignments.get(str(sample_id))
-                    or assignments.get(sample_id)
-                    or {}
+                    assignments.get(str(sample_id)) or assignments.get(sample_id) or {}
                 ),
             }
             for sample_id in requested_sample_ids
@@ -416,6 +457,8 @@ def comment_planner_prompt(
                 sample_ids=requested_sample_ids,
             ),
             slot_controls=slot_controls,
+            reference_viewpoints=reference_viewpoints,
+            claim_slots=claim_slots,
             validation_feedback=validation_feedback,
         )
     schema_sample_id = requested_sample_ids[0] if requested_sample_ids else 1
@@ -424,15 +467,7 @@ def comment_planner_prompt(
         for branch in branches
     )
     families = " | ".join(GENERIC_CLAIM_FAMILIES)
-    profile = getattr(backend, "GENERALIZED_DOMAIN_PROFILE", {})
     perspectives = render_profile_for_planner(profile)
-    reference_viewpoints = render_reference_viewpoints(
-        profile,
-        seed_title=str(seed_post.title or ""),
-        seed_body=str(seed_post.body or seed_post.content or ""),
-        limit=max(1, len(comments)),
-        offset=max(0, sample_offset),
-    )
     prior_plan_block = _render_prior_comment_plans(backend, prior_plans or [])
     distribution_target = render_planner_distribution_target(
         getattr(backend, "GENERALIZED_ACTIVE_REFERENCE_TEMPLATE", {}),
@@ -508,7 +543,52 @@ def comment_planner_prompt(
   ``attention_focus`` in the seed or parent, and do not import facts from R#.
 - Vary ``realization_route`` across nearby slots before Writer generation. It
   describes sentence architecture and cadence, not reusable example wording."""
-    if planner_claims_enabled(backend):
+    claim_mode = domain_claim_mode(backend)
+    if claim_mode == "selective":
+        selected_claims = render_selective_claim_schedule(
+            requested_sample_ids,
+            claim_slots,
+        )
+        claim_knowledge = """
+These rows are also a bounded source of this domain's general knowledge. For a
+slot explicitly selected below, restate at most one general fact from its paired
+R# row: a compatibility relation, procedure, observable behaviour,
+specification class, or model comparison. The Writer receives only your
+restatement, never the R# text. Never carry over the reference participant's
+purchase, photos, personal outcome, dispute, wording, URL, or situation-specific
+number. A fact about the seed post itself still cannot be invented."""
+        claim_schema = (
+            "one general domain fact restated from this slot's paired R# row "
+            "only when S# is selected below; otherwise none"
+        )
+        claim_rules = f"""- Selective factual slots in this request: {selected_claims}.
+  Only those S# values may return a ``domain_claim``. Each uses its paired R#
+  row and carries one independently useful fact. Every other row returns the
+  literal ``none`` even if it is substantive.
+- Reusing the discussion's product or model name is normal. Vary the fact,
+  condition, procedure, quantity, or comparison; do not invent a different
+  name merely to make nearby comments look different.
+- If a selected R# row contains no transferable general domain fact, return
+  ``none`` rather than turning a participant-specific detail into knowledge."""
+        fact_grounding_objective = (
+            "Keep factual content grounded in the seed or in the one "
+            "evaluation-excluded general fact explicitly licensed for a "
+            "selective slot. No matched evaluation comment text or facts are "
+            "supplied."
+        )
+        reference_adaptation_rule = (
+            "Use the corresponding R# as a semantic pattern. Only a listed "
+            "selective factual slot may also restate one transferable general "
+            "domain fact from its paired row; all other slots must not import "
+            "reference facts."
+        )
+        semantic_grounding_rule = (
+            "Ground semantic_move, local_topic, and detail_focus in the visible "
+            "seed or in this slot's delivered domain_claim. They may explain, "
+            "apply, question, or react to that one claim, but may not add a "
+            "second hidden fact."
+        )
+    elif planner_claims_enabled(backend):
         claim_knowledge = """
 These rows are also this domain's knowledge. Real participants bring domain
 knowledge they acquired elsewhere, so a slot may carry one *general* domain fact
@@ -535,6 +615,21 @@ specific situation. A fact about the seed post itself still cannot be invented."
   instead of returning to whichever one the seed post mentions.
 - Micro and purely social slots keep ``domain_claim=none``. Do not attach a fact
   to a reaction that has no room for one."""
+        fact_grounding_objective = (
+            "Keep factual content grounded in the seed or in the separate "
+            "general domain_claim field. No matched evaluation comment text or "
+            "facts are supplied."
+        )
+        reference_adaptation_rule = (
+            "Use the corresponding R# as a semantic pattern and, for a "
+            "substantive slot, as the source of at most one transferable "
+            "general domain claim. Never import participant-specific facts."
+        )
+        semantic_grounding_rule = (
+            "Ground semantic_move, local_topic, and detail_focus in the visible "
+            "seed or in this slot's delivered domain_claim; do not add another "
+            "hidden fact."
+        )
     else:
         claim_knowledge = ""
         claim_schema = "none"
@@ -542,6 +637,20 @@ specific situation. A fact about the seed post itself still cannot be invented."
   deliver a separate planned fact to the Writer. Put every required semantic
   contribution in ``semantic_move``, ``detail_focus``, and ``domain_intent``;
   do not build the move around information that the Writer will not receive."""
+        fact_grounding_objective = (
+            "Keep factual content grounded in the seed post or a generic "
+            "parent-local relation. No matched evaluation comment text or "
+            "facts are supplied."
+        )
+        reference_adaptation_rule = (
+            "Use the corresponding R# only as a semantic pattern. If it does "
+            "not fit the seed, choose another displayed R# or a different "
+            "seed-local/social move; never import the reference's facts."
+        )
+        semantic_grounding_rule = (
+            "semantic_move, local_topic, and detail_focus must be supported by "
+            "the visible seed or remain generic."
+        )
     return f"""Assign per-comment semantic and social controls to matched-real structural slots.
 
 Domain: {config.display_name}
@@ -563,7 +672,7 @@ Objectives:
 - Preserve each supplied slot's depth, parent relation, approximate information density, and surface roughness.
 - Choose discourse function, stance, story/no-story role, and domain perspective from the visible seed, branch controls, and frozen non-test domain profile.
 - Produce a reusable instruction, not a comment.
-- Keep factual content grounded in the seed post or a generic parent-local relation. No matched-real comment text or facts are supplied.
+- {fact_grounding_objective}
 - Preserve weak comments as weak comments. Do not upgrade reactions, fragments, jokes, or questions into advice.
 - Treat the displayed anonymous word count as semantic capacity, not an output
   word-count target. A micro slot (five words or fewer) can only support a
@@ -650,11 +759,9 @@ Rules:
 - The ``sample_id`` value shown in the JSON schema is an example from this
   request, not a fixed constant. Return exactly these global IDs once each:
   {", ".join(f"S{sample_id}" for sample_id in requested_sample_ids)}.
-- Use the corresponding R# as a semantic pattern where applicable. If it does
-  not fit the visible seed, choose another displayed R# or use a genuinely
-  different seed-local/social move; never import the reference's facts.
+- {reference_adaptation_rule}
 - Use controlled vocabulary values exactly.
-- ``semantic_move``, ``local_topic``, and ``detail_focus`` must be supported by the visible seed or remain generic.
+- {semantic_grounding_rule}
 - Never copy a hidden matched-real anecdote, username, URL, or seed-specific fact.
 - A label explicitly listed for an S# is a fixed template contract. Select a
   compatible role, payload, stance, and evidence mode in this first plan; do
@@ -1030,7 +1137,11 @@ def writer_prompt(
             openings=openings,
             retry=retry,
             anchors_block=anchors_block,
-            own_equipment=_own_equipment_block(backend, task),
+            own_equipment=_own_equipment_block(
+                backend,
+                task,
+                has_domain_claim=bool(domain_claim_rule),
+            ),
             speaker_block=speaker_block,
             domain_profile=domain_profile,
             domain_claim_rule=domain_claim_rule,
@@ -1077,7 +1188,7 @@ Local anchor:
 {backend.compact(_writer_safe_control_text(task.local_anchor, domain_profile), 220)}
 
 Visible factual anchors:
-{anchors_block}{_own_equipment_block(backend, task)}{speaker_block}
+{anchors_block}{_own_equipment_block(backend, task, has_domain_claim=bool(domain_claim_rule))}{speaker_block}
 
 Planner intent:
 {backend.compact(_writer_safe_control_text(task.planner_intent, domain_profile), 260)}

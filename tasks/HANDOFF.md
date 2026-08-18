@@ -1,5 +1,41 @@
 # Handoff — synthetic Reddit thread generation (generalized_card)
 
+## 2026-08-18 v96 selective-facts/ancestor-novelty addendum
+
+The paid v95 seed-2 gate completed all 45 comments in one attempt for `$0.3481`,
+confirming that compiled non-terminal Planner contracts fixed progression. It
+did not produce real-matched content. Exact n=1 diagnostics were self-BLEU
+`0.0350` vs real `0.0268`, self-BERTScore `0.5306` vs `0.4892`, story
+probability `0.1015` vs `0.2321`, emotion entropy `1.6572` vs `1.9687`, 20% vs
+60% comments with digits, 15.6% vs 55.6% with domain vocabulary, and 5 vs 40
+distinct model designators. N=1 p-values are not inferential. Length CV, average
+depth, and structural virality matched.
+
+The active trace found no safe factual path under `domain-claim=off`. The root
+Planner saw excluded reference text but had to drop facts; the direct-reply
+Planner saw no reference rows; and the Writer often received only `Sony` or
+`VII`. Its `named` rule then incorrectly prohibited repeating any name another
+comment used, even though real threads repeat the product name while changing
+the fact. Deep replies excluded only their immediate parent, so S37--S45 kept
+returning to the same fixed-lens boundary under different delta labels.
+
+v96 adds a distinct `domain-claim=selective` policy. A deterministic schedule
+uses only anonymous slot capacity and evaluation-excluded reference surface
+roles; only scheduled slots can retain one Planner-restated general fact after
+JSON parsing. `planned` and `off` remain reproducible arms. Selective direct
+replies receive their own excluded reference window, and every deep reply sees
+compact semantic coverage from its full ancestor chain. Raw reference wording
+never reaches the Writer. Planned facts now enter Writer anchors; a personal
+story gets either that claim or a rotating excluded-reference equipment
+shortlist, never two independent factual sources.
+
+The `named` rule now allows normal product-name reuse and blocks only repetition
+of the same fact/amount. This is a content hypothesis, not a guaranteed metric
+pass. The free gate is complete: 316 tests, full Ruff, 95/95 clean pins, both
+parity scopes, selective/named self-test, and exact seed-2 prepare-only all
+pass. Run one paid seed-2 gate next. Do not start N=10 unless it passes artifact,
+qualitative, repetition, specificity, story/emotion, and exact n=1 review.
+
 ## 2026-08-18 v95 compiled/non-terminal-plan addendum
 
 The paid v94 seed-2 gate failed all three whole-post attempts: 152 requests,

@@ -36,17 +36,108 @@ _REFERENCE_ID = re.compile(r"(?<![A-Za-z0-9])R\d{1,8}(?![A-Za-z0-9])", re.I)
 _URL = re.compile(r"https?://\S+|www\.\S+", re.I)
 _EMPTY = {"", "none", "n/a", "na", "null", "no claim", "not applicable"}
 _MAX_CHARS = 220
+MODE_OFF = "off"
+MODE_PLANNED = "planned"
+MODE_SELECTIVE = "selective"
+CLAIM_MODES = (MODE_OFF, MODE_PLANNED, MODE_SELECTIVE)
+_FACT_BEARING_REFERENCE_ROLES = {
+    "personal_datapoint",
+    "correction",
+    "parent_local_reply",
+    "full_answer",
+    "explanation",
+}
+_MIN_SLOT_WORDS = 25
+_MIN_REFERENCE_WORDS = 8
+_MIN_SELECTIVE_SHARE = 0.25
+_MAX_SELECTIVE_SHARE = 0.60
+
+
+def domain_claim_mode(backend: Any) -> str:
+    """Return the configured claim policy, falling back to the safe default."""
+
+    value = str(getattr(backend, "GENERALIZED_DOMAIN_CLAIM_MODE", MODE_SELECTIVE) or "")
+    value = value.strip().lower()
+    return value if value in CLAIM_MODES else MODE_SELECTIVE
 
 
 def planner_claims_enabled(backend: Any) -> bool:
     """Return whether this run plans and delivers per-slot domain claims."""
 
-    return (
-        str(getattr(backend, "GENERALIZED_DOMAIN_CLAIM_MODE", "planned") or "")
-        .strip()
-        .lower()
-        != "off"
+    return domain_claim_mode(backend) != MODE_OFF
+
+
+def selective_claim_slots(
+    comments: list[dict[str, Any]],
+    references: list[dict[str, Any]],
+) -> tuple[int, ...]:
+    """Choose capacity-compatible slots backed by useful excluded references.
+
+    The schedule is derived only from anonymous slot capacity and the surface
+    role of evaluation-excluded reference rows. It never reads the matched
+    comment's semantics. The upper bound prevents the old `planned` arm's
+    508/522 factual convergence, while the lower bound keeps a substantive
+    domain discussion from collapsing back to abstract decision language.
+    """
+
+    total = len(comments)
+    if total <= 0 or not references:
+        return ()
+    usable_references = [row for row in references if _reference_can_support_claim(row)]
+    observed_share = len(usable_references) / max(1, len(references))
+    target_share = min(
+        _MAX_SELECTIVE_SHARE,
+        max(_MIN_SELECTIVE_SHARE, observed_share),
     )
+    budget = max(1, round(total * target_share))
+    candidates = [
+        sample_id
+        for sample_id, (comment, reference) in enumerate(
+            zip(comments, references, strict=False),
+            start=1,
+        )
+        if _slot_can_carry_claim(comment) and _reference_can_support_claim(reference)
+    ]
+    if len(candidates) <= budget:
+        return tuple(candidates)
+    return tuple(
+        candidates[index] for index in _evenly_spaced_indices(len(candidates), budget)
+    )
+
+
+def render_selective_claim_schedule(
+    sample_ids: list[int], claim_slots: set[int]
+) -> str:
+    """Render the allowed factual slots for one Planner request."""
+
+    selected = [sample_id for sample_id in sample_ids if sample_id in claim_slots]
+    if not selected:
+        return "none in this request"
+    return ", ".join(f"S{sample_id}" for sample_id in selected)
+
+
+def _slot_can_carry_claim(comment: dict[str, Any]) -> bool:
+    return len(str(comment.get("body") or "").split()) >= _MIN_SLOT_WORDS
+
+
+def _reference_can_support_claim(reference: dict[str, Any]) -> bool:
+    role = str(reference.get("surface_role") or "").strip().lower()
+    try:
+        words = int(reference.get("word_count") or 0)
+    except (TypeError, ValueError):
+        words = 0
+    if words <= 0:
+        words = len(str(reference.get("text") or "").split())
+    return role in _FACT_BEARING_REFERENCE_ROLES and words >= _MIN_REFERENCE_WORDS
+
+
+def _evenly_spaced_indices(size: int, count: int) -> list[int]:
+    count = min(max(0, count), max(0, size))
+    if count <= 0:
+        return []
+    if count == 1:
+        return [size // 2]
+    return sorted({round(step * (size - 1) / (count - 1)) for step in range(count)})
 
 
 def normalized_domain_claim(value: Any) -> str:
@@ -69,6 +160,7 @@ def enrich_domain_claim_fields(
     normalized: dict[int, dict[str, str]],
     *,
     enabled: bool = True,
+    allowed_sample_ids: set[int] | None = None,
 ) -> dict[int, dict[str, str]]:
     """Retain ``domain_claim`` through the shared CARD JSON parser.
 
@@ -87,11 +179,14 @@ def enrich_domain_claim_fields(
         if sample_id > 0:
             raw_by_sample[sample_id] = row
     for sample_id, plan in normalized.items():
+        slot_enabled = enabled and (
+            allowed_sample_ids is None or sample_id in allowed_sample_ids
+        )
         plan["domain_claim"] = (
             normalized_domain_claim(
                 raw_by_sample.get(sample_id, {}).get("domain_claim")
             )
-            if enabled
+            if slot_enabled
             else ""
         )
     return normalized
@@ -114,7 +209,9 @@ def claim_for_task(
 ) -> str:
     """Look the claim up by the same key scheme the Planner recorded."""
 
-    sample_id = getattr(task, "real_sample_id", None) or getattr(task, "local_task_id", 0)
+    sample_id = getattr(task, "real_sample_id", None) or getattr(
+        task, "local_task_id", 0
+    )
     try:
         sample_id = int(sample_id or 0)
     except (TypeError, ValueError):
@@ -133,5 +230,5 @@ def render_domain_claim_rule(claim: str) -> str:
         "State it as ordinary participant knowledge, in your own words and at "
         "whatever length this slot supports. Name the equipment involved. Do not "
         "attribute it to the post, to another commenter, or to a source, and do "
-        "not add a second fact beyond it."
+        "not add a second externally checkable domain fact beyond it."
     )
