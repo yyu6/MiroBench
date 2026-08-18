@@ -74,3 +74,20 @@ most two total attempts (one whole-post retry), after the three finite repairs
 available to each failing Planner slot. Only after this 45-comment gate reaches
 `Done` should a fresh v94 N=10 begin. Formal evaluation must not combine v92,
 v93, and v94 outputs.
+
+## Paid result — failed and superseded
+
+The requested gate was run with three total whole-post attempts. All three
+failed before a complete Writer thread:
+
+- requests: 152;
+- Planner quality repairs: 130;
+- input/output tokens: 1,031,377 / 76,450;
+- estimated cost: `$0.9608`;
+- elapsed: 541 seconds;
+- attempt 1: S20 social contract and S22 long-form capacity;
+- attempt 2: S43 social contract;
+- attempt 3: S18 surface density.
+
+This falsifies the v94 reliability hypothesis. Do not rerun v94. The root cause
+and replacement policy are recorded in `tasks/v95-worklog.md`.

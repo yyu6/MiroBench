@@ -1,5 +1,20 @@
 # Lessons
 
+## 2026-08-18 — A distribution target is not a terminal per-slot truth
+
+**What happened.** A direct reply planned a coherent gratitude close. The
+held-out aggregate template then overwrote only its affect label with neutral,
+and validation rejected the contradiction created by that overlay. Across three
+whole-post attempts, different story, length, social, and density combinations
+failed after 130 Planner repair calls, leaving no text to evaluate.
+
+**How to apply.** Give each field one owner. Compile aggregate targets and the
+Planner's semantic choice into one dependent contract before evaluation, and
+record any projection. Treat residual content quality as an observable warning,
+not schema corruption. Only a state that cannot be safely persisted may abort a
+post. Completion is an engineering invariant; p-value matching remains an
+empirical result that cannot be promised before scoring complete output.
+
 ## 2026-08-18 — Slot-local repair still loses state if it replaces the whole object
 
 **What happened.** Three repairs targeted only S9, but each returned and replaced

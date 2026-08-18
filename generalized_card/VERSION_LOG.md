@@ -59,6 +59,57 @@ Before any run that changes behavior:
 
 ---
 
+## v95 — compiled, non-terminal Planner content contracts (2026-08-18)
+
+Policy ID: `generalized-card-v2-nonfatal-compiled-plan-contract-v95-20260818`.
+
+The paid v94 seed-2 gate exhausted all three whole-post attempts without a
+Writer-complete thread: 152 requests, 1,031,377 input tokens, 76,450 output
+tokens, 541 seconds, and an estimated `$0.9608`. The three attempts stopped on
+different slots and different rules: S20/S22 social/long-form, S43 social, and
+S18 surface density. Of the 152 requests, 130 were slot-local Planner quality
+repairs. More retries were therefore repeated plan sampling, not reliability.
+
+The persisted candidates expose the ownership error. Aggregate held-out
+story/affect targets were applied after the Planner, and dependent Planner
+fields could contradict them. S43 planned a natural gratitude close, then the
+template overlay changed only its affect to neutral and validation rejected the
+contradiction created by the overlay itself. Other slots alternated between
+valid development beats and a valid substantive payload without returning both
+in one stochastic whole-plan candidate.
+
+v95 compiles the frozen story/affect/capacity controls and the Planner's local
+semantic move into one dependent routing contract before quality evaluation.
+The compiler preserves `semantic_move`, local topic, detail, decision boundary,
+and reply increment. It reconciles only evidence, payload, function, role, and
+social affect required by the fixed story, social-close, micro, or substantive
+slot contract, recording every change. Direct replies now receive the schedule's
+default `no_story` in their Prompt instead of seeing `unassigned` and being
+overwritten later.
+
+Planner content diagnostics receive at most one slot-local repair unless a
+true within-plan contract conflict remains. Missing long-form beats are
+non-terminal because the Writer already has a capacity-derived fallback.
+Residual content-contract and collision diagnostics are persisted as warnings
+and continue to the Writer; only missing schema rows, malformed JSON,
+transport/auth/safety failures, empty output, and exact-coverage failure can
+stop persistence.
+
+Zero-API replay over all 19 saved v94 batch results changes residual terminal
+contract conflicts from three to zero. A cross-product stress test covers
+story/no-story, neutral/gratitude, ordinary/gratitude roles, low-information and
+story/advice payloads, and micro/ordinary/long capacity. Offline acceptance so
+far: 307 generalized tests pass; Ruff is clean; the backend self-test passes;
+active and active-plus-legacy parity are healthy with 95/95 source pins clean;
+and the exact paid seed-2 configuration completed `--prepare-only` as
+`generalized_card_camera_gpt54_v95_named_seed2_20260818_preflight_v1`. No paid
+v95 call has been made. This release predicts complete Planner progression at
+lower cost while preserving exact tree slots and the held-out distribution
+targets; the 12 realized-text metrics still require a complete generated thread
+and unchanged scorers.
+
+---
+
 ## v94 — state-preserving Planner repair (2026-08-18)
 
 Policy ID: `generalized-card-v2-state-preserving-plan-repair-v94-20260818`.
@@ -89,9 +140,9 @@ blocking count `1 -> 0`, retains five beats and the already-correct
 passes. Active and active-plus-legacy parity are healthy, with 94/94 source
 pins clean. The exact seed-2 gate command also completed `--prepare-only` as
 `generalized_card_camera_gpt54_v94_named_seed2_20260818_preflight_v1`. No paid
-v94 call has been made. The predicted effect is generation
-reliability and preservation of long-tail content capacity; it does not by
-itself predict a direct gain on any of the 12 realized-text metrics.
+v94's paid seed-2 gate later failed all three attempts for different plan
+contract combinations and produced no evaluable thread. It is superseded by
+v95; do not spend or evaluate under v94.
 
 ---
 

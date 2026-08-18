@@ -391,10 +391,16 @@ def comment_planner_prompt(
         prior_plans=prior_plans or [],
     ):
         assignments = active_schedule.get("assignments") or {}
+        defaults = active_schedule.get("defaults") or {}
         slot_controls = {
-            sample_id: dict(
-                assignments.get(str(sample_id)) or assignments.get(sample_id) or {}
-            )
+            sample_id: {
+                **defaults,
+                **dict(
+                    assignments.get(str(sample_id))
+                    or assignments.get(sample_id)
+                    or {}
+                ),
+            }
             for sample_id in requested_sample_ids
         }
         return render_direct_reply_planner_prompt(

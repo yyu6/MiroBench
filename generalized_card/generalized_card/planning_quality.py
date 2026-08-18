@@ -208,15 +208,15 @@ NON_REPAIRABLE_ISSUES = frozenset(
     }
 )
 
-# These conflicts describe a plan the Writer cannot realize without violating
-# another field in the same slot. Keep them separate from quality issues such
-# as semantic collisions: repair selection must establish realizability first.
+# These conflicts receive repair priority because the Writer would otherwise
+# have to choose between controls in the same slot. They are not terminal:
+# schema completeness is enforced separately, while residual content quality
+# is persisted for Writer realization and final evaluation.
 BLOCKING_PLAN_ISSUES = frozenset(
     {
         "social_contract_conflict",
         "surface_density_conflict",
         "surface_capacity_conflict",
-        "long_form_capacity",
     }
 )
 
@@ -741,14 +741,20 @@ def social_contract_problem(
         affect in {"gratitude", "relief"}
         and role == "gratitude_reply"
         and function == "reaction"
-        and payload in {"low_info_reaction", "bare_answer"}
+        and payload
+        in {
+            "low_info_reaction",
+            "bare_answer",
+            "soft_helpful",
+            "fragment_datapoint",
+        }
         and story == "no_story"
     )
     if affect in {"gratitude", "relief"} and not social_reaction_contract:
         problems.append(
             f"affect_role={affect} requires a social reaction contract: a no-story "
             "reaction with "
-            "speaker_role=gratitude_reply and a low-information or bare-answer "
+            "speaker_role=gratitude_reply and an acknowledgement-capable "
             f"payload; current role={role or 'unset'}, function={function or 'unset'}, "
             f"payload={payload or 'unset'}, story={story or 'unset'}"
         )
@@ -756,7 +762,7 @@ def social_contract_problem(
         problems.append(
             "speaker_role=gratitude_reply or reply_delta_type=social_close requires "
             "the matching social reaction contract: affect_role=gratitude or relief, "
-            "comment_function=reaction, a low-information or bare-answer payload, "
+            "comment_function=reaction, an acknowledgement-capable payload, "
             f"and story_mode=no_story; current affect={affect or 'unset'}, "
             f"role={role or 'unset'}, function={function or 'unset'}, "
             f"payload={payload or 'unset'}, story={story or 'unset'}"

@@ -16,10 +16,11 @@ HISTORICAL_REVISION_POLICY_VERSIONS = {
     "generalized-card-revision-v6-dynamic-coverage-history-20260807",
 }
 GENERALIZED_V2_GENERATION_POLICY_VERSION = (
-    "generalized-card-v2-state-preserving-plan-repair-v94-20260818"
+    "generalized-card-v2-nonfatal-compiled-plan-contract-v95-20260818"
 )
 HISTORICAL_GENERATION_POLICY_VERSIONS = {
     "generalized-v2": {
+        "generalized-card-v2-state-preserving-plan-repair-v94-20260818",
         "generalized-card-v2-root-reply-boundary-v93-20260818",
         "generalized-card-v2-lossless-domain-claim-off-v92-20260817",
         "generalized-card-v2-slot-gated-fact-license-v91-20260817",
@@ -164,7 +165,7 @@ CORE_FILES = {
     ),
     "generator_adapter": (
         "generalized_card/generalized_card/backend.py",
-        "eedc5f7aaaed5e2d72f79f60eb839d45474cbf8964445b055e44f54166bf4c40",
+        "c409f554e395c371b9fbeb1d5eb0cad9250d54bb83364d6edc8cd2117cb2fcf9",
     ),
     "data_boundary": (
         "generalized_card/generalized_card/data.py",
@@ -222,7 +223,11 @@ CORE_FILES = {
     ),
     "planning_quality": (
         "generalized_card/generalized_card/planning_quality.py",
-        "ec55b73a092833459251560b7189640ee2d52197748f84af04b6da9f5172ae2d",
+        "16454d3658a52e2634fd44588a0ce8898593bb71a14731eed8ccff676e990d67",
+    ),
+    "planner_contract": (
+        "generalized_card/generalized_card/planner_contract.py",
+        "6b657328a39545c7718e5fa0993702662c4a33e6bfec4c3ecf6c15821e5e307d",
     ),
     "plan_repair": (
         "generalized_card/generalized_card/plan_repair.py",
@@ -354,7 +359,7 @@ CORE_FILES = {
     ),
     "domain_prompt_adapter": (
         "generalized_card/generalized_card/prompts.py",
-        "45a1c4091655834b4b96d3720e8f59b3a4f363119b95ad9ccc6dfc124883debb",
+        "000324adefc8c1b5468b7af1c655902949c095eb6dac1d78f37073f36a9a10c8",
     ),
     "reply_planning": (
         "generalized_card/generalized_card/reply_planning.py",
@@ -517,6 +522,7 @@ GENERATION_ADAPTER_CORE_NAMES = (
     "domain_profile",
     "viewpoint_bank",
     "planning_quality",
+    "planner_contract",
     "plan_repair",
     "generation_distribution",
     "planner_distribution",

@@ -1498,7 +1498,9 @@ class GeneralizedCardTest(unittest.TestCase):
                 compact=lambda value, limit: str(value)[:limit],
                 GENERALIZED_DOMAIN_PROFILE={},
                 GENERALIZED_ACTIVE_REFERENCE_TEMPLATE={},
-                GENERALIZED_ACTIVE_SLOT_DISTRIBUTION_SCHEDULE={},
+                GENERALIZED_ACTIVE_SLOT_DISTRIBUTION_SCHEDULE={
+                    "defaults": {"story_mode": "no_story"}
+                },
             ),
             seed_post=SimpleNamespace(
                 title="Camera question",
@@ -1550,13 +1552,14 @@ class GeneralizedCardTest(unittest.TestCase):
         # social_close is offered only to a slot whose schedule allows it, so an
         # unallowed row simply omits it from its allowed increment list.
         self.assertIn("Allowed reply_delta_type:", prompt)
+        self.assertIn("Story contract: no_story", prompt)
         allowed_line = next(
             line
             for line in prompt.splitlines()
             if line.strip().startswith("Allowed reply_delta_type:")
         )
         self.assertNotIn("social_close", allowed_line)
-        self.assertIn("corroborating_datapoint", allowed_line)
+        self.assertNotIn("corroborating_datapoint", allowed_line)
 
     def test_direct_reply_planner_exposes_sibling_coverage(self) -> None:
         prompt = prompts.comment_planner_prompt(
@@ -2204,7 +2207,7 @@ class GeneralizedCardTest(unittest.TestCase):
         ]
         self.assertGreater(warning["collision_rate"], 0.10)
 
-    def test_repair_accepts_realizable_plan_before_optimizing_collision(self) -> None:
+    def test_contract_compiler_establishes_realizability_before_repair(self) -> None:
         module = SimpleNamespace(
             GENERALIZED_COMMENT_PLAN_HISTORY=[],
             GENERALIZED_COMMENT_PLAN_FEEDBACK="",
@@ -2295,25 +2298,20 @@ class GeneralizedCardTest(unittest.TestCase):
         )
 
         self.assertEqual(selected[1]["evidence_mode"], "firsthand_experience")
+        self.assertEqual(selected[1]["payload_type"], "fragment_datapoint")
+        self.assertEqual(selected[1]["comment_function"], "personal_datapoint")
         report = module.GENERALIZED_COMMENT_PLAN_REPORTS[-1]
         self.assertEqual(report["selected"]["blocking_issue_count"], 0)
-        first_repair = report["attempts"][1]
-        self.assertTrue(first_repair["repair_accepted"])
-        self.assertEqual(first_repair["selected_rank_before"][0], 1)
-        self.assertEqual(first_repair["candidate_rank"][0], 0)
-        self.assertEqual(
-            report["initial_plans"]["1"]["evidence_mode"],
-            "technical_or_policy_reasoning",
-        )
-        self.assertEqual(
-            report["selected_plans"]["1"]["evidence_mode"],
-            "firsthand_experience",
+        self.assertEqual(report["repair_attempts"], 0)
+        self.assertIn(
+            "scheduled_story_joint_contract",
+            {event["reason"] for event in report["control_normalizations"]},
         )
 
-    def test_long_form_repair_does_not_undo_prior_social_contract_repair(
+    def test_contract_compilation_leaves_only_one_long_form_repair(
         self,
     ) -> None:
-        """Replay the v93 S9 failure: each full candidate fixes one field only."""
+        """The v93 S9 story conflict is compiled before its beat repair."""
 
         module = SimpleNamespace(
             GENERALIZED_COMMENT_PLAN_HISTORY=[],
@@ -2354,12 +2352,6 @@ class GeneralizedCardTest(unittest.TestCase):
                 "evidence_mode": "firsthand_experience",
                 "development_plan": development,
             },
-            {**base, "evidence_mode": "small_observation", "development_plan": ""},
-            {
-                **base,
-                "evidence_mode": "firsthand_experience",
-                "development_plan": development,
-            },
         ]
         feedback: list[str] = []
 
@@ -2387,7 +2379,7 @@ class GeneralizedCardTest(unittest.TestCase):
             all_comments=comments,
         )
 
-        self.assertEqual(len(feedback), 4)
+        self.assertEqual(len(feedback), 2)
         self.assertIn("Only development_plan is still failing", feedback[-1])
         self.assertEqual(selected[9]["development_plan"], development)
         self.assertEqual(selected[9]["evidence_mode"], "small_observation")
@@ -2398,14 +2390,14 @@ class GeneralizedCardTest(unittest.TestCase):
         self.assertEqual(final_attempt["repair_merge_fields"], ["development_plan"])
         self.assertEqual(
             final_attempt["candidate_plan"]["evidence_mode"],
-            "firsthand_experience",
+            "small_observation",
         )
         self.assertEqual(
             final_attempt["applied_candidate_plan"]["evidence_mode"],
             "small_observation",
         )
 
-    def test_tone_only_mismatch_uses_one_nonblocking_repair(self) -> None:
+    def test_nonblocking_quality_uses_one_repair(self) -> None:
         tone_only = SimpleNamespace(
             repair_issues=(
                 SimpleNamespace(sample_id=7, code="tone_role_mismatch"),
@@ -2419,9 +2411,9 @@ class GeneralizedCardTest(unittest.TestCase):
                 SimpleNamespace(sample_id=7, code="semantic_collision"),
             )
         )
-        self.assertEqual(_sample_repair_budget(mixed, 7, 3), 3)
+        self.assertEqual(_sample_repair_budget(mixed, 7, 3), 1)
 
-    def test_unrealizable_social_contract_never_reaches_writer(self) -> None:
+    def test_dependent_story_evidence_is_reconciled_before_writer(self) -> None:
         module = SimpleNamespace(
             GENERALIZED_COMMENT_PLAN_HISTORY=[],
             GENERALIZED_COMMENT_PLAN_FEEDBACK="",
@@ -2457,15 +2449,35 @@ class GeneralizedCardTest(unittest.TestCase):
             }
 
         planner = _comment_planner_batch_with_history(module, incompatible_plan, {})
-        with self.assertRaisesRegex(RuntimeError, "social_contract_conflict"):
-            planner(
-                seed_post=SimpleNamespace(
-                    source_raw_post_id="seed-social", index=0, title="seed"
-                ),
-                sample_offset=0,
-                comments=[{"comment_id": "c1", "parent_id": None, "body": "words"}],
-                all_comments=[{"comment_id": "c1", "parent_id": None, "body": "words"}],
-            )
+        selected = planner(
+            seed_post=SimpleNamespace(
+                source_raw_post_id="seed-social", index=0, title="seed"
+            ),
+            sample_offset=0,
+            comments=[
+                {
+                    "comment_id": "c1",
+                    "parent_id": None,
+                    "body": "ordinary local words " * 8,
+                }
+            ],
+            all_comments=[
+                {
+                    "comment_id": "c1",
+                    "parent_id": None,
+                    "body": "ordinary local words " * 8,
+                }
+            ],
+        )
+
+        self.assertEqual(selected[1]["story_mode"], "no_story")
+        self.assertEqual(selected[1]["evidence_mode"], "small_observation")
+        report = module.GENERALIZED_COMMENT_PLAN_REPORTS[-1]
+        self.assertEqual(report["selected"]["blocking_issue_count"], 0)
+        self.assertIn(
+            "no_story_uses_non_narrative_evidence",
+            {event["reason"] for event in report["control_normalizations"]},
+        )
 
     def test_social_close_contract_is_bidirectional(self) -> None:
         coherent = {
@@ -2494,6 +2506,67 @@ class GeneralizedCardTest(unittest.TestCase):
                 problem = social_contract_problem(mismatch)
                 self.assertIn("reply_delta_type=social_close", problem)
                 self.assertIn("affect_role=gratitude or relief", problem)
+
+    def test_residual_content_contract_is_audited_without_aborting_post(self) -> None:
+        module = SimpleNamespace(
+            GENERALIZED_COMMENT_PLAN_HISTORY=[],
+            GENERALIZED_COMMENT_PLAN_FEEDBACK="",
+            GENERALIZED_COMMENT_PLAN_REPORTS=[],
+            GENERALIZED_SOCIAL_CONTRACT_COHERENCE="on",
+            GENERALIZED_DOMAIN_PROFILE={"perspectives": [{"perspective_id": "P01"}]},
+            GENERALIZED_PLAN_QUALITY_CONFIG={
+                "repair_rounds": 0,
+                "schema_recovery_rounds": 0,
+                "similarity_threshold": 0.95,
+                "embedding_similarity_threshold": 0.95,
+                "max_collision_rate": 1.0,
+                "max_perspective_share": 1.0,
+                "strict": False,
+                "require_reply_novelty": False,
+            },
+            real_comment_keys=lambda row: (str(row.get("comment_id") or ""),),
+        )
+
+        def short_story(**_kwargs):
+            return {
+                1: {
+                    "perspective_id": "P01",
+                    "semantic_move": "give one compact personal sequence",
+                    "payload_type": "personal_story",
+                    "comment_function": "personal_datapoint",
+                    "story_mode": "specific_personal_story",
+                    "evidence_mode": "firsthand_experience",
+                }
+            }
+
+        selected = _comment_planner_batch_with_history(module, short_story, {})(
+            seed_post=SimpleNamespace(
+                source_raw_post_id="seed-warning", index=0, title="seed"
+            ),
+            sample_offset=0,
+            comments=[
+                {
+                    "comment_id": "c1",
+                    "parent_id": None,
+                    "body": "one two three four five six seven eight nine ten",
+                }
+            ],
+            all_comments=[
+                {
+                    "comment_id": "c1",
+                    "parent_id": None,
+                    "body": "one two three four five six seven eight nine ten",
+                }
+            ],
+        )
+
+        self.assertEqual(set(selected), {1})
+        report = module.GENERALIZED_COMMENT_PLAN_REPORTS[-1]
+        self.assertEqual(report["selected"]["blocking_issue_count"], 1)
+        self.assertEqual(
+            report["unresolved_plan_contract_warning"][0]["code"],
+            "surface_capacity_conflict",
+        )
 
     def test_invalid_branch_id_perspective_is_deterministically_normalized(
         self,

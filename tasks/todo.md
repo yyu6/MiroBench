@@ -24,6 +24,29 @@ them onto the 12 metrics and onto the per-thread evidence in `HANDOFF.md` §4.3:
 Only `avg_depth` and `structural_virality` are genuinely matched per thread, and
 both are fixed by the matched sampler rather than won by generation.
 
+## v95 compiled/non-terminal Planner-contract status — 2026-08-18
+
+- [x] Reconstruct all 19 saved v94 batch reports and all four terminal slots
+      across its three whole-post attempts.
+- [x] Prove 130/152 requests were Planner quality repairs and that each attempt
+      stopped on a different stochastic content combination.
+- [x] Identify the overlay ownership bug: aggregate target labels changed after
+      semantic planning and validation rejected contradictions created by code.
+- [x] Compile fixed story/social/capacity controls with dependent Planner route
+      fields before quality evaluation; preserve semantic content fields.
+- [x] Pass default `no_story` into the specialized direct-reply Prompt rather
+      than overlaying it after a prompt that displayed `unassigned`.
+- [x] Limit soft plan-quality repair to one call per slot; retain repeated repair
+      only for a still-inconsistent compiled contract.
+- [x] Make residual content-contract diagnostics non-terminal and auditable;
+      retain hard failure for schema, transport/safety/empty output, and coverage.
+- [x] Replay every saved v94 selected batch: terminal conflicts `3 -> 0`; add a
+      cross-product contract stress test and complete 307 tests.
+- [x] Complete Ruff, both parity scopes, 95/95 source pins, backend self-test,
+      and exact v95 seed-2 `--prepare-only`; all pass without an API call.
+- [ ] After the zero-API gate, run seed 2 once, inspect content and all available
+      n=1 diagnostics, then decide whether an N=10 metric run is justified.
+
 ## v94 state-preserving Planner-repair status — 2026-08-18
 
 - [x] Reconstruct all v93 seed-2 S9 repair candidates from the persisted audit,
@@ -37,10 +60,10 @@ both are fixed by the matched sampler rather than won by generation.
       `small_observation` both retained, no remaining S9 issue.
 - [x] Add unit and active-wrapper regressions; complete 304 generalized tests,
       Ruff, source pins, and backend self-test.
-- [ ] Run a fresh v94 seed-2 gate with two total post attempts. Do not start N=10
-      until this specific 45-comment thread passes end to end.
-- [ ] After the gate, run a fresh v94 N=10 and evaluate content plus all 12
-      metrics. Do not mix partial v92/v93 artifacts with v94.
+- [x] Run the v94 seed-2 gate with three total attempts. All three failed on
+      different content-contract combinations after 152 requests and `$0.9608`;
+      no evaluable thread was produced.
+- [x] Supersede v94 with v95. Do not retry, resume, or evaluate the v94 artifact.
 
 ## v93 root/reply-boundary status — 2026-08-18
 

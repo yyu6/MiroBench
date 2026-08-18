@@ -83,6 +83,7 @@ from .plan_repair import (
     render_field_repair_instruction,
     repair_merge_fields,
 )
+from .planner_contract import reconcile_planner_contract
 from .reply_planning import reconcile_root_reply_fields
 from .surface_contract import (
     infer_surface_shape,
@@ -1753,7 +1754,7 @@ def _comment_planner_batch_with_history(
             f"embedding_threshold={float(config.get('embedding_similarity_threshold', 0.82)):.3f} "
             f"dominant={best_report.dominant_perspective or 'none'}:"
             f"{best_report.dominant_perspective_share:.3f} "
-            f"blocking={len(best_report.blocking_issues)} "
+            f"contract_conflicts={len(best_report.blocking_issues)} "
             f"issues={len(best_report.issues)}",
             flush=True,
         )
@@ -1790,26 +1791,35 @@ def _comment_planner_batch_with_history(
                 flush=True,
             )
 
-        reports = getattr(module, "GENERALIZED_COMMENT_PLAN_REPORTS", None)
-        if not isinstance(reports, list):
-            reports = []
-            module.GENERALIZED_COMMENT_PLAN_REPORTS = reports
-        reports.append(report_row)
-        _append_plan_quality_report(report_row)
-
         unresolved_contracts = [
             issue
             for issue in best_report.repair_issues
             if issue.code in BLOCKING_PLAN_ISSUES
         ]
         if unresolved_contracts:
-            summary = "; ".join(
-                f"S{issue.sample_id}:{issue.code}" for issue in unresolved_contracts
+            report_row["unresolved_plan_contract_warning"] = [
+                {
+                    "sample_id": issue.sample_id,
+                    "code": issue.code,
+                    "message": issue.message,
+                }
+                for issue in unresolved_contracts
+            ]
+            print(
+                "[plan-contract-warning] continuing after bounded planning: "
+                + "; ".join(
+                    f"S{issue.sample_id}:{issue.code}"
+                    for issue in unresolved_contracts
+                ),
+                flush=True,
             )
-            raise RuntimeError(
-                "Comment Planner exhausted targeted repairs with unresolved "
-                f"blocking slot plans: {summary}"
-            )
+
+        reports = getattr(module, "GENERALIZED_COMMENT_PLAN_REPORTS", None)
+        if not isinstance(reports, list):
+            reports = []
+            module.GENERALIZED_COMMENT_PLAN_REPORTS = reports
+        reports.append(report_row)
+        _append_plan_quality_report(report_row)
 
         for sample_id, plan in sorted(best_plans.items()):
             ledger.append(ledger_entry(sample_id, plan))
@@ -1843,14 +1853,17 @@ def _plan_audit_snapshot(plan: dict[str, Any]) -> dict[str, Any]:
 
 
 def _sample_repair_budget(report: Any, sample_id: int, default: int) -> int:
-    """Spend at most one retry on a non-blocking polite-role diagnostic."""
+    """Use repeated repair only for a still-unrealizable slot contract."""
 
     issues = [
         issue
         for issue in report.repair_issues
         if int(issue.sample_id) == int(sample_id)
     ]
-    if issues and all(issue.code == "tone_role_mismatch" for issue in issues):
+    has_blocking_issue = any(
+        issue.code in BLOCKING_PLAN_ISSUES for issue in issues
+    )
+    if issues and not has_blocking_issue:
         return min(max(0, int(default)), 1)
     return max(0, int(default))
 
@@ -1905,6 +1918,14 @@ def _canonicalize_plan_controls(
                     "sample_id": int(sample_id),
                     "repair_attempt": int(repair_attempt),
                     **reply_event,
+                }
+            )
+        for contract_event in reconcile_planner_contract(plan):
+            events.append(
+                {
+                    "sample_id": int(sample_id),
+                    "repair_attempt": int(repair_attempt),
+                    **contract_event,
                 }
             )
         structural_event = reconcile_development_plan_capacity(plan)

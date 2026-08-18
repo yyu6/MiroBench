@@ -1,5 +1,39 @@
 # Handoff — synthetic Reddit thread generation (generalized_card)
 
+## 2026-08-18 v95 compiled/non-terminal-plan addendum
+
+The paid v94 seed-2 gate failed all three whole-post attempts: 152 requests,
+1,031,377 input tokens, 76,450 output tokens, 541 seconds, and `$0.9608`. It
+produced no evaluable discussion. The attempts stopped on different content
+contracts: S20/S22, then S43, then S18. Persisted audits show 130 of the 152
+requests were Planner quality repairs.
+
+This disproves the v94 reliability claim. The remaining problem was not one
+field merge but ownership: held-out aggregate story/affect controls were
+overlaid after semantic planning, then dependent fields were judged against the
+new labels. S43 was a coherent gratitude close before the overlay; changing
+only affect to neutral created the conflict that stopped the post.
+
+v95 adds a deterministic, domain-neutral contract compiler before quality
+evaluation. It preserves the Planner's semantic move and only reconciles the
+dependent evidence/payload/function/role route required by fixed story,
+social-close, micro, and substantive-capacity controls. Every reconciliation is
+audited. The direct-reply Prompt now receives default `no_story` explicitly.
+
+Soft plan diagnostics get at most one repair per slot. Missing development
+beats use the existing Writer capacity fallback and cannot abort. Any residual
+content-contract problem is logged as `unresolved_plan_contract_warning` and
+continues; malformed/missing schema, API/safety/empty output, and exact coverage
+remain hard. Replaying all 19 saved v94 batches leaves zero terminal contract
+conflicts. See `tasks/v95-worklog.md`.
+
+The v95 zero-API gate is complete: 307 tests, Ruff, 95/95 source pins, both
+parity scopes, backend self-test, and the exact seed-2 `--prepare-only` pass.
+Even after runtime completion is observed, do not claim 12-metric success
+without running the unchanged scorers: pipeline progression is an engineering
+property, but MWU/KS p-values cannot be honestly guaranteed before observing
+generated text.
+
 ## 2026-08-18 v94 state-preserving-repair addendum
 
 The paid v93 N=10 run completed seeds 0 and 1 and stopped on seed 2 S9 after
@@ -21,12 +55,9 @@ applied candidate and list `repair_merge_fields`. Exact v93-log replay changes
 S9 blocking `1 -> 0`, preserves five beats, preserves
 `evidence_mode=small_observation`, and leaves no S9 issue.
 
-Do not resume or formally evaluate the two partial v93 threads. Run a fresh v94
-seed-2 gate first, then a fresh v94 N=10 only after that gate completes. The
-public `--post-retry-limit` counts total attempts, not retries; the earlier value
-`1` explicitly allowed no whole-post retry. Use `2` for the gate and formal run
-so one recoverable whole-post attempt is available after all slot-local repairs.
-See `tasks/v94-worklog.md`.
+Do not resume or formally evaluate the partial v93 or failed v94 artifacts. The
+v94 seed-2 gate exhausted three attempts and is superseded by v95. See
+`tasks/v94-worklog.md` and `tasks/v95-worklog.md`.
 
 ## 2026-08-18 v93 root/reply-boundary addendum
 
