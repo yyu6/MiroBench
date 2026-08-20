@@ -113,8 +113,13 @@ i.e. it appears slightly more in polite real comments.
 
 The counterfactual settles it: excluded-real P(polite | any dismissive family) =
 0.293 against P(polite | none) = 0.315. **No effect.** Removing the dismissive
-register entirely predicts `polite_rate` 0.070 → 0.057. And generated comments
+register entirely predicts `polite_rate` 0.070 → 0.077. And generated comments
 carrying no dismissive family still sit at P(polite) 0.082 against a real 0.281.
+
+(An earlier draft of this line said 0.057, from a standalone probe that had the
+generated conditionals hardcoded. `politeness_diagnosis.py dismissive` derives
+them and reports 0.077. The conclusion is unchanged; the script is the
+authority.)
 
 ## Two hard prevalence findings that survive as eye-visible tells
 
@@ -225,17 +230,26 @@ band, because the deficit does:
 | `mean_story_probability` | PASS, Cliff −0.12 | `my` plus past tense raises it; currently slightly low, so this should help. |
 | `hard_disagree_rate` | PASS, Cliff +0.29 | making planned-polite slots actually polite lowers disagreement, and Cliff is too high, so this should help. |
 
-## Scripts
+## Reproducing every number above
 
-All under the session scratchpad, each runnable standalone with no API cost:
+`generalized_card/analysis/politeness_diagnosis.py`, committed with v99 so this
+file's evidence is reproducible rather than described. No API calls, no model
+loading; the real per-comment labels come from the evaluation classifier's own
+`politeness_results.json` tables already under `data/raw/discussions/`.
 
-- `derive_polite_register.py` — log-odds derivation, fit/held-out split, marker conditionals
-- `why_marker_fails.py` — contrastive concession and impolite-register co-occurrence
-- `experience_hypothesis.py` — eight surface-syntactic experience features and the cell table
-- `dismissive_register.py` — the three dismissive families and the counterfactual
-- `is_it_lexical.py` — the TF-IDF logistic model and the deficit decomposition
-- `control_for_length.py` — per-1k-token rates, matched length bands, the thinness link
-- `planned_vs_realized.py` — the plan/label confusion matrix by band
+```bash
+python3 generalized_card/analysis/politeness_diagnosis.py all
+```
 
-They should be promoted into a committed analysis script before v99 lands, so the
-numbers in this file are reproducible rather than described.
+| subcommand | what it establishes |
+|---|---|
+| `markers` | REJECTED — marker frequency; the log-odds derivation and the 0.088 counterfactual |
+| `experience` | REJECTED — first-person experience; the eight features and the flat cell table |
+| `dismissive` | REJECTED as a cause; the three families and the counterfactual, plus the two surviving tells |
+| `lexical` | CONFIRMED — the TF-IDF model, the +8.381 / −0.767 decomposition, per-1k rates (needs scikit-learn) |
+| `bands` | CONFIRMED — the gap grows monotonically with length |
+| `realization` | CONFIRMED — the plan/label confusion matrix by band |
+| `moves` | the shipped profile, and each excluded candidate with its reason |
+
+`--run <dir>` points it at another run, so the same diagnosis can be re-measured
+against the v99 gate output without editing anything.
