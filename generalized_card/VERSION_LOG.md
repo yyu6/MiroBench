@@ -167,6 +167,85 @@ words and above.
 
 ---
 
+### Large-thread gate result — 2026-08-20
+
+Run `generalized_card_camera_gpt54_v100_closing_seed8_20260820_v1`, seed index 8,
+post `i1o51h`, **186 of 186 comments**, 0 degraded, 0 empty, 343 requests,
+`$1.1421`, 23.7 minutes. Both v99 and v100 arms at `measured`. Compared against
+v98's output for the *same* thread and the same thread's real text, not against a
+ten-thread average.
+
+**Both arms underperformed their predictions, and the reason is one analytical
+error of mine plus one mechanism aimed at the wrong slots.**
+
+| quantity | v98 | predicted | v100 | real | |
+|---|---:|---:|---:|---:|---|
+| verdict close (25w+) | 0.271 | 0.02–0.05 | **0.150** | 0.009 | missed |
+| own-concrete close (25w+) | 0.047 | 0.11–0.16 | 0.103 | 0.218 | just short |
+| broad adjudication frame | 0.183 | 0.05–0.10 | **0.156** | 0.000 | missed |
+| frame on story slots | 0.412 | 0.10–0.20 | **0.471** | 0.003 | **rose** |
+| `any_intensifier` | 0.258 | ~0.45 | **0.204** | 0.373 | **fell** |
+| `plain_verdict` | 0.043 | ~0.28 | 0.054 | 0.200 | barely moved |
+| `own_thing` | 0.075 | ~0.30 | 0.081 | 0.168 | barely moved |
+| `love_like` | 0.011 | ~0.12 | 0.016 | 0.043 | barely moved |
+
+**The v99 prediction was arithmetically impossible and I should have caught it.**
+The arm fires only where the plan assigned `polite`, which is 25% of slots. I
+predicted corpus-wide rates from a corpus-wide v98 baseline. On the slots the cue
+actually reaches, v98 was *already* at 0.565 for `any_intensifier` — above the
+real corpus rate of 0.373 — so there was nothing there to fix. Isolated to its own
+slots the arm did work, modestly: `plain_verdict` 0.152 → 0.217, `love_like`
+0.043 → 0.065, `own_thing` 0.217 → 0.239.
+
+**The deficit is on the slots v99 deliberately excludes.** Real move rates by the
+classifier's own label show every register carries these moves — real *impolite*
+comments carry `any_intensifier` at 0.300 and `own_thing` at 0.182:
+
+| real label | any_intensifier | plain_verdict | own_thing | love_like |
+|---|---:|---:|---:|---:|
+| polite | 0.485 | 0.393 | 0.375 | 0.142 |
+| somewhat_polite | 0.324 | 0.202 | 0.184 | 0.027 |
+| neutral | 0.130 | 0.070 | 0.108 | 0.004 |
+| impolite | 0.300 | 0.128 | 0.182 | 0.026 |
+
+Generated, by planned tone: polite 0.543 / 0.217 / 0.239 / 0.065 (the intensifier
+*overshoots*), somewhat_polite 0.154 / **0.000** / **0.000** / 0.000, neutral
+0.054 / 0.000 / 0.081 / 0.000, impolite 0.100 / **0.000** / **0.011** / 0.000.
+Decomposed for `any_intensifier`: polite slots +0.059 at weight 0.25, other slots
+**−0.170 at weight 0.75**.
+
+**The scoping error behind it.** v99 restricted itself to `polite` because no move
+*discriminates* the other labels — every candidate scored a held-out lift below
+0.3 for `neutral`. That was the wrong test. Discrimination and rate-matching are
+different questions: a move can fail to predict a label and still be the rate real
+comments of that label carry. Making text read real is rate-matching.
+
+**v100 partially worked and did not do what its cue named.** The frame in the last
+sentence is **unchanged** at 0.075, while the frame in the body fell 0.196 →
+0.131 and the looser verdict-close vocabulary fell 0.271 → 0.150. So the cue
+reduced `matters` / `my take` / `bottom line` in the close by 45% but left the
+specific `that's the part that …` construction exactly where it was. The frame did
+not displace out of the close — it was never concentrated there.
+
+**Content did improve, which is the criterion this arm was for.** v100 story
+endings: "I've been keeping mine in the bag for a few months now." / "Still got
+mine." / "I ran into that myself looking at Canon stuff and it immediately stopped
+being a body question." Against v98 on the same thread: "If the current feature
+set lines up with your routine, the age starts to matter a lot less." One moral
+closer survived: "It's a good reminder that the practical side shows up in the
+shoot itself."
+
+Unchanged and untargeted: `check` at 3.735 per 1,000 tokens against a real
+**0.000** on this thread, `will` at 0.000 against 2.776, `very` at 0.05× real.
+
+**What follows.** Extend the register moves to every tone class, drawn at that
+class's own measured rate, and cap rather than push where generated already
+overshoots. The profile machinery already does per-band draws; it needs per-label
+bands. That is derived from this gate rather than guessed, and it addresses the
+75% of the corpus that carries the deficit.
+
+---
+
 ## v99 — drawn realization of the assigned warm register (2026-08-20)
 
 Policy ID: `generalized-card-v2-drawn-register-realization-v99-20260820`.
