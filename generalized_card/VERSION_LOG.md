@@ -62,6 +62,115 @@ Before any run that changes behavior:
 
 ---
 
+## v99 — drawn realization of the assigned warm register (2026-08-20)
+
+Policy ID: `generalized-card-v2-drawn-register-realization-v99-20260820`.
+
+**Hypothesis.** The plan already places the polite register correctly -- 0.275
+planned against a real 0.288 -- and the Writer realizes it 19.3% of the time
+while realizing `impolite` 89.7%. `TONE_DEFINITIONS["polite"]` describes a
+register in prose; `sentence_rhythm` showed that a concrete surface act drawn per
+slot reaches the output and a prose description does not. So the fix is to ask a
+polite-assigned slot for the surface moves real polite comments of its size
+actually carry.
+
+Diagnosis, four rejected hypotheses, and every number below: `tasks/v99-worklog.md`.
+
+### The measured profile (schema 15 -> 16)
+
+Share of the 4,787 evaluation-classifier `polite` comments in the 424 excluded
+threads carrying each move, by size band. Zero seed overlap.
+
+| band | n | any_intensifier | plain_verdict | own_thing | love_like |
+|---|---:|---:|---:|---:|---:|
+| micro | 557 | 0.127 | 0.226 | 0.045 | 0.052 |
+| short | 684 | 0.200 | 0.297 | 0.190 | 0.114 |
+| medium | 1268 | 0.391 | 0.342 | 0.323 | 0.127 |
+| long | 1399 | 0.615 | 0.417 | 0.486 | 0.152 |
+| very_long | 704 | 0.842 | 0.580 | 0.608 | 0.227 |
+| essay | 175 | 0.937 | 0.731 | 0.703 | 0.229 |
+
+Three measured candidates were deliberately excluded, each for a stated reason:
+`gratitude` (generated already runs 1.25x real, and its band curve runs backwards
+to every other move), `reassure_you` (real prevalence 0.023, too rare to spend a
+slot on), and `link` (generated 0.000 against a real 0.058 -- a real gap and an
+eye-visible tell, but a link needs a real URL and inventing one is a hard
+failure). `intensified_positive` is the conjunction of two moves already cued.
+
+### Prediction, written before the paid run
+
+| quantity | v98 | predicted v99 | real |
+|---|---:|---:|---:|
+| realization of planned polite | 0.193 | 0.45–0.60 | — |
+| `polite_rate` | 0.070 | 0.14–0.19 | 0.288 |
+| `impolite_rate` | 0.697 | 0.60–0.63 | 0.443 |
+| `any_intensifier` prevalence | 0.288 | ~0.45 | 0.417 |
+| `plain_verdict` prevalence | 0.085 | ~0.28 | 0.215 |
+| `own_thing` prevalence | 0.117 | ~0.30 | 0.212 |
+| `love_like` prevalence | 0.015 | ~0.12 | 0.064 |
+
+**`polite_rate` and `impolite_rate` are predicted to still fail.** This arm
+repairs the polite realization only. The remaining gap is the planned-neutral
+(0.513) and planned-somewhat_polite (0.478) bleed into impolite, which is 122
+slots and needs a *suppressive* mechanism -- no additive move discriminates
+`neutral` at all, every candidate scoring a held-out lift below 0.3. Shipping
+this separately keeps the two attributable.
+
+Guardrails to check, not just the target metrics: `self_bleu_4` must not pass
+Cliff +0.45 (a cue vocabulary can repeat -- every cue names an act, never a
+phrase, and a test asserts it), and `emotion_entropy`'s dominant-emotion
+histogram must not concentrate on `approval`/`admiration`.
+
+### Arm
+
+| flag | v99 default | reproduces v98 |
+|---|---|---|
+| `--register-realization` | `measured` | `off` |
+
+Written into `run_config.json`, in `RUN_EXPERIMENT_FIELDS`, checked by the
+resume-config verification.
+
+### Zero-API result
+
+495 tests pass (28 new), Ruff clean, 103 pins with zero drift, no untracked
+active source, no unpinned local import. Self-test passes with the arm on and
+off. The schema-16 profile rebuilds over 424 excluded threads with 0 seed
+overlap and 4,787 polite comments measured.
+
+**Draw fidelity**, 4,000 slots per band, rendered rule against measured share --
+every move in every band within 0.011:
+
+| band | any_intensifier | plain_verdict | own_thing | love_like |
+|---|---|---|---|---|
+| micro | 0.127 / 0.127 | 0.231 / 0.226 | 0.043 / 0.045 | 0.048 / 0.052 |
+| medium | 0.399 / 0.391 | 0.344 / 0.342 | 0.320 / 0.323 | 0.126 / 0.127 |
+| long | 0.625 / 0.615 | 0.419 / 0.417 | 0.487 / 0.486 | 0.152 / 0.152 |
+| essay | 0.936 / 0.937 | 0.742 / 0.731 | 0.692 / 0.703 | 0.224 / 0.229 |
+
+Cues per slot scale with the band as the deficit does: micro 0.45, medium 1.19,
+long 1.68, essay 2.61. In rendered Writer prompts the rule appears in 33 of 40
+polite slots with the arm on and 0 of 40 with it off, in 6 distinct forms, at a
+cost of +283 characters (+7.7%).
+
+### Verification gate before N=10
+
+Per the standing protocol, one paid **large-thread** gate first --
+`--start-seed-index 8`, post `i1o51h`, 186 comments, inside the N=10 window so
+the row is directly comparable. Judge it on content and on distance. The specific
+things to read, because each is a prediction:
+
+1. Realized move prevalence tracking the table above, not exceeding it.
+2. Planned-polite slots reading as committed positive judgement rather than a
+   trade-off, especially in the `very_long` and `essay` bands.
+3. No invented possession from the `own_thing` cue -- it is bounded by the plan's
+   own fact license and that boundary is the thing most likely to leak.
+4. No repeated cue phrasing across slots; the words should differ even where the
+   drawn move is the same.
+5. `mean_story_probability` still in range -- `own_thing` plus past tense raises
+   it, and it is currently slightly low at Cliff -0.12.
+
+---
+
 ## Reproducibility infrastructure (2026-08-20)
 
 **Not a generator version.** No prompt, control, or distribution changes; the

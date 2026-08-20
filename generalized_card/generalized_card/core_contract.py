@@ -16,10 +16,11 @@ HISTORICAL_REVISION_POLICY_VERSIONS = {
     "generalized-card-revision-v6-dynamic-coverage-history-20260807",
 }
 GENERALIZED_V2_GENERATION_POLICY_VERSION = (
-    "generalized-card-v2-drawn-typing-rhythm-length-calibration-v98-20260819"
+    "generalized-card-v2-drawn-register-realization-v99-20260820"
 )
 HISTORICAL_GENERATION_POLICY_VERSIONS = {
     "generalized-v2": {
+        "generalized-card-v2-drawn-typing-rhythm-length-calibration-v98-20260819",
         "generalized-card-v2-keyboard-surface-measured-joints-v97-20260819",
         "generalized-card-v2-selective-facts-ancestor-novelty-v96-20260818",
         "generalized-card-v2-nonfatal-compiled-plan-contract-v95-20260818",
@@ -168,7 +169,7 @@ CORE_FILES = {
     ),
     "generator_adapter": (
         "generalized_card/generalized_card/backend.py",
-        "d886aa3c0e9f07ff9439c78f4d5db8881b3fd495589e518c19b3d9c13e3e3d56",
+        "1e649bbc043cdbd97c55a30a7c4cb8dc65ec42ddf006669e4cd927b9edf99ec0",
     ),
     "data_boundary": (
         "generalized_card/generalized_card/data.py",
@@ -202,7 +203,7 @@ CORE_FILES = {
     ),
     "generation_runner": (
         "generalized_card/scripts/run_generate.py",
-        "934e2f8711baf47148dc7c50c6d6a7ff47e0d1ab014a6bd95b0380d16bce1042",
+        "e6721bb0b30848a846d2a096b492fc96c22becc97e6e255f81390d134566ac10",
     ),
     "generation_backend_runner": (
         "generalized_card/scripts/run_generator_backend.py",
@@ -218,7 +219,7 @@ CORE_FILES = {
     ),
     "domain_profile": (
         "generalized_card/generalized_card/domain_profile.py",
-        "7a19af2a409769b715eb68eb770663df5549b7f1f7886fbbd9156a64842ef846",
+        "93be78492e761f2c88bfb17205122ab3e1e98c31815e6be5b67d1f016dc1b01d",
     ),
     "viewpoint_bank": (
         "generalized_card/generalized_card/viewpoint_bank.py",
@@ -320,6 +321,10 @@ CORE_FILES = {
         "generalized_card/generalized_card/length_calibration.py",
         "b6acb4a303904fe0862c406417748c5fdb5cdd92f526b94e68c7eb2f111ca094",
     ),
+    "register_realization": (
+        "generalized_card/generalized_card/register_realization.py",
+        "9942a7df79f2f971f703d60ffd1dc80a34b1b444ad82116a1449e5e7e4a13d68",
+    ),
     "source_provenance": (
         "generalized_card/generalized_card/source_provenance.py",
         "7e4df9acd04652a874930e689d8394025b6e02ad1e6dfb75720499825106726a",
@@ -390,7 +395,7 @@ CORE_FILES = {
     ),
     "domain_prompt_adapter": (
         "generalized_card/generalized_card/prompts.py",
-        "c5cdde2a1f9b88576553297413c70459be1ff1f8f68a1d626502dbe41f7fbc57",
+        "b8c1fbf87ad2d47aefa9f4ac5443cf126fcbd4def65ccc1c6c24aa37e6e77aa3",
     ),
     "reply_planning": (
         "generalized_card/generalized_card/reply_planning.py",
@@ -572,6 +577,7 @@ GENERATION_ADAPTER_CORE_NAMES = (
     "sentence_rhythm",
     "story_scope",
     "length_calibration",
+    "register_realization",
     "source_provenance",
     "comment_structure",
     "tone_length_fit",

@@ -1,5 +1,60 @@
 # Lessons
 
+## 2026-08-20 — Condition on the feature; if the gap is flat in every cell, the feature is not the cause
+
+**What happened.** The politeness trio had a carried-forward v99 plan with a
+verified-looking causal claim: warmth-marker rate against thread-level
+`polite_rate`, r = +0.727 over 412 real threads, monotone across quintiles. The
+plan was to schedule warmth markers per slot at their measured rates.
+
+Before writing it, the same relationship was measured **per comment** instead of
+per thread, using the real per-comment polite-guard labels that already existed in
+the repo:
+
+| | marker presence | P(polite \| marker) | P(polite \| none) |
+|---|---:|---:|---:|
+| excluded real | 0.308 | 0.627 | 0.173 |
+| matched real | 0.284 | 0.652 | 0.144 |
+| generated | 0.178 | **0.213** | 0.039 |
+
+Moving presence to the real level while the conditional stays where it is
+predicts `polite_rate` 0.070 -> 0.088, against a real 0.288. The thread-level
+correlation was real and the mechanism it implied was wrong, because a thread-level
+r cannot distinguish "generated has fewer markers" from "generated markers do not
+land".
+
+Three more hypotheses died the same way, each by conditioning and finding the gap
+unchanged inside every cell: warmth-as-concession (contrastives *raise* P(polite)
+in real text), first-person lived experience (every experience feature lifts
+1.4-2.2x against warmth's 3.56x, and the gap is a flat 3-4x in all four cells of
+the warmth x experience table), and a dismissive-adjudicative register
+(excluded-real P(polite) is 0.293 with it and 0.315 without).
+
+One of those rejections reversed a priority the previous worklog had recorded.
+"Negative markers at 3x real" had been written down as something to suppress; a
+TF-IDF model fitted on real text decomposed the gap as a **+8.381 polite-vocabulary
+deficit against a -0.767 impolite-vocabulary excess** -- generated text uses
+*less* of the impolite vocabulary than real. Suppressing it would have moved the
+metric the wrong way.
+
+**Why:** a correlation at the aggregation level of the metric is not a mechanism.
+The metric is a thread mean of per-comment classifier decisions, so the mechanism
+lives per comment, and only a per-comment measurement can separate prevalence
+from conditional probability.
+
+**How to apply.**
+- **Condition on the candidate feature and compare the cells.** If the
+  generated/real gap is roughly constant inside every cell, the feature is not
+  the cause, however good its aggregate correlation looks.
+- Measure at the level the metric is computed at. A thread-level r on a
+  thread-mean-of-per-comment metric is one aggregation step too coarse.
+- Before adding a lexical family, check its current rate. Two of the moves that
+  looked obviously missing -- `gratitude` and the whole negative register -- were
+  already at or above the real rate.
+- Look for the per-comment labels before scoring anything. All of this ran on
+  `politeness_results.json` files that were already in `data/raw/discussions/`;
+  no model was re-run.
+
 ## 2026-08-20 — A pinned hash is not provenance if the source was never committed
 
 **What happened.** The project has four traceability mechanisms and I had been

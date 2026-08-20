@@ -36,6 +36,7 @@ from .reply_planning import (
     is_direct_reply_batch,
     render_direct_reply_planner_prompt,
 )
+from .register_realization import active_register_guidance
 from .semantic_realization import (
     opening_route_counts,
     repeated_phrase_counts,
@@ -224,6 +225,23 @@ def _opener_rule(assigned: str) -> str:
 
 
 _SKELETON_SENTENCE_COUNT = re.compile(r"(\d+)-sentence|about (\d+) sentences")
+
+
+def _register_rule(backend: Any, task: Any) -> str:
+    """Render this slot's drawn warm-register moves.
+
+    Keyed on the same slot as `_rhythm_rule` but namespaced inside
+    `register_realization`, so drawing a rhythm habit does not correlate with
+    drawing a register move. Returns empty unless the plan assigned this slot the
+    target tone, which keeps the plan's tone marginal untouched.
+    """
+
+    seed_key = str(getattr(backend, "GENERALIZED_ACTIVE_SEED_KEY", "") or "")
+    return active_register_guidance(
+        slot_key=f"{seed_key}:{_safe_slot_index(task)}",
+        word_count=getattr(task, "real_word_count", 0),
+        tone_class=str(getattr(task, "tone_target", "") or ""),
+    )
 
 
 def _rhythm_rule(backend: Any, task: Any) -> str:
@@ -1108,6 +1126,7 @@ def writer_prompt(
         "Use only the shape, never reference wording.",
     )
     rhythm_rule = _rhythm_rule(backend, task)
+    register_rule = _register_rule(backend, task)
     hard_shape_rule = ""
     if backend.is_hard_real_surface_shape(getattr(task, "real_surface_shape", "")):
         hard_shape_rule = _real_surface_shape_guidance(task.real_surface_shape)
@@ -1140,6 +1159,7 @@ def writer_prompt(
             rhythm_rule,
             tone_slot_rule,
             tone_target_rule,
+            register_rule,
             story_rule,
             affect_rule,
         )
@@ -1181,6 +1201,7 @@ def writer_prompt(
             affect_rule=affect_rule,
             surface_rule=surface_rule,
             rhythm_rule=rhythm_rule,
+            register_rule=register_rule,
         )
 
     if low_info_writer:
@@ -1454,6 +1475,7 @@ def _focused_writer_prompt(
     affect_rule: str,
     surface_rule: str,
     rhythm_rule: str,
+    register_rule: str,
 ) -> str:
     """Render the minimum complete Planner and grounding contract.
 
@@ -1499,6 +1521,7 @@ def _focused_writer_prompt(
             soft_length_guidance(task),
             opener_rule,
             tone_target_rule,
+            register_rule,
             affect_rule,
             story_rule,
             surface_rule,

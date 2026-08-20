@@ -283,6 +283,16 @@ def build_parser() -> argparse.ArgumentParser:
         ),
     )
     parser.add_argument(
+        "--register-realization",
+        choices=("measured", "off"),
+        default="measured",
+        help=(
+            "Ask a slot the plan assigned `polite` for the surface moves real "
+            "polite comments of its size carry. `off` reproduces v98, where that "
+            "register realized 19.3%% of the time."
+        ),
+    )
+    parser.add_argument(
         "--sentence-rhythm",
         choices=("measured", "off"),
         default="measured",
@@ -720,6 +730,7 @@ def main() -> None:
         "tone_length_fit": args.tone_length_fit,
         "turn_frame": args.turn_frame,
         "sentence_rhythm": args.sentence_rhythm,
+        "register_realization": args.register_realization,
         "length_calibration": args.length_calibration,
         "final_punctuation": args.final_punctuation,
         "route_ledger": args.route_ledger,
@@ -912,6 +923,7 @@ def main() -> None:
     env["GENERALIZED_CARD_TONE_LENGTH_FIT"] = args.tone_length_fit
     env["GENERALIZED_CARD_TURN_FRAME"] = args.turn_frame
     env["GENERALIZED_CARD_SENTENCE_RHYTHM"] = args.sentence_rhythm
+    env["GENERALIZED_CARD_REGISTER_REALIZATION"] = args.register_realization
     env["GENERALIZED_CARD_LENGTH_CALIBRATION"] = args.length_calibration
     env["GENERALIZED_CARD_FINAL_PUNCTUATION"] = args.final_punctuation
     env["GENERALIZED_CARD_ROUTE_LEDGER"] = args.route_ledger
@@ -1251,6 +1263,7 @@ RUN_EXPERIMENT_FIELDS = (
     "tone_length_fit",
     "turn_frame",
     "sentence_rhythm",
+    "register_realization",
     "length_calibration",
     "final_punctuation",
     "route_ledger",

@@ -99,6 +99,13 @@ from .length_calibration import calibrated_word_ask, set_length_calibration
 # empty dict at import time and never see the run's profile. Same failure the
 # tone-length arm hit in v97.
 from . import sentence_rhythm
+# Same reason as `sentence_rhythm` above: `set_active_register_profile` rebinds a
+# module global.
+from . import register_realization
+from .register_realization import (
+    set_active_register_profile,
+    set_register_realization,
+)
 from .semantic_realization import set_route_ledger, set_turn_frame
 from .sentence_rhythm import set_active_rhythm_profile, set_sentence_rhythm
 from .story_scope import set_no_story_scope
@@ -415,6 +422,19 @@ def configure_generator_backend(
         or "measured"
     )
     set_sentence_rhythm(module.GENERALIZED_SENTENCE_RHYTHM)
+    # Whether a slot the plan assigned `polite` is asked for the surface moves
+    # real polite comments of its size actually carry. `off` reproduces every
+    # version through v98, where that register reached the Writer only as the
+    # prose in `TONE_DEFINITIONS` and realized 19.3% of the time while `impolite`
+    # realized 89.7%. The plan is not touched either way -- planned polite is
+    # 0.275 against a real 0.288. See `register_realization`.
+    module.GENERALIZED_REGISTER_REALIZATION = (
+        os.environ.get("GENERALIZED_CARD_REGISTER_REALIZATION", "measured")
+        .strip()
+        .lower()
+        or "measured"
+    )
+    set_register_realization(module.GENERALIZED_REGISTER_REALIZATION)
     # Whether the length cue asks for the matched slot's own word count or for
     # the count that realizes it. `off` reproduces every version through v97,
     # where realized/target ran 1.42x at the shortest slots and 0.71x at 251-400
@@ -546,6 +566,9 @@ def configure_generator_backend(
         module.GENERALIZED_DOMAIN_PROFILE.get("structure_profile")
     )
     set_active_rhythm_profile(module.GENERALIZED_DOMAIN_PROFILE.get("rhythm_profile"))
+    set_active_register_profile(
+        module.GENERALIZED_DOMAIN_PROFILE.get("register_profile")
+    )
     module.CLAIM_FAMILIES = prompts.GENERIC_CLAIM_FAMILIES
     # The core system prompt is pinned in `engine/vocabulary.py` and its own ban
     # ("... or product details unless they are visible in the prompt") is the
@@ -1267,6 +1290,39 @@ def _run_generalized_self_test(module: ModuleType, config: DomainConfig) -> None
         assert any("typing rhythm:" in item.lower() for item in rhythm_prompts)
         # Same size, different habits: this is the mechanism, not a side effect.
         assert len({_rhythm_line(item) for item in rhythm_prompts}) > 1
+    if module.GENERALIZED_REGISTER_REALIZATION != "off" and (
+        register_realization.ACTIVE_REGISTER_PROFILE.get("available")
+    ):
+        # A long polite slot is the case the arm exists for: real comments over
+        # 120 words are 76.7% polite and generated ones 14.3%.
+        polite_prompts = {
+            module.build_writer_prompt(
+                profile="gpt54_reddit_writer",
+                seed_post=seed,
+                task=replace(
+                    task,
+                    real_word_count=150,
+                    tone_target="polite",
+                    local_task_id=index,
+                ),
+                parent_comment=None,
+                previous_comments=[],
+            )
+            for index in range(1, 13)
+        }
+        assert any(_register_line(item) for item in polite_prompts)
+        # Drawn per slot, not stated per size, which is the whole mechanism.
+        assert len({_register_line(item) for item in polite_prompts}) > 1
+        # And it must never touch a slot the plan did not assign the register:
+        # the plan's tone marginal already matches real text.
+        blunt = module.build_writer_prompt(
+            profile="gpt54_reddit_writer",
+            seed_post=seed,
+            task=replace(task, real_word_count=150, tone_target="impolite"),
+            parent_comment=None,
+            previous_comments=[],
+        )
+        assert not _register_line(blunt)
     story_task = next(
         (item for item in distribution_tasks if item.story_mode != "no_story"),
         None,
@@ -2834,6 +2890,15 @@ def _rhythm_line(prompt: str) -> str:
 
     for line in prompt.splitlines():
         if line.lstrip("- ").lower().startswith("typing rhythm:"):
+            return line.strip()
+    return ""
+
+
+def _register_line(prompt: str) -> str:
+    """Return the rendered warm-register rule from one Writer prompt, if any."""
+
+    for line in prompt.splitlines():
+        if line.lstrip("- ").lower().startswith("warm register, realized:"):
             return line.strip()
     return ""
 

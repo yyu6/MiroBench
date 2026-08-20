@@ -79,18 +79,38 @@ in `docs/ORIENTATION.md`.
 
 ### Open after v98, in priority order
 
-- [ ] **v99 — warmth realization.** Schedule warmth markers, second-person
-      advice forms, and negative-marker suppression at their measured rates
-      through the `sentence_rhythm` mechanism. Targets `polite_rate`,
-      `impolite_rate`, `neutral_rate` — 3 of the 4 open metrics — and it is the
-      only remaining hypothesis with a verified causal claim (warmth-marker rate
-      vs `polite_rate` r = +0.727 over 412 real threads, monotone quintiles).
-      **Read `planner_distribution.py` and the `prompts.py` tone/affect
-      renderers (`_tone_shape_guidance`, `_speaker_role_guidance`,
-      `_utterance_mode_guidance`, `_substitution_rule`) before writing it — that
-      reading is not yet done.** Carry the recorded caveat: at warmth 0.143 the
-      quintile curve predicts `polite_rate` ~= 0.23 but the generator gets
-      0.066, so the markers are also used differently, not only used less.
+- [x] **v99 — drawn realization of the assigned warm register.** Built
+      2026-08-20. Policy
+      `generalized-card-v2-drawn-register-realization-v99-20260820`, arm
+      `--register-realization`. Diagnosis in `tasks/v99-worklog.md`, entry in
+      `generalized_card/VERSION_LOG.md`.
+
+      **The warmth-marker schedule this list proposed was rejected before it was
+      built.** Moving marker presence to the real level predicts `polite_rate`
+      0.070 → 0.088 only, because the gap is in the conditional
+      (P(polite | marker) is 0.213 generated against 0.652 real), not the count.
+      Three further hypotheses were also rejected: warmth-as-concession,
+      first-person lived experience, and a dismissive-adjudicative register. And
+      **negative-marker suppression would have hurt** — generated text uses
+      *less* of the impolite vocabulary than real (excess −0.767 against a
+      polite-vocabulary deficit of +8.381).
+
+      What shipped instead: the plan is right (0.275 planned polite against a
+      real 0.288) and realization is the failure (0.193 for polite, 0.897 for
+      impolite), so polite-assigned slots are now asked for the four surface
+      moves real polite comments of their size carry, drawn per slot at the
+      measured rate. Draw fidelity within 0.011 in every band.
+- [ ] **Paid large-thread gate for v99**, `--start-seed-index 8` (186 comments),
+      then N=10. Predictions are in the VERSION_LOG entry; read them first.
+- [ ] **v100 — the impolite bleed.** Planned-neutral realizes impolite 0.513 and
+      planned-somewhat_polite 0.478; that is 122 slots and the larger remaining
+      share of `impolite_rate`. It needs a **suppressive** mechanism: no additive
+      move discriminates `neutral` (every candidate below 0.3 held-out lift), and
+      the two families generated over-produces are measured — `adjudge`
+      (**0 of 15,294 excluded real comments, 0 of 659 matched real, 37 of 528
+      generated**) and `dismiss_noun` (5.17× real). Suppression has a track
+      record here: v98 took the semicolon 0.109 → 0.023 and the dash clause
+      0.299 → 0.071.
 - [ ] Revert `--no-story-scope` default to `tense`. No metric benefit, and it
       added new repeated 4-grams. Keep the prompt-contradiction fix it carried.
 - [x] **Traceability closed.** v97 and v98 had shipped uncommitted — HEAD was

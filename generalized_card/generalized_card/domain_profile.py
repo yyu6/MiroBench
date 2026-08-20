@@ -15,6 +15,7 @@ from .opener_profile import build_opener_profile
 from .planning_quality import universal_viewpoints
 from .generation_distribution import TONE_CLASSES
 from .reference_metric_calibration import build_reference_metric_calibration
+from .register_realization import build_register_profile
 from .sentence_rhythm import build_rhythm_profile
 from .surface_typography import (
     build_final_punctuation_profile,
@@ -24,6 +25,11 @@ from .tone_length_fit import build_tone_length_profile
 from .viewpoint_bank import build_reference_viewpoints
 
 
+# 16: adds the measured per-band share of four positive-register surface moves
+# among the evaluation classifier's own `polite` comments. The plan already puts
+# polite on the right slots -- 0.275 against a real 0.288 -- and the Writer
+# realizes it 19.3% of the time while realizing `impolite` 89.7%, so the register
+# has to be drawn as a surface act rather than described in prose.
 # 15: adds the measured per-band sentence rhythm and typing habits, drawn per
 # slot, and the measured share of declarative endings left with no final
 # punctuation. Two generated comments of the same size shared a function-word
@@ -44,7 +50,7 @@ from .viewpoint_bank import build_reference_viewpoints
 # comment's entities to the seed post made one generated thread reuse 23
 # distinct models where the matched real thread used 117, which is a large
 # share of the remaining self-BLEU gap.
-PROFILE_SCHEMA_VERSION = 15
+PROFILE_SCHEMA_VERSION = 16
 CARD_CONTEXT_DROPOUT_RATE = 0.42
 CARD_CONTEXT_JITTER_RATE = 0.32
 CARD_GENERATION_CONTROLS = {
@@ -143,6 +149,10 @@ def build_domain_profile(
         "final_punctuation_profile": build_final_punctuation_profile(reference_threads),
         "structure_profile": build_structure_profile(reference_threads),
         "rhythm_profile": build_rhythm_profile(reference_threads),
+        "register_profile": build_register_profile(
+            config.raw_discussions_dir,
+            reference_thread_ids=unique,
+        ),
         "tone_length_profile": build_tone_length_profile(
             config.raw_discussions_dir,
             reference_thread_ids=unique,

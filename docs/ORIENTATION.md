@@ -54,6 +54,7 @@ bureaucracy — every rule there has a wasted paid run behind it.
 | 1 | **this file** | goal, method, metrics, discipline | always, first |
 | 2 | `tasks/todo.md` | the task list, ordered by which measured gap it moves | before choosing what to do |
 | 3 | `tasks/v<N>-worklog.md` | the current version's full evidence, including rejected hypotheses | before touching that version's code |
+| 3b | `tasks/v99-worklog.md` | the politeness diagnosis: four rejected hypotheses and the verified mechanism | before touching tone or register |
 | 4 | `generalized_card/VERSION_LOG.md` | every released version, its arms, and its result | when comparing versions |
 | 5 | `tasks/lessons.md` | 48 mistakes, each with the rule that prevents it | before diagnosing anything |
 | 6 | `generalized_card/AGENTS.md` | binding engineering rules for `generalized_card/` | before writing code |
@@ -249,6 +250,37 @@ python3 generalized_card/scripts/run_evaluate.py --tag <tag> --metric-parallel 5
 
 API keys live in `third_party/MiroFish/.env` as `LLM_API_KEY`.
 
+### The large-thread gate
+
+Every version gets one paid single-thread run **before** N=10, on a thread big
+enough to show a distribution effect. `--start-seed-index 8` is post `i1o51h`
+at **186 comments**, and it sits inside the N=10 window (seeds 2–11), so the
+gate is *paired*: its row appears directly in the later N=10 evaluation and the
+two numbers are comparable.
+
+```bash
+python3 -u generalized_card/scripts/run_generate.py \
+  --tag <tag>_seed8_large --domain camera --model gpt-5.4-mini \
+  --base-url https://api.openai.com/v1 --api-key-env LLM_API_KEY \
+  --pool-size 150 --max-posts 1 --posts-per-run 1 \
+  --start-seed-index 8 --sampling-seed 42 --resume
+python3 generalized_card/scripts/run_evaluate.py --tag <tag>_seed8_large \
+  --metric-parallel 5 --resume
+```
+
+Other seeds in the 100–200 range, if a second large thread is wanted:
+60 (199), 78 (197), 14 (195), 23 (193), 125 (189), 137 (188), 147 (186),
+81 (183), 104 (182), 25 (170). Only seeds 2–11 are inside the N=10 window.
+
+**Judge it on both axes.** At n=1 the evaluator prints `DESCRIPTIVE` and no
+p-value is meaningful (§2), so:
+
+- **content** — read the comments. Did the mechanism appear? At the rate it was
+  drawn? Did it break anything the prompt already controlled?
+- **distance** — the relative error against that thread's matched real row, plus
+  the realized rate of whatever the version changed. `content_profile_audit.md`
+  decomposes matched real → template → generated for every metric.
+
 ### The development loop, in the order that actually works
 
 This ordering is not style. Three of four paid runs in one earlier stretch fixed
@@ -266,12 +298,18 @@ a real code defect and moved no metric, because the loop was run backwards.
 5. **Verify offline**: full test suite, Ruff, core-contract re-pin with zero
    drift, both parity scopes, backend self-test with the arm on *and* off,
    domain profile rebuild with zero seed overlap, `--prepare-only` dry run.
-6. **One paid single-seed content gate.** Write the predictions down first, then
-   read every comment against them.
+6. **One paid gate on a LARGE thread — 100 to 200 comments.** Write the
+   predictions down first, then judge it two ways: **content** (read the
+   comments) and **distance** (the metrics against that thread's matched real
+   row). A small thread cannot show a register or distribution effect; v97 and
+   v98 both gated on a 45-comment thread and neither gate predicted what N=10
+   found. The command is under "The large-thread gate" above.
 7. **N=10, paired to the previous version's seeds** (same `--start-seed-index`,
-   same `--sampling-seed`) so the comparison means something.
+   same `--sampling-seed`) so the comparison means something. Only after the
+   large-thread gate is clean — the p-value tests are the last step, not the
+   first.
 8. **Write down what was rejected**, not only what shipped. `tasks/v98-worklog.md`
-   is the model for this.
+   and `tasks/v99-worklog.md` are the models for this.
 
 ### Arms — the reproducibility mechanism
 
@@ -281,7 +319,7 @@ Every behaviour change is a named CLI flag. The flag is written into
 generation parameters is **rejected**, so a tag can never mean two configs.
 Setting an arm to its legacy value must reproduce the prior release exactly.
 
-v98 ships **16** such arms. Read from `run_generate.py:195-400`:
+v99 ships **17** such arms. Read from `run_generate.py:195-400`:
 
 | flag | CLI default | other value(s) |
 |---|---|---|
@@ -301,6 +339,7 @@ v98 ships **16** such arms. Read from `run_generate.py:195-400`:
 | `--final-punctuation` | `measured` | `off` |
 | `--route-ledger` | `on` | `off` |
 | `--no-story-scope` | `sequence` | `tense` |
+| `--register-realization` | `measured` | `off` |
 
 Plus two optional experimental conditioning modes, both default `none`:
 `--actor-conditioning` and `--persona-conditioning`.
@@ -344,7 +383,7 @@ generalized_card/generalized_card/
   backend.py                 3170  adapter, arm wiring, Planner/Writer lifecycle
   prompts.py                 2716  root/reply Planner + focused/full/low-info Writer
   planning_quality.py        1082  plan audit, repair, diagnostics
-  core_contract.py            767  102 pinned file hashes + policy versions
+  core_contract.py            773  103 pinned file hashes + policy versions
   planner_distribution.py     601  slot schedule, tone/story/affect allocation
   generation_distribution.py  576  TONE_DEFINITIONS, AFFECT_INSTRUCTIONS
   ── policy modules, one mechanism each ──
@@ -356,6 +395,7 @@ generalized_card/generalized_card/
   length_policy.py                 the soft length cue
   length_calibration.py            inverts the measured length transfer function
   story_scope.py                   the no-story instruction text
+  register_realization.py          draws the assigned warm register per slot
   source_provenance.py             refuses a run whose sources are not committed
 generalized_card/scripts/
   run_generate.py            1400  CLI, run_config record, subprocess env
@@ -367,7 +407,7 @@ scripts/evaluation/                the 12 scorers
 
 **Everything under `generalized_card/generalized_card/`,
 `generalized_card/scripts/run_generate.py` and `scripts/sampling_generator/**`
-is hash-pinned** in `core_contract.py` (102 files). `verify_core_contract`
+is hash-pinned** in `core_contract.py` (103 files). `verify_core_contract`
 raises on drift, so:
 
 > **Never edit a pinned file while a generation run is in flight.** It aborts the
@@ -386,11 +426,18 @@ a source that is not recoverable from git.
 
 ---
 
-## 6. Current state — v98, 2026-08-20
+## 6. Current state — v99 built, v98 measured (2026-08-20)
 
-Policy `generalized-card-v2-drawn-typing-rhythm-length-calibration-v98-20260819`.
-Run `generalized_card_camera_gpt54_v98_rhythm_n10_20260820_v1`, N=10, paired to
-v97 (`--start-seed-index 2`, `--sampling-seed 42`).
+**v99 is built and offline-verified but has not been run.** Policy
+`generalized-card-v2-drawn-register-realization-v99-20260820`, arm
+`--register-realization`, addressing problem 1 below. Its predictions are in
+`generalized_card/VERSION_LOG.md` — read them before the gate. Next action: the
+large-thread gate (§4).
+
+The last measured result is v98. Policy
+`generalized-card-v2-drawn-typing-rhythm-length-calibration-v98-20260819`. Run
+`generalized_card_camera_gpt54_v98_rhythm_n10_20260820_v1`, N=10, paired to v97
+(`--start-seed-index 2`, `--sampling-seed 42`).
 
 **8 PASS / 1 PARTIAL / 3 FAIL** (v97 was 7/1/4).
 
@@ -419,13 +466,33 @@ Two of the user's four priority metrics were fixed: `length_cv` and
 weakly. Criterion 2 — eye-indistinguishability — is separate from all of them.
 
 1. **`polite_rate` / `impolite_rate` / `neutral_rate` — one cause, three
-   metrics.** Verified: warmth-marker rate ↔ `polite_rate` r = +0.727 over 412
-   real threads, monotone across quintiles. Generated sits at warmth 0.143
-   (real 0.186) and negative markers 0.141 (real 0.047, **3×**). It is a
-   realization failure — the plan marginal already matches. **Recorded caveat:**
-   at warmth 0.143 the quintile curve predicts `polite_rate` ≈ 0.23 but the
-   generator gets 0.066, so the markers are also being *used* differently, not
-   only used less. Any fix must account for that residual.
+   metrics, and it is now diagnosed.** Full evidence in `tasks/v99-worklog.md`.
+   The plan is right (0.275 polite / 0.494 impolite against a real 0.288 /
+   0.443); realization is the whole failure and it is asymmetric: **planned
+   impolite realizes impolite 89.7% of the time, planned polite realizes polite
+   19.3% and realizes impolite 50.3%.** The Writer has one register. It is worst
+   where real text is most positive — 120+ word slots are 67.3% planned polite,
+   76.7% polite in real text, and 14.3% in generated.
+
+   The lexical signature is measured: **the generated positive vocabulary is
+   about two words wide (`thanks` 2.96×, `nice` 1.48×) where real is about ten**
+   — `very` 0.19×, `would` 0.21×, `love` 0.21×, `good` 0.33×, `great` 0.33×,
+   `my` 0.51×, and `thank` / `amazing` / `awesome` / `incredible` / `https` at
+   0.00×, all per 1,000 tokens so length cannot explain it. A TF-IDF logistic
+   model fitted on excluded real text reproduces polite-guard (AUC 0.87–0.91)
+   and decomposes the gap as a **+8.381 polite-vocabulary deficit against a
+   −0.767 impolite-vocabulary "excess"** — generated text uses *less* of the
+   impolite vocabulary than real, so suppressing negative markers would make the
+   metric worse.
+
+   **Four hypotheses rejected**, each because the gap stayed flat inside every
+   cell of the conditioning variable: marker frequency (moving presence to the
+   real level predicts 0.070 → 0.088 only), warmth-as-concession (contrastives
+   *raise* P(polite) in real text), first-person lived experience (every
+   experience feature lifts 1.4–2.2× against warmth's 3.56×), and a
+   dismissive-adjudicative register (excluded-real P(polite) is 0.293 with it and
+   0.315 without — no effect). **The per-slot warmth-marker schedule this project
+   was carrying as the v99 plan would have been a near-null paid run.**
 2. **`self_bertscore_mean_f1` — no verified mechanism.** Four hypotheses
    measured and rejected (§3). This is the honest state: do not build against a
    fifth hypothesis without falsifying it first.
@@ -460,14 +527,17 @@ but the default should go back to `tense`.
 
 ### Next step
 
-**v99: schedule warmth markers, second-person advice forms, and
-negative-marker suppression at their measured rates**, through the
-`sentence_rhythm` mechanism (already proven, draw fidelity ≤ 0.008). It targets
-3 of the 4 open metrics and it is the only remaining hypothesis with a verified
-causal claim. Before writing it, read `planner_distribution.py` and the
-tone/affect renderers in `prompts.py` (`_tone_shape_guidance`,
-`_speaker_role_guidance`, `_utterance_mode_guidance`, `_substitution_rule`) —
-that reading is **not yet done**.
+**Run the v99 large-thread gate** (§4): `--start-seed-index 8`, 186 comments.
+The predictions to read it against are in `generalized_card/VERSION_LOG.md`.
+v99 predicts `polite_rate` 0.070 → 0.14–0.19, which **still fails** — it repairs
+the polite realization only.
+
+**Then v100: the impolite bleed.** Planned-neutral realizes impolite 0.513 and
+planned-somewhat_polite 0.478 — 122 slots, the larger remaining share of
+`impolite_rate`. It needs a *suppressive* mechanism, since no additive move
+discriminates `neutral`. The two over-produced families are measured: `adjudge`
+(0 of 15,294 excluded real, 0 of 659 matched real, **37 of 528 generated**) and
+`dismiss_noun` (5.17× real).
 
 ### Retracted claims — do not reuse
 
@@ -706,8 +776,12 @@ Not "I believe"; these were run on 2026-08-20:
 
 | check | result |
 |---|---|
-| `pytest -q generalized_card/tests` | **468 passed** (449 + 19 new provenance tests) |
-| `repin_core_contract.py` (report mode) | 102 pinned, 0 missing, 0 untracked active, 0 unpinned local imports, **0 drift** |
+| `pytest -q generalized_card/tests` | **496 passed** (449 + 19 provenance + 28 register) |
+| `repin_core_contract.py` (report mode) | 103 pinned, 0 missing, 0 untracked active, 0 unpinned local imports, **0 drift** |
+| v99 profile rebuild | schema 16 over 424 excluded threads, **0 seed overlap**, 4,787 polite comments measured; six bands monotone |
+| v99 draw fidelity | rendered draw against measured share within **0.011** in every band and every move, 4,000 slots per band |
+| v99 on the real prompt path | rule in 33/40 polite prompts with the arm on, **0/40 off**, 6 distinct forms, +283 chars (+7.7%) |
+| v99 backend self-test | passes with the arm on **and** off |
 | v98 N=10 metric table | read verbatim from `matched_evaluation/matched_seed_group_eval.md` |
 | v97 N=10 metric table | read verbatim from the v97 run's same file |
 | v97/v98 seed pairing | both `start_seed_index=2`, `sampling_seed=42`, `max_posts=10` — confirmed paired |
