@@ -789,7 +789,7 @@ Five things, all recorded in the run's own `run_config.json`:
 | # | mechanism | what it gives you |
 |---|---|---|
 | 1 | `source_provenance.commit` | the commit holding the exact sources — `git show <sha>:<path>` returns the file that produced the run |
-| 2 | `generator_policy_version` + `generator_core_provenance` | the policy string and the SHA-256 of all 55 pinned generation sources, as they were at run time |
+| 2 | `generator_policy_version` + `generator_core_provenance` | the policy string and the SHA-256 of every pinned generation source, as they were at run time (58 at v102; read `CURRENT_GENERATION_CORE_NAMES`, do not quote a count from memory) |
 | 3 | every arm value, plus `RUN_EXPERIMENT_FIELDS` resume verification | the exact configuration; a resume with changed parameters is rejected, so a tag can never mean two configs |
 | 4 | `domain_profile_sha256` + `domain_profile_schema_version`, and `domain_profile.json` copied into the run directory | the measured shares the generation was conditioned on |
 | 5 | `seed_pool` path + `sampling_seed` + `start_seed_index` | which real threads were matched, in which order |
@@ -803,11 +803,11 @@ pool, the domain profile, and every API call**:
 > A generation run **refuses to start** if any file that defines the version is
 > not in `HEAD`.
 
-It checks `version_source_paths(...)` — the 55 pinned generation sources **plus
+It checks the pinned generation sources **plus
 `core_contract.py` itself**. The contract cannot carry its own hash, so
 `verify_core_contract` can never check it, yet it is the file that names the
 policy version and holds every other pin; a version whose contract is
-uncommitted is not recoverable even when all 55 modules are.
+uncommitted is not recoverable even when every module is.
 
 "Not in `HEAD`" covers all three ways a file can be missing: modified in the
 working tree, **staged but never committed**, and untracked.
@@ -899,6 +899,12 @@ Not "I believe"; these were run on 2026-08-20:
 | the real stance tables | re-scored today in this environment and reproduce their stored labels exactly, so the real/generated comparison carries no environment drift |
 | the opener realization matrix | recovered by matching the 11 `OPENER_INSTRUCTIONS` strings against the **532 saved Writer prompts** — `opener_type` is not persisted |
 | the causal opener edit | reply-pair rate 0.2235 → **0.1862** stripping only the 36 unassigned polarity openers; `self_bleu_4` 0.03330 → 0.03297 on the same edit, exact scorer |
+| **v102 offline gate (2026-08-20)** | 559 tests, Ruff clean, **105 pins with 0 drift**, backend self-test passes with `--opening-move` on **and** off |
+| v102 profile rebuild | schema 18 → 19, 15,294 comments over 424 excluded threads, **0 seed overlap**; every other profile section byte-identical to v101's, so the gate is a single-arm comparison |
+| v102 draw fidelity | rendered draw against measured share within **0.0108** in every register, entry type and token, 4,000 slots per cell |
+| v102 on the real prompt path | the self-test block was proven to execute by injecting a temporary failure; it renders the drawn word per slot (`"ah"`, `"also"` on two slots) and the ten-token prohibition |
+| v102 domain generalization | available on all four domains; cells 8/8 camera, 7/8 cell_phone, 5/8 headphone, 3/8 laptop — the sparse ones lose cells rather than receiving a wrong word |
+| v102 `--prepare-only` on the real path | ran on a throwaway tag, recorded policy `...-v102-20260820`, `opening_move: measured`, `source_provenance.uncommitted: []`, 59 sources checked (v101: 58); tag then deleted |
 | corpus deduplication | pairs deduped by `(thread_id, reply_id)`; a naive read inflates the matched set **1.24×** and the camera corpus **1.32×** |
 | `pytest -q generalized_card/tests` | **527 passed** at the v100 boundary; **537 passed** at v101 (see `VERSION_LOG.md`) |
 | `repin_core_contract.py` (report mode) | 104 pinned, 0 missing, 0 untracked active, 0 unpinned local imports, **0 drift** |
