@@ -243,8 +243,13 @@ barely-passing tone metrics plus `self_bleu_4` and `hard_disagree_rate` all sit
 far above the |Cliff| ≤ 0.10 working ceiling. 9/0/3 at N=10 is real progress and
 is not the same thing as being close at N=150.
 
-`hard_disagree_rate` moved the wrong way (+0.29 → +0.37) and needs a look: it has
-never had a mechanism and passes on a wide spread, exactly like `self_bleu_4`.
+`hard_disagree_rate` moved the wrong way (+0.29 → +0.37) and passes on a wide
+spread, exactly like `self_bleu_4`. **It has since been diagnosed** — see
+`tasks/v102-worklog.md`, reproducible with
+`generalized_card/analysis/disagreement_diagnosis.py`. Root pairs already match
+(0.0621 against a real 0.0630); reply pairs are 1.56× real and are the whole gap.
+Two mechanisms survived falsification and nine did not; the opener-realization
+one is causally measured at 47% of the reply gap on an exact ablation harness.
 
 ---
 

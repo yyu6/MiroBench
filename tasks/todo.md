@@ -77,6 +77,54 @@ in `docs/ORIENTATION.md`.
       Four hypotheses now measured and rejected; the metric has **no verified
       mechanism**. Do not build a fifth without falsifying it first.
 
+## v101 measured, `hard_disagree_rate` diagnosed — 2026-08-20
+
+v101 shipped at **9 PASS / 0 PARTIAL / 3 FAIL**, the best in the project's
+history. The honest read is in `docs/ORIENTATION.md` §6: at N=150 the pass
+probability is a function of the effect size, and **six metrics are safe and six
+are not**. Cliff table and projection there.
+
+- [x] **`hard_disagree_rate` diagnosed.** Evidence: `tasks/v102-worklog.md`;
+      reproduce with `generalized_card/analysis/disagreement_diagnosis.py all`.
+      The handoff's claim that it "has never had a mechanism" is superseded.
+
+      Root pairs already match (0.0621 against a real 0.0630). **Reply pairs are
+      1.56× real and are 100% of the gap.** The head is nearly degenerate — all
+      three class probabilities inside ≈[0.26, 0.41] — so the gap is a uniform
+      ≈+0.017 translation of the decision margin, the same signature
+      `self_bertscore` has.
+
+      **Two mechanisms survived falsification.** (1) The assigned opener is not
+      realized: `polarity_token` comes out at 2.42× its scheduled share, sourced
+      from `discourse_marker` slots (obeyed 0.184) and `content_phrase` (0.460),
+      and it is the highest-disagreement opener there is. Causally measured on an
+      exact harness: obeying the plan moves the reply rate 0.2235 → **0.1862**,
+      47% of the gap, with `self_bleu_4` unharmed. (2) Generated replies echo the
+      parent's content words 1.4–1.6× as often; the counterfactual at the real
+      echo distribution closes 55%, and it survives conditioning on both parent
+      and reply length in all ten cells.
+
+      **Nine hypotheses rejected**, including the v100 adjudication frame
+      (−0.0029 on 11 slots), contrastives and the closing sentence (removing
+      either *raises* the rate), hedges (0.0000), a graph-feature asymmetry, and
+      environment drift.
+- [ ] **Build v102 — `--opener-realization`.** Design, predictions and guardrails
+      in `tasks/v102-worklog.md` §7. Draw a concrete opening connective per
+      `discourse_marker` slot instead of naming the category, and render a
+      token-level prohibition on every slot not assigned `polarity_token`.
+      Predicted `hard_disagree_rate` Cliff +0.37 → +0.15–0.25 — **real movement
+      and still short of the ≤0.10 bar.** Leave the `polarity_token` slots alone;
+      their measured share is the target.
+- [ ] **The parent-echo mechanism has no design yet.** It is the other half of
+      the `hard_disagree_rate` gap and it is also the user's criterion-2
+      complaint (*很容易去讨论同一个话题*). Note that `context_transform` does
+      **not** address it: echo is *highest* in `parent_hidden`, where the Writer
+      never sees the parent, so the echo comes from the plan's parent-local
+      topic, not from copying visible text.
+- [ ] Persist `opener_type` (and the rest of the slot distribution schedule) into
+      `discussion.json`. The realization matrix above had to be recovered by
+      grepping 532 saved Writer prompts.
+
 ### Open after v98, in priority order
 
 - [x] **v99 — drawn realization of the assigned warm register.** Built

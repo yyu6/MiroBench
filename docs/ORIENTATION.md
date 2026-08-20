@@ -9,8 +9,9 @@ It is deliberately high-level and it is deliberately short. Every section ends
 with a pointer to the file that holds the evidence. **This file states
 conclusions; the linked files hold the measurements.**
 
-Last verified: **2026-08-20**. See §9 for what "verified" means here and what
-was actually checked to write this line.
+Last verified: **2026-08-20** (v101 result, plus the `hard_disagree_rate`
+diagnosis). See §9 for what "verified" means here and what was actually checked
+to write this line.
 
 ---
 
@@ -55,8 +56,10 @@ bureaucracy — every rule there has a wasted paid run behind it.
 | 2 | `tasks/todo.md` | the task list, ordered by which measured gap it moves | before choosing what to do |
 | 3 | `tasks/v<N>-worklog.md` | the current version's full evidence, including rejected hypotheses | before touching that version's code |
 | 3b | `tasks/v99-worklog.md` | the politeness diagnosis: four rejected hypotheses and the verified mechanism | before touching tone or register |
+| 3c | `tasks/v102-worklog.md` | the `hard_disagree_rate` diagnosis: nine rejected hypotheses, two surviving mechanisms, one causally measured | before touching stance, openers, or reply framing |
+| 3d | `generalized_card/analysis/` | the scripts that reproduce 3b and 3c | when you want to re-measure rather than re-derive |
 | 4 | `generalized_card/VERSION_LOG.md` | every released version, its arms, and its result | when comparing versions |
-| 5 | `tasks/lessons.md` | 48 mistakes, each with the rule that prevents it | before diagnosing anything |
+| 5 | `tasks/lessons.md` | every mistake made here, each with the rule that prevents it | before diagnosing anything |
 | 6 | `generalized_card/AGENTS.md` | binding engineering rules for `generalized_card/` | before writing code |
 | 7 | `tasks/HANDOFF.md` | the long-form evidence archive, newest addendum first | when you need the detail behind a claim |
 | 8 | `docs/thread_metric_score_reference.md` | every exported metric, its scorer, its model | when you need a scorer's exact semantics |
@@ -195,7 +198,7 @@ is what you need to *reason* about a metric.
 | `self_bleu_4` | Symmetric pairwise BLEU-4 over every unordered comment pair, averaged. **No model, runs in seconds.** | Across 160 real threads it is a **length metric first**: share of ≤15-word comments r = +0.783, mean words r = −0.723. Generated already matches length. | **Never approximate it** — it is free to compute. Also: `pairwise_self_bleu_for_order` takes **tokenized lists**, not strings; passing strings scores character-by-character and inflates it ~4×. |
 | `self_bertscore_mean_f1` | BERTScore F1 between every comment pair, averaged. `microsoft/deberta-xlarge-mnli`. | **Unknown.** Four hypotheses measured and rejected: length spread, duplication tail, surface register, lexical breadth. | The gap is a **uniform +0.02 lift on every pair**, flat under trimming — so it is not a few duplicate pairs. Reading the highest-F1 pairs misleads: real threads reach F1 > 0.74 through **shared image URLs**, not shared content. |
 | `semantic_mean_cosine` | Mean pairwise cosine of `all-mpnet-base-v2` comment embeddings. | Topical spread across the thread. | Drops comments under 2 words (`is_usable_comment`), so generated and real thread sizes can differ even under `--exact-matched-thread-size`. Known bug, §6. |
-| `hard_disagree_rate` | Share of parent→reply pairs the local Stance_Rel head hard-labels `disagree`. | Planned stance actually being realized as disagreement. | The local checkpoint has **no graph-inference path**; missing graph features fall back to zeros. It is this repo's practical wrapper, not the published pipeline. |
+| `hard_disagree_rate` | Share of parent→reply pairs the local Stance_Rel head hard-labels `disagree`. Root comments are pairs too — their parent is the post — and they are ~37% of all pairs. | **The opening of a reply.** The head is a reply-text classifier (surrogate AUC 0.740 on the reply, 0.579 on the parent) keyed by explicit stance tokens, *agreement ones included*. A `polarity_token` opener carries P(disagree) 0.457 against a 0.18 base. | The head is **nearly degenerate** — all three class probabilities sit inside ≈[0.26, 0.41], so the metric is an argmax on a knife edge and a ±0.005 probability shift moves it. Do not read it as semantic disagreement; planned `agree` slots are labelled disagree *more* often than planned `disagree` ones. `pair_count` in the merged CSV is **not** this metric's pair count. |
 | `polite_rate` / `impolite_rate` / `neutral_rate` | `Intel/polite-guard`, 4-way **single-label argmax** over {polite, somewhat polite, neutral, impolite}; each rate is the share of comments with that label. | **Warmth markers.** Measured over 412 real threads: warmth-marker rate ↔ `polite_rate` **r = +0.727**, ↔ `impolite_rate` **r = −0.601**, monotone across quintiles. This is the only causal claim in the politeness work that survived falsification. | `somewhat polite` is a **real fourth class that absorbs mass but is never reported**, so the three reported rates do not sum to 1. The failure is **realization, not planning**: the plan marginal (0.270 polite / 0.493 impolite) already matches real (0.288 / 0.443), but planned-polite slots realize as impolite 53.8% of the time. |
 | `length_cv` | Per-thread coefficient of variation of whitespace word counts. | The **spread** of comment lengths, not the mean. Fixed in v98 by inverting the measured Writer length transfer function (`length_calibration.py`) so the cue asks for what actually gets realized. | A cue that says "do not pad" applied to a slot that is *undershooting* makes it worse. That was the v97 bug: the threshold was written as 100 words while the realized/target curve crosses 1.0 near **35**. |
 | `avg_depth`, `structural_virality` | Tree shape only — mean comment depth, and mean shortest-path distance over all comment pairs. | Nothing in generation. Copied from the matched real thread. | See §2 — these pass structurally. |
@@ -465,139 +468,181 @@ a source that is not recoverable from git.
 
 ---
 
-## 6. Current state — v99 + v100 built, v98 measured (2026-08-20)
+## 6. Current state — v101 measured 9/0/3, six metrics unsafe at N=150 (2026-08-20)
 
-**v99 and v100 are built and offline-verified; neither has been run.** They ship
-together in one gate, because each has its own flag and its own directly
-measurable realized rate, which is what makes per-arm attribution possible from a
-single artifact (§4).
+The last measured result is **v101**. Policy
+`generalized-card-v2-per-register-realization-v101-20260820`. Run
+`generalized_card_camera_gpt54_v101_register_n10_20260820_v1`, N=10, paired to
+v97/v98/v100 (`--start-seed-index 2`, `--sampling-seed 42`).
 
-- **v99** `--register-realization` — repairs the polite realization (problem 1).
-- **v100** `--closing-move` — the root of the adjudication frame (problem 4).
+**9 PASS / 0 PARTIAL / 3 FAIL** — the best result in the project's history
+(v98 8/1/3, v97 7/1/4, v96 6/0/6), with Cliff's delta improved on 8 of 12.
 
-Predictions for both are written down in `generalized_card/VERSION_LOG.md`. Read
-them before the gate. **Both predict `polite_rate` and `impolite_rate` still
-fail**; v100 in particular is justified by acceptance criterion 2, not by
-p-values. Next action: the large-thread gate (§4).
-
-The last measured result is v98. Policy
-`generalized-card-v2-drawn-typing-rhythm-length-calibration-v98-20260819`. Run
-`generalized_card_camera_gpt54_v98_rhythm_n10_20260820_v1`, N=10, paired to v97
-(`--start-seed-index 2`, `--sampling-seed 42`).
-
-**8 PASS / 1 PARTIAL / 3 FAIL** (v97 was 7/1/4).
-
-| metric | v97 MWU | v97 Cliff | v98 MWU | v98 Cliff | status |
+| metric | v98 MWU | v98 Cliff | v101 MWU | v101 Cliff | |
 |---|---:|---:|---:|---:|---|
-| `self_bleu_4` | 0.186 | +0.36 | 0.121 | +0.42 | PASS, weak, slightly worse |
-| `self_bertscore_mean_f1` | 0.00033 | +0.96 | 0.00058 | +0.92 | **FAIL** |
-| `semantic_mean_cosine` | 0.910 | +0.04 | 0.623 | −0.14 | PASS |
-| `hard_disagree_rate` | 0.307 | +0.28 | 0.290 | +0.29 | PASS |
-| `polite_rate` | 0.010 | −0.69 | 0.013 | −0.67 | **FAIL** |
-| `impolite_rate` | 0.00077 | +0.90 | 0.0010 | +0.88 | **FAIL** |
-| `neutral_rate` | 0.017 | −0.64 | 0.021 | −0.62 | PARTIAL |
-| `length_cv` | 0.021 | −0.62 | **0.473** | **+0.20** | FAIL → **PASS** |
-| `avg_depth` | 0.940 | +0.03 | 0.970 | +0.02 | PASS (structural) |
-| `structural_virality` | 1.000 | 0.00 | 0.970 | +0.02 | PASS (structural) |
-| `mean_story_probability` | 0.734 | −0.10 | 0.678 | −0.12 | PASS |
-| `emotion_entropy` | 0.326 | −0.27 | **0.571** | **−0.16** | PASS, improved |
+| `self_bleu_4` | 0.1212 | +0.42 | 0.1041 | +0.44 | PASS, weak |
+| `self_bertscore_mean_f1` | 0.00058 | +0.92 | 0.00283 | **+0.80** | FAIL |
+| `semantic_mean_cosine` | 0.6232 | −0.14 | 0.8501 | **−0.06** | PASS |
+| `hard_disagree_rate` | 0.2897 | +0.29 | 0.1735 | +0.37 | PASS, worse |
+| `polite_rate` | 0.0126 | −0.67 | 0.0210 | **−0.62** | FAIL |
+| `impolite_rate` | 0.0010 | +0.88 | 0.0046 | **+0.76** | FAIL |
+| `neutral_rate` | 0.0210 | −0.62 | 0.0587 | **−0.51** | PARTIAL → **PASS** |
+| `length_cv` | 0.4727 | +0.20 | 0.7337 | **+0.10** | PASS |
+| `avg_depth` | 0.9698 | +0.02 | 0.9095 | +0.04 | PASS (structural) |
+| `structural_virality` | 0.9697 | +0.02 | 0.9697 | +0.02 | PASS (structural) |
+| `mean_story_probability` | 0.6776 | −0.12 | 0.8501 | **−0.06** | PASS |
+| `emotion_entropy` | 0.5708 | −0.16 | 0.8501 | **−0.06** | PASS |
 
-Two of the user's four priority metrics were fixed: `length_cv` and
-`emotion_entropy`.
+### The honest N=150 projection — this is the number that matters
+
+Pass probability at the final scale is a function of the **effect size**, not the
+current p-value (§2, and the 2026-08-19 lesson):
+
+| \|Cliff\| | metrics | P(pass) at N=150 |
+|---|---|---:|
+| ≤ 0.06 | `semantic_mean_cosine`, `mean_story_probability`, `emotion_entropy`, `structural_virality`, `avg_depth` | ~0.90 |
+| 0.10 | `length_cv` | ~0.72 |
+| 0.37–0.44 | `hard_disagree_rate`, `self_bleu_4` | ~0.01 |
+| 0.51–0.80 | `neutral_rate`, `polite_rate`, `impolite_rate`, `self_bertscore_mean_f1` | ~0.00 |
+
+**Six safe, six not** — and two of the six safe ones are copied from the real
+reply tree by the matched sampler, not won by generation. 9/0/3 at N=10 is real
+progress and is **not** the same thing as being close at N=150.
 
 ### The open problems, and what is known about each
 
-**Four metrics are not matched**: `self_bertscore_mean_f1`, `polite_rate`,
-`impolite_rate` (FAIL) and `neutral_rate` (PARTIAL). `self_bleu_4` passes but
-weakly. Criterion 2 — eye-indistinguishability — is separate from all of them.
+1. **`hard_disagree_rate` — diagnosed 2026-08-20, two mechanisms survive.** Full
+   evidence in `tasks/v102-worklog.md`; reproduce it with
+   `generalized_card/analysis/disagreement_diagnosis.py`. The metric is the share
+   of parent→reply pairs the local Stance_Rel head argmaxes to `disagree`, and
+   the head is **nearly degenerate** — all three class probabilities sit inside
+   ≈ [0.26, 0.41], so the metric is an argmax on a knife edge and the entire gap
+   is a **uniform ≈ +0.017 translation of the decision margin**.
 
-1. **`polite_rate` / `impolite_rate` / `neutral_rate` — one cause, three
-   metrics, and it is now diagnosed.** Full evidence in `tasks/v99-worklog.md`.
-   The plan is right (0.275 polite / 0.494 impolite against a real 0.288 /
-   0.443); realization is the whole failure and it is asymmetric: **planned
-   impolite realizes impolite 89.7% of the time, planned polite realizes polite
-   19.3% and realizes impolite 50.3%.** The Writer has one register. It is worst
-   where real text is most positive — 120+ word slots are 67.3% planned polite,
-   76.7% polite in real text, and 14.3% in generated.
+   Where the gap lives: **root pairs already match** (generated 0.0621 against a
+   real 0.0630); **reply pairs are 1.56× real** (0.2235 against 0.1433) and are
+   100% of the gap. A TF-IDF surrogate fitted on excluded real reaches AUC 0.740
+   on the reply text alone and 0.579 on the parent alone — the head is
+   essentially a **reply-text** classifier keyed by explicit stance tokens,
+   *agreement ones included* (`agree`, `agreed`, `yup`, `yeah`, `exactly`).
+
+   Two mechanisms survived falsification:
+   - **The assigned opener is not realized.** `opener_type` is scheduled from the
+     domain profile and the instruction reaches the Writer prompt at exactly the
+     measured share, but `polarity_token` comes out at **2.42×** it (0.1274
+     against 0.0526), sourced from `discourse_marker` slots (obeyed 0.184) and
+     `content_phrase` slots (0.460). `polarity_token` is the
+     highest-disagreement opener there is: real P(d) 0.457 against a 0.18 base.
+     Causally measured on an exact ablation harness that reproduces the artifact
+     label-for-label: stripping only the *unassigned* polarity openers moves the
+     reply rate 0.2235 → **0.1862**, i.e. **47% of the reply-pair gap**, with
+     `self_bleu_4` unharmed (0.03330 → 0.03297).
+   - **Generated replies echo the parent's content words 1.4–1.6× as often**
+     (0.2145 against a real 0.1367–0.1542). In real text P(disagree) rises
+     monotonically with echo across all six bins, generated's within-bin
+     conditionals track real's, and the counterfactual at the real echo
+     distribution closes **55%** of the gap. It survives conditioning on both
+     parent length and reply length — 1.27–2.04× in all ten populated cells. The
+     existing `context_transform` arm does **not** fix it: echo is *highest*
+     (0.259) in `parent_hidden`, where the Writer never sees the parent text.
+
+   Nine hypotheses were rejected, including the v100 adjudication frame
+   (−0.0029 on 11 slots), contrastives (removing them *raises* the rate), the
+   closing sentence (removing it *raises* the rate), hedges (0.0000), a graph
+   feature asymmetry (coverage 0.0000 vs 0.0039), and environment drift (real
+   tables reproduce exactly today).
+2. **`polite_rate` / `impolite_rate` / `neutral_rate` — one cause, three
+   metrics, diagnosed.** Full evidence in `tasks/v99-worklog.md`. The plan is
+   right (0.275 planned polite against a real 0.288); realization is the whole
+   failure and it is asymmetric: **planned impolite realizes impolite 89.7%,
+   planned polite realizes polite 19.3% and impolite 50.3%.**
 
    The lexical signature is measured: **the generated positive vocabulary is
    about two words wide (`thanks` 2.96×, `nice` 1.48×) where real is about ten**
    — `very` 0.19×, `would` 0.21×, `love` 0.21×, `good` 0.33×, `great` 0.33×,
    `my` 0.51×, and `thank` / `amazing` / `awesome` / `incredible` / `https` at
    0.00×, all per 1,000 tokens so length cannot explain it. A TF-IDF logistic
-   model fitted on excluded real text reproduces polite-guard (AUC 0.87–0.91)
-   and decomposes the gap as a **+8.381 polite-vocabulary deficit against a
-   −0.767 impolite-vocabulary "excess"** — generated text uses *less* of the
-   impolite vocabulary than real, so suppressing negative markers would make the
-   metric worse.
+   model fitted on excluded real reproduces polite-guard (AUC 0.87–0.91) and
+   decomposes the gap as a **+8.381 polite-vocabulary deficit against a −0.767
+   impolite-vocabulary "excess"** — generated uses *less* of the impolite
+   vocabulary than real, so suppressing negative markers makes the metric worse.
 
-   **Four hypotheses rejected**, each because the gap stayed flat inside every
-   cell of the conditioning variable: marker frequency (moving presence to the
-   real level predicts 0.070 → 0.088 only), warmth-as-concession (contrastives
-   *raise* P(polite) in real text), first-person lived experience (every
-   experience feature lifts 1.4–2.2× against warmth's 3.56×), and a
-   dismissive-adjudicative register (excluded-real P(polite) is 0.293 with it and
-   0.315 without — no effect). **The per-slot warmth-marker schedule this project
-   was carrying as the v99 plan would have been a near-null paid run.**
-2. **`self_bertscore_mean_f1` — no verified mechanism.** Four hypotheses
-   measured and rejected (§3). This is the honest state: do not build against a
-   fifth hypothesis without falsifying it first.
-3. **`self_bleu_4` — a weak pass, characterised, no cheap lever.** An exact ablation harness
-   that reproduces the evaluator's number to 5 significant figures shows **no
+   Four hypotheses rejected, each because the gap stayed flat inside every cell:
+   marker frequency, warmth-as-concession, first-person lived experience, and a
+   dismissive-adjudicative register. v99/v101's per-register drawn realization
+   improved the effect sizes for the first time in four versions but did not
+   close them. **The opener defect above is not this defect** — real polite rate
+   by opener runs 0.18–0.47 and generated 0.02–0.15 in *every* class, so the
+   tone gap is flat across openers.
+
+   The **largest single untapped lever** remains the possessive: generated
+   carries `my X` at 0.081 against a real 0.230, and the real conditional is
+   P(polite | possessive) = 0.509 against 0.254 without. It only works if the
+   possessive arrives as a bare fact rather than a story, which is what v101's
+   state-not-event cue rewording was for and which v101 confirmed does not raise
+   story probability.
+3. **`self_bertscore_mean_f1` — five hypotheses rejected, no mechanism.** Length
+   spread, duplication tail, surface register, lexical breadth (r = +0.077), and
+   narrow shared vocabulary (r = +0.155 and −0.096, both the wrong sign; the
+   narrowness is *cross-thread* while the metric is *within-thread*). The gap is
+   a uniform +0.02 on every pair and flat under trimming. **Do not build a sixth
+   without falsifying it first.**
+4. **`self_bleu_4` — a weak pass, characterised, no cheap lever.** An exact
+   ablation harness reproducing the evaluator to 5 significant figures shows **no
    phrase drives it**: apostrophe normalisation, `check` openings, `that's the
    part`, and yeah/basically/actually all change it by ≤ 0.0005. OLS
    `self_bleu_4 = 0.04964 − 0.000288·meanWords − 0.00127·entityTypesPerComment`
-   (R² = 0.527) explains ~48% of the gap; entity diversity's **partial r is only
-   −0.097** and is worth about a third of it. Generated entity diversity is
-   0.438× real in 10/10 threads, which is also an eye-visible tell — so it is
-   worth doing for criterion 2 even though it is a weak metric lever.
-4. **Eye-indistinguishability (criterion 2) — the adjudication frame is now
-   diagnosed and addressed by v100.** The "that's the part that actually
-   matters" family survived five phrase-level attempts since v73 because the
-   phrase was never the thing: **how the comment stops** is. Real text closes on
-   an abstract verdict 0.014 of the time and generated 0.265 (**19.1×**); real
-   closes on a concrete fact of the speaker's own 0.152 against 0.048. Among real
-   *story* comments the broad frame is at **0.003** against 0.382 generated —
-   127× — because a story has the most obvious place to pivot.
-
-   Three Planner-side explanations were measured and rejected first, so it is not
-   a control being echoed: "decision intent" lifts the frame 1.08×, "decision
-   boundary" **0.83×** (slots receiving it produce it *less*), and v97's gate
-   leaves gated slots at 0.175 against ungated 0.210.
-
-   Still unfixed: no generated comment contains a link (real 0.051), `check` at
-   ~10× real, entity diversity 0.438× real.
+   (R² = 0.527) explains ~48% of the gap; entity diversity's partial r is only
+   −0.097. Generated entity diversity is 0.438× real in 10/10 threads, which is
+   also an eye-visible tell.
+5. **Criterion 2 — eye-indistinguishability.** v100's measured closing move found
+   the root of the adjudication frame chased since v73: **how the comment stops**
+   was the thing, not the phrase. Real text closes on an abstract verdict 0.014
+   of the time and v99 generated 0.265 (19.1×); v100 took the verdict-close
+   vocabulary 0.271 → 0.150 on its gate. Still unfixed: **no generated comment
+   contains a link** (real 0.051), `check` at ~10× real, entity diversity 0.438×
+   real, `will` at ~1% of real, and generated hedges on 2.9% of replies against a
+   real 17.6%.
 
 ### Known bugs, unfixed
 
 - **Evaluation drops <2-word comments unevenly**, so `--exact-matched-thread-size`
   can still yield mismatched counts (24 generated vs 22 real on `post04_seed011`).
 - **The slot distribution schedule is never persisted** to `discussion.json`, so
-  `tone_length_fit` / `tone_length_joint` cannot be audited after the fact.
+  `tone_length_fit` / `tone_length_joint` cannot be audited after the fact. The
+  same is true of **`opener_type`**, which had to be recovered by grepping the
+  saved Writer prompts to build the realization matrix above.
 - **`--template-phrase-reuse-budget 4` is flat** and wrong at large thread sizes
   (real threads reach `uncertainty_frame` 7, 8, and 12).
+- **`pair_count` in `matched_*_thread_scores.csv` is not the stance pair count.**
+  It is `n(n-1)/2` from the pairwise metrics. Do not read it for
+  `hard_disagree_rate`.
+- **One Reddit post can sit under two product folders**, so a naive read of
+  `data/raw/discussions/` double-counts pairs (1.24× on the matched set, 1.32×
+  on the camera corpus). Dedupe by `(thread_id, reply_id)`.
+  `generalized_card/analysis/politeness_diagnosis.py` does not.
 
 ### Recommended revert
 
 `--no-story-scope sequence` produced **no metric benefit** (past tense
 0.289 → 0.288, lexical breadth 15.95 → 16.20 against a real 21.02) and added new
 repeated 4-grams. It did remove a genuine prompt contradiction — 247 of 532
-prompts carried two mutually exclusive rules — so keep the contradiction fix,
-but the default should go back to `tense`.
+prompts carried two mutually exclusive rules — so keep the contradiction fix, but
+the default should go back to `tense`.
 
 ### Next step
 
-**Run the v99 large-thread gate** (§4): `--start-seed-index 8`, 186 comments.
-The predictions to read it against are in `generalized_card/VERSION_LOG.md`.
-v99 predicts `polite_rate` 0.070 → 0.14–0.19, which **still fails** — it repairs
-the polite realization only.
+**Build v102: `--opener-realization`.** It is the only mechanism in the project
+right now with a *causally measured* effect on a failing metric, and the change
+is small — make the Writer obey an opener the pipeline already assigns and
+renders. Design, predictions and guardrails are in `tasks/v102-worklog.md` §7.
+It is predicted to take `hard_disagree_rate`'s Cliff from +0.37 to +0.15–0.25,
+which is real movement and is **still short of the ≤0.10 bar** — the parent-echo
+term is the other half and has no mechanism yet.
 
-**Then v100: the impolite bleed.** Planned-neutral realizes impolite 0.513 and
-planned-somewhat_polite 0.478 — 122 slots, the larger remaining share of
-`impolite_rate`. It needs a *suppressive* mechanism, since no additive move
-discriminates `neutral`. The two over-produced families are measured: `adjudge`
-(0 of 15,294 excluded real, 0 of 659 matched real, **37 of 528 generated**) and
-`dismiss_noun` (5.17× real).
+**Still blocking N=150: the reporting standard.** 12 metrics × 2 tests at
+α = 0.05 means a perfect generator passes all 12 together only ≈ 52% of the time.
+That is the user's decision (§2, trap 4).
 
 ### Retracted claims — do not reuse
 
@@ -610,6 +655,13 @@ discriminates `neutral`. The two over-produced families are measured: `adjudge`
   and rejected: r = +0.077 across 22 real threads.
 - ~~"the tone gap is mostly a length effect"~~ — polite-guard's polite class
   keys on **warmth markers** (lift 2.24); length is secondary.
+- ~~"the verdict suppression strips polite appraisal from long slots"~~ — real
+  polite comments close that way at 0.010–0.029; the drop was 4/9 → 1/9, noise.
+- ~~"negative markers at 3× real should be suppressed"~~ — the decomposition is a
+  **+8.381 polite deficit against a −0.767 impolite excess**; generated uses
+  *less* of the impolite vocabulary than real.
+- ~~"`hard_disagree_rate` has never had a mechanism"~~ (the 2026-08-20 handoff) —
+  superseded: two mechanisms are now measured, one of them causally.
 
 ---
 
@@ -836,7 +888,14 @@ Not "I believe"; these were run on 2026-08-20:
 
 | check | result |
 |---|---|
-| `pytest -q generalized_card/tests` | **527 passed** (449 + 19 provenance + 28 register + 31 closing) |
+| **the `hard_disagree_rate` diagnosis (2026-08-20)** | every figure in §6.1 is reproduced by `generalized_card/analysis/disagreement_diagnosis.py`; the subcommands are `structure`, `openers`, `echo`, `surrogate`, `ablate` |
+| the stance scorer's semantics | read from `scripts/evaluation/score_thread_disagreement.py` end to end, not recalled |
+| the ablation harness | re-scores with the evaluator's own scorer classes and reproduces the shipped v101 artifact on **526/526 pairs**, max \|Δp\| **0.000000**, asserted before any edited number is printed |
+| the real stance tables | re-scored today in this environment and reproduce their stored labels exactly, so the real/generated comparison carries no environment drift |
+| the opener realization matrix | recovered by matching the 11 `OPENER_INSTRUCTIONS` strings against the **532 saved Writer prompts** — `opener_type` is not persisted |
+| the causal opener edit | reply-pair rate 0.2235 → **0.1862** stripping only the 36 unassigned polarity openers; `self_bleu_4` 0.03330 → 0.03297 on the same edit, exact scorer |
+| corpus deduplication | pairs deduped by `(thread_id, reply_id)`; a naive read inflates the matched set **1.24×** and the camera corpus **1.32×** |
+| `pytest -q generalized_card/tests` | **527 passed** at the v100 boundary; **537 passed** at v101 (see `VERSION_LOG.md`) |
 | `repin_core_contract.py` (report mode) | 104 pinned, 0 missing, 0 untracked active, 0 unpinned local imports, **0 drift** |
 | v99 profile rebuild | schema 16 over 424 excluded threads, **0 seed overlap**, 4,787 polite comments measured; six bands monotone |
 | v99 draw fidelity | rendered draw against measured share within **0.011** in every band and every move, 4,000 slots per band |

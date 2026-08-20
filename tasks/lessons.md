@@ -1,5 +1,92 @@
 # Lessons
 
+## 2026-08-20 — An ablation harness that has not reproduced the artifact is a random number generator
+
+**What happened.** Building an exact ablation harness for `hard_disagree_rate`, I
+took each generated reply's text from `discussion.json` instead of from the
+scorer's own pair record. The scorer runs `clean_text`, which collapses newlines;
+`discussion.json` keeps them, and RoBERTa's BPE tokenizes `\n` as a token. The
+harness re-scored the shipped run at 0.1730 against a recorded 0.1692, with
+**11.2% of the labels flipped** and max |Δp| = 0.069. That error is a third the
+size of the real-vs-generated gap I was about to measure with it.
+
+I chased the wrong cause first — batch size, then the graph feature, then a torch
+version difference — and only found it after re-scoring the **real** tables and
+getting a byte-exact reproduction, which proved the environment was innocent and
+the input was not.
+
+**Why:** every ablation reports a *difference*, and a difference between a
+faithful number and an unfaithful one is meaningless. The check that catches it
+is cheap and the one that does not is expensive: comparing to a plausible number
+tells you nothing, comparing to the artifact tells you everything.
+
+**How to apply.**
+- **Reproduce the artifact exactly before printing a single edited number**, and
+  make it an assertion in the harness rather than something you remember to do.
+  `disagreement_diagnosis.py ablate` refuses to print the ablations if label
+  agreement is below 1.0.
+- **Take the scorer's input from the scorer's own output when it records it.**
+  The stance results store `parent_text` and `reply_text` post-`clean_text`.
+  Re-deriving them from the source is re-implementing a normalizer.
+- When a reproduction is off, **test the innocent side first**. Re-scoring the
+  unchanged real tables cost one CPU minute and eliminated three hypotheses.
+
+## 2026-08-20 — One Reddit post can sit under two product folders
+
+**What happened.** `data/raw/discussions/camera_product/*/` is organised by
+product, and a thread that mentions two products is stored under both. Reading
+the per-comment classifier tables by globbing products double-counts those pairs:
+**1.24× on the ten matched threads and 1.32× on the camera corpus**. My first
+per-thread table showed real thread `1lt0yq3` with 70 stance pairs against a
+`comment_count` of 45 — an impossibility, since there is at most one pair per
+comment, and that impossibility was the only reason I caught it.
+
+Rates were unaffected, because the duplicates are exact copies, but every pooled
+or weighted figure was, and a duplicated thread silently gets double weight in
+any corpus-level average.
+
+**Why:** the directory layout encodes a product→thread relation that is
+many-to-many, and every loader in this repo treats it as one-to-many.
+
+**How to apply.**
+- **Dedupe by `(thread_id, reply_id)`** — or `(thread_id, comment_id)` — when
+  reading anything under `data/raw/discussions/`.
+- `generalized_card/analysis/politeness_diagnosis.py` does **not** dedupe. Its
+  conditionals and lifts are safe; its pooled counts and weighted shares are not.
+- **A count that cannot be true is the cheapest bug detector there is.** Pairs
+  exceeded comments, and that was the whole signal. Sanity-check the arithmetic
+  of a table before reading its conclusion.
+
+## 2026-08-20 — A metric name can lie about what the metric measures
+
+**What happened.** `hard_disagree_rate` reads as "how often a reply disagrees
+with its parent". It is not that. The local Stance_Rel wrapper has no graph path,
+its three class probabilities all sit inside ≈[0.26, 0.41], and a surrogate
+fitted on real data reaches AUC 0.740 from the **reply text alone** against 0.579
+from the parent alone. Its `disagree` class is keyed by explicit stance tokens
+with **agreement ones weighted most heavily** — `agree`, `agreed`, `yup`,
+`yeah`, `exactly`. In the shipped artifact, slots the Planner assigned
+`stance=agree` are labelled disagree **0.255** of the time and slots assigned
+`stance=disagree` only **0.181**.
+
+Anyone reasoning from the name would have gone looking for a way to make replies
+disagree less, and would have moved the plan's stance marginal — which is not
+where the defect is.
+
+**Why:** the metric is an argmax over a nearly uniform softmax, so it measures
+"does this comment take an explicit position" far more than "which position".
+
+**How to apply.**
+- **Read the scorer, then read what the classifier responds to on real data** —
+  the name is a third-hand summary of neither.
+- For any argmax metric, **look at the decision margin distribution** before
+  theorising. A near-degenerate head means the metric moves on surface tokens and
+  a uniform translation, not on semantics.
+- The mechanisms that move such a metric target **what the classifier responds
+  to**, not the concept in its name. This is the same rule the politeness work
+  arrived at, restated for a second metric.
+
+
 ## 2026-08-20 — Reason at the granularity the mechanism operates at, three times over
 
 **What happened.** One version line produced the same error three times, each
