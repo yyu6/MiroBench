@@ -55,7 +55,7 @@ bureaucracy — every rule there has a wasted paid run behind it.
 | 2 | `tasks/todo.md` | the task list, ordered by which measured gap it moves | before choosing what to do |
 | 3 | `tasks/v<N>-worklog.md` | the current version's full evidence, including rejected hypotheses | before touching that version's code |
 | 4 | `generalized_card/VERSION_LOG.md` | every released version, its arms, and its result | when comparing versions |
-| 5 | `tasks/lessons.md` | 46 mistakes, each with the rule that prevents it | before diagnosing anything |
+| 5 | `tasks/lessons.md` | 48 mistakes, each with the rule that prevents it | before diagnosing anything |
 | 6 | `generalized_card/AGENTS.md` | binding engineering rules for `generalized_card/` | before writing code |
 | 7 | `tasks/HANDOFF.md` | the long-form evidence archive, newest addendum first | when you need the detail behind a claim |
 | 8 | `docs/thread_metric_score_reference.md` | every exported metric, its scorer, its model | when you need a scorer's exact semantics |
@@ -283,27 +283,34 @@ Setting an arm to its legacy value must reproduce the prior release exactly.
 
 v98 ships **16** such arms. Read from `run_generate.py:195-400`:
 
-| flag | v98 default | legacy value(s) | added |
-|---|---|---|---|
-| `--writer-prompt` | `focused` | `full` | v82 |
-| `--writer-route-lock` | `own_words` | `say_only` | v75 |
-| `--social-contract-coherence` | `on` | `off` | v80 |
-| `--reply-sibling-visibility` | `on` | `off` | v80 |
-| `--own-fact-license` | `off` * | `own`, `named` | v76 |
-| `--speaker-identity` | `matched` | `off` | v88 |
-| `--domain-claim` | `selective` | `planned`, `off` | v92/v96 |
-| `--turn-frame` | `adjudicative_only` | `universal` | v97 |
-| `--tone-length-fit` | `conditional` | `median` | v97 |
-| `--long-form-layout` | `measured` | `beats_only` | v97 |
-| `--reddit-typography` | `on` | `off` | v97 |
-| `--sentence-rhythm` | `measured` | `off` | v98 |
-| `--length-calibration` | `measured` | `off` | v98 |
-| `--final-punctuation` | `measured` | `off` | v98 |
-| `--route-ledger` | `on` | `off` | v98 |
-| `--no-story-scope` | `sequence` | `tense` | v98 |
+| flag | CLI default | other value(s) |
+|---|---|---|
+| `--writer-prompt` | `focused` | `full` |
+| `--writer-route-lock` | `own_words` | `say_only` |
+| `--social-contract-coherence` | `on` | `off` |
+| `--reply-sibling-visibility` | `on` | `off` |
+| `--own-fact-license` | `off` * | `own`, `named` |
+| `--speaker-identity` | `matched` | `off` |
+| `--domain-claim` | `selective` | `planned`, `off` |
+| `--turn-frame` | `adjudicative_only` | `universal` |
+| `--tone-length-fit` | `conditional` | `median` |
+| `--long-form-layout` | `measured` | `beats_only` |
+| `--reddit-typography` | `on` | `off` |
+| `--sentence-rhythm` | `measured` | `off` |
+| `--length-calibration` | `measured` | `off` |
+| `--final-punctuation` | `measured` | `off` |
+| `--route-ledger` | `on` | `off` |
+| `--no-story-scope` | `sequence` | `tense` |
 
 Plus two optional experimental conditioning modes, both default `none`:
 `--actor-conditioning` and `--persona-conditioning`.
+
+Which version introduced which arm is **not reliably recoverable from
+`VERSION_LOG.md`** — `--writer-prompt`, `--writer-route-lock` and
+`--speaker-identity` are not named in it at all, and v68–v79 share a single
+provenance-correction entry rather than per-version sections. Use `git log -S`
+on the flag string if you need the lineage, and do not quote a version number
+for an arm's origin without checking.
 
 \* **Gotcha: the CLI default is not always the run default.** The v97 and v98
 N=10 runs used `--own-fact-license named` (CLI default `off`). Read
@@ -404,7 +411,11 @@ v97 (`--start-seed-index 2`, `--sampling-seed 42`).
 Two of the user's four priority metrics were fixed: `length_cv` and
 `emotion_entropy`.
 
-### The four open problems, and what is known about each
+### The open problems, and what is known about each
+
+**Four metrics are not matched**: `self_bertscore_mean_f1`, `polite_rate`,
+`impolite_rate` (FAIL) and `neutral_rate` (PARTIAL). `self_bleu_4` passes but
+weakly. Criterion 2 — eye-indistinguishability — is separate from all of them.
 
 1. **`polite_rate` / `impolite_rate` / `neutral_rate` — one cause, three
    metrics.** Verified: warmth-marker rate ↔ `polite_rate` r = +0.727 over 412
@@ -417,7 +428,7 @@ Two of the user's four priority metrics were fixed: `length_cv` and
 2. **`self_bertscore_mean_f1` — no verified mechanism.** Four hypotheses
    measured and rejected (§3). This is the honest state: do not build against a
    fifth hypothesis without falsifying it first.
-3. **`self_bleu_4` — characterised, no cheap lever.** An exact ablation harness
+3. **`self_bleu_4` — a weak pass, characterised, no cheap lever.** An exact ablation harness
    that reproduces the evaluator's number to 5 significant figures shows **no
    phrase drives it**: apostrophe normalisation, `check` openings, `that's the
    part`, and yeah/basically/actually all change it by ≤ 0.0005. OLS
@@ -427,7 +438,7 @@ Two of the user's four priority metrics were fixed: `length_cv` and
    0.438× real in 10/10 threads, which is also an eye-visible tell — so it is
    worth doing for criterion 2 even though it is a weak metric lever.
 4. **Eye-indistinguishability (criterion 2)** — the tells listed in §1 are
-   unfixed.
+   unfixed, and no metric measures them.
 
 ### Known bugs, unfixed
 
@@ -580,35 +591,51 @@ Four mechanisms, and all four have to hold:
    released policy string, so an old artifact can be identified.
 4. **Git commits carry the actual source tree.**
 
-### The current defect — verified 2026-08-20, not fixed
+### The defect that was found, and how it was closed — 2026-08-20
 
 `HISTORICAL_GENERATION_POLICY_VERSIONS` stores **version strings only, with no
 per-version file hashes.** So mechanism 3 identifies a version but cannot
-reconstruct it — reconstruction depends entirely on mechanism 4, git.
-
-And mechanism 4 is currently broken:
+reconstruct it — reconstruction depends entirely on mechanism 4, git. And
+mechanism 4 was broken:
 
 ```
 HEAD = a34abc6  "fix(generalized-card): ground selective facts in reply plans"
-     → core_contract.py at HEAD names v96 as current
+     → core_contract.py at HEAD named v96 as current
 git log -- generalized_card/generalized_card/sentence_rhythm.py   → empty
 git log -- generalized_card/generalized_card/length_calibration.py → empty
 ```
 
-**v97 and v98 exist only in the working tree.** The run whose result §6 quotes
-is not reproducible from history, and the run directory contains no source
-snapshot (`generated/`, `logs/`, `run_config.json` only). If the working tree
-changes, those two versions are lost.
+**v97 and v98 existed only in the working tree** — two shipped releases, one of
+them the source of the N=10 result in §6, with no recoverable source tree. The
+run directory holds `generated/`, `logs/` and `run_config.json`; there is no
+source snapshot.
 
-The scoped changeset that needs committing is 28 files under `generalized_card/`
-plus 5 docs; `scripts/sampling_generator/` is untouched by v97/v98, so the CARD
-core is unaffected. `docs/thread_metric_score_reference.md`,
-`tasks/v97-worklog.md` and `tasks/v98-worklog.md` are also untracked.
+Fixed by two commits on `generator/v75-writer-realizes-planner-move`:
 
-v97 and v98 cannot now be separated into two clean commits — the working tree
-interleaves them — so they will share one commit boundary, and v97's standalone
-tree is not recoverable. **The rule going forward: commit at every version
-boundary, before the paid run, not after.**
+| commit | contents |
+|---|---|
+| `e213f7a` | v97 + v98: 33 files — 14 policy modules, `run_generate.py`, 11 test modules, `VERSION_LOG.md`, `RUN_INDEX.md`, worklogs |
+| `1abdb0e` | `docs/ORIENTATION.md`, `docs/thread_metric_score_reference.md`, README pointer |
+
+`scripts/sampling_generator/` is untouched by v97 and v98, so the CARD core is
+unaffected by either.
+
+**The chain is now closed, and this was checked rather than assumed:** the
+working tree is clean for all 101 pinned sources against `HEAD`, and
+`repin_core_contract.py` reports zero drift — so `HEAD`'s blobs hash to exactly
+the pinned values. `run_config.json` names the policy version; that string is
+present in `HEAD`'s `core_contract.py`; that commit holds the sources the pins
+were computed from.
+
+**One loss is permanent.** v97 and v98 could not be separated after the fact —
+the working tree interleaved them — so they share one commit boundary and v97's
+standalone tree is not recoverable.
+
+**The rule going forward: commit at every version boundary, before the paid run,
+not after.** A pinned hash proves a file has not changed since you pinned it; it
+does not store the file. Any check that answers "has this drifted?" is not an
+answer to "can this be recovered?" — see the 2026-08-20 lesson in
+`tasks/lessons.md`.
 
 ---
 
@@ -625,7 +652,10 @@ Not "I believe"; these were run on 2026-08-20:
 | v97/v98 seed pairing | both `start_seed_index=2`, `sampling_seed=42`, `max_posts=10` — confirmed paired |
 | status thresholds | read from `run_evaluate.py:411`, not from memory |
 | the 12-metric list | read from `REQUIRED_THREAD_METRICS`, `run_evaluate.py:28` |
-| git traceability | `git log` per file + `git show HEAD:core_contract.py` — v97/v98 confirmed **uncommitted** |
+| git traceability, before | `git log` per file + `git show HEAD:core_contract.py` — v97/v98 confirmed **uncommitted** |
+| git traceability, after | v97+v98 committed as `e213f7a`, docs as `1abdb0e`; `git log` per new file now resolves; v98's policy string present in `HEAD`'s `core_contract.py`; pinned sources clean against `HEAD` with 0 drift |
+| `ruff check generalized_card` | **no issues found** |
+| the 16 ablation arms | read from `run_generate.py:195-400`, with each default and legacy value |
 | module line counts | `wc -l` |
 
 Anything in this file not in that table came from a linked document, and the

@@ -93,9 +93,13 @@ in `docs/ORIENTATION.md`.
       0.066, so the markers are also used differently, not only used less.
 - [ ] Revert `--no-story-scope` default to `tense`. No metric benefit, and it
       added new repeated 4-grams. Keep the prompt-contradiction fix it carried.
-- [ ] **Commit at every version boundary.** v97 and v98 shipped uncommitted;
-      see `docs/ORIENTATION.md` §8. Verified 2026-08-20: HEAD is v96 and
-      `sentence_rhythm.py` / `length_calibration.py` have zero commits.
+- [x] **Traceability closed.** v97 and v98 had shipped uncommitted — HEAD was
+      v96 and `sentence_rhythm.py` / `length_calibration.py` had zero commits.
+      Committed as `e213f7a` (code) and `1abdb0e` (docs); pinned sources verified
+      clean against HEAD with 0 drift. See `docs/ORIENTATION.md` §8.
+      **Standing rule from here: commit at every version boundary, before the
+      paid run, not after.** v97's standalone tree is permanently unrecoverable
+      because the working tree interleaved the two releases.
 - [ ] Entity diversity: generated 0.438x real in 10/10 threads. Worth ~1/3 of
       the `self_bleu_4` gap and it also fixes an eye-visible tell (10 distinct
       product designators against 40 real).
