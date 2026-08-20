@@ -329,7 +329,7 @@ CORE_FILES = {
     ),
     "register_realization": (
         "generalized_card/generalized_card/register_realization.py",
-        "8515c507f888b7ef69acf17a76c93191a1412d4c95d81e089ce6287c20040025",
+        "bfcf5e4d4b76486d5c9016d5b54e2f99f6e3facb2f322d4e5a63f9d24c4e8dce",
     ),
     "source_provenance": (
         "generalized_card/generalized_card/source_provenance.py",

@@ -299,6 +299,32 @@ class GuidanceTest(unittest.TestCase):
         self.assertIn("Do not tell the story", spec["cue"])
         self.assertNotIn("ended up keeping", spec["cue"])
 
+    def test_gratitude_is_a_measured_move_again(self) -> None:
+        """v99 excluded it on a pooled 1.25x figure. Conditioned on the register
+        the cue fires on, real polite micro comments thank at 0.329 and generated
+        micro produced 0.100; five planned-polite micro slots on the v100 gate
+        fell from 0.600 realized polite to 0.000."""
+
+        names = rr.move_names()
+        self.assertIn("gratitude", names)
+        spec = next(s for s in rr.REGISTER_MOVES if s["name"] == "gratitude")
+        # It must not stack a compliment on top -- that is `plain_verdict`'s job
+        # and real short thanks do not do both.
+        self.assertIn("Do not add a reason or a compliment", spec["cue"])
+
+    def test_gratitude_draws_at_the_band_rate_not_a_flat_one(self) -> None:
+        """It runs backwards to every other move: 0.329 at micro, 0.057 at essay."""
+
+        prof = multi({"polite": {"micro": {"gratitude": 0.329},
+                                 "essay": {"gratitude": 0.057}}})
+        for band_words, expected in ((5, 0.329), (600, 0.057)):
+            drawn = sum(
+                rr.slot_uses_move(prof, slot_key=f"s{i}", move="gratitude",
+                                  word_count=band_words, tone_class="polite")
+                for i in range(4000)
+            ) / 4000
+            self.assertAlmostEqual(drawn, expected, delta=0.02)
+
     def test_the_blunt_cue_does_not_ask_the_slot_to_soften(self) -> None:
         """Real impolite comments carry these moves at 0.30 / 0.13 / 0.18."""
 

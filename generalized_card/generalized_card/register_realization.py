@@ -17,24 +17,25 @@ scored on the other half. Full evidence in `tasks/v99-worklog.md`.
 
 Why these moves and not others
 ------------------------------
-Four moves clear all three bars -- out-of-sample lift on P(polite), a real
+Five moves clear all three bars -- out-of-sample lift on P(polite), a real
 prevalence worth spending a slot on, and a generated rate below real:
 
     move                held-out lift   real prev   generated   ratio
     love_like                   2.69      0.064      0.015      0.24x
     plain_verdict               2.53      0.215      0.085      0.40x
+    gratitude                   2.46      0.029      0.036      1.25x*
     own_thing                   2.11      0.212      0.117      0.55x
     any_intensifier             2.07      0.384      0.288      0.75x
 
-Three candidates were measured and deliberately left out:
+    * that 1.25x is the trap: it compares generated-on-all-slots against
+      real-on-all-comments. Conditioned on the register the cue actually fires
+      on, real polite micro comments thank at 0.329 against a generated 0.100 and
+      real polite short at 0.164 against a generated 0.000. v99 excluded the move
+      on the pooled figure and five planned-polite micro slots on the v100 gate
+      fell from 0.600 realized polite to 0.000.
 
-    gratitude       lift 2.46 but generated already runs 1.25x real. Asking for
-                    thanks would push a rate that is already too high. The
-                    per-band profile also shows it running backwards to every
-                    other move -- 0.292 in the 0-15 band against 0.089 above 120
-                    words -- so short polite comments are thank-yous and long
-                    ones are enthusiastic sharing. One "add warmth" cue would be
-                    wrong at both ends.
+Two candidates were measured and deliberately left out:
+
     reassure_you    lift 2.26 but real prevalence 0.023. Too rare to spend a
                     slot on.
     link            lift 1.97 and generated is 0.000 against a real 0.058, which
@@ -170,6 +171,27 @@ REGISTER_MOVES: tuple[dict[str, Any], ...] = (
         "name": "love_like",
         "pattern": r"\b(?:love|loved|loving|adore|enjoy|enjoyed|enjoying)\b",
         "cue": "Say that you like or enjoy it, in your own words, without hedging it.",
+    },
+    {
+        # Excluded in v99 on the grounds that generated output already ran 1.25x
+        # real. That comparison was generated-on-all-slots against
+        # real-on-all-comments, while the cue fires on the register the plan
+        # assigned -- the same granularity error that broke the v99 prediction.
+        # Per register and band it is the dominant polite move at the short end
+        # and it was missing: real polite micro comments thank at 0.329 and
+        # generated micro produced 0.100, real polite short 0.164 against a
+        # generated 0.000. Five planned-polite micro slots on the v100 gate went
+        # from 0.600 realized polite to 0.000 once intensifiers replaced thanks.
+        # It runs backwards to every other move -- 0.329 at micro down to 0.057 at
+        # essay, and 0.003-0.017 on real impolite comments at any length -- which
+        # is exactly what a per-register, per-band draw is for.
+        "name": "gratitude",
+        "pattern": r"\b(?:thank|thanks|thx|appreciate|appreciated|cheers)\b",
+        "cue": (
+            "Acknowledge or thank the person you are replying to, briefly, in "
+            "whatever ordinary words fit. Do not add a reason or a compliment on "
+            "top of it."
+        ),
     },
 )
 
