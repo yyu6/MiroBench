@@ -37,6 +37,7 @@ from .domain_claim import (
     enrich_domain_claim_fields,
     normalized_domain_claim,
     planner_claims_enabled,
+    seed_claim_key,
 )
 from .opener_profile import OPENER_TYPES
 from .domain_profile import load_domain_profile
@@ -103,6 +104,8 @@ from . import sentence_rhythm
 # module global.
 from . import closing_move
 from .closing_move import set_active_closing_profile, set_closing_move
+from . import opening_move
+from .opening_move import set_active_opening_profile, set_opening_move
 from . import register_realization
 from .register_realization import (
     set_active_register_profile,
@@ -448,6 +451,17 @@ def configure_generator_backend(
         or "measured"
     )
     set_closing_move(module.GENERALIZED_CLOSING_MOVE)
+    # Whether the assigned grammatical entry reaches the Writer as a drawn word
+    # or as a category name. `off` reproduces every version through v101, where
+    # "a short conversational connective" was realized as `Yeah,` on half the
+    # slots that got it and `polarity_token` came out at 0.1274 against a
+    # measured 0.0526 -- the highest-disagreement entry there is.
+    # See `opening_move`.
+    module.GENERALIZED_OPENING_MOVE = (
+        os.environ.get("GENERALIZED_CARD_OPENING_MOVE", "measured").strip().lower()
+        or "measured"
+    )
+    set_opening_move(module.GENERALIZED_OPENING_MOVE)
     # Whether the length cue asks for the matched slot's own word count or for
     # the count that realizes it. `off` reproduces every version through v97,
     # where realized/target ran 1.42x at the shortest slots and 0.71x at 251-400
@@ -584,6 +598,9 @@ def configure_generator_backend(
     )
     set_active_closing_profile(
         module.GENERALIZED_DOMAIN_PROFILE.get("closing_profile")
+    )
+    set_active_opening_profile(
+        module.GENERALIZED_DOMAIN_PROFILE.get("opening_profile")
     )
     module.CLAIM_FAMILIES = prompts.GENERIC_CLAIM_FAMILIES
     # The core system prompt is pinned in `engine/vocabulary.py` and its own ban
@@ -1384,6 +1401,77 @@ def _run_generalized_self_test(module: ModuleType, config: DomainConfig) -> None
             previous_comments=[],
         )
         assert not _closing_line(short)
+    if module.GENERALIZED_OPENING_MOVE != "off" and (
+        opening_move.ACTIVE_OPENING_PROFILE.get("available")
+    ):
+        # The two entry types this arm exists for are assigned by the schedule,
+        # so the self-test asks for them directly rather than hoping a sampled
+        # slot drew one.
+        types = dict(getattr(module, "GENERALIZED_OPENER_TYPES", {}) or {})
+        drawn_lines = set()
+        for index in range(1, 13):
+            slot_task = replace(
+                task, real_word_count=60, tone_target="impolite", local_task_id=index
+            )
+            types[_opener_probe_key(seed, slot_task)] = "discourse_marker"
+            module.GENERALIZED_OPENER_TYPES = types
+            drawn_lines.add(
+                _opener_line(
+                    module.build_writer_prompt(
+                        profile="gpt54_reddit_writer",
+                        seed_post=seed,
+                        task=slot_task,
+                        parent_comment=None,
+                        previous_comments=[],
+                    )
+                )
+            )
+        # Drawn per slot, not one word per category: that difference is the
+        # mechanism. A category name is what produced `Yeah,` on half of these.
+        assert len(drawn_lines) > 1, drawn_lines
+        assert not any(
+            "short conversational connective" in line.lower() for line in drawn_lines
+        ), drawn_lines
+        # A blunt slot is never told to open on gratitude: real impolite comments
+        # open with `thanks` at essentially zero, which is why the draw is keyed
+        # on the register the plan assigned.
+        assert not any(
+            '"thank' in line.lower() for line in drawn_lines
+        ), drawn_lines
+        # A register the profile does not measure keeps the categorical
+        # instruction rather than being handed a word its own text does not use.
+        unknown_task = replace(
+            task, real_word_count=60, tone_target="not_a_tone", local_task_id=99
+        )
+        types[_opener_probe_key(seed, unknown_task)] = "discourse_marker"
+        module.GENERALIZED_OPENER_TYPES = types
+        assert "short conversational connective" in _opener_line(
+            module.build_writer_prompt(
+                profile="gpt54_reddit_writer",
+                seed_post=seed,
+                task=unknown_task,
+                parent_comment=None,
+                previous_comments=[],
+            )
+        ).lower()
+        # The prohibition names the tokens it is about. The categorical version
+        # reached 504 of 532 v101 prompts and was violated on 9.1% of them.
+        content_task = replace(
+            task, real_word_count=60, tone_target="impolite", local_task_id=98
+        )
+        types[_opener_probe_key(seed, content_task)] = "content_phrase"
+        module.GENERALIZED_OPENER_TYPES = types
+        content_line = _opener_line(
+            module.build_writer_prompt(
+                profile="gpt54_reddit_writer",
+                seed_post=seed,
+                task=content_task,
+                parent_comment=None,
+                previous_comments=[],
+            )
+        ).lower()
+        assert "do not begin this comment with any of:" in content_line, content_line
+        assert '"yeah"' in content_line, content_line
     story_task = next(
         (item for item in distribution_tasks if item.story_mode != "no_story"),
         None,
@@ -2960,6 +3048,28 @@ def _closing_line(prompt: str) -> str:
 
     for line in prompt.splitlines():
         if line.lstrip("- ").lower().startswith("closing move:"):
+            return line.strip()
+    return ""
+
+
+def _opener_probe_key(seed_post: Any, task: Any) -> tuple[str, int]:
+    """The registry key `claim_for_task` will look this slot up under.
+
+    Used only by the self-test, so it can assign an entry type to a slot
+    directly instead of hoping the sampled schedule drew the one under test.
+    """
+
+    sample_id = getattr(task, "real_sample_id", None) or getattr(
+        task, "local_task_id", 0
+    )
+    return (seed_claim_key(seed_post), int(sample_id or 0))
+
+
+def _opener_line(prompt: str) -> str:
+    """Return the rendered opening-grammar rule from one Writer prompt, if any."""
+
+    for line in prompt.splitlines():
+        if line.lstrip("- ").lower().startswith("opening grammar for this turn:"):
             return line.strip()
     return ""
 

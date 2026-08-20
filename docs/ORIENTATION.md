@@ -323,7 +323,7 @@ Every behaviour change is a named CLI flag. The flag is written into
 generation parameters is **rejected**, so a tag can never mean two configs.
 Setting an arm to its legacy value must reproduce the prior release exactly.
 
-v100 ships **18** such arms. Read from `run_generate.py:195-400`:
+v102 ships **19** such arms. Read from `run_generate.py:195-400`:
 
 | flag | CLI default | other value(s) |
 |---|---|---|
@@ -345,6 +345,7 @@ v100 ships **18** such arms. Read from `run_generate.py:195-400`:
 | `--no-story-scope` | `sequence` | `tense` |
 | `--register-realization` | `measured` | `off` |
 | `--closing-move` | `measured` | `off` |
+| `--opening-move` | `measured` | `off` |
 
 Plus two optional experimental conditioning modes, both default `none`:
 `--actor-conditioning` and `--persona-conditioning`.
@@ -632,13 +633,17 @@ the default should go back to `tense`.
 
 ### Next step
 
-**Build v102: `--opener-realization`.** It is the only mechanism in the project
-right now with a *causally measured* effect on a failing metric, and the change
-is small — make the Writer obey an opener the pipeline already assigns and
-renders. Design, predictions and guardrails are in `tasks/v102-worklog.md` §7.
-It is predicted to take `hard_disagree_rate`'s Cliff from +0.37 to +0.15–0.25,
-which is real movement and is **still short of the ≤0.10 bar** — the parent-echo
-term is the other half and has no mechanism yet.
+**v102 `--opening-move` is built and offline-verified; it has not been run.**
+Policy `generalized-card-v2-drawn-opening-move-v102-20260820`, profile schema 19.
+It names each slot's opening word, drawn at its register's measured
+distribution, instead of describing the entry category, and replaces the
+categorical prohibition with the ten measured tokens it is about. Predictions and
+guardrails are in `generalized_card/VERSION_LOG.md` — **read them before the
+gate.** It is predicted to take `hard_disagree_rate`'s Cliff from +0.37 to
++0.15–0.25, which is real movement and is **still short of the ≤0.10 bar**: the
+parent-echo term is the other half and has no mechanism yet.
+
+Next action: the large-thread gate (§4), `--start-seed-index 8`, 186 comments.
 
 **Still blocking N=150: the reporting standard.** 12 metrics × 2 tests at
 α = 0.05 means a perfect generator passes all 12 together only ≈ 52% of the time.

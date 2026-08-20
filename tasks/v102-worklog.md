@@ -1,6 +1,7 @@
 # v102 worklog — the `hard_disagree_rate` diagnosis
 
-Status: **diagnosis complete, no code shipped.** Reproduce every number with
+Status: **diagnosis complete; v102 `--opening-move` built and offline-verified,
+not yet run.** Reproduce every number with
 
 ```bash
 .venv/bin/python generalized_card/analysis/disagreement_diagnosis.py all
@@ -276,20 +277,41 @@ trio. Real polite rate by opener runs 0.18–0.47 and generated 0.02–0.15 in
 
 ---
 
-## 7. What v102 should be, and what it is worth
+## 7. What v102 is, and what it is worth
 
-**Arm `--opener-realization {measured,off}`; `off` reproduces v101.**
+**Arm `--opening-move {measured,off}`; `off` reproduces v101.** Built and
+offline-verified; the entry and the predictions are in
+`generalized_card/VERSION_LOG.md`.
 
-1. Measure the real opening-connective vocabulary on the evaluation-excluded
-   corpus and **draw one per `discourse_marker` slot**, naming it — "open with
-   `honestly`, then the point" — instead of describing the category.
-2. On every slot whose assigned opener is **not** `polarity_token`, render an
-   explicit token-level prohibition that names the tokens (`yeah / yep / yes /
-   no / nope / fair / right / exactly / agreed / true / same`). The project has a
-   track record with named-token suppression: v98 took the semicolon 0.109 →
-   0.023 and the dash clause 0.299 → 0.071.
+**A correction to this section's first draft, caught during the build.** The
+plan was to "render an explicit token-level prohibition". A prohibition already
+exists: `_opener_rule` has appended *"Do not open with a bare agreement or
+disagreement token"* to every non-`polarity_token` slot since v96, and on the
+v101 run it reached **504 of 532 prompts and was violated on 9.1% of them.**
+Adding a second categorical ban would have been the same instruction twice. What
+the measurement supports is naming the concrete form, which is what v98's "Use no
+semicolons" (0.109 → 0.023) and "Do not join two clauses with a dash"
+(0.299 → 0.071) did.
+
+So the arm ships as:
+
+1. **Draw the actual opening word** for the two entry types whose category the
+   Writer resolves to the wrong act, and name it — `Open with "well" and nothing
+   else before it, then go straight into the point` — replacing the category
+   description rather than being added to it.
+2. **Replace** the categorical prohibition with the ten tokens it is about,
+   measured rather than guessed — `yes yeah no same agreed yep exactly true nah
+   nope`, ordered by pooled share — and gate the list on the arm, so `off`
+   renders the v101 wording byte-for-byte.
 3. Leave `polarity_token` slots alone. They are obeyed at 0.893 and their
-   measured share **is** the target — this must not become a global ban.
+   measured share **is** the target — this must not become a global ban. Their
+   *internal* mix is drawn too, because `yep` runs at 0.30 of the class against a
+   real 0.047 and is the single worst token in the corpus at P(disagree) 0.778.
+
+The draw is per register: gratitude is 63% of the polite discourse-marker row and
+absent from the blunt one, so a flat table would tell a correction slot to open
+with `Thanks`. A register the profile does not measure gets no rule rather than a
+default, and a cell under 40 comments is absent rather than defaulted.
 
 **Predictions, written before any run, with the population named.** The rule
 reaches 504 of 532 slots (every slot not assigned `polarity_token`); the excess

@@ -28,6 +28,7 @@ from .generation_distribution import (
 )
 from .length_policy import local_move_scope_guidance, soft_length_guidance
 from .opener_profile import OPENER_INSTRUCTIONS
+from .opening_move import active_opening_guidance, forbidden_opening_tokens
 from .long_form_planning import expected_development_beats
 from .planner_distribution import render_slot_distribution_schedule
 from .persona_bridge import persona_marker_for_task
@@ -202,22 +203,35 @@ def _speaker_identity_block(
     return "\n\nWho you are in this thread:\n" + "\n".join(lines)
 
 
-def _opener_rule(assigned: str) -> str:
-    """Render the slot's assigned grammatical entry as a per-slot instruction."""
+def _opener_rule(assigned: str, *, drawn: str = "", forbidden: tuple[str, ...] = ()) -> str:
+    """Render the slot's assigned grammatical entry as a per-slot instruction.
+
+    `drawn` is `opening_move`'s per-slot word for the two entry types whose
+    category this Writer resolves to the wrong act; when it is present it
+    replaces the category description rather than being added to it, because two
+    descriptions of one act is how `discourse_marker` became `Yeah,` in the first
+    place. `forbidden` names the tokens the exclusion is about: the categorical
+    version of it reached 504 of 532 v101 prompts and was violated on 9.1%.
+    """
 
     name = str(assigned or "").strip().lower()
     instruction = OPENER_INSTRUCTIONS.get(name)
     if not instruction:
         return ""
+    if drawn:
+        instruction = drawn
     # The schedule is realized 47% of the time and the drift has one direction:
     # v96 opened 20.7% of comments with a bare polarity token against 6.8% of
-    # matched real comments and 5.3% scheduled. Naming that one default is
-    # narrower than a general style rule and is what the measurement supports.
-    exclusion = (
-        ""
-        if name == "polarity_token"
-        else " Do not open with a bare agreement or disagreement token."
-    )
+    # matched real comments and 5.3% scheduled; v101 ran 0.1274 against a
+    # measured 0.0526. Naming that one default is narrower than a general style
+    # rule and is what the measurement supports.
+    if name == "polarity_token":
+        exclusion = ""
+    elif forbidden:
+        listed = ", ".join(f'"{token}"' for token in forbidden)
+        exclusion = f" Do not begin this comment with any of: {listed}."
+    else:
+        exclusion = " Do not open with a bare agreement or disagreement token."
     return (
         f"Opening grammar for this turn: {name}. {instruction}{exclusion} "
         "This is the entry form, not the content; the content is the semantic "
@@ -255,6 +269,22 @@ def _register_rule(backend: Any, task: Any) -> str:
     return active_register_guidance(
         slot_key=f"{seed_key}:{_safe_slot_index(task)}",
         word_count=getattr(task, "real_word_count", 0),
+        tone_class=str(getattr(task, "tone_target", "") or ""),
+    )
+
+
+def _opening_move_clause(backend: Any, task: Any, assigned: str) -> str:
+    """Render this slot's drawn opening word.
+
+    Keyed on the same slot as `_rhythm_rule` and `_register_rule` but namespaced
+    inside `opening_move`, so drawing an opening word does not correlate with
+    drawing a rhythm habit or a register move.
+    """
+
+    seed_key = str(getattr(backend, "GENERALIZED_ACTIVE_SEED_KEY", "") or "")
+    return active_opening_guidance(
+        slot_key=f"{seed_key}:{_safe_slot_index(task)}",
+        opener=assigned,
         tone_class=str(getattr(task, "tone_target", "") or ""),
     )
 
@@ -1146,10 +1176,13 @@ def writer_prompt(
     hard_shape_rule = ""
     if backend.is_hard_real_surface_shape(getattr(task, "real_surface_shape", "")):
         hard_shape_rule = _real_surface_shape_guidance(task.real_surface_shape)
+    assigned_opener = claim_for_task(
+        getattr(backend, "GENERALIZED_OPENER_TYPES", {}) or {}, seed_post, task
+    )
     opener_rule = _opener_rule(
-        claim_for_task(
-            getattr(backend, "GENERALIZED_OPENER_TYPES", {}) or {}, seed_post, task
-        )
+        assigned_opener,
+        drawn=_opening_move_clause(backend, task, assigned_opener),
+        forbidden=forbidden_opening_tokens(),
     )
     domain_claim_rule = render_domain_claim_rule(
         claim_for_task(

@@ -16,10 +16,11 @@ HISTORICAL_REVISION_POLICY_VERSIONS = {
     "generalized-card-revision-v6-dynamic-coverage-history-20260807",
 }
 GENERALIZED_V2_GENERATION_POLICY_VERSION = (
-    "generalized-card-v2-per-register-realization-v101-20260820"
+    "generalized-card-v2-drawn-opening-move-v102-20260820"
 )
 HISTORICAL_GENERATION_POLICY_VERSIONS = {
     "generalized-v2": {
+        "generalized-card-v2-per-register-realization-v101-20260820",
         "generalized-card-v2-measured-closing-move-v100-20260820",
         "generalized-card-v2-drawn-register-realization-v99-20260820",
         "generalized-card-v2-drawn-typing-rhythm-length-calibration-v98-20260819",
@@ -171,7 +172,7 @@ CORE_FILES = {
     ),
     "generator_adapter": (
         "generalized_card/generalized_card/backend.py",
-        "f85a804875c1f50bab0426d0c7d19533cc58706b3fa14f0185dd3694f95a7fa1",
+        "23c6ea79445a4c20d1e208896fd9c1d3bb1c4ce1f7cf9e55ed4cf720195f3bf3",
     ),
     "data_boundary": (
         "generalized_card/generalized_card/data.py",
@@ -205,7 +206,7 @@ CORE_FILES = {
     ),
     "generation_runner": (
         "generalized_card/scripts/run_generate.py",
-        "6e4408a25f9bb0afc2f91cff3df5637a12378185556bdbdbce0f4af13a3cb258",
+        "a147b499b6cccdf1a120b0c58828a4eac4d961ff8a875df4a2f354b07c2f7a8c",
     ),
     "generation_backend_runner": (
         "generalized_card/scripts/run_generator_backend.py",
@@ -221,7 +222,7 @@ CORE_FILES = {
     ),
     "domain_profile": (
         "generalized_card/generalized_card/domain_profile.py",
-        "6417e29c19da15da73b1f3b4521881944048b1aa46f94eb6453ed3566a69be69",
+        "cfd67c7fabd3215851f6ca4cae12fd4088a6739e752cc1624c93838a512faf17",
     ),
     "viewpoint_bank": (
         "generalized_card/generalized_card/viewpoint_bank.py",
@@ -327,6 +328,10 @@ CORE_FILES = {
         "generalized_card/generalized_card/closing_move.py",
         "0ac7f43ce003bb5f744538c74086991bca1e56369897068f4b21d0b126bd5830",
     ),
+    "opening_move": (
+        "generalized_card/generalized_card/opening_move.py",
+        "8f85fb56fadbbfc1d3d0bc1d07bb942698c48e948886456f1fd3c7aacbfeb135",
+    ),
     "register_realization": (
         "generalized_card/generalized_card/register_realization.py",
         "bfcf5e4d4b76486d5c9016d5b54e2f99f6e3facb2f322d4e5a63f9d24c4e8dce",
@@ -401,7 +406,7 @@ CORE_FILES = {
     ),
     "domain_prompt_adapter": (
         "generalized_card/generalized_card/prompts.py",
-        "deb1ac7e5faee763df501c8880c178de9013927508700783205363651a868d1f",
+        "c43d8e8f1e418560a0b0711d800a98ed6ce8cb49759166c5867d540cc0e36eb7",
     ),
     "reply_planning": (
         "generalized_card/generalized_card/reply_planning.py",
@@ -585,6 +590,7 @@ GENERATION_ADAPTER_CORE_NAMES = (
     "length_calibration",
     "register_realization",
     "closing_move",
+    "opening_move",
     "source_provenance",
     "comment_structure",
     "tone_length_fit",

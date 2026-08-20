@@ -293,6 +293,17 @@ def build_parser() -> argparse.ArgumentParser:
         ),
     )
     parser.add_argument(
+        "--opening-move",
+        choices=("measured", "off"),
+        default="measured",
+        help=(
+            "Name each slot's opening word, drawn at its register's measured "
+            "distribution, instead of describing the entry category. `off` "
+            "reproduces v101, where `polarity_token` openers ran 0.1274 against "
+            "a measured 0.0526 and are the highest-disagreement entry there is."
+        ),
+    )
+    parser.add_argument(
         "--register-realization",
         choices=("measured", "off"),
         default="measured",
@@ -742,6 +753,7 @@ def main() -> None:
         "sentence_rhythm": args.sentence_rhythm,
         "register_realization": args.register_realization,
         "closing_move": args.closing_move,
+        "opening_move": args.opening_move,
         "length_calibration": args.length_calibration,
         "final_punctuation": args.final_punctuation,
         "route_ledger": args.route_ledger,
@@ -936,6 +948,7 @@ def main() -> None:
     env["GENERALIZED_CARD_SENTENCE_RHYTHM"] = args.sentence_rhythm
     env["GENERALIZED_CARD_REGISTER_REALIZATION"] = args.register_realization
     env["GENERALIZED_CARD_CLOSING_MOVE"] = args.closing_move
+    env["GENERALIZED_CARD_OPENING_MOVE"] = args.opening_move
     env["GENERALIZED_CARD_LENGTH_CALIBRATION"] = args.length_calibration
     env["GENERALIZED_CARD_FINAL_PUNCTUATION"] = args.final_punctuation
     env["GENERALIZED_CARD_ROUTE_LEDGER"] = args.route_ledger
@@ -1277,6 +1290,7 @@ RUN_EXPERIMENT_FIELDS = (
     "sentence_rhythm",
     "register_realization",
     "closing_move",
+    "opening_move",
     "length_calibration",
     "final_punctuation",
     "route_ledger",

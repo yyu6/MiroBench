@@ -62,6 +62,158 @@ Before any run that changes behavior:
 
 ---
 
+## v102 — drawn opening move (2026-08-20)
+
+Policy ID: `generalized-card-v2-drawn-opening-move-v102-20260820`.
+Arm `--opening-move {measured,off}`; `off` reproduces v101.
+
+**The schedule was already right and already rendered. It was not obeyed.**
+`opener_profile` assigns a grammatical entry type per slot at the domain's
+measured share, and the v101 prompts carried it faithfully — `polarity_token` on
+28 of 532 slots, exactly the profile's 0.0526. The realization:
+
+| planned | n | obeyed | where the rest went |
+|---|---:|---:|---|
+| `quote` | 18 | 1.000 | — |
+| `conditional` | 15 | 1.000 | — |
+| `first_person` | 100 | 0.960 | — |
+| `polarity_token` | 28 | 0.893 | — |
+| `question` | 21 | 0.476 | content_phrase 9 |
+| `content_phrase` | 224 | **0.460** | noun_phrase 49, first_person 26, **polarity_token 21** |
+| `imperative` | 10 | 0.400 | content_phrase 6 |
+| `noun_phrase` | 59 | 0.254 | content_phrase 42 |
+| `discourse_marker` | 38 | **0.184** | **polarity_token 19**, content_phrase 11 |
+| `address` | 13 | 0.077 | content_phrase 9 |
+
+`polarity_token` came out at **0.1274 against a measured 0.0526** and
+`discourse_marker` at **0.0247 against 0.0726**. The `content_phrase` ↔
+`noun_phrase` traffic is a harmless confusion between two content-bearing
+classes; the damaging leak is narrow — **36 of 349 reply slots prepend an
+agreement token they were not assigned.**
+
+**Why it matters:** a `polarity_token` opening is the highest-disagreement entry
+there is. On excluded real reply pairs, against a base rate of 0.180 —
+`agreed` 0.882, `exactly` 0.800, **`yep` 0.778**, `same` 0.500, `yes` 0.462,
+`yeah` 0.405, `no` 0.203 — while `thanks` is 0.037 and `thank` 0.055. The
+generator concentrates on the bad end: `yeah` 31 and `yep` 21 of 71, so `yep`
+runs at 0.30 of the class against a real 0.047.
+
+Measured causally on an exact ablation harness that reproduces the shipped v101
+artifact on 526/526 pairs with max |Δp| 0.000000 before it edits anything:
+stripping only the *unassigned* polarity openers moves the reply-pair
+`hard_disagree_rate` **0.2235 → 0.1862** against a matched real 0.1433 — 47% of
+the gap — and moves `self_bleu_4` 0.03330 → 0.03297, down in 10 of 10 threads.
+Full diagnosis in `tasks/v102-worklog.md`, reproducible with
+`generalized_card/analysis/disagreement_diagnosis.py`.
+
+### Why this is not another prohibition
+
+**There already is one.** `_opener_rule` has appended "Do not open with a bare
+agreement or disagreement token" to every non-`polarity_token` slot since v96. On
+the v101 run it reached **504 of 532 prompts and was violated on 9.1% of them.**
+Naming a category does not work in either direction — the same finding
+`TONE_DEFINITIONS["polite"]` produced at 19.3% realization. What has worked here
+is naming a concrete surface form: v98's "Use no semicolons" took the semicolon
+0.109 → 0.023 and "Do not join two clauses with a dash" took the dash clause
+0.299 → 0.071.
+
+So the arm does two concrete things: it **draws the actual opening word** for the
+two entry types whose category resolves to the wrong act and names it, and it
+**replaces the categorical prohibition with the token list it is about**.
+
+The draw is per register, because the opening connective is not register-neutral
+and a flat table would tell a blunt correction slot to open with `Thanks`:
+
+| register | discourse_marker share | the words |
+|---|---:|---|
+| polite | 0.0999 | thanks .33 thank .30 oh .08 so .07 well .05 |
+| somewhat_polite | 0.0880 | thanks .42 oh .13 ah .12 but .09 so .09 |
+| neutral | 0.0219 | and .31 also .22 but .22 well .18 so .08 |
+| impolite | 0.0558 | well .23 and .16 oh .15 so .09 lol .07 |
+
+Gratitude is 63% of the polite row and absent from the blunt one. A register the
+profile does not measure gets **no** rule rather than a default.
+
+### Prediction, with the population named
+
+The v99 prediction failed because it predicted corpus rates from a corpus
+baseline for a mechanism firing on 25% of slots. The drawn word fires on the
+**67 of 532 slots** the schedule assigns `discourse_marker` or `polarity_token`
+(12.6%); the named-token prohibition fires on the **504 of 532** not assigned
+`polarity_token` (94.7%). Baselines below are measured on exactly those
+populations.
+
+| quantity | v101 | predicted v102 | real |
+|---|---:|---:|---:|
+| `discourse_marker` slots realizing it | 0.184 | **0.55–0.80** | — |
+| realized `polarity_token` share, all slots | 0.1274 | **0.06–0.08** | 0.0526 |
+| realized `discourse_marker` share, all slots | 0.0247 | **0.045–0.065** | 0.0726 |
+| `yep` within polarity openers | 0.30 | 0.04–0.10 | 0.047 |
+| reply-pair `hard_disagree_rate` | 0.2235 | **0.19–0.20** | 0.1433 |
+| thread `hard_disagree_rate` | 0.1692 | **0.145–0.155** | 0.1218 |
+| `hard_disagree_rate` Cliff | +0.37 | **+0.15 to +0.25** | — |
+
+**This does not reach the |Cliff| ≤ 0.10 working ceiling and is not claimed to.**
+The other half of the gap is parent echo — generated replies re-use the parent's
+content words 1.4–1.6× as often as real ones, monotone against P(disagree) across
+all six real bins and surviving conditioning on both parent and reply length in
+all ten cells — and that has no mechanism yet.
+
+The ablation's 0.1862 is **textual surgery, not regeneration**: a Writer told to
+open differently writes a different sentence, not the same sentence minus
+`Yeah,`. It is the direction and the order of magnitude, not a forecast.
+
+**Guardrails.**
+- `polite_rate` and `impolite_rate` must **not** move. The tone gap is flat across
+  opener classes — real polite runs 0.18–0.47 and generated 0.02–0.15 in *every*
+  class — so movement means the drawn word leaked into the register.
+- No blunt slot may open on gratitude. Enforced by the per-register draw and
+  asserted in the backend self-test.
+- `self_bleu_4` must not rise. A named word repeats across slots, which is why
+  `register_realization` names acts and never phrases; here the draw spreads over
+  5–12 tokens per cell where the Writer's own default concentrated 73% of its
+  polarity openers on two, and the surgery moved the metric down.
+- `mean_story_probability`, `emotion_entropy` and `length_cv` should not move at
+  all. The rule changes one word.
+
+### Zero-API result
+
+**559 tests pass** (22 new), Ruff clean, **105 pins with zero drift**, backend
+self-test passes with the arm **on and off**.
+
+Schema 18 → 19. The opening profile measures **15,294 comments over 424 excluded
+threads with 0 seed overlap**, split polite 4,787 / impolite 6,538 / neutral
+2,514 / somewhat_polite 1,455; every register carries both entry types, and a
+cell under 40 comments is absent rather than defaulted.
+
+Draw fidelity: rendered draw against measured share within **0.0108** in every
+register, entry type and token, 4,000 slots per cell.
+
+On the real prompt path, with the arm on, the rule renders the drawn word per
+slot — two self-test slots drew `"ah"` and `"also"` — and the prohibition names
+ten measured tokens. With the arm off it reverts to the categorical wording, so
+`off` reproduces v101.
+
+Domain generalization, real sampler, seed 42:
+
+| domain | eligible | pool | reference | available | cells |
+|---|---:|---:|---:|---|---:|
+| camera | 441 | 150 | 291 | yes | 8/8 |
+| cell_phone | 201 | 100 | 101 | yes | 7/8 |
+| headphone | 177 | 100 | 77 | yes | 5/8 |
+| laptop | 185 | 100 | 85 | yes | 3/8 |
+
+The sparse domains lose cells rather than receiving a wrong word, which is the
+correct degradation.
+
+### Not yet run
+
+No paid gate yet. Next: the large-thread gate at `--start-seed-index 8`
+(186 comments), read against the predictions above, then N=10 paired to
+`--start-seed-index 2`, `--sampling-seed 42`.
+
+---
+
 ## v101 — per-register realization, and a state-not-event correction (2026-08-20)
 
 Policy ID: `generalized-card-v2-per-register-realization-v101-20260820`.

@@ -16,6 +16,7 @@ from .opener_profile import build_opener_profile
 from .planning_quality import universal_viewpoints
 from .generation_distribution import TONE_CLASSES
 from .reference_metric_calibration import build_reference_metric_calibration
+from .opening_move import build_opening_profile
 from .register_realization import build_register_profile
 from .sentence_rhythm import build_rhythm_profile
 from .surface_typography import (
@@ -60,7 +61,7 @@ from .viewpoint_bank import build_reference_viewpoints
 # comment's entities to the seed post made one generated thread reuse 23
 # distinct models where the matched real thread used 117, which is a large
 # share of the remaining self-BLEU gap.
-PROFILE_SCHEMA_VERSION = 18
+PROFILE_SCHEMA_VERSION = 19
 CARD_CONTEXT_DROPOUT_RATE = 0.42
 CARD_CONTEXT_JITTER_RATE = 0.32
 CARD_GENERATION_CONTROLS = {
@@ -161,6 +162,10 @@ def build_domain_profile(
         "rhythm_profile": build_rhythm_profile(reference_threads),
         "closing_profile": build_closing_profile(reference_threads),
         "register_profile": build_register_profile(
+            config.raw_discussions_dir,
+            reference_thread_ids=unique,
+        ),
+        "opening_profile": build_opening_profile(
             config.raw_discussions_dir,
             reference_thread_ids=unique,
         ),

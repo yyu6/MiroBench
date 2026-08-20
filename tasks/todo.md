@@ -108,13 +108,24 @@ are not**. Cliff table and projection there.
       (−0.0029 on 11 slots), contrastives and the closing sentence (removing
       either *raises* the rate), hedges (0.0000), a graph-feature asymmetry, and
       environment drift.
-- [ ] **Build v102 — `--opener-realization`.** Design, predictions and guardrails
-      in `tasks/v102-worklog.md` §7. Draw a concrete opening connective per
-      `discourse_marker` slot instead of naming the category, and render a
-      token-level prohibition on every slot not assigned `polarity_token`.
-      Predicted `hard_disagree_rate` Cliff +0.37 → +0.15–0.25 — **real movement
-      and still short of the ≤0.10 bar.** Leave the `polarity_token` slots alone;
-      their measured share is the target.
+- [x] **v102 `--opening-move` built and offline-verified.** Policy
+      `generalized-card-v2-drawn-opening-move-v102-20260820`, profile schema 19,
+      module `generalized_card/generalized_card/opening_move.py`. Entry in
+      `generalized_card/VERSION_LOG.md` with the predictions written down first.
+
+      **Caught during the build: a prose prohibition already existed.**
+      `_opener_rule` has appended "Do not open with a bare agreement or
+      disagreement token" since v96; on v101 it reached 504 of 532 prompts and
+      was violated on 9.1% of them. So the arm does not add another categorical
+      ban — it draws the concrete opening word per register and replaces the
+      category with the ten measured tokens.
+
+      Offline: 559 tests, ruff clean, 105 pins 0 drift, self-test on and off,
+      draw fidelity within 0.0108 in every cell, rule proven on the real prompt
+      path, domain generalization available on all four with correct degradation.
+- [ ] **Paid large-thread gate for v102**, `--start-seed-index 8` (186 comments),
+      judged on content *and* distance against the predictions, then N=10 paired
+      to `--start-seed-index 2`, `--sampling-seed 42`.
 - [ ] **The parent-echo mechanism has no design yet.** It is the other half of
       the `hard_disagree_rate` gap and it is also the user's criterion-2
       complaint (*很容易去讨论同一个话题*). Note that `context_transform` does
