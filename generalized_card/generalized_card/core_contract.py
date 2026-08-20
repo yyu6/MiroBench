@@ -202,7 +202,7 @@ CORE_FILES = {
     ),
     "generation_runner": (
         "generalized_card/scripts/run_generate.py",
-        "94d5a0017985affc871a8d8b9553ac5278bfa6e005626cf99deca88a7f7319db",
+        "934e2f8711baf47148dc7c50c6d6a7ff47e0d1ab014a6bd95b0380d16bce1042",
     ),
     "generation_backend_runner": (
         "generalized_card/scripts/run_generator_backend.py",
@@ -319,6 +319,10 @@ CORE_FILES = {
     "length_calibration": (
         "generalized_card/generalized_card/length_calibration.py",
         "b6acb4a303904fe0862c406417748c5fdb5cdd92f526b94e68c7eb2f111ca094",
+    ),
+    "source_provenance": (
+        "generalized_card/generalized_card/source_provenance.py",
+        "7e4df9acd04652a874930e689d8394025b6e02ad1e6dfb75720499825106726a",
     ),
     "surface_contract": (
         "generalized_card/generalized_card/surface_contract.py",
@@ -568,6 +572,7 @@ GENERATION_ADAPTER_CORE_NAMES = (
     "sentence_rhythm",
     "story_scope",
     "length_calibration",
+    "source_provenance",
     "comment_structure",
     "tone_length_fit",
     "domain_claim",
@@ -620,6 +625,21 @@ CURRENT_EVALUATION_CORE_NAMES = (
 CURRENT_ACTIVE_CORE_NAMES = tuple(
     dict.fromkeys((*CURRENT_GENERATION_CORE_NAMES, *CURRENT_EVALUATION_CORE_NAMES))
 )
+
+
+CONTRACT_RELATIVE_PATH = "generalized_card/generalized_card/core_contract.py"
+
+
+def version_source_paths(names: Iterable[str]) -> list[str]:
+    """Return every file whose content defines this generator version.
+
+    The pinned sources for `names`, plus this contract. `verify_core_contract`
+    cannot check the contract -- a file cannot carry its own hash -- but it names
+    the policy version and holds every other pin, so a version whose contract is
+    uncommitted is not recoverable even when all of its modules are.
+    """
+
+    return [*(CORE_FILES[name][0] for name in names), CONTRACT_RELATIVE_PATH]
 
 
 def verify_core_contract(names: Iterable[str]) -> dict[str, dict[str, str]]:

@@ -42,8 +42,12 @@ from generalized_card.core_contract import (  # noqa: E402
     REVISION_CORE_POLICY_VERSION,
     verify_core_contract,
     verify_run_policy,
+    version_source_paths,
 )
 from generalized_card.domain import REPO_ROOT, load_domain_config  # noqa: E402
+from generalized_card.source_provenance import (  # noqa: E402
+    verify_source_provenance,
+)
 from generalized_card.persona_bridge import (  # noqa: E402
     MODE_NONE,
     PERSONA_MODES,
@@ -538,6 +542,14 @@ def main() -> None:
         else (generator_core_name, *GENERATION_ADAPTER_CORE_NAMES)
     )
     core_provenance = verify_core_contract(generation_core_names)
+    # The hash contract proves these files have not drifted. This proves git can
+    # still hand them back, which is a different question -- see
+    # `source_provenance`. Checked before the seed pool and the domain profile so
+    # a non-reproducible run stops at the first second of work, not the first
+    # dollar.
+    source_record = verify_source_provenance(
+        version_source_paths(generation_core_names)
+    )
     generator_policy_version = (
         GENERALIZED_V2_GENERATION_POLICY_VERSION
         if args.generator_profile == "generalized-v2"
@@ -741,6 +753,12 @@ def main() -> None:
         "generator_policy_version": generator_policy_version,
         "revision_core_policy_version": REVISION_CORE_POLICY_VERSION,
         "generator_core_provenance": core_provenance,
+        # Not a resume-immutable field. `generator_core_provenance` already is,
+        # and it carries the actual hashes -- so a resume that reaches this line
+        # has provably identical source content and any commit recorded here
+        # reproduces it. Overwriting with the resume's commit is therefore
+        # lossless and needs no history list.
+        "source_provenance": source_record,
         "card_core_algorithm_symbols": list(CORE_ALGORITHM_SYMBOLS),
         "generalized_algorithm_extensions": list(GENERALIZED_ALGORITHM_EXTENSIONS),
         "domain_adaptation_boundaries": list(DOMAIN_ADAPTATION_BOUNDARIES),

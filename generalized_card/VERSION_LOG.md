@@ -54,8 +54,53 @@ Before any run that changes behavior:
 2. Recompute the pinned `CORE_FILES` hashes.
 3. Add an entry below **before** spending the API call, stating the hypothesis
    and the predicted direction, so a null result stays interpretable.
-4. Use a run tag containing the version number.
-5. After evaluating, fill in the result and regenerate `RUN_INDEX.md`.
+4. **Commit the version.** `run_generate.py` refuses to start when any file that
+   defines the version is missing from `HEAD` -- the 55 pinned generation sources
+   plus `core_contract.py` itself. See "Reproducibility infrastructure" below.
+5. Use a run tag containing the version number.
+6. After evaluating, fill in the result and regenerate `RUN_INDEX.md`.
+
+---
+
+## Reproducibility infrastructure (2026-08-20)
+
+**Not a generator version.** No prompt, control, or distribution changes; the
+policy version is unchanged at
+`generalized-card-v2-drawn-typing-rhythm-length-calibration-v98-20260819`. It is
+recorded here because it changes what shipping a version requires.
+
+`generalized_card/generalized_card/source_provenance.py` (110 lines) is called
+from `run_generate.py` immediately after `verify_core_contract` and before the
+seed pool, the domain profile, and every API call. A run **refuses to start** if
+any file defining the version is not in `HEAD` -- modified, staged but never
+committed, or untracked. `core_contract.version_source_paths` assembles the list:
+the pinned generation sources plus the contract itself, which can never carry its
+own hash and so had no other check. The commit, branch, and any offending paths
+are written to `run_config.json` as `source_provenance`.
+
+Override: `GENERALIZED_CARD_ALLOW_UNCOMMITTED_SOURCE=1`, an environment variable
+rather than a flag so it cannot be set by accident inside a long command. Using
+it records `override: true` in the artifact, so a run made without provenance
+says so rather than looking like every other run.
+
+**Why.** v97 and v98 both shipped uncommitted; `git log` on `sentence_rhythm.py`
+was empty while the N=10 result was being quoted as the project's state. The near
+miss is the instructive part: `repin_core_contract.py` already refused to pin a
+file `git ls-files` did not know about, and reported `untracked active: 0`
+throughout -- because `git ls-files` lists tracked files and a staged file is
+tracked. Every check in place answered "has this drifted?"; none answered "can
+this be recovered?"
+
+19 tests, each building a real throwaway repository rather than mocking git,
+since the defect was a wrong belief about what a git command reports. One is a
+live guard, `test_this_repository_is_currently_reproducible`, which fails whenever
+the working tree holds an unshipped version.
+
+Verified on the real path, not only in tests: `--prepare-only` on a throwaway tag
+refused to start and named all three uncommitted files including
+`core_contract.py`, creating no run directory; the same command under the
+override proceeded and wrote `checked: 56, override: true`. 468 tests pass, Ruff
+clean, 102 pins with zero drift.
 
 ---
 

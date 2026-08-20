@@ -36,6 +36,12 @@ two share one commit boundary.
 (has this drifted?) rather than storage (can I get it back?). And the one that
 was storage was the one nobody ran.
 
+**The near miss is the instructive part.** `repin_core_contract.py` already
+refused to pin a file that `git ls-files` did not know about, and it reported
+`untracked active: 0` the entire time. `git ls-files` lists *tracked* files, and
+a staged-but-never-committed file is tracked. A check written against the wrong
+git command reads exactly like a check that passes.
+
 **How to apply.**
 - **Commit at every version boundary, before the paid run, not after.** The
   commit is what makes `run_config.json`'s policy string mean something.
@@ -43,6 +49,16 @@ was storage was the one nobody ran.
   Do not reason from the presence of a hash table.
 - Any mechanism that answers "has this changed?" is not an answer to "can this
   be recovered?" Keep the two questions separate.
+- **A rule that depends on remembering is not a mechanism.** This was already
+  covered by prose in `AGENTS.md` ("preserve run configuration, source
+  provenance...") and it still happened twice. The fix was
+  `source_provenance.py`: `run_generate.py` now refuses to start when any file
+  defining the version is missing from `HEAD`, checked before the first API call.
+  Add the gate where the cost is incurred, not the paragraph.
+- **Test the belief, not the mock.** The provenance tests each build a real
+  throwaway git repository, because the defect was a wrong belief about what a
+  git command reports. A mock would have encoded the same wrong belief and
+  passed.
 
 ## 2026-08-20 — An archive that grows by addendum stops being readable as a spec
 

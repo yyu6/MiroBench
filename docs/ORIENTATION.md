@@ -344,7 +344,7 @@ generalized_card/generalized_card/
   backend.py                 3170  adapter, arm wiring, Planner/Writer lifecycle
   prompts.py                 2716  root/reply Planner + focused/full/low-info Writer
   planning_quality.py        1082  plan audit, repair, diagnostics
-  core_contract.py            747  101 pinned file hashes + policy versions
+  core_contract.py            767  102 pinned file hashes + policy versions
   planner_distribution.py     601  slot schedule, tone/story/affect allocation
   generation_distribution.py  576  TONE_DEFINITIONS, AFFECT_INSTRUCTIONS
   ── policy modules, one mechanism each ──
@@ -356,6 +356,7 @@ generalized_card/generalized_card/
   length_policy.py                 the soft length cue
   length_calibration.py            inverts the measured length transfer function
   story_scope.py                   the no-story instruction text
+  source_provenance.py             refuses a run whose sources are not committed
 generalized_card/scripts/
   run_generate.py            1400  CLI, run_config record, subprocess env
   run_evaluate.py                  audit → stage → score → matched-evaluate
@@ -366,7 +367,7 @@ scripts/evaluation/                the 12 scorers
 
 **Everything under `generalized_card/generalized_card/`,
 `generalized_card/scripts/run_generate.py` and `scripts/sampling_generator/**`
-is hash-pinned** in `core_contract.py` (101 files). `verify_core_contract`
+is hash-pinned** in `core_contract.py` (102 files). `verify_core_contract`
 raises on drift, so:
 
 > **Never edit a pinned file while a generation run is in flight.** It aborts the
@@ -537,13 +538,25 @@ one has a paid run behind it.
   dict at import time. This bug has occurred three times in this project. Use
   `from . import x` and read `x.SOME_DICT`.
 
+### Before a paid run
+
+- **Commit the version.** `run_generate.py` will refuse to start otherwise — see
+  §8. Do not reach for the override to get past it; the override exists for
+  throwaway probes, and it marks the run's artifact as unreproducible.
+- Re-pin with the script and confirm the drift list is exactly the files you
+  edited. `git add` new files first; the script will not pin an untracked source.
+- Dry-run the exact command on a throwaway tag with `--prepare-only`, then delete
+  the tag. Separately verify what `--prepare-only` skips — it returns before the
+  API-key check.
+- Write the predictions down before spending, so a null result is interpretable.
+
 ### Before claiming done
 
 - Run `PYTHONPATH=generalized_card .venv/bin/python -m pytest -q generalized_card/tests`,
   Ruff, `repin_core_contract.py`, both parity scopes, and the backend self-test.
-- Dry-run any command on a throwaway tag with `--prepare-only`, then delete the
-  tag. And separately verify what `--prepare-only` skips — it returns before the
-  API-key check.
+- **Prove the change is on the active path**, not merely importable. A unit test
+  passing is not evidence that the runtime reaches the code — run the real entry
+  point and watch it happen.
 - **Report outcomes faithfully.** If a check was skipped, say so. If a number is
   a probe rather than the real scorer, say so.
 
@@ -576,66 +589,114 @@ stops the next session repeating the work.
 
 ---
 
-## 8. Traceability
+## 8. Reproducibility — the contract, and the gate that enforces it
 
-### How a version is supposed to be recoverable
+**Every version must be reproducible.** Not "should be", and not by anyone
+remembering to do something. This section is the contract, and it is enforced by
+a check that runs before any API call.
 
-Four mechanisms, and all four have to hold:
+### What makes a version reproducible
 
-1. `run_config.json` in the run directory records the policy version, every arm
-   value, the domain-profile SHA-256 and schema version, the seed pool, and the
-   exact command.
-2. `core_contract.py` pins the SHA-256 of all 101 active source files and
-   refuses to run on drift.
-3. `HISTORICAL_GENERATION_POLICY_VERSIONS` in `core_contract.py` records every
-   released policy string, so an old artifact can be identified.
-4. **Git commits carry the actual source tree.**
+Five things, all recorded in the run's own `run_config.json`:
 
-### The defect that was found, and how it was closed — 2026-08-20
+| # | mechanism | what it gives you |
+|---|---|---|
+| 1 | `source_provenance.commit` | the commit holding the exact sources — `git show <sha>:<path>` returns the file that produced the run |
+| 2 | `generator_policy_version` + `generator_core_provenance` | the policy string and the SHA-256 of all 55 pinned generation sources, as they were at run time |
+| 3 | every arm value, plus `RUN_EXPERIMENT_FIELDS` resume verification | the exact configuration; a resume with changed parameters is rejected, so a tag can never mean two configs |
+| 4 | `domain_profile_sha256` + `domain_profile_schema_version`, and `domain_profile.json` copied into the run directory | the measured shares the generation was conditioned on |
+| 5 | `seed_pool` path + `sampling_seed` + `start_seed_index` | which real threads were matched, in which order |
 
-`HISTORICAL_GENERATION_POLICY_VERSIONS` stores **version strings only, with no
-per-version file hashes.** So mechanism 3 identifies a version but cannot
-reconstruct it — reconstruction depends entirely on mechanism 4, git. And
-mechanism 4 was broken:
+### The gate
+
+`generalized_card/generalized_card/source_provenance.py`, called from
+`run_generate.py` immediately after `verify_core_contract` and **before the seed
+pool, the domain profile, and every API call**:
+
+> A generation run **refuses to start** if any file that defines the version is
+> not in `HEAD`.
+
+It checks `version_source_paths(...)` — the 55 pinned generation sources **plus
+`core_contract.py` itself**. The contract cannot carry its own hash, so
+`verify_core_contract` can never check it, yet it is the file that names the
+policy version and holds every other pin; a version whose contract is
+uncommitted is not recoverable even when all 55 modules are.
+
+"Not in `HEAD`" covers all three ways a file can be missing: modified in the
+working tree, **staged but never committed**, and untracked.
+
+The error names every offending file and the fix. There is one override,
+`GENERALIZED_CARD_ALLOW_UNCOMMITTED_SOURCE=1` — an environment variable rather
+than a CLI flag so it cannot be set by accident inside a long generation
+command. Using it is recorded as `source_provenance.override: true` in
+`run_config.json`, so a run made without provenance says so in its own artifact
+instead of looking like every other run.
+
+`tests/test_source_provenance.py` includes a **live guard**,
+`test_this_repository_is_currently_reproducible`, which fails whenever the
+working tree holds an unshipped version. If you see that test fail, the fix is
+to commit, not to change the test.
+
+### How to reproduce a past run
+
+```bash
+R=artifacts/generalized_card/runs/<tag>
+python3 -c "import json;print(json.load(open('$R/run_config.json'))['source_provenance'])"
+git worktree add /tmp/repro <commit-from-above>     # or: git checkout <commit>
+python3 -c "import json;print(json.load(open('$R/run_config.json'))['command'])"
+```
+
+`command` is the redacted original invocation. The domain profile is already in
+the run directory, so it does not need rebuilding — and rebuilding it would be
+wrong, since the profile is measured and its SHA-256 is what was recorded.
+
+### Why this exists
+
+`HISTORICAL_GENERATION_POLICY_VERSIONS` stores version strings with **no
+per-version file hashes**, so it identifies a version but cannot reconstruct it.
+Reconstruction has only ever depended on git. And on 2026-08-20, checked rather
+than assumed:
 
 ```
-HEAD = a34abc6  "fix(generalized-card): ground selective facts in reply plans"
-     → core_contract.py at HEAD named v96 as current
+HEAD = a34abc6  → core_contract.py at HEAD named v96 as current
 git log -- generalized_card/generalized_card/sentence_rhythm.py   → empty
 git log -- generalized_card/generalized_card/length_calibration.py → empty
 ```
 
 **v97 and v98 existed only in the working tree** — two shipped releases, one of
-them the source of the N=10 result in §6, with no recoverable source tree. The
-run directory holds `generated/`, `logs/` and `run_config.json`; there is no
-source snapshot.
+them the source of the N=10 result in §6, with no recoverable source tree.
 
-Fixed by two commits on `generator/v75-writer-realizes-planner-move`:
+The near miss is worth knowing, because it is why a written rule was not enough:
+`repin_core_contract.py` already refused to pin a file `git ls-files` did not
+know about, and it reported `untracked active: 0` the whole time. `git ls-files`
+lists *tracked* files, and a staged-but-never-committed file is tracked. Every
+check in place answered "has this drifted?"; none answered "can this be
+recovered?"
+
+Closed by:
 
 | commit | contents |
 |---|---|
-| `e213f7a` | v97 + v98: 33 files — 14 policy modules, `run_generate.py`, 11 test modules, `VERSION_LOG.md`, `RUN_INDEX.md`, worklogs |
-| `1abdb0e` | `docs/ORIENTATION.md`, `docs/thread_metric_score_reference.md`, README pointer |
+| `e213f7a` | v97 + v98 sources, tests, version docs — 33 files |
+| `1abdb0e` | this file, the metric reference, the README pointer |
+| `aa22450` | traceability record, two corrected claims, two lessons |
+| this version | `source_provenance.py`, the gate, 19 tests |
 
-`scripts/sampling_generator/` is untouched by v97 and v98, so the CARD core is
-unaffected by either.
-
-**The chain is now closed, and this was checked rather than assumed:** the
-working tree is clean for all 101 pinned sources against `HEAD`, and
-`repin_core_contract.py` reports zero drift — so `HEAD`'s blobs hash to exactly
-the pinned values. `run_config.json` names the policy version; that string is
-present in `HEAD`'s `core_contract.py`; that commit holds the sources the pins
-were computed from.
+The chain was then verified, not assumed: the working tree is clean for every
+pinned source against `HEAD`, and `repin_core_contract.py` reports zero drift —
+so `HEAD`'s blobs hash to exactly the pinned values.
 
 **One loss is permanent.** v97 and v98 could not be separated after the fact —
-the working tree interleaved them — so they share one commit boundary and v97's
-standalone tree is not recoverable.
+the working tree interleaved them — so they share commit `e213f7a` and v97's
+standalone tree is unrecoverable. That is the cost of having found this late, and
+it is the reason the gate is a gate rather than a paragraph.
 
-**The rule going forward: commit at every version boundary, before the paid run,
-not after.** A pinned hash proves a file has not changed since you pinned it; it
-does not store the file. Any check that answers "has this drifted?" is not an
-answer to "can this be recovered?" — see the 2026-08-20 lesson in
-`tasks/lessons.md`.
+### The rule
+
+**Commit the version before the paid run, not after.** The gate now enforces it,
+but the rule is what matters: the commit is what gives `run_config.json`'s policy
+string something to point at. `scripts/sampling_generator/` is untouched by v97
+and v98, so the CARD core is unaffected by either.
 
 ---
 
@@ -645,8 +706,8 @@ Not "I believe"; these were run on 2026-08-20:
 
 | check | result |
 |---|---|
-| `pytest -q generalized_card/tests` | **449 passed** in 25.4s |
-| `repin_core_contract.py` (report mode) | 101 pinned, 0 missing, 0 untracked active, 0 unpinned local imports, **0 drift** |
+| `pytest -q generalized_card/tests` | **468 passed** (449 + 19 new provenance tests) |
+| `repin_core_contract.py` (report mode) | 102 pinned, 0 missing, 0 untracked active, 0 unpinned local imports, **0 drift** |
 | v98 N=10 metric table | read verbatim from `matched_evaluation/matched_seed_group_eval.md` |
 | v97 N=10 metric table | read verbatim from the v97 run's same file |
 | v97/v98 seed pairing | both `start_seed_index=2`, `sampling_seed=42`, `max_posts=10` — confirmed paired |
@@ -654,6 +715,8 @@ Not "I believe"; these were run on 2026-08-20:
 | the 12-metric list | read from `REQUIRED_THREAD_METRICS`, `run_evaluate.py:28` |
 | git traceability, before | `git log` per file + `git show HEAD:core_contract.py` — v97/v98 confirmed **uncommitted** |
 | git traceability, after | v97+v98 committed as `e213f7a`, docs as `1abdb0e`; `git log` per new file now resolves; v98's policy string present in `HEAD`'s `core_contract.py`; pinned sources clean against `HEAD` with 0 drift |
+| the provenance gate, on the real path | `run_generate.py --prepare-only` on a throwaway tag **refused to start**, naming all three uncommitted files including `core_contract.py`, and created no run directory |
+| the override, on the real path | same command with `GENERALIZED_CARD_ALLOW_UNCOMMITTED_SOURCE=1` proceeded and wrote `source_provenance: {commit, branch, uncommitted[3], checked: 56, override: true}` into `run_config.json`; throwaway tag then deleted |
 | `ruff check generalized_card` | **no issues found** |
 | the 16 ablation arms | read from `run_generate.py:195-400`, with each default and legacy value |
 | module line counts | `wc -l` |

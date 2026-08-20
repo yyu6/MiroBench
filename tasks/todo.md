@@ -100,6 +100,14 @@ in `docs/ORIENTATION.md`.
       **Standing rule from here: commit at every version boundary, before the
       paid run, not after.** v97's standalone tree is permanently unrecoverable
       because the working tree interleaved the two releases.
+- [x] **The rule is now enforced, not written down.** `source_provenance.py`
+      makes `run_generate.py` refuse to start when any file defining the version
+      is missing from HEAD -- the 55 pinned generation sources plus
+      `core_contract.py`, which can never carry its own hash. The commit lands in
+      `run_config.json`, so reproduction is artifact -> commit -> sources with no
+      searching. Override is an env var and is recorded in the artifact. 19
+      tests, verified on the real path with `--prepare-only`. See
+      `docs/ORIENTATION.md` §8.
 - [ ] Entity diversity: generated 0.438x real in 10/10 threads. Worth ~1/3 of
       the `self_bleu_4` gap and it also fixes an eye-visible tell (10 distinct
       product designators against 40 real).
