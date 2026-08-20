@@ -1,5 +1,69 @@
 # Lessons
 
+## 2026-08-21 — A drawn value can contradict a control the plan already owns
+
+**What happened.** v102 draws a slot's opening word from the register's measured
+distribution. For `polarity_token` slots that word is `yes` / `yeah` / `no` /
+`agreed` — and a polarity token **carries a stance**, which the Planner had
+already assigned in the `stance` field. Nothing connected the two, so the draw
+could contradict the plan, and on the gate it did on **2 of 10 polarity slots**:
+both `stance=agree`, both told to open with `no`. The comments read "no, I'd just
+check my RAW…" — text that agrees with `no,` bolted on the front.
+
+**Every metric on that run looked good.** `hard_disagree_rate` reached 3.0%
+relative error, its best ever. The defect was found only by reading the 23
+comments the arm had touched, and it was found because the user asked whether
+there was really nothing left to fix.
+
+**Why:** a measured distribution is a marginal. The moment a drawn surface form
+carries semantics that another control already assigns, the draw has to be
+conditioned on that control or the two will disagree at exactly the rate the
+marginal implies. `discourse_marker` had no such problem because `thanks / oh /
+well / and / so` carry no stance.
+
+**How to apply.**
+- **Before drawing a surface form, ask what else in the plan already determines
+  it.** Tone, stance, story mode and payload are all assigned upstream; a draw
+  that touches any of them must be conditioned on it, the way the register draw
+  is conditioned on the assigned tone.
+- Condition by **restricting the family and renormalising inside it**, not by
+  reweighting. The plan picks the family; the measurement keeps picking the token.
+- Leave an escape: a register whose measured table has no token of the required
+  family should fall back to the full draw rather than withhold the cue, so a
+  sparse domain loses precision instead of losing the mechanism.
+- **A clean metric table is not a clean run.** Read the comments the mechanism
+  touched, every time. The gate protocol says "content *and* distance" and the
+  content half is the one that catches a contradiction.
+
+## 2026-08-21 — Do not use the median to wave away a mean-based metric
+
+**What happened.** On the v102 gate `mean_story_probability` rose on the 23 slots
+the arm touched, 0.076 → 0.157. I checked the median (0.063), saw three high
+comments, and wrote it off as "3 comments of 23, not resolvable".
+
+The metric is a **mean over every comment in the thread**. It is outlier-sensitive
+by construction, so "the median is low" does not answer the question — three
+genuinely new high-story comments move the metric exactly as much as the mean says
+they do. The right check is **paired, per slot**, and it says something different:
+story rose in **15 of 23** slots and comments over 0.5 went **1 → 3**, against the
+other 160 slots where it rose in 89 (a coin flip) and comments over 0.5 fell
+18 → 15. That is a directional signal at p ≈ 0.21 — still unresolved, but for the
+honest reason (n=23) rather than the wrong one.
+
+**Why:** the summary statistic used to dismiss an effect has to match the
+statistic the metric is built from. A median rebuts a claim about the typical
+comment; it does not rebut a claim about a mean.
+
+**How to apply.**
+- **Match the statistic to the metric.** `mean_story_probability` is a mean;
+  `polite_rate` is a share; `emotion_entropy` is a function of a histogram. Argue
+  in the metric's own currency.
+- When runs are **paired by slot**, compare per slot — direction counts and
+  over-threshold counts — rather than comparing two aggregates.
+- "Not resolvable at this n" is a fine conclusion. Reaching it through the wrong
+  statistic is not, because the next version inherits the reasoning.
+
+
 ## 2026-08-20 — Naming the token gets ~1.0 compliance where naming the category gets 0.23
 
 **What happened.** `opener_profile` schedules a grammatical entry type per slot

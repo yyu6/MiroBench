@@ -139,7 +139,13 @@ are not**. Cliff table and projection there.
       pooled real instead of this thread's real, and the "polite_rate must not
       move" guardrail reasoned from a flat conditional while the arm acts on
       prevalence.
-- [ ] **N=10 for v102**, paired to `--start-seed-index 2`, `--sampling-seed 42`.
+- [x] **v103 — stance-consistent opening.** Built 2026-08-21 after reading the
+      gate's comments: v102's polarity draw contradicted the plan's stance on
+      **2 of 10** polarity slots (both `stance=agree` told to open with `no`).
+      The plan now picks the polarity family and the measured draw runs inside
+      it. 565 tests, 105 pins 0 drift, self-test proven to catch the defect, no
+      profile change. Entry in `generalized_card/VERSION_LOG.md`.
+- [ ] **N=10 under v103**, paired to `--start-seed-index 2`, `--sampling-seed 42`.
       Command in the VERSION_LOG entry. It also resolves the one unresolved
       question from the gate: `mean_story_probability` on the drawn slots rose
       0.076 → 0.157 but on **3 comments of 23**, median 0.063 — not resolvable at

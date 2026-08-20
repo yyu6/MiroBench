@@ -62,6 +62,89 @@ Before any run that changes behavior:
 
 ---
 
+## v103 — stance-consistent opening (2026-08-21)
+
+Policy ID: `generalized-card-v2-stance-consistent-opening-v103-20260821`.
+Same arm, `--opening-move {measured,off}`; `off` still reproduces v101.
+
+**A correction the v102 gate exposed, found by reading the comments rather than
+the metrics.** v102 draws the opening token from the register's measured
+distribution. A polarity token carries a **stance**, and the Planner has already
+assigned one, so the draw could contradict the plan — and did:
+
+| planned stance | drawn | result |
+|---|---|---|
+| `agree` | `no` | "no, I'd just check my RAW at the 1 final delivery crop…" |
+| `agree` | `no` | "no, wrap 1 hand around it and see if the fingers lock in…" |
+
+**2 of 10 polarity slots on the gate.** Neither comment is actually a negation —
+"no," is bolted onto text that agrees. That is an eye-visible tell, which is half
+the acceptance criteria, and it is a defect v102 introduced.
+
+The metric table hid it: `hard_disagree_rate` improved to 3.0% relative error on
+the same run. Reading 23 comments is what found it.
+
+**The fix.** The plan picks the polarity family; the draw still picks the token
+inside it at the measured relative shares:
+
+- `stance=agree` → the affirmative family, renormalised
+- `stance=disagree` → the negative family, renormalised
+- `mixed`, `uncertain`, `neutral`, `joking`, unset → the full measured draw
+- a register whose measured table holds no token of the required family keeps the
+  full draw, because withholding would cost the slot its assigned entry type and
+  inventing a token would leave the measurement behind
+
+`discourse_marker` is untouched: `thanks / oh / well / and / so / but / lol / ah`
+carry no polarity, and all 13 of the gate's discourse slots read correctly against
+their stance.
+
+**Marginal drift, checked before building.** Over v101's 28 polarity-assigned
+slots the planned stance mix is agree 0.286, uncertain 0.250, neutral 0.214,
+disagree 0.143, mixed 0.107 — so **28.6% is forced affirmative, 14.3% forced
+negative, and 57.1% still drawn free**. Projected realized affirmative share
+**0.726 against a real 0.770**, a drift of −0.044, in the direction of *more* `no`
+openings, which the generator under-produces anyway.
+
+### Prediction
+
+| quantity | v102 gate | predicted v103 | real |
+|---|---:|---:|---:|
+| polarity slots contradicting their plan | 2 of 10 | **0** | — |
+| realized affirmative share of polarity openers | — | 0.70–0.78 | 0.770 |
+| `hard_disagree_rate`, thread | 0.1749 | **no change expected** | 0.1697 |
+| realized `polarity_token` share | 0.0538 | no change expected | 0.0526 |
+
+This arm is justified by **acceptance criterion 2**, not by p-values. It changes
+which token 2 of 10 polarity slots get and nothing else, so no metric is predicted
+to move. `hard_disagree_rate` is the one to watch for an *unintended* move:
+`no` has P(disagree) 0.203 and `yes` 0.462 in real text, so forcing affirmatives
+onto agree slots could push it **up**. Against that, the affirmative share only
+moves 0.770 → 0.726, and the slots in question are 2 of 186.
+
+**A second prediction, from the gate's one unresolved question.** On the v102
+gate the 23 drawn slots rose 0.076 → 0.157 in `mean_story_probability`, and the
+two largest movers were both stance-conflict slots — one went 0.051 → **0.963**
+("No. Measure the working distance first" → "yes, my call waits on holding it in
+person"). If the conflict is what produced the deliberative first-person hedging,
+**v103 should take part of that story rise back.** Story rose in 15 of 23 drawn
+slots, which at n=23 is p ≈ 0.21 and not resolvable; the N=10 run resolves it at
+≈230 drawn slots. **Do not reword the cue before then.**
+
+### Zero-API result
+
+**565 tests pass** (7 new), Ruff clean, **105 pins with zero drift**, backend
+self-test passes with the arm on and off. No profile change: schema stays 19 and
+the v102 profile is reused unaltered, so v102 → v103 is a pure Writer-side
+correction and the gate artifacts remain comparable.
+
+The self-test was **proven to catch the defect**: with the family restriction
+temporarily disabled it fails with
+`AssertionError: ('agree', 'no', 'Opening grammar for this turn: polarity_token.
+Open with the bare token "no" …')` — the exact v102 gate defect — and passes with
+it restored.
+
+---
+
 ## v102 — drawn opening move (2026-08-20)
 
 Policy ID: `generalized-card-v2-drawn-opening-move-v102-20260820`.

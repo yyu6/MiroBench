@@ -154,6 +154,89 @@ class DrawTest(unittest.TestCase):
         )
 
 
+class StanceFamilyTest(unittest.TestCase):
+    """The plan assigns a stance; a drawn polarity token must not contradict it.
+
+    On the v102 gate 2 of 10 polarity slots opened with `no` on a
+    `stance=agree` plan.
+    """
+
+    def setUp(self) -> None:
+        om.set_opening_move("measured")
+        self.payload = profile(
+            {
+                "impolite": {
+                    "polarity_token": [
+                        ("yeah", 0.4), ("yes", 0.3), ("no", 0.2), ("nope", 0.1)
+                    ]
+                }
+            }
+        )
+
+    def _draw(self, stance: str, trials: int = 300) -> list[str]:
+        return [
+            om.slot_token(
+                self.payload,
+                slot_key=f"s:{i}",
+                opener="polarity_token",
+                tone_class="impolite",
+                stance=stance,
+            )
+            for i in range(trials)
+        ]
+
+    def test_agree_never_draws_a_negative_token(self) -> None:
+        self.assertFalse(set(self._draw("agree")) & om.NEGATIVE_TOKENS)
+
+    def test_disagree_never_draws_an_affirmative_token(self) -> None:
+        self.assertFalse(set(self._draw("disagree")) & om.AFFIRMATIVE_TOKENS)
+
+    def test_a_noncommittal_stance_keeps_the_full_draw(self) -> None:
+        for stance in ("mixed", "uncertain", "neutral", "joking", ""):
+            drawn = set(self._draw(stance))
+            self.assertTrue(drawn & om.NEGATIVE_TOKENS, stance)
+            self.assertTrue(drawn & om.AFFIRMATIVE_TOKENS, stance)
+
+    def test_within_family_shares_stay_measured(self) -> None:
+        """Restricting the family must renormalise, not reweight."""
+
+        drawn = self._draw("agree", trials=4000)
+        yeah = drawn.count("yeah") / len(drawn)
+        yes = drawn.count("yes") / len(drawn)
+        # 0.4 and 0.3 renormalised inside the affirmative family.
+        self.assertAlmostEqual(yeah, 0.4 / 0.7, delta=0.02)
+        self.assertAlmostEqual(yes, 0.3 / 0.7, delta=0.02)
+
+    def test_a_register_with_no_token_of_that_family_falls_back(self) -> None:
+        """Withholding would cost the slot its assigned entry type."""
+
+        payload = profile({"polite": {"polarity_token": [("yes", 1.0)]}})
+        token = om.slot_token(
+            payload,
+            slot_key="s",
+            opener="polarity_token",
+            tone_class="polite",
+            stance="disagree",
+        )
+        self.assertEqual(token, "yes")
+
+    def test_stance_does_not_touch_the_discourse_marker_draw(self) -> None:
+        """Those words carry no polarity, so the plan has nothing to contradict."""
+
+        payload = profile({"impolite": {"discourse_marker": [("well", 0.5), ("oh", 0.5)]}})
+        free = [
+            om.slot_token(payload, slot_key=f"s:{i}", opener="discourse_marker",
+                          tone_class="impolite")
+            for i in range(200)
+        ]
+        bound = [
+            om.slot_token(payload, slot_key=f"s:{i}", opener="discourse_marker",
+                          tone_class="impolite", stance="disagree")
+            for i in range(200)
+        ]
+        self.assertEqual(free, bound)
+
+
 class GuidanceTest(unittest.TestCase):
     def setUp(self) -> None:
         om.set_opening_move("measured")
@@ -165,6 +248,20 @@ class GuidanceTest(unittest.TestCase):
         )
         self.assertIn('"well"', text)
         self.assertNotIn("connective", text.lower())
+
+    def test_the_clause_honours_the_planned_stance(self) -> None:
+        payload = profile(
+            {"impolite": {"polarity_token": [("yeah", 0.5), ("no", 0.5)]}}
+        )
+        for index in range(40):
+            text = om.opening_guidance(
+                payload,
+                slot_key=f"s:{index}",
+                opener="polarity_token",
+                tone_class="impolite",
+                stance="agree",
+            )
+            self.assertNotIn('"no"', text)
 
     def test_a_polarity_slot_is_told_the_token_is_bare(self) -> None:
         payload = profile({"impolite": {"polarity_token": [("no", 1.0)]}})

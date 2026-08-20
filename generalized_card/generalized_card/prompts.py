@@ -286,6 +286,7 @@ def _opening_move_clause(backend: Any, task: Any, assigned: str) -> str:
         slot_key=f"{seed_key}:{_safe_slot_index(task)}",
         opener=assigned,
         tone_class=str(getattr(task, "tone_target", "") or ""),
+        stance=str(getattr(task, "stance", "") or ""),
     )
 
 

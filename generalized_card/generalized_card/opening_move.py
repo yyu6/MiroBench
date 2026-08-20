@@ -121,6 +121,20 @@ DRAWN_OPENERS = ("discourse_marker", "polarity_token")
 # Keyed the same way as `register_realization`, for the reason in the docstring.
 TARGET_TONES = ("polite", "somewhat_polite", "neutral", "impolite")
 
+# A polarity token carries a stance, and the Planner has already assigned one.
+# On the v102 gate 2 of 10 polarity slots drew a token that contradicted their
+# own plan -- both `stance=agree` slots told to open with "no" -- so the family
+# is chosen by the plan and only the token inside it is drawn. Surface forms
+# only, no domain vocabulary, so this transfers to any domain.
+AFFIRMATIVE_TOKENS = frozenset(
+    {"yes", "yeah", "yea", "yep", "yup", "agreed", "exactly", "same", "true",
+     "absolutely", "definitely"}
+)
+NEGATIVE_TOKENS = frozenset({"no", "nope", "nah"})
+# The plan's stance values that force a family. `mixed`, `uncertain`, `joking`
+# and `neutral` do not commit to one, so they keep the full measured draw.
+STANCE_FAMILIES = {"agree": AFFIRMATIVE_TOKENS, "disagree": NEGATIVE_TOKENS}
+
 _FIRST_WORD = re.compile(r"[a-z']+")
 _MIN_SAMPLES = 200
 # A token needs to be a habit rather than one person's tic before a slot is told
@@ -285,25 +299,54 @@ def slot_token(
     slot_key: str,
     opener: str,
     tone_class: str,
+    stance: str = "",
 ) -> str:
     """Return one stable per-slot draw from this register's token distribution.
 
     Namespaced away from the rhythm and register draws so that drawing an
     opening word does not correlate with drawing a habit or a register move.
+
+    `stance` is the Planner's assigned stance. For a `polarity_token` slot it
+    picks the polarity family and the draw happens **inside** it at the measured
+    relative shares, so the plan is never contradicted and the token mix inside
+    the family stays measured. A stance that does not commit to a polarity keeps
+    the full draw, and a register whose measured table has no token of the
+    required family falls back to the full draw rather than inventing one.
     """
 
     row = token_row(profile, opener=opener, tone_class=tone_class)
     tokens = row.get("tokens") or []
     if not tokens:
         return ""
+    tokens = _stance_family(tokens, opener=opener, stance=stance)
     digest = hashlib.sha256(f"opening:{opener}:{slot_key}".encode("utf-8")).digest()
     draw = int.from_bytes(digest[:8], "big", signed=False) / float(1 << 64)
+    total = sum(float(entry.get("share") or 0.0) for entry in tokens)
+    if total <= 0.0:
+        return str(tokens[-1].get("token") or "")
     cumulative = 0.0
     for entry in tokens:
-        cumulative += float(entry.get("share") or 0.0)
+        cumulative += float(entry.get("share") or 0.0) / total
         if draw < cumulative:
             return str(entry.get("token") or "")
     return str(tokens[-1].get("token") or "")
+
+
+def _stance_family(
+    tokens: list[dict[str, Any]], *, opener: str, stance: str
+) -> list[dict[str, Any]]:
+    """Restrict a polarity draw to the family the plan's stance commits to."""
+
+    if str(opener or "").strip().lower() != "polarity_token":
+        return tokens
+    family = STANCE_FAMILIES.get(str(stance or "").strip().lower())
+    if not family:
+        return tokens
+    kept = [entry for entry in tokens if str(entry.get("token") or "") in family]
+    # A register whose measured table has no token of this family keeps the full
+    # draw: withholding the opener entirely would cost the slot its assigned
+    # entry type, and inventing a token would leave the measurement behind.
+    return kept or tokens
 
 
 def forbidden_opening_tokens(
@@ -342,6 +385,7 @@ def opening_guidance(
     slot_key: str,
     opener: str,
     tone_class: str,
+    stance: str = "",
 ) -> str:
     """Render this slot's drawn opening word as one clause, or nothing.
 
@@ -359,7 +403,11 @@ def opening_guidance(
     if str(tone_class or "").strip().lower() not in TARGET_TONES:
         return ""
     token = slot_token(
-        profile, slot_key=slot_key, opener=name, tone_class=tone_class
+        profile,
+        slot_key=slot_key,
+        opener=name,
+        tone_class=tone_class,
+        stance=stance,
     )
     if not token:
         return ""
@@ -374,7 +422,9 @@ def opening_guidance(
     )
 
 
-def active_opening_guidance(*, slot_key: str, opener: str, tone_class: str) -> str:
+def active_opening_guidance(
+    *, slot_key: str, opener: str, tone_class: str, stance: str = ""
+) -> str:
     """Render the opening-move clause for this slot from the frozen profile."""
 
     return opening_guidance(
@@ -382,6 +432,7 @@ def active_opening_guidance(*, slot_key: str, opener: str, tone_class: str) -> s
         slot_key=slot_key,
         opener=opener,
         tone_class=tone_class,
+        stance=stance,
     )
 
 

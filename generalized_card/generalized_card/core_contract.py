@@ -16,10 +16,11 @@ HISTORICAL_REVISION_POLICY_VERSIONS = {
     "generalized-card-revision-v6-dynamic-coverage-history-20260807",
 }
 GENERALIZED_V2_GENERATION_POLICY_VERSION = (
-    "generalized-card-v2-drawn-opening-move-v102-20260820"
+    "generalized-card-v2-stance-consistent-opening-v103-20260821"
 )
 HISTORICAL_GENERATION_POLICY_VERSIONS = {
     "generalized-v2": {
+        "generalized-card-v2-drawn-opening-move-v102-20260820",
         "generalized-card-v2-per-register-realization-v101-20260820",
         "generalized-card-v2-measured-closing-move-v100-20260820",
         "generalized-card-v2-drawn-register-realization-v99-20260820",
@@ -172,7 +173,7 @@ CORE_FILES = {
     ),
     "generator_adapter": (
         "generalized_card/generalized_card/backend.py",
-        "23c6ea79445a4c20d1e208896fd9c1d3bb1c4ce1f7cf9e55ed4cf720195f3bf3",
+        "7261bb4b994c1a6f18c424a6fe9dbf625f11a944cb8779eaad74f3c3c310d07c",
     ),
     "data_boundary": (
         "generalized_card/generalized_card/data.py",
@@ -330,7 +331,7 @@ CORE_FILES = {
     ),
     "opening_move": (
         "generalized_card/generalized_card/opening_move.py",
-        "8f85fb56fadbbfc1d3d0bc1d07bb942698c48e948886456f1fd3c7aacbfeb135",
+        "69b6d328b49eaebc778aaafc00559db80658561d90882f56b7920c9788ff66e2",
     ),
     "register_realization": (
         "generalized_card/generalized_card/register_realization.py",
@@ -406,7 +407,7 @@ CORE_FILES = {
     ),
     "domain_prompt_adapter": (
         "generalized_card/generalized_card/prompts.py",
-        "c43d8e8f1e418560a0b0711d800a98ed6ce8cb49759166c5867d540cc0e36eb7",
+        "b731b0e8122e87ef5f3c36a2e4478c53728c572524f3b1fec0088ecb8b57340c",
     ),
     "reply_planning": (
         "generalized_card/generalized_card/reply_planning.py",

@@ -1472,6 +1472,35 @@ def _run_generalized_self_test(module: ModuleType, config: DomainConfig) -> None
         ).lower()
         assert "do not begin this comment with any of:" in content_line, content_line
         assert '"yeah"' in content_line, content_line
+        # A drawn polarity token must never contradict the stance the plan
+        # assigned. On the v102 gate 2 of 10 polarity slots opened with "no" on
+        # an `agree` plan; see `opening_move.STANCE_FAMILIES`.
+        for stance, forbidden in (
+            ("agree", opening_move.NEGATIVE_TOKENS),
+            ("disagree", opening_move.AFFIRMATIVE_TOKENS),
+        ):
+            for index in range(1, 25):
+                polar_task = replace(
+                    task,
+                    real_word_count=40,
+                    tone_target="impolite",
+                    stance=stance,
+                    local_task_id=index,
+                )
+                types[_opener_probe_key(seed, polar_task)] = "polarity_token"
+                module.GENERALIZED_OPENER_TYPES = types
+                line = _opener_line(
+                    module.build_writer_prompt(
+                        profile="gpt54_reddit_writer",
+                        seed_post=seed,
+                        task=polar_task,
+                        parent_comment=None,
+                        previous_comments=[],
+                    )
+                )
+                drawn = line.split('bare token "', 1)[1].split('"', 1)[0] if 'bare token "' in line else ""
+                assert drawn, line
+                assert drawn not in forbidden, (stance, drawn, line)
     story_task = next(
         (item for item in distribution_tasks if item.story_mode != "no_story"),
         None,

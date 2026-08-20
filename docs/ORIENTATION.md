@@ -638,7 +638,7 @@ the default should go back to `tense`.
 
 ### Next step
 
-**v102 `--opening-move` passed its large-thread gate; N=10 is the next action.**
+**v103 corrects a defect the v102 gate exposed; N=10 is the next action.**
 Policy `generalized-card-v2-drawn-opening-move-v102-20260820`, profile schema 19.
 It names each slot's opening word, drawn at its register's measured
 distribution, instead of describing the entry category, and replaces the
@@ -666,7 +666,16 @@ a flat *conditional* while the arm acts on *prevalence* — changing the opener
 changes which class a comment is in, and `discourse_marker` is the most polite
 class in real text at 0.466.
 
-Next action: **N=10**, paired to `--start-seed-index 2`, `--sampling-seed 42`.
+**Reading the comments found what the metrics hid.** v102's polarity draw could
+contradict the plan's assigned stance, and did on **2 of 10 polarity slots** —
+both `stance=agree` slots told to open with `no`. The metric table looked clean
+on the same run. **v103** (`generalized-card-v2-stance-consistent-opening-v103-20260821`)
+lets the plan pick the polarity family and keeps the measured draw inside it;
+`discourse_marker` is untouched because those words carry no polarity. No profile
+change, so v102 and v103 stay comparable.
+
+Next action: **N=10 under v103**, paired to `--start-seed-index 2`,
+`--sampling-seed 42`.
 
 **Still blocking N=150: the reporting standard.** 12 metrics × 2 tests at
 α = 0.05 means a perfect generator passes all 12 together only ≈ 52% of the time.
