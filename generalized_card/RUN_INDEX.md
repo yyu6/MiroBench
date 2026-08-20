@@ -148,6 +148,14 @@ inflates the pass count. See VERSION_LOG.md.
 | 95 | `generalized_card_camera_gpt54_v95_named_seed2_20260818_v1` | 1 | 45 | 1.00 | generalized-card-v2-nonfatal-compiled-plan-contract-v95-20260818 | descriptive |
 | 96 | `generalized_card_camera_gpt54_v96_selective_seed2_20260818_preflight_v1` | 0 | 0 |  | generalized-card-v2-selective-facts-ancestor-novelty-v96-20260818 |  |
 | 96 | `generalized_card_camera_gpt54_v96_selective_seed2_20260818_preflight_v2` | 0 | 0 |  | generalized-card-v2-selective-facts-ancestor-novelty-v96-20260818 |  |
+| 96 | `generalized_card_camera_gpt54_v96_selective_seed2_20260818_v1` | 1 | 45 | 1.00 | generalized-card-v2-selective-facts-ancestor-novelty-v96-20260818 | descriptive |
+| 96 | `generalized_card_camera_gpt54_v96_selective_seed2_20260818_v1_10posts` | 10 | 532 | 1.00 | generalized-card-v2-selective-facts-ancestor-novelty-v96-20260818 | 6 |
+| 97 | `generalized_card_camera_gpt54_v97_keyboard_n10_20260819_v1` | 10 | 532 | 1.00 | generalized-card-v2-keyboard-surface-measured-joints-v97-20260819 | 7 |
+| 97 | `generalized_card_camera_gpt54_v97_keyboard_seed2_20260819_preflight_v1` | 0 | 0 |  | generalized-card-v2-keyboard-surface-measured-joints-v97-20260819 |  |
+| 97 | `generalized_card_camera_gpt54_v97_keyboard_seed2_20260819_v1` | 1 | 45 | 1.00 | generalized-card-v2-keyboard-surface-measured-joints-v97-20260819 | descriptive |
+| 98 | `generalized_card_camera_gpt54_v98_rhythm_n10_20260820_v1` | 10 | 532 | 1.00 | generalized-card-v2-drawn-typing-rhythm-length-calibration-v98-20260819 | 8 |
+| 98 | `generalized_card_camera_gpt54_v98_rhythm_seed2_20260819_preflight_v1` | 0 | 0 |  | generalized-card-v2-drawn-typing-rhythm-length-calibration-v98-20260819 |  |
+| 98 | `generalized_card_camera_gpt54_v98_rhythm_seed2_20260819_v1` | 1 | 45 | 1.00 | generalized-card-v2-drawn-typing-rhythm-length-calibration-v98-20260819 |  |
 
 ## Per-metric MWU p-values for evaluated runs
 
@@ -186,3 +194,8 @@ inflates the pass count. See VERSION_LOG.md.
 | `generalized_card_camera_gpt54_v79_nodrop_seed8_20260816_v1` | 1.000* | 1.000* | 1.000* | 1.000* | 1.000* | 1.000* | 1.000* | 1.000* | 1.000* | 1.000* | 1.000* | 1.000* |
 | `generalized_card_camera_gpt54_v80_social_seed8_20260816_v1` | 1.000* | 1.000* | 1.000* | 1.000* | 1.000* | 1.000* | 1.000* | 1.000* | 1.000* | 1.000* | 1.000* | 1.000* |
 | `generalized_card_camera_gpt54_v95_named_seed2_20260818_v1` | 1.000d | 1.000d | 1.000d | 1.000d | 1.000d | 1.000d | 1.000d | 1.000d | 1.000d | 1.000d | 1.000d | 1.000d |
+| `generalized_card_camera_gpt54_v96_selective_seed2_20260818_v1` | 1.000d | 1.000d | 1.000d | 1.000d | 1.000d | 1.000d | 1.000d | 1.000d | 1.000d | 1.000d | 1.000d | 1.000d |
+| `generalized_card_camera_gpt54_v96_selective_seed2_20260818_v1_10posts` | 0.009 | 0.000 | 0.970* | 0.014 | 0.006 | 0.001 | 0.007 | 0.076* | 0.850* | 0.909* | 0.521* | 0.678* |
+| `generalized_card_camera_gpt54_v97_keyboard_n10_20260819_v1` | 0.186* | 0.000 | 0.910* | 0.307* | 0.010 | 0.001 | 0.017 | 0.021 | 0.940* | 1.000* | 0.734* | 0.326* |
+| `generalized_card_camera_gpt54_v97_keyboard_seed2_20260819_v1` | 1.000d | 1.000d | 1.000d | 1.000d | 1.000d | 1.000d | 1.000d | 1.000d | 1.000d | 1.000d | 1.000d | 1.000d |
+| `generalized_card_camera_gpt54_v98_rhythm_n10_20260820_v1` | 0.121* | 0.001 | 0.623* | 0.290* | 0.013 | 0.001 | 0.021 | 0.473* | 0.970* | 0.970* | 0.678* | 0.571* |

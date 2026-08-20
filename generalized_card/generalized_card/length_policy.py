@@ -4,6 +4,8 @@ from __future__ import annotations
 
 from typing import Any, Callable
 
+from .comment_structure import active_layout_guidance
+from .length_calibration import ask_multiplier, calibrated_word_ask
 from .long_form_planning import expected_development_beats, render_development_guidance
 
 
@@ -35,17 +37,39 @@ def soft_length_guidance(task: Any) -> str:
         # regress toward the mean, which compressed the thread's length spread.
         # State the target and the direction of the common error instead, while
         # keeping it a cue rather than an acceptance gate.
+        #
+        # Which direction that is comes from the measured transfer function
+        # rather than a written-down threshold. The old cutoff was 100 words,
+        # but realized/target crosses 1.0 near 35, so every slot between 35 and
+        # 100 was being told "do not pad" while its measured error was
+        # undershoot: on the v98 seed-2 gate the 56-80 word slots realized 0.48
+        # to 0.74 of their target. `ask_multiplier` is the same curve the
+        # calibration inverts, so the cue and the ask can no longer disagree.
         scale = (
             "Comments this long are normal here, so do not trim toward a "
             "medium-length answer: land near this scale."
-            if real_words > 100
+            if ask_multiplier(real_words) >= 1.0
             else "Do not pad past it."
         )
-        return (
-            f"The anonymous matched structural slot contains roughly {real_words} "
-            "words. Write a turn of that scale, matching its information density "
-            f"and pacing. {scale} This is a target, not a counted requirement; "
-            f"being far short of it is the common failure. {development}"
+        layout = active_layout_guidance(real_words)
+        # The number in the cue is calibrated; every other consumer of
+        # `real_word_count` keeps the matched slot's true size, because the
+        # layout, the beat count, and the length floor describe what a comment
+        # of that real size looks like. See `length_calibration`.
+        asked = calibrated_word_ask(real_words) or real_words
+        unit = "word" if asked == 1 else "words"
+        return " ".join(
+            part
+            for part in (
+                f"The anonymous matched structural slot contains roughly "
+                f"{asked} {unit}. Write a turn of that scale, matching its "
+                f"information density and pacing. {scale} This is a target, not "
+                "a counted requirement; being far short of it is the common "
+                "failure.",
+                layout,
+                development,
+            )
+            if part
         )
     return (
         "Use a natural length for this local turn. Length is a soft surface "
@@ -102,7 +126,10 @@ def writer_provider_token_budget(
     task: Any,
     *,
     configured_max: Any,
-    hard_ceiling: int = 1600,
+    # The calibrated ask for the largest slot the domain has (845 words) is
+    # 1,238 words, about 1,650 tokens. A ceiling that cuts the ask off mid
+    # sentence would turn the calibration into a truncation.
+    hard_ceiling: int = 2400,
 ) -> int:
     """Return a provider ceiling that cannot truncate an anonymous long slot.
 
@@ -115,7 +142,10 @@ def writer_provider_token_budget(
     real_words = max(0, _safe_int(getattr(task, "real_word_count", 0), 0))
     if real_words <= 100:
         return configured
-    estimated_tokens = int(round(real_words * 1.7)) + 64
+    # The ceiling has to clear the number the cue actually asks for, which is
+    # larger than the matched slot on a long slot; otherwise the calibration
+    # would be silently truncated by the provider instead of realized.
+    estimated_tokens = int(round(max(real_words, calibrated_word_ask(real_words)) * 1.7)) + 64
     return min(max(configured, estimated_tokens), max(configured, hard_ceiling))
 
 

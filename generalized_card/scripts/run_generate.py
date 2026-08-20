@@ -226,6 +226,125 @@ def build_parser() -> argparse.ArgumentParser:
         ),
     )
     parser.add_argument(
+        "--turn-frame",
+        choices=("adjudicative_only", "universal"),
+        default="adjudicative_only",
+        help=(
+            "Whether the Writer is told which question its turn settles. "
+            "'universal' reproduces v96 and earlier, which rendered that line on "
+            "every slot; the 'that's the part that actually matters' frame it "
+            "produces was in 18.4%% of v96 comments, worst on personal-datapoint "
+            "(29.1%%) and reaction (19.0%%) slots. 'adjudicative_only' renders it "
+            "for correction, verdict, and advice turns and never for a story."
+        ),
+    )
+    parser.add_argument(
+        "--tone-length-fit",
+        choices=("conditional", "median"),
+        default="conditional",
+        help=(
+            "Where the held-out template's tone counts are placed. 'median' "
+            "reproduces v96 and earlier: slots ranked by distance from each tone "
+            "class's median length, which left the longest slots for the label "
+            "assigned last and put 'impolite' on 100%% of v96 slots over 250 "
+            "words. 'conditional' fits the measured P(tone | comment size band) "
+            "from evaluation-excluded threads, where comments over 250 words are "
+            "72%% polite."
+        ),
+    )
+    parser.add_argument(
+        "--long-form-layout",
+        choices=("measured", "beats_only"),
+        default="measured",
+        help=(
+            "How a long slot is asked to reach its matched scale. 'beats_only' "
+            "reproduces v96 and earlier: one thesis developed through up to 40 "
+            "planned beats, no layout cue, and one paragraph at every size. "
+            "'measured' adds the paragraph count the domain's excluded threads "
+            "show at that size and caps the beat request where the Planner still "
+            "delivers. v96 long slots realized 0.60x their matched length."
+        ),
+    )
+    parser.add_argument(
+        "--reddit-typography",
+        choices=("off", "on"),
+        default="on",
+        help=(
+            "Whether accepted Writer text is rewritten with the punctuation a "
+            "keyboard produces, drawn once per speaker at the share measured on "
+            "evaluation-excluded threads. 'off' reproduces v96 and earlier, "
+            "which emitted typographic apostrophes, quotes, em dashes, and "
+            "ellipsis on every comment. The self-BLEU tokenizer reads \"it's\" as "
+            "one token and the typographic form as three."
+        ),
+    )
+    parser.add_argument(
+        "--sentence-rhythm",
+        choices=("measured", "off"),
+        default="measured",
+        help=(
+            "Whether each slot is given a typing rhythm drawn at the habit "
+            "frequencies measured per size band on evaluation-excluded threads. "
+            "'off' reproduces v97 and earlier, where every surface cue was a "
+            "function of the slot's size, so two same-size slots were asked for "
+            "the same shape: their function-word cosine came out 0.502 against a "
+            "real 0.368, and 532 v97 comments contained no exclamation mark "
+            "against a real 0.079."
+        ),
+    )
+    parser.add_argument(
+        "--length-calibration",
+        choices=("measured", "off"),
+        default="measured",
+        help=(
+            "Whether the length cue asks for the matched slot's own word count "
+            "or for the count that realizes it. 'off' reproduces v97 and "
+            "earlier, where realized/target ran 1.42x at the shortest slots and "
+            "0.71x at 251-400 words, so a thread's mean length survived and its "
+            "spread collapsed: length_cv 0.857 against a real 0.947. 'measured' "
+            "inverts the fitted transfer function log(realized) = 0.3835 + "
+            "0.8925*log(asked), R2 0.894 over the 532 v97 slots."
+        ),
+    )
+    parser.add_argument(
+        "--final-punctuation",
+        choices=("measured", "off"),
+        default="measured",
+        help=(
+            "Whether a declarative ending is left with no final punctuation at "
+            "the rate measured for its size band. 'off' reproduces v97 and "
+            "earlier, which ended 95.9%% of comments in a period against a real "
+            "80.8%%. Only a trailing period is dropped, so a question mark or an "
+            "exclamation the Writer chose is never touched."
+        ),
+    )
+    parser.add_argument(
+        "--route-ledger",
+        choices=("on", "off"),
+        default="on",
+        help=(
+            "Whether the focused Writer prompt lists the sentence routes this "
+            "thread has already reused mid-comment. 'off' reproduces v97 and "
+            "earlier, where the ledger reached the 'full' Writer arm only while "
+            "'focused' has been the active arm since v82; the adjudication frame "
+            "persisted in 14.4%% of v97 comments that never saw the boundary line."
+        ),
+    )
+    parser.add_argument(
+        "--no-story-scope",
+        choices=("sequence", "tense"),
+        default="sequence",
+        help=(
+            "What a no_story slot is barred from. 'tense' reproduces v96 and "
+            "v97, which barred any past action or event on 453 of 532 slots: "
+            "past-tense verbs appeared in 0.181 of those comments against a "
+            "real 0.543, future in 0.031 against 0.226, and the thread lexicon "
+            "fell to 2,670 distinct types against a real 3,645, which is the "
+            "whole self_bertscore_mean_f1 gap. 'sequence' bars the second "
+            "event and the then/after pacing StorySeeker actually scores."
+        ),
+    )
+    parser.add_argument(
         "--reply-sibling-visibility",
         choices=("off", "on"),
         default="on",
@@ -584,6 +703,15 @@ def main() -> None:
         "writer_route_lock": args.writer_route_lock,
         "social_contract_coherence": args.social_contract_coherence,
         "reply_sibling_visibility": args.reply_sibling_visibility,
+        "reddit_typography": args.reddit_typography,
+        "long_form_layout": args.long_form_layout,
+        "tone_length_fit": args.tone_length_fit,
+        "turn_frame": args.turn_frame,
+        "sentence_rhythm": args.sentence_rhythm,
+        "length_calibration": args.length_calibration,
+        "final_punctuation": args.final_punctuation,
+        "route_ledger": args.route_ledger,
+        "no_story_scope": args.no_story_scope,
         "own_fact_license": args.own_fact_license,
         "speaker_identity": args.speaker_identity,
         "actor_conditioning": {
@@ -761,6 +889,15 @@ def main() -> None:
     env["GENERALIZED_CARD_WRITER_ROUTE_LOCK"] = args.writer_route_lock
     env["GENERALIZED_CARD_SOCIAL_CONTRACT_COHERENCE"] = args.social_contract_coherence
     env["GENERALIZED_CARD_REPLY_SIBLING_VISIBILITY"] = args.reply_sibling_visibility
+    env["GENERALIZED_CARD_REDDIT_TYPOGRAPHY"] = args.reddit_typography
+    env["GENERALIZED_CARD_LONG_FORM_LAYOUT"] = args.long_form_layout
+    env["GENERALIZED_CARD_TONE_LENGTH_FIT"] = args.tone_length_fit
+    env["GENERALIZED_CARD_TURN_FRAME"] = args.turn_frame
+    env["GENERALIZED_CARD_SENTENCE_RHYTHM"] = args.sentence_rhythm
+    env["GENERALIZED_CARD_LENGTH_CALIBRATION"] = args.length_calibration
+    env["GENERALIZED_CARD_FINAL_PUNCTUATION"] = args.final_punctuation
+    env["GENERALIZED_CARD_ROUTE_LEDGER"] = args.route_ledger
+    env["GENERALIZED_CARD_NO_STORY_SCOPE"] = args.no_story_scope
     env["GENERALIZED_CARD_OWN_FACT_LICENSE"] = args.own_fact_license
     env["GENERALIZED_CARD_SPEAKER_IDENTITY"] = args.speaker_identity
     env["GENERALIZED_CARD_STORY_PERSONAL_MIN_SHARE"] = str(
@@ -1091,6 +1228,15 @@ RUN_EXPERIMENT_FIELDS = (
     "writer_route_lock",
     "social_contract_coherence",
     "reply_sibling_visibility",
+    "reddit_typography",
+    "long_form_layout",
+    "tone_length_fit",
+    "turn_frame",
+    "sentence_rhythm",
+    "length_calibration",
+    "final_punctuation",
+    "route_ledger",
+    "no_story_scope",
     "own_fact_license",
     "speaker_identity",
     "actor_conditioning",

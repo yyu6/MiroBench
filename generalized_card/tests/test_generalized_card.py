@@ -100,6 +100,10 @@ from generalized_card.length_policy import (
     soft_length_guidance,
     writer_provider_token_budget,
 )
+from generalized_card.length_calibration import (
+    calibrated_word_ask,
+    set_length_calibration,
+)
 from generalized_card.long_form_planning import enrich_development_plan_fields
 from generalized_card.lexical_quality import (
     candidate_thread_bleu_diagnostics,
@@ -4081,23 +4085,44 @@ class GeneralizedCardTest(unittest.TestCase):
 
     def test_soft_length_guidance_exposes_continuous_anonymous_scale(self) -> None:
         guidance = soft_length_guidance(SimpleNamespace(real_word_count=83))
-        self.assertIn("roughly 83 words", guidance)
+        self.assertIn(f"roughly {calibrated_word_ask(83)} words", guidance)
         # The scale is a directional target, never a counted acceptance gate.
         self.assertIn("not a counted requirement", guidance)
         self.assertNotIn("hard maximum", guidance)
 
+    def test_the_rendered_scale_is_the_ask_not_the_matched_count(self) -> None:
+        # The cue carries the number that realizes the slot, not the slot's own
+        # count: through v97 the two were identical and realized/target ran
+        # 1.42x at the shortest slots and 0.71x at 251-400 words.
+        # See `length_calibration`.
+        self.assertIn("roughly 12 words", soft_length_guidance(SimpleNamespace(real_word_count=13)))
+        self.assertIn("roughly 274 words", soft_length_guidance(SimpleNamespace(real_word_count=220)))
+        set_length_calibration("off")
+        try:
+            self.assertIn(
+                "roughly 220 words",
+                soft_length_guidance(SimpleNamespace(real_word_count=220)),
+            )
+        finally:
+            set_length_calibration("measured")
+
     def test_soft_length_guidance_names_undershoot_for_long_slots(self) -> None:
         long_guidance = soft_length_guidance(SimpleNamespace(real_word_count=240))
-        self.assertIn("roughly 240 words", long_guidance)
+        self.assertIn(f"roughly {calibrated_word_ask(240)} words", long_guidance)
         self.assertIn("do not trim toward a medium-length answer", long_guidance)
         short_guidance = soft_length_guidance(SimpleNamespace(real_word_count=20))
         self.assertIn("Do not pad past it", short_guidance)
 
-    def test_long_slot_scope_preserves_one_thesis_with_multiple_beats(self) -> None:
+    def test_long_slot_scope_asks_for_connected_beats_not_one_repeated_thesis(
+        self,
+    ) -> None:
         guidance = local_move_scope_guidance(SimpleNamespace(real_word_count=340))
-        self.assertIn("one local thesis", guidance)
         self.assertIn("connected beats", guidance)
         self.assertIn("long-tail slot", guidance)
+        # "one local thesis" was the wording that produced a single-paragraph
+        # comment at every size. A slot this long is laid out as several
+        # paragraphs by `comment_structure`, each with its own point.
+        self.assertNotIn("one local thesis", guidance)
 
     def test_incidental_humor_does_not_collapse_substantive_surface(self) -> None:
         text = (
@@ -6581,6 +6606,9 @@ class FocusedWriterPromptTest(unittest.TestCase):
         route_lock: str = "own_words",
         license_mode: str = "off",
         story_mode: str = "no_story",
+        opener_type: str = "",
+        rhythm_profile: dict[str, Any] | None = None,
+        previous_comments: list[dict[str, Any]] | None = None,
         **task_overrides: Any,
     ) -> str:
         from generalized_card.generation_distribution import (
@@ -6588,6 +6616,14 @@ class FocusedWriterPromptTest(unittest.TestCase):
         )
 
         module = configure_generator_backend(load_generator_backend(), self.config)
+        if rhythm_profile is not None:
+            # Installed after configuration, not before: the backend reinstalls
+            # the frozen profile from `GENERALIZED_DOMAIN_PROFILE` on every
+            # `configure_generator_backend` call, so a profile set beforehand is
+            # silently replaced. Same shape as the v97 arm-reread defect.
+            from generalized_card.sentence_rhythm import set_active_rhythm_profile
+
+            set_active_rhythm_profile(rhythm_profile)
         module.GENERALIZED_WRITER_PROMPT_MODE = mode
         module.GENERALIZED_WRITER_ROUTE_LOCK = route_lock
         module.GENERALIZED_OWN_FACT_LICENSE = license_mode
@@ -6638,12 +6674,19 @@ class FocusedWriterPromptTest(unittest.TestCase):
             real_num_comments=8,
             metadata={},
         )
+        if opener_type:
+            # The scheduled entry grammar reaches the Writer through the same
+            # keyed registry the Planner writes into, so a test that wants one
+            # has to put it there rather than on the task.
+            from generalized_card.domain_claim import seed_claim_key
+
+            module.GENERALIZED_OPENER_TYPES[(seed_claim_key(seed), 1)] = opener_type
         return module.build_writer_prompt(
             profile="gpt54_reddit_writer",
             seed_post=seed,
             task=module.finalize_rebalanced_task(task),
             parent_comment=None,
-            previous_comments=[],
+            previous_comments=list(previous_comments or []),
             recent_openings=[],
         )
 
@@ -6665,7 +6708,7 @@ class FocusedWriterPromptTest(unittest.TestCase):
         # story mode drives mean_story_probability, which currently passes
         self.assertIn("Story realization", focused)
         # the length cue drives length_cv
-        self.assertIn("roughly 140 words", focused)
+        self.assertIn(f"roughly {calibrated_word_ask(140)} words", focused)
 
     def test_focused_keeps_the_planned_discourse_role_once(self) -> None:
         focused = self._prompt(

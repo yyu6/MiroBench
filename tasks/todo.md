@@ -1,7 +1,9 @@
 # Plan — make the discussion read like people talking
 
-Rewritten 2026-08-16. Read `tasks/HANDOFF.md` first; this file is the task list,
-that file is the evidence.
+Read [`../docs/ORIENTATION.md`](../docs/ORIENTATION.md) first — it holds the
+goal, the judging standard, how to read each metric, and the working discipline.
+This file is the **task list**; `tasks/v<N>-worklog.md` and `tasks/HANDOFF.md`
+hold the evidence.
 
 The previous version of this file ordered work by **where a code defect lives**.
 This one orders it by **which measured gap it moves**, because three of the last
@@ -23,6 +25,155 @@ them onto the 12 metrics and onto the per-thread evidence in `HANDOFF.md` §4.3:
 
 Only `avg_depth` and `structural_virality` are genuinely matched per thread, and
 both are fixed by the matched sampler rather than won by generation.
+
+## v98 drawn-typing-rhythm / length-calibration status — 2026-08-19
+
+Shipped. Policy
+`generalized-card-v2-drawn-typing-rhythm-length-calibration-v98-20260819`.
+Evidence in `tasks/v98-worklog.md` and `generalized_card/VERSION_LOG.md`.
+
+- [x] Render the reused mid-comment route ledger in the focused Writer prompt.
+      `used_sentence_routes` had fed only the `full` arm since v66. Filtered to
+      routes the thread has actually reused more than once, since a ledger
+      headed "already reused" must not list ordinary phrasing. Arm
+      `--route-ledger`.
+- [x] Land the measured final-punctuation habit (profile schema 15). Generated
+      0.041 against a real 0.173. Arm `--final-punctuation`.
+- [x] Fix `length_cv`. **Not** the short-slot brake this list proposed: the
+      realized/target curve is a smooth monotone regression toward the model's
+      preferred length across the whole range, crossing 1.0 near 40 words, so a
+      one-sided brake would have fixed one tail and left the other. Inverted the
+      fitted transfer function instead (R2 0.894, n=532). Arm
+      `--length-calibration`.
+- [x] `emotion_entropy` was **wrong** in this list. It is not small-thread
+      noise. v97 wrote zero exclamation marks in 532 comments against a real
+      0.079, and in the 24,029-comment reference corpus a comment with one is
+      1.48x as likely to carry a non-neutral dominant emotion. Arm
+      `--sentence-rhythm`.
+- [x] `self_bertscore_mean_f1`. Three hypotheses measured, two rejected. The
+      cause is v96's `no_story` instruction banning tense rather than narrative
+      on 453 of 532 slots: past-tense verbs 0.181 against a real 0.543, `have`
+      at 11% of its real rate, `will` at 1%, and a thread lexicon of 2,670
+      distinct types against a real 3,645. Arm `--no-story-scope`.
+
+### v98 N=10 result — 2026-08-20
+
+**8 PASS / 1 PARTIAL / 3 FAIL** (v97: 7/1/4). Full table in
+`generalized_card/VERSION_LOG.md`; goal, metric interpretation and current state
+in `docs/ORIENTATION.md`.
+
+- [x] Paid seed-2 content gate, all six predictions read against every comment.
+- [x] Length transfer function checked on the v98 seed-2 artifact before N=10.
+- [x] N=10 under the five v98 defaults, paired to v97's seeds
+      (`--start-seed-index 2`, `--sampling-seed 42`).
+- [x] `length_cv` FAIL -> PASS (MWU 0.021 -> 0.473, Cliff -0.62 -> +0.20).
+- [x] `emotion_entropy` improved (MWU 0.326 -> 0.571, Cliff -0.27 -> -0.16).
+- [x] `self_bleu_4` characterised with an exact ablation harness. No phrase
+      drives it; it is a length metric first and generated already matches
+      length. Entity diversity is worth ~1/3 of the gap at partial r = -0.097.
+      **No cheap lever exists. Stop looking for one.**
+- [x] `self_bertscore_mean_f1` hypothesis 4 (lexical breadth via the loosened
+      story scope) **rejected** — past tense 0.289 -> 0.288, metric unmoved.
+      Four hypotheses now measured and rejected; the metric has **no verified
+      mechanism**. Do not build a fifth without falsifying it first.
+
+### Open after v98, in priority order
+
+- [ ] **v99 — warmth realization.** Schedule warmth markers, second-person
+      advice forms, and negative-marker suppression at their measured rates
+      through the `sentence_rhythm` mechanism. Targets `polite_rate`,
+      `impolite_rate`, `neutral_rate` — 3 of the 4 open metrics — and it is the
+      only remaining hypothesis with a verified causal claim (warmth-marker rate
+      vs `polite_rate` r = +0.727 over 412 real threads, monotone quintiles).
+      **Read `planner_distribution.py` and the `prompts.py` tone/affect
+      renderers (`_tone_shape_guidance`, `_speaker_role_guidance`,
+      `_utterance_mode_guidance`, `_substitution_rule`) before writing it — that
+      reading is not yet done.** Carry the recorded caveat: at warmth 0.143 the
+      quintile curve predicts `polite_rate` ~= 0.23 but the generator gets
+      0.066, so the markers are also used differently, not only used less.
+- [ ] Revert `--no-story-scope` default to `tense`. No metric benefit, and it
+      added new repeated 4-grams. Keep the prompt-contradiction fix it carried.
+- [ ] **Commit at every version boundary.** v97 and v98 shipped uncommitted;
+      see `docs/ORIENTATION.md` §8. Verified 2026-08-20: HEAD is v96 and
+      `sentence_rhythm.py` / `length_calibration.py` have zero commits.
+- [ ] Entity diversity: generated 0.438x real in 10/10 threads. Worth ~1/3 of
+      the `self_bleu_4` gap and it also fixes an eye-visible tell (10 distinct
+      product designators against 40 real).
+- [ ] Eye-visible tells for acceptance criterion 2, none fixed: no generated
+      comment contains a link (real 0.051); `check` at ~10x its real rate;
+      `will` at ~1%; `their` and `we` absent.
+- [ ] Remaining length defect: the `short` band overshot downward, realized/
+      target 1.071 -> 0.857.
+- [ ] Bug — evaluation drops <2-word comments unevenly, so
+      `--exact-matched-thread-size` can still mismatch (24 generated vs 22 real
+      on `post04_seed011`).
+- [ ] Bug — `build_slot_distribution_schedule`'s `tone_length_fit` /
+      `tone_length_joint` are never persisted to `discussion.json`, so the joint
+      cannot be audited after the fact.
+- [ ] Bug — `--template-phrase-reuse-budget 4` is flat and wrong at large thread
+      sizes; real threads reach `uncertainty_frame` 7, 8 and 12. Should scale
+      with comment count.
+- [ ] **User decision, still open and blocking N=150.** 12 metrics x 2 tests at
+      alpha 0.05 means a perfect generator passes all 12 together only
+      0.94^12 ~= 52% of the time. Choose the reporting standard first: a
+      multiplicity correction, or effect-size-led reporting with |Cliff| <= 0.10
+      as the target. At |d| = 0.25 a metric passes 87% of the time at N=10 and
+      4% at N=150, so N=10 p-values are not the thing to optimize.
+
+## v97 keyboard-surface / measured-joints status — 2026-08-19
+
+The v96 N=10 run is the first complete honest sample under the new content
+policy: coverage 1.00, 532/532 comments, **6 of 12 metrics pass**. Story,
+emotion, and semantic dispersion now pass; the six failures are self-BERTScore,
+self-BLEU, hard disagreement, and the three tone rates. Detail in
+`tasks/v97-worklog.md` and `generalized_card/VERSION_LOG.md`.
+
+- [x] Read all 12 v96 N=10 metrics from the saved matched evaluation and
+      separate the passes from the failures without quoting an n=1 p-value.
+- [x] Measure, in the v96 artifact, what the generated text does that the real
+      text does not, at the level each failing metric measures.
+- [x] Prove the typography cause with the real scorer, not a proxy: 0/532 ASCII
+      apostrophes, and a per-speaker keyboard draw moves `self_bleu_4` MWU p
+      0.009 -> 0.273 and KS 0.052 -> 0.787.
+- [x] Prove the adjudication frame is on 532/532 slots and is worst on the least
+      adjudicative functions (personal_datapoint 29.1%, reaction 19.0%).
+- [x] Prove the tone marginal is correct and the joint inverted: impolite on
+      100% of 250w+ slots where excluded real comments of that size are 72%
+      polite.
+- [x] Prove the long-slot shortfall is the request, not the token budget: 845w
+      slot asked for 40 beats, Planner saturates near 9, realized 0.32x.
+- [x] Add `surface_typography`, `comment_structure`, and `tone_length_fit`,
+      measured on evaluation-excluded threads only; profile schema 11 -> 14.
+- [x] Gate the boundary line on both Writer paths and cap the beat ceiling where
+      the Planner still delivers.
+- [x] Make each change a named arm recorded in `run_config.json` whose legacy
+      value reproduces v96 exactly.
+- [x] Complete 369 tests, Ruff, 98/98 pins, both parity scopes, self-test with
+      all four arms, profile rebuild, active-shaper proof, and exact seed-2
+      prepare-only.
+- [x] Run one paid v97 seed-2 gate and check the six predictions. All six held;
+      45/45 in one attempt for `$0.3883`.
+- [x] Run v97 N=10: 532 comments, coverage 1.00, `$3.6664`, 55 min. **7/12 pass
+      against v96's 6**, but by the |d| <= 0.10 standard only **4/12 are viable
+      at N=150** against v96's 3.
+- [x] Attribute both regressions before acting on either. `length_cv` is real
+      and systematic (below real on 9/10 threads; the tail fix was outweighed by
+      a 5-11% inflation of the 10-120w middle that holds 425 of 532 slots).
+      `emotion_entropy` is not attributable (5 threads up, 5 down; per-band
+      entropy equal or higher; the 7-comment thread alone accounts for 0.079 of
+      the 0.087 mean drop).
+- [x] Quantify what N=10 predicts about N=150. Simulating the evaluator's own
+      MWU+KS pair: a metric needs |Cliff's delta| <= 0.10 to have a 0.72 chance
+      at N=150, while |d|=0.25 still passes 87% of the time at N=10. Track |d|,
+      not the p-value.
+- [ ] Decide the reporting standard for 150 threads before running it. Twelve
+      metrics times two tests at alpha 0.05 means even a perfect generator
+      passes all twelve together only 52% of the time (0.94^12), so either a
+      multiplicity correction or an effect-size-led report is needed. This is
+      the user's call.
+- [ ] Drive every metric to |d| <= 0.10. Of v96's six passes only three qualify:
+      semantic_mean_cosine 0.02, structural_virality 0.04, avg_depth 0.06.
+      emotion_entropy 0.12 and mean_story_probability 0.18 do not.
 
 ## v96 selective factual-grounding status — 2026-08-18
 

@@ -59,6 +59,570 @@ Before any run that changes behavior:
 
 ---
 
+## v98 — drawn typing rhythm and length calibration (2026-08-19)
+
+Policy ID: `generalized-card-v2-drawn-typing-rhythm-length-calibration-v98-20260819`.
+
+v97 scored 7 PASS / 1 PARTIAL / 4 FAIL over ten matched threads (532 generated
+against 532 real, coverage 1.00, `$3.6664`, 55.2 minutes):
+
+| metric | real | generated | MWU p | KS p | Cliff | status |
+|---|---:|---:|---:|---:|---:|---|
+| structural_virality | | | 1.000 | 1.000 | 0.00 | PASS |
+| avg_depth | | | 0.940 | 0.994 | 0.03 | PASS |
+| semantic_mean_cosine | | | 0.910 | 0.787 | 0.04 | PASS |
+| mean_story_probability | | | 0.734 | 0.787 | -0.10 | PASS |
+| emotion_entropy | 1.5803 | 1.5085 | 0.326 | 0.168 | -0.27 | PASS, large \|d\| |
+| hard_disagree_rate | | | 0.307 | 0.787 | 0.28 | PASS |
+| self_bleu_4 | 0.0278 | 0.0316 | 0.186 | 0.787 | 0.36 | PASS, weak |
+| neutral_rate | | | 0.017 | 0.052 | -0.64 | PARTIAL |
+| polite_rate | | | 0.010 | 0.012 | -0.69 | FAIL |
+| length_cv | 0.9468 | 0.8567 | 0.021 | 0.012 | -0.62 | FAIL, regressed |
+| impolite_rate | | | 0.0008 | 0.0002 | 0.90 | FAIL |
+| self_bertscore_mean_f1 | 0.4942 | 0.5185 | 0.0003 | 0.0002 | 0.96 | FAIL |
+
+### The `self_bertscore` cause, after two rejected hypotheses
+
+This is the metric worth the most care, and two plausible explanations were
+measured and **rejected** before the third survived. Both rejections are kept in
+the source so the next version does not re-litigate them.
+
+Every unordered comment pair of the six smallest threads was scored with the
+evaluator's own BERTScore (`microsoft/deberta-xlarge-mnli`, L40) and binned:
+
+| log(longer/shorter) | real F1 | gen F1 | delta |
+|---|---:|---:|---:|
+| 0.00-0.35 | 0.5116 | 0.5479 | +0.0363 |
+| 0.35-0.80 | 0.5105 | 0.5346 | +0.0241 |
+| 0.80-1.40 | 0.5002 | 0.5134 | +0.0133 |
+| 1.40-2.20 | 0.4798 | 0.4802 | +0.0004 |
+| 2.20+ | 0.4362 | 0.4126 | **-0.0236** |
+
+**Rejected: length spread.** Reweighting the generated pairs onto the real
+pairs' length-ratio mix moves the mean 0.5090 -> 0.5057, one fifth of the
+0.0163 gap.
+
+**Rejected: a duplication tail.** Trimming the top of both distributions leaves
+the gap where it was: +0.0163 untrimmed, +0.0154 after dropping the top 20% of
+pairs on each side. It is a uniform shift, not a tail. The Planner is clean
+too -- zero exactly duplicated `semantic_move` values over 532 slots, at most
+1.3% of in-thread plan pairs above 0.35 content-word Jaccard.
+
+**Rejected: the surface register.** Same-length pairs differ most in
+function-word cosine (real 0.368, generated 0.502, +0.134), which is what
+`sentence_rhythm` was built for. A falsification test on real text says habits
+do not cause that: real pairs that *differ* in these habits are only 0.003-0.011
+lower in function-word cosine than pairs that share them, and pairs that are both
+sentence-length-uneven are slightly *more* alike, not less.
+
+**What survived: a uniform lexical narrowing, caused by one instruction.**
+
+| | real | generated |
+|---|---:|---:|
+| distinct word types | 3,645 | 2,670 |
+| types / sqrt(tokens) | 21.02 | 15.95 |
+| hapax rate | 0.502 | 0.427 |
+| top-500 type coverage | 0.783 | 0.830 |
+
+Per-comment type-token ratio at a fixed 30 tokens is *higher* in the generated
+text (0.891 against 0.866), so no comment is individually thin. The thread draws
+from a smaller lexicon, which lifts every pair equally.
+
+453 of 532 slots are planned `no_story`, and v96's instruction for them bans
+tense rather than narrative -- "no past action, event, before/after change, or
+then/after pacing". On those 453 slots against their 532 matched real comments:
+
+| | real | generated (`no_story`) |
+|---|---:|---:|
+| past-tense verb | 0.543 | 0.181 |
+| future / `'ll` | 0.226 | 0.031 |
+| present perfect | 0.167 | 0.031 |
+
+`have` at 11% of its real rate, `will` at 1%, `to` at 54%. What the model falls
+back on is a timeless conditional: `the` at 147% of its real rate, `if` 225%,
+`whether` 1800%, `matters` 2900%.
+
+It was also a live contradiction. Under `--own-fact-license named` the grounding
+rule for a non-story slot is "Be particular rather than general", and **247 of
+the 532 rendered v97 prompts (46.4%) carried that line and the tense ban at the
+same time** -- the exact defect `writer_grounding` was created to eliminate.
+StorySeeker scores narrative *sequence*, and `mean_story_probability` already
+passes at Cliff -0.10, below real, so the headroom runs the safe way.
+
+### The `length_cv` cause
+
+Realized/target over all 532 slots is a smooth monotone regression toward the
+model's own preferred length, crossing 1.0 near 40 words: 1.42x at 11-15 words,
+1.05x at 16-25, 0.91x at 41-90, 0.71x at 251-400. The mean survives (55.8 real
+against 52.3) and the spread collapses (`length_cv` 0.947 -> 0.857, below the
+matched real thread on 9 of 10 threads).
+
+Three versions tried to talk the Writer out of it and moved 250w+ from 0.61 to
+0.71. The transfer function is clean enough to invert instead:
+
+    log(realized) = 0.3835 + 0.8925 * log(asked)     n=532, R2=0.894
+
+`length_calibration` renders `exp((log(target) - a) / b)` in the cue and leaves
+`real_word_count` as the truth everywhere else, because the layout, the beats,
+the tone band, and the length floor all describe a comment of the slot's real
+size. Multipliers run 0.71x at two words to 1.47x at 845, monotone, and the
+clamp does not bind anywhere inside the fitted range.
+
+### The `emotion_entropy` cause
+
+v97 wrote **zero exclamation marks in 532 comments** against 0.079 of matched
+real ones. In the 24,029-comment reference corpus a comment containing one is
+1.48x as likely to carry a non-neutral dominant emotion, concentrated on
+gratitude, admiration, joy, love, and amusement -- the tail labels the entropy is
+made of. `sentence_rhythm` draws seven habits per slot at each size band's
+measured rate; its realized rates over the 532 re-rendered v97 slots track the
+measurement within sampling noise.
+
+### Arms
+
+| flag | v98 default | reproduces v97 |
+|---|---|---|
+| `--no-story-scope` | `sequence` | `tense` |
+| `--length-calibration` | `measured` | `off` |
+| `--sentence-rhythm` | `measured` | `off` |
+| `--final-punctuation` | `measured` | `off` |
+| `--route-ledger` | `on` | `off` |
+
+All five are written into `run_config.json` and checked by the resume-config
+verification. Domain profile schema 14 -> 15 (`rhythm_profile`,
+`final_punctuation_profile`).
+
+### Zero-API result
+
+446 tests pass, Ruff clean, 100/100 pins with zero drift, no untracked active
+source, no unpinned local import, both parity scopes healthy, self-test passes
+with all five arms on and with all five off, and the schema-15 profile rebuilds
+over 424 excluded threads with 0 seed overlap. Re-rendering all 532 v97 slots
+through the v98 prompt costs +474 characters of prompt (+8.5%): rhythm +292,
+route ledger +183.
+
+### N=10 result — 2026-08-20
+
+Run `generalized_card_camera_gpt54_v98_rhythm_n10_20260820_v1`, paired to v97
+(`--start-seed-index 2`, `--sampling-seed 42`, `--max-posts 10`), all five arms
+at their v98 defaults. **8 PASS / 1 PARTIAL / 3 FAIL**, against v97's 7/1/4.
+
+| metric | v97 MWU | v97 Cliff | v98 MWU | v98 Cliff | v98 status |
+|---|---:|---:|---:|---:|---|
+| `self_bleu_4` | 0.1859 | +0.36 | 0.1212 | +0.42 | PASS |
+| `self_bertscore_mean_f1` | 0.00033 | +0.96 | 0.00058 | +0.92 | FAIL |
+| `semantic_mean_cosine` | 0.9097 | +0.04 | 0.6232 | -0.14 | PASS |
+| `hard_disagree_rate` | 0.3069 | +0.28 | 0.2897 | +0.29 | PASS |
+| `polite_rate` | 0.01014 | -0.69 | 0.01258 | -0.67 | FAIL |
+| `impolite_rate` | 0.00077 | +0.90 | 0.00101 | +0.88 | FAIL |
+| `neutral_rate` | 0.01717 | -0.64 | 0.02099 | -0.62 | PARTIAL |
+| `length_cv` | 0.02113 | -0.62 | **0.4727** | **+0.20** | FAIL -> **PASS** |
+| `avg_depth` | 0.9396 | +0.03 | 0.9698 | +0.02 | PASS |
+| `structural_virality` | 1.000 | 0.00 | 0.9697 | +0.02 | PASS |
+| `mean_story_probability` | 0.7337 | -0.10 | 0.6776 | -0.12 | PASS |
+| `emotion_entropy` | 0.3256 | -0.27 | **0.5708** | **-0.16** | PASS |
+
+Two of the four metrics the user ranked first moved: `length_cv` FAIL -> PASS,
+and `emotion_entropy` improved on both p-value and effect size. `self_bleu_4`
+stayed a weak pass and got slightly worse. `self_bertscore_mean_f1` did not
+move.
+
+**Which arms worked.** Realized habit rates over the run, v97 -> v98:
+semicolon 0.109 -> 0.023, dash clause 0.299 -> 0.071, ellipsis 0.017 -> 0.081,
+exclamation 0.000 -> 0.064, digit 0.299 -> 0.457, parenthetical 0.055 -> 0.086,
+bare final punctuation 0.041 -> 0.246. The length calibration closed the tails:
+realized/target 0.738 -> 0.985 in the `essay` band and 0.873 -> 0.987 in
+`very_long`; `length_cv` 0.862 -> 0.981 against a real 0.959, with threads below
+the real value falling from 9/10 to 6/10. The `short` band overshot downward
+(1.071 -> 0.857) and is the remaining length defect.
+
+**`--no-story-scope sequence` should be reverted to `tense`.** It produced no
+metric benefit -- past-tense rate 0.289 -> 0.288, `will` 0.015 -> 0.019, lexical
+breadth (types/sqrt tokens) 15.95 -> 16.20 against a real 21.02 -- and it added
+new repeated 4-grams (`. before that ,` 0 -> 4, `i was wrong to` 0 -> 4). The
+prompt-contradiction fix it carried is worth keeping; the loosened scope is not.
+The `self_bertscore` hypothesis behind this arm is therefore rejected, and the
+metric has no verified mechanism.
+
+**`self_bleu_4` characterised, no cheap lever.** An ablation harness that
+reproduces the evaluator's number to five significant figures (v97 0.18588 /
++0.36, v98 0.12122 / +0.42) shows no phrase drives the metric: normalising every
+typographic apostrophe, deleting all `check ...` openings, deleting the
+`that's the part` family, and deleting yeah/basically/actually each move the mean
+by at most 0.0005. Dropping each comment's first sentence makes it markedly
+worse. Over 160 real threads it is a length metric first (share of <=15-word
+comments r = +0.783, mean words r = -0.723) and generated already matches
+length. OLS `self_bleu_4 = 0.04964 - 0.000288*meanWords -
+0.00127*entityTypesPerComment` (R2 = 0.527) explains about 48% of the observed
+gap; entity diversity's partial r is only -0.097, worth roughly a third of it.
+
+Current verified repo state (2026-08-20): **449 tests pass, 101 pins with zero
+drift.** The 446/100 figures in the zero-API section above were the state at
+that gate, before the last test module and pin were added.
+
+## v97 — keyboard surface and measured joints (2026-08-19)
+
+Policy ID: `generalized-card-v2-keyboard-surface-measured-joints-v97-20260819`.
+
+v96 was the first version to produce a complete, honestly evaluable 10-thread
+sample under the new content policy: 532 generated comments against 532 matched
+real ones, coverage 1.00, `$3.71`, 49 minutes. **6 of 12 metrics pass.**
+
+| metric | real | generated | MWU p | KS p | \|d\| | status |
+|---|---:|---:|---:|---:|---:|---|
+| semantic_mean_cosine | 0.2892 | 0.2915 | 0.970 | 0.994 | 0.02 | PASS |
+| structural_virality | 2.7955 | 2.8732 | 0.909 | 1.000 | 0.04 | PASS |
+| avg_depth | 2.2680 | 2.3726 | 0.850 | 1.000 | 0.06 | PASS |
+| emotion_entropy | 1.5803 | 1.5951 | 0.678 | 0.418 | 0.12 | PASS |
+| mean_story_probability | 0.1266 | 0.1064 | 0.521 | 0.418 | 0.18 | PASS |
+| length_cv | 0.9468 | 0.8658 | 0.076 | 0.418 | 0.48 | pass, marginal |
+| self_bleu_4 | 0.0278 | 0.0375 | 0.009 | 0.052 | 0.70 | FAIL |
+| hard_disagree_rate | 0.1208 | 0.2249 | 0.014 | 0.052 | 0.66 | FAIL |
+| neutral_rate | 0.1715 | 0.0624 | 0.007 | 0.052 | 0.72 | FAIL |
+| polite_rate | 0.3085 | 0.0668 | 0.006 | 0.002 | 0.74 | FAIL |
+| impolite_rate | 0.4041 | 0.6797 | 0.001 | 0.002 | 0.87 | FAIL |
+| self_bertscore_mean_f1 | 0.4942 | 0.5280 | 0.0002 | 0.00001 | 1.00 | FAIL |
+
+v96's story and emotion arms worked: `mean_story_probability` and
+`emotion_entropy` both passed, and `semantic_mean_cosine` is now the strongest
+pass in the set. The remaining six are the subject of this version, and four
+independent causes were measured in the v96 artifact before anything was
+changed.
+
+### 1 Typography is a metric, not a cosmetic
+
+`score_thread_self_bleu.TOKEN_PATTERN` reads `it's` as one token and `it’s` as
+three. **Zero of 532 v96 comments contained an ASCII apostrophe** and 389
+contained a typographic one, so every generated contraction contributed a
+`<word> ’ s` trigram shared across the thread that no real comment produces. The
+same holds for em dashes (187 occurrences against 3 real), curly quotes (137
+against 14), and the ellipsis character.
+
+Measured on the domain's 11,817 evaluation-excluded comments, the typographic
+form appears in 27.1% of apostrophe-bearing comments, 22.5% of quote-bearing,
+10.5% of dash-bearing, and 15.6% of ellipsis-bearing ones. v96 was at 100% for
+all four. `surface_typography` draws that share once per **speaker** per class,
+because a device either substitutes the character or it does not, and a
+per-speaker draw also raises between-author surface variance inside a thread.
+
+Replayed over the v96 output with the real scorer, not a proxy:
+
+| | real | v96 | v96 + keyboard typography |
+|---|---:|---:|---:|
+| self_bleu_4 mean | 0.0280 | 0.0373 | **0.0324** |
+| MWU p | — | 0.009 | **0.273** |
+| KS p | — | 0.052 | **0.787** |
+| self_bertscore (4 threads) | — | — | **-0.008** |
+| curly-apostrophe comment share | 0.105 | 0.731 | **0.164** |
+
+### 2 The adjudication frame was on every slot
+
+The Writer prompt rendered "The question your turn settles: ..." on **532 of 532**
+v96 slots. That frame is the documented source of the "that's the part that
+actually matters" family, which survived a rewording (v73), a prompt rebuild
+(v74), and a route lock (v75), and is still in 18.4% of v96 comments against
+effectively nothing in 30,643 tokens of matched real text. `that s the part`
+alone appears in 39 comments, `that s the bit` in 16, `that s the only` in 18.
+
+Broken out by planned function, the frame is worst exactly where it least
+belongs: personal_datapoint 29.1%, explanation_analysis 23.1%, reaction 19.0%,
+correction_caveat 16.0%, verdict_evaluation 12.3%, recommendation_advice 11.8%,
+question_followup 8.1%. A slot told to report an experience *and* told which
+question it settles converts the experience into an adjudication. Three releases
+tried to reword the frame; none tried withholding it.
+
+v97 renders the boundary only for correction, verdict, and advice turns, and
+never for a slot carrying a story. Over the v96 task set that withholds it from
+362 of 532 slots (68.0%), which carried 74 of the 98 observed frame instances
+(76%).
+
+### 3 The tone-length joint was inverted
+
+`polite_rate` and `impolite_rate` failed with a **correct marginal**: the
+Planner's targets were 0.311 polite and 0.442 impolite against a real 0.308 and
+0.404. The joint was backwards. `_tone_cost` ranked slots by distance from each
+class's median length, so `polite` (median 53 words) took the slots nearest 53
+words and the longest slots were left for whichever label was assigned last:
+
+| planned tone | 120-250w slots | 250w+ slots |
+|---|---:|---:|
+| v96 impolite | 74% | **100%** |
+| excluded real, same sizes | 29% | **23%** |
+| excluded real polite | 64% | **72%** |
+
+The realized output followed the plan: generated comments over 120 words came
+out 87% impolite and 9% polite, against a real 27% and 71%. `neutral_rate` fails
+the same way from below — real neutral comments are short bare statements of a
+model, price, or spec, and generated short comments are negation-led challenges.
+
+`tone_length_fit` measures P(tone | comment size band) over 15,294 excluded
+comments and fits the template's counts onto slots by iterative proportional
+fitting, so both margins stay exact. A min-cost assignment was implemented first
+and rejected: it maximizes likelihood and lands in a corner, producing 100%
+polite in the top band against a measured 72%. Replayed over the ten v96 threads:
+
+| band | v96 planned polite | v97 planned polite | measured real |
+|---|---:|---:|---:|
+| micro | 0.000 | 0.220 | 0.251 |
+| short | 0.000 | 0.136 | 0.162 |
+| medium | 0.414 | 0.225 | 0.263 |
+| long | 0.661 | 0.431 | 0.520 |
+| very_long | 0.114 | 0.600 | 0.638 |
+| essay | 0.000 | 0.538 | 0.720 |
+
+The measured conditional also refutes the hard exclusion it replaces: 25.1% of
+real comments under ten words are labelled polite, because a short thank-you is
+one, and v96 could not assign that at all.
+
+### 4 Long slots were asked for a shape that does not exist
+
+Long slots realized 0.61x their matched length, and the largest was at 0.32:
+
+| matched target | slots | realized ratio |
+|---|---:|---:|
+| 0-10 w | 59 | 1.40 |
+| 10-25 w | 147 | 1.01 |
+| 25-60 w | 169 | 1.01 |
+| 60-120 w | 109 | 0.86 |
+| 120-250 w | 35 | 0.92 |
+| 250+ w | 13 | **0.61** |
+| the 845-word slot | 1 | **0.32** |
+
+Short slots overshoot and long slots undershoot, which is precisely what
+compresses `length_cv` (0.866 against 0.947) and, through the pairwise means,
+holds `self_bertscore` up.
+
+The cause was not the token budget, which allows 1,500 tokens for an 845-word
+slot. It was the request. The 845-word slot was asked to "develop one local
+thesis through about **40** distinct, connected beats", and the Planner does not
+supply beats above about nine however many are asked for: asked ~6 it returned
+5.2 and the slot realized 0.95x; asked 14-40 it returned 9.5 and realized 0.60x.
+The largest beat plan any slot in the run received was 26. At ~20 realized words
+per beat the mechanism tops out near 250 words.
+
+Real long comments are not one thesis at all. Measured over the excluded
+threads, median paragraph count rises 1 / 1 / 1 / 2 / 3 / 6 across the size
+bands, p90 reaches 14, and lists and quoted parent excerpts appear in 12.6% and
+26.7% of the longest comments. Words per paragraph is nearly flat inside a band
+(53.6 in the top band) while the paragraph count scales with length: 6 at
+250-350 words, 10 at 500-700, 11 above 700. v96 output had a blank line in 3.4%
+of comments against 33.8% of real ones, and one paragraph at every size.
+
+`comment_structure` asks each slot for the paragraph count its size actually
+has, floored at the band median and capped at its p90, and permits a paragraph
+to take a related side point. The beat ceiling drops from 40 to 12 and the
+minimum acceptable count is capped where the Planner still delivers, so an
+unreachable request stops generating plan-repair traffic. Rendered against the
+v96 targets: 90w -> 2 paragraphs, 160w -> 3, 300w -> 6, 539w -> 10, 845w -> 14.
+
+### Also changed
+
+The entry grammar was realized on 47.4% of v96 slots, and the drift has one
+direction: 20.7% of comments opened with a bare polarity token against 6.8% of
+matched real comments and 5.3% scheduled. A non-polarity opener now carries an
+explicit exclusion of that one measured default rather than a general style rule.
+
+### Arms
+
+Every change is a named, reproducible arm recorded in `run_config.json` and
+checked on resume. Each `off`/legacy value reproduces v96 exactly.
+
+| flag | v97 default | reproduces v96 |
+|---|---|---|
+| `--reddit-typography` | `on` | `off` |
+| `--turn-frame` | `adjudicative_only` | `universal` |
+| `--tone-length-fit` | `conditional` | `median` |
+| `--long-form-layout` | `measured` | `beats_only` |
+
+Domain profile schema 11 -> 14, adding `typography_profile`,
+`structure_profile`, and `tone_length_profile`. All three are measured on
+evaluation-excluded threads only; seed/reference overlap is 0 and no matched
+comment text is stored.
+
+### Predicted direction
+
+Stated before the API call so a null result stays interpretable.
+
+- `self_bleu_4`: 0.0375 -> about 0.032 from typography alone, further down from
+  the withheld frame. This is the one prediction already measured offline.
+- `self_bertscore_mean_f1`: -0.008 from typography; the rest has to come from the
+  withheld frame and the restored length spread. Weakest prediction of the four.
+- `length_cv`: up from 0.866 toward 0.947 as the 250w+ ratio moves off 0.61.
+- `polite_rate` up, `impolite_rate` down, `neutral_rate` up, from the joint fit.
+- `hard_disagree_rate`: down from 0.225. Every stance probability in both
+  populations sits between 0.20 and 0.40 and the mean differs by only 0.011
+  (0.324 against 0.313), so the label is an argmax over near-ties and a small
+  register shift should move the rate a lot.
+- At risk: `mean_story_probability` and `emotion_entropy` both pass now and both
+  depend on the register that four arms are changing at once. If either drops,
+  the arms exist to attribute it.
+
+### Zero-API gate
+
+- 369 generalized-card tests pass, including new focused suites for typography,
+  layout, the tone-length fit, and the turn frame rendered through the
+  configured backend rather than by calling the gate directly.
+- Ruff clean over the whole `generalized_card/` tree.
+- Source contract: 98/98 files pinned, no untracked active source, no unpinned
+  local import, zero hash drift.
+- Active and active-plus-legacy parity both healthy, no unexpected overrides.
+- Backend self-test passes with all four v97 arms plus `domain-claim=selective`
+  and `own-fact-license=named`.
+- Domain profile rebuilds at schema 14 over 424 excluded threads with all three
+  new profiles available and 0 seed overlap.
+- The active shaper was exercised directly: over 200 speakers the realized
+  typographic apostrophe share is 0.240 against the measured 0.271, and the four
+  classes draw independently.
+- Exact seed-2 `--prepare-only` completed as
+  `generalized_card_camera_gpt54_v97_keyboard_seed2_20260819_preflight_v1` with
+  every arm recorded and no API call.
+
+### Paid seed-2 gate result
+
+Tag `generalized_card_camera_gpt54_v97_keyboard_seed2_20260819_v1`: 45/45
+comments in one attempt, 89 requests, 343,063 input and 29,102 output tokens,
+`$0.3883`, 235 seconds. No Writer retries, degraded comments, schema recoveries,
+exact duplicates, or matched-text leakage.
+
+n=1, so every p-value is descriptive. What is comparable is the same thread
+generated under three consecutive policies:
+
+| exact seed-2 property | real | v95 | v96 | v97 |
+|---|---:|---:|---:|---:|
+| self_bleu_4 | 0.0268 | 0.0350 | 0.0306 | **0.0273** |
+| self_bertscore_mean_f1 | 0.4892 | 0.5306 | 0.5299 | **0.5074** |
+| repeated 4-gram share | 0.0200 | — | 0.0795† | **0.0237** |
+| distinct 3-word openers | 0.9778 | — | 0.7726† | **0.9778** |
+| word-count CV | 0.8768 | — | 1.0141† | **0.8708** |
+| emotion_entropy | 1.9687 | 1.6572 | — | **1.6827** |
+| hard_disagree_rate | 0.0571 | — | 0.2249† | **0.0909** |
+| curly-apostrophe comment share | 0.3556 | — | 0.7310† | **0.3778** |
+| em-dash occurrences | 0 | — | 187† | **0** |
+| polarity-token opener share | 0.0222 | — | 0.2071† | **0.0889** |
+
+† pooled over the v96 ten-thread run rather than seed 2 alone.
+
+Six of six predictions held.
+
+- **self-BLEU is now at real**: 0.0273 against 0.0268. The v96 gap was +0.0038.
+- **self-BERTScore closed 55% of its gap**: +0.0407 -> +0.0182. This was the
+  weakest prediction and the metric with |d|=1.00 at N=10.
+- **Repetition is at real**: 0.0237 against 0.0200, and no 4-gram appears in
+  more than 2 of the 45 comments. `that s the part` was in 39 of 532 v96
+  comments; the frame's overall share fell 0.184 -> 0.133 with the remainder on
+  the adjudicative slots that keep the line by design.
+- **Length spread is at real**: CV 0.8708 against 0.8768, with realized/target
+  ratios 1.08, 1.11, 0.96, 0.99 across the size bands. This thread has no 250w+
+  slot, so the 0.61 ratio is not yet retested.
+- **The tone-length joint is now monotone**: planned polite runs 0.40 micro,
+  0.30 short, 0.21 medium, 0.50 long, 0.83 very_long. v96 was 0.00 / 0.00 /
+  0.41 / 0.66 / 0.11 with 100% impolite above 250 words.
+- **Openers match exactly**: distinct 3-word openers 0.9778 against a real
+  0.9778, and polarity-token openers 0.089 against 0.022 and a v96 0.207.
+
+Still open on this thread, and not addressed by v97:
+
+- `impolite_rate` 0.614 against a real 0.222 with a Planner target of 0.370, and
+  `polite_rate` 0.205 against 0.489. Placement is now right and realization is
+  the remaining bottleneck: tone exact realization is 0.614, up from 0.583.
+- Concreteness is unchanged: domain-vocabulary comments 0.156 against 0.556,
+  digit-bearing 0.356 against 0.600, 10 distinct model designators against 40.
+- `no end punctuation` 0.044 against 0.244, and no comment uses `!` against a
+  real 0.044. Both are typing habits of the same kind `surface_typography`
+  already measures.
+- `mean_story_probability` 0.080 against a template target of 0.140.
+
+### Paid N=10 result
+
+Tag `generalized_card_camera_gpt54_v97_keyboard_n10_20260819_v1`: 10 threads,
+532 comments, coverage 1.00, 993 requests, `$3.6664`, 55.2 minutes.
+
+**7 of 12 pass, against v96's 6.** Two metrics moved from fail to pass, one
+passing metric regressed to fail, and the three tone rates did not move.
+
+| metric | real | v96 | v97 | v96 MWU | v97 MWU | v96 \|d\| | v97 \|d\| |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| self_bleu_4 | 0.0278 | 0.0375 | **0.0316** | 0.009 | **0.186** | 0.70 | **0.36** |
+| hard_disagree_rate | 0.1208 | 0.2249 | **0.1738** | 0.014 | **0.307** | 0.66 | **0.28** |
+| mean_story_probability | 0.1266 | 0.1064 | 0.1197 | 0.521 | 0.734 | 0.18 | **0.10** |
+| structural_virality | 2.7955 | 2.8732 | 2.8119 | 0.909 | 1.000 | 0.04 | **0.00** |
+| avg_depth | 2.2680 | 2.3726 | 2.2924 | 0.850 | 0.940 | 0.06 | **0.03** |
+| semantic_mean_cosine | 0.2892 | 0.2915 | 0.2900 | 0.970 | 0.910 | 0.02 | 0.04 |
+| self_bertscore_mean_f1 | 0.4942 | 0.5280 | 0.5185 | 0.0002 | 0.0003 | 1.00 | 0.96 |
+| emotion_entropy | 1.5803 | 1.5951 | 1.5085 | 0.678 | 0.326 | 0.12 | 0.27 |
+| length_cv | 0.9468 | 0.8658 | 0.8567 | 0.076 | **0.021** | 0.48 | **0.62** |
+| neutral_rate | 0.1715 | 0.0624 | 0.0805 | 0.007 | 0.017 | 0.72 | 0.64 |
+| polite_rate | 0.3085 | 0.0668 | 0.0850 | 0.006 | 0.010 | 0.74 | 0.69 |
+| impolite_rate | 0.4041 | 0.6797 | 0.6849 | 0.001 | 0.001 | 0.87 | 0.90 |
+
+**The pass count is the wrong headline.** Simulating the evaluator's own
+MWU+KS pair, a metric needs \|Cliff's delta\| at or below 0.10 to have a
+reasonable chance at N=150. By that standard v97 has **4 viable metrics**
+(`structural_virality` 0.00, `avg_depth` 0.03, `semantic_mean_cosine` 0.04,
+`mean_story_probability` 0.10) against v96's 3, and three of the seven that
+"pass" at N=10 — `emotion_entropy`, `hard_disagree_rate`, `self_bleu_4` — will
+not survive 150 threads at their current effect sizes.
+
+**Wins, attributed.**
+
+- `self_bleu_4` fail -> pass, mean gap +0.0095 -> +0.0036. Typography was the
+  measured share of this; the withheld frame is the rest.
+- `hard_disagree_rate` fail -> pass, 0.2249 -> 0.1738 against a real 0.1208.
+  Predicted: every stance probability in both populations sits between 0.20 and
+  0.40, so the label is an argmax over near-ties and a register shift moves the
+  rate a lot.
+- `mean_story_probability` reaches \|d\| 0.10 and `structural_virality` 0.00.
+- `self_bertscore` closed 28% of its gap (+0.0338 -> +0.0243) and remains the
+  worst metric in the set.
+
+**One real regression: `length_cv`, 0.076 -> 0.021, \|d\| 0.48 -> 0.62.**
+Generated CV is below real on 9 of 10 threads, up from 8. The tail fix worked
+and was outweighed by an unintended middle-band inflation:
+
+| matched target | n | v96 ratio | v97 ratio |
+|---|---:|---:|---:|
+| 0-10 w | 59 | 1.40 | 1.39 |
+| 10-25 w | 147 | 1.01 | **1.12** |
+| 25-60 w | 169 | 1.01 | **1.05** |
+| 60-120 w | 109 | 0.86 | **0.94** |
+| 120-250 w | 35 | 0.92 | 0.89 |
+| 250+ w | 13 | **0.61** | **0.78** |
+
+The 250w+ band moved 228.8 -> 316.1 realized words and the longest generated
+comment 386 -> 638 against a real 845, exactly as intended. But 425 of 532 slots
+sit in the 10-120 range, so inflating them by 5-11% compresses the spread more
+than the tail expands it. The 10-25 band gets no layout cue at all, so the cause
+there is one of the two other v97 changes — most likely the opener exclusion,
+which now forbids the short agreement token on 87% of slots and pushes them into
+a longer content opener. This is the same failure v67 recorded when it raised the
+long-slot ratio to 0.99 and lost `length_cv`.
+
+**One regression that is not attributable: `emotion_entropy`, \|d\| 0.12 ->
+0.27.** Five threads rose and five fell. Within every length band v97's realized
+entropy is equal to or higher than v96's, and the planned affect distribution is
+identical between the two versions (21 distinct affects, same counts). The mean
+fell 0.087, and the single 7-comment thread accounts for 0.079 of that on its
+own: with 7 comments the metric ranges from ln(4)=1.386 to ln(7)=1.946 and one
+label swap moves it 0.5. Do not attribute this to a v97 arm, and do not "fix" it.
+
+**Unchanged: the three tone rates.** Placement is now correct — planned polite
+runs monotonically 0.22 / 0.14 / 0.23 / 0.43 / 0.60 / 0.54 across the size bands
+against a measured 0.25 / 0.16 / 0.26 / 0.52 / 0.64 / 0.72 — but realization is
+the bottleneck. Tone exact realization is 0.61, up from 0.58. A slot planned
+polite on a long turn still comes out blunt.
+
+**What the output still does that real text does not**, pooled over 532
+comments: the adjudication frame is in 16.0% of comments against 0.2% real and
+supplies the five most repeated 4-grams (`that's the part that` 17 comments,
+`that s the part` 14, `and that was the` 10, `the part that matters` 8,
+`is the part that` 8); `no end punctuation` 0.041 against 0.173; `has a digit`
+0.299 against 0.562; no comment contains `!` against a real 0.079.
+
+Superseded by v98. See `tasks/v97-worklog.md` for the two further causes measured
+during this run.
+
+---
+
 ## v96 — selective facts and ancestor-aware reply novelty (2026-08-18)
 
 Policy ID: `generalized-card-v2-selective-facts-ancestor-novelty-v96-20260818`.

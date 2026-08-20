@@ -92,6 +92,22 @@ from .surface_contract import (
     reconcile_substantive_task,
     surface_only_label,
 )
+from .comment_structure import set_active_structure_profile, set_long_form_layout
+from .length_calibration import calibrated_word_ask, set_length_calibration
+# Imported as a module, not by value: `set_active_rhythm_profile` rebinds the
+# module global, so a `from ... import ACTIVE_RHYTHM_PROFILE` would capture the
+# empty dict at import time and never see the run's profile. Same failure the
+# tone-length arm hit in v97.
+from . import sentence_rhythm
+from .semantic_realization import set_route_ledger, set_turn_frame
+from .sentence_rhythm import set_active_rhythm_profile, set_sentence_rhythm
+from .story_scope import set_no_story_scope
+from .surface_typography import (
+    apply_final_punctuation_habit,
+    apply_keyboard_typography,
+    set_reddit_typography,
+)
+from .tone_length_fit import set_tone_length_fit
 from .task_distribution import rebalance_card_surfaces, restore_planner_task_contract
 from .writer_quality import (
     annotate_writer_attempts,
@@ -337,6 +353,109 @@ def configure_generator_backend(
         or "on"
     )
     set_social_contract_coherence(module.GENERALIZED_SOCIAL_CONTRACT_COHERENCE)
+    # Keyboard-realistic punctuation. `off` reproduces every version through
+    # v96, which emitted the model's own typographic apostrophes, quotes, em
+    # dashes, and ellipsis on 100% of comments where the domain's excluded real
+    # threads use them on 27%, 22%, 10%, and 16% of the comments that use that
+    # punctuation class at all. The self-BLEU tokenizer splits a typographic
+    # contraction into three tokens and a keyboard one into one, so the arm is
+    # measurable: on the v96 output it moves `self_bleu_4` 0.0373 -> 0.0324
+    # against a real 0.0280. See `surface_typography`.
+    module.GENERALIZED_REDDIT_TYPOGRAPHY = (
+        os.environ.get("GENERALIZED_CARD_REDDIT_TYPOGRAPHY", "on").strip().lower()
+        or "on"
+    )
+    set_reddit_typography(module.GENERALIZED_REDDIT_TYPOGRAPHY)
+    # How a long slot is asked to reach its matched scale. `beats_only`
+    # reproduces v96 and earlier: one thesis developed through up to 40 planned
+    # beats, no layout, and one paragraph at every size. `measured` adds the
+    # paragraph count the domain's excluded threads actually show at that size
+    # and caps the beat request where the Planner still delivers. Long slots
+    # realized 0.60x their matched length under `beats_only`.
+    # See `comment_structure` and `long_form_planning`.
+    module.GENERALIZED_LONG_FORM_LAYOUT = (
+        os.environ.get("GENERALIZED_CARD_LONG_FORM_LAYOUT", "measured").strip().lower()
+        or "measured"
+    )
+    set_long_form_layout(module.GENERALIZED_LONG_FORM_LAYOUT)
+    # Where the template's tone marginal lands. `median` reproduces v96 and
+    # earlier, which ranked slots by distance from each class's median length
+    # and left the longest slots for the label assigned last: the v96 plan put
+    # `impolite` on 100% of slots over 250 words where excluded real comments of
+    # that size are 72% polite. `conditional` fits the measured
+    # P(tone | size band). See `tone_length_fit`.
+    module.GENERALIZED_TONE_LENGTH_FIT = (
+        os.environ.get("GENERALIZED_CARD_TONE_LENGTH_FIT", "conditional")
+        .strip()
+        .lower()
+        or "conditional"
+    )
+    set_tone_length_fit(module.GENERALIZED_TONE_LENGTH_FIT)
+    # Whether every slot is told which question it settles. `universal`
+    # reproduces v96 and earlier, which rendered that line on 532 of 532 slots;
+    # the frame it produces was in 18.4% of v96 comments and effectively absent
+    # from matched real text, and it was worst on the least adjudicative turn
+    # kinds. See `semantic_realization.turn_settles_a_question`.
+    module.GENERALIZED_TURN_FRAME = (
+        os.environ.get("GENERALIZED_CARD_TURN_FRAME", "adjudicative_only")
+        .strip()
+        .lower()
+        or "adjudicative_only"
+    )
+    set_turn_frame(module.GENERALIZED_TURN_FRAME)
+    # Whether each slot is given a drawn typing rhythm. `off` reproduces every
+    # version through v97, which gave the Writer no rhythm instruction, so every
+    # surface cue was a function of the slot's size and two same-size slots were
+    # asked for the same shape. Their function-word cosine came out 0.502 against
+    # a real 0.368, which is where `self_bertscore_mean_f1` lives, and v97 wrote
+    # zero exclamation marks in 532 comments against a real 0.079.
+    # See `sentence_rhythm`.
+    module.GENERALIZED_SENTENCE_RHYTHM = (
+        os.environ.get("GENERALIZED_CARD_SENTENCE_RHYTHM", "measured").strip().lower()
+        or "measured"
+    )
+    set_sentence_rhythm(module.GENERALIZED_SENTENCE_RHYTHM)
+    # Whether the length cue asks for the matched slot's own word count or for
+    # the count that realizes it. `off` reproduces every version through v97,
+    # where realized/target ran 1.42x at the shortest slots and 0.71x at 251-400
+    # words: the mean survived and the spread collapsed, `length_cv` 0.857
+    # against a real 0.947. See `length_calibration`.
+    module.GENERALIZED_LENGTH_CALIBRATION = (
+        os.environ.get("GENERALIZED_CARD_LENGTH_CALIBRATION", "measured")
+        .strip()
+        .lower()
+        or "measured"
+    )
+    set_length_calibration(module.GENERALIZED_LENGTH_CALIBRATION)
+    # Whether a declarative ending is left bare at the band's measured rate.
+    # `off` reproduces every version through v97, which ended 0.959 of comments
+    # in a period against a real 0.808. See `surface_typography`.
+    module.GENERALIZED_FINAL_PUNCTUATION = (
+        os.environ.get("GENERALIZED_CARD_FINAL_PUNCTUATION", "measured")
+        .strip()
+        .lower()
+        or "measured"
+    )
+    # Whether the focused Writer prompt lists the routes this thread has already
+    # reused mid-comment. `off` reproduces every version through v97, where the
+    # ledger reached the `full` arm only while `focused` has been active since
+    # v82. See `semantic_realization.reused_sentence_routes`.
+    module.GENERALIZED_ROUTE_LEDGER = (
+        os.environ.get("GENERALIZED_CARD_ROUTE_LEDGER", "on").strip().lower() or "on"
+    )
+    set_route_ledger(module.GENERALIZED_ROUTE_LEDGER)
+    # What a `no_story` slot is barred from. `tense` reproduces v96 and v97,
+    # which barred any past action or event on 453 of 532 slots and took the
+    # thread's lexicon down to 2,670 distinct types against a real 3,645: past
+    # verbs 0.181 against a real 0.543, future 0.031 against 0.226, `will` at 1%
+    # of its real rate. That narrowing is the whole `self_bertscore_mean_f1`
+    # gap. `sequence` bars the second event and the pacing StorySeeker actually
+    # scores. See `story_scope`.
+    module.GENERALIZED_NO_STORY_SCOPE = (
+        os.environ.get("GENERALIZED_CARD_NO_STORY_SCOPE", "sequence").strip().lower()
+        or "sequence"
+    )
+    set_no_story_scope(module.GENERALIZED_NO_STORY_SCOPE)
     module.GENERALIZED_REPLY_SIBLING_VISIBILITY = (
         os.environ.get("GENERALIZED_CARD_REPLY_SIBLING_VISIBILITY", "on")
         .strip()
@@ -423,6 +542,10 @@ def configure_generator_backend(
     module.GENERALIZED_DOMAIN_PROFILE = load_domain_profile(
         os.environ.get("GENERALIZED_CARD_DOMAIN_PROFILE", "").strip() or None
     )
+    set_active_structure_profile(
+        module.GENERALIZED_DOMAIN_PROFILE.get("structure_profile")
+    )
+    set_active_rhythm_profile(module.GENERALIZED_DOMAIN_PROFILE.get("rhythm_profile"))
     module.CLAIM_FAMILIES = prompts.GENERIC_CLAIM_FAMILIES
     # The core system prompt is pinned in `engine/vocabulary.py` and its own ban
     # ("... or product details unless they are visible in the prompt") is the
@@ -505,6 +628,9 @@ def configure_generator_backend(
                     opener_profile=(module.GENERALIZED_DOMAIN_PROFILE or {}).get(
                         "opener_profile"
                     ),
+                    tone_length_profile=(
+                        module.GENERALIZED_DOMAIN_PROFILE or {}
+                    ).get("tone_length_profile"),
                     template=dict(module.GENERALIZED_ACTIVE_REFERENCE_TEMPLATE or {}),
                     comments=all_comments,
                     total_comments=int(kwargs["target"].target_comments),
@@ -689,12 +815,8 @@ def configure_generator_backend(
         **kwargs,
     )
     module.sanitize_writer_text = _sanitize_writer_text(module)
-    # The shared CARD renderer injects literal "Thanks", "lol", and ellipses
-    # for selected surface labels.  Those fixed strings are not a structural
-    # contract and create artificial n-gram clusters, so generalized Writer
-    # output is left semantically intact after sanitization.
-    module.shape_writer_text_for_task = lambda text, task: original_shape_writer_text(
-        text, replace(task, surface_texture="")
+    module.shape_writer_text_for_task = _writer_surface_shaper(
+        module, original_shape_writer_text
     )
     module.contains_planner_skeleton_residue = _planner_residue_check(
         module,
@@ -1113,6 +1235,38 @@ def _run_generalized_self_test(module: ModuleType, config: DomainConfig) -> None
         )
         > 500
     )
+    # v98's two renderers, asserted on the configured path rather than by calling
+    # them directly, because a definition is not evidence that code executes.
+    if module.GENERALIZED_LENGTH_CALIBRATION != "off":
+        long_slot = replace(task, real_word_count=300)
+        asked = calibrated_word_ask(300)
+        assert asked > 300, asked
+        assert f"roughly {asked} words" in module.build_writer_prompt(
+            profile="gpt54_reddit_writer",
+            seed_post=seed,
+            task=long_slot,
+            parent_comment=None,
+            previous_comments=[],
+        )
+        assert writer_provider_token_budget(long_slot, configured_max=260) > int(
+            asked * 1.7
+        )
+    if module.GENERALIZED_SENTENCE_RHYTHM != "off" and (
+        sentence_rhythm.ACTIVE_RHYTHM_PROFILE.get("available")
+    ):
+        rhythm_prompts = {
+            module.build_writer_prompt(
+                profile="gpt54_reddit_writer",
+                seed_post=seed,
+                task=replace(task, real_word_count=90, local_task_id=index),
+                parent_comment=None,
+                previous_comments=[],
+            )
+            for index in range(1, 13)
+        }
+        assert any("typing rhythm:" in item.lower() for item in rhythm_prompts)
+        # Same size, different habits: this is the mechanism, not a side effect.
+        assert len({_rhythm_line(item) for item in rhythm_prompts}) > 1
     story_task = next(
         (item for item in distribution_tasks if item.story_mode != "no_story"),
         None,
@@ -2673,6 +2827,56 @@ def _matched_text_never_assigns_semantic_frame(text: str) -> bool:
 
     del text
     return False
+
+
+def _rhythm_line(prompt: str) -> str:
+    """Return the rendered typing-rhythm rule from one Writer prompt, if any."""
+
+    for line in prompt.splitlines():
+        if line.lstrip("- ").lower().startswith("typing rhythm:"):
+            return line.strip()
+    return ""
+
+
+def _writer_surface_shaper(module: ModuleType, original_shape: Any):
+    """Strip the legacy fixed-phrase injections, then apply the typing habits.
+
+    The shared CARD renderer injects literal "Thanks", "lol", and ellipses for
+    selected surface labels. Those fixed strings are not a structural contract
+    and create artificial n-gram clusters, so the surface label is cleared
+    before the core renderer sees it.
+
+    Both habit passes run here because this is the one point where sanitized
+    Writer text and its task meet before validation, the thread ledgers, and
+    persistence, so every consumer sees the same characters.
+
+    Terminal punctuation is a transform rather than an instruction because it is
+    the one surface habit where the correct output is fully determined by the
+    text already written: dropping a trailing period cannot change what the turn
+    says. The generative habits are asked for instead; see `sentence_rhythm`.
+    """
+
+    def shape(text: str, task: Any) -> str:
+        shaped = original_shape(text, replace(task, surface_texture=""))
+        profile = getattr(module, "GENERALIZED_DOMAIN_PROFILE", {}) or {}
+        seed_key = str(getattr(module, "GENERALIZED_ACTIVE_SEED_KEY", "") or "")
+        speaker = str(getattr(task, "speaker_id", "") or "").strip()
+        slot = getattr(task, "local_task_id", 0)
+        speaker_key = f"{seed_key}:{speaker or f'slot{slot}'}"
+        shaped = apply_keyboard_typography(
+            shaped,
+            speaker_key=speaker_key,
+            profile=profile.get("typography_profile"),
+        )
+        if str(getattr(module, "GENERALIZED_FINAL_PUNCTUATION", "measured")) == "off":
+            return shaped
+        return apply_final_punctuation_habit(
+            shaped,
+            speaker_key=speaker_key,
+            profile=profile.get("final_punctuation_profile"),
+        )
+
+    return shape
 
 
 def _sanitize_writer_text(module: ModuleType):

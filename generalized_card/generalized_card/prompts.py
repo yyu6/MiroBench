@@ -39,11 +39,15 @@ from .reply_planning import (
 from .semantic_realization import (
     opening_route_counts,
     repeated_phrase_counts,
+    reused_sentence_routes,
     semantic_contract_values,
     semantic_coverage_entries,
     short_utterance_exclusions,
+    turn_settles_a_question,
     used_sentence_routes,
 )
+from .sentence_rhythm import active_rhythm_guidance
+from .story_scope import no_story_instruction
 from .surface_contract import substantive_surface_slot, surface_only_label
 from .viewpoint_bank import (
     reference_viewpoint_window,
@@ -203,10 +207,39 @@ def _opener_rule(assigned: str) -> str:
     instruction = OPENER_INSTRUCTIONS.get(name)
     if not instruction:
         return ""
+    # The schedule is realized 47% of the time and the drift has one direction:
+    # v96 opened 20.7% of comments with a bare polarity token against 6.8% of
+    # matched real comments and 5.3% scheduled. Naming that one default is
+    # narrower than a general style rule and is what the measurement supports.
+    exclusion = (
+        ""
+        if name == "polarity_token"
+        else " Do not open with a bare agreement or disagreement token."
+    )
     return (
-        f"Opening grammar for this turn: {name}. {instruction} "
+        f"Opening grammar for this turn: {name}. {instruction}{exclusion} "
         "This is the entry form, not the content; the content is the semantic "
         "route above."
+    )
+
+
+_SKELETON_SENTENCE_COUNT = re.compile(r"(\d+)-sentence|about (\d+) sentences")
+
+
+def _rhythm_rule(backend: Any, task: Any) -> str:
+    """Render this slot's drawn typing rhythm.
+
+    Keyed on the run's seed and the slot index so the draw is reproducible and
+    so two slots of the same size get different habits. That difference is the
+    mechanism: see `sentence_rhythm`.
+    """
+
+    seed_key = str(getattr(backend, "GENERALIZED_ACTIVE_SEED_KEY", "") or "")
+    skeleton = str(getattr(task, "surface_skeleton", "") or "")
+    return active_rhythm_guidance(
+        slot_key=f"{seed_key}:{_safe_slot_index(task)}",
+        word_count=getattr(task, "real_word_count", 0),
+        slot_names_sentence_count=bool(_SKELETON_SENTENCE_COUNT.search(skeleton)),
     )
 
 
@@ -1046,12 +1079,7 @@ def writer_prompt(
         str(getattr(backend, "GENERALIZED_SOCIAL_CONTRACT_COHERENCE", "on")) != "off"
         and str(getattr(task, "story_mode", "") or "") == "no_story"
     ):
-        story_instruction = (
-            "Do not narrate a sequence of events or repeated attempts. A "
-            "first-person slot may state current ownership, preference, or one "
-            "present-state observation, but no past action, event, before/after "
-            "change, or then/after pacing."
-        )
+        story_instruction = no_story_instruction()
     story_rule = _optional_control_rule(
         "Story realization",
         getattr(task, "story_mode", ""),
@@ -1079,6 +1107,7 @@ def writer_prompt(
         getattr(task, "surface_instruction", ""),
         "Use only the shape, never reference wording.",
     )
+    rhythm_rule = _rhythm_rule(backend, task)
     hard_shape_rule = ""
     if backend.is_hard_real_surface_shape(getattr(task, "real_surface_shape", "")):
         hard_shape_rule = _real_surface_shape_guidance(task.real_surface_shape)
@@ -1108,6 +1137,7 @@ def writer_prompt(
             _tone_shape_guidance(backend.resolved_tone_shape(task), task=task),
             hard_shape_rule,
             surface_rule,
+            rhythm_rule,
             tone_slot_rule,
             tone_target_rule,
             story_rule,
@@ -1150,6 +1180,7 @@ def writer_prompt(
             story_rule=story_rule,
             affect_rule=affect_rule,
             surface_rule=surface_rule,
+            rhythm_rule=rhythm_rule,
         )
 
     if low_info_writer:
@@ -1314,9 +1345,31 @@ def _focused_thread_ledger(
         if coverage
         else "- none yet"
     )
+    # Openings and short lines say nothing about a phrase reused in the middle of
+    # a comment. `used_sentence_routes` is frequency-ranked and already bounded,
+    # and the `full` arm has rendered it since v66, but `focused` has been the
+    # active arm since v82 and never received it. Measured over the v97 N=10
+    # output, the adjudication frame persists at 0.144 on slots that never see
+    # the boundary line at all, and a late slot in the 91-comment thread was
+    # shown 24 openings and 21 short lines and nothing about the route seven of
+    # its predecessors had already taken.
+    route_limit = 8 if _short_output_slot(current_task) else 16
+    routes = [
+        value
+        for value in reused_sentence_routes(usable, limit=route_limit)
+        if " ".join(value.split()).casefold() not in opening_keys
+    ]
+    route_block = (
+        "Sentence routes already reused in this thread, so take a different one:\n"
+        + "\n".join(f"- {backend.compact(value, 90)}" for value in routes)
+        + "\n"
+        if routes
+        else ""
+    )
     return (
         "Short utterances already used anywhere in this thread:\n"
         f"{short_block}\n"
+        f"{route_block}"
         "Semantic contributions already covered in this thread:\n"
         f"{coverage_block}\n"
     )
@@ -1400,6 +1453,7 @@ def _focused_writer_prompt(
     story_rule: str,
     affect_rule: str,
     surface_rule: str,
+    rhythm_rule: str,
 ) -> str:
     """Render the minimum complete Planner and grounding contract.
 
@@ -1420,6 +1474,7 @@ def _focused_writer_prompt(
       affect role                      preserve emotional variation
       story mode                      preserve narrative evidence structure
       opener grammar                   vary clause-entry routes
+      typing rhythm                    vary the sentence skeleton per slot
       anchors, equipment, entity rule  preserve factual grounding
       compressed thread ledger         avoid covered points and short repeats
 
@@ -1447,6 +1502,7 @@ def _focused_writer_prompt(
             affect_rule,
             story_rule,
             surface_rule,
+            rhythm_rule,
             domain_claim_rule,
             _substitution_rule(task).lstrip("- ").strip(),
             _story_fact_safety_rule(
@@ -1946,7 +2002,7 @@ def _semantic_route_lock(
             "- The point this comment makes, in your own words: "
             + backend.compact(move, 260),
         ]
-    if boundary:
+    if boundary and turn_settles_a_question(task):
         rows.append(
             "- The question your turn settles: " + backend.compact(boundary, 240)
         )

@@ -12,9 +12,16 @@ import math
 from collections import Counter
 from typing import Any
 
-from .generation_distribution import AFFECT_INSTRUCTIONS, template_tone_rates
+from .generation_distribution import (
+    AFFECT_INSTRUCTIONS,
+    TONE_CLASSES,
+    template_tone_rates,
+)
 from .opener_profile import opener_cost, scaled_opener_counts
 from .surface_contract import surface_only_label
+# Imported as a module, not by value: the arm is selected at run configuration
+# time and `TONE_LENGTH_FIT_ENABLED` has to be read when the schedule is built.
+from . import tone_length_fit
 
 
 def template_distribution_targets(
@@ -53,6 +60,7 @@ def build_slot_distribution_schedule(
     comments: list[dict[str, Any]],
     total_comments: int,
     opener_profile: dict[str, Any] | None = None,
+    tone_length_profile: dict[str, Any] | None = None,
 ) -> dict[str, Any]:
     """Assign aggregate template labels to anonymous, compatible slot forms.
 
@@ -73,10 +81,10 @@ def build_slot_distribution_schedule(
         assignments.setdefault(sample_id, {})["story_mode"] = _story_mode_for_slot(
             _slot_by_id(slots, sample_id), ordinal
         )
-    tone, tone_unassigned = _assign_labels(
+    tone, tone_unassigned = _assign_tone(
         slots,
         Counter(targets["tone_counts"]),
-        compatibility=_tone_cost,
+        tone_length_profile=tone_length_profile,
     )
     # Tone and affect were previously optimized independently over the same
     # slots, so a warm slot could be handed disapproval or annoyance. A plan
@@ -143,6 +151,11 @@ def build_slot_distribution_schedule(
         "unassigned_tone_labels": tone_unassigned,
         "unassigned_affect_labels": affect_unassigned,
         "unassigned_opener_types": opener_unassigned,
+        # The realized (size band, tone) table. The template owns the marginal;
+        # this records whether the joint came out where the measurement says it
+        # should, which is the failure v96 had with a correct marginal.
+        "tone_length_joint": tone_length_fit.realized_joint(slots, tone),
+        "tone_length_fit": _tone_fit_mode(tone_length_profile),
     }
 
 
@@ -417,6 +430,45 @@ TONE_TYPICAL_WORDS = {
     "impolite": 27,
 }
 _MICRO_SURFACES = {"micro", "short_question"}
+
+
+def _tone_fit_mode(tone_length_profile: dict[str, Any] | None) -> str:
+    """Name the tone-placement path this schedule actually took."""
+
+    if not tone_length_fit.TONE_LENGTH_FIT_ENABLED:
+        return "median"
+    if not (tone_length_profile or {}).get("available"):
+        return "median_no_profile"
+    return "conditional"
+
+
+def _assign_tone(
+    slots: list[dict[str, Any]],
+    counts: Counter[str],
+    *,
+    tone_length_profile: dict[str, Any] | None,
+) -> tuple[dict[int, str], list[str]]:
+    """Place the template's tone counts on slots.
+
+    The default fits the measured P(tone | size band) conditional; `median`
+    reproduces the pre-v97 median-length ranking. See `tone_length_fit`.
+
+    A domain profile without the measured conditional falls back to the median
+    ranking rather than to the fit's uniform prior. Uniform shares would remove
+    the length dependence altogether, which is worse than the heuristic it
+    replaces: the point of the fit is the dependence, not the mechanism.
+    """
+
+    if tone_length_fit.TONE_LENGTH_FIT_ENABLED and (
+        tone_length_profile or {}
+    ).get("available"):
+        return tone_length_fit.fit_tone_labels(
+            slots,
+            counts,
+            profile=tone_length_profile,
+            tone_classes=TONE_CLASSES,
+        )
+    return _assign_labels(slots, counts, compatibility=_tone_cost)
 
 
 def _tone_cost(label: str, slot: dict[str, Any]) -> tuple[int, int, int]:

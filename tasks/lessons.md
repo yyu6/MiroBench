@@ -1,5 +1,264 @@
 # Lessons
 
+## 2026-08-20 — A pinned hash is not provenance if the source was never committed
+
+**What happened.** The project has four traceability mechanisms and I had been
+treating them as redundant: `run_config.json` records every arm and the domain
+profile's SHA-256; `core_contract.py` pins the SHA-256 of all 101 active source
+files and refuses to run on drift; `HISTORICAL_GENERATION_POLICY_VERSIONS`
+records every released policy string; and git holds the tree.
+
+Checked, rather than assumed:
+
+```
+HEAD = a34abc6  -> core_contract.py at HEAD names v96 as current
+git log -- generalized_card/generalized_card/sentence_rhythm.py   -> empty
+git log -- generalized_card/generalized_card/length_calibration.py -> empty
+```
+
+**v97 and v98 existed only in the working tree.** Two shipped versions, one of
+them the source of the N=10 result being quoted as the project's current state,
+with no recoverable source tree. The run directory holds `generated/`, `logs/`
+and `run_config.json` — no source snapshot. And
+`HISTORICAL_GENERATION_POLICY_VERSIONS` stores version *strings* with no
+per-version file hashes, so it can identify an old artifact but cannot
+reconstruct the code that made it.
+
+The three non-git mechanisms all describe the tree. Only git *is* the tree.
+Pinning a hash proves the file has not changed since you pinned it; it does not
+store the file. They looked redundant because each one felt like provenance.
+
+Two versions also cannot be separated after the fact — the working tree
+interleaved v97 and v98 edits, so v97's standalone tree is unrecoverable and the
+two share one commit boundary.
+
+**Why:** the checks that felt like traceability were all integrity checks
+(has this drifted?) rather than storage (can I get it back?). And the one that
+was storage was the one nobody ran.
+
+**How to apply.**
+- **Commit at every version boundary, before the paid run, not after.** The
+  commit is what makes `run_config.json`'s policy string mean something.
+- When asked whether something is traceable, run `git log -- <the new file>`.
+  Do not reason from the presence of a hash table.
+- Any mechanism that answers "has this changed?" is not an answer to "can this
+  be recovered?" Keep the two questions separate.
+
+## 2026-08-20 — An archive that grows by addendum stops being readable as a spec
+
+**What happened.** `tasks/HANDOFF.md` had become the project's entry point at
+1,350 lines and 72 KB. It grows newest-addendum-first, so a reader hits nineteen
+dated addenda before reaching `# 1. THE GOAL` at line 510 — and that numbered
+body still described v79-era state, quoted a test count from v81, and carried a
+`self_bertscore` conclusion in §13 that had since been measured and rejected.
+Everything needed to onboard was in the file; none of it was findable, and some
+of it was wrong.
+
+**Why:** an append-only evidence log and a current-state spec have opposite
+maintenance rules. The log must never be rewritten, or the evidence trail
+breaks. The spec must always be rewritten, or it lies. One file cannot do both,
+and when it tries, the newest content wins the top of the file while the stalest
+content keeps the authoritative-sounding headings.
+
+**How to apply.**
+- `docs/ORIENTATION.md` is the spec: goal, judging standard, metric
+  interpretation, method, current state, discipline. It is **rewritten in
+  place** every time one of those changes, and it carries a "last verified" date
+  plus the list of checks behind it.
+- `tasks/HANDOFF.md` and `tasks/v<N>-worklog.md` stay append-only evidence.
+- When a spec claim is retracted, record the retraction **in the spec**, next to
+  the claim it replaces — not only in the new worklog. Three retractions now sit
+  in `ORIENTATION.md` §6 for exactly this reason.
+
+## 2026-08-19 — At N=150 the target is an effect size, and "all 12 pass" is a coin flip
+
+**What happened.** The stated goal is 12 metrics at p>0.05 over 150 threads, and
+progress had been tracked as "metrics passing at N=10". Simulating the actual
+pair of tests the evaluator runs (MWU and KS, both required, alpha 0.05) over
+normal populations at a known Cliff's delta:
+
+| true \|d\| | pass at N=10 | pass at N=50 | pass at N=150 |
+|---:|---:|---:|---:|
+| 0.00 | 0.95 | 0.94 | 0.94 |
+| 0.10 | 0.94 | 0.84 | 0.72 |
+| 0.15 | 0.93 | 0.70 | 0.37 |
+| 0.20 | 0.88 | 0.56 | 0.14 |
+| 0.25 | 0.87 | 0.38 | 0.04 |
+| 0.50 | 0.48 | 0.01 | 0.00 |
+
+Two consequences.
+
+**The N=10 pass count is a weak signal.** A metric at \|d\|=0.25 passes 87% of
+the time at N=10 and 4% at N=150. Of v96's six passing metrics, only three
+(`semantic_mean_cosine` 0.02, `structural_virality` 0.04, `avg_depth` 0.06) are
+safe at 150. `emotion_entropy` at 0.12 is a coin flip and
+`mean_story_probability` at 0.18 is 18%, despite its p of 0.521.
+
+**Twelve metrics times two tests is its own problem.** Even with a *perfect*
+generator at \|d\|=0, each metric passes both tests 94% of the time, so all
+twelve pass together with probability 0.94^12 = **0.52**. At \|d\|=0.05 it is
+0.18. The stated goal is therefore at best a coin flip against a flawless
+generator, and one or two metrics failing in any given run is expected rather
+than diagnostic.
+
+**How to apply.**
+- Track \|Cliff's delta\| per metric, with 0.10 as the working ceiling. Use the
+  p-value to report, not to steer.
+- Do not read a single metric's failure at N=150 as a regression without
+  checking its effect size against the previous version.
+- Raise the multiplicity issue with the user before the final run so the
+  reporting standard is decided in advance rather than after seeing which
+  metrics failed.
+
+## 2026-08-19 — Check the probe's word list before believing the gap it reports
+
+**What happened.** The matched content audit reported "has domain vocabulary"
+at 0.156 generated against 0.556 real on the v97 seed-2 thread, and the same
+diagnostic had helped motivate concreteness work in v91 and v96. Counting what
+the generated thread actually names: `rx100` 12 times, `x100f` 9, `gr iiix` 9,
+`af` 7, `ricoh` 3, plus `autofocus`, `aps-c`, `low light`, `sony`, `canon`.
+
+The probe is `config.technical_terms + config.protected_entity_terms`, and
+`Ricoh` is **not in `protected_entity_terms`** even though it is the brand of one
+of the three cameras named in the seed post, and no model designator is in either
+list. So the probe counts 7 of 45 comments where the thread is in fact dense with
+domain-specific names. The audit labels these "weak surface probes... never
+semantic ground truth", and this is what that warning is for.
+
+The gaps in the same table that do not depend on a hand-written list —
+`has a digit` 0.356 against 0.600, and 10 distinct model designators against 40 —
+are the real signal, and they say something different: the generated thread stays
+on the products in the seed while real commenters keep bringing in other bodies.
+
+**How to apply.** Before treating a diagnostic gap as a target, read the
+predicate that produced it and count the same property a second way. If the probe
+is a keyword list, print what the text actually contains and check the list
+covers it. Prefer the list-free version of the same measurement when one exists.
+
+## 2026-08-19 — A hash-pinned core makes editing during a run an outage
+
+**What happened.** With a `--posts-per-run 5 --max-posts 10` run in flight, I
+started building the next change and edited three pinned core files. The run
+spawns one `run_generator_backend.py` subprocess per batch, and
+`load_generator_backend` calls `verify_core_contract`, which **raises** on any
+hash mismatch. The first batch had already been paid for; the second batch would
+have aborted on a core-contract error before its first API call.
+
+Re-pinning would have been worse than the crash: the second batch would then have
+run on different source from the first, inside one run tag, which is exactly the
+policy mixing `RUN_INDEX` and `run_config.json` exist to prevent. The fix was to
+save the new work aside and restore the three files to the state the run started
+from, then confirm `repin_core_contract.py` reported zero drift.
+
+**How to apply.** While a multi-batch run is in flight, treat every file in
+`CORE_FILES` as frozen. Develop the next version in a scratch copy or a worktree
+and apply it after the run finishes. If a core file has already been touched,
+restore it rather than re-pinning: a run whose batches used different source is
+not a run, and the cost of discarding the edit is far below the cost of an
+unattributable result.
+
+## 2026-08-19 — A tokenizer is part of the metric, so typography is content
+
+**What happened.** `self_bertscore` and `self_bleu_4` had been treated as content
+problems for six releases. One character count over the v96 output answered a
+large part of both in a minute: **zero of 532 generated comments contained an
+ASCII apostrophe** and 389 contained a typographic one, while the domain's
+evaluation-excluded real comments use the typographic form in 27% of the comments
+that use an apostrophe at all. `score_thread_self_bleu.TOKEN_PATTERN` reads
+`it's` as one token and `it’s` as three, so every generated contraction
+contributed a `<word> ’ s` trigram shared across the whole thread that no real
+comment produces. Em dashes appeared 187 times against 3 in the matched real
+text.
+
+Replaying the same text through a per-speaker keyboard draw, scored with the real
+scorer, moved `self_bleu_4` MWU p from 0.009 to 0.273 and KS from 0.052 to 0.787.
+No content changed at all.
+
+**How to apply.** Read the metric's tokenizer, not just its aggregation. Then
+count, in the generated text, every surface class that tokenizer treats as a
+distinct token: punctuation form, casing, whitespace, markup. A model's default
+typography is a systematic thread-wide signal, and a systematic signal is exactly
+what a pairwise self-similarity metric measures. Diff the character inventory of
+generated against real output before theorising about meaning.
+
+## 2026-08-19 — Matching a marginal can hide a joint that is exactly backwards
+
+**What happened.** `polite_rate` failed at p=0.006 with a **correct target**: the
+Planner's polite share was 0.311 against a real 0.308. The failure was where the
+labels landed. `_tone_cost` ranked candidate slots by distance from each tone
+class's median length, which put `impolite` on 74% of 120-250 word slots and 100%
+of slots over 250 words. In the same domain's excluded threads, comments over 250
+words are 72% polite and 23% impolite. The realized output followed the plan: 87%
+impolite and 9% polite above 120 words against a real 27% and 71%.
+
+Three tone metrics were failing on one placement rule, and no amount of work on
+the marginal could have found it.
+
+**A second error inside the fix.** The first implementation costed every
+(slot, label) pair at `-log P(label | band)` and consumed pairs in ascending
+cost. That maximizes total likelihood, which drives an assignment problem to a
+corner: it produced 100% polite in the top band against a measured 72% and 98%
+impolite in the `short` band against a measured 48%. Fitting a conditional
+subject to two fixed margins is iterative proportional fitting, not min-cost
+assignment. A cost function that "prefers" the right direction is not the same
+statement as reproducing a measured distribution.
+
+**How to apply.**
+- When a metric fails and its target is right, print the realized joint against
+  the measurement, per band. `tone_length_joint` is now in every schedule for
+  exactly this reason.
+- Before writing a placement heuristic, write down which distribution it is
+  supposed to reproduce and check that the algorithm reproduces *that*.
+- A hard compatibility rule written from intuition ("a warm turn cannot be a
+  micro reaction") is a hypothesis. 25.1% of real comments under ten words are
+  labelled polite, because a short thank-you is one.
+
+## 2026-08-19 — An unreachable request is not a stronger request
+
+**What happened.** Long slots realized 0.61x their matched length, and the
+845-word slot 0.32x. Two earlier releases raised the beat budget for exactly this
+symptom, ending at one beat per 21 words with a ceiling of 40, which asked that
+slot for 40 connected beats on one thesis.
+
+The Planner does not supply beats above about nine however many are asked for.
+Measured over the v96 slots that carried a beat plan: asked ~6 it returned 5.2
+and the slot realized 0.95x; asked ~9, 8.1 and 0.91x; asked ~12, 8.3 and 0.74x;
+asked 14-40, 9.5 and 0.60x. The largest plan any slot received in the whole run
+was 26. Raising the ceiling past the saturation point bought nothing and
+generated plan-repair traffic that could not succeed.
+
+The shape being asked for did not exist either. Real long comments are not one
+thesis: median paragraph count rises to 6 in the top size band with a p90 of 14,
+and words per paragraph is nearly flat inside a band while the paragraph count
+scales with length. v96 output had a blank line in 3.4% of comments against 33.8%
+of real ones.
+
+**How to apply.** When a control does not produce its effect, measure what the
+model returns when the control is dialled up, not only what the output does. If
+the response saturates, the control is at its ceiling and the remaining gap needs
+a different mechanism. And check the target shape exists in the reference data
+before asking for more of it.
+
+## 2026-08-19 — A frame reworded three times needed to be withheld once
+
+**What happened.** "The question your turn settles: ..." rendered on 532 of 532
+v96 Writer prompts, and the "that's the part that actually matters" family it
+produces was in 18.4% of comments against effectively zero in 30,643 tokens of
+matched real text. v73 reworded the line, v74 rebuilt the prompt around it, v75
+added a route lock. Every release kept rendering it on every slot.
+
+Broken out by planned function, the frame was worst where it least belongs:
+personal_datapoint 29.1% and reaction 19.0%, against question_followup 8.1% and
+verdict_evaluation 12.3%. A slot told to report an experience *and* told which
+question it settles converts the experience into an adjudication. The variable
+nobody had varied was whether the slot gets the line at all.
+
+**How to apply.** If a prompt artifact survives two rewordings, stop rewording
+and check the population it is rendered to. Break the artifact rate down by the
+control that selects the slot; if it is highest where the instruction is least
+appropriate, the instruction is being imposed rather than followed, and the fix
+is a gate, not better wording.
+
 ## 2026-08-18 — A distribution target is not a terminal per-slot truth
 
 **What happened.** A direct reply planned a coherent gratitude close. The
@@ -617,3 +876,70 @@ Local pairwise novelty was true while branch-level semantic novelty was false.
 exclusion ledger. Reusing the entity is allowed, but the new fact, test,
 condition, consequence, or decision boundary must differ from every ancestor,
 not only from the immediately preceding sentence.
+
+## 2026-08-19 — v98
+
+### Measure the causal claim on real data before you build the fix, not after
+
+`sentence_rhythm` was fully written, tested, wired, pinned, and self-tested
+before a falsification test was run on the hypothesis that produced it. The test
+took four minutes and rejected the claim: real comments that differ in the
+measured typing habits are only 0.003-0.011 lower in function-word cosine than
+ones that share them, against a generated-vs-real gap of 0.134, and real
+comments with *uneven* sentence lengths are slightly **more** alike, not less.
+
+The module was still worth keeping for the metrics it does move, so nothing was
+wasted, but that was luck. The rule: when the mechanism is "X causes metric M",
+the reference corpus can usually answer whether X and M covary **before** any
+code is written. Do that first.
+
+### A gap that survives trimming is a distribution shift, not a tail
+
+Reading the six highest-BERTScore generated pairs made the cause look obvious --
+two comments making the same argument in different words. Trimming said
+otherwise: the gap is +0.0163 untrimmed and +0.0154 after dropping the top 20%
+of pairs on both sides. It was uniform.
+
+Reading the highest-scoring **real** pairs is what explained the asymmetry: real
+threads reach F1 > 0.74 through shared image URLs, not shared content. Always
+read the control's extremes, not only the treatment's.
+
+### A prohibition can be wider than the thing it protects
+
+v96's `no_story` instruction banned "past action, event, before/after change" to
+stop narrative. StorySeeker scores narrative *sequence*. The ban removed tense
+from 85% of a thread: `have` at 11% of its real rate, `will` at 1%, and a
+lexicon of 2,670 distinct types against a real 3,645. That single instruction is
+the whole `self_bertscore_mean_f1` gap.
+
+Before writing a prohibition, name what the metric actually keys on and bar that,
+not the nearest larger category.
+
+### Grep the rendered prompts for pairs of rules that contradict each other
+
+`writer_grounding` exists because the fact ban was written in eight places that
+disagreed. It happened again: 247 of 532 v97 prompts (46.4%) carried both "Be
+particular rather than general" and "no past action, event". The prompts are
+stored verbatim in `generation_records.json[].prompt`, so this check costs
+nothing and should run every version.
+
+### `from .module import CONSTANT` breaks every arm switch
+
+Third time. `backend.py` imported `ACTIVE_RHYTHM_PROFILE` by value, which would
+have frozen the empty dict at import time. Cross-module mutable state is always
+`from . import module` and read as `module.NAME` at call time. The v97 lesson
+said the same thing about `TONE_LENGTH_FIT_ENABLED`.
+
+### A test that installs state before `configure_generator_backend` is testing nothing
+
+`configure_generator_backend` reinstalls every profile from
+`GENERALIZED_DOMAIN_PROFILE` and re-reads every arm from `os.environ` on each
+call. State set before it is silently replaced. Fixtures must take the state as
+a parameter and install it after configuration; arms must go through
+`mock.patch.dict(os.environ, ...)`.
+
+### Pinned sources must be `git add`ed before `repin_core_contract.py --write`
+
+The script refuses to pin an untracked file ("active sources must be recoverable
+from git") and exits 2 without writing anything -- including the entries that
+were not blocked. Add the new files first, then re-pin once.

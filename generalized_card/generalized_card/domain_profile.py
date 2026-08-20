@@ -6,16 +6,37 @@ import re
 from pathlib import Path
 from typing import Any
 
+from .comment_structure import build_structure_profile
 from .data import load_real_thread_bank
 from .domain import DomainConfig
 from .entity_inventory import build_entity_inventory
 from .lexical_quality import build_lexical_calibration
 from .opener_profile import build_opener_profile
 from .planning_quality import universal_viewpoints
+from .generation_distribution import TONE_CLASSES
 from .reference_metric_calibration import build_reference_metric_calibration
+from .sentence_rhythm import build_rhythm_profile
+from .surface_typography import (
+    build_final_punctuation_profile,
+    build_typography_profile,
+)
+from .tone_length_fit import build_tone_length_profile
 from .viewpoint_bank import build_reference_viewpoints
 
 
+# 15: adds the measured per-band sentence rhythm and typing habits, drawn per
+# slot, and the measured share of declarative endings left with no final
+# punctuation. Two generated comments of the same size shared a function-word
+# skeleton at cosine 0.502 against a real 0.368, which is where
+# `self_bertscore_mean_f1` lives.
+# 14: adds the measured P(tone class | comment size band) conditional, so the
+# template's tone marginal is placed on the slot sizes that carry it in real
+# threads instead of on the slots nearest each class's median length.
+# 13: adds the measured per-size-band paragraph, list, and quoted-excerpt
+# layout, so a long slot is asked for the shape a long comment actually has.
+# 12: adds the measured typographic/keyboard punctuation share per class, drawn
+# once per speaker so generated text carries a keyboard's punctuation instead of
+# a language model's.
 # 9: reference metric templates carry the classifier's measured
 # somewhat_polite_rate, so a tone contract is a complete partition.
 # 11: adds measured grammatical opener-type shares, scheduled per slot.
@@ -23,7 +44,7 @@ from .viewpoint_bank import build_reference_viewpoints
 # comment's entities to the seed post made one generated thread reuse 23
 # distinct models where the matched real thread used 117, which is a large
 # share of the remaining self-BLEU gap.
-PROFILE_SCHEMA_VERSION = 11
+PROFILE_SCHEMA_VERSION = 15
 CARD_CONTEXT_DROPOUT_RATE = 0.42
 CARD_CONTEXT_JITTER_RATE = 0.32
 CARD_GENERATION_CONTROLS = {
@@ -118,6 +139,15 @@ def build_domain_profile(
         "lexical_quality": lexical_quality,
         "reference_metric_calibration": reference_metrics,
         "opener_profile": build_opener_profile(reference_threads),
+        "typography_profile": build_typography_profile(reference_threads),
+        "final_punctuation_profile": build_final_punctuation_profile(reference_threads),
+        "structure_profile": build_structure_profile(reference_threads),
+        "rhythm_profile": build_rhythm_profile(reference_threads),
+        "tone_length_profile": build_tone_length_profile(
+            config.raw_discussions_dir,
+            reference_thread_ids=unique,
+            tone_classes=TONE_CLASSES,
+        ),
         "entity_inventory": build_entity_inventory(
             reference_threads,
             brand_terms=config.protected_entity_terms,

@@ -59,6 +59,7 @@ from generalized_card.semantic_realization import (  # noqa: E402
     repeated_phrase_counts,
     semantic_contract_values,
     semantic_coverage_entries,
+    set_turn_frame,
     used_sentence_routes,
 )
 from generalized_card.task_distribution import restore_planner_task_contract  # noqa: E402
@@ -605,15 +606,41 @@ class StoryAffectDistributionTest(unittest.TestCase):
 
 
 class LexicalQualityTest(unittest.TestCase):
-    def test_decision_boundary_survives_writer_semantic_memory(self) -> None:
-        task = Task(
+    def test_decision_boundary_reaches_only_an_adjudicating_turn(self) -> None:
+        # The boundary must still survive into the Writer contract for the turns
+        # that are an adjudication, and must not be rendered for the ones that
+        # are not: the frame it produces was in 18.4% of v96 comments and was
+        # worst on personal-datapoint and reaction slots.
+        boundary = "whether the one-off use justifies buying instead of renting"
+        adjudicating = Task(
             local_task_id=1,
-            decision_boundary="whether the one-off use justifies buying instead of renting",
+            decision_boundary=boundary,
+            comment_function="correction_caveat",
+            payload_type="correction",
         )
         self.assertIn(
-            ("decision boundary", task.decision_boundary),
-            semantic_contract_values(task),
+            ("decision boundary", boundary),
+            semantic_contract_values(adjudicating),
         )
+        reporting = Task(
+            local_task_id=1,
+            decision_boundary=boundary,
+            comment_function="personal_datapoint",
+            payload_type="personal_story",
+        )
+        self.assertNotIn(
+            ("decision boundary", boundary),
+            semantic_contract_values(reporting),
+        )
+        set_turn_frame("universal")
+        try:
+            self.assertIn(
+                ("decision boundary", boundary),
+                semantic_contract_values(reporting),
+            )
+        finally:
+            set_turn_frame("adjudicative_only")
+        task = adjudicating
         coverage = semantic_coverage_entries(
             [{"semantic_move": "reduce commitment", "decision_boundary": task.decision_boundary}]
         )

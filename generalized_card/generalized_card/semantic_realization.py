@@ -32,6 +32,48 @@ SEMANTIC_CONTRACT_FIELDS = (
     ("explicitly avoid", "avoid_repeating"),
 )
 
+# Which planned turn kinds actually settle a question.
+#
+# The Writer prompt rendered "The question your turn settles: ..." on 532 of 532
+# v96 slots. That frame is the documented source of the "that's the part that
+# actually matters" family, which survived a rewording (v73), a prompt rebuild
+# (v74), and a route lock (v75) and was still in 18.4% of v96 comments against
+# effectively zero in 39,265 tokens of matched real text.
+#
+# Measured per planned function, the frame surfaces where it least belongs:
+# personal_datapoint 29.1%, explanation_analysis 23.1%, reaction 19.0%,
+# correction_caveat 16.0%, verdict_evaluation 12.3%, recommendation_advice
+# 11.8%, question_followup 8.1%. A slot told to report an experience and also
+# told which question it settles converts the experience into an adjudication.
+# So the boundary is rendered only for the kinds of turn that are an
+# adjudication, and never for a slot carrying a story.
+ADJUDICATIVE_FUNCTIONS = frozenset(
+    {
+        "correction_caveat",
+        "verdict_evaluation",
+        "recommendation_advice",
+    }
+)
+NON_ADJUDICATIVE_PAYLOADS = frozenset(
+    {
+        "fragment_datapoint",
+        "joke",
+        "low_info_reaction",
+        "meta_or_template",
+        "narrow_question",
+        "personal_story",
+        "side_tangent",
+    }
+)
+DECISION_BOUNDARY_FIELDS = ("decision boundary", "owned decision subject")
+# `universal` reproduces v96 and earlier, which rendered the boundary on every
+# slot.
+TURN_FRAME_ADJUDICATIVE_ONLY = True
+# `off` reproduces every version through v97, where the reused mid-comment route
+# ledger reached the `full` Writer arm only and `focused` -- active since v82 --
+# saw openings and short lines but nothing about a phrase reused mid-comment.
+ROUTE_LEDGER_ENABLED = True
+
 TOKEN_RE = re.compile(r"[a-z0-9]+(?:'[a-z]+)?", re.I)
 NON_SEMANTIC_DEFAULTS = frozenset(
     {
@@ -45,11 +87,72 @@ NON_SEMANTIC_DEFAULTS = frozenset(
 )
 
 
+def set_turn_frame(mode: str) -> bool:
+    """Select the adjudication-frame arm and return whether gating is active."""
+
+    global TURN_FRAME_ADJUDICATIVE_ONLY
+    TURN_FRAME_ADJUDICATIVE_ONLY = (
+        str(mode or "adjudicative_only").strip().lower() != "universal"
+    )
+    return TURN_FRAME_ADJUDICATIVE_ONLY
+
+
+def set_route_ledger(mode: str) -> bool:
+    """Select the reused-route ledger arm and return whether it is active."""
+
+    global ROUTE_LEDGER_ENABLED
+    ROUTE_LEDGER_ENABLED = str(mode or "on").strip().lower() != "off"
+    return ROUTE_LEDGER_ENABLED
+
+
+def reused_sentence_routes(
+    comments: Iterable[dict[str, Any]],
+    *,
+    limit: int = 16,
+) -> list[str]:
+    """Return only the routes this thread has actually taken more than once.
+
+    `used_sentence_routes` pads its list with single-use routes so the `full`
+    arm's ledger has a fixed size. A ledger headed "already reused" must not
+    carry them: on an early slot the padding is every route the thread has used
+    once, which is a list of ordinary phrasing rather than a list of habits.
+    """
+
+    if not ROUTE_LEDGER_ENABLED:
+        return []
+    return [
+        value
+        for value in used_sentence_routes(comments, limit=limit)
+        if "(used " in value
+    ]
+
+
+def turn_settles_a_question(task: Any) -> bool:
+    """Return whether this planned turn is an adjudication of a question.
+
+    Both Writer paths call this, so the frame cannot survive on one of them.
+    """
+
+    if not TURN_FRAME_ADJUDICATIVE_ONLY:
+        return True
+    story = str(getattr(task, "story_mode", "") or "no_story").strip().lower()
+    if story and story != "no_story":
+        return False
+    payload = str(getattr(task, "payload_type", "") or "").strip().lower()
+    if payload in NON_ADJUDICATIVE_PAYLOADS:
+        return False
+    function = str(getattr(task, "comment_function", "") or "").strip().lower()
+    return function in ADJUDICATIVE_FUNCTIONS
+
+
 def semantic_contract_values(task: Any) -> list[tuple[str, str]]:
     """Return the meaning-bearing controls that every Writer path must see."""
 
+    settles = turn_settles_a_question(task)
     rows: list[tuple[str, str]] = []
     for label, field in SEMANTIC_CONTRACT_FIELDS:
+        if label in DECISION_BOUNDARY_FIELDS and not settles:
+            continue
         value = " ".join(str(getattr(task, field, "") or "").split())
         if field == "forbidden_decision_subjects":
             value = _compact_subject_exclusions(value)

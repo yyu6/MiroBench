@@ -1,5 +1,66 @@
 # Handoff — synthetic Reddit thread generation (generalized_card)
 
+> **Start at [`../docs/ORIENTATION.md`](../docs/ORIENTATION.md), not here.**
+> That file is the current spec: goal, judging standard, metric interpretation,
+> method, and working discipline. **This file is an evidence archive**, ordered
+> newest addendum first. Its older numbered sections carry stale state and at
+> least one claim that was later retracted (see `ORIENTATION.md` §6 for the
+> retractions). Where the two disagree, `ORIENTATION.md` wins.
+
+## 2026-08-19 v97 keyboard-surface/measured-joints addendum
+
+The v96 N=10 run is the evidence this version is built on, and it is the first
+complete honest sample under the new content policy: coverage 1.00, 532 generated
+against 532 matched real comments, `$3.71`, 49 minutes. **6 of 12 metrics pass.**
+`semantic_mean_cosine` 0.970, `structural_virality` 0.909, `avg_depth` 0.850,
+`emotion_entropy` 0.678, `mean_story_probability` 0.521, `length_cv` 0.076. The
+failures are `self_bertscore_mean_f1` 0.0002 (|d| 1.00), `impolite_rate` 0.001,
+`polite_rate` 0.006, `neutral_rate` 0.007, `self_bleu_4` 0.009,
+`hard_disagree_rate` 0.014. v96's story and emotion arms worked; both now pass.
+
+Four causes were measured in that artifact before any code changed.
+
+Typography is a metric, not a cosmetic. Zero of 532 comments used an ASCII
+apostrophe and 389 used a typographic one, and the self-BLEU tokenizer reads
+`it's` as one token and `it’s` as three, so every generated contraction added a
+thread-wide shared trigram. Replaying the v96 text through a per-speaker keyboard
+draw calibrated on 11,817 excluded comments moves `self_bleu_4` MWU p from 0.009
+to 0.273 and KS from 0.052 to 0.787, and lowers `self_bertscore` by about 0.008.
+
+The adjudication frame was on 532 of 532 slots. Its output is in 18.4% of v96
+comments and effectively absent from real text, and it is worst where it least
+belongs: personal_datapoint 29.1%, reaction 19.0%, against question_followup
+8.1%. v73, v74, and v75 each reworded that line; none withheld it. v97 renders it
+only for correction, verdict, and advice turns and never for a story slot, which
+withholds it from 68.0% of the v96 slots and 76% of the observed instances.
+
+The tone marginal was right and the joint was inverted. Planned targets were
+0.311 polite and 0.442 impolite against a real 0.308 and 0.404, but the plan put
+impolite on 74% of 120-250 word slots and 100% of slots over 250 words, where
+excluded real comments of that size are 72% polite. Realized comments over 120
+words came out 87% impolite and 9% polite against a real 27% and 71%.
+`tone_length_fit` now fits P(tone | size band), measured over 15,294 excluded
+comments, by iterative proportional fitting so both margins stay exact.
+
+Long slots asked for a shape that does not exist. 250w+ slots realized 0.61x
+their matched length and the 845-word slot 0.32x. The token budget allowed 1,500
+tokens; the request was the problem. That slot was asked for one thesis in 40
+beats, and the Planner saturates near nine however many are asked. Real long
+comments are 6 paragraphs at the median and 14 at p90, with words per paragraph
+nearly flat inside a band. v96 had a blank line in 3.4% of comments against
+33.8% real.
+
+Four named arms, each recorded in `run_config.json` and each reproducing v96 at
+its legacy value: `--reddit-typography off`, `--turn-frame universal`,
+`--tone-length-fit median`, `--long-form-layout beats_only`. Domain profile
+schema 11 -> 14.
+
+The zero-API gate is complete: 369 tests, Ruff, 98/98 pins, both parity scopes,
+self-test with all four arms, a schema-14 profile rebuild over 424 excluded
+threads with 0 seed overlap, direct proof that the active shaper runs, and exact
+seed-2 `--prepare-only`. Run one paid seed-2 gate next and check the six
+predictions in `tasks/v97-worklog.md`. Do not start N=10 before that passes.
+
 ## 2026-08-18 v96 selective-facts/ancestor-novelty addendum
 
 The paid v95 seed-2 gate completed all 45 comments in one attempt for `$0.3481`,
@@ -1242,3 +1303,62 @@ virality. A 12-metric comparison is not meaningful until this invariant holds.
 Historical code is retained only for provenance and reproducibility. Do not use
 an older implementation as design authority; re-establish every causal claim
 from the current path, current scorer, and current artifact.
+
+---
+
+# 13. 2026-08-19 v98 ADDENDUM — THE `self_bertscore` CAUSE, AFTER TWO REJECTIONS
+
+Read `tasks/v98-worklog.md` for the full evidence. This section records only what
+a future session must not re-derive.
+
+## The metric is lexical breadth, not topic and not repetition
+
+`self_bertscore_mean_f1` had been the worst metric in the suite since v72 and
+three plausible causes were measured. Two were rejected:
+
+- **Length spread.** Reweighting generated comment pairs onto the real pairs'
+  length-ratio mix closes 0.0033 of the 0.0163 gap.
+- **A duplication tail.** Trimming the top 20% of pairs on both sides leaves the
+  gap at +0.0154 against +0.0163 untrimmed. It is a uniform shift.
+- **The surface register.** Real comments that differ in typing habits are only
+  0.003-0.011 lower in function-word cosine than ones that share them, against
+  a 0.134 generated-vs-real gap.
+
+What is left is that the generated thread uses 2,670 distinct word types where
+the matched real threads use 3,645, at types/sqrt(tokens) 15.95 against 21.02 —
+while per-comment type-token ratio at a fixed 30 tokens is *higher* in the
+generated text. Individual comments are fine; the thread's lexicon is small.
+
+## One instruction caused it
+
+453 of 532 slots are `no_story`. v96's instruction for them banned tense, not
+narrative. On those slots: past-tense verbs 0.181 against a real 0.543, future
+0.031 against 0.226, present perfect 0.031 against 0.167. `have` at 11% of its
+real rate, `will` at 1%. The fallback is a timeless conditional register —
+`the` 147%, `if` 225%, `whether` 1800%, `matters` 2900%.
+
+It was simultaneously a prompt contradiction: **247 of the 532 rendered v97
+prompts (46.4%) carried both "Be particular rather than general" (the licensed
+grounding rule under `--own-fact-license named`) and "no past action, event".**
+This is exactly what `writer_grounding` was built to eliminate, recurring in a
+different pair of rules.
+
+## Two checks that cost nothing and should run every version
+
+1. **Grep the rendered prompts for contradicting rule pairs.** They are stored
+   verbatim in `generation_records.json[].prompt`.
+2. **Test the causal claim on the reference corpus before writing the fix.** If
+   the mechanism is "X causes metric M", the excluded real threads can usually
+   say whether X and M covary. `sentence_rhythm` was fully built and pinned
+   before its hypothesis was falsified this way.
+
+## The one non-domain-adaptive profile
+
+`length_calibration` holds a fitted transfer function
+(`log(realized) = 0.3835 + 0.8925*log(asked)`, n=532, R2 0.894). It is a
+property of the model and the prompt, not of the domain, so it is a recorded
+constant rather than a domain-profile entry. Both the target
+(`task.real_word_count`) and the realized count (`comment.word_count`) are in
+every generation record, so any run's artifact refits it with no regeneration.
+**Refit when the model changes.** Every other v98 profile is measured per domain
+from that domain's evaluation-excluded threads.

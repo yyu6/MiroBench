@@ -23,11 +23,21 @@ _PREFIX_RE = re.compile(r"^\s*(?:[-*]+|(?:beat\s*)?\d+[.):\-])\s*", re.I)
 # budget rather than the Planner. The realized rate across those slots was
 # 246/12, 179/8, and 134/6 words per beat, i.e. about 21. Budget against that.
 # Re-measured on v72: realized output is 24.8 words per beat over 77 long slots,
-# so the per-beat budget below is right. The ceiling was not. At 24 beats the
-# reachable length stopped near 500 words while matched real slots reach 845, and
-# no generated comment in the run exceeded 215 words.
+# so the per-beat budget below is right.
+#
+# Raising the ceiling to 40 did not raise the reachable length, because the
+# Planner does not supply what it is asked for above about nine beats. Measured
+# over the v96 slots that carried a beat plan: asked ~6 it supplied 5.2 and the
+# slot realized 0.95x its matched length; asked ~9, 8.1 and 0.91x; asked ~12,
+# 8.3 and 0.74x; asked 14-40, 9.5 and 0.60x. The largest beat plan any slot
+# received in the whole run was 26. Beyond the saturation point an unreachable
+# request only produces plan-repair traffic, so the ceiling now sits where the
+# Planner still delivers and `comment_structure` carries scale above it by
+# asking for the paragraph count a comment that long actually has.
 WORDS_PER_REALIZED_BEAT = 21.0
-MAX_DEVELOPMENT_BEATS = 40
+MAX_DEVELOPMENT_BEATS = 12
+# The largest count the Planner reliably returns, measured above.
+PLANNER_RELIABLE_BEATS = 8
 
 
 def expected_development_beats(word_count: Any) -> int:
@@ -101,7 +111,10 @@ def development_plan_problem(plan: dict[str, Any]) -> str:
     if expected <= 0:
         return ""
     actual = len(development_beats(plan.get("development_plan")))
-    minimum = max(2, expected - 1)
+    # The Planner saturates near nine beats, so requiring one fewer than the
+    # capacity estimate on the largest slots produced repair calls that could
+    # not succeed. v94 spent 130 of 152 requests on plan repair.
+    minimum = max(2, min(expected - 1, PLANNER_RELIABLE_BEATS))
     if actual >= minimum:
         return ""
     return (
@@ -147,16 +160,16 @@ def render_development_guidance(task: Any) -> str:
         if expected <= 0:
             return ""
         return (
-            f"Develop one local thesis through about {expected} distinct, "
-            "connected beats rather than repeating the thesis or compressing this "
+            f"Develop the local contribution through about {expected} distinct, "
+            "connected beats rather than repeating one thesis or compressing this "
             "long-tail slot into a generic answer."
         )
     rows = " ".join(f"{index}. {beat}" for index, beat in enumerate(beats, start=1))
     return (
-        "One-shot development sequence for one local thesis: "
+        "One-shot development sequence: "
         f"{rows} Realize each beat once in a natural order. Combine adjacent beats "
-        "when useful, but do not omit the long-tail development, repeat the thesis, "
-        "or introduce a separate conclusion."
+        "when useful, but do not omit the long-tail development, restate an earlier "
+        "beat, or introduce a separate conclusion."
     )
 
 

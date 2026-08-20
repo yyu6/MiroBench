@@ -47,16 +47,21 @@ class LongFormPlanningTest(unittest.TestCase):
         # or long slots are under-specified, come out short, and flatten the
         # thread's length spread.
         self.assertEqual(expected_development_beats(160), 8)
-        self.assertEqual(expected_development_beats(320), 15)
-        # The ceiling used to be 24 beats, which stopped the reachable length
-        # near 500 words while matched real slots reach 845. No generated
-        # comment in v72 exceeded 215 words.
-        self.assertEqual(expected_development_beats(900), 40)
+
+    def test_beat_budget_stops_where_the_planner_saturates(self) -> None:
+        # Raising the ceiling to 40 did not raise the reachable length. Measured
+        # over the v96 slots that carried a beat plan: asked ~6 the Planner
+        # supplied 5.2 and the slot realized 0.95x its matched length; asked
+        # 14-40 it supplied 9.5 and realized 0.60x. The largest plan any slot
+        # received was 26. Scale above the saturation point is carried by
+        # `comment_structure`, not by an unreachable beat request.
+        self.assertEqual(expected_development_beats(320), 12)
+        self.assertEqual(expected_development_beats(900), 12)
 
     def test_beat_budget_is_monotonic_and_bounded(self) -> None:
         budgets = [expected_development_beats(words) for words in range(101, 1200, 17)]
         self.assertEqual(budgets, sorted(budgets))
-        self.assertLessEqual(max(budgets), 40)
+        self.assertLessEqual(max(budgets), 12)
         self.assertGreaterEqual(min(budgets), 3)
 
     def test_normalizer_accepts_lists_and_removes_duplicate_beats(self) -> None:
@@ -125,7 +130,7 @@ class LongFormPlanningTest(unittest.TestCase):
             slot_distribution="- none",
         )
         self.assertIn('"development_plan"', prompt)
-        self.assertIn("development_plan: required, about 14 beats", prompt)
+        self.assertIn("development_plan: required, about 12 beats", prompt)
 
     def test_direct_reply_planner_skips_beats_for_a_short_slot(self) -> None:
         from types import SimpleNamespace

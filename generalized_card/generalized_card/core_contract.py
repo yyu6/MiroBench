@@ -16,10 +16,12 @@ HISTORICAL_REVISION_POLICY_VERSIONS = {
     "generalized-card-revision-v6-dynamic-coverage-history-20260807",
 }
 GENERALIZED_V2_GENERATION_POLICY_VERSION = (
-    "generalized-card-v2-selective-facts-ancestor-novelty-v96-20260818"
+    "generalized-card-v2-drawn-typing-rhythm-length-calibration-v98-20260819"
 )
 HISTORICAL_GENERATION_POLICY_VERSIONS = {
     "generalized-v2": {
+        "generalized-card-v2-keyboard-surface-measured-joints-v97-20260819",
+        "generalized-card-v2-selective-facts-ancestor-novelty-v96-20260818",
         "generalized-card-v2-nonfatal-compiled-plan-contract-v95-20260818",
         "generalized-card-v2-state-preserving-plan-repair-v94-20260818",
         "generalized-card-v2-root-reply-boundary-v93-20260818",
@@ -166,7 +168,7 @@ CORE_FILES = {
     ),
     "generator_adapter": (
         "generalized_card/generalized_card/backend.py",
-        "abb881d7554880d1f0cd7718bc3be23579659921e0bf40a8529a274e37131d41",
+        "d886aa3c0e9f07ff9439c78f4d5db8881b3fd495589e518c19b3d9c13e3e3d56",
     ),
     "data_boundary": (
         "generalized_card/generalized_card/data.py",
@@ -200,7 +202,7 @@ CORE_FILES = {
     ),
     "generation_runner": (
         "generalized_card/scripts/run_generate.py",
-        "035d0922cd6c09fda13a7fdf534d22687fd4288374611868757afd140fdf1255",
+        "94d5a0017985affc871a8d8b9553ac5278bfa6e005626cf99deca88a7f7319db",
     ),
     "generation_backend_runner": (
         "generalized_card/scripts/run_generator_backend.py",
@@ -216,7 +218,7 @@ CORE_FILES = {
     ),
     "domain_profile": (
         "generalized_card/generalized_card/domain_profile.py",
-        "c54da9afe5b14853dfa7384159c6bb7d1dee10696583742d1def29c8ca903817",
+        "7a19af2a409769b715eb68eb770663df5549b7f1f7886fbbd9156a64842ef846",
     ),
     "viewpoint_bank": (
         "generalized_card/generalized_card/viewpoint_bank.py",
@@ -240,7 +242,7 @@ CORE_FILES = {
     ),
     "planner_distribution": (
         "generalized_card/generalized_card/planner_distribution.py",
-        "7c35044a24a8c3aa4b97737b6a70158548f5a7ee2e88daabbb0649301286e652",
+        "8d8422c9ac0d1b28110ff89a28748d7bab9d9e72469c7c88593470c0c65a87dd",
     ),
     "branch_routing": (
         "generalized_card/generalized_card/branch_routing.py",
@@ -284,15 +286,39 @@ CORE_FILES = {
     ),
     "semantic_realization": (
         "generalized_card/generalized_card/semantic_realization.py",
-        "60d6c2831744be1b370a6a7db503504ac05093d59c30b58d02cc23061f21ac49",
+        "2fc67ef1806fe5bf7524bb9ea431e74bc93a8378f036e7282a6b1fe239ba2c40",
     ),
     "length_policy": (
         "generalized_card/generalized_card/length_policy.py",
-        "fa6c3db16af19542efca8158fd3acfe0d605a52b5654cd17d7000e7f0f3e28e1",
+        "e881237aafe35ac362418c8d2481bfd73656ad90f287ba870e4d55cbf3d6bdda",
     ),
     "long_form_planning": (
         "generalized_card/generalized_card/long_form_planning.py",
-        "d06e811cfbc040fcc0fee5d7a93b2f71437e2d54c9c06877657a9da9c7c210bc",
+        "1f1ecd50791e91103ed187ed9a1fddda07ba979c2a6a12dd8daf889310eb9d58",
+    ),
+    "tone_length_fit": (
+        "generalized_card/generalized_card/tone_length_fit.py",
+        "b816e9f033c890c99126b0b1e8c6550028d516c7eec179956726415ad6af10d1",
+    ),
+    "comment_structure": (
+        "generalized_card/generalized_card/comment_structure.py",
+        "a3887dd9b820ec2146652ad46e2dcd5802aed39442b99372ed3502ba466fa8e7",
+    ),
+    "surface_typography": (
+        "generalized_card/generalized_card/surface_typography.py",
+        "a329aeaa6ccaed2e12cab7df63f084c140b86aaec3baad8efac0bb1897a90653",
+    ),
+    "sentence_rhythm": (
+        "generalized_card/generalized_card/sentence_rhythm.py",
+        "2a871aa15dafd598cd9eca4bc248f4f8b389af363ecb7ffe9dcc826c23fc0368",
+    ),
+    "story_scope": (
+        "generalized_card/generalized_card/story_scope.py",
+        "5e53af3d730da4a781b31ea8a7a5c53e188b7ee791306d18fbf1044c5596e22d",
+    ),
+    "length_calibration": (
+        "generalized_card/generalized_card/length_calibration.py",
+        "b6acb4a303904fe0862c406417748c5fdb5cdd92f526b94e68c7eb2f111ca094",
     ),
     "surface_contract": (
         "generalized_card/generalized_card/surface_contract.py",
@@ -360,7 +386,7 @@ CORE_FILES = {
     ),
     "domain_prompt_adapter": (
         "generalized_card/generalized_card/prompts.py",
-        "4b17e8c83794b4f6dc181651bf9263deb7ca7929a015995961cb26409c0c63df",
+        "c5cdde2a1f9b88576553297413c70459be1ff1f8f68a1d626502dbe41f7fbc57",
     ),
     "reply_planning": (
         "generalized_card/generalized_card/reply_planning.py",
@@ -538,6 +564,12 @@ GENERATION_ADAPTER_CORE_NAMES = (
     "length_policy",
     "long_form_planning",
     "surface_contract",
+    "surface_typography",
+    "sentence_rhythm",
+    "story_scope",
+    "length_calibration",
+    "comment_structure",
+    "tone_length_fit",
     "domain_claim",
     "opener_profile",
     "entity_inventory",
