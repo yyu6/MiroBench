@@ -62,6 +62,111 @@ Before any run that changes behavior:
 
 ---
 
+## v100 — measured closing move (2026-08-20)
+
+Policy ID: `generalized-card-v2-measured-closing-move-v100-20260820`.
+Arm `--closing-move {measured,off}`; `off` reproduces v99.
+
+**The root of the adjudication frame, found after three Planner-side rejections.**
+The "that's the part that actually matters" family has been chased since v73
+through a phrase ban, a rewording, a route lock, a prompt rebuild, and v97's
+adjudication gate. It survived all five because the phrase was never the thing.
+
+Measured on the last sentence only, comments of 25 words or more:
+
+| closing move | real | generated | ratio |
+|---|---:|---:|---:|
+| abstract verdict | 0.014 | **0.265** | **19.1x** |
+| a concrete fact of the speaker's own | 0.152 | 0.048 | **0.32x** |
+| a figure in the last sentence | 0.318 | 0.200 | 0.63x |
+| a conditional about the reader | 0.095 | 0.145 | 1.53x |
+
+The verdict close is the 19x defect. **The reader-conditional close is only
+mildly over-produced and is deliberately left alone** -- real people do end that
+way at 0.095, and it reads worse than it measures.
+
+Real endings: "No issues yet about 40,000 clicks in." / "I was using a 1dxm3
+myself." / "It had 1mil for it's shutter count before it needed service." /
+"so yeah, I know how you feel". Generated endings: "If the current feature set
+lines up with your routine, the age starts to matter a lot less" / "That's
+probably the real separator" / "So yeah, my take is just to wait".
+
+**Three Planner-side explanations measured and rejected first**, so the cause is
+not a control the Writer is echoing:
+
+- the rendered "decision intent" line -- lift on the frame 1.08x
+- the rendered "decision boundary" line -- **0.83x**, slots receiving it produce
+  the frame *less*
+- v97's adjudication gate -- gated slots 0.175 against ungated 0.210, so the gate
+  works and the frame is not coming from those lines
+
+What does predict it is the payload the Planner assigned: `personal_story` 0.448,
+`correction` 0.212, `advice` 0.210, against `low_info_reaction` 0.071 and
+`bare_answer` 0.091. Among real story comments the frame is at **0.003** against
+0.382 generated -- 127x. A story has the most obvious place to pivot, so it pivots
+most. The Writer reaches for a verdict because it has no other way to stop.
+
+### Also measured and NOT acted on
+
+- Suppressing the whole restrictive register (`just`/`only`/`still`/`actually`)
+  would **not** fix `impolite_rate`: out-of-sample lift 1.02-1.18x, and the
+  counterfactual moves 0.697 to 0.655 against a real 0.443.
+- Banning the frame's exact phrasing removes only **15-27%** of the over-used
+  abstract vocabulary; after removing every frame match, `matters` is still at
+  33x, `whole` 17x, `otherwise` 29x. Which is why five phrase-level attempts
+  failed and why this version names the move instead.
+- **`self_bertscore_mean_f1` hypothesis five rejected.** The narrow shared
+  vocabulary does not explain it: per matched pair, r(bert gap, breadth ratio) =
+  **+0.155** and r(bert gap, top-200 concentration gap) = **-0.096**, both the
+  wrong sign, and the narrowest thread has the smallest gap. Per-thread breadth
+  ratio is 0.893, not the 0.76 the pooled figure suggested -- the narrowness is a
+  cross-thread phenomenon and `self_bertscore` only sees within-thread. The metric
+  still has no verified mechanism.
+
+### Prediction, written before the paid run
+
+| quantity | v99 | predicted v100 | real |
+|---|---:|---:|---:|
+| verdict close | 0.265 | 0.02-0.05 | 0.014 |
+| own-concrete close | 0.048 | 0.11-0.16 | 0.152 |
+| broad adjudication frame, anywhere | 0.203 | 0.05-0.10 | 0.004 |
+| frame on `personal_story` slots | 0.448 | 0.10-0.20 | 0.003 |
+| `impolite_rate` | 0.697 | 0.62-0.68 | 0.443 |
+
+**`impolite_rate` and `polite_rate` are still predicted to fail.** This arm is
+justified by acceptance criterion 2 -- a human should not be able to tell
+generated from real -- not by the p-values. The 19x verdict close and the 47x
+frame are the largest remaining content tells; the metric effect is secondary and
+measured to be small.
+
+Guardrails: `mean_story_probability` must not fall (a story that ends on a
+concrete own fact should read *more* like a story, and it is already slightly low
+at Cliff -0.12), and the concrete-close cue must not invent a possession -- it is
+bounded by the plan's fact license, which is the boundary most likely to leak.
+Interaction with v99: "commit to a positive judgement" and "do not close on a
+verdict" are compatible but adjacent, so the gate must confirm polite slots still
+land their judgement rather than dropping it.
+
+### Zero-API result
+
+526 tests pass (31 new), Ruff clean, 104 pins with zero drift. Self-test passes
+with the arm on and off. Schema 16 -> 17; the closing profile measures 6,609
+comments of 25+ words over the 424 excluded threads with 0 seed overlap:
+
+| band | n | own-concrete | verdict | median final words |
+|---|---:|---:|---:|---:|
+| medium | 3579 | 0.1492 | 0.0126 | 15 |
+| long | 1999 | 0.1476 | 0.0115 | 16 |
+| very_long | 840 | 0.1286 | 0.0167 | 17 |
+| essay | 191 | 0.1152 | 0.0314 | 18 |
+
+Draw fidelity within 0.008 in every band and move. In rendered prompts the rule
+reaches 32 of 40 slots, is silent on every slot below the 25-word floor (a slot
+whose last sentence is its whole body has no closing move), and 8 of 8 at 45
+words and above.
+
+---
+
 ## v99 — drawn realization of the assigned warm register (2026-08-20)
 
 Policy ID: `generalized-card-v2-drawn-register-realization-v99-20260820`.

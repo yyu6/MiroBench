@@ -6,6 +6,7 @@ import re
 from pathlib import Path
 from typing import Any
 
+from .closing_move import build_closing_profile
 from .comment_structure import build_structure_profile
 from .data import load_real_thread_bank
 from .domain import DomainConfig
@@ -25,6 +26,10 @@ from .tone_length_fit import build_tone_length_profile
 from .viewpoint_bank import build_reference_viewpoints
 
 
+# 17: adds the measured per-band closing move. Real comments end on a concrete
+# fact of the speaker's own (0.152) and almost never on an abstract verdict
+# (0.014); generated output ends on a verdict 0.265 of the time, 19x, which is the
+# root of the adjudication frame chased since v73 through phrase bans.
 # 16: adds the measured per-band share of four positive-register surface moves
 # among the evaluation classifier's own `polite` comments. The plan already puts
 # polite on the right slots -- 0.275 against a real 0.288 -- and the Writer
@@ -50,7 +55,7 @@ from .viewpoint_bank import build_reference_viewpoints
 # comment's entities to the seed post made one generated thread reuse 23
 # distinct models where the matched real thread used 117, which is a large
 # share of the remaining self-BLEU gap.
-PROFILE_SCHEMA_VERSION = 16
+PROFILE_SCHEMA_VERSION = 17
 CARD_CONTEXT_DROPOUT_RATE = 0.42
 CARD_CONTEXT_JITTER_RATE = 0.32
 CARD_GENERATION_CONTROLS = {
@@ -149,6 +154,7 @@ def build_domain_profile(
         "final_punctuation_profile": build_final_punctuation_profile(reference_threads),
         "structure_profile": build_structure_profile(reference_threads),
         "rhythm_profile": build_rhythm_profile(reference_threads),
+        "closing_profile": build_closing_profile(reference_threads),
         "register_profile": build_register_profile(
             config.raw_discussions_dir,
             reference_thread_ids=unique,

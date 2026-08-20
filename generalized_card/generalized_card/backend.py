@@ -101,6 +101,8 @@ from .length_calibration import calibrated_word_ask, set_length_calibration
 from . import sentence_rhythm
 # Same reason as `sentence_rhythm` above: `set_active_register_profile` rebinds a
 # module global.
+from . import closing_move
+from .closing_move import set_active_closing_profile, set_closing_move
 from . import register_realization
 from .register_realization import (
     set_active_register_profile,
@@ -435,6 +437,17 @@ def configure_generator_backend(
         or "measured"
     )
     set_register_realization(module.GENERALIZED_REGISTER_REALIZATION)
+    # Whether a slot is told how to stop. `off` reproduces every version through
+    # v99, none of which said anything about the closing move. Real comments end
+    # on a concrete fact of their own 0.152 of the time and on an abstract verdict
+    # 0.014; v98 generated output ended on a verdict 0.265 of the time. That
+    # verdict close is the root of the adjudication frame chased since v73.
+    # See `closing_move`.
+    module.GENERALIZED_CLOSING_MOVE = (
+        os.environ.get("GENERALIZED_CARD_CLOSING_MOVE", "measured").strip().lower()
+        or "measured"
+    )
+    set_closing_move(module.GENERALIZED_CLOSING_MOVE)
     # Whether the length cue asks for the matched slot's own word count or for
     # the count that realizes it. `off` reproduces every version through v97,
     # where realized/target ran 1.42x at the shortest slots and 0.71x at 251-400
@@ -568,6 +581,9 @@ def configure_generator_backend(
     set_active_rhythm_profile(module.GENERALIZED_DOMAIN_PROFILE.get("rhythm_profile"))
     set_active_register_profile(
         module.GENERALIZED_DOMAIN_PROFILE.get("register_profile")
+    )
+    set_active_closing_profile(
+        module.GENERALIZED_DOMAIN_PROFILE.get("closing_profile")
     )
     module.CLAIM_FAMILIES = prompts.GENERIC_CLAIM_FAMILIES
     # The core system prompt is pinned in `engine/vocabulary.py` and its own ban
@@ -1323,6 +1339,33 @@ def _run_generalized_self_test(module: ModuleType, config: DomainConfig) -> None
             previous_comments=[],
         )
         assert not _register_line(blunt)
+    if module.GENERALIZED_CLOSING_MOVE != "off" and (
+        closing_move.ACTIVE_CLOSING_PROFILE.get("available")
+    ):
+        long_closes = {
+            module.build_writer_prompt(
+                profile="gpt54_reddit_writer",
+                seed_post=seed,
+                task=replace(task, real_word_count=150, local_task_id=index),
+                parent_comment=None,
+                previous_comments=[],
+            )
+            for index in range(1, 13)
+        }
+        assert any(_closing_line(item) for item in long_closes)
+        # The verdict suppression is measured at 0.014, so nearly every slot
+        # carries it; the concrete-close cue is drawn, so the rules must differ.
+        assert len({_closing_line(item) for item in long_closes}) > 1
+        # Silent below the measurement floor: a 12-word slot has no closing move
+        # separate from its body.
+        short = module.build_writer_prompt(
+            profile="gpt54_reddit_writer",
+            seed_post=seed,
+            task=replace(task, real_word_count=12),
+            parent_comment=None,
+            previous_comments=[],
+        )
+        assert not _closing_line(short)
     story_task = next(
         (item for item in distribution_tasks if item.story_mode != "no_story"),
         None,
@@ -2890,6 +2933,15 @@ def _rhythm_line(prompt: str) -> str:
 
     for line in prompt.splitlines():
         if line.lstrip("- ").lower().startswith("typing rhythm:"):
+            return line.strip()
+    return ""
+
+
+def _closing_line(prompt: str) -> str:
+    """Return the rendered closing-move rule from one Writer prompt, if any."""
+
+    for line in prompt.splitlines():
+        if line.lstrip("- ").lower().startswith("closing move:"):
             return line.strip()
     return ""
 

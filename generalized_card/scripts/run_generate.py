@@ -283,6 +283,16 @@ def build_parser() -> argparse.ArgumentParser:
         ),
     )
     parser.add_argument(
+        "--closing-move",
+        choices=("measured", "off"),
+        default="measured",
+        help=(
+            "Draw each slot's closing move at its band's measured rate. `off` "
+            "reproduces v99, where output ended on an abstract verdict 0.265 of "
+            "the time against a real 0.014."
+        ),
+    )
+    parser.add_argument(
         "--register-realization",
         choices=("measured", "off"),
         default="measured",
@@ -731,6 +741,7 @@ def main() -> None:
         "turn_frame": args.turn_frame,
         "sentence_rhythm": args.sentence_rhythm,
         "register_realization": args.register_realization,
+        "closing_move": args.closing_move,
         "length_calibration": args.length_calibration,
         "final_punctuation": args.final_punctuation,
         "route_ledger": args.route_ledger,
@@ -924,6 +935,7 @@ def main() -> None:
     env["GENERALIZED_CARD_TURN_FRAME"] = args.turn_frame
     env["GENERALIZED_CARD_SENTENCE_RHYTHM"] = args.sentence_rhythm
     env["GENERALIZED_CARD_REGISTER_REALIZATION"] = args.register_realization
+    env["GENERALIZED_CARD_CLOSING_MOVE"] = args.closing_move
     env["GENERALIZED_CARD_LENGTH_CALIBRATION"] = args.length_calibration
     env["GENERALIZED_CARD_FINAL_PUNCTUATION"] = args.final_punctuation
     env["GENERALIZED_CARD_ROUTE_LEDGER"] = args.route_ledger
@@ -1264,6 +1276,7 @@ RUN_EXPERIMENT_FIELDS = (
     "turn_frame",
     "sentence_rhythm",
     "register_realization",
+    "closing_move",
     "length_calibration",
     "final_punctuation",
     "route_ledger",

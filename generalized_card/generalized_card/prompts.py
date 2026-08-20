@@ -36,6 +36,7 @@ from .reply_planning import (
     is_direct_reply_batch,
     render_direct_reply_planner_prompt,
 )
+from .closing_move import active_closing_guidance
 from .register_realization import active_register_guidance
 from .semantic_realization import (
     opening_route_counts,
@@ -225,6 +226,20 @@ def _opener_rule(assigned: str) -> str:
 
 
 _SKELETON_SENTENCE_COUNT = re.compile(r"(\d+)-sentence|about (\d+) sentences")
+
+
+def _closing_rule(backend: Any, task: Any) -> str:
+    """Render this slot's drawn closing move.
+
+    Applies whatever tone the plan assigned: the verdict close is over-produced
+    on every register, so gating it to one would leave most of it in place.
+    """
+
+    seed_key = str(getattr(backend, "GENERALIZED_ACTIVE_SEED_KEY", "") or "")
+    return active_closing_guidance(
+        slot_key=f"{seed_key}:{_safe_slot_index(task)}",
+        word_count=getattr(task, "real_word_count", 0),
+    )
 
 
 def _register_rule(backend: Any, task: Any) -> str:
@@ -1127,6 +1142,7 @@ def writer_prompt(
     )
     rhythm_rule = _rhythm_rule(backend, task)
     register_rule = _register_rule(backend, task)
+    closing_rule = _closing_rule(backend, task)
     hard_shape_rule = ""
     if backend.is_hard_real_surface_shape(getattr(task, "real_surface_shape", "")):
         hard_shape_rule = _real_surface_shape_guidance(task.real_surface_shape)
@@ -1162,6 +1178,7 @@ def writer_prompt(
             register_rule,
             story_rule,
             affect_rule,
+            closing_rule,
         )
         if item
     )
@@ -1202,6 +1219,7 @@ def writer_prompt(
             surface_rule=surface_rule,
             rhythm_rule=rhythm_rule,
             register_rule=register_rule,
+            closing_rule=closing_rule,
         )
 
     if low_info_writer:
@@ -1476,6 +1494,7 @@ def _focused_writer_prompt(
     surface_rule: str,
     rhythm_rule: str,
     register_rule: str,
+    closing_rule: str,
 ) -> str:
     """Render the minimum complete Planner and grounding contract.
 
@@ -1526,6 +1545,7 @@ def _focused_writer_prompt(
             story_rule,
             surface_rule,
             rhythm_rule,
+            closing_rule,
             domain_claim_rule,
             _substitution_rule(task).lstrip("- ").strip(),
             _story_fact_safety_rule(

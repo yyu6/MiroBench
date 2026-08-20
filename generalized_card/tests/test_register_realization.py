@@ -9,6 +9,7 @@ move the tone marginal, which already matches real text.
 from __future__ import annotations
 
 import json
+import re
 import sys
 import tempfile
 import unittest
@@ -361,7 +362,13 @@ class WiringTest(unittest.TestCase):
             PACKAGE_ROOT / "generalized_card" / "domain_profile.py"
         ).read_text()
         self.assertIn('"register_profile": build_register_profile(', source)
-        self.assertIn("PROFILE_SCHEMA_VERSION = 16", source)
+        # At least 16, not exactly: a later version bumping the schema for its own
+        # profile must not fail this test. The contract is that the register
+        # profile is stored and the schema moved past the version that added it.
+        version = int(
+            re.search(r"PROFILE_SCHEMA_VERSION = (\d+)", source).group(1)
+        )
+        self.assertGreaterEqual(version, 16)
 
 
 if __name__ == "__main__":
