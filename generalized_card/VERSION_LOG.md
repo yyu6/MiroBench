@@ -192,6 +192,62 @@ carry the rule on 23/24 polite slots (9 distinct forms), 22/24 somewhat_polite
 
 ---
 
+### N=10 result — 2026-08-20
+
+Run `generalized_card_camera_gpt54_v101_register_n10_20260820_v1`, paired to v97,
+v98 and v100 on the same seeds (`--start-seed-index 2`, `--sampling-seed 42`).
+
+**9 PASS / 0 PARTIAL / 3 FAIL — the best result in the project's history**
+(v98 was 8/1/3, v97 7/1/4, v96 6/0/6). Cliff's delta improved on **8 of 12**
+metrics.
+
+| metric | v98 MWU | v98 Cliff | v101 MWU | v101 Cliff | |
+|---|---:|---:|---:|---:|---|
+| `self_bleu_4` | 0.1212 | +0.42 | 0.1041 | +0.44 | PASS, weaker |
+| `self_bertscore_mean_f1` | 0.00058 | +0.92 | 0.00283 | **+0.80** | FAIL, improved |
+| `semantic_mean_cosine` | 0.6232 | −0.14 | 0.8501 | **−0.06** | PASS |
+| `hard_disagree_rate` | 0.2897 | +0.29 | 0.1735 | +0.37 | PASS, worse |
+| `polite_rate` | 0.0126 | −0.67 | 0.0210 | **−0.62** | FAIL, improved |
+| `impolite_rate` | 0.0010 | +0.88 | 0.0046 | **+0.76** | FAIL, improved |
+| `neutral_rate` | 0.0210 | −0.62 | 0.0587 | **−0.51** | PARTIAL → **PASS** |
+| `length_cv` | 0.4727 | +0.20 | 0.7337 | **+0.10** | PASS |
+| `avg_depth` | 0.9698 | +0.02 | 0.9095 | +0.04 | PASS |
+| `structural_virality` | 0.9697 | +0.02 | 0.9697 | +0.02 | PASS |
+| `mean_story_probability` | 0.6776 | −0.12 | 0.8501 | **−0.06** | PASS |
+| `emotion_entropy` | 0.5708 | −0.16 | 0.8501 | **−0.06** | PASS |
+
+**The state-not-event correction worked.** `mean_story_probability` was pushed to
+29.2% relative error on the v100 gate by cue text that named events; rewritten to
+name states, its Cliff came back to −0.06, better than v98's −0.12. That is the
+clearest single confirmation in this version line that cue *wording* is a
+measurable control, not a formality.
+
+**`gratitude` restored per register and band was worth `neutral_rate`.** It moved
+PARTIAL → PASS (MWU 0.021 → 0.059), and `polite_rate` and `impolite_rate` both
+improved on effect size for the first time in four versions.
+
+### The honest N=150 projection
+
+At N=150 the pass probability is a function of the effect size, not the current
+p-value (see the 2026-08-19 lesson). Applying that table to these Cliffs:
+
+| |Cliff| | metrics | P(pass) at N=150 |
+|---|---|---:|
+| ≤0.06 | `semantic_mean_cosine`, `mean_story_probability`, `emotion_entropy`, `structural_virality`, `avg_depth` | ~0.90 |
+| 0.10 | `length_cv` | ~0.72 |
+| 0.37–0.44 | `hard_disagree_rate`, `self_bleu_4` | ~0.01 |
+| 0.51–0.80 | `neutral_rate`, `polite_rate`, `impolite_rate`, `self_bertscore_mean_f1` | ~0.00 |
+
+**Six metrics are safe at N=150 and six are not.** The four currently-failing or
+barely-passing tone metrics plus `self_bleu_4` and `hard_disagree_rate` all sit
+far above the |Cliff| ≤ 0.10 working ceiling. 9/0/3 at N=10 is real progress and
+is not the same thing as being close at N=150.
+
+`hard_disagree_rate` moved the wrong way (+0.29 → +0.37) and needs a look: it has
+never had a mechanism and passes on a wide spread, exactly like `self_bleu_4`.
+
+---
+
 ## v100 — measured closing move (2026-08-20)
 
 Policy ID: `generalized-card-v2-measured-closing-move-v100-20260820`.
