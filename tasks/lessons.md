@@ -1,5 +1,58 @@
 # Lessons
 
+## 2026-08-20 — Reason at the granularity the mechanism operates at, three times over
+
+**What happened.** One version line produced the same error three times, each
+time costing a wrong prediction or a regression.
+
+1. **The v99 prediction.** The arm fires only where the plan assigned `polite`,
+   which is 25% of slots. The prediction was computed from a corpus-wide baseline
+   to a corpus-wide target: 0.258 -> 0.45 for `any_intensifier`. On the slots the
+   cue actually reaches, the baseline was already 0.565 — above the real corpus
+   rate of 0.373 — so there was nothing there to fix. It came out at 0.204.
+2. **The cue wording.** "what you ended up keeping" and "how long you have had
+   it, what it did or did not do" are event descriptions, and the model answered
+   with narrative. `mean_story_probability` went from 0.8% relative error to
+   29.2%. Real text uses the same possessive as a bare state at story probability
+   0.279; generated reached 0.510.
+3. **Excluding `gratitude`.** It was dropped because generated output ran 1.25x
+   real — a figure comparing generated-on-all-slots against
+   real-on-all-comments, while the cue fires on one register. Conditioned
+   properly, real polite micro comments thank at 0.330 against a generated 0.100,
+   and real polite short at 0.165 against a generated **0.000**. Five
+   planned-polite micro slots on the gate fell from 0.600 realized polite to
+   0.000 once intensifiers replaced thanks.
+
+A fourth, in the analysis rather than the code: an attribution split used
+`real_word_count` read back from `discussion.json`, which is **not persisted** and
+is 0 on every row, so it silently fell back to the generated length instead of the
+matched length the cue keys on. Redone on `length_bucket`, which is persisted, the
+conclusion reversed: medium slots had improved (planned-polite 0.105 -> 0.222)
+while micro had collapsed.
+
+**Why:** every one of these compares a number measured over one population
+against a mechanism that acts on a different one. The comparison always looks
+reasonable, because both numbers are real; what is wrong is that they are not
+about the same slots.
+
+**How to apply.**
+- **Before predicting, write down the population the mechanism acts on**, and
+  measure the baseline on exactly that population. If a cue fires on 25% of slots,
+  a corpus-wide prediction is arithmetically impossible to hit.
+- **Before excluding a move because it is "already over-produced", condition on
+  the register and band the cue would fire in.** A pooled ratio can point the
+  opposite way from every cell inside it.
+- **Read a cue back as an instruction and ask what a model would return.** "What
+  you ended up keeping" asks for a history. "What you have" asks for a state.
+- **Check that a field exists in the artifact before splitting on it.** A silent
+  fallback to a different field produces a clean-looking table with the opposite
+  meaning. `real_word_count` is 0 in `discussion.json`; `length_bucket` is the
+  persisted proxy.
+- Corollary for reporting: at n=9 and n=13 a 3-comment swing is noise. One claim
+  in this line ("the verdict suppression strips polite appraisal from long slots")
+  was reported from exactly that and had to be retracted — real polite comments
+  close on that pattern at 0.010–0.029, so the suppression costs almost nothing.
+
 ## 2026-08-20 — Condition on the feature; if the gap is flat in every cell, the feature is not the cause
 
 **What happened.** The politeness trio had a carried-forward v99 plan with a

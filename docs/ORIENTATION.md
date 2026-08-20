@@ -357,6 +357,42 @@ N=10 runs used `--own-fact-license named` (CLI default `off`). Read
 `run_config.json` for what a run actually used; never infer it from the CLI
 defaults.
 
+### Domain generalization — verified, with one study-design constraint
+
+Every mechanism is domain-adaptive by construction: the *patterns* are
+domain-neutral English surface forms (intensifiers, appraisal words, `my X`,
+thanks) and the *rates* are measured from each domain's own evaluation-excluded
+threads. A test asserts no cue text contains domain vocabulary, because every
+test runs on camera and nothing else would catch it.
+
+Checked on all four registered domains with the real sampler
+(`_distribution_preserving_sample`, seed 42, 150-thread pool):
+
+| domain | eligible threads | reference after the pool | reference comments | polite bands | somewhat_polite bands |
+|---|---:|---:|---:|---|---|
+| camera | 441 | **424** | 11,817 | 6/6 | 5/6 |
+| cell_phone | 201 | 108 | 2,577 | 5/6 | 3/6 |
+| headphone | 177 | 90 | 1,547 | 4/6 | **2/6** |
+| laptop | 185 | 126 | 1,274 | 5/6 | **1/6** |
+
+All three measured mechanisms (register, closing move, tone-length) report
+`available` on all four. Missing bands degrade correctly — `band_row` returns
+empty, the cue is withheld, and nothing is defaulted — so a sparse domain gets
+less of the mechanism rather than a wrong rate.
+
+**The constraint is the corpus, not the code.** Camera has 441 eligible threads,
+so a 150-thread evaluation pool consumes 34% of them. The other three have
+177–201, so the same pool consumes **75–85%** and leaves only 90–126 reference
+threads. **For a non-camera domain, use a smaller evaluation pool** (100 or
+fewer) or accept that the profile is measured on a fifth of the data camera has.
+Decide this before building the seed pool, because the pool is what a run's
+`run_config.json` pins.
+
+Prerequisite per domain: per-comment `politeness_results.json` tables under
+`data/raw/discussions/<domain>/<product>/`. All four have them, at coverage
+camera 35/196 products, cell_phone 137/179, headphone 10/196, laptop 51/61 —
+which is why headphone's reference comment count is low despite 240 threads.
+
 ### What may never happen
 
 These protect the validity of the measurement, and they are not negotiable:
