@@ -60,7 +60,8 @@ bureaucracy — every rule there has a wasted paid run behind it.
 | 6 | `generalized_card/AGENTS.md` | binding engineering rules for `generalized_card/` | before writing code |
 | 7 | `tasks/HANDOFF.md` | the long-form evidence archive, newest addendum first | when you need the detail behind a claim |
 | 8 | `docs/thread_metric_score_reference.md` | every exported metric, its scorer, its model | when you need a scorer's exact semantics |
-| 9 | `generalized_card/RUN_INDEX.md` | all 142 runs with tag, cost, and outcome | when locating an artifact |
+| 9 | `generalized_card/RUN_INDEX.md` | all runs with tag, cost, and outcome | when locating an artifact |
+| 10 | `.claude/handoffs/` | session handoffs, newest last; each carries a TYPE INSTRUCTION block for the next agent | when picking the work up cold |
 
 `tasks/HANDOFF.md` is **an archive, not a spec.** It grows by addendum and its
 older numbered sections carry stale state and at least one claim that was later
