@@ -2,8 +2,12 @@
 
 Date: 2026-08-20
 
-Status: **diagnosis complete, nothing built yet.** Four hypotheses rejected, one
-mechanism verified. Read this before writing any code for the politeness trio.
+Status: **diagnosis complete; v99 built and offline-verified; the paid
+large-thread gate has not been run.** Four hypotheses rejected, one mechanism
+verified and shipped as `register_realization` / `--register-realization`. The
+release entry and its written-down predictions are in
+`generalized_card/VERSION_LOG.md`. Read this file before writing any further code
+for the politeness trio.
 
 Target metrics: `polite_rate` (FAIL, MWU 0.013, Cliff −0.67), `impolite_rate`
 (FAIL, 0.001, +0.88), `neutral_rate` (PARTIAL, 0.021, −0.62).
@@ -201,10 +205,11 @@ against a real 3.459, with model probability 0.520 against 0.693. **A generated
 warmth marker lands in a comment otherwise empty of the positive register**, which
 is why raising marker presence alone would not move the conditional.
 
-## What v99 should be
+## What v99 became
 
 Not a warmth-marker schedule (rejected above). Not negative-marker suppression
-(would hurt). The design the evidence supports:
+(would hurt). Shipped as `register_realization.py`, the design the evidence
+supports:
 
 **A drawn positive-register realization for slots the plan already assigned
 `polite`, conditioned on size band, using the per-slot hash draw whose realization
