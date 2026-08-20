@@ -26,6 +26,11 @@ from .tone_length_fit import build_tone_length_profile
 from .viewpoint_bank import build_reference_viewpoints
 
 
+# 18: the register profile becomes per-register. v99 measured `polite` only, and
+# the v100 gate showed three of the four moves at exactly zero on every other
+# register while real comments of those registers carry them -- real `impolite`
+# comments carry an intensifier at 0.300 and a possessive at 0.182 against a
+# generated 0.100 and 0.011. 75% of the corpus carried the deficit.
 # 17: adds the measured per-band closing move. Real comments end on a concrete
 # fact of the speaker's own (0.152) and almost never on an abstract verdict
 # (0.014); generated output ends on a verdict 0.265 of the time, 19x, which is the
@@ -55,7 +60,7 @@ from .viewpoint_bank import build_reference_viewpoints
 # comment's entities to the seed post made one generated thread reuse 23
 # distinct models where the matched real thread used 117, which is a large
 # share of the remaining self-BLEU gap.
-PROFILE_SCHEMA_VERSION = 17
+PROFILE_SCHEMA_VERSION = 18
 CARD_CONTEXT_DROPOUT_RATE = 0.42
 CARD_CONTEXT_JITTER_RATE = 0.32
 CARD_GENERATION_CONTROLS = {

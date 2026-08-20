@@ -1329,16 +1329,34 @@ def _run_generalized_self_test(module: ModuleType, config: DomainConfig) -> None
         assert any(_register_line(item) for item in polite_prompts)
         # Drawn per slot, not stated per size, which is the whole mechanism.
         assert len({_register_line(item) for item in polite_prompts}) > 1
-        # And it must never touch a slot the plan did not assign the register:
-        # the plan's tone marginal already matches real text.
-        blunt = module.build_writer_prompt(
+        # Every register gets its own measured rate, so a blunt slot is asked for
+        # what real blunt comments carry -- three of the four moves were at
+        # exactly zero on non-polite slots before v101.
+        blunt = {
+            module.build_writer_prompt(
+                profile="gpt54_reddit_writer",
+                seed_post=seed,
+                task=replace(
+                    task,
+                    real_word_count=150,
+                    tone_target="impolite",
+                    local_task_id=index,
+                ),
+                parent_comment=None,
+                previous_comments=[],
+            )
+            for index in range(1, 13)
+        }
+        assert any(_register_line(item) for item in blunt)
+        # A tone the profile does not measure gets nothing rather than a default.
+        unknown = module.build_writer_prompt(
             profile="gpt54_reddit_writer",
             seed_post=seed,
-            task=replace(task, real_word_count=150, tone_target="impolite"),
+            task=replace(task, real_word_count=150, tone_target="not_a_tone"),
             parent_comment=None,
             previous_comments=[],
         )
-        assert not _register_line(blunt)
+        assert not _register_line(unknown)
     if module.GENERALIZED_CLOSING_MOVE != "off" and (
         closing_move.ACTIVE_CLOSING_PROFILE.get("available")
     ):
@@ -2950,7 +2968,7 @@ def _register_line(prompt: str) -> str:
     """Return the rendered warm-register rule from one Writer prompt, if any."""
 
     for line in prompt.splitlines():
-        if line.lstrip("- ").lower().startswith("warm register, realized:"):
+        if line.lstrip("- ").lower().startswith("register, realized:"):
             return line.strip()
     return ""
 

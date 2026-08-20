@@ -118,7 +118,11 @@ class DrawTest(unittest.TestCase):
         close = profile({"medium": {"own_concrete_close": 0.5}})
         reg = {
             "available": True,
-            "bands": {"medium": {"sample_count": 100, "shares": {"plain_verdict": 0.5}}},
+            "tones": {
+                "polite": {
+                    "medium": {"sample_count": 100, "shares": {"plain_verdict": 0.5}}
+                }
+            },
         }
         rhythm = {
             "available": True,
@@ -133,7 +137,8 @@ class DrawTest(unittest.TestCase):
         }
         for other, call in (
             ("register", lambda k: rr.slot_uses_move(
-                reg, slot_key=k, move="plain_verdict", word_count=40)),
+                reg, slot_key=k, move="plain_verdict", word_count=40,
+                tone_class="polite")),
             ("rhythm", lambda k: sr.slot_uses_habit(
                 rhythm, slot_key=k, habit="digit", word_count=40)),
         ):

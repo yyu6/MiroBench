@@ -22,13 +22,33 @@ if str(PACKAGE_ROOT) not in sys.path:
 from generalized_card import register_realization as rr  # noqa: E402
 
 
-def profile(shares: dict[str, dict[str, float]]) -> dict:
+def profile(shares: dict[str, dict[str, float]], *, tone: str = "polite") -> dict:
+    """One register's bands. `tones` maps a label to its own band table."""
+
     return {
         "available": True,
-        "tone_class": "polite",
-        "bands": {
-            band: {"sample_count": 100, "shares": dict(values)}
-            for band, values in shares.items()
+        "tone_classes": list(rr.TARGET_TONES),
+        "tones": {
+            tone: {
+                band: {"sample_count": 100, "shares": dict(values)}
+                for band, values in shares.items()
+            }
+        },
+    }
+
+
+def multi(per_tone: dict[str, dict[str, dict[str, float]]]) -> dict:
+    """Several registers at once, each with its own bands and shares."""
+
+    return {
+        "available": True,
+        "tone_classes": list(rr.TARGET_TONES),
+        "tones": {
+            tone: {
+                band: {"sample_count": 100, "shares": dict(values)}
+                for band, values in bands.items()
+            }
+            for tone, bands in per_tone.items()
         },
     }
 
@@ -60,17 +80,41 @@ class ProfileBuildTest(unittest.TestCase):
             )
         )
 
-    def test_only_polite_comments_are_measured(self) -> None:
-        polite = ("polite", "this is a really good little camera " * 6)
-        impolite = ("impolite", "this thing is junk and the price is a joke " * 6)
-        self._write("t1", [polite] * 250 + [impolite] * 400)
+    def test_every_register_is_measured_separately(self) -> None:
+        """v101: all four labels, each at its own rate.
+
+        v99 measured `polite` only, and the v100 gate showed three of the four
+        moves were at exactly zero on every other register while real comments of
+        those registers carry them.
+        """
+
+        warm = ("polite", "this is a really good little body " * 6)
+        blunt = ("impolite", "my copy is junk and the price is a joke " * 6)
+        self._write("t1", [warm] * 250 + [blunt] * 250)
         built = rr.build_register_profile(self.root, reference_thread_ids=["t1"])
         self.assertTrue(built["available"])
-        # 250 polite comments counted, the 400 impolite ones ignored.
-        self.assertEqual(built["sample_count"], 250)
-        band = next(iter(built["bands"].values()))
-        self.assertGreater(band["shares"]["any_intensifier"], 0.9)
-        self.assertGreater(band["shares"]["plain_verdict"], 0.9)
+        self.assertEqual(built["sample_count"], 500)
+        self.assertEqual(built["tone_sample_counts"]["polite"], 250)
+        self.assertEqual(built["tone_sample_counts"]["impolite"], 250)
+        warm_band = next(iter(built["tones"]["polite"].values()))
+        blunt_band = next(iter(built["tones"]["impolite"].values()))
+        # each register measured from its own comments, not pooled
+        self.assertGreater(warm_band["shares"]["plain_verdict"], 0.9)
+        self.assertEqual(blunt_band["shares"]["plain_verdict"], 0.0)
+        self.assertGreater(blunt_band["shares"]["own_thing"], 0.9)
+
+    def test_a_register_with_no_comments_is_absent_rather_than_empty(self) -> None:
+        self._write("t1", [("polite", "a really good body " * 12)] * 300)
+        built = rr.build_register_profile(self.root, reference_thread_ids=["t1"])
+        self.assertIn("polite", built["tones"])
+        self.assertNotIn("impolite", built["tones"])
+
+    def test_labels_outside_the_four_registers_are_ignored(self) -> None:
+        self._write("t1", [("polite", "a really good body " * 12)] * 300
+                    + [("garbage_label", "x " * 40)] * 300)
+        built = rr.build_register_profile(self.root, reference_thread_ids=["t1"])
+        self.assertEqual(built["sample_count"], 300)
+        self.assertEqual(list(built["tones"]), ["polite"])
 
     def test_threads_outside_the_reference_set_are_skipped(self) -> None:
         self._write("keep", [("polite", "a really good body " * 12)] * 250)
@@ -82,7 +126,7 @@ class ProfileBuildTest(unittest.TestCase):
         self._write("t1", [("polite", "good " * 20)] * 30)
         built = rr.build_register_profile(self.root, reference_thread_ids=["t1"])
         self.assertFalse(built["available"])
-        self.assertEqual(built["bands"], {})
+        self.assertEqual(built["tones"], {})
 
     def test_a_missing_directory_is_unavailable_not_an_error(self) -> None:
         built = rr.build_register_profile(
@@ -95,7 +139,8 @@ class DrawTest(unittest.TestCase):
     def test_a_zero_share_never_draws(self) -> None:
         prof = profile({"medium": {"plain_verdict": 0.0}})
         self.assertFalse(
-            rr.slot_uses_move(prof, slot_key="a", move="plain_verdict", word_count=40)
+            rr.slot_uses_move(prof, slot_key="a", move="plain_verdict", word_count=40,
+                              tone_class="polite")
         )
 
     def test_a_full_share_always_draws(self) -> None:
@@ -103,20 +148,23 @@ class DrawTest(unittest.TestCase):
         for key in ("a", "b", "c", "d"):
             self.assertTrue(
                 rr.slot_uses_move(
-                    prof, slot_key=key, move="plain_verdict", word_count=40
+                    prof, slot_key=key, move="plain_verdict", word_count=40,
+                    tone_class="polite",
                 )
             )
 
     def test_the_draw_is_deterministic_for_a_slot(self) -> None:
         prof = profile({"medium": {"plain_verdict": 0.5}})
         first = rr.slot_uses_move(
-            prof, slot_key="seed:7", move="plain_verdict", word_count=40
+            prof, slot_key="seed:7", move="plain_verdict", word_count=40,
+            tone_class="polite",
         )
         for _ in range(5):
             self.assertEqual(
                 first,
                 rr.slot_uses_move(
-                    prof, slot_key="seed:7", move="plain_verdict", word_count=40
+                    prof, slot_key="seed:7", move="plain_verdict", word_count=40,
+                    tone_class="polite",
                 ),
             )
 
@@ -125,7 +173,8 @@ class DrawTest(unittest.TestCase):
             prof = profile({"medium": {"plain_verdict": share}})
             drawn = sum(
                 rr.slot_uses_move(
-                    prof, slot_key=f"seed:{index}", move="plain_verdict", word_count=40
+                    prof, slot_key=f"seed:{index}", move="plain_verdict",
+                    word_count=40, tone_class="polite",
                 )
                 for index in range(4000)
             )
@@ -134,8 +183,10 @@ class DrawTest(unittest.TestCase):
     def test_moves_draw_independently(self) -> None:
         prof = profile({"medium": {"plain_verdict": 0.5, "own_thing": 0.5}})
         both = sum(
-            rr.slot_uses_move(prof, slot_key=f"s{i}", move="plain_verdict", word_count=40)
-            == rr.slot_uses_move(prof, slot_key=f"s{i}", move="own_thing", word_count=40)
+            rr.slot_uses_move(prof, slot_key=f"s{i}", move="plain_verdict",
+                              word_count=40, tone_class="polite")
+            == rr.slot_uses_move(prof, slot_key=f"s{i}", move="own_thing",
+                                 word_count=40, tone_class="polite")
             for i in range(2000)
         )
         # Independent draws agree about half the time; a shared key would be 1.0.
@@ -161,7 +212,8 @@ class DrawTest(unittest.TestCase):
         agree = sum(
             sr.slot_uses_habit(rhythm, slot_key=f"s{i}", habit="digit", word_count=40)
             == rr.slot_uses_move(
-                reg, slot_key=f"s{i}", move="plain_verdict", word_count=40
+                reg, slot_key=f"s{i}", move="plain_verdict", word_count=40,
+                tone_class="polite",
             )
             for i in range(2000)
         )
@@ -172,11 +224,13 @@ class DrawTest(unittest.TestCase):
             {"micro": {"own_thing": 0.06}, "essay": {"own_thing": 0.63}}
         )
         micro = sum(
-            rr.slot_uses_move(prof, slot_key=f"s{i}", move="own_thing", word_count=5)
+            rr.slot_uses_move(prof, slot_key=f"s{i}", move="own_thing", word_count=5,
+                              tone_class="polite")
             for i in range(3000)
         )
         essay = sum(
-            rr.slot_uses_move(prof, slot_key=f"s{i}", move="own_thing", word_count=600)
+            rr.slot_uses_move(prof, slot_key=f"s{i}", move="own_thing", word_count=600,
+                              tone_class="polite")
             for i in range(3000)
         )
         self.assertAlmostEqual(micro / 3000, 0.06, delta=0.02)
@@ -185,7 +239,8 @@ class DrawTest(unittest.TestCase):
     def test_an_unknown_move_never_draws(self) -> None:
         prof = profile({"medium": {"plain_verdict": 1.0}})
         self.assertFalse(
-            rr.slot_uses_move(prof, slot_key="a", move="not_a_move", word_count=40)
+            rr.slot_uses_move(prof, slot_key="a", move="not_a_move", word_count=40,
+                              tone_class="polite")
         )
 
 
@@ -194,24 +249,59 @@ class GuidanceTest(unittest.TestCase):
         rr.set_register_realization("measured")
         rr.set_active_register_profile({})
 
-    def test_only_the_target_tone_receives_the_rule(self) -> None:
-        prof = profile({"medium": {"plain_verdict": 1.0, "own_thing": 1.0}})
-        polite = rr.register_guidance(
-            prof, slot_key="a", word_count=40, tone_class="polite"
-        )
-        self.assertIn("Warm register, realized:", polite)
-        for tone in ("impolite", "neutral", "somewhat_polite", "", None):
+    def test_each_register_draws_at_its_own_measured_rate(self) -> None:
+        """v101: the rate is the assigned register's, not one shared table."""
+
+        prof = multi({
+            "polite": {"medium": {"plain_verdict": 1.0}},
+            "impolite": {"medium": {"plain_verdict": 0.0, "own_thing": 1.0}},
+        })
+        warm = rr.register_guidance(prof, slot_key="a", word_count=40, tone_class="polite")
+        blunt = rr.register_guidance(prof, slot_key="a", word_count=40, tone_class="impolite")
+        self.assertIn("plainly good", warm)
+        # the blunt register measures 0.0 for that move and 1.0 for possession
+        self.assertNotIn("plainly good", blunt)
+        self.assertIn("Name something of your own", blunt)
+
+    def test_a_register_the_profile_does_not_measure_gets_nothing(self) -> None:
+        prof = profile({"medium": {"plain_verdict": 1.0}}, tone="polite")
+        for tone in ("impolite", "neutral", "somewhat_polite"):
             self.assertEqual(
-                rr.register_guidance(
-                    prof, slot_key="a", word_count=40, tone_class=tone
-                ),
+                rr.register_guidance(prof, slot_key="a", word_count=40, tone_class=tone),
                 "",
             )
+
+    def test_an_unknown_tone_gets_nothing_rather_than_a_default(self) -> None:
+        prof = multi({t: {"medium": {"plain_verdict": 1.0}} for t in rr.TARGET_TONES})
+        for tone in ("not_a_tone", "", None, "POLITE_ISH"):
+            self.assertEqual(
+                rr.register_guidance(prof, slot_key="a", word_count=40, tone_class=tone),
+                "",
+            )
+
+    def test_the_rule_never_names_a_register(self) -> None:
+        """Calling it "warm" would tell a blunt slot to soften."""
+
+        prof = multi({t: {"medium": {"plain_verdict": 1.0}} for t in rr.TARGET_TONES})
+        for tone in rr.TARGET_TONES:
+            text = rr.register_guidance(
+                prof, slot_key="a", word_count=40, tone_class=tone
+            )
+            self.assertNotIn("warm", text.lower())
+            self.assertNotIn("polite", text.lower())
+
+    def test_the_blunt_cue_does_not_ask_the_slot_to_soften(self) -> None:
+        """Real impolite comments carry these moves at 0.30 / 0.13 / 0.18."""
+
+        verdict = next(s for s in rr.REGISTER_MOVES if s["name"] == "plain_verdict")
+        # It has to be sayable inside a negative judgement, so it must concede
+        # rather than instruct a positive stance.
+        self.assertIn("even if your overall judgement is negative", verdict["cue"])
 
     def test_the_tone_check_is_case_and_space_insensitive(self) -> None:
         prof = profile({"medium": {"plain_verdict": 1.0}})
         self.assertIn(
-            "Warm register",
+            "Register, realized",
             rr.register_guidance(
                 prof, slot_key="a", word_count=40, tone_class="  Polite "
             ),
@@ -282,7 +372,7 @@ class GuidanceTest(unittest.TestCase):
         )
         rr.set_active_register_profile(profile({"medium": {"plain_verdict": 1.0}}))
         self.assertIn(
-            "Warm register",
+            "Register, realized",
             rr.active_register_guidance(
                 slot_key="a", word_count=40, tone_class="polite"
             ),

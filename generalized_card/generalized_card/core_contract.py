@@ -16,10 +16,11 @@ HISTORICAL_REVISION_POLICY_VERSIONS = {
     "generalized-card-revision-v6-dynamic-coverage-history-20260807",
 }
 GENERALIZED_V2_GENERATION_POLICY_VERSION = (
-    "generalized-card-v2-measured-closing-move-v100-20260820"
+    "generalized-card-v2-per-register-realization-v101-20260820"
 )
 HISTORICAL_GENERATION_POLICY_VERSIONS = {
     "generalized-v2": {
+        "generalized-card-v2-measured-closing-move-v100-20260820",
         "generalized-card-v2-drawn-register-realization-v99-20260820",
         "generalized-card-v2-drawn-typing-rhythm-length-calibration-v98-20260819",
         "generalized-card-v2-keyboard-surface-measured-joints-v97-20260819",
@@ -170,7 +171,7 @@ CORE_FILES = {
     ),
     "generator_adapter": (
         "generalized_card/generalized_card/backend.py",
-        "ecb7a59266bdeb00cae8efb65e1d3859d797676edc31aeaa141fb4a19906e9eb",
+        "f85a804875c1f50bab0426d0c7d19533cc58706b3fa14f0185dd3694f95a7fa1",
     ),
     "data_boundary": (
         "generalized_card/generalized_card/data.py",
@@ -220,7 +221,7 @@ CORE_FILES = {
     ),
     "domain_profile": (
         "generalized_card/generalized_card/domain_profile.py",
-        "806829d660300f8c585f99b08b2fc644b10cdbb12c119ec0efcde9a056112960",
+        "6417e29c19da15da73b1f3b4521881944048b1aa46f94eb6453ed3566a69be69",
     ),
     "viewpoint_bank": (
         "generalized_card/generalized_card/viewpoint_bank.py",
@@ -328,7 +329,7 @@ CORE_FILES = {
     ),
     "register_realization": (
         "generalized_card/generalized_card/register_realization.py",
-        "9942a7df79f2f971f703d60ffd1dc80a34b1b444ad82116a1449e5e7e4a13d68",
+        "ede87db9e21538626933cfbe4a0e0275633c607837b72cc79b0a8cc7554e71cc",
     ),
     "source_provenance": (
         "generalized_card/generalized_card/source_provenance.py",
@@ -400,7 +401,7 @@ CORE_FILES = {
     ),
     "domain_prompt_adapter": (
         "generalized_card/generalized_card/prompts.py",
-        "4d33eff77931ed8c41c1c6f396ae344f46d821cf0ebb925bc95841cf2ba3942f",
+        "deb1ac7e5faee763df501c8880c178de9013927508700783205363651a868d1f",
     ),
     "reply_planning": (
         "generalized_card/generalized_card/reply_planning.py",

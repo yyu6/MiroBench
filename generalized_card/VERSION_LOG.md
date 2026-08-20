@@ -62,6 +62,79 @@ Before any run that changes behavior:
 
 ---
 
+## v101 — per-register realization (2026-08-20)
+
+Policy ID: `generalized-card-v2-per-register-realization-v101-20260820`.
+Same arm, `--register-realization {measured,off}`; `off` reproduces v98.
+
+**Fixes the scoping error the v100 gate exposed.** v99 restricted the register
+moves to `polite` because no move *discriminates* the other labels. That was the
+wrong test: discrimination and rate-matching are different questions, and reading
+real is rate-matching. Real comments of every register carry these moves.
+
+| real label | any_intensifier | plain_verdict | own_thing | love_like |
+|---|---:|---:|---:|---:|
+| polite | 0.485 | 0.393 | 0.375 | 0.142 |
+| somewhat_polite | 0.324 | 0.202 | 0.184 | 0.027 |
+| neutral | 0.130 | 0.070 | 0.108 | 0.004 |
+| impolite | **0.300** | 0.128 | **0.182** | 0.026 |
+
+On the v100 gate, three of the four moves were at **exactly zero** on every
+non-polite register, and `any_intensifier` on planned-impolite slots was 0.100
+against a real 0.300. Decomposed for that move: polite slots +0.059 at weight
+0.25, every other slot **−0.170 at weight 0.75**.
+
+The profile is now per-register (schema 17 → 18), measured over all 15,294
+excluded real comments rather than the 4,787 polite ones. The per-register tables
+are strongly differentiated — long blunt comments are heavily marked (`impolite`
+essay: intensifier 0.946, verdict 0.732) while `neutral` micro is genuinely bare
+at 0.016 — so this is not one table applied four times.
+
+`plain_verdict`'s cue was reworded to hold in any register: "Name one thing here
+that is plainly good … even if your overall judgement is negative." Inside a blunt
+turn that is the concession real blunt comments make at 0.128; inside a warm one
+it is an appraisal. The rule is now labelled "Register, realized" rather than
+"Warm register", because naming a register would tell a blunt slot to soften. A
+test asserts no cue names one.
+
+### Prediction, with the arithmetic shown
+
+The v99 prediction failed because I predicted corpus rates from a corpus baseline
+for a mechanism firing on 25% of slots. Weighting by the gate thread's planned
+tone mix (polite 0.247, somewhat 0.070, neutral 0.199, impolite 0.484) and by the
+compliance measured on that gate:
+
+| move | v100 | full rate-match | measured compliance | predicted | thread real |
+|---|---:|---:|---:|---:|---:|
+| `any_intensifier` | 0.204 | 0.314 | 0.70 | **0.26–0.30** | 0.373 |
+| `plain_verdict` | 0.054 | 0.187 | 0.40 | **0.09–0.13** | 0.200 |
+| `own_thing` | 0.081 | 0.215 | 0.33 | **0.11–0.15** | 0.168 |
+| `love_like` | 0.016 | 0.050 | 0.00 | **0.02–0.04** | 0.043 |
+
+`love_like` is the low-confidence one: 3 slots were asked for it on the gate and 0
+realized it, so its cue may simply not work.
+
+**`polite_rate` is not predicted to move much and `impolite_rate` even less.**
+This arm is aimed at what the text reads like, and it deliberately raises the
+positive-register vocabulary on blunt slots, which is what real blunt comments do
+but is not what raises `polite_rate`. Guardrail: `impolite_rate` must not *fall*
+below the real 0.443 — asking blunt slots to concede one good thing could soften
+them past the target, and the plan's tone marginal is already correct.
+
+### Zero-API result
+
+532 tests pass, Ruff clean, 104 pins with zero drift, self-test passes with the
+arm on and off. Schema-18 profile over 424 excluded threads, 0 seed overlap,
+15,294 comments split polite 4,787 / impolite 6,538 / neutral 2,514 /
+somewhat_polite 1,455; `neutral` has no `very_long` or `essay` band and is
+correctly absent there rather than defaulted.
+
+Draw fidelity within **0.013** in every register, band and move. Rendered prompts
+carry the rule on 23/24 polite slots (9 distinct forms), 22/24 somewhat_polite
+(7), 21/24 impolite (5), 17/24 neutral (4).
+
+---
+
 ## v100 — measured closing move (2026-08-20)
 
 Policy ID: `generalized-card-v2-measured-closing-move-v100-20260820`.

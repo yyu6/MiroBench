@@ -63,14 +63,40 @@ something of the speaker's own. Generated 120+ slots are 67.3% planned polite an
 realize polite 14.3% of the time, against 76.7% in real text -- the largest gap in
 the corpus and the band where a flat cue would understate the register most.
 
-Why only the polite class
--------------------------
-No move discriminates `neutral`: every candidate scores a held-out lift below 0.3
-for that label, and the neutral-versus-impolite contrast shows neutral to be the
-*unmarked* register, characterised by the absence of these moves rather than the
-presence of anything. There is nothing additive to ask a neutral slot for. The
-planned-neutral bleed into impolite (0.513) is a real problem and it needs a
-suppressive mechanism instead; see `tasks/v99-worklog.md`.
+Every tone class, at its own measured rate
+-----------------------------------------
+v99 scoped this to `polite` only, on the grounds that no move *discriminates* the
+other labels -- every candidate scored a held-out lift below 0.3 for `neutral`.
+The v100 large-thread gate showed that was the wrong test. Discrimination and
+rate-matching are different questions: a move can fail to predict a label and
+still be exactly the rate real comments of that label carry. Making text read real
+is rate-matching.
+
+Real comments of every register carry these moves. Blunt ones included:
+
+    real label        any_intensifier  plain_verdict  own_thing  love_like
+    polite                      0.485          0.393      0.375      0.142
+    somewhat_polite             0.324          0.202      0.184      0.027
+    neutral                     0.130          0.070      0.108      0.004
+    impolite                    0.300          0.128      0.182      0.026
+
+Generated output on the gate, by the tone the plan assigned:
+
+    planned                     0.543          0.217      0.239      0.065  polite
+                                0.154          0.000      0.000      0.000  somewhat
+                                0.054          0.000      0.081      0.000  neutral
+                                0.100          0.000      0.011      0.000  impolite
+
+Three of the four moves are at **exactly zero** on every non-polite register, and
+`any_intensifier` on planned-impolite slots is 0.100 against a real 0.300.
+Decomposed for that move, polite slots run +0.059 at weight 0.25 while every other
+slot runs **-0.170 at weight 0.75** -- so the class v99 excluded by design carries
+essentially the whole deficit.
+
+The cues are therefore worded to hold in any register. "Name one thing that is
+plainly good" is a concession inside a blunt turn and an appraisal inside a warm
+one, which is what real comments of each label do; it is not an instruction to
+soften. The tone the Planner assigned still owns the stance.
 
 Why the cues name an act and never a phrase
 -------------------------------------------
@@ -90,9 +116,10 @@ from typing import Any, Iterable
 from .comment_structure import STRUCTURE_BUCKETS, structure_bucket
 
 
-# The label whose realization this module repairs. Kept explicit rather than
-# implied so a future extension to another class has to state itself.
-TARGET_TONE = "polite"
+# Every register whose realization this module repairs, measured separately.
+# `somewhat_polite` is a real polite-guard class that the 12 metrics never report,
+# but it is 8.7% of planned slots and its moves are at zero, so it is included.
+TARGET_TONES = ("polite", "somewhat_polite", "neutral", "impolite")
 
 REGISTER_MOVES: tuple[dict[str, Any], ...] = (
     {
@@ -112,10 +139,14 @@ REGISTER_MOVES: tuple[dict[str, Any], ...] = (
             r"\b(?:great|good|excellent|fantastic|awesome|amazing|perfect|"
             r"lovely|beautiful|incredible|superb|brilliant)\b"
         ),
+        # Worded to hold in any register: a concession inside a blunt turn, an
+        # appraisal inside a warm one. Real `impolite` comments carry this at
+        # 0.128, usually as exactly that concession.
         "cue": (
-            "Commit to the positive judgement in one plain everyday word, and "
-            "let it stand. Do not convert it into a trade-off, a condition, or "
-            "an abstract appraisal of what matters."
+            "Name one thing here that is plainly good, in an ordinary everyday "
+            "word, and let that much stand -- even if your overall judgement is "
+            "negative. Do not convert it into a trade-off, a condition, or an "
+            "abstract appraisal of what matters."
         ),
     },
     {
@@ -168,19 +199,21 @@ def build_register_profile(
     *,
     reference_thread_ids: Iterable[str],
 ) -> dict[str, Any]:
-    """Measure each move's share among real `polite` comments, per size band.
+    """Measure each move's share per size band, separately for each register.
 
     Reads the same per-comment `politeness_results.json` tables that
     `tone_length_fit.build_tone_length_profile` reads, filtered to the same
     evaluation-excluded reference threads, because the shares only mean anything
-    conditioned on the evaluation classifier's own label. Only counts are
-    stored; the comment text is read to match a pattern and never retained.
+    conditioned on the evaluation classifier's own label. Only counts are stored;
+    the comment text is read to match a pattern and never retained.
     """
 
     reference = {
         str(value).strip() for value in reference_thread_ids if str(value).strip()
     }
-    samples: dict[str, list[str]] = {name: [] for name in STRUCTURE_BUCKETS}
+    samples: dict[str, dict[str, list[str]]] = {
+        tone: {name: [] for name in STRUCTURE_BUCKETS} for tone in TARGET_TONES
+    }
     total = 0
     for path in sorted(Path(raw_discussions_dir).rglob("politeness_results.json")):
         payload = _load_json(path)
@@ -191,33 +224,37 @@ def build_register_profile(
                 continue
             for row in thread.get("comments") or []:
                 label = str((row or {}).get("pred_label") or "").strip().lower()
-                if label != TARGET_TONE:
+                if label not in samples:
                     continue
                 text = str(row.get("text") or "").strip()
                 if not text:
                     continue
                 total += 1
-                samples[structure_bucket(len(text.split()))].append(text)
+                samples[label][structure_bucket(len(text.split()))].append(text)
     if total < _MIN_SAMPLES:
-        return {"available": False, "sample_count": total, "bands": {}}
-    bands = {
-        name: _band_row(bodies)
-        for name, bodies in samples.items()
-        if len(bodies) >= _MIN_BAND_SAMPLES
+        return {"available": False, "sample_count": total, "tones": {}}
+    tones = {
+        tone: {
+            name: _band_row(bodies)
+            for name, bodies in bands.items()
+            if len(bodies) >= _MIN_BAND_SAMPLES
+        }
+        for tone, bands in samples.items()
     }
+    tones = {tone: bands for tone, bands in tones.items() if bands}
     return {
-        "available": bool(bands),
-        "tone_class": TARGET_TONE,
+        "available": bool(tones),
+        "tone_classes": list(TARGET_TONES),
         "method": (
-            "per-move comment frequency among evaluation-classifier `polite` "
-            "comments, by size band, over same-domain threads excluded from the "
-            "evaluation seed pool"
+            "per-move comment frequency by evaluation-classifier label and size "
+            "band, over same-domain threads excluded from the evaluation seed pool"
         ),
         "sample_count": total,
-        "band_sample_counts": {
-            name: len(bodies) for name, bodies in sorted(samples.items())
+        "tone_sample_counts": {
+            tone: sum(len(b) for b in bands.values())
+            for tone, bands in sorted(samples.items())
         },
-        "bands": bands,
+        "tones": {tone: dict(sorted(bands.items())) for tone, bands in sorted(tones.items())},
     }
 
 
@@ -240,10 +277,14 @@ def _band_row(bodies: list[str]) -> dict[str, Any]:
     return {"sample_count": len(bodies), "shares": dict(sorted(shares.items()))}
 
 
-def band_row(profile: dict[str, Any] | None, word_count: Any) -> dict[str, Any]:
-    """Return the measured register row for the band this slot falls in."""
+def band_row(
+    profile: dict[str, Any] | None, word_count: Any, tone_class: str
+) -> dict[str, Any]:
+    """Return the measured row for this slot's register and size band."""
 
-    row = ((profile or {}).get("bands") or {}).get(structure_bucket(word_count))
+    tone = str(tone_class or "").strip().lower()
+    bands = ((profile or {}).get("tones") or {}).get(tone) or {}
+    row = bands.get(structure_bucket(word_count))
     return row if isinstance(row, dict) else {}
 
 
@@ -253,14 +294,15 @@ def slot_uses_move(
     slot_key: str,
     move: str,
     word_count: Any,
+    tone_class: str,
 ) -> bool:
-    """One stable per-slot draw at this band's measured share for the move.
+    """One stable per-slot draw at this register and band's measured share.
 
     Namespaced away from `sentence_rhythm`'s draw so a slot that draws a rhythm
     habit is not thereby correlated with drawing a register move.
     """
 
-    row = band_row(profile, word_count)
+    row = band_row(profile, word_count, tone_class)
     if not row or move not in _MOVE_BY_NAME:
         return False
     share = float((row.get("shares") or {}).get(move, 0.0))
@@ -278,17 +320,22 @@ def slot_moves(
     *,
     slot_key: str,
     word_count: Any,
+    tone_class: str,
 ) -> tuple[tuple[str, bool], ...]:
-    """Return every move this band measures, with the slot's draw for it."""
+    """Return every move this register and band measures, with the slot's draw."""
 
-    row = band_row(profile, word_count)
+    row = band_row(profile, word_count, tone_class)
     if not row:
         return ()
     return tuple(
         (
             spec["name"],
             slot_uses_move(
-                profile, slot_key=slot_key, move=spec["name"], word_count=word_count
+                profile,
+                slot_key=slot_key,
+                move=spec["name"],
+                word_count=word_count,
+                tone_class=tone_class,
             ),
         )
         for spec in REGISTER_MOVES
@@ -305,25 +352,28 @@ def register_guidance(
 ) -> str:
     """Render this slot's drawn register moves as one Writer rule.
 
-    Returns empty for any tone other than the target class. A slot the plan did
-    not assign `polite` must not be nudged warm: the plan marginal already
-    matches real text and moving it would trade one failing metric for another.
+    The rate comes from the register the plan assigned, so a blunt slot is asked
+    for what real blunt comments carry and not for warmth. The plan still owns the
+    stance; nothing here changes which tone a slot has.
     """
 
     if not REGISTER_REALIZATION_ENABLED:
         return ""
-    if str(tone_class or "").strip().lower() != TARGET_TONE:
+    tone = str(tone_class or "").strip().lower()
+    if tone not in TARGET_TONES:
         return ""
     cues = [
         _MOVE_BY_NAME[name]["cue"]
         for name, drawn in slot_moves(
-            profile, slot_key=slot_key, word_count=word_count
+            profile, slot_key=slot_key, word_count=word_count, tone_class=tone
         )
         if drawn
     ]
     if not cues:
         return ""
-    return "Warm register, realized: " + " ".join(cues)
+    # Not "warm register": the same moves are measured for every register, and
+    # naming one would tell a blunt slot to soften.
+    return "Register, realized: " + " ".join(cues)
 
 
 def active_register_guidance(

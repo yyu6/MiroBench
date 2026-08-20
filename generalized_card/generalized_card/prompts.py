@@ -247,8 +247,8 @@ def _register_rule(backend: Any, task: Any) -> str:
 
     Keyed on the same slot as `_rhythm_rule` but namespaced inside
     `register_realization`, so drawing a rhythm habit does not correlate with
-    drawing a register move. Returns empty unless the plan assigned this slot the
-    target tone, which keeps the plan's tone marginal untouched.
+    drawing a register move. The rate comes from the register the plan assigned,
+    which the rule never changes.
     """
 
     seed_key = str(getattr(backend, "GENERALIZED_ACTIVE_SEED_KEY", "") or "")
