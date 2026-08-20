@@ -615,6 +615,11 @@ progress and is **not** the same thing as being close at N=150.
   saved Writer prompts to build the realization matrix above.
 - **`--template-phrase-reuse-budget 4` is flat** and wrong at large thread sizes
   (real threads reach `uncertainty_frame` 7, 8, and 12).
+- **`sentence_rhythm`'s digit cue produces a bare `0` or `1` where a person writes
+  the word** — "0 verdict from me", "wrap 1 hand around it". 0.140 of v102 and
+  0.151 of v101 comments against 0.071 in excluded real, and the real figure
+  includes legitimate decimals ("0.1% of consumers") so the true ratio is worse
+  than 2×. An eye-visible tell for criterion 2, unfixed.
 - **`pair_count` in `matched_*_thread_scores.csv` is not the stance pair count.**
   It is `n(n-1)/2` from the pairwise metrics. Do not read it for
   `hard_disagree_rate`.
@@ -633,7 +638,7 @@ the default should go back to `tense`.
 
 ### Next step
 
-**v102 `--opening-move` is built and offline-verified; it has not been run.**
+**v102 `--opening-move` passed its large-thread gate; N=10 is the next action.**
 Policy `generalized-card-v2-drawn-opening-move-v102-20260820`, profile schema 19.
 It names each slot's opening word, drawn at its register's measured
 distribution, instead of describing the entry category, and replaces the
@@ -643,7 +648,25 @@ gate.** It is predicted to take `hard_disagree_rate`'s Cliff from +0.37 to
 +0.15–0.25, which is real movement and is **still short of the ≤0.10 bar**: the
 parent-echo term is the other half and has no mechanism yet.
 
-Next action: the large-thread gate (§4), `--start-seed-index 8`, 186 comments.
+The gate (`..._v102_opening_seed8_20260820_v1`, 186/186 comments, $1.1392) beat
+every prediction: `discourse_marker` realization 0.231 → **0.923**, realized
+`polarity_token` share 0.1559 → **0.0538** against a measured 0.0526, and
+**0 of 158 reply slots** prepended an unassigned polarity token against 19 in
+v101. `hard_disagree_rate` went from 19.1% to **3.0%** relative error on that
+thread, the closest it has ever come, and `neutral_rate`, `emotion_entropy`,
+`polite_rate` and `impolite_rate` all improved as well.
+
+**Compliance with a named token ran ≈1.0 where the same instruction as a category
+ran 0.23.** That is the widest demonstration of the naming rule in the project.
+
+Two things were got wrong and are recorded in `VERSION_LOG.md`: the predicted
+thread-rate band was computed against the N=10 pooled real instead of this
+thread's real, and the guardrail "`polite_rate` must not move" was reasoned from
+a flat *conditional* while the arm acts on *prevalence* — changing the opener
+changes which class a comment is in, and `discourse_marker` is the most polite
+class in real text at 0.466.
+
+Next action: **N=10**, paired to `--start-seed-index 2`, `--sampling-seed 42`.
 
 **Still blocking N=150: the reporting standard.** 12 metrics × 2 tests at
 α = 0.05 means a perfect generator passes all 12 together only ≈ 52% of the time.

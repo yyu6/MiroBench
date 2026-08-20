@@ -1,7 +1,8 @@
 # v102 worklog — the `hard_disagree_rate` diagnosis
 
-Status: **diagnosis complete; v102 `--opening-move` built and offline-verified,
-not yet run.** Reproduce every number with
+Status: **v102 `--opening-move` built, offline-verified, and passed its
+large-thread gate; N=10 pending.** Gate result in `generalized_card/VERSION_LOG.md`.
+Reproduce every diagnosis number with
 
 ```bash
 .venv/bin/python generalized_card/analysis/disagreement_diagnosis.py all

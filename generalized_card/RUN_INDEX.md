@@ -156,6 +156,9 @@ inflates the pass count. See VERSION_LOG.md.
 | 98 | `generalized_card_camera_gpt54_v98_rhythm_n10_20260820_v1` | 10 | 532 | 1.00 | generalized-card-v2-drawn-typing-rhythm-length-calibration-v98-20260819 | 8 |
 | 98 | `generalized_card_camera_gpt54_v98_rhythm_seed2_20260819_preflight_v1` | 0 | 0 |  | generalized-card-v2-drawn-typing-rhythm-length-calibration-v98-20260819 |  |
 | 98 | `generalized_card_camera_gpt54_v98_rhythm_seed2_20260819_v1` | 1 | 45 | 1.00 | generalized-card-v2-drawn-typing-rhythm-length-calibration-v98-20260819 |  |
+| 100 | `generalized_card_camera_gpt54_v100_closing_seed8_20260820_v1` | 1 | 186 | 1.00 | generalized-card-v2-measured-closing-move-v100-20260820 | descriptive |
+| 101 | `generalized_card_camera_gpt54_v101_register_n10_20260820_v1` | 10 | 532 | 1.00 | generalized-card-v2-per-register-realization-v101-20260820 | 9 |
+| 102 | `generalized_card_camera_gpt54_v102_opening_seed8_20260820_v1` | 1 | 186 | 1.00 | generalized-card-v2-drawn-opening-move-v102-20260820 | descriptive |
 
 ## Per-metric MWU p-values for evaluated runs
 
@@ -199,3 +202,6 @@ inflates the pass count. See VERSION_LOG.md.
 | `generalized_card_camera_gpt54_v97_keyboard_n10_20260819_v1` | 0.186* | 0.000 | 0.910* | 0.307* | 0.010 | 0.001 | 0.017 | 0.021 | 0.940* | 1.000* | 0.734* | 0.326* |
 | `generalized_card_camera_gpt54_v97_keyboard_seed2_20260819_v1` | 1.000d | 1.000d | 1.000d | 1.000d | 1.000d | 1.000d | 1.000d | 1.000d | 1.000d | 1.000d | 1.000d | 1.000d |
 | `generalized_card_camera_gpt54_v98_rhythm_n10_20260820_v1` | 0.121* | 0.001 | 0.623* | 0.290* | 0.013 | 0.001 | 0.021 | 0.473* | 0.970* | 0.970* | 0.678* | 0.571* |
+| `generalized_card_camera_gpt54_v100_closing_seed8_20260820_v1` | 1.000d | 1.000d | 1.000d | 1.000d | 1.000d | 1.000d | 1.000d | 1.000d | 1.000d | 1.000d | 1.000d | 1.000d |
+| `generalized_card_camera_gpt54_v101_register_n10_20260820_v1` | 0.104* | 0.003 | 0.850* | 0.173* | 0.021 | 0.005 | 0.059* | 0.734* | 0.909* | 0.970* | 0.850* | 0.850* |
+| `generalized_card_camera_gpt54_v102_opening_seed8_20260820_v1` | 1.000d | 1.000d | 1.000d | 1.000d | 1.000d | 1.000d | 1.000d | 1.000d | 1.000d | 1.000d | 1.000d | 1.000d |

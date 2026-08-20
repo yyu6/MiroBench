@@ -123,9 +123,32 @@ are not**. Cliff table and projection there.
       Offline: 559 tests, ruff clean, 105 pins 0 drift, self-test on and off,
       draw fidelity within 0.0108 in every cell, rule proven on the real prompt
       path, domain generalization available on all four with correct degradation.
-- [ ] **Paid large-thread gate for v102**, `--start-seed-index 8` (186 comments),
-      judged on content *and* distance against the predictions, then N=10 paired
-      to `--start-seed-index 2`, `--sampling-seed 42`.
+- [x] **Paid large-thread gate for v102 — passed.** Run
+      `..._v102_opening_seed8_20260820_v1`, 186/186 comments, $1.1392, 24.4 min.
+      Full result in `generalized_card/VERSION_LOG.md`.
+
+      Every prediction beaten: `discourse_marker` realization 0.231 → **0.923**,
+      realized `polarity_token` 0.1559 → **0.0538** against a measured 0.0526,
+      **0 of 158 reply slots** prepended an unassigned polarity token against 19
+      in v101. `hard_disagree_rate` 19.1% → **3.0%** relative error;
+      `neutral_rate`, `emotion_entropy`, `polite_rate`, `impolite_rate` all
+      improved too. Compliance with a **named token** ≈1.0 against 0.23 for the
+      same instruction as a **category**.
+
+      Two of my own errors recorded: the predicted thread band used the N=10
+      pooled real instead of this thread's real, and the "polite_rate must not
+      move" guardrail reasoned from a flat conditional while the arm acts on
+      prevalence.
+- [ ] **N=10 for v102**, paired to `--start-seed-index 2`, `--sampling-seed 42`.
+      Command in the VERSION_LOG entry. It also resolves the one unresolved
+      question from the gate: `mean_story_probability` on the drawn slots rose
+      0.076 → 0.157 but on **3 comments of 23**, median 0.063 — not resolvable at
+      that n. **Do not reword the cue against it before N=10.**
+- [ ] Eye-visible tell found while reading the gate, unrelated to the arm:
+      `sentence_rhythm`'s digit cue writes a bare `0`/`1` where a person writes
+      the word ("0 verdict from me", "wrap 1 hand around it"). 0.140 generated
+      against 0.071 real, and the real figure includes legitimate decimals so the
+      true ratio is worse.
 - [ ] **The parent-echo mechanism has no design yet.** It is the other half of
       the `hard_disagree_rate` gap and it is also the user's criterion-2
       complaint (*很容易去讨论同一个话题*). Note that `context_transform` does

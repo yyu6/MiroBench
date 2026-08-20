@@ -206,11 +206,139 @@ Domain generalization, real sampler, seed 42:
 The sparse domains lose cells rather than receiving a wrong word, which is the
 correct degradation.
 
-### Not yet run
+### Large-thread gate result — 2026-08-20
 
-No paid gate yet. Next: the large-thread gate at `--start-seed-index 8`
-(186 comments), read against the predictions above, then N=10 paired to
-`--start-seed-index 2`, `--sampling-seed 42`.
+Run `generalized_card_camera_gpt54_v102_opening_seed8_20260820_v1`, seed index 8,
+post `i1o51h`, **186 of 186 comments**, 0 degraded, 0 leaks, 338 requests,
+**$1.1392**, 24.4 minutes. Compared against **v101's own row for the same thread**
+(the seed-8 slice of its N=10 run) and that thread's real text, not against a
+ten-thread average.
+
+**Every prediction was beaten, and the mechanism did exactly what it named.**
+
+| quantity | v101 (seed 8) | predicted | v102 | real | |
+|---|---:|---:|---:|---:|---|
+| `discourse_marker` slots realizing it | 0.231 | 0.55–0.80 | **0.923** | — | beat |
+| realized `polarity_token` share | 0.1559 | 0.06–0.08 | **0.0538** | 0.0526 | beat |
+| realized `discourse_marker` share | 0.0323 | 0.045–0.065 | **0.0753** | 0.0726 | beat |
+| slots prepending an unassigned polarity token | 19 | — | **0** | — | — |
+| reply-pair `hard_disagree_rate` | 0.228 | — | **0.1835** | 0.1688 | |
+| thread `hard_disagree_rate` | 0.2022 | 0.145–0.155 | **0.1749** | 0.1697 | see below |
+
+Compliance with a **named token** ran ≈1.0 where the same instruction as a
+**category** ran 0.23. That is the sharpest demonstration in the project so far of
+the standing finding, and it is a wider gap than v98's semicolon or v99's register
+moves produced.
+
+**My prediction band for the thread rate was computed against the wrong
+population** — 0.145–0.155 came from the N=10 pooled real (0.1218), while this
+thread's real is 0.1697. Scaled to this thread the ablation implied ≈0.168 and the
+run gave 0.1749. The band was wrong; the mechanism was not. That is the same
+granularity error the 2026-08-20 lesson is about, made once more in the
+prediction rather than in the code.
+
+### Distance on every metric, against the same thread's real row
+
+| metric | real | v100 | v101 | v102 | err v101 → v102 |
+|---|---:|---:|---:|---:|---|
+| `hard_disagree_rate` | 0.1697 | 0.2350 | 0.2022 | **0.1749** | 19.1% → **3.0%** |
+| `neutral_rate` | 0.1622 | 0.0919 | 0.1148 | **0.1398** | 29.2% → **13.8%** |
+| `emotion_entropy` | 1.9459 | 1.6461 | 1.5356 | **1.6867** | 21.1% → **13.3%** |
+| `polite_rate` | 0.2324 | 0.0757 | 0.0820 | **0.1075** | 64.7% → **53.7%** |
+| `impolite_rate` | 0.4649 | 0.6973 | 0.6503 | **0.6237** | 39.9% → **34.2%** |
+| `semantic_mean_cosine` | 0.1865 | 0.1907 | 0.2241 | 0.1937 | 20.2% → 3.9% |
+| `length_cv` | 0.8951 | 0.9254 | 0.8769 | 0.9046 | 2.0% → 1.1% |
+| `self_bertscore_mean_f1` | 0.4887 | 0.5063 | 0.5090 | 0.5076 | 4.2% → 3.9% |
+| `avg_depth` | 3.6000 | 3.5892 | 3.6120 | 3.5914 | 0.3% → 0.2% |
+| `structural_virality` | 4.5608 | 4.5508 | 4.5861 | 4.5457 | 0.6% → 0.3% |
+| `self_bleu_4` | 0.0283 | 0.0353 | 0.0343 | 0.0347 | 21.4% → 22.8% |
+| `mean_story_probability` | 0.1114 | 0.1439 | 0.1222 | 0.1283 | 9.7% → 15.2% |
+
+`hard_disagree_rate` at 3.0% relative error is the closest this metric has ever
+come on a large thread. The reply-pair decomposition confirms the route: the
+reply conditional went 0.228 → 0.1835 against a real 0.1688, and **0 of 158 reply
+slots prepended an unassigned polarity token**, against 19 in v101.
+
+### The guardrail I got wrong, and why
+
+I wrote that `polite_rate` and `impolite_rate` **must not move**, on the grounds
+that the tone gap is flat across opener classes. They moved, favourably, and the
+reasoning behind the guardrail was wrong.
+
+A natural experiment attributes it. The arm's positive cue fires on the 23 slots
+the schedule assigned one of the two drawn types; the leak removal touches the
+rest:
+
+| slot group | n | polite v101 → v102 | impolite | neutral |
+|---|---:|---|---|---|
+| assigned a drawn type | 23 | 0.000 → **0.174** | 0.652 → 0.652 | 0.130 → 0.000 |
+| every other slot | 163 | 0.094 → 0.098 | 0.650 → **0.620** | 0.113 → **0.160** |
+
+The polite gain is **entirely on the arm's own slots** — the polite-register draw
+is `thanks`/`thank` 63% of the time, and polite-guard keys on warmth markers. The
+neutral gain is **entirely on the other slots**, where removing `Yeah,` moved
+comments off `impolite`.
+
+The error in my reasoning: I checked that the *conditional* P(polite | opener
+class) gap was flat and concluded the opener could not move `polite_rate`. But
+changing the opener changes which class a comment is **in**, and the classes have
+very different real polite rates — `discourse_marker` is the most polite class at
+0.466. That is the prevalence-versus-conditional distinction the v99 work is built
+on, applied correctly to `hard_disagree_rate` and then forgotten one metric later.
+
+### The two regressions, honestly
+
+**`self_bleu_4` +0.0004 is not the drawn words.** The risk named in the module
+docstring was that naming a word repeats it. Measured with the exact scorer: v101
+carried `"yep , that's the"` 4× and `"yep , thanks ."` 2× as repeated opening
+4-grams, and v102 has **13 comments sharing an opening 4-gram against v101's 14**.
+Trimming the first word from every comment *raises* `self_bleu_4` in both runs
+(v101 −0.00013, v102 −0.00024), so the opening is a diversity contributor, not a
+repetition source. The arm removed the repeating openers and the metric still
+ticked up 0.0004 for an unattributed reason. At n=1 that is noise; the exact
+surgery on the N=10 pool gave −0.0003.
+
+**`mean_story_probability` +0.006 is located on the arm's slots but is not
+attributable.** The 23 drawn slots went 0.076 → 0.157 while the other 163 went
+0.129 → 0.124. But **the 23-slot mean is carried by 3 comments** — 0.963, 0.813,
+0.666 — and the **median of the 23 is 0.063**. A 3-comment swing at n=23 is
+exactly the case a claim was retracted for on 2026-08-20. Recorded as unresolved,
+not as an effect. The N=10 run resolves it at n≈230 drawn slots; do not reword the
+cue against this.
+
+### Content, read comment by comment
+
+All 23 drawn slots obeyed their word and the words are varied — `also`, `ah`,
+`oh`, `so`, `personally`, `lol`, `thanks`, `same`, `agreed`, `yes`, `no`, `yeah` —
+against v101's 19 near-identical `Yeah,` / `Yep,` openings on the same thread.
+That is the criterion-2 gain this arm was for. One slot missed its word
+("Pretty much" for an assigned `also`), which is the 1 of 13.
+
+**A pre-existing tell surfaced while reading, unrelated to this arm.** Comments
+carry a bare `0` or `1` as a word — "0 verdict from me", "wrap 1 hand around it",
+"Ask what 1 thing you're giving up" — at **0.140 in v102 and 0.151 in v101**
+against **0.071** in excluded real. `sentence_rhythm`'s digit cue asks for "a
+figure rather than described in words", and the model supplies a figure where a
+person writes the word. Caveat on the probe, per the 2026-08-19 lesson: the real
+0.071 includes legitimate decimals such as "0.1% of consumers", so the true real
+rate of the unnatural form is lower and the ratio is worse than 2×. Recorded as a
+lead for criterion 2, not acted on here.
+
+### Next
+
+**Go to N=10.** Nothing on this gate calls for a correction first: the metric it
+targeted improved to 3.0% relative error, three more improved, and both
+regressions are noise-level with one of them contradicted by its own
+mechanism-level check. Command paired to v101:
+
+```bash
+python3 -u generalized_card/scripts/run_generate.py \
+  --tag generalized_card_camera_gpt54_v102_opening_n10_20260820_v1 \
+  --domain camera --model gpt-5.4-mini \
+  --base-url https://api.openai.com/v1 --api-key-env LLM_API_KEY \
+  --pool-size 150 --max-posts 10 --posts-per-run 5 \
+  --start-seed-index 2 --sampling-seed 42 --opening-move measured --resume
+```
 
 ---
 

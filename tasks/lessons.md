@@ -1,5 +1,74 @@
 # Lessons
 
+## 2026-08-20 — Naming the token gets ~1.0 compliance where naming the category gets 0.23
+
+**What happened.** `opener_profile` schedules a grammatical entry type per slot
+and `_opener_rule` renders it. On v101 the instruction reached the Writer at
+exactly the measured share and was ignored one way: `discourse_marker` — "open
+with a short conversational connective before the point" — was realized 0.231 of
+the time and turned into `Yeah,` on half its slots, and the realized
+`polarity_token` share ran 2.4x its measured one.
+
+The fix was not a stronger rule. **A prose prohibition was already there** — "Do
+not open with a bare agreement or disagreement token" had been appended to every
+non-polarity slot since v96, reached **504 of 532 v101 prompts, and was violated
+on 9.1% of them.** I found that by grepping the saved prompts before writing
+code, and it changed the design: v102 draws the concrete word from the register's
+measured distribution and names it, and replaces the categorical ban with the ten
+measured tokens.
+
+On the gate: `discourse_marker` realization **0.231 → 0.923**, realized
+`polarity_token` share **0.1559 → 0.0538** against a measured 0.0526, and **0 of
+158 reply slots** prepended an unassigned polarity token against 19 in v101.
+
+**Why:** a category name is a variable the model binds to its own default. A
+token is a constant. This is the same finding as `TONE_DEFINITIONS["polite"]` at
+19.3% and v98's "Use no semicolons" at 0.109 → 0.023, but the gap here is wider
+than either, because the instruction was competing with a default the model
+reaches for constantly.
+
+**How to apply.**
+- **Before writing a rule, grep the saved prompts for it.** A rule that is
+  already rendered and already ignored will not work better a second time. The
+  saved prompts are in each run's `generation_records[].prompt`.
+- When a control is not realized, check whether it names a **category** or an
+  **act**. Categories lose to the model's default; concrete tokens do not.
+- A control that is faithfully *scheduled* can still be entirely unrealized.
+  Verify the realization, not the assignment — the share in the profile and the
+  share in the prompt both looked correct while the output was 2.4x off.
+
+## 2026-08-20 — A flat conditional does not mean a lever cannot move the metric
+
+**What happened.** I measured P(polite | opener class) on real and generated and
+found the gap flat in every class — real 0.18-0.47, generated 0.02-0.15
+throughout — and concluded the opener could not move `polite_rate`. I wrote that
+into v102's guardrails: "`polite_rate` and `impolite_rate` must not move;
+movement means the rule leaked into register."
+
+They moved, favourably: on the gate `polite_rate` went 0.0820 → 0.1075 and
+`neutral_rate` 0.1148 → 0.1398. A natural experiment attributes it exactly — the
+polite gain is entirely on the arm's own 23 slots (0.000 → 0.174) and the neutral
+gain entirely on the other 163 (0.113 → 0.160).
+
+**Why:** a flat conditional rules out the feature explaining the *existing* gap.
+It does not rule out **moving the prevalence between classes with different base
+rates.** `discourse_marker` is the most polite class in real text at 0.466 and
+`polarity_token` one of the least; shifting slots between them moves the metric
+without changing any conditional. This is the prevalence-versus-conditional
+distinction the v99 politeness work is built on — I applied it correctly to
+`hard_disagree_rate` and forgot it one metric later, in the same document.
+
+**How to apply.**
+- "The gap is flat in every cell" answers *is this feature the cause of the gap*.
+  It does not answer *would changing the mix of cells move the metric*. They are
+  different questions and need different arithmetic.
+- Before writing a guardrail, compute the counterfactual: cell base rates times
+  the prevalence change. Here it was 23 slots moving into a class whose real
+  polite rate is 0.466 — visibly non-zero, and I never did the multiplication.
+- A guardrail that fires favourably is still a wrong guardrail. Record why it was
+  wrong, or the next version inherits the reasoning.
+
+
 ## 2026-08-20 — An ablation harness that has not reproduced the artifact is a random number generator
 
 **What happened.** Building an exact ablation harness for `hard_disagree_rate`, I
