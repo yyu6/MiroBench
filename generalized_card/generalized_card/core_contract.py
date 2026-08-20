@@ -325,11 +325,11 @@ CORE_FILES = {
     ),
     "closing_move": (
         "generalized_card/generalized_card/closing_move.py",
-        "5455b25df641fa94f502b158909572964c3fdc9ccb17c35d10ff9d4a975fea95",
+        "0ac7f43ce003bb5f744538c74086991bca1e56369897068f4b21d0b126bd5830",
     ),
     "register_realization": (
         "generalized_card/generalized_card/register_realization.py",
-        "ede87db9e21538626933cfbe4a0e0275633c607837b72cc79b0a8cc7554e71cc",
+        "8515c507f888b7ef69acf17a76c93191a1412d4c95d81e089ce6287c20040025",
     ),
     "source_provenance": (
         "generalized_card/generalized_card/source_provenance.py",

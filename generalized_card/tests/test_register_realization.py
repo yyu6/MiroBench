@@ -261,7 +261,7 @@ class GuidanceTest(unittest.TestCase):
         self.assertIn("plainly good", warm)
         # the blunt register measures 0.0 for that move and 1.0 for possession
         self.assertNotIn("plainly good", blunt)
-        self.assertIn("Name something of your own", blunt)
+        self.assertIn("Refer to something of your own", blunt)
 
     def test_a_register_the_profile_does_not_measure_gets_nothing(self) -> None:
         prof = profile({"medium": {"plain_verdict": 1.0}}, tone="polite")
@@ -289,6 +289,15 @@ class GuidanceTest(unittest.TestCase):
             )
             self.assertNotIn("warm", text.lower())
             self.assertNotIn("polite", text.lower())
+
+    def test_the_possessive_cue_rules_out_narration(self) -> None:
+        """Real possessive comments score 0.279 mean story probability; generated
+        ones scored 0.510 on the v100 gate, because the cue invited an arc."""
+
+        spec = next(s for s in rr.REGISTER_MOVES if s["name"] == "own_thing")
+        self.assertIn("plain present fact", spec["cue"])
+        self.assertIn("Do not tell the story", spec["cue"])
+        self.assertNotIn("ended up keeping", spec["cue"])
 
     def test_the_blunt_cue_does_not_ask_the_slot_to_soften(self) -> None:
         """Real impolite comments carry these moves at 0.30 / 0.13 / 0.18."""

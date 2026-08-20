@@ -152,10 +152,18 @@ REGISTER_MOVES: tuple[dict[str, Any], ...] = (
     {
         "name": "own_thing",
         "pattern": r"\bmy \w+",
+        # "what you ended up keeping" invited a story arc, and it got one: on the
+        # v100 gate, generated comments carrying a possessive scored 0.510 mean
+        # story probability against 0.279 for real ones carrying the same
+        # possessive, and `mean_story_probability` went from 0.8% error to 29.2%.
+        # Real text uses the possessive as a bare fact ("my copy is junk") far
+        # more often than as a narrative, so the cue now asks for the state and
+        # rules out the events.
         "cue": (
-            "Name something of your own in passing -- what you use, what you "
-            "carry, what you ended up keeping -- as yours. Only something the "
-            "plan already allows you to have; do not invent a possession."
+            "Refer to something of your own as yours, in passing -- what you "
+            "have, what you use -- as a plain present fact. Do not tell the story "
+            "of how you came to have it or what happened with it. Only something "
+            "the plan already allows you to have; do not invent a possession."
         ),
     },
     {

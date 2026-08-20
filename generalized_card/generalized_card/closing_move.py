@@ -77,11 +77,18 @@ CLOSING_MOVES: tuple[dict[str, Any], ...] = (
             r"\bno (?:issues?|problems?)\b)"
             r"|^\s*(?:no issues|still|never|about \d|i (?:was|had|still))\b"
         ),
+        # First written as "how long you have had it, what it did or did not do",
+        # which are events, and the v100 gate answered with narrative: story
+        # probability rose on every slot group including the ones this cue never
+        # reached, and `mean_story_probability` moved from 0.8% error to 29.2%.
+        # Real closers of this kind are states and counts -- "No issues yet about
+        # 40,000 clicks in." / "Still got mine." -- so the cue now names the state
+        # and rules out the recounting.
         "cue": (
-            "End on something of your own that is concrete -- how long you have "
-            "had it, what it did or did not do, a count, a state it is still in "
-            "-- rather than on a summary. Only what the plan already lets you "
-            "claim."
+            "End on something concrete of your own -- a count, a number, a state "
+            "it is still in -- stated flatly, rather than on a summary. Do not "
+            "recount what happened; just say what is so. Only what the plan "
+            "already lets you claim."
         ),
         "suppress_cue": "",
     },

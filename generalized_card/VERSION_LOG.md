@@ -62,7 +62,7 @@ Before any run that changes behavior:
 
 ---
 
-## v101 — per-register realization (2026-08-20)
+## v101 — per-register realization, and a state-not-event correction (2026-08-20)
 
 Policy ID: `generalized-card-v2-per-register-realization-v101-20260820`.
 Same arm, `--register-realization {measured,off}`; `off` reproduces v98.
@@ -96,6 +96,63 @@ turn that is the concession real blunt comments make at 0.128; inside a warm one
 it is an appraisal. The rule is now labelled "Register, realized" rather than
 "Warm register", because naming a register would tell a blunt slot to soften. A
 test asserts no cue names one.
+
+### The v100 evaluation, and the second correction it forced
+
+n=1 so every metric reads `DESCRIPTIVE`; the readable quantity is the relative
+error against the same thread's matched real row.
+
+| metric | v98 err | v100 err | |
+|---|---:|---:|---|
+| `emotion_entropy` | 33.1% | **15.4%** | better |
+| `length_cv` | 8.4% | **3.4%** | better |
+| `hard_disagree_rate` | 44.9% | 38.5% | better |
+| `self_bertscore_mean_f1` | 4.4% | 3.6% | better |
+| `semantic_mean_cosine` | 3.8% | 2.2% | better |
+| `polite_rate` | 60.3% | **67.4%** | **worse** |
+| `impolite_rate` | 42.6% | **50.0%** | **worse** |
+| `mean_story_probability` | **0.8%** | **29.2%** | **worse** |
+| `self_bleu_4` | 21.3% | 25.0% | worse |
+
+**The run contains a natural experiment that attributes the regressions.** The
+closing cue renders only where the matched slot is 25 words or longer, so the
+shorter slots received no closing instruction in the same run, same model, same
+thread:
+
+| slot group | n | polite v98→v100 | impolite v98→v100 | story v98→v100 |
+|---|---:|---|---|---|
+| closing cue rendered (≥25w) | 107 | 0.112 → 0.112 | 0.710 → **0.692** | 0.145 → 0.173 |
+| no closing cue (<25w) | 79 | 0.065 → **0.026** | 0.597 → **0.705** | 0.067 → **0.105** |
+
+**The regression is worst where the closing arm never fired**, so that arm is not
+the cause and on its own slots it slightly *improved* `impolite`. Short
+planned-polite slots fell from 0.326 realized polite to 0.174, and reading them
+shows why: at 15 words the model spends its budget satisfying the cue and returns
+a clipped technical fragment — "Yep, fair. Plain flat target first",
+"Front-element glare off a polarizer is a nice quick check" — instead of a warm
+reaction.
+
+**Both of my cues were written as events, and got events.**
+
+| | with a possessive | without | possessive prevalence |
+|---|---:|---:|---:|
+| real, story probability | **0.279** | 0.128 | **0.230** |
+| v98 | 0.618 | 0.071 | 0.075 |
+| v100 | 0.510 | **0.112** | 0.081 |
+
+Possessive prevalence barely moved (0.075 → 0.081), and the story rise is mostly
+in the comments *without* one (0.071 → 0.112). Real text uses the possessive as a
+bare fact — "my copy is junk" — at 0.230 with story probability 0.279; generated
+text puts it inside a narrative and reaches 0.510. The two cue texts named events:
+"what you ended up keeping" and "how long you have had it, what it did or did not
+do". Both now name a state and rule out the recounting, with a test on each
+asserting the event wording is gone.
+
+Also recorded: generated possessive prevalence is 0.081 against a real 0.230, and
+the real conditional is P(polite | possessive) = 0.509 against 0.254 without. That
+is the largest single untapped lever on `polite_rate` — but only if the possessive
+arrives as a fact rather than a story, which is exactly what this correction is
+for.
 
 ### Prediction, with the arithmetic shown
 

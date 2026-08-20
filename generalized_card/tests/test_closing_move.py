@@ -178,7 +178,7 @@ class GuidanceTest(unittest.TestCase):
     def test_a_drawn_concrete_close_renders_its_positive_cue(self) -> None:
         prof = profile({"medium": {"own_concrete_close": 1.0}})
         text = cm.closing_guidance(prof, slot_key="a", word_count=40)
-        self.assertIn("End on something of your own", text)
+        self.assertIn("End on something concrete of your own", text)
 
     def test_short_slots_are_silent(self) -> None:
         prof = profile({"micro": {"abstract_verdict_close": 0.0}}, min_words=25)
@@ -216,6 +216,15 @@ class GuidanceTest(unittest.TestCase):
             for i in range(24)
         }
         self.assertGreater(len(rendered), 1)
+
+    def test_the_concrete_cue_rules_out_narration(self) -> None:
+        """It asked for events on the v100 gate and got them: story probability
+        moved from 0.8% error to 29.2%. Real closers of this kind are states."""
+
+        spec = next(s for s in cm.CLOSING_MOVES if s["name"] == "own_concrete_close")
+        self.assertIn("Do not recount what happened", spec["cue"])
+        for event_word in ("how long you have had", "what it did or did not do"):
+            self.assertNotIn(event_word, spec["cue"])
 
     def test_the_cues_carry_no_domain_vocabulary(self) -> None:
         banned = ("camera", "lens", "photo", "sensor", "iso", "shutter", "zoom")
