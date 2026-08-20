@@ -146,6 +146,15 @@ are not**. Cliff table and projection there.
       it. 565 tests, 105 pins 0 drift, self-test proven to catch the defect, no
       profile change. Entry in `generalized_card/VERSION_LOG.md`.
 - [ ] **N=10 under v103**, paired to `--start-seed-index 2`, `--sampling-seed 42`.
+      Two pre-registered watch items, both unresolvable at n=1 and both resolved
+      by this run — **run the paired test, not the aggregate**:
+      1. `mean_story_probability` on the drawn slots (v102 gate: rose in 15 of 23,
+         comments over 0.5 went 1 → 3, p ~ 0.21). v103 predicts part of it comes
+         back, since the two largest movers were stance-conflict slots.
+      2. Negation inside the comment body on the ~1,700 slots carrying the token
+         ban (v102 gate: 0.3920 → 0.3580 against a real 0.3933, but McNemar
+         p = 0.504 and Wilcoxon on density p = 0.653). **Do not reword the ban
+         before this run says something.**
       Command in the VERSION_LOG entry. It also resolves the one unresolved
       question from the gate: `mean_story_probability` on the drawn slots rose
       0.076 → 0.157 but on **3 comments of 23**, median 0.063 — not resolvable at

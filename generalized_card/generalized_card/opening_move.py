@@ -306,20 +306,38 @@ def slot_token(
     Namespaced away from the rhythm and register draws so that drawing an
     opening word does not correlate with drawing a habit or a register move.
 
-    `stance` is the Planner's assigned stance. For a `polarity_token` slot it
-    picks the polarity family and the draw happens **inside** it at the measured
-    relative shares, so the plan is never contradicted and the token mix inside
-    the family stays measured. A stance that does not commit to a polarity keeps
-    the full draw, and a register whose measured table has no token of the
-    required family falls back to the full draw rather than inventing one.
+    `stance` is the Planner's assigned stance. The draw runs over the register's
+    full measured distribution first; if the plan commits to a polarity and the
+    drawn token disagrees, the plan **vetoes** it and the slot redraws inside the
+    family, at the measured relative shares. A slot whose first draw already
+    agrees with the plan keeps it, so the correction perturbs only the slots that
+    were actually contradicting their own plan. A stance that does not commit to
+    a polarity keeps the full draw, and a register whose measured table has no
+    token of the required family falls back to the full draw rather than
+    inventing one.
     """
 
     row = token_row(profile, opener=opener, tone_class=tone_class)
     tokens = row.get("tokens") or []
     if not tokens:
         return ""
-    tokens = _stance_family(tokens, opener=opener, stance=stance)
-    digest = hashlib.sha256(f"opening:{opener}:{slot_key}".encode("utf-8")).digest()
+    drawn = _draw(tokens, namespace=f"opening:{opener}", slot_key=slot_key)
+    family = _stance_family(tokens, opener=opener, stance=stance)
+    if len(family) == len(tokens) or drawn in {
+        str(entry.get("token") or "") for entry in family
+    }:
+        return drawn
+    # The plan vetoed the draw, so redraw inside the family it commits to. A
+    # separate namespace rather than the same one: reusing the draw value would
+    # map the vetoed slice of [0,1) onto the family's CDF and pile those slots
+    # onto whichever tokens that slice happens to cover.
+    return _draw(family, namespace=f"opening:{opener}:veto", slot_key=slot_key)
+
+
+def _draw(tokens: list[dict[str, Any]], *, namespace: str, slot_key: str) -> str:
+    """One stable draw over a token list, at its shares renormalised to sum to 1."""
+
+    digest = hashlib.sha256(f"{namespace}:{slot_key}".encode("utf-8")).digest()
     draw = int.from_bytes(digest[:8], "big", signed=False) / float(1 << 64)
     total = sum(float(entry.get("share") or 0.0) for entry in tokens)
     if total <= 0.0:

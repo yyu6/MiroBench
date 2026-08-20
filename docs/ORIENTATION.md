@@ -674,8 +674,18 @@ lets the plan pick the polarity family and keeps the measured draw inside it;
 `discourse_marker` is untouched because those words carry no polarity. No profile
 change, so v102 and v103 stay comparable.
 
+The v102 gate was then re-audited end to end and **three further hypotheses were
+raised and killed by measurement**: the ban does not under-produce negative
+openers (0.96x real corpus-wide; the 1.9x reading came from one thread), the
+token ban is not measurably suppressing body negation (McNemar p = 0.504,
+Wilcoxon p = 0.653 — a watch item for N=10, not a defect), and removing the
+`Yeah,` opener did **not** remove the adjudication frame (v101 0.0645 → v102
+0.0806 against a real 0.0000; it moved off the opener). `--opening-move off` was
+verified to reproduce v101's rendered opener rule exactly.
+
 Next action: **N=10 under v103**, paired to `--start-seed-index 2`,
-`--sampling-seed 42`.
+`--sampling-seed 42`, with those two watch items tested **paired**, not in
+aggregate.
 
 **Still blocking N=150: the reporting standard.** 12 metrics × 2 tests at
 α = 0.05 means a perfect generator passes all 12 together only ≈ 52% of the time.

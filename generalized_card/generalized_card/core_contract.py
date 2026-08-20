@@ -331,7 +331,7 @@ CORE_FILES = {
     ),
     "opening_move": (
         "generalized_card/generalized_card/opening_move.py",
-        "69b6d328b49eaebc778aaafc00559db80658561d90882f56b7920c9788ff66e2",
+        "1a7f5696812df6e1362ebc6e63146728f24768ef0b9413042fd102e58b1b5fee",
     ),
     "register_realization": (
         "generalized_card/generalized_card/register_realization.py",

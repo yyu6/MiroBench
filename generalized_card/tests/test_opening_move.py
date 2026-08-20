@@ -207,6 +207,40 @@ class StanceFamilyTest(unittest.TestCase):
         self.assertAlmostEqual(yeah, 0.4 / 0.7, delta=0.02)
         self.assertAlmostEqual(yes, 0.3 / 0.7, delta=0.02)
 
+    def test_only_slots_that_conflicted_change(self) -> None:
+        """The correction must perturb the contradicting slots and no others.
+
+        Restricting the family and redrawing everything inside it would move
+        17-54% of stance-committed slots that were never in conflict, which
+        would make a v102/v103 comparison unattributable.
+        """
+
+        changed = conflicted = 0
+        for index in range(2000):
+            key = f"s:{index}"
+            free = om.slot_token(
+                self.payload, slot_key=key, opener="polarity_token",
+                tone_class="impolite",
+            )
+            bound = om.slot_token(
+                self.payload, slot_key=key, opener="polarity_token",
+                tone_class="impolite", stance="agree",
+            )
+            if free != bound:
+                changed += 1
+                self.assertIn(free, om.NEGATIVE_TOKENS, (free, bound))
+                conflicted += 1
+        self.assertEqual(changed, conflicted)
+        self.assertGreater(changed, 0)
+
+    def test_the_veto_redraw_keeps_the_measured_within_family_shares(self) -> None:
+        """Reusing the first draw's value would pile vetoed slots onto whichever
+        tokens the vetoed slice of [0,1) happens to cover."""
+
+        drawn = self._draw("agree", trials=8000)
+        yeah = drawn.count("yeah") / len(drawn)
+        self.assertAlmostEqual(yeah, 0.4 / 0.7, delta=0.02)
+
     def test_a_register_with_no_token_of_that_family_falls_back(self) -> None:
         """Withholding would cost the slot its assigned entry type."""
 

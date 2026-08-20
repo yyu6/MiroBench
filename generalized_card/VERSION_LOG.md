@@ -84,8 +84,10 @@ the acceptance criteria, and it is a defect v102 introduced.
 The metric table hid it: `hard_disagree_rate` improved to 3.0% relative error on
 the same run. Reading 23 comments is what found it.
 
-**The fix.** The plan picks the polarity family; the draw still picks the token
-inside it at the measured relative shares:
+**The fix: the plan vetoes, and the slot redraws inside the family.** The draw
+runs over the register's full measured distribution first; only if the plan
+commits to a polarity **and the drawn token disagrees** does the slot redraw
+inside the family, under a separate hash namespace:
 
 - `stance=agree` → the affirmative family, renormalised
 - `stance=disagree` → the negative family, renormalised
@@ -93,6 +95,18 @@ inside it at the measured relative shares:
 - a register whose measured table holds no token of the required family keeps the
   full draw, because withholding would cost the slot its assigned entry type and
   inventing a token would leave the measurement behind
+
+**Why veto-and-redraw rather than simply restricting the family.** The first
+implementation restricted the family and drew inside it, which renormalises the
+cumulative walk and therefore moves slots that were **never in conflict** — 13.5%
+of `polite`+`agree` slots, 32.3% of `impolite`+`agree`, up to 54% in the worst
+cell. That would have made a v102/v103 comparison unattributable and it made this
+entry's own claim false. Under veto-and-redraw, measured over 4,000 keys in all
+eight cells, **every slot that changes is a slot that was contradicting its
+plan**, and the within-family shares still reproduce the measurement to 0.004.
+The redraw uses its own namespace: reusing the first draw's value would map the
+vetoed slice of [0,1) onto the family's CDF and pile those slots onto whichever
+tokens that slice happens to cover.
 
 `discourse_marker` is untouched: `thanks / oh / well / and / so / but / lol / ah`
 carry no polarity, and all 13 of the gate's discourse slots read correctly against
@@ -110,13 +124,14 @@ openings, which the generator under-produces anyway.
 | quantity | v102 gate | predicted v103 | real |
 |---|---:|---:|---:|
 | polarity slots contradicting their plan | 2 of 10 | **0** | — |
+| polarity slots changed for any other reason | — | **0** | — |
 | realized affirmative share of polarity openers | — | 0.70–0.78 | 0.770 |
 | `hard_disagree_rate`, thread | 0.1749 | **no change expected** | 0.1697 |
 | realized `polarity_token` share | 0.0538 | no change expected | 0.0526 |
 
-This arm is justified by **acceptance criterion 2**, not by p-values. It changes
-which token 2 of 10 polarity slots get and nothing else, so no metric is predicted
-to move. `hard_disagree_rate` is the one to watch for an *unintended* move:
+This arm is justified by **acceptance criterion 2**, not by p-values. Under
+veto-and-redraw it changes the token on **only** the slots that contradicted
+their plan, so no metric is predicted to move. `hard_disagree_rate` is the one to watch for an *unintended* move:
 `no` has P(disagree) 0.203 and `yes` 0.462 in real text, so forcing affirmatives
 onto agree slots could push it **up**. Against that, the affirmative share only
 moves 0.770 → 0.726, and the slots in question are 2 of 186.
@@ -130,9 +145,43 @@ person"). If the conflict is what produced the deliberative first-person hedging
 slots, which at n=23 is p ≈ 0.21 and not resolvable; the N=10 run resolves it at
 ≈230 drawn slots. **Do not reword the cue before then.**
 
+### What else was checked before shipping, and what it killed
+
+The v102 gate was re-audited end to end after the correction. Four hypotheses
+were raised and **three were killed by measurement**:
+
+- **"The family restriction leaves degenerate cells."** True — `neutral`+`disagree`
+  and `polite`+`disagree` both collapse to a single token, `no`. **Not a defect:**
+  in excluded real text those cells *are* degenerate, `neutral` negatives are
+  10 of 10 `no` and `polite` negatives 20 of 22. Pooling the family across
+  registers to restore variety would replace a faithful within-register rate with
+  a cross-register one. Left alone deliberately.
+- **"v102 under-produces negative openers, so the ban should not list `no`."**
+  **Killed.** That reading came from one thread's 185 real comments (0.0216).
+  Corpus-wide the real rate is **0.0113** and v102 produced **0.0108 — 0.96x
+  real**, against v101's 3.81x. The ban list is right as it stands. A single-thread
+  reference nearly caused a wrong change; see the 2026-08-20 granularity lesson.
+- **"The token ban suppresses negation inside the comment body."** Aggregate looked
+  like it: body negation 0.3920 → 0.3580 against a real 0.3933, density 1.308 →
+  1.118 against 1.412. **Killed by the paired tests** the pairing demands —
+  McNemar on 176 paired slots is 31 lost against 25 gained, **p = 0.504**, and
+  Wilcoxon on per-comment density is **p = 0.653**. Not distinguishable from
+  run-to-run churn at n=1. **Watch item for N=10**, where the same two tests run
+  at ~1,700 paired slots; do not reword the ban before then.
+- **"Removing the `Yeah,` opener removed the adjudication frame."** **Killed.**
+  Reading the 19 leak-removal slots suggested it — six of them were
+  `Yeah/Yep, that's the {good,nice,missing} part`. Measured, the frame is
+  **v100 0.0806, v101 0.0645, v102 0.0806** against a real **0.0000** on that
+  thread. The construction moved off the opener and did not go away. No win here;
+  v100's finding that the phrase was never the thing still stands.
+
+Also verified: **`--opening-move off` reproduces v101 exactly.** Every distinct
+opener-rule line the v101 run actually rendered, extracted from its 532 saved
+prompts, is reproducible with the arm off; none is missing.
+
 ### Zero-API result
 
-**565 tests pass** (7 new), Ruff clean, **105 pins with zero drift**, backend
+**566 tests pass** (8 new), Ruff clean, **105 pins with zero drift**, backend
 self-test passes with the arm on and off. No profile change: schema stays 19 and
 the v102 profile is reused unaltered, so v102 → v103 is a pure Writer-side
 correction and the gate artifacts remain comparable.
