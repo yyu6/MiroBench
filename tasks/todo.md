@@ -102,7 +102,19 @@ in `docs/ORIENTATION.md`.
       measured rate. Draw fidelity within 0.011 in every band.
 - [ ] **Paid large-thread gate for v99**, `--start-seed-index 8` (186 comments),
       then N=10. Predictions are in the VERSION_LOG entry; read them first.
-- [ ] **v100 — the impolite bleed.** Planned-neutral realizes impolite 0.513 and
+- [x] **v100 — measured closing move.** Built 2026-08-20. Policy
+      `generalized-card-v2-measured-closing-move-v100-20260820`, arm
+      `--closing-move`. This is the **root of the adjudication frame** chased
+      since v73 through five phrase-level attempts: the phrase was never the
+      thing, how the comment stops is. Real text closes on an abstract verdict
+      0.014 of the time and generated 0.265 (19.1x); real closes on a concrete
+      fact of its own 0.152 against 0.048. On real *story* comments the frame is
+      0.003 against 0.382 generated — 127x.
+
+      Three Planner-side explanations rejected first: "decision intent" lift
+      1.08x, "decision boundary" **0.83x** (slots with it produce the frame
+      *less*), v97's gate 0.175 gated vs 0.210 ungated.
+- [ ] ~~**v100 — the impolite bleed.**~~ **Measured and shelved.** Planned-neutral realizes impolite 0.513 and
       planned-somewhat_polite 0.478; that is 122 slots and the larger remaining
       share of `impolite_rate`. It needs a **suppressive** mechanism: no additive
       move discriminates `neutral` (every candidate below 0.3 held-out lift), and
@@ -111,6 +123,25 @@ in `docs/ORIENTATION.md`.
       generated**) and `dismiss_noun` (5.17× real). Suppression has a track
       record here: v98 took the semicolon 0.109 → 0.023 and the dash clause
       0.299 → 0.071.
+
+      **The suppression was then measured and does not work.** Out-of-sample lift
+      on P(impolite) is only 1.02–1.18x for the restrictive families, and the
+      counterfactual moves `impolite_rate` 0.697 → 0.655 against a real 0.443.
+      Also: banning the frame's exact phrasing removes only 15–27% of the
+      over-used abstract vocabulary (`matters` still 33x after, `whole` 17x,
+      `otherwise` 29x) — which is why five phrase bans failed and why v100 names
+      the *move* instead. **The impolite bleed has no mechanism. Do not build
+      against it without a new falsified hypothesis.**
+- [ ] **Paid large-thread gate for v99 + v100 together**, `--start-seed-index 8`
+      (186 comments), then N=10. They ship in one gate because each has its own
+      flag and its own measurable realized rate, so one artifact gives per-arm
+      attribution — the same way v97's four arms and v98's five were attributed.
+      Predictions for both are in `generalized_card/VERSION_LOG.md`.
+- [ ] `self_bertscore_mean_f1` — **five hypotheses now rejected.** The fifth,
+      narrow shared vocabulary, failed on sign: r(bert gap, breadth ratio)
+      **+0.155** and r(bert gap, top-200 gap) **−0.096**, both backwards, and the
+      narrowest thread has the smallest gap. Per-thread breadth ratio is 0.893,
+      so the narrowness is cross-thread while the metric is within-thread.
 - [ ] Revert `--no-story-scope` default to `tense`. No metric benefit, and it
       added new repeated 4-grams. Keep the prompt-contradiction fix it carried.
 - [x] **Traceability closed.** v97 and v98 had shipped uncommitted — HEAD was

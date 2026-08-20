@@ -319,7 +319,7 @@ Every behaviour change is a named CLI flag. The flag is written into
 generation parameters is **rejected**, so a tag can never mean two configs.
 Setting an arm to its legacy value must reproduce the prior release exactly.
 
-v99 ships **17** such arms. Read from `run_generate.py:195-400`:
+v100 ships **18** such arms. Read from `run_generate.py:195-400`:
 
 | flag | CLI default | other value(s) |
 |---|---|---|
@@ -340,6 +340,7 @@ v99 ships **17** such arms. Read from `run_generate.py:195-400`:
 | `--route-ledger` | `on` | `off` |
 | `--no-story-scope` | `sequence` | `tense` |
 | `--register-realization` | `measured` | `off` |
+| `--closing-move` | `measured` | `off` |
 
 Plus two optional experimental conditioning modes, both default `none`:
 `--actor-conditioning` and `--persona-conditioning`.
@@ -396,6 +397,7 @@ generalized_card/generalized_card/
   length_calibration.py            inverts the measured length transfer function
   story_scope.py                   the no-story instruction text
   register_realization.py          draws the assigned warm register per slot
+  closing_move.py                  draws how a comment stops
   source_provenance.py             refuses a run whose sources are not committed
 generalized_card/scripts/
   run_generate.py            1400  CLI, run_config record, subprocess env
@@ -407,7 +409,7 @@ scripts/evaluation/                the 12 scorers
 
 **Everything under `generalized_card/generalized_card/`,
 `generalized_card/scripts/run_generate.py` and `scripts/sampling_generator/**`
-is hash-pinned** in `core_contract.py` (103 files). `verify_core_contract`
+is hash-pinned** in `core_contract.py` (104 files). `verify_core_contract`
 raises on drift, so:
 
 > **Never edit a pinned file while a generation run is in flight.** It aborts the
@@ -426,13 +428,20 @@ a source that is not recoverable from git.
 
 ---
 
-## 6. Current state — v99 built, v98 measured (2026-08-20)
+## 6. Current state — v99 + v100 built, v98 measured (2026-08-20)
 
-**v99 is built and offline-verified but has not been run.** Policy
-`generalized-card-v2-drawn-register-realization-v99-20260820`, arm
-`--register-realization`, addressing problem 1 below. Its predictions are in
-`generalized_card/VERSION_LOG.md` — read them before the gate. Next action: the
-large-thread gate (§4).
+**v99 and v100 are built and offline-verified; neither has been run.** They ship
+together in one gate, because each has its own flag and its own directly
+measurable realized rate, which is what makes per-arm attribution possible from a
+single artifact (§4).
+
+- **v99** `--register-realization` — repairs the polite realization (problem 1).
+- **v100** `--closing-move` — the root of the adjudication frame (problem 4).
+
+Predictions for both are written down in `generalized_card/VERSION_LOG.md`. Read
+them before the gate. **Both predict `polite_rate` and `impolite_rate` still
+fail**; v100 in particular is justified by acceptance criterion 2, not by
+p-values. Next action: the large-thread gate (§4).
 
 The last measured result is v98. Policy
 `generalized-card-v2-drawn-typing-rhythm-length-calibration-v98-20260819`. Run
@@ -505,8 +514,22 @@ weakly. Criterion 2 — eye-indistinguishability — is separate from all of the
    −0.097** and is worth about a third of it. Generated entity diversity is
    0.438× real in 10/10 threads, which is also an eye-visible tell — so it is
    worth doing for criterion 2 even though it is a weak metric lever.
-4. **Eye-indistinguishability (criterion 2)** — the tells listed in §1 are
-   unfixed, and no metric measures them.
+4. **Eye-indistinguishability (criterion 2) — the adjudication frame is now
+   diagnosed and addressed by v100.** The "that's the part that actually
+   matters" family survived five phrase-level attempts since v73 because the
+   phrase was never the thing: **how the comment stops** is. Real text closes on
+   an abstract verdict 0.014 of the time and generated 0.265 (**19.1×**); real
+   closes on a concrete fact of the speaker's own 0.152 against 0.048. Among real
+   *story* comments the broad frame is at **0.003** against 0.382 generated —
+   127× — because a story has the most obvious place to pivot.
+
+   Three Planner-side explanations were measured and rejected first, so it is not
+   a control being echoed: "decision intent" lifts the frame 1.08×, "decision
+   boundary" **0.83×** (slots receiving it produce it *less*), and v97's gate
+   leaves gated slots at 0.175 against ungated 0.210.
+
+   Still unfixed: no generated comment contains a link (real 0.051), `check` at
+   ~10× real, entity diversity 0.438× real.
 
 ### Known bugs, unfixed
 
@@ -776,12 +799,15 @@ Not "I believe"; these were run on 2026-08-20:
 
 | check | result |
 |---|---|
-| `pytest -q generalized_card/tests` | **496 passed** (449 + 19 provenance + 28 register) |
-| `repin_core_contract.py` (report mode) | 103 pinned, 0 missing, 0 untracked active, 0 unpinned local imports, **0 drift** |
+| `pytest -q generalized_card/tests` | **527 passed** (449 + 19 provenance + 28 register + 31 closing) |
+| `repin_core_contract.py` (report mode) | 104 pinned, 0 missing, 0 untracked active, 0 unpinned local imports, **0 drift** |
 | v99 profile rebuild | schema 16 over 424 excluded threads, **0 seed overlap**, 4,787 polite comments measured; six bands monotone |
 | v99 draw fidelity | rendered draw against measured share within **0.011** in every band and every move, 4,000 slots per band |
 | v99 on the real prompt path | rule in 33/40 polite prompts with the arm on, **0/40 off**, 6 distinct forms, +283 chars (+7.7%) |
 | v99 backend self-test | passes with the arm on **and** off |
+| v100 profile rebuild | schema 17, 6,609 comments of 25+ words over 424 excluded threads, **0 seed overlap** |
+| v100 draw fidelity | within **0.008** in every band and move |
+| v100 on the real prompt path | rule in 32/40 slots, **silent below the 25-word floor**, 8/8 at 45w+; self-test passes on and off |
 | v98 N=10 metric table | read verbatim from `matched_evaluation/matched_seed_group_eval.md` |
 | v97 N=10 metric table | read verbatim from the v97 run's same file |
 | v97/v98 seed pairing | both `start_seed_index=2`, `sampling_seed=42`, `max_posts=10` — confirmed paired |
