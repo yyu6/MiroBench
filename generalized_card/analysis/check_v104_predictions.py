@@ -37,6 +37,40 @@ REALIZED = (
 GUARD = ("positive_per_1k_sentences", 130.26)
 
 
+def single_thread(run: Path) -> bool:
+    """Whether this run holds exactly one thread, i.e. it is a gate."""
+
+    threads = 0
+    for path in sorted(glob.glob(str(run / "cleaned/*/politeness_results.json"))):
+        threads += len(json.loads(Path(path).read_text()).get("threads") or [])
+    if threads:
+        return threads == 1
+    for path in sorted(glob.glob(str(run / "generated/*/discussion.json"))):
+        threads += len(json.loads(Path(path).read_text()).get("posts") or [])
+    return threads == 1
+
+
+def largest_thread(run: Path) -> list[dict]:
+    """The biggest thread in a run, for comparing a gate like for like.
+
+    A gate is one thread and the baseline is a ten-thread pool. Comparing the
+    two pools crosses thread identity, which is how the v102 prediction band was
+    set against the wrong population -- see `tasks/lessons.md`.
+    """
+
+    best: list[dict] = []
+    for path in sorted(glob.glob(str(run / "cleaned/*/politeness_results.json"))):
+        for thread in json.loads(Path(path).read_text()).get("threads") or []:
+            rows = [
+                {"content": str(c.get("text") or ""), "label": str(c.get("pred_label") or "")}
+                for c in thread.get("comments") or []
+                if str(c.get("text") or "").strip()
+            ]
+            if len(rows) > len(best):
+                best = rows
+    return best
+
+
 def comments_of(run: Path) -> list[dict]:
     rows: list[dict] = []
     for path in sorted(glob.glob(str(run / "cleaned/*/politeness_results.json"))):
@@ -70,7 +104,9 @@ def main() -> int:
     rows = comments_of(run)
     if not rows:
         raise SystemExit(f"no comments found under {run}")
-    baseline_rows = comments_of(REPO / "artifacts/generalized_card/runs" / BASELINE_TAG)
+    baseline_run = REPO / "artifacts/generalized_card/runs" / BASELINE_TAG
+    gate = single_thread(run)
+    baseline_rows = largest_thread(baseline_run) if gate else comments_of(baseline_run)
     if not baseline_rows:
         raise SystemExit(f"baseline run {BASELINE_TAG} is not on disk")
     baseline = ev.realized_evaluative_shares(baseline_rows)
@@ -78,6 +114,9 @@ def main() -> int:
     audit = ev.realized_evaluative_shares(rows)
     print(f"run {args.tag}   comments {len(rows)}   sentences {int(audit['sentences'])}"
           f"   {'evaluated' if scored else 'generation only'}")
+    print(f"baseline {BASELINE_TAG}"
+          f"   comments {len(baseline_rows)}"
+          f"   {'largest thread only (this is a gate)' if gate else 'whole run'}")
     print()
     print(f"{'prediction':<34}{'v103':>10}{'predicted':>16}{'v104':>10}{'real':>9}  verdict")
     ok = 0

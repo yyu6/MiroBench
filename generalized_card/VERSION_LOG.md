@@ -169,6 +169,85 @@ Offline state at the gate: 588 tests, ruff clean, 106 pins 0 drift, self-test
 on and off, `off` proven empty on the real prompt path, profile rebuilt at
 schema 20 on 424 evaluation-excluded threads.
 
+### v104 gate result — 2026-08-21. The arms worked; the metric did not follow.
+
+Run `v104_evaluative_seed8_20260821_v1`, seed 8, 186 comments, **$1.1288**,
+19.5 min generation. Every number below is the **same thread** in every column:
+seed 8 also appears in the v103 N=10 artifact as `sampled_run01_post01_seed008`
+at 186 comments, and the matched real thread is `i1o51h` at 185.
+
+**My prediction bands were set against the pooled corpus, not this thread.**
+That is the v102 error repeated — recorded again in `tasks/lessons.md`. This
+thread's real `hot_share_of_positive` is **0.3373**, not the pooled 0.4821, and
+v103's `impolite_rate` on it was already 0.5792, inside the band I "predicted".
+The check harness now compares a gate against the baseline's largest thread
+rather than its ten-thread pool.
+
+| realized rate | v102 | v103 | **v104** | this thread's real | gap closed |
+|---|---:|---:|---:|---:|---:|
+| downtoner tag / 1k sentences | 33.73 | 31.45 | **10.00** | 1.93 | **73%** |
+| partitive, share of comments | 0.2634 | 0.2131 | **0.0815** | 0.0162 | **67%** |
+| hot share of positive sentences | 0.1013 | 0.1585 | **0.2556** | 0.3373 | **54%** |
+| hot words / 1k sentences | — | 27.3 | **46.0** | 54.1 | **85%** |
+| positive / 1k sentences *(guard)* | 156.75 | 171.91 | **180.00** | 160.23 | **BREACHED** |
+
+All three arms moved substantially and **none hit its band**. The guardrail
+named in advance — "must not rise; a rise means the cue was read as *add
+praise*" — **breached**: 171.91 → 180.00 against a real 160.23.
+
+**And the metric barely moved.**
+
+| | v103 | **v104** | real | |
+|---|---:|---:|---:|---|
+| `polite_rate` | 0.1093 | **0.1196** | 0.2324 | **8.4%** of the gap |
+| `impolite_rate` | 0.5792 | **0.5924** | 0.4649 | **wrong way**, +0.0132 |
+
+Twelve metrics against the same real thread: five closer, seven wider.
+`length_cv` 0.8662 → 0.9380 (real 0.8951) and `hard_disagree_rate`
+0.1758 → 0.1467 (real 0.1697) both crossed and overshot; `self_bleu_4` was
+unmoved at 0.0349, so the drawn word window did not concentrate the lexicon.
+
+**Why it did not follow — measured, not guessed.** The carrier rate is what
+reconstructs the metric, and it barely moved:
+
+| | v103 | **v104** | real |
+|---|---:|---:|---:|
+| carriers (comments holding a P(polite) > 0.80 sentence) | 0.0437 | **0.0598** | 0.1622 |
+| P(polite \| carrier) | 0.625 | 0.727 | 0.800 |
+| P(polite \| not) | 0.086 | 0.081 | 0.123 |
+
+Reconstruction holds on all three (0.1095 / 0.1197 / 0.2328 against actuals
+0.1093 / 0.1196 / 0.2324), so the framing is intact. **13.6%** of the carrier
+gap closed against **85%** of the hot-word density gap.
+
+**So hot words are not what makes a carrier.** v104's hot sentences are median
+13 words against a real 18, 0.348 of them ten words or shorter against 0.321,
+and 0.348 hedged against 0.357 — structurally indistinguishable from real ones.
+Density is at 85% of real. And the sentences still do not read as unambiguously
+appreciative. The tier hypothesis is **substantially falsified as a lever on
+the metric**, despite an ablation that put it at 20.8%.
+
+**The lesson that generalises.** An ablation edits the shipped text and gets an
+upper bound; a prompt cue asks the model to write differently and does not reach
+it, and the shortfall is not only compliance. v104 reached 54–85% compliance on
+every arm's own statistic and delivered 8.4% of the metric. **Do not price a
+mechanism off an ablation again without discounting it.**
+
+Kept, reverted, and open:
+
+- The two suppressions fix eye-visible tells and are cheap. `That's the missing
+  bit, honestly.` still survives in the artifact, so they are not finished
+  either, but 73% and 67% in one release is the shape v98's semicolon
+  suppression had.
+- `--evaluation-tier` breached its guardrail and bought almost nothing. It
+  should go to `off` unless the cue can be rewritten to change strength without
+  adding evaluations.
+- The carrier gap is untouched and is still the whole thing. What makes a real
+  sentence read as unambiguously appreciative is **not** its evaluative word,
+  its length, or its hedging. That is now three things it is not, which is
+  progress of a kind, and the next mechanism cannot be built until it is one
+  thing it is.
+
 ## v103 — stance-consistent opening (2026-08-21)
 
 Policy ID: `generalized-card-v2-stance-consistent-opening-v103-20260821`.
