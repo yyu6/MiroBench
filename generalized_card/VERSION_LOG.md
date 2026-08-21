@@ -121,7 +121,7 @@ any of the three; the only adjacent text runs the other way ("Ordinary hedges
 and brief thanks are allowed when they fit the turn", 292 prompts). And the
 reuse ledger, which echoes `- that's the bit that (used 3x)` and `- The $200
 part is nice, sure, but` back to the Writer, was tested as a **priming source
-and rejected**: partitive lift 0.95x, tag lift 1.09x, flat or lower where the
+and rejected**: partitive lift 0.96x, tag lift 0.49x, flat or lower where the
 ledger is present once position in the thread is controlled. The tics are the
 model's own register.
 

@@ -145,9 +145,11 @@ Two things were tested and rejected on the way, both cheap:
 
 - **The reuse ledger as a priming source.** It echoes the exact tics back to the
   Writer (`- that's the bit that (used 3x)`, `- The $200 part is nice, sure,
-  but`), which looked like a self-feeding loop. Partitive lift **0.95x**, tag
-  lift **1.09x**, and flat or lower where the ledger is present once position in
-  the thread is controlled. v98's mechanism is untouched.
+  but`), which looked like a self-feeding loop. Partitive lift **0.96x**, tag
+  lift **0.49x**, and flat or lower where the ledger is present once position in
+  the thread is controlled. (An earlier note said 1.09x for the tag; that used a
+  narrower end-anchored detector than the one that shipped. Same conclusion,
+  clearer direction.) v98's mechanism is untouched.
 - **The named-form taxonomy as the mechanism.** Eleven forms, fitted on half the
   excluded threads and scored on the other half, reach only **0.420** recall of
   the carriers at 0.317 precision. `recommend_personally` (held precision 0.102),

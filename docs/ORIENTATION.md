@@ -53,19 +53,20 @@ bureaucracy — every rule there has a wasted paid run behind it.
 | # | file | what it is | when to read |
 |---|---|---|---|
 | 1 | **this file** | goal, method, metrics, discipline | always, first |
-| 2 | `tasks/todo.md` | the task list, ordered by which measured gap it moves | before choosing what to do |
-| 3 | `tasks/v<N>-worklog.md` | the current version's full evidence, including rejected hypotheses | before touching that version's code |
-| 3b | `tasks/v99-worklog.md` | the politeness diagnosis: four rejected hypotheses and the verified mechanism | before touching tone or register |
-| 3c | `tasks/v102-worklog.md` | the `hard_disagree_rate` diagnosis: nine rejected hypotheses, two surviving mechanisms, one causally measured | before touching stance, openers, or reply framing |
-| 3d | `tasks/v104-worklog.md` | the tone-pair diagnosis: why eight versions of marker work failed, and the carrier-sentence mechanism | before touching `polite_rate` or `impolite_rate` |
-| 3e | `generalized_card/analysis/` | the scripts that reproduce 3b and 3c | when you want to re-measure rather than re-derive |
-| 4 | `generalized_card/VERSION_LOG.md` | every released version, its arms, and its result | when comparing versions |
-| 5 | `tasks/lessons.md` | every mistake made here, each with the rule that prevents it | before diagnosing anything |
-| 6 | `generalized_card/AGENTS.md` | binding engineering rules for `generalized_card/` | before writing code |
-| 7 | `tasks/HANDOFF.md` | the long-form evidence archive, newest addendum first | when you need the detail behind a claim |
-| 8 | `docs/thread_metric_score_reference.md` | every exported metric, its scorer, its model | when you need a scorer's exact semantics |
-| 9 | `generalized_card/RUN_INDEX.md` | all runs with tag, cost, and outcome | when locating an artifact |
-| 10 | `.claude/handoffs/` | session handoffs, newest last; each carries a TYPE INSTRUCTION block for the next agent | when picking the work up cold |
+| 2 | **`docs/DECISIONS.md`** | every rule currently in force, each marked VERIFIED / MEASURED / ASSUMED / RETRACTED | **always, second** — an ASSUMED rule is not a rule |
+| 3 | `tasks/todo.md` | the task list, ordered by which measured gap it moves | before choosing what to do |
+| 4 | `tasks/v<N>-worklog.md` | the current version's full evidence, including rejected hypotheses | before touching that version's code |
+| 4b | `tasks/v99-worklog.md` | the politeness diagnosis: four rejected hypotheses and the verified mechanism | before touching tone or register |
+| 4c | `tasks/v102-worklog.md` | the `hard_disagree_rate` diagnosis: nine rejected hypotheses, two surviving mechanisms, one causally measured | before touching stance, openers, or reply framing |
+| 4d | `tasks/v104-worklog.md` | the tone-pair diagnosis: why eight versions of marker work failed, and the carrier-sentence mechanism | before touching `polite_rate` or `impolite_rate` |
+| 4e | `generalized_card/analysis/` | the scripts that reproduce every number in 4b-4d and in `DECISIONS.md` | when you want to re-measure rather than re-derive |
+| 5 | `generalized_card/VERSION_LOG.md` | every released version, its arms, and its result | when comparing versions |
+| 6 | `tasks/lessons.md` | every mistake made here, each with the rule that prevents it | before diagnosing anything |
+| 7 | `generalized_card/AGENTS.md` | binding engineering rules for `generalized_card/` | before writing code |
+| 8 | `tasks/HANDOFF.md` | the long-form evidence archive, newest addendum first | when you need the detail behind a claim |
+| 9 | `docs/thread_metric_score_reference.md` | every exported metric, its scorer, its model | when you need a scorer's exact semantics |
+| 10 | `generalized_card/RUN_INDEX.md` | all runs with tag, cost, and outcome | when locating an artifact |
+| 11 | `.claude/handoffs/` | session handoffs, newest last; each carries a TYPE INSTRUCTION block for the next agent | when picking the work up cold |
 
 `tasks/HANDOFF.md` is **an archive, not a spec.** It grows by addendum and its
 older numbered sections carry stale state and at least one claim that was later
