@@ -57,7 +57,8 @@ bureaucracy — every rule there has a wasted paid run behind it.
 | 3 | `tasks/v<N>-worklog.md` | the current version's full evidence, including rejected hypotheses | before touching that version's code |
 | 3b | `tasks/v99-worklog.md` | the politeness diagnosis: four rejected hypotheses and the verified mechanism | before touching tone or register |
 | 3c | `tasks/v102-worklog.md` | the `hard_disagree_rate` diagnosis: nine rejected hypotheses, two surviving mechanisms, one causally measured | before touching stance, openers, or reply framing |
-| 3d | `generalized_card/analysis/` | the scripts that reproduce 3b and 3c | when you want to re-measure rather than re-derive |
+| 3d | `tasks/v104-worklog.md` | the tone-pair diagnosis: why eight versions of marker work failed, and the carrier-sentence mechanism | before touching `polite_rate` or `impolite_rate` |
+| 3e | `generalized_card/analysis/` | the scripts that reproduce 3b and 3c | when you want to re-measure rather than re-derive |
 | 4 | `generalized_card/VERSION_LOG.md` | every released version, its arms, and its result | when comparing versions |
 | 5 | `tasks/lessons.md` | every mistake made here, each with the rule that prevents it | before diagnosing anything |
 | 6 | `generalized_card/AGENTS.md` | binding engineering rules for `generalized_card/` | before writing code |

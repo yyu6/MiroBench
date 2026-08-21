@@ -174,11 +174,39 @@ are not**. Cliff table and projection there.
       generator bias, and they are the three that have failed since v96:
       `polite_rate` (bias −0.1856, p = 0.002), `impolite_rate` (+0.1529,
       p = 0.002), `self_bertscore_mean_f1` (+0.0174, p = 0.014).
-- [ ] **The three real generator defects, in bias order.** `polite_rate` and
-      `impolite_rate` are one realization defect (`tasks/v99-worklog.md`); the
-      largest untapped lever is still the possessive (generated `my X` 0.081
-      against a real 0.230, P(polite | possessive) 0.509 against 0.254).
-      `self_bertscore_mean_f1` has **five rejected hypotheses and no mechanism**.
+- [x] **The tone pair is diagnosed.** `tasks/v104-worklog.md`; reproduce with
+      `generalized_card/analysis/polite_sentence_diagnosis.py all`. The possessive
+      lever this list proposed was **not** the answer and neither was any other
+      marker: Polite Guard is *confident*, not near-degenerate (median margin
+      −0.934, only 2.1% of generated non-polite comments within 0.10 of
+      flipping, median P(impolite) among impolite-labelled 0.981), so a
+      sub-sentence edit was never going to tip it. Five more hypotheses rejected
+      — length mix (closes 6%), question marks (out-of-sample lift 1.08),
+      `you`-modal (lift 1.37, worth +0.009), personal narrative (the gap
+      persists inside every story bin), polite vocabulary (a bag of words
+      *over*-predicts politeness on generated: 0.150 against an actual 0.106).
+
+      **The mechanism is a whole sentence.** A *carrier* — a comment holding one
+      sentence at P(polite) > 0.80 — reconstructs both failing rates to three
+      decimals on both sides. Conversion is nearly intact (real 0.808, generated
+      0.667); **prevalence is 3.6× off** (0.220 against 0.062) in every length
+      band. Moving prevalence alone is worth **52%** of the `polite_rate` gap and
+      **36%** of `impolite_rate`. Causally verified on the real checkpoint:
+      inserting one real short appreciative sentence flips a generated
+      non-polite 40w+ comment 0.29–0.50 of the time against a control of 0.121.
+- [ ] **Name the remaining 63% of the carrier sentences before building v104.**
+      The harvested set is defined by a classifier score and only **36.9%** is
+      covered by the seven named surface forms. Shipping "write a sentence
+      Polite Guard likes" is tuning to the metric. Name the forms first, the way
+      v100 named the closing *move* and v102 named the token.
+- [ ] **`self_bertscore_mean_f1` — five rejected hypotheses and no mechanism.**
+      Do not build a sixth without falsifying it first. The untried diagnostic is
+      the one that cracked `hard_disagree_rate`: decompose the thread mean into
+      its **pairwise** matrix (`--include-pairs` on the scorer) and ask whether
+      the excess is uniform, parent-child, or same-branch. If it is parent-child
+      it is the already-measured parent echo, which would make one mechanism
+      serve `self_bertscore`, the other half of `hard_disagree_rate`, and the
+      user's criterion-2 complaint at once.
 - [ ] **v104 — make the opener schedule respect the root/reply conditional.**
       Demoted: this is a **fidelity** defect, not the cause of the
       `hard_disagree_rate` number.
