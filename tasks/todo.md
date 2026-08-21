@@ -11,6 +11,77 @@ four paid runs fixed a real code defect and moved no metric. The old P0–P6 ite
 are all still listed, at the bottom, marked kept / struck / demoted, so nothing is
 silently dropped.
 
+## Priority, re-derived from the null — 2026-08-21
+
+Reading v103's **own N=10 p-values** under Holm-Bonferroni instead of raw, and
+each `|Cliff|` against its measured N=10 noise floor
+(`generalized_card/analysis/acceptance_standard.py`):
+
+| | raw | Holm | \|Cliff\| vs its N=10 floor |
+|---|---|---|---|
+| `self_bertscore_mean_f1` | fail | **fail** | 0.86 against 0.50 — **outside by +0.36** |
+| `polite_rate` | fail | pass | 0.60 against 0.53 — outside by +0.07 |
+| `impolite_rate` | fail | pass | 0.61 against 0.51 — outside by +0.10 |
+| the other nine | pass | pass | all **inside** the floor |
+
+**v103 is 11/12 under a standard that does not fail correct work** (the null
+gives 12/12 98% of the time under Holm, and only 63% under the raw rule).
+
+So the work orders itself, for the first time on evidence rather than on which
+number looked worst:
+
+- [ ] **1. `self_bertscore_mean_f1` — the only metric that fails a correct test.**
+      MWU 0.001, KS 0.002, `|Cliff|` 0.86 against a noise floor of 0.50. Five
+      rejected hypotheses and **no mechanism**. Do not build a sixth guess. Run
+      the diagnostic that cracked `hard_disagree_rate` instead: decompose the
+      thread mean into its **pairwise** matrix (`--include-pairs` on
+      `score_thread_self_bertscore.py`) and ask whether the excess is uniform,
+      parent-child, or same-branch. Parent-child would make it the already
+      measured parent echo, and one mechanism would then serve this metric, the
+      other half of `hard_disagree_rate`, and the user's criterion-2 complaint.
+- [ ] **2. `polite_rate` / `impolite_rate` — pass at N=10 only for want of
+      power, and will fail at N=150.** The gap is 0.18, which is 1.2 real
+      between-thread standard deviations, and a +0.10 shift is caught 100% of the
+      time at N=150. Generated sits at the **7th percentile** of the real polite
+      distribution and the **90th** of the real impolite one. Everything found so
+      far is worth 0.005-0.010 each: v104's three arms together moved 0.010.
+      **Do not spend another paid run on a surface cue for this.** See below for
+      what is left.
+- [ ] **3. Everything else is inside the null. Stop working on it.** Nine of the
+      twelve are indistinguishable from a second sample of real threads at N=10.
+      `self_bleu_4` at Cliff 0.40 against a floor of 0.50 included -- the "no
+      cheap lever exists" conclusion from v98 stands and the metric no longer
+      needs one.
+
+### What is left for the tone pair, after v104
+
+Ruled out, each with a measurement: evaluative-word tier (paid run, 85% of the
+density gap closed, 13.6% of the carrier gap), sentence length, hedging,
+questions, story, possessives, marker counts, the length mix, and eleven named
+semantic forms at 42% held-out recall which the generator already produces at
+parity or above.
+
+Of ~20 form-only features, only three predict a carrier at held-out lift >= 1.6:
+`thanks_or_respect` (lift 7.6, generated already **1.39x** real),
+`exclamation` (lift 6.5, generated **0.52x** real), and `under_8_words`
+(lift 1.8, 0.82x).
+
+**The exclamation is substantially a classifier artifact.** Adding one to a
+generated sentence that evaluates nothing at all raises mean P(polite) from
+0.023 to 0.174 and makes **8.8%** of them read as carriers; removing one from a
+real carrier drops P(polite) 0.973 → 0.668 while a `.` → `...` control moves
+0.946 → 0.955. Matching the measured real sentence-level rate is legitimate
+imitation and is worth about **+0.005** on `polite_rate`. Going past it is
+tuning to the metric, which this project does not do.
+
+**The honest position: `polite_rate` may not be closable to N=150 tolerance
+without gaming.** The plan's between-thread polite mean is already exactly right
+(0.310 against a real 0.310); its variance is compressed (sd 0.095 against
+0.155); and realization is 35%. What the classifier still keys on is not a form
+property of human Reddit writing that a Planner can schedule. That is a result,
+and it belongs in front of the user as a study-design question, not as more
+paid runs.
+
 ## The ordering principle
 
 The user's target is how people talk, decomposed into four dimensions. Mapping
