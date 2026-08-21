@@ -304,6 +304,37 @@ def build_parser() -> argparse.ArgumentParser:
         ),
     )
     parser.add_argument(
+        "--evaluation-tier",
+        choices=("measured", "off"),
+        default="measured",
+        help=(
+            "Let a slot's positive evaluation land at full strength, drawn at "
+            "its register's measured hot-tier share. `off` reproduces v103, "
+            "where hot-tier words ran 0.31x real and swapping a warm word for "
+            "another warm word moved `polite_rate` by 0.0000."
+        ),
+    )
+    parser.add_argument(
+        "--downtoner-tag",
+        choices=("suppress", "off"),
+        default="suppress",
+        help=(
+            "Stop closing a sentence on a tag that takes it back (\", sure\", "
+            "\", honestly\"). `off` reproduces v103, where the tag ran 40.7x "
+            "its real rate."
+        ),
+    )
+    parser.add_argument(
+        "--partitive-reference",
+        choices=("suppress", "off"),
+        default="suppress",
+        help=(
+            "Stop evaluating a slice of a thing instead of the thing (\"that "
+            "part\", \"the useful bit\"). `off` reproduces v103, where the "
+            "construction ran 17.3x its real rate."
+        ),
+    )
+    parser.add_argument(
         "--register-realization",
         choices=("measured", "off"),
         default="measured",
@@ -754,6 +785,9 @@ def main() -> None:
         "register_realization": args.register_realization,
         "closing_move": args.closing_move,
         "opening_move": args.opening_move,
+        "evaluation_tier": args.evaluation_tier,
+        "downtoner_tag": args.downtoner_tag,
+        "partitive_reference": args.partitive_reference,
         "length_calibration": args.length_calibration,
         "final_punctuation": args.final_punctuation,
         "route_ledger": args.route_ledger,
@@ -949,6 +983,9 @@ def main() -> None:
     env["GENERALIZED_CARD_REGISTER_REALIZATION"] = args.register_realization
     env["GENERALIZED_CARD_CLOSING_MOVE"] = args.closing_move
     env["GENERALIZED_CARD_OPENING_MOVE"] = args.opening_move
+    env["GENERALIZED_CARD_EVALUATION_TIER"] = args.evaluation_tier
+    env["GENERALIZED_CARD_DOWNTONER_TAG"] = args.downtoner_tag
+    env["GENERALIZED_CARD_PARTITIVE_REFERENCE"] = args.partitive_reference
     env["GENERALIZED_CARD_LENGTH_CALIBRATION"] = args.length_calibration
     env["GENERALIZED_CARD_FINAL_PUNCTUATION"] = args.final_punctuation
     env["GENERALIZED_CARD_ROUTE_LEDGER"] = args.route_ledger
@@ -1291,6 +1328,9 @@ RUN_EXPERIMENT_FIELDS = (
     "register_realization",
     "closing_move",
     "opening_move",
+    "evaluation_tier",
+    "downtoner_tag",
+    "partitive_reference",
     "length_calibration",
     "final_punctuation",
     "route_ledger",

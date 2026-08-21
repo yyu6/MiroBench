@@ -28,6 +28,7 @@ from .generation_distribution import (
 )
 from .length_policy import local_move_scope_guidance, soft_length_guidance
 from .opener_profile import OPENER_INSTRUCTIONS
+from .evaluative_register import active_evaluative_guidance
 from .opening_move import active_opening_guidance, forbidden_opening_tokens
 from .long_form_planning import expected_development_beats
 from .planner_distribution import render_slot_distribution_schedule
@@ -270,6 +271,24 @@ def _register_rule(backend: Any, task: Any) -> str:
         slot_key=f"{seed_key}:{_safe_slot_index(task)}",
         word_count=getattr(task, "real_word_count", 0),
         tone_class=str(getattr(task, "tone_target", "") or ""),
+    )
+
+
+def _evaluative_rule(backend: Any, task: Any) -> str:
+    """Render this slot's evaluation-strength rule and the two tic suppressions.
+
+    Keyed on the same slot as `_register_rule` but namespaced inside
+    `evaluative_register`, so drawing a tier does not correlate with drawing a
+    register move. The tier rule is conditional on the comment evaluating
+    anything at all: the Planner owns whether a slot praises something, and this
+    changes only how far an evaluation that happens is allowed to travel.
+    """
+
+    seed_key = str(getattr(backend, "GENERALIZED_ACTIVE_SEED_KEY", "") or "")
+    return active_evaluative_guidance(
+        slot_key=f"{seed_key}:{_safe_slot_index(task)}",
+        tone_class=str(getattr(task, "tone_target", "") or ""),
+        word_count=getattr(task, "real_word_count", 0),
     )
 
 
@@ -1173,6 +1192,7 @@ def writer_prompt(
     )
     rhythm_rule = _rhythm_rule(backend, task)
     register_rule = _register_rule(backend, task)
+    evaluative_rule = _evaluative_rule(backend, task)
     closing_rule = _closing_rule(backend, task)
     hard_shape_rule = ""
     if backend.is_hard_real_surface_shape(getattr(task, "real_surface_shape", "")):
@@ -1210,6 +1230,7 @@ def writer_prompt(
             tone_slot_rule,
             tone_target_rule,
             register_rule,
+            evaluative_rule,
             story_rule,
             affect_rule,
             closing_rule,
@@ -1253,6 +1274,7 @@ def writer_prompt(
             surface_rule=surface_rule,
             rhythm_rule=rhythm_rule,
             register_rule=register_rule,
+            evaluative_rule=evaluative_rule,
             closing_rule=closing_rule,
         )
 
@@ -1528,6 +1550,7 @@ def _focused_writer_prompt(
     surface_rule: str,
     rhythm_rule: str,
     register_rule: str,
+    evaluative_rule: str,
     closing_rule: str,
 ) -> str:
     """Render the minimum complete Planner and grounding contract.
@@ -1575,6 +1598,7 @@ def _focused_writer_prompt(
             opener_rule,
             tone_target_rule,
             register_rule,
+            evaluative_rule,
             affect_rule,
             story_rule,
             surface_rule,

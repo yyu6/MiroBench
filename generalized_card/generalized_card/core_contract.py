@@ -16,10 +16,11 @@ HISTORICAL_REVISION_POLICY_VERSIONS = {
     "generalized-card-revision-v6-dynamic-coverage-history-20260807",
 }
 GENERALIZED_V2_GENERATION_POLICY_VERSION = (
-    "generalized-card-v2-stance-consistent-opening-v103-20260821"
+    "generalized-card-v2-evaluative-register-v104-20260821"
 )
 HISTORICAL_GENERATION_POLICY_VERSIONS = {
     "generalized-v2": {
+        "generalized-card-v2-stance-consistent-opening-v103-20260821",
         "generalized-card-v2-drawn-opening-move-v102-20260820",
         "generalized-card-v2-per-register-realization-v101-20260820",
         "generalized-card-v2-measured-closing-move-v100-20260820",
@@ -173,7 +174,7 @@ CORE_FILES = {
     ),
     "generator_adapter": (
         "generalized_card/generalized_card/backend.py",
-        "7261bb4b994c1a6f18c424a6fe9dbf625f11a944cb8779eaad74f3c3c310d07c",
+        "45d37ed09c3a2ebbd38f66247952dd7cedaf45750cabf81370fcc89f1b567f7d",
     ),
     "data_boundary": (
         "generalized_card/generalized_card/data.py",
@@ -207,7 +208,7 @@ CORE_FILES = {
     ),
     "generation_runner": (
         "generalized_card/scripts/run_generate.py",
-        "a147b499b6cccdf1a120b0c58828a4eac4d961ff8a875df4a2f354b07c2f7a8c",
+        "7309eba7f8afa18468ab8c1cbba63e6981a9693ddcc881d2cc90a6b192064cad",
     ),
     "generation_backend_runner": (
         "generalized_card/scripts/run_generator_backend.py",
@@ -223,7 +224,7 @@ CORE_FILES = {
     ),
     "domain_profile": (
         "generalized_card/generalized_card/domain_profile.py",
-        "cfd67c7fabd3215851f6ca4cae12fd4088a6739e752cc1624c93838a512faf17",
+        "c31f47ebe17053460e195bbba14fec08e98c549f2a4974a1cd942d008235e26d",
     ),
     "viewpoint_bank": (
         "generalized_card/generalized_card/viewpoint_bank.py",
@@ -329,6 +330,10 @@ CORE_FILES = {
         "generalized_card/generalized_card/closing_move.py",
         "0ac7f43ce003bb5f744538c74086991bca1e56369897068f4b21d0b126bd5830",
     ),
+    "evaluative_register": (
+        "generalized_card/generalized_card/evaluative_register.py",
+        "cf3d97f92cdaa2f7b81830e847dcc21130e2285e6fa38d393d6964b1befb090f",
+    ),
     "opening_move": (
         "generalized_card/generalized_card/opening_move.py",
         "1a7f5696812df6e1362ebc6e63146728f24768ef0b9413042fd102e58b1b5fee",
@@ -407,7 +412,7 @@ CORE_FILES = {
     ),
     "domain_prompt_adapter": (
         "generalized_card/generalized_card/prompts.py",
-        "b731b0e8122e87ef5f3c36a2e4478c53728c572524f3b1fec0088ecb8b57340c",
+        "d0d6c60755d4c7b4c61ac48705b1d4f30dc5cb1ea03df1bdc509efa9aed2955d",
     ),
     "reply_planning": (
         "generalized_card/generalized_card/reply_planning.py",
@@ -592,6 +597,7 @@ GENERATION_ADAPTER_CORE_NAMES = (
     "register_realization",
     "closing_move",
     "opening_move",
+    "evaluative_register",
     "source_provenance",
     "comment_structure",
     "tone_length_fit",

@@ -104,7 +104,14 @@ from . import sentence_rhythm
 # module global.
 from . import closing_move
 from .closing_move import set_active_closing_profile, set_closing_move
+from . import evaluative_register
 from . import opening_move
+from .evaluative_register import (
+    set_active_evaluative_profile,
+    set_downtoner_tag,
+    set_evaluation_tier,
+    set_partitive_reference,
+)
 from .opening_move import set_active_opening_profile, set_opening_move
 from . import register_realization
 from .register_realization import (
@@ -462,6 +469,26 @@ def configure_generator_backend(
         or "measured"
     )
     set_opening_move(module.GENERALIZED_OPENING_MOVE)
+    # How far a positive evaluation is allowed to travel, and two tics that stop
+    # it travelling. Each `off` reproduces v103 exactly. Measured over 19,386
+    # excluded-real and 1,674 v103 sentences: the hot tier runs 0.31x real, the
+    # trailing downtoner tag 40.7x and the partitive reference 17.3x.
+    # See `evaluative_register`.
+    module.GENERALIZED_EVALUATION_TIER = (
+        os.environ.get("GENERALIZED_CARD_EVALUATION_TIER", "measured").strip().lower()
+        or "measured"
+    )
+    set_evaluation_tier(module.GENERALIZED_EVALUATION_TIER)
+    module.GENERALIZED_DOWNTONER_TAG = (
+        os.environ.get("GENERALIZED_CARD_DOWNTONER_TAG", "suppress").strip().lower()
+        or "suppress"
+    )
+    set_downtoner_tag(module.GENERALIZED_DOWNTONER_TAG)
+    module.GENERALIZED_PARTITIVE_REFERENCE = (
+        os.environ.get("GENERALIZED_CARD_PARTITIVE_REFERENCE", "suppress").strip().lower()
+        or "suppress"
+    )
+    set_partitive_reference(module.GENERALIZED_PARTITIVE_REFERENCE)
     # Whether the length cue asks for the matched slot's own word count or for
     # the count that realizes it. `off` reproduces every version through v97,
     # where realized/target ran 1.42x at the shortest slots and 0.71x at 251-400
@@ -601,6 +628,9 @@ def configure_generator_backend(
     )
     set_active_opening_profile(
         module.GENERALIZED_DOMAIN_PROFILE.get("opening_profile")
+    )
+    set_active_evaluative_profile(
+        module.GENERALIZED_DOMAIN_PROFILE.get("evaluative_profile")
     )
     module.CLAIM_FAMILIES = prompts.GENERIC_CLAIM_FAMILIES
     # The core system prompt is pinned in `engine/vocabulary.py` and its own ban
@@ -1501,6 +1531,67 @@ def _run_generalized_self_test(module: ModuleType, config: DomainConfig) -> None
                 drawn = line.split('bare token "', 1)[1].split('"', 1)[0] if 'bare token "' in line else ""
                 assert drawn, line
                 assert drawn not in forbidden, (stance, drawn, line)
+    if (
+        module.GENERALIZED_EVALUATION_TIER != "off"
+        and evaluative_register.ACTIVE_EVALUATIVE_PROFILE.get("comments")
+    ):
+        # The tier is drawn per slot, so the rule must differ between slots of
+        # the same size; a flat rule would be the category instruction v102
+        # measured at 0.23 compliance.
+        tier_prompts = [
+            module.build_writer_prompt(
+                profile="gpt54_reddit_writer",
+                seed_post=seed,
+                task=replace(
+                    task, real_word_count=60, tone_target="polite", local_task_id=index
+                ),
+                parent_comment=None,
+                previous_comments=[],
+            )
+            for index in range(1, 25)
+        ]
+        lines = [_evaluative_line(item) for item in tier_prompts]
+        assert any(lines), "no evaluation rule reached the Writer prompt"
+        strengths = [line for line in lines if "full strength" in line]
+        assert strengths, lines[:3]
+        assert len(set(strengths)) > 1, "the named words must vary between slots"
+        # The rule must stay conditional. The Planner owns whether a slot
+        # evaluates anything and this arm only sets how far it travels.
+        for line in strengths:
+            assert "If this comment rates something positively" in line, line
+        # A blunt register is measured lower than a warm one, so it must not
+        # receive the warm register's rate.
+        blunt_share = evaluative_register.hot_share(
+            evaluative_register.ACTIVE_EVALUATIVE_PROFILE,
+            tone_class="impolite",
+            word_count=60,
+        )
+        warm_share = evaluative_register.hot_share(
+            evaluative_register.ACTIVE_EVALUATIVE_PROFILE,
+            tone_class="polite",
+            word_count=60,
+        )
+        assert blunt_share < warm_share, (blunt_share, warm_share)
+    if module.GENERALIZED_DOWNTONER_TAG != "off":
+        assert "takes the sentence back" in _evaluative_line(
+            module.build_writer_prompt(
+                profile="gpt54_reddit_writer",
+                seed_post=seed,
+                task=replace(task, real_word_count=60, local_task_id=41),
+                parent_comment=None,
+                previous_comments=[],
+            )
+        )
+    if module.GENERALIZED_PARTITIVE_REFERENCE != "off":
+        assert "slice of it" in _evaluative_line(
+            module.build_writer_prompt(
+                profile="gpt54_reddit_writer",
+                seed_post=seed,
+                task=replace(task, real_word_count=60, local_task_id=42),
+                parent_comment=None,
+                previous_comments=[],
+            )
+        )
     story_task = next(
         (item for item in distribution_tasks if item.story_mode != "no_story"),
         None,
@@ -3108,6 +3199,15 @@ def _register_line(prompt: str) -> str:
 
     for line in prompt.splitlines():
         if line.lstrip("- ").lower().startswith("register, realized:"):
+            return line.strip()
+    return ""
+
+
+def _evaluative_line(prompt: str) -> str:
+    """Return the rendered evaluation rule from one Writer prompt, if any."""
+
+    for line in prompt.splitlines():
+        if line.lstrip("- ").lower().startswith("evaluation:"):
             return line.strip()
     return ""
 
