@@ -1465,3 +1465,58 @@ readings kept inverting between versions.
 **Rule:** before adopting any threshold, run the null. Real against real, same
 test, same N. `generalized_card/analysis/acceptance_standard.py`.
 
+## A cracked metric's mechanism does not transfer to another metric without testing — 2026-08-21
+
+**What happened.** `hard_disagree_rate`'s defect was parent echo: generated
+replies over-reuse their own parent's content words. `self_bertscore_mean_f1`
+is a plausible carrier of the same story (it is also a within-thread pairwise
+similarity metric), and `docs/DECISIONS.md` G3 recorded the pairwise
+decomposition as the next step *because* it was the diagnostic that cracked the
+other metric. It was tempting to expect the same answer.
+
+It was not. Decomposing `self_bertscore_mean_f1`'s pairs by tree relation
+(`generalized_card/analysis/bertscore_pair_diagnosis.py`), `same_branch` pairs
+— the bucket a parent-echo/locality story predicts should be elevated — show
+**no reliable excess** (+0.0056, Wilcoxon p=0.32 across the 10 matched thread
+pairs). The real defect is a root-vs-reply **role** effect that is present in
+both same-branch and cross-branch pairs equally: `reply_reply` pairs carry the
+excess (+0.0274, p=0.002), `root_root` pairs are clean (+0.0039, p=0.63).
+
+**Why:** two metrics sharing a shape (both are within-thread pairwise
+similarity scores) does not mean they share a cause. The decomposition that
+worked for one is the right *diagnostic to try*, not the answer to *expect*.
+
+**How to apply.**
+- Reuse a diagnostic technique across metrics freely — it is cheap and this
+  session's counterexample still resolved a `MEASURED`/`ASSUMED` row in one
+  offline pass. Do not reuse the *conclusion* it produced elsewhere.
+- When a decomposition comes back, check the bucket that would falsify the
+  imported hypothesis specifically (here: `same_branch`), not just the bucket
+  that would confirm it.
+
+## Root comments keep matching real; replies keep carrying the whole defect — a pattern, not a coincidence
+
+**What happened.** Two metrics now, independently diagnosed: `hard_disagree_rate`
+(`tasks/v102-worklog.md`: root pairs 0.0621 vs real 0.0630, matched; reply pairs
+1.56x real and 100% of the gap) and `self_bertscore_mean_f1` (this session:
+`root_root` pairs +0.0039 excess, p=0.63, not significant; `reply_reply` pairs
++0.0274, p=0.002, unanimous direction). Both times root-level generation
+already matches real and the entire measured defect lives in reply comments.
+
+**Why this might matter:** if this recurs on the next metric investigated, it
+stops being a per-metric coincidence and starts being evidence that root and
+reply slots are generated through a meaningfully different path — different
+plan fields, different prompt sections, or a register/profile draw that is
+better calibrated for the root case. Two data points is not enough to build a
+fix on, but it is enough to make it the first thing to check on the next
+metric-specific diagnosis, before inventing a metric-specific story.
+
+**How to apply.**
+- When diagnosing any within-thread metric next, **split root vs reply first**,
+  before any other cut. It has been the highest-signal split twice in a row.
+- If it recurs a third time, that is grounds to go looking in
+  `prompts.py`/`backend.py` for what actually differs between root-slot and
+  reply-slot generation, as a cross-metric fix rather than a per-metric one.
+- Do not build that fix on two data points. Record the pattern; do not act on
+  it until a third metric's diagnosis either confirms or breaks it.
+

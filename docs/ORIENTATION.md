@@ -645,12 +645,40 @@ progress and is **not** the same thing as being close at N=150.
    possessive arrives as a bare fact rather than a story, which is what v101's
    state-not-event cue rewording was for and which v101 confirmed does not raise
    story probability.
-3. **`self_bertscore_mean_f1` — five hypotheses rejected, no mechanism.** Length
-   spread, duplication tail, surface register, lexical breadth (r = +0.077), and
-   narrow shared vocabulary (r = +0.155 and −0.096, both the wrong sign; the
-   narrowness is *cross-thread* while the metric is *within-thread*). The gap is
-   a uniform +0.02 on every pair and flat under trimming. **Do not build a sixth
-   without falsifying it first.**
+3. **`self_bertscore_mean_f1` — six hypotheses rejected; the pairwise
+   decomposition (`docs/DECISIONS.md` G3) now localizes it.** Length spread,
+   duplication tail, surface register, lexical breadth (r = +0.077), narrow
+   shared vocabulary (r = +0.155 and −0.096, both the wrong sign; the narrowness
+   is *cross-thread* while the metric is *within-thread*), and environment
+   drift (real-side per-thread scores were computed under
+   `transformers==5.7.0`, generated-side under `4.48.0`/`5.10.1` — every version
+   since v96 — but rescoring one real thread under `4.48.0` moved its mean by
+   1.6e-8, so this is not a mechanism either).
+
+   Decomposed `--include-pairs` on the v103 N=10 artifact against its 10
+   matched real threads (fidelity-checked against the shipped per-thread means
+   first, `generalized_card/analysis/bertscore_pair_diagnosis.py pairs`): the
+   excess is **not** the `hard_disagree_rate` parent-echo story. `same_branch`
+   pairs (siblings, cousins, indirect ancestor-descendant) show no reliable
+   excess at all (+0.0056, Wilcoxon p = 0.32 across the 10 thread pairs); if
+   generated replies were echoing content down their own branch, this bucket
+   should be elevated and it is not. Instead the gap is a **root-vs-reply role
+   effect**: `root_root` pairs are clean (+0.0039, p = 0.63) while `reply_reply`
+   pairs carry the largest, most significant excess (+0.0274, p = 0.002, same
+   sign in all 10 threads) and `root_reply` sits between (+0.0130, p = 0.027).
+   It is a **sign inversion**, not a uniform shift: real reply-reply pairs are
+   *less* similar than real root-root pairs (0.4905 vs 0.4955) while generated
+   reply-reply pairs are *more* similar than generated root-root pairs (0.5136
+   vs 0.5089). `parent_child` pairs carry the single largest per-pair excess
+   (+0.0256, p = 0.0098) but are only 1.3% of all pairs, too rare to move the
+   pooled metric. **Root comments already match real on this metric, same as
+   `hard_disagree_rate`** — this is now the second metric where the entire
+   defect lives in reply comments and root-level generation is clean.
+
+   No sixth hypothesis has been built for *why* generated replies read more
+   similar to each other than real replies do, regardless of branch. That is
+   the open question, and it is now scoped to reply-only generation rather than
+   the whole metric.
 4. **`self_bleu_4` — a weak pass, characterised, no cheap lever.** An exact
    ablation harness reproducing the evaluator to 5 significant figures shows **no
    phrase drives it**: apostrophe normalisation, `check` openings, `that's the

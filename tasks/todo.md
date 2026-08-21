@@ -30,15 +30,41 @@ gives 12/12 98% of the time under Holm, and only 63% under the raw rule).
 So the work orders itself, for the first time on evidence rather than on which
 number looked worst:
 
-- [ ] **1. `self_bertscore_mean_f1` — the only metric that fails a correct test.**
-      MWU 0.001, KS 0.002, `|Cliff|` 0.86 against a noise floor of 0.50. Five
-      rejected hypotheses and **no mechanism**. Do not build a sixth guess. Run
-      the diagnostic that cracked `hard_disagree_rate` instead: decompose the
-      thread mean into its **pairwise** matrix (`--include-pairs` on
-      `score_thread_self_bertscore.py`) and ask whether the excess is uniform,
-      parent-child, or same-branch. Parent-child would make it the already
-      measured parent echo, and one mechanism would then serve this metric, the
-      other half of `hard_disagree_rate`, and the user's criterion-2 complaint.
+- [x] **1. `self_bertscore_mean_f1` — the only metric that fails a correct test.**
+      MWU 0.001, KS 0.002, `|Cliff|` 0.86 against a noise floor of 0.50. **The
+      pairwise decomposition ran** (`generalized_card/analysis/bertscore_pair_diagnosis.py
+      pairs`, v103 N=10 vs its 10 matched real threads, fidelity-checked
+      first) and the answer is none of the three guesses cleanly:
+      - It is **not** the `hard_disagree_rate` parent-echo mechanism.
+        `same_branch` pairs show no reliable excess (+0.0056, p=0.32, n=10
+        threads) — if replies were echoing down their own branch this bucket
+        would be elevated, and it is not.
+      - It is **not** uniform. `root_root` pairs are clean (+0.0039, p=0.63);
+        `reply_reply` pairs carry the largest, most significant excess
+        (+0.0274, p=0.002, same sign in all 10 threads); `root_reply` is
+        between (+0.0130, p=0.027). It is a sign **inversion**: real
+        reply-reply pairs are less similar than real root-root pairs (0.4905
+        vs 0.4955); generated reply-reply pairs are more similar than
+        generated root-root pairs (0.5136 vs 0.5089).
+      - `parent_child` pairs do carry the single largest per-pair excess
+        (+0.0256, p=0.0098) but are 1.3% of all pairs — real but too rare to
+        move the pooled metric.
+      - **Root comments already match real, same as `hard_disagree_rate`.**
+        This is now the second metric where the whole defect is a
+        reply-comment phenomenon.
+
+      Also tested and rejected in the same pass: **environment drift**. Every
+      real-side per-thread score in this project (v96-v104) was computed under
+      `transformers==5.7.0`; every generated-side score under `4.48.0` or
+      `5.10.1`. Rescoring one real thread under `4.48.0` moved its mean by
+      1.6e-8 — not a mechanism, but worth having actually checked once.
+
+      **No sixth hypothesis exists yet for *why* generated replies read more
+      similar to each other than real replies do, independent of branch.** The
+      search is now scoped to reply-only generation (Writer prompt/plan
+      differences between root and reply slots), not the whole metric. Do not
+      build that hypothesis without falsifying it on the excluded real corpus
+      first (SS4 step 3).
 - [ ] **2. `polite_rate` / `impolite_rate` — pass at N=10 only for want of
       power, and will fail at N=150.** The gap is 0.18, which is 1.2 real
       between-thread standard deviations, and a +0.10 shift is caught 100% of the
