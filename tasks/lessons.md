@@ -1427,3 +1427,41 @@ a parameter and install it after configuration; arms must go through
 The script refuses to pin an untracked file ("active sources must be recoverable
 from git") and exits 2 without writing anything -- including the entries that
 were not blocked. Add the new files first, then re-pin once.
+
+## An ablation is an upper bound, not a price — 2026-08-21
+
+v104's three arms each reached 54–85% of their own measured target and delivered
+**8.4%** of the metric, against an ablation that had put the same three edits at
+**28.1%**. Editing the shipped text converts sentences in place; a prompt cue
+asks the model to write differently and it complies on the surface statistic
+while producing text the classifier reads the same way. The shortfall is *not*
+only compliance.
+
+**Rule:** an ablation on the artifact sets the ceiling. Discount it hard before
+using it to justify a paid run, and write the discounted number down as the
+prediction.
+
+## Set a prediction band against the population you will measure — 2026-08-21
+
+Second time. v102's band came from the N=10 pooled real instead of the gate
+thread's real; v104's came from the pooled corpus instead of this thread's. On
+seed 8, real `hot_share_of_positive` is **0.3373**, not the pooled **0.4821**,
+and v103's `impolite_rate` on that thread was already inside the band I
+"predicted" it would move into.
+
+**Rule:** a gate is one thread. Its baseline is the same thread in the previous
+version's artifact, and its target is that thread's own matched real. The check
+harness now enforces this (`check_v104_predictions.py` compares a gate against
+the baseline's largest thread).
+
+## Measure the noise floor before choosing a target — 2026-08-21
+
+The project steered by `|Cliff| ≤ 0.10` from v97 to v104. Two samples of *real*
+threads reach that on all twelve metrics **0.0% of the time at N=10**; the null
+95th percentile of `|Cliff|` is ≈0.52 per metric at N=10. The target was below
+the noise floor for two dozen releases, which is why "6/12 → 4/12" style
+readings kept inverting between versions.
+
+**Rule:** before adopting any threshold, run the null. Real against real, same
+test, same N. `generalized_card/analysis/acceptance_standard.py`.
+

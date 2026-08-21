@@ -160,9 +160,16 @@ higher) and the **Wasserstein distance**.
    exactly one matched real thread. Unpaired tests on paired data are
    conservative, so N=10 p-values are **optimistic**. At |Cliff| = 0.25 a
    metric passes ~87% of the time at N=10 and ~4% at N=150.
-2. **Therefore the real target is the effect size, not the p-value.**
-   **|Cliff's delta| ≤ 0.10** is the number to steer by. `self_bleu_4` at
-   MWU 0.121 with Cliff +0.42 is a *weak* pass that will not survive N=150.
+2. **The real target is the effect size — but not zero, and not 0.10.**
+   **RETRACTED 2026-08-21: `|Cliff| ≤ 0.10` was below the noise floor.** Measured
+   on 440 real camera threads, two *real* samples reach `|Cliff| ≤ 0.10` on all
+   twelve metrics **0.0% of the time at N=10** and 26% at N=150. The null 95th
+   percentile of `|Cliff|` is **≈0.52 per metric at N=10** and **≈0.13 at
+   N=150**. So an N=10 Cliff reading anywhere under about 0.5 is
+   indistinguishable from a second sample of real threads, and every N=10 Cliff
+   number in this project's history below that is noise. Steer by the distance
+   to that floor, per metric and per N, or by trap 4's paired bias.
+   Reproduce with `generalized_card/analysis/acceptance_standard.py`.
 3. **Barely above 0.05 does not count.** The user rejected N-based
    extrapolation ("this would pass at N=150") unless it is publicly,
    scientifically established.
@@ -178,12 +185,23 @@ higher) and the **Wasserstein distance**.
    template distribution converges on the real one as n grows while a generator
    bias does not. Steering by raw Cliff-vs-real at n=10 is partly steering by
    which ten templates were drawn.
-5. **Multiplicity is an open decision, still owned by the user.** 12 metrics ×
-   2 tests at α = 0.05 means even a *perfect* generator passes all 12
-   simultaneously only ≈ 0.94¹² ≈ 52% of the time. Before the 150-thread run
-   somebody has to choose: a multiplicity correction, or effect-size-led
-   reporting with |Cliff| ≤ 0.10 as the bar. **Do not run N=150 before this is
-   decided** — the result would not be interpretable either way.
+5. **The current standard fails a perfect generator half the time.** This is
+   no longer an estimate. Drawing two disjoint samples of real camera threads and
+   running the evaluator's own tests on them:
+
+   | standard | N=10 | N=150 |
+   |---|---:|---:|
+   | current: all 24 raw p > 0.05 | 0.63 | **0.50** |
+   | **Holm–Bonferroni over the 24 tests** | 0.98 | **0.98** |
+   | every \|Cliff\| ≤ 0.10 | 0.00 | 0.26 |
+
+   A perfect generator *is* a second sample of real threads, so the row reading
+   ≈0.95 is the only one that does not fail correct work. **Recommendation:
+   report all 12 with Holm–Bonferroni over the 24 tests, and print the
+   real-vs-real null pass rate beside it as the calibration line.** The choice is
+   still the user's; what is no longer open is that the current standard is
+   mis-specified. `acceptance_standard.py` produces these three rows for any
+   domain from that domain's own thread tables.
 
 ### What passing does not mean
 

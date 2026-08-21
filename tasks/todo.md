@@ -355,12 +355,20 @@ are not**. Cliff table and projection there.
 - [ ] Bug — `--template-phrase-reuse-budget 4` is flat and wrong at large thread
       sizes; real threads reach `uncertainty_frame` 7, 8 and 12. Should scale
       with comment count.
-- [ ] **User decision, still open and blocking N=150.** 12 metrics x 2 tests at
-      alpha 0.05 means a perfect generator passes all 12 together only
-      0.94^12 ~= 52% of the time. Choose the reporting standard first: a
-      multiplicity correction, or effect-size-led reporting with |Cliff| <= 0.10
-      as the target. At |d| = 0.25 a metric passes 87% of the time at N=10 and
-      4% at N=150, so N=10 p-values are not the thing to optimize.
+- [x] **Measured, no longer an estimate.** `acceptance_standard.py` draws two
+      disjoint samples of real camera threads and runs the evaluator's own tests:
+      the current standard passes **0.63 at N=10 and 0.50 at N=150**;
+      Holm-Bonferroni over the same 24 tests passes **0.98 / 0.98**; the
+      `|Cliff| <= 0.10` target passes **0.00 / 0.26**. A perfect generator is a
+      second real sample, so the standard has to read ~0.95.
+      **Recommendation to the user: Holm-Bonferroni over the 24 tests, with the
+      real-vs-real null printed beside it.** Domain-portable -- same three rows
+      for any domain from its own thread tables.
+- [x] ~~**Drive every metric to |d| <= 0.10.**~~ **RETRACTED.** The null 95th
+      percentile of `|Cliff|` is ~0.52 per metric at N=10 and ~0.13 at N=150, so
+      the target sat below the noise floor from v97 to v104 and every N=10 Cliff
+      reading under ~0.5 in this project's history is noise. Steer by the
+      distance to the floor, or by trap 4's paired bias.
 
 ## v97 keyboard-surface / measured-joints status — 2026-08-19
 
