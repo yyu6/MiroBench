@@ -194,11 +194,32 @@ are not**. Cliff table and projection there.
       **36%** of `impolite_rate`. Causally verified on the real checkpoint:
       inserting one real short appreciative sentence flips a generated
       non-polite 40w+ comment 0.29–0.50 of the time against a control of 0.121.
-- [ ] **Name the remaining 63% of the carrier sentences before building v104.**
-      The harvested set is defined by a classifier score and only **36.9%** is
-      covered by the seven named surface forms. Shipping "write a sentence
-      Polite Guard likes" is tuning to the metric. Name the forms first, the way
-      v100 named the closing *move* and v102 named the token.
+- [x] **Named the forms, and the answer was not a scheduling problem.** Eleven
+      forms fitted on half the excluded threads and scored on the other half
+      reach only **0.420** recall; three were dropped for not replicating. But
+      the generator already writes the forms at or above the real rate
+      (`gratitude` 1.48x, `positive_predicate` 1.39x, `bare_verdict` at parity)
+      and they land at a quarter to a tenth of real precision. The cause is
+      inside the sentence: hot-tier words 0.31x real, trailing downtoner tag
+      **42.7x**, partitive reference **13.6x**. Ablation with a working control
+      in `generalized_card/VERSION_LOG.md` under v104.
+- [x] **v104 built and offline-verified.** Policy
+      `generalized-card-v2-evaluative-register-v104-20260821`, profile schema 20,
+      module `evaluative_register.py`, arms `--evaluation-tier`,
+      `--downtoner-tag`, `--partitive-reference`. 588 tests, ruff clean, 106 pins
+      0 drift, `off` proven to render an empty rule on the real prompt path,
+      `--prepare-only` clean on seed 8. Predictions are in the VERSION_LOG entry;
+      **read them before the gate**.
+- [ ] **Paid large-thread gate for v104**, `--start-seed-index 8` (186 comments,
+      about $1.14), then N=10. Read every comment: v103's stance bug was found
+      by reading the gate, not by its metrics, and two of these three arms are
+      suppressions whose failure mode is visible in the text before it is visible
+      in a rate.
+- [ ] **The carrier prevalence gap is still open and is the larger half.** Real
+      comments hold an unambiguously appreciative sentence 0.220 of the time and
+      generated 0.062; closing that alone is worth ~52% of the polite gap against
+      v104's 28.1%. It is not addressed because 58% of those forms are still
+      unnamed. It needs a better taxonomy, not a bigger regex.
 - [ ] **`self_bertscore_mean_f1` — five rejected hypotheses and no mechanism.**
       Do not build a sixth without falsifying it first. The untried diagnostic is
       the one that cracked `hard_disagree_rate`: decompose the thread mean into
