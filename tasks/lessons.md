@@ -1,11 +1,62 @@
 # Lessons
 
+## 2026-08-21 — At N=10 the distance to real is mostly which templates got drawn
+
+**What happened.** I read the v103 N=10 as a regression: `hard_disagree_rate`
+Cliff +0.37 → −0.23, metrics inside |Cliff| ≤ 0.10 down 6/12 → 4/12, and I
+committed that as "the PASS count went up and the N=150 outlook went down".
+
+Then I looked at what the Planner actually aims at. It is **not** the matched
+real thread — that would be tuning against the test set. It is
+`reference_metric_template`: a **held-out, same-size** real thread, carrying
+aggregate labels and `raw_text_included: false`. So the per-thread target is an
+independent draw from the real population.
+
+    corr(generated, its own template)   +0.572
+    corr(generated, matched real)       -0.110
+    corr(template,  matched real)       -0.281      <- the target knows nothing
+                                                        about the thread it stands for
+
+Cliff of the **template** against matched real is therefore the ceiling a perfect
+generator could reach at n=10. For `hard_disagree_rate` that ceiling is **−0.36**
+— v103 at −0.23 is *closer to real than a perfect generator would be*. Measured
+against its own target, paired, the generator's bias went **+0.0681 → +0.0032**,
+Wilcoxon p = 1.000. It converged; it did not overshoot.
+
+Repeating that decomposition across all twelve metrics collapsed the priority
+list: **only three carry a statistically real generator bias** — `polite_rate`
+(p = 0.002), `impolite_rate` (p = 0.002), `self_bertscore_mean_f1` (p = 0.014) —
+and they are the three that have failed since v96. Everything else is at or
+inside its ceiling.
+
+**Why:** the evaluation is matched per thread, but the plan target is not, by
+design. Cliff-vs-real at n=10 is therefore **generator bias + template-selection
+noise**, and for several metrics the noise term is the larger one. The noise
+shrinks as n grows (the template distribution converges on the real one); a
+generator bias does not. So the two behave completely differently at N=150 and
+must not be read off the same number.
+
+**How to apply.**
+- **Steer by `generated − its own template`, paired, Wilcoxon against zero.**
+  That isolates the part that survives to N=150. Raw Cliff-vs-real at n=10 is for
+  reporting, not for deciding what to build.
+- Before calling an n=10 movement a regression, **compute the ceiling**:
+  Cliff(template, matched real) on the same threads. If the result is inside it,
+  there is nothing to fix in the generator.
+- Templates are chosen deterministically from the seed pool, so **two versions on
+  the same seeds share the same templates**. Version-to-version bias comparisons
+  are clean; version-to-real comparisons at small n are not.
+- This affects how every previous N=10 in this project was read. Do not re-open
+  them all, but do not quote an old Cliff-vs-real as a generator property either.
+
+
 ## 2026-08-21 — Repairing a realization is what makes the plan's own error measurable
 
-**What happened.** v102/v103 took the opener from 18% obeyed to 97% obeyed. The
-metric it was aimed at, `hard_disagree_rate`, did not land on target — it
-**overshot**, Cliff +0.37 → −0.23, thread mean 0.1569 → 0.0920 against a real
-0.1208.
+**What happened.** v102/v103 took the opener from 18% obeyed to 97% obeyed.
+Against the matched real thread `hard_disagree_rate` swung Cliff +0.37 → −0.23.
+(Read the same-day lesson below before concluding that is an overshoot — measured
+against its own target the generator *converged*, bias +0.068 → +0.003. What
+follows is about the schedule the fix exposed, which is real either way.)
 
 Decomposed by pair kind, the reply conditional was repaired exactly as the
 ablation predicted (+0.080 over real → +0.022) and the **root conditional broke**:
@@ -26,9 +77,9 @@ first honest test of everything upstream of it.
 **How to apply.**
 - **After a realization fix, re-audit the schedule it now obeys**, not just the
   metric it was aimed at. Assume the schedule has been wrong and was hidden.
-- A mechanism that lands *past* its target rather than short of it is evidence
-  the target itself is mis-specified. Overshoot is a different diagnosis from
-  under-delivery and points upstream, not at the cue.
+- When a mechanism lands somewhere unexpected, separate *"missed the target"*
+  from *"the target was wrong"* before choosing a fix — they point at different
+  code. Here it was the target.
 - When a profile is a **marginal**, ask what conditional the assignment ignores.
   `register_realization` is measured per register for exactly this reason;
   `opener_profile` was not measured per pair kind, and that is the whole defect.

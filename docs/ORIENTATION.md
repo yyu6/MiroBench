@@ -152,7 +152,7 @@ distribution shift and two-sample Kolmogorov–Smirnov on the shape. Each report
 also carries **Cliff's delta** (generated − real; positive = generated is
 higher) and the **Wasserstein distance**.
 
-### How to actually read it — four traps
+### How to actually read it — five traps
 
 1. **A large p-value at N=10 is not evidence of a match.** The test is
    *unpaired* while the data is *paired by seed* — each generated thread has
@@ -165,7 +165,19 @@ higher) and the **Wasserstein distance**.
 3. **Barely above 0.05 does not count.** The user rejected N-based
    extrapolation ("this would pass at N=150") unless it is publicly,
    scientifically established.
-4. **Multiplicity is an open decision, still owned by the user.** 12 metrics ×
+4. **At N=10, Cliff against matched real is not the generator's error.** The
+   Planner aims at a **held-out same-size** real thread, never the matched one,
+   so the per-thread target is an independent draw and carries almost no
+   information about the thread it stands in for — for `hard_disagree_rate`,
+   corr(template, matched real) = **−0.281**. Cliff of the *template* against
+   matched real is the **ceiling a perfect generator could reach**, and on the
+   v103 N=10 it ran from 0.00 to **−0.36** depending on the metric. **Measure the
+   generator against its own target, paired** (`generated − reference_metric_template`,
+   Wilcoxon against zero); that is the part that survives to N=150, because the
+   template distribution converges on the real one as n grows while a generator
+   bias does not. Steering by raw Cliff-vs-real at n=10 is partly steering by
+   which ten templates were drawn.
+5. **Multiplicity is an open decision, still owned by the user.** 12 metrics ×
    2 tests at α = 0.05 means even a *perfect* generator passes all 12
    simultaneously only ≈ 0.94¹² ≈ 52% of the time. Before the 150-thread run
    somebody has to choose: a multiplicity correction, or effect-size-led
@@ -478,17 +490,28 @@ to v101 (`--start-seed-index 2`, `--sampling-seed 42`), $3.7345.
 
 **9 PASS / 1 PARTIAL / 2 FAIL** — nominally the best count in the project's
 history (v101 9/0/3, v98 8/1/3, v96 6/0/6). **The count is not the result.**
-Metrics inside the |Cliff| ≤ 0.10 bar went **6/12 (v101) → 4/12 (v103)**:
-`semantic_mean_cosine` (−0.06 → −0.22) and `mean_story_probability` (−0.06 →
-−0.14) both left the safe zone while the PASS count rose. Full table and the
-decomposition in `generalized_card/VERSION_LOG.md`.
+Metrics inside the |Cliff| ≤ 0.10 bar went 6/12 → 4/12, **but that count is not a
+sound version comparison** — see §2's new trap 5. Corrected for the template
+ceiling, the generator improved on five metrics and got significantly worse on
+none. Only **three** metrics carry a statistically real generator bias:
+`polite_rate` (p = 0.002), `impolite_rate` (p = 0.002) and
+`self_bertscore_mean_f1` (p = 0.014) — the three that have failed since v96.
+Full tables in `generalized_card/VERSION_LOG.md`.
 
-`hard_disagree_rate` **overshot** rather than drifting: Cliff +0.37 → −0.23, mean
-0.1569 → 0.0920 against a real 0.1208. The reply conditional was repaired
-(+0.080 over real → +0.022) and the **root conditional broke** (0.0621 → 0.0284
-against a real 0.0630). Pooled over all pairs it reads 0.1198 against 0.1218 —
-a textbook pass by cancellation, and the metric is a thread mean, not a pooled
-rate.
+`hard_disagree_rate` moved Cliff +0.37 → −0.23, mean 0.1569 → 0.0920 against a
+real 0.1208. **That is not an overshoot — it is convergence.** The Planner aims
+at a *held-out same-size* real thread, never the matched one (§4, isolation), so
+the per-thread target is an independent draw. Measured against its own target,
+the generator's bias went **+0.0681 → +0.0032** (Wilcoxon p = 1.000): it now hits
+the plan almost exactly. Cliff of the **template** against matched real — what a
+perfect generator would score at n=10 — is **−0.36**, so v103 at −0.23 is closer
+to real than a perfect generator would be with these ten templates.
+
+Pooled over all pairs it reads 0.1198 against 0.1218, while the root conditional
+fell 0.0621 → 0.0284 (real 0.0630) and the reply conditional was repaired (+0.080
+over real → +0.022). The pooled agreement is partly cancellation, and the metric
+is a thread mean, not a pooled rate — but the thread-level number is dominated by
+template noise, not by that split.
 
 **What that exposed is the useful part.** Realized polarity-token openers sit at
 0.0847 on root comments against a real 0.0224, and 0.0507 on replies against a
@@ -677,7 +700,7 @@ past the target rather than onto it.
 
 **Still blocking N=150: the reporting standard.** 12 metrics × 2 tests at
 α = 0.05 means a perfect generator passes all 12 simultaneously only ≈ 52% of the
-time. That is the user's decision (§2, trap 4).
+time. That is the user's decision (§2, trap 5).
 
 ### Retracted claims — do not reuse
 

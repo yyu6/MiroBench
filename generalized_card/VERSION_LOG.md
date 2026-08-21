@@ -202,8 +202,9 @@ v101 on the same seeds, **$3.7345**, 56.8 minutes, 532/532 comments.
 | `mean_story_probability` | −0.06 | **−0.14** | **worse** |
 | `self_bertscore_mean_f1` | +0.80 | **+0.86** | **worse** |
 
-**Metrics inside the |Cliff| ≤ 0.10 bar: v101 6/12, v103 4/12.** The PASS count
-went up and the N=150 outlook went **down**. `semantic_mean_cosine` and
+**Metrics inside the |Cliff| ≤ 0.10 bar: v101 6/12, v103 4/12** — but see the
+CORRECTION below: that count conflates generator bias with template-selection
+noise and is not a sound version comparison. `semantic_mean_cosine` and
 `mean_story_probability` both left the safe zone. This is exactly the trap
 §2 of `ORIENTATION.md` describes, and the reason that section exists.
 
@@ -248,6 +249,76 @@ conditional broke**: it was matched to three decimals in v101 and is now less th
 half of real. The pooled figure looks excellent at 0.1198 against 0.1218 — that is
 a **pass by cancellation**, and the metric is a mean of per-thread rates, not a
 pooled rate, so the cancellation does not save it.
+
+### CORRECTION (same day) — "overshot" was the wrong reading
+
+Everything above about *what the mechanism did* stands. The interpretation of
+`hard_disagree_rate` does not, and the priority order it implied was wrong.
+
+**The Planner does not aim at the matched real thread.** It aims at a
+**held-out, same-size real thread** — `reference_metric_template`,
+`raw_text_included: false` — because aiming at the matched thread would be
+tuning against the test set. So the per-thread target is an independent draw
+from the real population, and at n=10 that is very noisy:
+
+| | corr(generated, its template) | corr(generated, matched real) | corr(template, matched real) |
+|---|---:|---:|---:|
+| `hard_disagree_rate` | **+0.572** | −0.110 | **−0.281** |
+| `impolite_rate` | +0.889 | +0.188 | +0.440 |
+| `polite_rate` | +0.839 | +0.471 | +0.359 |
+
+The generator tracks its target. The target carries essentially no information
+about the thread it stands in for — which is by design.
+
+**So compute the ceiling.** Cliff of the *template* against matched real is what
+a perfect generator would score at n=10:
+
+| metric | template ceiling | v101 | v103 | |
+|---|---:|---:|---:|---|
+| `hard_disagree_rate` | **−0.36** | +0.37 | **−0.23** | **beats the ceiling** |
+| `length_cv` | +0.36 | +0.10 | +0.04 | beats it |
+| `mean_story_probability` | +0.20 | −0.06 | −0.14 | beats it |
+| `neutral_rate` | −0.23 | −0.51 | −0.30 | at it |
+| `semantic_mean_cosine` | −0.16 | −0.06 | −0.22 | at it |
+| `emotion_entropy` | +0.00 | −0.06 | +0.02 | at it |
+| `self_bleu_4` | +0.00 | +0.44 | +0.40 | generator adds +0.40 |
+| `impolite_rate` | +0.19 | +0.76 | +0.61 | generator adds +0.42 |
+| `polite_rate` | −0.08 | −0.62 | −0.60 | generator adds −0.52 |
+| `self_bertscore_mean_f1` | −0.08 | +0.80 | +0.86 | generator adds **+0.94** |
+
+`hard_disagree_rate` at −0.23 is **closer to real than a perfect generator would
+be** with these ten templates. It did not overshoot.
+
+**The quantity that survives to N=150 is the generator's bias against its own
+target, paired — template-selection noise cancels:**
+
+| metric | v101 bias | v103 bias | Wilcoxon p (v103 ≠ 0) |
+|---|---:|---:|---:|
+| `hard_disagree_rate` | +0.0681 | **+0.0032** | 1.000 |
+| `semantic_mean_cosine` | +0.0202 | **+0.0028** | 0.695 |
+| `emotion_entropy` | −0.0956 | **+0.0138** | 0.770 |
+| `neutral_rate` | −0.0357 | **−0.0165** | 0.688 |
+| `impolite_rate` | +0.1893 | **+0.1529** | **0.002** |
+| `polite_rate` | −0.2002 | −0.1856 | **0.002** |
+| `self_bertscore_mean_f1` | +0.0196 | +0.0174 | **0.014** |
+| `self_bleu_4` | +0.0051 | +0.0042 | 0.105 |
+| `length_cv` | −0.1140 | −0.1193 | 0.275 |
+| `mean_story_probability` | −0.0287 | −0.0332 | 0.084 |
+
+**`hard_disagree_rate` went from +0.068 above its own target to +0.003 — the
+generator converged, it did not overshoot.** Only **three** metrics carry a
+statistically real generator bias: `polite_rate`, `impolite_rate` and
+`self_bertscore_mean_f1`. Those are the three that have failed since v96.
+
+**What this means for the "6/12 → 4/12" line above:** Cliff against matched real
+at n=10 conflates generator bias with template-selection noise, and for
+`hard_disagree_rate` the noise term is −0.36. That count is not a reliable
+version comparison and should not have been reported as one.
+
+**What still stands:** the root/reply opener inversion below is real and worth
+fixing on its own terms — real text puts bare agreement tokens on replies at 3x
+the rate it puts them on roots and the schedule does the opposite — but it is a
+fidelity defect, not the cause of the `hard_disagree_rate` number.
 
 ### The upstream defect this exposed
 

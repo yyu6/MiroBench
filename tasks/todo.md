@@ -160,7 +160,28 @@ are not**. Cliff table and projection there.
       Both pre-registered watch items resolved as **noise** — story on the drawn
       slots Wilcoxon p = 0.966 at n=65, body negation McNemar p = 0.881 at n=504.
       Not acting on the gate's aggregates was right both times.
+- [x] **CORRECTION to the line above: v103 did not overshoot, it converged.**
+      The Planner aims at a held-out same-size thread, never the matched one, so
+      the per-thread target is an independent draw — corr(template, matched real)
+      is **−0.281** for `hard_disagree_rate`. Measured against its own target the
+      generator's bias went **+0.0681 → +0.0032** (Wilcoxon p = 1.000). The
+      template ceiling at n=10 is **−0.36**, so v103 at −0.23 is closer to real
+      than a perfect generator would be. **The "6/12 → 4/12" count conflates
+      generator bias with template noise and should not be used to compare
+      versions.** New trap 4 in `ORIENTATION.md` §2.
+
+      Corrected priority — only **three** metrics carry a statistically real
+      generator bias, and they are the three that have failed since v96:
+      `polite_rate` (bias −0.1856, p = 0.002), `impolite_rate` (+0.1529,
+      p = 0.002), `self_bertscore_mean_f1` (+0.0174, p = 0.014).
+- [ ] **The three real generator defects, in bias order.** `polite_rate` and
+      `impolite_rate` are one realization defect (`tasks/v99-worklog.md`); the
+      largest untapped lever is still the possessive (generated `my X` 0.081
+      against a real 0.230, P(polite | possessive) 0.509 against 0.254).
+      `self_bertscore_mean_f1` has **five rejected hypotheses and no mechanism**.
 - [ ] **v104 — make the opener schedule respect the root/reply conditional.**
+      Demoted: this is a **fidelity** defect, not the cause of the
+      `hard_disagree_rate` number.
       Realized polarity openers are **0.0847 on roots against a real 0.0224** and
       **0.0507 on replies against a real 0.0685** — inverted. `opener_profile` is
       a pooled marginal; measure it per pair kind the way `register_realization`
