@@ -124,3 +124,40 @@ Verbatim examples of what is missing, all from excluded real:
 Short, unqualified, unhedged. This is also the user's criterion-2 complaint in
 its positive form: the missing beat is not another *thoughtful* sentence, it is
 the plain enthusiastic one.
+
+
+---
+
+## What was built, 2026-08-21
+
+Three arms, one release, one artifact so each is attributable — the same way
+v97's four and v98's five were. `evaluative_register.py`, profile schema 20.
+
+The carrier framing above localised the defect; it did not explain it. Naming
+the forms is what did. The generator already writes the appreciative forms at or
+above the real rate (`gratitude` 1.48x, `positive_predicate` 1.39x,
+`bare_verdict` at parity) — they do not land, at a quarter to a tenth of real
+precision. Reading matched pairs side by side gave three surface causes, and the
+whole-corpus rates and the ablation are in `generalized_card/VERSION_LOG.md`
+under v104.
+
+Two things were tested and rejected on the way, both cheap:
+
+- **The reuse ledger as a priming source.** It echoes the exact tics back to the
+  Writer (`- that's the bit that (used 3x)`, `- The $200 part is nice, sure,
+  but`), which looked like a self-feeding loop. Partitive lift **0.95x**, tag
+  lift **1.09x**, and flat or lower where the ledger is present once position in
+  the thread is controlled. v98's mechanism is untouched.
+- **The named-form taxonomy as the mechanism.** Eleven forms, fitted on half the
+  excluded threads and scored on the other half, reach only **0.420** recall of
+  the carriers at 0.317 precision. `recommend_personally` (held precision 0.102),
+  `me_too` (n=18) and `long_tenure` (held 0.116 against a fit 0.292 — it does not
+  replicate) were dropped. A profile of "write a sentence Polite Guard likes"
+  was **not** shipped: it is defined by a classifier score, and this project does
+  not tune to the metric.
+
+**What is still open after v104.** Even at full compliance the three edits close
+28.1% of the polite gap. The carrier prevalence gap (0.220 real against 0.062)
+is worth about 52% on its own and is not addressed here, because the forms that
+make up 58% of it are still unnamed. That remains the next piece of work, and it
+needs a better taxonomy, not a bigger regex.

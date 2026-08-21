@@ -62,6 +62,113 @@ Before any run that changes behavior:
 
 ---
 
+## v104 — evaluative register (2026-08-21)
+
+Policy ID: `generalized-card-v2-evaluative-register-v104-20260821`.
+Arms `--evaluation-tier {measured,off}`, `--downtoner-tag {suppress,off}`,
+`--partitive-reference {suppress,off}`; each `off` reproduces v103, verified on
+the real prompt path (every arm off renders an empty rule, so the v103 prompt is
+byte-identical). Profile schema 19 → 20, new section `evaluative_profile`.
+Module `generalized_card/generalized_card/evaluative_register.py`. Full
+diagnosis in `tasks/v104-worklog.md`; reproduce with
+`generalized_card/analysis/polite_sentence_diagnosis.py all`.
+
+**Why the previous eight attempts were mis-specified.** `polite_rate` and
+`impolite_rate` carry the largest statistically real generator bias against the
+Planner's own target (−0.1856 and +0.1529, Wilcoxon p = 0.002 each) and have
+failed since v96. Polite Guard is **confident, not near-degenerate** — unlike
+the Stance_Rel head behind `hard_disagree_rate`, its median margin on a
+generated non-polite comment is −0.934, only 2.1% sit within 0.10 of flipping,
+and the median P(impolite) among impolite-labelled generated comments is 0.981.
+No sub-sentence marker edit was ever going to tip that.
+
+**What the generator actually does wrong.** It already writes the appreciative
+*forms* — `gratitude` at 1.48x the real rate, `positive_predicate` at 1.39x,
+`bare_verdict` at parity — and they do not land. Same form, P(the sentence reads
+polite on its own): `bare_verdict` real 0.900 / generated 0.111,
+`react_to_parent` 0.780 / 0.188, `gratitude` 0.672 / 0.256. Three surface
+differences account for it, over 19,386 excluded-real and 1,674 v103 sentences:
+
+| | real | v103 | ratio |
+|---|---:|---:|---:|
+| hot-tier evaluative word, per 1k sentences | 64.5 | 19.7 | 0.31x |
+| trailing downtoner tag, per 1k sentences | 0.98 | 41.82 | **42.7x** |
+| partitive reference, share of comments | 0.018 | 0.241 | **13.6x** |
+| hot share *within* a positive sentence | 0.482 | 0.128 | 0.27x |
+
+Real writes "Wonderful camera.", "The IV is fantastic.", "Fantastic breakdown!".
+This generator writes "Eye AF is good, sure.", "That part was good.", "Pretty
+useful, honestly." A person reads those as grudging, so the classifier is not
+wrong about them.
+
+**Causal, on the shipped v103 artifact.** Each edit applied to the comment, the
+whole comment re-scored with the evaluation's own checkpoint, after the harness
+reproduced the artifact's labels flip-for-flip (0 flips, max |ΔP| 0.000000):
+
+| edit | polite | impolite | polite gap closed |
+|---|---:|---:|---:|
+| strip the trailing tag | 0.1212 | 0.6042 | 8.3% |
+| de-partitive | 0.1174 | 0.6269 | 6.2% |
+| warm tier → hot tier | 0.1439 | 0.6155 | **20.8%** |
+| **CONTROL** warm → *other warm* word | 0.1061 | 0.6250 | **0.0%** |
+| all three | 0.1572 | 0.5985 | **28.1%** (impolite 13.7%) |
+
+The control is the falsification: the same 157 comments, the same number of
+substitutions, a different *tier* — and `polite_rate` moves by 0.0000.
+
+**Checked before building.** The saved v103 prompts carry **no** rule against
+any of the three; the only adjacent text runs the other way ("Ordinary hedges
+and brief thanks are allowed when they fit the turn", 292 prompts). And the
+reuse ledger, which echoes `- that's the bit that (used 3x)` and `- The $200
+part is nice, sure, but` back to the Writer, was tested as a **priming source
+and rejected**: partitive lift 0.95x, tag lift 1.09x, flat or lower where the
+ledger is present once position in the thread is controlled. The tics are the
+model's own register.
+
+**The measured profile has the structure the design needs.** Hot share by
+register: polite 0.572, somewhat_polite 0.340, impolite 0.361, neutral 0.210,
+against a nearly flat 0.466–0.502 by band — so the register is the informative
+dimension and a blunt slot is never handed the warm slot's rate. The tier rule
+is conditional on the comment evaluating something at all: the Planner owns
+whether a slot praises anything and this arm only sets how far it travels.
+
+### Predictions, written before the paid gate
+
+Realized rates, from `evaluative_register.realized_evaluative_shares` on the
+artifact:
+
+| audit field | v103 | predicted | measured real |
+|---|---:|---:|---:|
+| `downtoner_tag_per_1k_sentences` | 41.82 | **< 8** | 0.51 |
+| `partitive_comment_rate` | 0.2405 | **< 0.08** | 0.0177 |
+| `hot_share_of_positive` | 0.1284 | **0.30 – 0.45** | 0.4821 |
+
+Metrics:
+
+| metric | v103 | predicted | matched real |
+|---|---:|---:|---:|
+| `polite_rate` | 0.106 | **0.14 – 0.18** | 0.288 |
+| `impolite_rate` | 0.623 | **0.57 – 0.61** | 0.443 |
+
+Guardrails, each a named way to be wrong:
+
+- `positive_per_1k_sentences` must **not rise** above v103's 153.5. The
+  generator already evaluates *more* than real (130.3); this arm changes
+  strength, not count. A rise means the cue was read as "add praise" and the
+  Planner's tone marginal has been overwritten.
+- The **planned** tone marginal must stay at v103's polite 0.271 / impolite
+  0.494. The arm acts on realization only.
+- `self_bleu_4` must not worsen. Naming concrete words is what buys compliance
+  (v102: ~1.0 for a named token against 0.23 for a category) and it is also how
+  a lexicon concentrates. Each slot draws its own 3-word window out of 24 hot
+  words; if `self_bleu_4` rises, widen the window before widening anything else.
+- `hard_disagree_rate` must not move. Nothing here touches the opener, and v103
+  brought its generator bias to +0.0032 (Wilcoxon p = 1.000).
+
+Offline state at the gate: 588 tests, ruff clean, 106 pins 0 drift, self-test
+on and off, `off` proven empty on the real prompt path, profile rebuilt at
+schema 20 on 424 evaluation-excluded threads.
+
 ## v103 — stance-consistent opening (2026-08-21)
 
 Policy ID: `generalized-card-v2-stance-consistent-opening-v103-20260821`.
