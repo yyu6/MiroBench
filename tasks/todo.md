@@ -145,20 +145,32 @@ are not**. Cliff table and projection there.
       The plan now picks the polarity family and the measured draw runs inside
       it. 565 tests, 105 pins 0 drift, self-test proven to catch the defect, no
       profile change. Entry in `generalized_card/VERSION_LOG.md`.
-- [ ] **N=10 under v103**, paired to `--start-seed-index 2`, `--sampling-seed 42`.
-      Two pre-registered watch items, both unresolvable at n=1 and both resolved
-      by this run — **run the paired test, not the aggregate**:
-      1. `mean_story_probability` on the drawn slots (v102 gate: rose in 15 of 23,
-         comments over 0.5 went 1 → 3, p ~ 0.21). v103 predicts part of it comes
-         back, since the two largest movers were stance-conflict slots.
-      2. Negation inside the comment body on the ~1,700 slots carrying the token
-         ban (v102 gate: 0.3920 → 0.3580 against a real 0.3933, but McNemar
-         p = 0.504 and Wilcoxon on density p = 0.653). **Do not reword the ban
-         before this run says something.**
-      Command in the VERSION_LOG entry. It also resolves the one unresolved
-      question from the gate: `mean_story_probability` on the drawn slots rose
-      0.076 → 0.157 but on **3 comments of 23**, median 0.063 — not resolvable at
-      that n. **Do not reword the cue against it before N=10.**
+- [x] **N=10 under v103 — 9/1/2, and the effect sizes got worse.** Run
+      `..._v103_stance_opening_n10_20260821_v1`, $3.7345. Full result in
+      `generalized_card/VERSION_LOG.md`.
+
+      The mechanism worked exactly as designed: **0 of 28** stance conflicts,
+      leak 46/504 → **5/504**, `discourse_marker` obeyed 0.184 → **0.974**,
+      realized shares now 1.17x measured (were 2.54x and 0.34x).
+
+      **But |Cliff| ≤ 0.10 went 6/12 → 4/12** while the PASS count rose.
+      `hard_disagree_rate` overshot to Cliff −0.23; `semantic_mean_cosine` and
+      `mean_story_probability` left the safe zone.
+
+      Both pre-registered watch items resolved as **noise** — story on the drawn
+      slots Wilcoxon p = 0.966 at n=65, body negation McNemar p = 0.881 at n=504.
+      Not acting on the gate's aggregates was right both times.
+- [ ] **v104 — make the opener schedule respect the root/reply conditional.**
+      Realized polarity openers are **0.0847 on roots against a real 0.0224** and
+      **0.0507 on replies against a real 0.0685** — inverted. `opener_profile` is
+      a pooled marginal; measure it per pair kind the way `register_realization`
+      measures per register. `opener_cost` is **not** the bug: fed true depths the
+      scheduler behaves correctly.
+- [ ] **Answer first: the generated root share is 0.335 against a matched real
+      0.267.** Root pairs carry P(disagree) 0.063 against 0.143 for replies, so
+      over-producing roots drags `hard_disagree_rate` down on its own, and it
+      would confound any opener fix.
+
 - [ ] Eye-visible tell found while reading the gate, unrelated to the arm:
       `sentence_rhythm`'s digit cue writes a bare `0`/`1` where a person writes
       the word ("0 verdict from me", "wrap 1 hand around it"). 0.140 generated

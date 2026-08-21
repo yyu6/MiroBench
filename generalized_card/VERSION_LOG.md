@@ -179,6 +179,117 @@ Also verified: **`--opening-move off` reproduces v101 exactly.** Every distinct
 opener-rule line the v101 run actually rendered, extracted from its 532 saved
 prompts, is reproducible with the arm off; none is missing.
 
+### N=10 result — 2026-08-21
+
+Run `generalized_card_camera_gpt54_v103_stance_opening_n10_20260821_v1`, paired to
+v101 on the same seeds, **$3.7345**, 56.8 minutes, 532/532 comments.
+
+**9 PASS / 1 PARTIAL / 2 FAIL** — nominally the best count in project history
+(v101 9/0/3). **Read the effect sizes instead.**
+
+| metric | v101 Cliff | v103 Cliff | |
+|---|---:|---:|---|
+| `hard_disagree_rate` | +0.37 | **−0.23** | sign flipped — overshot |
+| `impolite_rate` | +0.76 | **+0.61** | better |
+| `neutral_rate` | −0.51 | **−0.30** | better |
+| `self_bleu_4` | +0.44 | +0.40 | better |
+| `length_cv` | +0.10 | **+0.04** | better |
+| `emotion_entropy` | −0.06 | +0.02 | better |
+| `polite_rate` | −0.62 | −0.60 | FAIL → PARTIAL, effect unchanged |
+| `avg_depth` | +0.04 | +0.05 | structural |
+| `structural_virality` | +0.02 | +0.02 | structural |
+| `semantic_mean_cosine` | −0.06 | **−0.22** | **worse** |
+| `mean_story_probability` | −0.06 | **−0.14** | **worse** |
+| `self_bertscore_mean_f1` | +0.80 | **+0.86** | **worse** |
+
+**Metrics inside the |Cliff| ≤ 0.10 bar: v101 6/12, v103 4/12.** The PASS count
+went up and the N=150 outlook went **down**. `semantic_mean_cosine` and
+`mean_story_probability` both left the safe zone. This is exactly the trap
+§2 of `ORIENTATION.md` describes, and the reason that section exists.
+
+### Both pre-registered watch items resolved as noise
+
+The gate raised two questions that n=1 could not settle. Both were pre-registered
+with the test to run, and both are now answered at 3-6x the sample:
+
+| watch item | gate (n=1) | N=10 | verdict |
+|---|---|---|---|
+| story probability on the drawn slots | 0.076 → 0.157 on 23 slots, rose 15/23 | 0.0769 → **0.0552** on 65 slots, rose 33/65, Wilcoxon **p = 0.966** | did not reproduce |
+| negation suppressed in the body | 0.3920 → 0.3580 on 176 slots | 0.4048 → **0.3988** on 504 slots (real 0.3933), McNemar **p = 0.881**, Wilcoxon **p = 0.383** | did not reproduce |
+
+Not rewording the cue or the ban on the strength of the gate was the right call
+in both cases.
+
+### The mechanism did exactly what it was built to do
+
+| quantity | v101 | v103 | measured |
+|---|---:|---:|---:|
+| polarity slots contradicting their plan | — | **0 of 28** | — |
+| slots prepending an unassigned polarity token | 46 of 504 | **5 of 504** | — |
+| `discourse_marker` obeyed | 0.184 | **0.974** | — |
+| `polarity_token` obeyed | 0.893 | **1.000** | — |
+| realized `polarity_token` share | 0.1335 | **0.0620** | 0.0526 |
+| realized `discourse_marker` share | 0.0244 | **0.0846** | 0.0726 |
+
+### And that is what broke the metric
+
+`hard_disagree_rate` did not drift — it **overshot**, mean 0.1569 → **0.0920**
+against a real 0.1208. Decomposed by pair kind:
+
+| | v101 | v103 | matched real |
+|---|---:|---:|---:|
+| P(disagree \| root pair) | 0.0621 | **0.0284** | 0.0630 |
+| P(disagree \| reply pair) | 0.2235 | **0.1657** | 0.1433 |
+| pooled over all pairs | 0.1692 | **0.1198** | 0.1218 |
+| **thread mean — the metric** | **0.1569** | **0.0920** | **0.1208** |
+
+The reply conditional was repaired: +0.080 over real down to +0.022. **The root
+conditional broke**: it was matched to three decimals in v101 and is now less than
+half of real. The pooled figure looks excellent at 0.1198 against 0.1218 — that is
+a **pass by cancellation**, and the metric is a mean of per-thread rates, not a
+pooled rate, so the cancellation does not save it.
+
+### The upstream defect this exposed
+
+Realized polarity-token openers, split by pair kind:
+
+| | generated v103 | excluded real |
+|---|---:|---:|
+| on root comments | **0.0847** | 0.0224 |
+| on replies | **0.0507** | 0.0685 |
+
+**Inverted.** Real text puts its bare agreement tokens on replies at 3x the rate
+it puts them on root comments; the schedule assigns them to roots at 0.0847 and
+to replies at 0.0366. `opener_profile` measures a **pooled marginal** (0.0526)
+and nothing makes the assignment respect the root/reply conditional.
+
+Fed the real thread's own comment rows with their true depths,
+`build_slot_distribution_schedule` does the right thing — 0 polarity openers on
+roots, 0.0556 on replies — so `opener_cost` is not the bug. The inversion is in
+the slot rows the Planner actually receives. Two candidates, both unverified:
+the generated tree carries **0.335 root share against a matched real 0.267**, and
+the depths reaching `_slot` may not be the template's.
+
+**This defect is older than v102.** In v101 it was invisible because obedience was
+0.18 and the leak added polarity openers to replies (realized 0.1493 on replies
+against 0.1017 on roots), which accidentally pointed the right way. Making the
+Writer obey a schedule exposed that the schedule was wrong.
+
+> **The lesson, and it is the useful part of this run:** repairing a realization
+> does not only move the metric — it makes the plan's own errors visible for the
+> first time. A control that is 18% obeyed cannot be wrong in a way anyone can
+> measure.
+
+### Next
+
+Do **not** ship another opener change against this. The next version should make
+the opener schedule respect the root/reply conditional — measure
+`opener_profile` per pair kind the way `register_realization` measures per
+register — and the root-share question (0.335 against 0.267) has to be answered
+first, because it moves the same metric on its own.
+
+---
+
 ### Zero-API result
 
 **566 tests pass** (8 new), Ruff clean, **105 pins with zero drift**, backend

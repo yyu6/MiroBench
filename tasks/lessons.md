@@ -1,5 +1,94 @@
 # Lessons
 
+## 2026-08-21 — Repairing a realization is what makes the plan's own error measurable
+
+**What happened.** v102/v103 took the opener from 18% obeyed to 97% obeyed. The
+metric it was aimed at, `hard_disagree_rate`, did not land on target — it
+**overshot**, Cliff +0.37 → −0.23, thread mean 0.1569 → 0.0920 against a real
+0.1208.
+
+Decomposed by pair kind, the reply conditional was repaired exactly as the
+ablation predicted (+0.080 over real → +0.022) and the **root conditional broke**:
+0.0621 → 0.0284 against a real 0.0630, having been matched to three decimals
+before. Realized polarity-token openers turned out to be **inverted** against
+real — 0.0847 on roots against a real 0.0224, 0.0507 on replies against 0.0685.
+
+`opener_profile` measures one **pooled marginal** and nothing makes the
+assignment respect the root/reply conditional. That defect is older than v102.
+It was invisible in v101 because the control was 18% obeyed and the leak happened
+to push polarity openers onto replies, which pointed the right way by accident.
+
+**Why:** a control that is mostly ignored cannot be wrong in any way the output
+can show. Obedience is what converts a scheduling error into a measurable one. So
+the first run after a realization fix is not only a test of the fix — it is the
+first honest test of everything upstream of it.
+
+**How to apply.**
+- **After a realization fix, re-audit the schedule it now obeys**, not just the
+  metric it was aimed at. Assume the schedule has been wrong and was hidden.
+- A mechanism that lands *past* its target rather than short of it is evidence
+  the target itself is mis-specified. Overshoot is a different diagnosis from
+  under-delivery and points upstream, not at the cue.
+- When a profile is a **marginal**, ask what conditional the assignment ignores.
+  `register_realization` is measured per register for exactly this reason;
+  `opener_profile` was not measured per pair kind, and that is the whole defect.
+
+## 2026-08-21 — A pooled rate can match perfectly while the metric fails
+
+**What happened.** On the v103 N=10, pooled over all 526 parent→reply pairs,
+generated `hard_disagree_rate` reads **0.1198 against a matched real 0.1218**.
+That looks like a solved metric. The reported metric is **0.0920 against 0.1208**
+and its Cliff is −0.23.
+
+The metric is a **mean of per-thread rates**, not a pooled rate over pairs. The
+pooled figure is dominated by the largest thread (183 of 526 pairs), where the
+fix landed almost perfectly; the unweighted thread mean gives a 7-comment thread
+the same weight, and several small threads had collapsed to 0.00–0.03.
+
+It also hid a two-sided error: the root conditional was **0.035 below** real and
+the reply conditional **0.022 above**, and pooling let them cancel.
+
+**Why:** the aggregation the metric uses is part of the metric's definition. Any
+other aggregation is a different quantity that happens to share a name.
+
+**How to apply.**
+- **Compute the metric the way the scorer computes it** before drawing any
+  conclusion — thread mean here, not a pooled pair rate. `ORIENTATION.md` §2 has
+  warned about pass-by-cancellation since v96; this is the same failure in a
+  decomposition rather than in a headline.
+- A pooled number that looks better than the reported one is a **warning**, not
+  a reassurance: it usually means two errors of opposite sign, or one big unit
+  carrying the average.
+- Always split a matched decomposition by the strata the metric can weight
+  differently — here root vs reply, and small threads vs large.
+
+## 2026-08-21 — The gate thread can be the one the fix happens to fit
+
+**What happened.** The v102 large-thread gate ran on `i1o51h` and
+`hard_disagree_rate` came out at 3.0% relative error, the closest the metric had
+ever been. At N=10 the same mechanism overshot to Cliff −0.23, and `i1o51h` was
+the thread it fit **best** — 0.1758 against a real 0.1697, while other threads
+fell to 0.0222 against 0.0571 and 0.0270 against 0.1351.
+
+The gate protocol exists to catch content defects on a big thread before N=10,
+and it did its job — reading its comments is what found the stance contradiction.
+But a single thread cannot tell you whether a mechanism lands *on* its target or
+*past* it, because it has no distribution to overshoot within.
+
+**Why:** the gate is a content instrument with one distance reading attached.
+One reading has no variance, so "it landed" and "it landed here by luck" are
+indistinguishable.
+
+**How to apply.**
+- Read the gate as **content evidence plus one sample**, and never let a good
+  relative error on it stand in for an effect size.
+- Where a mechanism could overshoot — anything suppressive, or anything that
+  removes a behaviour rather than adding one — say so before the gate and treat
+  the gate's distance number as unable to answer it.
+- The N=10 is what tests direction *and* magnitude. Budget for it as the real
+  test, not as confirmation.
+
+
 ## 2026-08-21 — A drawn value can contradict a control the plan already owns
 
 **What happened.** v102 draws a slot's opening word from the register's measured

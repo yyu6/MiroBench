@@ -469,15 +469,35 @@ a source that is not recoverable from git.
 
 ---
 
-## 6. Current state — v101 measured 9/0/3, six metrics unsafe at N=150 (2026-08-20)
+## 6. Current state — v103 measured 9/1/2, effect sizes worse than v101 (2026-08-21)
 
-The last measured result is **v101**. Policy
-`generalized-card-v2-per-register-realization-v101-20260820`. Run
-`generalized_card_camera_gpt54_v101_register_n10_20260820_v1`, N=10, paired to
-v97/v98/v100 (`--start-seed-index 2`, `--sampling-seed 42`).
+The last measured result is **v103**. Policy
+`generalized-card-v2-stance-consistent-opening-v103-20260821`. Run
+`generalized_card_camera_gpt54_v103_stance_opening_n10_20260821_v1`, N=10, paired
+to v101 (`--start-seed-index 2`, `--sampling-seed 42`), $3.7345.
 
-**9 PASS / 0 PARTIAL / 3 FAIL** — the best result in the project's history
-(v98 8/1/3, v97 7/1/4, v96 6/0/6), with Cliff's delta improved on 8 of 12.
+**9 PASS / 1 PARTIAL / 2 FAIL** — nominally the best count in the project's
+history (v101 9/0/3, v98 8/1/3, v96 6/0/6). **The count is not the result.**
+Metrics inside the |Cliff| ≤ 0.10 bar went **6/12 (v101) → 4/12 (v103)**:
+`semantic_mean_cosine` (−0.06 → −0.22) and `mean_story_probability` (−0.06 →
+−0.14) both left the safe zone while the PASS count rose. Full table and the
+decomposition in `generalized_card/VERSION_LOG.md`.
+
+`hard_disagree_rate` **overshot** rather than drifting: Cliff +0.37 → −0.23, mean
+0.1569 → 0.0920 against a real 0.1208. The reply conditional was repaired
+(+0.080 over real → +0.022) and the **root conditional broke** (0.0621 → 0.0284
+against a real 0.0630). Pooled over all pairs it reads 0.1198 against 0.1218 —
+a textbook pass by cancellation, and the metric is a thread mean, not a pooled
+rate.
+
+**What that exposed is the useful part.** Realized polarity-token openers sit at
+0.0847 on root comments against a real 0.0224, and 0.0507 on replies against a
+real 0.0685 — **inverted**. `opener_profile` measures a pooled marginal and
+nothing makes the assignment respect the root/reply conditional. In v101 this was
+invisible because the opener was only 18% obeyed. **Repairing a realization is
+what made the plan's own error measurable for the first time.**
+
+The v101 table below is kept because it is the comparison baseline.
 
 | metric | v98 MWU | v98 Cliff | v101 MWU | v101 Cliff | |
 |---|---:|---:|---:|---:|---|
@@ -638,58 +658,26 @@ the default should go back to `tense`.
 
 ### Next step
 
-**v103 corrects a defect the v102 gate exposed; N=10 is the next action.**
-Policy `generalized-card-v2-drawn-opening-move-v102-20260820`, profile schema 19.
-It names each slot's opening word, drawn at its register's measured
-distribution, instead of describing the entry category, and replaces the
-categorical prohibition with the ten measured tokens it is about. Predictions and
-guardrails are in `generalized_card/VERSION_LOG.md` — **read them before the
-gate.** It is predicted to take `hard_disagree_rate`'s Cliff from +0.37 to
-+0.15–0.25, which is real movement and is **still short of the ≤0.10 bar**: the
-parent-echo term is the other half and has no mechanism yet.
+**v104: make the opener schedule respect the root/reply conditional.**
+`opener_profile` measures one pooled marginal (`polarity_token` 0.0526) and the
+assignment spends it 0.0847 on roots and 0.0366 on replies, against a real 0.0224
+and 0.0685. Measure the profile **per pair kind**, the way
+`register_realization` measures per register. Fed the real thread's own rows with
+true depths, `build_slot_distribution_schedule` already does the right thing, so
+`opener_cost` is not the bug — the slot rows the Planner receives are.
 
-The gate (`..._v102_opening_seed8_20260820_v1`, 186/186 comments, $1.1392) beat
-every prediction: `discourse_marker` realization 0.231 → **0.923**, realized
-`polarity_token` share 0.1559 → **0.0538** against a measured 0.0526, and
-**0 of 158 reply slots** prepended an unassigned polarity token against 19 in
-v101. `hard_disagree_rate` went from 19.1% to **3.0%** relative error on that
-thread, the closest it has ever come, and `neutral_rate`, `emotion_entropy`,
-`polite_rate` and `impolite_rate` all improved as well.
+**Answer this first, because it moves the same metric on its own:** the generated
+tree carries a **0.335 root share against a matched real 0.267**. Root pairs have
+P(disagree) ≈ 0.063 against 0.143 for replies, so over-producing roots drags
+`hard_disagree_rate` down regardless of the opener.
 
-**Compliance with a named token ran ≈1.0 where the same instruction as a category
-ran 0.23.** That is the widest demonstration of the naming rule in the project.
-
-Two things were got wrong and are recorded in `VERSION_LOG.md`: the predicted
-thread-rate band was computed against the N=10 pooled real instead of this
-thread's real, and the guardrail "`polite_rate` must not move" was reasoned from
-a flat *conditional* while the arm acts on *prevalence* — changing the opener
-changes which class a comment is in, and `discourse_marker` is the most polite
-class in real text at 0.466.
-
-**Reading the comments found what the metrics hid.** v102's polarity draw could
-contradict the plan's assigned stance, and did on **2 of 10 polarity slots** —
-both `stance=agree` slots told to open with `no`. The metric table looked clean
-on the same run. **v103** (`generalized-card-v2-stance-consistent-opening-v103-20260821`)
-lets the plan pick the polarity family and keeps the measured draw inside it;
-`discourse_marker` is untouched because those words carry no polarity. No profile
-change, so v102 and v103 stay comparable.
-
-The v102 gate was then re-audited end to end and **three further hypotheses were
-raised and killed by measurement**: the ban does not under-produce negative
-openers (0.96x real corpus-wide; the 1.9x reading came from one thread), the
-token ban is not measurably suppressing body negation (McNemar p = 0.504,
-Wilcoxon p = 0.653 — a watch item for N=10, not a defect), and removing the
-`Yeah,` opener did **not** remove the adjudication frame (v101 0.0645 → v102
-0.0806 against a real 0.0000; it moved off the opener). `--opening-move off` was
-verified to reproduce v101's rendered opener rule exactly.
-
-Next action: **N=10 under v103**, paired to `--start-seed-index 2`,
-`--sampling-seed 42`, with those two watch items tested **paired**, not in
-aggregate.
+**Do not ship another opener change before both are settled.** v102/v103 already
+demonstrated that repairing realization against a wrong schedule moves the metric
+past the target rather than onto it.
 
 **Still blocking N=150: the reporting standard.** 12 metrics × 2 tests at
-α = 0.05 means a perfect generator passes all 12 together only ≈ 52% of the time.
-That is the user's decision (§2, trap 4).
+α = 0.05 means a perfect generator passes all 12 simultaneously only ≈ 52% of the
+time. That is the user's decision (§2, trap 4).
 
 ### Retracted claims — do not reuse
 
