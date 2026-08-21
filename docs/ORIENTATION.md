@@ -66,7 +66,7 @@ bureaucracy — every rule there has a wasted paid run behind it.
 | 8 | `tasks/HANDOFF.md` | the long-form evidence archive, newest addendum first | when you need the detail behind a claim |
 | 9 | `docs/thread_metric_score_reference.md` | every exported metric, its scorer, its model | when you need a scorer's exact semantics |
 | 10 | `generalized_card/RUN_INDEX.md` | all runs with tag, cost, and outcome | when locating an artifact |
-| 11 | `.claude/handoffs/` | session handoffs, newest last; each carries a TYPE INSTRUCTION block for the next agent | when picking the work up cold |
+| 11 | `.claude/handoffs/` | session handoffs, newest last; each carries a TYPE INSTRUCTION block for the next agent. **Newest: `2026-08-21-231454-geo-v104-...`. The 2026-08-20 handoff's judging section is retracted — it steers by `\|Cliff\| <= 0.10`.** | when picking the work up cold |
 
 `tasks/HANDOFF.md` is **an archive, not a spec.** It grows by addendum and its
 older numbered sections carry stale state and at least one claim that was later
