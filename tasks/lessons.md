@@ -1520,3 +1520,37 @@ metric-specific diagnosis, before inventing a metric-specific story.
 - Do not build that fix on two data points. Record the pattern; do not act on
   it until a third metric's diagnosis either confirms or breaks it.
 
+## "Trimming doesn't move the aggregate" and "the tail is a real defect" are both true at once
+
+**What happened.** v98 rejected "a duplication tail" as the cause of
+`self_bertscore_mean_f1`'s gap: trimming the top 20% of pairs on both sides
+left the gap at +0.0154 against +0.0163 untrimmed, so the metric is not
+being carried by a handful of blatant duplicates. It would be easy to read
+that as "there is no duplication problem." Reading the actual highest-F1
+pairs on the current (v103) artifact this session found the opposite
+surface fact: the generated high tail *is* dominated by genuine
+argument-level paraphrase duplication -- two different comments in one
+thread independently restating the same specific claim in different words,
+several distinct examples, plus one near-identical short pair. That is a
+real, visible defect (a criterion-2 tell), and it is simultaneously true
+that it is too small to be what moves the aggregate `+0.02` gap, because the
+gap turned out to be a broad, pervasive lift across the *whole* pair
+population (`docs/DECISIONS.md` G3), not a concentrated tail.
+
+**Why:** "does removing the tail change the mean" and "is there a real,
+describable defect in the tail" are different questions with different
+answers here. A quantitative trim test answers the first. Only reading the
+actual text answers the second, and a session that only ran the quantitative
+test would report a true number and a false impression ("no duplication
+issue") from it.
+
+**How to apply.**
+- A rejected *aggregate* hypothesis is not a rejected *qualitative* one. If a
+  trim/ablation/binning test says a phenomenon isn't the size driver, that
+  does not mean the phenomenon isn't there -- go read the actual pairs/text
+  before writing "no X problem" into a doc.
+- When a within-thread pairwise metric is under suspicion, reading the
+  highest- and lowest-scoring pairs with their real text is cheap (the model
+  is already loaded to score them) and catches things aggregate statistics
+  average away -- do it every time, not only when a hypothesis is stuck.
+

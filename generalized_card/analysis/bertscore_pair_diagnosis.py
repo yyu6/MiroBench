@@ -368,9 +368,46 @@ def cmd_pairs(threads: Threads, device: str, batch_size: int) -> None:
     print(f"\noverall pooled excess (for reference, not the metric itself): {overall_gen - overall_real:+.4f}")
 
 
+def cmd_inspect(threads: Threads, device: str, batch_size: int) -> None:
+    """Read the highest- and lowest-scoring pairs, both sides. Aggregate stats
+    can miss a detector artifact that is obvious on the actual text -- this is
+    what surfaced "real threads reach F1 > 0.74 through shared image URLs, not
+    shared content" (`docs/ORIENTATION.md` SS3). Verifies whether that -- or
+    something like it -- is still what the tails are made of, rather than
+    trusting the old note."""
+
+    texts: dict[tuple[str, str], str] = {}
+    for tid, comments in {**threads.generated, **threads.real}.items():
+        for c in comments:
+            texts[(tid, c.comment_id)] = c.text
+
+    def show(label: str, pairs: list[dict], n: int) -> None:
+        ordered = sorted(pairs, key=lambda p: p["bert_f1"])
+        print(f"\n== {label}: lowest {n} ==")
+        for pair in ordered[:n]:
+            _print_pair(pair, texts)
+        print(f"\n== {label}: highest {n} ==")
+        for pair in ordered[-n:][::-1]:
+            _print_pair(pair, texts)
+
+    gen_pairs = score(threads.generated, device, batch_size)
+    real_pairs = score(threads.real, device, batch_size)
+    show("generated", gen_pairs, 8)
+    show("real", real_pairs, 8)
+
+
+def _print_pair(pair: dict[str, Any], texts: dict[tuple[str, str], str]) -> None:
+    left = texts.get((pair["thread_id"], pair["left_comment_id"]), "?")
+    right = texts.get((pair["thread_id"], pair["right_comment_id"]), "?")
+    print(f"  f1={pair['bert_f1']:.4f} thread={pair['thread_id']}")
+    print(f"    L: {left[:160]!r}")
+    print(f"    R: {right[:160]!r}")
+
+
 COMMANDS: dict[str, Callable[..., Any]] = {
     "fidelity": cmd_fidelity,
     "pairs": cmd_pairs,
+    "inspect": cmd_inspect,
 }
 
 

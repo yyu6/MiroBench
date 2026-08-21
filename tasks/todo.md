@@ -65,6 +65,20 @@ number looked worst:
       differences between root and reply slots), not the whole metric. Do not
       build that hypothesis without falsifying it on the excluded real corpus
       first (SS4 step 3).
+
+      Two follow-ups run, both offline: (1) the real-side direction
+      generalizes -- checked on 247 of the 424 excluded threads with the cheap
+      `all-mpnet-base-v2` proxy, `reply_reply` < `root_root` in 82% of them,
+      p≈0 (`analysis/root_reply_diversity.py`); (2) the detector itself was
+      checked by reading actual pairs (`bertscore_pair_diagnosis.py inspect`),
+      not just trusted -- no sign `deberta-xlarge-mnli`/BERTScore is a bad
+      choice, and the generated high tail turned out to hold a real,
+      previously-undocumented criterion-2 tell: distinct comments in the same
+      thread independently restating one argument in different words (see
+      `docs/ORIENTATION.md` §6.3 for the examples). v98's trim test already
+      showed this tail is too small to be the aggregate driver -- both
+      readings are correct, they answer different questions
+      (`tasks/lessons.md`).
 - [ ] **2. `polite_rate` / `impolite_rate` — pass at N=10 only for want of
       power, and will fail at N=150.** The gap is 0.18, which is 1.2 real
       between-thread standard deviations, and a +0.10 shift is caught 100% of the

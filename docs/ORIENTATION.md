@@ -122,7 +122,10 @@ checks. Known eye-visible tells still present in v98, each measured against the
 matched real text: no generated comment contains a link (real 0.051), `check`
 at ~10× its real rate, `will` at ~1% of its real rate, `their`/`we` absent,
 10 distinct product designators against 40 real. These are logged in
-`tasks/v98-worklog.md` and are not yet fixed.
+`tasks/v98-worklog.md` and are not yet fixed. Found on v103 (§6.3): two
+different comments in the same thread independently restating one specific
+argument in different words — read the actual examples in §6.3, not just this
+pointer.
 
 **Process is explicitly not the goal.** Any mechanism that moves a metric
 without leaking evaluation text is acceptable. The constraints in §7 exist
@@ -679,6 +682,39 @@ progress and is **not** the same thing as being close at N=150.
    similar to each other than real replies do, regardless of branch. That is
    the open question, and it is now scoped to reply-only generation rather than
    the whole metric.
+
+   **Two follow-up checks, both offline.** First: is "real replies are more
+   diverse than real root comments" a property of the 10 matched threads or of
+   Reddit writing generally? Checked at corpus scale with the cheap
+   `all-mpnet-base-v2` cosine proxy (`analysis/root_reply_diversity.py`) over
+   247 of the 424 evaluation-excluded real camera threads: `reply_reply`
+   cosine sits below `root_root` cosine in 82% of threads (202/247), mean
+   difference −0.096, Wilcoxon p≈0. It generalizes — this is not the ten
+   matched threads' luck.
+
+   Second: is `microsoft/deberta-xlarge-mnli`/BERTScore even a sound choice of
+   detector for this dimension, or could the whole excess be a model artifact?
+   Read the actual highest/lowest-F1 pairs on the current artifact
+   (`bertscore_pair_diagnosis.py inspect`) rather than trust the v98-era note.
+   The real high tail: two literal same-author self-repeats (confirmed against
+   the raw scrape — one author, two different parents, "I'm talking about
+   video." said twice in one thread), the previously-documented shared-image-URL
+   artifact (reconfirmed), and one genuine paraphrase. The **generated** high
+   tail is dominated by real, visible **argument-level paraphrase duplication**
+   — distinct comments in the same thread independently restating one specific
+   claim in different words: "compactness doesn't matter once it's in a bag"
+   said twice in seed002, "you need a real stress test" said twice in seed008,
+   "test AF tracking with a moving subject" said twice in seed008, "check
+   full-res files, not the compressed clip" said twice in seed011, plus a
+   near-identical short pair ("Shipping email?" / "Shipping email? haha") in
+   seed006. This is a genuine criterion-2 tell — add it to the list in §1 —
+   but v98's trimming test already showed it is quantitatively too small to be
+   the aggregate driver (trimming the top 20% of pairs barely moves the gap).
+   The two readings do not conflict; they are different questions. **No
+   evidence the detector choice itself is bad**: it responds correctly to
+   genuine paraphrase on both sides, and its one known noise mode (shared
+   URLs) cannot explain the generated-side excess, since generated text never
+   contains a link.
 4. **`self_bleu_4` — a weak pass, characterised, no cheap lever.** An exact
    ablation harness reproducing the evaluator to 5 significant figures shows **no
    phrase drives it**: apostrophe normalisation, `check` openings, `that's the
