@@ -66,6 +66,33 @@ number looked worst:
       build that hypothesis without falsifying it on the excluded real corpus
       first (SS4 step 3).
 
+      **Gated 2026-08-22 (seed 8, $1.2081): the fix works, the metric didn't
+      follow.** `--reply-novelty-scope chain` eliminated the diagnosed
+      chain-restatement defect completely at the plan level (0/186 plan
+      violations, was 18) but `self_bertscore_mean_f1`'s gap *widened*
+      (+0.0183 → +0.0218), and specifically worsened in the reply-chain depth
+      bins the fix targeted. Reading the actual pairs: claim-level
+      duplication is gone; what's left is **sentence-template reuse across
+      different claims** ("@OP, [verb] X and see/check Y" recurring with a
+      different specific object each time). `used_sentence_routes` doesn't
+      catch this because it matches literal 3-4-token n-grams and these
+      templates vary at the token that would need to match. See
+      `docs/DECISIONS.md` G13 and `generalized_card/VERSION_LOG.md`'s v106
+      gate result for the full pair evidence.
+
+      - [ ] **New next step: a template-reuse mechanism for `self_bertscore_mean_f1`,
+            not a repeat of the chain-novelty fix.** Needs its own diagnosis
+            before building anything: measure how often this happens on the
+            excluded real corpus (do real threads reuse an opener/closer
+            *frame* with a varying slot, and at what rate?), then decide
+            whether the fix is a smarter route ledger (structural n-gram
+            match, not literal) or something else. Do not build before
+            falsifying, per §4 step 3 -- this is offline and free.
+      - [ ] Do **not** spend on an N=10 run for `chain`/`digit-cue-guard on`
+            until the template-reuse mechanism is at least diagnosed. The
+            gate already shows the metric won't move from these two arms
+            alone.
+
       Two follow-ups run, both offline: (1) the real-side direction
       generalizes -- checked on 247 of the 424 excluded threads with the cheap
       `all-mpnet-base-v2` proxy, `reply_reply` < `root_root` in 82% of them,
@@ -90,10 +117,10 @@ number looked worst:
             artifact, including both named qualitative chains. Shipped as
             v105, `--reply-novelty-scope {parent_only,chain}`, default
             `parent_only` (byte-for-byte legacy). Offline-verified across all
-            four registered domains (self-test, 8 runs, $0). **No paid gate
-            yet** -- see `generalized_card/VERSION_LOG.md` v105 and
-            `docs/DECISIONS.md` G11/E9. Next action is the large-thread gate,
-            blocked on the user confirming which API credential to bill.
+            four registered domains (self-test, 8 runs, $0). **Gated
+            2026-08-22 -- fixed the plan-level defect completely (0/186
+            violations) but did not move the metric; see the note above and
+            `docs/DECISIONS.md` G11/G13.**
 - [ ] **2. `polite_rate` / `impolite_rate` — pass at N=10 only for want of
       power, and will fail at N=150.** The gap is 0.18, which is 1.2 real
       between-thread standard deviations, and a +0.10 shift is caught 100% of the

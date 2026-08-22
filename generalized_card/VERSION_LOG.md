@@ -161,6 +161,89 @@ python3 generalized_card/scripts/run_evaluate.py \
   --tag v106_chain_novelty_digit_guard_seed8_20260822_v1 --metric-parallel 5 --resume
 ```
 
+### Gate result — 2026-08-22. Both mechanisms confirmed working; a different, previously-masked defect is what the metric was tracking
+
+Run `v106_chain_novelty_digit_guard_seed8_20260822_v1`, seed 8, 185 comments,
+**$1.2081**, 23.7 min generation. Credential used: `LLM_API_KEY` from
+`third_party/MiroFish/.env`, confirmed by the user.
+
+**Both mechanisms did exactly what they were built to do, verified directly,
+not inferred from the metric:**
+- `reply_novelty_chain_diagnosis.py` on the new artifact: **0 of 186 plans**
+  trip `reply_increment_conflict` under `chain` (the same artifact's
+  predecessor, replayed, had 18). The diagnosed chain-restatement defect is
+  gone at the plan level.
+- `digit_cue_diagnosis.py` on the new artifact: bare `0`/`1` fell from 0.086
+  to **0.0215** (real: 0.020 -- essentially at parity), and the
+  plain-quantifier sub-pattern fell from 8.01x real's rate to **1.60x**.
+
+**`self_bertscore_mean_f1` did not improve, and by the pooled thread mean got
+slightly worse:** gap vs real (`i1o51h`, same thread both times) **+0.0183 →
++0.0218**. This is the same shape as v104's own gate: the arms worked, the
+metric did not follow. It is one thread (N=1); per this project's own
+discipline a single thread cannot establish direction with confidence, but it
+can and does show a *failure to improve* on the one thing being tested.
+
+**Decomposed by depth, isolated to this one thread (before/after, not
+pooled):**
+
+| depth range | v104 excess | v106 excess | |
+|---|---:|---:|---|
+| [0,1) root-root | +0.0111 | **+0.0005** | improved |
+| [1,2) | -0.0021 | -0.0061 | flat |
+| [2,4) | +0.0121 | **+0.0214** | worse |
+| [4,7) | +0.0209 | +0.0209 | unchanged |
+| [7,+) | +0.0401 | **+0.0474** | worse |
+
+Root-level pairs, which the fix never targeted, improved anyway (probably
+noise on 10 pairs). The reply-chain bins the fix *did* target did not
+improve -- they got worse in two of four bins.
+
+**Why, read from the actual pairs (`bertscore_pair_diagnosis.py inspect` on
+the new artifact):** the pre-fix high-F1 tail was claim-level duplication
+("compactness doesn't matter in a bag," said six times). That is gone -- none
+of the new artifact's 8 highest-scoring pairs restate the same claim. What
+replaces it is **sentence-template reuse across different claims**:
+`"@OP, watch the subject cross the EVF and see if your eye can keep up."`
+is one side of three different high-scoring pairs, each time against a
+*different* specific claim (eye-tracking, EVF blanking, a display-tilt test);
+`"[noun]. That's the [X] check"` and `"I'd still want to see X... that's a
+solid check"` each recur once; two more pairs are generic gratitude closers.
+The Planner really did diversify the content (confirmed: 0 plan-level
+violations) -- the Writer is falling back on a narrow set of reusable
+sentence *frames* regardless of what content gets slotted into them, and
+that is what the embedding metric reads as similarity.
+
+**This explains why the existing route ledger didn't already catch it.**
+`used_sentence_routes`/`reused_sentence_routes` (`semantic_realization.py`)
+match on the first 3-4 literal tokens of a clause. `"@OP, watch the subject"`
+and `"@OP, check whether the"` differ at the second token, so they are two
+distinct "routes" to that ledger even though they are the same template to a
+reader. The ledger needs a way to catch a template with a variable slot, not
+just a repeated literal n-gram -- that is a new mechanism, not a parameter
+change to this one.
+
+**Guardrails, read against the same before/after:** `self_bleu_4` +0.0003
+(flat, not a violation). `hard_disagree_rate` moved +0.0217, *toward* real
+(0.1467 → 0.1685 against real 0.1697) -- unpredicted but favorable, plausibly
+a side effect of forced re-planning changing opener distribution; not
+concerning. `mean_story_probability` moved +0.0454, *away* from real (0.1345
+→ 0.1799 against real 0.1114) -- unpredicted and unfavorable; flagged, not
+chased, on a single thread. `emotion_entropy` moved +0.1414 toward real.
+`semantic_mean_cosine`, `avg_depth`, `structural_virality` essentially flat.
+No guardrail crossed a threshold that would call the run invalid, but two
+moved substantially in ways neither mechanism should have touched, which is
+exactly why a single thread cannot be read as a verdict on anything but the
+one thing it was gated for.
+
+**Decision: do not run N=10 on `chain`/`digit-cue-guard on` yet.** The
+mechanisms are real and worth keeping (the digit-cue result alone is a clean
+win for criterion 2), but spending 10x more to confirm a metric result this
+gate already shows did not move would repeat the mistake this project's
+process exists to prevent. The next paid step, if any, should follow a
+sentence-template mechanism for `self_bertscore_mean_f1`, not a repeat of
+this one at larger N. See `docs/DECISIONS.md` G13 and `tasks/todo.md`.
+
 ---
 
 ## v105 — chain-scoped reply novelty (2026-08-22)

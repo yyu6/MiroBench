@@ -1520,6 +1520,51 @@ metric-specific diagnosis, before inventing a metric-specific story.
 - Do not build that fix on two data points. Record the pattern; do not act on
   it until a third metric's diagnosis either confirms or breaks it.
 
+## Fixing a real defect can unmask a different, previously-co-existing one -- check the actual pairs, not just whether the metric moved
+
+**What happened.** The v105/v106 gate (seed 8, $1.21, 2026-08-22) confirmed
+both mechanisms did exactly what they were built to do: 0 of 186
+chain-restatement violations (was 18), and the digit-cue plain-quantifier
+rate fell from 8.01x real's to 1.60x. `self_bertscore_mean_f1` did not
+improve anyway -- it got slightly worse, specifically in the reply-chain
+depth bins the fix targeted. Reading the actual highest-scoring pairs (not
+just the metric) explained why: the claim-level duplication that motivated
+the fix is genuinely gone. What is left, and was presumably always partly
+there, is **sentence-template reuse across different claims** -- the same
+opener/closer frame ("@OP, verb X and see/check Y") recurring with a
+different specific object each time. Suppressing the louder defect made the
+quieter, co-existing one the dominant signal in the same metric.
+
+This is the second time "the arms worked, the metric did not follow" has
+happened in this project (the first was v104's evaluative register). Both
+times, the mechanism-level check (did the plan-level defect actually
+disappear?) was unambiguously yes, and only reading the pairs explained the
+metric-level no.
+
+**Why:** a thread-level aggregate metric does not decompose the way a single
+mechanism does. Multiple distinct causes can each produce "high pairwise
+similarity," and removing one does not remove the others -- it can even make
+the metric slightly worse if the removed cause happened to also add some
+compensating diversity elsewhere (here: forced re-planning likely shifted
+other slot assignments too, on a single thread with no distribution to
+average that out).
+
+**How to apply.**
+- **A metric not moving is not evidence a mechanism failed.** Verify the
+  mechanism directly first (did the diagnosed defect actually go away?),
+  independent of whether the aggregate metric moved. Only then ask why the
+  metric didn't follow.
+- When a fix's mechanism is confirmed working but the metric isn't, **read
+  the actual highest-scoring pairs again, on the new artifact** -- don't
+  assume the old qualitative story still applies. It may have already been
+  displaced by something new.
+- Expect thread-level metrics to have more than one contributing cause. A
+  fix for one is a real fix even when the aggregate doesn't move; it just
+  means the next fix needs its own diagnosis, not a bigger version of the
+  same one.
+- Do not fund a bigger N to confirm a direction a single gate thread already
+  failed to show, no matter how correct the mechanism is confirmed to be.
+
 ## A required quality gate can be silently inert -- measure whether it fires before trusting or extending it
 
 **What happened.** The approved plan was to extend `reply_increment_problem`'s

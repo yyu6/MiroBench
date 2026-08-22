@@ -160,6 +160,10 @@ inflates the pass count. See VERSION_LOG.md.
 | 101 | `generalized_card_camera_gpt54_v101_register_n10_20260820_v1` | 10 | 532 | 1.00 | generalized-card-v2-per-register-realization-v101-20260820 | 9 |
 | 102 | `generalized_card_camera_gpt54_v102_opening_seed8_20260820_v1` | 1 | 186 | 1.00 | generalized-card-v2-drawn-opening-move-v102-20260820 | descriptive |
 | 103 | `generalized_card_camera_gpt54_v103_stance_opening_n10_20260821_v1` | 10 | 532 | 1.00 | generalized-card-v2-stance-consistent-opening-v103-20260821 | 9 |
+| 103 | `headphone_domain_switch_check_20260821` | 0 | 0 |  | generalized-card-v2-stance-consistent-opening-v103-20260821 |  |
+| 104 | `v104_evaluative_seed8_20260821_v1` | 1 | 186 | 1.00 | generalized-card-v2-evaluative-register-v104-20260821 | descriptive |
+| 104 | `v104_prepare_check_20260821` | 0 | 0 |  | generalized-card-v2-evaluative-register-v104-20260821 |  |
+| 106 | `v106_chain_novelty_digit_guard_seed8_20260822_v1` | 1 | 186 | 1.00 | generalized-card-v2-digit-cue-quantifier-guard-v106-20260822 | descriptive |
 
 ## Per-metric MWU p-values for evaluated runs
 
@@ -207,3 +211,5 @@ inflates the pass count. See VERSION_LOG.md.
 | `generalized_card_camera_gpt54_v101_register_n10_20260820_v1` | 0.104* | 0.003 | 0.850* | 0.173* | 0.021 | 0.005 | 0.059* | 0.734* | 0.909* | 0.970* | 0.850* | 0.850* |
 | `generalized_card_camera_gpt54_v102_opening_seed8_20260820_v1` | 1.000d | 1.000d | 1.000d | 1.000d | 1.000d | 1.000d | 1.000d | 1.000d | 1.000d | 1.000d | 1.000d | 1.000d |
 | `generalized_card_camera_gpt54_v103_stance_opening_n10_20260821_v1` | 0.140* | 0.001 | 0.427* | 0.406* | 0.026 | 0.023 | 0.273* | 0.910* | 0.880* | 0.970* | 0.623* | 0.970* |
+| `v104_evaluative_seed8_20260821_v1` | 1.000d | 1.000d | 1.000d | 1.000d | 1.000d | 1.000d | 1.000d | 1.000d | 1.000d | 1.000d | 1.000d | 1.000d |
+| `v106_chain_novelty_digit_guard_seed8_20260822_v1` | 1.000d | 1.000d | 1.000d | 1.000d | 1.000d | 1.000d | 1.000d | 1.000d | 1.000d | 1.000d | 1.000d | 1.000d |
