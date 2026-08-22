@@ -115,18 +115,34 @@ number looked worst:
             worsened. Still N=1, descriptive only; default stays `off`. See
             `docs/DECISIONS.md` G15, `generalized_card/VERSION_LOG.md` v107
             gate result.
-      - [ ] **Next decision (flagged to the user, not decided solo — a ~10x
-            cost jump from a one-thread gate):** run a statistically powered
-            N=10 pool with `--digit-cue-guard on --verdict-close-guard on`
-            (both independently gated as clean or favorable; `--reply-novelty-scope
-            chain` stays excluded/`parent_only` — its only gate evidence shows
-            it worsening the exact depth bins it targeted). A single thread's
-            guardrail noise this session (`hard_disagree_rate`,
-            `mean_story_probability`, `emotion_entropy` all moved by amounts
-            that look like regeneration noise, not either fix) is too large
-            to read a two-armed combination on N=1 with any confidence —
-            real MWU/KS/Cliff numbers need the N=10 pool, not another single
-            thread.
+      - [x] **N=10 gated 2026-08-23 ($4.3909, user-run): null result.**
+            `self_bertscore_mean_f1` unchanged to two decimals of Cliff's
+            delta (0.86→0.86, gap +0.0169→+0.0170) — the seed-8 single-thread
+            win above did **not** replicate at the scale that carries real
+            statistical weight (5 of 10 threads improved, 5 worsened, net
+            zero). Depth-pooled pairs show a real improvement concentrated in
+            the two deepest bins ([4,7), [7,+)), diluted to nothing by the
+            metric's own equal-weight-per-thread averaging once other threads
+            moved the other way. Criterion-2: digit-cue partially replicated
+            (4.6×→2.45× real); verdict-close's own targeted number did not
+            (0.0065→0.0067, statistically identical) — new flag: `enum_or_fact`
+            fell to 0/532, unconfirmed, n too small. See `docs/DECISIONS.md`
+            G16, `generalized_card/VERSION_LOG.md` N=10 gate result.
+      - [ ] **Open question, now the real one: is this metric closable at
+            all with the current approach?** Three independently-built,
+            well-targeted mechanisms (v104 evaluative register, v105
+            chain-scoped novelty, v107 verdict-close) have now failed to move
+            `self_bertscore_mean_f1` at real statistical power. Per this
+            project's own systematic-debugging discipline, three failed
+            targeted fixes is the point to question the approach, not
+            attempt a fourth narrow surface patch. Two live options, not
+            decided here: (a) treat it as a G8-style research-design limit
+            and stop chasing it with cue/wording-level patches; (b) invest in
+            a structurally different mechanism aimed at the actual diagnosed
+            property (G3: generated reply-reply pairs grow *more* similar
+            with depth, real ones grow *less* similar) rather than another
+            lexical or plan-level symptom of it — e.g. an explicit
+            depth-conditioned diversity objective, not another word list.
 
       Two follow-ups run, both offline: (1) the real-side direction
       generalizes -- checked on 247 of the 424 excluded threads with the cheap

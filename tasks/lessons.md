@@ -1729,3 +1729,44 @@ that already ran for other reasons.
 - Keep every gate's full guardrail table in `VERSION_LOG.md` even for
   metrics the arm doesn't target -- they are the only free source of this
   cross-gate comparison later.
+
+## A single-thread gate's win on the primary metric is not evidence it will replicate at N=10 — even on the exact same thread
+
+**What happened.** v107's isolated gate (seed 8 alone) showed
+`self_bertscore_mean_f1`'s gap narrowing (+0.01834→+0.01726) and its
+targeted check-variant tic fully eliminated (3/106→0/106). Both read as
+real, mechanism-level wins at the time. The N=10 gate that followed, run on
+the same policy (`--digit-cue-guard on --verdict-close-guard on`), including
+seed 8 itself as one of its ten threads, showed: the pooled metric unchanged
+to two decimals of Cliff's delta, and the check-variant essentially
+unmoved population-wide (2/308→2/298). Seed 8's own thread-level gap *did*
+still improve inside the N=10 run, consistent with the single-thread
+result -- but 5 of the other 9 threads moved the opposite direction, and
+that netted the pooled metric to flat.
+
+**Why:** a single thread's gap movement carries the same weight as one
+sample from a distribution with real thread-to-thread variance (which this
+project has measured directly, e.g. `hard_disagree_rate`/`mean_story_probability`/
+`emotion_entropy` swinging in the same unrelated direction across two
+different gates -- see the lesson above this one). A one-thread gate can
+prove a *mechanism* fires (a plan-level check trips, a cue reaches the
+Writer, a lexical pattern disappears in that one thread's text) because
+those are yes/no facts about that thread. It cannot prove the *effect size*
+generalizes, because the effect size is exactly the thing thread-to-thread
+variance obscures at n=1.
+
+**How to apply.**
+- Read a single-thread gate as: "the mechanism does what it was built to
+  do" (a real, checkable claim) -- not "the metric will move this much at
+  scale" (not a claim n=1 can support, no matter how clean the single
+  number looks).
+- Before recommending a default flip or declaring a metric closed on a
+  single-thread result, say explicitly that the number is descriptive only
+  (this project's own `inferential_status: DESCRIPTIVE` tag already flags
+  this at the tooling level -- read it, don't just read the headline gap).
+- When a pooled metric doesn't move but a pair-level or mechanism-level
+  check shows a real, non-trivial effect in the right place (e.g. the depth
+  bins here), do not conclude "the fix does nothing" -- decompose by thread
+  and by pair population before writing off the mechanism. The mechanism
+  may be real and the *metric's own aggregation* (equal-weight thread mean,
+  not equal-weight pair mean) may be what's hiding it.

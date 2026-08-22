@@ -130,6 +130,112 @@ Expected cost: the last N=10 run (`v103`, same pool parameters) cost $3.7345
 for 532 comments; this run should land in the same range, plausibly a little
 higher from the two guards' occasional repair-loop retries.
 
+### Gate result — 2026-08-23. A null result at the scale that actually counts: the single-thread win did not replicate
+
+Run `generalized_card_camera_gpt54_v107_digit_verdict_n10_20260822_v1`, 532
+comments, **$4.3909**, 65.1 min (includes one crashed and resumed attempt,
+below). User-run, per the committed prediction entry above.
+
+**Operational note, not a result.** The first generation attempt crashed:
+one comment (seed 6/`382jsa`, task 34 of 91) exhausted the Writer's bounded
+slot-local recovery, and `--post-retry-limit`'s default of 1 disables
+whole-post regeneration by design (confirmed from its own `--help` text),
+so the entire batch process raised rather than silently shipping a shorter
+thread — the project's own "never omit a matched slot" rule, working as
+intended, just triggered for the first time at N=10 scale (10× the posts of
+any single-thread gate, so 10× the chances of one hard Writer miss). A
+second invocation of the identical `--resume` command completed cleanly;
+`--resume` correctly skipped the four already-persisted posts and
+regenerated only the missing slot fresh (confirmed against
+`completed_seed_slots`, which reads persisted `discussion.json`, not attempt
+history — so no double-charge). Cost includes both attempts.
+
+**`self_bertscore_mean_f1`: unchanged from the pre-fix baseline, to two
+decimal places of Cliff's delta.**
+
+| | real | generated | gap | Cliff | status |
+|---|---:|---:|---:|---:|---|
+| v103 (both guards off) | 0.4942 | 0.5097 | +0.0169 | **0.86** | FAIL |
+| this run (both guards on) | 0.4942 | 0.5112 | +0.0170 | **0.86** | FAIL |
+
+This directly fails to replicate v107's own isolated single-thread gate
+result (G15: gap narrowed +0.01834→+0.01726 on seed 8 alone). Read per
+thread, the reason is visible: **5 of the 10 threads' own gap improved, 5
+got worse**, netting to no net movement at the 10-thread-average the actual
+metric computes (seed 8/`i1o51h` itself did improve here too, +0.02345→
++0.02010, consistent with G15 — but seed 6/`382jsa`, the one crash-regenerated
+thread, moved the other way, +0.00228→+0.01093, and the other 8 split
+roughly evenly). A win on one thread, even the standing gate thread, was not
+a reliable predictor of the pool's direction.
+
+**Depth-decomposed at the pair level (pooled across all 10 threads' pairs,
+fidelity-checked against both shipped artifacts first) tells a more precise
+and genuinely informative story:**
+
+| depth range | v103 excess | this run's excess | |
+|---|---:|---:|---|
+| [0,1) root-root | +0.0040 | +0.0039 | flat |
+| [1,2) | +0.0004 | +0.0012 | flat (noise) |
+| [2,4) | +0.0174 | +0.0172 | flat |
+| [4,7) | +0.0198 | +0.0180 | improved |
+| [7,+) | +0.0432 | **+0.0346** | improved, largest move |
+
+The two deepest bins — where a long, winding reply chain is most likely to
+close on a verdict, the exact thing v107 targets — **did** improve, by a
+real, non-trivial margin, pooled over both artifacts' full pair sets. This
+is not the same finding as "the fix does nothing": it is evidence the
+mechanism has a genuine, reproducible effect on the specific pairs it should
+affect. **It does not reach the official metric** because
+`self_bertscore_mean_f1` averages 10 *thread-level* means with equal
+weight, not all pairs pooled with equal weight — a real improvement
+concentrated in the deep-pair population of a few large threads is
+diluted, sometimes to invisibility, by the equal-weight average once other
+threads move the other way for unrelated reasons. This is a real property
+of the metric's own definition, not a flaw in the analysis.
+
+**Criterion-2 tells: one partially replicated, one did not.**
+
+`digit_cue_diagnosis.py`: any bare `0`/`1` fell from **4.6×** real's rate
+(v103, pre-fix) to **2.45×** (this run) — a real, if partial, improvement,
+short of the near-parity (1.05×-ish) the single-thread v106 gate showed.
+plain-quantifier sub-pattern: **8.2×** → **3.17×** — same pattern, real but
+partial. **A new guardrail flag**: `enum_or_fact` (genuine numbered
+lists/fractions/prices) fell to **0/532** (was 0.004, ~2 instances,
+pre-fix) against real's 0.00216 — the guardrail this session named in
+advance ("if `enum_or_fact` falls, the guard is suppressing real
+quantities") may be showing exactly that, though n is too small (0 vs an
+expected ~1) to be confident it is a real effect rather than noise at an
+already-low base rate. Flagged, not acted on.
+
+`verdict_close_diagnosis.py`: the check/test variant this fix specifically
+targets **did not move** — 0.0065 (2/308, pre-fix) → 0.0067 (2/298, this
+run), statistically identical at n=2 either way. This directly contradicts
+the isolated single-thread gate's "fully eliminated" result (G15) — that
+result reads, in hindsight, as a small-sample fluke on one thread rather
+than a population effect. The pre-existing `abstract_verdict_close` pattern
+did fall substantially again (0.1656→0.0973), continuing the same
+unattributed-to-either-guard pattern seen on every gate this session
+(`tasks/lessons.md`).
+
+**The other nine metrics stayed within the range this project has already
+established as N=10 noise (G9)**; `impolite_rate` moved from FAIL to
+PARTIAL, `neutral_rate` from PASS to PARTIAL — shuffling within the same
+underpowered band, not a new finding.
+
+**Decision.** Both guards ship unchanged, default `off`; nothing here
+argues for flipping either default. `--digit-cue-guard`'s criterion-2
+improvement is real at this scale, just partial. `--verdict-close-guard`'s
+own targeted number did not hold up outside one thread. Most importantly:
+this is the **third** independently-verified, well-motivated mechanism
+built specifically to move `self_bertscore_mean_f1` (after v104's
+evaluative register and v105's chain-scoped novelty) to fail at real
+statistical power, on top of the fourth if v106 (never intended as a fix
+for this metric) is counted as a control. Per this project's own
+systematic-debugging discipline, three failed, well-targeted fixes is the
+threshold for questioning the approach rather than attempting a fourth
+narrow patch — see `docs/DECISIONS.md` G16 and `tasks/todo.md` for the
+recommendation this produces.
+
 ---
 
 ## v106 — digit-cue quantifier guard (2026-08-22)
