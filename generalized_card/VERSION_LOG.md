@@ -327,7 +327,72 @@ gate's single thread cannot separate the two.
 same as v105/v106), Ruff clean, 3 pins re-computed with 0 unexpected drift
 (`closing_move.py`, `backend.py`, `run_generate.py`), both parity scopes
 healthy, backend self-test on and off for both arm values across all four
-registered domains (8 runs, $0, all exit 0). **No paid gate yet.**
+registered domains (8 runs, $0, all exit 0).
+
+### Large-thread gate — predictions, written before the paid run
+
+Credential confirmed by the user: `LLM_API_KEY` from `third_party/MiroFish/.env`
+(the same one every prior run in this project has used). Gate thread: seed 8 /
+`i1o51h`, the project's standing large-thread gate seed, 186 comments.
+
+**Isolated, not stacked on v105/v106.** v105 (`--reply-novelty-scope chain`)
+was already gated on this exact thread and falsified as
+`self_bertscore_mean_f1`'s driver; v106 (`--digit-cue-guard on`) is an
+independent criterion-2 fix unrelated to this mechanism. That combined gate
+already moved several secondary metrics unpredictably on N=1 (`hard_disagree_rate`,
+`mean_story_probability`, `emotion_entropy`) -- stacking a third ungated arm
+onto that same noise floor would make anything this gate finds unattributable
+to v107 specifically. This run sets only `--verdict-close-guard on`; both
+other arms stay at their `off`/`parent_only` defaults, so the correct control
+is the pure "everything off" baseline, `v104_evaluative_seed8_20260821_v1` --
+neither v105, v106, nor v107 existed when that artifact was built, and J6
+requires the baseline be the same thread in the immediately prior version's
+artifact, not the v106 gate artifact.
+
+**What the offline replay shows on this exact baseline artifact** (measured
+just now, not assumed -- `verdict_close_diagnosis.py --run
+.../v104_evaluative_seed8_20260821_v1`):
+
+| population (seed 8 thread) | existing pattern | check-variant (new) |
+|---|---:|---:|
+| v104 baseline (all arms off) | 0.1887 (20/106) | 0.0283 (3/106) |
+| v106 gate (v105+v106 on, v107 off) | 0.1296 (14/108) | 0.0185 (2/108) |
+| evaluation-excluded real | 0.0129 | 0.0005 |
+
+The v106 gate's lower rate on both columns is a side effect of forced
+re-planning (v105/v106 touch Planner output, which reshuffles which comments
+draw which closing move) -- not this fix, which hadn't shipped yet. The
+correct pre-fix number for this gate is the v104 row.
+
+`self_bertscore_mean_f1` on this exact thread, already established (J6
+baseline): generated 0.50707 vs matched real 0.48873, gap **+0.0183**.
+
+**Predictions:**
+
+| what | v104 baseline | predicted direction | why not a precise number |
+|---|---:|---|---|
+| check-variant rate | 0.0283 | **down**, toward real's 0.0005 | the guard only widens the suppression wording for slots where the move is drawn *not* to happen; it does not touch the draw probability or `abstract_verdict_close`'s own wording |
+| existing-pattern rate | 0.1887 | **not expected to move** | v107 does not touch `abstract_verdict_close`'s cue text or detection pattern -- the 10-13x compliance gap there (G14) is a separate, still-open question this gate is not built to answer |
+| `self_bertscore_mean_f1` gap vs real | +0.0183 | **no confident prediction; flat is more likely than closed** | the template-reuse hypothesis this fix grew out of was already rejected at scale as a population-level driver (G13) -- this gate is a criterion-2 compliance check, the same shape as v106's clean win, not a second self_bertscore bet |
+
+**Guardrails, each a named way to be wrong:** `self_bleu_4` must not
+measurably worsen. `hard_disagree_rate`/`polite_rate`/`impolite_rate` should
+stay within this thread's own noise -- v107 touches only closing-move
+wording, not stance or tone. `avg_depth`/`structural_virality` are
+structural (copied from the real tree) and must not move regardless.
+
+Command, run after this entry was committed:
+
+```bash
+python3 -u generalized_card/scripts/run_generate.py \
+  --tag v107_verdict_close_guard_seed8_20260822_v1 --domain camera \
+  --model gpt-5.4-mini --base-url https://api.openai.com/v1 \
+  --api-key-env LLM_API_KEY --pool-size 150 --max-posts 1 --posts-per-run 1 \
+  --start-seed-index 8 --sampling-seed 42 \
+  --verdict-close-guard on --resume
+python3 generalized_card/scripts/run_evaluate.py \
+  --tag v107_verdict_close_guard_seed8_20260822_v1 --metric-parallel 5 --resume
+```
 
 ---
 
