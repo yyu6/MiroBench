@@ -128,21 +128,35 @@ number looked worst:
             (0.0065→0.0067, statistically identical) — new flag: `enum_or_fact`
             fell to 0/532, unconfirmed, n too small. See `docs/DECISIONS.md`
             G16, `generalized_card/VERSION_LOG.md` N=10 gate result.
-      - [ ] **Open question, now the real one: is this metric closable at
-            all with the current approach?** Three independently-built,
-            well-targeted mechanisms (v104 evaluative register, v105
-            chain-scoped novelty, v107 verdict-close) have now failed to move
-            `self_bertscore_mean_f1` at real statistical power. Per this
-            project's own systematic-debugging discipline, three failed
-            targeted fixes is the point to question the approach, not
-            attempt a fourth narrow surface patch. Two live options, not
-            decided here: (a) treat it as a G8-style research-design limit
-            and stop chasing it with cue/wording-level patches; (b) invest in
-            a structurally different mechanism aimed at the actual diagnosed
-            property (G3: generated reply-reply pairs grow *more* similar
-            with depth, real ones grow *less* similar) rather than another
-            lexical or plan-level symptom of it — e.g. an explicit
-            depth-conditioned diversity objective, not another word list.
+      - [x] **Resolved 2026-08-23: a structural fix was designed, then
+            correctly stopped, then falsified as a Planner problem --
+            closed as a research-design limit.** The "explicit
+            depth-conditioned diversity objective" option above was
+            designed as a real-time Writer-candidate-vs-thread-pool
+            embedding guard, calibrated per domain
+            (`analysis/reply_diversity_ceiling_calibration.py`), and
+            **stopped before being wired**: reading the actual repair-loop
+            insertion point first showed a structurally identical mechanism
+            already exists and is deliberately diagnostic-only
+            (`docs/ORIENTATION.md` §4's non-negotiable "distribution
+            diagnostics never select a Writer candidate" -- G20). Before
+            widening the one remaining legitimate category (Planner
+            plan-structure, `reply_increment_problem`-style) instead, asked
+            directly whether this is even a Planner problem
+            (`analysis/plan_text_realization_gap_diagnosis.py`, G21): the
+            Planner's own plan-field similarity already decreases with
+            depth, including on non-ancestor pairs v105's ancestor-only
+            scope can't see, and plan-vs-text similarity correlates at only
+            r=+0.48 across 26,520 pairs -- the same realization-gap shape
+            as `polite_rate` and `abstract_verdict_close`, now measured
+            directly. Combined with v105's own N=10 gate (widening novelty
+            checking to 100% ancestor-chain compliance made the targeted
+            deep bins worse, not better), decided **not** to build or gate
+            a whole-thread-scope version -- `docs/DECISIONS.md` G22.
+            **`self_bertscore_mean_f1` now joins `polite_rate`/`impolite_rate`
+            (G8) as a closed research-design limit, not an open task.** Do
+            not open a fourth narrow mechanism against it without new
+            evidence.
 
       Two follow-ups run, both offline: (1) the real-side direction
       generalizes -- checked on 247 of the 424 excluded threads with the cheap

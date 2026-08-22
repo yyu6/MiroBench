@@ -781,13 +781,50 @@ G3) and built as `--reply-novelty-scope {parent_only,chain}`. Offline-verified,
 including self-test green on all four registered domains — **no paid gate has
 run yet**. Full detail in `generalized_card/VERSION_LOG.md`'s v105 entry.
 
+### v106, v107, and the N=10 gate — executed since the text above was written
+
+v105 was gated (seed 8), then combined with **v106 (2026-08-22, digit-cue
+quantifier guard)** and separately with **v107 (2026-08-22/23,
+verdict-close check-variant guard)**, then both run at a real N=10. Full
+detail in `generalized_card/VERSION_LOG.md`'s v106/v107 entries and gate
+results; decision register in `docs/DECISIONS.md` G11-G22.
+
+**`self_bertscore_mean_f1` is now closed as a likely research-design
+limit**, the same category as `polite_rate`/`impolite_rate` (G8). Three
+independently-built, well-targeted mechanisms failed to move it at real
+statistical power (v104, v105, v107 — G16); a structural fix was designed,
+correctly stopped before violating the "distribution diagnostics never
+select a Writer candidate" rule (G20), and the remaining legitimate
+category (widening the Planner-side scope) was itself falsified before
+being built: the Planner is not the driver in aggregate, and plan-vs-text
+similarity correlates at only r=+0.48 (G21) — most of the effect lives in
+Writer realization, which no permitted mechanism reaches (G22). **Do not
+open a fourth narrow mechanism against this metric without new evidence.**
+`--digit-cue-guard`/`--verdict-close-guard` keep shipping, default `off`,
+as independently-real criterion-2 improvements regardless of this metric.
+
 ### Next step
 
-**Gate v105.** Write predictions against the gate thread's own matched real
-(not the pooled corpus — this project has mis-set that band twice,
-`tasks/lessons.md`), then run the large-thread gate and N=10 per §4's loop.
-**This needs the user to confirm which API credential to bill first** — the
-prior session flagged this as unconfirmed and it still is.
+With all 12 metrics now either closed as a research-design limit
+(`self_bertscore_mean_f1`, `polite_rate`, `impolite_rate` — G8/G22) or
+inside their N=10 noise floor (the other nine — G9), criterion 1's
+engineering work on camera is largely exhausted at this scale. What is
+still genuinely open:
+
+- **Criterion 2 (eye-visible tells), not yet exhausted.** `abstract_verdict_close`
+  is still 10-13× real even where its suppression cue reaches the Writer
+  (G14, a coverage-vs-compliance question never resolved); the digit-cue
+  guard's plain-quantifier rate is down but not at parity (G12, G16); an
+  `enum_or_fact` suppression flag from the N=10 gate is unconfirmed (G16);
+  the opener-side "@OP, ..." tic noted during the verdict-close diagnosis
+  was never chased.
+- **Domain generalization (D1-D4).** No paid generation run has ever been
+  done on a non-camera domain. Every tuned rate, every shipped arm's
+  default, and every gate result in this file is camera-only.
+- **N=150**, the actual final scale (§1) — not run on any version yet.
+
+None of these is decided here as "the" next step; say which one before
+spending against it.
 
 **Still blocking N=150: the reporting standard.** 12 metrics × 2 tests at
 α = 0.05 means a perfect generator passes all 12 simultaneously only ≈ 52% of the
