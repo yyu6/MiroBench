@@ -119,7 +119,11 @@ from .register_realization import (
     set_register_realization,
 )
 from .semantic_realization import set_route_ledger, set_turn_frame
-from .sentence_rhythm import set_active_rhythm_profile, set_sentence_rhythm
+from .sentence_rhythm import (
+    set_active_rhythm_profile,
+    set_digit_cue_guard,
+    set_sentence_rhythm,
+)
 from .story_scope import set_no_story_scope
 from .surface_typography import (
     apply_final_punctuation_habit,
@@ -434,6 +438,14 @@ def configure_generator_backend(
         or "measured"
     )
     set_sentence_rhythm(module.GENERALIZED_SENTENCE_RHYTHM)
+    # `off` (default) reproduces the digit cue's pre-v106 wording exactly. `on`
+    # adds one sentence excluding an ordinary quantifier/negation word from the
+    # "write it as a figure" instruction. See `sentence_rhythm.py`.
+    module.GENERALIZED_DIGIT_CUE_GUARD = (
+        os.environ.get("GENERALIZED_CARD_DIGIT_CUE_GUARD", "off").strip().lower()
+        or "off"
+    )
+    set_digit_cue_guard(module.GENERALIZED_DIGIT_CUE_GUARD)
     # Whether a slot the plan assigned `polite` is asked for the surface moves
     # real polite comments of its size actually carry. `off` reproduces every
     # version through v98, where that register reached the Writer only as the

@@ -742,11 +742,14 @@ progress and is **not** the same thing as being close at N=150.
   saved Writer prompts to build the realization matrix above.
 - **`--template-phrase-reuse-budget 4` is flat** and wrong at large thread sizes
   (real threads reach `uncertainty_frame` 7, 8, and 12).
-- **`sentence_rhythm`'s digit cue produces a bare `0` or `1` where a person writes
-  the word** — "0 verdict from me", "wrap 1 hand around it". 0.140 of v102 and
-  0.151 of v101 comments against 0.071 in excluded real, and the real figure
-  includes legitimate decimals ("0.1% of consumers") so the true ratio is worse
-  than 2×. An eye-visible tell for criterion 2, unfixed.
+- ~~**`sentence_rhythm`'s digit cue produces a bare `0` or `1` where a person
+  writes the word**~~ — fixed offline in v106, not yet gated. Re-measured on
+  v103 (`analysis/digit_cue_diagnosis.py`): bare `0`/`1` in 0.092 of generated
+  comments against 0.020 real (4.6×). Real writers do numeralize a plain
+  quantifier too (55% of their own bare-`1` occurrences) — the excess is
+  specifically an 8.2× rate on that sub-pattern against only 1.7× on
+  enumerated/fractional/price uses, not the raw digit rate.
+  `--digit-cue-guard {off,on}`, default `off` (legacy).
 - **`pair_count` in `matched_*_thread_scores.csv` is not the stance pair count.**
   It is `n(n-1)/2` from the pairwise metrics. Do not read it for
   `hard_disagree_rate`.

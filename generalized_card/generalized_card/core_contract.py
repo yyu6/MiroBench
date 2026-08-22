@@ -16,10 +16,11 @@ HISTORICAL_REVISION_POLICY_VERSIONS = {
     "generalized-card-revision-v6-dynamic-coverage-history-20260807",
 }
 GENERALIZED_V2_GENERATION_POLICY_VERSION = (
-    "generalized-card-v2-chain-scoped-reply-novelty-v105-20260822"
+    "generalized-card-v2-digit-cue-quantifier-guard-v106-20260822"
 )
 HISTORICAL_GENERATION_POLICY_VERSIONS = {
     "generalized-v2": {
+        "generalized-card-v2-chain-scoped-reply-novelty-v105-20260822",
         "generalized-card-v2-evaluative-register-v104-20260821",
         "generalized-card-v2-stance-consistent-opening-v103-20260821",
         "generalized-card-v2-drawn-opening-move-v102-20260820",
@@ -175,7 +176,7 @@ CORE_FILES = {
     ),
     "generator_adapter": (
         "generalized_card/generalized_card/backend.py",
-        "4230574d14ed5be9e62c3deef03af5951e8459e3658d84fd99e47bbb505877c6",
+        "66f6409b07a95185f025ed60479c5a8b2dec4dd7db75b14239443b4148ed2b09",
     ),
     "data_boundary": (
         "generalized_card/generalized_card/data.py",
@@ -209,7 +210,7 @@ CORE_FILES = {
     ),
     "generation_runner": (
         "generalized_card/scripts/run_generate.py",
-        "53d0fddfbde3d4394998ebf257d1fe8afab3753da0391fb4a95c7c462654b0bc",
+        "b9bc9f23317ffa37c7d0a542e7ca398d26dc7948e2369333fb191c0848421a18",
     ),
     "generation_backend_runner": (
         "generalized_card/scripts/run_generator_backend.py",
@@ -317,7 +318,7 @@ CORE_FILES = {
     ),
     "sentence_rhythm": (
         "generalized_card/generalized_card/sentence_rhythm.py",
-        "2a871aa15dafd598cd9eca4bc248f4f8b389af363ecb7ffe9dcc826c23fc0368",
+        "05986a7b8479b30e83dc33aa46f0779f7cba7991633e5630e9c1652ba00cd7dd",
     ),
     "story_scope": (
         "generalized_card/generalized_card/story_scope.py",

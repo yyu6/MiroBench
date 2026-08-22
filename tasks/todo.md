@@ -367,11 +367,16 @@ are not**. Cliff table and projection there.
       over-producing roots drags `hard_disagree_rate` down on its own, and it
       would confound any opener fix.
 
-- [ ] Eye-visible tell found while reading the gate, unrelated to the arm:
-      `sentence_rhythm`'s digit cue writes a bare `0`/`1` where a person writes
-      the word ("0 verdict from me", "wrap 1 hand around it"). 0.140 generated
-      against 0.071 real, and the real figure includes legitimate decimals so the
-      true ratio is worse.
+- [x] **v106 (2026-08-22) — digit-cue quantifier guard.** Fixed offline, not
+      yet gated. Re-measured on v103 (`analysis/digit_cue_diagnosis.py`): bare
+      `0`/`1` in 0.092 of generated comments against 0.020 real (4.6×). Real
+      writers numeralize a plain quantifier too (55% of their own bare-`1`
+      occurrences) -- the excess concentrates in that specific sub-pattern
+      (8.2× generated:real) versus genuine enumerated/fractional/price uses
+      (1.7×), not the raw digit rate. `--digit-cue-guard {off,on}`, default
+      `off`. Offline-verified across all four domains (self-test, 8 runs,
+      $0). See `generalized_card/VERSION_LOG.md` v106, `docs/DECISIONS.md`
+      G12.
 - [ ] **The parent-echo mechanism has no design yet.** It is the other half of
       the `hard_disagree_rate` gap and it is also the user's criterion-2
       complaint (*很容易去讨论同一个话题*). Note that `context_transform` does

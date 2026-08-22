@@ -97,6 +97,9 @@ RHYTHM_HABITS: tuple[dict[str, Any], ...] = (
             "words. Use only a number you are allowed to name above; if there "
             "is none, leave it out rather than inventing one."
         ),
+        # `_DIGIT_CUE_GUARDED` (see `set_digit_cue_guard`) replaces `cue` when
+        # the guard arm is on. Left `cue` in place so the legacy arm value is
+        # this dict unmodified, not a second copy to keep in sync.
         "suppress_cue": "",
     },
     {
@@ -131,12 +134,48 @@ ACTIVE_RHYTHM_PROFILE: dict[str, Any] = {}
 # instruction and let one register serve every slot.
 SENTENCE_RHYTHM_ENABLED = True
 
+# `off` (default) reproduces the digit cue above unmodified, including the
+# defect it carries: the cue asks for figures "rather than described in
+# words" with no exclusion for an ordinary quantifier or negation, and the
+# Writer sometimes numeralizes those too -- "1 thing I'd actually check",
+# "I found my 1 update", "That 1 folder" -- where a person writes the word.
+# Measured on the v103 artifact (`analysis/digit_cue_diagnosis.py`): bare
+# `0`/`1` in 0.092 of generated comments against 0.020 of evaluation-excluded
+# real ones (4.6x). Real writers do sometimes numeralize a plain quantifier
+# too -- it is 55% of real's own bare-`1` occurrences, not a rare exception --
+# but generated does it at 96% of its own bare-`1` occurrences and 8.2x
+# real's per-comment rate for that specific pattern (0.083 against 0.010),
+# against 1.7x for enumerated/fractional/contrastive uses (0.004 against
+# 0.002; a numbered list, a fraction, a price range). The excess concentrates
+# in one sub-pattern, not the raw digit rate.
+# `on` adds one sentence naming the failure mode by example rather than
+# changing the underlying instruction, so a genuine count, price, or spec is
+# unaffected.
+DIGIT_CUE_GUARD_ENABLED = False
+_DIGIT_CUE_GUARDED = (
+    "Put a number in this one -- a price, a count, a model number, a "
+    "length of time -- written as a figure rather than described in "
+    "words, when you are citing a real quantity. Use only a number you are "
+    "allowed to name above; if there is none, leave it out rather than "
+    "inventing one. Do not turn an ordinary word like \"one\" or \"no\" into "
+    "a bare digit just to satisfy this -- \"1 thing I'd check\" and \"0 "
+    "issues so far\" are not what this asks for."
+)
+
 
 def set_active_rhythm_profile(profile: dict[str, Any] | None) -> None:
     """Install the frozen per-domain rhythm profile for this run."""
 
     global ACTIVE_RHYTHM_PROFILE
     ACTIVE_RHYTHM_PROFILE = dict(profile or {})
+
+
+def set_digit_cue_guard(mode: str) -> bool:
+    """Select the digit-cue quantifier-guard arm and return whether it is on."""
+
+    global DIGIT_CUE_GUARD_ENABLED
+    DIGIT_CUE_GUARD_ENABLED = str(mode or "off").strip().lower() == "on"
+    return DIGIT_CUE_GUARD_ENABLED
 
 
 def set_sentence_rhythm(mode: str) -> bool:
@@ -334,7 +373,10 @@ def rhythm_guidance(
         )
     for name, drawn in slot_habits(profile, slot_key=slot_key, word_count=word_count):
         spec = _HABIT_BY_NAME[name]
-        cue = spec["cue"] if drawn else spec["suppress_cue"]
+        if drawn and name == "digit" and DIGIT_CUE_GUARD_ENABLED:
+            cue = _DIGIT_CUE_GUARDED
+        else:
+            cue = spec["cue"] if drawn else spec["suppress_cue"]
         if cue:
             parts.append(cue)
     if not parts:

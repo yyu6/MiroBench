@@ -1565,6 +1565,28 @@ known to be a violation.
   from a correct diagnosis) while fixing nothing, had the check not been run
   before the arm was wired up.
 
+## A literal `%` in argparse help text can crash `--help` -- and only the full test suite catches it
+
+**What happened.** A new CLI flag's help string cited measured percentages
+("55% of real's own bare-1 occurrences"). `argparse` runs every help string
+through old-style `%` interpolation (for `%(default)s`), and `% ` followed by
+a letter that happens to be a valid conversion character (here `o`, from "%
+of") parses as a flag + conversion spec -- `%o` is octal -- so
+`parser.format_help()` raised `TypeError: %o format: an integer is required,
+not dict`. Running only the new arm's own tests missed this; it only showed
+up when the full suite ran `test_generation_defaults_match_card_run_controls`,
+which calls `format_help()` directly.
+
+**Why:** a literal `%` in argparse help text is not literal unless escaped
+`%%` -- this file already had that convention everywhere else
+(`grep '%%' run_generate.py`), and the new text just didn't follow it.
+
+**How to apply.**
+- Any literal `%` added to an argparse `help=` string must be `%%`.
+- Run the **full** test suite after adding a CLI flag, not just the new
+  tests for it -- a `--help` formatting bug has no dedicated test of its own
+  and only surfaces through a suite-wide sweep like this project already has.
+
 ## "Trimming doesn't move the aggregate" and "the tail is a real defect" are both true at once
 
 **What happened.** v98 rejected "a duplication tail" as the cause of

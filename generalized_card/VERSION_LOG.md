@@ -62,6 +62,48 @@ Before any run that changes behavior:
 
 ---
 
+## v106 — digit-cue quantifier guard (2026-08-22)
+
+Policy ID: `generalized-card-v2-digit-cue-quantifier-guard-v106-20260822`.
+Arm `--digit-cue-guard {off,on}`, default `off` (byte-for-byte v105 and
+earlier). No domain-profile change. Module
+`generalized_card/generalized_card/sentence_rhythm.py`
+(`set_digit_cue_guard`, `_DIGIT_CUE_GUARDED`). A criterion-2 (eye-visible)
+tell, not one of the 12 metrics; reproduce with
+`generalized_card/analysis/digit_cue_diagnosis.py`.
+
+**Why.** `sentence_rhythm`'s "digit" habit asks the Writer to cite a real
+quantity "as a figure rather than described in words." Flagged during a
+previous gate read and never designed: the Writer sometimes numeralizes an
+ordinary quantifier or negation instead -- "1 thing I'd actually check",
+"I found my 1 update", "that 1 folder" -- where a person writes the word.
+
+**Measured, not assumed, including the part that complicates the obvious
+story.** On the v103 artifact against 424 evaluation-excluded real camera
+threads: a bare `0`/`1` appears in 0.092 of generated comments against 0.020
+of real ones (4.6x). Real writers do numeralize a plain quantifier too -- it
+is 55% of real's own bare-`1` occurrences, not a rare exception -- but
+generated does it at 96% of its own and **8.2x** real's per-comment rate for
+that specific pattern (0.083 against 0.010), against **1.7x** for
+enumerated/fractional/price uses (0.004 against 0.002; a numbered list, a
+fraction, a price range). The excess concentrates in the sub-pattern that
+does not serve the cue's own stated purpose, not in the raw digit rate.
+
+**The fix.** One added sentence naming the failure mode by example when the
+digit habit is drawn; the underlying "cite a figure" instruction is
+unchanged, so a genuine count, price, or spec is unaffected. No domain
+vocabulary in the added text.
+
+**Offline state.** 596/597 tests pass (the one failure is the live
+provenance guard while this version sits uncommitted, clears on commit),
+Ruff clean, 3 pins re-computed with 0 unexpected drift
+(`sentence_rhythm.py`, `backend.py`, `run_generate.py`), both parity scopes
+healthy, backend self-test on and off for both arm values across all four
+registered domains (8 runs, $0, all exit 0). **No paid gate yet** -- same
+credential blocker as v105.
+
+---
+
 ## v105 — chain-scoped reply novelty (2026-08-22)
 
 Policy ID: `generalized-card-v2-chain-scoped-reply-novelty-v105-20260822`.

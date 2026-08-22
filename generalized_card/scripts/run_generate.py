@@ -380,6 +380,28 @@ def build_parser() -> argparse.ArgumentParser:
         ),
     )
     parser.add_argument(
+        "--digit-cue-guard",
+        choices=("off", "on"),
+        default="off",
+        help=(
+            "'off' reproduces the digit cue's pre-v106 wording exactly: 'write "
+            "it as a figure' with no exclusion for an ordinary quantifier or "
+            "negation word, which the Writer sometimes numeralizes too -- '1 "
+            "thing I'd check', 'that 1 folder' -- where a person writes the "
+            "word. Measured on the v103 artifact "
+            "(generalized_card/analysis/digit_cue_diagnosis.py): bare 0/1 in "
+            "0.092 of generated comments against 0.020 of evaluation-excluded "
+            "real ones (4.6x); real writers do numeralize a plain quantifier "
+            "too (55%% of real's own bare-1 occurrences), but generated does "
+            "it at 96%% of its own and 8.2x real's per-comment rate for that "
+            "pattern specifically, against 1.7x for enumerated/fractional/ "
+            "price uses -- the excess concentrates in one sub-pattern, not "
+            "the raw digit rate. 'on' adds one sentence naming the failure "
+            "mode by example; the underlying instruction is unchanged, so a "
+            "genuine count, price, or spec is unaffected."
+        ),
+    )
+    parser.add_argument(
         "--length-calibration",
         choices=("measured", "off"),
         default="measured",
@@ -804,6 +826,7 @@ def main() -> None:
         "tone_length_fit": args.tone_length_fit,
         "turn_frame": args.turn_frame,
         "sentence_rhythm": args.sentence_rhythm,
+        "digit_cue_guard": args.digit_cue_guard,
         "register_realization": args.register_realization,
         "closing_move": args.closing_move,
         "opening_move": args.opening_move,
@@ -1003,6 +1026,7 @@ def main() -> None:
     env["GENERALIZED_CARD_TONE_LENGTH_FIT"] = args.tone_length_fit
     env["GENERALIZED_CARD_TURN_FRAME"] = args.turn_frame
     env["GENERALIZED_CARD_SENTENCE_RHYTHM"] = args.sentence_rhythm
+    env["GENERALIZED_CARD_DIGIT_CUE_GUARD"] = args.digit_cue_guard
     env["GENERALIZED_CARD_REGISTER_REALIZATION"] = args.register_realization
     env["GENERALIZED_CARD_CLOSING_MOVE"] = args.closing_move
     env["GENERALIZED_CARD_OPENING_MOVE"] = args.opening_move
@@ -1349,6 +1373,7 @@ RUN_EXPERIMENT_FIELDS = (
     "tone_length_fit",
     "turn_frame",
     "sentence_rhythm",
+    "digit_cue_guard",
     "register_realization",
     "closing_move",
     "opening_move",

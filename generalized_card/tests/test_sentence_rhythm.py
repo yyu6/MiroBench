@@ -21,6 +21,7 @@ from generalized_card.sentence_rhythm import (
     rhythm_guidance,
     sentence_words,
     set_active_rhythm_profile,
+    set_digit_cue_guard,
     set_sentence_rhythm,
     slot_habits,
     slot_uses_habit,
@@ -140,6 +141,7 @@ class DrawTest(unittest.TestCase):
 class GuidanceTest(unittest.TestCase):
     def tearDown(self) -> None:
         set_sentence_rhythm("measured")
+        set_digit_cue_guard("off")
 
     def _cues(self, word_count: int, trials: int = 80) -> list[str]:
         return [
@@ -200,6 +202,26 @@ class GuidanceTest(unittest.TestCase):
         set_sentence_rhythm("off")
         self.assertEqual(rhythm_guidance(MEASURED, slot_key="seed:1", word_count=35), "")
 
+    def test_digit_cue_guard_default_is_the_legacy_wording(self) -> None:
+        joined = " ".join(self._cues(35, trials=400))
+        self.assertIn("written as a figure rather than described in", joined)
+        self.assertNotIn("ordinary word", joined)
+
+    def test_digit_cue_guard_on_excludes_ordinary_quantifiers(self) -> None:
+        set_digit_cue_guard("on")
+        joined = " ".join(self._cues(35, trials=400))
+        self.assertIn("ordinary word", joined)
+        self.assertIn("citing a real quantity", joined)
+        # The underlying instruction is still there -- this adds an exclusion,
+        # it does not replace the ask for a genuine figure.
+        self.assertIn("rather than inventing one", joined)
+
+    def test_digit_cue_guard_carries_no_domain_vocabulary(self) -> None:
+        set_digit_cue_guard("on")
+        joined = " ".join(self._cues(35, trials=200)).lower()
+        for term in ("camera", "lens", "photo", "card", "phone"):
+            self.assertNotIn(term, joined)
+
     def test_every_habit_the_module_defines_is_measurable(self) -> None:
         # A habit with no pattern and no computed share would render never.
         measured = set(MEASURED["bands"]["medium"]["shares"])
@@ -216,6 +238,7 @@ class WriterPromptTest(unittest.TestCase):
     def tearDown(self) -> None:
         set_active_rhythm_profile({})
         set_sentence_rhythm("measured")
+        set_digit_cue_guard("off")
 
     def _prompt(self, mode: str = "focused", **overrides: object) -> str:
         overrides.setdefault("real_word_count", 35)
@@ -234,6 +257,14 @@ class WriterPromptTest(unittest.TestCase):
     def test_the_off_arm_removes_the_rule_from_the_prompt(self) -> None:
         with mock.patch.dict(os.environ, {"GENERALIZED_CARD_SENTENCE_RHYTHM": "off"}):
             self.assertNotIn("Typing rhythm:", self._prompt())
+
+    def test_digit_cue_guard_env_var_reaches_the_writer_prompt(self) -> None:
+        with mock.patch.dict(os.environ, {"GENERALIZED_CARD_DIGIT_CUE_GUARD": "on"}):
+            found = any(
+                "ordinary word" in self._prompt(local_task_id=index)
+                for index in range(1, 25)
+            )
+        self.assertTrue(found)
 
     def test_two_slots_of_one_size_receive_different_rules(self) -> None:
         rendered = {
