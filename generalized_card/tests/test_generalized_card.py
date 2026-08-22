@@ -3218,6 +3218,133 @@ class GeneralizedCardTest(unittest.TestCase):
         # Growth from 40 to 200 comments must be marginal, not linear.
         self.assertLess(at_200, at_40 * 1.6, (at_40, at_200))
 
+    def _coverage_task(self) -> SimpleNamespace:
+        return SimpleNamespace(
+            speaker_role="advisor",
+            tone_shape="neutral_fact",
+            payload_type="advice",
+            utterance_mode="local_answer_with_context",
+            voice="casual_neutral",
+            story_mode="no_story",
+            affect_role="neutral",
+            length_bucket="long",
+            real_word_count=140,
+            surface_skeleton="",
+            surface_texture="plain",
+            perspective_id="seed_local",
+            claim_key="local_claim",
+            domain_intent="one local point",
+            opening_style="verdict first",
+            semantic_move="a new move",
+            decision_boundary="a new boundary",
+            detail_focus="a new detail",
+            local_topic="local topic",
+        )
+
+    def _coverage_comments(self) -> list[dict[str, Any]]:
+        return [
+            {
+                "content": f"Earlier comment {index} makes its own point at length.",
+                "depth": 0,
+                "semantic_move": f"earlier move {index}",
+                "decision_boundary": f"earlier boundary {index}",
+                "speaker_role": "advisor",
+                "payload_type": "advice",
+            }
+            for index in range(3)
+        ]
+
+    def test_semantic_coverage_nonrepeat_default_is_the_legacy_wording(self) -> None:
+        memory = prompts._thread_memory(
+            SimpleNamespace(compact=lambda value, limit: str(value)[:limit]),
+            self._coverage_comments(),
+            current_task=self._coverage_task(),
+            domain_profile={},
+        )
+        self.assertIn("Semantic contributions already covered in this thread:\n", memory)
+        self.assertNotIn(prompts.SEMANTIC_COVERAGE_NONREPEAT_INSTRUCTION, memory)
+        # Byte-for-byte: the coverage block is followed by exactly one blank
+        # line before the next header, the same as every version through v107.
+        self.assertIn(
+            "\nSentence- or clause-entry routes already used in this thread:\n",
+            memory,
+        )
+        coverage_header = "Semantic contributions already covered in this thread:\n"
+        routes_header = "Sentence- or clause-entry routes already used in this thread:\n"
+        between = memory[
+            memory.index(coverage_header) + len(coverage_header) : memory.index(routes_header)
+        ]
+        self.assertTrue(between.endswith("\n\n"))
+        self.assertNotIn("Do not restate", between)
+
+    def test_semantic_coverage_nonrepeat_on_adds_the_instruction(self) -> None:
+        backend = SimpleNamespace(
+            compact=lambda value, limit: str(value)[:limit],
+            GENERALIZED_SEMANTIC_COVERAGE_NONREPEAT="on",
+        )
+        memory = prompts._thread_memory(
+            backend,
+            self._coverage_comments(),
+            current_task=self._coverage_task(),
+            domain_profile={},
+        )
+        self.assertIn(prompts.SEMANTIC_COVERAGE_NONREPEAT_INSTRUCTION, memory)
+        coverage_header = "Semantic contributions already covered in this thread:\n"
+        routes_header = "Sentence- or clause-entry routes already used in this thread:\n"
+        self.assertLess(
+            memory.index(coverage_header), memory.index(prompts.SEMANTIC_COVERAGE_NONREPEAT_INSTRUCTION)
+        )
+        self.assertLess(
+            memory.index(prompts.SEMANTIC_COVERAGE_NONREPEAT_INSTRUCTION), memory.index(routes_header)
+        )
+
+    def test_semantic_coverage_nonrepeat_does_not_touch_the_sibling_blocks(self) -> None:
+        off = prompts._thread_memory(
+            SimpleNamespace(compact=lambda value, limit: str(value)[:limit]),
+            self._coverage_comments(),
+            current_task=self._coverage_task(),
+            domain_profile={},
+        )
+        on = prompts._thread_memory(
+            SimpleNamespace(
+                compact=lambda value, limit: str(value)[:limit],
+                GENERALIZED_SEMANTIC_COVERAGE_NONREPEAT="on",
+            ),
+            self._coverage_comments(),
+            current_task=self._coverage_task(),
+            domain_profile={},
+        )
+        for header in (
+            "Short utterances already used anywhere in this thread:",
+            "Do not output one of these lines again or a trivial polarity-swapped paraphrase.",
+            "Sentence- or clause-entry routes already used in this thread:",
+            "Do not reuse one of these clause paths",
+        ):
+            self.assertIn(header, off)
+            self.assertIn(header, on)
+
+    def test_semantic_coverage_nonrepeat_instruction_carries_no_domain_vocabulary(
+        self,
+    ) -> None:
+        banned = ("camera", "lens", "sensor", "megapixel", "shutter")
+        lowered = prompts.SEMANTIC_COVERAGE_NONREPEAT_INSTRUCTION.lower()
+        for term in banned:
+            self.assertNotIn(term, lowered)
+
+    def test_the_cli_records_the_semantic_coverage_nonrepeat_arm(self) -> None:
+        source = (
+            REPO_ROOT / "generalized_card" / "scripts" / "run_generate.py"
+        ).read_text()
+        self.assertIn('"--semantic-coverage-nonrepeat"', source)
+        self.assertIn(
+            '"semantic_coverage_nonrepeat": args.semantic_coverage_nonrepeat', source
+        )
+        self.assertIn(
+            'env["GENERALIZED_CARD_SEMANTIC_COVERAGE_NONREPEAT"]', source
+        )
+        fields = source[source.index("RUN_EXPERIMENT_FIELDS = ("):]
+        self.assertIn('"semantic_coverage_nonrepeat"', fields[: fields.index(")")])
+
     def test_distribution_problem_parser_preserves_diagnostic_fields(self) -> None:
         combined = (
             "lexical_overlap_high:thread_mean_bleu4=0.20;target=0.03;"

@@ -1949,6 +1949,23 @@ def protected_numbers(text: str) -> set[str]:
     }
 
 
+# `off` (default) reproduces every version through v107: the "already
+# covered" block lists prior semantic contributions with no instruction
+# attached, unlike its two sibling blocks (short utterances, sentence
+# routes), which both already tell the Writer not to reuse what they list.
+# Read against a real chain (v103 N=10, seed002 comments 40-45): comment 45's
+# own coverage block already surfaced all five earlier "compactness doesn't
+# matter once it's in a bag" paraphrases verbatim -- the information was
+# present, nothing told the Writer what to do with it, and comment 45
+# restated the same point a sixth time. `on` appends the same style of
+# instruction its two sibling blocks already carry.
+SEMANTIC_COVERAGE_NONREPEAT_INSTRUCTION = (
+    "Do not restate one of these already-covered points in different words. "
+    "Add a genuinely new relation, consequence, caveat, or evidence type "
+    "beyond what is listed here."
+)
+
+
 def _thread_memory(
     backend: Any,
     comments: list[dict[str, Any]],
@@ -2024,6 +2041,14 @@ def _thread_memory(
         if sentence_routes
         else "- none yet"
     )
+    coverage_nonrepeat = (
+        f"{SEMANTIC_COVERAGE_NONREPEAT_INSTRUCTION}\n"
+        if str(
+            getattr(backend, "GENERALIZED_SEMANTIC_COVERAGE_NONREPEAT", "off")
+        ).strip().lower()
+        == "on"
+        else ""
+    )
     return (
         "Earlier generated comments (generated text and private controls only):\n"
         f"{rendered}\n\n"
@@ -2031,7 +2056,8 @@ def _thread_memory(
         f"{short_block}\n"
         "Do not output one of these lines again or a trivial polarity-swapped paraphrase.\n\n"
         "Semantic contributions already covered in this thread:\n"
-        f"{coverage_block}\n\n"
+        f"{coverage_block}\n"
+        f"{coverage_nonrepeat}\n"
         "Sentence- or clause-entry routes already used in this thread:\n"
         f"{route_block}\n"
         "Do not reuse one of these clause paths; keep domain entities when the local point needs them.\n\n"

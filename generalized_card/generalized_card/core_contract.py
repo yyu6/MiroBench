@@ -16,10 +16,11 @@ HISTORICAL_REVISION_POLICY_VERSIONS = {
     "generalized-card-revision-v6-dynamic-coverage-history-20260807",
 }
 GENERALIZED_V2_GENERATION_POLICY_VERSION = (
-    "generalized-card-v2-verdict-close-check-guard-v107-20260822"
+    "generalized-card-v2-semantic-coverage-nonrepeat-v108-20260823"
 )
 HISTORICAL_GENERATION_POLICY_VERSIONS = {
     "generalized-v2": {
+        "generalized-card-v2-verdict-close-check-guard-v107-20260822",
         "generalized-card-v2-digit-cue-quantifier-guard-v106-20260822",
         "generalized-card-v2-chain-scoped-reply-novelty-v105-20260822",
         "generalized-card-v2-evaluative-register-v104-20260821",
@@ -177,7 +178,7 @@ CORE_FILES = {
     ),
     "generator_adapter": (
         "generalized_card/generalized_card/backend.py",
-        "ad3f5735a318671eba3a42fe6a9256d1ee9fe9a4967ff7afe8181b97dcf2b5d2",
+        "c763489d68e16796368254d6bb2b46a188ed6dd9616902ca310da10687be7adb",
     ),
     "data_boundary": (
         "generalized_card/generalized_card/data.py",
@@ -211,7 +212,7 @@ CORE_FILES = {
     ),
     "generation_runner": (
         "generalized_card/scripts/run_generate.py",
-        "6c3c2db25f39c90489a3e9855a3bf526f7d353ff763bb5eab6b374914e4d0836",
+        "3e42d72092031e9bb49e6b60354bb263eea87d56f3c0e6bbbf1f7d34ae3b4837",
     ),
     "generation_backend_runner": (
         "generalized_card/scripts/run_generator_backend.py",
@@ -415,7 +416,7 @@ CORE_FILES = {
     ),
     "domain_prompt_adapter": (
         "generalized_card/generalized_card/prompts.py",
-        "d0d6c60755d4c7b4c61ac48705b1d4f30dc5cb1ea03df1bdc509efa9aed2955d",
+        "6d5434b08ba0cd97c0d9654c1a70b1cb1d7bf65708b4acbf637326b0aa6b575d",
     ),
     "reply_planning": (
         "generalized_card/generalized_card/reply_planning.py",

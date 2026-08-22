@@ -482,6 +482,17 @@ def configure_generator_backend(
         or "off"
     )
     set_verdict_close_guard(module.GENERALIZED_VERDICT_CLOSE_GUARD)
+    # `off` (default) reproduces the Writer prompt's "already covered" block
+    # with no instruction attached, unlike its two sibling blocks (short
+    # utterances, sentence routes), which both already tell the Writer not to
+    # reuse what they list. `on` appends the same style of instruction. See
+    # `prompts._thread_memory`.
+    module.GENERALIZED_SEMANTIC_COVERAGE_NONREPEAT = (
+        os.environ.get("GENERALIZED_CARD_SEMANTIC_COVERAGE_NONREPEAT", "off")
+        .strip()
+        .lower()
+        or "off"
+    )
     # Whether the assigned grammatical entry reaches the Writer as a drawn word
     # or as a category name. `off` reproduces every version through v101, where
     # "a short conversational connective" was realized as `Yeah,` on half the

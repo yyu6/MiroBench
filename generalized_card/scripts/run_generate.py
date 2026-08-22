@@ -335,6 +335,24 @@ def build_parser() -> argparse.ArgumentParser:
         ),
     )
     parser.add_argument(
+        "--semantic-coverage-nonrepeat",
+        choices=("off", "on"),
+        default="off",
+        help=(
+            "'off' reproduces the Writer prompt's \"already covered\" block "
+            "with no instruction attached to it, unlike its two sibling blocks "
+            "(short utterances, sentence routes), which both already tell the "
+            "Writer not to reuse what they list. Read against a real chain "
+            "(v103 N=10, seed002 comments 40-45): the later comment's own "
+            "coverage block already listed all five earlier near-paraphrases "
+            "of the same point verbatim, and it restated the point a sixth "
+            "time anyway -- the information was present, nothing told the "
+            "Writer what to do with it. 'on' appends the same style of "
+            "instruction its two sibling blocks already carry. No domain "
+            "vocabulary, no domain-profile change."
+        ),
+    )
+    parser.add_argument(
         "--opening-move",
         choices=("measured", "off"),
         default="measured",
@@ -851,6 +869,7 @@ def main() -> None:
         "register_realization": args.register_realization,
         "closing_move": args.closing_move,
         "verdict_close_guard": args.verdict_close_guard,
+        "semantic_coverage_nonrepeat": args.semantic_coverage_nonrepeat,
         "opening_move": args.opening_move,
         "evaluation_tier": args.evaluation_tier,
         "downtoner_tag": args.downtoner_tag,
@@ -1052,6 +1071,7 @@ def main() -> None:
     env["GENERALIZED_CARD_REGISTER_REALIZATION"] = args.register_realization
     env["GENERALIZED_CARD_CLOSING_MOVE"] = args.closing_move
     env["GENERALIZED_CARD_VERDICT_CLOSE_GUARD"] = args.verdict_close_guard
+    env["GENERALIZED_CARD_SEMANTIC_COVERAGE_NONREPEAT"] = args.semantic_coverage_nonrepeat
     env["GENERALIZED_CARD_OPENING_MOVE"] = args.opening_move
     env["GENERALIZED_CARD_EVALUATION_TIER"] = args.evaluation_tier
     env["GENERALIZED_CARD_DOWNTONER_TAG"] = args.downtoner_tag
@@ -1400,6 +1420,7 @@ RUN_EXPERIMENT_FIELDS = (
     "register_realization",
     "closing_move",
     "verdict_close_guard",
+    "semantic_coverage_nonrepeat",
     "opening_move",
     "evaluation_tier",
     "downtoner_tag",

@@ -62,6 +62,110 @@ Before any run that changes behavior:
 
 ---
 
+## v108 — semantic-coverage non-repeat instruction (2026-08-23)
+
+Policy ID: `generalized-card-v2-semantic-coverage-nonrepeat-v108-20260823`.
+Arm `--semantic-coverage-nonrepeat {off,on}`, default `off` (byte-for-byte
+v107 and earlier -- verified by inspection: the coverage block plus one
+blank line before the next header is unchanged when off). No domain-profile
+change. Module `generalized_card/generalized_card/prompts.py`
+(`_thread_memory`, `SEMANTIC_COVERAGE_NONREPEAT_INSTRUCTION`), wired through
+`backend.py` and `run_generate.py`.
+
+**Why, and a different category from G20/G21/G22.** `docs/DECISIONS.md`
+G22 closed `self_bertscore_mean_f1` to further *checks* -- a Writer-output
+similarity gate is forbidden (G20, `docs/ORIENTATION.md` §4), and widening
+the Planner-side plan-similarity check further has a low ceiling and
+evidenced downside (G21). This is neither: it changes what the Writer's
+*prompt* contains before the one generation call, the same category as
+every existing cue-text arm (`digit-cue-guard`, `verdict-close-guard`), not
+a check-and-reject loop.
+
+The Writer prompt already carries a "thread memory" block
+(`_thread_memory`) with four parts: recent comments, short utterances
+already used (with "do not repeat" attached), **semantic contributions
+already covered** (no instruction attached), and sentence/clause routes
+already used (with "do not reuse" attached). Read against the real
+seed002 chain that restates "compactness doesn't matter once it's in a
+bag" six times (v103 N=10, comments 40→45): comment 45's own actual
+coverage block, recomputed with the real `semantic_coverage_entries`
+function, **already listed all five earlier near-paraphrases verbatim** --
+the information was present, nothing told the Writer what to do with it,
+and it restated the point a sixth time anyway. The coverage block is the
+one of the three "already used" blocks with no instruction attached to
+it, unlike its two siblings.
+
+**The fix.** One instruction appended after the coverage block, matching
+the style already used by its two siblings:
+
+> Do not restate one of these already-covered points in different words.
+> Add a genuinely new relation, consequence, caveat, or evidence type
+> beyond what is listed here.
+
+No domain vocabulary. Does not touch `semantic_coverage_entries`'s
+selection logic (still lexical relevance, the same limitation G13 already
+found in the sibling `used_sentence_routes` mechanism -- a real, separate,
+not-yet-acted-on lead: a paraphrase that shares few literal tokens with
+the current slot could still be dropped from the capped list before this
+instruction ever gets a chance to apply to it).
+
+**Offline state.** 608/609 tests pass (5 new; the one failure is the live
+provenance guard while this version sits uncommitted, clears on commit),
+Ruff clean, 3 pins re-computed with 0 unexpected drift (`prompts.py`,
+`backend.py`, `run_generate.py`), backend self-test on and off for both
+arm values across all four registered domains (8 runs, $0, all exit 0).
+**No paid gate yet.**
+
+### Large-thread gate — predictions, written before the paid run
+
+Gate thread: seed 8 / `i1o51h`, 186 comments, the project's standing gate
+seed. Baseline is the pure "everything off" artifact
+(`v104_evaluative_seed8_20260821_v1`), the correct J6 control.
+
+**What replaying the real coverage-block builder shows on this exact
+baseline artifact** (measured, not assumed): of the 186 comments, every
+comment past the first few already receives a non-empty coverage block:
+the mechanism has something to say to it. Whether the *specific*
+already-covered points shown are close enough to what a given slot is
+about to write, and whether the Writer complies with the new instruction
+when they are, is exactly what this gate tests -- there is no cheap offline
+proxy for "does the Writer follow a one-sentence instruction it wasn't
+following implicitly," the same reason `abstract_verdict_close`'s
+existing cue still under-complies 15.2% of the time even when delivered
+(G14).
+
+**Predictions, each a named way to be wrong:**
+
+| what | v104 baseline | predicted direction | why not a precise number |
+|---|---:|---|---|
+| `self_bertscore_mean_f1` gap vs real | +0.0183 | **no confident prediction; genuinely uncertain, unlike the last three arms** | this is the first mechanism this session that reaches Writer realization directly rather than the Planner or a forbidden output check -- it could work, or the Writer could ignore a plain-language instruction the same way it under-complies with the existing, similarly-worded closing-move cue |
+| qualitative: does the seed002-style restatement pattern recur on this thread | present at baseline (this thread doesn't have that exact chain, but its own deep bins show the same shape) | fewer near-identical restatements in the deepest bins if the mechanism works at all | one thread, small n of any single restatement pattern |
+
+**Guardrails:** `self_bleu_4` must not measurably worsen (the instruction
+asks for a new relation, not a stylistic change). `hard_disagree_rate`/
+`polite_rate`/`impolite_rate` should stay within this thread's own noise --
+this arm touches only the coverage block's trailing instruction, nothing
+about stance or tone. `avg_depth`/`structural_virality` are structural and
+must not move. Prompt length should grow by roughly one sentence per slot
+past the first few, not measurably more (no scaling change to the
+coverage block itself).
+
+Command, run after this entry was committed:
+
+```bash
+python3 -u generalized_card/scripts/run_generate.py \
+  --tag v108_semantic_coverage_nonrepeat_seed8_20260823_v1 --domain camera \
+  --model gpt-5.4-mini --base-url https://api.openai.com/v1 \
+  --api-key-env LLM_API_KEY --pool-size 150 --max-posts 1 --posts-per-run 1 \
+  --start-seed-index 8 --sampling-seed 42 \
+  --semantic-coverage-nonrepeat on --resume
+
+python3 generalized_card/scripts/run_evaluate.py \
+  --tag v108_semantic_coverage_nonrepeat_seed8_20260823_v1 --metric-parallel 5 --resume
+```
+
+---
+
 ## N=10 gate — `--digit-cue-guard on --verdict-close-guard on` combined (predictions, 2026-08-22)
 
 No new policy version: both arms already exist (v106, v107), each verified
