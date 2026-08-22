@@ -103,12 +103,30 @@ number looked worst:
             even where its cue reaches the Writer -- v100's fix reduced the
             tic, it did not close it. See `docs/DECISIONS.md` G13/G14,
             `generalized_card/VERSION_LOG.md` v107.
-      - [ ] **Not yet gated.** v107 needs its own large-thread gate before
-            deciding anything about a default flip or an N=10 run. Given
-            v105/v106's gate on this exact thread already moved several
-            secondary metrics unpredictably on N=1, do not stack a third
-            ungated arm onto the same seed-8 gate without deciding first
-            whether to isolate v107 or combine it with v105/v106 again.
+      - [x] **Gated 2026-08-22, isolated (seed 8, $1.1637):** decided to
+            isolate rather than stack, since v105 was already falsified as
+            this metric's driver and stacking a third change onto v105+v106's
+            already-noisy secondary metrics would make any result
+            unattributable. Result: the check-variant is fully eliminated
+            (3/106→0/106, below real). `self_bertscore_mean_f1`'s gap on this
+            thread **narrowed for the first time across four gates**
+            (+0.0183→+0.0173), specifically in the two deepest reply-chain
+            bins ([4,7) and [7,+)) — the same two bins v105+v106's gate had
+            worsened. Still N=1, descriptive only; default stays `off`. See
+            `docs/DECISIONS.md` G15, `generalized_card/VERSION_LOG.md` v107
+            gate result.
+      - [ ] **Next decision (flagged to the user, not decided solo — a ~10x
+            cost jump from a one-thread gate):** run a statistically powered
+            N=10 pool with `--digit-cue-guard on --verdict-close-guard on`
+            (both independently gated as clean or favorable; `--reply-novelty-scope
+            chain` stays excluded/`parent_only` — its only gate evidence shows
+            it worsening the exact depth bins it targeted). A single thread's
+            guardrail noise this session (`hard_disagree_rate`,
+            `mean_story_probability`, `emotion_entropy` all moved by amounts
+            that look like regeneration noise, not either fix) is too large
+            to read a two-armed combination on N=1 with any confidence —
+            real MWU/KS/Cliff numbers need the N=10 pool, not another single
+            thread.
 
       Two follow-ups run, both offline: (1) the real-side direction
       generalizes -- checked on 247 of the 424 excluded threads with the cheap

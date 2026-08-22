@@ -394,6 +394,99 @@ python3 generalized_card/scripts/run_evaluate.py \
   --tag v107_verdict_close_guard_seed8_20260822_v1 --metric-parallel 5 --resume
 ```
 
+### Gate result — 2026-08-22. First arm across four gates to move `self_bertscore_mean_f1` in the right direction on its own gate thread
+
+Run `v107_verdict_close_guard_seed8_20260822_v1`, seed 8, 184 usable comments,
+**$1.1637**, 18.3 min generation. Credential used: `LLM_API_KEY` from
+`third_party/MiroFish/.env`, confirmed by the user. Isolated: only
+`--verdict-close-guard on`; `--reply-novelty-scope` and `--digit-cue-guard`
+stayed at their `parent_only`/`off` defaults.
+
+**The targeted defect closed exactly where predicted, and further than
+predicted** (`verdict_close_diagnosis.py` on the new artifact, same thread,
+against the v104 baseline row measured before spending):
+
+| population (seed 8 thread) | existing pattern | check-variant (new) |
+|---|---:|---:|
+| v104 baseline (all arms off) | 0.1887 (20/106) | 0.0283 (3/106) |
+| v107 (guard on, isolated) | 0.1132 (12/106) | **0.0000 (0/106)** |
+| evaluation-excluded real | 0.0129 | 0.0005 |
+
+The check-variant, the thing this fix actually targets, is fully gone on this
+thread — better than the predicted "down toward real," landing below real's
+own rate. The existing-pattern rate also fell, further than predicted ("not
+expected to move"), but this fix touches neither `abstract_verdict_close`'s
+cue text nor its detection pattern, and the unrelated v105+v106 gate showed a
+same-direction drop on this identical measurement (0.1887→0.1296) that had
+nothing to do with this mechanism either — read as run-to-run sampling noise
+on one regenerated thread, not credited to this fix without more evidence.
+
+**`self_bertscore_mean_f1` moved, for the first time across four gates, in
+the favorable direction on its own gate thread:** gap vs real (`i1o51h`, same
+thread all four times) v104 **+0.01834** → v107 **+0.01726** (Δ −0.00108).
+Small, and still one thread (`inferential_status: DESCRIPTIVE`, `cliffs_delta`
+computed on N=1 is not a real inferential test) — but this is the first arm
+of the four gated so far (v104, v105+v106, now v107) that did not leave this
+metric flat or worse.
+
+**Decomposed by depth, isolated to this one thread, fidelity-checked against
+the shipped artifact before reading it** (`bertscore_pair_diagnosis.py depth`):
+
+| depth range | v104 excess | v107 excess | |
+|---|---:|---:|---|
+| [0,1) root-root | +0.0111 | +0.0061 | improved |
+| [1,2) | -0.0021 | -0.0006 | ~flat |
+| [2,4) | +0.0121 | +0.0157 | worse |
+| [4,7) | +0.0209 | +0.0177 | improved |
+| [7,+) | +0.0401 | **+0.0274** | improved, largest single move |
+
+The deepest bin — where a long, winding-down reply is most likely to reach
+for a closing verdict — improved the most (-0.0127). This is the mechanism
+working exactly where it should: v105+v106's gate *worsened* these same two
+deep bins ([2,4) and [7,+)); v107 improves both except [2,4), which moves the
+other way here too, by a smaller margin than v105+v106 moved it. Not run
+against a matched pair of the same thread with the guard off but everything
+else identical — the counterfactual is the v104 baseline artifact, not a
+same-artifact ablation — so this is evidence, not proof, that this specific
+fix is what moved the deep bins, but the mechanism (a check/test closing
+disproportionately ends long, deep-thread comments) makes the correlation a
+plausible causal story rather than a coincidence.
+
+**Guardrails, read against the v104 baseline (not the v106 gate, which is a
+different arm combination):** `self_bleu_4` +0.00021 (flat: +0.00664→+0.00685,
+not a violation). `avg_depth`/`structural_virality` essentially flat
+(structural, copied from the real tree, as required). `hard_disagree_rate`
+moved *away* from real and further than v104's own gap (-0.02296→+0.03682,
+|gap| grew) — flagged, not chased, single thread; v107 touches no stance
+mechanism. `mean_story_probability` moved away from real again
+(+0.02313→+0.03719) — the *same direction* it moved on the unrelated v106
+gate (+0.0454 there too), which is evidence this specific movement is
+thread-level regeneration noise rather than something either gate's arm
+caused, since the two gates share no mechanism that touches story framing.
+`emotion_entropy` moved toward real again (-0.409→-0.311), also the same
+direction as the v106 gate (+0.141 there) — same read: noise, not an effect
+of either fix. `neutral_rate` moved closer to real (gap -0.0209→+0.0063).
+`polite_rate`/`impolite_rate` moved slightly further from real, consistent
+with G4/G8 (deprioritized, not gamed for).
+
+**Decision: default stays `off`.** This is the first favorable
+`self_bertscore_mean_f1` result of four gates, but it is still one thread
+read descriptively, per this project's own "a gate is one thread" discipline
+(J6) — not grounds to flip a default. `--digit-cue-guard on` (v106, criterion-2
+clean win) and `--verdict-close-guard on` (v107, criterion-2 clean win plus
+the first favorable primary-metric nudge) are now two independently gated,
+non-conflicting fixes with no evidence either hurts the other (they touch
+different code paths, digit habit vs. closing move). `--reply-novelty-scope
+chain` (v105) stays `parent_only`: it is a real, verified plan-level fix, but
+its only gate evidence so far shows it *worsening* the exact depth bins it
+targeted, so it is not bundled into what should go forward. The natural next
+paid step is a statistically powered comparison — the N=10 pool, not another
+single thread — running `--digit-cue-guard on --verdict-close-guard on`
+together, since single-thread descriptive reads cannot separate a real
+2-gate effect from this thread's own noise, which the guardrails above show
+is not small. Flagged to the user as a spend decision, not decided
+unilaterally, given the roughly 10x cost jump from a one-thread gate.
+
 ---
 
 ## v105 — chain-scoped reply novelty (2026-08-22)

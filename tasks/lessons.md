@@ -1698,3 +1698,34 @@ issue") from it.
   is already loaded to score them) and catches things aggregate statistics
   average away -- do it every time, not only when a hypothesis is stuck.
 
+
+## Two unrelated arms moving the same secondary metric the same direction is evidence of thread noise, not of either arm
+
+**What happened.** The v105+v106 gate (seed 8) moved `mean_story_probability`
+away from real (+0.0454) and `emotion_entropy` toward real (+0.1414), neither
+of which either mechanism (reply-novelty scope, digit-cue wording) has any
+path to affect. The v107 gate, on the same thread, with a *different* and
+unrelated arm (`closing_move.py` wording only), moved both metrics again --
+`mean_story_probability` away from real, `emotion_entropy` toward real, same
+directions, roughly the same shape. Neither v106 nor v107 shares a code path
+that touches story framing or emotion labeling.
+
+**Why this matters.** On a single-thread (N=1) gate, a metric moving is
+ordinarily unattributable in either direction -- but two *independent* gates,
+testing two mechanisms that touch disjoint code, producing the *same*
+direction on a metric neither targets, is itself a usable signal: it means
+the movement is a property of regenerating this one thread from scratch
+(sampling variance), not an effect of whichever arm happened to be on. This
+doesn't require a third gate to test -- it falls out of comparing two gates
+that already ran for other reasons.
+
+**How to apply.**
+- When reading a gate's guardrail table, check prior gates on the *same*
+  thread for the *same* metric before writing "unpredicted, flagged, not
+  chased." If an unrelated arm moved it the same way, say so explicitly --
+  it reclassifies the finding from "maybe a side effect of this fix" to
+  "this thread's own regeneration noise," which is a stronger and cheaper
+  claim than either an ablation or a second paid run would buy.
+- Keep every gate's full guardrail table in `VERSION_LOG.md` even for
+  metrics the arm doesn't target -- they are the only free source of this
+  cross-gate comparison later.
