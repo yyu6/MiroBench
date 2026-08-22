@@ -119,6 +119,36 @@ ACTIVE_CLOSING_PROFILE: dict[str, Any] = {}
 # how a comment ends.
 CLOSING_MOVE_ENABLED = True
 
+# `off` (default) reproduces `abstract_verdict_close`'s suppression wording
+# unmodified. `on` widens the *suppression cue only* -- not the measurement
+# pattern above, so no domain profile rebuild is needed -- to also name "a
+# check"/"a test" as the same move. Measured on the v103 N=10 artifact and
+# the v106 gate: even where `abstract_verdict_close`'s existing wording
+# reaches the Writer, the closing tic it targets still lands at 0.130-0.166
+# of comments 25+ words against a real 0.013 (10-13x), and a "that's the
+# check"/"a solid check" variant this wording never named adds another
+# 0.007-0.019 against a real 0.0005 (13-37x) on top of it -- on the v106
+# gate thread specifically, at nearly 3x the v103 rate, plausibly because
+# forcing a different novelty angle per reply (v105) pushes the Writer
+# toward this as a generic fallback move when it runs out of new specific
+# content to name. See `docs/DECISIONS.md` G14/G15.
+VERDICT_CLOSE_GUARD_ENABLED = False
+_VERDICT_CLOSE_GUARDED = (
+    "Do not end by saying what matters, what the real question is, what it "
+    "comes down to, or what your take is. Naming a check or a test at the "
+    "very end is the same move in different words -- \"that's the check\", "
+    "\"a solid check\", \"that's the real test\" -- so it is included too. "
+    "Stop on the thing itself."
+)
+
+
+def set_verdict_close_guard(mode: str) -> bool:
+    """Select the verdict-close quantifier-style guard and return whether on."""
+
+    global VERDICT_CLOSE_GUARD_ENABLED
+    VERDICT_CLOSE_GUARD_ENABLED = str(mode or "off").strip().lower() == "on"
+    return VERDICT_CLOSE_GUARD_ENABLED
+
 
 def set_active_closing_profile(profile: dict[str, Any] | None) -> None:
     """Install the frozen per-domain closing profile for this run."""
@@ -262,7 +292,14 @@ def closing_guidance(
         drawn = slot_uses_move(
             profile, slot_key=slot_key, move=spec["name"], word_count=words
         )
-        cue = spec["cue"] if drawn else spec["suppress_cue"]
+        if (
+            not drawn
+            and spec["name"] == "abstract_verdict_close"
+            and VERDICT_CLOSE_GUARD_ENABLED
+        ):
+            cue = _VERDICT_CLOSE_GUARDED
+        else:
+            cue = spec["cue"] if drawn else spec["suppress_cue"]
         if cue:
             parts.append(cue)
     if not parts:

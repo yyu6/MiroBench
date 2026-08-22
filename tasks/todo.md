@@ -80,18 +80,35 @@ number looked worst:
       `docs/DECISIONS.md` G13 and `generalized_card/VERSION_LOG.md`'s v106
       gate result for the full pair evidence.
 
-      - [ ] **New next step: a template-reuse mechanism for `self_bertscore_mean_f1`,
-            not a repeat of the chain-novelty fix.** Needs its own diagnosis
-            before building anything: measure how often this happens on the
-            excluded real corpus (do real threads reuse an opener/closer
-            *frame* with a varying slot, and at what rate?), then decide
-            whether the fix is a smarter route ledger (structural n-gram
-            match, not literal) or something else. Do not build before
-            falsifying, per §4 step 3 -- this is offline and free.
-      - [ ] Do **not** spend on an N=10 run for `chain`/`digit-cue-guard on`
-            until the template-reuse mechanism is at least diagnosed. The
-            gate already shows the metric won't move from these two arms
-            alone.
+      - [x] **The template-reuse hypothesis above was measured at scale and
+            REJECTED, same day.** `analysis/template_reuse_diagnosis.py`:
+            generated's within-thread opener/closer near-duplicate rate
+            (0.0016/0.0005) is indistinguishable from matched real's
+            (0.0009/0.0003) and an 80-thread real null (0.0012/0.0005). The
+            8 examples were real text, not fabricated -- they were an
+            extreme tail real threads produce at a comparable rate. Same
+            trap as v98's rejected "duplication tail" hypothesis. Do not
+            build a route-ledger-style fix for this; there is nothing to fix.
+      - [x] **What the same 8 examples actually were, read again:** three
+            opener-side ("@OP, ..." -- a different mechanism,
+            `opener_profile.py`, not chased further this session), and the
+            closer-side ones are a lexical variant of the already-known
+            `abstract_verdict_close` tic (`closing_move.py`, chased since
+            v73, v100's fix) using "check"/"test" as the head noun, which
+            the existing pattern's word list never named. Shipped as v107,
+            `--verdict-close-guard {off,on}`, default `off`. Offline-verified
+            across all four domains (self-test, 8 runs, $0). **More
+            important number found along the way:** the *existing*
+            `abstract_verdict_close` suppression is still 10-13x over real
+            even where its cue reaches the Writer -- v100's fix reduced the
+            tic, it did not close it. See `docs/DECISIONS.md` G13/G14,
+            `generalized_card/VERSION_LOG.md` v107.
+      - [ ] **Not yet gated.** v107 needs its own large-thread gate before
+            deciding anything about a default flip or an N=10 run. Given
+            v105/v106's gate on this exact thread already moved several
+            secondary metrics unpredictably on N=1, do not stack a third
+            ungated arm onto the same seed-8 gate without deciding first
+            whether to isolate v107 or combine it with v105/v106 again.
 
       Two follow-ups run, both offline: (1) the real-side direction
       generalizes -- checked on 247 of the 424 excluded threads with the cheap

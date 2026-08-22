@@ -244,6 +244,91 @@ process exists to prevent. The next paid step, if any, should follow a
 sentence-template mechanism for `self_bertscore_mean_f1`, not a repeat of
 this one at larger N. See `docs/DECISIONS.md` G13 and `tasks/todo.md`.
 
+### Follow-up, same day: the sentence-template hypothesis rejected at scale; a different, real lead found instead
+
+The gate result above ended on "the next paid step needs a sentence-template
+mechanism." Before building one, per §4 step 3, the hypothesis was measured
+at scale (`analysis/template_reuse_diagnosis.py`) rather than trusted from 8
+examples: within-thread opener/closer clause embedding similarity, generated
+vs real. **Rejected.** Generated's near-duplicate rate (opener 0.0016, closer
+0.0005, pooled over the v103 10-thread pool and the v106 gate combined) is
+barely above matched real's (0.0009/0.0003) and indistinguishable from an
+80-thread evaluation-excluded real null (0.0012/0.0005). The 8 examples were
+real text, not a fabrication -- they were the extreme tail of a statistic
+real threads produce at a comparable rate. Same trap as v98's rejected
+"duplication tail" hypothesis, on a different metric: a vivid top-of-list
+read does not generalize just because it is vivid.
+
+Reading those same 8 examples again for *what* they actually were (rather
+than assuming "generic template") found something narrower and real: three
+were opener-side ("@OP, ...", a separate mechanism, `opener_profile.py`, not
+chased further this session), and the closer-side ones -- "Plate flush on
+the mount. That's the check", "that's a solid check" -- are a lexical
+variant of `closing_move.py`'s already-known `abstract_verdict_close` tic
+(chased since v73, v100's fix), using "check"/"test" as the head noun where
+the existing measured pattern only recognizes "matters/the real thing/the
+part/...". Measured directly (`analysis/verdict_close_diagnosis.py`): this
+variant is real and elevated (13-37x real depending on population), and,
+more importantly, **the pattern v100's fix already targets is still
+10-13x over real even where its suppression cue reaches the Writer** -- the
+existing fix reduced the tic, it did not close it. See v107 below.
+
+---
+
+## v107 — verdict-close check-variant guard (2026-08-22)
+
+Policy ID: `generalized-card-v2-verdict-close-check-guard-v107-20260822`.
+Arm `--verdict-close-guard {off,on}`, default `off` (byte-for-byte v106 and
+earlier). No domain-profile change -- this widens the Writer-facing
+suppression cue only, not `closing_move.py`'s measurement pattern, so no
+profile rebuild is needed. Module
+`generalized_card/generalized_card/closing_move.py`
+(`set_verdict_close_guard`, `_VERDICT_CLOSE_GUARDED`). Reproduce with
+`generalized_card/analysis/verdict_close_diagnosis.py`.
+
+**Why.** Found reading the v106 gate's actual pairs while diagnosing why
+`self_bertscore_mean_f1` didn't move (`docs/DECISIONS.md` G13/G14). The
+generic "sentence-template reuse" story that motivated looking was rejected
+at scale (see the v106 follow-up above); what survived is narrower: a
+"that's the check"/"a solid check" closing is a lexical variant of the
+already-known, already-partially-fixed `abstract_verdict_close` tic that the
+existing pattern's word list never named.
+
+**Measured, including the more important number.** `verdict_close_diagnosis.py`
+on the last sentence of every 25+-word comment:
+
+| population | existing pattern | check/test variant (new) |
+|---|---:|---:|
+| v103 N=10 generated | 0.166 | 0.0065 |
+| v106 gate (seed 8) | 0.130 | 0.0185 |
+| evaluation-excluded real | 0.013 | 0.0005 |
+
+The new variant alone is 13-37x real's rate. But the *existing* pattern --
+the one `closing_move.py`'s "measured" arm has suppressed since v100 -- is
+**still 10-13x over real**, on artifacts built well after that fix shipped.
+Decomposed on the v106 gate: of the 25+-word slots whose prompt actually
+carried the suppression cue, **15.2% still produced the tic anyway** (too
+few cue-absent slots on one thread, n=9, to read that side confidently).
+v100's fix reduced the tic; it did not close it, and this session is the
+first time that gap was measured directly rather than assumed closed because
+an arm exists.
+
+**The fix is deliberately narrow.** It widens `_VERDICT_CLOSE_GUARDED`'s
+wording to name the check/test variant explicitly, without touching
+`abstract_verdict_close`'s detection pattern or measured rate -- extending
+the *measurement* would require a profile rebuild across all four domains
+with a fresh zero-seed-overlap check, which this session did not have
+evidence yet to justify. The 10-13x shortfall in the *existing* pattern is
+left as an open question (`docs/DECISIONS.md` G14) -- possibly a coverage
+gap (not every slot receives the cue) rather than a compliance gap; the v106
+gate's single thread cannot separate the two.
+
+**Offline state.** 603 tests pass (the provenance guard clears on commit,
+same as v105/v106), Ruff clean, 3 pins re-computed with 0 unexpected drift
+(`closing_move.py`, `backend.py`, `run_generate.py`), both parity scopes
+healthy, backend self-test on and off for both arm values across all four
+registered domains (8 runs, $0, all exit 0). **No paid gate yet.**
+
 ---
 
 ## v105 — chain-scoped reply novelty (2026-08-22)

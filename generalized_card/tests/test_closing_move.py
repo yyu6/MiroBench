@@ -162,12 +162,40 @@ class GuidanceTest(unittest.TestCase):
     def tearDown(self) -> None:
         cm.set_closing_move("measured")
         cm.set_active_closing_profile({})
+        cm.set_verdict_close_guard("off")
 
     def test_a_suppressed_verdict_renders_its_negative_cue(self) -> None:
         prof = profile({"medium": {"abstract_verdict_close": 0.0}})
         text = cm.closing_guidance(prof, slot_key="a", word_count=40)
         self.assertIn("Closing move:", text)
         self.assertIn("Do not end by saying what matters", text)
+
+    def test_verdict_close_guard_default_is_the_legacy_wording(self) -> None:
+        prof = profile({"medium": {"abstract_verdict_close": 0.0}})
+        text = cm.closing_guidance(prof, slot_key="a", word_count=40)
+        self.assertNotIn("check", text.lower())
+
+    def test_verdict_close_guard_on_names_the_check_test_variant(self) -> None:
+        cm.set_verdict_close_guard("on")
+        prof = profile({"medium": {"abstract_verdict_close": 0.0}})
+        text = cm.closing_guidance(prof, slot_key="a", word_count=40)
+        self.assertIn("Closing move:", text)
+        self.assertIn("Do not end by saying what matters", text)
+        self.assertIn("that's the check", text.lower())
+
+    def test_verdict_close_guard_does_not_touch_a_drawn_verdict(self) -> None:
+        """No positive cue either way -- the point is not to ask for one."""
+
+        cm.set_verdict_close_guard("on")
+        prof = profile({"medium": {"abstract_verdict_close": 1.0}})
+        self.assertEqual(cm.closing_guidance(prof, slot_key="a", word_count=40), "")
+
+    def test_verdict_close_guard_does_not_touch_other_moves(self) -> None:
+        cm.set_verdict_close_guard("on")
+        prof = profile({"medium": {"own_concrete_close": 1.0}})
+        text = cm.closing_guidance(prof, slot_key="a", word_count=40)
+        self.assertIn("End on something concrete of your own", text)
+        self.assertNotIn("check", text.lower())
 
     def test_a_drawn_verdict_renders_nothing_for_that_move(self) -> None:
         """It has no positive cue: the point is not to ask for a verdict."""
@@ -233,6 +261,11 @@ class GuidanceTest(unittest.TestCase):
                 for word in banned:
                     self.assertNotIn(word, cue.lower(), spec["name"])
 
+    def test_the_verdict_close_guard_text_carries_no_domain_vocabulary(self) -> None:
+        banned = ("camera", "lens", "photo", "sensor", "iso", "shutter", "zoom")
+        for word in banned:
+            self.assertNotIn(word, cm._VERDICT_CLOSE_GUARDED.lower())
+
     def test_the_active_profile_is_read_at_call_time(self) -> None:
         self.assertEqual(
             cm.active_closing_guidance(slot_key="a", word_count=40), ""
@@ -271,12 +304,19 @@ class AuditTest(unittest.TestCase):
 class ArmTest(unittest.TestCase):
     def tearDown(self) -> None:
         cm.set_closing_move("measured")
+        cm.set_verdict_close_guard("off")
 
     def test_the_arm_switch_reports_its_state(self) -> None:
         self.assertTrue(cm.set_closing_move("measured"))
         self.assertFalse(cm.set_closing_move("off"))
         self.assertFalse(cm.set_closing_move("  OFF "))
         self.assertTrue(cm.set_closing_move(None))
+
+    def test_the_verdict_close_guard_switch_reports_its_state(self) -> None:
+        self.assertFalse(cm.set_verdict_close_guard("off"))
+        self.assertFalse(cm.set_verdict_close_guard(None))
+        self.assertTrue(cm.set_verdict_close_guard("on"))
+        self.assertTrue(cm.set_verdict_close_guard("  ON "))
 
 
 class WiringTest(unittest.TestCase):
@@ -293,6 +333,14 @@ class WiringTest(unittest.TestCase):
         self.assertIn('env["GENERALIZED_CARD_CLOSING_MOVE"]', source)
         fields = source[source.index("RUN_EXPERIMENT_FIELDS = ("):]
         self.assertIn('"closing_move"', fields[: fields.index(")")])
+
+    def test_the_cli_records_the_verdict_close_guard_arm(self) -> None:
+        source = (PACKAGE_ROOT / "scripts" / "run_generate.py").read_text()
+        self.assertIn('"--verdict-close-guard"', source)
+        self.assertIn('"verdict_close_guard": args.verdict_close_guard', source)
+        self.assertIn('env["GENERALIZED_CARD_VERDICT_CLOSE_GUARD"]', source)
+        fields = source[source.index("RUN_EXPERIMENT_FIELDS = ("):]
+        self.assertIn('"verdict_close_guard"', fields[: fields.index(")")])
 
     def test_the_profile_is_stored_and_the_schema_bumped(self) -> None:
         source = (PACKAGE_ROOT / "generalized_card" / "domain_profile.py").read_text()

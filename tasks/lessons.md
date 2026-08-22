@@ -1565,6 +1565,38 @@ average that out).
 - Do not fund a bigger N to confirm a direction a single gate thread already
   failed to show, no matter how correct the mechanism is confirmed to be.
 
+## A rejected hypothesis's own examples can still be the answer -- read them again for what they specifically are
+
+**What happened.** Reading the v106 gate's 8 highest-scoring pairs suggested
+"generic sentence-template reuse" -- a new mechanism to build. Measured at
+scale (`template_reuse_diagnosis.py`), that story was rejected: real threads
+produce the same near-duplicate opener/closer rate. The natural next move
+would have been to drop the finding entirely. Instead, the same 8 examples
+were read again, this time asking what each specifically was rather than
+what general category they belonged to. Three were opener-side (a different,
+already-existing mechanism). The closer-side ones turned out to be a lexical
+variant of `closing_move.py`'s already-known, already-partially-fixed
+`abstract_verdict_close` tic -- using "check"/"test" instead of "matters"/
+"the real thing" -- which is real, elevated, and actionable as a small
+extension to an existing mechanism, not a new one.
+
+**Why:** a hypothesis can be wrong at the level it was stated (a new,
+general phenomenon) while the raw observations that motivated it are still
+real and still explainable -- just by something narrower and already named.
+Rejecting the generalization is correct; discarding the underlying examples
+along with it would have thrown away a real, cheap, already-half-built fix.
+
+**How to apply.**
+- When a generalization is rejected by scale, do not close the file on the
+  examples that inspired it. Re-read each one asking "what specifically is
+  this" rather than re-asking "does the general story hold."
+- Check whether a specific example matches an *existing, already-diagnosed*
+  mechanism in this codebase before assuming it needs a new one --
+  `docs/ORIENTATION.md`'s per-metric table and the module docstrings
+  (`closing_move.py`, `opener_profile.py`, etc.) name the known families.
+  This is cheaper to check than it is to design something new, and it is
+  exactly this project's own architecture: name the move, not the phrase.
+
 ## A required quality gate can be silently inert -- measure whether it fires before trusting or extending it
 
 **What happened.** The approved plan was to extend `reply_increment_problem`'s

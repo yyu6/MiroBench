@@ -103,7 +103,11 @@ from . import sentence_rhythm
 # Same reason as `sentence_rhythm` above: `set_active_register_profile` rebinds a
 # module global.
 from . import closing_move
-from .closing_move import set_active_closing_profile, set_closing_move
+from .closing_move import (
+    set_active_closing_profile,
+    set_closing_move,
+    set_verdict_close_guard,
+)
 from . import evaluative_register
 from . import opening_move
 from .evaluative_register import (
@@ -470,6 +474,14 @@ def configure_generator_backend(
         or "measured"
     )
     set_closing_move(module.GENERALIZED_CLOSING_MOVE)
+    # `off` (default) reproduces `abstract_verdict_close`'s suppression wording
+    # unmodified. `on` widens it to also name the "check"/"test" variant. See
+    # `closing_move.py`.
+    module.GENERALIZED_VERDICT_CLOSE_GUARD = (
+        os.environ.get("GENERALIZED_CARD_VERDICT_CLOSE_GUARD", "off").strip().lower()
+        or "off"
+    )
+    set_verdict_close_guard(module.GENERALIZED_VERDICT_CLOSE_GUARD)
     # Whether the assigned grammatical entry reaches the Writer as a drawn word
     # or as a category name. `off` reproduces every version through v101, where
     # "a short conversational connective" was realized as `Yeah,` on half the
