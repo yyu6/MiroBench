@@ -1770,3 +1770,51 @@ variance obscures at n=1.
   and by pair population before writing off the mechanism. The mechanism
   may be real and the *metric's own aggregation* (equal-weight thread mean,
   not equal-weight pair mean) may be what's hiding it.
+
+## Read the full existing code path before designing a new mechanism -- a non-negotiable project rule almost got violated
+
+**What happened.** Tasked with designing a structural fix for
+`self_bertscore_mean_f1` (option 2 from the prior turn: enforce
+depth-conditioned reply diversity), the natural next design was a real-time
+guard that embeds the Writer's candidate text, compares it against the
+in-thread pool with a depth-conditioned ceiling calibrated from real data,
+and forces a rewrite through the existing bounded-recovery loop on a trip.
+Before wiring this, a `grep` for the repair-loop entry point
+(`generate_writer_text_with_guards`, `backend.py`) surfaced that a
+structurally near-identical mechanism *already exists*
+(`semantic_thread_diagnostics`/`semantic_distribution_problem`,
+`generation_diversity.py`) -- it already embeds candidate + previous
+comments with the same semantic index, computes a proposed thread-mean, and
+compares it to a real-derived band. It is deliberately wired as
+diagnostic-only: `docs/ORIENTATION.md` §4's "What may never happen" states,
+non-negotiably, "Distribution diagnostics never select a Writer candidate.
+Only output that cannot be persisted gets bounded recovery." The planned
+guard would have been the same category of mechanism this rule was written
+to forbid, just depth-conditioned instead of whole-thread-mean-conditioned.
+
+**Why:** the rule exists to protect *construct validity* -- if the generator
+directly resamples text until it satisfies a check shaped like the eval
+metric's own computation, "the metric moves" stops being evidence that
+generated text has become more realistic, and starts being evidence the
+generator learned to satisfy the checker. `reply_increment_problem`
+(v105) is fine because it operates on Planner-authored structured plan
+fields (a discourse-structure contract), not on Writer candidate text
+compared against a metric-shaped band.
+
+**How to apply.**
+- Before designing *any* new generation-time mechanism, grep the actual
+  insertion point in the pipeline it would need to hook into
+  (`generate_writer_text_with_guards`, `evaluate_plan_batch`, etc.) and read
+  every existing check already wired there -- not just search for the
+  metric name or the obvious keyword. A structurally similar mechanism may
+  already exist, deliberately built differently (or deliberately kept
+  soft), for a reason recorded in `docs/ORIENTATION.md` §4.
+- `docs/ORIENTATION.md` §4's "What may never happen" list is short and
+  non-negotiable -- read it explicitly, by name, before proposing any
+  mechanism that touches Writer candidate selection, resampling, or
+  rejection. Do not rely on remembering it from an earlier read.
+- A mechanism that inspects actual generated *text* and compares it to
+  something metric-shaped (an embedding band, a target rate) belongs in the
+  diagnostic-only category unless a clear, separate argument is made for why
+  this case is different -- default to the Planner/plan-structure category
+  (`reply_increment_problem`-style) instead.
