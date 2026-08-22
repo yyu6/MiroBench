@@ -62,6 +62,76 @@ Before any run that changes behavior:
 
 ---
 
+## N=10 gate — `--digit-cue-guard on --verdict-close-guard on` combined (predictions, 2026-08-22)
+
+No new policy version: both arms already exist (v106, v107), each verified
+offline across all four domains and each independently gated on the seed-8
+single thread. `--reply-novelty-scope` stays `parent_only` (default) —
+excluded, because its only gate evidence (G11/G13) shows it *worsening* the
+exact `self_bertscore_mean_f1` depth bins it targeted. This run tests whether
+the two clean single-thread results replicate at a statistically powered
+N=10, which a single thread's own regeneration noise (documented on both the
+v106 and v107 gates — `tasks/lessons.md`, "two unrelated arms moving the same
+metric the same direction") cannot settle.
+
+**Baseline — the last true N=10 run, unchanged control per J6**
+(`generalized_card_camera_gpt54_v103_stance_opening_n10_20260821_v1`, 532
+comments, paired seeds `--start-seed-index 2 --sampling-seed 42 --max-posts
+10`; neither guard existed then):
+
+| metric | real | v103 (arms off) | gap | Cliff | status |
+|---|---:|---:|---:|---:|---|
+| `self_bertscore_mean_f1` | 0.4942 | 0.5097 | +0.0169 | 0.86 | FAIL |
+| `self_bleu_4` | 0.0278 | 0.0325 | +0.0040 | 0.40 | PASS |
+| `hard_disagree_rate` | 0.1208 | 0.0920 | -0.0243 | -0.23 | PASS |
+| `polite_rate` | 0.3085 | 0.1258 | -0.2515 | -0.60 | PARTIAL |
+| `impolite_rate` | 0.4041 | 0.5948 | +0.1837 | 0.61 | FAIL |
+| `mean_story_probability` | 0.1266 | 0.1219 | -0.0184 | -0.14 | PASS |
+| `emotion_entropy` | 1.5803 | 1.7092 | -0.0220 | 0.02 | PASS |
+
+**Predictions**, each stated as a way to be wrong:
+
+- `self_bertscore_mean_f1`: **narrower gap, not closed to PASS.** Both arms'
+  single-thread gates moved this metric by roughly ±0.001-0.004 on one
+  thread; at N=10 pooled that is a small fraction of the +0.0169 pooled gap.
+  A gap under ~0.012 (Cliff below ~0.65) would be a genuine surprise, not the
+  expected case.
+- The two criterion-2 tells (`digit_cue_diagnosis.py`, `verdict_close_diagnosis.py`)
+  should both land near real's rate corpus-wide, replicating the single-thread
+  result at scale — this is the actual bet this run is placing.
+- `hard_disagree_rate`, `mean_story_probability`, `emotion_entropy`: **no
+  confident prediction.** Both single-thread gates moved these by amounts
+  that read as thread-level regeneration noise, not either arm's effect
+  (`tasks/lessons.md`); at N=10 that noise should average out, so these
+  should land close to the v103 baseline row above, not repeat the
+  single-thread swings.
+- `self_bleu_4` must not measurably worsen (neither arm touches lexical
+  diversity by design).
+- `polite_rate`/`impolite_rate` are not expected to move — out of scope for
+  both arms, already flagged G4/G8 as likely not closable without gaming.
+
+**Commands:**
+
+```bash
+python3 -u generalized_card/scripts/run_generate.py \
+  --tag generalized_card_camera_gpt54_v107_digit_verdict_n10_20260822_v1 \
+  --domain camera --model gpt-5.4-mini \
+  --base-url https://api.openai.com/v1 --api-key-env LLM_API_KEY \
+  --pool-size 150 --max-posts 10 --posts-per-run 5 \
+  --start-seed-index 2 --sampling-seed 42 \
+  --digit-cue-guard on --verdict-close-guard on --resume
+
+python3 generalized_card/scripts/run_evaluate.py \
+  --tag generalized_card_camera_gpt54_v107_digit_verdict_n10_20260822_v1 \
+  --metric-parallel 5 --resume
+```
+
+Expected cost: the last N=10 run (`v103`, same pool parameters) cost $3.7345
+for 532 comments; this run should land in the same range, plausibly a little
+higher from the two guards' occasional repair-loop retries.
+
+---
+
 ## v106 — digit-cue quantifier guard (2026-08-22)
 
 Policy ID: `generalized-card-v2-digit-cue-quantifier-guard-v106-20260822`.
