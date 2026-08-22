@@ -164,6 +164,68 @@ python3 generalized_card/scripts/run_evaluate.py \
   --tag v108_semantic_coverage_nonrepeat_seed8_20260823_v1 --metric-parallel 5 --resume
 ```
 
+### Gate ran, the arm never fired, and the bug that caused it -- 2026-08-23
+
+Run `v108_semantic_coverage_nonrepeat_seed8_20260823_v1`, seed 8, 186
+comments, **$1.1867**, 19.3 min. Before reading a single metric, checked
+whether the mechanism actually fired by grepping the run's own saved
+`generation_records.json` for the instruction string: **0 of 186
+prompts contained it.**
+
+**Root cause.** The shipped fix touched `_thread_memory`, the ledger
+builder for `--writer-prompt full`. `writer_prompt`'s default is
+`--writer-prompt focused` (`_writer_prompt_mode`'s own default, unset by
+this run's command and by every gate command in this project's history),
+which dispatches to a *different* function, `_focused_thread_ledger` --
+which renders its own, separately-coded version of the same "already
+covered" block, also missing the instruction, never touched by the
+original edit. The arm was real, tested, offline-verified, and reached
+zero real generation calls, because it was built against a code path this
+project stopped using as the default in v82.
+
+This is the exact failure mode `test_sentence_rhythm.WriterPromptTest`'s
+"reaches both paths" convention exists to catch (its own comment: v74's
+first focused-prompt cut once left 106 of 522 slots on the old path) --
+the v108 tests checked the instruction rendered correctly in isolation,
+never checked which of the two prompt builders a default run actually
+calls. See `tasks/lessons.md`.
+
+**Fixed the same day** (commit after this one): `_focused_thread_ledger`
+now carries the same conditional instruction. Added the end-to-end
+regression test that would have caught this before spending --
+`FocusedWriterPromptTest.test_semantic_coverage_nonrepeat_reaches_both_writer_prompt_paths`,
+built through `configure_generator_backend`/`build_writer_prompt`, the
+real dispatch, not the helper function directly -- for both `focused` and
+`full`. 622 tests pass, Ruff clean, `prompts.py` re-pinned, self-test
+green on/off across all four domains again.
+
+**This run's numbers are not evidence about the mechanism** (it never
+ran) and are not used for anything: `self_bertscore_mean_f1` gap vs real
+widened, +0.0183 (v104 baseline) -> +0.0243, and the depth-binned excess
+moved worse in three of five bins -- exactly the shape of ordinary
+thread-level regeneration noise this project has already documented
+repeatedly on this same seed-8 thread (`tasks/lessons.md`), not a result
+to read as "the idea doesn't work." The idea has not been tested yet.
+
+**Corrected command, not yet run:**
+
+```bash
+python3 -u generalized_card/scripts/run_generate.py \
+  --tag v108_semantic_coverage_nonrepeat_seed8_20260823_v2 --domain camera \
+  --model gpt-5.4-mini --base-url https://api.openai.com/v1 \
+  --api-key-env LLM_API_KEY --pool-size 150 --max-posts 1 --posts-per-run 1 \
+  --start-seed-index 8 --sampling-seed 42 \
+  --semantic-coverage-nonrepeat on --resume
+
+python3 generalized_card/scripts/run_evaluate.py \
+  --tag v108_semantic_coverage_nonrepeat_seed8_20260823_v2 --metric-parallel 5 --resume
+```
+
+Before running it again, verify offline for $0 that it actually reaches
+the prompt this time -- generate is not needed for this check, only a
+Python one-liner calling `build_writer_prompt` the way the new test does,
+or `python3 -m pytest generalized_card/tests/test_generalized_card.py -k semantic_coverage_nonrepeat_reaches_both`.
+
 ---
 
 ## N=10 gate — `--digit-cue-guard on --verdict-close-guard on` combined (predictions, 2026-08-22)

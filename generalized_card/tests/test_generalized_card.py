@@ -3331,6 +3331,65 @@ class GeneralizedCardTest(unittest.TestCase):
         for term in banned:
             self.assertNotIn(term, lowered)
 
+    # The v108 gate shipped touching only `_thread_memory`, but `focused` is
+    # `_writer_prompt_mode`'s default and every real run in this project's
+    # history has used it -- confirmed by grepping the gate's own saved
+    # `generation_records.json` for the instruction string: 0 of 186. These
+    # tests pin the actually-live path (`_focused_thread_ledger`), and the one
+    # after them pins that `focused` really is the silent default, so a future
+    # change to that default fails a test instead of a paid run.
+
+    def test_focused_thread_ledger_default_is_the_legacy_wording(self) -> None:
+        ledger = prompts._focused_thread_ledger(
+            SimpleNamespace(compact=lambda value, limit: str(value)[:limit]),
+            self._coverage_comments(),
+            current_task=self._coverage_task(),
+            recent_openings=[],
+        )
+        self.assertIn("Semantic contributions already covered in this thread:\n", ledger)
+        self.assertNotIn(prompts.SEMANTIC_COVERAGE_NONREPEAT_INSTRUCTION, ledger)
+
+    def test_focused_thread_ledger_on_adds_the_instruction(self) -> None:
+        backend = SimpleNamespace(
+            compact=lambda value, limit: str(value)[:limit],
+            GENERALIZED_SEMANTIC_COVERAGE_NONREPEAT="on",
+        )
+        ledger = prompts._focused_thread_ledger(
+            backend,
+            self._coverage_comments(),
+            current_task=self._coverage_task(),
+            recent_openings=[],
+        )
+        self.assertIn(prompts.SEMANTIC_COVERAGE_NONREPEAT_INSTRUCTION, ledger)
+        coverage_header = "Semantic contributions already covered in this thread:\n"
+        self.assertLess(
+            ledger.index(coverage_header),
+            ledger.index(prompts.SEMANTIC_COVERAGE_NONREPEAT_INSTRUCTION),
+        )
+
+    def test_focused_writer_prompt_mode_is_the_silent_default(self) -> None:
+        # This is the exact fact the v108 bug got wrong: `writer_prompt`
+        # dispatches to `_focused_thread_ledger`, not `_thread_memory`, unless
+        # something explicitly sets GENERALIZED_WRITER_PROMPT_MODE. A fix that
+        # only touches `_thread_memory` never reaches a real generation run.
+        self.assertEqual(prompts._writer_prompt_mode(SimpleNamespace()), "focused")
+
+    def test_semantic_coverage_nonrepeat_reaches_the_default_writer_prompt_mode(
+        self,
+    ) -> None:
+        mode = prompts._writer_prompt_mode(SimpleNamespace())
+        self.assertEqual(mode, "focused")
+        ledger = prompts._focused_thread_ledger(
+            SimpleNamespace(
+                compact=lambda value, limit: str(value)[:limit],
+                GENERALIZED_SEMANTIC_COVERAGE_NONREPEAT="on",
+            ),
+            self._coverage_comments(),
+            current_task=self._coverage_task(),
+            recent_openings=[],
+        )
+        self.assertIn(prompts.SEMANTIC_COVERAGE_NONREPEAT_INSTRUCTION, ledger)
+
     def test_the_cli_records_the_semantic_coverage_nonrepeat_arm(self) -> None:
         source = (
             REPO_ROOT / "generalized_card" / "scripts" / "run_generate.py"
@@ -7103,6 +7162,53 @@ class FocusedWriterPromptTest(unittest.TestCase):
             self.assertIn(kept, full, kept)
         self.assertNotIn("Core metric guidance", full)
         self.assertNotIn("Core tone and discourse guidance", full)
+
+    def test_semantic_coverage_nonrepeat_reaches_both_writer_prompt_paths(self) -> None:
+        # The v108 gate shipped an arm that only touched `_thread_memory`
+        # (the `full` path). `focused` is the default and every real
+        # generation run in this project's history has used it -- the flag
+        # never reached a single prompt on that gate. This is the exact
+        # end-to-end check (through `configure_generator_backend` and
+        # `build_writer_prompt`, not the helper function directly) that
+        # would have caught it before spending, mirroring
+        # `test_sentence_rhythm.WriterPromptTest`'s "reaches both paths"
+        # convention for the same reason (v74's focused prompt once left
+        # 106 of 522 slots on the old path).
+        previous_comments = [
+            {
+                "content": "Earlier comment makes its own point at length.",
+                "depth": 0,
+                "semantic_move": "an earlier move",
+                "decision_boundary": "an earlier boundary",
+            }
+        ]
+        with patch.dict(
+            os.environ, {"GENERALIZED_CARD_SEMANTIC_COVERAGE_NONREPEAT": "on"}
+        ):
+            focused = self._prompt(
+                "focused", "impolite", previous_comments=previous_comments
+            )
+            full = self._prompt(
+                "full", "impolite", previous_comments=previous_comments
+            )
+        self.assertIn(
+            "Do not restate one of these already-covered points", focused
+        )
+        self.assertIn("Do not restate one of these already-covered points", full)
+
+    def test_semantic_coverage_nonrepeat_off_reaches_neither_path(self) -> None:
+        previous_comments = [
+            {
+                "content": "Earlier comment makes its own point at length.",
+                "depth": 0,
+                "semantic_move": "an earlier move",
+                "decision_boundary": "an earlier boundary",
+            }
+        ]
+        focused = self._prompt("focused", "impolite", previous_comments=previous_comments)
+        full = self._prompt("full", "impolite", previous_comments=previous_comments)
+        self.assertNotIn("Do not restate one of these already-covered points", focused)
+        self.assertNotIn("Do not restate one of these already-covered points", full)
 
 
 class WriterRouteLockTest(unittest.TestCase):

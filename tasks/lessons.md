@@ -1818,3 +1818,48 @@ compared against a metric-shaped band.
   diagnostic-only category unless a clear, separate argument is made for why
   this case is different -- default to the Planner/plan-structure category
   (`reply_increment_problem`-style) instead.
+
+## Verify a prompt-text fix reaches the code path a default run actually calls -- not just that the text renders correctly where you put it
+
+**What happened.** v108 added an instruction to `_thread_memory`'s
+"already covered" block and tested it thoroughly in isolation -- five unit
+tests, all passing, checking the instruction appears, doesn't leak into
+sibling blocks, carries no domain vocabulary. Offline verification (self-test,
+all four domains) also passed, because self-test never reaches prompt
+rendering. Spent $1.19 on a real gate before discovering: `_thread_memory`
+is the ledger builder for `--writer-prompt full`; `_writer_prompt_mode`'s
+default is `focused`, which every real run in this project's history
+(including this gate's own command) has used, and which dispatches to a
+*different* function, `_focused_thread_ledger`, with its own separately
+written copy of the same block. The fix never touched the function real
+generation actually calls. Grepping the gate's own saved
+`generation_records.json` for the instruction string afterward found it in
+0 of 186 prompts.
+
+**Why:** unit-testing a helper function directly (`prompts._thread_memory(...)`)
+proves the text renders correctly *when that function runs* -- it says
+nothing about whether a default configuration ever calls that function.
+This project already has the right pattern for this
+(`test_sentence_rhythm.WriterPromptTest`, which explicitly tests "reaches
+the focused prompt" and "reaches the full prompt too" as two separate
+assertions, with a comment recording that v74's own focused-prompt cut
+once silently left 106 of 522 slots on the old path) -- it just wasn't
+followed here.
+
+**How to apply.**
+- When a fix targets Writer-facing prompt text, write the test through the
+  real dispatch (`configure_generator_backend` + `module.build_writer_prompt(...)`,
+  the pattern `FocusedWriterPromptTest`/`WriterPromptTest` already use) for
+  *both* `--writer-prompt` modes, not just a direct call to the helper
+  function you edited. If there are two rendering paths for a concept
+  (`_thread_memory` vs `_focused_thread_ledger`, or any other full/focused
+  pair), touch and test both, explicitly.
+- Before spending on a gate, check which mode is the *default* the actual
+  command will use (`_writer_prompt_mode`'s own default, not an assumption)
+  and confirm the fix's own tests exercise that default, not just a
+  hand-picked mode.
+- After a gate, before reading any metric, grep the run's own saved
+  `generation_records.json`/prompt text for the thing that was supposed to
+  change. This is free, immediate, and would have caught this before
+  spending a second thought on the metrics -- which is why it was the first
+  thing checked here, just one gate too late.
