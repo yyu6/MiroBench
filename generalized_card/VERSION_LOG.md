@@ -99,8 +99,67 @@ provenance guard while this version sits uncommitted, clears on commit),
 Ruff clean, 3 pins re-computed with 0 unexpected drift
 (`sentence_rhythm.py`, `backend.py`, `run_generate.py`), both parity scopes
 healthy, backend self-test on and off for both arm values across all four
-registered domains (8 runs, $0, all exit 0). **No paid gate yet** -- same
-credential blocker as v105.
+registered domains (8 runs, $0, all exit 0).
+
+### Combined v105+v106 large-thread gate — predictions, written before the paid run
+
+Credential confirmed by the user: `LLM_API_KEY` from `third_party/MiroFish/.env`
+(the same one every prior run in this project has used). Gate thread: seed 8 /
+`i1o51h`, the project's standing large-thread gate seed, 186 comments. Both
+arms on: `--reply-novelty-scope chain --digit-cue-guard on`.
+
+**Baseline is the same thread in the immediately prior version's artifact**
+(J6): `v104_evaluative_seed8_20260821_v1`, generated `self_bertscore_mean_f1`
+0.50707 (184 usable comments) against matched real `i1o51h` 0.48873 (185) --
+gap **+0.0183**. Neither arm existed then, so that run is the correct `off`
+control for both; no second paid run is needed to establish it.
+
+**What the pre-run offline replay already shows on this exact baseline
+artifact** (not an ablation -- a replay of the real checks against plans that
+were never regenerated, so this is context for the prediction, not a price
+for it, per J7):
+- `reply_novelty_chain_diagnosis.py --run v104_evaluative_seed8_20260821_v1`:
+  **18 of 186 plans (9.7%)** would trip `reply_increment_conflict` under
+  `chain` that did not trip under `parent_only` (which caught 0, as always).
+- `digit_cue_diagnosis.py --run v104_evaluative_seed8_20260821_v1`: bare `0`/`1`
+  in 0.086 of this thread's comments, **100% of them** (15/15) the
+  plain-quantifier sub-pattern the guard targets, none the genuine
+  enumerated/fractional/price kind.
+
+**Predictions:**
+
+| what | v104 (arms off) | predicted direction | why not a precise number |
+|---|---:|---|---|
+| `self_bertscore_mean_f1` gap vs real | +0.0183 | **narrower**, not closed to zero | ~10% of reply slots are directly implicated; the mechanism forces a different plan, not a specific rewritten sentence, so no text-substitution ablation exists to price this the way v104's tag/partitive edits could |
+| `reply_novelty_chain_diagnosis.py` chain trips on the new artifact | 18 (replayed, not causal) | **substantially fewer**, not necessarily zero | the repair loop is budget-bounded; a slot that exhausts its repair budget still ships |
+| bare-1 plain-quantifier rate | 0.081 | **down**, not to real's 0.010 | the guard adds an exclusion, it does not remove the "digit" habit draw itself |
+
+**Guardrails, each a named way to be wrong:**
+- `self_bleu_4` must not measurably worsen. Forcing a different plan should
+  diversify content, not degrade text quality generically; a worse
+  `self_bleu_4` would mean the repair loop is producing worse writing, not
+  more distinct writing.
+- `hard_disagree_rate`, `polite_rate`, `impolite_rate` should not move beyond
+  this thread's own noise -- neither mechanism touches stance, tone, or
+  register.
+- `avg_depth` / `structural_virality` are structural (copied from the real
+  tree) and must not move regardless.
+- Genuine digit uses (prices, specs, counts) must not drop. If
+  `digit_cue_diagnosis.py`'s `enum_or_fact` rate falls on the new artifact,
+  the guard is suppressing real quantities, not just ordinary quantifiers.
+
+Command, run after this entry was committed:
+
+```bash
+python3 -u generalized_card/scripts/run_generate.py \
+  --tag v106_chain_novelty_digit_guard_seed8_20260822_v1 --domain camera \
+  --model gpt-5.4-mini --base-url https://api.openai.com/v1 \
+  --api-key-env LLM_API_KEY --pool-size 150 --max-posts 1 --posts-per-run 1 \
+  --start-seed-index 8 --sampling-seed 42 \
+  --reply-novelty-scope chain --digit-cue-guard on --resume
+python3 generalized_card/scripts/run_evaluate.py \
+  --tag v106_chain_novelty_digit_guard_seed8_20260822_v1 --metric-parallel 5 --resume
+```
 
 ---
 
@@ -179,18 +238,14 @@ prompt path byte-for-byte.
 
 ### Not done in this version, deliberately
 
-- **No large-thread gate, no N=10 run, no default flip.** The credential to
-  bill for any paid run was flagged as unconfirmed by the 2026-08-21 session
-  and remains unconfirmed as of this entry — do not spend against it without
-  the user answering that first. `--reply-novelty-scope` ships with
-  `parent_only` as the default for this reason: there is no gate result yet to
-  justify defaulting to `chain`.
-- **No prediction band is written here** for the same reason §4's process
-  calls for writing one before a paid run: there isn't a scheduled paid run to
-  write one against yet. When the large-thread gate runs, predict against
-  that thread's own matched real (per `docs/DECISIONS.md` J6), not the pooled
-  corpus — this project has mis-set a prediction band against the pooled
-  corpus twice before (`tasks/lessons.md`).
+- **No N=10 run, no default flip yet.** `--reply-novelty-scope` ships with
+  `parent_only` as the default until a gate result justifies `chain`.
+- **The credential question this note originally raised as unconfirmed was
+  answered by the user on 2026-08-22: `LLM_API_KEY` from
+  `third_party/MiroFish/.env`, the same one every prior run has used.** The
+  large-thread gate (combined with v106, since both ship in the same policy
+  state and neither existed in the immediately prior artifact) is recorded
+  under v106's entry below, predictions written before spending.
 
 ---
 
