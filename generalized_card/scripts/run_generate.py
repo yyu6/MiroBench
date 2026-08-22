@@ -162,6 +162,27 @@ def build_parser() -> argparse.ArgumentParser:
             "Writer generation; they are never omitted."
         ),
     )
+    parser.add_argument(
+        "--reply-novelty-scope",
+        choices=("parent_only", "chain"),
+        default="parent_only",
+        help=(
+            "How far back a direct reply's reply_novelty_anchor is checked "
+            "against prior plans in its branch. 'parent_only' reproduces "
+            "v103 and earlier byte-for-byte: the anchor phrase alone against "
+            "only the immediate parent's plan -- a probe asymmetry (a short "
+            "phrase vs. a longer compound description) that made the check "
+            "nearly never fire (measured: 0 trips on the v103 N=10 "
+            "artifact). 'chain' compares the reply's own full plan "
+            "(semantic_move, decision_boundary, detail_focus) against every "
+            "ancestor already in the thread's plan ledger instead, at the "
+            "same similarity threshold -- 60 trips on the same artifact, "
+            "including the reply chain measured as a self_bertscore_mean_f1 "
+            "excess that grows from +0.0004 at depth 1-2 to +0.0432 at depth "
+            "7+ (`generalized_card/analysis/bertscore_pair_diagnosis.py depth`, "
+            "`generalized_card/analysis/reply_novelty_chain_diagnosis.py`)."
+        ),
+    )
     parser.add_argument("--writer-max-tokens", type=int, default=260)
     parser.add_argument("--api-retries", type=int, default=2)
     parser.add_argument("--writer-retries", type=int, default=0)
@@ -771,6 +792,7 @@ def main() -> None:
             "max_collision_rate": args.plan_max_collision_rate,
             "max_perspective_share": args.max_perspective_share,
             "strict": args.strict_plan_quality,
+            "reply_novelty_scope": args.reply_novelty_scope,
         },
         "domain_claim": args.domain_claim,
         "writer_prompt": args.writer_prompt,
@@ -918,7 +940,8 @@ def main() -> None:
         f"embedding_threshold={args.plan_embedding_threshold} "
         f"max_collision_rate={args.plan_max_collision_rate} "
         f"max_perspective_share={args.max_perspective_share} "
-        f"strict={int(args.strict_plan_quality)}",
+        f"strict={int(args.strict_plan_quality)} "
+        f"reply_novelty_scope={args.reply_novelty_scope}",
         flush=True,
     )
     print(
@@ -1022,6 +1045,7 @@ def main() -> None:
     env["GENERALIZED_CARD_STRICT_PLAN_QUALITY"] = (
         "1" if args.strict_plan_quality else "0"
     )
+    env["GENERALIZED_CARD_REPLY_NOVELTY_SCOPE"] = args.reply_novelty_scope
     env["GENERALIZED_CARD_WRITER_HARD_RECOVERY_ROUNDS"] = str(
         args.writer_hard_recovery_rounds
     )

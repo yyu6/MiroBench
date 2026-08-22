@@ -602,6 +602,18 @@ def configure_generator_backend(
         ),
         "strict": os.environ.get("GENERALIZED_CARD_STRICT_PLAN_QUALITY", "1") == "1",
         "require_reply_novelty": True,
+        # "parent_only" reproduces every version through v103: the anchor
+        # phrase alone against the immediate parent's plan, a probe asymmetry
+        # that made the check nearly never fire (measured: 0 trips on the
+        # v103 N=10 artifact). "chain" compares the reply's own full plan
+        # against every ancestor already in its branch instead -- 60 trips on
+        # the same artifact. See `docs/DECISIONS.md` G3 and
+        # `generalized_card/analysis/reply_novelty_chain_diagnosis.py`.
+        "reply_novelty_scope": os.environ.get(
+            "GENERALIZED_CARD_REPLY_NOVELTY_SCOPE", "parent_only"
+        )
+        .strip()
+        .lower(),
     }
     module.GENERALIZED_PLAN_SEMANTIC_INDEX = (
         PlanSemanticIndex(
@@ -2079,6 +2091,9 @@ def _comment_planner_batch_with_history(
                 ),
                 max_perspective_share=float(config.get("max_perspective_share", 0.34)),
                 require_reply_novelty=bool(config.get("require_reply_novelty", False)),
+                reply_novelty_scope=str(
+                    config.get("reply_novelty_scope", "parent_only")
+                ),
                 enforce_social_contract=(
                     str(
                         getattr(

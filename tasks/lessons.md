@@ -1520,6 +1520,51 @@ metric-specific diagnosis, before inventing a metric-specific story.
 - Do not build that fix on two data points. Record the pattern; do not act on
   it until a third metric's diagnosis either confirms or breaks it.
 
+## A required quality gate can be silently inert -- measure whether it fires before trusting or extending it
+
+**What happened.** The approved plan was to extend `reply_increment_problem`'s
+novelty check from "compare against the immediate parent" to "compare against
+every ancestor in the chain," on the theory that a chain restates a claim a
+few hops later than the single-hop check could see. The falsification script
+the plan itself called for (`analysis/reply_novelty_chain_diagnosis.py`,
+run before wiring anything else) found the extension caught **nothing**: 0
+trips under the new scope, same as the old one. The check had been required
+(`require_reply_novelty=True`) since before v104 and had, in effect, never
+been checking anything on this artifact.
+
+The cause was not scope at all. `reply_increment_problem` compared a reply's
+narrow `reply_novelty_anchor` phrase (a few words) against its ancestor's full
+`{semantic_move, decision_boundary, detail_focus}` (three joined sentences).
+A short phrase against a long compound description suppresses cosine
+similarity regardless of content -- measured directly on the diagnosed chain,
+0.42-0.61, nowhere near the 0.76 bar. Comparing the reply's *own* full plan
+against the ancestor's full plan (same shape both sides) instead scored
+0.73-0.92 hop to hop on the same chain, against 0.22-0.62 for genuinely
+unrelated branches. The scope extension was still worth keeping (it catches a
+few multi-hop-only cases the fixed single-hop probe would still miss), but it
+was not the fix; fixing the probe shape was.
+
+**Why:** an "existing mechanism that already requires this" is not evidence it
+does anything. A gate that never fires and a gate that correctly finds nothing
+wrong produce the identical observable signal -- zero issues -- so the only
+way to tell them apart is to check whether it *can* fire, on a case already
+known to be a violation.
+
+**How to apply.**
+- Before extending, tuning, or reasoning about the *absence* of findings from
+  any validator, run it on a case you already know should trip it. If it
+  doesn't, the bug is upstream of whatever you were about to build.
+- When a similarity/collision check compares two probes, check that both
+  sides are built the same way (same fields, same rough length). A probe
+  built from one narrow field on one side and several concatenated fields on
+  the other is a length/shape mismatch, not a content comparison, regardless
+  of which embedding model sits behind it.
+- The falsification-before-wiring step in this project's own loop
+  (`docs/ORIENTATION.md` §4 step 3) is what caught this. It would have shipped
+  a change that felt right (scope extension) and *sounded* verified (built
+  from a correct diagnosis) while fixing nothing, had the check not been run
+  before the arm was wired up.
+
 ## "Trimming doesn't move the aggregate" and "the tail is a real defect" are both true at once
 
 **What happened.** v98 rejected "a duplication tail" as the cause of

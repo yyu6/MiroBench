@@ -196,6 +196,11 @@ CONTROL_FIELDS = (
     "stance",
     "evidence_mode",
 )
+# The similarity bar a reply's novelty anchor must clear against every
+# ancestor already in its branch, not only its immediate parent (see
+# `novelty_scope` on `reply_increment_problem`). Reused unmodified from the
+# parent-only check so no new threshold is introduced.
+REPLY_NOVELTY_SIMILARITY_THRESHOLD = 0.76
 NON_REPAIRABLE_ISSUES = frozenset(
     {
         # Reusing a reference is useful audit context, not proof that the two
@@ -354,6 +359,7 @@ def evaluate_plan_batch(
     semantic_similarity: Callable[[dict[str, Any], dict[str, Any]], float] | None = None,
     max_perspective_share: float = 0.34,
     require_reply_novelty: bool = False,
+    reply_novelty_scope: str = "parent_only",
     enforce_social_contract: bool = True,
 ) -> PlanQualityReport:
     prior = [dict(row) for row in prior_plans if isinstance(row, dict)]
@@ -424,6 +430,7 @@ def evaluate_plan_batch(
             parent_plans=seen,
             semantic_similarity=semantic_similarity,
             required=require_reply_novelty,
+            novelty_scope=reply_novelty_scope,
         )
         if reply_problem:
             issues.append(
@@ -815,14 +822,25 @@ def reply_increment_problem(
     parent_plans: Iterable[dict[str, Any]],
     semantic_similarity: Callable[[dict[str, Any], dict[str, Any]], float] | None,
     required: bool,
+    novelty_scope: str = "parent_only",
 ) -> str:
     """Verify that a direct reply carries an irreducible parent-local delta.
 
     This inspects Planner metadata, not generated wording. It permits natural
     social closes, but otherwise requires a concrete anchor that represents a
     new test, observation, consequence, exception, or evidence requirement.
+
+    `novelty_scope="parent_only"` (legacy, default) checks the anchor against
+    only the immediate parent's plan. A reply chain can clear that bar at
+    every hop while collectively drifting back onto a claim made several hops
+    higher up -- measured on the v103 N=10 artifact as a `self_bertscore_mean_f1`
+    excess that grows from +0.0004 at reply depth 1-2 to +0.0432 at depth 7+
+    (`generalized_card/analysis/bertscore_pair_diagnosis.py depth`).
+    `novelty_scope="chain"` checks the same probe against every ancestor
+    already in the thread's plan ledger instead, at the same threshold.
     """
 
+    parent_plans = list(parent_plans)
     parent_id = _parent_sample_id(plan)
     if parent_id <= 0:
         return ""
@@ -861,17 +879,66 @@ def reply_increment_problem(
         )
     if not novelty or semantic_similarity is None:
         return ""
-    parent_probe = {
-        "semantic_move": parent.get("semantic_move") or "",
-        "decision_boundary": parent.get("decision_boundary") or "",
-        "detail_focus": parent.get("detail_focus") or "",
-    }
-    novelty_probe = {"semantic_move": novelty}
-    similarity = float(semantic_similarity(novelty_probe, parent_probe))
-    if similarity >= 0.76:
+
+    scope = (
+        "chain"
+        if str(novelty_scope or "parent_only").strip().lower() == "chain"
+        else "parent_only"
+    )
+    if scope == "parent_only":
+        # Byte-for-byte legacy: the anchor phrase alone against the parent's
+        # plan. Kept exactly as it shipped, including the probe asymmetry --
+        # see `novelty_probe` below for why that asymmetry makes this check
+        # nearly never fire, which is precisely why `"chain"` does not reuse
+        # it (`docs/DECISIONS.md` G3, `analysis/reply_novelty_chain_diagnosis.py`).
+        ancestors = [parent]
+        novelty_probe = {"semantic_move": novelty}
+
+        def ancestor_probe(ancestor: dict[str, Any]) -> dict[str, Any]:
+            return {
+                "semantic_move": ancestor.get("semantic_move") or "",
+                "decision_boundary": ancestor.get("decision_boundary") or "",
+                "detail_focus": ancestor.get("detail_focus") or "",
+            }
+    else:
+        # A short anchor phrase compared against a longer compound ancestor
+        # probe suppresses cosine similarity regardless of content -- measured
+        # on the v103 artifact, a chain that a human reading the text sees as
+        # restating one claim six times over never crossed 0.4 similarity this
+        # way. Comparing same-shape probes (the reply's own plan against each
+        # ancestor's) is what actually surfaces the restatement: the same
+        # chain scores 0.73-0.92 hop to hop this way, against 0.22-0.62 for
+        # genuinely unrelated branches in the same artifact.
+        ancestors = _ancestor_chain(plan, parent_plans) or [parent]
+        novelty_probe = {
+            "semantic_move": plan.get("semantic_move") or "",
+            "decision_boundary": plan.get("decision_boundary") or "",
+            "detail_focus": plan.get("detail_focus") or "",
+        }
+
+        def ancestor_probe(ancestor: dict[str, Any]) -> dict[str, Any]:
+            return {
+                "semantic_move": ancestor.get("semantic_move") or "",
+                "decision_boundary": ancestor.get("decision_boundary") or "",
+                "detail_focus": ancestor.get("detail_focus") or "",
+            }
+
+    worst_score = 0.0
+    worst_ancestor_id = parent_id
+    for ancestor in ancestors:
+        score = float(semantic_similarity(novelty_probe, ancestor_probe(ancestor)))
+        if score > worst_score:
+            worst_score, worst_ancestor_id = score, _sample_id(ancestor) or parent_id
+
+    if worst_score >= REPLY_NOVELTY_SIMILARITY_THRESHOLD:
+        where = (
+            "the parent plan"
+            if worst_ancestor_id == parent_id
+            else f"an earlier ancestor (S{worst_ancestor_id})"
+        )
         return (
-            "reply_novelty_anchor is too close to the parent plan "
-            f"(semantic similarity={similarity:.3f}); use a different test, outcome, "
+            f"reply_novelty_anchor is too close to {where} "
+            f"(semantic similarity={worst_score:.3f}); use a different test, outcome, "
             "exception, or evidence requirement"
         )
     return ""
@@ -1043,6 +1110,38 @@ def _parent_sample_id(plan: dict[str, Any]) -> int:
         if value > 0:
             return value
     return 0
+
+
+def _ancestor_chain(
+    plan: dict[str, Any],
+    parent_plans: list[dict[str, Any]],
+    *,
+    max_depth: int = 64,
+) -> list[dict[str, Any]]:
+    """Walk parent_id links back through the in-thread ledger, immediate
+    parent first.
+
+    `parent_plans` is the full already-generated ledger for this thread
+    (`evaluate_plan_batch`'s `seen`), which by construction always contains
+    every ancestor of `plan` before `plan` itself is evaluated: `seen` is
+    appended to only after each plan's checks run, and plans are processed in
+    ascending `sample_id` order while a reply's parent always has a smaller
+    `sample_id` than the reply itself. `max_depth` is a defensive bound, not a
+    design choice -- real threads never approach it.
+    """
+
+    by_id = {_sample_id(row): row for row in parent_plans if _sample_id(row) > 0}
+    chain: list[dict[str, Any]] = []
+    visited = {_sample_id(plan)}
+    current_id = _parent_sample_id(plan)
+    while current_id > 0 and current_id not in visited and len(chain) < max_depth:
+        ancestor = by_id.get(current_id)
+        if ancestor is None:
+            break
+        chain.append(ancestor)
+        visited.add(current_id)
+        current_id = _parent_sample_id(ancestor)
+    return chain
 
 
 def _reference_id(plan: dict[str, Any]) -> str:

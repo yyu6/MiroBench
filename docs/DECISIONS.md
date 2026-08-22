@@ -53,6 +53,7 @@ If that has not been done, the row is ASSUMED and the number is not a rule.
 | E6 | An analysis harness must reproduce the shipped artifact **before** it prints an edited number. | VERIFIED | the first ablation harness flipped 11.2% of labels and moved the rate 0.1692 → 0.1730 | 2026-08-20 |
 | E7 | Deduplicate by `(thread_id, reply_id)` — one Reddit post can sit under two product folders. | VERIFIED | 1.24× matched / 1.32× corpus over-count before the fix. Note: `politeness_diagnosis.py` still does not dedupe | 2026-08-20 |
 | E8 | Every claimed number must be reproducible from a committed script, not described in a report. | VERIFIED | `analysis/` — five scripts; seven measurements were promoted into `tone_ceiling.py` on 2026-08-21 after being reported from a scratch directory | 2026-08-21 |
+| E9 | A required quality gate can be silently inert. Before trusting a validator's absence-of-findings, or extending its scope, measure whether it ever fires at all. | VERIFIED | `reply_increment_problem` had `require_reply_novelty=True` since before v104 and scored **0 trips on the entire v103 N=10 artifact** — a probe-shape mismatch (short phrase vs. long compound text) suppressed cosine similarity regardless of content. Fixing the probe shape alone (same-shape comparison) surfaced 60 trips on the same artifact. `analysis/reply_novelty_chain_diagnosis.py` | 2026-08-22 |
 
 ## What is actually wrong with the generator
 
@@ -70,6 +71,8 @@ Ordered by evidence, not by which number looks worst. Detail in `tasks/todo.md`.
 | G8 | Therefore `polite_rate` may **not be closable to N=150 tolerance without gaming**. | MEASURED | everything above; it is an inference from a closed search, not a proof. Treat as the current best reading, not a finding. |
 | G9 | The nine other metrics sit **inside** their noise floor at N=10. Stop working on them. | VERIFIED | v103 N=10 Cliff against the floor table |
 | G10 | Parent echo is real and un-designed: generated replies echo the parent's content words 1.4–1.6× real, and the counterfactual at the real echo distribution closes 55% of the `hard_disagree_rate` gap. | VERIFIED | `disagreement_diagnosis.py echo` |
+
+| G11 | A fix exists for G3: `--reply-novelty-scope chain` (v105) compares a reply's own full plan against every ancestor in its branch, at the existing 0.76 threshold, instead of a narrow anchor phrase against only the immediate parent. 60 trips on the v103 artifact against 0 for the old probe/scope, including both named qualitative chains. Ships with `parent_only` (byte-for-byte legacy) as the default — no paid gate has run yet. | VERIFIED (offline) | `generalized_card/VERSION_LOG.md` v105; `analysis/reply_novelty_chain_diagnosis.py`; self-test green on all four domains, both scope values (8 runs, $0) | 2026-08-22 |
 
 ## Cross-domain
 

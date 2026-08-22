@@ -404,10 +404,47 @@ def _print_pair(pair: dict[str, Any], texts: dict[tuple[str, str], str]) -> None
     print(f"    R: {right[:160]!r}")
 
 
+def cmd_depth(threads: Threads, device: str, batch_size: int) -> None:
+    """Does the excess grow with how deep into a reply chain a pair sits?
+
+    Motivated by reading the actual pairs (`inspect`): the seed002 chain
+    40->41->42->43->44->45 (depths 5-9) restates "compactness doesn't matter
+    once it's in a bag" six times in a row with almost no new content added.
+    41-vs-44 is an `ancestor_descendant` pair (`same_branch`), the bucket that
+    showed *no* reliable pooled excess -- so either this chain is an outlier
+    a pooled mean averages away, or the effect is conditioned on depth rather
+    than on relation type. Bin by how deep the deeper comment of the pair
+    sits, independent of relation/depth_kind, to check directly."""
+
+    gen_pairs, real_pairs = cmd_fidelity(threads, device, batch_size)
+    bins = ((0, 1), (1, 2), (2, 4), (4, 7), (7, 999))
+
+    def bucket(pairs: list[dict]) -> dict[tuple[int, int], list[float]]:
+        out: dict[tuple[int, int], list[float]] = defaultdict(list)
+        for pair in pairs:
+            deepest = max(int(pair["left_depth"]), int(pair["right_depth"]))
+            for low, high in bins:
+                if low <= deepest < high:
+                    out[(low, high)].append(pair["bert_f1"])
+                    break
+        return out
+
+    gen_by_bin, real_by_bin = bucket(gen_pairs), bucket(real_pairs)
+    print("\n== excess by max(depth of the two comments in the pair) ==\n")
+    print(f"{'depth range':12s} {'gen n':>7s} {'gen mean':>9s} | {'real n':>7s} {'real mean':>9s} | {'excess':>7s}")
+    for low, high in bins:
+        g, r = gen_by_bin.get((low, high), []), real_by_bin.get((low, high), [])
+        label = f"[{low},{high})" if high < 999 else f"[{low},+)"
+        gm, rm = mean(g), mean(r)
+        excess = gm - rm if g and r else float("nan")
+        print(f"{label:12s} {len(g):7d} {gm:9.4f} | {len(r):7d} {rm:9.4f} | {excess:+7.4f}")
+
+
 COMMANDS: dict[str, Callable[..., Any]] = {
     "fidelity": cmd_fidelity,
     "pairs": cmd_pairs,
     "inspect": cmd_inspect,
+    "depth": cmd_depth,
 }
 
 

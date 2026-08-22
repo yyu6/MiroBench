@@ -763,24 +763,28 @@ repeated 4-grams. It did remove a genuine prompt contradiction — 247 of 532
 prompts carried two mutually exclusive rules — so keep the contradiction fix, but
 the default should go back to `tense`.
 
+### v104 and v105 — executed since the text above was written
+
+The "Next step" that used to be here (make the opener schedule respect the
+root/reply conditional) was v104. It shipped, was offline-verified, and was
+paid-gated on 2026-08-21: **the arms worked on their own terms and the metric
+did not follow** — full result in `generalized_card/VERSION_LOG.md`'s v104
+entry. Do not read the paragraph that used to occupy this spot as pending; it
+is done.
+
+**v105 (2026-08-22): a chain-scoped reply-novelty check for
+`self_bertscore_mean_f1`**, diagnosed this session (§6.3 above, `docs/DECISIONS.md`
+G3) and built as `--reply-novelty-scope {parent_only,chain}`. Offline-verified,
+including self-test green on all four registered domains — **no paid gate has
+run yet**. Full detail in `generalized_card/VERSION_LOG.md`'s v105 entry.
+
 ### Next step
 
-**v104: make the opener schedule respect the root/reply conditional.**
-`opener_profile` measures one pooled marginal (`polarity_token` 0.0526) and the
-assignment spends it 0.0847 on roots and 0.0366 on replies, against a real 0.0224
-and 0.0685. Measure the profile **per pair kind**, the way
-`register_realization` measures per register. Fed the real thread's own rows with
-true depths, `build_slot_distribution_schedule` already does the right thing, so
-`opener_cost` is not the bug — the slot rows the Planner receives are.
-
-**Answer this first, because it moves the same metric on its own:** the generated
-tree carries a **0.335 root share against a matched real 0.267**. Root pairs have
-P(disagree) ≈ 0.063 against 0.143 for replies, so over-producing roots drags
-`hard_disagree_rate` down regardless of the opener.
-
-**Do not ship another opener change before both are settled.** v102/v103 already
-demonstrated that repairing realization against a wrong schedule moves the metric
-past the target rather than onto it.
+**Gate v105.** Write predictions against the gate thread's own matched real
+(not the pooled corpus — this project has mis-set that band twice,
+`tasks/lessons.md`), then run the large-thread gate and N=10 per §4's loop.
+**This needs the user to confirm which API credential to bill first** — the
+prior session flagged this as unconfirmed and it still is.
 
 **Still blocking N=150: the reporting standard.** 12 metrics × 2 tests at
 α = 0.05 means a perfect generator passes all 12 simultaneously only ≈ 52% of the

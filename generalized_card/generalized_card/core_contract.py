@@ -16,10 +16,11 @@ HISTORICAL_REVISION_POLICY_VERSIONS = {
     "generalized-card-revision-v6-dynamic-coverage-history-20260807",
 }
 GENERALIZED_V2_GENERATION_POLICY_VERSION = (
-    "generalized-card-v2-evaluative-register-v104-20260821"
+    "generalized-card-v2-chain-scoped-reply-novelty-v105-20260822"
 )
 HISTORICAL_GENERATION_POLICY_VERSIONS = {
     "generalized-v2": {
+        "generalized-card-v2-evaluative-register-v104-20260821",
         "generalized-card-v2-stance-consistent-opening-v103-20260821",
         "generalized-card-v2-drawn-opening-move-v102-20260820",
         "generalized-card-v2-per-register-realization-v101-20260820",
@@ -174,7 +175,7 @@ CORE_FILES = {
     ),
     "generator_adapter": (
         "generalized_card/generalized_card/backend.py",
-        "45d37ed09c3a2ebbd38f66247952dd7cedaf45750cabf81370fcc89f1b567f7d",
+        "4230574d14ed5be9e62c3deef03af5951e8459e3658d84fd99e47bbb505877c6",
     ),
     "data_boundary": (
         "generalized_card/generalized_card/data.py",
@@ -208,7 +209,7 @@ CORE_FILES = {
     ),
     "generation_runner": (
         "generalized_card/scripts/run_generate.py",
-        "7309eba7f8afa18468ab8c1cbba63e6981a9693ddcc881d2cc90a6b192064cad",
+        "53d0fddfbde3d4394998ebf257d1fe8afab3753da0391fb4a95c7c462654b0bc",
     ),
     "generation_backend_runner": (
         "generalized_card/scripts/run_generator_backend.py",
@@ -232,7 +233,7 @@ CORE_FILES = {
     ),
     "planning_quality": (
         "generalized_card/generalized_card/planning_quality.py",
-        "16454d3658a52e2634fd44588a0ce8898593bb71a14731eed8ccff676e990d67",
+        "029f96b6b6269ed6e1223ce828b1a20dfddaeaebcd26e895370faf163553bddd",
     ),
     "planner_contract": (
         "generalized_card/generalized_card/planner_contract.py",

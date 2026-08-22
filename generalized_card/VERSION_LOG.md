@@ -62,6 +62,96 @@ Before any run that changes behavior:
 
 ---
 
+## v105 — chain-scoped reply novelty (2026-08-22)
+
+Policy ID: `generalized-card-v2-chain-scoped-reply-novelty-v105-20260822`.
+Arm `--reply-novelty-scope {parent_only,chain}`, default `parent_only`
+(byte-for-byte v104 and earlier — verified by inspection of the returned
+message string, not just asserted). No domain-profile change; schema stays at
+20. Module `generalized_card/generalized_card/planning_quality.py`
+(`reply_increment_problem`, `_ancestor_chain`), wired through `backend.py` and
+`run_generate.py`. Diagnosis in `docs/DECISIONS.md` row G3; reproduce with
+`generalized_card/analysis/bertscore_pair_diagnosis.py depth` and
+`generalized_card/analysis/reply_novelty_chain_diagnosis.py`.
+
+**Why.** `self_bertscore_mean_f1` is the one metric failing a standard that
+does not fail correct work (v103 N=10: MWU 0.001, KS 0.002, |Cliff| 0.86
+against a floor of 0.50). The excess is a root-vs-reply effect: generated
+reply chains restate the same argument as they deepen (measured, excess grows
++0.0004 at depth 1-2 to +0.0432 at depth 7+), while real chains diversify with
+depth (checked at scale: `reply_reply` cosine below `root_root` in 82% of 247
+evaluation-excluded real threads, Wilcoxon p≈0).
+
+**A mechanism already existed and was already required
+(`require_reply_novelty=True` since before this version) — it just structurally
+could not fire.** `reply_increment_problem` compared a reply's narrow
+`reply_novelty_anchor` phrase against its parent's full
+`{semantic_move, decision_boundary, detail_focus}` — a short phrase against a
+longer compound description, which suppresses cosine similarity regardless of
+content. Measured on the v103 N=10 artifact: **0 trips, on all 528 comments,
+at the existing 0.76 threshold.** The named qualitative chain
+(`sampled_run00_post00_seed002`, comments 40→41→42→43→44→45, "compactness
+doesn't matter once it's in a bag" six times in a row) scored 0.42–0.61
+against its own ancestors this way — nowhere close.
+
+**The fix compares same-shape probes and walks the whole ancestor chain.**
+`novelty_scope="chain"` compares the reply's own full plan
+(`semantic_move`/`decision_boundary`/`detail_focus`) against every ancestor
+already in its branch (walking `parent_id` through the ledger already passed
+into the function — no data-flow change, `evaluate_plan_batch`'s `seen` already
+carried the whole thread). On the same artifact: **60 trips**, including the
+named seed002 chain and a second qualitatively-found chain
+(`sampled_run01_post01_seed008`, an AF-tracking argument repeated across many
+branches of the largest thread). Every hop of the seed002 chain scores
+0.73–0.92 against its own immediate parent this way, against 0.22–0.62 for
+genuinely unrelated branches in the same artifact — a clean separation the old
+probe never had a chance at, at any scope.
+
+**No new threshold.** 0.76 is reused unmodified; a distance-decay function
+would need its own calibration and any calibration available right now would
+come from re-inspecting camera-only numbers, which the fix is designed to
+avoid needing.
+
+**Domain-adaptivity — checked, not assumed.** `reply_increment_problem`,
+`_ancestor_chain`, and `PlanSemanticIndex` take no domain-profile argument
+anywhere (confirmed by reading every call site); they compare embeddings of
+Planner-authored `SEMANTIC_FIELDS` text, the same construction the pre-existing
+mechanism already used. The backend self-test
+(`generalized_card/scripts/run_generator_backend.py --self-test`, a
+`return`-guarded path that never reaches seed loading or an API call) was run
+directly for all four registered domains, both scope values — **8 runs, $0,
+all exit 0**: `camera_product`, `cell_phone_product`, `headphone_product`,
+`laptop_product`. There is nothing in this mechanism that *can* silently
+degrade on a sparse domain the way a measured-profile band lookup can, because
+it reads no profile — but that had to be observed by running it, not asserted
+from the code.
+
+### Offline state — no paid run yet
+
+593 tests (592 pass; the one failure is the live provenance guard while this
+version sits uncommitted, which clears on commit), Ruff clean, 3 pins
+re-computed with 0 unexpected drift (`planning_quality.py`, `backend.py`,
+`run_generate.py`), both parity scopes healthy, backend self-test on and off
+for all four domains (8/8 exit 0, $0), default arm value reproduces v104's
+prompt path byte-for-byte.
+
+### Not done in this version, deliberately
+
+- **No large-thread gate, no N=10 run, no default flip.** The credential to
+  bill for any paid run was flagged as unconfirmed by the 2026-08-21 session
+  and remains unconfirmed as of this entry — do not spend against it without
+  the user answering that first. `--reply-novelty-scope` ships with
+  `parent_only` as the default for this reason: there is no gate result yet to
+  justify defaulting to `chain`.
+- **No prediction band is written here** for the same reason §4's process
+  calls for writing one before a paid run: there isn't a scheduled paid run to
+  write one against yet. When the large-thread gate runs, predict against
+  that thread's own matched real (per `docs/DECISIONS.md` J6), not the pooled
+  corpus — this project has mis-set a prediction band against the pooled
+  corpus twice before (`tasks/lessons.md`).
+
+---
+
 ## v104 — evaluative register (2026-08-21)
 
 Policy ID: `generalized-card-v2-evaluative-register-v104-20260821`.

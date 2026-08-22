@@ -1780,6 +1780,207 @@ class GeneralizedCardTest(unittest.TestCase):
             {issue.code for issue in report.issues},
         )
 
+    def test_reply_novelty_default_scope_is_parent_only(self) -> None:
+        parent = {
+            "sample_id": "1",
+            "semantic_move": "sets a boundary",
+            "decision_boundary": "boundary one",
+            "detail_focus": "detail one",
+        }
+        child = {
+            "sample_id": "2",
+            "parent_sample_id": "1",
+            "semantic_move": "narrows the boundary",
+            "decision_boundary": "boundary two",
+            "detail_focus": "detail two",
+            "reply_delta": "narrows the boundary",
+            "reply_delta_type": "scope_limit",
+            "reply_novelty_anchor": "a new concrete condition",
+        }
+        kwargs = dict(
+            require_reply_novelty=True,
+            semantic_similarity=lambda _left, _right: 0.90,
+        )
+        default_report = evaluate_plan_batch({2: child}, prior_plans=[parent], **kwargs)
+        explicit_report = evaluate_plan_batch(
+            {2: child}, prior_plans=[parent], reply_novelty_scope="parent_only", **kwargs
+        )
+        self.assertEqual(default_report.to_dict(), explicit_report.to_dict())
+
+    def _marker_similarity(
+        self, left: dict[str, Any], right: dict[str, Any]
+    ) -> float:
+        """A keyword-aware similarity stub: 0.90 if both probes share a
+        `MARKER_X` token, 0.20 otherwise. A constant-return stub can't test
+        which ancestor a reply's novelty anchor actually matched."""
+
+        marker_re = re.compile(r"MARKER_[A-Z]")
+        left_markers = set(marker_re.findall(" ".join(str(value) for value in left.values())))
+        right_markers = set(marker_re.findall(" ".join(str(value) for value in right.values())))
+        return 0.90 if left_markers & right_markers else 0.20
+
+    def test_reply_novelty_parent_only_scope_misses_grandparent_restatement(self) -> None:
+        grandparent = {
+            "sample_id": "1",
+            "semantic_move": "argues MARKER_A applies to this case",
+            "decision_boundary": "boundary one MARKER_A",
+            "detail_focus": "detail one",
+        }
+        parent = {
+            "sample_id": "2",
+            "parent_sample_id": "1",
+            "semantic_move": "argues MARKER_B applies instead",
+            "decision_boundary": "boundary two MARKER_B",
+            "detail_focus": "detail two",
+        }
+        child = {
+            "sample_id": "3",
+            "parent_sample_id": "2",
+            "semantic_move": "restates MARKER_A again for this case",
+            "decision_boundary": "boundary three MARKER_A",
+            "detail_focus": "detail three",
+            "reply_delta_type": "scope_limit",
+            "reply_novelty_anchor": "a plain new condition with no marker",
+        }
+        report = evaluate_plan_batch(
+            {3: child},
+            prior_plans=[grandparent, parent],
+            require_reply_novelty=True,
+            reply_novelty_scope="parent_only",
+            semantic_similarity=self._marker_similarity,
+        )
+        self.assertNotIn(
+            "reply_increment_conflict",
+            {issue.code for issue in report.issues},
+        )
+
+    def test_reply_novelty_chain_scope_catches_grandparent_restatement(self) -> None:
+        grandparent = {
+            "sample_id": "1",
+            "semantic_move": "argues MARKER_A applies to this case",
+            "decision_boundary": "boundary one MARKER_A",
+            "detail_focus": "detail one",
+        }
+        parent = {
+            "sample_id": "2",
+            "parent_sample_id": "1",
+            "semantic_move": "argues MARKER_B applies instead",
+            "decision_boundary": "boundary two MARKER_B",
+            "detail_focus": "detail two",
+        }
+        child = {
+            "sample_id": "3",
+            "parent_sample_id": "2",
+            "semantic_move": "restates MARKER_A again for this case",
+            "decision_boundary": "boundary three MARKER_A",
+            "detail_focus": "detail three",
+            "reply_delta_type": "scope_limit",
+            "reply_novelty_anchor": "a plain new condition with no marker",
+        }
+        report = evaluate_plan_batch(
+            {3: child},
+            prior_plans=[grandparent, parent],
+            require_reply_novelty=True,
+            reply_novelty_scope="chain",
+            semantic_similarity=self._marker_similarity,
+        )
+        issue = next(
+            (issue for issue in report.issues if issue.code == "reply_increment_conflict"),
+            None,
+        )
+        self.assertIsNotNone(issue)
+        self.assertIn("S1", issue.message)
+
+    def test_reply_novelty_chain_scope_walks_past_two_hops(self) -> None:
+        great_grandparent = {
+            "sample_id": "1",
+            "semantic_move": "argues MARKER_A applies to this case",
+            "decision_boundary": "boundary one MARKER_A",
+            "detail_focus": "detail one",
+        }
+        grandparent = {
+            "sample_id": "2",
+            "parent_sample_id": "1",
+            "semantic_move": "argues MARKER_B applies instead",
+            "decision_boundary": "boundary two MARKER_B",
+            "detail_focus": "detail two",
+        }
+        parent = {
+            "sample_id": "3",
+            "parent_sample_id": "2",
+            "semantic_move": "argues MARKER_C applies now",
+            "decision_boundary": "boundary three MARKER_C",
+            "detail_focus": "detail three",
+        }
+        child = {
+            "sample_id": "4",
+            "parent_sample_id": "3",
+            "semantic_move": "restates MARKER_A again, three hops later",
+            "decision_boundary": "boundary four MARKER_A",
+            "detail_focus": "detail four",
+            "reply_delta_type": "scope_limit",
+            "reply_novelty_anchor": "a plain new condition with no marker",
+        }
+        report = evaluate_plan_batch(
+            {4: child},
+            prior_plans=[great_grandparent, grandparent, parent],
+            require_reply_novelty=True,
+            reply_novelty_scope="chain",
+            semantic_similarity=self._marker_similarity,
+        )
+        issue = next(
+            (issue for issue in report.issues if issue.code == "reply_increment_conflict"),
+            None,
+        )
+        self.assertIsNotNone(issue)
+        self.assertIn("S1", issue.message)
+
+    def test_reply_novelty_conflict_message_has_no_domain_vocabulary(self) -> None:
+        parent = {
+            "sample_id": "1",
+            "semantic_move": "argues MARKER_A applies to this case",
+            "decision_boundary": "boundary one MARKER_A",
+            "detail_focus": "detail one",
+        }
+        child = {
+            "sample_id": "2",
+            "parent_sample_id": "1",
+            "semantic_move": "restates MARKER_A again",
+            "decision_boundary": "boundary two MARKER_A",
+            "detail_focus": "detail two",
+            "reply_delta_type": "scope_limit",
+            "reply_novelty_anchor": "MARKER_A restated as a new condition",
+        }
+        banned = (
+            "gear",
+            "camera",
+            "lens",
+            "shot",
+            "shoot",
+            "photo",
+            "iso",
+            "aperture",
+            "specification",
+            "megapixel",
+            "sensor",
+            "product",
+        )
+        for scope in ("parent_only", "chain"):
+            report = evaluate_plan_batch(
+                {2: child},
+                prior_plans=[parent],
+                require_reply_novelty=True,
+                reply_novelty_scope=scope,
+                semantic_similarity=self._marker_similarity,
+            )
+            issue = next(
+                (issue for issue in report.issues if issue.code == "reply_increment_conflict"),
+                None,
+            )
+            self.assertIsNotNone(issue)
+            for word in banned:
+                self.assertNotIn(word, issue.message.lower(), f"{word!r} in {issue.message!r}")
+
     def test_generalized_plan_normalizer_carries_long_form_plan_into_task(self) -> None:
         module = configure_generator_backend(load_generator_backend(), self.config)
         branches = [

@@ -79,6 +79,21 @@ number looked worst:
       showed this tail is too small to be the aggregate driver -- both
       readings are correct, they answer different questions
       (`tasks/lessons.md`).
+
+      - [x] **A mechanism already existed for this and never fired.**
+            `reply_increment_problem` (`require_reply_novelty=True` since
+            before v104) scored **0 trips on the entire v103 artifact** --
+            a probe-shape bug (a short anchor phrase compared against a
+            longer compound ancestor description) suppressed cosine
+            similarity regardless of content. Fixing the probe shape and
+            walking the whole ancestor chain surfaces 60 trips on the same
+            artifact, including both named qualitative chains. Shipped as
+            v105, `--reply-novelty-scope {parent_only,chain}`, default
+            `parent_only` (byte-for-byte legacy). Offline-verified across all
+            four registered domains (self-test, 8 runs, $0). **No paid gate
+            yet** -- see `generalized_card/VERSION_LOG.md` v105 and
+            `docs/DECISIONS.md` G11/E9. Next action is the large-thread gate,
+            blocked on the user confirming which API credential to bill.
 - [ ] **2. `polite_rate` / `impolite_rate` — pass at N=10 only for want of
       power, and will fail at N=150.** The gap is 0.18, which is 1.2 real
       between-thread standard deviations, and a +0.10 shift is caught 100% of the
