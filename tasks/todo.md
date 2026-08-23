@@ -157,6 +157,33 @@ number looked worst:
             (G8) as a closed research-design limit, not an open task.** Do
             not open a fourth narrow mechanism against it without new
             evidence.
+      - [x] **Reopened the same day by a genuinely different, legitimate
+            category, and it's the best single-thread result yet
+            (v108, `docs/DECISIONS.md` G23).** The closure above was scoped
+            to two specific forbidden/low-ceiling categories (Writer-output
+            checks, G20; widened Planner plan-similarity, G21/G22) -- it did
+            not rule out changing what the Writer's *prompt* says before
+            generation, which is a different, ordinary "arm" (same category
+            as every cue-text fix this session). Found a real, concrete gap:
+            the Writer prompt's "already covered" ledger lists prior
+            semantic contributions but, unlike its sibling ledgers, never
+            told the Writer not to repeat them; verified directly against
+            the seed002 restatement chain. Shipped as
+            `--semantic-coverage-nonrepeat {off,on}`. **First paid attempt
+            wasted $1.19 on a real bug** (fixed the wrong of two prompt
+            builders -- `_thread_memory`, not the actually-live default
+            `_focused_thread_ledger` -- caught only after the gate ran, 0/186
+            prompts touched). Fixed, re-verified end-to-end through the real
+            dispatch this time, re-gated: arm fired 186/186, and
+            `self_bertscore_mean_f1`'s gap on seed 8 narrowed +0.0183 ->
+            +0.0139 -- the largest improvement of any mechanism this
+            session, across four of five depth bins together rather than
+            trading one for another. Still one thread (G16 already showed a
+            clean single-thread win here can fail to replicate at N=10);
+            default stays `off`. **Next decision, not made here:** an
+            isolated N=10 pool to get a statistically powered read, given
+            how much better this single-thread signal is than anything
+            gated before it.
 
       Two follow-ups run, both offline: (1) the real-side direction
       generalizes -- checked on 247 of the 424 excluded threads with the cheap

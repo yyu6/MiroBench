@@ -207,24 +207,68 @@ thread-level regeneration noise this project has already documented
 repeatedly on this same seed-8 thread (`tasks/lessons.md`), not a result
 to read as "the idea doesn't work." The idea has not been tested yet.
 
-**Corrected command, not yet run:**
+### Gate result (v2, the arm actually firing this time) — 2026-08-23. The best single-thread result of any mechanism this session
 
-```bash
-python3 -u generalized_card/scripts/run_generate.py \
-  --tag v108_semantic_coverage_nonrepeat_seed8_20260823_v2 --domain camera \
-  --model gpt-5.4-mini --base-url https://api.openai.com/v1 \
-  --api-key-env LLM_API_KEY --pool-size 150 --max-posts 1 --posts-per-run 1 \
-  --start-seed-index 8 --sampling-seed 42 \
-  --semantic-coverage-nonrepeat on --resume
+Run `v108_semantic_coverage_nonrepeat_seed8_20260823_v2`, seed 8, 186
+comments, **$1.2036**, 19.9 min. **Confirmed the arm fired before reading
+any metric**, per the lesson the wasted v1 run wrote:
+`generation_records.json`'s saved prompts contain the instruction string
+in **186 of 186** slots.
 
-python3 generalized_card/scripts/run_evaluate.py \
-  --tag v108_semantic_coverage_nonrepeat_seed8_20260823_v2 --metric-parallel 5 --resume
-```
+**`self_bertscore_mean_f1` improved on this thread by the largest margin
+of any single mechanism gated this session:**
 
-Before running it again, verify offline for $0 that it actually reaches
-the prompt this time -- generate is not needed for this check, only a
-Python one-liner calling `build_writer_prompt` the way the new test does,
-or `python3 -m pytest generalized_card/tests/test_generalized_card.py -k semantic_coverage_nonrepeat_reaches_both`.
+| | real | generated | gap | vs v104 baseline (+0.0183) |
+|---|---:|---:|---:|---|
+| this run | 0.4887 | 0.5026 | **+0.0139** | **-0.0044** (24% relative reduction) |
+
+For comparison: v107 isolated (G15) improved this same gap by only
+-0.0010; v105+v106 combined (G16, at N=10) made the pooled metric flat to
+slightly worse. This is the first mechanism this session to move this
+metric by a margin that isn't plausibly just this thread's own noise
+floor -- though it is still one thread, and G16 already showed a clean
+single-thread win on this exact seed can fail to replicate at N=10
+(`--verdict-close-guard`'s check-variant result). That lesson still
+applies here; this is a promising single data point, not a result.
+
+**Depth-decomposed, fidelity-checked against the shipped artifact first
+-- improved in four of five bins, including the deepest, most heavily
+affected one every prior gate has struggled with:**
+
+| depth range | v104 excess | this run's excess | |
+|---|---:|---:|---|
+| [0,1) root-root | +0.0111 | +0.0036 | improved |
+| [1,2) | -0.0021 | -0.0053 | ~flat (already near zero) |
+| [2,4) | +0.0121 | +0.0103 | improved |
+| [4,7) | +0.0209 | +0.0147 | improved |
+| [7,+) | +0.0401 | **+0.0329** | improved |
+
+Unlike every prior gate on this metric (v105+v106 worsened [2,4) and
+[7,+); v107 isolated improved only [4,7)/[7,+) while [2,4) worsened
+slightly), this is the first mechanism to move the excess in the same
+direction across nearly the whole depth range, not trade one bin for
+another.
+
+**Guardrails, read against the v104 baseline:** `self_bleu_4` flat
+(+0.0066 -> +0.0057). `avg_depth`/`structural_virality` flat, structural.
+`hard_disagree_rate` moved further from real (-0.0230 -> -0.0454),
+flagged not chased -- this arm touches no stance mechanism.
+`polite_rate`/`impolite_rate` roughly flat, deprioritized (G4/G8).
+`mean_story_probability` and `emotion_entropy` both moved *toward* real
+(+0.0231->+0.0159; -0.4092->-0.3240) -- the same direction seen on
+essentially every other gate on this thread regardless of which arm was
+on, continuing to read as thread-level regeneration noise
+(`tasks/lessons.md`), not an effect of this arm.
+
+**Decision: default stays `off`.** One favorable, broad, mechanism-confirmed
+single-thread result is real progress -- the best this session has
+produced for this metric -- but per this project's own "a gate is one
+thread" discipline (J6) and the specific, already-learned lesson that a
+clean single-thread win here has failed to replicate before (G16), this
+is not grounds to flip a default. The natural next step is an N=10 pool
+to get a statistically powered read, isolated (not stacked with
+`--digit-cue-guard`/`--verdict-close-guard`, to keep attribution clean) --
+a spend decision, not made here.
 
 ---
 
