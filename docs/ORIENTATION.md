@@ -9,8 +9,8 @@ It is deliberately high-level and it is deliberately short. Every section ends
 with a pointer to the file that holds the evidence. **This file states
 conclusions; the linked files hold the measurements.**
 
-Last verified: **2026-08-20** (v101 result, plus the `hard_disagree_rate`
-diagnosis). See §9 for what "verified" means here and what was actually checked
+Last verified: **2026-08-23** (v108's N=10 gate, `docs/DECISIONS.md` G24).
+See §9 for what "verified" means here and what was actually checked
 to write this line.
 
 ---
@@ -802,6 +802,33 @@ Writer realization, which no permitted mechanism reaches (G22). **Do not
 open a fourth narrow mechanism against this metric without new evidence.**
 `--digit-cue-guard`/`--verdict-close-guard` keep shipping, default `off`,
 as independently-real criterion-2 improvements regardless of this metric.
+
+### v108, and its N=10 gate — executed since the text above was written
+
+**v108 (2026-08-23, semantic-coverage non-repeat instruction)** was a
+fourth, deliberately different-category attempt at `self_bertscore_mean_f1`
+— it edits the Writer's prompt directly (the "already covered" ledger,
+previously the one sibling block with no "do not repeat" instruction
+attached) rather than a forbidden output check (G20) or a Planner-side
+similarity check (G21). Isolated-gated at N=10 against the same 10 seeds
+as v103 (`docs/DECISIONS.md` G24, full tables in
+`generalized_card/VERSION_LOG.md`): **the metric-level result is a null,
+same shape as G16.** A paired, same-seed comparison against v103 shows no
+statistically credible movement on any of the 7 metrics checked
+(all Wilcoxon p > 0.13), and `self_bertscore_mean_f1`'s own mean gap
+nominally widened. A pair-level depth-bin decomposition shows the
+mechanism *does* produce a real effect — the deepest reply-chain bin
+improved 34% relative (+0.0432 → +0.0284), the largest single depth-bin
+move measured this project — but it is diluted away by the metric's own
+equal-weight-thread-mean definition (G17), the identical mechanism G16
+already found for the digit/verdict guards. **This does not overturn
+G22**; it is a second, independent confirmation that the metric is closed
+at its current definition regardless of which permitted mechanism
+category is tried. `--semantic-coverage-nonrepeat` keeps shipping,
+default `off`, on the same independent criterion-2 standing as
+`--digit-cue-guard`/`--verdict-close-guard` — and, since it moves a
+different depth bin than those two, stacking all three in one gate is an
+untested, plausible next step, not decided here.
 
 ### Next step
 

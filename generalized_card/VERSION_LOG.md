@@ -134,6 +134,100 @@ that would have caught the v1 bug --
 -- and after the run, grep the artifact's own `generation_records.json`
 for the instruction string before reading any metric.
 
+### Result — 2026-08-23. Confirms G16's shape: real pair-level effect, no pooled movement
+
+Run `generalized_card_camera_gpt54_v108_coverage_nonrepeat_n10_20260823_v1`,
+532 comments across 10 threads, **$3.5978**, 53.3 min. **Arm confirmed
+firing 532/532 slots** (grepped `generation_records.json`'s saved
+prompts for the instruction string) before reading any metric.
+
+**Aggregate report:** `self_bertscore_mean_f1` still **FAIL** (MWU=0.0036,
+KS=0.0021, Cliff=0.78, gap generated-vs-real +0.0188). `impolite_rate`
+newly reads FAIL at N=10 (Cliff=0.71, MWU=0.008) where v103 read PASS —
+expected under G4 (power, not a regression this arm caused; see below).
+The other ten metrics PASS or are DESCRIPTIVE-adjacent noise, consistent
+with G9.
+
+**The aggregate Cliff (0.86 -> 0.78 vs v103) is not the right read** —
+per `ORIENTATION.md` §2 trap 4, Cliff-vs-real is unpaired and confounded
+by which ten templates were drawn. Both runs share the identical 10
+matched seeds, so a **paired, same-seed comparison is available and is
+the correct test**: for each of the 10 threads, `(v108 generated - matched
+real) - (v103 generated - matched real)`, Wilcoxon on the 10 differences.
+
+| metric | v103 mean gap | v108 mean gap | threads improved | Wilcoxon p |
+|---|---:|---:|---:|---:|
+| `self_bertscore_mean_f1` | +0.0155 | +0.0188 | 4/10 | 0.232 |
+| `self_bleu_4` | +0.0046 | +0.0049 | 5/10 | 0.846 |
+| `impolite_rate` | +0.1908 | +0.2004 | 5/10 | 0.734 |
+| `polite_rate` | -0.1827 | -0.1306 | 2/10 | 0.164 |
+| `hard_disagree_rate` | -0.0288 | -0.0098 | 5/10 | 0.510 |
+| `mean_story_probability` | -0.0047 | +0.0032 | 3/10 | 0.432 |
+| `emotion_entropy` | +0.1289 | +0.0011 | 8/10 | 0.131 |
+
+**No metric moved with statistical credibility at the thread-pooled
+level** (all p > 0.13). For the target metric specifically, `self_bertscore_mean_f1`'s
+gap nominally *widened* (not significantly), and the split is 4
+improved / 6 worsened — this is exactly the "flat or worse at the pool
+level despite the seed-8 win holding up" failure mode the prediction
+named before spending as a real possibility, and it happened: seed 8's
+own gap did hold an improvement (v103 +0.0235 -> v108 +0.0213), just a
+smaller one than the isolated single-thread gate reported (-0.0044 there
+vs -0.0022 here), and the other 9 threads did not follow the same
+direction.
+
+**Pair-level depth-bin decomposition explains why** —
+`bertscore_pair_diagnosis.py depth`, run against both this artifact and
+the v103 N=10 artifact, fidelity-checked first (every one of the 20
+recomputed thread means reproduces its shipped value to <1e-7):
+
+| depth range | v103 excess (arm off) | v108 excess (arm on) | |
+|---|---:|---:|---|
+| [0,1) | +0.0040 | -0.0008 | improved (small n, root pairs) |
+| [1,2) | +0.0004 | +0.0072 | worsened |
+| [2,4) | +0.0174 | +0.0173 | flat |
+| [4,7) | +0.0198 | +0.0196 | flat |
+| [7,+) | **+0.0432** | **+0.0284** | **improved, 34% relative reduction** |
+
+The deepest bin — exactly the population this mechanism targets, since a
+long reply chain is where the "already covered" ledger accumulates the
+most entries — moved by more than any single depth-bin move measured for
+any mechanism gated this session, including G16's combined
+`--digit-cue-guard`/`--verdict-close-guard` on the same bin
+(+0.0432 -> +0.0346). But deep pairs concentrate in the one or two
+largest threads, while `self_bertscore_mean_f1` is an **equal-weight
+mean of 10 thread-level means**, not a pair-weighted pooled mean (G17) —
+so a large real effect confined to a small thread-count share cannot
+move the reported metric. This is the identical dilution G16 already
+diagnosed for the digit/verdict guards, now confirmed a second time for
+a structurally different mechanism (Writer-prompt instruction, not
+plan-level or lexical-guard).
+
+**Guardrails held.** `self_bleu_4` flat as required. `impolite_rate`'s
+new FAIL is consistent with G4's own prediction (these metrics fail at
+higher power) and shows no paired-comparison movement against v103
+(p=0.734) — not an effect of this arm. `hard_disagree_rate`/
+`mean_story_probability`/`emotion_entropy` all moved within thread-level
+noise (p > 0.13), as predicted.
+
+**Decision: default stays `off`.** This does not overturn `docs/DECISIONS.md`
+G22 — the metric-level result is a second independent null, now for a
+mechanism that reaches Writer realization directly rather than a
+forbidden output-check (G20) or a Planner-side check (G21), which
+strengthens rather than weakens the reading that `self_bertscore_mean_f1`
+is closed at its current thread-equal-weight definition regardless of
+mechanism category. Two things are worth carrying forward without being
+built now: (1) `--semantic-coverage-nonrepeat on` earns the same
+independent criterion-2 standing as `--digit-cue-guard`/
+`--verdict-close-guard` (G12, G16) — it measurably suppresses literal
+argument restatement in the deepest, longest reply chains, regardless of
+whether the reported metric moves; (2) it hits a different depth bin
+than G16's guards ([7,+) here vs [4,7)/[7,+) there, by a smaller amount
+each) — stacking all three has never been isolated-tested together and
+is a plausible next combination, not a spend decision made here.
+
+Full analysis in `docs/DECISIONS.md` G24.
+
 ---
 
 ## v108 — semantic-coverage non-repeat instruction (2026-08-23)

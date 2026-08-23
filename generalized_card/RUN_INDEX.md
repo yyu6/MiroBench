@@ -164,6 +164,11 @@ inflates the pass count. See VERSION_LOG.md.
 | 104 | `v104_evaluative_seed8_20260821_v1` | 1 | 186 | 1.00 | generalized-card-v2-evaluative-register-v104-20260821 | descriptive |
 | 104 | `v104_prepare_check_20260821` | 0 | 0 |  | generalized-card-v2-evaluative-register-v104-20260821 |  |
 | 106 | `v106_chain_novelty_digit_guard_seed8_20260822_v1` | 1 | 186 | 1.00 | generalized-card-v2-digit-cue-quantifier-guard-v106-20260822 | descriptive |
+| 107 | `generalized_card_camera_gpt54_v107_digit_verdict_n10_20260822_v1` | 10 | 532 | 1.00 | generalized-card-v2-verdict-close-check-guard-v107-20260822 | 8 |
+| 107 | `v107_verdict_close_guard_seed8_20260822_v1` | 1 | 186 | 1.00 | generalized-card-v2-verdict-close-check-guard-v107-20260822 | descriptive |
+| 108 | `generalized_card_camera_gpt54_v108_coverage_nonrepeat_n10_20260823_v1` | 10 | 532 | 1.00 | generalized-card-v2-semantic-coverage-nonrepeat-v108-20260823 | 10 |
+| 108 | `v108_semantic_coverage_nonrepeat_seed8_20260823_v1` | 1 | 186 | 1.00 | generalized-card-v2-semantic-coverage-nonrepeat-v108-20260823 | descriptive |
+| 108 | `v108_semantic_coverage_nonrepeat_seed8_20260823_v2` | 1 | 186 | 1.00 | generalized-card-v2-semantic-coverage-nonrepeat-v108-20260823 | descriptive |
 
 ## Per-metric MWU p-values for evaluated runs
 
@@ -213,3 +218,8 @@ inflates the pass count. See VERSION_LOG.md.
 | `generalized_card_camera_gpt54_v103_stance_opening_n10_20260821_v1` | 0.140* | 0.001 | 0.427* | 0.406* | 0.026 | 0.023 | 0.273* | 0.910* | 0.880* | 0.970* | 0.623* | 0.970* |
 | `v104_evaluative_seed8_20260821_v1` | 1.000d | 1.000d | 1.000d | 1.000d | 1.000d | 1.000d | 1.000d | 1.000d | 1.000d | 1.000d | 1.000d | 1.000d |
 | `v106_chain_novelty_digit_guard_seed8_20260822_v1` | 1.000d | 1.000d | 1.000d | 1.000d | 1.000d | 1.000d | 1.000d | 1.000d | 1.000d | 1.000d | 1.000d | 1.000d |
+| `generalized_card_camera_gpt54_v107_digit_verdict_n10_20260822_v1` | 0.241* | 0.001 | 0.910* | 0.791* | 0.038 | 0.014 | 0.049 | 0.623* | 0.910* | 0.939* | 0.678* | 0.880* |
+| `v107_verdict_close_guard_seed8_20260822_v1` | 1.000d | 1.000d | 1.000d | 1.000d | 1.000d | 1.000d | 1.000d | 1.000d | 1.000d | 1.000d | 1.000d | 1.000d |
+| `generalized_card_camera_gpt54_v108_coverage_nonrepeat_n10_20260823_v1` | 0.121* | 0.004 | 0.678* | 0.910* | 0.089* | 0.008 | 0.054* | 0.850* | 0.970* | 1.000* | 0.970* | 0.597* |
+| `v108_semantic_coverage_nonrepeat_seed8_20260823_v1` | 1.000d | 1.000d | 1.000d | 1.000d | 1.000d | 1.000d | 1.000d | 1.000d | 1.000d | 1.000d | 1.000d | 1.000d |
+| `v108_semantic_coverage_nonrepeat_seed8_20260823_v2` | 1.000d | 1.000d | 1.000d | 1.000d | 1.000d | 1.000d | 1.000d | 1.000d | 1.000d | 1.000d | 1.000d | 1.000d |

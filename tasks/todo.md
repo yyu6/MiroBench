@@ -184,6 +184,29 @@ number looked worst:
             isolated N=10 pool to get a statistically powered read, given
             how much better this single-thread signal is than anything
             gated before it.
+      - [x] **Isolated N=10 pool run (2026-08-23, $3.5978), and the
+            single-thread win did not replicate -- `docs/DECISIONS.md`
+            G24.** Arm fired 532/532. Paired, same-seed comparison against
+            v103 (Wilcoxon on the 10 thread-level gap differences): no
+            metric moved with statistical credibility (all p > 0.13), and
+            `self_bertscore_mean_f1`'s own mean gap nominally widened
+            (+0.0155 -> +0.0188, 4/10 threads improved). This is the
+            named "flat or worse at the pool level" failure mode from the
+            prediction, and it happened. A pair-level depth-bin
+            decomposition (fidelity-checked, run against both the v103
+            and v108 artifacts) shows the mechanism does have a real
+            effect -- the deepest reply-chain bin improved 34% relative
+            (+0.0432 -> +0.0284, the largest single depth-bin move
+            measured this session) -- but it is diluted by the metric's
+            own equal-weight-thread-mean definition (G17), the identical
+            pattern G16 already found for the digit/verdict guards.
+            **Does not overturn G22**: a second independent null result
+            for `self_bertscore_mean_f1` at the metric level, now from a
+            mechanism reaching Writer realization directly. Default stays
+            `off`; ships as an independent criterion-2 win regardless
+            (same standing as `--digit-cue-guard`/`--verdict-close-guard`).
+            Untested next idea, not built: stacking all three arms, since
+            each moves a different depth bin.
 
       Two follow-ups run, both offline: (1) the real-side direction
       generalizes -- checked on 247 of the 424 excluded threads with the cheap
