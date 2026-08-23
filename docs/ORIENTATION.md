@@ -621,8 +621,21 @@ progress and is **not** the same thing as being close at N=150.
 2. **`polite_rate` / `impolite_rate` / `neutral_rate` — one cause, three
    metrics, diagnosed.** Full evidence in `tasks/v99-worklog.md`. The plan is
    right (0.275 planned polite against a real 0.288); realization is the whole
-   failure and it is asymmetric: **planned impolite realizes impolite 89.7%,
-   planned polite realizes polite 19.3% and impolite 50.3%.**
+   failure and it is asymmetric: ~~**planned impolite realizes impolite 89.7%,
+   planned polite realizes polite 19.3% and impolite 50.3%.**~~
+
+   > **STALE — corrected 2026-08-23 (`docs/DECISIONS.md` G25).** 19.3% is the
+   > v98 number and was quoted here as if current for five versions. Recomputed
+   > on every N=10 artifact, planned-polite realization is **0.193 (v98) → 0.264
+   > (v101) → 0.329 (v103) → 0.359 (v107) → 0.497 (v108)** — monotone, no
+   > reversal, 2.6× — while the planned share held at 0.271–0.275. Observed
+   > `polite_rate` tracked it: 0.070 → 0.087 → 0.106 → 0.117 → **0.156** against
+   > a real 0.2595. **This metric is an open, actively-improving task, not the
+   > closed limit G8 implies.** The residual is localised: short comments
+   > (<25 words) already match real exactly; the whole deficit sits in 25+ word
+   > comments, with [50,100) alone carrying 42.7% of it. Giving generated real's
+   > within-band rates closes 89.9% of the gap; giving it real's length mix
+   > closes 7.5%.
 
    The lexical signature is measured: **the generated positive vocabulary is
    about two words wide (`thanks` 2.96×, `nice` 1.48×) where real is about ten**
