@@ -62,6 +62,80 @@ Before any run that changes behavior:
 
 ---
 
+## N=10 gate — `--semantic-coverage-nonrepeat on` isolated (predictions, 2026-08-23)
+
+No new policy version: the arm already exists (v108), verified offline
+across all four domains, and confirmed on the seed-8 single thread with
+the arm firing 186/186 times (`docs/DECISIONS.md` G23). This is the best
+single-thread `self_bertscore_mean_f1` result of any mechanism gated this
+session (+0.0183 -> +0.0139, four of five depth bins improved together).
+Isolated on purpose: not stacked with `--digit-cue-guard`/
+`--verdict-close-guard`, to keep attribution to this one arm clean.
+
+**Baseline is the last true N=10 run** (`generalized_card_camera_gpt54_v103_stance_opening_n10_20260821_v1`,
+532 comments, `--start-seed-index 2 --sampling-seed 42 --max-posts 10`),
+the correct J6 control since this arm did not exist then:
+
+| metric | real | v103 (arm off) | gap | Cliff |
+|---|---:|---:|---:|---:|
+| `self_bertscore_mean_f1` | 0.4942 | 0.5097 | +0.0169 | 0.86 |
+| `self_bleu_4` | 0.0278 | 0.0325 | +0.0040 | 0.40 |
+| `hard_disagree_rate` | 0.1208 | 0.0920 | -0.0243 | -0.23 |
+| `mean_story_probability` | 0.1266 | 0.1219 | -0.0184 | -0.14 |
+| `emotion_entropy` | 1.5803 | 1.7092 | -0.0220 | 0.02 |
+
+**Predictions, each a named way to be wrong:**
+
+- `self_bertscore_mean_f1`: **narrower gap, plausibly not closed to PASS.**
+  The single-thread result (-0.0044 on seed 8, 24% relative reduction) is
+  the strongest single-thread signal this session, but G16 already showed
+  a clean single-thread win on this exact seed (`--verdict-close-guard`'s
+  check-variant, fully eliminated on seed 8) can fail to replicate at
+  N=10 entirely. A repeat of that failure -- flat or worse at the pool
+  level despite the seed-8 win holding up -- is a real, named possibility,
+  not a strawman.
+- `hard_disagree_rate`/`mean_story_probability`/`emotion_entropy`: **no
+  confident prediction.** All three moved on the seed-8 gate in directions
+  this arm has no mechanism to cause (it touches only the "already
+  covered" instruction, nothing about stance, story framing, or emotion).
+  Read as thread-level regeneration noise (`tasks/lessons.md`); expected
+  to land close to the v103 baseline row once pooled over N=10 rather than
+  repeat the single-thread swings.
+- `self_bleu_4` must not measurably worsen -- the instruction asks for a
+  new relation, not a stylistic change.
+- Coverage-block-driven prompt-length growth should stay marginal (one
+  sentence per slot past the first few), not scale with thread length.
+
+**Commands:**
+
+```bash
+python3 -u generalized_card/scripts/run_generate.py \
+  --tag generalized_card_camera_gpt54_v108_coverage_nonrepeat_n10_20260823_v1 \
+  --domain camera --model gpt-5.4-mini \
+  --base-url https://api.openai.com/v1 --api-key-env LLM_API_KEY \
+  --pool-size 150 --max-posts 10 --posts-per-run 5 \
+  --start-seed-index 2 --sampling-seed 42 \
+  --semantic-coverage-nonrepeat on --resume
+
+python3 generalized_card/scripts/run_evaluate.py \
+  --tag generalized_card_camera_gpt54_v108_coverage_nonrepeat_n10_20260823_v1 \
+  --metric-parallel 5 --resume
+```
+
+Expected cost: the last N=10 run at these pool parameters
+(`generalized_card_camera_gpt54_v107_digit_verdict_n10_20260822_v1`, two
+arms, one crashed-and-resumed attempt) cost $4.3909; this run has one
+arm and no known crash risk specific to it, so plausibly somewhat lower,
+in the $3.50-4.50 range.
+
+**Before spending: confirm the arm actually fires**, the same $0 check
+that would have caught the v1 bug --
+`python3 -m pytest generalized_card/tests/test_generalized_card.py -k semantic_coverage_nonrepeat_reaches_both`
+-- and after the run, grep the artifact's own `generation_records.json`
+for the instruction string before reading any metric.
+
+---
+
 ## v108 — semantic-coverage non-repeat instruction (2026-08-23)
 
 Policy ID: `generalized-card-v2-semantic-coverage-nonrepeat-v108-20260823`.
