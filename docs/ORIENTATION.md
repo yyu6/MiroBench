@@ -802,6 +802,16 @@ verdict-close check-variant guard)**, then both run at a real N=10. Full
 detail in `generalized_card/VERSION_LOG.md`'s v106/v107 entries and gate
 results; decision register in `docs/DECISIONS.md` G11-G22.
 
+> **DOWNGRADED 2026-08-23 (`docs/DECISIONS.md` G26).** The closure below rests
+> on "three or four independently-built mechanisms failed." A pair-weighted
+> decomposition of the excess by depth bin shows **both** mechanisms actually
+> built for this metric (v105's ancestor-chain novelty check, v108's
+> depth-accumulating coverage ledger) act on the `[7,+)` population, which
+> carries only **11.9%** of the excess. `[2,4)+[4,7)` carry **82.7%** and have
+> never been targeted. v108's 34% cut to `[7,+)` was arithmetically worth 4.0%
+> of the gap — the nulls were expected, not informative about the metric's
+> closability. Treat the search as narrower than the conclusion drawn from it.
+
 **`self_bertscore_mean_f1` is now closed as a likely research-design
 limit**, the same category as `polite_rate`/`impolite_rate` (G8). Three
 independently-built, well-targeted mechanisms failed to move it at real
