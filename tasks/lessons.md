@@ -1863,3 +1863,45 @@ followed here.
   change. This is free, immediate, and would have caught this before
   spending a second thought on the metrics -- which is why it was the first
   thing checked here, just one gate too late.
+
+## Read the metric's own scorer arithmetic before believing a mechanism failed
+
+**What happened.** Four mechanisms (v104, v105, v107, v108) were built for
+`self_bertscore_mean_f1`, all failed at N=10, and the project concluded from
+that induction that the metric was a research-design limit (G16, G22). A
+pair-weighted decomposition of the excess by depth bin -- from data already on
+disk -- then showed `[7,+)` carries only **11.9%** of the defect while
+`[2,4)+[4,7)` carry **82.7%**, and that *both* mechanisms actually built for the
+metric (v105's ancestor-chain check, v108's depth-accumulating ledger) act on
+the 11.9%. v108 cut its target bin by 34%, which is arithmetically 4.0% of the
+gap -- far below what N=10 can resolve. **The nulls were predictable before
+spending, and said nothing about whether the metric was closable.**
+
+The same trap on the same day, twice more: `self_bleu_4` had been treated as a
+4-gram metric for eleven versions, so every mechanism targeted repeated
+*phrases*. Reading `sentence_bleu` shows it is the geometric mean of 1-4 gram
+precisions, and p1+p2 carry 63% of the gap -- every mechanism had been aimed at
+the terms that move least. And `polite_rate` was called a likely limit on the
+strength of a realization figure (19.3%) that was five versions stale; the
+actual value had climbed monotonically to 49.7%.
+
+**Why:** "we tried N mechanisms and none worked" is only evidence about the
+metric if the mechanisms were aimed at where the metric's mass actually is.
+Without a decomposition, that induction silently assumes the aim was good.
+
+**How to apply.**
+- **Before** building or gating a mechanism for a metric, decompose the metric's
+  own gap over the population the mechanism will act on, and compute the
+  expected move as (share of gap in that population) x (expected effect within
+  it). If that product is below the run's resolution, do not spend -- J7 already
+  says an ablation is an upper bound; this is the same discipline applied to
+  targeting rather than to effect size.
+- Read the scorer's arithmetic, not its name. `self_bleu_4` is not a 4-gram
+  metric; `self_bertscore_mean_f1` is an equal-weight mean of thread means, not
+  of pairs (which is why a real pair-level win can vanish, G16/G24).
+- Before quoting any realization or compliance rate from a doc, recompute it on
+  the newest artifact. Three separate load-bearing numbers in `ORIENTATION.md`
+  were stale by 2.6x, five versions, or both.
+- A closure decision ("this metric is a research-design limit") needs the
+  decomposition attached, or it is an induction over an unexamined sample.
+
