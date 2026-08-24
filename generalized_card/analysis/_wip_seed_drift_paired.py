@@ -1,7 +1,10 @@
 # Per-thread paired test of the drift finding + TEST B: function-word register variance
-import sys, re, json, statistics
+import sys
+import re
+import json
+import statistics
 from pathlib import Path
-from collections import defaultdict, Counter
+from collections import Counter
 REPO=Path('/Users/yaoningyu/Desktop/UIUC/GEO')
 sys.path.insert(0,str(REPO/'scripts/evaluation'))
 from score_thread_semantic_uniformity import load_generated_comments, load_real_comments
@@ -60,7 +63,7 @@ def spread(threads):
         out.append(statistics.fmean(ds))
     return out
 G=spread([gen[t] for t,_,_,_ in pairs]); R=spread([r for _,_,r,_ in pairs])
-print(f"\nTEST B -- mean pairwise L1 distance between comments' FUNCTION-WORD profiles")
+print("\nTEST B -- mean pairwise L1 distance between comments' FUNCTION-WORD profiles")
 print(f"  generated {statistics.fmean(G):.4f}   real {statistics.fmean(R):.4f}   ratio {statistics.fmean(G)/statistics.fmean(R):.3f}")
 print(f"  threads where generated is LESS varied: {sum(1 for a,b in zip(G,R) if a<b)}/{len(G)}")
 print(f"  Wilcoxon p = {wilcoxon([a-b for a,b in zip(G,R)]).pvalue:.4f}")

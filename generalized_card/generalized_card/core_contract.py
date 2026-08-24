@@ -16,10 +16,11 @@ HISTORICAL_REVISION_POLICY_VERSIONS = {
     "generalized-card-revision-v6-dynamic-coverage-history-20260807",
 }
 GENERALIZED_V2_GENERATION_POLICY_VERSION = (
-    "generalized-card-v2-semantic-coverage-nonrepeat-v108-20260823"
+    "generalized-card-v2-entity-referent-spread-v109-20260824"
 )
 HISTORICAL_GENERATION_POLICY_VERSIONS = {
     "generalized-v2": {
+        "generalized-card-v2-semantic-coverage-nonrepeat-v108-20260823",
         "generalized-card-v2-verdict-close-check-guard-v107-20260822",
         "generalized-card-v2-digit-cue-quantifier-guard-v106-20260822",
         "generalized-card-v2-chain-scoped-reply-novelty-v105-20260822",
@@ -178,7 +179,7 @@ CORE_FILES = {
     ),
     "generator_adapter": (
         "generalized_card/generalized_card/backend.py",
-        "c763489d68e16796368254d6bb2b46a188ed6dd9616902ca310da10687be7adb",
+        "d1d854cc62da920b1ec0e100d52f40a5f42a20c4aee2aa11e4664ff5db3106e6",
     ),
     "data_boundary": (
         "generalized_card/generalized_card/data.py",
@@ -212,7 +213,7 @@ CORE_FILES = {
     ),
     "generation_runner": (
         "generalized_card/scripts/run_generate.py",
-        "3e42d72092031e9bb49e6b60354bb263eea87d56f3c0e6bbbf1f7d34ae3b4837",
+        "a2625d77c50b16f6cc8e440cf322b4961a445c3dd8adb3831b6ce2e0de703a03",
     ),
     "generation_backend_runner": (
         "generalized_card/scripts/run_generator_backend.py",
@@ -228,7 +229,7 @@ CORE_FILES = {
     ),
     "domain_profile": (
         "generalized_card/generalized_card/domain_profile.py",
-        "c31f47ebe17053460e195bbba14fec08e98c549f2a4974a1cd942d008235e26d",
+        "82176630ba18194f4e213ff598cf199bec0ed883261c4210192a822b770345fc",
     ),
     "viewpoint_bank": (
         "generalized_card/generalized_card/viewpoint_bank.py",
@@ -277,6 +278,10 @@ CORE_FILES = {
     "entity_inventory": (
         "generalized_card/generalized_card/entity_inventory.py",
         "0157a4d67d2b21123848996818a2d9b76a46cbe09af13017905c617be9e50cff",
+    ),
+    "entity_spread": (
+        "generalized_card/generalized_card/entity_spread.py",
+        "fb376f912033d80bf8a7a0b01545f23259f1fed76f09ff540c3687cc5ebadefe",
     ),
     "lexical_quality": (
         "generalized_card/generalized_card/lexical_quality.py",
@@ -416,7 +421,7 @@ CORE_FILES = {
     ),
     "domain_prompt_adapter": (
         "generalized_card/generalized_card/prompts.py",
-        "2addb5310e9068a438325e4616ac1f21a20319aae904282c5e8e404ca9a3f8ea",
+        "2daea6b425c704dfaf155a50387a692b7797fb81e86b774f92b76d063504107e",
     ),
     "reply_planning": (
         "generalized_card/generalized_card/reply_planning.py",
@@ -608,6 +613,7 @@ GENERATION_ADAPTER_CORE_NAMES = (
     "domain_claim",
     "opener_profile",
     "entity_inventory",
+    "entity_spread",
     "domain_prompt_adapter",
     "writer_grounding",
     "speaker_roster",

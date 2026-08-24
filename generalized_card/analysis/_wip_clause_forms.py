@@ -1,7 +1,8 @@
 """v110 groundwork: measure CLAUSE FORM rates, real excluded corpus vs generated.
 Distinct from sentence_rhythm's punctuation habits, which were already rejected
 as the cause of the function-word gap."""
-import sys, re, json, statistics
+import sys
+import re
 from pathlib import Path
 from collections import defaultdict
 REPO=Path('/Users/yaoningyu/Desktop/UIUC/GEO')

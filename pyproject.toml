@@ -24,3 +24,12 @@ include = ["product_reddit_sim", "calibration"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
+
+[tool.ruff.lint.per-file-ignores]
+# `generalized_card/analysis/_wip_*.py` are verbatim scratch reproductions of the
+# measurements behind `docs/DECISIONS.md` G31-G35. They are committed because rule
+# E8 requires every claimed number to be reproducible from a committed script, and
+# they are exempted from the line-style rules because rewriting them would change
+# the code that produced the recorded numbers. Promote to a documented
+# `analysis/<name>.py` before reusing any of them.
+"generalized_card/analysis/_wip_*.py" = ["E401", "E402", "E701", "E702"]

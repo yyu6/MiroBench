@@ -1,6 +1,7 @@
 """Same falsification with the better-powered measure: the 41-dim function-word
 L1 spread from TEST B (G32), which is what G27 says actually carries the gap."""
-import sys, re, statistics
+import sys
+import statistics
 from pathlib import Path
 from collections import Counter
 REPO=Path('/Users/yaoningyu/Desktop/UIUC/GEO')
@@ -42,7 +43,7 @@ print(f"\n  r(function-word L1 spread, self_bleu_4)   = {pear(F,B):+.3f}")
 print(f"  partial r controlling mean words          = {pear(resid(F,M),resid(B,M)):+.3f}")
 sp=sl(resid(F,M),resid(B,M))
 print(f"  partial slope                             = {sp:+.5f} per unit L1 spread")
-print(f"\n  generated L1 spread 0.4646 -> real 0.5342 is +0.0696")
+print("\n  generated L1 spread 0.4646 -> real 0.5342 is +0.0696")
 print(f"  predicted self_bleu_4 move at the partial slope: {sp*0.0696:+.6f}")
 print(f"  gap to close: +0.00489  ->  {100*(-sp*0.0696)/0.00489:.1f}% of it")
 q=sorted(rows,key=lambda r:r['fs']); k=len(q)//4

@@ -21,6 +21,7 @@ from .domain_claim import (
 )
 from .domain_profile import render_profile_for_planner
 from .entity_inventory import slot_equipment_options
+from .entity_spread import slot_referent_block
 from .generation_distribution import (
     TONE_CLASSES,
     TONE_DEFINITIONS,
@@ -153,6 +154,43 @@ def _own_equipment_block(
         "\n\nEquipment you may claim as your own, if this turn reports personal "
         f"experience:\n- {rendered}\n{closing}"
     )
+
+
+def _equipment_and_referent_block(
+    backend: Any,
+    task: Any,
+    *,
+    has_domain_claim: bool = False,
+) -> str:
+    """Own-gear offer plus the drawn referent offer, for both writer prompts.
+
+    Both blocks are rendered here rather than at each call site because there
+    are two writer-prompt builders and v108 shipped a prompt fix that reached
+    only one of them (`docs/DECISIONS.md` G23). One helper, two call sites.
+
+    The two offers are deliberately different things: `_own_equipment_block`
+    licenses a *possession* on a first-person slot (14.0% of real designator
+    mentions), and `entity_spread` offers a *bare referent* on any slot (the
+    other 86.0%). See `entity_spread.py`.
+    """
+
+    own = _own_equipment_block(backend, task, has_domain_claim=has_domain_claim)
+    profile = getattr(backend, "GENERALIZED_DOMAIN_PROFILE", {}) or {}
+    seed_key = str(getattr(backend, "GENERALIZED_ACTIVE_SEED_KEY", "") or "")
+    visible = [
+        str(value)
+        for value in (getattr(task, "concrete_anchors", ()) or ())
+        if str(value).strip()
+    ]
+    referent = slot_referent_block(
+        profile.get("entity_inventory") or {},
+        profile=profile.get("entity_spread_profile") or {},
+        slot_key=f"{seed_key}:{_safe_slot_index(task)}",
+        slot_index=_safe_slot_index(task),
+        comment_count=getattr(backend, "GENERALIZED_ACTIVE_THREAD_COMMENTS", 0),
+        excluded=visible,
+    )
+    return own + referent
 
 
 def _speaker_for_task(backend: Any, task: Any) -> Any:
@@ -1259,7 +1297,7 @@ def writer_prompt(
             openings=openings,
             retry=retry,
             anchors_block=anchors_block,
-            own_equipment=_own_equipment_block(
+            own_equipment=_equipment_and_referent_block(
                 backend,
                 task,
                 has_domain_claim=bool(domain_claim_rule),
@@ -1314,7 +1352,7 @@ Local anchor:
 {backend.compact(_writer_safe_control_text(task.local_anchor, domain_profile), 220)}
 
 Visible factual anchors:
-{anchors_block}{_own_equipment_block(backend, task, has_domain_claim=bool(domain_claim_rule))}{speaker_block}
+{anchors_block}{_equipment_and_referent_block(backend, task, has_domain_claim=bool(domain_claim_rule))}{speaker_block}
 
 Planner intent:
 {backend.compact(_writer_safe_control_text(task.planner_intent, domain_profile), 260)}

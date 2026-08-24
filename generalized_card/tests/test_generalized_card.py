@@ -7077,6 +7077,118 @@ class FocusedWriterPromptTest(unittest.TestCase):
             recent_openings=[],
         )
 
+    def test_entity_spread_reaches_both_writer_prompt_paths(self) -> None:
+        """The v108 lesson: test a prompt fix through the real dispatch, both modes.
+
+        v108 shipped an instruction into `_thread_memory` (the `full` ledger),
+        never touched `_focused_thread_ledger`, and burned $1.19 on a gate where
+        the arm fired 0/186 times because `focused` is the default every run has
+        used (`docs/DECISIONS.md` G23). Both writer prompts now render the
+        referent offer through one shared helper; this asserts it on both.
+
+        The profile is supplied as a real profile file through
+        `GENERALIZED_CARD_DOMAIN_PROFILE`, so this exercises the actual load and
+        install path rather than injecting module globals.
+        """
+
+        import json
+        import os
+        import tempfile
+
+        from generalized_card.entity_spread import REFERENT_CUE
+
+        profile = {
+            "entity_inventory": {
+                "available": True,
+                "terms": [{"term": f"XZ-{n}00"} for n in range(1, 9)],
+            },
+            "entity_spread_profile": {
+                "available": True,
+                "bands": {
+                    band: {"mention_rate": 1.0, "distinct_per_comment": 1.0}
+                    for band in ("tiny", "small", "medium", "large")
+                },
+            },
+        }
+        previous = os.environ.get("GENERALIZED_CARD_DOMAIN_PROFILE")
+        previous_arm = os.environ.get("GENERALIZED_CARD_ENTITY_SPREAD")
+        with tempfile.TemporaryDirectory() as tmp:
+            path = os.path.join(tmp, "profile.json")
+            from generalized_card.domain_profile import profile_hash
+
+            profile["profile_sha256"] = profile_hash(profile)
+            with open(path, "w", encoding="utf-8") as handle:
+                json.dump(profile, handle)
+            os.environ["GENERALIZED_CARD_DOMAIN_PROFILE"] = path
+            try:
+                for mode in ("focused", "full"):
+                    os.environ["GENERALIZED_CARD_ENTITY_SPREAD"] = "off"
+                    off = self._prompt(mode, "impolite")
+                    self.assertNotIn(
+                        REFERENT_CUE, off, f"{mode}: arm off must render nothing"
+                    )
+
+                    os.environ["GENERALIZED_CARD_ENTITY_SPREAD"] = "measured"
+                    module = configure_generator_backend(
+                        load_generator_backend(), self.config
+                    )
+                    module.GENERALIZED_ACTIVE_THREAD_COMMENTS = 60
+                    on = self._prompt(mode, "impolite")
+                    self.assertIn(
+                        REFERENT_CUE,
+                        on,
+                        f"{mode}: arm on must reach this writer prompt",
+                    )
+                    self.assertIn("XZ-", on, f"{mode}: a referent must be offered")
+            finally:
+                for key, value in (
+                    ("GENERALIZED_CARD_DOMAIN_PROFILE", previous),
+                    ("GENERALIZED_CARD_ENTITY_SPREAD", previous_arm),
+                ):
+                    if value is None:
+                        os.environ.pop(key, None)
+                    else:
+                        os.environ[key] = value
+
+    def test_entity_spread_cue_carries_no_domain_vocabulary(self) -> None:
+        from generalized_card.entity_spread import REFERENT_CUE
+
+        lowered = REFERENT_CUE.lower()
+        for word in ("camera", "lens", "phone", "laptop", "headphone", "photo"):
+            self.assertNotIn(word, lowered)
+
+    def test_entity_spread_draw_is_deterministic_and_rate_respecting(self) -> None:
+        from generalized_card.entity_spread import (
+            set_entity_spread,
+            slot_offers_referent,
+        )
+
+        half = {"available": True, "bands": {"medium": {"distinct_per_comment": 0.5}}}
+        try:
+            set_entity_spread("measured")
+            first = [
+                slot_offers_referent(half, slot_key=f"s:{i}", comment_count=60)
+                for i in range(400)
+            ]
+            second = [
+                slot_offers_referent(half, slot_key=f"s:{i}", comment_count=60)
+                for i in range(400)
+            ]
+            self.assertEqual(first, second, "draw must be deterministic per slot")
+            rate = sum(first) / len(first)
+            self.assertTrue(0.42 < rate < 0.58, f"rate {rate} should track 0.5")
+
+            set_entity_spread("off")
+            self.assertFalse(
+                any(
+                    slot_offers_referent(half, slot_key=f"s:{i}", comment_count=60)
+                    for i in range(50)
+                ),
+                "arm off must never draw",
+            )
+        finally:
+            set_entity_spread("off")
+
     def test_focused_is_far_smaller_than_full(self) -> None:
         full = self._prompt("full", "impolite")
         focused = self._prompt("focused", "impolite")

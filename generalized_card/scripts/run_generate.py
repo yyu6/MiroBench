@@ -479,6 +479,20 @@ def build_parser() -> argparse.ArgumentParser:
         ),
     )
     parser.add_argument(
+        "--entity-spread",
+        choices=("off", "measured"),
+        default="off",
+        help=(
+            "Offer each slot a rotating held-out referent it may name in "
+            "passing, drawn at the thread band's measured distinct-designator "
+            "rate. 'off' reproduces v108 byte-for-byte. Real matched threads "
+            "name 40.8 distinct designators against a generated 7.4, with the "
+            "top one taking 0.152 of mentions against 0.485 "
+            "(docs/DECISIONS.md G35). Priced by exact ablation at 5.4%% of the "
+            "self_bleu_4 gap; shipped primarily as a criterion-2 fix."
+        ),
+    )
+    parser.add_argument(
         "--no-story-scope",
         choices=("sequence", "tense"),
         default="sequence",
@@ -877,6 +891,7 @@ def main() -> None:
         "length_calibration": args.length_calibration,
         "final_punctuation": args.final_punctuation,
         "route_ledger": args.route_ledger,
+        "entity_spread": args.entity_spread,
         "no_story_scope": args.no_story_scope,
         "own_fact_license": args.own_fact_license,
         "speaker_identity": args.speaker_identity,
@@ -1079,6 +1094,7 @@ def main() -> None:
     env["GENERALIZED_CARD_LENGTH_CALIBRATION"] = args.length_calibration
     env["GENERALIZED_CARD_FINAL_PUNCTUATION"] = args.final_punctuation
     env["GENERALIZED_CARD_ROUTE_LEDGER"] = args.route_ledger
+    env["GENERALIZED_CARD_ENTITY_SPREAD"] = args.entity_spread
     env["GENERALIZED_CARD_NO_STORY_SCOPE"] = args.no_story_scope
     env["GENERALIZED_CARD_OWN_FACT_LICENSE"] = args.own_fact_license
     env["GENERALIZED_CARD_SPEAKER_IDENTITY"] = args.speaker_identity
@@ -1428,6 +1444,7 @@ RUN_EXPERIMENT_FIELDS = (
     "length_calibration",
     "final_punctuation",
     "route_ledger",
+    "entity_spread",
     "no_story_scope",
     "own_fact_license",
     "speaker_identity",

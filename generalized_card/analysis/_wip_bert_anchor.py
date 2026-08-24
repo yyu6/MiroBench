@@ -1,7 +1,10 @@
 """The decisive test on the REAL scorer: does seed-anchoring predict pairwise
 BERTScore F1, within depth bin, on both sides? Determines which depths the
 v109 taper may safely touch."""
-import sys, re, json, statistics
+import sys
+import re
+import json
+import statistics
 from pathlib import Path
 from collections import defaultdict
 REPO=Path('/Users/yaoningyu/Desktop/UIUC/GEO')

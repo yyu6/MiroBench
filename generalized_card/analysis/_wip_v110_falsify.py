@@ -2,7 +2,9 @@
 Do real threads whose comments vary more in clause register have lower
 self_bleu_4? If the within-real slope is ~0, v110 dies here for $0 -- the same
 test that just killed v109."""
-import sys, re, statistics, math
+import sys
+import re
+import statistics
 from pathlib import Path
 REPO=Path('/Users/yaoningyu/Desktop/UIUC/GEO')
 sys.path.insert(0,str(REPO/'scripts/evaluation'))

@@ -1,4 +1,6 @@
-import json,glob,statistics
+import json
+import glob
+import statistics
 from collections import defaultdict
 import sys
 from pathlib import Path

@@ -1,7 +1,10 @@
 """Does seed-anchoring CAUSE pairwise similarity, or merely correlate?
 Falsification-first: if the within-depth-bin slope on REAL data is ~0, the v109
 hypothesis dies here for $0."""
-import sys, re, json, statistics
+import sys
+import re
+import json
+import statistics
 from pathlib import Path
 from collections import defaultdict
 REPO=Path('/Users/yaoningyu/Desktop/UIUC/GEO')

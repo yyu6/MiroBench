@@ -128,6 +128,7 @@ from .sentence_rhythm import (
     set_digit_cue_guard,
     set_sentence_rhythm,
 )
+from .entity_spread import set_active_entity_spread_profile, set_entity_spread
 from .story_scope import set_no_story_scope
 from .surface_typography import (
     apply_final_punctuation_habit,
@@ -333,6 +334,7 @@ def configure_generator_backend(
     module.GENERALIZED_ACTIVE_REFERENCE_TEMPLATE = {}
     module.GENERALIZED_ACTIVE_SLOT_DISTRIBUTION_SCHEDULE = {}
     module.GENERALIZED_ACTIVE_SEED_KEY = ""
+    module.GENERALIZED_ACTIVE_THREAD_COMMENTS = 0
     module.GENERALIZED_ACTIVE_PLANNER_COVERAGE = {}
     module.GENERALIZED_ACTOR_MODE = os.environ.get(
         "GENERALIZED_CARD_ACTOR_CONDITIONING", MODE_NONE
@@ -565,6 +567,10 @@ def configure_generator_backend(
         or "sequence"
     )
     set_no_story_scope(module.GENERALIZED_NO_STORY_SCOPE)
+    module.GENERALIZED_ENTITY_SPREAD = (
+        os.environ.get("GENERALIZED_CARD_ENTITY_SPREAD", "off").strip().lower() or "off"
+    )
+    set_entity_spread(module.GENERALIZED_ENTITY_SPREAD)
     module.GENERALIZED_REPLY_SIBLING_VISIBILITY = (
         os.environ.get("GENERALIZED_CARD_REPLY_SIBLING_VISIBILITY", "on")
         .strip()
@@ -667,6 +673,9 @@ def configure_generator_backend(
         module.GENERALIZED_DOMAIN_PROFILE.get("structure_profile")
     )
     set_active_rhythm_profile(module.GENERALIZED_DOMAIN_PROFILE.get("rhythm_profile"))
+    set_active_entity_spread_profile(
+        module.GENERALIZED_DOMAIN_PROFILE.get("entity_spread_profile")
+    )
     set_active_register_profile(
         module.GENERALIZED_DOMAIN_PROFILE.get("register_profile")
     )
@@ -707,6 +716,9 @@ def configure_generator_backend(
             or getattr(seed_post, "title", "")
         )
         comment_count = max(1, int(getattr(target, "target_comments", 0) or 0))
+        # `entity_spread` draws per slot at a rate measured for this thread's
+        # size band, so the band has to be visible at writer-prompt time.
+        module.GENERALIZED_ACTIVE_THREAD_COMMENTS = comment_count
         if seed_key != module.GENERALIZED_ACTIVE_SEED_KEY:
             module.GENERALIZED_ACTIVE_SEED_KEY = seed_key
             module.GENERALIZED_ACTIVE_REFERENCE_TEMPLATE = (

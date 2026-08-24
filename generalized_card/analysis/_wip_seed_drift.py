@@ -1,5 +1,8 @@
 # TEST A: do real reply chains drift away from the seed post, while generated ones stay anchored?
-import sys, re, json, statistics
+import sys
+import re
+import json
+import statistics
 from pathlib import Path
 from collections import defaultdict
 REPO=Path('/Users/yaoningyu/Desktop/UIUC/GEO')

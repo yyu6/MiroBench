@@ -11,6 +11,7 @@ from .comment_structure import build_structure_profile
 from .data import load_real_thread_bank
 from .domain import DomainConfig
 from .entity_inventory import build_entity_inventory
+from .entity_spread import build_entity_spread_profile
 from .lexical_quality import build_lexical_calibration
 from .opener_profile import build_opener_profile
 from .planning_quality import universal_viewpoints
@@ -183,6 +184,7 @@ def build_domain_profile(
             reference_threads,
             brand_terms=config.protected_entity_terms,
         ),
+        "entity_spread_profile": build_entity_spread_profile(reference_threads),
     }
     payload["profile_sha256"] = profile_hash(payload)
     output_path.parent.mkdir(parents=True, exist_ok=True)
