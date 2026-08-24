@@ -129,6 +129,9 @@ from .sentence_rhythm import (
     set_sentence_rhythm,
 )
 from .entity_spread import set_active_entity_spread_profile, set_entity_spread
+from .length_fidelity import PROBLEM_PREFIX as LENGTH_BAND_PREFIX
+from .length_fidelity import retry_note as length_band_retry_note
+from .length_fidelity import set_active_length_fidelity_profile, set_length_fidelity
 from .story_scope import set_no_story_scope
 from .surface_typography import (
     apply_final_punctuation_habit,
@@ -571,6 +574,11 @@ def configure_generator_backend(
         os.environ.get("GENERALIZED_CARD_ENTITY_SPREAD", "off").strip().lower() or "off"
     )
     set_entity_spread(module.GENERALIZED_ENTITY_SPREAD)
+    module.GENERALIZED_LENGTH_FIDELITY = (
+        os.environ.get("GENERALIZED_CARD_LENGTH_FIDELITY", "off").strip().lower()
+        or "off"
+    )
+    set_length_fidelity(module.GENERALIZED_LENGTH_FIDELITY)
     module.GENERALIZED_REPLY_SIBLING_VISIBILITY = (
         os.environ.get("GENERALIZED_CARD_REPLY_SIBLING_VISIBILITY", "on")
         .strip()
@@ -675,6 +683,9 @@ def configure_generator_backend(
     set_active_rhythm_profile(module.GENERALIZED_DOMAIN_PROFILE.get("rhythm_profile"))
     set_active_entity_spread_profile(
         module.GENERALIZED_DOMAIN_PROFILE.get("entity_spread_profile")
+    )
+    set_active_length_fidelity_profile(
+        module.GENERALIZED_DOMAIN_PROFILE.get("length_fidelity_profile")
     )
     set_active_register_profile(
         module.GENERALIZED_DOMAIN_PROFILE.get("register_profile")
@@ -3112,6 +3123,11 @@ def _retry_note_for_problems(module: ModuleType):
             notes.append(
                 "Keep the same narrow point but match the requested substantive length bucket."
             )
+        band_miss = next(
+            (item for item in problems if item.startswith(LENGTH_BAND_PREFIX)), ""
+        )
+        if band_miss:
+            notes.append(length_band_retry_note(band_miss))
         if any(
             item in problems
             for item in (

@@ -7189,6 +7189,128 @@ class FocusedWriterPromptTest(unittest.TestCase):
         finally:
             set_entity_spread("off")
 
+    def test_length_fidelity_flags_only_a_band_change(self) -> None:
+        from generalized_card.length_fidelity import (
+            length_band_problem,
+            set_length_fidelity,
+        )
+
+        profile = {
+            "available": True,
+            "cuts": [18.0, 30.0, 46.0, 85.0],
+            "band_counts": {"0": 900.0, "1": 900.0, "2": 900.0, "3": 900.0, "4": 900.0},
+        }
+        task = SimpleNamespace(real_word_count=70)
+        try:
+            set_length_fidelity("off")
+            self.assertEqual(
+                length_band_problem("word " * 30, task, profile=profile),
+                "",
+                "arm off must register nothing",
+            )
+            set_length_fidelity("measured")
+            self.assertEqual(
+                length_band_problem("word " * 60, task, profile=profile),
+                "",
+                "60 words is band 3 like the assigned 70; no problem",
+            )
+            miss = length_band_problem("word " * 40, task, profile=profile)
+            self.assertTrue(miss.startswith("length_band_mismatch:"), miss)
+            self.assertIn("assigned 70w in band 3", miss)
+            self.assertIn("[47-85]", miss)
+            # The realized-too-long direction is caught as well; the v109 audit
+            # measured 1.44x overshoot on the shortest slots.
+            self.assertTrue(
+                length_band_problem(
+                    "word " * 30, SimpleNamespace(real_word_count=6), profile=profile
+                ).startswith("length_band_mismatch:")
+            )
+        finally:
+            set_length_fidelity("off")
+
+    def test_length_fidelity_withholds_on_an_unmeasured_band(self) -> None:
+        from generalized_card.length_fidelity import (
+            build_length_fidelity_profile,
+            length_band_problem,
+            set_length_fidelity,
+        )
+
+        thin = {
+            "available": True,
+            "cuts": [18.0, 30.0, 46.0, 85.0],
+            "band_counts": {"0": 900.0, "1": 900.0, "2": 900.0, "3": 5.0, "4": 900.0},
+        }
+        try:
+            set_length_fidelity("measured")
+            self.assertEqual(
+                length_band_problem(
+                    "word " * 40, SimpleNamespace(real_word_count=70), profile=thin
+                ),
+                "",
+                "a band with too few reference comments must withhold, not default",
+            )
+            self.assertEqual(
+                length_band_problem(
+                    "word " * 40,
+                    SimpleNamespace(real_word_count=70),
+                    profile={"available": False},
+                ),
+                "",
+            )
+            self.assertFalse(
+                build_length_fidelity_profile(
+                    [{"comments": [{"body": "a b c"} for _ in range(20)]}]
+                )["available"],
+                "a corpus too thin to bin must report itself unavailable",
+            )
+        finally:
+            set_length_fidelity("off")
+
+    def test_length_fidelity_bands_bound_the_long_tail(self) -> None:
+        """The reason the arm uses deciles rather than quintiles.
+
+        With quintiles, camera's top cut is 72 words and the band above it is
+        open, so a slot assigned 100 words has no upper constraint -- exactly the
+        50-100-word band that realizes at 0.82x. Deciles bound it.
+        """
+
+        from generalized_card.length_fidelity import (
+            BAND_QUANTILES,
+            band_of,
+            build_length_fidelity_profile,
+        )
+
+        self.assertEqual(len(BAND_QUANTILES), 9, "the shipped band set is deciles")
+        lengths = [2, 5, 9, 13, 18, 25, 34, 48, 70, 110, 180] * 60
+        threads = [{"comments": [{"body": "w " * count} for count in lengths]}]
+        profile = build_length_fidelity_profile(threads)
+        self.assertTrue(profile["available"])
+        cuts = profile["cuts"]
+        self.assertEqual(len(cuts), 9)
+        # A slot assigned near the top must not share a band with a much
+        # shorter realization.
+        self.assertNotEqual(
+            band_of(180, cuts),
+            band_of(70, cuts),
+            "the long tail must be separated from the upper-middle band",
+        )
+
+    def test_length_fidelity_problem_is_soft_and_carries_no_domain_vocabulary(
+        self,
+    ) -> None:
+        from generalized_card.length_fidelity import PROBLEM_PREFIX, retry_note
+        from generalized_card.length_policy import is_soft_length_problem
+
+        problem = f"{PROBLEM_PREFIX}40w in band 2, assigned 70w in band 3 [47-85]"
+        self.assertTrue(
+            is_soft_length_problem(problem),
+            "a length-band miss must never be able to drop a matched slot",
+        )
+        note = retry_note(problem).lower()
+        for word in ("camera", "canon", "lens", "phone", "laptop", "headphone", "photo"):
+            self.assertNotIn(word, note)
+        self.assertIn("assigned length", note)
+
     def test_focused_is_far_smaller_than_full(self) -> None:
         full = self._prompt("full", "impolite")
         focused = self._prompt("focused", "impolite")

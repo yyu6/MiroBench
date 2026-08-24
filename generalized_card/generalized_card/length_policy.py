@@ -16,7 +16,13 @@ SOFT_LENGTH_PROBLEMS = frozenset(
         "real_slot_too_short",
     }
 )
-SOFT_LENGTH_PROBLEM_PREFIXES = ("substantive_length_floor:",)
+SOFT_LENGTH_PROBLEM_PREFIXES = (
+    "substantive_length_floor:",
+    # `length_fidelity.PROBLEM_PREFIX`. Soft on purpose: it must be able to
+    # trigger a Writer retry without ever making a matched structural slot
+    # blocking, which `docs/ORIENTATION.md` §4 forbids.
+    "length_band_mismatch:",
+)
 
 
 def is_soft_length_problem(problem: str) -> bool:

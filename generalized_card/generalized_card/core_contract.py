@@ -16,10 +16,11 @@ HISTORICAL_REVISION_POLICY_VERSIONS = {
     "generalized-card-revision-v6-dynamic-coverage-history-20260807",
 }
 GENERALIZED_V2_GENERATION_POLICY_VERSION = (
-    "generalized-card-v2-entity-referent-spread-v109-20260824"
+    "generalized-card-v2-length-band-fidelity-v110-20260824"
 )
 HISTORICAL_GENERATION_POLICY_VERSIONS = {
     "generalized-v2": {
+        "generalized-card-v2-entity-referent-spread-v109-20260824",
         "generalized-card-v2-semantic-coverage-nonrepeat-v108-20260823",
         "generalized-card-v2-verdict-close-check-guard-v107-20260822",
         "generalized-card-v2-digit-cue-quantifier-guard-v106-20260822",
@@ -282,6 +283,10 @@ CORE_FILES = {
     "entity_spread": (
         "generalized_card/generalized_card/entity_spread.py",
         "fb376f912033d80bf8a7a0b01545f23259f1fed76f09ff540c3687cc5ebadefe",
+    ),
+    "length_fidelity": (
+        "generalized_card/generalized_card/length_fidelity.py",
+        "0" * 64,
     ),
     "lexical_quality": (
         "generalized_card/generalized_card/lexical_quality.py",
@@ -614,6 +619,7 @@ GENERATION_ADAPTER_CORE_NAMES = (
     "opener_profile",
     "entity_inventory",
     "entity_spread",
+    "length_fidelity",
     "domain_prompt_adapter",
     "writer_grounding",
     "speaker_roster",

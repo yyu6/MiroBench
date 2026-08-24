@@ -15,6 +15,7 @@ from .generation_diversity import (
     distribution_target_with_slot_progress,
     joint_candidate_diagnostics,
 )
+from .length_fidelity import length_band_problem
 from .length_policy import is_soft_length_problem
 
 
@@ -148,6 +149,11 @@ def writer_distribution_problems(
     floor_problem = substantive_length_floor_problem(text, task)
     if floor_problem:
         problems.append(floor_problem)
+    # Registered soft, so it can only trigger a Writer retry and can never make
+    # a matched structural slot blocking (`docs/ORIENTATION.md` §4).
+    band_problem = length_band_problem(text, task)
+    if band_problem:
+        problems.append(band_problem)
     return diagnostics, deduplicate_problems(problems)
 
 
