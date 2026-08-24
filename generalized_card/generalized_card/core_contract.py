@@ -180,7 +180,7 @@ CORE_FILES = {
     ),
     "generator_adapter": (
         "generalized_card/generalized_card/backend.py",
-        "d1d854cc62da920b1ec0e100d52f40a5f42a20c4aee2aa11e4664ff5db3106e6",
+        "2477357dc0ba54c34059d3ceb7ee2b31eeded125e9d5cae3a5ade8ea60d76ed9",
     ),
     "data_boundary": (
         "generalized_card/generalized_card/data.py",
@@ -214,7 +214,7 @@ CORE_FILES = {
     ),
     "generation_runner": (
         "generalized_card/scripts/run_generate.py",
-        "a2625d77c50b16f6cc8e440cf322b4961a445c3dd8adb3831b6ce2e0de703a03",
+        "d6323b54d3a52ec49efec67d2d74ab7525a0a0c41d4a859d299faf129de900d0",
     ),
     "generation_backend_runner": (
         "generalized_card/scripts/run_generator_backend.py",
@@ -230,7 +230,7 @@ CORE_FILES = {
     ),
     "domain_profile": (
         "generalized_card/generalized_card/domain_profile.py",
-        "82176630ba18194f4e213ff598cf199bec0ed883261c4210192a822b770345fc",
+        "f33ddb0af28db4135cdd8a2ebf535323078c331e0a77df1b511a89ecf07dbb65",
     ),
     "viewpoint_bank": (
         "generalized_card/generalized_card/viewpoint_bank.py",
@@ -286,7 +286,7 @@ CORE_FILES = {
     ),
     "length_fidelity": (
         "generalized_card/generalized_card/length_fidelity.py",
-        "0" * 64,
+        "c975e10bbca23aef2a5fb1fed3121a67ed59852f4fcb162d5c6f03161f65f829",
     ),
     "lexical_quality": (
         "generalized_card/generalized_card/lexical_quality.py",
@@ -302,7 +302,7 @@ CORE_FILES = {
     ),
     "writer_quality": (
         "generalized_card/generalized_card/writer_quality.py",
-        "76cd22f4ad303fe54acc309f455fb38df6956da1827676648bf31c3709284e35",
+        "70bb0cbd226eb9135e4ec0699fb86f475d576bec5f8447e1a669b367b2d04e8c",
     ),
     "semantic_realization": (
         "generalized_card/generalized_card/semantic_realization.py",
@@ -310,7 +310,7 @@ CORE_FILES = {
     ),
     "length_policy": (
         "generalized_card/generalized_card/length_policy.py",
-        "e881237aafe35ac362418c8d2481bfd73656ad90f287ba870e4d55cbf3d6bdda",
+        "fd0d6df31a623d86e677aaf91d1e698dfe329044abb1a88be7f1b4f74e3a5cde",
     ),
     "long_form_planning": (
         "generalized_card/generalized_card/long_form_planning.py",
