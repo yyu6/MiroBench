@@ -318,8 +318,72 @@ python3 generalized_card/scripts/run_evaluate.py \
   --tag v109_entity_spread_seed8_20260824_v1 --metric-parallel 5 --resume
 ```
 
-Note: the domain profile must be rebuilt before this run, because
-`entity_spread_profile` is a new profile key.
+The domain profile is rebuilt automatically into `<run_root>/domain_profile.json`
+on every run, so `entity_spread_profile` needs no separate step. Verified with
+`--prepare-only` before spending: all four bands measured, 424 reference
+threads, 182 inventory terms, `seed_reference_overlap_count: 0`.
+
+### Gate result — 2026-08-24. Mechanism works, and it is net-negative on the two priority metrics
+
+Ran: $1.1785, 350 requests, 25.8 min, 186 comments. Arm audited before any
+metric was read: the block appears in the run's own prompts.
+
+**Scorecard against the predictions above.** The paired seed-8 comparison is
+J6-legal for the columns marked v108, with the confound in the last row.
+
+| prediction | outcome | verdict |
+|---|---|---|
+| distinct designators rise materially | **21 -> 69** (real 118) | **hit**, largest move on this property of any release |
+| top designator share falls | **0.6889 -> 0.5031** (real 0.1394) | **hit**, and monotone best of five releases |
+| `self_bleu_4` narrows ~5% at best | **+0.0057 -> +0.0062** | **missed**: no movement, mid-range of the v104-v108 band (+0.0057..+0.0070) |
+| `mean_story_probability` must not rise | thread **+0.0159 -> -0.0027**, but treated slots **0.1298 vs 0.0884** untreated | **failed at the mechanism level**; the thread-level pass concealed it (G38) |
+| `semantic_mean_cosine` must stay in band | **+0.0117 -> +0.0304**, worst of five | **breached**, and causally this arm (G37) |
+| `self_bertscore_mean_f1` no prediction | **+0.0139 -> +0.0241** | regression, causally this arm (G37) |
+
+**What the arm actually bought (G36).** Mentions per distinct name
+**4.286 -> 2.333** against real **2.432** -- the naming *shape* defect G35
+measured is closed almost exactly. Pooled 3- and 4-gram precisions moved from
+above real to **below** it (1.123x, 1.243x -> 0.951x, 0.930x) and the pooled log
+excess fell 1.2018x -> 1.0771x.
+
+**What it cost, established by randomised within-run contrast (G37).** The draw
+keys on `local_task_id`, which is Planner traversal order and independent of the
+slot's plan, so fired-vs-not is a treatment effect rather than the between-thread
+slope G35 retracted. `self_bertscore` pair F1: neither **0.5033**, one
+**0.5101**, both **0.5289**. `semantic_mean_cosine`: neither **0.1889**, one
+**0.2144**, both **0.2525**. Real is 0.4887 and 0.1865, so **the untreated half
+of this thread sits at real and the treated half carries the whole excess.**
+Length-stratified, the cosine effect survives at +0.0443 / +0.0582 / +0.0167 /
++0.0461, so the ~15 extra words per treated comment explain about a third;
+inventory partitioning would recover only 16%; the rest is the cue's own
+prescribed speech act.
+
+**A command error, recorded (G39).** The gate command names only the new arm, and
+every arm defaults to off, so it also turned **`--semantic-coverage-nonrepeat`
+off**. Two experiment fields differ between v108 v2 and v109, not one. The
+within-run randomisation is unaffected and also prices v108's arm: v109's
+untreated subgroup sits at 0.5033 against v108's whole-thread 0.5026, so
+**v108's arm is worth ~0.0007 on this thread** and its "best result this
+session" was noise. Every future gate command must carry every previously-won
+arm explicitly.
+
+**Decision.** `--entity-spread` stays in the tree with default `off`; it is not
+promoted. The repair is a v110 that keeps the naming-shape win and removes the
+convergence cost, by three evidence-derived changes: deliver the drawn referent
+through the existing `concrete_anchors` list with **no cue text at all** (the
+anchors block already renders per-slot-distinct names and prescribes no speech
+act), forbid any added sentence, and withhold it from `no_story` slots. The
+`self_bleu_4` work moves off entities entirely -- G40 prices the last entity
+mechanism at <=9.4% and saturating, and localises the residual to a
+clause-structure signature (`the` carries 20.9% of the 1-gram excess mass; `.`,
+`to`, `i`, `of`, `with`, `for`, `and`, `but`, `be`, `have`, `are` are all
+under-shared).
+
+Artifacts and scripts:
+`artifacts/generalized_card/runs/v109_entity_spread_seed8_20260824_v1`,
+`generalized_card/analysis/entity_spread_gate_audit.py` (rate, naming, shape,
+cosine, bertscore, labels, mediation -- each fidelity-checked against the
+shipped metric first), `generalized_card/analysis/subject_rename_ablation.py`.
 
 ---
 

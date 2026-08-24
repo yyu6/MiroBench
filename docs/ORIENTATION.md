@@ -9,7 +9,7 @@ It is deliberately high-level and it is deliberately short. Every section ends
 with a pointer to the file that holds the evidence. **This file states
 conclusions; the linked files hold the measurements.**
 
-Last verified: **2026-08-23** (v108's N=10 gate, `docs/DECISIONS.md` G24).
+Last verified: **2026-08-24** (v109's seed-8 gate, `docs/DECISIONS.md` G36–G41).
 See §9 for what "verified" means here and what was actually checked
 to write this line.
 
@@ -728,22 +728,40 @@ progress and is **not** the same thing as being close at N=150.
    genuine paraphrase on both sides, and its one known noise mode (shared
    URLs) cannot explain the generated-side excess, since generated text never
    contains a link.
-4. **`self_bleu_4` — a weak pass, characterised, no cheap lever.** An exact
-   ablation harness reproducing the evaluator to 5 significant figures shows **no
-   phrase drives it**: apostrophe normalisation, `check` openings, `that's the
-   part`, and yeah/basically/actually all change it by ≤ 0.0005. OLS
+4. **`self_bleu_4` — a weak pass, and after v109 the target is clause structure,
+   not entities.** `docs/DECISIONS.md` **G40** supersedes the OLS reading below.
+   The metric is the geometric mean of add-one-smoothed 1-, 2-, 3- and 4-gram
+   precisions (G27), so it was never a phrase metric. After v109 the pooled
+   decomposition is **p1 56.3%, p2 54.9%, BP 30.1%, p3 −16.8%, p4 −24.5%** —
+   phrase-level repetition is *below* real and everything left is vocabulary
+   overlap plus the brevity penalty. Exact 1-gram attribution: **`the` alone
+   carries 20.9%** of the positive excess mass (0.196 against real 0.130), then
+   `canon` 9.4%, `,` 9.0%; most under-shared are `.` (−0.0461), `to`, `i`, `of`,
+   `with`, `for`, `and`, `but`, `be`, `have`, `are`. One coherent profile:
+   generated writes **fewer, longer, determiner-dense, less verbal sentences**
+   than real. Corroborated on the same run by `no end punctuation` 0.274 against
+   0.140 and thread breadth types/√tokens 14.73 against 18.68.
+   **The entity route is priced out**: v109 tripled naming variety and the metric
+   did not move, and the last entity mechanism (capping re-mention of the
+   thread's own subject, 81 mentions against real's 40) closes ≤ **9.4%** by
+   exact ablation and saturates. Superseded, kept for the record: an earlier
+   harness found no single phrase drives it (all ≤ 0.0005), and OLS
    `self_bleu_4 = 0.04964 − 0.000288·meanWords − 0.00127·entityTypesPerComment`
-   (R² = 0.527) explains ~48% of the gap; entity diversity's partial r is only
-   −0.097. Generated entity diversity is 0.438× real in 10/10 threads, which is
-   also an eye-visible tell.
+   (R² = 0.527) attributed ~48% of the gap with entity diversity's partial r at
+   only −0.097 — the direction G40 now confirms was a dead end.
 5. **Criterion 2 — eye-indistinguishability.** v100's measured closing move found
    the root of the adjudication frame chased since v73: **how the comment stops**
    was the thing, not the phrase. Real text closes on an abstract verdict 0.014
    of the time and v99 generated 0.265 (19.1×); v100 took the verdict-close
-   vocabulary 0.271 → 0.150 on its gate. Still unfixed: **no generated comment
-   contains a link** (real 0.051), `check` at ~10× real, entity diversity 0.438×
-   real, `will` at ~1% of real, and generated hedges on 2.9% of replies against a
-   real 17.6%.
+   vocabulary 0.271 → 0.150 on its gate. **Naming variety is the one criterion-2
+   tell that moved decisively**: v109's `--entity-spread measured` took mentions
+   per distinct name from 4.286 to **2.333** against a matched real **2.432**, and
+   distinct designators 21 → 69 (real 118) — but it is not promoted, because the
+   same arm causally worsens `self_bertscore` and `semantic_mean_cosine`
+   (`docs/DECISIONS.md` G36–G37). Still unfixed: **no generated comment contains a
+   link** (real 0.051), `check` at ~10× real, `will` at ~1% of real, generated
+   hedges on 2.9% of replies against a real 17.6%, and the thread still names its
+   own subject 81 times against real's 40.
 
 ### Known bugs, unfixed
 

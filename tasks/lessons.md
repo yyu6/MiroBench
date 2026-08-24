@@ -1937,3 +1937,33 @@ sanity never reveals this; only reading the matches does.
   reliable forms are a better mechanism than seven of unknown validity, and
   the honest scope is itself the finding.
 
+
+---
+
+## A gate command must name every arm already won, not only the new one
+
+**What happened.** The v109 gate command was written as the previous release's
+command plus `--entity-spread measured`. Every arm's default is `off`, and the
+previous release's own arm was passed on *its* command line, not stored as a new
+default -- so the v109 command silently turned `--semantic-coverage-nonrepeat`
+back off. The `run_config.json` diff shows **two** experiment fields differing
+between the two runs, not one, which cost the clean single-arm reading of a
+$1.18 paid gate. The analysis survived only because that particular arm draws
+per slot from a content-independent hash, so a within-run treated-vs-untreated
+contrast was available; a whole-thread arm would have left nothing to fall back
+on.
+
+**Why:** the arms design deliberately makes every default reproduce the *oldest*
+behaviour, so "the previous release" is a property of a command line, not of the
+code. Nothing in the harness knows which arms were promoted, and nothing warns
+when a new command drops one.
+
+**How to apply.**
+- Before spending, diff the intended command's arm list against the previous
+  paid run's `run_config.json` and confirm the only difference is the arm under
+  test. This is free and takes one command.
+- Record the full arm list, not just the new flag, in the VERSION_LOG gate entry,
+  so the next command is built from a list rather than from memory.
+- When a mechanism is rate-drawn on a content-independent key, say so in the
+  gate plan: that randomisation is the only thing that rescues a confounded run,
+  and it is worth designing in for that reason alone.
