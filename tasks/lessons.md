@@ -1905,3 +1905,35 @@ Without a decomposition, that induction silently assumes the aim was good.
 - A closure decision ("this metric is a research-design limit") needs the
   decomposition attached, or it is an induction over an unexamined sample.
 
+## Spot-read the examples a lexical probe fires on, before its rate becomes a target
+
+**What happened.** Built a seven-form clause-register profile over 11,608 real
+comments to target `self_bleu_4`'s function-word excess. The rates looked
+decisive and interpretable. Then hand-read four real sentences each probe fires
+on, per the existing unreliable-probe rule, and **two of the seven collapsed**:
+`imperative` fires on `just` (31.1% of its 885 real firings) and `don't` (9.5%)
+-- "Just another part that can fail there too" is not an imperative -- so 40.6%
+of its firings are false positives and its 0.55x reading is meaningless.
+`fragment` counts complete short declaratives ("Pros absolutely use this
+format.") because the auxiliary list has no main verbs. Had the spot-check been
+skipped, the mechanism would have shipped with two cue texts asking the Writer
+to produce forms whose measured "deficits" were probe artifacts -- the exact
+`caps_emphasis` mistake `sentence_rhythm.py`'s docstring already records, and
+the exact shape of the retracted "no-story instruction cut advice 0.090 ->
+0.008" claim.
+
+**Why:** a lexical probe's *rate* can be stable, band-monotone and
+plausible-looking while measuring something other than its name. Aggregate
+sanity never reveals this; only reading the matches does.
+
+**How to apply.**
+- For every regex/lexical probe whose rate will steer a mechanism, print 4-8
+  real sentences it fires on and read them, **and** print the trigger-token
+  histogram. If any single trigger is >20% of firings, that trigger is
+  probably the whole probe.
+- Do this before the number reaches a decision row, not after -- a probe that
+  has already been quoted in a doc has to be retracted rather than fixed.
+- Keep the surviving probes and state the excluded ones explicitly. Three
+  reliable forms are a better mechanism than seven of unknown validity, and
+  the honest scope is itself the finding.
+
