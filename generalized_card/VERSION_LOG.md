@@ -230,6 +230,99 @@ Full analysis in `docs/DECISIONS.md` G24.
 
 ---
 
+## v109 — per-slot referent spread (2026-08-24)
+
+Policy ID: `generalized-card-v2-entity-referent-spread-v109-20260824`.
+Arm `--entity-spread {off,measured}`, default `off`. Module
+`generalized_card/generalized_card/entity_spread.py`, wired through
+`domain_profile.py` (measured profile), `backend.py` (arm + profile install)
+and `prompts.py` (one shared helper reaching both writer-prompt paths).
+
+**The defect, measured** (`docs/DECISIONS.md` G35). Per matched thread on the
+v108 N=10 artifact: real names **40.8** distinct equipment designators,
+generated **7.4**; real's most frequent designator takes **0.152** of that
+thread's mentions, generated's **0.485**. Pooled 302 against 67; one generated
+thread names zero; and the concentration has *degraded* across releases
+(top share v98 0.190 -> v103 0.214 -> v108 0.266). This is the measured form of
+the goal's own framing -- a real thread wanders, a generated one trends to one
+topic.
+
+**Why the existing machinery could not reach it.** `entity_inventory.py`
+already builds a held-out designator vocabulary and `slot_equipment_options`
+already rotates it per slot. Its only consumer, `prompts._own_equipment_block`,
+is gated on `own_fact_license in {own, named}` **and**
+`_first_person_experience_slot`. Measured over **18,829 designator mentions** in
+the evaluation-excluded corpus: **14.0%** possession context, **8.9%** explicit
+comparison, **77.1%** bare -- so **86.0% of real entity mentions need no
+first-person frame**, and that gate can only reach the smallest slice. It is why
+the two paid runs that did enable `named` (v97, v98) still landed at 81 pooled
+designators against a real 302.
+
+**Why the gate was not simply widened.** Offering *owned gear* to a slot not
+planned for personal experience is a measured regression: v67 moved
+`mean_story_probability`'s Cliff from 0.06 to 0.26 (gaps up to +0.19) because
+own-gear anecdotes on `no_story` slots produce text StorySeeker reads as
+narrative, and v88 deleted invented kit/tenure biography for the same class of
+reason. v109 offers a **bare comparison referent** -- the 86% case -- never a
+possession, never a claim about the seed, and leaves `_own_equipment_block`
+untouched.
+
+**Priced before it was built (J7).** Exact ablation on the real scorer, in the
+direction of the fix: raising generated variety from 7.4 to 13.0 distinct
+designators (top share 0.485 -> 0.297) closes **5.4%** of `self_bleu_4`'s
++0.00489 gap. Collapsing *real*'s variety to a single designator costs real
+16.9%, so the relationship is real but asymmetric. **This is not shipped as a
+`self_bleu_4` fix.** Per G35 no single large lever exists for that metric and
+the correct shape of work is several stacked fixes of about this size.
+
+### Gate predictions, written before spending
+
+Gate thread: seed 8 / `i1o51h`, 186 comments (the standing gate seed, `large`
+band, measured `distinct_per_comment` 0.63). Baseline is the v108 artifact.
+
+| what | v108 baseline | predicted | why not a precise number |
+|---|---:|---|---|
+| realized distinct designators, this thread | 21 | **rises materially**; real for this thread is 118 | the offer is drawn per slot and the Writer may decline it; compliance for a comparable in-prompt offer runs 0.33 (G31) |
+| top designator share | 0.652 | **falls** toward real's 0.139 | same |
+| `self_bleu_4` | +0.0062 vs real | narrows slightly, **~5% of the gap at best** | that is the measured ablation upper bound, and J7 says discount it |
+| `mean_story_probability` | PASS | **guardrail: must not rise.** This is the v67 regression this design exists to avoid | the cue forbids possession and narrative explicitly; if story probability rises anyway the cue wording is wrong, not the mechanism |
+| `self_bertscore_mean_f1` | +0.0139 | **no prediction** | nothing in this mechanism targets it |
+| `semantic_mean_cosine` | PASS | **guardrail: must stay inside its band** | naming more outside entities could push topical spread past real |
+
+**Before reading any metric, grep the run's own `generation_records.json` for
+`"Other things in this space you may name"` and confirm it appears at roughly
+the drawn rate** -- the free check the wasted v108 v1 gate paid $1.19 to learn
+(G23).
+
+**Offline state.** 638 tests pass (3 new: both writer-prompt paths through the
+real dispatch with a real profile file, draw determinism and rate, and a
+domain-vocabulary check on the cue text). Ruff clean on all shipped code. 5 pins
+recomputed, drift exactly the 4 edited files plus the new module. Arm `off`
+renders 0 characters. The measured profile builds on **all four registered
+domains** with genuinely different rates (large band: camera 0.63, cell_phone
+0.33, headphone 0.28, laptop 0.43), so the mechanism is domain-adaptive by
+construction and a band with no data withholds the cue rather than defaulting.
+**No paid run yet.**
+
+Command:
+
+```bash
+python3 -u generalized_card/scripts/run_generate.py \
+  --tag v109_entity_spread_seed8_20260824_v1 --domain camera \
+  --model gpt-5.4-mini --base-url https://api.openai.com/v1 \
+  --api-key-env LLM_API_KEY --pool-size 150 --max-posts 1 --posts-per-run 1 \
+  --start-seed-index 8 --sampling-seed 42 \
+  --entity-spread measured --resume
+
+python3 generalized_card/scripts/run_evaluate.py \
+  --tag v109_entity_spread_seed8_20260824_v1 --metric-parallel 5 --resume
+```
+
+Note: the domain profile must be rebuilt before this run, because
+`entity_spread_profile` is a new profile key.
+
+---
+
 ## REJECTED BEFORE BUILD — v109 / v110 (2026-08-24)
 
 **Both mechanisms below were killed by the zero-cost falsification step and
