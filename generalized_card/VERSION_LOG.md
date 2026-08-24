@@ -230,7 +230,27 @@ Full analysis in `docs/DECISIONS.md` G24.
 
 ---
 
-## PROPOSED v109 / v110 — two mechanisms with measured targets (2026-08-24)
+## REJECTED BEFORE BUILD — v109 / v110 (2026-08-24)
+
+**Both mechanisms below were killed by the zero-cost falsification step and
+were never built.** Full evidence in `docs/DECISIONS.md` G34. Kept in full
+because the rejected hypothesis is why the diagnosis exists, and because the
+proposal text below records what was predicted before the test ran.
+
+- **v109 (seed-anchor taper)**: on the real scorer the anchoring->BERTScore
+  slope is 0.0246 (r=+0.032), 20-30x weaker than on the mpnet cosine proxy
+  that suggested it. Upper bound 4-7% of the excess; zeroing anchoring
+  entirely buys 8%. Below N=10 resolution after J7 discounting.
+- **v110 (syntactic/function-word register)**: measured on the exact scorer
+  over 209 excluded real threads. Clause-form spread has partial r=-0.003
+  controlling length (the raw -0.415 is a pure length confound), and the
+  better-powered function-word L1 spread has partial r=**+0.137** -- the
+  wrong sign. The fix would make `self_bleu_4` ~28% worse.
+
+The underlying measurements (G31, G32, G33) stand as verified criterion-2
+tells. They are not what these two metrics measure.
+
+## The original proposal, kept for the record
 
 Not built, not gated. Written before any code so the predictions are on
 record (J7, and the "write predictions before spending" rule). Evidence in
