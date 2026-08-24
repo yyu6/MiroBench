@@ -338,7 +338,88 @@ property of the model and the prompt, not of the domain, so it ships as a record
 constant rather than a profile -- and per D3 no paid run has ever been done off
 camera, so that claim is untested there.
 
-### Command
+### N=10 gate instead of the single thread — predictions, written before spending
+
+Run at the user's request, for a directly readable pooled result. Seeds 2-11, the
+same cohort as the **v108 N=10** run, which is therefore the baseline and differs
+by exactly one arm. `--semantic-coverage-nonrepeat on` is carried purely so the
+comparison stays single-armed; G39 measured that arm at ~0.0007 on seed 8 and G24
+found no pooled N=10 improvement from it, so it is not expected to contribute.
+
+**v108 N=10 baseline (seeds 2-11, 532 slots):**
+
+| metric | real | generated | gap | MWU | KS | Cliff |
+|---|---:|---:|---:|---:|---:|---:|
+| `self_bleu_4` | 0.0278 | 0.0327 | **+0.0049** | 0.121 | 0.418 | +0.42 |
+| `self_bertscore_mean_f1` | 0.4942 | 0.5130 | **+0.0188** | **0.004** | **0.002** | +0.78 |
+| `semantic_mean_cosine` | 0.2892 | 0.2794 | -0.0099 | 0.678 | 0.994 | -0.12 |
+| `impolite_rate` | 0.4041 | 0.6045 | +0.2004 | 0.008 | 0.012 | +0.71 |
+| `polite_rate` | 0.3085 | 0.1778 | -0.1306 | 0.089 | 0.168 | -0.46 |
+| `neutral_rate` | 0.1715 | 0.0849 | -0.0866 | 0.054 | 0.418 | -0.52 |
+| `length_cv` | 0.9468 | 0.9165 | -0.0303 | 0.850 | 0.994 | +0.06 |
+| `hard_disagree_rate`, `avg_depth`, `structural_virality`, `mean_story_probability`, `emotion_entropy` | | | | 0.60-1.00 | | |
+
+**Length baseline over the same 532 slots: realized/assigned = 0.8896**, worse
+than seed 8's 0.9161 — [1,10) 1.245, [10,25) 0.979, [25,50) 0.951,
+**[50,100) 0.842**, [100,+) 0.870. The refit raises asked words from 1.134x
+assigned to **1.318x**.
+
+**Predictions.** The mechanism controls the gap; the p-value is a consequence, and
+at N=10 it is noisy enough that only the gap is worth predicting as a number.
+
+| what | baseline | predicted |
+|---|---:|---|
+| **realized/assigned words, total** | 0.8896 | **0.97-1.02.** Free, mechanical, no metric needed |
+| realized/assigned, assigned 50-99 | 0.842 | **~1.00** |
+| realized/assigned, assigned 1-9 | 1.245 | **~1.00** |
+| `length_cv` | 0.9165 | **rises toward real 0.9468** |
+| `self_bleu_4` gap | +0.0049 | **+0.0032 to +0.0034** (31-35% closure) |
+| `self_bleu_4` Cliff | +0.42 | **falls**; MWU rises off 0.121 |
+| `self_bertscore` gap | +0.0188 | **+0.0154 to +0.0162** (14-18% closure) |
+| `self_bertscore` Cliff | +0.78 | **falls**, but this metric will still fail |
+| `mean_story_probability` | +0.0032, MWU 0.970 | **guardrail: must stay passing.** Longer comments are the v67 risk |
+| `semantic_mean_cosine` | -0.0099, MWU 0.678 | **guardrail: must stay passing** |
+| the six currently-passing metrics | MWU 0.60-1.00 | **guardrail: none may drop below 0.05** |
+| cost | $3.5978 | **~$4.0-4.2** (+12% realized output words) |
+
+**What this release will and will not achieve**, simulated at the actual measured
+biases over the 763 real threads. `self_bleu_4`'s N=10 relative bias is +17.6% and
+`self_bertscore`'s is +3.8%:
+
+| closure | `self_bleu_4` MWU at N=10 / 50 / 150 | `self_bertscore` MWU at N=10 / 50 / 150 |
+|---|---|---|
+| 0% (now) | 0.40 / 0.12 / 0.01 | 0.29 / 0.02 / 0.00 |
+| **31-35% (predicted)** | **0.44-0.46 / 0.23-0.30 / 0.05-0.08** | **0.38-0.39 / 0.10-0.14 / 0.00-0.01** |
+| 75% | 0.51 / 0.47 / 0.36 | 0.50 / 0.40 / 0.23 |
+| 90% | 0.56 / 0.52 / 0.50 | 0.50 / 0.50 / 0.48 |
+
+So this release is expected to move `self_bleu_4` into the target band **at N=10
+only**, and to leave `self_bertscore` short of it at every N. Stated plainly
+before spending so the result cannot be oversold afterwards. Note also that a
+0%-closure N=10 draw has an *expected* MWU of 0.40 for `self_bleu_4` while the
+v108 run observed 0.121 — N=10 is noisy in both directions, so the observed
+improvement will contain a draw effect that only N=50+ can separate. Choosing the
+reported N to improve a p-value is forbidden by `docs/ORIENTATION.md` §4; this
+N=10 run is a gate, not the paper's reported scale.
+
+### Command — N=10
+
+```bash
+python3 -u generalized_card/scripts/run_generate.py \
+  --tag v110_length_transfer_n10_20260824_v1 --domain camera \
+  --model gpt-5.4-mini --base-url https://api.openai.com/v1 \
+  --api-key-env LLM_API_KEY --pool-size 150 --max-posts 10 --posts-per-run 5 \
+  --start-seed-index 2 --sampling-seed 42 \
+  --length-transfer refit --semantic-coverage-nonrepeat on --resume
+
+python3 generalized_card/scripts/run_evaluate.py \
+  --tag v110_length_transfer_n10_20260824_v1 --metric-parallel 5 --resume
+```
+
+---
+
+### Command — single thread (kept for the record)
+
 
 ```bash
 python3 -u generalized_card/scripts/run_generate.py \
