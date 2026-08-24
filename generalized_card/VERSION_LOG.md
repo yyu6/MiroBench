@@ -230,6 +230,101 @@ Full analysis in `docs/DECISIONS.md` G24.
 
 ---
 
+## PROPOSED v109 / v110 — two mechanisms with measured targets (2026-08-24)
+
+Not built, not gated. Written before any code so the predictions are on
+record (J7, and the "write predictions before spending" rule). Evidence in
+`docs/DECISIONS.md` G31/G32.
+
+### Why these two and not another surface patch
+
+G26 showed both mechanisms ever built for `self_bertscore_mean_f1` acted on
+`[7,+)`, which carries 11.9% of the defect; `[2,4)+[4,7)` carry 82.7% and
+had never been targeted. G28 then showed input *separation* between slots
+already improves with depth and does not transmit, so the remedy is not
+"separate the plans more." G31 found what is actually shared instead: a
+**common attractor**. Real reply chains drift off the seed post (anchoring
+0.1404 -> 0.0336, a 4.2x fall by depth `[4,7)`); generated chains do not
+(0.1058 -> 0.0643, then rising), and generated is more anchored in 6/6
+threads at depth>=4 (p=0.0312). Pooled over depth the two are identical
+(0.0765 vs 0.0775), which is why eleven versions of thread-level analysis
+missed it.
+
+### v109 — `--seed-anchor-taper {off,measured}`, Planner-side
+
+**Mechanism.** Taper each slot's seed-derived material by depth, in the
+plan the Planner writes, not in the Writer's output. Two edits:
+`concrete_anchors` stops offering seed-derived designators at depth>=2
+(preferring entities the branch or parent introduced, or the held-out
+inventory), and the prose fields' seed vocabulary is tapered on the same
+schedule. Rates measured per depth bin from each domain's own
+evaluation-excluded threads, so it is domain-adaptive by construction (D1-D4).
+
+**Why permitted.** It edits Planner-authored plan fields. G20 forbids
+Writer *output* selection against a metric-shaped band; this is the
+`reply_increment_problem` category, not that one.
+
+**The defect it fixes is real regardless of the metric.** `concrete_anchors`
+seed-share currently *rises* with depth -- 0.3539 root, 0.4319 `[2,4)`,
+0.4379 `[4,7)` -- the opposite of what real text does. Anchors are live:
+0.800 of them reach the prompt, 0.332 reach the text.
+
+**Predictions, each a named way to be wrong.**
+
+| what | now | predicted | why not a number |
+|---|---:|---|---|
+| depth>=4 text seed-anchoring | +0.0769 over real | falls toward real; 6/6 -> majority at parity | the fix removes one channel; the plan prose carries the rest, so partial closure is the honest expectation |
+| `self_bertscore_mean_f1` `[2,4)`+`[4,7)` pair excess | +0.0173 / +0.0196 | **narrows; no confident magnitude** | first mechanism ever aimed here; anchor in-text compliance is only 0.237 at `[4,7)`, so the ceiling is bounded |
+| thread-level `self_bertscore_mean_f1` | gap +0.0188 | may still not move at N=10 | G16/G24 both showed real pair-level effects diluted by the equal-weight-thread-mean definition (G17). **A pair-level win with a flat thread metric is the expected outcome, not a failure** |
+| `semantic_mean_cosine` | PASS, Cliff -0.12 | **guardrail: must not fall further** | reducing shared vocabulary could push topical spread past real; this is the metric most at risk |
+| `self_bleu_4` | +0.0049 | may improve slightly | fewer repeated seed designators removes some 1-gram mass, but G27 showed entity effects are weak |
+
+**Required before spending:** an offline ablation on the v108 artifact --
+strip seed-derived anchors from depth>=2 slots, re-measure the pair excess
+-- and per J7 the paid prediction is that number **discounted**, not that
+number.
+
+### v110 — `--syntactic-register {off,measured}`, for `self_bleu_4`
+
+**Mechanism.** A per-slot draw over *clause form* -- direct question,
+sentence fragment, imperative, conditional, first-person past -- at rates
+measured per length band and per speaker from excluded real threads. Same
+E3 shape as `sentence_rhythm.py`: one module, one arm, measured profile,
+per-slot SHA-256 draw, realized-rate audit.
+
+**Why this and not more phrase suppression.** G27: `self_bleu_4` is the
+geometric mean of 1-4 gram precisions, p1+p2 carry 63% of the gap and are
+the only stable part across versions, so every phrase-level fix targeted
+the terms that move least. G32: generated comments' function-word profiles
+are measurably less varied than real (L1 spread 0.4646 vs 0.5342, 9/10
+threads, p=0.0039), and the over-shared tokens are precisely function words
+and punctuation while the under-shared are the conversational verbal core
+(`to` `i` `be` `have` `will` `would`). Clause form is what moves function
+words; nothing shipped controls it (`sentence_rhythm` is punctuation-only,
+`surface_texture`/`real_surface_shape` are layout, `opening_style` is
+free-text with 529 distinct values over 532 slots).
+
+**Prediction.** Function-word L1 spread rises toward real's 0.5342;
+`self_bleu_4`'s p1/p2 ratios (1.147/1.215) fall. Whether the thread metric
+follows is **not** predicted -- it is currently a weak PASS (MWU 0.12) and
+the honest framing is that this attacks the component that actually carries
+the gap, for the first time.
+
+**Guardrail.** Must not raise `mean_story_probability` (first-person past
+is a story-adjacent form) and must not disturb the tone metrics.
+
+### Also fix, as correctness not as a metric play
+
+Three controls are silently inert: `writer_temperature` is computed and
+discarded on every paid run (G29), `sentence_route` is empty on all 532
+slots while `--route-ledger` defaults `on` (G32), and `REPORTED_TONE_CLASSES`
+is defined and never referenced. Per ORIENTATION's rule that an accepted-but-
+unconsumed control is a correctness bug, each should be wired or deleted --
+and G29 records why enabling the temperature values would *reduce* diversity,
+so that one is a deletion, not an activation.
+
+---
+
 ## v108 — semantic-coverage non-repeat instruction (2026-08-23)
 
 Policy ID: `generalized-card-v2-semantic-coverage-nonrepeat-v108-20260823`.
