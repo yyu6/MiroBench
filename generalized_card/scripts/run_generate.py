@@ -479,6 +479,23 @@ def build_parser() -> argparse.ArgumentParser:
         ),
     )
     parser.add_argument(
+        "--length-transfer",
+        choices=("v97", "refit"),
+        default="v97",
+        help=(
+            "Which fitted word-length transfer function the length calibration "
+            "inverts. 'v97' keeps the constants fitted on the v97 run and "
+            "reproduces v109 byte-for-byte. 'refit' uses the line refitted on "
+            "realized-vs-calibrated-ask over 1,436 slots from four runs "
+            "(intercept 0.5580, slope 0.8276, R2 0.879); the v97 constants "
+            "regressed on the *uncalibrated* ask and have been under-correcting "
+            "ever since, leaving realized/asked at 1.64x below 10 words and "
+            "0.68-0.80x above 80 -- the measured cause of the length "
+            "compression worth 31-35%% of the self_bleu_4 gap and 14-18%% of "
+            "the self_bertscore gap (docs/DECISIONS.md G43, G46)."
+        ),
+    )
+    parser.add_argument(
         "--length-fidelity",
         choices=("off", "measured"),
         default="off",
@@ -910,6 +927,7 @@ def main() -> None:
         "route_ledger": args.route_ledger,
         "entity_spread": args.entity_spread,
         "length_fidelity": args.length_fidelity,
+        "length_transfer": args.length_transfer,
         "writer_retries": args.writer_retries,
         "no_story_scope": args.no_story_scope,
         "own_fact_license": args.own_fact_license,
@@ -1115,6 +1133,7 @@ def main() -> None:
     env["GENERALIZED_CARD_ROUTE_LEDGER"] = args.route_ledger
     env["GENERALIZED_CARD_ENTITY_SPREAD"] = args.entity_spread
     env["GENERALIZED_CARD_LENGTH_FIDELITY"] = args.length_fidelity
+    env["GENERALIZED_CARD_LENGTH_TRANSFER"] = args.length_transfer
     env["GENERALIZED_CARD_NO_STORY_SCOPE"] = args.no_story_scope
     env["GENERALIZED_CARD_OWN_FACT_LICENSE"] = args.own_fact_license
     env["GENERALIZED_CARD_SPEAKER_IDENTITY"] = args.speaker_identity
@@ -1466,6 +1485,7 @@ RUN_EXPERIMENT_FIELDS = (
     "route_ledger",
     "entity_spread",
     "length_fidelity",
+    "length_transfer",
     "writer_retries",
     "no_story_scope",
     "own_fact_license",

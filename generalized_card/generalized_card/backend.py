@@ -94,7 +94,11 @@ from .surface_contract import (
     surface_only_label,
 )
 from .comment_structure import set_active_structure_profile, set_long_form_layout
-from .length_calibration import calibrated_word_ask, set_length_calibration
+from .length_calibration import (
+    calibrated_word_ask,
+    set_length_calibration,
+    set_length_transfer,
+)
 # Imported as a module, not by value: `set_active_rhythm_profile` rebinds the
 # module global, so a `from ... import ACTIVE_RHYTHM_PROFILE` would capture the
 # empty dict at import time and never see the run's profile. Same failure the
@@ -579,6 +583,11 @@ def configure_generator_backend(
         or "off"
     )
     set_length_fidelity(module.GENERALIZED_LENGTH_FIDELITY)
+    module.GENERALIZED_LENGTH_TRANSFER = (
+        os.environ.get("GENERALIZED_CARD_LENGTH_TRANSFER", "v97").strip().lower()
+        or "v97"
+    )
+    set_length_transfer(module.GENERALIZED_LENGTH_TRANSFER)
     module.GENERALIZED_REPLY_SIBLING_VISIBILITY = (
         os.environ.get("GENERALIZED_CARD_REPLY_SIBLING_VISIBILITY", "on")
         .strip()

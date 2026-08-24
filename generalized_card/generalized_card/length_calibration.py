@@ -66,6 +66,35 @@ WORD_TRANSFER_SLOPE = 0.8925
 # and only bounds extrapolation past the largest slot ever observed.
 MIN_ASK_MULTIPLIER = 0.60
 MAX_ASK_MULTIPLIER = 1.60
+
+# The v97 fit above regressed realized words on the *uncalibrated* ask, because
+# v97 asked for the matched slot's own word count. Every release since asks the
+# calibrated value, so the transfer function that matters now is realized-on-
+# calibrated-ask -- a different object, and one this module never refitted.
+# Refitting it over every artifact that records both numbers (1,436 slots: the
+# v97 and v98 N=10 runs plus the v108 and v109 seed-8 gates, so 21 thread
+# instances rather than the gate thread alone) gives:
+#
+#     log(realized) = 0.5580 + 0.8276 * log(asked)     n=1436, R2=0.879
+#
+# and the residual it leaves is large and one-directional, stable across all
+# four runs: realized/asked runs 1.64x below 10 asked words and 0.68-0.80x above
+# 80. That residual is the measured cause of the compression in
+# `docs/DECISIONS.md` G43 -- the calibration has been under-correcting, not
+# absent. Inverting the refitted line asks 167 words for a 121-word slot where
+# the v97 constants ask 140, and 4 where they ask 5.
+#
+# `--length-transfer v97` keeps the constants above and reproduces v109
+# byte-for-byte; `refit` selects these.
+REFIT_TRANSFER_INTERCEPT = 0.5580
+REFIT_TRANSFER_SLOPE = 0.8276
+# The refitted line needs 0.51x at one word and 1.61x at 250, so the v97 clamp
+# would bind inside the range the fit actually covers. Widened only for the
+# refit arm.
+REFIT_MIN_ASK_MULTIPLIER = 0.50
+REFIT_MAX_ASK_MULTIPLIER = 1.70
+
+LENGTH_TRANSFER_MODE = "v97"
 # `off` reproduces every version through v97, which asked for the matched slot's
 # own word count.
 LENGTH_CALIBRATION_ENABLED = True
@@ -81,16 +110,42 @@ def set_length_calibration(mode: str) -> bool:
     return LENGTH_CALIBRATION_ENABLED
 
 
+def set_length_transfer(mode: str) -> str:
+    """Select which fitted transfer function the calibration inverts."""
+
+    global LENGTH_TRANSFER_MODE
+    chosen = str(mode or "v97").strip().lower()
+    LENGTH_TRANSFER_MODE = "refit" if chosen == "refit" else "v97"
+    return LENGTH_TRANSFER_MODE
+
+
+def active_transfer() -> tuple[float, float, float, float]:
+    """Intercept, slope and clamp bounds for the selected arm."""
+
+    if LENGTH_TRANSFER_MODE == "refit":
+        return (
+            REFIT_TRANSFER_INTERCEPT,
+            REFIT_TRANSFER_SLOPE,
+            REFIT_MIN_ASK_MULTIPLIER,
+            REFIT_MAX_ASK_MULTIPLIER,
+        )
+    return (
+        WORD_TRANSFER_INTERCEPT,
+        WORD_TRANSFER_SLOPE,
+        MIN_ASK_MULTIPLIER,
+        MAX_ASK_MULTIPLIER,
+    )
+
+
 def ask_multiplier(target_words: Any) -> float:
     """Return the clamped ask/target ratio that realizes `target_words`."""
 
     target = _safe_int(target_words)
-    if target <= 0 or WORD_TRANSFER_SLOPE <= 0:
+    intercept, slope, low, high = active_transfer()
+    if target <= 0 or slope <= 0:
         return 1.0
-    asked = math.exp(
-        (math.log(target) - WORD_TRANSFER_INTERCEPT) / WORD_TRANSFER_SLOPE
-    )
-    return max(MIN_ASK_MULTIPLIER, min(MAX_ASK_MULTIPLIER, asked / target))
+    asked = math.exp((math.log(target) - intercept) / slope)
+    return max(low, min(high, asked / target))
 
 
 def calibrated_word_ask(target_words: Any) -> int:

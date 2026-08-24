@@ -146,7 +146,7 @@ def writer_provider_token_budget(
 
     configured = max(16, _safe_int(configured_max, 260))
     real_words = max(0, _safe_int(getattr(task, "real_word_count", 0), 0))
-    if real_words <= 100:
+    if real_words <= 0:
         return configured
     # The ceiling has to clear the number the cue actually asks for, which is
     # larger than the matched slot on a long slot; otherwise the calibration

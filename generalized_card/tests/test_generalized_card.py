@@ -7266,6 +7266,118 @@ class FocusedWriterPromptTest(unittest.TestCase):
         finally:
             set_length_fidelity("off")
 
+    def test_length_transfer_v97_arm_reproduces_the_shipped_asks(self) -> None:
+        """The legacy arm must be byte-identical, including the clamp bounds."""
+
+        import math
+
+        from generalized_card.length_calibration import (
+            MAX_ASK_MULTIPLIER,
+            MIN_ASK_MULTIPLIER,
+            WORD_TRANSFER_INTERCEPT,
+            WORD_TRANSFER_SLOPE,
+            calibrated_word_ask,
+            set_length_transfer,
+        )
+
+        try:
+            set_length_transfer("v97")
+            for target in (1, 2, 3, 6, 12, 25, 40, 70, 100, 121, 180, 250, 400, 845):
+                asked = math.exp(
+                    (math.log(target) - WORD_TRANSFER_INTERCEPT) / WORD_TRANSFER_SLOPE
+                )
+                clamped = max(
+                    MIN_ASK_MULTIPLIER, min(MAX_ASK_MULTIPLIER, asked / target)
+                )
+                self.assertEqual(
+                    calibrated_word_ask(target),
+                    max(1, int(round(target * clamped))),
+                    f"legacy ask changed for target {target}",
+                )
+        finally:
+            set_length_transfer("v97")
+
+    def test_length_transfer_refit_lands_realized_on_target(self) -> None:
+        """Inverting the refitted line must predict the target back, unclamped."""
+
+        import math
+
+        from generalized_card.length_calibration import (
+            REFIT_MAX_ASK_MULTIPLIER,
+            REFIT_MIN_ASK_MULTIPLIER,
+            REFIT_TRANSFER_INTERCEPT,
+            REFIT_TRANSFER_SLOPE,
+            ask_multiplier,
+            calibrated_word_ask,
+            set_length_transfer,
+        )
+
+        try:
+            set_length_transfer("refit")
+            for target in (3, 6, 12, 25, 40, 70, 100, 121, 180, 250):
+                exact = math.exp(
+                    (math.log(target) - REFIT_TRANSFER_INTERCEPT) / REFIT_TRANSFER_SLOPE
+                )
+                # The inversion itself must be exact.
+                self.assertAlmostEqual(
+                    math.exp(
+                        REFIT_TRANSFER_INTERCEPT
+                        + REFIT_TRANSFER_SLOPE * math.log(exact)
+                    ),
+                    target,
+                    places=6,
+                )
+                # The shipped ask is that value rounded to whole words, so it may
+                # differ by at most one word -- which is a visible relative error
+                # only at the very short end.
+                asked = calibrated_word_ask(target)
+                self.assertLessEqual(
+                    abs(asked - exact),
+                    1.0,
+                    f"target {target}: asked {asked} against exact {exact:.2f}",
+                )
+            # The clamp must not bind anywhere the fit covers, or the arm would
+            # silently stop correcting exactly where the compression lives.
+            for target in range(1, 251):
+                self.assertLess(REFIT_MIN_ASK_MULTIPLIER, ask_multiplier(target))
+                self.assertGreater(REFIT_MAX_ASK_MULTIPLIER, ask_multiplier(target))
+            # The refit must ask for strictly more on a long slot and less on a
+            # short one than the v97 constants did.
+            long_refit, short_refit = calibrated_word_ask(121), calibrated_word_ask(6)
+            set_length_transfer("v97")
+            self.assertGreater(long_refit, calibrated_word_ask(121))
+            self.assertLess(short_refit, calibrated_word_ask(6))
+        finally:
+            set_length_transfer("v97")
+
+    def test_provider_ceiling_clears_the_refit_ask_and_is_a_legacy_no_op(self) -> None:
+        from generalized_card.length_calibration import (
+            calibrated_word_ask,
+            set_length_transfer,
+        )
+        from generalized_card.length_policy import writer_provider_token_budget
+
+        try:
+            set_length_transfer("v97")
+            for words in range(1, 101):
+                self.assertEqual(
+                    writer_provider_token_budget(
+                        SimpleNamespace(real_word_count=words), configured_max=260
+                    ),
+                    260,
+                    f"legacy ceiling changed at {words} words",
+                )
+            set_length_transfer("refit")
+            task = SimpleNamespace(real_word_count=121)
+            ceiling = writer_provider_token_budget(task, configured_max=260)
+            self.assertGreater(
+                ceiling,
+                calibrated_word_ask(121) * 1.7,
+                "the provider ceiling must clear the words the cue asks for",
+            )
+        finally:
+            set_length_transfer("v97")
+
     def test_length_fidelity_bands_bound_the_long_tail(self) -> None:
         """The reason the arm uses deciles rather than quintiles.
 
