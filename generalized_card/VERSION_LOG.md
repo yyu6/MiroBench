@@ -230,6 +230,133 @@ Full analysis in `docs/DECISIONS.md` G24.
 
 ---
 
+## v110 — refit the length transfer function (2026-08-24)
+
+`--length-transfer {v97,refit}`, default `v97`. Also in the tree at default
+`off`: `--length-fidelity {off,measured}`, built and tested but **not** in this
+gate (see "Why the band gate is not shipped" below).
+
+### Why this and not something else
+
+The user's target is `p ~ 0.5-0.6`, not `p > 0.05`. Simulated over the 763 real
+camera threads (`docs/DECISIONS.md` G42) that needs **~90% gap closure at N=150,
+~75% at N=50, ~50-75% at N=10** -- which rules out the whole 5-10% class the last
+four releases came from. Every candidate was therefore priced before anything was
+built:
+
+| candidate | priced at | verdict |
+|---|---|---|
+| length composition | **31-35% `self_bleu_4`, 14-18% `self_bertscore`** | build (G43, G46) |
+| absent links / markdown emphasis | 12.4% / 14.6% | defer, higher risk |
+| full Planner de-duplication | <=2.4% / <=1.8% | **killed** (G45) |
+| entity variety | <=9.4%, saturating | **killed** (G40, and v109 measured no movement) |
+| "generated writes fewer, longer sentences" | 15.15 vs 15.54 words/sentence | **killed, my own hypothesis** (G44) |
+| `no end punctuation` as a tell | generated has MORE (54 vs 34) | **killed** (G44) |
+| seven other surface features | generated matches or exceeds real | **killed** (G44) |
+
+### The mechanism
+
+Not new machinery -- a corrected constant. `length_calibration` already inverts a
+fitted transfer function, but its constants regress realized words on the
+**uncalibrated** ask, which was only true of v97. Refitting the object that
+governs the current system over **1,436 slots from four runs (21 thread
+instances)** gives `log(realized) = 0.5580 + 0.8276 * log(asked)`, R2 0.879,
+against the shipped 0.3835 / 0.8925, and the residual the old constants leave is
+stable across all four runs: **1.64x below 10 asked words, 0.68-0.80x above 80**.
+
+Effect on the asks for this gate thread, verified offline:
+
+| assigned | n | v97 asks | refit asks | v109 realized |
+|---|---:|---:|---:|---:|
+| 1-9 | 24 | 5.2 | **4.7** | 8.9 |
+| 10-24 | 52 | 17.0 | 16.8 | 18.3 |
+| 25-49 | 53 | 35.0 | 37.5 | 35.2 |
+| 50-99 | 40 | 79.5 | **91.0** | 59.8 |
+| 100+ | 17 | 164.6 | **199.5** | 123.2 |
+
+Two dependent fixes ride with it: the ask-multiplier clamp would bind at 0.51x
+and 1.61x inside the refit's own range, and `writer_provider_token_budget` raised
+the provider ceiling only above 100 assigned words, which the larger asks would
+overrun. The revised ceiling guard is **proven a no-op for every target 1-100
+under the legacy constants**, so `--length-transfer v97` still reproduces v109
+byte-for-byte.
+
+### Why the band gate is not shipped
+
+`length_fidelity` (require the realized count to stay in its assigned measured
+decile band) was built first and is in the tree, tested, and priced. It is not in
+this gate because the measured miss is **~0.5 band**: on v109, 42.5% of slots land
+in the exact band, 45.2% miss by one, 8.1% by two. A +/-0 tolerance therefore
+flags **57.5%** of slots -- mostly near-miss noise, roughly doubling cost through
+retries and putting one prescriptive instruction into more than half the prompts,
+which is the convergence failure mode G37 measured for v109's cue. A +/-1
+tolerance flags 12.4% and misses the bias entirely. Band membership is the wrong
+instrument for a half-band bias; a corrected ask is the right one, and it costs no
+extra calls and adds no instruction.
+
+### Gate predictions, written before spending
+
+Gate thread: seed 8 / `i1o51h`, 186 comments, the standing gate seed. Baseline is
+**v108 v2** for both metrics, not v109 -- v109 carried the `entity_spread` arm
+that G37 showed caused its `self_bertscore` and cosine regressions, and per G47
+v109's untreated subgroup is not a usable `self_bleu_4` baseline because the arm
+shifted comment length by ~15 words and that metric is length-dominated.
+
+| what | baseline | predicted |
+|---|---:|---|
+| **realized/assigned words, total** | 0.916 | **0.98-1.02.** Mechanical, free, needs no metric |
+| realized/assigned, assigned 50-99 | 0.82 | **~1.00** |
+| realized/assigned, assigned 1-9 | 1.44 | **~1.00** |
+| `length_cv` | 0.847-0.857 | **rises toward real 0.895** |
+| comments over 100 words | 0.059 | **rises toward real 0.091** |
+| `self_bleu_4` gap | +0.005664 | **+0.0037 to +0.0040** (31-35% closure), J7-discounted |
+| `self_bertscore_mean_f1` gap | +0.0139 | **+0.0114 to +0.0120** (14-18% closure), J7-discounted |
+| `mean_story_probability` | PASS | **guardrail: must not rise.** Longer comments are the v67 risk |
+| `semantic_mean_cosine` | +0.0117 | **guardrail: must not rise materially** |
+| cost | $1.1785 | **~$1.25** (assigned words realized in full is +9% output) |
+
+**Read the mechanical audit before any metric.** If realized/assigned has not
+moved off 0.916, the arm did not reach the live prompt and every metric in that
+run is void -- the check the wasted v108 v1 gate paid $1.19 to learn (G23).
+
+Per G42 a 31-35% closure puts `self_bleu_4` at MWU ~0.41-0.49 at N=10 and
+`self_bertscore` at ~0.30. **That is not the 0.5-0.6 target**, and this release is
+not pitched as reaching it; it is the largest verified lever available and the
+first one aimed at a measured cause rather than a plausible story.
+
+### Offline state
+
+673 tests pass (6 new: the legacy arm reproduces every shipped ask, the refit
+inverts exactly and its clamp never binds in 1-250, the provider ceiling clears
+the refit ask and is a legacy no-op, and three for the unshipped band gate). Ruff
+clean. Core contract: 0 missing, 0 untracked, 0 unpinned, 0 drifted.
+`--prepare-only` passed with no API calls. `length_fidelity` profiles build on all
+four registered domains with genuinely different decile cuts (camera
+[6,11,16,22,29,38,52,72,111], headphone roughly half that), every band above the
+40-comment floor. **Caveat on domain adaptivity:** the transfer function is a
+property of the model and the prompt, not of the domain, so it ships as a recorded
+constant rather than a profile -- and per D3 no paid run has ever been done off
+camera, so that claim is untested there.
+
+### Command
+
+```bash
+python3 -u generalized_card/scripts/run_generate.py \
+  --tag v110_length_transfer_seed8_20260824_v1 --domain camera \
+  --model gpt-5.4-mini --base-url https://api.openai.com/v1 \
+  --api-key-env LLM_API_KEY --pool-size 150 --max-posts 1 --posts-per-run 1 \
+  --start-seed-index 8 --sampling-seed 42 \
+  --length-transfer refit --resume
+
+python3 generalized_card/scripts/run_evaluate.py \
+  --tag v110_length_transfer_seed8_20260824_v1 --metric-parallel 5 --resume
+```
+
+Full arm list for this gate, per G39: every other arm at its default. The only
+non-default is `--length-transfer refit`.
+
+---
+
 ## v109 — per-slot referent spread (2026-08-24)
 
 Policy ID: `generalized-card-v2-entity-referent-spread-v109-20260824`.

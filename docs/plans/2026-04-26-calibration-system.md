@@ -4,11 +4,21 @@
 
 **Goal:** Build an iterative LLM-driven calibration loop that tunes persona distributions and prompt text so generated Reddit discussions become statistically indistinguishable from real discussions.
 
-**Architecture:** A `calibration/` package with 9 modules. The orchestrator runs iterations: generate 5 candidate discussions → score with statistical tests → select best → LLM diagnoses gaps and proposes overlay changes. Before/after group evaluations (50 vs 50) use Mann-Whitney U, KS test, and Cliff's delta. During-calibration diagnostics use empirical p-values per thread.
+**Architecture:** A `calibration/` package with 9 modules. The orchestrator runs iterations: generate 5 candidate discussions → score with statistical tests → select best → LLM diagnoses gaps and proposes overlay changes. Before/after group evaluations (50 vs 50) use Mann-Whitney U, KS test, and Cliff's delta. During-calibration diagnostics use empirical p-values per thread, and candidate selection now prefers validation group-level distance when that summary is available.
 
 **Tech Stack:** Python 3.10+, pandas, numpy, scipy.stats, openai SDK. Existing simulation pipeline via subprocess.
 
 **Spec:** `docs/design/2026-04-26-calibration-system-design.md`
+
+## Implementation Update (2026-04-28)
+
+- `run_discussion.py` loads calibration overlays for persona generation and persists
+  the overlay in `simulation_config.json` for auditability. The old
+  repo-local OASIS patch layer has been removed; the current run path uses the
+  vanilla MiroFish/OASIS runtime directly.
+- Calibration overlays are now sanitized against `KnobRegistry` before candidate execution and when resuming saved state. Unknown or invalid knobs are dropped and logged instead of silently surviving into `best_overlay.json`.
+- Candidate selection now uses validation group-level summaries when available: minimize mean absolute Cliff's delta first, then overall empirical fail rate, with the original per-thread diagnostics kept as tie-breakers and debugging signals.
+- `prompt.length_cv` is not a supported knob in the runtime. Length-diversity adjustments should be expressed through registered knobs only.
 
 ---
 
@@ -50,7 +60,7 @@
 | `pyproject.toml` | Add pandas, numpy, scipy to dependencies |
 | `run_discussion.py` | Add `--overlay` CLI arg, load and pass overlay dict |
 | `product_reddit_sim/persona_gen.py` | Accept overlay dict, apply persona distribution overrides |
-| `product_reddit_sim/oasis_reddit.py` | Accept overlay dict, apply prompt text overrides |
+| `product_reddit_sim/config_builder.py` | Persist overlay into `simulation_config.json` for auditability |
 
 ---
 
@@ -2480,7 +2490,7 @@ git commit -m "feat(calibration): add CLI and __main__ entry point"
 **Files:**
 - Modify: `run_discussion.py`
 - Modify: `product_reddit_sim/persona_gen.py`
-- Modify: `product_reddit_sim/oasis_reddit.py`
+- Modify: `product_reddit_sim/config_builder.py`
 
 ### Step 10.1: Add `--overlay` to `run_discussion.py`
 
@@ -2503,6 +2513,7 @@ git commit -m "feat(calibration): add CLI and __main__ entry point"
 ```
 
 - [ ] Pass `overlay=overlay` to `generate_personas()` and ensure it's available to `build_config()`.
+- [ ] Persist `cli_args["overlay"]` into `simulation_config.json` so each run keeps the overlay in its audit trail.
 
 ### Step 10.2: Add overlay support to `persona_gen.py`
 
@@ -2531,20 +2542,7 @@ git commit -m "feat(calibration): add CLI and __main__ entry point"
                     profile["primary_motivation"] = rng.choices(motivations, weights=weights, k=1)[0]
 ```
 
-### Step 10.3: Add overlay support to `oasis_reddit.py`
-
-- [ ] Modify prompt-building functions to accept an overlay dict and check for prompt text overrides before using hardcoded text. The pattern:
-
-```python
-    # Example in build_reddit_system_prompt or build_reddit_action_prompt:
-    anti_paraphrase = (
-        overlay.get("prompt.anti_paraphrase_instruction")
-        if overlay
-        else None
-    ) or "If several visible comments are already making the same point..."
-```
-
-### Step 10.4: Test overlay integration
+### Step 10.3: Test overlay integration
 
 - [ ] Run the existing test suite to confirm no regressions:
 ```bash
@@ -2552,11 +2550,11 @@ python -m pytest tests/ -v --ignore=tests/test_calibration_stats.py --ignore=tes
 ```
 - [ ] Expected: All existing tests PASS
 
-### Step 10.5: Commit
+### Step 10.4: Commit
 
 - [ ] Run:
 ```bash
-git add run_discussion.py product_reddit_sim/persona_gen.py product_reddit_sim/oasis_reddit.py
+git add run_discussion.py product_reddit_sim/persona_gen.py product_reddit_sim/config_builder.py
 git commit -m "feat: add --overlay support to pipeline — persona distributions and prompt text overrides"
 ```
 

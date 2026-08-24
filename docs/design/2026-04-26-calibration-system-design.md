@@ -1,641 +1,697 @@
 # Calibration System Design
 
-**Date:** 2026-04-26
-**Revised:** 2026-04-26
-**Status:** Approved
-**Goal:** Iterative, LLM-driven calibration loop that tunes simulation prompts
-and persona distributions so that generated Reddit discussions become
-statistically indistinguishable from real discussions under independent
-hypothesis tests.
+**Date:** 2026-04-26  
+**Revised:** 2026-05-04  
+**Status:** Active  
+**Scope:** Persona + prompt calibration for the Reddit discussion simulator
 
 ---
 
-## 1. Overview
+## 1. Goal
 
-The calibration system wraps around the existing simulation pipeline
-(`run_discussion.py` → analyze → personas → config → simulate → export).
+The current calibration system tries to make simulated discussion threads match
+the real discussion distribution more closely on a fixed set of target
+metrics.
 
-### 1.1 Phases
+It does **not** rewrite simulator source code during the calibration loop.
 
-1. **Before-calibration evaluation** — compare 50 initial generated discussions
-   against 50 real discussions using group-level statistical tests.
-2. **Calibration loop** (default 10 iterations) — each iteration generates 5
-   candidate discussions, diagnoses per-instance metric gaps via empirical
-   p-values, selects the best candidate, and uses an LLM to propose persona
-   and prompt changes.
-3. **After-calibration evaluation** — compare 50 calibrated generated
-   discussions against the same 50 real discussions using the same tests.
-4. **Improvement analysis** — compare before vs after results per metric.
+Instead, it performs an outer-loop search that:
 
-### 1.2 What the LLM Can Modify
+1. reuses or computes a real/vanilla baseline
+2. diagnoses mismatch against the **real validation split**
+3. proposes candidate prompt patches
+4. runs fresh simulations for those candidates
+5. ranks candidates using per-metric distributional comparison statistics
+6. commits the best phase-local patch into a cumulative overlay
+7. runs a fresh post-calibration evaluation against the **real test split**
 
-The calibration LLM can modify two layers:
+The core objective is:
 
-- **Persona layer** — distributions over conflict_style, primary_motivation,
-  knowledge_style, stance; sentiment_bias range.
-- **Prompt layer** — text blocks for anti-paraphrase instruction, tone
-  guidance, structure preference weighting, depth soft cap language, few-shot
-  style anchoring.
-
-The LLM does **not** modify config-layer knobs (activity_level, time
-multipliers, comments_per_hour, etc.). Those remain fixed at their reference
-run values.
+- make generated thread-level metric distributions look like real validation
+- push per-metric distributional comparison statistics toward `0`
+- push per-metric `MWU` / `KS` p-values upward toward `> 0.05` when possible
 
 ---
 
-## 2. Metric Domains
+## 2. Current Architecture
 
-Three domains, each with specific metrics from the existing evaluation suite:
+### 2.1 High-level pipeline
 
-### 2.1 Repetitiveness
+```text
+real train / val / test
+        |
+        v
+Phase 0: before-calibration baseline comparison
+         (reuse existing vanilla scores, or optionally rerun fresh vanilla_oasis)
+        |
+        v
+Phase 1: iterative calibration loop
+        |
+        |-- LLM 1: strategist / reasoner
+        |-- LLM 2: text materializer / revision
+        |-- candidate simulations through the vanilla MiroFish runtime
+        |-- per-metric validation scoring
+        |-- block-best accumulation into one cumulative overlay
+        v
+Phase 2: fresh after-calibration evaluation vs real test
+        |
+        v
+Phase 3: before/after improvement analysis
+```
 
-| Metric | Source |
-|---|---|
-| `self_bleu_2`, `self_bleu_3`, `self_bleu_4` | `score_thread_self_bleu.py` |
-| `self_bertscore_mean_f1` | `score_thread_self_bertscore.py` |
-| `semantic_mean_cosine` | `score_thread_semantic_uniformity.py` |
+### 2.2 Runtime backbone
 
-### 2.2 Toxicity / Aggressiveness
-
-| Metric | Source |
-|---|---|
-| `toxicity_mean`, `toxicity_max`, `toxicity_p90` | `score_thread_detoxify.py` |
-| `severe_toxicity_mean`, `severe_toxicity_max`, `severe_toxicity_p90` | `score_thread_detoxify.py` |
-| `obscene_mean`, `obscene_max`, `obscene_p90` | `score_thread_detoxify.py` |
-| `threat_mean`, `threat_max`, `threat_p90` | `score_thread_detoxify.py` |
-| `insult_mean`, `insult_max`, `insult_p90` | `score_thread_detoxify.py` |
-| `identity_attack_mean`, `identity_attack_max`, `identity_attack_p90` | `score_thread_detoxify.py` |
-| `aggression_score_mean`, `aggression_score_max` | `score_thread_detoxify.py` |
-
-### 2.3 Thread Structure / Complexity
-
-| Metric | Source |
-|---|---|
-| `length_std`, `length_iqr`, `length_cv` | `score_thread_structure.py` |
-| `max_depth`, `avg_depth` | `score_thread_structure.py` |
-| `avg_branching_factor` | `score_thread_structure.py` |
-| `structural_virality` | `score_thread_structure.py` |
-
-Metric selection is configurable; the domains and their member metrics can be
-changed without modifying system architecture.
+The system now uses the restored vanilla MiroFish/OASIS Reddit runner for all
+simulation runs. The old repo-local `geo_patched` runtime layer was removed
+because the current run path did not execute it; calibration now changes only
+the persisted persona/prompt overlay and post-generation revision inputs.
 
 ---
 
-## 3. Package Structure
+## 3. What Calibration Is Allowed to Modify
 
-```
-calibration/
-├── __init__.py
-├── cli.py                # CLI entry point
-├── orchestrator.py       # Main iteration loop
-├── registry.py           # Knob registry: persona + prompt tunable parameters
-├── overlay.py            # Overlay model: load/save/merge/validate
-├── scorer.py             # Run metric scripts, compute statistical tests
-├── stats.py              # Statistical functions: Cliff's delta, empirical p-value, etc.
-├── reasoner.py           # LLM diagnosis, strategy proposal, overlay diff
-├── runner.py             # Subprocess pool for candidate simulations
-└── log.py                # Calibration log: per-iteration records
-```
+### 3.1 Two persisted slots
 
----
+Calibration is currently allowed to edit exactly **two persisted overlay
+fields**:
 
-## 4. Statistical Evaluation Framework
+- `persona.generation_guidance`
+- `prompt.comment_style_guidance`
 
-### 4.1 Core Functions (`stats.py`)
+These are not tiny knobs. They are the actual prompt patches injected into the
+simulator.
 
-Implemented using pandas, numpy, scipy.stats:
+### 3.2 What these two slots mean
 
-```python
-def cliffs_delta(x, y):
-    """Cliff's delta effect size. Positive means x tends to be higher than y."""
+`persona.generation_guidance` controls **who gets generated**:
 
-def empirical_p_value(real_values, gen_value):
-    """Two-sided empirical p-value measuring how far gen_value is from real median.
+- backgrounds
+- recurring grievances
+- knowledge level
+- confidence mismatch
+- product memories
+- repeated biases
+- lived experience hooks
+- what tends to trigger a reply
 
-    center = median(real_values)
-    gen_dist = abs(gen_value - center)
-    real_dist = abs(real_values - center)
-    p = (count(real_dist >= gen_dist) + 1) / (len(real_values) + 1)
-    """
+`prompt.comment_style_guidance` controls **how they write**:
 
-def empirical_percentile(real_values, gen_value):
-    """Percentile of gen_value within the real distribution."""
+- comment shape
+- reply behavior
+- anecdote usage
+- disagreement style
+- length variation
+- paraphrase avoidance
+- visible-comment reaction behavior
+- short-form social-media reply patterns
 
-def evaluate_group_vs_real(real_df, gen_df, metrics, alpha=0.05):
-    """Group-level evaluation: 50 generated vs 50 real discussions."""
+### 3.3 What the calibration LLM does not edit
 
-def diagnose_single_generation(real_df, gen_row, metrics, alpha=0.05):
-    """Per-instance calibration diagnostic for one generated thread."""
+The calibration loop does **not** currently let the LLM mutate:
 
-def compare_before_after(before_results, after_results):
-    """Improvement analysis comparing before and after calibration."""
-```
+- Python source code
+- arbitrary runtime code paths
+- arbitrary new executable fields
+- the runtime structure defaults directly
 
-Missing values are handled by dropping NaNs per metric.
-
-### 4.2 Phase 1: Before-Calibration Group Evaluation
-
-Compare 50 initial generated discussions against 50 real discussions.
-
-For each metric, compute:
-
-| Output Field | Description |
-|---|---|
-| `real_mean` | Mean of real values |
-| `real_median` | Median of real values |
-| `generated_mean` | Mean of generated values |
-| `generated_median` | Median of generated values |
-| `mwu_p_value` | Mann-Whitney U test p-value |
-| `ks_statistic` | Kolmogorov-Smirnov test statistic |
-| `ks_p_value` | Kolmogorov-Smirnov test p-value |
-| `cliffs_delta` | Effect size; positive = generated higher than real |
-| `direction` | `generated_higher` / `generated_lower` / `similar` |
-| `empirical_fail_rate` | Fraction of generated values with empirical p < 0.05 |
-
-Output: `before_calibration_group_eval.csv`
-
-### 4.3 Phase 2: During-Calibration Single-Simulation Diagnostic
-
-Given one generated discussion row and the real baseline, compute per-metric:
-
-| Output Field | Description |
-|---|---|
-| `real_median` | Median of real values |
-| `generated_value` | The generated thread's value |
-| `empirical_p_value` | Two-sided empirical p-value (see formula above) |
-| `percentile` | Percentile of generated value within real distribution |
-| `direction` | `too_high` / `too_low` / `within_baseline` |
-| `diagnosis_flag` | `fail` if empirical p-value < 0.05 |
-
-This is the diagnostic the calibration LLM receives each iteration to
-understand which metrics are out of distribution and in which direction.
-
-Output: `single_generation_diagnostic.csv` (optional, per candidate)
-
-### 4.4 Phase 3: After-Calibration Group Evaluation
-
-Compare 50 calibrated generated discussions against 50 real discussions using
-the same metrics and tests as Phase 1:
-
-- Mann-Whitney U p-value
-- KS test statistic and p-value
-- Cliff's delta
-- Empirical p-value fail rate
-
-Output: `after_calibration_group_eval.csv`
-
-### 4.5 Phase 4: Improvement Analysis
-
-Compare before-calibration and after-calibration results. For each metric:
-
-| Output Field | Description |
-|---|---|
-| `before_mwu_p` | Before MWU p-value |
-| `after_mwu_p` | After MWU p-value |
-| `before_ks_p` | Before KS p-value |
-| `after_ks_p` | After KS p-value |
-| `before_cliffs_delta` | Before Cliff's delta |
-| `after_cliffs_delta` | After Cliff's delta |
-| `abs_delta_reduction` | `abs(before_delta) - abs(after_delta)` |
-| `before_fail_rate` | Before empirical fail rate |
-| `after_fail_rate` | After empirical fail rate |
-| `fail_rate_reduction` | `before_fail_rate - after_fail_rate` |
-| `improved` | True if `abs(after_delta) < abs(before_delta)` AND `after_fail_rate < before_fail_rate` |
-
-Overall summary:
-
-| Summary Field | Description |
-|---|---|
-| `metrics_sig_different_before` | Count of metrics with MWU p < 0.05 before |
-| `metrics_sig_different_after` | Count of metrics with MWU p < 0.05 after |
-| `avg_abs_cliffs_delta_before` | Mean of `abs(cliffs_delta)` before |
-| `avg_abs_cliffs_delta_after` | Mean of `abs(cliffs_delta)` after |
-| `overall_pass_rate_before` | Fraction of (metric, thread) pairs with empirical p >= 0.05 before |
-| `overall_pass_rate_after` | Fraction of (metric, thread) pairs with empirical p >= 0.05 after |
-| `overall_fail_rate_before` | `1 - overall_pass_rate_before` |
-| `overall_fail_rate_after` | `1 - overall_pass_rate_after` |
-
-Output: `before_after_improvement_summary.csv`
-
-A concise summary is also printed to the terminal.
+Runtime structure realism is handled in the patched simulator code, not by the
+calibration LLM inventing new runtime fields.
 
 ---
 
-## 5. Knob Registry
+## 4. Real-data splits and their roles
 
-A declarative catalog of every tunable parameter across two layers.
+### 4.1 Train split
 
-### 5.1 Entry Format
+Used only for qualitative grounding:
 
-```json
-{
-    "name": "persona.conflict_style_distribution",
-    "layer": "persona",
-    "domain": "toxicity",
-    "type": "distribution",
-    "keys": ["calm", "skeptical", "blunt", "sarcastic", "argumentative", "avoidant"],
-    "constraints": "values sum to 1.0, each >= 0.0",
-    "default": {"calm": 0.2, "skeptical": 0.25, "blunt": 0.15, "sarcastic": 0.15, "argumentative": 0.1, "avoidant": 0.15},
-    "description": "Distribution of conflict styles across generated personas"
-}
-```
+- few-shot thread examples
+- real sample threads shown to the strategist/materializer
+- concrete examples of how real discussions sound
 
-### 5.2 Layers
+It is **not** the ranking target for candidate selection.
 
-**Persona layer** (~8 knobs): distributions over `conflict_style`,
-`primary_motivation`, `knowledge_style`, `stance`; `sentiment_bias` range.
+### 4.2 Validation split
 
-**Prompt layer** (~6 knobs): text blocks for anti-paraphrase instruction, tone
-guidance, structure preference weighting, depth soft cap language, few-shot
-style anchoring.
+Used for **Phase 1 candidate ranking**.
 
-### 5.3 Registry Responsibilities
+This is the active reference distribution during calibration.
 
-1. **Validation** — reject LLM-proposed changes that are out of bounds.
-2. **Documentation** — the LLM receives the registry as context so it knows
-   what it can change.
-3. **Diffing** — track what changed between iterations.
+### 4.3 Test split
+
+Used only for **fresh post-calibration evaluation** after the loop finishes.
 
 ---
 
-## 6. Overlay System
+## 5. Manual Calibration Schedule
 
-An overlay is a sparse JSON dict of knob overrides keyed by knob name. Only
-changed knobs appear; everything else falls through to defaults.
+The current active search policy is a **fixed 12-iteration manual-phase
+schedule**.
 
-```json
-{
-    "persona.conflict_style_distribution": {"calm": 0.1, "skeptical": 0.2, "blunt": 0.25, "sarcastic": 0.2, "argumentative": 0.15, "avoidant": 0.1},
-    "prompt.anti_paraphrase_instruction": "If three or more visible comments express the same viewpoint, do NOT add another."
-}
-```
+There is no longer an active exploration/combination-heavy/final-integration
+schedule in the current implementation.
 
-### 6.1 Key Operations
+### 5.1 Current 12-iteration block structure
 
-- `merge(base_defaults, overlay) → resolved_config` — full config for a run.
-- `validate(overlay, registry) → errors` — type, range, distribution checks.
-- `diff(overlay_a, overlay_b) → changes` — human-readable diff for the log.
+The 12 edited iterations are partitioned into four deterministic 3-iteration
+blocks:
 
-### 6.2 Pipeline Integration
+1. `iter 1-3`: `story_persona_foundation`
+2. `iter 4-6`: `diversity_style_decompression`
+3. `iter 7-9`: `length_distribution_rebalancing`
+4. `iter 10-12`: `conflict_tone_activation`
 
-The existing pipeline modules (`persona_gen.py`, `oasis_reddit.py`) receive
-light modifications to accept an optional `--overlay` path. When present,
-overrides are read from it. When absent, behavior is unchanged — zero
-regression risk.
+### 5.2 Current focus metrics by block
 
----
+`story_persona_foundation`
 
-## 7. Scorer (`scorer.py`)
+- `mean_story_probability`
 
-### 7.1 Per-Candidate Scoring
+`diversity_style_decompression`
 
-For each candidate simulation:
+- `self_bleu_4`
+- `self_bertscore_mean_f1`
+- `semantic_mean_cosine`
 
-1. Invoke `run_full_thread_metric_suite.py` as a subprocess.
-2. Read `thread_metrics_summary.csv` from the candidate's output directory.
+`length_distribution_rebalancing`
 
-### 7.2 During-Calibration Diagnostic
+- `length_cv`
 
-For each candidate's threads, run `diagnose_single_generation()` against the
-real baseline. The diagnostic tells the calibration LLM:
+`conflict_tone_activation`
 
-- Which metrics are failing (empirical p < 0.05)
-- In which direction (too high / too low)
-- The percentile position within the real distribution
+- `toxicity_mean`
+- `severe_toxicity_mean`
+- `obscene_mean`
+- `threat_mean`
+- `aggression_score_mean`
 
-### 7.3 Candidate Selection
+### 5.3 Protected metrics
 
-Selection uses the empirical fail rate: the candidate with the **lowest
-fraction of failing metrics** across its threads wins. Ties are broken by
-the mean absolute Cliff's delta (lower is better).
+Each later block also protects the focus metrics already improved in earlier
+blocks.
 
-To beat the current best, a candidate must have a strictly lower fail rate
-(or equal fail rate with lower mean absolute delta). If no candidate beats
-the current best, the current best carries forward and the strategies are
-logged as unsuccessful.
+Example:
+
+- the diversity block focuses on semantic repetition metrics
+- but also preserves the earlier story block’s `mean_story_probability`
 
 ---
 
-## 8. Reasoner (Calibration LLM)
+## 6. Block-wise Accumulation
 
-### 8.1 Interface
+### 6.1 Within-block behavior
 
-One LLM call per iteration. The prompt contains:
+Each 3-iteration block maintains its own `block_best`.
 
-1. Metric definitions (full reference doc).
-2. Knob registry (persona + prompt tunable parameters with types, ranges).
-3. Real baseline metrics (reference distribution).
-4. Current best candidate's per-metric diagnostic (empirical p-values,
-   percentiles, fail flags, directions).
-5. Per-domain summary: fail counts and dominant direction per domain.
-6. Domain score trajectory across all prior iterations.
-7. Calibration log — all previously tried strategies, success/failure status.
+That means:
 
-### 8.2 LLM Output Structure
+- `iter 2` compares against the current story-block incumbent, not a global
+  exploration frontier
+- `iter 5` compares against the current diversity-block incumbent
+- `iter 8` compares against the current length-block incumbent
+- `iter 11/12` compare against the current conflict-block incumbent
 
-```json
-{
-    "diagnosis": {
-        "repetitiveness": "self_bleu_2 and self_bleu_3 are failing (too high, p=0.01). Comments are paraphrasing...",
-        "toxicity": "All toxicity metrics pass. Slightly below real median but within baseline.",
-        "structure": "avg_depth fails (too low, p=0.03). Threads are too flat..."
-    },
-    "strategy": "Tighten anti-paraphrase prompt to reduce self-BLEU. Shift structure preference toward replies to deepen threads.",
-    "strategy_label": "reduce_paraphrase_deepen_threads",
-    "overlay_diff": {
-        "persona.conflict_style_distribution": {"calm": 0.15, "skeptical": 0.2, "blunt": 0.2, "sarcastic": 0.2, "argumentative": 0.15, "avoidant": 0.1},
-        "prompt.anti_paraphrase_instruction": "If three or more visible comments express the same viewpoint..."
-    },
-    "prompt_alternatives": {
-        "prompt.anti_paraphrase_instruction": [
-            "Alternative phrasing 1...",
-            "Alternative phrasing 2..."
-        ]
-    },
-    "constraints": ["Do not regress toxicity metrics that currently pass"]
-}
+### 6.2 End-of-block commit
+
+At the end of a block, the block-best overlay is **committed into the
+cumulative overlay state**.
+
+Later blocks always start from:
+
+- the cumulative committed overlay
+- then append new block-specific prompt text on top of it
+
+### 6.3 Append-only text merge
+
+The manual-phase merge policy is append-oriented for the two text knobs:
+
+- earlier block text is preserved
+- later block text is appended
+- later blocks do not replace the earlier blocks wholesale
+
+This means the calibration search is now structured as:
+
+```text
+story best
+  + diversity best
+  + length best
+  + conflict best
 ```
 
-### 8.3 Candidate Variant Generation
+rather than a single global-best-only overlay race.
 
-The LLM produces one overlay diff. Five candidates are derived:
+### 6.4 Structured phase blocks inside the overlay
 
-- **Candidate 0**: LLM's exact recommendation.
-- **Candidates 1–2**: Distribution knob perturbations (±5–10% jitter on
-  persona distributions), prompt text unchanged.
-- **Candidates 3–4**: Same distribution knobs as candidate 0, but with the
-  LLM-provided alternative prompt phrasings.
+The cumulative overlay is now stored in a **structured phase-block form**
+internally.
 
-If the LLM did not change any prompt knobs, candidates 3–4 fall back to
-distribution-only perturbations.
+Instead of keeping one undifferentiated long text blob, manual-phase writes are
+stored under an internal `_manual_phase_blocks` map such as:
 
-### 8.4 Model Configuration
+- `story_persona_foundation`
+- `diversity_style_decompression`
+- `length_distribution_rebalancing`
+- `conflict_tone_activation`
 
-CLI flag `--calibration-model` (default: `gpt-4o-mini`). The calibration LLM
-is independent from the simulation LLM.
+Each block stores its own:
 
-### 8.5 Strategy Memory
+- `phase_label`
+- `phase_order`
+- `persona.generation_guidance`
+- `prompt.comment_style_guidance`
 
-The reasoner prompt instructs: "Review the calibration log. Do not re-propose
-strategies labeled as failed. If a domain's metrics currently pass, include a
-constraint to preserve that."
+At runtime, these blocks are rendered back into the two real text knobs as
+labeled sections, for example:
+
+```text
+[Story / Persona Foundation]
+...
+
+[Diversity / Style Decompression]
+...
+```
+
+This gives later phases a clearer prompt structure and reduces the chance that
+the model treats the entire cumulative overlay as one flat wall of text.
+
+### 6.5 What later blocks actually inherit
+
+Because of the structured overlay representation:
+
+- `iter 4-6` start from the committed `story` block
+- `iter 7-9` start from committed `story + diversity`
+- `iter 10-12` start from committed `story + diversity + length`
+
+So the search still uses block-wise accumulation, but the inherited state is
+now better organized for the LLM.
 
 ---
 
-## 9. Runner
+## 7. Two-stage LLM loop
 
-### 9.1 Subprocess Pool
+### 7.1 LLM 1: strategist / reasoner
 
-- Accepts a list of overlay configs and a `--parallel` flag (default 1, max 5).
-- Each candidate gets its own output directory under
-  `iterations/iter_XX/candidates/candidate_N/`.
-- Invokes `run_discussion.py` as a subprocess with `--overlay`.
-- Captures stdout/stderr per candidate for debugging.
-- Failed simulations (non-zero exit) are excluded from scoring, not fatal.
+The strategist decides:
 
----
+- what the active block is failing on
+- which causal mechanism should be tried next
+- which 5 candidate directions to test
 
-## 10. Orchestrator
+It sees:
 
-### 10.1 Main Loop
+- current cumulative / block-best overlay
+- current diagnostic
+- real validation summary
+- same-block prior candidate outcomes
+- failed strategies
+- few-shot real threads
+- current simulated thread examples
+- active phase instructions
+- per-metric statistic feedback from earlier candidates in the same block
 
-```
-load or initialize calibration state:
-    - real baseline (50 real threads, metrics computed once, cached)
-    - knob registry
-    - calibration log (empty or resumed)
-    - current best overlay (defaults for fresh run, or loaded if resuming)
+### 7.2 LLM 2: text materializer / revision
 
-Phase 1: Before-calibration evaluation
-    generate 50 discussions with default overlay
-    run evaluate_group_vs_real() → before_calibration_group_eval.csv
+The materializer writes the actual injected prompt text.
 
-Phase 2: Calibration loop
-    for iteration in range(max_iterations):
-        if iteration == 0:
-            generate 5 candidates from default overlay (no LLM reasoning)
-            score all → diagnose → select best → establish baseline
-        else:
-            feed reasoner: current best diagnostic, trajectory, log
-            reasoner returns: diagnosis, strategy, overlay diff, prompt alternatives
-            generate 5 variant overlays
-            runner launches 5 candidates (parallel pool)
-            scorer diagnoses each candidate
-            select best candidate (lowest fail rate)
-            if best < current best:
-                update current best
-                log: strategy succeeded
-            else:
-                keep current best
-                log: strategy failed
-        save iteration artifacts
+It sees essentially the same evidence as the strategist, plus:
 
-Phase 3: After-calibration evaluation
-    generate 50 discussions with best overlay
-    run evaluate_group_vs_real() → after_calibration_group_eval.csv
+- the strategist diagnosis
+- the 5 candidate seeds themselves
 
-Phase 4: Improvement analysis
-    run compare_before_after() → before_after_improvement_summary.csv
-    print terminal summary
+The materializer is not a fallback expander. It is expected to:
 
-export best_overlay.json
-export calibration_summary.json
-```
+- rewrite the strategist seed into better final runtime text
+- produce complete text for both persisted knobs
+- preserve the active block’s causal intent
 
-### 10.2 Resume Support
+### 7.3 Both knobs are always edited
 
-The orchestrator detects completed iteration artifacts and resumes from the
-next incomplete iteration. Calibration log and current best are loaded from
-disk.
+Every manual-phase candidate must write both:
+
+- `persona.generation_guidance`
+- `prompt.comment_style_guidance`
+
+There is no current one-sided candidate type in the active schedule.
+
+One side can be dominant for a block, but both are always present.
 
 ---
 
-## 11. Output Artifacts
+## 8. Prompt philosophy in the current system
 
-### 11.1 Directory Structure
+### 8.1 The system tells the LLM how to modify, not just what metric is bad
 
-```
-artifacts/calibration_runs/<run_id>/
-├── calibration_log.json
-├── calibration_summary.json
-├── best_overlay.json
-├── real_baseline_metrics.json
-├── before_calibration_group_eval.csv
-├── after_calibration_group_eval.csv
-├── before_after_improvement_summary.csv
-├── iterations/
-│   ├── iter_00/
-│   │   ├── overlay.json
-│   │   ├── candidates/
-│   │   │   ├── candidate_0/
-│   │   │   │   ├── <simulation output files>
-│   │   │   │   └── single_generation_diagnostic.csv
-│   │   │   ├── candidate_1/
-│   │   │   └── ...
-│   │   ├── diagnosis.json
-│   │   └── selection.json
-│   ├── iter_01/
-│   └── ...
-├── before_calibration_runs/        # 50 runs for Phase 1
-└── after_calibration_runs/         # 50 runs for Phase 3
-```
+The reasoner/materializer prompts now explicitly encode:
 
-### 11.2 Calibration Log Entry
+- the active phase objective
+- per-metric interpretation guidance
+- what behavioral mechanisms should change
+- what anti-patterns to avoid
+- how previous same-block candidates performed
+- what real few-shot examples actually look like
 
-```json
-{
-    "iteration": 3,
-    "timestamp": "2026-04-27T14:32:01",
-    "strategy_label": "reduce_paraphrase_deepen_threads",
-    "strategy_description": "Tighten anti-paraphrase prompt...",
-    "diagnosis": {
-        "repetitiveness": "self_bleu_2 failing (too high, p=0.01)...",
-        "toxicity": "All passing...",
-        "structure": "avg_depth failing (too low, p=0.03)..."
-    },
-    "overlay_diff_applied": {
-        "prompt.anti_paraphrase_instruction": "..."
-    },
-    "candidates": [
-        {
-            "candidate_id": 0,
-            "variant_type": "exact",
-            "fail_rate": 0.12,
-            "mean_abs_cliffs_delta": 0.18,
-            "per_metric": {
-                "self_bleu_2": {
-                    "value": 0.08,
-                    "real_median": 0.05,
-                    "empirical_p": 0.14,
-                    "percentile": 72,
-                    "direction": "within_baseline",
-                    "pass": true
-                },
-                "avg_depth": {
-                    "value": 1.5,
-                    "real_median": 1.69,
-                    "empirical_p": 0.03,
-                    "percentile": 18,
-                    "direction": "too_low",
-                    "pass": false
-                }
-            }
-        }
-    ],
-    "selection": {
-        "winner": 0,
-        "beat_current_best": true,
-        "previous_best_fail_rate": 0.20,
-        "new_best_fail_rate": 0.12
-    },
-    "trajectory_so_far": [
-        {
-            "iteration": 0,
-            "fail_rate": 0.35,
-            "mean_abs_cliffs_delta": 0.31,
-            "failing_metrics": ["self_bleu_2", "self_bleu_3", "avg_depth", "toxicity_mean"]
-        },
-        {
-            "iteration": 1,
-            "fail_rate": 0.25,
-            "mean_abs_cliffs_delta": 0.24,
-            "failing_metrics": ["self_bleu_2", "avg_depth", "toxicity_mean"]
-        }
-    ],
-    "failed_strategies_so_far": ["flatten_structure_and_soften_tone"]
-}
-```
+The LLM is not expected to infer calibration strategy from metric names alone.
 
-### 11.3 Final Summary
+### 8.2 Diversity and conflict are now explicitly more aggressive in calibration text
 
-`calibration_summary.json` contains the Phase 4 improvement analysis plus
-calibration loop metadata:
+The current calibration prompts explicitly allow or encourage, where relevant:
 
-```json
-{
-    "total_iterations": 10,
-    "total_candidates_evaluated": 50,
-    "best_iteration": 8,
-    "successful_strategies": ["reduce_paraphrase_deepen_threads", "diversify_motivation_mix"],
-    "failed_strategies": ["flatten_structure_and_soften_tone"],
-    "before_calibration": {
-        "metrics_sig_different": 8,
-        "avg_abs_cliffs_delta": 0.31,
-        "overall_fail_rate": 0.35,
-        "overall_pass_rate": 0.65
-    },
-    "after_calibration": {
-        "metrics_sig_different": 2,
-        "avg_abs_cliffs_delta": 0.09,
-        "overall_fail_rate": 0.08,
-        "overall_pass_rate": 0.92
-    },
-    "per_metric_improvement": {
-        "self_bleu_2": {
-            "before_cliffs_delta": 0.45,
-            "after_cliffs_delta": 0.08,
-            "abs_delta_reduction": 0.37,
-            "before_fail_rate": 0.72,
-            "after_fail_rate": 0.06,
-            "improved": true
-        }
-    },
-    "trajectory": []
-}
-```
+- short social-media-shaped replies
+- clipped fragments
+- lowercase starts
+- no-subject replies
+- abrupt openings
+- sharper disagreement
+- less validation-first politeness
+- less empathy-opener repetition
 
-### 11.4 Exportable Overlay
+Importantly, these style goals now live in:
 
-`best_overlay.json` — the winning overlay config, usable in future runs:
+- `persona.generation_guidance`
+- `prompt.comment_style_guidance`
+
+and **not** in the core runtime prompt scaffolding.
+
+### 8.3 Few-shot examples are part of the editing logic
+
+Both strategist and materializer are told to inspect few-shot real threads and
+use them as concrete style and structure references.
+
+The intended behavior is:
+
+- look at how real story usage appears
+- look at how real disagreement appears
+- look at how real short replies differ from long comments
+- then encode that behavior into the two editable text slots
+
+---
+
+## 9. Current scoring logic
+
+### 9.1 Active metrics are ranked per metric, not by block-average first
+
+The current manual-phase scorer does **not** collapse the active block into one
+average score before selection.
+
+Instead, it compares candidates **metric by metric** inside the active focus
+set.
+
+### 9.2 Primary ranking statistics
+
+For each active metric, the winner ranking prioritizes:
+
+1. `Wasserstein distance`
+2. `quantile_error`
+3. `empirical_fail_rate`
+4. `abs_median_gap`
+5. `abs_cliffs_delta`
+6. `MWU p-value`
+7. `KS p-value`
+8. `out_of_range`
+9. `percentile_distance`
+10. `abs_raw_robust_z`
+
+This is a **distance-first, p-value-second, MAD/percentile-third** ordering.
+
+### 9.3 Why p-values are not first
+
+`MWU` / `KS` p-values are important, but in small Phase 1 candidate batches
+they are treated as supporting evidence rather than the primary optimization
+signal.
+
+The current system explicitly treats:
+
+- `Wasserstein`
+- `quantile_error`
+- `empirical_fail_rate`
+- `abs_median_gap`
+- `abs_cliffs_delta`
+
+as the more reliable direction-of-improvement statistics for candidate ranking.
+
+### 9.4 Robust diagnostics are still kept
+
+The system still computes robust small-batch diagnostics such as:
+
+- `out_of_range`
+- `percentile_distance`
+- `robust_z`
+
+These remain useful as direction checks and sanity checks, but they are now
+secondary in the manual-phase ranking order.
+
+### 9.5 Protected metrics are checked after focus metrics
+
+Once the active focus metrics are compared, the scorer checks whether the
+candidate preserved earlier-block gains on protected metrics.
+
+### 9.6 All-target snapshots are recorded per iteration winner
+
+In addition to the active block’s focused metrics, every iteration winner now
+gets a full **12-target-metric snapshot** recorded in logs/artifacts.
+
+For each winner, the system stores for all 12 tracked metrics:
+
+- `wasserstein`
+- `quantile_error`
+- `empirical_fail_rate`
+- `abs_median_gap`
+- `abs_cliffs_delta`
+- `MWU p-value`
+- `KS p-value`
+
+This is written to:
+
+- `iter_xxx/winner_target_metric_eval.json`
+- `calibration_log.json`
+- `diagnosis.json`
+
+This makes it possible to inspect whether a candidate that won on its focused
+metrics was already quietly damaging non-focused metrics in the same iteration.
+
+### 9.7 Protected-metric non-regression guard
+
+Later blocks are also checked by a **protected-metric regression guard**.
+
+The guard does not require every earlier metric to keep strictly improving, but
+it prevents obvious backsliding such as:
+
+- large increases in `wasserstein`
+- large increases in `quantile_error`
+- large increases in `empirical_fail_rate`
+- large increases in `abs_median_gap`
+- large increases in `abs_cliffs_delta`
+- losing a previously achieved `MWU > 0.05`
+- losing a previously achieved `KS > 0.05`
+
+Candidates that violate these protected-metric guardrails are ranked behind
+candidates that preserve earlier block wins.
+
+### 9.8 Final evaluation is still a fresh after-calibration run
+
+The Phase 1 validation ranking is not the final result.
+
+Final reporting still comes from:
+
+- fresh post-calibration simulation
+- comparison against the real test split
+- before/after improvement analysis
+
+---
+
+## 10. Runtime vs calibration responsibility
+
+The vanilla MiroFish runtime handles simulation execution. The calibration layer
+handles the current adjustable behavior:
+
+- tone
+- anecdote frequency
+- short-form style
+- conflict intensity
+- grammar roughness
+- anti-template behavior
+
+Keeping runtime behavior in MiroFish avoids carrying a second, unused 2000-line
+patch layer in this repository.
+
+---
+
+## 11. Same-block historical feedback
+
+The current system explicitly shows later iterations in a block what earlier
+candidates in that same block did.
+
+For example:
+
+- `iter 2` sees `iter 1`
+- `iter 3` sees `iter 1-2`
+- `iter 5` sees `iter 4`
+- `iter 6` sees `iter 4-5`
+
+The prompt includes per-candidate, per-metric statistics for earlier
+same-block candidates.
+
+Each statistic is labeled relative to the current block incumbent as:
+
+- `improved`
+- `worsened`
+- `mixed`
+
+This is done for:
+
+- `W`
+- `Q`
+- `fail`
+- `|med|`
+- `|cd|`
+- `mwu_p`
+- `ks_p`
+- `oor`
+- `pct`
+- `raw_z`
+
+The intended behavior is:
+
+- reuse mechanisms that helped
+- weaken or avoid mechanisms that hurt
+- salvage partially useful directions from losing candidates
+
+---
+
+## 12. Logging and observability
+
+The current system is much more explicit about what happened at each step.
+
+Per iteration, it records:
+
+- `reasoner_prompt.txt`
+- `materializer_prompt.txt`
+- raw strategist/materializer responses
+- `diagnosis.json`
+- candidate overlays
+- candidate simulation outputs
+- per-candidate scoring
+- active watch metrics for the block
+- winner selection details
+
+Terminal output also prints:
+
+- active block label
+- focus metrics
+- protected metrics
+- current block-incumbent metric statistics
+- candidate ranking tables
+- winner metric statistics
+
+This is meant to support direct debugging of:
+
+- why a candidate won
+- what the LLM was told
+- which mechanism changed which metric
+
+---
+
+## 13. Resume and overlay-only evaluation
+
+### 13.1 Resume
+
+Resume is state-based.
+
+The system persists:
+
+- completed iteration count
+- current cumulative overlay
+- current block-best state
+- current diagnostics
+- candidate directories
+- frontier/history/log artifacts
+
+### 13.2 Overlay-only evaluation
+
+The CLI also supports skipping calibration entirely and directly evaluating a
+given overlay:
+
+- `--evaluate-overlay-json`
+
+This is useful for:
+
+- evaluating one historical candidate overlay
+- testing a chosen phase-end overlay such as `iter_012` winner
+
+It can also reuse an existing Phase 0 result:
+
+- `--before-group-eval-json`
+
+so that only post-calibration evaluation and before/after comparison are
+rerun.
+
+---
+
+## 14. Output artifacts
+
+Each run writes a timestamped calibration directory under the configured output
+root.
+
+Important artifacts include:
+
+- `calibration_state.json`
+- `calibration_log.json`
+- `best_overlay.json`
+- `before_calibration_group_eval.json`
+- `after_calibration_group_eval.json`
+- `before_after_improvement_summary.json`
+- `calibration_summary.json`
+- per-iteration `diagnosis.json`
+- per-candidate simulation outputs
+- per-iteration `reasoner_prompt.txt`
+- per-iteration `materializer_prompt.txt`
+
+The most reusable artifact remains:
+
+- `best_overlay.json`
+
+---
+
+## 15. CLI contract
+
+The current default manual run looks like:
 
 ```bash
-python run_discussion.py products.json --overlay artifacts/calibration_runs/<run_id>/best_overlay.json
+python3 -m calibration.cli \
+  --real-train-csv ... \
+  --real-val-csv ... \
+  --real-test-csv ... \
+  --vanilla-scores-csv ... \
+  --few-shot-dir ... \
+  --products-json ... \
+  --iterations 12 \
+  --seed-posts 4 \
+  --calibration-model gpt-5-mini \
+  --calibration-rounds 12 \
+  --metric-parallel 3
 ```
+
+Important notes:
+
+- `train` is qualitative context only
+- `validation` is the during-calibration ranking target
+- `test` is the final fresh evaluation target
+- all simulations use the vanilla MiroFish/OASIS runtime
+- a fresh Phase 0 baseline can still be recomputed when requested
 
 ---
 
-## 12. CLI
+## 16. Current design summary
 
-```bash
-python -m calibration \
-    --products-json data/processed/splits/credit_cards/product_descriptions_train.json \
-    --real-dir data/raw/discussions/credit_cards/american_express_platinum_card \
-    --reference-run-dir artifacts/simulations/credit_cards_20260420_150514 \
-    --iterations 10 \
-    --candidates 5 \
-    --parallel 3 \
-    --calibration-model gpt-4o-mini \
-    --seed 42 \
-    --output-dir artifacts/calibration_runs/ \
-    --resume
-```
+The current calibration system is best described as:
 
-| Flag | Default | Description |
-|---|---|---|
-| `--products-json` | required | Product JSON file for simulation |
-| `--real-dir` | required | Real discussion directory for baseline metrics |
-| `--reference-run-dir` | required | Reference simulation to clone run settings from |
-| `--iterations` | 10 | Number of calibration iterations |
-| `--candidates` | 5 | Candidates per iteration |
-| `--parallel` | 1 | Max concurrent candidate simulations |
-| `--calibration-model` | gpt-4o-mini | LLM for calibration reasoning |
-| `--seed` | 42 | Base random seed |
-| `--output-dir` | `artifacts/calibration_runs/` | Output root |
-| `--resume` | false | Resume a partially completed run |
+> a deterministic 12-iteration, block-wise accumulated, two-stage LLM prompt
+> calibration loop that edits exactly two persisted text slots
+> (`persona.generation_guidance` and `prompt.comment_style_guidance`), runs
+> candidate simulations under GEO’s patched visible-comment Reddit runtime,
+> ranks candidates per metric using distribution-first validation statistics,
+> commits one block-best overlay at the end of each phase, and finally tests
+> the resulting cumulative overlay on fresh post-calibration simulations
+> against the real test split.
 
----
-
-## 13. Pipeline Modifications
-
-The existing pipeline requires light changes to support the `--overlay` flag:
-
-1. **`run_discussion.py`** — add `--overlay` argument. Load overlay JSON and
-   pass it to `generate_personas` and the simulation runtime.
-2. **`persona_gen.py`** — read persona distribution overrides from overlay
-   (conflict_style, motivation, knowledge_style, stance distributions).
-3. **`oasis_reddit.py`** — read prompt text overrides from overlay
-   (anti-paraphrase, tone guidance, structure preference text).
-
-Each module falls through to its current hardcoded defaults when no overlay
-is provided. Existing behavior is preserved exactly when `--overlay` is
-absent.
+That is the current implemented architecture.
