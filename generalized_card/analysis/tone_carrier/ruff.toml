@@ -1,0 +1,11 @@
+# These are one-shot measurement harnesses, not shipped code. They are kept
+# exactly as they were when they produced the numbers in FINDINGS.md, because
+# E8 makes reproducibility the property that matters here and E6 makes the
+# printed numbers auditable against the shipped artifact.
+#
+# An automated reformat of this directory on 2026-08-25 introduced 61 syntax
+# errors by rewriting compound lines inside triple-quoted blocks, so the
+# compact style is left alone rather than risked again. Shipped code under
+# generalized_card/generalized_card, /scripts and /tests stays fully ruff-clean.
+[lint]
+ignore = ["E401", "E402", "E701", "E702", "E731", "F401", "F541"]
