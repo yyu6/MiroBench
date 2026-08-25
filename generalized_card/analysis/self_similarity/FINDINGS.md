@@ -150,3 +150,110 @@ threads (only pairs touching a URL-bearing comment change, so the thread delta
 is exact). It was interrupted after seed 10; every thread scored so far has a
 positive delta (+0.0015 to +0.0293). Finishing it turns section 3's mean-level
 projection into a per-thread MWU/KS projection.
+
+---
+
+# The link arm, priced to its ceiling — 2026-08-26
+
+Run `v113_v112_gate_n10_20260826_v1` against the matched real threads on the same
+ten seeds 2-11. Scripts in this directory; the shipped scorer throughout
+(deberta-xlarge-mnli, no baseline rescaling, no idf).
+
+## 1. The arm fired and closed 24%, against the 42% s4 requires
+
+The v113 gate wrote links at 4.32% of comments against real's 4.41% -- prevalence
+matched -- yet applying the identical URL ablation to the gate's own output moves
+`self_bertscore` by only 0.0038, a **24.1%** closure of the no-link gap, where
+stripping URLs from real closed 76%. Same prevalence, a third of the effect.
+
+## 2. Why: the URL mass, not the URL count
+
+BERTScore is greedy token alignment with no idf, so a URL is worth its share of
+its comment's tokens (`url_shape_gap.py`):
+
+| | comments with a URL | URLs/comment | tokens/URL | URL tokens per carrying comment |
+|---|---:|---:|---:|---:|
+| real | 26 (4.92%) | 1.42 | 22.9 | **32.6** |
+| gate | 23 (4.34%) | 1.22 | 14.8 | **18.0** |
+
+v113's inventory reader ran `https?://\S+` straight through Reddit's `[url](url)`
+markdown, so 166 of 690 entries were malformed and the drawn strings were
+truncated. v114 fixed the reader.
+
+**Rewriting the gate's links to their v114-clean form buys nothing** -- 23.7%
+against the shipped 24.1%, because the malformed form carried the URL's characters
+twice and the clean form carries them once.
+
+## 3. The ceiling, measured (`url_mass_scaling.py`)
+
+Adding inventory URLs to the gate's own link-carrying comments. Nothing else
+changes -- no comment is shortened, no other slot is touched, so the move is
+attributable.
+
+| URL tokens per carrying comment | self_bertscore | bias | closure |
+|---:|---:|---:|---:|
+| 18.0 (today) | 0.5061 | +2.42% | 23.7% |
+| 22.8 | 0.5057 | +2.32% | 26.8% |
+| 24.7 | 0.5045 | +2.09% | 33.9% |
+| 35.8 | 0.5034 | +1.87% | **40.9%** |
+| *real's own 32.6* | | | *~39% interpolated* |
+
+**Matching real's URL mass exactly tops the arm out near 39%, against the 42%
+Holm needs at N=150** -- and that is a J7 upper bound, since the Writer complies
+with a link offer at 0.958 and with a two-link offer at an unmeasured rate below
+1.0. Going past 35.8 tokens means exceeding real's own link density, which is not
+a legal arm.
+
+**The link channel cannot carry `self_bertscore` alone. A second channel is
+required.**
+
+## 4. Two candidates killed, cheaply, and one integrity check passed
+
+`url_shape_control.py`. Cutting the gate's link-carrying comments down to the
+sentence holding the link closes 54.5%, which looked like a better arm than mass
+matching -- but the controls kill it:
+
+| variant | closure |
+|---|---:|
+| gate, as shipped | 24.1% |
+| link comment -> its link sentence | 54.5% |
+| **CONTROL: same count of random non-link cuts** | **22.5%** |
+| link sentence, url also deleted | 85.5% |
+
+The random-cut control passes (22.5% vs 24.1%: plain shortening does nothing), but
+the last row exposes the rest: deleting the URL *as well* closes more than keeping
+it, so what the variant actually creates is near-empty comments, and a degenerate
+short text drags every pair it appears in. Generated already carries **more**
+comments of <=10 words than real (0.1377 vs 0.1155), so this is not a real-versus-
+generated gap at all. Not an arm.
+
+**Length variance is not a channel either.** Real's comment lengths have sd 74.8
+against generated's 58.2, which looks like a large gap -- but truncating real to
+the gate's own maximum length moves `self_bertscore` by **0.0000**.
+
+**Integrity: no URL was invented.** Of 24 distinct emissions, 18 match an
+inventory entry exactly and 5 are the clean prefix of a *malformed* v113 inventory
+entry -- the Writer behaved correctly and the inventory was the corrupt side. The
+remaining one altered a YouTube `?si=` tracking parameter; the video id itself is
+in the inventory and in the prompt the Writer received.
+
+## 5. Where the second channel should be looked for
+
+`surface_class_prevalence.py`, token share over the same ten seeds. Sorted by the
+gap, the classes real carries and generated does not:
+
+| class | real prev | gen prev | real tok% | gen tok% | gap |
+|---|---:|---:|---:|---:|---:|
+| parenthetical aside | 0.1723 | 0.0906 | 4.84% | 1.33% | **+3.51%** |
+| digit run | 0.5644 | 0.5340 | 4.06% | 1.58% | **+2.49%** |
+| alnum model code | 0.4564 | 0.3642 | 2.04% | 0.82% | +1.22% |
+| url | 0.0492 | 0.0434 | 2.41% | 1.33% | +1.08% |
+| price | 0.0739 | 0.0094 | 0.40% | 0.04% | +0.37% |
+
+**The parenthetical gap is 3.2x the URL gap by token share and has never been
+tested.** Underneath both sits the general form: generated carries 2,802 types and
+1,174 hapax against real's 3,993 and 2,040 -- **43% fewer once-only tokens** on a
+comparable token count. URLs are the most visible instance of that class, not the
+class itself. `rare_token_ablation.py` prices parentheticals, digit runs and
+hapax flattening, each against a random-token-removal control matched on the exact
+number of tokens removed, because removing text also shortens it.
