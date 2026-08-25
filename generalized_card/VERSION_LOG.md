@@ -230,6 +230,104 @@ Full analysis in `docs/DECISIONS.md` G24.
 
 ---
 
+## N=150 — the paper's scale, never run on any version (planned 2026-08-25)
+
+**Not run.** This section exists so the command and its rationale are on record
+before any spend, per the same discipline every gate entry follows.
+
+### Why now
+
+The reporting standard was the stated blocker (`docs/ORIENTATION.md` §6, §2 trap
+5) and the user selected **Holm–Bonferroni** on 2026-08-25 (J2, G51). Nothing
+else blocks it.
+
+More importantly, **every priority claim in this project is a projection from a
+ten-thread window, and that window is not a miniature of the pool**:
+
+| | N=10 window (seeds 2–11) | full pool (150) |
+|---|---:|---:|
+| comments | 532 | 5,974 |
+| mean comments per thread | 53.2 | 39.8 |
+| threads with ≥100 comments | 1 of 10 | **16 of 150** |
+| share of all comments in those threads | — | **46%** |
+
+Both failing pairwise metrics are thread-size sensitive — `self_bertscore_mean_f1`
+is an equal-weight mean of thread means (G17) and `self_bleu_4` is length- and
+size-dependent through its brevity penalty and smoothing (G27) — and
+`polite_rate`'s deficit is localised to 25+ word comments (G25). So the N=150
+bias can differ from the N=10 bias in either direction, and G42, G51 and G52 are
+all simulations built on the N=10 estimate.
+
+### Config
+
+v110's arm list with **`--length-transfer v97`**. G49 did not promote `refit`
+(the arm fired 532/532 and its own channel provably did not operate, G48), and
+the paper's headline run should not carry a rejected arm. `--development-scope`
+stays `long_only`: v111 is ungated, and §4 requires a large-thread gate before
+N=10, let alone before this.
+
+```bash
+python3 -u generalized_card/scripts/run_generate.py \
+  --tag generalized_card_camera_gpt54_n150_20260825_v1 --domain camera \
+  --model gpt-5.4-mini --base-url https://api.openai.com/v1 \
+  --api-key-env LLM_API_KEY --pool-size 150 --max-posts 150 --posts-per-run 5 \
+  --start-seed-index 0 --sampling-seed 42 --resume \
+  --semantic-coverage-nonrepeat on \
+  --evaluation-tier measured --downtoner-tag suppress \
+  --partitive-reference suppress --opening-move measured \
+  --closing-move measured --register-realization measured \
+  --length-calibration measured --length-transfer v97 \
+  --final-punctuation measured --route-ledger on \
+  --sentence-rhythm measured --long-form-layout measured \
+  --reddit-typography on --no-story-scope sequence \
+  --tone-length-fit conditional --turn-frame adjudicative_only \
+  --domain-claim selective --speaker-identity matched \
+  --own-fact-license off --writer-prompt focused \
+  --writer-route-lock own_words --social-contract-coherence on \
+  --reply-sibling-visibility on
+```
+
+Then, free, on CPU:
+
+```bash
+python3 generalized_card/scripts/run_evaluate.py \
+  --tag generalized_card_camera_gpt54_n150_20260825_v1 --metric-parallel 5 --resume
+```
+
+Cost, scaled from v110's measured 532 comments / $3.7599 / 58.5 min by the pool's
+own comment count: **~$42 and ~11 hours**, resumable — `--resume` is checked
+against `run_config.json`'s `RUN_EXPERIMENT_FIELDS`, so an interrupted run
+continues and a changed one is refused.
+
+### Predictions, written before spending
+
+From `analysis/holm_state.py`, simulating each metric's current relative bias at
+N=150 over the 763-thread real baseline, Holm computed with the conservative
+Bonferroni bound:
+
+| metric | P(pass) predicted | rel. bias |
+|---|---:|---:|
+| `polite_rate` | **0.00** | −51.5% |
+| `impolite_rate` | **0.01** | +39.9% |
+| `self_bleu_4` | 0.16 | +18.8% |
+| `self_bertscore_mean_f1` | 0.19 | +2.6% |
+| `neutral_rate` | 0.81 | −19.7% |
+| the other five non-structural | 0.97–1.00 | ≤5% |
+
+So the prediction is **7 or 8 of 12 PASS under Holm**, with the four above
+failing and `neutral_rate` marginal. `avg_depth` and `structural_virality` pass
+structurally (J9) and are not evidence the generator works.
+
+**The prediction that matters is not the count.** It is whether the *measured*
+N=150 biases match the N=10 ones. If they do, the simulation is validated and the
+closure targets in G42/G51/G52 can be trusted for the first time. If they do not
+— which the size-mix table above makes a live possibility — then every mechanism
+priced against those targets, including v111's 8–26%, has to be re-priced.
+
+### Result
+
+**Not run yet.**
+
 ## v111 — extend the development beat plan to the band that compresses (2026-08-25)
 
 Policy ID: `generalized-card-v2-development-scope-v111-20260825`.
