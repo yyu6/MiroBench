@@ -911,14 +911,25 @@ Two things are decided and one is the user's.
 2. **Decided: it is worth ~8–26% of `self_bleu_4`, not more** (G50). That is
    above the 5–10% class G42 retires and below the "one structural lever" G42
    hopes for. Whether it is worth building depends entirely on item 3.
-3. **The user's, and now blocking: the reporting standard** (G51, §2 trap 5).
-   Under the shipped raw rule the bar is ~90% closure and this mechanism is not
-   worth building alone. Under J2 — this project's own VERIFIED recommendation —
-   the bar is ~50–75%, and a stack of length (8–26%) + links (8.8%) + markdown
-   emphasis (3.6%) + entity variety (≤9.4%) is a credible route to it on
-   `self_bleu_4`. `self_bertscore_mean_f1` has no such route: G28 shows its
-   convergence is produced inside the Writer, downstream of every permitted
-   lever, and length composition is worth only 14–26% of it.
+3. **Decided by the user, 2026-08-25: report under Holm–Bonferroni** (J2, G51,
+   §2 trap 5). That puts the N=150 bar at ~50–75% closure rather than ~90%, and
+   makes a stack of length (8–26%) + links (8.8%) + markdown emphasis (3.6%) +
+   entity variety (≤9.4%) a credible route on `self_bleu_4`.
+   `self_bertscore_mean_f1` has no such route: G28 shows its convergence is
+   produced inside the Writer, downstream of every permitted lever, and length
+   composition is worth only 14–26% of it. **Report the raw pass count beside
+   the Holm one and print the real-vs-real null line as calibration**, so the
+   choice of standard is visible rather than assumed.
+
+**Built on it: v111** (`--development-scope {long_only,measured}`, default
+`long_only`), which extends the enumerated beat plan down to 35 assigned words.
+Offline-verified; **the seed-8 gate has not been paid for**. Its predictions,
+its free mechanical audit and its guardrails — the largest being the G37
+convergence risk, measured at +0.0007 with a 95% CI of [−0.0024, +0.0040] and
+therefore not excludable — are in `generalized_card/VERSION_LOG.md`'s v111 entry.
+Deliberately **not** in it: lifting `MAX_DEVELOPMENT_BEATS` for the 252+ band,
+which is 36.7% of the word deficit and +0.7pp of the metric (G45's arithmetic a
+fourth time).
 
 The older reading below is kept because its evidence stands; only its
 "engineering work is largely exhausted" conclusion is superseded.

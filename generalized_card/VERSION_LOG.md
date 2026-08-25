@@ -230,6 +230,162 @@ Full analysis in `docs/DECISIONS.md` G24.
 
 ---
 
+## v111 — extend the development beat plan to the band that compresses (2026-08-25)
+
+Policy ID: `generalized-card-v2-development-scope-v111-20260825`.
+Arm `--development-scope {long_only,measured}`, default `long_only`, which
+reproduces v110 byte-for-byte. Module
+`generalized_card/generalized_card/long_form_planning.py` (the budget) and
+`length_policy.py` (the routing). Evidence: `docs/DECISIONS.md` G50; reproduce
+with `analysis/length_instrument_rdd.py all` and `analysis/length_fix_pricing.py`.
+
+### Why this and not something else
+
+G48 killed the asked word count as a length instrument and named the structural
+cues as the untested remainder, to be priced by a paid probe. They did not need
+one. `length_calibration.py`'s own docstring says the calibration moves **only**
+the number, so v110 held every structural cue fixed; and
+`expected_development_beats` returns 0 at `real_word_count <= 100` and
+`max(3, round(w/21))` above it, which is a **regression discontinuity** sitting
+inside four runs already paid for.
+
+| assigned words | realized/assigned | the cue that band receives |
+|---|---:|---|
+| 1–9 | 1.157 | one narrow local move |
+| 10–34 | 0.994 | one narrow local move |
+| **35–60** | **0.856** | one narrow local move |
+| **61–100** | **0.840** | vague "two or three beats"; beat plan **deleted** |
+| 101–251 | **0.956** | enumerated `round(w/21)` beats |
+| **252+** | **0.785** | enumerated beats, capped at 12 |
+
+The one band that receives an enumerated per-slot beat plan is the one band at
+0.956. Across the 100/101 boundary, pooled over the four comparable N=10 runs,
+assignment rises 11.9 words and realized length rises **24.2**; the ratio jumps
+**0.816 → 0.953**, and the local-linear jump is +15.5 / +11.0 / +17.6 / +11.2
+words in the four runs separately. **0 of 1,816** slot-instances at ≤100 assigned
+words carry a beat plan, and above 100 the Writer delivers **21.3** realized
+words per delivered beat against the module's own design constant of 21.0.
+Against this, G48 measured the asked number's elasticity at −0.02 to 0.11.
+
+The 61–100 prompt is self-contradictory as shipped: it tells a 90-word slot it
+"contains roughly 118 words" and, in the same sentence, to "give it the two or
+three connected beats this slot's scale supports" — about 42–63 realized words.
+The categorical cue wins, which is E4's rule (a named concrete thing gets ~1.0
+compliance, a named category 0.23).
+
+**Priced at 8–26% of `self_bleu_4`'s gap**, with a 3× spread between estimator
+families (cell reweighting at 5/10/20/40 bins gives 26.3/26.0/22.6/19.5%; the
+continuous within-thread estimator gives 7.8%; full compliance everywhere would
+give 22–55%). That is above the 5–10% class G42 retires and below one structural
+lever. **Whether it is worth gating depends on the reporting standard** (G51):
+under the shipped raw rule the N=150 bar is ~90% closure and this is not enough
+alone; under J2's Holm–Bonferroni the bar is ~50–75% and a stack of length
+(8–26%) + links (8.8%) + markdown emphasis (3.6%) + entity variety (≤9.4%) is a
+credible route. **The user selected Holm–Bonferroni on 2026-08-25.**
+
+**Not shipped, deliberately.** Lifting `MAX_DEVELOPMENT_BEATS` for the 252+ band
+is 36.7% of the word deficit and worth only **+0.7pp** of the `self_bleu_4` gap,
+because 13 of 532 comments carry few pairs — G45's arithmetic a fourth time. The
+Planner is also measured to saturate near 9 beats, so its instrument would have
+to be invented rather than extended.
+
+### Predictions, written before the paid gate
+
+Gate is seed 8 (post `i1o51h`, 186 comments), which sits inside the N=10 window,
+so its row is directly comparable to v110's. Every number below is **this
+thread's own**, not the pool (J6). On this thread v110 realizes 0.9132 overall;
+66 of its 186 slots fall in the arm's 35–100 band at **0.812**, and the band that
+already receives the cue sits at **0.966**.
+
+**The mechanical audit comes first, and it decides whether any metric is read**
+(G23, G48). It is free:
+
+| audit | v110 | required |
+|---|---:|---|
+| slots in [35,100] carrying an enumerated development sequence | **0 / 66** | **66 / 66** |
+| slots at ≤34 words carrying one | 0 | **0** (unchanged) |
+| the string `two or three connected beats` in any prompt | 29 | **0** |
+
+If the arm does not fire 66/66 the run is a wiring result, not a mechanism
+result, and no metric from it may be quoted.
+
+| measure | v110 | predicted | note |
+|---|---:|---|---|
+| realized/assigned, 35–100 band | 0.812 | **0.90 – 0.97** | the served band reaches 0.966 here |
+| realized/assigned, whole thread | 0.9132 | **0.955 – 0.985** | arithmetic consequence of the above |
+| realized/assigned, 1–34 band | 1.059 | **unchanged** | the arm returns 0 beats below 35 |
+| realized words per delivered beat | 21.3 | **19 – 23** | if it falls, the Planner is padding beats |
+
+Guardrails, each a named way to be wrong:
+
+- **`self_bertscore_mean_f1` and `semantic_mean_cosine` must not worsen.** This
+  is the G37 failure mode: v109's cue prescribed a shared speech act and treated
+  slots converged. Measured here at matched realized length, comments with an
+  enumerated beat plan score **+0.0007** self_bleu_4 above those without, 95%
+  bootstrap CI **[−0.0024, +0.0040]** — not demonstrated and **not excludable**,
+  and the upper bound is larger than the whole expected benefit. The cruder
+  contrast against the 13 Planner-failure slots reads +0.0087, but that is a
+  selected population, not a control. **This is the main risk in the release.**
+- **`mean_story_probability` must not rise, read on the 35–100 subgroup and not
+  only on the thread.** More beats is more narrative room, and G38 showed a
+  thread-level guardrail conceals a subpopulation effect on a rate-drawn arm.
+- **Plan-repair traffic must not explode.** `development_plan_problem` now fires
+  for 35–100 slots, and v94 once spent 130 of 152 requests on repair. Read
+  `logs/planning_quality.jsonl`; 2–5 beats is well inside the Planner's measured
+  reliable range of ~9, so a large repair count means the request is malformed.
+- **`length_cv` must not fall.** It passes today at 0.9624 against a real 0.9468,
+  and moving realized toward assigned should raise thread spread toward
+  assigned's own 1.333, not flatten it.
+- **The 1–34 band must not move.** The arm is inert there by construction; a move
+  means something other than the arm changed.
+
+At n=1 the evaluator prints `DESCRIPTIVE` and no p-value is meaningful (§4), so
+`self_bleu_4` is judged on direction only, against **this thread's** matched real
+row.
+
+### Offline state at the gate
+
+693 tests (4 new, re-collected in 5 modules), ruff clean, 108 pins re-pinned with
+the drift list exactly the four edited files, backend self-test **PASS on both
+arm values**, `--development-scope long_only` proven to render the identical cue
+on the real prompt path by unit test over 0–900 assigned words (differing set is
+exactly `range(35, 101)`). Reachability audited before building, per G41: the
+length cue is present in **532/532** saved v110 prompts including every
+low-info-template slot, so the arm reaches **172/172** of its target band with no
+template cap.
+
+### Gate command — every arm v110 set, plus the one under test
+
+Diffed against v110's own `run_config.json` (the G39 lesson: every arm defaults
+to `off`, so naming only the new flag silently drops every previously-won arm).
+`--length-transfer refit` is carried unchanged so exactly one field differs,
+even though G49 measured it inert.
+
+```bash
+python3 -u generalized_card/scripts/run_generate.py \
+  --tag v111_development_scope_seed8_20260825_v1 --domain camera \
+  --model gpt-5.4-mini --base-url https://api.openai.com/v1 \
+  --api-key-env LLM_API_KEY --pool-size 150 --max-posts 1 --posts-per-run 1 \
+  --start-seed-index 8 --sampling-seed 42 --resume \
+  --development-scope measured \
+  --length-transfer refit --semantic-coverage-nonrepeat on \
+  --evaluation-tier measured --downtoner-tag suppress \
+  --partitive-reference suppress --opening-move measured \
+  --closing-move measured --register-realization measured \
+  --length-calibration measured --final-punctuation measured \
+  --route-ledger on --sentence-rhythm measured --long-form-layout measured \
+  --reddit-typography on --no-story-scope sequence \
+  --tone-length-fit conditional --turn-frame adjudicative_only \
+  --domain-claim selective --speaker-identity matched \
+  --own-fact-license off --writer-prompt focused \
+  --writer-route-lock own_words --social-contract-coherence on \
+  --reply-sibling-visibility on
+```
+
+### Gate result
+
+**Not run yet.**
+
 ## v110 — refit the length transfer function (2026-08-24)
 
 `--length-transfer {v97,refit}`, default `v97`. Also in the tree at default
