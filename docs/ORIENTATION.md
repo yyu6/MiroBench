@@ -661,6 +661,27 @@ progress and is **not** the same thing as being close at N=150.
    > within-band rates closes 89.9% of the gap; giving it real's length mix
    > closes 7.5%.
 
+   > **SUPERSEDED for mechanism purposes, 2026-08-25 (`docs/DECISIONS.md`
+   > G53).** The vocabulary reading below is true and is **not the channel**.
+   > Measured at the *sentence* level on the evaluation's own checkpoint, the
+   > carrier deficit is **3.4×** (real 0.0817 of sentences, generated 0.0239)
+   > and it decomposes as **0% prevalence, 100% conversion**: giving generated
+   > real's mix of appreciative surface forms while keeping its own conversion
+   > closes **−0.7%**; giving it real's conversion closes **101.8%**. Generated
+   > writes `gratitude` at **1.58×** real's rate and `affirm_other` at
+   > **3.46×** — it does not under-produce warm shapes, they do not land — and
+   > the 84% of sentences carrying no named form convert at **0.17×**. So every
+   > "widen the positive vocabulary / ask for more warm sentences" mechanism is
+   > dead, which is what v99, v101 and v104 all were, and it is why v104
+   > reached 54–85% compliance on its own arms for **8.4%** of the metric. The
+   > flatness also rules out the length route, so **v111 will not touch this
+   > pair.** Two hypotheses were rejected on the way and should not be retried:
+   > that a carrier predicates on the thing rather than the speaker
+   > (`P(carrier | sentence starts with "I")` = 0.0819 against 0.0816, ratio
+   > 1.00), and that a Writer rule suppresses the class — the latter null
+   > covering only rules that *vary*, since a rule on 532/532 slots has no
+   > variance for a within-run contrast to see.
+
    The lexical signature is measured: **the generated positive vocabulary is
    about two words wide (`thanks` 2.96×, `nice` 1.48×) where real is about ten**
    — `very` 0.19×, `would` 0.21×, `love` 0.21×, `good` 0.33×, `great` 0.33×,
