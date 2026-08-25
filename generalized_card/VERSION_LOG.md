@@ -585,12 +585,40 @@ over 690 entries for ~70 slots exists to prevent that, and the audit above must
 confirm it. `semantic_mean_cosine` passes at 0.702 and must stay passing. No
 metric may fall below its current p-value.
 
+### The audit this needed, and the gap it closed
+
+`--prepare-only` built the profile with no API calls and it carries the
+inventory: schema 21, 424 reference threads, 11,817 comments,
+`seed_reference_overlap_count` 0, 690 URLs, carrying share 0.0447.
+
+That pre-flight also found a real hole. **11 of the 690 inventory URLs also
+appear somewhere in the 150 seed threads** -- not a leak (the inventory reads
+only non-seed threads; a popular dpreview review is simply linked in both) but a
+URL is far more specific than a shared product name. And the guard that was
+supposed to catch it does not: `_closest_real_overlap` is a 5-gram Jaccard test
+with a 0.65 floor, and one shared URL inside an ordinary comment scores far
+below that. The claim that `matched_real_copy_risks` covers this case was wrong.
+
+Filtering the inventory against seed text would mean the profile builder reading
+seed *comments*, which is new contact with the evaluation set. The audit already
+reads matched real text legitimately -- that is its job, and its output never
+feeds the generator -- so the check goes there instead:
+
+| new audit field | meaning | required |
+|---|---|---|
+| `drawn_link_comments` / `drawn_link_distinct` | did the arm fire, and how widely | ~3.5% of comments |
+| `drawn_link_repeated_in_thread` | a repeated link is a repeated n-gram | **0** |
+| `drawn_link_in_matched_real` | evaluation-set content in generated output | **0**, and it fails `evaluable` |
+
+Verified on the existing N=50 artifact: all four report 0, which independently
+confirms the baseline claim that the generator has written zero URLs, and shows
+the new checks do not false-positive.
+
 ### Offline state
 
 702 generalized_card tests pass (5 new), ruff clean on all shipped code, 109 pins
-re-verified with drift exactly the five touched files. Profile schema 20 -> 21.
-The inventory builds on the real excluded corpus: 690 URLs, carrying share
-0.0447, seed overlap 0. **No paid run yet.**
+re-verified with drift exactly the six touched files. Profile schema 20 -> 21.
+**No paid run yet.**
 
 ### Result
 

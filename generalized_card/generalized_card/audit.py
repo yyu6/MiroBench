@@ -54,6 +54,8 @@ def audit_generated_root(
     internal_control_leaks: list[dict[str, Any]] = []
     duplicate_comments: list[dict[str, Any]] = []
     matched_real_overlap: list[dict[str, Any]] = []
+    drawn_link_rows: list[dict[str, Any]] = []
+    drawn_link_in_matched_real: list[dict[str, Any]] = []
     reference_viewpoint_overlap: list[dict[str, Any]] = []
     writer_rejections = Counter()
     perspective_counts: Counter[str] = Counter()
@@ -193,6 +195,18 @@ def audit_generated_root(
                 copied = _closest_real_overlap(text, real_comments)
                 if copied is not None:
                     matched_real_overlap.append({**location, **copied})
+                # A drawn reference link is a single high-entropy token string.
+                # `_closest_real_overlap` is a 5-gram Jaccard test with a 0.65
+                # floor, so one shared URL inside an ordinary comment scores far
+                # below it and slips through. A URL that also appears in this
+                # post's matched real thread is evaluation-set content sitting in
+                # generated output, which is what `evaluable` exists to stop, so
+                # it gets its own exact test rather than riding on the phrase one.
+                for url in _urls(text):
+                    row_out = {**location, "url": url}
+                    drawn_link_rows.append(row_out)
+                    if any(url in real for real in real_comments):
+                        drawn_link_in_matched_real.append(row_out)
                 reference_copied = _closest_overlap(text, reference_viewpoint_index)
                 if reference_copied is not None:
                     reference_viewpoint_overlap.append({**location, **reference_copied})
@@ -250,6 +264,7 @@ def audit_generated_root(
         and not placeholders
         and not prompt_leaks
         and not matched_real_overlap
+        and not drawn_link_in_matched_real
         and not reference_viewpoint_overlap
         and not incomplete_structural_posts
         and accepted_share >= min_accepted_share
@@ -306,6 +321,10 @@ def audit_generated_root(
         "prompt_leak_comments": len(prompt_leaks),
         "internal_control_label_comments": len(internal_control_leaks),
         "matched_real_copy_risks": len(matched_real_overlap),
+        "drawn_link_comments": len(drawn_link_rows),
+        "drawn_link_distinct": len({row["url"] for row in drawn_link_rows}),
+        "drawn_link_repeated_in_thread": _link_repeats_within_thread(drawn_link_rows),
+        "drawn_link_in_matched_real": len(drawn_link_in_matched_real),
         "reference_viewpoint_copy_risks": len(reference_viewpoint_overlap),
         "exact_duplicate_groups": len(duplicate_comments),
         "writer_rejection_reasons": dict(writer_rejections),
@@ -313,6 +332,8 @@ def audit_generated_root(
         "prompt_leak_examples": prompt_leaks[:20],
         "internal_control_label_examples": internal_control_leaks[:20],
         "matched_real_copy_examples": matched_real_overlap[:20],
+        "drawn_link_examples": drawn_link_rows[:20],
+        "drawn_link_in_matched_real_examples": drawn_link_in_matched_real[:20],
         "reference_viewpoint_copy_examples": reference_viewpoint_overlap[:20],
         "duplicate_examples": duplicate_comments[:20],
         "incomplete_coverage_examples": incomplete_coverage_examples,
@@ -453,6 +474,28 @@ def _closest_overlap(
         "fivegram_jaccard": round(best_score, 4),
         "matched_real_text": best_text[:240],
     }
+
+
+_URL_RE = re.compile(r"https?://\S+|\bwww\.\S+", re.I)
+
+
+def _urls(text: str) -> list[str]:
+    return [match.rstrip(").,;\"'") for match in _URL_RE.findall(str(text or ""))]
+
+
+def _link_repeats_within_thread(rows: list[dict[str, Any]]) -> int:
+    """Count links used more than once inside one post.
+
+    A repeated link is a repeated n-gram, which pushes `self_bleu_4` and
+    `self_bertscore` the wrong way -- the exact direction the drawn link exists
+    to fix. The per-slot SHA-256 draw is meant to make this zero.
+    """
+
+    seen: dict[tuple[str, str], int] = {}
+    for row in rows:
+        key = (str(row.get("post_id") or ""), str(row.get("url") or ""))
+        seen[key] = seen.get(key, 0) + 1
+    return sum(1 for count in seen.values() if count > 1)
 
 
 def _tokens(text: str) -> list[str]:
