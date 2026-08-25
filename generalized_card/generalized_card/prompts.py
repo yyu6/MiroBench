@@ -31,7 +31,10 @@ from .length_policy import local_move_scope_guidance, soft_length_guidance
 from .opener_profile import OPENER_INSTRUCTIONS
 from .evaluative_register import active_evaluative_guidance
 from .opening_move import active_opening_guidance, forbidden_opening_tokens
-from .long_form_planning import expected_development_beats
+from .long_form_planning import (
+    development_plan_word_threshold,
+    expected_development_beats,
+)
 from .planner_distribution import render_slot_distribution_schedule
 from .persona_bridge import persona_marker_for_task
 from .reply_planning import (
@@ -1021,7 +1024,7 @@ Rules:
   Each beat must add a different observation, reason, consequence, caveat,
   boundary, or reaction around the same local contribution. Do not pad with
   paraphrases, add unrelated claims, or infer the hidden matched comment.
-- For every slot at or below 100 anonymous words, return the literal string
+- For every slot at or below {development_plan_word_threshold()} anonymous words, return the literal string
   `none` for `development_plan`; do not copy the schema's explanatory prose.
 - A slot labeled ``ordinary_turn`` or ``long_turn`` must retain its information
   density. Incidental humor, a link, a quote, or a question may be embedded in

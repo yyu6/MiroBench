@@ -13,7 +13,7 @@ REPO=Path("/Users/yaoningyu/Desktop/UIUC/GEO")
 sys.path.insert(0,str(REPO/"scripts"/"evaluation"))
 from score_thread_self_bleu import tokenize, sentence_bleu, ngram_counts, closest_reference_length
 RUN=REPO/"artifacts/generalized_card/runs/generalized_card_camera_gpt54_paper_20260825_v1"
-SP=Path("/private/tmp/claude-501/-Users-yaoningyu-Desktop-UIUC-GEO/1f41c5a0-3c0b-415c-9b23-9fb381e5c727/scratchpad")
+SP=(Path(__file__).resolve().parent / "_cache")
 
 def floor_from_lengths(la, lb):
     logs=0.0

@@ -5,7 +5,7 @@ REPO=Path("/Users/yaoningyu/Desktop/UIUC/GEO")
 sys.path.insert(0,str(REPO/"scripts"/"evaluation"))
 from score_thread_self_bleu import tokenize, pairwise_self_bleu_for_order
 from score_thread_semantic_uniformity import load_real_comments
-SP=Path("/private/tmp/claude-501/-Users-yaoningyu-Desktop-UIUC-GEO/1f41c5a0-3c0b-415c-9b23-9fb381e5c727/scratchpad")
+SP=(Path(__file__).resolve().parent / "_cache")
 pool=json.load(open(REPO/"artifacts/generalized_card/seed_pools/camera_product_150_seed42.json"))["seed_posts"]
 URL=re.compile(r"https?://\S+|\bwww\.\S+")
 strip=lambda t: re.sub(r"\s+"," ",URL.sub("",t)).strip()

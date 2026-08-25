@@ -495,6 +495,127 @@ priced against those targets, including v111's 8–26%, has to be re-priced.
 
 **Not run yet.**
 
+## v112 — wire the fourth capacity gate, and the correction that forced it (2026-08-25)
+
+Policy ID: `generalized-card-v2-development-scope-v112-20260825`. Same arm as
+v111, `--development-scope {long_only,measured}`, default `long_only`. v111's
+policy string was consumed by the N=50 paper run with the arm **off**, so the
+string is burned and this is a new one; `long_only` still reproduces v110
+byte-for-byte and the N=50 run's Planner prompt exactly.
+
+### Why v111 as shipped would have been inert
+
+`expected_development_beats` gates **four** things, not three:
+
+1. `prompts._slot_schedule` prints `development_plan=N beats required`;
+2. **the Planner's prose rule** — "For every slot at or below 100 anonymous
+   words, return the literal string `none` for `development_plan`";
+3. `reconcile_development_plan_capacity` deletes a plan below the threshold;
+4. `length_policy.length_hint` picks the Writer's cue.
+
+v111 wired 1, 3 and 4 to the arm. **2 was a hard-coded `100` inside an
+f-string.** Turning the arm on would have printed
+`development_plan=3 beats required` for a 70-word slot while the same prompt
+still ordered `none` for every slot at or below 100 — two contradictory
+instructions, one prompt. v112 derives the prose threshold from
+`development_plan_word_threshold()`, and a test holds the invariant exactly:
+`expected_development_beats(w) > 0` iff `w > development_plan_word_threshold()`
+for every w in 0..900, in both modes.
+
+### The evidence correction that came with it (supersedes G50)
+
+Re-measured on the N=50 paper artifact, 1,974 slots — five times the data G50
+was read from.
+
+**The 100/101 discontinuity does not survive.**
+
+| bandwidth | left ratio | right ratio | jump | MWU |
+|---:|---:|---:|---:|---:|
+| 10 | 0.880 | 0.911 | +0.031 | 0.494 |
+| 15 | 0.884 | 0.923 | +0.038 | 0.239 |
+| 20 | 0.894 | 0.938 | +0.044 | 0.147 |
+| 25 | 0.879 | 0.930 | +0.051 | 0.058 |
+
+A **placebo cut at 80 assigned words, where no rule changes at all, gives
++0.045** on the same data; a cut at 120 gives −0.077. G50's "0.816 -> 0.953 in
+all four comparable runs" is not reproduced here, and the docstring in
+`long_form_planning.py` now says so.
+
+**What v111's mechanism could actually reach.** Beat plans deleted by
+`slot_has_no_long_form_capacity` across the whole run: **29**, of which 27 fall
+in the 35–100 band — a band holding **646 slots**. So "stop deleting the
+Planner's plan" reaches **4.2%** of the target band; the Planner returns `none`
+for the rest because rule 2 tells it to. And 61–100 **already** receives a beats
+cue in 100% of prompts, so for those 247 slots v111 swaps one categorical cue
+for another. Its only real content was the 399 slots at 35–60.
+
+Counter-evidence worth stating: the band that already gets the beats cue
+(61–100) runs at **0.877**, *below* the band that gets "make one narrow local
+move and stop" (35–49, **0.907**).
+
+### Realized/assigned by band, N=50 artifact
+
+| assigned | slots | ratio | share of assigned words | share of the word deficit |
+|---|---:|---:|---:|---:|
+| 1–9 | 302 | **1.224** | 1.8% | — (over-written) |
+| 10–19 | 377 | 1.001 | 6.0% | 0% |
+| 20–34 | 445 | 0.992 | 13.0% | 1% |
+| 35–49 | 275 | 0.907 | 12.4% | 10% |
+| 50–69 | 183 | 0.881 | 11.6% | 13% |
+| 70–100 | 188 | 0.877 | 17.3% | 19% |
+| 101–150 | 120 | 0.910 | 15.7% | 13% |
+| 151–300 | 68 | 0.802 | 14.6% | 26% |
+| 301+ | 16 | 0.699 | 7.7% | 21% |
+| total | 1974 | **0.891** | | |
+
+### Predictions, written before spending
+
+Free checks first, all readable without touching a metric:
+
+| check | if v112 works | if the arm is still inert |
+|---|---|---|
+| `development_plan` present, 35–100 band | rises from **0.0%** toward the >100 band's **94.2%** | stays near 0% — rule 2 still wins |
+| Writer prompt carries `One-shot development sequence: 1. … 2. …` for 35–100 | appears at roughly the plan rate | absent; only the categorical cue |
+| beat plans deleted as `slot_has_no_long_form_capacity` | ~0 (nothing left to delete) | still ~27 in-band |
+| realized/assigned, 35–100 | 0.887 → **0.91–0.95** | unchanged at ~0.887 |
+
+Then the metric, from the exact counterfactual in `analysis/self_similarity/len_cf2.py`
+(floor recomputed in closed form on one consistent comment set, excess held
+fixed — an upper bound, J7):
+
+| 35–100 band reaches | self_bleu_4 | bias | MWU | KS |
+|---|---:|---:|---:|---:|
+| 0.887 (today) | 0.03615 | +7.2% | 0.057 | 0.039 |
+| 0.910 | 0.03573 | +5.9% | **0.066** | **0.068** |
+| 1.000 | 0.03501 | +3.8% | **0.132** | **0.179** |
+
+**Stated plainly before spending: at 0.910 this arm buys a p-value that sits on
+the line, and the honest expectation is somewhere between the two rows.** Under
+Holm at N=150 `self_bleu_4` needs only a 7% reduction in |Cliff's delta| and is
+already the least distant failing metric; this arm is not what decides the
+paper.
+
+**Guardrails.** `length_cv` passes today at MWU 0.340 and must not drop below
+0.05 — lengthening mid-size slots compresses the spread it measures, which is
+exactly the v67 regression. `mean_story_probability` passes at 0.942 and must
+not rise. The 1–9 band is at 1.224 and must not be "fixed": the same harness
+shows that pulling it to 1.0 moves self_bleu_4 the wrong way, to MWU **0.036** /
+KS **0.022**.
+
+**What this arm does not touch.** `self_bertscore` — nothing here targets it,
+and after the URL channel was set aside there is no identified causal instrument
+for it. See `analysis/self_similarity/FINDINGS.md` §3.
+
+### Offline state
+
+241 generalized_card tests pass (4 new, all four gates covered), ruff clean on
+all shipped code, 108 pins re-verified with drift exactly the two edited files.
+**No paid run yet.**
+
+### Result
+
+**Not run yet.**
+
 ## v111 — extend the development beat plan to the band that compresses (2026-08-25)
 
 Policy ID: `generalized-card-v2-development-scope-v111-20260825`.

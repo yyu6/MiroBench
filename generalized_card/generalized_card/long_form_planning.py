@@ -46,6 +46,9 @@ PLANNER_RELIABLE_BEATS = 8
 # need no more capacity and giving them beats would make them overshoot -- then
 # falls to 0.856 at 35-60 and 0.840 at 61-100. See `docs/DECISIONS.md` G50.
 DEVELOPMENT_FLOOR_WORDS = 35
+# The only place the pre-v111 boundary is written down. Four gates read it --
+# see `development_plan_word_threshold`.
+LONG_FORM_ONLY_WORD_THRESHOLD = 100
 # `long_only` reproduces every release through v110, which returned no beat
 # budget at all below 101 assigned words.
 DEVELOPMENT_SCOPE_MODE = "long_only"
@@ -63,17 +66,30 @@ def set_development_scope(mode: str) -> str:
 def expected_development_beats(word_count: Any) -> int:
     """Return a soft content-capacity target for an anonymous slot.
 
-    This is the length instrument. `docs/DECISIONS.md` G50: realized/assigned
-    words jump 0.816 -> 0.953 across the boundary this function creates, in all
-    four comparable N=10 runs, and the Writer delivers 21.3 realized words per
-    delivered beat against the 21.0 budgeted here -- while the *asked word
-    count* has a measured elasticity of -0.02 to 0.11 (G48). The number does not
-    move realized length; this does.
+    CORRECTION TO `docs/DECISIONS.md` G50, measured 2026-08-25. G50 read a
+    realized/assigned jump of 0.816 -> 0.953 across the boundary this function
+    creates and called it the length instrument. Re-measured on the N=50 paper
+    artifact (1,974 slots, `analysis/self_similarity/`), the jump is +0.031 to
+    +0.051 depending on bandwidth, MWU 0.494 / 0.239 / 0.147 / 0.058, and a
+    placebo cut at 80 assigned words -- where no rule changes at all -- gives
+    +0.045 on the same data. **The discontinuity does not survive N=50.** The
+    *asked word count* remains a non-instrument (G48, elasticity -0.02 to 0.11);
+    that part of G48/G50 still holds.
+
+    What does survive is a content difference either side of the boundary. Above
+    100 the Planner supplies an enumerated beat list for 94.2% of slots and they
+    realize 0.910 of assigned; at or below 100 it supplies one for 0.0% and they
+    realize 0.887. `measured` is the hypothesis that the enumerated list is what
+    matters -- E4's finding that naming the concrete thing gets ~1.0 compliance
+    where naming the category gets 0.23. It is a hypothesis with a written
+    prediction, not an established fix.
 
     Under `long_only` the budget is withheld below 101 words, which deletes the
-    Planner's beat plan for those slots (`reconcile_development_plan_capacity`)
-    and leaves them the categorical cue in `length_policy`. Under `measured` it
-    reaches down to `DEVELOPMENT_FLOOR_WORDS`.
+    Planner's beat plan for those slots (`reconcile_development_plan_capacity`),
+    tells the Planner in prose to return `none` for them, keeps the beat count
+    off the slot schedule line, and leaves them the categorical cue in
+    `length_policy`. Under `measured` all four reach down to
+    `DEVELOPMENT_FLOOR_WORDS`.
 
     The two modes are identical outside 35-100 words: above 100,
     `round(w / 21) >= 5`, so the `max(3, ...)` and `max(2, ...)` floors never
@@ -88,12 +104,40 @@ def expected_development_beats(word_count: Any) -> int:
             MAX_DEVELOPMENT_BEATS,
             max(2, int(round(words / WORDS_PER_REALIZED_BEAT))),
         )
-    if words <= 100:
+    if words <= LONG_FORM_ONLY_WORD_THRESHOLD:
         return 0
     return min(
         MAX_DEVELOPMENT_BEATS,
         max(3, int(round(words / WORDS_PER_REALIZED_BEAT))),
     )
+
+
+def development_plan_word_threshold() -> int:
+    """Largest anonymous slot size that must return `none` for `development_plan`.
+
+    Four gates make the same capacity decision, and they have to agree:
+
+    1. `prompts._slot_schedule` prints `development_plan=N beats required`;
+    2. the Planner's prose rule tells it to return `none` below a threshold;
+    3. `reconcile_development_plan_capacity` deletes a plan below the threshold;
+    4. `length_policy.length_hint` picks the Writer's cue.
+
+    1, 3 and 4 call `expected_development_beats` directly. 2 is English prose in
+    an f-string and has to be handed the number, so it reads it from here rather
+    than repeating a literal. Before this function existed the prose carried a
+    hard-coded 100: turning the arm on would have printed
+    `development_plan=3 beats required` for a 70-word slot while the same prompt
+    still said to return `none` for every slot at or below 100 words. That is
+    two contradictory instructions in one prompt, and it is why the arm as first
+    written would have been inert rather than wrong-in-a-visible-way.
+
+    The invariant the tests hold is exact:
+    `expected_development_beats(w) > 0` iff `w > development_plan_word_threshold()`.
+    """
+
+    if DEVELOPMENT_SCOPE_MODE == "measured":
+        return DEVELOPMENT_FLOOR_WORDS - 1
+    return LONG_FORM_ONLY_WORD_THRESHOLD
 
 
 def normalize_development_plan(value: Any, *, max_beats: int = MAX_DEVELOPMENT_BEATS) -> str:

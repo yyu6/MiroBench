@@ -16,10 +16,15 @@ HISTORICAL_REVISION_POLICY_VERSIONS = {
     "generalized-card-revision-v6-dynamic-coverage-history-20260807",
 }
 GENERALIZED_V2_GENERATION_POLICY_VERSION = (
-    "generalized-card-v2-development-scope-v111-20260825"
+    "generalized-card-v2-development-scope-v112-20260825"
 )
 HISTORICAL_GENERATION_POLICY_VERSIONS = {
     "generalized-v2": {
+        # v111 shipped the `--development-scope` arm with only three of the four
+        # capacity gates wired to it; the Planner's prose rule kept a hard-coded
+        # 100. The N=50 paper run consumed the v111 string with the arm off, so
+        # the string is burned and v112 carries the completed mechanism.
+        "generalized-card-v2-development-scope-v111-20260825",
         "generalized-card-v2-refit-length-transfer-v110-20260824",
         "generalized-card-v2-entity-referent-spread-v109-20260824",
         "generalized-card-v2-semantic-coverage-nonrepeat-v108-20260823",
@@ -315,7 +320,7 @@ CORE_FILES = {
     ),
     "long_form_planning": (
         "generalized_card/generalized_card/long_form_planning.py",
-        "c74fc5978811386916c9a5ccdb0a33ccc834d8c4f14f7968716b7e8776e49203",
+        "2b79463557435223b8dc9442559cf65f8feca71aebe7629b20e58cf22e909f5e",
     ),
     "tone_length_fit": (
         "generalized_card/generalized_card/tone_length_fit.py",
@@ -427,7 +432,7 @@ CORE_FILES = {
     ),
     "domain_prompt_adapter": (
         "generalized_card/generalized_card/prompts.py",
-        "2daea6b425c704dfaf155a50387a692b7797fb81e86b774f92b76d063504107e",
+        "03d542ff5529f0110bcec3856b79011103d3a48371f52022bf4e476e838831ed",
     ),
     "reply_planning": (
         "generalized_card/generalized_card/reply_planning.py",

@@ -1017,6 +1017,144 @@ class GeneralizedCardTest(unittest.TestCase):
         )
         self.assertEqual(prefix, first[:1])
 
+    def _render_comment_planner(self, backend, seed, target, slot_words):
+        from generalized_card import prompts
+
+        return prompts.comment_planner_prompt(
+            self.config,
+            backend,
+            seed_post=seed,
+            target=target,
+            branches=[
+                SimpleNamespace(
+                    branch_id=1,
+                    branch_goal="compare handling",
+                    anchor_quote="grip",
+                    allowed_functions=("reaction",),
+                    content_angles=("fit_use_case",),
+                )
+            ],
+            matched_real_thread={"comments": [{"body": "x " * slot_words}]},
+            comments=[{"body": "x " * slot_words, "depth": 0}],
+            all_comments=[{"body": "x " * slot_words, "depth": 0}],
+        )
+
+    def _planner_prompt_fixture(self):
+        backend = SimpleNamespace(
+            # A distinct sha: `viewpoint_bank._INDEX_CACHE` is keyed on
+            # `profile_sha256` with no invalidation, so reusing another test's
+            # sha with a different viewpoint list poisons that test.
+            GENERALIZED_DOMAIN_PROFILE={
+                "profile_sha256": "development-scope-fixture",
+                "perspectives": [],
+                "reference_viewpoints": [],
+            },
+            GENERALIZED_DOMAIN_CLAIM_MODE="planned",
+            GENERALIZED_ACTIVE_REFERENCE_TEMPLATE={
+                "comment_count": 1,
+                "story_count": 0,
+                "polite_rate": 1.0,
+                "impolite_rate": 0.0,
+                "neutral_rate": 0.0,
+                "dominant_emotion_counts": {"curiosity": 1},
+            },
+            render_top_counts=lambda memory: "none",
+            compact=lambda value, limit: str(value)[:limit],
+        )
+        seed = SimpleNamespace(
+            title="Camera grip question",
+            body="Is the grip comfortable?",
+            content="Camera grip question\nIs the grip comfortable?",
+        )
+        target = SimpleNamespace(
+            target_comments=1,
+            max_depth_goal=1,
+            top_level_comments=1,
+            shape_label="quiet",
+            length_mix_note="one short comment",
+        )
+        return backend, seed, target
+
+    def test_development_plan_threshold_matches_the_beat_budget_exactly(self) -> None:
+        """The prose rule and the three code gates must never disagree.
+
+        `expected_development_beats` drives the slot schedule line, the capacity
+        reconcile and the Writer cue. The Planner's prose rule is an f-string and
+        has to be handed the number. If the two ever diverge the Planner receives
+        `development_plan=N beats required` and `return the literal string none`
+        for the same slot, in the same prompt.
+        """
+
+        from generalized_card.long_form_planning import (
+            development_plan_word_threshold,
+            expected_development_beats,
+            set_development_scope,
+        )
+
+        try:
+            for mode, expected_threshold in (("long_only", 100), ("measured", 34)):
+                set_development_scope(mode)
+                self.assertEqual(development_plan_word_threshold(), expected_threshold)
+                for words in range(0, 901):
+                    self.assertEqual(
+                        expected_development_beats(words) > 0,
+                        words > development_plan_word_threshold(),
+                        f"{mode} disagrees at {words} words",
+                    )
+        finally:
+            set_development_scope("long_only")
+
+    def test_development_scope_long_only_renders_the_v110_planner_rule(self) -> None:
+        from generalized_card.long_form_planning import set_development_scope
+
+        backend, seed, target = self._planner_prompt_fixture()
+        try:
+            set_development_scope("long_only")
+            rendered = self._render_comment_planner(backend, seed, target, 70)
+        finally:
+            set_development_scope("long_only")
+        self.assertIn(
+            "For every slot at or below 100 anonymous words, return the literal string",
+            rendered,
+        )
+        self.assertNotIn("development_plan=", rendered)
+
+    def test_development_scope_measured_moves_the_rule_and_the_schedule_together(
+        self,
+    ) -> None:
+        """A 70-word slot must be asked for beats in BOTH places, or neither."""
+
+        from generalized_card.long_form_planning import set_development_scope
+
+        backend, seed, target = self._planner_prompt_fixture()
+        try:
+            set_development_scope("measured")
+            rendered = self._render_comment_planner(backend, seed, target, 70)
+        finally:
+            set_development_scope("long_only")
+        self.assertIn(
+            "For every slot at or below 34 anonymous words, return the literal string",
+            rendered,
+        )
+        self.assertNotIn("at or below 100 anonymous words", rendered)
+        self.assertIn("development_plan=3 beats required", rendered)
+
+    def test_development_scope_leaves_a_short_slot_alone_on_both_values(self) -> None:
+        from generalized_card.long_form_planning import set_development_scope
+
+        backend, seed, target = self._planner_prompt_fixture()
+        rendered = {}
+        try:
+            for mode in ("long_only", "measured"):
+                set_development_scope(mode)
+                rendered[mode] = self._render_comment_planner(
+                    backend, seed, target, 20
+                )
+        finally:
+            set_development_scope("long_only")
+        for mode in ("long_only", "measured"):
+            self.assertNotIn("development_plan=", rendered[mode])
+
     def test_planners_receive_non_test_reference_text_but_writer_does_not(self) -> None:
         profile = {
             "profile_sha256": "prompt-profile",

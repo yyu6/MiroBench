@@ -88,4 +88,4 @@ for seed, tid, comments, csv_sb4, ccount in rows:
                     "floor": flo, "excess": act - flo,
                     "mean_tok": sum(len(t) for t in toks) / len(toks)})
 print(f"[E6] generated self_bleu_4 max |reproduced - shipped| = {maxdiff:.3e}")
-json.dump(gen_out, open("/private/tmp/claude-501/-Users-yaoningyu-Desktop-UIUC-GEO/1f41c5a0-3c0b-415c-9b23-9fb381e5c727/scratchpad/gen_sb4.json", "w"), indent=1)
+json.dump(gen_out, open(str(Path(__file__).resolve().parent / "_cache" / "gen_sb4.json"), "w"), indent=1)

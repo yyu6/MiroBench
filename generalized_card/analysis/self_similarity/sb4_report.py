@@ -1,7 +1,7 @@
 import json, statistics as st
 from pathlib import Path
 from scipy.stats import mannwhitneyu, ks_2samp, wilcoxon
-SP = Path("/private/tmp/claude-501/-Users-yaoningyu-Desktop-UIUC-GEO/1f41c5a0-3c0b-415c-9b23-9fb381e5c727/scratchpad")
+SP = (Path(__file__).resolve().parent / "_cache")
 g = json.load(open(SP/"gen_sb4.json")); r = json.load(open(SP/"real_sb4.json"))
 g = {x["seed"]: x for x in g}; r = {x["seed"]: x for x in r}
 seeds = sorted(g)

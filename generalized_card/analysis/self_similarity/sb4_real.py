@@ -2,7 +2,7 @@ from __future__ import annotations
 import csv, json, math, sys
 from pathlib import Path
 REPO = Path("/Users/yaoningyu/Desktop/UIUC/GEO")
-SP = Path("/private/tmp/claude-501/-Users-yaoningyu-Desktop-UIUC-GEO/1f41c5a0-3c0b-415c-9b23-9fb381e5c727/scratchpad")
+SP = (Path(__file__).resolve().parent / "_cache")
 sys.path.insert(0, str(REPO / "scripts" / "evaluation"))
 from score_thread_self_bleu import tokenize, sentence_bleu, ngram_counts, closest_reference_length
 from score_thread_semantic_uniformity import load_real_comments
