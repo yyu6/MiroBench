@@ -121,3 +121,81 @@ would relieve `impolite_rate` without spending any of `neutral_rate`.
 `story_mode.endswith("_story")`, which matches `no_story`. It silently collapsed
 the rule to "every polite-assigned slot" and reproduced the earlier result
 exactly, including the neutral damage the rule existed to avoid.
+
+---
+
+# CORRECTION — the carrier cannot be built as a cue (2026-08-26)
+
+**Sections above over-read the ablation. Retracted here rather than left standing.**
+
+The ablation prepended sentences the shipped classifier scores `polite` at
+**P > 0.90**. A sentence the Writer produces instead is not that sentence. This
+was audited before writing any code, and the mechanism does not survive it.
+
+## 1. The existing register mechanism already works
+
+`register_realization` (v101, on in the paper run) cues five positive-register
+moves on polite slots. It is not inert — measured on the N=50 artifact's own
+saved prompts, **81.6% of polite-assigned slots receive at least one cue** and
+compliance is large:
+
+| move | cued slots | realized \| cued | realized \| not cued | lift |
+|---|---:|---:|---:|---:|
+| own_thing | 210 | 0.662 | 0.098 | **6.76** |
+| gratitude | 79 | 0.544 | 0.110 | **4.95** |
+| any_intensifier | 283 | 0.675 | 0.272 | 2.48 |
+| plain_verdict | 219 | 0.475 | 0.217 | 2.19 |
+| love_like | 79 | 0.063 | 0.045 | 1.40 |
+
+## 2. Prevalence is already matched; conversion is short everywhere
+
+The module deliberately omits `intensified_positive` as "the same construction
+twice". Tested directly — intensifier and positive verdict inside one sentence:
+
+| bucket | real P(polite) | gen P(polite) | gen/real | real prev | gen prev |
+|---|---:|---:|---:|---:|---:|
+| conjunction, same sentence | 0.637 | 0.365 | **0.57** | 0.047 | **0.044** |
+| both, different sentences | 0.595 | 0.419 | 0.70 | 0.043 | 0.032 |
+| verdict only | 0.444 | 0.389 | 0.88 | 0.087 | 0.058 |
+| intensifier only | 0.251 | 0.156 | 0.62 | 0.237 | 0.197 |
+| neither | 0.146 | 0.097 | 0.66 | 0.587 | 0.670 |
+
+Conjunction prevalence is **0.93x** — the generator is not under-producing it.
+Every bucket converts at 0.57–0.88x. **Another surface-move cue cannot work**,
+and that includes the carrier as designed: cueing the 359 routed slots into the
+conjunction bucket would give them generated's own conjunction conversion of
+0.365, against the 0.404 those slots already reach. Zero expected gain.
+
+## 3. Hedging is not it either
+
+| | real | generated |
+|---|---:|---:|
+| comments carrying a hedge | 0.206 | **0.186** |
+| hedges per 100 words | 0.60 | **0.61** |
+
+The generator hedges *less* than real. Stripping every hedge from generated
+output moves `polite_rate` 0.147 -> 0.154 — **17 comments, 0.87%, against the
+9.1% the gap needs**.
+
+## 4. What survives: conversion is a steep function of length
+
+| words | real P(polite) | gen P(polite) | gen/real |
+|---|---:|---:|---:|
+| 0–14 | 0.151 | 0.172 | 1.14 |
+| 15–29 | 0.112 | 0.079 | 0.70 |
+| **30–59** | **0.233** | **0.082** | **0.35** |
+| 60–119 | 0.412 | 0.242 | 0.59 |
+| 120+ | 0.623 | 0.419 | 0.67 |
+
+Real politeness rises steeply with length, 0.151 -> 0.623. The generator is
+short (realized/assigned 0.891) *and* converts worse inside every band, so the
+two deficits multiply. The collapse is sharpest at 30–59 words, which is inside
+v112's target band.
+
+## Status
+
+**No tone mechanism is buildable on this evidence.** Three hypotheses are dead:
+more register cues, the omitted conjunction, and hedging. `polite_rate` remains
+the furthest metric from passing and has no candidate. What has not been tested
+is whether length repair alone moves it — v112 is the arm that would answer it,
+and that is measurable on the same run rather than as separate work.
