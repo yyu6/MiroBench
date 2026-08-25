@@ -2033,3 +2033,65 @@ leaves no failure to notice.
   and contradicted each other for a session.
 - Quote a rejected candidate's price *and* the bar it was rejected against, so a
   later change to the bar reopens the right candidates automatically.
+
+---
+
+## A prohibition on every slot is invisible to a within-run contrast
+
+**What happened.** Chasing `polite_rate`, I asked which prompt lines separate the
+planned-polite slots that realize polite from the ones that realize impolite.
+Two lines cleared a 0.20 threshold, both about speaker identity and both
+confounded by thread position. I read that as "no prompt rule explains the
+failure" and moved on.
+
+That inference does not follow. A rule printed on **532 of 532** slots has zero
+variance, so a treated-vs-untreated contrast inside one run cannot see it no
+matter how large the effect is. This project already knows such rules exist:
+`forbidden_decision_subjects` is on 532/532 slots at 10.1 forbidden subjects
+each (G35), and the v34-era diagnosis recorded a Writer prompt that asked for an
+acknowledgement in the tone control while the hard rules banned "a generic
+agreement, acknowledgement, recommendation, or first-person frame."
+
+**Why:** a within-run contrast estimates the effect of *variation*. A constant
+has none. The two questions -- "does this rule explain who fails?" and "does this
+rule suppress the whole class?" -- need different instruments, and only the first
+one is answerable from a contrast.
+
+**How to apply.**
+- Before reading a null from a within-run contrast, print the feature's variance.
+  If a candidate rule is present on every slot, the contrast is uninformative
+  about it and the answer has to come from E5 (grep the prompts and read the
+  rule) or from an arm that removes it.
+- State the population a null covers. "No rule *that varies* separates the two
+  groups" is what was measured; "no rule explains it" is not.
+- The same asymmetry applies to any always-on mechanism: `--route-ledger`,
+  `--social-contract-coherence` and the hard-rule block are all constants in
+  every artifact this project has.
+
+## Read the examples, form the story, then kill the story with the scorer
+
+**What happened.** Reading seven planned-polite comments that realized impolite,
+every one of them turned out to be a first-person outcome narrative ("it clicked
+a lot faster", "that was enough to tell me what was on the table") with no
+sentence appraising the object, while real polite text says "Wonderful camera."
+The story wrote itself: real carriers predicate on the *thing*, generated ones
+narrate the *speaker*. It is a good story and it is wrong. Measured on the
+reference corpus with the evaluation's own checkpoint: `P(carrier | sentence
+starts with "I")` is **0.0819** against **0.0816** for every other opening --
+**ratio 1.00**, no effect at all -- and the share of carriers that are I-initial
+is 0.187 real against 0.195 generated.
+
+**Why:** seven examples chosen because they share an outcome will share many
+things, and the eye picks the one that reads like an explanation. The base rate
+was never looked at.
+
+**How to apply.**
+- A story built from reading examples is a hypothesis with n≈7 and a selection
+  rule. Give it the same falsification test as any other before it reaches a
+  decision row -- here that was one scorer run over 3,074 real sentences.
+- Prefer a probe with no false-positive mode when testing such a story ("does the
+  first token equal I") so a null cannot be blamed on the probe.
+- What survived the test is worth more than the story: the deficit is **3.4x at
+  the sentence level** (real 0.0817 of sentences are carriers, generated 0.0239),
+  which is flat rather than positional or length-driven, and therefore rules out
+  the length route as a fix for the politeness pair.
