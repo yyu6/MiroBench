@@ -16,10 +16,11 @@ HISTORICAL_REVISION_POLICY_VERSIONS = {
     "generalized-card-revision-v6-dynamic-coverage-history-20260807",
 }
 GENERALIZED_V2_GENERATION_POLICY_VERSION = (
-    "generalized-card-v2-development-scope-v112-20260825"
+    "generalized-card-v2-drawn-reference-link-v113-20260825"
 )
 HISTORICAL_GENERATION_POLICY_VERSIONS = {
     "generalized-v2": {
+        "generalized-card-v2-development-scope-v112-20260825",
         # v111 shipped the `--development-scope` arm with only three of the four
         # capacity gates wired to it; the Planner's prose rule kept a hard-coded
         # 100. The N=50 paper run consumed the v111 string with the arm off, so
@@ -186,7 +187,7 @@ CORE_FILES = {
     ),
     "generator_adapter": (
         "generalized_card/generalized_card/backend.py",
-        "66a4770765d72969c9f8601ca608d93be5c6cec0eee53220388759bd94c202ef",
+        "9ff04bf1c66f804851cb59c240a33cdd2323f2e5b745c08cb646a5a1c702e576",
     ),
     "data_boundary": (
         "generalized_card/generalized_card/data.py",
@@ -220,7 +221,7 @@ CORE_FILES = {
     ),
     "generation_runner": (
         "generalized_card/scripts/run_generate.py",
-        "4b512ccc364c35c12ff6842cee92ea1a5124a665f3f7c76e44ed2024dcf2240d",
+        "35843313ceb609879f6ba0f50442e1284c260fbaa075292d9598f9b7694cebaa",
     ),
     "generation_backend_runner": (
         "generalized_card/scripts/run_generator_backend.py",
@@ -236,7 +237,7 @@ CORE_FILES = {
     ),
     "domain_profile": (
         "generalized_card/generalized_card/domain_profile.py",
-        "f33ddb0af28db4135cdd8a2ebf535323078c331e0a77df1b511a89ecf07dbb65",
+        "aac42cf80b4bd1aef65a7fa155b68ee30c63bbb0f65f486638548d3a1e2985f7",
     ),
     "viewpoint_bank": (
         "generalized_card/generalized_card/viewpoint_bank.py",
@@ -285,6 +286,10 @@ CORE_FILES = {
     "entity_inventory": (
         "generalized_card/generalized_card/entity_inventory.py",
         "0157a4d67d2b21123848996818a2d9b76a46cbe09af13017905c617be9e50cff",
+    ),
+    "reference_link": (
+        "generalized_card/generalized_card/reference_link.py",
+        "94f670603c53add080157d6c5423b5a4e9ae178341124a3bc2e877756fc54d07",
     ),
     "entity_spread": (
         "generalized_card/generalized_card/entity_spread.py",
@@ -432,7 +437,7 @@ CORE_FILES = {
     ),
     "domain_prompt_adapter": (
         "generalized_card/generalized_card/prompts.py",
-        "03d542ff5529f0110bcec3856b79011103d3a48371f52022bf4e476e838831ed",
+        "3173cf5744b854d5d014796f54ae9cb2453047556543b44a3ded37815eb3fb62",
     ),
     "reply_planning": (
         "generalized_card/generalized_card/reply_planning.py",
@@ -625,6 +630,7 @@ GENERATION_ADAPTER_CORE_NAMES = (
     "opener_profile",
     "entity_inventory",
     "entity_spread",
+    "reference_link",
     "length_fidelity",
     "domain_prompt_adapter",
     "writer_grounding",

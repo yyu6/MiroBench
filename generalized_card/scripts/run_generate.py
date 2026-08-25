@@ -479,6 +479,16 @@ def build_parser() -> argparse.ArgumentParser:
         ),
     )
     parser.add_argument(
+        "--reference-link",
+        choices=("off", "measured"),
+        default="off",
+        help=(
+            "Offer one real evaluation-excluded URL to a slot whose matched "
+            "comment carried a reference link. 'off' reproduces every release "
+            "through v112, which wrote zero URLs across 1,974 slots."
+        ),
+    )
+    parser.add_argument(
         "--development-scope",
         choices=("long_only", "measured"),
         default="long_only",
@@ -946,6 +956,7 @@ def main() -> None:
         "length_fidelity": args.length_fidelity,
         "length_transfer": args.length_transfer,
         "development_scope": args.development_scope,
+        "reference_link": args.reference_link,
         "writer_retries": args.writer_retries,
         "no_story_scope": args.no_story_scope,
         "own_fact_license": args.own_fact_license,
@@ -1153,6 +1164,7 @@ def main() -> None:
     env["GENERALIZED_CARD_LENGTH_FIDELITY"] = args.length_fidelity
     env["GENERALIZED_CARD_LENGTH_TRANSFER"] = args.length_transfer
     env["GENERALIZED_CARD_DEVELOPMENT_SCOPE"] = args.development_scope
+    env["GENERALIZED_CARD_REFERENCE_LINK"] = args.reference_link
     env["GENERALIZED_CARD_NO_STORY_SCOPE"] = args.no_story_scope
     env["GENERALIZED_CARD_OWN_FACT_LICENSE"] = args.own_fact_license
     env["GENERALIZED_CARD_SPEAKER_IDENTITY"] = args.speaker_identity
@@ -1506,6 +1518,7 @@ RUN_EXPERIMENT_FIELDS = (
     "length_fidelity",
     "length_transfer",
     "development_scope",
+    "reference_link",
     "writer_retries",
     "no_story_scope",
     "own_fact_license",

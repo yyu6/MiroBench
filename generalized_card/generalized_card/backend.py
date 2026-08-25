@@ -69,6 +69,7 @@ from .long_form_planning import (
     reconcile_development_plan_capacity,
     set_development_scope,
 )
+from .reference_link import set_reference_link_mode
 from .planner_distribution import (
     apply_slot_distribution_schedule,
     build_slot_distribution_schedule,
@@ -596,6 +597,10 @@ def configure_generator_backend(
         or "long_only"
     )
     set_development_scope(module.GENERALIZED_DEVELOPMENT_SCOPE)
+    module.GENERALIZED_REFERENCE_LINK = (
+        os.environ.get("GENERALIZED_CARD_REFERENCE_LINK", "off").strip().lower() or "off"
+    )
+    set_reference_link_mode(module.GENERALIZED_REFERENCE_LINK)
     module.GENERALIZED_REPLY_SIBLING_VISIBILITY = (
         os.environ.get("GENERALIZED_CARD_REPLY_SIBLING_VISIBILITY", "on")
         .strip()

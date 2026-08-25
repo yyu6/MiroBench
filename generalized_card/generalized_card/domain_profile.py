@@ -27,6 +27,7 @@ from .surface_typography import (
     build_typography_profile,
 )
 from .tone_length_fit import build_tone_length_profile
+from .reference_link import build_reference_link_inventory
 from .viewpoint_bank import build_reference_viewpoints
 
 
@@ -64,7 +65,12 @@ from .viewpoint_bank import build_reference_viewpoints
 # comment's entities to the seed post made one generated thread reuse 23
 # distinct models where the matched real thread used 117, which is a large
 # share of the remaining self-BLEU gap.
-PROFILE_SCHEMA_VERSION = 20
+# 21: adds the evaluation-excluded reference-link inventory. 4.47% of real
+# comments in the excluded corpus carry a human reference URL and 0.00% of
+# generated comments ever have. Removing URLs from real text and rescoring moves
+# real's `self_bertscore` by +0.0094 -- 76% of the whole gap, and the only
+# channel of the five tested that moves it at all.
+PROFILE_SCHEMA_VERSION = 21
 CARD_CONTEXT_DROPOUT_RATE = 0.42
 CARD_CONTEXT_JITTER_RATE = 0.32
 CARD_GENERATION_CONTROLS = {
@@ -151,6 +157,7 @@ def build_domain_profile(
         "configured_facets": list(config.topic_facets),
         "perspectives": perspectives,
         "reference_viewpoints": reference_viewpoints,
+        "reference_link_inventory": build_reference_link_inventory(reference_threads),
         "behavior_targets": behavior,
         "behavior_observations": behavior_observations,
         "behavior_observation_method": (

@@ -22,6 +22,11 @@ from .domain_claim import (
 from .domain_profile import render_profile_for_planner
 from .entity_inventory import slot_equipment_options
 from .entity_spread import slot_referent_block
+from .reference_link import (
+    draw_reference_link,
+    reference_link_enabled,
+    reference_link_offer,
+)
 from .generation_distribution import (
     TONE_CLASSES,
     TONE_DEFINITIONS,
@@ -193,7 +198,10 @@ def _equipment_and_referent_block(
         comment_count=getattr(backend, "GENERALIZED_ACTIVE_THREAD_COMMENTS", 0),
         excluded=visible,
     )
-    return own + referent
+    link = reference_link_offer(
+        draw_reference_link(task, profile.get("reference_link_inventory") or {})
+    )
+    return own + referent + (f"\n{link}" if link else "")
 
 
 def _speaker_for_task(backend: Any, task: Any) -> Any:
@@ -2721,6 +2729,17 @@ def _substitution_rule(task: Any | None = None) -> str:
 
 
 def _placeholder_guidance_block() -> str:
+    """Forbid invented sources. Under `--reference-link measured` a real URL may
+    be supplied for a slot whose matched comment carried one, so the rule has to
+    say *invent* rather than *never write*, or the Writer receives the offer and
+    a prohibition on using it in the same prompt -- the failure v112 was fixed
+    for. The `off` text is unchanged from every release through v112.
+    """
+
+    if reference_link_enabled():
+        return """- Never output planner labels, control names, skeleton labels, placeholders, fake resource titles, or inferred quote headings.
+- Never invent a URL or a source name. If this slot supplies an exact URL, use that one and no other; otherwise write a normal human reference sentence with no URL at all.
+- Use a markdown quote marker only for exact text visible in the current discussion."""
     return """- Never output planner labels, control names, skeleton labels, placeholders, fake resource titles, or inferred quote headings.
 - If a source, wiki, sidebar, link, or template is requested but no exact text is visible, write a normal human reference sentence without inventing a URL.
 - Use a markdown quote marker only for exact text visible in the current discussion."""
@@ -2841,9 +2860,17 @@ def _surface_texture_guidance(texture: str, *, task: Any | None = None) -> str:
         ),
         "markdown_quote": "Texture: use an informal quote-like shape only for exact visible wording.",
         "link_reference": (
-            "Texture: a reference may be embedded in the substantive local turn, but do not invent a URL or source name."
+            (
+                "Texture: a reference may be embedded in the substantive local turn. Use the URL supplied for this slot and invent no other."
+                if reference_link_enabled()
+                else "Texture: a reference may be embedded in the substantive local turn, but do not invent a URL or source name."
+            )
             if substantive
-            else "Texture: make it a bare source/wiki/old-thread reference aside without inventing a URL."
+            else (
+                "Texture: make it a bare source/old-thread reference aside built around the URL supplied for this slot; invent no other."
+                if reference_link_enabled()
+                else "Texture: make it a bare source/wiki/old-thread reference aside without inventing a URL."
+            )
         ),
         "messy_punctuation": "Texture: casual punctuation, ellipses, or a clipped aside is allowed.",
         "gratitude_social": "Texture: make the acknowledgement, thanks, or report-back visibly social and brief.",

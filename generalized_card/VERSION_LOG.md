@@ -495,6 +495,107 @@ priced against those targets, including v111's 8–26%, has to be re-priced.
 
 **Not run yet.**
 
+## v113 — drawn reference links, the only identified channel for `self_bertscore` (2026-08-25)
+
+Policy ID: `generalized-card-v2-drawn-reference-link-v113-20260825`. Arm
+`--reference-link {off,measured}`, default `off`, which reproduces every release
+through v112 exactly.
+
+### The measurement that produced it
+
+`self_bertscore` was the one failing metric with no mechanism. A nine-feature
+observational regression fitted on 536 real threads reaches R^2=0.60 and still
+predicts only 40% of the +0.0124 gap with contradictory signs — regression is
+not identification. So the channel was found by **causal ablation**: transform
+real text toward the generator's surface and rescore with the shipped model.
+
+| transform applied to REAL text | move | share of the gap |
+|---|---:|---:|
+| sentences comma-joined | -0.0001 | **-1%** |
+| u/ or r/ mentions removed | +0.0000 | 0% |
+| `* _ \` ~` emphasis removed | -0.0002 | -1% |
+| quote markers / escapes removed | +0.0001 | +1% |
+| **all URLs removed** | **+0.0094** | **+76%** |
+| — human reference URLs only | +0.0064 | **+52%** |
+| — machine media attachments only | +0.0027 | +22% |
+
+A URL appears in **4.41%** of matched real comments and **0.00%** of generated
+ones. On the evaluation-excluded corpus (424 deduplicated threads, 11,817
+comments, seed overlap 0) the human-reference rate is **4.47%** and there are
+**690 distinct URLs**.
+
+### Why the Writer never wrote one, and what changed
+
+The routing was already right and already there. `surface_contract.
+infer_surface_texture` tests for a URL **first**, so `surface_texture ==
+"link_reference"` holds exactly when the matched real comment carried one: 56
+slots on the N=50 artifact, and 70 (3.55%) in union with `evidence_mode ==
+"link_quote_reference"`, against the excluded corpus's 4.47%.
+
+Three rules then forbade producing one, and all three were correct as written —
+a Writer with no source must not invent a URL:
+
+1. `_placeholder_guidance_block` — "write a normal human reference sentence
+   without inventing a URL";
+2. the `link_reference` texture cue, both the substantive and short variants;
+3. `_real_surface_shape_guidance` — "make it a short reference or **link-like**
+   aside".
+
+v113 hands the slot a **real** URL drawn from the excluded corpus and rewords 1
+and 2 to forbid *inventing* rather than *writing*. **This is the v112 failure
+asserted as a test**: `test_reference_link_offer_and_prohibition_never_contradict`
+fails if any arm value both supplies a URL and forbids writing one.
+
+### What was refused, and why
+
+Copying the matched real comment's own URL into the generated comment at the same
+slot was proposed and declined. `ORIENTATION.md` s4 forbids the Writer receiving
+matched evaluation comment text, and `output_audit`'s `matched_real_copy_risks`
+checks for exactly that; every existing use of the matched thread is a *label
+about* the comment, while a URL is *content of* it and would appear verbatim in
+the output. It also buys nothing: the metric effect comes from a high-entropy URL
+token being present at all, not from which URL it is, so a drawn link is worth
+the same and carries no provenance cost.
+
+### Predictions, written before spending
+
+Free checks first:
+
+| check | if v113 works | if the arm is inert |
+|---|---|---|
+| generated comments carrying a URL | **0.00% -> about 3.5%** | stays 0.00% |
+| distinct URLs used | ~= the routed slot count (70 slots, 690 inventory) | — |
+| any URL appearing in 2+ comments of one thread | 0 | a repeated link would push `self_bleu_4` the wrong way |
+| any URL not in the inventory | **0** — an invented URL is a bug, not a partial success | — |
+
+Then the metric, from the ablation transferred symmetrically (J7: an upper bound;
+real compliance discounts it):
+
+| | `self_bertscore` | bias | needed at N=150 Holm |
+|---|---:|---:|---|
+| today | 0.5076 vs real 0.4952 | +2.5% | −42% in \|Cliff's delta\| |
+| reference links only, at real's rate | ~0.5012 | ~+1.2% | **52% closure** |
+
+`self_bleu_4` benefits too and is a guardrail rather than a target: URLs are
+3.06% of real's tokens, and removing them from real moves the gap +0.00243 ->
++0.00105 with MWU 0.057 -> 0.155.
+
+**Guardrails.** A repeated link is repeated n-grams: the per-slot SHA-256 draw
+over 690 entries for ~70 slots exists to prevent that, and the audit above must
+confirm it. `semantic_mean_cosine` passes at 0.702 and must stay passing. No
+metric may fall below its current p-value.
+
+### Offline state
+
+702 generalized_card tests pass (5 new), ruff clean on all shipped code, 109 pins
+re-verified with drift exactly the five touched files. Profile schema 20 -> 21.
+The inventory builds on the real excluded corpus: 690 URLs, carrying share
+0.0447, seed overlap 0. **No paid run yet.**
+
+### Result
+
+**Not run yet.**
+
 ## v112 — wire the fourth capacity gate, and the correction that forced it (2026-08-25)
 
 Policy ID: `generalized-card-v2-development-scope-v112-20260825`. Same arm as

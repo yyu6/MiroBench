@@ -1155,6 +1155,144 @@ class GeneralizedCardTest(unittest.TestCase):
         for mode in ("long_only", "measured"):
             self.assertNotIn("development_plan=", rendered[mode])
 
+    def _link_backend(self, inventory):
+        return SimpleNamespace(
+            GENERALIZED_DOMAIN_PROFILE={
+                "profile_sha256": "reference-link-fixture",
+                "perspectives": [],
+                "reference_viewpoints": [],
+                "reference_link_inventory": inventory,
+                "entity_inventory": {},
+                "entity_spread_profile": {},
+            },
+            GENERALIZED_ACTIVE_SEED_KEY="seedkey",
+            GENERALIZED_ACTIVE_THREAD_COMMENTS=20,
+            GENERALIZED_OWN_FACT_LICENSE="off",
+        )
+
+    @staticmethod
+    def _link_task(**over):
+        base = dict(
+            surface_texture="link_reference",
+            evidence_mode="none_assertion",
+            real_sample_id=7,
+            local_task_id=7,
+            branch_id=1,
+            claim_key="handling_check",
+            concrete_anchors=(),
+            real_word_count=60,
+            real_surface_shape="link_reference",
+        )
+        base.update(over)
+        return SimpleNamespace(**base)
+
+    def test_reference_link_off_offers_nothing_and_keeps_the_v112_prohibition(self) -> None:
+        from generalized_card import prompts
+        from generalized_card.reference_link import set_reference_link_mode
+
+        inv = {"available": True, "urls": ["https://www.dpreview.com/reviews/x"]}
+        try:
+            set_reference_link_mode("off")
+            block = prompts._equipment_and_referent_block(self._link_backend(inv), self._link_task())
+            guidance = prompts._placeholder_guidance_block()
+            texture = prompts._surface_texture_guidance("link_reference", task=self._link_task())
+        finally:
+            set_reference_link_mode("off")
+        self.assertNotIn("dpreview", block)
+        self.assertIn(
+            "write a normal human reference sentence without inventing a URL", guidance
+        )
+        self.assertIn("without inventing a URL", texture)
+        self.assertNotIn("supplied for this slot", texture)
+
+    def test_reference_link_measured_hands_over_the_exact_url(self) -> None:
+        from generalized_card import prompts
+        from generalized_card.reference_link import set_reference_link_mode
+
+        url = "https://www.dpreview.com/reviews/ricoh-gr-iii"
+        inv = {"available": True, "urls": [url]}
+        try:
+            set_reference_link_mode("measured")
+            block = prompts._equipment_and_referent_block(self._link_backend(inv), self._link_task())
+            guidance = prompts._placeholder_guidance_block()
+        finally:
+            set_reference_link_mode("off")
+        self.assertIn(url, block)
+        self.assertIn("Include this exact URL once", block)
+        self.assertIn("If this slot supplies an exact URL, use that one", guidance)
+
+    def test_reference_link_offer_and_prohibition_never_contradict(self) -> None:
+        """The v112 failure, asserted directly: an offer plus a blanket ban.
+
+        Under `measured` the Writer is handed a URL, so a rule that forbids
+        writing one at all would be a contradiction inside a single prompt.
+        """
+
+        from generalized_card import prompts
+        from generalized_card.reference_link import set_reference_link_mode
+
+        inv = {"available": True, "urls": ["https://www.dpreview.com/reviews/x"]}
+        for mode in ("off", "measured"):
+            try:
+                set_reference_link_mode(mode)
+                offered = "dpreview" in prompts._equipment_and_referent_block(
+                    self._link_backend(inv), self._link_task()
+                )
+                banned_outright = (
+                    "write a normal human reference sentence without inventing a URL"
+                    in prompts._placeholder_guidance_block()
+                )
+            finally:
+                set_reference_link_mode("off")
+            self.assertFalse(
+                offered and banned_outright,
+                f"{mode}: the prompt both supplies a URL and forbids writing one",
+            )
+
+    def test_reference_link_only_routes_slots_whose_matched_comment_had_one(self) -> None:
+        from generalized_card.reference_link import (
+            draw_reference_link,
+            reference_link_slot,
+            set_reference_link_mode,
+        )
+
+        inv = {"available": True, "urls": ["https://a.example/1", "https://b.example/2"]}
+        try:
+            set_reference_link_mode("measured")
+            routed = self._link_task()
+            by_evidence = self._link_task(
+                surface_texture="plain", evidence_mode="link_quote_reference"
+            )
+            plain = self._link_task(surface_texture="plain")
+            self.assertTrue(reference_link_slot(routed))
+            self.assertTrue(reference_link_slot(by_evidence))
+            self.assertFalse(reference_link_slot(plain))
+            self.assertTrue(draw_reference_link(routed, inv))
+            self.assertEqual(draw_reference_link(plain, inv), "")
+            self.assertEqual(
+                draw_reference_link(routed, inv), draw_reference_link(routed, inv)
+            )
+        finally:
+            set_reference_link_mode("off")
+
+    def test_reference_link_inventory_excludes_media_and_overlong_urls(self) -> None:
+        from generalized_card.reference_link import build_reference_link_inventory
+
+        threads = [
+            {
+                "comments": [
+                    {"body": "see https://www.dpreview.com/a for the samples"},
+                    {"body": "photo https://preview.redd.it/abc.jpeg?s=1 here"},
+                    {"body": "long https://x.example/" + "z" * 400},
+                    {"body": "no link at all in this one"},
+                ]
+            }
+        ]
+        inv = build_reference_link_inventory(threads)
+        self.assertEqual(inv["urls"], ["https://www.dpreview.com/a"])
+        self.assertEqual(inv["reference_comment_count"], 4)
+        self.assertAlmostEqual(inv["carrying_comment_share"], 0.25)
+
     def test_planners_receive_non_test_reference_text_but_writer_does_not(self) -> None:
         profile = {
             "profile_sha256": "prompt-profile",
