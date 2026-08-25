@@ -7,6 +7,78 @@
 > least one claim that was later retracted (see `ORIENTATION.md` §6 for the
 > retractions). Where the two disagree, `ORIENTATION.md` wins.
 
+## 2026-08-25 v109 / v110 addendum — two live arms, two nulls, and a causal-identification error
+
+Full detail in
+[`.claude/handoffs/2026-08-25-geo-v109-v110-two-live-arms-two-nulls-and-the-causal-instrument-problem.md`](../.claude/handoffs/2026-08-25-geo-v109-v110-two-live-arms-two-nulls-and-the-causal-instrument-problem.md);
+rules in `docs/DECISIONS.md` **G24-G49**. $4.94 paid this session across two
+gates. **Neither release is promoted.** Both arms fired at 100%, verified in the
+saved prompts, so both nulls are mechanism failures rather than plumbing
+failures.
+
+**The target, quantified (G42).** `p ~ 0.5-0.6` needs **~90% gap closure at
+N=150, ~75% at N=50, ~50-75% at N=10**, simulated over the 763 real camera
+threads. This retires the whole 5-10% mechanism class that the previous six
+releases came from, and it is the first number in this project that says what is
+worth building at all.
+
+**Every candidate was priced before anything was built.** Length composition
+31-37% (`self_bleu_4`) / 14-26% (`self_bertscore`); absent links 8.8% / 10.8%;
+markdown emphasis 3.6% / 3.8%. Killed: full Planner de-duplication <=2.4% /
+<=1.8% (G45), entity variety <=9.4% and saturating (G40), "generated writes
+fewer, longer sentences" (words per sentence 15.15 against 15.54, G44),
+`no end punctuation` as a tell (generated has **more**, 54 against 34), and seven
+further surface features where generated matches or exceeds real.
+
+**v109 -- per-slot referent spread (G36-G41).** The naming-shape defect closed
+almost exactly: mentions per distinct designator **4.286 -> 2.333** against a
+matched real 2.432, distinct designators 21 -> 69 (real 118), pooled 3-/4-gram
+precisions moved from above real to below it. And the same arm **causally
+worsened both priority metrics**, established by a randomised within-run contrast
+(the draw keys on Planner traversal order, so treatment is content-independent):
+`self_bertscore` pair F1 0.5033 / 0.5101 / 0.5289 and cosine 0.1889 / 0.2144 /
+0.2525 by treatment count, monotone. The untreated half of the thread sits at
+real on both. Length explains about a third of it, shared names 16%, and the rest
+is the cue's own prescribed speech act -- slots given the same rhetorical
+instruction converge. It also raised P(story) per treated comment (0.1298 against
+0.0884) while the thread-level guardrail passed, which is why a rate-drawn arm
+must be read on its own subpopulation.
+
+**v110 -- refit length transfer (G46-G49), and the error worth carrying
+forward.** `length_calibration` inverts a fit of `realized ~ asked`. Refitting it
+on the object that actually governs the current system gave R2 0.879 across four
+runs and looked decisive. It was not: `asked` is a **deterministic function of**
+`real_word_count`, which also drives the layout guidance, the beat count, the
+surface skeleton and the token ceiling, so the regression has **no identifying
+variation**. The N=10 gate broke that collinearity for the first time and
+measured the true elasticity of realized length with respect to the asked
+number: **-0.02 at 50-99 assigned words and 0.11 above 100**, against the 1.21
+the mechanism assumed. Realized/assigned moved 0.8896 -> 0.8957 against a
+predicted 0.97-1.02. **Every "ask for more words" mechanism is dead**, which
+retrospectively explains why v96 and v97's prompt-wording work only moved the
+250w+ ratio 0.61 -> 0.71. `self_bleu_4` did not move at all (gap +0.0049 ->
++0.0049, MWU 0.121 -> 0.1212, Cliff +0.42 both, 5/10 threads, Wilcoxon p=0.695).
+`self_bertscore` moved 0.0188 -> 0.0148 nominally but on 7/10 threads at
+Wilcoxon p=0.064, with the channel that was supposed to produce it demonstrably
+inoperative -- so it is not claimed.
+
+**Three corrections to earlier claims.** v108's `--semantic-coverage-nonrepeat`
+measures **~0.0007** on seed 8 (G39), so the previous handoff's "best
+single-thread self_bertscore result yet" was thread noise. My own G24 claim that
+the v103->v108 comparison was "isolated" was wrong -- six arms differed (G25).
+G34's generalisation that these metrics cannot see manner of speaking was
+retracted (G35): it rested on between-real-thread slopes, and generated sits at
+the 0.0 percentile of real big threads, so it was extrapolation.
+
+**Two infrastructure facts found by reading the artifacts.** `--writer-retries`
+defaults to **0**, so the entire Writer validation loop is inert -- 65 of 186
+slots on the v109 gate failed their own validator and every one shipped
+unretried, including 32 `template_phrase_reused`. And there are **three** Writer
+prompt templates, not two; `_low_info_writer_prompt` carries no anchors or
+equipment block, capping any rate-drawn offer mechanism at ~83% of slots.
+
+---
+
 ## 2026-08-19 v97 keyboard-surface/measured-joints addendum
 
 The v96 N=10 run is the evidence this version is built on, and it is the first
