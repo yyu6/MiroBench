@@ -74,6 +74,7 @@ def main() -> None:
     ap.add_argument("--tag", default=DEFAULT_TAG)
     ap.add_argument("--reps", type=int, default=300)
     ap.add_argument("--target", type=float, default=0.80, help="Holm pass probability to solve closure for")
+    ap.add_argument("--n", type=int, default=150, help="sample size to simulate (the paper's scale is 150)")
     args = ap.parse_args()
     data = load_eval(args.tag)
 
@@ -115,11 +116,11 @@ def main() -> None:
             print(f"  {metric:<26} {'--':>10} {'--':>9}  {'not in the baseline':>22}")
             continue
         bias = (gen - real) / real if real else 0.0
-        now = simulate(values, bias, 0.0, 150, args.reps, rng)
+        now = simulate(values, bias, 0.0, args.n, args.reps, rng)
         need = None
         if now < args.target:
             for closure in (0.25, 0.50, 0.75, 0.90, 1.00):
-                if simulate(values, bias, closure, 150, args.reps, rng) >= args.target:
+                if simulate(values, bias, closure, args.n, args.reps, rng) >= args.target:
                     need = closure
                     break
         label = "already there" if now >= args.target else (f"~{need:.0%}" if need else "not reachable by closure alone")

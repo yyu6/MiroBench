@@ -230,6 +230,75 @@ Full analysis in `docs/DECISIONS.md` G24.
 
 ---
 
+## N=50 -> N=150 — staged, one lineage, predictions written first (planned 2026-08-25)
+
+**Not run.** The user proposed the staging and it is better than running straight
+to 150, for a reason that is mechanical rather than statistical: `--extend-existing`
+appends a larger `max-posts` range to a complete prefix, and `max_posts` is
+deliberately **not** in `RUN_EXPERIMENT_FIELDS` while `posts_per_run`,
+`start_seed_index`, `pool_size` and `sampling_seed` are. So the size can grow
+while everything else stays locked, and **the checkpoint costs nothing extra**:
+
+| | posts | comments | cumulative | cumulative wall clock | threads >=100 comments |
+|---|---:|---:|---:|---:|---:|
+| seeds 0-49 | 50 | 1,974 | **$14** | 3.6 h | 5 |
+| seeds 0-149 | 150 | 5,974 | **$42** | 10.9 h | 16 |
+
+The extension is +4,000 comments, +$28, +7.3 h. Total is the same $42 as running
+150 directly, paid in two parts.
+
+**The staging also fixes a representativeness problem the N=10 window has.** Mean
+comments per thread: N=10 window **53.2**, N=50 **39.5**, full pool **39.8**. So
+N=50 already has the pool's size mix, which N=10 does not, and both failing
+pairwise metrics are thread-size sensitive.
+
+### Predictions at N=50, written before spending
+
+`analysis/holm_state.py --n 50`, Holm computed with the conservative Bonferroni
+bound:
+
+| metric | P(pass) @ N=50 | @ N=150 | rel. bias |
+|---|---:|---:|---:|
+| `polite_rate` | **0.06** | 0.00 | -51.5% |
+| `impolite_rate` | 0.51 | 0.01 | +39.9% |
+| `self_bleu_4` | 0.74 | 0.16 | +18.8% |
+| `self_bertscore_mean_f1` | 0.76 | 0.19 | +2.6% |
+| `neutral_rate` | 0.96 | 0.81 | -19.7% |
+| the other five non-structural | 0.98-1.00 | 0.97-1.00 | <=5% |
+
+**Predicted count at N=50: 10-11 of 12 PASS under Holm**, `polite_rate` failing
+and `impolite_rate` a coin flip.
+
+### How to read it — the checkpoint is diagnostic, not a decision to stop
+
+**`N=50` cannot discriminate on `self_bleu_4` or `self_bertscore_mean_f1`.** Both
+are predicted at 0.74-0.76 there and only break at 150. A PASS on either at N=50
+is want of power again (`ORIENTATION.md` §2 trap 1) and must not be read as
+"those two are fine."
+
+| what N=50 shows | what it means | what to do |
+|---|---|---|
+| six safe metrics hold, four failing ones degrade about as predicted | the bias model is validated on a representative size mix | extend to 150 |
+| **a metric predicted >=0.96 fails** | the generator model is wrong, not the sample size | **stop and diagnose before spending the other $28** |
+| `polite_rate` passes | predicted at 0.06, so this falsifies the bias estimate outright | re-price everything, including G52's ranking |
+| the failing four are much better than predicted | the N=10 window was pessimistic | extend, and re-price every mechanism against the new targets |
+
+`polite_rate` is the sharp discriminator: at 0.06 it is the one metric whose
+outcome carries real information at this size.
+
+### The arm set is locked at the first command
+
+`--extend-existing` requires every generation setting except size to match, so
+the arm list chosen for seeds 0-49 governs the whole lineage and **v111 cannot be
+added later**. Decide before starting: either gate v111 on seed 8 first ($1.2,
+~20 min, answer readable from the free assigned-vs-realized audit) and include
+`--development-scope measured` if clean, or start without it and accept
+`self_bleu_4` staying at its current bias for this lineage.
+
+### Result
+
+**Not run yet.**
+
 ## N=150 — the paper's scale, never run on any version (planned 2026-08-25)
 
 **Not run.** This section exists so the command and its rationale are on record
