@@ -620,9 +620,56 @@ the new checks do not false-positive.
 re-verified with drift exactly the six touched files. Profile schema 20 -> 21.
 **No paid run yet.**
 
-### Result
+### Result — N=10 gate, seeds 2-11, $3.98, 64 min (2026-08-26)
 
-**Not run yet.**
+Tag `v113_v112_gate_n10_20260826_v1`. Compared against `v110_length_transfer_n10`,
+which ran the **same ten seeds** with both arms off. Cross-run N=10 comparisons
+are two independent draws and are noisy; the within-run ablation below is the
+measurement that carries weight.
+
+**Both arms fired.**
+
+| v113 check | prediction | observed |
+|---|---|---|
+| routed slots | ~3.5% | 24 = **4.51%** |
+| slots offered a URL | = routed | **24 of 24** |
+| comments carrying a URL | ~3.5% (real 4.4%) | 23 = **4.32%** |
+| offered -> written compliance | > 0.8 (E4) | **0.958** |
+| same URL twice in one post | 0 | **0** |
+| **links written as markdown garbage** | not predicted | **6 of 23 — the v114 defect** |
+
+v112: `has plan` in the 35-100 band went **0.000 -> 0.84**, and realized/assigned
+rose in all three sub-bands against the same seeds: 35-49 **0.877 -> 0.942**,
+50-69 **0.897 -> 0.914**, 70-100 **0.799 -> 0.879**. Total 0.896 -> 0.901, held
+down by untargeted bands moving the other way (1-9 over-writes 1.157 -> 1.305).
+
+**What the links actually bought.** The v113 prediction transferred an ablation
+measured by *removing* URLs from real to *adding* them to generated. Applying the
+identical ablation to this run's own output -- only pairs touching a link-bearing
+comment change, so the per-thread delta is exact -- the links **lower generated
+`self_bertscore` by 0.00383**. Without them this run's gap would be +0.0176
+instead of +0.0138, so **the arm closes 22% of the gap against the 52% predicted
+and the 42% needed at N=150 under Holm.** Real but not sufficient alone.
+
+**Metrics, same seeds.**
+
+| metric | bias v110 | bias gate | MWU v110 | MWU gate | \|d\| v110 | \|d\| gate |
+|---|---:|---:|---:|---:|---:|---:|
+| self_bleu_4 | +18.8% | **+13.0%** | 0.121 | **0.273** | 0.420 | **0.300** |
+| self_bertscore | +2.6% | +2.4% | 0.014 | 0.017 | 0.660 | 0.640 |
+| polite_rate | -51.5% | -47.2% | 0.045 | 0.070 | 0.540 | 0.490 |
+| impolite_rate | +39.9% | +49.7% | 0.010 | 0.006 | 0.690 | 0.740 |
+| neutral_rate | -19.7% | -33.8% | 0.791 | 0.151 | 0.080 | 0.390 |
+
+**The tone movement is draw noise, not a mechanism effect.** At comment level the
+impolite share is 0.601 -> 0.613, six comments out of 530; the thread-level bias
+swings much further because N=10 thread means are noisy across unequal thread
+sizes. And link-carrying comments are **less** impolite than the run as a whole
+(0.435 against 0.613), so the links did not cause it.
+
+Holm on this gate's own 24 tests rejects exactly one: `impolite_rate` KS at
+0.00206 against a 0.00208 threshold. That is 11/12, and an N=10 reading is
+optimistic by construction -- recorded, not claimed.
 
 ## v112 — wire the fourth capacity gate, and the correction that forced it (2026-08-25)
 
