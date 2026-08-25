@@ -1275,6 +1275,64 @@ class GeneralizedCardTest(unittest.TestCase):
         finally:
             set_reference_link_mode("off")
 
+    def test_reference_link_extraction_survives_reddit_markdown(self) -> None:
+        """The v113 gate's own failure, frozen as a test.
+
+        Reddit renders a bare link as `[url](url)` and escapes `_` to `\\_`. The
+        first extractor used `\\S+`, ran straight through `](` into the second
+        copy, and put 166 of 690 malformed entries into the inventory; 6 of the
+        23 links the gate wrote came out as `url](url`.
+        """
+
+        from generalized_card.reference_link import extract_urls
+
+        cases = {
+            r"https://youtu.be/1\_YaLe3rAbA?si=3fv0yQf\_OOAi4fYo](https://youtu.be/1_YaLe3rAbA?si=3fv0yQf_OOAi4fYo": [
+                "https://youtu.be/1_YaLe3rAbA?si=3fv0yQf_OOAi4fYo",
+                "https://youtu.be/1_YaLe3rAbA?si=3fv0yQf_OOAi4fYo",
+            ],
+            "http://optechusa.com/)**": ["http://optechusa.com/"],
+            "www.eadr.co.uk](http://www.eadr.co.uk": [
+                "www.eadr.co.uk",
+                "http://www.eadr.co.uk",
+            ],
+            r"see https://youtu.be/fz2LSHQ8E\_w for the test": [
+                "https://youtu.be/fz2LSHQ8E_w"
+            ],
+            "plain https://www.dpreview.com/reviews/x and text": [
+                "https://www.dpreview.com/reviews/x"
+            ],
+        }
+        for raw, expected in cases.items():
+            self.assertEqual(extract_urls(raw), expected, raw)
+
+    def test_reference_link_inventory_rejects_markdown_wrapped_links(self) -> None:
+        from generalized_card.reference_link import build_reference_link_inventory
+
+        threads = [
+            {
+                "comments": [
+                    {
+                        "body": "watch [https://youtu.be/abc\\_d](https://youtu.be/abc_d) first"
+                    },
+                    {"body": "and http://optechusa.com/)** too"},
+                ]
+            }
+        ]
+        inv = build_reference_link_inventory(threads)
+        for url in inv["urls"]:
+            self.assertNotIn("](", url)
+            self.assertNotIn("\\", url)
+            self.assertEqual(url.lower().count("http"), 1)
+
+    def test_audit_flags_a_markdown_wrapped_link_in_output(self) -> None:
+        from generalized_card.audit import _malformed_urls, _urls
+
+        bad = "A link https://youtu.be/x](https://youtu.be/x here"
+        self.assertTrue(_malformed_urls(bad))
+        self.assertEqual(_urls(bad), ["https://youtu.be/x", "https://youtu.be/x"])
+        self.assertFalse(_malformed_urls("see https://www.dpreview.com/reviews/x here"))
+
     def test_reference_link_inventory_excludes_media_and_overlong_urls(self) -> None:
         from generalized_card.reference_link import build_reference_link_inventory
 

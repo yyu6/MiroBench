@@ -15,13 +15,14 @@ from __future__ import annotations
 
 import argparse
 import json
-import re
+import sys
 from collections import Counter
 from pathlib import Path
 
 REPO = Path(__file__).resolve().parents[2]
 RUNS = REPO / "artifacts/generalized_card/runs"
-URL_RE = re.compile(r"https?://\S+|\bwww\.\S+", re.I)
+sys.path.insert(0, str(REPO / "generalized_card"))
+from generalized_card.audit import _malformed_urls, _urls  # noqa: E402
 BANDS = ((1, 9), (10, 19), (20, 34), (35, 49), (50, 69), (70, 100), (101, 150), (151, 10**9))
 
 
@@ -74,12 +75,16 @@ def main() -> None:
     routed = [r for r in rows if r["texture"] == "link_reference"
               or r["evidence"] == "link_quote_reference"]
     offered = [r for r in rows if "Include this exact URL once" in r["prompt"]]
-    carrying = [r for r in rows if URL_RE.search(r["text"])]
-    used = [u for r in carrying for u in URL_RE.findall(r["text"])]
-    used = [u.rstrip(").,;\"'") for u in used]
+    carrying = [r for r in rows if _urls(r["text"])]
+    used = [u for r in carrying for u in dict.fromkeys(_urls(r["text"]))]
     invented = [u for u in used if u not in inventory]
-    per_post = Counter((r["post_id"], u) for r in carrying for u in
-                       (x.rstrip(").,;\"'") for x in URL_RE.findall(r["text"])))
+    # dedupe inside a comment first: `[url](url)` yields the same URL twice from
+    # one comment and that is the markdown defect above, not a repeat across
+    # comments, which is what the guardrail is about.
+    per_post = Counter(
+        (r["post_id"], u) for r in carrying for u in dict.fromkeys(_urls(r["text"]))
+    )
+    malformed = [m for r in rows for m in _malformed_urls(r["text"])]
     print(f"  routed slots (matched comment carried a link) : {len(routed)}"
           f" = {100 * len(routed) / len(rows):.2f}% of slots")
     print(f"  slots actually offered a URL in the prompt    : {len(offered)}")
@@ -87,7 +92,11 @@ def main() -> None:
           f" = {100 * len(carrying) / len(rows):.2f}%   (real 4.4%)")
     if offered:
         print(f"  compliance, offered -> written               : "
-              f"{sum(1 for r in offered if URL_RE.search(r['text'])) / len(offered):.3f}")
+              f"{sum(1 for r in offered if _urls(r['text'])) / len(offered):.3f}")
+    print(f"  links written as markdown/escaped garbage     : {len(malformed)}"
+          f"   {'FAIL' if malformed else 'ok'}")
+    if malformed:
+        print(f"    example: {malformed[0][:90]}")
     print(f"  distinct URLs written                         : {len(set(used))}")
     print(f"  URLs NOT in the held-out inventory (invented)  : {len(invented)}"
           f"   {'FAIL' if invented else 'ok'}")

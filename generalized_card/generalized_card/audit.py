@@ -13,6 +13,7 @@ from .domain import DomainConfig
 from .domain_profile import load_domain_profile
 from .planning_quality import evaluate_plan_batch
 from .prompts import INTERNAL_CONTROL_ID_RE
+from .reference_link import extract_urls
 
 
 PLACEHOLDER_PATTERNS = (
@@ -56,6 +57,7 @@ def audit_generated_root(
     matched_real_overlap: list[dict[str, Any]] = []
     drawn_link_rows: list[dict[str, Any]] = []
     drawn_link_in_matched_real: list[dict[str, Any]] = []
+    drawn_link_malformed: list[dict[str, Any]] = []
     reference_viewpoint_overlap: list[dict[str, Any]] = []
     writer_rejections = Counter()
     perspective_counts: Counter[str] = Counter()
@@ -207,6 +209,8 @@ def audit_generated_root(
                     drawn_link_rows.append(row_out)
                     if any(url in real for real in real_comments):
                         drawn_link_in_matched_real.append(row_out)
+                for raw in _malformed_urls(text):
+                    drawn_link_malformed.append({**location, "url": raw[:160]})
                 reference_copied = _closest_overlap(text, reference_viewpoint_index)
                 if reference_copied is not None:
                     reference_viewpoint_overlap.append({**location, **reference_copied})
@@ -325,6 +329,7 @@ def audit_generated_root(
         "drawn_link_distinct": len({row["url"] for row in drawn_link_rows}),
         "drawn_link_repeated_in_thread": _link_repeats_within_thread(drawn_link_rows),
         "drawn_link_in_matched_real": len(drawn_link_in_matched_real),
+        "drawn_link_malformed": len(drawn_link_malformed),
         "reference_viewpoint_copy_risks": len(reference_viewpoint_overlap),
         "exact_duplicate_groups": len(duplicate_comments),
         "writer_rejection_reasons": dict(writer_rejections),
@@ -334,6 +339,7 @@ def audit_generated_root(
         "matched_real_copy_examples": matched_real_overlap[:20],
         "drawn_link_examples": drawn_link_rows[:20],
         "drawn_link_in_matched_real_examples": drawn_link_in_matched_real[:20],
+        "drawn_link_malformed_examples": drawn_link_malformed[:20],
         "reference_viewpoint_copy_examples": reference_viewpoint_overlap[:20],
         "duplicate_examples": duplicate_comments[:20],
         "incomplete_coverage_examples": incomplete_coverage_examples,
@@ -476,11 +482,32 @@ def _closest_overlap(
     }
 
 
-_URL_RE = re.compile(r"https?://\S+|\bwww\.\S+", re.I)
+# The greedy form is kept only to detect the defect it used to cause: Reddit
+# renders a bare link as `[url](url)`, `\S+` runs through `](` into the second
+# copy, and the v113 gate wrote 6 of 23 links as `url](url`. `extract_urls` is
+# the clean reader; `_MALFORMED_RE` is what says the output text is wrong.
+_GREEDY_URL_RE = re.compile(r"https?://\S+|\bwww\.\S+", re.I)
+_MALFORMED_RE = re.compile(r"(?:\]\(|\)\*|\\)", re.I)
+_SCHEME_RE = re.compile(r"https?://", re.I)
 
 
 def _urls(text: str) -> list[str]:
-    return [match.rstrip(").,;\"'") for match in _URL_RE.findall(str(text or ""))]
+    return extract_urls(text)
+
+
+def _malformed_urls(text: str) -> list[str]:
+    """Return raw link spans that carry markdown syntax or an escape."""
+
+    out = []
+    for match in _GREEDY_URL_RE.findall(str(text or "")):
+        # Count the literal scheme, not the substring: a legitimate proxy URL
+        # carries its target percent-encoded (`https%3A%2F%2F`), and counting
+        # "http" flagged one real inventory entry as malformed.
+        if _MALFORMED_RE.search(match) or _SCHEME_RE.findall(match).__len__() > 1:
+            out.append(match)
+        elif match.endswith((")", "]", "*")):
+            out.append(match)
+    return out
 
 
 def _link_repeats_within_thread(rows: list[dict[str, Any]]) -> int:

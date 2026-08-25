@@ -50,7 +50,28 @@ MEDIA_HOSTS = (
     "i.imgur.com",
     "imgur.com",
 )
-URL_RE = re.compile(r"https?://\S+|\bwww\.\S+", re.I)
+# `\S+` was wrong and the v113 gate proved it: Reddit renders a bare link as
+# `[url](url)` with `_` escaped to `\_`, and `\S+` runs straight through `](`
+# into the second copy. 166 of 690 inventory entries (23.8%) were malformed that
+# way, and 6 of the 23 links the gate wrote came out as `url](url` -- visible
+# garbage in the output, not an invented URL. Stop at every bracket, paren,
+# quote and backslash, and unescape Reddit's markdown escapes first.
+_MD_ESCAPE_RE = re.compile(r"\\(?=[_*~\[\]()])")
+URL_RE = re.compile(
+    r"https?://[^\s<>\[\]()\"'\\]+|\bwww\.[^\s<>\[\]()\"'\\]+", re.I
+)
+_TRAILING = ".,;:!?*\u2019\"'"
+
+
+def extract_urls(text: str) -> list[str]:
+    """Pull clean URLs out of Reddit markdown, in order, with duplicates kept."""
+
+    cleaned = _MD_ESCAPE_RE.sub("", str(text or ""))
+    return [
+        found
+        for match in URL_RE.finditer(cleaned)
+        if (found := match.group(0).rstrip(_TRAILING))
+    ]
 # Measured on the excluded corpus: median 60 characters, p75 99, p90 153, max
 # 641. The cap keeps 97% of mentions and drops only the pathological tail, which
 # would dominate a short slot's token count and inflate its own neighbours'
@@ -96,11 +117,7 @@ def build_reference_link_inventory(
             if not body.strip():
                 continue
             comment_count += 1
-            found = [
-                url.rstrip(").,;\"'")
-                for url in URL_RE.findall(body)
-                if not is_media_url(url)
-            ]
+            found = [url for url in extract_urls(body) if not is_media_url(url)]
             found = [url for url in found if 8 <= len(url) <= MAX_URL_CHARS]
             if found:
                 carrying += 1
@@ -171,5 +188,6 @@ def reference_link_offer(url: str) -> str:
     return (
         "This slot's real counterpart carried a link. Include this exact URL once, "
         f"inline, the way a commenter drops a source mid-sentence: {link} "
-        "Do not describe it, do not add a title for it, and do not write any other URL."
+        "Write it as a bare URL. Do not wrap it in markdown link syntax, do not "
+        "describe it, do not add a title for it, and do not write any other URL."
     )

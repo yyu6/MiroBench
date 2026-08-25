@@ -16,10 +16,14 @@ HISTORICAL_REVISION_POLICY_VERSIONS = {
     "generalized-card-revision-v6-dynamic-coverage-history-20260807",
 }
 GENERALIZED_V2_GENERATION_POLICY_VERSION = (
-    "generalized-card-v2-drawn-reference-link-v113-20260825"
+    "generalized-card-v2-drawn-reference-link-v114-20260826"
 )
 HISTORICAL_GENERATION_POLICY_VERSIONS = {
     "generalized-v2": {
+        # v113 shipped the drawn link with a `\S+` URL reader that swallowed
+        # Reddit's `[url](url)` markdown. Its N=10 gate is a paid artifact, so
+        # the string is burned; v114 carries the corrected reader.
+        "generalized-card-v2-drawn-reference-link-v113-20260825",
         "generalized-card-v2-development-scope-v112-20260825",
         # v111 shipped the `--development-scope` arm with only three of the four
         # capacity gates wired to it; the Planner's prose rule kept a hard-coded
@@ -289,7 +293,7 @@ CORE_FILES = {
     ),
     "reference_link": (
         "generalized_card/generalized_card/reference_link.py",
-        "94f670603c53add080157d6c5423b5a4e9ae178341124a3bc2e877756fc54d07",
+        "25e92abb81e2fcda4828e7b78c99b4528f437881f9b6125812fd3687d29fde7f",
     ),
     "entity_spread": (
         "generalized_card/generalized_card/entity_spread.py",
@@ -485,7 +489,7 @@ CORE_FILES = {
     ),
     "output_audit": (
         "generalized_card/generalized_card/audit.py",
-        "b4b1fe2921f40fbac179b22e6a2e65462e6856ca595b9f6f6b8119bb627f00fa",
+        "244f60adc063e16eec308edbb7fc296c315cef28a9a9396118caa39ac8c2862c",
     ),
     "evaluation_runner": (
         "generalized_card/scripts/run_evaluate.py",
