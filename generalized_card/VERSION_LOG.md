@@ -495,6 +495,97 @@ priced against those targets, including v111's 8–26%, has to be re-priced.
 
 **Not run yet.**
 
+## v115 — invert the tone quota, because the assignment was never the problem (2026-08-26)
+
+Policy ID: `generalized-card-v2-inverted-tone-quota-v115-20260826`. Arm
+`--tone-quota {off,inverted}`, default `off`, which reproduces every release
+through v114 exactly and is asserted by test.
+
+### Why the previous framing was wrong
+
+Every release since v99 treated the tone failure as a **realization** defect and
+attacked it with Writer-side cues. The Planner assigns `polite` to 27.3% of slots
+against real's 26.0% and `impolite` to 49.3% against 46.4% — the assignment was
+right all along. Six realization hypotheses are now dead:
+
+| hypothesis | how it died |
+|---|---|
+| more register cues | 81.6% of polite slots already receive one; lifts 2.1-6.8x |
+| the omitted conjunction | prevalence is 0.93x real; every bucket converts at 0.57-0.88x |
+| hedging | generated hedges *less* (0.186 vs 0.206); stripping all of it buys 0.87% |
+| length repair (v112) | occupancy explains **0%** of the polite gap, conversion ~100% |
+| the bare-assertion frame | contrast costs 6.5x and condition 12x, in 5% of sentences: 9% |
+| the polite lexicon | generated carries real's top-45 polite tokens at **1.14x** real |
+
+The last one closes the lexical route for good. Fitted by log-odds on real
+sentences and applied to both sides, the generator **over-produces** the very
+vocabulary that buys the label, and conditioned on the same move word it converts
+at 0.26-0.45x. There is no surface feature left to name.
+
+Two structural facts survive. Polite is a **per-sentence lottery**: observed
+P(>=1 polite sentence) tracks `1-(1-r)^k` at ratio 0.85-1.05 on both sides in
+every length band, sentences per comment already match (3.84 vs 3.22), and the
+entire defect is the per-sentence rate `r` — flat at ~0.10 in real at every length
+and position, collapsing to 0.020-0.037 above 30 words in generated. And the
+Writer's failure is **consistent**, which makes it a transfer matrix.
+
+### The arm
+
+`C[i][j] = P(realize j | assign i)`, measured over 1,059 slots pooled across
+`v110_length_transfer_n10_20260824_v1` and `v113_v112_gate_n10_20260826_v1`:
+
+| assigned \ realized | polite | somewhat | neutral | impolite | n |
+|---|---:|---:|---:|---:|---:|
+| polite | 0.3841 | 0.1938 | 0.0900 | 0.3322 | 289 |
+| somewhat_polite | 0.0761 | 0.4130 | 0.0978 | 0.4130 | 92 |
+| neutral | 0.0897 | 0.0962 | 0.4103 | 0.4038 | 156 |
+| impolite | 0.0096 | 0.0307 | 0.1054 | **0.8544** | 522 |
+
+`det(C^T)=0.0387`, `cond=5.2`. The quota rendered to the Planner becomes the
+solution of `C^T a = template` instead of `template` itself. Nothing about the
+Writer changes. This is the inverse calibration `length_calibration` already
+performs for word counts, and it lands in `generation_distribution.
+template_tone_rates` — one function, reaching both the rendered quota and the
+`planner_distribution` slot schedule, so the Planner never gets two disagreeing
+signals.
+
+### Why the polite share is capped at 0.35
+
+C is measured at today's mix, so the Lucas critique applies: is it stable across
+the slot types a new assignment would reach? Measured — it is stable across
+`comment_function`, `payload_type`, `evidence_mode` and `speaker_role`
+(0.310-0.474 around a 0.384 base) and **not** across `stance`. 261 of the 289
+polite assignments sit on `agree` slots and realize at 0.402; the 17 on
+`uncertain` realize at **0.059**. `prompts.py:951` forbids polite on a disagreeing
+stance outright, and `agree` is 34.3% of slots.
+
+The cap is therefore the measured `agree` share, so no cell of the solution is an
+extrapolation. It costs less than it looks, because the dominant move is not more
+polite — it is `impolite` assignment shifting to `neutral`, and those two rows are
+observed at n=522 and n=156.
+
+| polite cap | assignment (pol/som/neu/imp) | projected realized (pol/neu/imp) | L2 gap closed |
+|---|---|---|---:|
+| today | .273/.087/.147/.493 | .129 / .145 / **.607** | 0% |
+| 0.30 | .300/.142/.340/.218 | .159 / .203 / .482 | 39% |
+| **0.35 (shipped)** | .350/.109/.320/.220 | **.174 / .197 / .479** | **48%** |
+| 0.40 | .400/.076/.301/.223 | .189 / .190 / .477 | 57% |
+| uncapped | .590/.000/.189/.221 | .246 / .154 / .461 | 86% |
+| real target | — | .260 / .159 / **.464** | |
+
+`impolite_rate` is the smallest p-value in the paper artifact and it is the metric
+this repairs. `neutral_rate` is spent to buy it and becomes the metric to watch.
+
+### The disclosure this arm carries
+
+`REALIZATION_MATRIX` is **frozen**. Refitting it per run against that run's own
+output would be tuning, and refitting against test-set p-values is forbidden
+(`ORIENTATION.md` s4). It was fitted on runs over evaluation seeds 2-11, so those
+ten seeds are **in-sample for the calibration** at N=150 — 6.7% of the test set.
+`analysis/tone_carrier/fit_tone_matrix.py` refits it off any run tag, and a
+calibration run over profile threads removes even that. **That refit is the
+recommended step before the paper run.**
+
 ## v113 — drawn reference links, the only identified channel for `self_bertscore` (2026-08-25)
 
 Policy ID: `generalized-card-v2-drawn-reference-link-v113-20260825`. Arm
