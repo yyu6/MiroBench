@@ -11,6 +11,77 @@ four paid runs fixed a real code defect and moved no metric. The old P0–P6 ite
 are all still listed, at the bottom, marked kept / struck / demoted, so nothing is
 silently dropped.
 
+## Priority, re-derived under the standard now in force — 2026-08-25
+
+The user selected **Holm-Bonferroni** as the reporting standard on 2026-08-25
+(J2, G51). Under it, `analysis/holm_state.py` gives the state and the ranking:
+
+- **N=10 (v110) is 12/12 PASS under Holm**, 9/12 raw. This is a *gate* reading.
+  N=10 p-values are optimistic by construction and **N=150 has never been run on
+  any version**. Do not quote 12/12 as a result.
+- **At N=150 the same generator fails four metrics**, and the order is not the
+  one the last three sessions worked to:
+
+  | metric | P(pass) @N=150 | rel. bias | closure needed |
+  |---|---:|---:|---:|
+  | `polite_rate` | **0.00** | −51.5% | ~75% |
+  | `impolite_rate` | **0.01** | +39.9% | ~75% |
+  | `self_bleu_4` | 0.16 | +18.8% | ~50% |
+  | `self_bertscore_mean_f1` | 0.19 | +2.6% | ~50% |
+
+  The other six non-structural metrics sit at 0.81–1.00 and need no work.
+
+### 1. Run N=150 — the paper's scale, never run, ~$42 / ~11h resumable
+
+Every priority claim above, and every one in G42/G51/G52, is a **projection**
+from a 10-thread bias estimate, and the N=10 window is not a miniature of the
+pool: mean 53.2 comments per thread against the pool's 39.8, and **1 of 10 big
+threads against 16 of 150**, which carry 46% of all comments. Both failing
+pairwise metrics are thread-size sensitive and `polite_rate`'s deficit is
+localised to 25+ word comments, so the N=150 bias could differ in either
+direction. The reporting standard was the stated blocker on N=150 and it is now
+decided. Config: v110's arm list with `--length-transfer v97` (G49 did not
+promote `refit`, and the headline run should not carry a rejected arm).
+
+### 2. The politeness pair — the binding constraint, and still no instrument
+
+G25 gives the headroom: the plan is right, the whole failure is realization, and
+full realization of the existing plan lands `polite_rate` on real. What is
+missing is the instrument. Measured this session on the evaluation's own
+checkpoint (`scratchpad/subject.py`, to be promoted per E8):
+
+- The deficit is **3.4x at the sentence level** — real 0.0817 of sentences are
+  carriers (P(polite) > 0.80), generated 0.0239. Flat, not positional and not
+  length-driven, which **rules out the length route** for this pair.
+- **Rejected:** that a carrier is defined by predicating on the thing rather than
+  narrating the speaker. `P(carrier | sentence starts with "I")` is 0.0819
+  against 0.0816 otherwise — ratio 1.00 on 3,074 real sentences.
+- **Rejected as measured, but the null is narrower than it looks:** no prompt
+  line separates planned-polite slots that realize polite from those that
+  realize impolite. A rule printed on 532/532 slots has zero variance and this
+  contrast cannot see it (see `tasks/lessons.md`).
+- **Open, running:** is the 3.4x a *prevalence* deficit (the generator never
+  writes the shape) or a *conversion* deficit (it writes it and it does not
+  land)? v104 already showed gratitude is over-produced 1.48x and converts at
+  0.256 against real's 0.672, so at least one form is conversion-limited — and
+  asking for more of a conversion-limited form is exactly what delivered 8.4%.
+
+### 3. v111 — built, offline-verified, unrun
+
+`--development-scope measured` extends the enumerated beat plan to 35 assigned
+words. G50 identifies the beat plan as the causal instrument on realized length
+(realized/assigned jumps 0.816 → 0.953 across the 100/101 boundary in all four
+comparable runs; 21.3 realized words per delivered beat). Priced at 8–26% of
+`self_bleu_4`. It targets priority **#3**, so it waits behind items 1 and 2.
+Gate command and predictions: `generalized_card/VERSION_LOG.md`, v111 entry.
+
+### 4. `self_bertscore_mean_f1` — the likeliest metric to be reported as a limit
+
+G28 shows its convergence is produced inside the Writer, downstream of every
+lever G20 permits; the largest identified lever is length composition at 14–26%
+and it needs ~50%. Decide how the paper reports it rather than opening a fifth
+mechanism against it.
+
 ## Priority, re-derived from the null — 2026-08-21
 
 Reading v103's **own N=10 p-values** under Holm-Bonferroni instead of raw, and
