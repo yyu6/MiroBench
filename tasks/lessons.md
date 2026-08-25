@@ -1967,3 +1967,69 @@ when a new command drops one.
 - When a mechanism is rate-drawn on a content-independent key, say so in the
   gate plan: that randomisation is the only thing that rescues a confounded run,
   and it is worth designing in for that reason alone.
+
+---
+
+## When a fit has no identifying variation, look for a discontinuity in the same code
+
+**What happened.** G48 correctly killed the length calibration: it inverts a
+regression of realized words on the asked number, and `asked` is a deterministic
+function of `real_word_count`, which also drives the layout, the beat count and
+the token ceiling — so the fit has no identifying variation and the number's true
+elasticity is ~0. The conclusion drawn was that the whole size-keyed cue family
+was suspect and that the structural cues would need a **paid** run to price.
+
+They did not. The same module that creates the collinearity also creates a sharp
+**discontinuity**: `expected_development_beats` returns 0 at `real_word_count <=
+100` and `max(3, round(w/21))` above it, so a 100-word slot and a 101-word slot
+get categorically different content cues while every other size-keyed cue passes
+through continuously. That is a regression-discontinuity design sitting inside
+four runs already paid for. It shows realized/assigned jumping 0.816 → 0.953
+across the boundary, in all four runs, and it identified the real instrument
+(the enumerated beat plan, 21.3 realized words per beat) for $0.
+
+**Why:** collinearity is a property of the *variation in the data*, not of the
+mechanism. A deterministic rule with a threshold, a cap, a clamp, or a saturation
+point manufactures its own local experiment, and this codebase is full of them
+(`MAX_DEVELOPMENT_BEATS = 12`, `MIN/MAX_ASK_MULTIPLIER`, the `<= 100` beat gate,
+`STRUCTURE_LENGTH_BOUNDS`, the 32-word length floor cap).
+
+**How to apply.**
+- When a regression is rejected for having no identifying variation, do not
+  conclude the channel is untestable. Read the code for a **threshold or a cap**
+  on the same variable, and check for a jump there before proposing a paid run.
+- Prefer a discontinuity to a fit whenever one exists: it needs no new data and
+  it is causal where the fit is not.
+- Check what else jumps at the same cutoff before claiming attribution. Here
+  `length_bucket` also flips at 100, and it took reading its consumers (both gate
+  at <=20 or >=25 words) plus a diff of two saved prompts to show it is inert.
+
+## Check the citation on the number that is killing your options
+
+**What happened.** G42 fixed the project's acceptance bar at "~90% gap closure at
+N=150" on the stated premise that "the user's target is not `p > 0.05` but
+`p ~ 0.5-0.6`". That premise has **no source**: a repository-wide search finds no
+user statement of a 0.5–0.6 target, and the only user-quoted criterion is
+`ORIENTATION.md` §1's verbatim `p value 大于 0.05`. The likely origin is §2's own
+trap 5, where 0.50 is the *joint* rate at which a perfect generator passes all 24
+raw tests at once — a different quantity from a per-metric p-value. The next
+handoff then escalated it to "(the user's stated standard)". Meanwhile J2, a
+VERIFIED rule in the same file, recommends reporting under Holm–Bonferroni, which
+moves the same bar to ~50–75%. G42's simulation was never wrong; it answered a
+question nobody had asked, and five candidates were killed against the answer.
+
+**Why:** a bar is more destructive than a finding. A wrong measurement gets
+retracted when it fails to replicate; a wrong *bar* silently removes options and
+leaves no failure to notice.
+
+**How to apply.**
+- Any number that functions as a go/no-go threshold gets its provenance checked
+  before it is used to reject anything — grep for the user's own words, not for
+  the number.
+- Distinguish a **joint** rate over a family of tests from a **per-test**
+  p-value. They differ by more than an order of magnitude here.
+- Before pricing a mechanism against a bar, check whether another VERIFIED rule
+  in the same register already changes that bar. J2 and G42 sat eight rows apart
+  and contradicted each other for a session.
+- Quote a rejected candidate's price *and* the bar it was rejected against, so a
+  later change to the bar reopens the right candidates automatically.

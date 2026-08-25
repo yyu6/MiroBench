@@ -9,7 +9,8 @@ It is deliberately high-level and it is deliberately short. Every section ends
 with a pointer to the file that holds the evidence. **This file states
 conclusions; the linked files hold the measurements.**
 
-Last verified: **2026-08-24** (v109's seed-8 gate, `docs/DECISIONS.md` G36–G41).
+Last verified: **2026-08-25** (v110's N=10 gate and the length-instrument
+discontinuity, `docs/DECISIONS.md` G48–G51).
 See §9 for what "verified" means here and what was actually checked
 to write this line.
 
@@ -206,6 +207,29 @@ higher) and the **Wasserstein distance**.
    still the user's; what is no longer open is that the current standard is
    mis-specified. `acceptance_standard.py` produces these three rows for any
    domain from that domain's own thread tables.
+
+   **This choice now decides what is worth building, and that is new (G51).**
+   `docs/DECISIONS.md` G42 set the bar at "~90% gap closure at N=150" and used it
+   to retire the whole 5–10% mechanism class. Its arithmetic is sound but its
+   premise — "the user's target is `p ≈ 0.5–0.6`" — is **uncited**; no such user
+   statement exists anywhere in this repository, and the only user-quoted
+   criterion is §1's verbatim `p value 大于 0.05`. Under the shipped raw rule the
+   bar really is ~90%; under **J2's own recommendation** it is roughly half that.
+   P(metric passes) at N=150, Holm computed with the conservative Bonferroni
+   bound so these are lower bounds (`analysis/closure_requirement.py`):
+
+   | closure | `self_bleu_4` raw / Holm | `self_bertscore` raw / Holm |
+   |---|---|---|
+   | 0% (today) | 0.03 / 0.23 | 0.01 / 0.08 |
+   | 25% | 0.17 / 0.55 | 0.07 / 0.40 |
+   | **50%** | 0.38 / **0.82** | 0.35 / **0.78** |
+   | **75%** | 0.78 / **0.97** | 0.77 / **0.97** |
+   | 90% | 0.92 / 0.99 | 0.90 / 0.99 |
+   | perfect generator | 0.94 / 1.00 | 0.94 / 1.00 |
+
+   So: **retiring the 5–10% class is right either way; retiring the 20–30% class
+   is only right under the raw rule.** Decide the standard before pricing the
+   next mechanism.
 
 ### What passing does not mean
 
@@ -871,7 +895,33 @@ default `off`, on the same independent criterion-2 standing as
 different depth bin than those two, stacking all three in one gate is an
 untested, plausible next step, not decided here.
 
-### Next step
+### Next step — 2026-08-25
+
+Two things are decided and one is the user's.
+
+1. **Decided: the length instrument is the enumerated beat plan** (G50), not the
+   asked number (G48) and not, on present evidence, a retry. The Writer realizes
+   **21.3 words per delivered beat** against the module's own design constant of
+   21.0, and realized length jumps 0.816 → 0.953 of assignment across the
+   `real_word_count = 100/101` boundary where the enumerated plan switches on —
+   replicated in all four comparable N=10 runs. `expected_development_beats`
+   returns 0 below 101 words and caps at 12 beats (a 252-word budget) above, so
+   the cue is switched off in exactly the two bands that carry **88%** of the
+   word deficit. This is a real, causally identified instrument.
+2. **Decided: it is worth ~8–26% of `self_bleu_4`, not more** (G50). That is
+   above the 5–10% class G42 retires and below the "one structural lever" G42
+   hopes for. Whether it is worth building depends entirely on item 3.
+3. **The user's, and now blocking: the reporting standard** (G51, §2 trap 5).
+   Under the shipped raw rule the bar is ~90% closure and this mechanism is not
+   worth building alone. Under J2 — this project's own VERIFIED recommendation —
+   the bar is ~50–75%, and a stack of length (8–26%) + links (8.8%) + markdown
+   emphasis (3.6%) + entity variety (≤9.4%) is a credible route to it on
+   `self_bleu_4`. `self_bertscore_mean_f1` has no such route: G28 shows its
+   convergence is produced inside the Writer, downstream of every permitted
+   lever, and length composition is worth only 14–26% of it.
+
+The older reading below is kept because its evidence stands; only its
+"engineering work is largely exhausted" conclusion is superseded.
 
 With all 12 metrics now either closed as a research-design limit
 (`self_bertscore_mean_f1`, `polite_rate`, `impolite_rate` — G8/G22) or
