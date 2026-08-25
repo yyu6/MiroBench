@@ -295,9 +295,84 @@ added later**. Decide before starting: either gate v111 on seed 8 first ($1.2,
 `--development-scope measured` if clean, or start without it and accept
 `self_bleu_4` staying at its current bias for this lineage.
 
-### Result
+### Result — attempt 1 stopped at seed 43 of 50 (2026-08-25)
 
-**Not run yet.**
+Tag `generalized_card_camera_gpt54_paper_20260825_v1`. **43 of 50 posts, 1,799
+comments, $12.60, 192 min.** The generator raised, and `run_evaluate.py` then
+refused to stage. Both messages are one cause.
+
+```
+RuntimeError: Writer did not realize every matched structural slot;
+  incomplete post was not persisted: generated=27/28 failed_task_ids=[17]
+  (run=08 post_slot=03 seed=43, '1mn5gv5', 28 comments)
+RuntimeError: Recoverable post generation failed after configured retries: attempts=1
+RuntimeError: ... the staged cohort is incomplete or non-canonical: .../cleaned
+```
+
+**The chain, top to bottom.** `writer_distribution_control.jsonl` holds exactly
+**one** `rejected_hard_recovery_exhausted` row in 1,827 slots — local task 17,
+six attempts, 129-176 words each, every one carrying the same two problems:
+
+| problem | class | blocks persistence |
+|---|---|---|
+| `planner_skeleton_residue` | `HARD_REALIZATION_PROBLEMS` | **yes** |
+| `semantic_overlap_high:...` | distribution marker prefix | no (`is_single_stage_diagnostic`) |
+
+So the blocking problem is the residue guard alone, 6/6. `--writer-hard-recovery-rounds 2`
+exhausted, the comment could not be persisted, and `_finalize_post_generation`
+then rejected the **whole post** because coverage was 27/28 — which is
+ORIENTATION section 4 working as specified ("every matched structural slot is
+preserved"). `--post-retry-limit` defaults to **1**, documented as "disables
+automatic whole-post regeneration", so there was no second whole-post draw and
+the run died. Evaluation compares `_count_discussion_posts(cleaned)` against
+`max_posts=50`, got 43, and refused. **The evaluation error is downstream only;
+nothing is wrong with the evaluator.**
+
+**Why the guard fired.** The 169-word candidate cannot reach any branch of the
+baseline `contains_planner_skeleton_residue` -- all three of its branches cap at
+`<= 8` words or require a whole-text match. The firing branch is therefore the
+CARD override `_planner_residue_check`, which flags any
+`INTERNAL_CONTROL_ID_RE` = `(?<![A-Za-z0-9])(?:P\d{2}|S\d+|B\d+)(?![A-Za-z0-9])`
+token that is a profile perspective id or starts with S/B and is not whitelisted
+by a `(seed)`-suffixed anchor. In the camera domain that pattern also matches real
+model names -- `S5`, `S1`, `S3`, `B700`. The slot's neighbours are body-comparison
+comments (a7 III / a7 IV, 5D, first-gen R/Z), so a model name is the likely token.
+**Scanning all 1,799 accepted comments finds zero tokens of that shape**, so the
+guard's trip rate is 1 in 1,816 slots -- rare, not systematic.
+
+**Why six identical failures and not one.** E4. The repair note for this problem
+family says "Do not output control labels, placeholder text, fake resource names"
+and "write an actual Reddit comment with no ... planner text" -- it names the
+**category**, never the offending token, and the failed candidate it echoes back
+is truncated to 260 characters (~45 words of a 169-word body). E4's measured
+compliance for a category-named instruction is 0.23; for a named token it is ~1.0.
+The Writer was never told which string to drop, so it wrote it again, six times.
+
+**Recovery: plain `--resume`, same command, nothing else.** Raising
+`--post-retry-limit` is **not available** on this lineage: `post_recovery` and
+`command` are both in `_verify_resume_config`'s immutable set, and the one path
+that exempts the retry controls (`_policy_neutral_command`, used only by
+`_verify_policy_upgrade`) is gated behind `policy_upgrade`, which is False unless
+`generator_policy_version` actually changes. Bumping the retry limit therefore
+requires editing generator code and splitting the lineage at seed 43 -- a real
+scientific cost on a paper run, paid to buy a retry.
+
+Plain resume is clean and cheap: runs 00-07 are 5/5 complete and skip, run_08
+keeps slots 0-2, and only seeds 43-49 regenerate -- **175 comments, ~$1.2,
+~19 min** at this run's measured $0.0070/comment and 6.4 s/comment. Seed 43 is the
+*first* post attempted, so a deterministic trap is visible in ~4 minutes rather
+than after another 3 hours. The Planner is re-drawn along with the Writer, so
+slot 17 gets a fresh plan and fresh anchors, not a replay.
+
+Identity checks that make the resume legal: `run_config.json` records commit
+`4dcea95` with `uncommitted: []`, the generator tree is still clean at `4dcea95`,
+and `generator_policy_version` is unchanged -- so `_verify_resume_config` passes
+on every immutable field.
+
+**If seed 43 fails a second time**, the trap is deterministic and the honest fix
+is E4 applied to the residue repair note (name the matched token in the retry
+instruction) rather than more retries -- but that is a code change, so it belongs
+to a new tag, not to this lineage.
 
 ## N=150 — the paper's scale, never run on any version (planned 2026-08-25)
 
