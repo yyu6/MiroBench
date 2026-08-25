@@ -195,7 +195,7 @@ CORE_FILES = {
     ),
     "generator_adapter": (
         "generalized_card/generalized_card/backend.py",
-        "9ff04bf1c66f804851cb59c240a33cdd2323f2e5b745c08cb646a5a1c702e576",
+        "f42351176f47bf6532b1c3c093776ed5ddbba5988acb0d2f31f24afc64ff8725",
     ),
     "data_boundary": (
         "generalized_card/generalized_card/data.py",
@@ -229,7 +229,7 @@ CORE_FILES = {
     ),
     "generation_runner": (
         "generalized_card/scripts/run_generate.py",
-        "35843313ceb609879f6ba0f50442e1284c260fbaa075292d9598f9b7694cebaa",
+        "4fc5ae9d0977c131ab781b82e10f093bd30a8cdc7173dc16456745c36f46dcf2",
     ),
     "generation_backend_runner": (
         "generalized_card/scripts/run_generator_backend.py",
@@ -265,7 +265,7 @@ CORE_FILES = {
     ),
     "generation_distribution": (
         "generalized_card/generalized_card/generation_distribution.py",
-        "0c8a842b5a4037f74b7170e8b5a59ff78ddce981bb1d7c226c7714bd887824a5",
+        "32a781b9236420d8fcb6683ac45c468e72127c600e6c96dacbfa21c5ab670ab7",
     ),
     "planner_distribution": (
         "generalized_card/generalized_card/planner_distribution.py",
@@ -297,7 +297,7 @@ CORE_FILES = {
     ),
     "tone_realization": (
         "generalized_card/generalized_card/tone_realization.py",
-        "PLACEHOLDER",
+        "9992076312c3ebe890bed6204ef25e14437c306e02697c5b077b7f1216be1609",
     ),
     "reference_link": (
         "generalized_card/generalized_card/reference_link.py",

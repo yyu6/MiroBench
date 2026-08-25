@@ -490,14 +490,17 @@ def build_parser() -> argparse.ArgumentParser:
     )
     parser.add_argument(
         "--tone-quota",
-        choices=("off", "inverted"),
+        choices=("off", "inverted", "calibrate"),
         default="off",
         help=(
             "Render the Planner's tone quota as the assignment whose REALIZED mix "
             "matches the reference template, by inverting the measured realization "
             "matrix. 'off' reproduces every release through v114, where the quota "
             "was the template's own rates and the Writer's 0.854 impolite / 0.384 "
-            "polite realization pushed the output to 0.607 impolite against 0.464."
+            "polite realization pushed the output to 0.607 impolite against 0.464. "
+            "'calibrate' renders a flat quota and is a MEASUREMENT value only: it "
+            "populates the (stance, assigned tone) cells the polite cap exists "
+            "because nobody has measured. Never use it for a candidate artifact."
         ),
     )
     parser.add_argument(

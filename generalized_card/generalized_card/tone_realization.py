@@ -91,21 +91,41 @@ _GRID_STEP = 0.005
 
 # `off` reproduces every version through v114, where the quota rendered to the
 # Planner was the template's own rates.
+#
+# `calibrate` is a MEASUREMENT value, never a paper artifact. It renders a flat
+# quota so the Planner spreads every tone class across every stance, which is the
+# only way to populate the cells `POLITE_ASSIGNMENT_CAP` exists because nobody has
+# measured: today 261 of 289 polite assignments sit on `agree` slots, so
+# P(realize polite | assign polite, stance != agree) rests on n=17. A calibration
+# run over threads outside the evaluation pool fills those cells, and the cap can
+# then rise on evidence instead of staying pinned at the `agree` share.
+#
+# It is recorded in `run_config.json` and in `RUN_EXPERIMENT_FIELDS`, so a
+# calibration artifact can never be mistaken for a candidate.
 TONE_QUOTA_MODE = "off"
+
+# The flat quota `calibrate` renders. Deliberately uniform rather than fitted:
+# the point is coverage of the (stance, assigned tone) grid, not realism.
+CALIBRATION_RATES: dict[str, float] = {label: 0.25 for label in TONE_ORDER}
 
 _CACHE: dict[tuple[tuple[float, ...], float], dict[str, float]] = {}
 
 
 def set_tone_quota_mode(mode: str | None) -> bool:
-    """Select the tone-quota arm and return whether the inversion is active."""
+    """Select the tone-quota arm and return whether it changes the rendered quota."""
 
     global TONE_QUOTA_MODE
-    TONE_QUOTA_MODE = "inverted" if str(mode or "off").strip().lower() == "inverted" else "off"
-    return TONE_QUOTA_MODE == "inverted"
+    value = str(mode or "off").strip().lower()
+    TONE_QUOTA_MODE = value if value in ("inverted", "calibrate") else "off"
+    return TONE_QUOTA_MODE != "off"
 
 
 def tone_quota_inverted() -> bool:
     return TONE_QUOTA_MODE == "inverted"
+
+
+def tone_quota_calibrating() -> bool:
+    return TONE_QUOTA_MODE == "calibrate"
 
 
 def _simplex_grid(step: float, cap: float) -> list[tuple[float, ...]]:
@@ -146,6 +166,8 @@ def invert_tone_rates(
     is the reason `somewhat_polite` is excluded from the reported metrics.
     """
 
+    if tone_quota_calibrating():
+        return dict(CALIBRATION_RATES)
     if not rates or not tone_quota_inverted():
         return dict(rates or {})
     if any(label not in rates for label in TONE_ORDER):
@@ -178,6 +200,16 @@ def realization_report(rates: dict[str, float] | None) -> dict[str, Any]:
     template = {
         label: round(float((rates or {}).get(label) or 0.0), 6) for label in TONE_ORDER
     }
+    if tone_quota_calibrating():
+        return {
+            "mode": TONE_QUOTA_MODE,
+            "template_rates": template,
+            "assignment_rates": dict(CALIBRATION_RATES),
+            "purpose": (
+                "measurement only: populates the (stance, assigned tone) grid so "
+                "POLITE_ASSIGNMENT_CAP can be set on evidence. Not a candidate artifact."
+            ),
+        }
     if not tone_quota_inverted():
         return {"mode": TONE_QUOTA_MODE, "template_rates": template}
     solved = invert_tone_rates(rates)

@@ -1104,6 +1104,54 @@ class GeneralizedCardTest(unittest.TestCase):
         finally:
             set_development_scope("long_only")
 
+    def test_tone_quota_calibrate_renders_a_flat_grid_covering_quota(self) -> None:
+        """The measurement value: flat, template-independent, and clearly marked."""
+
+        from generalized_card.generation_distribution import template_tone_rates
+        from generalized_card.tone_realization import (
+            CALIBRATION_RATES,
+            realization_report,
+            set_tone_quota_mode,
+        )
+
+        skewed = {
+            "polite_rate": 0.05,
+            "impolite_rate": 0.80,
+            "neutral_rate": 0.10,
+            "somewhat_polite_rate": 0.05,
+        }
+        try:
+            set_tone_quota_mode("calibrate")
+            rendered = template_tone_rates(skewed)
+            report = realization_report(rendered)
+        finally:
+            set_tone_quota_mode("off")
+        self.assertEqual(rendered, CALIBRATION_RATES)
+        self.assertEqual(set(rendered), {"polite", "somewhat_polite", "neutral", "impolite"})
+        self.assertTrue(all(abs(v - 0.25) < 1e-9 for v in rendered.values()))
+        self.assertEqual(report["mode"], "calibrate")
+        self.assertIn("measurement only", report["purpose"])
+
+    def test_tone_quota_unknown_value_falls_back_to_off(self) -> None:
+        from generalized_card.generation_distribution import (
+            template_tone_rates,
+            template_tone_rates_raw,
+        )
+        from generalized_card.tone_realization import set_tone_quota_mode
+
+        template = {
+            "polite_rate": 0.26,
+            "impolite_rate": 0.46,
+            "neutral_rate": 0.16,
+            "somewhat_polite_rate": 0.12,
+        }
+        for value in ("", None, "INVERT", "yes", "measured"):
+            self.assertFalse(set_tone_quota_mode(value), value)
+            self.assertEqual(
+                template_tone_rates(template), template_tone_rates_raw(template), value
+            )
+        set_tone_quota_mode("off")
+
     def test_tone_quota_off_is_byte_identical_to_the_template_rates(self) -> None:
         """E1: the legacy value must reproduce every release through v114."""
 
