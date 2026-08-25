@@ -16,10 +16,14 @@ HISTORICAL_REVISION_POLICY_VERSIONS = {
     "generalized-card-revision-v6-dynamic-coverage-history-20260807",
 }
 GENERALIZED_V2_GENERATION_POLICY_VERSION = (
-    "generalized-card-v2-drawn-reference-link-v114-20260826"
+    "generalized-card-v2-inverted-tone-quota-v115-20260826"
 )
 HISTORICAL_GENERATION_POLICY_VERSIONS = {
     "generalized-v2": {
+        # v114 corrected v113's URL reader but never ran; the tone quota it
+        # rendered was still the template's own rates, so the Writer's 0.854
+        # impolite realization carried the output to 0.607 against real's 0.464.
+        "generalized-card-v2-drawn-reference-link-v114-20260826",
         # v113 shipped the drawn link with a `\S+` URL reader that swallowed
         # Reddit's `[url](url)` markdown. Its N=10 gate is a paid artifact, so
         # the string is burned; v114 carries the corrected reader.
@@ -290,6 +294,10 @@ CORE_FILES = {
     "entity_inventory": (
         "generalized_card/generalized_card/entity_inventory.py",
         "0157a4d67d2b21123848996818a2d9b76a46cbe09af13017905c617be9e50cff",
+    ),
+    "tone_realization": (
+        "generalized_card/generalized_card/tone_realization.py",
+        "PLACEHOLDER",
     ),
     "reference_link": (
         "generalized_card/generalized_card/reference_link.py",
@@ -635,6 +643,7 @@ GENERATION_ADAPTER_CORE_NAMES = (
     "entity_inventory",
     "entity_spread",
     "reference_link",
+    "tone_realization",
     "length_fidelity",
     "domain_prompt_adapter",
     "writer_grounding",

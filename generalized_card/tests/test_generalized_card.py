@@ -1104,6 +1104,130 @@ class GeneralizedCardTest(unittest.TestCase):
         finally:
             set_development_scope("long_only")
 
+    def test_tone_quota_off_is_byte_identical_to_the_template_rates(self) -> None:
+        """E1: the legacy value must reproduce every release through v114."""
+
+        from generalized_card.generation_distribution import (
+            template_tone_rates,
+            template_tone_rates_raw,
+        )
+        from generalized_card.tone_realization import set_tone_quota_mode
+
+        template = {
+            "polite_rate": 0.2595,
+            "impolite_rate": 0.4640,
+            "neutral_rate": 0.1591,
+            "somewhat_polite_rate": 0.1174,
+        }
+        try:
+            set_tone_quota_mode("off")
+            self.assertEqual(
+                template_tone_rates(template), template_tone_rates_raw(template)
+            )
+        finally:
+            set_tone_quota_mode("off")
+
+    def test_tone_quota_inverted_moves_the_assignment_not_the_target(self) -> None:
+        """The rendered quota changes; the mix the metric reports against does not."""
+
+        from generalized_card.generation_distribution import (
+            template_tone_rates,
+            template_tone_rates_raw,
+        )
+        from generalized_card.tone_realization import (
+            REALIZATION_MATRIX,
+            TONE_ORDER,
+            set_tone_quota_mode,
+        )
+
+        template = {
+            "polite_rate": 0.2595,
+            "impolite_rate": 0.4640,
+            "neutral_rate": 0.1591,
+            "somewhat_polite_rate": 0.1174,
+        }
+        raw = template_tone_rates_raw(template)
+        try:
+            set_tone_quota_mode("inverted")
+            solved = template_tone_rates(template)
+        finally:
+            set_tone_quota_mode("off")
+
+        self.assertEqual(template_tone_rates_raw(template), raw)
+        self.assertNotEqual(solved, raw)
+        self.assertAlmostEqual(sum(solved.values()), 1.0, places=6)
+        # Every polite assignment must sit inside the regime C's polite row was
+        # measured in -- the `agree` stance share.  Above it the rate is unknown.
+        self.assertLessEqual(solved["polite"], 0.35 + 1e-9)
+
+        realized = {
+            out: sum(
+                solved[TONE_ORDER[i]] * REALIZATION_MATRIX[i][j]
+                for i in range(len(TONE_ORDER))
+            )
+            for j, out in enumerate(TONE_ORDER)
+        }
+        # The point of the arm: the realized impolite share moves off the
+        # generator's 0.607 and onto real's 0.464, without touching the Writer.
+        today = sum(
+            raw[TONE_ORDER[i]] * REALIZATION_MATRIX[i][3] for i in range(len(TONE_ORDER))
+        )
+        self.assertGreater(today, 0.58)
+        self.assertLess(abs(realized["impolite"] - raw["impolite"]), abs(today - raw["impolite"]))
+        self.assertGreater(realized["polite"], 
+                           sum(raw[TONE_ORDER[i]] * REALIZATION_MATRIX[i][0]
+                               for i in range(len(TONE_ORDER))))
+
+    def test_tone_quota_inversion_is_deterministic_and_a_valid_distribution(self) -> None:
+        from generalized_card.tone_realization import (
+            invert_tone_rates,
+            set_tone_quota_mode,
+        )
+        import generalized_card.tone_realization as tone_realization
+
+        target = {
+            "polite": 0.30,
+            "somewhat_polite": 0.10,
+            "neutral": 0.20,
+            "impolite": 0.40,
+        }
+        try:
+            set_tone_quota_mode("inverted")
+            first = invert_tone_rates(target)
+            tone_realization._CACHE.clear()
+            second = invert_tone_rates(target)
+        finally:
+            set_tone_quota_mode("off")
+        self.assertEqual(first, second)
+        self.assertTrue(all(value >= 0.0 for value in first.values()))
+        self.assertAlmostEqual(sum(first.values()), 1.0, places=6)
+
+    def test_tone_quota_inverted_reaches_the_planner_schedule_too(self) -> None:
+        """The rendered quota and the slot schedule must not disagree."""
+
+        from generalized_card.planner_distribution import template_distribution_targets
+        from generalized_card.tone_realization import set_tone_quota_mode
+
+        template = {
+            "polite_rate": 0.2595,
+            "impolite_rate": 0.4640,
+            "neutral_rate": 0.1591,
+            "somewhat_polite_rate": 0.1174,
+            "comment_count": 45,
+        }
+        try:
+            set_tone_quota_mode("off")
+            legacy = template_distribution_targets(template, total_comments=45)
+            set_tone_quota_mode("inverted")
+            inverted = template_distribution_targets(template, total_comments=45)
+        finally:
+            set_tone_quota_mode("off")
+        self.assertNotEqual(legacy["tone_counts"], inverted["tone_counts"])
+        self.assertLess(
+            inverted["tone_counts"]["impolite"], legacy["tone_counts"]["impolite"]
+        )
+        self.assertEqual(sum(inverted["tone_counts"].values()), 45)
+
     def test_development_scope_long_only_renders_the_v110_planner_rule(self) -> None:
         from generalized_card.long_form_planning import set_development_scope
 

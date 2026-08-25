@@ -9,6 +9,7 @@ from typing import Any
 
 from .planner_schema import parse_sample_id
 from .reference_metric_calibration import select_reference_template
+from .tone_realization import invert_tone_rates, realization_report
 
 
 STORY_MODES = (
@@ -165,6 +166,10 @@ def allocate_story_and_affect(
             for task in ordered
         },
         "tone_target_counts": dict(sorted(target_tones.items())),
+        # What the quota arm did. `template_rates` is the mix the metric reports
+        # against; `assignment_rates` is what the Planner was asked for. Recorded
+        # for the audit and never used to select anything (ORIENTATION.md s4).
+        "tone_quota": realization_report(template_tone_rates_raw(template)),
         "reference_template_used": bool(template),
         "reference_template": template or {},
         "calibration_reference_thread_count": int(
@@ -356,8 +361,8 @@ def _target_tone_counts(template: dict[str, Any] | None, total: int) -> Counter[
     return _scaled_complete_rate_counts(template_tone_rates(template), total)
 
 
-def template_tone_rates(template: dict[str, Any] | None) -> dict[str, float]:
-    """Return the template's complete four-class tone partition.
+def template_tone_rates_raw(template: dict[str, Any] | None) -> dict[str, float]:
+    """Return the template's complete four-class tone partition, uninverted.
 
     ``somewhat_polite`` is measured, not inferred, whenever the reference row
     carries it.  Older profiles without the field fall back to the residual so
@@ -377,6 +382,18 @@ def template_tone_rates(template: dict[str, Any] | None) -> dict[str, float]:
         somewhat = max(0.0, 1.0 - sum(rates.values()))
     rates["somewhat_polite"] = somewhat
     return rates
+
+
+def template_tone_rates(template: dict[str, Any] | None) -> dict[str, float]:
+    """The quota rendered to the Planner, which is an ASSIGNMENT target.
+
+    The metric reports the REALIZED mix. Under `--tone-quota inverted` the two
+    are held apart: `invert_tone_rates` returns the assignment whose realized mix
+    lands on the template's rates. It is the identity when the arm is off, so
+    every release through v114 reproduces byte for byte.
+    """
+
+    return invert_tone_rates(template_tone_rates_raw(template))
 
 
 def _scaled_complete_rate_counts(values: dict[str, float], total: int) -> Counter[str]:
