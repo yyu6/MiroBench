@@ -258,13 +258,36 @@ size-dependent through its brevity penalty and smoothing (G27) — and
 bias can differ from the N=10 bias in either direction, and G42, G51 and G52 are
 all simulations built on the N=10 estimate.
 
+### Sequence — gate v111 first, then run this once
+
+**Corrected 2026-08-25 after the user pushed back on the ordering, and they were
+right.** The original plan here was to run N=150 on the v108 arm list and gate
+v111 afterwards, which forces a choice between a headline run that is not the
+best config and paying for N=150 twice. The fix is to gate v111 **before** this
+run, for $1.2, and include it only if the gate is clean.
+
+**It is specifically not worth running N=10 to decide this**, which was the
+obvious cheap-looking alternative: `self_bleu_4` — the only metric v111 targets —
+already PASSES at N=10 under both the raw rule and Holm (MWU 0.1212, KS 0.4175),
+so an N=10 run has no headroom to show a gain and would cost $3.76 to learn
+nothing about the arm. The seed-8 gate answers the question for **$1.2** off the
+**free** assigned-vs-realized audit, with no metric read at all, on the largest
+thread in the window (186 comments, 66 of them in the arm's target band).
+
+Note that seeds 2–11 are a subset of 0–149, so this run does contain the N=10
+window — but `generated/global_memory.json` accumulates distribution counters
+**across** threads, so the same seed does not reproduce byte-for-byte between an
+N=10 and an N=150 run. Treat the overlap as a comparison, not a replication.
+
 ### Config
 
 v110's arm list with **`--length-transfer v97`**. G49 did not promote `refit`
 (the arm fired 532/532 and its own channel provably did not operate, G48), and
-the paper's headline run should not carry a rejected arm. `--development-scope`
-stays `long_only`: v111 is ungated, and §4 requires a large-thread gate before
-N=10, let alone before this.
+the paper's headline run should not carry a rejected arm. Add
+**`--development-scope measured`** if and only if v111's seed-8 gate is clean on
+its own audit *and* on the G37 guardrail (`self_bertscore_mean_f1` and
+`semantic_mean_cosine` against the same thread in v110); otherwise leave it at
+`long_only`.
 
 ```bash
 python3 -u generalized_card/scripts/run_generate.py \
