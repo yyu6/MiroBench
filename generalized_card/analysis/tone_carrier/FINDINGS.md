@@ -199,3 +199,172 @@ more register cues, the omitted conjunction, and hedging. `polite_rate` remains
 the furthest metric from passing and has no candidate. What has not been tested
 is whether length repair alone moves it — v112 is the arm that would answer it,
 and that is measurable on the same run rather than as separate work.
+
+---
+
+# The tone channel, re-derived from the ground up — 2026-08-26
+
+Runs: `v110_length_transfer_n10_20260824_v1` (arms off) and
+`v113_v112_gate_n10_20260826_v1` (v112+v113), the SAME ten seeds 2-11, plus the
+matched real threads. Confound recorded: v110 ran `length_transfer=refit` and the
+gate ran `v97`; commit 21e793c measured the refit arm firing 532/532 and moving
+nothing, so it is believed inert but is not a controlled variable.
+
+Every section below is produced by a script in this directory.
+
+## 1. The open question from s4 is answered: length is NOT the tone lever
+
+`v112_length_conversion.py` decomposes the polite gap into band occupancy and
+within-band conversion:
+
+| | actual polite | at real's length spread | at real's conversion |
+|---|---:|---:|---:|
+| real | 0.2595 | | |
+| gate | **0.1377** | 0.1386 | **0.2545** |
+
+**Occupancy explains 0%. Conversion explains ~100%.** v112 is not a tone arm and
+should not be argued as one. It did move realization of `tone_target=polite` from
+0.368 to 0.400, which is real but an order of magnitude short.
+
+The band table shows where: generated matches real exactly below 30 words and
+collapses above it.
+
+| words | real P(polite) | gate P(polite) |
+|---|---:|---:|
+| 0-14 | 0.117 | 0.124 |
+| 15-29 | 0.088 | 0.078 |
+| 30-59 | 0.271 | **0.078** |
+| 60-119 | 0.404 | **0.214** |
+| 120+ | 0.708 | **0.347** |
+
+## 2. Polite is a per-sentence lottery. Only the per-sentence rate matters
+
+`sentence_accumulation.py` scores every sentence independently. Observed
+P(>=1 polite sentence) tracks `1-(1-r)^k` at a ratio of 0.85-1.05 on **both**
+sides and in every band, so sentences are effectively independent draws and the
+comment label is the max. Sentences per comment are already matched (real 3.84,
+gate 3.22). The whole defect is `r`:
+
+| words | real r | gate r |
+|---|---:|---:|
+| 0-14 | 0.106 | 0.119 |
+| 15-29 | 0.098 | 0.063 |
+| 30-59 | 0.098 | **0.020** |
+| 60-119 | 0.092 | **0.037** |
+| 120+ | 0.134 | **0.034** |
+
+Real's `r` is flat at ~0.10 at every length and every position, and rises to
+0.262 in the last decile of a long comment. Generated's collapses. This kills the
+"add one carrier sentence" framing outright: a carrier raises `r` by `1/k`, which
+is 0.09 in a 120+ word comment.
+
+## 3. It is not the vocabulary. Two independent tests
+
+Conditioned on a sentence containing the same `register_realization` move
+(`sentence_move_conversion.py`, 30+ word comments):
+
+| move | real prev | real conv | gen prev | gen conv | ratio |
+|---|---:|---:|---:|---:|---:|
+| any_intensifier | 0.190 | 0.165 | 0.153 | 0.045 | **0.27** |
+| plain_verdict | 0.091 | 0.331 | 0.071 | 0.086 | **0.26** |
+| own_thing | 0.096 | 0.200 | 0.077 | 0.090 | 0.45 |
+| *no move at all* | — | *0.056* | — | *0.020* | *0.36* |
+
+Same word, a quarter of the conversion. And `where_the_mass_is.py` fits the
+polite-discriminative vocabulary on real sentences by log-odds and applies it to
+both sides: **summed prevalence of the top 45 tokens is 0.251 in real and 0.285
+in generated, a ratio of 1.14.** The generator already over-produces real's
+polite vocabulary. No lexical cue can work, and `register_realization` is not the
+place to look. That is now the fifth and sixth dead lexical hypothesis.
+
+## 4. The frame effect is real, large per sentence, and too rare to matter
+
+`bare_assertion_frame.py`. A retraction of my own reading: the vivid examples
+("great and still says almost nothing", "a pretty weak compromise") do describe a
+true effect, and it is not the answer.
+
+| bucket | real P(polite) | gate P(polite) | n(real) |
+|---|---:|---:|---:|
+| bare positive assertion | 0.471 | 0.361 | 70 |
+| positive + contrast | 0.203 | **0.031** | 64 |
+| positive + condition | 0.333 | **0.028** | 24 |
+| no positive word at all | 0.073 | 0.035 | **1664** |
+
+Contrast costs 6.5x and condition 12x — but those buckets are 5% of sentences.
+Giving generated real's bare-assertion prevalence at its own conversion moves
+`r` 0.0434 -> 0.0488 against real's 0.1034: **9% of the gap.** 78% of real's
+polite sentences carry no move word at all, and that bucket is where the mass is.
+
+## 5. What survives: invert the confusion matrix from the ASSIGNMENT side
+
+Every hypothesis above attacks realization. But the Writer's failure is
+*consistent*, not random, and that makes it a measurable transfer matrix
+(`assignment_inversion.py`, gate; the v110 matrix is within a few points of it,
+so C is stable across generator versions):
+
+| assigned \ realized | polite | somewhat | neutral | impolite | n |
+|---|---:|---:|---:|---:|---:|
+| polite | 0.400 | 0.186 | 0.076 | 0.338 | 145 |
+| somewhat_polite | 0.087 | 0.348 | 0.109 | 0.457 | 46 |
+| neutral | 0.103 | 0.103 | 0.436 | 0.359 | 78 |
+| impolite | 0.011 | 0.034 | 0.084 | **0.870** | 261 |
+
+`det(C^T)=0.0387`, `cond=5.2`. Solving `C^T a = target` and projecting onto the
+simplex removes **89%** of the four-way L2 gap. Nothing about the Writer changes;
+the Planner asks for the mix that comes out right. This is the same inverse
+calibration `length_calibration` already performs for word counts, and it lands
+in exactly one function: `generation_distribution._target_tone_counts`, which is
+what renders the Planner's exact tone quota.
+
+## 6. The Lucas critique against s5, and the honest range
+
+`inversion_feasibility.py` and `stratified_inversion.py`. C is measured at
+today's mix, and the solution needs polite on 55.4% of slots against 27.4%.
+
+Reassuring: P(realize polite | assign polite) is stable across
+`comment_function`, `payload_type`, `evidence_mode` and `speaker_role` —
+0.310 to 0.474 around a 0.384 base.
+
+Not reassuring: it is **not** stable across `stance`. 261 of 289 polite
+assignments sit on `agree` slots and realize at 0.402; the 17 on `uncertain`
+realize at **0.059**. `agree` is only 34.3% of slots, so ~21pp of new polite has
+to land on `mixed`/`uncertain`/`neutral`, where the only observation is that
+0.059. `prompts.py:951` forbids polite on a disagreeing stance outright.
+
+Stratifying by stance, refusing any cell with n<12, and forbidding polite on
+disagree gives a range rather than a point:
+
+| regime | polite share asked | polite | somewhat | neutral | impolite | gap closed |
+|---|---:|---:|---:|---:|---:|---:|
+| today | 0.273 | 0.1294 | 0.1180 | 0.1454 | 0.6072 | 0% |
+| optimistic (unobserved cells at the pooled rate) | 0.662 | 0.2409 | 0.1287 | 0.1615 | 0.4680 | **89%** |
+| pessimistic (unobserved polite cells at 0.059) | 0.556 | 0.1895 | 0.1466 | 0.2017 | 0.4612 | **55%** |
+| real target | — | 0.2595 | 0.1174 | 0.1591 | 0.4640 | |
+
+Per metric under the pessimistic solution: `polite_rate` bias -50.1% -> **-27.0%**,
+`impolite_rate` +30.9% -> **-0.6%**, `neutral_rate` -8.6% -> +26.8%.
+
+**`impolite_rate` is fully repaired in both regimes and it is today's smallest
+p-value.** `neutral_rate` is spent to buy it, which is the trade s4 of the earlier
+section warned about, and it is the metric to watch.
+
+## 7. The single largest observed lever, independent of the inversion
+
+The Planner assigns `impolite` to **330 of 330 disagreeing slots**, and
+`disagree` is 31.2% of all slots. That one cell contributes 0.312 x 0.870 = 0.271
+of the realized 0.607 impolite -- **45% of it** -- against a total excess of only
+0.143 over real. Neighbouring observed cells put a `neutral` assignment on a
+non-agree slot at 0.39-0.42 impolite rather than 0.87.
+
+Real Reddit disagreement is not uniformly impolite. Nothing in the code forces
+this pairing: `prompts.py:951` forbids only `polite` on a disagreeing stance, and
+the tone class is the Planner's own choice under a quota rendered by
+`_target_tone_counts`. This is measurable and buildable without touching the
+Writer at all.
+
+## Status
+
+`polite_rate` had no candidate mechanism at the end of the previous session. It
+now has one, priced at 55-89% depending on cells that have never been observed,
+with `impolite_rate` -- the smallest p-value -- repaired in both regimes and
+`neutral_rate` as the new metric at risk.
