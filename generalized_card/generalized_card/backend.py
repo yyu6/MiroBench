@@ -67,6 +67,7 @@ from .length_policy import (
 from .long_form_planning import (
     enrich_development_plan_fields,
     reconcile_development_plan_capacity,
+    set_development_scope,
 )
 from .planner_distribution import (
     apply_slot_distribution_schedule,
@@ -588,6 +589,13 @@ def configure_generator_backend(
         or "v97"
     )
     set_length_transfer(module.GENERALIZED_LENGTH_TRANSFER)
+    module.GENERALIZED_DEVELOPMENT_SCOPE = (
+        os.environ.get("GENERALIZED_CARD_DEVELOPMENT_SCOPE", "long_only")
+        .strip()
+        .lower()
+        or "long_only"
+    )
+    set_development_scope(module.GENERALIZED_DEVELOPMENT_SCOPE)
     module.GENERALIZED_REPLY_SIBLING_VISIBILITY = (
         os.environ.get("GENERALIZED_CARD_REPLY_SIBLING_VISIBILITY", "on")
         .strip()

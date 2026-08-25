@@ -39,11 +39,55 @@ MAX_DEVELOPMENT_BEATS = 12
 # The largest count the Planner reliably returns, measured above.
 PLANNER_RELIABLE_BEATS = 8
 
+# The floor the enumerated plan is extended down to under `--development-scope
+# measured`. It is 35 because that is where the compression starts and not one
+# word lower: measured over four N=10 runs on the same ten seeds, realized/
+# assigned runs 1.157 at 1-9 assigned words and 0.994 at 10-34 -- those bands
+# need no more capacity and giving them beats would make them overshoot -- then
+# falls to 0.856 at 35-60 and 0.840 at 61-100. See `docs/DECISIONS.md` G50.
+DEVELOPMENT_FLOOR_WORDS = 35
+# `long_only` reproduces every release through v110, which returned no beat
+# budget at all below 101 assigned words.
+DEVELOPMENT_SCOPE_MODE = "long_only"
+
+
+def set_development_scope(mode: str) -> str:
+    """Select how far down the enumerated beat budget reaches."""
+
+    global DEVELOPMENT_SCOPE_MODE
+    chosen = str(mode or "long_only").strip().lower()
+    DEVELOPMENT_SCOPE_MODE = "measured" if chosen == "measured" else "long_only"
+    return DEVELOPMENT_SCOPE_MODE
+
 
 def expected_development_beats(word_count: Any) -> int:
-    """Return a soft content-capacity target for an anonymous long slot."""
+    """Return a soft content-capacity target for an anonymous slot.
+
+    This is the length instrument. `docs/DECISIONS.md` G50: realized/assigned
+    words jump 0.816 -> 0.953 across the boundary this function creates, in all
+    four comparable N=10 runs, and the Writer delivers 21.3 realized words per
+    delivered beat against the 21.0 budgeted here -- while the *asked word
+    count* has a measured elasticity of -0.02 to 0.11 (G48). The number does not
+    move realized length; this does.
+
+    Under `long_only` the budget is withheld below 101 words, which deletes the
+    Planner's beat plan for those slots (`reconcile_development_plan_capacity`)
+    and leaves them the categorical cue in `length_policy`. Under `measured` it
+    reaches down to `DEVELOPMENT_FLOOR_WORDS`.
+
+    The two modes are identical outside 35-100 words: above 100,
+    `round(w / 21) >= 5`, so the `max(3, ...)` and `max(2, ...)` floors never
+    bind and the value is the same; below 35 both return 0.
+    """
 
     words = _safe_int(word_count)
+    if DEVELOPMENT_SCOPE_MODE == "measured":
+        if words < DEVELOPMENT_FLOOR_WORDS:
+            return 0
+        return min(
+            MAX_DEVELOPMENT_BEATS,
+            max(2, int(round(words / WORDS_PER_REALIZED_BEAT))),
+        )
     if words <= 100:
         return 0
     return min(

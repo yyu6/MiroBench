@@ -479,6 +479,23 @@ def build_parser() -> argparse.ArgumentParser:
         ),
     )
     parser.add_argument(
+        "--development-scope",
+        choices=("long_only", "measured"),
+        default="long_only",
+        help=(
+            "How far down the enumerated per-slot development beat plan reaches. "
+            "'long_only' withholds it below 101 assigned words and reproduces "
+            "v110 byte-for-byte. 'measured' extends it to 35 words, the point "
+            "where compression starts. This is the length instrument: realized/"
+            "assigned words jump 0.816 -> 0.953 across the boundary the legacy "
+            "value creates, in all four comparable N=10 runs, and the Writer "
+            "delivers 21.3 realized words per delivered beat -- while the asked "
+            "word count's own elasticity is -0.02 to 0.11 (docs/DECISIONS.md "
+            "G48, G50). The bands the plan never reaches carry 88%% of the word "
+            "deficit; extending it is priced at 8-26%% of the self_bleu_4 gap."
+        ),
+    )
+    parser.add_argument(
         "--length-transfer",
         choices=("v97", "refit"),
         default="v97",
@@ -928,6 +945,7 @@ def main() -> None:
         "entity_spread": args.entity_spread,
         "length_fidelity": args.length_fidelity,
         "length_transfer": args.length_transfer,
+        "development_scope": args.development_scope,
         "writer_retries": args.writer_retries,
         "no_story_scope": args.no_story_scope,
         "own_fact_license": args.own_fact_license,
@@ -1134,6 +1152,7 @@ def main() -> None:
     env["GENERALIZED_CARD_ENTITY_SPREAD"] = args.entity_spread
     env["GENERALIZED_CARD_LENGTH_FIDELITY"] = args.length_fidelity
     env["GENERALIZED_CARD_LENGTH_TRANSFER"] = args.length_transfer
+    env["GENERALIZED_CARD_DEVELOPMENT_SCOPE"] = args.development_scope
     env["GENERALIZED_CARD_NO_STORY_SCOPE"] = args.no_story_scope
     env["GENERALIZED_CARD_OWN_FACT_LICENSE"] = args.own_fact_license
     env["GENERALIZED_CARD_SPEAKER_IDENTITY"] = args.speaker_identity
@@ -1486,6 +1505,7 @@ RUN_EXPERIMENT_FIELDS = (
     "entity_spread",
     "length_fidelity",
     "length_transfer",
+    "development_scope",
     "writer_retries",
     "no_story_scope",
     "own_fact_license",

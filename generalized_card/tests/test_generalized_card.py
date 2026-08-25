@@ -7266,6 +7266,111 @@ class FocusedWriterPromptTest(unittest.TestCase):
         finally:
             set_length_fidelity("off")
 
+    def test_development_scope_long_only_reproduces_v110_exactly(self) -> None:
+        """The legacy arm must return the shipped beat budget at every size."""
+
+        from generalized_card.long_form_planning import (
+            expected_development_beats,
+            set_development_scope,
+        )
+
+        try:
+            set_development_scope("long_only")
+            for words in (0, 1, 9, 20, 34, 35, 45, 60, 61, 80, 99, 100):
+                self.assertEqual(expected_development_beats(words), 0, words)
+            self.assertEqual(expected_development_beats(101), 5)
+            self.assertEqual(expected_development_beats(120), 6)
+            self.assertEqual(expected_development_beats(200), 10)
+            self.assertEqual(expected_development_beats(845), 12)
+        finally:
+            set_development_scope("long_only")
+
+    def test_development_scope_measured_differs_only_inside_35_to_100(self) -> None:
+        """The arm is a scope extension, not a re-budget: everything else is equal."""
+
+        from generalized_card.long_form_planning import (
+            DEVELOPMENT_FLOOR_WORDS,
+            expected_development_beats,
+            set_development_scope,
+        )
+
+        try:
+            set_development_scope("long_only")
+            legacy = {words: expected_development_beats(words) for words in range(0, 900)}
+            set_development_scope("measured")
+            measured = {words: expected_development_beats(words) for words in range(0, 900)}
+        finally:
+            set_development_scope("long_only")
+        differing = {w for w in legacy if legacy[w] != measured[w]}
+        self.assertEqual(
+            differing,
+            set(range(DEVELOPMENT_FLOOR_WORDS, 101)),
+            "the arm must change 35-100 assigned words and nothing else",
+        )
+        # inside the extended range the budget follows the measured 21 words/beat
+        for words in (35, 45, 60, 80, 100):
+            self.assertEqual(measured[words], max(2, round(words / 21.0)), words)
+        # and it is monotone through the old boundary, which the legacy arm is not
+        self.assertLessEqual(measured[100], measured[101])
+        self.assertGreater(legacy[101] - legacy[100], 4)
+
+    def test_development_scope_reaches_the_writer_length_cue_on_both_values(self) -> None:
+        """Prove the arm changes the rendered cue, not merely the beat integer."""
+
+        from dataclasses import dataclass
+
+        from generalized_card.length_policy import local_move_scope_guidance
+        from generalized_card.long_form_planning import set_development_scope
+
+        @dataclass
+        class _Slot:
+            real_word_count: int
+            development_plan: str = ""
+
+        try:
+            set_development_scope("long_only")
+            legacy_short = local_move_scope_guidance(_Slot(45))
+            legacy_mid = local_move_scope_guidance(_Slot(90))
+            set_development_scope("measured")
+            armed_short = local_move_scope_guidance(_Slot(45))
+            armed_mid = local_move_scope_guidance(_Slot(90))
+            unchanged_micro = local_move_scope_guidance(_Slot(20))
+            set_development_scope("long_only")
+            legacy_micro = local_move_scope_guidance(_Slot(20))
+        finally:
+            set_development_scope("long_only")
+
+        self.assertIn("one narrow local move", legacy_short)
+        self.assertIn("two or three connected beats", legacy_mid)
+        self.assertIn("2 distinct, connected beats", armed_short)
+        self.assertIn("4 distinct, connected beats", armed_mid)
+        self.assertEqual(unchanged_micro, legacy_micro)
+
+    def test_development_scope_stops_deleting_the_planner_beat_plan(self) -> None:
+        """`reconcile_development_plan_capacity` wipes plans with no capacity."""
+
+        from generalized_card.long_form_planning import (
+            reconcile_development_plan_capacity,
+            set_development_scope,
+        )
+
+        try:
+            set_development_scope("long_only")
+            plan = {"_slot_word_count": 80, "development_plan": "a || b || c"}
+            self.assertIsNotNone(reconcile_development_plan_capacity(plan))
+            self.assertEqual(plan["development_plan"], "")
+
+            set_development_scope("measured")
+            kept = {"_slot_word_count": 80, "development_plan": "a || b || c"}
+            self.assertIsNone(reconcile_development_plan_capacity(kept))
+            self.assertEqual(kept["development_plan"], "a || b || c")
+
+            # below the floor the plan is still residue and must still be dropped
+            below = {"_slot_word_count": 20, "development_plan": "a || b"}
+            self.assertIsNotNone(reconcile_development_plan_capacity(below))
+        finally:
+            set_development_scope("long_only")
+
     def test_length_transfer_v97_arm_reproduces_the_shipped_asks(self) -> None:
         """The legacy arm must be byte-identical, including the clamp bounds."""
 

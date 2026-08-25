@@ -16,10 +16,11 @@ HISTORICAL_REVISION_POLICY_VERSIONS = {
     "generalized-card-revision-v6-dynamic-coverage-history-20260807",
 }
 GENERALIZED_V2_GENERATION_POLICY_VERSION = (
-    "generalized-card-v2-refit-length-transfer-v110-20260824"
+    "generalized-card-v2-development-scope-v111-20260825"
 )
 HISTORICAL_GENERATION_POLICY_VERSIONS = {
     "generalized-v2": {
+        "generalized-card-v2-refit-length-transfer-v110-20260824",
         "generalized-card-v2-entity-referent-spread-v109-20260824",
         "generalized-card-v2-semantic-coverage-nonrepeat-v108-20260823",
         "generalized-card-v2-verdict-close-check-guard-v107-20260822",
@@ -180,7 +181,7 @@ CORE_FILES = {
     ),
     "generator_adapter": (
         "generalized_card/generalized_card/backend.py",
-        "74ba6d166eacc736e2e350883f9442aaa94c8704ee0f28b8d4a45059d03396ee",
+        "66a4770765d72969c9f8601ca608d93be5c6cec0eee53220388759bd94c202ef",
     ),
     "data_boundary": (
         "generalized_card/generalized_card/data.py",
@@ -214,7 +215,7 @@ CORE_FILES = {
     ),
     "generation_runner": (
         "generalized_card/scripts/run_generate.py",
-        "075b1170f41cfd3b0dcd87b6ae0954d2799010dc4bc7524c2959d931e38d85f8",
+        "4b512ccc364c35c12ff6842cee92ea1a5124a665f3f7c76e44ed2024dcf2240d",
     ),
     "generation_backend_runner": (
         "generalized_card/scripts/run_generator_backend.py",
@@ -310,11 +311,11 @@ CORE_FILES = {
     ),
     "length_policy": (
         "generalized_card/generalized_card/length_policy.py",
-        "1b061cd28c61a8e6a28bb0463c9e299ff68bba3a9e73426d26df8e8251dbd311",
+        "614298243867ae8ed01a5bfd5e5776d36e0b27fb69e461411616697d3990c66e",
     ),
     "long_form_planning": (
         "generalized_card/generalized_card/long_form_planning.py",
-        "1f1ecd50791e91103ed187ed9a1fddda07ba979c2a6a12dd8daf889310eb9d58",
+        "c74fc5978811386916c9a5ccdb0a33ccc834d8c4f14f7968716b7e8776e49203",
     ),
     "tone_length_fit": (
         "generalized_card/generalized_card/tone_length_fit.py",

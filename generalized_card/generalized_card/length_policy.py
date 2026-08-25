@@ -84,12 +84,29 @@ def soft_length_guidance(task: Any) -> str:
 
 
 def local_move_scope_guidance(task: Any) -> str:
-    """Translate a continuous real-slot length into local development depth."""
+    """Translate a continuous real-slot length into local development depth.
+
+    The two categorical branches below are what `docs/DECISIONS.md` G50 measured
+    as the compression: a slot assigned 90 words was told in one breath that it
+    "contains roughly 118 words" and that it should "give it the two or three
+    connected beats this slot's scale supports" -- two or three beats being
+    about 42-63 realized words. The categorical cue won, which is E4's rule
+    (naming the concrete thing gets ~1.0 compliance, naming the category 0.23).
+
+    Both branches are now gated on the slot having no beat budget at all, so
+    `--development-scope measured` routes 35-100 word slots to the same
+    enumerated, per-slot development sequence that already reaches slots above
+    100 and realizes there at 0.956 of assignment. With the arm at `long_only`
+    `expected_development_beats` returns 0 for every slot at or below 100 words,
+    so both conditions hold exactly where they did before and this function is
+    byte-identical to v110.
+    """
 
     real_words = max(0, _safe_int(getattr(task, "real_word_count", 0), 0))
-    if real_words <= 60:
+    has_budget = expected_development_beats(real_words) > 0
+    if real_words <= 60 and not has_budget:
         return "Make one narrow local move and stop when that contribution is complete."
-    if real_words <= 100:
+    if real_words <= 100 and not has_budget:
         return (
             "Keep one local thesis, but give it the two or three connected beats "
             "this slot's scale supports rather than stopping after the first."
