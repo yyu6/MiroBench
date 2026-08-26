@@ -73,3 +73,35 @@ n=10 detects only |Cliff| > ~0.6. `self_bleu_4` currently sits at Cliff +0.36 an
 will read PASS either way; judge it on the **relative deviation and the sub-0.5
 pair share**, not its pass/fail. Per-thread noise floor is sd 2.94% / 13.7%
 (G76).
+
+---
+
+## Live observation during the run (2026-08-28 04:20)
+
+**The mechanism is confirmed live.** First thread (seed 2, 45 slots): attempts
+histogram `{1: 35, 2: 10}` — **22.2% of slots retried**, against v119's 0.2%.
+This clears the "retry rate under 10% = wiring bug" reject condition
+immediately; the guard reaches the loop and drives a real second call.
+
+**Rewrites are substantive, not paraphrase.** Read three directly. The clearest:
+
+- A1: *"the RX100 VII only makes sense if you're happy paying for the small body
+  and giving up zoom-free simplicity. If you want a compact camera, the GR IIIx
+  or X100F is the cleaner long-term bet."* → flagged
+  `semantic_overlap_high: thread_mean_cosine=0.3994; target=0.211`
+- A2: *"the Ricoh GR IIIx only pays off long-term if you're already happy living
+  without zoom. Fine little camera."*
+
+A broad three-body comparison became one specific verdict, and much shorter.
+That is the corrective note working as designed.
+
+**But a limitation is already visible and must shape the reading.** In all three
+inspected cases the *second* attempt still carries problems (`length_too_long`,
+`semantic_overlap_high` again, `uncertainty_frame_unwanted`,
+`missing_concrete_anchor`). With `retries=1` there is exactly one extra chance,
+and a second draft that still exceeds the band is accepted anyway.
+
+**Consequence for the pre-registered decision rule:** this raises the prior on
+the "direction right but move undersized" branch, whose stated response is
+`--writer-retries 2`. Recording it now, before the metrics land, so that choice
+is not a post-hoc rationalisation of a disappointing number.
