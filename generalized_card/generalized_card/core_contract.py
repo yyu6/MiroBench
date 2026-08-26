@@ -16,10 +16,15 @@ HISTORICAL_REVISION_POLICY_VERSIONS = {
     "generalized-card-revision-v6-dynamic-coverage-history-20260807",
 }
 GENERALIZED_V2_GENERATION_POLICY_VERSION = (
-    "generalized-card-v2-drawn-link-count-v117-20260826"
+    "generalized-card-v2-tone-cap-and-host-coherent-links-v119-20260827"
 )
 HISTORICAL_GENERATION_POLICY_VERSIONS = {
     "generalized-v2": {
+        # v117 drew the link COUNT from the measured per-carrier distribution but
+        # drew every URL independently across 249 hosts, so a multi-link comment
+        # never shared a host where real does 0.695 of the time (G61 revised).
+        # Its calibration run is the artifact every 2026-08-27 measurement reads.
+        "generalized-card-v2-drawn-link-count-v117-20260826",
         # v116 drew the parenthetical count but still offered exactly one URL to
         # every routed slot, 18.0 URL tokens per carrier against a real 34.3.
         # Never ran.
@@ -202,7 +207,7 @@ CORE_FILES = {
     ),
     "generator_adapter": (
         "generalized_card/generalized_card/backend.py",
-        "8a46e73ecc68b5dd79baf0898b065fe5e745d3278b6f55d762bf58e0953b628a",
+        "a01307ffc71ef5ae9dee4a61125d7ca29cc5d2272015550db6af3fb2c0c36cb1",
     ),
     "data_boundary": (
         "generalized_card/generalized_card/data.py",
@@ -236,7 +241,7 @@ CORE_FILES = {
     ),
     "generation_runner": (
         "generalized_card/scripts/run_generate.py",
-        "2c472ab4360d337a4c9cf1b4d457a80c81aeceed32234b4740b6afa6c1578e20",
+        "97a59fd6f8e9257ee540406c79befc50da86c8e25b6ee38e910a0b13ecc1964d",
     ),
     "generation_backend_runner": (
         "generalized_card/scripts/run_generator_backend.py",
@@ -252,7 +257,7 @@ CORE_FILES = {
     ),
     "domain_profile": (
         "generalized_card/generalized_card/domain_profile.py",
-        "ac8afbb844edfaca8aef7bd73c9937488e6526a36e8758cb7944414657c41122",
+        "7e6522c3ca4c8619e1c5a032680711e1ce79634c40796dd70e9b0c9897290545",
     ),
     "viewpoint_bank": (
         "generalized_card/generalized_card/viewpoint_bank.py",
@@ -304,11 +309,11 @@ CORE_FILES = {
     ),
     "tone_realization": (
         "generalized_card/generalized_card/tone_realization.py",
-        "9992076312c3ebe890bed6204ef25e14437c306e02697c5b077b7f1216be1609",
+        "036439349d850c830053ea71a44b96dd8f327fe29024ce0d63a8139a9f0adadb",
     ),
     "reference_link": (
         "generalized_card/generalized_card/reference_link.py",
-        "b8d3e1b8a7ea291688009dc7884647511c47567a8ec86a1ab9041f3bee83aaea",
+        "4b5ebb4b3b3227c09724867c0ee127542c5a0834c7d1e7a728f2f426e02b6138",
     ),
     "entity_spread": (
         "generalized_card/generalized_card/entity_spread.py",
