@@ -407,3 +407,78 @@ count fix alone takes paren tokens per carrier from 8.6 toward real's 18.7; rais
 compliance from 0.38 to 0.8 takes realized prevalence from 0.090 to about 0.150
 against real's 0.172. Together they close most of the 4.84% / 1.33% token gap that
 s6 priced at 23% of the `self_bertscore` gap.
+
+## 8. The channel that was never looked at: one model writing every speaker
+
+`one_voice_floor.py`, `one_voice_control.py`, `one_voice_generated.py`.
+
+s6 identified 81% of the gap in surface classes and s3/s7 showed that implementing
+every one of them reduces it by only **31%** against the 42% Holm needs, at a
+delivery ratio of 0.34 against their real-side value. Both facts point at
+something underneath the symbols.
+
+### Real threads carry an authorial-voice floor, and it is not topic
+
+Inside real threads, pairs by the SAME author outscore pairs by different authors
+by **+0.0177**. On Reddit one person's two comments usually sit in the same
+subthread, so that could be topical proximity wearing authorship as a mask.
+Conditioning on conversational relation does not just fail to kill it — it
+**reverses the confound's prediction**:
+
+| relation | same-author | different | delta |
+|---|---:|---:|---:|
+| same parent | 0.5051 (n=16) | 0.5059 (n=1228) | **−0.0008** |
+| ancestor/descendant | 0.5156 (n=206) | 0.5136 (n=740) | +0.0021 |
+| same root branch | 0.5297 (n=88) | 0.5064 (n=2050) | **+0.0233** |
+| **different branch** | 0.5022 (n=476) | 0.4881 (n=21462) | **+0.0141** |
+| stratum-weighted | | | **+0.0137** |
+
+If topic drove it the effect would be largest where the two comments sit closest.
+It is **near zero there** and largest where they sit furthest apart. That is the
+shape of a writing signature, not of a shared subject.
+
+### The generator has 55% of real's voice separation
+
+The label structure is not the problem: the gate assigns **326** distinct authors
+across 530 comments against real's 260 across 528, and its same-author pair share
+is *lower* (0.0201 against 0.0299). The labels are there. The question is whether
+they carry a voice, and they partly do:
+
+| relation | generated | real | gen/real |
+|---|---:|---:|---:|
+| same parent | **+0.0170** | −0.0008 | — |
+| ancestor/descendant | +0.0058 | +0.0021 | — |
+| same root branch | +0.0133 | +0.0233 | 0.57 |
+| **different branch** | **+0.0061** | **+0.0141** | **0.43** |
+| stratum-weighted | **+0.0076** | **+0.0137** | **0.55** |
+
+A generated speaker writing in two unrelated parts of a thread is **43%** as
+distinctive as a real one. Scaled to a whole thread:
+
+    headroom = +0.0060 = 51% of the +0.0119 gap.
+
+**That is larger than the 42% Holm needs, and it is the only channel measured so
+far that is.** It also explains what the surface channels could not: their 0.34
+delivery ratio, and the 19% they never covered. A URL, an aside, an odd rare token
+are *by-products* of many different people writing, so patching them individually
+works against a floor that is still there.
+
+### What this is and is not
+
+It is a **bound**, computed the same way s3's link ceiling was, and J7 applies: it
+says what closing the voice gap would be worth, not that an arm can close it. Two
+things temper it. The headroom is **not additive** with s6's surface channels —
+authorial variety is partly *expressed* through them, so the two overlap by an
+unmeasured amount. And the generator is already at 0.55 of real's separation, so
+the remaining work is making existing personas more lexically distinct, which is a
+harder ask than adding a symbol that was simply absent.
+
+One anomaly worth keeping: at `same parent` the generator runs **+0.0170** where
+real runs −0.0008. Reusing a speaker in the same local spot makes generated
+comments *more* alike than a human's, the opposite of everywhere else. n=39, so
+thin, but it is the one cell where the generator is worse than real rather than
+flatter.
+
+`persona_bridge`, `speaker_roster`, `actor_conditioning` and `--speaker-identity
+matched` all exist and were on for this run. None has ever been measured against
+`self_bertscore`. That is the next measurement, and it is free.
