@@ -2095,3 +2095,129 @@ was never looked at.
   the sentence level** (real 0.0817 of sentences are carriers, generated 0.0239),
   which is flat rather than positional or length-driven, and therefore rules out
   the length route as a fix for the politeness pair.
+
+## "Verified with `--prepare-only`" was not a verification — check what the tool you are trusting actually does
+
+I told the user a paid command was safe because `--prepare-only` had passed. It
+then failed its preflight self-test on the first paid attempt and wasted 65
+minutes of their willingness to run things.
+
+`--prepare-only` returned **before** the self-test. It printed the resolved
+config, said "no API calls were made", and exited. The self-test is the only gate
+that exercises the arms against the run's own domain profile — which is exactly
+where the failure was — so the flag could not catch that class of defect at all.
+I never checked where it returned.
+
+**The rule:** before quoting a tool's output as evidence that something is safe,
+read what the tool checks. A green line from a step that does not run the gate is
+not a green light. If a preflight cannot fail for the reason you are worried
+about, it is not a preflight for that worry.
+
+Fixed in the same session: `--prepare-only` now runs the self-test against the
+full arm env and needs no credential (`DECISIONS.md` E11). Any earlier handoff
+saying a command was "verified with prepare-only" carries this caveat.
+
+## A self-test assertion about a drawn value must be distributional, never "this never happens"
+
+v102 asserted `assert not any('"thank' in line for line in drawn_lines)` — a blunt
+slot is never told to open on gratitude — on the strength of its own module
+docstring saying gratitude is "absent from the blunt row".
+
+It is **0.033** there. The assertion held for months only because its twelve fixed
+probe keys miss a 3% cell about two thirds of the time. At 50 probes it fails on
+the shipped profile too; at 400 it draws 12. It failed outright the first time a
+different reference corpus was built, which makes it a landmine aimed precisely at
+domain-adaptive work.
+
+**The rule:** an assertion over a hash-drawn value is a sample, and a sample-based
+"never" is a coin flip with a hidden bias. Assert the *distribution* the draw is
+supposed to follow, with a tolerance scaled to the sample spread, and audit the
+assertion against a synthetic version of the failure it is supposed to catch. Also:
+when a docstring states a data fact that a test then enforces, verify the fact
+against the profile rather than the prose.
+
+## A cross-thread correlation is not a comment-level effect
+
+`polite_rate` correlates **+0.22** with `self_bertscore` across 763 real threads,
+and the generator sits 0.5 sd low on `polite_rate`. I told the user v115 might
+therefore hand back part of `self_bertscore`, and treated it as a live risk in the
+plan.
+
+Decomposing `self_bertscore` to per-comment leverage — the mean F1 of the pairs
+each comment appears in — generated polite comments carry **lower** leverage
+(−0.0071) than non-polite ones, the *opposite* sign from real (+0.0042).
+Re-weighting by v115's projected mix moves the metric **−0.00036**. v115 helps
+slightly.
+
+**The rule:** a correlation between two thread-level aggregates says nothing about
+what one comment contributes. When the metric decomposes exactly — a mean over
+pairs does — decompose it and measure the unit you are actually going to change.
+This is the ecological fallacy and it cost a planning cycle.
+
+## Decompose the metric before hunting for features
+
+Three sessions were spent guessing a surface feature and testing it: URLs,
+parentheticals, digit runs, hapax, comma-joining, markdown emphasis, u/ mentions,
+author labels, first person. One hit, most missed, and two produced findings I had
+to retract.
+
+`self_bertscore` is a mean over comment pairs, so each comment's contribution is
+exactly computable. Ranking comments by that and reading the extreme deciles took
+one script and immediately showed the generator's high-leverage comments are one
+thing (66% `technical_or_policy_reasoning`, 45% `soft_helpful`) and that real
+reaches its *lowest* leverage with 23.7 words of dense content where the generator
+needs 46.2 words of conversational fragment.
+
+**The rule:** if the metric is an aggregate with an exact decomposition, decompose
+it first and let the data name the feature. Guess-then-test is the last resort,
+not the first move, and its cost is measured in sessions.
+
+## An arm can hit its metric target exactly and still be unshippable
+
+v117 landed 1.68 URLs per carrying comment against real's 1.67, 61 characters per
+URL against the inventory's 61, compliance 0.950, zero malformed or invented URLs.
+Every number was right.
+
+The same output stacks four unrelated links at the end of a 46-word comment, puts
+an Apple support URL inside a comment about a Sony A7, and a Fuji X-T5
+film-simulation recipe inside one comparing Canon compacts. At one link that reads
+as a reference aside; at four it is a wall of unrelated links that any human reader
+spots instantly, which is worse for an indistinguishability claim than the metric
+gain is worth.
+
+**The rule:** a firing audit is necessary and not sufficient. Read the generated
+text for every arm that adds a visible surface element, and treat an eye-visible
+tell as a blocker regardless of what the distribution says. The user asked for this
+check explicitly; it should be standing.
+
+## Distinguish "the profile has no target for this field" from "the field is a defect"
+
+`evidence_mode` is the largest per-pair collision channel (+0.0228, topic
+controlled) and the only Planner-owned field with invariant protection but **no
+quota at all**. It looked like a clean, legal, high-value arm and I was one step
+from paying to label real text for a target distribution.
+
+Measuring the three unused cells first, on surface pattern and for free: two of
+them are already at real's rate **in the text** with the label at ~zero — link/quote
+0.86x real, hearsay 1.08x real. The Writer writes those moves regardless of what
+`evidence_mode` says. Raising the labels would push the surface *above* real.
+
+**The rule:** a Planner label and the surface behaviour it names can be loosely
+coupled. Before treating a label distribution as the defect, measure whether the
+*behaviour* is actually missing from the output. And when part of a question can be
+answered for free, answer that part before buying the rest.
+
+## Commit from the repo root, and never reuse a test-helper name
+
+Two mechanical errors that each cost a debug cycle in one session:
+
+`git add -A generalized_card/` run from **inside** `generalized_card/` resolves to
+`generalized_card/generalized_card/` and silently misses `scripts/`. The commit
+succeeds, the provenance gate then refuses the run, and the error message points at
+a file you believe you committed.
+
+Adding `_link_inventory` and `_link_task` helpers to a test class that already had
+methods of both names: Python takes whichever definition comes last, so the new
+ones were silently shadowed and three tests failed with a confusing signature
+error. **Reversed, the pre-existing tests would have broken instead, without an
+error naming the cause.** Grep the class for a helper name before defining it.

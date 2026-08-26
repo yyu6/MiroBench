@@ -1301,3 +1301,75 @@ evaluation. Reopen A/C upstream only for target→generated failures that remain
 do not change the reference sampler, add a reviser, or tune against final
 test-set p-values. One mechanism per later paid run, prediction written first,
 control semantics versioned, and `--prepare-only` before spending.
+
+---
+
+# Review — 2026-08-26 session (v115, v116, v117)
+
+Paid spend **$3.93**, one 10-thread calibration run. Full evidence:
+`tasks/v115-v117-worklog.md`. Rules added: `DECISIONS.md` **G54–G63, E10–E11**;
+`G2` marked SUPERSEDED. Handoff:
+`.claude/handoffs/2026-08-26-geo-v115-v117-*.md`.
+
+## What was built
+
+| arm | flag | fired? |
+|---|---|---|
+| v115 | `--tone-quota {off,inverted,calibrate}` | `calibrate` yes; **`inverted` never run** |
+| v116 | `--rhythm-count {off,measured}` | yes — counts written `{1:40, 2:8, 3:3}`, was `{1:48}` |
+| v117 | `--reference-link-count {off,measured}` | yes — 1.68 URLs/carrier vs real 1.67, 61 chars vs 61 |
+
+All default `off` and byte-identical when off, asserted by test. 720 tests pass.
+`PROFILE_SCHEMA_VERSION` 21 → 22. Policy
+`generalized-card-v2-drawn-link-count-v117-20260826`.
+
+## The result that outranks the arms
+
+An arbitrary **disjoint real** camera thread passes all six reported metrics at
+coverage 0.996, with `self_bertscore` bias **+0.24%**. The target is reachable, the
+evaluation design is sound, and the generator's +2.41% is **10x** the natural
+spread (G54). This is also a free per-domain validation harness —
+`analysis/self_similarity/real_vs_real_floor.py` — and it should be run on any new
+domain before a token is spent.
+
+## Ordered next steps
+
+1. **Fix v117's content defect (G61).** Four unrelated links stacked at a comment's
+   end; an Apple support URL inside a Sony A7 thread. Measured fix: of 249 real
+   comments carrying 2+ non-media URLs, **64.3% have ALL their URLs on one host**
+   and the first URL sits a median **23%** into the comment. **v117 must not enter
+   a paper run before this.**
+2. **Decide v115's `POLITE_ASSIGNMENT_CAP` against the reported-metric set, not
+   L2 (G60).** Cap 0.59 lands `polite_rate` +0.2% and `impolite_rate` +1.3% while
+   costing `neutral_rate` −19.7%; cap 0.35 leaves all three mid-range at 35%
+   closure. This is a judgement call, not a measurement.
+3. **Measure the persona layer against `self_bertscore` (G57).** The only single
+   channel above the 42% bar — headroom **+0.0060 = 51%** of the gap — and
+   `persona_bridge` / `speaker_roster` / `actor_conditioning` /
+   `--speaker-identity matched` have never been measured against it. **Free.**
+4. Evaluate the calibration run for the first full-coverage reading with all three
+   arms on: `python3 generalized_card/scripts/run_evaluate.py --tag
+   v117_calibration_20260826_v1`. Its **tone numbers are meaningless** (the quota
+   was deliberately flat); `self_bertscore` and `self_bleu_4` are readable with a
+   ~3% confound measured separately.
+5. Only then N=50 / N=150.
+
+## Closed as dead, do not re-propose
+
+- Six tone realization hypotheses: more register cues, the omitted conjunction,
+  hedging, length repair, the bare-assertion frame, the polite lexicon (G53, G58,
+  G59). The lexicon one is decisive: generated already carries real's top-45
+  polite tokens at **1.14x** real prevalence.
+- `evidence_mode` labelling (G62) — two of three cheap cells already matched in the
+  text with the label at zero.
+- Digit runs (−0.0005) and hapax flattening (−0.0020) as `self_bertscore` channels
+  (G63). Digits dying closes the only route needing domain vocabulary.
+- First-person rate, thread structural metrics, and comment length as
+  `self_bertscore` channels (G55, and the worklog's leverage section).
+
+## Standing arithmetic
+
+`self_bertscore` gap 0.0119. Built: v117 ~17%, v115 ~3%, **assuming additivity**
+(the surface channels measured sub-additive at ~0.86). → ~0.0095 against the
+**0.0069** Holm needs at N=150. Both terms are J7 upper bounds. **The gap does not
+close with what exists today**; G57 is the only measured channel large enough.

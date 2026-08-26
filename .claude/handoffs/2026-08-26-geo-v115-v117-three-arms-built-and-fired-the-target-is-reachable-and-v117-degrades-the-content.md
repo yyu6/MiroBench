@@ -59,15 +59,15 @@ real-to-real spread. This is also the cheapest validation harness in the project
 it reads cached `thread_scores.csv` only and can be run on any domain before a
 token is spent. **Run it first on any new domain.**
 
-**2. `self_bertscore` has never passed at full coverage, and the archive lies
-about it.** Every historical run whose report shows PASS is at **coverage
-0.55–0.63** — the truncation regime `VERSION_LOG.md` opens by warning about. There
-is also **no self_bertscore self-loop reviser**: across every
-`*_controller_history.json` the metric appears as a self-loop TARGET in zero
-observations and as a *protected* metric in the 32 that end PASS. Sweeping all 284
-evaluated run directories, the coverage≥0.90 band has a median bias of **+4.28%**
-and exactly **one** run under 1% — the real-comment bootstrap, which is not a
-generator.
+**2. `self_bertscore` has never been observed passing at full coverage, and the
+archive reads as though it has.** Across every `*_controller_history.json` the
+metric appears as a self-loop TARGET in **zero** observations and as a *protected*
+metric in the 32 that end PASS — **there is no self_bertscore self-loop.** The four
+run families carrying those PASS observations sit at coverage **0.546, 0.577, 0.603
+and 0.629**, the truncation regime `VERSION_LOG.md` opens by warning about; those
+four are what was checked individually. Sweeping all **284** evaluated run
+directories, the coverage>=0.90 band has a median bias of **+4.28%** and exactly
+**one** run under 1% — the real-comment bootstrap, which is not a generator.
 
 **3. v117 hits its metric target and makes the content visibly worse.** The output
 contains four unrelated links stacked at the end of a 46-word comment, an Apple
@@ -137,7 +137,7 @@ probes it fails on the shipped profile too. It blocked the calibration run outri
 4. Only then consider N=50/N=150.
 
 ## Blockers/Open Questions
-- **`self_bertscore` still has no path to 42%.** Honest arithmetic on what is built: v117 ~17% of the gap, v115 ~3%. Gap 0.0119 → ~0.0095 against the 0.0069 Holm needs at N=150.
+- **`self_bertscore` still has no path to 42%.** Honest arithmetic on what is built: v117 ~17% of the gap, v115 ~3%, **assuming they add** — the surface channels were measured sub-additive at ~0.86. Gap 0.0119 → ~0.0095 against the 0.0069 Holm needs at N=150, and both terms are J7 upper bounds.
 - **The one channel measured large enough is unbuilt.** Authorial voice separation: generated is at **0.55** of real's (stratum-weighted +0.0076 against +0.0137; in the decisive different-branch cell +0.0061 against +0.0141, 43%). Headroom **+0.0060 = 51% of the gap** — the only single channel above the 42% bar. `persona_bridge`, `speaker_roster`, `actor_conditioning`, `--speaker-identity matched` all exist and were on; **none has ever been measured against `self_bertscore`.** That is the next measurement and it is free.
 - Six realization-side tone hypotheses are dead: more register cues, the omitted conjunction, hedging, length repair, the bare-assertion frame, and the polite lexicon (generated already carries real's top-45 polite tokens at **1.14×** real prevalence).
 - The 9-point `self_bertscore` swing between `repro_v37` (−0.88% at 0.629 coverage) and `sample_planner_gpt4omini_writer_v37` (+8.47% at 0.603) is unexplained. Those runs differ in more than one thing, so it is an observation, not a channel.

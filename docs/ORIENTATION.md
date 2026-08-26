@@ -60,6 +60,7 @@ bureaucracy — every rule there has a wasted paid run behind it.
 | 4b | `tasks/v99-worklog.md` | the politeness diagnosis: four rejected hypotheses and the verified mechanism | before touching tone or register |
 | 4c | `tasks/v102-worklog.md` | the `hard_disagree_rate` diagnosis: nine rejected hypotheses, two surviving mechanisms, one causally measured | before touching stance, openers, or reply framing |
 | 4d | `tasks/v104-worklog.md` | the tone-pair diagnosis: why eight versions of marker work failed, and the carrier-sentence mechanism | before touching `polite_rate` or `impolite_rate` |
+| 4f | `tasks/v115-v117-worklog.md` | v115/v116/v117: the reachability proof (real-vs-real +0.24%), the transfer-matrix inversion, the two count arms, and six dead tone hypotheses | **before touching `self_bertscore`, `polite_rate` or the reference-link arm** |
 | 4e | `generalized_card/analysis/` | the scripts that reproduce every number in 4b-4d and in `DECISIONS.md` | when you want to re-measure rather than re-derive |
 | 5 | `generalized_card/VERSION_LOG.md` | every released version, its arms, and its result | when comparing versions |
 | 6 | `tasks/lessons.md` | every mistake made here, each with the rule that prevents it | before diagnosing anything |
@@ -67,7 +68,7 @@ bureaucracy — every rule there has a wasted paid run behind it.
 | 8 | `tasks/HANDOFF.md` | the long-form evidence archive, newest addendum first | when you need the detail behind a claim |
 | 9 | `docs/thread_metric_score_reference.md` | every exported metric, its scorer, its model | when you need a scorer's exact semantics |
 | 10 | `generalized_card/RUN_INDEX.md` | all runs with tag, cost, and outcome | when locating an artifact |
-| 11 | `.claude/handoffs/` | session handoffs, newest last; each carries a TYPE INSTRUCTION block for the next agent. **Newest: `2026-08-25-geo-v109-v110-two-live-arms-two-nulls-and-the-causal-instrument-problem.md`** — read its "Key Patterns Discovered" before proposing any mechanism. The 2026-08-20 handoff's judging section is retracted — it steers by `\|Cliff\| <= 0.10`; the 2026-08-23 handoff's "self_bertscore reopened" headline is retracted by G39 (that arm measures ~0.0007). | when picking the work up cold |
+| 11 | `.claude/handoffs/` | session handoffs, newest last; each carries a TYPE INSTRUCTION block for the next agent. **Newest: `2026-08-26-geo-v115-v117-three-arms-built-and-fired-the-target-is-reachable-and-v117-degrades-the-content.md`** — read its "Key Patterns Discovered" and "Potential Gotchas" before proposing any mechanism; it carries the reachability proof, the archive-coverage trap, and a live blocker on v117. The 2026-08-25 handoff remains valid for the v109/v110 nulls. The 2026-08-20 handoff's judging section is retracted — it steers by `\|Cliff\| <= 0.10`; the 2026-08-23 handoff's "self_bertscore reopened" headline is retracted by G39 (that arm measures ~0.0007). | when picking the work up cold |
 
 `tasks/HANDOFF.md` is **an archive, not a spec.** It grows by addendum and its
 older numbered sections carry stale state and at least one claim that was later
@@ -529,6 +530,14 @@ a source that is not recoverable from git.
 ---
 
 ## 6. Current state — v103 measured 9/1/2, effect sizes worse than v101 (2026-08-21)
+
+> **STALE AS OF 2026-08-26.** This section still describes v103. Released since:
+> v104-v110 (see `VERSION_LOG.md`), the v113/v112 N=10 gate, and v115/v116/v117 —
+> three arms built, all default `off`, all verified firing on one calibration run and
+> **none yet run in the `inverted`/paper configuration**. For current state read
+> `tasks/v115-v117-worklog.md` and `DECISIONS.md` G54-G63 + E10-E11. The three
+> standing failures named below (`polite_rate`, `impolite_rate`,
+> `self_bertscore_mean_f1`) are unchanged, and G54 now proves the third is reachable.
 
 The last measured result is **v103**. Policy
 `generalized-card-v2-stance-consistent-opening-v103-20260821`. Run
