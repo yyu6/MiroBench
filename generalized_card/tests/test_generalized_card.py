@@ -1104,6 +1104,134 @@ class GeneralizedCardTest(unittest.TestCase):
         finally:
             set_development_scope("long_only")
 
+    def _rhythm_count_profile(self) -> dict:
+        return {
+            "available": True,
+            "bands": {
+                "very_long": {
+                    "sample_count": 1104,
+                    "median_words_per_sentence": 17.9,
+                    "median_sentences": 8,
+                    "multi_sentence_count": 1100,
+                    "shares": {"parenthetical": 0.5489},
+                    "habit_counts": {
+                        "parenthetical": {
+                            "1": 0.574, "2": 0.219, "3": 0.102, "4": 0.048, "5": 0.056,
+                        }
+                    },
+                }
+            },
+        }
+
+    def test_rhythm_count_off_always_asks_for_one(self) -> None:
+        """E1: the legacy value must reproduce every release through v115."""
+
+        from generalized_card.sentence_rhythm import set_rhythm_count, slot_habit_count
+
+        profile = self._rhythm_count_profile()
+        try:
+            set_rhythm_count("off")
+            drawn = {
+                slot_habit_count(
+                    profile, slot_key=f"s{i}", habit="parenthetical", word_count=160
+                )
+                for i in range(300)
+            }
+        finally:
+            set_rhythm_count("off")
+        self.assertEqual(drawn, {1})
+
+    def test_rhythm_count_measured_reproduces_the_band_distribution(self) -> None:
+        from generalized_card.sentence_rhythm import set_rhythm_count, slot_habit_count
+
+        profile = self._rhythm_count_profile()
+        try:
+            set_rhythm_count("measured")
+            drawn = [
+                slot_habit_count(
+                    profile, slot_key=f"s{i}", habit="parenthetical", word_count=160
+                )
+                for i in range(4000)
+            ]
+        finally:
+            set_rhythm_count("off")
+        self.assertEqual(set(drawn), {1, 2, 3, 4, 5})
+        mean = sum(drawn) / len(drawn)
+        # The band measures 1.88; the draw is capped at five and real's tail runs
+        # to 22, so the drawn mean sits just under it.
+        self.assertGreater(mean, 1.6)
+        self.assertLess(mean, 1.9)
+        self.assertAlmostEqual(drawn.count(1) / len(drawn), 0.574, delta=0.03)
+
+    def test_rhythm_count_draw_is_stable_and_independent_of_the_habit_draw(self) -> None:
+        from generalized_card.sentence_rhythm import (
+            set_rhythm_count,
+            slot_habit_count,
+            slot_uses_habit,
+        )
+
+        profile = self._rhythm_count_profile()
+        try:
+            set_rhythm_count("measured")
+            first = [
+                slot_habit_count(
+                    profile, slot_key=f"s{i}", habit="parenthetical", word_count=160
+                )
+                for i in range(200)
+            ]
+            second = [
+                slot_habit_count(
+                    profile, slot_key=f"s{i}", habit="parenthetical", word_count=160
+                )
+                for i in range(200)
+            ]
+            used = [
+                slot_uses_habit(
+                    profile, slot_key=f"s{i}", habit="parenthetical", word_count=160
+                )
+                for i in range(200)
+            ]
+        finally:
+            set_rhythm_count("off")
+        self.assertEqual(first, second)
+        # Sharing one digest would couple "barely drew the habit" to "drew the
+        # smallest count"; these must be independent.
+        drew = [c for c, u in zip(first, used) if u]
+        skipped = [c for c, u in zip(first, used) if not u]
+        self.assertGreater(len(drew), 20)
+        self.assertGreater(len(skipped), 20)
+        self.assertAlmostEqual(
+            sum(drew) / len(drew), sum(skipped) / len(skipped), delta=0.6
+        )
+
+    def test_rhythm_count_renders_words_not_figures(self) -> None:
+        """The same rendered rule tells the Writer to write numbers as figures."""
+
+        from generalized_card.sentence_rhythm import rhythm_guidance, set_rhythm_count
+
+        profile = self._rhythm_count_profile()
+        try:
+            set_rhythm_count("off")
+            legacy = rhythm_guidance(profile, slot_key="s3", word_count=160)
+            set_rhythm_count("measured")
+            rendered = [
+                rhythm_guidance(profile, slot_key=f"s{i}", word_count=160)
+                for i in range(400)
+            ]
+        finally:
+            set_rhythm_count("off")
+        asides = [r for r in rendered if "asides in parentheses" in r]
+        self.assertGreater(len(asides), 20)
+        for text in asides:
+            fragment = text[text.index("Put ") : text.index("asides in parentheses")]
+            self.assertFalse(
+                any(ch.isdigit() for ch in fragment), fragment
+            )
+        # A drawn count of one must render the legacy string exactly.
+        ones = [r for r in rendered if "Put one aside in parentheses." in r]
+        self.assertGreater(len(ones), 20)
+        self.assertIn("Put one aside in parentheses.", legacy)
+
     def test_tone_quota_calibrate_renders_a_flat_grid_covering_quota(self) -> None:
         """The measurement value: flat, template-independent, and clearly marked."""
 

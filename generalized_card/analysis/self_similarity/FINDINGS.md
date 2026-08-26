@@ -321,13 +321,20 @@ Measured on the gate's own saved prompts:
 | **compliance, realized \| cued** | **0.380** |
 | realized when not cued | 0.023 |
 
-**The draw is already above real. The whole deficit is compliance.** And it is not
-one deficit but three, all multiplicative:
+**The draw is already above real. The whole deficit is compliance.** And it is two
+deficits, multiplicative:
 
-| | prevalence | parens per carrier | tokens per paren | paren tokens per carrier |
+| | prevalence | parens per carrier | words per paren | paren words per carrier |
 |---|---:|---:|---:|---:|
-| real | 0.1723 | **1.76** | 10.6 | **18.7** |
-| gate | 0.0906 | **1.00** | 8.6 | **8.6** |
+| real | 0.1723 | **1.76** | 5.4 | **9.6** |
+| gate | 0.0906 | **1.00** | 6.0 | **6.0** |
+
+**Correction to an earlier version of this table.** It reported "tokens per paren
+8.6 against 10.6" as a third deficit. That count used the self_bleu tokenizer,
+which counts the brackets and inner punctuation as tokens. In words the gate's
+asides are slightly **longer** than real's (6.0 against 5.4) and their p90 is
+identical at 11. There is no length deficit. There are exactly two, and the
+per-carrier word gap (9.6 against 6.0) is explained entirely by the count.
 
 Real's per-carrier count runs 1/2/3/4/6/22. The gate's distribution is
 **`{1: 48}`** — every single carrying comment has exactly one, with no exceptions.

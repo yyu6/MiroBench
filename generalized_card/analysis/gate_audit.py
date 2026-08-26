@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Free post-run gate audit for the v112 and v113 arms.
+"""Free post-run gate audit for the v112, v113, v115 and v116 arms.
 
 Reads a finished run and answers the one question a gate exists to answer:
 **did each arm fire, and did it produce the surface behaviour it was built for?**
@@ -122,6 +122,41 @@ def main() -> None:
               f"{cued / len(band):>10.3f}{ratio:>19.3f}")
     total = sum(r["realized"] for r in rows) / max(1, sum(r["assigned"] for r in rows))
     print(f"  {'TOTAL':<14}{len(rows):>7}{'':>10}{'':>10}{total:>19.3f}   (paper run 0.891)")
+
+    print("\n=== v116: parenthetical count (--rhythm-count measured) ===")
+    import re as _re
+    paren = _re.compile(r"\([^)]{2,}\)")
+    one_cue = "Put one aside in parentheses."
+    many_cue = "separate asides in parentheses"
+    cued = [r for r in rows if one_cue in r["prompt"] or many_cue in r["prompt"]]
+    carried = [r for r in rows if paren.search(r["text"])]
+    print(f"  slots cued a parenthetical        : {len(cued)} = {len(cued)/len(rows):.4f}"
+          f"   (real comment prevalence 0.172)")
+    print(f"  slots that wrote one              : {len(carried)} = {len(carried)/len(rows):.4f}")
+    hit = [r for r in cued if paren.search(r["text"])]
+    print(f"  compliance, realized | cued       : {len(hit)}/{len(cued)} = "
+          f"{len(hit)/max(1,len(cued)):.3f}   (v113 gate 0.380)")
+    asked = Counter()
+    for r in cued:
+        m = _re.search(r"Put (one|two|three|four|five) (?:separate )?asides?", r["prompt"])
+        asked[m.group(1) if m else "?"] += 1
+    print(f"  counts ASKED for                  : {dict(sorted(asked.items()))}")
+    got = Counter(len(paren.findall(r["text"])) for r in carried)
+    print(f"  counts WRITTEN                    : {dict(sorted(got.items()))}"
+          f"   (v113 gate {{1: 48}} -- the arm is inert if this is still all 1s)")
+    if carried:
+        words = [len(m.split()) for r in carried for m in paren.findall(r["text"])]
+        print(f"  parens per carrying comment       : "
+              f"{sum(got[k]*k for k in got)/len(carried):.2f}   (real 1.76 on the matched seeds)")
+        print(f"  words per parenthetical           : {sum(words)/len(words):.1f}"
+              f"   (real 5.7 at long, 6.7 at very_long)")
+
+    print("\n=== v115: tone quota (--tone-quota inverted) ===")
+    tones = Counter(str(r["tone_target"] or "") for r in rows)
+    for label in ("polite", "somewhat_polite", "neutral", "impolite"):
+        print(f"  assigned {label:<16}: {tones[label]:>4} = {tones[label]/len(rows):.4f}")
+    print("  (arm off assigns ~.273/.087/.147/.493; inverted at cap 0.35 asks "
+          "~.350/.109/.320/.220)")
 
     print("\n=== guardrails ===")
     pol = [r for r in rows if r["tone_target"] == "polite"]

@@ -16,10 +16,13 @@ HISTORICAL_REVISION_POLICY_VERSIONS = {
     "generalized-card-revision-v6-dynamic-coverage-history-20260807",
 }
 GENERALIZED_V2_GENERATION_POLICY_VERSION = (
-    "generalized-card-v2-inverted-tone-quota-v115-20260826"
+    "generalized-card-v2-drawn-parenthetical-count-v116-20260826"
 )
 HISTORICAL_GENERATION_POLICY_VERSIONS = {
     "generalized-v2": {
+        # v115 shipped the inverted tone quota but still cued the literal word
+        # "one" for every parenthetical aside, at every band. Never ran.
+        "generalized-card-v2-inverted-tone-quota-v115-20260826",
         # v114 corrected v113's URL reader but never ran; the tone quota it
         # rendered was still the template's own rates, so the Writer's 0.854
         # impolite realization carried the output to 0.607 against real's 0.464.
@@ -195,7 +198,7 @@ CORE_FILES = {
     ),
     "generator_adapter": (
         "generalized_card/generalized_card/backend.py",
-        "f42351176f47bf6532b1c3c093776ed5ddbba5988acb0d2f31f24afc64ff8725",
+        "58284ce7c1e70b3169c47ef7ec0bb2ab5faa547cea5b2c936729271c165eb5e8",
     ),
     "data_boundary": (
         "generalized_card/generalized_card/data.py",
@@ -229,7 +232,7 @@ CORE_FILES = {
     ),
     "generation_runner": (
         "generalized_card/scripts/run_generate.py",
-        "4fc5ae9d0977c131ab781b82e10f093bd30a8cdc7173dc16456745c36f46dcf2",
+        "2bf3d51998cf96a756e0e5d65ce2044fb6fc1cfd6be1b7da4f3d439a16ea67fb",
     ),
     "generation_backend_runner": (
         "generalized_card/scripts/run_generator_backend.py",
@@ -353,7 +356,7 @@ CORE_FILES = {
     ),
     "sentence_rhythm": (
         "generalized_card/generalized_card/sentence_rhythm.py",
-        "05986a7b8479b30e83dc33aa46f0779f7cba7991633e5630e9c1652ba00cd7dd",
+        "e3955e85843cb55e55b2f149964ca4b26d88cd6e0b213fff476ea7280189e344",
     ),
     "story_scope": (
         "generalized_card/generalized_card/story_scope.py",

@@ -489,6 +489,18 @@ def build_parser() -> argparse.ArgumentParser:
         ),
     )
     parser.add_argument(
+        "--rhythm-count",
+        choices=("off", "measured"),
+        default="off",
+        help=(
+            "Draw how MANY parenthetical asides a slot is asked for from the "
+            "band's measured distribution instead of cueing the literal word "
+            "'one'. 'off' reproduces every release through v115, whose "
+            "per-carrier count was {1: 48} on the v113 gate -- exactly one, "
+            "every time -- against a real 1.47 at long and 3.58 at essay."
+        ),
+    )
+    parser.add_argument(
         "--tone-quota",
         choices=("off", "inverted", "calibrate"),
         default="off",
@@ -973,6 +985,7 @@ def main() -> None:
         "development_scope": args.development_scope,
         "reference_link": args.reference_link,
         "tone_quota": args.tone_quota,
+        "rhythm_count": args.rhythm_count,
         "writer_retries": args.writer_retries,
         "no_story_scope": args.no_story_scope,
         "own_fact_license": args.own_fact_license,
@@ -1182,6 +1195,7 @@ def main() -> None:
     env["GENERALIZED_CARD_DEVELOPMENT_SCOPE"] = args.development_scope
     env["GENERALIZED_CARD_REFERENCE_LINK"] = args.reference_link
     env["GENERALIZED_CARD_TONE_QUOTA"] = args.tone_quota
+    env["GENERALIZED_CARD_RHYTHM_COUNT"] = args.rhythm_count
     env["GENERALIZED_CARD_NO_STORY_SCOPE"] = args.no_story_scope
     env["GENERALIZED_CARD_OWN_FACT_LICENSE"] = args.own_fact_license
     env["GENERALIZED_CARD_SPEAKER_IDENTITY"] = args.speaker_identity
@@ -1537,6 +1551,7 @@ RUN_EXPERIMENT_FIELDS = (
     "development_scope",
     "reference_link",
     "tone_quota",
+    "rhythm_count",
     "writer_retries",
     "no_story_scope",
     "own_fact_license",

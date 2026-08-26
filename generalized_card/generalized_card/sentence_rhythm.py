@@ -81,6 +81,22 @@ RHYTHM_HABITS: tuple[dict[str, Any], ...] = (
         "pattern": r"\([^)]{2,}\)",
         "cue": "Put one aside in parentheses.",
         "suppress_cue": "",
+        # The only habit whose COUNT is measured and cued. On the v113 gate the
+        # per-carrier distribution was literally `{1: 48}` -- every carrying
+        # comment held exactly one, no exceptions -- against a real 1.20 at short
+        # and 3.58 at essay. The cue says "one" and gets exactly one, which is E4
+        # confirmed from the other direction, so the number has to be drawn.
+        # `count_cue` renders only for n >= 2; n == 1 renders `cue` verbatim, so
+        # the legacy arm value is byte-identical.
+        "counts_measured": True,
+        # Spelled in words, not figures: every other cue in this module names
+        # quantities in words, and the `digit` cue in the same rendered rule asks
+        # for numbers "written as a figure", so a numeral here is one the Writer
+        # could reasonably carry into the comment.
+        "count_cue": (
+            "Put {n} separate asides in parentheses, in different places in the "
+            "comment -- short ones, the kind you add without stopping."
+        ),
     },
     {
         "name": "ellipsis",
@@ -151,6 +167,18 @@ SENTENCE_RHYTHM_ENABLED = True
 # `on` adds one sentence naming the failure mode by example rather than
 # changing the underlying instruction, so a genuine count, price, or spec is
 # unaffected.
+# `off` reproduces every version through v115, where `parenthetical` cued the
+# literal word "one" at every band. The measured per-carrier count runs 1.20 at
+# short, 1.47 at long, 1.88 at very_long and 3.58 at essay, so the fixed "one"
+# under-asks by 1.9x exactly where `self_bertscore`'s parenthetical channel lives.
+RHYTHM_COUNT_ENABLED = False
+
+# A drawn count above this is not rendered. Real's essay band puts 28.3% of its
+# carriers at 5 or more and its tail reaches 22, and a cue asking for 22 asides
+# describes nothing a person does deliberately.
+_MAX_CUED_COUNT = 5
+_COUNT_WORDS = {2: "two", 3: "three", 4: "four", 5: "five"}
+
 DIGIT_CUE_GUARD_ENABLED = False
 _DIGIT_CUE_GUARDED = (
     "Put a number in this one -- a price, a count, a model number, a "
@@ -168,6 +196,14 @@ def set_active_rhythm_profile(profile: dict[str, Any] | None) -> None:
 
     global ACTIVE_RHYTHM_PROFILE
     ACTIVE_RHYTHM_PROFILE = dict(profile or {})
+
+
+def set_rhythm_count(mode: str) -> bool:
+    """Select the drawn-habit-count arm and return whether it is on."""
+
+    global RHYTHM_COUNT_ENABLED
+    RHYTHM_COUNT_ENABLED = str(mode or "off").strip().lower() == "measured"
+    return RHYTHM_COUNT_ENABLED
 
 
 def set_digit_cue_guard(mode: str) -> bool:
@@ -253,12 +289,32 @@ def _band_row(bodies: list[str]) -> dict[str, Any]:
     shares["short_sentence"] = (
         round(with_short / multi_sentence, 6) if multi_sentence else 0.0
     )
+    # Conditional on carrying the habit at all, so it composes with `shares`:
+    # `shares` decides whether the slot gets the habit and this decides how much.
+    counts: dict[str, dict[str, float]] = {}
+    for spec in RHYTHM_HABITS:
+        pattern = spec.get("pattern")
+        if not pattern or not spec.get("counts_measured"):
+            continue
+        found = [
+            len(re.findall(pattern, body))
+            for body in bodies
+            if re.search(pattern, body)
+        ]
+        if not found:
+            continue
+        capped = [min(value, _MAX_CUED_COUNT) for value in found]
+        counts[spec["name"]] = {
+            str(value): round(capped.count(value) / len(capped), 6)
+            for value in sorted(set(capped))
+        }
     return {
         "sample_count": len(bodies),
         "median_words_per_sentence": round(statistics.median(per_sentence), 2),
         "median_sentences": int(statistics.median(sentence_counts)),
         "multi_sentence_count": multi_sentence,
         "shares": dict(sorted(shares.items())),
+        "habit_counts": dict(sorted(counts.items())),
     }
 
 
@@ -302,6 +358,48 @@ def slot_uses_habit(
     digest = hashlib.sha256(f"{habit}:{slot_key}".encode("utf-8")).digest()
     draw = int.from_bytes(digest[:8], "big", signed=False) / float(1 << 64)
     return draw < share
+
+
+def slot_habit_count(
+    profile: dict[str, Any] | None,
+    *,
+    slot_key: str,
+    habit: str,
+    word_count: Any,
+) -> int:
+    """How many of this habit the slot is asked for, drawn from the band.
+
+    Returns 1 whenever the arm is off, the habit has no measured count
+    distribution, or the profile predates `habit_counts` -- so every caller
+    reproduces the fixed-"one" behaviour without a branch of its own.
+
+    The draw is namespaced away from `slot_uses_habit`'s digest so that drawing
+    the habit and drawing a large count are independent; sharing the hash would
+    make every slot that barely cleared the share threshold also draw the
+    smallest count.
+    """
+
+    if not RHYTHM_COUNT_ENABLED:
+        return 1
+    row = band_row(profile, word_count)
+    dist = ((row.get("habit_counts") or {}).get(habit) or {}) if row else {}
+    if not dist:
+        return 1
+    ordered = sorted(
+        ((int(value), float(weight)) for value, weight in dist.items()),
+        key=lambda item: item[0],
+    )
+    total = sum(weight for _, weight in ordered)
+    if total <= 0:
+        return 1
+    digest = hashlib.sha256(f"count:{habit}:{slot_key}".encode("utf-8")).digest()
+    draw = int.from_bytes(digest[8:16], "big", signed=False) / float(1 << 64)
+    cumulative = 0.0
+    for value, weight in ordered:
+        cumulative += weight / total
+        if draw < cumulative:
+            return max(1, min(value, _MAX_CUED_COUNT))
+    return max(1, min(ordered[-1][0], _MAX_CUED_COUNT))
 
 
 def slot_habits(
@@ -375,6 +473,17 @@ def rhythm_guidance(
         spec = _HABIT_BY_NAME[name]
         if drawn and name == "digit" and DIGIT_CUE_GUARD_ENABLED:
             cue = _DIGIT_CUE_GUARDED
+        elif drawn and spec.get("count_cue"):
+            count = slot_habit_count(
+                profile, slot_key=slot_key, habit=name, word_count=word_count
+            )
+            # n == 1 renders the legacy cue verbatim, so `off` and a drawn 1 are
+            # the same string and the arm is byte-identical wherever it draws one.
+            cue = (
+                spec["cue"]
+                if count <= 1
+                else spec["count_cue"].format(n=_COUNT_WORDS[count])
+            )
         else:
             cue = spec["cue"] if drawn else spec["suppress_cue"]
         if cue:

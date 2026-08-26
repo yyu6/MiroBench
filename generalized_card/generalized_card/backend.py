@@ -133,6 +133,7 @@ from .semantic_realization import set_route_ledger, set_turn_frame
 from .sentence_rhythm import (
     set_active_rhythm_profile,
     set_digit_cue_guard,
+    set_rhythm_count,
     set_sentence_rhythm,
 )
 from .entity_spread import set_active_entity_spread_profile, set_entity_spread
@@ -462,6 +463,10 @@ def configure_generator_backend(
         or "off"
     )
     set_digit_cue_guard(module.GENERALIZED_DIGIT_CUE_GUARD)
+    module.GENERALIZED_RHYTHM_COUNT = (
+        os.environ.get("GENERALIZED_CARD_RHYTHM_COUNT", "off").strip().lower() or "off"
+    )
+    set_rhythm_count(module.GENERALIZED_RHYTHM_COUNT)
     # Whether a slot the plan assigned `polite` is asked for the surface moves
     # real polite comments of its size actually carry. `off` reproduces every
     # version through v98, where that register reached the Writer only as the

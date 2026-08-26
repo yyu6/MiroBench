@@ -495,6 +495,93 @@ priced against those targets, including v111's 8–26%, has to be re-priced.
 
 **Not run yet.**
 
+## v116 — draw how many asides, because the cue said "one" and got exactly one (2026-08-26)
+
+Policy ID: `generalized-card-v2-drawn-parenthetical-count-v116-20260826`. Arm
+`--rhythm-count {off,measured}`, default `off`, which reproduces every release
+through v115 exactly and is asserted by test.
+
+### The second `self_bertscore` channel, and why it needed no new arm
+
+The link arm tops out near **39%** closure at real's own URL mass against the
+**42%** Holm needs at N=150 (`analysis/self_similarity/FINDINGS.md` s3), so
+`self_bertscore` needs a second channel. Ablating classes out of real text, each
+against a random-token-removal control matched on the exact tokens removed:
+
+| ablation on REAL | net | share of the gap |
+|---|---:|---:|
+| − URLs | +0.0080 | 58% |
+| **− parenthetical asides** | **+0.0031** | **23%** |
+| − digit runs | −0.0005 | **−3%** |
+| − all three | +0.0096 | 70% |
+| hapax → a frequent thread word | −0.0020 | **−14%** |
+
+Two candidates died there. **Digit runs** have a *larger* token gap than URLs
+(+2.49% against +1.08%) and were the obvious second candidate; they are worth
+−3%, which closes the only route that would have needed domain vocabulary in
+Writer-facing text. And the **rare-token** reading of the URL channel — generated
+carries 43% fewer hapax legomena — moves the metric the *wrong way*.
+
+E5 then found the arm already exists. `sentence_rhythm` has drawn a
+`parenthetical` habit since v97, and the draw is not the problem:
+
+| | value |
+|---|---:|
+| slots cued on the v113 gate | 100 / 532 = **0.188** |
+| real comment prevalence | 0.172 |
+| slots that wrote one | 48 / 532 = 0.090 |
+| **compliance, realized \| cued** | **0.380** |
+
+### What the arm changes
+
+Two deficits, not three. Per-carrier **word** length is already matched — gate 6.0
+against real 5.4, identical p90 of 11; an earlier table reported a length deficit
+and was counting brackets and punctuation as tokens. The remaining gap is
+compliance and **count**:
+
+| | prevalence | parens per carrier | paren words per carrier |
+|---|---:|---:|---:|
+| real | 0.1723 | **1.76** | **9.6** |
+| gate | 0.0906 | **1.00** | **6.0** |
+
+The gate's per-carrier distribution is literally **`{1: 48}`** — 48 carrying
+comments, every one holding exactly one aside, no exceptions. The cue reads *"Put
+one aside in parentheses."* **E4 confirmed from the other direction: naming the
+concrete number buys ~1.0 compliance on the number.** So the number is now drawn.
+
+Measured over 15,559 evaluation-excluded comments, conditional on carrying one:
+
+| band | carry share | count per carrier | distribution |
+|---|---:|---:|---|
+| short | 0.063 | 1.20 | 1:.902 2:.049 3:.023 4:.019 5+:.008 |
+| medium | 0.149 | 1.22 | 1:.853 2:.109 3:.027 |
+| long | 0.326 | **1.47** | 1:.680 2:.220 3:.074 |
+| very_long | 0.549 | **1.88** | 1:.574 2:.219 3:.102 4:.048 5+:.056 |
+| essay | 0.757 | **3.58** | 1:.239 2:.207 3:.158 4:.114 **5+:.283** |
+
+`habit_counts` joins the band row, drawn per slot on a digest **namespaced away
+from the habit draw** so that barely clearing the share threshold is not coupled
+to drawing the smallest count — asserted by test. A drawn 1 renders the legacy
+string verbatim, so `off` and a drawn 1 are the same bytes. Counts render as
+words, never figures, because the same rendered rule tells the Writer to write
+numbers *"as a figure"*. Capped at five: real's essay band puts 28.3% of carriers
+at 5 or more and its tail reaches 22, and a cue asking for 22 asides describes
+nothing a person does deliberately.
+
+### What this version does NOT fix, stated plainly
+
+Compliance. It falls 0.71 → 0.61 → **0.30** → **0.12** across the four length
+bands, and the count arm multiplies whatever compliance there is rather than
+raising it. The obvious reading — that long-slot prompts are crowded and surface
+cues lose — was tested and is **wrong**: the long-slot prompt carries the *fewest*
+rule lines of any band (68.9 against medium's 82.0), and only `parenthetical`
+collapses, while `dash_clause` *rises* with length to 0.83. That collapse is
+unexplained and is the next thing to measure.
+
+`gate_audit.py` reports counts asked against counts written, and self-validates
+against the v113 artifact at `{'one': 100}` asked and `{1: 48}` written — so if
+the arm is inert on the next run, the audit says so rather than the metric.
+
 ## v115 — invert the tone quota, because the assignment was never the problem (2026-08-26)
 
 Policy ID: `generalized-card-v2-inverted-tone-quota-v115-20260826`. Arm
