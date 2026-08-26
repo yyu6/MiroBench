@@ -69,7 +69,11 @@ from .long_form_planning import (
     reconcile_development_plan_capacity,
     set_development_scope,
 )
-from .reference_link import set_reference_link_count, set_reference_link_mode
+from .reference_link import (
+    set_reference_link_count,
+    set_reference_link_host,
+    set_reference_link_mode,
+)
 from .tone_realization import set_tone_quota_mode
 from .planner_distribution import (
     apply_slot_distribution_schedule,
@@ -612,6 +616,11 @@ def configure_generator_backend(
         or "off"
     )
     set_reference_link_count(module.GENERALIZED_REFERENCE_LINK_COUNT)
+    module.GENERALIZED_REFERENCE_LINK_HOST = (
+        os.environ.get("GENERALIZED_CARD_REFERENCE_LINK_HOST", "off").strip().lower()
+        or "off"
+    )
+    set_reference_link_host(module.GENERALIZED_REFERENCE_LINK_HOST)
     module.GENERALIZED_TONE_QUOTA = (
         os.environ.get("GENERALIZED_CARD_TONE_QUOTA", "off").strip().lower() or "off"
     )

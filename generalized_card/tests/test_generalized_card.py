@@ -1201,6 +1201,119 @@ class GeneralizedCardTest(unittest.TestCase):
             set_reference_link_mode("off")
         self.assertGreater(multi, 50)
 
+    # v118. Named apart from `_link_count_inventory` for the same reason that one
+    # is named apart from `_link_inventory`: a duplicate method name is taken
+    # silently by whichever definition comes last.
+    def _link_host_inventory(self) -> dict:
+        """Three hosts big enough for any k, plus 60 singletons."""
+
+        urls = [f"https://big{g}.test/a/b/{i}" for g in range(3) for i in range(20)]
+        urls += [f"https://solo{i}.test/x" for i in range(60)]
+        return {
+            "available": True,
+            "urls": sorted(urls),
+            "urls_per_carrier": {"1": 0.60, "2": 0.20, "3": 0.10, "4": 0.10},
+            "mean_urls_per_carrier": 1.70,
+            "same_host_rate": {"2": 0.771, "3": 0.640, "4": 0.417},
+            "same_host_rate_pooled": 0.695,
+            "same_host_sample_counts": {"2": 105, "3": 25, "4": 24},
+        }
+
+    def test_reference_link_host_off_leaves_the_v117_draw_untouched(self) -> None:
+        """E1: the legacy value must reproduce v117 byte-for-byte."""
+
+        from generalized_card.reference_link import (
+            draw_reference_links, set_reference_link_count, set_reference_link_host,
+            set_reference_link_mode,
+        )
+
+        inv = self._link_host_inventory()
+        try:
+            set_reference_link_mode("measured")
+            set_reference_link_count("measured")
+            set_reference_link_host("off")
+            legacy = [draw_reference_links(self._link_count_task(i), inv) for i in range(300)]
+            set_reference_link_host("measured")
+            armed = [draw_reference_links(self._link_count_task(i), inv) for i in range(300)]
+        finally:
+            set_reference_link_host("off")
+            set_reference_link_count("off")
+            set_reference_link_mode("off")
+        self.assertEqual([len(u) for u in legacy], [len(u) for u in armed],
+                         "the arm must not change how many links a slot gets")
+        singles = [i for i, u in enumerate(legacy) if len(u) == 1]
+        self.assertGreater(len(singles), 100)
+        for i in singles:
+            self.assertEqual(legacy[i], armed[i], "single-link slots must not move")
+        self.assertNotEqual(legacy, armed, "the arm must do something at k >= 2")
+
+    def test_reference_link_host_draws_one_host_at_the_measured_rate(self) -> None:
+        from generalized_card.reference_link import (
+            draw_reference_links, folded_host, set_reference_link_count,
+            set_reference_link_host, set_reference_link_mode,
+        )
+
+        inv = self._link_host_inventory()
+        try:
+            set_reference_link_mode("measured")
+            set_reference_link_count("measured")
+            set_reference_link_host("measured")
+            by_k: dict[int, list[bool]] = {}
+            for i in range(6000):
+                urls = draw_reference_links(self._link_count_task(i), inv)
+                self.assertEqual(len(urls), len(set(urls)), urls)
+                if len(urls) >= 2:
+                    by_k.setdefault(len(urls), []).append(
+                        len({folded_host(u) for u in urls}) == 1
+                    )
+        finally:
+            set_reference_link_host("off")
+            set_reference_link_count("off")
+            set_reference_link_mode("off")
+        for k, target in ((2, 0.771), (3, 0.640), (4, 0.417)):
+            rows = by_k.get(k) or []
+            self.assertGreater(len(rows), 200, f"k={k} too rare to judge")
+            self.assertAlmostEqual(sum(rows) / len(rows), target, delta=0.05,
+                                   msg=f"k={k} one-host rate")
+
+    def test_reference_link_host_falls_back_to_the_pooled_rate(self) -> None:
+        """A k with too few carriers to estimate uses the pooled rate, not zero."""
+
+        from generalized_card.reference_link import _same_host_rate
+
+        inv = self._link_host_inventory()
+        self.assertAlmostEqual(_same_host_rate(inv, 3), 0.640)
+        thin = dict(inv, same_host_rate={"2": 0.771})
+        self.assertAlmostEqual(_same_host_rate(thin, 4), 0.695)
+        self.assertEqual(_same_host_rate({}, 2), 0.0)
+
+    def test_folded_host_treats_one_place_as_one_host(self) -> None:
+        from generalized_card.reference_link import folded_host
+
+        self.assertEqual(folded_host("https://youtu.be/abc"), "youtube.com")
+        self.assertEqual(folded_host("https://www.youtube.com/watch?v=abc"), "youtube.com")
+        self.assertEqual(folded_host("https://np.reddit.com/r/x/"), "reddit.com")
+        self.assertEqual(folded_host("https://en.wikipedia.org/wiki/X"), "wikipedia.org")
+        self.assertEqual(folded_host("https://usa.canon.com/shop/p/x"), "canon.com")
+        self.assertEqual(folded_host("www.dpreview.com/a"), "dpreview.com")
+
+    def test_reference_link_host_inventory_measures_the_rate(self) -> None:
+        from generalized_card.reference_link import build_reference_link_inventory
+
+        threads = [{"comments": (
+            # 3 same-host pairs, 1 mixed pair -> 0.75 at k=2
+            [{"body": f"see https://a.test/{i} and https://a.test/{i}b"} for i in range(3)]
+            + [{"body": "see https://a.test/z and https://b.test/z"}]
+            # a 5-URL carrier is outside 2..MAX and must not be counted
+            + [{"body": " ".join(f"https://c.test/{i}" for i in range(5))}]
+        )}]
+        inv = build_reference_link_inventory(threads)
+        self.assertEqual(inv["same_host_sample_counts"]["2"], 4)
+        self.assertEqual(inv["same_host_sample_counts"]["4"], 0)
+        self.assertAlmostEqual(inv["same_host_rate_pooled"], 0.75)
+        # 4 carriers is under MIN_HOST_RATE_SAMPLE, so no per-k rate is published
+        self.assertEqual(inv["same_host_rate"], {})
+
     def test_reference_link_single_offer_is_byte_identical(self) -> None:
         from generalized_card.reference_link import (
             reference_link_offer, reference_links_offer,

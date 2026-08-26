@@ -679,3 +679,74 @@ offer says "inline and in different places" and the Writer partly ignores it.
 
 **Recorded as a blocker on v117, not a success.** The metric numbers are right and
 the artifact is not shippable as it stands.
+
+## 15. Two thirds of s14's fix did not survive measurement — 2026-08-26
+
+`url_host_coherence.py`, on the **150-seed** evaluation-excluded corpus (424
+threads, 11,817 comments, 531 carriers, 179 of them holding 2+ non-media URLs).
+s14 was measured on the calibration pool's larger exclusion set, which is why its
+counts are bigger; the direction of the surviving claim is the same.
+
+### The placement half is an artifact — RETRACTED
+
+s14: *"the first URL sits a median 23% into the comment rather than trailing"*, so
+a v118 should place the first link early. That 0.23 is `text.find(url) / len(text)`
+— a **character** fraction divided by a length the URLs themselves dominate. A
+median URL is 61 characters, so in a comment ending in a block of three of them
+the prose is a small part of the denominator and the first URL "starts early" by
+arithmetic alone. Reproduced here at 0.314 on this corpus, so the figure is right
+and the reading is wrong.
+
+Measured in **words**, which is what a Writer cue can act on:
+
+| | first URL, median | first URL in the last quarter |
+|---|---:|---:|
+| all carriers (n=507) | **0.795** | **0.533** |
+| k=2..4 (n=147) | **0.722** | **0.497** |
+
+Two independent forms agree: characters excluding URL characters gives 0.647, word
+index over non-URL words gives 0.708. **Real trails its links.** v117 stacking
+them at the end is correct behaviour, and an arm that moved the first link early
+would have moved the generator away from real.
+
+### The topical-relevance half is not supported at this n
+
+s14's headline example is an Apple support URL inside a comment about a Sony A7.
+Tagging every URL and every comment's prose with a camera-brand list:
+
+| | URLs naming a brand | naming a brand the prose never mentions |
+|---|---:|---:|
+| real | 0.330 | **0.200** |
+| v117 generated | 0.438 | **0.344** (11 of 32) |
+
+Real posts off-brand links constantly — the excluded corpus contains that *same*
+`fujifilm-dsc.com/.../x100f/...` URL inside a comment about Canon. 11 against an
+expected 6.4 at n=32 is not a finding. And it is structurally unfixable: a
+topically relevant link needs the seed thread's subject, and the inventory is
+built from the threads that exclude it. An idf-ranked match attempt on the real
+routed slots returns candidates like `evf` -> a Canon EOS page for a Sony A7 slot.
+
+**A weaker instrument agrees.** Token overlap between a URL and its own comment's
+prose: real 0.372, shuffle null 0.103, generated 0.094 — generated sits exactly at
+the null, as a hash draw must. But real's own 0.372 is itself close enough to a
+draw-with-structure that forcing generated to real's rate would be tuning to a
+lower bound; real's opaque URLs (12.6% carry no descriptive path token at all, and
+they match at 0.000) can never show relevance a reader still trusts.
+
+### What does survive, and it is large
+
+| k | carriers | all URLs on one folded host |
+|---|---:|---:|
+| 2 | 105 | **0.771** |
+| 3 | 25 | **0.640** |
+| 4 | 24 | **0.417** |
+| pooled 2..4 | 154 | **0.695** |
+
+v117 drew **0.000** on its own artifact (0 of 6 multi-link carriers; P=0.0007
+under real's rate) because it draws each URL independently across 249 folded
+hosts. This is v118, and it is the whole of v118. Reading all 19 of v117's
+carrying comments rather than the three s14 quotes is what separated these three
+claims: the links that read as human are the opaque ones (`youtu.be/...?t=1434`,
+flickr photo pages), and the ones that read as machine output are four unrelated
+hosts stacked together — not one off-topic link, which real does too.
+

@@ -502,6 +502,19 @@ def build_parser() -> argparse.ArgumentParser:
         ),
     )
     parser.add_argument(
+        "--reference-link-host",
+        choices=("off", "measured"),
+        default="off",
+        help=(
+            "When a slot is offered 2+ reference URLs, draw them all from ONE "
+            "host at the corpus's measured rate. 'off' reproduces v117, which "
+            "drew each independently across 249 folded hosts and stacked four "
+            "unrelated links in one 46-word comment (G61). Real puts every URL "
+            "on one host 0.771 of the time at k=2, 0.640 at k=3, 0.417 at k=4. "
+            "Single-link slots, routing and the count are all unchanged."
+        ),
+    )
+    parser.add_argument(
         "--rhythm-count",
         choices=("off", "measured"),
         default="off",
@@ -1000,6 +1013,7 @@ def main() -> None:
         "tone_quota": args.tone_quota,
         "rhythm_count": args.rhythm_count,
         "reference_link_count": args.reference_link_count,
+        "reference_link_host": args.reference_link_host,
         "writer_retries": args.writer_retries,
         "no_story_scope": args.no_story_scope,
         "own_fact_license": args.own_fact_license,
@@ -1211,6 +1225,7 @@ def main() -> None:
     env["GENERALIZED_CARD_TONE_QUOTA"] = args.tone_quota
     env["GENERALIZED_CARD_RHYTHM_COUNT"] = args.rhythm_count
     env["GENERALIZED_CARD_REFERENCE_LINK_COUNT"] = args.reference_link_count
+    env["GENERALIZED_CARD_REFERENCE_LINK_HOST"] = args.reference_link_host
     env["GENERALIZED_CARD_NO_STORY_SCOPE"] = args.no_story_scope
     env["GENERALIZED_CARD_OWN_FACT_LICENSE"] = args.own_fact_license
     env["GENERALIZED_CARD_SPEAKER_IDENTITY"] = args.speaker_identity
@@ -1573,6 +1588,7 @@ RUN_EXPERIMENT_FIELDS = (
     "tone_quota",
     "rhythm_count",
     "reference_link_count",
+    "reference_link_host",
     "writer_retries",
     "no_story_scope",
     "own_fact_license",

@@ -76,7 +76,7 @@ from .viewpoint_bank import build_reference_viewpoints
 # asides per comment) and `reference_link_inventory.urls_per_carrier` (v117,
 # reference URLs per carrying comment). An older profile simply lacks them and
 # both arms fall back to a count of one, which is the pre-v116 behaviour.
-PROFILE_SCHEMA_VERSION = 22
+PROFILE_SCHEMA_VERSION = 23
 CARD_CONTEXT_DROPOUT_RATE = 0.42
 CARD_CONTEXT_JITTER_RATE = 0.32
 CARD_GENERATION_CONTROLS = {

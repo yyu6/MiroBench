@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Free post-run gate audit for the v112, v113, v115, v116 and v117 arms.
+"""Free post-run gate audit for the v112, v113, v115, v116, v117 and v118 arms.
 
 Reads a finished run and answers the one question a gate exists to answer:
 **did each arm fire, and did it produce the surface behaviour it was built for?**
@@ -23,6 +23,7 @@ REPO = Path(__file__).resolve().parents[2]
 RUNS = REPO / "artifacts/generalized_card/runs"
 sys.path.insert(0, str(REPO / "generalized_card"))
 from generalized_card.audit import _malformed_urls, _urls  # noqa: E402
+from generalized_card.reference_link import folded_host  # noqa: E402
 BANDS = ((1, 9), (10, 19), (20, 34), (35, 49), (50, 69), (70, 100), (101, 150), (151, 10**9))
 
 
@@ -184,6 +185,26 @@ def main() -> None:
     hit = [r for r in offered if _urls(r["text"])]
     print(f"  compliance, wrote | offered       : {len(hit)}/{len(offered)} = "
           f"{len(hit)/max(1,len(offered)):.3f}   (v113 gate 0.958)")
+
+    print("\n=== v118: host coherence (--reference-link-host measured) ===")
+    # Measured on the 150-seed evaluation-excluded corpus, k in 2..4 only:
+    # 0.771 / 0.640 / 0.417, pooled 0.695. `url_host_coherence.py` reproduces it.
+    TARGET = {2: 0.771, 3: 0.640, 4: 0.417}
+    multi = [sorted(set(_urls(r["text"]))) for r in carr]
+    multi = [u for u in multi if 2 <= len(u) <= 4]
+    if not multi:
+        print("  no multi-link carriers in this run -- the arm cannot be judged here")
+    else:
+        print(f"{'k':>3}{'carriers':>10}{'all one host':>14}{'real':>8}")
+        for k in (2, 3, 4):
+            rows = [u for u in multi if len(u) == k]
+            if not rows:
+                continue
+            same = sum(1 for u in rows if len({folded_host(x) for x in u}) == 1)
+            print(f"{k:>3}{len(rows):>10}{same/len(rows):>14.3f}{TARGET[k]:>8.3f}")
+        same_all = sum(1 for u in multi if len({folded_host(x) for x in u}) == 1)
+        print(f"  pooled 2<=k<=4                    : {same_all/len(multi):.3f}"
+              f"   (real 0.695, v117 drew ~0.00)   n={len(multi)}")
 
     print("\n=== v115: tone quota (--tone-quota inverted) ===")
     tones = Counter(str(r["tone_target"] or "") for r in rows)

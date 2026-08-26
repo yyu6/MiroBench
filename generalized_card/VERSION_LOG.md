@@ -495,6 +495,53 @@ priced against those targets, including v111's 8–26%, has to be re-priced.
 
 **Not run yet.**
 
+## v118 — one host per multi-link slot, and the two halves of G61 that died (2026-08-26)
+
+Policy ID: `generalized-card-v2-host-coherent-links-v118-20260826`. Arm
+`--reference-link-host {off,measured}`, default `off`, byte-identical to v117 when
+off (asserted: single-link slots and every drawn count are unchanged).
+
+### Why
+
+G61 blocked v117 on three grounds. **Only one survives measurement**
+(`analysis/self_similarity/url_host_coherence.py`, 424 evaluation-excluded
+threads / 11,817 comments / 179 carriers holding 2+ non-media URLs):
+
+| G61 claim | verdict | measurement |
+|---|---|---|
+| multi-link slots should share a host | **stands** | real 0.771 / 0.640 / 0.417 at k=2/3/4; v117 drew **0.000** on its own artifact (0 of 6, expected 4.2) |
+| the first link should sit ~23% in, not trail | **RETRACTED** | 0.23 is a character fraction divided by a length URLs dominate. In words the first URL sits at median **0.795** (all carriers) and **0.722** (k=2..4), and **53%** of carriers put it in the last quarter. Real trails; v117 trailing is correct |
+| links are topically unrelated to the comment | **not supported at this n** | real names a brand its own prose never mentions in **0.200** of URLs, generated **0.344** (n=32, not significant). Structurally unfixable anyway: relevance needs the seed's subject and the inventory is built from threads that exclude it |
+
+The 0.643 G61 quotes is the same measure on the calibration pool's larger
+exclusion set; on the 150-seed set it is 0.637 pooled over all k>=2 and **0.695**
+over the arm's own 2<=k<=4 range.
+
+### What it does
+
+On a slot drawn 2+ links, a coin at the corpus's measured per-k rate decides
+whether all of them come from one folded host (`youtu.be` and `youtube.com` are
+one host). On heads the host group is chosen weighted by how many URLs it holds,
+so the marginal host distribution is unchanged and only the within-slot structure
+moves; a group must hold k distinct URLs to be eligible. On tails the v117 draw
+runs untouched. `PROFILE_SCHEMA_VERSION` 22 -> 23 for `same_host_rate`,
+`same_host_rate_pooled` and `same_host_sample_counts`.
+
+### Result
+
+**Not run yet.** Simulated on the run-built 699-URL inventory, 8,000 slots:
+
+| k | v117 (`off`) | v118 (`measured`) | real |
+|---|---:|---:|---:|
+| 2 | 0.045 | **0.781** | 0.771 |
+| 3 | 0.003 | **0.673** | 0.640 |
+| 4 | 0.000 | **0.427** | 0.417 |
+| pooled | 0.027 | **0.672** | 0.695 |
+
+All 699 inventory URLs are still drawn and the top host's share of written URLs
+rises only 0.170 -> 0.189, so the repeated-n-gram guardrail on `self_bleu_4`
+holds. `gate_audit.py` prints this table for any run.
+
 ## v117 — draw how many links, and the audit that resized the claim (2026-08-26)
 
 Policy ID: `generalized-card-v2-drawn-link-count-v117-20260826`. Arm
