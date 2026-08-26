@@ -1040,6 +1040,51 @@ direction from the 8.1% the full run gives. Print per-cell `n` beside every mean
 G84's method: an Oaxaca within-stratum term mixes register with selection into the
 stratum; split it by holding slot identity and assigned tone fixed across runs.
 
+### Next step — 2026-08-28 (supersedes the 2026-08-27 block above)
+
+**Three paid runs on seeds 2–11 are now comparable. Expected passes at N=150:
+v113 2.96, v119 3.03, v122 3.48.** v122 (`--writer-retries 1`) leads.
+
+**All three generation-side doors to the pairwise metrics are now closed.**
+
+| door | verdict | evidence |
+|---|---|---|
+| the prompt | inputs separate, output does not follow | G28 |
+| the sampler | whole design space = 1.65% of base, inside one sd of thread noise | G86 |
+| the write-time retry loop | fires on 38% of slots, both metrics get **worse** | G88 |
+
+`self_bertscore` (+5.09%) and `self_bleu_4` (+20.54%) have **no remaining
+mechanism inside the current generator**. What is left is outside it: a different
+writing model, or a change to how threads are composed. Do not re-open the three
+doors above; each was closed by direct measurement, not by inference.
+
+**The one lever that demonstrably moves this scoreboard is thread composition
+(G90), and it was found by accident.** v122's retry loop moved `impolite_rate`
+15.6pp — but retried comments are only **1.1pp** less impolite than untreated
+ones, so the treated population cannot explain it. What changed is the spread
+across threads: per-thread impolite rates went `20 32 36 42 44 50 50 62 71 77` →
+`21 21 28 32 42 43 45 59 59 70`. **Most of these twelve metrics are means or
+spreads over per-thread values, so pulling in the outlier threads moves them
+without changing any comment's own label.** `length_cv` reaching Cliff 0.00 from
+−0.34 is the same effect.
+
+**Next step: target per-thread outliers explicitly, and measure on the per-thread
+distribution rather than the pooled share.** This is a different design target
+from "make each comment more like real", and it is the only one with a
+demonstrated win behind it. Note the boundary: it will **not** help
+`self_bertscore` or `self_bleu_4`, which are means over comment pairs *within* a
+thread and are blind to across-thread spread.
+
+**Method rules added this session.** E13: a probe licenses no attribution (a
+200-pair sample inverted a decomposition that 2,950 pairs settled). G87/G88: an
+arm can fire perfectly and still fail — measure the arm's **own objective** on its
+own output before reading the downstream metric; v122's retry moved the quantity
+it exists to reduce by −0.0030 at 55% accuracy while every piece of plumbing
+worked. Also: a pass count is comparable only across runs with the **same seed
+set** (G83), and `--writer-retries` defaults to **0**, which silently disables
+every soft-problem arm (G87) — past nulls for such arms are nulls for
+`retries=0`, not for the mechanism.
+
 ### Retracted claims — do not reuse
 
 - ~~"the no-story instruction cut advice from 0.090 to 0.008"~~ — probe

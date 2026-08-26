@@ -1463,3 +1463,34 @@ At N=150 and today's bias, P(pass) under the shipped rule: `polite_rate` **0.00*
   ran it and it *worsened* pair F1 by +0.0255.
 - **Reading an attribution off a probe run** (E13) — at 200 pairs/arm the
   decomposition pointed the opposite direction.
+
+## v122 + the three closed doors — 2026-08-28
+
+- [x] Reject the sampler route (G86) — whole design space inside one sd of noise
+- [x] Find and turn on the inert write-time guard (G87 → v122 paid run)
+- [x] Judge v122 against the pre-registered rule → **reject as a pairwise fix**
+- [x] Diagnose *why* it failed — the retry misses its own objective (−0.0030, 55%)
+- [x] Explain the unpredicted tone gain → thread composition, not per-comment (G90)
+- [x] Verify the self-loop reviser lead the user raised (G85) — real, but a
+      finisher for |Cliff| < 0.14; ours is 0.44
+
+### Open, in priority order
+
+1. **Thread-composition mechanism.** The only demonstrated lever (G90). Target
+   per-thread outliers; measure on the per-thread distribution. Will not help the
+   two pairwise metrics.
+2. **`self_bertscore` / `self_bleu_4` have no in-generator mechanism left.** All
+   three doors closed by measurement. Options are a different writing model, or
+   accepting them as the two that do not pass and reporting under Holm.
+3. **Re-audit every arm registered as a "soft problem"** (G87). They have never
+   run with `--writer-retries > 0`, so their recorded nulls are nulls for
+   `retries=0`. `--length-fidelity` is named explicitly in the CLI help.
+
+### Added to "closed as dead, do not re-propose"
+
+- **Decoding/sampler settings** (G86) — temperature, top_p, frequency and
+  presence penalty; entire range is 1.65% of base on `self_bertscore`.
+- **`--writer-retries` as a pairwise fix** (G88) — 38% of slots rewritten, both
+  metrics worse; `retries=2` explicitly not indicated.
+- **Per-comment editing as a route to thread-level tone metrics** (G90) — the
+  treated comments were 1.1pp different while the metric moved 15.6pp.
