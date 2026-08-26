@@ -1154,12 +1154,12 @@ def main() -> None:
         flush=True,
     )
     print(f"[generalized-command] {' '.join(_redact(command))}", flush=True)
-    if args.prepare_only:
-        print("[prepare-only] no API calls were made", flush=True)
-        return
-
     api_key = os.environ.get(args.api_key_env, "").strip()
-    if not api_key:
+    # `--prepare-only` runs the preflight self-test and stops, so it needs no
+    # credential. It used to return HERE, before the self-test, which made it a
+    # config printer rather than a preflight: the v117 calibration command was
+    # "verified" with it and then failed its self-test on the first paid attempt.
+    if not api_key and not args.prepare_only:
         # Name the keys that are actually set. The credential check runs after the
         # whole preflight, so an unhelpful message here costs a full setup pass.
         available = sorted(
@@ -1278,6 +1278,11 @@ def main() -> None:
     ]
     print(f"[generalized-preflight] {' '.join(self_test_command)}", flush=True)
     subprocess.run(self_test_command, cwd=REPO_ROOT, env=env, check=True)
+
+    if args.prepare_only:
+        print("[prepare-only] preflight self-test passed; no API calls were made",
+              flush=True)
+        return
 
     started = time.monotonic()
     status = "failed"

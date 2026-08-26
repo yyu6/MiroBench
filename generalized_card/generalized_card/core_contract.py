@@ -236,7 +236,7 @@ CORE_FILES = {
     ),
     "generation_runner": (
         "generalized_card/scripts/run_generate.py",
-        "de9577d35c650530fa63aafa0989627bbf975968c53c0326992fe5dd181c8320",
+        "2c472ab4360d337a4c9cf1b4d457a80c81aeceed32234b4740b6afa6c1578e20",
     ),
     "generation_backend_runner": (
         "generalized_card/scripts/run_generator_backend.py",
