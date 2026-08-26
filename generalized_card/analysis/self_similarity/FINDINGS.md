@@ -257,3 +257,50 @@ comparable token count. URLs are the most visible instance of that class, not th
 class itself. `rare_token_ablation.py` prices parentheticals, digit runs and
 hapax flattening, each against a random-token-removal control matched on the exact
 number of tokens removed, because removing text also shortens it.
+
+## 6. The second channel, found — and the two candidates it killed
+
+`rare_token_ablation.py`, same ten seeds. Each class is removed from REAL text and
+rescored; a rise is that class's contribution to real's lower score. Every row is
+paired with a **random-token-removal control matched on the exact number of tokens
+removed per comment**, because removing text also shortens it, and the reported
+`net` subtracts the control.
+
+| ablation on REAL | move | control | net | share of the +0.0138 gap |
+|---|---:|---:|---:|---:|
+| − URLs | +0.0077 | −0.0003 | **+0.0080** | **58%** |
+| − parenthetical asides | +0.0017 | −0.0015 | **+0.0031** | **23%** |
+| − digit runs | −0.0010 | −0.0005 | −0.0005 | **−3%** |
+| − all three | +0.0077 | −0.0019 | +0.0096 | **70%** |
+| hapax → a frequent thread word | −0.0020 | (length-neutral) | −0.0020 | **−14%** |
+
+**Parenthetical asides are the second channel.** Real puts 4.84% of its tokens
+inside parentheses against generated's 1.33%, and removing them costs real 23% of
+the gap. A parenthetical is a pure surface move — no domain vocabulary, no
+invented fact — so an arm for it is `ORIENTATION.md` s4 safe.
+
+**Digit runs are dead, and that is the good news.** Their token gap is +2.49%,
+larger than the URL gap, and s5 named them the second-biggest candidate. They are
+worth **−3%**. That closes the only route that would have required domain
+vocabulary in Writer-facing text.
+
+**The hapax framing in s5 is wrong and is retracted here.** Generated carries 43%
+fewer once-only tokens, and s5 read URLs as the most visible instance of that
+class. Flattening real's hapax to a frequent thread word moves the metric the
+**wrong way**, −0.0020. Rare tokens are not the general form of the URL channel;
+the URL channel is specific.
+
+### What the two live channels add up to
+
+All three together return 70% where the singles sum to 81%, so the channels are
+sub-additive at about 0.86 efficiency. Carrying that to the generated side, where
+s3 measured the link arm's own ceiling at ~39% closure at real's URL mass:
+
+    (39% + ~15% from a parenthetical arm at the same real->generated discount)
+        x 0.86  ~=  46%,  against the 42% Holm needs at N=150.
+
+That is the first route to `self_bertscore` acceptance that does not require
+exceeding real's own link density. It is a projection built from two ablations and
+one real→generated discount, not a measurement, and the discount is the weakest
+link: the link arm delivered 24% on the generated side against 58% on the real
+side, and a parenthetical arm's Writer compliance is unmeasured.
