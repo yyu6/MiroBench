@@ -125,3 +125,45 @@ not a measurement**, and confidence on this arm is lower than on temperature.
 - [ ] **Running:** seven-setting sweep, ~64 min
 - [ ] Judge against the four predictions above
 - [ ] If H1 holds: solve the per-domain depth schedule and build the arm
+
+## Legality check against ORIENTATION §4 "What may never happen" — done before building
+
+This matters more than usual here, because the sampler arm aims at **the same
+target as a mechanism this project already killed**. G20 retired a
+depth-conditioned reply-diversity *guard* (`reply_diversity_guard_diagnosis.py`)
+for violating rule 4: it would have re-drafted a comment whose embedding
+similarity to the thread exceeded a real-derived ceiling — a distribution
+diagnostic selecting a Writer candidate.
+
+A sampler schedule is not that. It changes the sampling distribution **before**
+generation; nothing is scored, rejected, re-drawn or chosen among. All six rules:
+
+| rule | status |
+|---|---|
+| Writer never sees matched evaluation comment text | unaffected — no text is added to the prompt |
+| Domain profile from excluded threads only, zero seed overlap | schedule solved from the excluded corpus, same as every profile field |
+| Nothing tuned against final test-set p-values | **the binding constraint.** The schedule is solved against the excluded corpus's own depth curve. It must never be adjusted by watching N=10 eval output — that would be tuning on the test set |
+| Distribution diagnostics never select a Writer candidate | **clean, and this is the point** — no candidate is scored or rejected. This is exactly where G20's guard died and this arm does not |
+| Every matched structural slot preserved | unaffected |
+| No domain vocabulary in Writer-facing rule text | unaffected — a temperature is not text |
+
+So the sampler reaches G3's target through the one door that is still open. That
+is the strongest argument for the direction, independent of what the probe says.
+
+**Constraint carried into the build:** the per-depth schedule is solved once,
+from excluded data, and frozen before the paid run. If the first gate misses, the
+fix is a better *derivation*, not a re-fit against the gate's own p-values.
+
+## Timing correction (2026-08-27 23:37)
+
+The smoke test measured 6.7s for one generation and I sized the sweep at ~64 min
+from it. Real throughput is **~20s/slot** (45 slots in ~15 min), so the seven-
+setting sweep is **~3h15m**, not one hour. The smoke test's single generation
+returned a short comment; it was not representative of the token budget the
+sweep actually spends. Same class of error as E13 — a probe sized to prove the
+plumbing was read for a quantity it could not support, this time a rate.
+
+No redesign: results are written after **each** setting, and the settings run in
+declaration order, so `base` / `temp_T1.00` / `temp_T1.15` complete first and
+prediction 1 — the primary hypothesis — is answerable at roughly the one-hour
+mark, before the penalty arms finish.
