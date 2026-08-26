@@ -38,3 +38,28 @@ does it carry the same register damage v120 did (G79/G80)?**
 `self_bertscore` and `self_bleu_4` at N=10 carry a noise floor of sd 2.94% and
 13.7% per thread (G76). Ten threads shrink that but do not remove it, so a move
 inside the predicted bands is "no detectable change", not "no change".
+
+---
+
+## VERDICT (recorded 2026-08-27, after the run)
+
+Control is **v113 on the same seeds 2-11**, as pre-registered. `real_mean` verified
+identical on all twelve metrics; pair coverage 1.000 in both runs.
+
+| | v113 | v119 | outcome |
+|---|---:|---:|---|
+| n=10 pass count | 10/12 | **11/12** | improvement |
+| `impolite_rate` | +49.7% FAIL | **+19.8% PASS** | hard fail converted |
+| `self_bertscore` | +2.41% FAIL | **+4.33% FAIL** | deepened, already failing |
+| expected passes @N=150 | 2.96 | 3.03 | indistinguishable |
+
+**Bands hit: 2 of 7** (`hard_disagree_rate`, `emotion_entropy`).
+
+**The decision rule was defective.** It said ship inside +1.5%..+4% and die above
+~+5%. The run landed at **+4.33%**, in the undefined gap. Judgment call recorded as
+G83: **v119 stays** -- it converts a hard fail, and its cost lands on a metric that
+fails in all three arms. Rolling back to v113 re-opens a hard fail to buy 1.9pp on
+a metric that still fails.
+
+`polite_rate` remains unfixed and has no candidate, as predicted (-38.1% actual
+against the -22% projection -- the projection was optimistic).
