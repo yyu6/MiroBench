@@ -239,8 +239,8 @@ def main() -> None:
     tones = Counter(str(r["tone_target"] or "") for r in rows)
     for label in ("polite", "somewhat_polite", "neutral", "impolite"):
         print(f"  assigned {label:<16}: {tones[label]:>4} = {tones[label]/len(rows):.4f}")
-    print("  (arm off assigns ~.273/.087/.147/.493; inverted at cap 0.35 asks "
-          "~.350/.109/.320/.220)")
+    print("  (arm off assigns ~.273/.087/.147/.493; inverted at cap 0.56 asks "
+          "~.560/.090/.235/.115)")
 
     print("\n=== guardrails ===")
     pol = [r for r in rows if r["tone_target"] == "polite"]
