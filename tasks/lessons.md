@@ -2207,6 +2207,24 @@ coupled. Before treating a label distribution as the defect, measure whether the
 *behaviour* is actually missing from the output. And when part of a question can be
 answered for free, answer that part before buying the rest.
 
+## Never `git add -A` in a repo with a large pre-existing dirty tree
+
+Committing a file that lives **outside** the repo (a skill under `~/.claude/`), I
+reflexively ran `git add -A` from the repo root. It staged the user's 30 modified
+files, 18 deletions, and every untracked directory in the tree: **77,567 files and
+113 million lines**, including seven embedded git repositories. Git warned about
+the embedded repos; the commit still succeeded.
+
+`git reset --soft HEAD~1 && git reset` undid it with the working tree intact, but
+the commit existed, and on a shared branch it would have been someone else's
+problem to unpick.
+
+**The rule:** name the paths. `git add <path> [<path>...]`, never `-A`, whenever
+the tree has changes that are not yours — which on this project is always. Before
+any commit, run `git status --short` and confirm the staged set is only what you
+touched. And if the artifact you are committing is not in the repository, there is
+nothing to add at all: stop and check before typing the command.
+
 ## Commit from the repo root, and never reuse a test-helper name
 
 Two mechanical errors that each cost a debug cycle in one session:
