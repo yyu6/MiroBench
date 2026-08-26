@@ -482,3 +482,129 @@ flatter.
 `persona_bridge`, `speaker_roster`, `actor_conditioning` and `--speaker-identity
 matched` all exist and were on for this run. None has ever been measured against
 `self_bertscore`. That is the next measurement, and it is free.
+
+---
+
+# The floor, the ceiling, and a trap in the archive — 2026-08-26
+
+## 9. The target IS reachable at full coverage, and the gap is 10x the noise
+
+`real_vs_real_floor.py`. `scripts/bootstrap_real_comment_discussions.py` states the
+logic: attach a DIFFERENT real thread to each seed and score it — "if this
+bootstrap cannot match the matched real distribution, the issue is likely
+seed/eval/matching/sample-size rather than the generator; if it does match, the
+target distribution is reachable in principle." That run existed only for
+**credit_cards**. Done here on camera, from the cached real baseline:
+
+150 evaluation real threads against 150 **disjoint** real camera threads matched
+on comment count, coverage 0.996:
+
+| metric | target | donor | bias | MWU | KS | |
+|---|---:|---:|---:|---:|---:|---|
+| **self_bertscore** | 0.4923 | 0.4935 | **+0.24%** | 0.810 | 0.443 | PASS |
+| **self_bleu_4** | 0.0330 | 0.0325 | **−1.61%** | 0.801 | 0.231 | PASS |
+| semantic_mean_cosine | 0.2741 | 0.2816 | +2.72% | 0.320 | 0.443 | PASS |
+| polite_rate | 0.3216 | 0.3336 | +3.75% | 0.358 | 0.628 | PASS |
+| impolite_rate | 0.4079 | 0.3893 | −4.56% | 0.338 | 0.362 | PASS |
+| neutral_rate | 0.1611 | 0.1773 | +10.05% | 0.384 | 0.443 | PASS |
+
+**An arbitrary real camera thread passes all six comfortably.** The metric, the
+matching, and the sample size are all sound, and the generator's +2.41% is **ten
+times** the natural real-to-real spread. This is also the cheapest validation
+harness the project has: any domain can be checked this way before a single token
+is spent.
+
+## 10. No thread-level aggregate explains the gap, which is why regression failed
+
+`real_thread_correlates.py` ranks every cached thread-level column by its
+correlation with `self_bertscore` across 763 real threads, then places the
+generator on each in units of real's own spread — **against its own matched real
+threads**, not the population.
+
+| column | corr with sbert | matched real | generated | gen z |
+|---|---:|---:|---:|---:|
+| self_bleu_2 | +0.58 | 0.0500 | 0.0618 | +0.3 |
+| semantic_p90_cosine | +0.81 | — | — | −0.2 |
+| polite_rate | +0.22 | 0.3020 | 0.1746 | −0.5 |
+| self_bleu_3 | +0.46 | 0.0391 | 0.0429 | +0.2 |
+| neutral_rate | −0.26 | 0.1577 | 0.1143 | −0.2 |
+
+**The generator sits within ~0.3 sd of its matched real threads on essentially
+every cached metric.** That is why s3's nine-feature regression reached R²=0.60
+and still predicted only 40% of the gap: the driver is not an aggregate. It is per
+comment, or per pair.
+
+A first version of this table compared the generator to the whole real population
+and produced a large apparent structural gap — branching factor, virality, depth.
+That was a **selection effect**: the evaluation pool's threads are bigger than the
+population (39.1 comments against 32.4), and the generator copies its matched
+thread's structure. Recorded because the artifact reads convincingly either way.
+
+## 11. Decomposing the metric to per-comment leverage
+
+`high_floor_comments.py`. `self_bertscore` is the mean over pairs, so each
+comment's leverage is the mean F1 of the pairs it appears in. Ranked and centred
+within thread:
+
+| side | decile | leverage | words | sentences | 1st-person | question |
+|---|---|---:|---:|---:|---:|---:|
+| real | bottom 10% | −0.0568 | **23.7** | 2.13 | 0.13 | 0.17 |
+| real | top 10% | +0.0360 | 30.7 | 2.19 | 0.62 | 0.13 |
+| gate | bottom 10% | −0.0578 | **46.2** | 3.04 | 0.28 | 0.30 |
+| gate | top 10% | +0.0361 | 34.0 | 2.36 | 0.77 | 0.04 |
+
+The leverage *range* matches on both sides. What differs is what occupies the
+ends. The generator's high-leverage comments are one thing — 66% of them carry
+`evidence_mode=technical_or_policy_reasoning` against 23% at the bottom, 45%
+`payload_type=soft_helpful` against 6%: the polished first-person helpful take.
+
+And the two bottom deciles are made of different material:
+
+    generated:  "Hard pass"  "Pretty much"  "Confirmation email? lol"
+    real:       "Sean Tucker"  "Gold quality, lead weight :("
+                "current af lenses: - e-mount: Sigma 19/2.8 30/2.8 60/2.8, 18-55 kit"
+                "About 1k$-1.2k$ since I'm bringing only 2k$."
+                "Not true. See [Gerald Undone's test results](https://twitter.com/...)"
+
+Real reaches its lowest leverage with **23.7 words** of dense content — a name, a
+spec list, a price, a link. The generator needs **46.2 words** and gets there with
+*conversational* fragments instead. It is paying twice the length for the same
+dissimilarity.
+
+**A hypothesis this killed:** first-person looked like the discriminator (real
+0.62 vs 0.13 across deciles, gate 0.77 vs 0.28). It is not a level difference —
+overall first-person prevalence is real 0.580 against generated 0.540, and density
+3.50 against 2.95 per 100 words. The generator uses **less**. The decile split is
+within-thread ranking, not a gap.
+
+## 12. A trap in the archive: `self_bertscore` has never passed at full coverage
+
+Recorded because the artifact directory reads as though it has.
+
+Searching every `*_controller_history.json`, `self_bertscore_mean_f1` appears as a
+**protected** metric in 32 observations that end PASS and as a **target** in
+**zero**. The self-loop revisers target `tone` (121 run directories), `self_bleu`
+(77) and `story_structure` (34). **There is no self_bertscore self-loop.** Where
+the metric shows PASS it was already passing before the loop ran, and the loop's
+job was not to break it.
+
+And those passing runs sit in the regime `VERSION_LOG.md` opens by warning about:
+
+| run family | coverage | gen sbert | bias |
+|---|---:|---:|---:|
+| card_deepseek_v4_flash_v37 | **0.577** | 0.4585 | −1.70% |
+| card_gemini25flash_v37 | **0.546** | 0.4571 | −2.00% |
+| repro_v37 | **0.629** | 0.4623 | −0.88% |
+| sample_planner_gpt4omini_writer_v37 | 0.603 | 0.5059 | **+8.47%** |
+
+2,300–2,700 generated comments against 4,255 real ones. Truncating a thread
+flatters exactly these metrics, and only v64 and later are comparable. Sweeping
+all **284** evaluated run directories, the coverage≥0.90 band has a median
+self_bertscore bias of **+4.28%** and exactly **one** run under 1% — the
+real-comment bootstrap of s9.
+
+Separately worth keeping: at *matched* coverage the generator swings the metric
+enormously — `repro_v37` at 0.629 gives −0.88% and `sample_planner_gpt4omini` at
+0.603 gives **+8.47%**. Nine points from something other than coverage, never
+identified. Those two runs differ in more than one thing, so it is an observation
+and not a channel.
