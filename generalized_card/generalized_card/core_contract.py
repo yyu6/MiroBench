@@ -16,10 +16,14 @@ HISTORICAL_REVISION_POLICY_VERSIONS = {
     "generalized-card-revision-v6-dynamic-coverage-history-20260807",
 }
 GENERALIZED_V2_GENERATION_POLICY_VERSION = (
-    "generalized-card-v2-drawn-parenthetical-count-v116-20260826"
+    "generalized-card-v2-drawn-link-count-v117-20260826"
 )
 HISTORICAL_GENERATION_POLICY_VERSIONS = {
     "generalized-v2": {
+        # v116 drew the parenthetical count but still offered exactly one URL to
+        # every routed slot, 18.0 URL tokens per carrier against a real 34.3.
+        # Never ran.
+        "generalized-card-v2-drawn-parenthetical-count-v116-20260826",
         # v115 shipped the inverted tone quota but still cued the literal word
         # "one" for every parenthetical aside, at every band. Never ran.
         "generalized-card-v2-inverted-tone-quota-v115-20260826",
@@ -198,7 +202,7 @@ CORE_FILES = {
     ),
     "generator_adapter": (
         "generalized_card/generalized_card/backend.py",
-        "58284ce7c1e70b3169c47ef7ec0bb2ab5faa547cea5b2c936729271c165eb5e8",
+        "7e7def4d6318082da8e86632bfbb241efb9fbfafa5b22f12149b30791866f16b",
     ),
     "data_boundary": (
         "generalized_card/generalized_card/data.py",
@@ -232,7 +236,7 @@ CORE_FILES = {
     ),
     "generation_runner": (
         "generalized_card/scripts/run_generate.py",
-        "2bf3d51998cf96a756e0e5d65ce2044fb6fc1cfd6be1b7da4f3d439a16ea67fb",
+        "de9577d35c650530fa63aafa0989627bbf975968c53c0326992fe5dd181c8320",
     ),
     "generation_backend_runner": (
         "generalized_card/scripts/run_generator_backend.py",
@@ -248,7 +252,7 @@ CORE_FILES = {
     ),
     "domain_profile": (
         "generalized_card/generalized_card/domain_profile.py",
-        "aac42cf80b4bd1aef65a7fa155b68ee30c63bbb0f65f486638548d3a1e2985f7",
+        "ac8afbb844edfaca8aef7bd73c9937488e6526a36e8758cb7944414657c41122",
     ),
     "viewpoint_bank": (
         "generalized_card/generalized_card/viewpoint_bank.py",
@@ -304,7 +308,7 @@ CORE_FILES = {
     ),
     "reference_link": (
         "generalized_card/generalized_card/reference_link.py",
-        "25e92abb81e2fcda4828e7b78c99b4528f437881f9b6125812fd3687d29fde7f",
+        "b8d3e1b8a7ea291688009dc7884647511c47567a8ec86a1ab9041f3bee83aaea",
     ),
     "entity_spread": (
         "generalized_card/generalized_card/entity_spread.py",
@@ -452,7 +456,7 @@ CORE_FILES = {
     ),
     "domain_prompt_adapter": (
         "generalized_card/generalized_card/prompts.py",
-        "3173cf5744b854d5d014796f54ae9cb2453047556543b44a3ded37815eb3fb62",
+        "649f9e8341329543cc109469ee0d1a93782c79609024f55bfa710462e7d04d67",
     ),
     "reply_planning": (
         "generalized_card/generalized_card/reply_planning.py",

@@ -489,6 +489,19 @@ def build_parser() -> argparse.ArgumentParser:
         ),
     )
     parser.add_argument(
+        "--reference-link-count",
+        choices=("off", "measured"),
+        default="off",
+        help=(
+            "Draw HOW MANY reference URLs a routed slot is offered from the "
+            "inventory's measured per-carrier distribution. 'off' reproduces "
+            "v113-v116, which drew exactly one for every routed slot: 18.0 URL "
+            "tokens per carrying comment against a real 34.3 over 15,559 "
+            "evaluation-excluded comments. Routing is unchanged; only the count "
+            "moves."
+        ),
+    )
+    parser.add_argument(
         "--rhythm-count",
         choices=("off", "measured"),
         default="off",
@@ -986,6 +999,7 @@ def main() -> None:
         "reference_link": args.reference_link,
         "tone_quota": args.tone_quota,
         "rhythm_count": args.rhythm_count,
+        "reference_link_count": args.reference_link_count,
         "writer_retries": args.writer_retries,
         "no_story_scope": args.no_story_scope,
         "own_fact_license": args.own_fact_license,
@@ -1196,6 +1210,7 @@ def main() -> None:
     env["GENERALIZED_CARD_REFERENCE_LINK"] = args.reference_link
     env["GENERALIZED_CARD_TONE_QUOTA"] = args.tone_quota
     env["GENERALIZED_CARD_RHYTHM_COUNT"] = args.rhythm_count
+    env["GENERALIZED_CARD_REFERENCE_LINK_COUNT"] = args.reference_link_count
     env["GENERALIZED_CARD_NO_STORY_SCOPE"] = args.no_story_scope
     env["GENERALIZED_CARD_OWN_FACT_LICENSE"] = args.own_fact_license
     env["GENERALIZED_CARD_SPEAKER_IDENTITY"] = args.speaker_identity
@@ -1552,6 +1567,7 @@ RUN_EXPERIMENT_FIELDS = (
     "reference_link",
     "tone_quota",
     "rhythm_count",
+    "reference_link_count",
     "writer_retries",
     "no_story_scope",
     "own_fact_license",

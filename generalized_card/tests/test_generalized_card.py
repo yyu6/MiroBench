@@ -1123,6 +1123,103 @@ class GeneralizedCardTest(unittest.TestCase):
             },
         }
 
+    # Named for this arm specifically: `_link_inventory` and `_link_task` already
+    # exist in this class for the v113 tests, and a duplicate method name is taken
+    # silently by whichever definition comes last.
+    def _link_count_inventory(self) -> dict:
+        return {
+            "available": True,
+            "urls": [f"https://example{i}.test/a/b?q={i}" for i in range(400)],
+            "urls_per_carrier": {"1": 0.699, "2": 0.172, "3": 0.046, "4": 0.083},
+            "mean_urls_per_carrier": 1.5133,
+        }
+
+    def _link_count_task(self, index: int):
+        class _T:
+            surface_texture = "link_reference"
+            evidence_mode = ""
+            real_sample_id = 0
+            branch_id = ""
+            claim_key = ""
+        task = _T()
+        task.local_task_id = index
+        return task
+
+    def test_reference_link_count_off_draws_exactly_one(self) -> None:
+        """E1: the legacy value must reproduce v113 through v116."""
+
+        from generalized_card.reference_link import (
+            draw_reference_links, set_reference_link_count, set_reference_link_mode,
+        )
+
+        inv = self._link_count_inventory()
+        try:
+            set_reference_link_mode("measured")
+            set_reference_link_count("off")
+            counts = {len(draw_reference_links(self._link_count_task(i), inv)) for i in range(200)}
+        finally:
+            set_reference_link_count("off")
+            set_reference_link_mode("off")
+        self.assertEqual(counts, {1})
+
+    def test_reference_link_count_measured_matches_the_inventory_distribution(self) -> None:
+        from generalized_card.reference_link import (
+            draw_reference_links, set_reference_link_count, set_reference_link_mode,
+        )
+
+        inv = self._link_count_inventory()
+        try:
+            set_reference_link_mode("measured")
+            set_reference_link_count("measured")
+            drawn = [len(draw_reference_links(self._link_count_task(i), inv)) for i in range(4000)]
+        finally:
+            set_reference_link_count("off")
+            set_reference_link_mode("off")
+        self.assertEqual(set(drawn), {1, 2, 3, 4})
+        self.assertAlmostEqual(drawn.count(1) / len(drawn), 0.699, delta=0.03)
+        self.assertAlmostEqual(sum(drawn) / len(drawn), 1.513, delta=0.06)
+
+    def test_reference_link_count_never_repeats_a_url_in_one_slot(self) -> None:
+        """A repeated link is a repeated n-gram and pushes self_bleu_4 the wrong way."""
+
+        from generalized_card.reference_link import (
+            draw_reference_links, set_reference_link_count, set_reference_link_mode,
+        )
+
+        inv = self._link_count_inventory()
+        try:
+            set_reference_link_mode("measured")
+            set_reference_link_count("measured")
+            multi = 0
+            for i in range(600):
+                urls = draw_reference_links(self._link_count_task(i), inv)
+                self.assertEqual(len(urls), len(set(urls)), urls)
+                if len(urls) > 1:
+                    multi += 1
+        finally:
+            set_reference_link_count("off")
+            set_reference_link_mode("off")
+        self.assertGreater(multi, 50)
+
+    def test_reference_link_single_offer_is_byte_identical(self) -> None:
+        from generalized_card.reference_link import (
+            reference_link_offer, reference_links_offer,
+        )
+
+        url = "https://example7.test/a/b?q=7"
+        self.assertEqual(reference_links_offer([url]), reference_link_offer(url))
+        self.assertEqual(reference_links_offer([]), "")
+
+    def test_reference_link_plural_offer_names_the_count_and_every_url(self) -> None:
+        from generalized_card.reference_link import reference_links_offer
+
+        urls = ["https://a.test/x", "https://b.test/y", "https://c.test/z"]
+        text = reference_links_offer(urls)
+        self.assertIn("3 of them", text)
+        for url in urls:
+            self.assertIn(url, text)
+        self.assertIn("do not write any", text)
+
     def test_rhythm_count_off_always_asks_for_one(self) -> None:
         """E1: the legacy value must reproduce every release through v115."""
 

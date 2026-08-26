@@ -495,6 +495,66 @@ priced against those targets, including v111's 8–26%, has to be re-priced.
 
 **Not run yet.**
 
+## v117 — draw how many links, and the audit that resized the claim (2026-08-26)
+
+Policy ID: `generalized-card-v2-drawn-link-count-v117-20260826`. Arm
+`--reference-link-count {off,measured}`, default `off`, byte-identical to v113
+through v116 and asserted by test. `PROFILE_SCHEMA_VERSION` 21 -> 22.
+
+### The claim, before and after auditing it
+
+`url_mass_scaling.py` traced closure against URL token mass and reached 40.9% at
+35.8 tokens per carrying comment, which is where "the link arm buys 23% of the
+gap" came from. **That point is not legal.** 35.8 tokens needs 2.2 URLs per
+carrier, and exceeding real's own link density is not an arm.
+
+Re-measured on the legal source -- 15,559 evaluation-excluded comments, 847 of
+them carrying a URL, against the 26 carriers the matched threads offer:
+
+| | excluded real | gate |
+|---|---:|---:|
+| carrying share | 0.0544 | 0.0434 |
+| URLs per carrier | **1.666** | **1.00** |
+| tokens per URL | 20.6 | 14.8 |
+| URL tokens per carrier | **34.3** | **18.0** |
+
+**Routing is not the defect.** The gate routed 4.51% of slots against the matched
+threads' own 4.92% carrying rate, so `reference_link_slot` is already right and
+this arm does not touch it. Only the count moves.
+
+`MAX_LINKS_PER_SLOT = 4` costs part of it: real's tail runs to 9 URLs in one
+comment, and capping at four takes the target from 1.666 to **1.513**. A cue
+asking a Writer for nine links describes nothing a person does deliberately. At
+1.513 x the clean inventory's 18.9 tokens the arm reaches 28.6 URL tokens per
+carrier, which interpolates on the measured curve to ~36% closure of the no-link
+gap against today's 23.7% -- **about a 17% reduction of the +0.0119 gap, not the
+23% first claimed.**
+
+### The arm
+
+`build_reference_link_inventory` now measures `urls_per_carrier` conditional on
+carrying one, so it composes with routing rather than replacing it.
+`draw_reference_links` draws the count from it on a digest namespaced away from
+the URL digest, so drawing a rare first URL is not coupled to drawing a large
+count, and each extra URL is drawn without replacement inside the slot -- a
+repeated link is a repeated n-gram and would push `self_bleu_4` the wrong way,
+which is the guardrail the original keying exists to hold.
+
+A drawn count of one renders `reference_link_offer` verbatim, so `off` and a drawn
+one are the same bytes.
+
+### A defect this version's tests caught in themselves
+
+The first version of the v117 tests added `_link_inventory` and `_link_task`
+helpers to `GeneralizedCardTest`, **which already had methods of both names** from
+the v113 tests. Python takes whichever definition comes last, so the new ones were
+silently shadowed and three tests failed with a confusing signature error. Had the
+order been reversed the v113 tests would have broken instead, silently. The
+helpers are now `_link_count_inventory` and `_link_count_task`, with the reason
+recorded at the definition.
+
+719 tests pass.
+
 ## v116 — draw how many asides, because the cue said "one" and got exactly one (2026-08-26)
 
 Policy ID: `generalized-card-v2-drawn-parenthetical-count-v116-20260826`. Arm

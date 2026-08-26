@@ -39,6 +39,18 @@ from typing import Any
 
 REFERENCE_LINK_MODE = "off"
 
+# `off` reproduces v113 through v116, which drew exactly one URL for every routed
+# slot. Measured over 15,559 evaluation-excluded comments (847 carrying one), a
+# real carrying comment holds **1.67** URLs, distributed 1:592 2:146 3:39 4+:70,
+# and 34.3 URL tokens. The gate wrote 1.00 and 18.0. Routing is NOT the defect --
+# the gate routed 4.51% of slots against the matched threads' own 4.92% carrying
+# rate -- so this arm changes the count and nothing else.
+REFERENCE_LINK_COUNT_MODE = "off"
+
+# Real's tail runs past this. Four is where the measured distribution stops being
+# dense enough to draw from honestly.
+MAX_LINKS_PER_SLOT = 4
+
 # Platform-generated image attachments, not authored text. They are excluded
 # from the inventory: a text generator has no reason to emit the hash-bearing
 # URL Reddit mints when a user attaches a photo. Measured separately, they carry
@@ -90,6 +102,19 @@ def set_reference_link_mode(mode: str) -> str:
     return REFERENCE_LINK_MODE
 
 
+def set_reference_link_count(mode: str) -> str:
+    """Select the drawn-link-count arm and return its value."""
+
+    global REFERENCE_LINK_COUNT_MODE
+    value = str(mode or "off").strip().lower()
+    REFERENCE_LINK_COUNT_MODE = "measured" if value == "measured" else "off"
+    return REFERENCE_LINK_COUNT_MODE
+
+
+def reference_link_count_enabled() -> bool:
+    return REFERENCE_LINK_COUNT_MODE == "measured"
+
+
 def reference_link_enabled() -> bool:
     return REFERENCE_LINK_MODE == "measured"
 
@@ -109,6 +134,7 @@ def build_reference_link_inventory(
     """
 
     mentions: list[str] = []
+    per_carrier: list[int] = []
     comment_count = 0
     carrying = 0
     for thread in reference_threads or []:
@@ -121,8 +147,13 @@ def build_reference_link_inventory(
             found = [url for url in found if 8 <= len(url) <= MAX_URL_CHARS]
             if found:
                 carrying += 1
+                per_carrier.append(min(len(found), MAX_LINKS_PER_SLOT))
             mentions.extend(found)
     unique = sorted(set(mentions))
+    counts = {
+        str(value): round(per_carrier.count(value) / len(per_carrier), 6)
+        for value in sorted(set(per_carrier))
+    } if per_carrier else {}
     return {
         "available": bool(unique),
         "urls": unique,
@@ -130,6 +161,12 @@ def build_reference_link_inventory(
         "mention_count": len(mentions),
         "reference_comment_count": comment_count,
         "carrying_comment_share": (carrying / comment_count) if comment_count else 0.0,
+        # Conditional on carrying one, so it composes with the routing decision:
+        # routing says whether a slot gets a link, this says how many.
+        "urls_per_carrier": counts,
+        "mean_urls_per_carrier": (
+            round(sum(per_carrier) / len(per_carrier), 4) if per_carrier else 0.0
+        ),
         "max_url_chars": MAX_URL_CHARS,
         "excludes_media_hosts": list(MEDIA_HOSTS),
         "source": "evaluation-excluded threads only; no seed thread is read",
@@ -173,6 +210,58 @@ def draw_reference_link(task: Any, inventory: dict[str, Any] | None) -> str:
     return urls[int(digest, 16) % len(urls)]
 
 
+def draw_reference_links(task: Any, inventory: dict[str, Any] | None) -> list[str]:
+    """Draw this slot's links: one when the count arm is off, N when it is on.
+
+    N is drawn from the inventory's own `urls_per_carrier`, measured on the same
+    evaluation-excluded threads the URLs come from. The count digest is
+    namespaced away from the URL digest so that drawing a rare first URL is not
+    coupled to drawing a large count.
+
+    Each extra URL is drawn without replacement inside the slot. Repeated links
+    would be repeated n-grams and would push `self_bleu_4` the wrong way, which
+    is the guardrail `draw_reference_link`'s keying already exists to hold.
+    """
+
+    first = draw_reference_link(task, inventory)
+    if not first:
+        return []
+    if not reference_link_count_enabled():
+        return [first]
+    dist = ((inventory or {}).get("urls_per_carrier") or {})
+    ordered = sorted(
+        ((int(value), float(weight)) for value, weight in dist.items()),
+        key=lambda item: item[0],
+    )
+    total = sum(weight for _, weight in ordered)
+    if not ordered or total <= 0:
+        return [first]
+    key = "|".join(
+        str(getattr(task, name, "") or "")
+        for name in ("real_sample_id", "local_task_id", "branch_id", "claim_key")
+    )
+    digest = hashlib.sha256(f"count:{key}".encode("utf-8")).hexdigest()
+    draw = int(digest[:16], 16) / float(1 << 64)
+    wanted, cumulative = ordered[-1][0], 0.0
+    for value, weight in ordered:
+        cumulative += weight / total
+        if draw < cumulative:
+            wanted = value
+            break
+    wanted = max(1, min(int(wanted), MAX_LINKS_PER_SLOT))
+    if wanted <= 1:
+        return [first]
+    urls = list((inventory or {}).get("urls") or ())
+    picked, index = [first], 0
+    while len(picked) < wanted and index < 64:
+        extra_digest = hashlib.sha256(f"extra:{index}:{key}".encode("utf-8")).hexdigest()
+        candidate = urls[int(extra_digest, 16) % len(urls)]
+        if candidate not in picked:
+            picked.append(candidate)
+        index += 1
+    return picked
+
+
 def reference_link_offer(url: str) -> str:
     """Render the Writer cue.
 
@@ -190,4 +279,24 @@ def reference_link_offer(url: str) -> str:
         f"inline, the way a commenter drops a source mid-sentence: {link} "
         "Write it as a bare URL. Do not wrap it in markdown link syntax, do not "
         "describe it, do not add a title for it, and do not write any other URL."
+    )
+
+
+def reference_links_offer(urls: list[str] | None) -> str:
+    """Render the cue for a drawn list. One link renders `reference_link_offer`
+    verbatim, so the count arm is byte-identical wherever it draws one."""
+
+    links = [str(u).strip() for u in (urls or []) if str(u).strip()]
+    if not links:
+        return ""
+    if len(links) == 1:
+        return reference_link_offer(links[0])
+    joined = "  ".join(links)
+    return (
+        "This slot's real counterpart carried links. Include these exact URLs, "
+        f"{len(links)} of them, inline and in different places, the way a "
+        f"commenter drops sources mid-sentence: {joined} "
+        "Write each as a bare URL. Do not wrap them in markdown link syntax, do "
+        "not describe them, do not add titles for them, and do not write any "
+        "other URL."
     )

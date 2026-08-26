@@ -70,7 +70,13 @@ from .viewpoint_bank import build_reference_viewpoints
 # generated comments ever have. Removing URLs from real text and rescoring moves
 # real's `self_bertscore` by +0.0094 -- 76% of the whole gap, and the only
 # channel of the five tested that moves it at all.
-PROFILE_SCHEMA_VERSION = 21
+# 22 adds two measured count distributions, both conditional on the habit being
+# present so they compose with the existing share/routing decisions rather than
+# replacing them: `rhythm_profile.bands[*].habit_counts` (v116, parenthetical
+# asides per comment) and `reference_link_inventory.urls_per_carrier` (v117,
+# reference URLs per carrying comment). An older profile simply lacks them and
+# both arms fall back to a count of one, which is the pre-v116 behaviour.
+PROFILE_SCHEMA_VERSION = 22
 CARD_CONTEXT_DROPOUT_RATE = 0.42
 CARD_CONTEXT_JITTER_RATE = 0.32
 CARD_GENERATION_CONTROLS = {

@@ -24,8 +24,10 @@ from .entity_inventory import slot_equipment_options
 from .entity_spread import slot_referent_block
 from .reference_link import (
     draw_reference_link,
+    draw_reference_links,
     reference_link_enabled,
     reference_link_offer,
+    reference_links_offer,
 )
 from .generation_distribution import (
     TONE_CLASSES,
@@ -198,8 +200,8 @@ def _equipment_and_referent_block(
         comment_count=getattr(backend, "GENERALIZED_ACTIVE_THREAD_COMMENTS", 0),
         excluded=visible,
     )
-    link = reference_link_offer(
-        draw_reference_link(task, profile.get("reference_link_inventory") or {})
+    link = reference_links_offer(
+        draw_reference_links(task, profile.get("reference_link_inventory") or {})
     )
     return own + referent + (f"\n{link}" if link else "")
 
