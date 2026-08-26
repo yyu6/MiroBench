@@ -990,6 +990,56 @@ spending against it.
 α = 0.05 means a perfect generator passes all 12 simultaneously only ≈ 52% of the
 time. That is the user's decision (§2, trap 5).
 
+### Next step — 2026-08-27 (supersedes the 2026-08-25 block above)
+
+**State.** v119's N=10 gate is paid and read (`v119_tonequota_only_n10_20260827_v1`,
+seeds 2–11, coverage 1.00). **11/12 at n=10**, only `self_bertscore_mean_f1`
+failing. The control is **v113 on the same seeds — 10/12**, not
+`v117_calibration`, which used seeds **0–9** with zero `source_raw_post_id`
+overlap and therefore measures a different target (G83). A pass count may only be
+compared across runs with the same seed set; check `seed_index` before quoting one.
+
+**The three named priorities are all still open.**
+
+| metric | v119 vs matched real | n=10 | at N=150 | mechanism |
+|---|---:|---|---|---|
+| `self_bertscore_mean_f1` | **+4.33%** | FAIL | fails | none named (G68); one live candidate, below |
+| `self_bleu_4` | **+18.85%** | PASS, Cliff +0.36 | fails | no single lever (G27/G35), diffuse 1–2-gram register |
+| `polite_rate` | **−38.1%** | PASS, Cliff −0.44 | fails | **none** — the donor was the only one and it is net harmful (G79–G82) |
+
+`impolite_rate` is the one that moved: +49.7% → +19.8%, hard fail → pass. That is
+the entire case for keeping v119; the aggregate is a wash (expected passes at
+N=150: v113 2.96, v119 3.03). **n=10 cannot separate these arms** — it only
+detects |Cliff| > ~0.6, and all three arms sit at 2.7–3.0 expected passes of 12.
+Do not read an 11/12 against a 12/12 as progress without the seed sets matching
+and the effect sizes converted.
+
+**Next step, in order.**
+
+1. **Build the `tone_target_instruction` diversification arm.** It is
+   byte-identical within each tone today — 1 distinct string, `top_share` 1.000 —
+   and v119 put **269/528 slots (50.4%, up from 146)** on the same prescribed
+   polite text. G37 priced exactly this channel at **+0.0255** on pair F1 by
+   randomised within-run contrast and concluded it "must carry no instruction at
+   all". This is the only named, precedented, un-exploited lever on
+   `self_bertscore`. Free to build; **cannot be priced free** — the cue covers
+   100% of slots within a tone, so there is no untreated subgroup, and G80 forbids
+   pricing a cue by editing finished output.
+2. **`self_bleu_4` and `polite_rate` have no candidate.** Say so rather than
+   re-running a rejected one. The closed list is in `tasks/todo.md`; the two
+   rejected this session are designator concentration (v109 already ran it and it
+   *worsened* pair F1) and tone-pair re-weighting (worth +0.0007 of +0.0095).
+3. **`self_bertscore`'s defect is localized and untouched.** G3: it is entirely a
+   reply phenomenon with the sign inverted against real — real `reply_reply`
+   0.4905 sits *below* `root_root` 0.4955, generated 0.5136 sits *above* 0.5089.
+   No arm has ever addressed it. This is larger than item 1 and has no build yet.
+
+**Method rules this session added.** E13: a probe run licenses no attribution — at
+200 sampled pairs/arm the same decomposition read composition 88.5%, the *opposite*
+direction from the 8.1% the full run gives. Print per-cell `n` beside every mean.
+G84's method: an Oaxaca within-stratum term mixes register with selection into the
+stratum; split it by holding slot identity and assigned tone fixed across runs.
+
 ### Retracted claims — do not reuse
 
 - ~~"the no-story instruction cut advice from 0.090 to 0.008"~~ — probe

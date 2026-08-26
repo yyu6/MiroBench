@@ -1434,3 +1434,53 @@ constant rather than a domain-profile entry. Both the target
 every generation record, so any run's artifact refits it with no regeneration.
 **Refit when the model changes.** Every other v98 profile is measured per domain
 from that domain's evaluation-excluded threads.
+
+---
+
+# Addendum 2026-08-27 — the v119 gate, and why the first reading of it was wrong
+
+Detailed evidence lives in `tasks/v118-v119-worklog.md`; rows are G83, G84, E13.
+
+**The one thing to carry forward.** A pass count is only comparable against a run
+with the **same seed set**. The v119 gate was first read as a regression against
+"the last N=10 that went 12/12" — that run (`v117_calibration_20260826_v1`) used
+seed indices **0–9**, while v113/v119/v120b all used **2–11**, with zero
+`source_raw_post_id` overlap. Against the correct control (v113, same seeds,
+matched `real_mean` identical on all twelve metrics, coverage 1.000 everywhere)
+v119 went **10/12 → 11/12**. Check `seed_index` before quoting any historical
+pass count — this now sits alongside the existing coverage caveat.
+
+**Decision taken: v119 is kept.** It converts `impolite_rate` from a hard fail
+(+49.7%, MWU 0.0058) to a pass (+19.8%, 0.344). Its cost — `self_bertscore`
++2.41% → +4.33% — lands on a metric failing in all three arms. Rolling back to
+v113 re-opens the hard fail to buy 1.9pp on a metric that still fails, and
+expected passes at N=150 are a wash (2.96 vs 3.03). The hard-fail conversion is
+the entire case; do not describe v119 as an aggregate win.
+
+**All three named priorities remain unfixed.** `self_bertscore` +4.33% (fails at
+n=10), `self_bleu_4` +18.85% (Cliff +0.36, fails at N=150), `polite_rate` −38.1%
+(Cliff −0.44, fails at N=150, and has **no candidate mechanism at all** now the
+donor is net harmful). Only `impolite_rate` moved.
+
+**Where the cost is, and is not.** The tone-mixing explanation is dead: the
+same-tone pair share rose 0.3355 → 0.4268 (+0.091) but that whole route carries
++0.0007 of the +0.0095 (8%). Holding slot identity, position and assigned tone
+fixed across the two runs (316/528 slots kept their tone; 1,979 pairs), the paired
+move is +0.0033 (Wilcoxon p=0.0076) — real but only 52.6% of pairs and 4 of 10
+threads negative. ~58% sits in the **reassigned** slots, the same population the
+tone fix operates on, so **no re-weighting keeps the tone win and drops the cost.**
+
+**Live candidate, and the only named one.** `tone_target_instruction` is
+byte-identical within each tone (1 distinct string, `top_share` 1.000 in both
+runs); v119 put 269/528 slots (50.4%, up from 146) on the same prescribed polite
+text. G37 priced exactly this channel at +0.0255 by randomised within-run contrast
+and concluded it "must carry no instruction at all". Next arm: per-slot paraphrase
+or withholding. Free to build; needs a paid arm to price, because the cue covers
+100% of slots within a tone and G80 forbids pricing a cue by editing finished
+output.
+
+**Two method traps recorded.** E13 — a probe licenses no attribution: at 200
+sampled pairs/arm the same decomposition read composition **88.5%**, the opposite
+direction from the 8.1% the full run gives; the tell was strata at n=9. G84 —
+an Oaxaca within-stratum term mixes register with selection into the stratum, so
+split it by holding slot identity and assigned tone fixed.

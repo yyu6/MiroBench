@@ -169,6 +169,19 @@ inflates the pass count. See VERSION_LOG.md.
 | 108 | `generalized_card_camera_gpt54_v108_coverage_nonrepeat_n10_20260823_v1` | 10 | 532 | 1.00 | generalized-card-v2-semantic-coverage-nonrepeat-v108-20260823 | 10 |
 | 108 | `v108_semantic_coverage_nonrepeat_seed8_20260823_v1` | 1 | 186 | 1.00 | generalized-card-v2-semantic-coverage-nonrepeat-v108-20260823 | descriptive |
 | 108 | `v108_semantic_coverage_nonrepeat_seed8_20260823_v2` | 1 | 186 | 1.00 | generalized-card-v2-semantic-coverage-nonrepeat-v108-20260823 | descriptive |
+| 109 | `v109_entity_spread_seed8_20260824_v1` | 1 | 186 | 1.00 | generalized-card-v2-entity-referent-spread-v109-20260824 | descriptive |
+| 110 | `v110_length_fidelity_prepare_20260824` | 0 | 0 |  | generalized-card-v2-length-band-fidelity-v110-20260824 |  |
+| 110 | `v110_length_transfer_n10_20260824_v1` | 10 | 532 | 1.00 | generalized-card-v2-refit-length-transfer-v110-20260824 | 9 |
+| 110 | `v110_length_transfer_prepare_20260824` | 0 | 0 |  | generalized-card-v2-refit-length-transfer-v110-20260824 |  |
+| 111 | `generalized_card_camera_gpt54_paper_20260825_v1` | 50 | 1974 | 1.00 | generalized-card-v2-development-scope-v111-20260825 | 7 |
+| 113 | `v113_v112_gate_n10_20260826_v1` | 10 | 532 | 1.00 | generalized-card-v2-drawn-reference-link-v113-20260825 | 10 |
+| 117 | `v117_calibration_20260826_v1` | 10 | 571 | 1.00 | generalized-card-v2-drawn-link-count-v117-20260826 | 12 |
+| 117 | `v117_preflight_verify_20260826` | 0 | 0 |  | generalized-card-v2-drawn-link-count-v117-20260826 |  |
+| 119 | `v119_tonequota_only_n10_20260827_v1` | 10 | 532 | 1.00 | generalized-card-v2-tone-cap-and-host-coherent-links-v119-20260827 | 11 |
+| 119 | `v119_tonequota_seed8_large_20260827_v1` | 1 | 186 | 1.00 | generalized-card-v2-tone-cap-and-host-coherent-links-v119-20260827 |  |
+| 119 | `v120_tonedonor_seed8_large_20260827_v1` | 1 | 186 | 1.00 | generalized-card-v2-tone-cap-and-host-coherent-links-v119-20260827 | descriptive |
+| 119 | `v120b_n10_20260827_v1` | 10 | 532 | 1.00 | generalized-card-v2-tone-cap-and-host-coherent-links-v119-20260827 | 11 |
+| 119 | `v120b_tonedonor_seed8_large_20260827_v1` | 0 | 0 |  | generalized-card-v2-tone-cap-and-host-coherent-links-v119-20260827 |  |
 
 ## Per-metric MWU p-values for evaluated runs
 
@@ -223,3 +236,11 @@ inflates the pass count. See VERSION_LOG.md.
 | `generalized_card_camera_gpt54_v108_coverage_nonrepeat_n10_20260823_v1` | 0.121* | 0.004 | 0.678* | 0.910* | 0.089* | 0.008 | 0.054* | 0.850* | 0.970* | 1.000* | 0.970* | 0.597* |
 | `v108_semantic_coverage_nonrepeat_seed8_20260823_v1` | 1.000d | 1.000d | 1.000d | 1.000d | 1.000d | 1.000d | 1.000d | 1.000d | 1.000d | 1.000d | 1.000d | 1.000d |
 | `v108_semantic_coverage_nonrepeat_seed8_20260823_v2` | 1.000d | 1.000d | 1.000d | 1.000d | 1.000d | 1.000d | 1.000d | 1.000d | 1.000d | 1.000d | 1.000d | 1.000d |
+| `v109_entity_spread_seed8_20260824_v1` | 1.000d | 1.000d | 1.000d | 1.000d | 1.000d | 1.000d | 1.000d | 1.000d | 1.000d | 1.000d | 1.000d | 1.000d |
+| `v110_length_transfer_n10_20260824_v1` | 0.121* | 0.014 | 0.734* | 0.940* | 0.045 | 0.010 | 0.791* | 0.385* | 0.909* | 0.970* | 0.850* | 0.406* |
+| `generalized_card_camera_gpt54_paper_20260825_v1` | 0.057 | 0.002 | 0.702* | 0.589* | 0.000 | 0.001 | 0.014 | 0.340* | 0.912* | 0.901* | 0.942* | 0.692* |
+| `v113_v112_gate_n10_20260826_v1` | 0.273* | 0.017 | 0.623* | 0.762* | 0.070* | 0.006 | 0.151* | 0.521* | 0.909* | 0.970* | 0.850* | 0.910* |
+| `v117_calibration_20260826_v1` | 0.345* | 0.212* | 0.473* | 0.789* | 0.198* | 0.405* | 0.596* | 0.427* | 1.000* | 0.970* | 0.521* | 0.385* |
+| `v119_tonequota_only_n10_20260827_v1` | 0.186* | 0.000 | 0.521* | 0.705* | 0.104* | 0.344* | 0.241* | 0.212* | 0.820* | 0.909* | 0.910* | 0.970* |
+| `v120_tonedonor_seed8_large_20260827_v1` | 1.000d | 1.000d | 1.000d | 1.000d | 1.000d | 1.000d | 1.000d | 1.000d | 1.000d | 1.000d | 1.000d | 1.000d |
+| `v120b_n10_20260827_v1` | 0.121* | 0.000 | 0.521* | 0.450* | 0.130* | 0.596* | 0.082* | 0.140* | 0.940* | 1.000* | 0.910* | 0.212* |

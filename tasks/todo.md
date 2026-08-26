@@ -1421,3 +1421,45 @@ At N=150 and today's bias, P(pass) under the shipped rule: `polite_rate` **0.00*
   real on the v117 artifact.
 - Judging the tone inversion by four-class L2 (G66) — `somewhat_polite` is never
   reported, and including it drives `neutral_rate` several times worse.
+
+## v119 gate read — 2026-08-27
+
+- [x] Deliver the v119-only N=10 command (preflighted, predictions pre-registered)
+- [x] Judge the run against `tasks/v119-only-predictions.md` — 2 of 7 bands hit;
+      the decision rule itself was defective (+4% to +5% left undefined, run
+      landed +4.33%)
+- [x] Establish the correct control — v113, same seeds 2–11. **v117_calibration
+      used seeds 0–9 with zero post-id overlap; its 12/12 is not a state to
+      return to** (G83)
+- [x] Decide roll back or keep → **keep v119.** Converts a hard fail
+      (`impolite_rate` +49.7% → +19.8%), cost lands on a metric failing in all
+      three arms. Rolling back re-opens the hard fail for 1.9pp on a metric that
+      still fails
+- [x] Split the `self_bertscore` cost: mixing vs register (G84). Fidelity anchored
+      at 0.00e+00 before any stratum was read
+- [x] Update the seven §7 stop-ritual files (this list, ORIENTATION §6,
+      worklog, VERSION_LOG, RUN_INDEX via `build_version_log.py`, lessons, HANDOFF)
+
+### Open, in priority order
+
+1. **Build the `tone_target_instruction` per-slot diversification arm.** Today it
+   is byte-identical within each tone (1 distinct string, `top_share` 1.000) and
+   v119 put 269/528 slots on the same prescribed polite text, up from 146. G37
+   priced this channel at +0.0255 causally. Only named un-exploited
+   `self_bertscore` lever. Free to build, needs a paid arm to price.
+2. **`polite_rate` has no candidate at all** (−38.1%, Cliff −0.44). The donor was
+   the only mechanism and is net harmful (G79–G82). Do not re-propose it.
+3. **`self_bleu_4` has no single lever** (+18.85%, Cliff +0.36) — G27/G35, diffuse
+   1–2-gram register. A stack of small closures is the only shape that fits.
+4. **G3's reply-side sign inversion is untouched and larger than item 1** — real
+   `reply_reply` 0.4905 below `root_root` 0.4955, generated 0.5136 above 0.5089.
+   No arm has ever addressed it; no build exists.
+
+### Added to "closed as dead, do not re-propose"
+
+- **Tone-pair re-weighting as a `self_bertscore` fix** (G84) — the same-tone share
+  rose +0.091 but the whole mixing route is worth +0.0007 of a +0.0095 move (8%).
+- **Designator/entity concentration as a `self_bertscore` fix** (G36/G37) — v109
+  ran it and it *worsened* pair F1 by +0.0255.
+- **Reading an attribution off a probe run** (E13) — at 200 pairs/arm the
+  decomposition pointed the opposite direction.

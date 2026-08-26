@@ -114,3 +114,92 @@ P(pass at N=150) given the N=10 reading, against the unconditional rate:
 The direction of the intuition holds — a high p beats a marginal one — and the
 magnitude does not. It roughly doubles the odds and leaves them near a third.
 N=10 is too underpowered for its p-value to narrow the posterior much.
+
+---
+
+# v119 N=10 gate — executed 2026-08-27
+
+Run: `v119_tonequota_only_n10_20260827_v1`, seeds 2–11, coverage 1.00, $3.85.
+Arm: `--tone-quota inverted` at `POLITE_ASSIGNMENT_CAP = 0.56`, donor OFF.
+Judged against `tasks/v119-only-predictions.md`, written before the run.
+
+## The comparison the first reading got wrong
+
+The run was initially read as a regression against "the last N=10 that passed
+12/12". That run is `v117_calibration_20260826_v1` and it used seed indices
+**0–9**; v113, v119 and v120b all used **2–11**, with **zero
+`source_raw_post_id` overlap**. v117's pass count was measured against a
+different set of ten real threads and is not a state this branch can return to —
+that config has never been run on seeds 2–11.
+
+Correct control is **v113** (same seeds; matched `real_mean` verified identical on
+all twelve metrics; pair coverage 1.000 in every run, so the truncation caveat
+does not apply):
+
+| | v113 | **v119** | v120b |
+|---|---:|---:|---:|
+| n=10 pass count | 10/12 | **11/12** | 11/12 |
+| `impolite_rate` | +49.7% **FAIL** | **+19.8% PASS** | −11.0% PASS |
+| `self_bertscore` | +2.41% FAIL | +4.33% FAIL | +5.59% FAIL |
+| `self_bleu_4` | +12.96% | +18.85% | +18.53% |
+| `polite_rate` | −47.2% | −38.1% | +39.0% |
+| expected passes @N=150 | 2.96 | 3.03 | 2.69 |
+
+v119 converted a hard fail (Cliff +0.74, MWU 0.0058) into a pass (+0.26, 0.344).
+Its cost landed on a metric failing in all three arms. **Kept, on that basis
+alone — the aggregate is a wash.**
+
+## Prediction accuracy: 2 of 7 bands
+
+Hit `hard_disagree_rate` (−10.33%) and `emotion_entropy` (+4.42%). Missed:
+`impolite_rate` moved the right way but only halfway; `polite_rate` −38.1%
+against a −22% projection; `neutral_rate` predicted to improve and **did not
+move at all** (−33.8% → −36.4%); `self_bleu_4` +18.85% against +10–17%.
+
+**The decision rule was itself defective** — ship inside +1.5..+4%, die above
++5%, and the run landed at +4.33% in the undefined gap.
+
+## Rejected hypotheses, and the measurement that rejected each
+
+1. **"The `self_bertscore` rise is tone mixing."** REJECTED. v119 raised the
+   thread-averaged same-tone pair share 0.3355 → 0.4268 (+0.091), but same-tone
+   pairs beat cross-tone by only +0.0096, so the whole route is worth **+0.0007
+   of +0.0095 (8%)**. Oaxaca over ten exact strata: composition +0.0007,
+   register +0.0083. All ten strata rose, including `impolite|impolite` whose
+   share *fell* 0.204 → 0.063.
+2. **"Then it is a clean global register shift."** PARTLY REJECTED. Holding slot
+   identity, position and assigned tone fixed (316/528 slots kept their tone;
+   1,979 such pairs), the paired move is **+0.0033**, Wilcoxon p=0.0076 — real
+   but only 52.6% of pairs and **4 of 10 threads negative**, nothing like G3's
+   10/10. That is ~35%; the remaining ~58% sits in the **reassigned** slots, the
+   same population the tone fix operates on. **No re-weighting keeps the
+   `impolite_rate` win and drops the cost.**
+3. **"Designator concentration is the `self_bertscore` lever."** REJECTED before
+   costing anything — v109 already ran it (G36/G37) and it *worsened* pair F1 by
+   +0.0255 via the shared-speech-act mechanism.
+4. **"A probe is a cheap preview of the decomposition."** REJECTED, recorded as
+   E13 — at 200 pairs/arm the same script read composition 88.5%, the opposite
+   direction.
+
+## What survives as the next arm
+
+`tone_target_instruction` is **byte-identical within each tone** — 1 distinct
+string, `top_share` 1.000, both runs. v119 put **269/528 slots (50.4%, up from
+146)** on the same prescribed polite text. G37 priced exactly this channel at
+**+0.0255** causally and concluded such a channel "must carry no instruction at
+all". In the confound-free contrast the biggest movers are the polite-containing
+strata (`polite|somewhat_polite` +0.0187 n=105, `impolite|somewhat_polite`
++0.0203 n=44; `polite|polite` +0.0043).
+
+**Next: paraphrase or withhold `tone_target_instruction` per slot.** Free to
+build. Cannot be priced free — the cue covers 100% of slots within a tone, so
+there is no untreated subgroup, and G80's rule forbids pricing a cue by editing
+finished output.
+
+## Checks run
+
+- Fidelity, before any stratum was read: recomputed thread means reproduce the
+  shipped `self_bertscore_results.json` to **0.00e+00** on both arms.
+- `RUN_INDEX.md` regenerated via `build_version_log.py` (168 runs); v119/v120
+  coverage confirmed 1.00.
+- Ruff clean on `tone_pair_decomposition.py`.

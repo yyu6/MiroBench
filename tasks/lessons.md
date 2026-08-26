@@ -2239,3 +2239,32 @@ methods of both names: Python takes whichever definition comes last, so the new
 ones were silently shadowed and three tests failed with a confusing signature
 error. **Reversed, the pre-existing tests would have broken instead, without an
 error naming the cause.** Grep the class for a helper name before defining it.
+
+## A probe run licenses no attribution — a small pair sample inverted a decomposition
+
+Recorded as E13. Measuring what carries v113 → v119's `self_bertscore` move, I ran
+the decomposition script at `--max-pairs-per-thread 20` first, to check the
+plumbing. It printed **composition 88.5% / register 11.5%**. Scaled to 400, the
+same script, same seed, same fidelity anchor, printed **composition 8.1% /
+register 91.9%**.
+
+Not noise around the right answer — **the opposite answer**. Acting on the probe
+would have licensed an arm to "break same-tone convergence", a route the real
+measurement prices at **+0.0007** of a **+0.0095** move. Roughly a session of
+work aimed at 8% of the problem.
+
+The tell was in the output I had already printed: strata with `n=9`. I caught it
+because the stratum table showed the counts next to the means, which is the only
+reason this is a lesson and not a wasted arm.
+
+**The rule:** a probe establishes that the code runs and the fidelity check
+passes. Nothing else may be read off it — no split, no ratio, no attribution, no
+ranking. Print per-cell `n` beside every mean, and before quoting any
+decomposition, look at the smallest cell that feeds it. If a probe and a full run
+disagree in *direction*, the probe was not a weaker version of the answer; it was
+a different answer, and only the full run counts.
+
+Corollary, since this is the second time in the session a cheap estimate pointed
+the wrong way (the other was G80, pricing a cue by editing finished output):
+**the cheap version of a measurement is usually cheap because it drops the thing
+that makes it valid.** State which thing before trusting it.

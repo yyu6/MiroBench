@@ -529,6 +529,14 @@ time. At the **low** end the polite row of the realization matrix moves
 **v119 alone does not fix `polite_rate`.** It fixes impolite and neutral and
 leaves polite at 0.17. That is the gap v120 exists to close.
 
+> **Superseded by measurement, 2026-08-27 (G83).** The projection above was
+> written before the v119 N=10 gate. It is right about `polite_rate` (actual
+> −38.1% against matched real, still unfixed) and right about `impolite_rate`
+> (+49.7% → +19.8%, hard fail → pass). **It is wrong about `neutral_rate`,
+> which did not move at all: −33.8% (v113) → −36.4% (v119).** Do not reuse the
+> 0.84 figure. `v120` also fired and is net harmful (G79–G82), so the gap this
+> table says v120 closes stays open with no candidate.
+
 ### The inventory
 
 825 sentences, harvested by `analysis/tone_carrier/harvest_donor_sentences.py`
@@ -595,6 +603,40 @@ and the donor is prefixed rather than blended, the least integrated form.
 **Not run yet.** 732 tests pass, core contract zero drift.
 
 ## v119 — the tone cap is decided, and the objective it was optimising was wrong (2026-08-27)
+
+### Run result — N=10 gate, executed 2026-08-27 (G83/G84)
+
+`v119_tonequota_only_n10_20260827_v1`, seeds 2–11, 10 threads / 532 comments,
+coverage 1.00, $3.85. Donor OFF, so this is the arm alone.
+
+**11/12 at n=10**, only `self_bertscore_mean_f1` failing. Control is **v113 on the
+same seeds** — 10/12 — *not* `v117_calibration`, which used seeds 0–9 with zero
+`source_raw_post_id` overlap and therefore measures a different target.
+
+| metric | v113 | **v119** | verdict |
+|---|---:|---:|---|
+| `impolite_rate` | +49.7% FAIL | **+19.8% PASS** | hard fail converted |
+| `polite_rate` | −47.2% | **−38.1%** | still unfixed, no candidate |
+| `neutral_rate` | −33.8% | **−36.4%** | did not move |
+| `self_bertscore` | +2.41% FAIL | **+4.33% FAIL** | deepened |
+| `self_bleu_4` | +12.96% | **+18.85%** | worsened |
+
+**Kept.** It converts a hard fail, and its cost lands on a metric that fails in
+every arm; rolling back to v113 would re-open the hard fail to buy 1.9pp on a
+metric that still fails. Expected passes at N=150 are 2.96 (v113) vs 3.03 (v119) —
+a wash, so the hard-fail conversion is the whole case.
+
+**The cost is not tone mixing (G84).** Same-tone pair share rose 0.3355 → 0.4268
+but that route carries only +0.0007 of the +0.0095 move (8%). Holding slot
+identity and assigned tone fixed, the paired move is +0.0033 (p=0.0076, 6/10
+threads); ~58% sits in the reassigned slots themselves, so no re-weighting keeps
+the tone win and drops the cost. Fidelity anchored at 0.00e+00 against the
+shipped artifact.
+
+**Live candidate:** `tone_target_instruction` is byte-identical within each tone
+(1 distinct string, `top_share` 1.000), and v119 put 269/528 slots on the same
+prescribed polite text, up from 146 — exactly the channel G37 priced at +0.0255.
+Next arm is per-slot paraphrase or withholding.
 
 Not a new arm: two parameter changes inside v115's `--tone-quota inverted`, which
 has still never been run. `off` and `calibrate` are untouched.
