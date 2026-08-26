@@ -1373,3 +1373,51 @@ domain before a token is spent.
 (the surface channels measured sub-additive at ~0.86). → ~0.0095 against the
 **0.0069** Holm needs at N=150. Both terms are J7 upper bounds. **The gap does not
 close with what exists today**; G57 is the only measured channel large enough.
+
+# Review — 2026-08-27 session (v118, v119)
+
+Paid spend **$0**. Full evidence: `tasks/v118-v119-worklog.md`. Rules added:
+`DECISIONS.md` **G64–G70**; **G61 revised, G57 superseded by G68**.
+
+## What shipped
+
+| version | change | fired? |
+|---|---|---|
+| v118 | `--reference-link-host {off,measured}` — one host per multi-link slot | simulated 0.781/0.673/0.427 at k=2/3/4 against real 0.771/0.640/0.417; **not run** |
+| v119 | `POLITE_ASSIGNMENT_CAP` 0.35 → 0.56, and `somewhat_polite` removed from the inversion loss | **not run** — `--tone-quota inverted` has still never been fired |
+
+726 tests pass, Ruff clean, schema 22 → 23.
+
+## The reordering
+
+At N=150 and today's bias, P(pass) under the shipped rule: `polite_rate` **0.00**,
+`impolite_rate` **0.00**, `neutral_rate` 0.01, `self_bertscore` 0.28,
+`emotion_entropy` 0.32, `self_bleu_4` 0.45. **The tone trio is the emergency, not
+`self_bertscore`.** Every session since v99 has been spending on the wrong one.
+
+## Ordered next steps
+
+1. **Fire `--tone-quota inverted` on a large-thread gate.** It is built, it is the
+   only change addressing the two metrics at P=0.00, and it has never been run.
+   Predict first: assignment polite ≈ 0.56, realized polite/impolite/neutral
+   closing ≥65% of their gaps under either matrix.
+2. **Re-read `emotion_entropy` before pricing it.** It has swung −1.54% / +5.54% /
+   −9.99% across three runs; the point estimate is unstable at n=10.
+3. **`self_bertscore` has no named mechanism left (G68).** The residual is a
+   uniform ~+0.02 level offset on every pair with the author structure now
+   correct. Do not re-propose the voice channel without re-measuring it.
+4. **If the persona layer is tried anyway, re-key it to the speaker first (G67)** —
+   as built it draws per slot and gives 93 of 93 multi-comment authors a different
+   persona per comment.
+5. v118 needs a gate before any paper run, but it is no longer a blocker (G64).
+
+## Closed as dead, do not re-propose
+
+- Placing reference links early in a comment (G61 revised) — real trails its links;
+  the 0.23 figure is a character fraction over a URL-dominated length.
+- Topical relevance of drawn URLs (G61 revised, G64) — real's own off-brand rate is
+  0.200 against generated's 0.344 at n=32, and the user has deferred it.
+- Authorial voice separation as `self_bertscore` headroom (G68) — already at 1.16x
+  real on the v117 artifact.
+- Judging the tone inversion by four-class L2 (G66) — `somewhat_polite` is never
+  reported, and including it drives `neutral_rate` several times worse.
