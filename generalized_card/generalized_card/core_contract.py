@@ -309,11 +309,11 @@ CORE_FILES = {
     ),
     "tone_donor": (
         "generalized_card/generalized_card/tone_donor.py",
-        "44a040b62dccdaf98a8aff5cdd5fb1ac0f23a0b610b0bc2dbca1ebcf3c4b5c47",
+        "8de898bed5683ee7c74a84ff2fa081f502f84f8107f3312b1296c755340ad1a1",
     ),
     "tone_realization": (
         "generalized_card/generalized_card/tone_realization.py",
-        "036439349d850c830053ea71a44b96dd8f327fe29024ce0d63a8139a9f0adadb",
+        "35012785dc9973c41da7cb1b52d17f3799bb8f47d98329db0e83ab7012898785",
     ),
     "reference_link": (
         "generalized_card/generalized_card/reference_link.py",

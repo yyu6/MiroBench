@@ -1285,6 +1285,60 @@ class GeneralizedCardTest(unittest.TestCase):
         finally:
             set_tone_donor_mode("off")
 
+    def test_tone_matrix_follows_the_donor_arm(self) -> None:
+        """G79: solving against the donor-free matrix is what made v120b overshoot.
+
+        The Planner asked for 56% polite because the solver used a polite row of
+        0.384; the donor then delivered 0.784 and `polite_rate` landed +34.7% above
+        real -- a worse miss than the -55.5% it started from.
+        """
+
+        import generalized_card.tone_realization as tr
+        from generalized_card.tone_donor import set_tone_donor_mode
+
+        template = {
+            "polite": 0.313,
+            "somewhat_polite": 0.0951,
+            "neutral": 0.1644,
+            "impolite": 0.4275,
+        }
+        try:
+            set_tone_donor_mode("off")
+            tr._CACHE.clear()
+            self.assertEqual(tr.active_matrix(), tr.REALIZATION_MATRIX)
+            tr.set_tone_quota_mode("inverted")
+            without = tr.invert_tone_rates(template)
+
+            set_tone_donor_mode("measured")
+            tr._CACHE.clear()
+            armed = tr.active_matrix()
+            self.assertAlmostEqual(sum(armed[0]), 1.0, places=3)
+            self.assertGreater(armed[0][0], tr.REALIZATION_MATRIX[0][0])
+            self.assertEqual(armed[1:], tr.REALIZATION_MATRIX[1:], "only the polite row moves")
+            with_donor = tr.invert_tone_rates(template)
+        finally:
+            tr.set_tone_quota_mode("off")
+            set_tone_donor_mode("off")
+            tr._CACHE.clear()
+
+        self.assertLess(
+            with_donor["polite"],
+            without["polite"] - 0.10,
+            "with the donor on, the Planner must ask for materially less polite",
+        )
+        # and the projected realization must land on the template, not past it
+        set_tone_donor_mode("measured")
+        tr._CACHE.clear()
+        try:
+            realized = tr._realized(tuple(with_donor[t] for t in tr.TONE_ORDER))
+        finally:
+            set_tone_donor_mode("off")
+            tr._CACHE.clear()
+        for i, name in enumerate(tr.TONE_ORDER):
+            if name == "somewhat_polite":
+                continue
+            self.assertAlmostEqual(realized[i], template[name], delta=0.02, msg=name)
+
     def test_tone_donor_off_draws_nothing(self) -> None:
         """E1: the legacy value must reproduce every release through v119."""
 

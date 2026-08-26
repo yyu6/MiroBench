@@ -78,6 +78,8 @@ from __future__ import annotations
 
 from typing import Any, Iterable
 
+from .tone_donor import tone_donor_enabled
+
 # Column and row order for `REALIZATION_MATRIX`.
 TONE_ORDER: tuple[str, ...] = ("polite", "somewhat_polite", "neutral", "impolite")
 
@@ -168,11 +170,59 @@ def _simplex_grid(step: float, cap: float) -> list[tuple[float, ...]]:
     return out
 
 
+# v120 changes the generator the matrix describes, so the matrix has to know.
+# The donor arm hands a polite-ASSIGNED slot a real appreciative sentence, and
+# `Intel/polite-guard` then labels the comment polite far more often -- measured
+# on **400 evaluation-EXCLUDED real non-polite comments**, prefixing one drawn
+# donor flips 0.600 of them (G53's own experiment, whose v104 range was 0.29-0.50;
+# this inventory is stronger because every entry is a well-formed sentence above
+# P(polite) 0.80). At the arm's measured 0.877 compliance the polite row becomes
+#
+#     0.3841 + (1 - 0.3841) x 0.600 x 0.877 = 0.7082
+#
+# with the remaining mass scaled across the row's other cells in proportion.
+#
+# Every input is measured off the evaluation pool, which is what makes this
+# calibration and not tuning: the v120b run's own refit gives 0.8062, and using
+# THAT would be fitting a matrix to the output it will be judged on. The
+# excluded-corpus estimate is lower, so it is also the conservative one.
+DONOR_FLIP_RATE = 0.600
+DONOR_COMPLIANCE = 0.877
+DONOR_ROW_PROVENANCE = {
+    "flip_rate": DONOR_FLIP_RATE,
+    "flip_rate_source": "400 evaluation-excluded real non-polite comments, Intel/polite-guard",
+    "compliance": DONOR_COMPLIANCE,
+    "compliance_source": "gate_audit v120b_n10_20260827_v1, 236/269 polite-assigned slots",
+    "note": "the run's own refit says 0.8062; that number is NOT used, it is fitted on evaluation output",
+}
+
+
+def _donor_polite_row() -> tuple[float, ...]:
+    row = REALIZATION_MATRIX[0]
+    stay = row[0]
+    moved = stay + (1.0 - stay) * DONOR_FLIP_RATE * DONOR_COMPLIANCE
+    scale = (1.0 - moved) / (1.0 - stay) if stay < 1.0 else 0.0
+    return (moved,) + tuple(row[j] * scale for j in (1, 2, 3))
+
+
+def active_matrix() -> tuple[tuple[float, ...], ...]:
+    """The realization matrix for the arms currently switched on.
+
+    Solving against the wrong one is not a small error: the v120b run assigned
+    56% polite because the solver used the donor-free matrix, the donor then
+    delivered 0.784 instead of 0.384, and `polite_rate` overshot real by +34.7%
+    -- a worse miss than the -55.5% it started from (G79).
+    """
+
+    if not tone_donor_enabled():
+        return REALIZATION_MATRIX
+    return (_donor_polite_row(),) + tuple(REALIZATION_MATRIX[1:])
+
+
 def _realized(assignment: Iterable[float]) -> tuple[float, ...]:
     a = tuple(assignment)
-    return tuple(
-        sum(a[i] * REALIZATION_MATRIX[i][j] for i in range(4)) for j in range(4)
-    )
+    matrix = active_matrix()
+    return tuple(sum(a[i] * matrix[i][j] for i in range(4)) for j in range(4))
 
 
 def invert_tone_rates(

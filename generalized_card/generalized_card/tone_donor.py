@@ -47,6 +47,15 @@ from pathlib import Path
 from typing import Any
 
 
+# **DO NOT SWITCH THIS ON without reading G79/G80/G82.** Measured at N=10 on the
+# evaluation pool, the arm works mechanically -- P(realize polite | assign polite)
+# 0.397 -> 0.784, exactly what G53 predicted -- and is NET HARMFUL: seven of nine
+# metrics got worse, `self_bertscore` FAILED (+2.4% -> +5.6%, Cliff 0.98), and
+# 44.4% of comments opened with a prescribed appreciative sentence against real's
+# 8.9%. Stripping the donor text back out does NOT recover the gap, so the damage
+# is the register the cue induces in the whole comment, not the shared sentence.
+# Kept in the tree because the mechanism is the only one that moves `polite_rate`,
+# and a redesign that does not dictate the opening has not been tried.
 TONE_DONOR_MODE = "off"
 
 # The tone the arm routes on. Only slots the Planner assigned `polite` are
