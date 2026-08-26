@@ -50,15 +50,23 @@ def score(ts):
 rows = []
 for tag in runs:
     root = REPO / "artifacts/generalized_card/runs" / tag
+    # `cleaned/` only exists once a run has been evaluated. A freshly generated
+    # run has `generated/` only, and hardcoding `cleaned` made this print a matrix
+    # of zeros with n=0 instead of failing -- gate_audit.py already falls back.
+    source = root / "cleaned"
+    if not source.exists():
+        source = root / "generated"
+    if not source.exists():
+        raise SystemExit(f"{tag}: neither cleaned/ nor generated/ exists under {root}")
     meta = {}
-    for d in sorted((root / "cleaned").glob("run_*_sampled_reddit")):
+    for d in sorted(source.glob("run_*_sampled_reddit")):
         for post in json.load(open(d / "discussion.json"))["posts"]:
             for rec in post.get("generation_records") or []:
                 cid = str((rec.get("comment") or {}).get("comment_id", ""))
                 if cid:
                     meta[cid] = str((rec.get("task") or {}).get("tone_target") or "")
     batch = []
-    for d in sorted((root / "cleaned").glob("run_*_sampled_reddit")):
+    for d in sorted(source.glob("run_*_sampled_reddit")):
         cbt, _ = load_generated_comments(d)
         for cs in cbt.values():
             batch += [(c.text, meta[str(c.comment_id)]) for c in cs if str(c.comment_id) in meta]
@@ -66,6 +74,9 @@ for tag in runs:
     rows += [(a, r["pred_label"]) for (_, a), r in zip(batch, sc)]
     print(f"{tag}: {len(batch)} slots")
 
+if not rows:
+    raise SystemExit("no slots with a tone assignment were found; refusing to "
+                     "print a matrix of zeros")
 C = np.zeros((4, 4))
 counts = {}
 for i, lb in enumerate(TONE_ORDER):

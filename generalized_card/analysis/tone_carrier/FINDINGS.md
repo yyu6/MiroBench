@@ -368,3 +368,73 @@ Writer at all.
 now has one, priced at 55-89% depending on cells that have never been observed,
 with `impolite_rate` -- the smallest p-value -- repaired in both regimes and
 `neutral_rate` as the new metric at risk.
+
+---
+
+# The calibration run answered the cap question — 2026-08-26
+
+`v117_calibration_20260826_v1`, 10 threads / 559 slots / $3.93 / 65 min, on the
+zero-overlap calibration pool under `--tone-quota calibrate`. The flat quota did
+what it was built for: assignment came out **137 / 137 / 140 / 145**, so every
+cell of C has n>=137 instead of the old 289 / 92 / 156 / 522.
+
+    REALIZATION_MATRIX refit (n=559)          shipped (n=1059, skewed mix)
+    polite     .3942 .1971 .1022 .3066        .3841 .1938 .0900 .3322
+    somewhat   .1241 .3650 .1460 .3650        .0761 .4130 .0978 .4130
+    neutral    .1357 .1286 .2429 .4929        .0897 .0962 .4103 .4038
+    impolite   .0069 .0069 .0966 .8897        .0096 .0307 .1054 .8544
+
+## The Lucas critique is answered for the polite row
+
+`tone_realization.POLITE_ASSIGNMENT_CAP` was pinned at 0.35 because
+P(realize polite | assign polite) had only been observed on `agree` slots. Under a
+flat quota the polite assignment spans every stance, and the rate is **0.3942**
+against the 0.3841 measured at the old skewed mix. **C is approximately invariant
+to the assignment mix**, which is what the cap existed to doubt. The cap can be
+raised on evidence.
+
+## But the neutral row is not stable, and it is now the binding constraint
+
+`neutral -> neutral` fell **0.4103 -> 0.2429** and `neutral -> impolite` rose
+0.4038 -> 0.4929 between the two fits, on comparable n (156 vs 140). That is the
+one row that does not transfer, and it changes the answer:
+
+| cap | polite | somewhat | neutral | impolite | L2 closed |
+|---|---:|---:|---:|---:|---:|
+| flat 0.245 (this run) | 0.1628 | 0.1717 | 0.1467 | 0.5188 | 0% |
+| 0.30 | 0.1833 | 0.1555 | 0.1549 | 0.5064 | 23% |
+| **0.35 (shipped)** | 0.1966 | 0.1518 | **0.1508** | 0.5009 | 35% |
+| 0.40 | 0.2092 | 0.1463 | 0.1464 | 0.4980 | 45% |
+| 0.50 | 0.2352 | 0.1372 | 0.1379 | 0.4897 | 63% |
+| 0.59 (uncapped) | **0.2599** | 0.1422 | **0.1277** | 0.4702 | **67%** |
+| real target | 0.2595 | 0.1174 | 0.1591 | 0.4640 | |
+
+Two corrections to what the shipped matrix predicted:
+
+* **The neutral damage at cap 0.35 is gone.** Predicted +23.7%; the refit says
+  0.1508 against 0.1591, i.e. **−5.2%**.
+* **Uncapped reaches 67%, not 86%**, and there costs `neutral_rate` −19.7% while
+  landing `polite_rate` at +0.2% and `impolite_rate` at +1.3%.
+
+So the trade is real and it is now between `polite`/`impolite` and `neutral`, not
+between closure and extrapolation. **Which cap to ship is a decision, not a
+measurement**, and it should be made against the reported-metric set rather than
+against L2: cap 0.59 makes two of the three reported tone metrics near-exact and
+the third fail; cap 0.35 leaves all three mid-range.
+
+## Caveat that bounds all of the above
+
+This matrix is fitted on the **calibration pool's** corpus, not the evaluation
+pool's. The polite row transferring and the neutral row not transferring is
+evidence that some rows are generator properties and some are corpus properties.
+The shipped matrix has **not** been replaced, because replacing a matrix measured
+on the evaluation-seed corpus with one measured on a different corpus trades one
+known bias for an unknown one. That decision is left open.
+
+## A defect this exposed in the harness
+
+`fit_tone_matrix.py` globbed `cleaned/` only. A freshly generated run has
+`generated/` and no `cleaned/` until it is evaluated, so the first invocation
+printed a **matrix of all zeros with n=0** and then crashed on a divide. It now
+falls back to `generated/` the way `gate_audit.py` already did, and refuses to
+print a matrix when no slots were found rather than printing zeros.
