@@ -105,3 +105,60 @@ and a second draft that still exceeds the band is accepted anyway.
 the "direction right but move undersized" branch, whose stated response is
 `--writer-retries 2`. Recording it now, before the metrics land, so that choice
 is not a post-hoc rationalisation of a disappointing number.
+
+---
+
+## VERDICT (2026-08-28) — REJECTED as a pairwise fix, KEPT as the best N=150 candidate
+
+Paid N=10, same seeds 2–11, **$4.14** (predicted $4.80–5.60).
+
+### Scorecard against the pre-registered predictions
+
+| quantity | predicted | actual | |
+|---|---|---:|---|
+| slots retried | 28–40% | **38.0%** (202/532) | HIT |
+| `guard_degraded` | ~0 | **0** | HIT |
+| cost | $4.80–5.60 | **$4.14** | slightly under |
+| word drift | <15% | **+2.7%** (62.2→63.9) | HIT |
+| `self_bertscore` | +2.0 to +3.5% | **+5.09%** (from +4.33%) | **MISS — wrong direction** |
+| `self_bleu_4` | +10 to +16% | **+20.54%** (from +18.85%) | **MISS — wrong direction** |
+| tone unchanged ±5pp | unchanged | **impolite moved 15.6pp** | **MISS — but in our favour** |
+
+**5 of 7 quantities behaved as predicted. Both priority metrics moved the wrong
+way.** By the rule fixed in advance (ship needs ≥1.0pp and ≥3pp of improvement),
+this is a **reject**, and it triggers the second reject condition verbatim: no
+`self_bertscore` improvement despite ≥25% of slots retrying.
+
+### Why it failed, measured
+
+The retry does not achieve **its own objective**. On the 60 slots where both
+attempts reported a semantic diagnostic, `thread_mean_cosine` moved
+**0.4528 → 0.4499 (−0.0030)** and only **33/60 = 55%** of rewrites moved it down
+— a coin flip. Only **50/202 = 25%** of second drafts came back clean. The guard
+**detects** convergence accurately; its corrective note **cannot remove it**.
+
+**`--writer-retries 2` is NOT indicated.** The pre-registered escalation required
+the direction to be right. Escalating a step that moves its own objective by
+−0.003 at 55% accuracy buys cost and more of the same.
+
+### But it is the strongest release on the board
+
+Expected passes at N=150: **v113 2.96, v119 3.03, v122 3.48.**
+`impolite_rate` P(pass) 0.24→0.38, `neutral_rate` 0.19→0.37, `length_cv`
+0.18→0.38 (Cliff −0.34→**0.00**).
+
+**And the reason is not what it looks like (G90).** Retried comments are 47.3%
+impolite vs untreated 48.3% — **−1.1pp**, which cannot explain a 15.6pp metric
+move. What changed is the **spread across threads**: per-thread impolite rates
+went `20 32 36 42 44 50 50 62 71 77` → `21 21 28 32 42 43 45 59 59 70`. The
+metric is the *mean of per-thread rates*, so pulling in the outlier threads moves
+it. This also explains why the pairwise metrics did not follow: they are means
+over comment **pairs within** a thread, so across-thread spread is invisible.
+
+### Next step
+
+Target **per-thread outliers** explicitly and measure on the **per-thread
+distribution**, not the pooled share. That is the one lever demonstrated to move
+this scoreboard. `self_bertscore` and `self_bleu_4` now have **all three
+generation-side doors closed** (G28 prompt, G86 sampler, G88 write-time loop);
+what remains for them is outside the current generator.
