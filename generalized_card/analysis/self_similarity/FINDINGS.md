@@ -750,3 +750,79 @@ claims: the links that read as human are the opaque ones (`youtu.be/...?t=1434`,
 flickr photo pages), and the ones that read as machine output are four unrelated
 hosts stacked together — not one off-topic link, which real does too.
 
+## 16. The persona layer was never on, is keyed wrong, and the channel it was meant to open is already closed — 2026-08-27
+
+Three separate findings, in the order they had to be established.
+
+### 16a. G57's premise is false: two of the four levers were never enabled
+
+G57 and s8 both close on *"`persona_bridge`, `speaker_roster`, `actor_conditioning`
+and `--speaker-identity matched` all exist and **were on for every run**"*. Reading
+`run_config.json` instead of the module list:
+
+    persona_conditioning = {"mode": "none"}
+    actor_conditioning   = {"mode": "none", "source": "disabled"}
+    speaker_identity     = "matched"
+
+Both are the CLI defaults (`run_generate.py` `--persona-conditioning` and
+`--actor-conditioning` default to `MODE_NONE`). Sweeping all **163**
+`run_config.json` files: 147 `none`, 9 absent, **7** `matraix-projected` -- and all
+7 are from 2026-08-08/09, i.e. ~100 versions before v113. So the +0.0076 voice
+separation s8 measured is what `--speaker-identity matched` produces **alone**, and
+the MatrAIx persona system prompt has never been in a Writer prompt in any run this
+project has evaluated.
+
+The layer is runnable today: `third_party/MatrAIx-Persona-8B` sits at the exact
+audited commit `e85c8772`, its dev-sample dataset holds 200 personas of which 147
+pass the English-adult filter, and driving the runtime over the v117 run's own 571
+tasks assigns **119** distinct personas with a top-persona share of 4.0%. The
+rendered profiles are genuinely distinct -- mean pairwise Jaccard 0.312, only three
+tokens (`who`, `you`, `are`) shared by all -- but thin: median **3** selected
+dimensions, mean 23.8 persona-specific tokens, and 15.1% of personas render zero
+dimensions (4.2% of slots).
+
+### 16b. It is keyed per SLOT, not per speaker, so switching it on would not implement s8's channel
+
+`MatraixPersonaRuntime.assign` ranks candidates by
+`_stable_rank(seed, seed_index, local_task_id, persona_id)`. The key is the
+**task**, and no speaker id enters anywhere in the path. Driven over the v117 run:
+of the 93 authors who write more than one comment, **93 of 93 -- 100% -- receive a
+different persona for each comment.**
+
+s8's channel is that real same-author pairs outscore different-author pairs by
++0.0137, a writing signature. A per-slot persona gives one author two unrelated
+voices, which works *against* that structure rather than for it. Implementing the
+channel needs the persona keyed to the speaker the roster already tracks
+(`real_sample_id`), not to `local_task_id`.
+
+### 16c. And the channel is already closed on the current artifact
+
+`one_voice_persona.py`, the s8 instrument, run on both artifacts.
+**Fidelity first:** on the v113 gate it reproduces s8's table to four decimals
+(+0.0170 / +0.0058 / +0.0133 / +0.0061, weighted **+0.0076**, ratio 0.55), so the
+instrument is the same one.
+
+| relation | v113 gate | **v117 calibration** | real |
+|---|---:|---:|---:|
+| same parent | +0.0170 | +0.0229 | −0.0008 |
+| ancestor/descendant | +0.0058 | +0.0065 | +0.0021 |
+| same root branch | +0.0133 | +0.0126 | +0.0233 |
+| **different branch** | +0.0061 | **+0.0163** | +0.0141 |
+| stratum-weighted | +0.0076 | **+0.0160** | +0.0137 |
+| as a fraction of real | 0.55 | **1.16** | 1.00 |
+
+The decisive `different branch` cell -- the one s8 built the bound on -- has gone
+from 43% of real's to **116%** of it. **G57's headroom of +0.0060 = 51% of the gap
+does not exist on the current generator.** The two runs differ in thread pool and
+in three arms, so *what* closed it is not attributable here; that it is closed is.
+
+The residual is then a level effect, not a structural one, exactly as G3 recorded:
+generated's different-branch different-author pairs sit at 0.5082 against real's
+0.4881, and its same-author ones at 0.5246 against 0.5022 -- both about +0.02.
+Every pair is uniformly too similar while the author structure is now correct.
+
+**The only measured channel above the 42% bar is therefore spent, and no named
+mechanism remains for `self_bertscore`.** The persona layer is still worth trying
+as an unpriced experiment, but it must be re-keyed to the speaker first, and it
+can no longer be justified by G57's arithmetic.
+

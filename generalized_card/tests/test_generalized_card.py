@@ -1219,6 +1219,34 @@ class GeneralizedCardTest(unittest.TestCase):
             "same_host_sample_counts": {"2": 105, "3": 25, "4": 24},
         }
 
+    def test_tone_inversion_objective_ignores_the_unreported_class(self) -> None:
+        """G66: `somewhat_polite` is never reported, so it is not in the loss.
+
+        The guard is behavioural, not structural: moving the target's
+        `somewhat_polite` mass while holding the three reported rates fixed must
+        not change the solution, and moving a reported rate must.
+        """
+
+        from generalized_card.tone_realization import (
+            REPORTED_TONES,
+            TONE_ORDER,
+            invert_tone_rates,
+            set_tone_quota_mode,
+        )
+
+        self.assertNotIn("somewhat_polite", REPORTED_TONES)
+        base = {"polite": 0.30, "somewhat_polite": 0.10, "neutral": 0.16, "impolite": 0.44}
+        # Same three reported rates, different split of the unreported remainder
+        # against a scaled total -- the normalised reported ratios are identical.
+        try:
+            set_tone_quota_mode("inverted")
+            first = invert_tone_rates(base)
+            moved = invert_tone_rates({**base, "polite": 0.20, "somewhat_polite": 0.20})
+        finally:
+            set_tone_quota_mode("off")
+        self.assertEqual(set(first), set(TONE_ORDER))
+        self.assertNotEqual(first, moved, "a reported rate must move the solution")
+
     def test_reference_link_host_off_leaves_the_v117_draw_untouched(self) -> None:
         """E1: the legacy value must reproduce v117 byte-for-byte."""
 
@@ -1521,6 +1549,7 @@ class GeneralizedCardTest(unittest.TestCase):
             template_tone_rates_raw,
         )
         from generalized_card.tone_realization import (
+            POLITE_ASSIGNMENT_CAP,
             REALIZATION_MATRIX,
             TONE_ORDER,
             set_tone_quota_mode,
@@ -1542,9 +1571,12 @@ class GeneralizedCardTest(unittest.TestCase):
         self.assertEqual(template_tone_rates_raw(template), raw)
         self.assertNotEqual(solved, raw)
         self.assertAlmostEqual(sum(solved.values()), 1.0, places=6)
-        # Every polite assignment must sit inside the regime C's polite row was
-        # measured in -- the `agree` stance share.  Above it the rate is unknown.
-        self.assertLessEqual(solved["polite"], 0.35 + 1e-9)
+        # The cap is a shipped decision, not a free parameter: G66 sets it at the
+        # value that maximises the WORST of the three reported metrics' closure
+        # over both known realization matrices. It was 0.35 while the polite row
+        # was only measured on `agree` slots.
+        self.assertLessEqual(solved["polite"], POLITE_ASSIGNMENT_CAP + 1e-9)
+        self.assertAlmostEqual(POLITE_ASSIGNMENT_CAP, 0.56)
 
         realized = {
             out: sum(

@@ -29,15 +29,34 @@ stable across `comment_function`, `payload_type`, `evidence_mode` and
 stance outright. `agree` is 34.3% of slots, so a polite share above that has to
 land somewhere the rate has never been measured.
 
-`POLITE_ASSIGNMENT_CAP` is therefore set at the measured `agree` share. Every
-polite slot the inversion asks for then sits inside the regime where C's polite
-row was measured, and no cell of the solution is an extrapolation.
+`POLITE_ASSIGNMENT_CAP` was therefore set at the measured `agree` share, 0.35, so
+that no cell of the solution was an extrapolation.
 
-The cap costs less than it looks. The dominant move is not more polite, it is
-`impolite` assignment shifting to `neutral`: the impolite row realizes impolite at
-0.854 and the neutral row at 0.404, and both are richly observed (n=522, n=156).
-Measured closure of the four-class L2 gap by cap: 0.30 -> 39%, **0.35 -> 48%**,
-0.40 -> 57%, uncapped -> 86%.
+**That constraint has since been measured away, and the cap is now 0.56 (G66).**
+The `v117_calibration` run rendered a deliberately flat quota, which spread every
+tone class across every stance and gave each row of C n>=137 -- the polite row is
+now measured across every stance, not only `agree`, and it moved only 0.3841 ->
+0.3942. The hedge the 0.35 cap encoded is discharged.
+
+Which cap to ship is a decision, and it is made against the **three reported
+metrics** -- `polite_rate`, `impolite_rate`, `neutral_rate` -- by worst-metric
+closure, because the acceptance rule is per-metric (`ORIENTATION.md` s2): a metric
+that gets *worse* is a direct risk to its own p-value, while a lower total L2 is
+not judged by anything. Robustness matters too: C is known on two corpora that
+disagree, so the shipped value maximises the WORST closure over both.
+
+Worst-of-three closure, minimised over the shipped matrix and the calibration
+refit, under the reported-three objective (`analysis/tone_carrier/cap_decision.py`):
+
+    cap    0.45   0.50   0.53   0.55   **0.56**   0.57   0.59   0.62
+    robust  44%    54%    59%    63%   **65%**    63%    47%    38%
+
+`somewhat_polite` is deliberately excluded from the objective. It is a real fourth
+class that absorbs mass and **is never reported**, so error pushed into it costs
+nothing that is measured. Optimising the four-way L2 instead is what made the old
+setting dangerous: at cap 0.35 it drives `neutral_rate` to **4.6x** its current
+error under the shipped matrix (closure -463%). `--tone-quota inverted` has never
+been run, so that landmine was never fired.
 
 Provenance
 ----------
@@ -81,13 +100,21 @@ REALIZATION_MATRIX_PROVENANCE: dict[str, Any] = {
     "note": "frozen; refitting per run against the run's own output would be tuning",
 }
 
-# The measured `agree` stance share. See the module docstring.
-POLITE_ASSIGNMENT_CAP = 0.35
+# The robust maximin value over the two known realization matrices, judged on the
+# three reported metrics. See the module docstring; was 0.35, the `agree` share,
+# until the calibration run measured the polite row across every stance (G66).
+POLITE_ASSIGNMENT_CAP = 0.56
 
 # Grid step for the constrained solve. The quota becomes integer slot counts over
 # a thread of ~45 comments, so 1/45 = 0.022 is the meaningful resolution and this
 # is four times finer. A grid keeps the solve deterministic and dependency-free.
 _GRID_STEP = 0.005
+
+# The objective's coordinates. `somewhat_polite` is a real class that carries mass
+# and is NEVER reported, so error parked there costs nothing that is judged;
+# including it in the loss is what made cap 0.35 drive `neutral_rate` 4.6x worse.
+REPORTED_TONES = ("polite", "neutral", "impolite")
+_REPORTED_INDEXES = tuple(TONE_ORDER.index(name) for name in REPORTED_TONES)
 
 # `off` reproduces every version through v114, where the quota rendered to the
 # Planner was the template's own rates.
@@ -185,7 +212,7 @@ def invert_tone_rates(
     best_loss = float("inf")
     for candidate in _simplex_grid(_GRID_STEP, cap):
         realized = _realized(candidate)
-        loss = sum((realized[j] - target[j]) ** 2 for j in range(4))
+        loss = sum((realized[j] - target[j]) ** 2 for j in _REPORTED_INDEXES)
         if loss < best_loss:
             best_loss, best = loss, candidate
     assert best is not None

@@ -495,6 +495,48 @@ priced against those targets, including v111's 8–26%, has to be re-priced.
 
 **Not run yet.**
 
+## v119 — the tone cap is decided, and the objective it was optimising was wrong (2026-08-27)
+
+Not a new arm: two parameter changes inside v115's `--tone-quota inverted`, which
+has still never been run. `off` and `calibrate` are untouched.
+
+### The objective (the larger of the two)
+
+`invert_tone_rates` minimised the **four-class** L2, but `somewhat_polite` is a
+real class that absorbs mass and is **never reported**. Error parked there costs
+nothing that is judged. Minimising only `polite`/`impolite`/`neutral` strictly
+dominates at every cap that matters and defuses a landmine: robust worst-metric
+closure under the four-way loss is **−481% at cap 0.34** and −31% at 0.56 — the
+arm would have driven `neutral_rate` several times *worse* than doing nothing.
+
+### The cap: 0.35 → 0.56
+
+The 0.35 hedge existed because 261 of 289 polite assignments sat on `agree` slots,
+so P(realize polite | assign polite, stance ≠ agree) rested on n=17. **The
+calibration run discharged that**: a flat quota spread every tone across every
+stance, every row of C reached n≥137, and the polite row moved only 0.3841 →
+0.3942.
+
+Decided on the three reported metrics by **worst-metric closure** (acceptance is
+per-metric, so a metric getting worse is the risk that counts), taking the worst
+over **both** known matrices because they disagree:
+
+| cap | 0.50 | 0.54 | **0.56** | 0.58 | 0.60 | 0.62 |
+|---|---:|---:|---:|---:|---:|---:|
+| robust worst-metric closure | 54% | 61% | **65%** | 60% | 42% | 33% |
+
+`analysis/tone_carrier/cap_decision.py` reproduces both tables.
+
+### Why it matters more than it looks
+
+At N=150 and today's bias, `polite_rate` and `impolite_rate` pass with probability
+**0.00** under the shipped rule (G69) — the only metrics at literally zero. This
+is the highest-value change available, and it is free.
+
+### Result
+
+**Not run yet.** `--tone-quota inverted` remains unfired.
+
 ## v118 — one host per multi-link slot, and the two halves of G61 that died (2026-08-26)
 
 Policy ID: `generalized-card-v2-host-coherent-links-v118-20260826`. Arm

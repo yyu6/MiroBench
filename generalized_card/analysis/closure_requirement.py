@@ -32,11 +32,26 @@ REPO = Path(__file__).resolve().parents[2]
 REAL = REPO / "artifacts/baselines/camera_product_gpt5mini/real/thread_scores.csv"
 N_TESTS = 24
 
-# Relative bias of generated against matched real, from the v110 N=10
-# matched_evaluation. Recompute these from the newest run before quoting.
+# Relative bias of generated against matched real. Recomputed 2026-08-27 from the
+# newest artifact that carries each metric honestly:
+#
+#   self_bleu_4, self_bertscore, emotion_entropy -- `v117_calibration_20260826_v1`,
+#     full coverage with all three v115/v116/v117 arms on. Its pool is NOT the
+#     evaluation pool, so these are the best available reading and not a paired
+#     comparison with v110/v113.
+#   polite_rate / impolite_rate / neutral_rate -- `v113_v112_gate_n10_20260826_v1`.
+#     The calibration run's tone numbers are meaningless by construction (its quota
+#     was deliberately flat), so the last honest tone reading is the v113 gate.
+#
+# Trend on the shared v110/v113 evaluation pool, for scale:
+#   self_bertscore +2.60% -> +2.41%;  self_bleu_4 +18.84% -> +12.96%.
 BIAS = {
-    "self_bleu_4": 0.0049 / 0.027829,
-    "self_bertscore_mean_f1": 0.0148 / 0.4942,
+    "self_bleu_4": 0.0867,
+    "self_bertscore_mean_f1": 0.0159,
+    "emotion_entropy": -0.0999,
+    "polite_rate": -0.4719,
+    "impolite_rate": 0.4969,
+    "neutral_rate": -0.3378,
 }
 
 
