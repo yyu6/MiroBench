@@ -551,19 +551,48 @@ Asserted by test. G23 records a v108 prompt fix that reached only one of
 never carried an offer at all. `polite_rate` is a share over **every** comment, so
 a block that misses a template silently caps the arm.
 
-### G37's risk, measured rather than assumed
+### The inventory, after reading what the Writer would actually see
 
-Shared prescribed text converges the pairwise metrics — v109's shared speech act
+Rendering the block and reading consecutive draws caught four classes of
+sentence-splitter artifact the surface filters missed, each of which would have
+**opened** a generated comment: `You're welcome, Mr.` (the splitter cuts on
+`[.!?]`), `Small and powerful cameras...`, `using both while i'm out is even more
+fun!`, and `Yes Do I find shooting easier and more fun with this camera?` — a
+question, which would change what kind of turn the comment is and move
+`hard_disagree_rate` and the question share.
+
+Final filters: capitalised start, ends in `.` or `!`, no ellipsis, no trailing
+abbreviation, no question, and **no pronoun or demonstrative anywhere** — `I know
+these are in good hands rn!` dangles wherever it is reused. Inventory 825 → **463**,
+mean 4.92 words, 145 distinct openers, top opener share 0.125.
+
+### G37's risk, measured rather than assumed — and it did not materialise
+
+Shared prescribed text converges the pairwise metrics: v109's shared speech act
 cost **+0.0255** on `self_bertscore`. Simulated on the v117 artifact at 100%
 compliance (`analysis/tone_carrier/donor_collision_risk.py`):
 
-- 141 polite-assigned slots, **133 distinct donors** drawn, most reused 2x
-- **2 within-thread exact collisions** across 10 threads
-- `self_bleu_4` **0.037841 → 0.036154, −4.46%** — *toward* real, which sits 8.67% below
+| | shipped | with donors | move |
+|---|---:|---:|---:|
+| `self_bleu_4` (10 threads) | 0.037841 | 0.036117 | **−4.56%** |
+| `self_bertscore` (4 threads) | 0.488759 | 0.488593 | **−0.03%** |
+
+- 141 polite-assigned slots, **125 distinct donors**, most reused 3x
+- **4 within-thread exact collisions** across 10 threads
+
+`self_bertscore` moves **−0.000165**, which is **155x smaller** than G37's
+prescribed-speech-act effect and in the direction generated needs (it sits 1.59%
+*above* real). `self_bleu_4` moves 4.56% toward real against its +8.67% bias. The
+mitigations hold: a 463-sentence pool, a per-slot hash draw, and an offer that
+carries the sentence and **no rationale** — G37's damage came from a shared
+*speech act*, and there is none here.
+
+Caveats both ways: 100% compliance is assumed, which the Writer will not reach;
+and the donor is prefixed rather than blended, the least integrated form.
 
 ### Result
 
-**Not run yet.**
+**Not run yet.** 732 tests pass, core contract zero drift.
 
 ## v119 — the tone cap is decided, and the objective it was optimising was wrong (2026-08-27)
 
