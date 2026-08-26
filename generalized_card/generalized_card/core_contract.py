@@ -207,7 +207,7 @@ CORE_FILES = {
     ),
     "generator_adapter": (
         "generalized_card/generalized_card/backend.py",
-        "a01307ffc71ef5ae9dee4a61125d7ca29cc5d2272015550db6af3fb2c0c36cb1",
+        "e5554cdca11e3ca5cce1e772691cb30573db132f2c38e1317edb5b00ad4d6852",
     ),
     "data_boundary": (
         "generalized_card/generalized_card/data.py",
@@ -241,7 +241,7 @@ CORE_FILES = {
     ),
     "generation_runner": (
         "generalized_card/scripts/run_generate.py",
-        "97a59fd6f8e9257ee540406c79befc50da86c8e25b6ee38e910a0b13ecc1964d",
+        "c4173faa9a066af5b91f44d9a8e31f72941e3377a546ffc7994ccbe0d5268fa1",
     ),
     "generation_backend_runner": (
         "generalized_card/scripts/run_generator_backend.py",
@@ -309,7 +309,7 @@ CORE_FILES = {
     ),
     "tone_donor": (
         "generalized_card/generalized_card/tone_donor.py",
-        "PENDING",
+        "866d43f9bd85f8142bb65f99a0261b35d0b97f9b4afc3e420526f7600abd13e3",
     ),
     "tone_realization": (
         "generalized_card/generalized_card/tone_realization.py",
@@ -465,7 +465,7 @@ CORE_FILES = {
     ),
     "domain_prompt_adapter": (
         "generalized_card/generalized_card/prompts.py",
-        "649f9e8341329543cc109469ee0d1a93782c79609024f55bfa710462e7d04d67",
+        "f01a5471f60445456ab4719ae1da06a2ee59afdeba7f6ac9427606140d160655",
     ),
     "reply_planning": (
         "generalized_card/generalized_card/reply_planning.py",
