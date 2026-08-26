@@ -495,6 +495,76 @@ priced against those targets, including v111's 8–26%, has to be re-priced.
 
 **Not run yet.**
 
+## v120 — the donor sentence: the one `polite_rate` mechanism G53 left alive (2026-08-27)
+
+Policy ID: `generalized-card-v2-tone-cap-and-host-coherent-links-v119-20260827` (the
+arm is default-off, so the v119 policy still describes what a run reproduces).
+Arm `--tone-donor {off,measured}`, byte-identical when off, routes only on
+`tone_target == polite`.
+
+### Why this and not another cue
+
+G53 closed six realization-side mechanisms. G58 closed the last one decisively:
+generated already carries real's top-45 polite-discriminative tokens at **1.14x**
+real prevalence and still converts at 0.26–0.45x. **The generator does not lack
+the words — it fails to compose the sentence.** A cue naming a word or a speech
+act leaves the composition to the Writer, which is the step that fails. This hands
+the finished sentence over, the same distinction E4 measures for URLs (naming the
+concrete token buys ~1.0 compliance, naming the category 0.23).
+
+### What it is worth, priced before it was built
+
+G53's measured effect: inserting one real short appreciative sentence into a
+non-polite generated comment flips its Polite Guard label **0.29–0.50** of the
+time. At the **low** end the polite row of the realization matrix moves
+0.384 → 0.563, and at N=150:
+
+| metric | v119 alone | **v119 + v120** |
+|---|---:|---:|
+| `polite_rate` raw | 0.17 | **0.90** |
+| `polite_rate` Holm | 0.64 | **0.99** |
+| `impolite_rate` raw | 0.83 | 0.92 |
+| `neutral_rate` raw | 0.84 | 0.95 |
+
+**v119 alone does not fix `polite_rate`.** It fixes impolite and neutral and
+leaves polite at 0.17. That is the gap v120 exists to close.
+
+### The inventory
+
+825 sentences, harvested by `analysis/tone_carrier/harvest_donor_sentences.py`
+from **evaluation-excluded threads only**, scored by the evaluation's own
+`Intel/polite-guard` at P(polite) > 0.80. Mean 5.56 words, 200 distinct openers,
+top opener share 0.159 — comparable to the 802-URL link inventory that runs at
+0.95 compliance with zero repeats.
+
+Topic-free in four passes, because a donor is prefixed to a comment about a
+**different** product and a topic word in prose is a worse tell than the URL case
+(G61/G64): no designator, digit or URL; no brand name; no non-initial proper noun;
+and every content word must sit in the domain corpus's top 2000 by frequency. The
+last rule is measured per domain rather than listed, so it transfers — and it is
+what removed `I love your cosplay photos!` and `enjoy your Canon setup`.
+
+### Rendered from all three writer templates
+
+Asserted by test. G23 records a v108 prompt fix that reached only one of
+`writer_prompt`'s two branches; G41 records that `_low_info_writer_prompt` has
+never carried an offer at all. `polite_rate` is a share over **every** comment, so
+a block that misses a template silently caps the arm.
+
+### G37's risk, measured rather than assumed
+
+Shared prescribed text converges the pairwise metrics — v109's shared speech act
+cost **+0.0255** on `self_bertscore`. Simulated on the v117 artifact at 100%
+compliance (`analysis/tone_carrier/donor_collision_risk.py`):
+
+- 141 polite-assigned slots, **133 distinct donors** drawn, most reused 2x
+- **2 within-thread exact collisions** across 10 threads
+- `self_bleu_4` **0.037841 → 0.036154, −4.46%** — *toward* real, which sits 8.67% below
+
+### Result
+
+**Not run yet.**
+
 ## v119 — the tone cap is decided, and the objective it was optimising was wrong (2026-08-27)
 
 Not a new arm: two parameter changes inside v115's `--tone-quota inverted`, which

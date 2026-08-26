@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Free post-run gate audit for the v112, v113, v115, v116, v117 and v118 arms.
+"""Free post-run gate audit for the v112-v120 arms.
 
 Reads a finished run and answers the one question a gate exists to answer:
 **did each arm fire, and did it produce the surface behaviour it was built for?**
@@ -24,6 +24,7 @@ RUNS = REPO / "artifacts/generalized_card/runs"
 sys.path.insert(0, str(REPO / "generalized_card"))
 from generalized_card.audit import _malformed_urls, _urls  # noqa: E402
 from generalized_card.reference_link import folded_host  # noqa: E402
+from generalized_card.tone_donor import load_donor_inventory  # noqa: E402
 BANDS = ((1, 9), (10, 19), (20, 34), (35, 49), (50, 69), (70, 100), (101, 150), (151, 10**9))
 
 
@@ -197,14 +198,42 @@ def main() -> None:
     else:
         print(f"{'k':>3}{'carriers':>10}{'all one host':>14}{'real':>8}")
         for k in (2, 3, 4):
-            rows = [u for u in multi if len(u) == k]
-            if not rows:
+            # NOT `rows`: that name holds every slot in this run and the v115 and
+            # v120 sections below still need it. Shadowing it here silently broke
+            # the v115 block, and printing only this section's own output hid it.
+            at_k = [u for u in multi if len(u) == k]
+            if not at_k:
                 continue
-            same = sum(1 for u in rows if len({folded_host(x) for x in u}) == 1)
-            print(f"{k:>3}{len(rows):>10}{same/len(rows):>14.3f}{TARGET[k]:>8.3f}")
+            same = sum(1 for u in at_k if len({folded_host(x) for x in u}) == 1)
+            print(f"{k:>3}{len(at_k):>10}{same/len(at_k):>14.3f}{TARGET[k]:>8.3f}")
         same_all = sum(1 for u in multi if len({folded_host(x) for x in u}) == 1)
         print(f"  pooled 2<=k<=4                    : {same_all/len(multi):.3f}"
               f"   (real 0.695, v117 drew ~0.00)   n={len(multi)}")
+
+    print("\n=== v120: donor sentence (--tone-donor measured) ===")
+    # v119 sets the ASSIGNMENT, v120 sets whether the assignment realizes. They are
+    # separable in one run: the mix below is v119's outcome, the compliance row is
+    # v120's, and the realized tone rates are the joint result.
+    inventory = load_donor_inventory("camera_product")
+    donors = {s.strip().lower() for s in (inventory.get("sentences") or ())}
+    polite_slots = [r for r in rows if str(r["tone_target"] or "") == "polite"]
+    if not donors:
+        print("  no donor inventory on disk -- run harvest_donor_sentences.py")
+    elif not polite_slots:
+        print("  no polite-assigned slots in this run")
+    else:
+        opened = 0
+        for r in polite_slots:
+            head = " ".join(str(r["text"] or "").split())[:160].lower()
+            if any(head.startswith(d) for d in donors):
+                opened += 1
+        print(f"  inventory sentences                : {len(donors)}")
+        print(f"  polite-ASSIGNED slots (v119's job) : {len(polite_slots)}"
+              f" = {len(polite_slots)/len(rows):.3f}   (v119 cap 0.56 -> ~0.56)")
+        print(f"  opened with the drawn sentence     : {opened}/{len(polite_slots)}"
+              f" = {opened/len(polite_slots):.3f}   (v113 link arm reached 0.958)")
+        print("  the arm is inert if that share is ~0; a low share caps the "
+              "polite row at 0.384")
 
     print("\n=== v115: tone quota (--tone-quota inverted) ===")
     tones = Counter(str(r["tone_target"] or "") for r in rows)
