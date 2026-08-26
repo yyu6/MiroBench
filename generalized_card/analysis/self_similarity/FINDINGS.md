@@ -608,3 +608,32 @@ enormously — `repro_v37` at 0.629 gives −0.88% and `sample_planner_gpt4omini
 0.603 gives **+8.47%**. Nine points from something other than coverage, never
 identified. Those two runs differ in more than one thing, so it is an observation
 and not a channel.
+
+## 13. `evidence_mode` is a labelling gap, not a text gap — the spend is not justified
+
+`dead_evidence_cells.py`. s6/s12 left `evidence_mode` as the largest per-pair
+collision channel (41.4% of cross-branch pairs share one, worth +0.0228, topic
+controlled) and the plan was to buy a target distribution by labelling real text
+with an LLM. Three of the taxonomy's **seven** values are effectively unused by
+the Planner, and those three are the ones a surface pattern can find for free:
+
+| evidence mode | real (lower bound) | generated SURFACE | Planner ASSIGNS | surface ratio |
+|---|---:|---:|---:|---:|
+| link_quote_reference | 0.0859 | 0.0736 | **0.0060** | **0.86** |
+| hearsay_consensus | 0.0175 | 0.0189 | **0.0020** | **1.08** |
+| calculation_math | 0.1123 | 0.0491 | **0.0000** | 0.44 |
+
+**Two of the three are already at real's rate in the text, with the label at
+essentially zero.** The Writer produces a quote, a link, a "people say" frame
+whether or not `evidence_mode` names it. So raising those labels to real's rate
+would push the surface *above* real, not close a gap — and the 28% figure that
+arithmetic produces is not usable. Only `calculation_math` has a genuine surface
+deficit, and bare digits were already priced at **−3%** in s6.
+
+The conclusion is about coupling: `evidence_mode` and surface behaviour are only
+loosely linked, so a measured per-pair collision effect cannot be assumed to
+convert into changed text. Whether real is also ~50% technical reasoning — the
+question that decides the dominant cell — is not answerable by pattern, and on
+this evidence paying an LLM to label real text for it is not justified.
+
+Recorded as a decision not taken, with its reason, so it is not re-proposed.
