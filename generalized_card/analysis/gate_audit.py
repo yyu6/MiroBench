@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Free post-run gate audit for the v112, v113, v115 and v116 arms.
+"""Free post-run gate audit for the v112, v113, v115, v116 and v117 arms.
 
 Reads a finished run and answers the one question a gate exists to answer:
 **did each arm fire, and did it produce the surface behaviour it was built for?**
@@ -150,6 +150,40 @@ def main() -> None:
               f"{sum(got[k]*k for k in got)/len(carried):.2f}   (real 1.76 on the matched seeds)")
         print(f"  words per parenthetical           : {sum(words)/len(words):.1f}"
               f"   (real 5.7 at long, 6.7 at very_long)")
+
+    print("\n=== v117: reference link count (--reference-link-count measured) ===")
+    one_link = "Include this exact URL once"
+    many_link = "Include these exact URLs"
+    offered = [r for r in rows if one_link in r["prompt"] or many_link in r["prompt"]]
+    asked_n = Counter()
+    for r in offered:
+        m = _re.search(r"Include these exact URLs, (\d+) of them", r["prompt"])
+        asked_n[int(m.group(1)) if m else 1] += 1
+    written = Counter(len(_urls(r["text"])) for r in rows if _urls(r["text"]))
+    print(f"  slots offered a link              : {len(offered)} = {len(offered)/len(rows):.4f}"
+          f"   (matched threads carry 0.0492)")
+    print(f"  counts OFFERED                    : {dict(sorted(asked_n.items()))}"
+          f"   (excluded real 1:.699 2:.172 3:.046 4+:.083)")
+    print(f"  counts WRITTEN                    : {dict(sorted(written.items()))}"
+          f"   (v113 gate was all 1s -- the arm is inert if this still is)")
+    carr = [r for r in rows if _urls(r["text"])]
+    if carr:
+        # A URL has no spaces, so split() would always be 1. Count characters and
+        # DISTINCT urls: v113's `[url](url)` markdown yields the same URL twice
+        # from one comment, which is why its counts read {1: 18, 2: 5} while every
+        # slot was offered exactly one. v114 fixed the reader; if 2s survive with
+        # distinct urls, the count arm is genuinely firing.
+        chars = [len(u) for r in carr for u in _urls(r["text"])]
+        n_per = sum(written[k] * k for k in written) / len(carr)
+        distinct = Counter(len(set(_urls(r["text"]))) for r in carr)
+        print(f"  URLs per carrying comment         : {n_per:.2f}   (excluded real 1.67, cap 4 -> 1.51)")
+        print(f"  DISTINCT urls per carrier         : {dict(sorted(distinct.items()))}"
+              f"   (duplicates here are the v113 markdown defect, not the arm)")
+        print(f"  characters per URL                : {sum(chars)/len(chars):.0f}"
+              f"   (clean inventory 61)")
+    hit = [r for r in offered if _urls(r["text"])]
+    print(f"  compliance, wrote | offered       : {len(hit)}/{len(offered)} = "
+          f"{len(hit)/max(1,len(offered)):.3f}   (v113 gate 0.958)")
 
     print("\n=== v115: tone quota (--tone-quota inverted) ===")
     tones = Counter(str(r["tone_target"] or "") for r in rows)
