@@ -2268,3 +2268,35 @@ Corollary, since this is the second time in the session a cheap estimate pointed
 the wrong way (the other was G80, pricing a cue by editing finished output):
 **the cheap version of a measurement is usually cheap because it drops the thing
 that makes it valid.** State which thing before trusting it.
+
+## An arm can work perfectly and still be the wrong arm — check the objective, not the mechanism
+
+v122 turned on `--writer-retries 1` after finding (G87) that the write-time guard
+battery flagged 40% of slots on every paid run and rewrote nothing, because the
+retry budget was 0. The arm then behaved **exactly** as designed: 38% of slots
+retried, zero degraded, rewrites substantive rather than paraphrase, cost inside
+the estimate. Five of seven pre-registered quantities landed in their bands.
+
+**Both target metrics got worse.**
+
+The diagnostic that explained it was not "did the arm fire" but **"did the arm
+achieve its own stated objective"**. On the slots where both attempts reported a
+semantic diagnostic, the quantity the guard exists to reduce moved
+**−0.0030**, and only **55%** of rewrites moved it in the right direction at all.
+The guard detects convergence correctly; its corrective instruction cannot remove
+it. Everything upstream of that — the flag, the loop, the note, the prompt
+plumbing — worked.
+
+**The rule:** when an arm is built around a measurable objective, measure that
+objective on the arm's own output before reading the downstream metric. A high
+firing rate is evidence the wiring works, nothing more. Had I only checked the
+retry rate and the metrics, the conclusion would have been "retries don't help,
+try retries=2" — escalating a step whose single application is a coin flip.
+
+**Corollary that saved the run from being a waste:** the same run moved
+`impolite_rate` 15.6pp, which I had predicted would not move *and gave the correct
+reason* (no tone guard is in the retry set). Checking the treated-vs-untreated
+contrast showed the retried comments were only 1.1pp less impolite — the gain came
+from across-thread spread, not per-comment editing (G90). **When a prediction's
+reasoning is right and its conclusion is wrong, the mechanism is somewhere you
+have not looked; that gap is worth more than the metric that prompted it.**

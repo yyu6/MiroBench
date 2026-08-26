@@ -182,6 +182,8 @@ inflates the pass count. See VERSION_LOG.md.
 | 119 | `v120_tonedonor_seed8_large_20260827_v1` | 1 | 186 | 1.00 | generalized-card-v2-tone-cap-and-host-coherent-links-v119-20260827 | descriptive |
 | 119 | `v120b_n10_20260827_v1` | 10 | 532 | 1.00 | generalized-card-v2-tone-cap-and-host-coherent-links-v119-20260827 | 11 |
 | 119 | `v120b_tonedonor_seed8_large_20260827_v1` | 0 | 0 |  | generalized-card-v2-tone-cap-and-host-coherent-links-v119-20260827 |  |
+| 119 | `v122_writer_retries_n10_20260828_v1` | 10 | 532 | 1.00 | generalized-card-v2-tone-cap-and-host-coherent-links-v119-20260827 | 11 |
+| 119 | `v122_writer_retries_preflight` | 0 | 0 |  | generalized-card-v2-tone-cap-and-host-coherent-links-v119-20260827 |  |
 
 ## Per-metric MWU p-values for evaluated runs
 
@@ -244,3 +246,4 @@ inflates the pass count. See VERSION_LOG.md.
 | `v119_tonequota_only_n10_20260827_v1` | 0.186* | 0.000 | 0.521* | 0.705* | 0.104* | 0.344* | 0.241* | 0.212* | 0.820* | 0.909* | 0.910* | 0.970* |
 | `v120_tonedonor_seed8_large_20260827_v1` | 1.000d | 1.000d | 1.000d | 1.000d | 1.000d | 1.000d | 1.000d | 1.000d | 1.000d | 1.000d | 1.000d | 1.000d |
 | `v120b_n10_20260827_v1` | 0.121* | 0.000 | 0.521* | 0.450* | 0.130* | 0.596* | 0.082* | 0.140* | 0.940* | 1.000* | 0.910* | 0.212* |
+| `v122_writer_retries_n10_20260828_v1` | 0.104* | 0.000 | 0.473* | 0.678* | 0.096* | 1.000* | 0.880* | 1.000* | 0.970* | 1.000* | 1.000* | 0.850* |
