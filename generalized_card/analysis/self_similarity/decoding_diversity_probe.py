@@ -189,15 +189,24 @@ def cmd_score(args: argparse.Namespace) -> None:
     arms["SHIPPED_gpt5.4mini"] = data["shipped"]
 
     class C:
-        __slots__ = ("text",)
+        """Minimal stand-in for ThreadComment. The scorer reads `comment_id` and
+        `author` onto every pair row, so both must exist, not just `text`."""
 
-        def __init__(self, text: str) -> None:
+        __slots__ = ("text", "comment_id", "author", "thread_id", "parent_id", "depth")
+
+        def __init__(self, text: str, comment_id: str) -> None:
             self.text = text
+            self.comment_id = comment_id
+            self.author = ""
+            self.thread_id = "t"
+            self.parent_id = ""
+            self.depth = 0
 
     def bert_mean(texts: list[str]) -> float:
+        nodes = [C(t, str(i)) for i, t in enumerate(texts)]
         specs = [
-            {"thread_id": "t", "left": C(texts[i]), "right": C(texts[j])}
-            for i in range(len(texts)) for j in range(i + 1, len(texts))
+            {"thread_id": "t", "left": nodes[i], "right": nodes[j]}
+            for i in range(len(nodes)) for j in range(i + 1, len(nodes))
         ]
         idf = [s["left"].text for s in specs] + [s["right"].text for s in specs]
         kw = dict(bert_score_path=DEFAULT_BERT_SCORE_PATH, model_type=DEFAULT_MODEL,

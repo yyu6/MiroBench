@@ -275,3 +275,68 @@ gap is not part of any claim — magnitudes were never going to transfer.
 **Not changing the run.** The degeneration risk is measured at zero, the length
 effect is common to all seven arms, and restarting would cost the ~40 minutes
 already spent for no gain in validity.
+
+## RESULT — H1 is REJECTED. The sampler is not a lever. (2026-08-28 01:09)
+
+Seven settings, 83 slots each, identical prompts, project's own scorers.
+
+| setting | selfbert | vs base | selfbleu4 | vs base | words |
+|---|---:|---:|---:|---:|---:|
+| `base_T0.82` | 0.5330 | — | 0.0366 | — | 54.5 |
+| `temp_T1.00` | 0.5289 | −0.0041 | 0.0340 | −0.0026 | 58.1 |
+| `temp_T1.15` | 0.5342 | **+0.0012** | 0.0352 | −0.0014 | 57.0 |
+| `topp_0.85` | 0.5304 | −0.0026 | 0.0374 | +0.0008 | 54.2 |
+| `freqpen_0.6` | 0.5254 | −0.0075 | 0.0362 | −0.0004 | 54.7 |
+| `freqpen_1.2` | 0.5314 | −0.0016 | 0.0379 | **+0.0013** | 54.9 |
+| `prespen_0.6` | 0.5273 | −0.0056 | 0.0366 | −0.0000 | 55.7 |
+
+**Scorecard: 1 of 4 predictions held.**
+
+1. **Temperature moves both down, monotonically — FAIL.** T=1.00 moves both down;
+   T=1.15 comes back **up** on `self_bertscore` (+0.0012). Non-monotone, so this
+   is not a dose-response, it is scatter.
+2. **`frequency_penalty` hits selfbleu harder than selfbert — FAIL, and backwards.**
+   It moves `self_bertscore` 5–19x more than `self_bleu_4`, and at 1.2 the *bleu*
+   metric goes **up**. The one knob that acts directly on token reuse does not
+   reduce the token-reuse metric.
+3. **Sign check: `top_p` 0.85 should move both UP — FAIL on selfbert** (−0.0026).
+   This is the diagnostic prediction, and its failure is the informative one: the
+   knobs are not ordering themselves by what they mechanically do.
+4. **Word count within 15% — PASS.** Max deviation 6.6%. No length confound; the
+   nulls are real nulls, not a length artifact.
+
+**The decisive number is the total spread.** Across all seven settings:
+
+```
+self_bertscore   0.5254 – 0.5342   range 0.0088 =  1.65% of base
+self_bleu_4      0.0340 – 0.0379   range 0.0039 = 10.66% of base
+```
+
+The gap to close is **+4.33%** and **+18.85%**. Per-thread noise floor (G76) is
+sd **2.94%** and **13.7%**. **The entire sampler design space — from T=0.82 to
+T=1.15, nucleus 0.85 to 1.0, penalties 0 to 1.2 — spans less than one standard
+deviation of thread noise, and less than half the gap.** Even if the direction
+were clean, which it is not, the ceiling is below the requirement.
+
+Combined with prediction 3 failing, the reading is unambiguous: **there is no
+usable sampler signal.** This is not "too small to bother with"; it is
+indistinguishable from noise in a design that held prompts exactly fixed and
+therefore had *more* power than any observational test.
+
+**H2 (the per-domain depth schedule) is dead with it.** It was conditional on H1.
+A schedule that assigns different temperatures by depth cannot produce an effect
+larger than the full temperature range produces, which is 1.65%.
+
+### Why this is worth the ~3.5 hours
+
+G28 established that the Writer's *inputs* separate without the output following.
+This closes the symmetric question on the *sampler*: the output does not follow
+that either. **The convergence is a property of the model's conditional
+distribution given this prompt, reachable from neither end.**
+
+That has a direct consequence for what may work: if neither the prompt nor the
+sampler moves it, the remaining moves are (a) **change what text exists after
+generation** — post-processing, which G85 shows has a real but bounded effect —
+or (b) **change which model writes**, or (c) **change the thread's composition**
+rather than any individual comment. Recorded in ORIENTATION so the next session
+does not re-open the sampler.
