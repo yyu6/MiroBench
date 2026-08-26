@@ -47,7 +47,7 @@ from .persona_bridge import persona_marker_for_task
 from .tone_donor import (
     donor_sentence_offer,
     draw_donor_sentence,
-    load_donor_inventory,
+    require_donor_inventory,
 )
 from .reply_planning import (
     SYNTHETIC_STORY_PLANNER_BOUNDARY,
@@ -183,8 +183,9 @@ def _tone_donor_block(backend: Any, task: Any) -> str:
 
     inventory = getattr(backend, "GENERALIZED_DONOR_INVENTORY", None)
     if inventory is None:
-        profile = getattr(backend, "GENERALIZED_DOMAIN_PROFILE", {}) or {}
-        inventory = load_donor_inventory(str(profile.get("domain") or ""))
+        inventory = require_donor_inventory(
+            getattr(backend, "GENERALIZED_DOMAIN_PROFILE", {}) or {}
+        )
         backend.GENERALIZED_DONOR_INVENTORY = inventory
     offer = donor_sentence_offer(draw_donor_sentence(task, inventory))
     return f"\n\n{offer}" if offer else ""

@@ -70,12 +70,32 @@ def tone_donor_enabled() -> bool:
     return TONE_DONOR_MODE == "measured"
 
 
+def domain_of(profile: dict[str, Any] | None) -> str:
+    """The domain key a profile is built under.
+
+    The real profile writes **`domain_id`**. Reading `domain` instead returned ""
+    for every slot, `load_donor_inventory("")` found no file, and the arm rendered
+    nothing across a whole paid run while `run_config.json` recorded
+    `tone_donor: measured` -- E9's silently-inert gate, and it survived a
+    verification pass because that pass built its own `{"domain": ...}` dict
+    instead of reading a profile off disk.
+    """
+
+    data = profile or {}
+    for key in ("domain_id", "domain"):
+        value = str(data.get(key) or "").strip()
+        if value:
+            return value
+    return ""
+
+
 def load_donor_inventory(domain: str) -> dict[str, Any]:
     """Read the frozen per-domain inventory, or an empty one when absent.
 
-    Absent is not an error: the arm is off by default and a domain without a
-    harvested inventory simply never draws. `run_generate` reports the count so a
-    silently empty inventory cannot look like a firing arm.
+    Absent is not an error *here*: the arm is off by default and a domain with no
+    harvested inventory simply never draws. It IS an error when the arm is on --
+    see `require_donor_inventory`, which the preflight calls so a paid run cannot
+    start with an inert arm.
     """
 
     path = PROFILE_DIR / f"{str(domain or '').strip()}_donor_sentences.json"
@@ -90,6 +110,25 @@ def load_donor_inventory(domain: str) -> dict[str, Any]:
     payload["available"] = bool(sentences)
     payload["sentence_count"] = len(sentences)
     return payload
+
+
+def require_donor_inventory(profile: dict[str, Any] | None) -> dict[str, Any]:
+    """Load the inventory for this profile, or raise when the arm is on and empty.
+
+    E9: a required gate can be silently inert, and the only way to know is to make
+    it fail. An arm that is switched on and draws nothing spends a paid run to
+    produce the previous version's output.
+    """
+
+    domain = domain_of(profile)
+    inventory = load_donor_inventory(domain)
+    if tone_donor_enabled() and not inventory.get("available"):
+        raise RuntimeError(
+            "--tone-donor measured is on but no donor inventory was found for "
+            f"domain {domain!r} (looked in {PROFILE_DIR}). Build it with "
+            "analysis/tone_carrier/harvest_donor_sentences.py, or turn the arm off."
+        )
+    return inventory
 
 
 def tone_donor_slot(task: Any) -> bool:

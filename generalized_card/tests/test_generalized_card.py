@@ -1236,6 +1236,55 @@ class GeneralizedCardTest(unittest.TestCase):
         task.tone_target = tone
         return task
 
+    def test_tone_donor_reads_the_key_the_real_profile_writes(self) -> None:
+        """The v120 run's whole failure, as a test.
+
+        `_tone_donor_block` read `profile["domain"]`; a real domain profile writes
+        **`domain_id`**. Every slot got "", `load_donor_inventory("")` found no
+        file, and the arm rendered nothing across 186 prompts while
+        `run_config.json` said `tone_donor: measured`. It passed verification
+        because that check built its own `{"domain": ...}` dict instead of reading
+        a profile off disk -- so this test reads one off disk.
+        """
+
+        import json
+        from pathlib import Path as _Path
+
+        from generalized_card.tone_donor import domain_of
+
+        root = _Path(__file__).resolve().parents[2] / "artifacts/generalized_card/runs"
+        profiles = sorted(root.glob("*/domain_profile.json"))
+        if not profiles:
+            self.skipTest("no domain profile in this tree")
+        payload = json.loads(profiles[-1].read_text())
+        self.assertNotIn(
+            "domain", payload, "if a profile ever writes `domain`, revisit domain_of"
+        )
+        self.assertTrue(payload.get("domain_id"), "a profile must carry domain_id")
+        self.assertEqual(domain_of(payload), payload["domain_id"])
+        self.assertEqual(domain_of({"domain": "legacy"}), "legacy")
+        self.assertEqual(domain_of({}), "")
+
+    def test_tone_donor_on_with_no_inventory_raises(self) -> None:
+        """E9: an arm that is on and cannot fire must stop the run, not go quiet."""
+
+        from generalized_card.tone_donor import (
+            require_donor_inventory,
+            set_tone_donor_mode,
+        )
+
+        try:
+            set_tone_donor_mode("measured")
+            with self.assertRaises(RuntimeError):
+                require_donor_inventory({"domain_id": "no_such_domain"})
+            # and the arm off must stay silent
+            set_tone_donor_mode("off")
+            self.assertFalse(
+                require_donor_inventory({"domain_id": "no_such_domain"})["available"]
+            )
+        finally:
+            set_tone_donor_mode("off")
+
     def test_tone_donor_off_draws_nothing(self) -> None:
         """E1: the legacy value must reproduce every release through v119."""
 

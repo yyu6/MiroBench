@@ -74,7 +74,7 @@ from .reference_link import (
     set_reference_link_host,
     set_reference_link_mode,
 )
-from .tone_donor import set_tone_donor_mode
+from .tone_donor import require_donor_inventory, set_tone_donor_mode
 from .tone_realization import set_tone_quota_mode
 from .planner_distribution import (
     apply_slot_distribution_schedule,
@@ -1251,6 +1251,12 @@ def configure_generator_backend(
 
 
 def _run_generalized_self_test(module: ModuleType, config: DomainConfig) -> None:
+    # E9/E11: every arm that is ON must be shown to have something to fire with,
+    # against the run's OWN profile, before a token is spent. v120 recorded
+    # `tone_donor: measured` in run_config.json and rendered its cue into 0 of 186
+    # prompts because it read `profile["domain"]` where the profile writes
+    # `domain_id` -- a whole paid run reproduced the previous version's output.
+    require_donor_inventory(getattr(module, "GENERALIZED_DOMAIN_PROFILE", {}) or {})
     task = module.CommentTask(
         local_task_id=1,
         local_parent_task_id=None,
