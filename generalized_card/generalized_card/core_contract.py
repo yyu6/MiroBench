@@ -202,7 +202,7 @@ CORE_FILES = {
     ),
     "generator_adapter": (
         "generalized_card/generalized_card/backend.py",
-        "7e7def4d6318082da8e86632bfbb241efb9fbfafa5b22f12149b30791866f16b",
+        "8a46e73ecc68b5dd79baf0898b065fe5e745d3278b6f55d762bf58e0953b628a",
     ),
     "data_boundary": (
         "generalized_card/generalized_card/data.py",
@@ -380,7 +380,7 @@ CORE_FILES = {
     ),
     "opening_move": (
         "generalized_card/generalized_card/opening_move.py",
-        "1a7f5696812df6e1362ebc6e63146728f24768ef0b9413042fd102e58b1b5fee",
+        "ac9e0cc202f57bc0dfefe65f0b6a0248d33bbc49bbf3f322bb354279f2dfc577",
     ),
     "register_realization": (
         "generalized_card/generalized_card/register_realization.py",

@@ -87,9 +87,16 @@ each class, and the words inside it, by polite-guard's own label:
     neutral                    0.0214    yes .47 no .25 agreed .07 yeah .05
     impolite                   0.0663    yeah .26 no .22 yes .21 same .07
 
-Gratitude is 59% of the polite row and absent from the blunt one. That is the
-same argument v101 made for measuring register moves per register, and it is why
-this profile is keyed the same way. A register the profile does not measure gets
+Gratitude is 59% of the polite row and **3.3%** of the blunt one -- rare, not
+absent. An earlier version of this paragraph said "absent", and the self-test
+asserted it; that assertion held only because its twelve fixed probe keys missed
+a 3% cell, and it failed the first time a different reference corpus was built.
+Real blunt comments do open on `thanks` occasionally, usually sarcastically or as
+"thanks, but". A 20x ratio between the rows is the argument for keying per
+register; zero was never the claim the data supported.
+
+That is the same argument v101 made for measuring register moves per register,
+and it is why this profile is keyed the same way. A register the profile does not measure gets
 **no** rule rather than a default, so a sparse domain loses the mechanism instead
 of getting a wrong word.
 

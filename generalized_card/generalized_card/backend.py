@@ -1569,12 +1569,61 @@ def _run_generalized_self_test(module: ModuleType, config: DomainConfig) -> None
         assert not any(
             "short conversational connective" in line.lower() for line in drawn_lines
         ), drawn_lines
-        # A blunt slot is never told to open on gratitude: real impolite comments
-        # open with `thanks` at essentially zero, which is why the draw is keyed
-        # on the register the plan assigned.
-        assert not any(
-            '"thank' in line.lower() for line in drawn_lines
-        ), drawn_lines
+        # v102 asserted that a blunt slot is NEVER told to open on gratitude, on
+        # the strength of this module's claim that gratitude is "absent from the
+        # blunt one". It is not absent. The profile measures `thanks` at 0.033 of
+        # real impolite discourse-marker openers on the shipped corpus and 0.032
+        # on another, so drawing it at that rate is the arm working as designed.
+        #
+        # That assertion passed by luck: with 12 fixed probe keys it misses a 3%
+        # cell about two thirds of the time. At 50 probes it fails on the shipped
+        # profile too, and it failed outright the first time a different reference
+        # corpus was built -- which is exactly the domain-adaptive case.
+        #
+        # The invariant that is real: the impolite draw follows the IMPOLITE row,
+        # not the polite one, where gratitude is ~62%.
+        impolite_row = opening_move.token_row(
+            opening_move.ACTIVE_OPENING_PROFILE,
+            opener="discourse_marker",
+            tone_class="impolite",
+        )
+        polite_row = opening_move.token_row(
+            opening_move.ACTIVE_OPENING_PROFILE,
+            opener="discourse_marker",
+            tone_class="polite",
+        )
+
+        def _gratitude_share(row):
+            return sum(
+                float(entry.get("share") or 0.0)
+                for entry in (row.get("tokens") or ())
+                if "thank" in str(entry.get("token") or "")
+            )
+
+        measured = _gratitude_share(impolite_row)
+        polite_measured = _gratitude_share(polite_row)
+        probes = 400
+        drawn_tokens = [
+            opening_move.slot_token(
+                opening_move.ACTIVE_OPENING_PROFILE,
+                slot_key=f"selftest-impolite|{index}",
+                opener="discourse_marker",
+                tone_class="impolite",
+            )
+            for index in range(probes)
+        ]
+        observed = sum(1 for token in drawn_tokens if "thank" in token) / probes
+        # Scaled to the binomial spread rather than a flat 0.05, so a corpus whose
+        # blunt row genuinely carries more gratitude does not trip it: at the 0.033
+        # measured here the bound is 0.05, at 0.25 it widens to 0.065. A real leak
+        # -- the profile saying 0.03 while the draw gives the polite row's 0.63 --
+        # is 0.6 out and trips either way.
+        spread = 3.0 * ((measured * (1.0 - measured) / probes) ** 0.5)
+        assert abs(observed - measured) <= max(0.05, spread), (observed, measured)
+        assert polite_measured <= 0.10 or observed < polite_measured / 3.0, (
+            observed,
+            polite_measured,
+        )
         # A register the profile does not measure keeps the categorical
         # instruction rather than being handed a word its own text does not use.
         unknown_task = replace(
