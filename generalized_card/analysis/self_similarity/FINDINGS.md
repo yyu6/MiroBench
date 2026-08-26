@@ -826,3 +826,61 @@ mechanism remains for `self_bertscore`.** The persona layer is still worth tryin
 as an unpriced experiment, but it must be re-keyed to the speaker first, and it
 can no longer be justified by G57's arithmetic.
 
+## 17. The clause-register signature is real and measured — and it is another sub-20% channel — 2026-08-27
+
+G40 inferred a profile from a token attribution rather than measuring it: *"generated
+writes fewer, longer, determiner-dense, less verbal sentences than real"*, resting on
+`the` carrying 20.9% of the positive excess overlap mass and the full stop being the
+most under-shared token (−0.0461), followed by `to`, `i`, `of`, `with`, `for`, `and`,
+`but`, `be`, `have`.
+
+**Measured directly** (`clause_structure_gap.py`), on matched threads, both runs:
+
+| property | real | v117 | gen/real | v113 gen/real |
+|---|---:|---:|---:|---:|
+| **verbal rate** | 0.1054 | 0.0734 | **0.70** | **0.68** |
+| determiner rate | 0.1090 | 0.1275 | **1.17** | 1.22 |
+| types/sqrt(tokens) | 20.34 | 14.94 | **0.73** | 0.76 |
+| words/sentence p90 | 25.5 | 21.3 | 0.84 | 0.84 |
+| pronoun rate | 0.0701 | 0.0610 | 0.87 | 0.78 |
+| ends with `.!?` | 0.7965 | 0.6852 | 0.86 | 0.89 |
+| sentences/comment | 3.60 | 2.71 | 0.75 | 0.91 |
+| words/comment | 56.9 | 42.0 | 0.74 | 0.90 |
+
+G40's inference is confirmed and the profile is **stable across two runs and two
+pools**. The verbal rate is the largest and steadiest term: generated uses verbs and
+auxiliaries at **0.68–0.70x** real throughout.
+
+**Worth flagging separately:** v117 is markedly *shorter* than v113 (words/comment
+0.74x real against 0.90x, sentences 0.75x against 0.91x). The calibration run's flat
+tone quota is the obvious suspect and it is not isolated here.
+
+### Priced, with the control that matters
+
+`clause_register_ablation.py`. Real text stripped of its verbal tokens (11.9% of
+words), each edit paired with a random-token control removing the **same count per
+comment** — because deletion also shortens, and `self_bleu_4` is a length metric
+through its brevity penalty (G27):
+
+| | self_bleu_4 | move | share of gap |
+|---|---:|---:|---:|
+| real, untouched | 0.029768 | | |
+| real minus VERBAL tokens | 0.032262 | +0.002494 | 30.9% |
+| real minus RANDOM tokens (control) | 0.031624 | +0.001856 | 23.0% |
+| **NET** | | **+0.000638** | **7.9%** |
+
+**The control carries 74% of the raw move.** Uncontrolled this would have been
+reported as a 31% channel; it is 7.9% against this script's own denominator and 21%
+against the evaluation's smaller matched-real gap. Fidelity is honest about which
+half holds: the generated side reproduces the shipped 0.0378 exactly, the real side
+does not (521 comments here against the evaluation's 571), so the absolute move and
+its control are internally consistent while the *share* depends on the denominator.
+
+**Conclusion: another sub-20% channel.** It joins entity expansion (5.4%), the
+subject-mention cap (≤9.4%, saturating), comma deletion (~0 net against a `the`
+control), length-mix reweighting (2.1%) and function-word variety (−28%, wrong sign).
+G35's reading stands and now has a sixth data point: **there is no single lever for
+`self_bleu_4`, and stacking several sub-10% fixes is the correct shape of the work.**
+What is new is that the register profile is now *measured* rather than inferred, so a
+mechanism aimed at it can be checked for firing.
+
