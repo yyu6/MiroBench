@@ -299,11 +299,40 @@ s3 measured the link arm's own ceiling at ~39% closure at real's URL mass:
     (39% + ~15% from a parenthetical arm at the same real->generated discount)
         x 0.86  ~=  46%,  against the 42% Holm needs at N=150.
 
-That is the first route to `self_bertscore` acceptance that does not require
-exceeding real's own link density. It is a projection built from two ablations and
-one real→generated discount, not a measurement, and the discount is the weakest
-link: the link arm delivered 24% on the generated side against 58% on the real
-side, and a parenthetical arm's Writer compliance is unmeasured.
+### CORRECTION — that 46% is wrong, 2026-08-26
+
+**Retracted.** The ~15% assumed a parenthetical arm closes the whole 4.84% / 1.33%
+token gap. v116 draws the COUNT and does not touch compliance, and the count term
+is far smaller than it looks because the two deficits compound in the same
+direction.
+
+The gate's parenthetical carriers sit in the wrong bands — short 11, medium 23,
+long 11, very_long 3 — precisely because compliance collapses at length
+(0.71/0.61/0.30/0.12). The measured count at short and medium is only 1.20-1.22,
+so the **band-weighted** target over the gate's own carrier mix is **1.31**, not
+the 1.76 real reaches with its long-skewed carriers.
+
+Recomputed against the measured link-arm discount of 0.42 (24.1% delivered on the
+generated side against 58% on the real side):
+
+| | paren token share | closes of the paren gap | of the `self_bertscore` gap |
+|---|---:|---:|---:|
+| gate today | 1.33% | — | — |
+| **v116 alone (count only)** | 1.75% | **12%** | **1.1%** |
+| v116 + compliance 0.38 → 0.85 | 3.91% | 73% | 7.0% |
+| real | 4.84% | 100% | 23% |
+
+**Compliance is not a separate defect, it is the dominant one**, and it also gates
+the count: fixing it moves carriers into the long bands where the measured count
+is 1.47-1.88, so the two multiply. v116 without it is a multiplier on a broken
+base.
+
+Honest total of what is **built** today: the shipped link arm's measured 24.1%
+plus v116's 1.1% ≈ **25%**, against the 42% Holm needs. The URL-mass arm that
+would reach ~39% **does not exist** — `reference_link.draw_reference_link` returns
+one URL and the offer says "Include this exact URL once", so the 1.42-per-carrier
+figure is an ablation of text, not an arm. Neither does a compliance fix, and the
+compliance collapse is still unexplained.
 
 ## 7. The parenthetical arm already exists and is 38% complied with
 
