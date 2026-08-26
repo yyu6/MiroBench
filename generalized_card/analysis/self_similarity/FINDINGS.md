@@ -304,3 +304,70 @@ exceeding real's own link density. It is a projection built from two ablations a
 one real→generated discount, not a measurement, and the discount is the weakest
 link: the link arm delivered 24% on the generated side against 58% on the real
 side, and a parenthetical arm's Writer compliance is unmeasured.
+
+## 7. The parenthetical arm already exists and is 38% complied with
+
+`sentence_rhythm` has carried a `parenthetical` habit since v97, drawn per slot at
+its band's measured rate with the cue **"Put one aside in parentheses."** So the
+question is not whether to add an arm (E5) but why the one there under-delivers.
+
+Measured on the gate's own saved prompts:
+
+| | value |
+|---|---:|
+| slots cued | 100 / 532 = **0.188** |
+| real comment prevalence | 0.172 |
+| slots realizing a parenthetical | 48 / 532 = 0.090 |
+| **compliance, realized \| cued** | **0.380** |
+| realized when not cued | 0.023 |
+
+**The draw is already above real. The whole deficit is compliance.** And it is not
+one deficit but three, all multiplicative:
+
+| | prevalence | parens per carrier | tokens per paren | paren tokens per carrier |
+|---|---:|---:|---:|---:|
+| real | 0.1723 | **1.76** | 10.6 | **18.7** |
+| gate | 0.0906 | **1.00** | 8.6 | **8.6** |
+
+Real's per-carrier count runs 1/2/3/4/6/22. The gate's distribution is
+**`{1: 48}`** — every single carrying comment has exactly one, with no exceptions.
+The cue says *one*, and it gets exactly one. That is E4 confirmed from the other
+direction: naming the concrete number buys ~1.0 compliance on the number.
+
+Real's parentheticals also sit in much longer comments (carrier mean 129.9 words
+against the corpus's 56.2) and span 3-23 tokens where the gate spans 5-13.
+
+### The long-comment reading, tested and retracted
+
+`long_prompt_crowding.py`. Compliance falls 0.71 -> 0.61 -> 0.30 -> **0.12** across
+the four length bands, which matches the polite per-sentence collapse above 30
+words and looked like one root cause under both. It is not:
+
+| habit | short | medium | long | very_long | overall |
+|---|---:|---:|---:|---:|---:|
+| parenthetical | 0.71 | 0.61 | **0.30** | **0.12** | 0.380 |
+| ellipsis | 0.80 | 1.00 | 1.00 | (n=3) | 0.943 |
+| exclamation | 0.77 | 0.81 | 0.91 | 0.43 | 0.766 |
+| digit | 0.50 | 0.70 | 0.77 | 0.67 | 0.681 |
+| dash_clause | (n=1) | 0.55 | 0.62 | **0.83** | 0.667 |
+| short_sentence | 0.45 | 0.26 | 0.24 | 0.60 | 0.338 |
+
+Only `parenthetical` collapses; `dash_clause` rises with length. And the long-slot
+prompt is not crowded — it carries the **fewest** rule lines of any band (68.9
+against medium's 82.0) and 28% more characters than a short one. The unifying
+reading is wrong and is retracted here.
+
+A methodology note worth keeping: the first version of this table used loose
+needles and reported `semicolon` and `dash` as cued on 522/532 and 532/532 slots
+at 0.04 compliance. Both were matching unrelated prompt text. `semicolon` carries
+an **empty** cue by design, because generated over-produces it. Compliance tables
+must key on the exact cue string.
+
+### What v116 would be
+
+Draw the parenthetical **count** per band from real's measured distribution rather
+than cueing a fixed "one", and address the length-band compliance directly. The
+count fix alone takes paren tokens per carrier from 8.6 toward real's 18.7; raising
+compliance from 0.38 to 0.8 takes realized prevalence from 0.090 to about 0.150
+against real's 0.172. Together they close most of the 4.84% / 1.33% token gap that
+s6 priced at 23% of the `self_bertscore` gap.
