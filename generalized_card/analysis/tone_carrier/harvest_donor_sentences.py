@@ -28,6 +28,13 @@ This builds the inventory. Discipline:
     designators, digits, URLs, brand names, and any capitalised word that is not
     sentence-initial and not `I`. That also makes the inventory transfer to
     another domain.
+  * **a well-formed FIRST sentence**: capitalised start, ends in `.` or `!`, never
+    a question, no ellipsis, and no trailing abbreviation -- the splitter cuts on
+    `[.!?]` and turns "You're welcome, Mr. Smith" into "You're welcome, Mr.".
+    A donor opens the comment, so a mid-sentence fragment is immediately visible.
+  * carries
+    no pronoun or demonstrative -- those refer to something in the donor's OWN
+    thread and dangle wherever the sentence is reused.
   * **short**: 2-12 words. G53's shortest tail bin is where the appreciation
     essentially IS the sentence and real converts at 0.437.
   * G37's risk is the reason for the size report: a shared prescribed sentence
@@ -66,7 +73,23 @@ URLISH = re.compile(r"https?://|www\.|/r/|/u/|\bu/|\br/", re.I)
 DIGIT = re.compile(r"\d")
 # A donor is prefixed to someone else's sentence, so it must not open a reference
 # that has no antecedent in the host comment.
-DANGLING = re.compile(r"^\s*(?:it|this|that|those|these|they|he|she|him|her)\b", re.I)
+# A donor is prefixed to someone else's comment, so ANY reference to a thing that
+# lived in the donor's own thread dangles -- not just a sentence-initial one.
+# "I know these are in good hands rn!" reads as a non-sequitur wherever it lands.
+DANGLING = re.compile(
+    r"\b(?:it|its|this|that|those|these|they|them|their|he|she|him|her|his|hers)\b",
+    re.I,
+)
+# A donor opens the comment. A question opener changes what kind of turn it is,
+# which would move `hard_disagree_rate` and the question share -- two metrics this
+# arm is not allowed to touch. Statements only, and well-formed ones.
+STATEMENT_END = (".", "!")
+# The sentence splitter cuts on `[.!?]`, which turns "You're welcome, Mr. Smith"
+# into "You're welcome, Mr." and leaves mid-sentence fragments starting lowercase.
+# A donor is the FIRST thing in the comment, so it has to look like a first
+# sentence: capitalised start, no trailing abbreviation, no ellipsis.
+ABBREV = re.compile(r"\b(?:[A-Z][a-z]{0,2}|[A-Z]{1,4})\.$")
+SENTENCE_START = re.compile(r"^[A-Z\"']")
 # Brands and domain nouns. A donor saying "enjoy your Canon setup" prefixed to a
 # Sony thread is exactly the tell this arm cannot afford.
 BRAND = re.compile(
@@ -92,7 +115,11 @@ def usable(text: str, common: frozenset[str]) -> bool:
         return False
     if URLISH.search(text) or DIGIT.search(text):
         return False
-    if DESIGNATOR.search(text) or DANGLING.match(text):
+    if not text.endswith(STATEMENT_END) or text.endswith("..") :
+        return False
+    if not SENTENCE_START.match(text) or ABBREV.search(text):
+        return False
+    if DESIGNATOR.search(text) or DANGLING.search(text):
         return False
     if BRAND.search(text):
         return False

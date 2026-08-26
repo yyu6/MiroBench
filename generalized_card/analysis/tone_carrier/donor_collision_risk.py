@@ -140,8 +140,13 @@ def main() -> None:
         _, _, f1 = scorer.score(cand, ref, batch_size=8)
         return float(sum(float(v) for v in f1) / len(f1))
 
-    base_sb = st.mean(sbert(threads[k]) for k in keys)
-    donor_sb = st.mean(sbert(donored[k]) for k in keys)
+    # Same CPU limit as pair_distribution_shape, and stated for the same reason:
+    # every pair of ten threads does not finish. The self_bleu_4 figure above IS
+    # over all ten; only this leg is subsetted.
+    sb_keys = keys[:4]
+    base_sb = st.mean(sbert(threads[k]) for k in sb_keys)
+    donor_sb = st.mean(sbert(donored[k]) for k in sb_keys)
+    print(f"(self_bertscore leg computed on {len(sb_keys)} of {len(keys)} threads)")
     print(f"self_bertscore shipped {base_sb:.6f}  ->  with donors {donor_sb:.6f}"
           f"   {donor_sb - base_sb:+.6f}  ({100*(donor_sb-base_sb)/base_sb:+.2f}%)")
     print("\nReference points: generated already sits +8.67% on self_bleu_4 and "
