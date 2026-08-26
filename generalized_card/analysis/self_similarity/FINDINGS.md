@@ -637,3 +637,45 @@ question that decides the dominant cell — is not answerable by pattern, and on
 this evidence paying an LLM to label real text for it is not justified.
 
 Recorded as a decision not taken, with its reason, so it is not re-proposed.
+
+## 14. v117 hits the metric target and makes the content visibly worse — 2026-08-26
+
+`gate_audit.py --tag v117_calibration_20260826_v1`. The arm fires almost exactly:
+
+| | target | measured |
+|---|---:|---:|
+| URLs per carrying comment | real 1.67 | **1.68** |
+| characters per URL | inventory 61 | **61** |
+| compliance, wrote \| offered | v113's 0.958 | 0.950 |
+| markdown garbage / invented URLs / repeats | 0 | **0 / 0 / 0** |
+
+And the output contains this:
+
+    [4 urls | 46w] ...Nikon with a higher-end standard zoom and AF
+                   https://youtu.be/fz2LSHQ8E_w
+                   http://hasselblad.com/promotions/camera-prices.aspx
+                   https://www.bhphotovideo.com/...
+
+Four unrelated links stacked at the end of a 46-word comment. Also
+`https://support.apple.com/en-us/119916` inside a comment about a Sony A7, and a
+Fuji X-T5 film-simulation recipe inside one comparing Canon compacts.
+
+The cause is in the draw: URLs come from an 802-entry inventory by hash, with **no
+relationship to the comment's content**. At one link that reads as a reference
+aside. At four it is a wall of unrelated links and an eye-visible tell, which is
+worse for the claim being made than the metric gain is worth.
+
+Two measured defects, both fixable (249 real comments carrying 2+ non-media URLs):
+
+| | real | v117 |
+|---|---:|---|
+| all URLs share ONE host | **0.643** (160/249) | drawn independently |
+| distinct-host counts | 1:160 2:60 3:20 4:4 5:3 | — |
+| position of the first URL | median **0.23** of the way in | stacked at the end |
+
+So a v118 should (a) draw a multi-link slot's URLs from **one host** at real's
+0.643 rate, and (b) place the first link early rather than trailing — the current
+offer says "inline and in different places" and the Writer partly ignores it.
+
+**Recorded as a blocker on v117, not a success.** The metric numbers are right and
+the artifact is not shippable as it stands.
