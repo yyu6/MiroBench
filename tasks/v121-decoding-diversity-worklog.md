@@ -223,3 +223,55 @@ draw at one temperature regardless of where they sit in the tree.
 
 This is independent of the sweep. It holds whatever the sweep says, and it is
 what the arm would be built against if H1 survives.
+
+## Degeneration check on the local model — raised by the user, checked, negative
+
+The user asked whether a long prompt would push Qwen into typewriter
+degeneration (the same token emitted many times over). **It would have inverted
+this probe's conclusion if true** — a repetition loop raises both `self_bleu_4`
+and `self_bertscore`, so a high-temperature arm that degenerated would read as
+"temperature makes similarity worse" when the cause was a broken decode.
+
+Measured on the two completed settings (83 slots each), plus the shipped
+`gpt-5.4-mini` output as reference:
+
+| arm | n | empty | median words | runs ≥4 | top-token >25% | longest repeat run |
+|---|---:|---:|---:|---:|---:|---:|
+| `base_T0.82` | 83 | 0 | 38 | **0** | **0** | **1** |
+| `temp_T1.00` | 83 | 0 | 35 | **0** | **0** | **1** |
+| SHIPPED gpt-5.4-mini | 83 | 0 | 25 | 0 | 0 | **3** |
+
+`maxrun = 1` means not a single adjacent token repeat anywhere in the local
+output. The longest repeated run in the whole comparison belongs to
+**gpt-5.4-mini (3)**, not the local model. Read the three lowest
+unique-token-ratio outputs directly: all fluent prose, no loop. Low ratios are a
+length artifact (236 words forces function-word reuse), not degeneration.
+
+### What the check DID surface — a real confound, different from the one asked about
+
+Local output runs longer than shipped: median 38/35 vs 25 words (1.4–1.5x), p90
+128/139 vs 114, and 6–8 comments ≥150 words vs 4. Two outputs hit the token cap
+mid-sentence.
+
+It is **not** systematic verbosity. Splitting by length:
+
+- 14 slots where local wrote ≥100 words — their **shipped counterparts have a
+  median of 119 words**, i.e. those slots ask for long comments and both models
+  comply.
+- the other 69 slots — local median **25** words, identical to shipped.
+
+So the inflation is concentrated in slots that are long by design, not spread
+across the corpus. Still a confound, because length itself moves both metrics
+(G27: `self_bleu_4` excess appears in all five length bands; length composition
+is worth 14–26% of `self_bertscore` per G28).
+
+**Handling:** the probe already prints mean words beside every setting, and
+prediction 4 pre-committed to reading a win as confounded if word count moves
+>15% from base. The comparison that matters is *between settings*, all of which
+share these prompts and this length profile, so a length effect is held roughly
+constant across the contrast and differences out. The absolute local-vs-shipped
+gap is not part of any claim — magnitudes were never going to transfer.
+
+**Not changing the run.** The degeneration risk is measured at zero, the length
+effect is common to all seven arms, and restarting would cost the ~40 minutes
+already spent for no gain in validity.
