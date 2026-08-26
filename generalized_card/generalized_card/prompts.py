@@ -44,6 +44,11 @@ from .long_form_planning import (
 )
 from .planner_distribution import render_slot_distribution_schedule
 from .persona_bridge import persona_marker_for_task
+from .tone_donor import (
+    donor_sentence_offer,
+    draw_donor_sentence,
+    load_donor_inventory,
+)
 from .reply_planning import (
     SYNTHETIC_STORY_PLANNER_BOUNDARY,
     is_direct_reply_batch,
@@ -164,6 +169,25 @@ def _own_equipment_block(
         "\n\nEquipment you may claim as your own, if this turn reports personal "
         f"experience:\n- {rendered}\n{closing}"
     )
+
+
+def _tone_donor_block(backend: Any, task: Any) -> str:
+    """v120's drawn appreciative sentence, for slots the Planner assigned polite.
+
+    Rendered from THREE call sites, not one. G23 records a v108 prompt fix that
+    reached only one of the two `writer_prompt` branches, and G41 records that
+    `_low_info_writer_prompt` is a third template which has never carried an
+    equipment or anchor offer at all. `polite_rate` is a share over every comment,
+    so a block that misses a template silently caps the arm.
+    """
+
+    inventory = getattr(backend, "GENERALIZED_DONOR_INVENTORY", None)
+    if inventory is None:
+        profile = getattr(backend, "GENERALIZED_DOMAIN_PROFILE", {}) or {}
+        inventory = load_donor_inventory(str(profile.get("domain") or ""))
+        backend.GENERALIZED_DONOR_INVENTORY = inventory
+    offer = donor_sentence_offer(draw_donor_sentence(task, inventory))
+    return f"\n\n{offer}" if offer else ""
 
 
 def _equipment_and_referent_block(
@@ -1314,7 +1338,8 @@ def writer_prompt(
                 backend,
                 task,
                 has_domain_claim=bool(domain_claim_rule),
-            ),
+            )
+            + _tone_donor_block(backend, task),
             speaker_block=speaker_block,
             domain_profile=domain_profile,
             domain_claim_rule=domain_claim_rule,
@@ -1365,7 +1390,7 @@ Local anchor:
 {backend.compact(_writer_safe_control_text(task.local_anchor, domain_profile), 220)}
 
 Visible factual anchors:
-{anchors_block}{_equipment_and_referent_block(backend, task, has_domain_claim=bool(domain_claim_rule))}{speaker_block}
+{anchors_block}{_equipment_and_referent_block(backend, task, has_domain_claim=bool(domain_claim_rule))}{_tone_donor_block(backend, task)}{speaker_block}
 
 Planner intent:
 {backend.compact(_writer_safe_control_text(task.planner_intent, domain_profile), 260)}
@@ -1804,10 +1829,11 @@ def _low_info_writer_prompt(
         "reply to the parent" if parent_comment is not None else "reply to the post"
     )
     route_lock = _semantic_route_lock(backend, task, domain_profile=domain_profile)
+    donor_block = _tone_donor_block(backend, task)
     return f"""Write exactly one low-information Reddit comment in {config.community_context}.
 
 What this comment says (highest priority):
-{route_lock}
+{route_lock}{donor_block}
 
 What kind of turn this is:
 {_focused_slot_contract(backend, task, domain_profile=domain_profile)}

@@ -515,6 +515,22 @@ def build_parser() -> argparse.ArgumentParser:
         ),
     )
     parser.add_argument(
+        "--tone-donor",
+        choices=("off", "measured"),
+        default="off",
+        help=(
+            "Hand a slot the Planner assigned POLITE one real short appreciative "
+            "sentence, drawn from the evaluation-excluded corpus, to open with. "
+            "'off' reproduces every release through v119. G53 measured that "
+            "inserting such a sentence flips a non-polite generated comment's "
+            "label 0.29-0.50 of the time; at the low end that moves the polite "
+            "row of the realization matrix 0.384 -> 0.563 and polite_rate's "
+            "P(pass) at N=150 from 0.17 to 0.90. Six cue-based mechanisms are "
+            "dead because composing the sentence is the step that fails; this "
+            "hands the finished sentence over."
+        ),
+    )
+    parser.add_argument(
         "--rhythm-count",
         choices=("off", "measured"),
         default="off",
@@ -1014,6 +1030,7 @@ def main() -> None:
         "rhythm_count": args.rhythm_count,
         "reference_link_count": args.reference_link_count,
         "reference_link_host": args.reference_link_host,
+        "tone_donor": args.tone_donor,
         "writer_retries": args.writer_retries,
         "no_story_scope": args.no_story_scope,
         "own_fact_license": args.own_fact_license,
@@ -1226,6 +1243,7 @@ def main() -> None:
     env["GENERALIZED_CARD_RHYTHM_COUNT"] = args.rhythm_count
     env["GENERALIZED_CARD_REFERENCE_LINK_COUNT"] = args.reference_link_count
     env["GENERALIZED_CARD_REFERENCE_LINK_HOST"] = args.reference_link_host
+    env["GENERALIZED_CARD_TONE_DONOR"] = args.tone_donor
     env["GENERALIZED_CARD_NO_STORY_SCOPE"] = args.no_story_scope
     env["GENERALIZED_CARD_OWN_FACT_LICENSE"] = args.own_fact_license
     env["GENERALIZED_CARD_SPEAKER_IDENTITY"] = args.speaker_identity
@@ -1589,6 +1607,7 @@ RUN_EXPERIMENT_FIELDS = (
     "rhythm_count",
     "reference_link_count",
     "reference_link_host",
+    "tone_donor",
     "writer_retries",
     "no_story_scope",
     "own_fact_license",

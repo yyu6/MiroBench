@@ -1219,6 +1219,117 @@ class GeneralizedCardTest(unittest.TestCase):
             "same_host_sample_counts": {"2": 105, "3": 25, "4": 24},
         }
 
+    def _donor_inventory(self) -> dict:
+        return {
+            "available": True,
+            "sentence_count": 400,
+            "sentences": [f"Thanks so much for tip number {i}." for i in range(400)],
+        }
+
+    def _donor_task(self, index: int, tone: str = "polite"):
+        class _T:
+            real_sample_id = 0
+            branch_id = ""
+            claim_key = ""
+        task = _T()
+        task.local_task_id = index
+        task.tone_target = tone
+        return task
+
+    def test_tone_donor_off_draws_nothing(self) -> None:
+        """E1: the legacy value must reproduce every release through v119."""
+
+        from generalized_card.tone_donor import draw_donor_sentence, set_tone_donor_mode
+
+        inv = self._donor_inventory()
+        try:
+            set_tone_donor_mode("off")
+            drawn = [draw_donor_sentence(self._donor_task(i), inv) for i in range(200)]
+        finally:
+            set_tone_donor_mode("off")
+        self.assertEqual(set(drawn), {""})
+
+    def test_tone_donor_routes_on_the_polite_assignment_only(self) -> None:
+        from generalized_card.tone_donor import draw_donor_sentence, set_tone_donor_mode
+
+        inv = self._donor_inventory()
+        try:
+            set_tone_donor_mode("measured")
+            polite = [draw_donor_sentence(self._donor_task(i), inv) for i in range(120)]
+            others = [
+                draw_donor_sentence(self._donor_task(i, tone), inv)
+                for tone in ("impolite", "neutral", "somewhat_polite", "")
+                for i in range(120)
+            ]
+        finally:
+            set_tone_donor_mode("off")
+        self.assertTrue(all(polite), "every polite slot must be offered a sentence")
+        self.assertEqual(set(others), {""}, "no other assignment may be touched")
+
+    def test_tone_donor_draw_is_deterministic_and_spread(self) -> None:
+        """G37: a shared prescribed sentence converges the pairwise metrics."""
+
+        from generalized_card.tone_donor import draw_donor_sentence, set_tone_donor_mode
+
+        inv = self._donor_inventory()
+        try:
+            set_tone_donor_mode("measured")
+            first = [draw_donor_sentence(self._donor_task(i), inv) for i in range(400)]
+            again = [draw_donor_sentence(self._donor_task(i), inv) for i in range(400)]
+        finally:
+            set_tone_donor_mode("off")
+        self.assertEqual(first, again, "the draw must be reproducible per slot")
+        # 400 draws over a 400-sentence pool: a uniform hash gives ~253 distinct.
+        self.assertGreater(len(set(first)), 200)
+
+    def test_tone_donor_offer_carries_the_sentence_and_no_rationale(self) -> None:
+        """G37 again: the sentence is per-slot distinct, an added rationale is not."""
+
+        from generalized_card.tone_donor import donor_sentence_offer
+
+        text = donor_sentence_offer("Thanks so much for sharing your experience!")
+        self.assertIn("Thanks so much for sharing your experience!", text)
+        self.assertEqual(donor_sentence_offer("   "), "")
+        for banned in ("because", "so that", "in order to", "this makes"):
+            self.assertNotIn(banned, text.lower())
+
+    def test_tone_donor_reaches_all_three_writer_templates(self) -> None:
+        """G23 and G41: a prompt fix that reaches one template silently caps the arm.
+
+        `polite_rate` is a share over every comment, so the block has to render
+        from `writer_prompt`'s two branches AND from `_low_info_writer_prompt`.
+        """
+
+        import inspect
+
+        from generalized_card import prompts
+
+        source = inspect.getsource(prompts)
+        self.assertEqual(
+            source.count("_tone_donor_block(backend, task)"),
+            3,
+            "the donor block must render from all three writer prompt templates",
+        )
+        self.assertIn("_tone_donor_block", inspect.getsource(prompts._low_info_writer_prompt))
+
+    def test_tone_donor_inventory_is_topic_free(self) -> None:
+        """A donor is prefixed to a comment about a DIFFERENT product."""
+
+        import re
+
+        from generalized_card.tone_donor import load_donor_inventory
+
+        inv = load_donor_inventory("camera_product")
+        if not inv.get("available"):
+            self.skipTest("no harvested inventory in this tree")
+        brand = re.compile(r"\b(?:canon|nikon|sony|fuji|olympus|ricoh|leica|sigma)\b", re.I)
+        digit = re.compile(r"\d")
+        for sentence in inv["sentences"]:
+            self.assertIsNone(brand.search(sentence), sentence)
+            self.assertIsNone(digit.search(sentence), sentence)
+            self.assertLessEqual(len(sentence.split()), 12, sentence)
+        self.assertGreater(inv["sentence_count"], 300)
+
     def test_tone_inversion_objective_ignores_the_unreported_class(self) -> None:
         """G66: `somewhat_polite` is never reported, so it is not in the loss.
 

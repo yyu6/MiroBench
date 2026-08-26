@@ -307,6 +307,10 @@ CORE_FILES = {
         "generalized_card/generalized_card/entity_inventory.py",
         "0157a4d67d2b21123848996818a2d9b76a46cbe09af13017905c617be9e50cff",
     ),
+    "tone_donor": (
+        "generalized_card/generalized_card/tone_donor.py",
+        "PENDING",
+    ),
     "tone_realization": (
         "generalized_card/generalized_card/tone_realization.py",
         "036439349d850c830053ea71a44b96dd8f327fe29024ce0d63a8139a9f0adadb",
@@ -655,6 +659,7 @@ GENERATION_ADAPTER_CORE_NAMES = (
     "entity_inventory",
     "entity_spread",
     "reference_link",
+    "tone_donor",
     "tone_realization",
     "length_fidelity",
     "domain_prompt_adapter",
