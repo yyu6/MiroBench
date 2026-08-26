@@ -167,3 +167,59 @@ No redesign: results are written after **each** setting, and the settings run in
 declaration order, so `base` / `temp_T1.00` / `temp_T1.15` complete first and
 prediction 1 — the primary hypothesis — is answerable at roughly the one-hour
 mark, before the penalty arms finish.
+
+## Free finding while the sweep runs: the defect has a depth SHAPE, and it is a rebound
+
+`reply_diversity_guard_diagnosis.py --run v119...` (mpnet cosine, the cheap
+embedding space — a replication of G3's property in a different model, per G19,
+not a re-measurement of `self_bertscore` itself).
+
+Per-comment max-similarity-to-anything-else in the same thread, by own depth:
+
+```
+                 [0,1)    [1,2)    [2,4)    [4,7)    [7,+)
+generated       0.6369   0.5747   0.6215   0.6373   0.6224
+real (matched)  0.6072   0.5743   0.5806   0.5616   0.5794
+excess          +0.0153  +0.0087  +0.0124  +0.0397  +0.0253
+```
+
+### The legality trap I nearly walked into
+
+The row above labelled "real (matched)" **is the evaluation target set**. Fitting
+a schedule to it would violate ORIENTATION §4 rule 3 — "nothing is tuned against
+final test-set p-values; calibrate on excluded reference data". Diagnosing
+against it is fine; **deriving a parameter from it is not.** The legal source is
+`reply_diversity_ceiling_calibration_results.json`, built from evaluation-excluded
+threads only.
+
+And the two sources **disagree**, which is exactly why the rule exists:
+
+```
+                    [0,1)    [1,2)    [2,4)    [4,7)    [7,+)
+excluded (legal)   0.6049   0.5605   0.5652   0.5681   0.5729   n=4153/2610/3064/1461/320
+  step                      -0.0444  +0.0047  +0.0029  +0.0048
+matched (10 thr)   0.6072   0.5743   0.5806   0.5616   0.5794   n=1677/1221/1744/1037/212
+  step                      -0.0329  +0.0063  -0.0190  +0.0178
+```
+
+The **dip at [4,7)** that makes the matched excess look largest (+0.0397) is not
+in the excluded corpus, which plateaus (+0.0029). On 10 threads that dip is very
+likely noise. **Had I calibrated to the matched curve I would have built a
+schedule aimed at a seed-specific artifact — and it would have looked like it
+worked, on the same threads that produced it.**
+
+### The real target, stated legally
+
+Against the excluded corpus, real does one thing after the root: **it drops ~0.044
+and then holds a plateau** (+0.005, +0.003, +0.005 across the remaining bins).
+
+Generated drops further (−0.062, root → [1,2)) and then **rebounds +0.063**, back
+to its own root level (0.5747 → 0.6373). Real moves +0.008 over the same span.
+
+**The defect is not "too similar everywhere". It is a failure to hold the plateau
+— a rebound in the reply population.** That is the shape a depth schedule has to
+produce, and it is why a depth-blind sampler cannot produce it: 69.7% of slots
+draw at one temperature regardless of where they sit in the tree.
+
+This is independent of the sweep. It holds whatever the sweep says, and it is
+what the arm would be built against if H1 survives.
