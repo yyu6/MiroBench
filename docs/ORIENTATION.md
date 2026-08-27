@@ -1425,3 +1425,65 @@ to point there — `metric_bands_by_size` carries measured bands for all twelve
 metrics and only two are read at write time — but §1 forbids resampling toward a
 metric, and the two controls that do exist were inert in v125b anyway because
 `--writer-retries` defaults to **0**.
+
+### Next step — 2026-08-28 (supersedes the 2026-08-27 late block above)
+
+**Read the content before measuring it.** A whole day of statistics moved
+`self_bertscore` from Cliff +0.94 to +0.84 across four paid runs, which is
+**0.38 of one standard deviation** and therefore nothing. Reading one generated
+thread beside its matched real thread produced more in ten minutes than the
+statistics produced in ten hours. Do that first, every time.
+
+**The resolution limit that invalidated most of the session.** The sd of Cliff
+d at N=10 is `(2/N)·sqrt((2N+1)/12)` = **0.265** — confirmed against 20,000
+null draws. So an N=10 run cannot distinguish any effect below ~0.53, and
+`self_bertscore` needs 0.69. **Compute the detectable effect before pricing a
+run.** Four runs this session bought noise. N=40 gives sd 0.131; N=150 gives
+0.067.
+
+**What the content actually shows.** The matched real thread is a four-turn
+quoted argument — a claim, a rebuttal quoting it, the first author returning to
+defend it, a counter — plus a six-word joke, a bare factual question nobody
+answers, a link, and a reaction to the link. Ours is twelve people each
+nominating a different thing to check, with nobody disagreeing with anybody.
+One speech act repeated N times is what the two failing metrics measure.
+
+**Two verified pipeline facts behind it.** (1) The Planner's only window into
+real discourse is the reference block, and `retrieve_reference_viewpoints` caps
+each source thread at two rows, so a 36-row window comes from ~22 threads at
+**67-83% depth-0** — it has seen thousands of opening statements and almost no
+reply. (2) `surface_only_label` tests `words >= 70` before it tests for a quote
+or a link, so **1,243 of 2,028 (61.3%)** real quote/link carriers reach the
+Planner labelled something else. We ship **0.00%** URLs against a real 8.44%.
+
+**Do not conflate two levels (G118).** 74-86% of both gaps is CROSS-thread.
+Interaction structure is WITHIN-thread and cannot move a cross-thread term by
+itself. The bridge is speech-act uniformity across all threads, which is what
+v128's Planner half targets; its Writer half targets within-thread engagement
+and should not be expected to move the metric.
+
+**Proxies lie (G117).** Parent-affinity lift is real +0.1502 against our +0.1523
+to +0.1643 — we match. Quote-opener rate is real 3.35% against our 3.38% — we
+match. Both proxies sit at target while the defect they were chosen to
+represent is fully present in the text. Never accept a proxy in place of
+reading the artifact.
+
+**Closed this session, do not re-open.** Per-slot prompt instructions in both
+forms (free text v126c bought Cliff 0.06 at 100% compliance; a concrete number
+v127 bought nothing and failed to move its own objective); selection and
+best-of-N (oracle ceiling +0.34, and §1 forbids it); swapping or mixing the
+writer model (8% and 29% of the gap); widening any Planner taxonomy (we are
+already more spread than real on `payload_type` and `voice`); the "already
+used" ledger (ordinal drift matches real exactly); the shaping pipeline as a
+cause (the version with fewest layers was worst).
+
+**v126c is disqualified as a baseline (G116)** — actor conditioning cut the
+author repeat rate from 23.9% to 6.8% against a real 32.9%. Fix
+`actor_conditioning._participant_key` before any future actor arm.
+
+**Next step: v128, `--interaction-scope full`, pre-registered in
+`tasks/v128-conversation-reference-predictions.md`.** It shows the Planner whole
+excluded threads in reply order, chosen for structural richness and topical
+DISTANCE from the seed, and lets a reply take its parent's point as material.
+Its offline gate — required before pricing, per the 2026-08-27 lesson — caught
+a first version that would have taught the Planner to post bare image links.

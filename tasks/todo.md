@@ -1511,3 +1511,18 @@ At N=150 and today's bias, P(pass) under the shipped rule: `polite_rate` **0.00*
 - [ ] If v126's compliance gate passes and `self_bertscore` still lands above +0.80, per-slot voice state is not the 74% lever — next candidate is per-thread speaker partitioning.
 - [ ] If the topical route is reopened, **schedule** the outsider slots through `apply_slot_distribution_schedule` rather than asking for them (G102). Measured ceiling: 36% of the gap (G104).
 - [ ] `polite_rate` (−0.33) and `hard_disagree_rate` (−0.39) are out of band and neither has a mechanism. Multi-objective selection is the only thing that has ever moved `polite_rate` (−53.6% → −16.6%), and it is not shippable.
+
+## 2026-08-28 — read the content, and stop buying noise at N=10
+
+- [x] Print the full 12-metric table for v126c and v127 (owed to the user).
+- [x] Compute the detectable effect at N=10. It is Cliff 0.53; `self_bertscore` needs 0.69. Four paid runs this session could not have seen their own result.
+- [x] v126c: actor conditioning at 100% compliance, `self_bertscore` +0.90 -> +0.84 (G114) — which is 0.23 sd and therefore not a measurement.
+- [x] v127: sentence pacing at 100% compliance, zero movement on its own objective (G115). Per-slot prompt class closed on both forms.
+- [x] Establish that a version once passed 12/12 at N=10 (v117) and bootstrap it to N=40: expected 4.8/12, with `self_bleu_4` at 0% and `self_bertscore` at 9%.
+- [x] Read one generated thread beside its matched real thread. This produced the session's only content-level diagnosis.
+- [x] Verify the two pipeline facts behind it: the 67-83% depth-0 reference window, and the 61.3% of quote/link signal destroyed by `surface_only_label` ordering.
+- [x] Disqualify v126c as a baseline (G116) and record that proxies were at target while the defect was present (G117).
+- [ ] **v128 running.** Judge the arm's own objectives first, then the metrics, then re-read the text — in that order.
+- [ ] If v128's Planner half moves nothing, the honest reading is that these two metrics are not reachable from the prompt side, and the conversation to have is whether to accept `self_bertscore` as the one failing metric.
+- [ ] Fix `actor_conditioning._participant_key` before any future actor arm.
+- [ ] Stop pricing N=10 arms. Screen offline on the paired per-thread deviation, and buy N=40 only when the offline estimate exceeds 2%.
