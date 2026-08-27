@@ -76,22 +76,49 @@ def _tokens(text: Any) -> set[str]:
     }
 
 
+def _is_bare_link(text: str) -> bool:
+    """A turn that is mostly a URL is a photo drop, not an exchange turn."""
+
+    stripped = _URL_RE.sub(" ", str(text or ""))
+    words = len(stripped.split())
+    return bool(_URL_RE.search(str(text or ""))) and words <= 6
+
+
 def _structure_score(rows: list[dict[str, Any]]) -> float:
-    """Reward a fragment for carrying the moves the Planner never sees."""
+    """Reward a fragment for carrying the moves the Planner never sees.
+
+    The first version of this scored +3 per URL and selected an image-dump
+    thread whose turns were bare `preview.redd.it` links at depth 9 with no
+    visible parent -- a prompt that would have taught the Planner to post bare
+    image links. Two corrections came out of that offline check: a turn that is
+    almost entirely a URL is not an exchange turn, and a fragment whose sampled
+    depths are scattered does not read as one conversation even though its rows
+    share a thread.
+    """
 
     depths = [int(str(row.get("depth") or 0) or 0) for row in rows]
     replies = sum(1 for d in depths if d >= 1)
     if replies == 0:
         return 0.0
     texts = [str(row.get("text") or "") for row in rows]
+    bare = sum(1 for t in texts if _is_bare_link(t))
+    if bare * 3 >= len(texts):
+        return 0.0
+    # Contiguity: a chain reads as a conversation only if each depth present is
+    # reachable from one below it.
+    present = set(depths)
+    contiguous = sum(1 for d in sorted(present) if d == 0 or (d - 1) in present)
+    if contiguous < 3:
+        return 0.0
     score = float(replies)
-    score += 2.0 * max(0, max(depths) - 1)
+    score += 2.0 * contiguous
     score += 3.0 * sum(1 for t in texts if _QUOTE_RE.search(t))
-    score += 3.0 * sum(1 for t in texts if _URL_RE.search(t))
+    score += 1.0 * sum(1 for t in texts if _URL_RE.search(t) and not _is_bare_link(t))
     # A very short turn beside long ones is the joke / bare question / reaction
     # slot, which is the other thing an all-opening-statements window omits.
-    score += 1.5 * sum(1 for t in texts if len(t.split()) <= 12)
-    return score
+    score += 1.5 * sum(1 for t in texts if 0 < len(t.split()) <= 12)
+    score -= 2.0 * bare
+    return max(0.0, score)
 
 
 def select_conversation_fragments(
