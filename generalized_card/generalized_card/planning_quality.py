@@ -1331,9 +1331,15 @@ def outsider_quota_block(slot_count: int) -> str:
     in the schema all along and was selected zero times.
     """
 
-    if not outsider_quota_enabled() or slot_count < 6:
+    # `slot_count` is the slots in THIS Planner call, not the thread. A quota
+    # larger than the batch is unsatisfiable and gets ignored wholesale, which
+    # is what v125's first run measured. Round stochastically-free: a batch of 8
+    # at 12% asks for 1, which is the honest per-batch expression of the rate.
+    if not outsider_quota_enabled() or slot_count < 4:
         return ""
     target = max(1, round(slot_count * OUTSIDER_SHARE))
+    if target > slot_count // 2:
+        return ""
     long_target = max(1, round(target * OUTSIDER_LONG_SHARE))
     return "\n".join(
         [

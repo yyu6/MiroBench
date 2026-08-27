@@ -712,9 +712,13 @@ def comment_planner_prompt(
         else ""
     )
     # v125 (G97): ask for the topical outsiders real threads carry and we ship
-    # at zero. Sized against the WHOLE thread, not this batch, because the quota
-    # is a thread property while the Planner runs in batches of 8.
-    _outsider = outsider_quota_block(len(all_comments or comments))
+    # at zero. Sized against THIS BATCH, not the thread. Sizing it against the
+    # thread was a real bug measured in v125's first run: the Planner sees 8
+    # slots at a time, so a 186-slot thread was told "exactly 22 of these 186",
+    # which is unsatisfiable in a batch of 8 and was ignored outright --
+    # compliance was 6.7% on a 45-slot thread and 0.5% on the 186-slot one.
+    # The rate is a thread property; the instruction has to be a batch one.
+    _outsider = outsider_quota_block(len(comments))
     outsider_block = f"\n{_outsider}\n" if _outsider else ""
     actor_enabled = (
         str(getattr(backend, "GENERALIZED_ACTOR_MODE", "") or "") == MODE_DOMAIN_DERIVED
