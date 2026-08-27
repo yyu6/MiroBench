@@ -349,7 +349,7 @@ CORE_FILES = {
     ),
     "conversation_reference": (
         "generalized_card/generalized_card/conversation_reference.py",
-        "4f2180443d787a94766af8746a56da5ee863a8c5ee0e3c0bf8704f43589ab3c5" * 64,
+        "4f2180443d787a94766af8746a56da5ee863a8c5ee0e3c0bf8704f43589ab3c5",
     ),
     "length_policy": (
         "generalized_card/generalized_card/length_policy.py",
