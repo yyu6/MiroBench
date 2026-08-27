@@ -63,6 +63,7 @@ from .length_policy import (
     soft_length_guidance,
     writer_provider_token_budget,
     writer_safety_token_cap,
+    set_sentence_pacing,
 )
 from .long_form_planning import (
     enrich_development_plan_fields,
@@ -643,6 +644,11 @@ def configure_generator_backend(
         or "off"
     )
     set_outsider_quota(module.GENERALIZED_OUTSIDER_QUOTA)
+    module.GENERALIZED_SENTENCE_PACING = (
+        os.environ.get("GENERALIZED_CARD_SENTENCE_PACING", "off").strip().lower()
+        or "off"
+    )
+    set_sentence_pacing(module.GENERALIZED_SENTENCE_PACING)
     module.GENERALIZED_REPLY_SIBLING_VISIBILITY = (
         os.environ.get("GENERALIZED_CARD_REPLY_SIBLING_VISIBILITY", "on")
         .strip()

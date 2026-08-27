@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import re
 from typing import Any, Callable
 
 from .comment_structure import active_layout_guidance
@@ -30,6 +31,85 @@ def is_soft_length_problem(problem: str) -> bool:
 
     return problem in SOFT_LENGTH_PROBLEMS or problem.startswith(
         SOFT_LENGTH_PROBLEM_PREFIXES
+    )
+
+
+# G113: sentence architecture is the one measurably narrow place left in the
+# realization layer. Within the `long_turn` bucket our coefficient of variation
+# on mean sentence length is **0.37x** real's, against 1.10 on word count --
+# we are not uniformly narrow, we are narrow here. The cause is not
+# non-compliance: the Writer honours the stated sentence count as well as it
+# honours the word count (median relative error +0.00 against -0.07, both 63-64%
+# within +-25%). It is that the RATIO is never named. The matched real comments
+# handed to our slots carry words-per-sentence at CV **0.53**; our realizations
+# come out at **0.39**, so the Writer hits both marginals while pulling their
+# ratio toward its own preferred ~17 words per sentence.
+#
+# The targets are therefore already correct and need no new measurement -- they
+# are the matched real comment's own values, which is what makes this
+# domain-adaptive with no constant in it. What was missing is E4's concrete
+# number: `pacing` is a category, and a category buys 0.23 compliance where a
+# named number buys ~1.0.
+SENTENCE_PACING_MODE = "off"
+
+_SKELETON_SENTENCES_RE = re.compile(
+    r"(?:about\s+)?(\d+)[- ]sentence|about\s+(\d+)\s+sentences", re.I
+)
+
+
+def set_sentence_pacing(mode: str) -> None:
+    global SENTENCE_PACING_MODE
+    value = str(mode or "off").strip().lower()
+    if value not in {"off", "measured"}:
+        raise ValueError(
+            f"unknown sentence-pacing mode {mode!r}; expected off|measured"
+        )
+    SENTENCE_PACING_MODE = value
+
+
+def sentence_pacing_enabled() -> bool:
+    return SENTENCE_PACING_MODE == "measured"
+
+
+def skeleton_sentence_count(skeleton: Any) -> int:
+    """Read the matched real comment's own sentence count off its skeleton."""
+
+    matched = _SKELETON_SENTENCES_RE.search(str(skeleton or ""))
+    if not matched:
+        return 0
+    for group in matched.groups():
+        if group:
+            return _safe_int(group, 0)
+    return 0
+
+
+def sentence_pacing_cue(task: Any, *, asked_words: int) -> str:
+    """State the slot's own words-per-sentence instead of the word `pacing`.
+
+    The sentence count is rescaled onto the calibrated word ask so the two
+    numbers cannot contradict each other; the matched comment's RATIO is what
+    is preserved, because that ratio is the quantity real threads vary in and
+    ours does not.
+    """
+
+    if not sentence_pacing_enabled():
+        return ""
+    real_words = _safe_int(getattr(task, "real_word_count", 0), 0)
+    sentences = skeleton_sentence_count(getattr(task, "surface_skeleton", ""))
+    if real_words <= 0 or sentences <= 0 or asked_words <= 0:
+        return ""
+    ratio = real_words / sentences
+    if ratio <= 0:
+        return ""
+    scaled = max(1, round(asked_words / ratio))
+    per = max(1, round(ratio))
+    if scaled == 1:
+        return f"Write it as a single sentence of about {per} words."
+    return (
+        f"Spread it over about {scaled} sentences, averaging about {per} words "
+        "each. That average is this slot's own, not a house style: some slots "
+        "here run in short clipped sentences and others in long ones, so do not "
+        "drift toward a comfortable middle length."
     )
 
 
@@ -72,6 +152,7 @@ def soft_length_guidance(task: Any) -> str:
                 f"information density and pacing. {scale} This is a target, not "
                 "a counted requirement; being far short of it is the common "
                 "failure.",
+                sentence_pacing_cue(task, asked_words=asked),
                 layout,
                 development,
             )

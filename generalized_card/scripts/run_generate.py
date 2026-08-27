@@ -543,6 +543,25 @@ def build_parser() -> argparse.ArgumentParser:
         ),
     )
     parser.add_argument(
+        "--sentence-pacing",
+        choices=("off", "measured"),
+        default="off",
+        help=(
+            "State each slot's own words-per-sentence in the length cue instead "
+            "of the word 'pacing'. 'off' reproduces v125b byte-for-byte. G113: "
+            "inside the long_turn bucket our coefficient of variation on mean "
+            "sentence length is 0.37x real's against 1.10x on word count, so "
+            "the realization layer is narrow specifically here. It is not "
+            "non-compliance -- the Writer honours the stated sentence count as "
+            "well as the word count (median relative error +0.00 against "
+            "-0.07). The matched real comments carry words-per-sentence at CV "
+            "0.53 and our text realizes 0.39, so the Writer hits both marginals "
+            "while pulling their ratio toward its own preferred ~17 words per "
+            "sentence. The target is the matched comment's own ratio, which is "
+            "why this carries no constant and follows the domain."
+        ),
+    )
+    parser.add_argument(
         "--outsider-quota",
         choices=("off", "measured"),
         default="off",
@@ -1071,6 +1090,7 @@ def main() -> None:
         "tone_quota": args.tone_quota,
         "plan_move_ledger": args.plan_move_ledger,
         "outsider_quota": args.outsider_quota,
+        "sentence_pacing": args.sentence_pacing,
         "rhythm_count": args.rhythm_count,
         "reference_link_count": args.reference_link_count,
         "reference_link_host": args.reference_link_host,
@@ -1286,6 +1306,7 @@ def main() -> None:
     env["GENERALIZED_CARD_TONE_QUOTA"] = args.tone_quota
     env["GENERALIZED_CARD_PLAN_MOVE_LEDGER"] = args.plan_move_ledger
     env["GENERALIZED_CARD_OUTSIDER_QUOTA"] = args.outsider_quota
+    env["GENERALIZED_CARD_SENTENCE_PACING"] = args.sentence_pacing
     env["GENERALIZED_CARD_RHYTHM_COUNT"] = args.rhythm_count
     env["GENERALIZED_CARD_REFERENCE_LINK_COUNT"] = args.reference_link_count
     env["GENERALIZED_CARD_REFERENCE_LINK_HOST"] = args.reference_link_host
@@ -1652,6 +1673,7 @@ RUN_EXPERIMENT_FIELDS = (
     "tone_quota",
     "plan_move_ledger",
     "outsider_quota",
+    "sentence_pacing",
     "rhythm_count",
     "reference_link_count",
     "reference_link_host",

@@ -7314,8 +7314,13 @@ class GeneralizedCardTest(unittest.TestCase):
         self.assertIn("I would check the mount first.", rendered)
         self.assertIn("generated text and private controls only", rendered)
 
-    def _tone_writer_prompt(self, module: Any, tone: str) -> str:
-        """Render a substantive writer prompt carrying one tone contract."""
+    def _tone_writer_prompt(self, module: Any, tone: str, **overrides: Any) -> str:
+        """Render a substantive writer prompt carrying one tone contract.
+
+        `overrides` are applied to the finalized task, so a test can supply a
+        field a real run populates from the matched real comment but this
+        fixture has no source for -- `surface_skeleton` above all.
+        """
 
         task = module.CommentTask(
             local_task_id=1,
@@ -7363,10 +7368,13 @@ class GeneralizedCardTest(unittest.TestCase):
             real_num_comments=8,
             metadata={},
         )
+        finalized = module.finalize_rebalanced_task(task)
+        if overrides:
+            finalized = replace(finalized, **overrides)
         return module.build_writer_prompt(
             profile="gpt54_reddit_writer",
             seed_post=seed,
-            task=module.finalize_rebalanced_task(task),
+            task=finalized,
             parent_comment=None,
             previous_comments=[],
             recent_openings=[],
@@ -7471,6 +7479,75 @@ class GeneralizedCardTest(unittest.TestCase):
         finally:
             module.GENERALIZED_ACTOR_MODE = "none"
             module.GENERALIZED_ACTOR_ASSIGNMENTS = {}
+
+    def test_sentence_pacing_states_the_slots_own_ratio_in_a_real_prompt(self) -> None:
+        # E15: an arm's compliance is measured on the RENDERED prompt, through
+        # the dispatcher, not on the plan. G113: the cue has to carry a concrete
+        # number because `pacing` is a category and a category buys 0.23.
+        from generalized_card import length_policy
+
+        module = configure_generator_backend(load_generator_backend(), self.config)
+        self.assertEqual(prompts._writer_prompt_mode(module), "focused")
+        length_policy.set_sentence_pacing("measured")
+        try:
+            rendered = self._tone_writer_prompt(
+                module,
+                "polite",
+                surface_skeleton="long uneven Reddit paragraph, about 14 sentences",
+            )
+        finally:
+            length_policy.set_sentence_pacing("off")
+        self.assertIn("averaging about", rendered)
+        self.assertIn("sentences", rendered)
+        self.assertIn("do not drift toward a comfortable middle length", rendered)
+
+    def test_sentence_pacing_off_leaves_the_cue_untouched(self) -> None:
+        from generalized_card import length_policy
+
+        module = configure_generator_backend(load_generator_backend(), self.config)
+        length_policy.set_sentence_pacing("off")
+        rendered = self._tone_writer_prompt(
+            module,
+            "polite",
+            surface_skeleton="long uneven Reddit paragraph, about 14 sentences",
+        )
+        self.assertNotIn("averaging about", rendered)
+
+    def test_sentence_pacing_preserves_the_matched_ratio_not_the_count(self) -> None:
+        # The sentence count is rescaled onto the calibrated word ask so the two
+        # numbers cannot contradict each other; what is preserved is the matched
+        # comment's own words-per-sentence.
+        from generalized_card import length_policy
+
+        length_policy.set_sentence_pacing("measured")
+        try:
+            task = SimpleNamespace(
+                real_word_count=120,
+                surface_skeleton="long uneven Reddit paragraph, about 12 sentences",
+            )
+            self.assertEqual(length_policy.skeleton_sentence_count(task.surface_skeleton), 12)
+            cue = length_policy.sentence_pacing_cue(task, asked_words=60)
+            # 120 words over 12 sentences is 10 words each; a 60-word ask at the
+            # same ratio is 6 sentences, not 12.
+            self.assertIn("about 6 sentences", cue)
+            self.assertIn("about 10 words", cue)
+            terse = SimpleNamespace(
+                real_word_count=120,
+                surface_skeleton="3-sentence local comment",
+            )
+            self.assertIn("about 40 words", length_policy.sentence_pacing_cue(terse, asked_words=120))
+        finally:
+            length_policy.set_sentence_pacing("off")
+
+    def test_sentence_pacing_is_silent_without_a_countable_skeleton(self) -> None:
+        from generalized_card import length_policy
+
+        length_policy.set_sentence_pacing("measured")
+        try:
+            task = SimpleNamespace(real_word_count=40, surface_skeleton="tiny fragment reaction")
+            self.assertEqual(length_policy.sentence_pacing_cue(task, asked_words=40), "")
+        finally:
+            length_policy.set_sentence_pacing("off")
 
     def test_actor_state_reaches_the_focused_writer_prompt(self) -> None:
         # The bug this pins: `writer_prompt` dispatches to three builders and
