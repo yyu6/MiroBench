@@ -1364,6 +1364,10 @@ def writer_prompt(
             register_rule=register_rule,
             evaluative_rule=evaluative_rule,
             closing_rule=closing_rule,
+            actor_section=actor_section,
+            actor_rule=(
+                f"{actor_hard_rule}\n" if actor_hard_rule else ""
+            ),
         )
 
     if low_info_writer:
@@ -1379,6 +1383,13 @@ def writer_prompt(
             retry=retry,
             guidance=guidance,
             speaker_block=speaker_block,
+            actor_section=actor_section,
+            actor_rule=(
+                "- Express the assigned actor's local attention and interaction "
+                "tendency without inventing biography, experience, or hidden facts."
+                if actor_section
+                else ""
+            ),
         )
 
     return (
@@ -1649,6 +1660,8 @@ def _focused_writer_prompt(
     register_rule: str,
     evaluative_rule: str,
     closing_rule: str,
+    actor_section: str = "",
+    actor_rule: str = "",
 ) -> str:
     """Render the minimum complete Planner and grounding contract.
 
@@ -1732,7 +1745,7 @@ What this comment says (highest priority):
 
 What kind of turn this is:
 {slot_contract}
-
+{actor_section}
 Visible discussion:
 {visible}
 
@@ -1746,7 +1759,7 @@ Already used in this thread, so do not repeat them:
 {openings}
 {previous}{retry}
 Rules:
-{realization_rule}{branch_rule}{reply_rule}- An exclusion above bars reusing that content. It does not bar the interpersonal
+{realization_rule}{branch_rule}{reply_rule}{actor_rule}- An exclusion above bars reusing that content. It does not bar the interpersonal
   move your assigned register requires, and every slot has exclusions, not only
   replies.
 - Write like a person typing on Reddit: fragments, contractions, and shorthand are fine.
@@ -1818,25 +1831,10 @@ def _low_info_writer_prompt(
     retry: str,
     guidance: str,
     speaker_block: str = "",
+    actor_section: str = "",
+    actor_rule: str = "",
 ) -> str:
     domain_profile = getattr(backend, "GENERALIZED_DOMAIN_PROFILE", {})
-    actor_state = actor_for_task(
-        getattr(backend, "GENERALIZED_ACTOR_ASSIGNMENTS", {}),
-        seed_post,
-        task,
-    )
-    actor_block = render_actor_state(actor_state)
-    actor_section = (
-        f"\nThread-local actor state composed by the Planner:\n{actor_block}\n"
-        if actor_state is not None
-        else ""
-    )
-    actor_rule = (
-        "- Express the assigned actor's local attention and interaction tendency "
-        "without inventing biography, experience, or hidden facts."
-        if actor_state is not None
-        else ""
-    )
     relation = (
         "reply to the parent" if parent_comment is not None else "reply to the post"
     )

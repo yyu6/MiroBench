@@ -7389,6 +7389,117 @@ class GeneralizedCardTest(unittest.TestCase):
         self.assertIn("Ordinary hedges and brief thanks are allowed", rendered)
         self.assertIn("Do not narrate a sequence of events", rendered)
 
+    def _actor_prompt(self, module: Any, *, low_info: bool) -> str:
+        """Render a writer prompt with actor conditioning on, through the real path."""
+
+        from generalized_card.actor_conditioning import (
+            MODE_DOMAIN_DERIVED,
+            actor_state_from_plan,
+            assignment_key,
+        )
+
+        seed = module.SeedPost(
+            index=0,
+            title="Sony A7 IV grip question",
+            body="Is the grip comfortable over a long shoot?",
+            content="Sony A7 IV grip question\nIs the grip comfortable over a long shoot?",
+            source_raw_post_id="actor-seed",
+            real_num_comments=8,
+            metadata={},
+        )
+        task = module.CommentTask(
+            local_task_id=1,
+            local_parent_task_id=None,
+            depth=0,
+            branch_id=1,
+            branch_goal="weigh the grip against handling for long shoots",
+            visible_scope="seed",
+            local_anchor="Sony A7 IV grip",
+            comment_function="reaction" if low_info else "verdict_evaluation",
+            content_angle="fit_use_case",
+            evidence_mode="none_assertion" if low_info else "firsthand_experience",
+            story_mode="no_story",
+            voice="casual_neutral",
+            payload_type="low_info_reaction" if low_info else "soft_helpful",
+            length_bucket="micro" if low_info else "long",
+            speaker_role="side_observer" if low_info else "datapoint_only",
+            utterance_mode="local_answer_with_context",
+            surface_texture="plain",
+            allow_first_person_frame=False,
+            allow_uncertainty_frame=False,
+            planner_intent="give a verdict on grip comfort for long shoots",
+            must_not_do="Do not add a full review.",
+            real_word_count=4 if low_info else 140,
+            semantic_move="commit to a verdict on grip comfort over a long shoot",
+            local_topic="grip comfort",
+            reply_relation="answers_parent",
+            stance="agree",
+            detail_focus="grip comfort",
+            avoid_repeating="complete review",
+            claim_key="grip_verdict",
+            claim_family="direct_answer",
+            opening_style="verdict then the condition that produced it",
+            context_aperture="full_seed",
+            tone_shape="neutral_fact",
+        )
+        task = module.finalize_rebalanced_task(task)
+        module.GENERALIZED_ACTOR_MODE = MODE_DOMAIN_DERIVED
+        module.GENERALIZED_ACTOR_ASSIGNMENTS = {
+            assignment_key(seed, 1): actor_state_from_plan(
+                {
+                    "actor_participant_key": "A7",
+                    "actor_knowledge_boundary": "only what the seed shows about grip",
+                    "actor_participation_goal": "add one narrow handling datapoint",
+                    "actor_evidence_access": "own long-shoot handling",
+                    "actor_attention_focus": "grip depth",
+                    "actor_interaction_tendency": "brief and concrete",
+                    "actor_context_visibility": "the seed's handling question",
+                    "actor_realization_route": "TESTROUTE clause then a short qualifier",
+                },
+                sample_id=1,
+            )
+        }
+        try:
+            return module.build_writer_prompt(
+                profile="gpt54_reddit_writer",
+                seed_post=seed,
+                task=task,
+                parent_comment=None,
+                previous_comments=[],
+                recent_openings=[],
+            )
+        finally:
+            module.GENERALIZED_ACTOR_MODE = "none"
+            module.GENERALIZED_ACTOR_ASSIGNMENTS = {}
+
+    def test_actor_state_reaches_the_focused_writer_prompt(self) -> None:
+        # The bug this pins: `writer_prompt` dispatches to three builders and
+        # `_focused_writer_prompt` -- the shipped default, and the path most
+        # substantive slots take -- was the one that never rendered the actor
+        # state. A live v126 run carried the actor fields on 100% of plans and
+        # reached only 26.5% of Writer prompts, which makes the arm
+        # unattributable. See ORIENTATION section 7, "apply the change to every
+        # path".
+        module = configure_generator_backend(load_generator_backend(), self.config)
+        self.assertEqual(prompts._writer_prompt_mode(module), "focused")
+        rendered = self._actor_prompt(module, low_info=False)
+        self.assertIn("Thread-local actor state composed by the Planner", rendered)
+        self.assertIn("TESTROUTE clause then a short qualifier", rendered)
+        self.assertIn("Realize the thread-local actor state", rendered)
+
+    def test_actor_state_reaches_the_low_information_writer_prompt(self) -> None:
+        module = configure_generator_backend(load_generator_backend(), self.config)
+        rendered = self._actor_prompt(module, low_info=True)
+        self.assertIn("Thread-local actor state composed by the Planner", rendered)
+        self.assertIn("TESTROUTE clause then a short qualifier", rendered)
+
+    def test_actor_state_is_absent_when_the_arm_is_off(self) -> None:
+        module = configure_generator_backend(load_generator_backend(), self.config)
+        module.GENERALIZED_ACTOR_MODE = "none"
+        module.GENERALIZED_ACTOR_ASSIGNMENTS = {}
+        rendered = self._tone_writer_prompt(module, "polite")
+        self.assertNotIn("Thread-local actor state", rendered)
+
     def test_non_polite_writer_contract_keeps_the_substitution_ban(self) -> None:
         module = configure_generator_backend(load_generator_backend(), self.config)
         rendered = self._tone_writer_prompt(module, "impolite")
