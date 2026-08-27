@@ -543,6 +543,28 @@ def build_parser() -> argparse.ArgumentParser:
         ),
     )
     parser.add_argument(
+        "--plan-move-ledger",
+        choices=("off", "spent_moves"),
+        default="off",
+        help=(
+            "Name the semantic moves a thread has already spent when asking the "
+            "Planner to repair a semantic collision. 'off' reproduces v122 "
+            "byte-for-byte. The detector is already correct and already tuned "
+            "(0.70 flags 33.6%% of v122 slots on 139 pairs), but the repair "
+            "surrendered on 111 slot instances across 22 warnings, with "
+            "collision_rate at surrender reaching 0.667 (docs/DECISIONS.md G96). "
+            "The instruction is why: it names a category -- 'change the decision "
+            "lens, stance, evidence role' -- which E4 prices at 0.23 compliance "
+            "against ~1.0 for a concrete token, and it never says which lenses "
+            "the thread has already used, so the Planner re-rolls from the same "
+            "small vocabulary (G94: greedy dedup at cosine 0.45 would reject 72%% "
+            "of slots). This renders the spent-move list and requires a named, "
+            "unused move. Raising the repair budget instead is NOT indicated -- "
+            "G88 tested that shape one stage later and both priority metrics got "
+            "worse."
+        ),
+    )
+    parser.add_argument(
         "--tone-quota",
         choices=("off", "inverted", "calibrate"),
         default="off",
@@ -1027,6 +1049,7 @@ def main() -> None:
         "development_scope": args.development_scope,
         "reference_link": args.reference_link,
         "tone_quota": args.tone_quota,
+        "plan_move_ledger": args.plan_move_ledger,
         "rhythm_count": args.rhythm_count,
         "reference_link_count": args.reference_link_count,
         "reference_link_host": args.reference_link_host,
@@ -1240,6 +1263,7 @@ def main() -> None:
     env["GENERALIZED_CARD_DEVELOPMENT_SCOPE"] = args.development_scope
     env["GENERALIZED_CARD_REFERENCE_LINK"] = args.reference_link
     env["GENERALIZED_CARD_TONE_QUOTA"] = args.tone_quota
+    env["GENERALIZED_CARD_PLAN_MOVE_LEDGER"] = args.plan_move_ledger
     env["GENERALIZED_CARD_RHYTHM_COUNT"] = args.rhythm_count
     env["GENERALIZED_CARD_REFERENCE_LINK_COUNT"] = args.reference_link_count
     env["GENERALIZED_CARD_REFERENCE_LINK_HOST"] = args.reference_link_host
@@ -1604,6 +1628,7 @@ RUN_EXPERIMENT_FIELDS = (
     "development_scope",
     "reference_link",
     "tone_quota",
+    "plan_move_ledger",
     "rhythm_count",
     "reference_link_count",
     "reference_link_host",

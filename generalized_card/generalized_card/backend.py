@@ -85,6 +85,8 @@ from .planning_quality import (
     PlanSemanticIndex,
     evaluate_plan_batch,
     ledger_entry,
+    plan_move_ledger_enabled,
+    set_plan_move_ledger,
 )
 from .persona_bridge import inject_persona_system
 from .plan_repair import (
@@ -630,6 +632,11 @@ def configure_generator_backend(
         os.environ.get("GENERALIZED_CARD_TONE_QUOTA", "off").strip().lower() or "off"
     )
     set_tone_quota_mode(module.GENERALIZED_TONE_QUOTA)
+    module.GENERALIZED_PLAN_MOVE_LEDGER = (
+        os.environ.get("GENERALIZED_CARD_PLAN_MOVE_LEDGER", "off").strip().lower()
+        or "off"
+    )
+    set_plan_move_ledger(module.GENERALIZED_PLAN_MOVE_LEDGER)
     module.GENERALIZED_REPLY_SIBLING_VISIBILITY = (
         os.environ.get("GENERALIZED_CARD_REPLY_SIBLING_VISIBILITY", "on")
         .strip()
@@ -2314,8 +2321,26 @@ def _comment_planner_batch_with_history(
                     sample_ids=(sample_id,),
                 )
                 field_instruction = render_field_repair_instruction(merge_fields)
+                # G96/G94: name the moves the thread has already spent so the
+                # repair is a concrete instruction rather than a category. Only
+                # rendered for a semantic collision -- a story-contract or
+                # length repair must not be pushed off its assigned move.
+                spent_block = (
+                    best_report.spent_move_block()
+                    if (
+                        plan_move_ledger_enabled()
+                        and any(
+                            issue.sample_id == sample_id
+                            and issue.code in ("semantic_collision", "duplicate_claim")
+                            for issue in best_report.issues
+                        )
+                    )
+                    else ""
+                )
                 module.GENERALIZED_COMMENT_PLAN_FEEDBACK = "\n".join(
-                    part for part in (feedback, field_instruction) if part
+                    part
+                    for part in (feedback, spent_block, field_instruction)
+                    if part
                 )
                 repaired = original(**repair_kwargs)
                 _annotate_plan_metadata(module, repaired, repair_kwargs)

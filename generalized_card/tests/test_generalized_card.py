@@ -9596,3 +9596,67 @@ class MicroReactionShapeTest(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class PlanMoveLedgerTest(unittest.TestCase):
+    """v124: the spent-move ledger must be off by default and reach the repair.
+
+    E12 cost a paid run because an arm recorded itself ON in `run_config.json`
+    while rendering into zero prompts -- verified at the time against a
+    hand-built dict that did not match the real data. These assertions load
+    REAL planner slots off disk for that reason.
+    """
+
+    def _real_plans(self) -> dict:
+        run = (
+            REPO_ROOT
+            / "artifacts/generalized_card/runs/v122_writer_retries_n10_20260828_v1"
+        )
+        paths = sorted(run.glob("generated/run_*_sampled_reddit/discussion.json"))
+        if not paths:
+            self.skipTest("v122 artifact not present")
+        plans: dict[int, dict] = {}
+        data = json.loads(paths[0].read_text(encoding="utf-8"))
+        for post in data.get("posts", []):
+            stack = list(post.get("comments") or [])
+            while stack:
+                node = stack.pop(0)
+                plans[len(plans)] = dict(node)
+                stack.extend(node.get("replies") or [])
+            break
+        return plans
+
+    def test_ledger_is_off_by_default_and_renders_when_armed(self) -> None:
+        from generalized_card.planning_quality import (
+            PLAN_MOVE_LEDGER_MODE,
+            evaluate_plan_batch,
+            set_plan_move_ledger,
+        )
+
+        self.assertEqual(PLAN_MOVE_LEDGER_MODE, "off")
+        report = evaluate_plan_batch(self._real_plans())
+        # The ledger is always collected; only its rendering is armed.
+        self.assertGreater(len(report.spent_moves), 20)
+        try:
+            set_plan_move_ledger("off")
+            self.assertEqual(report.spent_move_block(), "")
+            set_plan_move_ledger("spent_moves")
+            block = report.spent_move_block()
+            self.assertIn("already spent the following semantic moves", block)
+            # A concrete instruction, per E4 -- not a bare category.
+            self.assertIn("not on this list", block)
+            # The block shows the most RECENT moves: a repair competes with what
+            # the thread just said, and an unbounded ledger would crowd the
+            # prompt on a 186-comment thread. Assert on the newest, and assert
+            # the elision is declared rather than silent.
+            self.assertIn(report.spent_moves[-1][:40], block)
+            if len(report.spent_moves) > 24:
+                self.assertIn("earlier move(s)", block)
+        finally:
+            set_plan_move_ledger("off")
+
+    def test_unknown_mode_is_rejected(self) -> None:
+        from generalized_card.planning_quality import set_plan_move_ledger
+
+        with self.assertRaises(ValueError):
+            set_plan_move_ledger("on")

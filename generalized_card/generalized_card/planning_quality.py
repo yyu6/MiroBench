@@ -244,6 +244,12 @@ class PlanQualityReport:
     dominant_perspective: str
     dominant_perspective_share: float
     issue_score: float
+    # Every semantic move already spent in this thread, in plan order. G96: the
+    # repair loop gave up on 111 slot instances in v122 because it was asked to
+    # "change the decision lens" -- a category, which E4 prices at 0.23
+    # compliance -- while never being shown which lenses the thread had already
+    # used. Carrying the ledger is what turns that into a concrete instruction.
+    spent_moves: tuple[str, ...] = ()
 
     @property
     def healthy(self) -> bool:
@@ -268,6 +274,41 @@ class PlanQualityReport:
         """Order candidates by realizability first, then aggregate quality."""
 
         return (len(self.blocking_issues), self.issue_score)
+
+    def spent_move_block(self, *, limit: int = 24) -> str:
+        """Name the moves this thread has already spent, so a repair can avoid them.
+
+        G96: the repair loop surrendered on 111 v122 slot instances while being
+        told only to "change the decision lens, stance, evidence role, or local
+        detail". That is a category (E4: 0.23 compliance) and it never says what
+        is already taken, so the Planner re-rolls from the same small vocabulary
+        -- G94 measured that vocabulary at 72% rejection under greedy dedup at
+        cosine 0.45. This block converts the instruction into a concrete one.
+        """
+
+        # Gate here as well as at the call site. A rendering method that ignores
+        # its own arm is one refactor away from leaking into the legacy path,
+        # and E12 cost a paid run to exactly that class of mistake.
+        if not plan_move_ledger_enabled() or not self.spent_moves:
+            return ""
+        shown = self.spent_moves[-limit:]
+        rows = [
+            "This thread has already spent the following semantic moves. The "
+            "repaired slot must make a move that is not on this list and is not "
+            "a rewording of one:",
+        ]
+        rows.extend(f"- {move}" for move in shown)
+        if len(self.spent_moves) > limit:
+            rows.append(
+                f"- (plus {len(self.spent_moves) - limit} earlier move(s); do not "
+                "repeat those either)"
+            )
+        rows.append(
+            "Name the new move's decision lens explicitly and make it one this "
+            "thread has not used. Do not reword a listed move, and do not repair "
+            "by changing only claim_key, entity names, or numbers."
+        )
+        return "\n".join(rows)
 
     def feedback(
         self,
@@ -548,7 +589,30 @@ def evaluate_plan_batch(
         dominant_perspective=dominant,
         dominant_perspective_share=dominant_share,
         issue_score=issue_score,
+        spent_moves=_spent_moves(prior, current),
     )
+
+
+def _spent_moves(
+    prior: list[dict[str, Any]], current: list[dict[str, Any]]
+) -> tuple[str, ...]:
+    """Semantic moves already committed in this thread, deduplicated, in order.
+
+    Prior slots come first because they are already fixed; the current batch's
+    healthy slots are equally unavailable to a repair. Trimmed per entry so a
+    long thread's ledger stays readable in a prompt.
+    """
+
+    out: list[str] = []
+    seen: set[str] = set()
+    for row in (*prior, *current):
+        move = _normalized_value(row.get("semantic_move"))
+        if not move or move in seen:
+            continue
+        seen.add(move)
+        text = str(row.get("semantic_move") or "").strip()
+        out.append(text[:110])
+    return tuple(out)
 
 
 def collision_reason(
@@ -1179,3 +1243,32 @@ def _stem(token: str) -> str:
         if value.endswith(suffix) and len(value) - len(suffix) >= 4:
             return value[: -len(suffix)]
     return value
+
+
+# --------------------------------------------------------------------------- #
+# v124 arm: the spent-move ledger
+# --------------------------------------------------------------------------- #
+# G96 established that the Planner detects a semantic collision, attempts a
+# repair, fails, and ships the slot anyway -- 22 warnings covering 111 slot
+# instances in v122, with collision_rate at surrender reaching 0.667. G88 showed
+# that raising a retry budget is not the fix (its own objective moved -0.0030 at
+# 55% accuracy). The defect is the instruction: it names a category, which E4
+# prices at 0.23 compliance against ~1.0 for a concrete token, and it never
+# tells the Planner which moves the thread has already spent.
+#
+# "off" reproduces v122 byte-for-byte: no ledger is rendered anywhere.
+PLAN_MOVE_LEDGER_MODE = "off"
+
+
+def set_plan_move_ledger(mode: str) -> None:
+    global PLAN_MOVE_LEDGER_MODE
+    value = str(mode or "off").strip().lower()
+    if value not in {"off", "spent_moves"}:
+        raise ValueError(
+            f"unknown plan-move-ledger mode {mode!r}; expected off|spent_moves"
+        )
+    PLAN_MOVE_LEDGER_MODE = value
+
+
+def plan_move_ledger_enabled() -> bool:
+    return PLAN_MOVE_LEDGER_MODE == "spent_moves"
