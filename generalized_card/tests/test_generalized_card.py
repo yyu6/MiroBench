@@ -9684,8 +9684,15 @@ class OutsiderQuotaTest(unittest.TestCase):
             self.assertIn("LONG slot", block)
             # And it must not be satisfiable with the thing we over-produce.
             self.assertIn("thanks", block)
-            # Too small to carry a quota: no instruction rather than a bad one.
-            self.assertEqual(outsider_quota_block(4), "")
+            # Sized against the BATCH the Planner actually sees, not the thread:
+            # v125's first run asked a 186-slot thread for 22 outsiders inside a
+            # call that could place 8, and an unsatisfiable quota is discarded
+            # whole (compliance 0.5% there against 14.3% on a 7-slot thread).
+            self.assertIn("of these 8 slots", outsider_quota_block(8))
+            # Too small, or a quota that would eat the batch: no instruction
+            # rather than an impossible one.
+            self.assertEqual(outsider_quota_block(3), "")
+            self.assertEqual(outsider_quota_block(1), "")
         finally:
             set_outsider_quota("off")
 
