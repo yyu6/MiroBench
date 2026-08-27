@@ -543,6 +543,26 @@ def build_parser() -> argparse.ArgumentParser:
         ),
     )
     parser.add_argument(
+        "--outsider-quota",
+        choices=("off", "measured"),
+        default="off",
+        help=(
+            "Ask the Planner for the share of comments that do not answer the "
+            "post at all. 'off' reproduces v124 byte-for-byte. G97: the gap is "
+            "entirely in the low tail -- p90 is +0.008 but p1 is +0.038, and "
+            "pairs below cosine 0 are 8.09%% of real against 3.30%% of ours. "
+            "Word counts already match, but the off-topic rate collapses with "
+            "length: at 1-10 words we match real (37.2%% vs 36.7%%) and at 61+ "
+            "words real is 3.4%% against our 0.8%%. Of real's low-affinity "
+            "comments 6.1%% are >=40 words; of ours, zero. The channels already "
+            "exist -- `offtopic_noise` was chosen 0 times in 532 v122 slots -- "
+            "and `--social-noise-min-share` cannot reach them because "
+            "`rebalance_card_surfaces` discards every share argument by design. "
+            "The quota is per-slot, not positional: real threads do not drift "
+            "with ordinal position and our depth curve already matches theirs."
+        ),
+    )
+    parser.add_argument(
         "--plan-move-ledger",
         choices=("off", "spent_moves"),
         default="off",
@@ -1050,6 +1070,7 @@ def main() -> None:
         "reference_link": args.reference_link,
         "tone_quota": args.tone_quota,
         "plan_move_ledger": args.plan_move_ledger,
+        "outsider_quota": args.outsider_quota,
         "rhythm_count": args.rhythm_count,
         "reference_link_count": args.reference_link_count,
         "reference_link_host": args.reference_link_host,
@@ -1264,6 +1285,7 @@ def main() -> None:
     env["GENERALIZED_CARD_REFERENCE_LINK"] = args.reference_link
     env["GENERALIZED_CARD_TONE_QUOTA"] = args.tone_quota
     env["GENERALIZED_CARD_PLAN_MOVE_LEDGER"] = args.plan_move_ledger
+    env["GENERALIZED_CARD_OUTSIDER_QUOTA"] = args.outsider_quota
     env["GENERALIZED_CARD_RHYTHM_COUNT"] = args.rhythm_count
     env["GENERALIZED_CARD_REFERENCE_LINK_COUNT"] = args.reference_link_count
     env["GENERALIZED_CARD_REFERENCE_LINK_HOST"] = args.reference_link_host
@@ -1629,6 +1651,7 @@ RUN_EXPERIMENT_FIELDS = (
     "reference_link",
     "tone_quota",
     "plan_move_ledger",
+    "outsider_quota",
     "rhythm_count",
     "reference_link_count",
     "reference_link_host",

@@ -86,6 +86,7 @@ from .planning_quality import (
     evaluate_plan_batch,
     ledger_entry,
     plan_move_ledger_enabled,
+    set_outsider_quota,
     set_plan_move_ledger,
 )
 from .persona_bridge import inject_persona_system
@@ -637,6 +638,11 @@ def configure_generator_backend(
         or "off"
     )
     set_plan_move_ledger(module.GENERALIZED_PLAN_MOVE_LEDGER)
+    module.GENERALIZED_OUTSIDER_QUOTA = (
+        os.environ.get("GENERALIZED_CARD_OUTSIDER_QUOTA", "off").strip().lower()
+        or "off"
+    )
+    set_outsider_quota(module.GENERALIZED_OUTSIDER_QUOTA)
     module.GENERALIZED_REPLY_SIBLING_VISIBILITY = (
         os.environ.get("GENERALIZED_CARD_REPLY_SIBLING_VISIBILITY", "on")
         .strip()

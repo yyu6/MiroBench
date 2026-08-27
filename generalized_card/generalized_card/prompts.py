@@ -38,6 +38,7 @@ from .length_policy import local_move_scope_guidance, soft_length_guidance
 from .opener_profile import OPENER_INSTRUCTIONS
 from .evaluative_register import active_evaluative_guidance
 from .opening_move import active_opening_guidance, forbidden_opening_tokens
+from .planning_quality import outsider_quota_block
 from .long_form_planning import (
     development_plan_word_threshold,
     expected_development_beats,
@@ -710,6 +711,11 @@ def comment_planner_prompt(
         if validation_feedback
         else ""
     )
+    # v125 (G97): ask for the topical outsiders real threads carry and we ship
+    # at zero. Sized against the WHOLE thread, not this batch, because the quota
+    # is a thread property while the Planner runs in batches of 8.
+    _outsider = outsider_quota_block(len(all_comments or comments))
+    outsider_block = f"\n{_outsider}\n" if _outsider else ""
     actor_enabled = (
         str(getattr(backend, "GENERALIZED_ACTOR_MODE", "") or "") == MODE_DOMAIN_DERIVED
     )
@@ -904,6 +910,7 @@ Required structural branch routes:
 Plans already assigned in earlier batches of this same thread:
 {prior_plan_block}
 {feedback_block}
+{outsider_block}
 
 Matched-real structural slots. Use the displayed global S# values exactly:
 {real_sample}

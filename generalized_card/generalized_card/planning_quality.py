@@ -1272,3 +1272,86 @@ def set_plan_move_ledger(mode: str) -> None:
 
 def plan_move_ledger_enabled() -> bool:
     return PLAN_MOVE_LEDGER_MODE == "spent_moves"
+
+
+# --------------------------------------------------------------------------- #
+# v125 arm: the topical-outsider quota
+# --------------------------------------------------------------------------- #
+# G97 measured that the gap is entirely in the LOW tail of the pairwise cosine
+# distribution -- p90 is +0.008 but p1 is +0.038, and pairs below cosine 0 are
+# 8.09% of real against 3.30% of ours. Per comment, affinity < 0.10 is 11.43%
+# real against 4.14% generated, a 2.8x deficit.
+#
+# It is not a length problem. Word counts already match. But the off-topic rate
+# collapses as length grows: at 1-10 words we match real (37.2% vs 36.7%), at
+# 61+ words real is 3.4% and we are 0.8%. Of real's low-affinity comments 6.1%
+# are >= 40 words; of ours, ZERO. We already write short throwaway lines. We
+# never write a long, substantive comment about something else.
+#
+# The channels already exist in the Planner schema -- `offtopic_noise`,
+# `side_tangent`, `joke`, `link_quote_reference` -- and `offtopic_noise` was
+# chosen 0 times in 532 v122 slots. The old `--social-noise-min-share` cannot
+# do this: `rebalance_card_surfaces` accepts every share argument and runs
+# `del kwargs` by design, because the calibrated Planner owns these controls.
+# So the quota has to be stated to the Planner.
+#
+# G97 also recorded the shape this must NOT take: real threads do not drift
+# with ordinal position (deciles 0.343 ... 0.345, flat) and our depth curve
+# already matches real's almost exactly. A positional "you may leave the topic
+# later" rule would move a trend that is already correct. The quota is per-slot.
+OUTSIDER_QUOTA_MODE = "off"
+
+# Real rates from 424 evaluation-excluded camera threads (G97). Held as the
+# measured target, not a hand-picked number: 13.1% of real comments have
+# OP-cosine < 0.10, and the deficit is concentrated in the long tail, so the long
+# share is stated separately.
+OUTSIDER_SHARE = 0.12
+OUTSIDER_LONG_SHARE = 0.30
+
+
+def set_outsider_quota(mode: str) -> None:
+    global OUTSIDER_QUOTA_MODE
+    value = str(mode or "off").strip().lower()
+    if value not in {"off", "measured"}:
+        raise ValueError(
+            f"unknown outsider-quota mode {mode!r}; expected off|measured"
+        )
+    OUTSIDER_QUOTA_MODE = value
+
+
+def outsider_quota_enabled() -> bool:
+    return OUTSIDER_QUOTA_MODE == "measured"
+
+
+def outsider_quota_block(slot_count: int) -> str:
+    """Ask the Planner for a measured share of comments that leave the topic.
+
+    Named channels rather than a category, per E4: naming a concrete move buys
+    ~1.0 compliance where naming a category buys 0.23. `offtopic_noise` has been
+    in the schema all along and was selected zero times.
+    """
+
+    if not outsider_quota_enabled() or slot_count < 6:
+        return ""
+    target = max(1, round(slot_count * OUTSIDER_SHARE))
+    long_target = max(1, round(target * OUTSIDER_LONG_SHARE))
+    return "\n".join(
+        [
+            "TOPICAL OUTSIDER QUOTA (measured against real threads in this domain):",
+            f"- Exactly {target} of these {slot_count} slots must NOT answer the "
+            "post's question at all. Give each one `comment_function`: "
+            "`offtopic_noise`, or `payload_type`: `joke`, `side_tangent`, or "
+            "`meta_or_template`.",
+            f"- At least {long_target} of those {target} must be a LONG slot "
+            "(`length_bucket`: `long` or `very_long`) -- a full, seriously argued "
+            "comment about a different subject: an off-domain technical "
+            "explainer, a process or policy explainer, an extended personal "
+            "anecdote, or a reply about another commenter rather than the post. "
+            "Real threads carry these; a short throwaway line does not count and "
+            "neither does a thank-you.",
+            "- An outsider slot is exempt from its branch's owned subject and "
+            "from `forbidden_decision_subjects`: it is allowed to be irrelevant.",
+            "- Do not satisfy this quota with acknowledgements, agreement, or "
+            "thanks. Those are already over-produced.",
+        ]
+    )

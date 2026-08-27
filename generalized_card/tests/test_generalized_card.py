@@ -9660,3 +9660,48 @@ class PlanMoveLedgerTest(unittest.TestCase):
 
         with self.assertRaises(ValueError):
             set_plan_move_ledger("on")
+
+
+class OutsiderQuotaTest(unittest.TestCase):
+    """v125: the topical-outsider quota must be off by default and reach the prompt."""
+
+    def test_quota_is_off_by_default_and_names_concrete_channels(self) -> None:
+        from generalized_card.planning_quality import (
+            OUTSIDER_QUOTA_MODE,
+            outsider_quota_block,
+            set_outsider_quota,
+        )
+
+        self.assertEqual(OUTSIDER_QUOTA_MODE, "off")
+        self.assertEqual(outsider_quota_block(45), "")
+        try:
+            set_outsider_quota("measured")
+            block = outsider_quota_block(45)
+            # Named channels, not a category -- E4 prices a category at 0.23.
+            for channel in ("offtopic_noise", "joke", "side_tangent"):
+                self.assertIn(channel, block)
+            # The long-outsider requirement is the one category we ship at zero.
+            self.assertIn("LONG slot", block)
+            # And it must not be satisfiable with the thing we over-produce.
+            self.assertIn("thanks", block)
+            # Too small to carry a quota: no instruction rather than a bad one.
+            self.assertEqual(outsider_quota_block(4), "")
+        finally:
+            set_outsider_quota("off")
+
+    def test_quota_reaches_the_rendered_planner_prompt(self) -> None:
+        """G23/G41: a computed block that never interpolates is a silent no-op."""
+
+        import inspect
+
+        from generalized_card import prompts
+
+        source = inspect.getsource(prompts.comment_planner_prompt)
+        self.assertIn("outsider_quota_block(", source)
+        self.assertIn("{outsider_block}", source)
+
+    def test_unknown_mode_is_rejected(self) -> None:
+        from generalized_card.planning_quality import set_outsider_quota
+
+        with self.assertRaises(ValueError):
+            set_outsider_quota("on")
