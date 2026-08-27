@@ -71,3 +71,70 @@ effect. Recorded so nobody builds it.
 
 Each is anchored to an established result, not a guess. Results and verdicts
 appended below as they land.
+
+## Agent 1 result, and the verification that changed half of it
+
+The corpus-mining agent returned a ranked rule list. Its central finding is
+**methodologically strong and I am adopting it**: a matched within-source test
+(1,832 sources with ≥2 competing rewrites, so the input is held constant) shows
+
+| held constant | varied | P(higher gain) | z |
+|---|---|---|---|
+| 4-gram novelty (reordering) | **unigram novelty (new words)** | **62.9%** | **+7.1** |
+| unigram novelty | 4-gram novelty (reordering) | 49.0% | −0.5 |
+
+**Reordering clauses and swapping connectives buys nothing. Replacing content
+words is the active ingredient.** This independently confirms my own opener test
+(1.18x, weak) and explains it: the reviser's *declared* moves — `connector_swap`
+is 28% of all rows — are house style, not mechanism.
+
+It also correctly flagged four deltas that are large but inert within-source
+(commas +32% z=−2.0, colons +84% z=+1.4, ellipsis removal fails the level test
+p=0.7, longer sentences has the wrong-signed level correlation). Those are the
+moves a naive diff-reading would have encoded.
+
+### But the rules were mined inside the rewrite corpus, which is two domains
+### (cameras AND credit cards) and is not the target distribution.
+
+The project rule is to falsify on the evaluation-EXCLUDED real corpus before
+building. Prevalence of each proposed ban, real (15,294 excluded camera
+comments) vs ours (528, v122):
+
+| rule | REAL | v122 | verdict |
+|---|---:|---:|---|
+| `the ___ part` nominalization | **2.4%** | **21.2%** | **BAN — 8.8x overuse, our clearest fingerprint** |
+| `feels like` | 0.3% | 3.4% | **BAN — 11x** |
+| `a lot of/more/less` | 3.7% | 9.1% | **BAN — 2.5x** |
+| banned opener token list | **27.2%** | 32.2% | **DO NOT BAN** — real does it nearly as often |
+| gratitude formula | **0.3%** | 0.2% | **DO NOT BAN** — we already match; its high collision in the corpus is a credit-card-domain artifact |
+
+**Two of the agent's seven rules would have made us less like real, not more.**
+The opener-token ban was rule 2, targeting a drop to <5% against a real rate of
+27.2% — that would have been a visible tell and a likely tone-metric regression.
+This is the second time this session that free falsification on the excluded
+corpus killed an arm I was about to build (the first was G92's rhetorical
+question).
+
+### Opener sharing: real but a third the claimed size
+
+The agent reported 44.4% of comments share their first three words. That is
+measured **across the whole corpus**; the metrics are computed **per thread**, so
+the within-thread rate is what matters:
+
+| | REAL (excl) | v122 |
+|---|---:|---:|
+| duplicate first-3-words, within thread | 5.9% | **8.5%** |
+| duplicate FIRST WORD, within thread | 50.6% | **63.3%** |
+
+A real +2.7pp / +12.7pp gap, worth acting on — but a third the headline size, and
+the first-word gap is the bigger one.
+
+### Carried forward to the build
+
+1. Ban `the ___ part` / `the ___ bit` / `the ___ thing` / `the ___ side` (8.8x).
+2. Ban `feels like` (11x) and `a lot of|more|less` (2.5x).
+3. Enforce within-thread first-WORD variety (63.3% → target ~50%), not an
+   opener-token blacklist.
+4. Instruct lexical substitution — "different noun, different verb" — explicitly
+   **not** clause reordering or connective swapping, which the matched test
+   prices at zero.
