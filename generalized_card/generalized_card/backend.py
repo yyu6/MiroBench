@@ -58,6 +58,7 @@ from .generation_diversity import (
 from .lexical_quality import (
     lexical_overlap_problem as calibrated_lexical_overlap_problem,
 )
+from .conversation_reference import set_interaction_scope
 from .length_policy import (
     is_soft_length_problem,
     soft_length_guidance,
@@ -649,6 +650,11 @@ def configure_generator_backend(
         or "off"
     )
     set_sentence_pacing(module.GENERALIZED_SENTENCE_PACING)
+    module.GENERALIZED_INTERACTION_SCOPE = (
+        os.environ.get("GENERALIZED_CARD_INTERACTION_SCOPE", "off").strip().lower()
+        or "off"
+    )
+    set_interaction_scope(module.GENERALIZED_INTERACTION_SCOPE)
     module.GENERALIZED_REPLY_SIBLING_VISIBILITY = (
         os.environ.get("GENERALIZED_CARD_REPLY_SIBLING_VISIBILITY", "on")
         .strip()

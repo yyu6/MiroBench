@@ -543,6 +543,26 @@ def build_parser() -> argparse.ArgumentParser:
         ),
     )
     parser.add_argument(
+        "--interaction-scope",
+        choices=("off", "conversation", "full"),
+        default="off",
+        help=(
+            "Show the Planner real exchanges instead of isolated opening "
+            "statements, and let the Writer take its parent's point as material. "
+            "'off' reproduces v125b byte-for-byte. The Planner's only window "
+            "into real discourse is the reference block, and its two-rows-per-"
+            "thread cap makes a 36-row window come from ~22 threads at 67-83%% "
+            "depth-0, so it has seen thousands of opening statements and almost "
+            "no reply. 'conversation' appends whole excluded threads in reply "
+            "order, chosen for structural richness and topical DISTANCE from the "
+            "seed, so only their shape can transfer. 'full' also drops the "
+            "Writer rule that tells 55.1%% of prompts to treat the parent's own "
+            "point as an exclusion rather than writing material -- that is "
+            "redundant with the mechanical parent_copy guard and is why our "
+            "replies talk past their parents."
+        ),
+    )
+    parser.add_argument(
         "--sentence-pacing",
         choices=("off", "measured"),
         default="off",
@@ -1091,6 +1111,7 @@ def main() -> None:
         "plan_move_ledger": args.plan_move_ledger,
         "outsider_quota": args.outsider_quota,
         "sentence_pacing": args.sentence_pacing,
+        "interaction_scope": args.interaction_scope,
         "rhythm_count": args.rhythm_count,
         "reference_link_count": args.reference_link_count,
         "reference_link_host": args.reference_link_host,
@@ -1307,6 +1328,7 @@ def main() -> None:
     env["GENERALIZED_CARD_PLAN_MOVE_LEDGER"] = args.plan_move_ledger
     env["GENERALIZED_CARD_OUTSIDER_QUOTA"] = args.outsider_quota
     env["GENERALIZED_CARD_SENTENCE_PACING"] = args.sentence_pacing
+    env["GENERALIZED_CARD_INTERACTION_SCOPE"] = args.interaction_scope
     env["GENERALIZED_CARD_RHYTHM_COUNT"] = args.rhythm_count
     env["GENERALIZED_CARD_REFERENCE_LINK_COUNT"] = args.reference_link_count
     env["GENERALIZED_CARD_REFERENCE_LINK_HOST"] = args.reference_link_host
@@ -1674,6 +1696,7 @@ RUN_EXPERIMENT_FIELDS = (
     "plan_move_ledger",
     "outsider_quota",
     "sentence_pacing",
+    "interaction_scope",
     "rhythm_count",
     "reference_link_count",
     "reference_link_host",

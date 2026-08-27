@@ -70,6 +70,11 @@ from .semantic_realization import (
 from .sentence_rhythm import active_rhythm_guidance
 from .story_scope import no_story_instruction
 from .surface_contract import substantive_surface_slot, surface_only_label
+from .conversation_reference import (
+    render_conversation_fragments,
+    reply_material_enabled,
+    select_conversation_fragments,
+)
 from .viewpoint_bank import (
     reference_viewpoint_window,
     render_reference_rows,
@@ -457,6 +462,15 @@ def planner_prompt(
         seed_body=str(seed_post.body or seed_post.content or ""),
         limit=min(36, max(18, int(target.top_level_comments) * 2)),
     )
+    conversation_block = render_conversation_fragments(
+        select_conversation_fragments(
+            profile,
+            seed_title=str(seed_post.title or ""),
+            seed_body=str(seed_post.body or seed_post.content or ""),
+            exclude_post_ids={str(getattr(seed_post, "source_raw_post_id", "") or "")},
+        )
+    )
+    conversation_section = f"\n{conversation_block}\n" if conversation_block else ""
     recent = backend.render_top_counts(global_memory)
     distribution_target = render_planner_distribution_target(
         getattr(backend, "GENERALIZED_ACTIVE_REFERENCE_TEMPLATE", {}),
@@ -490,7 +504,7 @@ Use them as the original CARD planner used real comments: abstract reusable
 viewpoint and discourse moves, then adapt those moves to the visible seed.
 Never copy their wording, products, events, measurements, or personal facts.
 {reference_viewpoints}
-
+{conversation_section}
 Seed post title:
 {seed_post.title}
 
@@ -1731,8 +1745,15 @@ def _focused_writer_prompt(
         else ""
     )
     reply_rule = (
-        "- You are replying to one comment. Answer that comment, not the whole post,\n"
-        "  and treat its own point as an exclusion rather than writing material.\n"
+        (
+            "- You are replying to one comment. Take its actual point as your\n"
+            "  material: pick up what it claims and agree with a reason, push back\n"
+            "  on it, qualify it, or answer what it asked. Do not restate it in\n"
+            "  your own words and do not reply past it to the post itself.\n"
+            if reply_material_enabled()
+            else "- You are replying to one comment. Answer that comment, not the whole post,\n"
+            "  and treat its own point as an exclusion rather than writing material.\n"
+        )
         if getattr(task, "local_parent_task_id", None) is not None
         else ""
     )

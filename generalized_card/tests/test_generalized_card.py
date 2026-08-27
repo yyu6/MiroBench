@@ -7480,6 +7480,163 @@ class GeneralizedCardTest(unittest.TestCase):
             module.GENERALIZED_ACTOR_MODE = "none"
             module.GENERALIZED_ACTOR_ASSIGNMENTS = {}
 
+    def _profile_with_conversations(self) -> dict[str, Any]:
+        """A minimal excluded-reference bank carrying two real-shaped exchanges.
+
+        One thread is topically close to the seed and one is far from it, so a
+        test can assert that the far one is preferred: the fragments are chosen
+        for the shape of the exchange, not for content.
+        """
+
+        rows: list[dict[str, Any]] = []
+
+        def add(post_id: str, depth: int, text: str) -> None:
+            rows.append(
+                {
+                    "reference_id": f"R{len(rows) + 1:05d}",
+                    "source_post_id": post_id,
+                    "source_thread_hash": post_id,
+                    "thread_title": f"thread {post_id}",
+                    "thread_context": "",
+                    "text": text,
+                    "depth": str(depth),
+                    "parent_scope": "op" if depth == 0 else "reply",
+                    "word_count": len(text.split()),
+                    "surface_role": "local_turn",
+                }
+            )
+
+        # far from the seed: printers, and it is the richer exchange
+        add("far", 0, "The duplex unit on this printer jams every third job and support blames the paper.")
+        add("far", 0, "https://example.org/teardown shows the roller assembly is the same part as the older model.")
+        add("far", 1, "> support blames the paper\nThat is what they told me too, then it jammed with their own brand.")
+        add("far", 2, "Mine did the same until I reseated the tray. Took two minutes.")
+        add("far", 1, "wait, third job? mine goes further than that")
+        # close to the seed: compact cameras for travel, but flat, no replies
+        add("near", 0, "The Ricoh GR III is a great compact for travel and street photography work.")
+        add("near", 0, "An RX100 compact travel camera covers more range for street use than a GR III.")
+        add("near", 0, "For travel and street, a compact camera like the GR III or RX100 is the usual pick.")
+        add("near", 0, "Street and travel shooters usually land on the GR III or the RX100 compact.")
+        return {"profile_sha256": "test-conversations", "reference_viewpoints": rows}
+
+    def _planner_prompt(self, module: Any) -> str:
+        """Render a real Planner prompt through the shipped builder."""
+
+        seed = module.SeedPost(
+            index=0,
+            title="Which compact should I get for travel?",
+            body="Looking at the Ricoh GR III and the RX100. Mostly street and travel.",
+            content="Which compact should I get for travel?\nRicoh GR III or RX100.",
+            source_raw_post_id="conv-seed",
+            real_num_comments=18,
+            metadata={},
+        )
+        target = module.sample_thread_target(
+            seed_post=seed,
+            rng=random.Random(20260828),
+            max_comments_per_post=0,
+            count_scale=1.0,
+        )
+        return module.build_planner_prompt(
+            seed_post=seed,
+            target=target,
+            matched_real_thread=None,
+            matched_real_comments=0,
+            global_memory={},
+        )
+
+    def test_interaction_scope_off_leaves_the_planner_prompt_untouched(self) -> None:
+        from generalized_card import conversation_reference as cr
+
+        module = configure_generator_backend(load_generator_backend(), self.config)
+        cr.set_interaction_scope("off")
+        rendered = self._planner_prompt(module)
+        self.assertNotIn("How people actually interact here", rendered)
+
+    def test_interaction_scope_reaches_the_planner_prompt_with_real_exchanges(
+        self,
+    ) -> None:
+        # E15 and the 2026-08-27 lesson: an arm's compliance gate is an OFFLINE
+        # test that has to pass before the run is priced. v126 cost $0.81 to
+        # learn this from an artifact instead.
+        from generalized_card import conversation_reference as cr
+
+        module = configure_generator_backend(load_generator_backend(), self.config)
+        module.GENERALIZED_DOMAIN_PROFILE = self._profile_with_conversations()
+        cr.set_interaction_scope("conversation")
+        try:
+            rendered = self._planner_prompt(module)
+        finally:
+            cr.set_interaction_scope("off")
+        self.assertIn("How people actually interact here", rendered)
+        self.assertIn("Conversation 1", rendered)
+        # every fragment must carry at least one reply, which is the whole point
+        self.assertIn("[reply at depth", rendered)
+
+    def test_interaction_fragments_are_whole_threads_with_replies(self) -> None:
+        from generalized_card import conversation_reference as cr
+
+        module = configure_generator_backend(load_generator_backend(), self.config)
+        profile = self._profile_with_conversations()
+        cr.set_interaction_scope("conversation")
+        try:
+            frags = cr.select_conversation_fragments(
+                profile,
+                seed_title="Which compact should I get for travel?",
+                seed_body="Ricoh GR III or RX100, street and travel.",
+                exclude_post_ids={"conv-seed"},
+            )
+        finally:
+            cr.set_interaction_scope("off")
+        self.assertGreaterEqual(len(frags), 1)
+        for group in frags:
+            self.assertGreaterEqual(len(group), cr.MIN_FRAGMENT_COMMENTS)
+            depths = [int(str(row.get("depth") or 0) or 0) for row in group]
+            self.assertTrue(any(d >= 1 for d in depths), "a fragment carries no reply")
+            posts = {str(row.get("source_post_id")) for row in group}
+            self.assertEqual(len(posts), 1, "a fragment mixes source threads")
+
+    def test_interaction_fragments_are_topically_distant_from_the_seed(self) -> None:
+        # The fragments are here for their shape. Distance is what makes them
+        # safer than the ranked rows beside them, not riskier.
+        from generalized_card import conversation_reference as cr
+        from generalized_card.viewpoint_bank import reference_viewpoint_window
+
+        module = configure_generator_backend(load_generator_backend(), self.config)
+        profile = self._profile_with_conversations()
+        title = "Which compact should I get for travel?"
+        body = "Ricoh GR III or RX100, street and travel."
+        cr.set_interaction_scope("conversation")
+        try:
+            frags = cr.select_conversation_fragments(
+                profile, seed_title=title, seed_body=body, exclude_post_ids=set()
+            )
+        finally:
+            cr.set_interaction_scope("off")
+        ranked = reference_viewpoint_window(
+            profile, seed_title=title, seed_body=body, limit=36
+        )
+        seed_tokens = cr._tokens(f"{title} {body}")
+
+        def overlap(rows: Any) -> float:
+            return sum(
+                len(cr._tokens(row.get("text")) & seed_tokens) for row in rows
+            ) / max(1, len(rows))
+
+        flat = [row for group in frags for row in group]
+        self.assertLess(overlap(flat), overlap(ranked))
+
+    def test_reply_material_only_under_full_scope(self) -> None:
+        from generalized_card import conversation_reference as cr
+
+        cr.set_interaction_scope("conversation")
+        self.assertFalse(cr.reply_material_enabled())
+        self.assertTrue(cr.planner_fragments_enabled())
+        cr.set_interaction_scope("full")
+        self.assertTrue(cr.reply_material_enabled())
+        cr.set_interaction_scope("off")
+        self.assertFalse(cr.planner_fragments_enabled())
+
     def test_sentence_pacing_states_the_slots_own_ratio_in_a_real_prompt(self) -> None:
         # E15: an arm's compliance is measured on the RENDERED prompt, through
         # the dispatcher, not on the plan. G113: the cue has to carry a concrete
