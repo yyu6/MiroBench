@@ -3042,6 +3042,47 @@ def _substantive_safe_degraded_task():
     return degraded_task_for_guard_failure
 
 
+def _print_failed_slot_diagnosis(
+    records: list[dict[str, Any]],
+    failed_task_ids: list[int],
+) -> None:
+    """Report why each unrealized slot died, from the records about to be lost."""
+
+    wanted = {int(task_id) for task_id in failed_task_ids}
+    seen: set[int] = set()
+    for row in records:
+        task_row = row.get("task") or {}
+        task_id = _safe_int(task_row.get("local_task_id"), 0)
+        if task_id not in wanted:
+            continue
+        seen.add(task_id)
+        attempts = [
+            attempt for attempt in (row.get("attempts") or []) if isinstance(attempt, dict)
+        ]
+        problems: list[str] = []
+        for attempt in attempts:
+            for problem in attempt.get("problems") or []:
+                text = str(problem)
+                if text and text not in problems:
+                    problems.append(text)
+        print(
+            "[writer-slot-failure] "
+            f"task={task_id} "
+            f"payload={task_row.get('payload_type') or '-'} "
+            f"length_bucket={task_row.get('length_bucket') or '-'} "
+            f"real_words={task_row.get('real_word_count') or 0} "
+            f"attempts={len(attempts)} "
+            f"skipped={bool(row.get('skipped'))} "
+            f"problems={problems or ['(none recorded)']}",
+            flush=True,
+        )
+    for task_id in sorted(wanted - seen):
+        print(
+            f"[writer-slot-failure] task={task_id} no record was produced at all",
+            flush=True,
+        )
+
+
 def _finalize_post_generation(module: ModuleType, original: Any):
     """Require exact Writer coverage before a post can reach persistence."""
 
@@ -3079,6 +3120,12 @@ def _finalize_post_generation(module: ModuleType, original: Any):
                 "policy=reject_incomplete_post",
                 flush=True,
             )
+            # An incomplete post is never persisted, so its records -- which
+            # carry the per-attempt guard problems -- used to die with it and
+            # the only visible fact was a task id. Print why each slot failed
+            # before raising; a run that costs money should not have to be
+            # repeated to learn this.
+            _print_failed_slot_diagnosis(records, coverage["failed_task_ids"])
             raise RuntimeError(
                 "Writer did not realize every matched structural slot; incomplete "
                 "post was not persisted: "
