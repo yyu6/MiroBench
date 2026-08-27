@@ -110,3 +110,69 @@ stop and re-scope before spending.
    override marks the artifact unreproducible.
 3. Re-pin and confirm the drift list is exactly the files edited (none expected:
    this arm adds no code).
+
+---
+
+## Addendum — the first firing was VOID, and it found a bug worth more than the arm
+
+**v126 (`v126_actor_VOID_focused_path_20260827`) was killed at $0.81.** Its
+compliance gate failed on the second check, exactly as that check was written to
+do:
+
+| gate | target | measured |
+|---|---|---|
+| actor fields on plans | — | **100%** (91/91, every batch offset) |
+| actor section in Writer prompts | ≥ 90% | **26.5%** (22/83) |
+| distinct `realization_route` per 10 slots | ≥ 8 | **10/10**, no repeats |
+
+The 22 hits were exactly the low-information slots — 100% of that path.
+`writer_prompt` dispatches to three builders and `_focused_writer_prompt`, the
+shipped default that every substantive slot takes, never rendered the actor
+state. The registry was fine: all 45 keys present for a 45-slot thread, lookup
+key matching. The string had nowhere to go. Recorded as **E15**; fixed by
+resolving the actor state once in `writer_prompt` and passing it to all three
+builders, pinned by three tests, one of which fails on the pre-fix tree.
+
+**Consequence beyond this arm:** every run this codebase has ever made with
+`--actor-conditioning domain-derived` was ~26% applied. Those results are
+unattributable, not negative.
+
+## Addendum 2 — v126b failed on Writer coverage, and the arm is now suspect
+
+**v126b was rejected by the generator at $0.46**, on its first post:
+`generated=44/45 failed_task_ids=[22]`, policy `reject_incomplete_post`. One
+unrealized slot voids the whole post, and the degraded retry returns the task
+unchanged, so a slot that fails *because of* the actor block cannot recover.
+
+The correlation is clean and it points at the fix:
+
+| run | actor coverage | slot failures |
+|---|---:|---|
+| v122 | 0% | 0 |
+| v125b | 0% | 0 |
+| v126 (unfixed) | 26% | 0 |
+| **v126b (fixed)** | **100%** | **first post** |
+
+Three explanations were rejected for free before spending again:
+
+- participant keys (`A3`) tripping `planner_skeleton_residue` — the regex is
+  `P\d{2}|S\d+|B\d+`, so `A#` is not matched
+- actor fields leaking internal control ids into the Writer prompt — **0 of 136
+  plans** across both runs contain `P##`/`S#`/`B#`
+- the longer prompt squeezing the completion budget —
+  `writer_provider_token_budget` depends only on `real_word_count`
+
+**The blocker was observability, not the hypothesis space.** An incomplete post
+is never persisted, so the records carrying each attempt's guard problems died
+with it and the only visible fact was a task id.
+`_print_failed_slot_diagnosis` now prints, per unrealized slot, its payload
+type, length bucket, matched word count, attempt count and every recorded guard
+problem, before the post is rejected. A single-post reproduction against the
+same seed is what this addendum is waiting on.
+
+**Open question this raises regardless of the actor block:** with
+`reject_incomplete_post` and 45–185 slots per post, a per-slot hard-failure
+probability of even 1% voids a 185-slot post 84% of the time. Every arm to date
+has run at p≈0, so the policy has never been stressed. If the diagnosis shows a
+generic guard rather than an actor-specific one, the thing to fix is the
+policy's brittleness, not this arm.

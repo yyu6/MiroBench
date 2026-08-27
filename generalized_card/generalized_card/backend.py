@@ -3065,6 +3065,24 @@ def _print_failed_slot_diagnosis(
                 text = str(problem)
                 if text and text not in problems:
                     problems.append(text)
+        # `planner_skeleton_residue` names a guard, not a cause. The cause is
+        # the specific token the Writer emitted, and without it the only way to
+        # learn which one is another paid run.
+        residue: list[str] = []
+        if "planner_skeleton_residue" in problems:
+            for attempt in attempts:
+                for match in prompts.INTERNAL_CONTROL_ID_RE.finditer(
+                    str(attempt.get("text") or "")
+                ):
+                    label = match.group(0).upper()
+                    start = max(0, match.start() - 40)
+                    context = str(attempt.get("text") or "")[start : match.end() + 40]
+                    entry = f"{label} in ...{' '.join(context.split())}..."
+                    if entry not in residue:
+                        residue.append(entry)
+        if residue:
+            for entry in residue[:6]:
+                print(f"[writer-slot-failure]   residue {entry}", flush=True)
         print(
             "[writer-slot-failure] "
             f"task={task_id} "
