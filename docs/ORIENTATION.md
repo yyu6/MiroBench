@@ -1366,3 +1366,62 @@ Not "I believe"; these were run on 2026-08-20:
 
 Anything in this file not in that table came from a linked document, and the
 link is the citation.
+
+### Next step — 2026-08-27 late (supersedes the 2026-08-28 block above)
+
+**The bar changed, and it is now an effect size.** The user fixed it this
+session: at N=10, `self_bertscore` and `self_bleu_4` must reach p ≥ 0.6–0.7 and
+nothing else may fall below it. G101 shows that is exactly `|Cliff d| ≤ 0.13` —
+the exact Mann–Whitney null for n=m=10 gives p=0.684 at d=0.13, and the N=150
+PASS line is |d| < 0.131. **Steer by `|Cliff d|`, not by p>0.05.** A metric at
+p=0.16 satisfies p>0.05 and is nowhere near shippable.
+
+Against that bar, ten of twelve metrics already reach it in *some* arm. Only
+`self_bertscore` (best 0.90, v125b) and `self_bleu_4` (best 0.38) reach it in
+none, and no single arm reaches it on all ten at once.
+
+**Two more doors closed this session.**
+
+| door | verdict | evidence |
+|---|---|---|
+| asking the Planner for outsiders | 0.66–1.9% compliance against a 12% target, in two sizings | G102 |
+| selection / best-of-N in any weighting | oracle ceiling is Cliff +0.34; forbidden by §1 anyway | G105 |
+
+G102 also names *why* the quota fails, and it is not a downstream rewrite:
+`side_tangent` appears **0 times in 532 initial Planner choices**. Story is
+**scheduled** per slot (`apply_slot_distribution_schedule`, 151 overrides in the
+same run); outsider is merely **requested**. Per-slot structured bindings beat a
+global paragraph — E4 restated. **If the topical route is reopened, schedule it,
+do not ask for it.**
+
+**The diagnosis moved, and the first version of it was wrong.** G103 originally
+read the gap as 78% within-thread cohesion. That measurement drew its
+within-thread and cross-thread samples independently, so the two halves were
+different texts. Re-measured on the same sampled texts: real threads *do* cohere
+(+0.0126 over their own cross-thread mean) and ours cohere only slightly more
+(+0.0191). Of the +0.0248 within-thread gap, **74% is corpus-level** — our
+comments are more like each other than real comments are *even across unrelated
+threads*. `self_bertscore` is mostly reporting **one voice**, not one topic.
+E13 caught this class of error once already; it caught it again here.
+
+Masking rejected both lexical readings of that 74%: blanking brands and model
+designations moved the within-thread gap 0.0248 → 0.0258, blanking
+comparative-hedge frames moved it 0.0248 → 0.0239. The uniformity is diffuse, so
+the lever must act on sentence architecture, not on a token class.
+
+**Next step: `--actor-conditioning domain-derived`, pre-registered in
+`tasks/v126-actor-conditioning-predictions.md`.** The flag already exists, is
+wired through the Planner schema, the Planner rules, the per-slot plan line and
+the Writer prompt, is covered by the backend self-test, adds no code, and has
+**never been run on the calibrated line** — every run to date carries
+`actor_conditioning.mode = "none"`. Its `realization_route` field is defined as
+"an abstract one-shot sentence construction and cadence" with a standing rule to
+vary it across nearby slots, which is the only built lever aimed at the 74%
+term. It resamples nothing: `writer_distribution_resampling` is hard-coded
+`False` in both modes, so §1 is satisfied.
+
+**Do not build a write-time BERTScore band control (E14).** The evidence appears
+to point there — `metric_bands_by_size` carries measured bands for all twelve
+metrics and only two are read at write time — but §1 forbids resampling toward a
+metric, and the two controls that do exist were inert in v125b anyway because
+`--writer-retries` defaults to **0**.

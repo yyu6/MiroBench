@@ -1494,3 +1494,20 @@ At N=150 and today's bias, P(pass) under the shipped rule: `polite_rate` **0.00*
   metrics worse; `retries=2` explicitly not indicated.
 - **Per-comment editing as a route to thread-level tone metrics** (G90) — the
   treated comments were 1.1pp different while the metric moved 15.6pp.
+
+## 2026-08-27 late — the bar is |Cliff d| ≤ 0.13, and two more doors closed
+
+- [x] Evaluate `v125b_outsider_n10_20260828_v1` (was generated but never scored). Rejected: G102.
+- [x] Print the full twelve-metric p-value table for every comparable arm (owed to the user).
+- [x] Convert the user's "N=10 p ≥ 0.6–0.7" bar into an effect size. It is `|Cliff d| ≤ 0.13` — G101.
+- [x] Recompute every movable metric under selection, not just the four that looked good. G105: balanced multi-objective selection improves **all nine at once** but plateaus at Cliff +0.50 on `self_bertscore`; single-objective reaches +0.34 at the cost of tone. Selection is exhausted and §1 forbids it anyway.
+- [x] Find out why the outsider quota fires at ~1%. G102: the Planner never selects `side_tangent` (0 of 532 initial choices); `planner_contract`'s rewrite rule is not the cause (28 fires in v125 against 39 in baseline v122). Story is scheduled, outsider is requested.
+- [x] Decompose the `self_bertscore` gap. G103 (corrected): 74% corpus-level voice uniformity, 26% extra within-thread cohesion. The first version of this row was inverted by independent sampling of the two halves — E13 again.
+- [x] Measure the outsider ceiling at perfect compliance. G104: ~36% of the gap, and our own off-thread prose works as well as real donor text.
+- [x] Test the two lexical explanations for the 74%. Both rejected: masking brands/models moved the gap 0.0248 → 0.0258, masking comparative hedges 0.0248 → 0.0239.
+- [x] Check whether a write-time BERTScore band control is permitted. It is not — E14, ORIENTATION §1.
+- [x] Pre-register v126 and dry-run it (`--prepare-only` passes, self-test PASS, backend command byte-identical to v125b).
+- [ ] **Fire v126 = v125b + `--actor-conditioning domain-derived`.** Compliance gate first (E12): actor section in ≥90% of Writer prompts, ≥8 distinct `realization_route` values per 10 consecutive slots.
+- [ ] If v126's compliance gate passes and `self_bertscore` still lands above +0.80, per-slot voice state is not the 74% lever — next candidate is per-thread speaker partitioning.
+- [ ] If the topical route is reopened, **schedule** the outsider slots through `apply_slot_distribution_schedule` rather than asking for them (G102). Measured ceiling: 36% of the gap (G104).
+- [ ] `polite_rate` (−0.33) and `hard_disagree_rate` (−0.39) are out of band and neither has a mechanism. Multi-objective selection is the only thing that has ever moved `polite_rate` (−53.6% → −16.6%), and it is not shippable.
