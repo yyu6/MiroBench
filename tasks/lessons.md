@@ -2300,3 +2300,49 @@ contrast showed the retried comments were only 1.1pp less impolite — the gain 
 from across-thread spread, not per-comment editing (G90). **When a prediction's
 reasoning is right and its conclusion is wrong, the mechanism is somewhere you
 have not looked; that gap is worth more than the metric that prompted it.**
+
+---
+
+## 2026-08-27 — run the compliance gate BEFORE the run, not after it
+
+I wrote a compliance gate for v126 into its pre-registration, fired the paid
+run, and used the gate to catch the failure at $0.81. That reads like the
+process working. It is not.
+
+Every fact the gate found was available offline for **$0**:
+
+```
+module.GENERALIZED_ACTOR_MODE = "domain-derived"
+module.GENERALIZED_ACTOR_ASSIGNMENTS = {assignment_key(seed, 1): <state>}
+rendered = module.build_writer_prompt(...)
+assert "Thread-local actor state" in rendered
+```
+
+Four lines. `writer_prompt` dispatches to three builders and
+`_focused_writer_prompt` — the shipped default that every substantive slot takes
+— never rendered the actor state. One offline render of one substantive slot
+would have shown 0% coverage before a single API call.
+
+**The rule: an arm's compliance gate is an OFFLINE test that must pass before
+the run is priced, not a post-hoc check on the artifact.** Render the arm's
+own cue through the real entry point, on every builder the dispatcher can
+reach, and assert it is present. Only then does the run buy information.
+
+The corollary is about what a gate is for. A gate that runs after the money is
+spent converts a wasted run into a diagnosed one — real value, but second
+best. A gate that runs before it spends nothing at all. I had written the right
+check and put it in the wrong place.
+
+**Second lesson from the same day, on observability.** Two separate failures
+today were undiagnosable because the evidence was discarded before anyone could
+read it:
+
+- an incomplete post is never persisted, so the records carrying each attempt's
+  guard problems died with it and the only visible fact was a task id
+- the guard's *name* (`planner_skeleton_residue`) is not its *cause*, which is
+  whichever token the Writer emitted
+
+Each gap cost a paid run to work around. Both are now fixed
+(`_print_failed_slot_diagnosis`). **When a failure path discards the evidence
+that explains it, fix that before paying to reproduce it** — the fix is
+usually smaller than the run.
