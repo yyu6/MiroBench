@@ -10309,3 +10309,33 @@ def test_recurring_phrase_ledger_rejects_a_meaningless_minimum():
             raise AssertionError(f"accepted {bad}")
     finally:
         set_recurring_phrase_ledger("off")
+
+
+def test_planner_residue_guard_accepts_real_product_model_names():
+    """A camera called S5 or X-S20 is not planner skeleton residue.
+
+    The `(?:P\\d{2}|S\\d+|B\\d+)` control-id pattern reads the Fujifilm X-S20
+    and the Panasonic Lumix S5 as slot ids. Restricting the whitelist to
+    anchors tagged `(seed)` meant a model name arriving as `(planner)` or
+    `(local)` failed six writer retries and three post retries and killed a
+    whole run at $1.50 with five threads produced.
+    """
+    import types
+
+    module = types.SimpleNamespace(GENERALIZED_DOMAIN_PROFILE={"perspectives": []})
+    from generalized_card import backend as _backend
+    check = _backend._planner_residue_check(module, lambda text, task: False)
+    task = types.SimpleNamespace(
+        concrete_anchors=("X-S20 (planner)", "Lumix S5 (local)")
+    )
+    bare = types.SimpleNamespace(concrete_anchors=())
+
+    # product names, whatever tag the anchor carried
+    assert not check("way smaller than a Fuji X-S20, honestly", task)
+    assert not check("the linked S5 II setup solves a different problem", task)
+    # hyphen shape is product shape even with no anchor at all
+    assert not check("panasonic-lumix-dc-s5-ii-mirrorless", bare)
+    assert not check("a Fuji X-S20 body", bare)
+    # a bare slot id with nothing to justify it is still residue
+    assert check("cover S20 in this reply", bare)
+    assert check("branch B3 owns the price angle", bare)

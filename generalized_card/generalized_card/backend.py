@@ -2791,16 +2791,28 @@ def _planner_residue_check(module: ModuleType, original: Any):
     def contains_planner_skeleton_residue(text: str, task: Any) -> bool:
         if original(text, task):
             return True
+        # Every concrete anchor is drawn from the seed post or the matched real
+        # comments, so no anchor is ever a planner slot id -- whatever source
+        # tag it carries. Restricting this to `(seed)` rejected real product
+        # names that reached the slot as `(planner)` or `(local)`: the Fujifilm
+        # X-S20 and the Panasonic Lumix S5 both read as slot ids and killed a
+        # whole run through six writer retries and three post retries.
         allowed = {
             match.group(0).upper()
             for anchor in getattr(task, "concrete_anchors", ())
-            if str(anchor).rstrip().lower().endswith("(seed)")
             for match in prompts.INTERNAL_CONTROL_ID_RE.finditer(
                 prompts.strip_anchor_source(str(anchor))
             )
         }
-        for match in prompts.INTERNAL_CONTROL_ID_RE.finditer(str(text or "")):
+        body = str(text or "")
+        for match in prompts.INTERNAL_CONTROL_ID_RE.finditer(body):
             label = match.group(0).upper()
+            # `X-S20`, `-s5-ii-`: a hyphen on either side is product-model
+            # shape. A planner slot id is always emitted as a bare token.
+            if body[match.start() - 1 : match.start()] == "-" or body[
+                match.end() : match.end() + 1
+            ] == "-":
+                continue
             if (
                 label in profile_ids or label.startswith(("S", "B"))
             ) and label not in allowed:
