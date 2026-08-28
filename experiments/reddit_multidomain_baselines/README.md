@@ -43,11 +43,18 @@ Run one small no-API smoke test first:
 Useful scoped jobs:
 
 ```bash
+# One domain at a time, across all four models and both baselines.
+./experiments/reddit_multidomain_baselines/run_domain.sh laptop
+
+# One model/baseline in one domain.
+./experiments/reddit_multidomain_baselines/run_domain.sh \
+  laptop --models gpt-5.4-mini --baselines oasis
+
 # One model across every domain and both baselines.
 ./experiments/reddit_multidomain_baselines/run_generate_all.sh \
   --models gpt-5.4-mini --continue-on-error
 
-# One domain across all four models and both baselines.
+# Equivalent lower-level command for one domain across all four models/baselines.
 ./experiments/reddit_multidomain_baselines/run_generate_all.sh \
   --domains laptop --continue-on-error
 
@@ -73,8 +80,8 @@ comparisons (KS, Mann–Whitney U, Wasserstein, and Cliff's delta):
 For a single domain/model/baseline:
 
 ```bash
-./experiments/reddit_multidomain_baselines/run_evaluate_all.sh \
-  --domains laptop --models gpt-5.4-mini --baselines oasis --device mps
+./experiments/reddit_multidomain_baselines/run_evaluate_domain.sh \
+  laptop --models gpt-5.4-mini --baselines oasis --device mps
 ```
 
 ## Outputs and accounting
