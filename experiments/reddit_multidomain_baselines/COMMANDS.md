@@ -44,3 +44,7 @@ column -s, -t < artifacts/reddit_multidomain_baselines/summary/evaluation_summar
 one domain. You may additionally supply `--models gpt-5.4-mini` and
 `--baselines oasis`. Generation resumes completed jobs by default; use
 `--force` only to deliberately regenerate a job.
+
+OASIS records zero-comment seed threads instead of failing the remaining
+domain by default. Add `--oasis-min-comments-per-post 1` only for a strict
+non-empty-thread run.

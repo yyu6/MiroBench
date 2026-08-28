@@ -67,6 +67,12 @@ The defaults are 150 seed posts/domain, 5 posts/OASIS run, 50 OASIS agents,
 24 simulated hours, and 12 OASIS rounds. All are exposed as CLI flags; inspect
 `--help` before changing experimental settings.
 
+OASIS is allowed to produce zero-comment seed threads by default because that
+is an observed baseline outcome; those threads and their zero comment counts
+remain in the artifacts and accounting instead of aborting the full domain.
+Use `--oasis-min-comments-per-post 1` only when a strict non-empty quality gate
+is explicitly required.
+
 ## Evaluate
 
 After generation, run all nine existing GEO thread metrics for the real

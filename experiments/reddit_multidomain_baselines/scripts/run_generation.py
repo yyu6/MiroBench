@@ -50,7 +50,17 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--oasis-agents", type=int, default=50)
     parser.add_argument("--oasis-hours", type=int, default=24)
     parser.add_argument("--oasis-rounds", type=int, default=12)
+    parser.add_argument(
+        "--oasis-min-comments-per-post",
+        type=int,
+        default=0,
+        help=(
+            "Minimum comments required on every OASIS seed thread. The default "
+            "records naturally empty OASIS threads instead of aborting the domain."
+        ),
+    )
     parser.add_argument("--synthpai-config", default="configs/thread/thread_gpt4omini_city_country.yaml")
+    parser.add_argument("--synthpai-min-comments-per-post", type=int, default=1)
     parser.add_argument("--thread-retries", type=int, default=1)
     parser.add_argument("--run-retries", type=int, default=1)
     parser.add_argument("--retry-delay", type=float, default=60.0)
@@ -133,6 +143,7 @@ def run_job(
 ) -> None:
     job_root = output_root / "generation" / baseline / model / domain
     report_path = job_root / "generation_report.json"
+    previous: dict[str, Any] = {}
     if report_path.exists() and not args.force and not args.force_template:
         previous = read_json(report_path)
         if previous.get("status") == "success" and bool(previous.get("dry_run")) == bool(args.dry_run):
@@ -213,7 +224,7 @@ def run_job(
                 "--retry-delay",
                 str(args.retry_delay),
                 "--min-comments-per-post",
-                "1",
+                str(args.oasis_min_comments_per_post),
             ]
         elif baseline == "synthpai":
             command = [
@@ -242,7 +253,7 @@ def run_job(
                 "--retry-delay",
                 str(args.retry_delay),
                 "--min-comments-per-post",
-                "1",
+                str(args.synthpai_min_comments_per_post),
             ]
         else:  # pragma: no cover - argparse restricts the set.
             raise ValueError(f"Unsupported baseline: {baseline}")
@@ -259,6 +270,11 @@ def run_job(
         raise
     finally:
         ended_epoch = time.time()
+        invocation_elapsed_seconds = ended_epoch - started_epoch
+        previous_elapsed_seconds = 0.0
+        if bool(previous.get("dry_run")) == bool(args.dry_run):
+            previous_elapsed_seconds = float(previous.get("elapsed_seconds") or 0.0)
+        cumulative_elapsed_seconds = previous_elapsed_seconds + invocation_elapsed_seconds
         artifact_counts = count_generated_artifact(generated_root)
         usage_summary = summarize_usage(usage_path, model_spec)
         report = {
@@ -276,8 +292,14 @@ def run_job(
             "log": str(log_path),
             "started_at": started_at,
             "ended_at": _iso_time(ended_epoch),
-            "elapsed_seconds": round(ended_epoch - started_epoch, 3),
-            "elapsed_minutes": round((ended_epoch - started_epoch) / 60.0, 3),
+            "invocation_elapsed_seconds": round(invocation_elapsed_seconds, 3),
+            "elapsed_seconds": round(cumulative_elapsed_seconds, 3),
+            "elapsed_minutes": round(cumulative_elapsed_seconds / 60.0, 3),
+            "min_comments_per_post": (
+                args.oasis_min_comments_per_post
+                if baseline == "oasis"
+                else args.synthpai_min_comments_per_post
+            ),
             "request_count": usage_summary["requests"],
             "prompt_tokens": usage_summary["prompt_tokens"],
             "cached_prompt_tokens": usage_summary["cached_prompt_tokens"],
@@ -402,6 +424,8 @@ def _validate_args(args: argparse.Namespace, domains: list[str]) -> None:
         raise SystemExit("No domains selected")
     if args.max_seeds < 1 or args.posts_per_run < 1:
         raise SystemExit("--max-seeds and --posts-per-run must be positive")
+    if args.oasis_min_comments_per_post < 0 or args.synthpai_min_comments_per_post < 0:
+        raise SystemExit("minimum comments per post cannot be negative")
 
 
 def _validate_credentials(models: list[str], specs: dict[str, dict[str, Any]]) -> None:
