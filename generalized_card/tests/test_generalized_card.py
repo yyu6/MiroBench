@@ -217,7 +217,10 @@ class GeneralizedCardTest(unittest.TestCase):
         self.assertEqual(first, second)
         self.assertEqual(projected.commit, AUDITED_MATRAIX_COMMIT)
         self.assertEqual(projected.public_config()["dataset_personas"], 200)
-        self.assertEqual(projected.public_config()["eligible_personas"], 147)
+        # 147 records pass the English/adult filter. 14 render a system prompt
+        # longer than the Writer's own task (dilution) and 10 carry no
+        # behavioural dimension at all (an empty identity); both are dropped.
+        self.assertEqual(projected.public_config()["eligible_personas"], 123)
         self.assertEqual(
             projected.public_config()["template_source"],
             "official-matraix-persona-system",
@@ -10142,3 +10145,92 @@ def test_writer_temperature_rejects_out_of_range_and_non_numeric():
             raise AssertionError(f"accepted invalid writer temperature: {bad}")
     finally:
         backend.set_writer_temperature("legacy")
+
+
+def _persona_runtime(mode="matraix-full"):
+    from pathlib import Path
+
+    from generalized_card.persona_bridge import build_runtime
+
+    root = Path(__file__).resolve().parents[2] / "third_party" / "MatrAIx-Persona-8B"
+    if not root.is_dir():
+        import pytest
+
+        pytest.skip("MatrAIx checkout not present")
+    return build_runtime(
+        mode=mode,
+        matraix_root=root,
+        dataset_dir=root / "persona" / "datasets" / "matraix-persona-dev-sample",
+        assignment_seed=42,
+        expertise_dimensions=("fam_photography", "ind_consumer_electronics"),
+    )
+
+
+def test_persona_speaker_key_is_stable_across_a_speakers_slots():
+    """One person, one voice: every slot a speaker holds gets the same persona."""
+
+    runtime = _persona_runtime()
+    tasks = [
+        {"local_task_id": i, "speaker_role": role, "voice": voice, "tone_shape": tone}
+        for i, (role, voice, tone) in enumerate(
+            [
+                ("advisor", "blunt", "disagree"),
+                ("confused_asker", "uncertain", "uncertain"),
+                ("gratitude_reply", "grateful", "polite"),
+                ("jokester", "sarcastic", ""),
+            ]
+        )
+    ]
+    assigned = {
+        runtime.assign(seed_index=3, task=task, speaker_id="S007").persona_id
+        for task in tasks
+    }
+    assert len(assigned) == 1, "a speaker must keep one persona across differing roles"
+
+
+def test_persona_without_a_speaker_still_varies_per_slot():
+    """`--speaker-identity off` leaves the legacy per-slot behaviour intact."""
+
+    runtime = _persona_runtime()
+    assigned = {
+        runtime.assign(
+            seed_index=3, task={"local_task_id": i, "speaker_role": "advisor"}, speaker_id=""
+        ).persona_id
+        for i in range(12)
+    }
+    assert len(assigned) > 1
+
+
+def test_persona_speaker_key_separates_different_speakers():
+    runtime = _persona_runtime()
+    task = {"local_task_id": 1, "speaker_role": "advisor"}
+    assigned = {
+        runtime.assign(seed_index=3, task=task, speaker_id=f"S{i:03d}").persona_id
+        for i in range(1, 25)
+    }
+    assert len(assigned) >= 12, f"only {len(assigned)} personas over 24 speakers"
+
+
+def test_persona_system_prompts_stay_under_the_dilution_cap():
+    from generalized_card.persona_bridge import _MAX_SYSTEM_PROMPT_CHARS
+
+    runtime = _persona_runtime()
+    longest = max(
+        len(runtime.assignment_for_id(p.persona_id).system_prompt)
+        for p in runtime._eligible
+    )
+    assert longest <= _MAX_SYSTEM_PROMPT_CHARS
+    assert len(runtime._eligible) >= 100
+    assert all(
+        "## Who you are" in runtime.assignment_for_id(p.persona_id).system_prompt
+        for p in runtime._eligible
+    )
+
+
+def test_speaker_id_recovered_from_generated_author():
+    from generalized_card.persona_bridge import _speaker_id_from_author
+
+    assert _speaker_id_from_author("sampled_user_0_0_S001") == "S001"
+    assert _speaker_id_from_author("sampled_user_12_3_S042") == "S042"
+    for absent in ("", None, "weird_name"):
+        assert _speaker_id_from_author(absent) == ""

@@ -469,7 +469,7 @@ CORE_FILES = {
     ),
     "domain_prompt_adapter": (
         "generalized_card/generalized_card/prompts.py",
-        "1ec617401297c20ad279428dd6409bb99c212ab7d2c405f28bc5cf441cf2e7e3",
+        "c7f30cb199f70179909072758e19d3c64afe63e165689988b0410918757ee2e7",
     ),
     "reply_planning": (
         "generalized_card/generalized_card/reply_planning.py",
@@ -477,7 +477,7 @@ CORE_FILES = {
     ),
     "persona_bridge": (
         "generalized_card/generalized_card/persona_bridge.py",
-        "7dbad1b96b6e69ae92a8502621b02dda67391e3cbcccc63ba592c603bd336086",
+        "44464ea04b1ada0c5422bc04b87b783656f5f49942f8010ac5e51bf27937edb9",
     ),
     "selfbert_controller": (
         "generalized_card/scripts/run_selfbert_revision_controller.py",

@@ -31,12 +31,26 @@ _MINOR_AGES = {"Under 5", "5-12", "13-17"}
 _ENGLISH_OK = {"Native", "Fluent (C1-C2)", "Intermediate (B1-B2)"}
 
 _MAX_PROJECTED_DIMENSIONS = 10
+# A persona whose description dwarfs the task is not a persona, it is noise.
+# `matraix-full` renders the whole record, and the length distribution has a
+# small extreme tail: p90 is 7,698 chars against a p95 of 22,246. The Writer's
+# own prompt has a median of 9,098, so the tail would outweigh the assignment
+# it is supposed to colour -- the v67 prompt-dilution failure. Dropping it costs
+# 14 of 147 personas and removes every slot where the identity is longer than
+# the task.
+_MAX_SYSTEM_PROMPT_CHARS = 8000
 _IDENTITY_BOUNDARY = (
     "Express this identity only through word choice, confidence, attention, and "
     "interaction style. Never state the profile or invent biography, expertise, "
     "personal experience, or facts from it. The Reddit task and visible discussion "
     "below are the only sources of factual content."
 )
+
+
+def _assemble_system(identity: str) -> str:
+    """The exact text sent as the system message, boundary included."""
+
+    return f"{identity.strip()}\n\n{_IDENTITY_BOUNDARY}"
 
 
 @dataclass(frozen=True)
@@ -128,24 +142,68 @@ class MatraixPersonaRuntime:
             None,
             self._official["PERSONA_SYSTEM_TEMPLATE"],
         )
+        # Measured on the FULL rendering in every mode, so the pool is a
+        # property of the persona record rather than of the display mode and
+        # `matraix-projected` and `matraix-full` keep choosing the same persona
+        # for the same key -- they differ in how much of it is shown, not in who
+        # is speaking.
+        render = self._official["render_persona_template"]
+        usable = [
+            persona
+            for persona in self._eligible
+            if len(_assemble_system(render(self.template_path, persona)))
+            <= _MAX_SYSTEM_PROMPT_CHARS
+            # A record with no behavioural dimension at all describes nobody and
+            # renders as bare boundary text, so it would hand several speakers
+            # the same empty identity.
+            and _project_dimensions(
+                persona.dimensions, expertise_dimensions=self.expertise_dimensions
+            )
+        ]
+        if not usable:
+            raise RuntimeError(
+                f"no persona in {self.dataset_dir} renders a usable identity "
+                f"under {_MAX_SYSTEM_PROMPT_CHARS} characters"
+            )
+        self._eligible = usable
 
-    def assign(self, *, seed_index: int, task: Any) -> PersonaAssignment | None:
+    def assign(
+        self, *, seed_index: int, task: Any, speaker_id: str = ""
+    ) -> PersonaAssignment | None:
         if not self.enabled:
             return None
-        scored = [
-            (_compatibility_score(persona.dimensions, task, self.expertise_dimensions), persona)
-            for persona in self._eligible
-        ]
-        best = max(score for score, _persona in scored)
-        # Keep a broad near-best set so role compatibility does not collapse the
-        # population to a few repeated profiles.
-        candidates = [persona for score, persona in scored if score >= best - 1]
+        if speaker_id:
+            # One person, one voice. Role compatibility is scored against the
+            # SLOT's role and tone, so a speaker holding several slots would
+            # score a different candidate set for each and end up sounding like
+            # a different person every turn -- measured at 56 of 326 speakers on
+            # v128's structure. A real commenter does not change personality to
+            # play a role, so when the roster gives us a speaker the persona is
+            # drawn from the whole eligible population and the plan keeps
+            # control of the speech act.
+            candidates = list(self._eligible)
+        else:
+            scored = [
+                (_compatibility_score(persona.dimensions, task, self.expertise_dimensions), persona)
+                for persona in self._eligible
+            ]
+            best = max(score for score, _persona in scored)
+            # Keep a broad near-best set so role compatibility does not collapse
+            # the population to a few repeated profiles.
+            candidates = [persona for score, persona in scored if score >= best - 1]
+        # Key on the SPEAKER, not the slot. A real thread is a small cast --
+        # 45 comments from ~20 people -- so a per-slot key invents a new person
+        # for every turn and makes a recurring author sound like a stranger to
+        # themselves. 76% of authors post once, so per-speaker keying costs
+        # almost no persona diversity and buys author consistency. Falls back to
+        # the slot when identity is off (`--speaker-identity off`) and no
+        # speaker exists.
+        key = speaker_id or _task_value(
+            task, "local_task_id", _task_value(task, "comment_id", 0)
+        )
         candidates.sort(
             key=lambda persona: _stable_rank(
-                self.assignment_seed,
-                seed_index,
-                _task_value(task, "local_task_id", _task_value(task, "comment_id", 0)),
-                persona.persona_id,
+                self.assignment_seed, seed_index, key, persona.persona_id
             )
         )
         return self.assignment_for_id(candidates[0].persona_id)
@@ -178,7 +236,7 @@ class MatraixPersonaRuntime:
             self.template_path,
             rendered_persona,
         )
-        system = f"{identity.strip()}\n\n{_IDENTITY_BOUNDARY}"
+        system = _assemble_system(identity)
         assignment = PersonaAssignment(
             persona_id=persona_id,
             source_path=persona.persona_path,
@@ -188,8 +246,10 @@ class MatraixPersonaRuntime:
         self._system_cache[persona_id] = assignment
         return assignment
 
-    def marker(self, *, seed_index: int, task: Any) -> str:
-        assignment = self.assign(seed_index=seed_index, task=task)
+    def marker(self, *, seed_index: int, task: Any, speaker_id: str = "") -> str:
+        assignment = self.assign(
+            seed_index=seed_index, task=task, speaker_id=speaker_id
+        )
         if assignment is None:
             return ""
         task_id = int(
@@ -273,8 +333,10 @@ def reset_runtime_cache() -> None:
     runtime_from_env.cache_clear()
 
 
-def persona_marker_for_task(seed_post: Any, task: Any) -> str:
-    return runtime_from_env().marker(seed_index=int(seed_post.index), task=task)
+def persona_marker_for_task(seed_post: Any, task: Any, speaker_id: str = "") -> str:
+    return runtime_from_env().marker(
+        seed_index=int(seed_post.index), task=task, speaker_id=speaker_id
+    )
 
 
 def inject_persona_system(messages: list[dict[str, str]]) -> list[dict[str, str]]:
@@ -327,10 +389,13 @@ def annotate_generated_outputs(
             seed_index = int(post.get("seed_index") or 0)
             for comment in _walk_comments(post.get("comments") or []):
                 comment_id = int(comment.get("comment_id") or 0)
-                task_id = comment_id % 10000
                 proxy = dict(comment)
-                proxy["local_task_id"] = task_id
-                assignment = runtime.assign(seed_index=seed_index, task=proxy)
+                proxy["local_task_id"] = comment_id % 10000
+                assignment = runtime.assign(
+                    seed_index=seed_index,
+                    task=proxy,
+                    speaker_id=_speaker_id_from_author(comment.get("author")),
+                )
                 if assignment is None:
                     continue
                 meta = _assignment_meta(runtime, assignment)
@@ -367,6 +432,21 @@ def annotate_generated_outputs(
     }
     _atomic_json(generated_root.parent / "persona_assignment_manifest.json", manifest)
     return manifest
+
+
+_SPEAKER_SUFFIX_RE = re.compile(r"_(S\d+)$")
+
+
+def _speaker_id_from_author(author: Any) -> str:
+    """Recover the speaker id the roster stamped into the generated author.
+
+    Generation keys personas on the speaker, so provenance has to reconstruct
+    the same key. `speaker_id` is not persisted on the task, but the author
+    string carries it (`sampled_user_0_0_S001`).
+    """
+
+    match = _SPEAKER_SUFFIX_RE.search(str(author or ""))
+    return match.group(1) if match else ""
 
 
 def _assignment_meta(
@@ -441,19 +521,28 @@ def _project_dimensions(
         "intent",
         "query_complexity",
     )
+    # `ordered` covers ~16 of the 85+ dimensions a record can carry, and 23 of
+    # 147 personas hold none of them -- they rendered an empty identity, which
+    # is how a fifth of all slots ended up sharing one system prompt. Spend any
+    # leftover budget on the persona's own behavioural dimensions, sorted for
+    # determinism. Restricted to these three prefixes on purpose: `region`,
+    # `gender_identity`, `cult_*` and the rest are biography, and the identity
+    # boundary forbids the Writer from inventing biography.
+    behavioural = sorted(
+        key for key in dimensions if key.startswith(("trait_", "skill_", "lstyle_"))
+    )
     selected: dict[str, str] = {}
-    for key in ordered:
+    for key in (*ordered, *behavioural):
+        if len(selected) >= _MAX_PROJECTED_DIMENSIONS:
+            break
         if key in selected:
             continue
-        value = dimensions.get(key)
-        text = str(value or "").strip()
+        text = str(dimensions.get(key) or "").strip()
         if text.lower() in _NULLISH:
             continue
         if key == "dominant_trait" and text == "Balanced":
             continue
         selected[key] = text
-        if len(selected) >= _MAX_PROJECTED_DIMENSIONS:
-            break
     return selected
 
 
@@ -502,8 +591,8 @@ def _task_value(task: Any, key: str, default: Any = None) -> Any:
     return getattr(task, key, default)
 
 
-def _stable_rank(seed: int, seed_index: int, task_id: int, persona_id: str) -> str:
-    value = f"{seed}:{seed_index}:{task_id}:{persona_id}"
+def _stable_rank(seed: int, seed_index: int, key: Any, persona_id: str) -> str:
+    value = f"{seed}:{seed_index}:{key}:{persona_id}"
     return hashlib.sha256(value.encode("utf-8")).hexdigest()
 
 

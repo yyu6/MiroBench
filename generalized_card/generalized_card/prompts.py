@@ -1184,7 +1184,10 @@ def writer_prompt(
         if actor_state is not None
         else ""
     )
-    persona_marker = persona_marker_for_task(seed_post, task)
+    speaker = _speaker_for_task(backend, task)
+    persona_marker = persona_marker_for_task(
+        seed_post, task, speaker_id=speaker.speaker_id if speaker else ""
+    )
     marker_prefix = f"{persona_marker}\n" if persona_marker else ""
     visible = (
         render_parent_context(config, backend, parent_comment=parent_comment, task=task)
