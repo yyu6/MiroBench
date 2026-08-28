@@ -563,6 +563,26 @@ def build_parser() -> argparse.ArgumentParser:
         ),
     )
     parser.add_argument(
+        "--writer-temperature",
+        default="legacy",
+        help=(
+            "Writer sampling temperature. 'legacy' reproduces every release "
+            "through v128 byte-for-byte; 'schedule' honours the per-slot value "
+            "`writer_temperature(task)` already computes (0.82-1.08); a float "
+            "sends that fixed temperature. G131: the writer call site has "
+            "always passed a computed temperature and `_completion_kwargs` "
+            "discards it for any gpt-5* model, on a comment claiming those "
+            "endpoints reject it -- probed 2026-08-28, gpt-5.4-mini accepts "
+            "temperature, top_p, frequency_penalty and presence_penalty. So "
+            "the gpt-5.x line has run at the API default 1.0 and the schedule "
+            "(mean ~0.85) has never applied; 'schedule' LOWERS temperature and "
+            "is expected to worsen self-similarity, so it is offered for "
+            "completeness, not as the candidate. Planner sampling is never "
+            "touched: the arm gates on response_format_json, which is True for "
+            "both planner calls and False for both writer calls."
+        ),
+    )
+    parser.add_argument(
         "--sentence-pacing",
         choices=("off", "measured"),
         default="off",
@@ -1110,6 +1130,7 @@ def main() -> None:
         "tone_quota": args.tone_quota,
         "plan_move_ledger": args.plan_move_ledger,
         "outsider_quota": args.outsider_quota,
+        "writer_temperature": args.writer_temperature,
         "sentence_pacing": args.sentence_pacing,
         "interaction_scope": args.interaction_scope,
         "rhythm_count": args.rhythm_count,
@@ -1327,6 +1348,7 @@ def main() -> None:
     env["GENERALIZED_CARD_TONE_QUOTA"] = args.tone_quota
     env["GENERALIZED_CARD_PLAN_MOVE_LEDGER"] = args.plan_move_ledger
     env["GENERALIZED_CARD_OUTSIDER_QUOTA"] = args.outsider_quota
+    env["GENERALIZED_CARD_WRITER_TEMPERATURE"] = str(args.writer_temperature)
     env["GENERALIZED_CARD_SENTENCE_PACING"] = args.sentence_pacing
     env["GENERALIZED_CARD_INTERACTION_SCOPE"] = args.interaction_scope
     env["GENERALIZED_CARD_RHYTHM_COUNT"] = args.rhythm_count
@@ -1695,6 +1717,7 @@ RUN_EXPERIMENT_FIELDS = (
     "tone_quota",
     "plan_move_ledger",
     "outsider_quota",
+    "writer_temperature",
     "sentence_pacing",
     "interaction_scope",
     "rhythm_count",

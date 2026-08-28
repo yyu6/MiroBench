@@ -10057,3 +10057,88 @@ class OutsiderQuotaTest(unittest.TestCase):
 
         with self.assertRaises(ValueError):
             set_outsider_quota("on")
+
+
+def test_writer_temperature_legacy_sends_no_temperature_for_gpt5():
+    """`legacy` must reproduce v128: gpt-5* writer calls carry no temperature."""
+
+    from generalized_card import backend
+
+    backend.set_writer_temperature("legacy")
+    try:
+        kwargs = backend._completion_kwargs(
+            model="gpt-5.4-mini",
+            messages=[],
+            temperature=0.82,
+            max_tokens=110,
+            response_format_json=False,
+            extra_body=None,
+        )
+        assert "temperature" not in kwargs
+        assert kwargs["max_completion_tokens"] == 366
+    finally:
+        backend.set_writer_temperature("legacy")
+
+
+def test_writer_temperature_arm_never_touches_the_planner():
+    """The arm gates on response_format_json, which only the planner sets."""
+
+    from generalized_card import backend
+
+    backend.set_writer_temperature("1.3")
+    try:
+        writer = backend._completion_kwargs(
+            model="gpt-5.4-mini",
+            messages=[],
+            temperature=0.82,
+            max_tokens=110,
+            response_format_json=False,
+            extra_body=None,
+        )
+        planner = backend._completion_kwargs(
+            model="gpt-5.4-mini",
+            messages=[],
+            temperature=0.30,
+            max_tokens=110,
+            response_format_json=True,
+            extra_body=None,
+        )
+        assert writer["temperature"] == 1.3
+        assert "temperature" not in planner
+    finally:
+        backend.set_writer_temperature("legacy")
+
+
+def test_writer_temperature_schedule_honours_the_per_slot_value():
+    """`schedule` passes through what `writer_temperature(task)` computed."""
+
+    from generalized_card import backend
+
+    backend.set_writer_temperature("schedule")
+    try:
+        for scheduled in (0.82, 0.88, 0.95, 1.08):
+            kwargs = backend._completion_kwargs(
+                model="gpt-5.4-mini",
+                messages=[],
+                temperature=scheduled,
+                max_tokens=110,
+                response_format_json=False,
+                extra_body=None,
+            )
+            assert kwargs["temperature"] == scheduled
+    finally:
+        backend.set_writer_temperature("legacy")
+
+
+def test_writer_temperature_rejects_out_of_range_and_non_numeric():
+    from generalized_card import backend
+
+    try:
+        for bad in ("3.0", "-0.5", "hot"):
+            try:
+                backend.set_writer_temperature(bad)
+            except ValueError:
+                continue
+            raise AssertionError(f"accepted invalid writer temperature: {bad}")
+    finally:
+        backend.set_writer_temperature("legacy")

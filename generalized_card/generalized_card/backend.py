@@ -655,6 +655,11 @@ def configure_generator_backend(
         or "off"
     )
     set_interaction_scope(module.GENERALIZED_INTERACTION_SCOPE)
+    module.GENERALIZED_WRITER_TEMPERATURE = (
+        os.environ.get("GENERALIZED_CARD_WRITER_TEMPERATURE", "legacy").strip().lower()
+        or "legacy"
+    )
+    set_writer_temperature(module.GENERALIZED_WRITER_TEMPERATURE)
     module.GENERALIZED_REPLY_SIBLING_VISIBILITY = (
         os.environ.get("GENERALIZED_CARD_REPLY_SIBLING_VISIBILITY", "on")
         .strip()
@@ -3732,16 +3737,28 @@ def _completion_kwargs(
     if extra_body:
         kwargs["extra_body"] = extra_body
     if _uses_max_completion_tokens(model):
-        # GPT-5 and reasoning-model endpoints reject non-default temperature.
-        # Short writer caps otherwise can be consumed entirely by hidden
+        # Short writer caps can otherwise be consumed entirely by hidden
         # reasoning. The visible text is still constrained by the prompt,
         # length-bucket shaping, and writer guards after generation.
         reserve = max(0, _int_env("GPT5_REASONING_TOKEN_RESERVE", 256))
         completion_limit = max_tokens + reserve if max_tokens <= 512 else max_tokens
         kwargs["max_completion_tokens"] = completion_limit
+        # `response_format_json` is the writer/planner discriminator: the two
+        # planner calls pass True, the two writer calls pass False.  The arm
+        # deliberately leaves planner sampling untouched so a paid run measures
+        # one change.
+        if not response_format_json:
+            override = writer_temperature_override(temperature)
+            if override is not None:
+                kwargs["temperature"] = override
     else:
         kwargs["max_tokens"] = max_tokens
-        kwargs["temperature"] = temperature
+        override = (
+            writer_temperature_override(temperature)
+            if not response_format_json
+            else None
+        )
+        kwargs["temperature"] = temperature if override is None else override
     reasoning_effort = os.environ.get("REASONING_EFFORT", "").strip()
     if reasoning_effort and model.lower().startswith("gpt-5"):
         kwargs["reasoning_effort"] = reasoning_effort
@@ -3815,6 +3832,45 @@ def _repair_json(text: str) -> str:
     value = re.sub(r"\bFalse\b", "false", value)
     value = re.sub(r"\bNone\b", "null", value)
     return value
+
+
+# `legacy` reproduces every release through v128 byte for byte.  The writer
+# call site (`run_sampled_reddit_generator.py:1603`) has always passed a
+# per-slot `writer_temperature(task)` in 0.82-1.08, but `_completion_kwargs`
+# discards it for any `gpt-5*` model on the strength of a comment claiming
+# those endpoints reject a non-default temperature.  Probed 2026-08-28:
+# gpt-5.4-mini accepts temperature, top_p, frequency_penalty and
+# presence_penalty.  So the whole gpt-5.x line has run at the API default of
+# 1.0, and the computed schedule -- whose mean is ~0.85, i.e. BELOW that
+# default -- has never taken effect.  Honouring it is therefore a behaviour
+# CHANGE, not a bug fix, which is why this is an arm and not a repair.
+WRITER_TEMPERATURE_MODE = "legacy"
+
+
+def set_writer_temperature(mode: str) -> str:
+    """Select the writer-sampling arm: `legacy`, `schedule`, or a fixed float."""
+
+    global WRITER_TEMPERATURE_MODE
+    value = str(mode or "legacy").strip().lower()
+    if value not in ("legacy", "schedule"):
+        # Fail at configuration time rather than mid-run.
+        temperature = float(value)
+        if not 0.0 <= temperature <= 2.0:
+            raise ValueError(f"writer temperature out of range: {temperature}")
+        value = f"{temperature:g}"
+    WRITER_TEMPERATURE_MODE = value
+    return WRITER_TEMPERATURE_MODE
+
+
+def writer_temperature_override(scheduled: float) -> float | None:
+    """Temperature to send for a writer call, or None to keep legacy behaviour."""
+
+    mode = WRITER_TEMPERATURE_MODE
+    if mode == "legacy":
+        return None
+    if mode == "schedule":
+        return float(scheduled)
+    return float(mode)
 
 
 def _uses_max_completion_tokens(model: str) -> bool:
