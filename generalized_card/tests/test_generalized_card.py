@@ -10234,3 +10234,78 @@ def test_speaker_id_recovered_from_generated_author():
     assert _speaker_id_from_author("sampled_user_12_3_S042") == "S042"
     for absent in ("", None, "weird_name"):
         assert _speaker_id_from_author(absent) == ""
+
+
+def test_recurring_phrase_ledger_off_reproduces_v133():
+    from generalized_card.semantic_realization import (
+        recurring_function_phrases,
+        set_recurring_phrase_ledger,
+    )
+
+    set_recurring_phrase_ledger("off")
+    try:
+        comments = [{"content": "this is the one and the other is the same"}] * 6
+        assert recurring_function_phrases(comments) == []
+    finally:
+        set_recurring_phrase_ledger("off")
+
+
+def test_recurring_phrase_ledger_lists_only_reused_function_pairs():
+    from generalized_card.semantic_realization import (
+        recurring_function_phrases,
+        set_recurring_phrase_ledger,
+    )
+
+    set_recurring_phrase_ledger("3")
+    try:
+        comments = [
+            {"content": "the ricoh is the one I would get"},
+            {"content": "the ricoh is the body that fits"},
+            {"content": "the ricoh is the pick for me"},
+            {"content": "a different sentence entirely here"},
+        ]
+        listed = recurring_function_phrases(comments)
+        assert "is the" in listed, listed
+        # `the ricoh` recurs just as often and must NOT be listed: real threads
+        # reuse their topic nouns, so suppressing them moves away from real.
+        assert "the ricoh" not in listed, listed
+        assert all(len(v.split()) == 2 for v in listed)
+    finally:
+        set_recurring_phrase_ledger("off")
+
+
+def test_recurring_phrase_ledger_respects_the_minimum_and_the_cap():
+    from generalized_card.semantic_realization import (
+        RECURRING_PHRASE_LIMIT,
+        recurring_function_phrases,
+        set_recurring_phrase_ledger,
+    )
+
+    twice = [{"content": "it is the same"}, {"content": "it is the other"}]
+    set_recurring_phrase_ledger("3")
+    try:
+        assert recurring_function_phrases(twice) == []
+        set_recurring_phrase_ledger("2")
+        assert "is the" in recurring_function_phrases(twice)
+        many = [
+            {"content": " ".join(f"{a} {b}" for a, b in zip(
+                "the a is of to in on at for with from by".split(),
+                "the a is of to in on at for with from by".split()))}
+        ] * 5
+        assert len(recurring_function_phrases(many)) <= RECURRING_PHRASE_LIMIT
+    finally:
+        set_recurring_phrase_ledger("off")
+
+
+def test_recurring_phrase_ledger_rejects_a_meaningless_minimum():
+    from generalized_card.semantic_realization import set_recurring_phrase_ledger
+
+    try:
+        for bad in ("1", "0", "-2"):
+            try:
+                set_recurring_phrase_ledger(bad)
+            except ValueError:
+                continue
+            raise AssertionError(f"accepted {bad}")
+    finally:
+        set_recurring_phrase_ledger("off")

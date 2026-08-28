@@ -59,6 +59,7 @@ from .closing_move import active_closing_guidance
 from .register_realization import active_register_guidance
 from .semantic_realization import (
     opening_route_counts,
+    recurring_function_phrases,
     repeated_phrase_counts,
     reused_sentence_routes,
     semantic_contract_values,
@@ -1577,6 +1578,19 @@ def _focused_thread_ledger(
         if routes
         else ""
     )
+    # Sibling of the route ledger, one order lower: routes are 4-grams reused
+    # twice, these are the two-word grammatical sequences the thread has already
+    # leaned on. Named exactly, because E4 measured that naming a concrete token
+    # buys ~1.0 compliance where naming a category buys 0.23.
+    phrases = recurring_function_phrases(usable)
+    phrase_block = (
+        "Two-word sequences this thread has already leaned on -- say it a "
+        "different way:\n"
+        + "\n".join(f"- {value}" for value in phrases)
+        + "\n"
+        if phrases
+        else ""
+    )
     coverage_nonrepeat = (
         f"{SEMANTIC_COVERAGE_NONREPEAT_INSTRUCTION}\n"
         if str(
@@ -1589,6 +1603,7 @@ def _focused_thread_ledger(
         "Short utterances already used anywhere in this thread:\n"
         f"{short_block}\n"
         f"{route_block}"
+        f"{phrase_block}"
         "Semantic contributions already covered in this thread:\n"
         f"{coverage_block}\n"
         f"{coverage_nonrepeat}"
@@ -2169,6 +2184,17 @@ def _thread_memory(
         if sentence_routes
         else "- none yet"
     )
+    # E15: the `focused` builder is the shipped default and the `full` builder
+    # is the one that keeps getting forgotten. Both render it or neither does.
+    phrases = recurring_function_phrases(usable)
+    phrase_block = (
+        "Two-word sequences this thread has already leaned on -- say it a "
+        "different way:\n"
+        + "\n".join(f"- {value}" for value in phrases)
+        + "\n\n"
+        if phrases
+        else ""
+    )
     coverage_nonrepeat = (
         f"{SEMANTIC_COVERAGE_NONREPEAT_INSTRUCTION}\n"
         if str(
@@ -2188,6 +2214,7 @@ def _thread_memory(
         f"{coverage_nonrepeat}\n"
         "Sentence- or clause-entry routes already used in this thread:\n"
         f"{route_block}\n"
+        f"{phrase_block}"
         "Do not reuse one of these clause paths; keep domain entities when the local point needs them.\n\n"
         "Thread-level distribution pressure:\n"
         f"{_distribution_pressure(backend, usable, current_task=current_task, domain_profile=domain_profile or {})}"

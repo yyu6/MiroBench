@@ -563,6 +563,26 @@ def build_parser() -> argparse.ArgumentParser:
         ),
     )
     parser.add_argument(
+        "--recurring-phrase-ledger",
+        default="off",
+        help=(
+            "List the two-word grammatical sequences this thread has already "
+            "reused, so the Writer says it another way. 'off' reproduces v133 "
+            "byte-for-byte; a number is the minimum reuse count that puts a "
+            "pair on the list (3 is the measured operating point: ~12 items "
+            "covering 2.1%% of a comment's bigrams, against real's 1.6%%). "
+            "G134: our pairwise 2-gram overlap is a flat 2.1x real's at every "
+            "comment length, and a controlled ablation of exactly this band "
+            "removes 80.5%% of the excess and beats a mass-matched random "
+            "deletion in 33 of 33 threads -- the only candidate this session "
+            "to survive that test. Restricted to function-word pairs on "
+            "purpose: real threads DO reuse their topic nouns (`the ricoh`, "
+            "`the sony`, `the price`), so suppressing those would move away "
+            "from real; what we over-reuse is grammar (`is the`, `and the`, "
+            "`kind of`, `if the`)."
+        ),
+    )
+    parser.add_argument(
         "--writer-temperature",
         default="legacy",
         help=(
@@ -1130,6 +1150,7 @@ def main() -> None:
         "tone_quota": args.tone_quota,
         "plan_move_ledger": args.plan_move_ledger,
         "outsider_quota": args.outsider_quota,
+        "recurring_phrase_ledger": args.recurring_phrase_ledger,
         "writer_temperature": args.writer_temperature,
         "sentence_pacing": args.sentence_pacing,
         "interaction_scope": args.interaction_scope,
@@ -1348,6 +1369,9 @@ def main() -> None:
     env["GENERALIZED_CARD_TONE_QUOTA"] = args.tone_quota
     env["GENERALIZED_CARD_PLAN_MOVE_LEDGER"] = args.plan_move_ledger
     env["GENERALIZED_CARD_OUTSIDER_QUOTA"] = args.outsider_quota
+    env["GENERALIZED_CARD_RECURRING_PHRASE_LEDGER"] = str(
+        args.recurring_phrase_ledger
+    )
     env["GENERALIZED_CARD_WRITER_TEMPERATURE"] = str(args.writer_temperature)
     env["GENERALIZED_CARD_SENTENCE_PACING"] = args.sentence_pacing
     env["GENERALIZED_CARD_INTERACTION_SCOPE"] = args.interaction_scope
@@ -1717,6 +1741,7 @@ RUN_EXPERIMENT_FIELDS = (
     "tone_quota",
     "plan_move_ledger",
     "outsider_quota",
+    "recurring_phrase_ledger",
     "writer_temperature",
     "sentence_pacing",
     "interaction_scope",

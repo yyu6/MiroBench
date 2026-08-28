@@ -139,7 +139,11 @@ from .register_realization import (
     set_active_register_profile,
     set_register_realization,
 )
-from .semantic_realization import set_route_ledger, set_turn_frame
+from .semantic_realization import (
+    set_recurring_phrase_ledger,
+    set_route_ledger,
+    set_turn_frame,
+)
 from .sentence_rhythm import (
     set_active_rhythm_profile,
     set_digit_cue_guard,
@@ -580,6 +584,13 @@ def configure_generator_backend(
         os.environ.get("GENERALIZED_CARD_ROUTE_LEDGER", "on").strip().lower() or "on"
     )
     set_route_ledger(module.GENERALIZED_ROUTE_LEDGER)
+    module.GENERALIZED_RECURRING_PHRASE_LEDGER = (
+        os.environ.get("GENERALIZED_CARD_RECURRING_PHRASE_LEDGER", "off")
+        .strip()
+        .lower()
+        or "off"
+    )
+    set_recurring_phrase_ledger(module.GENERALIZED_RECURRING_PHRASE_LEDGER)
     # What a `no_story` slot is barred from. `tense` reproduces v96 and v97,
     # which barred any past action or event on 453 of 532 slots and took the
     # thread's lexicon down to 2,670 distinct types against a real 3,645: past

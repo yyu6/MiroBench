@@ -105,6 +105,79 @@ def set_route_ledger(mode: str) -> bool:
     return ROUTE_LEDGER_ENABLED
 
 
+# `off` reproduces every release through v133. Real threads repeat their
+# TOPIC -- `the ricoh`, `the sony`, `the price` are among the few bigrams a real
+# thread puts in more than a tenth of its comments -- while ours repeat GRAMMAR:
+# `is the`, `and the`, `kind of`, `if the`, `that's a`. Measured over
+# `paper_20260825`, our pairwise 2-gram overlap is a flat 2.1x real's at every
+# comment length (G134), and a controlled ablation of the function-word bigrams
+# a thread has already reused removes **80.5% of that excess and beats a
+# mass-matched random-deletion control in 33 of 33 threads** -- the only
+# candidate this session to survive that test (G127's assertion frame managed
+# 3.6% at 18/30). Restricting to function-word pairs is what keeps the arm from
+# suppressing the product names real threads legitimately repeat.
+RECURRING_PHRASE_MIN_USES = 0
+RECURRING_PHRASE_LIMIT = 24
+
+# Both tokens must be here for a bigram to be listed. Content words are exactly
+# what real threads reuse, so they stay out of it.
+_FUNCTION_TOKENS = frozenset(
+    """
+    a an the and or but if so then than that this these those there here
+    is are was were be been being am s re ve d ll t
+    of to in on at for with from by about into over after before as like just only
+    very really pretty quite kind sort bit lot much many more most less least
+    i you he she it we they me him her us them my your his its our their mine yours
+    what which who whom whose when where why how all any both each few other some such
+    no nor not too own same can could would should may might must will shall
+    do does did have has had get got go goes went one two up out off down again
+    still even also
+    """.split()
+)
+
+
+def set_recurring_phrase_ledger(mode: str) -> int:
+    """Select the recurring-phrase arm: `off`, or the minimum reuse count."""
+
+    global RECURRING_PHRASE_MIN_USES
+    value = str(mode or "off").strip().lower()
+    if value in ("", "off"):
+        RECURRING_PHRASE_MIN_USES = 0
+    else:
+        uses = int(value)
+        if uses < 2:
+            raise ValueError(
+                f"recurring-phrase ledger needs at least 2 uses, got {uses}"
+            )
+        RECURRING_PHRASE_MIN_USES = uses
+    return RECURRING_PHRASE_MIN_USES
+
+
+def recurring_function_phrases(
+    comments: Iterable[dict[str, Any]],
+    *,
+    limit: int = RECURRING_PHRASE_LIMIT,
+) -> list[str]:
+    """Two-word grammatical sequences this thread has already leaned on."""
+
+    if RECURRING_PHRASE_MIN_USES < 2:
+        return []
+    counts: Counter[tuple[str, str]] = Counter()
+    for comment in comments:
+        words = TOKEN_RE.findall(str(comment.get("content") or "").lower())
+        for pair in {
+            (left, right)
+            for left, right in zip(words, words[1:])
+            if left in _FUNCTION_TOKENS and right in _FUNCTION_TOKENS
+        }:
+            counts[pair] += 1
+    ranked = sorted(
+        (pair for pair, used in counts.items() if used >= RECURRING_PHRASE_MIN_USES),
+        key=lambda pair: (-counts[pair], pair),
+    )
+    return [" ".join(pair) for pair in ranked[:limit]]
+
+
 def reused_sentence_routes(
     comments: Iterable[dict[str, Any]],
     *,
