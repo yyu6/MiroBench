@@ -69,6 +69,26 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--domain", default="camera")
     parser.add_argument("--model", default="gpt-5.4-mini")
     parser.add_argument("--base-url", default="https://api.openai.com/v1")
+    parser.add_argument(
+        "--writer-model",
+        default="",
+        help=(
+            "Writer-only model override. Empty reproduces every release to date, "
+            "which sends --model to both the Planner and the Writer. G123 places "
+            "the remaining defect in realization, not in the plan, so this is the "
+            "axis worth varying."
+        ),
+    )
+    parser.add_argument(
+        "--writer-base-url",
+        default="",
+        help="Endpoint for --writer-model. Empty reuses --base-url.",
+    )
+    parser.add_argument(
+        "--writer-api-key-env",
+        default="",
+        help="Env var holding the key for --writer-model. Empty reuses --api-key-env.",
+    )
     parser.add_argument("--api-key-env", default="OPENAI_API_KEY")
     parser.add_argument("--tag", required=True)
     parser.add_argument(
@@ -1059,6 +1079,8 @@ def main() -> None:
         "domain_config": args.domain,
         "tag": args.tag,
         "model": args.model,
+        "writer_model": args.writer_model or args.model,
+        "writer_base_url": args.writer_base_url or args.base_url,
         "base_url": args.base_url,
         "seed_pool": str(seed_pool),
         "domain_profile": str(domain_profile_path),
@@ -1427,7 +1449,10 @@ def main() -> None:
     )
     env["OPENAI_API_KEY"] = api_key
     env["PLANNER_API_KEY"] = api_key
-    env["WRITER_API_KEY"] = api_key
+    # A writer-only model override usually lives behind a different provider,
+    # so it needs its own key; empty reuses the run's key unchanged.
+    writer_key = os.environ.get(args.writer_api_key_env, "") if args.writer_api_key_env else ""
+    env["WRITER_API_KEY"] = writer_key or api_key
     env["LLM_API_KEY"] = api_key
     env["TOKEN_USAGE_LOG_JSONL"] = str(run_root / "logs" / "token_usage.jsonl")
     env["TOKEN_USAGE_RUN_TAG"] = args.tag
@@ -1563,9 +1588,9 @@ def _generator_command(
         "--comment-planner-batch-size",
         str(args.comment_planner_batch_size),
         "--writer-model",
-        args.model,
+        args.writer_model or args.model,
         "--writer-base-url",
-        args.base_url,
+        args.writer_base_url or args.base_url,
         "--writer-timeout",
         "900",
         "--writer-profile",
