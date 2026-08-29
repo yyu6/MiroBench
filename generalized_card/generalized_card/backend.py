@@ -3623,10 +3623,16 @@ def _chat_completion_text(
                 # DeepSeek's v4 line splits a completion into `reasoning_content`
                 # and `content`, and on long prompts it sometimes finishes with
                 # `stop` having written the answer only into the reasoning field.
-                # Treat that as the completion rather than as an empty response;
-                # for every other provider this attribute is absent and the
-                # fallback is inert.
-                content = str(getattr(message, "reasoning_content", None) or "").strip()
+                # But the field is just as often a genuine scratchpad -- one
+                # v146 slot persisted 4,099 words of "The user wants me to write
+                # a Reddit comment. Let me parse the instructions..." ending in
+                # "This is my final answer", which also leaked planner-internal
+                # rules into the corpus. So accept it only when it does NOT read
+                # as deliberation. For every other provider the attribute is
+                # absent and this is inert.
+                candidate = str(getattr(message, "reasoning_content", None) or "").strip()
+                if candidate and not _reads_as_deliberation(candidate):
+                    content = candidate
             if content:
                 sleep_seconds = _float_env("LLM_CALL_SLEEP_SECONDS", 0.0)
                 if sleep_seconds > 0:
@@ -3795,6 +3801,28 @@ def _completion_kwargs(
     if reasoning_effort and model.lower().startswith("gpt-5"):
         kwargs["reasoning_effort"] = reasoning_effort
     return kwargs
+
+
+_DELIBERATION_RE = re.compile(
+    r"\b(the user (wants|asked|is asking)|let me (parse|think|write|check|re-read)"
+    r"|my final answer|i need to (open|write|make sure)|instructions carefully"
+    r"|re-reading|the plan allows|so my answer|okay,? so\b|first,? let me)\b",
+    re.IGNORECASE,
+)
+
+
+def _reads_as_deliberation(text: str) -> bool:
+    """True when a reasoning field is a scratchpad rather than the answer.
+
+    A reasoning model that finished with `stop` may have put the answer in
+    `reasoning_content` -- or may have put its planning there and written
+    nothing. The two are separable: deliberation addresses the task in the
+    second person and narrates its own steps, and it is long relative to a
+    Reddit comment.
+    """
+    if _DELIBERATION_RE.search(text):
+        return True
+    return len(text.split()) > 400
 
 
 def _next_completion_boost(

@@ -10383,3 +10383,28 @@ def test_deepseek_counts_as_a_reasoning_model_for_the_token_reserve():
     assert _uses_max_completion_tokens("gpt-5.4-mini")
     assert not _uses_max_completion_tokens("gpt-4o-mini")
     assert not _uses_max_completion_tokens("qwen-plus")
+
+
+def test_reasoning_content_fallback_rejects_deliberation():
+    """A reasoning scratchpad must not be persisted as a comment.
+
+    DeepSeek v4 sometimes writes the answer into `reasoning_content` and
+    sometimes writes only its planning there. v146 persisted 4,099 words of
+    "The user wants me to write a Reddit comment. Let me parse the
+    instructions..." ending in "This is my final answer" -- which also leaked
+    planner-internal register rules into the corpus. Real comments must still
+    pass through.
+    """
+    from generalized_card.backend import _reads_as_deliberation
+
+    assert _reads_as_deliberation(
+        "The user wants me to write a Reddit comment. Let me parse the instructions."
+    )
+    assert _reads_as_deliberation("Okay, so the plan allows DSLR to be named here.")
+    assert _reads_as_deliberation("word " * 401)
+    assert not _reads_as_deliberation(
+        "Weeks on my DSLR. Does the shutter get pressed once the novelty's gone?"
+    )
+    assert not _reads_as_deliberation(
+        "I shot terns at the harbor mouth and the focus box just stayed on the bird."
+    )
