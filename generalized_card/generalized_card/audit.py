@@ -178,11 +178,22 @@ def audit_generated_root(
                 candidate_perspective_ids = set(perspective_ids)
                 if re.fullmatch(r"P\d{2}", row_perspective):
                     candidate_perspective_ids.add(row_perspective)
+                # A token that appears in this slot's own assigned anchors is a
+                # product name, not a planner id: anchors are drawn from the seed
+                # post and the matched real comments, never from control ids.
+                # `The Lumix S9` reached a v137ds slot as `The Lumix S9
+                # (planner)` and still failed the audit as slot S9.
+                anchor_ids = {
+                    m.group(0).upper()
+                    for anchor in (row.get("concrete_anchors") or [])
+                    for m in INTERNAL_CONTROL_ID_RE.finditer(str(anchor))
+                }
                 leaked_labels = sorted(
                     {
                         match.group(0).upper()
                         for match in INTERNAL_CONTROL_ID_RE.finditer(text)
                         if match.group(0).upper() not in visible_control_ids
+                        and match.group(0).upper() not in anchor_ids
                         and not _is_product_shaped(text, match)
                         and (
                             match.group(0).upper() in candidate_perspective_ids

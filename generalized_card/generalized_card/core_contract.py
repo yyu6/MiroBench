@@ -517,7 +517,7 @@ CORE_FILES = {
     ),
     "output_audit": (
         "generalized_card/generalized_card/audit.py",
-        "40cf19dfc8ee62be8a12640c74edfc23e2017a313a67f06a364f8e4c65d2d2f8",
+        "7ed3a6edebbc11a5d270ab378dec750e896ac869baea6d90793baf5ba02f1ad0",
     ),
     "evaluation_runner": (
         "generalized_card/scripts/run_evaluate.py",

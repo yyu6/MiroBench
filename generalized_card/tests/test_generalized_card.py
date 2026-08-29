@@ -10408,3 +10408,25 @@ def test_reasoning_content_fallback_rejects_deliberation():
     assert not _reads_as_deliberation(
         "I shot terns at the harbor mouth and the focus box just stayed on the bird."
     )
+
+
+def test_audit_control_id_leak_whitelists_anchor_tokens():
+    """A token in the slot's own anchors is a product name, not a planner id.
+
+    `The Lumix S9` reached a v137ds slot as the anchor `The Lumix S9 (planner)`
+    and still failed the evaluation-integrity audit as slot S9, blocking a
+    finished run. Anchors are drawn from the seed post and the matched real
+    comments and are never control ids, so any id-shaped token appearing in
+    them is safe. The writer guard already used this rule; the audit did not.
+    """
+    from generalized_card.prompts import INTERNAL_CONTROL_ID_RE
+
+    anchors = ["The Lumix S9 (planner)", "a7R (planner)"]
+    anchor_ids = {
+        m.group(0).upper()
+        for a in anchors
+        for m in INTERNAL_CONTROL_ID_RE.finditer(str(a))
+    }
+    assert "S9" in anchor_ids
+    # a slot id the anchors do not justify is still a leak
+    assert "S20" not in anchor_ids
