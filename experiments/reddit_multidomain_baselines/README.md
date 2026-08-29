@@ -126,3 +126,6 @@ Generation uses the repository's existing `SynthPAI`, `product_reddit_sim`,
 and vendored MiroFish/OASIS environments. Evaluation additionally needs the
 existing local metric checkpoints/dependencies. Run the smoke test above after
 pulling to validate only the generation wiring without incurring API cost.
+When `SynthPAI/.venv/bin/python` exists, generation uses it automatically so
+SynthPAI's legacy OpenAI SDK remains isolated from the repository environment;
+override it with `--synthpai-python` only when needed.

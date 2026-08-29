@@ -60,6 +60,15 @@ def parse_args() -> argparse.Namespace:
         ),
     )
     parser.add_argument("--synthpai-config", default="configs/thread/thread_gpt4omini_city_country.yaml")
+    parser.add_argument(
+        "--synthpai-python",
+        type=Path,
+        default=None,
+        help=(
+            "Python executable for SynthPAI. Defaults to SynthPAI/.venv/bin/python "
+            "when present, otherwise the current interpreter."
+        ),
+    )
     parser.add_argument("--synthpai-min-comments-per-post", type=int, default=1)
     parser.add_argument("--thread-retries", type=int, default=1)
     parser.add_argument("--run-retries", type=int, default=1)
@@ -228,7 +237,7 @@ def run_job(
             ]
         elif baseline == "synthpai":
             command = [
-                sys.executable,
+                str(_synthpai_python(args)),
                 str(REPO_ROOT / "scripts" / "run_synthpai_matched_seed_generator.py"),
                 "--seed-post-pool-json",
                 str(seed_pool),
@@ -353,6 +362,18 @@ def _job_env(
         paths.append(existing_python_path)
     env["PYTHONPATH"] = os.pathsep.join(paths)
     return env
+
+
+def _synthpai_python(args: argparse.Namespace) -> Path:
+    if args.synthpai_python is not None:
+        executable = args.synthpai_python.expanduser().resolve()
+        if not executable.is_file():
+            raise FileNotFoundError(f"SynthPAI Python executable not found: {executable}")
+        return executable
+    dedicated = REPO_ROOT / "SynthPAI" / ".venv" / "bin" / "python"
+    if dedicated.is_file():
+        return dedicated
+    return Path(sys.executable)
 
 
 def _run_logged(command: list[str], *, env: dict[str, str], log_path: Path, label: str) -> None:
