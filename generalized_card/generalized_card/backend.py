@@ -3617,7 +3617,16 @@ def _chat_completion_text(
         try:
             response = client.chat.completions.create(**kwargs)
             _record_usage(response, model=model)
-            content = str(response.choices[0].message.content or "").strip()
+            message = response.choices[0].message
+            content = str(getattr(message, "content", None) or "").strip()
+            if not content:
+                # DeepSeek's v4 line splits a completion into `reasoning_content`
+                # and `content`, and on long prompts it sometimes finishes with
+                # `stop` having written the answer only into the reasoning field.
+                # Treat that as the completion rather than as an empty response;
+                # for every other provider this attribute is absent and the
+                # fallback is inert.
+                content = str(getattr(message, "reasoning_content", None) or "").strip()
             if content:
                 sleep_seconds = _float_env("LLM_CALL_SLEEP_SECONDS", 0.0)
                 if sleep_seconds > 0:
