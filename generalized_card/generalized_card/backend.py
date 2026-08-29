@@ -3897,8 +3897,15 @@ def writer_temperature_override(scheduled: float) -> float | None:
 
 
 def _uses_max_completion_tokens(model: str) -> bool:
+    """Models that spend hidden reasoning tokens out of the same budget.
+
+    DeepSeek's v4 line returns `reasoning_content` alongside `content` and
+    charges both against the cap, so a 260-token writer call comes back with
+    `finish_reason=length` and an empty body -- exactly the gpt-5 failure this
+    branch exists for. Without it the reasoning reserve is silently inert.
+    """
     value = model.strip().lower()
-    return value.startswith(("gpt-5", "o1", "o3"))
+    return value.startswith(("gpt-5", "o1", "o3", "deepseek"))
 
 
 def _int_env(name: str, default: int) -> int:

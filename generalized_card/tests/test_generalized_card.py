@@ -10365,3 +10365,21 @@ def test_audit_control_id_leak_ignores_urls_and_product_names():
     # a bare slot id in prose is still a leak
     assert not _is_product_shaped(*only("cover S20 in this reply"))
     assert not _is_product_shaped(*only("branch B3 owns the price angle"))
+
+
+def test_deepseek_counts_as_a_reasoning_model_for_the_token_reserve():
+    """DeepSeek v4 spends reasoning tokens out of the same completion budget.
+
+    It returns `reasoning_content` beside `content` and charges both against
+    the cap, so a 260-token writer call returns `finish_reason=length` with an
+    empty body -- the exact gpt-5 failure the reserve branch exists for. Before
+    this, `--gpt5-reasoning-token-reserve` was silently inert for deepseek and
+    a smoke run lost every post to empty completions.
+    """
+    from generalized_card.backend import _uses_max_completion_tokens
+
+    assert _uses_max_completion_tokens("deepseek-v4-flash")
+    assert _uses_max_completion_tokens("deepseek-v4-pro")
+    assert _uses_max_completion_tokens("gpt-5.4-mini")
+    assert not _uses_max_completion_tokens("gpt-4o-mini")
+    assert not _uses_max_completion_tokens("qwen-plus")
