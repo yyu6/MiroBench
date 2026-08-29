@@ -10339,3 +10339,29 @@ def test_planner_residue_guard_accepts_real_product_model_names():
     # a bare slot id with nothing to justify it is still residue
     assert check("cover S20 in this reply", bare)
     assert check("branch B3 owns the price angle", bare)
+
+
+def test_audit_control_id_leak_ignores_urls_and_product_names():
+    """A Canon URL containing `rf-s18-45mm` is not a leaked planner slot id.
+
+    The same `(?:P\\d{2}|S\\d+|B\\d+)` pattern that misread "Fujifilm X-S20"
+    in the writer guard also fires inside
+    `.../refurbished-eos-r50-rf-s18-45mm-...`, which failed the
+    evaluation-integrity audit on a finished 40-thread run and blocked its
+    evaluation outright.
+    """
+    from generalized_card.audit import _is_product_shaped
+    from generalized_card.prompts import INTERNAL_CONTROL_ID_RE
+
+    def only(text):
+        m = list(INTERNAL_CONTROL_ID_RE.finditer(text))
+        assert m, text
+        return text, m[0]
+
+    # inside a URL
+    assert _is_product_shaped(*only("see https://www.usa.canon.com/p/rf-s18-45mm-kit here"))
+    # hyphenated product model
+    assert _is_product_shaped(*only("way smaller than a Fuji X-S20"))
+    # a bare slot id in prose is still a leak
+    assert not _is_product_shaped(*only("cover S20 in this reply"))
+    assert not _is_product_shaped(*only("branch B3 owns the price angle"))

@@ -183,6 +183,7 @@ def audit_generated_root(
                         match.group(0).upper()
                         for match in INTERNAL_CONTROL_ID_RE.finditer(text)
                         if match.group(0).upper() not in visible_control_ids
+                        and not _is_product_shaped(text, match)
                         and (
                             match.group(0).upper() in candidate_perspective_ids
                             or match.group(0).upper().startswith(("S", "B"))
@@ -393,6 +394,27 @@ def _planner_rows_for_audit(
         plan["parent_sample_id"] = index_by_comment_id.get(parent_key, "")
         fallback[sample_id] = plan
     return fallback
+
+
+def _is_product_shaped(text: str, match: "re.Match[str]") -> bool:
+    """True when a control-id match is really part of a product name or a URL.
+
+    `(?:P\\d{2}|S\\d+|B\\d+)` matches `S18` inside the Canon URL
+    `.../refurbished-eos-r50-rf-s18-45mm-f4-5-6-3-is-stm-lens-kit`, `S20`
+    inside "Fujifilm X-S20", and `S5` inside "Panasonic Lumix S5". A planner
+    slot id is always emitted as a bare token in prose, never hyphenated and
+    never inside a URL, so both shapes are safe to exclude. Not fixed in the
+    shared regex on purpose: prompts.py uses it to mask control ids out of
+    visible seed text, where widening it would leak real slot ids.
+    """
+    if text[match.start() - 1 : match.start()] == "-":
+        return True
+    if text[match.end() : match.end() + 1] == "-":
+        return True
+    start = text.rfind(" ", 0, match.start()) + 1
+    end = text.find(" ", match.end())
+    token = text[start : end if end != -1 else len(text)]
+    return "://" in token or token.lower().startswith("www.")
 
 
 def _flatten(comments: list[dict[str, Any]]):
