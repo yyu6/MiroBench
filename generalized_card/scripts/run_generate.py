@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import math
 import os
@@ -750,6 +751,19 @@ def build_parser() -> argparse.ArgumentParser:
         ),
     )
     parser.add_argument(
+        "--seed-pool-exclude",
+        type=Path,
+        nargs="*",
+        default=(),
+        help=(
+            "Existing seed-pool JSON files whose threads must not appear in this "
+            "run's pool. The held-out set is hashed into the pool's own filename, "
+            "so a pool built with exclusions can never be silently replaced by "
+            "one built without them. Use it for a calibration run that must share "
+            "no thread with any evaluation pool (docs/CALIBRATION_RUNBOOK.md)."
+        ),
+    )
+    parser.add_argument(
         "--length-ceiling",
         choices=("off", "measured"),
         default="off",
@@ -1011,12 +1025,28 @@ def main() -> None:
     generated_root = run_root / "generated"
     if run_root.exists() and not args.resume and not args.prepare_only:
         raise SystemExit(f"Run exists; pass --resume or choose a new --tag: {run_root}")
+    exclude_keys: set[tuple[str, str]] = set()
+    for pool_path in args.seed_pool_exclude or ():
+        payload = json.loads(Path(pool_path).expanduser().resolve().read_text(encoding="utf-8"))
+        for row in payload.get("seed_posts") or ():
+            exclude_keys.add(
+                (str(row.get("source_product_dir")), str(row.get("source_raw_post_id")))
+            )
+    # The held-out set goes in the FILENAME, not only inside the file. A pool is
+    # rebuilt from its name whenever it is missing, so an exclusion that lived
+    # only in the contents would be silently dropped by that rebuild.
+    exclude_tag = ""
+    if exclude_keys:
+        digest = hashlib.sha256(
+            "\n".join(sorted(f"{a}\t{b}" for a, b in exclude_keys)).encode("utf-8")
+        ).hexdigest()[:8]
+        exclude_tag = f"_excl{len(exclude_keys)}x{digest}"
     seed_pool = (
         REPO_ROOT
         / "artifacts"
         / "generalized_card"
         / "seed_pools"
-        / f"{config.domain_id}_{args.pool_size}_seed{args.sampling_seed}.json"
+        / f"{config.domain_id}_{args.pool_size}_seed{args.sampling_seed}{exclude_tag}.json"
     )
     if not seed_pool.exists():
         build_seed_pool(
@@ -1024,6 +1054,7 @@ def main() -> None:
             seed_pool,
             count=args.pool_size,
             seed=args.sampling_seed,
+            exclude_keys=exclude_keys or None,
         )
 
     domain_profile_path = (
