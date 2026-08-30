@@ -2370,3 +2370,23 @@ by grepping `^| G16[0-9]` and seeing a gap in the numbering.
 **Why it matters here.** DECISIONS.md is the project's memory across sessions. A row
 that is silently absent is worse than one never written, because the commit history
 asserts it exists.
+
+## 2026-08-30 — Built a calibration-pool builder that already existed
+
+**What happened.** Needing a seed pool disjoint from the evaluation pools, I added
+`exclude_keys` to `build_seed_pool`, `--exclude-pool` to `build_seed_pool.py`, and
+`--seed-pool-exclude` to `run_generate.py`. `generalized_card/analysis/tone_carrier/
+build_calibration_pool.py` had already solved the pool-building half, and its
+docstring even states the motivation in the same terms.
+
+**What was not redundant.** That script names the remaining hazard and leaves it to
+human discipline: *"deleting it and re-running would silently produce an UNFILTERED
+pool at the same path. Run this script immediately before the calibration run."*
+`--seed-pool-exclude` hashes the held-out set into the pool's filename, so a rebuild
+reproduces the exclusion and the silent-replacement failure becomes impossible.
+
+**Rule.** Before building infrastructure for a documented-but-unsolved problem,
+grep the analysis directories, not just the package. `analysis/*/` in this repo holds
+working tools, not only throwaway scripts — `build_calibration_pool.py`,
+`fit_tone_matrix.py` and `cap_decision.py` are all part of the tone workflow and are
+referenced from `tone_realization.py`'s own docstring, which I had read.
