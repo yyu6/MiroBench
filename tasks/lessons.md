@@ -2346,3 +2346,27 @@ Each gap cost a paid run to work around. Both are now fixed
 (`_print_failed_slot_diagnosis`). **When a failure path discards the evidence
 that explains it, fix that before paying to reproduce it** — the fix is
 usually smaller than the run.
+
+## 2026-08-30 — A shell cwd that drifted silently deleted two ledger rows
+
+**What happened.** A foreground `cd generalized_card && pytest ...` left the shell
+there for every later call. Two `cat >> docs/DECISIONS.md <<'EOF'` appends then
+resolved to `generalized_card/docs/`, which does not exist. zsh printed one line
+(`no such file or directory`) that was buried under an unrelated git error in the
+same compound command, and the `git commit` that followed reported success because
+it was committing *other* files. **G165 and G166 were never written**, and the
+commit message for the pool work claimed a row that was not in the file. Found only
+by grepping `^| G16[0-9]` and seeing a gap in the numbering.
+
+**Rules.**
+1. Write to project files with **absolute paths**, always. Never a relative path in
+   a `>>` redirect.
+2. Never chain `cat >> file` with `git add && git commit` in one command. The commit
+   will succeed on the other staged paths and hide the failed write.
+3. After appending a numbered ledger row, **verify the number is present** before
+   committing: `grep -o '^| G1[0-9][0-9]' docs/DECISIONS.md | tail -3`.
+4. Use `git -C <abs-repo-root>` rather than relying on cwd.
+
+**Why it matters here.** DECISIONS.md is the project's memory across sessions. A row
+that is silently absent is worse than one never written, because the commit history
+asserts it exists.
