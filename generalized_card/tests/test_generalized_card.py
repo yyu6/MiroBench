@@ -10430,3 +10430,129 @@ def test_audit_control_id_leak_whitelists_anchor_tokens():
     assert "S9" in anchor_ids
     # a slot id the anchors do not justify is still a leak
     assert "S20" not in anchor_ids
+
+
+def test_length_ceiling_is_off_by_default_and_withholds_without_a_profile():
+    """The arm reproduces the previous release until it is switched on."""
+
+    from generalized_card import length_fidelity as lf
+
+    lf.set_length_ceiling("off")
+    lf.set_active_length_fidelity_profile({"available": True, "tail_cut": 300.0, "tail_count": 143.0})
+    task = SimpleNamespace(real_word_count=40)
+    assert lf.length_ceiling_problem("word " * 900, task) == ""
+
+    # On, but the domain has no measured tail: withhold rather than gate.
+    lf.set_length_ceiling("measured")
+    lf.set_active_length_fidelity_profile({"available": True, "cuts": [7.0, 12.0]})
+    assert lf.length_ceiling_problem("word " * 900, task) == ""
+
+    # On, but the tail rests on too few reference comments.
+    lf.set_active_length_fidelity_profile(
+        {"available": True, "tail_cut": 300.0, "tail_count": 12.0}
+    )
+    assert lf.length_ceiling_problem("word " * 900, task) == ""
+    lf.set_length_ceiling("off")
+
+
+def test_length_ceiling_fires_on_the_tail_regardless_of_the_assigned_band():
+    """A tail overshoot sits inside its own assigned band, which is why the band
+    check cannot see it and this one must be separate."""
+
+    from generalized_card import length_fidelity as lf
+
+    lf.set_length_ceiling("measured")
+    lf.set_active_length_fidelity_profile(
+        {
+            "available": True,
+            "cuts": [7.0, 12.0, 18.0, 24.0, 31.0, 39.0, 52.0, 72.0, 108.0],
+            "band_counts": {str(i): 1500.0 for i in range(11)},
+            "tail_cut": 300.0,
+            "tail_count": 143.0,
+        }
+    )
+    # Assigned 150 and realized 523: both land in the open top band, so the band
+    # rule is silent while the ceiling rule fires.
+    task = SimpleNamespace(real_word_count=150)
+    assert lf.length_band_problem("word " * 523, task) == ""
+    problem = lf.length_ceiling_problem("word " * 523, task)
+    assert problem.startswith(lf.CEILING_PREFIX)
+    assert "523w" in problem and "300w" in problem
+
+    # Under the cut, nothing fires even for a badly missed target.
+    assert lf.length_ceiling_problem("word " * 299, task) == ""
+
+    # A slot assigned past the cut is NOT waived -- those slots are the largest
+    # contributors to the thread's length spread.
+    assert lf.length_ceiling_problem("word " * 523, SimpleNamespace(real_word_count=400))
+    lf.set_length_ceiling("off")
+
+
+def test_length_ceiling_problem_is_soft_and_carries_a_length_only_retry_note():
+    """Soft keeps a matched structural slot from ever being dropped."""
+
+    from generalized_card import length_fidelity as lf
+    from generalized_card.length_policy import is_soft_length_problem
+
+    problem = f"{lf.CEILING_PREFIX}523w past the 300w ceiling"
+    assert is_soft_length_problem(problem)
+    note = lf.ceiling_retry_note(problem)
+    assert "523w" in note
+    # It must name no content, or it teaches the Writer a shared phrasing (G37).
+    for word in ("camera", "lens", "product", "topic", "point about"):
+        assert word not in note.lower()
+
+
+def test_length_fidelity_profile_records_the_tail_cut():
+    """The profile is one measurement of the domain, not one per arm."""
+
+    from generalized_card import length_fidelity as lf
+
+    # p99 leaves 1% above it by construction, so a supported tail needs a corpus
+    # of at least MIN_TAIL_COMMENTS * 100 comments. Camera's excluded corpus has
+    # 14,304 and puts 143 above its 300-word cut.
+    lengths = [1 + (i % 120) for i in range(5000)] + [400 + i for i in range(100)]
+    threads = [{"comments": [{"body": "word " * n} for n in lengths]}]
+    profile = lf.build_length_fidelity_profile(threads)
+    assert profile["available"] is True
+    assert profile["tail_cut"] > 0
+    assert profile["tail_count"] >= lf.MIN_TAIL_COMMENTS
+    assert lf.active_tail_cut(profile) == profile["tail_cut"]
+
+    # A lumpy distribution whose p99 IS its maximum leaves nothing above the cut.
+    # The contract is to withhold the check, not to gate on an unsupported tail.
+    lumpy = [{"comments": [{"body": "word " * n} for n in ([5] * 400 + [50] * 400 + [500] * 60)]}]
+    thin = lf.build_length_fidelity_profile(lumpy)
+    assert thin["tail_count"] < lf.MIN_TAIL_COMMENTS
+    assert lf.active_tail_cut(thin) == 0.0
+
+
+def test_build_seed_pool_can_hold_out_the_evaluation_threads(tmp_path):
+    """A calibration pool must share no thread with any evaluation pool."""
+
+    import json
+
+    from generalized_card.data import build_seed_pool
+    from generalized_card.domain import load_domain_config
+
+    config = load_domain_config("camera")
+    first = build_seed_pool(config, tmp_path / "a.json", count=12, seed=11)
+    keys = {
+        (row["source_product_dir"], row["source_raw_post_id"])
+        for row in first["seed_posts"]
+    }
+    second = build_seed_pool(config, tmp_path / "b.json", count=12, seed=11, exclude_keys=keys)
+    other = {
+        (row["source_product_dir"], row["source_raw_post_id"])
+        for row in second["seed_posts"]
+    }
+    assert not (keys & other)
+    assert second["meta"]["excluded_threads"] == len(keys)
+
+    # Default None leaves sampling identical, so every existing caller is unchanged.
+    repeat = build_seed_pool(config, tmp_path / "c.json", count=12, seed=11)
+    assert [row["source_raw_post_id"] for row in repeat["seed_posts"]] == [
+        row["source_raw_post_id"] for row in first["seed_posts"]
+    ]
+    assert repeat["meta"]["excluded_threads"] == 0
+    assert json.loads((tmp_path / "c.json").read_text())["seed_posts"]

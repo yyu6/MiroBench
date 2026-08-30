@@ -23,7 +23,27 @@ def main() -> None:
     parser.add_argument("--min-comments", type=int, default=0)
     parser.add_argument("--output", type=Path)
     parser.add_argument("--audit-only", action="store_true")
+    parser.add_argument(
+        "--exclude-pool",
+        type=Path,
+        nargs="*",
+        default=(),
+        help=(
+            "Existing seed-pool JSON files whose threads must NOT appear in this "
+            "pool. Use it to build a calibration pool disjoint from every "
+            "evaluation pool, which is what lets a realization matrix be "
+            "measured without touching a thread it will later be judged on."
+        ),
+    )
     args = parser.parse_args()
+
+    exclude: set[tuple[str, str]] = set()
+    for path in args.exclude_pool or ():
+        data = json.loads(Path(path).expanduser().resolve().read_text(encoding="utf-8"))
+        for row in data.get("seed_posts") or ():
+            exclude.add((str(row.get("source_product_dir")), str(row.get("source_raw_post_id"))))
+    if exclude:
+        print(f"[exclude] {len(exclude)} threads held out from {len(args.exclude_pool)} pool(s)", flush=True)
 
     config = load_domain_config(args.domain)
     audit = audit_domain(config)
@@ -43,6 +63,7 @@ def main() -> None:
         count=args.count,
         seed=args.seed,
         min_comments=args.min_comments or None,
+        exclude_keys=exclude or None,
     )
     print(
         f"[seed-pool] domain={config.domain_id} rows={len(payload['seed_posts'])} "

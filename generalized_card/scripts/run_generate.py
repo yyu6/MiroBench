@@ -750,6 +750,29 @@ def build_parser() -> argparse.ArgumentParser:
         ),
     )
     parser.add_argument(
+        "--length-ceiling",
+        choices=("off", "measured"),
+        default="off",
+        help=(
+            "Refuse a realized comment longer than the domain's own measured "
+            "p99 comment length (300 words for camera, from the same "
+            "evaluation-excluded corpus the band cuts come from). 'off' "
+            "reproduces the previous release byte-for-byte. This is NOT a "
+            "variant of --length-fidelity and neither implies the other: the "
+            "top decile band is open above 108 words, so a slot assigned 150 "
+            "words that realizes 523 sits in its own assigned band and the "
+            "band check reports nothing. Simulated on the 50 matched DeepSeek "
+            "threads, band matching moves length_cv d from +0.23 to +0.27 by "
+            "quantising 40%% of slots onto band edges, while the ceiling alone "
+            "takes it to +0.04 by touching 1.8%% -- length_cv is a coefficient "
+            "of variation and only the tail can move it (docs/DECISIONS.md "
+            "G157, G162). Registered soft, so it drives the Writer retry loop "
+            "and never makes a matched slot blocking; it therefore does "
+            "nothing unless --writer-retries is above 0. Costs the ~1%% of "
+            "comments real writes above its own p99."
+        ),
+    )
+    parser.add_argument(
         "--entity-spread",
         choices=("off", "measured"),
         default="off",
@@ -1166,6 +1189,7 @@ def main() -> None:
         "route_ledger": args.route_ledger,
         "entity_spread": args.entity_spread,
         "length_fidelity": args.length_fidelity,
+        "length_ceiling": args.length_ceiling,
         "length_transfer": args.length_transfer,
         "development_scope": args.development_scope,
         "reference_link": args.reference_link,
@@ -1385,6 +1409,7 @@ def main() -> None:
     env["GENERALIZED_CARD_ROUTE_LEDGER"] = args.route_ledger
     env["GENERALIZED_CARD_ENTITY_SPREAD"] = args.entity_spread
     env["GENERALIZED_CARD_LENGTH_FIDELITY"] = args.length_fidelity
+    env["GENERALIZED_CARD_LENGTH_CEILING"] = args.length_ceiling
     env["GENERALIZED_CARD_LENGTH_TRANSFER"] = args.length_transfer
     env["GENERALIZED_CARD_DEVELOPMENT_SCOPE"] = args.development_scope
     env["GENERALIZED_CARD_REFERENCE_LINK"] = args.reference_link
@@ -1760,6 +1785,7 @@ RUN_EXPERIMENT_FIELDS = (
     "route_ledger",
     "entity_spread",
     "length_fidelity",
+    "length_ceiling",
     "length_transfer",
     "development_scope",
     "reference_link",

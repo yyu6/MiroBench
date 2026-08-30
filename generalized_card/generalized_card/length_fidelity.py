@@ -75,6 +75,41 @@ a problem, which is why the arm is only meaningful together with a non-zero
 
 The arm is `--length-fidelity {off,measured}`, default `off`, which registers
 nothing and reproduces the previous release byte-for-byte.
+
+**The ceiling is a second, separate rule, and the band rule cannot do its job.**
+A writer that overshoots only in the far tail is invisible to a band check: the
+top decile is open above 108 words, so a slot assigned 150 words that realizes
+523 sits in the *same* band as its target and raises nothing. Measured on the
+DeepSeek writer, realized/asked runs 1.15x at the median but **5.00x at p99**
+with a maximum of 18.7x, against gpt's 3.29x and 6.0x -- and because
+`length_cv` is a coefficient of variation, and therefore scale-invariant, only
+that tail can move it (`docs/DECISIONS.md` G157).
+
+Simulating the two rules on the same 50 matched threads separates them cleanly:
+
+    no arm                                        length_cv d +0.23
+    band matching, deciles, top band open              d +0.27   40.1% of slots
+    band matching, deciles + a p99 cut                 d +0.26   40.8% of slots
+    ceiling alone at the profile's p99                 d +0.04    1.8% of slots
+
+**Band matching makes `length_cv` worse**, in both directions and at either cut
+set, because it moves two slots in five onto a coarse band edge and quantises a
+distribution that was already the right shape in its body -- our p10 and p50
+match real almost exactly (9 vs 8 words, 35 vs 33). The ceiling touches 1.8% of
+slots, all on one side, and is the only one of the two that closes the gap.
+So `--length-ceiling` is registered independently of `--length-fidelity`; they
+are not variants of one another and neither implies the other.
+
+The ceiling cut is the domain's own p99, measured on the same evaluation-excluded
+corpus as the band cuts -- 300 words for camera, where the excluded corpus puts
+1.00% of comments above it against our 1.89%. It is not a tuned constant and no
+evaluation-side number was consulted to choose it (`docs/DECISIONS.md` G161).
+
+**What it costs, stated rather than hidden:** real does write above its own p99,
+about 1% of the time, and a slot held under the ceiling never will. The arm
+trades that 1% tail for the 0.89% of excess tail we produce beyond it.
+
+The arm is `--length-ceiling {off,measured}`, default `off`.
 """
 
 from __future__ import annotations
@@ -85,6 +120,7 @@ from typing import Any
 # Installed per run from the frozen domain profile, like ACTIVE_RHYTHM_PROFILE.
 ACTIVE_LENGTH_FIDELITY_PROFILE: dict[str, Any] = {}
 LENGTH_FIDELITY_ENABLED = False
+LENGTH_CEILING_ENABLED = False
 
 # Deciles. See the module docstring: quintiles leave the top band open above the
 # 80th percentile, which is precisely where the undershoot lives.
@@ -95,6 +131,16 @@ BAND_QUANTILES: tuple[float, ...] = (0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9
 MIN_BAND_COMMENTS = 40
 
 PROBLEM_PREFIX = "length_band_mismatch:"
+CEILING_PREFIX = "length_ceiling_exceeded:"
+
+# The ceiling cut. A separate quantile from BAND_QUANTILES because it answers a
+# different question: not "which band is this slot in" but "has this comment left
+# the length range the domain ever uses".
+TAIL_QUANTILE = 0.99
+
+# The tail must rest on at least this many reference comments before it can gate,
+# the same withhold-rather-than-default contract the bands use.
+MIN_TAIL_COMMENTS = 40
 
 
 def set_active_length_fidelity_profile(profile: dict[str, Any] | None) -> None:
@@ -105,11 +151,24 @@ def set_active_length_fidelity_profile(profile: dict[str, Any] | None) -> None:
 
 
 def set_length_fidelity(mode: str) -> bool:
-    """Select the arm and return whether it is active."""
+    """Select the band arm and return whether it is active."""
 
     global LENGTH_FIDELITY_ENABLED
     LENGTH_FIDELITY_ENABLED = str(mode or "off").strip().lower() == "measured"
     return LENGTH_FIDELITY_ENABLED
+
+
+def set_length_ceiling(mode: str) -> bool:
+    """Select the ceiling arm and return whether it is active.
+
+    Independent of `set_length_fidelity`: the two rules are separately measured
+    and separately switched, and the module docstring records why one cannot
+    stand in for the other.
+    """
+
+    global LENGTH_CEILING_ENABLED
+    LENGTH_CEILING_ENABLED = str(mode or "off").strip().lower() == "measured"
+    return LENGTH_CEILING_ENABLED
 
 
 def build_length_fidelity_profile(threads: Any) -> dict[str, Any]:
@@ -136,11 +195,17 @@ def build_length_fidelity_profile(threads: Any) -> dict[str, Any]:
     counts: dict[str, float] = {}
     for count in words:
         counts[str(band_of(count, cuts))] = counts.get(str(band_of(count, cuts)), 0.0) + 1.0
+    tail_cut = float(percentiles[int(TAIL_QUANTILE * 100) - 1])
     return {
         "available": True,
         "cuts": cuts,
         "band_counts": counts,
         "comment_count": float(len(words)),
+        # Recorded unconditionally so the profile stays one measurement of the
+        # domain rather than one per arm. Only `--length-ceiling` reads it, so a
+        # run with the arm off is unaffected by its presence.
+        "tail_cut": tail_cut,
+        "tail_count": float(sum(1 for count in words if count > tail_cut)),
     }
 
 
@@ -211,6 +276,68 @@ def length_band_problem(
         return ""
     low, high = band_bounds(target_band, cuts)
     return f"{PROBLEM_PREFIX}{realized}w in band {actual_band}, assigned {assigned}w in band {target_band} [{low}-{high}]"
+
+
+def active_tail_cut(profile: dict[str, Any] | None = None) -> float:
+    """The installed ceiling in words, or 0.0 when the domain has none measured.
+
+    Returns 0.0 for a profile built before the ceiling was recorded, which makes
+    an older profile withhold the check rather than gate against a missing cut.
+    """
+
+    data = profile if profile is not None else ACTIVE_LENGTH_FIDELITY_PROFILE
+    if not (data or {}).get("available"):
+        return 0.0
+    try:
+        cut = float((data or {}).get("tail_cut") or 0.0)
+        support = float((data or {}).get("tail_count") or 0.0)
+    except (TypeError, ValueError):
+        return 0.0
+    if cut <= 0.0 or support < MIN_TAIL_COMMENTS:
+        return 0.0
+    return cut
+
+
+def length_ceiling_problem(
+    text: str,
+    task: Any,
+    *,
+    profile: dict[str, Any] | None = None,
+) -> str:
+    """Report a realized length past the domain's measured tail cut, or "".
+
+    Unconditional on the assigned count. A slot assigned above the cut is the
+    rarest case there is -- 1.8% of slots trip the ceiling at all -- and waiving
+    those is what separates a d of +0.04 from one of +0.13 in simulation, because
+    the few slots assigned into the tail are also the largest single
+    contributors to the thread's length spread.
+    """
+
+    if not LENGTH_CEILING_ENABLED:
+        return ""
+    cut = active_tail_cut(profile)
+    if cut <= 0.0:
+        return ""
+    realized = len(str(text or "").split())
+    if realized <= cut:
+        return ""
+    return f"{CEILING_PREFIX}{realized}w past the {int(cut)}w ceiling"
+
+
+def ceiling_retry_note(problem: str) -> str:
+    """The revision instruction for a ceiling miss.
+
+    Names length only, for the same reason `retry_note` does: a note that names
+    content pushes the Writer toward a shared way of saying things (G37).
+    """
+
+    detail = problem.split(":", 1)[1].strip() if ":" in problem else problem
+    return (
+        "This comment is longer than anything this community writes: "
+        f"{detail}. Cut it to the single local point it was assigned. Drop whole "
+        "passages rather than compressing every sentence, and do not replace the "
+        "cut material with a summary or a closing line."
+    )
 
 
 def band_bounds(band: int, cuts: list[float] | tuple[float, ...]) -> tuple[int, int]:

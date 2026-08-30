@@ -15,7 +15,7 @@ from .generation_diversity import (
     distribution_target_with_slot_progress,
     joint_candidate_diagnostics,
 )
-from .length_fidelity import length_band_problem
+from .length_fidelity import length_band_problem, length_ceiling_problem
 from .length_policy import is_soft_length_problem
 
 
@@ -154,6 +154,11 @@ def writer_distribution_problems(
     band_problem = length_band_problem(text, task)
     if band_problem:
         problems.append(band_problem)
+    # Also soft, and deliberately independent of the band check: a tail
+    # overshoot sits inside its own assigned band and raises nothing there.
+    ceiling_problem = length_ceiling_problem(text, task)
+    if ceiling_problem:
+        problems.append(ceiling_problem)
     return diagnostics, deduplicate_problems(problems)
 
 

@@ -207,11 +207,11 @@ CORE_FILES = {
     ),
     "generator_adapter": (
         "generalized_card/generalized_card/backend.py",
-        "6bd3e3d5eb41ee23290a22aac699337d6135a89b02b6bf6b96e1d0394f5f5c70",
+        "60d1290d8c10b084a882c6544fd6ba77040f3a0f0f0cc5d522e15a704e6551e7",
     ),
     "data_boundary": (
         "generalized_card/generalized_card/data.py",
-        "55510f6b3da3b81a2a21654d39f910947e241b3168eee54c042ecd88fa49145e",
+        "6bac8c273d0df9d74fd629a79ecf1d4ba9b3a3d768478ab17f88050015fdbbed",
     ),
     "domain_config": (
         "generalized_card/generalized_card/domain.py",
@@ -241,7 +241,7 @@ CORE_FILES = {
     ),
     "generation_runner": (
         "generalized_card/scripts/run_generate.py",
-        "0d77fbf914713bffe0da4f8f6b20e7c78c3a0e5a6499d8f64d91e1c76774db66",
+        "bd0f5a27bdd13dcf0c182cc235055bb490c593c6602360737261295e5f992d63",
     ),
     "generation_backend_runner": (
         "generalized_card/scripts/run_generator_backend.py",
@@ -325,7 +325,7 @@ CORE_FILES = {
     ),
     "length_fidelity": (
         "generalized_card/generalized_card/length_fidelity.py",
-        "c975e10bbca23aef2a5fb1fed3121a67ed59852f4fcb162d5c6f03161f65f829",
+        "fb76cd255ff7e1c01641e8527bb780e939f480482a843057a1895f3c354c01b9",
     ),
     "lexical_quality": (
         "generalized_card/generalized_card/lexical_quality.py",
@@ -341,7 +341,7 @@ CORE_FILES = {
     ),
     "writer_quality": (
         "generalized_card/generalized_card/writer_quality.py",
-        "70bb0cbd226eb9135e4ec0699fb86f475d576bec5f8447e1a669b367b2d04e8c",
+        "197545e5ce052f471ebc9f14c743130aedc2ba9b608ac628bc0c69091123877c",
     ),
     "semantic_realization": (
         "generalized_card/generalized_card/semantic_realization.py",
@@ -353,7 +353,7 @@ CORE_FILES = {
     ),
     "length_policy": (
         "generalized_card/generalized_card/length_policy.py",
-        "5e4a46b39d3174ec586206ea7485fe6595b1985f132695743d1346583e8669e2",
+        "c8443b70391b2e23f91f76e70bef825288cbb7ba9bf2bbb31b3bc9cf15eca40b",
     ),
     "long_form_planning": (
         "generalized_card/generalized_card/long_form_planning.py",

@@ -151,9 +151,15 @@ from .sentence_rhythm import (
     set_sentence_rhythm,
 )
 from .entity_spread import set_active_entity_spread_profile, set_entity_spread
+from .length_fidelity import CEILING_PREFIX as LENGTH_CEILING_PREFIX
 from .length_fidelity import PROBLEM_PREFIX as LENGTH_BAND_PREFIX
+from .length_fidelity import ceiling_retry_note as length_ceiling_retry_note
 from .length_fidelity import retry_note as length_band_retry_note
-from .length_fidelity import set_active_length_fidelity_profile, set_length_fidelity
+from .length_fidelity import (
+    set_active_length_fidelity_profile,
+    set_length_ceiling,
+    set_length_fidelity,
+)
 from .story_scope import set_no_story_scope
 from .surface_typography import (
     apply_final_punctuation_habit,
@@ -612,6 +618,11 @@ def configure_generator_backend(
         or "off"
     )
     set_length_fidelity(module.GENERALIZED_LENGTH_FIDELITY)
+    module.GENERALIZED_LENGTH_CEILING = (
+        os.environ.get("GENERALIZED_CARD_LENGTH_CEILING", "off").strip().lower()
+        or "off"
+    )
+    set_length_ceiling(module.GENERALIZED_LENGTH_CEILING)
     module.GENERALIZED_LENGTH_TRANSFER = (
         os.environ.get("GENERALIZED_CARD_LENGTH_TRANSFER", "v97").strip().lower()
         or "v97"
@@ -3370,6 +3381,11 @@ def _retry_note_for_problems(module: ModuleType):
         )
         if band_miss:
             notes.append(length_band_retry_note(band_miss))
+        ceiling_miss = next(
+            (item for item in problems if item.startswith(LENGTH_CEILING_PREFIX)), ""
+        )
+        if ceiling_miss:
+            notes.append(length_ceiling_retry_note(ceiling_miss))
         if any(
             item in problems
             for item in (

@@ -23,6 +23,7 @@ SOFT_LENGTH_PROBLEM_PREFIXES = (
     # trigger a Writer retry without ever making a matched structural slot
     # blocking, which `docs/ORIENTATION.md` §4 forbids.
     "length_band_mismatch:",
+    "length_ceiling_exceeded:",
 )
 
 

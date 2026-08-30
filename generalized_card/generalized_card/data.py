@@ -83,10 +83,26 @@ def build_seed_pool(
     count: int,
     seed: int,
     min_comments: int | None = None,
+    exclude_keys: set[tuple[str, str]] | None = None,
 ) -> dict[str, Any]:
+    """Sample a matched-real seed pool from the domain's thread bank.
+
+    `exclude_keys` holds `(source_product_dir, source_raw_post_id)` pairs to drop
+    before sampling, and defaults to None so every existing caller is unchanged.
+    It exists for one job: a **calibration** pool disjoint from the evaluation
+    pools, so a realization matrix can be measured without any of the threads it
+    will later be judged on (`tone_realization.py`, `docs/DECISIONS.md` G161).
+    """
+
     minimum = max(1, int(min_comments or config.min_comments))
     bank = load_real_thread_bank(config.raw_discussions_dir)
     eligible = [item for item in _deduplicate_threads(bank) if item["comment_count"] >= minimum]
+    if exclude_keys:
+        eligible = [
+            item
+            for item in eligible
+            if (str(item["source_product"]), str(item["post_id"])) not in exclude_keys
+        ]
     if len(eligible) < count:
         raise ValueError(
             f"{config.domain_id} has only {len(eligible)} unique threads with >= {minimum} comments; "
@@ -125,6 +141,7 @@ def build_seed_pool(
             "eligible_threads": len(eligible),
             "min_comments": minimum,
             "sampling_seed": seed,
+            "excluded_threads": len(exclude_keys or ()),
             "comment_count_summary": _count_summary(selected),
             "subreddit_counts": dict(Counter(str(item.get("subreddit") or "unknown") for item in selected)),
         },
