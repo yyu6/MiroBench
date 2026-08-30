@@ -38,16 +38,22 @@ The current gpt matrix's polite row rests on `v117_calibration`, which ran over
 disclosed in the module docstring rather than hidden, and it is what this pool
 removes:
 
-```bash
-python3 generalized_card/scripts/build_seed_pool.py \
-  --domain camera --count 30 --seed 5150 \
-  --exclude-pool artifacts/generalized_card/seed_pools/camera_product_150_seed42.json \
-                 artifacts/generalized_card/seed_pools/camera_product_95_seed907.json \
-  --output artifacts/generalized_card/seed_pools/camera_product_calib30_seed5150.json
+`run_generate.py` resolves its pool by convention and **builds it when the file is
+missing**, so an exclusion recorded only inside the file would be silently undone by
+the first rebuild — the pool would quietly hold evaluation threads again with no
+error and nothing in `run_config.json`. `--seed-pool-exclude` therefore hashes the
+held-out set into the pool's own **filename**, so the pool is self-identifying and a
+rebuild reproduces the same exclusion:
+
+```
+--pool-size 30 --sampling-seed 5150 \
+--seed-pool-exclude .../camera_product_150_seed42.json .../camera_product_95_seed907.json
 ```
 
-Built: **30 threads, 1,143 real comments, 0 overlap with either evaluation pool**
-(245 held out). Comparable to the 1,059 slots the frozen gpt matrix rests on.
+resolves to `camera_product_30_seed5150_excl245x6ef9180f.json`:
+**30 threads, 1,143 real comments, 0 overlap with either evaluation pool** (245 held
+out). Comparable to the 1,059 slots the frozen gpt matrix rests on. `build_seed_pool.py
+--exclude-pool` builds the same thing standalone.
 
 ## The run
 
@@ -66,8 +72,11 @@ python3 -u generalized_card/scripts/run_generate.py \
   --tag v137ds_calib30_$(date +%Y%m%d)_v1 --domain camera \
   --model gpt-5.4-mini --base-url https://api.openai.com/v1 --api-key-env LLM_API_KEY \
   --writer-model deepseek-v4-flash --writer-base-url https://api.deepseek.com/v1 \
-  --writer-api-key-env DEEPSEEK_API_KEY \
-  --seed-post-pool-json artifacts/generalized_card/seed_pools/camera_product_calib30_seed5150.json \
+  --writer-api-key-env deepseek_api_key \
+  --pool-size 30 --sampling-seed 5150 \
+  --seed-pool-exclude artifacts/generalized_card/seed_pools/camera_product_150_seed42.json \
+                      artifacts/generalized_card/seed_pools/camera_product_95_seed907.json \
+  --domain-profile artifacts/generalized_card/runs/v137ds_s36_20260830_v2/domain_profile.json \
   --max-posts 30 --posts-per-run 1 --start-seed-index 0 \
   --tone-quota calibrate \
   --closing-move measured --development-scope measured --domain-claim selective \
@@ -93,6 +102,19 @@ python3 generalized_card/analysis/tone_carrier/fit_tone_matrix.py --tag <tag>
 
 Cost, from the DeepSeek N=50 runs at $1.82/thread: **~$55 for 30 threads**, roughly
 8-10 hours serial or ~2 hours across 4 shards.
+
+## Reuse the paper run's domain profile — do not let the calibration build its own
+
+A run left to build its own profile excludes **only its own seed pool**. A 30-thread
+calibration run would therefore measure C under a profile built from
+`reference_threads=544` — 574 minus its own 30, i.e. **including every evaluation
+thread** — while the paper run's profile is built from 574 minus its own 95. C would
+then be measured under a different configuration from the one it is used in, and on a
+corpus the paper run deliberately holds out.
+
+Passing `--domain-profile` at the paper run's own `domain_profile.json` fixes both:
+the calibration sees exactly the measured shares the paper run sees. The preflight
+prints `reference_threads=` so this is checkable before spending anything.
 
 ## After the matrix lands
 
