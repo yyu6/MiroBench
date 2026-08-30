@@ -1,0 +1,1343 @@
+{
+  "meta": {
+    "product_category": "credit_cards",
+    "baseline": "real_reddit_reference",
+    "run_id": "run_024_sampled_reddit"
+  },
+  "posts": [
+    {
+      "post_id": "real_run024_post00_seed120",
+      "post_slot": 0,
+      "seed_index": 120,
+      "source_raw_post_id": "1g2mpez",
+      "source_product_dir": "Wells Fargo Reflect® Card",
+      "source_file": "reddit_post:1g2mpez",
+      "post_type": "simple_question",
+      "title": "Wells Fargo Reflect Card! When to apply for it?",
+      "author": "reddit_user_0dab2d077fca",
+      "author_karma": 0,
+      "content": "Wells Fargo Reflect Card! When to apply for it?\n\nMy current credit score on Chase app is 766, but my score on Bank of America app is 730, because BOA updated it’s score on 10/19 while Chase updated my score on 10/12.\n\nShould I apply now or wait after 10/19.\n\nI think Chase and BOA use different companies for credit score. \n\nNeed to get max credit on Reflect card. How can I do that? \nCurrently have 2 credit cards with BOA, one 7000$ and one 9000$.",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "lrqr268",
+          "author": "reddit_user_e7b545528d2c",
+          "author_karma": 0,
+          "content": "No sub, no rewards, there's really no point to this card.\n\nIf you want a decent card with a 0% APR period, Amex BCE gives you 15 months of 0% APR, $200-250 sub depending on what you click on when applying, and 3% on online retail, groceries and gas.",
+          "timestamp": "2024-10-13T16:48:36+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "m1z03gv",
+              "author": "reddit_user_fcc88714c3d8",
+              "author_karma": 0,
+              "content": "I wouldnt say theres no point to it. I agree with you about the amex bce card, its one of my favorite credit cards. But the reflect card certainly has a point to it with 21 months of no interest. The difference between 15 months and 21 months is half a year. So if you have some upcoming large purchases to make and put it all on the reflect card, you’re essentially getting almost 2 years of an interest free loan. Besides, 0% interest in a credit card is a bigger draw for me than 3% cash back. 3% cash back is alright, but at the end of the day its not all that much. I put $50 of gas in my truck when i fill up with the amex bce card and 3% cash back on that only amounts to $1.50. Yes it adds up over time, but it takes a while. Getting an interest free loan for 21 months has more value to me than getting $1.50 in cash back from pumping gas.",
+              "timestamp": "2024-12-14T04:28:12+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "lrqr268",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "lrrfv5h",
+          "author": "reddit_user_178d338fe2e1",
+          "author_karma": 0,
+          "content": "You might want to consider discover for a balance transfer card.  They are pretty generous with their limits, and apparently if you call them and explain the balance transfer they will sometimes give you a limit that will accommodate it.  I know the 0apr isn't as long.\n\nAlso any issuer will hard pull you for current credit data.  Just because chase's vantage score has updated doesn't mean anything.  If the debt went up recently the sooner you do it the better most likely.",
+          "timestamp": "2024-10-13T19:00:01+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "lrrmqkb",
+              "author": "reddit_user_112bc547cbd0",
+              "author_karma": 0,
+              "content": "The debt went down recently",
+              "timestamp": "2024-10-13T19:36:59+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "lrrfv5h",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "post_id": "real_run024_post01_seed121",
+      "post_slot": 1,
+      "seed_index": 121,
+      "source_raw_post_id": "1sh8efw",
+      "source_product_dir": "Prime Visa",
+      "source_file": "reddit_post:1sh8efw",
+      "post_type": "approval_dp",
+      "title": "Got this offer from Chase Prime Visa, 5% on Gas, restaurants, grocery plus additional 2% if apple pay used (7% total)",
+      "author": "reddit_user_0dab2d077fca",
+      "author_karma": 0,
+      "content": "Got this offer from Chase Prime Visa, 5% on Gas, restaurants, grocery plus additional 2% if apple pay used (7% total)\n\nEarn 5% back at grocery stores, gas stations, and restaurants plus additional 2% back if Apple Pay is used for payment on up to $1,000 from 4/1/2026 - 6/30/2026.\n\nCheck offers tab",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "ofauvn1",
+          "author": "reddit_user_b93816dc8619",
+          "author_karma": 0,
+          "content": "I must be the only person who never gets these offers",
+          "timestamp": "2026-04-10T01:33:00+00:00",
+          "likes": 29,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "ofaxmsh",
+              "author": "reddit_user_beacafde9114",
+              "author_karma": 0,
+              "content": "You're not.  The most I get is 9.99% APR \"deals\" or some kind of 0% Balance Transfer (but still charging the 5% BT fee).",
+              "timestamp": "2026-04-10T01:48:56+00:00",
+              "likes": 7,
+              "dislikes": 0,
+              "parent_comment_id": "ofauvn1",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "ofb7f23",
+                  "author": "reddit_user_77086ead65b2",
+                  "author_karma": 0,
+                  "content": "Hey, at least you're getting a type of deal, the art of the deal. I, on the other hand, well... nothing at all.\n\nIt's not like that the APR deals would be used... so useless. ",
+                  "timestamp": "2026-04-10T02:46:02+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "ofaxmsh",
+                  "depth": 2,
+                  "replies": []
+                },
+                {
+                  "comment_id": "ofdd6tz",
+                  "author": "reddit_user_396fa7f69537",
+                  "author_karma": 0,
+                  "content": "This offer is under the credit card offers tab, same as store offers.  Not a mailer or email offer",
+                  "timestamp": "2026-04-10T12:39:40+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "ofaxmsh",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            },
+            {
+              "comment_id": "ofcln60",
+              "author": "reddit_user_1638e1a83626",
+              "author_karma": 0,
+              "content": "same here",
+              "timestamp": "2026-04-10T09:26:46+00:00",
+              "likes": 2,
+              "dislikes": 0,
+              "parent_comment_id": "ofauvn1",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "ofct6xs",
+              "author": "reddit_user_0acaae0305e4",
+              "author_karma": 0,
+              "content": "I usually see these types of offers here - https://www.chase.com/mybonus.  Use incognito mode.  Had this same offer on both our prime cards recently.  ",
+              "timestamp": "2026-04-10T10:30:12+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "ofauvn1",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "ofd08gd",
+                  "author": "reddit_user_b93816dc8619",
+                  "author_karma": 0,
+                  "content": "I’ve seen that advice before. I don’t check that place often, mostly when I see a post like this. But always just get a message that says the offer isn’t available on this card. Oh well. ",
+                  "timestamp": "2026-04-10T11:21:15+00:00",
+                  "likes": 2,
+                  "dislikes": 0,
+                  "parent_comment_id": "ofct6xs",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "ofddohz",
+                      "author": "reddit_user_0acaae0305e4",
+                      "author_karma": 0,
+                      "content": "Never?  I currently have 7 chase credit and debit cards and maybe get an offer on 1 every quarter. So it's rare but not ever. Definitely try that site in incognito if you haven't. ",
+                      "timestamp": "2026-04-10T12:42:19+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "ofd08gd",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "ofauxj0",
+          "author": "reddit_user_396fa7f69537",
+          "author_karma": 0,
+          "content": "I got the 5% one but not the Apple Pay one ",
+          "timestamp": "2026-04-10T01:33:18+00:00",
+          "likes": 7,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "ofb2sle",
+              "author": "reddit_user_8beda7e4ca65",
+              "author_karma": 0,
+              "content": "Yeah same. Thanks OP!",
+              "timestamp": "2026-04-10T02:18:20+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "ofauxj0",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "ofb0o38",
+          "author": "reddit_user_5a24438055c1",
+          "author_karma": 0,
+          "content": "I never see anything like this on my offers tab or even the Chase MyBonus website. ",
+          "timestamp": "2026-04-10T02:06:04+00:00",
+          "likes": 5,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "ofb0w20",
+              "author": "reddit_user_6249df4cc24b",
+              "author_karma": 0,
+              "content": "It was the first one in my offers ",
+              "timestamp": "2026-04-10T02:07:20+00:00",
+              "likes": 3,
+              "dislikes": 0,
+              "parent_comment_id": "ofb0o38",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "ofb2ijd",
+          "author": "reddit_user_c3d0811dde25",
+          "author_karma": 0,
+          "content": "I got this too. Is it up to $1000 in spend or up to $1000 total cash back?",
+          "timestamp": "2026-04-10T02:16:43+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "ofbdwin",
+              "author": "reddit_user_6249df4cc24b",
+              "author_karma": 0,
+              "content": "My guess is $1000 spend but I dont know",
+              "timestamp": "2026-04-10T03:27:41+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "ofb2ijd",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "ofb9osv",
+          "author": "reddit_user_fbe46db79be7",
+          "author_karma": 0,
+          "content": "Where do I click on the app? My offers tab shows taxact, starlink and so on ",
+          "timestamp": "2026-04-10T03:00:11+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "ofbdqzi",
+              "author": "reddit_user_6249df4cc24b",
+              "author_karma": 0,
+              "content": "The offers tab, you may not have it",
+              "timestamp": "2026-04-10T03:26:38+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "ofb9osv",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "ofbf7sy",
+          "author": "reddit_user_7a4c84a1b752",
+          "author_karma": 0,
+          "content": "Had that first quarter. Doubt they’d offer it again but I’ll check. ",
+          "timestamp": "2026-04-10T03:36:27+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "ofazsp2",
+          "author": "reddit_user_26868470108d",
+          "author_karma": 0,
+          "content": "Great offer ",
+          "timestamp": "2026-04-10T02:01:06+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "ofbalhn",
+          "author": "reddit_user_2ffb17f409ea",
+          "author_karma": 0,
+          "content": "Is this true:  \"The 5% bonus is capped at $1,000 in total spending, usually through the end of the quarter.\"?",
+          "timestamp": "2026-04-10T03:06:06+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "ofbdtv4",
+              "author": "reddit_user_6249df4cc24b",
+              "author_karma": 0,
+              "content": "I cooy and pasted the text in the OP, guessing its 5% + 2% apple on $1000 spend ",
+              "timestamp": "2026-04-10T03:27:11+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "ofbalhn",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "ofctnqe",
+              "author": "reddit_user_0acaae0305e4",
+              "author_karma": 0,
+              "content": "Yes.  This is copy/paste from Chase: \n\n>Earn 5% back at grocery stores, gas stations, and restaurants on up to $1,000 from 4/1/2026 - 6/30/2026.",
+              "timestamp": "2026-04-10T10:33:52+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "ofbalhn",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "ofbmuk4",
+          "author": "reddit_user_329036a4de9c",
+          "author_karma": 0,
+          "content": "up to $1,000 kinda sucks a lot.  I’ll definitely burn through that pretty quickly",
+          "timestamp": "2026-04-10T04:29:15+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "ofdmriy",
+              "author": "reddit_user_9326dd02d96c",
+              "author_karma": 0,
+              "content": "Isnt that just best cafe 70$?",
+              "timestamp": "2026-04-10T13:29:24+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "ofbmuk4",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "ofec80o",
+              "author": "reddit_user_aea3206586ee",
+              "author_karma": 0,
+              "content": "I mean its a bonus offer and its high multipliers. Spending cap of $1k is better than no bonus at all.",
+              "timestamp": "2026-04-10T15:27:11+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "ofbmuk4",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "ofctfqh",
+          "author": "reddit_user_1f3b1809db94",
+          "author_karma": 0,
+          "content": "Lol I've been checking religiously but no luck.",
+          "timestamp": "2026-04-10T10:32:07+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run024_post02_seed122",
+      "post_slot": 2,
+      "seed_index": 122,
+      "source_raw_post_id": "1fv7cmf",
+      "source_product_dir": "World of Hyatt Credit Card",
+      "source_file": "reddit_post:1fv7cmf",
+      "post_type": "news_or_rumor",
+      "title": "Chase Hyatt Credit Card: 5 Free Night Certificates (Category 1-4)",
+      "author": "reddit_user_0dab2d077fca",
+      "author_karma": 0,
+      "content": "Chase Hyatt Credit Card: 5 Free Night Certificates (Category 1-4)\n\nChase is offering a bonus of five free night certificates, good on category 1-4 properties when you spend $4,000 on purchases in the first three months of account opening on the Chase World of Hyatt card.\n\n[https://creditcards.chase.com/lp/worldofhyattcc/aepc?CELL=6Y6X](https://creditcards.chase.com/lp/worldofhyattcc/aepc?CELL=6Y6X)\n\n# Card Basics\n\n* **This product is available to you if you do not have this card and have not received a new cardmember bonus for this card in the past 24 months** \n* Annual fee of $95\n* Card earns at the following rates:\n * 4x points per $1 spent on Hyatt hotels (they advertise this as 9x, but it’s 4x plus the 5x you normally get anyway)\n * 2x points per $1 spent on local transit and commuting (including taxis, mass transit, tolls and ride-share serivces)\n * 2x points per $1 spent on restaurants, cafes and coffee shops\n * 2x points per $1 spent on airline tickets purchased directly from the airlines\n * 2x points per $1 spent on fitness clubs and gym memberships\n * 1x points per $1 spent on all other purchases\n* Receive up to two free nights annually:\n * One free night at any category 1-4 Hyatt property every year after your card member anniversary\n * An additional free night at any category 1-4 Hyatt property if you spend $15,000 during your card member anniversary year\n* Status:\n * World of Hyatt Discoverist status for as long as the card is open\n * 5 qualifying night credits towards your next tier status every year\n * An additional 2 qualifying night credits towards your next tier every time you spend $5,000 on the card (no limit)\n\n[Previous best offer was 65,000 points](https://www.doctorofcredit.com/chase-hyatt-credit-card-65000-point-bonus/). If you redeemed all five nights on a category four property that would come out to 90,000 points so this bonus is significantly better but you obviously lose the ability to stay at properties category 5 or above. This offer also requires a lot less spend.\n\n \n(Credit: Doctor of Credit)",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "lq4z2fg",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[deleted]",
+          "timestamp": "2024-10-03T14:00:13+00:00",
+          "likes": 37,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "lq5m9i1",
+              "author": "reddit_user_a03d950d91a6",
+              "author_karma": 0,
+              "content": "Yup, if you have a specific redemption in mind, certs are a better value for your spend. If not, go with points",
+              "timestamp": "2024-10-03T15:55:29+00:00",
+              "likes": 8,
+              "dislikes": 0,
+              "parent_comment_id": "lq4z2fg",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "lq528cz",
+          "author": "reddit_user_b8cc05bd9463",
+          "author_karma": 0,
+          "content": "I applied and got accepted for this last night. I had it on my list for potential keeper cards, but couldn't bring myself to apply for only 30k points (no way I was going to hit the 15k spend). To me, the real comparison is 30k points vs 5 nights. In that regard, I still value the nights higher. Good time to go for it if you have had an eye on it.",
+          "timestamp": "2024-10-03T14:16:43+00:00",
+          "likes": 17,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "lr0nd6t",
+              "author": "reddit_user_eba8bfd6aab2",
+              "author_karma": 0,
+              "content": "Why is this a keeper card for you? Other than the free nights in the 1st year, other perks are meh..",
+              "timestamp": "2024-10-08T23:39:29+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "lq528cz",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "lr0u2au",
+                  "author": "reddit_user_b8cc05bd9463",
+                  "author_karma": 0,
+                  "content": "Free night every year at card anniversary. Discoverist is a nice perk for me because Hyatt isn't my main hotel (usually do 60-80 nights in Hiltons due to my locations). If you were staying at a Hyatt more frequently, the 5 night qualifying credits would be helpful.",
+                  "timestamp": "2024-10-09T00:27:34+00:00",
+                  "likes": 5,
+                  "dislikes": 0,
+                  "parent_comment_id": "lr0nd6t",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "lq4ysxo",
+          "author": "reddit_user_835ef66114d9",
+          "author_karma": 0,
+          "content": "Damn got this card a month ago before this deal",
+          "timestamp": "2024-10-03T13:58:49+00:00",
+          "likes": 8,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "lq8tsan",
+              "author": "reddit_user_46bebe6c0f89",
+              "author_karma": 0,
+              "content": "Same boat here..",
+              "timestamp": "2024-10-04T03:02:01+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "lq4ysxo",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "lq8v4pq",
+                  "author": "reddit_user_c76f1281298a",
+                  "author_karma": 0,
+                  "content": "I feel y’all 😞",
+                  "timestamp": "2024-10-04T03:11:11+00:00",
+                  "likes": 2,
+                  "dislikes": 0,
+                  "parent_comment_id": "lq8tsan",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            },
+            {
+              "comment_id": "lragc0z",
+              "author": "reddit_user_9c4bb730d879",
+              "author_karma": 0,
+              "content": "Log into the Chase app and secure message about this! They may match!",
+              "timestamp": "2024-10-10T18:25:44+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "lq4ysxo",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "lq6933b",
+          "author": "reddit_user_66f10da77b98",
+          "author_karma": 0,
+          "content": "As someone looking to stay at a cat 4 in Tokyo next April for 5+ days this is extremely appealing, although I am concerned about the availability drying up between now and completing the sub in a few months. Could always just book with points now and then see if I can swap to the certs when I receive them, or cancel and hope the availability pops up again.",
+          "timestamp": "2024-10-03T18:03:05+00:00",
+          "likes": 9,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "lqbpgwv",
+              "author": "reddit_user_9a4975904170",
+              "author_karma": 0,
+              "content": "FYI, Hyatt hotels in Tokyo have VERY bad availability. It might show availability when you search for hotels, but it will error out when you try to check out.",
+              "timestamp": "2024-10-04T16:44:12+00:00",
+              "likes": 8,
+              "dislikes": 0,
+              "parent_comment_id": "lq6933b",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "lqvtq4i",
+                  "author": "reddit_user_037629e14caa",
+                  "author_karma": 0,
+                  "content": "how far in advance do you need to book? I'm planning to go next Summer in July for 3.5 weeks.",
+                  "timestamp": "2024-10-08T02:55:35+00:00",
+                  "likes": 3,
+                  "dislikes": 0,
+                  "parent_comment_id": "lqbpgwv",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "lq6spm5",
+          "author": "reddit_user_941fe7aaeb73",
+          "author_karma": 0,
+          "content": "Goddamn who said that Hyatt never increases their SUB? I just got it a few weeks ago 😩",
+          "timestamp": "2024-10-03T19:46:30+00:00",
+          "likes": 8,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "lragfks",
+              "author": "reddit_user_9c4bb730d879",
+              "author_karma": 0,
+              "content": "Log into the Chase app and send a secure message to them, they may match!",
+              "timestamp": "2024-10-10T18:26:16+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "lq6spm5",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "lq6a2yg",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2024-10-03T18:08:18+00:00",
+          "likes": 5,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "lqb7ndm",
+              "author": "reddit_user_35ab76382278",
+              "author_karma": 0,
+              "content": "I worked at a hotel you can put all the rooms under your name and tell the hotel staff to put the family members name in the notes. Totally fine.",
+              "timestamp": "2024-10-04T15:09:02+00:00",
+              "likes": 7,
+              "dislikes": 0,
+              "parent_comment_id": "lq6a2yg",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "lq6pqun",
+              "author": "reddit_user_0c45c07a7c4d",
+              "author_karma": 0,
+              "content": "You could get the Hyatt Business for 60K points outright and then put wedding expenses on it:\n\nhttps://creditcards.chase.com/business-credit-cards/world-of-hyatt/hyatt-business-card\n\nOr Get Ink Business Unlimited for 90K points and no AF (to pair with CSP) outright and transfer to Hyatt:\n\nhttps://creditcards.chase.com/business-credit-cards/ink/unlimited",
+              "timestamp": "2024-10-03T19:30:44+00:00",
+              "likes": 0,
+              "dislikes": 0,
+              "parent_comment_id": "lq6a2yg",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "lq4yp3e",
+          "author": "reddit_user_f19ba6fc9d25",
+          "author_karma": 0,
+          "content": "Thx",
+          "timestamp": "2024-10-03T13:58:16+00:00",
+          "likes": 3,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "lq54jrk",
+          "author": "reddit_user_352bb045cd8f",
+          "author_karma": 0,
+          "content": "This is an adjacent question to this post, just to figure out if I'll get good value out of the spend during the SUB period, but can you transfer Hyatt points from the P1 account to a P2 account?",
+          "timestamp": "2024-10-03T14:28:25+00:00",
+          "likes": 3,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "lq62flx",
+              "author": "reddit_user_342fc61c0e0f",
+              "author_karma": 0,
+              "content": "Yes, you can combine/transfer points once every 30 days.",
+              "timestamp": "2024-10-03T17:28:09+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "lq54jrk",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "lq5gy2x",
+          "author": "reddit_user_1e4750b90833",
+          "author_karma": 0,
+          "content": "where does the 90k value come in? after $4k spend you get 5x cat 1-4 certs. at cat 4 for 15k/night that's only 75k",
+          "timestamp": "2024-10-03T15:29:26+00:00",
+          "likes": 3,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "lq5n1s5",
+              "author": "reddit_user_1110eaaaba03",
+              "author_karma": 0,
+              "content": "Cat 4 peak is 18k per night.",
+              "timestamp": "2024-10-03T15:59:39+00:00",
+              "likes": 5,
+              "dislikes": 0,
+              "parent_comment_id": "lq5gy2x",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "lq5nym5",
+                  "author": "reddit_user_1e4750b90833",
+                  "author_karma": 0,
+                  "content": "oh, nice i didn't know it was valid for the peak redemption too",
+                  "timestamp": "2024-10-03T16:04:31+00:00",
+                  "likes": 2,
+                  "dislikes": 0,
+                  "parent_comment_id": "lq5n1s5",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "lq610qx",
+          "author": "reddit_user_7c031a3dfd9c",
+          "author_karma": 0,
+          "content": "Does chases card rules apply here?",
+          "timestamp": "2024-10-03T17:20:50+00:00",
+          "likes": 3,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "lq6gp08",
+              "author": "reddit_user_98d1dbbacd6d",
+              "author_karma": 0,
+              "content": "Yes it is a chase credit card so 5/24 rule is active",
+              "timestamp": "2024-10-03T18:42:55+00:00",
+              "likes": 3,
+              "dislikes": 0,
+              "parent_comment_id": "lq610qx",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "lq6miso",
+                  "author": "reddit_user_7c031a3dfd9c",
+                  "author_karma": 0,
+                  "content": "Shoot I was hoping it was like the Amazon card where it doesn't apply",
+                  "timestamp": "2024-10-03T19:13:41+00:00",
+                  "likes": 2,
+                  "dislikes": 0,
+                  "parent_comment_id": "lq6gp08",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "lq69sn0",
+          "author": "reddit_user_d9dd601ae89a",
+          "author_karma": 0,
+          "content": "Awesome. Almost applied for this last night for just 60k points lol",
+          "timestamp": "2024-10-03T18:06:49+00:00",
+          "likes": 3,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "lsq9ja0",
+          "author": "reddit_user_0c3b031bb6b1",
+          "author_karma": 0,
+          "content": "Does anyone know how quickly they issue the free nights after meeting the spend? I have a trip coming up in December. Thanks!",
+          "timestamp": "2024-10-19T19:17:24+00:00",
+          "likes": 3,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "lsrrvvw",
+              "author": "reddit_user_6c2c95ea566a",
+              "author_karma": 0,
+              "content": "Their [T&C’s state the following:](https://creditcards.chase.com/a1/Hyatt/ConsumerLTO5FN)\n\n“After qualifying, **please allow 6-8 weeks for your Free Night Award** to post to your World of Hyatt account. To be eligible for this offer, your card account must be open and not in default at the time of fulfillment. **If your card account is not open for at least 3 months from the initial date of opening, Hyatt and Chase reserve the right to deduct the Free Night Awards from your World of Hyatt account.**”",
+              "timestamp": "2024-10-20T00:45:21+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "lsq9ja0",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "lq7xjdt",
+          "author": "reddit_user_87f50a067c89",
+          "author_karma": 0,
+          "content": "Has anyone had any luck getting approved over 5/24? There was some success with the IHG card a few months ago including me, I was approved for that one at 7/24",
+          "timestamp": "2024-10-03T23:38:38+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "lqb8u5d",
+          "author": "reddit_user_35ab76382278",
+          "author_karma": 0,
+          "content": "Since this is a chase credit card, does it share the same chase travel portal and where you can move around points between all your chase accounts?",
+          "timestamp": "2024-10-04T15:15:27+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "lragozg",
+              "author": "reddit_user_9c4bb730d879",
+              "author_karma": 0,
+              "content": "No, these are World of Hyatt awards and points. It does not earn Chase Ultimate Rewards.",
+              "timestamp": "2024-10-10T18:27:40+00:00",
+              "likes": 3,
+              "dislikes": 0,
+              "parent_comment_id": "lqb8u5d",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "lvgd6fm",
+          "author": "reddit_user_a83cdae14c11",
+          "author_karma": 0,
+          "content": "Does anyone know how soon the 5 tier qualifying nights come? I am close to explorist and debating opening this card vs other Hyatt one.",
+          "timestamp": "2024-11-05T02:01:22+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "lq5u4hl",
+          "author": "reddit_user_be253782713c",
+          "author_karma": 0,
+          "content": "Is a \"free night certificate\" just a fancy way of saying you get a free night?\n\nSome of the hotels in the Hyatt app say \"category D\" or some other letter. Which number does that apply to?",
+          "timestamp": "2024-10-03T16:44:12+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "lq69ct1",
+              "author": "reddit_user_66f10da77b98",
+              "author_karma": 0,
+              "content": "The letters are resorts or all inclusives that don’t follow the 1-8 award chart, you can’t use a cat 1-4 or 1-7 cert at those.",
+              "timestamp": "2024-10-03T18:04:30+00:00",
+              "likes": 4,
+              "dislikes": 0,
+              "parent_comment_id": "lq5u4hl",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "lq5z56k",
+          "author": "reddit_user_b92d122042a0",
+          "author_karma": 0,
+          "content": "Can I book 4-5 free nights in a row, then use existing Sapphire points (-100k) to extend a stay? For a total of 9-10 nights depending on the exact hotels being booked.",
+          "timestamp": "2024-10-03T17:10:59+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "lq6jhrx",
+              "author": "reddit_user_8a73e52dec07",
+              "author_karma": 0,
+              "content": "Yeah should be able to as long as the property you’re looking at is a category 1-4",
+              "timestamp": "2024-10-03T18:57:32+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "lq5z56k",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "lq8daqe",
+              "author": "reddit_user_747b6c065791",
+              "author_karma": 0,
+              "content": "As long as there is award availability, that is not guaranteed",
+              "timestamp": "2024-10-04T01:15:20+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "lq5z56k",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "lq6bl6n",
+          "author": "reddit_user_9a8c97899357",
+          "author_karma": 0,
+          "content": "Sorry if this is a dumb question, but is the free night at the category 1-4 properties redeemable for any room? Or is it only valid for the lowest/cheapest room?",
+          "timestamp": "2024-10-03T18:16:10+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "lq7g4cm",
+              "author": "reddit_user_c7e0f9c70890",
+              "author_karma": 0,
+              "content": "It’s generally their basic standard room. 1 king bed or 2 Queen beds depending on the property.",
+              "timestamp": "2024-10-03T21:51:53+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "lq6bl6n",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "lq8faio",
+                  "author": "reddit_user_6b0f895185fe",
+                  "author_karma": 0,
+                  "content": "I was wondering this too. So it would not work for even ‘premium suite free night’ even though it says free night?",
+                  "timestamp": "2024-10-04T01:27:50+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "lq7g4cm",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "lq8fnbb",
+                      "author": "reddit_user_c7e0f9c70890",
+                      "author_karma": 0,
+                      "content": "Nope. That’s why they say it’s worth up to 90,000 points. Most suites are over 20,000 points at the Category 4 level.",
+                      "timestamp": "2024-10-04T01:30:07+00:00",
+                      "likes": 3,
+                      "dislikes": 0,
+                      "parent_comment_id": "lq8faio",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "lq6itgp",
+          "author": "reddit_user_98663a265bf4",
+          "author_karma": 0,
+          "content": "Anyone know if its possible to gift these free night certificates to another Hyatt account?",
+          "timestamp": "2024-10-03T18:54:01+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "lq86coo",
+          "author": "reddit_user_4fe2c4ab7eca",
+          "author_karma": 0,
+          "content": "Anyone know if there is a specific pre approval tool for this card? I don’t know if I’m at 5/24 yet",
+          "timestamp": "2024-10-04T00:32:40+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "ls8wcdo",
+              "author": "reddit_user_77e14ff02b12",
+              "author_karma": 0,
+              "content": "Review your credit report and count how many accounts you opened in the last 24 months.",
+              "timestamp": "2024-10-16T19:11:24+00:00",
+              "likes": 2,
+              "dislikes": 0,
+              "parent_comment_id": "lq86coo",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "lqcq8ja",
+          "author": "reddit_user_f9bdd52d26cc",
+          "author_karma": 0,
+          "content": "Is it the most wroth applying chase card at the moment? I have CSP only at chase.",
+          "timestamp": "2024-10-04T20:01:17+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "lqtplqq",
+          "author": "reddit_user_c6cc365adcb1",
+          "author_karma": 0,
+          "content": "Can anyone see how long the offer is good for? I cannot seem to find a timeframe if it is posted.\n\nI would love to time this with our car insurance renewal in February but I don't want to miss out waiting a month.",
+          "timestamp": "2024-10-07T19:28:26+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "lr7j4pq",
+              "author": "reddit_user_167492e5623a",
+              "author_karma": 0,
+              "content": "Let this offer be your ticket to your next dream getaway. Offer ends 10/31/24. Terms Apply.",
+              "timestamp": "2024-10-10T05:05:56+00:00",
+              "likes": 4,
+              "dislikes": 0,
+              "parent_comment_id": "lqtplqq",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "lr0nlxu",
+          "author": "reddit_user_eba8bfd6aab2",
+          "author_karma": 0,
+          "content": "Can you accumulate these anniversary nights or do they expire each year?",
+          "timestamp": "2024-10-08T23:41:14+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "ls8w731",
+              "author": "reddit_user_77e14ff02b12",
+              "author_karma": 0,
+              "content": "Within 12 months of issuance.",
+              "timestamp": "2024-10-16T19:10:37+00:00",
+              "likes": 3,
+              "dislikes": 0,
+              "parent_comment_id": "lr0nlxu",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "lrg7cn9",
+          "author": "reddit_user_8dfd196163a2",
+          "author_karma": 0,
+          "content": ">5 qualifying night credits towards your next tier status every year\n\ncan someone explain what this means?",
+          "timestamp": "2024-10-11T18:21:21+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "lsrr8ux",
+              "author": "reddit_user_6c2c95ea566a",
+              "author_karma": 0,
+              "content": "The card gives you “Discoverist” status which would typically only be achievable by spending 10 nights at Hyatt OR earning 25k *base* points.\n\nThe next tier status is “Explorist”. This normally requires 30 nights at a Hyatt OR 50k *base* points earned. \n\nThe “5 qualifying night credits” simply reduces the number of nights you need to stay there from 30 to 25 to get to the next status tier.\n\nEDIT: [This link](https://www.nerdwallet.com/article/travel/hyatt-credit-card-night-credits) might help if you have any further queries about qualifying nights.",
+              "timestamp": "2024-10-20T00:41:15+00:00",
+              "likes": 2,
+              "dislikes": 0,
+              "parent_comment_id": "lrg7cn9",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "lrl7kjc",
+          "author": "reddit_user_f13d5e2931cf",
+          "author_karma": 0,
+          "content": "Does anyone know if we need to reedeem the free nights within a specific timeframe before they expire?",
+          "timestamp": "2024-10-12T16:49:08+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "ls8w4yl",
+              "author": "reddit_user_77e14ff02b12",
+              "author_karma": 0,
+              "content": "Reading the T&C right now...you have to use it within 12 months of the issuance of those certificates.  It's good for any standard room in a Cat 1-4 property except Miraval, Zilara, or Ziva resorts.",
+              "timestamp": "2024-10-16T19:10:18+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "lrl7kjc",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "lsdk0w9",
+          "author": "reddit_user_a50a0cabf772",
+          "author_karma": 0,
+          "content": "Didn't find when will the 5 fn be available after spending 4k. If I spend 4k in the first month, do I still need to wait for 3 months",
+          "timestamp": "2024-10-17T15:24:47+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "lsrs454",
+              "author": "reddit_user_6c2c95ea566a",
+              "author_karma": 0,
+              "content": "Their [T&C’s state the following:](https://creditcards.chase.com/a1/Hyatt/ConsumerLTO5FN)  \n\n“After qualifying, **please allow 6-8 weeks for your Free Night Award** to post to your World of Hyatt account. To be eligible for this offer, your card account must be open and not in default at the time of fulfillment. **If your card account is not open for at least 3 months from the initial date of opening, Hyatt and Chase reserve the right to deduct the Free Night Awards from your World of Hyatt account.**”",
+              "timestamp": "2024-10-20T00:46:52+00:00",
+              "likes": 2,
+              "dislikes": 0,
+              "parent_comment_id": "lsdk0w9",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "lss1hrm",
+                  "author": "reddit_user_a50a0cabf772",
+                  "author_karma": 0,
+                  "content": "I'm wondering if I can use them at Christmas.",
+                  "timestamp": "2024-10-20T01:48:46+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "lsrs454",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "lstbtmv",
+                      "author": "reddit_user_6c2c95ea566a",
+                      "author_karma": 0,
+                      "content": "Depending on hotel availability and timing of voucher issuance…. I’d say It’s certainly possible. According to Hyatt, at least with their standard vouchers, [there’s no blackout dates.](https://world.hyatt.com/content/gp/en/rewards/free-nights-upgrades.html)\n\nAssuming you apply, are approved, and hit the targeted spend straight away via Apple Pay or GPay:\n- 6 weeks from now is December 8th\n- 10 weeks from now is December 15th\n\nThose dates are assuming you can also spend the same day you’re approved. Chase Visa cards can be added to phone wallets prior to the physical card arriving. However, I’m not 100% sure if this applies to Chase co-branded cards but I’m just going to assume they do.",
+                      "timestamp": "2024-10-20T08:29:51+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "lss1hrm",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "ltrorrt",
+          "author": "reddit_user_8dda2a0692d7",
+          "author_karma": 0,
+          "content": "Can a hyatt club access award be used with these 5 FNC?",
+          "timestamp": "2024-10-25T23:46:08+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "lugea7a",
+          "author": "reddit_user_a50a0cabf772",
+          "author_karma": 0,
+          "content": "Will you get that another free night for the first year if you spend more than 15000?",
+          "timestamp": "2024-10-30T01:52:49+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "ly62bni",
+          "author": "reddit_user_fd9ea9014ba7",
+          "author_karma": 0,
+          "content": "Spoken with two world of Hyatt reps now and they both say “I don’t know what offer you’re talking about…actually the offer means you just get 5 nights towards your status”. I’ve corrected them both and now they’re transferring me BACK to Chase, who told me to talk to Hyatt about receiving the free night awards. Not confidence inspiring here @hyatt",
+          "timestamp": "2024-11-20T23:49:33+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "m130s6x",
+          "author": "reddit_user_c2fc3fbe08dc",
+          "author_karma": 0,
+          "content": "Did they nuke this offer? I went to apply today and can’t find it now",
+          "timestamp": "2024-12-08T20:18:10+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "m4j59uj",
+          "author": "reddit_user_61899fe0e669",
+          "author_karma": 0,
+          "content": "Does this offer start once your card is approved? I got this approved 10/4. so by 1/4 i need to use 4,000$?",
+          "timestamp": "2024-12-30T15:09:32+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run024_post03_seed123",
+      "post_slot": 3,
+      "seed_index": 123,
+      "source_raw_post_id": "1kup55b",
+      "source_product_dir": "BankAmericard® credit card",
+      "source_file": "reddit_post:1kup55b",
+      "post_type": "card_recommendation",
+      "title": "High transfer balance and long 0%APR",
+      "author": "reddit_user_0dab2d077fca",
+      "author_karma": 0,
+      "content": "High transfer balance and long 0%APR\n\nHi there,\n\nI just graduated medical school and entering my first year of residency. Throughout medical school I accumulated credit due to moving/examination fees/living costs. I have about 12k of credit split between two cards (Chase and Capital One), each with a 26% APR. Now that I am starting residency in July, I will have biweekly checks and can pay down the credit, but I know that having 26% APR will be a never ending cycle. \nI am looking for a credit card recommendation with a long introductory of 0% APR, low transfer fees, introductory 0% APR on purchases and potentially spending benefits (rewards). I am currently looking into Citi Simplicity, Bank of Americard, Citi double dash, and Citi Diamond Preferred. I would love to hear any thoughts or other recommendations. My credit score took a 100 point drop this month (750 to 650) due to maxing my capital one card for moving costs (I literally just saw this today and I am devastated).\n\nIf you could also advise, if transfer my balance to another card, can I make purchases on that card as well without affecting the balance transfer APR?\n\nI am not super financially literate, but I am trying to pay down this credit so that I can fix my credit. I truly appreciate any suggestions or advice! I filled out the template answers below. \n\nTemplate answers \n\\* Current credit cards you are the primary account holder of: *Chase saphire $20,000 limit; Capital One Quicksilver $4,000 limit \\*this card has my longest card history with about 8 years*\n\n* \\* FICO Scores with source 657 :(\n* \\* Oldest credit card account age with you as primary name on the account: *8+ years*\n* \\* Number of personal credit cards approved for in the past 6 months: I haven't applied for any in about 4 years\n* \\* Annual income $: *60K*\n\nCATEGORIES\n\n* \\* OK with category-specific cards?: Yes\n* \\* OK with rotating category cards?: *Yes*\n* \\* Estimate average monthly spend in the categories below. Only include what you can pay by credit card.\n * \\* Dining $: 100\n * \\* Groceries $: *400*\n * \\* Gas $: *50*\n * \\* Travel $: *about 1000/yr*\n * \\* Do you plan on using this card abroad for a significant length of time (study abroad, digital nomad, expat, extended travel)?: Not really\n * \\* Any other categories (examples: phone/internet, insurance) or stores (example: Amazon) with significant, regular credit card spend (the more you specify, the better): Phone $82, car insurance $195\n * \\* Any other significant, regular credit card spend you didn't include above?: No\n * \\* Can you pay rent by credit card? If yes, list rent amount and if there's a fee for paying by credit card: No\n\nMEMBERSHIPS & SUBSCRIPTIONS (delete lines that don't apply)\n\n* \\* Current member of Chase, US Bank or any other big bank?: Chase\n* \\* Are you open to Business Cards?: *Maybe*\n\nPURPOSE\n\n* \\* What's the purpose of your next card (choose ONE)?: Balance transfer\n * \\* If you answered \"balance transfer\", please give details as to why: see above (:\n* \\* Do you have any cards you've been looking at? Citi Simplicity, Bank of Americard, Citi double dash, and Citi Diamond Preferred. \n\nThank you for any help!",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "mu54a7l",
+          "author": "reddit_user_87377d526fd5",
+          "author_karma": 0,
+          "content": ">>If you could also advise, if transfer my balance to another card, can I make purchases on that card as well without affecting the balance transfer APR?\n\nIf the card has 0 APR on purchase and balance transfers, there is no problem.  The issue comes about when there is a 0 APR balance transfer and a non-zro APR on purchases.  In this case, you lose the grace period.\n\nIn this case, you need to call the credit card company and ask them how the payments will be applied in this case. If you search this subreddit, you will see this is a constant issue:\n\nhttps://old.reddit.com/r/CreditCards/comments/1j8bhod/interesting_quirk_with_balance_transfer_citibank/\n\nhttps://old.reddit.com/r/CreditCards/comments/1j8kasw/citibank_not_applying_payments_in_accordance_with/\n\nIf would really try and not use the balance transfer card for purchases and get into the habit of paying your balances full each month. That may be easier said than done, so do what's best for you.  Just be aware of the consequences.\n\nThe Citi Simplicity card also have one of the lowest balance transfer fees of 3%, as well as one of the longest repayment schedules. So, I would look at that one first if a lower fee is more important to you. Else, start with the U.S. Bank Shield if you value a longer time frame instead.  The U.S. Bank Shield™ Visa® card has a 24-month APR on balance transfers:https://www.usbank.com/credit-cards/shield-visa-credit-card.html.  But the transfer fee is 5%.\n\nAlso, note you may not receive a credit limit large enough to transfer the entire balance. So, you need to take that into account. You also cannot balance transfer between cards owned by the same bank.\n\nLastly, take a look at this MoneyGeek article as well for more information on balance transfer cards: https://www.moneygeek.com/credit-cards/balance-transfer/best-balance-transfer-credit-cards/",
+          "timestamp": "2025-05-25T08:40:00+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "mu39cze",
+          "author": "reddit_user_bca8033b630e",
+          "author_karma": 0,
+          "content": "Interested in cashback cards? Take a look at these resources from the sidebar:\n\n* [List of Flat 2%+ Cashback Cards](https://www.reddit.com/r/CreditCards/wiki/list_of_flat_cashback_cards_with_benefits) \n\n* [List of Best Cashback Cards by Category](https://www.reddit.com/r/CreditCards/wiki/best_cash_back_cards_by_category)\n\nI can be summoned to comment by using command(s):\n\n`!cashback`\n\n*I am a bot, and this action was performed automatically. Please [contact the moderators of this subreddit](/message/compose/?to=/r/CreditCards) if you have any questions or concerns.*",
+          "timestamp": "2025-05-24T23:46:44+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run024_post04_seed124",
+      "post_slot": 4,
+      "seed_index": 124,
+      "source_raw_post_id": "1sdzr98",
+      "source_product_dir": "Citi Strata Premier® Card",
+      "source_file": "reddit_post:1sdzr98",
+      "post_type": "other",
+      "title": "Credit Card points on rent? (Citi)",
+      "author": "reddit_user_0dab2d077fca",
+      "author_karma": 0,
+      "content": "Credit Card points on rent? (Citi)\n\nHi all,\n\nI’m looking at opening a new line with the Citi Strata Premier card. The current SUB needs 4k in 3months spending. Does anyone have any experience with paying rent on one of these cards and if it counts for the sign up bonus? Apartment complex uses rentcafe, and it doesn’t look like it charges thru Bilt (some reading says that Citi banned bilt transactions).\n\nI know there are some other options such as SNIIP for farming points on rent, but I’m just looking to hit the sign up bonus. \n\nIf anyone has any knowledge on this I’d love to know before I pay the 75 dollar fee for paying rent with a cc. Thanks!",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "oem6usw",
+          "author": "reddit_user_74a4d298196b",
+          "author_karma": 0,
+          "content": "I use Platiq when I need to hit a sub with housing ",
+          "timestamp": "2026-04-06T14:06:22+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "off5ago",
+              "author": "reddit_user_9c82b6851e32",
+              "author_karma": 0,
+              "content": "My complex doesn't take Platiq anymore but rent payments definitely counted towards the SUB when I got my Premier last year.",
+              "timestamp": "2026-04-10T17:36:11+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "oem6usw",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "oemanco",
+          "author": "reddit_user_d970f1911b65",
+          "author_karma": 0,
+          "content": "Fundamentally Citi (via Mastercard) charge them nearly 3% - apparently rentcafe does take credit cards, for a fee in that ballpark. Plastiq can do it for 2.99% IIRC, but using rentcafe directly is probably better overall.\n\nFor $4k in 3 months though, don’t your non-rent expenses get you most of the way without paying fees? Groceries, gas, etc?",
+          "timestamp": "2026-04-06T14:25:05+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "oembjmm",
+              "author": "reddit_user_fe1ead098cfb",
+              "author_karma": 0,
+              "content": "Yea, I know I am able to pay with a credit card. Was more so questioning if Citi will honor that value for the SUB or not? ",
+              "timestamp": "2026-04-06T14:29:27+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "oemanco",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "oemfg89",
+                  "author": "reddit_user_d970f1911b65",
+                  "author_karma": 0,
+                  "content": "It certainly should count: the exclusions are cash advance type, fees (interest etc), educational/government payments, and instalment plans. Rent is just a regular purchase for their purposes - just probably not a common one because of the fees usually charged. ",
+                  "timestamp": "2026-04-06T14:48:17+00:00",
+                  "likes": 2,
+                  "dislikes": 0,
+                  "parent_comment_id": "oembjmm",
+                  "depth": 2,
+                  "replies": []
+                },
+                {
+                  "comment_id": "oeo5joq",
+                  "author": "reddit_user_f28bfccb80ab",
+                  "author_karma": 0,
+                  "content": "Yes, any spend counts, excluding annual fees, late fees, interest, etc.",
+                  "timestamp": "2026-04-06T19:44:15+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "oembjmm",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

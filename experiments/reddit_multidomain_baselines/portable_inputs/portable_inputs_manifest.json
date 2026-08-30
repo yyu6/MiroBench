@@ -4,6 +4,7 @@
     "camera",
     "celebrity",
     "cellphone",
+    "credit_cards",
     "game",
     "headphones",
     "health_issue",
@@ -483,6 +484,161 @@
       "path": "real_reference/cellphone/run_029_sampled_reddit/discussion.json",
       "sha256": "18ed043391835c4c2e725e1304d32e6b0cfdedad544fb06308165a812f5cff0b",
       "bytes": 17201
+    },
+    {
+      "path": "real_reference/credit_cards/reference_manifest.json",
+      "sha256": "5f368e82ec76594ffa87432ba0406823ca95dd6316e153f085095934fdaedf8b",
+      "bytes": 197
+    },
+    {
+      "path": "real_reference/credit_cards/run_000_sampled_reddit/discussion.json",
+      "sha256": "03528f88c01997ac80febb30de646d3fa1c631c6df85aaaf0c15f991562c505f",
+      "bytes": 307025
+    },
+    {
+      "path": "real_reference/credit_cards/run_001_sampled_reddit/discussion.json",
+      "sha256": "13d72fae7a1d58864f303561ceef07ebd4a2e132865879992f99bfb82f230a11",
+      "bytes": 17956
+    },
+    {
+      "path": "real_reference/credit_cards/run_002_sampled_reddit/discussion.json",
+      "sha256": "8832524509763c95fedb3c361c24dcfc078bd9590cc3cabb7ecb6f832d0677ca",
+      "bytes": 42291
+    },
+    {
+      "path": "real_reference/credit_cards/run_003_sampled_reddit/discussion.json",
+      "sha256": "9ddd5f7ce3a8466adf659dc7fd132a9e2ad61dc27568cbc361e58738dc1cfa08",
+      "bytes": 142650
+    },
+    {
+      "path": "real_reference/credit_cards/run_004_sampled_reddit/discussion.json",
+      "sha256": "1ad0a503e6f4c7d8eda7727c6a7f02406e633051e9c4964a1063445a42b5801d",
+      "bytes": 212161
+    },
+    {
+      "path": "real_reference/credit_cards/run_005_sampled_reddit/discussion.json",
+      "sha256": "fcda2a8a1f49ab6a707a0f31047e88033e1694c070bc675118ca638f117d1a5d",
+      "bytes": 38527
+    },
+    {
+      "path": "real_reference/credit_cards/run_006_sampled_reddit/discussion.json",
+      "sha256": "ebaeaf61906ee76dc1736dd5b032007e70dd0c2a876d4bff5ed05abd76b778ef",
+      "bytes": 49911
+    },
+    {
+      "path": "real_reference/credit_cards/run_007_sampled_reddit/discussion.json",
+      "sha256": "0205dd43793081a24996ff21474635d732fb8635bb2a0077e0d6489a0421f239",
+      "bytes": 49820
+    },
+    {
+      "path": "real_reference/credit_cards/run_008_sampled_reddit/discussion.json",
+      "sha256": "2ef3fc5302a3f54e8bb86cb29e9e36e537928d6859d3adfaa9c8bacd3f763cc7",
+      "bytes": 296608
+    },
+    {
+      "path": "real_reference/credit_cards/run_009_sampled_reddit/discussion.json",
+      "sha256": "8f458f1d12173844c9f6b164212ed12c087548f91fee4ce2935a3d72e70869f4",
+      "bytes": 45182
+    },
+    {
+      "path": "real_reference/credit_cards/run_010_sampled_reddit/discussion.json",
+      "sha256": "9449139ef09f33c003dd409459e2f4bd1f7cc2edfcc9ce54c93f4300ae58b859",
+      "bytes": 75802
+    },
+    {
+      "path": "real_reference/credit_cards/run_011_sampled_reddit/discussion.json",
+      "sha256": "e3fcdd74b0617596a532a6680237481f64ab703aa202ff2648ca761bed779582",
+      "bytes": 230333
+    },
+    {
+      "path": "real_reference/credit_cards/run_012_sampled_reddit/discussion.json",
+      "sha256": "26630d2333e7b4107cf999254b2b183853d23c195e4c2cf9d6ab2eb336849f27",
+      "bytes": 151034
+    },
+    {
+      "path": "real_reference/credit_cards/run_013_sampled_reddit/discussion.json",
+      "sha256": "59d255b189b455d3ca8780e36f10b108825038a9ef2b79884fb39adb60249307",
+      "bytes": 103006
+    },
+    {
+      "path": "real_reference/credit_cards/run_014_sampled_reddit/discussion.json",
+      "sha256": "0a4fd42cc2429cf5ab3637e66648606ff0e3bea1e12d31870d4288172b7bdfb2",
+      "bytes": 76717
+    },
+    {
+      "path": "real_reference/credit_cards/run_015_sampled_reddit/discussion.json",
+      "sha256": "a774c6eebf238f108029655d941a6d4f6d16e91296073fed0d95394e6a4e8d66",
+      "bytes": 42650
+    },
+    {
+      "path": "real_reference/credit_cards/run_016_sampled_reddit/discussion.json",
+      "sha256": "4b5415888b0d82a7edd38276c1a06ec012134d83abffe96d7b4ab5eca9a665a8",
+      "bytes": 171196
+    },
+    {
+      "path": "real_reference/credit_cards/run_017_sampled_reddit/discussion.json",
+      "sha256": "e01b05a2c716d458689f6d2cd85e6e327a936be3e9d5a39398b9e21e43f6511c",
+      "bytes": 141407
+    },
+    {
+      "path": "real_reference/credit_cards/run_018_sampled_reddit/discussion.json",
+      "sha256": "0308f6109ab4dfc9d735ab3c8bfd911608c58ceb5b1b16701a803af48e45afe0",
+      "bytes": 58092
+    },
+    {
+      "path": "real_reference/credit_cards/run_019_sampled_reddit/discussion.json",
+      "sha256": "37762fd20d7da651d40d010a190d70a4a90912848725d40745fe90f12989336e",
+      "bytes": 72270
+    },
+    {
+      "path": "real_reference/credit_cards/run_020_sampled_reddit/discussion.json",
+      "sha256": "474a63ff94e01b73f68af2a20c7f8f851b32b60e099e8a4b024ca60cc685c9d9",
+      "bytes": 62343
+    },
+    {
+      "path": "real_reference/credit_cards/run_021_sampled_reddit/discussion.json",
+      "sha256": "68d0cb06e93ff861da918cd3455d4375bcc0b6aa860e17edc955b36472b1fe8d",
+      "bytes": 134221
+    },
+    {
+      "path": "real_reference/credit_cards/run_022_sampled_reddit/discussion.json",
+      "sha256": "48f9eedede6f1840e8709c336240af669db419a252db76e7f154f4d2a4877df7",
+      "bytes": 36749
+    },
+    {
+      "path": "real_reference/credit_cards/run_023_sampled_reddit/discussion.json",
+      "sha256": "bf74cf5cbd836d90650b53340734f0c611d43d54dfc3f99e0d8568b566a2006b",
+      "bytes": 82429
+    },
+    {
+      "path": "real_reference/credit_cards/run_024_sampled_reddit/discussion.json",
+      "sha256": "78a0b6f5e9dec82647e10367c7b74fb4d5decb93cf8c065c889344533a692cca",
+      "bytes": 63965
+    },
+    {
+      "path": "real_reference/credit_cards/run_025_sampled_reddit/discussion.json",
+      "sha256": "b41825f817ca8e185ee14c045ed7b565d0cd9d168278583c8a42478709593474",
+      "bytes": 47093
+    },
+    {
+      "path": "real_reference/credit_cards/run_026_sampled_reddit/discussion.json",
+      "sha256": "da9179e0765293492296dd1578f4328a48dd5fb1c5bb47f7aab8b19676e2b4a2",
+      "bytes": 31172
+    },
+    {
+      "path": "real_reference/credit_cards/run_027_sampled_reddit/discussion.json",
+      "sha256": "7d52df3aab27ce9be38a4a53d12c701b6e49e606f28ee55a219933ec930a22b0",
+      "bytes": 78595
+    },
+    {
+      "path": "real_reference/credit_cards/run_028_sampled_reddit/discussion.json",
+      "sha256": "bd2d965df4bbef3884929210f279820e52a4605893c7af41319915ab6b89adc4",
+      "bytes": 205031
+    },
+    {
+      "path": "real_reference/credit_cards/run_029_sampled_reddit/discussion.json",
+      "sha256": "a9927312176bafadced443ad9047c66bd5f1d8bde3acff7dc328a4b8f2b7d007",
+      "bytes": 33797
     },
     {
       "path": "real_reference/game/reference_manifest.json",
@@ -1738,6 +1894,11 @@
       "path": "seed_pools/cellphone.json",
       "sha256": "c81447b145bca34e3abc8f159d8f2bdd438b2ee3020a3f5afc46a213344eddf1",
       "bytes": 211324
+    },
+    {
+      "path": "seed_pools/credit_cards.json",
+      "sha256": "659417000b8c20148582bc03298a7b7fb04bd155d0ebb8a3d2958208c1a7d362",
+      "bytes": 409576
     },
     {
       "path": "seed_pools/game.json",

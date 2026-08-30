@@ -1,0 +1,2788 @@
+{
+  "meta": {
+    "product_category": "credit_cards",
+    "baseline": "real_reddit_reference",
+    "run_id": "run_012_sampled_reddit"
+  },
+  "posts": [
+    {
+      "post_id": "real_run012_post00_seed060",
+      "post_slot": 0,
+      "seed_index": 60,
+      "source_raw_post_id": "xbyg81",
+      "source_product_dir": "Wells Fargo Autograph® Card",
+      "source_file": "reddit_post:xbyg81",
+      "post_type": "discussion_prompt",
+      "title": "Wells Fargo has some solid cards, but I hear that many people don’t like doing business with them. What are their practices that turn people off of them?",
+      "author": "reddit_user_0dab2d077fca",
+      "author_karma": 0,
+      "content": "Wells Fargo has some solid cards, but I hear that many people don’t like doing business with them. What are their practices that turn people off of them?\n\nI think the autograph is a pretty solid card with a good sign-up bonus. I have a card plan and it’s not freed up for the next few months, but in the long term, I’d consider the Autograph or some other WF card if I had my skepticism cleared up. What are the main issues people have with Wells Fargo and should these issues be considered a deal-breaker?",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "io2d0wn",
+          "author": "reddit_user_5c33627d6fbe",
+          "author_karma": 0,
+          "content": "WF is plagued with scandals, but it isn't a big factor for me since all banks do shady stuff all the time. Even US Bank got caught doing what WF did recently and I'm not going to get rid of my Elan MCP card. Why I don't go for WF cards is simple. I can't stand their $25 increment redemptions. It annoyed me enough that I just said screw that, there are better options that aren't going force me to redeem in $25 increments.",
+          "timestamp": "2022-09-12T00:52:23+00:00",
+          "likes": 71,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "io2d8zz",
+              "author": "reddit_user_0ea8663f5293",
+              "author_karma": 0,
+              "content": "Oh god the $25 increments sound terrible. I’ll definitely avoid them for that reason alone, save some other compensation for that",
+              "timestamp": "2022-09-12T00:54:07+00:00",
+              "likes": 20,
+              "dislikes": 0,
+              "parent_comment_id": "io2d0wn",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "io2spnb",
+                  "author": "[deleted]",
+                  "author_karma": 0,
+                  "content": "It's VERY easy to get around the $25 increments. You can redeem for purchases of any cost. You can buy a $1 soda from McDonald's and then redeem 100 points for it.",
+                  "timestamp": "2022-09-12T02:55:33+00:00",
+                  "likes": 16,
+                  "dislikes": 0,
+                  "parent_comment_id": "io2d8zz",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "io6zhv3",
+                      "author": "reddit_user_0ea8663f5293",
+                      "author_karma": 0,
+                      "content": "So you can redeem it against your balance at any time? Say I have 3 dollars worth of cash back and buy a Latte for $5, I could just draw down my cash-back balance against the total cost of the Latte?",
+                      "timestamp": "2022-09-13T00:25:53+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "io2spnb",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "io6zsht",
+                          "author": "[deleted]",
+                          "author_karma": 0,
+                          "content": "Not quite. Your purchase has to be less than or equal to your rewards balance. In other words your rewards balance has to be able to completely cover the cost of your purchase.",
+                          "timestamp": "2022-09-13T00:28:01+00:00",
+                          "likes": 2,
+                          "dislikes": 0,
+                          "parent_comment_id": "io6zhv3",
+                          "depth": 4,
+                          "replies": [
+                            {
+                              "comment_id": "io70jwx",
+                              "author": "reddit_user_0ea8663f5293",
+                              "author_karma": 0,
+                              "content": "Makes sense so like as long as I have more cash back than one of my purchases, I could apply the balance. Thanks for that info!",
+                              "timestamp": "2022-09-13T00:33:35+00:00",
+                              "likes": 2,
+                              "dislikes": 0,
+                              "parent_comment_id": "io6zsht",
+                              "depth": 5,
+                              "replies": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "comment_id": "io2jjhr",
+                  "author": "reddit_user_2c9cde051748",
+                  "author_karma": 0,
+                  "content": "It's not the worst cash back system by any means. Amex doesn't even give you an option; it's a statement credit every month. I have no problem with the $25 increments because I like to get my cash in big chunks anyway, maybe right around the time I spend money for a trip.",
+                  "timestamp": "2022-09-12T01:42:29+00:00",
+                  "likes": 10,
+                  "dislikes": 0,
+                  "parent_comment_id": "io2d8zz",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "io2t4mo",
+                      "author": "reddit_user_b67db86a38a0",
+                      "author_karma": 0,
+                      "content": "My Amex BCP doesn't do that. I cash out the yearly fee, in August when it's due, then the rest in December, to pay for Xmas and/or birthday. Lots of December birthdays in my family.",
+                      "timestamp": "2022-09-12T02:59:03+00:00",
+                      "likes": 8,
+                      "dislikes": 0,
+                      "parent_comment_id": "io2jjhr",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "io2tco1",
+                          "author": "reddit_user_2c9cde051748",
+                          "author_karma": 0,
+                          "content": "Ok good to know. I guess they aren't all like Blue Business Cash.",
+                          "timestamp": "2022-09-12T03:00:53+00:00",
+                          "likes": 6,
+                          "dislikes": 0,
+                          "parent_comment_id": "io2t4mo",
+                          "depth": 4,
+                          "replies": []
+                        }
+                      ]
+                    },
+                    {
+                      "comment_id": "io58iet",
+                      "author": "reddit_user_e7989139be59",
+                      "author_karma": 0,
+                      "content": "Well world_Finacial_Solution have done a lot for me on a financial matter. Thanks to them",
+                      "timestamp": "2022-09-12T17:09:28+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "io2jjhr",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                },
+                {
+                  "comment_id": "io3lqyp",
+                  "author": "[deleted]",
+                  "author_karma": 0,
+                  "content": "$25 increments seems like a weird deal-breaker. Do you really need that $11.50 right now?",
+                  "timestamp": "2022-09-12T08:29:03+00:00",
+                  "likes": 9,
+                  "dislikes": 0,
+                  "parent_comment_id": "io2d8zz",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "io44b5t",
+                      "author": "reddit_user_b13f43a0bcc5",
+                      "author_karma": 0,
+                      "content": "As somebody who rotates card and has $20 sitting in it for months it’s a dumb thing that just gets added to the list of what not to like about them. I have two cards with them. The first is the weird construction only home projects one for a furnace that died in middle of winter on me. They won’t port that line of credit to the other card I had used which had an 18mnth no interest period that I paid off at month 18 and stopped using a year ago. Zero new offers to bring that back in to rotation. \n\nI have two discover cards about $30k line each. Every 12 months I call and get a 12 month no interest offer on one of them creating an infinite no interest rotation just with discover.",
+                      "timestamp": "2022-09-12T12:21:41+00:00",
+                      "likes": 5,
+                      "dislikes": 0,
+                      "parent_comment_id": "io3lqyp",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "io56pec",
+                          "author": "reddit_user_03f1181123b6",
+                          "author_karma": 0,
+                          "content": "What do you say when you call them ? I’ve never thought to do this before",
+                          "timestamp": "2022-09-12T16:57:42+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "io44b5t",
+                          "depth": 4,
+                          "replies": [
+                            {
+                              "comment_id": "io58262",
+                              "author": "reddit_user_b13f43a0bcc5",
+                              "author_karma": 0,
+                              "content": "Start by asking if you qualify for any promos. They usually volunteer it or just tell them you have a large purchase soon and are trying to figure out which card to put it on.",
+                              "timestamp": "2022-09-12T17:06:29+00:00",
+                              "likes": 1,
+                              "dislikes": 0,
+                              "parent_comment_id": "io56pec",
+                              "depth": 5,
+                              "replies": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "comment_id": "io2q3a3",
+                  "author": "reddit_user_25197afb54a1",
+                  "author_karma": 0,
+                  "content": "So you wouldn't like Citi's $50 minimum redemption..",
+                  "timestamp": "2022-09-12T02:34:34+00:00",
+                  "likes": -1,
+                  "dislikes": 0,
+                  "parent_comment_id": "io2d8zz",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "io2vjyy",
+                      "author": "reddit_user_5c33627d6fbe",
+                      "author_karma": 0,
+                      "content": "> So you wouldn't like Citi's $50 minimum redemption.\n\nThe only Citi card I know of that has a $50 minimum redemption would be the discontinued Dividend card and that card is going to be forced change to a Custom Cash sometime later in September. All current Citi TY cards have no minimum redemption limits. You can redeem TY points for as little as 1 cent.",
+                      "timestamp": "2022-09-12T03:19:20+00:00",
+                      "likes": 10,
+                      "dislikes": 0,
+                      "parent_comment_id": "io2q3a3",
+                      "depth": 3,
+                      "replies": []
+                    },
+                    {
+                      "comment_id": "io4duz3",
+                      "author": "reddit_user_d52bb1e8006c",
+                      "author_karma": 0,
+                      "content": "Alliant Credit Union's Visa Signature has this as well.",
+                      "timestamp": "2022-09-12T13:40:57+00:00",
+                      "likes": 2,
+                      "dislikes": 0,
+                      "parent_comment_id": "io2q3a3",
+                      "depth": 3,
+                      "replies": []
+                    },
+                    {
+                      "comment_id": "io2rf83",
+                      "author": "[deleted]",
+                      "author_karma": 0,
+                      "content": "Citi does that now? Is there anyone with a list of what banks have such a large redemption minimum?",
+                      "timestamp": "2022-09-12T02:45:10+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "io2q3a3",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "io3mtus",
+                          "author": "reddit_user_0ff98851e637",
+                          "author_karma": 0,
+                          "content": "Citi doesn’t do that. I have the Double Cash and I can direct deposit ANY amount to an external bank account. One of the best redemption systems along with Chase and Discover.",
+                          "timestamp": "2022-09-12T08:45:25+00:00",
+                          "likes": 3,
+                          "dislikes": 0,
+                          "parent_comment_id": "io2rf83",
+                          "depth": 4,
+                          "replies": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "comment_id": "io2ss9m",
+              "author": "reddit_user_b67db86a38a0",
+              "author_karma": 0,
+              "content": "I looked at my WF card. I can either do $25 increments as cash out, or apply the total amount to any purchase.",
+              "timestamp": "2022-09-12T02:56:10+00:00",
+              "likes": 4,
+              "dislikes": 0,
+              "parent_comment_id": "io2d0wn",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "io33nb3",
+              "author": "reddit_user_40f3d65552b5",
+              "author_karma": 0,
+              "content": "You can get cash at the atm no minimum",
+              "timestamp": "2022-09-12T04:36:11+00:00",
+              "likes": 3,
+              "dislikes": 0,
+              "parent_comment_id": "io2d0wn",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "io33y48",
+                  "author": "reddit_user_5c33627d6fbe",
+                  "author_karma": 0,
+                  "content": "Site says you can cash out at WF ATM's in $20 increments.",
+                  "timestamp": "2022-09-12T04:39:22+00:00",
+                  "likes": 4,
+                  "dislikes": 0,
+                  "parent_comment_id": "io33nb3",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "io33zs7",
+                      "author": "reddit_user_40f3d65552b5",
+                      "author_karma": 0,
+                      "content": "Never personally had a problem going lower",
+                      "timestamp": "2022-09-12T04:39:52+00:00",
+                      "likes": 2,
+                      "dislikes": 0,
+                      "parent_comment_id": "io33y48",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "io34g1p",
+                          "author": "reddit_user_5c33627d6fbe",
+                          "author_karma": 0,
+                          "content": "You're the first person I've seen to actually use the ATM option and report back that that there is no minimum. I wonder if others can replicate your results. If confirmed, then it would be a neat way to bypass the incremental redemptions.",
+                          "timestamp": "2022-09-12T04:44:41+00:00",
+                          "likes": 4,
+                          "dislikes": 0,
+                          "parent_comment_id": "io33zs7",
+                          "depth": 4,
+                          "replies": [
+                            {
+                              "comment_id": "io34y5d",
+                              "author": "reddit_user_40f3d65552b5",
+                              "author_karma": 0,
+                              "content": "They changed it silently. Like how mobile and atm check deposits hit the same as in branch unlike before",
+                              "timestamp": "2022-09-12T04:50:06+00:00",
+                              "likes": 3,
+                              "dislikes": 0,
+                              "parent_comment_id": "io34g1p",
+                              "depth": 5,
+                              "replies": []
+                            }
+                          ]
+                        },
+                        {
+                          "comment_id": "io4m4mk",
+                          "author": "reddit_user_dcd37a1f05e1",
+                          "author_karma": 0,
+                          "content": "I wonder if they say “$20 minimum” because some WF ATM’s only dispense $20 bills. Have you found WF ATM’s with $1’s, $5’s and $10’s?",
+                          "timestamp": "2022-09-12T14:40:25+00:00",
+                          "likes": 2,
+                          "dislikes": 0,
+                          "parent_comment_id": "io33zs7",
+                          "depth": 4,
+                          "replies": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "comment_id": "io3ld0u",
+              "author": "reddit_user_a97e6a49c0b9",
+              "author_karma": 0,
+              "content": "$25 redemption is annoying i have a credit card from them. But the way around it is statement credit. Its the same value as transferring it to your checkings, it lets you bypass the $25 redemption. Thats my way around it",
+              "timestamp": "2022-09-12T08:23:10+00:00",
+              "likes": 2,
+              "dislikes": 0,
+              "parent_comment_id": "io2d0wn",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "io2ssw7",
+              "author": "[deleted]",
+              "author_karma": 0,
+              "content": "It's VERY easy to get around the $25 increments. You can redeem for purchases of any cost. You can buy a $1 soda from McDonald's and then redeem 100 points for it.",
+              "timestamp": "2022-09-12T02:56:19+00:00",
+              "likes": 5,
+              "dislikes": 0,
+              "parent_comment_id": "io2d0wn",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "io4dr7s",
+              "author": "reddit_user_d52bb1e8006c",
+              "author_karma": 0,
+              "content": "Not to mention you can't redeem them for an ACH credit to another bank. Either statement credit or check in the mail.",
+              "timestamp": "2022-09-12T13:40:10+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "io2d0wn",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "j193ut9",
+              "author": "reddit_user_e5d1d4812d38",
+              "author_karma": 0,
+              "content": "Literally the only person who realizes that all big banks do shady stuff. Just Wells Fargo got caught. Guarantee that Chase, BofA, American Express, Goldman Sachs and Citibank are all doing the same things. I have accounts with Wells Fargo, AMEX, Charles Schwab, and a local credit union. I do not have a problem with either one of them. Wells Fargo was the easiest to get a regular and business checking account open. And I got a business credit card open fast as well. The day I have a serious issue with them I will leave and move to Chase. I have been with them for 10 years so far and zero issues. I agree with you that is probably the only annoying thing I have encountered with them so far. But they have given me my largest credit lines.",
+              "timestamp": "2022-12-22T16:05:13+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "io2d0wn",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "io2biwk",
+          "author": "reddit_user_9f6da12eb807",
+          "author_karma": 0,
+          "content": "Scandals have plagued WF for years. \n\nI don’t do business with anybody I can’t trust. I don’t trust Wells Fargo.",
+          "timestamp": "2022-09-12T00:40:51+00:00",
+          "likes": 88,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "io2yomk",
+              "author": "reddit_user_aa4c1adf0480",
+              "author_karma": 0,
+              "content": "Doing business with any bank except small local credit unions leads to the same result.",
+              "timestamp": "2022-09-12T03:47:18+00:00",
+              "likes": 23,
+              "dislikes": 0,
+              "parent_comment_id": "io2biwk",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "io3710f",
+                  "author": "[deleted]",
+                  "author_karma": 0,
+                  "content": "disarm snobbish summer strong market full society bewildered numerous rob\n\n *This post was mass deleted and anonymized with [Redact](https://redact.dev)*",
+                  "timestamp": "2022-09-12T05:13:12+00:00",
+                  "likes": 25,
+                  "dislikes": 0,
+                  "parent_comment_id": "io2yomk",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "io4dng0",
+                      "author": "reddit_user_d52bb1e8006c",
+                      "author_karma": 0,
+                      "content": "At least there are some that can be trusted. I don't trust any of the big banks.",
+                      "timestamp": "2022-09-12T13:39:21+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "io3710f",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                },
+                {
+                  "comment_id": "io4ilsr",
+                  "author": "reddit_user_b73a17fdcd68",
+                  "author_karma": 0,
+                  "content": "This. I switched from Bank of America to a credit union and have never looked back.",
+                  "timestamp": "2022-09-12T14:15:43+00:00",
+                  "likes": 3,
+                  "dislikes": 0,
+                  "parent_comment_id": "io2yomk",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "ioa3vel",
+                      "author": "reddit_user_9f9e72e3e485",
+                      "author_karma": 0,
+                      "content": "how has the credit union been different or better? are they giving you 2.0% on your savings account?",
+                      "timestamp": "2022-09-13T16:58:14+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "io4ilsr",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                },
+                {
+                  "comment_id": "ioa3l5m",
+                  "author": "reddit_user_9f9e72e3e485",
+                  "author_karma": 0,
+                  "content": "what's so good and or different about a credit union?",
+                  "timestamp": "2022-09-13T16:56:29+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "io2yomk",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            },
+            {
+              "comment_id": "io4kq18",
+              "author": "reddit_user_8bd7132a2f13",
+              "author_karma": 0,
+              "content": "I love this motto",
+              "timestamp": "2022-09-12T14:30:35+00:00",
+              "likes": 3,
+              "dislikes": 0,
+              "parent_comment_id": "io2biwk",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "io2cuv3",
+              "author": "reddit_user_3dbfa9590be7",
+              "author_karma": 0,
+              "content": "Chase is just as bad.",
+              "timestamp": "2022-09-12T00:51:07+00:00",
+              "likes": 8,
+              "dislikes": 0,
+              "parent_comment_id": "io2biwk",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "io2n3js",
+                  "author": "reddit_user_82ac9180bf50",
+                  "author_karma": 0,
+                  "content": "All huge banks are pretty bad with lots of scandals\n\n[https://www.scmp.com/magazines/post-magazine/books/article/3185472/how-hsbc-laundered-money-mexican-drug-cartels-paid](https://www.scmp.com/magazines/post-magazine/books/article/3185472/how-hsbc-laundered-money-mexican-drug-cartels-paid)\n\n[https://www.forbes.com/sites/jackkelly/2020/02/24/wells-fargo-forced-to-pay-3-billion-for-the-banks-fake-account-scandal/?sh=15f69d8d42d2](https://www.forbes.com/sites/jackkelly/2020/02/24/wells-fargo-forced-to-pay-3-billion-for-the-banks-fake-account-scandal/?sh=15f69d8d42d2)",
+                  "timestamp": "2022-09-12T02:10:53+00:00",
+                  "likes": 38,
+                  "dislikes": 0,
+                  "parent_comment_id": "io2cuv3",
+                  "depth": 2,
+                  "replies": []
+                },
+                {
+                  "comment_id": "io67yvb",
+                  "author": "reddit_user_fdb517192a08",
+                  "author_karma": 0,
+                  "content": "https://www.youtube.com/watch?v=8qZqbkgWcJs\n\nCompany Man video that came out this week if anyone is interested.",
+                  "timestamp": "2022-09-12T21:07:17+00:00",
+                  "likes": 3,
+                  "dislikes": 0,
+                  "parent_comment_id": "io2cuv3",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "io2c82f",
+          "author": "reddit_user_51faad22ab88",
+          "author_karma": 0,
+          "content": "Netflix—> Dirty Money —> Season 2 —> The Wagon Wheel",
+          "timestamp": "2022-09-12T00:46:15+00:00",
+          "likes": 19,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "io2cj44",
+              "author": "reddit_user_cca6def3a258",
+              "author_karma": 0,
+              "content": "thanks for the netflix show recommendation good internet person",
+              "timestamp": "2022-09-12T00:48:40+00:00",
+              "likes": 11,
+              "dislikes": 0,
+              "parent_comment_id": "io2c82f",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "io2c9th",
+              "author": "reddit_user_0ea8663f5293",
+              "author_karma": 0,
+              "content": "Cool I’ll have to check that out!",
+              "timestamp": "2022-09-12T00:46:38+00:00",
+              "likes": 3,
+              "dislikes": 0,
+              "parent_comment_id": "io2c82f",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "io2atpd",
+          "author": "reddit_user_a11c48c5671e",
+          "author_karma": 0,
+          "content": "This is the point where Google would answer your question. \n\nWells Fargo has well known and documented issues. Each consumer has to decide for themselves if it is serious enough to not do business with them.",
+          "timestamp": "2022-09-12T00:35:29+00:00",
+          "likes": 168,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "io2px8j",
+              "author": "reddit_user_25197afb54a1",
+              "author_karma": 0,
+              "content": "Saying they will do something and never doing it.  \nWas also with a company who had a million+ with them. The Wells Frago Advisors rep was extremely hard to get ahold of. Would often times delay by a week.  \nThey once called and left a VM.  I called back and they had no clue who the caller was - although it was legitimately a call from WF.  \nThe relationship bankers often times are unavailable and/or never return calls or emails.  \nI'd keep going, but I'm tired tonight.",
+              "timestamp": "2022-09-12T02:33:14+00:00",
+              "likes": 34,
+              "dislikes": 0,
+              "parent_comment_id": "io2atpd",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "io2uhc1",
+                  "author": "reddit_user_10df4e552d0c",
+                  "author_karma": 0,
+                  "content": "I agree with this. I tried to open a LOC for business with the relationship banker once, didn’t respond to my emails about it. Went with US bank instead, way better service. \n\nOverall, a small local bank or CU is your best bet though.",
+                  "timestamp": "2022-09-12T03:10:11+00:00",
+                  "likes": 15,
+                  "dislikes": 0,
+                  "parent_comment_id": "io2px8j",
+                  "depth": 2,
+                  "replies": []
+                },
+                {
+                  "comment_id": "irl7efg",
+                  "author": "reddit_user_7b4162899ab7",
+                  "author_karma": 0,
+                  "content": "Relationship bankers aren’t bankers. I know comms majors who took that job out of college, it’s more of a sales position",
+                  "timestamp": "2022-10-09T02:44:05+00:00",
+                  "likes": 2,
+                  "dislikes": 0,
+                  "parent_comment_id": "io2px8j",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "io2bxpy",
+          "author": "reddit_user_0e68f6aa0043",
+          "author_karma": 0,
+          "content": "Wells Fargo was caught opening accounts without customer consent. That is one big reason people have issues with them. Although, other big banks have been caught doing the same thing.\n\nI have seriously considered the Autograph, but keep putting off applying because I am not 100% sure I want to do business with them knowing their sketchy past.",
+          "timestamp": "2022-09-12T00:44:02+00:00",
+          "likes": 30,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "io3x0rb",
+              "author": "reddit_user_1b61e3cb8456",
+              "author_karma": 0,
+              "content": "I have the propel for over a year, and never had a problem with them. Customer service also has been very good for me",
+              "timestamp": "2022-09-12T11:06:03+00:00",
+              "likes": 4,
+              "dislikes": 0,
+              "parent_comment_id": "io2bxpy",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "io2cy0d",
+              "author": "reddit_user_3dbfa9590be7",
+              "author_karma": 0,
+              "content": "Do you have a Chase card?",
+              "timestamp": "2022-09-12T00:51:46+00:00",
+              "likes": -3,
+              "dislikes": 0,
+              "parent_comment_id": "io2bxpy",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "io2ehqj",
+                  "author": "reddit_user_0e68f6aa0043",
+                  "author_karma": 0,
+                  "content": "I do not. I am considering adding another card to my wallet, not sure which one at the moment. I only have my local credit union credit card, that’s it. Want to keep building my credit.",
+                  "timestamp": "2022-09-12T01:03:39+00:00",
+                  "likes": 5,
+                  "dislikes": 0,
+                  "parent_comment_id": "io2cy0d",
+                  "depth": 2,
+                  "replies": []
+                },
+                {
+                  "comment_id": "io2riq7",
+                  "author": "[deleted]",
+                  "author_karma": 0,
+                  "content": "Never had any problems with chase just fyi",
+                  "timestamp": "2022-09-12T02:45:58+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "io2cy0d",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "io3qtgi",
+                      "author": "reddit_user_9b388e5c2ff9",
+                      "author_karma": 0,
+                      "content": "Ive had chase randomly enable features on my account that I specifically stated I did not want and have in writing but they don't care.",
+                      "timestamp": "2022-09-12T09:44:55+00:00",
+                      "likes": 3,
+                      "dislikes": 0,
+                      "parent_comment_id": "io2riq7",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "io2g9fo",
+          "author": "reddit_user_a8a79cfecb8f",
+          "author_karma": 0,
+          "content": "I want to give another commenter some credit here from another post so here’s a link. In short, the big banks have been fined quite a bit for wrongdoing.\n\nhttps://www.reddit.com/r/CreditCards/comments/wagl5w/us_bank_fined_millions_for_opening_sham_accounts/ii230yn/?utm_source=share&utm_medium=ios_app&utm_name=iossmf&context=3",
+          "timestamp": "2022-09-12T01:17:22+00:00",
+          "likes": 10,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "io2ct2j",
+          "author": "reddit_user_3dbfa9590be7",
+          "author_karma": 0,
+          "content": "Most major banks have had their scandals. WF is not alone here.",
+          "timestamp": "2022-09-12T00:50:45+00:00",
+          "likes": 22,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "io2d03m",
+              "author": "reddit_user_0ea8663f5293",
+              "author_karma": 0,
+              "content": "True, it could just be me, but Ive noticed more about their scandals in relation to consumers than other banks.",
+              "timestamp": "2022-09-12T00:52:13+00:00",
+              "likes": 7,
+              "dislikes": 0,
+              "parent_comment_id": "io2ct2j",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "io2yvrc",
+                  "author": "[deleted]",
+                  "author_karma": 0,
+                  "content": "Wells Fargo got put on mainstream media while the other big banks only get financial news media.  Because of this there is a heavy bias against Wells Fargo vs the other banks as the average joe might see a passing article online, on TV, in newspaper, etc.  A much smaller portion of the population pay attention to the financial news section.\n\nIn the past 20 years, BoFA has been fined $86 billion and Chase has been fined $36ish billion for violations.  BoFA is #1 and Chase is #2 most fined banks in America.  Wells Fargo is #4.  I don't see anyone here pointing their fingers at BoFA or Chase ever.  Only Wells Fargo gets shamed.  See the bias?\n\nWells Fargo is still a big evil bank they just get shamed disproportionately relative to other banks.\n\nhttps://violationtracker.goodjobsfirst.org/industry/financial%20services",
+                  "timestamp": "2022-09-12T03:49:09+00:00",
+                  "likes": 20,
+                  "dislikes": 0,
+                  "parent_comment_id": "io2d03m",
+                  "depth": 2,
+                  "replies": []
+                },
+                {
+                  "comment_id": "io2l3dh",
+                  "author": "reddit_user_292fb9e8fddc",
+                  "author_karma": 0,
+                  "content": "I'm not sure why they get singled out more than others but a simple Google of \"us banks by fines and penalties\" will show that if you want to pick your reward cards based on the banks that issue them, you will severely restrict your options.",
+                  "timestamp": "2022-09-12T01:54:46+00:00",
+                  "likes": 7,
+                  "dislikes": 0,
+                  "parent_comment_id": "io2d03m",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "io2lgir",
+          "author": "reddit_user_2c9cde051748",
+          "author_karma": 0,
+          "content": "They have their recent scandals, but if you're looking for a major bank without scandals, there are none. I've been a Wells Fargo customer for over 30 years and I had plenty of opportunities to change banks and collect a SUB but I didn't. They've given me the best service and convenience of any bank, so I'm staying with them until they give me a reason to leave.\n\nI've only recently been using WF credit cards heavily. I used their customer service a few times and they exceeded my expectations so far. The app is not perfect but it's far better than apps you typically see from smaller banks like Synchrony. Chase, Amex, and Citi have better apps but they have been the top 3 for a long time now and Wells Fargo's app continues to improve steadily. I have no problem with recommending their cards for a cash back setup.",
+          "timestamp": "2022-09-12T01:57:39+00:00",
+          "likes": 5,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "io2qkfe",
+          "author": "reddit_user_f141a909f4e2",
+          "author_karma": 0,
+          "content": "I opened Bilt card with them like 4-5 months ago, and I never had any issue.  I pay the card off every month and way before the due date to avoid any issue with their system resulting in a “late payment” being recorded in my reports… so, as I know they’re kinda difficult, I tend to have precautions and pay way in advance.  I’m getting points on rent every month.  I haven’t talked to customer service yet, so we’ll update when I do",
+          "timestamp": "2022-09-12T02:38:21+00:00",
+          "likes": 4,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "io6z2hj",
+              "author": "reddit_user_0ea8663f5293",
+              "author_karma": 0,
+              "content": "Seems smart. I'm definitely not ruling them out. I have two credit cards so far and have a lot of options ahead of me. If I ever open a WF account, I'll keep this in mind, seems like a smart idea",
+              "timestamp": "2022-09-13T00:22:48+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "io2qkfe",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "io2eqos",
+          "author": "reddit_user_ac968db3a308",
+          "author_karma": 0,
+          "content": "I’ve been a customer for over 20 years.\n\nI’ve never had a single problem. Ever.",
+          "timestamp": "2022-09-12T01:05:33+00:00",
+          "likes": 12,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "io32zwl",
+              "author": "[deleted]",
+              "author_karma": 0,
+              "content": "I also have had WF for about 13 years now and had nothing but good service and experiences. They’re also listed as one of the top Banks to have a Small Business Banking account with.",
+              "timestamp": "2022-09-12T04:29:25+00:00",
+              "likes": 5,
+              "dislikes": 0,
+              "parent_comment_id": "io2eqos",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "io2iw54",
+          "author": "reddit_user_cafd1dbd10c3",
+          "author_karma": 0,
+          "content": "I won’t let WF touch my money with a 10’ pole.\n\n* I have been trying for nearly a year to get authority to manage a HELOC as a conservator \n* I had to fight a fraudulent check written out of my *savings* account\n* My sister somehow had the same account number as someone else\n* I got a random large deposit that was not intended for me; when I asked them to reverse it, the tellers were surprised and said I should just take the money. (A friend who is a lawyer told me not to touch the money for any reason.)\n* Countless horror stories in the news/on Reddit, including by people who have worked there",
+          "timestamp": "2022-09-12T01:37:27+00:00",
+          "likes": 10,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "io4mfen",
+              "author": "reddit_user_dcd37a1f05e1",
+              "author_karma": 0,
+              "content": "What ended up happening to the deposit?",
+              "timestamp": "2022-09-12T14:42:29+00:00",
+              "likes": 2,
+              "dislikes": 0,
+              "parent_comment_id": "io2iw54",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "io55gxz",
+                  "author": "reddit_user_cafd1dbd10c3",
+                  "author_karma": 0,
+                  "content": "I was firm I wanted it returned, and eventually got it reversed. It was over $10k, at a time in my life $1k would have been life-changing.\n\nBut I couldn’t afford the consequences of spending money that wasn’t mine, either.",
+                  "timestamp": "2022-09-12T16:49:40+00:00",
+                  "likes": 3,
+                  "dislikes": 0,
+                  "parent_comment_id": "io4mfen",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            },
+            {
+              "comment_id": "io3nyc3",
+              "author": "reddit_user_74b963051178",
+              "author_karma": 0,
+              "content": "Everything you mentioned there is just not true",
+              "timestamp": "2022-09-12T09:02:26+00:00",
+              "likes": -9,
+              "dislikes": 0,
+              "parent_comment_id": "io2iw54",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "io55vpu",
+                  "author": "reddit_user_cafd1dbd10c3",
+                  "author_karma": 0,
+                  "content": "Fuck, I wish they weren’t. Particularly the first, as the department still refuses to speak to me about the loan which is a huge PITA.",
+                  "timestamp": "2022-09-12T16:52:18+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "io3nyc3",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "io2dbks",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "As other people have said, other banks have also had their scandals.  For whatever reason, the most recent WF scandal surrounding “account opening” is seared into people’s heads.  US Bank just got nabbed for the same thing, yet their name somehow hasn’t become synonymous with it\n\nIgnore any WF hate.  They’re one of my favorite banks — they have great cards and they’ve never been anything other than pleasant and helpful.",
+          "timestamp": "2022-09-12T00:54:40+00:00",
+          "likes": 13,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "io2zao6",
+              "author": "[deleted]",
+              "author_karma": 0,
+              "content": "WF got mainstream media while the other banks only got financial news media.  Average joe doesn't really look in to financial news.  Mainstream news gets post everywhere from social media to tv, radio, newspaper, etc.",
+              "timestamp": "2022-09-12T03:53:00+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "io2dbks",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "io2bhex",
+          "author": "reddit_user_9e96db307f8b",
+          "author_karma": 0,
+          "content": "A while back they opened up credit cards in customers names who didn’t apply for them. It was to the extent that employees were pressured to do that and lied to customers when they received information about their new credit card. They’ve been in trouble a few times for things like that. I don’t have any business relationship with them. A lot of the other big banks have gotten in trouble for doing bad stuff in the past too. I’m not sure this is enough to not to business with them, I just don’t feel like their cards have that much of an advantage over other cards that I have now to justify getting one, but if they had something that would be a game changer for me, it wouldn’t dissuade me from getting it",
+          "timestamp": "2022-09-12T00:40:32+00:00",
+          "likes": 7,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "io2qzk3",
+          "author": "reddit_user_56480468344c",
+          "author_karma": 0,
+          "content": "Everyone discourages Well Fargo, yet they endorse Chase and how great their credit card offerings are … and they are two peas in a pod of shady corporate business practices. Makes no sense",
+          "timestamp": "2022-09-12T02:41:41+00:00",
+          "likes": 4,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "io38rg9",
+              "author": "reddit_user_524557582c72",
+              "author_karma": 0,
+              "content": "Well, if you're going to pick one, the Chase cards seem to have better perks rgan the wells Fargo ones. That makes sense to me.",
+              "timestamp": "2022-09-12T05:33:02+00:00",
+              "likes": 3,
+              "dislikes": 0,
+              "parent_comment_id": "io2qzk3",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "io2avyy",
+          "author": "reddit_user_808a2fd6aeaf",
+          "author_karma": 0,
+          "content": "I’ve never had an issue with Wells Fargo. I enjoy their products aswel",
+          "timestamp": "2022-09-12T00:35:58+00:00",
+          "likes": 10,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "io2tsj6",
+          "author": "reddit_user_c9f1ded87568",
+          "author_karma": 0,
+          "content": "Customer service. Wells Fargo treats their call center workers like dog shit. Turnover is incredibly high. The internal systems are old. So onboarding isn’t just the initial training. It could take a year. But that doesn’t matter if turn over is 9 months.",
+          "timestamp": "2022-09-12T03:04:31+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "io3oygu",
+              "author": "reddit_user_74b963051178",
+              "author_karma": 0,
+              "content": "Sounds exactly like my credit union bank",
+              "timestamp": "2022-09-12T09:17:44+00:00",
+              "likes": 2,
+              "dislikes": 0,
+              "parent_comment_id": "io2tsj6",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "io3ce01",
+          "author": "reddit_user_301e20382dce",
+          "author_karma": 0,
+          "content": "Personally I’ve had no major problems with them but their deposit accts have become progressively harder to keep free. They have a bad rep, but who cares. ALL big banks do; open credit union accounts if you want to avoid big banks. All the more reason to take their SUB money and profit off of them. The easy $1500 some of us got for opening biz checking accts in the spring was extra nice. Because there are many better cards to churn thru tho, it’ll be at least a few years before I have any interest in using a 5/24 slot on that Autograph card (or pretty much any card) with just a $300 SUB. I see the appeal for non-churners tho.",
+          "timestamp": "2022-09-12T06:17:14+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "io3lnif",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "Wells Fargo has documented issues...but guess what, other banks have been exposed doing the same shit.\n\nSo now people just hate WF because they were the first big one documented doing shady stuff.",
+          "timestamp": "2022-09-12T08:27:35+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "io3wpzs",
+              "author": "reddit_user_23c8b248f521",
+              "author_karma": 0,
+              "content": "Starting to feel like other banks’ plans are just… \n\n“Wait until Wells Fargo gets caught first”",
+              "timestamp": "2022-09-12T11:02:31+00:00",
+              "likes": 3,
+              "dislikes": 0,
+              "parent_comment_id": "io3lnif",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "io3xxhx",
+                  "author": "[deleted]",
+                  "author_karma": 0,
+                  "content": "Its a solid strategy",
+                  "timestamp": "2022-09-12T11:16:36+00:00",
+                  "likes": 2,
+                  "dislikes": 0,
+                  "parent_comment_id": "io3wpzs",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "io47c7b",
+          "author": "reddit_user_d58d1afed23b",
+          "author_karma": 0,
+          "content": "I have the 2% cash back card. You can only redeem the rewards to a statement or a Wells Fargo checking account. Redemptions are in $25 increments. You also have to call to make a payment if you pay the card off more than 2-3 times a month. It’s annoying… but the rate is hard to beat",
+          "timestamp": "2022-09-12T12:48:41+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "is3b02c",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "The way you redeem points is weird & annoying. I just cashed in $400 off my Autograph card at a WF atm which allows for $20 increments. v strange. Try a Chase credit card. Much better and more premier than WF.",
+          "timestamp": "2022-10-13T00:07:03+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "is3bh5i",
+              "author": "reddit_user_0ea8663f5293",
+              "author_karma": 0,
+              "content": "Yeah I’m planning on getting a Chase Freedom Unlimited and then 3.5 months later, an AmEx Blue Cash Everyday. After that I’ll wait 6 months and decide my next card from there. Maybe the Chase freedom Flex or the Amazon Prime card?",
+              "timestamp": "2022-10-13T00:10:34+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "is3b02c",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "is3ij99",
+                  "author": "[deleted]",
+                  "author_karma": 0,
+                  "content": "Autograph is nice w/3% in dining, travel, transit, streaming, gas, & phones. Plus no annual fee or foreign transaction fee & cell phone insurance. It’s also metal. Could be worthy!",
+                  "timestamp": "2022-10-13T01:02:05+00:00",
+                  "likes": 2,
+                  "dislikes": 0,
+                  "parent_comment_id": "is3bh5i",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "is3isjr",
+                      "author": "reddit_user_0ea8663f5293",
+                      "author_karma": 0,
+                      "content": "Honestly it does sound good. With the CFU and AmEx BCE I know a few of those categories are covered with 3% or more but it seems convenient to have them all in one card",
+                      "timestamp": "2022-10-13T01:03:56+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "is3ij99",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "io2dxoq",
+          "author": "reddit_user_3dbfa9590be7",
+          "author_karma": 0,
+          "content": "The Autograph is the best 3% card on the market, with 6 different 3% categories, plus cellphone protection. All with no AF.",
+          "timestamp": "2022-09-12T00:59:23+00:00",
+          "likes": 5,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "io2hjkk",
+              "author": "reddit_user_0ea8663f5293",
+              "author_karma": 0,
+              "content": "Do they have the $25 minimum redemption on cash back for the autograph?",
+              "timestamp": "2022-09-12T01:27:04+00:00",
+              "likes": 3,
+              "dislikes": 0,
+              "parent_comment_id": "io2dxoq",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "io2hp9v",
+                  "author": "reddit_user_3dbfa9590be7",
+                  "author_karma": 0,
+                  "content": "Yes, unfortunately. I just have mine set to auto redeem for statement credit when it reaches $25.",
+                  "timestamp": "2022-09-12T01:28:19+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "io2hjkk",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "io2t2mp",
+                      "author": "[deleted]",
+                      "author_karma": 0,
+                      "content": "It's VERY easy to get around the $25 increments. You can redeem for purchases of any cost. You can buy a $1 soda from McDonald's and then redeem 100 points for it.",
+                      "timestamp": "2022-09-12T02:58:35+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "io2hp9v",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "io2t5p9",
+                          "author": "reddit_user_3dbfa9590be7",
+                          "author_karma": 0,
+                          "content": "I’ve done that before, it’s not very convenient.",
+                          "timestamp": "2022-09-12T02:59:17+00:00",
+                          "likes": 0,
+                          "dislikes": 0,
+                          "parent_comment_id": "io2t2mp",
+                          "depth": 4,
+                          "replies": [
+                            {
+                              "comment_id": "io2tbkd",
+                              "author": "[deleted]",
+                              "author_karma": 0,
+                              "content": "Eh, it takes me like 1 minute to do. Less convenient than no redemption limit, for sure, but better than waiting to accrue $25.",
+                              "timestamp": "2022-09-12T03:00:38+00:00",
+                              "likes": 3,
+                              "dislikes": 0,
+                              "parent_comment_id": "io2t5p9",
+                              "depth": 5,
+                              "replies": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "io2vvqf",
+          "author": "reddit_user_00a2bf390b1c",
+          "author_karma": 0,
+          "content": "All I know is Wells Fargo > Chase > BOA\n\nDon’t @ me. My personal experiences with WF has been supremely positive than compared to Chase and BOA.",
+          "timestamp": "2022-09-12T03:22:06+00:00",
+          "likes": 3,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "io308ui",
+              "author": "[deleted]",
+              "author_karma": 0,
+              "content": "This fine list would agree with you.\n\nhttps://violationtracker.goodjobsfirst.org/industry/financial%20services",
+              "timestamp": "2022-09-12T04:02:05+00:00",
+              "likes": 2,
+              "dislikes": 0,
+              "parent_comment_id": "io2vvqf",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "io3wavm",
+                  "author": "reddit_user_23c8b248f521",
+                  "author_karma": 0,
+                  "content": "Okay, I can definitely agree with the BOA, the jury is still out on Chase as to where it fits in the latter.. \n\nBut in the grand scheme of things they are all terrible",
+                  "timestamp": "2022-09-12T10:57:30+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "io308ui",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "io35szs",
+          "author": "reddit_user_2a9877733d62",
+          "author_karma": 0,
+          "content": "Wells Fargo is unethical corporation. They opened fake bank accounts unknown to their clients, I had 3!\n\n\nThey foreclosed on peoples homes rather than work with.\n\nThe former CEO John Stumpf is banned from the banking industry.\n\nI refuse to support unethical companies.",
+          "timestamp": "2022-09-12T04:59:30+00:00",
+          "likes": 4,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "io3pdxw",
+              "author": "reddit_user_74b963051178",
+              "author_karma": 0,
+              "content": "So you are looking for an ethical bank to support. Good luck to you",
+              "timestamp": "2022-09-12T09:23:57+00:00",
+              "likes": 5,
+              "dislikes": 0,
+              "parent_comment_id": "io35szs",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "io3whr4",
+              "author": "reddit_user_23c8b248f521",
+              "author_karma": 0,
+              "content": "Im proud to see that the idea of voting with your dollar is still alive and strong, \n\nAlthough the banking business might be the hardest to find a company that isn’t unethical, I believe even JP Morgan (Chase) is the largest investor in Oil and Gas \n\nKinda a shit sandwich wherever we look :(",
+              "timestamp": "2022-09-12T10:59:49+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "io35szs",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "io39eva",
+          "author": "reddit_user_a464e365bf98",
+          "author_karma": 0,
+          "content": "For no reason wells fargo closed my checking and savings account and then sent me a letter saying they banned me for no reason. Banned me from opening credit and new bank accounts. I tried opening an account with them twice since I've been banned and the accounts get closed right away.\n\nAfter maybe 5 years later, I get a letter from wells fargo apologizing for banning me for no reason. Its even more weird cause i had a college account with them as i had just started school. I still don't bank with them",
+          "timestamp": "2022-09-12T05:40:34+00:00",
+          "likes": 3,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "io3wkjx",
+              "author": "reddit_user_23c8b248f521",
+              "author_karma": 0,
+              "content": "Wow nice! Makes you have a lot of confidence to hold your money in their accounts 😂😂",
+              "timestamp": "2022-09-12T11:00:44+00:00",
+              "likes": 3,
+              "dislikes": 0,
+              "parent_comment_id": "io39eva",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "io2n6s6",
+          "author": "reddit_user_82ac9180bf50",
+          "author_karma": 0,
+          "content": "OP,  \n\n\nhttps://www.forbes.com/sites/jackkelly/2020/02/24/wells-fargo-forced-to-pay-3-billion-for-the-banks-fake-account-scandal/?sh=15f69d8d42d2",
+          "timestamp": "2022-09-12T02:11:36+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "io309zh",
+              "author": "[deleted]",
+              "author_karma": 0,
+              "content": "https://violationtracker.goodjobsfirst.org/industry/financial%20services",
+              "timestamp": "2022-09-12T04:02:22+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "io2n6s6",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "io2ne74",
+          "author": "reddit_user_5528d2c7cece",
+          "author_karma": 0,
+          "content": "I once ACH transferred $500 to open a wells Fargo account. The money never made it to my account.  It took me months and countless calls for them to find the money.  They kept blaming my other bank when it was obviously their fault.",
+          "timestamp": "2022-09-12T02:13:13+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "io2rizw",
+              "author": "reddit_user_ac968db3a308",
+              "author_karma": 0,
+              "content": "Or the ACH processor dropped it. While rare, it can happen.",
+              "timestamp": "2022-09-12T02:46:01+00:00",
+              "likes": 3,
+              "dislikes": 0,
+              "parent_comment_id": "io2ne74",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "io3ahux",
+          "author": "reddit_user_18dab1e37491",
+          "author_karma": 0,
+          "content": "I was personally one of the victims of the Wells Fargo Fake Account Fraud Scandal years ago!\n\nDefinitely wouldn't open a checking account or anything that requires going into the branch but a credit card does not seem so bad! 🤷‍♂️",
+          "timestamp": "2022-09-12T05:53:35+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "io2eboz",
+          "author": "reddit_user_23c8b248f521",
+          "author_karma": 0,
+          "content": "Honestly just a couple of reasons,\n\n1. Their local branches suck - I always have to wait at least and hour to speak to a banker about any little minuscule issue (Card not working, bank fees they shouldn’t be charging me etc) Also their ATMs go down frequently so I have to walk inside to the teller to wait 20 mins just to deposit or withdraw some money \n\n2. Their customer service over the phone is terrible, often long wait times and just a pain to resolve any issues \n\n3. I’ve never seen anything personable about their banks, fees like I’m just another customer that they don’t care about \n\nLastly these issues all really came to a head when I found a local bank which remembers my name when I walk in and I have no issues with little bs AND no compromise of service.. I have Zelle and every single other feature of a bank with no fees",
+          "timestamp": "2022-09-12T01:02:20+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "io2enbk",
+              "author": "reddit_user_3dbfa9590be7",
+              "author_karma": 0,
+              "content": "Was a Wells Fargo customer for years. Never had any of these issues.",
+              "timestamp": "2022-09-12T01:04:50+00:00",
+              "likes": 2,
+              "dislikes": 0,
+              "parent_comment_id": "io2eboz",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "io2ggb3",
+                  "author": "reddit_user_23c8b248f521",
+                  "author_karma": 0,
+                  "content": "[Customer Since 2003](https://ibb.co/C94rwvD)\n\nMultiple Accounts - All of my family at one point in time for much longer than that",
+                  "timestamp": "2022-09-12T01:18:49+00:00",
+                  "likes": 2,
+                  "dislikes": 0,
+                  "parent_comment_id": "io2enbk",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            },
+            {
+              "comment_id": "io3ok4x",
+              "author": "reddit_user_74b963051178",
+              "author_karma": 0,
+              "content": "Probably you just had a bad day",
+              "timestamp": "2022-09-12T09:11:38+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "io2eboz",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "io3w72o",
+                  "author": "reddit_user_23c8b248f521",
+                  "author_karma": 0,
+                  "content": "Lol I love that the sole purpose of your account is to cause shear havoc",
+                  "timestamp": "2022-09-12T10:56:14+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "io3ok4x",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "io3gpn8",
+          "author": "reddit_user_59dcf64f3278",
+          "author_karma": 0,
+          "content": "I have the propel and I don't like that I can only make 4 payments per month to the card.  I like paying as soon the transaction posts. You can only pay multiple times from a WF account.",
+          "timestamp": "2022-09-12T07:15:01+00:00",
+          "likes": 0,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "io2sew6",
+          "author": "reddit_user_0b6872f8ecdd",
+          "author_karma": 0,
+          "content": "I had an auto loan through WF and it was a game of absolute hoop-jumping to get them to apply any additional payment toward principal.  The only way they'd allow it is through a phone call and even when telling them I wanted to apply (say) an extra $400 toward principal they'd always apply it like a regular payment (going to both principal and interest) and I'd have to call back and battle with them... \"If I just paid $400 straight to principal, my principal balance should drop by $400\" period end of discussion.  This never happened no matter how many times I tried this without extra phone calls to \"fix\" the way they handled the extra payment.  To me, it was just them being sneaky and hoping I was dumb / didn't notice.  I'd imagine they got many people with this over the years.",
+          "timestamp": "2022-09-12T02:53:05+00:00",
+          "likes": 0,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "io3tjj9",
+          "author": "reddit_user_4d090f68606c",
+          "author_karma": 0,
+          "content": "I had them flag purchases to my own address as fraud multiple times, that’s why the moment I get home from work in a few days, I will be leaving then and never going back.",
+          "timestamp": "2022-09-12T10:22:46+00:00",
+          "likes": 0,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "io2uuk3",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "Definitely Google Wells Fargo… worst bank in the business. One time they rearranged all my purchases and my direct deposit from work in their favor so many of my payments would cause an overdraft, this was right around their employee scandal that was all over the news. I walked in, requested the bank manager, he immediately knew that they were in the wrong. I withdrew everything shortly after and will never use them again.",
+          "timestamp": "2022-09-12T03:13:20+00:00",
+          "likes": -1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "io306fc",
+              "author": "[deleted]",
+              "author_karma": 0,
+              "content": "Worst?\n\n[https://violationtracker.goodjobsfirst.org/industry/financial%20services](https://violationtracker.goodjobsfirst.org/industry/financial%20services)\n\nSeems like they are only 4th worst with BoFA, Chase, and Citi being even worse.",
+              "timestamp": "2022-09-12T04:01:26+00:00",
+              "likes": 2,
+              "dislikes": 0,
+              "parent_comment_id": "io2uuk3",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "io30hom",
+                  "author": "[deleted]",
+                  "author_karma": 0,
+                  "content": "Well, I guess worse in my experience",
+                  "timestamp": "2022-09-12T04:04:24+00:00",
+                  "likes": 2,
+                  "dislikes": 0,
+                  "parent_comment_id": "io306fc",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "io2n8vu",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "They are retarded discontinued the propel then come out with a card bascially a copy",
+          "timestamp": "2022-09-12T02:12:03+00:00",
+          "likes": -5,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "io2qdc6",
+              "author": "reddit_user_ac968db3a308",
+              "author_karma": 0,
+              "content": "I believe the licensing agreement with Amex was or is going to expire or sunset or something like that. Saw it mentioned on a thread here when the Autograph news came out. \n\nPropel got lots of good reviews so why not come out w/ a Visa version.",
+              "timestamp": "2022-09-12T02:36:46+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "io2n8vu",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "io2y1x9",
+          "author": "reddit_user_e5d1d4812d38",
+          "author_karma": 0,
+          "content": "I’ve personally never had an issue with them and been with them for over 10 years. The day I do have an issue I’ll switch but I have the active cash cc and it works great for me and a huge credit line. For me the only issues I have with Wells Fargo is that it takes forever for transactions to post. 2-3 days. It might be like that with other banks too not sure. And that in my area there are more chase banks then there are wells. But other than that nothing else. People talk about issues of accounts opening but I know a good amount of people who bank with Wells Fargo and never heard of that happening besides on Reddit lol",
+          "timestamp": "2022-09-12T03:41:25+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "io3b03v",
+          "author": "reddit_user_0f8d6509df1b",
+          "author_karma": 0,
+          "content": "I have banked with them since they bought Wachovia. Zero issues.",
+          "timestamp": "2022-09-12T05:59:47+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "io3gjtc",
+          "author": "reddit_user_1c042066130f",
+          "author_karma": 0,
+          "content": "I've had them,  a LOC, credit card and a personal loan for over 12 years, can't wait to be done with them and never look back. I have a 750 credit have never been late on payments other then my loan I never carried over balances etc. But when I needed them for a medical emergency and was requesting a credit increase they denied said I was a liability?! TF?! A CUSTOMER OF 10+ years good credit, good job, etc.  Denied yet 5 other banks offered me what I needed with 0 to very low interest.  I've had a few coworkers too who had Wells and wanted to refinance their homes when the big boom was going on and interest was at an all time low one of my coworkers was a WF member for 25 years and still they couldn't provide what other banks offered. All this to say if you're a credit card pro and use them to your advantage and don't necessarily need them for a banking relationship mehh they're fine. I wish I would have committed this long to a credit union and not Wells.",
+          "timestamp": "2022-09-12T07:12:42+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "io3wv9n",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "I’m a former Wells Fargo customer: A few things, my friend works on the Mortgage side they still have the high pressure sales goals that are impossible to maintain. They closed local branches in my area, while still maintaining a similar fee structure. They charge for Overdrafts, monthly account fees (this can be avoided in a few different ways). I didn’t use my debit card very much but still had random fraud charges. They took away the ability to email for help, careless atm transactions, the ability to get a temporary debit at the branch. I’ve reached out to them before on social media and the people have been pretty rude. The same can be said for when I’ve called. There’s better options out there. They want to be like a virtual bank, while still charging fees that are predatory.",
+          "timestamp": "2022-09-12T11:04:17+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "io44ykz",
+          "author": "reddit_user_61543c5ae209",
+          "author_karma": 0,
+          "content": "Yeah I’m twenty something and I don’t think I’ve ever heard a good headline about WF for their practices towards POC. It’s always somethin overtly racist they’re being sued for. It’s comical how many times they have been caught.",
+          "timestamp": "2022-09-12T12:27:47+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "io45eet",
+          "author": "reddit_user_0f3658d0cf23",
+          "author_karma": 0,
+          "content": "WF is most innovative of all major US Banks they were the first to introduce index funds to their business clients to get exposure to stock market.",
+          "timestamp": "2022-09-12T12:31:45+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "io4bhkx",
+          "author": "reddit_user_5f384e6406e7",
+          "author_karma": 0,
+          "content": "My coworker used to work for Wells Fargo but they told him to do some “unethical” things while working there. His integrity pulled through and he left after working 6 months.",
+          "timestamp": "2022-09-12T13:22:29+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "io4fdeq",
+          "author": "reddit_user_256babf268b3",
+          "author_karma": 0,
+          "content": "They have an awful response to fraud if you’re ever a victim.",
+          "timestamp": "2022-09-12T13:52:19+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "io4mm9u",
+          "author": "reddit_user_400aca760857",
+          "author_karma": 0,
+          "content": "WF had a big trust issue a few years back. After acquiring Wachovia, they're numbers and stock valuation were soaring. They were outperforming the S&P 500 bank index by a good margin. The problems started when they would open accounts under existing clients, apply for credit cards and transfer money from different accounts, without the clients having a say in it or even knowing it was happening. The CEO at the time was John Stumpf and he decided to enforce some rather unreasonable sales goals, which were to achieve a cross-sell ratio of 8. This means that for every client that opens an account with them, they had to sell then at least 8 different financial products, such as insurance, credit accounts or cards, mortgage, student or auto loans and the list keeps going on. When the branch workers couldn't get to these numbers they would start opening these accounts and applying to credit cards under their clients names. People were talked into opening several accounts and took big hits on their credit scores. The staff would get big monthly bonuses for reaching the monthly quotas and those became a big part of their income.",
+          "timestamp": "2022-09-12T14:43:50+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "io58bqh",
+          "author": "reddit_user_4a91461b543c",
+          "author_karma": 0,
+          "content": "I've not had an issue with them so far",
+          "timestamp": "2022-09-12T17:08:14+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "io5n7on",
+          "author": "reddit_user_e3d43de5a286",
+          "author_karma": 0,
+          "content": "I know Wells Fargo had a huge scandal where their representatives would sign people up for cards that they never asked for without them knowing. This was done to meet unrealistic sales targets. This scandal was so big even I know about it in Canada, and we don't have American banks participating in personal banking here. \n\nI assume that is a big turn off for a consumer. When you have something like a credit card where you don't want the bank to mess up, you need to build trust with the consumer.",
+          "timestamp": "2022-09-12T18:45:52+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "io5ofye",
+          "author": "reddit_user_499b36103438",
+          "author_karma": 0,
+          "content": "I’ve recently had 2 card payments made from 2 external banks rejected by WF and returned to my accounts. In both cases, the sending bank had WF setup for electronic bill pay / should have been posted in 1 day. I confirmed my card number matched what was setup online in both accounts. In each case, WF told my banks that they could not match the payments to an account. Only time I’ve experienced this in my 15 or so years doing online banking, across various banks, credit cards, and bill payees.",
+          "timestamp": "2022-09-12T18:53:55+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "io60jka",
+          "author": "reddit_user_8ead75bd87c3",
+          "author_karma": 0,
+          "content": "I loved WF before then they closed my accounts without warning after being a member for 10+ years. They would’ve even say what warranted all my accounts to be closed.",
+          "timestamp": "2022-09-12T20:18:15+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "io6jsh9",
+          "author": "reddit_user_7d5aa2942f9a",
+          "author_karma": 0,
+          "content": "There's no avoiding it - You can *try* not to open a new WF account, but sometimes they just do it for you anyways :D",
+          "timestamp": "2022-09-12T22:29:30+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "is3dm0z",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "Wells’ new ceo has replaced 80+ executives with bankers from JP Morgan Chase and other big institutions. He’s cleaning house! Wells Fargo will only get better",
+          "timestamp": "2022-10-13T00:26:17+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run012_post01_seed061",
+      "post_slot": 1,
+      "seed_index": 61,
+      "source_raw_post_id": "1mci59k",
+      "source_product_dir": "Citi Double Cash® Card",
+      "source_file": "reddit_post:1mci59k",
+      "post_type": "setup_strategy",
+      "title": "Pretty onboard with the Citi credit cards. Anything to comsider?",
+      "author": "reddit_user_0dab2d077fca",
+      "author_karma": 0,
+      "content": "Pretty onboard with the Citi credit cards. Anything to comsider?\n\nCurrently hold the Chase trifecta with the CSR and will probably continue to hold this as my natural spend utilizes a lot of the credits the new CSR is rolling out + the travel protections/multipliers. I also love having Hyatt as a transfer partner and use the Sapphire lounges a handful of times a year. However, there are obvious gaps in the earnings of Chase and Citi seems to fulfill those gaps.\n\nI do not currently hold any of Citi cards, but would look to get the Citi Strata Elite then after my 8 day cooldown period is done, get the Citi Strata for the gas and groceries (plus probably live entertainment as my option category). After the 65 day waiting period, probably get the Citi Custom Cash then wait however long to get the Citi DoubleCash. Once I have a year with the Strata Elite, I will probably PC that to some no annual fee card then get the Stata Premier as I do not intend on getting my AF back in the credits with the Elite, just want the sign up bonus and double dip with the Splurge credit + maybe use a couple of the Admiral cup tickets.\n\nMy question is, is there anything wrong with this plan? Anything I should consider? I spend enough money that hitting all of these SUBs will not be much of a problem. I heard the Citi portal is pretty bad so planning on sticking with direct booking with CSR or through the portal if I ever feel like getting the extra points.",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "n5tz5h3",
+          "author": "reddit_user_4f01733b7293",
+          "author_karma": 0,
+          "content": "On paper, they’re an excellent bank, but in practice, a large handful of us have had issues with them, including very terrible customer service, antique verification methods via snail mail, crazy fraud protection that kept giving false positives.",
+          "timestamp": "2025-07-29T17:50:05+00:00",
+          "likes": 13,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "n5v52u7",
+              "author": "reddit_user_c9da06b87724",
+              "author_karma": 0,
+              "content": "For every bad experience, there's another (like me) that has put 95% of their spend on Citi cards for years without issue. I'm just riding these CCCs until the wheels fall off lol.",
+              "timestamp": "2025-07-29T21:06:05+00:00",
+              "likes": 5,
+              "dislikes": 0,
+              "parent_comment_id": "n5tz5h3",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "n5w6209",
+                  "author": "reddit_user_4f01733b7293",
+                  "author_karma": 0,
+                  "content": "No, don’t get me wrong. It’s a great company, but my cat can run this company better than they can.",
+                  "timestamp": "2025-07-30T00:21:14+00:00",
+                  "likes": 2,
+                  "dislikes": 0,
+                  "parent_comment_id": "n5v52u7",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "n5u8wm8",
+          "author": "reddit_user_0f61d815e473",
+          "author_karma": 0,
+          "content": "If it’s helpful, I broke down [here](https://www.reddit.com/r/CreditCards/s/UUBfbgZe6n) some of the details a few days ago.",
+          "timestamp": "2025-07-29T18:35:02+00:00",
+          "likes": 5,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "n5u9hwi",
+              "author": "reddit_user_4b626ca39459",
+              "author_karma": 0,
+              "content": "I saw this, it was very helpful as I knew nothing about the Citi ecosystem. Thank you for that post!",
+              "timestamp": "2025-07-29T18:37:46+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "n5u8wm8",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "n5u9omo",
+                  "author": "reddit_user_0f61d815e473",
+                  "author_karma": 0,
+                  "content": "I figured there’d be at least 1 or 2 in that boat.",
+                  "timestamp": "2025-07-29T18:38:38+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "n5u9hwi",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "n5ubpum",
+                      "author": "reddit_user_4b626ca39459",
+                      "author_karma": 0,
+                      "content": "Do you know if each card is a hard inquiry or is it similar to Amex where you apply once then you are good to go?",
+                      "timestamp": "2025-07-29T18:48:02+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "n5u9omo",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "n5ubs3a",
+                          "author": "reddit_user_0f61d815e473",
+                          "author_karma": 0,
+                          "content": "Amex is the outlier, I’m afraid.",
+                          "timestamp": "2025-07-29T18:48:20+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "n5ubpum",
+                          "depth": 4,
+                          "replies": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "n5u29cx",
+          "author": "reddit_user_9ed9a0297484",
+          "author_karma": 0,
+          "content": "I really think the problems people report with Citi CS are overblown. Years ago when I first started using them my card would occasionally get declined and locked when I traveled. Now every time I leave the country I call them and let them know and I’ve never been declined since.  I bought a car last month and my dealer allowed me to put 2500 of it on a credit card.  Called Citi and told them I was about to put a big charge on it and the CS rep flagged my account and stayed on the phone with me while my card was charged and I had no issues.  I’ve had my double cash for over 10 years and I’ve never had any of these horror stories people have reported about.\n\nEDIT for some context.  The main problem with Citi is that they have a **reputation** for having crap CS, and this reinforces the idea to everyone and people tend to expect it, look for it, and emphasize it.  Take for example [this thread ](https://www.reddit.com/r/CreditCards/comments/1mbtr17/chase_closed_all_my_accounts_nobody_knows_why/)from yesterday where Chase closed all of the OP's accounts; all credit cards, all checking accounts, and no one at the bank can even explain to the OP why it was closed.  OP was even a Chase private client.  All the comments were telling OP they must have done something wrong/suspicious for the account to be closed.  No one blamed Chase CS.  \n\nThen look at [this thread ](https://www.reddit.com/r/CreditCards/comments/1mbtxv8/citi_strata_elite_horrible_customer_service/)where the OP was complaining about Citi CS when they got their Strata Elite locked for literally trying to put $2.8k on their strata elite immediately after opening the card using a virtual/temporary card number.  Everyone in the comments were trashing on Citi's CS despite the fact that OP really should have known better, and was just unfamiliar with Citi's overly sensitive fraud detection.  Other banks get the benefit of the doubt.  Citi just gets crapped on because it's normal to crap on them.  In my experience, if you are aware of their allergy to fraud, you can navigate around it just fine.",
+          "timestamp": "2025-07-29T18:04:09+00:00",
+          "likes": 6,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "n5w017d",
+              "author": "reddit_user_72982aed94cd",
+              "author_karma": 0,
+              "content": "Their issue is false positive fraud alerts when you activate the card and start using it.  Just have very low expectations for their process for resolving these issues.  They start asking for a land line to very your identity, you other Citicard numbers, your family's phone numbers, etc.  If none of those options work, they will mail you a letter with a verification code.  After the first month or so, I haven't had problems.",
+              "timestamp": "2025-07-29T23:47:12+00:00",
+              "likes": 2,
+              "dislikes": 0,
+              "parent_comment_id": "n5u29cx",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "n5w15qw",
+                  "author": "reddit_user_9ed9a0297484",
+                  "author_karma": 0,
+                  "content": "I'm sure this happens, but I have 4 cards with them over \\~15 years and this has never happened to me.  I usually authenticate via a pass phrase and have never had issues.",
+                  "timestamp": "2025-07-29T23:53:28+00:00",
+                  "likes": 0,
+                  "dislikes": 0,
+                  "parent_comment_id": "n5w017d",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "n5w1ufa",
+                      "author": "reddit_user_72982aed94cd",
+                      "author_karma": 0,
+                      "content": "It seems like the first charge on the card almost always creates a fraud alert for me",
+                      "timestamp": "2025-07-29T23:57:18+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "n5w15qw",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "n5w2aqb",
+                          "author": "reddit_user_9ed9a0297484",
+                          "author_karma": 0,
+                          "content": "I did not have this problem.  Got the custom cash earlier in the year and the strata premier about a month ago.  I did not have any fraud lock-outs either when adding them to apple pay or on the first transaction.  That's not to say you or others don't have an issue.  Maybe their algorithm only flags people with new Citi relationships, and like I said, I've had the double cash for over a decade.",
+                          "timestamp": "2025-07-29T23:59:51+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "n5w1ufa",
+                          "depth": 4,
+                          "replies": [
+                            {
+                              "comment_id": "n5w32ki",
+                              "author": "reddit_user_72982aed94cd",
+                              "author_karma": 0,
+                              "content": "I also have had a relationship with them for many years.  Do you remember what type of transaction was the first on the new card?  They may be flagging large purchases as a first transaction.",
+                              "timestamp": "2025-07-30T00:04:12+00:00",
+                              "likes": 1,
+                              "dislikes": 0,
+                              "parent_comment_id": "n5w2aqb",
+                              "depth": 5,
+                              "replies": [
+                                {
+                                  "comment_id": "n5w3bo7",
+                                  "author": "reddit_user_9ed9a0297484",
+                                  "author_karma": 0,
+                                  "content": "Yep.  I got the premier early in July and my first transaction was an $8 purchase at Walgreens.",
+                                  "timestamp": "2025-07-30T00:05:38+00:00",
+                                  "likes": 1,
+                                  "dislikes": 0,
+                                  "parent_comment_id": "n5w32ki",
+                                  "depth": 6,
+                                  "replies": [
+                                    {
+                                      "comment_id": "n5w3jip",
+                                      "author": "reddit_user_72982aed94cd",
+                                      "author_karma": 0,
+                                      "content": "Thanks, maybe I'll start with small transactions.",
+                                      "timestamp": "2025-07-30T00:06:52+00:00",
+                                      "likes": 1,
+                                      "dislikes": 0,
+                                      "parent_comment_id": "n5w3bo7",
+                                      "depth": 7,
+                                      "replies": []
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "comment_id": "n5u4pol",
+              "author": "reddit_user_4b626ca39459",
+              "author_karma": 0,
+              "content": "That's good to know. Most of my big purchases, travel purchases and overseas purchases will be put on my chase cards so I cant imagine CS issues will occur for me too often.",
+              "timestamp": "2025-07-29T18:15:32+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "n5u29cx",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "n5ugimh",
+              "author": "reddit_user_8031612ce2d5",
+              "author_karma": 0,
+              "content": "The point is you shouldn't have to call Citi and be on the phone with them, for a $2500 purchase. I made a $14k purchase in a foreign country on my Cap1 Venture card and never thought about it, went through fine. What you just explained and the hoops you have to jump through to make a purchase is ridiculous and is poor customer service.",
+              "timestamp": "2025-07-29T19:10:21+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "n5u29cx",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "n5uquqt",
+                  "author": "reddit_user_9ed9a0297484",
+                  "author_karma": 0,
+                  "content": "Just to be clear. I don’t even know if I had to do it.  But I did it anyways because I wanted to be safe.  We’ll agree to disagree on this.  If you’re fine with charging 14k on a single transaction on your credit card in a foreign country without your bank batting an eye, more power to you.",
+                  "timestamp": "2025-07-29T19:59:31+00:00",
+                  "likes": 2,
+                  "dislikes": 0,
+                  "parent_comment_id": "n5ugimh",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "n5us8cf",
+                      "author": "reddit_user_8031612ce2d5",
+                      "author_karma": 0,
+                      "content": "Fraud prevention isn't for you, it's for the bank. I really could care less. Burden of proof is on the bank and the merchant not you. Absolutely no reason to worry about it.",
+                      "timestamp": "2025-07-29T20:06:04+00:00",
+                      "likes": 2,
+                      "dislikes": 0,
+                      "parent_comment_id": "n5uquqt",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "n5ut54u",
+                          "author": "reddit_user_9ed9a0297484",
+                          "author_karma": 0,
+                          "content": "You're naive.  Search this sub for \"fraud denied\" and see for yourself how quickly fraud can be your problem when the claim gets denied.",
+                          "timestamp": "2025-07-29T20:10:24+00:00",
+                          "likes": -1,
+                          "dislikes": 0,
+                          "parent_comment_id": "n5us8cf",
+                          "depth": 4,
+                          "replies": [
+                            {
+                              "comment_id": "n5uudcp",
+                              "author": "reddit_user_8031612ce2d5",
+                              "author_karma": 0,
+                              "content": "Nope, not naive know the system and the laws. ",
+                              "timestamp": "2025-07-29T20:16:14+00:00",
+                              "likes": 2,
+                              "dislikes": 0,
+                              "parent_comment_id": "n5ut54u",
+                              "depth": 5,
+                              "replies": [
+                                {
+                                  "comment_id": "n5uuklo",
+                                  "author": "reddit_user_9ed9a0297484",
+                                  "author_karma": 0,
+                                  "content": "lol ok.  Then go reply to those people who had their claims denied and tell them it’s not possible for their claims to be denied by the card issuers because you “know the system and the laws”.",
+                                  "timestamp": "2025-07-29T20:17:12+00:00",
+                                  "likes": 0,
+                                  "dislikes": 0,
+                                  "parent_comment_id": "n5uudcp",
+                                  "depth": 6,
+                                  "replies": [
+                                    {
+                                      "comment_id": "n5uwbhc",
+                                      "author": "reddit_user_8031612ce2d5",
+                                      "author_karma": 0,
+                                      "content": "Lol, you're literally arguing with the FTC. I skimmed through a couple of threads, seems credit card companies love to say it was a chipped transaction. Which isn't a valid or legal justification of denial. A simple claim to the FTC will win your case.",
+                                      "timestamp": "2025-07-29T20:25:20+00:00",
+                                      "likes": 1,
+                                      "dislikes": 0,
+                                      "parent_comment_id": "n5uuklo",
+                                      "depth": 7,
+                                      "replies": [
+                                        {
+                                          "comment_id": "n5uxzfr",
+                                          "author": "reddit_user_9ed9a0297484",
+                                          "author_karma": 0,
+                                          "content": "I don't understand what's so hard for you to understand.  There are literally dozens of examples you can find yourself on this sub.  If the FTC guidance is as ironclad as you seem to think, then explain to me why people don't always win their fraud claims with the card issuers ?  You really sound like a guy who read a book or article somewhere and think your book smarts trumps reality.  The simple explanation is that reality isn't as neat and clean as the simple fantasy you've concocted in your head.\n\nIf you don't want to take it from me, or the countless people who have complained on this sub, then take it from this [law firm.](https://warelawfirm.com/how-to-win-credit-card-dispute/)  Fighting a claim of fraud isn't as neat and simple as you think.  Even if the laws are in your favor, winning a claim might take a significant amount of time investment on your part including potentially filing police reports and submitting complaints through the (now neutered) CFPB.  In that context, a 5 minute phone call to your credit card issuer is a no brainer.  Or be lazy and take the risk.  It's up to you.",
+                                          "timestamp": "2025-07-29T20:33:05+00:00",
+                                          "likes": 1,
+                                          "dislikes": 0,
+                                          "parent_comment_id": "n5uwbhc",
+                                          "depth": 8,
+                                          "replies": []
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "comment_id": "n5usj8i",
+                  "author": "reddit_user_34a1f2ab25b0",
+                  "author_karma": 0,
+                  "content": "I've had an issue with Capital One when abroad, and they're solution was \"wait until you're back in the US\". \n\nAs has been said, all banks can have their issues.",
+                  "timestamp": "2025-07-29T20:07:32+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "n5ugimh",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "n5u0hcm",
+          "author": "reddit_user_46fec8ae28bf",
+          "author_karma": 0,
+          "content": "Citi CS generally sucks ass.\n\nYou’ll find people who have good and bad experiences with all banks, but Citi just has more people bitching about it, so there must be something in the sauce there.\n\nOther than that, there are a bunch of 5% cards that are better than CCC for individual purposes. And better 2% catch-alls.\n\nYou gotta really be in on the AA or EVA transfer train.",
+          "timestamp": "2025-07-29T17:56:02+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "n5v7lfb",
+              "author": "reddit_user_134ca46fb3c2",
+              "author_karma": 0,
+              "content": "Not that I’m on the transfer train. But I live in Dallas so that’s one of AA hubs. The biggest. I had United CC but wasn’t really getting any benefits since Dallas isn’t a UA hub. Now if I live in Houston then yea most definitely. But I’ve always fly AA they are good in my opinion. Now if I lived in ATL. I would definitely do delta. I’ve flew Delta a few months go and omg talk about army and their flight attendances are so nice and sweet.",
+              "timestamp": "2025-07-29T21:18:12+00:00",
+              "likes": 2,
+              "dislikes": 0,
+              "parent_comment_id": "n5u0hcm",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "n5vm5jq",
+              "author": "reddit_user_c4f3903e74d4",
+              "author_karma": 0,
+              "content": "This is my main concern. \n\nBut…I wonder *if* being CitiGOLD will help, such as a dedicated team or number to call for your concern and needs, or does that only help with your investment and checking/saving account ?",
+              "timestamp": "2025-07-29T22:32:29+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "n5u0hcm",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "n5um4ep",
+          "author": "reddit_user_ff6015e314b2",
+          "author_karma": 0,
+          "content": "Because of poor CS and archaic tech stack, only the CCC is really worth it IMO ",
+          "timestamp": "2025-07-29T19:37:05+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run012_post02_seed062",
+      "post_slot": 2,
+      "seed_index": 62,
+      "source_raw_post_id": "1po442b",
+      "source_product_dir": "Chase Sapphire Reserve®",
+      "source_file": "reddit_post:1po442b",
+      "post_type": "complaint_cs",
+      "title": "Do NOT Book Through Chase Travel — Nightmare Experience at a Sapphire Reserve Property",
+      "author": "reddit_user_0dab2d077fca",
+      "author_karma": 0,
+      "content": "Do NOT Book Through Chase Travel — Nightmare Experience at a Sapphire Reserve Property\n\nTL;DR: Booked an EDIT property through Chase Travel using points. Hotel never received payment from Chase. Spent \\~6+ hours on the phone over two days, got locked out of our room without our belongings, and Chase only offered 20k points for ruining nearly half our vacation. Avoid Chase Travel.\n\nWe booked an EDIT property available to Reserve cardholders using Chase points. Everything appeared confirmed. When we arrived after a long travel day, the hotel told us payment had not been received from Chase and we owed the full balance.\n\nWe spent 2 hours on the phone with Chase Travel at the front desk while Chase insisted payment had been processed but couldn’t provide proof the hotel required. Despite this being an EDIT property with an existing Chase partnership, Chase repeatedly had us hand our phone to front desk staff instead of contacting the property directly.\n\nExhausted and just wanting access to our room, the hotel placed a hold on our personal card for the first night. Chase assured us the issue would be resolved by morning.\n\nThe next day, nothing had changed. The hotel still hadn’t heard from Chase. About 5 hours later, we were told payment still hadn’t been made and we needed to pay promptly.\n\nWe called Chase again, refusing to pay twice. When we returned to our room to call privately, we discovered we’d been locked out due to the payment issue — with no passports or belongings, just our phones.\n\nAfter another 2 hours and multiple agents, an escalations manager finally contacted the hotel’s reservations department directly and properly submitted payment.\n\nBy then, 2 of our 5 vacation days were ruined. Chase Travel’s compensation was 20,000 points, which doesn’t even cover half a night at the hotel.\n\nMy fiancé has an Amex card and has never experienced anything like this with Amex Travel.\n\nBe warned — do not book with Chase Travel.",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "nucmtna",
+          "author": "reddit_user_ae13a407c1aa",
+          "author_karma": 0,
+          "content": "Chase is for sure at fault too but based on your story the hotel is the really bad party here. They should never have taken your property like that while being a partner of Chase and having some idea of the reservation existing. Obviously it was something that would have been resolved unless the hotel is being shady and not honest about payment.\n\nName the hotel, also leave 1* reviews everywhere. Most likely Chase is going to remove them from their network anyway at this rate.\n\nI feel like there is a missing part of the story here though.",
+          "timestamp": "2025-12-16T15:54:30+00:00",
+          "likes": 125,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "nucr4sy",
+          "author": "reddit_user_44101a0f70e6",
+          "author_karma": 0,
+          "content": "I've had something like this happen with Capital One travel once.\n\nI always call the hotel after booking to confirm they've got the reservation on their end when using any 3rd party system like Chase or Capital One.",
+          "timestamp": "2025-12-16T16:15:23+00:00",
+          "likes": 41,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "nud4303",
+              "author": "reddit_user_624b8e5faf5b",
+              "author_karma": 0,
+              "content": "While good advice, I'm not sure how much it would have helped here since the issue was with payment.",
+              "timestamp": "2025-12-16T17:18:17+00:00",
+              "likes": 16,
+              "dislikes": 0,
+              "parent_comment_id": "nucr4sy",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "nudravm",
+                  "author": "reddit_user_7e3fbcd5a39c",
+                  "author_karma": 0,
+                  "content": "It wouldn't have. Had the same problem with Capital One Travel. Did confirm the reservation myself before I left, but payment is generally not submitted until day of check-in.",
+                  "timestamp": "2025-12-16T19:08:55+00:00",
+                  "likes": 9,
+                  "dislikes": 0,
+                  "parent_comment_id": "nud4303",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "nucjj0t",
+          "author": "reddit_user_212b75d83941",
+          "author_karma": 0,
+          "content": "Lessons learned here are to not spend your vacation on the phone with 800 numbers. Tell them to work it out and leave. \n\nThe hotel cannot steal your stuff. They can kick you out of the hotel but they cannot lock you out of your room with your belongings inside. \n\nChase is shit, but this hotel is even worse for treating you like that. Leave them terrible reviews.",
+          "timestamp": "2025-12-16T15:38:23+00:00",
+          "likes": 90,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "nufomtf",
+              "author": "reddit_user_a1fbcf8e29fe",
+              "author_karma": 0,
+              "content": "> The hotel cannot steal your stuff. They can kick you out of the hotel but they cannot lock you out of your room with your belongings inside.\n\nThis stuck out to me too. Sounds like a shady hotel. They can tell a guest they have to leave and can call the police to evict the guest for trespassing should the guest refuse to leave but they cannot hold a guests property hostage to get payment. I wonder if this hotel was in a country with less consumer protections ",
+              "timestamp": "2025-12-17T01:18:27+00:00",
+              "likes": 16,
+              "dislikes": 0,
+              "parent_comment_id": "nucjj0t",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "nucp7jo",
+          "author": "reddit_user_bc24208c35e3",
+          "author_karma": 0,
+          "content": "I stay the hell away from portals, I'm cursed and spend hours on the phone multiple times.  I used the capital one portal after years of staying away and yup, it was a disaster.  No room was booked, and was told I needed to do the ground work to prove it.  I did and after 2 months got my money back.\n\n\nI only book direct now.",
+          "timestamp": "2025-12-16T16:06:05+00:00",
+          "likes": 24,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "nufhgzg",
+              "author": "reddit_user_2beb389efbd7",
+              "author_karma": 0,
+              "content": "Amex is the only portal that makes sense, it's the equivalent of booking through Concur.",
+              "timestamp": "2025-12-17T00:35:49+00:00",
+              "likes": 7,
+              "dislikes": 0,
+              "parent_comment_id": "nucp7jo",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "nue9ify",
+          "author": "reddit_user_92955c72618b",
+          "author_karma": 0,
+          "content": "which hotel was it?",
+          "timestamp": "2025-12-16T20:39:25+00:00",
+          "likes": 15,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "nugmz4h",
+              "author": "reddit_user_7ca0f96354f5",
+              "author_karma": 0,
+              "content": "Most important detail left out of this post",
+              "timestamp": "2025-12-17T04:55:35+00:00",
+              "likes": 9,
+              "dislikes": 0,
+              "parent_comment_id": "nue9ify",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "nucoul6",
+          "author": "reddit_user_1defa2e97ab5",
+          "author_karma": 0,
+          "content": "I agree not to book using a third party, it’s always a nightmare. I would recount some of my experience but I don’t want to re-live it now.",
+          "timestamp": "2025-12-16T16:04:19+00:00",
+          "likes": 9,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "nud0vzn",
+              "author": "reddit_user_f9a30df8cf0b",
+              "author_karma": 0,
+              "content": "The issue is these credit cards increasingly require booking through their portals at least once a year to get the full perks of the card (CSR, Amex Plat)",
+              "timestamp": "2025-12-16T17:02:30+00:00",
+              "likes": 12,
+              "dislikes": 0,
+              "parent_comment_id": "nucoul6",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "nud4ar6",
+                  "author": "reddit_user_624b8e5faf5b",
+                  "author_karma": 0,
+                  "content": "And I'd go so far as to say arguably the best benefits with the CSR now require you to leverage their portal.",
+                  "timestamp": "2025-12-16T17:19:21+00:00",
+                  "likes": 5,
+                  "dislikes": 0,
+                  "parent_comment_id": "nud0vzn",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "nuiktvu",
+                      "author": "reddit_user_d7fbe0f921e9",
+                      "author_karma": 0,
+                      "content": "The best \"benefit\" of many cards is the rebate for using their portal.\n\nKind of a racket. It's just another hoop to jump thru to justify the annual fee, not a benefit.",
+                      "timestamp": "2025-12-17T14:24:43+00:00",
+                      "likes": 2,
+                      "dislikes": 0,
+                      "parent_comment_id": "nud4ar6",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                },
+                {
+                  "comment_id": "nuej4ma",
+                  "author": "reddit_user_8077b815af1e",
+                  "author_karma": 0,
+                  "content": "I personally just deem the \"full perks\" as not worth it after considering the downside of going third party, and just accept the reduced rewards effectiveness for the sake of my sanity and peace during trips.",
+                  "timestamp": "2025-12-16T21:27:38+00:00",
+                  "likes": 3,
+                  "dislikes": 0,
+                  "parent_comment_id": "nud0vzn",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "nujj4xx",
+                      "author": "reddit_user_f9a30df8cf0b",
+                      "author_karma": 0,
+                      "content": "1) A lot of these cards simply aren’t worth it if you’re throwing the $200-$600 hotel benefit away\n2) statistically speaking, the likelihood of an issue booking through Amex or whatever is closer to zero then it is 100%. It happens, but it’s not exactly common",
+                      "timestamp": "2025-12-17T17:17:45+00:00",
+                      "likes": 0,
+                      "dislikes": 0,
+                      "parent_comment_id": "nuej4ma",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "nuei2p4",
+          "author": "reddit_user_bf445a07a78e",
+          "author_karma": 0,
+          "content": "I belive the Chase travel system silently uses Expedia's system. Which means that your reservation has to go through two useless middlemen to get to the company actually providing you the service.\n\n\nIn other words, using a third party system to book travel is playing a game of telephone. Always do a sanity check and verify with the hotel/airline/whatever that your reservation actually made it to their system.",
+          "timestamp": "2025-12-16T21:22:26+00:00",
+          "likes": 7,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "nuilu3t",
+              "author": "reddit_user_d7fbe0f921e9",
+              "author_karma": 0,
+              "content": "Even just using Expedia by itself might have layers of middlemen.\n\nI used them once at a hotel in Japan. The room type I got was not the room type I booked. Hotel explained I have to talk to Expedia. Expedia explained their local partner actually responsible for bookings at that hotel (some local Japan company) was at fault.\n\nBasically I was going thru Expedia who was going thru a Japanese company to actually book the hotel.\n\nIn the end I got a nice room, just not quite as nice as advertised and a hefty partial refund so it worked out. But it was a hassle still.",
+              "timestamp": "2025-12-17T14:30:16+00:00",
+              "likes": 3,
+              "dislikes": 0,
+              "parent_comment_id": "nuei2p4",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "nueztw2",
+              "author": "reddit_user_134d2e2cb306",
+              "author_karma": 0,
+              "content": "It used to be Expedia.  If they still used it their prices would mostly be competitive lol",
+              "timestamp": "2025-12-16T22:54:15+00:00",
+              "likes": 2,
+              "dislikes": 0,
+              "parent_comment_id": "nuei2p4",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "nucpxv8",
+          "author": "reddit_user_331f6039a8b0",
+          "author_karma": 0,
+          "content": "If what you say is true, that’s insane. Plus with the nerf to points boost… Chase dropped the ball hard",
+          "timestamp": "2025-12-16T16:09:41+00:00",
+          "likes": 5,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "nucfjqs",
+          "author": "reddit_user_eb2da5631a70",
+          "author_karma": 0,
+          "content": "Sounds like too much stress. Would have just paid and dealt with chase after",
+          "timestamp": "2025-12-16T15:18:34+00:00",
+          "likes": 10,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "nucvnfz",
+              "author": "reddit_user_134d2e2cb306",
+              "author_karma": 0,
+              "content": "I feel like the second you take financial stress off the bank, they'll tell you to kick rocks lol",
+              "timestamp": "2025-12-16T16:37:26+00:00",
+              "likes": 24,
+              "dislikes": 0,
+              "parent_comment_id": "nucfjqs",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "nud3wzs",
+                  "author": "reddit_user_624b8e5faf5b",
+                  "author_karma": 0,
+                  "content": "Chase probably would have eventually made it right and either refunded the points or cash,  but keep in mind paying cash for 5 nights at an Edit property could easily be several thousand dollars on their card that they might not be able to afford while Chase works it out.",
+                  "timestamp": "2025-12-16T17:17:28+00:00",
+                  "likes": 12,
+                  "dislikes": 0,
+                  "parent_comment_id": "nucvnfz",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "nuefxhj",
+          "author": "reddit_user_b19999e84755",
+          "author_karma": 0,
+          "content": "I book domestic hotels with zero fear and have had no issues. I'll book Hilton or Marriott or other mega chains international with no fear and had no issue. I won't book a small independent property, or even smaller conglomerate, if it's international. Way too risky.",
+          "timestamp": "2025-12-16T21:11:39+00:00",
+          "likes": 3,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "nuh0h81",
+          "author": "reddit_user_2d9613707d56",
+          "author_karma": 0,
+          "content": "Make a Twitter post and tag chase. After seeing the publicity it gets they will magically call you and offer you the best customer service you wish you had while at the hotel. ",
+          "timestamp": "2025-12-17T06:46:11+00:00",
+          "likes": 3,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "nucgurt",
+          "author": "reddit_user_8edfd9ff4877",
+          "author_karma": 0,
+          "content": "I'd assume the hotel is at fault, something misconfigured somewhere or lack of staff training. If Chase claimed payment was made, it probably was, maybe not where the hotel wanted or expected it. Chase's system is automated, and while certainly not flawless, I can't believe they'd see that a payment was made if it wasn't.\n\n\nHow reputable is this hotel? I'll go out on a limb and guess it's not a chain but something local? I'd be frustrated with them first and foremost. Though this is a risk of paying through a third party.",
+          "timestamp": "2025-12-16T15:25:04+00:00",
+          "likes": 10,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "nucn2vu",
+              "author": "reddit_user_86d719c01e43",
+              "author_karma": 0,
+              "content": "A bunch of details are missing from the story but it sounds like poorly training desk staff and I'm guessing it's a non-US property because of the mention of passports. Not to mention it's illegal in the USA to hold a guest's belonging hostage over non-payment.",
+              "timestamp": "2025-12-16T15:55:45+00:00",
+              "likes": 18,
+              "dislikes": 0,
+              "parent_comment_id": "nucgurt",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "nucd6su",
+          "author": "reddit_user_624b8e5faf5b",
+          "author_karma": 0,
+          "content": "Sorry you had to deal with that. Unfortunately, there are some inherent risks when you book through a 3rd party",
+          "timestamp": "2025-12-16T15:06:36+00:00",
+          "likes": 7,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "nuetfdo",
+          "author": "reddit_user_f425b526096d",
+          "author_karma": 0,
+          "content": "I've been lucky, I guess. Never had a bad experience with the Chase portal, or any portal for that matter.",
+          "timestamp": "2025-12-16T22:19:56+00:00",
+          "likes": 4,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "nukv481",
+              "author": "reddit_user_71045da7e54f",
+              "author_karma": 0,
+              "content": "I mean everything is good until it’s not. This could be a very unique one off situation but who knows.",
+              "timestamp": "2025-12-17T21:16:50+00:00",
+              "likes": 4,
+              "dislikes": 0,
+              "parent_comment_id": "nuetfdo",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "nuimbrm",
+              "author": "reddit_user_d7fbe0f921e9",
+              "author_karma": 0,
+              "content": "It works most of the time, but if you do end up in a situation with something wrong it can be a huge hassle to resolve",
+              "timestamp": "2025-12-17T14:33:02+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "nuetfdo",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "nucec0y",
+          "author": "reddit_user_2bf025bdccb5",
+          "author_karma": 0,
+          "content": "Mmm I never had any problems with the Chase travel portal. I booked high end stays and my last one was in Sept of this year.\n\nUnfortunately, Chase capped my spending limit when I needed it the most, for house upgrades and I closed my account a few weeks back. Citi and Amex increased my limits without me asking...and Cap 1 stayed the same.\n\nI like banks who trust me with credit and Chase is no longer in that ballpark for me.\n\nI would say next time, once you make the reservation, call the hotel and double check that they can see your reservation.",
+          "timestamp": "2025-12-16T15:12:25+00:00",
+          "likes": 6,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "nudc0mm",
+          "author": "reddit_user_f49a64cb5f75",
+          "author_karma": 0,
+          "content": "This reminds me of that old clip from Seinfeld getting a rental car: https://youtu.be/4T2GmGSNvaM?si=lI0GiB6p1Vq9Gc6n\n\nThese banks fundamentally misunderstand customer service. They’re offering a discount OTA experience (or in this case even worse) and advertising it as if it’s somehow “luxury.”",
+          "timestamp": "2025-12-16T17:56:47+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "nucn41i",
+          "author": "reddit_user_39d5dbba0d04",
+          "author_karma": 0,
+          "content": "This is a risk of booking thru 3rd party portals. When I book thru a travel portal, I always double check the reservation directly with the airline or hotel immediately after booking. Gives you more time to sort out issues like this.",
+          "timestamp": "2025-12-16T15:55:54+00:00",
+          "likes": 3,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "nugn5w7",
+              "author": "reddit_user_7ca0f96354f5",
+              "author_karma": 0,
+              "content": "I am surprised the person didn't do that.  What a rookie mistake.",
+              "timestamp": "2025-12-17T04:56:58+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "nucn41i",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "nudqzll",
+          "author": "reddit_user_7e3fbcd5a39c",
+          "author_karma": 0,
+          "content": "Had basically the same experience with Capital One Travel, except it took 5 days to resolve and the hotel was much nicer to us and basically said that was long as we're settled up at checkout, everything is good.",
+          "timestamp": "2025-12-16T19:07:25+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "nudz57h",
+          "author": "reddit_user_6488e59940c9",
+          "author_karma": 0,
+          "content": "i had the wrong room booked on my wedding night with Southwest Vacations. luckily the hotel mostly fixed it so it went well, but that was stressful at first\n\nlpt when using 3rd party agencies: call the hotel after to make sure everything is processed correctly\n\ni know booking should just work ... but tbh we're pretty fucking terrible at building computing systems that handle *all* edge cases, and most devs are now forced into chasing AI dreams than making their system rock fucking solid",
+          "timestamp": "2025-12-16T19:47:23+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "nueefd3",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "The horror stories on here are exactly why I never fuck with portals under any circumstances",
+          "timestamp": "2025-12-16T21:04:08+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "nuhsvb5",
+          "author": "reddit_user_4bee367bbb85",
+          "author_karma": 0,
+          "content": "Getting locked out of your room with your stuff inside is unreal, I’d be furious. Chase offering points after that kind of mess feels wildly disconnected from the actual damage done",
+          "timestamp": "2025-12-17T11:17:24+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "nui5ecm",
+          "author": "reddit_user_08b6e4269a45",
+          "author_karma": 0,
+          "content": "You’re a sucker if you book through any travel portal",
+          "timestamp": "2025-12-17T12:53:12+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "nuibwzv",
+          "author": "reddit_user_c624f2e08601",
+          "author_karma": 0,
+          "content": "That sounds incredibly frustrating. It's always a gamble booking through third-party services, and unfortunately, it seems like this hotel dropped the ball big time.",
+          "timestamp": "2025-12-17T13:33:38+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "nuce1qa",
+          "author": "reddit_user_aa7f9795f0fb",
+          "author_karma": 0,
+          "content": "[https://www.reddit.com/r/ChaseSapphire/comments/1pnlhtr/chase\\_lowered\\_point\\_boost\\_redemption\\_rate\\_for/](https://www.reddit.com/r/ChaseSapphire/comments/1pnlhtr/chase_lowered_point_boost_redemption_rate_for/)\n\nChase is not doing well. Losing trust left and right",
+          "timestamp": "2025-12-16T15:10:59+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "nud6vnj",
+          "author": "reddit_user_337e6f40118a",
+          "author_karma": 0,
+          "content": "I learned my lesson dealing with chase a couple months ago. \nChase is NOT the travel agent. Booking.com is. Long story short booking made a mistake (I have proof) Chase took bookings side. \n\nLesson is if I book with ANYTHING other than direct I send a confirmation email with all the particulars to the hotel and ask for a response.",
+          "timestamp": "2025-12-16T17:31:58+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run012_post03_seed063",
+      "post_slot": 3,
+      "seed_index": 63,
+      "source_raw_post_id": "1sibbso",
+      "source_product_dir": "U.S. Bank Shield™ Visa® Card",
+      "source_file": "reddit_post:1sibbso",
+      "post_type": "approval_dp",
+      "title": "Am I preapproved for this card or just an advertisement?",
+      "author": "reddit_user_0dab2d077fca",
+      "author_karma": 0,
+      "content": "Am I preapproved for this card or just an advertisement?\n\nI got this message in my phone. Does this mean I'm preapproved for this card or are they just promoting their card.",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "ofix2zz",
+          "author": "reddit_user_22d26afda1f8",
+          "author_karma": 0,
+          "content": "It's not the bank, It's just a promotional message and you're not pre approved",
+          "timestamp": "2026-04-11T06:29:21+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "ofix3xc",
+          "author": "reddit_user_b2174da15f06",
+          "author_karma": 0,
+          "content": "Nope they will reject you later for some stupid reason. I was at office when they came for address verification at my home. They rejected for that. And when I gave my hometown address, and I was well prepared staying there, they told they don't service there.",
+          "timestamp": "2026-04-11T06:29:34+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "ofiy5bb",
+          "author": "reddit_user_d0bfce9a43b8",
+          "author_karma": 0,
+          "content": "It's a promotional message brother ",
+          "timestamp": "2026-04-11T06:38:34+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run012_post04_seed064",
+      "post_slot": 4,
+      "seed_index": 64,
+      "source_raw_post_id": "1l9olns",
+      "source_product_dir": "World of Hyatt Credit Card",
+      "source_file": "reddit_post:1l9olns",
+      "post_type": "news_or_rumor",
+      "title": "That's why I love Hyatt (or how to get 8% back on every dollar spent on non-Hyatt purchases with Hyatt credit card)",
+      "author": "reddit_user_0dab2d077fca",
+      "author_karma": 0,
+      "content": "That's why I love Hyatt (or how to get 8% back on every dollar spent on non-Hyatt purchases with Hyatt credit card)\n\nSince getting the card in October 2024, I've collected **7 free nights** for Cat 1-4 hotels:\n\n* 5 nights from the sign-up bonus\n* 1 night from Brand Explorer (visiting 5 different Hyatt brands)\n* 1 night from spending $15k in a year\n\nUsually, Cat 4 hotels run $150-250/night, which already beats the $95 annual fee pretty easily.\n\nBut then I found a gem: **SCHLOSS Roxburghe** in Scotland - £400/night ($543) or 18,000 points. That's **3 cents per point**, way above the typical 1.5-2 cents you usually get with Hyatt. Since I moved from NY to Barcelona, a Scotland trip actually makes perfect sense geographically.\n\nBut that was just the surface level. And for most people, earning 1 free night per year and keeping Discoverist status (with occasional free upgrades) is plenty of value. And obviously, Hyatt redemption rates are top notch, so it's my main transfer partner for Bilt and Chase.\n\nBut if you're a heavy spender or business owner, Hyatt's milestone rewards create some insane hidden value.\n\nLooking at these [rewards](https://world.hyatt.com/content/gp/en/tiers-and-benefits.html#charts), I've tried to estimate how much you could earn while staying at Hyatt and earning qualifying nights, or earning Hyatt points by using their card.\n\n* 30 qualifying nights or 50k points: Free Night Award - $200\n* 40 QN or 65k points: Guest of Honor Award (7-day Globalist status for someone) + Suite Upgrade/5K points/$150 FIND credit (\\~$250-400 total value)\n* 50 nights: Similar rewards without Guest of Honor (\\~$100-150)\n* 60 nights: Category 1-7 free night + upgrades (\\~$500-700 value)\n* 70+ nights: Even better rewards (\\~$200-300 each milestone)\n\nBut then I've come across a grey/black [market](https://awardandtravel.com/collections/hyatt-products) for qualifying nights at \\~$87 each ($79 + fees/taxes). Whether you agree with this market or not, it sets a real-world value benchmark.\n\n# And I've calculated the final return.\n\n**Hyatt Business Card** gets you 5 qualifying nights per $10k spend\n\n5 nights × $87 = $435 value = **4.35% ROI**\n\nIt means that when you use this card and earn 1 point per dollar spent, you earn 1x \\* 2.2 (CPP) + 4.35 = **\\~6.5%**.\n\n**Personal Card** gets you 2 qualifying nights per $5k spend\n\n* 2 nights × $87 = $174 value = **3.48% return**\n* Plus points = **effective \\~5.7% return**\n\nThis means when I pay for dining with my personal Hyatt card, I'm getting:\n\n* 2x points (2.2cpp) = 4.4% PLUS 3.48% from qualifying night value **= 7.88% return.** Add here that 1 free night after $15k spent, and you'll get even more.\n\nThat actually beats my Bilt card (3x dining = 6.6% at 2.2cpp) for restaurants!\n\n# \n\nI'm not saying I'm going to sell qualifying nights (honestly, have no idea how that even works). But who am I to argue with market prices? Those milestone rewards are real. And they offer you real and valuable benefits.\n\nSo what are your thoughts? I'm still amazed by this whole thing. It reminds me of that iceberg meme. You think that you know a lot. And then you dive deeper and deeper. I can guess that there is even more to that (Hyatt Prive agents, for instance)",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "mxe7qml",
+          "author": "reddit_user_de33ea320cfa",
+          "author_karma": 0,
+          "content": "Those are some pretty intense mental gymnastics you're doing to get those numbers. Hyatt redemptions are great -- no argument there. But you're stacking points earned, cpp, and FNC value all together for an inflated earn rate. \n\nCPP is a helpful tool to gauge when it makes sense to use points vs cash, but just because point redemptions are more value compared to cash doesn't mean the redemption itself is *good* value.",
+          "timestamp": "2025-06-12T15:17:35+00:00",
+          "likes": 17,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "mxe7n4t",
+          "author": "reddit_user_62eff57a3425",
+          "author_karma": 0,
+          "content": "Your valuation of a “qualifying night” towards status is wild. I understand there’s a black market but that value is based on people willing to overpay to get one or two extra nights to hit a tier.\n\nOtherwise, you would essentially be asserting that the value of the various tiers of status would be the $87x the number of nights required. Which is crazy, and your table of rewards for QN’s backs that up.",
+          "timestamp": "2025-06-12T15:17:08+00:00",
+          "likes": 11,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "mxekhvx",
+              "author": "[deleted]",
+              "author_karma": 0,
+              "content": "> Your valuation of a “qualifying night” towards status is wild.\n\nPicking vacation destinations based on the cash back should be a very obvious sign that some part of the thought process has gone rancid.",
+              "timestamp": "2025-06-12T16:18:00+00:00",
+              "likes": 2,
+              "dislikes": 0,
+              "parent_comment_id": "mxe7n4t",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "mxe6soa",
+          "author": "reddit_user_8b62baf319d4",
+          "author_karma": 0,
+          "content": "I would never calculate point value based on one-off redemption value. Point value is better estimated with an anchor rate that is reasonably reliable, representative, and easy to get. \n\nBut I do think that putting $15K annual spending on a personal Hyatt card is the sweet spot. Two FNA outweigh the AF by a large margin. Even consider the FNA at a discounted $200 each and without considering any points earned from the $15K, the return still yields at 2%.",
+          "timestamp": "2025-06-12T15:13:07+00:00",
+          "likes": 5,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "mxe99h0",
+          "author": "reddit_user_8293d677451d",
+          "author_karma": 0,
+          "content": "I think looking at the Hilton Aspire that way makes more sense (for more people) than the Hyatt cards. The reasoning you’re giving now is pretty much the argument I gave my dad for getting 2 Aspire cards and putting 60k on them each year. \n\n\nThe issue with the Hyatt example is: a quick search shows the hotel can for $250 a night (yes prices change but I’ll get back to that) & that property is an exception/hyatt has a much smaller footprint and available opportunities for something like this to happen (how often are Americans going to go to Scotland?). \n\nWith the Aspire, you could more easily (due to the large footprint of Hilton, uncapped free night award [and possibly diamond status]) ~4%-10% on all spend up to $60k per card (not including points). \n\nWith certain Hilton properties, the basic hotel rooms that are eligible for the certificate are ~$600-$900 minimum. High or low season. With some Conrad, Waldorf or LXR properties, you can be over $1000 on average (closer to ~$1500+ for high seasons).\n\n\nI would say for more people, something like the Conrad Orlando would be a much more common destination. Or even a number of other major US cities where you can get significantly more $400-$800 a night rooms. For those who fly/go international, even more opportunities.\n\n\nSo not even taking points into consideration, 3 nights at an $800 Hilton property (which is not a hard find in major global cities) would get you 4% return. You do a nice resort, you could easily do $3600 for 3 nights and get 6%. Maldives, you’re looking at over $2k a night in July, that’s 10%. \n\n\nTake into account your Diamond status (which matters more internationally), you could end up in some nice rooms. Now not everyone cares about this but, the opportunity is definitely there for some.",
+          "timestamp": "2025-06-12T15:24:50+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "mzeq7zw",
+          "author": "reddit_user_3d4a2932e572",
+          "author_karma": 0,
+          "content": "I wonder how legit that award travel site is. It doesn't inspire confidence when I see they spell \"expired\" wrong.",
+          "timestamp": "2025-06-23T22:07:40+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "mzgoj2v",
+              "author": "reddit_user_222ae6aba0a7",
+              "author_karma": 0,
+              "content": "Haven't tried it yet, but there are lots of similar websites. You can even find QN on eBay",
+              "timestamp": "2025-06-24T05:19:13+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "mzeq7zw",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,14 +1,16 @@
 # Multi-domain SynthPAI + OASIS baselines
 
-This folder reproduces matched-root-post baseline experiments for every domain
-under `data/reddit_domain_posts 2`:
+This folder reproduces matched-root-post baseline experiments for the 11
+domains under `data/reddit_domain_posts 2` plus the legacy credit-card domain:
 
-`camera`, `celebrity`, `cellphone`, `game`, `headphones`, `health_issue`,
-`laptop`, `movies`, `news`, `sports`, and `tv_series`.
+`camera`, `celebrity`, `cellphone`, `credit_cards`, `game`, `headphones`,
+`health_issue`, `laptop`, `movies`, `news`, `sports`, and `tv_series`.
 
-For each requested domain, the workflow deterministically samples real posts
-that have scraped comments (150 by default), uses the same roots for both
-baselines, and writes a real-reference version of those threads for evaluation.
+For each requested domain, the workflow uses a fixed set of 150 real root
+posts, uses the same roots for both baselines, and writes a real-reference
+version of those threads for evaluation. The 11 new-domain pools require at
+least one scraped comment; the legacy credit-card pool retains four
+zero-comment roots in its first 150 for provenance compatibility.
 Default models are exactly:
 
 - `gemini-2.5-flash`
@@ -63,7 +65,7 @@ job needs only `OPENAI_API_KEY`.
 
 ## Generate
 
-Run all 88 generation jobs (11 domains × 2 baselines × 4 models):
+Run all 96 generation jobs (12 domains × 2 baselines × 4 models):
 
 ```bash
 ./experiments/reddit_multidomain_baselines/run_generate_all.sh --continue-on-error

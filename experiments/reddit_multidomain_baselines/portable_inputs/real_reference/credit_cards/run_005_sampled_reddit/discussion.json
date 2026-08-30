@@ -1,0 +1,689 @@
+{
+  "meta": {
+    "product_category": "credit_cards",
+    "baseline": "real_reddit_reference",
+    "run_id": "run_005_sampled_reddit"
+  },
+  "posts": [
+    {
+      "post_id": "real_run005_post00_seed025",
+      "post_slot": 0,
+      "seed_index": 25,
+      "source_raw_post_id": "bkc2ww",
+      "source_product_dir": "Chase Slate®",
+      "source_file": "reddit_post:bkc2ww",
+      "post_type": "other",
+      "title": "Chase Slate Losing FICO Score",
+      "author": "reddit_user_0dab2d077fca",
+      "author_karma": 0,
+      "content": "Chase Slate Losing FICO Score\n\nI just received an email telling me to check the secure messages in my Chase account. It seems that the Slate is losing their FICO score benefit, but the Vantage score will still be provided.",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "emfjfrx",
+          "author": "reddit_user_dcd37a1f05e1",
+          "author_karma": 0,
+          "content": "It’s a cost cutting move: providing Vantage scores is significantly cheaper than real FICO scores. \n\nThat said, you can get a real FICO score for free from Discover (don’t have to be a cardmember) or the Experian app (don’t sign up for paid subscription services). AmEx and Wells Fargo also offer free FICO 8 and 9 scores respectively to card members.",
+          "timestamp": "2019-05-03T19:00:15+00:00",
+          "likes": 12,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "emfk7er",
+              "author": "reddit_user_da520ca3b223",
+              "author_karma": 0,
+              "content": "BoA has TransUnion FICO 8 as well.",
+              "timestamp": "2019-05-03T19:08:35+00:00",
+              "likes": 7,
+              "dislikes": 0,
+              "parent_comment_id": "emfjfrx",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "emfkm2m",
+                  "author": "reddit_user_213870e90bad",
+                  "author_karma": 0,
+                  "content": "Citi bank at least for their costco card has it as well.",
+                  "timestamp": "2019-05-03T19:12:55+00:00",
+                  "likes": 2,
+                  "dislikes": 0,
+                  "parent_comment_id": "emfk7er",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "emfktni",
+                      "author": "reddit_user_2593e5218918",
+                      "author_karma": 0,
+                      "content": "Citi's Score is a BankCard Score 8, not a FICO 8. It even uses a different scale.",
+                      "timestamp": "2019-05-03T19:15:09+00:00",
+                      "likes": 3,
+                      "dislikes": 0,
+                      "parent_comment_id": "emfkm2m",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "emfopeu",
+                          "author": "reddit_user_213870e90bad",
+                          "author_karma": 0,
+                          "content": "TIL\n\nI guess that their score is basically useless then? I could have sworn that the webpage said fico.",
+                          "timestamp": "2019-05-03T19:56:43+00:00",
+                          "likes": 2,
+                          "dislikes": 0,
+                          "parent_comment_id": "emfktni",
+                          "depth": 4,
+                          "replies": [
+                            {
+                              "comment_id": "emfv4ld",
+                              "author": "reddit_user_2593e5218918",
+                              "author_karma": 0,
+                              "content": "It might be more focused towards credit cards, so if the card issuer uses that, it is still relevant. Also it (for me, your experience may vary) seems to at least follow the same movement as a standard FICO 8.",
+                              "timestamp": "2019-05-03T21:09:49+00:00",
+                              "likes": 3,
+                              "dislikes": 0,
+                              "parent_comment_id": "emfopeu",
+                              "depth": 5,
+                              "replies": [
+                                {
+                                  "comment_id": "emfvkli",
+                                  "author": "reddit_user_213870e90bad",
+                                  "author_karma": 0,
+                                  "content": "It says fico bankcard score 8 but I guess that isn't true fico 8?\n\nYour FICO® Score is calculated based on data from your Equifax credit report using the FICO® Bankcard Score 8 model and may be different from other credit scores. FICO® Scores are intended for and delivered only to the Primary cardmember and only if a FICO® Score is available.",
+                                  "timestamp": "2019-05-03T21:15:11+00:00",
+                                  "likes": 1,
+                                  "dislikes": 0,
+                                  "parent_comment_id": "emfv4ld",
+                                  "depth": 6,
+                                  "replies": [
+                                    {
+                                      "comment_id": "emfvr8v",
+                                      "author": "reddit_user_2593e5218918",
+                                      "author_karma": 0,
+                                      "content": "Correct. It is likely a variant of FICO 8 designed for credit card use. Some card issuers may use that, others may use the standard FICO 8.\n\nEdit: Swype",
+                                      "timestamp": "2019-05-03T21:17:27+00:00",
+                                      "likes": 2,
+                                      "dislikes": 0,
+                                      "parent_comment_id": "emfvkli",
+                                      "depth": 7,
+                                      "replies": [
+                                        {
+                                          "comment_id": "emfwbpu",
+                                          "author": "reddit_user_213870e90bad",
+                                          "author_karma": 0,
+                                          "content": "Well I guess that more info is always better.",
+                                          "timestamp": "2019-05-03T21:24:13+00:00",
+                                          "likes": 1,
+                                          "dislikes": 0,
+                                          "parent_comment_id": "emfvr8v",
+                                          "depth": 8,
+                                          "replies": []
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "comment_id": "emgb2nn",
+              "author": "reddit_user_d2a732d74f33",
+              "author_karma": 0,
+              "content": "I recommend not having any products at all with Wells Fargo\n\nI am a banker",
+              "timestamp": "2019-05-04T00:39:04+00:00",
+              "likes": 0,
+              "dislikes": 0,
+              "parent_comment_id": "emfjfrx",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "emgnw2x",
+          "author": "reddit_user_ad6e38cb14c1",
+          "author_karma": 0,
+          "content": "I assumed it was because of redundancy.\n\n&#x200B;\n\nThe FICO thing was Slate exclusive at the time.\n\n&#x200B;\n\nNow  that they have the Credit Journey thingy for everybody, so applying for the Slate, just to get access to the FICO thing, isn't going to be a factor anymore, so might as well just close it out since anyone can use credit journey.",
+          "timestamp": "2019-05-04T03:49:15+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "emhum10",
+              "author": "reddit_user_1220d3e42a85",
+              "author_karma": 0,
+              "content": "Credit journey provides Vantage score which is less useful since it’s not widely used.",
+              "timestamp": "2019-05-04T16:26:19+00:00",
+              "likes": 3,
+              "dislikes": 0,
+              "parent_comment_id": "emgnw2x",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "emggx20",
+          "author": "reddit_user_f9435d4b8ce1",
+          "author_karma": 0,
+          "content": "Little odd such a popular bank, mostly the entire internet seeks their products, is seemingly cutting costs?",
+          "timestamp": "2019-05-04T02:03:06+00:00",
+          "likes": 0,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run005_post01_seed026",
+      "post_slot": 1,
+      "seed_index": 26,
+      "source_raw_post_id": "1rp0h3t",
+      "source_product_dir": "Citi Strata Premier® Card",
+      "source_file": "reddit_post:1rp0h3t",
+      "post_type": "simple_question",
+      "title": "Applied for Citi Strata Premier card what else should I do?",
+      "author": "reddit_user_0dab2d077fca",
+      "author_karma": 0,
+      "content": "Applied for Citi Strata Premier card what else should I do?\n\nHello everyone! \n\nI recently applied for the Citi Strata card and wanted to know what other cards I should open later on to stack points as much as possible. I thought about the AA advantage card for more points or the double cash for my Amazon purchases for 2x. \n\nI already have Chase Sapphire Preferred, Freedom Unlimited, and Discover (just to use on 5x categories ie gas).",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "o9hjwcv",
+          "author": "reddit_user_2c9cde051748",
+          "author_karma": 0,
+          "content": "Citi Double Cash should be your first choice for earning more points. You can always get an AA card later. Personally, I would get the Amazon Prime card for Amazon if you have a Prime membership. 5% is better than 2X.",
+          "timestamp": "2026-03-09T13:47:39+00:00",
+          "likes": 8,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "o9hlfxr",
+              "author": "reddit_user_75e7aa93b3fa",
+              "author_karma": 0,
+              "content": "Agreed.  Double cash then Custom cash.  Space out your applications.  Look up some of Citi's application rules which include 1/8, 2/65, and 6/6.  Since you're early in the game, I would space them out every 3-6 months.",
+              "timestamp": "2026-03-09T13:56:09+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "o9hjwcv",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "o9httz7",
+              "author": "reddit_user_b05b144eae75",
+              "author_karma": 0,
+              "content": "Mmm maybe that should have been a better option. I believe Amazon lets u transfers points to chase iirc. ",
+              "timestamp": "2026-03-09T14:41:43+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "o9hjwcv",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "o9hy4cc",
+                  "author": "reddit_user_bb99352ef4ca",
+                  "author_karma": 0,
+                  "content": "The chase Amazon prime card does not earn UR it just earns cash back so no transfer to the cards for travel like CSP",
+                  "timestamp": "2026-03-09T15:04:12+00:00",
+                  "likes": 2,
+                  "dislikes": 0,
+                  "parent_comment_id": "o9httz7",
+                  "depth": 2,
+                  "replies": []
+                },
+                {
+                  "comment_id": "o9hzag3",
+                  "author": "reddit_user_2c9cde051748",
+                  "author_karma": 0,
+                  "content": "The Amazon card does not let you transfer to Chase UR cards, so it's cash back only. It's true cash back, so the best way to use it is to redeem for a bank deposit or statement credit. I don't use it to discount my Amazon purchases because that reduces my rebates.\n\nOne way to earn 5X UR points from Amazon purchases is to get the Chase Ink Cash and buy Amazon gift cards at office stores. I do that sometimes when I happen to be close to a Staples or Office Depot.\n",
+                  "timestamp": "2026-03-09T15:10:16+00:00",
+                  "likes": 2,
+                  "dislikes": 0,
+                  "parent_comment_id": "o9httz7",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "o9i9pfs",
+          "author": "reddit_user_d1d1d819999c",
+          "author_karma": 0,
+          "content": "DoubleCash unless AA still has that 80k sub for 1k spend when you are ready for a new one. If they do I’d get that first tbh. ",
+          "timestamp": "2026-03-09T16:01:40+00:00",
+          "likes": 3,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "o9iiqus",
+              "author": "reddit_user_b05b144eae75",
+              "author_karma": 0,
+              "content": "My coworker gave me a link and told me to put a code in to unlock the Special Flight offer. 80k points. Spend 1k. Annual fee waived for first year. ",
+              "timestamp": "2026-03-09T16:44:26+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "o9i9pfs",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "o9ijtyc",
+                  "author": "reddit_user_d1d1d819999c",
+                  "author_karma": 0,
+                  "content": "Yeah I did that on Friday. It’s a really good offer. Also after a year if you don’t want the free checked bags you should be able to PC it to a Citi CustomCash. \n\nUnless you spend 30 grand in general spend in the next twoish months (after 65ish days you can get another Citi card which in your case would be the DoubleCash)",
+                  "timestamp": "2026-03-09T16:49:31+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "o9iiqus",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "o9imgd7",
+                      "author": "reddit_user_b05b144eae75",
+                      "author_karma": 0,
+                      "content": "I wonder how long the offer will last. Since I already applied for the strata.\n\nBut I was thinking about having my wife apply to this lol ",
+                      "timestamp": "2026-03-09T17:01:43+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "o9ijtyc",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "o9imovh",
+                          "author": "reddit_user_d1d1d819999c",
+                          "author_karma": 0,
+                          "content": "It’s been up since December iirc. Give it 8 days then iirc with Citibank you can apply again.\n\n\nAlso Strata or Strata premier?",
+                          "timestamp": "2026-03-09T17:02:50+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "o9imgd7",
+                          "depth": 4,
+                          "replies": [
+                            {
+                              "comment_id": "o9isklm",
+                              "author": "reddit_user_b05b144eae75",
+                              "author_karma": 0,
+                              "content": "Strata premier! ",
+                              "timestamp": "2026-03-09T17:30:33+00:00",
+                              "likes": 1,
+                              "dislikes": 0,
+                              "parent_comment_id": "o9imovh",
+                              "depth": 5,
+                              "replies": [
+                                {
+                                  "comment_id": "o9jemrc",
+                                  "author": "reddit_user_d1d1d819999c",
+                                  "author_karma": 0,
+                                  "content": "Oh was about to say the only reason to run a Strata is if you have a Strata elite, and now that C1 has a lounge in almost every AA hub there’s really no reason to have a Strata elite (beyond a churn) over a VX.",
+                                  "timestamp": "2026-03-09T19:13:43+00:00",
+                                  "likes": 1,
+                                  "dislikes": 0,
+                                  "parent_comment_id": "o9isklm",
+                                  "depth": 6,
+                                  "replies": [
+                                    {
+                                      "comment_id": "o9jevd4",
+                                      "author": "reddit_user_b05b144eae75",
+                                      "author_karma": 0,
+                                      "content": "C1? Does that mean capital 1? Sorry I’m very new to this ",
+                                      "timestamp": "2026-03-09T19:14:50+00:00",
+                                      "likes": 1,
+                                      "dislikes": 0,
+                                      "parent_comment_id": "o9jemrc",
+                                      "depth": 7,
+                                      "replies": [
+                                        {
+                                          "comment_id": "o9jffll",
+                                          "author": "reddit_user_d1d1d819999c",
+                                          "author_karma": 0,
+                                          "content": "Yes. Capital One VentureX.\n\n\nIf you didn’t know, the primary goal of Citibank setups is basically to get as many AA miles as possible, and in order to transfer Citi points 1:1 to AA you have to have either a Strata elite or Strata Premier. The regular Strata cannot transfer them 1:1 on its own. \n\n\nWhat a lot of people do is take out a bunch of Citibank cards (AA cards, the other two Strata’s, etc.) then convert them all to Citi CustomCash cards to basically get 5% back on all the major categories.",
+                                          "timestamp": "2026-03-09T19:17:28+00:00",
+                                          "likes": 2,
+                                          "dislikes": 0,
+                                          "parent_comment_id": "o9jevd4",
+                                          "depth": 8,
+                                          "replies": [
+                                            {
+                                              "comment_id": "o9jhlaq",
+                                              "author": "reddit_user_b05b144eae75",
+                                              "author_karma": 0,
+                                              "content": "Yeah I wanted to the Citi for the AA points transfers. Planning to fly to Japan ",
+                                              "timestamp": "2026-03-09T19:27:32+00:00",
+                                              "likes": 1,
+                                              "dislikes": 0,
+                                              "parent_comment_id": "o9jffll",
+                                              "depth": 9,
+                                              "replies": []
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "comment_id": "o9k3iv8",
+                  "author": "reddit_user_371e0c0e41a7",
+                  "author_karma": 0,
+                  "content": "anyone have this link to share? is it a referral?",
+                  "timestamp": "2026-03-09T21:12:55+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "o9iiqus",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "o9hmwtr",
+          "author": "reddit_user_1e7ad5c3e267",
+          "author_karma": 0,
+          "content": "I’d say double cash, get that base 2% rate going",
+          "timestamp": "2026-03-09T14:04:14+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "o9hu9ys",
+              "author": "reddit_user_b05b144eae75",
+              "author_karma": 0,
+              "content": "Looks like that might have to be my next card? I don’t think I can back out of the citi strata now lol ",
+              "timestamp": "2026-03-09T14:44:05+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "o9hmwtr",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "o9i9zom",
+                  "author": "reddit_user_d1d1d819999c",
+                  "author_karma": 0,
+                  "content": "Strata premier is a great card youre fine for a couple months.",
+                  "timestamp": "2026-03-09T16:03:04+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "o9hu9ys",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "o9jtwvn",
+          "author": "reddit_user_f78f9db0fa6f",
+          "author_karma": 0,
+          "content": "Get the double cash and then after some time get the custom cash. You can purchase Amazon gift cards from the grocery store at 5x with the custom.",
+          "timestamp": "2026-03-09T20:26:08+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "o9hjfvv",
+          "author": "reddit_user_3b80de3bd2f4",
+          "author_karma": 0,
+          "content": "!template",
+          "timestamp": "2026-03-09T13:45:06+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "o9hjfx6",
+              "author": "reddit_user_bca8033b630e",
+              "author_karma": 0,
+              "content": "**Template for Card Recommendation Requests:**\n\nPlease use the [Template for Card Recommendation Requests](https://www.reddit.com/r/CreditCards/wiki/cardtemplate), or the questionaire at [creditcardtemplate.com](https://www.creditcardtemplate.com/) to provide relevant information so that others can help you find the best card for you.\n\n**Interested in cashback cards? Take a look at these resources from the sidebar:**\n\n* [List of Flat 2%+ Cashback Cards](https://www.reddit.com/r/CreditCards/wiki/list_of_flat_cashback_cards_with_benefits) \n\n* [List of Best Cashback Cards by Category](https://www.reddit.com/r/CreditCards/wiki/best_cash_back_cards_by_category)\n\nI can be summoned to comment by using command(s):\n\n`!template`\n\n*I am a bot, and this action was performed automatically. Please [contact the moderators of this subreddit](/message/compose/?to=/r/CreditCards) if you have any questions or concerns.*",
+              "timestamp": "2026-03-09T13:45:07+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "o9hjfvv",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "post_id": "real_run005_post02_seed027",
+      "post_slot": 2,
+      "seed_index": 27,
+      "source_raw_post_id": "1rqe402",
+      "source_product_dir": "Citi Double Cash® Card",
+      "source_file": "reddit_post:1rqe402",
+      "post_type": "specific_rule",
+      "title": "Does a Citi Double Cash work earning 1% back on paying a Balance transfer?",
+      "author": "reddit_user_0dab2d077fca",
+      "author_karma": 0,
+      "content": "Does a Citi Double Cash work earning 1% back on paying a Balance transfer?\n\nTitle suggests. Let’s say you have 10k in Chase and balance transfer to the Citi double cash. Would you get that 1% back upon repaying that 10k via Citi? Or is it only on payments that were specifically purchased with the Citi card?",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "o9rjxrx",
+          "author": "reddit_user_97c24bd55227",
+          "author_karma": 0,
+          "content": "No, cashback is explicitly listed as only for purchases. BTs do not count as purchases  ",
+          "timestamp": "2026-03-11T00:06:18+00:00",
+          "likes": 11,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "o9rk6wj",
+              "author": "reddit_user_706ff18a155c",
+              "author_karma": 0,
+              "content": "Thanks ",
+              "timestamp": "2026-03-11T00:07:43+00:00",
+              "likes": 2,
+              "dislikes": 0,
+              "parent_comment_id": "o9rjxrx",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "o9rjq4r",
+          "author": "reddit_user_2c35393aa02c",
+          "author_karma": 0,
+          "content": "No cash back is earned on balance transfers.",
+          "timestamp": "2026-03-11T00:05:06+00:00",
+          "likes": 4,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "o9rxs3g",
+          "author": "reddit_user_77f6df5162b6",
+          "author_karma": 0,
+          "content": "You can in a roundabout way, but as someone else said: the purchase tracker will limit the TOTAL points earned to 1% on purchase + 1% on payments made up to the amount of purchases.\n\nThere’s no loophole.  Any dollar that earns 1% for paying a balance transfer, or interest, or cash advance, or anything else that’s not a purchase will take away from the amount of purchases that are eligible for the 1% earning.",
+          "timestamp": "2026-03-11T01:22:52+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "o9rnonb",
+          "author": "reddit_user_cb8bbcec5ada",
+          "author_karma": 0,
+          "content": "The CDC is a bit weird in that you earn 1x points on eligible purchases, and 1x points on payments.\n\nWhich balance payments are applied to does not matter. Theoretically, if you made $1000 of purchases, and then transferred an $1000 balance to the CDC, then made $1000 of payments, you would earn 1000 TYP on that $1000 payment even if it were applied to the Balance Transfer balance first (if for some reason you had a higher interest rate on the Balance Transfer than on purchases). I see no reason why that would not be an Eligible Payment.\n\nThere's no loophole here, though. The relevant bit of the terms is this:\n\n> ThankYou Points on Eligible Payments: At the end of each billing cycle, you will earn 1 ThankYou Point per $1 on Eligible Payments made to your Card Account. You will earn ThankYou Points on your Eligible Payments up to the balance shown in your Purchase Tracker (see \"Purchase Tracker\" below). The balance in Your Card Account's Purchase Tracker will be reduced by the amount of Eligible Payments you make. When the Purchase Tracker reaches $0, you won't earn Points on Eligible Payments until more purchases are made and added to the Purchase Tracker. The Points you earn for Eligible Payments will show on Your billing statement as \"ThankYou Points on Payments.\"\n\n> \"Eligible Payments\" means payments you make on your Card Account, that add up to at least the Minimum Payment Due (as set forth on Your billing statement). Eligible Payments do not include those detailed below in \"When You will not earn Points.\" The redemption of Points for a statement credit is not an Eligible Payment and will not reduce the balance in your Purchase Tracker.\n\nSo even if that $1000 payment were applied to the Balance Transfer and you earned 1000 TYP, you would not earn any points when you later paid off that $1000 in purchases.",
+          "timestamp": "2026-03-11T00:26:50+00:00",
+          "likes": 0,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "o9rjskw",
+          "author": "reddit_user_4771971e57bb",
+          "author_karma": 0,
+          "content": "Yes I believe, so after the 5% balance transfer fee you'd net negative 4% in profits.",
+          "timestamp": "2026-03-11T00:05:29+00:00",
+          "likes": -10,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "o9rk5ir",
+              "author": "reddit_user_97c24bd55227",
+              "author_karma": 0,
+              "content": "Wrong:\n\n\nThe following transactions are not purchases and will not earn Points: balance transfers, cash advances, checks that access your Card Account, items returned for credit, disputed or unauthorized purchases, fraudulent transactions, traveler's checks, foreign currency purchases, money orders, wire transfers (and similar cash-like transactions), lottery tickets and gaming chips (and similar betting transactions), loads or reloads of balances on gift cards or prepaid cards or cash equivalents, person-to-person payments, Citi® Flex Loans, Card Account fees and charges (such as late fees and finance charges), and fees for services or programs you elect to receive through us. When using Citi Flex Pay, you only earn ThankYou Points on the original purchase amount.",
+              "timestamp": "2026-03-11T00:07:31+00:00",
+              "likes": 7,
+              "dislikes": 0,
+              "parent_comment_id": "o9rjskw",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "post_id": "real_run005_post03_seed028",
+      "post_slot": 3,
+      "seed_index": 28,
+      "source_raw_post_id": "1ocv9iu",
+      "source_product_dir": "Wells Fargo Reflect® Card",
+      "source_file": "reddit_post:1ocv9iu",
+      "post_type": "approval_dp",
+      "title": "Wells Fargo prequal still showing frozen Experian after unfreeze - how long should I wait?",
+      "author": "reddit_user_0dab2d077fca",
+      "author_karma": 0,
+      "content": "Wells Fargo prequal still showing frozen Experian after unfreeze - how long should I wait?\n\nQuick question for anyone who's dealt with this:\n\nUnfroze my Experian file on Friday 17th and tried the Wells Fargo prequalification link (for the Reflect card) the same day. Got the error: \"We're unable to access your credit bureau record because your credit file is 'frozen' at your request.\"\n\nTried again yesterday and then today (2nd business day after unfreezing not counting friday) - same error. Even tested from a different browser without logging into my WF account, no luck. EQ and TU were never frozen, and I definitely unfroze correctly through Experian's site.\n\nFrom what I've found, this seems to be a sync issue between Experian and WF's systems. Even though Experian unfreezes are supposed to be instant, their prequal tool might have cached data that takes 24-72 hours (or even 3-5 business days) to update?\n\nI'm debating whether to:\n\n1. Keep trying the prequal daily and wait it out to clear or\n2. Just submit a full application instead, but may get same error?\n\nFor context: I already have 3 cards with WF plus a checking account, so approval odds should be decent if they're cool with giving me a 4th card.\n\nAnyone else experienced this? How long did it take for WF's system to recognize the unfreeze for you or did you have to call them to get them to do anything manually or what do you suggest? Thanks !!",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "nkptrkj",
+          "author": "reddit_user_979407629e47",
+          "author_karma": 0,
+          "content": "I had this happen but it worked within ~30 minutes of unfreezing",
+          "timestamp": "2025-10-22T03:11:17+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "nksn1wy",
+              "author": "reddit_user_ef6a1508f80f",
+              "author_karma": 0,
+              "content": "It seems it may be a hit or miss then with wells, since I tried again and still same thing. I am a bit reluctant to apply since they have this issue though. I much rather know if they would pre approve. Any advice?",
+              "timestamp": "2025-10-22T15:38:33+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "nkptrkj",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "post_id": "real_run005_post04_seed029",
+      "post_slot": 4,
+      "seed_index": 29,
+      "source_raw_post_id": "1qrj5ka",
+      "source_product_dir": "Wells Fargo Autograph Journey℠ Card",
+      "source_file": "reddit_post:1qrj5ka",
+      "post_type": "news_or_rumor",
+      "title": "Bilt or Wells Fargo Transition",
+      "author": "reddit_user_0dab2d077fca",
+      "author_karma": 0,
+      "content": "Bilt or Wells Fargo Transition\n\nI think I’ve decided I am going to wait for my Bilt card to be deactivated and accept my Autograph card. \n\nThe no AF Bilt 2.0 card is absolutely terrible. Earning 1x on everything where you need to spend a certain portion of your rent to even get value from the card on points on rent/mortgage. The issue is your spending all that money on a subpar card where I would normally earn 3-5x back. I can’t believe they got rid of the 3x on all dining (not just neighborhoods) absolutely pitiful of a card.\n\nThe Wells Fargo Autograph is also pretty useless to me since I have Robinhood gold which is just the autograph but better in every way. I figure if I ever get rid of the Robinhood gold, then the autograph can fill a lot of those 3x categories and if I want to upgrade into the autograph journey or future cards they come out with. I just don’t trust Bilt anymore.\n\nEven the Bilt obsidian card I believe is worse than the Bilt 1.0 card and IT HAS AN ANNUAL FEE.",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "o2oqev2",
+          "author": "reddit_user_05dc5168a8a4",
+          "author_karma": 0,
+          "content": "I keep hearing this but you don’t HAVE to spend a certain portion of your rent to get value from your housing payment with Bilt cards. The very first dollar you spend on the card earns 1.33x bonus rewards points on spend if you make your housing payment through Bilt. [At a basic level](https://www.reddit.com/r/biltrewards/s/1dQJMx1uoo), Blue is a 2.33x catch-all card for no AF, Obsidian is 4.33x on dining or groceries for $95 AF (with $100 hotel credits), and Palladium is a 3.33x catch-all card for $495 AF (with $500 hotel credits). If you have options which work better for you, that’s fine. But it’s a very competitive card if you make a housing payment.",
+          "timestamp": "2026-01-30T22:16:03+00:00",
+          "likes": 6,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "o2oo6et",
+          "author": "reddit_user_9d64a9c7eecf",
+          "author_karma": 0,
+          "content": "Obsidian has 3x dining! With $200 in Bilt Cash as sign up bonus it covers the AF 2x so I went that route. Might cancel next year if I don’t get my moneys worth",
+          "timestamp": "2026-01-30T22:05:03+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "o2olouk",
+          "author": "reddit_user_9b1875e2524c",
+          "author_karma": 0,
+          "content": "\"The Wells Fargo Autograph is also pretty useless to me since I have Robinhood gold which is just the autograph but better in every way.\"\n\nWhat are you on about?  Robinhood Gold is just the Autograph but better in every way?  Doesn't that mean it's not 'just the autograph'?",
+          "timestamp": "2026-01-30T21:53:03+00:00",
+          "likes": -2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    }
+  ]
+}

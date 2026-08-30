@@ -1,0 +1,350 @@
+{
+  "meta": {
+    "product_category": "credit_cards",
+    "baseline": "real_reddit_reference",
+    "run_id": "run_001_sampled_reddit"
+  },
+  "posts": [
+    {
+      "post_id": "real_run001_post00_seed005",
+      "post_slot": 0,
+      "seed_index": 5,
+      "source_raw_post_id": "dtuf2i",
+      "source_product_dir": "Chase Slate®",
+      "source_file": "reddit_post:dtuf2i",
+      "post_type": "specific_rule",
+      "title": "Downgrade to Chase Slate",
+      "author": "reddit_user_0dab2d077fca",
+      "author_karma": 0,
+      "content": "Downgrade to Chase Slate\n\nHi\n\nCan I downgrade to a chase slate credit card from a CSP? I was going to go to CFU but it looks like there is a $200 I don’t want to leave behind. \n\nThanks",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "f6yttch",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "Why not a Chase Freedom?  You can have multiple.  The Slate earns nothing.\n\nAnd yes, you can.  You have to call them on the phone.",
+          "timestamp": "2019-11-09T10:58:42+00:00",
+          "likes": 5,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "f6z13p1",
+              "author": "reddit_user_97b53e5cd373",
+              "author_karma": 0,
+              "content": "I want to get the SUB from the CF and CFU in the future. Is that a reasonable thing to do? \n\nDowngrade obviously to keep the length of credit up",
+              "timestamp": "2019-11-09T13:28:16+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "f6yttch",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "f6z1vw4",
+                  "author": "[deleted]",
+                  "author_karma": 0,
+                  "content": "You can’t downgrade in the first year, but after that it’s fine... except then you’re using a [5/24 slot](https://www.reddit.com/r/churning/comments/819r08/list_of_antichurning_rules/) for a mediocre SUB.  $200 isn’t terrible, but there are $500 and $800+ SUBs.\n\nIf you’re going to upgrade it again later, using up a 5/24 slot isn’t the end of the world.  Presumably you want to keep the CF and CFU and then later turn the Slate into a CSP/CSR to get the “trifecta”.\n\nIf you’re *not* going to upgrade it later and just want to get SUBs, then I would get other Chase cards with higher SUBs while you’re still under 5/24, and product change the CSP to a CF or CFU.",
+                  "timestamp": "2019-11-09T13:38:29+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "f6z13p1",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "f6z2mo2",
+                      "author": "reddit_user_97b53e5cd373",
+                      "author_karma": 0,
+                      "content": "The 5/24 rule is just a chase thing right?\nI’m currently 4/24 and this would take me to 5/24. \n\nBut I apply for the CSR in a year I would be down to 4/24 again. I would apply outright for the CSR and keep slate and CFU.  But if I upgrade slate to CSR in a year do I get a SUB?",
+                      "timestamp": "2019-11-09T13:47:50+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "f6z1vw4",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "f6z7lh8",
+                          "author": "reddit_user_b7373ae30fcd",
+                          "author_karma": 0,
+                          "content": "You won't get a bonus for upgrading. Also remember that you can't apply for the CSR until 48 months after you got your CSP's SUB.",
+                          "timestamp": "2019-11-09T14:56:14+00:00",
+                          "likes": 2,
+                          "dislikes": 0,
+                          "parent_comment_id": "f6z2mo2",
+                          "depth": 4,
+                          "replies": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "f6z7aan",
+          "author": "reddit_user_0cce8b7316c0",
+          "author_karma": 0,
+          "content": "$200 is nothing, especially when you could get the Hyatt card with your last 5/24 slot and get that bonus.",
+          "timestamp": "2019-11-09T14:51:58+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "f6zprbe",
+              "author": "reddit_user_97b53e5cd373",
+              "author_karma": 0,
+              "content": "Thanks makes sense",
+              "timestamp": "2019-11-09T17:15:44+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "f6z7aan",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "f6zuorq",
+              "author": "reddit_user_97b53e5cd373",
+              "author_karma": 0,
+              "content": "went for the CSP downgrade to CFU. Thanks all!",
+              "timestamp": "2019-11-09T17:38:58+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "f6z7aan",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "post_id": "real_run001_post01_seed006",
+      "post_slot": 1,
+      "seed_index": 6,
+      "source_raw_post_id": "1gw8e7v",
+      "source_product_dir": "Marriott Bonvoy Boundless® Credit Card",
+      "source_file": "reddit_post:1gw8e7v",
+      "post_type": "discussion_prompt",
+      "title": "What is the signup bonus for Marriott Boundless?",
+      "author": "reddit_user_0dab2d077fca",
+      "author_karma": 0,
+      "content": "What is the signup bonus for Marriott Boundless?\n\nAm I reading this right? Is Marriott offering 3 free nights PLUS 125,000 points on the Boundless card right now?\n\n[https://creditcards.chase.com/travel-credit-cards/marriott-bonvoy/boundless](https://creditcards.chase.com/travel-credit-cards/marriott-bonvoy/boundless)",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "ly8vb29",
+          "author": "reddit_user_4cfccb8e8b1f",
+          "author_karma": 0,
+          "content": "Interesting, but my guess is there is an error on the page listing both bonuses. When you click on \"offer details\", the terms only mention the 125K points bonus. Perhaps someone will be a guinea pig and let us know! 😀",
+          "timestamp": "2024-11-21T13:09:42+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "lydcv7t",
+              "author": "reddit_user_1579eeabfe00",
+              "author_karma": 0,
+              "content": "I applied for it. We'll see what happens.",
+              "timestamp": "2024-11-22T05:11:57+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "ly8vb29",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "lyekai6",
+                  "author": "reddit_user_4cfccb8e8b1f",
+                  "author_karma": 0,
+                  "content": "Best of luck!",
+                  "timestamp": "2024-11-22T12:20:07+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "lydcv7t",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "post_id": "real_run001_post02_seed007",
+      "post_slot": 2,
+      "seed_index": 7,
+      "source_raw_post_id": "1gvv7xt",
+      "source_product_dir": "BankAmericard® credit card",
+      "source_file": "reddit_post:1gvv7xt",
+      "post_type": "setup_strategy",
+      "title": "Trying to simplify credit card portfolio",
+      "author": "reddit_user_0dab2d077fca",
+      "author_karma": 0,
+      "content": "Trying to simplify credit card portfolio\n\nHello,\n\nWe don't carry too many cards. \n\nAs of right now, I only carry Chase Sapphire Reserve and BankAmericard. Wife is AU on the BofA card.\n\nMy wife carries her own Sapphire Reserve, Freedom Unlimited and United Explorer. I am AU on the last two.\n\nJust got Morgan Stanley Amex Platinum and Blue Preferred for me (with her as AU on both). \n\nThinking of cancelling my BankAmericard, which is hardly used, and Sapphire Reserve while becoming an AU on her Sapphire Reserve to save the duplicate fees on two Sapphire reserves. Also thinking of cancelling her United and moving that credit line to her Sapphire Reserve.\n\n \nThat would leave us with 4 cards (2 Amex for me, 2 Chase for her). Too barebones? Or just about right? If I cancel both my cards, how badly will my score be affected? My overall credit line won't go down because I will add her Sapphire Reserve as AU and the Amex Blue Preferred.",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "ly54zu4",
+          "author": "reddit_user_f49a64cb5f75",
+          "author_karma": 0,
+          "content": "Here's some info on closing cards: https://www.reddit.com/r/CreditCards/wiki/what_happens_if_you_close_a_card\n\nBeware Amex points are easy to earn and hard to burn. The only big USA airline they have is Delta (vs. United and Southwest with Chase). The fees are higher too. Also the cards aren't widely accepted the same as Visa/Mastercard. I learned this the hard way. \n\nI'd also urge caution the authorized user fee on the Chase Sapphire Reserve might make that a waste too.\n\nNot booking a United flight with a United card and your flight might be subject to bag fees. Also the boarding group will be later, so it might be required to gate check carryon bags if the overhead bins are already full when you board. This might not be an issue, but just a FYI.",
+          "timestamp": "2024-11-20T18:54:58+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "ly5ewon",
+              "author": "reddit_user_3858abb7800b",
+              "author_karma": 0,
+              "content": "Thanks for your response. We might keep the united for the exact reasons you point out.",
+              "timestamp": "2024-11-20T19:45:06+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "ly54zu4",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "post_id": "real_run001_post03_seed008",
+      "post_slot": 3,
+      "seed_index": 8,
+      "source_raw_post_id": "1opgucd",
+      "source_product_dir": "Wells Fargo Autograph Journey℠ Card",
+      "source_file": "reddit_post:1opgucd",
+      "post_type": "complaint_cs",
+      "title": "Question about Wells Fargo",
+      "author": "reddit_user_0dab2d077fca",
+      "author_karma": 0,
+      "content": "Question about Wells Fargo\n\nI’ve had my Wells Fargo Autograph credit card since February 2023. Repayment history’s at 100%. Would I be able to call Wells Fargo customer service to look at upgrading to Autograph Journey? It used to be possible to do upgrades online, but I guess that’s disappeared. I appreciate any responses.",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "nnf2zdg",
+          "author": "reddit_user_2c35393aa02c",
+          "author_karma": 0,
+          "content": "Why not apply for the Autograph Journey and get the sign-up bonus?  A PC usually does not come with a SUB.",
+          "timestamp": "2025-11-06T13:59:19+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run001_post04_seed009",
+      "post_slot": 4,
+      "seed_index": 9,
+      "source_raw_post_id": "ywmiso",
+      "source_product_dir": "Discover it® Chrome",
+      "source_file": "reddit_post:ywmiso",
+      "post_type": "approval_dp",
+      "title": "Random CLI for Discover IT",
+      "author": "reddit_user_0dab2d077fca",
+      "author_karma": 0,
+      "content": "Random CLI for Discover IT\n\nHello, I recently received a $1,000 CLI on my IT card (Current limit is now $3,800) and thought I'd share my history with Discover. \n\n\\-10/2020 opened as my first card. It was a secured card w/ $500 limit. \n\n\\~6/21 it was unlocked as a Chrome card card. $1,800. \n\n\\~11/21 limit raised to $2,800 (started using it less after this point because I opened a CSP)\n\n11/22 limit raised to $3,800\n\nIt's been a It card since January when I product changed from Chrome. I thinnk my reported income was around $24k. I've been living overseas since February so I haven't used the card much. I keep a $5 streaming service on there and I put $100 on it when I paid a friend via paypal for the 5% cashback. Some months I pay the balance before the statement closes and it reports as $0. \n\nI was honestly surprised by automatic increase since I've used the card so little this year while abroad. Once I get back to the states I may request more increases but I'm not too concerned about it at the moment. \n\nAnyway, I've noticed a couple posts lately about discover CLIs so I thought I'd share my experience for anyone curious.\n\nEdit: I forgot to mention credit score it's currently 709 from Discover and 728 on Experian.\n\nUpdate: Another user recommended something called the Discover Double Dip (DDD), it's the first time I had ever heard of it. I put in a request using $24k as income and $0 for housing (it's part of my employment contract.) I was given another increase of $1,500. My current limit on the card is $5,300.",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "iwki90e",
+          "author": "reddit_user_daeda85d5613",
+          "author_karma": 0,
+          "content": "Wtf. I’m at a 755 score. Charge way more and am still stuck at $1800 for a year now. 60k income. I keep trying through the app and they keep denying me",
+          "timestamp": "2022-11-16T08:30:43+00:00",
+          "likes": 3,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "iwlbezu",
+              "author": "reddit_user_a6b7b32dcca2",
+              "author_karma": 0,
+              "content": "I’ve had better luck calling and asking a CSR",
+              "timestamp": "2022-11-16T14:14:28+00:00",
+              "likes": 2,
+              "dislikes": 0,
+              "parent_comment_id": "iwki90e",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "iwl60ou",
+          "author": "reddit_user_0b6872f8ecdd",
+          "author_karma": 0,
+          "content": "Congratulations on your PCLI from Discover!  Clearly the way you're handling your profile aligns well with them.  As an aside if you're feeling up to it you can try for the DDD (Discover Double Dip).  This is possible sometimes when Discover gives you a PCLI; often they only give you part of the CLI that's on the table for you.  If you go ahead and request a CLI from Discover, many have reported getting the rest of what was on the table immediately following the PCLI.  Just something to consider if you want to give it a shot, as there's nothing to lose.",
+          "timestamp": "2022-11-16T13:29:55+00:00",
+          "likes": 3,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "iwoy2li",
+              "author": "reddit_user_1b9b318c8e4e",
+              "author_karma": 0,
+              "content": "Thanks for the tip! I submitted a request. I listed $24k as income and $0 for housing (it's part of my employment contract) and got another $1,500 increase!",
+              "timestamp": "2022-11-17T06:39:09+00:00",
+              "likes": 2,
+              "dislikes": 0,
+              "parent_comment_id": "iwl60ou",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "iwpp5zi",
+                  "author": "reddit_user_0b6872f8ecdd",
+                  "author_karma": 0,
+                  "content": "...AND THAT'S HOW IT'S DONE!\n\nCongrats on the DDD success!",
+                  "timestamp": "2022-11-17T12:44:12+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "iwoy2li",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "iwmplqe",
+          "author": "reddit_user_7f3f755dc173",
+          "author_karma": 0,
+          "content": "Not surprising. I managed to raise my CL from 1000 to 1600 in two years after asking multiple times. Then one day they randomly raised it to 6000. I’ve heard similar stories from others.",
+          "timestamp": "2022-11-16T19:56:53+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    }
+  ]
+}

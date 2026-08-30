@@ -15,6 +15,7 @@ EXPECTED_DOMAINS = {
     "camera",
     "celebrity",
     "cellphone",
+    "credit_cards",
     "game",
     "headphones",
     "health_issue",
@@ -66,6 +67,16 @@ def test_portable_input_manifest_and_seed_counts() -> None:
         assert len(pool["seed_posts"]) == 150
         assert reference["seed_count"] == 150
         assert reference["run_count"] == 30
+
+    credit_reference = json.loads(
+        (
+            PORTABLE
+            / "real_reference"
+            / "credit_cards"
+            / "reference_manifest.json"
+        ).read_text()
+    )
+    assert credit_reference["real_comment_count"] == 4288
 
 
 def test_portable_references_do_not_expose_reddit_authors_or_local_paths() -> None:

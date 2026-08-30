@@ -1,0 +1,870 @@
+{
+  "meta": {
+    "product_category": "credit_cards",
+    "baseline": "real_reddit_reference",
+    "run_id": "run_007_sampled_reddit"
+  },
+  "posts": [
+    {
+      "post_id": "real_run007_post00_seed035",
+      "post_slot": 0,
+      "seed_index": 35,
+      "source_raw_post_id": "1s04rnx",
+      "source_product_dir": "Citi Strata Premier® Card",
+      "source_file": "reddit_post:1s04rnx",
+      "post_type": "news_or_rumor",
+      "title": "Redeeming Citi Strata Premier SUB for Cashback?",
+      "author": "reddit_user_0dab2d077fca",
+      "author_karma": 0,
+      "content": "Redeeming Citi Strata Premier SUB for Cashback?\n\nHello all,\n\nMy girlfriend and I have over $5,500 worth of points (valued at 1 cent per point) between C1, Chase, and BILT. We non rev fly free, and pretty much only use points on hotels. \n\nWe’re not interested in luxury travel - usually we opt for the most “bang for your buck” with points. Booking through travel portals at 1 to 1.5 CPP at most. \n\nWith Chase making their points harder to use through the Sapphire Preferred (along with many other devaluations this year), it feels like we’re sitting on a pile of points waiting for them to devalue. \n\nMy next card I’m targeting is the Citi Strata premier for the lucrative SUB, but I’d really only get it to redeem points for cash and invest that cash with Robinhood gold. Citi is an ecosystem I’ve only ever redeemed straight for cash so far. \n\nHas anyone opened the Citi strata premier (or I guess any other card?) and just redeemed the SUB for cash, then product changed after a year?",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "obquh17",
+          "author": "reddit_user_6c1b76a6c9dc",
+          "author_karma": 0,
+          "content": "They recently changed the strat points redemption for cashback, on the rest of their cards you can get 1 cpp in cashback. Now 10k points = $75 in cashback. .75 cpp for cashback.",
+          "timestamp": "2026-03-21T22:55:41+00:00",
+          "likes": 6,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "obquoom",
+              "author": "reddit_user_5649a032b9d5",
+              "author_karma": 0,
+              "content": "Oh wow! I did not know that, thank you for the info. And I’m assuming you’re unable to transfer them between cards and then redeem?\n\nEx, Strata Premier Points -> CCC -> redeem at 1 CPP?",
+              "timestamp": "2026-03-21T22:56:54+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "obquh17",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "obr9hkn",
+                  "author": "reddit_user_247b141d41bc",
+                  "author_karma": 0,
+                  "content": "You need a Custom Cash or Double Cash with your Strata Premier and combine the thank you accounts to get 1cpp cash out. The opposite is true for travel - you need a Strata Premier or Strata elite to transfer at full value to partners. ",
+                  "timestamp": "2026-03-22T00:21:47+00:00",
+                  "likes": 7,
+                  "dislikes": 0,
+                  "parent_comment_id": "obquoom",
+                  "depth": 2,
+                  "replies": []
+                },
+                {
+                  "comment_id": "obqx9il",
+                  "author": "reddit_user_9dd977ac472f",
+                  "author_karma": 0,
+                  "content": "I believe if you combine your ThankYou Points accounts for both cards (you call Citi for this, AFAIK) then you can redeem at 1 CPP yes.\n\nI haven't done this myself yet (don't have Strata yet), but that's what I was told by several people on here previously.",
+                  "timestamp": "2026-03-21T23:11:29+00:00",
+                  "likes": 2,
+                  "dislikes": 0,
+                  "parent_comment_id": "obquoom",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "obqzrp6",
+                      "author": "reddit_user_6c1b76a6c9dc",
+                      "author_karma": 0,
+                      "content": "Good to know, lmk if it works for you as well if you get the strata",
+                      "timestamp": "2026-03-21T23:25:33+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "obqx9il",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "obr75m3",
+          "author": "reddit_user_d1c5a5725b32",
+          "author_karma": 0,
+          "content": "Here’s a better idea: \n\nWhy don’t you pool your points, ask your friends if they have any travel plans. If anyone needs a one way in biz class somewhere you find out what the cash equivalent of the flight would be, charge them half and book it for them via transferring to a frequent flyer account. You “buy” them a flight at a discount and you make more than your cash back equivalent.",
+          "timestamp": "2026-03-22T00:07:34+00:00",
+          "likes": -7,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "obsq2xh",
+              "author": "reddit_user_2962bd89ef12",
+              "author_karma": 0,
+              "content": "“A better idea”\n\nProceeds to describe terribly convoluted idea that could go wrong in so many ways",
+              "timestamp": "2026-03-22T06:41:02+00:00",
+              "likes": 3,
+              "dislikes": 0,
+              "parent_comment_id": "obr75m3",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "obtbm5v",
+                  "author": "reddit_user_d1c5a5725b32",
+                  "author_karma": 0,
+                  "content": "Ive been on both sides of this and its worked well for both parties. ",
+                  "timestamp": "2026-03-22T10:10:15+00:00",
+                  "likes": 0,
+                  "dislikes": 0,
+                  "parent_comment_id": "obsq2xh",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "post_id": "real_run007_post01_seed036",
+      "post_slot": 1,
+      "seed_index": 36,
+      "source_raw_post_id": "1djterm",
+      "source_product_dir": "Blue Cash Preferred® Card from American Express",
+      "source_file": "reddit_post:1djterm",
+      "post_type": "card_recommendation",
+      "title": "Wanting to use points to travel. Please help.",
+      "author": "reddit_user_0dab2d077fca",
+      "author_karma": 0,
+      "content": "Wanting to use points to travel. Please help.\n\nI want to use whatever card I get to travel. We don’t travel much now but my goal is to use cash back of points to travel more. We are a young family of 5 and will travel together for the most part. Things like airport lounge access mean little to me unless it includes everyone in my family. Plus, we drive most of our vacation destinations. I know most of my spending is grocery and gas. All of my grocery spending is at Walmart. We live in a small town and other options are limited. I like the American Express Blue for cash back but is that really my best option for traveling? From what I gather points/miles are better for travel so maybe go that route? Idk my brain is mush from all my research. Help me 😅.\n\nCurrent cards: Capital One, 12k limit, opened Jan 2005\nFICO Score: e.g. 814\nOldest account age: 19 years\nIncome: e.g. $150k(ish) annually. This is joint income. Personal income is 40k. \nAverage monthly spend and categories:\n\ndining $400\ngroceries: $1000 Walmart is the only store I shop at for groceries. \ngas: $500\ntravel: $\nother: $300\nOpen to Business Cards: e.g. No\nWhat's the purpose of your next card? We don’t travel much but I want to use points/cash back to travel more. \nDo you have any cards you've been looking at? Chase Freedom, venture x, American Express blue cash preferred \nAre you OK with category spending or do you want a general spending card? Not sure.",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": []
+    },
+    {
+      "post_id": "real_run007_post02_seed037",
+      "post_slot": 2,
+      "seed_index": 37,
+      "source_raw_post_id": "1pkm4m9",
+      "source_product_dir": "Chase Sapphire Reserve®",
+      "source_file": "reddit_post:1pkm4m9",
+      "post_type": "other",
+      "title": "Amex Platinum vs Chase Sapphire Reserve",
+      "author": "reddit_user_0dab2d077fca",
+      "author_karma": 0,
+      "content": "Amex Platinum vs Chase Sapphire Reserve\n\nI’m deciding between the Amex Platinum and Chase Sapphire Reserve and would love opinions from people who have one or both.\n\nQuick rundown of my situation:\n\n* I travel **in groups**, so lounge **guest access** is a big deal.\n* With **Amex Platinum**, I’d fully offset the AF through credits\n* With **Chase Sapphire Reserve**, The card would realistically cost me \\~$200 net.\n* BUT Chase gives **Priority Pass with 2 free guests** and I’ve heard their lounges (like Sapphire Lounges) tend to be less crowded.\n* Amex has Centurion lounges, but the **guest fees and restrictions** worry me since I usually travel with others.\n* I also stay at Hilton/Marriott often, so the status from Amex is appealing.\n\n**For those who’ve used these cards:**\n\n* Which one gives you more *real* value?\n* How are the lounges in your experience?\n* If you travel with friends/family, how do the guest policies affect you?\n* For those who get Hilton/Marriott status from Amex Platinum is the upgrade difference actually noticeable?\n\nAny feedback would help, thanks!",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "ntm1ali",
+          "author": "reddit_user_ef2c8b4c1ce6",
+          "author_karma": 0,
+          "content": "You can get both, but the one with the best SUB gets my vote.  If equal get the Amex now since I think the Reserve is going to have to be revamped or have an extra generous SUB to complete with Amex.\n\nAlso don't forget about Amex's clear plus rebate.",
+          "timestamp": "2025-12-12T07:57:22+00:00",
+          "likes": 16,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "ntm2a6f",
+              "author": "reddit_user_a32c5e8c43c4",
+              "author_karma": 0,
+              "content": "Thanks! I’m mostly caught up on the lounge situation since I usually travel with friends or family. Other than that, right now it looks like the Reserve actually has the bigger SUB, which makes it pretty tempting.",
+              "timestamp": "2025-12-12T08:06:49+00:00",
+              "likes": 4,
+              "dislikes": 0,
+              "parent_comment_id": "ntm1ali",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "ntm4ekv",
+                  "author": "reddit_user_ef2c8b4c1ce6",
+                  "author_karma": 0,
+                  "content": "[https://www.americanexpress.com/icc/cards/benefits/travel/priority-pass.html](https://www.americanexpress.com/icc/cards/benefits/travel/priority-pass.html)\n\n\nAmex priority pass is you +1 guest.\n\nUnless you need the card right now, I would also wait for the card you want to have their historical peak SUB.\n\n\nAmex is potentially offering up to 175k, but they just came off ofnoffering 125k points.  Also don't forget schwab amex plat has a $100 annual rebate if you habe over 250k in combined assets at schwab which shoukdbe do-able if you've been working for a while and have a Roth IRA and/or 401k rollover.",
+                  "timestamp": "2025-12-12T08:27:26+00:00",
+                  "likes": 2,
+                  "dislikes": 0,
+                  "parent_comment_id": "ntm2a6f",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "ntmo4tq",
+                      "author": "reddit_user_7b599171bd91",
+                      "author_karma": 0,
+                      "content": "Any reference for what the all time high SUBs are, or any sort of pattern for when those are offered?",
+                      "timestamp": "2025-12-12T11:35:57+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "ntm4ekv",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "ntnu4t2",
+                          "author": "reddit_user_ef2c8b4c1ce6",
+                          "author_karma": 0,
+                          "content": "[https://thepointsguy.com/credit-cards/chase-best-welcome-offers/](https://thepointsguy.com/credit-cards/chase-best-welcome-offers/)\n\nAmex is potentially 175k but you have to apply and cancel multiple times to hit it.  125k offers pop up often\n\nReserve is 125k",
+                          "timestamp": "2025-12-12T15:47:57+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "ntmo4tq",
+                          "depth": 4,
+                          "replies": [
+                            {
+                              "comment_id": "ntpegci",
+                              "author": "reddit_user_7b599171bd91",
+                              "author_karma": 0,
+                              "content": "cool, thanks. Working on figuring out some cards to get with some large spend coming.",
+                              "timestamp": "2025-12-12T20:30:40+00:00",
+                              "likes": 1,
+                              "dislikes": 0,
+                              "parent_comment_id": "ntnu4t2",
+                              "depth": 5,
+                              "replies": [
+                                {
+                                  "comment_id": "ntpf3iq",
+                                  "author": "reddit_user_ef2c8b4c1ce6",
+                                  "author_karma": 0,
+                                  "content": "Try to get the 175k amex offer then.  Google how people are doing it.  I read someone just took the 150k offer and didn't want to risk applying too many times",
+                                  "timestamp": "2025-12-12T20:34:09+00:00",
+                                  "likes": 1,
+                                  "dislikes": 0,
+                                  "parent_comment_id": "ntpegci",
+                                  "depth": 6,
+                                  "replies": []
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "comment_id": "ntp789o",
+              "author": "reddit_user_057052abb95f",
+              "author_karma": 0,
+              "content": "If you're regularly traveling in groups the CSR is probably the better pick here tbh. Those guest fees at Centurion lounges add up fast and Priority Pass locations are everywhere, even if they're not as fancy\n\n  \nThe hotel status from Amex is nice but unless you're staying like 15+ nights a year it's not gonna move the needle much on upgrades. Most properties are pretty stingy with the courtesy upgrades anyway",
+              "timestamp": "2025-12-12T19:52:27+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "ntm1ali",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "ntlzqlx",
+          "author": "reddit_user_46457eec9f88",
+          "author_karma": 0,
+          "content": "Have you considered the BoA Premium Rewards Elite?",
+          "timestamp": "2025-12-12T07:42:40+00:00",
+          "likes": 7,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "ntm02k0",
+              "author": "reddit_user_a32c5e8c43c4",
+              "author_karma": 0,
+              "content": "I have not, but will be looking into it now that you mentioned it thanks!",
+              "timestamp": "2025-12-12T07:45:49+00:00",
+              "likes": 2,
+              "dislikes": 0,
+              "parent_comment_id": "ntlzqlx",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "ntmcuuf",
+              "author": "reddit_user_83914f23c312",
+              "author_karma": 0,
+              "content": "Yeah, given the priorities of the OP regarding lounge access for guests, that and the Ritz Amex were the first smtwo cards I thought of since neither of the two mentioned by the OP do nearly as well with guests, especially if it is the same set of guests generally.",
+              "timestamp": "2025-12-12T09:51:45+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "ntlzqlx",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "ntnpukm",
+          "author": "reddit_user_509cd2095af6",
+          "author_karma": 0,
+          "content": "I don’t think LLMs are eligible for credit cards. ",
+          "timestamp": "2025-12-12T15:27:00+00:00",
+          "likes": 6,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "ntm5nuj",
+          "author": "reddit_user_1c0493865a53",
+          "author_karma": 0,
+          "content": "One huge factor... are there even Sapphire and/or Centurion lounges in the airports you fly out of? Both lounges are fine - Sapphire has more upscale presentation with individual portions on fancy plates, but the food is about the same quality. Centurion lounges have been less crowded since Amex added more restrictions. But if your home airport only has one or the other, then that makes the choice easier. BTW PP will get you access to a single Sapphire lounge per calendar year (no guests though.)\n\nWhat are you going to use the points on? That's the main factor that determines \"real\" value because earning points isn't going to mean anything unless you can redeem them for something good. They have different transfer partners so it depends on what you want to do...\n\nIf the only thing you care about is lounge access with guests, you probably want BoA PRE ideally with Platinum Honors status (stick $100K into Merrill and call it a day.) PRE gives you 4 PP memberships (with restaurants and guests, and also 1 Sapphire lounge per membership per year) and if you use all the credits, the AF is $150 so cheaper than CSR. Redemptions are basically cashback (with Plat Honors, 3.5% dining & broad travel/most entertainment, 2.625% everything else) or you can book flights through their travel portal with an additional boost (20% discount so points are worth 25% more.)",
+          "timestamp": "2025-12-12T08:40:00+00:00",
+          "likes": 8,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "ntm5qd5",
+          "author": "reddit_user_deda1e874802",
+          "author_karma": 0,
+          "content": "They both have advantages. If you can utilize more of one card naturally, you will come out on top. PP sucks in US but is nice out of US",
+          "timestamp": "2025-12-12T08:40:43+00:00",
+          "likes": 3,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "ntm1qiq",
+          "author": "reddit_user_59f232ce5e89",
+          "author_karma": 0,
+          "content": "I've had both for a few years. I'd probably say the Plat provides more overall value (tangible and intangible) for my life.\n\nAmex Platinum Priority Pass provides guest access. For the most part, I'd say both branded lounges (Centurion & Sapphire) are equally shitty. Depending on what airport you're in and when you're traveling, both will suffer from waitlisting & overcrowding. Statistically Sapphire Lounges are probably more likely to be overcrowded considering they still allow guests, though I suspect that will go the way of the Venture X in the coming months and it will be a pay to play service. \n\nAs for complimentary Marriot Gold Elite through Amex Platinum: I'm 2/2 on upgrades at Marriot properties (both in Europe). One upgraded me to the highest-level suite and provided a welcome gift, though it was an AC Hotel. If the country/location we're visiting has FHR properties, I will generally book those.",
+          "timestamp": "2025-12-12T08:01:34+00:00",
+          "likes": 6,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "ntm2ok0",
+              "author": "reddit_user_a32c5e8c43c4",
+              "author_karma": 0,
+              "content": "Thanks so much for going in-depth! I  travel to Europe often, so it’s really reassuring to hear that the Marriott Gold status actually works. I totally get what you mean about lounges being hit-or-miss. How did you find using Amex over there? I’ve heard it’s not as widely accepted as Visa, which makes sense even in the U.S., but curious about your experience!",
+              "timestamp": "2025-12-12T08:10:40+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "ntm1qiq",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "ntm3moa",
+                  "author": "reddit_user_59f232ce5e89",
+                  "author_karma": 0,
+                  "content": "It depends heavily on the country and region. For example, it's pretty widely accepted in Spain but even Michelin Star restaurants in Portugal didn't accept it. No issues in London but you won't find many places in Germany accepting it, etc. etc. Hotels (especially higher end ones) will generally accept it regardless of where you are.\n\nWhenever traveling outside of the U.S., I bring my Cap1 Savor for 3% CB on dining, entertainment, and global grocery in case I want to pop into a local grocery store.",
+                  "timestamp": "2025-12-12T08:19:52+00:00",
+                  "likes": 2,
+                  "dislikes": 0,
+                  "parent_comment_id": "ntm2ok0",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "ntm482e",
+                      "author": "reddit_user_a32c5e8c43c4",
+                      "author_karma": 0,
+                      "content": "Good to know hotels usually accept it, and smart idea bringing a high cash back card as backup!",
+                      "timestamp": "2025-12-12T08:25:38+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "ntm3moa",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "ntm4rdj",
+                          "author": "reddit_user_59f232ce5e89",
+                          "author_karma": 0,
+                          "content": "Feel free to send me any other Qs. For what it's worth, the Sapphire Reserve was my daily driver when it had 3x on all travel, and I still take advantage of DashPass and the complimentary Apple Music subscription.",
+                          "timestamp": "2025-12-12T08:30:58+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "ntm482e",
+                          "depth": 4,
+                          "replies": []
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "comment_id": "ntmywbe",
+                  "author": "reddit_user_5f7c18620335",
+                  "author_karma": 0,
+                  "content": "I didn’t find Amex widely accepted abroad but then again the platinum isn’t really good for any spend besides flights so it doesn’t really matter unless you have the gold which is the real point earner",
+                  "timestamp": "2025-12-12T12:56:10+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "ntm2ok0",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "ntnkcdx",
+          "author": "reddit_user_1667279f3b39",
+          "author_karma": 0,
+          "content": "Of the two options, I personally have the Platinum and have made great use of it the last few years. In my experience it gives the best lounge options as a solo traveller. That said, you will struggle or pay additional fees if you are planning on brining guests with you.\n\nSapphire lounges are nice, but there are very few of them and in my experience tend to have wait lists at most times.\n\nLounge access is nice, but I really only recommend having it be a consideration if you are a solo traveller or your travel partners can access lounges themselves.\n\nRegarding the Hilton/Marriott status that the Platinum offers, it really depends on where you travel. If you travel mainly in the US, you'll find no benefit other than a free bottle of water or two. If you travel in Europe, it can be helpful, but don't expect much more of an elevated experience or upgrade. Now if you travel to Asia, then it can be nice. In my experience upgrades in Asia are more likely to be substantial.",
+          "timestamp": "2025-12-12T14:58:52+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "ntlzogk",
+          "author": "reddit_user_92955c72618b",
+          "author_karma": 0,
+          "content": "Amex all day. ",
+          "timestamp": "2025-12-12T07:42:07+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "ntn11is",
+          "author": "reddit_user_2e62e966415b",
+          "author_karma": 0,
+          "content": "Amex Platinum paired with a 3X card for dining, hotels, etc is the best move.",
+          "timestamp": "2025-12-12T13:09:52+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "nto01gd",
+          "author": "reddit_user_bdb2c1c9d779",
+          "author_karma": 0,
+          "content": "I have both. Chase is consistently easier to justify the annual fee, and I find the Sapphire Lounges to be better than Centurions. I will say I find both Chase and AMEX lounges to be consistently superior to AA, Delta, and most overhauled / newer United lounges. While the food and drink menu might be more concise at Chase, it's usually \\*FAR\\* better quality. The Centurion lounge food quality varies; at my home lounge in DEN it's passable, Atlanta has been awesome the few times I've been, and pretty trash at DCA. I also like the points boost on CSR, I'm at a point I prefer the ease of looking like a cash booking versus chasing award availability for a potentially higher redemption. Also have made some nice kickbacks off flight bookings from the Chase portal. The AMEX portal hasn't really given me many discounts from the international / business program, and doesn't have favorable rates on redemptions. \n\nAMEX was pretty easy to justify the old AF, this year might be a bit harder.  Remember that AMEX gives you 10 free Delta visits a year for you personally, though with your group travels you might want to look at that. As some others have said, you ought to look at your regular airports and what lounges matter there. That might make you want to chase an airline lounge card, Cap One Venture X, etc. I carry the AA Club card for scamming Plat status on AA as a second airline / alliance, it's pretty economical after the Citi / card kickbacks. \n\n  \nOn the Hilton / Marriott status from AMEX, it's a pretty trash tier they give you. Gold on Marriott is given out on a bunch of other cards, and a ton of folks have Platinum either from the Bonvoy Brilliant or stacking a personal and small bus card. If all you care about is base hotel lounge access and pretty consistent late checkout, Platinum's fine. If you actually want upgrades / NUA's to go through, I've had much better luck at Titanium. If you want instant status at either chain I'd look at the flagship AMEX cards as they both have a lot of value despite the high AF, honestly both are easier to justify than CSR / PLAMEX.",
+          "timestamp": "2025-12-12T16:16:35+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "nto2q6b",
+          "author": "reddit_user_b99d41f6ddbd",
+          "author_karma": 0,
+          "content": "If your home airport have sapphire lounge then chase . If no or the airline you travel is far from the terminal sapphire lounge located . Don’t do chase. If the Denver or Dallas maybe the capital one venture x .  I value a lot of customers service . So Amex always. The best . If you follow the card forum long enough you will know all the YouTuber is talking about how chase eco system is going down totally . Choosing Amex later on combine with gold card or other . Will benefit you long term . A lot of long time chase user are abandoning chase to Amex . This is something you need to think also citi system is boosting these day if you fly American airline a lot can think of this .",
+          "timestamp": "2025-12-12T16:29:36+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "nto3gqs",
+          "author": "reddit_user_b99d41f6ddbd",
+          "author_karma": 0,
+          "content": "And chase new policy on the hotel edit is totally nonsense and hard to use . Not like Amex beside Amex give you hotel status . Sapphire now give IHG platinum which is nothing . So Amex . Also have the best insurance claim experience. . I have both if let me choose which one to keep  Amex no brainer",
+          "timestamp": "2025-12-12T16:33:12+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "nto9hy0",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "Honestly, BofA Elite Rewards sounds like best card for you. It gives you 4 PP memberships, where each membership itself can give 2 guests. Plus PP restaurant access.",
+          "timestamp": "2025-12-12T17:02:44+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "ntogiql",
+          "author": "reddit_user_6e27ba809438",
+          "author_karma": 0,
+          "content": "Lounge access is a total crapshoot nowadays, i would not bother getting a card just for that tbh",
+          "timestamp": "2025-12-12T17:38:08+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "ntopo6v",
+          "author": "reddit_user_3cd4b3000605",
+          "author_karma": 0,
+          "content": "For these type of recommendations I always go back to lifestyle. Check how you travel, buy things, rent cars... and make a decision on that.  \n  \nBiggest thing: where do you actually fly from/to most? Lounge access is airport-dependent. If your home airport has a Centurion but no Sapphire, Plat wins. If you’ll actually use Sapphire lounges (and PP lounges in that terminal), CSR wins.  \n  \nAlso for groups: Amex is great solo, but gets expensive fast with guests unless everyone has their own access.",
+          "timestamp": "2025-12-12T18:23:21+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "ntqox1r",
+          "author": "reddit_user_b3f36de2bc61",
+          "author_karma": 0,
+          "content": "If your net cost is about $200 or zero after credits American Express Platinum offers slightly better airport lounge access and network than Chase Sapphire Reserve. I have both, offset the annual fees through travel, and either card is an excellent choice with great benefits.",
+          "timestamp": "2025-12-13T00:57:58+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "ntm95is",
+          "author": "reddit_user_69dd3126041e",
+          "author_karma": 0,
+          "content": "Definitely Amex. The Chase lounges are limited to just a few locations - unless you know you can regularly go to one, that’s not a plus. Overall the Amex Plat has improved and is easy to get your money back, CSR, less so than ever. \n\nIf you really care about lounge access, look into getting a Marriott Chase card and then upgrading it to the Ritz Carlton- additional cards are free and come with their own lounge access. (Plus unlimited guests).",
+          "timestamp": "2025-12-12T09:14:50+00:00",
+          "likes": 0,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "nto5d57",
+              "author": "reddit_user_8614670c1e1c",
+              "author_karma": 0,
+              "content": "FYI, if I am reading this correctly, unlimited guests is ending Jan 15th (2 max) per the message I just received in my Chase account.",
+              "timestamp": "2025-12-12T16:42:28+00:00",
+              "likes": 6,
+              "dislikes": 0,
+              "parent_comment_id": "ntm95is",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "nto8wno",
+                  "author": "reddit_user_69dd3126041e",
+                  "author_karma": 0,
+                  "content": "I just saw that. Lame.",
+                  "timestamp": "2025-12-12T16:59:45+00:00",
+                  "likes": 4,
+                  "dislikes": 0,
+                  "parent_comment_id": "nto5d57",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "post_id": "real_run007_post03_seed038",
+      "post_slot": 3,
+      "seed_index": 38,
+      "source_raw_post_id": "1rhhodf",
+      "source_product_dir": "Chase Freedom Rise®",
+      "source_file": "reddit_post:1rhhodf",
+      "post_type": "simple_question",
+      "title": "Discover it Student Cash Back Vs. Chase Freedom Rise",
+      "author": "reddit_user_0dab2d077fca",
+      "author_karma": 0,
+      "content": "Discover it Student Cash Back Vs. Chase Freedom Rise\n\nI was about to apply for the Discover card but I heard that it might be better to get the Chase card because Chase's higher tier cards will be better for me in the future. What should I choose?\n\nIf it helps I have a Chase debit card since I was 14 and I've been on my dad's us bank credit card since I was 15 (I just turned 18 now).",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "o7yrif6",
+          "author": "reddit_user_f16b45160362",
+          "author_karma": 0,
+          "content": "Discover it student cash! It’ll turn into the Discover it Cash Back card eventually, which is one of the best cards out there. You shouldn’t have an issue getting the higher tier Chase cards down the road, just pay on time and in full.",
+          "timestamp": "2026-02-28T23:44:31+00:00",
+          "likes": 4,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "o7ysdqa",
+          "author": "reddit_user_bf327c7f0129",
+          "author_karma": 0,
+          "content": "Is the Chase debit card for a checking and/or savings account with your name on it? Have you reviewed your credit report and score? Which bank or credit union do you or would you like to do business with? Do you care if the credit card is issued by the same bank as your checking/savings account? Which US Bank card are you an authorized user for?",
+          "timestamp": "2026-02-28T23:49:43+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "o86p7ol",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-03-02T06:03:08+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "o8dufyu",
+              "author": "reddit_user_c8ba397184d8",
+              "author_karma": 0,
+              "content": "Your submission violated rule 2 which states:\n\n\"All users are prohibited from disseminating referral links through posts, comments, and private messages, or anything which the moderators may interpret as referral-seeking behavior.\"\n\nAs a result, your submission has been deemed inappropriate and removed.",
+              "timestamp": "2026-03-03T09:35:58+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "o86p7ol",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "o7ys8x0",
+          "author": "reddit_user_ac91c9099026",
+          "author_karma": 0,
+          "content": "Neither. Apply to Freedom flex, get denied, call recon and get approved after updating income and other information. \n\nNow you have an even better card than the 2 you are considering and you saved yourself 1yr of potential wait times if you did want flex but you started on rise and you can quickly pivot to Freedom Unlimited if you wanted. Just be weary of 5/24",
+          "timestamp": "2026-02-28T23:48:55+00:00",
+          "likes": 0,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run007_post04_seed039",
+      "post_slot": 4,
+      "seed_index": 39,
+      "source_raw_post_id": "1rl2coc",
+      "source_product_dir": "Prime Visa",
+      "source_file": "reddit_post:1rl2coc",
+      "post_type": "approval_dp",
+      "title": "Chase Prime Visa Pre-Approval Denied",
+      "author": "reddit_user_0dab2d077fca",
+      "author_karma": 0,
+      "content": "Chase Prime Visa Pre-Approval Denied\n\nI am making a $400-$500 purchase on amazon and was looking to get the $175 gift card to use for the purchase. I already have amazon prime for around 1.5 years. I have had the chase freedom flex since august of 2024 limit is raised to 3k. I have Savor one card at 2k limit. Amex blue cash preferred at 10k limit. Just got amex gold. Credit score is around 730 no late payments or anything negative on my account. Now trying to get this for my purchase and we use amazon at least once a week for something.\n\nWhy am I getting denied in a pre-approval with them? Or what could cause this? If i were to apply and get denied, would I be able to talk to someone to get approved? I don’t even get denied for ventureX and i heard they were super strict and picky with their cards.",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "o8oyyln",
+          "author": "reddit_user_5392f3967adc",
+          "author_karma": 0,
+          "content": "Pre-approval does not necessarily reflect whether or not you would actually be approved for a card. Typically, 5/24 would be a factor with Chase, however, Chase does not apply the 5/24 rule to the Prime Visa. If you get denied for any Chase personal card, the reconsideration number for Chase is 888-270-2127, then press zero to reach a customer service agent.",
+          "timestamp": "2026-03-05T00:22:44+00:00",
+          "likes": 5,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "o8ozh11",
+              "author": "reddit_user_f3f8d445707c",
+              "author_karma": 0,
+              "content": "Okay thanks do i have to apply first and then call? Im sure I do but just asking",
+              "timestamp": "2026-03-05T00:25:35+00:00",
+              "likes": 2,
+              "dislikes": 0,
+              "parent_comment_id": "o8oyyln",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "o8ozuu9",
+                  "author": "reddit_user_5392f3967adc",
+                  "author_karma": 0,
+                  "content": "You always need to apply and be denied before calling the reconsideration line for any lender.",
+                  "timestamp": "2026-03-05T00:27:40+00:00",
+                  "likes": 7,
+                  "dislikes": 0,
+                  "parent_comment_id": "o8ozh11",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            },
+            {
+              "comment_id": "oaj63j7",
+              "author": "reddit_user_fbafcf4327a9",
+              "author_karma": 0,
+              "content": "you might be running into velocity issues since you just got the amex gold recently, chase can be weird about too many new accounts even if you're under 5/24. definitely worth calling recon if you get denied on the actual app though 💀 they might just want to verify income or move credit around",
+              "timestamp": "2026-03-15T06:37:10+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "o8oyyln",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "o8oyhgk",
+          "author": "reddit_user_c31bc1daa2e6",
+          "author_karma": 0,
+          "content": "How many credit cards have you opened in the past 2 years?",
+          "timestamp": "2026-03-05T00:20:07+00:00",
+          "likes": 3,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "o8oyofi",
+              "author": "reddit_user_f28bfccb80ab",
+              "author_karma": 0,
+              "content": "This \\^ if you've opened more than 5 cards in the past 24 months then you will be automatically denied for any chase card.",
+              "timestamp": "2026-03-05T00:21:10+00:00",
+              "likes": 5,
+              "dislikes": 0,
+              "parent_comment_id": "o8oyhgk",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "o8p0cn9",
+                  "author": "reddit_user_4e1c29d46696",
+                  "author_karma": 0,
+                  "content": "The Amazon card is EXCLUDED from Chase’s 5/24 rule. So this shouldn’t have been the reason OP was denied.",
+                  "timestamp": "2026-03-05T00:30:24+00:00",
+                  "likes": 4,
+                  "dislikes": 0,
+                  "parent_comment_id": "o8oyofi",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "o8p52x7",
+                      "author": "reddit_user_74a4d298196b",
+                      "author_karma": 0,
+                      "content": "Are the cobranded Chase cards excluded?",
+                      "timestamp": "2026-03-05T00:56:37+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "o8p0cn9",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "o8pgtqd",
+                          "author": "reddit_user_5392f3967adc",
+                          "author_karma": 0,
+                          "content": "It seems like it's just the Amazon card",
+                          "timestamp": "2026-03-05T02:04:25+00:00",
+                          "likes": 2,
+                          "dislikes": 0,
+                          "parent_comment_id": "o8p52x7",
+                          "depth": 4,
+                          "replies": []
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "comment_id": "o8oz9ug",
+                  "author": "reddit_user_f3f8d445707c",
+                  "author_karma": 0,
+                  "content": "Yeaa i only have 4 cards total. And savor one was like 3 years ago",
+                  "timestamp": "2026-03-05T00:24:28+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "o8oyofi",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            },
+            {
+              "comment_id": "o8oz56d",
+              "author": "reddit_user_f3f8d445707c",
+              "author_karma": 0,
+              "content": "3 cards. Chase freedom flex was around august of 2024. Amex blue cash preferred was around October of last year and Amex gold just recently. But my credit union only shows the 1 inquiry from the chase card neither of the amex cards show there. And Experian says 1 on most recent inquiries. ",
+              "timestamp": "2026-03-05T00:23:45+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "o8oyhgk",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "o8ozhef",
+                  "author": "reddit_user_c31bc1daa2e6",
+                  "author_karma": 0,
+                  "content": "I would just apply and then call the reco line if you are denied, then they can at least tell you why",
+                  "timestamp": "2026-03-05T00:25:38+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "o8oz56d",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "o8ozls3",
+                      "author": "reddit_user_f3f8d445707c",
+                      "author_karma": 0,
+                      "content": "Thanks will do",
+                      "timestamp": "2026-03-05T00:26:17+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "o8ozhef",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "o8p10kd",
+          "author": "reddit_user_f3f8d445707c",
+          "author_karma": 0,
+          "content": "Welp just applied and says my app needs further review😐and will be contacted in less than 30 days. Needed that gift card today☹️",
+          "timestamp": "2026-03-05T00:34:05+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "o8q1crh",
+              "author": "reddit_user_30399984b577",
+              "author_karma": 0,
+              "content": "call them and get it done over the phone.",
+              "timestamp": "2026-03-05T04:08:14+00:00",
+              "likes": 3,
+              "dislikes": 0,
+              "parent_comment_id": "o8p10kd",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "o8pr66z",
+          "author": "reddit_user_89e7d0cf57dd",
+          "author_karma": 0,
+          "content": "5/24 rule. Sometimes you are eligible for a credit card and get the pre approval but 5/24 overrides ANY other signage or language that clans you can get a car. You could also call reconsideration and see if they’ll do anything about it. ",
+          "timestamp": "2026-03-05T03:04:15+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    }
+  ]
+}

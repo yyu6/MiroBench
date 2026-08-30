@@ -1,0 +1,868 @@
+{
+  "meta": {
+    "product_category": "credit_cards",
+    "baseline": "real_reddit_reference",
+    "run_id": "run_006_sampled_reddit"
+  },
+  "posts": [
+    {
+      "post_id": "real_run006_post00_seed030",
+      "post_slot": 0,
+      "seed_index": 30,
+      "source_raw_post_id": "18bgfa1",
+      "source_product_dir": "Discover it® Chrome",
+      "source_file": "reddit_post:18bgfa1",
+      "post_type": "card_recommendation",
+      "title": "Should I get the discover it card?",
+      "author": "reddit_user_0dab2d077fca",
+      "author_karma": 0,
+      "content": "Should I get the discover it card?\n\nHello! I’m a 19yo college student who is living on campus so my only expensive really are groceries, food, and some minor shopping. When I first opened a card, I got the discover student chrome credit card since I thought having a garenteed 2% cash back on gas and resturant would be better than rotating 5% categories on things i wouldn’t buy. \n\nAt the time it was probably a better idea since it was my only card, but now I’ve also gotten the venmo credit card and the chase freedom flex. The 5% rotating would be so much better now in my situation but I’m afraid of closing my discover card.\n\nIts my oldest card and is older than my other two by almost a year. I tried calling discover to ask if i can “upgrade” or switch to the discover it. They said no since they’re not the same card.\n\nRight now, I just don’t know if the extra money from the cash back would be worth hurting my credit score. And i already have the freedom flex but the categories are quarterly and I, unfortunately couldn’t use most of them.\n\nedit: My current credit score is around 740-750 and I get that info from credit karma",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "kc47a9j",
+          "author": "reddit_user_a970106f18dc",
+          "author_karma": 0,
+          "content": "If I'm not mistaken, Discover used to let you do a product change over. So there is a chance that they will allow it in the future. It's probably a good idea to keep your oldest card open regardless. \n\nIf you're just looking to increase the categories that you get 5% back on, I'd recommend looking at the Citi Custom Cash card.",
+          "timestamp": "2023-12-05T17:46:18+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "kc578zr",
+          "author": "reddit_user_9d632ca0cddc",
+          "author_karma": 0,
+          "content": "Discover is a great starter card! Good customer service from what I remember when I had mine.",
+          "timestamp": "2023-12-05T21:34:28+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "kc4sih2",
+          "author": "reddit_user_46579ce7dd50",
+          "author_karma": 0,
+          "content": "Honestly that discover card is overrated. Since you already have more than 1 card I would not get it but instead look at the Amazon prime chase card with zero intest on Amazon purchases or Bank of America cards with zero interest for the first year if you want to purchase things outside of the scope or big purchases and also to get better cash back on anything you can buy through Amazon",
+          "timestamp": "2023-12-05T20:02:09+00:00",
+          "likes": 0,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "kc4gz3k",
+          "author": "reddit_user_0b6872f8ecdd",
+          "author_karma": 0,
+          "content": "Credit Karma scores are nearly irrelevant since they're VS3 and not Fico.  Your Discover account comes with a TransUnion Fico 8 score that's updated monthly.  That's the score they use for account maintenance and it's a highly relevant score since it's commonly used in lending decisions.  You should ignore the CK scores and track your Fico score through Discover going forward.\n\nDiscover doesn't allow product changes unfortunately.  \n\nIf you want the IT CB card, go for it.  Your credit profile and score are there to use.  Your score is irrelevant if you don't use it.  Unless you have an important upcoming application in the horizon (mortgage, big auto loan, etc) I wouldn't sweat the temporary score drop due to adding another card one bit.",
+          "timestamp": "2023-12-05T18:48:32+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "kc4h8as",
+              "author": "reddit_user_3770c91294a2",
+              "author_karma": 0,
+              "content": "i was more worried abt my score dropping if i cancel my old discover card since my history length would drop from 2 years to 1. That should be fine if im not planning on using my credit for awhile right?",
+              "timestamp": "2023-12-05T18:50:09+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "kc4gz3k",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "kc4rxd3",
+                  "author": "reddit_user_0b6872f8ecdd",
+                  "author_karma": 0,
+                  "content": "Nothing happens to your credit history when you close a credit card or any credit account.  It's a myth that it does.  Closed accounts remain on your credit reports for \\~10 years following closure and are included in your aging metrics the exact same way open accounts are.\n\nCheck out this thread where there's a greater discussion on this:\n\nhttps://old.reddit.com/r/CreditCards/comments/10jy77t/top\\_3\\_credit\\_card\\_myths/",
+                  "timestamp": "2023-12-05T19:58:23+00:00",
+                  "likes": 2,
+                  "dislikes": 0,
+                  "parent_comment_id": "kc4h8as",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "kc6e15y",
+          "author": "reddit_user_cbda5cd618e2",
+          "author_karma": 0,
+          "content": "You can get a second discover card after a year of the first",
+          "timestamp": "2023-12-06T02:39:23+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run006_post01_seed031",
+      "post_slot": 1,
+      "seed_index": 31,
+      "source_raw_post_id": "u7lvis",
+      "source_product_dir": "Chase Slate®",
+      "source_file": "reddit_post:u7lvis",
+      "post_type": "other",
+      "title": "Upgrade Chase Slate to Freedom Unlimited",
+      "author": "reddit_user_0dab2d077fca",
+      "author_karma": 0,
+      "content": "Upgrade Chase Slate to Freedom Unlimited\n\nDoes anyone know if upgrading from chase slate to freedom unlimited impacts my credit history because I would like to replace the slate card with a rewards one? I called them and they said my credit limit would stay the same but the card number would change and I want my history to stay the same length since I'm in the middle of house hunting and want to be able to get a good rate especially since the slate card has been opened for more than 5 years.",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "i5fu0am",
+          "author": "reddit_user_503d1e7eb9dc",
+          "author_karma": 0,
+          "content": "Won't cause any problems at all. Upgraded my freedom student to a freedom unlimited a while back.\n\nWhat will change: expiration date, cvv, and maybe card number (if switching from visa to mastercard. I think both are visa).\n\nWhat won't change: credit limit, due date, age of account, any account info (age, how it's reported to credit bureaus, etc.)\n\nIt won't cause even the smallest change on any credit report. They'll see the same account before and after with no changes.",
+          "timestamp": "2022-04-20T03:58:01+00:00",
+          "likes": 3,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "i5gd6j9",
+              "author": "[deleted]",
+              "author_karma": 0,
+              "content": "This.  I did the exact same upgrade from Slate to CFU a couple years ago and there was no impact from the credit reports perspective.",
+              "timestamp": "2022-04-20T07:33:36+00:00",
+              "likes": 2,
+              "dislikes": 0,
+              "parent_comment_id": "i5fu0am",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "i5ig2po",
+              "author": "reddit_user_7d3fd9b2ae87",
+              "author_karma": 0,
+              "content": "Thank you",
+              "timestamp": "2022-04-20T18:15:01+00:00",
+              "likes": 2,
+              "dislikes": 0,
+              "parent_comment_id": "i5fu0am",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "i5fqg5j",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "It doesn’t impact your credit history to change the kind of card it is",
+          "timestamp": "2022-04-20T03:27:10+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "ilxscww",
+          "author": "reddit_user_8575fc3f4313",
+          "author_karma": 0,
+          "content": "I have the slate should I change it too? What’s the credit score that you need for freedom?",
+          "timestamp": "2022-08-26T23:52:24+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "ily20q6",
+              "author": "reddit_user_7d3fd9b2ae87",
+              "author_karma": 0,
+              "content": "The slate is only good for if you need to do a balance transfer otherwise I wouldn't recommend it. If you want cash back, switch to freedom unlimited. If you're just doing an upgrade which is replacing the current card and not opening a new line of credit, then your credit score won't matter.",
+              "timestamp": "2022-08-27T01:08:27+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "ilxscww",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "ily2yps",
+                  "author": "reddit_user_8575fc3f4313",
+                  "author_karma": 0,
+                  "content": "I’m a fool, I got a chase slate offer in the mail and instantly thought I should go for it…I’m new to the credit game so I just signed up for it without doing further research. I’ve had this card since January of this year. So what do I do, do I call them up and ask for a transfer? I’m tired of them charging me $27 every month as interest fee, or maybe that was because of me, I had a balance but I just paid it all off last week. If you can kind of walk me through please, thank you for your time",
+                  "timestamp": "2022-08-27T01:16:03+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "ily20q6",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "ily44q2",
+                      "author": "reddit_user_7d3fd9b2ae87",
+                      "author_karma": 0,
+                      "content": "Call the number located on the back of your credit card. When the rep answers the phone, tell them you would like to upgrade your card since it no longer meets your needs. The rep will then say a couple of cards that you can upgrade to and then they'll ask if you wanted one of those or if you were thinking of getting a different card. Tell them you want the freedom unlimited card. They'll then read some terms and conditions and you accept that. That's pretty much it. \n\nA couple extra notes:\n\nThe card number will be the same but the freedom card will have a new expiration date and different 3 digit security code on the back.\n\nYou won't get any new customer promotions such as 0% interest or bonus points if you spend I believe $500 in the first 3 months. \n\nYour credit limit will stay the same and so will your interest rate. \n\nYour balance on the slate card will transfer.\n\nYour bill cycle date is still the same.",
+                      "timestamp": "2022-08-27T01:25:26+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "ily2yps",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "ilye3p6",
+                          "author": "reddit_user_8575fc3f4313",
+                          "author_karma": 0,
+                          "content": "And will this effect my credit? I’m at around 653 right now, does my score determine where I can get the freedom card?",
+                          "timestamp": "2022-08-27T02:46:28+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "ily44q2",
+                          "depth": 4,
+                          "replies": [
+                            {
+                              "comment_id": "ilyeldz",
+                              "author": "reddit_user_7d3fd9b2ae87",
+                              "author_karma": 0,
+                              "content": "No this won't affect your credit since it's not a hard pull and the score isn't required when doing an upgrade to an existing card.",
+                              "timestamp": "2022-08-27T02:50:36+00:00",
+                              "likes": 1,
+                              "dislikes": 0,
+                              "parent_comment_id": "ilye3p6",
+                              "depth": 5,
+                              "replies": [
+                                {
+                                  "comment_id": "ilyi2cq",
+                                  "author": "reddit_user_8575fc3f4313",
+                                  "author_karma": 0,
+                                  "content": "So with this freedom card, i earn cash back?",
+                                  "timestamp": "2022-08-27T03:20:42+00:00",
+                                  "likes": 1,
+                                  "dislikes": 0,
+                                  "parent_comment_id": "ilyeldz",
+                                  "depth": 6,
+                                  "replies": [
+                                    {
+                                      "comment_id": "ilzjgcb",
+                                      "author": "reddit_user_7d3fd9b2ae87",
+                                      "author_karma": 0,
+                                      "content": "You earn reward points which you can then cash out or use towards things like booking a trip through Chase's site.",
+                                      "timestamp": "2022-08-27T10:36:40+00:00",
+                                      "likes": 1,
+                                      "dislikes": 0,
+                                      "parent_comment_id": "ilyi2cq",
+                                      "depth": 7,
+                                      "replies": [
+                                        {
+                                          "comment_id": "im0vx6j",
+                                          "author": "reddit_user_8575fc3f4313",
+                                          "author_karma": 0,
+                                          "content": "Ok so i gave them a call. Rep said in order for me to get that freedom card i would need a $5000 credit limit, as of right now i have $1700. So she says wait until chase increases my limit at least to 5K and then i can call back and ask for that upgrade. Question is how long do they take to increase? I guess i have to keep making on time payments...",
+                                          "timestamp": "2022-08-27T17:13:02+00:00",
+                                          "likes": 1,
+                                          "dislikes": 0,
+                                          "parent_comment_id": "ilzjgcb",
+                                          "depth": 8,
+                                          "replies": [
+                                            {
+                                              "comment_id": "im0wjjk",
+                                              "author": "reddit_user_7d3fd9b2ae87",
+                                              "author_karma": 0,
+                                              "content": "For my slate card, it took about 2-3 years to get it to $4000 and then I had to call for a credit line increase after that and got it up to $6,000.",
+                                              "timestamp": "2022-08-27T17:17:17+00:00",
+                                              "likes": 1,
+                                              "dislikes": 0,
+                                              "parent_comment_id": "im0vx6j",
+                                              "depth": 9,
+                                              "replies": []
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "post_id": "real_run006_post02_seed032",
+      "post_slot": 2,
+      "seed_index": 32,
+      "source_raw_post_id": "1plnins",
+      "source_product_dir": "Prime Visa",
+      "source_file": "reddit_post:1plnins",
+      "post_type": "simple_question",
+      "title": "How does Amazon prime visa card work",
+      "author": "reddit_user_0dab2d077fca",
+      "author_karma": 0,
+      "content": "How does Amazon prime visa card work\n\nI buy things on amazon every so often and I do have amazon prime and have seen ppl praise the Amazon prime visa tho, Admittedly I am unsure how Credit cards work and same with interest\n\nI see people say \"If you buy on amazon alot its worth it\" but how often would one need to buy stuff? would the orders have to be big?\n\nIm kinda clueless but would really like to learn more :')",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "nttoay1",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[deleted]",
+          "timestamp": "2025-12-13T15:15:20+00:00",
+          "likes": 7,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "nttovp9",
+              "author": "reddit_user_20b1d877cff7",
+              "author_karma": 0,
+              "content": "So interest will only be added if i dont pay or im late?\n\nso if i use amazon card to buy something cant i instantly pay that debt off and interest would never be a concern?  \nidk if thats how it works sorry if im still not understanding :')\n\nand what if I get the card but just never use it, Like i get it just to have?",
+              "timestamp": "2025-12-13T15:18:35+00:00",
+              "likes": 5,
+              "dislikes": 0,
+              "parent_comment_id": "nttoay1",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "nttt242",
+                  "author": "reddit_user_f06a5acd7e77",
+                  "author_karma": 0,
+                  "content": "You are correct, you will not pay interest if you pay off your entire balance before it is due. \n\nIf you don’t use the card for a prolonged period of time it will eventually close. This can sometimes have a minor hit to your credit score.",
+                  "timestamp": "2025-12-13T15:41:18+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "nttovp9",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "nttu8w2",
+                      "author": "reddit_user_20b1d877cff7",
+                      "author_karma": 0,
+                      "content": "wait what? I dont understand why it would effect credit score if its just a card closing?",
+                      "timestamp": "2025-12-13T15:47:38+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "nttt242",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "nttv1wh",
+                          "author": "reddit_user_f06a5acd7e77",
+                          "author_karma": 0,
+                          "content": "One of the factors of building good credit is having good credit history. Closing cards takes that away from your credit history. It would be in your best interest to keep it open long term if you’re looking to build or maintain credit",
+                          "timestamp": "2025-12-13T15:51:52+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "nttu8w2",
+                          "depth": 4,
+                          "replies": [
+                            {
+                              "comment_id": "nttvolt",
+                              "author": "reddit_user_35f24192a549",
+                              "author_karma": 0,
+                              "content": "What? Closing cards does not remove anything from your credit history. Positive information will stay on credit reports for ten years, including closed accounts.  \nThere may be a minor hit from increased overall utilization but otherwise there's no downside to closing a credit card.",
+                              "timestamp": "2025-12-13T15:55:12+00:00",
+                              "likes": 1,
+                              "dislikes": 0,
+                              "parent_comment_id": "nttv1wh",
+                              "depth": 5,
+                              "replies": [
+                                {
+                                  "comment_id": "ntv4mmy",
+                                  "author": "reddit_user_20b1d877cff7",
+                                  "author_karma": 0,
+                                  "content": "but even if the card just closes from not being used?",
+                                  "timestamp": "2025-12-13T19:52:05+00:00",
+                                  "likes": 1,
+                                  "dislikes": 0,
+                                  "parent_comment_id": "nttvolt",
+                                  "depth": 6,
+                                  "replies": []
+                                }
+                              ]
+                            },
+                            {
+                              "comment_id": "nttvses",
+                              "author": "reddit_user_20b1d877cff7",
+                              "author_karma": 0,
+                              "content": "ah I understand, tho if I did get a credit card or the amazon prime card but I no longer wanted to use it how little could I use it for it not to close?",
+                              "timestamp": "2025-12-13T15:55:45+00:00",
+                              "likes": 1,
+                              "dislikes": 0,
+                              "parent_comment_id": "nttv1wh",
+                              "depth": 5,
+                              "replies": [
+                                {
+                                  "comment_id": "ntu1onx",
+                                  "author": "[deleted]",
+                                  "author_karma": 0,
+                                  "content": "[deleted]",
+                                  "timestamp": "2025-12-13T16:26:42+00:00",
+                                  "likes": 1,
+                                  "dislikes": 0,
+                                  "parent_comment_id": "nttvses",
+                                  "depth": 6,
+                                  "replies": [
+                                    {
+                                      "comment_id": "ntv4k0c",
+                                      "author": "reddit_user_20b1d877cff7",
+                                      "author_karma": 0,
+                                      "content": "i see i see i understand",
+                                      "timestamp": "2025-12-13T19:51:41+00:00",
+                                      "likes": 1,
+                                      "dislikes": 0,
+                                      "parent_comment_id": "ntu1onx",
+                                      "depth": 7,
+                                      "replies": []
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "nttp7m4",
+          "author": "reddit_user_03dc99426c39",
+          "author_karma": 0,
+          "content": "!basics and https://reddit.com/r/personalfinance/wiki/creditcards\n\nThe Chase Prime credit card has no annual fee of its own, so there technically isn’t any amount you need to spend to make it “worth it” if you’re already an Amazon Prime member. You should never pay a penny in credit card interest if you use your card properly. Interest charges happen when someone fails to pay off their credit card statement balance in full by the due date and carry a balance into the next statement, and this typically happens when people treat credit cards as personal loans rather than as spending tools. Never spend more than you have, never change up your spend habits from what you were already doing on a debit card just because your card has a large credit limit or offers generous cash back.\n\nWhat makes the Chase Prime so good is that it’s a card that earns unlimited 5% cash back on all Amazon purchases, as well as purchases from other Amazon businesses such as Whole Foods, Audible, and even Twitch among others. It also earns unlimited 5% cash back on travel booked through the Chase Travel portal, 2% back on all gas, dining, and transit/commuting expenses, and 1% on everything else, and is equipped with various purchase and travel protections such as a 1 year extended warranty policy that applies to any eligible purchase made on the card. The fact that it has no foreign transaction fees combined with the travel protections it offers makes it a surprisingly decent choice for people earlier in their credit card journeys looking to use a card abroad. And it offers a $250 sign-up bonus that is immediately issued to your Amazon gift card balance upon approval, unlike most cards whose sign-up bonus requires you hit a certain amount of spending on the card within a certain timeframe.\n\nHowever, if this would be your first ever credit card application then your chances of approval might not be good. Chase very rarely approves anyone with less than one year of credit history for any credit card they offer besides the Chase Freedom Rise. It would certainly be an impressive and great first ever credit card, but most people have to start building their credit with a secured or student card from a more lenient lender like Capital One or Discover.",
+          "timestamp": "2025-12-13T15:20:27+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "nttp7nh",
+              "author": "reddit_user_bca8033b630e",
+              "author_karma": 0,
+              "content": "**Credit Card Basics:**\n\nTake a look at the [Credit Card Basics wiki page](https://www.reddit.com/r/CreditCards/wiki/credit_cards_basics/#wiki_credit_card_basics) which covers credit card fundamentals. \n\nTL;DR: \n\n* A credit card is a revolving loan.\n\n* You will receive a \"statement\" on a monthly basis breaking down your balance, charges, and how much is owed.\n\n* You should always pay, at minimum, the statement balance before the cutoff time of the due date.\n\n* The statement date is a minimum of 21 days BEFORE the due date.\n\n* You are only required to pay for charges that have shown up on your most recent statement.\n\n* Credit cards should not be used as an emergency fund. It is recommended to only use a credit card if you have the money to pay for that purchase TODAY.\n\n* The best practice is to pay your statement balance in full, every month.\n\n\nI can be summoned to comment by using command(s):\n\n`!basics`\n\n*I am a bot, and this action was performed automatically. Please [contact the moderators of this subreddit](/message/compose/?to=/r/CreditCards) if you have any questions or concerns.*",
+              "timestamp": "2025-12-13T15:20:27+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "nttp7m4",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "nttn7a9",
+          "author": "reddit_user_20b1d877cff7",
+          "author_karma": 0,
+          "content": "also I should add. Im kinda an idiot",
+          "timestamp": "2025-12-13T15:09:01+00:00",
+          "likes": 5,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "nttoylr",
+              "author": "reddit_user_b4e785a5431e",
+              "author_karma": 0,
+              "content": "Interesting",
+              "timestamp": "2025-12-13T15:19:02+00:00",
+              "likes": 7,
+              "dislikes": 0,
+              "parent_comment_id": "nttn7a9",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "nttpckj",
+                  "author": "reddit_user_20b1d877cff7",
+                  "author_karma": 0,
+                  "content": "The only true wisdom is in knowing you know nothing -someone",
+                  "timestamp": "2025-12-13T15:21:13+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "nttoylr",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "nttpvl3",
+                      "author": "reddit_user_76f3b0b0da37",
+                      "author_karma": 0,
+                      "content": "Yeah but if you’re really a moron I don’t recommend using credit cards",
+                      "timestamp": "2025-12-13T15:24:06+00:00",
+                      "likes": 10,
+                      "dislikes": 0,
+                      "parent_comment_id": "nttpckj",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "ntttjxj",
+                          "author": "reddit_user_b4e785a5431e",
+                          "author_karma": 0,
+                          "content": "Or a pencil",
+                          "timestamp": "2025-12-13T15:43:56+00:00",
+                          "likes": 3,
+                          "dislikes": 0,
+                          "parent_comment_id": "nttpvl3",
+                          "depth": 4,
+                          "replies": []
+                        },
+                        {
+                          "comment_id": "nttsnhu",
+                          "author": "reddit_user_20b1d877cff7",
+                          "author_karma": 0,
+                          "content": "I just want to learn more before I may make a dumb choice :')",
+                          "timestamp": "2025-12-13T15:39:06+00:00",
+                          "likes": 0,
+                          "dislikes": 0,
+                          "parent_comment_id": "nttpvl3",
+                          "depth": 4,
+                          "replies": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "nttok65",
+          "author": "reddit_user_76f3b0b0da37",
+          "author_karma": 0,
+          "content": "You can get 5% cash back when you pay with the Amazon Prime Visa, as long as you have Prime, the card is worth having no matter how much you spend.\n\nDo not use a credit card until you understand what it is and how it works. Plenty of resources online. Never use your credit card on something you couldn’t afford to pay for in cash. Pay off your statement on time and you never pay interest.",
+          "timestamp": "2025-12-13T15:16:47+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "nttpg4t",
+              "author": "reddit_user_20b1d877cff7",
+              "author_karma": 0,
+              "content": "So interest will only be added if i dont pay or im late?\n\nso if i use amazon card to buy something cant i instantly pay that debt off and interest would never be a concern?  \nidk if thats how it works sorry if im still not understanding :')\n\nand what if I get the card but just never use it, Like i get it just to have?",
+              "timestamp": "2025-12-13T15:21:45+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "nttok65",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "nttpqwl",
+                  "author": "reddit_user_76f3b0b0da37",
+                  "author_karma": 0,
+                  "content": "Correct. You don’t need to be instant. You get a statement each month, and then a few weeks to pay off that statement. If you pay it by that due date, no interest.",
+                  "timestamp": "2025-12-13T15:23:23+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "nttpg4t",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "nttq204",
+                      "author": "reddit_user_20b1d877cff7",
+                      "author_karma": 0,
+                      "content": "ahhh I understand so and I get what u mean the first time of not using credit for something u cant buy with cash. I dont understand to much abt all of this but I know credit is very important in life",
+                      "timestamp": "2025-12-13T15:25:04+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "nttpqwl",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "nttrjrs",
+                          "author": "[deleted]",
+                          "author_karma": 0,
+                          "content": "You don't use credit to buy something you don't have the cash for. You use credit cards for convenience and rewards. 'Studies show' that you end up spending more with credit cards, so you probably don't come out ahead financially even after rewards, but if you keep a strict budget, maybe you can benefit from credit card rewards.",
+                          "timestamp": "2025-12-13T15:33:08+00:00",
+                          "likes": 2,
+                          "dislikes": 0,
+                          "parent_comment_id": "nttq204",
+                          "depth": 4,
+                          "replies": [
+                            {
+                              "comment_id": "nttu06t",
+                              "author": "reddit_user_20b1d877cff7",
+                              "author_karma": 0,
+                              "content": "I was thinking abt that. that seems like its only for the perks that comes with these cards but the perks only apply if u use them but if u dont use them it kinda just sits...",
+                              "timestamp": "2025-12-13T15:46:21+00:00",
+                              "likes": 1,
+                              "dislikes": 0,
+                              "parent_comment_id": "nttrjrs",
+                              "depth": 5,
+                              "replies": [
+                                {
+                                  "comment_id": "ntu1ral",
+                                  "author": "reddit_user_03dc99426c39",
+                                  "author_karma": 0,
+                                  "content": "I don’t wholly agree w that commenter. The number one reason to use a credit card over a debit card IMO is always safety; if a debit card is skimmed or stolen, you lose everything tied to the account for weeks or months while the bank investigates, whereas if a credit card is skimmed or stolen your personal funds are untouched during the investigation. That makes a credit card with even 0 rewards whatsoever worth using over a debit card. Cards like the Prime however don’t just have zero fraud liability, but add on protections like purchase protection, extended warranty, baggage delay insurance, travel accident insurance, lost luggage reimbursement, etc. Which all really do pay out when something bad happens. Spending more is a matter of mindset, it is true that the average person spends more on credit but that’s also because the average person doesn’t have much discipline with money in general. If you treat credit like debit then your spend shouldn’t change at all.",
+                                  "timestamp": "2025-12-13T16:27:04+00:00",
+                                  "likes": 1,
+                                  "dislikes": 0,
+                                  "parent_comment_id": "nttu06t",
+                                  "depth": 6,
+                                  "replies": [
+                                    {
+                                      "comment_id": "ntujy1g",
+                                      "author": "[deleted]",
+                                      "author_karma": 0,
+                                      "content": "You use Apple Pay either way.",
+                                      "timestamp": "2025-12-13T18:02:28+00:00",
+                                      "likes": 1,
+                                      "dislikes": 0,
+                                      "parent_comment_id": "ntu1ral",
+                                      "depth": 7,
+                                      "replies": []
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "nttpvy5",
+          "author": "reddit_user_52fa9b3ce8ce",
+          "author_karma": 0,
+          "content": "What are you using to pay for your current Amazon's extravagant?",
+          "timestamp": "2025-12-13T15:24:10+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "nttq5u4",
+              "author": "reddit_user_20b1d877cff7",
+              "author_karma": 0,
+              "content": "regular bank debit card :c",
+              "timestamp": "2025-12-13T15:25:38+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "nttpvy5",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "nttrcz5",
+                  "author": "reddit_user_0f61d815e473",
+                  "author_karma": 0,
+                  "content": "Oy vey… we’ll get you turned around.",
+                  "timestamp": "2025-12-13T15:32:07+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "nttq5u4",
+                  "depth": 2,
+                  "replies": []
+                },
+                {
+                  "comment_id": "nttxzyw",
+                  "author": "reddit_user_52fa9b3ce8ce",
+                  "author_karma": 0,
+                  "content": "As someone with no credit history your chances of being approve for it is not good. You might want to apply for a credit card from your bank, might be forced to use a secured card.",
+                  "timestamp": "2025-12-13T16:07:26+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "nttq5u4",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "nttqmsl",
+          "author": "reddit_user_0f61d815e473",
+          "author_karma": 0,
+          "content": "On Chase Amazon rewards rates specifically: https://reddit.com/r/chasesapphire/wiki/products/amazon\n\nOn Chase credit card mechanics: https://reddit.com/r/chasesapphire/wiki/foundations\n\nSee also: !basics",
+          "timestamp": "2025-12-13T15:28:13+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "nttqtcy",
+              "author": "reddit_user_bca8033b630e",
+              "author_karma": 0,
+              "content": "**Credit Card Basics:**\n\nTake a look at the [Credit Card Basics wiki page](https://www.reddit.com/r/CreditCards/wiki/credit_cards_basics/#wiki_credit_card_basics) which covers credit card fundamentals. \n\nTL;DR: \n\n* A credit card is a revolving loan.\n\n* You will receive a \"statement\" on a monthly basis breaking down your balance, charges, and how much is owed.\n\n* You should always pay, at minimum, the statement balance before the cutoff time of the due date.\n\n* The statement date is a minimum of 21 days BEFORE the due date.\n\n* You are only required to pay for charges that have shown up on your most recent statement.\n\n* Credit cards should not be used as an emergency fund. It is recommended to only use a credit card if you have the money to pay for that purchase TODAY.\n\n* The best practice is to pay your statement balance in full, every month.\n\n\nI can be summoned to comment by using command(s):\n\n`!basics`\n\n*I am a bot, and this action was performed automatically. Please [contact the moderators of this subreddit](/message/compose/?to=/r/CreditCards) if you have any questions or concerns.*",
+              "timestamp": "2025-12-13T15:29:12+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "nttqmsl",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "post_id": "real_run006_post03_seed033",
+      "post_slot": 3,
+      "seed_index": 33,
+      "source_raw_post_id": "1pvvy6p",
+      "source_product_dir": "Wells Fargo Autograph Journey℠ Card",
+      "source_file": "reddit_post:1pvvy6p",
+      "post_type": "specific_rule",
+      "title": "Wells Fargo Autograph Journey FYI - Rideshare not a part of “Other Travel”",
+      "author": "reddit_user_0dab2d077fca",
+      "author_karma": 0,
+      "content": "Wells Fargo Autograph Journey FYI - Rideshare not a part of “Other Travel”\n\nJust a heads up on this because it got me, the “other travel” category is much more stringent on the Autograph Journey card then just the Autograph card. I thought that it included ride share but it does not. Only the Autograph, not the Autograph Journey, includes rideshare/limousines.\n\n I was going to fight with the lovely woman on the phone but it’s clearly in the terms. Just an FYI to all.",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "nvzaier",
+          "author": "reddit_user_03dc99426c39",
+          "author_karma": 0,
+          "content": "afaik rideshare codes as transit, not travel. Autograph is 3x transit and 3x travel, Autograph Journey does 3x other travel and no transit multiplier",
+          "timestamp": "2025-12-26T05:12:41+00:00",
+          "likes": 8,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "nvz9nwv",
+          "author": "reddit_user_d1ad414f38f2",
+          "author_karma": 0,
+          "content": "That’s right. The Autograph explicitly mentions the transit category (which rideshare is part of) as a 3x multiplier. The Journey makes no such claim.",
+          "timestamp": "2025-12-26T05:05:57+00:00",
+          "likes": 12,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "nvzutdg",
+              "author": "reddit_user_64d33543e435",
+              "author_karma": 0,
+              "content": "Yeah that's a pretty important distinction that Wells Fargo doesn't really make clear in their marketing - lots of people probably assume the Journey is just an upgraded version that includes everything the regular Autograph does plus more",
+              "timestamp": "2025-12-26T08:20:09+00:00",
+              "likes": 7,
+              "dislikes": 0,
+              "parent_comment_id": "nvz9nwv",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "nvzf7dc",
+          "author": "reddit_user_3b8581059471",
+          "author_karma": 0,
+          "content": "since like the autograph card is better than the autograph journey card",
+          "timestamp": "2025-12-26T05:52:17+00:00",
+          "likes": 3,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "nw231cv",
+          "author": "reddit_user_dc1b0626fad8",
+          "author_karma": 0,
+          "content": "FYI -- I just learned my Savor C1 gives 10% plus free Uber one upgrade.",
+          "timestamp": "2025-12-26T18:01:24+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "nw4eh84",
+              "author": "reddit_user_1efd1f416752",
+              "author_karma": 0,
+              "content": "That promotion ended over a year ago.",
+              "timestamp": "2025-12-27T01:53:15+00:00",
+              "likes": 3,
+              "dislikes": 0,
+              "parent_comment_id": "nw231cv",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "nw23mnp",
+              "author": "reddit_user_a39dbff8e7a8",
+              "author_karma": 0,
+              "content": "Im gonna be buying gift cards at Costco. 20% off + and extra 5% using my PayPal debit card (or discover for this quarter) + 2% because I am an exec member. Discovered that trick from this sub.",
+              "timestamp": "2025-12-26T18:04:30+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "nw231cv",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "post_id": "real_run006_post04_seed034",
+      "post_slot": 4,
+      "seed_index": 34,
+      "source_raw_post_id": "1rkqeva",
+      "source_product_dir": "Chase Slate®",
+      "source_file": "reddit_post:1rkqeva",
+      "post_type": "approval_dp",
+      "title": "Chase Slate Card 0% Transfer",
+      "author": "reddit_user_0dab2d077fca",
+      "author_karma": 0,
+      "content": "Chase Slate Card 0% Transfer\n\nHello everyone. I just got the Chase Slate card to take advantage of the 0% apr for 21 months. When I got to transfer, it says no offers available. I just got approved today. Does it just take time or do I need to wait until the card arrives before it'll let me?",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "oan1kx5",
+          "author": "reddit_user_740126636632",
+          "author_karma": 0,
+          "content": "Wait for card",
+          "timestamp": "2026-03-15T21:16:14+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    }
+  ]
+}

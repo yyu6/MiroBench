@@ -1,0 +1,2382 @@
+{
+  "meta": {
+    "product_category": "credit_cards",
+    "baseline": "real_reddit_reference",
+    "run_id": "run_021_sampled_reddit"
+  },
+  "posts": [
+    {
+      "post_id": "real_run021_post00_seed105",
+      "post_slot": 0,
+      "seed_index": 105,
+      "source_raw_post_id": "1p283e0",
+      "source_product_dir": "Citi Strata Premier® Card",
+      "source_file": "reddit_post:1p283e0",
+      "post_type": "approval_dp",
+      "title": "Citi Strata Premier Denial DP",
+      "author": "reddit_user_0dab2d077fca",
+      "author_karma": 0,
+      "content": "Citi Strata Premier Denial DP\n\nMy GF applied for the Citi Strata Premier 2 days ago and was denied. Waiting 7 days to find out why. I specifically waited 6 months of no new inquires to apply for our future trip to Vietnam via EVA and was still denied.\n\nDP - 0/6 inquiries, 2/24 new accounts, 100k + income, 760 score experian\n\nSome reasons I can see for the denial is that we have been spending all on my cards so her balances are 0 currently. Also we moved cross country 3 months ago and maybe identity verification? But I’d think for identity verification they would have a pending application and ask to call? I did significant amounts of research on DP’s to optimize our application, still no dice. \n\nWe will try recon line but heard it’s a slim chance compared to Chase & Amex. Any advice? We’re exactly 60k short for the trip lol. \n\nEdit: Denial letter states “unable to verify information.” Called recon and just had to verify address and phone number. Denial reversed to an approval with 3k limit.",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "npvcdc0",
+          "author": "reddit_user_de33ea320cfa",
+          "author_karma": 0,
+          "content": "It could be for ID verification -- you're right that those stats should lead to an approval based on other DPs and Citi's preferences. Does your P2 have other Citi cards?",
+          "timestamp": "2025-11-20T16:49:24+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "npvikqc",
+              "author": "reddit_user_aac4bd3db1cd",
+              "author_karma": 0,
+              "content": "She does not have any other Citi cards at the moment. For my first Citi card (CC), I remember being denied, calling and they asked to confirm my info and then reversed the denial. I’m hoping it’s that situation.",
+              "timestamp": "2025-11-20T17:19:36+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "npvcdc0",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "npvrn9c",
+                  "author": "reddit_user_de33ea320cfa",
+                  "author_karma": 0,
+                  "content": "That could be it then -- no current cards + recent move could lead to an ID verification issue. I've seen other DPs where Citi will deny even if it's just verification, and approve after verification, so fingers crossed for your P2!",
+                  "timestamp": "2025-11-20T18:03:40+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "npvikqc",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "npvt8zn",
+                      "author": "reddit_user_aac4bd3db1cd",
+                      "author_karma": 0,
+                      "content": "Thank you! I’ll report back after calling recon",
+                      "timestamp": "2025-11-20T18:11:21+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "npvrn9c",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "npvgibm",
+          "author": "reddit_user_959e5965b9d2",
+          "author_karma": 0,
+          "content": "I just got approved. 3/24 new accounts. 690-720 credit score FICO 8 different models.100k+ income. They didn’t give me a stellar limit tho. Only 2k. Also have a diamond preferred with them. And a Double Cash. Put most of my spend the last 4 months on the DC but they still won’t increase my limit from 3.5k. Had the card for like 6 years now. Still at starting limit. Citi is strange.",
+          "timestamp": "2025-11-20T17:09:31+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "npvj4gv",
+              "author": "reddit_user_aac4bd3db1cd",
+              "author_karma": 0,
+              "content": "I appreciate the DP. Yes Citi is very strange. I know all the other issuers rules like Chase, Amex and Cap1 but Citi has thrown me a curveball. I was personally denied 2x time for the Premier before being approved.",
+              "timestamp": "2025-11-20T17:22:16+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "npvgibm",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "npvkpak",
+                  "author": "reddit_user_959e5965b9d2",
+                  "author_karma": 0,
+                  "content": "I was also pre approved through the offers for you section on the app FWIW",
+                  "timestamp": "2025-11-20T17:30:00+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "npvj4gv",
+                  "depth": 2,
+                  "replies": []
+                },
+                {
+                  "comment_id": "nq38q6u",
+                  "author": "reddit_user_01616dc4e458",
+                  "author_karma": 0,
+                  "content": "All this year?",
+                  "timestamp": "2025-11-21T21:22:31+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "npvj4gv",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            },
+            {
+              "comment_id": "npxhicz",
+              "author": "reddit_user_959c66b53d9e",
+              "author_karma": 0,
+              "content": ">I just got approved. \n\n>Only 2k\n\nApproved for the Premier with a $2K limit? Since it's a mid-tier travel card I would figure in minimum would need to be like $5K.",
+              "timestamp": "2025-11-20T23:19:34+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "npvgibm",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "npxn9rg",
+                  "author": "reddit_user_959e5965b9d2",
+                  "author_karma": 0,
+                  "content": "Right. Totally agree.",
+                  "timestamp": "2025-11-20T23:54:07+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "npxhicz",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            },
+            {
+              "comment_id": "npyh8gv",
+              "author": "reddit_user_0fb58f63b5c2",
+              "author_karma": 0,
+              "content": "Ha my wife has had almost the exact same experience. Same FICO score range/ income, has had the DC for almost 3 years with $3.5k starting limit and no CLIs, has a Simplicity card, and just got approved a month ago for the Premier with $2k starting limit.",
+              "timestamp": "2025-11-21T02:52:11+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "npvgibm",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "npvcsud",
+          "author": "reddit_user_3a892be0a6f3",
+          "author_karma": 0,
+          "content": "Following this to hear what the letter says.",
+          "timestamp": "2025-11-20T16:51:32+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "npvhvod",
+              "author": "reddit_user_aac4bd3db1cd",
+              "author_karma": 0,
+              "content": "I will return to the post and update after getting the letter.",
+              "timestamp": "2025-11-20T17:16:12+00:00",
+              "likes": 4,
+              "dislikes": 0,
+              "parent_comment_id": "npvcsud",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "nrmb7gr",
+              "author": "reddit_user_aac4bd3db1cd",
+              "author_karma": 0,
+              "content": "Letter states unable to verify information. No number to call on letter and no steps. Going to call recon tomorrow.",
+              "timestamp": "2025-11-30T23:16:52+00:00",
+              "likes": 2,
+              "dislikes": 0,
+              "parent_comment_id": "npvcsud",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "nrnlilp",
+                  "author": "reddit_user_3a892be0a6f3",
+                  "author_karma": 0,
+                  "content": "Thanks for posting the followup.  There are lots of posts about Citi asking for verification lately.  Not your GF's card but releasing the Strata Elite seemed to push them over the edge.",
+                  "timestamp": "2025-12-01T03:56:43+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "nrmb7gr",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "nrpvczq",
+                      "author": "reddit_user_aac4bd3db1cd",
+                      "author_karma": 0,
+                      "content": "No problem. I’ll edit the post again once I call recon to update what they say.",
+                      "timestamp": "2025-12-01T14:58:35+00:00",
+                      "likes": 2,
+                      "dislikes": 0,
+                      "parent_comment_id": "nrnlilp",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "nryikj7",
+          "author": "reddit_user_aac4bd3db1cd",
+          "author_karma": 0,
+          "content": "Post has been updated after receiving denial letter and calling recon!",
+          "timestamp": "2025-12-02T21:42:45+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "nx3shmx",
+          "author": "reddit_user_9ac35c247db3",
+          "author_karma": 0,
+          "content": "Hello,\n\nI applied yesterday and was denied. Called recon today and all they would tell me was same thing as in the recon answering service, and I assume, in the letter: too many recent credit inquiries. \n\nMy score is 825. I've only had one other inquiry in the last year, but it was day before yesterday. Is that one inquiry the problem?\n\nAny advice? I want the card so I can transfer Double Cash TY points to it and redeem at 1:1. And time is an issue, cause I need to get flights soon.\n\nShould my wife apply instead? Is it worth transferring my Double Cash points to her, and then pooling to her Premier account?\n\nThanks.",
+          "timestamp": "2026-01-01T17:10:16+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run021_post01_seed106",
+      "post_slot": 1,
+      "seed_index": 106,
+      "source_raw_post_id": "1h27uf7",
+      "source_product_dir": "U.S. Bank Smartly™ Visa Signature® Card",
+      "source_file": "reddit_post:1h27uf7",
+      "post_type": "news_or_rumor",
+      "title": "US Bank Smartly Card Guide - The Best All Purpose Credit Card in 2024 (4% Cash Back, Unlimited)",
+      "author": "reddit_user_0dab2d077fca",
+      "author_karma": 0,
+      "content": "US Bank Smartly Card Guide - The Best All Purpose Credit Card in 2024 (4% Cash Back, Unlimited)\n\n**In my opinion, the US Bank Smartly Card is the new “one card to rule them all” with a no-fee card that offers 4% cash back on all categories.** The closest competitors on the market today are the: * **Bank of America Unlimited Cash Rewards Card**: offers **2.625%** (1.5% x 1.75 boost with Platinum Honors at $100k assets at BofA). No fee. So the US Bank card offers 1.375 percentage points more rewards (or over 50% more rewards than the BofA card). * **Robinhood Gold Card**: offers **3.0% cash back everywhere**. Technically no fee but requires a $50 / year Robinhood Gold membership, with no asset minimum. The US Bank card offers 1.0 percentage point or 33% more rewards than the Robinhood Gold card. While the US Bank Smartly Card seems like a no-brainer, the card has a few hoops you need to jump through (will take \\~2 hours or less if you're fast) because you need to open the following accounts to receive the benefits: * **US Bank Smartly Visa Credit Credit** card itself * **US Bank Savings** \\- $25 minimum funding balance; required to receive the 4% on the credit card * **US Bank Brokerage** – to minimize opportunity cost on balances at US Bank, place your $100k+ of assets into your choice of index funds at the brokerage * Brokerage is subject to $50 fee / year if you have <$250k with US Bank * There are fees to make trades—which is how they get you to open the checking account * **US Bank Smartly Checking account** \\- $25 minimum funding balance to receive 100 free trades * The monthly account fee will be waived with the credit card attached The accounts will take a few days to fully set up and get funded. Tip on funding: US Bank imposes a $20k limit / week on external transfers into the bank via linked bank accounts. Therefore, the best way to get $100k into US Bank in a single transaction is to do a “push payment” from your primary bank account by linking your US Bank checking from your third party account, confirming the 2 micro deposits, and initiating the transfer from your existing primary account, rather than trying to “pull” the payment in from US Bank. Your account should update 5 days after the $100k deposit clears to register the 4% cash back. You can view the current earning rate in the \"rewards\" section of the app or website. It'll show as 2% base + 2% bonus. Verifying receipt of the card is easy online--and you only need to do it once even if you've added an authorized user because they'll have the exact same card number as the main accountholder and both are activated at the same time. The card loads flawlessly into Apple Pay--using the fancy new NFC technology. You may have to call them to verify, but it was seamless. The brokerage is very basic. Stock and ETF trades are the only ones granted for free with the attached checking account. Mutual funds, including MMMF trades are $25 each. But it seems to be a livable place to park the money and you can do a single purchase of IVV (or your choice of ETFs) or manually dollar cost average your way in with 100 free trades. Benefits: * 4% cash back, unlimited, all categories * Premium metal card Downsides to the US Bank Card: * No sign-up bonus (unless you count the checking account deposit reward you will earn) * Multiple hoops to jump through to register * Incurs foreign transaction fees, so you’ll need another card to supplement * No premium features (e.g., lounge, etc) * Brokerage effectively costs $50 a year unless you move a total of $250k to US Bank, which will make this an effectively $50/yr card if you transfer the minimum. (However, breakeven vs BofA is about $3.7k ...",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "lzhpoe4",
+          "author": "reddit_user_16789fcae499",
+          "author_karma": 0,
+          "content": "Multiple DP as well as my call to CSR confirmed that you only need $100k in your brokerage account to waive the $50/yr account fee.  It was either (1) $100k in the brokerage account or (2) total $250k across all accounts",
+          "timestamp": "2024-11-29T00:57:44+00:00",
+          "likes": 61,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "lzibaxo",
+              "author": "reddit_user_00de6f3d9294",
+              "author_karma": 0,
+              "content": "Also the OP discounted BoFA custom cash which you can have multiples and yield 5.25%, max cap of spending$2500 a quarter.",
+              "timestamp": "2024-11-29T03:34:06+00:00",
+              "likes": 20,
+              "dislikes": 0,
+              "parent_comment_id": "lzhpoe4",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "mix6b6w",
+                  "author": "reddit_user_ba4d4071f5f5",
+                  "author_karma": 0,
+                  "content": "Agree and I love my BofA custom cash. Wish I could get more than one still…I looked into it a while back and seems like the multiples are no longer available?",
+                  "timestamp": "2025-03-21T04:14:19+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "lzibaxo",
+                  "depth": 2,
+                  "replies": []
+                },
+                {
+                  "comment_id": "lzjwbh0",
+                  "author": "reddit_user_7ce6ce2886ab",
+                  "author_karma": 0,
+                  "content": "... Multiples?! Mother fuck ",
+                  "timestamp": "2024-11-29T12:48:27+00:00",
+                  "likes": -1,
+                  "dislikes": 0,
+                  "parent_comment_id": "lzibaxo",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "mgsmwy6",
+                      "author": "reddit_user_6e33c0ac20be",
+                      "author_karma": 0,
+                      "content": "Yep. I have 2, about to apply for 2 more, and P2 has 5, for 9 total.\n\n5.25% CB for Plat Honors for categories: 1 for gas and EV charging. 2 for Dining. 1 for Travel/parking. 1 for hardware stores and home renovation/repairs. 4 for online shopping including online charitable giving (1 of them is just for donations, then online shopping is spread across the other 3 to avoid hitting the $2500/qtr cap on spend for cash back).",
+                      "timestamp": "2025-03-09T03:26:11+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "lzjwbh0",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "comment_id": "lzkefjp",
+              "author": "reddit_user_ba4d4071f5f5",
+              "author_karma": 0,
+              "content": "If this is true, that makes the card even more attractive.  \n\nAll I could see was footnote 6 on the fee schedule page that indicated a $250k balance.\n\n[https://www.usbank.com/investing/online-investing/self-directed-investing/brokerage-fees.html](https://www.usbank.com/investing/online-investing/self-directed-investing/brokerage-fees.html)\n\nFingers crossed and guess we'll all find out in April!",
+              "timestamp": "2024-11-29T14:59:03+00:00",
+              "likes": 4,
+              "dislikes": 0,
+              "parent_comment_id": "lzhpoe4",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "lzi49wf",
+              "author": "reddit_user_21d38e8a4967",
+              "author_karma": 0,
+              "content": "Do you know is the $100k fee waiver true for taxable brokerage accounts or only IRA brokerage?  I know their fee schedule technically line items separate $50 fees for each account type.",
+              "timestamp": "2024-11-29T02:43:02+00:00",
+              "likes": 2,
+              "dislikes": 0,
+              "parent_comment_id": "lzhpoe4",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "lzi62w4",
+                  "author": "reddit_user_16789fcae499",
+                  "author_karma": 0,
+                  "content": "according to the rep that I talked to, it was for both taxable and IRA accounts.",
+                  "timestamp": "2024-11-29T02:55:57+00:00",
+                  "likes": 8,
+                  "dislikes": 0,
+                  "parent_comment_id": "lzi49wf",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "lzizjl8",
+                      "author": "reddit_user_22caba115fd3",
+                      "author_karma": 0,
+                      "content": "I called in as well, got same answer, 100k in brokerage account is enough to waive the annual fee. They  check the account balance the end of April annually to determine whether fee can be waived. Just check once , not checking daily balance",
+                      "timestamp": "2024-11-29T06:59:25+00:00",
+                      "likes": 6,
+                      "dislikes": 0,
+                      "parent_comment_id": "lzi62w4",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "lzjn4vy",
+                          "author": "reddit_user_237d30267fbb",
+                          "author_karma": 0,
+                          "content": "does this technically mean I can move $100k in mid April and move it out on May 1st ?",
+                          "timestamp": "2024-11-29T11:20:15+00:00",
+                          "likes": 2,
+                          "dislikes": 0,
+                          "parent_comment_id": "lzizjl8",
+                          "depth": 4,
+                          "replies": [
+                            {
+                              "comment_id": "lzk1abe",
+                              "author": "reddit_user_f4b5a55ca210",
+                              "author_karma": 0,
+                              "content": "It's one check for the $50 fee waiver not for the balance to maximize rewards.",
+                              "timestamp": "2024-11-29T13:27:45+00:00",
+                              "likes": 5,
+                              "dislikes": 0,
+                              "parent_comment_id": "lzjn4vy",
+                              "depth": 5,
+                              "replies": [
+                                {
+                                  "comment_id": "lzk1ku9",
+                                  "author": "reddit_user_237d30267fbb",
+                                  "author_karma": 0,
+                                  "content": "Right, sorry. Thanks for clarifying",
+                                  "timestamp": "2024-11-29T13:29:57+00:00",
+                                  "likes": 1,
+                                  "dislikes": 0,
+                                  "parent_comment_id": "lzk1abe",
+                                  "depth": 6,
+                                  "replies": []
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "comment_id": "lzi4oc8",
+              "author": "reddit_user_559aed758ee7",
+              "author_karma": 0,
+              "content": "Where does it say that on the site or pricing agreement though? CSR's can say whatever they interpret.  \nYou can waive the IRA fee with Smart Rewards + $50k balance, but I see nothing mentioning $100k for taxable accounts.",
+              "timestamp": "2024-11-29T02:45:51+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "lzhpoe4",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "lzi66hs",
+                  "author": "reddit_user_16789fcae499",
+                  "author_karma": 0,
+                  "content": "There is no place on their website that states so.  However, this has been verified by numerous DPs here.  I guess we will see in a year...",
+                  "timestamp": "2024-11-29T02:56:39+00:00",
+                  "likes": 8,
+                  "dislikes": 0,
+                  "parent_comment_id": "lzi4oc8",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            },
+            {
+              "comment_id": "lzhrysl",
+              "author": "reddit_user_c1d2f53e1f07",
+              "author_karma": 0,
+              "content": "Underrated comment",
+              "timestamp": "2024-11-29T01:14:18+00:00",
+              "likes": 0,
+              "dislikes": 0,
+              "parent_comment_id": "lzhpoe4",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "lzhuqsr",
+          "author": "reddit_user_3ddd99460e75",
+          "author_karma": 0,
+          "content": "Nice write up, I've done a few myself, including my DP: [https://www.reddit.com/r/CreditCards/comments/1guih0t/us\\_bank\\_smartly\\_visa\\_signature\\_card\\_dp/](https://www.reddit.com/r/CreditCards/comments/1guih0t/us_bank_smartly_visa_signature_card_dp/)\n\nWanted to add: The $250k+ requirement commonly cited is household, which includes US Bank assets and potentially a spouse.\n\nSo total household means USB + USBI\n\nTo get $50 AF waived, either:\n\n1. **assets at USBI over $100k**\n\n2. assets at USBI + USB over $250k\n\nI called them up. The CS rep said that he was told that there are four ways to avoid fee:\n\n* $100k in brokerage/IRA\n* financial advisor \n* managed client\n* US Bank employee \n\nAlso, fee is charged at end of 12 months, so you have a year to get the account to $100k before the fee is charged.",
+          "timestamp": "2024-11-29T01:34:12+00:00",
+          "likes": 30,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "m63v6qx",
+              "author": "reddit_user_e6be3d27bd5a",
+              "author_karma": 0,
+              "content": "Another way to avoid the $50AF is if over 65 years.",
+              "timestamp": "2025-01-08T20:20:05+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "lzhuqsr",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "mkj56d6",
+              "author": "reddit_user_c78466483918",
+              "author_karma": 0,
+              "content": "If I have US Bank Roth IRA with over $100k and then a taxable brokage with < $100k, will I be charged any annual fees for the taxable brokerage account? Considering moving my Roth IRA over to get the Smartly Visa and then putting the 4% redemptions into a taxable brokerage there (starting at $0).",
+              "timestamp": "2025-03-30T15:31:49+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "lzhuqsr",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "mklunm9",
+                  "author": "reddit_user_3ddd99460e75",
+                  "author_karma": 0,
+                  "content": "That is a great question. I don't know answer, but if I were to guess, I think they would still assess the AF on the taxable brokerage account, since total assets are still under $250k. \n\nBut I would call in to confirm, as I am not a US Bank employee. Please do not rely on anything I have said.\n\nIn the meantime, I would just put the 4% into a savings account (required to open anyway), and then just ACH out to somewhere else. This is what I do.\n\nTheir investment UX/UI is...lacking. No real need to open a taxable brokerage account there.",
+                  "timestamp": "2025-03-31T00:12:33+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "mkj56d6",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            },
+            {
+              "comment_id": "lzkenxi",
+              "author": "reddit_user_ba4d4071f5f5",
+              "author_karma": 0,
+              "content": "Much appreciated data points.  Thank you!",
+              "timestamp": "2024-11-29T15:00:32+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "lzhuqsr",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "lzi5yjs",
+          "author": "reddit_user_457c2eb9a12b",
+          "author_karma": 0,
+          "content": "Meh I still like my USBAR…",
+          "timestamp": "2024-11-29T02:55:04+00:00",
+          "likes": 22,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "lzm98jg",
+              "author": "reddit_user_23add132604b",
+              "author_karma": 0,
+              "content": "same usbar is EASY! lol",
+              "timestamp": "2024-11-29T21:26:18+00:00",
+              "likes": 3,
+              "dislikes": 0,
+              "parent_comment_id": "lzi5yjs",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "lzkqfeb",
+              "author": "reddit_user_451b07c41eab",
+              "author_karma": 0,
+              "content": "Same. Only great for large governmental services charges like taxes. Unfortunately usb don’t give out large credit limits",
+              "timestamp": "2024-11-29T16:11:34+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "lzi5yjs",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "lzhzcbe",
+          "author": "reddit_user_7d98ef1047da",
+          "author_karma": 0,
+          "content": "Why is it $14K to break even with BofA for $50 EAF?  \nI get ~4k.",
+          "timestamp": "2024-11-29T02:07:20+00:00",
+          "likes": 9,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "lzj6u1i",
+              "author": "reddit_user_1bcde2352084",
+              "author_karma": 0,
+              "content": "50 / (.04 - .02625) = 3,636.364\n\nYeah, I get ~4k too.\n\nBut considering the $100k in the brokerage account alone seems to waive the $50 fee, the breakeven is actually $0.",
+              "timestamp": "2024-11-29T08:16:05+00:00",
+              "likes": 3,
+              "dislikes": 0,
+              "parent_comment_id": "lzhzcbe",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "lzkfd3j",
+              "author": "reddit_user_ba4d4071f5f5",
+              "author_karma": 0,
+              "content": "[REDDIT_USER] \n\nVery embarrassing--you both are absolutely correct.  Edited in main post to help improve OpenAI's future training data.  My addled brain somehow plugged in a $200 AF for no reason.  Thanks for pointing it out!",
+              "timestamp": "2024-11-29T15:04:57+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "lzhzcbe",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "lzhidj2",
+          "author": "reddit_user_57e467ba9764",
+          "author_karma": 0,
+          "content": "I mean title is a bit click bait-ey given you need $100,000 which the vast majority of people do not have lmao. If you do, great! But it’s not the best all purpose card for most people (Sofi 2.2% (no FTF) or alliant are better)",
+          "timestamp": "2024-11-29T00:05:49+00:00",
+          "likes": 37,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "lzhr9jb",
+              "author": "reddit_user_bbc856f54b25",
+              "author_karma": 0,
+              "content": "Yeah, a quick search suggests something like 82% of Americans do not have $100k in liquid investments, and that number is actually high because it includes bonds, 529s, and a couple other things that'd be tough to transfer to a new bank. ",
+              "timestamp": "2024-11-29T01:09:12+00:00",
+              "likes": 24,
+              "dislikes": 0,
+              "parent_comment_id": "lzhidj2",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "lzisqdw",
+              "author": "[deleted]",
+              "author_karma": 0,
+              "content": "A bit click bait-ey is being generous. Complete BS. It’s a card for rich people that stacks fees on everyone else",
+              "timestamp": "2024-11-29T05:54:39+00:00",
+              "likes": 10,
+              "dislikes": 0,
+              "parent_comment_id": "lzhidj2",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "lzl29lv",
+                  "author": "reddit_user_9c1c4cc10c1d",
+                  "author_karma": 0,
+                  "content": "That’s just the way the world works.",
+                  "timestamp": "2024-11-29T17:19:37+00:00",
+                  "likes": 2,
+                  "dislikes": 0,
+                  "parent_comment_id": "lzisqdw",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "lzip4lc",
+          "author": "reddit_user_032e2cce2945",
+          "author_karma": 0,
+          "content": "OP fails to mention a lot of data points with folks getting low CLs making this card not useful. USB has been known to issue stupid low CLs for their other CCs (like $500).",
+          "timestamp": "2024-11-29T05:22:56+00:00",
+          "likes": 7,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "lzix73g",
+              "author": "reddit_user_54e122f582d8",
+              "author_karma": 0,
+              "content": "Happened to me. $500 CL. No way in hell am I transferring assets until that goes up. I feel like I burned a 5/24 for no reason.",
+              "timestamp": "2024-11-29T06:36:30+00:00",
+              "likes": 6,
+              "dislikes": 0,
+              "parent_comment_id": "lzip4lc",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "lzj70b4",
+              "author": "reddit_user_1bcde2352084",
+              "author_karma": 0,
+              "content": "Eh, it would be enough to get you through a day or three, most of the time. Having to constantly pay it off would be such a pain in the ass though. I'm sure one could tough it out until succeeding at getting them to raise the limit.",
+              "timestamp": "2024-11-29T08:18:01+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "lzip4lc",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "lzkqcd7",
+                  "author": "reddit_user_c62608f54f5b",
+                  "author_karma": 0,
+                  "content": "That’s credit cycling and most credit card companies will block your account for that if you do it repeatedly.",
+                  "timestamp": "2024-11-29T16:11:06+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "lzj70b4",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "lzl2lb6",
+                      "author": "reddit_user_1bcde2352084",
+                      "author_karma": 0,
+                      "content": "That's actually something bad? How could it be bad to pay down your card balance mid-month in order to free up limit for additional expenditures? That's literally using your card as designed!\n\nI suppose I gotta go look up \"credit cycling\" now. I swear I had done that a zillion times back when my limits were lower.\n\nEdit: A cursory first glance seems to mention that it can be a red flag if you consistently spend more on your card than you *told the bank you were making*, but if you declared a sufficiently high income for your expenditures, I don't see the issue...\n\nIf you told the bank you were making $200k or something, but they gave you a $500 limit, I can't imagine how it'd be bad to just use the card and pay as needed to be able to keep using it.",
+                      "timestamp": "2024-11-29T17:21:29+00:00",
+                      "likes": 3,
+                      "dislikes": 0,
+                      "parent_comment_id": "lzkqcd7",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "comment_id": "lzkg1ao",
+              "author": "reddit_user_ba4d4071f5f5",
+              "author_karma": 0,
+              "content": "I will say that USBank seemed to be a bit tighter with he CL, coming in at about 2/3 of where most other banks have been granting them.  But $500 is illogically low as to make the card useless and hopefully someone qualifying for the 4% tier could get that lifted by a CSR.",
+              "timestamp": "2024-11-29T15:09:11+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "lzip4lc",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "lzkxq6e",
+                  "author": "reddit_user_f72f0979305e",
+                  "author_karma": 0,
+                  "content": "I got $2K. Had to eat a hard pull for the CLI and we will see if they raise it..",
+                  "timestamp": "2024-11-29T16:53:32+00:00",
+                  "likes": 2,
+                  "dislikes": 0,
+                  "parent_comment_id": "lzkg1ao",
+                  "depth": 2,
+                  "replies": []
+                },
+                {
+                  "comment_id": "lzkhoo7",
+                  "author": "reddit_user_032e2cce2945",
+                  "author_karma": 0,
+                  "content": "Yeah, you'd hope...",
+                  "timestamp": "2024-11-29T15:19:30+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "lzkg1ao",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "lzk88f7",
+          "author": "reddit_user_37e382e5412f",
+          "author_karma": 0,
+          "content": "Problem with the card is there are too many no annual fee cards that get 5% off on category spend to need to jump through all these hoops to get 4%.\n\nAmazon Prime Visa\n\nUS Bank Cash+\n\nAAA Daily Advantage Rewards\n\nCiti Custom Cash\n\nDiscover It / Chase Freedom Flex\n\nJust those 5-6 cards can get you 5% cash back on the majority of major stores people spend at. You could add stuff like the Target Circle Debit Card and PayPal Debit Card if you wanted.\n\nIf you're maximizing your cash back right now a 4% cash back card isn't that big of a deal because you're mostly getting 5% and even if forced to step down you can often get 3%.\n\nThis card is a situational card for people that have high levels of spend in categories cash back cards don't usually cover. That or people who aren't able to manage 5-6 credit cards at the same time and are willing to step down from 5% to 4% to not have to do that.",
+          "timestamp": "2024-11-29T14:17:44+00:00",
+          "likes": 5,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "lzkh1ec",
+              "author": "reddit_user_ba4d4071f5f5",
+              "author_karma": 0,
+              "content": "I agree with this and have many of the cards you listed, and will continue to use them to get 5% instead of 4%.\n\nThe two minor issues I run into with this setup that made the US Bank card worth it is: 1. My wife doesn't like having to remember which is which (and to be fair, I'm not perfect with the rotating categories either).  2. For the best categories that I do tend to max out like Freedom / Discover's PayPal category, those get capped at $1500 / quarter so any spillover needs to go onto a different card or go back to 1%.",
+              "timestamp": "2024-11-29T15:15:28+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "lzk88f7",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "lzidxkt",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2024-11-29T03:53:38+00:00",
+          "likes": 12,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "lzikdv6",
+              "author": "reddit_user_c358b5f51bc1",
+              "author_karma": 0,
+              "content": "My thought is wait a year for this to see if it stays at 4% or if they introduce other negatives. That will give me a better idea of if this is sustainable long-term.",
+              "timestamp": "2024-11-29T04:43:29+00:00",
+              "likes": 6,
+              "dislikes": 0,
+              "parent_comment_id": "lzidxkt",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "lzlacda",
+              "author": "reddit_user_165a5ac3a6e3",
+              "author_karma": 0,
+              "content": "There have been multiple data points of people product changing months-old Cash+'s to the Smartly. Theoretically you could apply for the Cash+ for the SUB and then do a PC. Not as big a SUB as the inks but nice if you wanted the Smartly anyway.",
+              "timestamp": "2024-11-29T18:05:11+00:00",
+              "likes": 2,
+              "dislikes": 0,
+              "parent_comment_id": "lzidxkt",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "lzllavn",
+                  "author": "reddit_user_657df02ecddf",
+                  "author_karma": 0,
+                  "content": "Cash+ is a better card than Smartly for majority I think. Most can just do 2.5% for Smartly whereas Cash+ is 5% for categories with SUB and pair it with a 2% card with SUB",
+                  "timestamp": "2024-11-29T19:07:35+00:00",
+                  "likes": 2,
+                  "dislikes": 0,
+                  "parent_comment_id": "lzlacda",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            },
+            {
+              "comment_id": "lzl2h1a",
+              "author": "reddit_user_9c1c4cc10c1d",
+              "author_karma": 0,
+              "content": "This guy has a point.",
+              "timestamp": "2024-11-29T17:20:48+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "lzidxkt",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "lzkuech",
+              "author": "reddit_user_49a7fc497883",
+              "author_karma": 0,
+              "content": "As long as chase ink exists, it makes no sense to open up any other card for me",
+              "timestamp": "2024-11-29T16:34:23+00:00",
+              "likes": 0,
+              "dislikes": 0,
+              "parent_comment_id": "lzidxkt",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "lzkk3je",
+          "author": "reddit_user_3ebf2f9dd834",
+          "author_karma": 0,
+          "content": "Keep seeing posts like this. Is this Smartly cardholders’ way  of convincing it’s all worth the hassle? I feel like Smartly cardholders that make this kind of post do not have USBAR or else they’ll know Smartly is not the best all-purpose card",
+          "timestamp": "2024-11-29T15:34:21+00:00",
+          "likes": 7,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "lzkwxbp",
+              "author": "reddit_user_63f1d5374b95",
+              "author_karma": 0,
+              "content": "I'm happy with my setup. I got USBAR for apple pay and everything else is BofA Premium Card 2.625-3.5.",
+              "timestamp": "2024-11-29T16:48:53+00:00",
+              "likes": 3,
+              "dislikes": 0,
+              "parent_comment_id": "lzkk3je",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "lzl7y2e",
+              "author": "reddit_user_1db7f1eb163e",
+              "author_karma": 0,
+              "content": "To them, nothing hits as good as external validation and karma points from /r/creditcards readers lol.",
+              "timestamp": "2024-11-29T17:51:38+00:00",
+              "likes": 3,
+              "dislikes": 0,
+              "parent_comment_id": "lzkk3je",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "lzllo3x",
+              "author": "reddit_user_657df02ecddf",
+              "author_karma": 0,
+              "content": "Smartly can get 4% back on Paypal for reselling but Usbar can’t",
+              "timestamp": "2024-11-29T19:09:41+00:00",
+              "likes": 4,
+              "dislikes": 0,
+              "parent_comment_id": "lzkk3je",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "lzky49t",
+          "author": "reddit_user_4917731728c1",
+          "author_karma": 0,
+          "content": "The trading fees on the brokerage is comical. Who actually uses that brokerage when everything is free trades now?",
+          "timestamp": "2024-11-29T16:55:45+00:00",
+          "likes": 4,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "lzhacnv",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2024-11-28T23:09:51+00:00",
+          "likes": 24,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "lzl7q19",
+              "author": "reddit_user_1db7f1eb163e",
+              "author_karma": 0,
+              "content": "/r/creditcards has a Smartly addiction, they need a hit every 6 hours.",
+              "timestamp": "2024-11-29T17:50:23+00:00",
+              "likes": 4,
+              "dislikes": 0,
+              "parent_comment_id": "lzhacnv",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "lzjopcs",
+              "author": "reddit_user_ec17c9823f43",
+              "author_karma": 0,
+              "content": "Exactly, the USbank fans spam this sub so much",
+              "timestamp": "2024-11-29T11:36:53+00:00",
+              "likes": 3,
+              "dislikes": 0,
+              "parent_comment_id": "lzhacnv",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "lzi8hmi",
+          "author": "reddit_user_acac1083a309",
+          "author_karma": 0,
+          "content": "Thanks for the $25 MMMF and mutual fund info.\n\nAlso heard DRIP is not available on website interface, but can be chosen by phone with a live broker.\n\nEven though there have been many write-ups, some have unique specific details that are helpful.\n\nThanks",
+          "timestamp": "2024-11-29T03:13:21+00:00",
+          "likes": 6,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "lzjw4ct",
+          "author": "reddit_user_bd2b2d869283",
+          "author_karma": 0,
+          "content": "I would qualify for the full 4% by transferring brokerage, but man... How long until nerf? Also, they're not covering transfer fees from my current brokerage, which would be $100. I'd have to spend $10k just to make up the difference in cash back on that transfer fee.",
+          "timestamp": "2024-11-29T12:46:49+00:00",
+          "likes": 3,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "lzky977",
+              "author": "reddit_user_f72f0979305e",
+              "author_karma": 0,
+              "content": "In my head as well. How long until nerf? 4% is not sustainable.",
+              "timestamp": "2024-11-29T16:56:32+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "lzjw4ct",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "lzkz5on",
+                  "author": "reddit_user_bd2b2d869283",
+                  "author_karma": 0,
+                  "content": "And even if it were, I can get a pretty good coverage of 4% or 4x across a lot of categories, or get a full coverage of 3% and not be beholden to one bank.",
+                  "timestamp": "2024-11-29T17:01:42+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "lzky977",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "lzkfzn1",
+          "author": "reddit_user_8934a9d5008e",
+          "author_karma": 0,
+          "content": ">**Robinhood Gold Card**: offers **3.0% cash back everywhere**.  Technically no fee but requires a $75 / year Robinhood\n\nIt's $5 per month / $60 per year.  And you get $1K in free margin which can be parked in $SGOV to easily earn most of the annual fee back in interest.",
+          "timestamp": "2024-11-29T15:08:54+00:00",
+          "likes": 3,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "lzkhvpj",
+              "author": "reddit_user_ba4d4071f5f5",
+              "author_karma": 0,
+              "content": "Good point!  I had forgotten about the $1k free margin which is indeed helpful in this rate environment.  \n\nI think the most interesting thing about the Robinhood card was how many thought it would get nerfed by now (although several analyses showed that the economics likely still work given the percentage of people carrying balances).  Its staying power thus far gives me hope that US Bank will maintain the 4% top tier here.",
+              "timestamp": "2024-11-29T15:20:43+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "lzkfzn1",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "lzkos86",
+                  "author": "reddit_user_8934a9d5008e",
+                  "author_karma": 0,
+                  "content": "Also, they match IRA contributions 3% ($210 for 2024/2025).  While I don't think Robinhood has the best tools to manage retirement assets, this is also a huge plus for most people and I will happily take an extra $210 a year.",
+                  "timestamp": "2024-11-29T16:02:02+00:00",
+                  "likes": 3,
+                  "dislikes": 0,
+                  "parent_comment_id": "lzkhvpj",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            },
+            {
+              "comment_id": "lzlbqml",
+              "author": "[deleted]",
+              "author_karma": 0,
+              "content": "$50 per year once you get the gold card",
+              "timestamp": "2024-11-29T18:13:09+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "lzkfzn1",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "lzlh8r8",
+                  "author": "reddit_user_8934a9d5008e",
+                  "author_karma": 0,
+                  "content": "True.  I’ve been on the waitlist so long I’m losing faith though",
+                  "timestamp": "2024-11-29T18:44:19+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "lzlbqml",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            },
+            {
+              "comment_id": "mcyf875",
+              "author": "[deleted]",
+              "author_karma": 0,
+              "content": "oh that's an interesting play",
+              "timestamp": "2025-02-15T20:11:34+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "lzkfzn1",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "lzl15e0",
+          "author": "reddit_user_9c1c4cc10c1d",
+          "author_karma": 0,
+          "content": "If you make the 100k transfer to their brokerage — What kind of credit lines are people seeing? I really don’t need to  move $100k, to get a starting credit line  of $10-15k.  \n\nI opened a CSR this week and received a starting line of $55k (albeit I have more than $2M in JPMC brokerage)",
+          "timestamp": "2024-11-29T17:13:10+00:00",
+          "likes": 3,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "lzq9tgg",
+              "author": "reddit_user_ba4d4071f5f5",
+              "author_karma": 0,
+              "content": "I applied to the card first, before having any associated accounts at USBank, and got $20k on what should be a 800+ score.",
+              "timestamp": "2024-11-30T16:17:17+00:00",
+              "likes": 4,
+              "dislikes": 0,
+              "parent_comment_id": "lzl15e0",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "lzonv13",
+          "author": "reddit_user_9ec70a863a4a",
+          "author_karma": 0,
+          "content": "There's no signup bonus but people are neglecting the 0% APR for a year. If you get a decent CL and take advantage by only making minimum payments, you could effectively get a \"bonus\" by keep the card constantly near maxed out and invest the money that you would've used to pay off the balance in full elsewhere.",
+          "timestamp": "2024-11-30T07:49:35+00:00",
+          "likes": 3,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "lzhtg6k",
+          "author": "reddit_user_2d38d904d939",
+          "author_karma": 0,
+          "content": "Robinhood Gold annual is $50 with the card not $75.",
+          "timestamp": "2024-11-29T01:24:56+00:00",
+          "likes": 4,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "lzkh92t",
+              "author": "reddit_user_ba4d4071f5f5",
+              "author_karma": 0,
+              "content": "TY--edited for posterity!",
+              "timestamp": "2024-11-29T15:16:49+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "lzhtg6k",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "lzicco8",
+          "author": "reddit_user_9607cbf53b59",
+          "author_karma": 0,
+          "content": "Does anyone know if you can invest in Vanguard ETFs through US Bank? Could I just transfer my IRA in kind from Vanguard to US Bank? If so, would there be additional fees for housing my vanguard ETFs in US bank?",
+          "timestamp": "2024-11-29T03:41:48+00:00",
+          "likes": 5,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "lzkxyuz",
+              "author": "reddit_user_f72f0979305e",
+              "author_karma": 0,
+              "content": "I don't see why not? I'm holding VOO and VTI. I just don't like ACAT transfers because I'm worried they will screw up cost basis.",
+              "timestamp": "2024-11-29T16:54:54+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "lzicco8",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "lzp0671",
+              "author": "reddit_user_1a73e2f84bfa",
+              "author_karma": 0,
+              "content": "Yes,  you can just move your IRA to US Bank, with all your ETFs intact.  And you can do it online with ACATS.  Vanguard might charge you a closing fee.   If you decide you don't like US Bank though, they'll charge you $95 to close the account.",
+              "timestamp": "2024-11-30T10:09:43+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "lzicco8",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "lzi2ogi",
+          "author": "reddit_user_54e122f582d8",
+          "author_karma": 0,
+          "content": "https://www.usbank.com/dam/documents/pdf/deposits/consumer-pricing-information/revised-deposit-products.pdf\n\n\nPage 7 footnote 3 says you can waive the IRA fee if you have at least 50k assets. Am I missing something?",
+          "timestamp": "2024-11-29T02:31:31+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "lzi4ka2",
+              "author": "reddit_user_21d38e8a4967",
+              "author_karma": 0,
+              "content": "Those are IRA fees for bank IRAs.  It's confusing.  Bank IRAs are different than brokerage IRAs.",
+              "timestamp": "2024-11-29T02:45:04+00:00",
+              "likes": 3,
+              "dislikes": 0,
+              "parent_comment_id": "lzi2ogi",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "lzjyv6i",
+                  "author": "[deleted]",
+                  "author_karma": 0,
+                  "content": "[deleted]",
+                  "timestamp": "2024-11-29T13:09:02+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "lzi4ka2",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "lzk4dyy",
+                      "author": "reddit_user_21d38e8a4967",
+                      "author_karma": 0,
+                      "content": "Yes, you have to hold securities (stock/ETFs) in a brokerage IRA.   Bank IRA is only for banking products like CDs or money markets.   So you should open up a traditional IRA (or Roth IRA if that's what you have) brokerage account at US Bancorp Investments and do an ACAT in-kind transfer from ML to USB.  Merrill I think charges a $50 fee to do a whole account ACAT but you might be able to just leave a small position behind and avoid the fee.  Just make sure you fill out the paperwork correctly in that case.",
+                      "timestamp": "2024-11-29T13:50:30+00:00",
+                      "likes": 2,
+                      "dislikes": 0,
+                      "parent_comment_id": "lzjyv6i",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "lzj5dcd",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "Has anyone transferred shares (without selling) to an US Bank self directed non-ira brokerage account? Their website seems to say it’s not supported which feels real stupid if they are trying to get more assets under management ",
+          "timestamp": "2024-11-29T08:00:01+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "lzl29ge",
+              "author": "reddit_user_7573e5992241",
+              "author_karma": 0,
+              "content": "I imagine you're talking about the Asset Transfer option on the dashboard. For me, transferring to my Roth IRA it said \"not supported for this type of account\" or something like that, for a few days after opening it. The rep I talked to said to wait another couple days and if it still wasn't working email in a certain form. Sure enough, the next day that link in the dashboard toolbar worked and my assets transferred just fine. So you might need to just wait a bit more.",
+              "timestamp": "2024-11-29T17:19:35+00:00",
+              "likes": 3,
+              "dislikes": 0,
+              "parent_comment_id": "lzj5dcd",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "lzk2upa",
+              "author": "reddit_user_b1aabfb54c13",
+              "author_karma": 0,
+              "content": "It's called a transfer in kind. I've done it. It's a pain in the butt (but this is how you transfer assets without selling them from one company to another; like combining 401ks from different employers when you change jobs).  You download and print out the transfer in kind paperwork. Fill it out. Then, you have to get it certified with some sort of special stamp (it's not a notary) that only the onsite bank manager has (this was a US Bank policy, not my experience other times I've had to do this). Then you fax it to the appropriate number.\n\nWith the paperwork properly filled out, stamped, and sent to the correct place. It takes about a week to see the funds transfered. Some ETFs and mutual funds won't transfer (but all of mine did. I imagine you have to have some pretty bizzare ones to not make it go through).  \n\nThe broker where the money was originally usually charges a fee to the broker receiving the money. Most brokerages will pay this fee and not pass it on you.  Us Bank does not. They were kind of dicks about it too.  Make sure to leave some cash in the brokerage account unassigned.  They take the money before explaining to you why and it looks and feels bizzare. If you call and ask where the money went, that's when they get snippy. If you mention most brokerages waive the fee, they laugh and say maybe if you were a private client. Maybe...  Kinda dickish in my book. Just try and remember us bank and us bankcorp are two different companies that work together. Us Bank has great customer service. Us bankinvestcorp is the worst. \n\nIt sounds like a huge hassle, but ultimately, it's not that bad.",
+              "timestamp": "2024-11-29T13:39:24+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "lzj5dcd",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "lzl8brg",
+                  "author": "reddit_user_1db7f1eb163e",
+                  "author_karma": 0,
+                  "content": "Wow that sounds… a little ridiculous honestly.",
+                  "timestamp": "2024-11-29T17:53:47+00:00",
+                  "likes": 2,
+                  "dislikes": 0,
+                  "parent_comment_id": "lzk2upa",
+                  "depth": 2,
+                  "replies": []
+                },
+                {
+                  "comment_id": "lzliloz",
+                  "author": "reddit_user_4dff927d3ee1",
+                  "author_karma": 0,
+                  "content": "The stamp was not required for my transfer, but I had to sign and then rescan the document (digital signature not allowed)",
+                  "timestamp": "2024-11-29T18:52:03+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "lzk2upa",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "lzil8dg",
+          "author": "reddit_user_301e20382dce",
+          "author_karma": 0,
+          "content": "It’s neither the “best card” for most Americans,  nor even just for people in this subreddit. No SUB, and requires a high balance for rewards tier to be higher than alternatives. Also lacking features like extended warranty and has FTF. Also not able to get outsized redemptions via points because it’s cashback. If you’re rich AND have very heavy non-cat spend, and no interest in points, or maaaaybe if you get a high CL and will fully leverage the 0% intro sure, sure, go for it I guess.\n\nIt’s a hard no for me, and I’m very glad I have a USBAR which was on the other hand ACTUALLY the best card for most people that could get it.",
+          "timestamp": "2024-11-29T04:50:19+00:00",
+          "likes": 4,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "lzjoi0p",
+              "author": "reddit_user_b4e785a5431e",
+              "author_karma": 0,
+              "content": "I know right, lol,the usbar is basically 3% with a $75 annual fee,that comes with perks,,its not even close,but people love shiny objects",
+              "timestamp": "2024-11-29T11:34:47+00:00",
+              "likes": 0,
+              "dislikes": 0,
+              "parent_comment_id": "lzil8dg",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "lzjol6e",
+                  "author": "reddit_user_301e20382dce",
+                  "author_karma": 0,
+                  "content": "4.5% redeemed towards travel.",
+                  "timestamp": "2024-11-29T11:35:41+00:00",
+                  "likes": 3,
+                  "dislikes": 0,
+                  "parent_comment_id": "lzjoi0p",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "lzjpgyc",
+                      "author": "reddit_user_b4e785a5431e",
+                      "author_karma": 0,
+                      "content": "They need to see how many people would actually product change their bar for this card,probably not that many",
+                      "timestamp": "2024-11-29T11:44:45+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "lzjol6e",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "lzi4qss",
+          "author": "reddit_user_e48364894c87",
+          "author_karma": 0,
+          "content": "Fairly late to the party here no? Thought all of this info has already been beat to death multiple times over on this sub",
+          "timestamp": "2024-11-29T02:46:20+00:00",
+          "likes": 3,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "lzj1eww",
+          "author": "reddit_user_381da2d2ae92",
+          "author_karma": 0,
+          "content": "consider the cost of not being able to churn the checking bonus every 12 months for ~$400+/year",
+          "timestamp": "2024-11-29T07:18:32+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "lzkyfky",
+              "author": "reddit_user_f72f0979305e",
+              "author_karma": 0,
+              "content": "\nDo you have to close the account in order to do that?",
+              "timestamp": "2024-11-29T16:57:33+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "lzj1eww",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "lzl0t85",
+                  "author": "reddit_user_381da2d2ae92",
+                  "author_karma": 0,
+                  "content": "the checking, yes\n\nso technically, you could still do it",
+                  "timestamp": "2024-11-29T17:11:11+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "lzkyfky",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "lzk7hr7",
+          "author": "reddit_user_6e9a584edce6",
+          "author_karma": 0,
+          "content": "While the 4% cash back is great, the multiple accounts and funding make it more of a niche card IMO. If you don’t have $100k in liquid assets to park, a simple 2% cash-back card might be more sensible for everyday use. \n\nI am going to look into this card more closely, as it is attractive.",
+          "timestamp": "2024-11-29T14:12:36+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "lzki8f1",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[deleted]",
+          "timestamp": "2024-11-29T15:22:54+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "lzkym7s",
+              "author": "reddit_user_f72f0979305e",
+              "author_karma": 0,
+              "content": "You would have to call. We can't really know until the fees post in April or whatever.",
+              "timestamp": "2024-11-29T16:58:36+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "lzki8f1",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "lzkyaro",
+          "author": "reddit_user_4917731728c1",
+          "author_karma": 0,
+          "content": "Any way to do this for a business card?",
+          "timestamp": "2024-11-29T16:56:47+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "lzr7h1y",
+          "author": "reddit_user_408bfd1ba1a5",
+          "author_karma": 0,
+          "content": "i dont have one hundred thousand dollars 😀",
+          "timestamp": "2024-11-30T19:21:22+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "m63uqrm",
+          "author": "reddit_user_e6be3d27bd5a",
+          "author_karma": 0,
+          "content": "🚨Why is no one talking about the 1099 implication???\n\nMet with local US Bank Manager, opened Smartly Checking & Savings, been approved for Smartly c/c. Bank confirmed that the 4% if deposited to one’s savings/checking **is** worth 4% BUT ALSO a 1099 situation! This can make the 4%, depending on tax bracket, LESS than 4%. Your thoughts, do you view this differently?",
+          "timestamp": "2025-01-08T20:17:54+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "mhr154u",
+              "author": "reddit_user_d5cc4448e254",
+              "author_karma": 0,
+              "content": "Credit card rewards are a discount on spending and not income, even if deposited to a bank account. So they should not be reported on the 1099.",
+              "timestamp": "2025-03-14T14:12:08+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "m63uqrm",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "m75eggu",
+          "author": "reddit_user_30ea20d8433b",
+          "author_karma": 0,
+          "content": "I currently have $72K in ETFs sitting at Fidelity I could transfer that in kind to US Bank. I then need to supplement that with another $28K. Would I be better of purchasing that amount in say VOO at Fidelity and then moving all $100K at once or moving the existing ETFs, then transferring $28K in cash, followed by purchasing VOO at US Bank? I know the end result is the same, but wondering if there are other factors to consider. The advantage of the latter might be satisfying the checking account SUB in the process.",
+          "timestamp": "2025-01-14T19:40:54+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "m76n4ka",
+          "author": "reddit_user_dd276b7247df",
+          "author_karma": 0,
+          "content": "Does it have purchase protections or an extended warranty benefit?",
+          "timestamp": "2025-01-14T23:33:42+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "mdqygqt",
+          "author": "reddit_user_c066ecd963d6",
+          "author_karma": 0,
+          "content": "Can I just park in $100k in the smartly savings account and earn the 4% cash back? Their savings account gives 3.5% interest annually.",
+          "timestamp": "2025-02-20T04:21:21+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "lzict5y",
+          "author": "reddit_user_bdaf66179001",
+          "author_karma": 0,
+          "content": "nice write up. thank you for your time!",
+          "timestamp": "2024-11-29T03:45:14+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "lzip40s",
+          "author": "reddit_user_288a74dcf3bf",
+          "author_karma": 0,
+          "content": "Too bad US Bank isn’t available in Texas",
+          "timestamp": "2024-11-29T05:22:48+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "lzm2cjq",
+              "author": "reddit_user_718288930f7d",
+              "author_karma": 0,
+              "content": "first open a CD (1 month, $500) then open checking/savings before opening credit card",
+              "timestamp": "2024-11-29T20:46:13+00:00",
+              "likes": 3,
+              "dislikes": 0,
+              "parent_comment_id": "lzip40s",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "lzm2ksj",
+                  "author": "reddit_user_288a74dcf3bf",
+                  "author_karma": 0,
+                  "content": "Wait, you can open a CD and then they will allow you to open a checking/savings? For me, it immediately declines as soon as I enter my zip code on the checking/savings.",
+                  "timestamp": "2024-11-29T20:47:32+00:00",
+                  "likes": 2,
+                  "dislikes": 0,
+                  "parent_comment_id": "lzm2cjq",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "lzm2ubf",
+                      "author": "reddit_user_718288930f7d",
+                      "author_karma": 0,
+                      "content": "Yeah - once I had an account with them I could open a checking account through my online account page\n\nI think I read about it on /r/Churning",
+                      "timestamp": "2024-11-29T20:49:02+00:00",
+                      "likes": 5,
+                      "dislikes": 0,
+                      "parent_comment_id": "lzm2ksj",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "lzm30u7",
+                          "author": "reddit_user_288a74dcf3bf",
+                          "author_karma": 0,
+                          "content": "Thank you! I am going to try this!",
+                          "timestamp": "2024-11-29T20:50:05+00:00",
+                          "likes": 3,
+                          "dislikes": 0,
+                          "parent_comment_id": "lzm2ubf",
+                          "depth": 4,
+                          "replies": [
+                            {
+                              "comment_id": "lzm38e8",
+                              "author": "reddit_user_718288930f7d",
+                              "author_karma": 0,
+                              "content": "Good luck - feel free to ask for help troubleshooting",
+                              "timestamp": "2024-11-29T20:51:17+00:00",
+                              "likes": 2,
+                              "dislikes": 0,
+                              "parent_comment_id": "lzm30u7",
+                              "depth": 5,
+                              "replies": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "comment_id": "lzj78yf",
+              "author": "reddit_user_6cb3bc8cd7c8",
+              "author_karma": 0,
+              "content": "that seems odd.  do you know why?",
+              "timestamp": "2024-11-29T08:20:40+00:00",
+              "likes": 0,
+              "dislikes": 0,
+              "parent_comment_id": "lzip40s",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "lzjomw2",
+          "author": "reddit_user_ec17c9823f43",
+          "author_karma": 0,
+          "content": "It seems like a daily occurrence that USBank fanboys spam this sub with posts like this. Whatever happened to the sub they tried to launch?",
+          "timestamp": "2024-11-29T11:36:11+00:00",
+          "likes": 0,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "lzi0zcp",
+          "author": "reddit_user_657d407454d3",
+          "author_karma": 0,
+          "content": "Is that you, Peggy Hill?",
+          "timestamp": "2024-11-29T02:19:12+00:00",
+          "likes": -1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run021_post02_seed107",
+      "post_slot": 2,
+      "seed_index": 107,
+      "source_raw_post_id": "ulb4cu",
+      "source_product_dir": "Capital One Quicksilver Secured Cash Rewards Credit Card",
+      "source_file": "reddit_post:ulb4cu",
+      "post_type": "card_recommendation",
+      "title": "Recommend CC for immigrants without a credit history",
+      "author": "reddit_user_0dab2d077fca",
+      "author_karma": 0,
+      "content": "Recommend CC for immigrants without a credit history\n\nHey guys, I have been lurking on r/CreditCards, r/personalfinance, r/immigration for the past year, trying to figure out how to jumpstart my credit history and unlock everything I need to open a new chapter of our life and immigrate to the US (landing planned for July). It is a delicate moment when someone starts a new life for a whole family, with a lot of expected expenses in the short term. Also, I have to carefully plan and play very conservatively as everything is affected by nonexisting credit scores (loans, mortgage, insurances, etc...) The plan is to get relatives to jump in and guarantee/sponsor wherever is possible. BACKGROUND: * Age: Just turned 50 * Household: Family, two kids senior high school (probably will need to add them as AU) * Assets: At some point, we will sell everything and move 400k EUR to the US * Location: Still deciding on Miami, Tampa, or Sarasota, but it will be Florida as relatives are there CREDIT PROFILE * I don't have US credit cards * I am AU on US Amex Platinum since 2014 (it expired in 2018, I didn't pick up a replacement card) * I've used it just when in the US or for subscriptions and haven't spent more than 5-6k * I can order a new card through the portal * Back home, I have: * Visa Gold (4.5k USD limit) used only when there was a technical problem with the Debit card, paid out immediately * Visa Infinite Debit (18k USD daily transaction limit), all travel perks & lounges, insurances, etc... * My country doesn't share credit history with any US Credit Bureau * Even if it shares, I don't use CC, don't have a mortgage, debts, etc... * Credit Score: Probably Zero - never had SSN or ITIN number either * Number of personal credit cards approved - ever: 0 * Annual income $: 60-80k CATEGORIES * OK with category-specific cards?: *YES* * OK with rotating category cards?: YES * Estimate average monthly spend * Dining $: 100 (only for some emergency, fast food or similar) * Groceries $: *300-500? (no idea about an average family of 4)* * Gas $: *150 (I don't think I can add 2nd car before I bump my credit score)* * Travel $: 350 - 400 (yearly family trip to EU, + 1-2 solo trips to EU) * Do you plan on using this card abroad for a significant length of time (study abroad, digital nomad, expat, extended travel)?: No (I'll keep the EU Visa Infinite for at least one year) * Any other categories (examples: phone/internet, insurance) or stores (example: Amazon) with significant, regular credit card spend (the more you specify, the better): $ * Heath Insurance$: 1000-1500? (no idea what to expect for a family of 4?) * Car Insurance$: 300 (for a new car worth 25k-30k) * Phone$: 150 * Internet/Cable$: 80? * Any other significant, regular credit card spending you didn't include above?$: Not sure * Can you pay rent by credit card? If yes, list the rent amount and if there's a fee for paying by credit card: $2000 - not sure can it be paid by CC * Spending focus in the first year (as new to the US): * Home improvement, furniture, DYI, Electronics, etc... (I need to buy a lot of stuff, I think most rentals are empty) * Clothing, apparel * No hotels, rentals, vacations - focus would be on flights to Europe for family and a few solo flights to sell things back home. * Absolutely no luxury, limit subscriptions/services to only needed ones. * We don't have any medical issues except allergy (which might not be the case there), so probably not big users of drugstores. MEMBERSHIPS * Current member of Amazon Prime, Costco, Sam's Club, or a Verizon postpaid customer?: No, I am listed on Amazon Prime from my ...",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "i7ubrpo",
+          "author": "reddit_user_e4422aaa716b",
+          "author_karma": 0,
+          "content": "Cap1 secured, Discover it secured",
+          "timestamp": "2022-05-08T21:05:33+00:00",
+          "likes": 6,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "i7ulj08",
+          "author": "reddit_user_72afc814989b",
+          "author_karma": 0,
+          "content": "Discover it secured, i have a card with them and have had a great experience",
+          "timestamp": "2022-05-08T22:16:59+00:00",
+          "likes": 4,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "i7uq01n",
+              "author": "reddit_user_d1773b35f28f",
+              "author_karma": 0,
+              "content": "Utilization: the balance at the time of reporting / total credit line. Most banks will report statement balance, which will be used to calculate your utilization %.\n\nFor a secured card, the amount of your deposit determines your credit limit. E.g., you deposit $2500, your credit limit will be $2500.\n\nSince you have no credit history, you might want to stick with a single secured card to get started. Once you establish some history, you can add additional card and apply for cards from whichever bank you like, it doesn't have to be one bank only.\n\nYou can try getting a card from the bank / credit union you deposit your assets at. If you deposit 400k with them, they maybe more likely to extend credit to you. This can be the case especially so for credit unions.\n\nCycling credit: i.e. using your credit line and repaying it more than once per month; yes you can do it, but many banks don't like it. Once you get a card you can call your bank and tell them you may need to cycle your credit limit for a few months as you work on setting up your new life. This would reduce the possibility of any red flags. You can also initially use your home country's visa with no ftf to supplement your US spend and faze it out over time.\n\nUtilization again: don't be concerned too much about utilization, as it has short term memory. It more or less resets every month. E.g., you have 95% utilization in May and it drops your score, then in June you report 5% utilization, your score will bounce right back. Just make sure to keep utilization down for a month or two right before the time  you are ready /able to apply for another card or loan\n\nAmex: if you have an Amex card or can get one in your home country, you can contact Amex once you move to the US to transfer it to Amex US. You may want to do a little research on the details.\n\nHope this helps. Good luck with your upcoming adventure",
+              "timestamp": "2022-05-08T22:52:27+00:00",
+              "likes": 4,
+              "dislikes": 0,
+              "parent_comment_id": "i7ulj08",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "i7wfl9a",
+                  "author": "reddit_user_5058d43dd310",
+                  "author_karma": 0,
+                  "content": "Thanks, I appreciate your help. You addressed perfectly the pain points that I was baffled about.\n\n> You can try getting a card from the bank / credit union you deposit your assets at. If you deposit 400k with them, they maybe more likely to extend credit to you. This can be the case especially so for credit unions.\n\nHonestly, I thought this would solve all my onboarding problems and one of the reasons why I was not proactive about it sooner. As I gather funds and sell assets, I would save money until I get decent credit history to consider a mortgage. Having deposited funds should reassure banks. But the problem I am facing is that it is almost impossible to have EUR account (all my assets and savings will be in EUR) in a US bank. And I am reluctant to transfer funds now when it is the worst exchange rate in the past 20 years. USD was never so strong.\n\n> Cycling credit: i.e. using your credit line and repaying it more than once per month; yes you can do it, but many banks don't like it. Once you get a card you can call your bank and tell them you may need to cycle your credit limit for a few months as you work on setting up your new life. This would reduce the possibility of any red flags. You can also initially use your home country's visa with no ftf to supplement your US spend and faze it out over time.\n\nI don't have a problem using my home country visa to avoid this problem. I just wanted to ensure that I am not missing a good chance to boost my credit score. I'll stick to the 30% utilization up to the deposited amount, clear at the end of the month, rinse and repeat :)\n\n> Amex: if you have an Amex card or can get one in your home country, you can contact Amex once you move to the US to transfer it to Amex US. You may want to do a little research on the details.\n\nI just found out about that option, and I could get Amex Gold, but I think it is too late... It might be counterproductive and looks bad to get one just before arriving in the US.",
+                  "timestamp": "2022-05-09T09:38:42+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "i7uq01n",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "i7vy1m2",
+          "author": "reddit_user_faad6d4840c9",
+          "author_karma": 0,
+          "content": "Can you get an Amex card in your current country before moving and maintain it for a bit? Amex lets you get one US card based on  your existing relationship abroad, even when you don't have a US credit history. Given your spending forecast, that might be a better play in addition to a secured card, both for SUB and ongoing CB.\n\n\nhttps://www.americanexpress.com/global-card-transfers/united-states.html",
+          "timestamp": "2022-05-09T05:28:02+00:00",
+          "likes": 3,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "i7wbmbb",
+              "author": "reddit_user_5058d43dd310",
+              "author_karma": 0,
+              "content": "Great find! I was looking at the Amex site, but I was focused on supported countries where you can transfer your credit score, so I missed this.\n\nI found out that one of the banks back home where I qualify with balance allows me to have Amex Gold for free. But I will have to switch to their checking account, which can be done next month, and then I can apply... so there is not much time to build a credit score as I might be in the US by then :( \n\nIt's a pity I didn't know about this earlier.",
+              "timestamp": "2022-05-09T08:37:48+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "i7vy1m2",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "i7w7cew",
+          "author": "reddit_user_fb46fe9d1b8a",
+          "author_karma": 0,
+          "content": "Google secured credit card , after 9 to 12 month u may graduate to unsecured",
+          "timestamp": "2022-05-09T07:32:25+00:00",
+          "likes": 3,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "i7up4e2",
+          "author": "reddit_user_fb22d2bcbb5a",
+          "author_karma": 0,
+          "content": "As a first-time credit card, I'd go with a secured credit card like the Capital One or Discover one. Their process is really straightforward and you can use your first card as a stepping stone to a card better suited for your spending habits after almost a year of credit history. I'm a bit biased towards Discover since they were my first credit card and their customer service is A1. On top of that, they were really generous in raising credit limits to help with your credit utilization. Good luck!",
+          "timestamp": "2022-05-08T22:45:18+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "i7wc1tn",
+              "author": "reddit_user_5058d43dd310",
+              "author_karma": 0,
+              "content": "Thanks for the feedback about Discovery. Customer service means a lot for newcomers to the US. I bet I will have a lot of things that I need to figure out where support might be handy. \n\nI was considering Capital One just because I heard they are more open to clients without previous history. \n\nDo I need to have a checking account at Discovery for the secured card? I was thinking of opening a checking account at Chase, to boost my chances of getting into their CC ecosystem later.",
+              "timestamp": "2022-05-09T08:44:36+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "i7up4e2",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "i7wvsua",
+                  "author": "reddit_user_fb22d2bcbb5a",
+                  "author_karma": 0,
+                  "content": "Nah you don’t need to have a checking account with Discover. You can just apply and it should go through. As for opening a checking account with Chase, that is a good idea. If you are still in college/university, start off with their college account since their fees are waived.",
+                  "timestamp": "2022-05-09T12:46:35+00:00",
+                  "likes": 2,
+                  "dislikes": 0,
+                  "parent_comment_id": "i7wc1tn",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "post_id": "real_run021_post03_seed108",
+      "post_slot": 3,
+      "seed_index": 108,
+      "source_raw_post_id": "1p0efzq",
+      "source_product_dir": "Prime Visa",
+      "source_file": "reddit_post:1p0efzq",
+      "post_type": "other",
+      "title": "How does Amazon prime visa card work",
+      "author": "reddit_user_0dab2d077fca",
+      "author_karma": 0,
+      "content": "How does Amazon prime visa card work\n\nEdit: thank you everyone I always was so scared to use the one credit card I did have now I actually know how it works I think I was just following the wrong advice \n\nI shop on Amazon alot and I saw the offer for the credit card and to not pay anything this order I want to get one but I'm unsure on how credit cards work. I have one with a 300 limit and only spend like 10 dollars or less a month on and it pay it off as soon as possible I've had it for about 6 months now and if I grt the Amazon one and my order is like 200 dollars and it goes on the card and I pay it off immediately will it hurt my score since I'm spending such a big amount? Are store cards like this different from normal credit cards?",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "npi5u8h",
+          "author": "reddit_user_76f3b0b0da37",
+          "author_karma": 0,
+          "content": "This was pretty tough to follow, but it's just a normal credit card.",
+          "timestamp": "2025-11-18T15:13:36+00:00",
+          "likes": 18,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "npib6bg",
+              "author": "reddit_user_8fe4c7a3a77f",
+              "author_karma": 0,
+              "content": "These cards always confuse me because they are saying to use them to save money and get a discount on your order but with my normal credit card I just spend 10 dollars every month on gas because I've always heard it's not good to use alot of it even if you pay it back",
+              "timestamp": "2025-11-18T15:40:20+00:00",
+              "likes": -1,
+              "dislikes": 0,
+              "parent_comment_id": "npi5u8h",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "npigz20",
+                  "author": "reddit_user_76f3b0b0da37",
+                  "author_karma": 0,
+                  "content": "I recommend doing some research through this sub and r/CRedit. Just use the card, pay it off, don't pay interest.",
+                  "timestamp": "2025-11-18T16:08:43+00:00",
+                  "likes": 11,
+                  "dislikes": 0,
+                  "parent_comment_id": "npib6bg",
+                  "depth": 2,
+                  "replies": []
+                },
+                {
+                  "comment_id": "npio1pw",
+                  "author": "reddit_user_964f174db1d0",
+                  "author_karma": 0,
+                  "content": "That's a myth. !utilization",
+                  "timestamp": "2025-11-18T16:43:04+00:00",
+                  "likes": 7,
+                  "dislikes": 0,
+                  "parent_comment_id": "npib6bg",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "npio1qo",
+                      "author": "reddit_user_bca8033b630e",
+                      "author_karma": 0,
+                      "content": "**Here's some info on utilization and its impact on credit score:**\n\nIgnore the 10/20/30 utilization %. It’s only applicable when you need to apply for a new line of credit, 1-2 months out.\n\nUtilization is suppose to fluctuate, can be easily manipulated, and holds no memory. It doesn’t build credit--think of it as a finishing touch when you need to optimize your score.\n\nFeel free to safely and organically use 100% of your credit limit within a month and let whatever utilization report, provided you pay off your statement balance in full before due date. Every month. Every time.\n\nFor more info, please read this post: \n\n* [Putting the \"30% rule\" myth regarding revolving utilization to rest](https://www.reddit.com/r/CreditCards/comments/12s5fyf/putting_the_30_rule_myth_regarding_revolving/)\n\n* [Credit Card Basics - Utilization](https://www.reddit.com/r/CreditCards/wiki/credit_cards_basics/#wiki_utilization)\n\nI can be summoned to comment by using command(s):\n\n`!utilization`\n\n*I am a bot, and this action was performed automatically. Please [contact the moderators of this subreddit](/message/compose/?to=/r/CreditCards) if you have any questions or concerns.*",
+                      "timestamp": "2025-11-18T16:43:04+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "npio1pw",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                },
+                {
+                  "comment_id": "npika60",
+                  "author": "reddit_user_e8c6398a8d41",
+                  "author_karma": 0,
+                  "content": "> because I've always heard it's not good to use alot of it even if you pay it back\n\n\nThen you listened to morons. Utilisation has no history.  ",
+                  "timestamp": "2025-11-18T16:24:43+00:00",
+                  "likes": 7,
+                  "dislikes": 0,
+                  "parent_comment_id": "npib6bg",
+                  "depth": 2,
+                  "replies": []
+                },
+                {
+                  "comment_id": "npilxdq",
+                  "author": "reddit_user_a86e465c1865",
+                  "author_karma": 0,
+                  "content": "You’re not getting a discount on your Amazon order.\n\nWith this card you’re getting cashback points to be redeemed later for future “money”.",
+                  "timestamp": "2025-11-18T16:32:44+00:00",
+                  "likes": 4,
+                  "dislikes": 0,
+                  "parent_comment_id": "npib6bg",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "npk9f0n",
+                      "author": "reddit_user_76f3b0b0da37",
+                      "author_karma": 0,
+                      "content": "You can use it for statement credit, which can be accounted for as a discount. They just push you to use it on a future order",
+                      "timestamp": "2025-11-18T21:25:30+00:00",
+                      "likes": 2,
+                      "dislikes": 0,
+                      "parent_comment_id": "npilxdq",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "npomfnj",
+                          "author": "reddit_user_a86e465c1865",
+                          "author_karma": 0,
+                          "content": "Either way, it’s not a discount. \n\nA discount means the item price is reduced\n\nA statement credit means you pay the full price of the item and then pay yourself back on the statement \n\nFunctionally maybe the same, but not the same",
+                          "timestamp": "2025-11-19T15:40:14+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "npk9f0n",
+                          "depth": 4,
+                          "replies": [
+                            {
+                              "comment_id": "npomlqn",
+                              "author": "reddit_user_76f3b0b0da37",
+                              "author_karma": 0,
+                              "content": "But it is functionally the same. Whereas if you could only use it on future purchases, it would not be functionally the same as a discount",
+                              "timestamp": "2025-11-19T15:41:05+00:00",
+                              "likes": 1,
+                              "dislikes": 0,
+                              "parent_comment_id": "npomfnj",
+                              "depth": 5,
+                              "replies": [
+                                {
+                                  "comment_id": "npon0ug",
+                                  "author": "reddit_user_a86e465c1865",
+                                  "author_karma": 0,
+                                  "content": "Like I said, functionally the same. That doesn’t mean it’s the same. \n\nCredits are not discounts. They have different names",
+                                  "timestamp": "2025-11-19T15:43:12+00:00",
+                                  "likes": 0,
+                                  "dislikes": 0,
+                                  "parent_comment_id": "npomlqn",
+                                  "depth": 6,
+                                  "replies": [
+                                    {
+                                      "comment_id": "nponr1e",
+                                      "author": "reddit_user_76f3b0b0da37",
+                                      "author_karma": 0,
+                                      "content": "That’s just splitting hairs though. If it’s functionally the same, who cares what the names are? If I buy something for $100, get $5 back, then use it for statement credit, my statement for the $100 item is $95. That’s a $5 discount with an extra step. I do it this way every time too, I never use the points on purchases in checkout, so I can earn full points on the purchase. \n\nYou can view it how you want, but as long as it’s effectively the same as a discount, and not a coupon on a future purchase, I personally don’t care about the terminology.",
+                                      "timestamp": "2025-11-19T15:46:51+00:00",
+                                      "likes": 1,
+                                      "dislikes": 0,
+                                      "parent_comment_id": "npon0ug",
+                                      "depth": 7,
+                                      "replies": [
+                                        {
+                                          "comment_id": "npow85b",
+                                          "author": "reddit_user_a86e465c1865",
+                                          "author_karma": 0,
+                                          "content": "Good for you. \n\nWords have meaning. Discount is not the same as credit. I was just pointing out to OP, who clearly doesn’t understand how the Amazon credit card works, they they are not getting a discount on their product",
+                                          "timestamp": "2025-11-19T16:28:42+00:00",
+                                          "likes": 0,
+                                          "dislikes": 0,
+                                          "parent_comment_id": "nponr1e",
+                                          "depth": 8,
+                                          "replies": [
+                                            {
+                                              "comment_id": "npowkob",
+                                              "author": "reddit_user_76f3b0b0da37",
+                                              "author_karma": 0,
+                                              "content": "\nThey are, effectively, getting a discount. Words have meaning, and when two different words have the same effective meaning, it’s worth noting.",
+                                              "timestamp": "2025-11-19T16:30:26+00:00",
+                                              "likes": 1,
+                                              "dislikes": 0,
+                                              "parent_comment_id": "npow85b",
+                                              "depth": 9,
+                                              "replies": []
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "npi73d3",
+          "author": "reddit_user_96e01fdb391d",
+          "author_karma": 0,
+          "content": "Definitely do some research on what is a credit card before applying for one!",
+          "timestamp": "2025-11-18T15:19:56+00:00",
+          "likes": 10,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "npi6cnr",
+          "author": "reddit_user_ac27b82cab00",
+          "author_karma": 0,
+          "content": "It works like any other credit card. Chase issues the Amazon Prime Visa card, and they explain in excruciating detail how the card and account work on their site and in the application.",
+          "timestamp": "2025-11-18T15:16:11+00:00",
+          "likes": 7,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "npirrvc",
+              "author": "reddit_user_e3851fdbb641",
+              "author_karma": 0,
+              "content": "\\*Chase issues the Amazon Prime **Visa** card.  Not to be confused with the Synchrony Amazon Prime Card.",
+              "timestamp": "2025-11-18T17:01:13+00:00",
+              "likes": 4,
+              "dislikes": 0,
+              "parent_comment_id": "npi6cnr",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "npiw5wo",
+                  "author": "reddit_user_ac27b82cab00",
+                  "author_karma": 0,
+                  "content": "Good call out. Thank you. I edited my post to avoid confusion.",
+                  "timestamp": "2025-11-18T17:22:52+00:00",
+                  "likes": 3,
+                  "dislikes": 0,
+                  "parent_comment_id": "npirrvc",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "npilqcp",
+          "author": "reddit_user_a86e465c1865",
+          "author_karma": 0,
+          "content": "Amazon card is not a store card\n\nIt’s a regular credit card.\nYou spend money on it, whether at Amazon or elsewhere, and you pay the money back. \n\nIf you do not pay the statement balance in full by the due date, you pay interest charges.",
+          "timestamp": "2025-11-18T16:31:46+00:00",
+          "likes": 3,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "npisps1",
+              "author": "reddit_user_e3851fdbb641",
+              "author_karma": 0,
+              "content": "Just want to clarify that the Amazon **Visa** card is the normal credit card that can be used anywhere.  \n\nThere are Amazon cards that are \"store\" cards, which of course can only be used at Amazon (and whole foods).",
+              "timestamp": "2025-11-18T17:05:53+00:00",
+              "likes": 3,
+              "dislikes": 0,
+              "parent_comment_id": "npilqcp",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "npj05fb",
+                  "author": "reddit_user_a86e465c1865",
+                  "author_karma": 0,
+                  "content": "Good call!",
+                  "timestamp": "2025-11-18T17:42:35+00:00",
+                  "likes": 2,
+                  "dislikes": 0,
+                  "parent_comment_id": "npisps1",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "npi66ca",
+          "author": "reddit_user_b0aafe1b78d2",
+          "author_karma": 0,
+          "content": "It’s just a regular credit card like any other. Just follow the !basics and !utilization responses.",
+          "timestamp": "2025-11-18T15:15:18+00:00",
+          "likes": 4,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "npi66eg",
+              "author": "reddit_user_bca8033b630e",
+              "author_karma": 0,
+              "content": "**Here's some info on utilization and its impact on credit score:**\n\nIgnore the 10/20/30 utilization %. It’s only applicable when you need to apply for a new line of credit, 1-2 months out.\n\nUtilization is suppose to fluctuate, can be easily manipulated, and holds no memory. It doesn’t build credit--think of it as a finishing touch when you need to optimize your score.\n\nFeel free to safely and organically use 100% of your credit limit within a month and let whatever utilization report, provided you pay off your statement balance in full before due date. Every month. Every time.\n\nFor more info, please read this post: \n\n* [Putting the \"30% rule\" myth regarding revolving utilization to rest](https://www.reddit.com/r/CreditCards/comments/12s5fyf/putting_the_30_rule_myth_regarding_revolving/)\n\n* [Credit Card Basics - Utilization](https://www.reddit.com/r/CreditCards/wiki/credit_cards_basics/#wiki_utilization)\n\nI can be summoned to comment by using command(s):\n\n`!utilization`\n\n*I am a bot, and this action was performed automatically. Please [contact the moderators of this subreddit](/message/compose/?to=/r/CreditCards) if you have any questions or concerns.*",
+              "timestamp": "2025-11-18T15:15:19+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "npi66ca",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "npi66fa",
+              "author": "reddit_user_bca8033b630e",
+              "author_karma": 0,
+              "content": "**Credit Card Basics:**\n\nTake a look at the [Credit Card Basics wiki page](https://www.reddit.com/r/CreditCards/wiki/credit_cards_basics/#wiki_credit_card_basics) which covers credit card fundamentals. \n\nTL;DR: \n\n* A credit card is a revolving loan.\n\n* You will receive a \"statement\" on a monthly basis breaking down your balance, charges, and how much is owed.\n\n* You should always pay, at minimum, the statement balance before the cutoff time of the due date.\n\n* The statement date is a minimum of 21 days BEFORE the due date.\n\n* You are only required to pay for charges that have shown up on your most recent statement.\n\n* Credit cards should not be used as an emergency fund. It is recommended to only use a credit card if you have the money to pay for that purchase TODAY.\n\n* The best practice is to pay your statement balance in full, every month.\n\n\nI can be summoned to comment by using command(s):\n\n`!basics`\n\n*I am a bot, and this action was performed automatically. Please [contact the moderators of this subreddit](/message/compose/?to=/r/CreditCards) if you have any questions or concerns.*",
+              "timestamp": "2025-11-18T15:15:19+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "npi66ca",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "npi9us2",
+              "author": "reddit_user_8fe4c7a3a77f",
+              "author_karma": 0,
+              "content": "So should I only spend a small amount of it each month? Or should I use it for my whole Amazon purchase and then pay it off right away would that bring down my score?these cards always confuse me because it says you can use it to save money but normally you would only spend a small amount on the card each month but I don't want to miss out on saving any money if I can",
+              "timestamp": "2025-11-18T15:33:47+00:00",
+              "likes": 0,
+              "dislikes": 0,
+              "parent_comment_id": "npi66ca",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "npibbfc",
+                  "author": "reddit_user_b0aafe1b78d2",
+                  "author_karma": 0,
+                  "content": "> So should I only spend a small amount of it each month?\n\nNo, use however much of your limit you want each month, as long as you pay it off.\n\n> Or should I use it for my whole Amazon purchase and then pay it off right away \n\nDon’t pay anything off right away. Wait for the bank to send you a monthly statement, and make one payment a month for that statement balance before the due date. It’s just like every other monthly usage-based bill you have.\n\n> normally you would only spend a small amount on the card each month\n\nI don’t understand what you’re getting at here. I spend a ton on my Amazon Visa; who says you should only use a small amount? Just spend what you *organically* need to spend (I.e., don’t spend more than you normally would) and you’ll get 5+% back on it all.\n\n> would that bring down my score?\n\nYou should never normally care about utilization fluctuations in score if you’re not applying for loans. Your score exists in the first place for lenders, and if nobody is actively pulling it, all you have is a meaningless number on paper. Focus on long term credit health (basically paying all your bills on time, in full, over a long time) and you’ll never really need to care about your score.",
+                  "timestamp": "2025-11-18T15:41:04+00:00",
+                  "likes": 9,
+                  "dislikes": 0,
+                  "parent_comment_id": "npi9us2",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "npimwxs",
+                      "author": "reddit_user_8fe4c7a3a77f",
+                      "author_karma": 0,
+                      "content": "Thank you so much credit always confused me alot because all the adult in my life have used them all wrong and are thousands in debt so I didn't even get my first card til like 6 months ago and I'm almost 21 I'm just so scared of making a mistake when it comes to credit so thank you",
+                      "timestamp": "2025-11-18T16:37:35+00:00",
+                      "likes": 4,
+                      "dislikes": 0,
+                      "parent_comment_id": "npibbfc",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "npj0t9u",
+                          "author": "reddit_user_f8299796f732",
+                          "author_karma": 0,
+                          "content": "If you intend to use a CC with the intent of carrying debt into the next month, don't open a CC. Most of us here pay off statement balance (with the exception of 0% apr intro offers, in which case the money used to pay it off accrues savings account interest before the 0% ends). As such, we get the rewards that come with the cards, without having to pay finance charges for not paying off debts.",
+                          "timestamp": "2025-11-18T17:45:49+00:00",
+                          "likes": 2,
+                          "dislikes": 0,
+                          "parent_comment_id": "npimwxs",
+                          "depth": 4,
+                          "replies": []
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "comment_id": "npikk3t",
+                  "author": "reddit_user_e8c6398a8d41",
+                  "author_karma": 0,
+                  "content": "> but normally you would only spend a small amount on the card each month \n\n\nThat's not normal at all. You are confused because you are following wrong advice.  \nAn amazon card is like any other card. Pay it off in full, and **one month before needing low utilisation**, go for All Zero Except One.  ",
+                  "timestamp": "2025-11-18T16:26:04+00:00",
+                  "likes": 4,
+                  "dislikes": 0,
+                  "parent_comment_id": "npi9us2",
+                  "depth": 2,
+                  "replies": []
+                },
+                {
+                  "comment_id": "npif09m",
+                  "author": "reddit_user_ef081feced2b",
+                  "author_karma": 0,
+                  "content": "Who is telling you to only spend a small amount on the card? \n\nWhat is the purpose of having the card if you're not going to use it to the full extent/purpose?\n\nWhy would you pay it off right away? It's a credit card.. which gives you a grace period to pay it off. It generates the statement and you pay it in full by the due date. \n\nI'm not sure what savings besides the \"sale\" price prices offered on Amazon because you have Prime, but you get 5% back on your purchases at minimum, that you can redeem for a statement credit & a variety of other things.",
+                  "timestamp": "2025-11-18T15:59:09+00:00",
+                  "likes": 3,
+                  "dislikes": 0,
+                  "parent_comment_id": "npi9us2",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "npilfqh",
+                      "author": "reddit_user_e8c6398a8d41",
+                      "author_karma": 0,
+                      "content": "Apparently OP is optimising utilisation despite having no loan request in mind.  ",
+                      "timestamp": "2025-11-18T16:30:20+00:00",
+                      "likes": 3,
+                      "dislikes": 0,
+                      "parent_comment_id": "npif09m",
+                      "depth": 3,
+                      "replies": []
+                    },
+                    {
+                      "comment_id": "npinxqq",
+                      "author": "reddit_user_8fe4c7a3a77f",
+                      "author_karma": 0,
+                      "content": "I think I just took the wrong advice when I got my first card after reading this thread I didn't have much guidance going in to adult hood so I always get nervous especially when it comes to credit cards since it's not technically my money",
+                      "timestamp": "2025-11-18T16:42:31+00:00",
+                      "likes": 2,
+                      "dislikes": 0,
+                      "parent_comment_id": "npif09m",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "npiozdp",
+                          "author": "reddit_user_ef081feced2b",
+                          "author_karma": 0,
+                          "content": "Agreed, it's technically not your money, but you should always treat a credit card like a debit card. Don't make purchases you don't have the money for and just pay it in full by the due date and you'll be fine. There's no reason to not use the full balance, **if you can afford it**, if there's not another financial product you have in mind down the line. They only gave you $300; you won't get a credit limit increase without proving that you need it.",
+                          "timestamp": "2025-11-18T16:47:35+00:00",
+                          "likes": 3,
+                          "dislikes": 0,
+                          "parent_comment_id": "npinxqq",
+                          "depth": 4,
+                          "replies": [
+                            {
+                              "comment_id": "npiqei2",
+                              "author": "reddit_user_8fe4c7a3a77f",
+                              "author_karma": 0,
+                              "content": "So should I start using my credit card for my grocery's and etc and then just pay it back in full at the end of the month? I have a capital one credit card and I get 2% back at Walmart and more at other places but should I start utilizing it for that? Thank you so much",
+                              "timestamp": "2025-11-18T16:54:32+00:00",
+                              "likes": 3,
+                              "dislikes": 0,
+                              "parent_comment_id": "npiozdp",
+                              "depth": 5,
+                              "replies": [
+                                {
+                                  "comment_id": "npiyamx",
+                                  "author": "reddit_user_5e864fadfc70",
+                                  "author_karma": 0,
+                                  "content": "Yes, absolutely use it for groceries etc! The best way to get an increased credit limit is to show the bank that you’re using the limit you have.\n\nIn regard to making payments, that’s exactly right. Every month (it might not be at the _end_ of the month, but it will be the same time every month), you will get a statement from the bank that says something like:\n\nStatement balance: $123.45  \nMinimum payment due: $25.00  \nPayment due date: December 12, 2025  \n\nThe most important thing is exactly like you said, to pay the _full_ “statement balance” by the due date. So in this case, you would make sure to pay $123.45 by December 12th. Doing it like this, you’ll pay no interest to the bank, but you’ll get all the benefits of using a credit card! (Rewards, purchase protection, etc.)\n\nGood luck, you’ve got this :)",
+                                  "timestamp": "2025-11-18T17:33:21+00:00",
+                                  "likes": 4,
+                                  "dislikes": 0,
+                                  "parent_comment_id": "npiqei2",
+                                  "depth": 6,
+                                  "replies": [
+                                    {
+                                      "comment_id": "nponxvu",
+                                      "author": "reddit_user_8fe4c7a3a77f",
+                                      "author_karma": 0,
+                                      "content": "Thank you so much this was so helpful :)",
+                                      "timestamp": "2025-11-19T15:47:48+00:00",
+                                      "likes": 2,
+                                      "dislikes": 0,
+                                      "parent_comment_id": "npiyamx",
+                                      "depth": 7,
+                                      "replies": []
+                                    }
+                                  ]
+                                },
+                                {
+                                  "comment_id": "npixfug",
+                                  "author": "reddit_user_9432ae51f920",
+                                  "author_karma": 0,
+                                  "content": "not at the end of the month, but whenever your statement is due.",
+                                  "timestamp": "2025-11-18T17:29:07+00:00",
+                                  "likes": 2,
+                                  "dislikes": 0,
+                                  "parent_comment_id": "npiqei2",
+                                  "depth": 6,
+                                  "replies": []
+                                },
+                                {
+                                  "comment_id": "npj3nzl",
+                                  "author": "reddit_user_ef081feced2b",
+                                  "author_karma": 0,
+                                  "content": "Might take a bit more information, but you can optimize your cards categories for the best rewards. \n\nYour Amazon card gives you 5% back if you shop on their platform and Whole Foods. So if you have those as options to do your grocery shopping, then yes, I would put my spend there. \n\nBut when your first statement cuts, pay attention to the information on there. Usually your payment is due around 21 days after your statement closes. Just remember to pay it in full to avoid interest and not fall into the pitfalls of those you know. No reason to be scared, credit is a tool.\n\nOut of curiosity, which CapitalOne card do you have that gives you 2% back at Walmart? I could’ve sworn that that partnership ended and the only way you can get cash back at Walmart is if you have a OnePay card.",
+                                  "timestamp": "2025-11-18T17:59:28+00:00",
+                                  "likes": 1,
+                                  "dislikes": 0,
+                                  "parent_comment_id": "npiqei2",
+                                  "depth": 6,
+                                  "replies": [
+                                    {
+                                      "comment_id": "npooc27",
+                                      "author": "reddit_user_8fe4c7a3a77f",
+                                      "author_karma": 0,
+                                      "content": "Thank you so much I feel like I understand credit so much better I was always scared to get a card so I didn't even get one until I realized how important it was to have one I have the platinum captial one credit card! I got it about 6 months ago! It still showed me that I save 2% but I also have heard the same thing because I work at Walmart",
+                                      "timestamp": "2025-11-19T15:49:45+00:00",
+                                      "likes": 1,
+                                      "dislikes": 0,
+                                      "parent_comment_id": "npj3nzl",
+                                      "depth": 7,
+                                      "replies": []
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "npisixk",
+          "author": "reddit_user_76aebae0297e",
+          "author_karma": 0,
+          "content": "It’s like any credit card that you can spend anywhere! You just get a larger cash back percentage if spent on Amazon. Just make sure you’re always paying off your full balance off on time and don’t spend more than you have in your bank account",
+          "timestamp": "2025-11-18T17:04:56+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "npik4cm",
+          "author": "reddit_user_e8c6398a8d41",
+          "author_karma": 0,
+          "content": "> Are store cards like this different from normal credit cards?  \n\n\nNo, like other cards utilisation is not a factor beyond the next month.  ",
+          "timestamp": "2025-11-18T16:23:57+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "npisqrq",
+          "author": "reddit_user_054610af7dc3",
+          "author_karma": 0,
+          "content": "It’s a credit card. You get 5% back on Amazon purchases. Use it for Amazon purchases and get 5% back. Upon approval you get a gift card. Pay it off when it’s due. Watch some YouTube videos on how credit card works. Daniel Braun is a good YouTuber that doesn’t bore you to death.",
+          "timestamp": "2025-11-18T17:06:01+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "npitcp3",
+          "author": "reddit_user_e3851fdbb641",
+          "author_karma": 0,
+          "content": "The Chase Amazon (Prime) Visa card can be used anywhere Visa is accepted.  But Chase wants 1 year of credit history unless you already bank with them.\n\nSynchrony Amazon (Prime) cards (store cards) can only be used on Amazon or Whole Foods.  They are easier to be approved for.",
+          "timestamp": "2025-11-18T17:09:01+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "npoofuc",
+          "author": "reddit_user_8fe4c7a3a77f",
+          "author_karma": 0,
+          "content": "Thank you everyone for your kindness and your help hopefully this thread will be able to help guide others :)",
+          "timestamp": "2025-11-19T15:50:16+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "npqbmdw",
+          "author": "reddit_user_88b715505e18",
+          "author_karma": 0,
+          "content": "Good on you for being cautious with credit! Using $200 on the Amazon card and paying it off right away won't hurt your score at all - that's actually exactly how you should use credit cards. The Amazon Prime card is just a regular credit card that gives you extra rewards on Amazon purchases, not really a \"store card\" in the traditional sense\n\n  \nJust make sure you can actually afford to pay it off immediately like you plan to, and you'll be golden",
+          "timestamp": "2025-11-19T20:45:16+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run021_post04_seed109",
+      "post_slot": 4,
+      "seed_index": 109,
+      "source_raw_post_id": "1ra6kgs",
+      "source_product_dir": "Wells Fargo Autograph Journey℠ Card",
+      "source_file": "reddit_post:1ra6kgs",
+      "post_type": "simple_question",
+      "title": "Specific question: does the Wells Fargo Autograph Journey reward Trip.com hotels? Need to use platform for Mainland China",
+      "author": "reddit_user_0dab2d077fca",
+      "author_karma": 0,
+      "content": "Specific question: does the Wells Fargo Autograph Journey reward Trip.com hotels? Need to use platform for Mainland China\n\nTitle summarizes everything; if Trip.com doesn't get rewarded by the card due to needing to be booked directly, I'll try to find a direct hotel's site to book Mainland China hotels with.",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "o6i8em1",
+          "author": "reddit_user_979407629e47",
+          "author_karma": 0,
+          "content": "Should get 3x on travel, probably not the 5x. You can always make a small refundable booking to test what you get",
+          "timestamp": "2026-02-20T22:37:50+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    }
+  ]
+}

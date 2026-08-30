@@ -110,7 +110,8 @@ evaluation. The benchmark construction stage should:
 
 For the 11 newly collected domains, the current seed-selection rule requires
 at least one fetched real comment. The legacy credit-card seed pool was created
-with a different rule and contains one zero-comment seed among the first 150.
+with a different rule and contains four zero-comment seeds among the first 150
+(146 of the 150 roots have captured comments).
 This protocol difference must be retained in provenance and harmonized before
 a final benchmark freeze if strict cross-domain identity is required.
 

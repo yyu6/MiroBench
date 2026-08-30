@@ -1,0 +1,3031 @@
+{
+  "meta": {
+    "product_category": "credit_cards",
+    "baseline": "real_reddit_reference",
+    "run_id": "run_016_sampled_reddit"
+  },
+  "posts": [
+    {
+      "post_id": "real_run016_post00_seed080",
+      "post_slot": 0,
+      "seed_index": 80,
+      "source_raw_post_id": "1e9rrt4",
+      "source_product_dir": "JetBlue Plus Card",
+      "source_file": "reddit_post:1e9rrt4",
+      "post_type": "complaint_cs",
+      "title": "Is Barclays JetBlue Plus Card Worth it?",
+      "author": "reddit_user_0dab2d077fca",
+      "author_karma": 0,
+      "content": "Is Barclays JetBlue Plus Card Worth it?\n\nI posted before but scrapped it since my situation changed. Long story short, I didn't get the promotional benefits I thought I was going to get on this card when I applied. I ended up just getting 15,000 bonus JetBlue travel points after $1k in purchases in 90 days and $250 statement credit after my first purchase. \n\nI was on the line with customer service for almost 2 hours, and they gave me an additional 10k bonus points for the trouble. It (kind of) evened out to be the benefits from the original promo I thought I was getting.\n\nEither way, is the card still worth keeping? We primarily use JetBlue for our flights and they have great benefits if you use the card for travel. The 2x points for groceries and restaurants are also not bad, but other cards offer something rates.\n\nThere is an annual fee of $99, but the rep told me to call back in a couple of months to get it waived. Has anyone had any luck with that?",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "legj1vk",
+          "author": "reddit_user_6eb86d96e7fa",
+          "author_karma": 0,
+          "content": "Yes if you ride them more than 1 a year and usually check a bag.  Even if you don’t their SIB is usually good if you use them a lot",
+          "timestamp": "2024-07-22T23:03:48+00:00",
+          "likes": 3,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "legtmdb",
+              "author": "reddit_user_1d7d58758c58",
+              "author_karma": 0,
+              "content": "That's what I figured too. I don't normally check a bag, but now I might be more included to. What does SIB stand for?",
+              "timestamp": "2024-07-23T00:09:04+00:00",
+              "likes": 2,
+              "dislikes": 0,
+              "parent_comment_id": "legj1vk",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "legse1a",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[deleted]",
+          "timestamp": "2024-07-23T00:01:27+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "legttw5",
+              "author": "reddit_user_1d7d58758c58",
+              "author_karma": 0,
+              "content": "Thank you for reminding me about the 5k each year and I didn't know about the tiles bonus. Good to keep in mind.",
+              "timestamp": "2024-07-23T00:10:22+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "legse1a",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "legg7w0",
+          "author": "reddit_user_53e1319c4811",
+          "author_karma": 0,
+          "content": "A card is only \"worth\" keeping if you derive value from it. It's crazy to think about, I know.",
+          "timestamp": "2024-07-22T22:46:51+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "leggw33",
+              "author": "reddit_user_1d7d58758c58",
+              "author_karma": 0,
+              "content": "I suppose I should consider if the card offers at least $99 worth of value in a year. It's my first card with an annual fee, so I'm new to that aspect of credit cards. I always thought to avoid them.",
+              "timestamp": "2024-07-22T22:50:55+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "legg7w0",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "legjfe4",
+                  "author": "reddit_user_53e1319c4811",
+                  "author_karma": 0,
+                  "content": "Do you fly JetBlue often? Your post makes it sound like you're not getting value from it. Downgrade to a no annual fee Jet Blue card or cancel it.",
+                  "timestamp": "2024-07-22T23:06:03+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "leggw33",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "leglzf1",
+                      "author": "reddit_user_1d7d58758c58",
+                      "author_karma": 0,
+                      "content": "Between 2 to 5 times a year. I try to avoid other airlines. They aren't the absolute best but they've been the most consistently average imo.",
+                      "timestamp": "2024-07-22T23:21:26+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "legjfe4",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "lznlgif",
+                          "author": "reddit_user_6a90dd4003dd",
+                          "author_karma": 0,
+                          "content": "Then yes, 6x points alone on flights, plus your 5k annual bonus, more than saves $99 doesn’t it??",
+                          "timestamp": "2024-11-30T02:35:22+00:00",
+                          "likes": 2,
+                          "dislikes": 0,
+                          "parent_comment_id": "leglzf1",
+                          "depth": 4,
+                          "replies": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "post_id": "real_run016_post01_seed081",
+      "post_slot": 1,
+      "seed_index": 81,
+      "source_raw_post_id": "1j8otrk",
+      "source_product_dir": "Wells Fargo Reflect® Card",
+      "source_file": "reddit_post:1j8otrk",
+      "post_type": "approval_dp",
+      "title": "Wells Fargo data point (Active Cash, Reflect, Attune, Credit Limit)",
+      "author": "reddit_user_0dab2d077fca",
+      "author_karma": 0,
+      "content": "Wells Fargo data point (Active Cash, Reflect, Attune, Credit Limit)\n\nPosting less to spark an active discussion but more to bury in the board as a data point if anyone’s weighing a similar decision ahead. The TLDR data points: * Wells Fargo Attune is hard to come by. Echoing people’s data points here, in branch at least, it’s not featured on the marketing standee in branch VP guy’s office. They also mention that odds increase if you have a banking relationship with them (not just another credit card) but even still, sometimes WF is more cautious on approval on products that they receive an overwhelming amount of applications for. * Another YMMV/based on your own unique credit profile disclaimer, but, Wells Fargo does appear to print out higher overall limits comparably to other lenders * not fully confirmed yet on credit limit pooling/reallocating, but possibly the case. Might test ahead. If it matters for the “Long story long”: was caught flat-footed on needing to scrap and replace my HVAC system and (still not understanding/comfortable with going the HELOC route) I put most of the expenses on some helpful 0% direct deposit cash advance offers from one of my high limit BofA cards, and took out a loan from a fintech company (wisetack) associated with my hvac installer as a way for them to offer financing. I thought I read the fine print (it’s a fixed APR) but it did render on my credit as a “line of credit” rather than a fixed rate loan. So that has had a little extra weight on my utilization ratio. I was looking into doing a balance transfer to either extend the runway on the 0% loans or as a means to trim the higher APR line of credit and surveying the options. Question after question over the years on the sub here about people asking about “what card gives the highest credit limits for balance transfers” are met with the true and accurate advice that… no one knows for certain, each case relies on your individual credit profile etc. But there were enough of tinges of reactions from people here who made me cautious about going some routes: ie that Citi can sometimes start you at like a $500 limit, or that you’ll have to wait 6 months before Discover will process a credit limit increase on a new card. I’ve seen that Chase lets you reallocate credit limits from existing cards, so I knew in the back of my mind that a Slate product could be in my option set, but I want to “save” that option for when my roof likely needs to be redone. So that was pointing me in the Wells Fargo direction. I had heard that they either typically gave generous limits, and experienced it myself with my only current product from them (a Journey card with a 22k limit) or they had some type of similar working to Chase where you could either possibly request a credit limit reallocation between products, or their team might automatically adjust your limits from old lines to new lines when applying for new credit The Reflect had an attractive 21 month offer, but with a 5% balance transfer fee, I didn’t want to pull the trigger on that and figured I could make a shorter term work and again “save” the reflect as an option for another major expense if I haven’t yet had a chance to build up a proper emergency fund yet (relatively new, cash poor, homeowner…but working on rebuilding it after this latest home repair). Found out instead, when getting an invoice from my kids’ daycare for tax purposes, that the daycare doesn’t just take check or Zelle, they’ll take credit card for a 3.5% fee. So went with WF’s 2% active cash instead for their 12 month 0% Apr on purchase and the $200 SUB. They gave me a $20k limit — apparently as a standalone and ...",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "mh6rxsm",
+          "author": "reddit_user_0f61d815e473",
+          "author_karma": 0,
+          "content": "I don’t really get the hide-the-ball thing that WF has with the Attune. \n\nOne game is to divert ordinary swipes onto the card so that free cash can go towards other bills. You may save more in interest than you’d lose on rewards. \n\nMake sure you’re auto-paying the minimum payment during the 0% offer.",
+          "timestamp": "2025-03-11T11:51:59+00:00",
+          "likes": 3,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "mh6ui6r",
+              "author": "reddit_user_986c908c2929",
+              "author_karma": 0,
+              "content": "On Attune they probably want people like my P2 who have 2-3 cards and it can compete for their top of wallet default pull vs us types micromanaging a card for ever purchase/purpose.\n\nAnd thanks for the additional recs! Definitely using all those to help make sure I untangle from this leverage unscathed. \n\nI didn’t want to detail it in an already long original post, but another tactic to play the lesser of two evils arbitrage game.  I’ve also manufactured effectively a ~3% $10k personal loan from Chase  by using their Chase My Plan offers when I could stack them with freedom categories (Amazon, PayPal) or some CIC Visa’s at Staples. \n\nMost of those plans will ballpark you on 8% in fees, but then the quarterly rewards soften the net blow and beat what you can get on the website for just seeking an unsecured loan. \n\nThat was probably also an unstated large factor in not wanting run after the Slate yet too. \n\nBut using that to ramp up fast and chunk away faster at the 10.9% line of credit.  Some of these 0% cards were coming up sooner though (May and July) so i wanted to makes sure i had the setup to eliminate or shift them before hand, so big relief / positive break on the Active Cash limit, daycare taking credit card, and getting my house out of escrow requirements so I can pay quarterly property taxes either by check (and keeping funds in a hysa until then, which I’ve done twice already) or by this 0% card for a 3% fee and front load some of that cashflow toward this way too",
+              "timestamp": "2025-03-11T12:10:31+00:00",
+              "likes": 3,
+              "dislikes": 0,
+              "parent_comment_id": "mh6rxsm",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "mh6uv69",
+                  "author": "reddit_user_0f61d815e473",
+                  "author_karma": 0,
+                  "content": "If you’re open to it, one game is to open 0% APR business cards. As long as they don’t report to the consumer credit reports, the utilization there won’t impact your personal credit scores.\n\nI’m floating about $16-$17K on Chase Inks right now to avoid drawing down our HELOC further.",
+                  "timestamp": "2025-03-11T12:13:02+00:00",
+                  "likes": 4,
+                  "dislikes": 0,
+                  "parent_comment_id": "mh6ui6r",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "mh9mzr1",
+          "author": "reddit_user_d52bb1e8006c",
+          "author_karma": 0,
+          "content": "I've got a couple inputs here:\n\nRecently got denied for the Attune despite having a relationship with WF since 2016 with a car loan, and cards with them since 2018\n\nAlso, there's no way to pool/reallocate credit limits. I'm currently in that bind since I run an Active Cash with a $9k limit and an Autograph with an $18k limit that I'd love to balance out each other with, but can't.",
+          "timestamp": "2025-03-11T20:33:21+00:00",
+          "likes": 3,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run016_post02_seed082",
+      "post_slot": 2,
+      "seed_index": 82,
+      "source_raw_post_id": "v39ih8",
+      "source_product_dir": "Wells Fargo Autograph® Card",
+      "source_file": "reddit_post:v39ih8",
+      "post_type": "news_or_rumor",
+      "title": "Wells Fargo 'Autograph' CONFIRMED for July 13",
+      "author": "reddit_user_0dab2d077fca",
+      "author_karma": 0,
+      "content": "Wells Fargo 'Autograph' CONFIRMED for July 13\n\n* Welcome bonus 30,000 points on $1,500 in first 3 months\n * 3x points on restaurants, travel, gas, transit, phone plans, streaming; 1X everything else\n * $0 annual fee\n\nI was also told that there would be an option to convert your current cards to the new autograph through your mobile app without another hard inquiry.\n\nI'm another WFC employee and we got some marketing material recently so I'm assuming we're allowed to share this.\n\nEDIT: Answers to some FAQs:\n\n* the card is plastic with a metal core and has a purple to red gradient.\n* no foreign currency conversion fees.\n* it is a visa signature card with additional benefits like cell phone protection, rental damage waiver, etc\n* Some branches can process applications as soon as June 25. Which ones? I have no idea.",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "iax0i9d",
+          "author": "reddit_user_e83a5d04d7e1",
+          "author_karma": 0,
+          "content": "This sounds exactly like the Propel, plus phone plans. Wonder what payment network.",
+          "timestamp": "2022-06-02T14:39:17+00:00",
+          "likes": 50,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "iax0w4t",
+              "author": "reddit_user_af2245907488",
+              "author_karma": 0,
+              "content": "Visa according to the leaks. All of WF upcoming cards are going to be visas.",
+              "timestamp": "2022-06-02T14:42:08+00:00",
+              "likes": 42,
+              "dislikes": 0,
+              "parent_comment_id": "iax0i9d",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "iax0zz6",
+                  "author": "reddit_user_ab2fb6952559",
+                  "author_karma": 0,
+                  "content": "Yes it will be visa",
+                  "timestamp": "2022-06-02T14:42:56+00:00",
+                  "likes": 18,
+                  "dislikes": 0,
+                  "parent_comment_id": "iax0w4t",
+                  "depth": 2,
+                  "replies": []
+                },
+                {
+                  "comment_id": "ib2yobf",
+                  "author": "reddit_user_b1c630343a23",
+                  "author_karma": 0,
+                  "content": "Actually this card will be better than the Propel. There is no Foreign Transaction Fees, Like the Propel. Being a Visa it is excepted in more places overseas.",
+                  "timestamp": "2022-06-03T21:16:26+00:00",
+                  "likes": 2,
+                  "dislikes": 0,
+                  "parent_comment_id": "iax0w4t",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "ien8xy4",
+                      "author": "reddit_user_b1c630343a23",
+                      "author_karma": 0,
+                      "content": "It does have one weakness, Compare Benefits with the Autograph and the Propel. I'm hanging on the the Propel. I'm waiting to see what they offer in their high end cards with annual fees.",
+                      "timestamp": "2022-07-03T01:19:01+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "ib2yobf",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "comment_id": "iaxf5e5",
+              "author": "reddit_user_9a3963a7794a",
+              "author_karma": 0,
+              "content": "Will it combine with the Signature for 1.5x in travel like the Propel? Maybe I should replace the Propel and also get the SUB",
+              "timestamp": "2022-06-02T16:24:49+00:00",
+              "likes": 12,
+              "dislikes": 0,
+              "parent_comment_id": "iax0i9d",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "iaxpg0n",
+                  "author": "reddit_user_e83a5d04d7e1",
+                  "author_karma": 0,
+                  "content": "Can you confirm this exists?  I thought I read somewhere this benefit was discontinued. \n\nIf it is not discontinued, I'd keep the propel. Or at least until they confirm this will do the same.",
+                  "timestamp": "2022-06-02T17:36:33+00:00",
+                  "likes": 5,
+                  "dislikes": 0,
+                  "parent_comment_id": "iaxf5e5",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "iay0nza",
+                      "author": "[deleted]",
+                      "author_karma": 0,
+                      "content": "[deleted]",
+                      "timestamp": "2022-06-02T18:55:47+00:00",
+                      "likes": 6,
+                      "dislikes": 0,
+                      "parent_comment_id": "iaxpg0n",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "iazw7y9",
+                          "author": "reddit_user_2c9cde051748",
+                          "author_karma": 0,
+                          "content": "I have an Active Cash and Signature card and I tested it out. Yes you can move points between these 2 cards. That means if you move points from Active Cash to Signature you'll get a 50 pct boost on Airline ticket purchases thru the WF travel portal giving you an effective 3 pct cash back.\n\nI did get a notice that the benefits on my Signature card are changing. I am guessing it will convert to an Autograph card and I will lose that feature.",
+                          "timestamp": "2022-06-03T03:37:49+00:00",
+                          "likes": 6,
+                          "dislikes": 0,
+                          "parent_comment_id": "iay0nza",
+                          "depth": 4,
+                          "replies": []
+                        }
+                      ]
+                    },
+                    {
+                      "comment_id": "iayjq9e",
+                      "author": "reddit_user_9a3963a7794a",
+                      "author_karma": 0,
+                      "content": "Yes I can still redeem travel at 1.5 cents/pt",
+                      "timestamp": "2022-06-02T21:14:48+00:00",
+                      "likes": 3,
+                      "dislikes": 0,
+                      "parent_comment_id": "iaxpg0n",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "comment_id": "ib1679b",
+              "author": "reddit_user_5befded4f455",
+              "author_karma": 0,
+              "content": "Most cell phone providers give you a discount for using direct deposit rather than a credit card, around 10% for Verizon.",
+              "timestamp": "2022-06-03T13:03:53+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "iax0i9d",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "ib19u7z",
+                  "author": "reddit_user_e83a5d04d7e1",
+                  "author_karma": 0,
+                  "content": "Totally agree. I use the vz card and get the same 10 off. Most of my 'utilities ' come with either a discount for ACH or surcharge for cc.\n\nAll said, I missed out on the Propel and still want this because of transit, SUB, and 0% APR.",
+                  "timestamp": "2022-06-03T13:34:14+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "ib1679b",
+                  "depth": 2,
+                  "replies": []
+                },
+                {
+                  "comment_id": "ib6ps6i",
+                  "author": "reddit_user_4f5ea964924c",
+                  "author_karma": 0,
+                  "content": "I know T-Mobile doesn't give a discount for that, but instead for having your bill set on Autopay",
+                  "timestamp": "2022-06-04T21:39:39+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "ib1679b",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "iawwsns",
+          "author": "reddit_user_3dbfa9590be7",
+          "author_karma": 0,
+          "content": "Had this come out 6 months ago, I would have jumped on this. Since then I’ve gotten several cards that match or beat these numbers.",
+          "timestamp": "2022-06-02T14:11:04+00:00",
+          "likes": 86,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "iax09iz",
+              "author": "reddit_user_4713242a99aa",
+              "author_karma": 0,
+              "content": "I’m in the same situation as you. OP mentioned it might be possible to product change the Active Cash to the Autograph so I might do that since even my AC has become obsolete now.",
+              "timestamp": "2022-06-02T14:37:26+00:00",
+              "likes": 14,
+              "dislikes": 0,
+              "parent_comment_id": "iawwsns",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "iax0z1g",
+                  "author": "reddit_user_b51b5b2552b2",
+                  "author_karma": 0,
+                  "content": "Curious what you’re doing to beat 2x cash back on general purchases that has made active cash obsolete?",
+                  "timestamp": "2022-06-02T14:42:45+00:00",
+                  "likes": 14,
+                  "dislikes": 0,
+                  "parent_comment_id": "iax09iz",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "iax1mss",
+                      "author": "reddit_user_4713242a99aa",
+                      "author_karma": 0,
+                      "content": "I’m not beating 2%, I just also have the Apple card and the Venture X so they already take care of 2% category. \n\n\nAdditionally neither of those two cards have FTF whereas the AC does.",
+                      "timestamp": "2022-06-02T14:47:41+00:00",
+                      "likes": 16,
+                      "dislikes": 0,
+                      "parent_comment_id": "iax0z1g",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "iaxbxgy",
+                          "author": "reddit_user_a43c00af31c1",
+                          "author_karma": 0,
+                          "content": "You may want to consider Alliant 2.5% cashback card. It's a benefits-heavy Visa Signature card with no FTF - pretty unbeatable when it comes to cashback rate. When I don't work on SUBs or draining other spend-related bonuses (like Hilton Surpass $15k spend for a free night cert worth $450, on top of regular 3x HH for $1, is equivalent to 5.07% in my case), I use my Alliant card.",
+                          "timestamp": "2022-06-02T16:01:56+00:00",
+                          "likes": 10,
+                          "dislikes": 0,
+                          "parent_comment_id": "iax1mss",
+                          "depth": 4,
+                          "replies": [
+                            {
+                              "comment_id": "iaxde5z",
+                              "author": "reddit_user_4713242a99aa",
+                              "author_karma": 0,
+                              "content": "Unfortunately it looks like a card that belongs to a credit union and you also need to open a checking account with them so that’s not something I’m too interested in.",
+                              "timestamp": "2022-06-02T16:12:25+00:00",
+                              "likes": 9,
+                              "dislikes": 0,
+                              "parent_comment_id": "iaxbxgy",
+                              "depth": 5,
+                              "replies": [
+                                {
+                                  "comment_id": "iay23a8",
+                                  "author": "reddit_user_d52bb1e8006c",
+                                  "author_karma": 0,
+                                  "content": "Not gonna lie, I thought the same thing you did, but then I looked into their accounts.\n\nTheir default checking is a .25% APY interest account if you have 1 direct deposit a month, and their default savings is a high yield account that just bumped the APY to .75%.\n\nI ended up deciding to move all my banking to them just because the rates are so damn good, and then the card is just gravy. Not to mention it's all in one place vs having my HY savings separate from my primary checking account.",
+                                  "timestamp": "2022-06-02T19:06:07+00:00",
+                                  "likes": 13,
+                                  "dislikes": 0,
+                                  "parent_comment_id": "iaxde5z",
+                                  "depth": 6,
+                                  "replies": [
+                                    {
+                                      "comment_id": "iayckxx",
+                                      "author": "reddit_user_1944d6364007",
+                                      "author_karma": 0,
+                                      "content": "This is so sage advice, not sure why people are arguing with you.  It's a great card and great bank for general use.",
+                                      "timestamp": "2022-06-02T20:21:54+00:00",
+                                      "likes": 3,
+                                      "dislikes": 0,
+                                      "parent_comment_id": "iay23a8",
+                                      "depth": 7,
+                                      "replies": []
+                                    }
+                                  ]
+                                },
+                                {
+                                  "comment_id": "iaxfiwo",
+                                  "author": "reddit_user_a43c00af31c1",
+                                  "author_karma": 0,
+                                  "content": ">Unfortunately it looks like a card that belongs to a credit union\n\nThis one accepts everyone anywhere in the US.\n\n> and you also need to open a checking account with them so that’s not something I’m too interested in.\n\nCorrect. You need one incoming ACH/DD/check (any amount) per month, and a minimum daily balance of $1,000, consecutively for a full quarter, to activate 2.5% CB on the card.\n\nThe thing is, Alliant turned out so great for me I made them my daily driver for checking and savings. For example:\n- APY on savings is top notch (0.78% right now - comparable with Barclays, Discover Bank, Amex savings etc), and APY on checking is also good (0.25% - basically nobody does it on checking accounts)\n- You can set up an overdraft protection that automatically takes money from savings to cover your checking when needed. Effectively, you sit your money on savings at all times.\n- You can send immediate transfers to other Alliant customers without Zelle or other third parties.",
+                                  "timestamp": "2022-06-02T16:27:30+00:00",
+                                  "likes": 4,
+                                  "dislikes": 0,
+                                  "parent_comment_id": "iaxde5z",
+                                  "depth": 6,
+                                  "replies": [
+                                    {
+                                      "comment_id": "iay0xhp",
+                                      "author": "reddit_user_2ed80b3dd6b6",
+                                      "author_karma": 0,
+                                      "content": "That is not the requirement for 2.5% earning. You need one electronic deposit a month which can be any amount and any form (ACH, DD, check...) and a $1000 average daily balance for the previous quarter. The savings rate is currently 0.78% and the checking is 0.25%. The Alliant debit card works fine with the zelle app",
+                                      "timestamp": "2022-06-02T18:57:43+00:00",
+                                      "likes": 7,
+                                      "dislikes": 0,
+                                      "parent_comment_id": "iaxfiwo",
+                                      "depth": 7,
+                                      "replies": [
+                                        {
+                                          "comment_id": "iaysorg",
+                                          "author": "reddit_user_a43c00af31c1",
+                                          "author_karma": 0,
+                                          "content": "Thanks for clarifying the requirements and APY. It's been a while since I opened that account.",
+                                          "timestamp": "2022-06-02T22:22:12+00:00",
+                                          "likes": 3,
+                                          "dislikes": 0,
+                                          "parent_comment_id": "iay0xhp",
+                                          "depth": 8,
+                                          "replies": []
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "comment_id": "iaz51eq",
+                              "author": "reddit_user_3106cfdd00d9",
+                              "author_karma": 0,
+                              "content": "You’d have to put $40K worth of spend through this card to justify it over a 2% card with a $200 SUB. It’s a great card to start out with but if you’ve already got a decent 2% earner I wouldn’t worry about squeezing out that extra .5% and instead chase other bonuses or round out your offerings.",
+                              "timestamp": "2022-06-02T23:59:09+00:00",
+                              "likes": -1,
+                              "dislikes": 0,
+                              "parent_comment_id": "iaxbxgy",
+                              "depth": 5,
+                              "replies": [
+                                {
+                                  "comment_id": "ib08ree",
+                                  "author": "reddit_user_a43c00af31c1",
+                                  "author_karma": 0,
+                                  "content": "SUBs always go first. Highest cashback card when not churning a SUB.",
+                                  "timestamp": "2022-06-03T05:49:41+00:00",
+                                  "likes": 1,
+                                  "dislikes": 0,
+                                  "parent_comment_id": "iaz51eq",
+                                  "depth": 6,
+                                  "replies": []
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "comment_id": "iaxb36n",
+                          "author": "reddit_user_b51b5b2552b2",
+                          "author_karma": 0,
+                          "content": "Gotcha. Thanks. Can capital one venture rewards be redeemed 1:1 for cash? Not in that ecosystem yet…",
+                          "timestamp": "2022-06-02T15:55:53+00:00",
+                          "likes": 2,
+                          "dislikes": 0,
+                          "parent_comment_id": "iax1mss",
+                          "depth": 4,
+                          "replies": [
+                            {
+                              "comment_id": "iaxbz1x",
+                              "author": "reddit_user_4713242a99aa",
+                              "author_karma": 0,
+                              "content": "No the point to cash ratio is pretty bad. I plan to just redeem points towards recent travel purchase or use them directly to purchase flights (which is 1:1).",
+                              "timestamp": "2022-06-02T16:02:15+00:00",
+                              "likes": 8,
+                              "dislikes": 0,
+                              "parent_comment_id": "iaxb36n",
+                              "depth": 5,
+                              "replies": []
+                            }
+                          ]
+                        },
+                        {
+                          "comment_id": "iaxx63c",
+                          "author": "[deleted]",
+                          "author_karma": 0,
+                          "content": "Apple card isn't a good comparison imo. Requires Apple pay to get 2% back whereas AC doesn't. For some it isn't a problem but I don't care for mobile wallet at all so  Apple card is effectively 1% for me.",
+                          "timestamp": "2022-06-02T18:31:01+00:00",
+                          "likes": 3,
+                          "dislikes": 0,
+                          "parent_comment_id": "iax1mss",
+                          "depth": 4,
+                          "replies": [
+                            {
+                              "comment_id": "iaxxhnx",
+                              "author": "reddit_user_4713242a99aa",
+                              "author_karma": 0,
+                              "content": "I’m aware and that’s why I said that I also have the VX. Combined they have more than enough coverage for my 2% catch-all category.",
+                              "timestamp": "2022-06-02T18:33:21+00:00",
+                              "likes": 5,
+                              "dislikes": 0,
+                              "parent_comment_id": "iaxx63c",
+                              "depth": 5,
+                              "replies": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "comment_id": "iaxbm5p",
+              "author": "reddit_user_a43c00af31c1",
+              "author_karma": 0,
+              "content": "Nothing beats a free $300. It's not an either-or game. You get them all, one after another. 8 SUBs total for me and P2 in the last 3 months:\n\n- Amex Hilton Surpass - 130k HH & free night certificate @ $1000 - received\n- Cardless - 2x $300 @ $2000 - received\n- Amex BCP - $50 @ $1000 - add authorized user to your card deal - received\n- US Bank Triple Cash - $500 @ $4500 - money spent, waiting\n- FNBO Getaway - $300 @ $1000 - money spent, waiting\n- BofA Unlimited Cash - $200 @ $1000 - money spent, reward shoeing up on the list, waiting for statement to redeem\n- Amex Hilton - 100k HH @ $1000 - money spent, waiting",
+              "timestamp": "2022-06-02T15:59:41+00:00",
+              "likes": 57,
+              "dislikes": 0,
+              "parent_comment_id": "iawwsns",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "iay2yo0",
+                  "author": "reddit_user_07c69d577cc9",
+                  "author_karma": 0,
+                  "content": ">\tNothing beats a free $300.\n\nWell, except when your velocity of applications starts to exclude you from being able to tap into those $800+ sign-up offers.",
+                  "timestamp": "2022-06-02T19:12:28+00:00",
+                  "likes": 53,
+                  "dislikes": 0,
+                  "parent_comment_id": "iaxbm5p",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "iays7y4",
+                      "author": "reddit_user_a43c00af31c1",
+                      "author_karma": 0,
+                      "content": "SUBs alone - $1,690 in hard cash, 380K HH (= $2,280), and 2 free night certs (=$900) in 2022 YTD. Total value $4,870. High spend rewards (like free night cert for $15K spend) excluded.\n\nLast year was $1,700 in hard cash, 180K HH (= $1,080), 100,000 AA (= $1,200). Total value $3,980.\n\nTotal since 2017 is $18,875 or $17,275 (incl. / excl. Amex high spend rewards). Am I really excluded from anything of value? Can your strategy make more than $17K in SUBs alone in 5 years? Legitimate question - if yes, please show me how.",
+                      "timestamp": "2022-06-02T22:18:35+00:00",
+                      "likes": 14,
+                      "dislikes": 0,
+                      "parent_comment_id": "iay2yo0",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "iaz0c1e",
+                          "author": "reddit_user_07c69d577cc9",
+                          "author_karma": 0,
+                          "content": "In particular, options like the Venture X 100k SUB, the Citi Premier 80k SUB, and the CSP 80k SUB were all going to be problematic with a credit report that has high velocity.\n\nYou can definitely yield more total dollars chasing every offer out there, but the net return on effort will vary depending on how you value your time.",
+                          "timestamp": "2022-06-02T23:20:43+00:00",
+                          "likes": 13,
+                          "dislikes": 0,
+                          "parent_comment_id": "iays7y4",
+                          "depth": 4,
+                          "replies": [
+                            {
+                              "comment_id": "ib0y407",
+                              "author": "reddit_user_1e4750b90833",
+                              "author_karma": 0,
+                              "content": "I think this comes down to how you organize and keep track. It’s arguably less effort than trying to figure out which card to use to maximize category bonuses",
+                              "timestamp": "2022-06-03T11:45:02+00:00",
+                              "likes": 4,
+                              "dislikes": 0,
+                              "parent_comment_id": "iaz0c1e",
+                              "depth": 5,
+                              "replies": []
+                            },
+                            {
+                              "comment_id": "ib07oab",
+                              "author": "reddit_user_a43c00af31c1",
+                              "author_karma": 0,
+                              "content": "> In particular, options like the Venture X 100k SUB, the Citi Premier 80k SUB, and the CSP 80k SUB were all going to be problematic with a credit report that has high velocity.\n\nFor sure, Cap1 and Chase aren't accessible to me, but Citi shouldn't be a problem. Whatever I or P2 applied for, always got it, so Citi Premier may be possible. I'll be on the lookout for their SUB offers, thanks for recommending.\n\n> You can definitely yield more total dollars chasing every offer out there, but the net return on effort will vary depending on how you value your time.\n\nYou're suggesting my approach takes a lot of time. I don't really see it that way. Filling in an online application is what, 2 minutes max? With billing addresses in LastPass, I don't even have to type it manually. Spend tracking is seamless with Mint. I use it whether I churn a SUB or not.",
+                              "timestamp": "2022-06-03T05:36:31+00:00",
+                              "likes": 4,
+                              "dislikes": 0,
+                              "parent_comment_id": "iaz0c1e",
+                              "depth": 5,
+                              "replies": [
+                                {
+                                  "comment_id": "ifrtlxz",
+                                  "author": "reddit_user_d3805ae3976d",
+                                  "author_karma": 0,
+                                  "content": "Strolling bypasser here. Just wanted to say I appreciate your civility.",
+                                  "timestamp": "2022-07-11T21:05:31+00:00",
+                                  "likes": 4,
+                                  "dislikes": 0,
+                                  "parent_comment_id": "ib07oab",
+                                  "depth": 6,
+                                  "replies": [
+                                    {
+                                      "comment_id": "ifs8820",
+                                      "author": "reddit_user_a43c00af31c1",
+                                      "author_karma": 0,
+                                      "content": "Thanks.",
+                                      "timestamp": "2022-07-11T22:42:57+00:00",
+                                      "likes": 2,
+                                      "dislikes": 0,
+                                      "parent_comment_id": "ifrtlxz",
+                                      "depth": 7,
+                                      "replies": []
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "comment_id": "ilqyney",
+                      "author": "[deleted]",
+                      "author_karma": 0,
+                      "content": "[deleted]",
+                      "timestamp": "2022-08-25T16:00:48+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "iay2yo0",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "ilr0bpr",
+                          "author": "reddit_user_07c69d577cc9",
+                          "author_karma": 0,
+                          "content": "CapOne Venture X ($1k bonus at launch), Amex Gold/Platinum (90-150k worth at least 1.1c cashed out a Schwab), Chase Sapphire Reserve 70k points worth $1050 via PYB, etc.\n\nThen you have second tier options like the US Bank Altitude Reserve with a SUB worth $750.",
+                          "timestamp": "2022-08-25T16:11:20+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "ilqyney",
+                          "depth": 4,
+                          "replies": []
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "comment_id": "iay66t4",
+                  "author": "reddit_user_1be4884482d9",
+                  "author_karma": 0,
+                  "content": "So far have done csp w my gf, venture x myself, now doing csp myself and probably plan to do venture x on her name next. What would be a good high paying card to do later this year?",
+                  "timestamp": "2022-06-02T19:35:44+00:00",
+                  "likes": 7,
+                  "dislikes": 0,
+                  "parent_comment_id": "iaxbm5p",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "iayp2od",
+                      "author": "reddit_user_a43c00af31c1",
+                      "author_karma": 0,
+                      "content": "r/churning has a flowchart to help you decide: https://www.reddit.com/r/churning/comments/s07cfp/credit_card_recommendation_flowchart_jan2022/. The gist of it is if you're under 5/24, you pick from these lucrative cards, otherwise you pick whatever pays \"best\". \"Best\" isn't a very clear term, $50 @ $100 spend is meh for me. $200 @ $1000 or $300 @ $2000 is great. $500 @ $4500 would normally be meh to me but since I had to pay $13,000 for A/C (that I could split across many CCs), I did it anyway.\n\nThe only derivations between the flowchart and my actions are:\n\n- For Amex and Chase specifically, I totally skip cards that have an annual fee unless I plan to keep the card. I value my relationship with Amex and Chase the most, and won't put it at risk by opening, churcning and closing a card. These two issuers have cards that save me a ton of money and I won't risk my long-term relationship for a one-time SUB:\n  - Amex Hilton Aspire - $250 yearly credit on my HGVC timeshare maintenance fees, a free night Hilton certificate - these two alone already cover my $450 AF. Diamond status is an icing on the cake, as it significantly increases the value of my HH points - got a free room upgrade in 75% of my bookings (I know because I track it). \n  - Amex Hilton Surpass - 6x HH on supermarkets/grocery stores, and it's better than 6% pure cashback BCP, because BCP has a limit of $6000 per year, and my family needs 2 BCP cards.\n    - 2xBCP ($12k) + generic card ($3k): `2*($6000*.06-$95)+$3000*.025 = $605`\n    - 1xAspire ($15k): `6*$15000*.007+$450-$95 = $985`\n  - Chase Amazon - 5% cashback and good benefits (esp. warranty and purchase protection) and I spend quite a lot\n- For other cards, I totally skip cards that don't waive the annual fee in the first year, or the SUB isn't that high if I account for the annual fee (e.g. screw a $500 SUB if I have to pay $350 upon approval).",
+                      "timestamp": "2022-06-02T21:54:54+00:00",
+                      "likes": 6,
+                      "dislikes": 0,
+                      "parent_comment_id": "iay66t4",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "id004wz",
+                          "author": "reddit_user_3dbfa9590be7",
+                          "author_karma": 0,
+                          "content": "Keep the card at least 2 years and doubt you’d have an issue.",
+                          "timestamp": "2022-06-19T23:27:49+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "iayp2od",
+                          "depth": 4,
+                          "replies": []
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "comment_id": "iayhze4",
+                  "author": "reddit_user_43cdc861c6e0",
+                  "author_karma": 0,
+                  "content": "> BofA Unlimited Cash - $300 @ $1000\n\nI've never seen higher than 20% roi on spending to sub, how did you get 300?",
+                  "timestamp": "2022-06-02T21:01:37+00:00",
+                  "likes": 5,
+                  "dislikes": 0,
+                  "parent_comment_id": "iaxbm5p",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "iayjpio",
+                      "author": "reddit_user_a43c00af31c1",
+                      "author_karma": 0,
+                      "content": "Pardon me, it's $200 indeed. Corrected.",
+                      "timestamp": "2022-06-02T21:14:38+00:00",
+                      "likes": 3,
+                      "dislikes": 0,
+                      "parent_comment_id": "iayhze4",
+                      "depth": 3,
+                      "replies": []
+                    },
+                    {
+                      "comment_id": "ib07c80",
+                      "author": "reddit_user_9f1b769daaea",
+                      "author_karma": 0,
+                      "content": "Both chase feeedoms have a 40% ROI right now and it's the standard.\n\n$200 on $500\n\nUnless you meant that specific card then ignore me lol",
+                      "timestamp": "2022-06-03T05:32:32+00:00",
+                      "likes": 3,
+                      "dislikes": 0,
+                      "parent_comment_id": "iayhze4",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                },
+                {
+                  "comment_id": "ib2bn1k",
+                  "author": "reddit_user_c44f1631e1f5",
+                  "author_karma": 0,
+                  "content": "FNBO Getaway had a SUB?",
+                  "timestamp": "2022-06-03T18:11:39+00:00",
+                  "likes": 3,
+                  "dislikes": 0,
+                  "parent_comment_id": "iaxbm5p",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "ib3r5mf",
+                      "author": "reddit_user_a43c00af31c1",
+                      "author_karma": 0,
+                      "content": "Yes, I got a targeted offer in the mail. Under access & reservation codes only.\n\n> You're preselected for $300 cash bonus (30,000 points equivalent) when you spend $1,000 within the first 3 billing cycles.",
+                      "timestamp": "2022-06-04T01:41:08+00:00",
+                      "likes": 3,
+                      "dislikes": 0,
+                      "parent_comment_id": "ib2bn1k",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "ilqysl0",
+                          "author": "[deleted]",
+                          "author_karma": 0,
+                          "content": "[deleted]",
+                          "timestamp": "2022-08-25T16:01:43+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "ib3r5mf",
+                          "depth": 4,
+                          "replies": [
+                            {
+                              "comment_id": "ilrm07u",
+                              "author": "reddit_user_a43c00af31c1",
+                              "author_karma": 0,
+                              "content": "Unsure. But I and P2 have like 60 cards each so we're on every pre-screen list in existence. That helps, I guess.",
+                              "timestamp": "2022-08-25T18:27:33+00:00",
+                              "likes": 1,
+                              "dislikes": 0,
+                              "parent_comment_id": "ilqysl0",
+                              "depth": 5,
+                              "replies": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "comment_id": "ibajeeq",
+                  "author": "[deleted]",
+                  "author_karma": 0,
+                  "content": "[deleted]",
+                  "timestamp": "2022-06-05T20:51:26+00:00",
+                  "likes": 2,
+                  "dislikes": 0,
+                  "parent_comment_id": "iaxbm5p",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "ibarwow",
+                      "author": "reddit_user_a43c00af31c1",
+                      "author_karma": 0,
+                      "content": "One can dream but it wouldn't be a smart decision from them to do it.",
+                      "timestamp": "2022-06-05T22:00:04+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "ibajeeq",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                },
+                {
+                  "comment_id": "idlus5y",
+                  "author": "reddit_user_ba2d4bda21ef",
+                  "author_karma": 0,
+                  "content": "Thanks for this, really helpful insight. If you don’t mind me asking, do you have a process in which you choose what cards to go after one after another? And what is your plan once the AFs kick in for the cards? Do you typically leave them open after the initial year?",
+                  "timestamp": "2022-06-24T20:43:14+00:00",
+                  "likes": 2,
+                  "dislikes": 0,
+                  "parent_comment_id": "iaxbm5p",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "idm3wdt",
+                      "author": "reddit_user_a43c00af31c1",
+                      "author_karma": 0,
+                      "content": "> If you don’t mind me asking, do you have a process in which you choose what cards to go after one after another? \n\nI described my process here: https://www.reddit.com/r/CreditCards/comments/v39ih8/comment/iayp2od/?utm_source=reddit&utm_medium=web2x&context=3\n\n> And what is your plan once the AFs kick in for the cards?\n\nI typically don't get cards with AFs unless:\n\n- the fee is waived for the first year (and then I cancel it before EOD, except for Amex and Chase, because I value my relationship with these two), or\n- I want to keep the card (all my Amex Hilton Cards & Citi AA card)",
+                      "timestamp": "2022-06-24T21:46:50+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "idlus5y",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "idn45bf",
+                          "author": "reddit_user_ba2d4bda21ef",
+                          "author_karma": 0,
+                          "content": "Ah ok thank you so much for taking the time to reply! So you basically went through the chase trifecta first and then started going in this order?",
+                          "timestamp": "2022-06-25T02:31:35+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "idm3wdt",
+                          "depth": 4,
+                          "replies": [
+                            {
+                              "comment_id": "ido7x6i",
+                              "author": "reddit_user_a43c00af31c1",
+                              "author_karma": 0,
+                              "content": "That's what I'd suggest doing. I didn't do it as I learned about 5/24 too late. And then I was forever 5+/24. So I never got them. At least I was able to get Chase Amazon before it was subject to 5/24 (this card saved me a ton) and Chase Freedom. I'll never get CSP and alike at this point. But I don't really care though, as draining whatever is available seems to work well for me, and more than more \"careful\" churners can achieve. For example, I added Synchrony Premier a week ago for $100 @ $1000, and already got approved for $100 @ $1500 from PenFed. Keeping the ball rolling at all times!",
+                              "timestamp": "2022-06-25T10:19:07+00:00",
+                              "likes": 1,
+                              "dislikes": 0,
+                              "parent_comment_id": "idn45bf",
+                              "depth": 5,
+                              "replies": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "comment_id": "ic1dc8n",
+                  "author": "reddit_user_0170f783ed7b",
+                  "author_karma": 0,
+                  "content": ">Cardless - 2x $300 @ $2000 - received\n\nHow do you do cardless twice? I heard you can only have 1 open card with them at a time.",
+                  "timestamp": "2022-06-12T01:17:06+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "iaxbm5p",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "ic1qlb8",
+                      "author": "reddit_user_a43c00af31c1",
+                      "author_karma": 0,
+                      "content": "Spouses.",
+                      "timestamp": "2022-06-12T03:18:50+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "ic1dc8n",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                },
+                {
+                  "comment_id": "ilqyi48",
+                  "author": "[deleted]",
+                  "author_karma": 0,
+                  "content": "[deleted]",
+                  "timestamp": "2022-08-25T15:59:54+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "iaxbm5p",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "ilro925",
+                      "author": "reddit_user_a43c00af31c1",
+                      "author_karma": 0,
+                      "content": ">What could go wrong? \n\nThat's my approach for cards. I get all of them and don't care about inquiries. I've been very successful. I was at $18,875 in all SUBs and Amex Hilton high spend bonuses two months ago. I'm at $22,385 now and working on another $1,200-ish (Surpass high spend reward, 2x Sofi CC SUB) and will soon sign up for Sofi checking SUB (I already made $300 under my name, so it's time to get P2 signed up for the same).\n\nI already made space for Amex Hilton Aspire under P2 and closed an old Amex BCE. I tried getting it a couple weeks ago but it was too early - can't exceed more than 2 new Amex cards in 90 days. P2 will pass the requirement in a month from now.",
+                      "timestamp": "2022-08-25T18:41:57+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "ilqyi48",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                },
+                {
+                  "comment_id": "ip5rg1z",
+                  "author": "reddit_user_69039bb0dbac",
+                  "author_karma": 0,
+                  "content": "What???  I only have 2 Amex cards and they will allow me get more cards but will not allow me to have the new card bonuses.  I have only ever had the 2 amex cards and still have them.   Such bull crap they won't let me have the bonuses.",
+                  "timestamp": "2022-09-20T05:15:48+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "iaxbm5p",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "ip64ffx",
+                      "author": "reddit_user_a43c00af31c1",
+                      "author_karma": 0,
+                      "content": "Amex requires spend on your current cards before they let you get a new card with a welcome bonus. I put $15K on Hilton Business in 2021, and in 2022: $60K on Aspire in 2022, $15K on my Surpass, $15K on wife's Surpass, $15K on Business, and now working towards $60K on Business. A home improvement project was a great opportunity to hit some otherwise unachievable spend levels. Once in a decade kind of thing, I guess.",
+                      "timestamp": "2022-09-20T08:11:14+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "ip5rg1z",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "comment_id": "iax7bv1",
+              "author": "reddit_user_97b1b6b4ec2d",
+              "author_karma": 0,
+              "content": "Which cards beat those numbers?",
+              "timestamp": "2022-06-02T15:29:01+00:00",
+              "likes": 6,
+              "dislikes": 0,
+              "parent_comment_id": "iawwsns",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "iaxf95m",
+                  "author": "reddit_user_3dbfa9590be7",
+                  "author_karma": 0,
+                  "content": "My Amex Blue Cash Preferred gives me 6% on groceries and streaming, 3% on gas and transit. My Chase Freedom Flex gives me 3% on dining, so like I said, I don’t need it.",
+                  "timestamp": "2022-06-02T16:25:34+00:00",
+                  "likes": 9,
+                  "dislikes": 0,
+                  "parent_comment_id": "iax7bv1",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "iaxxm93",
+                      "author": "[deleted]",
+                      "author_karma": 0,
+                      "content": "I'd rather carry 1 card over all those. Plus I'm not paying  an AF because I know I won't come out a head. It all depends on the goal of the person.",
+                      "timestamp": "2022-06-02T18:34:14+00:00",
+                      "likes": 2,
+                      "dislikes": 0,
+                      "parent_comment_id": "iaxf95m",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "iaxzqev",
+                          "author": "reddit_user_3dbfa9590be7",
+                          "author_karma": 0,
+                          "content": "All those? 2 cards? 🤣🤣🤣🤣 \nGroceries are my biggest cost, so I rather suffer the inconvenience of carrying 2 cards with me.",
+                          "timestamp": "2022-06-02T18:49:06+00:00",
+                          "likes": 5,
+                          "dislikes": 0,
+                          "parent_comment_id": "iaxxm93",
+                          "depth": 4,
+                          "replies": [
+                            {
+                              "comment_id": "iayuap3",
+                              "author": "reddit_user_8175167b2155",
+                              "author_karma": 0,
+                              "content": "Don't even have to carry it around.  Better to put it in the mobile wallet",
+                              "timestamp": "2022-06-02T22:34:20+00:00",
+                              "likes": 2,
+                              "dislikes": 0,
+                              "parent_comment_id": "iaxzqev",
+                              "depth": 5,
+                              "replies": []
+                            },
+                            {
+                              "comment_id": "iaxzvw1",
+                              "author": "[deleted]",
+                              "author_karma": 0,
+                              "content": "I'd rather not. I already carry enough cards. That just me though. Yep, all those cards.\n\nPlus getting in bed with Amex is akin to supporting Hitler and Nazis but some people are into that. I'd rather support my Lord and savor Wells Fargo",
+                              "timestamp": "2022-06-02T18:50:11+00:00",
+                              "likes": -15,
+                              "dislikes": 0,
+                              "parent_comment_id": "iaxzqev",
+                              "depth": 5,
+                              "replies": [
+                                {
+                                  "comment_id": "ib13btv",
+                                  "author": "reddit_user_869d87dfa690",
+                                  "author_karma": 0,
+                                  "content": "Savior*",
+                                  "timestamp": "2022-06-03T12:37:51+00:00",
+                                  "likes": 3,
+                                  "dislikes": 0,
+                                  "parent_comment_id": "iaxzvw1",
+                                  "depth": 6,
+                                  "replies": []
+                                }
+                              ]
+                            },
+                            {
+                              "comment_id": "jbco2jx",
+                              "author": "reddit_user_947192a28207",
+                              "author_karma": 0,
+                              "content": "Wouldnt you come out ahead using a cit custom for grocery and Wells Fargo card on everything else?",
+                              "timestamp": "2023-03-08T02:11:53+00:00",
+                              "likes": 1,
+                              "dislikes": 0,
+                              "parent_comment_id": "iaxzqev",
+                              "depth": 5,
+                              "replies": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "comment_id": "iax7so7",
+                  "author": "reddit_user_e80ca906a6e6",
+                  "author_karma": 0,
+                  "content": "Citi Custom Cash, US Bank Cash+, US Bank Altitude Go",
+                  "timestamp": "2022-06-02T15:32:24+00:00",
+                  "likes": 4,
+                  "dislikes": 0,
+                  "parent_comment_id": "iax7bv1",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "iaxlk7u",
+                      "author": "reddit_user_639d2601fc06",
+                      "author_karma": 0,
+                      "content": "Those cards don’t beat the WF Autograph on all categories though at the same time.  The Citi Custom Cash beats it on one category per month (on up to $500 spend).  The U.S. Bank Cash+ beats it on phone plans + streaming if you pick those as your 5% categories, but not on the other WF Autograph categories.  The U.S. Bank Altitude Go only beats it on dining.",
+                      "timestamp": "2022-06-02T17:09:49+00:00",
+                      "likes": 12,
+                      "dislikes": 0,
+                      "parent_comment_id": "iax7so7",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "iaxuzb5",
+                          "author": "reddit_user_e80ca906a6e6",
+                          "author_karma": 0,
+                          "content": "Well I already have 3 Custom Cash cards, 2 US Bank Cash + cards, the Altitude Go, and am grandfathered in Ducks Unlimited for 5% Cashback on gas so for ME personally this card has no use except maybe to get the $300 bonus and then sock drawer it.",
+                          "timestamp": "2022-06-02T18:15:26+00:00",
+                          "likes": 4,
+                          "dislikes": 0,
+                          "parent_comment_id": "iaxlk7u",
+                          "depth": 4,
+                          "replies": [
+                            {
+                              "comment_id": "ib0bp8c",
+                              "author": "reddit_user_fa9242d49cd6",
+                              "author_karma": 0,
+                              "content": "How did you get 3 custom cash cards?",
+                              "timestamp": "2022-06-03T06:27:39+00:00",
+                              "likes": 2,
+                              "dislikes": 0,
+                              "parent_comment_id": "iaxuzb5",
+                              "depth": 5,
+                              "replies": [
+                                {
+                                  "comment_id": "ib0qqo2",
+                                  "author": "reddit_user_e80ca906a6e6",
+                                  "author_karma": 0,
+                                  "content": "Besides my original I product changed the Double Cash card and I'm an authorized user on my wife's.",
+                                  "timestamp": "2022-06-03T10:13:05+00:00",
+                                  "likes": 2,
+                                  "dislikes": 0,
+                                  "parent_comment_id": "ib0bp8c",
+                                  "depth": 6,
+                                  "replies": [
+                                    {
+                                      "comment_id": "ib3tldf",
+                                      "author": "reddit_user_fa9242d49cd6",
+                                      "author_karma": 0,
+                                      "content": "Could one get a double cash now and product change I wonder… thanks for the detail!",
+                                      "timestamp": "2022-06-04T02:05:12+00:00",
+                                      "likes": 1,
+                                      "dislikes": 0,
+                                      "parent_comment_id": "ib0qqo2",
+                                      "depth": 7,
+                                      "replies": []
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "comment_id": "iaxptvb",
+                          "author": "reddit_user_e95b5c67d58a",
+                          "author_karma": 0,
+                          "content": "Altitude Go also has a $15/yr streaming credit",
+                          "timestamp": "2022-06-02T17:39:15+00:00",
+                          "likes": 3,
+                          "dislikes": 0,
+                          "parent_comment_id": "iaxlk7u",
+                          "depth": 4,
+                          "replies": [
+                            {
+                              "comment_id": "iay0a02",
+                              "author": "reddit_user_76c0c86acae4",
+                              "author_karma": 0,
+                              "content": "The $15/yr can be a nice bonus but it can also be a bit of a trap. Most streaming services offer a discount for yearly subscriptions. It usually follows something like service costs x/month or 10x/year an example being Apple Music you can pay $9.99month or $99.99/year. \n\nThe thing is the yearly discount is worth two months of service which is more than the $15 credits. So the streaming credits really only come in handy if the service doesn’t offer a yearly discount or if the discount is less than $15.",
+                              "timestamp": "2022-06-02T18:52:59+00:00",
+                              "likes": 7,
+                              "dislikes": 0,
+                              "parent_comment_id": "iaxptvb",
+                              "depth": 5,
+                              "replies": [
+                                {
+                                  "comment_id": "iazp3je",
+                                  "author": "reddit_user_3232568fad30",
+                                  "author_karma": 0,
+                                  "content": "It may be more beneficial if one subscribed to a low priced streaming service such as Hulu during the 99 cent promo making that one service effectively free.",
+                                  "timestamp": "2022-06-03T02:39:48+00:00",
+                                  "likes": 1,
+                                  "dislikes": 0,
+                                  "parent_comment_id": "iay0a02",
+                                  "depth": 6,
+                                  "replies": []
+                                }
+                              ]
+                            },
+                            {
+                              "comment_id": "iaxuvtu",
+                              "author": "reddit_user_639d2601fc06",
+                              "author_karma": 0,
+                              "content": "Speaking as someone who doesn't have the USB Altitude Go but has investigated it a bit, the language for the streaming annual credit on the card gives me some pause; it sounds like you need to have an annual subscription to various streaming services to get the credit rather than month to month streaming services.\n\nThere's one other issue with the U.S. Bank Altitude Go's streaming credit - 5% rotator cards like the Chase Freedom Flex and Discover It Cash.  If one of those cards has a 5% quarter for streaming (and the CFF often does), depending on how much you spend on streaming you could be leaving money on the table with the Altitude Go vs a 5% rotator (CFF) plus a 3% rewards for streaming card (like the WF Propel/Autograph or Capital One SavorOne) combination.",
+                              "timestamp": "2022-06-02T18:14:45+00:00",
+                              "likes": 0,
+                              "dislikes": 0,
+                              "parent_comment_id": "iaxptvb",
+                              "depth": 5,
+                              "replies": [
+                                {
+                                  "comment_id": "iaxwb6r",
+                                  "author": "reddit_user_887083c02ffd",
+                                  "author_karma": 0,
+                                  "content": ">Speaking as someone who doesn't have the USB Altitude Go but has investigated it a bit, the language for the streaming annual credit on the card gives me some pause; it sounds like you need to have an annual subscription to various streaming services to get the credit rather than month to month streaming services.\n\nI have the Altitude Go so can chime in here. The way it works is that you need 11 monthly payments consecutively of a qualifying streaming service (not sure if they have to all be the same service), then the 12th month they give you a $15 credit. So monthly payments only actually! Don't think it gives you the credit if you get an annual subscription actually. Unless you do 1 each for 11 months hah.",
+                                  "timestamp": "2022-06-02T18:24:51+00:00",
+                                  "likes": 5,
+                                  "dislikes": 0,
+                                  "parent_comment_id": "iaxuvtu",
+                                  "depth": 6,
+                                  "replies": []
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "comment_id": "iaxxo3z",
+                      "author": "[deleted]",
+                      "author_karma": 0,
+                      "content": "Definitely not carrying all those cards around.",
+                      "timestamp": "2022-06-02T18:34:36+00:00",
+                      "likes": 0,
+                      "dislikes": 0,
+                      "parent_comment_id": "iax7so7",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "comment_id": "iccmvfh",
+              "author": "reddit_user_bbb2667db467",
+              "author_karma": 0,
+              "content": "What is your go to dining card? I have the savor one which is 3% on bars and restaurants. \n\nAnything better?",
+              "timestamp": "2022-06-14T17:09:54+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "iawwsns",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "iccr9gl",
+                  "author": "reddit_user_3dbfa9590be7",
+                  "author_karma": 0,
+                  "content": "I use either my Chase Freedom Flex at 3% or my Amex Gold at 4x points.",
+                  "timestamp": "2022-06-14T17:39:33+00:00",
+                  "likes": 2,
+                  "dislikes": 0,
+                  "parent_comment_id": "iccmvfh",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "iaxfh2g",
+          "author": "reddit_user_b4ee90af4d2d",
+          "author_karma": 0,
+          "content": "They now have the [terms and conditions](https://consumercard.wellsfargorewards.com/?product_code=CC&subproduct_code=AC&cx_nm=CXNAME_CSM&FPID=012688IDF40000#/Tnc) for the rewards program online: \n\n>You earn 1 base Point plus 2 bonus Points (for a total of 3 Points) for every $1   \nYou spend on Your Credit Card (rounded to the nearest whole dollar) for   \nNet Purchases made at retailers whose merchant category for VISA® is classified in the following categories:  \n>  \n>\\-Airline, hotel/motel, timeshare, or vehicle/auto rental, cruise lines, travel   \nagencies, discount travel sites, campgrounds.   \n>  \n>\\-Passenger railway, taxis, limousines, ferries, toll bridges and   \nhighways, parking lots and garages.   \n>  \n>\\-Gas stations, automated fuel dispensers, and electric vehicle charging   \nstations. The following may not be eligible for bonus Points: Gas or   \nelectric vehicle charging purchases at warehouse/membership clubs,   \ngrocery stores, car washes, auto repair stores and superstores that sell  \n gasoline or electric vehicle charging.  \n>  \n>\\-Eating places and restaurants, drinking places, fast food restaurants, and   \ncaterers. The following may not earn bonus Points: food purchased at   \nbakeries, grocery stores and other miscellaneous places that serve food   \nor operate restaurants on their premises, or purchased using a   \nthird-party delivery service.  \n>  \n>\\-Landline and cell phone providers considered telecommunication services. The   \nfollowing may not earn bonus Points: Phone plan services bundled or   \nbilled by a third party such as an internet provider or in-vehicle   \nservice, phones and accessories, additional phone services, such as   \ninsurance or additional data.  \n>  \n>\\-Streaming services considered cable and other pay   \ntelevision, digital goods, books, movie, music, and   \ncontinuity/subscription services. The following may not earn bonus   \nPoints: Streaming services bundled with another product, membership, or   \nservice, or billed by a third party, such as a digital platform, a   \ncable, telecommunications, or internet provider, online retailer, or   \nin-vehicle streaming service.  The current list of eligible streaming   \nservices and additional details of what services and fees are   \nincluded/excluded for bonusing are available at: wellsfargo.com/autographstreaming. If your streaming service name is listed at wellsfargo.com/autographstreaming but is not billed under the VISA category codes listed above, you may not be eligible for bonus Points.",
+          "timestamp": "2022-06-02T16:27:08+00:00",
+          "likes": 26,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "iaxovb3",
+              "author": "reddit_user_bf98a4841ab2",
+              "author_karma": 0,
+              "content": "Good catch! Bummer that Costco Gas might not trigger the 3x rewards.",
+              "timestamp": "2022-06-02T17:32:40+00:00",
+              "likes": 13,
+              "dislikes": 0,
+              "parent_comment_id": "iaxfh2g",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "iaxt7vb",
+              "author": "reddit_user_004c523ee560",
+              "author_karma": 0,
+              "content": ">Streaming services considered cable and other pay  \n>  \n>television, digital goods, books, movie, music, and  \n>  \n>continuity/subscription services.\n\nIt sounds like cable Internet might count for 3X if it's billed the same as cabe TV. I'd be very curious to see if this is the case. If it is, the card could be worth it for billing mobile phones and cable Internet alone.",
+              "timestamp": "2022-06-02T18:02:52+00:00",
+              "likes": 7,
+              "dislikes": 0,
+              "parent_comment_id": "iaxfh2g",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "iaxx4t1",
+                  "author": "reddit_user_639d2601fc06",
+                  "author_karma": 0,
+                  "content": "I'll note you can get 5% cash back on cable internet/cable TV on the U.S. Bank Cash+ Visa or the similar Elan Financial Services Max Cash Preferred Mastercard/Visa (offered at many banks) if you choose them as 5% rewards categories.\n\nI don't have a USB card (yet), but from what I've read about them the big negative is you can't get your rewards in the form of a direct deposit (if you don't have a USB account) or check; you can only use them as a statement credit.",
+                  "timestamp": "2022-06-02T18:30:46+00:00",
+                  "likes": 7,
+                  "dislikes": 0,
+                  "parent_comment_id": "iaxt7vb",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            },
+            {
+              "comment_id": "iaxqf92",
+              "author": "reddit_user_331a5e19e3f5",
+              "author_karma": 0,
+              "content": "This is awesome. You can see that it's the same language as Propel. Love getting 3% on gas at Sam's Club!",
+              "timestamp": "2022-06-02T17:43:15+00:00",
+              "likes": 7,
+              "dislikes": 0,
+              "parent_comment_id": "iaxfh2g",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "iaxtc92",
+              "author": "reddit_user_1b1c1284566f",
+              "author_karma": 0,
+              "content": "Am I reading it correctly in that Uber/Lyft are not part of their Travel or Transit categories here, even though taxis are?",
+              "timestamp": "2022-06-02T18:03:44+00:00",
+              "likes": 4,
+              "dislikes": 0,
+              "parent_comment_id": "iaxfh2g",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "iaxx9pm",
+                  "author": "reddit_user_639d2601fc06",
+                  "author_karma": 0,
+                  "content": "My guess is Uber/Lyft would qualify as \"travel\" and would earn 3%.",
+                  "timestamp": "2022-06-02T18:31:45+00:00",
+                  "likes": 10,
+                  "dislikes": 0,
+                  "parent_comment_id": "iaxtc92",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "iaxxykf",
+                      "author": "reddit_user_1b1c1284566f",
+                      "author_karma": 0,
+                      "content": "\"Travel\" is a broad term that is actually defined by the specifics in the Terms & Conditions document. The relevant portion of that document is pasted in full in the comment to which I responded. Nowhere in that do I see \"rideshare services\" or any similar language that would actually include Uber and Lyft.",
+                      "timestamp": "2022-06-02T18:36:39+00:00",
+                      "likes": 3,
+                      "dislikes": 0,
+                      "parent_comment_id": "iaxx9pm",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "iay2ohb",
+                          "author": "reddit_user_639d2601fc06",
+                          "author_karma": 0,
+                          "content": "FWIW, I used Lyft back on April 18th, paying for the travel with a different card (not the WF Propel), and the Lyft purchase was classified as “travel”.\n\nMerchants, not credit card issuers, determine how they are classified/coded on purchases.  Based on my April Lyft purchase, my guess is at least Lyft is classified/coded as “travel” on credit cards.",
+                          "timestamp": "2022-06-02T19:10:25+00:00",
+                          "likes": 0,
+                          "dislikes": 0,
+                          "parent_comment_id": "iaxxykf",
+                          "depth": 4,
+                          "replies": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "comment_id": "iaxuxcr",
+              "author": "reddit_user_79aa5dbb0674",
+              "author_karma": 0,
+              "content": "Nice to see the travel category is quite broad",
+              "timestamp": "2022-06-02T18:15:03+00:00",
+              "likes": 6,
+              "dislikes": 0,
+              "parent_comment_id": "iaxfh2g",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "iayuwaa",
+              "author": "reddit_user_9f49b016fcf1",
+              "author_karma": 0,
+              "content": "> The following may not be eligible for bonus Points: Gas or\n> electric vehicle charging purchases at warehouse/membership clubs\n\nDamn.  I was expecting to apply for this when it launched, but if it's not going to earn 3% on Costco gas, then there's no point in having it.  I'd be better off just using a 2% flat card and getting a much cheaper price vs. using this card and paying an extra $0.30/gallon to get the extra 1%.\n\nGlad I read this.  Saved me a hard pull and a lot of aggravation.",
+              "timestamp": "2022-06-02T22:38:42+00:00",
+              "likes": 2,
+              "dislikes": 0,
+              "parent_comment_id": "iaxfh2g",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "ib18kyq",
+                  "author": "reddit_user_7e175106e31f",
+                  "author_karma": 0,
+                  "content": "It says MAY not be eligible. The only reason they say that is in case the Gas in Costco is coded the same as if you had purchase inside the store. Meaning the warehouse MCC.\n\nAs long as the Costco Gas codes as a Gas Station(eg. MCC 5541), in my experience it will most likely count for the 3%.",
+                  "timestamp": "2022-06-03T13:24:05+00:00",
+                  "likes": 2,
+                  "dislikes": 0,
+                  "parent_comment_id": "iayuwaa",
+                  "depth": 2,
+                  "replies": []
+                },
+                {
+                  "comment_id": "ib03923",
+                  "author": "reddit_user_f613700ee884",
+                  "author_karma": 0,
+                  "content": "In my experience it depends on the card and the specific costco. I've used cards that have said that but still had it work correctly",
+                  "timestamp": "2022-06-03T04:46:41+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "iayuwaa",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            },
+            {
+              "comment_id": "ib18z57",
+              "author": "reddit_user_00a2bf390b1c",
+              "author_karma": 0,
+              "content": "Man, that list is more restrictive than others in my opinion. It’s very nit picky against tv bundles, gas stations, or even bakeries",
+              "timestamp": "2022-06-03T13:27:18+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "iaxfh2g",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "iax2m7u",
+          "author": "reddit_user_d52bb1e8006c",
+          "author_karma": 0,
+          "content": "So it's the Propel by a different name?",
+          "timestamp": "2022-06-02T14:54:58+00:00",
+          "likes": 24,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "iax8tyk",
+              "author": "reddit_user_2593e5218918",
+              "author_karma": 0,
+              "content": "With 3% on phone, generally wider acceptance (by way of Visa instead of AmEx), but no AmEx offers.",
+              "timestamp": "2022-06-02T15:39:51+00:00",
+              "likes": 31,
+              "dislikes": 0,
+              "parent_comment_id": "iax2m7u",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "iaxmtsq",
+              "author": "reddit_user_639d2601fc06",
+              "author_karma": 0,
+              "content": "Similar, but slightly better IMO, especially with the Amex-issued offers on the Propel drying up.",
+              "timestamp": "2022-06-02T17:18:37+00:00",
+              "likes": 15,
+              "dislikes": 0,
+              "parent_comment_id": "iax2m7u",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "iayuuz7",
+                  "author": "reddit_user_8175167b2155",
+                  "author_karma": 0,
+                  "content": "Most banks have been cutting their Amex Network cards over the years.  I'm guessing Amex isn't offering attractive deals to other banks for using their network.  BOA and their 1.25% card, US Bank Cash 365, Elan Cards, Penfed Pathfinder, and Wells Fargo propel have all been discontinued",
+                  "timestamp": "2022-06-02T22:38:25+00:00",
+                  "likes": 4,
+                  "dislikes": 0,
+                  "parent_comment_id": "iaxmtsq",
+                  "depth": 2,
+                  "replies": []
+                },
+                {
+                  "comment_id": "iazdty6",
+                  "author": "reddit_user_3ca87adba051",
+                  "author_karma": 0,
+                  "content": "So if I have the propel and signature already should I just keep these and get this? I’ve been looking for a Visa card or something other than Amex to take overseas",
+                  "timestamp": "2022-06-03T01:10:53+00:00",
+                  "likes": 2,
+                  "dislikes": 0,
+                  "parent_comment_id": "iaxmtsq",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "iazqzvw",
+                      "author": "reddit_user_639d2601fc06",
+                      "author_karma": 0,
+                      "content": "I personally would product convert the Propel to the Autograph, but you could get the Autograph in addition to the Propel, assuming Wells Fargo doesn’t convert Propel cardholders over anyway.  The Propel will become redundant once the Autograph is released, except maybe for the My Wells Fargo Deals issued by WF on their cards.",
+                      "timestamp": "2022-06-03T02:54:58+00:00",
+                      "likes": 3,
+                      "dislikes": 0,
+                      "parent_comment_id": "iazdty6",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "ib0tuo2",
+                          "author": "reddit_user_3ca87adba051",
+                          "author_karma": 0,
+                          "content": "I have a feeling it would be an auto convert from Propel to autograph if the points are merely the same. I had something before the visa signature ( maybe just a regular cash back? Don’t remember what it was called) but they upped my CL and sent a new card automatically. I’ve been eyeing the CSP or venture but maybe I’ll just wait it out for this 🤷‍♀️.",
+                          "timestamp": "2022-06-03T10:54:45+00:00",
+                          "likes": 2,
+                          "dislikes": 0,
+                          "parent_comment_id": "iazqzvw",
+                          "depth": 4,
+                          "replies": [
+                            {
+                              "comment_id": "ib0vux1",
+                              "author": "reddit_user_639d2601fc06",
+                              "author_karma": 0,
+                              "content": "I hope Wells Fargo does auto-convert the Propel to the Autograph, assuming the points are the same (which I’m pretty sure they almost definitely would be).  I know people who chase sign-up bonuses wouldn’t like that, but the Autograph is essentially a slightly enhanced version of the Propel.\n\nWe’ll see what happens in the next few months.",
+                              "timestamp": "2022-06-03T11:19:30+00:00",
+                              "likes": 2,
+                              "dislikes": 0,
+                              "parent_comment_id": "ib0tuo2",
+                              "depth": 5,
+                              "replies": [
+                                {
+                                  "comment_id": "ib24owi",
+                                  "author": "reddit_user_af2245907488",
+                                  "author_karma": 0,
+                                  "content": "I rather they didn't as the propel is my only Amex card with no FTF. Plus the history nerd in me likes having a Wells Fargo card be also an Amex from how they split off from each other.",
+                                  "timestamp": "2022-06-03T17:19:25+00:00",
+                                  "likes": 4,
+                                  "dislikes": 0,
+                                  "parent_comment_id": "ib0vux1",
+                                  "depth": 6,
+                                  "replies": []
+                                },
+                                {
+                                  "comment_id": "ib16wt8",
+                                  "author": "reddit_user_3ca87adba051",
+                                  "author_karma": 0,
+                                  "content": "Definitely. Do you think they would change the 1.5x conversion from propel to visa signature? Wonder if I should do that now before they auto upgrade me (potentially)",
+                                  "timestamp": "2022-06-03T13:10:10+00:00",
+                                  "likes": 1,
+                                  "dislikes": 0,
+                                  "parent_comment_id": "ib0vux1",
+                                  "depth": 6,
+                                  "replies": [
+                                    {
+                                      "comment_id": "ib19s51",
+                                      "author": "reddit_user_639d2601fc06",
+                                      "author_karma": 0,
+                                      "content": "The 50% airline bonus with the WF Signature Visa is tied to that card, so I don't think it would matter if the Propel was converted to the Autograph provided you still had the Signature Visa.\n\nOn a somewhat related side note, it would be kind of funny to have two cards issued by the same bank named the Signature and the Autograph.  Which one is it? :D",
+                                      "timestamp": "2022-06-03T13:33:45+00:00",
+                                      "likes": 2,
+                                      "dislikes": 0,
+                                      "parent_comment_id": "ib16wt8",
+                                      "depth": 7,
+                                      "replies": [
+                                        {
+                                          "comment_id": "ib1b7ss",
+                                          "author": "reddit_user_3ca87adba051",
+                                          "author_karma": 0,
+                                          "content": "Maybe inscription will be their next card HAHA",
+                                          "timestamp": "2022-06-03T13:45:17+00:00",
+                                          "likes": 1,
+                                          "dislikes": 0,
+                                          "parent_comment_id": "ib19s51",
+                                          "depth": 8,
+                                          "replies": []
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "comment_id": "iazy66t",
+                          "author": "reddit_user_7b1d8f9eabc9",
+                          "author_karma": 0,
+                          "content": "Product Changes rarely qualify for SUBs, and that’s assuming you could even convert the Propel to Autograph, AmEx to Visa is not common.",
+                          "timestamp": "2022-06-03T03:55:24+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "iazqzvw",
+                          "depth": 4,
+                          "replies": [
+                            {
+                              "comment_id": "iazz5h2",
+                              "author": "reddit_user_639d2601fc06",
+                              "author_karma": 0,
+                              "content": "I personally don't care about the SUB for the Autograph.",
+                              "timestamp": "2022-06-03T04:04:47+00:00",
+                              "likes": 0,
+                              "dislikes": 0,
+                              "parent_comment_id": "iazy66t",
+                              "depth": 5,
+                              "replies": [
+                                {
+                                  "comment_id": "iazz8m3",
+                                  "author": "reddit_user_7b1d8f9eabc9",
+                                  "author_karma": 0,
+                                  "content": "I’ll take $300 if they’re giving it away.",
+                                  "timestamp": "2022-06-03T04:05:37+00:00",
+                                  "likes": 4,
+                                  "dislikes": 0,
+                                  "parent_comment_id": "iazz5h2",
+                                  "depth": 6,
+                                  "replies": [
+                                    {
+                                      "comment_id": "ib0uay0",
+                                      "author": "reddit_user_639d2601fc06",
+                                      "author_karma": 0,
+                                      "content": "I don’t have interest in chasing sign-up bonuses for the sake of chasing them, unless the card fits a longer term need and I get a SUB as a by-product of that.  (There are cards I don’t have yet that fit that description and I want to focus on getting those cards.)  I’d much rather just do a product conversion from the Propel to the Autograph in this particular case.",
+                                      "timestamp": "2022-06-03T11:00:32+00:00",
+                                      "likes": 1,
+                                      "dislikes": 0,
+                                      "parent_comment_id": "iazz8m3",
+                                      "depth": 7,
+                                      "replies": []
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "iax878f",
+          "author": "reddit_user_e80ca906a6e6",
+          "author_karma": 0,
+          "content": "What will happen to existing Propel cards?",
+          "timestamp": "2022-06-02T15:35:18+00:00",
+          "likes": 22,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "iawwgwy",
+          "author": "reddit_user_5c6e6e07d178",
+          "author_karma": 0,
+          "content": "Incredible cashback card with a 0 dollar annual fee that could be a one card setup for many. Rivals cards like the annual fee citi premier. Many aren't a fan of wells fargo because of their past but they did it again with their autograph card. If only then ventured into travel and transfer partners.",
+          "timestamp": "2022-06-02T14:08:32+00:00",
+          "likes": 67,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "iaxtrms",
+              "author": "reddit_user_0d59ad3a43e0",
+              "author_karma": 0,
+              "content": "Autograph + Active Cash + Grocery card would be really easy and simple cash-back set-up for most people.\n\nIf Wells Fargo Rewards allowed you to transfer points 1:1 with BILT Rewards, I think that'd be a huge competitor to Chase / Citi / CapOne / AmEx. Aside from the credit card partnership, they actually do own a portion of the company.\n\nThe EVP of cobranded cards actually managed the Southwest, IHG and British Airways partnerships at Chase, and all of the airline partnerships at Barclays.",
+              "timestamp": "2022-06-02T18:06:49+00:00",
+              "likes": 14,
+              "dislikes": 0,
+              "parent_comment_id": "iawwgwy",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "iaxurr9",
+                  "author": "reddit_user_5c6e6e07d178",
+                  "author_karma": 0,
+                  "content": "You know if Wells Fargo is releasing a grocery card? Omly downside to the simplicity of the card. 2% on the active cash is alright, but you can compete better.",
+                  "timestamp": "2022-06-02T18:13:57+00:00",
+                  "likes": 5,
+                  "dislikes": 0,
+                  "parent_comment_id": "iaxtrms",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "iaxwqrb",
+                      "author": "reddit_user_0d59ad3a43e0",
+                      "author_karma": 0,
+                      "content": "I don't know :( I don't believe WF ever had a card that earned more than 2% on groceries. Most of the card division directors are from Chase and Citi. Both of whom don't really have a dedicated grocery card either. The Custom Cash can be considered one though. It could be said that WF copied the Double Cash and the Simplicity/Diamond cards for their Active Cash and Reflect. If that was the case then the unreleased and dead Ratio card could have been the copy of the Custom Cash.",
+                      "timestamp": "2022-06-02T18:27:58+00:00",
+                      "likes": 6,
+                      "dislikes": 0,
+                      "parent_comment_id": "iaxurr9",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "comment_id": "iazole0",
+              "author": "reddit_user_e54e2cc88612",
+              "author_karma": 0,
+              "content": ">Many aren't a fan of wells fargo because of their past\n\nMyself among them, but I don't understand why they seem to have a uniquely bad reputation in communities like this. Granted, unforgettable terms like \"mud people\" make the crimes look even more gross than they already were illegal and unethical. On the whole though, Citigroup and JPMCB's records are no better (and depending which issues one cares most about, often worse).\n\n>If only then ventured into travel and transfer partners.\n\nThis is the big one for me. I would find this card much more compelling if they had a good airline/hotel partnership or two. For the folks who prefer cashback, this is a pretty good option.",
+              "timestamp": "2022-06-03T02:35:39+00:00",
+              "likes": 9,
+              "dislikes": 0,
+              "parent_comment_id": "iawwgwy",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "iax7c9p",
+              "author": "reddit_user_2b75a8210b9f",
+              "author_karma": 0,
+              "content": "I’m expecting a bunch of people to eat crow regarding that.",
+              "timestamp": "2022-06-02T15:29:06+00:00",
+              "likes": 2,
+              "dislikes": 0,
+              "parent_comment_id": "iawwgwy",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "iawy1en",
+          "author": "reddit_user_aa1c5bee0c6d",
+          "author_karma": 0,
+          "content": "As someone who uses Active Cash as a daily catch all, I'm trying to see the benefit of giving up my AC to PC for this and I just can't see the advantage.\n\nCCC is my grocery card at 5%.\n\nChase Amazon Prime is obviously my Amazon card at 5%.\n\nIn July I was planning on acquiring the USBC+ for 5% on my utility/internet/phone bills.\n\nThoughts?",
+          "timestamp": "2022-06-02T14:20:36+00:00",
+          "likes": 19,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "iawyfqt",
+              "author": "[deleted]",
+              "author_karma": 0,
+              "content": "Why PC when you can just get it as an additional card?\n\nIt should be an option, not a requirement.",
+              "timestamp": "2022-06-02T14:23:35+00:00",
+              "likes": 17,
+              "dislikes": 0,
+              "parent_comment_id": "iawy1en",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "iax0cn9",
+                  "author": "reddit_user_aa1c5bee0c6d",
+                  "author_karma": 0,
+                  "content": "I could, but USBC+ has been my planned next card for over a year so I'm just trying to hypothetically justify the Autograph over it and I don't think I can. Definitely open to arguments!\n\nI'm not a churner, just a cash back guy trying to stay at or below 2/24 or 0/6 in case I decide to pull the trigger on buying a house in the next year and a half or so.",
+                  "timestamp": "2022-06-02T14:38:06+00:00",
+                  "likes": 3,
+                  "dislikes": 0,
+                  "parent_comment_id": "iawyfqt",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "iaxdpx7",
+                      "author": "reddit_user_a43c00af31c1",
+                      "author_karma": 0,
+                      "content": ">I'm not a churner, just a cash back guy trying to stay at or below 2/24 or 0/6 in case I decide to pull the trigger on buying a house in the next year and a half or so.\n\nI'm a churner *and* a cashback guy when not working on a any SUB. 5 years and counting. And I refinanced twice since COVID already (first to drop PMI and reduce APR, second to cash out after the home appreciated like crazy). Our ~80 open CCs to date and constant inquiries didn't play a role - got lowest APR possible anyway. Solid ~780-805 FICO at all times.",
+                      "timestamp": "2022-06-02T16:14:43+00:00",
+                      "likes": 2,
+                      "dislikes": 0,
+                      "parent_comment_id": "iax0cn9",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "iaxhbn9",
+                          "author": "reddit_user_aa1c5bee0c6d",
+                          "author_karma": 0,
+                          "content": "Interesting. Is your income exceptionally high? What's your AAoA?",
+                          "timestamp": "2022-06-02T16:40:12+00:00",
+                          "likes": 4,
+                          "dislikes": 0,
+                          "parent_comment_id": "iaxdpx7",
+                          "depth": 4,
+                          "replies": [
+                            {
+                              "comment_id": "iaxlfq2",
+                              "author": "reddit_user_a43c00af31c1",
+                              "author_karma": 0,
+                              "content": "I took a cash-out loan after my home appreciated like crazy, and threw in my savings, to double its size. I paid for labor with cash, and for all materials and finish with my CCs. That's how I could churn so many SUBs or spend bonuses since the project started in late November (e.g. $15K on HH business in 2021, then come 2022, $15K on HH business, $15K on HH Surpass, and $60K on HH Aspire) without manufactured spending (which I never did or ever plan to do).\n\nWithout a home improvement project, I'd still do SUBs (I've done them for 5 years now), but skip these big spend bonuses on Amex Hilton cards. I could maybe do one of them per year and that's about it.\n\nAAoA around 3.5 years. First CC in 2015. Open a CC, keep it forever (unless there's an AF involved).",
+                              "timestamp": "2022-06-02T17:08:56+00:00",
+                              "likes": 1,
+                              "dislikes": 0,
+                              "parent_comment_id": "iaxhbn9",
+                              "depth": 5,
+                              "replies": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "comment_id": "iax0xpa",
+                  "author": "reddit_user_ab2fb6952559",
+                  "author_karma": 0,
+                  "content": "Yes it should be an option.",
+                  "timestamp": "2022-06-02T14:42:28+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "iawyfqt",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "iax3e42",
+                      "author": "reddit_user_aa1c5bee0c6d",
+                      "author_karma": 0,
+                      "content": "Yeah I'm kinda looking for arguments that it's better than any of my current options including the USBC+ which I plan on getting next month. If not, it doesn't justify a hard pull for me.",
+                      "timestamp": "2022-06-02T15:00:41+00:00",
+                      "likes": 3,
+                      "dislikes": 0,
+                      "parent_comment_id": "iax0xpa",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "iaxmi3m",
+                          "author": "reddit_user_639d2601fc06",
+                          "author_karma": 0,
+                          "content": "The big benefit with the WF Autograph is 3% cash back on all types of travel and gas purchases.  You can get that with the Citi Custom Cash (either travel or gas IIRC), but only if you give up the grocery spending on that card.\n\nMy recommendation is to still get the U.S. Bank Cash+ (or the similar Elan Financial Services Max Cash Preferred) and then get the WF Autograph for travel spending at a later date.\n\nDisclosure note: The U.S. Bank Cash+ and Citi Custom Cash are my next two target cards (also plan to get the Elan Max Cash Preferred in the future) and I already have the WF Propel.",
+                          "timestamp": "2022-06-02T17:16:19+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "iax3e42",
+                          "depth": 4,
+                          "replies": [
+                            {
+                              "comment_id": "iayswb4",
+                              "author": "reddit_user_f452aec977f9",
+                              "author_karma": 0,
+                              "content": "I'm thinking the same for my next two cards (especially to get access to USAR eventually). But what do you plan to use the Bank Cash+ for?",
+                              "timestamp": "2022-06-02T22:23:54+00:00",
+                              "likes": 1,
+                              "dislikes": 0,
+                              "parent_comment_id": "iaxmi3m",
+                              "depth": 5,
+                              "replies": [
+                                {
+                                  "comment_id": "iaywjhr",
+                                  "author": "reddit_user_639d2601fc06",
+                                  "author_karma": 0,
+                                  "content": "I personally would use the U.S. Bank Cash+ for TV/internet and cell phone payments.  I’d use the Wells Fargo Autograph (and do use the WF Propel) for gas, streaming (though I also have the Capital One SavorOne as an option), travel (also have the BOA AAA Member Rewards for that but WF defines travel more broadly/clearly than BOA), and some dining (have multiple 3% dining cards).\n\nThe exceptions occur when a 5% rotator (Chase Freedom Flex or Discover It Cash) have one or more of those categories as a 5% category during a quarter.\n\nWith the exception of the Citi Custom Cash, IF you use it for travel (and don’t travel internationally), there are very few no annual fee cards that offer 3% cash back on travel.  Most no annual fee travel-focused cards (like the BOA Travel Rewards, Capital One VentureOne, or to some degree the fairly new Truist Enjoy Travel) offer flat rate travel rewards.",
+                                  "timestamp": "2022-06-02T22:51:01+00:00",
+                                  "likes": 1,
+                                  "dislikes": 0,
+                                  "parent_comment_id": "iayswb4",
+                                  "depth": 6,
+                                  "replies": [
+                                    {
+                                      "comment_id": "iaz44hp",
+                                      "author": "reddit_user_f452aec977f9",
+                                      "author_karma": 0,
+                                      "content": "Thanks for the feedback! I currently have the Penfed Pathfinder for no AF travel now, but not a fan of the point system rather over cash back.",
+                                      "timestamp": "2022-06-02T23:51:34+00:00",
+                                      "likes": 1,
+                                      "dislikes": 0,
+                                      "parent_comment_id": "iaywjhr",
+                                      "depth": 7,
+                                      "replies": []
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "comment_id": "iaxucjh",
+              "author": "reddit_user_0d59ad3a43e0",
+              "author_karma": 0,
+              "content": "Wells Fargo has some rules with credit cards:\n\n* You can only receive 1 WF credit card every 6 months (I think there's been some flex here)\n\n* You can only receive 1 WF credit card SUB every 15 months\n\nAlso note that, typically when you Product Change (PC), you are not eligible for the SUB. In your case, I'd simply just wait until you qualify for the SUB (in which case their other cards might have released too). WF still lets you pool rewards from multiple cards so it'd make sense to keep both for the long-term.",
+              "timestamp": "2022-06-02T18:10:58+00:00",
+              "likes": 10,
+              "dislikes": 0,
+              "parent_comment_id": "iawy1en",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "iay2lan",
+                  "author": "reddit_user_d52bb1e8006c",
+                  "author_karma": 0,
+                  "content": "Random question, but would it be possible to PC a WF Propel into an Autograph? Having Visa over Amex would be huge IMO, especially since Amex is extremely hit or miss in my area.",
+                  "timestamp": "2022-06-02T19:09:45+00:00",
+                  "likes": 3,
+                  "dislikes": 0,
+                  "parent_comment_id": "iaxucjh",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "iaybyig",
+                      "author": "reddit_user_0d59ad3a43e0",
+                      "author_karma": 0,
+                      "content": "I don't know the answer to this question, sorry. Keep in mind that if you PC you'd lose the SUB - but that would make you eligible for the SUBs on the cards that are releasing next year (those have AFs though).",
+                      "timestamp": "2022-06-02T20:17:24+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "iay2lan",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "comment_id": "iazfurj",
+              "author": "reddit_user_3dee851987b4",
+              "author_karma": 0,
+              "content": "I have a similar setup as you. AC is my catch all. CCC for groceries. USBC+ for Utikities and Internet/streaming. BoACC for online purchases. Venmo for Costco/Sam's Club. 3% for restaurants is basically any Chase card. \n\nWe don't travel much but costco visa has 3% travel if I need to.\n\nThe only category I don't already have at 3% or better is phone. I'm just not sure I want to burn a hard pull on that at this point.",
+              "timestamp": "2022-06-03T01:27:05+00:00",
+              "likes": 2,
+              "dislikes": 0,
+              "parent_comment_id": "iawy1en",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "iax0rey",
+          "author": "reddit_user_af2245907488",
+          "author_karma": 0,
+          "content": "This is going to be the best no AF cashback card for travel and transit.",
+          "timestamp": "2022-06-02T14:41:10+00:00",
+          "likes": 41,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "iaxhpvc",
+              "author": "reddit_user_57ba2ec6b6fd",
+              "author_karma": 0,
+              "content": "Eh, custom cash and BofA customized cash (with honors) are 5%/5.25% on those, only upside here is no cap on spend.",
+              "timestamp": "2022-06-02T16:42:56+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "iax0rey",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "iaxjyw2",
+                  "author": "reddit_user_af2245907488",
+                  "author_karma": 0,
+                  "content": "You have to pick one between *select* travel, *select* transit, or gas for the CCC and it has a FTF.  BofA CC also has a FTF and is either gas or travel and the opportunity cost of parking 100K at BofA outweighs the perk unless you have multiple customized cash cards that you're maxing out.",
+                  "timestamp": "2022-06-02T16:58:37+00:00",
+                  "likes": 17,
+                  "dislikes": 0,
+                  "parent_comment_id": "iaxhpvc",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "iaxmv38",
+                      "author": "reddit_user_57ba2ec6b6fd",
+                      "author_karma": 0,
+                      "content": "I do have 3 customized cash and 2 custom cash and the 100k is in Merrill investments so not much opportunity cost, but you’re right on the FTF, smart callout.",
+                      "timestamp": "2022-06-02T17:18:52+00:00",
+                      "likes": 7,
+                      "dislikes": 0,
+                      "parent_comment_id": "iaxjyw2",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "comment_id": "iaybp8w",
+              "author": "reddit_user_34a1f2ab25b0",
+              "author_karma": 0,
+              "content": "It's up there in terms of no AF / no FTF travel cards, but I'd choose the [PenFed Pathfinder](https://old.reddit.com/r/CreditCards/comments/kggqnc/penfed_pathfinder_travel_rewards_card_available/) over this, largely due to its benefits and travel protections, and slightly better rewards (though not cash).",
+              "timestamp": "2022-06-02T20:15:28+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "iax0rey",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "iazwqym",
+              "author": "reddit_user_697ca912ae2e",
+              "author_karma": 0,
+              "content": "Is this 3% cash back? Or jsut 3x points?",
+              "timestamp": "2022-06-03T03:42:24+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "iax0rey",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "ib08zpb",
+                  "author": "reddit_user_af2245907488",
+                  "author_karma": 0,
+                  "content": "Points but they're worth 1 cent per point",
+                  "timestamp": "2022-06-03T05:52:32+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "iazwqym",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "iaxlu01",
+          "author": "reddit_user_e4812d730d15",
+          "author_karma": 0,
+          "content": "Dang I am kind of interested in this card but I also have the Propel which basically has mostly the same stuff.\n\n&#x200B;\n\nI might just hold onto the Propel since it's an AMEX which makes it have some different rewards and adds variety to my card stack. Plus it's kind of cool to have a card that isn't available anymore.",
+          "timestamp": "2022-06-02T17:11:45+00:00",
+          "likes": 15,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "iaxr7fu",
+          "author": "reddit_user_331a5e19e3f5",
+          "author_karma": 0,
+          "content": "Very interesting thing happened, when I was trying to \"switch my card\" online with Wells Fargo just now:\n\n>Credit Card Switch is currently unavailable because of an upcoming change to your card's benefits, communicated in your June statement. The service will be available again on July 13, 2022.",
+          "timestamp": "2022-06-02T17:48:42+00:00",
+          "likes": 14,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "iaztc9b",
+              "author": "reddit_user_ed0102e271d7",
+              "author_karma": 0,
+              "content": "Which WF card was it?",
+              "timestamp": "2022-06-03T03:14:04+00:00",
+              "likes": 3,
+              "dislikes": 0,
+              "parent_comment_id": "iaxr7fu",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "ib1cu3a",
+                  "author": "reddit_user_3ca87adba051",
+                  "author_karma": 0,
+                  "content": "I just logged into my WF. Under my propel I don’t even have the “switch my card” option. I do under my visa signature and that’s where I got the error above.",
+                  "timestamp": "2022-06-03T13:58:02+00:00",
+                  "likes": 4,
+                  "dislikes": 0,
+                  "parent_comment_id": "iaztc9b",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "iax32bt",
+          "author": "reddit_user_55d837846143",
+          "author_karma": 0,
+          "content": "Can current Propel card holders convert or just Active Cash?",
+          "timestamp": "2022-06-02T14:58:16+00:00",
+          "likes": 12,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "iax8v8d",
+              "author": "reddit_user_ab2fb6952559",
+              "author_karma": 0,
+              "content": "It should be any card. There's some information stating a customer can request to switch to the autograph if they are no longer satisfied with their current card.",
+              "timestamp": "2022-06-02T15:40:07+00:00",
+              "likes": 11,
+              "dislikes": 0,
+              "parent_comment_id": "iax32bt",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "iaxgws0",
+          "author": "reddit_user_0d59ad3a43e0",
+          "author_karma": 0,
+          "content": "Any news at all about the other credit cards? The other WF insider said the AF-based cards would launch next year. So far we have:\n\n1. Trilliant (trademark expired)\n2. Ratio (trademark expired)\n3. Actualize\n4. Amplitude",
+          "timestamp": "2022-06-02T16:37:20+00:00",
+          "likes": 12,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "iazg18r",
+              "author": "reddit_user_3dee851987b4",
+              "author_karma": 0,
+              "content": "Those are probably just found by searching the trademark database. They were probably trial names that eventually got beaten out by Autograph.",
+              "timestamp": "2022-06-03T01:28:30+00:00",
+              "likes": 3,
+              "dislikes": 0,
+              "parent_comment_id": "iaxgws0",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "iazglg7",
+                  "author": "reddit_user_0d59ad3a43e0",
+                  "author_karma": 0,
+                  "content": "I don't think they're trial names. Most of them processed the same time as the Active Cash and Reflect. So I think they're all actual products that were intended for a launch.",
+                  "timestamp": "2022-06-03T01:32:48+00:00",
+                  "likes": 3,
+                  "dislikes": 0,
+                  "parent_comment_id": "iazg18r",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "iax45zz",
+          "author": "reddit_user_93da26ead370",
+          "author_karma": 0,
+          "content": "Wait can you convert the Amex propel into this? And is it plastic or metal",
+          "timestamp": "2022-06-02T15:06:22+00:00",
+          "likes": 10,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "iax97n6",
+              "author": "reddit_user_ab2fb6952559",
+              "author_karma": 0,
+              "content": "The card is made of plastic with a metal core. I'm thinking you can convert any card to the autograph because there's some language in the material stating exactly that.",
+              "timestamp": "2022-06-02T15:42:31+00:00",
+              "likes": 11,
+              "dislikes": 0,
+              "parent_comment_id": "iax45zz",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "iax4hdi",
+          "author": "reddit_user_38906f16afd9",
+          "author_karma": 0,
+          "content": "Would there be cell phone insurance on this card?",
+          "timestamp": "2022-06-02T15:08:42+00:00",
+          "likes": 10,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "iax8n9e",
+              "author": "reddit_user_ab2fb6952559",
+              "author_karma": 0,
+              "content": "Cell phone protection, rental damage waiver, roadside dispatch, etc. It's a visa signature card, if that means anything significant. I'm not too familiar with that kind of stuff.",
+              "timestamp": "2022-06-02T15:38:32+00:00",
+              "likes": 2,
+              "dislikes": 0,
+              "parent_comment_id": "iax4hdi",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "iaxgmr5",
+                  "author": "reddit_user_3dbfa9590be7",
+                  "author_karma": 0,
+                  "content": "Just because Visa Signature offers it, doesn’t mean every card does. Issues can pick and choose what benefits to offer. Citi, for instance, strips basically all the Mastercard benefits from their cards.",
+                  "timestamp": "2022-06-02T16:35:19+00:00",
+                  "likes": 10,
+                  "dislikes": 0,
+                  "parent_comment_id": "iax8n9e",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "iaxykaz",
+                      "author": "[deleted]",
+                      "author_karma": 0,
+                      "content": "[deleted]",
+                      "timestamp": "2022-06-02T18:40:50+00:00",
+                      "likes": 5,
+                      "dislikes": 0,
+                      "parent_comment_id": "iaxgmr5",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "iaxzf86",
+                          "author": "reddit_user_3dbfa9590be7",
+                          "author_karma": 0,
+                          "content": "I was just making a point that issuers can pick and chose what they will offer and the fact that’s it’s a Visa Signature doesn’t matter.",
+                          "timestamp": "2022-06-02T18:46:52+00:00",
+                          "likes": 3,
+                          "dislikes": 0,
+                          "parent_comment_id": "iaxykaz",
+                          "depth": 4,
+                          "replies": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "iax0c0v",
+          "author": "reddit_user_a8a79cfecb8f",
+          "author_karma": 0,
+          "content": "Hoping no FTF",
+          "timestamp": "2022-06-02T14:37:57+00:00",
+          "likes": 17,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "iax0si9",
+              "author": "reddit_user_ab2fb6952559",
+              "author_karma": 0,
+              "content": "Looking at my notes, no foreign currency conversion fee.",
+              "timestamp": "2022-06-02T14:41:24+00:00",
+              "likes": 30,
+              "dislikes": 0,
+              "parent_comment_id": "iax0c0v",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "iax6yi6",
+          "author": "reddit_user_23941a3d0c4d",
+          "author_karma": 0,
+          "content": "Any word if they will nuke the Propel at any point? I know they grandfather, but being an AMEX they might have some agreement that comes to an end.",
+          "timestamp": "2022-06-02T15:26:19+00:00",
+          "likes": 7,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "iax9l83",
+              "author": "reddit_user_2b75a8210b9f",
+              "author_karma": 0,
+              "content": "Fwiw, there are wf cards running on the Mastercard network still in service and they were discontinued 10 years ago.",
+              "timestamp": "2022-06-02T15:45:12+00:00",
+              "likes": 22,
+              "dislikes": 0,
+              "parent_comment_id": "iax6yi6",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "iaxim6l",
+                  "author": "reddit_user_23941a3d0c4d",
+                  "author_karma": 0,
+                  "content": "I didn't know that, thanks!",
+                  "timestamp": "2022-06-02T16:49:12+00:00",
+                  "likes": 6,
+                  "dislikes": 0,
+                  "parent_comment_id": "iax9l83",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "iaxammk",
+          "author": "reddit_user_191edcaebb86",
+          "author_karma": 0,
+          "content": "Do you know if we will be able to pool these\nPoints and move it to their new Bilt credit card? If we can,  I will for sure get this card.",
+          "timestamp": "2022-06-02T15:52:38+00:00",
+          "likes": 8,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "iax5g3p",
+          "author": "reddit_user_69e28795aed0",
+          "author_karma": 0,
+          "content": "So, this basically Propel?",
+          "timestamp": "2022-06-02T15:15:41+00:00",
+          "likes": 6,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "iax6rxa",
+          "author": "reddit_user_6b3a3a8d409f",
+          "author_karma": 0,
+          "content": "Seems like an exact copy of the Propel. Hopefully this will be on the Visa network and with no FTF. \n\nLooks like a good welcome bonus too but seems like quite a lot of overlap with their other new Bilt credit card.",
+          "timestamp": "2022-06-02T15:25:01+00:00",
+          "likes": 7,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "iaxuwt9",
+          "author": "reddit_user_171304756e1a",
+          "author_karma": 0,
+          "content": "Will we be able to product change from the propel to the autograph in the app?",
+          "timestamp": "2022-06-02T18:14:57+00:00",
+          "likes": 7,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "iaxxhwg",
+              "author": "reddit_user_ab2fb6952559",
+              "author_karma": 0,
+              "content": "I'm assuming so. That's one of the things theyre telling us to encourage customers to do.",
+              "timestamp": "2022-06-02T18:33:24+00:00",
+              "likes": 7,
+              "dislikes": 0,
+              "parent_comment_id": "iaxuwt9",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "ib6raf8",
+                  "author": "reddit_user_073988a18187",
+                  "author_karma": 0,
+                  "content": "Thank for the info! Is there any specific reason WF is encouraging the product change from Propel to Autograph that we should know about? (conversely, any obvious reasons not to switch?)",
+                  "timestamp": "2022-06-04T21:52:55+00:00",
+                  "likes": 4,
+                  "dislikes": 0,
+                  "parent_comment_id": "iaxxhwg",
+                  "depth": 2,
+                  "replies": []
+                },
+                {
+                  "comment_id": "iaxyz6m",
+                  "author": "reddit_user_171304756e1a",
+                  "author_karma": 0,
+                  "content": "Thanks!",
+                  "timestamp": "2022-06-02T18:43:41+00:00",
+                  "likes": 2,
+                  "dislikes": 0,
+                  "parent_comment_id": "iaxxhwg",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "iaye901",
+          "author": "reddit_user_28a2a8758e44",
+          "author_karma": 0,
+          "content": "My platinum card is no longer eligible for an update.\n\n\"Credit Card Switch is currently unavailable because of an upcoming change to your card's benefits, communicated in your June statement. The service will be available again on July 13, 2022.\"\n\nPerhaps a forced upgrade?",
+          "timestamp": "2022-06-02T20:34:02+00:00",
+          "likes": 5,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "iaymf25",
+              "author": "reddit_user_8175167b2155",
+              "author_karma": 0,
+              "content": "Theres a chance they might product switch the Platinum to a Reflect.  Also, Cash Wise could be product changed to Active Cash due to the similarities.",
+              "timestamp": "2022-06-02T21:34:51+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "iaye901",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "iaymyu7",
+                  "author": "reddit_user_28a2a8758e44",
+                  "author_karma": 0,
+                  "content": "This is an old student cash back card that they decided to call a platinum card sometime a couple years back. I think I'm earning 1% on it. Before this, I had the option to upgrade it to an Active Cash but I already have one so it had just left it.",
+                  "timestamp": "2022-06-02T21:38:59+00:00",
+                  "likes": 2,
+                  "dislikes": 0,
+                  "parent_comment_id": "iaymf25",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "iaynulh",
+                      "author": "reddit_user_8175167b2155",
+                      "author_karma": 0,
+                      "content": "If thats the case, there is a pretty good chance of an upgrade.  I read online the more recent WF Student cards were product changed for some people to Active Cash product automatically.",
+                      "timestamp": "2022-06-02T21:45:36+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "iaymyu7",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "iax3n2u",
+          "author": "reddit_user_2c9cde051748",
+          "author_karma": 0,
+          "content": "That's a seriously good no annual fee cash back card. The only thing WF is missing is a mid-tier travel card to go along with it.",
+          "timestamp": "2022-06-02T15:02:29+00:00",
+          "likes": 4,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "iax79om",
+          "author": "reddit_user_2b75a8210b9f",
+          "author_karma": 0,
+          "content": "Part of me says I should wait until the af cards drop and see if the actualize (mid-tier) improves on this.\n\nOtherwise, I will have my default trifecta set up this Autumn.\n\n- wells fargo active cash\n\n- wells fargo autograph\n\n- citi custom cash",
+          "timestamp": "2022-06-02T15:28:34+00:00",
+          "likes": 4,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "iaxfipx",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "Very similar to my propel only benefit its a visa",
+          "timestamp": "2022-06-02T16:27:27+00:00",
+          "likes": 4,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "iax8mfx",
+          "author": "reddit_user_2b75a8210b9f",
+          "author_karma": 0,
+          "content": "If you still have your visa signature, can you still use that to make points worth 50% more when it comes to travel?",
+          "timestamp": "2022-06-02T15:38:22+00:00",
+          "likes": 3,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "iaxb9l6",
+          "author": "reddit_user_f06744878194",
+          "author_karma": 0,
+          "content": "Similar to the NFCU More Rewards but with added travel, streaming and phone plans.",
+          "timestamp": "2022-06-02T15:57:11+00:00",
+          "likes": 3,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "iaxi452",
+              "author": "reddit_user_3630d91b848b",
+              "author_karma": 0,
+              "content": "And minus groceries.",
+              "timestamp": "2022-06-02T16:45:41+00:00",
+              "likes": 3,
+              "dislikes": 0,
+              "parent_comment_id": "iaxb9l6",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "iaxjpnx",
+          "author": "reddit_user_fd15549eeb61",
+          "author_karma": 0,
+          "content": "If that’s a $300 sub I’ll get this even though I have the propel. Would have loved to trade it for my useless cash wise though.",
+          "timestamp": "2022-06-02T16:56:49+00:00",
+          "likes": 3,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "iaxyz3w",
+              "author": "[deleted]",
+              "author_karma": 0,
+              "content": "You can PC your cash wise to an active cash",
+              "timestamp": "2022-06-02T18:43:40+00:00",
+              "likes": 2,
+              "dislikes": 0,
+              "parent_comment_id": "iaxjpnx",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "iay057p",
+                  "author": "reddit_user_fd15549eeb61",
+                  "author_karma": 0,
+                  "content": "I already have a 2% fidelity card.",
+                  "timestamp": "2022-06-02T18:52:01+00:00",
+                  "likes": 3,
+                  "dislikes": 0,
+                  "parent_comment_id": "iaxyz3w",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "iaxm96m",
+          "author": "reddit_user_bf98a4841ab2",
+          "author_karma": 0,
+          "content": "It’s interesting to me that they refer to the welcome bonus as “points” rather than cash rewards, which is their language for the Active Cash. Makes me think they are eventually going to announce a travel-oriented rewards redemption system. Super compelling card for me.\n\nThanks for sharing, OP! And all the other anonymous WF employees, haha.",
+          "timestamp": "2022-06-02T17:14:38+00:00",
+          "likes": 3,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "iaxrvno",
+              "author": "reddit_user_ab2fb6952559",
+              "author_karma": 0,
+              "content": "I think you're on the right track. I did see some information about their own point system. Does WF currently have a rewards system or is it all cash back? I don't know because ironically I don't have any WF CCs lol.",
+              "timestamp": "2022-06-02T17:53:25+00:00",
+              "likes": 3,
+              "dislikes": 0,
+              "parent_comment_id": "iaxm96m",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "iaxwj3x",
+                  "author": "reddit_user_bf98a4841ab2",
+                  "author_karma": 0,
+                  "content": "Haha it looks like the old Propel card used to earn “points”. I don’t have the card, so I’m not super familiar with any extra redemption opportunity that points offered for the Propel.",
+                  "timestamp": "2022-06-02T18:26:26+00:00",
+                  "likes": 4,
+                  "dislikes": 0,
+                  "parent_comment_id": "iaxrvno",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "iaztofn",
+                      "author": "reddit_user_ed0102e271d7",
+                      "author_karma": 0,
+                      "content": "Yes the old proper card does offer points (I’ve got one)",
+                      "timestamp": "2022-06-03T03:16:53+00:00",
+                      "likes": 2,
+                      "dislikes": 0,
+                      "parent_comment_id": "iaxwj3x",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "iaxu0dk",
+          "author": "reddit_user_60701847ad01",
+          "author_karma": 0,
+          "content": "I will be interested to see the limits/deductibles for the phone insurance. I picked up the Chase Freedom Flex when the Uber card went away to primarily use for automatically paying my cell phone and also using it for the quarterly categories.",
+          "timestamp": "2022-06-02T18:08:32+00:00",
+          "likes": 3,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "iaxxlmk",
+              "author": "reddit_user_ab2fb6952559",
+              "author_karma": 0,
+              "content": "Pretty sure it's $25 deductible and $600 per claim.",
+              "timestamp": "2022-06-02T18:34:07+00:00",
+              "likes": 3,
+              "dislikes": 0,
+              "parent_comment_id": "iaxu0dk",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "ibfargw",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[deleted]",
+          "timestamp": "2022-06-06T23:12:32+00:00",
+          "likes": 3,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "ibhc1w0",
+              "author": "reddit_user_ab2fb6952559",
+              "author_karma": 0,
+              "content": "Yes it will",
+              "timestamp": "2022-06-07T12:42:47+00:00",
+              "likes": 3,
+              "dislikes": 0,
+              "parent_comment_id": "ibfargw",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "iaxilku",
+          "author": "reddit_user_5df544181420",
+          "author_karma": 0,
+          "content": "Damn this blows my nfcu more rewards out of the water",
+          "timestamp": "2022-06-02T16:49:06+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "iaxm62r",
+              "author": "reddit_user_3630d91b848b",
+              "author_karma": 0,
+              "content": "Only thing is NFCU has groceries bonus.",
+              "timestamp": "2022-06-02T17:14:03+00:00",
+              "likes": 4,
+              "dislikes": 0,
+              "parent_comment_id": "iaxilku",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "iaxss6n",
+          "author": "reddit_user_bf48eac1bf74",
+          "author_karma": 0,
+          "content": "i recently got the venture x and was planning on getting the savor one in a few months, but the autograph looks like a pretty solid alternative. 3% on transit+phone plans comes out slightly ahead over 3% on groceries (but not by much; i also don't have a car so gas isn't a huge draw), but is it worth dealing with potentially shitty WF customer service and missing out on the savor one/vx pairing?",
+          "timestamp": "2022-06-02T17:59:48+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "ib1b2tz",
+              "author": "reddit_user_639d2601fc06",
+              "author_karma": 0,
+              "content": "My recommendation is to get both the Wells Fargo Autograph and the Capital One SavorOne; just determine which one you want first.  That's what I did with the WF Propel and the CapOne SavorOne. :)",
+              "timestamp": "2022-06-03T13:44:12+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "iaxss6n",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "iay7ceb",
+          "author": "reddit_user_747b6c065791",
+          "author_karma": 0,
+          "content": "Do you know what the cell phone protection coverage will be? 3x back on cell phone plan plus phone coverage is pretty nice. If we can convert from propel to this one we’ll move our cell phone bill to this card\n\nEdit: second question- can points be redeemed for a check?",
+          "timestamp": "2022-06-02T19:44:02+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "iayvkpz",
+              "author": "reddit_user_3dbfa9590be7",
+              "author_karma": 0,
+              "content": "Probably $600, like the Active Cash.",
+              "timestamp": "2022-06-02T22:43:40+00:00",
+              "likes": 2,
+              "dislikes": 0,
+              "parent_comment_id": "iay7ceb",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "iayd72a",
+          "author": "reddit_user_1944d6364007",
+          "author_karma": 0,
+          "content": "This is a great card.  I'll PC my active cash",
+          "timestamp": "2022-06-02T20:26:23+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run016_post03_seed083",
+      "post_slot": 3,
+      "seed_index": 83,
+      "source_raw_post_id": "1fpxqch",
+      "source_product_dir": "BankAmericard® credit card",
+      "source_file": "reddit_post:1fpxqch",
+      "post_type": "card_recommendation",
+      "title": "Got BILT, need Grocery/Restaurant/Everything else for Points/Travel",
+      "author": "reddit_user_0dab2d077fca",
+      "author_karma": 0,
+      "content": "Got BILT, need Grocery/Restaurant/Everything else for Points/Travel\n\nI just got approved for the BILT card to use for rent. Would like to optimize rewards for travel (flights/hotels/airbnb etc.). We usually travel 2-4 times per year, 1-2 of those driving, the rest flying. We are in ATL so only fly Delta. All of the cards below are zero balance except the Rooms To Go (zero interest will be paid off in a few months).\n\nWe don't use any of the other cards any more. Have been just using debit card for everything. We used to have the Sapphire Reserve but had a child so stopped traveling. Now we are back to traveling more and want to take advantage of points. \n\nI was thinking of doing the Venture X and Savor One Combo in addition to the BILT we just ordered but wonder if I'm missing anything else before I apply for these. \n\nAlso considered the Amex Plat but not sure we travel enough for that. Just wanted the SUB and the Sky Lounge access when we do fly Delta. \n\n* Current cards: (list cards, limits, opening date)\n * *BankAmericard Power Rewards Visa Signature $30,000 limit, March 2007*\n * *BankAmericard Platinum Plus Mastercard $27,000 limit, October 2022*\n * *USAA Platinum Visa $3500 limit, October 1991*\n * *Chase Sapphire $33,900, September 2017*\n * *Rooms to Go $7,700, October 2021*\n* FICO Score: *779*\n* *Credit Score: 806*\n* Oldest account age: *35 Years*\n* Chase 5/24 status: *2/24 I believe*\n* Income: *e.g. $200,000*\n* Average monthly spend and categories:\n * dining $900\n * groceries: $1600\n * gas: $280.5\n * travel: $600-800\n * healthcare: > $1000\n * internet $150\n* Open to Business Cards: *Yes*\n* What's the purpose of your next card? *We usually like to use points for travel. Cash back is fine too if that's better.*\n* Do you have any cards you've been looking at? *Venture X, Savor One, Amex Plat/Gold, USBAR, Amex Blue*\n* Are you OK with category spending or do you want a general spending card? Either is fine, whatever is best bang for the buck.",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "lp33fg0",
+          "author": "reddit_user_0eb76eef7feb",
+          "author_karma": 0,
+          "content": "With $2500/mo in dining and grocery, you may want to take a look at the Amex Gold. If the credits make sense to offset the AF, it would work out real well for you.",
+          "timestamp": "2024-09-26T21:20:26+00:00",
+          "likes": 3,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "lp3j4kd",
+              "author": "reddit_user_e50a84b594e2",
+              "author_karma": 0,
+              "content": "That’s what I was thinking thank you.",
+              "timestamp": "2024-09-26T22:50:52+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "lp33fg0",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "lp5gt4l",
+                  "author": "reddit_user_6ae7916db2ba",
+                  "author_karma": 0,
+                  "content": "If you pair it with the business plat (not personal), you can also get a 35% rebate on your points on your delta flights. \n\nWill make the effective multiplier on your gold card 6%.",
+                  "timestamp": "2024-09-27T07:32:02+00:00",
+                  "likes": 2,
+                  "dislikes": 0,
+                  "parent_comment_id": "lp3j4kd",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "lp6qr31",
+                      "author": "reddit_user_e50a84b594e2",
+                      "author_karma": 0,
+                      "content": "Oh awesome ty I’ll look into this.",
+                      "timestamp": "2024-09-27T14:09:34+00:00",
+                      "likes": 2,
+                      "dislikes": 0,
+                      "parent_comment_id": "lp5gt4l",
+                      "depth": 3,
+                      "replies": []
+                    },
+                    {
+                      "comment_id": "lphe55a",
+                      "author": "reddit_user_e50a84b594e2",
+                      "author_karma": 0,
+                      "content": "And then just use the Business Plat and the gold for everything?",
+                      "timestamp": "2024-09-29T12:36:03+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "lp5gt4l",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "lpi05r8",
+                          "author": "reddit_user_6ae7916db2ba",
+                          "author_karma": 0,
+                          "content": "That’s what I do. But make sure it makes sense for you. I put a lot more spend on my golds",
+                          "timestamp": "2024-09-29T15:02:17+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "lphe55a",
+                          "depth": 4,
+                          "replies": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "lp79mcw",
+          "author": "reddit_user_80ef3e21553e",
+          "author_karma": 0,
+          "content": "I think the Gold makes the most sense, compared to the SavorOne or any other card, at your spend whether or not you would use the credits. Using any of the credits would just be a bonus. I think the Gold and Venture X would be a good combo for you.",
+          "timestamp": "2024-09-27T15:52:16+00:00",
+          "likes": 3,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "lp0y9en",
+          "author": "reddit_user_bca8033b630e",
+          "author_karma": 0,
+          "content": "Interested in cashback cards? Take a look at these resources from the sidebar:\n\n* [List of Flat 2%+ Cashback Cards](https://www.reddit.com/r/CreditCards/wiki/list_of_flat_cashback_cards_with_benefits) \n* [List of Best Cashback Cards by Category](https://www.reddit.com/r/CreditCards/wiki/best_cash_back_cards_by_category)\n\nI can be summoned to comment by using command(s):\n\n`!cashback`\n\n*I am a bot, and this action was performed automatically. Please [contact the moderators of this subreddit](/message/compose/?to=/r/CreditCards) if you have any questions or concerns.*",
+          "timestamp": "2024-09-26T14:37:16+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "lp26muo",
+          "author": "reddit_user_87377d526fd5",
+          "author_karma": 0,
+          "content": "If you still have the Chase Sapphire Reserve, what is no longer working with that card that you are looking to apply for another travel card?",
+          "timestamp": "2024-09-26T18:27:20+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "lp277ih",
+              "author": "reddit_user_e50a84b594e2",
+              "author_karma": 0,
+              "content": "Don’t have that one anymore.  We downgraded it to get rid of the AF.",
+              "timestamp": "2024-09-26T18:30:19+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "lp26muo",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "lp2826p",
+                  "author": "reddit_user_87377d526fd5",
+                  "author_karma": 0,
+                  "content": "I see. If you want one card, then the USBAR would be great if you can put most of your spend on mobile.",
+                  "timestamp": "2024-09-26T18:34:48+00:00",
+                  "likes": 2,
+                  "dislikes": 0,
+                  "parent_comment_id": "lp277ih",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "post_id": "real_run016_post04_seed084",
+      "post_slot": 4,
+      "seed_index": 84,
+      "source_raw_post_id": "s1lgx9",
+      "source_product_dir": "Bank of America® Travel Rewards credit card for Students",
+      "source_file": "reddit_post:s1lgx9",
+      "post_type": "other",
+      "title": "How did I get declined for a student credit card with good credit and income?",
+      "author": "reddit_user_0dab2d077fca",
+      "author_karma": 0,
+      "content": "How did I get declined for a student credit card with good credit and income?\n\nI recently applied for the Bank of America Student Travel Rewards card and got declined. I am a junior in college who's credit history is being a cardholder on my Dad's credit card and it says I have a FICO credit score of 701. I put down an income of $12,000, so I just want to know how on earth I could have gotten declined and whether I should appeal. That income should absolutely be enough. They said they mail the reason for getting declined but I haven't gotten it yet. A student credit card is literally for building credit and I already have good credit so I just don't understand how they could decline me. I just really wanted this particular one because I am about to study abroad and this is one of the only student cards with no foreign transaction fee.",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "hs8ydxh",
+          "author": "reddit_user_a8db2aff2dfb",
+          "author_karma": 0,
+          "content": "Wait for letter with the reason. Facts are better than assumptions. You can also pull all your credit reports and see if something is there that you do not know about.",
+          "timestamp": "2022-01-11T19:40:53+00:00",
+          "likes": 9,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "hs94cvr",
+          "author": "reddit_user_34a1f2ab25b0",
+          "author_karma": 0,
+          "content": "You can always try calling for reconsideration.\n\nNote that if you're 21+, you may be able to include your parents' income in your income. See the notes on what counts as income at the bottom of the [template for card recommendations](https://www.reddit.com/r/CreditCards/wiki/cardtemplate) (also linked in the sidebar).",
+          "timestamp": "2022-01-11T20:17:26+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "hs98okn",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "you probably got denied for low income or not having credit of your own.",
+          "timestamp": "2022-01-11T20:43:55+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "hsfmgoz",
+              "author": "reddit_user_1deef2762ba8",
+              "author_karma": 0,
+              "content": "It's a student credit card, am I the only one who thinks it's absolutely absurd that $12,000 of income and a good credit score is not enough to get a card literally meant for building credit? Like if I'm not qualified, who the hell is actually getting this card, just trust fund kids?",
+              "timestamp": "2022-01-13T02:17:32+00:00",
+              "likes": 0,
+              "dislikes": 0,
+              "parent_comment_id": "hs98okn",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "hsfu75s",
+                  "author": "[deleted]",
+                  "author_karma": 0,
+                  "content": "no, people with better incomes. your income is super low and you're only credit history is someone else's, so yeah you got denied. it's life. try a different card.",
+                  "timestamp": "2022-01-13T03:14:18+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "hsfmgoz",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "hs8yv0q",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "Student credit cards never worked for me. I was always denied so I just got secured cards instead.",
+          "timestamp": "2022-01-11T19:43:46+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "hsanbdl",
+          "author": "reddit_user_7567523a5bc8",
+          "author_karma": 0,
+          "content": "Seriously, just call them.  It could be something as simple as not being able to confirm your ID .",
+          "timestamp": "2022-01-12T02:23:31+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "hsfm83z",
+              "author": "reddit_user_1deef2762ba8",
+              "author_karma": 0,
+              "content": "I tried to call and they said they couldn't find a reason in their system why it was declined. The lady said that in their system, it looked the way it does when there hasn't been a decision made yet. The first lady tried to figure it out and transfer me and I got hung up on, then I called back and talked to a very rude lady who told me I just have to wait for the letter to find out the reason. It makes no sense that there would be a letter sent with reasons but they have no record in their system of it. Might call back one more time tomorrow and see if the second lady was wrong.",
+              "timestamp": "2022-01-13T02:15:50+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "hsanbdl",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "hsg6uub",
+                  "author": "reddit_user_7567523a5bc8",
+                  "author_karma": 0,
+                  "content": ">It makes no sense that there would be a letter sent with reasons but they have no record in their system of it. \n\nSorry to hear that you had such troublesome CSR experiences.    If one is being less than helpful - rude - simply hangup on them and dial back in.  The chances of you getting that same rep is slim to none.  BTW, there is a CC Application status page.  Did you put your stuff there and see what it says?  Because if it says declined, and they don't show that in their system when you call, then at least you have something to work from.",
+                  "timestamp": "2022-01-13T04:56:52+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "hsfm83z",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

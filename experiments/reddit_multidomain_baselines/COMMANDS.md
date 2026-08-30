@@ -37,7 +37,7 @@ export GEMINI_API_KEY='...'
 # Run setup.sh without --skip-synthpai before using this form.
 ./experiments/reddit_multidomain_baselines/run_domain.sh laptop
 
-# 7. Full generation: 11 domains × 2 baselines × 4 models.
+# 7. Full generation: 12 domains × 2 baselines × 4 models.
 ./experiments/reddit_multidomain_baselines/run_generate_all.sh --continue-on-error
 
 # 8. Check generation accounting while or after it runs.

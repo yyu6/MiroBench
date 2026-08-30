@@ -1,0 +1,2186 @@
+{
+  "meta": {
+    "product_category": "credit_cards",
+    "baseline": "real_reddit_reference",
+    "run_id": "run_003_sampled_reddit"
+  },
+  "posts": [
+    {
+      "post_id": "real_run003_post00_seed015",
+      "post_slot": 0,
+      "seed_index": 15,
+      "source_raw_post_id": "1r3rj8b",
+      "source_product_dir": "Wells Fargo Autograph® Card",
+      "source_file": "reddit_post:1r3rj8b",
+      "post_type": "discussion_prompt",
+      "title": "WellsFargo Autograph - Missing rewards",
+      "author": "reddit_user_0dab2d077fca",
+      "author_karma": 0,
+      "content": "WellsFargo Autograph - Missing rewards\n\nRecently, I transitioned from Bilt 1.0 to Bilt 2.0 and also requested the Autograph card. I’ve started using the Autograph card, but I’ve noticed that I’m not accumulating any rewards. Additionally, a statement for $5 was generated within just 3 days of activation (which is expected as i made a gas transaction for 3X rewards). Is anyone else experiencing the same issue o fmisisng rewards?",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": []
+    },
+    {
+      "post_id": "real_run003_post01_seed016",
+      "post_slot": 1,
+      "seed_index": 16,
+      "source_raw_post_id": "17bmf6k",
+      "source_product_dir": "American Express® Gold Card",
+      "source_file": "reddit_post:17bmf6k",
+      "post_type": "approval_dp",
+      "title": "Applying for American Express and Chase",
+      "author": "reddit_user_0dab2d077fca",
+      "author_karma": 0,
+      "content": "Applying for American Express and Chase\n\nI applied with confidence and got approved for the Amex gold card and was given 7 days to accept the offer if I apply for the freedom flex before accepting will that have any affect on the already “approved” offer with American Express",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "k5kczh1",
+          "author": "reddit_user_c982951fd669",
+          "author_karma": 0,
+          "content": "It shouldn't. I got my Amex Gold and Sapphire Reserve on the same week. The credit report doesn't update that quickly.",
+          "timestamp": "2023-10-19T16:33:02+00:00",
+          "likes": 7,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "k5krhzw",
+              "author": "reddit_user_04245e14a564",
+              "author_karma": 0,
+              "content": "So should I apply for the freedom flex first or accept the Amex gold approval first and then apply for the freedom flex? \nAlso will it only count as one hard pull if I apply on the same day?",
+              "timestamp": "2023-10-19T17:59:43+00:00",
+              "likes": 2,
+              "dislikes": 0,
+              "parent_comment_id": "k5kczh1",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "k5kro1g",
+                  "author": "reddit_user_c982951fd669",
+                  "author_karma": 0,
+                  "content": "Accept the freedom flex first imo, but it shouldn’t matter. No, it’s two different banks so it’ll be two hard pulls. Fortunately, hard pulls don’t mean that much so don’t stress out about it too much.",
+                  "timestamp": "2023-10-19T18:00:43+00:00",
+                  "likes": 2,
+                  "dislikes": 0,
+                  "parent_comment_id": "k5krhzw",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "k5kf4ym",
+          "author": "reddit_user_15a341c3d1bb",
+          "author_karma": 0,
+          "content": "No. Chase usually takes a month to show up on the credit report. And Amex usually two months.\n\nNow if you apply for an insane amount of credit (like 15 cards in a day), some credit issuers may decide to close your account when all the new accounts hit your report.\n\nBut 2 cards in a month is nothing to worry about.",
+          "timestamp": "2023-10-19T16:45:35+00:00",
+          "likes": 3,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "k5krl8j",
+              "author": "reddit_user_04245e14a564",
+              "author_karma": 0,
+              "content": "So should I apply for the freedom flex first or accept the Amex gold approval first and then apply for the freedom flex? \nAlso will it only count as one hard pull if I apply on the same day?",
+              "timestamp": "2023-10-19T18:00:16+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "k5kf4ym",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "k5khz3d",
+              "author": "reddit_user_aa365603a061",
+              "author_karma": 0,
+              "content": "Is it true AmEx doesn't do hard inquiries if you're a current card holder?",
+              "timestamp": "2023-10-19T17:02:23+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "k5kf4ym",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "k5kif1m",
+                  "author": "reddit_user_15a341c3d1bb",
+                  "author_karma": 0,
+                  "content": "It depends. Amex reserves the right to perform a hard pull at any time. However, after a few billing cycles on your first card (assuming no adverse events like a rejected payment, late payment, etc) they’ll usually just do a soft pull.\n\nIf you hold a personal card and then apply for your first business card, you’re less likely to get a hard pull than if you hold a business card and apply for your first personal card.",
+                  "timestamp": "2023-10-19T17:05:04+00:00",
+                  "likes": 3,
+                  "dislikes": 0,
+                  "parent_comment_id": "k5khz3d",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "k5kl215",
+                      "author": "reddit_user_aa365603a061",
+                      "author_karma": 0,
+                      "content": "Good to know. I got a BCP recently and have had the Delta Plat >5 years (regular revolving; always paid in full) so just curious if a hard pull wasn't done. Good to know as that's 1 less for the 1/12 or 5/24 metric should I decide to obtain another card in the immediate future.",
+                      "timestamp": "2023-10-19T17:21:06+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "k5kif1m",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "k5koijn",
+                          "author": "reddit_user_15a341c3d1bb",
+                          "author_karma": 0,
+                          "content": "The 5/24 rule is about new accounts, not inquiries. Chase still cares about my gold card even though there’s no inquiry for it.",
+                          "timestamp": "2023-10-19T17:41:55+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "k5kl215",
+                          "depth": 4,
+                          "replies": [
+                            {
+                              "comment_id": "k5kqz1i",
+                              "author": "reddit_user_aa365603a061",
+                              "author_karma": 0,
+                              "content": "Thanks for the clarification! That’s a huge detail, especially with AE accounts.",
+                              "timestamp": "2023-10-19T17:56:34+00:00",
+                              "likes": 2,
+                              "dislikes": 0,
+                              "parent_comment_id": "k5koijn",
+                              "depth": 5,
+                              "replies": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "post_id": "real_run003_post02_seed017",
+      "post_slot": 2,
+      "seed_index": 17,
+      "source_raw_post_id": "w7zakq",
+      "source_product_dir": "Citi Double Cash® Card",
+      "source_file": "reddit_post:w7zakq",
+      "post_type": "news_or_rumor",
+      "title": "A No-Annual Fee, highest cash-back, 10-card Wallet: with $1200 in Sign-up bonuses to boot",
+      "author": "reddit_user_0dab2d077fca",
+      "author_karma": 0,
+      "content": "A No-Annual Fee, highest cash-back, 10-card Wallet: with $1200 in Sign-up bonuses to boot\n\nHello r/CreditCards! I have spent the last few weeks combing through dozens of credit card benefits and sign-up bonuses, comparing each card's utility against one another based on some hypothetical budgets (and my own personal budget) and come up with the following list of 10 credit cards that can be used to maximize your cash back rates, with no annual fees to worry about (and $1200 in SUBs as well!). **Note that in all of the following, no consideration was put towards how difficult it is to be accepted for each of these cards,** so adjustments may be necessary based off your personal credit. For SUBs, each credit card provider has different rules regarding how long between receiving each SUB you are eligible to receive another from that provider. For example, Citi requires 24 months between the last date you opened/closed a Citi card to be eligible for another Citi SUB. Here is a link to a page detailing those rules for many of the major credit providers: [Applying for Credit Cards](https://upgradedpoints.com/credit-cards/applying-for-credit-cards-bank-rules/) Without further ado, here is my hypothetical 10-card wallet: |Card Name:|What to use it for:|Does it have earnings limits?|Sign-up Bonus:|Why this card?| |:-|:-|:-|:-|:-| |Citi Double Cash|2.2% ^(\\[A\\])|No earnings-cap|No SUB|This is the catch-all card for the wallet. No frills about it, but if a purchase falls outside the categories for the rest of the cards, use this one!| |Citi Custom Cash|5.55% ^(\\[A\\]) on Groceries|$500/month|$200 SUB after $750 spent in 1st 3 months|As long as your grocery budget is below $500/month, this card is the best bang for your buck in this category.| |Cardless Boston Celtics|7% on Rideshares/Streaming services, 4% on Restaurants/Bars|No earnings-cap|$50 SUB after $500 spent in 1st 3 months|If you spend a lot of time dining out/going to bars, especially if you're taking Uber/Lyft to get there, this card is extremely hard to beat for everything but the SUB.| |Abound CU Platinum Visa|5% on Gas, 5% on rotating categories|No earnings-cap|No SUB|Requiring only a $10 donation to charity to join, this credit union card offers the highest possible CB rate on gas purchases, with the added bonus of quarterly rotating categories, that you are automatically enrolled in!| |Greenstate CU World Mastercard|5% on Hotels and Flights|No earnings-cap|$100 SUB after $1000 spent in 1st 2 months|Want the same cash-back rate as Chase Freedom Flex without having to book your hotels/flights through a portal? This is your card! $5 entry cost to join the CU.| |USBank Cash+|5% on your choice of two categories quarterly ^(\\[B\\]), recommended to choose Home Utilities and Internet, unless you tend to spend more on select retailers|$2000/quarter|$200 SUB once $1000 spent in 1st 120 days|This card can save you up to $100 each quarter, depending on your spending habits and ability to keep up with selecting your bonus categories each quarter.| |Citi Rewards+|5.5% on Restaurants for the 1st year, 2% on groceries/gas ^(\\[A\\])|No earnings-cap|$200 SUB once $1500 spent in 1st 3 months|You don't get this card for its own benefits, you get this to boost your CB rate on the Citi Custom/Double Cash cards by 10%. The 1st year bonus on restaurant spending doesn't hurt though.| |Bilt Mastercard|1x points on Rent, 3x points on Restaurants ^(\\[c\\])|50,000 points/year|No SUB|No other card offers you the chance to get CB on rent, and even if they did most rental companies charge a % fee to pay via CC. Bilt works around that, and lets you earn rewards on a category that makes up an otherwise unrewarded significant portion of your monthly budget.| |CapitalOne SavorOne|3% on Entertainment, 8% when purchased through VividSeats|No earnings-cap|$200 SUB once $500 spent in 1st 3 months|If you spend any significant amount on the following: Movie tickets, Theatrical promoters, Sports promoters, Amusement parks, Tourist attractions, Aquariums, Zoos, Dance halls, Bowling alleys, Pool halls, or Record stores; this card will benefit you over paying for these things with your flat-rate card.| |American Express Blue Cash Everyday|3% on Online Retailers, ...",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "ihmrzib",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "The day I start using 10 cards at a time is the day I log off this sub forever",
+          "timestamp": "2022-07-25T21:30:41+00:00",
+          "likes": 224,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "ihmt87e",
+              "author": "reddit_user_95da97a944ac",
+              "author_karma": 0,
+              "content": "I have 17. Something like WalletFlo does all the work for you.",
+              "timestamp": "2022-07-25T21:38:49+00:00",
+              "likes": 38,
+              "dislikes": 0,
+              "parent_comment_id": "ihmrzib",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "ihmzkf3",
+                  "author": "[deleted]",
+                  "author_karma": 0,
+                  "content": "Why stop at 17? Why don't you make it an even 20?",
+                  "timestamp": "2022-07-25T22:21:36+00:00",
+                  "likes": 40,
+                  "dislikes": 0,
+                  "parent_comment_id": "ihmt87e",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "ihn1js9",
+                      "author": "reddit_user_95da97a944ac",
+                      "author_karma": 0,
+                      "content": "I had 20 at one point; I recently went through and canceled a few. I’ll probably get back up to 20 at some point. (Unless it is Amex, you have to cancel at some point or you can never requalify for the SUB.)",
+                      "timestamp": "2022-07-25T22:35:22+00:00",
+                      "likes": 20,
+                      "dislikes": 0,
+                      "parent_comment_id": "ihmzkf3",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "ihn4mvi",
+                          "author": "reddit_user_bfb74d5e6a7c",
+                          "author_karma": 0,
+                          "content": "How have those cancellations affected your credit?",
+                          "timestamp": "2022-07-25T22:56:57+00:00",
+                          "likes": 9,
+                          "dislikes": 0,
+                          "parent_comment_id": "ihn1js9",
+                          "depth": 4,
+                          "replies": [
+                            {
+                              "comment_id": "ihn5i6l",
+                              "author": "reddit_user_95da97a944ac",
+                              "author_karma": 0,
+                              "content": "Not in the slightest (utilization is a high impact factor for your FICO score. So if it seriously decreases your total credit, it will. Also you never want to cancel your oldest credit card. And finally you want to keep an eye on your average credit. However two of the benefits of having lots of credit cards are: 1. total available credit always stays high 2. Average age always stays high). My FICO score varies slightly, but it is always over 800.",
+                              "timestamp": "2022-07-25T23:03:11+00:00",
+                              "likes": 26,
+                              "dislikes": 0,
+                              "parent_comment_id": "ihn4mvi",
+                              "depth": 5,
+                              "replies": [
+                                {
+                                  "comment_id": "ihn5pnp",
+                                  "author": "reddit_user_bfb74d5e6a7c",
+                                  "author_karma": 0,
+                                  "content": "Thank you.",
+                                  "timestamp": "2022-07-25T23:04:39+00:00",
+                                  "likes": 3,
+                                  "dislikes": 0,
+                                  "parent_comment_id": "ihn5i6l",
+                                  "depth": 6,
+                                  "replies": []
+                                },
+                                {
+                                  "comment_id": "ihqusnf",
+                                  "author": "reddit_user_82d80caac91f",
+                                  "author_karma": 0,
+                                  "content": "Very true! Always want to keep your oldest card, better hope its a no fee card!",
+                                  "timestamp": "2022-07-26T18:14:00+00:00",
+                                  "likes": 2,
+                                  "dislikes": 0,
+                                  "parent_comment_id": "ihn5i6l",
+                                  "depth": 6,
+                                  "replies": []
+                                },
+                                {
+                                  "comment_id": "ikm89jn",
+                                  "author": "reddit_user_d569801cc98d",
+                                  "author_karma": 0,
+                                  "content": "How does having a lot of credit cards increase the average length of credit? If I got 10 new credit cards over the next year wouldn’t my average go down for awhile?",
+                                  "timestamp": "2022-08-17T04:34:25+00:00",
+                                  "likes": 1,
+                                  "dislikes": 0,
+                                  "parent_comment_id": "ihn5i6l",
+                                  "depth": 6,
+                                  "replies": [
+                                    {
+                                      "comment_id": "iksire2",
+                                      "author": "reddit_user_95da97a944ac",
+                                      "author_karma": 0,
+                                      "content": "Having a large number of credit cards means canceling one has little effect on your average age of credit.",
+                                      "timestamp": "2022-08-18T13:17:47+00:00",
+                                      "likes": 3,
+                                      "dislikes": 0,
+                                      "parent_comment_id": "ikm89jn",
+                                      "depth": 7,
+                                      "replies": [
+                                        {
+                                          "comment_id": "iksixdc",
+                                          "author": "reddit_user_d569801cc98d",
+                                          "author_karma": 0,
+                                          "content": "Thank you! What are your thoughts on the Amazon credit card?",
+                                          "timestamp": "2022-08-18T13:19:02+00:00",
+                                          "likes": 1,
+                                          "dislikes": 0,
+                                          "parent_comment_id": "iksire2",
+                                          "depth": 8,
+                                          "replies": [
+                                            {
+                                              "comment_id": "iksjcys",
+                                              "author": "reddit_user_95da97a944ac",
+                                              "author_karma": 0,
+                                              "content": "It is helpful if you use Amazon/shop at Whole Foods and if you never carry a balance.",
+                                              "timestamp": "2022-08-18T13:22:12+00:00",
+                                              "likes": 3,
+                                              "dislikes": 0,
+                                              "parent_comment_id": "iksixdc",
+                                              "depth": 9,
+                                              "replies": []
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "comment_id": "iho0b48",
+                          "author": "reddit_user_167c12c3009c",
+                          "author_karma": 0,
+                          "content": ">(Unless it is Amex, you have to cancel at some point or you can never requalify for the SUB.)\n\nAmex does upgrade bonuses which ignore the one time rule.",
+                          "timestamp": "2022-07-26T02:51:57+00:00",
+                          "likes": 5,
+                          "dislikes": 0,
+                          "parent_comment_id": "ihn1js9",
+                          "depth": 4,
+                          "replies": [
+                            {
+                              "comment_id": "iho19y7",
+                              "author": "reddit_user_95da97a944ac",
+                              "author_karma": 0,
+                              "content": "I don’t quite understand: how do you get around the one time rule?",
+                              "timestamp": "2022-07-26T02:59:37+00:00",
+                              "likes": 2,
+                              "dislikes": 0,
+                              "parent_comment_id": "iho0b48",
+                              "depth": 5,
+                              "replies": [
+                                {
+                                  "comment_id": "ihoskrx",
+                                  "author": "reddit_user_59d38628908d",
+                                  "author_karma": 0,
+                                  "content": "If AMEX really wants your business they will make you an offer to upgrade or come back. These personalized offers usually don't contain the once-in-a-lifetime restriction.",
+                                  "timestamp": "2022-07-26T07:46:43+00:00",
+                                  "likes": 7,
+                                  "dislikes": 0,
+                                  "parent_comment_id": "iho19y7",
+                                  "depth": 6,
+                                  "replies": []
+                                },
+                                {
+                                  "comment_id": "iho9snp",
+                                  "author": "reddit_user_a82798fd8ecb",
+                                  "author_karma": 0,
+                                  "content": "NLL offers to existing card holders and/or upgrade offers.",
+                                  "timestamp": "2022-07-26T04:12:50+00:00",
+                                  "likes": 2,
+                                  "dislikes": 0,
+                                  "parent_comment_id": "iho19y7",
+                                  "depth": 6,
+                                  "replies": []
+                                },
+                                {
+                                  "comment_id": "ihondrb",
+                                  "author": "reddit_user_167c12c3009c",
+                                  "author_karma": 0,
+                                  "content": "Nearly all *Upgrades* have no lifetime rule.  I literally downgraded my EDP and got an offer to upgrade it again.  I've literally made 100k MR off this one card by upgrading it twice.",
+                                  "timestamp": "2022-07-26T06:39:27+00:00",
+                                  "likes": 2,
+                                  "dislikes": 0,
+                                  "parent_comment_id": "iho19y7",
+                                  "depth": 6,
+                                  "replies": [
+                                    {
+                                      "comment_id": "ihp7vis",
+                                      "author": "reddit_user_95da97a944ac",
+                                      "author_karma": 0,
+                                      "content": "That is interesting—",
+                                      "timestamp": "2022-07-26T11:05:56+00:00",
+                                      "likes": 0,
+                                      "dislikes": 0,
+                                      "parent_comment_id": "ihondrb",
+                                      "depth": 7,
+                                      "replies": []
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "comment_id": "iic19jv",
+                          "author": "reddit_user_eb0ae938951f",
+                          "author_karma": 0,
+                          "content": "Ive got 37, i know crazy",
+                          "timestamp": "2022-07-31T02:27:22+00:00",
+                          "likes": 2,
+                          "dislikes": 0,
+                          "parent_comment_id": "ihn1js9",
+                          "depth": 4,
+                          "replies": [
+                            {
+                              "comment_id": "iiev4fq",
+                              "author": "reddit_user_95da97a944ac",
+                              "author_karma": 0,
+                              "content": "That’s a lot of credit cards—",
+                              "timestamp": "2022-07-31T18:38:50+00:00",
+                              "likes": 1,
+                              "dislikes": 0,
+                              "parent_comment_id": "iic19jv",
+                              "depth": 5,
+                              "replies": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "comment_id": "ihnnq4b",
+                  "author": "reddit_user_bf1401eda784",
+                  "author_karma": 0,
+                  "content": "What a cool app! Thanks for sharing",
+                  "timestamp": "2022-07-26T01:17:29+00:00",
+                  "likes": 4,
+                  "dislikes": 0,
+                  "parent_comment_id": "ihmt87e",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            },
+            {
+              "comment_id": "ihn52rw",
+              "author": "[deleted]",
+              "author_karma": 0,
+              "content": "It’s honestly not that complicated. How often would you pay for streaming services, rent, gas, groceries, online, on the same day? Half of these are weekly at best, the other half is stuff on autopay. Double cash is the only daily use. But you’re free to not save money lol, some peoples brains just don’t mind doing it. I only have 3 cards and obsess over it.",
+              "timestamp": "2022-07-25T23:00:08+00:00",
+              "likes": 17,
+              "dislikes": 0,
+              "parent_comment_id": "ihmrzib",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "ihpuz5j",
+                  "author": "reddit_user_0bfadb869c0d",
+                  "author_karma": 0,
+                  "content": "After like 6 cards it becomes a chore logging into all the apps and feeling like you're going to accidentally miss a payment.",
+                  "timestamp": "2022-07-26T14:22:30+00:00",
+                  "likes": 14,
+                  "dislikes": 0,
+                  "parent_comment_id": "ihn52rw",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "ihpw4gf",
+                      "author": "[deleted]",
+                      "author_karma": 0,
+                      "content": "I understand, I have a bunch of student loans from different issuers, credit cards, auto loans. So i can get the feeling now",
+                      "timestamp": "2022-07-26T14:30:26+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "ihpuz5j",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                },
+                {
+                  "comment_id": "ihpak54",
+                  "author": "reddit_user_e83a5d04d7e1",
+                  "author_karma": 0,
+                  "content": "You make a good point, most cards are used infrequently so you only need to care about 2-3 on a daily basis. But then, kinda derail your argument when you say you only have 3 cards and obsess over it. \n\nI have 20 cards, use 10, and find it annoying. Especially when I realized it doesn't matter because of SUB. Who cares what card gets what reward when the SUB always wins (unless you are a business and spends 10k+ a month).",
+                  "timestamp": "2022-07-26T11:34:44+00:00",
+                  "likes": 4,
+                  "dislikes": 0,
+                  "parent_comment_id": "ihn52rw",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "ihpkbwr",
+                      "author": "[deleted]",
+                      "author_karma": 0,
+                      "content": "Yeah bad choice of words. More so meaning I love to look at every little detail. Writing budgets, checking what fall off dates are coming up, just everything with the process is fun to me. But yeah mostly cause I’m poorish, and it gives me a sense of control, while I go through my career.",
+                      "timestamp": "2022-07-26T13:02:52+00:00",
+                      "likes": 4,
+                      "dislikes": 0,
+                      "parent_comment_id": "ihpak54",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "ihpq89u",
+                          "author": "reddit_user_e83a5d04d7e1",
+                          "author_karma": 0,
+                          "content": "If you enjoy it, go for it! Just don't be surprised if you tire yourself out, especially once you are able to get SUB. It's the fastest way to save/make money by far. I expect to get between 2 and 4k per year between cc and bank accounts. Though I don't consider myself poorish.",
+                          "timestamp": "2022-07-26T13:48:19+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "ihpkbwr",
+                          "depth": 4,
+                          "replies": [
+                            {
+                              "comment_id": "ihpqshh",
+                              "author": "[deleted]",
+                              "author_karma": 0,
+                              "content": "Yeah once I make a decent standard of living I’ll most likely pull back. But I’m very stubborn, knowing I have a card that’ll save me 5% would feel like robbery for me not to use it 😂 though it’ll probably turn into 4-6 cards.",
+                              "timestamp": "2022-07-26T13:52:23+00:00",
+                              "likes": 2,
+                              "dislikes": 0,
+                              "parent_comment_id": "ihpq89u",
+                              "depth": 5,
+                              "replies": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "comment_id": "ihnlynw",
+              "author": "reddit_user_8ecf464fef86",
+              "author_karma": 0,
+              "content": "Seriously. As I get older I appreciate the value of simplicity. If I had these ten cards, I'd end up throwing the last four in a sock drawer (I don't rent and less than 1% marginal gain isn't worth the complexity), and numbers 5-6 would just exist for online accounts where I can set and forget, so I'd only have to keep track of the first four.",
+              "timestamp": "2022-07-26T01:04:23+00:00",
+              "likes": 11,
+              "dislikes": 0,
+              "parent_comment_id": "ihmrzib",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "ihnrhwa",
+                  "author": "reddit_user_2e0200d88d47",
+                  "author_karma": 0,
+                  "content": "As the person who wrote this list, I agree that the last 2 are certainly nickel-and-diming for a 0.8% increase in cash-back.\n\nThe Bilt MasterCard has virtually no impact for non-renters, but a significant one for those who do rent. The Citi Rewards+ card, for the purpose of this list, is meant to be thrown in a sock drawer because the benefit received is on the first 2 cards. You are also correct about #5-6 only being needed for online accounts. \n\nA much simpler alternative that achieved *similar* results would be:\n\n\\- Citi Custom Cash, Citi Double Cash, Wells Fargo Autograph, Abound CU Platinum Visa (4 cards in wallet)\n\n\\- Sock Drawer/Online Accounts: Citi Rewards+, Greenstate World MasterCard",
+                  "timestamp": "2022-07-26T01:45:34+00:00",
+                  "likes": 8,
+                  "dislikes": 0,
+                  "parent_comment_id": "ihnlynw",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "ihnt4cx",
+                      "author": "reddit_user_8ecf464fef86",
+                      "author_karma": 0,
+                      "content": "I think you did a great job. If I didn't have any cards, I'd probably take your list and turn it into my to-do list for maximizing cash rewards.\n\nMy current personal setup has similar goals, but takes advantage of BofA's preferred rewards and I don't have an aversion to AF cards if the math works out, so I landed on different choices, but it's cool to see how many options are available these days. This level of Cashback hacking was not available even a few years ago, much less a decade ago when I got my first rewards card.",
+                      "timestamp": "2022-07-26T01:57:40+00:00",
+                      "likes": 4,
+                      "dislikes": 0,
+                      "parent_comment_id": "ihnrhwa",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "ihnvwnf",
+                          "author": "reddit_user_2e0200d88d47",
+                          "author_karma": 0,
+                          "content": "Thank you, I appreciate it!\n\nI actually don't have an aversion to AF cards either, and used the AmEx BCP for two years pretty much exclusively for groceries, because it was a better deal than 3% on groceries I could get with anything else. But after the Citi Custom Cash came out, being able to use that for 5% on groceries and knowing that I spend less than $500/mo. on them, it's better than continuing to pay the AF, so I product changed the BCP to BCE, and only use it for online shopping now.",
+                          "timestamp": "2022-07-26T02:18:04+00:00",
+                          "likes": 6,
+                          "dislikes": 0,
+                          "parent_comment_id": "ihnt4cx",
+                          "depth": 4,
+                          "replies": []
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "comment_id": "ihnmj6l",
+                  "author": "[deleted]",
+                  "author_karma": 0,
+                  "content": "I can see that when you have a tad bit more money. But as a hungry 20 something, saving 5% in all these categories is literally the difference between having a savings at all and paycheck to paycheck.",
+                  "timestamp": "2022-07-26T01:08:32+00:00",
+                  "likes": 3,
+                  "dislikes": 0,
+                  "parent_comment_id": "ihnlynw",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "ihnppk2",
+                      "author": "reddit_user_8ecf464fef86",
+                      "author_karma": 0,
+                      "content": "Fair point. There is a degree of privilege in being at the point in my life where I can think about whether I want to open a new card just to get 5% back on gas instead of 3% and say \"for just an extra $4/month more, probably not worth the hassle.\" \n\nPraying your credit card journey helps you break the paycheck to paycheck cycle. I remember those years and don't miss them. Good luck friend.",
+                      "timestamp": "2022-07-26T01:32:16+00:00",
+                      "likes": 9,
+                      "dislikes": 0,
+                      "parent_comment_id": "ihnmj6l",
+                      "depth": 3,
+                      "replies": []
+                    },
+                    {
+                      "comment_id": "iho1xa5",
+                      "author": "reddit_user_747b6c065791",
+                      "author_karma": 0,
+                      "content": "I want to echo ajgamer’s comments. I remember being there and it sucked! I wish I was smart enough to get a couple bucks back a month from credit cards but I was definitely not lol so you’re definitely ahead of the game! Keep it up friend!",
+                      "timestamp": "2022-07-26T03:04:46+00:00",
+                      "likes": 3,
+                      "dislikes": 0,
+                      "parent_comment_id": "ihnmj6l",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "comment_id": "ihposhk",
+              "author": "reddit_user_d8297e853e61",
+              "author_karma": 0,
+              "content": "Fairly recently (like 18 months ago) I had three cards.  Now I have 11.  I think I carry like five of them?  But my Prime card is saved to my Amazon account and nets me 5% cash back there, which is a big spending category for me, the Bilt card earns me points on my rent, etc.  \n\nI use YNAB to keep them all straight.  I don't think you should have more cards than you can easily manage, and I think I'm getting to the high water mark of what I can easily handle.",
+              "timestamp": "2022-07-26T13:37:36+00:00",
+              "likes": 0,
+              "dislikes": 0,
+              "parent_comment_id": "ihmrzib",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "ihmnqq8",
+          "author": "reddit_user_95da97a944ac",
+          "author_karma": 0,
+          "content": "Outstanding. \n\nIf you wanted to make it 11, you could  also use the Venmo credit card for one additional category at 3 percent back. (I’d use it for bills and utilities).",
+          "timestamp": "2022-07-25T21:02:59+00:00",
+          "likes": 21,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "ihmtczw",
+              "author": "reddit_user_2e0200d88d47",
+              "author_karma": 0,
+              "content": "In this wallet, I have utilities and internet at 5% CB using the USBank Cash+ card. But yes, if you added the Venmo Visa for utilities you could switch the Cash+ to be used for any of the other available 5% categories (Cell Phone Provider/Department stores would be good options).\n\nAnother substitution from this list could be replacing the AmEx Blue Cash Everyday with the BofA Customized Cash for Online Shopping. Or simply adding that card to this list for a 12th card and using it for Home Improvement or Drug Store purchases.\n\nWant a 13th card? Add the Upgrade Triple Cash Rewards card, for 3% on Home, Auto, and Health category purchases.\n\nThere are a lot of additional cards with specific categories you could add to boost this wallet's return, but to me those additional specific categories I don't spend enough on to warrant carrying an extra card in my wallet for that extra 0.8% CB over the Citi Double Cash card. \n\nThanks for the suggestion!",
+              "timestamp": "2022-07-25T21:39:42+00:00",
+              "likes": 11,
+              "dislikes": 0,
+              "parent_comment_id": "ihmnqq8",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "ihmtx8m",
+                  "author": "reddit_user_95da97a944ac",
+                  "author_karma": 0,
+                  "content": "Wow…upgrade is a great card. That’s a find.",
+                  "timestamp": "2022-07-25T21:43:29+00:00",
+                  "likes": 4,
+                  "dislikes": 0,
+                  "parent_comment_id": "ihmtczw",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "ihmuwzn",
+                      "author": "reddit_user_2e0200d88d47",
+                      "author_karma": 0,
+                      "content": "I agree! I will likely get it at some point, but it's not a priority for me given my current expenses. \n\nPutting together this list led me to some obscure cards, but definitely some great ones with fantastic benefits that don't get talked about enough",
+                      "timestamp": "2022-07-25T21:50:10+00:00",
+                      "likes": 4,
+                      "dislikes": 0,
+                      "parent_comment_id": "ihmtx8m",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "ihmyf9z",
+                          "author": "reddit_user_95da97a944ac",
+                          "author_karma": 0,
+                          "content": "Oh no…turns out it is actually a personal loan made to look like a credit card (interest starts on day one with no grace period). Backing to the drawing board…",
+                          "timestamp": "2022-07-25T22:13:48+00:00",
+                          "likes": 8,
+                          "dislikes": 0,
+                          "parent_comment_id": "ihmuwzn",
+                          "depth": 4,
+                          "replies": [
+                            {
+                              "comment_id": "ihmyyr9",
+                              "author": "reddit_user_2e0200d88d47",
+                              "author_karma": 0,
+                              "content": "Yikes. I hadn't looked that much into that one, but good to know! Taking that off my future consideration list.",
+                              "timestamp": "2022-07-25T22:17:30+00:00",
+                              "likes": 5,
+                              "dislikes": 0,
+                              "parent_comment_id": "ihmyf9z",
+                              "depth": 5,
+                              "replies": []
+                            }
+                          ]
+                        },
+                        {
+                          "comment_id": "ihmw075",
+                          "author": "reddit_user_95da97a944ac",
+                          "author_karma": 0,
+                          "content": "I mean…it doesn’t even charge fees? “Not all traditional credit cards charge fees. However, creditcards.com's 2018 Credit Card Fee Survey found that the average number of fees per card is 4.5. For example, the 2019 U.S. News Consumer Credit Card Fee Study found that the average annual fee (including cards with no annual fee) is $35.23, the average late fee is $36.34 and the average returned payment fee is $34.01. The Upgrade Card charges none of these fees. Over 90 percent of cards charge balance transfer fees and cash advance fees. The Upgrade Card enables you to transfer cash from your Personal Credit Line to your bank account with no fees.” That’s incredible. I always my full balance every month but still…You just found my next credit card.",
+                          "timestamp": "2022-07-25T21:57:29+00:00",
+                          "likes": 5,
+                          "dislikes": 0,
+                          "parent_comment_id": "ihmuwzn",
+                          "depth": 4,
+                          "replies": [
+                            {
+                              "comment_id": "ihmwz6e",
+                              "author": "reddit_user_2e0200d88d47",
+                              "author_karma": 0,
+                              "content": "Happy to help you get card #18! \n\nI'm new to the game, only just got my 6th card last week. But within the next 3 years, I plan to have all 10 of the ones on my list, and probably more. Just gotta make sure I don't miss out on any new cards that come out in the meantime!",
+                              "timestamp": "2022-07-25T22:03:57+00:00",
+                              "likes": 1,
+                              "dislikes": 0,
+                              "parent_comment_id": "ihmw075",
+                              "depth": 5,
+                              "replies": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "comment_id": "ihmz36j",
+                  "author": "reddit_user_4f1ba81fab9d",
+                  "author_karma": 0,
+                  "content": ">In this wallet, I have utilities and internet at 5% CB using the USBank Cash+ card. But yes, if you added the Venmo Visa for utilities you could switch the Cash+ to be used for any of the other available 5% categories (Cell Phone Provider/Department stores would be good options).\n\nOr, rather, instead of adding the Venmo Visa, just add a second Cash+ or its Elan \"sister,\" the Max Cash Preferred. Then you'd still get 5% back on utilities (*as opposed to 3% with Venmo*) ***and*** have additional Cash+/MCP 5% categories to leverage.\n\nPlus, the Venmo Visa doesn't have a SUB.",
+                  "timestamp": "2022-07-25T22:18:20+00:00",
+                  "likes": 9,
+                  "dislikes": 0,
+                  "parent_comment_id": "ihmtczw",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "ihmzwpz",
+                      "author": "reddit_user_2e0200d88d47",
+                      "author_karma": 0,
+                      "content": "Even better suggestion, since we're looking for the max % cash-back, thanks!",
+                      "timestamp": "2022-07-25T22:23:58+00:00",
+                      "likes": 4,
+                      "dislikes": 0,
+                      "parent_comment_id": "ihmz36j",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "ihmkvb4",
+          "author": "reddit_user_2e0200d88d47",
+          "author_karma": 0,
+          "content": "If you wish to simplify this wallet, and still have at least 3% cash-back in every category listed above, you can sign up for the Wells Fargo Autograph to replace the following 3 cards: Cardless Boston Celtics, Abound CU Platinum Visa, Greenstate CU World MasterCard.\n\nDoing this reduces your CB on restaurants, bars, streaming services, ride shares, hotels, flights, and gas from 4-7% to a flat 3% across all categories, but you only have 8 cards to worry about.\n\nThe Wells Fargo Autograph also has a $300 SUB compared to the $350 SUB and $20 in CU membership fees you would have from the 3 cards you are replacing.",
+          "timestamp": "2022-07-25T20:44:57+00:00",
+          "likes": 34,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "ihmukym",
+              "author": "reddit_user_4e9673b2676d",
+              "author_karma": 0,
+              "content": "Great guide OP, I think worth it to add a note to the post about BoA Preferred Rewards Program as well. Not achievable/easy to do for most, but for those that can, it beats a lot of these cards. \n\nAlso mods should add this to the sidebar.",
+              "timestamp": "2022-07-25T21:47:57+00:00",
+              "likes": 13,
+              "dislikes": 0,
+              "parent_comment_id": "ihmkvb4",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "ihomazd",
+                  "author": "reddit_user_34a1f2ab25b0",
+                  "author_karma": 0,
+                  "content": "> Also mods should add this to the sidebar.\n\nI'm not outright opposed to this idea, but as you can see from the comments, there's plenty of opposing opinion on what should make up this list of 10 cards -- or whether it should be 10 cards at all. Just as there's no \"best credit card\" there's no best list of credit cards, because everyone's spending profile and tolerance for managing multiple cards is different. \n\nAlso, a new card could come out next month, or a change to the rewards structure of an existing card, rendering this list out-of-date. \n\nThe fact is that anyone can create their own list like this using the two lists already linked in the sidebar. \n\nPerhaps we can do a page of example setups, including this list (or a variation of it) and a couple others provided by users, if those users are willing are willing to keep them up to date if any changes happen. I can already imagine some variations including:\n\n* High grocery spend (e.g. $800/month, where the Custom Cash loses its edge)\n* Costco / Walmart grocery shoppers (centered around the Venmo Visa)\n* 3-card setup (for minimalists)\n* No foreign transaction fee setup (for expats / digital nomads / study abroad)\n\nIf people are interested in this, let me know and I can bring it up in a post or the Sunday Discussion thread for further discussion.",
+                  "timestamp": "2022-07-26T06:26:14+00:00",
+                  "likes": 8,
+                  "dislikes": 0,
+                  "parent_comment_id": "ihmukym",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "ihot3fh",
+                      "author": "reddit_user_2e0200d88d47",
+                      "author_karma": 0,
+                      "content": "As much as I would be honored to be linked to the sidebar for this post, I completely agree with you. This list is far from perfect, and shouldn't be marketed as a \"one size fits all\" credit card profile. \n\nSince posting, I have gotten many suggestions for improvements, substitutions, simplified wallets, etc.--many of which could easily be a better idea than what my original post suggests. I am already working on a more optimized version of this list based off the feedback I have received, but again, a credit card list can only be optimized if it fits an individual's specific needs. \n\nMy lists won't work for every single person's needs (particularly looking at the CCC being used for groceries), but I like to think it allows for a good starting point to make adjustments, as we've seen several people do in the comments today.\n\n>The fact is that anyone can create their own list like this using the two lists already linked in the sidebar.\n\nI did exactly this to get a basis for how I formed this list.",
+                      "timestamp": "2022-07-26T07:53:31+00:00",
+                      "likes": 3,
+                      "dislikes": 0,
+                      "parent_comment_id": "ihomazd",
+                      "depth": 3,
+                      "replies": []
+                    },
+                    {
+                      "comment_id": "ihq350x",
+                      "author": "[deleted]",
+                      "author_karma": 0,
+                      "content": "Not interested. Too many variables and the lists would be forever changing, making it a lot of work to upkeep. Everyone is different, and people can ask the sub as needed as to what would work best for their situation, just like we do now with the template",
+                      "timestamp": "2022-07-26T15:17:41+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "ihomazd",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                },
+                {
+                  "comment_id": "ihmvuuw",
+                  "author": "reddit_user_2e0200d88d47",
+                  "author_karma": 0,
+                  "content": "Thank you! \n\nYou are correct, the BofA Preferred Rewards Program, especially once you hit Platinum Honors, makes BofA cards outperform this wallet in a lot of ways. However, that requires you to have $100,000 you can set aside in a bank account. \n\nDefinitely worth noting here, so thank you for mentioning it!",
+                  "timestamp": "2022-07-25T21:56:30+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "ihmukym",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "ihmwu8k",
+                      "author": "reddit_user_be5cf5068b89",
+                      "author_karma": 0,
+                      "content": "It doesn't have to be a BoA bank account - you can also have $100k of investments at Merrill Lynch/Merrill Edge, which is more feasible.",
+                      "timestamp": "2022-07-25T22:03:02+00:00",
+                      "likes": 16,
+                      "dislikes": 0,
+                      "parent_comment_id": "ihmvuuw",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "ihn081w",
+                          "author": "reddit_user_2e0200d88d47",
+                          "author_karma": 0,
+                          "content": "My mistake, haven't looked into it at all beyond surface level. That is very good to know, because that makes it actually a sound strategy given someone has $100k to invest!",
+                          "timestamp": "2022-07-25T22:26:10+00:00",
+                          "likes": 3,
+                          "dislikes": 0,
+                          "parent_comment_id": "ihmwu8k",
+                          "depth": 4,
+                          "replies": []
+                        },
+                        {
+                          "comment_id": "ihohey8",
+                          "author": "reddit_user_0c69d1634e92",
+                          "author_karma": 0,
+                          "content": "What happens if your investments go down/ crash hard in value does it factor in what you initially put in?",
+                          "timestamp": "2022-07-26T05:29:38+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "ihmwu8k",
+                          "depth": 4,
+                          "replies": [
+                            {
+                              "comment_id": "ihoimrp",
+                              "author": "reddit_user_be5cf5068b89",
+                              "author_karma": 0,
+                              "content": "No, it does not, but they're not that unforgiving.\n\n\nFrom [this page](https://www.bankofamerica.com/preferred-rewards/faq/):\n\n> No need to worry if your balances dip temporarily, you'll keep your Preferred Rewards program status for a full year. If after a year you no longer meet the balance requirement, you'll have a three-month grace period. If you haven't met the balance requirement after three months, you'll be moved to a lower tier or lose your Preferred Rewards benefits.\n\n> We'll reinstate your Preferred Rewards status if you meet the requirements at a later date.",
+                              "timestamp": "2022-07-26T05:43:00+00:00",
+                              "likes": 3,
+                              "dislikes": 0,
+                              "parent_comment_id": "ihohey8",
+                              "depth": 5,
+                              "replies": [
+                                {
+                                  "comment_id": "ihok6hn",
+                                  "author": "reddit_user_0c69d1634e92",
+                                  "author_karma": 0,
+                                  "content": "Wows that’s nice, I’d like to get into that ecosystem but currently 5/24 + 8 overall hard inquiries and denial for capital one venture x",
+                                  "timestamp": "2022-07-26T06:00:55+00:00",
+                                  "likes": 1,
+                                  "dislikes": 0,
+                                  "parent_comment_id": "ihoimrp",
+                                  "depth": 6,
+                                  "replies": []
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "iho04eg",
+          "author": "reddit_user_167c12c3009c",
+          "author_karma": 0,
+          "content": ">Citi Double Cash\n\nNever sign up for this card.  Always product change from a different card.\n\n>Bilt\n\nThis has an IMO huge caveat of having to make 5 purchases per month.\n\n>Citi Rewards+ and US Bank Cash+\n\nRealistically, these don't go in your wallet.  They stay in your sock drawer and have autopay set up.\n\nYou missed the Harris Teeter card as well, which earns 5% on $3k/year via mobile pay and 3% on dining/gas.  I would replace the SavorOne and Amex BCE with a Harris Teeter card and BoA Custom Cash.\n\nFinally the Fordpass card does provide 3.3% cash back in the form of a recurring spend bonus ($200 for spending $6k per calendar year).",
+          "timestamp": "2022-07-26T02:50:31+00:00",
+          "likes": 9,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "iho5yvb",
+              "author": "reddit_user_2e0200d88d47",
+              "author_karma": 0,
+              "content": "1. I signed up for the Double Cash card simply because I was able to do so 8 days after signing up for the Custom Cash card and its SUB, letting me get the benefits of the Double Cash 2% rate without changing the 2 year waiting period to get another Citi card with a SUB.\n2. I almost didn't include Bilt because of this, and if I were making a smaller wallet I wouldn't have. But in my personal situation, I know I can easily put 5 charges/month on it and I am paying rent for my entire apartment (roommate pays me his portion via Venmo) so I effectively get 2% back on rent, which boosts my monthly cash-back by 33% versus not having the Bilt card.\n3. Correct, those two would not be in your wallet.\n4. I did mention in another comment somewhere that replacing BCE with BoA Custom Cash was probably the better choice, I ended up putting BCE in my list instead because that is the card I personally already had before making this list. I did miss the Harris Teeter card in my research though, so you got me there.\n5. I also missed the Fordpass card in my research. Even without taking advantage of the cash-back categories offered on the card, spending $6000/yr on that card would be a great catch-all card instead of the Citi Double Cash card, as long as you know you will spend at least $6000 on it.\n\nThanks for your input, helps me make a better list in the future!",
+              "timestamp": "2022-07-26T03:38:28+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "iho04eg",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "ihp5dnm",
+                  "author": "reddit_user_26f8dab8fcf5",
+                  "author_karma": 0,
+                  "content": "Any cheap/easy way you could think of to make 5 transactions per month?",
+                  "timestamp": "2022-07-26T10:37:07+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "iho5yvb",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "ihp7i94",
+                      "author": "reddit_user_2e0200d88d47",
+                      "author_karma": 0,
+                      "content": "Well paying rent is 1, I have a $0.99 subscription on Apple for iCloud storage that I could set up to be on that card each month (same could be done for any small, automatically charged monthly subscriptions), and then if I go out to eat 3x per month (utilizing the 3x points for dining), there is all 5 transactions. \n\nIf you don't want to spend the money going out to eat, an idea would be when you need gas, go to pay inside and ask for $5 to be put on the card for the pump. Go outside, put that $5 into your tank, and then use a different card with gas rewards to fill the rest of the tank as you would have anyway.\n\nAnother idea is to use the card when you buy things from vending machines.\n\nThe main idea though, is to only use the card on transactions you would have done anyway, because otherwise you are just spending money for no reason.",
+                      "timestamp": "2022-07-26T11:01:51+00:00",
+                      "likes": 2,
+                      "dislikes": 0,
+                      "parent_comment_id": "ihp5dnm",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "comment_id": "ihp7bny",
+              "author": "reddit_user_6d0d270d40b0",
+              "author_karma": 0,
+              "content": "I keep a Rewards+ in my wallet.  I use it for small purchases, like from the vending machine in my office or last week when I made a small purchase from CVS and some credits and coupons were on my account.  Sure, I won't be able to retire early from the cash back, but I already have the card and they're paying me to use it, so why not?",
+              "timestamp": "2022-07-26T10:59:50+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "iho04eg",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "ihn07h6",
+          "author": "reddit_user_80ef3e21553e",
+          "author_karma": 0,
+          "content": "[REDDIT_USER], did you consider the Alliant Visa Signature with its 2.5% cash back for everything instead of the Citi Double Cash?\n\nI appreciate the time and effort that the OP put into this post because I am sure it was considerable. However, I prefer to optimize my cash back (earn most cash back with fewest cards) rather than maximize my cash back (earn most cash back with as many cards as necessary). I could (and do) have fewer cards in my wallet, without losing much if any cash back, and with fewer cards to manage and worry about. This, of course, still does not detract from the great information provided by the OP.",
+          "timestamp": "2022-07-25T22:26:03+00:00",
+          "likes": 8,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "ihn1bi0",
+              "author": "reddit_user_2e0200d88d47",
+              "author_karma": 0,
+              "content": "Thank you for your appreciation, and suggestion. I did not consider any cards for this list that required a checking account, and the Alliant Visa Signature requires a checking account with monthly direct deposits and a minimum $1000 balance to get the 2.5% cash back. Otherwise it becomes a 1.5% CB card. That said, if you are able to do both of those things with no issue, that would likely be the better way to go.\n\nI personally agree, I would rather optimize the cash back and sacrifice small percentages here and there to have an easier time managing my wallet. However, this post was designed as an attempt to maximize, which does require more cards. 10 seemed like a reasonable cutoff to maximize without getting to a point that was too difficult to manage.",
+              "timestamp": "2022-07-25T22:33:47+00:00",
+              "likes": 6,
+              "dislikes": 0,
+              "parent_comment_id": "ihn07h6",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "ihn5zmp",
+                  "author": "reddit_user_80ef3e21553e",
+                  "author_karma": 0,
+                  "content": "I understand regarding the Alliant Visa Signature. Honestly, I don’t have it and won’t get it, partly for the same reasons that you mentioned for why you left it off the list.\n\nIf you also prefer optimizing, I am interested in which cards you would have in your wallet. So, what would they be [REDDIT_USER]?",
+                  "timestamp": "2022-07-25T23:06:38+00:00",
+                  "likes": 4,
+                  "dislikes": 0,
+                  "parent_comment_id": "ihn1bi0",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "ihni4oj",
+                      "author": "reddit_user_2e0200d88d47",
+                      "author_karma": 0,
+                      "content": "Currently, I have and use:\n\n\\- Citi Custom Cash (5% for groceries)\n\n\\- Citi Double Cash (2% non-categorical purchases)\n\n\\- Wells Fargo Propel (3% gas, transit, travel, streaming)\n\n\\- Bilt MasterCard (1.5% Rent, 4.5% Restaurants \\[as airline miles\\])\n\n\\- AmEx Blue Cash Everyday (3% Online Retailers, I don't even carry this card in my wallet just use it for online purchases, which I also rarely do)\n\n\\- CapitalOne Quicksilver (Sock drawer card, has my highest limit so it's pretty much just for emergencies)\n\nMy *potential* plans for new cards:\n\n\\- Citi Rewards+ (for the 11% rewards boost on my other Citi cards)\n\n\\- Greenstate CU World MasterCard (5% on Hotels/Flights)\n\n\\- Citi Custom Cash (for 5% on gas \\[getting a second one via Product Change after getting the Citi Premier card for the huge SUB)\n\nThis is 9 cards total, but the Quicksilver, Rewards+, Greenstate, and AmEx BCE aren't going to be in my wallet or be used each month, leaving me with 5 regularly used cards.",
+                      "timestamp": "2022-07-26T00:35:48+00:00",
+                      "likes": 3,
+                      "dislikes": 0,
+                      "parent_comment_id": "ihn5zmp",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "ihnjz7m",
+                          "author": "reddit_user_80ef3e21553e",
+                          "author_karma": 0,
+                          "content": "Nice lineup, [REDDIT_USER]. Is this the lineup that you would have if you were starting from scratch and trying to optimize, rather than maximize, cash back? How much annual cash back do you anticipate earning from the Citi Rewards+? Do you have enough travel spending to make the Greenstate CU World MasterCard significantly better than the Propel?",
+                          "timestamp": "2022-07-26T00:49:42+00:00",
+                          "likes": 2,
+                          "dislikes": 0,
+                          "parent_comment_id": "ihni4oj",
+                          "depth": 4,
+                          "replies": [
+                            {
+                              "comment_id": "ihnp3jy",
+                              "author": "reddit_user_2e0200d88d47",
+                              "author_karma": 0,
+                              "content": "There are probably other ways to optimize it that would work more efficiently if I was starting from scratch. I made some adjustments because of what I already had, and have some cards that I won't need moving forward, but I am very happy with how it is.\n\nI spend \\~$400/mo. on the Custom Cash card. With the Rewards+ card, this would give me an extra $26.40/year on groceries. The Double Cash card expenses vary a lot for me month to month (since I use it for bills/expenses that aren't uniform year round), so that increased value is harder to predict. But assuming I spent another $300/mo. on that card, Rewards+ would add $7.20/year. \n\nSo getting Rewards+ gives me a $200 SUB that I can get just from putting my restaurant spending on it for the first 3 months (which I would do anyway for the 5.5% restaurant 1st-year bonus) and $33.60/year after that just for having an extra card sitting in a drawer.\n\nAs of right now, I do not travel enough to make the 2% increase in travel rewards worth getting the card. But that could change, so that card is on my '*maybe later'* list for now.",
+                              "timestamp": "2022-07-26T01:27:38+00:00",
+                              "likes": 2,
+                              "dislikes": 0,
+                              "parent_comment_id": "ihnjz7m",
+                              "depth": 5,
+                              "replies": []
+                            }
+                          ]
+                        },
+                        {
+                          "comment_id": "ihxdrvs",
+                          "author": "reddit_user_e3d64e4e0598",
+                          "author_karma": 0,
+                          "content": "So I can sign up for a citi premier card, hit the sub, and then change it to a custom cash ?",
+                          "timestamp": "2022-07-28T00:26:40+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "ihni4oj",
+                          "depth": 4,
+                          "replies": [
+                            {
+                              "comment_id": "ihxhtq6",
+                              "author": "reddit_user_2e0200d88d47",
+                              "author_karma": 0,
+                              "content": "You have to wait 12 months to product change a Citi card",
+                              "timestamp": "2022-07-28T00:55:52+00:00",
+                              "likes": 1,
+                              "dislikes": 0,
+                              "parent_comment_id": "ihxdrvs",
+                              "depth": 5,
+                              "replies": [
+                                {
+                                  "comment_id": "iik2y0u",
+                                  "author": "[deleted]",
+                                  "author_karma": 0,
+                                  "content": "[deleted]",
+                                  "timestamp": "2022-08-01T20:59:29+00:00",
+                                  "likes": 1,
+                                  "dislikes": 0,
+                                  "parent_comment_id": "ihxhtq6",
+                                  "depth": 6,
+                                  "replies": [
+                                    {
+                                      "comment_id": "iik6gkl",
+                                      "author": "reddit_user_2e0200d88d47",
+                                      "author_karma": 0,
+                                      "content": "Congratulations!! 🍾",
+                                      "timestamp": "2022-08-01T21:22:03+00:00",
+                                      "likes": 1,
+                                      "dislikes": 0,
+                                      "parent_comment_id": "iik2y0u",
+                                      "depth": 7,
+                                      "replies": []
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "ihmw68m",
+          "author": "reddit_user_4f1ba81fab9d",
+          "author_karma": 0,
+          "content": "Thanks for this excellent analysis!\n\nMy suggestion, though, would be to replace the AmEx BCE with the BoA Customized Cash. The BoA card both has a higher cap - $2,500/quarter, which works out to $10,000/year - ***and*** its \"Online Shopping\" definition is broader than AmEx's \"Online **Retail** Purchases\" category, which has the following specific exclusions:\n\n>The following are not considered \\[online\\] retail purchases: purchases made at restaurants, supermarkets, gasoline stations, or automotive dealers, as well as purchases of travel, entertainment, or other services.\n\nAlso, depending on one's streaming and rideshare spend (*I rarely spend on either category, and when I do spend on rideshare it usually is for business travel and must go on my corporate card*), it could potentially make more sense to go for the U.S. Bank Altitude Go for its $200 SUB instead of the Cardless Celtics. This is doubly so since the Alt. Go seems to be fairly stable, whereas the Cardless Celtics - who knows! Cardless has a past history of nerfing their cards' rewards structure, and we've already seen Cardless cut the Celtics SUB all the way from $300 to $50.",
+          "timestamp": "2022-07-25T21:58:35+00:00",
+          "likes": 11,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "ihmyfiz",
+              "author": "reddit_user_2e0200d88d47",
+              "author_karma": 0,
+              "content": "I did note the replacement of the AmEx BCE with the BofA Customized Cash in another comment, however thank you for adding specific details as to why that could be a better option. I think I went with the BCE on this list because it was the one I personally already have.\n\nAs for the Cardless vs Altitude Go cards, that is another great point. There are other cards that will still benefit you 3% for streaming purchases/transit on this list (such as the SavorOne), plus the Go gives a $15 statement credit for streaming services. I wouldn't put my faith in the Celtics card keeping its current benefits forever, but it does look good on paper *for now*.",
+              "timestamp": "2022-07-25T22:13:51+00:00",
+              "likes": 4,
+              "dislikes": 0,
+              "parent_comment_id": "ihmw68m",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "iho5r1e",
+          "author": "reddit_user_972757c52679",
+          "author_karma": 0,
+          "content": "Obviously, everyone will be different, but here's my own personal optimizations of this approach (that said, seriously, nice work OP).\n\n1. CITI Double Cash --> Alliant Visa Signature | 2.5% is better than 2.2%, it works at Costco, and it actually has benefits.\n2. CITI Custom Cash (groceries) --> Target RedCard | Where I live, Costco, Target, and Walmart are MUCH cheaper than Fred Meyer/QFC (Kroger) and Safeway. I don't see a point in spending ~20% more for 5.55% cash back. I'd get 4.5% back at Costco (Alliant + Executive membership) and 5% at Target. I only hit up Walmart or the other stores if something I really need was out of stock at the first two.\n3. Cardless Boston Celtics | Damn good choice. I don't spend a lot on streaming, but 7% of a little is better than 2.5% of a little. The dining perk would work well since we eat out a lot. Thought of using the CCC here, but the $500 monthly cap AND the way they split dining between sit-down and fast foot wouldn't work for me.\n4. ~~Abound CU Platinum Visa~~ | I don't like rotating category cards. I just don't like stuff that's not static. And as a dual-EV household, we don't get gas.\n5. Greenstate CU World MasterCard | Based on the OP's rules, this is a great card and the winner here. Personally, I'd prefer a CSP for the travel benefits/insurance, but that doesn't fit in the rules here. So for this exercise, I'd take it.\n6. USBank Cash+ | Damn fine choice.\n7. ~~CITI Rewards+~~ | As I'd replace both above CITI cards, this would have no place in my wallet.\n8. ~~Bilt Mastercard~~ | Not renters, so no use for this program. If they open it up to mortgages, would re-evaluate.\n9. Capital One SavorOne | For this exercise, great choice. But given how much our family dines ($1k/mo or more), and a desire for simplicity, I could see getting the $95AF Savor to replace this card and #3.  More on this later.\n10. Amex BCE | We'd use it only for the online retailers.\n\nSo for me, the 10-card wallet becomes 7-cards (drops the CITI Rewards+, Abound, and Bilt). But there's room for further simplification with a small loss in rewards. For one, any 3% category can be tossed since the catch-all card is 2.5%. Small loss of cash back nets me 2 more wallet slots as I drop the CapOne SavorOne (I don't use Vivid seats, so 3% on entertainment) and the Amex BCE (3% on online retailers). Now we're down to 5 cards.\n\nA second look at the Cardless Boston Celtics shows it apparently (correct me if I'm wrong) doesn't cover all dining, a concern I noted with the CCC above. Given how much we dine (over $1k/mo), and how little we pay for streaming, I would likely replace this and the SavorOne with the full-on $95AF Savor. That looks like:\n\n* Alliant Visa Signature | Catch-all at 2.5%.\n* Target RedCard | 5% at my primary grocery store.\n* Capital One Savor ($95 AF) | 4% on dining, entertainment, and streaming, 3% on the rare case I need to hit a real grocery store\n* Greenstate CU World MasterCard | For this exercise, this is a huge winner for me at 5% airlines/hotels.\n* USBank Cash+ |  5% for utilities and the TV/internet/streaming categories. First one would net us a bit every month. Second one is a small category for us. Could potentially replace it with the Fast Food category, then revert the Cap1 above to the Celtics. Either way, 5 cards.\n\nI think your list is the first one I've seen for this exercise that almost any person could build off of and easily customize to their liking. Bravo!",
+          "timestamp": "2022-07-26T03:36:33+00:00",
+          "likes": 5,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "ihoo3o0",
+              "author": "reddit_user_4f1ba81fab9d",
+              "author_karma": 0,
+              "content": "Thanks for the thoughtful follow-up analysis to [REDDIT_USER]'s original list.\n\nA few extra thoughts:\n\n* For Target, why not get the debit version of the RedCard? That gets the same 5% off at Target, without hitting age of youngest account/average age of accounts (*plus, credit limits on the credit version tend to be low, which could be a consideration for folks who like having uniformly high credit limits on their cards!*).\n* I don't think the CCC splits dining between fast food vs. sit-down restaurants. You may be confusing it with the Cash+, where fast food is a selectable 5% category but sit-down restaurants are a selectable *2%* category. CCC covers all dining in a single category, subject to the $500/month cap.\n   * (*CCC does split* ***travel*** *into two separate categories - \"Select Travel\" and \"Select Transit\" - which is gimmicky, but CCC isn't a good travel card anyway due to the $500/month cap, which is awful for travel spend.*)\n* Why would you want to get the $95 AF Savor for dining instead of the U.S. Bank Altitude Go, which similarly gets uncapped 4% back on dining *without* an annual fee? The Alt. Go also gives an annual $15 streaming credit on top of 2% back on streaming. And, to be clear, the Alt. Go covers all dining (*fast food and sit-down alike*) at 4%.",
+              "timestamp": "2022-07-26T06:48:28+00:00",
+              "likes": 3,
+              "dislikes": 0,
+              "parent_comment_id": "iho5r1e",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "ihoqihe",
+                  "author": "reddit_user_2e0200d88d47",
+                  "author_karma": 0,
+                  "content": "I just said the same thing about the Alt Go in a response to this same comment a few minutes ago haha. \n\nAs for the CCC, you are correct, it doesn't differentiate fast food as a separate category. But considering a dining budget almost double the $500/mo. limit on the CCC, the Alt Go still greatly outperforms it for this category.",
+                  "timestamp": "2022-07-26T07:19:14+00:00",
+                  "likes": 3,
+                  "dislikes": 0,
+                  "parent_comment_id": "ihoo3o0",
+                  "depth": 2,
+                  "replies": []
+                },
+                {
+                  "comment_id": "ihsyuv3",
+                  "author": "reddit_user_972757c52679",
+                  "author_karma": 0,
+                  "content": "> For Target, why not get the debit version of the RedCard?\n\nIn my case, it was intended to be credit/debit neutral since there are valid reasons for a party to go with either. This was an exercise and I won't actually go through with that card collection as I have a different strategy I'm working on that isn't bound by OP's rules.\n\nThat said, I do have RedCard credit. I prefer not having debits hit my checking account throughout the month, instead doing everything all at once (all my cards generate statements within a day of each other). I've also had my RedCard since 2016, so it's about middling for AAoA at this point.\n\n> I don't think the CCC splits dining between fast food vs. sit-down restaurants. You may be confusing it with the Cash+\n\nI probably was.\n\n> Why would you want to get the $95 AF Savor for dining instead of the U.S. Bank Altitude Go, which similarly gets uncapped 4% back on dining without an annual fee?\n\nI went with the cards I'm familiar with and/or were mentioned by OP. I'm not too familiar with US Bank's offerings, but that one looks interesting.",
+                  "timestamp": "2022-07-27T03:02:28+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "ihoo3o0",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            },
+            {
+              "comment_id": "iho70l6",
+              "author": "reddit_user_2e0200d88d47",
+              "author_karma": 0,
+              "content": "I really enjoyed reading through your thought process on how you can customize this list to fit your own needs better. A lot of your suggestions do end up making this a more optimized cash-back system, and the net rewards (depending on personal expenses) are most likely very, very similar in terms of monthly cash-back.\n\nI personally would like to strive for <6 cards for my own needs, so I like where you ended up with your list. Thank you for taking the time to write this all out in response!",
+              "timestamp": "2022-07-26T03:47:36+00:00",
+              "likes": 2,
+              "dislikes": 0,
+              "parent_comment_id": "iho5r1e",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "iho78kg",
+                  "author": "reddit_user_972757c52679",
+                  "author_karma": 0,
+                  "content": "Thank YOU for taking the time to compile this list in the manner that you did! You're introducing many of us to cards we previously knew little about.",
+                  "timestamp": "2022-07-26T03:49:33+00:00",
+                  "likes": 2,
+                  "dislikes": 0,
+                  "parent_comment_id": "iho70l6",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            },
+            {
+              "comment_id": "ihop8ac",
+              "author": "reddit_user_2e0200d88d47",
+              "author_karma": 0,
+              "content": "Hey, so just thought of this for your 5 card wallet you've come up with here. If you aren't spending much on streaming/entertainment, the other 4% categories on the Savor card, why not swap that out for the US Bank Altitude Go?\n\nStill gives 4% on dining, with no cap on earnings. You can use the Alliant Visa Signature for 2.5% on the streaming and entertainment that you would have put on the Savor card.\n\nThis would save you the $95 AF (which at $1000/mo. spending on dining, you are effectively getting a 3.2% annual CB rate).",
+              "timestamp": "2022-07-26T07:02:33+00:00",
+              "likes": 2,
+              "dislikes": 0,
+              "parent_comment_id": "iho5r1e",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "ihsz34d",
+                  "author": "reddit_user_972757c52679",
+                  "author_karma": 0,
+                  "content": ">  why not swap that out for the US Bank Altitude Go?\n\nLooks like a solid alternative. It's not a card I was too familiar with before this thread, though I had heard of it. I was mostly mixing in cards I'm already familiar with in addition to your recommendartions.\n\nIn all honesty, this was more of an exercise. I have my own strategy planned that doesn't abide by these rules (cash-back, no AF, etc.). It's not necessarily better (in fact, I'd bet it's not), but it covers my needs while being easy for my wife to use.\n\nMy credit card setup would be VERY different if I were single and the one doing all of the purchases.",
+                  "timestamp": "2022-07-27T03:04:18+00:00",
+                  "likes": 2,
+                  "dislikes": 0,
+                  "parent_comment_id": "ihop8ac",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "ihszsqc",
+                      "author": "reddit_user_2e0200d88d47",
+                      "author_karma": 0,
+                      "content": "Absolutely, same for me. This was just an exercise to see what I COULD do if this was what I was aiming for. And you went above and beyond to make the idea work based off a different kind of budget/spending habits. \n\nI actually used your remake of my list to inspire some changes to my actual personal strategy, so thanks!",
+                      "timestamp": "2022-07-27T03:10:10+00:00",
+                      "likes": 2,
+                      "dislikes": 0,
+                      "parent_comment_id": "ihsz34d",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "ihne35h",
+          "author": "reddit_user_7d19941bc6a9",
+          "author_karma": 0,
+          "content": "I had no idea about the US Bank Cash+! Thank you! Just got approved for a whopping $2,000, but it’s going to be utilities only so whatever!",
+          "timestamp": "2022-07-26T00:05:43+00:00",
+          "likes": 4,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "ihnl43m",
+              "author": "reddit_user_2e0200d88d47",
+              "author_karma": 0,
+              "content": "Yeah, USBank is known to be stingy with credit limits, but no need for a high limit for monthly utility payments only! Congrats!",
+              "timestamp": "2022-07-26T00:58:09+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "ihne35h",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "ihoahyi",
+          "author": "reddit_user_7555a88ff473",
+          "author_karma": 0,
+          "content": "The Boston Celtics credit card is something I never would've looked into, but now I will. Thanks for all this.",
+          "timestamp": "2022-07-26T04:19:30+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "ihob9sc",
+              "author": "reddit_user_2e0200d88d47",
+              "author_karma": 0,
+              "content": "Don’t have to be a Celtics fan to get it, but if you are-it has got great benefits specific to the team as well",
+              "timestamp": "2022-07-26T04:26:54+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "ihoahyi",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "ihogu77",
+          "author": "reddit_user_a43c00af31c1",
+          "author_karma": 0,
+          "content": "Get Alliant 2.5% CB card instead of Citi Double Cash. It has 2.5% cashback and it's a Visa Signature card with extended warranty, purchase protection, and collision damage waiver (the latter is irrelevant as there are better cards for car rentals on the list).",
+          "timestamp": "2022-07-26T05:23:28+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "ihpogck",
+          "author": "reddit_user_d8297e853e61",
+          "author_karma": 0,
+          "content": "Dang, now I kind of want to get the Citi Rewards+ to goose the points on my two Custom Cash cards.  I use one for Groceries and one for Dining.  I dont' think I'd actually use the card, but that's a nice perk for a no annual fee card.",
+          "timestamp": "2022-07-26T13:35:03+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "ihqlx1t",
+              "author": "reddit_user_2e0200d88d47",
+              "author_karma": 0,
+              "content": "That’s exactly the point of it’s inclusion. You use it long enough to get the SUB, and otherwise just throw it in a drawer and let it boost your other Citi card rewards",
+              "timestamp": "2022-07-26T17:17:41+00:00",
+              "likes": 2,
+              "dislikes": 0,
+              "parent_comment_id": "ihpogck",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "ihqwxi1",
+                  "author": "reddit_user_d8297e853e61",
+                  "author_karma": 0,
+                  "content": "Nice.  I think that might be my next card.  Right now, my velocity in 2022 has been so insanely high I'm truly surprised I got approved for the Autograph (7 new cards this year) so I'll probably sit and simmer for the next six months.",
+                  "timestamp": "2022-07-26T18:27:45+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "ihqlx1t",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "ihpxvpp",
+          "author": "reddit_user_c7b34aede0fa",
+          "author_karma": 0,
+          "content": ">\\*If you take a lot of rental cars, buses, trains, etc. (Other forms of transit beyond ride shares), you are not going to be getting a Cash-back rate for these purchases higher than your 2.2% flat-rate Double Cash card by using this wallet.\n\nThere are a couple decent options for this, even outside of throwing another Custom Cash into the mix. The Cash+ offers ground transportation as a 5% category, which includes buses, trains, taxis, rideshare, etc. (though not rental cars and not parking.) This is one of the categories where the Cash+ actually makes sense over the Elan cards, as the Elan cards put this in the 2% gas/EV category.\n\nThe other option is the FutureCard. It's basically a debit card, and no physical card is provided (only online and mobile wallet) but it offers 5% on \"sustainable purchases,\" which includes public transit, along with bus and rail lines. This one is a lot more narrow but could be nice for someone who buys a monthly transit pass or does a lot of travel on buses and trains.",
+          "timestamp": "2022-07-26T14:42:30+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "ihqpxy4",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "How do people use that many cards? I have 10 but only use 1-2. The others are just around to help the utilization.",
+          "timestamp": "2022-07-26T17:43:04+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "ihqrtkv",
+              "author": "reddit_user_2e0200d88d47",
+              "author_karma": 0,
+              "content": "I’ve personally only had/used 2-3 for the last 3 years. Only this year did I sign up for more cards, and now I have 6 but only 4 will actually be in my wallet. But from what others have said here, you can use different programs like “You Need a Budget” or “WalletFlo” to help manage large numbers of accounts",
+              "timestamp": "2022-07-26T17:54:58+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "ihqpxy4",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "ihygfz7",
+          "author": "reddit_user_b9fdf81a8ffe",
+          "author_karma": 0,
+          "content": "Just got Citi custom cash for gas or groceries, use us bank for the house bills-utilities and just pc’d wf platinum to active cash and approved for a wf autograph.\n\nI approve this post, love reddit 👍🏻",
+          "timestamp": "2022-07-28T05:53:26+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "ihmrk9v",
+          "author": "reddit_user_14d4ca139dde",
+          "author_karma": 0,
+          "content": "This is awesome. One question I always have, though: does true cashback come with any ‘gotchas’?\n\nFor example, AMEX points on the AMEX Gold card are only worth 0.6¢/point when redeemed for cash back. Kind of sus. \n\nAMEX Blue Cash Preferred requires $25 in points to redeem, not awful but not ideal.\n\nThere was another card, I can’t remember which one, that only allows you to redeem points through its portal.\n\nChase seems to be the best big bank in terms of no hassle point redemption for true cashback with no strings attached.",
+          "timestamp": "2022-07-25T21:27:55+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "ihmrrl0",
+              "author": "[deleted]",
+              "author_karma": 0,
+              "content": "I think amex just changed it to allow cash back at any amount.",
+              "timestamp": "2022-07-25T21:29:14+00:00",
+              "likes": 11,
+              "dislikes": 0,
+              "parent_comment_id": "ihmrk9v",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "ihmt0we",
+              "author": "reddit_user_95da97a944ac",
+              "author_karma": 0,
+              "content": "So Citi is a little “gotcha” in terms of cash back. There are several ways to redeem your points for the full values (gift cards, travel, Amazon, etc), but for literal cash back it pays less then a penny a point.\n\nEdit: see discussion below",
+              "timestamp": "2022-07-25T21:37:28+00:00",
+              "likes": -3,
+              "dislikes": 0,
+              "parent_comment_id": "ihmrk9v",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "ihmzhxl",
+                  "author": "reddit_user_4f1ba81fab9d",
+                  "author_karma": 0,
+                  "content": "That's not true. The Double Cash and Custom Cash both allow TYPs to be redeemed at 1 cent per point for statement credits and direct deposits, with no minimum redemption.\n\n(The Rewards+ *doesn't*, but when a Rewards+ TYP account is combined with a Double Cash or Custom Cash TYP account, the combined TYP account retains the DC/CC ability to cash out TYPs at 1 cent per point, **and** retains the Rewards+ benefit of getting 10% back in TYPs on every redemption.)\n\nTagging [REDDIT_USER].",
+                  "timestamp": "2022-07-25T22:21:07+00:00",
+                  "likes": 13,
+                  "dislikes": 0,
+                  "parent_comment_id": "ihmt0we",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "ihn1sl5",
+                      "author": "reddit_user_95da97a944ac",
+                      "author_karma": 0,
+                      "content": "Ahh…thank you!",
+                      "timestamp": "2022-07-25T22:37:03+00:00",
+                      "likes": 2,
+                      "dislikes": 0,
+                      "parent_comment_id": "ihmzhxl",
+                      "depth": 3,
+                      "replies": []
+                    },
+                    {
+                      "comment_id": "ihnnndu",
+                      "author": "reddit_user_d4cededa231a",
+                      "author_karma": 0,
+                      "content": "Gotcha, appreciate the insight! Thank you!",
+                      "timestamp": "2022-07-26T01:16:56+00:00",
+                      "likes": 2,
+                      "dislikes": 0,
+                      "parent_comment_id": "ihmzhxl",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                },
+                {
+                  "comment_id": "ihmwzbu",
+                  "author": "reddit_user_d4cededa231a",
+                  "author_karma": 0,
+                  "content": "That’s where I’m getting confused. On the [Custom Cash page](https://www.citi.com/credit-cards/citi-custom-cash-credit-card), it says “ThankYou® Points can be easily redeemed for cash back such as a statement credit, direct deposit or check. For example, you can redeem 10,000 ThankYou® Points for a $100 statement credit, a $100 Check by Mail, or as a $100 direct deposit to your bank account.”  That sounds to me like you can get a penny per point for a literal cash back transaction. \n\nBut then on the [Rewards+ page](https://www.citi.com/credit-cards/citi-rewards-plus-credit-card) there’s no such language. Are redemption options — and more importantly, redemption *values* — different per card even though you’re earning the same rewards currency? Seems very confusing and not necessarily worth it, especially if the Rewards+ card is the secret sauce for bumping up earnings rates but doesn’t let you do strict cash back for the full value.",
+                  "timestamp": "2022-07-25T22:03:58+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "ihmt0we",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "ihmzwn8",
+                      "author": "reddit_user_95da97a944ac",
+                      "author_karma": 0,
+                      "content": "Not sure; I primarily use the now discontinued citi prestige. It allows to me to transfer points to airlines (which is how I use it); however, the one time I tried to get it as cash it was not a full penny a point. Any one else on the sub know more than us?",
+                      "timestamp": "2022-07-25T22:23:57+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "ihmwzbu",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "ihpoa0j",
+                          "author": "reddit_user_d52bb1e8006c",
+                          "author_karma": 0,
+                          "content": "I'm staring at the TYP Rewards page right now where I can redeem 1763 points for $17.63 on a direct deposit to my bank account.",
+                          "timestamp": "2022-07-26T13:33:43+00:00",
+                          "likes": 2,
+                          "dislikes": 0,
+                          "parent_comment_id": "ihmzwn8",
+                          "depth": 4,
+                          "replies": [
+                            {
+                              "comment_id": "ihppu6c",
+                              "author": "reddit_user_95da97a944ac",
+                              "author_karma": 0,
+                              "content": "Yep; we figured it out. Thanks!",
+                              "timestamp": "2022-07-26T13:45:25+00:00",
+                              "likes": 1,
+                              "dislikes": 0,
+                              "parent_comment_id": "ihpoa0j",
+                              "depth": 5,
+                              "replies": []
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "comment_id": "ihn0s9w",
+                      "author": "reddit_user_95da97a944ac",
+                      "author_karma": 0,
+                      "content": "Edit: Someone else clarified this depends on which citi credit cards you have. Take that so called “Points Guy” \n\nAccording to the so-called “Points Guy”\n\n“How not to redeem your Citi ThankYou points\n\nStatement credits and Shop with Points\n\nAlthough Citi has made it easier to redeem rewards in real-time, using ThankYou points for statement credit or the Shop with Points program isn’t a great idea.\n\nThese will all give you much less than 1 cent per point in value, which is low compared to the redemptions highlighted above. Paying directly with ThankYou points at BestBuy.com will give you less than 1 cent per point, compared to redeeming points for 1 cent each for Best Buy gift cards. Additionally, statement credit options to erase purchases from your credit card bill offer 0.8 cents per point in value, which is not strong compared to the options discussed above.”\n\nSo, yes, if you try to directly redeem thank you points for cash, it is less than a penny a point. In other words, a “gotcha”",
+                      "timestamp": "2022-07-25T22:30:03+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "ihmwzbu",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "ihnk2e8",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[deleted]",
+          "timestamp": "2022-07-26T00:50:21+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "ihnmzd7",
+              "author": "reddit_user_2e0200d88d47",
+              "author_karma": 0,
+              "content": "This is exactly what I have done for the last 2 years. Only Propel instead of Autograph, but it's the same benefits. \n\nThis is a hypothetical grouping of cards that, running my own monthly expenses through, would nearly double my monthly cash-back rate over the 3 card combo that you mentioned. It's not necessary to do this, and certainly is far more complicated. But for people who want to maximize their monthly savings across all their expenses, this is one method to accomplish exactly that.",
+              "timestamp": "2022-07-26T01:11:53+00:00",
+              "likes": 3,
+              "dislikes": 0,
+              "parent_comment_id": "ihnk2e8",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "ihpoemm",
+              "author": "reddit_user_d52bb1e8006c",
+              "author_karma": 0,
+              "content": "Swap the Active Cash for the Alliant Visa Signature. 2.5% catch all, with a kickass checking and savings setup to go with it.",
+              "timestamp": "2022-07-26T13:34:41+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "ihnk2e8",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "ihqd0cd",
+              "author": "reddit_user_9f1b769daaea",
+              "author_karma": 0,
+              "content": "100%\n\nThe time and effort to apply for 7 other cards could have been used getting signup bonuses which blow any cashback optimization earnings out of the water.  (That's like 4k in SUBs)\n\n I find it silly chasing an extra 0.5% over the simplicity of 3-4 cards for non SUB spend.",
+              "timestamp": "2022-07-26T16:21:30+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "ihnk2e8",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "ihnw35t",
+          "author": "reddit_user_301e20382dce",
+          "author_karma": 0,
+          "content": "This is an interesting academic exercise, but I’d recommend that anybody that considers doing this really does the math on their spend, and considers the opportunity cost that every new card potentially blocks high value SUBs that could net higher returns. $1200 in SUB value for 10 cards is respectable if you have little credit history, and in that case it’s a good lineup (with adjustments) but is a fraction of the amount that could be earned by focusing on cards e.g. with $500+ SUBs, if your profile allows it. Fewer, higher value cards also would have reduced negative impacts due to new inqs & accts. It takes A LOT of category spend to equal the return on good SUBs. Focusing on the 5% ish cat cards or those with high personal spend tho does help partially make up for lower SUBs.\n\nOften AF cards can negate or out-earn their AF via credits or benefits, or better earning rates, so restricting cards to no-AF can be counterproductive to the wallet. \n\nI’d also strongly recommend anybody looking at cards with weak or no SUBs, such as the DC, consider a long term plan that involves signing up for the high SUB cards (Citi Premier, if eligible) and downgrading into the other card if desired after year 1.",
+          "timestamp": "2022-07-26T02:19:25+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "ihnxdmx",
+              "author": "reddit_user_2e0200d88d47",
+              "author_karma": 0,
+              "content": "Absolutely, every individual's needs are different and this isn't necessarily the best combo of cards. It really was an academic exercise for me to try and figure out what pairings of cards worked, but the only way I could make sure that I was covering as many categories as possible was to use my personal expenses as the benchmark.\n\nI may have prioritized cards that give greater cash-back on groceries, gas, or dining than others would, because those are the categories that I *personally* spend the majority of my money in. I have also included a card that helps renters, so if you don't rent, there is no need to get that card.\n\nI hope more people see your comment, because it is very important for people to understand this selection of ten cards is not the guaranteed best course of action.",
+              "timestamp": "2022-07-26T02:29:14+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "ihnw35t",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "ihnylxc",
+                  "author": "reddit_user_301e20382dce",
+                  "author_karma": 0,
+                  "content": "Yes, it’s interesting, and good to see some options discussed that people may not consider. \n\nAs a renter, Bilt is OK, and a new & better option than no rewards for sure, and an easy low maintenance option, but it is capped and only earns a fraction of the amount possible by shifting that large amount of spend to use towards earning bigger SUBs, even when charged a 2.85% fee thru Plastiq if needed.",
+                  "timestamp": "2022-07-26T02:38:40+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "ihnxdmx",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "ihnbopi",
+          "author": "reddit_user_4c629cce763b",
+          "author_karma": 0,
+          "content": "I have a much simpler method:\n\nCard Name: | What to use it for: | Sign-up Bonus: | Why this card?\n:--|:--:|:--:|:--:\nAmex Platinum | Everything | 150k/$6k | 25% return\nAmex Platinum NLL | Everything | 150k/$6k | 25% return\nAmex Platinum NLL | Everything | 150k/$6k | 25% return\nAmex Platinum NLL | Everything | 150k/$6k | 25% return\nAmex Platinum NLL | Everything | 150k/$6k | 25% return\nAmex Platinum NLL | Everything | 150k/$6k | 25% return\n\nApply for and use these cards one at a time. Profit!",
+          "timestamp": "2022-07-25T23:48:03+00:00",
+          "likes": -4,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "iho0slq",
+              "author": "reddit_user_167c12c3009c",
+              "author_karma": 0,
+              "content": "Where are you finding these NLL signups, especially for $6k?  I've only ever been targeted for the $15k spend bonus, which is rather hefty.",
+              "timestamp": "2022-07-26T02:55:47+00:00",
+              "likes": 2,
+              "dislikes": 0,
+              "parent_comment_id": "ihnbopi",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "ihnw6d8",
+              "author": "reddit_user_301e20382dce",
+              "author_karma": 0,
+              "content": "This is the way.",
+              "timestamp": "2022-07-26T02:20:05+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "ihnbopi",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "ihsov6n",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "This is too many cards and issuers. How about the 3 best cards from any two card issuers? I would recommend...\n\nChoose 1 of these:\n\n* US Bank Go for 4% back at Restaurants\n* Chase Amazon for 5% back on Amazon.com and Whole Foods\n* Amex BCE for 3% back on groceries, online purchases, and gas\n\nAnd then choose either:\n\n* Citi Custom Cash for 5% back on a high spend category, and\n* Citi Double Cash for 2% back on everything else\n\n\\-Or-\n\n* Wells Fargo Autograph for 3% back on travel, restaurants, gas, streaming, cell phone plans, and\n* Wells Fargo Active Cash for 2% back on everything else",
+          "timestamp": "2022-07-27T01:46:09+00:00",
+          "likes": 0,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "ihsvvtd",
+              "author": "reddit_user_2e0200d88d47",
+              "author_karma": 0,
+              "content": "I would actually recommend the same or very similar setups for someone looking for a 3 card wallet, I actually just helped my younger sibling apply for the AmEx BCE as their first CC, with the intent of them also signing up for the two WF cards you have listed!\n\nI personally have used a 2-3 card wallet for the entirety of the time I have had credit cards, but this was an exercise to maximize the per-category cash-back regardless of the number of cards/issuers it took to get there.",
+              "timestamp": "2022-07-27T02:39:03+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "ihsov6n",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "ihmsidh",
+          "author": "reddit_user_0f3658d0cf23",
+          "author_karma": 0,
+          "content": "Mine is Venmo for BJ, My Custom for Non BJ Grocery, BCE after $500 monthly reached, Wife Custom for Gas, Flex for Pharmacy and mix in Discover & Flex wherever quarterly category matches my spending habits. I really want to get Liverpool Credit Card as lifelong Red but sub is too low for me.",
+          "timestamp": "2022-07-25T21:34:05+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "ihn609a",
+          "author": "reddit_user_527f70a2f449",
+          "author_karma": 0,
+          "content": "5.55% is 11% more than 5%",
+          "timestamp": "2022-07-25T23:06:45+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "ihn7xsl",
+              "author": "reddit_user_2e0200d88d47",
+              "author_karma": 0,
+              "content": "The neat thing about the Rewards+ card's bonus structure is that you also get a bonus 10% on the bonus 10%",
+              "timestamp": "2022-07-25T23:20:43+00:00",
+              "likes": 3,
+              "dislikes": 0,
+              "parent_comment_id": "ihn609a",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "ihnfyqd",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[deleted]",
+          "timestamp": "2022-07-26T00:19:45+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "ihnlqer",
+              "author": "reddit_user_2e0200d88d47",
+              "author_karma": 0,
+              "content": "I put a note explaining that underneath the table. It's a perk of combining the CCC with the Rewards+ card.",
+              "timestamp": "2022-07-26T01:02:42+00:00",
+              "likes": 2,
+              "dislikes": 0,
+              "parent_comment_id": "ihnfyqd",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "ihpdfmf",
+          "author": "reddit_user_8175167b2155",
+          "author_karma": 0,
+          "content": "Real question is if the credit unions are conservative in their lending.",
+          "timestamp": "2022-07-26T12:02:53+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "ihqv11e",
+              "author": "reddit_user_82d80caac91f",
+              "author_karma": 0,
+              "content": ">DC with the Alliant Visa Signature. 2.5% CB on up to $10k spend.1ReplyGive AwardShareReportSaveFollow  \n>  \n>level 1m1dnightknight · 6 hr. agoReal question is if the credit unions are conservative in their lending.\n\nI don't think more than a larger bank",
+              "timestamp": "2022-07-26T18:15:32+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "ihpdfmf",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "ihqvfj8",
+                  "author": "reddit_user_8175167b2155",
+                  "author_karma": 0,
+                  "content": "Wasn't talking about Alliant.  The two smaller ones he has listed up ther (GreenState and Abound)",
+                  "timestamp": "2022-07-26T18:18:09+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "ihqv11e",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "ihpn4n9",
+          "author": "reddit_user_d52bb1e8006c",
+          "author_karma": 0,
+          "content": "Swap the DC with the Alliant Visa Signature. 2.5% CB on up to $10k spend.",
+          "timestamp": "2022-07-26T13:24:55+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "ihquwdj",
+          "author": "reddit_user_82d80caac91f",
+          "author_karma": 0,
+          "content": "Am I the only one thinking about saving money and not just earning cash back?",
+          "timestamp": "2022-07-26T18:14:41+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "ihqy3pa",
+              "author": "reddit_user_2e0200d88d47",
+              "author_karma": 0,
+              "content": "Earning cash back is one way to save money, as long as you are earning cash back on spending that you would have done regardless. If you are increasing your spending to get Sign-up bonuses, then you’re not gaining anything out of it",
+              "timestamp": "2022-07-26T18:35:18+00:00",
+              "likes": 2,
+              "dislikes": 0,
+              "parent_comment_id": "ihquwdj",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "ihr6mhu",
+          "author": "reddit_user_81b4182f83c7",
+          "author_karma": 0,
+          "content": "What about the USBank Altitude Go Visa Signature?\n\nNo Annual Fee.  4% Dining, with no limits.  (And some 2% categories too)\n\nAnd usually a SUB.",
+          "timestamp": "2022-07-26T19:30:03+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "ijuexau",
+          "author": "reddit_user_94c93baed49a",
+          "author_karma": 0,
+          "content": "How to apply? Its possible to apply even im working here in uae UNITED ARAB EMIRATES DUBAI...",
+          "timestamp": "2022-08-11T11:35:31+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run003_post03_seed018",
+      "post_slot": 3,
+      "seed_index": 18,
+      "source_raw_post_id": "1fmwor3",
+      "source_product_dir": "Blue Cash Preferred® Card from American Express",
+      "source_file": "reddit_post:1fmwor3",
+      "post_type": "card_recommendation",
+      "title": "Best Card for a Beginners?",
+      "author": "reddit_user_0dab2d077fca",
+      "author_karma": 0,
+      "content": "Best Card for a Beginners?\n\nHello everyone, I have decided I want to get my second credit card. I would consider it my first real card since the card I have now is a generic one from my little local bank. It doesn't have any perks. I have been looking into getting a card for a while now, but I want to get others' opinions. Most people I know in real life don't trust credit cards or are not good with them, which is why I am asking all of you for help. \n\n* Current cards: \n * Local Banks Credit Card, Limit $500 (I am thinking about calling to see if I can get it higher), March 2017\n* FICO Score: *725*\n* Oldest account age: *7 years 6 months*\n* Chase 5/24 status: *N/A*\n* Income: *$30,130 before taxes*\n* Average monthly spend and categories:\n * dining $200\n * groceries: $250\n * gas: $45\n * travel: N/A\n * other: $30\n* Open to Business Cards: *No*\n* What's the purpose of your next card? *Cashback*\n* Do you have any cards you've been looking at? \n\n*Capital One SavorOne (I like this card but the cash back on groceries excludes Walmarts, Targets, Etc. Which is where I do most of my grocery shopping. I live in a small town and it’s cost-effective to shop at the big stores).*\n\n*American Express Blue Cash Preferred ( This looked good till I saw that there is an Annual fee of $95)*\n\n* Are you OK with category spending or do you want a general spending card? \n * I don't have a preference for either, but I would like to avoid a card that has category spending that rotates every month or quarter. I want to keep things simple.",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "lof8ah6",
+          "author": "reddit_user_0126cb09a813",
+          "author_karma": 0,
+          "content": "Most cards are not going to count Walmart and target as grocery.  I would not worry too much about that and just get something that is no annual fee and fits your overall spend.  \n\nTarget has its own credit card, Target Circle/Red Card.  It gives you a 5% discount on all purchases in a target or at target.com.  This might be an excellent card for you if you do a lot of shopping at Target.  \n\nThe Capital One SavorOne is a great card, but if most of your grocery spend will not trigger 3%< maybe just look at a good card for Dining.  Here I recommend the Citi Custom Cash.  It earns 5% on your top spend category up to $500 per month.  You could just use it for dining and get 5% on all of it.  \n\nA good flat 2% catchall card is an important piece of the puzzle, and the Citi Double Cash is an excellent option there.",
+          "timestamp": "2024-09-22T20:44:15+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "lodp6kk",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "Maybe controversial, but I would personally recommend being careful about Capital One until you have a decently strong profile because of their stupid “bucketing” nonsense. It would suck to have one of your oldest core cards as a bucketed C1. \n\nSince you were looking at the Blue Cash Preferred but don’t like the AF, maybe consider the Blue Cash Everyday? Will cover your grocery and gas spend, as well as having a bonus for online shopping which should be useful to pretty much anyone.",
+          "timestamp": "2024-09-22T16:08:53+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "lodrxlt",
+              "author": "reddit_user_8f334044ed5c",
+              "author_karma": 0,
+              "content": "I feel like OP having a low income and his main spending Dining and Grocery, SavorOne would be a card, though the Bucketing could be annoying. If he got approved for like $2,500+ it would be perfect for a daily card tbh.",
+              "timestamp": "2024-09-22T16:22:54+00:00",
+              "likes": 2,
+              "dislikes": 0,
+              "parent_comment_id": "lodp6kk",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "lodv0f1",
+                  "author": "reddit_user_85f7fe6fd970",
+                  "author_karma": 0,
+                  "content": "My only concern with SavorOne is that I won't get cash back at \"superstores like Walmart and target\". Which is where I do all my grocery shopping. The local grocery store is too expensive. If it didn't leave out superstore grocery stores I wouldn't hesitate to get the SavorOne card.\n\n*Edit \nI appreciate the advice. A $2,500 would be great and I do agree that most of my spending is grocery. Which is why I'm hesitant as I mentioned above",
+                  "timestamp": "2024-09-22T16:37:33+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "lodrxlt",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "loe04ja",
+                      "author": "reddit_user_8f334044ed5c",
+                      "author_karma": 0,
+                      "content": "Target 5% is one of the best single store cards tbh. I have SavorOne for random dining and grocery store runs, otherwise I shop at Costco which isn’t covered under SavorOne, with my Costco Card.\n\nYou could work on getting two cards to cater to your spending if you want to take maximizing your points seriously. Otherwise BCP is great but does it count and cover your Target or Walmart grocery shopping Cashback wise? You’ll have to do more research but I’m not sure what the merch ID difference would be. Unless you shop online, then the BCE should give you Cashback at Target and Walmart.",
+                      "timestamp": "2024-09-22T17:03:38+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "lodv0f1",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "comment_id": "lodsg4m",
+              "author": "reddit_user_85f7fe6fd970",
+              "author_karma": 0,
+              "content": "Thanks for the info. I wasn't aware of the \"bucketing\" I'll definitely keep that in consideration and look more into it. I'll also check out the Blue Cash Everyday.",
+              "timestamp": "2024-09-22T16:25:26+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "lodp6kk",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "lodnxca",
+          "author": "reddit_user_bca8033b630e",
+          "author_karma": 0,
+          "content": "Interested in cashback cards? Take a look at these resources from the sidebar:\n\n* [List of Flat 2%+ Cashback Cards](https://www.reddit.com/r/CreditCards/wiki/list_of_flat_cashback_cards_with_benefits) \n* [List of Best Cashback Cards by Category](https://www.reddit.com/r/CreditCards/wiki/best_cash_back_cards_by_category)\n\nI can be summoned to comment by using command(s):\n\n`!cashback`\n\n*I am a bot, and this action was performed automatically. Please [contact the moderators of this subreddit](/message/compose/?to=/r/CreditCards) if you have any questions or concerns.*",
+          "timestamp": "2024-09-22T16:02:16+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "loe6j9z",
+          "author": "reddit_user_e627b54b09ca",
+          "author_karma": 0,
+          "content": "I would recommend a Discover card because since you shop at Target sometimes they have a 5% cashback like Oct-Dec 2024. Discover card currently has Walmart for 5% from July to Sept 2024.  What is bucketing?",
+          "timestamp": "2024-09-22T17:35:28+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "loepg01",
+              "author": "reddit_user_6404186b56df",
+              "author_karma": 0,
+              "content": "If you don't have a strong credit profile, Capital One will often issue a card but with a pretty paltry limited like $300. The card limit will then stay bucketed at that small amount either never receiving a CLI or receiving really small increases like $100.",
+              "timestamp": "2024-09-22T19:08:54+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "loe6j9z",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "loeqw0e",
+                  "author": "reddit_user_e627b54b09ca",
+                  "author_karma": 0,
+                  "content": "Yes that is true but they gave me more then $300.00 but I don't get a CLI from Capital One.  People say capital one is horrible but I had no problems with them at all.",
+                  "timestamp": "2024-09-22T19:16:02+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "loepg01",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "loesi9r",
+                      "author": "reddit_user_6404186b56df",
+                      "author_karma": 0,
+                      "content": "Yeah, they seem to bucket at different amounts for different customers. Why, I don't know.",
+                      "timestamp": "2024-09-22T19:24:15+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "loeqw0e",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "loet7wm",
+                          "author": "reddit_user_e627b54b09ca",
+                          "author_karma": 0,
+                          "content": "Yes I see.",
+                          "timestamp": "2024-09-22T19:27:46+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "loesi9r",
+                          "depth": 4,
+                          "replies": [
+                            {
+                              "comment_id": "loetnzx",
+                              "author": "reddit_user_6404186b56df",
+                              "author_karma": 0,
+                              "content": "But what's really crazy is that people with a bucketed card can't get a CLI but will apply for a new card and get a $10k, $15k, $20k SL.",
+                              "timestamp": "2024-09-22T19:29:58+00:00",
+                              "likes": 1,
+                              "dislikes": 0,
+                              "parent_comment_id": "loet7wm",
+                              "depth": 5,
+                              "replies": [
+                                {
+                                  "comment_id": "loeu3jr",
+                                  "author": "reddit_user_e627b54b09ca",
+                                  "author_karma": 0,
+                                  "content": "yup. so true",
+                                  "timestamp": "2024-09-22T19:32:07+00:00",
+                                  "likes": 1,
+                                  "dislikes": 0,
+                                  "parent_comment_id": "loetnzx",
+                                  "depth": 6,
+                                  "replies": []
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "loesv6g",
+          "author": "reddit_user_fa381b15da09",
+          "author_karma": 0,
+          "content": "Discover It or Citi Double Cash — Discover It has 5% cashback rotating categories as mentioned, this quarter it’s Walmart as a category. Double Cash is a flat 2% on everything as long as you pay off your card (as expected) and very convenient to use.",
+          "timestamp": "2024-09-22T19:26:02+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "loev9zd",
+              "author": "reddit_user_85f7fe6fd970",
+              "author_karma": 0,
+              "content": "I'm not sure I'd be a big fan of rotating categories. But the Citi Double Cash sounds promising. \nAs someone mentioned in another comment, I'm considering the American Express Blue Cash Everyday, which has 3% on grocery's, gas, and online retailers. Downside is that it's up to $6000 for each category for a year. But I don't spend that much in each category so I don't think it would be an issue.\n\nEdit. I am also highly considering the Citi Double Cash you mentioned",
+              "timestamp": "2024-09-22T19:38:02+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "loesv6g",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "loewhde",
+                  "author": "reddit_user_fa381b15da09",
+                  "author_karma": 0,
+                  "content": "If you want something easy and convenient then the Citi Double Cash is a great choice, just guaranteed 2% on everything and you can take time to figure out where your spend lies before getting something like the Savor One or Chase Freedom Unlimited. \n\nI also do like the Amex BCE as you mentioned but you have to search around to see if Target and Walmart get 3%, if not they would get 1% while you get 3% on actual grocery stores, gas, and online shopping (all useful categories).",
+                  "timestamp": "2024-09-22T19:44:03+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "loev9zd",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "lof0t8v",
+                      "author": "reddit_user_85f7fe6fd970",
+                      "author_karma": 0,
+                      "content": "The Amex BCE specifically mentions \"U S. Supermarkets\" in regards to groceries. I don't know if I would consider it otherwise. Mainly commenting so that if anyone else was considered the card they would know it works for Supermarkets.",
+                      "timestamp": "2024-09-22T20:05:44+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "loewhde",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "lofz0ko",
+                          "author": "reddit_user_433c311bf190",
+                          "author_karma": 0,
+                          "content": "Walmart and Target online count for 3%. Meaning Walmart pickup grocery order is 3%. Same with all target online orders. Hope this helps. This card is great honestly",
+                          "timestamp": "2024-09-22T23:15:24+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "lof0t8v",
+                          "depth": 4,
+                          "replies": []
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "comment_id": "lof052n",
+                  "author": "reddit_user_1f7318c130dc",
+                  "author_karma": 0,
+                  "content": "I am also looking at the American Express BCE also!",
+                  "timestamp": "2024-09-22T20:02:23+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "loev9zd",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "lofchqi",
+          "author": "reddit_user_178d338fe2e1",
+          "author_karma": 0,
+          "content": "Might as well go discover it, with their match offer it has a 2% base and 10% on rotating categories, limits are generous, good service.",
+          "timestamp": "2024-09-22T21:06:24+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run003_post04_seed019",
+      "post_slot": 4,
+      "seed_index": 19,
+      "source_raw_post_id": "1m1jfuh",
+      "source_product_dir": "Chase Freedom Rise®",
+      "source_file": "reddit_post:1m1jfuh",
+      "post_type": "other",
+      "title": "Chase freedom referral include",
+      "author": "reddit_user_0dab2d077fca",
+      "author_karma": 0,
+      "content": "Chase freedom referral include\n\nWhen you go to chase website or chase app, you can use the referral dashboard to get a referral link, the actual image that shows include only the unlimited and flex, and the wording says earn points for any participating freedom card. \n\nHowever, when you copy the link, four actual cards show up to apply for, including the unlimited and flex, and freedom rise, and slate edge.\n\nI know that the unlimited and flex will give the bonus points but does the freedom rise and slate edge also give points considering it’s from the direct link? Keep in mind the wording says freedom card and the image only considers the FU AND FF",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "n3hgend",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "I'd expect any card approval that was sourced via a referral link should give you some kind of referral bonus. I think the only way to know for sure is to try it, but you could call Chase and ask, they might know (though they might be wrong too).\n\nThe Flex shows up, huh? I thought that wasn't supposed to be available for online applications this month at least.",
+          "timestamp": "2025-07-16T18:02:15+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "n3jqx4w",
+              "author": "reddit_user_485811775ce9",
+              "author_karma": 0,
+              "content": "> The Flex shows up, huh? I thought that wasn't supposed to be available for online applications this month at least.\n\nYup! I applied using a referral link and had it approved. Received the card in the mail today, in fact.",
+              "timestamp": "2025-07-17T00:49:36+00:00",
+              "likes": 2,
+              "dislikes": 0,
+              "parent_comment_id": "n3hgend",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "n3jvi88",
+                  "author": "reddit_user_df06315a97b3",
+                  "author_karma": 0,
+                  "content": "Do you have experience with the actual question in the post? We know about the flex application. \n\nThe question in the post is if that referral link gives you points if the card signed up is the freedom rise or slate edge. \n\nYou can check for yourself, go to your own referral link and open it in a new window and you will see it’s four cards.",
+                  "timestamp": "2025-07-17T01:16:54+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "n3jqx4w",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            },
+            {
+              "comment_id": "n3hnwj0",
+              "author": "reddit_user_dd797a145140",
+              "author_karma": 0,
+              "content": "Flex direct applications were removed\n\nThey haven't removed referral link applications yet",
+              "timestamp": "2025-07-16T18:36:57+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "n3hgend",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

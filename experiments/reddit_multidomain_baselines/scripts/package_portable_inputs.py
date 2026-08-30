@@ -80,7 +80,13 @@ def main() -> None:
 def package_domain(*, source: Path, output: Path, domain: str) -> None:
     pool = read_json(source / "seed_pools" / f"{domain}.json")
     pool_meta = dict(pool.get("meta") or {})
-    for key in ("data_root", "posts_jsonl", "comments_jsonl"):
+    for key in (
+        "data_root",
+        "posts_jsonl",
+        "comments_jsonl",
+        "raw_root",
+        "source_seed_pool_json",
+    ):
         pool_meta.pop(key, None)
     pool_meta["portable_source"] = True
     pool["meta"] = pool_meta
