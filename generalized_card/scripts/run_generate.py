@@ -787,6 +787,20 @@ def build_parser() -> argparse.ArgumentParser:
         ),
     )
     parser.add_argument(
+        "--length-ceiling-rounds",
+        type=int,
+        default=2,
+        help=(
+            "How many bounded re-draws a comment past the length ceiling gets. "
+            "Independent of --writer-retries on purpose: that switch retries on "
+            "ANY soft problem, and the v109 gate had 65 of 186 slots raising "
+            "one, so reaching the ceiling's 1.8%% through it would rewrite a "
+            "third of the corpus for unrelated reasons. Inert unless "
+            "--length-ceiling is 'measured'. Exhausting the rounds never skips "
+            "the slot -- the last text is stored (ORIENTATION.md s4)."
+        ),
+    )
+    parser.add_argument(
         "--entity-spread",
         choices=("off", "measured"),
         default="off",
@@ -1221,6 +1235,7 @@ def main() -> None:
         "entity_spread": args.entity_spread,
         "length_fidelity": args.length_fidelity,
         "length_ceiling": args.length_ceiling,
+        "length_ceiling_rounds": args.length_ceiling_rounds,
         "length_transfer": args.length_transfer,
         "development_scope": args.development_scope,
         "reference_link": args.reference_link,
@@ -1441,6 +1456,7 @@ def main() -> None:
     env["GENERALIZED_CARD_ENTITY_SPREAD"] = args.entity_spread
     env["GENERALIZED_CARD_LENGTH_FIDELITY"] = args.length_fidelity
     env["GENERALIZED_CARD_LENGTH_CEILING"] = args.length_ceiling
+    env["GENERALIZED_CARD_LENGTH_CEILING_ROUNDS"] = str(args.length_ceiling_rounds)
     env["GENERALIZED_CARD_LENGTH_TRANSFER"] = args.length_transfer
     env["GENERALIZED_CARD_DEVELOPMENT_SCOPE"] = args.development_scope
     env["GENERALIZED_CARD_REFERENCE_LINK"] = args.reference_link
@@ -1817,6 +1833,7 @@ RUN_EXPERIMENT_FIELDS = (
     "entity_spread",
     "length_fidelity",
     "length_ceiling",
+    "length_ceiling_rounds",
     "length_transfer",
     "development_scope",
     "reference_link",

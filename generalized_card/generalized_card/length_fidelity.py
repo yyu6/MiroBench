@@ -324,6 +324,14 @@ def length_ceiling_problem(
     return f"{CEILING_PREFIX}{realized}w past the {int(cut)}w ceiling"
 
 
+def length_ceiling_problems(problems: Any) -> list[str]:
+    """The ceiling misses in a problem list, for the caller's bounded re-draw."""
+
+    return [
+        item for item in (problems or ()) if str(item).startswith(CEILING_PREFIX)
+    ]
+
+
 def ceiling_retry_note(problem: str) -> str:
     """The revision instruction for a ceiling miss.
 

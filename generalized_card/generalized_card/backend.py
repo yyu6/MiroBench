@@ -154,6 +154,7 @@ from .entity_spread import set_active_entity_spread_profile, set_entity_spread
 from .length_fidelity import CEILING_PREFIX as LENGTH_CEILING_PREFIX
 from .length_fidelity import PROBLEM_PREFIX as LENGTH_BAND_PREFIX
 from .length_fidelity import ceiling_retry_note as length_ceiling_retry_note
+from .length_fidelity import length_ceiling_problems
 from .length_fidelity import retry_note as length_band_retry_note
 from .length_fidelity import (
     set_active_length_fidelity_profile,
@@ -177,6 +178,7 @@ from .writer_quality import (
     planned_quote_has_distinct_reply,
     writer_distribution_problems,
     writer_hard_recovery_task,
+    writer_length_ceiling_task,
 )
 from .writer_grounding import (
     license_mode,
@@ -717,6 +719,15 @@ def configure_generator_backend(
     module.GENERALIZED_WRITER_DIVERSITY_CONFIG = {
         "hard_recovery_rounds": _env_int(
             "GENERALIZED_CARD_WRITER_HARD_RECOVERY_ROUNDS", 2, minimum=0
+        ),
+        # The ceiling gets its OWN bounded re-draw rather than riding on
+        # --writer-retries. That switch retries on any soft problem at all, and
+        # the v109 gate had 65 of 186 slots raising one, so turning it on to
+        # reach 1.8% of slots would rewrite a third of the corpus for unrelated
+        # reasons. Unlike hard recovery, exhausting these rounds never skips the
+        # slot: the ceiling stays soft and the last text is stored.
+        "length_ceiling_rounds": _env_int(
+            "GENERALIZED_CARD_LENGTH_CEILING_ROUNDS", 2, minimum=0
         ),
     }
     module.GENERALIZED_PLAN_QUALITY_CONFIG = {
@@ -2986,6 +2997,55 @@ def _writer_lifecycle_with_candidate_recovery(
                 parent_comment=kwargs.get("parent_comment"),
             )
             quote_parent_copy_waived = quote_parent_copy_waived or quote_waived
+
+        # Bounded re-draw for a comment past the domain's measured length
+        # ceiling. Runs only when `--length-ceiling measured` put the problem
+        # there, is independent of `--writer-retries`, and -- unlike the hard
+        # recovery above -- cannot skip the slot: if every round still comes
+        # back over the ceiling, the last text is stored and the problem stays
+        # soft, so the matched structural slot survives (`ORIENTATION.md` s4).
+        ceiling_rounds = int(recovery_config.get("length_ceiling_rounds", 0))
+        ceiling_round = 0
+        while (
+            text
+            and not hard_realization_problems(problems)
+            and length_ceiling_problems(problems)
+            and ceiling_round < ceiling_rounds
+        ):
+            ceiling_round += 1
+            ceiling_task = writer_length_ceiling_task(
+                original_task, problem=length_ceiling_problems(problems)[0]
+            )
+            candidate = original(**{**kwargs, "task": ceiling_task, "writer_retries": 0})
+            candidate_text = str(candidate.get("text") or "").strip()
+            if not candidate_text:
+                break
+            candidate_diagnostics, candidate_dynamic = writer_distribution_problems(
+                module,
+                text=candidate_text,
+                previous_comments=kwargs.get("previous_comments"),
+                previous_texts=previous_texts,
+                calibration=calibration,
+                thread_target=thread_target,
+                task=ceiling_task,
+            )
+            candidate_problems = deduplicate_problems(
+                [*last_writer_problems(candidate), *candidate_dynamic]
+            )
+            # Never trade a storable over-long comment for an unstorable one.
+            if hard_realization_problems(candidate_problems):
+                break
+            attempts.extend(
+                annotate_writer_attempts(
+                    candidate.get("attempts") or [],
+                    start_at=len(attempts),
+                    repair_round=recovery_round + ceiling_round,
+                )
+            )
+            result = candidate
+            text = candidate_text
+            diagnostics = candidate_diagnostics
+            problems = candidate_problems
 
         diagnostic_only = all(is_single_stage_diagnostic(item) for item in problems)
         if text and not hard_realization_problems(problems) and diagnostic_only:

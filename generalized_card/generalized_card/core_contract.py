@@ -207,7 +207,7 @@ CORE_FILES = {
     ),
     "generator_adapter": (
         "generalized_card/generalized_card/backend.py",
-        "60d1290d8c10b084a882c6544fd6ba77040f3a0f0f0cc5d522e15a704e6551e7",
+        "18974f3be4a5b5a195cb9a614c79d82052e592f7079c9def727270726d9d0a47",
     ),
     "data_boundary": (
         "generalized_card/generalized_card/data.py",
@@ -241,7 +241,7 @@ CORE_FILES = {
     ),
     "generation_runner": (
         "generalized_card/scripts/run_generate.py",
-        "68143d9c9998090fe392ad14b0d0bb705e39ae9eba889adefdfbe3f26fe21816",
+        "bf968b70ee8381d395cf5fc01f2efb1a2640792be80235c2f2a69f1a8c1d4f8d",
     ),
     "generation_backend_runner": (
         "generalized_card/scripts/run_generator_backend.py",
@@ -325,7 +325,7 @@ CORE_FILES = {
     ),
     "length_fidelity": (
         "generalized_card/generalized_card/length_fidelity.py",
-        "fb76cd255ff7e1c01641e8527bb780e939f480482a843057a1895f3c354c01b9",
+        "ae7f2fa7840701e47bdd920ce5383d9f5f9b9adc39f0b6d90bb8347256a60340",
     ),
     "lexical_quality": (
         "generalized_card/generalized_card/lexical_quality.py",
@@ -341,7 +341,7 @@ CORE_FILES = {
     ),
     "writer_quality": (
         "generalized_card/generalized_card/writer_quality.py",
-        "197545e5ce052f471ebc9f14c743130aedc2ba9b608ac628bc0c69091123877c",
+        "357b4679d5a329add6ecaec153714a345edd8dd3908c0202a1d769b79b264850",
     ),
     "semantic_realization": (
         "generalized_card/generalized_card/semantic_realization.py",

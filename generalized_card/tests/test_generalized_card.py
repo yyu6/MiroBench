@@ -10556,3 +10556,59 @@ def test_build_seed_pool_can_hold_out_the_evaluation_threads(tmp_path):
     ]
     assert repeat["meta"]["excluded_threads"] == 0
     assert json.loads((tmp_path / "c.json").read_text())["seed_posts"]
+
+
+def test_length_ceiling_redraw_task_names_length_and_not_content():
+    """The ceiling re-draw must not be the hard-recovery task.
+
+    Hard recovery opens with "could not be stored", which is false for an
+    over-long comment, and echoes the failed candidate -- for a 500-word
+    overshoot that would dominate the prompt.
+    """
+
+    from dataclasses import dataclass
+
+    from generalized_card import length_fidelity as lf
+    from generalized_card.writer_quality import writer_length_ceiling_task
+
+    @dataclass
+    class Task:
+        planner_intent: str = "Fill matched real sample slot S3: real_words=40."
+        must_not_do: str = ""
+
+    problem = f"{lf.CEILING_PREFIX}523w past the 300w ceiling"
+    out = writer_length_ceiling_task(Task(), problem=problem)
+    assert "523w" in out.planner_intent and "300w" in out.planner_intent
+    assert "could not be stored" not in out.planner_intent
+    assert out.planner_intent.startswith("Fill matched real sample slot S3")
+    for word in ("camera", "lens", "product", "topic"):
+        assert word not in out.planner_intent.lower()
+    assert writer_length_ceiling_task(None, problem=problem) is None
+
+
+def test_length_ceiling_problems_selects_only_ceiling_misses():
+    """The re-draw loop must not fire on a band miss or any other soft problem."""
+
+    from generalized_card import length_fidelity as lf
+
+    problems = [
+        "template_phrase_reused",
+        f"{lf.PROBLEM_PREFIX}12w in band 1, assigned 40w in band 6 [32-39]",
+        f"{lf.CEILING_PREFIX}523w past the 300w ceiling",
+    ]
+    picked = lf.length_ceiling_problems(problems)
+    assert picked == [f"{lf.CEILING_PREFIX}523w past the 300w ceiling"]
+    assert lf.length_ceiling_problems([]) == []
+    assert lf.length_ceiling_problems(None) == []
+    assert lf.length_ceiling_problems(["template_phrase_reused"]) == []
+
+
+def test_length_ceiling_is_soft_so_an_exhausted_redraw_still_stores_the_slot():
+    """ORIENTATION s4: a matched structural slot must never be dropped."""
+
+    from generalized_card import length_fidelity as lf
+    from generalized_card.writer_quality import hard_realization_problems
+
+    problem = f"{lf.CEILING_PREFIX}523w past the 300w ceiling"
+    # Not hard -> the recovery-exhausted path stores the text instead of skipping.
+    assert hard_realization_problems([problem]) == []

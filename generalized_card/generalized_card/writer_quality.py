@@ -15,7 +15,11 @@ from .generation_diversity import (
     distribution_target_with_slot_progress,
     joint_candidate_diagnostics,
 )
-from .length_fidelity import length_band_problem, length_ceiling_problem
+from .length_fidelity import (
+    ceiling_retry_note,
+    length_band_problem,
+    length_ceiling_problem,
+)
 from .length_policy import is_soft_length_problem
 
 
@@ -201,6 +205,35 @@ def substantive_length_floor_problem(text: str, task: Any) -> str:
     if actual < minimum:
         return f"substantive_length_floor:{actual}<{minimum}"
     return ""
+
+
+def writer_length_ceiling_task(
+    task: Any,
+    *,
+    problem: str,
+) -> Any:
+    """Ask for the same planned move, under the domain's length ceiling.
+
+    Deliberately NOT `writer_hard_recovery_task`. That one opens with "the
+    previous output could not be stored", which is false here -- a comment over
+    the ceiling is perfectly storable and will be stored if this re-draw fails --
+    and it echoes the failed candidate back, which for a 500-word overshoot would
+    dominate the prompt. This note names length only, for the reason G37 recorded:
+    a retry note that names content teaches the Writer a shared way of saying
+    things, which is the defect the ceiling exists to avoid making worse.
+    """
+
+    if task is None:
+        return task
+    try:
+        return replace(
+            task,
+            planner_intent=(
+                f"{getattr(task, 'planner_intent', '')} {ceiling_retry_note(problem)}"
+            ).strip(),
+        )
+    except Exception:
+        return task
 
 
 def writer_hard_recovery_task(
