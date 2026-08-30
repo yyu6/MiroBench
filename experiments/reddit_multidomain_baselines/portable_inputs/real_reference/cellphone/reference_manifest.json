@@ -1,0 +1,9 @@
+{
+  "domain": "cellphone",
+  "seed_pool": "seed_pools/cellphone.json",
+  "seed_count": 150,
+  "posts_per_run": 5,
+  "run_count": 30,
+  "real_comment_count": 1379,
+  "portable_source": true
+}

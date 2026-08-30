@@ -1,0 +1,1626 @@
+{
+  "meta": {
+    "product_category": "sports",
+    "baseline": "real_reddit_reference",
+    "run_id": "run_014_sampled_reddit"
+  },
+  "posts": [
+    {
+      "post_id": "real_run014_post00_seed070",
+      "post_slot": 0,
+      "seed_index": 70,
+      "source_raw_post_id": "1vej0yy",
+      "source_product_dir": "sports",
+      "source_file": "https://www.reddit.com/r/sports/comments/1vej0yy/the_first_ultimate_grand_slam_on_an_02_count_in/",
+      "post_type": ":baseball: Baseball",
+      "title": "The first \"ultimate grand slam\" on an 0-2 count in baseball history",
+      "author": "reddit_user_79ff14d8816f",
+      "author_karma": 0,
+      "content": "The first \"ultimate grand slam\" on an 0-2 count in baseball history",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p1hc9ck",
+          "author": "reddit_user_5f1d6a3dde68",
+          "author_karma": 0,
+          "content": "What's \"ultimate\" mean? That it's a walk off grandslam?",
+          "timestamp": "2026-08-03T17:01:50+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1hcwvd",
+              "author": "reddit_user_0d4329132a5f",
+              "author_karma": 0,
+              "content": "It's basically like the ultimate scenario in baseball that you imagined when you were a kid. Bottom of the 9th, down by 3, bases loaded. ",
+              "timestamp": "2026-08-03T17:04:31+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1hc9ck",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1heqbc",
+                  "author": "reddit_user_1899f5e1168a",
+                  "author_karma": 0,
+                  "content": "Two outs, I’m assuming ",
+                  "timestamp": "2026-08-03T17:11:55+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1hcwvd",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1hgrpw",
+                      "author": "reddit_user_0d4329132a5f",
+                      "author_karma": 0,
+                      "content": "Yeah, sorry. That hsould have been included.",
+                      "timestamp": "2026-08-03T17:20:08+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1heqbc",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "p1hjee2",
+                          "author": "reddit_user_c65b45d93957",
+                          "author_karma": 0,
+                          "content": "It is not. Its just down by 3, bottom of the 9th",
+                          "timestamp": "2026-08-03T17:30:51+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "p1hgrpw",
+                          "depth": 4,
+                          "replies": []
+                        },
+                        {
+                          "comment_id": "p1hkfjw",
+                          "author": "reddit_user_abdbc6551dca",
+                          "author_karma": 0,
+                          "content": "It's not necessary to be called an \"ultimate grand slam\" but I believe this one was 2 outs and a 0-2 count. Essentially the last swing of the game, so people are giving it extra superlatives like \"ultimate ultimate grand slam\"",
+                          "timestamp": "2026-08-03T17:35:05+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "p1hgrpw",
+                          "depth": 4,
+                          "replies": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p1hd3nz",
+          "author": "reddit_user_2b0f8ac54abe",
+          "author_karma": 0,
+          "content": "AI definition:\n\nAn ultimate grand slam in baseball is a rare walk-off home run hit with the bases loaded in the final inning while the batter's team is trailing by exactly three runs.",
+          "timestamp": "2026-08-03T17:05:16+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1hgec1",
+              "author": "reddit_user_c65b45d93957",
+              "author_karma": 0,
+              "content": "Get your AI shit out of here. Quit asking AI anything.",
+              "timestamp": "2026-08-03T17:18:38+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1hd3nz",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1hgo2g",
+                  "author": "reddit_user_e09e4b2b19ad",
+                  "author_karma": 0,
+                  "content": "Were you this angry with Google twenty years ago?",
+                  "timestamp": "2026-08-03T17:19:43+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1hgec1",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1hh7f8",
+                      "author": "reddit_user_125c74fc7067",
+                      "author_karma": 0,
+                      "content": "When it gave me wrong search results, yes.\n\nThat definition is incomplete, also needs to be an 0-2 count with 2 outs. So, not a definition.",
+                      "timestamp": "2026-08-03T17:21:55+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1hgo2g",
+                      "depth": 3,
+                      "replies": []
+                    },
+                    {
+                      "comment_id": "p1hht7o",
+                      "author": "reddit_user_c65b45d93957",
+                      "author_karma": 0,
+                      "content": "Google was only linking you to sites that were hard to find otherwise. Kinda like a directory to sites that may or may not contain the info you are looking for. AI just steals info and shits out answers that may or may not be true. Usually its wrong. Not to mention Google didn't get shoved down my throat by every second company trying to be lazy.",
+                      "timestamp": "2026-08-03T17:24:24+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1hgo2g",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "p1hx6tw",
+                          "author": "reddit_user_2b0f8ac54abe",
+                          "author_karma": 0,
+                          "content": "See, it’s ok because years ago I wrote that answer on Reddit. That’s where the AI got it from. \n\nSo in this case I’m quoting myself, but AI finds it faster than I can, and I’m too lazy to type it out again. ",
+                          "timestamp": "2026-08-03T18:28:32+00:00",
+                          "likes": 0,
+                          "dislikes": 0,
+                          "parent_comment_id": "p1hht7o",
+                          "depth": 4,
+                          "replies": [
+                            {
+                              "comment_id": "p1hy67c",
+                              "author": "reddit_user_c65b45d93957",
+                              "author_karma": 0,
+                              "content": "I honestly don't gove a flying fuck. AI is bad. Flat out. No exceptions. Its harming us as a society so fast its unreal. It was most certainly faster to just type a couple sentences than load up whatever shit AI you did, then type in your question, then copy and paste it to Reddit. You did more work to get the same result. That assumes you didn't just ask AI for a response to me, which you probably did. ",
+                              "timestamp": "2026-08-03T18:32:47+00:00",
+                              "likes": 1,
+                              "dislikes": 0,
+                              "parent_comment_id": "p1hx6tw",
+                              "depth": 5,
+                              "replies": [
+                                {
+                                  "comment_id": "p1i2ao1",
+                                  "author": "reddit_user_2b0f8ac54abe",
+                                  "author_karma": 0,
+                                  "content": "It’s turtles all the way down. ",
+                                  "timestamp": "2026-08-03T18:50:40+00:00",
+                                  "likes": 1,
+                                  "dislikes": 0,
+                                  "parent_comment_id": "p1hy67c",
+                                  "depth": 6,
+                                  "replies": []
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p1hghp5",
+          "author": "reddit_user_125c74fc7067",
+          "author_karma": 0,
+          "content": "[Not the first.](https://www.reddit.com/r/baseball/comments/1vb4nk3/highlight_kody_clemens_ultimate_grand_slam/p0qlwr2/)\n\nStill cool.",
+          "timestamp": "2026-08-03T17:19:00+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run014_post01_seed071",
+      "post_slot": 1,
+      "seed_index": 71,
+      "source_raw_post_id": "1vejrgl",
+      "source_product_dir": "sports",
+      "source_file": "https://www.reddit.com/r/sports/comments/1vejrgl/tomomi_nishikubo_went_through_seven_brake_plates/",
+      "post_type": ":cycle: Cycling",
+      "title": "Tomomi Nishikubo went through seven brake plates to set this World Record",
+      "author": "reddit_user_79ff14d8816f",
+      "author_karma": 0,
+      "content": "Tomomi Nishikubo went through seven brake plates to set this World Record\n\nTomomi Nishikubo made history with the World's Steepest Fakie Nose Manual Down an Olympic Ski Jump.\n\nThe Japanese trials rider rode backwards on a single wheel down Hakuba Ski Jump Stadium in Nagano, hitting a 37.5° gradient and over 60 km/h, to set TWO Guinness World Records: Steepest Bicycle Fakie Nose Manual and Longest Distance Travelled by Bicycle Fakie Nose Manual on a Ski Jumping Hill.",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p1ifod2",
+          "author": "reddit_user_bfeb43db3478",
+          "author_karma": 0,
+          "content": "Indeed, dual front brakes are common on motorcycles, but given he has red bull moneys, that could be build on an bike",
+          "timestamp": "2026-08-03T19:48:57+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1hn1t5",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1igjow",
+          "author": "reddit_user_47a72fea3d5e",
+          "author_karma": 0,
+          "content": "They don't even make the energy drink themselves, it's contracted out.",
+          "timestamp": "2026-08-03T19:52:45+00:00",
+          "likes": 10,
+          "dislikes": 0,
+          "parent_comment_id": "p1hoar5",
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1iskht",
+              "author": "reddit_user_6b8d98166eb4",
+              "author_karma": 0,
+              "content": "Basically every major drink is like this",
+              "timestamp": "2026-08-03T20:45:24+00:00",
+              "likes": 12,
+              "dislikes": 0,
+              "parent_comment_id": "p1igjow",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1k04z2",
+                  "author": "reddit_user_47a72fea3d5e",
+                  "author_karma": 0,
+                  "content": "Yeah TIL. I assumed Pespi and Coke owned the factories. Thanks.",
+                  "timestamp": "2026-08-04T00:21:11+00:00",
+                  "likes": 4,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1iskht",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            },
+            {
+              "comment_id": "p1jigz0",
+              "author": "reddit_user_ebd977c19200",
+              "author_karma": 0,
+              "content": "What’s your point with this? Do you expect John Redbull to be sat at home with a copper steam kettle making redbull and shipping it out in barrels? ",
+              "timestamp": "2026-08-03T22:47:54+00:00",
+              "likes": 12,
+              "dislikes": 0,
+              "parent_comment_id": "p1igjow",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1k5hob",
+                  "author": "reddit_user_bbce667f1175",
+                  "author_karma": 0,
+                  "content": "I thought John had retired tbh",
+                  "timestamp": "2026-08-04T00:50:19+00:00",
+                  "likes": 5,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1jigz0",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1kk37r",
+                      "author": "reddit_user_5db8d304b24a",
+                      "author_karma": 0,
+                      "content": "Yup. John’s ass out. Works with his brother now. ",
+                      "timestamp": "2026-08-04T02:10:58+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1k5hob",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p1ih3dz",
+          "author": "reddit_user_2accf99b994f",
+          "author_karma": 0,
+          "content": "Brake discs to me. ",
+          "timestamp": "2026-08-03T19:55:09+00:00",
+          "likes": 17,
+          "dislikes": 0,
+          "parent_comment_id": "p1hjzgy",
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1ipx3i",
+              "author": "reddit_user_987091bab541",
+              "author_karma": 0,
+              "content": "I've heard both. Probably just a regional thing. ",
+              "timestamp": "2026-08-03T20:33:44+00:00",
+              "likes": 9,
+              "dislikes": 0,
+              "parent_comment_id": "p1ih3dz",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1js561",
+                  "author": "reddit_user_c77925a03cb0",
+                  "author_karma": 0,
+                  "content": "It's an Albany expression. ",
+                  "timestamp": "2026-08-03T23:38:15+00:00",
+                  "likes": 2,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1ipx3i",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1kc44p",
+                      "author": "[deleted]",
+                      "author_karma": 0,
+                      "content": "[removed]",
+                      "timestamp": "2026-08-04T01:26:40+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1js561",
+                      "depth": 3,
+                      "replies": []
+                    },
+                    {
+                      "comment_id": "p1kiez9",
+                      "author": "reddit_user_b98aa2a0af67",
+                      "author_karma": 0,
+                      "content": "These hamburgers are quite similar to the ones they have at Krusty Burger. ",
+                      "timestamp": "2026-08-04T02:01:34+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1js561",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "comment_id": "p1l1sy4",
+              "author": "[deleted]",
+              "author_karma": 0,
+              "content": "[removed]",
+              "timestamp": "2026-08-04T03:57:37+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1ih3dz",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1ijbc7",
+          "author": "reddit_user_a47e2ff2476f",
+          "author_karma": 0,
+          "content": "Oh, so he beat my record by what, 60km/hr?  Pffft",
+          "timestamp": "2026-08-03T20:04:50+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1ikuld",
+          "author": "reddit_user_751dac3f4df6",
+          "author_karma": 0,
+          "content": "Should’ve quickly removed it and fried an egg on it ",
+          "timestamp": "2026-08-03T20:11:35+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1ilruv",
+          "author": "reddit_user_43b44a1cbf74",
+          "author_karma": 0,
+          "content": "They don’t need to. There are several grades of disc brakes for bikes and the beefiest are far stronger and durable than this demonstrated task could ever demand.\n\nHe’s just using brakes that are severely under-rated for the task. ",
+          "timestamp": "2026-08-03T20:15:37+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1ibz5t",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1im1az",
+          "author": "reddit_user_7c083ddb606c",
+          "author_karma": 0,
+          "content": "Red Bull is really scraping the bottom of the barrel. Next up, plate spinning!",
+          "timestamp": "2026-08-03T20:16:45+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1kkj64",
+              "author": "reddit_user_9412cb3ce7c2",
+              "author_karma": 0,
+              "content": "most bottoms of barrel's scraped record incoming",
+              "timestamp": "2026-08-04T02:13:24+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1im1az",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1imj9c",
+          "author": "reddit_user_f9f849cb0dea",
+          "author_karma": 0,
+          "content": "Ok ",
+          "timestamp": "2026-08-03T20:18:56+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1imvkl",
+          "author": "reddit_user_5b179c796ef2",
+          "author_karma": 0,
+          "content": "Bicycle discs are also a fraction as thin. Hard to really compare the two. ",
+          "timestamp": "2026-08-03T20:20:25+00:00",
+          "likes": 4,
+          "dislikes": 0,
+          "parent_comment_id": "p1i93hn",
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1krkmj",
+              "author": "reddit_user_0ad42d1f62c6",
+              "author_karma": 0,
+              "content": "yes, they can be thinner because there is a lot less energy in a 180lb rider doing 30 mph compared to a motorcycle or car doing triple digit speeds.  that doesn't mean they can't handle similar temperatures.  hydraulically actuated aluminum calipers squeezing semi metallic pads on stainless steel rotors.  140°C is well within their capabilities.  ",
+              "timestamp": "2026-08-04T02:53:29+00:00",
+              "likes": 2,
+              "dislikes": 0,
+              "parent_comment_id": "p1imvkl",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1inyv8",
+          "author": "reddit_user_d26c60c6bff1",
+          "author_karma": 0,
+          "content": "Wha..? You mean they don't do this competitively as long there's no snow?",
+          "timestamp": "2026-08-03T20:25:12+00:00",
+          "likes": 3,
+          "dislikes": 0,
+          "parent_comment_id": "p1huxet",
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1k783d",
+              "author": "reddit_user_3eeb35f4165a",
+              "author_karma": 0,
+              "content": "new bike sport invented i guess",
+              "timestamp": "2026-08-04T00:59:45+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1inyv8",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1io60t",
+          "author": "reddit_user_d5bee4fef29b",
+          "author_karma": 0,
+          "content": "160°C isn’t even hot enough to bake a cake.",
+          "timestamp": "2026-08-03T20:26:04+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1iod99",
+          "author": "reddit_user_c0f15d3bbeb5",
+          "author_karma": 0,
+          "content": "And you set a world record for the reply",
+          "timestamp": "2026-08-03T20:26:57+00:00",
+          "likes": 3,
+          "dislikes": 0,
+          "parent_comment_id": "p1hx1td",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1ipcqe",
+          "author": "reddit_user_ea2b5e707b1a",
+          "author_karma": 0,
+          "content": "I understand it is probably a difficult task to do for average people to keep balance and speed down an incline but I feel like any professional biker could probably train to pull this off if they had the money and resources too... This to me doesn't seem like some insane trick that is hard to master... This is just like having the ability to balance because gravity is working in favor of you. I have seen this like 10 times and still wonder why is this more impressive than the people doing insane flips mid air... ",
+          "timestamp": "2026-08-03T20:31:15+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1j5wq1",
+              "author": "reddit_user_ab2e5f33812e",
+              "author_karma": 0,
+              "content": "Nobody is comparing it to tricks in the air.\n\nIf you think you can do better, go for it. Otherwise stip the emasculated moaning",
+              "timestamp": "2026-08-03T21:46:17+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1ipcqe",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1j9rk1",
+                  "author": "[deleted]",
+                  "author_karma": 0,
+                  "content": "[removed]",
+                  "timestamp": "2026-08-03T22:04:36+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1j5wq1",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p1iqvrq",
+          "author": "reddit_user_2a919e7f2cb8",
+          "author_karma": 0,
+          "content": "Why not keep going though",
+          "timestamp": "2026-08-03T20:38:00+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1it8ug",
+          "author": "reddit_user_7cc734d394f5",
+          "author_karma": 0,
+          "content": "While I’m sure 100s could do it, that is still an impressive feat.\n\nI do agree with other people that this isn’t the most exciting thing to be looking at.",
+          "timestamp": "2026-08-03T20:48:22+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1hl0ti",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1iuoz4",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-03T20:54:49+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1iushv",
+          "author": "reddit_user_9bda927e7948",
+          "author_karma": 0,
+          "content": "The vast majority of their revenue comes from the sale of the beverage.",
+          "timestamp": "2026-08-03T20:55:15+00:00",
+          "likes": 3,
+          "dislikes": 0,
+          "parent_comment_id": "p1ht4v2",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1iv0w6",
+          "author": "reddit_user_b19e48905e23",
+          "author_karma": 0,
+          "content": "These aren't real sports world records.  This is just suicidal stupid shit that nobody in their right mind would attempt.  These are Darwin Award tryouts. ",
+          "timestamp": "2026-08-03T20:56:18+00:00",
+          "likes": -1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1j6dtr",
+              "author": "reddit_user_ab2e5f33812e",
+              "author_karma": 0,
+              "content": "Have you never looked at the Guinness book of world records? Its almost all random shit olenty of low competitivity stuff\n\nNot sure what your problem with this is. Its not that dangerous either",
+              "timestamp": "2026-08-03T21:48:31+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1iv0w6",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1iv1u8",
+          "author": "reddit_user_b19e48905e23",
+          "author_karma": 0,
+          "content": "These aren't real sports world records.  This is just suicidal stupid shit that nobody in their right mind would attempt.  These are Darwin Award tryouts.",
+          "timestamp": "2026-08-03T20:56:25+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1ivj6l",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-03T20:58:33+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1hi3nc",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1ivkqm",
+          "author": "reddit_user_9bda927e7948",
+          "author_karma": 0,
+          "content": "What do they market? Their beverage, sales of which account the vast majority of their revenue. Do they market anything else? They're a beverage company that happens to spend a ridiculous amount of money on marketing their product.",
+          "timestamp": "2026-08-03T20:58:44+00:00",
+          "likes": 6,
+          "dislikes": 0,
+          "parent_comment_id": "p1hoar5",
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1jyh29",
+              "author": "reddit_user_22e88f67f62a",
+              "author_karma": 0,
+              "content": "They have racing teams, they sponsor various extreme sports, and have essentially created entire competitions for various odd extreme sports. ",
+              "timestamp": "2026-08-04T00:12:19+00:00",
+              "likes": 20,
+              "dislikes": 0,
+              "parent_comment_id": "p1ivkqm",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1k4428",
+                  "author": "reddit_user_0a341943a93f",
+                  "author_karma": 0,
+                  "content": "Which is all marketing for their beverages...",
+                  "timestamp": "2026-08-04T00:42:47+00:00",
+                  "likes": 13,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1jyh29",
+                  "depth": 2,
+                  "replies": []
+                },
+                {
+                  "comment_id": "p1kwgka",
+                  "author": "reddit_user_80b7c39eb5a1",
+                  "author_karma": 0,
+                  "content": "This doesn't make them a marketing company. A marketing company advertises other people's products, not their own.",
+                  "timestamp": "2026-08-04T03:23:21+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1jyh29",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p1ivy0o",
+          "author": "reddit_user_60646a740823",
+          "author_karma": 0,
+          "content": "Even then they are not that heat sensitive. I used to race downhill where you are feathering the brakes for much longer distances than this. They do get super hot, but they don't warp that easily at all.\n\nOnly thing I can think of they were using standard x-country rotors or something.",
+          "timestamp": "2026-08-03T21:00:24+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1hkzbn",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1iw5em",
+          "author": "reddit_user_e03719b5f2fc",
+          "author_karma": 0,
+          "content": ">Longest Distance Travelled by Bicycle Fakie Nose Manual on a Ski Jumping Hill\n\nThis is a ludicrously specific record. Lame is an overstatement but cmon",
+          "timestamp": "2026-08-03T21:01:20+00:00",
+          "likes": 14,
+          "dislikes": 0,
+          "parent_comment_id": "p1hjtvf",
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1ji7a4",
+              "author": "reddit_user_7de014a39239",
+              "author_karma": 0,
+              "content": "The only specific part is the ski jumping hill, if that's even part of the record itself and not only for logistics sake...",
+              "timestamp": "2026-08-03T22:46:33+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1iw5em",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1kh9a1",
+                  "author": "reddit_user_9442d5a59059",
+                  "author_karma": 0,
+                  "content": "What they are saying by saying it's \"ridiculously\" specific is that nobody asked for this and nobody cares. It's not like Blondin crossing Niagara on a tightrope. It's a guy going backwards on a bike my 12 year old rides. Nobody cares.",
+                  "timestamp": "2026-08-04T01:55:08+00:00",
+                  "likes": 3,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1ji7a4",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            },
+            {
+              "comment_id": "p1jxg1k",
+              "author": "reddit_user_d57bc86fbef4",
+              "author_karma": 0,
+              "content": "It's like setting a record for popping the most balloons with a hotdog in 171 seconds",
+              "timestamp": "2026-08-04T00:06:46+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1iw5em",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1iw681",
+          "author": "reddit_user_a6ceb3db42a4",
+          "author_karma": 0,
+          "content": "294.26 degrees Fahrenheit ",
+          "timestamp": "2026-08-03T21:01:26+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1iw7zj",
+          "author": "reddit_user_60646a740823",
+          "author_karma": 0,
+          "content": "There are downhill bicycle rotors that are much larger and thicker so they can dissipate more heat. I used to race downhill, and have put brakes through much more than this.",
+          "timestamp": "2026-08-03T21:01:39+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1hzd68",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1iym27",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-03T21:12:32+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1ht9zc",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1izmd3",
+          "author": "reddit_user_b59a4cc1a9cc",
+          "author_karma": 0,
+          "content": "I can’t operate a forklift, but I’m not particularly impressed by someone who can. ",
+          "timestamp": "2026-08-03T21:17:10+00:00",
+          "likes": 7,
+          "dislikes": 0,
+          "parent_comment_id": "p1i5swl",
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1j2hax",
+              "author": "reddit_user_42d4821b2707",
+              "author_karma": 0,
+              "content": "Anyone can operate a forklift, that's not what I asked. Reading not you're strong suit?",
+              "timestamp": "2026-08-03T21:30:21+00:00",
+              "likes": -11,
+              "dislikes": 0,
+              "parent_comment_id": "p1izmd3",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1j4sp9",
+                  "author": "reddit_user_1f6b75854cbb",
+                  "author_karma": 0,
+                  "content": "Bro, if you're going to trash talk someone about their reading, do check your spelling or you are going to look like a complete idiot.",
+                  "timestamp": "2026-08-03T21:41:07+00:00",
+                  "likes": 7,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1j2hax",
+                  "depth": 2,
+                  "replies": []
+                },
+                {
+                  "comment_id": "p1j4y0x",
+                  "author": "reddit_user_f49e95d1ef43",
+                  "author_karma": 0,
+                  "content": "If “anyone can operate a forklift” then you’re including all the people who operate it badly.  \n\nIn that case, yes anyone can pop a fake nose manual on a ski jump.  Only some people do it badly.",
+                  "timestamp": "2026-08-03T21:41:49+00:00",
+                  "likes": 7,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1j2hax",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p1izw8e",
+          "author": "reddit_user_c548f2b93aea",
+          "author_karma": 0,
+          "content": "Sounds like a new potential record - _'the longest unbroken urination to cool a bicycle brake rotor while rolling down a ski ramp outside of winter.'_ ",
+          "timestamp": "2026-08-03T21:18:26+00:00",
+          "likes": 3,
+          "dislikes": 0,
+          "parent_comment_id": "p1hl7pv",
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1khmx7",
+              "author": "reddit_user_47fb56eae085",
+              "author_karma": 0,
+              "content": "Now do it in winter, but you gotta get it hot enough to warrant cooling down ",
+              "timestamp": "2026-08-04T01:57:15+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1izw8e",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1j2ea2",
+          "author": "reddit_user_7666ee730666",
+          "author_karma": 0,
+          "content": "Why did he need brakes anyway? The skiers don’t use brakes! Let’s see the record for doing this without using brakes! Come on!",
+          "timestamp": "2026-08-03T21:29:57+00:00",
+          "likes": 0,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1j3ihc",
+          "author": "reddit_user_4c0602ff1e3d",
+          "author_karma": 0,
+          "content": "Why",
+          "timestamp": "2026-08-03T21:35:08+00:00",
+          "likes": 0,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1j7fpl",
+          "author": "reddit_user_34a5771e4ba4",
+          "author_karma": 0,
+          "content": "Made up nonsense",
+          "timestamp": "2026-08-03T21:53:29+00:00",
+          "likes": 0,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1j8q8k",
+          "author": "reddit_user_5dee897ad5ec",
+          "author_karma": 0,
+          "content": "Did they really put a temperature gauge on his brakes? Seems useless",
+          "timestamp": "2026-08-03T21:59:39+00:00",
+          "likes": 0,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1j94ht",
+          "author": "reddit_user_782b8d22cefb",
+          "author_karma": 0,
+          "content": "The failure point for rotors is *way* before 600 Celsius, because the lubrication boils off and the pads glaze, so I don't know what you put into your search.",
+          "timestamp": "2026-08-03T22:01:32+00:00",
+          "likes": 3,
+          "dislikes": 0,
+          "parent_comment_id": "p1ifc62",
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1jdasb",
+              "author": "reddit_user_b95601cd6e13",
+              "author_karma": 0,
+              "content": "https://bicycles.stackexchange.com/questions/47326/maximum-brake-temperatures\n\nhttps://www.sicklines.com/2011/02/14/shimano-ice-technologies-xtr-benchmark-test/\n\n600 C was put forward as a temp under extreme braking for a downhill ebike / over loaded bike that would lead to permanent damage to the rotors. Ie warping. But that temps well north or 150c would be considered standard temps.\n\n",
+              "timestamp": "2026-08-03T22:21:47+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1j94ht",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1j9vv7",
+          "author": "reddit_user_b278b1f2f334",
+          "author_karma": 0,
+          "content": "Now without brakes.",
+          "timestamp": "2026-08-03T22:05:10+00:00",
+          "likes": 0,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1jaikq",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-03T22:08:11+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1hjzgy",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1jalbi",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-03T22:08:32+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1jddsu",
+          "author": "reddit_user_26846378191b",
+          "author_karma": 0,
+          "content": "Some people are just never happy and prefer to be bitter on Reddit. It was freaking cool.",
+          "timestamp": "2026-08-03T22:22:12+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1hrl1n",
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1kckzy",
+              "author": "reddit_user_6bb217517285",
+              "author_karma": 0,
+              "content": "Nah not bitter but I understand the original complaint. I mean I guess it's cool but it's not productive or beneficial to anyone. It's a cool trick but doesn't really accomplish anything.",
+              "timestamp": "2026-08-04T01:29:17+00:00",
+              "likes": 2,
+              "dislikes": 0,
+              "parent_comment_id": "p1jddsu",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1jf6zh",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-03T22:31:14+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1jfno9",
+          "author": "reddit_user_9412cb3ce7c2",
+          "author_karma": 0,
+          "content": "is there anything tamer than these red bull world record posts on reddit? it's all been downhill (forgive the pun) since baumgartner dropped from space",
+          "timestamp": "2026-08-03T22:33:35+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1jnabq",
+              "author": "reddit_user_ccbbdf2fd17a",
+              "author_karma": 0,
+              "content": "Alan Eustace basicashowed how worthless a red bull record can be",
+              "timestamp": "2026-08-03T23:12:50+00:00",
+              "likes": 2,
+              "dislikes": 0,
+              "parent_comment_id": "p1jfno9",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1jqemw",
+                  "author": "reddit_user_9412cb3ce7c2",
+                  "author_karma": 0,
+                  "content": "I didn't even know about that! If only he had a marketing team the size of red bull's",
+                  "timestamp": "2026-08-03T23:29:09+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1jnabq",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            },
+            {
+              "comment_id": "p1k34ej",
+              "author": "[deleted]",
+              "author_karma": 0,
+              "content": "[removed]",
+              "timestamp": "2026-08-04T00:37:26+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1jfno9",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1ji85s",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-03T22:46:41+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1hmcyu",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1jia62",
+          "author": "reddit_user_ee8d55d1bee4",
+          "author_karma": 0,
+          "content": "Man, I thought the \nLongest Distance Travelled by Bicycle Fakie Nose Manual on a Ski Jumping Hill record would never be broken. That’s one that we’ll all remember where we were when we heard the news. ",
+          "timestamp": "2026-08-03T22:46:57+00:00",
+          "likes": 4,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1jisj7",
+          "author": "reddit_user_dcc40946caef",
+          "author_karma": 0,
+          "content": "Difference in scale and braking application. Bike rotors are 2mm thick, and actuated by rubber brake pads. Rubber is incredibly elastic at 140 degrees. Motorsports and road vehicles are using metal brake pads and either metal or ceramic rotors. ",
+          "timestamp": "2026-08-03T22:49:32+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": "p1i93hn",
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1jldxp",
+              "author": "reddit_user_0ad42d1f62c6",
+              "author_karma": 0,
+              "content": "Wow.  Rubber brake pads?  You shouldn’t talk of things you do not know. ",
+              "timestamp": "2026-08-03T23:02:52+00:00",
+              "likes": 2,
+              "dislikes": 0,
+              "parent_comment_id": "p1jisj7",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1jn6ml",
+          "author": "reddit_user_f109b5fe6eb7",
+          "author_karma": 0,
+          "content": "731 brake plates",
+          "timestamp": "2026-08-03T23:12:17+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1jnmox",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-03T23:14:40+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1hi3nc",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1jpgd3",
+          "author": "reddit_user_08073c290a93",
+          "author_karma": 0,
+          "content": "Cool.\n\nBut I want to see him full send it without brakes.",
+          "timestamp": "2026-08-03T23:24:12+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1jw8cd",
+          "author": "reddit_user_556df05b3b8c",
+          "author_karma": 0,
+          "content": "I'm no expert but I've definitely seen bigger rotors than this too, surprised they didn't think to upgrade after replacing 7. \n\nThere are 250mm conversion kits for emotos that would be compatible.",
+          "timestamp": "2026-08-04T00:00:09+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1hrkel",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1jwvks",
+          "author": "reddit_user_6e7652c5d357",
+          "author_karma": 0,
+          "content": "And the most coveted rating in the restaurant business is given by a tire company.\n\nThe world be weird sometimes.",
+          "timestamp": "2026-08-04T00:03:40+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": "p1hl3qd",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1jxjmb",
+          "author": "reddit_user_c56039e81411",
+          "author_karma": 0,
+          "content": "Set the record so I can beat. Also, I'll need your brown hair.",
+          "timestamp": "2026-08-04T00:07:20+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1hp2t7",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1jxu1l",
+          "author": "reddit_user_7ec75f5af26f",
+          "author_karma": 0,
+          "content": "I’m willing to bet they started each run with fresh pads and rotor as a “control” to give him the best chance of success. ",
+          "timestamp": "2026-08-04T00:08:53+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1hkfro",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1jxz29",
+          "author": "reddit_user_d57bc86fbef4",
+          "author_karma": 0,
+          "content": "It's like setting a record for popping the most balloons with a hotdog in 171 seconds.  \n  \n\n*removes Redbull helmet and screams \"YYYEEEEAAAHHHH\" at the camera*",
+          "timestamp": "2026-08-04T00:09:39+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": "p1hjtvf",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1jy0xw",
+          "author": "reddit_user_7ec75f5af26f",
+          "author_karma": 0,
+          "content": "Title clearly says brake plates not rotors… /s\n\nJokes aside I work in a bike shop and will be referring to them as plates from now on! ",
+          "timestamp": "2026-08-04T00:09:55+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1hjzgy",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1jy3tg",
+          "author": "reddit_user_2d37b7d4be01",
+          "author_karma": 0,
+          "content": "It's trivial to find someone's comment history:\n\nhttps://www.google.com/search?q=%22Mundane_Influence_91%22%20site%3Areddit.com",
+          "timestamp": "2026-08-04T00:10:21+00:00",
+          "likes": 4,
+          "dislikes": 0,
+          "parent_comment_id": "p1hvy41",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1jy9i5",
+          "author": "reddit_user_a0e8151f7a43",
+          "author_karma": 0,
+          "content": "Anybody got some brake plates ",
+          "timestamp": "2026-08-04T00:11:12+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1jypeg",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-04T00:13:33+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1hjtvf",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1jz62p",
+          "author": "reddit_user_86cf361466ba",
+          "author_karma": 0,
+          "content": "These red bull world records are so stupid to be honest.",
+          "timestamp": "2026-08-04T00:16:00+00:00",
+          "likes": 4,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1jzm2k",
+          "author": "reddit_user_2840376c1f7b",
+          "author_karma": 0,
+          "content": "But they needed a video slice of him holding all the brake plates.",
+          "timestamp": "2026-08-04T00:18:21+00:00",
+          "likes": 10,
+          "dislikes": 0,
+          "parent_comment_id": "p1hrkel",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1jzsrg",
+          "author": "reddit_user_93c6e022bf47",
+          "author_karma": 0,
+          "content": "Disc or rotors is fine.",
+          "timestamp": "2026-08-04T00:19:22+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1hjzgy",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1k1hh9",
+          "author": "reddit_user_126d587bb983",
+          "author_karma": 0,
+          "content": "I miss the days of “fattest motorcycle riding twins” and longest fingernails in the world. ",
+          "timestamp": "2026-08-04T00:28:27+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": "p1hol3t",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1k4ag5",
+          "author": "reddit_user_0fc94db89b67",
+          "author_karma": 0,
+          "content": "Doesn't look like he's going over 60.",
+          "timestamp": "2026-08-04T00:43:44+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1k4xrd",
+          "author": "reddit_user_18df4fb66a71",
+          "author_karma": 0,
+          "content": "Worked for a newsclipping transcription agency and we had to comb the newspapers, tv and radio for even a glimpse of the red bull logo for them. They’d call and chew you out if you missed one.",
+          "timestamp": "2026-08-04T00:47:19+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": "p1hoar5",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1k5m04",
+          "author": "reddit_user_7027fc740bbb",
+          "author_karma": 0,
+          "content": "I can’t believe that I watched this to the end.",
+          "timestamp": "2026-08-04T00:50:57+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1k9bf3",
+          "author": "reddit_user_779741c4692d",
+          "author_karma": 0,
+          "content": "I guess, bro",
+          "timestamp": "2026-08-04T01:11:15+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1karvr",
+          "author": "reddit_user_d15d10bf659b",
+          "author_karma": 0,
+          "content": "What counts as overheating? The \"overheating\" part at the start of the clip was a lower number than the successful part at the end.",
+          "timestamp": "2026-08-04T01:19:19+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1kb2e6",
+          "author": "reddit_user_13fbb2b95f35",
+          "author_karma": 0,
+          "content": "Is the Tadpole Tricycle Fakie Nose Manual on a Ski Jumping Hill record still available?",
+          "timestamp": "2026-08-04T01:20:55+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1kb6se",
+          "author": "reddit_user_a7a7c86e704b",
+          "author_karma": 0,
+          "content": "I don’t understand that’s not even that hot? I’m certain they get hotter on a long DH trail ",
+          "timestamp": "2026-08-04T01:21:35+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1kjznh",
+          "author": "reddit_user_b058b73378db",
+          "author_karma": 0,
+          "content": "I’m shocked by the mileage this has gotten. Very difficult, also very arbitrary.",
+          "timestamp": "2026-08-04T02:10:24+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1hi3nc",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1ko8gq",
+          "author": "reddit_user_48fa97d928a0",
+          "author_karma": 0,
+          "content": "Red Bull. I hate them.",
+          "timestamp": "2026-08-04T02:34:14+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1l3c8j",
+          "author": "reddit_user_f0ab0e62fc60",
+          "author_karma": 0,
+          "content": "Also, there are too many world records.",
+          "timestamp": "2026-08-04T04:07:46+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run014_post02_seed072",
+      "post_slot": 2,
+      "seed_index": 72,
+      "source_raw_post_id": "1vek273",
+      "source_product_dir": "soccer",
+      "source_file": "https://www.reddit.com/r/soccer/comments/1vek273/look_who_i_found_in_la_udi_neco/",
+      "post_type": ":n_media: Media",
+      "title": "Look who I found in LA !!! UDI NECO !!!",
+      "author": "reddit_user_79ff14d8816f",
+      "author_karma": 0,
+      "content": "Look who I found in LA !!! UDI NECO !!!",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p1hja62",
+          "author": "reddit_user_e8d8c99d18e1",
+          "author_karma": 0,
+          "content": "This post has been removed by AutoModerator.\n\nYour account must be at least 1 month old and have at least 50 karma to create submissions on /r/soccer.\n\n*I am a bot, and this action was performed automatically. Please [contact the moderators of this subreddit](/message/compose/?to=/r/soccer) if you have any questions or concerns.*",
+          "timestamp": "2026-08-03T17:30:22+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run014_post03_seed073",
+      "post_slot": 3,
+      "seed_index": 73,
+      "source_raw_post_id": "1vekdkt",
+      "source_product_dir": "soccer",
+      "source_file": "https://www.reddit.com/r/soccer/comments/1vekdkt/vasilije_adžić_joins_sassuolo_on_loan/",
+      "post_type": ":n_official: Official Source",
+      "title": "Vasilije Adžić joins Sassuolo on loan",
+      "author": "reddit_user_79ff14d8816f",
+      "author_karma": 0,
+      "content": "Vasilije Adžić joins Sassuolo on loan",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p1inr07",
+          "author": "reddit_user_e1df5c5e628b",
+          "author_karma": 0,
+          "content": "It's an option to buy with a buyback. With Kone hurt, I think he's currently the fourth midfielder after Matic, Thorstvedt (who still could leave), and Lipani. Should get plenty of time.",
+          "timestamp": "2026-08-03T20:24:14+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run014_post04_seed074",
+      "post_slot": 4,
+      "seed_index": 74,
+      "source_raw_post_id": "1vekntv",
+      "source_product_dir": "nfl",
+      "source_file": "https://www.reddit.com/r/nfl/comments/1vekntv/ravens_wire_ol_hakeem_adeniji_retires_one_week/",
+      "post_type": "Roster Move",
+      "title": "[Ravens Wire] OL Hakeem Adeniji retires one week after signing with Ravens",
+      "author": "reddit_user_79ff14d8816f",
+      "author_karma": 0,
+      "content": "[Ravens Wire] OL Hakeem Adeniji retires one week after signing with Ravens",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p1hp1ja",
+          "author": "reddit_user_a0add0a27990",
+          "author_karma": 0,
+          "content": "Baltimores a tough city, but damn.",
+          "timestamp": "2026-08-03T17:54:04+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1hpt06",
+          "author": "reddit_user_2d83dd7dcd02",
+          "author_karma": 0,
+          "content": "honestly amazed he was still in the NFL",
+          "timestamp": "2026-08-03T17:57:13+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1hs2it",
+              "author": "reddit_user_2a30a4a9e381",
+              "author_karma": 0,
+              "content": "It's a shame I was hoping they'd start him...",
+              "timestamp": "2026-08-03T18:06:43+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1hpt06",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1hy2jp",
+                  "author": "reddit_user_f837b357039b",
+                  "author_karma": 0,
+                  "content": "I can only imagine he saw the guys ahead of him in camp and didn't see any path whatsoever to the roster.",
+                  "timestamp": "2026-08-03T18:32:21+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1hs2it",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1hzfk6",
+                      "author": "reddit_user_2a30a4a9e381",
+                      "author_karma": 0,
+                      "content": "A sad day for rival AFCN fans but a happy day for you. If there were a real path to Adeneji starting… my god.",
+                      "timestamp": "2026-08-03T18:38:20+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1hy2jp",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p1i8utm",
+          "author": "reddit_user_5747220ba6c1",
+          "author_karma": 0,
+          "content": "Didn’t realize he was in the league still. Wish him the best. ",
+          "timestamp": "2026-08-03T19:18:57+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1i9dxn",
+              "author": "reddit_user_ea8f83bb7bb9",
+              "author_karma": 0,
+              "content": "Well, he's not anymore. ",
+              "timestamp": "2026-08-03T19:21:16+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1i8utm",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

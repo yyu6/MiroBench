@@ -1,0 +1,559 @@
+{
+  "meta": {
+    "product_category": "camera",
+    "baseline": "real_reddit_reference",
+    "run_id": "run_016_sampled_reddit"
+  },
+  "posts": [
+    {
+      "post_id": "real_run016_post00_seed080",
+      "post_slot": 0,
+      "seed_index": 80,
+      "source_raw_post_id": "1vd2wz4",
+      "source_product_dir": "SonyAlpha",
+      "source_file": "https://www.reddit.com/r/SonyAlpha/comments/1vd2wz4/unsure_whether_to_trade_in_a7rvi_for_a9iii/",
+      "post_type": "Photo share",
+      "title": "Unsure whether to trade in A7RVI for A9III (concert photog)",
+      "author": "reddit_user_4349d3bfee00",
+      "author_karma": 0,
+      "content": "Unsure whether to trade in A7RVI for A9III (concert photog)\n\nHere's a few images from Garbage last month. I use a Sony ecosystem so I wouldn't be looking at shifting over to any others.\n\nI think the 66mp from the A7RVI was overkill and I spent much longer in Lightroom and Photoshop than I normally would've done.\n\nDoes anyone own an A9III and can recommend or otherwise?",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p15y9mo",
+          "author": "reddit_user_71eae954dd8d",
+          "author_karma": 0,
+          "content": "Why do you think you’d spend less time in Lightroom & photoshop by switching camera?",
+          "timestamp": "2026-08-02T00:13:34+00:00",
+          "likes": 9,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1606s6",
+              "author": "reddit_user_73f345b4d812",
+              "author_karma": 0,
+              "content": "I noticed a lot of grain in dark areas, due to the megapixel count. Aside from having to import, cul and de-noise 100mb files, it also felt like I had to do a lot more selective sharpening & removing of artificial light banding.\nIt's a nice camera... I'm just wondering if it's not fit for purpose when I mainly (90%) shoot live shows and ocassionally travel stuff.",
+              "timestamp": "2026-08-02T00:24:44+00:00",
+              "likes": 0,
+              "dislikes": 0,
+              "parent_comment_id": "p15y9mo",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p165cyl",
+                  "author": "reddit_user_915fcf297958",
+                  "author_karma": 0,
+                  "content": "It would have even more noise if you had shot it with an a9iii, the a7rvi has better dynamic range and overall better low light performance, it’s a more advanced camera in any aspect, besides speed, thanks to the the global shutter of the a9iii",
+                  "timestamp": "2026-08-02T00:55:23+00:00",
+                  "likes": 9,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1606s6",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p16893p",
+                      "author": "reddit_user_71eae954dd8d",
+                      "author_karma": 0,
+                      "content": "This is the correct answer. The a7RVI has, from what I’ve seen, the best dynamic range of any digital camera outside of phase one. ",
+                      "timestamp": "2026-08-02T01:12:32+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p165cyl",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "p168qvt",
+                          "author": "reddit_user_7aa4f9e352d9",
+                          "author_karma": 0,
+                          "content": "A7v has greater dynamic range",
+                          "timestamp": "2026-08-02T01:15:28+00:00",
+                          "likes": 0,
+                          "dislikes": 0,
+                          "parent_comment_id": "p16893p",
+                          "depth": 4,
+                          "replies": [
+                            {
+                              "comment_id": "p16c8kz",
+                              "author": "reddit_user_71eae954dd8d",
+                              "author_karma": 0,
+                              "content": "Sorry but you are wrong. \n\nhttps://www.cined.com/sony-a7r-vi-lab-test-rolling-shutter-dynamic-range-and-exposure-latitude/\n\nRead the first paragraph of the summery. ",
+                              "timestamp": "2026-08-02T01:36:26+00:00",
+                              "likes": 1,
+                              "dislikes": 0,
+                              "parent_comment_id": "p168qvt",
+                              "depth": 5,
+                              "replies": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "comment_id": "p167w2i",
+                  "author": "reddit_user_efae0086635f",
+                  "author_karma": 0,
+                  "content": "Stop zooming in so much. It's a myth that more pixels = worse noise, when noise is actually just dictated by sensor size (which is identical between the a7R and a9).",
+                  "timestamp": "2026-08-02T01:10:24+00:00",
+                  "likes": 4,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1606s6",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p168uol",
+                      "author": "reddit_user_7aa4f9e352d9",
+                      "author_karma": 0,
+                      "content": "That’s not true look at photons to photos charts",
+                      "timestamp": "2026-08-02T01:16:05+00:00",
+                      "likes": 0,
+                      "dislikes": 0,
+                      "parent_comment_id": "p167w2i",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "p198rpl",
+                          "author": "reddit_user_efae0086635f",
+                          "author_karma": 0,
+                          "content": "They literally show the opposite of what you're claiming. You want to post a specific link with your specific claim and interpretation?",
+                          "timestamp": "2026-08-02T14:04:05+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "p168uol",
+                          "depth": 4,
+                          "replies": []
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "comment_id": "p16cyba",
+                  "author": "reddit_user_2df407836930",
+                  "author_karma": 0,
+                  "content": "More MP doesn't mean more noise. Check some real good tests on YouTube. The detail you pick up on the R series is unbeatable. ",
+                  "timestamp": "2026-08-02T01:40:46+00:00",
+                  "likes": 3,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1606s6",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p15yqbl",
+          "author": "reddit_user_5aea52495369",
+          "author_karma": 0,
+          "content": "Why would you want a camera that is worse in every aspect except in images per second? You habe literally zero need for that at concerts, also the 7rVI alreadty shoots at like 30 fps. Are you trolling ?",
+          "timestamp": "2026-08-02T00:16:16+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p164wg5",
+              "author": "reddit_user_dbb847614c4a",
+              "author_karma": 0,
+              "content": "Global shutter and banding.",
+              "timestamp": "2026-08-02T00:52:38+00:00",
+              "likes": 2,
+              "dislikes": 0,
+              "parent_comment_id": "p15yqbl",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p15zfdq",
+          "author": "reddit_user_416704f77c6a",
+          "author_karma": 0,
+          "content": "That dude in the kilt looks like J.K Simmons.",
+          "timestamp": "2026-08-02T00:20:18+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p16039h",
+          "author": "reddit_user_a6bef2a10334",
+          "author_karma": 0,
+          "content": "Nah man just get better",
+          "timestamp": "2026-08-02T00:24:10+00:00",
+          "likes": 3,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p160e9d",
+              "author": "reddit_user_73f345b4d812",
+              "author_karma": 0,
+              "content": "Fair enough 👍 I'm fairly new to it, so valid point I reckon.",
+              "timestamp": "2026-08-02T00:25:58+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p16039h",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p16d55d",
+                  "author": "reddit_user_355f32406458",
+                  "author_karma": 0,
+                  "content": "OP, give me all of your money",
+                  "timestamp": "2026-08-02T01:41:55+00:00",
+                  "likes": 2,
+                  "dislikes": 0,
+                  "parent_comment_id": "p160e9d",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            },
+            {
+              "comment_id": "p169zwq",
+              "author": "reddit_user_afde18783efd",
+              "author_karma": 0,
+              "content": "Are all your comments this stupid?",
+              "timestamp": "2026-08-02T01:22:54+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p16039h",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p160avy",
+          "author": "reddit_user_f41023685fef",
+          "author_karma": 0,
+          "content": "Honestly, the main advantage I think the A9iii is regards to concert photography specifically is its global shutter, which will make dealing with banding caused by some stage lights a lot freakin easier.\n\nThe A9iii is an killer action camera, so I imagine it would do really well for performances that are super active. Also the precapture and ridiculous burst shutter modes would be handy as well.\n\nThat said, you could save a bit of change if you went with A1 (original) instead. Stacked sensor so it does better with banding and while the burst mode isn't the blisteringly fast speeds of the A9iii, it is still quick as hell. Plus it has a very healthy pixel resolution at 50.1mp (over twice the A9iii at 24.6) without being overkill.\n\n  \nDepends what you're looking for. I was weighing different Sony cameras including the A9iii but I wound up going with a used A1 mk1 and have adored it so far.\n\nBest of luck.",
+          "timestamp": "2026-08-02T00:25:24+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p160l17",
+          "author": "reddit_user_2c3a0614c7c4",
+          "author_karma": 0,
+          "content": "The high base iso of the A9III likely won’t be an issue since you’re shooting in concert lighting and are already likely pushing your ISO but, the DR for that body is different and you might have different albeit as much work to do in post. If you’re just not feeling the R VI, maybe rent an A7 V-smaller files, good DR and auto focus that people say is on-par with the A5 VI 🤷‍♂️",
+          "timestamp": "2026-08-02T00:27:02+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p161iow",
+          "author": "reddit_user_32e580f5a9f9",
+          "author_karma": 0,
+          "content": "If you were to change at all get the A1 II but even that’s crazy. Unless you were doing wildlife or sports I’d say switch.  I’d leave it I actually started to like the gain and Lightroom has made denoise quicker ",
+          "timestamp": "2026-08-02T00:32:35+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p16ggvt",
+          "author": "reddit_user_d7393168ff4a",
+          "author_karma": 0,
+          "content": "I have no opinion about which body is better for what you want to shoot, but you can always rent the A9iii before you decide to trade up. See what you think before you make a choice you may regret later. ",
+          "timestamp": "2026-08-02T02:02:11+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p16rpuz",
+          "author": "reddit_user_7d20a9277a82",
+          "author_karma": 0,
+          "content": "I have an A9iii, and it's great when the light is from a cheap LED.  I don't usually use the camera in such environments.  But when I do, the exposure is all over the place (reminds of exposure bracketing).  Rather than having banding from the flicker, the camera records the whole image as brighter or darker.  Still annoying, but fixable in post.  Banding would not have been fixable.  The shutter saved my day.\n\nThe more (independently flickering) lights you have simultaneously, the less predictable the outcome.  The A9iii has an anti-flicker setting in the menu, but I never bothered to learn it.  I suppose you can sync it to the environment, similar to some other Sony cameras.  It would probably help with the above situation, where most of the light came from a single (shitty) source.",
+          "timestamp": "2026-08-02T03:13:42+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run016_post01_seed081",
+      "post_slot": 1,
+      "seed_index": 81,
+      "source_raw_post_id": "1vd3r2m",
+      "source_product_dir": "Cameras",
+      "source_file": "https://www.reddit.com/r/Cameras/comments/1vd3r2m/jvc_everio_gzmg330ru_hd_formating_error/",
+      "post_type": "Tech Support",
+      "title": "JVC Everio GZ-MG330RU HD Formating error",
+      "author": "reddit_user_4349d3bfee00",
+      "author_karma": 0,
+      "content": "JVC Everio GZ-MG330RU HD Formating error\n\nJVC Everio GZ-MG330RU HD. The SIM cards both are said to work for this camera so that’s not the issue. Is there a way to format the cards without just putting it into the camera, because it won’t format in the camera I’m only getting an error message each time. Is it maybe an issue with the battery? It does have a pretty bad battery. New to cameras and I’m just a bit lost",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p16capi",
+          "author": "reddit_user_f4928c861958",
+          "author_karma": 0,
+          "content": "those aren’t sim cards. those are microsd. check the manual to see which versions worl",
+          "timestamp": "2026-08-02T01:36:48+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p16n688",
+          "author": "reddit_user_02308517ba36",
+          "author_karma": 0,
+          "content": "These cameras have a built in hard drive. Like a spinning physical drive. It looks like that is giving the error. Not surprising given the age of these cameras. Not sure how else to help if the micro sd cards also do not work. I am thinking, since there was a built in drive. the micro sds may only be usable for still images or something along those lines. I could be wrong!",
+          "timestamp": "2026-08-02T02:44:06+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run016_post02_seed082",
+      "post_slot": 2,
+      "seed_index": 82,
+      "source_raw_post_id": "1vd55mj",
+      "source_product_dir": "AskPhotography",
+      "source_file": "https://www.reddit.com/r/AskPhotography/comments/1vd55mj/advice_on_cleaning_nikon_zf/",
+      "post_type": "Discussion/General",
+      "title": "Advice on cleaning Nikon zf?",
+      "author": "reddit_user_4349d3bfee00",
+      "author_karma": 0,
+      "content": "Advice on cleaning Nikon zf?\n\nI spilled tomato sauce on my Nikon and I've gotten most of it off but it still has little crevices that have sauce in them any product I could use to take it out?",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p16x4dw",
+          "author": "reddit_user_d9f85a8ead9a",
+          "author_karma": 0,
+          "content": "Use an old toothbrush wetted with isopropyl alcohol. ",
+          "timestamp": "2026-08-02T03:49:50+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p171lwo",
+              "author": "reddit_user_cf69eb4839ce",
+              "author_karma": 0,
+              "content": "Aw thank you! I forgot I could use a tooth brush. ",
+              "timestamp": "2026-08-02T04:20:07+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p16x4dw",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "post_id": "real_run016_post03_seed083",
+      "post_slot": 3,
+      "seed_index": 83,
+      "source_raw_post_id": "1vd5ie3",
+      "source_product_dir": "SonyAlpha",
+      "source_file": "https://www.reddit.com/r/SonyAlpha/comments/1vd5ie3/viltrox_35mm_f18_evo_vs_sirui_aurora_35mm_f14_for/",
+      "post_type": "Gear",
+      "title": "Viltrox 35mm f/1.8 EVO vs Sirui Aurora 35mm f/1.4 for Sony A7 III",
+      "author": "reddit_user_4349d3bfee00",
+      "author_karma": 0,
+      "content": "Viltrox 35mm f/1.8 EVO vs Sirui Aurora 35mm f/1.4 for Sony A7 III\n\nHi everyone,\n\nI’m looking for a 35mm prime for my Sony A7 III and I’m currently deciding between...\n\nViltrox AF 35mm f/1.8 EVO (320 usd on aliexpress)\n\nSirui Aurora 35mm f/1.4 AF (417 usd on a local store of my country, Chile)\n\nI can’t afford the Sony 35mm f/1.8  or the 35mm f/1.4 GM, so these are the two realistic options for me. Both lenses are super expensive even used.\n\n\n\nMy main uses would be street and documentary photography, family photos, environmental portraits; low-light and nighttime photography; travel and everyday use.\n\nWhat attracts me to the Sirui is the f/1.4 aperture, subject separation and potentially smoother rendering. However, I’m concerned about autofocus, QC, speed and consistency, especially with moving people, as well as reports of sample variation or decentered copies.\n\nThe Viltrox is smaller and lighter, and f/1.8 is probably enough most of the time. My concern is whether I would regret not paying the extra amount for f/1.4 and better background separation.\n\nFor people who have used either lens, especially on an A7 III or a similar Sony body:\n\n# How significant is the real-world difference between f/1.4 and f/1.8 in terms of bokeh and low light? and is AF speed an issue on sirui? \n\n\n\nAt these prices, would you choose the lighter Viltrox f/1.8 or pay approximately 95 USD  more for the locally warranted Sirui f/1.4?\n\nThanks!",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p16lezt",
+          "author": "reddit_user_355f32406458",
+          "author_karma": 0,
+          "content": "I’m skeptical of most lenses offering 1.4 and still being decent across the board. ",
+          "timestamp": "2026-08-02T02:33:03+00:00",
+          "likes": 3,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p19wbdc",
+              "author": "reddit_user_35899d9ad768",
+              "author_karma": 0,
+              "content": "I only trust sigma, not because sirui and others cant make a good 1.4, but because I trust that Sigma has less sample variation.",
+              "timestamp": "2026-08-02T15:57:48+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p16lezt",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p19wfo3",
+              "author": "reddit_user_35899d9ad768",
+              "author_karma": 0,
+              "content": "\n              \n\n              \n\n                \n                \n\n                  \n                \n                \n\n                  \n      \n\n        \n\n      \n\n      I only trust sigma, not because sirui and others cant make a good \n1.4, but because I trust that Sigma has less sample variation.\n    \n    \n      ",
+              "timestamp": "2026-08-02T15:58:21+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p16lezt",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p16m2de",
+          "author": "reddit_user_dbd64c2baf27",
+          "author_karma": 0,
+          "content": "Both are extremely similar in af and sharpness I believe but Sirui way smoother rendering basically identical to 35 gm but less sharp which is still nice, viltrox 35 apo is busy bokeh that’s an instant dodge for me, 1.4 is fun too and it’s small ish for that  ",
+          "timestamp": "2026-08-02T02:37:05+00:00",
+          "likes": 3,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p16pgfu",
+          "author": "reddit_user_7187e746a5f0",
+          "author_karma": 0,
+          "content": "Both have subpar QC. Sirui has great IQ if you get a good copy and if you're lucky for it to work for a long time. \n\nAlso, the wider the lens is, the more valuable its speed is in terms of background blur. 35/1.8 vs 35/1.4 has way bigger visual difference than 85/1.8 vs 85/1.4. ",
+          "timestamp": "2026-08-02T02:58:43+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p16tb30",
+              "author": "reddit_user_de85e555ab8e",
+              "author_karma": 0,
+              "content": "You are right!, im into photography since 2007 and is the first time i read something about the relation between focal distance, aperture an dof. Thanks!!",
+              "timestamp": "2026-08-02T03:24:16+00:00",
+              "likes": 2,
+              "dislikes": 0,
+              "parent_comment_id": "p16pgfu",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p16zw9t",
+              "author": "reddit_user_ce5abe8e4b90",
+              "author_karma": 0,
+              "content": "You have that backwards. A 35mm going from f/1.8 to f/1.4 will only have 22% shallower DoF, an 85 doing the same will have 24% shallower. The longer the focal length the more pronounced DoF and backround blur differences are from changes in aperture and focus distance. You contradicted yourself by saying that a wider aperture is more valuable to a wide lens because it needs it more, but then say that the longer lens will see less effect from it even though it needs it less. Wide lenses are just not for background blur at all and anyone who has been doing photography seriously for more than five minutes knows that because they're rubbish at it. Fast wide lenses are for wide shots in low light conditions and for that an f/1.4 would be better than an f/1.8.",
+              "timestamp": "2026-08-02T04:08:26+00:00",
+              "likes": 3,
+              "dislikes": 0,
+              "parent_comment_id": "p16pgfu",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p17ahzn",
+                  "author": "reddit_user_7187e746a5f0",
+                  "author_karma": 0,
+                  "content": "I don't think you got me right. What I meant was that it's difficult to achieve blurred background simply because of the background compression, especially if the object is relatively far from the camera. 85 and longer FLs are better with this for obvious reasons. With wider FL you need any extra speed you can get, otherwise you end up with almost no blur. ",
+                  "timestamp": "2026-08-02T05:25:31+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p16zw9t",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "post_id": "real_run016_post04_seed084",
+      "post_slot": 4,
+      "seed_index": 84,
+      "source_raw_post_id": "1vd5ufr",
+      "source_product_dir": "analog",
+      "source_file": "https://www.reddit.com/r/analog/comments/1vd5ufr/the_workout_leica_mp_ektacolor_pro_400_mandler/",
+      "post_type": "reddit_post",
+      "title": "[The workout | Leica MP | Ektacolor Pro 400 | Mandler 35mm]",
+      "author": "reddit_user_4349d3bfee00",
+      "author_karma": 0,
+      "content": "[The workout | Leica MP | Ektacolor Pro 400 | Mandler 35mm]",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p16w0me",
+          "author": "reddit_user_c6d89bbbeba1",
+          "author_karma": 0,
+          "content": "Are these for an underwear company? Bizarre framing if not..",
+          "timestamp": "2026-08-02T03:42:33+00:00",
+          "likes": 0,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p16wav7",
+              "author": "reddit_user_39b31e567e9d",
+              "author_karma": 0,
+              "content": "They are ad photos!  Framing is spot on! ",
+              "timestamp": "2026-08-02T03:44:28+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p16w0me",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p16zgh0",
+                  "author": "reddit_user_c6d89bbbeba1",
+                  "author_karma": 0,
+                  "content": "In which case carry on. Weirdly OP deleted the post though.",
+                  "timestamp": "2026-08-02T04:05:29+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p16wav7",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

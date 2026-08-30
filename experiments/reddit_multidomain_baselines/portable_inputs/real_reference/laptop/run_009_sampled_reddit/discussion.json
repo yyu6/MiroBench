@@ -1,0 +1,311 @@
+{
+  "meta": {
+    "product_category": "laptop",
+    "baseline": "real_reddit_reference",
+    "run_id": "run_009_sampled_reddit"
+  },
+  "posts": [
+    {
+      "post_id": "real_run009_post00_seed045",
+      "post_slot": 0,
+      "seed_index": 45,
+      "source_raw_post_id": "1vcqxa9",
+      "source_product_dir": "chromeos",
+      "source_file": "https://www.reddit.com/r/chromeos/comments/1vcqxa9/my_chromebook_hp_makes_this_sound_when_i_try_to/",
+      "post_type": "Troubleshooting",
+      "title": "My Chromebook (Hp) makes this sound when I try to charge it",
+      "author": "reddit_user_d8691634ac1e",
+      "author_karma": 0,
+      "content": "My Chromebook (Hp) makes this sound when I try to charge it",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p13b6ab",
+          "author": "reddit_user_16cedf942050",
+          "author_karma": 0,
+          "content": "Audio is muted",
+          "timestamp": "2026-08-01T16:09:40+00:00",
+          "likes": 0,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p13c1ma",
+              "author": "reddit_user_247535b07b1d",
+              "author_karma": 0,
+              "content": "It’s like a whine sound almost or it sounds kinda like a mosquito idk how to explain 😭",
+              "timestamp": "2026-08-01T16:13:50+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p13b6ab",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p13jm20",
+              "author": "reddit_user_109374ae1fc6",
+              "author_karma": 0,
+              "content": "No its not????",
+              "timestamp": "2026-08-01T16:50:10+00:00",
+              "likes": 3,
+              "dislikes": 0,
+              "parent_comment_id": "p13b6ab",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p13cqlb",
+          "author": "reddit_user_754cb09fe620",
+          "author_karma": 0,
+          "content": "Does it charging properly??? If no, maybe this is the issue with your charger or charging base in the Chromebook. Sometime cheap copy chargers having i these issues.\n\n#ChromebookTechnician.",
+          "timestamp": "2026-08-01T16:17:08+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p13i00t",
+              "author": "reddit_user_247535b07b1d",
+              "author_karma": 0,
+              "content": "Yeah it charges normally",
+              "timestamp": "2026-08-01T16:42:25+00:00",
+              "likes": 2,
+              "dislikes": 0,
+              "parent_comment_id": "p13cqlb",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p172f6m",
+                  "author": "reddit_user_5e6f70d91e77",
+                  "author_karma": 0,
+                  "content": "Where is the sound coming from? The chromebook or the charger block?",
+                  "timestamp": "2026-08-02T04:25:52+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p13i00t",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p17qknj",
+                      "author": "reddit_user_247535b07b1d",
+                      "author_karma": 0,
+                      "content": "Chromebook, the charger block is not hot",
+                      "timestamp": "2026-08-02T07:34:01+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p172f6m",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "p18e97o",
+                          "author": "reddit_user_5dedd2188b30",
+                          "author_karma": 0,
+                          "content": "Most likely your Chromebook is coil whining and that beep is the charging has been accepted, nothing to worry really",
+                          "timestamp": "2026-08-02T10:53:41+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "p17qknj",
+                          "depth": 4,
+                          "replies": [
+                            {
+                              "comment_id": "p19g8si",
+                              "author": "reddit_user_247535b07b1d",
+                              "author_karma": 0,
+                              "content": "Thanks a lot ",
+                              "timestamp": "2026-08-02T14:41:42+00:00",
+                              "likes": 1,
+                              "dislikes": 0,
+                              "parent_comment_id": "p18e97o",
+                              "depth": 5,
+                              "replies": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "post_id": "real_run009_post01_seed046",
+      "post_slot": 1,
+      "seed_index": 46,
+      "source_raw_post_id": "1vcrl15",
+      "source_product_dir": "SuggestALaptop",
+      "source_file": "https://www.reddit.com/r/SuggestALaptop/comments/1vcrl15/india_100000_laptop_for_mca_at_nit_raipur_coding/",
+      "post_type": "Laptop Request -Others ",
+      "title": "India] [₹1,00,000] Laptop for MCA at NIT Raipur – Coding, AI/ML, No Gaming",
+      "author": "reddit_user_d8691634ac1e",
+      "author_karma": 0,
+      "content": "India] [₹1,00,000] Laptop for MCA at NIT Raipur – Coding, AI/ML, No Gaming\n\nFor coding and programming mainly under 1 lakhBudget: Up to ₹1,00,000 (India)\n\nCountry: India\n\nMain use:\n\n\\- Coding\n\n\\- DSA & LeetCode\n\n\\- Android development\n\n\\- AI/ML in future\n\n\\- Docker, GitHub, VS Code\n\nGaming:\n\nNo, I don't play games.\n\nPreferred specs:\n\n\\- Intel Core i7 H-series or Core Ultra 7 H-series\n\n\\- 16 GB RAM (upgradeable preferred)\n\n\\- 512 GB or 1 TB SSD\n\n\\- Good battery life\n\n\\- Good keyboard\n\n\\- Decent display\n\n\\- Durable build\n\nWeight:\n\nNot a major concern.\n\nCurrent options:\n\n\\- Lenovo LOQ\n\n\\- ASUS Vivobook\n\n\\- Lenovo IdeaPad Pro\n\nWhich laptop would you recommend for the next 3-4 years?LAPTOP QUESTIONNAIRE\n\nCountry\n\nIndia\n\nBudget\n\n₹1,00,000 (approximately USD 1,150)\n\nAre you open to refurbs/used options?\n\nNo\n\nScreen size\n\n15–16 inches\n\nWeight limit\n\nAny\n\nPurpose\n\nMCA coursework, software development, programming, and AI/ML learning\n\nForm factor\n\nStandard (Clamshell)\n\nIntended usage\n\nVS Code\n\nIntelliJ IDEA\n\nPyCharm\n\nGit & GitHub\n\nDocker\n\nLeetCode\n\nAndroid Studio (future)\n\nPython, Java, C/C++\n\nAI/ML with TensorFlow/PyTorch (future)\n\nLight virtualization if needed\n\nNo gaming\n\nDesired battery life\n\n6–8 hours\n\nPriority (most important to least important)\n\nPerformance > Battery life > Weight > Size\n\nInfo/Requirements\n\nPrefer Intel Core i7 H-series or Intel Core Ultra 7 H-series\n\n16 GB RAM minimum (upgradeable preferred)\n\n512 GB SSD minimum (1 TB preferred)\n\nGood thermals and reliable build quality\n\nComfortable keyboard\n\nGood display\n\nWindows laptop only (not MacBook)\n\nShould last 4–5 years for coding and AI/ML",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p175pri",
+          "author": "reddit_user_bfaa90c4272a",
+          "author_karma": 0,
+          "content": "Why not euros? I am in UK",
+          "timestamp": "2026-08-02T04:49:36+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run009_post02_seed047",
+      "post_slot": 2,
+      "seed_index": 47,
+      "source_raw_post_id": "1vctj2t",
+      "source_product_dir": "SuggestALaptop",
+      "source_file": "https://www.reddit.com/r/SuggestALaptop/comments/1vctj2t/touchscreen_laptop_in_canada_also_for_gaming/",
+      "post_type": "Laptop Request Ca",
+      "title": "Touchscreen laptop in Canada, also for gaming",
+      "author": "reddit_user_d8691634ac1e",
+      "author_karma": 0,
+      "content": "Touchscreen laptop in Canada, also for gaming\n\n\\*\\*LAPTOP QUESTIONNAIRE\\*\\* \n\n\\* \\*\\*Country\\*\\* \n\n Canada\n\n \n\n\\* \\*\\*Budget\\*\\*\n\n $1000-$2000 CAD\n\n\\* \\*\\*Are you open to refurbs/used options? \\*\\* \n\n No\n\n \n\n\\* \\*\\*Screen size\\*\\* \n\n any\n\n \n\n\\* \\*\\*Weight limit\\*\\* \n\n any\n\n\\* \\*\\*Purpose\\*\\* \n\n gaming and some design work, needs touchscreen\n\n \n\n\\* \\*\\*Form factor\\*\\* \n\n \n\n2 in 1 ideally, but not necessary\n\n \n\n\\* \\*\\*Intended usage\\*\\* \n\n \n\n Want to play hogwarts legacy and mount and blade, plus use inkscape and canva\n\n \n\n\\* \\*\\*Desired battery life\\*\\* \n\n I can keep plugged in, so doesnt matter \n\n \n\n\\* \\*\\*Please list, in order of most important to least important, the priority between Size, Weight, Performance, Battery life\\*\\* \n\n performance and durability, the rest doesn't matter\n\n \n\n\\* \\*\\*Info/Requirements\\*\\* \n\n touch screen",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p17lzuo",
+          "author": "reddit_user_e27dffd2ffdc",
+          "author_karma": 0,
+          "content": "Since you are going to game and do graphic design work, you are going to need a dedicated gpu, which 2 in 1s don’t come with in your price range?\n",
+          "timestamp": "2026-08-02T06:57:01+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p17m2xa",
+              "author": "reddit_user_6884c1518fd9",
+              "author_karma": 0,
+              "content": "Thanks for the reply. Disregard the 2 in 1 then ",
+              "timestamp": "2026-08-02T06:57:41+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p17lzuo",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "post_id": "real_run009_post03_seed048",
+      "post_slot": 3,
+      "seed_index": 48,
+      "source_raw_post_id": "1vcul0n",
+      "source_product_dir": "laptops",
+      "source_file": "https://www.reddit.com/r/laptops/comments/1vcul0n/rog_strix_g16_i913980hx_rtx_4070_persistent/",
+      "post_type": "General question",
+      "title": "ROG Strix G16 (i9-13980HX / RTX 4070) - Persistent micro-stuttering in games. Tried everything. ASUS wants me to RMA it. Any ideas before I send it in?",
+      "author": "reddit_user_d8691634ac1e",
+      "author_karma": 0,
+      "content": "ROG Strix G16 (i9-13980HX / RTX 4070) - Persistent micro-stuttering in games. Tried everything. ASUS wants me to RMA it. Any ideas before I send it in?\n\nHi everyone,\n\nI'm hoping someone has experienced something similar because I'm honestly running out of ideas.\n\nMy laptop is an **ASUS ROG Strix G16 (G614JI)** with:\n\n* Intel Core i9-13980HX\n* RTX 4070 Laptop GPU\n* 16 GB DDR5 RAM\n* Windows 11\n* Latest BIOS (334)\n* Latest ASUS, Intel and NVIDIA drivers\n\nI've attached a gameplay video showing exactly what I'm experiencing.\n\nThe stuttering is visible throughout the video—even from the loading screen where the loading icon rotates—and continues during gameplay.\n\nIt's easier to notice when looking at the camera movement.\n\n\n\n# The problem\n\nThis isn't low FPS.\n\nFPS stays high, but the game constantly feels like it's dropping or skipping frames.\n\nIt feels like **frametime spikes** or uneven frame pacing rather than poor performance.\n\nThe issue becomes much more noticeable when background apps like:\n\n* Discord\n* Chrome\n* Opera\n* YouTube\n\nare open.\n\n\n\n# What I've already tried\n\nAt this point I've tried almost everything I could think of:\n\n* Multiple completely clean Windows installations\n* Latest BIOS\n* Latest Intel chipset drivers\n* Latest NVIDIA drivers\n* DDU clean driver installation\n* Different NVIDIA driver versions\n* Armoury Crate reinstall\n* MyASUS updates\n* Windows updates\n* Different power plans\n* Ultimate GPU mode\n* FurMark stress test\n* GPU-Z logging\n* HWiNFO logging\n* HWMonitor\n* LatencyMon\n* ASUS diagnostic logging tool\n\nI've also been in contact with ASUS support for quite some time.\n\nAfter reviewing all my logs, GPU-Z results, videos and diagnostics, **ASUS has now recommended sending the laptop in for hardware inspection under warranty.**\n\n\n\n# RAM behavior\n\nAnother thing that seems strange:\n\nEven when Windows is basically idle, around **11–12 GB of my 16 GB RAM is already in use.**\n\nAs soon as I open:\n\n* Discord\n* Chrome\n* a game\n\nthe RAM fills up very quickly and Windows starts paging, making the whole system feel much slower.\n\nI'm aware that Windows uses RAM for cache, but this still feels excessive.\n\n\n\n# Video\n\nI've attached a gameplay video.\n\nThe micro-stuttering is visible throughout the recording and isn't limited to a specific moment.\n\n\n\n# My question\n\nBefore I send the laptop to ASUS:\n\nHas anyone with a **ROG Strix G16** (or another ASUS gaming laptop) experienced something similar?\n\nDid you ever find the cause?\n\nCould this be:\n\n* motherboard related?\n* PCIe related?\n* memory controller?\n* RAM issue?\n* firmware/BIOS?\n* something else entirely?\n\nI'm open to trying **anything** before I send it in for repair.\n\nThanks in advance.",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p142nrg",
+          "author": "reddit_user_0932feb7a2ad",
+          "author_karma": 0,
+          "content": "check temperatures, maybe thermal throttling, set everything to high performance.",
+          "timestamp": "2026-08-01T18:21:02+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p14pm6y",
+          "author": "reddit_user_2f42ad50ccfe",
+          "author_karma": 0,
+          "content": "I recently bought a Zephyrus g14 and had to strip every single bit of Asus and Windows crap out it and install ghelper before it actually worked. Dunno if this applies for you. ",
+          "timestamp": "2026-08-01T20:13:22+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p14vcy1",
+          "author": "reddit_user_24d6baf5a521",
+          "author_karma": 0,
+          "content": "Temperatures might be an issue. The idle RAM usage is quite high, maybe consider debloating? ",
+          "timestamp": "2026-08-01T20:42:04+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run009_post04_seed049",
+      "post_slot": 4,
+      "seed_index": 49,
+      "source_raw_post_id": "1vcvtde",
+      "source_product_dir": "laptops",
+      "source_file": "https://www.reddit.com/r/laptops/comments/1vcvtde/need_help_with_pc_building/",
+      "post_type": "Discussion",
+      "title": "Need help with pc building",
+      "author": "reddit_user_d8691634ac1e",
+      "author_karma": 0,
+      "content": "Need help with pc building\n\nI’m attempting to build a custom laptop using mostly desktop PC components instead of traditional laptop hardware. The goal is to create a high-performance portable gaming/content creation machine, and I need help finding a display that would work with this type of build.\n\nI’m looking for a 16-inch 16:9 OLED or QD-OLED panel with:\n\n\\- Resolution: 1440p–4K\n\n\\- Refresh rate: 240Hz–360Hz\n\n\\- Extremely fast response time\n\n\\- Excellent HDR support\n\n\\- High brightness/nit level\n\n\\- Great color accuracy for content creation\n\n\\- Touch is optional\n\n\\- Low latency for gaming\n\nPlanned hardware:\n\nCPU: AMD Ryzen 9 9950X3D\n\nGPU: NVIDIA GeForce RTX 5070 Ti Desktop GPU\n\nMotherboard: ASUS ROG Strix B850-I Gaming WiFi Mini-ITX\n\nRAM: 64GB DDR5-6000 CL30 (2×32GB) AMD EXPO\n\nStorage: Samsung 990 Pro 4TB SSD\n\nThe laptop is planned to be around 1.5–2 inches thick to allow room for desktop-class cooling and components.\n\nI’m looking for advice on:",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p14gtl8",
+          "author": "reddit_user_f167985463dc",
+          "author_karma": 0,
+          "content": "I dont think such a thing exists. Whats more important, refresh rate or resolution because I highly doubt you're going to be able to find both in a portable monitor.",
+          "timestamp": "2026-08-01T19:29:25+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p14ieuu",
+              "author": "reddit_user_dbdee80928ea",
+              "author_karma": 0,
+              "content": "My current laptop display is 3.2k at 165hz. Wdym it seems very possible?",
+              "timestamp": "2026-08-01T19:37:20+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p14gtl8",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

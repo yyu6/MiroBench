@@ -1,0 +1,989 @@
+{
+  "meta": {
+    "product_category": "laptop",
+    "baseline": "real_reddit_reference",
+    "run_id": "run_027_sampled_reddit"
+  },
+  "posts": [
+    {
+      "post_id": "real_run027_post00_seed135",
+      "post_slot": 0,
+      "seed_index": 135,
+      "source_raw_post_id": "1vdyqbu",
+      "source_product_dir": "laptops",
+      "source_file": "https://www.reddit.com/r/laptops/comments/1vdyqbu/convince_me_theres_actually_a_good_windows_laptop/",
+      "post_type": "Buying help",
+      "title": "Convince me there’s actually a good Windows laptop out there",
+      "author": "reddit_user_d8691634ac1e",
+      "author_karma": 0,
+      "content": "Convince me there’s actually a good Windows laptop out there\n\nIs it just me, or does every laptop I look at eventually turn into a complete disaster?\n\nAt this point I’ve crossed 100**%** of my shortlist off after reading the reviews.\n\n\\- Hinge problems.  \n\\- Overheating.  \n\\- Sounds like an A380 at takeoff.  \n\\- Trackpads that randomly decide to die.  \n\\- Every hardware and software issue imaginable.\n\nYou name it… it’s got it.\n\nI know, I know… *“don’t believe everything you read.”* You have to take some of it with a grain of salt. But if you ignore the people whose entire review is just *“don’t buy this lol,”* the ones actually describing their experience are reporting the same issues you can find pretty much everywhere not just in Reddit’s little echo chamber.\n\nDon’t get me wrong, I’m not trying to launch a space shuttle here…\n\nMy workload is boring: web browsing, some Excel, email, media consumption… that’s about it. No gaming, no coding, no video editing. But I do need Windows, 32 GB of RAM, and a 1 TB SSD.\n\nI already own a Mac and before the ThinkPad cult shows up… no thanks. I don’t care which model it is—they all look like the same black brick with a red nipple in the middle.\n\nSo… what the hell am I supposed to buy?\n\nCanadian market, up to 2000$ CAD",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p1cyjin",
+          "author": "reddit_user_e339853dcd7c",
+          "author_karma": 0,
+          "content": "Why do you need 32G ram? What wrong with your Mac?",
+          "timestamp": "2026-08-03T00:52:03+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1cz6vw",
+              "author": "reddit_user_12c2ebfb801e",
+              "author_karma": 0,
+              "content": "“I have a specific program that only runs on Windows only and is pretty resource-hungry.”",
+              "timestamp": "2026-08-03T00:55:42+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1cyjin",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1czhjz",
+                  "author": "reddit_user_a80bf4c71b83",
+                  "author_karma": 0,
+                  "content": "You'd probably get better help with your problem if this specific program was named...",
+                  "timestamp": "2026-08-03T00:57:21+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1cz6vw",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1d27nh",
+                      "author": "reddit_user_12c2ebfb801e",
+                      "author_karma": 0,
+                      "content": "Internally we call it VDC, but I couldn’t even tell you what “programming language” it’s built on it’s not something for the general public, it’s just for internal use, but it’s something that runs all day long and that I refer to constantly",
+                      "timestamp": "2026-08-03T01:12:44+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1czhjz",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "p1d44r5",
+                          "author": "reddit_user_8a9e0f6a8b42",
+                          "author_karma": 0,
+                          "content": "So you probably need a specialized machine for this specialized program. Maybe stop using consumer grade shit for not consumer grade activities, yeah? Also, lenovo and thinkpad own the laptop market, because they are by far the best models. Why turn your nose up to them? ",
+                          "timestamp": "2026-08-03T01:23:47+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "p1d27nh",
+                          "depth": 4,
+                          "replies": [
+                            {
+                              "comment_id": "p1d519v",
+                              "author": "reddit_user_12c2ebfb801e",
+                              "author_karma": 0,
+                              "content": "I’m not turning up my nose at Lenovo, quite the opposite, it’s pretty much my first choice, just not the ThinkPads with that 80’s look.\n\nCall me crazy, but working with a black brick just depresses me",
+                              "timestamp": "2026-08-03T01:29:04+00:00",
+                              "likes": 1,
+                              "dislikes": 0,
+                              "parent_comment_id": "p1d44r5",
+                              "depth": 5,
+                              "replies": [
+                                {
+                                  "comment_id": "p1d6lra",
+                                  "author": "reddit_user_e339853dcd7c",
+                                  "author_karma": 0,
+                                  "content": "[https://m.media-amazon.com/images/I/61wRnyKTepL.\\_AC\\_SL1500\\_.jpg](https://m.media-amazon.com/images/I/61wRnyKTepL._AC_SL1500_.jpg)",
+                                  "timestamp": "2026-08-03T01:38:15+00:00",
+                                  "likes": 1,
+                                  "dislikes": 0,
+                                  "parent_comment_id": "p1d519v",
+                                  "depth": 6,
+                                  "replies": []
+                                },
+                                {
+                                  "comment_id": "p1d70nx",
+                                  "author": "reddit_user_2c61c511382c",
+                                  "author_karma": 0,
+                                  "content": "If Intel is mandatory look at Microsoft Surface Laptop for Business.  Looks as good as a Macbook, quality is there, available in 32GB.\n\nIts not going to be cheap. ",
+                                  "timestamp": "2026-08-03T01:40:41+00:00",
+                                  "likes": 1,
+                                  "dislikes": 0,
+                                  "parent_comment_id": "p1d519v",
+                                  "depth": 6,
+                                  "replies": []
+                                },
+                                {
+                                  "comment_id": "p1d90be",
+                                  "author": "reddit_user_8a9e0f6a8b42",
+                                  "author_karma": 0,
+                                  "content": "Hardware is hardware man ",
+                                  "timestamp": "2026-08-03T01:52:21+00:00",
+                                  "likes": 1,
+                                  "dislikes": 0,
+                                  "parent_comment_id": "p1d519v",
+                                  "depth": 6,
+                                  "replies": [
+                                    {
+                                      "comment_id": "p1da6il",
+                                      "author": "reddit_user_e339853dcd7c",
+                                      "author_karma": 0,
+                                      "content": "Till you put coffee on it. And then it became software. ",
+                                      "timestamp": "2026-08-03T01:59:19+00:00",
+                                      "likes": 1,
+                                      "dislikes": 0,
+                                      "parent_comment_id": "p1d90be",
+                                      "depth": 7,
+                                      "replies": []
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "comment_id": "p1d7v1e",
+                          "author": "reddit_user_a80bf4c71b83",
+                          "author_karma": 0,
+                          "content": "Then maybe contact your company's IT department for hardware recommendations instead of strangers on Reddit who have no idea what you'll be doing?",
+                          "timestamp": "2026-08-03T01:45:36+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "p1d27nh",
+                          "depth": 4,
+                          "replies": [
+                            {
+                              "comment_id": "p1dau8t",
+                              "author": "reddit_user_12c2ebfb801e",
+                              "author_karma": 0,
+                              "content": "What IT department? If we actually had one, trust me, I would’ve dumped this whole thing on their desk.",
+                              "timestamp": "2026-08-03T02:03:15+00:00",
+                              "likes": 1,
+                              "dislikes": 0,
+                              "parent_comment_id": "p1d7v1e",
+                              "depth": 5,
+                              "replies": [
+                                {
+                                  "comment_id": "p1db1ud",
+                                  "author": "reddit_user_a80bf4c71b83",
+                                  "author_karma": 0,
+                                  "content": "You have software that's exclusively for internal use, but no department that manages it or helps people with it? I'd start looking for a new job, that sounds destined to fail, assuming I'm reading things right",
+                                  "timestamp": "2026-08-03T02:04:30+00:00",
+                                  "likes": 1,
+                                  "dislikes": 0,
+                                  "parent_comment_id": "p1dau8t",
+                                  "depth": 6,
+                                  "replies": [
+                                    {
+                                      "comment_id": "p1dcupy",
+                                      "author": "reddit_user_12c2ebfb801e",
+                                      "author_karma": 0,
+                                      "content": "Yeah, we have custom software that was developed specifically for us by an external company. They provide support for that software, but they don’t handle our hardware or general IT needs.\n\nAnd don’t worry about my job, I’ve been here for ages, and everything runs just fine. Honestly, even one full-time IT person would be one too many. After resetting a password and rebooting a printer, they’d spend the rest of the day wondering how to look busy",
+                                      "timestamp": "2026-08-03T02:15:20+00:00",
+                                      "likes": 1,
+                                      "dislikes": 0,
+                                      "parent_comment_id": "p1db1ud",
+                                      "depth": 7,
+                                      "replies": []
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "comment_id": "p1czxoz",
+                  "author": "reddit_user_e339853dcd7c",
+                  "author_karma": 0,
+                  "content": "You did not mention it. You put \"workload is boring: web browsing, some Excel, email, media consumption… that’s about it.\"",
+                  "timestamp": "2026-08-03T00:59:53+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1cz6vw",
+                  "depth": 2,
+                  "replies": []
+                },
+                {
+                  "comment_id": "p1dln0l",
+                  "author": "reddit_user_6b7981db2d0b",
+                  "author_karma": 0,
+                  "content": "If you need to run a Windows program which requires 32GB RAM at least. What suits you best is not a laptop but a workstation or a rack server. You only need a MacBook air with you, remotely run the program on a server or a workstation to get the result. ",
+                  "timestamp": "2026-08-03T03:09:24+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1cz6vw",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p1cz3vi",
+          "author": "reddit_user_614dcb0c3add",
+          "author_karma": 0,
+          "content": "find a good laptop with a 258v cpu, should be within the 2000$ budget and has good battery life, if you want a more macbook experience there are the snapdragon arm windows laptops but just like mac they suck at compatibility",
+          "timestamp": "2026-08-03T00:55:14+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1czeas",
+          "author": "reddit_user_f167985463dc",
+          "author_karma": 0,
+          "content": "If your workload is boring why do you need 32gb of ram and 1tb or storage? Any modern laptop you buy could do the things you've desribed using 8gb of ram and 256gb of storage.\n\nAnd personally I've used budget laptops my entire life, never had a hinge problem, never had an overheating issue, never had a dead track pad and never had a software or hardware issue I wasn't eventually able to diagnose. \n\nI think some people just have really bad luck with computers/technology.",
+          "timestamp": "2026-08-03T00:56:51+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1doqd1",
+              "author": "reddit_user_74d31317de15",
+              "author_karma": 0,
+              "content": "may I ask what brand you use and cpu? I’m thinking of buying a budget one but I never tried because I usually buy for gaming. But I want a personal non gaming laptop. for programming, battery, light weight. (no macbooks I don’t like it)",
+              "timestamp": "2026-08-03T03:29:54+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1czeas",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1d01s4",
+          "author": "reddit_user_8440de2ff6eb",
+          "author_karma": 0,
+          "content": "Idk, we use Dell at my engineering firm and they're relatively problem free, they're their business versions though not the consumer lines.\n\nShame you're letting aesthetics be a major driver in your purchase though, since I do think the Lenovo ThinkPad is probably one of the better ones.",
+          "timestamp": "2026-08-03T01:00:31+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1d7y9m",
+              "author": "reddit_user_e34d1cecc9ff",
+              "author_karma": 0,
+              "content": "My engineering department also uses Dell and they chug right along and get the job done but they’re nothing impressive, I’m sure glad we have docking stations and monitors because spending an hour looking at a latitude screen is enough to drive anyone insane ",
+              "timestamp": "2026-08-03T01:46:07+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1d01s4",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1d89r4",
+                  "author": "reddit_user_8440de2ff6eb",
+                  "author_karma": 0,
+                  "content": "Hah, yeah, to be fair at work I wouldn't want to work off of just one monitor, especially a laptop monitor, ever. I've got two hooked up to my laptop and the laptop just handles outlook.",
+                  "timestamp": "2026-08-03T01:47:59+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1d7y9m",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1d8oly",
+                      "author": "reddit_user_e34d1cecc9ff",
+                      "author_karma": 0,
+                      "content": "Laptop screens aren’t my favorite either but sometimes having to log in when I’m not at work or at my desk is almost painful, i thought they stopped making screens that washed out and dim over a decade ago but surprise, I was wrong. I think my Inspiron that got me through highschool was more tolerable.",
+                      "timestamp": "2026-08-03T01:50:25+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1d89r4",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p1d09hh",
+          "author": "reddit_user_b4acb3c49609",
+          "author_karma": 0,
+          "content": "Dell Precision 7740 and newer, you can find some used around $800-$1200 USD on eBay, some with RTX. Or look for a classic model, the M6800.",
+          "timestamp": "2026-08-03T01:01:45+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1d0lmv",
+          "author": "reddit_user_c52f828ac064",
+          "author_karma": 0,
+          "content": "I have an Asus Zenbook S14 running a Lunar Lake CPU with 32 GB RAM/ 1 TB SSD that has been pretty reliable so far. \n\nI’ve only had it about a year though but it seems pretty well built. ",
+          "timestamp": "2026-08-03T01:03:41+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1d1yem",
+              "author": "reddit_user_605d28cb587b",
+              "author_karma": 0,
+              "content": "I also have a Zenbook alongside a MacBook. However, it is the S16 Ryzen 9 version. I like it a lot. Probably my favorite windows laptop I’ve used. Keyboard is fantastic. Touchscreen is such a nice feature especially when you’re collaborating. Plenty of power (and more than enough 50 times over for OP’s workload). \n\nThe ThinkPad carbon is also. ",
+              "timestamp": "2026-08-03T01:11:17+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1d0lmv",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1d7lmn",
+                  "author": "reddit_user_c52f828ac064",
+                  "author_karma": 0,
+                  "content": "I have only one real quibble with mine. If it’s a touch screen, I feel like it should be convertible into tablet mode because that just feels more natural to me. Other than that, it’s been great. I recently replaced Windows on it with a Fedora Spin and everything works though I do not know how well the webcam and mic sound on it. ",
+                  "timestamp": "2026-08-03T01:44:05+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1d1yem",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p1d1j8f",
+          "author": "reddit_user_0c0b6b86ade9",
+          "author_karma": 0,
+          "content": "I purchased as ASUS Zenbook S14 with a 2026 Ultra 9 Intel chip a few weeks ago. So far it’s terrific. It’s the size of a MacBook Air, and weight. Fast, very quite 32GM, 1TB. I haven’t owned it long enough for the issues you are worried about to reveal themselves, but so far so good. ",
+          "timestamp": "2026-08-03T01:08:52+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1d1v7j",
+          "author": "reddit_user_13aac2fa132f",
+          "author_karma": 0,
+          "content": "No new Windows laptop that'd fit your requirements for only $2000 Canadian. Best bet would be maybe you can find last year's Surface Laptop 7 the 13.8 inch model. Last year's 2025 LG Grams also go for less than $2000 refurbished on Amazon with 32gb ram (basically new condition).",
+          "timestamp": "2026-08-03T01:10:47+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1d9a4b",
+              "author": "reddit_user_e34d1cecc9ff",
+              "author_karma": 0,
+              "content": "Surfaces are overpriced Temu ipads, they’re built like garbage and have software issues out the ass. I see the appeal of what they’re meant to be but the execution has just never been there.",
+              "timestamp": "2026-08-03T01:53:56+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1d1v7j",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1d2af7",
+          "author": "reddit_user_a8de09aca650",
+          "author_karma": 0,
+          "content": "Great laptop here\n\n[https://outdoorlaptops.com/products/14-business-rugged-panasonic-toughbook-fz-55](https://outdoorlaptops.com/products/14-business-rugged-panasonic-toughbook-fz-55)",
+          "timestamp": "2026-08-03T01:13:11+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1d2ihp",
+          "author": "reddit_user_afe620b11bbc",
+          "author_karma": 0,
+          "content": "Anything business grade will work fine, heck my fully rugged laptops idle lower than room temperature and are basically fanless if I am not overclocking it (on by default).\n\nMany of the issues can be remedied by tweaking the computer, of course.",
+          "timestamp": "2026-08-03T01:14:28+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1d3hko",
+          "author": "reddit_user_bf2733582f7d",
+          "author_karma": 0,
+          "content": "Are you using it outdoors or in a factory that makes nothing but wood dust or in the frozen tundra, because unless there is an environmental factor, I think the issue is... you.\n\nI've been known to be pretty rough on hardware, but I've only had longterm hardware issues with only 1 laptop, the rest just got slower as apps required more performance.\n\nthat said, I've never been too disappointed with dell or lenovo. I've never been super enthused by them either. they are like the faucet, cast iron, or a gray pair of slacks, reliable.",
+          "timestamp": "2026-08-03T01:20:02+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1d5gju",
+              "author": "reddit_user_12c2ebfb801e",
+              "author_karma": 0,
+              "content": "No, it’s in an office environment, not on the shop floor, and I’m on the road about ±2 days a week/give or take",
+              "timestamp": "2026-08-03T01:31:32+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1d3hko",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1d3jzr",
+          "author": "reddit_user_5b6c55b6ad46",
+          "author_karma": 0,
+          "content": "The proprietary program is the most important part of this decision. Before buying anything, ask your IT department what CPU architecture and hardware it actually needs. I’d avoid Windows-on-ARM unless they confirm the software works properly on it.\n\nFor your use case, skip gaming laptops and look at business-class models such as a Dell Latitude, HP EliteBook, or a well-configured Asus Zenbook with 32 GB RAM and 1 TB storage. Business laptops are usually the safer choice for something that will run all day, especially when paired with a good warranty.\n\nAlso, every popular laptop will have horror stories online because satisfied owners rarely create posts saying, “My hinge continued functioning normally today.” Pick two or three models, compare professional reviews, warranty coverage, and return policies, then buy from somewhere that allows easy returns.",
+          "timestamp": "2026-08-03T01:20:26+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1d4e2z",
+          "author": "reddit_user_9bc17b0e6f0d",
+          "author_karma": 0,
+          "content": "Thinkpad Z16, while it still has the red pointer in the keyboard, it's definitely a different look on the outside as it's machined from a solid block of shiny aluminum! The drawback is you'll have to buy used on eBay or Marketplace.\n\nhttps://www.lenovo.com/us/en/p/laptops/thinkpad/thinkpadz/thinkpad-z16-16-inch-amd/len101t0037?orgRef=https%253A%252F%252Fduckduckgo.com%252F#features",
+          "timestamp": "2026-08-03T01:25:19+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1d7m13",
+          "author": "reddit_user_e34d1cecc9ff",
+          "author_karma": 0,
+          "content": "Well there’s your problem right there, before we got this party started you shut down an entire line of very reliable and hardworking machines in the thinkpad because they “don’t match your aesthetic”. You say your problem is performance and reliability but then you’re complaining about something that would fit your bill because of how it looks. It’s not a gaming pc to post on Instagram it’s a work machine, seems like an engagement farming post but I could be wrong.",
+          "timestamp": "2026-08-03T01:44:09+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1d9ycx",
+              "author": "reddit_user_12c2ebfb801e",
+              "author_karma": 0,
+              "content": "You couldn’t be more wrong. I honestly couldn’t care less about karma, If anything, I figured I’d get downvoted simply because of my opinion on ThinkPads",
+              "timestamp": "2026-08-03T01:57:58+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1d7m13",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1dbc0g",
+          "author": "reddit_user_0c163d1ff478",
+          "author_karma": 0,
+          "content": "My dell at work is the best windows computer I’ve used, closest to my MacBook by far. Unfortunately work has it bogged down with shit but that isn’t the laptops fault. ",
+          "timestamp": "2026-08-03T02:06:11+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1dbrci",
+          "author": "reddit_user_a25c90d48eef",
+          "author_karma": 0,
+          "content": "Dell Latitude or Asus Zenbook laptops are good. ",
+          "timestamp": "2026-08-03T02:08:44+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1delhc",
+          "author": "reddit_user_4acaadd64aa7",
+          "author_karma": 0,
+          "content": "Anecdotal: Dell Latitudes are pretty good. \n\nI repair laptops at work. I won’t ever buy an HP, Acer or MSI. I am sure that somewhere in their stack they have a good device, but the ones I see regularly give me pause for purchase. Lenovos are hit or miss. I see equal amount ThinkPads, Legions and Ideapads. Hinges are still an issue, but build quality and parts are good. \n\nI see less Gigabyte and Asus laptops, but they are… fine, mostly. \n\nDell laptops do come in and their lineup has good and bad models. The Latitudes are solid. Vostros are good, but I would pick a Latitude for myself. Precisions are an excellent piece of kit, but too fancy for my blood and probably too fancy for the rural AR populace that I service?\n\nThere are good Windows laptops. They likely aren’t cheap. The used market is pretty good and slightly older chips are still pretty damn good for a lot of stuff. ",
+          "timestamp": "2026-08-03T02:25:38+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1dfek6",
+          "author": "reddit_user_f735ebfce449",
+          "author_karma": 0,
+          "content": "One of my 5 computers is a Yoga 9i Aura Edition with 32gb of RAM and Lunar Lake processor. \n\nI've never had any of the problems you mentioned. \n\nIt feels like a MacBook Air -Like windows Machine.\n\n(I also have a MacBook Pro)",
+          "timestamp": "2026-08-03T02:30:29+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1dsiqb",
+              "author": "reddit_user_a515e0a24228",
+              "author_karma": 0,
+              "content": "Between the MacBook Pro and Yoga 9i Aura, which is more reliable and issue-free?",
+              "timestamp": "2026-08-03T03:55:49+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1dfek6",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1dglfl",
+          "author": "reddit_user_ec9041523cc1",
+          "author_karma": 0,
+          "content": "Thinkpad cultist here. Yes that was my goto, if you don’t like the look lenovo has other non gaming lines that may fit your fancy.\n\nIf you can look past the Thinkpad name maybe the X9 aura edition. It does not look like a Thinkpad. And pricey.\n\n Some of the higher end Yoga’s may or Slims maybe? Avoid the Thinkbooks though.",
+          "timestamp": "2026-08-03T02:37:45+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1dlrl0",
+          "author": "reddit_user_66f318bcb374",
+          "author_karma": 0,
+          "content": "What you're realizing is that a sizable portion of the Windows laptop market is riddled with compromises to achieve the lowest price. It's a race to the bottom for many models. On top of that, the limitations of x86 in the thermal envelope of a modern laptop is...not great. Aggressive fan noise, overheating, and losing half the performance when unplugged to make the battery last any length of time. \n\nThere's downsides to going MacBook, too. But at least I know I'm getting excellent build quality, great performance and long battery life. ",
+          "timestamp": "2026-08-03T03:10:12+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1dno5z",
+          "author": "reddit_user_5e8b0f9dd6bb",
+          "author_karma": 0,
+          "content": "I have a top of the line Mac Pro, like the m5 maxed out, 128 gigs of ram 8tb I love it but I also had a 5090 desktop but I never used it, the Mac was just too convenient so I sold it and got a5080 laptop. I don't get a 5090 laptop because they are all huge 17 inch ugly monsters, I got an rog 14 inch when Best Buy had 36 months zero interest financing so at worst it will cost me 85 bucks a month. But it's a compromise laptop, 32 gigs when I wanted 64 and 5080 instead of 5090. But now I can run more local ai that runs on pc/nvidia only, except the thing becomes a oven as soon as it spins up anything serious (like comfi ui) it gets so hot it's kinda scary, the fans start blazing I feel like it might actually explode. I end up back on my MacBook that is just a beast. And I feel like I wasted 2800 on a laptop that does terrible on just battery but also over heats after a few seconds of any serious compute.",
+          "timestamp": "2026-08-03T03:22:43+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1ducfz",
+          "author": "reddit_user_4df6622dcdb6",
+          "author_karma": 0,
+          "content": "The Dell XPS is the best Windows laptop out there, but I’d still buy a Mac.",
+          "timestamp": "2026-08-03T04:08:26+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1dw9no",
+          "author": "reddit_user_a323511efb9a",
+          "author_karma": 0,
+          "content": "Lenovo ThinkPads are good, other companies have equivalents, HP has EliteBooks and Dell has the Inspiron line. I haven’t used one yet but there’s a company called FrameWork that makes easily repairable/upgradeable laptops",
+          "timestamp": "2026-08-03T04:22:07+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run027_post01_seed136",
+      "post_slot": 1,
+      "seed_index": 136,
+      "source_raw_post_id": "1vdyrd7",
+      "source_product_dir": "thinkpad",
+      "source_file": "https://www.reddit.com/r/thinkpad/comments/1vdyrd7/hot_take_i_actually_love_lenovo_vantage/",
+      "post_type": "Review / Opinion",
+      "title": "Hot take, I actually love Lenovo Vantage",
+      "author": "reddit_user_d8691634ac1e",
+      "author_karma": 0,
+      "content": "Hot take, I actually love Lenovo Vantage\n\nhttps://preview.redd.it/7hw0b2xk42hh1.png?width=2558&format=png&auto=webp&s=fc1106b7f2cf03ad85d0a8c0e01f5c6b219233d6\n\nLightweight, driver/software update built in, accurate battery health, useful desktop widget and doesn't push their pro plans or useless scans.\n\nCompared to Dells SupportAssist application, Vantage is the gold standard that the rest of mfg should strive to achieve.",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p1d2xcz",
+          "author": "reddit_user_a1ef0239e5b2",
+          "author_karma": 0,
+          "content": "Sadly  Thinkpad Vantage dor not exist in Linux",
+          "timestamp": "2026-08-03T01:16:50+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1d4ad8",
+              "author": "reddit_user_782c050cbd1b",
+              "author_karma": 0,
+              "content": "That's unfortunate, \n\nI've been holding off switching my laptop and desktop to Linux because I play GTA:Online, Battleye *still* doesn't work without reliable workarounds.\n\n I have my Steamdeck, NAS, Homeassistant and a RasPi on Linux tho ",
+              "timestamp": "2026-08-03T01:24:42+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1d2xcz",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1d8rty",
+                  "author": "reddit_user_685df9bd02bd",
+                  "author_karma": 0,
+                  "content": "Could always dual boot.",
+                  "timestamp": "2026-08-03T01:50:57+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1d4ad8",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p1d4x8h",
+          "author": "reddit_user_aa41aeb0e36d",
+          "author_karma": 0,
+          "content": "I wasn't aware that Vantage had a reputation problem. What's the story?",
+          "timestamp": "2026-08-03T01:28:25+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1d80bn",
+              "author": "reddit_user_782c050cbd1b",
+              "author_karma": 0,
+              "content": "The purists hate any and all bloat, plus it doesn't have Linux support",
+              "timestamp": "2026-08-03T01:46:27+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1d4x8h",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p1dn143",
+              "author": "reddit_user_629e7847e264",
+              "author_karma": 0,
+              "content": "If you've ever installed non-commercial vantage, or have ever lived with a non-ThinkPad Lenovo product, you'd know that regular Lenovo Vantage has a bunch of ads and other junk within it, which can definitely leave a sour taste in a user's mouth.",
+              "timestamp": "2026-08-03T03:18:27+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1d4x8h",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1doh2n",
+                  "author": "reddit_user_0351be0150a9",
+                  "author_karma": 0,
+                  "content": "I've not seen this in any new Thinkpad I bought through the Lenovo Pro program.\n\nMight explain why I haven't seen any bloat",
+                  "timestamp": "2026-08-03T03:28:08+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1dn143",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p1d97lw",
+          "author": "reddit_user_905c35e3477f",
+          "author_karma": 0,
+          "content": "Note that Vantage and Commercial Vantage are two rather different products. You’re likely talking about Commercial Vantage from your screenshot. ",
+          "timestamp": "2026-08-03T01:53:31+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1dc2fd",
+          "author": "reddit_user_d3f4ab726b97",
+          "author_karma": 0,
+          "content": "If you have a Dell, remove Support Assist and only install Command Update. It's all you need for driver/firmware maintenance.",
+          "timestamp": "2026-08-03T02:10:35+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1dmteu",
+              "author": "reddit_user_629e7847e264",
+              "author_karma": 0,
+              "content": "Even Dell Optimizer?",
+              "timestamp": "2026-08-03T03:17:02+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1dc2fd",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1dpf6k",
+                  "author": "reddit_user_d3f4ab726b97",
+                  "author_karma": 0,
+                  "content": "Yes. You don't need that.",
+                  "timestamp": "2026-08-03T03:34:32+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1dmteu",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p1dj4l9",
+          "author": "reddit_user_e519bb9c5adc",
+          "author_karma": 0,
+          "content": "Friend,you're running \"Lenovo commercial vantage \", which is the one that is recommended .\n\n\nUninstall it and run regular Lenovo Vantage for a month then report back lol ",
+          "timestamp": "2026-08-03T02:53:25+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1dltbn",
+          "author": "reddit_user_629e7847e264",
+          "author_karma": 0,
+          "content": "Lenovo *Commercial\\** Vantage.",
+          "timestamp": "2026-08-03T03:10:30+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1dtd2g",
+          "author": "reddit_user_6721740271b4",
+          "author_karma": 0,
+          "content": "There was a bios update for my old t14 gen 3 thru vantage, updated it and it bricked my thinkpad.",
+          "timestamp": "2026-08-03T04:01:36+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1dx28j",
+          "author": "reddit_user_c7b9ab351ee2",
+          "author_karma": 0,
+          "content": "*Commerical version \n\nI ageee. It's good!",
+          "timestamp": "2026-08-03T04:27:56+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run027_post02_seed137",
+      "post_slot": 2,
+      "seed_index": 137,
+      "source_raw_post_id": "1vdzkad",
+      "source_product_dir": "GamingLaptops",
+      "source_file": "https://www.reddit.com/r/GamingLaptops/comments/1vdzkad/is_this_a_good_deal_for_a_laptop/",
+      "post_type": ":snoo_thoughtful: Laptop Buying Advice",
+      "title": "Is this a good deal for a Laptop?",
+      "author": "reddit_user_d8691634ac1e",
+      "author_karma": 0,
+      "content": "Is this a good deal for a Laptop?\n\n[removed]",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p1d4onq",
+          "author": "reddit_user_500c200c76d0",
+          "author_karma": 0,
+          "content": "Hey! Your post was removed because it is missing one or more **required Buying Advice fields**, or a required field was left empty.\n\nPlease resubmit using:\n\n    Budget: (e.g. $1200)\n    Country: (e.g. USA)\n    Use Case: (Gaming — which titles? / School / Editing / Mixed)\n    Preferred Specs: (Optional: GPU, CPU, RAM, storage)\n    Notes: (Optional: anything else we should know)\n\nThe required fields are **Budget**, **Country**, and **Use Case**.\n\nCheck our [Posting Guidelines](https://www.reddit.com/r/GamingLaptops/comments/1sppz97/read_before_posting/) before reposting.\n\n\n*I am a bot, and this action was performed automatically. Please [contact the moderators of this subreddit](/message/compose/?to=/r/GamingLaptops) if you have any questions or concerns.*",
+          "timestamp": "2026-08-03T01:27:02+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run027_post03_seed138",
+      "post_slot": 3,
+      "seed_index": 138,
+      "source_raw_post_id": "1vdzna7",
+      "source_product_dir": "thinkpad",
+      "source_file": "https://www.reddit.com/r/thinkpad/comments/1vdzna7/did_i_overpay/",
+      "post_type": "Buying Advice",
+      "title": "Did I overpay?",
+      "author": "reddit_user_d8691634ac1e",
+      "author_karma": 0,
+      "content": "Did I overpay?\n\n2nd gen T14 W/ AMD but only 8GB ram. I figured I can do ram and a new SSD if it feels too slow. Mostly just using appraisal software, FORScan and basic internet stuff. \n\nHad a P15 before but it got ran over by a truck 😭",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p1d5vg6",
+          "author": "reddit_user_9fb7ecc2c65c",
+          "author_karma": 0,
+          "content": "nah. good laptop\n\nsend the link?",
+          "timestamp": "2026-08-03T01:33:58+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1dj80d",
+          "author": "reddit_user_ebb4dc97b435",
+          "author_karma": 0,
+          "content": "Another \n8gb stick is $16",
+          "timestamp": "2026-08-03T02:54:00+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1dki9h",
+          "author": "reddit_user_42d1de48bfc1",
+          "author_karma": 0,
+          "content": "Oh no, is the truck okay? ",
+          "timestamp": "2026-08-03T03:02:08+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1dmax8",
+          "author": "reddit_user_3ed773e278dd",
+          "author_karma": 0,
+          "content": "Its not a great price, but also not the worst ive seen",
+          "timestamp": "2026-08-03T03:13:40+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1dmdn8",
+          "author": "reddit_user_1acdcb218db4",
+          "author_karma": 0,
+          "content": "No, it's ok",
+          "timestamp": "2026-08-03T03:14:10+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1dnlt2",
+          "author": "reddit_user_ea8c1986146f",
+          "author_karma": 0,
+          "content": "Yeah I think the biggest surprise here is that the P15 did not survive getting run over by the truck.",
+          "timestamp": "2026-08-03T03:22:17+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run027_post04_seed139",
+      "post_slot": 4,
+      "seed_index": 139,
+      "source_raw_post_id": "1vdzo3v",
+      "source_product_dir": "GamingLaptops",
+      "source_file": "https://www.reddit.com/r/GamingLaptops/comments/1vdzo3v/in_need_purchase_advice_for_a_multiuse_laptop/",
+      "post_type": ":snoo_thoughtful: Laptop Buying Advice",
+      "title": "In need purchase advice for a multi-use laptop",
+      "author": "reddit_user_d8691634ac1e",
+      "author_karma": 0,
+      "content": "In need purchase advice for a multi-use laptop\n\nI’m buying a laptop for college and I want one that can run games as well is this a good deal?\n\nBudget: 1,500 to 2,000  \nCountry: USA  \nUse Case: Mixed",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p1d5kw5",
+          "author": "reddit_user_500c200c76d0",
+          "author_karma": 0,
+          "content": "Since you are buying in the US, check current listings and price history at [rgl.deals](https://rgl.deals) before purchasing.\n\n\n*I am a bot, and this action was performed automatically. Please [contact the moderators of this subreddit](/message/compose/?to=/r/GamingLaptops) if you have any questions or concerns.*",
+          "timestamp": "2026-08-03T01:32:14+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1d97kz",
+          "author": "reddit_user_6d4f00a852fe",
+          "author_karma": 0,
+          "content": "Performance-wise it’s definitely capable for both college work and gaming, but I’d compare it against Lenovo Legion, ASUS ROG, and similar models in that price range. You might find something with the same GPU for less, or a better overall laptop for the same money. I’d also prioritize battery life and weight since you’ll actually be carrying it to class.",
+          "timestamp": "2026-08-03T01:53:31+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,577 @@
+{
+  "meta": {
+    "product_category": "news",
+    "baseline": "real_reddit_reference",
+    "run_id": "run_005_sampled_reddit"
+  },
+  "posts": [
+    {
+      "post_id": "real_run005_post00_seed025",
+      "post_slot": 0,
+      "seed_index": 25,
+      "source_raw_post_id": "1vatvna",
+      "source_product_dir": "UpliftingNews",
+      "source_file": "https://www.reddit.com/r/UpliftingNews/comments/1vatvna/boy_14_rescues_drowning_man_with_rodeo_lasso/",
+      "post_type": "reddit_post",
+      "title": "Boy, 14, Rescues Drowning Man with Rodeo Lasso During Family Camping Trip in Montana",
+      "author": "reddit_user_bde1e90b951b",
+      "author_karma": 0,
+      "content": "Boy, 14, Rescues Drowning Man with Rodeo Lasso During Family Camping Trip in Montana",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p0o2tu7",
+          "author": "reddit_user_e320faca37f4",
+          "author_karma": 0,
+          "content": "Reminder: this subreddit is meant to be a place free of excessive cynicism, negativity and bitterness. Toxic attitudes are not welcome here.  \n\nAll Negative comments will be removed and will possibly result in a ban.\n---\n\nImportant: If this post is hidden behind a paywall, please assign it the \"Paywall\" flair and include a comment with a relevant part of the article. \n\nPlease report this post if it is hidden behind a paywall and not flaired corrently. We suggest using \"Reader\" mode to bypass most paywalls.\n\n---\n\n*I am a bot, and this action was performed automatically. Please [contact the moderators of this subreddit](/message/compose/?to=/r/UpliftingNews) if you have any questions or concerns.*",
+          "timestamp": "2026-07-30T13:36:31+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0o48yt",
+          "author": "reddit_user_2d4c325d1eb3",
+          "author_karma": 0,
+          "content": "I reckon he did a good job ",
+          "timestamp": "2026-07-30T13:43:09+00:00",
+          "likes": 19,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0oda2t",
+          "author": "reddit_user_0034bcc64a51",
+          "author_karma": 0,
+          "content": "\"How country are you?\"\n\n\"I once lassoed a man from a raging river.\"",
+          "timestamp": "2026-07-30T14:24:17+00:00",
+          "likes": 147,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0oq4ve",
+              "author": "reddit_user_e7717a4a604c",
+              "author_karma": 0,
+              "content": "Sounds like The Kid from Blood Meridian IM HALFWAY THROUGH NO SPOILERS",
+              "timestamp": "2026-07-30T15:20:52+00:00",
+              "likes": 22,
+              "dislikes": 0,
+              "parent_comment_id": "p0oda2t",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p0py6ni",
+              "author": "[deleted]",
+              "author_karma": 0,
+              "content": "[removed]",
+              "timestamp": "2026-07-30T18:26:51+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p0oda2t",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p0tf8jz",
+              "author": "reddit_user_26b7f6bb3fe5",
+              "author_karma": 0,
+              "content": "He really should. Gotta hang the rope up with a plaque next to it. ",
+              "timestamp": "2026-07-31T05:18:38+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p0oda2t",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p0oj9qz",
+          "author": "reddit_user_cc5b94ef78a2",
+          "author_karma": 0,
+          "content": "![gif](giphy|cdNSp4L5vCU7aQrYnV)",
+          "timestamp": "2026-07-30T14:50:47+00:00",
+          "likes": 74,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0qpo61",
+              "author": "reddit_user_48d80487ec39",
+              "author_karma": 0,
+              "content": "What’s the keyword for this? Love it",
+              "timestamp": "2026-07-30T20:25:00+00:00",
+              "likes": 5,
+              "dislikes": 0,
+              "parent_comment_id": "p0oj9qz",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p0rwh6m",
+                  "author": "reddit_user_54d59226bfd6",
+                  "author_karma": 0,
+                  "content": "‘Cowboy’ - it’s the first gif that comes up :)",
+                  "timestamp": "2026-07-30T23:51:59+00:00",
+                  "likes": 6,
+                  "dislikes": 0,
+                  "parent_comment_id": "p0qpo61",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p0okdpo",
+          "author": "reddit_user_3c2ce0d9be2c",
+          "author_karma": 0,
+          "content": "Like something out of a 90s disney film",
+          "timestamp": "2026-07-30T14:55:39+00:00",
+          "likes": 19,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0sejll",
+              "author": "reddit_user_ce122e4a16e0",
+              "author_karma": 0,
+              "content": "![gif](giphy|4GQu0afw9RgJO)",
+              "timestamp": "2026-07-31T01:30:47+00:00",
+              "likes": 6,
+              "dislikes": 0,
+              "parent_comment_id": "p0okdpo",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p0p9goa",
+          "author": "reddit_user_aa9004c2b31f",
+          "author_karma": 0,
+          "content": "Hat off to the boy! \n\nIf I saw this in a movie, I would roll my eyes soo much at the lack of realism! He is going to have bragging rights for the rest of his life.",
+          "timestamp": "2026-07-30T16:43:02+00:00",
+          "likes": 34,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0pf6li",
+          "author": "reddit_user_2eee07f33791",
+          "author_karma": 0,
+          "content": "Tate Dutton?",
+          "timestamp": "2026-07-30T17:07:11+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0pr4fn",
+          "author": "reddit_user_609b82a41874",
+          "author_karma": 0,
+          "content": "Right on kid! \n\nI usually do it the other way around when I play Red Dead Redemption 2. The ol horseback baptism. ",
+          "timestamp": "2026-07-30T17:57:02+00:00",
+          "likes": 5,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0rbrgf",
+          "author": "reddit_user_6bf981a451c6",
+          "author_karma": 0,
+          "content": "How *very* Montana ",
+          "timestamp": "2026-07-30T22:05:28+00:00",
+          "likes": 9,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0rnh6b",
+          "author": "reddit_user_e4ce8d4634b8",
+          "author_karma": 0,
+          "content": "How dope is that?! I would be lucky just to hit the water at all. ",
+          "timestamp": "2026-07-30T23:04:45+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0tbgx1",
+          "author": "reddit_user_04c6be9e7f42",
+          "author_karma": 0,
+          "content": "They must make them tough in Montana. This heroic deed made him Montanan of the MONTH!",
+          "timestamp": "2026-07-31T04:51:36+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1067ae",
+          "author": "reddit_user_a9134779ff31",
+          "author_karma": 0,
+          "content": "That’s how you do it - throw a rope, not yourself.\n\nThere is a last ditch technique called live bait rescue, but you need a special life jacket and another person to do it.",
+          "timestamp": "2026-08-01T03:25:44+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run005_post01_seed026",
+      "post_slot": 1,
+      "seed_index": 26,
+      "source_raw_post_id": "1vaw2av",
+      "source_product_dir": "TrueReddit",
+      "source_file": "https://www.reddit.com/r/TrueReddit/comments/1vaw2av/wildfires_adaptive_compensation_and/",
+      "post_type": "Policy + Social Issues",
+      "title": "Wildfires, Adaptive Compensation, and Organizational Succession in Europe",
+      "author": "reddit_user_bde1e90b951b",
+      "author_karma": 0,
+      "content": "Wildfires, Adaptive Compensation, and Organizational Succession in Europe",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p0olddf",
+          "author": "reddit_user_e320faca37f4",
+          "author_karma": 0,
+          "content": "\nWhile Substack and Medium links are welcome here, many are nothing more than blog or AI spam and, as such, will be reviewed by a moderator prior to approval. If you believe you have seen this message in error, please reach out via modmail, but if the link is spammy it will be reported upward to site administration.\n\nPlease include your submission statement while the post is in review to streamline approval.\n\n*I am a bot, and this action was performed automatically. Please [contact the moderators of this subreddit](/message/compose/?to=/r/TrueReddit) if you have any questions or concerns.*",
+          "timestamp": "2026-07-30T14:59:59+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run005_post02_seed027",
+      "post_slot": 2,
+      "seed_index": 27,
+      "source_raw_post_id": "1vaxtr3",
+      "source_product_dir": "UpliftingNews",
+      "source_file": "https://www.reddit.com/r/UpliftingNews/comments/1vaxtr3/this_17yearold_is_already_beating_the_worlds_best/",
+      "post_type": "link",
+      "title": "This 17-year-old is already beating the world’s best runners. Senior year is next.",
+      "author": "reddit_user_bde1e90b951b",
+      "author_karma": 0,
+      "content": "This 17-year-old is already beating the world’s best runners. Senior year is next.",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p0p087a",
+          "author": "reddit_user_e320faca37f4",
+          "author_karma": 0,
+          "content": "Reminder: this subreddit is meant to be a place free of excessive cynicism, negativity and bitterness. Toxic attitudes are not welcome here.  \n\nAll Negative comments will be removed and will possibly result in a ban.\n---\n\nImportant: If this post is hidden behind a paywall, please assign it the \"Paywall\" flair and include a comment with a relevant part of the article. \n\nPlease report this post if it is hidden behind a paywall and not flaired corrently. We suggest using \"Reader\" mode to bypass most paywalls.\n\n---\n\n*I am a bot, and this action was performed automatically. Please [contact the moderators of this subreddit](/message/compose/?to=/r/UpliftingNews) if you have any questions or concerns.*",
+          "timestamp": "2026-07-30T16:03:46+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0p4izr",
+          "author": "reddit_user_5f8b9afc01ca",
+          "author_karma": 0,
+          "content": "This is behind the paywall FYI",
+          "timestamp": "2026-07-30T16:22:04+00:00",
+          "likes": 4,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0pah3f",
+              "author": "reddit_user_f52dd7603840",
+              "author_karma": 0,
+              "content": "[https://www.keranews.org/sports/2026-07-27/denton-county-native-cooper-lutkenhaus-wins-800-meter-outdoor-national-title](https://www.keranews.org/sports/2026-07-27/denton-county-native-cooper-lutkenhaus-wins-800-meter-outdoor-national-title)",
+              "timestamp": "2026-07-30T16:47:18+00:00",
+              "likes": 0,
+              "dislikes": 0,
+              "parent_comment_id": "p0p4izr",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p0p4udk",
+          "author": "reddit_user_2b0bb0c89484",
+          "author_karma": 0,
+          "content": "Who is this uplifting for?",
+          "timestamp": "2026-07-30T16:23:24+00:00",
+          "likes": 16,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0p8xai",
+              "author": "reddit_user_f13cf700219b",
+              "author_karma": 0,
+              "content": "Right? Hey, everyone, look at this genetic specimen that you have zero hope of competing against! ",
+              "timestamp": "2026-07-30T16:40:46+00:00",
+              "likes": -1,
+              "dislikes": 0,
+              "parent_comment_id": "p0p4udk",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p0pbgqv",
+                  "author": "reddit_user_5fd3e68cb108",
+                  "author_karma": 0,
+                  "content": "Have you never met a sports/art fan? That’s literally what admiration is.",
+                  "timestamp": "2026-07-30T16:51:32+00:00",
+                  "likes": 5,
+                  "dislikes": 0,
+                  "parent_comment_id": "p0p8xai",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            },
+            {
+              "comment_id": "p0p9s2v",
+              "author": "reddit_user_dc0d93e0a498",
+              "author_karma": 0,
+              "content": "People younger than 17",
+              "timestamp": "2026-07-30T16:44:22+00:00",
+              "likes": 3,
+              "dislikes": 0,
+              "parent_comment_id": "p0p4udk",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p0pbb3e",
+              "author": "reddit_user_5fd3e68cb108",
+              "author_karma": 0,
+              "content": "Runners who follow the sport. This dude is awesome.",
+              "timestamp": "2026-07-30T16:50:50+00:00",
+              "likes": 8,
+              "dislikes": 0,
+              "parent_comment_id": "p0p4udk",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p0pcpf9",
+              "author": "reddit_user_2c50e44f59af",
+              "author_karma": 0,
+              "content": "White male American track runners between the age of 17-18 named Cooper, duh!",
+              "timestamp": "2026-07-30T16:56:45+00:00",
+              "likes": 11,
+              "dislikes": 0,
+              "parent_comment_id": "p0p4udk",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p0pevrd",
+                  "author": "reddit_user_5f902e406a05",
+                  "author_karma": 0,
+                  "content": "Aw man, I’m so disappointed I can’t be uplifted from this ",
+                  "timestamp": "2026-07-30T17:05:54+00:00",
+                  "likes": 2,
+                  "dislikes": 0,
+                  "parent_comment_id": "p0pcpf9",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p0pwvyu",
+                      "author": "reddit_user_cd4624d09e87",
+                      "author_karma": 0,
+                      "content": "you just need to apply yourself. try waking up at 4 in the morning",
+                      "timestamp": "2026-07-30T18:21:27+00:00",
+                      "likes": 2,
+                      "dislikes": 0,
+                      "parent_comment_id": "p0pevrd",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "comment_id": "p0pkoum",
+              "author": "reddit_user_16fc52ffa01a",
+              "author_karma": 0,
+              "content": "Nice pfp, I wonder where you got it from ...",
+              "timestamp": "2026-07-30T17:30:15+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p0p4udk",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p0p6o2v",
+          "author": "reddit_user_549905c94012",
+          "author_karma": 0,
+          "content": "Paywal....post Non-paywall link...",
+          "timestamp": "2026-07-30T16:31:11+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0pah8b",
+              "author": "reddit_user_f52dd7603840",
+              "author_karma": 0,
+              "content": "[https://www.keranews.org/sports/2026-07-27/denton-county-native-cooper-lutkenhaus-wins-800-meter-outdoor-national-title](https://www.keranews.org/sports/2026-07-27/denton-county-native-cooper-lutkenhaus-wins-800-meter-outdoor-national-title)",
+              "timestamp": "2026-07-30T16:47:19+00:00",
+              "likes": 0,
+              "dislikes": 0,
+              "parent_comment_id": "p0p6o2v",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p0paibz",
+          "author": "reddit_user_f52dd7603840",
+          "author_karma": 0,
+          "content": "[https://www.keranews.org/sports/2026-07-27/denton-county-native-cooper-lutkenhaus-wins-800-meter-outdoor-national-title](https://www.keranews.org/sports/2026-07-27/denton-county-native-cooper-lutkenhaus-wins-800-meter-outdoor-national-title)",
+          "timestamp": "2026-07-30T16:47:26+00:00",
+          "likes": -1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0pdmd7",
+          "author": "reddit_user_7e4d9f940783",
+          "author_karma": 0,
+          "content": "My god, we have to turn for sports for good news now?\n\nThis impacts 0% of the world\n\nBut good for this one guy",
+          "timestamp": "2026-07-30T17:00:36+00:00",
+          "likes": -3,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0pgp8g",
+          "author": "reddit_user_423925165850",
+          "author_karma": 0,
+          "content": "Sports news... 🤷‍♂️",
+          "timestamp": "2026-07-30T17:13:34+00:00",
+          "likes": 5,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0pk3j4",
+          "author": "reddit_user_9595df959221",
+          "author_karma": 0,
+          "content": "Senior year?\nYou are at an international site where what you call last year of high school or whatever doesn't matter.\n\nSenior year are the time people retire...",
+          "timestamp": "2026-07-30T17:27:47+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run005_post03_seed028",
+      "post_slot": 3,
+      "seed_index": 28,
+      "source_raw_post_id": "1vaygsx",
+      "source_product_dir": "UpliftingNews",
+      "source_file": "https://www.reddit.com/r/UpliftingNews/comments/1vaygsx/statement_on_behalf_of_uefa_and_its_55_national/",
+      "post_type": "link",
+      "title": "Statement on behalf of UEFA and its 55 national associations",
+      "author": "reddit_user_bde1e90b951b",
+      "author_karma": 0,
+      "content": "Statement on behalf of UEFA and its 55 national associations",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p0p5inr",
+          "author": "reddit_user_e320faca37f4",
+          "author_karma": 0,
+          "content": "Reminder: this subreddit is meant to be a place free of excessive cynicism, negativity and bitterness. Toxic attitudes are not welcome here.  \n\nAll Negative comments will be removed and will possibly result in a ban.\n---\n\nImportant: If this post is hidden behind a paywall, please assign it the \"Paywall\" flair and include a comment with a relevant part of the article. \n\nPlease report this post if it is hidden behind a paywall and not flaired corrently. We suggest using \"Reader\" mode to bypass most paywalls.\n\n---\n\n*I am a bot, and this action was performed automatically. Please [contact the moderators of this subreddit](/message/compose/?to=/r/UpliftingNews) if you have any questions or concerns.*",
+          "timestamp": "2026-07-30T16:26:17+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run005_post04_seed029",
+      "post_slot": 4,
+      "seed_index": 29,
+      "source_raw_post_id": "1vaz1b9",
+      "source_product_dir": "UpliftingNews",
+      "source_file": "https://www.reddit.com/r/UpliftingNews/comments/1vaz1b9/denton_county_native_cooper_lutkenhaus_wins/",
+      "post_type": "link",
+      "title": "Denton County native Cooper Lutkenhaus wins 800-meter outdoor national title",
+      "author": "reddit_user_bde1e90b951b",
+      "author_karma": 0,
+      "content": "Denton County native Cooper Lutkenhaus wins 800-meter outdoor national title",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p0pad65",
+          "author": "reddit_user_e320faca37f4",
+          "author_karma": 0,
+          "content": "Reminder: this subreddit is meant to be a place free of excessive cynicism, negativity and bitterness. Toxic attitudes are not welcome here.  \n\nAll Negative comments will be removed and will possibly result in a ban.\n---\n\nImportant: If this post is hidden behind a paywall, please assign it the \"Paywall\" flair and include a comment with a relevant part of the article. \n\nPlease report this post if it is hidden behind a paywall and not flaired corrently. We suggest using \"Reader\" mode to bypass most paywalls.\n\n---\n\n*I am a bot, and this action was performed automatically. Please [contact the moderators of this subreddit](/message/compose/?to=/r/UpliftingNews) if you have any questions or concerns.*",
+          "timestamp": "2026-07-30T16:46:50+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    }
+  ]
+}

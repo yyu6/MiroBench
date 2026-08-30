@@ -20,7 +20,6 @@ METRIC_COMMANDS = (
     ("go_emotions_results.json", "score_thread_go_emotions.py", True),
     ("politeness_results.json", "score_thread_politeness.py", True),
     ("thread_structure_results.json", "score_thread_structure.py", False),
-    ("detoxify_results.json", "score_thread_detoxify.py", True),
 )
 
 

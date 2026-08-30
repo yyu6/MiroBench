@@ -1,0 +1,581 @@
+{
+  "meta": {
+    "product_category": "headphones",
+    "baseline": "real_reddit_reference",
+    "run_id": "run_019_sampled_reddit"
+  },
+  "posts": [
+    {
+      "post_id": "real_run019_post00_seed095",
+      "post_slot": 0,
+      "seed_index": 95,
+      "source_raw_post_id": "1vd25hp",
+      "source_product_dir": "audiophile",
+      "source_file": "https://www.reddit.com/r/audiophile/comments/1vd25hp/average_rpm_music_cds/",
+      "post_type": "Science & Tech",
+      "title": "Average rpm music CDs?",
+      "author": "reddit_user_d43b8c7b6255",
+      "author_karma": 0,
+      "content": "Average rpm music CDs?\n\nThis mlght be a wierd question, but from what I've read music CDs have an rpm of 500 near the center and 200 near the edge, anyone ever calculate the average rpm of a music CD?",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p15rpr7",
+          "author": "reddit_user_0df7c71a22c3",
+          "author_karma": 0,
+          "content": "https://www.soundlabsgroup.com.au/c/How-CD-Works.html?srsltid=AfmBOoonYmbFJQHNev9MTe4Gn3iDZKlXzGoUBvMt934Z34BvJXB1hTkH",
+          "timestamp": "2026-08-01T23:35:50+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p15tb2z",
+          "author": "reddit_user_345f1d094c93",
+          "author_karma": 0,
+          "content": "The area near the center rotates at the same rpm as the area at the edge. Think about it.",
+          "timestamp": "2026-08-01T23:44:52+00:00",
+          "likes": -2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p15uulb",
+              "author": "reddit_user_59aa86838bb4",
+              "author_karma": 0,
+              "content": "Not the same RPM. The same surface speed. They are two very different things.",
+              "timestamp": "2026-08-01T23:53:40+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p15tb2z",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p15vg8m",
+                  "author": "reddit_user_345f1d094c93",
+                  "author_karma": 0,
+                  "content": "You have it backwards.",
+                  "timestamp": "2026-08-01T23:57:12+00:00",
+                  "likes": -2,
+                  "dislikes": 0,
+                  "parent_comment_id": "p15uulb",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p15wf12",
+                      "author": "reddit_user_59aa86838bb4",
+                      "author_karma": 0,
+                      "content": "No I don't.\n\nhttps://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Comparison_disk_storage.svg/1280px-Comparison_disk_storage.svg.png\n\nhttps://en.wikipedia.org/wiki/Constant_linear_velocity\n\nhttps://en.wikipedia.org/wiki/Constant_angular_velocity",
+                      "timestamp": "2026-08-02T00:02:48+00:00",
+                      "likes": 3,
+                      "dislikes": 0,
+                      "parent_comment_id": "p15vg8m",
+                      "depth": 3,
+                      "replies": []
+                    },
+                    {
+                      "comment_id": "p15x1xe",
+                      "author": "reddit_user_55fb859606d2",
+                      "author_karma": 0,
+                      "content": "/r/confidentlyincorrect",
+                      "timestamp": "2026-08-02T00:06:33+00:00",
+                      "likes": 3,
+                      "dislikes": 0,
+                      "parent_comment_id": "p15vg8m",
+                      "depth": 3,
+                      "replies": []
+                    },
+                    {
+                      "comment_id": "p15x7ky",
+                      "author": "reddit_user_50d17acb05a5",
+                      "author_karma": 0,
+                      "content": "No they don't lol",
+                      "timestamp": "2026-08-02T00:07:28+00:00",
+                      "likes": 3,
+                      "dislikes": 0,
+                      "parent_comment_id": "p15vg8m",
+                      "depth": 3,
+                      "replies": []
+                    },
+                    {
+                      "comment_id": "p15xd9u",
+                      "author": "reddit_user_5fe607515766",
+                      "author_karma": 0,
+                      "content": "No he doesn't.  A vinyl LP spins at a constant angular rate of 33 1/3 rotations per minute, comes out to 3.49 radians/second.  The linear speed on the LP varies from about 20 inches per second at the edge down to about 8 inches per second near the middle.",
+                      "timestamp": "2026-08-02T00:08:23+00:00",
+                      "likes": 4,
+                      "dislikes": 0,
+                      "parent_comment_id": "p15vg8m",
+                      "depth": 3,
+                      "replies": []
+                    },
+                    {
+                      "comment_id": "p162xwr",
+                      "author": "reddit_user_2621bece4ff7",
+                      "author_karma": 0,
+                      "content": "🤦‍♂️",
+                      "timestamp": "2026-08-02T00:41:01+00:00",
+                      "likes": 2,
+                      "dislikes": 0,
+                      "parent_comment_id": "p15vg8m",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                },
+                {
+                  "comment_id": "p15vgur",
+                  "author": "reddit_user_4e8f32259ecb",
+                  "author_karma": 0,
+                  "content": "My brother in Christ what on earth are you talking about?",
+                  "timestamp": "2026-08-01T23:57:18+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p15uulb",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            },
+            {
+              "comment_id": "p15w2dh",
+              "author": "reddit_user_4e8f32259ecb",
+              "author_karma": 0,
+              "content": "A CD will spin slower when reading the outer edges compared to the centre. I believe that's what OP is asking.",
+              "timestamp": "2026-08-02T00:00:46+00:00",
+              "likes": 3,
+              "dislikes": 0,
+              "parent_comment_id": "p15tb2z",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p15zwjy",
+                  "author": "reddit_user_345f1d094c93",
+                  "author_karma": 0,
+                  "content": "Ok, now I get it. I misunderstood the vague description given by the OP. Thanks.",
+                  "timestamp": "2026-08-02T00:23:06+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p15w2dh",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1638id",
+                      "author": "reddit_user_4e8f32259ecb",
+                      "author_karma": 0,
+                      "content": "Yeah it melted my head for a few seconds ngl 😅",
+                      "timestamp": "2026-08-02T00:42:47+00:00",
+                      "likes": 2,
+                      "dislikes": 0,
+                      "parent_comment_id": "p15zwjy",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "comment_id": "p15x031",
+              "author": "reddit_user_50d17acb05a5",
+              "author_karma": 0,
+              "content": "Not what they're asking.\n\nWhen the laser is reading the beginning of the disc (closer to the centre) the disc has to spin faster proportional to the circumference of that track (yeah sure it's a giant spiral, but imagine it as concentric circles of ever larger radius).\n\nBecause the size of each individual bit of data is the same all the way through, the rotation has to slow down as playback progresses.\n\nRecords don't do this, so the outer grooves have much more space to cram the same amount of sound than the inner grooves. It doesn't really affect the sound because the inner groove can still reproduce all we can hear, but it's not efficient to do this.\n\nLook up CAV (constant angular velocity) versus CLV (constant linear velocity)",
+              "timestamp": "2026-08-02T00:06:15+00:00",
+              "likes": 2,
+              "dislikes": 0,
+              "parent_comment_id": "p15tb2z",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p15unq6",
+          "author": "reddit_user_8d61c489963f",
+          "author_karma": 0,
+          "content": "They spin faster near the center, but the reader spends less time there because there is less data per rotation, so finishes with that portion sooner.  So I would think the average will be weighted closer to 200 than 500 RPM.  It seems like you might need calculus to compute the actual average  speed",
+          "timestamp": "2026-08-01T23:52:34+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p15xzbv",
+          "author": "reddit_user_59aa86838bb4",
+          "author_karma": 0,
+          "content": "Incidentally, I have a CD with the (start) RPM printed on it. 600 RPM. The Philosopher Kings - Famous, Rich and Beautiful. [Not my photo](https://i.ebayimg.com/images/g/4-wAAOSwnnJmhWO3/s-l1600.jpg).",
+          "timestamp": "2026-08-02T00:11:55+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p16gkfx",
+          "author": "reddit_user_87d8b74a1ed5",
+          "author_karma": 0,
+          "content": "The average is about 300 rpm.\n\nAssuming that the disc is full - that is, the playable data starts at a radius of 25 mm and ends at a radius of 58mm, the average angular velocity over the entire duration of playback can vary from about 276 rpm to 322 rpm, depending on the constant linear velocity chosen when mastering the CD.  The Redbook audio standard allows for a linear velocity range of 1.2 - 1.4 meters per second.  Mastering at 1.2 m/s maximizes the playback time (\\~74 minutes), but it requires packing the pits that represent the data more closely together, which is more challenging.  Mastering at 1.4 m/s cuts the maximum time down to 64 minutes, but makes the discs easier to manufacture since the pits are further apart.\n\n",
+          "timestamp": "2026-08-02T02:02:47+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run019_post01_seed096",
+      "post_slot": 1,
+      "seed_index": 96,
+      "source_raw_post_id": "1vd2dci",
+      "source_product_dir": "audiophile",
+      "source_file": "https://www.reddit.com/r/audiophile/comments/1vd2dci/new_speaker_day_a200_pt_3_first_impressions/",
+      "post_type": "Review",
+      "title": "New speaker day (A200) pt. 3 - First impressions.",
+      "author": "reddit_user_d43b8c7b6255",
+      "author_karma": 0,
+      "content": "New speaker day (A200) pt. 3 - First impressions.\n\nHello again 😊\n\nPlease don't take the following as a \"real review\" of the **Buchardt A200** \\- These are only my very first impressions!\n\n**Disclaimer (long one):**\n\nBecause I'm the happy owner of a pair of **A700 LE**'s AND have been treated VERY nicely by Buchardt support, I'm somewhat unable to not be biased towards Buchardt a bit.\n\nI'm also not quite able to not compare the A200 to the A700 LE's - A totally unfair comparison.\n\nI have not been messing around with Master Tunings or any kind of Room Correction, yet.\n\nI'm unaware of which Master Tunings are currently being used on the speakers.\n\nThe A200s are placed in a room that is too large for them to really fill with sound.\n\nI have never owned a pair of bookshelfs before, so I don't know what is to be expected of such a pair.\n\nThe A200s haven't been broken in.\n\nI haven't got any Cable Risers, so I have to make do with lossless ViSA streaming 😉 \n\n# Okay - Let's have it.\n\nThe A200 are SMALL speakers - They cannot outperform the A700's, so don't expect the same lows (not talking SPL).\n\nIf you want **deep** bass that you can still hear, you HAVE to add a Sub.\n\nThat said, I'm impressed that the A200s are actually able to make me FEEL some of the bass despite the room size they are placed in at the moment.\n\nI have a few go-to songs that I usually try and play when listening to new speakers in various stores.\n\nThey are the following (random order):\n\nChris Jones - Long after you are gone.\n\nBoz Scaggs - Thanks to you.\n\nLondon Grammar - Hey now.\n\nPete Belasco - Deeper.\n\nThe Weeknd - Escape from LA.\n\nNot necessarily audiophile masterpieces, but they are all songs that I know and like. I'm not gonna go through all of them here as I'm not that good with words - English also not my first language (as I'm sure you are all quite aware of by now).\n\nANYWAY - This time I started out with **London Grammar** \\- Hannah Reid's voice came out smooth, full and clear (but not in a fatiguing way). I didn't really feel I was missing out at all.\n\nThe mids didn't sound intrusive or lackluster - They were pretty well balanced (no canned sound).\n\nI could also feel and hear most of the baseline (not A700 levels ☝️) but still pretty okay for something the size of a shoe box.\n\nThen, just for fun, I tried **Pete Belasco**.... *Don't play this tune full tilt - It will probably knock your Sub over, if you have one*.\n\nIt didn't knock the A200s over - Cause they (in my current setup) don't go that deep while still being audible (see disclaimer).\n\nSo I quickly skipped to something else - **Chris Jones** was up.\n\nThe guitar - Man I love that guitar! Even though some of the lows were missing it still sounded full, crisp and clear.\n\nIt sounded like a \"real\" guitar with a SLIGHT bass boost - On the A700's it's not just a SLIGHT bass boost, but it still sounds cool.\n\nChris' voice didn't disappoint either. Full, rich and non-fatiguing - I have nothing negative to add here 😅\n\nThe Weeknd - Voice CAN become a little *sharp* at \"high\" listening levels.\n\nLows are audible, but not quite enough to make it \"fun\" (again, see disclaimer).\n\n# Conclusion.\n\nIf you have limited space or just need something that doesn't reach PA sound pressure levels, these are a no-brainer IF you pair them with a Sub.\n\nI can imagine these will be a PERFECT match with **Buchardts** **SUB10** woofer.\n\nAre they worth the cost? - I have no idea - I have zero experience with other bookshelfs.\n\nSo far I'm not disappointed one bit. I just have to remind myself that these aren't the A700's. \n\nAlso...\n\nGF just stuck her head into the living room for a second or two and said: \"*Hey, they sound pretty good*\", then stayed there a few seconds more before popping back out again.\n\nHappy camper ✌️\n\nps. I will try the A200 in a smaller room when time allows (don't know when yet).\n\nWould you like me to make an update about it??\n\nLink to pt. one - https://www.reddit.com/r/audiophile/s/cZVyMgWgqd\n\nLink to pt. two - https://www.reddit.com/r/audiophile/s/zGcWnURJok\n\npps. I will probably be updating the OP a few times to \"fix\" spelling...",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p182ia7",
+          "author": "reddit_user_bb535e4e74e2",
+          "author_karma": 0,
+          "content": "Nice tracks! ",
+          "timestamp": "2026-08-02T09:15:13+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p18gm1d",
+              "author": "reddit_user_fb9b0f2f19ea",
+              "author_karma": 0,
+              "content": "I think so too.",
+              "timestamp": "2026-08-02T11:11:38+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p182ia7",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p18bx06",
+          "author": "reddit_user_56c576810a25",
+          "author_karma": 0,
+          "content": "nice write-up, please tell me about your speaker stands",
+          "timestamp": "2026-08-02T10:35:11+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p18fy02",
+              "author": "reddit_user_fb9b0f2f19ea",
+              "author_karma": 0,
+              "content": "Not much to say - Built sturdy.\n\nYou can find them on Buchardts website.\n\nhttps://preview.redd.it/psdcffw32ygh1.jpeg?width=4096&format=pjpg&auto=webp&s=c32c437fbde97a7f19caaf7dc9e3d68cb1ba0e3b",
+              "timestamp": "2026-08-02T11:06:33+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p18bx06",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1bbaqk",
+                  "author": "reddit_user_56c576810a25",
+                  "author_karma": 0,
+                  "content": "They are lovely, aesthetically a perfect match for the speakers.",
+                  "timestamp": "2026-08-02T19:48:50+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p18fy02",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            },
+            {
+              "comment_id": "p18g65v",
+              "author": "reddit_user_fb9b0f2f19ea",
+              "author_karma": 0,
+              "content": "Rubber standoffs between speakers and base plate and between legs and floor.\n\nhttps://preview.redd.it/su63zvye2ygh1.jpeg?width=4096&format=pjpg&auto=webp&s=138f8edf4cd5f66f60d90b9f77b18db94be29a6b",
+              "timestamp": "2026-08-02T11:08:16+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p18bx06",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p18xef2",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-02T13:02:12+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1a21vs",
+          "author": "reddit_user_dfa157dbd127",
+          "author_karma": 0,
+          "content": "Do you feel that adding the A200 as a center speaker improved your experience vs phantom center from the A700’s? ",
+          "timestamp": "2026-08-02T16:23:51+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1ak7rb",
+              "author": "reddit_user_fb9b0f2f19ea",
+              "author_karma": 0,
+              "content": "That is honestly not an easy question for me to answer right now.\n\nI've been used to the A700 sound for a while, and now all of a sudden comes this new and smaller speaker with less power and \"oomph\" when people are talking.\n\nOn top of that, they haven't been dialed in yet, plus I still haven't run any Room Correction or played with Master Tunings.\n\nBUT I can definitely hear that voices are comming from a different location now.\n\nThe hight of the A700 tweeters are roughly 1/3 up the TV, the mids a bit lower - The A200 on the other hand is situated below the TV.\n\nThat difference in hight is very audible and I think THAT will be my main issue, if it stays an issue.",
+              "timestamp": "2026-08-02T17:45:35+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1a21vs",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1cm7ml",
+                  "author": "reddit_user_dfa157dbd127",
+                  "author_karma": 0,
+                  "content": "I would be very interested in your opinion after you load the mastertunings (I guess for the center speaker in your setup “wall filter” might be appropriate) and run room correction. \n\nBtw. Which mastertuning do you use on your A700?",
+                  "timestamp": "2026-08-02T23:43:32+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1ak7rb",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "post_id": "real_run019_post02_seed097",
+      "post_slot": 2,
+      "seed_index": 97,
+      "source_raw_post_id": "1vd2wiq",
+      "source_product_dir": "audiophile",
+      "source_file": "https://www.reddit.com/r/audiophile/comments/1vd2wiq/theyre_really_as_good_as_they_say_they_are/",
+      "post_type": "Show & Tell",
+      "title": "[ Removed by moderator ]",
+      "author": "reddit_user_d43b8c7b6255",
+      "author_karma": 0,
+      "content": "[ Removed by moderator ]",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p15x0pz",
+          "author": "reddit_user_c181600e3616",
+          "author_karma": 0,
+          "content": "Your image post is currently hidden from other redditors.\n\n***To complete the submission processes, please respond to your post with a 50+ word comment in the next hour or two. No AI slop!***  For reference, the rule below is 48 words long. This message will disappear shortly after your comment has been added.\n\n>***Rule 4***: _Image posts must be accompanied by a comment with impressions or details that add value to the post. The comment does not need to be exhaustive, but should strive to give enough information to start the discussion. No pictures of unopened boxes!_\n\n***Need some more ideas?***\n\n* How does it sound?\n\n* How does this system compare to ones you've owned or heard before?\n\n* Were there any surprises or lessons learned that you'd like to share with r/audiophile?\n\n* List of the components  in your system and/or how you came to own them?\n\n* What's next for your system?\n\n* Anything else that you think others might find interesting?\n\n***Is your post flair correct?***\n\n* If not, submit a _new_ post and be sure to choose the appropriate flair _before_ clicking submit.\n\n***Just want to share photos?***\n\n* Check out r/avporn\n\n***Why so much work?***\n\n* The r/audiophile community really appreciates a good discussion, not just photo.",
+          "timestamp": "2026-08-02T00:06:21+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p15yw4e",
+          "author": "reddit_user_6ea930322b34",
+          "author_karma": 0,
+          "content": "They’re all the best qualities of good headphones combined with the localization and “in your face” presentation of speakers\n\nSomething something head related transfer function\n\nThey’re useless below about 60 hz, but that’s what the nearfield subwoofers are for :)",
+          "timestamp": "2026-08-02T00:17:13+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run019_post03_seed098",
+      "post_slot": 3,
+      "seed_index": 98,
+      "source_raw_post_id": "1vd3z85",
+      "source_product_dir": "iems",
+      "source_file": "https://www.reddit.com/r/iems/comments/1vd3z85/sivga_que_more_than_just_vocals/",
+      "post_type": "Review",
+      "title": "Sivga Que | More Than Just Vocals",
+      "author": "reddit_user_d43b8c7b6255",
+      "author_karma": 0,
+      "content": "Sivga Que | More Than Just Vocals\n\nFor the price, this might be the best value overall in its range, and an easy recommendation for anyone.\n\nPeople on YouTube always talk about how nice the vocals and timbre are, and they're right, but it's not something you notice immediately. My first impression was just \"wow, that's a good IEM\": very detailed, nice tonality, good separation. Nothing feels lacking, aside from the bass, which is on the weaker side. But the more I listened, the more I fell for it. The vocals are the loudest and clearest part of any song, the decay on notes is beautiful, and there's no sharp treble but still plenty of air. The soundstage is large: a close, tall wall of sound, though it doesn't have real 3D depth where you can hear things sitting closer or farther away. It's pretty flat, which is expected from a single dynamic driver. The bass has a nice, natural feel to it, but it's not deep or textured. It's just okay.\n\nThese do best with natural recordings, things like acoustic guitar or anything recorded with a real microphone rather than keys digitally. They can get a bit chaotic on heavier metal songs, like they're trying to separate every instrument at once, and the result is like trying to eat a steak with coffee.\n\nFor reference, I also own the Kiwi Ears Cadenza 2 and the Aful Performer 5+2. The Cadenza 2 has the strongest bass of the three, with a typical Harman tuning that's easy to listen to, though it gets a bit mushy and the bass bleeds. The Aful P7 is in a class of its own: holographic soundstage, amazing separation without ever sounding sharp, very smooth and present treble, and a uniquely textured bass you can actually feel. A guitar will make you feel its vibrations, which gives it a depth that makes it genuinely special. I've never heard anything like that before. \n\nAs for comfort, the cable feels and looks great, and the shell is small and comfortable. The nozzles aren't very deep, which some people might like, but it also hurts the seal. The stock tips are the only ones I've kept on the IEM. They're comfortable and fit well, but the bass is noticeably weaker than with something like the Penon Liqueur. Heads up: the Dunu SS and Divinus Velvet SS tips are too long and will make the shell sit outside your ear, so those won't work here.\n\nAfter trying a handful of options, the Penon Liqueur ended up being the best tip for this IEM. I'm not a fan of sticky silicone, but the bass pops so much more with them, and the isolation makes for a noticeably better listening experience overall.\n\nThey're great as a first, second, or tenth IEM, especially for more classical genre lovers!",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p16uvvk",
+          "author": "reddit_user_090dab66b952",
+          "author_karma": 0,
+          "content": "I'm using he sonic with sivga que, and IMHO, it opens up the bass a little bit, enough to notice.\nAnother thing about it, it's easy to power. Using it on my phone is enough. Using a dac is better, yes.",
+          "timestamp": "2026-08-02T03:34:58+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p17ftj7",
+              "author": "reddit_user_b5affc292a0d",
+              "author_karma": 0,
+              "content": "I hadn't heard of these ear tips until now. The Penon work really well to give it a deeper bass thump compared to stock, and then it becomes a respectable mid-bass. I should've also noted in the review that I'm using the Jcally JM20 with everything.",
+              "timestamp": "2026-08-02T06:07:28+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p16uvvk",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p172ixa",
+          "author": "reddit_user_b97e7aa0c6ec",
+          "author_karma": 0,
+          "content": "I thought i was a bass head until i got my que",
+          "timestamp": "2026-08-02T04:26:36+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p177ll0",
+              "author": "reddit_user_bd40fcc7c0e7",
+              "author_karma": 0,
+              "content": "explain ",
+              "timestamp": "2026-08-02T05:03:28+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p172ixa",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p18t4on",
+                  "author": "reddit_user_b97e7aa0c6ec",
+                  "author_karma": 0,
+                  "content": "Turns out i really like \"natural sounding iem\" where vocals sounds full both males and females, mids are present without the bass bloat, and engaging natural treble",
+                  "timestamp": "2026-08-02T12:36:58+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p177ll0",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p19f8zv",
+                      "author": "reddit_user_bd40fcc7c0e7",
+                      "author_karma": 0,
+                      "content": "i don't think sivga que is that, it clearly sounds too warm to be neutral i don't like it for it.",
+                      "timestamp": "2026-08-02T14:36:48+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p18t4on",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p17c87s",
+          "author": "reddit_user_284ac8ba3d82",
+          "author_karma": 0,
+          "content": "TRI Clarion eartips work for me, only trouble's the stems are so soft they tend to slide off the Que's nozzles.",
+          "timestamp": "2026-08-02T05:38:57+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p187yr1",
+          "author": "reddit_user_747e36e53d2b",
+          "author_karma": 0,
+          "content": "Is it good for rock and metal?",
+          "timestamp": "2026-08-02T10:02:27+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p18wpqw",
+          "author": "reddit_user_06340e841b2a",
+          "author_karma": 0,
+          "content": "\"an easy recommendation for anyone\"\n\nwith this amount of excessive treble? doubt.\n\nhttps://preview.redd.it/n1rd442xlygh1.png?width=1310&format=png&auto=webp&s=44fdf1b0103f85a32abbad31e07d43e3f7e7ac5f\n\n",
+          "timestamp": "2026-08-02T12:58:13+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run019_post04_seed099",
+      "post_slot": 4,
+      "seed_index": 99,
+      "source_raw_post_id": "1vd4ond",
+      "source_product_dir": "HeadphoneAdvice",
+      "source_file": "https://www.reddit.com/r/HeadphoneAdvice/comments/1vd4ond/airpod_cmf_buds_pro_2/",
+      "post_type": "Headphones - Wireless/Portable",
+      "title": "AirPod -> CMF buds pro 2",
+      "author": "reddit_user_d43b8c7b6255",
+      "author_karma": 0,
+      "content": "AirPod -> CMF buds pro 2\n\nHi! I was gifted a pair of AirPods years ago and have genuinely used them everyday. I love them, but as all things do my time with them is coming to an end. \n\nI am wanting to get a new pair and through some quick searching found these CMF buds. They seem to fit what the quality of music and audiobook audio I enjoy from my AirPods and certainly for a better price.\n\nFirst: Are these as genuinely as good of quality as the regular AirPods? Better perhaps?\n\nSecond:  is the website the best place to purchase these? Seems they’ll run me \\~$60 and that seems almost too good to be true? \n\nP.S. I’ve been lucky enough to not have bought my own headphones besides some cheap wired skullcandies in YEARS, I apologize for my inexperience and thank yall in advance!",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p16bhei",
+          "author": "reddit_user_56c0bcf5fd80",
+          "author_karma": 0,
+          "content": "Thanks for your [submission](https://www.reddit.com/r/HeadphoneAdvice/comments/1vd4ond/airpod_cmf_buds_pro_2/) to r/HeadphoneAdvice. If someone helps answer your question, please reward them by including the phrase `!thanks` in your comment. \n\nThis will add +1 Ω to that users flair. This subreddit is powered entirely by volunteers and a little recognition goes a long way. Good luck on your search for headphones!\n\n\n*I am a bot, and this action was performed automatically. Please [contact the moderators of this subreddit](/message/compose/?to=/r/HeadphoneAdvice) if you have any questions or concerns.*",
+          "timestamp": "2026-08-02T01:31:54+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    }
+  ]
+}

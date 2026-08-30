@@ -1,0 +1,879 @@
+{
+  "meta": {
+    "product_category": "sports",
+    "baseline": "real_reddit_reference",
+    "run_id": "run_019_sampled_reddit"
+  },
+  "posts": [
+    {
+      "post_id": "real_run019_post00_seed095",
+      "post_slot": 0,
+      "seed_index": 95,
+      "source_raw_post_id": "1veqmbe",
+      "source_product_dir": "nfl",
+      "source_file": "https://www.reddit.com/r/nfl/comments/1veqmbe/highlight_emmitt_smith_slams_the_door_on_the/",
+      "post_type": "Highlight",
+      "title": "[Highlight] Emmitt Smith slams the door on the Packers (1995 NFCCG)",
+      "author": "reddit_user_79ff14d8816f",
+      "author_karma": 0,
+      "content": "[Highlight] Emmitt Smith slams the door on the Packers (1995 NFCCG)",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p1j4bor",
+          "author": "reddit_user_c85a9d6c4c50",
+          "author_karma": 0,
+          "content": "Another '90s season where it was quite clear the NFC winner was going to win the Super Bowl.",
+          "timestamp": "2026-08-03T21:38:54+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1j5lga",
+              "author": "reddit_user_f004dab6581d",
+              "author_karma": 0,
+              "content": "Imagine losing to an AFC team in the superbowl, after the NFC has won for 13 years straight.\n\n:(",
+              "timestamp": "2026-08-03T21:44:50+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1j4bor",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1jd2dq",
+                  "author": "reddit_user_c85a9d6c4c50",
+                  "author_karma": 0,
+                  "content": "Hey at least your team got that big Super Bowl win in '96.",
+                  "timestamp": "2026-08-03T22:20:37+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1j5lga",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p1j4s8b",
+          "author": "reddit_user_d5093401de3b",
+          "author_karma": 0,
+          "content": "9:30 left on the clock. Crazy what a two score lead felt like back then compared to now",
+          "timestamp": "2026-08-03T21:41:04+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1j5scg",
+              "author": "reddit_user_f2deae91b394",
+              "author_karma": 0,
+              "content": "Which is funny considering that the game was pretty high scoring.",
+              "timestamp": "2026-08-03T21:45:43+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1j4s8b",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p1jhdwm",
+              "author": "reddit_user_8ceee4efbdbc",
+              "author_karma": 0,
+              "content": "The title is backwards looking, but at least in the moment, the Packers had emptied their playbook, Cowboys had been playing dirty and knocked some guys out, and by this point you could tell the team was gassed.  Even with 5 minutes left they had functionally thrown in the towel.",
+              "timestamp": "2026-08-03T22:42:25+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1j4s8b",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1jorho",
+                  "author": "reddit_user_76387eeeac46",
+                  "author_karma": 0,
+                  "content": "One of Favre’s best games that no one ever talks about. Dude played his heart out despite getting hit a ton",
+                  "timestamp": "2026-08-03T23:20:37+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1jhdwm",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p1j5ce1",
+          "author": "reddit_user_146ff89ede8d",
+          "author_karma": 0,
+          "content": "Been downhill ever since",
+          "timestamp": "2026-08-03T21:43:40+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1j9kgg",
+          "author": "reddit_user_ff68b08af299",
+          "author_karma": 0,
+          "content": "Emmitt Smith vs the Packers:\n\n214 carries for 871 yards (average 87); 4.4y/a; 10 TDs in 10 games",
+          "timestamp": "2026-08-03T22:03:39+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run019_post01_seed096",
+      "post_slot": 1,
+      "seed_index": 96,
+      "source_raw_post_id": "1veqmh5",
+      "source_product_dir": "nfl",
+      "source_file": "https://www.reddit.com/r/nfl/comments/1veqmh5/aaron_rodgers_clown_goes_off_on_tony_fauci_and/",
+      "post_type": "reddit_post",
+      "title": "Aaron Rodgers (Clown) goes off on Tony Fauci and ESPN on The Patterson McAfee Show",
+      "author": "reddit_user_79ff14d8816f",
+      "author_karma": 0,
+      "content": "Aaron Rodgers (Clown) goes off on Tony Fauci and ESPN on The Patterson McAfee Show\n\n&#x200B;\n\nWhere is this energy from him when anyone on his side pleads the fifth?",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p1j2lp1",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-03T21:30:55+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1j2x2c",
+          "author": "reddit_user_2d1b6d4c4e73",
+          "author_karma": 0,
+          "content": "not the first time, wont be the last.",
+          "timestamp": "2026-08-03T21:32:23+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1j2xbc",
+          "author": "reddit_user_c84839da5219",
+          "author_karma": 0,
+          "content": "People were starting to soften on Rodgers and point out that he’s not that bad anymore. A true return to his old form. ",
+          "timestamp": "2026-08-03T21:32:25+00:00",
+          "likes": 3,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1j31y7",
+              "author": "reddit_user_35ba7bc9bc81",
+              "author_karma": 0,
+              "content": "I don't think they were softening up, I think most of them were immunized. ",
+              "timestamp": "2026-08-03T21:33:01+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1j2xbc",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1j4lzz",
+                  "author": "[deleted]",
+                  "author_karma": 0,
+                  "content": "[removed]",
+                  "timestamp": "2026-08-03T21:40:15+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1j31y7",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            },
+            {
+              "comment_id": "p1j3ee8",
+              "author": "reddit_user_c85a9d6c4c50",
+              "author_karma": 0,
+              "content": "The equivalent of an antagonist in a show having a lighthearted scene toward the end of the episode where they seem somewhat likable only to return to their true self by the next episode.",
+              "timestamp": "2026-08-03T21:34:36+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1j2xbc",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1j3hig",
+                  "author": "reddit_user_35ba7bc9bc81",
+                  "author_karma": 0,
+                  "content": "Frieza Black and Yellow?",
+                  "timestamp": "2026-08-03T21:35:00+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1j3ee8",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1j3yk5",
+                      "author": "reddit_user_aa8727458404",
+                      "author_karma": 0,
+                      "content": "Nerrrrrd",
+                      "timestamp": "2026-08-03T21:37:12+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1j3hig",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "comment_id": "p1j401u",
+              "author": "[deleted]",
+              "author_karma": 0,
+              "content": "[removed]",
+              "timestamp": "2026-08-03T21:37:24+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1j2xbc",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1j2yef",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-03T21:32:33+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1j2yx1",
+          "author": "reddit_user_9e5d1a9f1afa",
+          "author_karma": 0,
+          "content": "Who cares? How do yall get so wrapped up in the political opinions of athletes. Dudes an idiot and always has been, move on",
+          "timestamp": "2026-08-03T21:32:37+00:00",
+          "likes": 0,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1j3dsa",
+              "author": "reddit_user_2902d3e41d18",
+              "author_karma": 0,
+              "content": "He volunteers these opinions and is actively political. He deserves to be mocked regardless of what you think. ",
+              "timestamp": "2026-08-03T21:34:32+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1j2yx1",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1j3why",
+                  "author": "reddit_user_9e5d1a9f1afa",
+                  "author_karma": 0,
+                  "content": "Wow you guys are mocking him on Reddit, what a difference you guys are making. He must’ve changed his views by now since he’s had the same public political views for years now!",
+                  "timestamp": "2026-08-03T21:36:57+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1j3dsa",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1j4rqc",
+                      "author": "reddit_user_e72a33d8c4cf",
+                      "author_karma": 0,
+                      "content": "If you think the GOP actively and publicly trying to imprison a former chief medical advisor to the President is just a political opinion, you are woefully unprepared to have a basic conversation on how dangerous of a precedent they are trying to set",
+                      "timestamp": "2026-08-03T21:41:00+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1j3why",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "p1j5m9d",
+                          "author": "reddit_user_9e5d1a9f1afa",
+                          "author_karma": 0,
+                          "content": "Aaron Rodgers has zero influence on any of that chief 🤣\n\nAgain who gives a fuck what his dumbass has to say",
+                          "timestamp": "2026-08-03T21:44:56+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "p1j4rqc",
+                          "depth": 4,
+                          "replies": [
+                            {
+                              "comment_id": "p1j82fi",
+                              "author": "reddit_user_e72a33d8c4cf",
+                              "author_karma": 0,
+                              "content": "His opinion is being broadcast on a major platform for millions to see and it's subjectively incorrect ",
+                              "timestamp": "2026-08-03T21:56:29+00:00",
+                              "likes": 1,
+                              "dislikes": 0,
+                              "parent_comment_id": "p1j5m9d",
+                              "depth": 5,
+                              "replies": [
+                                {
+                                  "comment_id": "p1j90ls",
+                                  "author": "reddit_user_9e5d1a9f1afa",
+                                  "author_karma": 0,
+                                  "content": "Millions of people have now changed their political views because of Aaron Rodgers on the Pat McAfee show. Surely this is how the human brain works. ",
+                                  "timestamp": "2026-08-03T22:01:02+00:00",
+                                  "likes": 1,
+                                  "dislikes": 0,
+                                  "parent_comment_id": "p1j82fi",
+                                  "depth": 6,
+                                  "replies": []
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "comment_id": "p1j52k2",
+                      "author": "reddit_user_2902d3e41d18",
+                      "author_karma": 0,
+                      "content": "Many athletes become politicians or try to. They’re not immune from scrutiny. \n\nNo one should be mocked for saying stupid things. You certainly shouldn’t. ",
+                      "timestamp": "2026-08-03T21:42:24+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1j3why",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "p1j6yjs",
+                          "author": "reddit_user_9e5d1a9f1afa",
+                          "author_karma": 0,
+                          "content": "Great and when Aaron Rodgers decides to run in my district/state I’ll take the time to be subjected to his views so I can reflect my own in my vote.\n\nUntil then, who gives a fuck what any athlete has to say politically. Incredible to me how many of you equate meaningless Reddit comments with thousands of likeminded people as some kind of political action. Pathetic ",
+                          "timestamp": "2026-08-03T21:51:13+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "p1j52k2",
+                          "depth": 4,
+                          "replies": [
+                            {
+                              "comment_id": "p1j7q72",
+                              "author": "reddit_user_2902d3e41d18",
+                              "author_karma": 0,
+                              "content": "Okay, chief. ",
+                              "timestamp": "2026-08-03T21:54:52+00:00",
+                              "likes": 1,
+                              "dislikes": 0,
+                              "parent_comment_id": "p1j6yjs",
+                              "depth": 5,
+                              "replies": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p1j3091",
+          "author": "reddit_user_8698ecbb8cf4",
+          "author_karma": 0,
+          "content": "its only one more season its only one more season its only one more season its only one more season its only one more season its only one more season its only one more season its only one more season its only one more season its only one more season its only one more season its only one more season its only one more season its only one more season",
+          "timestamp": "2026-08-03T21:32:48+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1j3hoh",
+              "author": "[deleted]",
+              "author_karma": 0,
+              "content": "[removed]",
+              "timestamp": "2026-08-03T21:35:01+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1j3091",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1j30ib",
+          "author": "reddit_user_8d7fa9559435",
+          "author_karma": 0,
+          "content": "Glad we have another posting on this topic fuckyourwifeallday",
+          "timestamp": "2026-08-03T21:32:50+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1j3adx",
+              "author": "reddit_user_35ba7bc9bc81",
+              "author_karma": 0,
+              "content": "If it's been posted before the search function failed me ",
+              "timestamp": "2026-08-03T21:34:06+00:00",
+              "likes": 2,
+              "dislikes": 0,
+              "parent_comment_id": "p1j30ib",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1j3xli",
+                  "author": "[deleted]",
+                  "author_karma": 0,
+                  "content": "[removed]",
+                  "timestamp": "2026-08-03T21:37:06+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1j3adx",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            },
+            {
+              "comment_id": "p1j3swy",
+              "author": "reddit_user_54481fdbfe41",
+              "author_karma": 0,
+              "content": "Well if the mods would stop removing them, they'd show up on the search",
+              "timestamp": "2026-08-03T21:36:29+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1j30ib",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p1j3uf6",
+              "author": "reddit_user_d205d350cdfb",
+              "author_karma": 0,
+              "content": "Clearly they were too busy fucking wives and missed the other posts",
+              "timestamp": "2026-08-03T21:36:41+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1j30ib",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1j313p",
+          "author": "reddit_user_ab13d6f2f0b8",
+          "author_karma": 0,
+          "content": "[REDDIT_USER] gives Aaron Rodgers an even larger platform to spread these views",
+          "timestamp": "2026-08-03T21:32:54+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1j35q4",
+          "author": "reddit_user_edf8c83bf3b5",
+          "author_karma": 0,
+          "content": "I do not give even a little bit of a shit. \n\nIt was a way bigger deal he called out the Russini situation.",
+          "timestamp": "2026-08-03T21:33:30+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1j38i5",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-03T21:33:51+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1j39r7",
+          "author": "reddit_user_ab13d6f2f0b8",
+          "author_karma": 0,
+          "content": "[REDDIT_USER] gives Aaron Rodgers an even larger platform to spread these views",
+          "timestamp": "2026-08-03T21:34:01+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1j3bue",
+          "author": "reddit_user_32e40090b0f9",
+          "author_karma": 0,
+          "content": "Do I give a shit about Aaron's political views? ",
+          "timestamp": "2026-08-03T21:34:17+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1j3dfi",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-03T21:34:29+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1j3l3a",
+          "author": "reddit_user_74a9b5e947de",
+          "author_karma": 0,
+          "content": "ice clown loses town crown",
+          "timestamp": "2026-08-03T21:35:28+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1j3yng",
+              "author": "reddit_user_7a3a947a9981",
+              "author_karma": 0,
+              "content": "What are your thoughts on calzones?",
+              "timestamp": "2026-08-03T21:37:13+00:00",
+              "likes": 2,
+              "dislikes": 0,
+              "parent_comment_id": "p1j3l3a",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1j4bng",
+                  "author": "reddit_user_74a9b5e947de",
+                  "author_karma": 0,
+                  "content": "Perfection",
+                  "timestamp": "2026-08-03T21:38:54+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1j3yng",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p1j3s31",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-03T21:36:23+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1j3sxa",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-03T21:36:29+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1j3tll",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-03T21:36:35+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1j3yo0",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-03T21:37:13+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1j40h6",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-03T21:37:28+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1j41ri",
+          "author": "reddit_user_9ac11048aa6e",
+          "author_karma": 0,
+          "content": "Such a dork. No matter the question he was going to find a way to bring up Fauci. Aaron needs to lay off the ayahuasca. ",
+          "timestamp": "2026-08-03T21:37:38+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1j49zg",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-03T21:38:41+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run019_post02_seed097",
+      "post_slot": 2,
+      "seed_index": 97,
+      "source_raw_post_id": "1ver0jh",
+      "source_product_dir": "soccer",
+      "source_file": "https://www.reddit.com/r/soccer/comments/1ver0jh/put_fabrizio_romano_back_in_this_sub/",
+      "post_type": ":n_opinion: Opinion Piece",
+      "title": "Put Fabrizio Romano back in this sub",
+      "author": "reddit_user_79ff14d8816f",
+      "author_karma": 0,
+      "content": "Put Fabrizio Romano back in this sub\n\n[removed]",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p1j5qmw",
+          "author": "reddit_user_e8d8c99d18e1",
+          "author_karma": 0,
+          "content": "This post has been removed by AutoModerator.\n\nYour account must be old enough or have enough comment karma before you can create a post on /r/soccer. You can participate in other people's threads first and build that naturally.\n\nIf you're new to the sport and want to ask a question then check out /r/SoccerNoobs.\n\n*I am a bot, and this action was performed automatically. Please [contact the moderators of this subreddit](/message/compose/?to=/r/soccer) if you have any questions or concerns.*",
+          "timestamp": "2026-08-03T21:45:30+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1j5qrr",
+          "author": "reddit_user_e8d8c99d18e1",
+          "author_karma": 0,
+          "content": "**The OP has marked this post as an Opinion piece. If you think it was a great contribution, upvote this comment so we add it to the Star Posts collection of the subreddit**\n\n*I am a bot, and this action was performed automatically. Please [contact the moderators of this subreddit](/message/compose/?to=/r/soccer) if you have any questions or concerns.*",
+          "timestamp": "2026-08-03T21:45:31+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run019_post03_seed098",
+      "post_slot": 3,
+      "seed_index": 98,
+      "source_raw_post_id": "1ver49d",
+      "source_product_dir": "soccer",
+      "source_file": "https://www.reddit.com/r/soccer/comments/1ver49d/the_algerian_football_federation_faf_announces/",
+      "post_type": ":n_official: Official Source",
+      "title": "The Algerian Football Federation (FAF) announces that the contractual relationship between itself and the national team manager, Mr Vladimir PETKOVIC, as well as his coaching staff, has officially come to an end today, by mutual agreement.",
+      "author": "reddit_user_79ff14d8816f",
+      "author_karma": 0,
+      "content": "The Algerian Football Federation (FAF) announces that the contractual relationship between itself and the national team manager, Mr Vladimir PETKOVIC, as well as his coaching staff, has officially come to an end today, by mutual agreement.\n\nThe FAF would like to express its deep gratitude to Mr Vladimir PETKOVIC and his entire staff for their professionalism, commitment and dedication during the twenty-nine (29) months they spent at the helm of the national team.\n\nThe Federation extends its sincere thanks to them for their work and wishes them every success in their future professional careers.",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p1j8im6",
+          "author": "reddit_user_664c9a1813b3",
+          "author_karma": 0,
+          "content": "So it took Petkovic one month to negotiate his compensation after he was sacked because of losing against Switzerland, the team he managed from 2014 to 2021.",
+          "timestamp": "2026-08-03T21:58:39+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1j9wae",
+          "author": "reddit_user_47666d6515f9",
+          "author_karma": 0,
+          "content": "So long bozo",
+          "timestamp": "2026-08-03T22:05:13+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1jk4xk",
+              "author": "reddit_user_9317552db6e5",
+              "author_karma": 0,
+              "content": "You're free from this leech. Great week for us both!",
+              "timestamp": "2026-08-03T22:56:26+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1j9wae",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1jik4a",
+          "author": "reddit_user_f9908d288407",
+          "author_karma": 0,
+          "content": "Thank God",
+          "timestamp": "2026-08-03T22:48:21+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run019_post04_seed099",
+      "post_slot": 4,
+      "seed_index": 99,
+      "source_raw_post_id": "1verggh",
+      "source_product_dir": "nba",
+      "source_file": "https://www.reddit.com/r/nba/comments/1verggh/jeff_teague_beats_nba_draft_combine_scores_17/",
+      "post_type": "rich:video",
+      "title": "Jeff Teague BEATS NBA Draft Combine Scores 17 Years Later",
+      "author": "reddit_user_79ff14d8816f",
+      "author_karma": 0,
+      "content": "Jeff Teague BEATS NBA Draft Combine Scores 17 Years Later",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p1jauw1",
+          "author": "reddit_user_dfd14947f368",
+          "author_karma": 0,
+          "content": "Isn’t he in his late 30s? It makes sense if he’s kept training and kept up with working out at least. ",
+          "timestamp": "2026-08-03T22:09:50+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1jl1s4",
+              "author": "reddit_user_3b8cdd853c96",
+              "author_karma": 0,
+              "content": "Less impact phases sine he isn’t running or walking anymore just sitting on his podcast ",
+              "timestamp": "2026-08-03T23:01:07+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1jauw1",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1jbl2o",
+          "author": "reddit_user_0dc85ea1928b",
+          "author_karma": 0,
+          "content": "damn he did this again?!? he did it like a month ago too, what an athlete ",
+          "timestamp": "2026-08-03T22:13:22+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1jeicc",
+          "author": "reddit_user_6ac4a34215f7",
+          "author_karma": 0,
+          "content": "Dude loves trolling. ",
+          "timestamp": "2026-08-03T22:27:49+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1jgbvq",
+              "author": "reddit_user_846c1ab5b05b",
+              "author_karma": 0,
+              "content": "Have you seen the new jeff teague video? ",
+              "timestamp": "2026-08-03T22:37:00+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1jeicc",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

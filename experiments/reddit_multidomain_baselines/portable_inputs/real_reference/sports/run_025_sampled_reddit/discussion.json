@@ -1,0 +1,1739 @@
+{
+  "meta": {
+    "product_category": "sports",
+    "baseline": "real_reddit_reference",
+    "run_id": "run_025_sampled_reddit"
+  },
+  "posts": [
+    {
+      "post_id": "real_run025_post00_seed125",
+      "post_slot": 0,
+      "seed_index": 125,
+      "source_raw_post_id": "1vevq0o",
+      "source_product_dir": "baseball",
+      "source_file": "https://www.reddit.com/r/baseball/comments/1vevq0o/lowlight_willy_adames_attempts_to_get_joc/",
+      "post_type": "Video",
+      "title": "[Lowlight] Willy Adames attempts to get Joc Pederson out on a jump throw at short",
+      "author": "reddit_user_79ff14d8816f",
+      "author_karma": 0,
+      "content": "[Lowlight] Willy Adames attempts to get Joc Pederson out on a jump throw at short",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p1k7vzz",
+          "author": "reddit_user_6cb30aa740fb",
+          "author_karma": 0,
+          "content": "Not enough Strength to make a strong throw like that ",
+          "timestamp": "2026-08-04T01:03:25+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1k86fz",
+              "author": "reddit_user_5bbd19d0b207",
+              "author_karma": 0,
+              "content": "Considering it flew into the dugout fence on the fly, I feel like strength isn’t the issue ",
+              "timestamp": "2026-08-04T01:05:01+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1k7vzz",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1k8b2i",
+                  "author": "reddit_user_6cb30aa740fb",
+                  "author_karma": 0,
+                  "content": "Yeah I was just making fun of the old Jeter highlight ",
+                  "timestamp": "2026-08-04T01:05:43+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1k86fz",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1k9dx4",
+                      "author": "reddit_user_5bbd19d0b207",
+                      "author_karma": 0,
+                      "content": "Went over my head",
+                      "timestamp": "2026-08-04T01:11:37+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1k8b2i",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "comment_id": "p1k8fnr",
+              "author": "reddit_user_eec3e7c3652a",
+              "author_karma": 0,
+              "content": "He's no [Denver Bryant](https://www.reddit.com/r/baseball/comments/1ve0qto/the_boston_hunters_sabrina_robinson_makes_a_great/)",
+              "timestamp": "2026-08-04T01:06:25+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1k7vzz",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1k7yob",
+          "author": "reddit_user_5bbd19d0b207",
+          "author_karma": 0,
+          "content": "Lmao it looked so good until I saw where the first baseman was",
+          "timestamp": "2026-08-04T01:03:50+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1k7yre",
+          "author": "reddit_user_d08f23ddfd30",
+          "author_karma": 0,
+          "content": "![gif](giphy|ep78UZy5FVbfN6mhCU)",
+          "timestamp": "2026-08-04T01:03:50+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1k80m8",
+          "author": "reddit_user_c9ed35af0ec5",
+          "author_karma": 0,
+          "content": "C- for effort",
+          "timestamp": "2026-08-04T01:04:08+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1kchic",
+              "author": "reddit_user_3257ec97c290",
+              "author_karma": 0,
+              "content": "...don't get why you try the jump throw there. Joc isn't exactly a blazing runner, your momentum is in the wrong direction but take the step to plant your feet so you can make an accurate throw.",
+              "timestamp": "2026-08-04T01:28:45+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1k80m8",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1k8269",
+          "author": "reddit_user_a8c2e570ce64",
+          "author_karma": 0,
+          "content": "I remember during the padres series they said he refused to work with Ron washington, who helped Arraez become a good defender",
+          "timestamp": "2026-08-04T01:04:22+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1k8cru",
+              "author": "reddit_user_69d0df8c4f43",
+              "author_karma": 0,
+              "content": "I'm pretty sure that was made up. Posey even came out said that Willy works with Washington several times a week",
+              "timestamp": "2026-08-04T01:05:59+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1k8269",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1ka3kq",
+                  "author": "reddit_user_143b1ecdbd71",
+                  "author_karma": 0,
+                  "content": "They guy just said Wash said it's been harder to get Adames to work on defence every day but he's been doing it more lately. Adames complained to Giants PR, and Vitello did one of his word-vomit press conferences and blew it way out of proportion, without even knowing what Dontrelle said.",
+                  "timestamp": "2026-08-04T01:15:33+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1k8cru",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1kdzmw",
+                      "author": "reddit_user_f6a0fb826070",
+                      "author_karma": 0,
+                      "content": "That’s literally nonsense you can go read the article. He hasn’t been able to do intense work with him like Arraez was because he has been dealing with a back injury all year",
+                      "timestamp": "2026-08-04T01:37:06+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1ka3kq",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                },
+                {
+                  "comment_id": "p1kuizo",
+                  "author": "reddit_user_babc58f4d5e4",
+                  "author_karma": 0,
+                  "content": "You really think someone would do that? Just go onto a national broadcast and make something up? \n\n/s",
+                  "timestamp": "2026-08-04T03:11:25+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1k8cru",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            },
+            {
+              "comment_id": "p1kdejc",
+              "author": "reddit_user_f6a0fb826070",
+              "author_karma": 0,
+              "content": "That was slop. He has had a back injury all year and all the said is he isn’t able to work with him as much as Arraez and as much as they’d like him to, but he still is working with him regularly ",
+              "timestamp": "2026-08-04T01:33:51+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1k8269",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1k89s3",
+          "author": "reddit_user_b637a146d499",
+          "author_karma": 0,
+          "content": "Watching the post trade deadline 2026 San Francisco Giants might be the biggest challenge for my baseball fandom.",
+          "timestamp": "2026-08-04T01:05:32+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1k9nz4",
+              "author": "reddit_user_1e568fded098",
+              "author_karma": 0,
+              "content": "On the bright side, its harder to go any lower than this.",
+              "timestamp": "2026-08-04T01:13:10+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1k89s3",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1kdl6m",
+                  "author": "reddit_user_54d878deec92",
+                  "author_karma": 0,
+                  "content": "Mets fans might disagree.",
+                  "timestamp": "2026-08-04T01:34:52+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1k9nz4",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            },
+            {
+              "comment_id": "p1kagry",
+              "author": "reddit_user_4999c3703276",
+              "author_karma": 0,
+              "content": "You’re winning?",
+              "timestamp": "2026-08-04T01:17:35+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1k89s3",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p1kd7tt",
+              "author": "reddit_user_f6a0fb826070",
+              "author_karma": 0,
+              "content": "Outside of this one play they have looked like a legislate good team this game lol",
+              "timestamp": "2026-08-04T01:32:49+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1k89s3",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1k8fc2",
+          "author": "reddit_user_bfd64f4b13e8",
+          "author_karma": 0,
+          "content": "![gif](giphy|8J1QwMjshEm2s)",
+          "timestamp": "2026-08-04T01:06:22+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1k8ivo",
+          "author": "reddit_user_b8e53e190051",
+          "author_karma": 0,
+          "content": "Im more surprised at how fast joc got to first.",
+          "timestamp": "2026-08-04T01:06:55+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1k8j7q",
+          "author": "reddit_user_fc8c7c2e23dd",
+          "author_karma": 0,
+          "content": "At least it didn’t cost the team any runs (or bases, for that matter), unlike the Rangers defense that Cal Quantrill probably wanted to send to “the parking lot” like that kid in the Twilight Zone",
+          "timestamp": "2026-08-04T01:06:58+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1k8kcc",
+          "author": "reddit_user_aacf4bc11c49",
+          "author_karma": 0,
+          "content": "![gif](giphy|mWWAlaVnRCu8o)  \nThis is like when you yell out Kobe! and miss",
+          "timestamp": "2026-08-04T01:07:09+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1k8okn",
+          "author": "reddit_user_dc48e45e5e3f",
+          "author_karma": 0,
+          "content": "I want to know the context of whatever meme they're talking about at the start of this clip",
+          "timestamp": "2026-08-04T01:07:48+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1k9vrf",
+              "author": "reddit_user_719dac8878fd",
+              "author_karma": 0,
+              "content": "[Context is when David Ross (who’s an announcer in this game) flipped Joc Pederson the birds](https://www.si.com/extra-mustard/2022/07/30/cubs-david-ross-apologizes-flipping-double-birds-joc-pederson-giants)",
+              "timestamp": "2026-08-04T01:14:21+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1k8okn",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1kahej",
+                  "author": "reddit_user_dc48e45e5e3f",
+                  "author_karma": 0,
+                  "content": "I see",
+                  "timestamp": "2026-08-04T01:17:41+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1k9vrf",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p1kesgs",
+          "author": "reddit_user_6097810d4f4d",
+          "author_karma": 0,
+          "content": "Jesus Christ man lmfao",
+          "timestamp": "2026-08-04T01:41:30+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1kfpsg",
+          "author": "reddit_user_fff88c7b175e",
+          "author_karma": 0,
+          "content": "He's doing his best, folks. ",
+          "timestamp": "2026-08-04T01:46:35+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1kfqmn",
+          "author": "reddit_user_fff88c7b175e",
+          "author_karma": 0,
+          "content": "He's doing his best, folks.",
+          "timestamp": "2026-08-04T01:46:42+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1kg6bu",
+          "author": "reddit_user_c21e5ffe1328",
+          "author_karma": 0,
+          "content": "Willy \"Draymond\" Adames",
+          "timestamp": "2026-08-04T01:49:09+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1ksh70",
+          "author": "reddit_user_5320c813d259",
+          "author_karma": 0,
+          "content": "With Joc running? Plant the foot and fire it over there ",
+          "timestamp": "2026-08-04T02:58:53+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run025_post01_seed126",
+      "post_slot": 1,
+      "seed_index": 126,
+      "source_raw_post_id": "1vevvlm",
+      "source_product_dir": "soccer",
+      "source_file": "https://www.reddit.com/r/soccer/comments/1vevvlm/la_galaxy_in_advanced_talks_to_sign_chucky_lozano/",
+      "post_type": ":n_transfer: Transfer News",
+      "title": "LA Galaxy in advanced talks to sign Chucky Lozano on loan from San Diego FC: Sources",
+      "author": "reddit_user_79ff14d8816f",
+      "author_karma": 0,
+      "content": "LA Galaxy in advanced talks to sign Chucky Lozano on loan from San Diego FC: Sources",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p1k8wo0",
+          "author": "reddit_user_e8d8c99d18e1",
+          "author_karma": 0,
+          "content": "\nTo reduce the spam of reports regarding the same move during transfer windows we try to allow **only one submission about each transfer saga per day**. The submission in question also needs to contain relevant new information regarding the potential move, and not just being a \"no/minor developments\" report.   \n\nIf there are important/official developments or new valuable information about a saga, we will allow extra threads in the same day, but for the rest of minor news please just comment them as a reply to this comment. Please help us reporting unnecessary threads for being duplicates. \n\n*I am a bot, and this action was performed automatically. Please [contact the moderators of this subreddit](/message/compose/?to=/r/soccer) if you have any questions or concerns.*",
+          "timestamp": "2026-08-04T01:09:01+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1kbjio",
+          "author": "reddit_user_f8df9985cbcb",
+          "author_karma": 0,
+          "content": "he makes more than Infantino i can see why he doesnt want to leave san diego ",
+          "timestamp": "2026-08-04T01:23:31+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1kd65h",
+              "author": "reddit_user_3c7b5d0813ff",
+              "author_karma": 0,
+              "content": "Not to be pedantic but he wants to leave, he just doesn’t want to take a pay cut to do it.\n\nSan Diego tried to get him to give up his contract - hoping that he’d want a shot at making the World Cup squad in a year they were playing at home. But he knew no one would pay him close to his current wage. Or maybe he felt like he didn’t have a shot anyways.\n\nBut San Diego overpaid for him and it made sense at the time - city next to Mexico gets a Mexican star to build a fan base as quickly as possible. And to some degree it might have worked.",
+              "timestamp": "2026-08-04T01:32:33+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1kbjio",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1l6df0",
+                  "author": "reddit_user_b578da78301e",
+                  "author_karma": 0,
+                  "content": "Chucky Lozano is the Deandre ayton of soccer. San Diego should have seen that the moment they were thinking about signing him because since 2019 after he got paid by Napoli he always had a locker room problem everywhere he went and now it happened to them in San Diego. I don’t blame Chucky himself for wanting money but it shows that he only cares about money, not the sport of football or the teams he plays for ",
+                  "timestamp": "2026-08-04T04:28:22+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1kd65h",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "post_id": "real_run025_post02_seed127",
+      "post_slot": 2,
+      "seed_index": 127,
+      "source_raw_post_id": "1vew574",
+      "source_product_dir": "baseball",
+      "source_file": "https://www.reddit.com/r/baseball/comments/1vew574/britton_from_willsammon_the_mets_will_be_joined/",
+      "post_type": "link",
+      "title": "[Britton] From @willsammon, the Mets will be joined in Cleveland by Dedniel Núñez, Jefry Yan, Nate Lavender, Chayce McDermott, Xzavion Curry and Cristian Pache.",
+      "author": "reddit_user_79ff14d8816f",
+      "author_karma": 0,
+      "content": "[Britton] From @willsammon, the Mets will be joined in Cleveland by Dedniel Núñez, Jefry Yan, Nate Lavender, Chayce McDermott, Xzavion Curry and Cristian Pache.",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p1kbcuj",
+          "author": "reddit_user_17132fc61f1e",
+          "author_karma": 0,
+          "content": "Xzavion Curry, Guardians Legend",
+          "timestamp": "2026-08-04T01:22:30+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1kdkcc",
+              "author": "reddit_user_b73368a0d1b5",
+              "author_karma": 0,
+              "content": "Scrabble score god (if allowing proper names)",
+              "timestamp": "2026-08-04T01:34:44+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1kbcuj",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1kk3e3",
+                  "author": "reddit_user_4a974aa32b66",
+                  "author_karma": 0,
+                  "content": "That’s a name that will never have a collision in a hash table ",
+                  "timestamp": "2026-08-04T02:10:59+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1kdkcc",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p1kbham",
+          "author": "reddit_user_824bf62ff3a4",
+          "author_karma": 0,
+          "content": "THE jefry Yan? Oh I can’t wait",
+          "timestamp": "2026-08-04T01:23:11+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1kc1bl",
+              "author": "reddit_user_953b9f439539",
+              "author_karma": 0,
+              "content": "![gif](giphy|aNQGDr6mpMySJZrbNR)",
+              "timestamp": "2026-08-04T01:26:14+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1kbham",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1kg5vz",
+                  "author": "reddit_user_bea44427dfb4",
+                  "author_karma": 0,
+                  "content": "oh wait he made it into the Bigs?",
+                  "timestamp": "2026-08-04T01:49:05+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1kc1bl",
+                  "depth": 2,
+                  "replies": []
+                },
+                {
+                  "comment_id": "p1kg6z9",
+                  "author": "reddit_user_bea44427dfb4",
+                  "author_karma": 0,
+                  "content": "oh wait he made it into the Bigs?",
+                  "timestamp": "2026-08-04T01:49:15+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1kc1bl",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p1kbhuz",
+          "author": "reddit_user_11a50469c3bc",
+          "author_karma": 0,
+          "content": "For the uninitiated, look up Jefry Yan’s strikeout  celebrations.",
+          "timestamp": "2026-08-04T01:23:16+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1kbql0",
+          "author": "reddit_user_341804762cc7",
+          "author_karma": 0,
+          "content": "Wait how are they allowed to call up Curry already? It hasn't been 15 days since they sent him down.",
+          "timestamp": "2026-08-04T01:24:36+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1kbuve",
+              "author": "reddit_user_0f943ace0ac0",
+              "author_karma": 0,
+              "content": "That is waived after a trade. Nats did the same thing with Andrew Alvarez.",
+              "timestamp": "2026-08-04T01:25:16+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1kbql0",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1kczxu",
+                  "author": "reddit_user_7ae158b72f63",
+                  "author_karma": 0,
+                  "content": "That’s actually a really good rule.",
+                  "timestamp": "2026-08-04T01:31:36+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1kbuve",
+                  "depth": 2,
+                  "replies": []
+                },
+                {
+                  "comment_id": "p1kdf7x",
+                  "author": "reddit_user_341804762cc7",
+                  "author_karma": 0,
+                  "content": "Gotcha. Didn't realize it was waived for things other than an IL stint. ",
+                  "timestamp": "2026-08-04T01:33:57+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1kbuve",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p1kbvyc",
+          "author": "reddit_user_b6af45aa601e",
+          "author_karma": 0,
+          "content": "Congratulations to the entirety of our AAA bullpen on their promotions!",
+          "timestamp": "2026-08-04T01:25:25+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1kc6ji",
+          "author": "reddit_user_7557eb1ee47d",
+          "author_karma": 0,
+          "content": "The former A’s fan in me still hopes for the Christian Pache breakout season.",
+          "timestamp": "2026-08-04T01:27:03+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1kkeie",
+              "author": "reddit_user_4a974aa32b66",
+              "author_karma": 0,
+              "content": "Great dude. IIRC good speed and good defense, atrocious bat. ",
+              "timestamp": "2026-08-04T02:12:41+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1kc6ji",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1kc6ou",
+          "author": "reddit_user_8df85902ac69",
+          "author_karma": 0,
+          "content": "Spice mannn\n\nWhat a legend",
+          "timestamp": "2026-08-04T01:27:04+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1kc8uu",
+          "author": "reddit_user_bfd64f4b13e8",
+          "author_karma": 0,
+          "content": "Xzavion Curry and Cristian Pache, 2024 Marlins *legends*",
+          "timestamp": "2026-08-04T01:27:24+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1kceq4",
+          "author": "reddit_user_86c921528e71",
+          "author_karma": 0,
+          "content": "Pache only needs a Nationals stint to complete the NL East run wow",
+          "timestamp": "2026-08-04T01:28:19+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1kg1o5",
+              "author": "reddit_user_bea44427dfb4",
+              "author_karma": 0,
+              "content": "Surprised he hasn't had one.",
+              "timestamp": "2026-08-04T01:48:25+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1kceq4",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1kco8q",
+          "author": "reddit_user_0991ba4a311e",
+          "author_karma": 0,
+          "content": "Y’all wanted us to be more like the Rays and Dodgers so we got Nate Lavendar and Chayce McDermott. What’s the problem?",
+          "timestamp": "2026-08-04T01:29:48+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1kgq2o",
+              "author": "reddit_user_f6df34dae153",
+              "author_karma": 0,
+              "content": "Lavender was originally a Mets prospect. 14th-round pick in 2021. The Rays Rule 5'd him and then returned him (he was rehabbing TJ the entire time).",
+              "timestamp": "2026-08-04T01:52:10+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1kco8q",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1kd9vb",
+          "author": "reddit_user_caeedd616da5",
+          "author_karma": 0,
+          "content": "Cristian Pache, Phillies legend ",
+          "timestamp": "2026-08-04T01:33:08+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1kdjui",
+          "author": "reddit_user_960e5db50e0c",
+          "author_karma": 0,
+          "content": "Reading that headline was: never heard of him, never heard of him, never heard of him, never heard of him, never heard of him, OMG Cristian Pache is still playing?!",
+          "timestamp": "2026-08-04T01:34:40+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1kflt6",
+              "author": "reddit_user_0d009f8aed03",
+              "author_karma": 0,
+              "content": "And then immediate sadness that we now have to root against him",
+              "timestamp": "2026-08-04T01:45:58+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1kdjui",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1kneh4",
+          "author": "reddit_user_73033de1ff68",
+          "author_karma": 0,
+          "content": "Chayce? That's a /r/tragedeigh right there",
+          "timestamp": "2026-08-04T02:29:30+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run025_post03_seed128",
+      "post_slot": 3,
+      "seed_index": 128,
+      "source_raw_post_id": "1vew8fe",
+      "source_product_dir": "baseball",
+      "source_file": "https://www.reddit.com/r/baseball/comments/1vew8fe/final_line_for_bubba_chandler_tonight_in/",
+      "post_type": "reddit_post",
+      "title": "Final line for Bubba Chandler tonight in Milwaukee - 5.2 IP | 2 H | 1 ER | 4 BB | 5 SO - He had a no hitter going into the 5th inning.",
+      "author": "reddit_user_79ff14d8816f",
+      "author_karma": 0,
+      "content": "Final line for Bubba Chandler tonight in Milwaukee - 5.2 IP | 2 H | 1 ER | 4 BB | 5 SO - He had a no hitter going into the 5th inning.",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p1kbtun",
+          "author": "reddit_user_4ccd447bd563",
+          "author_karma": 0,
+          "content": "Watch Nick Gonzales play defense < spoon my eyes out",
+          "timestamp": "2026-08-04T01:25:07+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1kc630",
+              "author": "reddit_user_9af87d61168d",
+              "author_karma": 0,
+              "content": "He is a career DH at best. \n\nHe has no range to get most gettable plays. And by chance he does have a play he finds new ways to fuck em up.",
+              "timestamp": "2026-08-04T01:26:59+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1kbtun",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p1kc8rb",
+              "author": "reddit_user_b6e9f3e82432",
+              "author_karma": 0,
+              "content": "IMO that was Valdez and Chandler, not Nicky",
+              "timestamp": "2026-08-04T01:27:23+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1kbtun",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1kcsf9",
+                  "author": "reddit_user_5bbd19d0b207",
+                  "author_karma": 0,
+                  "content": "You can’t really choose the hop when you’re throwing it in from right field. Gonzales has to pick that\n\nNo arguments on Chandler though. Too busy crying about giving up a run to do his job",
+                  "timestamp": "2026-08-04T01:30:26+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1kc8rb",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1kdl09",
+                      "author": "reddit_user_b6e9f3e82432",
+                      "author_karma": 0,
+                      "content": "He certainly could have laid out for it, but with the runner right there I don’t blame him",
+                      "timestamp": "2026-08-04T01:34:50+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1kcsf9",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p1kc0yf",
+          "author": "reddit_user_5bbd19d0b207",
+          "author_karma": 0,
+          "content": "As with all Chandler starts, it was very good until it *really* wasn’t",
+          "timestamp": "2026-08-04T01:26:11+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1kck50",
+              "author": "reddit_user_f831b590fbbd",
+              "author_karma": 0,
+              "content": "He often cruises until he crashes ",
+              "timestamp": "2026-08-04T01:29:10+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1kc0yf",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1kemff",
+                  "author": "reddit_user_67760967e6b3",
+                  "author_karma": 0,
+                  "content": "3rd time through the order is real",
+                  "timestamp": "2026-08-04T01:40:36+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1kck50",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            },
+            {
+              "comment_id": "p1kd964",
+              "author": "reddit_user_71b434bc8984",
+              "author_karma": 0,
+              "content": "Man those walks always seem to bite him right when he's cruising. 5.2 with only 2 hits and a no-no into the 5th is still a hell of a line though, control will come with more reps",
+              "timestamp": "2026-08-04T01:33:01+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1kc0yf",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1ke37q",
+                  "author": "reddit_user_5bbd19d0b207",
+                  "author_karma": 0,
+                  "content": "He’s just not mentally tough enough to deal with the bad spots he puts himself in",
+                  "timestamp": "2026-08-04T01:37:40+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1kd964",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p1kcqub",
+          "author": "reddit_user_3fff9038cb2f",
+          "author_karma": 0,
+          "content": "Brewers had 7 outs on balls hit 100+ mph. Good outing but they were tagging the ball ",
+          "timestamp": "2026-08-04T01:30:12+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run025_post04_seed129",
+      "post_slot": 4,
+      "seed_index": 129,
+      "source_raw_post_id": "1vew9et",
+      "source_product_dir": "nba",
+      "source_file": "https://www.reddit.com/r/nba/comments/1vew9et/rank_these_six_scorers_at_their_peak_harden_steph/",
+      "post_type": "reddit_post",
+      "title": "Rank these six scorers at their peak : Harden, Steph, Dame, Wade, Luka, SGA",
+      "author": "reddit_user_79ff14d8816f",
+      "author_karma": 0,
+      "content": "Rank these six scorers at their peak : Harden, Steph, Dame, Wade, Luka, SGA\n\n# Harden(2017-2021) \n\n# 31.4 PPG on 44/36/86\n\n# Dame(2019-2023)\n\n# 28.4 PPG on  45/38/91 \n\n# Steph(2016-2021)\n\n# 28 PPG on 48/42/91\n\n# Luka(2021-2026)\n\n# 30.8 PPG on 47/36/76 \n\n# Wade(2006-2011) \n\n# 27 PPG on 49/29/77 \n\n# Shai(2022-2026) \n\n# 30 PPG on 52/35/88",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p1kc6gs",
+          "author": "reddit_user_6d853f0e7e6e",
+          "author_karma": 0,
+          "content": "Steph, SGA, Luka, Harden, Wade, Dame",
+          "timestamp": "2026-08-04T01:27:02+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1kddzq",
+              "author": "reddit_user_fda11e341682",
+              "author_karma": 0,
+              "content": "I like this one. Steph revolutionized the game and deserves the #1 spot.",
+              "timestamp": "2026-08-04T01:33:46+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1kc6gs",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1kc8fr",
+          "author": "reddit_user_99ab894080dc",
+          "author_karma": 0,
+          "content": "SGA is clearly the best and you know I am unbiased because I am clearly an Ajay Mitchell fan",
+          "timestamp": "2026-08-04T01:27:20+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1kccu1",
+          "author": "reddit_user_c7bc067d6a06",
+          "author_karma": 0,
+          "content": "The Flash. All day, every day. ",
+          "timestamp": "2026-08-04T01:28:02+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1kczs0",
+              "author": "reddit_user_1c35f6e95437",
+              "author_karma": 0,
+              "content": "This is the only answer. ",
+              "timestamp": "2026-08-04T01:31:34+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1kccu1",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1ke3nn",
+                  "author": "reddit_user_c7bc067d6a06",
+                  "author_karma": 0,
+                  "content": "Out of the listed players, Wade is the only one that is a lockdown defender. That gives him the edge. He is also the most athletic and has a mean streak. ",
+                  "timestamp": "2026-08-04T01:37:44+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1kczs0",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p1kcd66",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-04T01:28:05+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1kcda4",
+          "author": "reddit_user_44306999712c",
+          "author_karma": 0,
+          "content": "Steph with the 28ppg and almost shooting 50/40/90 stands out the most for me",
+          "timestamp": "2026-08-04T01:28:06+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1kcisa",
+          "author": "reddit_user_0999ba9af1eb",
+          "author_karma": 0,
+          "content": "LeBron Raymone James Sr #1",
+          "timestamp": "2026-08-04T01:28:57+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1kcmjr",
+          "author": "reddit_user_fd8fa6dd68d7",
+          "author_karma": 0,
+          "content": "Shai, Steph, Luka, Harden, Dame, Wade",
+          "timestamp": "2026-08-04T01:29:32+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1kcqcj",
+          "author": "reddit_user_c5e2a76e54b6",
+          "author_karma": 0,
+          "content": "Steph, Harden, Luka, Wade, SGA, Dame",
+          "timestamp": "2026-08-04T01:30:07+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1kcwfi",
+              "author": "reddit_user_674553ee4bb2",
+              "author_karma": 0,
+              "content": "Agreed except wade is at the bottom. Agree on rest of order ",
+              "timestamp": "2026-08-04T01:31:04+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1kcqcj",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1kd110",
+                  "author": "reddit_user_af9b289b48e0",
+                  "author_karma": 0,
+                  "content": "Wade went on to average 40ppg when he was down 0-2 in the finals ",
+                  "timestamp": "2026-08-04T01:31:46+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1kcwfi",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1ke9pb",
+                      "author": "reddit_user_c7bc067d6a06",
+                      "author_karma": 0,
+                      "content": "Dude is probably a jit. Ranking Wade any lower than 2 is just plain dumb. ",
+                      "timestamp": "2026-08-04T01:38:40+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1kd110",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                },
+                {
+                  "comment_id": "p1kerwb",
+                  "author": "reddit_user_d2a70de05585",
+                  "author_karma": 0,
+                  "content": "Nah, Dame is at the bottom for sure. He really shouldn’t even be in this convo. Keep in mind, Wade had that stat line in the mid-2000’s. People weren’t shooting 3’s like that yet",
+                  "timestamp": "2026-08-04T01:41:25+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1kcwfi",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            },
+            {
+              "comment_id": "p1kd6zl",
+              "author": "reddit_user_6de3b2ee590c",
+              "author_karma": 0,
+              "content": "Sga ahead of wade for me\n\nSga is a consistent 30 a game scorer, he doesn’t shoot 50 then go missing for 5 games he will give you 25-35 points every single night ",
+              "timestamp": "2026-08-04T01:32:41+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1kcqcj",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p1keo8d",
+              "author": "reddit_user_9c16bc39ec87",
+              "author_karma": 0,
+              "content": "“They sleep.”\n\nDame’s burner ",
+              "timestamp": "2026-08-04T01:40:53+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1kcqcj",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1kcqxz",
+          "author": "reddit_user_b346d5ea5c42",
+          "author_karma": 0,
+          "content": "Steph if we’re talking just scoring\n\nWade if we’re doing all-around",
+          "timestamp": "2026-08-04T01:30:12+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1kcraf",
+          "author": "reddit_user_1644c9cf52d8",
+          "author_karma": 0,
+          "content": "Idk but Dame is last",
+          "timestamp": "2026-08-04T01:30:15+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1kcsha",
+          "author": "reddit_user_dfd14947f368",
+          "author_karma": 0,
+          "content": "Shai getting 30 ppg on 52% from the field is insane",
+          "timestamp": "2026-08-04T01:30:27+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1kd2k1",
+          "author": "reddit_user_234b0659d5c4",
+          "author_karma": 0,
+          "content": "Is Luka even at his peak yet? ",
+          "timestamp": "2026-08-04T01:32:00+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1kd2wx",
+          "author": "reddit_user_c5e40d11f4a2",
+          "author_karma": 0,
+          "content": "That peak Harden year in my opinion is the best scoring season I've ever seen. He had sports book putting his over under 42.5 points in one game. His iso efficiency was untouchable, and his points per possession stuff even outpaced MJ and Kobes best years. He was ridiculous that year. Doing things only Wilt had.",
+          "timestamp": "2026-08-04T01:32:03+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1kekax",
+              "author": "reddit_user_9c16bc39ec87",
+              "author_karma": 0,
+              "content": "This opinion gets a lot of hate but Harden is one of the best offensive players ever. ",
+              "timestamp": "2026-08-04T01:40:17+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1kd2wx",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1khuq0",
+                  "author": "reddit_user_fe1da23bd428",
+                  "author_karma": 0,
+                  "content": "PERIOD",
+                  "timestamp": "2026-08-04T01:58:27+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1kekax",
+                  "depth": 2,
+                  "replies": []
+                },
+                {
+                  "comment_id": "p1kj32w",
+                  "author": "reddit_user_9c58f81af3c6",
+                  "author_karma": 0,
+                  "content": "No one would disagree with that",
+                  "timestamp": "2026-08-04T02:05:21+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1kekax",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p1kd3md",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[deleted]",
+          "timestamp": "2026-08-04T01:32:10+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1kd49j",
+          "author": "reddit_user_94ee2fc1272a",
+          "author_karma": 0,
+          "content": "Should really use rTS for this kinda comparison ",
+          "timestamp": "2026-08-04T01:32:16+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1kd5el",
+          "author": "reddit_user_10222fd1d1ab",
+          "author_karma": 0,
+          "content": "Steph Wade Luka Shai Harden Dame ",
+          "timestamp": "2026-08-04T01:32:27+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1kd75g",
+          "author": "reddit_user_fc848c7ebf6f",
+          "author_karma": 0,
+          "content": "Anyone saying SGA is a prisoner of the moment",
+          "timestamp": "2026-08-04T01:32:43+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1kdmeg",
+              "author": "reddit_user_dfd14947f368",
+              "author_karma": 0,
+              "content": "Or he’s just that good already 🤷‍♂️.\n\nYou don’t get back to back mvps and a finals mvp by not being an all time great ",
+              "timestamp": "2026-08-04T01:35:03+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1kd75g",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1kfs6h",
+                  "author": "reddit_user_1db69461d4f3",
+                  "author_karma": 0,
+                  "content": "Yea, you get it by foul baiting worse then Harden. Just because you get to the line alot doesn't make you a good shooter ",
+                  "timestamp": "2026-08-04T01:46:57+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1kdmeg",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1kgekr",
+                      "author": "reddit_user_dfd14947f368",
+                      "author_karma": 0,
+                      "content": "You decided to reply to me using a false narrative? Mind you harden doesn’t have back to back mvps nor a finals MVP so your point isn’t valid ",
+                      "timestamp": "2026-08-04T01:50:25+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1kfs6h",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "p1kgwpn",
+                          "author": "reddit_user_1db69461d4f3",
+                          "author_karma": 0,
+                          "content": "False Narrative? SGA and Luka get Fouled more then anyone in the league. That's not a narrative that's fact.",
+                          "timestamp": "2026-08-04T01:53:10+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "p1kgekr",
+                          "depth": 4,
+                          "replies": [
+                            {
+                              "comment_id": "p1kh32w",
+                              "author": "reddit_user_dfd14947f368",
+                              "author_karma": 0,
+                              "content": "It’s a narrative that he foul baits worse than harden. Luka really does foul bait, sga leads the league behind Giannis in drives to the rim. That isn’t foul baiting.",
+                              "timestamp": "2026-08-04T01:54:10+00:00",
+                              "likes": 1,
+                              "dislikes": 0,
+                              "parent_comment_id": "p1kgwpn",
+                              "depth": 5,
+                              "replies": [
+                                {
+                                  "comment_id": "p1khhtg",
+                                  "author": "reddit_user_1db69461d4f3",
+                                  "author_karma": 0,
+                                  "content": "Stop playing, they have highlight reals of him jumping into defenders and getting the whistle. \n\nSGA and Giannis are not in the same category. \n\nAnd if we talking Peaks here SGA is still worlds behind Giannis. \n\nAgain Stop Fucking Playing",
+                                  "timestamp": "2026-08-04T01:56:28+00:00",
+                                  "likes": 1,
+                                  "dislikes": 0,
+                                  "parent_comment_id": "p1kh32w",
+                                  "depth": 6,
+                                  "replies": [
+                                    {
+                                      "comment_id": "p1kj1rh",
+                                      "author": "reddit_user_dfd14947f368",
+                                      "author_karma": 0,
+                                      "content": "Not saying they’re in the same category, I’m saying if you drive to the rim, the likelihood that you get fouled is higher. I’d say the reason Shai gets fouled is more so because of how unstoppably shifty he is that it’s impossible to stop him unless he’s fouled, just like Giannis is so physically dominant that you need to foul him so that he doesn’t score. Same thing different lense ",
+                                      "timestamp": "2026-08-04T02:05:09+00:00",
+                                      "likes": 1,
+                                      "dislikes": 0,
+                                      "parent_comment_id": "p1khhtg",
+                                      "depth": 7,
+                                      "replies": []
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "comment_id": "p1khr33",
+                          "author": "reddit_user_fe1da23bd428",
+                          "author_karma": 0,
+                          "content": "Harden finished top 2 in mvp like 5 times. His peak was more impressive than shai, 36ppg is insane. Both are playoff fallers who need to be carried by another creator and their teammates shooting ability to have a chance ",
+                          "timestamp": "2026-08-04T01:57:53+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "p1kgekr",
+                          "depth": 4,
+                          "replies": [
+                            {
+                              "comment_id": "p1kip4e",
+                              "author": "reddit_user_dfd14947f368",
+                              "author_karma": 0,
+                              "content": "Huh? Shai and harden were the primary creators in their teams and were NOT carried at all, and everybody needs their teammates shots to fall, that’s not a them exclusively thing. Harden’s teams lived and died by the 3 ball. And they died when it mattered most. Shia’s teams didn’t and they won a chip.",
+                              "timestamp": "2026-08-04T02:03:09+00:00",
+                              "likes": 1,
+                              "dislikes": 0,
+                              "parent_comment_id": "p1khr33",
+                              "depth": 5,
+                              "replies": [
+                                {
+                                  "comment_id": "p1kizl8",
+                                  "author": "reddit_user_fe1da23bd428",
+                                  "author_karma": 0,
+                                  "content": "shais team was about to die in g7 but Hali tore his Achilles. Thunder were drawing dead in that game before that awful injury. They were still down at halftime ",
+                                  "timestamp": "2026-08-04T02:04:49+00:00",
+                                  "likes": 1,
+                                  "dislikes": 0,
+                                  "parent_comment_id": "p1kip4e",
+                                  "depth": 6,
+                                  "replies": [
+                                    {
+                                      "comment_id": "p1kja05",
+                                      "author": "reddit_user_dfd14947f368",
+                                      "author_karma": 0,
+                                      "content": "Okc was ahead when Hali went off btw, in no world was okc gonna “die” to the pacers in g7 lmfao ",
+                                      "timestamp": "2026-08-04T02:06:25+00:00",
+                                      "likes": 1,
+                                      "dislikes": 0,
+                                      "parent_comment_id": "p1kizl8",
+                                      "depth": 7,
+                                      "replies": []
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "comment_id": "p1kired",
+                  "author": "reddit_user_fe1da23bd428",
+                  "author_karma": 0,
+                  "content": "MVP doesn’t mean the same thing after the 65 game rule. This last mvp felt more like a default ruling than SGA taking it ",
+                  "timestamp": "2026-08-04T02:03:31+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1kdmeg",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1kj5r7",
+                      "author": "reddit_user_dfd14947f368",
+                      "author_karma": 0,
+                      "content": "Did it though? He broke a Wilt record and had the most efficient volume scoring season since 2016 Steph curry. He more than earned both his mvps ",
+                      "timestamp": "2026-08-04T02:05:46+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1kired",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p1kd79h",
+          "author": "reddit_user_4a7450a3bff9",
+          "author_karma": 0,
+          "content": "Steph, Harden, Luka, SGA, Dame, Wade. ",
+          "timestamp": "2026-08-04T01:32:44+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1kd85q",
+          "author": "reddit_user_7b99f90f1143",
+          "author_karma": 0,
+          "content": "Steph, Shai, Harden, Wade, Fluka, Dame",
+          "timestamp": "2026-08-04T01:32:52+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1kdfy4",
+          "author": "reddit_user_1a963fe3f3a4",
+          "author_karma": 0,
+          "content": "Steph\n\nWade\n\nHarden\n\nLuka\n\nShai\n\nDame",
+          "timestamp": "2026-08-04T01:34:04+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1kdi3m",
+          "author": "reddit_user_1db69461d4f3",
+          "author_karma": 0,
+          "content": "Steph: Undeniably #1\nWade: Leader, Playmaker, Best D, and a True Icon\nHarden: Hate this fucker, but his shot and playmaking during his peak was insane. \nDame: Better then Luka or SGA. \n\nSGA and Luka: Both are overrated. SGA is the better Shooter. But dude leans into foul baiting to much. Luka, I just don't see it. Don't see the hype, reminds me of Zion with better PR.\n",
+          "timestamp": "2026-08-04T01:34:23+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1keiax",
+              "author": "reddit_user_c7bc067d6a06",
+              "author_karma": 0,
+              "content": "Undeniable? One on one, who wins? Wade or Curry?",
+              "timestamp": "2026-08-04T01:40:00+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1kdi3m",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1kfefe",
+                  "author": "reddit_user_1db69461d4f3",
+                  "author_karma": 0,
+                  "content": "Shooting? Curry. \n\nWade has the edge in most other categories IMO. Better D, can play the whole court better, more physical. ",
+                  "timestamp": "2026-08-04T01:44:51+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1keiax",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1khjkr",
+                      "author": "reddit_user_c7bc067d6a06",
+                      "author_karma": 0,
+                      "content": "I agree. Theres more to the game than shooting. Wade is the better passer too. Curry is the only player on this list even close to Wade. People must have forgot how unstoppable prime Wade was.",
+                      "timestamp": "2026-08-04T01:56:44+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1kfefe",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "p1ki4k3",
+                          "author": "reddit_user_1db69461d4f3",
+                          "author_karma": 0,
+                          "content": "Dude, I just said that. I'm 35 years old from Milwaukee. I grew up watching Wade play in Marquette. \n\nWade beats Steph in every category besides his shot. Wade was way more physical, he liked to drive and pop. He elevated teams in ways I really don't think Steph ever could. He had this Aura that made people want to win. \n\nLike zero disrespect to Steph, mans a Goat. But Wades game was way more efficient all around.",
+                          "timestamp": "2026-08-04T01:59:57+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "p1khjkr",
+                          "depth": 4,
+                          "replies": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "comment_id": "p1keiuq",
+              "author": "reddit_user_ce2ce20e455a",
+              "author_karma": 0,
+              "content": "Dame is not better than either SGA or Luka, lol. ",
+              "timestamp": "2026-08-04T01:40:04+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1kdi3m",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1kf1rh",
+                  "author": "reddit_user_1db69461d4f3",
+                  "author_karma": 0,
+                  "content": "Yea, he is. Don't mean peaks can change. But RN Dame was called Dame Time for a reason. Clutch Gene and all that. Luka never impressed me since he left Dallas. \n\nSGA foul baits way to much, that let's his natural ability take a back seat. Just because he gets to the line a bunch don't make him a better shooter. ",
+                  "timestamp": "2026-08-04T01:42:56+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1keiuq",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1ksiuw",
+                      "author": "reddit_user_ce2ce20e455a",
+                      "author_karma": 0,
+                      "content": "What has dame done since that series against OKC?? Lmfao. ",
+                      "timestamp": "2026-08-04T02:59:10+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1kf1rh",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "p1kso6t",
+                          "author": "reddit_user_1db69461d4f3",
+                          "author_karma": 0,
+                          "content": "Peaks bro, peaks. ",
+                          "timestamp": "2026-08-04T03:00:05+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "p1ksiuw",
+                          "depth": 4,
+                          "replies": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p1kdmb4",
+          "author": "reddit_user_cf7719b5870f",
+          "author_karma": 0,
+          "content": "Steph Luka SGA Harden/Wade Dame. Healthy Luka with competent teammates is that dude, sucks we only saw it for 2024 season and this season until his hammy. ",
+          "timestamp": "2026-08-04T01:35:02+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1kdocd",
+          "author": "reddit_user_05e2e4b6d7b4",
+          "author_karma": 0,
+          "content": "Harden, Steph, Luka, SGA, Dame, Wade",
+          "timestamp": "2026-08-04T01:35:21+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1kdqaf",
+          "author": "reddit_user_9cc0662a1104",
+          "author_karma": 0,
+          "content": "Why would you make the same post twice, with one just being a subset of the other?",
+          "timestamp": "2026-08-04T01:35:39+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1keea6",
+              "author": "reddit_user_fea7ac962f61",
+              "author_karma": 0,
+              "content": "3 times actually. I realized after the first post that it’d be more focused to rank them in separate smaller groups ",
+              "timestamp": "2026-08-04T01:39:22+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1kdqaf",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1khtnk",
+          "author": "reddit_user_6dc64d7ffe8f",
+          "author_karma": 0,
+          "content": "Luka\nSteph \nHarden \nSGA\nWade\nDame",
+          "timestamp": "2026-08-04T01:58:17+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1kig4s",
+          "author": "reddit_user_fe1da23bd428",
+          "author_karma": 0,
+          "content": "Harden, Luka, Steph, SGA, dame, wade. \n\nHarden is the best scorer since wilt. Luka is that dude, but doesn’t have the years under his belt yet. Steph is not as good of a pure scorer as the first 2 guys but blows away with rest with his efficiency, gravity and consistency. SGA over dame because he’s done it more consistently. Dame is a very good scorer but not all timer, and d wade is just a weird choice to put on this list versus Kobe or MJ",
+          "timestamp": "2026-08-04T02:01:45+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    }
+  ]
+}

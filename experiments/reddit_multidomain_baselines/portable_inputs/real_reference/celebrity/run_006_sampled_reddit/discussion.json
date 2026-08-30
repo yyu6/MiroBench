@@ -1,0 +1,293 @@
+{
+  "meta": {
+    "product_category": "celebrity",
+    "baseline": "real_reddit_reference",
+    "run_id": "run_006_sampled_reddit"
+  },
+  "posts": [
+    {
+      "post_id": "real_run006_post00_seed030",
+      "post_slot": 0,
+      "seed_index": 30,
+      "source_raw_post_id": "1vc4lzi",
+      "source_product_dir": "Celebs",
+      "source_file": "https://www.reddit.com/r/Celebs/comments/1vc4lzi/dua_lipa/",
+      "post_type": "rich:video",
+      "title": "Dua Lipa",
+      "author": "reddit_user_33799307055d",
+      "author_karma": 0,
+      "content": "Dua Lipa",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p0znhwn",
+          "author": "reddit_user_0c73a01acfcd",
+          "author_karma": 0,
+          "content": "Look like mannequin legs.",
+          "timestamp": "2026-08-01T01:30:05+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run006_post01_seed031",
+      "post_slot": 1,
+      "seed_index": 31,
+      "source_raw_post_id": "1vc4ov3",
+      "source_product_dir": "Fauxmoi",
+      "source_file": "https://www.reddit.com/r/Fauxmoi/comments/1vc4ov3/ye_settles_sexual_assault_lawsuit_with/",
+      "post_type": "TRIGGER WARNING",
+      "title": "Ye settles sexual assault lawsuit with ex-assistant Lauren Pisciotta",
+      "author": "reddit_user_33799307055d",
+      "author_karma": 0,
+      "content": "Ye settles sexual assault lawsuit with ex-assistant Lauren Pisciotta",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p0ymikd",
+          "author": "reddit_user_efbdda070e30",
+          "author_karma": 0,
+          "content": "Anti-Black, anti-semitic, a dangerous misogynist.....am I missing anything? ",
+          "timestamp": "2026-07-31T22:04:59+00:00",
+          "likes": 101,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0yqejq",
+              "author": "reddit_user_d5ecb0a01d70",
+              "author_karma": 0,
+              "content": "\\*+MAGA piece of shit",
+              "timestamp": "2026-07-31T22:24:56+00:00",
+              "likes": 27,
+              "dislikes": 0,
+              "parent_comment_id": "p0ymikd",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p0yqoa8",
+              "author": "reddit_user_a4688412950b",
+              "author_karma": 0,
+              "content": "Annoying",
+              "timestamp": "2026-07-31T22:26:21+00:00",
+              "likes": 54,
+              "dislikes": 0,
+              "parent_comment_id": "p0ymikd",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p103yiy",
+              "author": "[deleted]",
+              "author_karma": 0,
+              "content": "[removed]",
+              "timestamp": "2026-08-01T03:11:13+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p0ymikd",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p10j94e",
+              "author": "reddit_user_89f312b12a5e",
+              "author_karma": 0,
+              "content": "Gamer",
+              "timestamp": "2026-08-01T04:55:08+00:00",
+              "likes": -1,
+              "dislikes": 0,
+              "parent_comment_id": "p0ymikd",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p10pblm",
+              "author": "reddit_user_a91184793daf",
+              "author_karma": 0,
+              "content": "Still has fans ",
+              "timestamp": "2026-08-01T05:40:37+00:00",
+              "likes": 4,
+              "dislikes": 0,
+              "parent_comment_id": "p0ymikd",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p1104al",
+              "author": "reddit_user_e66cb082bac9",
+              "author_karma": 0,
+              "content": "Rapist?",
+              "timestamp": "2026-08-01T07:06:42+00:00",
+              "likes": 12,
+              "dislikes": 0,
+              "parent_comment_id": "p0ymikd",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p10zzvj",
+          "author": "reddit_user_e66cb082bac9",
+          "author_karma": 0,
+          "content": "The fact he settled on a drug and rape charge with DIDDY?! Tell me you’re guilty without telling me you’re guilty! Somebody jail this man. ",
+          "timestamp": "2026-08-01T07:05:42+00:00",
+          "likes": 7,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run006_post02_seed032",
+      "post_slot": 2,
+      "seed_index": 32,
+      "source_raw_post_id": "1vc4p41",
+      "source_product_dir": "entertainment",
+      "source_file": "https://www.reddit.com/r/entertainment/comments/1vc4p41/the_next_met_fashion_blockbuster_and_gala_will/",
+      "post_type": "link",
+      "title": "The Next Met Fashion Blockbuster and Gala Will Honor the Controversial Designer John Galliano",
+      "author": "reddit_user_33799307055d",
+      "author_karma": 0,
+      "content": "The Next Met Fashion Blockbuster and Gala Will Honor the Controversial Designer John Galliano",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p0ym163",
+          "author": "reddit_user_8b3332299719",
+          "author_karma": 0,
+          "content": "MORE : \n\nThe group of people gathered for a closed-door meeting at the Metropolitan Museum of Art in May was unusual by any measure: Anna Wintour, Vogue’s global editorial director and a Met trustee; Andrew Bolton, curator in charge of the Met’s Costume Institute; the fashion designer John Galliano — and a handful of the most influential rabbis and Jewish leaders in New York City.\n\nThe meeting had been orchestrated to get their thoughts on the potential issues with next year’s planned fashion extravaganza — a show dedicated to Galliano’s work — and perhaps their blessing for it. It was one of several such meetings held with Jewish leaders over the last year.\n\nGalliano is considered by many in the fashion world to be one of the most important contemporary designers, whose work as head designer of Dior, a job he held from 1996 to 2011, went beyond mere fashion to enter the realm of fantasy. But he became a household name after a video of him making antisemitic comments became international news in 2011. He subsequently lost his job at Dior, was convicted of a hate crime in a Paris court, and embarked on a period of rehabilitation; he returned to fashion as [creative director of Maison Margiela](https://archive.nytimes.com/runway.blogs.nytimes.com/2014/10/06/john-galliano-named-creative-director-of-maison-martin-margiela/) in 2014.\n\nAll of which still makes him a thorny choice for the show at this moment. Antisemitism is on the rise, and some Jewish New Yorkers are [uneasy](https://www.nytimes.com/2025/06/25/us/politics/zohran-mamdani-jewish-voters.html) with the leadership of Mayor Zohran Mamdani, most recently after the [stabbing of two men last week](https://www.nytimes.com/2026/07/24/nyregion/antisemitism-nyc-stabbing-jewish.html) in broad daylight, one of whom was leaving a Jewish community center in Manhattan. The attack is being prosecuted as a hate crime.\n\nThe Galliano exhibition — which will be kicked off by the annual Met Gala, perhaps the most closely watched red carpet in the world — would make him only the third living designer ever to be made the subject of a solo exhibition at the museum, joining Yves Saint Laurent and Rei Kawakubo. It’s the highest honor the institution can confer on a designer.",
+          "timestamp": "2026-07-31T22:02:33+00:00",
+          "likes": 0,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0z66fb",
+          "author": "reddit_user_1b8697c60f03",
+          "author_karma": 0,
+          "content": "Controversial is spelled \"bigoted racist\"",
+          "timestamp": "2026-07-31T23:50:05+00:00",
+          "likes": 13,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p110d3a",
+              "author": "reddit_user_6d9023357ec1",
+              "author_karma": 0,
+              "content": "Embarrassingly en vogue these days ",
+              "timestamp": "2026-08-01T07:08:41+00:00",
+              "likes": 4,
+              "dislikes": 0,
+              "parent_comment_id": "p0z66fb",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "post_id": "real_run006_post03_seed033",
+      "post_slot": 3,
+      "seed_index": 33,
+      "source_raw_post_id": "1vc4ztz",
+      "source_product_dir": "Fauxmoi",
+      "source_file": "https://www.reddit.com/r/Fauxmoi/comments/1vc4ztz/ransom_notes_in_nancy_guthrie_case_released_as/",
+      "post_type": "TRIGGER WARNING",
+      "title": "Ransom notes in Nancy Guthrie case released as sheriff's office asks for public's help in identifying writer",
+      "author": "reddit_user_33799307055d",
+      "author_karma": 0,
+      "content": "Ransom notes in Nancy Guthrie case released as sheriff's office asks for public's help in identifying writer",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p0ypjm6",
+          "author": "reddit_user_a80b55165a9e",
+          "author_karma": 0,
+          "content": "The detail of the smartwatch must have been how they were sure these notes were the real deal. This poor family.",
+          "timestamp": "2026-07-31T22:20:31+00:00",
+          "likes": 17,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0yxz7z",
+          "author": "reddit_user_20ff0d9108b6",
+          "author_karma": 0,
+          "content": "&nbsp;\n\nHi OP: your post has been removed due to Rule 4: Posting Format & Guidelines! \n\n&nbsp;\n\n___\n\n&nbsp;\n\n**TITLES**\n\n&nbsp;\n\nPosts must contain a descriptive and accurate title that indicates the content of the post (and mentions the people involved, if applicable). Please do not submit vague or editorialised titles!  \n\n&nbsp;\n\n___\n\n&nbsp;\n\n**SOURCES**\n\n&nbsp;\n\nPlease include links to original sources wherever possible.\n\n&nbsp;\n\nIf you are sharing material from **tabloids** (ex. the Daily Mail, Sun, Mirror) or **social media** sites (ex. Twitter, Meta, TikTok), please post **screenshots** of the content (or **direct video uploads** if sharing a clip). \n\n&nbsp;\n\nInclude a link to the tabloid or social media source **in the comments (not in the main post itself)** — we will verify the link and then remove the comment to prevent further traffic to those sites! \n\n&nbsp;\n\n___\n\n&nbsp;\n\n**MEDIA POSTS**\n\n&nbsp;\n\nWherever possible, share photos or videos as direct uploads in your Reddit post rather than linking to external sites! \n\n&nbsp;\n\nPlease also try your best to upload high quality versions of any media you are sharing, and make full use of the image carousel/gallery wherever possible. \n\n&nbsp;\n\n___\n\n&nbsp;\n\n**OTHER/MISC.**\n\n&nbsp;\n\nTry to avoid submitting paywalled links or Youtube video essays — if you do post these, make sure to include excerpts or a summary of the content (but do not copy-paste the whole article). \n\n&nbsp;\n\nPlease do not share any AI generated content to the subreddit. \n\n&nbsp;\n\n___",
+          "timestamp": "2026-07-31T23:04:55+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run006_post04_seed034",
+      "post_slot": 4,
+      "seed_index": 34,
+      "source_raw_post_id": "1vc56eg",
+      "source_product_dir": "Fauxmoi",
+      "source_file": "https://www.reddit.com/r/Fauxmoi/comments/1vc56eg/nolan_cleverly_bashes_ai_while_using_it_behind/",
+      "post_type": "DISCUSSION",
+      "title": "Nolan cleverly bashes AI while using it behind the scenes",
+      "author": "reddit_user_33799307055d",
+      "author_karma": 0,
+      "content": "Nolan cleverly bashes AI while using it behind the scenes\n\n[removed]",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p0ypee1",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-07-31T22:19:45+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0yq7vt",
+          "author": "reddit_user_20ff0d9108b6",
+          "author_karma": 0,
+          "content": "&nbsp;\n\nYour post or comment was removed because it is unverified/speculation and/or contains misinformation!\n\n\n&nbsp;",
+          "timestamp": "2026-07-31T22:23:58+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    }
+  ]
+}

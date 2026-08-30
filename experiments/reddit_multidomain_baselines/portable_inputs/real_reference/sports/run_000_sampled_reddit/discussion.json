@@ -1,0 +1,3953 @@
+{
+  "meta": {
+    "product_category": "sports",
+    "baseline": "real_reddit_reference",
+    "run_id": "run_000_sampled_reddit"
+  },
+  "posts": [
+    {
+      "post_id": "real_run000_post00_seed000",
+      "post_slot": 0,
+      "seed_index": 0,
+      "source_raw_post_id": "1v818m9",
+      "source_product_dir": "sports",
+      "source_file": "https://www.reddit.com/r/sports/comments/1v818m9/sources_wife_of_chiefs_eric_bieniemy_shot_at/",
+      "post_type": ":football: Football",
+      "title": "Sources: Wife of Chiefs' Eric Bieniemy shot at couple's home",
+      "author": "reddit_user_79ff14d8816f",
+      "author_karma": 0,
+      "content": "Sources: Wife of Chiefs' Eric Bieniemy shot at couple's home",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p0296fu",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-07-27T14:01:36+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p029tai",
+          "author": "reddit_user_3d741115e7c0",
+          "author_karma": 0,
+          "content": "At first I thought she was shooting at some couples home but turns out she herself was shot at a couples home. Crazy. ",
+          "timestamp": "2026-07-27T14:04:33+00:00",
+          "likes": 68,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p029z3t",
+              "author": "reddit_user_9b522f338d3c",
+              "author_karma": 0,
+              "content": "this is why grammar matters",
+              "timestamp": "2026-07-27T14:05:18+00:00",
+              "likes": 36,
+              "dislikes": 0,
+              "parent_comment_id": "p029tai",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p02lk5s",
+                  "author": "reddit_user_6341cc04ae58",
+                  "author_karma": 0,
+                  "content": "let’s eat, grandma!\n\nvs\n\nlets eat grandma! ",
+                  "timestamp": "2026-07-27T14:57:36+00:00",
+                  "likes": 9,
+                  "dislikes": 0,
+                  "parent_comment_id": "p029z3t",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p02mteo",
+                      "author": "reddit_user_f5b5e23b1edd",
+                      "author_karma": 0,
+                      "content": "Wolf: “I don’t see the difference”\n\nLRH: “Grandma…?”",
+                      "timestamp": "2026-07-27T15:03:05+00:00",
+                      "likes": 7,
+                      "dislikes": 0,
+                      "parent_comment_id": "p02lk5s",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                },
+                {
+                  "comment_id": "p02vxuy",
+                  "author": "reddit_user_2d90774af04f",
+                  "author_karma": 0,
+                  "content": "I would love to have human editors back. It's very clear a lot of publications are using AI, and AI is honestly terrible grammatically \n\nJust invest the tiniest bit into a publication and have some fucking pride in their work, at least",
+                  "timestamp": "2026-07-27T15:42:15+00:00",
+                  "likes": 5,
+                  "dislikes": 0,
+                  "parent_comment_id": "p029z3t",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            },
+            {
+              "comment_id": "p02awvj",
+              "author": "reddit_user_6c331137bb6f",
+              "author_karma": 0,
+              "content": "I thought the exact same thing. ",
+              "timestamp": "2026-07-27T14:09:39+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p029tai",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p02fw84",
+              "author": "reddit_user_9b2cb4d4ee0b",
+              "author_karma": 0,
+              "content": "I also thought she was shooting into her own home because of the title ",
+              "timestamp": "2026-07-27T14:32:26+00:00",
+              "likes": 3,
+              "dislikes": 0,
+              "parent_comment_id": "p029tai",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p02i20d",
+              "author": "reddit_user_d3529a1566a5",
+              "author_karma": 0,
+              "content": "I thought she was shot at the couple's (her and Eric's) home and my mind went to DV. Apologies to Eric for thinking that, I guess.",
+              "timestamp": "2026-07-27T14:42:08+00:00",
+              "likes": 9,
+              "dislikes": 0,
+              "parent_comment_id": "p029tai",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p02kpgh",
+                  "author": "reddit_user_58a66bca7818",
+                  "author_karma": 0,
+                  "content": "Sounds like she was shot by her adult son, so still DV if true.",
+                  "timestamp": "2026-07-27T14:53:54+00:00",
+                  "likes": 16,
+                  "dislikes": 0,
+                  "parent_comment_id": "p02i20d",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            },
+            {
+              "comment_id": "p02k9t4",
+              "author": "reddit_user_3c853a2c5ad2",
+              "author_karma": 0,
+              "content": "I thought she was shot at her own home",
+              "timestamp": "2026-07-27T14:51:59+00:00",
+              "likes": 10,
+              "dislikes": 0,
+              "parent_comment_id": "p029tai",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p04ka1e",
+                  "author": "reddit_user_82c1840ff4a9",
+                  "author_karma": 0,
+                  "content": "She was. By her son.",
+                  "timestamp": "2026-07-27T19:54:42+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p02k9t4",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p02atp5",
+          "author": "reddit_user_4858baeb9987",
+          "author_karma": 0,
+          "content": "Now he really won’t get a HC job ",
+          "timestamp": "2026-07-27T14:09:14+00:00",
+          "likes": -43,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p02bsyx",
+              "author": "reddit_user_44a002c4f026",
+              "author_karma": 0,
+              "content": "Because his wife got shot while he was in a different state?",
+              "timestamp": "2026-07-27T14:13:46+00:00",
+              "likes": 11,
+              "dislikes": 0,
+              "parent_comment_id": "p02atp5",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p02awyp",
+          "author": "reddit_user_236dc7ee48e6",
+          "author_karma": 0,
+          "content": "Why is she going around shooting at people’s houses?\n\nWait. What?",
+          "timestamp": "2026-07-27T14:09:40+00:00",
+          "likes": 5,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p02bm5z",
+          "author": "reddit_user_671d843e313d",
+          "author_karma": 0,
+          "content": "a comma would make this so much clearer",
+          "timestamp": "2026-07-27T14:12:54+00:00",
+          "likes": 56,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p02c216",
+              "author": "[deleted]",
+              "author_karma": 0,
+              "content": "[deleted]",
+              "timestamp": "2026-07-27T14:14:56+00:00",
+              "likes": 2,
+              "dislikes": 0,
+              "parent_comment_id": "p02bm5z",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p02dvdl",
+              "author": "reddit_user_67346d06aa90",
+              "author_karma": 0,
+              "content": "Needs a rewrite to clear the ambiguity ",
+              "timestamp": "2026-07-27T14:23:12+00:00",
+              "likes": 17,
+              "dislikes": 0,
+              "parent_comment_id": "p02bm5z",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p035u6z",
+                  "author": "reddit_user_14f4b3bce234",
+                  "author_karma": 0,
+                  "content": "it seems perfectly clear to me",
+                  "timestamp": "2026-07-27T16:24:05+00:00",
+                  "likes": 4,
+                  "dislikes": 0,
+                  "parent_comment_id": "p02dvdl",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p0n1i7h",
+                      "author": "reddit_user_684931ea5303",
+                      "author_karma": 0,
+                      "content": "That’s because it is. People are illiterate ",
+                      "timestamp": "2026-07-30T09:56:10+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p035u6z",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "comment_id": "p02fh44",
+              "author": "reddit_user_a6a2e7737a94",
+              "author_karma": 0,
+              "content": "[it's giving](https://youtu.be/jp83JZg0hU4?is=mmnA3H_VJowxtyCi)",
+              "timestamp": "2026-07-27T14:30:32+00:00",
+              "likes": -4,
+              "dislikes": 0,
+              "parent_comment_id": "p02bm5z",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p02ge13",
+              "author": "reddit_user_213e6323c098",
+              "author_karma": 0,
+              "content": "The whole thing just needs to be rewritten. Adding a comma would just be using a comma incorrectly to better parse bad sentence structure",
+              "timestamp": "2026-07-27T14:34:40+00:00",
+              "likes": 44,
+              "dislikes": 0,
+              "parent_comment_id": "p02bm5z",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p02gz64",
+                  "author": "reddit_user_f6d3e728bc2e",
+                  "author_karma": 0,
+                  "content": "It just needs “while” between shot and at.",
+                  "timestamp": "2026-07-27T14:37:18+00:00",
+                  "likes": 5,
+                  "dislikes": 0,
+                  "parent_comment_id": "p02ge13",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p02hkjw",
+                      "author": "reddit_user_213e6323c098",
+                      "author_karma": 0,
+                      "content": "Or 'the' in the same place. Ya, rewriting the whole thing is definitely an overstatement. People love incorrectly using commas",
+                      "timestamp": "2026-07-27T14:39:58+00:00",
+                      "likes": -4,
+                      "dislikes": 0,
+                      "parent_comment_id": "p02gz64",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "p02icih",
+                          "author": "[deleted]",
+                          "author_karma": 0,
+                          "content": "[removed]",
+                          "timestamp": "2026-07-27T14:43:25+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "p02hkjw",
+                          "depth": 4,
+                          "replies": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "comment_id": "p02p1pw",
+              "author": "reddit_user_c25ff83e612d",
+              "author_karma": 0,
+              "content": "**Sources: Wife of Chiefs', Eric Bieniemy shot by couple's son**\n\n**Fixed**",
+              "timestamp": "2026-07-27T15:12:50+00:00",
+              "likes": -7,
+              "dislikes": 0,
+              "parent_comment_id": "p02bm5z",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p02q90p",
+                  "author": "reddit_user_2f29ec70b67b",
+                  "author_karma": 0,
+                  "content": "Not fixed. That would imply not only that two people were shot, but one of them is involved in bigamy. ",
+                  "timestamp": "2026-07-27T15:18:00+00:00",
+                  "likes": 6,
+                  "dislikes": 0,
+                  "parent_comment_id": "p02p1pw",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p02qmne",
+                      "author": "reddit_user_c25ff83e612d",
+                      "author_karma": 0,
+                      "content": "**Sources: Wife of Chiefs' Eric,Bieniemy shot by couple's son**\n\n**Fixed**",
+                      "timestamp": "2026-07-27T15:19:36+00:00",
+                      "likes": 5,
+                      "dislikes": 0,
+                      "parent_comment_id": "p02q90p",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p02f088",
+          "author": "reddit_user_7d40528241f3",
+          "author_karma": 0,
+          "content": "What does Shaq have to do with this?",
+          "timestamp": "2026-07-27T14:28:22+00:00",
+          "likes": -9,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p02gajm",
+          "author": "reddit_user_4c17437f8445",
+          "author_karma": 0,
+          "content": "According to FB and X (so take it with a bag of salt), their son Elijah has been arrested for it. I’m skeptical for now only because it seems that would be a public record that reputable news sources (if those exist anymore) would be reporting it. ",
+          "timestamp": "2026-07-27T14:34:14+00:00",
+          "likes": 69,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p02j2wn",
+              "author": "reddit_user_b54872a950ba",
+              "author_karma": 0,
+              "content": "https://www.kmbc.com/article/virginia-home-shooting-chiefs-bieniemy-family/73272547\n\nAccording to dispatchers a woman matching the age of Mia Bieniemy had been shot in the chest. The victim was conscious at the time, however, was struggling to breathe. Dispatch audio also states the victim was shot by her son. \n\nLoudoun County Jail records show an Elijah Zion Bieniemy, 27, was taken into custody Monday on offenses including malicious wounding and use of a firearm in a felony.",
+              "timestamp": "2026-07-27T14:46:40+00:00",
+              "likes": 120,
+              "dislikes": 0,
+              "parent_comment_id": "p02gajm",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p051ayd",
+              "author": "reddit_user_dd9ac1a9ff1b",
+              "author_karma": 0,
+              "content": "This is in the article linked (it may have been updated since you saw it, it doesn't say) \n\n>Elijah Bieniemy is being held without bond at a detention center in Loudoun County, according to police.",
+              "timestamp": "2026-07-27T21:07:52+00:00",
+              "likes": 10,
+              "dislikes": 0,
+              "parent_comment_id": "p02gajm",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p0598ix",
+                  "author": "reddit_user_4c17437f8445",
+                  "author_karma": 0,
+                  "content": "Thank you. When I googled it earlier I couldn’t find a single news source with it, just social media. I’ve seen several articles pop up since then. Thank you for the update tho! ",
+                  "timestamp": "2026-07-27T21:44:02+00:00",
+                  "likes": 2,
+                  "dislikes": 0,
+                  "parent_comment_id": "p051ayd",
+                  "depth": 2,
+                  "replies": []
+                },
+                {
+                  "comment_id": "p066dpr",
+                  "author": "reddit_user_7506435564c6",
+                  "author_karma": 0,
+                  "content": "Lacking any other context this is just about a Father’s worst day.",
+                  "timestamp": "2026-07-28T00:33:14+00:00",
+                  "likes": 5,
+                  "dislikes": 0,
+                  "parent_comment_id": "p051ayd",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p06kuir",
+                      "author": "reddit_user_ce5a2bbf5946",
+                      "author_karma": 0,
+                      "content": "I think it's even worse. ",
+                      "timestamp": "2026-07-28T01:52:11+00:00",
+                      "likes": 2,
+                      "dislikes": 0,
+                      "parent_comment_id": "p066dpr",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p02n5yw",
+          "author": "reddit_user_0db1516a35b1",
+          "author_karma": 0,
+          "content": "America ",
+          "timestamp": "2026-07-27T15:04:36+00:00",
+          "likes": -13,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p02nnr6",
+          "author": "reddit_user_4305548bfc4a",
+          "author_karma": 0,
+          "content": "WTAF ",
+          "timestamp": "2026-07-27T15:06:46+00:00",
+          "likes": -1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p03qrpc",
+              "author": "[deleted]",
+              "author_karma": 0,
+              "content": "[removed]",
+              "timestamp": "2026-07-27T17:50:27+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p02nnr6",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p035n03",
+          "author": "reddit_user_022792e56caf",
+          "author_karma": 0,
+          "content": ">\"These kinds of things happen, but there's always a blessing in there somewhere,\" \\[Andy\\] Reid said. \"I know things will work out. ... The most important thing is that EB has an opportunity to spend some time \\[with his family\\] and take care of that business.\"\n\n>\"Things happen. You have to work through it and time will have to be involved in this to help heal a little bit. It'll all work out in the long run.\"\n\nThis is some insane stuff to say about a coach's wife getting shot by her son.",
+          "timestamp": "2026-07-27T16:23:15+00:00",
+          "likes": 128,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p037r4n",
+              "author": "reddit_user_adf07847fc64",
+              "author_karma": 0,
+              "content": "Reid has had his share of insane family incidents, so it’s probably normal to him. ",
+              "timestamp": "2026-07-27T16:32:07+00:00",
+              "likes": 116,
+              "dislikes": 0,
+              "parent_comment_id": "p035n03",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p038pgo",
+              "author": "reddit_user_91b49908fc52",
+              "author_karma": 0,
+              "content": "Sometimes you just gotta let go and let god right?",
+              "timestamp": "2026-07-27T16:36:09+00:00",
+              "likes": -4,
+              "dislikes": 0,
+              "parent_comment_id": "p035n03",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p03extn",
+              "author": "reddit_user_03a660fbfb1f",
+              "author_karma": 0,
+              "content": "“Work through it” as in actual work, here at facilities. ",
+              "timestamp": "2026-07-27T17:01:53+00:00",
+              "likes": 2,
+              "dislikes": 0,
+              "parent_comment_id": "p035n03",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p03hmq6",
+              "author": "reddit_user_97268f283f04",
+              "author_karma": 0,
+              "content": "Things happen??? Wtf",
+              "timestamp": "2026-07-27T17:13:01+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p035n03",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p03i7yk",
+                  "author": "reddit_user_022792e56caf",
+                  "author_karma": 0,
+                  "content": "\"An opportunity to spend time with his family\" is the one that got me. His wife's in the hospital and his son's in jail for shooting her -- what a great opportunity.",
+                  "timestamp": "2026-07-27T17:15:27+00:00",
+                  "likes": 22,
+                  "dislikes": 0,
+                  "parent_comment_id": "p03hmq6",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p03yuxh",
+                      "author": "reddit_user_bd06050bf7e8",
+                      "author_karma": 0,
+                      "content": "He didn't say that in the interview OP put the \"[with his family]\" into the quote that he rearranged and edited out of context to make Reid look bad (Maybe Reid ate OP's cheeseburger?).\n\nThe full interview is here - https://www.arrowheadpride.com/kansas-city-chiefs-news/206083/chiefs-andy-reid-hearts-go-out-eric-bieniemy-family\n\nOP is just a dick bag Browns fan.",
+                      "timestamp": "2026-07-27T18:23:59+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p03i7yk",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "comment_id": "p03wcmo",
+              "author": "reddit_user_bd06050bf7e8",
+              "author_karma": 0,
+              "content": "These quotes are massively taken out of context and rearranged, why did you arrange them like that? Oh I know.. for fake internet points of someone else's tragedy \n\n>“Our hearts go out to Eric Bieniemy and his family, our thoughts and prayers are with them. I can’t get into details on it, but things happen sometimes, and Eric will work through it. He has a great support group here, as does his family, as needed. We’ll just let time take care of it from there.”\n\n>“Mia is stable, which is a plus,” Reid added. “So is Eric Junior, and that’s all important.”\n\n>“We all love EB, and you hate seeing these kinds of things happen,” Reid continued. “There’s always a blessing in there somewhere; I know things will work out. On these things, real life, you take care of that, and that becomes important,” Reid said of Bieniemy leaving the team.\n\n>“She’s a saint; we all know that, people that know her,” Reid said. “One of God’s good blessings… really a special person. Things happen, and you have to work through it. That’s where we’re at right now, and time will have to be involved in this to help heal a little bit, but it will all work out in the long run.”\n\n>“The most important thing is that EB has the opportunity to spend some time there and take care of that business,” Reid reiterated.\n\n>“This is fresh, so we’ll just see how things go,” Reid clarified. “But the fact that she’s in stable condition, I think, is a positive for what it could be.”",
+              "timestamp": "2026-07-27T18:13:26+00:00",
+              "likes": 164,
+              "dislikes": 0,
+              "parent_comment_id": "p035n03",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p043exu",
+                  "author": "reddit_user_cd00817d9aaa",
+                  "author_karma": 0,
+                  "content": "This isn't much better bro\n\nKinda makes sense, knowing Andy Reid's failures in his personal life",
+                  "timestamp": "2026-07-27T18:43:19+00:00",
+                  "likes": -36,
+                  "dislikes": 0,
+                  "parent_comment_id": "p03wcmo",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p045jn7",
+                      "author": "reddit_user_bd06050bf7e8",
+                      "author_karma": 0,
+                      "content": "What else do you want him to say? He's an NFL coach at a training camp interview where he's supposed to be talking about football but <12 hours ago found out his personal and professional friend's wife got shot by their son. He said it's terrible, they're their for support, wished his family the best and shared positive news about her medical status. I don't agree with his boomer religious takes but nearly that whole generation talks like that, so it isn't surprising.\n\nIdk why you felt like you had to take a shot at his personal tragedies during someone else's completely unrelated tragedy. Do you feel better about yourself?",
+                      "timestamp": "2026-07-27T18:52:18+00:00",
+                      "likes": 20,
+                      "dislikes": 0,
+                      "parent_comment_id": "p043exu",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "p046o8l",
+                          "author": "[deleted]",
+                          "author_karma": 0,
+                          "content": "[removed]",
+                          "timestamp": "2026-07-27T18:57:03+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "p045jn7",
+                          "depth": 4,
+                          "replies": []
+                        },
+                        {
+                          "comment_id": "p04968j",
+                          "author": "reddit_user_cd00817d9aaa",
+                          "author_karma": 0,
+                          "content": "Nothing? He could say nothing.\n\nHis poor reaction to this is a direct reflection of his own life. It's 100% relevant.  ",
+                          "timestamp": "2026-07-27T19:07:39+00:00",
+                          "likes": -27,
+                          "dislikes": 0,
+                          "parent_comment_id": "p045jn7",
+                          "depth": 4,
+                          "replies": [
+                            {
+                              "comment_id": "p04agev",
+                              "author": "reddit_user_bd06050bf7e8",
+                              "author_karma": 0,
+                              "content": "Yeah he should just have ignored it, that's better and not weird at all. He shouldn't have said our hearts are with Eric and his family, that they love him and support him, he hates seeing these kinds of things happen and a bunch of good things about his wife?\n\nI guess that's a poor reaction.",
+                              "timestamp": "2026-07-27T19:13:06+00:00",
+                              "likes": 14,
+                              "dislikes": 0,
+                              "parent_comment_id": "p04968j",
+                              "depth": 5,
+                              "replies": [
+                                {
+                                  "comment_id": "p04d02c",
+                                  "author": "reddit_user_ddb096675875",
+                                  "author_karma": 0,
+                                  "content": "“Eric has the full support of the team in this time of terrible personal tragedy. Out of respect for the gravity of the situation, I will refrain from any further comment.”\n\nWould be a lot better than “sometimes things happen. There is a blessing in there somewhere. Time takes care of it.”\n\nIt isn’t that hard when your brain isn’t Swiss cheese from too many blows to the head.  ",
+                                  "timestamp": "2026-07-27T19:23:46+00:00",
+                                  "likes": 1,
+                                  "dislikes": 0,
+                                  "parent_comment_id": "p04agev",
+                                  "depth": 6,
+                                  "replies": []
+                                },
+                                {
+                                  "comment_id": "p04j5e2",
+                                  "author": "reddit_user_cd00817d9aaa",
+                                  "author_karma": 0,
+                                  "content": "It's absolutely possible to be respectful and say very little without \"ignoring\" it. \n\nBut you're obviously much more invested in arguing in bad faith and being all animated about this for some reason ",
+                                  "timestamp": "2026-07-27T19:49:56+00:00",
+                                  "likes": -14,
+                                  "dislikes": 0,
+                                  "parent_comment_id": "p04agev",
+                                  "depth": 6,
+                                  "replies": [
+                                    {
+                                      "comment_id": "p0lh3m7",
+                                      "author": "reddit_user_7c0f9ab9bc92",
+                                      "author_karma": 0,
+                                      "content": "I just wanted to chime in to say absolutely no one agrees with you ",
+                                      "timestamp": "2026-07-30T02:46:27+00:00",
+                                      "likes": 0,
+                                      "dislikes": 0,
+                                      "parent_comment_id": "p04j5e2",
+                                      "depth": 7,
+                                      "replies": [
+                                        {
+                                          "comment_id": "p0lhayj",
+                                          "author": "reddit_user_cd00817d9aaa",
+                                          "author_karma": 0,
+                                          "content": "Oh well allow me to express that I do not give even the remotest shit lol",
+                                          "timestamp": "2026-07-30T02:47:41+00:00",
+                                          "likes": -1,
+                                          "dislikes": 0,
+                                          "parent_comment_id": "p0lh3m7",
+                                          "depth": 8,
+                                          "replies": [
+                                            {
+                                              "comment_id": "p0mfgde",
+                                              "author": "reddit_user_7c0f9ab9bc92",
+                                              "author_karma": 0,
+                                              "content": "Ya ok",
+                                              "timestamp": "2026-07-30T06:53:27+00:00",
+                                              "likes": 1,
+                                              "dislikes": 0,
+                                              "parent_comment_id": "p0lhayj",
+                                              "depth": 9,
+                                              "replies": []
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "comment_id": "p0558kc",
+                          "author": "reddit_user_da1972b1c22f",
+                          "author_karma": 0,
+                          "content": "What is the blessing in EB’s son shooting his wife multiple times?",
+                          "timestamp": "2026-07-27T21:25:36+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "p045jn7",
+                          "depth": 4,
+                          "replies": []
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "comment_id": "p04eses",
+                  "author": "reddit_user_6b63800a62b0",
+                  "author_karma": 0,
+                  "content": "....this really doesn't make them any better",
+                  "timestamp": "2026-07-27T19:31:19+00:00",
+                  "likes": -18,
+                  "dislikes": 0,
+                  "parent_comment_id": "p03wcmo",
+                  "depth": 2,
+                  "replies": []
+                },
+                {
+                  "comment_id": "p0530vm",
+                  "author": "reddit_user_c2a4316beb20",
+                  "author_karma": 0,
+                  "content": "Thank you for this. Having the full context changes everything. ",
+                  "timestamp": "2026-07-27T21:15:37+00:00",
+                  "likes": 37,
+                  "dislikes": 0,
+                  "parent_comment_id": "p03wcmo",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            },
+            {
+              "comment_id": "p06qn6u",
+              "author": "reddit_user_929f63edab53",
+              "author_karma": 0,
+              "content": "CBattles6 come on man. Do these fake internet points mean so much to you you gotta make shit up. Sad. I'm not saying this to be a dick. The internet is better without your input. Over sensationalizing people like you are directly responsible for this internet being a shit show. This is a 100% true statement. If you never make another post EVER for you whole life. It would be the best imput you are capable of  could give. Your silence would make the world better. So shut the fuck up and go volunteer are an animal shelter.  ",
+              "timestamp": "2026-07-28T02:24:39+00:00",
+              "likes": 3,
+              "dislikes": 0,
+              "parent_comment_id": "p035n03",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p03p0v3",
+          "author": "reddit_user_a59038ccdd04",
+          "author_karma": 0,
+          "content": "Bad sentence structure aside, I think it's insane that she isn't named in the headline. Someone that just got murdered was reduced to the \"wife of Chiefs offensive coordinator\"",
+          "timestamp": "2026-07-27T17:43:22+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p05094j",
+              "author": "reddit_user_dd9ac1a9ff1b",
+              "author_karma": 0,
+              "content": "Well, she wasn't murdered and she was mentioned in the second paragraph.  This is ESPN, if they said Mia Bienemy no one would know who that was",
+              "timestamp": "2026-07-27T21:03:12+00:00",
+              "likes": 8,
+              "dislikes": 0,
+              "parent_comment_id": "p03p0v3",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p03qdir",
+          "author": "reddit_user_c4bc8108ada3",
+          "author_karma": 0,
+          "content": "Given everything that happened with his own son, I imagine Reid is willing to give more grace than most when it comes to this sort of situation. Very sad for all involved ",
+          "timestamp": "2026-07-27T17:48:51+00:00",
+          "likes": 4,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p04fkwe",
+              "author": "reddit_user_ddb096675875",
+              "author_karma": 0,
+              "content": "Andy Reid giving his dumbass son grace when he seriously injured someone was part of the problem. ",
+              "timestamp": "2026-07-27T19:34:45+00:00",
+              "likes": 7,
+              "dislikes": 0,
+              "parent_comment_id": "p03qdir",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p075hw2",
+                  "author": "[deleted]",
+                  "author_karma": 0,
+                  "content": "[removed]",
+                  "timestamp": "2026-07-28T03:55:12+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p04fkwe",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p04lo56",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-07-27T20:00:31+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p05e2jx",
+          "author": "reddit_user_102cb9b0dac4",
+          "author_karma": 0,
+          "content": "my cousin’s wife got caught in something like that once",
+          "timestamp": "2026-07-27T22:06:45+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p06gs2f",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-07-28T01:29:47+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p07da9k",
+          "author": "reddit_user_400c6dcfbfb7",
+          "author_karma": 0,
+          "content": "Just a crazy situation ",
+          "timestamp": "2026-07-28T04:47:57+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p08qee3",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-07-28T11:12:44+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run000_post01_seed001",
+      "post_slot": 1,
+      "seed_index": 1,
+      "source_raw_post_id": "1v83ph2",
+      "source_product_dir": "sports",
+      "source_file": "https://www.reddit.com/r/sports/comments/1v83ph2/chiefs_assistant_coach_eric_bieniemys_son_charged/",
+      "post_type": ":news: News",
+      "title": "Chiefs assistant coach Eric Bieniemy’s son charged in shooting of his mother in Virginia, authorities say",
+      "author": "reddit_user_79ff14d8816f",
+      "author_karma": 0,
+      "content": "Chiefs assistant coach Eric Bieniemy’s son charged in shooting of his mother in Virginia, authorities say",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p02ujz4",
+          "author": "reddit_user_899537818bb7",
+          "author_karma": 0,
+          "content": "Multiple GSWs but is now stable. Holy cow, glad she’s alive. Man that’s a sad situation. ",
+          "timestamp": "2026-07-27T15:36:23+00:00",
+          "likes": 170,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p03k7rx",
+              "author": "reddit_user_b330e1868f71",
+              "author_karma": 0,
+              "content": "GSW is gunshot wounds, not Golden State Warriors like I wrongly assumed. ",
+              "timestamp": "2026-07-27T17:23:39+00:00",
+              "likes": 120,
+              "dislikes": 0,
+              "parent_comment_id": "p02ujz4",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p03ms5n",
+                  "author": "reddit_user_9b4781a9886f",
+                  "author_karma": 0,
+                  "content": "Not your fault. Not sure why they randomly abbreviated that",
+                  "timestamp": "2026-07-27T17:34:08+00:00",
+                  "likes": 12,
+                  "dislikes": 0,
+                  "parent_comment_id": "p03k7rx",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p03tph2",
+                      "author": "reddit_user_2cf535b09468",
+                      "author_karma": 0,
+                      "content": "That's a common scanner/police abbreviation for gunshot wound",
+                      "timestamp": "2026-07-27T18:02:29+00:00",
+                      "likes": 45,
+                      "dislikes": 0,
+                      "parent_comment_id": "p03ms5n",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "p03vh8u",
+                          "author": "reddit_user_21400fc92113",
+                          "author_karma": 0,
+                          "content": "This is a sports subreddit not a police scanner watcher one",
+                          "timestamp": "2026-07-27T18:09:48+00:00",
+                          "likes": 12,
+                          "dislikes": 0,
+                          "parent_comment_id": "p03tph2",
+                          "depth": 4,
+                          "replies": [
+                            {
+                              "comment_id": "p03xclc",
+                              "author": "reddit_user_2cf535b09468",
+                              "author_karma": 0,
+                              "content": "Thank you. The previous commenter asked why it was randomly abbreviated that way and I just wanted to explain the origin, and that it wasn't random. I'm glad I know where I am now, at least. ",
+                              "timestamp": "2026-07-27T18:17:37+00:00",
+                              "likes": 21,
+                              "dislikes": 0,
+                              "parent_comment_id": "p03vh8u",
+                              "depth": 5,
+                              "replies": [
+                                {
+                                  "comment_id": "p04lxi7",
+                                  "author": "reddit_user_5020c29dc804",
+                                  "author_karma": 0,
+                                  "content": "But do you *really* know?\n\n*Twilight Zone music plays*",
+                                  "timestamp": "2026-07-27T20:01:37+00:00",
+                                  "likes": 2,
+                                  "dislikes": 0,
+                                  "parent_comment_id": "p03xclc",
+                                  "depth": 6,
+                                  "replies": [
+                                    {
+                                      "comment_id": "p04m6cp",
+                                      "author": "reddit_user_2cf535b09468",
+                                      "author_karma": 0,
+                                      "content": "This is a sports subreddit, not a \"give me existential dread\" one /s",
+                                      "timestamp": "2026-07-27T20:02:40+00:00",
+                                      "likes": 2,
+                                      "dislikes": 0,
+                                      "parent_comment_id": "p04lxi7",
+                                      "depth": 7,
+                                      "replies": [
+                                        {
+                                          "comment_id": "p04pxmg",
+                                          "author": "reddit_user_5020c29dc804",
+                                          "author_karma": 0,
+                                          "content": "Thank you. I’m glad I know where I am now, at least.\n\n😉",
+                                          "timestamp": "2026-07-27T20:18:41+00:00",
+                                          "likes": 2,
+                                          "dislikes": 0,
+                                          "parent_comment_id": "p04m6cp",
+                                          "depth": 8,
+                                          "replies": [
+                                            {
+                                              "comment_id": "p0661gw",
+                                              "author": "reddit_user_82f72c18ec98",
+                                              "author_karma": 0,
+                                              "content": "Where the hell are we??",
+                                              "timestamp": "2026-07-28T00:31:25+00:00",
+                                              "likes": 2,
+                                              "dislikes": 0,
+                                              "parent_comment_id": "p04pxmg",
+                                              "depth": 9,
+                                              "replies": []
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "comment_id": "p058z1h",
+                                  "author": "[deleted]",
+                                  "author_karma": 0,
+                                  "content": "[removed]",
+                                  "timestamp": "2026-07-27T21:42:49+00:00",
+                                  "likes": 1,
+                                  "dislikes": 0,
+                                  "parent_comment_id": "p03xclc",
+                                  "depth": 6,
+                                  "replies": []
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "comment_id": "p03y51c",
+                          "author": "reddit_user_81a683a02c53",
+                          "author_karma": 0,
+                          "content": "As someone who’s spent this whole summer watching Midwest Safety videos, the terminology is common there. ",
+                          "timestamp": "2026-07-27T18:20:57+00:00",
+                          "likes": 19,
+                          "dislikes": 0,
+                          "parent_comment_id": "p03tph2",
+                          "depth": 4,
+                          "replies": []
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "comment_id": "p04d9sd",
+                  "author": "[deleted]",
+                  "author_karma": 0,
+                  "content": "[removed]",
+                  "timestamp": "2026-07-27T19:24:54+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p03k7rx",
+                  "depth": 2,
+                  "replies": []
+                },
+                {
+                  "comment_id": "p066i21",
+                  "author": "reddit_user_b6514a0b6cce",
+                  "author_karma": 0,
+                  "content": "Steph is a shooter tho",
+                  "timestamp": "2026-07-28T00:33:53+00:00",
+                  "likes": 15,
+                  "dislikes": 0,
+                  "parent_comment_id": "p03k7rx",
+                  "depth": 2,
+                  "replies": []
+                },
+                {
+                  "comment_id": "p06lvcd",
+                  "author": "reddit_user_4bd62e259aac",
+                  "author_karma": 0,
+                  "content": "Correct. No Warriors players were present as far as we know.",
+                  "timestamp": "2026-07-28T01:57:54+00:00",
+                  "likes": -1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p03k7rx",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            },
+            {
+              "comment_id": "p0uks0e",
+              "author": "reddit_user_e06398749de6",
+              "author_karma": 0,
+              "content": "Didn't Andy Reid's son kill someone in a DUI not too long ago as well?",
+              "timestamp": "2026-07-31T10:41:03+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p02ujz4",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p02vkf9",
+          "author": "reddit_user_a16d4a209814",
+          "author_karma": 0,
+          "content": "Imagine getting shot by your own child. \n\nAwful!",
+          "timestamp": "2026-07-27T15:40:41+00:00",
+          "likes": 47,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p031qo4",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-07-27T16:06:46+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0398tv",
+          "author": "reddit_user_522f7ba20754",
+          "author_karma": 0,
+          "content": "Have kids they said. It’ll be fun they said. ",
+          "timestamp": "2026-07-27T16:38:23+00:00",
+          "likes": -16,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p03rjlo",
+              "author": "reddit_user_45d01e80708e",
+              "author_karma": 0,
+              "content": "Hilarious.",
+              "timestamp": "2026-07-27T17:53:37+00:00",
+              "likes": -33,
+              "dislikes": 0,
+              "parent_comment_id": "p0398tv",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p03jf88",
+          "author": "reddit_user_99f430928ed4",
+          "author_karma": 0,
+          "content": "I think we can all agree that Eric's son is Bieniemy here.",
+          "timestamp": "2026-07-27T17:20:22+00:00",
+          "likes": -28,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p03tsbi",
+          "author": "reddit_user_ba961f3aafed",
+          "author_karma": 0,
+          "content": "Man chiefs teams got mad issues with all the players, coaches and their families \n\nSomething in that KC water 🤔💀",
+          "timestamp": "2026-07-27T18:02:48+00:00",
+          "likes": 14,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p04feb1",
+              "author": "[deleted]",
+              "author_karma": 0,
+              "content": "[removed]",
+              "timestamp": "2026-07-27T19:33:57+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p03tsbi",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p04l0ih",
+              "author": "[deleted]",
+              "author_karma": 0,
+              "content": "[removed]",
+              "timestamp": "2026-07-27T19:57:47+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p03tsbi",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p05kwev",
+              "author": "reddit_user_e5df52c7e331",
+              "author_karma": 0,
+              "content": "This happened in Virginia",
+              "timestamp": "2026-07-27T22:40:42+00:00",
+              "likes": 6,
+              "dislikes": 0,
+              "parent_comment_id": "p03tsbi",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p0d0q8s",
+                  "author": "reddit_user_9a5090823395",
+                  "author_karma": 0,
+                  "content": "KC water so bad that its effects were felt all the way in VA, crazy",
+                  "timestamp": "2026-07-28T23:00:48+00:00",
+                  "likes": 6,
+                  "dislikes": 0,
+                  "parent_comment_id": "p05kwev",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            },
+            {
+              "comment_id": "p183ja6",
+              "author": "reddit_user_fbdfa750d011",
+              "author_karma": 0,
+              "content": "I mean they also had that Jovan Belcher situation a few years back…",
+              "timestamp": "2026-08-02T09:24:08+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p03tsbi",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p044cx3",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-07-27T18:47:18+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0569ou",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-07-27T21:30:20+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p056gws",
+          "author": "reddit_user_8a25ec362b77",
+          "author_karma": 0,
+          "content": "My e   ",
+          "timestamp": "2026-07-27T21:31:16+00:00",
+          "likes": -5,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p05jsf7",
+          "author": "reddit_user_f8e5d97cdf1d",
+          "author_karma": 0,
+          "content": "I'm assuming attempted murder will be added at some point considering it was multiple shots. ",
+          "timestamp": "2026-07-27T22:35:05+00:00",
+          "likes": -2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0bph18",
+          "author": "reddit_user_83181fbb3e28",
+          "author_karma": 0,
+          "content": "Sources say the chiefs are offering him a WR1 contract as we speak",
+          "timestamp": "2026-07-28T19:19:17+00:00",
+          "likes": 3,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0sj5b6",
+              "author": "[deleted]",
+              "author_karma": 0,
+              "content": "[removed]",
+              "timestamp": "2026-07-31T01:56:24+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p0bph18",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "post_id": "real_run000_post02_seed002",
+      "post_slot": 2,
+      "seed_index": 2,
+      "source_raw_post_id": "1v8f0eg",
+      "source_product_dir": "sports",
+      "source_file": "https://www.reddit.com/r/sports/comments/1v8f0eg/browns_star_wr_jerry_jeudy_says_he_is_fed_up_with/",
+      "post_type": ":football: Football",
+      "title": "Browns Star WR Jerry Jeudy Says He Is Fed Up With ESPN For Creating Beef with Shedeur Sanders Narrative",
+      "author": "reddit_user_79ff14d8816f",
+      "author_karma": 0,
+      "content": "Browns Star WR Jerry Jeudy Says He Is Fed Up With ESPN For Creating Beef with Shedeur Sanders Narrative",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p05flii",
+          "author": "reddit_user_be2878613dd9",
+          "author_karma": 0,
+          "content": "Well, duh? Take a number. ",
+          "timestamp": "2026-07-27T22:14:11+00:00",
+          "likes": 7,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0647lc",
+              "author": "[deleted]",
+              "author_karma": 0,
+              "content": "[removed]",
+              "timestamp": "2026-07-28T00:21:39+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p05flii",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p05fm8j",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-07-27T22:14:17+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p05h7ah",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-07-27T22:22:05+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p05ob66",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-07-27T22:57:56+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p05u8yl",
+          "author": "reddit_user_d12c890c941e",
+          "author_karma": 0,
+          "content": "\"star\"",
+          "timestamp": "2026-07-27T23:28:51+00:00",
+          "likes": 0,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p05yc0p",
+          "author": "reddit_user_9255963fc82b",
+          "author_karma": 0,
+          "content": "Star doing a lot of work here",
+          "timestamp": "2026-07-27T23:50:25+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p062iej",
+              "author": "reddit_user_933fe59557e8",
+              "author_karma": 0,
+              "content": "I think it’s a typo. They surely meant *starter.*",
+              "timestamp": "2026-07-28T00:12:38+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p05yc0p",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p05ymug",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-07-27T23:52:01+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p06aagd",
+          "author": "reddit_user_9b5fb8abf35c",
+          "author_karma": 0,
+          "content": "ESPN makes shit up? Huh.",
+          "timestamp": "2026-07-28T00:54:27+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p06abs5",
+          "author": "reddit_user_95128ee18162",
+          "author_karma": 0,
+          "content": "ESPN is complete trash now. Glad I grew up during their heyday.  ",
+          "timestamp": "2026-07-28T00:54:39+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run000_post03_seed003",
+      "post_slot": 3,
+      "seed_index": 3,
+      "source_raw_post_id": "1v8xvia",
+      "source_product_dir": "sports",
+      "source_file": "https://www.reddit.com/r/sports/comments/1v8xvia/soccer_now_tops_hockey_for_young_canadians/",
+      "post_type": ":soccer: Soccer",
+      "title": "Soccer now tops hockey for young Canadians",
+      "author": "reddit_user_79ff14d8816f",
+      "author_karma": 0,
+      "content": "Soccer now tops hockey for young Canadians",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p0aqe8d",
+          "author": "reddit_user_ff7c2b087db2",
+          "author_karma": 0,
+          "content": "> Don't clubs over there have academies?\n\nNot really.",
+          "timestamp": "2026-07-28T16:54:16+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p0apqhs",
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0b39mv",
+              "author": "reddit_user_724bb224662f",
+              "author_karma": 0,
+              "content": "There we go. Even in my Poland with under 40 mln people there are 100s of academies connected to regular clubs. It's a competition for the biggest talents. \n",
+              "timestamp": "2026-07-28T17:46:51+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p0aqe8d",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p0b6p9i",
+                  "author": "reddit_user_ff7c2b087db2",
+                  "author_karma": 0,
+                  "content": "Ok? I'm not sure what your point is. The NHL pulls the biggest talent from all over the entire world, and does it without that system.\n\nFrom what I looked up the minimum contract salary for a pro soccer player in Polands highest league (Ekstraklasa) is about 65,000 PLN or around 16,000 USD.\n\nNow here are the league minimum salaries in the US pro sports. This is the *MINIMUM* that a 1st year rookie gets paid.\n\n* NHL (Hockey) - $850,000\n* NFL (Americn Football) - $885,000\n* MLB (Baseball) - $780,000\n* NBA (Basketball) - $1,357,763\n\nYour league is not comparable to our leagues. ",
+                  "timestamp": "2026-07-28T18:00:48+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p0b39mv",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p0b96hs",
+                      "author": "reddit_user_724bb224662f",
+                      "author_karma": 0,
+                      "content": "lol, you got offended by that?\n\nI'm just talking with you why parents here don't have to pay many thousands per year for their kid to train. 100s of clubs having academies they fund is the main reason.\n\nAnd those European hockey player go through a similar but smaller system as football, depending on the country ofc.",
+                      "timestamp": "2026-07-28T18:11:05+00:00",
+                      "likes": 0,
+                      "dislikes": 0,
+                      "parent_comment_id": "p0b6p9i",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "p0bcuk1",
+                          "author": "reddit_user_ff7c2b087db2",
+                          "author_karma": 0,
+                          "content": "> lol, you got offended by that?\n\nNo, it's kind of weird you're projecting that on me. I said I don't understand what point you were making, not sure how you got \"offended\" out of that...\n\n>I'm just talking with you why parents here don't have to pay many thousands per year for their kid to train.\n\nAlso because Soccer is ridiculously cheap compared to hockey. Let's kit out a whole soccer team.\n\n11 players and $250 cleats, $25 shin guards, $50 ball, $75 socks, shirt, shorts. $4,400 total. Add in keeper gloves for $100 and call it $4,500. And that's with some good ass gear. Like I picked relatively high end gear, now I'll do hockey. Similar tier gear. high end but not absolute top of the line.\n\nSo for one goalie. Just one single goalie. A team will have 2 maybe 3.\n\n* Skates - $700\n* Leg pads - $1,500\n* Knee pads - $100\n* Pants - $300\n* Cup - $100\n* Chest guard - $600\n* Neck guard - $60\n* Glove - $500\n* Blocker - $500\n* Helmet - $700\n* Stick - $250\n\n$5,310, for one goalie.\n\nFor what it costs to equip an entire soccer team, I cannot even equip a single goalie.\n\nI think the issue here is you simply do not understand the absolute magnitude of expense it costs to play hockey when compared to soccer. You are comparing what is likely the most expensive sport in the world to play (excluding motorsports and like horse riding), vs. the cheapest.",
+                          "timestamp": "2026-07-28T18:26:12+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "p0b96hs",
+                          "depth": 4,
+                          "replies": [
+                            {
+                              "comment_id": "p0bh7ys",
+                              "author": "[deleted]",
+                              "author_karma": 0,
+                              "content": "[removed]",
+                              "timestamp": "2026-07-28T18:44:35+00:00",
+                              "likes": 1,
+                              "dislikes": 0,
+                              "parent_comment_id": "p0bcuk1",
+                              "depth": 5,
+                              "replies": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p0aqoo6",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-07-28T16:55:26+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0ar31m",
+          "author": "reddit_user_13a61b6d7560",
+          "author_karma": 0,
+          "content": "Nobody playing house hockey is going to the NHL.",
+          "timestamp": "2026-07-28T16:57:04+00:00",
+          "likes": 0,
+          "dislikes": 0,
+          "parent_comment_id": "p0a9k6x",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0ardl7",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-07-28T16:58:16+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0as2b6",
+          "author": "reddit_user_ee4d56509854",
+          "author_karma": 0,
+          "content": "I thought they meant in terms of fandom and I was like \"no way on earth\".",
+          "timestamp": "2026-07-28T17:01:02+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0atgay",
+          "author": "reddit_user_21033bef9860",
+          "author_karma": 0,
+          "content": "WTF is this “article”?\n\n\\> *After Canada's strong showing as both a competitor and host at the FIFA World Cup, a new survey shows soccer now beats hockey as the most popular sport for Canadians aged 18-29.*\n\nThat’s it. That’s the entire thing. No source, no mention of what “most popular” means or how the survey was conducted. ",
+          "timestamp": "2026-07-28T17:06:47+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0au1a9",
+          "author": "reddit_user_cd84eebb5766",
+          "author_karma": 0,
+          "content": "I feel like toxic parents happen in all sports, no? Especially as you get into the more competitive levels. Agree on the other stuff though.",
+          "timestamp": "2026-07-28T17:09:12+00:00",
+          "likes": 3,
+          "dislikes": 0,
+          "parent_comment_id": "p0af9tl",
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0d1cwm",
+              "author": "reddit_user_9062649e3d53",
+              "author_karma": 0,
+              "content": "They 100% do but hockey is on another level. So many parents with failed dreams pushed onto their kids. ",
+              "timestamp": "2026-07-28T23:04:01+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p0au1a9",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p0aufhy",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-07-28T17:10:50+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p09ddty",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0auwgm",
+          "author": "reddit_user_7e2289d41ab8",
+          "author_karma": 0,
+          "content": "We don't have census data for anything newer, so I don't know how people can throw out random \"facts\" and expect people to believe them.  ",
+          "timestamp": "2026-07-28T17:12:46+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": "p0adpud",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0avixf",
+          "author": "reddit_user_23c966c433fe",
+          "author_karma": 0,
+          "content": "Also, it doesn't require a lot on your physique. You don't have to be particularly tall to be good at it. ",
+          "timestamp": "2026-07-28T17:15:20+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p09bcoc",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0avmte",
+          "author": "reddit_user_5b874c292f43",
+          "author_karma": 0,
+          "content": "Constraints make for the best creativity ",
+          "timestamp": "2026-07-28T17:15:46+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p09ej8g",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0aw6sh",
+          "author": "reddit_user_7f65cc084adc",
+          "author_karma": 0,
+          "content": "I’ve loved hockey my whole life and always wanted to play for my school growing up but was never able to because of how expensive it was ",
+          "timestamp": "2026-07-28T17:18:02+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p09a253",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0awgme",
+          "author": "reddit_user_5e1d3af8437a",
+          "author_karma": 0,
+          "content": "I played hockey my entire life. I hate how expensive it is now. I can't afford it for my kids. Thankfully my son is loving soccer. \n\nI really want my kids to play hockey, so they can have that choice later in life, and know how to skate, and aren't the \"kid who never played hockey\" because as a Canadian, that was weird, maybe not so anymore thankfully.\n\nEvery sport is more expensive than it used to be though. But hockey is at the forefront of the discussion because it was always the most expensive. Now it's just insane. \n\nAnd outside of the toxic culture in all sports now, and the insane an negative competitive aspect in some, where it's not about fun, it's just about winning, even at super young ages.... everyone just wants your money, and I hate that. ",
+          "timestamp": "2026-07-28T17:19:09+00:00",
+          "likes": 24,
+          "dislikes": 0,
+          "parent_comment_id": "p09akd8",
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0bgu1x",
+              "author": "reddit_user_848450794368",
+              "author_karma": 0,
+              "content": "I'm Canadian and I never played hockey. It isn't a big deal at all",
+              "timestamp": "2026-07-28T18:42:58+00:00",
+              "likes": 9,
+              "dislikes": 0,
+              "parent_comment_id": "p0awgme",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p0ccdd6",
+              "author": "reddit_user_230c97ed372e",
+              "author_karma": 0,
+              "content": "I’m also Canadian and I know so many who’ve never played hockey. At least here in Toronto, a city full of immigrants, that doesn’t matter at all. ",
+              "timestamp": "2026-07-28T21:04:18+00:00",
+              "likes": 2,
+              "dislikes": 0,
+              "parent_comment_id": "p0awgme",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p0awk90",
+          "author": "reddit_user_67e525de9a90",
+          "author_karma": 0,
+          "content": "It’s my turn to post this next hour ",
+          "timestamp": "2026-07-28T17:19:33+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0ayemi",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-07-28T17:27:02+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p09bcoc",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0az3wv",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-07-28T17:29:54+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0b1lhn",
+          "author": "reddit_user_92bb89cf9b08",
+          "author_karma": 0,
+          "content": "…all you need is a ball. ",
+          "timestamp": "2026-07-28T17:40:02+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p09a253",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0b1q3w",
+          "author": "reddit_user_4cd8daefbab0",
+          "author_karma": 0,
+          "content": "I had a college roommate who was literally a Trust Fund kid.  He took winter semester off because he was trying to make the US Olympic team.  He never did.  He didn't make it to med school, so he did a Masters and then reapplied.  He's a doctor now.",
+          "timestamp": "2026-07-28T17:40:34+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p09dwgp",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0b2gyr",
+          "author": "reddit_user_6bc21a54c68d",
+          "author_karma": 0,
+          "content": "We would use our friends garage door lol, his parents were honestly so nice to even allow us to do it. Other times we would use the space between a light post and a wall. Great times. ",
+          "timestamp": "2026-07-28T17:43:36+00:00",
+          "likes": 4,
+          "dislikes": 0,
+          "parent_comment_id": "p09ddty",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0b2qwd",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-07-28T17:44:44+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p09bcoc",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0b2sdy",
+          "author": "reddit_user_618a799b4e16",
+          "author_karma": 0,
+          "content": "let's revisit the question in 1.5 years after the world cup ",
+          "timestamp": "2026-07-28T17:44:54+00:00",
+          "likes": 3,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0b4r2s",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-07-28T17:52:54+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p09a253",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0b4us1",
+          "author": "reddit_user_a0b9e12069b5",
+          "author_karma": 0,
+          "content": "As a parent, hockey starts at 5:30 AM and costs hundreds to start.\n\nSoccer starts at 10:30 AM. Shoes and cleets. Soccer ball is provided.",
+          "timestamp": "2026-07-28T17:53:19+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0cf2zy",
+              "author": "reddit_user_c596621386e4",
+              "author_karma": 0,
+              "content": "The article is about watching, not playing",
+              "timestamp": "2026-07-28T21:16:47+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p0b4us1",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p0b6o7w",
+          "author": "reddit_user_6a919bbabebc",
+          "author_karma": 0,
+          "content": "This has always been the reason ",
+          "timestamp": "2026-07-28T18:00:41+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p09bcoc",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0b6uzf",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-07-28T18:01:28+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p0a64g3",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0b73jg",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-07-28T18:02:26+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p09abkz",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0b76bw",
+          "author": "reddit_user_426af7b8feb8",
+          "author_karma": 0,
+          "content": "Costco sells kids soccer cleats for 9$  on sale ! ",
+          "timestamp": "2026-07-28T18:02:46+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p09akd8",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0b7x2k",
+          "author": "reddit_user_5eae19da2d70",
+          "author_karma": 0,
+          "content": "This isn't about playing, it's about watching/popular opinion.\n\nIf it was about playing, soccer's pretty much always been #1, because, yes, hockey is extremely expensive.",
+          "timestamp": "2026-07-28T18:05:52+00:00",
+          "likes": 0,
+          "dislikes": 0,
+          "parent_comment_id": "p09bhvf",
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0ddcuu",
+              "author": "reddit_user_a12a062753ea",
+              "author_karma": 0,
+              "content": "Same thing. When a sport is affordable, there are fewer barriers to playing it. This means you're more likely to develop a passion for it and watch it.",
+              "timestamp": "2026-07-29T00:06:11+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p0b7x2k",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p0f2pha",
+                  "author": "reddit_user_5eae19da2d70",
+                  "author_karma": 0,
+                  "content": "Hockey didn't magically get more expensive due to the World Cup.",
+                  "timestamp": "2026-07-29T06:31:41+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p0ddcuu",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p0b81km",
+          "author": "reddit_user_f3fe02504b30",
+          "author_karma": 0,
+          "content": "So people enjoy watching and playing soccer during the world cup and while hosting the world cup? \n\nThis is some ground breaking info. ",
+          "timestamp": "2026-07-28T18:06:23+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": "p0agh0v",
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0bczzd",
+              "author": "reddit_user_0d1a038f000f",
+              "author_karma": 0,
+              "content": "The reports of a survey don’t need to be ground breaking. This survey shows a change in attitudes that confirms what many people may have suspected, and would come as a surprise to others… Now there’s data that supports the hunch. Having data to supports your hunches is a good thing. Framing this as some sort of biased reporting or polling when it confirms your hunch is senselessly antagonistic. Should we not get data to see how people’s attitudes have changed over time? Why would that be good?",
+              "timestamp": "2026-07-28T18:26:51+00:00",
+              "likes": 2,
+              "dislikes": 0,
+              "parent_comment_id": "p0b81km",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p0b85h4",
+          "author": "reddit_user_bdc6b3634a6b",
+          "author_karma": 0,
+          "content": "To be fair I don't think anywhere is gonna be like club rugby in NZ. ",
+          "timestamp": "2026-07-28T18:06:50+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p0acwqy",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0b8yyx",
+          "author": "reddit_user_46ee8ba0def8",
+          "author_karma": 0,
+          "content": "DOOMSDAY",
+          "timestamp": "2026-07-28T18:10:14+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0b9sc8",
+          "author": "reddit_user_cb2c851d019b",
+          "author_karma": 0,
+          "content": "I mean its not legal, but right now i think you only get a tiny fine in Sweden. Essentially nothing. 1 million Swedens use it, so like 10%.",
+          "timestamp": "2026-07-28T18:13:37+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p0aitwz",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0ba5jt",
+          "author": "reddit_user_f3fe02504b30",
+          "author_karma": 0,
+          "content": "Soccer isn't going to over take the popularity of hockey in Canada any time soon. \n\nIt's certainly growing and hosting the World Cup definitely helped but it will be a slow progression. \n\nMaybe in 10 years or so but not as fast as this click bait news article is trying to paint. ",
+          "timestamp": "2026-07-28T18:15:07+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0cnn45",
+              "author": "reddit_user_bc6a13fca562",
+              "author_karma": 0,
+              "content": "It already has, far more kids playing Basketball and Soccer year round than Hockey.\n\nEspecially Basketball.",
+              "timestamp": "2026-07-28T21:56:24+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p0ba5jt",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p0bafl7",
+          "author": "reddit_user_3e2a2e19d4ab",
+          "author_karma": 0,
+          "content": "This is why America doesn’t care about soccer/football. Theres enough money in the country that the more fun/expensive sports are playable by most kids. Be mad about it all you want but its true",
+          "timestamp": "2026-07-28T18:16:17+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0bdryi",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-07-28T18:30:06+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0bioub",
+          "author": "reddit_user_2b309e5dd334",
+          "author_karma": 0,
+          "content": "There is a reason soccer is the most popular sport in the world. All you need is something to kick around, ideally with shoes.\n\nNow contrast that with hockey",
+          "timestamp": "2026-07-28T18:50:45+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0bkm63",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-07-28T18:58:46+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0bmjja",
+          "author": "reddit_user_0b159a0f7fe4",
+          "author_karma": 0,
+          "content": "My kids play hockey. For me the bigger problem that hockey has is kids never watch NHL hockey so they never develop an interest in playing it, they don't ask Mom and dad to sign them up.  \n\nThen if they are exposed to it and want to play if they never learned to skate they'll need some skating lessons before the can play minor hockey.",
+          "timestamp": "2026-07-28T19:06:54+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p09kfw1",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0bn3iu",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-07-28T19:09:15+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0bng6g",
+          "author": "reddit_user_0b159a0f7fe4",
+          "author_karma": 0,
+          "content": "My kids played all three, anecdotally I would say soccer and baseball have way higher attrition than hockey.....which is kind of strange.  \n\nHockey just captures kids in a different way. I don't know if its putting on the gear, stick-handling, shooting but something keeps them coming back even though those first few years are much harder than playing soccer.",
+          "timestamp": "2026-07-28T19:10:44+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": "p0abqyh",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0bo632",
+          "author": "reddit_user_742d9ef5aadb",
+          "author_karma": 0,
+          "content": "We used jumpers (sweaters) in the UK, key is being somewhere cold enough you need one.",
+          "timestamp": "2026-07-28T19:13:45+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p09cbg5",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0bra96",
+          "author": "reddit_user_5b370071a4d0",
+          "author_karma": 0,
+          "content": "Since I was young, ive been listening to people bemoan how soccer isnt popular in north america. Where does this come from. Why are people so bent on making north america like soccer? ",
+          "timestamp": "2026-07-28T19:27:01+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0bruxm",
+          "author": "reddit_user_c3c0bb3473c2",
+          "author_karma": 0,
+          "content": "Costs for the two sports - skates, what’s essentially full body padding, helmet, and registration fees which are likely more expensive than soccer given that there are more fields in Canada than hockey rinks (I feel like that’s a safe guess).\n\nCost for soccer - shin pads, cleats, registration fee\n\nIn a world where a dollar goes not nearly as far as in the past, cheaper sports will be more favoured by the masses than the nations past time ",
+          "timestamp": "2026-07-28T19:29:28+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0cf92i",
+              "author": "reddit_user_c596621386e4",
+              "author_karma": 0,
+              "content": "The article is about watching, not playing",
+              "timestamp": "2026-07-28T21:17:33+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p0bruxm",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p0bsd96",
+          "author": "reddit_user_327c5bfc08c9",
+          "author_karma": 0,
+          "content": "Jesus, is that really how much a soccer ball costs these days?",
+          "timestamp": "2026-07-28T19:31:40+00:00",
+          "likes": 9,
+          "dislikes": 0,
+          "parent_comment_id": "p09cio2",
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0cefu6",
+              "author": "reddit_user_aec74258c3f6",
+              "author_karma": 0,
+              "content": "I mean you can get them for as little as $7, but the good ones are like $30-100. ",
+              "timestamp": "2026-07-28T21:13:50+00:00",
+              "likes": 6,
+              "dislikes": 0,
+              "parent_comment_id": "p0bsd96",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p0cfmgb",
+                  "author": "reddit_user_327c5bfc08c9",
+                  "author_karma": 0,
+                  "content": "No wonder my UK Elite coach had an aneurysm every time we lost a ball in the forest ",
+                  "timestamp": "2026-07-28T21:19:16+00:00",
+                  "likes": 4,
+                  "dislikes": 0,
+                  "parent_comment_id": "p0cefu6",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p0bt4dt",
+          "author": "reddit_user_618d4d741f3b",
+          "author_karma": 0,
+          "content": "Which is why we no longer have God tier goalies \nJust too damn expensive ",
+          "timestamp": "2026-07-28T19:34:54+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p09a253",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0bvguv",
+          "author": "reddit_user_1444531a284f",
+          "author_karma": 0,
+          "content": "Crazy that you’re the one getting downvoted when you’ve provided relevant evidence (even if it is not literally the data of interest, it is obviously indicative of young demographics) and the other person has provided zilch",
+          "timestamp": "2026-07-28T19:45:05+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": "p09wqi2",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0c1fnd",
+          "author": "reddit_user_6b8bdbf044e6",
+          "author_karma": 0,
+          "content": "Hockey is expensive, soccer is cheap. ",
+          "timestamp": "2026-07-28T20:11:00+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0eho3c",
+              "author": "reddit_user_4a00a0a4defb",
+              "author_karma": 0,
+              "content": "Also it’s bs trying to watch a game. Hockey night in Canada was free. Now I need a streaming service subscription to watch. No thanks.",
+              "timestamp": "2026-07-29T03:57:11+00:00",
+              "likes": 2,
+              "dislikes": 0,
+              "parent_comment_id": "p0c1fnd",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p0j9ulb",
+                  "author": "reddit_user_6b8bdbf044e6",
+                  "author_karma": 0,
+                  "content": "Hockey is dead. ",
+                  "timestamp": "2026-07-29T19:55:43+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p0eho3c",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p0c1soj",
+          "author": "reddit_user_bf659a56f89e",
+          "author_karma": 0,
+          "content": "Many parents are also discovering that hockey culture is quite toxic as well. ",
+          "timestamp": "2026-07-28T20:12:36+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p09a253",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0c1tl7",
+          "author": "reddit_user_71a6f44d7f5d",
+          "author_karma": 0,
+          "content": "Wut?  You think toxic parents aren’t frequent in football??",
+          "timestamp": "2026-07-28T20:12:42+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p0af9tl",
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0d13zg",
+              "author": "reddit_user_9062649e3d53",
+              "author_karma": 0,
+              "content": "More so in hockey. ",
+              "timestamp": "2026-07-28T23:02:45+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p0c1tl7",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p0c93ma",
+          "author": "reddit_user_a329f85fb5f4",
+          "author_karma": 0,
+          "content": "I’d be surprised if it’s permanent. It’s most likely temporary in the aftermath of hosting the World Cup.",
+          "timestamp": "2026-07-28T20:49:09+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0cael1",
+          "author": "reddit_user_5ea8b0e623da",
+          "author_karma": 0,
+          "content": "Maybe a stupid question but is pond hockey still an option in the winter?",
+          "timestamp": "2026-07-28T20:55:13+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0cb0mf",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-07-28T20:58:02+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p09iy9u",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0cemry",
+          "author": "reddit_user_c596621386e4",
+          "author_karma": 0,
+          "content": "So not free",
+          "timestamp": "2026-07-28T21:14:43+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p0aeys0",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0cf1c6",
+          "author": "reddit_user_4bf1df293271",
+          "author_karma": 0,
+          "content": "But what about Canada’s national sport, lacrosse?",
+          "timestamp": "2026-07-28T21:16:34+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0cs85z",
+              "author": "reddit_user_f047ca6d0dee",
+              "author_karma": 0,
+              "content": "Even though I play the sport, I must admit it definitely isnt as popular as either one. Hockey is going through the same thing Lacrosse once went through with Hockey",
+              "timestamp": "2026-07-28T22:18:25+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p0cf1c6",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p0cou5h",
+          "author": "reddit_user_bf4cf00ca6d8",
+          "author_karma": 0,
+          "content": "I’m from the uk and grew up pretty modest for the most part. And I always had access to tennis. Plenty of free courts. We had a couple of cheap rackets/balls\n\nI can’t say what it’s like now. I haven’t played for years. But yeah. Tennis was easy to get access to. ",
+          "timestamp": "2026-07-28T22:02:04+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": "p09yrg3",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0cst9y",
+          "author": "reddit_user_50e20c14bebf",
+          "author_karma": 0,
+          "content": "Just curious...where are they adding AAA teams. Not in Toronto. Teams will have like 40+ kids out for skates weekly at $60 a pop before (and even after tryouts). ",
+          "timestamp": "2026-07-28T22:21:17+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p09lvtf",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0cwf9i",
+          "author": "reddit_user_13dbe93c1761",
+          "author_karma": 0,
+          "content": "This is where I feel like the Americans are going wrong with football (their soccer) , footy is the cheapest hobby, literally get a ball, put your jumpers down as posts and play Wimbledon / Wembley / Cuppies / Red Arse / Heads and Vs / Slam. Literally anything with your mates. \n\nYet they have somehow managed to turn it into this expensive hobby where you need to be able to pay to travel around for matches. ",
+          "timestamp": "2026-07-28T22:39:10+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p09a253",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0d0qpw",
+          "author": "reddit_user_8c48e45d8006",
+          "author_karma": 0,
+          "content": "It is one reason, but other sports like cricket and the other football codes (rugby, Gaelic, basketball etc) are also pretty simple and require minimal equipment at a pickup level. It’s just a fact that the biggest sports in the world are either British or American in origin. ",
+          "timestamp": "2026-07-28T23:00:52+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p09bcoc",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0d7l46",
+          "author": "reddit_user_49b28a79310c",
+          "author_karma": 0,
+          "content": "Yea because the families there are running out of money on everything ",
+          "timestamp": "2026-07-28T23:36:05+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0dfvb0",
+          "author": "reddit_user_69def4e889f5",
+          "author_karma": 0,
+          "content": "It’s legal to purchase and use. It’s illegal to distribute",
+          "timestamp": "2026-07-29T00:19:24+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p0ahl1l",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0dfwrk",
+          "author": "reddit_user_69def4e889f5",
+          "author_karma": 0,
+          "content": "Bargain",
+          "timestamp": "2026-07-29T00:19:36+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p0aix3k",
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0ec38l",
+              "author": "reddit_user_b7bfbe54b4b1",
+              "author_karma": 0,
+              "content": "It’s a good deal, the EPG sucks a bit on certain channels but it’s still cheap and good",
+              "timestamp": "2026-07-29T03:21:25+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p0dfwrk",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p0dhc7s",
+          "author": "reddit_user_40e8f01f4f85",
+          "author_karma": 0,
+          "content": "Definitely part of the equation, though many Canadian immigrants are from Cricket loving cultures. \n\nThe main factor is cost, even in my generation (I’m 40) hockey was becoming too expensive, that’s why I was never able to play. And already by the 90s kids were playing soccer everyday at recess/ lunch in elementary school.\n\nI’m sure some communities we keep hockey alive (first nations have found a way to make it affordable). But it is likely to retreat to being the game of rich white kids and natives (oddly also the fate of Lacrosse). ",
+          "timestamp": "2026-07-29T00:27:16+00:00",
+          "likes": 3,
+          "dislikes": 0,
+          "parent_comment_id": "p09nu14",
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0i0xfz",
+              "author": "reddit_user_b715c5972153",
+              "author_karma": 0,
+              "content": "Hockey and Lacrosse worlds already have huge overlap at youth and high school level.  ",
+              "timestamp": "2026-07-29T16:45:36+00:00",
+              "likes": 3,
+              "dislikes": 0,
+              "parent_comment_id": "p0dhc7s",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p0djios",
+          "author": "reddit_user_642637f29ba2",
+          "author_karma": 0,
+          "content": "\"a\" is the hint",
+          "timestamp": "2026-07-29T00:39:06+00:00",
+          "likes": 0,
+          "dislikes": 0,
+          "parent_comment_id": "p0ad3t2",
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0fge95",
+              "author": "reddit_user_80128488ade6",
+              "author_karma": 0,
+              "content": "Sorry. There are always multiple courts when they have some. I mis typed.\n\nYou guys are taking this way too far. Tennis is accessible in Canada. Maybe not everywhere else.\n\nBye 👋",
+              "timestamp": "2026-07-29T08:23:03+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p0djios",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p0dk87b",
+          "author": "reddit_user_3fe946b26bd4",
+          "author_karma": 0,
+          "content": "Of course it is.  We're less than 10 days from the world cup that we hosted and had our best result ever.  Give it a couple months and check again. ",
+          "timestamp": "2026-07-29T00:42:54+00:00",
+          "likes": 8,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0dzb9l",
+          "author": "reddit_user_b283044bf20c",
+          "author_karma": 0,
+          "content": "Tennis is cheaper than:  \nHockey  \nBaseball  \nFootball  \nLacrosse  \nBadminton  \nGymnastics   \nSwimming\n\nOnly objectively cheaper sports are basketball and soccer, and volleyball is debatable since tennis courts outnumber volleyball courts probably 10:1 globally. \n\nNot sure how exactly tennis is expensive. Racquets can be bought for $20-50. Tennis balls are anywhere from $1-3 each, and can be re-pressurized.  ",
+          "timestamp": "2026-07-29T02:05:52+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": "p0a3jc6",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0eyxs6",
+          "author": "reddit_user_26de77c7e41c",
+          "author_karma": 0,
+          "content": "I was horrible at stickball as a kid but I still enjoyed it. We probably used broom or mop handles occasionally but we mainly used hockey sticks (without the blade or paddle or whatever on the end) wrapped in duct tape for the handle. And we used tennis balls mainly. ",
+          "timestamp": "2026-07-29T06:01:50+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p0a1xs1",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0f0hut",
+          "author": "reddit_user_e0e2a14a8522",
+          "author_karma": 0,
+          "content": "lol IDK what impresses me more, the hussle/creativity to play that way or the fact that you didn't get kickes out by security",
+          "timestamp": "2026-07-29T06:14:04+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p0a9a6a",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0fc4kj",
+          "author": "reddit_user_13c92bbac403",
+          "author_karma": 0,
+          "content": "Which Canadians ",
+          "timestamp": "2026-07-29T07:47:37+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0fcexm",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-07-29T07:50:00+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p09cbg5",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0ftf6p",
+          "author": "reddit_user_da0795b134bc",
+          "author_karma": 0,
+          "content": "Baseball fills this role just as easy. A bat, ball, and glove are relatively cheap compared to other equipment. \n\nBaseball also was big because you can just play it in an empty field, which if you live in rural area or can be easy to find than pavement for basketball. \n\nThe real reason I think it didn’t take off is that there isn’t as much money to made as Baseball or football. The MLS lowest pay in the league is around 100,000. Lowest MLB pay for a player is 780,000. If you have an athletic kid…I wouldn’t encourage them to play soccer either. Why limit their earning potential? ",
+          "timestamp": "2026-07-29T10:08:48+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": "p0acwko",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0g2pfs",
+          "author": "reddit_user_8b7158fc6a79",
+          "author_karma": 0,
+          "content": "But it's a bit odd because the women's soccer in the US has been absolutely dominant while mens has lagged behind. We are like the Brazil of women's soccer. ",
+          "timestamp": "2026-07-29T11:14:01+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p0ap71g",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0gz76x",
+          "author": "reddit_user_cf7b3a100b23",
+          "author_karma": 0,
+          "content": "We gonna act like boys aren't out there taking shots to the dome?\n\n",
+          "timestamp": "2026-07-29T14:05:18+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p09aypa",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0idck0",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-07-29T17:37:08+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p09abkz",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0ij4wk",
+          "author": "reddit_user_73fa2bf682df",
+          "author_karma": 0,
+          "content": "but cricket also became a mass sport in a number of poor countries. It's true that the British exported all these sports, but we should also look closely at what became popular where. Direct colonies of the British empire for the most part picked up cricket and rugby. India, South Africa, Australia, the Western Indies, Zimbabwe, Sri Lanka, etc etc. Countries whose connection with the british empire were mainly commercial picked up football. That's also because pretty early on football had established itself as the sport of the industrial class, workers \\*and\\* owners. So when the Brits went to Brazil, those guys loved football more than rugby, and while they exported all of them, that's true (the first football club in Italy, Genoa, also played cricket originally) it's easy to see why football got first choice. In general, football adapts well to a urban community, sports like cricket and rugby more to rural communities/college towns (think of France, a country historically with a majority rural population that embraced rugby)",
+          "timestamp": "2026-07-29T18:01:11+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p0aasyg",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0q9mv0",
+          "author": "reddit_user_65d8fd5497ad",
+          "author_karma": 0,
+          "content": "It's probably cheaper for working families. ",
+          "timestamp": "2026-07-30T19:16:00+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0wpuul",
+          "author": "reddit_user_7a1cae62ac52",
+          "author_karma": 0,
+          "content": "I know someone who is good enough and got drafted to the AHL, not even NHL; his dad up until 16 must have paid maybe $100k with ice time, training, tournaments, etc. If you want to play AAA you basically need to pay $10-15k a year. vs AAA soccer is relatively cheap. even basketball is starting to price themselves out with all this AAU travel team shit",
+          "timestamp": "2026-07-31T16:55:43+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p12qtsd",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-01T14:30:25+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run000_post04_seed004",
+      "post_slot": 4,
+      "seed_index": 4,
+      "source_raw_post_id": "1v964z7",
+      "source_product_dir": "sports",
+      "source_file": "https://www.reddit.com/r/sports/comments/1v964z7/fifa_plan_for_kushnerbacked_20_billion_operation/",
+      "post_type": ":soccer: Soccer",
+      "title": "FIFA plan for Kushner-backed $20 billion operation to run World Cup meets fury from Europe's UEFA",
+      "author": "reddit_user_79ff14d8816f",
+      "author_karma": 0,
+      "content": "FIFA plan for Kushner-backed $20 billion operation to run World Cup meets fury from Europe's UEFA",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p0clsd0",
+          "author": "reddit_user_aec2d2db1271",
+          "author_karma": 0,
+          "content": "Somehow Mayor Kingpin is still slightly less corrupt than the real US government,",
+          "timestamp": "2026-07-28T21:47:43+00:00",
+          "likes": 56,
+          "dislikes": 0,
+          "parent_comment_id": "p0bclwq",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0clts2",
+          "author": "reddit_user_4dd344b5823c",
+          "author_karma": 0,
+          "content": "So Greenland is apart of the states now? Must have been out that day ",
+          "timestamp": "2026-07-28T21:47:54+00:00",
+          "likes": 11,
+          "dislikes": 0,
+          "parent_comment_id": "p0c5bg7",
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0dkh95",
+              "author": "reddit_user_139fdfb5b00e",
+              "author_karma": 0,
+              "content": "I'm just saying, if the roles were reversed the reaction would not have been the same. \n\nHell, if it had been India or China the reaction would not have been the same.",
+              "timestamp": "2026-07-29T00:44:15+00:00",
+              "likes": -5,
+              "dislikes": 0,
+              "parent_comment_id": "p0clts2",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p0eup4e",
+                  "author": "reddit_user_8251889ace61",
+                  "author_karma": 0,
+                  "content": "Trump can only throw his weight around so much.\n\nLook at all European countries that flat out refused to join the war in Iran. A country like the UK not joining is *incredibly* surprising since they’ve been there for every US military action as goals align. \n\nNot anymore.\n\nTrump is actively losing whatever soft power the US had by insulting and alienating his allies across the board.",
+                  "timestamp": "2026-07-29T05:28:48+00:00",
+                  "likes": 4,
+                  "dislikes": 0,
+                  "parent_comment_id": "p0dkh95",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p0cmg5e",
+          "author": "reddit_user_9d06a7d50126",
+          "author_karma": 0,
+          "content": "Oh fuck no.\n\nInfantino needs yeeting.",
+          "timestamp": "2026-07-28T21:50:50+00:00",
+          "likes": 6,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0cmxf7",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-07-28T21:53:06+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p0bcumn",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0cnb3i",
+          "author": "reddit_user_d0ab2f0bdcbd",
+          "author_karma": 0,
+          "content": "Remember guys, FIFA is a non profit",
+          "timestamp": "2026-07-28T21:54:52+00:00",
+          "likes": 4,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0d0brv",
+              "author": "[deleted]",
+              "author_karma": 0,
+              "content": "[removed]",
+              "timestamp": "2026-07-28T22:58:45+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p0cnb3i",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p0coklx",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-07-28T22:00:48+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p0ba87r",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0ct0r1",
+          "author": "reddit_user_1dd9d85d3ace",
+          "author_karma": 0,
+          "content": "lol they put like 2 soldiers from each country in positions where your military would have to trigger art. 5 to do anything and you guys chickened the f out",
+          "timestamp": "2026-07-28T22:22:18+00:00",
+          "likes": 13,
+          "dislikes": 0,
+          "parent_comment_id": "p0chv3u",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0ct9pe",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-07-28T22:23:31+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0cw4rz",
+          "author": "reddit_user_1dd9d85d3ace",
+          "author_karma": 0,
+          "content": "> The financial success of the just-ended World Cup has looked likely to ensure Infantino is re-elected next year unopposed for a fourth and final term in office through 2031.\n\n> At his re-election by acclaim in 2023 in Rwanda, Infantino suggested any CEO delivering similar financial results would be kept in the job forever.\n\nDang ok :(",
+          "timestamp": "2026-07-28T22:37:42+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0cx27u",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-07-28T22:42:22+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p0bcdpc",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0cxujq",
+          "author": "reddit_user_67a2d87cce88",
+          "author_karma": 0,
+          "content": "What's perhaps even more astonishing is that no matter how insane or evil his ideas are,  theres still 30-35% of people who support them! ",
+          "timestamp": "2026-07-28T22:46:20+00:00",
+          "likes": 9,
+          "dislikes": 0,
+          "parent_comment_id": "p0ba87r",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0d631n",
+          "author": "reddit_user_1136c3c97b8f",
+          "author_karma": 0,
+          "content": "It was inevitable that Donny is somehow involved via the back door (Kushner). ",
+          "timestamp": "2026-07-28T23:28:21+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0d6bq4",
+          "author": "reddit_user_b4456ced99a3",
+          "author_karma": 0,
+          "content": "The vulcano is getting a renovation, it was payday after the worldcup after all. He’s now residing in a penthouse under the eye of Sauron in Mordor. ",
+          "timestamp": "2026-07-28T23:29:35+00:00",
+          "likes": 3,
+          "dislikes": 0,
+          "parent_comment_id": "p0ba87r",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0d6xaz",
+          "author": "reddit_user_aa3179219335",
+          "author_karma": 0,
+          "content": "Trump literally kills everything he touches, wow",
+          "timestamp": "2026-07-28T23:32:40+00:00",
+          "likes": 0,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0d71mm",
+          "author": "reddit_user_d3f234929938",
+          "author_karma": 0,
+          "content": "You dont sound patriotic either, you sound like a nationalist",
+          "timestamp": "2026-07-28T23:33:18+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p0bu3d2",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0d7g22",
+          "author": "reddit_user_c37e3527b334",
+          "author_karma": 0,
+          "content": "Has there ever been a better moment to create an alternate to FIFA?  Imagine a bribe-free soccer world where a hated despot cannot alter a decision on a red card.  FIFA has proven they are incapable of cleaning up their corruption, so why not try something new?",
+          "timestamp": "2026-07-28T23:35:21+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0d9b9l",
+          "author": "reddit_user_806e0b185ed2",
+          "author_karma": 0,
+          "content": "You know, one of the greatest things about football was than Americans weren’t involved in it.. how times change.",
+          "timestamp": "2026-07-28T23:45:01+00:00",
+          "likes": 4,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0dij2i",
+              "author": "reddit_user_2fe8706ec731",
+              "author_karma": 0,
+              "content": "That's insulting. Plenty of Americans are involved in Football / Soccer. \n\nI get your hatred of the US Government and FIFA, but most American Football / Soccer fans don't like this either.\n\nDon't pin those entities' evil on us!",
+              "timestamp": "2026-07-29T00:33:43+00:00",
+              "likes": -5,
+              "dislikes": 0,
+              "parent_comment_id": "p0d9b9l",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p0ej1m0",
+                  "author": "reddit_user_231574ae5e11",
+                  "author_karma": 0,
+                  "content": "You voted for it.",
+                  "timestamp": "2026-07-29T04:06:15+00:00",
+                  "likes": 10,
+                  "dislikes": 0,
+                  "parent_comment_id": "p0dij2i",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p0ggh5a",
+                      "author": "reddit_user_2fe8706ec731",
+                      "author_karma": 0,
+                      "content": "No, MAGA voted for it.  Much of the country opposed and still vehemently opposes him.",
+                      "timestamp": "2026-07-29T12:34:51+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p0ej1m0",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "p0h7bcg",
+                          "author": "reddit_user_231574ae5e11",
+                          "author_karma": 0,
+                          "content": "That might work in the American bubble, but internationally your government represents you wether you like it or not. If you lived under a military junta that would be a different story, but you live in a democracy (for now). You as Americans voted for it, even if you individually didn't.",
+                          "timestamp": "2026-07-29T14:40:51+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "p0ggh5a",
+                          "depth": 4,
+                          "replies": []
+                        },
+                        {
+                          "comment_id": "p0l96up",
+                          "author": "reddit_user_e7ab129b9709",
+                          "author_karma": 0,
+                          "content": "No, The majority of you voted for this twice. Much of the country voted for this 3 times.\n\nGtfo with your wet lettuce backbone. Most of you chose this again and again. The rest of you are pretending youre doing something about it, despite not doing the job at all",
+                          "timestamp": "2026-07-30T02:00:21+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "p0ggh5a",
+                          "depth": 4,
+                          "replies": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p0day6o",
+          "author": "reddit_user_b65828d0f3e0",
+          "author_karma": 0,
+          "content": "Money, that’s what’s going on. ",
+          "timestamp": "2026-07-28T23:53:31+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": "p0bnajh",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0dazzr",
+          "author": "reddit_user_787ae23a0568",
+          "author_karma": 0,
+          "content": "death to the FIFA",
+          "timestamp": "2026-07-28T23:53:47+00:00",
+          "likes": 0,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0de283",
+          "author": "reddit_user_2fe8706ec731",
+          "author_karma": 0,
+          "content": "Biff Tannen from Back to the Future is also inspired by Donald Trump.",
+          "timestamp": "2026-07-29T00:09:52+00:00",
+          "likes": 35,
+          "dislikes": 0,
+          "parent_comment_id": "p0bclwq",
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0elvam",
+              "author": "reddit_user_6436373413dc",
+              "author_karma": 0,
+              "content": "Is this true!? I mean, old biff makes sense… can you provide references. I’m to lazy for google tonight",
+              "timestamp": "2026-07-29T04:25:12+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p0de283",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p0et1gk",
+                  "author": "reddit_user_f0d11a7c2505",
+                  "author_karma": 0,
+                  "content": "Just look at him.",
+                  "timestamp": "2026-07-29T05:16:14+00:00",
+                  "likes": 13,
+                  "dislikes": 0,
+                  "parent_comment_id": "p0elvam",
+                  "depth": 2,
+                  "replies": []
+                },
+                {
+                  "comment_id": "p0f9urj",
+                  "author": "[deleted]",
+                  "author_karma": 0,
+                  "content": "[removed]",
+                  "timestamp": "2026-07-29T07:28:48+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p0elvam",
+                  "depth": 2,
+                  "replies": []
+                },
+                {
+                  "comment_id": "p0g6zjm",
+                  "author": "reddit_user_2fe8706ec731",
+                  "author_karma": 0,
+                  "content": "The writer backtracked on that claim:\n\nhttps://www.avclub.com/back-to-the-future-writer-biff-not-donald-trump\n\nThough I imagine he probably backtracked in order to avoid Trump's wrath...",
+                  "timestamp": "2026-07-29T11:41:01+00:00",
+                  "likes": 3,
+                  "dislikes": 0,
+                  "parent_comment_id": "p0elvam",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p0deo4j",
+          "author": "reddit_user_2fe8706ec731",
+          "author_karma": 0,
+          "content": "Many of us in the USA don't like the corruption either, so don't pin it on us.  We tried to stop Trump's election and simply failed.",
+          "timestamp": "2026-07-29T00:13:03+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p0bm84l",
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0fj19g",
+              "author": "reddit_user_69d0f03be40c",
+              "author_karma": 0,
+              "content": "America is greed central. The Land of the fee. It's the money money attitude that is all encompassing. Not sure about the corruption but your insatiable appetite for money will ruin theworld's greatest game if unchecked.",
+              "timestamp": "2026-07-29T08:45:03+00:00",
+              "likes": 2,
+              "dislikes": 0,
+              "parent_comment_id": "p0deo4j",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p0dfvt4",
+          "author": "reddit_user_b886f2f30c81",
+          "author_karma": 0,
+          "content": "Conmebal can decide which two. They can hold some kind of qualification tournament to decide. ",
+          "timestamp": "2026-07-29T00:19:28+00:00",
+          "likes": 7,
+          "dislikes": 0,
+          "parent_comment_id": "p0bhg9c",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0dh9vh",
+          "author": "reddit_user_c04dc6542f94",
+          "author_karma": 0,
+          "content": "Kushner 100%",
+          "timestamp": "2026-07-29T00:26:55+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": "p0bcdpc",
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0drrl8",
+              "author": "reddit_user_bc57f7fcd83e",
+              "author_karma": 0,
+              "content": "lil Kushner was put forward to not create as much controversy as the Presidents son in law from what I read.  ",
+              "timestamp": "2026-07-29T01:23:45+00:00",
+              "likes": 3,
+              "dislikes": 0,
+              "parent_comment_id": "p0dh9vh",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p0dt8vd",
+                  "author": "reddit_user_c04dc6542f94",
+                  "author_karma": 0,
+                  "content": "His goal has been to grift the most amount of money possible from Trump being in office ",
+                  "timestamp": "2026-07-29T01:31:55+00:00",
+                  "likes": 3,
+                  "dislikes": 0,
+                  "parent_comment_id": "p0drrl8",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p0di7tj",
+          "author": "reddit_user_796411af2b61",
+          "author_karma": 0,
+          "content": "They dont even like football!!",
+          "timestamp": "2026-07-29T00:32:01+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0h5f1j",
+              "author": "reddit_user_2c2aa2306e5f",
+              "author_karma": 0,
+              "content": "But they like money. ",
+              "timestamp": "2026-07-29T14:32:42+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p0di7tj",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p0dlog4",
+          "author": "reddit_user_4eeeb03f8810",
+          "author_karma": 0,
+          "content": "It’ll be renamed The Trump World Cup (no shithole countries allowed).",
+          "timestamp": "2026-07-29T00:50:45+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": "p0c9zpi",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0dn4j6",
+          "author": "reddit_user_ca9548fac21d",
+          "author_karma": 0,
+          "content": "Without UEFA, FIFA is basically MLS.",
+          "timestamp": "2026-07-29T00:58:29+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0dqjvq",
+          "author": "reddit_user_e479996d4790",
+          "author_karma": 0,
+          "content": "UEFA and CONMEBOL should break free from fifa, host their own tournament and invite every other Continental federation. \n\nSee how fast fifa would break apart. ",
+          "timestamp": "2026-07-29T01:17:06+00:00",
+          "likes": 4,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0du1bn",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-07-29T01:36:20+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p0c9zpi",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0dw0of",
+          "author": "reddit_user_f759b1897beb",
+          "author_karma": 0,
+          "content": "Invite Asia too. Plus Canada, Mexico",
+          "timestamp": "2026-07-29T01:47:20+00:00",
+          "likes": 8,
+          "dislikes": 0,
+          "parent_comment_id": "p0bhg9c",
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0ekwu0",
+              "author": "reddit_user_18640dfcb81c",
+              "author_karma": 0,
+              "content": "And Cabo Verde!",
+              "timestamp": "2026-07-29T04:18:40+00:00",
+              "likes": 4,
+              "dislikes": 0,
+              "parent_comment_id": "p0dw0of",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p0hguxl",
+              "author": "reddit_user_21470e653084",
+              "author_karma": 0,
+              "content": "Hey what do us Americans do… yeah no on second thought I understand. ",
+              "timestamp": "2026-07-29T15:21:24+00:00",
+              "likes": 2,
+              "dislikes": 0,
+              "parent_comment_id": "p0dw0of",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p0dw19n",
+          "author": "reddit_user_feab3759d322",
+          "author_karma": 0,
+          "content": "Led watched though",
+          "timestamp": "2026-07-29T01:47:25+00:00",
+          "likes": -1,
+          "dislikes": 0,
+          "parent_comment_id": "p0bhg9c",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0dwuvs",
+          "author": "reddit_user_1289cebabc5f",
+          "author_karma": 0,
+          "content": "America wins the next world cup because we're the only playing in it.",
+          "timestamp": "2026-07-29T01:52:04+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0e6bfo",
+          "author": "reddit_user_422ae0574fd7",
+          "author_karma": 0,
+          "content": "They ruin everything they touch. ",
+          "timestamp": "2026-07-29T02:46:10+00:00",
+          "likes": 6,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0e9ymo",
+          "author": "reddit_user_2767c35f4042",
+          "author_karma": 0,
+          "content": "The Globowl !",
+          "timestamp": "2026-07-29T03:08:03+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p0cfqb7",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0eez5t",
+          "author": "reddit_user_0ed6ce591fda",
+          "author_karma": 0,
+          "content": "He legit feels like a Bond villain",
+          "timestamp": "2026-07-29T03:39:49+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p0ba87r",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0ef7a3",
+          "author": "reddit_user_db2fbca1170f",
+          "author_karma": 0,
+          "content": "Prepare to have a world cup every year",
+          "timestamp": "2026-07-29T03:41:16+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0emw2a",
+          "author": "reddit_user_4a5ba398da15",
+          "author_karma": 0,
+          "content": "O",
+          "timestamp": "2026-07-29T04:32:11+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0eovgz",
+          "author": "reddit_user_b2dd1b629196",
+          "author_karma": 0,
+          "content": "I mean World Cup doesn't even have that great of a ring. Sounds generic and forgettable ",
+          "timestamp": "2026-07-29T04:46:03+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": "p0c9zpi",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0epfpt",
+          "author": "reddit_user_a2e44a26e823",
+          "author_karma": 0,
+          "content": "Answer is obviously to do it annually lol haha",
+          "timestamp": "2026-07-29T04:50:02+00:00",
+          "likes": 3,
+          "dislikes": 0,
+          "parent_comment_id": "p0casvp",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0epzef",
+          "author": "reddit_user_3eb9169462ed",
+          "author_karma": 0,
+          "content": "2 Continents 1 Cup",
+          "timestamp": "2026-07-29T04:53:51+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": "p0c9zpi",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0eu82a",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[deleted]",
+          "timestamp": "2026-07-29T05:25:15+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p0chv3u",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0eusws",
+          "author": "reddit_user_8251889ace61",
+          "author_karma": 0,
+          "content": "Today I feel corrupt",
+          "timestamp": "2026-07-29T05:29:37+00:00",
+          "likes": 4,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0ev9lo",
+          "author": "reddit_user_bb19f57fc153",
+          "author_karma": 0,
+          "content": "FIFA has been a super villain for decades, and never bothered to hide it.",
+          "timestamp": "2026-07-29T05:33:09+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": "p0ba87r",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0exl5r",
+          "author": "reddit_user_a584d924bbb6",
+          "author_karma": 0,
+          "content": "I mean if the FIFA is doing this that kind of just forces UEFA’s hand to go through with their breakaway plan.",
+          "timestamp": "2026-07-29T05:51:13+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0f2wgm",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-07-29T06:33:14+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p0bdcdk",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0f2yt5",
+          "author": "reddit_user_0e1e4d32741e",
+          "author_karma": 0,
+          "content": "The orange one cant even beat Iran.  \n\nNobody is scared of him they are just wondering what daft thing he says he is going to do next.  Then they just wait until he forgets and moves on to the next thing.  \n\nHe has made your country a laughing stock.  ",
+          "timestamp": "2026-07-29T06:33:46+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p0c5bg7",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0f7kuk",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-07-29T07:10:23+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p0c5bg7",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0f9lnj",
+          "author": "reddit_user_1d188163c8dc",
+          "author_karma": 0,
+          "content": "152nations1cup ",
+          "timestamp": "2026-07-29T07:26:42+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": "p0ci596",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0fab22",
+          "author": "reddit_user_53e7a3b29e3d",
+          "author_karma": 0,
+          "content": "Trump touches something and it goes to shit. (Or gets even shittier)",
+          "timestamp": "2026-07-29T07:32:31+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0feg2h",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-07-29T08:06:50+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p0ba87r",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0ffk0b",
+          "author": "reddit_user_e55779c3a01b",
+          "author_karma": 0,
+          "content": "Example number 5000 of how evil FIFA is. Fans and teams will probably continue to support them ",
+          "timestamp": "2026-07-29T08:16:03+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0fg3ms",
+          "author": "reddit_user_c40b27cd633e",
+          "author_karma": 0,
+          "content": "Personally I think it was a shame that that's the only thing that was remembered from that report. It had suggestions of fewer but longer international breaks that would be better for players. Less travel time. But it drowned in the every 2 years world cup.",
+          "timestamp": "2026-07-29T08:20:34+00:00",
+          "likes": 10,
+          "dislikes": 0,
+          "parent_comment_id": "p0casvp",
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0ftyh4",
+              "author": "[deleted]",
+              "author_karma": 0,
+              "content": "[removed]",
+              "timestamp": "2026-07-29T10:12:49+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p0fg3ms",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p0fh61q",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-07-29T08:29:28+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p0bclwq",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0flm62",
+          "author": "reddit_user_4ac2647ecf7d",
+          "author_karma": 0,
+          "content": "Has a white Himalayan cat too",
+          "timestamp": "2026-07-29T09:06:10+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p0ba87r",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0fosbt",
+          "author": "reddit_user_bf2f3da64571",
+          "author_karma": 0,
+          "content": "UEFA should leave FIFA after this. Infantino should be in prison for all the corruption he is doing. \n\nHe really thinks he is one of the dictators and like a 'head of state' level in importance. That is why he sucks up to Trump. Narcissistic old wastes of breath see their ugly souls in each other.",
+          "timestamp": "2026-07-29T09:32:18+00:00",
+          "likes": 3,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0fpll8",
+          "author": "reddit_user_54d71e672a02",
+          "author_karma": 0,
+          "content": "The fact that he looks exactly like The Hood from Thunderbirds is another big indicator.",
+          "timestamp": "2026-07-29T09:38:54+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": "p0ba87r",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0ftaxb",
+          "author": "reddit_user_e4485ba2fbd9",
+          "author_karma": 0,
+          "content": "As far I know there is no copyright for World Cup, the full name that would be copyrighted is \"FIFA World Cup\".\n\n",
+          "timestamp": "2026-07-29T10:07:55+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p0c9zpi",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0g4acg",
+          "author": "reddit_user_895c6d04e066",
+          "author_karma": 0,
+          "content": "What about the other continental federation? \n\nAny word from them yet? ",
+          "timestamp": "2026-07-29T11:24:06+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0g96mb",
+          "author": "reddit_user_671779356cbb",
+          "author_karma": 0,
+          "content": "So having gifted Donald Trump a fifa peace prize and the Club World Cup trophy they are going to sell Fifa to Trumps extended family? \n\nI am so fucking tired of this timeline. ",
+          "timestamp": "2026-07-29T11:54:10+00:00",
+          "likes": 3,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0gah7g",
+          "author": "reddit_user_f45d736beb48",
+          "author_karma": 0,
+          "content": "Seriously. Some of these people could announce they’re going to start executing babies in Times Square and huge swaths of people would be like “you know what, we *do* have too many babies” or some crazy ass shit\n\nThere’s no end to what they can get away with anymore",
+          "timestamp": "2026-07-29T12:01:42+00:00",
+          "likes": 5,
+          "dislikes": 0,
+          "parent_comment_id": "p0c5iut",
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0jrvpf",
+              "author": "reddit_user_2bdb5a4ae468",
+              "author_karma": 0,
+              "content": "I have said for quite a long time that single issue voters are to blame for all of this \"sure he literally stomps on puppies in his free time, but he's against abortion, so he's got my vote\"",
+              "timestamp": "2026-07-29T21:16:12+00:00",
+              "likes": 3,
+              "dislikes": 0,
+              "parent_comment_id": "p0gah7g",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p0gh9at",
+          "author": "reddit_user_5a45770d3886",
+          "author_karma": 0,
+          "content": "I hope they do, FIFA is beyond repair or reform a new football organisation needs to created and I hope majority of countries walk away from FIFA. As its Long Overdue. ",
+          "timestamp": "2026-07-29T12:39:01+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p0bcumn",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0gi1uq",
+          "author": "reddit_user_566e3002d95d",
+          "author_karma": 0,
+          "content": "Kushner 3 Revenge of the trust fund ",
+          "timestamp": "2026-07-29T12:43:11+00:00",
+          "likes": 5,
+          "dislikes": 0,
+          "parent_comment_id": "p0bh43r",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0gqkx5",
+          "author": "reddit_user_9d4e574b134c",
+          "author_karma": 0,
+          "content": "Now is the time to start a new world football body breakaway. Fuck FIFA, it's been a cartel for decades.",
+          "timestamp": "2026-07-29T13:25:22+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0gr2oo",
+          "author": "reddit_user_f733b8691aec",
+          "author_karma": 0,
+          "content": "Might’ve known one of them had something to do with it ",
+          "timestamp": "2026-07-29T13:27:42+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0guuww",
+          "author": "reddit_user_9bb4f268c36f",
+          "author_karma": 0,
+          "content": "Another family that made their money from real estate.\n\nThe stain that keeps on staining.",
+          "timestamp": "2026-07-29T13:45:23+00:00",
+          "likes": 12,
+          "dislikes": 0,
+          "parent_comment_id": "p0bh43r",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0gvoii",
+          "author": "reddit_user_9bb4f268c36f",
+          "author_karma": 0,
+          "content": "It's going to be quite ugly. \n\nThe smaller, more numerous, teams would desperately need the money but will still be treated like shit with FIFA v2.0. So these teams will have the numbers to vote for the proposal.\n\nWhile the big teams don't need the money, still be treated like royalty anyway, but won't have the numbers to defeat it if that's what they want.",
+          "timestamp": "2026-07-29T13:49:12+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": "p0bcumn",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0gxl0c",
+          "author": "reddit_user_783f33ef6b80",
+          "author_karma": 0,
+          "content": "Does the UEFA have the resources to expand the Euros and compete on a world scale? They already run the second biggest tournament on Earth.",
+          "timestamp": "2026-07-29T13:57:57+00:00",
+          "likes": 3,
+          "dislikes": 0,
+          "parent_comment_id": "p0bcumn",
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0hf5tf",
+              "author": "reddit_user_db16b22ed3f8",
+              "author_karma": 0,
+              "content": "ofc they can, the Euro’s were already WC scale",
+              "timestamp": "2026-07-29T15:14:10+00:00",
+              "likes": 2,
+              "dislikes": 0,
+              "parent_comment_id": "p0gxl0c",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p0nraa4",
+              "author": "reddit_user_f8bca7e1f95c",
+              "author_karma": 0,
+              "content": "Part of why UEFA is pissy enough at being disregarded to reach for the hard power here is that it's generally wealthier than FIFA.",
+              "timestamp": "2026-07-30T12:39:22+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p0gxl0c",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p0ha7nm",
+          "author": "reddit_user_8d6b5448f4e7",
+          "author_karma": 0,
+          "content": "I never really hated FIFA or any sports governing body (except maybe the NCAA), but Intantio is really out to kill the golden goose.  The various federations should just withdraw and reset with the creation of another similar body.",
+          "timestamp": "2026-07-29T14:53:10+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0hte20",
+          "author": "reddit_user_1abb2b5abcbb",
+          "author_karma": 0,
+          "content": "Fam, Iran just humbled your entire military in front of the whole world with a bunch of throwaway drones. I’m up in Canada, and the entire country is laughing at you. \n\nThe U.S. just demonstrated that it has no teeth and no strategy to defeat even a moderate power. It is a screaming toddler, to be controlled with diplomacy by its European superiors as demonstrated.",
+          "timestamp": "2026-07-29T16:14:11+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": "p0chv3u",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0htu8v",
+          "author": "reddit_user_8962f46471c5",
+          "author_karma": 0,
+          "content": "01/07/2017   \n\"We should hope and pray, therefore, that Ivanka and Jared’s marriage lasts many good years, or at least until the end of the president’s term. Because if it doesn’t, Heaven forbid, if the relationship starts going downhill, we will see plenty of slurs and financial lawsuits flying around. Then the president, or his associates, will say that the Jewish real estate investor was only interested in money. From the very beginning, all he wanted was money.\"  \n[https://www.ynetnews.com/articles/0,7340,L-4902329,00.html](https://www.ynetnews.com/articles/0,7340,L-4902329,00.html)",
+          "timestamp": "2026-07-29T16:16:04+00:00",
+          "likes": 3,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0j1e3o",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-07-29T19:19:05+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p0ba87r",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0jlhr7",
+          "author": "reddit_user_381ff6f3805c",
+          "author_karma": 0,
+          "content": "It sounds like Trump has his dirty hands all over this. Infantino is in his pocket after all. ",
+          "timestamp": "2026-07-29T20:46:50+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p0ba87r",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0jrs98",
+          "author": "reddit_user_ca612d1609bc",
+          "author_karma": 0,
+          "content": "no pushback?",
+          "timestamp": "2026-07-29T21:15:45+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p0c5bg7",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0m7pvo",
+          "author": "reddit_user_a367f34bdf75",
+          "author_karma": 0,
+          "content": "Why both both?",
+          "timestamp": "2026-07-30T05:51:05+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p0bcdpc",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0ngdtm",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-07-30T11:38:34+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p0ba87r",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0rc0hp",
+          "author": "reddit_user_6d58b6eb7b2c",
+          "author_karma": 0,
+          "content": "Kushner is a soulless ghoul who should be thrown in jail. ",
+          "timestamp": "2026-07-30T22:06:44+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0rnwrj",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-07-30T23:06:59+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p0bcdpc",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0t7lqc",
+          "author": "reddit_user_ae2c2922da6f",
+          "author_karma": 0,
+          "content": "Ahem, that's Ambassador Daddy Pardoned Felon Kushner",
+          "timestamp": "2026-07-31T04:24:58+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p0bh43r",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0zdno3",
+          "author": "reddit_user_d9333709e7d1",
+          "author_karma": 0,
+          "content": "FU diaper Don shit-in-law.",
+          "timestamp": "2026-08-01T00:32:41+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    }
+  ]
+}

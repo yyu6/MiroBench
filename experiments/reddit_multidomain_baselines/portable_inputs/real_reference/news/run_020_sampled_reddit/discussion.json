@@ -1,0 +1,521 @@
+{
+  "meta": {
+    "product_category": "news",
+    "baseline": "real_reddit_reference",
+    "run_id": "run_020_sampled_reddit"
+  },
+  "posts": [
+    {
+      "post_id": "real_run020_post00_seed100",
+      "post_slot": 0,
+      "seed_index": 100,
+      "source_raw_post_id": "1ved8lz",
+      "source_product_dir": "news",
+      "source_file": "https://www.reddit.com/r/news/comments/1ved8lz/top_dogs_ride_waves_at_annual_world_dog_surfing/",
+      "post_type": "link",
+      "title": "Top dogs ride waves at annual World Dog Surfing Championships",
+      "author": "reddit_user_bde1e90b951b",
+      "author_karma": 0,
+      "content": "Top dogs ride waves at annual World Dog Surfing Championships",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p1fzhzf",
+          "author": "reddit_user_383b2f381f35",
+          "author_karma": 0,
+          "content": "Along with the hobby horse championship and the quidditch final.",
+          "timestamp": "2026-08-03T13:28:31+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1g0w9d",
+          "author": "reddit_user_fa5ccee01574",
+          "author_karma": 0,
+          "content": "sooooo where was this broadcast and why wasn’t it the event of the summer?!",
+          "timestamp": "2026-08-03T13:35:20+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run020_post01_seed101",
+      "post_slot": 1,
+      "seed_index": 101,
+      "source_raw_post_id": "1ved9n9",
+      "source_product_dir": "worldnews",
+      "source_file": "https://www.reddit.com/r/worldnews/comments/1ved9n9/zelenskyy_calls_on_diplomats_to_counter_russian/",
+      "post_type": "Russia/Ukraine",
+      "title": "Zelenskyy calls on diplomats to counter Russian influence ahead of elections in partner countries",
+      "author": "reddit_user_bde1e90b951b",
+      "author_karma": 0,
+      "content": "Zelenskyy calls on diplomats to counter Russian influence ahead of elections in partner countries",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p1g07xr",
+          "author": "reddit_user_ee96c57466be",
+          "author_karma": 0,
+          "content": "Definitely needed in all the west, too much russian money and influence in elections and these people if they get in will destroy the west from within, they've already started with the US",
+          "timestamp": "2026-08-03T13:32:02+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1g7d9h",
+              "author": "reddit_user_ee7bbc3b5d75",
+              "author_karma": 0,
+              "content": "Every single country in Europe faces pro-russian candidates. Unfortunately some get elected. And it all starts within disinformation on social media. I can't believe europe doesn't have hard guardrails already. I would give tiktok and meta ultimatum. Either you ban the list of accounts on your platform, or we gonna block you entirely. ",
+              "timestamp": "2026-08-03T14:05:45+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1g07xr",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1gu8zj",
+                  "author": "reddit_user_301b4527a923",
+                  "author_karma": 0,
+                  "content": "Then you become Russia or North Korea.",
+                  "timestamp": "2026-08-03T15:46:42+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1g7d9h",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1h0239",
+                      "author": "reddit_user_2d03d1c58eef",
+                      "author_karma": 0,
+                      "content": "Our free speech is also used by our enemies to weaken us, for which we have no counter other than education - brilliant ",
+                      "timestamp": "2026-08-03T16:11:21+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1gu8zj",
+                      "depth": 3,
+                      "replies": []
+                    },
+                    {
+                      "comment_id": "p1hfs42",
+                      "author": "reddit_user_ee7bbc3b5d75",
+                      "author_karma": 0,
+                      "content": "Many people can't distinguish between free speech (opinion), misinformation, disinformation and propaganda.",
+                      "timestamp": "2026-08-03T17:16:08+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1gu8zj",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                },
+                {
+                  "comment_id": "p1gxiwz",
+                  "author": "reddit_user_ee96c57466be",
+                  "author_karma": 0,
+                  "content": "Unfortunately yes, yeah there needs to be fact checking on social media,like if you're going to post something it should be reviewed first and fact checked and if you try and post falsehoods multiple times your account gets banned, I don't think personal messages should be scanned between people though just the ones you are posting for everyone to see anyway, there must be a way to verify people without violations of privacy too\n\nI mean X should be banned anyway musk was trying to incite violence during the riots and promoted far right talking points, that's massive influence one person shouldn't have, trying to overthrow the government ",
+                  "timestamp": "2026-08-03T16:00:36+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1g7d9h",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1hiw6l",
+                      "author": "reddit_user_ee7bbc3b5d75",
+                      "author_karma": 0,
+                      "content": "Countries should follow Germany example. Ppl from Germany can't see a lot of russian propaganda accounts on twitter. It's called geoblocking.",
+                      "timestamp": "2026-08-03T17:28:47+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1gxiwz",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "p1hk2kq",
+                          "author": "reddit_user_ee96c57466be",
+                          "author_karma": 0,
+                          "content": "They would probably just pay someone in the country to do a bot farm and it's not exactly worked as afd is still prominent in Germany though the uk can't talk with reform and restore\n\nBut banning for disinformation as well as producing sources of the facts would combat disinformation too",
+                          "timestamp": "2026-08-03T17:33:36+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "p1hiw6l",
+                          "depth": 4,
+                          "replies": [
+                            {
+                              "comment_id": "p1hkkld",
+                              "author": "reddit_user_ee7bbc3b5d75",
+                              "author_karma": 0,
+                              "content": "It doesn't matter bot farm within the country or outside. They update lists and block for anyone with German ip",
+                              "timestamp": "2026-08-03T17:35:39+00:00",
+                              "likes": 1,
+                              "dislikes": 0,
+                              "parent_comment_id": "p1hk2kq",
+                              "depth": 5,
+                              "replies": [
+                                {
+                                  "comment_id": "p1hodyb",
+                                  "author": "reddit_user_ee96c57466be",
+                                  "author_karma": 0,
+                                  "content": "Possibly that in tandem with disinformation post monitoring and fact checking then ",
+                                  "timestamp": "2026-08-03T17:51:23+00:00",
+                                  "likes": 1,
+                                  "dislikes": 0,
+                                  "parent_comment_id": "p1hkkld",
+                                  "depth": 6,
+                                  "replies": [
+                                    {
+                                      "comment_id": "p1hu2ew",
+                                      "author": "[deleted]",
+                                      "author_karma": 0,
+                                      "content": "[removed]",
+                                      "timestamp": "2026-08-03T18:15:12+00:00",
+                                      "likes": 1,
+                                      "dislikes": 0,
+                                      "parent_comment_id": "p1hodyb",
+                                      "depth": 7,
+                                      "replies": []
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "comment_id": "p1h6md4",
+                  "author": "reddit_user_0baf7d61b131",
+                  "author_karma": 0,
+                  "content": "Who gets to decide who is propaganda.",
+                  "timestamp": "2026-08-03T16:38:41+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1g7d9h",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1hego0",
+                      "author": "reddit_user_42e33cde98ed",
+                      "author_karma": 0,
+                      "content": "History",
+                      "timestamp": "2026-08-03T17:10:49+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1h6md4",
+                      "depth": 3,
+                      "replies": []
+                    },
+                    {
+                      "comment_id": "p1i9wjc",
+                      "author": "reddit_user_35f104800a55",
+                      "author_karma": 0,
+                      "content": "All information is technically propaganda. But it's the responsibility of the state to combat propaganda against the state from within. There's no right way to do this without infringing upon someone's free speech and at some point you have to decide whether you want absolute free speech or social cohesion and stability.",
+                      "timestamp": "2026-08-03T19:23:31+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1h6md4",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "p1icy5i",
+                          "author": "reddit_user_0baf7d61b131",
+                          "author_karma": 0,
+                          "content": "Imo it's the responsibility of the state to educate its populus to a point where they can critically think.",
+                          "timestamp": "2026-08-03T19:36:57+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "p1i9wjc",
+                          "depth": 4,
+                          "replies": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p1g3gge",
+          "author": "reddit_user_0b5547ce6646",
+          "author_karma": 0,
+          "content": "Or maybe just do something about the problems your populations have and stop blaming everything on Russian propaganda?",
+          "timestamp": "2026-08-03T13:47:33+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1gej02",
+              "author": "reddit_user_215aafb2287b",
+              "author_karma": 0,
+              "content": "Like drone attacks?",
+              "timestamp": "2026-08-03T14:38:20+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1g3gge",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1gew60",
+                  "author": "reddit_user_0b5547ce6646",
+                  "author_karma": 0,
+                  "content": "No like the internal politics that drive public opinion far more than the Ukraine war. All your leaders are unpopular and that’s not Russia’s doing believe it or not.",
+                  "timestamp": "2026-08-03T14:39:56+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1gej02",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1gkjfp",
+                      "author": "reddit_user_f9f58970e12e",
+                      "author_karma": 0,
+                      "content": "Leaders in Ukraine are never popular, but the biggest issue rn is russia.",
+                      "timestamp": "2026-08-03T15:04:48+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1gew60",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "p1i0j6g",
+                          "author": "reddit_user_0b5547ce6646",
+                          "author_karma": 0,
+                          "content": "I’m talking about western European leaders. They’re all hated but once people bring up that fact it’s Russian propaganda rather than just the population speaking their mind",
+                          "timestamp": "2026-08-03T18:43:05+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "p1gkjfp",
+                          "depth": 4,
+                          "replies": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "comment_id": "p1go9ey",
+              "author": "reddit_user_d9b248fcdd02",
+              "author_karma": 0,
+              "content": "Sure, but it's like those right wing propagandists are gonna fix them. America is so happy right now with their choice. Nawrocki did so much also for Poland already, now we don't have same sex marriages and more hate towards neighbours. Sure buddy.",
+              "timestamp": "2026-08-03T15:20:59+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1g3gge",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1gmrjw",
+          "author": "reddit_user_301b4527a923",
+          "author_karma": 0,
+          "content": "We all agree that Russian influence needs to be stopped. But those countries also need to address their own issues or they will end up voting for the wrong candidate. Those issues can’t be ignored and pretend they don’t exist.",
+          "timestamp": "2026-08-03T15:14:27+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1i43ce",
+          "author": "reddit_user_d168c795a71b",
+          "author_karma": 0,
+          "content": "Idiotic western world seems like they don't care and welcome the propaganda of terroristic ruZZia ",
+          "timestamp": "2026-08-03T18:58:20+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1ijof4",
+          "author": "reddit_user_301c8cd3614a",
+          "author_karma": 0,
+          "content": "So we must counter foreign influence from country A with foreign influence from country B?",
+          "timestamp": "2026-08-03T20:06:26+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1ind1k",
+          "author": "reddit_user_caa9145fe7d2",
+          "author_karma": 0,
+          "content": "Anti-Corruption and Counter-Intelligence Agencies in \"the West\" need to wake the fuck up. This is Cold War 2.0.",
+          "timestamp": "2026-08-03T20:22:31+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1jwkok",
+          "author": "reddit_user_bb4bd55e388f",
+          "author_karma": 0,
+          "content": "Don’t allow Russian influence… but DO allow Ukraine inference hmm okay ",
+          "timestamp": "2026-08-04T00:01:59+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run020_post02_seed102",
+      "post_slot": 2,
+      "seed_index": 102,
+      "source_raw_post_id": "1vedg4d",
+      "source_product_dir": "nottheonion",
+      "source_file": "https://www.reddit.com/r/nottheonion/comments/1vedg4d/fine_print_shows_blanche_tried_to_sneak_through/",
+      "post_type": "link",
+      "title": "Fine print shows Blanche tried to ‘sneak through’ overnight ‘scam’ to shield Trump: report",
+      "author": "reddit_user_bde1e90b951b",
+      "author_karma": 0,
+      "content": "Fine print shows Blanche tried to ‘sneak through’ overnight ‘scam’ to shield Trump: report",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p1fzg92",
+          "author": "reddit_user_e320faca37f4",
+          "author_karma": 0,
+          "content": "[](/spikeholdup) Greetings, \\[REDDIT_USER]!  Your submission from rawstory.com has been automatically removed because it violates Rule 4 (use original, reliable sources).  **The website that you submitted, rawstory.com, is not allowed for one or more of the following reasons:**\n\n* **It frequently quotes other sources in its content, or is known to engage in content-theft.**\n\n* **It's not a reliable source. This could be because it's a news blog, tabloid, or is known to be overly slanted. If it was a local news affiliate and owned by Sinclair Group they are also not allowed.**\n\n* **It's an opinion or blog section of a regular news website, or the site is known to post opinion articles as fact.**\n\n* **It's a site for activism or promoting a certain POV.  Nothing wrong with that, but it's not a news site.**\n\nIf you'd like, you can review the article and resubmit from a better source.  If your article's source is linked in the article, you can try submitting from the original source.  [For more information on Rule 4, click here.](https://www.reddit.com/r/nottheonion/wiki/nto101#wiki_rule_4.3A__use_original.2C_reliable_sources.)  \n\nFor a complete list of domains that are not allowed, [click here](https://www.reddit.com/r/nottheonion/wiki/autoremoval).  If you're new to \\/r/NotTheOnion, you may want to check out [NTO101: An Introduction To \\/r/NotTheOnion](https://www.reddit.com/r/nottheonion/wiki/nto101) for more information on our rules and answers to frequently asked questions.\n\n*I am a bot, and this action was performed automatically. Please [contact the moderators of this subreddit](/message/compose/?to=/r/nottheonion) if you have any questions or concerns.*",
+          "timestamp": "2026-08-03T13:28:17+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run020_post03_seed103",
+      "post_slot": 3,
+      "seed_index": 103,
+      "source_raw_post_id": "1vee2yn",
+      "source_product_dir": "nottheonion",
+      "source_file": "https://www.reddit.com/r/nottheonion/comments/1vee2yn/russia_accused_of_detaining_and_beating_men_into/",
+      "post_type": "link",
+      "title": "Russia accused of detaining and beating men into signing war contracts",
+      "author": "reddit_user_bde1e90b951b",
+      "author_karma": 0,
+      "content": "Russia accused of detaining and beating men into signing war contracts",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p1g52qv",
+          "author": "reddit_user_6f4c982043ed",
+          "author_karma": 0,
+          "content": "Has morale improved yet?",
+          "timestamp": "2026-08-03T13:55:08+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1g58qg",
+          "author": "reddit_user_07c12aca6fc0",
+          "author_karma": 0,
+          "content": "So what's changed?",
+          "timestamp": "2026-08-03T13:55:55+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run020_post04_seed104",
+      "post_slot": 4,
+      "seed_index": 104,
+      "source_raw_post_id": "1veeuh8",
+      "source_product_dir": "worldnews",
+      "source_file": "https://www.reddit.com/r/worldnews/comments/1veeuh8/suspect_arrested_in_greece_after_british_womans/",
+      "post_type": "link",
+      "title": "Suspect arrested in Greece after British woman's body found in suitcase",
+      "author": "reddit_user_bde1e90b951b",
+      "author_karma": 0,
+      "content": "Suspect arrested in Greece after British woman's body found in suitcase",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p1gbxuu",
+          "author": "reddit_user_4d9fbf3f8fa5",
+          "author_karma": 0,
+          "content": "So horrible sad.",
+          "timestamp": "2026-08-03T14:26:44+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1gcyz3",
+          "author": "reddit_user_af6de61752ec",
+          "author_karma": 0,
+          "content": "Always the usual suspects, eh?",
+          "timestamp": "2026-08-03T14:31:21+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1gd0sp",
+          "author": "reddit_user_73660f6ff868",
+          "author_karma": 0,
+          "content": "\"According to reports, the suspect said the victim was already dead when he found her.\"\n\nWhat a lying piece of shit, hopefully he never sees the light of day again.",
+          "timestamp": "2026-08-03T14:31:34+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    }
+  ]
+}

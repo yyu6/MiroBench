@@ -1,0 +1,521 @@
+{
+  "meta": {
+    "product_category": "laptop",
+    "baseline": "real_reddit_reference",
+    "run_id": "run_007_sampled_reddit"
+  },
+  "posts": [
+    {
+      "post_id": "real_run007_post00_seed035",
+      "post_slot": 0,
+      "seed_index": 35,
+      "source_raw_post_id": "1vcmxn0",
+      "source_product_dir": "laptops",
+      "source_file": "https://www.reddit.com/r/laptops/comments/1vcmxn0/thinkpad_gen_3_amd_vs_gen_6_amd/",
+      "post_type": "Buying help",
+      "title": "Thinkpad gen 3 amd vs gen 6 amd",
+      "author": "reddit_user_d8691634ac1e",
+      "author_karma": 0,
+      "content": "Thinkpad gen 3 amd vs gen 6 amd\n\nI’m starting college soon and I’m getting a laptop. \n\nThe only difference I can tell between the gen 3 and 6 think pad is that gen 3 has a Ryzen 5, and gen 6 has a Ryzen 7. Are there any other differences, and how much of a difference do the cpus make?",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p12f0yp",
+          "author": "reddit_user_e339853dcd7c",
+          "author_karma": 0,
+          "content": "My best guess that gen 6 would be just physically younger😄 ",
+          "timestamp": "2026-08-01T13:28:32+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run007_post01_seed036",
+      "post_slot": 1,
+      "seed_index": 36,
+      "source_raw_post_id": "1vcn3y6",
+      "source_product_dir": "laptops",
+      "source_file": "https://www.reddit.com/r/laptops/comments/1vcn3y6/new_asus_m7400q_battery_shows_50wh_design/",
+      "post_type": "Hardware",
+      "title": "New Asus M7400Q battery shows 50Wh design capacity instead of 63Wh. Is it fake?",
+      "author": "reddit_user_d8691634ac1e",
+      "author_karma": 0,
+      "content": "New Asus M7400Q battery shows 50Wh design capacity instead of 63Wh. Is it fake?\n\nHi everyone, I recently got my laptop battery replaced at a local shop for my Asus Vivobook Pro 14X OLED (M7400Q). The shop owner claimed it is an official, original battery.\n\nThe physical sticker printed on the new battery explicitly says 63Wh. However, when I generated a Windows Battery Report (and checked HWMonitor), the system reports the Designed Capacity is only 50,000 mWh\n\n(50Wh).",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p12vyvo",
+          "author": "reddit_user_39a177f76028",
+          "author_karma": 0,
+          "content": "have you recalibrated the battery (power cycled the laptop multiple times yet?)",
+          "timestamp": "2026-08-01T14:56:09+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p12w5fq",
+              "author": "reddit_user_a9e44b26200f",
+              "author_karma": 0,
+              "content": "Hi, yes! its the 4th cycle now but it still displays the same designed capacity and the full charge capacity decreased",
+              "timestamp": "2026-08-01T14:57:01+00:00",
+              "likes": 2,
+              "dislikes": 0,
+              "parent_comment_id": "p12vyvo",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p12y0i3",
+                  "author": "reddit_user_39a177f76028",
+                  "author_karma": 0,
+                  "content": "what about observable battery life. i've come across a few cases where the actual battery life has improved despite what the battery capacity shows. best case it's a defect battery with a faulty ec that's just reporting the wrong capacity or you actually got scammed, hard to tell tbh.",
+                  "timestamp": "2026-08-01T15:06:11+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p12w5fq",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p12ydey",
+                      "author": "reddit_user_a9e44b26200f",
+                      "author_karma": 0,
+                      "content": "The battery life is less than 4 hrs with just youtube, average discharge rate is about 13W to 14W.  ",
+                      "timestamp": "2026-08-01T15:07:57+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p12y0i3",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "p130a20",
+                          "author": "reddit_user_39a177f76028",
+                          "author_karma": 0,
+                          "content": "oof that sounds pretty poor. did the shop offer a warranty on the battery? it's either a shop owner that got screwed over by their supplier or someone who knows what he's doing. it's not hard to make money off unsuspecting customers who don't know how to run a battery report.",
+                          "timestamp": "2026-08-01T15:17:18+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "p12ydey",
+                          "depth": 4,
+                          "replies": [
+                            {
+                              "comment_id": "p135ve3",
+                              "author": "reddit_user_a9e44b26200f",
+                              "author_karma": 0,
+                              "content": "Ok thanks for the advice and help!!! Thank you@@@",
+                              "timestamp": "2026-08-01T15:44:18+00:00",
+                              "likes": 1,
+                              "dislikes": 0,
+                              "parent_comment_id": "p130a20",
+                              "depth": 5,
+                              "replies": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "comment_id": "p12wu96",
+              "author": "reddit_user_a9e44b26200f",
+              "author_karma": 0,
+              "content": "Hi, I don't know why i can't post image, but I have used hwinfo64 too\n\nhttps://reddit.com/link/p12wu96/video/v4s1wasw2sgh1/player\n\n",
+              "timestamp": "2026-08-01T15:00:23+00:00",
+              "likes": 2,
+              "dislikes": 0,
+              "parent_comment_id": "p12vyvo",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "post_id": "real_run007_post02_seed037",
+      "post_slot": 2,
+      "seed_index": 37,
+      "source_raw_post_id": "1vcnhfg",
+      "source_product_dir": "SuggestALaptop",
+      "source_file": "https://www.reddit.com/r/SuggestALaptop/comments/1vcnhfg/best_laptop_under_60k_in_india_for/",
+      "post_type": "Laptop Deal ",
+      "title": "Best laptop under 60k in india for Btech(engineering+gaming)",
+      "author": "reddit_user_d8691634ac1e",
+      "author_karma": 0,
+      "content": "Best laptop under 60k in india for Btech(engineering+gaming)\n\n&#x200B;\n\nI'm starting B.Tech this year, and my maximum budget is ₹60,000. I cannot stretch beyond ₹60,000.\n\nI'm looking for a laptop that:\n\n\\- Is excellent for engineering throughout all 4 years\n\n\\- Can also handle gaming if possible\n\n\\- Has good battery life\n\n\\- Will last 4+ years\n\n\\- Has good build quality and doesn't develop issues easily\n\n\\- Offers the best value for money\n\nGaming isn't a requirement. I only mentioned it because gaming laptops usually have better performance and cooling. If a non-gaming laptop is a better overall choice for engineering, I'm completely fine with that.\n\nPlease suggest the best laptops in these categories:\n\n1. Best for engineering\n\n2. Best for gaming\n\n3. Best all-rounder (engineering + gaming)\n\n4. Best battery life\n\n5. Best long-term reliability\n\nIf possible, please also mention why you're recommending a particular laptop, which one you'd personally choose under ₹60,000, and which laptops are likely to be available under ₹60,000 during the Independence Day sale.",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p12oug4",
+          "author": "reddit_user_8ca6adc162c0",
+          "author_karma": 0,
+          "content": "Bro, forget the cheap plastic laptops that warp their motherboards under heat. For a strict ₹60,000 max budget in India, there are only **two real options** that will actually survive all 4 years of B.Tech.\n\nHere are the only two laptops worth your money:\n\n1. Lenovo ThinkBook 15 / 16 (AMD Ryzen 5 or 7)\n\n*Best for Coding, Build Quality, and Battery Life (No Heavy Gaming)*\n\n* **Build Quality:** It features an aluminum top cover and military-grade certification (MIL-STD-810H). The chassis is completely rigid, meaning the motherboard won't flex or crack when you stuff it into a heavy college backpack.\n* **4-Year Reliability:** It comes with dual upgradeable slots for RAM and storage. You can start with 16GB and cheaply upgrade it to 32GB in your 3rd year if your engineering projects require it.\n* **Battery:** Because it doesn't have a power-hungry dedicated graphics card, the efficient Ryzen processor easily delivers 6 to 7 hours of battery life during lectures.\n\n2. Lenovo LOQ (AMD Ryzen 5 + RTX 3050 6GB)\n\n*Best for Heavy Engineering Software (CAD/3D Rendering) + Gaming*\n\n* **Cooling & Motherboard Safety:** While the body is heavy-duty plastic, its internal thermal cooling blueprint is taken directly from Lenovo's premium Legion lineup. The massive dual fans keep the motherboard ice-cold under full load. Heat kills laptops, and this configuration handles heat perfectly.\n* **Performance:** Make sure to look specifically for the **6GB VRAM** version of the RTX 3050 (avoid the older 4GB versions). It will easily handle 1080p gaming and run heavy engineering simulation tools like MATLAB or SolidWorks smoothly.\n* **The Catch:** It is bulky to carry around, and the battery life only lasts about 3 to 4 hours on basic tasks, so you will need to carry the charger to college.\n\nWhich one should you pick?\n\n* Go for the **ThinkBook** if you want a lightweight, premium metal build with great battery life for coding and studying.\n* Go for the **LOQ** if you want maximum raw power for gaming and 3D rendering, and don't mind the heavier weight.\n\n**Sale Tip:** Both of these models regularly drop below ₹60,000 during the August Independence Day Sales on Amazon India and Flipkart when using bank card discounts (SBI, HDFC, ICICI).",
+          "timestamp": "2026-08-01T14:20:19+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p13b3rf",
+              "author": "reddit_user_d0f40e3cceab",
+              "author_karma": 0,
+              "content": "is this AI? ",
+              "timestamp": "2026-08-01T16:09:19+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p12oug4",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p134w7d",
+          "author": "reddit_user_ec3c2827e744",
+          "author_karma": 0,
+          "content": "If you are comfortable with Open Box/Second Hand market, get a ThinkPad with NVIDIA Graphics Card (Mostly P series). You get good battery life, longetivity, reliability, and you can also game on those machines.",
+          "timestamp": "2026-08-01T15:39:39+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run007_post03_seed038",
+      "post_slot": 3,
+      "seed_index": 38,
+      "source_raw_post_id": "1vcocry",
+      "source_product_dir": "laptops",
+      "source_file": "https://www.reddit.com/r/laptops/comments/1vcocry/a_general_question_regarding_battery_health/",
+      "post_type": "General question",
+      "title": "A general question regarding battery health maintenance",
+      "author": "reddit_user_d8691634ac1e",
+      "author_karma": 0,
+      "content": "A general question regarding battery health maintenance\n\nFor context, my previous laptop (A ThinkPad L480; 45Wh battery) somehow managed circa 1600 cycles on 80% battery health with the original battery (I don't even know how).\n\nWhat I remember I'd been doing there was:  \n\\- It was always plugged in but conservation mode was on, it was stopped at 80% battery   \n\\- I never let it go below 15%  \n\\- I didn't do too many intensive things on it unless it was plugged in  \n\\- I made sure I didn't use Rapid Charge unless absolutely necessary.\n\n  \nRight now, I'm on my IdeaPad Slim 5 (60Wh battery). When I bought it, it was at 103% health and right now it's on 100% with 50 charge cycles. My goal is to touch at least 1500 cycles before I have to get the battery replaced.\n\n**I'm wondering whether following the same routine can get me similar or even better numbers, or if I should be doing anything else to take care of my battery.** \n\nFor further context, I have no unnecessary applications or files installed or downloaded on my computer. Only the things I regularly use. I also removed any unnecessary pre-installed apps to the point where the only OEM applications remaining are Lenovo AI Pro and Lenovo Vantage. Most Windows apps I don't use that can be removed have been removed as well.",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p12uu9e",
+          "author": "reddit_user_a8de09aca650",
+          "author_karma": 0,
+          "content": "Lipo batteries degrade faster than Lion batteries but are smaller and lighter so modern laptops use them.  It really doesn't matter how you use your laptop its the charge cycles that matter and you will hit 80% battery health at around 1000 cycles nothing you can really do about it",
+          "timestamp": "2026-08-01T14:50:31+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p135oo6",
+              "author": "reddit_user_4eae1c4d98b3",
+              "author_karma": 0,
+              "content": "Mine is equipped with a Li-Ion battery. I think cycles-wise, I might see this thing going through at least 1500 cycles because this'll be long-term just like my previous L480.\n\n",
+              "timestamp": "2026-08-01T15:43:25+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p12uu9e",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p13b4pi",
+                  "author": "reddit_user_a8de09aca650",
+                  "author_karma": 0,
+                  "content": "My Lenovo has a Lipo inside ",
+                  "timestamp": "2026-08-01T16:09:27+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p135oo6",
+                  "depth": 2,
+                  "replies": []
+                },
+                {
+                  "comment_id": "p13e6kt",
+                  "author": "reddit_user_a8de09aca650",
+                  "author_karma": 0,
+                  "content": "If you keep yours between 20% and 80% most of the time you should reach 1500 cycles easily",
+                  "timestamp": "2026-08-01T16:24:04+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p135oo6",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p12wyac",
+          "author": "reddit_user_8d6a9abc022f",
+          "author_karma": 0,
+          "content": "Stop worrying about it just use it. Batteries are meant to be replaced. ",
+          "timestamp": "2026-08-01T15:00:57+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p13646y",
+              "author": "reddit_user_4eae1c4d98b3",
+              "author_karma": 0,
+              "content": "Really, I just want to extend the life of this battery as far as it can go without sacrificing too much on the actual experience. This laptop will be with me for 6 years or more, so I would like to have it in as good of a condition as possible.  \n  \nBut yeah you're right, I shouldn't be thinking too much about it.",
+              "timestamp": "2026-08-01T15:45:28+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p12wyac",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p13ac5d",
+                  "author": "reddit_user_8d6a9abc022f",
+                  "author_karma": 0,
+                  "content": "What you gonna do? Not use it? ",
+                  "timestamp": "2026-08-01T16:05:39+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p13646y",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p12xfm3",
+          "author": "reddit_user_31cb2f5d4954",
+          "author_karma": 0,
+          "content": "Nothing really other than what you said. Heat is an enemy though",
+          "timestamp": "2026-08-01T15:03:18+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p135sbe",
+              "author": "reddit_user_4eae1c4d98b3",
+              "author_karma": 0,
+              "content": "Yep, I didn't use my ThinkPad on a laptop stand but I do use my current laptop on one so hopefully that improves.",
+              "timestamp": "2026-08-01T15:43:54+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p12xfm3",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "post_id": "real_run007_post04_seed039",
+      "post_slot": 4,
+      "seed_index": 39,
+      "source_raw_post_id": "1vcoreb",
+      "source_product_dir": "laptops",
+      "source_file": "https://www.reddit.com/r/laptops/comments/1vcoreb/i_got_my_first_laptop_any_tips/",
+      "post_type": "General question",
+      "title": "I got my first laptop. Any tips?",
+      "author": "reddit_user_d8691634ac1e",
+      "author_karma": 0,
+      "content": "I got my first laptop. Any tips?\n\nI recently got gifted a laptop because i absolutely need it in college. Do you guys have any tips or advice about using a laptop, any apps to install and any useful functions like ctrl+C etc.? Thanks 🥰🥰🥰",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p12sue9",
+          "author": "reddit_user_a8c11c7d1039",
+          "author_karma": 0,
+          "content": "I would turn off memory integrity to improve the performance. I like having the OEM control center apps like Lenovo vantage etc. if you use the laptop plugged in, make sure to set battery charging limits and then only full charge if you will be using it on battery for a while without access to your charger.\n\nSee what low settings you're comfortable with, like screen brightness and power limit to prolong your battery life and gives you an idea how long your battery would last on a full charge as well.\n\nI like changing skins or casing every now and then to make my devices feel like they are brand new again. So that I don't chase the latest gadgets and save more money while still feeling good about them.\n\nAlways do a proper shutdown of your laptop.\n\nCan't think of anything else at the moment.",
+          "timestamp": "2026-08-01T14:40:29+00:00",
+          "likes": 4,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p13beor",
+          "author": "reddit_user_318f071ac6fd",
+          "author_karma": 0,
+          "content": "What does Ctrl+C do? Usually keyboard shortcuts are built into the operating system. ",
+          "timestamp": "2026-08-01T16:10:47+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p13ceub",
+          "author": "reddit_user_5a90dd4d9b02",
+          "author_karma": 0,
+          "content": "Only close the lid when you need to take the laptop with you on the road. If you have it on a desk, just leave the lid in the open position. Opening and closing causes additional wear on the hinges. A common failure point. ",
+          "timestamp": "2026-08-01T16:15:34+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p16vh2t",
+              "author": "reddit_user_4eae1c4d98b3",
+              "author_karma": 0,
+              "content": "Agreed, and I'd add to this by suggesting a sleeve as well as some sort of a microfiber cloth. \n\nAnd another cloth large enough for you to put on top of the keyboard if you're leaving it open for a long while, since at least in some places, dust can get under the keyboard or trackpad. ",
+              "timestamp": "2026-08-02T03:38:56+00:00",
+              "likes": 2,
+              "dislikes": 0,
+              "parent_comment_id": "p13ceub",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p13p8vw",
+          "author": "reddit_user_7fbcaf1e49b9",
+          "author_karma": 0,
+          "content": "Buy a spare rechargeable battery for laptop even if you do not need to replace it now.\n\nParts are going to get harder to find the longer Trumps War continues",
+          "timestamp": "2026-08-01T17:17:04+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p141v7i",
+          "author": "reddit_user_7a878eea5a01",
+          "author_karma": 0,
+          "content": "If for whatever reason you need extra storage, get an external hard drive NOW before it's too late, because those are starting to get more and more expensive.",
+          "timestamp": "2026-08-01T18:17:13+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1585jz",
+          "author": "reddit_user_8ad07a36911c",
+          "author_karma": 0,
+          "content": "Buy an external disk and choose a backup program to use. If you don't take backups then your data doesn't matter to you.",
+          "timestamp": "2026-08-01T21:47:48+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p15i157",
+          "author": "reddit_user_9fbd93580454",
+          "author_karma": 0,
+          "content": "Don't drop it or spill anything on it. Unplug it by grasping the sturdy part of the power cord rather than the thinner wire part of the power cord.",
+          "timestamp": "2026-08-01T22:41:28+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p16225p",
+          "author": "reddit_user_86c8448a8e14",
+          "author_karma": 0,
+          "content": "Delete windows and install linux. You're welcome. ",
+          "timestamp": "2026-08-02T00:35:49+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p166obj",
+          "author": "reddit_user_025c8e091580",
+          "author_karma": 0,
+          "content": "If you plan to use it plugged in most of the time, set it up so it doesn't charge the battery all the way to 100%. That will extend the life of the battery ",
+          "timestamp": "2026-08-02T01:03:16+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p16vmub",
+              "author": "reddit_user_4eae1c4d98b3",
+              "author_karma": 0,
+              "content": "Conservation Mode or Battery Protection mode should do the trick, OP. It's called \"Conservation Mode\" on Lenovo and, I believe, \"Battery Care Function\" on HP.",
+              "timestamp": "2026-08-02T03:40:00+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p166obj",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p16wncp",
+          "author": "reddit_user_4eae1c4d98b3",
+          "author_karma": 0,
+          "content": "Here are some things to keep in mind:  \n\\- Open your laptop with two hands where possible, one on the base of the laptop and one on the middle of the top (where your camera would be). Opening a laptop from the corner or with one hand puts extra stress on the hinges.   \n\\- As [REDDIT_USER] said, you don't need to close your laptop *every* single time. That puts more stress on the hinges as well. I'd suggest getting a sleeve for when you'll have to transport your laptop, and also a microfiber cloth to clean the screen, and another cloth to place on top of the keyboard if you live in a place with lots of dust particles because those could probably get under the keyboard or trackpad.  \n\\- I'd enable Battery Conservation mode, or whatever it would be called on your machine, and have it limit itself to 80%. That is, unless you need the full 100% battery (unlikely unless you'll be going out)  \n\\- Keep the battery between 20% and 80%.  \n\\- Invest in a laptop stand so that the cooling system has more space to work. The intakes shouldn't be clogged or blocked (they would be if the laptop is on your lap).  \n",
+          "timestamp": "2026-08-02T03:46:44+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p178q15",
+              "author": "reddit_user_5a90dd4d9b02",
+              "author_karma": 0,
+              "content": "Ah yes. To you last point. Don't set it on a blanket, the bed or carpet. Put it on a hard surface so the little rubber feet keep it elevated and it can pull in air from the bottom and stay cool. ",
+              "timestamp": "2026-08-02T05:11:56+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p16wncp",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p18erzc",
+          "author": "reddit_user_671c9d9a1b45",
+          "author_karma": 0,
+          "content": "If it's Windows delete all the junk software that came pre installed.",
+          "timestamp": "2026-08-02T10:57:42+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    }
+  ]
+}

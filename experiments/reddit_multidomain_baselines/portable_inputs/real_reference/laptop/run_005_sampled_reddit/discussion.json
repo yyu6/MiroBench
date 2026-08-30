@@ -1,0 +1,461 @@
+{
+  "meta": {
+    "product_category": "laptop",
+    "baseline": "real_reddit_reference",
+    "run_id": "run_005_sampled_reddit"
+  },
+  "posts": [
+    {
+      "post_id": "real_run005_post00_seed025",
+      "post_slot": 0,
+      "seed_index": 25,
+      "source_raw_post_id": "1vc7whm",
+      "source_product_dir": "SuggestALaptop",
+      "source_file": "https://www.reddit.com/r/SuggestALaptop/comments/1vc7whm/suitable_laptops_cs/",
+      "post_type": "Review ",
+      "title": "Suitable laptops (CS)",
+      "author": "reddit_user_d8691634ac1e",
+      "author_karma": 0,
+      "content": "Suitable laptops (CS)\n\nIm now going into the senior year of highschool and in few months i will have to deal with college applications essays and also im thinking about studying as a cs major. And i need a laptop i can use in my senior year and college years something a very good battery life and yk decent specs for a cs student. Ive been seeing lot of mac suggestions but im not sure if some programs work on mac but for windows i dont think the battery is good and i often see people having issues with their windows laptops. So what should i get. Also not something expensive",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p0zv3kh",
+          "author": "reddit_user_a85a9861bbc8",
+          "author_karma": 0,
+          "content": "get a tank laptop named thinkpad\n\n",
+          "timestamp": "2026-08-01T02:16:02+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p17zjkm",
+              "author": "reddit_user_46729a17e3c4",
+              "author_karma": 0,
+              "content": "Hows the battery life tho",
+              "timestamp": "2026-08-02T08:49:36+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p0zv3kh",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p18ae26",
+                  "author": "reddit_user_a85a9861bbc8",
+                  "author_karma": 0,
+                  "content": "better than gaming laptops",
+                  "timestamp": "2026-08-02T10:22:38+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p17zjkm",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p114kk5",
+          "author": "reddit_user_e27dffd2ffdc",
+          "author_karma": 0,
+          "content": "What's your budget and are you going to do any video editing, gaming or cad?",
+          "timestamp": "2026-08-01T07:44:00+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p17zivm",
+              "author": "reddit_user_46729a17e3c4",
+              "author_karma": 0,
+              "content": "Whats cad and even though my budget is tight i would probably spend more than i could since im gonna use it for quite few years and idk what cs majors do, i want something that fits me the best as a cs student. Battery life is probably crucial",
+              "timestamp": "2026-08-02T08:49:25+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p114kk5",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p199oet",
+                  "author": "reddit_user_e27dffd2ffdc",
+                  "author_karma": 0,
+                  "content": "> Whats cad \n\nCAD stands for computer-aided design. It is the use of computer programs to create, change, and test 2D drawings or 3D models of physical objects.  some CS majors use it for \"software development, automation, and geometric simulation, including building CAD plugins, writing algorithms for 3D printing, and programming robotics\"\n\nDefine tight budget, a range is always nice :) like from 600 to 900 ?",
+                  "timestamp": "2026-08-02T14:08:47+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p17zivm",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p19b1db",
+                      "author": "reddit_user_46729a17e3c4",
+                      "author_karma": 0,
+                      "content": "Yea something like that but i think i might just buy macbook air m4. Exceeds my budget but yk its cheaper then the m5 but still usable for wuite few years. One thing im not a big fan of is the screen refresh rate which is at 60hz, might be weird to use a laptop with refresh rate half my phone but except the 60hz i belive mba is the best.",
+                      "timestamp": "2026-08-02T14:15:46+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p199oet",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "p19b900",
+                          "author": "reddit_user_e27dffd2ffdc",
+                          "author_karma": 0,
+                          "content": "sounds like good plan",
+                          "timestamp": "2026-08-02T14:16:51+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "p19b1db",
+                          "depth": 4,
+                          "replies": [
+                            {
+                              "comment_id": "p1aet05",
+                              "author": "reddit_user_46729a17e3c4",
+                              "author_karma": 0,
+                              "content": "You think having a laptop with 60hz is okay? Im just not sure, everyones praising macbook but 60hz seems not very smooth ",
+                              "timestamp": "2026-08-02T17:21:36+00:00",
+                              "likes": 1,
+                              "dislikes": 0,
+                              "parent_comment_id": "p19b900",
+                              "depth": 5,
+                              "replies": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p11iw86",
+          "author": "reddit_user_207c28f21004",
+          "author_karma": 0,
+          "content": "Get a MacBook Air. What you will really value at college will be portability and build quality. You can do a CS degree on basically any computer. Any windows only programs you can run under VMWare fusion (free) where Windows 11 for Arm does an excellent job at supporting x86/x64 code too. I probably wouldn’t get a MacBook Neo as 8GB RAM is quite limiting.",
+          "timestamp": "2026-08-01T09:47:37+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p17zld9",
+              "author": "reddit_user_46729a17e3c4",
+              "author_karma": 0,
+              "content": "Ill look forward to that",
+              "timestamp": "2026-08-02T08:50:01+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p11iw86",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p14wkw2",
+          "author": "reddit_user_3d69dee6818f",
+          "author_karma": 0,
+          "content": "macbook or thinkpad is the only answer. Legion or G14/G16 if you want to game alongside. Depend on your budget. ",
+          "timestamp": "2026-08-01T20:48:11+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p17zat1",
+              "author": "reddit_user_46729a17e3c4",
+              "author_karma": 0,
+              "content": "Budgets honestly tight but since im gonna use it for a long time i might put some money in it and for gaming idk man i probably shouldnt be gaming ",
+              "timestamp": "2026-08-02T08:47:29+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p14wkw2",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "post_id": "real_run005_post01_seed026",
+      "post_slot": 1,
+      "seed_index": 26,
+      "source_raw_post_id": "1vc829j",
+      "source_product_dir": "SuggestALaptop",
+      "source_file": "https://www.reddit.com/r/SuggestALaptop/comments/1vc829j/laptop_specs_upgrade/",
+      "post_type": "My Laptop Setup (AMA)",
+      "title": "Laptop Specs Upgrade",
+      "author": "reddit_user_d8691634ac1e",
+      "author_karma": 0,
+      "content": "Laptop Specs Upgrade\n\ni have a dell laptop with specs of\nRyzen 5 , 12 gb ram and integrated graphic card like default one ig 1 or 2 gb\n\n3 years passed by and Its not smooth and fast as it used to be and has gained severe heating problems recently ( ofc the battery is almost finished which i will change) but what to change for the performance, would increasing 4 gb ram work!!!??\n\nI remember transferring around 160 gb data from my phone prev month but i dont think that would effect the performance because it still has a lot of storage unused .\n\nSuggestions plzz",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p0zmdal",
+          "author": "reddit_user_a47bc739fc65",
+          "author_karma": 0,
+          "content": "Step 1  \nOpen the back clean it and repaste using mx7 or pt’ 7950.\n\nLaptops need maintenance.\n\nNo service centre they make it worse.\n\nStep 2\n\nFresh clean install of windows if it has hdd remove that and put a ssd snd install windows in that.\n\nRun chris debloater too",
+          "timestamp": "2026-08-01T01:23:26+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run005_post02_seed027",
+      "post_slot": 2,
+      "seed_index": 27,
+      "source_raw_post_id": "1vc9ghg",
+      "source_product_dir": "SuggestALaptop",
+      "source_file": "https://www.reddit.com/r/SuggestALaptop/comments/1vc9ghg/laptop_for_college_and_gaming/",
+      "post_type": "Laptop Request US",
+      "title": "Laptop for College and Gaming",
+      "author": "reddit_user_d8691634ac1e",
+      "author_karma": 0,
+      "content": "Laptop for College and Gaming\n\nI'm entering college this year as a CS major\n\nUSA\n\n$1,000 to $2,500 range (just a preference, I could buy something slightly more expensive)\n\nNo refurbs/used\n\n13\", 14\" preferably but anything works\n\nI'm not afraid of weight, it'll be on a desk anyway\n\nGeneral purpose, schoolwork, gaming, and game deving/coding\n\nRegular laptop\n\nGoing to be deving a bit so something that can run Godot or Roblox studio and some IDEs (visual studio for example). I've been on a macbook for the last 6 years so I want to get gaming a bit more, no performance heavy games just normal games I guess??? Enough performance to play something like Overwatch on normal settings. And to run chrome as well.\n\n8-10 hours ish (not sure if my expectation are high or now)\n\nPriority: Performance, Battery life, Size, Weight\n\nNon important preferences: Does it have a funky color (orange, pink, blue)",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p1112t1",
+          "author": "reddit_user_e27dffd2ffdc",
+          "author_karma": 0,
+          "content": "Since you prefer a small screen size and you are going to need powerful CPU and gpu for game development, I would recommend  [Acer Swift X](https://www.amazon.com/acer-Copilot-Processor-Touchpad-SFX14-61G-R1HV/dp/B0FNXXC728/?tag=lonerim2-20) because  of the following :\n\n**Specs:**\n\n* Screen: 14.5\" 3K OLED\n \n\n* CPU: AMD Ryzen AI 7 350\n* GPU: NVIDIA GeForce RTX 5060\n* Ram: 32GB LPDDR5X\n* Storage: 1TB SSD\n\n\n\n**Why I am recommending it:**\n\n* Powerful GPU in small form factor, 14 inch laptops with powerful GPU are rare breed, and this config/model hits a great balance between the two.\n\n* High-Quality Display*: This features a OLED 2880 x 1800 120Hz which is better resolution display, providing vibrant colors and sharp visuals .\n* Long battery life as it lasts for around 10hours like you want.\n* Very good GPU and CPU for gaming and game development.\n* Lightweight as it weighs 3lbs .\n* Premium build quality and material which ensures longevity .\n\n***\n\nAnd if you prefer better gpu and would be okay with better gpu, and would be okay with a shorter battery life, then I would recommend this **[Lenovo Legion Pro 5i](https://www.amazon.com/Lenovo-Legion-5i-Gen-2560x1600/dp/B0FSY39CTL/?tag=lonerim2-20)** because of the following:\n\n**Specs:** \n\n* Screen: 15.1\" WQXGA\n* CPU: Intel Core Ultra 7 255HX\n* GPU: NVIDIA GeForce RTX 5070 \n* Ram: 16GB RAM\n* Storage: 1TB SSD. \n\n\n**Why I am recommending it:**\n\n* Great heat management which is the main concern to have with most high end gaming \nlaptops.\n* Premium build quality : Aluminum chassis provides a solid, premium feel and added durability.\n* Up to 5 hours of battery life, which is decent for a high-performance gaming laptop, allowing for moderate usage away from a power source.\n\n* Powerful GPU and CPU for gaming, and game deving/coding.\n\n\n\n\n\nPlease note I'm using affiliate links which means I'll receive a small percent of the purchase if you use this link at no extra cost to you",
+          "timestamp": "2026-08-01T07:14:31+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p149pps",
+          "author": "reddit_user_e0a6e95ffb06",
+          "author_karma": 0,
+          "content": "For  college and gaming  at this price range\tI would advise you to check this laptop\n\t\nlaptop name\t| [Lenovo Legion  5i](https://www.amazon.com/Lenovo-Legion-5i-Gen-2560x1600/dp/B0FSY39CTL/?tag=adviser100-20)\n---\t|---\nCPU\t| Intel Core Ultra 7 255HX\nGPU\t| RTX 5070 \nScreen\t\"| 165Hz 16WQXGA Gaming Laptop\n Ram\t| 32 GB\nSSD\t| 1 TB\nHDD\t| 0\nWeight\t| 5.68 Lbs.\nBattery life\t| 7 Hrs.\nPros\t| Sharp, bright display.\nPros\t| Exceptional performance.\nPros\t| Great screen .\n\nPlease note I'm using affiliate links which means I'll receive a small percent of the purchase if you use this link at no extra cost to you",
+          "timestamp": "2026-08-01T18:54:50+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1crm0s",
+              "author": "reddit_user_8d7cc02322a4",
+              "author_karma": 0,
+              "content": "Nah I would stay away from Lenovo. They’ve fallen off in the last several years",
+              "timestamp": "2026-08-03T00:13:23+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p149pps",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1crmur",
+          "author": "reddit_user_8d7cc02322a4",
+          "author_karma": 0,
+          "content": "Stay away from lenovo",
+          "timestamp": "2026-08-03T00:13:30+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run005_post03_seed028",
+      "post_slot": 3,
+      "seed_index": 28,
+      "source_raw_post_id": "1vcay5a",
+      "source_product_dir": "SuggestALaptop",
+      "source_file": "https://www.reddit.com/r/SuggestALaptop/comments/1vcay5a/need_help_with_purchasing_laptop_for_student/",
+      "post_type": "Laptop Request -Others ",
+      "title": "Need help with purchasing laptop for student",
+      "author": "reddit_user_d8691634ac1e",
+      "author_karma": 0,
+      "content": "Need help with purchasing laptop for student\n\n**LAPTOP QUESTIONNAIRE**\n\n* **Country**\n\nIndia\n\n* **Budget**\n\nRs. 200,000/$2200\n\n* **Are you open to refurbs/used options?**\n\nNO\n\n* **Screen size**\n\nAny\n\n* **Weight limit**\n\nAny\n\n* **Purpose**\n\nGeneral Purpose + Productivity\n\n* **Form factor**\n\nStandard Clamshell preferred\n\n* **Intended usage**\n\nVideo editing, light 2D animations, music production possibly, but most of the time basic schoolwork\n\n* **Desired battery life**\n\nAnything above 8hrs \n\n* **Please list, in order of most important to least important, the priority between Size, Weight, Performance, Battery life**\n\nPerformance, Battery Life, Size, Weight\n\n* **Other Info/Requirements**\n\nLongetivity is important, OLED is fine if it has integrated protections like pixel shifting. Dedicated GPU not preferred, unless on a stealer deal. Currently looking at Ideapad Pro 5 Gen 11, Yoga Slim 7A gen 11, yet to find a good Thinkpad.",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p10a8ah",
+          "author": "reddit_user_ba1e2b5e5a69",
+          "author_karma": 0,
+          "content": "For your use, I’d prioritize a high-end Core Ultra/Ryzen AI 7 or 9 laptop with 32GB RAM and a good IPS/OLED screen over a gaming laptop, since battery life and longevity matter more than GPU power here. Between those, the IdeaPad Pro 5 is probably the best value, Yoga Slim is nicer if portability/display matter, and ThinkPad only makes sense if you find a T14/P14s/X1 with 32GB at a good price.",
+          "timestamp": "2026-08-01T03:52:27+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p10bbh6",
+              "author": "reddit_user_c65e235b1337",
+              "author_karma": 0,
+              "content": "I found the Ideapad Pro 5 with AI 9 465, 32GB RAM, 99.9Wh, and 1TB for around $2100.  \nFor same price, the Yoga Slim7 is also avaialble with Ryzen 7 445, 32GB RAM, 70Wh, and touchscreen.  \nSo yes, the Pro 5 has better specs, but I have heard mixed opinions on the Ideapad build quality.",
+              "timestamp": "2026-08-01T03:59:43+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p10a8ah",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p11n1ae",
+          "author": "reddit_user_0eec7df88d58",
+          "author_karma": 0,
+          "content": "I just bought Asus tuf f16 3050a, 4gB 1tb disk and 32 gb ram for 72k after claiming gst ",
+          "timestamp": "2026-08-01T10:22:29+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1276k4",
+          "author": "reddit_user_e8106b710e61",
+          "author_karma": 0,
+          "content": "Buy a macbook pro",
+          "timestamp": "2026-08-01T12:43:31+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p12d7i3",
+              "author": "reddit_user_c65e235b1337",
+              "author_karma": 0,
+              "content": "The very base model is already $2400 on education savings in my country.  \n",
+              "timestamp": "2026-08-01T13:18:28+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1276k4",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "post_id": "real_run005_post04_seed029",
+      "post_slot": 4,
+      "seed_index": 29,
+      "source_raw_post_id": "1vcc4y0",
+      "source_product_dir": "SuggestALaptop",
+      "source_file": "https://www.reddit.com/r/SuggestALaptop/comments/1vcc4y0/laptop_recommendations_2000_usd_budget/",
+      "post_type": "Laptop Request US",
+      "title": "Laptop Recommendations? $2,000 USD Budget",
+      "author": "reddit_user_d8691634ac1e",
+      "author_karma": 0,
+      "content": "Laptop Recommendations? $2,000 USD Budget\n\nI will be majoring in Nursing, and have been considering some laptops to purchase. I am not open to refurbs/used options.\n\n**Just learned that I need a WINDOWS or Mac OS.** \n\n\\* \\*\\*Country\\*\\*: United States.  \n\\* \\*\\*Budget\\*\\*: $2,000 USD.  \n\\* \\*\\*Screen Size\\*\\*: Nothing over 16\"  \n\\* \\*\\*Weight limit\\*\\*: Nothing over 4-5 pounds.  \n\\* \\*\\*Form factor\\*\\*: Preferably a 2-in-1, or at least touchscreen. But open to any others, too.  \n   \\* I like the idea of a touchscreen 2-in-1 laptop, but is not necessary. I would be taking notes on it, watching movies, and drawing, but I also have an iPad already so I'm not sure if it's worth getting a laptop like that (I'm indecisive).  \n\\* \\*\\*Intended usage\\*\\*: To take notes for college (Nursing Major), watch movies, and gaming on Steam, Roblox, and Minecraft. If possible, also for drawing.  \n\\* \\*\\*Desired battery life\\*\\*: 10+ Hours  \n\\* \\*\\*In order of most important to least important.\\*\\* ; Performance, Battery life, Weight, Size.\n\n \\*\\*I have been looking at:\\*\\*\n\n\\* HP OmniBook X Flip 2-in-1 Laptop  \n\\* Lenovo Yoga 7i 2-in-1\n\n\\*\\*My Other Needs:\\*\\*\n\n\\* Won't lag with multiple tabs open and works quickly overall   \n\\* Fans aren't super noisy when using. (like noticeable in a silent class/library)\n\n\\*\\*Has anyone owned these laptops, and can you give your honest review on them?\\*\\*\n\n\\*\\*Or, if anyone has other suggestions for laptops, please give those as well. Thank you! 🙌(And anyone out there who has majored in Nursing, please give some advice🙏)\\*\\*",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p113591",
+          "author": "reddit_user_e27dffd2ffdc",
+          "author_karma": 0,
+          "content": "Since you prefer 2 in 1, I would recommend  **[Lenovo Yoga](https://www.amazon.com/Lenovo-Yoga-Touchscreen-Processor-LPDDR5X-7500MT/dp/B0FDMXKZGQ/?tag=lonerim2-20)**  because it comes with : \n\n**Specs:**\n\n* Screen: 14” WUXGA OLED \n* CPU : AMD Ryzen AI 7 350\n* Ram : 16GB \n* Storage : 1TB SSD\n\n\n**Why I am recommending it:**\n\n* Very good CPU .\n* It weighs 3lbs .\n * Good Battery life.\n\n***\n\nAnd if you prefer better gpu for better gaming performance, then I would recommend  **[ASUS ROG Flow Z13](https://www.amazon.com/ASUS-Nebula-Touchscreen-Convertible-Notebook/dp/B0DT7MNLTD/?tag=lonerim2-20)**  because it comes with : \n\n**Specs:**\n\n* Screen: 13.4 inch   2.5K 180Hz 3m\n\n* CPU : AMD Ryzen AI MAX+ \n* Ram : 32GB \n* Storage : 1TB SSD\n\n\n**Why I am recommending it:**\n\n* Very good CPU and gpu  .\n* It weighs 3lb.\n * Good Battery life.\n\nPlease note I'm using affiliate links which means I'll receive a small percent of the purchase if you use this link at no extra cost to you",
+          "timestamp": "2026-08-01T07:31:51+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p120g2j",
+              "author": "reddit_user_324eb426ea87",
+              "author_karma": 0,
+              "content": "I would not recommend a Lenovo yoga personally. I had a yoga 7 and it just spontaneously died after 3 years of light usage, the motherboard failed.",
+              "timestamp": "2026-08-01T12:01:17+00:00",
+              "likes": 2,
+              "dislikes": 0,
+              "parent_comment_id": "p113591",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p14jhp7",
+                  "author": "reddit_user_e27dffd2ffdc",
+                  "author_karma": 0,
+                  "content": "ouch, that  sucks",
+                  "timestamp": "2026-08-01T19:42:42+00:00",
+                  "likes": 2,
+                  "dislikes": 0,
+                  "parent_comment_id": "p120g2j",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p11jd3c",
+          "author": "reddit_user_696de27266f2",
+          "author_karma": 0,
+          "content": "This one has the top CPU model from the latest generation with the best available GPU you can get in a thin form factor, 32GB RAM. Excellent hi-res OLED touchscreen, 2-in-1 form factor. Currently there's a $2000 deal at microcenter:  \n[https://www.microcenter.com/product/706150/msi-prestige-16-flip-ai-c3mtg-copilot-pc-oled-16-2-in-1-laptop-computer---platinum-gray\\_Hatchfeed](https://www.microcenter.com/product/706150/msi-prestige-16-flip-ai-c3mtg-copilot-pc-oled-16-2-in-1-laptop-computer---platinum-gray_Hatchfeed)",
+          "timestamp": "2026-08-01T09:51:40+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p11zs22",
+          "author": "reddit_user_19830967809f",
+          "author_karma": 0,
+          "content": "hey, looks like the Lenovo ThinkBook 16 Gen 7 with the Snapdragon X Plus could be a good shout for you. It's priced at $1,521.94 and will run Word, OneNote, Roblxo and Minecraft without any issue with its 16GB RAM and 512GB SSD. Snapdragon chips are usually great for battery life so you should be able to go a full today without having to worry about charging it.   \n  \nThe only potential issues with it is that there isn't any 2-in-1 hinge and no touchscreen. Also not too sure what it weight and fan noise is like so it could be worth looking into. \n\nYou can find some more details here:  [https://plample.com/spec/us/lenovo-thinkbook-16-gen-7-qualcomm/6](https://plample.com/spec/us/lenovo-thinkbook-16-gen-7-qualcomm/6)   \n  \n(disclosure: I built the site that generated this match and I would receive an affiliate fee is you were to buy it through using my site at no extra cost to you) ",
+          "timestamp": "2026-08-01T11:56:53+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p16xhc8",
+          "author": "reddit_user_e0a6e95ffb06",
+          "author_karma": 0,
+          "content": "For 2 in 1 in this price range\tI would advise you to check this laptop\n\t\nlaptop name\t| [Lenovo Yoga 7i](https://www.amazon.com/Lenovo-Yoga-Touchscreen-Processor-LPDDR5X-7500MT/dp/B0FDMXKZGQ/?tag=adviser100-20)\n---\t|----\nCPU\t| AMD Ryzen AI 7 350 \nScreen\t| 14”\nRam\t| 16 GB\nSSD\t| 1 TB\nHDD\t| 0\nWeight\t| 3.4 Lbs.\nBattery life\t| 9.5 Hrs.\nPros\t| Great battery life.\nPros\t| The CPU is very good.\nPros\t| Has 16GB of ram.\n\nPlease note I'm using affiliate links which means I'll receive a small percent of the purchase if you use this link at no extra cost to you",
+          "timestamp": "2026-08-02T03:52:14+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    }
+  ]
+}

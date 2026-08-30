@@ -1,0 +1,590 @@
+{
+  "meta": {
+    "product_category": "cellphone",
+    "baseline": "real_reddit_reference",
+    "run_id": "run_009_sampled_reddit"
+  },
+  "posts": [
+    {
+      "post_id": "real_run009_post00_seed045",
+      "post_slot": 0,
+      "seed_index": 45,
+      "source_raw_post_id": "1vctf8y",
+      "source_product_dir": "Android",
+      "source_file": "https://www.reddit.com/r/Android/comments/1vctf8y/help_google_messages_not_loading/",
+      "post_type": "image",
+      "title": "[Help] Google messages not loading.",
+      "author": "reddit_user_0fe413d0e398",
+      "author_karma": 0,
+      "content": "[Help] Google messages not loading.\n\n[removed]",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p13srzc",
+          "author": "reddit_user_65884126434e",
+          "author_karma": 0,
+          "content": "Sorry [REDDIT_USER], but your submission was removed as you included a post body within your submission. The body text is often used to insert bias/opinion which violates Rule 6 in direct link submissions. Feel free to repost without the post body.\n\n\n*I am a bot, and this action was performed automatically. Please [contact the moderators of this subreddit](/message/compose/?to=/r/Android) if you have any questions or concerns.*",
+          "timestamp": "2026-08-01T17:33:48+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run009_post01_seed046",
+      "post_slot": 1,
+      "seed_index": 46,
+      "source_raw_post_id": "1vctff2",
+      "source_product_dir": "iphone",
+      "source_file": "https://www.reddit.com/r/iphone/comments/1vctff2/am_i_charging_too_much_for_my_app/",
+      "post_type": "App",
+      "title": "Am I charging too much for my App?",
+      "author": "reddit_user_0fe413d0e398",
+      "author_karma": 0,
+      "content": "Am I charging too much for my App?\n\nHi all,\n\nJust hoping to get some advise. I am wondering if my app is to expensive. Its a baby tracking app, however I did a lot of research and added more features than many other baby apps out there, tried to declutter as I didn't want to over stimulate new parents- being a parent my self and someone using the app I didn't want something too flashy.\n\nthe app is £6.99 a month, other apps which don't have many features and look really not great were charging £4.99 a month, there is one big one which has one major feature but still doesn't include some features we do and they charge £12.99 a month i think. \n\nIs £6.99 too much?",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p13teui",
+          "author": "reddit_user_7092cf97ccd2",
+          "author_karma": 0,
+          "content": "Are you getting sales?\n\nIf getting overwhelmed = too cheap  \nYes = good price  \nNot as many as I want = slightly too expensive  \nNo = too expensive \n\nOther answer is no one actually wants the features.",
+          "timestamp": "2026-08-01T17:36:49+00:00",
+          "likes": 12,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p13v2z8",
+              "author": "reddit_user_afeed4834a65",
+              "author_karma": 0,
+              "content": "Not getting sales but also I don't think the app is in front of the right people.\n\nMy wife and I use it, my sister who has a really ill child is making use of it- when she found out about this app she said she was looking for something like this. Another couple people i know using it.",
+              "timestamp": "2026-08-01T17:44:44+00:00",
+              "likes": -1,
+              "dislikes": 0,
+              "parent_comment_id": "p13teui",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p13udsj",
+          "author": "reddit_user_dca09716a90c",
+          "author_karma": 0,
+          "content": "this is impossible to answer without significantly more information than what you’ve provided",
+          "timestamp": "2026-08-01T17:41:24+00:00",
+          "likes": 4,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p13v3o3",
+              "author": "reddit_user_afeed4834a65",
+              "author_karma": 0,
+              "content": "Ye i know im sorry, i didn't want to break any reddit rules which would cause the post to be taken down so I didn't post the app. \n\nwhat other information can i provide?\n\nthank you for your response\n\n",
+              "timestamp": "2026-08-01T17:44:49+00:00",
+              "likes": 0,
+              "dislikes": 0,
+              "parent_comment_id": "p13udsj",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p13w5si",
+          "author": "reddit_user_89454cd32d55",
+          "author_karma": 0,
+          "content": "Do a lot of people keep misplacing their babies then? 🤷🏻‍♂️",
+          "timestamp": "2026-08-01T17:49:52+00:00",
+          "likes": 5,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p13xeb3",
+              "author": "reddit_user_afeed4834a65",
+              "author_karma": 0,
+              "content": "😂 I sure hope not ",
+              "timestamp": "2026-08-01T17:55:45+00:00",
+              "likes": 0,
+              "dislikes": 0,
+              "parent_comment_id": "p13w5si",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p13y3fn",
+          "author": "reddit_user_8a733355698d",
+          "author_karma": 0,
+          "content": "try to offer bigger discounts for early users and see how it goes from there.",
+          "timestamp": "2026-08-01T17:59:04+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p13zncv",
+              "author": "reddit_user_afeed4834a65",
+              "author_karma": 0,
+              "content": "I gave 2 weeks for premium access, allowing them to see if they like it. I just suck at marketing aha",
+              "timestamp": "2026-08-01T18:06:32+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p13y3fn",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p13yvcv",
+          "author": "reddit_user_f9470add6d7f",
+          "author_karma": 0,
+          "content": "from my experience you need to make the price higher for parents to feel its a premium product really worth it. 16.99 if paid yearly and 18.99 if paid monthly.",
+          "timestamp": "2026-08-01T18:02:46+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p13zxef",
+              "author": "reddit_user_afeed4834a65",
+              "author_karma": 0,
+              "content": "i've got it as 6.99 a month and 49.99 for the year. \n\n My competitor has 12.99 a month and 105.99 a year ",
+              "timestamp": "2026-08-01T18:07:53+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p13yvcv",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p13zlh4",
+          "author": "reddit_user_4dbe5d317afb",
+          "author_karma": 0,
+          "content": "How are you marketing the app? Do people know it exists? ",
+          "timestamp": "2026-08-01T18:06:16+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1406t8",
+              "author": "reddit_user_afeed4834a65",
+              "author_karma": 0,
+              "content": "I did a FB ad, created some tiktok videos- I haven't created more, i just dont want to be repetitive, probably need more ideas for videos. Done some showing the app features and an image carousel ",
+              "timestamp": "2026-08-01T18:09:09+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p13zlh4",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p142eg9",
+                  "author": "reddit_user_4dbe5d317afb",
+                  "author_karma": 0,
+                  "content": "For marketing purposes I’d be less afraid of being repetitive, and more focused on being relevant to those that may be looking for an app like yours. \n\nAssuming your app is also guided towards parents with infants, you’re gonna want to be as direct as possible with marketing to them. Maybe reach out to some content creators that will appeal to your user base and get them to offer recommendations and reviews to get more exposure. ",
+                  "timestamp": "2026-08-01T18:19:48+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1406t8",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p14065k",
+          "author": "reddit_user_b4207af6f42a",
+          "author_karma": 0,
+          "content": "Another app doesn’t have all the features but it has what the customer needs and is cheaper. \n\nI also personally wouldn’t want to subscribe to something right off the bat and more so if it was relevantly “unknown”.   \n(unless heavily reviewed and vetted)\n\nI’d think if the competition is strong and you’re not already a “known” contender the price is too high. (even with more features) I’d choose a more known competitor, with the features I need, at a lower price. If the price was the same and since yours has more features I’d be better inclined to research your app and compare. ",
+          "timestamp": "2026-08-01T18:09:04+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p140b2f",
+          "author": "reddit_user_6d1c20b1d7c4",
+          "author_karma": 0,
+          "content": "I guess my question is what does your app do that requires a subscription?  In general I think a lot of people are getting tired of subscriptions - especially for products that really don’t need a subscription. \n\nNo offense but a baby tracker seems like something that might be of benefit for maybe two years and you’re done (unless you’re tracking beyond infancy or multiple children). As a user I’m not expecting to have a lot of new features added - and just a simple survey of the baby tracker app market seems to indicate that outside of maybe storing a configuration or data - there should be no need for services off device. So either a one time purchase, an annual charge that tracks to a major version release, or a license per child.  Either way a monthly subscription feels a bit predatory for an app that has limited use.  \n\nI’m likening this to the print-from-your-phone apps that support non-AirPrint devices - every single one of them is a subscription for no good reason. I have one or two printers. A subscription for an app that requires no cloud services for where the user likely needs no additional support for additional devices (no different than children aging out of your app) just feels slimy. \n\nAs a developer myself I understand the need for continuous revenue to keep an app supported. But the features still need to be compelling to require a continuous subscription fee. Otherwise charge a one time fee that keeps it going for the typical usage duration or move to an annual model. Monthly is overkill for a solution that targets primary young people with limited income. ",
+          "timestamp": "2026-08-01T18:09:42+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1423s1",
+          "author": "reddit_user_41f364434213",
+          "author_karma": 0,
+          "content": "Rather than a free trial for premium, I think you should offer a full free trial of the app (aka 2wks plus premium), then 2wks free of just the app without premium (so the first month the app is free). So they get a feel with or without premium. Then offer one of two payment plans. Maybe £4 without premium, £7 with",
+          "timestamp": "2026-08-01T18:18:21+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p17cq1f",
+          "author": "reddit_user_a5a30234c8f8",
+          "author_karma": 0,
+          "content": "Do not self-promote your own YouTube channels, videos, or blog posts. Refrain from posting news with minimal/recycled content.\n\nThis Rule also applies to Developers promoting their own apps. If a Developer wishes to do an AMA/promote your app, please [modmail us](https://www.reddit.com/message/compose?to=%2Fr%2Fiphone) first.\n\nPlease read [Reddit's self-promotion guidelines.](https://www.reddit.com/wiki/selfpromotion)",
+          "timestamp": "2026-08-02T05:42:47+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run009_post02_seed047",
+      "post_slot": 2,
+      "seed_index": 47,
+      "source_raw_post_id": "1vctqtq",
+      "source_product_dir": "iphone",
+      "source_file": "https://www.reddit.com/r/iphone/comments/1vctqtq/dynamic_island_the_long_way/",
+      "post_type": "Support",
+      "title": "dynamic island the long way",
+      "author": "reddit_user_0fe413d0e398",
+      "author_karma": 0,
+      "content": "dynamic island the long way\n\nwhy?",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p13w0fd",
+          "author": "reddit_user_3335e8d508d7",
+          "author_karma": 0,
+          "content": "Why ? Idk but did you island was in the Epstein file ? >!It’s an island and it’s censored!< ",
+          "timestamp": "2026-08-01T17:49:09+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p13w7in",
+              "author": "reddit_user_822f3536f8b1",
+              "author_karma": 0,
+              "content": "it won’t go away either. big stein might’ve hacked my phone",
+              "timestamp": "2026-08-01T17:50:06+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p13w0fd",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p13wl8g",
+                  "author": "reddit_user_3335e8d508d7",
+                  "author_karma": 0,
+                  "content": "Do you have the files ? My friend Donald trump might need them ",
+                  "timestamp": "2026-08-01T17:51:55+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p13w7in",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p13wjh4",
+          "author": "reddit_user_c0e41773878c",
+          "author_karma": 0,
+          "content": "Dynamic continent ",
+          "timestamp": "2026-08-01T17:51:41+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p13x69b",
+          "author": "reddit_user_4db2ca35b377",
+          "author_karma": 0,
+          "content": "Dynamic peninsula.",
+          "timestamp": "2026-08-01T17:54:42+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p140mff",
+          "author": "reddit_user_9b35b4fd2ae9",
+          "author_karma": 0,
+          "content": "Dynamic country ",
+          "timestamp": "2026-08-01T18:11:12+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p161kch",
+              "author": "reddit_user_822f3536f8b1",
+              "author_karma": 0,
+              "content": "dynamic fatty",
+              "timestamp": "2026-08-02T00:32:51+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p140mff",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1621fg",
+                  "author": "reddit_user_9b35b4fd2ae9",
+                  "author_karma": 0,
+                  "content": "Dynamic Florida man",
+                  "timestamp": "2026-08-02T00:35:41+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p161kch",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            },
+            {
+              "comment_id": "p17ti4h",
+              "author": "reddit_user_1b6796c27ae9",
+              "author_karma": 0,
+              "content": "Dynamic Chile",
+              "timestamp": "2026-08-02T07:58:19+00:00",
+              "likes": 5,
+              "dislikes": 0,
+              "parent_comment_id": "p140mff",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p168hmf",
+          "author": "reddit_user_b55c08818323",
+          "author_karma": 0,
+          "content": "Dynamic archipelago",
+          "timestamp": "2026-08-02T01:13:56+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p17af6q",
+          "author": "reddit_user_fdc33e7ac31b",
+          "author_karma": 0,
+          "content": "https://preview.redd.it/2r9ojzd4dwgh1.jpeg?width=1320&format=pjpg&auto=webp&s=c6446db3c11adbf57946b30ee29356816187e909\n\n  \nDynamic continent ",
+          "timestamp": "2026-08-02T05:24:54+00:00",
+          "likes": 3,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p188oi2",
+          "author": "reddit_user_2edb62502ba2",
+          "author_karma": 0,
+          "content": "Dynamic Highway",
+          "timestamp": "2026-08-02T10:08:27+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p18bn93",
+          "author": "reddit_user_2c1f0de7be11",
+          "author_karma": 0,
+          "content": "Maybe factory reset",
+          "timestamp": "2026-08-02T10:32:59+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p18ekqe",
+          "author": "reddit_user_ddff5239a18a",
+          "author_karma": 0,
+          "content": "Dynamic Long Island ",
+          "timestamp": "2026-08-02T10:56:09+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p18sjtz",
+          "author": "reddit_user_712ce9f0e3bb",
+          "author_karma": 0,
+          "content": "Dynamic continent. ",
+          "timestamp": "2026-08-02T12:33:27+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p18xero",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[deleted]",
+          "timestamp": "2026-08-02T13:02:15+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p196pcb",
+          "author": "reddit_user_f65c56f37de9",
+          "author_karma": 0,
+          "content": "Am besten einmal Neustarten. Klingt blöd, kann aber oft helfen haha",
+          "timestamp": "2026-08-02T13:53:23+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run009_post03_seed048",
+      "post_slot": 3,
+      "seed_index": 48,
+      "source_raw_post_id": "1vctz6y",
+      "source_product_dir": "iphone",
+      "source_file": "https://www.reddit.com/r/iphone/comments/1vctz6y/help_me_choose_a_case/",
+      "post_type": "Discussion",
+      "title": "Help me choose a case",
+      "author": "reddit_user_0fe413d0e398",
+      "author_karma": 0,
+      "content": "Help me choose a case\n\n[removed]",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p13xi9d",
+          "author": "reddit_user_65884126434e",
+          "author_karma": 0,
+          "content": "If you're looking for help or support, you should search for your issue on Google, the [Apple Support Community](https://discussions.apple.com/welcome), r/iPhone and the [iPhone Support FAQs](https://www.reddit.com/r/iphone/wiki/support-faq/). We review submissions for quality, so basic support issues may be removed.\n\n*I am a bot, and this action was performed automatically. Please [contact the moderators of this subreddit](/message/compose/?to=/r/iphone) if you have any questions or concerns.*",
+          "timestamp": "2026-08-01T17:56:16+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run009_post04_seed049",
+      "post_slot": 4,
+      "seed_index": 49,
+      "source_raw_post_id": "1vcu4ew",
+      "source_product_dir": "Smartphones",
+      "source_file": "https://www.reddit.com/r/Smartphones/comments/1vcu4ew/new_phone_help/",
+      "post_type": "reddit_post",
+      "title": "new phone help",
+      "author": "reddit_user_0fe413d0e398",
+      "author_karma": 0,
+      "content": "new phone help\n\nHello, im looking for a massive for me phone upgrade. im used to buying cheap xiaomi(note 9,note 11,current note13) as after a while the become too laggy or the batter has a problem. My budget is around 1000$ and im not sure whats the best choise right now. i want to sepnd that much to be sure i dont have to upgrade for the next 4 years or so.",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p15u6np",
+          "author": "reddit_user_9920ab310f76",
+          "author_karma": 0,
+          "content": "I am a Samsung fan boy. I got the s25+ three months ago and it's amazing.\n\nUnless you want the newest AI features coming, get a last years flagship. ",
+          "timestamp": "2026-08-01T23:49:51+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p17ghpi",
+          "author": "reddit_user_be42b8138569",
+          "author_karma": 0,
+          "content": "any flagship is fine on that regards. i myself prefer to not buy western based or korean based phone and that's about it",
+          "timestamp": "2026-08-02T06:12:42+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p17m3gb",
+          "author": "reddit_user_32d2a4da0c19",
+          "author_karma": 0,
+          "content": "iphone 17 pro/wait for the 18 pro",
+          "timestamp": "2026-08-02T06:57:48+00:00",
+          "likes": 0,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p18xi57",
+          "author": "reddit_user_526cc1a4cd88",
+          "author_karma": 0,
+          "content": "Under $1,000 there are a few choices with flagship quality.  Keep in mind nothing is perfect.  Some are renewed/refurbished.  Pick which one is best for your priorities.  The ones listed below assume you live in the USA.\n\n- S25 Ultra.  Currently uder $800 for 512 GB of storage on Amazon.  Excellent CPU, excellent display at 1440p resolution, excellent main camera for daytime photos, good telephoto camera at 5x, great for video recording in 4k 120hz, and 6 more years of software & security updates.  Cons: Bad for night photos in default settings, and only ok for selfies.  \n\n- Google Pixel 10 Pro.  Currently under $900 with 256 GB of storage.  Great for photos and a simple no stress operating system.  Cons: It lacks the raw CPU/GPU power to do long video recording or gaming.  This leads to overheating beyond cellphone basics, photos, or short videos (less than 3 minutes).  \n\n- Oppo Find X9 Pro (Global version). Only sold on Ebay for slightly under $1,000 with 512 GB.  Great phone all around.  Cons: Some OS bugs, best optimized for T-Mobile cellular network, and no special discounts when bought on Ebay.\n\nHomorable mention: iPhone 17 Pro after the iPhone 18 Pro gets released.  The price should drop below $1,000 USD.",
+          "timestamp": "2026-08-02T13:02:48+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    }
+  ]
+}

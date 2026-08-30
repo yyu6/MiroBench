@@ -1,0 +1,471 @@
+{
+  "meta": {
+    "product_category": "laptop",
+    "baseline": "real_reddit_reference",
+    "run_id": "run_002_sampled_reddit"
+  },
+  "posts": [
+    {
+      "post_id": "real_run002_post00_seed010",
+      "post_slot": 0,
+      "seed_index": 10,
+      "source_raw_post_id": "1v8c4s6",
+      "source_product_dir": "chromeos",
+      "source_file": "https://www.reddit.com/r/chromeos/comments/1v8c4s6/advice_on_upgrading/",
+      "post_type": "Discussion",
+      "title": "Advice on Upgrading",
+      "author": "reddit_user_d8691634ac1e",
+      "author_karma": 0,
+      "content": "Advice on Upgrading\n\nI currently have an HP 360x or whatever it’s called and I’m an adult college student. It’s about 3 years old and still works amazing but I it’s a 14” and I’m looking for a little larger screen. Also, the main reason I’m in the market for a new one is because the battery life on mine is terrible. I can’t even take an online quiz without having it plugged in the entire time. I think it’s been like that most of the time since I bought it. I like the flip feature but honestly don’t use it that much, I need recommendations on what Chromebooks have excellent battery life.,",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p0504sb",
+          "author": "reddit_user_9674002335b4",
+          "author_karma": 0,
+          "content": "Samsung galaxy plus with Amoled screen. 15.6 inch and once you see a oled screen you won’t go back…",
+          "timestamp": "2026-07-27T21:02:39+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p05xhyd",
+              "author": "reddit_user_e8840dd73554",
+              "author_karma": 0,
+              "content": "TY!",
+              "timestamp": "2026-07-27T23:45:59+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p0504sb",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p0rqgjj",
+          "author": "reddit_user_e78bf90629e2",
+          "author_karma": 0,
+          "content": "Lenovo yoga mediatek",
+          "timestamp": "2026-07-30T23:20:24+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run002_post01_seed011",
+      "post_slot": 1,
+      "seed_index": 11,
+      "source_raw_post_id": "1v8m7p4",
+      "source_product_dir": "chromeos",
+      "source_file": "https://www.reddit.com/r/chromeos/comments/1v8m7p4/is_there_any_way_around_this/",
+      "post_type": "Troubleshooting",
+      "title": "Is there any way around this?",
+      "author": "reddit_user_d8691634ac1e",
+      "author_karma": 0,
+      "content": "Is there any way around this?\n\nI've run into it with several apks I've tried downloading which I usually have no problem using on my phone.",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p07kprw",
+          "author": "reddit_user_289e5d0a4129",
+          "author_karma": 0,
+          "content": "First problem, that's an apkm, not an apk. Second problem, you need to enable dev mode (that factory resets the pc) to install apks on a Chromebook, or use the linux environment",
+          "timestamp": "2026-07-28T05:43:14+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p09uvjv",
+              "author": "reddit_user_e53fefcc76be",
+              "author_karma": 0,
+              "content": "The apkm was an example, I am actually trying to load up a apk it's in dev mode and still has that error screen popping up, I installed the Linux and got to where I can type commands but I feel like I don't know the next step",
+              "timestamp": "2026-07-28T14:40:42+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p07kprw",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p0axtrg",
+              "author": "reddit_user_5ff2d2bc52ae",
+              "author_karma": 0,
+              "content": ">you need to enable dev mode\n\nnot anymore,  you just sideload apks via adb now. The method has been changed over 2 years ago...",
+              "timestamp": "2026-07-28T17:24:42+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p07kprw",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p0bv117",
+                  "author": "reddit_user_289e5d0a4129",
+                  "author_karma": 0,
+                  "content": "I've actually mentioned the use of the linux environment, which includes the use of adb",
+                  "timestamp": "2026-07-28T19:43:10+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p0axtrg",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p07o4re",
+          "author": "reddit_user_e7f281c590d9",
+          "author_karma": 0,
+          "content": "try adb install? Apkm maybe apk bundle",
+          "timestamp": "2026-07-28T06:09:49+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run002_post02_seed012",
+      "post_slot": 2,
+      "seed_index": 12,
+      "source_raw_post_id": "1v8thu9",
+      "source_product_dir": "chromeos",
+      "source_file": "https://www.reddit.com/r/chromeos/comments/1v8thu9/possible_update_restart_bug/",
+      "post_type": "Discussion",
+      "title": "Possible Update -> Restart bug",
+      "author": "reddit_user_d8691634ac1e",
+      "author_karma": 0,
+      "content": "Possible Update -> Restart bug\n\nI don't think this would be by design.\n\nI use my Chromebook docked (into a TB4 certified model), and have the lid closed.\n\nWhenever I do a restart after an update, it instead does a shutdown. I have to open the lid, which then auto (cold) boots.\n\nHas anyone else seen this?",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p08ffe8",
+          "author": "reddit_user_fdd402815e20",
+          "author_karma": 0,
+          "content": "I use a Lenovo Chromebook Plus with the lid closed and connected to a USB-C dock on my desk every day. It restarts without issue.\n\nWhat you have described does sound familiar though, I think my Dell Chromebook Plus may have done that at one point. I haven’t used it with the lid closed for quite some time though, so am unsure if that behaviour is still the case.",
+          "timestamp": "2026-07-28T09:51:12+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p08t13k",
+              "author": "reddit_user_654f92ce150e",
+              "author_karma": 0,
+              "content": "I'm referring to a reboot/restart **only** when done through the 'update reboot' prompt. A normal reboot/restart is fine.",
+              "timestamp": "2026-07-28T11:32:14+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p08ffe8",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "post_id": "real_run002_post03_seed013",
+      "post_slot": 3,
+      "seed_index": 13,
+      "source_raw_post_id": "1vadnz6",
+      "source_product_dir": "chromeos",
+      "source_file": "https://www.reddit.com/r/chromeos/comments/1vadnz6/i_got_the_asus_cn_60_chromeos_76_i_also_want_to/",
+      "post_type": "Review",
+      "title": "I got the Asus CN 60 ChromeOS 76 (I also want to restore to original ChromeOS that came at launch)",
+      "author": "reddit_user_d8691634ac1e",
+      "author_karma": 0,
+      "content": "I got the Asus CN 60 ChromeOS 76 (I also want to restore to original ChromeOS that came at launch)",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p0li7so",
+          "author": "reddit_user_a4434dec6bf9",
+          "author_karma": 0,
+          "content": "Okay.",
+          "timestamp": "2026-07-30T02:53:13+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0lo9yc",
+          "author": "reddit_user_ec139a4a186c",
+          "author_karma": 0,
+          "content": "Very likely you cannot. Firmware changes over time which may make older version incompatible.",
+          "timestamp": "2026-07-30T03:31:23+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0mt29k",
+          "author": "reddit_user_a7f0cd3c3c65",
+          "author_karma": 0,
+          "content": "Are these called Chromebooks?",
+          "timestamp": "2026-07-30T08:46:29+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0o3432",
+              "author": "reddit_user_8e0848f98bba",
+              "author_karma": 0,
+              "content": "chromeboxes",
+              "timestamp": "2026-07-30T13:37:51+00:00",
+              "likes": 4,
+              "dislikes": 0,
+              "parent_comment_id": "p0mt29k",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p0o4hsk",
+          "author": "reddit_user_3a0f8d6e8a57",
+          "author_karma": 0,
+          "content": "The original version will be incredibly out of date (last official update was 2019--SEVEN years ago).  The launch version will be even worse.  This can severely limit the types of videos they can play and browser security is questionable (probably not a big deal, but don't do any banking or shopping, etc).\n\nI've used these for various projects (linux, gaming emulators).  Go to MrChromebox website and look up how to remove the write protection.  Then you can probably install ChromeOS Flex.  That will at least be up to date.",
+          "timestamp": "2026-07-30T13:44:18+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0o4suk",
+              "author": "reddit_user_1f64530e0a24",
+              "author_karma": 0,
+              "content": "I like how chrome OS 76 looks so I might keep it",
+              "timestamp": "2026-07-30T13:45:43+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p0o4hsk",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p0o58jm",
+                  "author": "reddit_user_3a0f8d6e8a57",
+                  "author_karma": 0,
+                  "content": "The looks?  Chrome has looked pretty much the same for a very long time.  There's nothing wrong with using an out of date computer for basic things.  Just don't do anything financial or other important stuff on it.",
+                  "timestamp": "2026-07-30T13:47:44+00:00",
+                  "likes": 2,
+                  "dislikes": 0,
+                  "parent_comment_id": "p0o4suk",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p0o5pcc",
+                      "author": "reddit_user_1f64530e0a24",
+                      "author_karma": 0,
+                      "content": "If you think I’m talking about the chrome browser I’m not I’m talking about chrome OS. And it has been looking different over the last few years. In fact, MJD   \n Restored the  CR 48 to factory settings (chromeos 0.12) and chrome OS back then was called chromium OS And it was basically a full screen web browser",
+                      "timestamp": "2026-07-30T13:49:54+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p0o58jm",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "p0o68a0",
+                          "author": "reddit_user_3a0f8d6e8a57",
+                          "author_karma": 0,
+                          "content": "Ok, but understand that the version of the browser is tied to the version of the OS on chrome devices.  The browser and OS are connected.  You cannot update the browser if the OS is past update life.",
+                          "timestamp": "2026-07-30T13:52:20+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "p0o5pcc",
+                          "depth": 4,
+                          "replies": []
+                        },
+                        {
+                          "comment_id": "p19cgpj",
+                          "author": "reddit_user_5bd6f3fc79bc",
+                          "author_karma": 0,
+                          "content": "The original build for the cr-48 was called ChromeOS  just like it's called today. It was essentially just a full screen web browser. Source: I had a cr-48 during the pilot. ",
+                          "timestamp": "2026-08-02T14:23:00+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "p0o5pcc",
+                          "depth": 4,
+                          "replies": [
+                            {
+                              "comment_id": "p19cmyv",
+                              "author": "reddit_user_1f64530e0a24",
+                              "author_karma": 0,
+                              "content": "I found a cr-48 on eBay for around $80",
+                              "timestamp": "2026-08-02T14:23:53+00:00",
+                              "likes": 1,
+                              "dislikes": 0,
+                              "parent_comment_id": "p19cgpj",
+                              "depth": 5,
+                              "replies": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "post_id": "real_run002_post04_seed014",
+      "post_slot": 4,
+      "seed_index": 14,
+      "source_raw_post_id": "1vateua",
+      "source_product_dir": "chromeos",
+      "source_file": "https://www.reddit.com/r/chromeos/comments/1vateua/thinking_of_buying_lenovo_chromebook_n23/",
+      "post_type": "Buying Advice",
+      "title": "thinking of buying lenovo chromebook n23",
+      "author": "reddit_user_d8691634ac1e",
+      "author_karma": 0,
+      "content": "thinking of buying lenovo chromebook n23\n\nso my laptop broke, and i need a new one for college stuffs. thinking of buying a refurbished lenovo 100e n23 for dirt cheap. the reviews on the product are pretty good, but im still hesitant bc im not familiar w chromebooks or laptops in general. im an eng literature major, so ill probably just use google suites on it, nothing heavy... is it a good idea?",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p0od91o",
+          "author": "reddit_user_c92661088344",
+          "author_karma": 0,
+          "content": "No, these stopped getting  OS updates years ago.  They are also extremely slow.\n\n",
+          "timestamp": "2026-07-30T14:24:10+00:00",
+          "likes": 3,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0p3iin",
+          "author": "reddit_user_4c6accbed4f3",
+          "author_karma": 0,
+          "content": "Never buy a Chromebook, they are literally e waste, just waiting to die. Thinkpad, thinkpad, thinkpad have I said thinkpad yet? I have a 2010 Thinkpad t420 and its perfectly usable as a daily driver with MX Linux. Old Macs, especially the Macbook Pro 2012 ( with 16 GB of RAM and an SSD) are also still 100% usable with OCLP as a daily driver, 14 years later. I got mine for free, ask around you would amazed what people throw out.",
+          "timestamp": "2026-07-30T16:17:46+00:00",
+          "likes": 0,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0pfipn",
+              "author": "reddit_user_e78bf90629e2",
+              "author_karma": 0,
+              "content": "No, get a ARM Chromebook they are better",
+              "timestamp": "2026-07-30T17:08:36+00:00",
+              "likes": 0,
+              "dislikes": 0,
+              "parent_comment_id": "p0p3iin",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p0q1agi",
+              "author": "reddit_user_c92661088344",
+              "author_karma": 0,
+              "content": "An old Thinkpad and Linux is not for everyone.  Not everyone wants spend their time messing with an unfamiliar OS or search for replacement battery or otherwise maintain old hardware. \n\nChromebooks can work great for many people in their particular scenarios. ",
+              "timestamp": "2026-07-30T18:40:08+00:00",
+              "likes": 3,
+              "dislikes": 0,
+              "parent_comment_id": "p0p3iin",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p0pbn7y",
+          "author": "reddit_user_2ec96340c60e",
+          "author_karma": 0,
+          "content": "Not really the place as this is literally the ChromeOS subreddit but if you're buying Lenovo, get a ThinkPad. Buy Lenovo and don't need to buy for like 10 years if you're good with pcs lol",
+          "timestamp": "2026-07-30T16:52:18+00:00",
+          "likes": 0,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0pcb0l",
+              "author": "reddit_user_2ec96340c60e",
+              "author_karma": 0,
+              "content": "That's not to say chromebooks are bad. My first laptop was a CX34 with an 11th gen i3 and 8gb ram. It was pretty fast, and it was built well too. However I did get a spot in the screen after it was in my bag , and haven't had that sort of issue on my thinkpad- it just depends on your use case really- if you aren't good with computers and need something simple buy a mid to high end Chromebook, else I'd say just get a ThinkPad-van always install ChromeOS flex (though it doesn't include any android app support)",
+              "timestamp": "2026-07-30T16:55:05+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p0pbn7y",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p0pl1mz",
+          "author": "reddit_user_f4343b863d9f",
+          "author_karma": 0,
+          "content": "If all you really do is use Google cloud stuff and/or the Chrome browser, it's probably fine.\n\nBut you'd better be pretty sure that's all you're going to need to do. Even something pretty simple like playing a DVD or printing can be a real pain with a Chromebook.",
+          "timestamp": "2026-07-30T17:31:45+00:00",
+          "likes": 0,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0rf6nw",
+          "author": "reddit_user_b9e420acf039",
+          "author_karma": 0,
+          "content": "The 100e g1 and n23 are the same age and will stop receiving new updates in a June of 2027. They will be slow and small, but will do what you need to do if cost is the biggest concern. There's lots of better options out there though.",
+          "timestamp": "2026-07-30T22:22:35+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0vj4bu",
+          "author": "reddit_user_d150b1f57edb",
+          "author_karma": 0,
+          "content": "I wont be buying a Lenovo Chromebook again, the hinges are weak and not dependable.  I read somewhere I believe there is a class action legal suit going on because of the breaking hinges, good luck.",
+          "timestamp": "2026-07-31T13:50:18+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    }
+  ]
+}

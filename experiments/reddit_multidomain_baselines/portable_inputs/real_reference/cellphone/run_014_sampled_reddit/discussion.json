@@ -1,0 +1,210 @@
+{
+  "meta": {
+    "product_category": "cellphone",
+    "baseline": "real_reddit_reference",
+    "run_id": "run_014_sampled_reddit"
+  },
+  "posts": [
+    {
+      "post_id": "real_run014_post00_seed070",
+      "post_slot": 0,
+      "seed_index": 70,
+      "source_raw_post_id": "1vd2scl",
+      "source_product_dir": "iphone",
+      "source_file": "https://www.reddit.com/r/iphone/comments/1vd2scl/tranfer_from_windows_to_iphone/",
+      "post_type": "Discussion",
+      "title": "tranfer from windows to iphone",
+      "author": "reddit_user_0fe413d0e398",
+      "author_karma": 0,
+      "content": "tranfer from windows to iphone\n\nso we all know what snapchat did, and i have alot of memories, no problem i will manually dowload them, poof their dates are gone and they all have todays date, ill request an export, i get it and i download it but half the files from the export dont even open on my pc, no problem maybe its supposed to be sent over to phone and the phone can open them or no? idk. but how to i send it to phone ? windows doesnt allow transfer from pc to iphone and also i wanna preserve their dates and not have them all on todays date or the day of export. so all my questions are how do i transfer and how do i preserve their dates and why do my snapchat files dont open on my pc they say its due to security or idk, sorry i know this subreddit isnt for snapchat even tho my main concern is pc to iphone transfer and how to keep their original dates",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p15y8kk",
+          "author": "reddit_user_7ee31c26eb8a",
+          "author_karma": 0,
+          "content": "Since you have an iPhone that means you also have an iCloud account.   \nCopy the files into iCloud via web gui. It should sync to your phone. Can’t think how to handle the dates. Maybe someone else has an idea for that. ",
+          "timestamp": "2026-08-02T00:13:24+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p15ygup",
+              "author": "reddit_user_7c0749b98276",
+              "author_karma": 0,
+              "content": "thanks ill try that it seems like there is no way for keeping the dates intact ",
+              "timestamp": "2026-08-02T00:14:43+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p15y8kk",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p173k1q",
+                  "author": "reddit_user_4b41e886d1c2",
+                  "author_karma": 0,
+                  "content": "I have done for dad an Android to iPhone transfer and it didn’t preserve dates for many of the photos in the gallery.",
+                  "timestamp": "2026-08-02T04:33:59+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p15ygup",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "post_id": "real_run014_post01_seed071",
+      "post_slot": 1,
+      "seed_index": 71,
+      "source_raw_post_id": "1vd4awz",
+      "source_product_dir": "Smartphones",
+      "source_file": "https://www.reddit.com/r/Smartphones/comments/1vd4awz/should_i_upgrade/",
+      "post_type": "reddit_post",
+      "title": "Should I upgrade?",
+      "author": "reddit_user_0fe413d0e398",
+      "author_karma": 0,
+      "content": "Should I upgrade?\n\nI currently have an iPhone 16 pro max and I don't necessarily have a problem with it (save a small crack in the screen and some dead pixels - which are slowly spreading). A screen replacement through apple is \\~$380. Should I just put that toward a new phone? I've bounced between iPhones, galaxy's and xiomi's my whole life but have noticed recently that apple has been pretty stagnant in its design language and innovation (subpar in the latter actually but I digress). I've been hearing a lot of things about the galaxy z fold 8 - should I put that $400 ish dollars toward that and mix things up with my first foldable or repair and maintain the iPhone for a couple more years? I've had it since release. Thoughts?",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p16c5oe",
+          "author": "reddit_user_de843153eff5",
+          "author_karma": 0,
+          "content": "Only if you don't mind losing a good battery! Your pro max is steps ahead of the battery on the fold. ",
+          "timestamp": "2026-08-02T01:35:58+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run014_post02_seed072",
+      "post_slot": 2,
+      "seed_index": 72,
+      "source_raw_post_id": "1vd4k6f",
+      "source_product_dir": "iphone",
+      "source_file": "https://www.reddit.com/r/iphone/comments/1vd4k6f/how_to_make_your_home_screen_automatically_change/",
+      "post_type": "Support",
+      "title": "How to make your home screen automatically change wallpaper while keeping your lock screen the same?",
+      "author": "reddit_user_0fe413d0e398",
+      "author_karma": 0,
+      "content": "How to make your home screen automatically change wallpaper while keeping your lock screen the same?\n\nGood day to all! I’ve had this question for a long time and the only thing I could find closest is shortcuts. I was wondering if anyone in this subreddit had any knowledge about this? Thank you in advance!",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p16ahhx",
+          "author": "reddit_user_65884126434e",
+          "author_karma": 0,
+          "content": "If you're looking for help or support, you should search for your issue on Google, the [Apple Support Community](https://discussions.apple.com/welcome), r/iPhone and the [iPhone Support FAQs](https://www.reddit.com/r/iphone/wiki/support-faq/). We review submissions for quality, so basic support issues may be removed.\n\n*I am a bot, and this action was performed automatically. Please [contact the moderators of this subreddit](/message/compose/?to=/r/iphone) if you have any questions or concerns.*",
+          "timestamp": "2026-08-02T01:25:52+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p17suip",
+          "author": "reddit_user_c5cad530d90d",
+          "author_karma": 0,
+          "content": "I had my old iPhone setup to change wallpaper with a double tap but the shortcut doesn’t work on my new phone. I’m gonna look in to it and get back to you when I get it figures out.",
+          "timestamp": "2026-08-02T07:52:51+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p18q6t7",
+              "author": "reddit_user_e681998b7da6",
+              "author_karma": 0,
+              "content": "Thank you 🙏 ",
+              "timestamp": "2026-08-02T12:18:42+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p17suip",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "post_id": "real_run014_post03_seed073",
+      "post_slot": 3,
+      "seed_index": 73,
+      "source_raw_post_id": "1vd4u2d",
+      "source_product_dir": "iphone",
+      "source_file": "https://www.reddit.com/r/iphone/comments/1vd4u2d/question_about_update/",
+      "post_type": "Discussion",
+      "title": "Question about update",
+      "author": "reddit_user_0fe413d0e398",
+      "author_karma": 0,
+      "content": "Question about update\n\n[removed]",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p16cpwa",
+          "author": "reddit_user_65884126434e",
+          "author_karma": 0,
+          "content": "Your submission has been removed because of this subreddit’s account requirements. You have not broken any rules, and your account is still active and in good standing. Please check your notifications for more information!\n\n*I am a bot, and this action was performed automatically. Please [contact the moderators of this subreddit](/message/compose/?to=/r/iphone) if you have any questions or concerns.*",
+          "timestamp": "2026-08-02T01:39:20+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run014_post04_seed074",
+      "post_slot": 4,
+      "seed_index": 74,
+      "source_raw_post_id": "1vd6erz",
+      "source_product_dir": "iphone",
+      "source_file": "https://www.reddit.com/r/iphone/comments/1vd6erz/should_apple_add_more_colors_or_unified_colors/",
+      "post_type": "Discussion",
+      "title": "should apple add more colors, or unified colors",
+      "author": "reddit_user_0fe413d0e398",
+      "author_karma": 0,
+      "content": "should apple add more colors, or unified colors",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p17c7bt",
+          "author": "reddit_user_a5a30234c8f8",
+          "author_karma": 0,
+          "content": "**Frequently asked question:** Your submission has been deemed as a question very frequently asked that often does not have a change in answer. Please use our search bar",
+          "timestamp": "2026-08-02T05:38:45+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    }
+  ]
+}

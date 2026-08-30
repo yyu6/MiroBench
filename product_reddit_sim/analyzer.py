@@ -9,6 +9,7 @@ from typing import Optional
 from openai import OpenAI
 
 from .loader import NormalizedProduct
+from .llm_utils import create_json_object_completion
 
 
 @dataclass
@@ -39,13 +40,12 @@ def analyze_products(
     sample = _stratified_sample(products, n=10, rng=rng)
     prompt = _build_prompt(sample, hint)
 
-    response = client.chat.completions.create(
+    raw = create_json_object_completion(
+        client=client,
         model=model,
-        messages=[{"role": "user", "content": prompt}],
+        prompt=prompt,
         temperature=0.3,
-        response_format={"type": "json_object"},
     )
-    raw = response.choices[0].message.content
     data = json.loads(raw)
 
     archetypes = [
@@ -99,7 +99,7 @@ def _build_prompt(sample: list[NormalizedProduct], hint: Optional[str]) -> str:
     )
     hint_line = f"\nAdditional context from researcher: {hint}" if hint else ""
 
-    return f"""You are analyzing a product dataset to design a realistic Reddit discussion simulation for NeurIPS academic research.
+    return f"""You are analyzing a product dataset to design a realistic Reddit discussion simulation.
 
 Products in this dataset (representative sample):
 {product_lines}
@@ -124,4 +124,8 @@ Requirements:
 - 4-8 persona_archetypes reflecting REAL Reddit communities that discuss this category
 - Weights must sum to 1.0 and reflect realistic community composition
 - 5-8 discussion_seed_topics that sound like genuine Reddit post titles (not marketing copy)
-- Archetypes should span different expertise levels, use cases, budgets, and attitudes"""
+- Archetypes should span different expertise levels, use cases, budgets, and attitudes
+- Archetype descriptions should mention how these people actually talk, argue, or lurk on Reddit
+- Include some imperfect or low-expertise users, not just enthusiasts and experts
+- Archetypes should also vary in motivation: some reply to help, some to complain, some to correct others, some to defend their own choices, and some mostly lurk
+- Do not make every archetype sound balanced, supportive, and well-informed"""

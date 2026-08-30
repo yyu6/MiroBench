@@ -1,0 +1,256 @@
+{
+  "meta": {
+    "product_category": "health_issue",
+    "baseline": "real_reddit_reference",
+    "run_id": "run_001_sampled_reddit"
+  },
+  "posts": [
+    {
+      "post_id": "real_run001_post00_seed005",
+      "post_slot": 0,
+      "seed_index": 5,
+      "source_raw_post_id": "1v4qutj",
+      "source_product_dir": "medical",
+      "source_file": "https://www.reddit.com/r/medical/comments/1v4qutj/mod_post_dont_see_your_post_read_this/",
+      "post_type": "reddit_post",
+      "title": "[Mod Post] Don't see your post? Read This:",
+      "author": "reddit_user_7b7b220cf34f",
+      "author_karma": 0,
+      "content": "[Mod Post] Don't see your post? Read This:\n\nTo prevent spam and promote a rule-following environment, posts from accounts with low karma, new accounts, and limited engagement within r/medical are automatically sent to the mod queue for manual review and approval. We will review and approve your post if appropriate.\n\n\n\n\\* If a live Moderator or Community Manager removes your post, you will receive a message explaining the reason.\n\n\\* Please allow up to 24 hours before reaching out to the Mods about approving your post. We appreciate your patience, as we may not be online to monitor the queue at all times.\n\n\\* \\*\\*If you are facing a medical emergency, exit Reddit immediately and contact your local Emergency Medical Services.\\*\\*\n\n\n\n\\*\\*Reddit is NOT a substitute for in-person medical care.\\*\\* Always consult your doctor before following any advice received here. Your health and safety are our top priority.",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "ozedrik",
+          "author": "reddit_user_8125ca31b225",
+          "author_karma": 0,
+          "content": "Sounds like the mods are just trying to keep things running smoothly with all that spam floating around. I'd rather wait the day than deal with another low-effort post cluttering things up.",
+          "timestamp": "2026-07-24T01:20:51+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run001_post01_seed006",
+      "post_slot": 1,
+      "seed_index": 6,
+      "source_raw_post_id": "1v4smsq",
+      "source_product_dir": "medical",
+      "source_file": "https://www.reddit.com/r/medical/comments/1v4smsq/went_to_bed_last_night_and_woke_up_with_what_i/",
+      "post_type": "No Pain",
+      "title": "Went to bed last night and woke up with what I thought was a mosquito bite, but I’m afraid it’s a spider bite.",
+      "author": "reddit_user_7b7b220cf34f",
+      "author_karma": 0,
+      "content": "Went to bed last night and woke up with what I thought was a mosquito bite, but I’m afraid it’s a spider bite.\n\n[removed]",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "ozdg48o",
+          "author": "reddit_user_e6719f73a9e4",
+          "author_karma": 0,
+          "content": "Your post has been held for review because it requests a diagnosis for a condition that cannot be accurately identified online (such as HIV, cancer, or specific bites). \n\n**Reddit is not a substitute for professional medical care.** We strongly advise you to consult a healthcare provider for proper testing and diagnosis.\nPlease review our [Rules](https://www.reddit.com/r/medical/wiki/rules), [Code of Conduct](https://www.reddit.com/r/medical/wiki/code_of_conduct/), and [Wiki](https://www.reddit.com/r/medical/wiki/index) for comprehensive information while you wait for your post to be approved.\n\n\n*I am a bot, and this action was performed automatically. Please [contact the moderators of this subreddit](/message/compose/?to=/r/medical) if you have any questions or concerns.*",
+          "timestamp": "2026-07-23T22:17:41+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run001_post02_seed007",
+      "post_slot": 2,
+      "seed_index": 7,
+      "source_raw_post_id": "1v5ni2m",
+      "source_product_dir": "medical",
+      "source_file": "https://www.reddit.com/r/medical/comments/1v5ni2m/feeling_like_theres_grit_in_my_eyes_when_im_tired/",
+      "post_type": "General Question/Discussion",
+      "title": "Feeling like there's grit in my eyes when I'm tired? Not painful but very uncomfortable",
+      "author": "reddit_user_7b7b220cf34f",
+      "author_karma": 0,
+      "content": "Feeling like there's grit in my eyes when I'm tired? Not painful but very uncomfortable\n\nIs it normal to feel like there's sand/grit in your eyes when you're tired? Over the last couple of years it's gotten worse and can come on quite quickly. I struggle to keep my eyes open when it gets to this point.\n\nI have seen an optician and I'm under ophthalmology for acquired nystagmus caused by a chiari malformation. Nothing is wrong with my eyes apart from the nystagmus and needing glasses, I've had recent checkups with both clinics",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "ozkcque",
+          "author": "reddit_user_faa0817b729f",
+          "author_karma": 0,
+          "content": "Sounds like dry eye. I imagine when you’re tired, you’ve been up and about all day, so they’ve been drying out. There are many over the counter rewetting eye drops that include a lubricant such as carboxymethylcellulose. I have heard ophthalmologists recommend Refresh Celluvisc if you’re in the US (not sure if it’s available elsewhere). \n\nYou could also try eye ointment before bed. It’s thicker than the drops and makes your vision a little blurry but that’s why you apply it before bed. It’s basically like Vaseline for the eyes. ",
+          "timestamp": "2026-07-24T21:10:39+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run001_post03_seed008",
+      "post_slot": 3,
+      "seed_index": 8,
+      "source_raw_post_id": "1v6c7co",
+      "source_product_dir": "medical",
+      "source_file": "https://www.reddit.com/r/medical/comments/1v6c7co/my_ear_is_completely_clogged_with_wax_what_can_i/",
+      "post_type": "General Question/Discussion",
+      "title": "My ear is completely clogged with wax. What can I do to deal with the blockage?",
+      "author": "reddit_user_7b7b220cf34f",
+      "author_karma": 0,
+      "content": "My ear is completely clogged with wax. What can I do to deal with the blockage?\n\nSo, my doctor told me to use wax softening drops for a week before returning for my ears to be flushed. However the first day I used the drops, my left ear clogged completely. I'm starting to notice small migraines and I can't really hear out of that ear, it being extremely muffled. I've tried using peroxide twice, with only TINY chunks coming out and I've tried using my personal ear flushing set (something I got after the last time my ear got clogged). Nothing has worked. Do I just wait the rest of my week and contact the doctor? Should I contact them when they open and explain what is going on? Or is there anything I can try to clear the blockage myself?",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "ozpcoq6",
+          "author": "reddit_user_f1a9c2abcd6d",
+          "author_karma": 0,
+          "content": "Go to the pharmacy and get an ear wax removal kit.",
+          "timestamp": "2026-07-25T16:12:04+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "ozpekag",
+          "author": "reddit_user_dd2a953e2207",
+          "author_karma": 0,
+          "content": "This is something they can help you with at urgent care. Call ahead and ask first- some of them are really lousy. ",
+          "timestamp": "2026-07-25T16:20:59+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "ozpnaik",
+          "author": "reddit_user_7f1db8fc4b04",
+          "author_karma": 0,
+          "content": "The medical assistant to my doctor, after cleaning mine as best she could, told me to puncture a gel stool softener and squeeze it in. It worked! Got all the rest of it out. I laid down with that side up for a while, to let it get in there",
+          "timestamp": "2026-07-25T17:02:26+00:00",
+          "likes": 0,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "ozppn5e",
+          "author": "reddit_user_6f62588b87ff",
+          "author_karma": 0,
+          "content": "NAD— what drops are you using?? I have dealt with horrible ear wax issues my whole life. I apparently have tiny ear canals so wax builds up really easily. \n\nDebrox works like a charm most of the time. Couple drops in the ear (in your case left ear), then lay on your right side for about 15 mins and let the debrox do its thing. Then take a syringe and flush! \n\nOtherwise if it’s a mega buildup I let urgent care take care of it. They’ll do the debrox but instead of the syringe by urgent care has a super fancy ear flusher thing that feels like heaven IMO",
+          "timestamp": "2026-07-25T17:13:30+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "ozqdtjl",
+              "author": "reddit_user_b1deca8405a9",
+              "author_karma": 0,
+              "content": "I'm actually using Debrox right now. As suggested by my doctor. ",
+              "timestamp": "2026-07-25T19:08:54+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "ozppn5e",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "ozppypk",
+          "author": "reddit_user_ce11fd6a64d7",
+          "author_karma": 0,
+          "content": "It sounds like the blockage may have originally been dry, and now it has absorbed the wax softening drops which has caused it to expand, like a dry sponge soaking up water. The expansion may be the cause of increased pressure inside of your ear canal and the root cause of your migraines. If this is the case, that the blockage has absorbed the liquid and should now be softer, it may be easier for a professional to clean your ear completely using tools such as an endoscope and non-sharp, deburred, and sterile ear cleaning equipment at a follow-up appointment. Otherwise, if the blockage is now softened enough, it might be possible for your body to expel it over time. NAD",
+          "timestamp": "2026-07-25T17:15:02+00:00",
+          "likes": 4,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "ozsdx97",
+          "author": "reddit_user_dd75c5758951",
+          "author_karma": 0,
+          "content": "This takes time, unfortunately. After only a day or two of Debrox, irrigation likely won’t help. You need a 5 days to a week to really break the wax down.",
+          "timestamp": "2026-07-26T01:44:28+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run001_post04_seed009",
+      "post_slot": 4,
+      "seed_index": 9,
+      "source_raw_post_id": "1v6kec1",
+      "source_product_dir": "medical",
+      "source_file": "https://www.reddit.com/r/medical/comments/1v6kec1/what_could_it_be_it_looks_like_a_tonsil_stone_but/",
+      "post_type": "Oral Health",
+      "title": "What could it be? It looks like a tonsil stone, but it doesn't come off with a cotton swab.",
+      "author": "reddit_user_7b7b220cf34f",
+      "author_karma": 0,
+      "content": "What could it be? It looks like a tonsil stone, but it doesn't come off with a cotton swab.\n\nA month ago I had a viral respiratory infection that lasted two weeks and was treated without antibiotics. Now I feel fine, but it's bothering me because I feel a 'pulling' sensation. No fever or pain, just a lot of fatigue.\n\nAlso, I've had tonsillitis many times in my life, but because my tonsils are small, they don't want to remove them.",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "ozr44rj",
+          "author": "reddit_user_e6719f73a9e4",
+          "author_karma": 0,
+          "content": "Hi Tight_Candidate_5139,\n\nYour post has been **temporarily held for review** because your Reddit account is either new or has limited overall karma.\nThis helps our moderation team reduce spam, misinformation, and low-effort posts while keeping r/Medical a reliable resource for everyone.\n\n**Don’t worry — your post isn’t deleted!**\nA moderator will review it as soon as possible and approve it if it follows our community rules.\nWe ask that you wait at least 24 hours before reaching out to us via modmail in regards to your post!\nOnce you’ve participated more in Reddit and gained karma, your future posts will go through automatically.\n\nThanks for understanding and for helping us keep the subreddit safe and accurate.  \nPlease review our [Rules](https://www.reddit.com/r/medical/wiki/rules), [Code of Conduct](https://www.reddit.com/r/medical/wiki/code_of_conduct/), and [Wiki](https://www.reddit.com/r/medical/wiki/index) for comprehensive information while you wait for your post to be approved.\n\nOP, **When a user answers your post, please reply in the comments !answered** which will automatically adjust the post flair and mark it as answered.\n\n— The r/Medical Moderation Team\n\n*I am a bot, and this action was performed automatically. Please [contact the moderators of this subreddit](/message/compose/?to=/r/medical) if you have any questions or concerns.*",
+          "timestamp": "2026-07-25T21:23:50+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "ozxttmr",
+          "author": "reddit_user_76bda64b7714",
+          "author_karma": 0,
+          "content": "Try gargling with salt water everyday ",
+          "timestamp": "2026-07-26T21:10:28+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "ozyy8dh",
+          "author": "reddit_user_37a6c9118b3d",
+          "author_karma": 0,
+          "content": "Worth getting checked out for a Pertonsillar Abscess",
+          "timestamp": "2026-07-27T00:47:40+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    }
+  ]
+}

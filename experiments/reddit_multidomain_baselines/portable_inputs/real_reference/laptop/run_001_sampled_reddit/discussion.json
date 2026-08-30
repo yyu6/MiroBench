@@ -1,0 +1,317 @@
+{
+  "meta": {
+    "product_category": "laptop",
+    "baseline": "real_reddit_reference",
+    "run_id": "run_001_sampled_reddit"
+  },
+  "posts": [
+    {
+      "post_id": "real_run001_post00_seed005",
+      "post_slot": 0,
+      "seed_index": 5,
+      "source_raw_post_id": "1v7aaoo",
+      "source_product_dir": "chromeos",
+      "source_file": "https://www.reddit.com/r/chromeos/comments/1v7aaoo/anyone_tried_changing_mediatek_wifi_card_to_intel/",
+      "post_type": "Discussion",
+      "title": "Anyone Tried Changing Mediatek Wifi Card To Intel AX210?",
+      "author": "reddit_user_d8691634ac1e",
+      "author_karma": 0,
+      "content": "Anyone Tried Changing Mediatek Wifi Card To Intel AX210?\n\nHas anyone tried swapping a Mediatek wifi cards for an Intel AX210 on Chromebooks? Will ChromeOS recognize it?   \n  \n**Why I want to do this:** Mediatek wifi cards have a terrible reputation for being unstable. Done this many times to gaming laptops and it **always** improves the wifi performance of the device. This chromebook is no exception and has already disconnected from my home internet several times when not in the same room as my router.\n\n**Model**: Acer Spin 514 w/ Mediatek Ultra 910 Procssor \n\n**Concern**: When I've done this before, they were always on windows devices running x86 processors ... this is ChromeOS + a Mediatek processor so I'm hesitant. Image of wifi card attached.",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "ozwpju9",
+          "author": "reddit_user_7d85ce078583",
+          "author_karma": 0,
+          "content": "My Chromebook came with an AX200 out of the box. That means the drivers are in the kernel.\n\n\n\nThen again, I doubt they specifically remove Wi-Fi drivers from the ChromeOS kernel—that would be silly.\n\n\n\n",
+          "timestamp": "2026-07-26T18:04:49+00:00",
+          "likes": 5,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "ozzphsz",
+              "author": "reddit_user_b2d0c6a68d87",
+              "author_karma": 0,
+              "content": "Different Chromebook models come with different hardware and OS recovery images, so I actually wouldn't put it past Google to remove it, but something like this is a tryitandsee question because Chromebook upgrading/modding isn't as big as a scene as say Zephyrus laptop upgrading and Google isn't just going to give you the answers",
+              "timestamp": "2026-07-27T03:27:41+00:00",
+              "likes": 3,
+              "dislikes": 0,
+              "parent_comment_id": "ozwpju9",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "ozx8ndj",
+          "author": "reddit_user_6d6a978fd9be",
+          "author_karma": 0,
+          "content": "wouldn't it be easier to get a wifi repeater? or a better router?",
+          "timestamp": "2026-07-26T19:31:56+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "ozx8ww9",
+              "author": "reddit_user_3daf87a99371",
+              "author_karma": 0,
+              "content": "It's never the router....... It's always mediatek. Go look at the zephyrus g14 laptop subreddit (they also come with these cards). ",
+              "timestamp": "2026-07-26T19:33:09+00:00",
+              "likes": 5,
+              "dislikes": 0,
+              "parent_comment_id": "ozx8ndj",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "ozzm9v2",
+          "author": "reddit_user_5aab8663c3f3",
+          "author_karma": 0,
+          "content": "Likely won’t work, even if it was an x86 variant. Official ChromeOS images tend to not contain drivers for hardware that didn’t ship in the device, even if it’s there by default in a standard Linux distro. The fact it’s ARM64 just makes the odds worse.",
+          "timestamp": "2026-07-27T03:07:11+00:00",
+          "likes": 5,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "ozzphgz",
+          "author": "reddit_user_657643c395c9",
+          "author_karma": 0,
+          "content": "Definitely won't work, considering chromeOS builds only ship with the drivers for that board + it being ARM instead of standard x86",
+          "timestamp": "2026-07-27T03:27:38+00:00",
+          "likes": 3,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run001_post01_seed006",
+      "post_slot": 1,
+      "seed_index": 6,
+      "source_raw_post_id": "1v7hqdk",
+      "source_product_dir": "chromeos",
+      "source_file": "https://www.reddit.com/r/chromeos/comments/1v7hqdk/how_to_fix_this_problem/",
+      "post_type": "Discussion",
+      "title": "How to fix this problem!!!!",
+      "author": "reddit_user_d8691634ac1e",
+      "author_karma": 0,
+      "content": "How to fix this problem!!!!\n\nActually i'm exhausted about this tool \"find\" 🤬.\n\nWhenever i type something this fucking stuff come over my face and I don't do anything. I tried many things but didn’t work. \n\nPlzzzzzzzz help me to remove this and i don't this yellow circle feature.🙏",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "ozy64qg",
+          "author": "reddit_user_c50412320b56",
+          "author_karma": 0,
+          "content": "The CTRL and/or F keys on your keyboard are likely stuck down",
+          "timestamp": "2026-07-26T22:12:01+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "ozy6mnb",
+          "author": "reddit_user_c4fd1021708e",
+          "author_karma": 0,
+          "content": "What did any of that mean ",
+          "timestamp": "2026-07-26T22:14:35+00:00",
+          "likes": 5,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "ozyuric",
+          "author": "reddit_user_5ff2d2bc52ae",
+          "author_karma": 0,
+          "content": "Internet Explorer? What the heck is this",
+          "timestamp": "2026-07-27T00:27:50+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run001_post02_seed007",
+      "post_slot": 2,
+      "seed_index": 7,
+      "source_raw_post_id": "1v805n6",
+      "source_product_dir": "chromeos",
+      "source_file": "https://www.reddit.com/r/chromeos/comments/1v805n6/im_stupid_with_technology_unfortunately_does/",
+      "post_type": "Discussion",
+      "title": "I'm stupid with technology unfortunately, does anyone know how I can get my VPN on my Chromebook?",
+      "author": "reddit_user_d8691634ac1e",
+      "author_karma": 0,
+      "content": "I'm stupid with technology unfortunately, does anyone know how I can get my VPN on my Chromebook?\n\nSo my Chromebook has just made itself useless (because of course) I've had it for years, they want me to buy a new one (I don't intend to after this actually) so I have no access to the playstore or any apps (VPN, Google slides, LITERALLY ANYTHING) so my supposed work computer is now a fancy browser basically, wondering if I can get my VPN back and then figure out other things (I use proton)",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p026zo1",
+          "author": "reddit_user_c1ff4dab1597",
+          "author_karma": 0,
+          "content": "Try to use Google extensions. Works with proton vpn",
+          "timestamp": "2026-07-27T13:51:28+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p02htpf",
+          "author": "reddit_user_6d6a978fd9be",
+          "author_karma": 0,
+          "content": "you know the Google Docs apps, including Slides, are available on the web, right? Web apps are always preferable to android apps anyway, things will likely improve for you. VPN too.",
+          "timestamp": "2026-07-27T14:41:06+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run001_post03_seed008",
+      "post_slot": 3,
+      "seed_index": 8,
+      "source_raw_post_id": "1v86rfl",
+      "source_product_dir": "chromeos",
+      "source_file": "https://www.reddit.com/r/chromeos/comments/1v86rfl/can_we_talk_about_google_photos_access_from_the/",
+      "post_type": "Discussion",
+      "title": "Can we talk about Google Photos access from the file system?",
+      "author": "reddit_user_d8691634ac1e",
+      "author_karma": 0,
+      "content": "Can we talk about Google Photos access from the file system?\n\nI see there's a post from about 3 mths ago regarding this but I find it absolutely crazy that - to this day - there is still no way to directly upload content from Google Photos.\n\nI do a lot of publishing work on my Chromebook using photos taken on my phone, but I still need to download them from Google Photos to my Chromebook before then uploading them.  It surely can't be difficult to insert a link in the file manager to browse photos like we could do via Drive in the pre 2020 days.\n\nWhether this is a \"feature\" which will carry over to the Googlebooks, I dunno, but it is really frustrating to see this lack of joined up integration when it is all hosted by the same company",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p03k7w6",
+          "author": "reddit_user_9507d5e4fc1a",
+          "author_karma": 0,
+          "content": "We can talk discuss whatever... \n\nNever going to happen.  They focus only on Android or Browser. Especially browser provides for them crossplatform work. \n\n> It surely can't be difficult to insert a link in the \n\nYou have never done any software. \n\n(Sure may change after 40 years or so... that is not the point..)",
+          "timestamp": "2026-07-27T17:23:39+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p042iq2",
+          "author": "reddit_user_579fad130aef",
+          "author_karma": 0,
+          "content": "Google prefers the user to have image storage in the cloud and deliver locally when the user is online. I have multiple Gmail accounts and don't want to pay more to Google",
+          "timestamp": "2026-07-27T18:39:31+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p048s90",
+          "author": "reddit_user_7a2490d942e2",
+          "author_karma": 0,
+          "content": "Having recently decided to migrate my photos from Microsoft to Google, I was surprised by this too.\n\nI've probably made a rod for my own back, but I've decided not to use Google Photos at all because I don't want their AI picking through them and deciding how I see and use them.  I've not taken many photos since making that decision so I've yet to fully appreciate how best I should get photos off my phone's DCIM folder and into Drive (share them from the Files app to Drive I presume).  It will help me be selective about which photos I actually want to keep, which for me will be easy; I'm a ruthless declutterer!",
+          "timestamp": "2026-07-27T19:06:00+00:00",
+          "likes": 5,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p04f3ou",
+          "author": "reddit_user_de49e9abd919",
+          "author_karma": 0,
+          "content": "You \"can\" work with photos and videos as though you were on Google Drive if you actually upload your photos and videos to Drive.\n\nGoogle Drive does not have the integration that OneDrive and iCloud has concerning media.  So you would need to create a workaround.  There are some in the Play Store or you can just use Drive.  Yes you are duplicating your efforts and paying extra for twice the storage and that is precisely the point.  \n\nGoogle did this a long time ago.  In the early days, you could actually see where your photos and videos were stored at on Drive and could simply use Photos as a viewer.  They have abandoned this practice.  Although there are third party viewers for Drive that can give you that experience, but then you would have to stop using Photos and lose that convenience.\n\nAmazon may be an alternative; storage is storage. You don't have protected storage simply for media it is all in the same bucket.  And they have an app for Chromebook.",
+          "timestamp": "2026-07-27T19:32:41+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p04kf7o",
+          "author": "reddit_user_19e455c987a3",
+          "author_karma": 0,
+          "content": "I'm also sick of that and I was about to implement a custom solution for it then Google killed the nessesary third party access capability.",
+          "timestamp": "2026-07-27T19:55:18+00:00",
+          "likes": 5,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p08ogj0",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-07-28T10:58:23+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run001_post04_seed009",
+      "post_slot": 4,
+      "seed_index": 9,
+      "source_raw_post_id": "1v87bs1",
+      "source_product_dir": "chromeos",
+      "source_file": "https://www.reddit.com/r/chromeos/comments/1v87bs1/trying_to_tether_pixelbook_to_my_pixel_9_pro/",
+      "post_type": "Troubleshooting",
+      "title": "Trying to tether Pixelbook to my Pixel 9 Pro",
+      "author": "reddit_user_d8691634ac1e",
+      "author_karma": 0,
+      "content": "Trying to tether Pixelbook to my Pixel 9 Pro\n\nI'm trying to use Citrix Workspace to VPN into a customer, but when I use my phone as a hotspot, Workspace doesn't seem to want to fire up. Which apparently is a thing with Citrix Workspace. Apparently if I can set my Pixelbook to use my phone's network connection via a USB tether, it will see that I now have a ethernet connection, which I suspect Citrix Workspace will be happier with. I have the phone set inside developer options for the default USB config to be USB tethering, after I connect the cable, I can switch on USB tethering, however it isn't doing it. It seems like the Chromebook just wants to charge the device. I'm using a brand new Anker cable which should be ok",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p04vm3s",
+          "author": "reddit_user_be30777f29df",
+          "author_karma": 0,
+          "content": "You shouldn't be messing with the default USB configuration, just turn on tethering and your Chromebook will pick it up if it's a data connection. Also it can change your phone while doing that too.",
+          "timestamp": "2026-07-27T20:43:05+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    }
+  ]
+}

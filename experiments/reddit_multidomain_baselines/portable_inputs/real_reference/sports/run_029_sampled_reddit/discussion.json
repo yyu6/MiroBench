@@ -1,0 +1,1689 @@
+{
+  "meta": {
+    "product_category": "sports",
+    "baseline": "real_reddit_reference",
+    "run_id": "run_029_sampled_reddit"
+  },
+  "posts": [
+    {
+      "post_id": "real_run029_post00_seed145",
+      "post_slot": 0,
+      "seed_index": 145,
+      "source_raw_post_id": "1vez0n0",
+      "source_product_dir": "baseball",
+      "source_file": "https://www.reddit.com/r/baseball/comments/1vez0n0/anthony_volpe_has_been_sent_down/",
+      "post_type": "reddit_post",
+      "title": "ANTHONY VOLPE HAS BEEN SENT DOWN",
+      "author": "reddit_user_79ff14d8816f",
+      "author_karma": 0,
+      "content": "ANTHONY VOLPE HAS BEEN SENT DOWN",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p1ky273",
+          "author": "reddit_user_a655e72500b9",
+          "author_karma": 0,
+          "content": "Dang",
+          "timestamp": "2026-08-04T03:33:28+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1kylzs",
+              "author": "reddit_user_ad90069646b5",
+              "author_karma": 0,
+              "content": "About time, Yankees can't keep running him out there every day when he's swinging a wet noodle",
+              "timestamp": "2026-08-04T03:37:00+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1ky273",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1kz8u4",
+                  "author": "reddit_user_1f7dd35cfdcc",
+                  "author_karma": 0,
+                  "content": "And he cannot make a double play he throws like a high schooler",
+                  "timestamp": "2026-08-04T03:41:06+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1kylzs",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p1ky3x0",
+          "author": "reddit_user_1b7af95d586a",
+          "author_karma": 0,
+          "content": "The equivalent to the Yankees getting Adley Rutschman",
+          "timestamp": "2026-08-04T03:33:47+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1kys75",
+              "author": "reddit_user_d51977a79dde",
+              "author_karma": 0,
+              "content": "In terms of fan morale, replacing Volpe with a top prospect absolutely is lol",
+              "timestamp": "2026-08-04T03:38:07+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1ky3x0",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1kytlm",
+                  "author": "reddit_user_81a51808eba0",
+                  "author_karma": 0,
+                  "content": "exactly",
+                  "timestamp": "2026-08-04T03:38:22+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1kys75",
+                  "depth": 2,
+                  "replies": []
+                },
+                {
+                  "comment_id": "p1l4k5e",
+                  "author": "reddit_user_902800e346ef",
+                  "author_karma": 0,
+                  "content": "The ole addition by subtraction ",
+                  "timestamp": "2026-08-04T04:15:56+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1kys75",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p1ky5pz",
+          "author": "reddit_user_7b7b0bd78370",
+          "author_karma": 0,
+          "content": "To...Hell? Michigan? ",
+          "timestamp": "2026-08-04T03:34:06+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1ky7mv",
+          "author": "reddit_user_f9de10ab3d5f",
+          "author_karma": 0,
+          "content": "And all the Yankees cheer",
+          "timestamp": "2026-08-04T03:34:26+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1ky9zy",
+          "author": "reddit_user_67760967e6b3",
+          "author_karma": 0,
+          "content": "Hang the banner",
+          "timestamp": "2026-08-04T03:34:51+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1kylcw",
+              "author": "reddit_user_7b7b0bd78370",
+              "author_karma": 0,
+              "content": "Volpe mishandled it",
+              "timestamp": "2026-08-04T03:36:53+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1ky9zy",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1kydcs",
+          "author": "reddit_user_3491da91918a",
+          "author_karma": 0,
+          "content": "End of an error. ",
+          "timestamp": "2026-08-04T03:35:27+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1kyfco",
+          "author": "reddit_user_7511b595dcea",
+          "author_karma": 0,
+          "content": "why are we yelling it’s not friday 🕺",
+          "timestamp": "2026-08-04T03:35:49+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1kyfoa",
+          "author": "reddit_user_ed73b475525c",
+          "author_karma": 0,
+          "content": "https://preview.redd.it/7pv8bali3ahh1.jpeg?width=828&format=pjpg&auto=webp&s=636c3160caf9a19686aeac1fa6eeb3d13d53a8ba",
+          "timestamp": "2026-08-04T03:35:52+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1kyfoh",
+          "author": "reddit_user_11aa9436b571",
+          "author_karma": 0,
+          "content": "Yankee fans about to celebrate like they won the title. ",
+          "timestamp": "2026-08-04T03:35:52+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1kyx96",
+              "author": "reddit_user_81a51808eba0",
+              "author_karma": 0,
+              "content": "![gif](giphy|kkpWcU9XgFIUE)\n\n",
+              "timestamp": "2026-08-04T03:39:00+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1kyfoh",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1kz9an",
+                  "author": "reddit_user_11aa9436b571",
+                  "author_karma": 0,
+                  "content": "![gif](giphy|pK0T7vyx3SqdfmxewA)\n\n",
+                  "timestamp": "2026-08-04T03:41:11+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1kyx96",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p1kyget",
+          "author": "reddit_user_6c5ffeef75b4",
+          "author_karma": 0,
+          "content": "To his room??",
+          "timestamp": "2026-08-04T03:36:00+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1kygk1",
+          "author": "reddit_user_d2679edc0637",
+          "author_karma": 0,
+          "content": "Feel bad for the kid. ",
+          "timestamp": "2026-08-04T03:36:01+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1kza4i",
+              "author": "reddit_user_aa9846e08869",
+              "author_karma": 0,
+              "content": "Why? He had an absurd amount of chances purely due to prospect pedigree and was consistently a below average hitter.",
+              "timestamp": "2026-08-04T03:41:20+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1kygk1",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p1kzdhy",
+              "author": "reddit_user_cccf2f54d43f",
+              "author_karma": 0,
+              "content": "Nah. He had every (and more) opportunity ",
+              "timestamp": "2026-08-04T03:41:56+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1kygk1",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1kykp7",
+          "author": "reddit_user_8eb79ad48e6c",
+          "author_karma": 0,
+          "content": "![gif](giphy|R9wlZIvzUrtrdFYhZV)",
+          "timestamp": "2026-08-04T03:36:46+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1kylzf",
+          "author": "reddit_user_1027f2fa3599",
+          "author_karma": 0,
+          "content": "Kinda surprised he wasn’t traded today tbh.",
+          "timestamp": "2026-08-04T03:37:00+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1kysql",
+              "author": "reddit_user_035bb5d42fee",
+              "author_karma": 0,
+              "content": "Who would want him\n\n![gif](giphy|l0ExayQDzrI2xOb8A)",
+              "timestamp": "2026-08-04T03:38:12+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1kylzf",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1kzb30",
+                  "author": "reddit_user_d8a69dd6f4c6",
+                  "author_karma": 0,
+                  "content": "The angels tried out Alek Manoah this year. Im sure someone would take a flyer just noone would offer a good return for him ",
+                  "timestamp": "2026-08-04T03:41:31+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1kysql",
+                  "depth": 2,
+                  "replies": []
+                },
+                {
+                  "comment_id": "p1kzigt",
+                  "author": "reddit_user_4a974aa32b66",
+                  "author_karma": 0,
+                  "content": "Volpe for HSK straight up ",
+                  "timestamp": "2026-08-04T03:42:49+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1kysql",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            },
+            {
+              "comment_id": "p1kyton",
+              "author": "reddit_user_0c312859cd4f",
+              "author_karma": 0,
+              "content": "Would *you* want him? 🤣",
+              "timestamp": "2026-08-04T03:38:23+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1kylzf",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p1kzglb",
+              "author": "reddit_user_2704de532b53",
+              "author_karma": 0,
+              "content": "Maybe if he was a throw-in like when we got Gage Workman along with Mize.  But the Yanks didn't make all that many trades, and the teams they traded with seemed to be more interested in other things besides fringe shortstops (pitching for Nats, prospects for Giants)",
+              "timestamp": "2026-08-04T03:42:29+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1kylzf",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p1kzs8t",
+              "author": "reddit_user_8dcb350cb6c9",
+              "author_karma": 0,
+              "content": "I think had he spent ANY time at 2nd base he would have been traded away. But his arm at short isn’t worth much this time of year ",
+              "timestamp": "2026-08-04T03:44:34+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1kylzf",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1kym2r",
+          "author": "reddit_user_24ec3b8f757b",
+          "author_karma": 0,
+          "content": "the r/baseball punching bag is no more ",
+          "timestamp": "2026-08-04T03:37:01+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1kynfq",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[deleted]",
+          "timestamp": "2026-08-04T03:37:16+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1kyoiq",
+          "author": "reddit_user_26d475e784ff",
+          "author_karma": 0,
+          "content": "![gif](giphy|uDJJk75RzP8mckt2eX)",
+          "timestamp": "2026-08-04T03:37:27+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1kyp2r",
+          "author": "reddit_user_76d3c9320f90",
+          "author_karma": 0,
+          "content": "But I thought he was Jeter 2.0?",
+          "timestamp": "2026-08-04T03:37:33+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1kyw7a",
+              "author": "reddit_user_035bb5d42fee",
+              "author_karma": 0,
+              "content": "![gif](giphy|GpyS1lJXJYupG)",
+              "timestamp": "2026-08-04T03:38:49+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1kyp2r",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1kyswh",
+          "author": "reddit_user_26a38f7df5f8",
+          "author_karma": 0,
+          "content": "I just fell to my knees in a market basket. ",
+          "timestamp": "2026-08-04T03:38:14+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1kywa2",
+          "author": "reddit_user_fb2e942db327",
+          "author_karma": 0,
+          "content": "Uh oh. His dad’s not going to be happy!",
+          "timestamp": "2026-08-04T03:38:50+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1kyylj",
+          "author": "reddit_user_842d6031bd7c",
+          "author_karma": 0,
+          "content": "Ironically he has been hitting decently this year at the expense of ALL his power.\n\nWelcome to the show George",
+          "timestamp": "2026-08-04T03:39:15+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1kza71",
+              "author": "reddit_user_035bb5d42fee",
+              "author_karma": 0,
+              "content": "Honestly I preferred his power lol. It’s not like he’s batting 270 or 260 nor making an impact with RISP",
+              "timestamp": "2026-08-04T03:41:21+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1kyylj",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1kz5f0",
+          "author": "reddit_user_caeedd616da5",
+          "author_karma": 0,
+          "content": "To Hell? ",
+          "timestamp": "2026-08-04T03:40:29+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1kz8wh",
+          "author": "reddit_user_07332514f60d",
+          "author_karma": 0,
+          "content": "![gif](giphy|7k2LoEykY5i1hfeWQB)",
+          "timestamp": "2026-08-04T03:41:07+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1kziy6",
+          "author": "reddit_user_ab262f9877e3",
+          "author_karma": 0,
+          "content": "Your post was removed because it violates [**Rule 4.00**](https://www.reddit.com/r/baseball/wiki/rules#wiki_4.00_create_high-quality_breaking_news_posts). Posts about trades, signings, and trade/signing rumors must follow these rules:\n\n1. Include names of all teams, significant players, years, and dollar figures involved in the title whenever possible. It is acceptable to refer vaguely to \"prospects.\"\n2. Use first initials for common last names.\n3. Originate from reliable source like a baseball journalist, media personality, or reputable site like MLBTradeRumors.\n4. Create additional value to other posts rather than piggyback/duplicate.\n\nPlease review [/r/baseball's rules](https://www.reddit.com/r/baseball/wiki/rules) for future submissions.\n\nIf you feel a mistake has been made, feel free to [message the moderators](https://www.reddit.com/message/compose?to=%2Fr%2Fbaseball).",
+          "timestamp": "2026-08-04T03:42:54+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1kzmzm",
+          "author": "reddit_user_b07815b22680",
+          "author_karma": 0,
+          "content": "Sad night for wolves everywhere ",
+          "timestamp": "2026-08-04T03:43:37+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1l0vj1",
+          "author": "reddit_user_aba936b23230",
+          "author_karma": 0,
+          "content": "Source? Just did some searching and haven't found anything. ",
+          "timestamp": "2026-08-04T03:51:38+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run029_post01_seed146",
+      "post_slot": 1,
+      "seed_index": 146,
+      "source_raw_post_id": "1vezf66",
+      "source_product_dir": "baseball",
+      "source_file": "https://www.reddit.com/r/baseball/comments/1vezf66/ezequiel_tovar_tonight_vs_tb_44_1_hr_1_rbi_3_r/",
+      "post_type": "reddit_post",
+      "title": "Ezequiel Tovar tonight vs TB: 4-4, 1 HR, 1 RBI, 3 R",
+      "author": "reddit_user_79ff14d8816f",
+      "author_karma": 0,
+      "content": "Ezequiel Tovar tonight vs TB: 4-4, 1 HR, 1 RBI, 3 R",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p1l17qb",
+          "author": "reddit_user_4ded2582febe",
+          "author_karma": 0,
+          "content": "Ops is now .577",
+          "timestamp": "2026-08-04T03:53:50+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1l1wkh",
+              "author": "reddit_user_7021fae1e181",
+              "author_karma": 0,
+              "content": "dude was seeing beach balls out there",
+              "timestamp": "2026-08-04T03:58:18+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1l17qb",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1l3dvq",
+                  "author": "reddit_user_0f53f735a66b",
+                  "author_karma": 0,
+                  "content": "Get these bots off of the fucking subreddit ",
+                  "timestamp": "2026-08-04T04:08:05+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1l1wkh",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p1l30ka",
+          "author": "reddit_user_5e63136a3287",
+          "author_karma": 0,
+          "content": "The most exciting story of the year tovar vs duran",
+          "timestamp": "2026-08-04T04:05:36+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1l3f6v",
+          "author": "reddit_user_60481f292042",
+          "author_karma": 0,
+          "content": "If Tovar stops being a black hole our lineup gets very fun.",
+          "timestamp": "2026-08-04T04:08:19+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1l69q8",
+              "author": "reddit_user_c0ca1122395f",
+              "author_karma": 0,
+              "content": "He should Imagine every pitcher is Yamamoto",
+              "timestamp": "2026-08-04T04:27:40+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1l3f6v",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1l3gyz",
+          "author": "reddit_user_1b189d8edaf3",
+          "author_karma": 0,
+          "content": "Fuck the Dodgers",
+          "timestamp": "2026-08-04T04:08:39+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1l70o4",
+          "author": "reddit_user_ea73fdb18158",
+          "author_karma": 0,
+          "content": "Happy for him, he really needed something like this \\o/",
+          "timestamp": "2026-08-04T04:32:53+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1l76bq",
+          "author": "reddit_user_ea73fdb18158",
+          "author_karma": 0,
+          "content": "Happy for him, really needed a day like today. Hopefully that helps him get out of his funk.",
+          "timestamp": "2026-08-04T04:34:00+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run029_post02_seed147",
+      "post_slot": 2,
+      "seed_index": 147,
+      "source_raw_post_id": "1vezgum",
+      "source_product_dir": "baseball",
+      "source_file": "https://www.reddit.com/r/baseball/comments/1vezgum/the_san_diego_chicken_an_iconic_sports_mascot/",
+      "post_type": "Image",
+      "title": "The San Diego Chicken, an iconic sports mascot created and performed by actor Ted Giannoulas since 1974, entertaining fans during a Triple-A Pacific Coast League regular-season baseball game between the Iowa Cubs and the Omaha Royals in Des Moines, Iowa. The Cubs won 6-5. (2009)",
+      "author": "reddit_user_79ff14d8816f",
+      "author_karma": 0,
+      "content": "The San Diego Chicken, an iconic sports mascot created and performed by actor Ted Giannoulas since 1974, entertaining fans during a Triple-A Pacific Coast League regular-season baseball game between the Iowa Cubs and the Omaha Royals in Des Moines, Iowa. The Cubs won 6-5. (2009)",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p1l1wnj",
+          "author": "reddit_user_02387b8ab432",
+          "author_karma": 0,
+          "content": "Bring him Back!",
+          "timestamp": "2026-08-04T03:58:19+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1l29lv",
+              "author": "reddit_user_b07815b22680",
+              "author_karma": 0,
+              "content": "Wanna feel old? He costs $6 per nugget now. ",
+              "timestamp": "2026-08-04T04:00:38+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1l1wnj",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p1l2alv",
+              "author": "reddit_user_077114c98650",
+              "author_karma": 0,
+              "content": "Hell yeah! Bring him back as a permanent mascot addition!",
+              "timestamp": "2026-08-04T04:00:49+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1l1wnj",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p1l635a",
+              "author": "reddit_user_5db00c8801d7",
+              "author_karma": 0,
+              "content": "I wouldn’t mind someone new playing the Chicken just to keep his legacy alive with younger fans ",
+              "timestamp": "2026-08-04T04:26:25+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1l1wnj",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1l2af4",
+          "author": "reddit_user_d25d60bab7c8",
+          "author_karma": 0,
+          "content": "looks like he's about to get puppeted",
+          "timestamp": "2026-08-04T04:00:47+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1l3c5k",
+          "author": "reddit_user_d1aa2021a649",
+          "author_karma": 0,
+          "content": "When I was a kid at Padres games he used to have like a 10 foot long stick with a chicken foot on the end. He would tap on fans’ shoulders and then pull it away just to fuck with them. Lots of childhood entertainment from that chicken. ",
+          "timestamp": "2026-08-04T04:07:45+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1l4fvx",
+              "author": "reddit_user_02387b8ab432",
+              "author_karma": 0,
+              "content": "The chicken and AFLAC will always be Attached to my Padres childhood memories 🤞🏽",
+              "timestamp": "2026-08-04T04:15:07+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1l3c5k",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1l4q84",
+          "author": "reddit_user_f79f29e54057",
+          "author_karma": 0,
+          "content": "Ted is still performing as him, though much less frequently.",
+          "timestamp": "2026-08-04T04:17:04+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run029_post03_seed148",
+      "post_slot": 3,
+      "seed_index": 148,
+      "source_raw_post_id": "1vezgvq",
+      "source_product_dir": "nba",
+      "source_file": "https://www.reddit.com/r/nba/comments/1vezgvq/in_a_hospital_prison_without_my_glasses_i_did_two/",
+      "post_type": "reddit_post",
+      "title": "In a hospital prison without my glasses I did two half court shots in a row I barely play basketball",
+      "author": "reddit_user_79ff14d8816f",
+      "author_karma": 0,
+      "content": "In a hospital prison without my glasses I did two half court shots in a row I barely play basketball",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p1l1ina",
+          "author": "reddit_user_e8d8c99d18e1",
+          "author_karma": 0,
+          "content": "Your post was removed because it is a short self post. You should try to start the discussion by talking about what you think, not just asking a question, submitting a phrase or a stat line. Any self-post with less than 100 characters in the body will be removed.\n\n*I am a bot, and this action was performed automatically. Please [contact the moderators of this subreddit](/message/compose/?to=/r/nba) if you have any questions or concerns.*",
+          "timestamp": "2026-08-04T03:55:46+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run029_post04_seed149",
+      "post_slot": 4,
+      "seed_index": 149,
+      "source_raw_post_id": "1vezo6x",
+      "source_product_dir": "nba",
+      "source_file": "https://www.reddit.com/r/nba/comments/1vezo6x/for_those_who_remember_it_was_wilt_chamberlain/",
+      "post_type": "reddit_post",
+      "title": "For those who remember it: Was Wilt Chamberlain ever considered the undisputed GOAT?",
+      "author": "reddit_user_79ff14d8816f",
+      "author_karma": 0,
+      "content": "For those who remember it: Was Wilt Chamberlain ever considered the undisputed GOAT?\n\nQuestion in the title.  \nHe obviously had an insane career and is regarded as a top 5-10 player of all time even now.\n\nLooking back many years, was Wilt ever regarded as the GOAT? If yes, for how long?",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p1l36tu",
+          "author": "reddit_user_da283f202e00",
+          "author_karma": 0,
+          "content": "Never undisputed because Bill was always right there.",
+          "timestamp": "2026-08-04T04:06:46+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1l39mu",
+              "author": "reddit_user_0494318f5f7d",
+              "author_karma": 0,
+              "content": "You watched him?",
+              "timestamp": "2026-08-04T04:07:17+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1l36tu",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1l3cs3",
+                  "author": "reddit_user_6a393035da9a",
+                  "author_karma": 0,
+                  "content": "Unc was there when the texts were written ",
+                  "timestamp": "2026-08-04T04:07:52+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1l39mu",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1l3u1x",
+                      "author": "reddit_user_218928dde7ce",
+                      "author_karma": 0,
+                      "content": "On papyrus",
+                      "timestamp": "2026-08-04T04:11:03+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1l3cs3",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "p1l4onn",
+                          "author": "reddit_user_78353940f290",
+                          "author_karma": 0,
+                          "content": "I just got over this…I’m going back to therapy now. ",
+                          "timestamp": "2026-08-04T04:16:47+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "p1l3u1x",
+                          "depth": 4,
+                          "replies": []
+                        }
+                      ]
+                    },
+                    {
+                      "comment_id": "p1l4foa",
+                      "author": "reddit_user_9f64cdb2eb55",
+                      "author_karma": 0,
+                      "content": "Who do you think wrote the texts?",
+                      "timestamp": "2026-08-04T04:15:04+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1l3cs3",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "p1l4yiq",
+                          "author": "reddit_user_970439d7c448",
+                          "author_karma": 0,
+                          "content": "Paul Pierce lmao",
+                          "timestamp": "2026-08-04T04:18:39+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "p1l4foa",
+                          "depth": 4,
+                          "replies": []
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "comment_id": "p1l3yk6",
+                  "author": "reddit_user_da283f202e00",
+                  "author_karma": 0,
+                  "content": "I would be lying if I told you that there was a chance what you said was mostly sorta kinda inaccurately poising my answer as falsified from the premises of the prompt, and that that would be the incorrect interpretation",
+                  "timestamp": "2026-08-04T04:11:53+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1l39mu",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1l4olq",
+                      "author": "reddit_user_94818a785cb9",
+                      "author_karma": 0,
+                      "content": "what in the quadruple negative is this comment",
+                      "timestamp": "2026-08-04T04:16:46+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1l3yk6",
+                      "depth": 3,
+                      "replies": []
+                    },
+                    {
+                      "comment_id": "p1l59l6",
+                      "author": "reddit_user_9f64cdb2eb55",
+                      "author_karma": 0,
+                      "content": "Carmine Jr is that you? Because I read this whole thing in his voice and it fit. ",
+                      "timestamp": "2026-08-04T04:20:45+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1l3yk6",
+                      "depth": 3,
+                      "replies": []
+                    },
+                    {
+                      "comment_id": "p1l5cxa",
+                      "author": "reddit_user_84df2740dccb",
+                      "author_karma": 0,
+                      "content": "why are you getting weird about it",
+                      "timestamp": "2026-08-04T04:21:23+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1l3yk6",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "p1l779t",
+                          "author": "reddit_user_69294934f877",
+                          "author_karma": 0,
+                          "content": "It was weird back then",
+                          "timestamp": "2026-08-04T04:34:11+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "p1l5cxa",
+                          "depth": 4,
+                          "replies": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "comment_id": "p1l5jqo",
+              "author": "reddit_user_9fe053552d93",
+              "author_karma": 0,
+              "content": "The argument actually wasn’t between Bill and Wilt, Big O was in it and had an edge over Bill. Back then the discussion didn’t revolve around rings. In the mid 80s towards the end of Kareem’s career [he was considered the greatest in history](https://imgur.com/1986-all-star-game-60-person-panel-made-up-of-current-former-gms-coaches-former-players-were-asked-who-goat-was-more-info-comments-obbBbUs). Though I think this was the product of an active player getting respect at the end of his career, as they should have remembered Wilt was consistently shutting down Kareem in the 70s. [By the end of MJ’s threepeat, he was the undisputed GOAT](https://apbr.org/oldtimrs.html) but you can see how others ranked. In 2003 [Slam had Wilt #2, and Big O in #3.](https://www.reddit.com/r/nba/s/2DUdGkxGYV) People in the 90s thought averaging a triple double was basically impossible so they overrated Big O. When WB did it, it made Big O underrated.",
+              "timestamp": "2026-08-04T04:22:42+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1l36tu",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1l374y",
+          "author": "reddit_user_8f8c7a9cc5c3",
+          "author_karma": 0,
+          "content": "ofc not he wasn’t even the GOAT of his era…Bill Russell exists",
+          "timestamp": "2026-08-04T04:06:49+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1l3bmv",
+          "author": "reddit_user_2f6c71dfb80e",
+          "author_karma": 0,
+          "content": "Some people thought he was, but it was never the consensus",
+          "timestamp": "2026-08-04T04:07:40+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1l3bpv",
+          "author": "reddit_user_fd1f3cdaf2b4",
+          "author_karma": 0,
+          "content": "No one that old is on Reddit bro",
+          "timestamp": "2026-08-04T04:07:40+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1l54kt",
+              "author": "reddit_user_5bc1298101e1",
+              "author_karma": 0,
+              "content": "As you can see some watched them lol",
+              "timestamp": "2026-08-04T04:19:50+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1l3bpv",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1l6qp1",
+                  "author": "[deleted]",
+                  "author_karma": 0,
+                  "content": "[removed]",
+                  "timestamp": "2026-08-04T04:30:56+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1l54kt",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            },
+            {
+              "comment_id": "p1l55m3",
+              "author": "reddit_user_03f8c0077187",
+              "author_karma": 0,
+              "content": "My mom is that old and on reddit. But not on nba",
+              "timestamp": "2026-08-04T04:20:01+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1l3bpv",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1l3but",
+          "author": "reddit_user_ec4fe297bf1d",
+          "author_karma": 0,
+          "content": "From what I can tell Bill Russel was considered better at the time ",
+          "timestamp": "2026-08-04T04:07:42+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1l3fvm",
+              "author": "reddit_user_5bc1298101e1",
+              "author_karma": 0,
+              "content": "That’s the question. Bill has the rings, Wilt had the insane stats and the flashier style of play",
+              "timestamp": "2026-08-04T04:08:27+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1l3but",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1l53s2",
+                  "author": "reddit_user_8e81277cc8ff",
+                  "author_karma": 0,
+                  "content": "Not just the rings, bill had more league MVPs",
+                  "timestamp": "2026-08-04T04:19:41+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1l3fvm",
+                  "depth": 2,
+                  "replies": []
+                },
+                {
+                  "comment_id": "p1l6dtd",
+                  "author": "reddit_user_0913d4ad349a",
+                  "author_karma": 0,
+                  "content": "bill won most of his rings when the league 8 teams. 8. and bill had a far superior team around him than wilt ",
+                  "timestamp": "2026-08-04T04:28:27+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1l3fvm",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p1l3ecb",
+          "author": "reddit_user_4887f2426f13",
+          "author_karma": 0,
+          "content": "Ain’t no one on Reddit watch Wilt play lol",
+          "timestamp": "2026-08-04T04:08:10+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1l3ffa",
+          "author": "reddit_user_db8b46e8d6c0",
+          "author_karma": 0,
+          "content": "Never undisputed. It was Wilt or Bill as the clear 1/2 for quite a while until Kareem came along. ",
+          "timestamp": "2026-08-04T04:08:22+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1l3mq9",
+              "author": "reddit_user_5bc1298101e1",
+              "author_karma": 0,
+              "content": "Did some actually regard them even higher than Kareem, or was he widely regarded as the better player with the better career?",
+              "timestamp": "2026-08-04T04:09:42+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1l3ffa",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1l5cyh",
+                  "author": "[deleted]",
+                  "author_karma": 0,
+                  "content": "[removed]",
+                  "timestamp": "2026-08-04T04:21:24+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1l3mq9",
+                  "depth": 2,
+                  "replies": []
+                },
+                {
+                  "comment_id": "p1l67wa",
+                  "author": "[deleted]",
+                  "author_karma": 0,
+                  "content": "[removed]",
+                  "timestamp": "2026-08-04T04:27:20+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1l3mq9",
+                  "depth": 2,
+                  "replies": []
+                },
+                {
+                  "comment_id": "p1l6f0s",
+                  "author": "reddit_user_a96414c9c827",
+                  "author_karma": 0,
+                  "content": "My favorite example is 1986, when a [large panel](\nhttps://np.reddit.com/r/VintageNBA/comments/gjaxv2/at_the_1986_allstar_game_a_60person_panel_made_up/) named Kareem the GOAT, only for a few months later a [smaller panel](\nhttps://np.reddit.com/r/nba/comments/15wgosf/in_1986_a_6man_panel_of_journalists_and_players/) to hold Wilt and Russell comfortably higher regard.\n\nThere were no consensuses.\n\nIf you wanna see more poll/voting results to show the sentiments back then, let me know.",
+                  "timestamp": "2026-08-04T04:28:41+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1l3mq9",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1l6ndw",
+                      "author": "reddit_user_5bc1298101e1",
+                      "author_karma": 0,
+                      "content": "How was Oscar viewed back when he was playing compared to the other all time greats?",
+                      "timestamp": "2026-08-04T04:30:18+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1l6f0s",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p1l3iog",
+          "author": "reddit_user_ea6e927cc8c6",
+          "author_karma": 0,
+          "content": "Hard to consider someone the goat when their biggest rival keeps beating you",
+          "timestamp": "2026-08-04T04:08:57+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1l7bh2",
+              "author": "reddit_user_69294934f877",
+              "author_karma": 0,
+              "content": "and when the term hadn't been used yet",
+              "timestamp": "2026-08-04T04:35:01+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1l3iog",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1l3ja0",
+          "author": "reddit_user_156e4812f761",
+          "author_karma": 0,
+          "content": "I don’t remember it personally, but that wasn’t really the conversation anyone was having at that point in time. Wilt was seen as maybe the best athlete, but Russell was the “ultimate winner”",
+          "timestamp": "2026-08-04T04:09:04+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1l41tv",
+              "author": "reddit_user_b039af1f2927",
+              "author_karma": 0,
+              "content": "There’s Kareem’s article calling him a chump who was obsessed with chasing stats and not winning lol ",
+              "timestamp": "2026-08-04T04:12:30+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1l3ja0",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1l7bja",
+                  "author": "reddit_user_294287f26671",
+                  "author_karma": 0,
+                  "content": "Don't take Kareem's comments too seriously. Wilt was an asshole to him so he's he's just repaying it in kind",
+                  "timestamp": "2026-08-04T04:35:02+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1l41tv",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            },
+            {
+              "comment_id": "p1l4dip",
+              "author": "reddit_user_10222fd1d1ab",
+              "author_karma": 0,
+              "content": "You were alive when they were playing? ",
+              "timestamp": "2026-08-04T04:14:40+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1l3ja0",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1l6kw4",
+                  "author": "reddit_user_6d6edf44374f",
+                  "author_karma": 0,
+                  "content": "It’s actually illegal to use the internet once you hit the age of 30, fun fact ",
+                  "timestamp": "2026-08-04T04:29:49+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1l4dip",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            },
+            {
+              "comment_id": "p1l4ftd",
+              "author": "reddit_user_04cc5dab80e3",
+              "author_karma": 0,
+              "content": "Very true and a great point to make. Thats exactly the way it was spoken about in that era. The greatest ever talk wasnt really a thing.",
+              "timestamp": "2026-08-04T04:15:06+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1l3ja0",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p1l5cru",
+              "author": "reddit_user_cb8ad9796f0f",
+              "author_karma": 0,
+              "content": "Yeah, I think a lot of people have to remember that the league itself wasn't even that old and there was clearly quite a lot of change in the 60's in the level of competition and the game. ",
+              "timestamp": "2026-08-04T04:21:21+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1l3ja0",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p1l6ndh",
+              "author": "reddit_user_f658edf3f5aa",
+              "author_karma": 0,
+              "content": "If anyone goes back and reads what people at the time were saying about Wilt and Russell, Wilt doesn't come out of it looking very good lol.  Lot of narratives about statpadding and selfishiness.",
+              "timestamp": "2026-08-04T04:30:18+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1l3ja0",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1l3kmp",
+          "author": "reddit_user_71d72a601eb4",
+          "author_karma": 0,
+          "content": "Nobody even talked like this before 25...30 years ago. There were no GOAT conversations. And we were probably the better for it. You could simply watch the games and enjoy the players.",
+          "timestamp": "2026-08-04T04:09:19+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1l5moi",
+              "author": "reddit_user_eae158e6302f",
+              "author_karma": 0,
+              "content": "Yea I honestly don't even ever remember hearing people talking about Jordan that way until the Kobe and LeBron comparisons.",
+              "timestamp": "2026-08-04T04:23:15+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1l3kmp",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1l3l3y",
+          "author": "reddit_user_f72ca1b15344",
+          "author_karma": 0,
+          "content": "Who is this question for? Do you really think there’s 70+ year olds on NBA reddit?",
+          "timestamp": "2026-08-04T04:09:24+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1l3uzf",
+              "author": "reddit_user_e278e3912f46",
+              "author_karma": 0,
+              "content": "Why wouldn’t there be?",
+              "timestamp": "2026-08-04T04:11:13+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1l3l3y",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1l4lrv",
+                  "author": "reddit_user_04cc5dab80e3",
+                  "author_karma": 0,
+                  "content": "Its like if you go into an online game past the age of 20, 17 year old kids will be like why are you playing video games shouldn't you have a family and 6 kids?",
+                  "timestamp": "2026-08-04T04:16:15+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1l3uzf",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p1l3on5",
+          "author": "reddit_user_285cb8d54b93",
+          "author_karma": 0,
+          "content": "No but yeah. undisputed is kinda loaded because it's a classic barbershop argument",
+          "timestamp": "2026-08-04T04:10:04+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1l3qb4",
+          "author": "reddit_user_3db0bd602754",
+          "author_karma": 0,
+          "content": "Not really. Russell got all the attention when he was playing and then basically as soon as Russell retired it flipped to Kareem. The Kareem one started a pretty long beef that stretched over like 4 autobiographys.",
+          "timestamp": "2026-08-04T04:10:22+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1l3vca",
+          "author": "reddit_user_020e0a379efc",
+          "author_karma": 0,
+          "content": "no, people back then valued winning way more than nowadays",
+          "timestamp": "2026-08-04T04:11:17+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1l3wiy",
+          "author": "reddit_user_293cf9a68900",
+          "author_karma": 0,
+          "content": "Not undisputed, but yes. My boys and I had arguments between Bill and Wilt. It always came down to stats vs championships. Wilt was something else to watch in person and he was my favorite.",
+          "timestamp": "2026-08-04T04:11:31+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1l48gv",
+              "author": "reddit_user_5bc1298101e1",
+              "author_karma": 0,
+              "content": "Apart from not having as many titles, was there anything else Wilt got criticized for?  \nGenuinely curious ",
+              "timestamp": "2026-08-04T04:13:44+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1l3wiy",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1l5312",
+                  "author": "reddit_user_293cf9a68900",
+                  "author_karma": 0,
+                  "content": "Bill being a team player and Wilt being selfish was always the reason for the difference in championships.",
+                  "timestamp": "2026-08-04T04:19:32+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1l48gv",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p1l41y3",
+          "author": "reddit_user_6906954b9a2d",
+          "author_karma": 0,
+          "content": "The wilt/russell debate has always been around. ",
+          "timestamp": "2026-08-04T04:12:31+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1l4agl",
+          "author": "reddit_user_6e8ce42407b0",
+          "author_karma": 0,
+          "content": "Whenever bill and Kareem rolled into my town it was for sure a higher level of aura buzzing through the city, when wilt came it was alright, he just cared about his numbers. Where I’m from we valued winning more and wilt banged all our women ",
+          "timestamp": "2026-08-04T04:14:05+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1l4bpw",
+          "author": "reddit_user_db8b46e8d6c0",
+          "author_karma": 0,
+          "content": "I'm sure some did. Wilt had the stats argument, Bill has the rings argument. But MJ was widely seen as taking the GOAT from off Kareem. ",
+          "timestamp": "2026-08-04T04:14:20+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1l62mp",
+              "author": "reddit_user_970439d7c448",
+              "author_karma": 0,
+              "content": "Kareem wasn't really in the conversations until like 20-25 years ago. After Wilt died it sort of switched to Kareem from Bill. And Wilt didn't mind hearing that Bill was the goat as he kicked his ass. He would lose his mind if/when Michael or Kareem were called the goats. There was a huge debate in 1997 all star(or a year up or down) game where Wilt said to MJ: \"Just remember one thing, Michael, they changed the rules to stop me, they change the rules to help you\". Michael had no answer to this.\n\nAlso when he played golf with Russell one time and said it was easier to win with 10 teams in the league, Bill told him you would have less rings with less teams because shooters like Paxson and Kerr who made those shots for you to win wouldn't be in the league. The league was so concentrated with higher quality players at the time, now it's all spread around and you can have those specialists who would be out of the league in the 60s.",
+              "timestamp": "2026-08-04T04:26:19+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1l4bpw",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1l4fpm",
+          "author": "reddit_user_a96414c9c827",
+          "author_karma": 0,
+          "content": "Not undisputed. Every time Wilt or Russell were considered better by someone or a panel, it was controversial.\n\nThe general sentiments were:  \nWilt’s a better player, but you’d rather have Russell on your team\nWilt has more talent, Russell uses it more effectively\nFor Wilt to beat Boston, he needs to play like Wilt on offense and Russell on defense\n\nOscar was as close to undisputed as you get pre-Jordan, but only inch-for-inch. Not true impact.",
+          "timestamp": "2026-08-04T04:15:04+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1l560q",
+              "author": "reddit_user_1bacc47ae2ef",
+              "author_karma": 0,
+              "content": "Good summary. Wilt is my BOAT, but not GOAT. Easily the most fascinating player ever.",
+              "timestamp": "2026-08-04T04:20:06+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1l4fpm",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p1l6hay",
+              "author": "reddit_user_970439d7c448",
+              "author_karma": 0,
+              "content": "Oscar was considered the most skilled for sure. And for a reason as well, he just knew the game inside and out. It was like watching CP3 in Kobe's body, he would always get to his spots, get a shot up without getting blocked and had insane TS percentages for the time",
+              "timestamp": "2026-08-04T04:29:07+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1l4fpm",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p1l6kca",
+              "author": "reddit_user_0913d4ad349a",
+              "author_karma": 0,
+              "content": "Wilt was a better player, Russell had better players with him.",
+              "timestamp": "2026-08-04T04:29:43+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1l4fpm",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1l4j6z",
+          "author": "reddit_user_a95872a6d6f9",
+          "author_karma": 0,
+          "content": "What did reddit think of him back then?",
+          "timestamp": "2026-08-04T04:15:45+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1l4nj6",
+          "author": "reddit_user_367420828e3a",
+          "author_karma": 0,
+          "content": "Before advanced stats became well known  in the early 2000s it was fairly common to hear Wilt talked as at least on par with MJ just talent wise. But that was always just for fun because of the rings. And once advanced stats showed how great mj/Kareem were and then lbj those kind of conversations died down",
+          "timestamp": "2026-08-04T04:16:34+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1l4nih",
+          "author": "reddit_user_f0298359704b",
+          "author_karma": 0,
+          "content": "During Wilt’s era the so called GOAT debate was between him and Bill Russell and rarely him as the undisputed. ",
+          "timestamp": "2026-08-04T04:16:34+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1l4pqd",
+          "author": "reddit_user_572dbc614dfc",
+          "author_karma": 0,
+          "content": "A center can never be the best basketball player.",
+          "timestamp": "2026-08-04T04:16:59+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1l53gi",
+          "author": "reddit_user_3f9da7b24cf8",
+          "author_karma": 0,
+          "content": "No ",
+          "timestamp": "2026-08-04T04:19:37+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1l5ngi",
+          "author": "reddit_user_5c8cb4b468ea",
+          "author_karma": 0,
+          "content": "People weren't obsessed with who the GOAT was up through the 80s, not until it sold shoes.",
+          "timestamp": "2026-08-04T04:23:24+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1l5o0s",
+          "author": "reddit_user_76b971e3b5e9",
+          "author_karma": 0,
+          "content": "Go to a retirement home and ask ",
+          "timestamp": "2026-08-04T04:23:31+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1l78mh",
+          "author": "reddit_user_c9bd5852a71f",
+          "author_karma": 0,
+          "content": "My grandpa always told me that Wilt was overrated as fuck, and Bill Russell was a better player overall. \n\nThe way he talks about them feels similar to how people now compare LeBron and MJ lol",
+          "timestamp": "2026-08-04T04:34:27+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1l7vtw",
+          "author": "reddit_user_ec2488b91f53",
+          "author_karma": 0,
+          "content": "In 1980, for its 35 years anniversary, the NBA voted on a few things, including Greatest Player.\n\nIt went to Bill Russell.",
+          "timestamp": "2026-08-04T04:39:01+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    }
+  ]
+}

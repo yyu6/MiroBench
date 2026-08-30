@@ -285,9 +285,11 @@ def load_bert_scorer(
 ) -> tuple[Any, str, str, str, int, bool]:
     """Import local BERTScore and return a configured scorer."""
 
-    if not bert_score_path.exists():
-        raise FileNotFoundError(f"BERTScore checkout not found: {bert_score_path}")
-    sys.path.insert(0, str(bert_score_path))
+    # Historical workspaces used a local ``bert_score-master`` checkout.  A
+    # fresh install uses the pinned PyPI package instead; keep the local path
+    # as an optional precedence override for backwards compatibility.
+    if bert_score_path.exists():
+        sys.path.insert(0, str(bert_score_path))
     if local_files_only:
         os.environ["BERT_SCORE_LOCAL_FILES_ONLY"] = "1"
         os.environ["TRANSFORMERS_OFFLINE"] = "1"
@@ -298,8 +300,8 @@ def load_bert_scorer(
         from bert_score import BERTScorer
     except ImportError as exc:  # pragma: no cover - environment guard
         raise SystemExit(
-            "Self-BERTScore requires torch, transformers, and the local bert_score package. "
-            "Use system python3 in this workspace, or install those packages in your venv."
+            "Self-BERTScore requires torch, transformers, and bert-score. "
+            "Run experiments/reddit_multidomain_baselines/setup.sh first."
         ) from exc
 
     resolved_device = resolve_device(torch, device)

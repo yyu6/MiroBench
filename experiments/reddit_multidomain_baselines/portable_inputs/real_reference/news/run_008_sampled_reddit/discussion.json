@@ -1,0 +1,1481 @@
+{
+  "meta": {
+    "product_category": "news",
+    "baseline": "real_reddit_reference",
+    "run_id": "run_008_sampled_reddit"
+  },
+  "posts": [
+    {
+      "post_id": "real_run008_post00_seed040",
+      "post_slot": 0,
+      "seed_index": 40,
+      "source_raw_post_id": "1vbyj15",
+      "source_product_dir": "TrueReddit",
+      "source_file": "https://www.reddit.com/r/TrueReddit/comments/1vbyj15/the_ban_on_robot_vacuums_wont_make_them_safer_but/",
+      "post_type": "Technology",
+      "title": "The ban on robot vacuums won’t make them safer. But it may make your next one worse",
+      "author": "reddit_user_bde1e90b951b",
+      "author_karma": 0,
+      "content": "The ban on robot vacuums won’t make them safer. But it may make your next one worse",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p0x6d3u",
+          "author": "reddit_user_e320faca37f4",
+          "author_karma": 0,
+          "content": "\nThank you for posting on r/TrueReddit. Your post will become public once you add a submission statement, which is a comment that explains why you think an article is insightful, rather than simply quoting from it. If you're thinking about leaving a comment, please remember to read the entire article first, and say something meaningful.\n\nIf you post a paywalled article intentionally, you will be permanently banned unless you provide a non-paywall link in your submission statement, such as [archive.ph](https://archive.ph/).\n\n*I am a bot, and this action was performed automatically. Please [contact the moderators of this subreddit](/message/compose/?to=/r/TrueReddit) if you have any questions or concerns.*",
+          "timestamp": "2026-07-31T18:06:26+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0x6dkj",
+          "author": "reddit_user_e926564d853f",
+          "author_karma": 0,
+          "content": "Cleaned link:\nhttps://www.theverge.com/tech/973738/robot-vacuum-ban-fewer-choices-higher-prices?view_token=eyJhbGciOiJIUzI1NiJ9.eyJpZCI6IlpuNmpXbGZYYnYiLCJwIjoiL3RlY2gvOTczNzM4L3JvYm90LXZhY3V1bS1iYW4tZmV3ZXItY2hvaWNlcy1oaWdoZXItcHJpY2VzIiwiZXhwIjoxNzg1OTUzMTYzLCJpYXQiOjE3ODU1MjExNjN9.NRh0LMDTXtHj7pdcFqByP_Js_cOEYPClB6dmIbi32Ic\n\n---\n*Tracking parameters were removed from the original URL(s).*",
+          "timestamp": "2026-07-31T18:06:29+00:00",
+          "likes": 6,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0x6niv",
+          "author": "reddit_user_46874b2030ad",
+          "author_karma": 0,
+          "content": "No other gadget knows as much about your home as a robot vacuum. They map your space, learn your routines, and many now carry a camera and microphone into every room in your house. As AI gives them a better understanding of what they see, the privacy and security risks these autonomous robots pose are only growing.  \n  \nThat’s why greater scrutiny makes sense, but the ban on foreign-made mobile robots issued by the Federal Communications Commission earlier this week doesn’t actually judge products by how secure they are, just where they’re built. It effectively means no new robot vacuums from major companies can enter the US market unless they are built here. And spoiler alert: none are.  \n  \nCybersecurity and manufacturing are not the same thing. If the goal is safer robot vacuums (and robot lawnmowers, companion bots, humanoids, and all the other robots this ban sweeps up), this policy misses the mark. A meaningful security standard for robots would require encrypted map storage, security audits, vulnerability disclosures, and clear data retention policies.  \n  \nInstead, this ban means Americans will see fewer new models, slower innovation, and more expensive robot vacuums. In short, we’ll get worse vacuums than those we have today.\n\n  \nGift link: [https://www.theverge.com/tech/973738/robot-vacuum-ban-fewer-choices-higher-prices?view\\_token=eyJhbGciOiJIUzI1NiJ9.eyJpZCI6IlpuNmpXbGZYYnYiLCJwIjoiL3RlY2gvOTczNzM4L3JvYm90LXZhY3V1bS1iYW4tZmV3ZXItY2hvaWNlcy1oaWdoZXItcHJpY2VzIiwiZXhwIjoxNzg1OTUzMTYzLCJpYXQiOjE3ODU1MjExNjN9.NRh0LMDTXtHj7pdcFqByP\\_Js\\_cOEYPClB6dmIbi32Ic](https://www.theverge.com/tech/973738/robot-vacuum-ban-fewer-choices-higher-prices?view_token=eyJhbGciOiJIUzI1NiJ9.eyJpZCI6IlpuNmpXbGZYYnYiLCJwIjoiL3RlY2gvOTczNzM4L3JvYm90LXZhY3V1bS1iYW4tZmV3ZXItY2hvaWNlcy1oaWdoZXItcHJpY2VzIiwiZXhwIjoxNzg1OTUzMTYzLCJpYXQiOjE3ODU1MjExNjN9.NRh0LMDTXtHj7pdcFqByP_Js_cOEYPClB6dmIbi32Ic)",
+          "timestamp": "2026-07-31T18:07:42+00:00",
+          "likes": 46,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0zbena",
+              "author": "reddit_user_13a2b0c993ae",
+              "author_karma": 0,
+              "content": "While all that is true I trust more the Chinese than the US companies or governments. \n\nThe first ones have not shown any intention of using the information they have to enshitify their services, while the US companies have.\n\nI am sorry but my next robot will definitely not be american.\n\n",
+              "timestamp": "2026-08-01T00:19:36+00:00",
+              "likes": 24,
+              "dislikes": 0,
+              "parent_comment_id": "p0x6niv",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p0xcp58",
+          "author": "reddit_user_b62b3a5d27f1",
+          "author_karma": 0,
+          "content": "I for one can't wait for my carbon fiber robot and definitely not stock to the robot vacuum but conveniently separately purchasable docking station that by pure chance happens to work with the robot. ",
+          "timestamp": "2026-07-31T18:33:59+00:00",
+          "likes": 8,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0xeiv9",
+          "author": "reddit_user_8a213c1dff0d",
+          "author_karma": 0,
+          "content": "We haven't learned from how China copied our technology.\n\nThey didn't keep foreign high tech out - they forced western companies to manufacture their tech in China using Chinese workers, and once they had learned the tech, they kicked out the companies but kept the expertise.\n\nIf we keep advanced Chinese robots out, we can't learn their tech. We won't catch up if we have to reinvent everything from scratch.",
+          "timestamp": "2026-07-31T18:42:00+00:00",
+          "likes": 38,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0yc0m2",
+              "author": "reddit_user_5755951679c0",
+              "author_karma": 0,
+              "content": "I agree, but software is the main complication for this tech. It would be easy to use strategic tariffs (not what we have now) or other controls to bring some parts of the assembly local, but the software would still be made in China. Although I do think its a net benefit if we made it easy for china to setup factories in the US while dropping tariffs on anything not a finished chinese product.",
+              "timestamp": "2026-07-31T21:13:38+00:00",
+              "likes": 5,
+              "dislikes": 0,
+              "parent_comment_id": "p0xeiv9",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p0yvccp",
+                  "author": "reddit_user_8a213c1dff0d",
+                  "author_karma": 0,
+                  "content": "I don't agree. I think hardware manufacturing is the bottleneck for the US. China's advantage in robotics is that they actually manufacture the hardware at scale. The US is doing fine in software competitiveness, the problem is that we can't economically build physical products in the real world.",
+                  "timestamp": "2026-07-31T22:50:50+00:00",
+                  "likes": 5,
+                  "dislikes": 0,
+                  "parent_comment_id": "p0yc0m2",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p0zheot",
+                      "author": "reddit_user_9f6af57a504a",
+                      "author_karma": 0,
+                      "content": "Well part of the reason is median salary in US is still 9x that in China. We just need to become poorer overall to be competitive at manufacturing again.",
+                      "timestamp": "2026-08-01T00:54:26+00:00",
+                      "likes": 2,
+                      "dislikes": 0,
+                      "parent_comment_id": "p0yvccp",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "p0zp6tl",
+                          "author": "reddit_user_e6e85c66dcf9",
+                          "author_karma": 0,
+                          "content": "That doesn't make sense. Otherwise all manufacturing would move to the lowest cost countries. Plus China artificially pegs its currency to a multiple of USD as a government policy. This is just internalized Chinese propaganda to make people give up.",
+                          "timestamp": "2026-08-01T01:40:13+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "p0zheot",
+                          "depth": 4,
+                          "replies": [
+                            {
+                              "comment_id": "p10orkm",
+                              "author": "reddit_user_9f6af57a504a",
+                              "author_karma": 0,
+                              "content": "Do you mean median income is higher in China than reported?\n\nOf course it's not just wage differences, though higher wages overall make everything more expensive overall. Manufacturing also benefits from economy of scale, concentration of talented or experienced workforce and convenient supply chains. Not many countries can claim industrial clusters where all supplies for an entire category of products like fridges are located within a short drive.",
+                              "timestamp": "2026-08-01T05:36:21+00:00",
+                              "likes": 1,
+                              "dislikes": 0,
+                              "parent_comment_id": "p0zp6tl",
+                              "depth": 5,
+                              "replies": [
+                                {
+                                  "comment_id": "p10wb46",
+                                  "author": "reddit_user_e6e85c66dcf9",
+                                  "author_karma": 0,
+                                  "content": "No, I mean the premise that \"poorer = more competitive at manufacturing\" doesn't make sense. Richness in capital means more efficient output. Hence my explanation: otherwise all manufacturing would move to the lowest cost countries.\n\nAll of those reasons you gave in the second paragraph didn't exist beforehand, so why even expend all that capital building those things up when they were already here? Reminder that is 1990, China was poorer than north korea in GDP per capita. I'll give you a hint: you'll actually have to think about this to get the answer, because people don't want to say it out loud.\n\nAnd the third paragraph is really the crux of the problem. I want a physical cure for cancer, not a fancy doctor to tell me I have cancer. I don't want to get charged for \"service\" with a big fat warranty bill on my car, I want a car that doesn't break. I do not want a service oriented economy, I don't think anyone wants a service oriented economy, this is the bromide we are fed to paper over our malaise, and the tired excuse for why we shouldn't do sensible things like what the OP article talks about",
+                                  "timestamp": "2026-08-01T06:35:42+00:00",
+                                  "likes": 1,
+                                  "dislikes": 0,
+                                  "parent_comment_id": "p10orkm",
+                                  "depth": 6,
+                                  "replies": []
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "comment_id": "p0zq58i",
+                  "author": "reddit_user_e6e85c66dcf9",
+                  "author_karma": 0,
+                  "content": "The logic here is crazy. The US still makes the best software - this is what you get with an even playing field. We make the most advanced robots and software here, just not at scale. \n\nIf you get to throw away environmental laws and labor laws which cause human suffering and kill the earth, the end result Chinese manufacturing competitiveness. No way they would set up a factory here, it would be even more expensive than a domestic American company - and we already have a huge manufacturing base.\n\nJust 30 years ago China made pretty much nothing, because we weren't interested in helping them out with government policy. After the cold war we developed them with Pax Americana, which is a mistake. Now we can undo it - China still gets 30 years of privileged status and can have moderate success. It will take a few decades and we get our robot utopia, since hardware progress paused because effort was spent moving stuff to China instead of doing innovation. Otherwise we continue on our current path and become a dystopian polluted hellscape of a world.",
+                  "timestamp": "2026-08-01T01:45:54+00:00",
+                  "likes": 2,
+                  "dislikes": 0,
+                  "parent_comment_id": "p0yc0m2",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            },
+            {
+              "comment_id": "p0znsh8",
+              "author": "reddit_user_e6e85c66dcf9",
+              "author_karma": 0,
+              "content": "You're assuming that China builds more advanced robots than us. They don't. Actually, banning Chinese robots will INCREASE our innovation, because hardware improvement stopped exactly when we started outsourcing to China.\n\nSteve Jobs got his first job at an Atari assembly line making electronics in the US. After he made apple computer and got beaten by microsoft, he built the supply chain for the iPhone in China so there wouldn't be a \"next Steve Jobs\" and Apple could keep a monopoly forever. Yes I said forever, a country that punishes thinking outside of the box can't make new inventions. The next \"Steve Jobs\" working building iPhones can't escape 996 and a brutal conformist/censorship system.\n\nNot only is it harder to innovate, if you spend blood, sweat, cash, and years of your life actually trying to make an improvement to give to the world - China will knock it off and undercut you because of labor and environmental laws. The only way to get humanoids and better robot vacuums is to rip the bandaid off of cheap Chinese manufacturing.",
+              "timestamp": "2026-08-01T01:31:49+00:00",
+              "likes": -2,
+              "dislikes": 0,
+              "parent_comment_id": "p0xeiv9",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p0zopul",
+                  "author": "reddit_user_8a213c1dff0d",
+                  "author_karma": 0,
+                  "content": "> You're assuming that China builds more advanced robots than us. They don't.\n\nDo you have evidence of this? From what I've seen it's the opposite. \n\nFFS China already has a [Humanoid robot MMA championship](https://www.youtube.com/watch?v=5IMU5or-VFo). There's nothing like that in the west and I don't think we're even *capable* of doing it.\n\nTechnology follows scale. China is building way, way more robots than us, at commercial scale, which means they have more companies innovating, more engineers making incremental improvements, and massively more training data on real world situations.\n\nIf anything, it seems like the US is already falling increasingly behind in robots. ",
+                  "timestamp": "2026-08-01T01:37:23+00:00",
+                  "likes": 6,
+                  "dislikes": 0,
+                  "parent_comment_id": "p0znsh8",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p10xi0j",
+                      "author": "reddit_user_e6e85c66dcf9",
+                      "author_karma": 0,
+                      "content": "Those \"MMA Robots\" move like [atlas in 2010](https://www.youtube.com/watch?v=zkBnFPBV3f0). So 13 years behind. If you look at BD's current stuff it's YEARS ahead of China. Also, that new MMA championship? Stolen idea, rek robotics have been doing it for years already in SF.\n\nChina is great at ripping off IP. They don't have to innovate, so they can do stuff like host flashy tournaments, and pay bots to promote stuff online. Technology following scale is so backwards. More cooks in the kitchen situation. Also, time and time again, the giants are beaten by the small players. Yahoo taken out by Google for example. IBM taken out by Microsoft.\n\nReally, you say \"we\" but I'm skeptical the way you were dodging my points, but I'll assume you are arguing in good faith. Really what China does best is information warfare - getting people to give up by arguing that they are so ahead it's unlikely the US or the West can do anything. It does work on people who only read articles, but for those who actually study technology (including Chinese people) they know it's a lie.",
+                      "timestamp": "2026-08-01T06:45:23+00:00",
+                      "likes": 0,
+                      "dislikes": 0,
+                      "parent_comment_id": "p0zopul",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "p1bze4q",
+                          "author": "reddit_user_8a213c1dff0d",
+                          "author_karma": 0,
+                          "content": "> If you look at BD's current stuff it's YEARS ahead of China. \n\nI don't think you're arguing in good faith.\n\nHere's a simple question - when's the next consumer robotics show in the United States?\n\nIf the US is ahead, why are all the conferences and consumer events being held in China?\n\n",
+                          "timestamp": "2026-08-02T21:44:03+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "p10xi0j",
+                          "depth": 4,
+                          "replies": []
+                        },
+                        {
+                          "comment_id": "p1hdw4c",
+                          "author": "reddit_user_8a213c1dff0d",
+                          "author_karma": 0,
+                          "content": "Rek Robotics uses Chinese made robots (there is no US company making humanoid robots for MMA fights, **100%** of commercially available fighting robots are made in China), and the Atlas looks very primitive compared to Chinese robots. Did you read your own sources?\n",
+                          "timestamp": "2026-08-03T17:08:30+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "p10xi0j",
+                          "depth": 4,
+                          "replies": [
+                            {
+                              "comment_id": "p1hmqdg",
+                              "author": "reddit_user_e6e85c66dcf9",
+                              "author_karma": 0,
+                              "content": "My point: Chinese ideas are old western ideas, copied. I realize I'm not going to get anywhere because if you actually acknowledge any  of my points you're going to become tankman, so have a nice day and wishing you the best.",
+                              "timestamp": "2026-08-03T17:44:34+00:00",
+                              "likes": 1,
+                              "dislikes": 0,
+                              "parent_comment_id": "p1hdw4c",
+                              "depth": 5,
+                              "replies": [
+                                {
+                                  "comment_id": "p1hnift",
+                                  "author": "reddit_user_8a213c1dff0d",
+                                  "author_karma": 0,
+                                  "content": "I understand your point, you're just wrong.\n\nChina is doing a lot of advanced scientific research. They publish very actively, especially in the areas of AI and robotics.\n\nAnd in the area of battery technology they're just ahead, flat out. China very obviously has the most advanced battery technology in the entire world. I very much doubt that cutting edge US research labs can equal China's battery tech.",
+                                  "timestamp": "2026-08-03T17:47:46+00:00",
+                                  "likes": 1,
+                                  "dislikes": 0,
+                                  "parent_comment_id": "p1hmqdg",
+                                  "depth": 6,
+                                  "replies": []
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p0xtxkp",
+          "author": "reddit_user_c2239b06322c",
+          "author_karma": 0,
+          "content": "A bit off topic I suppose, but what kind of boomer fuck would ever allow one of those \"advanced\" roombas into their own house?",
+          "timestamp": "2026-07-31T19:50:46+00:00",
+          "likes": -4,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0ypsgf",
+              "author": "reddit_user_ea0ad9ed1fd1",
+              "author_karma": 0,
+              "content": "Robo vacuums are a large market and millions of people own them. \n\n",
+              "timestamp": "2026-07-31T22:21:46+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p0xtxkp",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p0ypske",
+                  "author": "reddit_user_e320faca37f4",
+                  "author_karma": 0,
+                  "content": "The goal of TrueReddit is to have intelligent, insightful discussions. Users are required to read an entire article before submitting a comment. Your comment requires more substance to be permitted.\n\nDo not repost your comment with random letters to make it longer, or you will face a 28-day ban from TrueReddit for intentionally evading moderation filters.\n\n*I am a bot, and this action was performed automatically. Please [contact the moderators of this subreddit](/message/compose/?to=/r/TrueReddit) if you have any questions or concerns.*",
+                  "timestamp": "2026-07-31T22:21:47+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p0ypsgf",
+                  "depth": 2,
+                  "replies": []
+                },
+                {
+                  "comment_id": "p12p8pb",
+                  "author": "[deleted]",
+                  "author_karma": 0,
+                  "content": "[removed]",
+                  "timestamp": "2026-08-01T14:22:20+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p0ypsgf",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p12p8r1",
+                      "author": "reddit_user_e320faca37f4",
+                      "author_karma": 0,
+                      "content": "The goal of TrueReddit is to have intelligent, insightful discussions. Users are required to read an entire article before submitting a comment. Your comment requires more substance to be permitted.\n\nDo not repost your comment with random letters to make it longer, or you will face a 28-day ban from TrueReddit for intentionally evading moderation filters.\n\n*I am a bot, and this action was performed automatically. Please [contact the moderators of this subreddit](/message/compose/?to=/r/TrueReddit) if you have any questions or concerns.*",
+                      "timestamp": "2026-08-01T14:22:20+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p12p8pb",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p0y53ow",
+          "author": "reddit_user_8ad322541cfe",
+          "author_karma": 0,
+          "content": "Oh good now an american-made robot vacuum industry can thrive! Wait though, doesn't the lack of competition just ensure that whatever remains is going to be more expensive? I mean if we could have competed on price, wouldn't we have? ",
+          "timestamp": "2026-07-31T20:41:31+00:00",
+          "likes": 16,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0zoecs",
+              "author": "reddit_user_e6e85c66dcf9",
+              "author_karma": 0,
+              "content": "Because we have labor laws and environmental laws here? We made things here in the 1990s - you can look up the TV show how it's made and see factories in America, not that long ago. Corporate executives realized that they can pocket more cash by working with the Chinese government to exploit a group of people with fewer rights than the American worker. They rely on the useful idiots like you who push silly concepts like \"competition\" and probably never been in factories. Who needs a clean environment and ethical labor when you can save $50 on a roomba!",
+              "timestamp": "2026-08-01T01:35:28+00:00",
+              "likes": 2,
+              "dislikes": 0,
+              "parent_comment_id": "p0y53ow",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p0y9mwu",
+          "author": "reddit_user_881ddde79f0b",
+          "author_karma": 0,
+          "content": "I dont think trump or the GOP know how to regulate, the best we get out of them is ban or no ban. and this from the \"free markets are god\" party",
+          "timestamp": "2026-07-31T21:02:24+00:00",
+          "likes": 28,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p12fnmw",
+              "author": "reddit_user_041a97e6cdc0",
+              "author_karma": 0,
+              "content": "they aren't the \"free markets are good\" party, though they may pretend to be on occasion ",
+              "timestamp": "2026-08-01T13:31:59+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p0y9mwu",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p12verr",
+              "author": "reddit_user_5878dc8cc706",
+              "author_karma": 0,
+              "content": "Well, bans invite what seems like bribes. Tariffs too. If you don’t want to get hit by this big stick, better be good to Trump, ya?\n\nSpaceX can bypass the rule on routers for example.",
+              "timestamp": "2026-08-01T14:53:21+00:00",
+              "likes": 6,
+              "dislikes": 0,
+              "parent_comment_id": "p0y9mwu",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p0z0pmz",
+          "author": "reddit_user_a9134779ff31",
+          "author_karma": 0,
+          "content": "Oh fun, the American vac bot industry gets their own Lee Iacoca moment. Let’s see how badly they fuck it up.",
+          "timestamp": "2026-07-31T23:19:43+00:00",
+          "likes": 3,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p12fsi4",
+              "author": "reddit_user_041a97e6cdc0",
+              "author_karma": 0,
+              "content": "meanwhile, the chicken tax is still in place and we still don't import \"light trucks\"",
+              "timestamp": "2026-08-01T13:32:44+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p0z0pmz",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p102pp5",
+          "author": "reddit_user_0775f1b0c035",
+          "author_karma": 0,
+          "content": "“Chinese technology firms have rapidly developed humanoid robots to be used in settings including factories and homes. \nCompanies have also been quick to market their machines to businesses and the public ahead of US humanoid robot rivals like Elon Musk's Tesla and Boston Dynamics. Interestingly enough, Musk recently called \nChina ‘the biggest competitor’ in the humanoid robot market. ",
+          "timestamp": "2026-08-01T03:03:13+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p10zvle",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-01T07:04:44+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p10zvmg",
+              "author": "reddit_user_e320faca37f4",
+              "author_karma": 0,
+              "content": "The goal of TrueReddit is to have intelligent, insightful discussions. Users are required to read an entire article before submitting a comment. Your comment requires more substance to be permitted.\n\nDo not repost your comment with random letters to make it longer, or you will face a 28-day ban from TrueReddit for intentionally evading moderation filters.\n\n*I am a bot, and this action was performed automatically. Please [contact the moderators of this subreddit](/message/compose/?to=/r/TrueReddit) if you have any questions or concerns.*",
+              "timestamp": "2026-08-01T07:04:45+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p10zvle",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "post_id": "real_run008_post01_seed041",
+      "post_slot": 1,
+      "seed_index": 41,
+      "source_raw_post_id": "1vc0o52",
+      "source_product_dir": "TrueReddit",
+      "source_file": "https://www.reddit.com/r/TrueReddit/comments/1vc0o52/the_influencer_teaching_millions_to_fear_solar/",
+      "post_type": "Energy + Environment",
+      "title": "The influencer teaching millions to fear solar",
+      "author": "reddit_user_bde1e90b951b",
+      "author_karma": 0,
+      "content": "The influencer teaching millions to fear solar",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p0xofb0",
+          "author": "reddit_user_e320faca37f4",
+          "author_karma": 0,
+          "content": "\nThank you for posting on r/TrueReddit. Your post will become public once you add a submission statement, which is a comment that explains why you think an article is insightful, rather than simply quoting from it. If you're thinking about leaving a comment, please remember to read the entire article first, and say something meaningful.\n\nIf you post a paywalled article intentionally, you will be permanently banned unless you provide a non-paywall link in your submission statement, such as [archive.ph](https://archive.ph/).\n\n*I am a bot, and this action was performed automatically. Please [contact the moderators of this subreddit](/message/compose/?to=/r/TrueReddit) if you have any questions or concerns.*",
+          "timestamp": "2026-07-31T19:26:01+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0xrdqb",
+          "author": "reddit_user_372af10ef535",
+          "author_karma": 0,
+          "content": "**Submission statement**\n\nI thought this was an interesting profile on a popular influencer whose videos on solar energy being a scourge on nature has been frequently shared but this is the first time I've seen her have to defend her views.",
+          "timestamp": "2026-07-31T19:39:18+00:00",
+          "likes": 45,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0xuv29",
+          "author": "reddit_user_858e8d4a067b",
+          "author_karma": 0,
+          "content": "This is some really aces reporting. While the author is clearly no fan of Ms. Fasulo, he makes sure to trace the places where her claims have a grain of truth, and give credit for them. There was a lot of other digging to do to track her past and her other loyalties and obsessions. I wish everybody online had someone as thoroughly, and generously, checking their work.",
+          "timestamp": "2026-07-31T19:55:01+00:00",
+          "likes": 162,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0zefqo",
+              "author": "reddit_user_7d226d7c5474",
+              "author_karma": 0,
+              "content": "Legitimately 3-4 times as I was reading, I caught myself appreciating the author. Incredible style to keep the reader open to giving Fasulo a chance, while still concisely and consistently debunking her misinformation as it came up. Also, fantastic points while tying the story into the greater picture of climate change and culture wars. I want to read more by this author, regardless of topic.",
+              "timestamp": "2026-08-01T00:37:15+00:00",
+              "likes": 41,
+              "dislikes": 0,
+              "parent_comment_id": "p0xuv29",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p0y5oxq",
+          "author": "reddit_user_2a799cd6e976",
+          "author_karma": 0,
+          "content": "Delete social media.  I show my teens all the videos I can find of phone farms and and send them my own fake Ai created content and it’s soured them on these platforms.  ",
+          "timestamp": "2026-07-31T20:44:13+00:00",
+          "likes": 23,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0y6opw",
+          "author": "reddit_user_80b8f1a569cb",
+          "author_karma": 0,
+          "content": "That was some a solutely excellent journalism there! \n\nThanks so much for sharing that article, Op - it made for some genuinely compelling reading :)\n\nI learned a surprising amount about the climate effect of solar panels, both positive and negative, and yet I also came out of it feeling a lot more inclined toward the continued perpetuation and advancement of solar power, \n\nI also learned from this article to keep a beady eye out for far right whackadoodles masquerading as climate activists, sustainability gurus etc - which was something I hadn't considered was a thing. \n\nAll in all I found it a well researched and concisely elucidated study that thoroughly explores an utterly bizarre anti-solar charade perpetuated by a maga woman pretending to be an eco warrior.\nThe detailed exploration of the environmental, legal and political aspects of the solar industry also made for some really engaging reading. \n\nGreat fine! :) ",
+          "timestamp": "2026-07-31T20:48:47+00:00",
+          "likes": 70,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p102qmr",
+              "author": "reddit_user_643370894510",
+              "author_karma": 0,
+              "content": "negative? excuse me, i was hoping to inject my thoughts lower in the thread. what did i miss? \n\nshe's so close to having a good point once in a while.\n\n> “My belief is when some people very, very pompously hold their science above other people’s science, I say to them, there’s actually no way of knowing if yours is the right science,” she told me.\n\nalso the part where fasulo mentioned \"panels made in china.\" panels are not theoretically the best way to make solar for cities, but they're so much better than fossil in so many cases that it's like comparing RCV and FPTP. one of them is worth more as a weapon than an energy technology *(ba-dum-tish)* (and both of them hinge on batteries and grids, presently?).\n\ni'm afraid to know how much farmland is taken up for biomass (in addition to ethanol). i wasn't consciously aware that 2% of farmland would be overkill. that's trivial if you happen to think veganism will conquer nutrition with better supplementation culture and policy (and soon).\n\nstepped batteries have grid problems i can't imagine, but on the right scale they would do things.\n\nand china's doing thorium meanwhile?! i'm not saying every nation in africa should immediately cede, but we're gone, trump has exited the casino and we're looking at so many very confused people who know they have a good point about *something*.",
+              "timestamp": "2026-08-01T03:03:24+00:00",
+              "likes": -11,
+              "dislikes": 0,
+              "parent_comment_id": "p0y6opw",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p135jfo",
+                  "author": "reddit_user_5b494fcdc83c",
+                  "author_karma": 0,
+                  "content": "Er, what? How is that a sensible response to the previous comment? \n\nI did find the comments in the article about the potential for solar installations to damage the soil (if they are done badly) and I thought there was a point about how the financial reality means that the protections on certain parcels of land is weakened, even though they are already supposed to be set aside as something else. ",
+                  "timestamp": "2026-08-01T15:42:44+00:00",
+                  "likes": 7,
+                  "dislikes": 0,
+                  "parent_comment_id": "p102qmr",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p13w7lk",
+                      "author": "[deleted]",
+                      "author_karma": 0,
+                      "content": "[removed]",
+                      "timestamp": "2026-08-01T17:50:06+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p135jfo",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "p13w7oi",
+                          "author": "reddit_user_e320faca37f4",
+                          "author_karma": 0,
+                          "content": "The goal of TrueReddit is to have intelligent, insightful discussions. Users are required to read an entire article before submitting a comment. Your comment requires more substance to be permitted.\n\nDo not repost your comment with random letters to make it longer, or you will face a 28-day ban from TrueReddit for intentionally evading moderation filters.\n\n*I am a bot, and this action was performed automatically. Please [contact the moderators of this subreddit](/message/compose/?to=/r/TrueReddit) if you have any questions or concerns.*",
+                          "timestamp": "2026-08-01T17:50:07+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "p13w7lk",
+                          "depth": 4,
+                          "replies": [
+                            {
+                              "comment_id": "p13wgzd",
+                              "author": "[deleted]",
+                              "author_karma": 0,
+                              "content": "[removed]",
+                              "timestamp": "2026-08-01T17:51:22+00:00",
+                              "likes": 0,
+                              "dislikes": 0,
+                              "parent_comment_id": "p13w7oi",
+                              "depth": 5,
+                              "replies": [
+                                {
+                                  "comment_id": "p13wh1y",
+                                  "author": "reddit_user_e320faca37f4",
+                                  "author_karma": 0,
+                                  "content": "The goal of TrueReddit is to have intelligent, insightful discussions. Users are required to read an entire article before submitting a comment. Your comment requires more substance to be permitted.\n\nDo not repost your comment with random letters to make it longer, or you will face a 28-day ban from TrueReddit for intentionally evading moderation filters.\n\n*I am a bot, and this action was performed automatically. Please [contact the moderators of this subreddit](/message/compose/?to=/r/TrueReddit) if you have any questions or concerns.*",
+                                  "timestamp": "2026-08-01T17:51:22+00:00",
+                                  "likes": 1,
+                                  "dislikes": 0,
+                                  "parent_comment_id": "p13wgzd",
+                                  "depth": 6,
+                                  "replies": []
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "comment_id": "p1igafw",
+              "author": "reddit_user_ba1b569a9e26",
+              "author_karma": 0,
+              "content": "You see a lot of environmentalist-coded concern trolling in nimbyism. It’s ridiculously common in right-leaning German news, probably the worst offender imo “X trees have to be felled for the construction of a new tram line”, I guess there is a sizable enough cohort of people for whom environmentalism starts and ends with the current number of mature trees in an area (but don’t you dare suggest replacing a car park with trees lmao , then it will be “bad for the environment because people can’t park there and have to drive further” )",
+              "timestamp": "2026-08-03T19:51:37+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p0y6opw",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p0y6qbe",
+          "author": "reddit_user_76254199c523",
+          "author_karma": 0,
+          "content": "Anyone steering the narrative away from clean energy like solar, is working for the bad guys of empire...full stop.",
+          "timestamp": "2026-07-31T20:49:00+00:00",
+          "likes": 36,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0yizse",
+          "author": "reddit_user_7335b3dd7290",
+          "author_karma": 0,
+          "content": "I wonder if she has \"sponsors\"",
+          "timestamp": "2026-07-31T21:47:25+00:00",
+          "likes": 8,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0yizuy",
+              "author": "reddit_user_e320faca37f4",
+              "author_karma": 0,
+              "content": "The goal of TrueReddit is to have intelligent, insightful discussions. Users are required to read an entire article before submitting a comment. Your comment requires more substance to be permitted.\n\nDo not repost your comment with random letters to make it longer, or you will face a 28-day ban from TrueReddit for intentionally evading moderation filters.\n\n*I am a bot, and this action was performed automatically. Please [contact the moderators of this subreddit](/message/compose/?to=/r/TrueReddit) if you have any questions or concerns.*",
+              "timestamp": "2026-07-31T21:47:25+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p0yizse",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p0z2ri5",
+          "author": "reddit_user_5650a73b7baf",
+          "author_karma": 0,
+          "content": "I imagine it’s rounding error for FF companies to allocate a portion of their budget to influencers - honestly surprised there’s not more of this. ",
+          "timestamp": "2026-07-31T23:30:58+00:00",
+          "likes": 18,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0zss5u",
+              "author": "reddit_user_ade8763376d2",
+              "author_karma": 0,
+              "content": "The fossil fuel industry is spending a billion dollars a year in the US alone pushing climate change denial and lobbying governments to slow down action on climate change. So yes, rounding error is pretty spot on. ",
+              "timestamp": "2026-08-01T02:01:49+00:00",
+              "likes": 11,
+              "dislikes": 0,
+              "parent_comment_id": "p0z2ri5",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p1i3gjc",
+              "author": "reddit_user_33e61a07f446",
+              "author_karma": 0,
+              "content": "Which means it's also a rounding error for renewables companies to do the same, yet they are largely unwilling to play the game. ",
+              "timestamp": "2026-08-03T18:55:38+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p0z2ri5",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p0z3dnw",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-07-31T23:34:22+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0z3dsh",
+              "author": "reddit_user_e320faca37f4",
+              "author_karma": 0,
+              "content": "The goal of TrueReddit is to have intelligent, insightful discussions. Users are required to read an entire article before submitting a comment. Your comment requires more substance to be permitted.\n\nDo not repost your comment with random letters to make it longer, or you will face a 28-day ban from TrueReddit for intentionally evading moderation filters.\n\n*I am a bot, and this action was performed automatically. Please [contact the moderators of this subreddit](/message/compose/?to=/r/TrueReddit) if you have any questions or concerns.*",
+              "timestamp": "2026-07-31T23:34:23+00:00",
+              "likes": 3,
+              "dislikes": 0,
+              "parent_comment_id": "p0z3dnw",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p0z3pzv",
+          "author": "reddit_user_12e7096a7118",
+          "author_karma": 0,
+          "content": "How many people is she actually influencing?",
+          "timestamp": "2026-07-31T23:36:14+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0z3q1a",
+              "author": "reddit_user_e320faca37f4",
+              "author_karma": 0,
+              "content": "The goal of TrueReddit is to have intelligent, insightful discussions. Users are required to read an entire article before submitting a comment. Your comment requires more substance to be permitted.\n\nDo not repost your comment with random letters to make it longer, or you will face a 28-day ban from TrueReddit for intentionally evading moderation filters.\n\n*I am a bot, and this action was performed automatically. Please [contact the moderators of this subreddit](/message/compose/?to=/r/TrueReddit) if you have any questions or concerns.*",
+              "timestamp": "2026-07-31T23:36:15+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p0z3pzv",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p0zs6k3",
+              "author": "reddit_user_0775f1b0c035",
+              "author_karma": 0,
+              "content": "“\n The April post, which has more than 32,000\nlikes, belongs to Alexandra Fasulo, a 33-year-old influencer in upstate New York who has created one of the most prolific anti-solar campaigns on the Internet.\nThis year alone, Fasulo has posted about solar more than 500 times, portraying U.S. utility-scale renewable development as a foreign-backed corporate Trojan horse designed to grab American farmland and harm the environment. She has over 2 million followers across platforms.”",
+              "timestamp": "2026-08-01T01:58:12+00:00",
+              "likes": 12,
+              "dislikes": 0,
+              "parent_comment_id": "p0z3pzv",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p105r54",
+          "author": "reddit_user_883f49ef8d92",
+          "author_karma": 0,
+          "content": "I was trying to build a solar farm in upstate NY. It would have been 5 megawatts on 20 acres of land. The farmer was interested in selling. The original farmer had passed away and his daughters both live out of state. They were currently renting the land for $400 per acre per year. With solar panels in place the land would have paid out close to $2000 per acre per year. \n\nThe local town was on board. The property is back from the road and the land slopes down. It pretty much impossible to see from the road. We had our engineering drawings submitted to the utility and were ready to go. Then we found out that the utility capacity map was wrong and they couldn't take all the power we were going to provide. They could only take about half of it. The math didn't work out for that smaller project so we gave up on that land and started looking elsewhere. \n\nIn the meantime, local towns have been inundated with misinformation about Chinese solar panels. There are so many hurtles now that I'm giving up on the project. I guess we'll just burn clean coal and hope that makes everything better. ",
+          "timestamp": "2026-08-01T03:22:50+00:00",
+          "likes": 8,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p14geb0",
+              "author": "reddit_user_8402187c0a3e",
+              "author_karma": 0,
+              "content": "CNYer here, I don't know a lot about solar, but I notice a lot of solar startups are seeking rural areas to setup solar farms. Why? it sounds like you need a lot of space but not so remote that you cant connect to the grid to hook up full capacity. Wouldn't being much closer to larger towns make more sense? For example the abandoned runway at Syracuse Hancock airport is dozens of square miles and sitting there unused. Or even just an abandoned industrial park somewhere. I mean, surely there is a lot of land that is otherwise unproductive that you can use?",
+              "timestamp": "2026-08-01T19:27:19+00:00",
+              "likes": 4,
+              "dislikes": 0,
+              "parent_comment_id": "p105r54",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p14x8ob",
+                  "author": "[deleted]",
+                  "author_karma": 0,
+                  "content": "[removed]",
+                  "timestamp": "2026-08-01T20:51:31+00:00",
+                  "likes": 2,
+                  "dislikes": 0,
+                  "parent_comment_id": "p14geb0",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p10a6wb",
+          "author": "reddit_user_6bf95627e552",
+          "author_karma": 0,
+          "content": "She filled my disingenuous Right Wing influencer bingo card: invoke evil China, talk about scary chemicals, espouse your love for the environment (and yet remain silent on the myriad environmental threats that aren't renewable-related), dodge any questions outside of your propaganda (climate change- who knows!  Jan. 6 - ancient history!)",
+          "timestamp": "2026-08-01T03:52:12+00:00",
+          "likes": 25,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p11rhvo",
+              "author": "reddit_user_234d191af146",
+              "author_karma": 0,
+              "content": "I got that vibe too. I wonder if there is an 'official' list of influencer talking points that one could use to determine if it's disingenuous.",
+              "timestamp": "2026-08-01T10:58:06+00:00",
+              "likes": 7,
+              "dislikes": 0,
+              "parent_comment_id": "p10a6wb",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p13tnpg",
+              "author": "reddit_user_1f9770200b22",
+              "author_karma": 0,
+              "content": "“It’s like if we brought up your diary from when you were 18.”. No, you're 33 years old, you started that diary in 2020 when you we're 27. \n\n“Every single scientist is bought in this country,” she said. “Every single scientist has an agenda.”. The same can more accurately be said for any right-wing funded maga influencer. \n\n",
+              "timestamp": "2026-08-01T17:37:59+00:00",
+              "likes": 10,
+              "dislikes": 0,
+              "parent_comment_id": "p10a6wb",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p14v75y",
+                  "author": "reddit_user_251183f175be",
+                  "author_karma": 0,
+                  "content": "I'm a scientist, and I would absolutely love it if someone would buy me out. Unfortunately, many I know (in biotech) are being laid off because nobody wants to even pay their base salaries, much less \"buy\" them to the point they will spout some corporate line even in their offtime.",
+                  "timestamp": "2026-08-01T20:41:15+00:00",
+                  "likes": 7,
+                  "dislikes": 0,
+                  "parent_comment_id": "p13tnpg",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p15bkjp",
+                      "author": "reddit_user_5b494fcdc83c",
+                      "author_karma": 0,
+                      "content": "Perhaps she was confusing \"bought\" with \"having a job\".\n\nEdit: I had forgotten that this sub has an automod that objects if your comment is too short. So to elaborate I did read the article and I was struck by how she apparently was able to make $300k as a freelance writer, start a nonprofit with undisclosed funders, and took part in a  trump backed USDA effort to \"to combat weaponized regulatory and enforcement actions against America’s producers, ranchers, and small businesses\". Yet scientists are the ones with the agenda?",
+                      "timestamp": "2026-08-01T22:06:06+00:00",
+                      "likes": 2,
+                      "dislikes": 0,
+                      "parent_comment_id": "p14v75y",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "p15bkmc",
+                          "author": "reddit_user_e320faca37f4",
+                          "author_karma": 0,
+                          "content": "The goal of TrueReddit is to have intelligent, insightful discussions. Users are required to read an entire article before submitting a comment. Your comment requires more substance to be permitted.\n\nDo not repost your comment with random letters to make it longer, or you will face a 28-day ban from TrueReddit for intentionally evading moderation filters.\n\n*I am a bot, and this action was performed automatically. Please [contact the moderators of this subreddit](/message/compose/?to=/r/TrueReddit) if you have any questions or concerns.*",
+                          "timestamp": "2026-08-01T22:06:07+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "p15bkjp",
+                          "depth": 4,
+                          "replies": []
+                        }
+                      ]
+                    },
+                    {
+                      "comment_id": "p15mv18",
+                      "author": "reddit_user_1f9770200b22",
+                      "author_karma": 0,
+                      "content": "\"This creates a self-sealing argument. No scientific evidence can disprove Fasulo’s claims, because any scientist who disagrees can simply be declared corrupt.\"\n\nAccording to maga logic your denial of being a paid shill is evidence of being a paid shill. All their arguments are circular and self-supporting and they think that makes them correct. It's a shame because that does get in the way of the actual issues with some of these projects but also focuses  so much on those issues that in reality pale in comparison to the damage done by fossil fuels. Which then perpetuates the damage they appear so concerned about. \n\nSorry about being laid off. Best of luck. Have you thought about becoming a paid shill for big solar? \n\n",
+                      "timestamp": "2026-08-01T23:08:22+00:00",
+                      "likes": 4,
+                      "dislikes": 0,
+                      "parent_comment_id": "p14v75y",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p10lja0",
+          "author": "reddit_user_f9e3467698de",
+          "author_karma": 0,
+          "content": "Well written article, but the TL:DR is just that she's a hardcore Trumper, Jan6/Covid denier, anti-science conspiracy theory grifter who believes her opinions and fake claims should carry equal weight to actual scientific research because scientists, in her view, are *all, to a man, 100% corrupt*. She, like a thousand others, is making a living bilking room temperature IQ MAGA supporters for their money by saying what they want to hear with a pretty face and a donation link. And in the time it took 100 people to read this well-written, well-researched article, she's spread more lies to 10,000 new ears.",
+          "timestamp": "2026-08-01T05:11:52+00:00",
+          "likes": 33,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p12ge96",
+              "author": "[deleted]",
+              "author_karma": 0,
+              "content": "[removed]",
+              "timestamp": "2026-08-01T13:36:00+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p10lja0",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p12gebz",
+                  "author": "reddit_user_e320faca37f4",
+                  "author_karma": 0,
+                  "content": "The goal of TrueReddit is to have intelligent, insightful discussions. Users are required to read an entire article before submitting a comment. Your comment requires more substance to be permitted.\n\nDo not repost your comment with random letters to make it longer, or you will face a 28-day ban from TrueReddit for intentionally evading moderation filters.\n\n*I am a bot, and this action was performed automatically. Please [contact the moderators of this subreddit](/message/compose/?to=/r/TrueReddit) if you have any questions or concerns.*",
+                  "timestamp": "2026-08-01T13:36:01+00:00",
+                  "likes": 3,
+                  "dislikes": 0,
+                  "parent_comment_id": "p12ge96",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p127zwv",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-01T12:48:25+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p127zyn",
+              "author": "reddit_user_e320faca37f4",
+              "author_karma": 0,
+              "content": "The goal of TrueReddit is to have intelligent, insightful discussions. Users are required to read an entire article before submitting a comment. Your comment requires more substance to be permitted.\n\nDo not repost your comment with random letters to make it longer, or you will face a 28-day ban from TrueReddit for intentionally evading moderation filters.\n\n*I am a bot, and this action was performed automatically. Please [contact the moderators of this subreddit](/message/compose/?to=/r/TrueReddit) if you have any questions or concerns.*",
+              "timestamp": "2026-08-01T12:48:26+00:00",
+              "likes": 2,
+              "dislikes": 0,
+              "parent_comment_id": "p127zwv",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p17crz9",
+          "author": "reddit_user_11009b440865",
+          "author_karma": 0,
+          "content": "She is a dangerous propagandist. If you’ve been following along her career, there is a long string of destructive lies that she has pushed on everything from gig work to native planting. It’s a grift ",
+          "timestamp": "2026-08-02T05:43:12+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run008_post02_seed042",
+      "post_slot": 2,
+      "seed_index": 42,
+      "source_raw_post_id": "1vc2yuu",
+      "source_product_dir": "UpliftingNews",
+      "source_file": "https://www.reddit.com/r/UpliftingNews/comments/1vc2yuu/a_nigerian_born_professor_who_grew_up_without/",
+      "post_type": "link",
+      "title": "A Nigerian born professor who grew up without reliable electricity built a locally manufactured solar power box with Nigerian partners, and 70 units are already giving homes and businesses in Kaduna clean power with no fuel costs.",
+      "author": "reddit_user_bde1e90b951b",
+      "author_karma": 0,
+      "content": "A Nigerian born professor who grew up without reliable electricity built a locally manufactured solar power box with Nigerian partners, and 70 units are already giving homes and businesses in Kaduna clean power with no fuel costs.",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p0y7hn3",
+          "author": "reddit_user_e320faca37f4",
+          "author_karma": 0,
+          "content": "Reminder: this subreddit is meant to be a place free of excessive cynicism, negativity and bitterness. Toxic attitudes are not welcome here.  \n\nAll Negative comments will be removed and will possibly result in a ban.\n---\n\nImportant: If this post is hidden behind a paywall, please assign it the \"Paywall\" flair and include a comment with a relevant part of the article. \n\nPlease report this post if it is hidden behind a paywall and not flaired corrently. We suggest using \"Reader\" mode to bypass most paywalls.\n\n---\n\n*I am a bot, and this action was performed automatically. Please [contact the moderators of this subreddit](/message/compose/?to=/r/UpliftingNews) if you have any questions or concerns.*",
+          "timestamp": "2026-07-31T20:52:28+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0yxhoh",
+          "author": "reddit_user_b193c4fa4a52",
+          "author_karma": 0,
+          "content": "Fuck, I would buy one of those for my camper van. Where do I buy lol.",
+          "timestamp": "2026-07-31T23:02:17+00:00",
+          "likes": 31,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0yxm8s",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-07-31T23:02:59+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p106pd2",
+          "author": "reddit_user_bcb658ef58d4",
+          "author_karma": 0,
+          "content": "Strange that the article doesn't explain what the powerbox actually is. The pro version is a 10 kWh lithium iron phosphate battery that comes packaged with two ~500W solar panels for about $1800 USD. You can tie it in to your home's breaker panel so it will continue to power your outlets even if there's an outage. It can't handle high voltage appliances. Sounds like a great system. ",
+          "timestamp": "2026-08-01T03:29:04+00:00",
+          "likes": 21,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p121qne",
+              "author": "reddit_user_0be01eed5116",
+              "author_karma": 0,
+              "content": "What’s a high volume appliance \n\nLike will it run a tv and a fridge?",
+              "timestamp": "2026-08-01T12:09:43+00:00",
+              "likes": 4,
+              "dislikes": 0,
+              "parent_comment_id": "p106pd2",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p149i4j",
+                  "author": "reddit_user_111c010989ae",
+                  "author_karma": 0,
+                  "content": "TV? Sure, 35-40W isn’t a big deal. But 300-800W for a fridge? Don’t run it in the evening!",
+                  "timestamp": "2026-08-01T18:53:49+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p121qne",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p149y74",
+          "author": "reddit_user_111c010989ae",
+          "author_karma": 0,
+          "content": "TIL that Nigeria makes solar panels",
+          "timestamp": "2026-08-01T18:55:57+00:00",
+          "likes": 4,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p14w70p",
+          "author": "reddit_user_79afa1540d5e",
+          "author_karma": 0,
+          "content": "Wonderful ",
+          "timestamp": "2026-08-01T20:46:15+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p15qs7g",
+          "author": "reddit_user_95f1a795377a",
+          "author_karma": 0,
+          "content": "10 kWh LiFePO4 plus panels for $1800 is a genuinely solid price. Been pricing out battery backup for my basement and that's competitive even against US brands. Curious how it holds up after 3–4 years of daily cycling in that heat though, that's where these systems usually show what they're actually worth. just my 2 cents",
+          "timestamp": "2026-08-01T23:30:31+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run008_post03_seed043",
+      "post_slot": 3,
+      "seed_index": 43,
+      "source_raw_post_id": "1vc5n5u",
+      "source_product_dir": "UpliftingNews",
+      "source_file": "https://www.reddit.com/r/UpliftingNews/comments/1vc5n5u/st_josephs_university_graduates_launch_kind/",
+      "post_type": "link",
+      "title": "St. Joseph's University graduates launch 'Kind Stranger' project to help neighbors in need",
+      "author": "reddit_user_bde1e90b951b",
+      "author_karma": 0,
+      "content": "St. Joseph's University graduates launch 'Kind Stranger' project to help neighbors in need\n\nWhat the world needs more of",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p0ysy00",
+          "author": "reddit_user_e320faca37f4",
+          "author_karma": 0,
+          "content": "Reminder: this subreddit is meant to be a place free of excessive cynicism, negativity and bitterness. Toxic attitudes are not welcome here.  \n\nAll Negative comments will be removed and will possibly result in a ban.\n---\n\nImportant: If this post is hidden behind a paywall, please assign it the \"Paywall\" flair and include a comment with a relevant part of the article. \n\nPlease report this post if it is hidden behind a paywall and not flaired corrently. We suggest using \"Reader\" mode to bypass most paywalls.\n\n---\n\n*I am a bot, and this action was performed automatically. Please [contact the moderators of this subreddit](/message/compose/?to=/r/UpliftingNews) if you have any questions or concerns.*",
+          "timestamp": "2026-07-31T22:38:15+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p10mhcz",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-01T05:19:01+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run008_post04_seed044",
+      "post_slot": 4,
+      "seed_index": 44,
+      "source_raw_post_id": "1vc73e3",
+      "source_product_dir": "UpliftingNews",
+      "source_file": "https://www.reddit.com/r/UpliftingNews/comments/1vc73e3/over_1000_students_later_richmond_bc_man_still/",
+      "post_type": "link",
+      "title": "Over 1,000 students later, Richmond, B.C., man still teaching English for free as feds cut lessons",
+      "author": "reddit_user_bde1e90b951b",
+      "author_karma": 0,
+      "content": "Over 1,000 students later, Richmond, B.C., man still teaching English for free as feds cut lessons",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p0z45az",
+          "author": "reddit_user_e320faca37f4",
+          "author_karma": 0,
+          "content": "Reminder: this subreddit is meant to be a place free of excessive cynicism, negativity and bitterness. Toxic attitudes are not welcome here.  \n\nAll Negative comments will be removed and will possibly result in a ban.\n---\n\nImportant: If this post is hidden behind a paywall, please assign it the \"Paywall\" flair and include a comment with a relevant part of the article. \n\nPlease report this post if it is hidden behind a paywall and not flaired corrently. We suggest using \"Reader\" mode to bypass most paywalls.\n\n---\n\n*I am a bot, and this action was performed automatically. Please [contact the moderators of this subreddit](/message/compose/?to=/r/UpliftingNews) if you have any questions or concerns.*",
+          "timestamp": "2026-07-31T23:38:36+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0z6o2k",
+          "author": "reddit_user_0349db440052",
+          "author_karma": 0,
+          "content": "Nothing is uplifting about free labour. This is class warfare with a heavy dose of baked in racism. \n\nEducators deserve to be paid and it should be subsidized (in all reality, fully) by our taxes instead of handing billions to private industry groups already worth billions.\n\nThis is a disheartening, horrific story about how broken society has become. ",
+          "timestamp": "2026-07-31T23:52:50+00:00",
+          "likes": 162,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0z9klu",
+              "author": "reddit_user_92101cccaab9",
+              "author_karma": 0,
+              "content": "fr, calling systemic failures uplifting is such a toxic trope.",
+              "timestamp": "2026-08-01T00:09:17+00:00",
+              "likes": 25,
+              "dislikes": 0,
+              "parent_comment_id": "p0z6o2k",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1056dw",
+                  "author": "[deleted]",
+                  "author_karma": 0,
+                  "content": "[removed]",
+                  "timestamp": "2026-08-01T03:19:06+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p0z9klu",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            },
+            {
+              "comment_id": "p0zgefe",
+              "author": "reddit_user_567bda32ee70",
+              "author_karma": 0,
+              "content": "Why should our tax dollars be used to teach English to new comers?",
+              "timestamp": "2026-08-01T00:48:37+00:00",
+              "likes": -27,
+              "dislikes": 0,
+              "parent_comment_id": "p0z6o2k",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p0zhfd5",
+                  "author": "reddit_user_2dff342298ae",
+                  "author_karma": 0,
+                  "content": "Because society works a lot better if you all have a common communication method, and that's the easiest path to achieve that.",
+                  "timestamp": "2026-08-01T00:54:32+00:00",
+                  "likes": 19,
+                  "dislikes": 0,
+                  "parent_comment_id": "p0zgefe",
+                  "depth": 2,
+                  "replies": []
+                },
+                {
+                  "comment_id": "p0zidc6",
+                  "author": "reddit_user_692d6cb557b0",
+                  "author_karma": 0,
+                  "content": "You'd rather newcomers didn't integrate?",
+                  "timestamp": "2026-08-01T01:00:05+00:00",
+                  "likes": 22,
+                  "dislikes": 0,
+                  "parent_comment_id": "p0zgefe",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p0zmc4v",
+                      "author": "reddit_user_567bda32ee70",
+                      "author_karma": 0,
+                      "content": "Doesn’t mean we have to fund it….",
+                      "timestamp": "2026-08-01T01:23:15+00:00",
+                      "likes": -19,
+                      "dislikes": 0,
+                      "parent_comment_id": "p0zidc6",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "p0zr5w4",
+                          "author": "reddit_user_692d6cb557b0",
+                          "author_karma": 0,
+                          "content": "But if we do, then someone who couldn't speak English can learn the language, get a job and become a lifelong taxpayer. The cost of that investment is negligible compared to the lifetime tax revenue and economic value it generates.",
+                          "timestamp": "2026-08-01T01:52:02+00:00",
+                          "likes": 15,
+                          "dislikes": 0,
+                          "parent_comment_id": "p0zmc4v",
+                          "depth": 4,
+                          "replies": []
+                        },
+                        {
+                          "comment_id": "p11snxj",
+                          "author": "reddit_user_a30925de5fee",
+                          "author_karma": 0,
+                          "content": "And how much more money do YOU now have as a result?\n\nAs they say are YOUR eggs any cheaper?\n\nThat money aint going to YOU but to the govt's pockets. ",
+                          "timestamp": "2026-08-01T11:06:45+00:00",
+                          "likes": 6,
+                          "dislikes": 0,
+                          "parent_comment_id": "p0zmc4v",
+                          "depth": 4,
+                          "replies": []
+                        },
+                        {
+                          "comment_id": "p123ypj",
+                          "author": "reddit_user_bf853153e536",
+                          "author_karma": 0,
+                          "content": "People who don’t have children can think: why do my taxes contribute to school?  Doesn’t have to.\n\nPeople who are young can think: why do my taxes contribute to services for elderly?  It doesn’t have to.\n\nIt’s about bettering lives for everyone.  That’s what the greater good means in a working society.  It makes for a peaceful, thriving country.",
+                          "timestamp": "2026-08-01T12:23:45+00:00",
+                          "likes": 6,
+                          "dislikes": 0,
+                          "parent_comment_id": "p0zmc4v",
+                          "depth": 4,
+                          "replies": []
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "comment_id": "p0zrujg",
+                  "author": "reddit_user_0349db440052",
+                  "author_karma": 0,
+                  "content": "Because then they can assimilate better into Canadian society. Which is what all you lunatics claim to want. You cant have it both ways. Just say you're a racist and be done with it instead of hiding behind shitty arguments about what should and shouldn't be funded.\n\nAnd besides that, why the fuck should my tax dollars being going to billionares instead of education? Instead of emergency services? We can afford to pay this man, we choose instead to line the pockets of the already ultra-wealthy and dirty politicians. And that's neither a conspiracy nor naive. That's a fucking irrefutable fact.\n\n![gif](giphy|jTSlIBuLkXdCL895Fq|downsized)",
+                  "timestamp": "2026-08-01T01:56:12+00:00",
+                  "likes": 16,
+                  "dislikes": 0,
+                  "parent_comment_id": "p0zgefe",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p0zxkhc",
+                      "author": "reddit_user_692d6cb557b0",
+                      "author_karma": 0,
+                      "content": "Hear hear!",
+                      "timestamp": "2026-08-01T02:31:11+00:00",
+                      "likes": 6,
+                      "dislikes": 0,
+                      "parent_comment_id": "p0zrujg",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                },
+                {
+                  "comment_id": "p0zsged",
+                  "author": "reddit_user_23480eed4842",
+                  "author_karma": 0,
+                  "content": "Absurd take. A newcomer who can speak the local language is a newcomer who can contribute to the local economy, and who can live a richer, more prosperous life. There's no downside if you aren't a shortsighted penny pincher.",
+                  "timestamp": "2026-08-01T01:59:51+00:00",
+                  "likes": 13,
+                  "dislikes": 0,
+                  "parent_comment_id": "p0zgefe",
+                  "depth": 2,
+                  "replies": []
+                },
+                {
+                  "comment_id": "p12ozlq",
+                  "author": "reddit_user_d933c5001b35",
+                  "author_karma": 0,
+                  "content": "You must a conservative. \n\nSelfish as always. How dare the government spend a single dollar that doesn't benefit you personally. \n\nHere you are fighting about immigrants vs Canadian citizens. Tomorrow you'll fight about why the government spent on another community and not yours. \n\n",
+                  "timestamp": "2026-08-01T14:21:03+00:00",
+                  "likes": 3,
+                  "dislikes": 0,
+                  "parent_comment_id": "p0zgefe",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            },
+            {
+              "comment_id": "p0zgijq",
+              "author": "reddit_user_f849f06c225c",
+              "author_karma": 0,
+              "content": "Add this to r/OrphanCrushingMachine ",
+              "timestamp": "2026-08-01T00:49:16+00:00",
+              "likes": 55,
+              "dislikes": 0,
+              "parent_comment_id": "p0z6o2k",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p10037u",
+                  "author": "reddit_user_7737e5f107a2",
+                  "author_karma": 0,
+                  "content": "Heartwarming! Not everybody abandoned children after the profit machines deemed them not worth it!",
+                  "timestamp": "2026-08-01T02:46:45+00:00",
+                  "likes": 19,
+                  "dislikes": 0,
+                  "parent_comment_id": "p0zgijq",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            },
+            {
+              "comment_id": "p10ebdu",
+              "author": "reddit_user_9aaa55ec2b5f",
+              "author_karma": 0,
+              "content": "Traditionally, all across Asia (and now) retired people volunteer to teach classes including children's classes and it is not sick.  It is fun and no one thinks anything of it.  But the teachers unions would never say OH that is wrong.",
+              "timestamp": "2026-08-01T04:20:06+00:00",
+              "likes": -6,
+              "dislikes": 0,
+              "parent_comment_id": "p0z6o2k",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p11576e",
+                  "author": "reddit_user_0349db440052",
+                  "author_karma": 0,
+                  "content": "This is a man who was getting paid to do a job and the government quit paying him so he continued to fill the role.  This isn't someone who volunteered which *would* be nice.  This is an employee who couldn't let his students down while the government failed them, and him.  ",
+                  "timestamp": "2026-08-01T07:49:16+00:00",
+                  "likes": 15,
+                  "dislikes": 0,
+                  "parent_comment_id": "p10ebdu",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            },
+            {
+              "comment_id": "p10l1zi",
+              "author": "reddit_user_95459e9d769c",
+              "author_karma": 0,
+              "content": "there are lots of positive stories about volunteers making a difference",
+              "timestamp": "2026-08-01T05:08:16+00:00",
+              "likes": -2,
+              "dislikes": 0,
+              "parent_comment_id": "p0z6o2k",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p114zgs",
+                  "author": "reddit_user_0349db440052",
+                  "author_karma": 0,
+                  "content": "This isn't that though is it.  This is a previously paid position that was tanked by the government forcing this person to continue to fill the role for free.  ",
+                  "timestamp": "2026-08-01T07:47:28+00:00",
+                  "likes": 22,
+                  "dislikes": 0,
+                  "parent_comment_id": "p10l1zi",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p0zg00z",
+          "author": "reddit_user_cb7c44d5b2b6",
+          "author_karma": 0,
+          "content": "Orphan crushing machine ",
+          "timestamp": "2026-08-01T00:46:18+00:00",
+          "likes": 15,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0ztvia",
+          "author": "reddit_user_c22b43ed3512",
+          "author_karma": 0,
+          "content": "This man is a hero, but education being cut (especially to vulnerable groups) is not uplifting. ",
+          "timestamp": "2026-08-01T02:08:31+00:00",
+          "likes": 23,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p10d83s",
+          "author": "reddit_user_9aaa55ec2b5f",
+          "author_karma": 0,
+          "content": "Bored with a big pension, that is all I can say.",
+          "timestamp": "2026-08-01T04:12:39+00:00",
+          "likes": 0,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p10u397",
+          "author": "reddit_user_ec62f030fd69",
+          "author_karma": 0,
+          "content": "The r/orphancrushingmachine is hard at work with this one",
+          "timestamp": "2026-08-01T06:17:58+00:00",
+          "likes": 5,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    }
+  ]
+}

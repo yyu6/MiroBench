@@ -1,0 +1,1119 @@
+{
+  "meta": {
+    "product_category": "sports",
+    "baseline": "real_reddit_reference",
+    "run_id": "run_024_sampled_reddit"
+  },
+  "posts": [
+    {
+      "post_id": "real_run024_post00_seed120",
+      "post_slot": 0,
+      "seed_index": 120,
+      "source_raw_post_id": "1veuxqk",
+      "source_product_dir": "baseball",
+      "source_file": "https://www.reddit.com/r/baseball/comments/1veuxqk/daulton_varsho_has_his_first_hit_against_his/",
+      "post_type": "hosted:video",
+      "title": "Daulton Varsho has his first hit against his former team since he was traded around 4 hours ago",
+      "author": "reddit_user_79ff14d8816f",
+      "author_karma": 0,
+      "content": "Daulton Varsho has his first hit against his former team since he was traded around 4 hours ago",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p1k1hut",
+          "author": "reddit_user_4a974aa32b66",
+          "author_karma": 0,
+          "content": "You can’t write this shit any better ",
+          "timestamp": "2026-08-04T00:28:31+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1k1lba",
+              "author": "reddit_user_edf7d72eb1cd",
+              "author_karma": 0,
+              "content": "If I was writing it it would have been a home run",
+              "timestamp": "2026-08-04T00:29:02+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1k1hut",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1kmb48",
+                  "author": "reddit_user_cb120bc02470",
+                  "author_karma": 0,
+                  "content": "That’s what Siri did when we traded him to the Mariners a few years back. ",
+                  "timestamp": "2026-08-04T02:23:20+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1k1lba",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1ks17b",
+                      "author": "reddit_user_8661e69cbc97",
+                      "author_karma": 0,
+                      "content": "Wasn't that Toro? \n\nWait, was it both of them?",
+                      "timestamp": "2026-08-04T02:56:15+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1kmb48",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "p1ktpsj",
+                          "author": "reddit_user_cb120bc02470",
+                          "author_karma": 0,
+                          "content": "You were right it was Toro. I was in Seattle at the game when he got traded. Dunno why I blanked and thought it was Siri ",
+                          "timestamp": "2026-08-04T03:06:27+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "p1ks17b",
+                          "depth": 4,
+                          "replies": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p1k1k83",
+          "author": "reddit_user_65df284c0639",
+          "author_karma": 0,
+          "content": "God that's gotta be bittersweet as fuck that for first hit for your new team is... Against your old team...",
+          "timestamp": "2026-08-04T00:28:52+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1k1n7q",
+          "author": "reddit_user_d85e9f47a05b",
+          "author_karma": 0,
+          "content": "The most expected thing ever happened ",
+          "timestamp": "2026-08-04T00:29:19+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1k1qbb",
+          "author": "reddit_user_17132fc61f1e",
+          "author_karma": 0,
+          "content": "Imagine if companies IRL did this. Like you’re a barista at a Starbucks and they trade you to a Wawa down the road or something",
+          "timestamp": "2026-08-04T00:29:47+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1k3g85",
+              "author": "reddit_user_4482018b9691",
+              "author_karma": 0,
+              "content": "How do you get a base hit against Starbucks?",
+              "timestamp": "2026-08-04T00:39:13+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1k1qbb",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1k3ujs",
+                  "author": "reddit_user_25c0782bfdfe",
+                  "author_karma": 0,
+                  "content": "You steal 5 of their customers that happen to be loyal to you?",
+                  "timestamp": "2026-08-04T00:41:22+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1k3g85",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1k55zi",
+                      "author": "reddit_user_6c6119a6af15",
+                      "author_karma": 0,
+                      "content": "\"Whoa 26 conversions in A.D 46!\"",
+                      "timestamp": "2026-08-04T00:48:33+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1k3ujs",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                },
+                {
+                  "comment_id": "p1kbe3y",
+                  "author": "reddit_user_fde1aa520428",
+                  "author_karma": 0,
+                  "content": "Put the bat on the ball and see what happens ",
+                  "timestamp": "2026-08-04T01:22:42+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1k3g85",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            },
+            {
+              "comment_id": "p1kalaf",
+              "author": "reddit_user_f2b4cbd9fc65",
+              "author_karma": 0,
+              "content": "If Wawa is Houston does that mean is Buc-ee's is the Dodgers and QuikTrip is the Yankees? ",
+              "timestamp": "2026-08-04T01:18:17+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1k1qbb",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p1kltiy",
+              "author": "reddit_user_9d8891a74b52",
+              "author_karma": 0,
+              "content": "They probably do when they are worth trading. Which means top lawyers, top ball players, top AI tech engineers. I bet you they all are wheeled and dealed to some extent. ",
+              "timestamp": "2026-08-04T02:20:37+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1k1qbb",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1k2ch8",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[deleted]",
+          "timestamp": "2026-08-04T00:33:08+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1k2qyn",
+          "author": "reddit_user_26d475e784ff",
+          "author_karma": 0,
+          "content": "Did he just say ……blue ball ?",
+          "timestamp": "2026-08-04T00:35:20+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1k3tfk",
+              "author": "reddit_user_8ef788ae1930",
+              "author_karma": 0,
+              "content": "Theres a guy on their team named aj blubaugh lol",
+              "timestamp": "2026-08-04T00:41:12+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1k2qyn",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1k4xbr",
+                  "author": "reddit_user_6d65103b5b58",
+                  "author_karma": 0,
+                  "content": "Wears number 69 too",
+                  "timestamp": "2026-08-04T00:47:15+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1k3tfk",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1l5sbw",
+                      "author": "reddit_user_8949c566fde0",
+                      "author_karma": 0,
+                      "content": "I cannot believe this is real 🤣 that’s awesome ",
+                      "timestamp": "2026-08-04T04:24:20+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1k4xbr",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p1k2tu3",
+          "author": "reddit_user_94e17b063578",
+          "author_karma": 0,
+          "content": "He also caught the first out of the game, of course.",
+          "timestamp": "2026-08-04T00:35:47+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1k3ujn",
+          "author": "reddit_user_963fd8c00c2f",
+          "author_karma": 0,
+          "content": "Wow, that was quick ",
+          "timestamp": "2026-08-04T00:41:22+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1k4c3x",
+          "author": "reddit_user_fee88fb979ba",
+          "author_karma": 0,
+          "content": "![gif](giphy|KzbBPlqq6ZdNoILupY)",
+          "timestamp": "2026-08-04T00:44:00+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1k4ryi",
+          "author": "reddit_user_121f3637978c",
+          "author_karma": 0,
+          "content": "Obviously ",
+          "timestamp": "2026-08-04T00:46:25+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1kdg4y",
+          "author": "reddit_user_be7392682739",
+          "author_karma": 0,
+          "content": "HISTORIC",
+          "timestamp": "2026-08-04T01:34:06+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1kh52k",
+          "author": "reddit_user_1ad36d9031cd",
+          "author_karma": 0,
+          "content": "“Hit”\n\nThat was a generous call. Congrats nonetheless. ",
+          "timestamp": "2026-08-04T01:54:29+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1l2s7a",
+              "author": "reddit_user_d69e1225aca3",
+              "author_karma": 0,
+              "content": "It's a base hit, what else should they call it?",
+              "timestamp": "2026-08-04T04:04:05+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1kh52k",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1ki5a3",
+          "author": "reddit_user_563daa5cb238",
+          "author_karma": 0,
+          "content": "Houston is gonna love the way this guy fields ",
+          "timestamp": "2026-08-04T02:00:04+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1l5b1q",
+          "author": "reddit_user_40422d1351af",
+          "author_karma": 0,
+          "content": "He gets to reunite with Christian Walker ",
+          "timestamp": "2026-08-04T04:21:02+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run024_post01_seed121",
+      "post_slot": 1,
+      "seed_index": 121,
+      "source_raw_post_id": "1veuzaa",
+      "source_product_dir": "baseball",
+      "source_file": "https://www.reddit.com/r/baseball/comments/1veuzaa/my_take_as_an_os_fan/",
+      "post_type": "Opinion",
+      "title": "My take as an O's fan",
+      "author": "reddit_user_79ff14d8816f",
+      "author_karma": 0,
+      "content": "My take as an O's fan\n\nThere can be so many truths at the same time. None of which resolves our worries for this organization. \n\n1. Elias needs to go. \n\n2. Adley had to go. Too much time on the IL and we would have lost him in FA anyway. \n\n3. It is sad to see Adley go. \n\n4. The rebuild failed and this is the slap in the face that proves it.\n\n5. Getting three of Boston's top prospects is huge.\n\n6. Not a lot of faith in Baltimore coaching these prospects into valuable and long term hold players. \n\n7. The ROI isn't palpable and this trade is in limbo.",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p1k1ua9",
+          "author": "reddit_user_5bbd19d0b207",
+          "author_karma": 0,
+          "content": "/r/orioles",
+          "timestamp": "2026-08-04T00:30:23+00:00",
+          "likes": 3,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1k27i6",
+              "author": "reddit_user_53cf15ef83d3",
+              "author_karma": 0,
+              "content": "He probably posted there first and it got removed💀",
+              "timestamp": "2026-08-04T00:32:23+00:00",
+              "likes": 6,
+              "dislikes": 0,
+              "parent_comment_id": "p1k1ua9",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1k32o7",
+                  "author": "reddit_user_8a09302acba3",
+                  "author_karma": 0,
+                  "content": "I actually didn't know. Honest mistake",
+                  "timestamp": "2026-08-04T00:37:10+00:00",
+                  "likes": 2,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1k27i6",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            },
+            {
+              "comment_id": "p1k2t8g",
+              "author": "reddit_user_c8dea1124ec2",
+              "author_karma": 0,
+              "content": "mods doing more work than the actual orioles bullpen these days",
+              "timestamp": "2026-08-04T00:35:42+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1k1ua9",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1k1vql",
+          "author": "reddit_user_084a0644bcd6",
+          "author_karma": 0,
+          "content": "This is something you post in your own sub",
+          "timestamp": "2026-08-04T00:30:36+00:00",
+          "likes": 3,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1k1vq4",
+          "author": "reddit_user_edef73f764d5",
+          "author_karma": 0,
+          "content": "You know your team has a subreddit right?",
+          "timestamp": "2026-08-04T00:30:36+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1k2zav",
+              "author": "reddit_user_8a09302acba3",
+              "author_karma": 0,
+              "content": "I didn't. Thanks",
+              "timestamp": "2026-08-04T00:36:38+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1k1vq4",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1k1x57",
+          "author": "reddit_user_4ded2582febe",
+          "author_karma": 0,
+          "content": "We have games on rn",
+          "timestamp": "2026-08-04T00:30:49+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1k2czt",
+          "author": "reddit_user_fba89eec1599",
+          "author_karma": 0,
+          "content": "8. Start the countdown clock on Gunnar",
+          "timestamp": "2026-08-04T00:33:12+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1k2j4x",
+          "author": "reddit_user_116acf9a55e9",
+          "author_karma": 0,
+          "content": "Go put this in one of the three posted threads on the orioles subreddit dawg",
+          "timestamp": "2026-08-04T00:34:08+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1k2jna",
+          "author": "reddit_user_ab262f9877e3",
+          "author_karma": 0,
+          "content": "Your post has been removed because it violates [**Rule 2.00**](https://www.reddit.com/r/baseball/wiki/rules#wiki_2.00_create_high-quality_content). This content is generally allowed in comments, or in the daily Around the Horn discussion thread. Low-quality content can include:\n\n1. Easily searchable or AskReddit questions\n2. Memes, jokes, GIFS, etc\n3. \"Piggyback\" posts\n4. Topics not related to baseball\n5. \"Tired topics\" providing no added value to the sub\n6. Duplicates, reposts, or overlapping posts\n7. Low-resolution videos or images\n8. AI-generated content like artwork, images, or text-based creations\n9. Posts seeking help with autographs and memorabilia\n10. Posts that belong in other subreddits like r/fantasybaseball, r/homeplate, etc.\n\nPlease review [/r/baseball's rules](https://www.reddit.com/r/baseball/wiki/rules) for future submissions.\n\nIf you feel a mistake has been made, feel free to [message the moderators](https://www.reddit.com/message/compose?to=%2Fr%2Fbaseball).",
+          "timestamp": "2026-08-04T00:34:13+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1k2lbt",
+          "author": "reddit_user_c8055e52cca4",
+          "author_karma": 0,
+          "content": "8. Find pitching",
+          "timestamp": "2026-08-04T00:34:28+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1k345m",
+          "author": "reddit_user_edfd229801a8",
+          "author_karma": 0,
+          "content": "Feel bad for the O’s they were manufacturing prospects like a factory and they just fell flat. It’s a big lesson on why you shouldn’t hold on to prospects and go for it when you have the chance. Really feel like Milwaukee shoulda went harder… not all the prospects gonna pan out and the players you’re not expecting sometimes blossoms. ",
+          "timestamp": "2026-08-04T00:37:24+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run024_post02_seed122",
+      "post_slot": 2,
+      "seed_index": 122,
+      "source_raw_post_id": "1vev1nr",
+      "source_product_dir": "baseball",
+      "source_file": "https://www.reddit.com/r/baseball/comments/1vev1nr/alec_burleson_hits_another_2_run_homer_a_laser/",
+      "post_type": "Video",
+      "title": "Alec Burleson hits another 2 run homer, a laser over the porch",
+      "author": "reddit_user_79ff14d8816f",
+      "author_karma": 0,
+      "content": "Alec Burleson hits another 2 run homer, a laser over the porch\n\nSpeed- 108.3 mph\n\nDistance- 365 ft\n\nLaunch Angle 22 degrees",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p1k2b0t",
+          "author": "reddit_user_425f6b3e8577",
+          "author_karma": 0,
+          "content": "Bless you short porch",
+          "timestamp": "2026-08-04T00:32:54+00:00",
+          "likes": 3,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1k2p3i",
+              "author": "reddit_user_6e4f194f8432",
+              "author_karma": 0,
+              "content": "Is it truly a porch job if it’s gone in 26/30 stadiums?",
+              "timestamp": "2026-08-04T00:35:04+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1k2b0t",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1k2xw9",
+                  "author": "reddit_user_9c7b3a4984a2",
+                  "author_karma": 0,
+                  "content": "Are 25 of the 26 made for ants to play on?",
+                  "timestamp": "2026-08-04T00:36:25+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1k2p3i",
+                  "depth": 2,
+                  "replies": []
+                },
+                {
+                  "comment_id": "p1k4i6l",
+                  "author": "reddit_user_08bbbc654383",
+                  "author_karma": 0,
+                  "content": "It was even gone in Busch, for sure counts. Busch has been robbing this mf from a 30 HR season.",
+                  "timestamp": "2026-08-04T00:44:56+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1k2p3i",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            },
+            {
+              "comment_id": "p1k2tw5",
+              "author": "reddit_user_084a0644bcd6",
+              "author_karma": 0,
+              "content": "26/30",
+              "timestamp": "2026-08-04T00:35:48+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1k2b0t",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1k2cka",
+          "author": "reddit_user_65675682b90e",
+          "author_karma": 0,
+          "content": "Team is depressed after Cashman punted away the season ",
+          "timestamp": "2026-08-04T00:33:08+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1k3uga",
+              "author": "reddit_user_0ba79d34e263",
+              "author_karma": 0,
+              "content": "Didn’t you just get the league leader in SLG% like three hours ago?😭 ",
+              "timestamp": "2026-08-04T00:41:21+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1k2cka",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1k67us",
+                  "author": "reddit_user_6e9e0efd8786",
+                  "author_karma": 0,
+                  "content": "I wouldn't call this a full disaster, but definitely not good. Sure, he's a nice signing but catcher's been a defensive black hole, team needs a left side infielder and possibly a reliever too\n\nIf he was a third baseman or shortstop, on the other hand? I'd say this was an alright deadline.",
+                  "timestamp": "2026-08-04T00:54:14+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1k3uga",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p1k2czi",
+          "author": "reddit_user_8d41e68ae09d",
+          "author_karma": 0,
+          "content": "Burled",
+          "timestamp": "2026-08-04T00:33:12+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1k2du0",
+          "author": "reddit_user_ded3d7f0eec5",
+          "author_karma": 0,
+          "content": "So glad we improved the bullpen at the deadline",
+          "timestamp": "2026-08-04T00:33:20+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1k2f7j",
+          "author": "reddit_user_6dc512b696b2",
+          "author_karma": 0,
+          "content": "The Yankees played today?",
+          "timestamp": "2026-08-04T00:33:33+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1k2nx9",
+              "author": "reddit_user_23a0c59cc3be",
+              "author_karma": 0,
+              "content": "There definitely guys in Yankees uniforms playing at Yankee Statiim right now, but can't confirm is they're major league players.",
+              "timestamp": "2026-08-04T00:34:53+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1k2f7j",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p1k3u8f",
+              "author": "reddit_user_01dd1e3bf35e",
+              "author_karma": 0,
+              "content": "Debatable ",
+              "timestamp": "2026-08-04T00:41:19+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1k2f7j",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1k2fkq",
+          "author": "reddit_user_23082b8cffe0",
+          "author_karma": 0,
+          "content": "Burleson is the exact type of player who should feast on the porch so I'm not surprised at all lol",
+          "timestamp": "2026-08-04T00:33:36+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1k2fy6",
+          "author": "reddit_user_5b54cb53c502",
+          "author_karma": 0,
+          "content": "Hope “Fire Boone! Fire Cashman!” chants get going this evening",
+          "timestamp": "2026-08-04T00:33:39+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1k2ig9",
+          "author": "reddit_user_084a0644bcd6",
+          "author_karma": 0,
+          "content": "Typical deadline day performance by the Yankees",
+          "timestamp": "2026-08-04T00:34:02+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1k2krh",
+          "author": "reddit_user_36464de3fbd4",
+          "author_karma": 0,
+          "content": "POUR IT ON!! Well-deserved embarrassment. ",
+          "timestamp": "2026-08-04T00:34:23+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1k2le6",
+          "author": "reddit_user_7ae158b72f63",
+          "author_karma": 0,
+          "content": "The overreactions to this one game before the additions even arrive (Ramos) or get settled (Garcia) are going to feed families.",
+          "timestamp": "2026-08-04T00:34:29+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1k2lpp",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-04T00:34:32+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1k2sd8",
+          "author": "reddit_user_0e22cd14cc08",
+          "author_karma": 0,
+          "content": "That stance is so basic, but so badass and imposing ",
+          "timestamp": "2026-08-04T00:35:33+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1k305t",
+          "author": "reddit_user_bfd64f4b13e8",
+          "author_karma": 0,
+          "content": "F to Schlittler Cy Young race /s",
+          "timestamp": "2026-08-04T00:36:46+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1k35zf",
+              "author": "reddit_user_0b34d01563a2",
+              "author_karma": 0,
+              "content": "That was off Hill",
+              "timestamp": "2026-08-04T00:37:40+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1k305t",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1k3y1o",
+                  "author": "reddit_user_7ae158b72f63",
+                  "author_karma": 0,
+                  "content": "Well I guess Tim Hill won’t be winning it either.",
+                  "timestamp": "2026-08-04T00:41:53+00:00",
+                  "likes": 0,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1k35zf",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p1k3sh3",
+          "author": "reddit_user_963fd8c00c2f",
+          "author_karma": 0,
+          "content": "What a deadline day for the Yankees \n\nGot Heliot Ramos and got blown out by the cardinals ",
+          "timestamp": "2026-08-04T00:41:03+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1k5dl5",
+          "author": "reddit_user_5f7b9d2f0f46",
+          "author_karma": 0,
+          "content": "Someone wake me up, I'm having a bad dream. ",
+          "timestamp": "2026-08-04T00:49:42+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1k871e",
+          "author": "reddit_user_7b067f488092",
+          "author_karma": 0,
+          "content": "We need a short porch at Busch!",
+          "timestamp": "2026-08-04T01:05:06+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1kaeny",
+          "author": "reddit_user_45835baeddda",
+          "author_karma": 0,
+          "content": "Now why was this guy rumored to be potentially traded?",
+          "timestamp": "2026-08-04T01:17:15+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run024_post03_seed123",
+      "post_slot": 3,
+      "seed_index": 123,
+      "source_raw_post_id": "1vevawc",
+      "source_product_dir": "baseball",
+      "source_file": "https://www.reddit.com/r/baseball/comments/1vevawc/highlight_after_getting_called_up_from_aaa/",
+      "post_type": "reddit_post",
+      "title": "[Highlight] After getting called up from AAA shortly before the game, Cubs outfielder Kevin Alcantara hits his first career home run!",
+      "author": "reddit_user_79ff14d8816f",
+      "author_karma": 0,
+      "content": "[Highlight] After getting called up from AAA shortly before the game, Cubs outfielder Kevin Alcantara hits his first career home run!\n\n[deleted]",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p1k4b0f",
+          "author": "reddit_user_e8d8c99d18e1",
+          "author_karma": 0,
+          "content": "Please reply to this comment with any additional videos/angles of this highlight.\n*If you would like this comment automatically added to your highlight posts, please include [Highlight] in your post title.*\n\n\n*I am a bot, and this action was performed automatically. Please [contact the moderators of this subreddit](/message/compose/?to=/r/baseball) if you have any questions or concerns.*",
+          "timestamp": "2026-08-04T00:43:49+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run024_post04_seed124",
+      "post_slot": 4,
+      "seed_index": 124,
+      "source_raw_post_id": "1vevd2i",
+      "source_product_dir": "baseball",
+      "source_file": "https://www.reddit.com/r/baseball/comments/1vevd2i/list_the_top_3_teams_that_you_think_had_the_best/",
+      "post_type": "Opinion",
+      "title": "List the top 3 teams that you think had the best trade deadline, and the top 3 teams that had the worst",
+      "author": "reddit_user_79ff14d8816f",
+      "author_karma": 0,
+      "content": "List the top 3 teams that you think had the best trade deadline, and the top 3 teams that had the worst",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p1k5237",
+          "author": "reddit_user_5e63136a3287",
+          "author_karma": 0,
+          "content": "Best\nRed sox\nDodgers\nCubs\n\nWorst\nAthletics\nReds\nAstros",
+          "timestamp": "2026-08-04T00:47:57+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1k57yn",
+              "author": "reddit_user_276861e9583b",
+              "author_karma": 0,
+              "content": "Did the Athletics make any moves?",
+              "timestamp": "2026-08-04T00:48:51+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1k5237",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1k5afw",
+                  "author": "reddit_user_5e63136a3287",
+                  "author_karma": 0,
+                  "content": "No and that's the issue.",
+                  "timestamp": "2026-08-04T00:49:14+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1k57yn",
+                  "depth": 2,
+                  "replies": []
+                },
+                {
+                  "comment_id": "p1k5jcx",
+                  "author": "reddit_user_a11810cbdbd7",
+                  "author_karma": 0,
+                  "content": "Minor league trade that sent Colby Thomas to Philadelphia ",
+                  "timestamp": "2026-08-04T00:50:34+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1k57yn",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p1k54hx",
+          "author": "reddit_user_d48e9d1e7bb9",
+          "author_karma": 0,
+          "content": "Best:\nDodgers\nCubs\nPhillies\n\nWorst: \nBraves \nBraves \nBraves ",
+          "timestamp": "2026-08-04T00:48:19+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1k5sx2",
+              "author": "reddit_user_0f765e1d6c01",
+              "author_karma": 0,
+              "content": "Braves going three for three in worst is just beautiful",
+              "timestamp": "2026-08-04T00:52:00+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1k54hx",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1k5af2",
+          "author": "reddit_user_05f2e24e7200",
+          "author_karma": 0,
+          "content": "Best: Guardians, Red Sox, Giants  \nWorst: Reds, Yankees, Braves\n\nFuck the Dodgers",
+          "timestamp": "2026-08-04T00:49:13+00:00",
+          "likes": 0,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1k5d2o",
+          "author": "reddit_user_61ab0dad14e3",
+          "author_karma": 0,
+          "content": "Best: Rays Cubs Astros\n\nWorst: Tigers Brewers",
+          "timestamp": "2026-08-04T00:49:38+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1k5era",
+          "author": "reddit_user_6a5eaecf31da",
+          "author_karma": 0,
+          "content": "Posts like this should require a little of transactions from each team in the past week, so everyone is aware of what deals were made. ",
+          "timestamp": "2026-08-04T00:49:53+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1k5pei",
+          "author": "reddit_user_ab87492e15be",
+          "author_karma": 0,
+          "content": "r/Phillies is going to hate the responses in this thread ",
+          "timestamp": "2026-08-04T00:51:28+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1k60bu",
+          "author": "reddit_user_d90f7f81b9de",
+          "author_karma": 0,
+          "content": "best: dodgers, red Sox, Yankees\n\nworst: dbacks, Braves, athletics",
+          "timestamp": "2026-08-04T00:53:06+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1k6e3z",
+          "author": "reddit_user_5224722af986",
+          "author_karma": 0,
+          "content": "Best: Red Sox, Dodgers, probably Cubs in 3rd\n\nWorst: Baltimore, woof. Detroit, if only for the fact that you built an extra laser on the Death Star. Milwaukee, didn’t do much while their primary competition got significantly better. \n\nNot gonna lie, I also hated the Rays deadline. Feels like they didn’t fill any of the actual holes on their roster and instead shored up pitching depth and got a platoon catcher (albeit a good one). It would be entirely out of touch with reality to say it was the worst (or even one of them), but I hated it.",
+          "timestamp": "2026-08-04T00:55:12+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1k6tuu",
+          "author": "reddit_user_6dd051d08610",
+          "author_karma": 0,
+          "content": "Best : dodgers cubs.  \nWorst: brewers \n\nAt this point the brewers never want to win ",
+          "timestamp": "2026-08-04T00:57:35+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1k8hy7",
+          "author": "reddit_user_8017cc0a7a4f",
+          "author_karma": 0,
+          "content": "Dodgers, Red Sox, and Cubs had a strong deadline. \n\nAll three addressed their major concerns. Cubs got pitching help (and hopefully won't have more injury problems there) while giving up three players who might've had a good future with them. Dodgers got Skubal and dropped a pitcher who has an ERA of 6. Red Sox got players who could easily play a major part in their pursuit of winning their division.\n\nTigers, Rangers, and Astros had the weakest IMHO. \n\nThe AL West is wide open, and the Rangers and Astros might've been able to get some young talent that could've helped them out. Tigers sold Skubal for a laughable haul (Zyhir Hope is the one prospect that might have the ability to help them out extremely soon. The two pitchers are in need of a lot of seasoning, especially Ryan who returned from injury I assume) while being 2.5 games back in the WC race. I don't *hate* the trade of Skubal, but they could've gotten more back if they waited. ",
+          "timestamp": "2026-08-04T01:06:47+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    }
+  ]
+}

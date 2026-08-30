@@ -1,0 +1,1783 @@
+{
+  "format_version": 1,
+  "domains": [
+    "camera",
+    "celebrity",
+    "cellphone",
+    "game",
+    "headphones",
+    "health_issue",
+    "laptop",
+    "movies",
+    "news",
+    "sports",
+    "tv_series"
+  ],
+  "privacy": {
+    "author_names": "deterministically replaced with reddit_user_<hash>",
+    "reddit_user_mentions": "replaced with [REDDIT_USER]",
+    "local_absolute_paths": "removed from seed metadata and manifests"
+  },
+  "files": [
+    {
+      "path": "real_reference/camera/reference_manifest.json",
+      "sha256": "afdeb8ae89e9a848f5c471ed3c8b214f7f85cd5881f0a81819b8510d84b99571",
+      "bytes": 185
+    },
+    {
+      "path": "real_reference/camera/run_000_sampled_reddit/discussion.json",
+      "sha256": "c7a9c05c9891b7429de1600a3f30d3c47585c6854bab9b536246c160b135b963",
+      "bytes": 18519
+    },
+    {
+      "path": "real_reference/camera/run_001_sampled_reddit/discussion.json",
+      "sha256": "208775844048c3281307828ce3e19e5d622cf13a622f2068608d6842188e3085",
+      "bytes": 64448
+    },
+    {
+      "path": "real_reference/camera/run_002_sampled_reddit/discussion.json",
+      "sha256": "af3515c1a24530e576c095e42150201fdcd0d3550e72357e39b7236056ec0ea4",
+      "bytes": 16722
+    },
+    {
+      "path": "real_reference/camera/run_003_sampled_reddit/discussion.json",
+      "sha256": "c18df21c5f7b074a4c2516b7f97e915a7ddf9eb6bb175ab423ea23c8e80c5a8e",
+      "bytes": 29738
+    },
+    {
+      "path": "real_reference/camera/run_004_sampled_reddit/discussion.json",
+      "sha256": "7aeb57098b1ffb320c84a3309ee9f13acc99a49fa64662b3ca357b9b875b7d24",
+      "bytes": 41484
+    },
+    {
+      "path": "real_reference/camera/run_005_sampled_reddit/discussion.json",
+      "sha256": "599d151f6a2675d986622fd055460a85c7eed400bcb7d5971903dba1f77cfd9f",
+      "bytes": 65467
+    },
+    {
+      "path": "real_reference/camera/run_006_sampled_reddit/discussion.json",
+      "sha256": "42eb2b280705157121115384b93fe660b4ae01e21486085bdf5481d1ad7c08a6",
+      "bytes": 21866
+    },
+    {
+      "path": "real_reference/camera/run_007_sampled_reddit/discussion.json",
+      "sha256": "91a96368dbb8aeaa8250fde47a1657d29f822afa770d2eb0c1e59f3752f08cfb",
+      "bytes": 16003
+    },
+    {
+      "path": "real_reference/camera/run_008_sampled_reddit/discussion.json",
+      "sha256": "2622bc9fb65c49ba84726556208dc912a1b8a780bfc420ba3a543dbc820c42b7",
+      "bytes": 83531
+    },
+    {
+      "path": "real_reference/camera/run_009_sampled_reddit/discussion.json",
+      "sha256": "23b255b0626ceeb07019ae65d801d1cb204d3d02da0eef12c8dc95150e1e7371",
+      "bytes": 78565
+    },
+    {
+      "path": "real_reference/camera/run_010_sampled_reddit/discussion.json",
+      "sha256": "cc615ffa60b9888e00301b0378b1b7061b1904da3144e5e551e7bda595f477bb",
+      "bytes": 34591
+    },
+    {
+      "path": "real_reference/camera/run_011_sampled_reddit/discussion.json",
+      "sha256": "3872e311d522ebcb68acea8f6189b21b6f0caabc50748508cddf82ed0ed328ed",
+      "bytes": 15668
+    },
+    {
+      "path": "real_reference/camera/run_012_sampled_reddit/discussion.json",
+      "sha256": "99339b71c1b1f795c8034cef0a47352f8ef0a1f85c4a24b2c55babcc9d1525d7",
+      "bytes": 17147
+    },
+    {
+      "path": "real_reference/camera/run_013_sampled_reddit/discussion.json",
+      "sha256": "44f1eb510f610038ddd6a9331db5da29fc83b941a8b323d30c6dc88ba32ea14c",
+      "bytes": 48368
+    },
+    {
+      "path": "real_reference/camera/run_014_sampled_reddit/discussion.json",
+      "sha256": "a34246dada24944d1abbda8047f006a217a13170a3c0ca6bcc19d548b7a54724",
+      "bytes": 18883
+    },
+    {
+      "path": "real_reference/camera/run_015_sampled_reddit/discussion.json",
+      "sha256": "eefa6cf603a45db1dabf9a75c8b8bc177a121928d74bb1deb7b3fb1f2414f0bc",
+      "bytes": 50881
+    },
+    {
+      "path": "real_reference/camera/run_016_sampled_reddit/discussion.json",
+      "sha256": "234ffc5108746199b3dbd0c9f4b0181603be9447206f63f7395a44004536d786",
+      "bytes": 28070
+    },
+    {
+      "path": "real_reference/camera/run_017_sampled_reddit/discussion.json",
+      "sha256": "0ded6d7f984e9591066303dee6c44b43ca16578a08423e27e851d439df09d719",
+      "bytes": 33063
+    },
+    {
+      "path": "real_reference/camera/run_018_sampled_reddit/discussion.json",
+      "sha256": "8940697b75d702df062e0eb11925d596bbdccb15f6b36590daa849d5d7d8397b",
+      "bytes": 23534
+    },
+    {
+      "path": "real_reference/camera/run_019_sampled_reddit/discussion.json",
+      "sha256": "8290a0a74ac93951971609ae07bb9791c35257d23778eac67d43f666cf35d983",
+      "bytes": 14883
+    },
+    {
+      "path": "real_reference/camera/run_020_sampled_reddit/discussion.json",
+      "sha256": "58f67c987556178301eb98d006b717fcd4b6665ef62789f22222f2b22647b220",
+      "bytes": 8714
+    },
+    {
+      "path": "real_reference/camera/run_021_sampled_reddit/discussion.json",
+      "sha256": "8af826bce9daef9f454565c8ccc0b529caafff69455b108452757117967ccabc",
+      "bytes": 40469
+    },
+    {
+      "path": "real_reference/camera/run_022_sampled_reddit/discussion.json",
+      "sha256": "f1e1344b8de2e94b832180ca9a78eed5461f1aab8dd94913cf41958656d61780",
+      "bytes": 28312
+    },
+    {
+      "path": "real_reference/camera/run_023_sampled_reddit/discussion.json",
+      "sha256": "6cadf56beeeb03784401de7c1de9180350caf9ef9288b998eb42ce2c601339fc",
+      "bytes": 27509
+    },
+    {
+      "path": "real_reference/camera/run_024_sampled_reddit/discussion.json",
+      "sha256": "da7dca4b319ea71927aa157ea468caec1dc98207719268c5fc3cc55f1517eee8",
+      "bytes": 15441
+    },
+    {
+      "path": "real_reference/camera/run_025_sampled_reddit/discussion.json",
+      "sha256": "2e192e73ab642c01117b58a5a0655b52efa2a460de91c76402dbd14ca2f3eea9",
+      "bytes": 23356
+    },
+    {
+      "path": "real_reference/camera/run_026_sampled_reddit/discussion.json",
+      "sha256": "a62f809f04dc8875362c68c245b8bcd926369909ee1678ef4c2e9de0ee7a8d5c",
+      "bytes": 14722
+    },
+    {
+      "path": "real_reference/camera/run_027_sampled_reddit/discussion.json",
+      "sha256": "19939948b3c793a4f52351de3a28540d5218391906afe95609dd4c69cf163486",
+      "bytes": 27910
+    },
+    {
+      "path": "real_reference/camera/run_028_sampled_reddit/discussion.json",
+      "sha256": "aa12b7086235902d437855a5a6f579ee8042ebf52815fe4ab852e965d69c1fe5",
+      "bytes": 12135
+    },
+    {
+      "path": "real_reference/camera/run_029_sampled_reddit/discussion.json",
+      "sha256": "e65b77cf98f07767182e9c712c9e503e37ff69f8c2d1e07887fd3343da6f32c8",
+      "bytes": 11342
+    },
+    {
+      "path": "real_reference/celebrity/reference_manifest.json",
+      "sha256": "7cfd491568845ae5acc38f9146946478f4a9918a91da3df5d9e81e5e0e4d8841",
+      "bytes": 191
+    },
+    {
+      "path": "real_reference/celebrity/run_000_sampled_reddit/discussion.json",
+      "sha256": "3120dacb6fe37b5c2a684b92e882eab75d81630d0b1ea7b122d125658343811e",
+      "bytes": 64997
+    },
+    {
+      "path": "real_reference/celebrity/run_001_sampled_reddit/discussion.json",
+      "sha256": "d1dcd9545371098fa97e6a287c814fafa70eed0d3660beea04d58ae59d07f182",
+      "bytes": 114312
+    },
+    {
+      "path": "real_reference/celebrity/run_002_sampled_reddit/discussion.json",
+      "sha256": "15230d2cafa61369ac3d9fb7b8f6ebbd2d2636764f72662386bb46f70abf6f48",
+      "bytes": 58341
+    },
+    {
+      "path": "real_reference/celebrity/run_003_sampled_reddit/discussion.json",
+      "sha256": "7c313cd4a4a85722c8920b9a49d8cb6d54e59d61e03108e3205c4057474ef645",
+      "bytes": 92895
+    },
+    {
+      "path": "real_reference/celebrity/run_004_sampled_reddit/discussion.json",
+      "sha256": "eb3ec629fd9407eca127e42547b83e053d2bff780c1abbaef6721c45ed1b4a2c",
+      "bytes": 88430
+    },
+    {
+      "path": "real_reference/celebrity/run_005_sampled_reddit/discussion.json",
+      "sha256": "aa7c334938ea417e0799ac31e50cb6a453237a8a5934f4f6a02fe691adb95ff8",
+      "bytes": 55603
+    },
+    {
+      "path": "real_reference/celebrity/run_006_sampled_reddit/discussion.json",
+      "sha256": "21524e61895ce242c6f96fdd6689b4c5f3e567986137e8b5b76b179ebd56875a",
+      "bytes": 13816
+    },
+    {
+      "path": "real_reference/celebrity/run_007_sampled_reddit/discussion.json",
+      "sha256": "b220c737d152d345967c74b6eefe16eff0746ad53338667e0d2cb2f0330a29d4",
+      "bytes": 163486
+    },
+    {
+      "path": "real_reference/celebrity/run_008_sampled_reddit/discussion.json",
+      "sha256": "d97e104bf011384a5d4a2e466c8c6d52bf31c8110cf68bbb79bae35cfd037a83",
+      "bytes": 7971
+    },
+    {
+      "path": "real_reference/celebrity/run_009_sampled_reddit/discussion.json",
+      "sha256": "7fca7d0630cc7cfcf1fa911e27865dda27fdd76ffda462f6199e0c0e856e4cd4",
+      "bytes": 146201
+    },
+    {
+      "path": "real_reference/celebrity/run_010_sampled_reddit/discussion.json",
+      "sha256": "6580c9bdc0d0da594788cae73f4b2f961cbc97392e5591cc330f468323c4033f",
+      "bytes": 78491
+    },
+    {
+      "path": "real_reference/celebrity/run_011_sampled_reddit/discussion.json",
+      "sha256": "3b3ae07ddbb636cfacb019303c45232ccf434f136e3411690055b1d8ff247e21",
+      "bytes": 105010
+    },
+    {
+      "path": "real_reference/celebrity/run_012_sampled_reddit/discussion.json",
+      "sha256": "f2206f86abf94e884ef4025377736a3bd88ecc3e521485de5fad88f54c1d230b",
+      "bytes": 113612
+    },
+    {
+      "path": "real_reference/celebrity/run_013_sampled_reddit/discussion.json",
+      "sha256": "0b0c4d642ac5e3369330187aa377c1bc2c677b58857d9550bf1f25fb300291ad",
+      "bytes": 114368
+    },
+    {
+      "path": "real_reference/celebrity/run_014_sampled_reddit/discussion.json",
+      "sha256": "fd38a79a9210d6cb1cdbf01ddf00422fb048a694fe2bb85d1b8e847fbac5771a",
+      "bytes": 22500
+    },
+    {
+      "path": "real_reference/celebrity/run_015_sampled_reddit/discussion.json",
+      "sha256": "c17a8e905c7317dc237b8ec5e200c025fdc1fd5c6da5db519937ab9cd2b465a5",
+      "bytes": 105596
+    },
+    {
+      "path": "real_reference/celebrity/run_016_sampled_reddit/discussion.json",
+      "sha256": "6b17446aefbe0414346520b49a7fbdd3d1a029a3a9f98fd25ce1429c69777796",
+      "bytes": 119330
+    },
+    {
+      "path": "real_reference/celebrity/run_017_sampled_reddit/discussion.json",
+      "sha256": "ccaaa54cac92e2914d9f471f1d83715e050bda1f159951c3eee154c4561c957a",
+      "bytes": 61788
+    },
+    {
+      "path": "real_reference/celebrity/run_018_sampled_reddit/discussion.json",
+      "sha256": "030dcebc102e5673fe72486465ffd2bee42b4e49232adabcf04beff3e62112ad",
+      "bytes": 25687
+    },
+    {
+      "path": "real_reference/celebrity/run_019_sampled_reddit/discussion.json",
+      "sha256": "f947b32c5f4732a306d429d9e3622aa89d3b687718b75046f560f28e7e805f0a",
+      "bytes": 56210
+    },
+    {
+      "path": "real_reference/celebrity/run_020_sampled_reddit/discussion.json",
+      "sha256": "3ff21221dcee7ba2022cf17b11472a2c448f7a018875b132abfbfb321d928a16",
+      "bytes": 22252
+    },
+    {
+      "path": "real_reference/celebrity/run_021_sampled_reddit/discussion.json",
+      "sha256": "917c29d3d752f8b5c3545bdf9f3c0ff3cb0cf41f499ad14f9ce0e70c7cab6ab4",
+      "bytes": 106130
+    },
+    {
+      "path": "real_reference/celebrity/run_022_sampled_reddit/discussion.json",
+      "sha256": "071482e42af947f8d4cf1e9da5df60f4975911d7fbe6dbbf73342f582a6eb622",
+      "bytes": 105951
+    },
+    {
+      "path": "real_reference/celebrity/run_023_sampled_reddit/discussion.json",
+      "sha256": "8766036f1a5a107f30f395f332ebde3b3d8aa22b3c599ec60e5c44f8a6636cbd",
+      "bytes": 33755
+    },
+    {
+      "path": "real_reference/celebrity/run_024_sampled_reddit/discussion.json",
+      "sha256": "7781820eccb2176fe9c6b2b7e300d584bf22d6d1442e01faf3fe4914ee21d706",
+      "bytes": 77871
+    },
+    {
+      "path": "real_reference/celebrity/run_025_sampled_reddit/discussion.json",
+      "sha256": "6e3017a2843b48abebde1edd19f50ff9181a1184d142081d8e25de54f5d8605d",
+      "bytes": 52508
+    },
+    {
+      "path": "real_reference/celebrity/run_026_sampled_reddit/discussion.json",
+      "sha256": "39522691bcf407dd544cb8d38301908c27925aa57b504d8e8bd9d3c95fc5f064",
+      "bytes": 18042
+    },
+    {
+      "path": "real_reference/celebrity/run_027_sampled_reddit/discussion.json",
+      "sha256": "582881dbeaa4e9a4f1c406f17db083b673959ee69e7f47eaa883460df8526256",
+      "bytes": 49059
+    },
+    {
+      "path": "real_reference/celebrity/run_028_sampled_reddit/discussion.json",
+      "sha256": "20721f9341d86c7751eacc7bceda2be688c28d3a5bb0ee6a62343897c030c77b",
+      "bytes": 40608
+    },
+    {
+      "path": "real_reference/celebrity/run_029_sampled_reddit/discussion.json",
+      "sha256": "bc446553c2ec7d2db41c81a8b8a00419db76b7b5800304db71e5df5427217895",
+      "bytes": 10018
+    },
+    {
+      "path": "real_reference/cellphone/reference_manifest.json",
+      "sha256": "d3f681724830d7566ed42658feb31e6587f2f79c136ad98cadc5c2354ac66140",
+      "bytes": 191
+    },
+    {
+      "path": "real_reference/cellphone/run_000_sampled_reddit/discussion.json",
+      "sha256": "b054417ac14453ecd004a3f34fb2d7f2630b3f8e4180cf0499cafbed79548791",
+      "bytes": 47645
+    },
+    {
+      "path": "real_reference/cellphone/run_001_sampled_reddit/discussion.json",
+      "sha256": "5620e7168aa776e662a4c5378615c7f395b67890daa72e6c7283df53cfd79e35",
+      "bytes": 53495
+    },
+    {
+      "path": "real_reference/cellphone/run_002_sampled_reddit/discussion.json",
+      "sha256": "216538043678a16ac7a7d99d30762c1206adfa6b28e3dcc4870aeec68fdca6ae",
+      "bytes": 16250
+    },
+    {
+      "path": "real_reference/cellphone/run_003_sampled_reddit/discussion.json",
+      "sha256": "68c396782320399affdb77e180f3db0ca2513beaa36c3445f266c3ea3180778a",
+      "bytes": 51225
+    },
+    {
+      "path": "real_reference/cellphone/run_004_sampled_reddit/discussion.json",
+      "sha256": "db5727389bddd78c29eb78277e9a3ffd2a192f841ed5ff128c1a9ab1c6378e4f",
+      "bytes": 20639
+    },
+    {
+      "path": "real_reference/cellphone/run_005_sampled_reddit/discussion.json",
+      "sha256": "2a28b31206cbd4d5a1ad5c6467a23d593bd135c30259fb4c249ceb067a83f96d",
+      "bytes": 61423
+    },
+    {
+      "path": "real_reference/cellphone/run_006_sampled_reddit/discussion.json",
+      "sha256": "acc949e3625ee26295ffc4fc1bc232ccee6a8aa95833cbf482a0dcd4b8e64aa5",
+      "bytes": 80068
+    },
+    {
+      "path": "real_reference/cellphone/run_007_sampled_reddit/discussion.json",
+      "sha256": "1ac341927e223bf5173017d6c49937c1c66475a7c820904dd3cd87eccb2ba493",
+      "bytes": 33952
+    },
+    {
+      "path": "real_reference/cellphone/run_008_sampled_reddit/discussion.json",
+      "sha256": "9690bda149313e057f5fa26a2d5ef1db626182394357fe0dd151dca5ca2795de",
+      "bytes": 24773
+    },
+    {
+      "path": "real_reference/cellphone/run_009_sampled_reddit/discussion.json",
+      "sha256": "b4688a251b929680222ca575f946660b1978893dfca0cb0dcf686043f37dc214",
+      "bytes": 26609
+    },
+    {
+      "path": "real_reference/cellphone/run_010_sampled_reddit/discussion.json",
+      "sha256": "fe8d15b0e542f8ddcf3f76b22af10b318c7ecb38a9bf0ab7e6e45efafd311644",
+      "bytes": 10869
+    },
+    {
+      "path": "real_reference/cellphone/run_011_sampled_reddit/discussion.json",
+      "sha256": "de803dfa79a164307feec9213efabfd594c94883605517758507c261e31a59de",
+      "bytes": 29123
+    },
+    {
+      "path": "real_reference/cellphone/run_012_sampled_reddit/discussion.json",
+      "sha256": "5d3bea7b6e6934e76223c5648fe7159f21f0ccff31cec01e4dac64e6dc936a67",
+      "bytes": 25833
+    },
+    {
+      "path": "real_reference/cellphone/run_013_sampled_reddit/discussion.json",
+      "sha256": "f4c91b14be8f467481c1d49ecbfff89ea7558a65951d9cb5e0fce1d9b4c54dc1",
+      "bytes": 19461
+    },
+    {
+      "path": "real_reference/cellphone/run_014_sampled_reddit/discussion.json",
+      "sha256": "a786662b527a93bb5b409d5aad71c77395623a1466d79cdf0f988b86741ae2d3",
+      "bytes": 10086
+    },
+    {
+      "path": "real_reference/cellphone/run_015_sampled_reddit/discussion.json",
+      "sha256": "ff70a3561ef77909a6b0105d6df85c9c4ce34a6c670bae3b9ea96789610be02c",
+      "bytes": 12359
+    },
+    {
+      "path": "real_reference/cellphone/run_016_sampled_reddit/discussion.json",
+      "sha256": "e2a50304797d3e0eaf7689763b5529c9ed3b144dbd0488a2ac1522e19ebbfb5f",
+      "bytes": 40426
+    },
+    {
+      "path": "real_reference/cellphone/run_017_sampled_reddit/discussion.json",
+      "sha256": "b915ca7cbf869d5cf67c49c916b6e63bc819ec6c01693e6580c42f7eced93b25",
+      "bytes": 41212
+    },
+    {
+      "path": "real_reference/cellphone/run_018_sampled_reddit/discussion.json",
+      "sha256": "7d89b3d457e0d5bcf7192b04f9272d2b61f5cca4e5d466d5655c7885c3e9cd67",
+      "bytes": 29098
+    },
+    {
+      "path": "real_reference/cellphone/run_019_sampled_reddit/discussion.json",
+      "sha256": "3c10384a6550fd035ccae7b711628879bcc565262132c2908d5b885f19ac86be",
+      "bytes": 14469
+    },
+    {
+      "path": "real_reference/cellphone/run_020_sampled_reddit/discussion.json",
+      "sha256": "360b2a06f6b5f7d9e5287230959014b8df6080c6b25a5095355ea9290ddf23ba",
+      "bytes": 32753
+    },
+    {
+      "path": "real_reference/cellphone/run_021_sampled_reddit/discussion.json",
+      "sha256": "ad5d8ae0c6a49ae4e9974e2fddaae1863b876c3e1127c62a57fa74b120e256f0",
+      "bytes": 33100
+    },
+    {
+      "path": "real_reference/cellphone/run_022_sampled_reddit/discussion.json",
+      "sha256": "945d6ae7f3a4bca533f2c22431fa0893011d1a98d6240244072d01cb801d6558",
+      "bytes": 11364
+    },
+    {
+      "path": "real_reference/cellphone/run_023_sampled_reddit/discussion.json",
+      "sha256": "90d80db814cde6b2901af70c64e103049d72cac6d16ef67d67a703ae8e1145a7",
+      "bytes": 30459
+    },
+    {
+      "path": "real_reference/cellphone/run_024_sampled_reddit/discussion.json",
+      "sha256": "3b72c0fe69068de860605392c3adc1a7a2f9ba16a259321394b5e76c5509bdc6",
+      "bytes": 119609
+    },
+    {
+      "path": "real_reference/cellphone/run_025_sampled_reddit/discussion.json",
+      "sha256": "214b56bb4bd0c5c1b8515f61883b62ac52cd469908f94bca6d69f2325940bee8",
+      "bytes": 17167
+    },
+    {
+      "path": "real_reference/cellphone/run_026_sampled_reddit/discussion.json",
+      "sha256": "c323e3331be593e858dadd8aa64b3642fc74b08c983347c2c2a7da70f9a1c6c7",
+      "bytes": 14510
+    },
+    {
+      "path": "real_reference/cellphone/run_027_sampled_reddit/discussion.json",
+      "sha256": "bdc59d475100f4eecad456d9e817859af137b0d3aaf237911db317e018936619",
+      "bytes": 10616
+    },
+    {
+      "path": "real_reference/cellphone/run_028_sampled_reddit/discussion.json",
+      "sha256": "9fee5a9f3defdb14ae11e8305defeeb388450b727fb7f3bccd6d1652ae783d02",
+      "bytes": 22537
+    },
+    {
+      "path": "real_reference/cellphone/run_029_sampled_reddit/discussion.json",
+      "sha256": "18ed043391835c4c2e725e1304d32e6b0cfdedad544fb06308165a812f5cff0b",
+      "bytes": 17201
+    },
+    {
+      "path": "real_reference/game/reference_manifest.json",
+      "sha256": "d39693ae6872ee5a09d4406f484cb79f7234d87f9662d38dc6f43033f4cd426b",
+      "bytes": 181
+    },
+    {
+      "path": "real_reference/game/run_000_sampled_reddit/discussion.json",
+      "sha256": "3567138a2bdae00124203edad053c02aa23ff79e2fa2a88119e72b7934ac34d5",
+      "bytes": 119452
+    },
+    {
+      "path": "real_reference/game/run_001_sampled_reddit/discussion.json",
+      "sha256": "36a621542f18285b235f48d637fcf7aaec617936cc8e17d8697b11aa256a1be7",
+      "bytes": 155585
+    },
+    {
+      "path": "real_reference/game/run_002_sampled_reddit/discussion.json",
+      "sha256": "64b20e2efdaa21ff03fe912b495a20db53470875ad2e072fe66417a07f85168f",
+      "bytes": 179115
+    },
+    {
+      "path": "real_reference/game/run_003_sampled_reddit/discussion.json",
+      "sha256": "40f8c5d6466a50fff2ee7eda0ecd151fb0cfb8b33494913cf8596fe7b5ba0ec9",
+      "bytes": 31932
+    },
+    {
+      "path": "real_reference/game/run_004_sampled_reddit/discussion.json",
+      "sha256": "7e191b07530d29b4fb83a691e74b792d4c8c513a9064f04e087c8f471a7ee983",
+      "bytes": 126373
+    },
+    {
+      "path": "real_reference/game/run_005_sampled_reddit/discussion.json",
+      "sha256": "6178f0cac17173e2be5952d57c7dd23010f430029677f98d583d38f26b0ade75",
+      "bytes": 37883
+    },
+    {
+      "path": "real_reference/game/run_006_sampled_reddit/discussion.json",
+      "sha256": "428bbb06df1ccb78d7ec13c30587e2ae996a619dd38a0aca1e8ae3ddefdc3a5c",
+      "bytes": 127714
+    },
+    {
+      "path": "real_reference/game/run_007_sampled_reddit/discussion.json",
+      "sha256": "829e95d9e74ecbeedfcfba865688f6f3b604578c7a0e69e78ade709873c14861",
+      "bytes": 176218
+    },
+    {
+      "path": "real_reference/game/run_008_sampled_reddit/discussion.json",
+      "sha256": "de5b29916517c038bb499573b43b9d4c6d14e7b1430b5b8b6fd8879ebeaeed5b",
+      "bytes": 193454
+    },
+    {
+      "path": "real_reference/game/run_009_sampled_reddit/discussion.json",
+      "sha256": "8d1434b1ba9f8ebd73c8b367a156b1863ad15d64f025d59061b662714ca0557e",
+      "bytes": 113644
+    },
+    {
+      "path": "real_reference/game/run_010_sampled_reddit/discussion.json",
+      "sha256": "7468801a392f65a35ccf5f0e728d41edc5487562fd3dbe7509d60440afb89aa1",
+      "bytes": 122425
+    },
+    {
+      "path": "real_reference/game/run_011_sampled_reddit/discussion.json",
+      "sha256": "e43fc913b4c166a591c95ee0296e6a87c5e915d5385a0051c1b6c2a08949debf",
+      "bytes": 13978
+    },
+    {
+      "path": "real_reference/game/run_012_sampled_reddit/discussion.json",
+      "sha256": "b6fe30dc952247054952e3ef4a03c3b1eeddcd88212d77770e96b508bbe41c78",
+      "bytes": 90974
+    },
+    {
+      "path": "real_reference/game/run_013_sampled_reddit/discussion.json",
+      "sha256": "7de23a0b703770f57062c1a5843e5d40cb5a10076a7895784b566aa0705f3fcc",
+      "bytes": 17675
+    },
+    {
+      "path": "real_reference/game/run_014_sampled_reddit/discussion.json",
+      "sha256": "5fc8d490d232df199656e5930212b4a8ea1bd1d53996bef48fd98bc61d1e785f",
+      "bytes": 43716
+    },
+    {
+      "path": "real_reference/game/run_015_sampled_reddit/discussion.json",
+      "sha256": "870c7f4cf05369c62061cea1ef0fabec7648be70a812eb9c294d53e88ed72a10",
+      "bytes": 144399
+    },
+    {
+      "path": "real_reference/game/run_016_sampled_reddit/discussion.json",
+      "sha256": "0fca47fde1a1ba71821065a9620f64d9a88559d05ac3ea05bb3184db65d4489f",
+      "bytes": 42788
+    },
+    {
+      "path": "real_reference/game/run_017_sampled_reddit/discussion.json",
+      "sha256": "bf77a0ee528db49352de5fc1b5895435c96a3b03c3bf2c867fae31f2fe53fef3",
+      "bytes": 84846
+    },
+    {
+      "path": "real_reference/game/run_018_sampled_reddit/discussion.json",
+      "sha256": "cbb5cb10f284d05e57c0e1757818ee554044ffc380ffc5a383d9343dedfaf67f",
+      "bytes": 13942
+    },
+    {
+      "path": "real_reference/game/run_019_sampled_reddit/discussion.json",
+      "sha256": "13a3371b06c1115b97a6a29190f28bf38787650ce26fa6e6cedb02322cd46553",
+      "bytes": 13250
+    },
+    {
+      "path": "real_reference/game/run_020_sampled_reddit/discussion.json",
+      "sha256": "bec00fd39723bf3be5ce0a2e2ea85909aa4e3d4a0d80a912e1c8bc7608e7fa31",
+      "bytes": 66561
+    },
+    {
+      "path": "real_reference/game/run_021_sampled_reddit/discussion.json",
+      "sha256": "aaeaffbd148645c9cfa172b16736e36e0f0a75bd28136228222dc68fdc9abf9f",
+      "bytes": 71003
+    },
+    {
+      "path": "real_reference/game/run_022_sampled_reddit/discussion.json",
+      "sha256": "d97d1d4323bdd32332024573a8646fa5d89da54cdf5a6aba3663b7b35276cb62",
+      "bytes": 13232
+    },
+    {
+      "path": "real_reference/game/run_023_sampled_reddit/discussion.json",
+      "sha256": "3cda3b247d8fbafdc1b4a6ac9aad40eac9d8eea5fe6dc558f7e349333e9fe8d7",
+      "bytes": 9804
+    },
+    {
+      "path": "real_reference/game/run_024_sampled_reddit/discussion.json",
+      "sha256": "bf5a10c4b583df6ff0e3265ca35982b88222023702e0bbb17480c55d4af80ad0",
+      "bytes": 14281
+    },
+    {
+      "path": "real_reference/game/run_025_sampled_reddit/discussion.json",
+      "sha256": "072c897b19e69940dbe24736c02ef3f9b19d5d727ec7d90032976bf8aa384105",
+      "bytes": 30875
+    },
+    {
+      "path": "real_reference/game/run_026_sampled_reddit/discussion.json",
+      "sha256": "e627e58866b14fefec20bf6a08c84af595d7ed48bc5939cdbc8d372782ec5e4a",
+      "bytes": 90769
+    },
+    {
+      "path": "real_reference/game/run_027_sampled_reddit/discussion.json",
+      "sha256": "a452368e142645f5ceddebc475f2e184eb86c4ef9c511f878eb438aa8ae582b6",
+      "bytes": 94952
+    },
+    {
+      "path": "real_reference/game/run_028_sampled_reddit/discussion.json",
+      "sha256": "01641fc2ff423e336eecb8b47f5910493efeacab5b4141ec3d8d279cb44a0989",
+      "bytes": 12013
+    },
+    {
+      "path": "real_reference/game/run_029_sampled_reddit/discussion.json",
+      "sha256": "a0bf55bf8e1551d90d7f8ace031684ef7a88dc3fbe272de021a29aff81e69251",
+      "bytes": 10625
+    },
+    {
+      "path": "real_reference/headphones/reference_manifest.json",
+      "sha256": "af9f68a86c17390259f13a21a10f5acb662661a6a95547fa19789b18c58f138e",
+      "bytes": 193
+    },
+    {
+      "path": "real_reference/headphones/run_000_sampled_reddit/discussion.json",
+      "sha256": "f238447c997f99ceac921ef766b12861a0ea0b3f51ab906b159af3e07ec40ef4",
+      "bytes": 31421
+    },
+    {
+      "path": "real_reference/headphones/run_001_sampled_reddit/discussion.json",
+      "sha256": "de91d231181e15aa618fafd0a6cd467b314caff9d5b6ea316443a1d9ffaac02c",
+      "bytes": 14669
+    },
+    {
+      "path": "real_reference/headphones/run_002_sampled_reddit/discussion.json",
+      "sha256": "4dbefda6999843c49586b50b1d781c42d7143c1899156fe8dcddfd7a8b37e774",
+      "bytes": 82837
+    },
+    {
+      "path": "real_reference/headphones/run_003_sampled_reddit/discussion.json",
+      "sha256": "0b44c3a49fd4d2d9110591b696cfe63e19f67028eccfa2eb43e54244d138279c",
+      "bytes": 83274
+    },
+    {
+      "path": "real_reference/headphones/run_004_sampled_reddit/discussion.json",
+      "sha256": "51c2589a74f84f21fa48a33db890dc97ac43f1b80cbd2c246ba421b2da2eb339",
+      "bytes": 12667
+    },
+    {
+      "path": "real_reference/headphones/run_005_sampled_reddit/discussion.json",
+      "sha256": "01214cf38bf4190a18908f2a07e574c0b11f07335aa89160c45244207c574457",
+      "bytes": 17874
+    },
+    {
+      "path": "real_reference/headphones/run_006_sampled_reddit/discussion.json",
+      "sha256": "79673f082f6bdc576cd81b40cb1bcea2a5544ddf6c77766bd0d59f5cd814acdd",
+      "bytes": 35877
+    },
+    {
+      "path": "real_reference/headphones/run_007_sampled_reddit/discussion.json",
+      "sha256": "51efed7e01fa06c1601e912e8117ef2efc914be317d4641786f123542c64dd80",
+      "bytes": 37263
+    },
+    {
+      "path": "real_reference/headphones/run_008_sampled_reddit/discussion.json",
+      "sha256": "dce996dda298a4ba01e5fec2068fb62d7f3edcc5ae34cb1432315317b0bd0ee0",
+      "bytes": 34588
+    },
+    {
+      "path": "real_reference/headphones/run_009_sampled_reddit/discussion.json",
+      "sha256": "0ba72c7b32629ca3722454e8d511172abc198306ddbbb4bec051a6b10891eaa6",
+      "bytes": 20914
+    },
+    {
+      "path": "real_reference/headphones/run_010_sampled_reddit/discussion.json",
+      "sha256": "bb44167d2b14c38a20313226d52af2abe58a6071a85c6e0809b0fda0aaa8bf04",
+      "bytes": 34078
+    },
+    {
+      "path": "real_reference/headphones/run_011_sampled_reddit/discussion.json",
+      "sha256": "bd4a613c92cf8f753c6227c9507dc6c7a0475139ea7ba1bfff59592612828da7",
+      "bytes": 40843
+    },
+    {
+      "path": "real_reference/headphones/run_012_sampled_reddit/discussion.json",
+      "sha256": "afe3f3363a53591d7b8d8c4908448a02a493aea9dfb20d84e772d8a87355a72f",
+      "bytes": 32355
+    },
+    {
+      "path": "real_reference/headphones/run_013_sampled_reddit/discussion.json",
+      "sha256": "1817ae0a1a573a0868b2e19abe4bdc2a1d2b2320b297e82e6bb95ea32b8bcb15",
+      "bytes": 27452
+    },
+    {
+      "path": "real_reference/headphones/run_014_sampled_reddit/discussion.json",
+      "sha256": "ea27d8089e5d807a461a38e70b905ff89bfbc5355d9b41d2e3dcbf620fb03cbc",
+      "bytes": 106396
+    },
+    {
+      "path": "real_reference/headphones/run_015_sampled_reddit/discussion.json",
+      "sha256": "a4db9a35bbd18151c25d9a31c040b72c5c528cf8cc99fd14f197ddaaa61be96d",
+      "bytes": 42741
+    },
+    {
+      "path": "real_reference/headphones/run_016_sampled_reddit/discussion.json",
+      "sha256": "9f282cf4126c68c32b03dd237f59f39cf630fbd45865e0c5fd49acc6788c0d59",
+      "bytes": 36443
+    },
+    {
+      "path": "real_reference/headphones/run_017_sampled_reddit/discussion.json",
+      "sha256": "eccc152cdc7d77798bb86a92e7f0bfb90a7358641c1578277e7201c6cb2bba5c",
+      "bytes": 19441
+    },
+    {
+      "path": "real_reference/headphones/run_018_sampled_reddit/discussion.json",
+      "sha256": "f128a088f0135fe6169fb48db2bc54f531adbfc22024d1c3a63f00113e248f46",
+      "bytes": 13131
+    },
+    {
+      "path": "real_reference/headphones/run_019_sampled_reddit/discussion.json",
+      "sha256": "d421cfd6884ff75650ef0ea0964ea1b5b2e600db8b46cf31ffffe2e769f17a15",
+      "bytes": 34496
+    },
+    {
+      "path": "real_reference/headphones/run_020_sampled_reddit/discussion.json",
+      "sha256": "122cc284c0bf917fb49ada248e8e0f21c6b222097c06c157507acbab2aa66787",
+      "bytes": 98734
+    },
+    {
+      "path": "real_reference/headphones/run_021_sampled_reddit/discussion.json",
+      "sha256": "703c3ba2457fc5165e8b4ef23d62f5152a8fa1e8f0422df0a4db28f911cf272e",
+      "bytes": 26100
+    },
+    {
+      "path": "real_reference/headphones/run_022_sampled_reddit/discussion.json",
+      "sha256": "2e66c2dd7ce1a7465816f1fea5a66bec34b595f6e396fcdcfeeae97b3cc8e5bb",
+      "bytes": 18767
+    },
+    {
+      "path": "real_reference/headphones/run_023_sampled_reddit/discussion.json",
+      "sha256": "5f211a69b4924882b5997ea3a4a4ab4a2c69e5b5ab411b08dbe3600b5ca5bbdb",
+      "bytes": 33583
+    },
+    {
+      "path": "real_reference/headphones/run_024_sampled_reddit/discussion.json",
+      "sha256": "657d979972edc01d3ed71596a503e123ad819e78d7d9e0081128c7d3866c1b0a",
+      "bytes": 15085
+    },
+    {
+      "path": "real_reference/headphones/run_025_sampled_reddit/discussion.json",
+      "sha256": "429b1da146fedd86116360b6e4d1deb887e5e846182c4a456c42976103d3d3d7",
+      "bytes": 51373
+    },
+    {
+      "path": "real_reference/headphones/run_026_sampled_reddit/discussion.json",
+      "sha256": "bcb5918cb5431c265015880afca011e7f31128d0583f170102b7765c2c044e7d",
+      "bytes": 21342
+    },
+    {
+      "path": "real_reference/headphones/run_027_sampled_reddit/discussion.json",
+      "sha256": "e69fa69cc6fb75388d020349b6a19f0197db462885ceb83d9a2be3176cb757e7",
+      "bytes": 91379
+    },
+    {
+      "path": "real_reference/headphones/run_028_sampled_reddit/discussion.json",
+      "sha256": "3d6cf890ef33206273b3dfc766156095b2b8273a02b12b93ced30a170acf24ee",
+      "bytes": 22631
+    },
+    {
+      "path": "real_reference/headphones/run_029_sampled_reddit/discussion.json",
+      "sha256": "bc6b3c847924bebfa6ad3331ec5acb8e2422202ade23cd644587c23792096322",
+      "bytes": 19227
+    },
+    {
+      "path": "real_reference/health_issue/reference_manifest.json",
+      "sha256": "6cbfc7bd8467e6ca290431352ef959f5fdbea2897dd8800a41078d652cc31a9e",
+      "bytes": 196
+    },
+    {
+      "path": "real_reference/health_issue/run_000_sampled_reddit/discussion.json",
+      "sha256": "631afe25f3478c4c3187e42d4a4b72e867507278fdba1e541f98b2bb8f65090c",
+      "bytes": 16017
+    },
+    {
+      "path": "real_reference/health_issue/run_001_sampled_reddit/discussion.json",
+      "sha256": "761eb4054688e8fb46fd9145fa1ca0f7174bd91541c298c6e12745c7531cde43",
+      "bytes": 15433
+    },
+    {
+      "path": "real_reference/health_issue/run_002_sampled_reddit/discussion.json",
+      "sha256": "fabe65800e213711e4043070efb2a7a0dcafaf19fa48c1d8df9fe1596062aad3",
+      "bytes": 17990
+    },
+    {
+      "path": "real_reference/health_issue/run_003_sampled_reddit/discussion.json",
+      "sha256": "53f14a5a14eb120acacabfad514f4e7f7758995e6271373daadd78170aa79cd5",
+      "bytes": 48385
+    },
+    {
+      "path": "real_reference/health_issue/run_004_sampled_reddit/discussion.json",
+      "sha256": "3486bf7726f5c6f93e0049475a86b0766ce8bc2f7648f16071b648cc5de09755",
+      "bytes": 18317
+    },
+    {
+      "path": "real_reference/health_issue/run_005_sampled_reddit/discussion.json",
+      "sha256": "8784ed72d9b21ed0a1b539b7a51e5c8918fc222882f02881de1fd96cfdeedc73",
+      "bytes": 14941
+    },
+    {
+      "path": "real_reference/health_issue/run_006_sampled_reddit/discussion.json",
+      "sha256": "142f41a3b355bcf438a5f2157ae2949265e6ebb3b3be7f19c80ba264b286e1a0",
+      "bytes": 51090
+    },
+    {
+      "path": "real_reference/health_issue/run_007_sampled_reddit/discussion.json",
+      "sha256": "5f34dcfaf79fcd181be96cfe6f97138eadaf687323a1158463055988d1a45260",
+      "bytes": 31957
+    },
+    {
+      "path": "real_reference/health_issue/run_008_sampled_reddit/discussion.json",
+      "sha256": "bcef0df490fc2c59990532783099b473dbcf948fa9890ae11d1dda5ec109a5d1",
+      "bytes": 47968
+    },
+    {
+      "path": "real_reference/health_issue/run_009_sampled_reddit/discussion.json",
+      "sha256": "9f82b39c7cfc041191fdecf210062e3c80a7a68eabc26319c47625d7c67ae7b8",
+      "bytes": 20003
+    },
+    {
+      "path": "real_reference/health_issue/run_010_sampled_reddit/discussion.json",
+      "sha256": "d14da757c3558db95aa5c2d6494e6d4a4263fc6e0f3b48ef305012abcd7661d7",
+      "bytes": 21244
+    },
+    {
+      "path": "real_reference/health_issue/run_011_sampled_reddit/discussion.json",
+      "sha256": "883c44b10eb8c941c6285622dd793640a169d70bf2287d82f089116a6934dc93",
+      "bytes": 14864
+    },
+    {
+      "path": "real_reference/health_issue/run_012_sampled_reddit/discussion.json",
+      "sha256": "2dd259df8a46f31f3894f5928a221a71c61584c018ab500fb0480cb169b21c7d",
+      "bytes": 15609
+    },
+    {
+      "path": "real_reference/health_issue/run_013_sampled_reddit/discussion.json",
+      "sha256": "5f1a63a1ebe6a4e71a7ce4598d73f82a3342b342a962d7f6e28f6d6c114a53a7",
+      "bytes": 29907
+    },
+    {
+      "path": "real_reference/health_issue/run_014_sampled_reddit/discussion.json",
+      "sha256": "5e11fa35ed3a3aea1ae2689702c841e071dadf1d42a8bdf2f662cb596e259774",
+      "bytes": 18914
+    },
+    {
+      "path": "real_reference/health_issue/run_015_sampled_reddit/discussion.json",
+      "sha256": "94d30be8389e139f0730106e85f41ef93ce8f4cb5a9d97a006d08067e26b1cee",
+      "bytes": 20490
+    },
+    {
+      "path": "real_reference/health_issue/run_016_sampled_reddit/discussion.json",
+      "sha256": "16d010e45b2dd27e77be148ced054c79def15c7ddaa44921151265038aca648c",
+      "bytes": 60757
+    },
+    {
+      "path": "real_reference/health_issue/run_017_sampled_reddit/discussion.json",
+      "sha256": "da9566fdf3ccf1aa3a2dcca96e5473d11176c1b8f974b9e714b8cee1a2a55ec7",
+      "bytes": 22714
+    },
+    {
+      "path": "real_reference/health_issue/run_018_sampled_reddit/discussion.json",
+      "sha256": "a0f069315fb7a12214c91611aa4095a5fcdc9da9f679b2163afc5c87f16a6b5a",
+      "bytes": 14302
+    },
+    {
+      "path": "real_reference/health_issue/run_019_sampled_reddit/discussion.json",
+      "sha256": "dd568f51f1f11788822883f0f1862f3986bcddd67487a4a5a8f7fb3e3a21e4cf",
+      "bytes": 19827
+    },
+    {
+      "path": "real_reference/health_issue/run_020_sampled_reddit/discussion.json",
+      "sha256": "aed29898c46893d7fb6a87c7527d70d4d16713e6d4b2bec92a57f9b1f8ab5a20",
+      "bytes": 17393
+    },
+    {
+      "path": "real_reference/health_issue/run_021_sampled_reddit/discussion.json",
+      "sha256": "e8c9aca7c871f5203015ff273f46f1afc40489f928a6962c77821a277c087b98",
+      "bytes": 16357
+    },
+    {
+      "path": "real_reference/health_issue/run_022_sampled_reddit/discussion.json",
+      "sha256": "bd4526553d44d987edc8041104bb7dd4a1f4b905567dc295b58e756abedc8d17",
+      "bytes": 17707
+    },
+    {
+      "path": "real_reference/health_issue/run_023_sampled_reddit/discussion.json",
+      "sha256": "5ec1d549dadee348030752e4ca69d7e5ae783ba1583f58c9516be476148cf182",
+      "bytes": 19331
+    },
+    {
+      "path": "real_reference/health_issue/run_024_sampled_reddit/discussion.json",
+      "sha256": "bd09696af1183ea02d741de5a7bccd5768df03c467e1d58ae47bec6abcaa9f9a",
+      "bytes": 15615
+    },
+    {
+      "path": "real_reference/health_issue/run_025_sampled_reddit/discussion.json",
+      "sha256": "17ddf3fba322c8ee9c6e7a64600e80c62cd04c1cd7d38ad6207290cc0cd29794",
+      "bytes": 29448
+    },
+    {
+      "path": "real_reference/health_issue/run_026_sampled_reddit/discussion.json",
+      "sha256": "1655cd406b2f10022d732ee5aab99c7d09c5c8295ae20232c8ae81c9a902dace",
+      "bytes": 21848
+    },
+    {
+      "path": "real_reference/health_issue/run_027_sampled_reddit/discussion.json",
+      "sha256": "98b73849cda122bba9a3571180a8105d75789a778e4a15530799e3a9efd12bb2",
+      "bytes": 22521
+    },
+    {
+      "path": "real_reference/health_issue/run_028_sampled_reddit/discussion.json",
+      "sha256": "97472516f560dbb4e2317a61eee93b6fde6010b988061cdf8ffe194fb2f4f0ff",
+      "bytes": 13521
+    },
+    {
+      "path": "real_reference/health_issue/run_029_sampled_reddit/discussion.json",
+      "sha256": "7246ea65fb63f48d3183eec7d3a887bab8b63993e5f2327fbb57cbf07e1686fd",
+      "bytes": 19045
+    },
+    {
+      "path": "real_reference/laptop/reference_manifest.json",
+      "sha256": "0a2eacffad9da94975771ec3663b1023280b311188264391df5cc56e646bb5e6",
+      "bytes": 184
+    },
+    {
+      "path": "real_reference/laptop/run_000_sampled_reddit/discussion.json",
+      "sha256": "5378e50104d0afa053270b6b51a30df129861c0c147226137ad93dbd367b99d4",
+      "bytes": 60344
+    },
+    {
+      "path": "real_reference/laptop/run_001_sampled_reddit/discussion.json",
+      "sha256": "e10ed9ef56abacccaf12e6be3d6f0fd7317f53f515ba0acb5b8680c543073896",
+      "bytes": 16301
+    },
+    {
+      "path": "real_reference/laptop/run_002_sampled_reddit/discussion.json",
+      "sha256": "15b9b1fcd53787fb11ad676c9e5466fec6ed08cb7ccec96adc917a87ff16e670",
+      "bytes": 21541
+    },
+    {
+      "path": "real_reference/laptop/run_003_sampled_reddit/discussion.json",
+      "sha256": "07df79062752bcaff82dbe189a346b3745ef0d2c27637f2dd5436a6a91a96fa0",
+      "bytes": 40869
+    },
+    {
+      "path": "real_reference/laptop/run_004_sampled_reddit/discussion.json",
+      "sha256": "a28fe1b07195cfc58654a1e6278f5b45ccd0c3b1e0e3d3fb7713f39b15b7aa0f",
+      "bytes": 32970
+    },
+    {
+      "path": "real_reference/laptop/run_005_sampled_reddit/discussion.json",
+      "sha256": "e73c3d1ef2fb863922cf79dc1be42949b04a79e276ead12993f0aa226bf3c271",
+      "bytes": 28111
+    },
+    {
+      "path": "real_reference/laptop/run_006_sampled_reddit/discussion.json",
+      "sha256": "cd509e6932b47b10fc21734d6e298c0feabb948994f26bfa62f99b353535ccb8",
+      "bytes": 14724
+    },
+    {
+      "path": "real_reference/laptop/run_007_sampled_reddit/discussion.json",
+      "sha256": "c92d13f952f0b3af2c010c03331dbe72e70eccc3f7e32d76bb3bd82a337e4339",
+      "bytes": 28262
+    },
+    {
+      "path": "real_reference/laptop/run_008_sampled_reddit/discussion.json",
+      "sha256": "dbf5a99e998bdecf98da94d0dd43a17d0e1969515b3f6a0d261d8ddf34dfdf52",
+      "bytes": 16604
+    },
+    {
+      "path": "real_reference/laptop/run_009_sampled_reddit/discussion.json",
+      "sha256": "bc394e7e05ddaa850a93eeba55fa279e3372a1a4e1cb6f251de3d98216a4b56d",
+      "bytes": 18125
+    },
+    {
+      "path": "real_reference/laptop/run_010_sampled_reddit/discussion.json",
+      "sha256": "57e9ffbeedd38bf451d037c659730674cdb33ea8f187017e4960164ff39e2c39",
+      "bytes": 21975
+    },
+    {
+      "path": "real_reference/laptop/run_011_sampled_reddit/discussion.json",
+      "sha256": "dd613d2439a2365b4ca9482101cb3b477f3164a4fc8dc087bba1f7c8403b0019",
+      "bytes": 18422
+    },
+    {
+      "path": "real_reference/laptop/run_012_sampled_reddit/discussion.json",
+      "sha256": "1013015e0bd03e4cbf3c17a98f9f2d520e8a843f0f1aa44c51939558279c9cf5",
+      "bytes": 17376
+    },
+    {
+      "path": "real_reference/laptop/run_013_sampled_reddit/discussion.json",
+      "sha256": "4ea5651809c7b9ea507bb3768bc31710b88f452e2f9bd9de7314c3b573483b3b",
+      "bytes": 27872
+    },
+    {
+      "path": "real_reference/laptop/run_014_sampled_reddit/discussion.json",
+      "sha256": "bdb1cbb2018cfc9403a98a82a90441c4283de0733c0d3b50aeb49b579d629fde",
+      "bytes": 18571
+    },
+    {
+      "path": "real_reference/laptop/run_015_sampled_reddit/discussion.json",
+      "sha256": "0ae56e3b75eea219786858fa0a8697ed5b2bd2e2ca1610c2d53a43c6ba504044",
+      "bytes": 26792
+    },
+    {
+      "path": "real_reference/laptop/run_016_sampled_reddit/discussion.json",
+      "sha256": "e4d2c94c9966a3d42c10063a6a909de1cef1fa7206e95dc8953c753183a2e3d5",
+      "bytes": 16581
+    },
+    {
+      "path": "real_reference/laptop/run_017_sampled_reddit/discussion.json",
+      "sha256": "9027e3860f9d53a0706e519a9e23b884d601d9acb9df64550557568518675a3c",
+      "bytes": 24586
+    },
+    {
+      "path": "real_reference/laptop/run_018_sampled_reddit/discussion.json",
+      "sha256": "f2c156c66d4f142afe907dcabaabd979fc8b8d7ed403edb9b28311250edec01e",
+      "bytes": 22724
+    },
+    {
+      "path": "real_reference/laptop/run_019_sampled_reddit/discussion.json",
+      "sha256": "5be7cc1ea1f4b8311721a67e82988a78de265debddae985019a385b3507d2723",
+      "bytes": 15194
+    },
+    {
+      "path": "real_reference/laptop/run_020_sampled_reddit/discussion.json",
+      "sha256": "ac6955dac838c35eff7f0a8c2775866db4b9000594244bfbf37644b2972e07be",
+      "bytes": 16956
+    },
+    {
+      "path": "real_reference/laptop/run_021_sampled_reddit/discussion.json",
+      "sha256": "335213db0780fca77874839a8b07f33d1338906656bde5da787738a79e83cf5e",
+      "bytes": 22245
+    },
+    {
+      "path": "real_reference/laptop/run_022_sampled_reddit/discussion.json",
+      "sha256": "d088fa6b1410d2ecf3ba3c3d131eea364edd5740ec96fb64b3d28d0fc708f587",
+      "bytes": 10979
+    },
+    {
+      "path": "real_reference/laptop/run_023_sampled_reddit/discussion.json",
+      "sha256": "ca3ba71127a928e8a115f0e6a6a28499aec6cc73378a0f3f7a356e0376068878",
+      "bytes": 12673
+    },
+    {
+      "path": "real_reference/laptop/run_024_sampled_reddit/discussion.json",
+      "sha256": "abff0e39cc8d6d823e6534d04256c3a58bead91994a3516f5972a79fce4f0fda",
+      "bytes": 28205
+    },
+    {
+      "path": "real_reference/laptop/run_025_sampled_reddit/discussion.json",
+      "sha256": "fefc65f76a97e9d5d886d2c2c428ae9018a0cfcbf10e6d55111fb0f655720af9",
+      "bytes": 46246
+    },
+    {
+      "path": "real_reference/laptop/run_026_sampled_reddit/discussion.json",
+      "sha256": "20968c733734c1eae05d649ca1e859e1dcac53252233c4ef130f82842ddc2916",
+      "bytes": 26574
+    },
+    {
+      "path": "real_reference/laptop/run_027_sampled_reddit/discussion.json",
+      "sha256": "e78961d553e3a80f9f79f17b3e03160eec1d4c348a5440f6f188ec25fc01562c",
+      "bytes": 50881
+    },
+    {
+      "path": "real_reference/laptop/run_028_sampled_reddit/discussion.json",
+      "sha256": "7bf463701decf10a3840c1d4e3770e9ca802a984648c7bdc1727a1490a1b2921",
+      "bytes": 11307
+    },
+    {
+      "path": "real_reference/laptop/run_029_sampled_reddit/discussion.json",
+      "sha256": "a22e071511020f27f2653a9131ead74c7772fb2f863a5ae292ba15f8487f9536",
+      "bytes": 10876
+    },
+    {
+      "path": "real_reference/movies/reference_manifest.json",
+      "sha256": "8c625387dc9b824ca248317ac2cee7e32ba06ea48dd906cdd7a0107c5adbb278",
+      "bytes": 185
+    },
+    {
+      "path": "real_reference/movies/run_000_sampled_reddit/discussion.json",
+      "sha256": "a09aca0c397196ef43fb029bbcb3176a4f7fb125757c94d92c972feb784ec1c8",
+      "bytes": 100974
+    },
+    {
+      "path": "real_reference/movies/run_001_sampled_reddit/discussion.json",
+      "sha256": "5f32086e0e6e5a9f0bad1f7bc92bb0460bbc0e0c50538072aa38977373f81790",
+      "bytes": 9308
+    },
+    {
+      "path": "real_reference/movies/run_002_sampled_reddit/discussion.json",
+      "sha256": "17f0cfe920094009bd99df0798c9ac18ab8d8db021ba248e4901e313511e0af5",
+      "bytes": 7488
+    },
+    {
+      "path": "real_reference/movies/run_003_sampled_reddit/discussion.json",
+      "sha256": "2cda8621459642a330a5d6300dae2ffdb4a9c9339b7378c37c2393bfad4a017a",
+      "bytes": 12520
+    },
+    {
+      "path": "real_reference/movies/run_004_sampled_reddit/discussion.json",
+      "sha256": "b9212ea5ce5e699eaf1ee355b6ead88e9b1e4b15197f26e1631badd6efaa02d0",
+      "bytes": 24909
+    },
+    {
+      "path": "real_reference/movies/run_005_sampled_reddit/discussion.json",
+      "sha256": "42ba0641a973dd6c2c5b6135d92b1be5683bcbe39829782739611cab967a9086",
+      "bytes": 10850
+    },
+    {
+      "path": "real_reference/movies/run_006_sampled_reddit/discussion.json",
+      "sha256": "787221de43c6fe5220c73f908d15cf321c68d9137f3f8c6004b72b78c344c65d",
+      "bytes": 37752
+    },
+    {
+      "path": "real_reference/movies/run_007_sampled_reddit/discussion.json",
+      "sha256": "64681c8c9b4917feea165bb46a88a467e1985f99210e82d3c68944293175cffc",
+      "bytes": 25763
+    },
+    {
+      "path": "real_reference/movies/run_008_sampled_reddit/discussion.json",
+      "sha256": "c3c5a629f7fe8d90b02457566fecde1d560316fbc81f4f38cd999b9a0d417031",
+      "bytes": 30595
+    },
+    {
+      "path": "real_reference/movies/run_009_sampled_reddit/discussion.json",
+      "sha256": "889c1c31c3f7d4147c5debd193e101ecbf36fb57681e352ec4e1d7c0e45c0fca",
+      "bytes": 42950
+    },
+    {
+      "path": "real_reference/movies/run_010_sampled_reddit/discussion.json",
+      "sha256": "7c0927da6974007038bdb8c3da200db64ed69cd9ccc673a889a20103cf648b63",
+      "bytes": 118760
+    },
+    {
+      "path": "real_reference/movies/run_011_sampled_reddit/discussion.json",
+      "sha256": "516ca375856daf9536a892920058fa0c9ae31db0ce88b517f592ffb42f847c25",
+      "bytes": 152376
+    },
+    {
+      "path": "real_reference/movies/run_012_sampled_reddit/discussion.json",
+      "sha256": "3fda569ed16a908787f723f86090553411be4642c16c7eb052a6e7806481539e",
+      "bytes": 89634
+    },
+    {
+      "path": "real_reference/movies/run_013_sampled_reddit/discussion.json",
+      "sha256": "f8ae851abdf3c5136a7fccc8f2131bbfa6680a824a772efb5891999c7f4b1020",
+      "bytes": 29103
+    },
+    {
+      "path": "real_reference/movies/run_014_sampled_reddit/discussion.json",
+      "sha256": "d031b25dfe4c5057034bed9d23773018c8b206c0c58155115d870e37cb66df6a",
+      "bytes": 119950
+    },
+    {
+      "path": "real_reference/movies/run_015_sampled_reddit/discussion.json",
+      "sha256": "877263e3f67924c4dc4bc8b011d2e1ab0fb804e8a676dbcee65a14176aa5093e",
+      "bytes": 119558
+    },
+    {
+      "path": "real_reference/movies/run_016_sampled_reddit/discussion.json",
+      "sha256": "4882ec6ff9710703f4d5b00f6b427132f0fa6ededd7fba9af2975e6acab25afa",
+      "bytes": 198384
+    },
+    {
+      "path": "real_reference/movies/run_017_sampled_reddit/discussion.json",
+      "sha256": "059cbdc8e9a541afb89479be9dd29b6238a250d2152369cd784392131f532bb3",
+      "bytes": 100380
+    },
+    {
+      "path": "real_reference/movies/run_018_sampled_reddit/discussion.json",
+      "sha256": "2583ee2c541ebed8d719ee7c6a5bd36e06d784be68e279f4b79a6a48934e9153",
+      "bytes": 113406
+    },
+    {
+      "path": "real_reference/movies/run_019_sampled_reddit/discussion.json",
+      "sha256": "d25ea9c083df9a6ec04c22ecef70fa60e78121501034589c6c6ff6c0a3bd094d",
+      "bytes": 47015
+    },
+    {
+      "path": "real_reference/movies/run_020_sampled_reddit/discussion.json",
+      "sha256": "2b932e36b8f96b907dc8c151005a2e1ecfae4235e230068a1411a26d0cd41050",
+      "bytes": 25207
+    },
+    {
+      "path": "real_reference/movies/run_021_sampled_reddit/discussion.json",
+      "sha256": "01d6a643eb890b1205e03c4532fb3cf3973fb56b557bbc844a93a593094ea49c",
+      "bytes": 69013
+    },
+    {
+      "path": "real_reference/movies/run_022_sampled_reddit/discussion.json",
+      "sha256": "8ee73bd7d7713ed16d440f542b878ef273b06c8ea85627f3c74557295de3d998",
+      "bytes": 72057
+    },
+    {
+      "path": "real_reference/movies/run_023_sampled_reddit/discussion.json",
+      "sha256": "a95dd307245072a4fd396a5f96367dc3cd26ab2be45f25337169101b06a3adc6",
+      "bytes": 125210
+    },
+    {
+      "path": "real_reference/movies/run_024_sampled_reddit/discussion.json",
+      "sha256": "2b0e129078c84619adeedb7e4581bf562a4b9276c1bbd3c3dac6a5893a2df64c",
+      "bytes": 74782
+    },
+    {
+      "path": "real_reference/movies/run_025_sampled_reddit/discussion.json",
+      "sha256": "622544504bdb3cfa5d7e24ab2cd018399d08f61f2ed6ecf36d8a683855acccdc",
+      "bytes": 98735
+    },
+    {
+      "path": "real_reference/movies/run_026_sampled_reddit/discussion.json",
+      "sha256": "c93020673c76335c780bbc08cb693fe3b89da6f0193b9e66294826376832900b",
+      "bytes": 96876
+    },
+    {
+      "path": "real_reference/movies/run_027_sampled_reddit/discussion.json",
+      "sha256": "b86889e5a0f8dfc0ff1034e824f25588a37c62cbd283e5776f690a9847335d84",
+      "bytes": 39960
+    },
+    {
+      "path": "real_reference/movies/run_028_sampled_reddit/discussion.json",
+      "sha256": "72565eaa86a984707b17931ca5e1bf814a24f06f4824ef0dba935aa73fcf1064",
+      "bytes": 96633
+    },
+    {
+      "path": "real_reference/movies/run_029_sampled_reddit/discussion.json",
+      "sha256": "76fb4509d9c52205e4569a078be43f58516f1705bfbb0318442140178cf936e5",
+      "bytes": 96228
+    },
+    {
+      "path": "real_reference/news/reference_manifest.json",
+      "sha256": "f57ef7a28beecb5b5825ce936f35f005d626318dcae9d56aff82d435238a49ea",
+      "bytes": 181
+    },
+    {
+      "path": "real_reference/news/run_000_sampled_reddit/discussion.json",
+      "sha256": "d16811e32d3e927750387bd6ab9296b00da2ba93aa401a4dbff10af1bcd8ccaa",
+      "bytes": 62302
+    },
+    {
+      "path": "real_reference/news/run_001_sampled_reddit/discussion.json",
+      "sha256": "d5faffca0481fbf7094d3231e64e7ef36e314c0c997ace2842d793efe41d1804",
+      "bytes": 36858
+    },
+    {
+      "path": "real_reference/news/run_002_sampled_reddit/discussion.json",
+      "sha256": "1d9cfe8e850b8786edffed0bdc201d9a3606d68acabb3d923c1f1b98c7dbed9d",
+      "bytes": 56037
+    },
+    {
+      "path": "real_reference/news/run_003_sampled_reddit/discussion.json",
+      "sha256": "04e805405df8ae23bf5890b9b7f5431294b40a2ff38eb08a451ecca002e03757",
+      "bytes": 60634
+    },
+    {
+      "path": "real_reference/news/run_004_sampled_reddit/discussion.json",
+      "sha256": "90c27c9ecdc3f8dde9c5342999a735a988bbb50af3be90d61dcb6473523a856a",
+      "bytes": 72083
+    },
+    {
+      "path": "real_reference/news/run_005_sampled_reddit/discussion.json",
+      "sha256": "b819b5c235055675b459b276c0c0ee0df4b0e3e34a324546bbbb062238f9ac89",
+      "bytes": 24258
+    },
+    {
+      "path": "real_reference/news/run_006_sampled_reddit/discussion.json",
+      "sha256": "1ba50ab1cc1c036082b3211a5ffc63357f218b318b166e3aca33a49b752aac92",
+      "bytes": 86886
+    },
+    {
+      "path": "real_reference/news/run_007_sampled_reddit/discussion.json",
+      "sha256": "e4515295fa7e156f54ac7f2f14fdc93e23c6095ee05ee4f8845616f5a49c1b32",
+      "bytes": 86558
+    },
+    {
+      "path": "real_reference/news/run_008_sampled_reddit/discussion.json",
+      "sha256": "33a41a8c20e4f64686ea0254b4ecf3b30644f6ee14c02f840c5571db749089f6",
+      "bytes": 88122
+    },
+    {
+      "path": "real_reference/news/run_009_sampled_reddit/discussion.json",
+      "sha256": "51c900663f9ebc37e9dc42ff3c6457a98300ed491dafdfd9753c62e459eb9088",
+      "bytes": 171600
+    },
+    {
+      "path": "real_reference/news/run_010_sampled_reddit/discussion.json",
+      "sha256": "2ee7e022bfd72a4aa68a403c5674aede36ada00240b5f2d8f1f6e194a1c0f18c",
+      "bytes": 217937
+    },
+    {
+      "path": "real_reference/news/run_011_sampled_reddit/discussion.json",
+      "sha256": "deadfdd37ffd1dd9d16efded9bc99c415ea9056d74003587faff59407f719415",
+      "bytes": 144098
+    },
+    {
+      "path": "real_reference/news/run_012_sampled_reddit/discussion.json",
+      "sha256": "f23ff7d7d42fa0e8bd6740621e35093e044647c3adf98021fc9048d73d06e578",
+      "bytes": 171988
+    },
+    {
+      "path": "real_reference/news/run_013_sampled_reddit/discussion.json",
+      "sha256": "7a9f5d759dfa492b80b4cba44dbfabaeb08353d195c2d9d51042a9696a23d359",
+      "bytes": 134508
+    },
+    {
+      "path": "real_reference/news/run_014_sampled_reddit/discussion.json",
+      "sha256": "11d4a5fc402697890c2aa2cb2a39096e0225a360fa868e422d5f3a40bb6663db",
+      "bytes": 41225
+    },
+    {
+      "path": "real_reference/news/run_015_sampled_reddit/discussion.json",
+      "sha256": "39208f0ce8360eacec1e8b16f14ac5ff848e80e09c31c0c99e3556ff9c822356",
+      "bytes": 196026
+    },
+    {
+      "path": "real_reference/news/run_016_sampled_reddit/discussion.json",
+      "sha256": "8eb522e81ffcb3ce11fac2c11e24a91732213cb735bd6969525119feb3df221e",
+      "bytes": 124205
+    },
+    {
+      "path": "real_reference/news/run_017_sampled_reddit/discussion.json",
+      "sha256": "03b376ca06da8197c53e492944d0bd2d089bfb47873974931db08f813bf5d0e3",
+      "bytes": 107087
+    },
+    {
+      "path": "real_reference/news/run_018_sampled_reddit/discussion.json",
+      "sha256": "32d7c7ca5b0ade47e9c1be997893a23e52f96fa1c40df7838a22e571f81cdd77",
+      "bytes": 137626
+    },
+    {
+      "path": "real_reference/news/run_019_sampled_reddit/discussion.json",
+      "sha256": "185d80f40d49d596850b63968446a12dcd5989efdcfcdfcb66357788007161e3",
+      "bytes": 24438
+    },
+    {
+      "path": "real_reference/news/run_020_sampled_reddit/discussion.json",
+      "sha256": "04d156c3b5ad1cc5b0dc31aec414b01c2d4583ac157e6ec689c5c038bbb0cb9d",
+      "bytes": 24440
+    },
+    {
+      "path": "real_reference/news/run_021_sampled_reddit/discussion.json",
+      "sha256": "e897fb8df4386847822cbb7ebb38283d850f12dcb64780159d3b171c89dd239c",
+      "bytes": 22778
+    },
+    {
+      "path": "real_reference/news/run_022_sampled_reddit/discussion.json",
+      "sha256": "d6e318863ad80c48aaec662badf56cc74b802edfc104fa4a71a03686b1ee5ecd",
+      "bytes": 103236
+    },
+    {
+      "path": "real_reference/news/run_023_sampled_reddit/discussion.json",
+      "sha256": "ef2969b44e430d681e779fc7876f0af99e51ba399e221f782b874bd3fc8ba430",
+      "bytes": 172300
+    },
+    {
+      "path": "real_reference/news/run_024_sampled_reddit/discussion.json",
+      "sha256": "364199af9a3d473d3dccffd5a0610fa08c08bcc3362fb2f2c9cfff0c22c5b88c",
+      "bytes": 94385
+    },
+    {
+      "path": "real_reference/news/run_025_sampled_reddit/discussion.json",
+      "sha256": "549f24496e4bd44620d4ec1eebf975d6f702c39709e71eb4310c693314cbdbd5",
+      "bytes": 112631
+    },
+    {
+      "path": "real_reference/news/run_026_sampled_reddit/discussion.json",
+      "sha256": "b17417fd54832a66afad91d8dc30e25c9e3d00773cf993de22e0a009872e830c",
+      "bytes": 228132
+    },
+    {
+      "path": "real_reference/news/run_027_sampled_reddit/discussion.json",
+      "sha256": "410ab748fcfefe7b1958835a82f98c563eda31bbe0b8807a6a29b8a58b4203a0",
+      "bytes": 70182
+    },
+    {
+      "path": "real_reference/news/run_028_sampled_reddit/discussion.json",
+      "sha256": "18b69c78f75788f35787f0ce0f970f7484f1717e7d0cfc3b1c2ce89b2dad6512",
+      "bytes": 55689
+    },
+    {
+      "path": "real_reference/news/run_029_sampled_reddit/discussion.json",
+      "sha256": "79885bfbc9525e1552e7573bdc60ab4d00427b2fca344ddf8cd0b3de3d50165f",
+      "bytes": 21894
+    },
+    {
+      "path": "real_reference/sports/reference_manifest.json",
+      "sha256": "1937e3a19f093e15fca0be5cb36b5fed6c25646f345748010e3b7ce77585a075",
+      "bytes": 185
+    },
+    {
+      "path": "real_reference/sports/run_000_sampled_reddit/discussion.json",
+      "sha256": "7de986644621625fa520e009927d4752bf5ac0960228b0d973cf04bcbf4282d1",
+      "bytes": 161917
+    },
+    {
+      "path": "real_reference/sports/run_001_sampled_reddit/discussion.json",
+      "sha256": "4fa444a82deebc96c55fbabda4a76e1eaeff4192043f1390a27c0b5d3f1abe50",
+      "bytes": 105095
+    },
+    {
+      "path": "real_reference/sports/run_002_sampled_reddit/discussion.json",
+      "sha256": "6a09328d5efb688e84e9b8578fd007066854e4c8212dd561a59290abe7e80cd5",
+      "bytes": 177352
+    },
+    {
+      "path": "real_reference/sports/run_003_sampled_reddit/discussion.json",
+      "sha256": "218864619420b0271b3580c98e48bac736099dd861c9554dcfec726d1c16ded0",
+      "bytes": 170511
+    },
+    {
+      "path": "real_reference/sports/run_004_sampled_reddit/discussion.json",
+      "sha256": "9971bc2ddea1aab49922fbfc27012a4b1e64c54ce3a7a97e9cc24f4025fd011e",
+      "bytes": 121925
+    },
+    {
+      "path": "real_reference/sports/run_005_sampled_reddit/discussion.json",
+      "sha256": "b21eb64c17a1d5e6ef7b0cc84f5103ae7517bd62dee0b0e79157bd991655a8aa",
+      "bytes": 208026
+    },
+    {
+      "path": "real_reference/sports/run_006_sampled_reddit/discussion.json",
+      "sha256": "9ce46cb8b29d27ffb83ea75d1d36a5671767d81be2b43e4e83d8c68728264fb4",
+      "bytes": 31526
+    },
+    {
+      "path": "real_reference/sports/run_007_sampled_reddit/discussion.json",
+      "sha256": "1c14e796f24cf8a1668bf222c4b4cfc96830de7f3f3e1900a680360fec511703",
+      "bytes": 237246
+    },
+    {
+      "path": "real_reference/sports/run_008_sampled_reddit/discussion.json",
+      "sha256": "05bb2c4438e9719420ed661a586fcf2ffb6a24e00e1c5b4e3233ef7b7c7067cd",
+      "bytes": 100696
+    },
+    {
+      "path": "real_reference/sports/run_009_sampled_reddit/discussion.json",
+      "sha256": "b2aba4280bd798ab5ecd721c385644be3e63e97ebc9f7538e24c7c441204c514",
+      "bytes": 91415
+    },
+    {
+      "path": "real_reference/sports/run_010_sampled_reddit/discussion.json",
+      "sha256": "120aca251d353077cf7ee66ccd025a42352e9cd5c2605c1c55a38ff5a79f7288",
+      "bytes": 130516
+    },
+    {
+      "path": "real_reference/sports/run_011_sampled_reddit/discussion.json",
+      "sha256": "a0abe7657cbda9170d3745de1047735ef5e77f92932d2e004f3c88e862f1fef8",
+      "bytes": 78898
+    },
+    {
+      "path": "real_reference/sports/run_012_sampled_reddit/discussion.json",
+      "sha256": "6fbc2e378e6ba7c259977819938702b5d569851d69e9d557d1d6545e2189b3b3",
+      "bytes": 164225
+    },
+    {
+      "path": "real_reference/sports/run_013_sampled_reddit/discussion.json",
+      "sha256": "f93bc9effdb42e5e1888f041f29dda5973b8feb94074897d3da5f86a93e5e09c",
+      "bytes": 223447
+    },
+    {
+      "path": "real_reference/sports/run_014_sampled_reddit/discussion.json",
+      "sha256": "7c628ff00888c16deabe825f32c3bb083607df7fbd6b18b424261bd508029f10",
+      "bytes": 63863
+    },
+    {
+      "path": "real_reference/sports/run_015_sampled_reddit/discussion.json",
+      "sha256": "c8227ddd302dd8b1dc461e0bad076f570104ab4a88950eb9bf3be2b06a9c39ba",
+      "bytes": 159724
+    },
+    {
+      "path": "real_reference/sports/run_016_sampled_reddit/discussion.json",
+      "sha256": "b74800be1dc3c59f56e54f28764ebfc39e09e283d834104e45d50fa8cd2de077",
+      "bytes": 77603
+    },
+    {
+      "path": "real_reference/sports/run_017_sampled_reddit/discussion.json",
+      "sha256": "babd00add711a01de97caa48dcaf7c761c04819c3c83af897ac31a1ce4f3c7ad",
+      "bytes": 80997
+    },
+    {
+      "path": "real_reference/sports/run_018_sampled_reddit/discussion.json",
+      "sha256": "e55653611f38850e168dff499a7937a81d5864f63e02c46780cf3d3a8c4f52b3",
+      "bytes": 55575
+    },
+    {
+      "path": "real_reference/sports/run_019_sampled_reddit/discussion.json",
+      "sha256": "5f6996e35ada0beff419310c2a1791c6132f41d1404208c1319a0ea4d697d53b",
+      "bytes": 34543
+    },
+    {
+      "path": "real_reference/sports/run_020_sampled_reddit/discussion.json",
+      "sha256": "f9400c3f5022040c9a3ff49b9c5a7baffcb22aef67cb2fbf74738e9f9761d495",
+      "bytes": 102390
+    },
+    {
+      "path": "real_reference/sports/run_021_sampled_reddit/discussion.json",
+      "sha256": "0f67e3a8ac9c8f9c662b195f267fb9bef90278031705f2d9cdbcc1de63aee639",
+      "bytes": 99867
+    },
+    {
+      "path": "real_reference/sports/run_022_sampled_reddit/discussion.json",
+      "sha256": "8fa09f2e54a7bc8957e3c1a97cba8d77ee477b82afe998e63c1d29b691562fbc",
+      "bytes": 56887
+    },
+    {
+      "path": "real_reference/sports/run_023_sampled_reddit/discussion.json",
+      "sha256": "5b7d8fc3c1826268d417da0efae84f1aeee5bbb3315befa2e3fa05a249f9fbce",
+      "bytes": 115100
+    },
+    {
+      "path": "real_reference/sports/run_024_sampled_reddit/discussion.json",
+      "sha256": "8c317dd5006d0d2dd4b49433674c54179d50aac0b68a4fd200d42211718b9264",
+      "bytes": 43024
+    },
+    {
+      "path": "real_reference/sports/run_025_sampled_reddit/discussion.json",
+      "sha256": "4d7b2c7586a89db6c4da7903516707990d3f0ecc67581cd2ef8809ca24fc9d7b",
+      "bytes": 71693
+    },
+    {
+      "path": "real_reference/sports/run_026_sampled_reddit/discussion.json",
+      "sha256": "d52faba336a914856380dbf38f5fc6d74aca1c19e2ff0ab58e1c9409102c4e12",
+      "bytes": 50546
+    },
+    {
+      "path": "real_reference/sports/run_027_sampled_reddit/discussion.json",
+      "sha256": "156db3935bf19f249039d3990b80d729348326a4fe0ec81189557ba986f2cb7f",
+      "bytes": 35815
+    },
+    {
+      "path": "real_reference/sports/run_028_sampled_reddit/discussion.json",
+      "sha256": "79b0cef15911de470145f7300b2a807f584c16395cadf4fc7b039fba4551720b",
+      "bytes": 73269
+    },
+    {
+      "path": "real_reference/sports/run_029_sampled_reddit/discussion.json",
+      "sha256": "fc135dd8ef40ff06ea3c295be7f73c4ddb96051cfbc845bda5bee117a5730733",
+      "bytes": 67095
+    },
+    {
+      "path": "real_reference/tv_series/reference_manifest.json",
+      "sha256": "049b5c072b81fed44df72b1c33e0360827e7a1b70d9d6b00658050ae545111a9",
+      "bytes": 191
+    },
+    {
+      "path": "real_reference/tv_series/run_000_sampled_reddit/discussion.json",
+      "sha256": "2613a3a0f87006e9f8729bc18567437542e8ffb4a632ac0a9b0f00a04d891cf3",
+      "bytes": 8505
+    },
+    {
+      "path": "real_reference/tv_series/run_001_sampled_reddit/discussion.json",
+      "sha256": "49571c0b04de523c7508a9295d9b97098b19ef460061ed0695b458418ee6f09e",
+      "bytes": 9941
+    },
+    {
+      "path": "real_reference/tv_series/run_002_sampled_reddit/discussion.json",
+      "sha256": "9670d0e146654a074ec717ba12dd438793a86c48d2cd02895272d290366f357a",
+      "bytes": 50499
+    },
+    {
+      "path": "real_reference/tv_series/run_003_sampled_reddit/discussion.json",
+      "sha256": "dc2e490a0dae6be01d0cb68be66c4cc532cbf0adbf3141ec24630c62058b7419",
+      "bytes": 11464
+    },
+    {
+      "path": "real_reference/tv_series/run_004_sampled_reddit/discussion.json",
+      "sha256": "bb6320126fd357584690a1ca0ddc21182433ef397059eb545b67d86116287feb",
+      "bytes": 24561
+    },
+    {
+      "path": "real_reference/tv_series/run_005_sampled_reddit/discussion.json",
+      "sha256": "e899f19ba282d4b98ec640354e3ccc828507787fa93e96e561b78d87f1234e67",
+      "bytes": 10848
+    },
+    {
+      "path": "real_reference/tv_series/run_006_sampled_reddit/discussion.json",
+      "sha256": "8644ce9371cc4b54e25621db2d07a2ed073056bf94c3091c739471bc6b37cde4",
+      "bytes": 29951
+    },
+    {
+      "path": "real_reference/tv_series/run_007_sampled_reddit/discussion.json",
+      "sha256": "d4000fd8094558191a8455971f65f0ec75bba6d2e72aec758bc587ff1962182d",
+      "bytes": 86849
+    },
+    {
+      "path": "real_reference/tv_series/run_008_sampled_reddit/discussion.json",
+      "sha256": "cd326572b1d76b19b45e1e5151f621255c4895c4479ab53f9a1c1ea108f9986d",
+      "bytes": 71375
+    },
+    {
+      "path": "real_reference/tv_series/run_009_sampled_reddit/discussion.json",
+      "sha256": "d08a53695bfdace2ef02a031b5266a5eeaaf108d4aed813928e0a925511506e6",
+      "bytes": 27611
+    },
+    {
+      "path": "real_reference/tv_series/run_010_sampled_reddit/discussion.json",
+      "sha256": "f365c977a5f00e8e93c00c96647d66838b6a36ee5ce4a27275cceb2ca53a4971",
+      "bytes": 113162
+    },
+    {
+      "path": "real_reference/tv_series/run_011_sampled_reddit/discussion.json",
+      "sha256": "7795955db910f69f415891e24feb095584bb341d3f53e8c901120f4d2c5bfde2",
+      "bytes": 34144
+    },
+    {
+      "path": "real_reference/tv_series/run_012_sampled_reddit/discussion.json",
+      "sha256": "067c0bad8b60e6cb2aacf1906d018fc3fc647e1dcca00988a04f3c6e4a5134b2",
+      "bytes": 73384
+    },
+    {
+      "path": "real_reference/tv_series/run_013_sampled_reddit/discussion.json",
+      "sha256": "eb68b84cbbe0c1e8ba60309a2fd53917ba9ac3f304a3ce9e360bd28ca89b5b5e",
+      "bytes": 135381
+    },
+    {
+      "path": "real_reference/tv_series/run_014_sampled_reddit/discussion.json",
+      "sha256": "8ce83cc630f42f9e5d2862297eacda67289d575842547f082240d8a0d99206d0",
+      "bytes": 68270
+    },
+    {
+      "path": "real_reference/tv_series/run_015_sampled_reddit/discussion.json",
+      "sha256": "dd3d795ee1768ed728c319bd8e9cf4c00ad9ecd490a8a4ef71a52ec99d407967",
+      "bytes": 76223
+    },
+    {
+      "path": "real_reference/tv_series/run_016_sampled_reddit/discussion.json",
+      "sha256": "56f3faafb1ce4ff343a5dd2e21da59db5b9c7f017ea8f1245f3fe440553e0310",
+      "bytes": 111817
+    },
+    {
+      "path": "real_reference/tv_series/run_017_sampled_reddit/discussion.json",
+      "sha256": "d53cd12e57448e53ac77d40317b577bb2d56cfa09c769fa7ef745d5383041884",
+      "bytes": 227425
+    },
+    {
+      "path": "real_reference/tv_series/run_018_sampled_reddit/discussion.json",
+      "sha256": "96d0553a526ce459027d2b878570d6392f4c726cb2147504313f9f88f3106731",
+      "bytes": 154220
+    },
+    {
+      "path": "real_reference/tv_series/run_019_sampled_reddit/discussion.json",
+      "sha256": "5fcdd76f18e0c285a77f278e9fbc1c0be08c33078bbbb40b2878c14a1036bbf0",
+      "bytes": 135487
+    },
+    {
+      "path": "real_reference/tv_series/run_020_sampled_reddit/discussion.json",
+      "sha256": "2db0d2735338a8b6d88c4c7a53df60cdcedf8016e53ac3fb358731f357e21926",
+      "bytes": 66877
+    },
+    {
+      "path": "real_reference/tv_series/run_021_sampled_reddit/discussion.json",
+      "sha256": "9b869f179e427ba1f6b50f7db9ab81b747c1fa6d963772068ec64b1877187983",
+      "bytes": 129336
+    },
+    {
+      "path": "real_reference/tv_series/run_022_sampled_reddit/discussion.json",
+      "sha256": "10761cd715daa17575ec5db4b2d3a12411f277b64026842501c2566bada71f2f",
+      "bytes": 45807
+    },
+    {
+      "path": "real_reference/tv_series/run_023_sampled_reddit/discussion.json",
+      "sha256": "092fb21db80b29dcc888394d3748a35501c5231ffcac02b785d42d1db0303105",
+      "bytes": 60368
+    },
+    {
+      "path": "real_reference/tv_series/run_024_sampled_reddit/discussion.json",
+      "sha256": "9eb8aced78e199304459a404d93ff0b68e75b9297c1b17d0658fd6e7ba5f9ed6",
+      "bytes": 53752
+    },
+    {
+      "path": "real_reference/tv_series/run_025_sampled_reddit/discussion.json",
+      "sha256": "9c82c6c90c393aa95e6c1108d54429b7abf5c2813e5281592d4bd9f60b3e0c1a",
+      "bytes": 62998
+    },
+    {
+      "path": "real_reference/tv_series/run_026_sampled_reddit/discussion.json",
+      "sha256": "d299062c49574831fb3b915b5745f2ca19b7b15089108338a87f8e0c64d5dd1f",
+      "bytes": 103656
+    },
+    {
+      "path": "real_reference/tv_series/run_027_sampled_reddit/discussion.json",
+      "sha256": "58bb42cb6dd0ff074b46456f62914d89f7b0446e07e065c337f0330c645a3486",
+      "bytes": 136645
+    },
+    {
+      "path": "real_reference/tv_series/run_028_sampled_reddit/discussion.json",
+      "sha256": "dcda48ef405f9959c49ee177155a37f57cd24b2476a11a8bf25e43a5f0aa8e51",
+      "bytes": 84521
+    },
+    {
+      "path": "real_reference/tv_series/run_029_sampled_reddit/discussion.json",
+      "sha256": "65af69dd2670b17f8d0e4af4a9cfb96445ebe601adbd1414a66f7aa3a116af45",
+      "bytes": 64451
+    },
+    {
+      "path": "seed_pools/camera.json",
+      "sha256": "3d0265fd3da5ad422814005cef17d1fcd0c9fdd7575628d130e27bec91262519",
+      "bytes": 227768
+    },
+    {
+      "path": "seed_pools/celebrity.json",
+      "sha256": "7bcc3b21c4b968006f838c8842e1e75ee7916722cda86faeb7bbe93ecc370644",
+      "bytes": 133815
+    },
+    {
+      "path": "seed_pools/cellphone.json",
+      "sha256": "c81447b145bca34e3abc8f159d8f2bdd438b2ee3020a3f5afc46a213344eddf1",
+      "bytes": 211324
+    },
+    {
+      "path": "seed_pools/game.json",
+      "sha256": "faac5c174b0291611683a1c99ccce8591cf624a81ab7a163378c1856beb28c68",
+      "bytes": 264216
+    },
+    {
+      "path": "seed_pools/headphones.json",
+      "sha256": "30cba071a77ff1d0be4e4339f1cd83f1b0ab292871c8e6cf71c283b1e22dd161",
+      "bytes": 340998
+    },
+    {
+      "path": "seed_pools/health_issue.json",
+      "sha256": "33a48b649417fe770797a831104ece180b83a43460e54410cfc1d198f89f720f",
+      "bytes": 303116
+    },
+    {
+      "path": "seed_pools/laptop.json",
+      "sha256": "08e995f0b0e01d6080b2fc6cb8e3821e4f399f06135bc4908664e7ead0cca753",
+      "bytes": 271031
+    },
+    {
+      "path": "seed_pools/movies.json",
+      "sha256": "c3d3da243b6d9a881b03a2240f338d90120cfd12adbde52bf04c31ec51bd2123",
+      "bytes": 314278
+    },
+    {
+      "path": "seed_pools/news.json",
+      "sha256": "34ffcd2b1884a0e8714ff07f2d3420b78a05ddd9602c063d33a74b3d899f37b1",
+      "bytes": 139680
+    },
+    {
+      "path": "seed_pools/sports.json",
+      "sha256": "a8b38c74254161491e14374c296a59818d7f0ea5e23858374f6c702cfb6f3832",
+      "bytes": 222825
+    },
+    {
+      "path": "seed_pools/tv_series.json",
+      "sha256": "98d2577b0c456868656586a79eb8849a9874cf08f88b36b77437b69b6ba474b7",
+      "bytes": 212217
+    }
+  ]
+}

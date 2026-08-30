@@ -1,0 +1,358 @@
+{
+  "meta": {
+    "product_category": "laptop",
+    "baseline": "real_reddit_reference",
+    "run_id": "run_016_sampled_reddit"
+  },
+  "posts": [
+    {
+      "post_id": "real_run016_post00_seed080",
+      "post_slot": 0,
+      "seed_index": 80,
+      "source_raw_post_id": "1vdgi3q",
+      "source_product_dir": "laptops",
+      "source_file": "https://www.reddit.com/r/laptops/comments/1vdgi3q/fujitsu_lifebook_e554_enter_key_and_numpad_doesnt/",
+      "post_type": "General question",
+      "title": "Fujitsu Lifebook E554 Enter key and Numpad doesn't work.",
+      "author": "reddit_user_d8691634ac1e",
+      "author_karma": 0,
+      "content": "Fujitsu Lifebook E554 Enter key and Numpad doesn't work.\n\nHello, 2 weeks ago i bought this Fujitsu Lifebook E554, it's in pretty good condition considering it's age. Everything worked fine, until yesterday when i opened it up to clean it, after putting everything back together, the numpad and the enter key seems to not work anymore. Which is strange because before putting the screws back, i tested to see if everything works, and it indeed worked as intended. I checked the keyboard ribbon cable for any damages and there aren't any i could see under open eye.\n\nAre there any reasons why? Is there any fix for it or should i just buy a new keyboard?",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p18t50f",
+          "author": "reddit_user_2d9c99da4156",
+          "author_karma": 0,
+          "content": "Did you clean with isopropyl? I repair laptops and Acers I deal with are notorious for using cheap membrane keyboards were they basically paint the matrix onto plastic, the tiniest bit of water/solvents can absolutely wreck it. Unfortunately, many older laptops have this issue too.",
+          "timestamp": "2026-08-02T12:37:01+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p19gr1c",
+              "author": "reddit_user_685bb92131c8",
+              "author_karma": 0,
+              "content": "Yes, i used isopropyl to clean the ribbon cable, and everything there, and it worked, but the moment i screw in the bolt that keeps the keyboard in place, it stops working. Or if it still works after screwing in the bolt and turning the device ON, if i turn it OFF, then ON again, it just stops working.",
+              "timestamp": "2026-08-02T14:44:13+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p18t50f",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1abzfs",
+                  "author": "reddit_user_2d9c99da4156",
+                  "author_karma": 0,
+                  "content": "Weird request of mine, type cleaning the chips on the motherboard near the cheapboard connector. Take the absolute cleanest q-tip, toothbrush you have, disconnect the motherboard from the battery, just clean the area around the keyboard connector - don't shove the toothbrush bristles into any connector, just gently clean. Yeah, seems dumb, but honestly, funnily enough I've fixed enough laptops were these bugger chips have hidden corrosion making em weird.",
+                  "timestamp": "2026-08-02T17:08:55+00:00",
+                  "likes": 2,
+                  "dislikes": 0,
+                  "parent_comment_id": "p19gr1c",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1asuzf",
+                      "author": "reddit_user_685bb92131c8",
+                      "author_karma": 0,
+                      "content": "Alright, so i've done that, i cleaned the area and the connectors on the motherboard, used to air blower to evaporate the excess and then connected the keyboard and it worked normally, i kept it connected just by the ribbon cable, turn it ON and OFF several times, put the battery on, and again, turn it ON and OFF, it just worked. But the moment i screw in the 2 bolts on the far sides right under the screen, and guess what, it just stopped working again. I didn't even screw them tight. It's just so weird, i've never encounter something like this.",
+                      "timestamp": "2026-08-02T18:24:05+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1abzfs",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "post_id": "real_run016_post01_seed081",
+      "post_slot": 1,
+      "seed_index": 81,
+      "source_raw_post_id": "1vdgjq4",
+      "source_product_dir": "thinkpad",
+      "source_file": "https://www.reddit.com/r/thinkpad/comments/1vdgjq4/joined_the_cult/",
+      "post_type": "Thinkstagram Picture",
+      "title": "Joined the Cult",
+      "author": "reddit_user_d8691634ac1e",
+      "author_karma": 0,
+      "content": "Joined the Cult\n\n&#x200B;\n\nThinkPad P16s Gen 4 (AMD)\n\nProcessor AMD Ryzen™ AI 9 HX PRO 370 Processor (2.00 GHz up to 5.10 GHz)\n\nOperating System No Operating System\n\nMicrosoft Productivity Software No Microsoft Office\n\nMemory 64 GB DDR5-5600MT/s (SODIMM) - (2 x 32 GB)",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p18rzrn",
+          "author": "reddit_user_13d8297284ef",
+          "author_karma": 0,
+          "content": "Nice! I also have a refurb p16s on the way, but with a ryzen 7 and 32gb of RAM ",
+          "timestamp": "2026-08-02T12:30:03+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p18ulj4",
+          "author": "reddit_user_b5f0b3bd2c9c",
+          "author_karma": 0,
+          "content": "Welcome!",
+          "timestamp": "2026-08-02T12:45:45+00:00",
+          "likes": 3,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p194dbj",
+          "author": "reddit_user_3bc56876b42d",
+          "author_karma": 0,
+          "content": "Such a beauty, gratz! You'll have a wonderful time with it",
+          "timestamp": "2026-08-02T13:40:58+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p196bq9",
+          "author": "reddit_user_5089e67759e9",
+          "author_karma": 0,
+          "content": "Welcome to the club 💻 ",
+          "timestamp": "2026-08-02T13:51:25+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p196mzp",
+          "author": "reddit_user_06fd1fa6862e",
+          "author_karma": 0,
+          "content": "Which cult do you mean? TP or Linux? ",
+          "timestamp": "2026-08-02T13:53:03+00:00",
+          "likes": 3,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p19dz08",
+              "author": "reddit_user_27c2438744b9",
+              "author_karma": 0,
+              "content": "Both both :) ",
+              "timestamp": "2026-08-02T14:30:31+00:00",
+              "likes": 3,
+              "dislikes": 0,
+              "parent_comment_id": "p196mzp",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p19jcgz",
+          "author": "reddit_user_80828c642eb8",
+          "author_karma": 0,
+          "content": "Congratulations! Enjoy it! :)",
+          "timestamp": "2026-08-02T14:56:47+00:00",
+          "likes": 3,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p19qacs",
+          "author": "reddit_user_dad758866ecd",
+          "author_karma": 0,
+          "content": "How much ? 😍",
+          "timestamp": "2026-08-02T15:29:52+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p19ugbr",
+              "author": "reddit_user_27c2438744b9",
+              "author_karma": 0,
+              "content": "I got some promotion offer and I got it for 3.5l INR",
+              "timestamp": "2026-08-02T15:49:19+00:00",
+              "likes": 2,
+              "dislikes": 0,
+              "parent_comment_id": "p19qacs",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1bdmsk",
+          "author": "reddit_user_2773c88678bc",
+          "author_karma": 0,
+          "content": "r/foundthecachyosuser\n\nfound 2 today.",
+          "timestamp": "2026-08-02T19:59:48+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run016_post02_seed082",
+      "post_slot": 2,
+      "seed_index": 82,
+      "source_raw_post_id": "1vdjhy2",
+      "source_product_dir": "chromeos",
+      "source_file": "https://www.reddit.com/r/chromeos/comments/1vdjhy2/how_do_i_delete_apps_i_installed_on_my_chromebook/",
+      "post_type": "Troubleshooting",
+      "title": "How do i delete apps I installed on my chromebook",
+      "author": "reddit_user_d8691634ac1e",
+      "author_karma": 0,
+      "content": "How do i delete apps I installed on my chromebook\n\nhttps://preview.redd.it/atqdo4it1zgh1.png?width=972&format=png&auto=webp&s=42acd6e26024c77f56f3505b2b727d37718fed63\n\nthere is no delete button and I don't know why I installed it via app store help me",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p19ixdc",
+          "author": "reddit_user_82872f4f7cb9",
+          "author_karma": 0,
+          "content": "Right click the icon in the app drawer.  ",
+          "timestamp": "2026-08-02T14:54:45+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1afp50",
+          "author": "reddit_user_e1b151562f2a",
+          "author_karma": 0,
+          "content": "Open the Play Store and uninstall the app from there.",
+          "timestamp": "2026-08-02T17:25:31+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run016_post03_seed083",
+      "post_slot": 3,
+      "seed_index": 83,
+      "source_raw_post_id": "1vdlzgx",
+      "source_product_dir": "laptops",
+      "source_file": "https://www.reddit.com/r/laptops/comments/1vdlzgx/choosn_bw_the_follown/",
+      "post_type": "Buying help",
+      "title": "Choosn bw the follown",
+      "author": "reddit_user_d8691634ac1e",
+      "author_karma": 0,
+      "content": "Choosn bw the follown\n\nhttps://in.store.asus.com/asus-tuf-gaming-a15-fa506ncq-hn009ws-gaming-laptop.html\n\nhttps://in.store.asus.com/gaming-laptop-asus-tuf-gaming-f16-fx677v.html",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p19zw8m",
+          "author": "reddit_user_5d741817d3be",
+          "author_karma": 0,
+          "content": "4050 one.",
+          "timestamp": "2026-08-02T16:14:02+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1a0xpb",
+              "author": "reddit_user_5e29fff8db42",
+              "author_karma": 0,
+              "content": "Thx for ur input",
+              "timestamp": "2026-08-02T16:18:47+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p19zw8m",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1cf7oa",
+          "author": "reddit_user_dceb2387a454",
+          "author_karma": 0,
+          "content": "4GB is not enough these days... don't even consider that",
+          "timestamp": "2026-08-02T23:05:36+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1dccdh",
+              "author": "reddit_user_5e29fff8db42",
+              "author_karma": 0,
+              "content": "Thx for ur input",
+              "timestamp": "2026-08-03T02:12:15+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1cf7oa",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "post_id": "real_run016_post04_seed084",
+      "post_slot": 4,
+      "seed_index": 84,
+      "source_raw_post_id": "1vdma4e",
+      "source_product_dir": "laptops",
+      "source_file": "https://www.reddit.com/r/laptops/comments/1vdma4e/need_some_laptop_advicecad_15002000/",
+      "post_type": "Buying help",
+      "title": "Need some laptop advice(CAD $1500-2000)",
+      "author": "reddit_user_d8691634ac1e",
+      "author_karma": 0,
+      "content": "Need some laptop advice(CAD $1500-2000)\n\nThis summer I earned some money by working part time, and I want to buy a new laptop for university.\n\n**\\*\\*LAPTOP QUESTIONNAIRE\\*\\***\n\n\\*\\*Country\\*\\*\n\nCanada\n\n\\*\\*Budget\\*\\*\n\nCAD $1500-2000 (about USD $1,069-1450)\n\n\\*\\*Are you open to refurbs/used options?\\*\\*\n\nNo\n\n\\*\\*Screen size\\*\\*\n\n15\"-16\"\n\n\\*\\*Weight limit\\*\\*\n\nNo strict limit. I don't mind carrying a heavier laptop if the performance is worth it.\n\n\\*\\*Purpose\\*\\*\n\nGaming, university (Electrical Engineering), and video editing.\n\n\\*\\*Form factor\\*\\*\n\nStandard laptop.\n\n\\*\\*Intended usage\\*\\*\n\nI'll mainly be using it for university (Electrical Engineering), so I'll probably need to run software like MATLAB, LTspice, AutoCAD/Fusion 360, and whatever other engineering software my courses require.\n\nI also do some video editing (Adobe Premiere Pro) , 3D modeling, animation and play games.\n\nI'm honestly not very demanding when it comes to graphics because I've been using a pretty weak laptop for years. I'm completely fine with running games at 1080p (or higher if possible), medium/high settings, and around 60 FPS. I don't care about max settings or competitive FPS.\n\nI'd also like to have 2TB of SSD storage if that's realistic within my budget.\n\n\\*\\*Desired battery life\\*\\*\n\nAround 5-6 hours for light schoolwork would be nice, but I know gaming laptops aren't great for battery life, so performance is more important.\n\n\\*\\*Please list, in order of most important to least important, the priority between Size, Weight, Performance, Battery life\\*\\*\n\nPerformance > Battery life > Weight > Size\n\n\\*\\*Info/Requirements\\*\\*\n\nCurrent laptop:\n\n\\* Ryzen 5 4500U\n\n\\* 16GB DDR4 RAM (2×8GB)\n\n\\* 512GB SSD\n\n\\* Integrated Radeon Graphics\n\n\\* 15\" 1080p 60Hz display\n\nIt's definitely struggling now, especially with newer games and editing.\n\nOne more question: I've heard laptop GPUs and RAM have become more expensive over the last few years. Do you think I should just spend my whole budget now and buy the best laptop I can, or buy something that's \"good enough\" for school and wait a couple of years in case prices improve before buying another laptop or building a desktop?\n\nAny recommendations would be greatly appreciated!",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p1ae6m8",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-02T17:18:50+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,450 @@
+{
+  "meta": {
+    "product_category": "laptop",
+    "baseline": "real_reddit_reference",
+    "run_id": "run_017_sampled_reddit"
+  },
+  "posts": [
+    {
+      "post_id": "real_run017_post00_seed085",
+      "post_slot": 0,
+      "seed_index": 85,
+      "source_raw_post_id": "1vdmawm",
+      "source_product_dir": "laptops",
+      "source_file": "https://www.reddit.com/r/laptops/comments/1vdmawm/laptop_screen_went_off_while_watching_a_movie/",
+      "post_type": "General question",
+      "title": "laptop screen went off while watching a movie",
+      "author": "reddit_user_d8691634ac1e",
+      "author_karma": 0,
+      "content": "laptop screen went off while watching a movie\n\nthe model is lenovo gamingpad3, is this a display or some cable issue,any help is appreciated, no water or any other such damage",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p1ahc3z",
+          "author": "reddit_user_7bb8c9653510",
+          "author_karma": 0,
+          "content": "Is it flickers when opening and closing lid time?",
+          "timestamp": "2026-08-02T17:32:51+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1ai22n",
+              "author": "reddit_user_c1153bcea467",
+              "author_karma": 0,
+              "content": "No when i was watching movie screen started messing up lines and all j restart3d it still this continues",
+              "timestamp": "2026-08-02T17:36:04+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1ahc3z",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1ajz22",
+                  "author": "reddit_user_7bb8c9653510",
+                  "author_karma": 0,
+                  "content": "Can tried hdmi output?",
+                  "timestamp": "2026-08-02T17:44:32+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1ai22n",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p1byblc",
+          "author": "reddit_user_afd0cc348106",
+          "author_karma": 0,
+          "content": "The hinges might be worn out if it starts flickering when you move the screen around. I remember having to replace mine last year because the display would cut out when I tilted it too much.",
+          "timestamp": "2026-08-02T21:38:41+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run017_post01_seed086",
+      "post_slot": 1,
+      "seed_index": 86,
+      "source_raw_post_id": "1vdmeng",
+      "source_product_dir": "laptops",
+      "source_file": "https://www.reddit.com/r/laptops/comments/1vdmeng/i_think_i_scored_a_deal_but_not_entirely_sure/",
+      "post_type": "Discussion",
+      "title": "I think i scored a deal but not entirely sure",
+      "author": "reddit_user_d8691634ac1e",
+      "author_karma": 0,
+      "content": "I think i scored a deal but not entirely sure\n\nI recently purchased this HP zbook studio g8 off of vinted for £570 incluing it and other fees and shipping.\n\nIt has some issues i plan to fix but i didnt look at the photos properly (they were not many)\n\nIssues\n\n. the screen has black borders in the corners. I have orderd a new screen.\n\n. the battery has a health of 74 percent at 240 cycles. It still lasts about an hour off the wall. (I am going to replace the battery) \n\n​. The spacebar on the keyboard backlight doesn't light up. The menu button also flickers if the lighting is in a colour changing mode.\n\n. there is some scratches at the side. This laptop looks like it was used a lot.\n\n  \nSpecs\n\nIntel core i7 11800h\n\n32gb ddr4 3200mhz (soldered)\n\n1tb pcie ssd (upgradeable)\n\nSoldered Intel WiFi 6\n\nRtx 3070 max q 80w.\n\n1080p 60hz screen.\n\nPorts\n\n1 mini dp\n\n2 thunderbolt 4\n\nHeadphone jack\n\n1 USB 3.0\n\nPower input\n\nKensington lock\n\nSD express 7.0 card reader (has a door over it)",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p1a45t8",
+          "author": "reddit_user_acfaee838e81",
+          "author_karma": 0,
+          "content": "Get windows off it and you got a deal:)",
+          "timestamp": "2026-08-02T16:33:29+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1a55bd",
+              "author": "reddit_user_1630de518cb9",
+              "author_karma": 0,
+              "content": "I tried putting fedora on it but I kept having issues with the NVidia kernel module wouldn't load despite the driver existing.",
+              "timestamp": "2026-08-02T16:38:00+00:00",
+              "likes": 2,
+              "dislikes": 0,
+              "parent_comment_id": "p1a45t8",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1a5n4q",
+                  "author": "reddit_user_acfaee838e81",
+                  "author_karma": 0,
+                  "content": "Fair enough",
+                  "timestamp": "2026-08-02T16:40:15+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1a55bd",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p1a4lh0",
+          "author": "reddit_user_c1f955221a7a",
+          "author_karma": 0,
+          "content": "For that price it is a massive win. Black borders on the screen is a Know issue for some LCD panels. I don't think you should replace the back light because sometimes you have to take off the whole keyboard assemly. Honestly 3070 80w for a 1080p 60Hz screen is overkill, its that good. Overall It will get your work done and much more.",
+          "timestamp": "2026-08-02T16:35:29+00:00",
+          "likes": 6,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1a5qbz",
+              "author": "reddit_user_1630de518cb9",
+              "author_karma": 0,
+              "content": "From what I have heard what is happening with the screen is a sign of it failing shortly. I cant find a repair guide to dismantle the lid assembely online but i think the screen can be replaced without disasembeing the whole machine.\n\nI looked into getting a 4k screen but unfortunately I cant as the connector for the 4k has 40 pins and the 1080p one has 30 I landed on a 30 pin lcd display with better colour.",
+              "timestamp": "2026-08-02T16:40:40+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1a4lh0",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1a69f8",
+          "author": "reddit_user_4f9e71bb0efc",
+          "author_karma": 0,
+          "content": "Ram is the biggest bottleneck.",
+          "timestamp": "2026-08-02T16:43:06+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1ay6jn",
+          "author": "reddit_user_a375d0fa031a",
+          "author_karma": 0,
+          "content": "HP batteries tend to under report capacity on windows... So you might not see any improvement after installing a new battery. I'm yet to see any HP laptop over 83% battery health in over 200 devices we received this year. (Yes they are used laptops, but Dell and Lenovo have 90+% all the time)",
+          "timestamp": "2026-08-02T18:48:15+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1bct8g",
+              "author": "reddit_user_1630de518cb9",
+              "author_karma": 0,
+              "content": "I did think it was potentially under reporting when checked it for the first time it did say 10.9 percent wear. When I checked later it said 36.7.",
+              "timestamp": "2026-08-02T19:55:56+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1ay6jn",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1bawmb",
+          "author": "reddit_user_841002a18f2c",
+          "author_karma": 0,
+          "content": "You can upgrade the screen for cheap, I think 144hz one is not that expensive if you want to ",
+          "timestamp": "2026-08-02T19:47:00+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1bcjwh",
+              "author": "reddit_user_1630de518cb9",
+              "author_karma": 0,
+              "content": "All the screens that are compatable are 1080p 60hz. The 4k ones need a different connctor my motherboard doesn't have",
+              "timestamp": "2026-08-02T19:54:43+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1bawmb",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1bdwhj",
+                  "author": "reddit_user_841002a18f2c",
+                  "author_karma": 0,
+                  "content": "I don’t know alot about it but last year my laptop screen broke and when I went to buy a new one they asked me if I wanted the same one, or a cheaper 60hz or a touch screen one. I didn’t know they could be swapped and then that’s why I am telling you, if you laptop can have the 144hz or whichever one you want ask if it’s compatible and do it the difference is worth it. \n\nI ended up getting the same screen I had before which is a 144hz costed me like 75$ with installation and all. And also, if you end up buying it remember to go after on display settings so you can make 144 because windows makes 60 the default. \n\nEither way the specs look awesome, mine is almost same specs except it’s 2070maxq. It’s good enough for me because I only play games like league, Minecraft and some other shooter and zombie games. And I also play some demanding games like BeamNG and I get acceptable performance. Hope you have fun with yours too ",
+                  "timestamp": "2026-08-02T20:01:03+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1bcjwh",
+                  "depth": 2,
+                  "replies": []
+                },
+                {
+                  "comment_id": "p1bed46",
+                  "author": "reddit_user_841002a18f2c",
+                  "author_karma": 0,
+                  "content": "And also I forgot to mention, the repair guy told me that these screens are usually shared with multiple other laptop makers and a good quality aftermarket one isn’t that bad, it’s like all the companies source their screens from some place and so they share connections and whatever \n\nAnyway I don’t know why I am talking you into buying a screen 😭. I just wanted to yap",
+                  "timestamp": "2026-08-02T20:03:14+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1bcjwh",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p1cjf2j",
+          "author": "reddit_user_51dbc94bad55",
+          "author_karma": 0,
+          "content": "My friend, what is the program you use for see the details of the laptop? My English is not good, but i can translate you respond. ",
+          "timestamp": "2026-08-02T23:28:11+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1cldl3",
+              "author": "reddit_user_1630de518cb9",
+              "author_karma": 0,
+              "content": "I use hwinfo 64 it is free for non commercial use\n\nWebsite download page: [https://www.hwinfo.com/download/](https://www.hwinfo.com/download/)",
+              "timestamp": "2026-08-02T23:38:56+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1cjf2j",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "post_id": "real_run017_post02_seed087",
+      "post_slot": 2,
+      "seed_index": 87,
+      "source_raw_post_id": "1vdmmgq",
+      "source_product_dir": "thinkpad",
+      "source_file": "https://www.reddit.com/r/thinkpad/comments/1vdmmgq/calling_all_x1_carbon_6th_gen_owners/",
+      "post_type": "Discussion / Information",
+      "title": "Calling all X1 Carbon 6th Gen Owners!",
+      "author": "reddit_user_d8691634ac1e",
+      "author_karma": 0,
+      "content": "Calling all X1 Carbon 6th Gen Owners!\n\nI recently added an X1 Carbon 6th Generation to my Lenovo ThinkPad collection. I love the T480s and I've been curious to see how the X1C6 stacks up between the T480s and X280.\n\nSo far I'm very pleased, it works perfectly, runs cool, has good battery life (comparatively) and a decently bright display.\n\nSpecs:\n\nIntel Core i7-8650U\n16 GB RAM\nFHD display (300 nits)\n\nGood:\n\nEverything is working.\nHas the better Delta fan (P/N: 01YR204)\n86% battery health\n\nList of my mods + upgrades that I have performed are below:\n\n- Installed WQHD Panel (replaced stock FHD Panel).\n- Installed SaotoTech Track-point.\n- Replaced Thermal Paste (Kryonaut Grizzly).\n- Installed Refurb Battery Replacement (85% Capacity).\n- Installed Samsung EVO 1TB SSD.\n- Installed 2nd 512GB SSD (Western Digital 2242) in WWAN slot.\n- Installed Intel AX210NGW Wifi Card.\n- Installed Linux and dual-booting with Windows 11.\n\nAnything else I'm missing? How are everyone else's X1C6G models performing? Any major issues?\n\nThanks in advance to everyone for your time and help, it is greatly appreciated.",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p1a8a1r",
+          "author": "reddit_user_d18b8d744af6",
+          "author_karma": 0,
+          "content": "The X1 Carbon 6th Gen is also one of my favorites, and I also have the T480, T25 “FrankenPad”, numerous T480s’s (they’re so good!), X280 and P52, so a bunch of that series.\n\nYou have done pretty much all the same mods I have. What you could do next, is upgrade the display to a 1440p@120Hz, or a 4k@60Hz panel.\n\nYou can check out my X1 Carbon 6th Gen post here for ideas: [https://www.reddit.com/r/thinkpad/s/AIDlx0xEGd](https://www.reddit.com/r/thinkpad/s/AIDlx0xEGd)\n\nAlso, you should post some pictures of that beast!",
+          "timestamp": "2026-08-02T16:52:16+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1a8uxt",
+              "author": "reddit_user_d18b8d744af6",
+              "author_karma": 0,
+              "content": "Another thing I forgot mentioning, I’ve been contemplating getting another X1C6 (for parts) to convert into a silver chassis, like I did one of T480s’s. I have nearly all the parts, even an extra motherboard, so it’s really tempting.",
+              "timestamp": "2026-08-02T16:54:52+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1a8a1r",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1a8ayb",
+          "author": "reddit_user_c7d76ab6c0f9",
+          "author_karma": 0,
+          "content": "SK Hynix p31 1tb  will give you an extra 45-60m of battery life if you use a lot of page for caching.  It's the gold standard for laptop efficiency ",
+          "timestamp": "2026-08-02T16:52:23+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1a8kpc",
+              "author": "reddit_user_685df9bd02bd",
+              "author_karma": 0,
+              "content": "Thanks, I’ve had super good luck with Samsung drives, and I already have everything setup Linux wise! Maybe if I need to upgrade in a few years I’ll keep it in mind.",
+              "timestamp": "2026-08-02T16:53:36+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1a8ayb",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1aixa3",
+                  "author": "reddit_user_e10fb53f9187",
+                  "author_karma": 0,
+                  "content": "Look for WD Sn7100 or the Sandisk optimus gx 7100 if you want an ssd that uses the least amount of wattage. ",
+                  "timestamp": "2026-08-02T17:39:52+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1a8kpc",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1dhmy0",
+                      "author": "reddit_user_c7d76ab6c0f9",
+                      "author_karma": 0,
+                      "content": "The p31 still has substantially lower power consumption- no PCI gen 4 drive can match it (p31 is gen3)",
+                      "timestamp": "2026-08-03T02:44:06+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1aixa3",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "p1dsezo",
+                          "author": "reddit_user_e10fb53f9187",
+                          "author_karma": 0,
+                          "content": "|[](https://www.google.com/search?ibp=oshop&prds=pvt:hg,pvo:29,mid:576462629252902572,imageDocid:7159480701968309738,gpcid:11300163138268994092,headlineOfferDocid:12656723436178705813,catalogid:9973784461988813973,productDocid:5321336553515048143,rds:PC_11300163138268994092%7CPROD_PC_11300163138268994092&q=product&sa=X&ved=2ahUKEwjv_ef0x4OWAxW5J0QIHcgPIzEQ8ccPegYIAQgSEAE)|[](https://www.google.com/search?ibp=oshop&prds=pvt:hg,pvo:29,mid:576462858447066726,imageDocid:16576326609235910602,gpcid:11767456331033303612,headlineOfferDocid:15593028159289180538,catalogid:10601522688209526243,productDocid:10568794722119158769,rds:PC_11767456331033303612%7CPROD_PC_11767456331033303612&q=product&sa=X&ved=2ahUKEwjv_ef0x4OWAxW5J0QIHcgPIzEQ8ccPegYIAQgSEAk)|\n|:-|:-|\n|Interface / Gen PCIe 3.0 x4|Interface / Gen **PCIe 4.0 x4**|\n|Max Read Speed \\~3,500 MB/s|Max Read Speed **\\~7,250 MB/s**|\n|Deep Sleep (PS4) \\~5 mW (0.005 W)|Deep Sleep (PS4) \\~5 mW (0.005 W)|\n|Active Idle (ASPM) \\~0.35 W|Active Idle (ASPM) **\\~0.03 W**|\n|Peak Power Load **\\~3.3 W – 6.3 W**|Peak Power Load \\~4.5 W|\n|Design Type Dedicated DRAM Cache|Design Type DRAM-less (Uses HMB)|",
+                          "timestamp": "2026-08-03T03:55:06+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "p1dhmy0",
+                          "depth": 4,
+                          "replies": [
+                            {
+                              "comment_id": "p1duudn",
+                              "author": "reddit_user_c7d76ab6c0f9",
+                              "author_karma": 0,
+                              "content": "I have to disagree.  Type \"wd sn7100 1tb watts vs p31 gold 1tb\" into your favorite AI for a detailed breakdown.",
+                              "timestamp": "2026-08-03T04:11:58+00:00",
+                              "likes": 1,
+                              "dislikes": 0,
+                              "parent_comment_id": "p1dsezo",
+                              "depth": 5,
+                              "replies": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "post_id": "real_run017_post03_seed088",
+      "post_slot": 3,
+      "seed_index": 88,
+      "source_raw_post_id": "1vdnf9u",
+      "source_product_dir": "GamingLaptops",
+      "source_file": "https://www.reddit.com/r/GamingLaptops/comments/1vdnf9u/which_one_is_better_please_helpppp/",
+      "post_type": ":snoo_thoughtful: Laptop Buying Advice",
+      "title": "Which one is better??? Please helpppp",
+      "author": "reddit_user_d8691634ac1e",
+      "author_karma": 0,
+      "content": "Which one is better??? Please helpppp",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p1ab6pj",
+          "author": "reddit_user_500c200c76d0",
+          "author_karma": 0,
+          "content": "Hey! Your post was removed because it is missing one or more **required Buying Advice fields**, or a required field was left empty.\n\nPlease resubmit using:\n\n    Budget: (e.g. $1200)\n    Country: (e.g. USA)\n    Use Case: (Gaming — which titles? / School / Editing / Mixed)\n    Preferred Specs: (Optional: GPU, CPU, RAM, storage)\n    Notes: (Optional: anything else we should know)\n\nThe required fields are **Budget**, **Country**, and **Use Case**.\n\nCheck our [Posting Guidelines](https://www.reddit.com/r/GamingLaptops/comments/1sppz97/read_before_posting/) before reposting.\n\n\n*I am a bot, and this action was performed automatically. Please [contact the moderators of this subreddit](/message/compose/?to=/r/GamingLaptops) if you have any questions or concerns.*",
+          "timestamp": "2026-08-02T17:05:20+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run017_post04_seed089",
+      "post_slot": 4,
+      "seed_index": 89,
+      "source_raw_post_id": "1vdniz4",
+      "source_product_dir": "GamingLaptops",
+      "source_file": "https://www.reddit.com/r/GamingLaptops/comments/1vdniz4/is_this_a_good_first_laptop_im_from_india_and/",
+      "post_type": ":snoo_thoughtful: Laptop Buying Advice",
+      "title": "Is this a good first laptop ? Im from India and budget is 60k to 70k or 630 to 730 usd.",
+      "author": "reddit_user_d8691634ac1e",
+      "author_karma": 0,
+      "content": "Is this a good first laptop ? Im from India and budget is 60k to 70k or 630 to 730 usd.",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p1ac3mc",
+          "author": "reddit_user_500c200c76d0",
+          "author_karma": 0,
+          "content": "Hey! Your post was removed because it is missing one or more **required Buying Advice fields**, or a required field was left empty.\n\nPlease resubmit using:\n\n    Budget: (e.g. $1200)\n    Country: (e.g. USA)\n    Use Case: (Gaming — which titles? / School / Editing / Mixed)\n    Preferred Specs: (Optional: GPU, CPU, RAM, storage)\n    Notes: (Optional: anything else we should know)\n\nThe required fields are **Budget**, **Country**, and **Use Case**.\n\nCheck our [Posting Guidelines](https://www.reddit.com/r/GamingLaptops/comments/1sppz97/read_before_posting/) before reposting.\n\n\n*I am a bot, and this action was performed automatically. Please [contact the moderators of this subreddit](/message/compose/?to=/r/GamingLaptops) if you have any questions or concerns.*",
+          "timestamp": "2026-08-02T17:09:26+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    }
+  ]
+}

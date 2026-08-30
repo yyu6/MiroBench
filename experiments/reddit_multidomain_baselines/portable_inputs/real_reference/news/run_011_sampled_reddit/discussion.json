@@ -1,0 +1,2977 @@
+{
+  "meta": {
+    "product_category": "news",
+    "baseline": "real_reddit_reference",
+    "run_id": "run_011_sampled_reddit"
+  },
+  "posts": [
+    {
+      "post_id": "real_run011_post00_seed055",
+      "post_slot": 0,
+      "seed_index": 55,
+      "source_raw_post_id": "1vd4bne",
+      "source_product_dir": "news",
+      "source_file": "https://www.reddit.com/r/news/comments/1vd4bne/bomb_carried_by_woman_kills_three_injures_21_near/",
+      "post_type": "Soft paywall",
+      "title": "Bomb carried by woman kills three, injures 21 near Moscow restaurant, authorities say",
+      "author": "reddit_user_bde1e90b951b",
+      "author_karma": 0,
+      "content": "Bomb carried by woman kills three, injures 21 near Moscow restaurant, authorities say",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p16a63h",
+          "author": "reddit_user_1c9d1528db40",
+          "author_karma": 0,
+          "content": "It suggested that the bomb had been set off by someone else remotely and ⁠that the ​woman carrying it may not have known ​that it was an explosive device.\n\nMost interesting bit.",
+          "timestamp": "2026-08-02T01:23:57+00:00",
+          "likes": 211,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p16h9yo",
+              "author": "reddit_user_bf2136ba92af",
+              "author_karma": 0,
+              "content": "That's fucking terrifying.",
+              "timestamp": "2026-08-02T02:07:09+00:00",
+              "likes": 109,
+              "dislikes": 0,
+              "parent_comment_id": "p16a63h",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p16omex",
+                  "author": "reddit_user_0c5b889e2e61",
+                  "author_karma": 0,
+                  "content": "True.\n\nI feel like it's just another version of a proxy bomb, though, where instead of forcing someone to deliver the IED, the operation is set up in such a way that the proxy is unaware of the actual contents of their package. \n\nRumor has it that this may be how the famous VBIED attack on the Kerch bridge was carried out, so it's not exactly new in the context of the RU/UA war either. ",
+                  "timestamp": "2026-08-02T02:53:20+00:00",
+                  "likes": 40,
+                  "dislikes": 0,
+                  "parent_comment_id": "p16h9yo",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p16vzf9",
+                      "author": "reddit_user_4c0f2a914df8",
+                      "author_karma": 0,
+                      "content": "I’m pretty sure a Russian blogger was killed during some award ceremony in the a similar way early in the war. If I remember correctly explosives were planted in an award or some kind of gift.",
+                      "timestamp": "2026-08-02T03:42:20+00:00",
+                      "likes": 24,
+                      "dislikes": 0,
+                      "parent_comment_id": "p16omex",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "p177ofh",
+                          "author": "reddit_user_3fc67f11cc6a",
+                          "author_karma": 0,
+                          "content": "It was at a café and he was doing a little meet and greet. The lady gave him a bust i believe, with explosives in it. I remember the video of it well when it first happened. Well worth the watch if you can find it. ",
+                          "timestamp": "2026-08-02T05:04:04+00:00",
+                          "likes": 21,
+                          "dislikes": 0,
+                          "parent_comment_id": "p16vzf9",
+                          "depth": 4,
+                          "replies": [
+                            {
+                              "comment_id": "p17fjso",
+                              "author": "reddit_user_ecf167dcb7d5",
+                              "author_karma": 0,
+                              "content": "https://www.themoscowtimes.com/2023/04/04/video-shows-bomb-blast-that-killed-russian-pro-war-blogger-a80703",
+                              "timestamp": "2026-08-02T06:05:19+00:00",
+                              "likes": 6,
+                              "dislikes": 0,
+                              "parent_comment_id": "p177ofh",
+                              "depth": 5,
+                              "replies": []
+                            },
+                            {
+                              "comment_id": "p17pmd8",
+                              "author": "reddit_user_a825f441a710",
+                              "author_karma": 0,
+                              "content": "Pretty sure the Kremlin did that one though, since the guy had been starting to heavily criticize the Russian army’s handling of the war.",
+                              "timestamp": "2026-08-02T07:26:15+00:00",
+                              "likes": 2,
+                              "dislikes": 0,
+                              "parent_comment_id": "p177ofh",
+                              "depth": 5,
+                              "replies": []
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "comment_id": "p17vgpx",
+                      "author": "reddit_user_a33fce200e15",
+                      "author_karma": 0,
+                      "content": "Did someone say it was new? Was there an edit? I'm going crazy because your comment seems to be replying to something but I can't find it ",
+                      "timestamp": "2026-08-02T08:14:47+00:00",
+                      "likes": 2,
+                      "dislikes": 0,
+                      "parent_comment_id": "p16omex",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                },
+                {
+                  "comment_id": "p16z3ah",
+                  "author": "reddit_user_396a8db9445b",
+                  "author_karma": 0,
+                  "content": "Only if you are a Russian ",
+                  "timestamp": "2026-08-02T04:03:04+00:00",
+                  "likes": -3,
+                  "dislikes": 0,
+                  "parent_comment_id": "p16h9yo",
+                  "depth": 2,
+                  "replies": []
+                },
+                {
+                  "comment_id": "p17sw8z",
+                  "author": "reddit_user_c4117377a7c2",
+                  "author_karma": 0,
+                  "content": "That’s Russian as fuck. ",
+                  "timestamp": "2026-08-02T07:53:15+00:00",
+                  "likes": 2,
+                  "dislikes": 0,
+                  "parent_comment_id": "p16h9yo",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            },
+            {
+              "comment_id": "p16ngf2",
+              "author": "reddit_user_fbe0699d2d83",
+              "author_karma": 0,
+              "content": "Yeah.\n\n\"Er, could you do us a solidsky, and take this bombski, i mean presentski, to my budski, in that pubski\"\n\n\"Da\"",
+              "timestamp": "2026-08-02T02:45:55+00:00",
+              "likes": 14,
+              "dislikes": 0,
+              "parent_comment_id": "p16a63h",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p172egb",
+                  "author": "reddit_user_a348d1cd7475",
+                  "author_karma": 0,
+                  "content": "Have you ever considered stand up?",
+                  "timestamp": "2026-08-02T04:25:43+00:00",
+                  "likes": 12,
+                  "dislikes": 0,
+                  "parent_comment_id": "p16ngf2",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            },
+            {
+              "comment_id": "p16qwhb",
+              "author": "[deleted]",
+              "author_karma": 0,
+              "content": "[removed]",
+              "timestamp": "2026-08-02T03:08:14+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p16a63h",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p173lwc",
+              "author": "[deleted]",
+              "author_karma": 0,
+              "content": "[removed]",
+              "timestamp": "2026-08-02T04:34:21+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p16a63h",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p185p5z",
+              "author": "reddit_user_85d2ce23d856",
+              "author_karma": 0,
+              "content": "Most likely yeah she didnt know what it does, life is brutal",
+              "timestamp": "2026-08-02T09:42:57+00:00",
+              "likes": 2,
+              "dislikes": 0,
+              "parent_comment_id": "p16a63h",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p16bfft",
+          "author": "reddit_user_a70607635e2e",
+          "author_karma": 0,
+          "content": "Putin false flag to justify mobilising muscovites.",
+          "timestamp": "2026-08-02T01:31:34+00:00",
+          "likes": 96,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p16i740",
+              "author": "reddit_user_d6c5eb9a1767",
+              "author_karma": 0,
+              "content": "Worked before with Chechnya. Why not again.\n\nSaid Putin. Probably ",
+              "timestamp": "2026-08-02T02:12:50+00:00",
+              "likes": 70,
+              "dislikes": 0,
+              "parent_comment_id": "p16bfft",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p16vpwe",
+                  "author": "reddit_user_4c61bb77eeab",
+                  "author_karma": 0,
+                  "content": "The old reliable ",
+                  "timestamp": "2026-08-02T03:40:35+00:00",
+                  "likes": 7,
+                  "dislikes": 0,
+                  "parent_comment_id": "p16i740",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            },
+            {
+              "comment_id": "p16izei",
+              "author": "reddit_user_8e2f6359e1cc",
+              "author_karma": 0,
+              "content": "Drones have been hammering Moscow. I cant see how another bomb would change anything except further show they keep getting hit. Theres been a few strikes like this already. ",
+              "timestamp": "2026-08-02T02:17:46+00:00",
+              "likes": 63,
+              "dislikes": 0,
+              "parent_comment_id": "p16bfft",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p1705i3",
+              "author": "reddit_user_b8a4a5b0c13d",
+              "author_karma": 0,
+              "content": "We're way past the point of requiring false flags unless he wanted to try to justify dropping a nuclear payload ",
+              "timestamp": "2026-08-02T04:10:10+00:00",
+              "likes": 34,
+              "dislikes": 0,
+              "parent_comment_id": "p16bfft",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p17h0vr",
+              "author": "reddit_user_0444c50e2d43",
+              "author_karma": 0,
+              "content": "He doesn't need an excuse? ",
+              "timestamp": "2026-08-02T06:16:53+00:00",
+              "likes": 8,
+              "dislikes": 0,
+              "parent_comment_id": "p16bfft",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p17u9kl",
+              "author": "reddit_user_5438fabe605b",
+              "author_karma": 0,
+              "content": "Just like the restaurant bombings, car bombings, kerch bridge bombing before it?\n",
+              "timestamp": "2026-08-02T08:04:42+00:00",
+              "likes": 5,
+              "dislikes": 0,
+              "parent_comment_id": "p16bfft",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p16bu9f",
+          "author": "reddit_user_59c56113030f",
+          "author_karma": 0,
+          "content": ">The restaurant's website said the venue had been closed on Saturday for ​a private event\n\nA more general terror attack or were there specific guests in attendance I wonder?",
+          "timestamp": "2026-08-02T01:34:03+00:00",
+          "likes": 336,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p16c7mm",
+              "author": "reddit_user_7dccddd450c3",
+              "author_karma": 0,
+              "content": "Could be a specific military member in the group or rich person ",
+              "timestamp": "2026-08-02T01:36:17+00:00",
+              "likes": 23,
+              "dislikes": 0,
+              "parent_comment_id": "p16bu9f",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p16mezg",
+              "author": "reddit_user_b8063ca5545a",
+              "author_karma": 0,
+              "content": "It was a birthday party for General Aleksandr Chayko. Lots of military officers were present from what I've read.",
+              "timestamp": "2026-08-02T02:39:19+00:00",
+              "likes": 368,
+              "dislikes": 0,
+              "parent_comment_id": "p16bu9f",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p16wxkp",
+                  "author": "reddit_user_a0e6af60b7ee",
+                  "author_karma": 0,
+                  "content": "Oh wow this is a real thing. I thought this was made up at first for some reason.\n\nOh and he sits next to Putin and Sergei.\n\nA high profile assassination attempt, then. I'm surprised someone of his status was even out in the open.",
+                  "timestamp": "2026-08-02T03:48:35+00:00",
+                  "likes": 155,
+                  "dislikes": 0,
+                  "parent_comment_id": "p16mezg",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1858h4",
+                      "author": "reddit_user_85d2ce23d856",
+                      "author_karma": 0,
+                      "content": "Everybody get open at some point, like Trump went world cup many events, where is not safe. Or someone visits hospital somebody etc. Its almost impossible to be always in bunker for human. ",
+                      "timestamp": "2026-08-02T09:38:55+00:00",
+                      "likes": 6,
+                      "dislikes": 0,
+                      "parent_comment_id": "p16wxkp",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "comment_id": "p16rw72",
+              "author": "reddit_user_696df169e54a",
+              "author_karma": 0,
+              "content": "A Russian general was killed in the attack, afaik.",
+              "timestamp": "2026-08-02T03:14:53+00:00",
+              "likes": 121,
+              "dislikes": 0,
+              "parent_comment_id": "p16bu9f",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p16tve1",
+                  "author": "reddit_user_ea1a191c18d5",
+                  "author_karma": 0,
+                  "content": "Oh no. ",
+                  "timestamp": "2026-08-02T03:28:04+00:00",
+                  "likes": 20,
+                  "dislikes": 0,
+                  "parent_comment_id": "p16rw72",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p16wwyk",
+                      "author": "[deleted]",
+                      "author_karma": 0,
+                      "content": "[removed]",
+                      "timestamp": "2026-08-02T03:48:28+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p16tve1",
+                      "depth": 3,
+                      "replies": []
+                    },
+                    {
+                      "comment_id": "p16ztvr",
+                      "author": "reddit_user_e3fb8b9e704f",
+                      "author_karma": 0,
+                      "content": "I'll get the Folger's can.",
+                      "timestamp": "2026-08-02T04:07:59+00:00",
+                      "likes": 12,
+                      "dislikes": 0,
+                      "parent_comment_id": "p16tve1",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "p176oz7",
+                          "author": "reddit_user_3bda0a693377",
+                          "author_karma": 0,
+                          "content": "The best part of blowing up",
+                          "timestamp": "2026-08-02T04:56:46+00:00",
+                          "likes": 17,
+                          "dislikes": 0,
+                          "parent_comment_id": "p16ztvr",
+                          "depth": 4,
+                          "replies": [
+                            {
+                              "comment_id": "p177wfh",
+                              "author": "reddit_user_e3fb8b9e704f",
+                              "author_karma": 0,
+                              "content": "It's our most modestly-priced receptacle.",
+                              "timestamp": "2026-08-02T05:05:44+00:00",
+                              "likes": 11,
+                              "dislikes": 0,
+                              "parent_comment_id": "p176oz7",
+                              "depth": 5,
+                              "replies": [
+                                {
+                                  "comment_id": "p179kcl",
+                                  "author": "[deleted]",
+                                  "author_karma": 0,
+                                  "content": "[removed]",
+                                  "timestamp": "2026-08-02T05:18:19+00:00",
+                                  "likes": 1,
+                                  "dislikes": 0,
+                                  "parent_comment_id": "p177wfh",
+                                  "depth": 6,
+                                  "replies": []
+                                },
+                                {
+                                  "comment_id": "p17h00k",
+                                  "author": "reddit_user_d9dda81dbf10",
+                                  "author_karma": 0,
+                                  "content": "Just because we're bereaved doesn't make us saps!",
+                                  "timestamp": "2026-08-02T06:16:42+00:00",
+                                  "likes": 6,
+                                  "dislikes": 0,
+                                  "parent_comment_id": "p177wfh",
+                                  "depth": 6,
+                                  "replies": []
+                                }
+                              ]
+                            },
+                            {
+                              "comment_id": "p17g1vn",
+                              "author": "[deleted]",
+                              "author_karma": 0,
+                              "content": "[removed]",
+                              "timestamp": "2026-08-02T06:09:16+00:00",
+                              "likes": 1,
+                              "dislikes": 0,
+                              "parent_comment_id": "p176oz7",
+                              "depth": 5,
+                              "replies": []
+                            },
+                            {
+                              "comment_id": "p17so0x",
+                              "author": "[deleted]",
+                              "author_karma": 0,
+                              "content": "[removed]",
+                              "timestamp": "2026-08-02T07:51:20+00:00",
+                              "likes": 1,
+                              "dislikes": 0,
+                              "parent_comment_id": "p176oz7",
+                              "depth": 5,
+                              "replies": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "comment_id": "p1711g6",
+                  "author": "reddit_user_bc7c3bc3a27f",
+                  "author_karma": 0,
+                  "content": "The general was likely the target, I haven't seen any source claiming he was killed or injured.",
+                  "timestamp": "2026-08-02T04:16:10+00:00",
+                  "likes": 80,
+                  "dislikes": 0,
+                  "parent_comment_id": "p16rw72",
+                  "depth": 2,
+                  "replies": []
+                },
+                {
+                  "comment_id": "p171xr5",
+                  "author": "reddit_user_8b0c047f76bf",
+                  "author_karma": 0,
+                  "content": "He should've been more careful around lit cigarettes, probably. ",
+                  "timestamp": "2026-08-02T04:22:24+00:00",
+                  "likes": 4,
+                  "dislikes": 0,
+                  "parent_comment_id": "p16rw72",
+                  "depth": 2,
+                  "replies": []
+                },
+                {
+                  "comment_id": "p176o9g",
+                  "author": "reddit_user_e976ed6e3983",
+                  "author_karma": 0,
+                  "content": "Last info I saw he's alive",
+                  "timestamp": "2026-08-02T04:56:37+00:00",
+                  "likes": 4,
+                  "dislikes": 0,
+                  "parent_comment_id": "p16rw72",
+                  "depth": 2,
+                  "replies": []
+                },
+                {
+                  "comment_id": "p17am5s",
+                  "author": "reddit_user_ff2204110eb7",
+                  "author_karma": 0,
+                  "content": "There is no source about the general. If the bomb carrier was denied entry and the handlers blew the bomb outside, chances are this converted to just cleaning up the carrier.",
+                  "timestamp": "2026-08-02T05:26:25+00:00",
+                  "likes": 32,
+                  "dislikes": 0,
+                  "parent_comment_id": "p16rw72",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p17v5px",
+                      "author": "[deleted]",
+                      "author_karma": 0,
+                      "content": "[removed]",
+                      "timestamp": "2026-08-02T08:12:14+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p17am5s",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                },
+                {
+                  "comment_id": "p17n96c",
+                  "author": "reddit_user_4a14405c3cf3",
+                  "author_karma": 0,
+                  "content": "He was most likely the target, but he wasn't killed, the security guard at the entrance got suspicious, started searching her and the bomb donated, presumably remotely.",
+                  "timestamp": "2026-08-02T07:07:06+00:00",
+                  "likes": 13,
+                  "dislikes": 0,
+                  "parent_comment_id": "p16rw72",
+                  "depth": 2,
+                  "replies": []
+                },
+                {
+                  "comment_id": "p17u1c4",
+                  "author": "reddit_user_04564c04efa7",
+                  "author_karma": 0,
+                  "content": "Were there no windows available?",
+                  "timestamp": "2026-08-02T08:02:48+00:00",
+                  "likes": 3,
+                  "dislikes": 0,
+                  "parent_comment_id": "p16rw72",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p16cxyk",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-02T01:40:42+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p16jtsk",
+          "author": "reddit_user_62cc92b09c0d",
+          "author_karma": 0,
+          "content": "Stalin’s 7 sisters, so must be an attack on Russian elite. Either Putin trying to stir up some trouble or Ukrainian revenge. ",
+          "timestamp": "2026-08-02T02:23:05+00:00",
+          "likes": 71,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p185mnd",
+              "author": "reddit_user_85d2ce23d856",
+              "author_karma": 0,
+              "content": "I dont think ukrainians would come this close, they know just by speaking ukrainian have accent when they speak russian. I have ukrainian friends. Probably inside job, from their own someone betrayed. ",
+              "timestamp": "2026-08-02T09:42:22+00:00",
+              "likes": 4,
+              "dislikes": 0,
+              "parent_comment_id": "p16jtsk",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p16rg79",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-02T03:11:55+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p16x4u0",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-02T03:49:55+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1778ie",
+          "author": "reddit_user_7cb029488086",
+          "author_karma": 0,
+          "content": "It happened just before 2000 local time? You mean either just before 20.00 or just before 8 o’clock in the evening local time… I don’t even think the US army would write it as just 2000? As far as I understand, military time would be twenty hundred hours.",
+          "timestamp": "2026-08-02T05:00:46+00:00",
+          "likes": -45,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p17y3wx",
+              "author": "reddit_user_9ae12a3593fd",
+              "author_karma": 0,
+              "content": "2000 hours \n\n1700 hrs Zulu\n\nEtc",
+              "timestamp": "2026-08-02T08:37:24+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1778ie",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p179ufs",
+          "author": "reddit_user_1ee81f31edee",
+          "author_karma": 0,
+          "content": "'Blast kills security guard, woman carrying bomb and restaurant customer, RIA reports'\n\nSuicide bombers now?",
+          "timestamp": "2026-08-02T05:20:26+00:00",
+          "likes": 25,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p17af6o",
+              "author": "reddit_user_ff2204110eb7",
+              "author_karma": 0,
+              "content": "Seems she was just carrying it and someone else blew the bomb.",
+              "timestamp": "2026-08-02T05:24:54+00:00",
+              "likes": 17,
+              "dislikes": 0,
+              "parent_comment_id": "p179ufs",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p17v9p4",
+                  "author": "reddit_user_e98fb65184a1",
+                  "author_karma": 0,
+                  "content": "How would they even know that? How much of the mechanism would be intact, vs Moscow acusing Kiev of blowing up innocent unknowing women?",
+                  "timestamp": "2026-08-02T08:13:10+00:00",
+                  "likes": 2,
+                  "dislikes": 0,
+                  "parent_comment_id": "p17af6o",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p180o0m",
+          "author": "reddit_user_e7fddfba480e",
+          "author_karma": 0,
+          "content": "It was FSB to drum up support for mobilization \n\nThey did the same but much bloodier in ‘99 with the apartment bombs. ",
+          "timestamp": "2026-08-02T08:59:14+00:00",
+          "likes": 3,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1811jt",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-02T09:02:33+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p184a8c",
+          "author": "reddit_user_ff033033208e",
+          "author_karma": 0,
+          "content": "Una más del Isis ucraniano.",
+          "timestamp": "2026-08-02T09:30:41+00:00",
+          "likes": -1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run011_post01_seed056",
+      "post_slot": 1,
+      "seed_index": 56,
+      "source_raw_post_id": "1vd76u3",
+      "source_product_dir": "news",
+      "source_file": "https://www.reddit.com/r/news/comments/1vd76u3/mendocino_co_update_evacuations_expanded_as_feliz/",
+      "post_type": "link",
+      "title": "Mendocino Co.: Update: Evacuations Expanded As Feliz Fire Surges To 501 Acres",
+      "author": "reddit_user_bde1e90b951b",
+      "author_karma": 0,
+      "content": "Mendocino Co.: Update: Evacuations Expanded As Feliz Fire Surges To 501 Acres",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p16uykt",
+          "author": "reddit_user_707b81faaf20",
+          "author_karma": 0,
+          "content": "550 acres now according to CalFire",
+          "timestamp": "2026-08-02T03:35:29+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run011_post02_seed057",
+      "post_slot": 2,
+      "seed_index": 57,
+      "source_raw_post_id": "1vd8xd4",
+      "source_product_dir": "TrueReddit",
+      "source_file": "https://www.reddit.com/r/TrueReddit/comments/1vd8xd4/for_female_climbers_dangers_go_beyond_avalanches/",
+      "post_type": "Crime, Courts + War",
+      "title": "For Female Climbers, Dangers Go Beyond Avalanches and Storms: \nWomen are increasingly reporting sexual harassment and abuse in the sport, including accusations against the [late] renowned climber Nirmal Purja.",
+      "author": "reddit_user_bde1e90b951b",
+      "author_karma": 0,
+      "content": "For Female Climbers, Dangers Go Beyond Avalanches and Storms: \nWomen are increasingly reporting sexual harassment and abuse in the sport, including accusations against the [late] renowned climber Nirmal Purja.",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p17874t",
+          "author": "reddit_user_0775f1b0c035",
+          "author_karma": 0,
+          "content": "Submission Statement: It’s probably not a surprise to find yet another situation in which women are sexually harassed. For many women climbers the harassment is often coming from the person hired to keep them alive. ",
+          "timestamp": "2026-08-02T05:07:58+00:00",
+          "likes": 50,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p18umf0",
+              "author": "reddit_user_5f5f23369e22",
+              "author_karma": 0,
+              "content": "Thank you for posting this. It's a good reminder that women who entrust professionals to guide them when their lives are at stake, especially outside their home countries, MUST, be wary of the risk from the guide.",
+              "timestamp": "2026-08-02T12:45:54+00:00",
+              "likes": 29,
+              "dislikes": 0,
+              "parent_comment_id": "p17874t",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1877oq",
+          "author": "reddit_user_2bde0c85add4",
+          "author_karma": 0,
+          "content": "Very interesting and unfortunately hardly surprising.\n\nI read something similar about women doing the Compostela pilgrimage, where hikers rely on shelters along the route for overnight stays. This is a Christian pilgrimage mind you… \n\nAdd this to the study that reports a huge increase in the number of sexual assaults during mass evacuations during floods, wildfires and other humanitarian crises. \n\nWomen are never safe anywhere unfortunately. ",
+          "timestamp": "2026-08-02T09:55:59+00:00",
+          "likes": 179,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p18k8m5",
+              "author": "reddit_user_c29cd45b0939",
+              "author_karma": 0,
+              "content": "No. Men will attack and harass women everywhere. It’s about their choices, not our circumstances. ",
+              "timestamp": "2026-08-02T11:38:30+00:00",
+              "likes": 48,
+              "dislikes": 0,
+              "parent_comment_id": "p1877oq",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p19eojp",
+                  "author": "[deleted]",
+                  "author_karma": 0,
+                  "content": "[removed]",
+                  "timestamp": "2026-08-02T14:34:00+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p18k8m5",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p19eom8",
+                      "author": "reddit_user_e320faca37f4",
+                      "author_karma": 0,
+                      "content": "The goal of TrueReddit is to have intelligent, insightful discussions. Users are required to read an entire article before submitting a comment. Your comment requires more substance to be permitted.\n\nDo not repost your comment with random letters to make it longer, or you will face a 28-day ban from TrueReddit for intentionally evading moderation filters.\n\n*I am a bot, and this action was performed automatically. Please [contact the moderators of this subreddit](/message/compose/?to=/r/TrueReddit) if you have any questions or concerns.*",
+                      "timestamp": "2026-08-02T14:34:01+00:00",
+                      "likes": 0,
+                      "dislikes": 0,
+                      "parent_comment_id": "p19eojp",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                },
+                {
+                  "comment_id": "p19ndfy",
+                  "author": "reddit_user_5a5495ed3251",
+                  "author_karma": 0,
+                  "content": "Lol why do people do this? \"You're wrong, it's not *x*! It's *x but in different words*!\"",
+                  "timestamp": "2026-08-02T15:16:03+00:00",
+                  "likes": 6,
+                  "dislikes": 0,
+                  "parent_comment_id": "p18k8m5",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p19o0a0",
+                      "author": "reddit_user_0a5d3ab3db9a",
+                      "author_karma": 0,
+                      "content": "Laying the blame correctly matters otherwise how do you begin to address the problem",
+                      "timestamp": "2026-08-02T15:19:04+00:00",
+                      "likes": 11,
+                      "dislikes": 0,
+                      "parent_comment_id": "p19ndfy",
+                      "depth": 3,
+                      "replies": []
+                    },
+                    {
+                      "comment_id": "p19vm79",
+                      "author": "[deleted]",
+                      "author_karma": 0,
+                      "content": "[removed]",
+                      "timestamp": "2026-08-02T15:54:38+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p19ndfy",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "p19vma1",
+                          "author": "reddit_user_e320faca37f4",
+                          "author_karma": 0,
+                          "content": "The goal of TrueReddit is to have intelligent, insightful discussions. Users are required to read an entire article before submitting a comment. Your comment requires more substance to be permitted.\n\nDo not repost your comment with random letters to make it longer, or you will face a 28-day ban from TrueReddit for intentionally evading moderation filters.\n\n*I am a bot, and this action was performed automatically. Please [contact the moderators of this subreddit](/message/compose/?to=/r/TrueReddit) if you have any questions or concerns.*",
+                          "timestamp": "2026-08-02T15:54:39+00:00",
+                          "likes": 0,
+                          "dislikes": 0,
+                          "parent_comment_id": "p19vm79",
+                          "depth": 4,
+                          "replies": []
+                        }
+                      ]
+                    },
+                    {
+                      "comment_id": "p1d5h7e",
+                      "author": "[deleted]",
+                      "author_karma": 0,
+                      "content": "[removed]",
+                      "timestamp": "2026-08-03T01:31:39+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p19ndfy",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "p1d5h90",
+                          "author": "reddit_user_e320faca37f4",
+                          "author_karma": 0,
+                          "content": "The goal of TrueReddit is to have intelligent, insightful discussions. Users are required to read an entire article before submitting a comment. Your comment requires more substance to be permitted.\n\nDo not repost your comment with random letters to make it longer, or you will face a 28-day ban from TrueReddit for intentionally evading moderation filters.\n\n*I am a bot, and this action was performed automatically. Please [contact the moderators of this subreddit](/message/compose/?to=/r/TrueReddit) if you have any questions or concerns.*",
+                          "timestamp": "2026-08-03T01:31:39+00:00",
+                          "likes": 0,
+                          "dislikes": 0,
+                          "parent_comment_id": "p1d5h7e",
+                          "depth": 4,
+                          "replies": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "comment_id": "p18phn0",
+              "author": "reddit_user_84f29234d9ed",
+              "author_karma": 0,
+              "content": "I remember reading about [women being sexually harassed amid the huge crowds at the Hajj](https://www.cnn.com/2018/03/08/middleeast/hajj-sexual-abuse-asequals-iwd-intl/index.html), the major Muslim pilgrimage. This is at the holiest possible site for Muslims, millions come from all corners of the world, when minds are supposed to only be focus on God and seeking his forgiveness for their sins — and there’s men around who use that as cover. Just underlines even further that when men want to commit sexual assault, there’s no place that is off-limits for them. ",
+              "timestamp": "2026-08-02T12:14:14+00:00",
+              "likes": 119,
+              "dislikes": 0,
+              "parent_comment_id": "p1877oq",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p19rvzk",
+                  "author": "reddit_user_961a8d589ff7",
+                  "author_karma": 0,
+                  "content": "The sick thing is I bet those pervs justify to themselves that's it's completely okay because as soon as their hajj is complete all their sins are forgiven. ",
+                  "timestamp": "2026-08-02T15:37:26+00:00",
+                  "likes": 28,
+                  "dislikes": 0,
+                  "parent_comment_id": "p18phn0",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p19t3xf",
+                      "author": "reddit_user_9c979ebda6c3",
+                      "author_karma": 0,
+                      "content": "I’m not Muslim. But in Catholicism, you must be truly contrite, and resolve to not repeat your sins. I’d imagine Muslims have some kind of similar theology. Otherwise, it’s just a pointless con on an omnipotent being. ",
+                      "timestamp": "2026-08-02T15:43:08+00:00",
+                      "likes": 11,
+                      "dislikes": 0,
+                      "parent_comment_id": "p19rvzk",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "p19zwqv",
+                          "author": "reddit_user_60ebba2f0b17",
+                          "author_karma": 0,
+                          "content": "Recovering catholic. You're supposed to be truly contrite but as long as you follow the rites, you don't actually have to be. Catholic males have used their religion to do all sorts of heinous things for thousands of years.",
+                          "timestamp": "2026-08-02T16:14:06+00:00",
+                          "likes": 23,
+                          "dislikes": 0,
+                          "parent_comment_id": "p19t3xf",
+                          "depth": 4,
+                          "replies": []
+                        },
+                        {
+                          "comment_id": "p1a2omh",
+                          "author": "reddit_user_ec88b9c9b403",
+                          "author_karma": 0,
+                          "content": "It isn't pointless, just performative. Doing the pilgrimage gives one social cachet in the community.\n\n(I'm sure the vast majority are doing it out of faith. But certainly not all, and there are non-faith reasons for why one would undertake it). ",
+                          "timestamp": "2026-08-02T16:26:44+00:00",
+                          "likes": 33,
+                          "dislikes": 0,
+                          "parent_comment_id": "p19t3xf",
+                          "depth": 4,
+                          "replies": []
+                        }
+                      ]
+                    },
+                    {
+                      "comment_id": "p1ektlq",
+                      "author": "reddit_user_7b57fad85e8e",
+                      "author_karma": 0,
+                      "content": "That’s on condition of the Hajj being accepted, which is not a given at all. ",
+                      "timestamp": "2026-08-03T07:38:39+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p19rvzk",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "comment_id": "p19tzhb",
+              "author": "reddit_user_92751df95c12",
+              "author_karma": 0,
+              "content": "I cared for patients from Hurricane Katrina once they’d been evacuated to our city. The horror stories patients told me about the gang rapes happening in the SuperDome, while everyone there was trying to stay alive and sheltered, kept me up at night for years until I did EMDR therapy. One of my newly post partum patients had been brutally raped, had horrific injuries, and was infected and septic when I saw her. \n\nHumans can be utterly disgusting, especially the male ones. That’s why we all chose the bear. Most men scare me to death, and I’m a pretty fierce bitch. The minute they know they can get away with hurting a woman, they’ll do it. Hence Brock Turner, Drumphf and his degenerates, and so many others.",
+              "timestamp": "2026-08-02T15:47:10+00:00",
+              "likes": 55,
+              "dislikes": 0,
+              "parent_comment_id": "p1877oq",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1a68gj",
+                  "author": "reddit_user_9b3ff5a34162",
+                  "author_karma": 0,
+                  "content": "Wow. So sorry for the crimes you had to become witness to in the course of your crucial medical work. So sorry for the victims. Thank you for taking care of them. ",
+                  "timestamp": "2026-08-02T16:42:58+00:00",
+                  "likes": 8,
+                  "dislikes": 0,
+                  "parent_comment_id": "p19tzhb",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1c0122",
+                      "author": "reddit_user_92751df95c12",
+                      "author_karma": 0,
+                      "content": "Thank you. We certainly do not get enough support or education on how to manage that part of it and it definitely leaves scars. But being there for my patients by helping in my small way is worth it. ",
+                      "timestamp": "2026-08-02T21:47:17+00:00",
+                      "likes": 3,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1a68gj",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                },
+                {
+                  "comment_id": "p1buugz",
+                  "author": "[deleted]",
+                  "author_karma": 0,
+                  "content": "[removed]",
+                  "timestamp": "2026-08-02T21:21:38+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p19tzhb",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1buukx",
+                      "author": "reddit_user_e320faca37f4",
+                      "author_karma": 0,
+                      "content": "The goal of TrueReddit is to have intelligent, insightful discussions. Users are required to read an entire article before submitting a comment. Your comment requires more substance to be permitted.\n\nDo not repost your comment with random letters to make it longer, or you will face a 28-day ban from TrueReddit for intentionally evading moderation filters.\n\n*I am a bot, and this action was performed automatically. Please [contact the moderators of this subreddit](/message/compose/?to=/r/TrueReddit) if you have any questions or concerns.*",
+                      "timestamp": "2026-08-02T21:21:39+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1buugz",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                },
+                {
+                  "comment_id": "p1esn67",
+                  "author": "reddit_user_07c3073ac3e7",
+                  "author_karma": 0,
+                  "content": "> \nHumans can be utterly disgusting, especially the male ones. That’s why we all chose the bear. Most men scare me to death, and I’m a pretty fierce bitch. The minute they know they can get away with hurting a woman, they’ll do it.\n\nWhat a narrowminded, evil, prejudiced, bigoted statement.",
+                  "timestamp": "2026-08-03T08:45:17+00:00",
+                  "likes": -5,
+                  "dislikes": 0,
+                  "parent_comment_id": "p19tzhb",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1ku3rs",
+                      "author": "reddit_user_917da586ff11",
+                      "author_karma": 0,
+                      "content": "can you read the words “gang rape” like ten million times and afterwards jump up your own ass ",
+                      "timestamp": "2026-08-04T03:08:48+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1esn67",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p18ic4f",
+          "author": "reddit_user_428074420f38",
+          "author_karma": 0,
+          "content": "Crazy this came out 2 years ago and I've never heard of it. These things don't get enough attention. Shame he didn't get to be held to answer for this before he died. Is it a difference in culture that everyone was protecting him? ",
+          "timestamp": "2026-08-02T11:24:34+00:00",
+          "likes": 47,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p18kcmi",
+              "author": "reddit_user_c29cd45b0939",
+              "author_karma": 0,
+              "content": "… in what culture are rapists and harassers not protected? My country elected one president. ",
+              "timestamp": "2026-08-02T11:39:17+00:00",
+              "likes": 87,
+              "dislikes": 0,
+              "parent_comment_id": "p18ic4f",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p18prbk",
+                  "author": "reddit_user_c5ce61ce7c6b",
+                  "author_karma": 0,
+                  "content": "What's depressing is that it has the exact effect that they want - keep women out of society, tuck them away somewhere \"safe\", effectively marginalizing their ability to contribute...",
+                  "timestamp": "2026-08-02T12:15:57+00:00",
+                  "likes": 22,
+                  "dislikes": 0,
+                  "parent_comment_id": "p18kcmi",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p18wwmm",
+                      "author": "reddit_user_7360d68184d9",
+                      "author_karma": 0,
+                      "content": "I suspect this is what you were driving at, since you put \"safe\" in quotation marks, but I want to spell it out for anyone who doesn't understand: keeping women out of public life and hidden away does not make us safer. For most women who are victims of violence, including sexual violence, by men, the man in question is a family member, a family friend, or a romantic partner. These things happen most often in the home, and they happen more, and are gotten away with more, when women are stuck at home and invisible to the outside world.",
+                      "timestamp": "2026-08-02T12:59:20+00:00",
+                      "likes": 34,
+                      "dislikes": 0,
+                      "parent_comment_id": "p18prbk",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "p18z84l",
+                          "author": "reddit_user_c5ce61ce7c6b",
+                          "author_karma": 0,
+                          "content": "Absolutely and thanks for leaving no room for doubt.",
+                          "timestamp": "2026-08-02T13:12:42+00:00",
+                          "likes": 7,
+                          "dislikes": 0,
+                          "parent_comment_id": "p18wwmm",
+                          "depth": 4,
+                          "replies": [
+                            {
+                              "comment_id": "p18z86z",
+                              "author": "reddit_user_e320faca37f4",
+                              "author_karma": 0,
+                              "content": "The goal of TrueReddit is to have intelligent, insightful discussions. Users are required to read an entire article before submitting a comment. Your comment requires more substance to be permitted.\n\nDo not repost your comment with random letters to make it longer, or you will face a 28-day ban from TrueReddit for intentionally evading moderation filters.\n\n*I am a bot, and this action was performed automatically. Please [contact the moderators of this subreddit](/message/compose/?to=/r/TrueReddit) if you have any questions or concerns.*",
+                              "timestamp": "2026-08-02T13:12:42+00:00",
+                              "likes": 2,
+                              "dislikes": 0,
+                              "parent_comment_id": "p18z84l",
+                              "depth": 5,
+                              "replies": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "comment_id": "p1b71bv",
+              "author": "reddit_user_0775f1b0c035",
+              "author_karma": 0,
+              "content": "It’s no different than any other culture where men victimize women. Which I guess is one way of saying every culture.",
+              "timestamp": "2026-08-02T19:29:01+00:00",
+              "likes": 3,
+              "dislikes": 0,
+              "parent_comment_id": "p18ic4f",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p18okdg",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-02T12:08:12+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p18okfz",
+              "author": "reddit_user_e320faca37f4",
+              "author_karma": 0,
+              "content": "The goal of TrueReddit is to have intelligent, insightful discussions. Users are required to read an entire article before submitting a comment. Your comment requires more substance to be permitted.\n\nDo not repost your comment with random letters to make it longer, or you will face a 28-day ban from TrueReddit for intentionally evading moderation filters.\n\n*I am a bot, and this action was performed automatically. Please [contact the moderators of this subreddit](/message/compose/?to=/r/TrueReddit) if you have any questions or concerns.*",
+              "timestamp": "2026-08-02T12:08:13+00:00",
+              "likes": 2,
+              "dislikes": 0,
+              "parent_comment_id": "p18okdg",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p18u7ae",
+          "author": "reddit_user_5f5f23369e22",
+          "author_karma": 0,
+          "content": "When I recently read of the avalanche that killed Nirmal Purja and others, I hadn't heard of him but know other adventure climbers. [The NYT article,](https://www.nytimes.com/2026/08/01/world/asia/nirmal-purja-dead-pakistan-avalanche.html?unlocked_article_code=1.2VA.F2Sp.uZ7kMPQlNiwY&smid=url-share)  used the descriptor, 'reknowned' for Purja. It glorified him without mention that investigations and cases have been pending. Same with [BBC](https://www.bbc.com/news/articles/cx2kp4ndny0o) saying he was 'famed'.   \n\n\nThis is on the heels of articles relating to women dying or being abandoned by men on climbs. It's even given rise to the term,[ Alpine Divorce](https://en.wikipedia.org/wiki/Alpine_divorce).  \n  \nIt's disturbing that Red Bull didn't react in 2024 like other brands.",
+          "timestamp": "2026-08-02T12:43:24+00:00",
+          "likes": 14,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p18u7c6",
+              "author": "reddit_user_e320faca37f4",
+              "author_karma": 0,
+              "content": "The goal of TrueReddit is to have intelligent, insightful discussions. Users are required to read an entire article before submitting a comment. Your comment requires more substance to be permitted.\n\nDo not repost your comment with random letters to make it longer, or you will face a 28-day ban from TrueReddit for intentionally evading moderation filters.\n\n*I am a bot, and this action was performed automatically. Please [contact the moderators of this subreddit](/message/compose/?to=/r/TrueReddit) if you have any questions or concerns.*",
+              "timestamp": "2026-08-02T12:43:25+00:00",
+              "likes": 2,
+              "dislikes": 0,
+              "parent_comment_id": "p18u7ae",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p1b6c7r",
+              "author": "reddit_user_0775f1b0c035",
+              "author_karma": 0,
+              "content": "In the case of well-known people, a standard obituary article is generally onfile just in case. However, the New York Times did add the information about his harassment to the articles.",
+              "timestamp": "2026-08-02T19:25:48+00:00",
+              "likes": 6,
+              "dislikes": 0,
+              "parent_comment_id": "p18u7ae",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p1kuk00",
+              "author": "reddit_user_917da586ff11",
+              "author_karma": 0,
+              "content": "An Alpine Divorce doer who killed her to hide the fact he was raping a student he was a guidance counselor for in Vegas was caught after 21 years the other week, and extremely promptly allowed to hang himself in his cell. Las Vegas Metro everyone, round of applause. ",
+              "timestamp": "2026-08-04T03:11:35+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p18u7ae",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p19432f",
+          "author": "reddit_user_bb609abe3444",
+          "author_karma": 0,
+          "content": "Won't somebody think of the poor privileged women that can afford to travel to the Himalayas to pay for a sherpa to hike with you up a mountain!? These poor people simply do not have the funds to do due diligence on researching the background of their tour guides. \n\nThis\n is a top priority issue and should unite all people. I couldn't think of a more worthwhile cause to champion.",
+          "timestamp": "2026-08-02T13:39:25+00:00",
+          "likes": -53,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p19e7vu",
+              "author": "[deleted]",
+              "author_karma": 0,
+              "content": "[removed]",
+              "timestamp": "2026-08-02T14:31:44+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p19432f",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p19e7zk",
+                  "author": "reddit_user_e320faca37f4",
+                  "author_karma": 0,
+                  "content": "The goal of TrueReddit is to have intelligent, insightful discussions. Users are required to read an entire article before submitting a comment. Your comment requires more substance to be permitted.\n\nDo not repost your comment with random letters to make it longer, or you will face a 28-day ban from TrueReddit for intentionally evading moderation filters.\n\n*I am a bot, and this action was performed automatically. Please [contact the moderators of this subreddit](/message/compose/?to=/r/TrueReddit) if you have any questions or concerns.*",
+                  "timestamp": "2026-08-02T14:31:45+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p19e7vu",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            },
+            {
+              "comment_id": "p19jv8v",
+              "author": "reddit_user_69a17c6c5ca2",
+              "author_karma": 0,
+              "content": "Exactly what is your cutoff for how much money a woman must have before she deserves to be raped?",
+              "timestamp": "2026-08-02T14:59:17+00:00",
+              "likes": 29,
+              "dislikes": 0,
+              "parent_comment_id": "p19432f",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p19ok1k",
+                  "author": "reddit_user_bb609abe3444",
+                  "author_karma": 0,
+                  "content": "All rapists should be held accountable, irrespective of their victim's wealth. Obviously.\n\nWhether intentionally or not, you missed the point of my post, which is that there should be universal accountability. \n\nWhich is the first flaw of this article, which has only a focus on men, against affluent women. Not seeing this as a wider issue for broader accountability, and really only advocating for an already privileged group, is very tone, deaf and counterproductive to the larger issue of lack of accountability for SA at multitudes of levels of power.\n\nThe second flaw is it also has no real proposed solutions. It's mostly a cautionary tale with its only call to action being to protect yourselves and be aware. Which I do not think will effect systemic change.",
+                  "timestamp": "2026-08-02T15:21:38+00:00",
+                  "likes": -27,
+                  "dislikes": 0,
+                  "parent_comment_id": "p19jv8v",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p19r7xn",
+                      "author": "reddit_user_69a17c6c5ca2",
+                      "author_karma": 0,
+                      "content": "You literally started by saying:\n\n> Won't somebody think of the poor privileged women that can afford to travel to the Himalayas to pay for a sherpa to hike with you up a mountain!? These poor people simply do not have the funds to do due diligence on researching the background of their tour guides.\n\nThis means that: \n\n* It's not that tragic they were raped, because they spent a lot of money to get into the situation where they were raped. \n\n* It's basically their own fault they were raped, because they didn't bother to research whether they were hiring rapists (even though the entire point is that women haven't been publicly talking about these rapists being rapists).\n\nYou *could* have exclusively talked about what you're now claiming to criticize (which is its own issue, because those criticisms are bad). But instead you led with some absolutely disgusting victim-blaming.\n\nI'm blocking you now.",
+                      "timestamp": "2026-08-02T15:34:18+00:00",
+                      "likes": 14,
+                      "dislikes": 0,
+                      "parent_comment_id": "p19ok1k",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "p1b2hro",
+                          "author": "reddit_user_9b9ecde351b9",
+                          "author_karma": 0,
+                          "content": "Your content at /r/TrueReddit was removed because of a violation of Rule 1:\n\n> Commentary that is incendiary, name-calling, hateful, or that consists of a direct attack is not allowed and may be removed.\n\nPlease note that repeated violations of subreddit rules may result in a restriction of your ability to participate in the subreddit.  Thank you.\n\n**Moderator Note:** Do not abuse the report button. Just because someone says something you strongly disagree with or think is objectionable doesn't mean they violated any civility rules. Feel free to use the downvote button or rebuke their arguments instead.",
+                          "timestamp": "2026-08-02T19:08:00+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "p19r7xn",
+                          "depth": 4,
+                          "replies": []
+                        }
+                      ]
+                    },
+                    {
+                      "comment_id": "p1c0ukf",
+                      "author": "[deleted]",
+                      "author_karma": 0,
+                      "content": "[removed]",
+                      "timestamp": "2026-08-02T21:51:23+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p19ok1k",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "p1c0ums",
+                          "author": "reddit_user_e320faca37f4",
+                          "author_karma": 0,
+                          "content": "The goal of TrueReddit is to have intelligent, insightful discussions. Users are required to read an entire article before submitting a comment. Your comment requires more substance to be permitted.\n\nDo not repost your comment with random letters to make it longer, or you will face a 28-day ban from TrueReddit for intentionally evading moderation filters.\n\n*I am a bot, and this action was performed automatically. Please [contact the moderators of this subreddit](/message/compose/?to=/r/TrueReddit) if you have any questions or concerns.*",
+                          "timestamp": "2026-08-02T21:51:24+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "p1c0ukf",
+                          "depth": 4,
+                          "replies": []
+                        }
+                      ]
+                    },
+                    {
+                      "comment_id": "p1eo89u",
+                      "author": "reddit_user_e5a74877976c",
+                      "author_karma": 0,
+                      "content": "So what are your suggestions? Because right now, it just looks like you're trying to shut down discussion of these issues without doing anything productive yourself. ",
+                      "timestamp": "2026-08-03T08:07:34+00:00",
+                      "likes": 5,
+                      "dislikes": 0,
+                      "parent_comment_id": "p19ok1k",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "comment_id": "p1c1s5x",
+              "author": "reddit_user_d75e8f05017c",
+              "author_karma": 0,
+              "content": "Friendly reminder that even if you do your \"research\", your safety is not guaranteed. The risk remains for women, and even though you claimed universal accountability is the point, all you've done here is blame victims\n",
+              "timestamp": "2026-08-02T21:56:05+00:00",
+              "likes": 4,
+              "dislikes": 0,
+              "parent_comment_id": "p19432f",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p1d3kaz",
+              "author": "reddit_user_b10a59adaa70",
+              "author_karma": 0,
+              "content": "You can’t really research the background of many of the guides and Sherpas. These are not shiny, corporate run businesses with employee profiles easily accessible. \n\nThe fact that these men feel so emboldened to assault wealthy white women should actually bring MORE horror, because it means that they know that even the wealthiest white women have little to no recourse. ",
+              "timestamp": "2026-08-03T01:20:29+00:00",
+              "likes": 2,
+              "dislikes": 0,
+              "parent_comment_id": "p19432f",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p1fjrh4",
+              "author": "[deleted]",
+              "author_karma": 0,
+              "content": "[removed]",
+              "timestamp": "2026-08-03T12:04:20+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p19432f",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1fjrje",
+                  "author": "reddit_user_e320faca37f4",
+                  "author_karma": 0,
+                  "content": "The goal of TrueReddit is to have intelligent, insightful discussions. Users are required to read an entire article before submitting a comment. Your comment requires more substance to be permitted.\n\nDo not repost your comment with random letters to make it longer, or you will face a 28-day ban from TrueReddit for intentionally evading moderation filters.\n\n*I am a bot, and this action was performed automatically. Please [contact the moderators of this subreddit](/message/compose/?to=/r/TrueReddit) if you have any questions or concerns.*",
+                  "timestamp": "2026-08-03T12:04:20+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1fjrh4",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            },
+            {
+              "comment_id": "p1fqgwa",
+              "author": "reddit_user_97c852557048",
+              "author_karma": 0,
+              "content": "Rich women don’t deserve to be raped either, which is the implied belief in your post.\n\nYou might not think this it’s important, but the question is why. Why is sexual violence not important if the victims are rich? What does this say for the poor women who don’t even have the power to draw attention to this?",
+              "timestamp": "2026-08-03T12:42:12+00:00",
+              "likes": 3,
+              "dislikes": 0,
+              "parent_comment_id": "p19432f",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p1kv5iv",
+              "author": "[deleted]",
+              "author_karma": 0,
+              "content": "[removed]",
+              "timestamp": "2026-08-04T03:15:18+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p19432f",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p19iop5",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-02T14:53:35+00:00",
+          "likes": 0,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p19iosi",
+              "author": "reddit_user_e320faca37f4",
+              "author_karma": 0,
+              "content": "The goal of TrueReddit is to have intelligent, insightful discussions. Users are required to read an entire article before submitting a comment. Your comment requires more substance to be permitted.\n\nDo not repost your comment with random letters to make it longer, or you will face a 28-day ban from TrueReddit for intentionally evading moderation filters.\n\n*I am a bot, and this action was performed automatically. Please [contact the moderators of this subreddit](/message/compose/?to=/r/TrueReddit) if you have any questions or concerns.*",
+              "timestamp": "2026-08-02T14:53:36+00:00",
+              "likes": 0,
+              "dislikes": 0,
+              "parent_comment_id": "p19iop5",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p1b2sy6",
+              "author": "reddit_user_05fd5c93e0b6",
+              "author_karma": 0,
+              "content": "What paywall?",
+              "timestamp": "2026-08-02T19:09:26+00:00",
+              "likes": 2,
+              "dislikes": 0,
+              "parent_comment_id": "p19iop5",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1b72nv",
+                  "author": "reddit_user_59db97d47016",
+                  "author_karma": 0,
+                  "content": "Anything I need to enter or 'pay' is classified 'Paywall'. Nothing to enter, nothing to pay. ",
+                  "timestamp": "2026-08-02T19:29:11+00:00",
+                  "likes": 0,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1b2sy6",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p19jke2",
+          "author": "reddit_user_7b9d55a78e71",
+          "author_karma": 0,
+          "content": "Women in any male dominated anything experience sexual harassment. Shit it doesn’t even have to be male dominated. Women really need men to start calling out their people. ",
+          "timestamp": "2026-08-02T14:57:50+00:00",
+          "likes": 13,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1ac9ti",
+              "author": "reddit_user_ab9b4b746dc1",
+              "author_karma": 0,
+              "content": "Or men could call each other out. Because that's who they might actually listen to. Men only value the opinions of other men.",
+              "timestamp": "2026-08-02T17:10:13+00:00",
+              "likes": 9,
+              "dislikes": 0,
+              "parent_comment_id": "p19jke2",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1d32sx",
+                  "author": "[deleted]",
+                  "author_karma": 0,
+                  "content": "[removed]",
+                  "timestamp": "2026-08-03T01:17:42+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1ac9ti",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1d32vn",
+                      "author": "reddit_user_e320faca37f4",
+                      "author_karma": 0,
+                      "content": "The goal of TrueReddit is to have intelligent, insightful discussions. Users are required to read an entire article before submitting a comment. Your comment requires more substance to be permitted.\n\nDo not repost your comment with random letters to make it longer, or you will face a 28-day ban from TrueReddit for intentionally evading moderation filters.\n\n*I am a bot, and this action was performed automatically. Please [contact the moderators of this subreddit](/message/compose/?to=/r/TrueReddit) if you have any questions or concerns.*",
+                      "timestamp": "2026-08-03T01:17:42+00:00",
+                      "likes": 2,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1d32sx",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                },
+                {
+                  "comment_id": "p1g40vk",
+                  "author": "reddit_user_a8fdb6a0fd8e",
+                  "author_karma": 0,
+                  "content": "I believe you may have misread the comment you are responding to. OP said that \"women need *men* to start calling out *their people*\"",
+                  "timestamp": "2026-08-03T13:50:13+00:00",
+                  "likes": 2,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1ac9ti",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1gzu6o",
+                      "author": "[deleted]",
+                      "author_karma": 0,
+                      "content": "[removed]",
+                      "timestamp": "2026-08-03T16:10:26+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1g40vk",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "p1gzubd",
+                          "author": "reddit_user_e320faca37f4",
+                          "author_karma": 0,
+                          "content": "The goal of TrueReddit is to have intelligent, insightful discussions. Users are required to read an entire article before submitting a comment. Your comment requires more substance to be permitted.\n\nDo not repost your comment with random letters to make it longer, or you will face a 28-day ban from TrueReddit for intentionally evading moderation filters.\n\n*I am a bot, and this action was performed automatically. Please [contact the moderators of this subreddit](/message/compose/?to=/r/TrueReddit) if you have any questions or concerns.*",
+                          "timestamp": "2026-08-03T16:10:27+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "p1gzu6o",
+                          "depth": 4,
+                          "replies": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p19znsr",
+          "author": "reddit_user_60ebba2f0b17",
+          "author_karma": 0,
+          "content": "Basically anywhere females are a minority and isoloated, we get abused. I got into sailing and was assaulted and harassed and told it's normal and acceptable. I have yet to go beyond day sailing due to safety concerns. And in the US, sailing is very much a sport of middle and upperclass people in many states. Guess what else is? Climbing. It happens with affluent males as much as poor males. So we have to be really thoughtful how we try to explain things. The common denominator is men.",
+          "timestamp": "2026-08-02T16:12:57+00:00",
+          "likes": 20,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1kux68",
+              "author": "reddit_user_917da586ff11",
+              "author_karma": 0,
+              "content": "I would argue it happens proportionately more as income and wealth increases. We poors are “lucky” we have street justice and better men and other people to get what needs to be done done. Rich victims accustomed to good treatment hit a hard wall from their own society before ever being able to file charges ",
+              "timestamp": "2026-08-04T03:13:51+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p19znsr",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1a5ok5",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-02T16:40:26+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1a5omm",
+              "author": "reddit_user_e320faca37f4",
+              "author_karma": 0,
+              "content": "The goal of TrueReddit is to have intelligent, insightful discussions. Users are required to read an entire article before submitting a comment. Your comment requires more substance to be permitted.\n\nDo not repost your comment with random letters to make it longer, or you will face a 28-day ban from TrueReddit for intentionally evading moderation filters.\n\n*I am a bot, and this action was performed automatically. Please [contact the moderators of this subreddit](/message/compose/?to=/r/TrueReddit) if you have any questions or concerns.*",
+              "timestamp": "2026-08-02T16:40:26+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1a5ok5",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1a5z3i",
+                  "author": "reddit_user_499af764516f",
+                  "author_karma": 0,
+                  "content": "Then don't allow links that aren't open to all without being forced to supply personal information. ",
+                  "timestamp": "2026-08-02T16:41:46+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1a5omm",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p1b402b",
+          "author": "reddit_user_05fd5c93e0b6",
+          "author_karma": 0,
+          "content": "What makes this so bad is that people are so captive and have to spend so much time with them. And you're always in danger from nature so you have to keep your mouth shut. People need to start calling this out, but also just get more women as guides.",
+          "timestamp": "2026-08-02T19:14:59+00:00",
+          "likes": 6,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1ce3xw",
+          "author": "reddit_user_05e5ff1da9ef",
+          "author_karma": 0,
+          "content": "so the guide being the threat is what makes this so messed up. you're in a remote place, you need this person, and reporting them could get you left on a mountain. the power dynamic doesn't get much more extreme than that.",
+          "timestamp": "2026-08-02T22:59:43+00:00",
+          "likes": 15,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1egnhi",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-03T07:03:32+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1egnio",
+              "author": "reddit_user_e320faca37f4",
+              "author_karma": 0,
+              "content": "The goal of TrueReddit is to have intelligent, insightful discussions. Users are required to read an entire article before submitting a comment. Your comment requires more substance to be permitted.\n\nDo not repost your comment with random letters to make it longer, or you will face a 28-day ban from TrueReddit for intentionally evading moderation filters.\n\n*I am a bot, and this action was performed automatically. Please [contact the moderators of this subreddit](/message/compose/?to=/r/TrueReddit) if you have any questions or concerns.*",
+              "timestamp": "2026-08-03T07:03:32+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1egnhi",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1kvirx",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-04T03:17:34+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run011_post03_seed058",
+      "post_slot": 3,
+      "seed_index": 58,
+      "source_raw_post_id": "1vdl9pv",
+      "source_product_dir": "news",
+      "source_file": "https://www.reddit.com/r/news/comments/1vdl9pv/taylor_farms_has_been_linked_to_forced_labor/",
+      "post_type": "Reblogger/Paywalled",
+      "title": "Taylor Farms Has Been Linked to Forced Labor",
+      "author": "reddit_user_bde1e90b951b",
+      "author_karma": 0,
+      "content": "Taylor Farms Has Been Linked to Forced Labor",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p19so8y",
+          "author": "reddit_user_ed66e5939b18",
+          "author_karma": 0,
+          "content": "Why is this thread being instantly removed by auto mod without any explaination? TELL ME WHAT THE FUCK I DID WRONG AT LEAST",
+          "timestamp": "2026-08-02T15:41:06+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run011_post04_seed059",
+      "post_slot": 4,
+      "seed_index": 59,
+      "source_raw_post_id": "1vdmrtw",
+      "source_product_dir": "news",
+      "source_file": "https://www.reddit.com/r/news/comments/1vdmrtw/family_to_sue_after_woman_released_from_ice/",
+      "post_type": "link",
+      "title": "Family to sue after woman released from ICE custody froze to death",
+      "author": "reddit_user_bde1e90b951b",
+      "author_karma": 0,
+      "content": "Family to sue after woman released from ICE custody froze to death",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p1e2ynd",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-03T05:12:00+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1aiy8d",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1e32em",
+          "author": "reddit_user_3f8dfc3d99ee",
+          "author_karma": 0,
+          "content": "you think you know better of what it’s like here than those of us living here? based on what you have read on the internet, is it?",
+          "timestamp": "2026-08-03T05:12:49+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1dbf04",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1e4xv0",
+          "author": "reddit_user_46709519ae46",
+          "author_karma": 0,
+          "content": "Sad. May they rest in peace. ",
+          "timestamp": "2026-08-03T05:27:30+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1e6a5y",
+          "author": "reddit_user_9660b42fd11c",
+          "author_karma": 0,
+          "content": "What the fuck do you think magas are? The fact that you somehow don’t realise in 2026 that half your country are literal fucking nazis is half the problem.",
+          "timestamp": "2026-08-03T05:38:16+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1a7wp5",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1e6qs6",
+          "author": "reddit_user_105f48a65525",
+          "author_karma": 0,
+          "content": "There is enough evidence piling up, these monsters are not humans. ",
+          "timestamp": "2026-08-03T05:42:01+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1a7wp5",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1e6xg3",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-03T05:43:32+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1e8z43",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-03T06:00:12+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1eatlw",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-03T06:15:19+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1ec3px",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-03T06:25:48+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1egawn",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-03T07:00:40+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1aay2j",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1ehgb1",
+          "author": "reddit_user_b62ced21b1ee",
+          "author_karma": 0,
+          "content": "most americans didn't care until Japan bombed them and Germany said they support that, since they were allies during the war",
+          "timestamp": "2026-08-03T07:10:10+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1akkd0",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1ejmx4",
+          "author": "reddit_user_2b4e3e464e52",
+          "author_karma": 0,
+          "content": "In the native community that’s called a “long ride”, the long walk is often a death sentence. ",
+          "timestamp": "2026-08-03T07:28:32+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1a76va",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1ekibh",
+          "author": "reddit_user_124188ca717b",
+          "author_karma": 0,
+          "content": "The things I want to say that we should do to them without being flagged are insane",
+          "timestamp": "2026-08-03T07:35:57+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1a76va",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1em65q",
+          "author": "reddit_user_dd63f10c9c2d",
+          "author_karma": 0,
+          "content": "these murders are allowed to do shit like this, but when someone releases an info about any ICE nazis or any of those mask nazis doing cringe parades, its insta ban.\n\nJust makes you think.",
+          "timestamp": "2026-08-03T07:50:04+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1ckntz",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1emzvh",
+          "author": "reddit_user_dd63f10c9c2d",
+          "author_karma": 0,
+          "content": "and even if they were, namely a democrat lead or majority, it would take years just to criminalize people at the top or take some minions at the bottom.\n\nthese people are gonna get away it, and those rich people ain't gonna let the epstein list get released. \n\nthats capitalism and the rich class for you.\n\nkind of like those corpos and rich families who got away with everything while helping the nazi germany perform atrocities in concentration camps. you still bmw and vw cars. shit, those rich families are pretty much done erasing their that part of their history in any archives. 50 to 90 years from now, no one would bat an eye what the rest of trump's family has done to the country.",
+          "timestamp": "2026-08-03T07:57:03+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1aa3ex",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1eoigl",
+          "author": "reddit_user_171a416a2f55",
+          "author_karma": 0,
+          "content": "So much for all the noise about being Americans, one nation under god… Na actually just people fucking over each other under the guise of a flag",
+          "timestamp": "2026-08-03T08:09:57+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1a7wp5",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1ernlg",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-03T08:36:50+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1ervn1",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-03T08:38:44+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1eugxn",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-03T09:00:38+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1b06pu",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1eulor",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-03T09:01:45+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1a74u7",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1euxa3",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-03T09:04:27+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1bhtis",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1exhp3",
+          "author": "reddit_user_49b86c2f243a",
+          "author_karma": 0,
+          "content": "The people working at ICE aren't Human just scum. ",
+          "timestamp": "2026-08-03T09:25:57+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1a7wp5",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1eytzb",
+          "author": "reddit_user_d8c73e686144",
+          "author_karma": 0,
+          "content": "Nobody can do anything more than they are. \n\nConservatives are just the majority of mankind. ",
+          "timestamp": "2026-08-03T09:37:06+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1dn4qp",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1f0d18",
+          "author": "reddit_user_3cdd18346bfc",
+          "author_karma": 0,
+          "content": "Sadly this is far from the first time they released somebody into the freezing cold that wasn't dressed appropriately. Vile. ",
+          "timestamp": "2026-08-03T09:49:34+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1f31xl",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-03T10:10:43+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1dy3t0",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1f5l11",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-03T10:29:55+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1f6ao2",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-03T10:35:16+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1f6i0z",
+          "author": "reddit_user_57e1febdd69b",
+          "author_karma": 0,
+          "content": "Good work on 10 years man ",
+          "timestamp": "2026-08-03T10:36:49+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1dy3t0",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1f7eb2",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-03T10:43:24+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1a7wp5",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1fa76i",
+          "author": "reddit_user_1dc5b091dcc9",
+          "author_karma": 0,
+          "content": "Let's call this what it is. It's too damn close to a death march....which is a war crime.\n\n",
+          "timestamp": "2026-08-03T11:03:07+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1a76va",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1fbi0w",
+          "author": "reddit_user_6cf30b11d601",
+          "author_karma": 0,
+          "content": "We need to start naming and shaming these sadists. It shouldn't just be \"This cop\" or \"that ICE agent\"  - it should be their names, so everyone in their family, community, and who knows them knows they attempted to kill some poor grandma.",
+          "timestamp": "2026-08-03T11:12:00+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1ariqb",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1fbq3m",
+          "author": "reddit_user_6cf30b11d601",
+          "author_karma": 0,
+          "content": "These cops need to be charged with murder and need to be named.",
+          "timestamp": "2026-08-03T11:13:28+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1d4kq8",
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1ieqyn",
+              "author": "[deleted]",
+              "author_karma": 0,
+              "content": "[removed]",
+              "timestamp": "2026-08-03T19:44:53+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1fbq3m",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1fc1j0",
+          "author": "reddit_user_6cf30b11d601",
+          "author_karma": 0,
+          "content": "We need to start naming these people. Don't let them hide in anonomynity. Id be blasting those cops names everywhere every chance i got. Calling their families and asking are you proud of what this sick fuck is doing?\nCops who do this shit deserve consequences. ",
+          "timestamp": "2026-08-03T11:15:34+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1aahn5",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1febbg",
+          "author": "reddit_user_6f4a46f739c9",
+          "author_karma": 0,
+          "content": "Happened in like February too.  If I remember correctly they released an older Asian man in the middle of nowhere and he froze to death.\n\nThere are groups that hand out near the facilities because this is actually a common occurrence.  These groups are the only reason why we don’t hear about it all the fucking time.",
+          "timestamp": "2026-08-03T11:30:29+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1ffc9h",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-03T11:37:10+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1ahkbq",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1fijom",
+          "author": "reddit_user_ce62c9d49700",
+          "author_karma": 0,
+          "content": "The usual suspects with their hateful racist ways. ",
+          "timestamp": "2026-08-03T11:57:06+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1fqjo8",
+          "author": "reddit_user_40a0e6691296",
+          "author_karma": 0,
+          "content": "Glad to hear you made it through ",
+          "timestamp": "2026-08-03T12:42:37+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1dy3t0",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1fs75v",
+          "author": "reddit_user_8168b787c2a6",
+          "author_karma": 0,
+          "content": "Nope I don’t consider these people human. Conservatives are low IQ subhuman pieces of garbage that needs to be driven out of civil society. ",
+          "timestamp": "2026-08-03T12:51:25+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1a87mx",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1fuamm",
+          "author": "reddit_user_393d83086570",
+          "author_karma": 0,
+          "content": "If they arrested them and then must release, it's on them to arrange transportation to the former detainee's home. ICE doesn't have to provide transportation the entire stretch, they can contract a taxi or Uber if they're limited in the number of vehicles they have. ",
+          "timestamp": "2026-08-03T13:02:24+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1azwd7",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1fuqvj",
+          "author": "reddit_user_2ada67abd077",
+          "author_karma": 0,
+          "content": "They also released several people nightly from the Whipple building back in January in the dead of winter when it was 20 below zero. Those released often had no coats or other protective clothing, no phone, and no identification, even if they had these items when detained.\n\nVolunteers with Haven Watch are the only reason these people are still alive.\n\nhttps://www.mprnews.org/episode/2026/01/26/inside-the-group-that-helps-ice-detainees-released-from-whipple-find-warmth-phones-and-rides",
+          "timestamp": "2026-08-03T13:04:45+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1agdon",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1fvqxe",
+          "author": "reddit_user_e79476c9ab53",
+          "author_karma": 0,
+          "content": "Fucking monsters run our streets and we can do nothing",
+          "timestamp": "2026-08-03T13:09:53+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1fvxmc",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-03T13:10:50+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1fz9bz",
+          "author": "reddit_user_7fea44d12dda",
+          "author_karma": 0,
+          "content": "The point is not that humans are cruel, the point is that the degradation of human life and being illegally stripped of their rights is now publicly and proudly sanctioned by the US government. ",
+          "timestamp": "2026-08-03T13:27:22+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1aehci",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1fznb9",
+          "author": "reddit_user_34ce7cdb97ee",
+          "author_karma": 0,
+          "content": "> How do we implement an enforceable requirement\n\nThey have been telling you, time and time again. Might makes right.\n\nYou want to change anything, you'll need to use the 2A. Until then, sit back and watch the fascists do whatever they want with impunity.",
+          "timestamp": "2026-08-03T13:29:14+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1bo3k6",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1fztqx",
+          "author": "reddit_user_0b34a7931334",
+          "author_karma": 0,
+          "content": "And another 32% don't really care either way.\n\nWe can't let anyone off the hook who failed to vote against this shit that we knew and warned was coming.",
+          "timestamp": "2026-08-03T13:30:06+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1aaez0",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1g38eh",
+          "author": "reddit_user_3ee7d8973221",
+          "author_karma": 0,
+          "content": "Not me. I can recognize evil and detach their humanity from them. \n\nThe lack of empathy, the attack on empathy and \"woke\" culture are dead giveaways \n\nThey wouldn't give me benefit of the doubt. Why would I afford the same to them. Not that I would cast the first stone but you have to be aware and vigilant when walking amongst evil and oppressive fascist Nazi want to be type forces\n\n",
+          "timestamp": "2026-08-03T13:46:29+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1a87mx",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1g3cju",
+          "author": "reddit_user_af5ba5d075ff",
+          "author_karma": 0,
+          "content": "If we ever get out of this I wonder how many mass graves we are gonna find ",
+          "timestamp": "2026-08-03T13:47:02+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1a76va",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1g3qce",
+          "author": "reddit_user_e5df5d79b230",
+          "author_karma": 0,
+          "content": "*looks at a legal case like a legal case cause am attorney and law doesnt care about your feelings*",
+          "timestamp": "2026-08-03T13:48:52+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1ct1z3",
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1h3457",
+              "author": "reddit_user_4e87454592c0",
+              "author_karma": 0,
+              "content": "But your feelings......",
+              "timestamp": "2026-08-03T16:24:08+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1g3qce",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1gde9n",
+          "author": "reddit_user_db0388f5fae7",
+          "author_karma": 0,
+          "content": "I've been blunt about it for over a year now. I won't say anything first, but I'll damn well let people know Trump is a child rapist, their \"news\" is propaganda, Republicans are Nazi's/morons, etc\n\nNot saying or doing anything is just as bad as supporting it",
+          "timestamp": "2026-08-03T14:33:16+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1aq5qg",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1gdst8",
+          "author": "reddit_user_53da1bff9487",
+          "author_karma": 0,
+          "content": "Oh, poor wittle white supremacists aren't evil, just poisoned! You can make excuses for them all day, say it to the families of the dead.",
+          "timestamp": "2026-08-03T14:35:06+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1dq0y4",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1geife",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-03T14:38:15+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1aubra",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1gg94l",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-03T14:45:57+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1gg9z1",
+          "author": "reddit_user_69ea867a0f13",
+          "author_karma": 0,
+          "content": "Didn't this also happen to a blind guy? ",
+          "timestamp": "2026-08-03T14:46:03+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1gknst",
+          "author": "reddit_user_80ab9be43cca",
+          "author_karma": 0,
+          "content": "I got arrested and placed on probation in a different county than I lived in. i just let my probation officer know of this fact and they made an exception for me to travel back and forth between counties.",
+          "timestamp": "2026-08-03T15:05:20+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1bvl8a",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1gqy2h",
+          "author": "reddit_user_bef43f6a6731",
+          "author_karma": 0,
+          "content": "Lmao have you not been to Canada recently? Heard more slurs there than anywhere I've ever been in the US and self-proclaimed liberals have become openly racist against Chinese and Indians.",
+          "timestamp": "2026-08-03T15:32:32+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1cs4y4",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1gsua7",
+          "author": "reddit_user_6547d0bae5ef",
+          "author_karma": 0,
+          "content": "It's us doing it if we don't stop them.  Help get the right wing fascists out of government in every election.",
+          "timestamp": "2026-08-03T15:40:41+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1ab3v1",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1gwtnz",
+          "author": "reddit_user_a9b35c3a1fe2",
+          "author_karma": 0,
+          "content": "One kid was working at target when arrested. They gave him a rough ride and dropped him off 3 miles away. Lucky for the kid people on the other end of the drop off helped get him back to where he needed to be.",
+          "timestamp": "2026-08-03T15:57:37+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1agdon",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1gxkxa",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-03T16:00:50+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1d5th0",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1h2hy4",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-03T16:21:35+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1h6xzf",
+          "author": "reddit_user_f5ea126a23a1",
+          "author_karma": 0,
+          "content": "From the linked article:\n\n>\"Among all of these alleged incidents, only one conviction of police officers occurred, resulting in two officers going to prison for eight months.\"",
+          "timestamp": "2026-08-03T16:40:00+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1akdgh",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1h9iq9",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[deleted]",
+          "timestamp": "2026-08-03T16:50:38+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1a7wp5",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1haqlq",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-03T16:55:40+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1a790p",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1htf9a",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-03T18:12:26+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1bg8z8",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1htsko",
+          "author": "reddit_user_ef05a101885b",
+          "author_karma": 0,
+          "content": "Doesn't take a devout Christian to understand that Jesus would be appalled by all of this.",
+          "timestamp": "2026-08-03T18:14:02+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1ao20j",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1hwk84",
+          "author": "reddit_user_9182ea290277",
+          "author_karma": 0,
+          "content": "This happened to me in Boone NC one night when the driver I was with got a DUI. I begged them to take me to jail as it was freezing and we were on the side of the highway. I found a hotel eventually and passed out in the lobby. Woke up ate breakfast no one said shit to me.",
+          "timestamp": "2026-08-03T18:25:52+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1d4kq8",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1hya5d",
+          "author": "reddit_user_f0f916359c42",
+          "author_karma": 0,
+          "content": "How many people have ICE murdered now, either through direct action or negligence? ",
+          "timestamp": "2026-08-03T18:33:16+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1i0jcu",
+          "author": "reddit_user_16f952de161e",
+          "author_karma": 0,
+          "content": "What i hate, is ICE can knowingly put people in deadly situations, they die, and everyone shrugs their shoulders.  You use your second amendment rights to defend yourself against these monsters, and you're the villain and they are poor little innocent babies, who were only doing their wittle jobbies and weren't weally trying to hurt nobody.",
+          "timestamp": "2026-08-03T18:43:06+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1a76va",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1i64jh",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-03T19:07:04+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1audl3",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1i66wr",
+          "author": "reddit_user_48f0eb68af83",
+          "author_karma": 0,
+          "content": "Right timeline, but I’m pretty sure this was Fargo, ND",
+          "timestamp": "2026-08-03T19:07:21+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1ariqb",
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1i8pfd",
+              "author": "reddit_user_b0b6bbe19e7c",
+              "author_karma": 0,
+              "content": "Oops, yes, I was going from memory since it was just last year but it should be North Dakota and not Montana\n\nThank you!! ",
+              "timestamp": "2026-08-03T19:18:18+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1i66wr",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1i8vz4",
+          "author": "reddit_user_f7737eae4e09",
+          "author_karma": 0,
+          "content": "Senator Joseph McCarthy was born in Appleton, and the John Birch Society has its headqurters there.",
+          "timestamp": "2026-08-03T19:19:06+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1akkd0",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1idcfr",
+          "author": "reddit_user_8e5849e2cb7f",
+          "author_karma": 0,
+          "content": "As a middle of the road conservative, who actually holds to the values for all humanity, I’m really questioning what is happening, who I have been supporting and looking elsewhere. Because this is just mind boggling. I don’t even know who these people are anymore. ",
+          "timestamp": "2026-08-03T19:38:42+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1bwx72",
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1j8cex",
+              "author": "reddit_user_019c39b1f4c0",
+              "author_karma": 0,
+              "content": "I figure there are a lot of people like you, and honestly I can't imagine how it must feel to realize all these people around you never believed in anything they've said. All that has happened is these people can finally take their masks off.\n\nPlenty of people would personally attack you but I'm speaking about Republicans as a collective. If you have principles, I ask that you act on them. I don't even want you to vote for Dems, I want you to do what you can to affect change with empathy and compassion regardless of party.",
+              "timestamp": "2026-08-03T21:57:49+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1idcfr",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1ig3cw",
+          "author": "reddit_user_702423f93f74",
+          "author_karma": 0,
+          "content": "shouldn’t have kept her in ICE, what fid they expect?\n\nalso, i know this is a joke, and i don’t mean it disrespectfully. the idea of all the freezing deaths from IcE needs to be virally captured so that ICE becomes associated with it. Of course people will die when you keep them on ICE. something like that. \n\nwe let shitty republicans control the narrative too much (big beautiful fill?) and we need to reverse that, as we have better creatives anyway and they just have lies. \n\nso i am proposing a new rallying cry - subject to adoption and possible collaboration of “people are dying when kept on ICE” or something along those lines. Also, it would be a good tribute to include the names of the several who have been killed by being put out into the cold, the guy brought outside in his underwear, and this poor lady - may they all rest in peace (if families are ok with their loved ones becoming the next Rodney King/George Floyd). ",
+          "timestamp": "2026-08-03T19:50:46+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1igpzq",
+          "author": "reddit_user_702423f93f74",
+          "author_karma": 0,
+          "content": "also it is their private harem for girls (yes, children) and women (and men) to sexually assault. \n\npeople aren’t talking enough about how IcE hired all these domestic abusers and sex crimes convicts woth no background checks, no vetting, no oversight, and no consequences, allowing them to remain faceless, untrackable, untraceable, and using false license plates. Shit, just the data on all the rental and stolen and switched plates would be helpful. ",
+          "timestamp": "2026-08-03T19:53:31+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1aia6g",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1igx00",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-03T19:54:23+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1az20c",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1ihomv",
+          "author": "reddit_user_702423f93f74",
+          "author_karma": 0,
+          "content": "the thing i read said they were building adjacent facilities as part of the detention and “homeless work camps” that had the capacity for burning medical waste (keyword RMW) at 1000s of tons a year. ",
+          "timestamp": "2026-08-03T19:57:44+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1c31sf",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1invbj",
+          "author": "reddit_user_9d23a5a864c1",
+          "author_karma": 0,
+          "content": "Putting this as a PS instead of an ETA for clarity, I don't know for certain that she was dressed in summer clothes when she was detained.  The article indicates a September arrest, so I'm guessing she was wearing summer clothes when arrested and then detained.  Her lawyer said her phone plan was expired.  I'm guessing she may not have been able to arrange payment while detained.",
+          "timestamp": "2026-08-03T20:24:46+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1b1hfl",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1ip9sw",
+          "author": "reddit_user_9d23a5a864c1",
+          "author_karma": 0,
+          "content": "Also, depending on when the blizzard started, bus service could have been suspended due to the weather or delayed.  ",
+          "timestamp": "2026-08-03T20:30:53+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1dgqfn",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1is6vi",
+          "author": "reddit_user_4cd7e3bab9c4",
+          "author_karma": 0,
+          "content": "Hey maybe she shoplifted from a 7/11 fifteen years ago. That's about all the justification people like him need.",
+          "timestamp": "2026-08-03T20:43:45+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1bv3ut",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1itxf2",
+          "author": "reddit_user_130dcd9bfdcb",
+          "author_karma": 0,
+          "content": "But like, who would even be funding propaganda against the administration? Who would be coordinating a push like that?\n\nIt's like when my dad claims everyone is conspiring to be mean to him. Most of the people he says are conspiring don't even talk to each other, so when we're all saying the same thing it's just because it's a common human thought when in a certain situation.\n\nHe just assumes everyone else is like him, making up and spreading mean lies to be malicious.\n\nSo yeah, I dunno that you're gonna find equal piles of propaganda on both sides. Seems like a wild goose chase, like the best you're gonna find is that someone was technically incorrect because they used common language instead of specific industry lingo.   \n  \nLike \"buying crematoriums\" when it's *technically* \"including permitting in the submitted building plans for extremely large medical waste incinerators in warehouses.\" Which is basically the same thing and not at all totally different, so ya can't really call it propaganda for not phrasing it as \"*planning* to buy\" and using exact language for \"very large room that gets hot for disposing of lots of dead bodies or whatever.\"",
+          "timestamp": "2026-08-03T20:51:23+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1dlwms",
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1j0wbw",
+              "author": "reddit_user_90cf55a37cad",
+              "author_karma": 0,
+              "content": "I didn't even call it propaganda I just said that was my goal when checking out the source. And op I replied to claimed crematorium youre making my point they didn't buy crematoriums whether they are burning folks in the medical incinerators is beside the point. Hell they could just be throwing them in a mass grave and torching it then just burying partially burnt bones and I wouldn't be surprised. I am not defending this admin I fucking hate them and ice with every fiber of my being but that doesn't change the fact that they didn't buy fucking crematoriums as was originally stated. OK not propaganda how about sensationalism? What's a good word for you? Cause total truth is obviously not it because they are two different things that could probably perform the same purpose for all I know. \nLiterally I got a banned for a week for saying ice killing civilians with impunity should have to face the death penalty . but fuck me for wanting a source I guess. Oh well you sure showed me I must be a big ol booty boot licker like every other MAGA cunt out there.",
+              "timestamp": "2026-08-03T21:23:00+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1itxf2",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1j341g",
+                  "author": "reddit_user_130dcd9bfdcb",
+                  "author_karma": 0,
+                  "content": "Dude, deep breath! I wasn't taking a whack at ya!\n\nJust pointing out that sometimes picking nits isn't terribly productive. We know (bad people) are doing (bad things) to (innocent people), and frankly the specifics make us all sick anyhow so trying to discuss them in exact detail is nauseating.\n\nWe're on the same boat of \"catching ban hammers for being properly horrified by what the modern day nazis are up to.\"\n\nAnd plus, what with the wildfires and heat domes and everything, all our brains are turning into pudding. Swear I've lost IQ points in the past month. So even a big word like crematoriums is an accomplishment, and frankly I'd give huge side eye to \"giant medical waste disposal permits\" because even a total moron nazi wouldn't stroll up to the local undertaker and be like \"so how many corpses can you cram into that bad boy and where can I get me one like that?\"",
+                  "timestamp": "2026-08-03T21:33:17+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1j0wbw",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1j5irn",
+                      "author": "reddit_user_90cf55a37cad",
+                      "author_karma": 0,
+                      "content": "OK fair. I took it as coming at me lol. Sorry. Brain is literally melting in 102 weather currently. I realllyyyyy wasnt trying to split hairs. Someone else who replied to me said they were medical incinerators that could be used for the same thing and I replied likely. \n\nI just didn't want to be seen as the enemy when I am vehemently against everything thats being done in this country. To the point I cut people out of my life for supporting this admin.\n\nAnd I think clarity is important because thats when you get magas coming in going \"but but no no not creamertoriams!\" Unfortunately the world we live in every small inaccuracy will be used to invalidate the entire accusation or action taken.\n\nSorry for my heated response.",
+                      "timestamp": "2026-08-03T21:44:29+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1j341g",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "p1j78nx",
+                          "author": "reddit_user_130dcd9bfdcb",
+                          "author_karma": 0,
+                          "content": "No worries, I know how it goes! Can't remember having so many squabbles over nothing with people I love in such a short period of time as this summer. Like it's so miserable that I baked chocolate chip cookies the other night but don't even want to eat them.\n\nBut really, ya should try to relax about what maga's gonna say, because arguing with them is an exercise in futility.\n\nAnd I only know this because my dad is exactly that kinda person, has been my whole life, and it literally doesn't matter what anyone says, he's still gonna say and do and believe exactly what he already does.\n\nYou could be so absolutely perfect in every way, technically correct 100%, and they'll just switch to some other tactic than nitpicking your words. Whatabout or move-the-goalpost or just a big fart noise.\n\nIn fact, it saves a lot of time and energy if ya just translate everything they say into fart noises in your head. They're not arguing in good faith, just passing air with lots of noise and inkiness.\n\nLike it's that bit about \"ya can't logic someone out of a position they didn't logic themselves into in the first place.\" Cults suck folks in with emotion, not facts, so you'll never convince them of anything by getting all the facts correct.",
+                          "timestamp": "2026-08-03T21:52:33+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "p1j5irn",
+                          "depth": 4,
+                          "replies": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p1iwsiv",
+          "author": "reddit_user_130dcd9bfdcb",
+          "author_karma": 0,
+          "content": "Because we forgot that important lesson from the bible, that there's a time and place for getting angry enough to braid a whip and make use of it, even in the temple if that's what's necessary.\n\nWe made the mistake of thinking that, because our enemies were hurting us using the system as a weapon but while being utterly civilized about it, that we would be \"going low\" or \"stooping to bad behavior\" if we didn't play the game our enemies set up. And every time they break their own rules, nothing happens beyond us going \"but but, *rules*!\"\n\nLike golly, quit playing pattycake games with folks who slap ya while smiling and claiming you did it to yourself! Maybe slap 'em back sometime, or they'll just keep thinking it's funny!",
+          "timestamp": "2026-08-03T21:04:14+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1clq0f",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1j0iys",
+          "author": "reddit_user_9d23a5a864c1",
+          "author_karma": 0,
+          "content": "This **WARNING, INCLUDES SEVERAL STILL PHOTOS OF HER AT THE BUS STOP** [article](https://www.publicsource.org/video-photos-show-deceased-haitian-woman-pittsburgh-bus-shelter/) has additional details including:\n\nShe was released by ICE on February 28, 2026, which was a Saturday and died at the hospital on Monday, March 2, 2026.  \nThe significance of the day of the week is many areas have less bus service on Saturdays and even less or none on Sundays.  If the surrounding buildings were office buildings, they may have been closed.  And even if they are open, you often can't get past security without a badge and they will call police on people without a valid business purpose if they don't leave when asked.  I'm not familiar with Pittsburgh or that specific area, so I can't say.  \n\nMaybe someone at a security desk would have helped her.  But security wears uniforms, which given her experience with Pittsburgh police and ICE, she may have thought they would harm her.  Even a person who was mentally well and a fluent English speaker would be likely to feel that way, let alone an untreated mentally ill woman who didn't speak fluent English.    \n\nCharlroi, where she lived, is about 30 miles south of Pittsburgh.  Per a[ Google map search](https://www.google.com/maps/dir/Historic+Smithfield+Street+Lenticular+Bridge,+Smithfield+St+Bridge,+Pittsburgh,+PA+15219/Charleroi,+Pennsylvania+15022/@40.2864424,-80.1304437,11z/data=!3m1!4b1!4m19!4m18!1m5!1m1!1s0x8834f151e6649f8d:0x5e2ec04e48f41647!2m2!1d-80.002079!2d40.4348117!1m5!1m1!1s0x88351cc3b738f39d:0xd3d5e4bfa154e615!2m2!1d-79.8981035!2d40.1378499!2m4!5e0!6e0!7e2!8j1788004800!3e3?entry=ttu&g_ep=EgoyMDI2MDcyOS4wIKXMDSoASAFQAw%3D%3D), traveling there by bus takes about 1.5 hours and involves commuter buses,    \n  \nCommuter A was one of the buses.  If you scroll to the end of[ this page](https://mmvta.com/schedule-by-route/commuter-a/), it shows the last bus leaves at 8:30 pm on Saturdays and 6:30 pm Sunday.    \n  \nThe sun set at 6:10 the day she was dropped off, so the drop off could be any time up until then (ICE said it was a sunny day).  The buses are at least 2 hours apart, sometimes even more.  8:30 pm would have been the last bus that day and 6:10 would have been the next to last.  She wasn't dressed for the weather.  And if she missed the last bus or it didn't run because of a mechanical break down or anything else, she would have been at the bus stop as the temperatures dropped.  Disorientation and confusion are a sign of hypothermia.  \n\nCommuter Express 2 was the other one, but it doesn't run on Saturday or Sunday.  \n\nThe [full price fare to/from Pittsburgh](https://www.uline.com/Product/Detail/H-9520/Shopping-Baskets-and-Carts/Folding-Shopping-Cart?pricode=WC2231&gadtype=pla&id=H-9520&gad_source=1&gad_campaignid=1616155823&gbraid=0AAAAAD_uetPikwhajyWWwt1uslInliAGC&gclid=Cj0KCQiA6NTJBhDEARIsAB7QHD1CRDOpiEX_BE6GD3fysx4tUG51l-szhLxVcY-vbWIF6qsQ6a2EBYEaAoB9EALw_wcB) ranges from $3 to $4.  Even if enforcement of paying the fare is lax, she may have been fearful of drawing police attention if she tried to board a bus without a fare.  \n\n",
+          "timestamp": "2026-08-03T21:21:19+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1d5njk",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1jp1d4",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-03T23:22:02+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1bdo0q",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1k0spy",
+          "author": "reddit_user_b7b5476f2c44",
+          "author_karma": 0,
+          "content": "Dont forget the massive grave they dig in PA wilderness \"looking for a body\"",
+          "timestamp": "2026-08-04T00:24:45+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1biw3b",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1k0ynw",
+          "author": "reddit_user_b7b5476f2c44",
+          "author_karma": 0,
+          "content": "Dems think that guy being a woman beatong racist is going to hurt them at the poles.",
+          "timestamp": "2026-08-04T00:25:39+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1audl3",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1kk5s3",
+          "author": "reddit_user_b437175bb2d9",
+          "author_karma": 0,
+          "content": "They don’t even know",
+          "timestamp": "2026-08-04T02:11:21+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1aaez0",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1kojcr",
+          "author": "reddit_user_038bb67a538b",
+          "author_karma": 0,
+          "content": "All my life I heard anericans talk about the second amendment and when the moment arrives fir ut to actually count, nothing happens..",
+          "timestamp": "2026-08-04T02:35:56+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1kwn8l",
+              "author": "reddit_user_1b66ae95cc56",
+              "author_karma": 0,
+              "content": "They *support* the regime.",
+              "timestamp": "2026-08-04T03:24:31+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1kojcr",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1kt0xm",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-04T03:02:15+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1byxsj",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1ktxvl",
+          "author": "reddit_user_6242ff7463ce",
+          "author_karma": 0,
+          "content": "The white house literally released an announcement about \"aliens living among us.\" It's sickening.",
+          "timestamp": "2026-08-04T03:07:48+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1a9yre",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1kutbi",
+          "author": "reddit_user_6242ff7463ce",
+          "author_karma": 0,
+          "content": "It's baked into capitalism itself. When you reward greed and selfishness, the most evil of the evil rise to the top, and they set the narrative. People stop being people and becone either assets or liabilities. And to prevent the masses from rising up they turn the liabilities into scapegoats, targets to be dehumanized, hated, abused, and exterminated.",
+          "timestamp": "2026-08-04T03:13:11+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1aehci",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1kycom",
+          "author": "reddit_user_752bcf57e23f",
+          "author_karma": 0,
+          "content": "I've just straight up went no contact with my family since I am the only one that is against Trump. Fuck trying to reason or debate with them as we apparently have extreme differences in morality and ethics that are,  to me, incompatible with continued contact.  ",
+          "timestamp": "2026-08-04T03:35:20+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1aq5qg",
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1l0dsl",
+              "author": "reddit_user_9ed214b878a3",
+              "author_karma": 0,
+              "content": "Entirely your decision. More common than you'd think in my age bracket (25-35) that people just aren't willing to swallow it from their parents anymore. A lack of basic humanity is reason enough to cut someone off.\n\nLucky enough that my dad isn't a full blown Trumper, dude just misses Reagan (I know I know, gipper was a real pos too) and is willing to turn his brain off\n\nAlso. Lol. That username.",
+              "timestamp": "2026-08-04T03:48:27+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1kycom",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

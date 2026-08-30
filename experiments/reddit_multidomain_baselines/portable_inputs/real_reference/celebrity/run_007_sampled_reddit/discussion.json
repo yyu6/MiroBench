@@ -1,0 +1,3982 @@
+{
+  "meta": {
+    "product_category": "celebrity",
+    "baseline": "real_reddit_reference",
+    "run_id": "run_007_sampled_reddit"
+  },
+  "posts": [
+    {
+      "post_id": "real_run007_post00_seed035",
+      "post_slot": 0,
+      "seed_index": 35,
+      "source_raw_post_id": "1vc5aeh",
+      "source_product_dir": "entertainment",
+      "source_file": "https://www.reddit.com/r/entertainment/comments/1vc5aeh/olivia_wildes_the_invite_nears_40_million/",
+      "post_type": "link",
+      "title": "Olivia Wilde’s ‘The Invite’ Nears $40 Million Globally, Becoming a Rare Hit Summer Comedy",
+      "author": "reddit_user_33799307055d",
+      "author_karma": 0,
+      "content": "Olivia Wilde’s ‘The Invite’ Nears $40 Million Globally, Becoming a Rare Hit Summer Comedy",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p0yw2ff",
+          "author": "reddit_user_bbf872a1baa4",
+          "author_karma": 0,
+          "content": "40 millions a hit now?",
+          "timestamp": "2026-07-31T22:54:37+00:00",
+          "likes": -24,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0yycrj",
+              "author": "reddit_user_223ff9faec5d",
+              "author_karma": 0,
+              "content": "For an indie comedy yes.",
+              "timestamp": "2026-07-31T23:06:57+00:00",
+              "likes": 31,
+              "dislikes": 0,
+              "parent_comment_id": "p0yw2ff",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p0zd3vv",
+                  "author": "reddit_user_d03bbff988f7",
+                  "author_karma": 0,
+                  "content": "Idk I would assume a movie with Edward Norton, Seth Rogen, and Penelope Cruz to be more than just an indie success",
+                  "timestamp": "2026-08-01T00:29:28+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p0yycrj",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p0zmm2o",
+                      "author": "reddit_user_223ff9faec5d",
+                      "author_karma": 0,
+                      "content": "Why would you assume that? Have they made a lot of blockbuster movies?",
+                      "timestamp": "2026-08-01T01:24:53+00:00",
+                      "likes": 0,
+                      "dislikes": 0,
+                      "parent_comment_id": "p0zd3vv",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "comment_id": "p0z11ag",
+              "author": "[deleted]",
+              "author_karma": 0,
+              "content": "[removed]",
+              "timestamp": "2026-07-31T23:21:29+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p0yw2ff",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p0z1c1f",
+              "author": "reddit_user_ad531ca2774d",
+              "author_karma": 0,
+              "content": "On a 12 million budget? Yes. ",
+              "timestamp": "2026-07-31T23:23:08+00:00",
+              "likes": 25,
+              "dislikes": 0,
+              "parent_comment_id": "p0yw2ff",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p0zdk2a",
+                  "author": "reddit_user_d03bbff988f7",
+                  "author_karma": 0,
+                  "content": "To be fair $12 million was the cost that A24 paid to buy it at Sundance. It doesn’t necessarily include the marketing, distribution, and theater cuts.",
+                  "timestamp": "2026-08-01T00:32:05+00:00",
+                  "likes": 3,
+                  "dislikes": 0,
+                  "parent_comment_id": "p0z1c1f",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            },
+            {
+              "comment_id": "p0z3o8e",
+              "author": "reddit_user_679f757d5587",
+              "author_karma": 0,
+              "content": "Not everything has to be a billion dollars. Jeez.",
+              "timestamp": "2026-07-31T23:35:57+00:00",
+              "likes": 19,
+              "dislikes": 0,
+              "parent_comment_id": "p0yw2ff",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p0z6g3m",
+              "author": "[deleted]",
+              "author_karma": 0,
+              "content": "[removed]",
+              "timestamp": "2026-07-31T23:51:36+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p0yw2ff",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p0zcvlc",
+              "author": "reddit_user_0d1c8db61c5c",
+              "author_karma": 0,
+              "content": "It's always hilarious when people that don't know what they're talking about chime in",
+              "timestamp": "2026-08-01T00:28:07+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p0yw2ff",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p0zkl1n",
+                  "author": "reddit_user_bbf872a1baa4",
+                  "author_karma": 0,
+                  "content": "I know. ",
+                  "timestamp": "2026-08-01T01:13:00+00:00",
+                  "likes": 0,
+                  "dislikes": 0,
+                  "parent_comment_id": "p0zcvlc",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p0z5de3",
+          "author": "reddit_user_baba5bdd054f",
+          "author_karma": 0,
+          "content": "Hopefully this revives the mid budget comedy movie. I know this is an indie but I hope it will motivate investors to invest a little more. ",
+          "timestamp": "2026-07-31T23:45:29+00:00",
+          "likes": 357,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0z8f7a",
+              "author": "reddit_user_5fc588dd67cc",
+              "author_karma": 0,
+              "content": "Fr. Not every movie needs be a blockbuster.",
+              "timestamp": "2026-08-01T00:02:43+00:00",
+              "likes": 110,
+              "dislikes": 0,
+              "parent_comment_id": "p0z5de3",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p0zv830",
+                  "author": "reddit_user_3eab67f208dc",
+                  "author_karma": 0,
+                  "content": "I does for the economics of movies. Either make am heap slop that streaming services will buy to pad there exclusives library or be a blockbuster that will actually get people into theaters.",
+                  "timestamp": "2026-08-01T02:16:49+00:00",
+                  "likes": 10,
+                  "dislikes": 0,
+                  "parent_comment_id": "p0z8f7a",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p108xw0",
+                      "author": "[deleted]",
+                      "author_karma": 0,
+                      "content": "[removed]",
+                      "timestamp": "2026-08-01T03:43:56+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p0zv830",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "comment_id": "p0zj5gg",
+              "author": "reddit_user_be7face1bbae",
+              "author_karma": 0,
+              "content": "Ah yes from the paltry 3.5 million dollar indie film studio A24.",
+              "timestamp": "2026-08-01T01:04:37+00:00",
+              "likes": 8,
+              "dislikes": 0,
+              "parent_comment_id": "p0z5de3",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p0zklur",
+                  "author": "reddit_user_baba5bdd054f",
+                  "author_karma": 0,
+                  "content": "It’s actually 12 million but it’s doing well. \n\nThat still seems kinda high for it being a majority one set location film with four actors. ",
+                  "timestamp": "2026-08-01T01:13:08+00:00",
+                  "likes": 18,
+                  "dislikes": 0,
+                  "parent_comment_id": "p0zj5gg",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p0zl1sv",
+                      "author": "reddit_user_be7face1bbae",
+                      "author_karma": 0,
+                      "content": "Sorry I meant Billion with a B, meaning A24's worth.",
+                      "timestamp": "2026-08-01T01:15:41+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p0zklur",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "p10j92p",
+                          "author": "reddit_user_4a1f4d021597",
+                          "author_karma": 0,
+                          "content": "You realize that A24 didn’t make the film? They got the distribution rights and acquired the rights after the movie was already done. ",
+                          "timestamp": "2026-08-01T04:55:08+00:00",
+                          "likes": 14,
+                          "dislikes": 0,
+                          "parent_comment_id": "p0zl1sv",
+                          "depth": 4,
+                          "replies": []
+                        }
+                      ]
+                    },
+                    {
+                      "comment_id": "p0zpd5i",
+                      "author": "reddit_user_a26b115bce00",
+                      "author_karma": 0,
+                      "content": "Given who these four actors are, I’m not surprised. This isn’t the cast of Obsession lol",
+                      "timestamp": "2026-08-01T01:41:15+00:00",
+                      "likes": 13,
+                      "dislikes": 0,
+                      "parent_comment_id": "p0zklur",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "p10gxto",
+                          "author": "reddit_user_a4e530290029",
+                          "author_karma": 0,
+                          "content": "Yeah now that cast would be asking more /s",
+                          "timestamp": "2026-08-01T04:38:34+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "p0zpd5i",
+                          "depth": 4,
+                          "replies": []
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "comment_id": "p10wf2e",
+                  "author": "reddit_user_84a93cbc819d",
+                  "author_karma": 0,
+                  "content": "A24 didn't make it. They saw it with everybody else when it premiered at Sundance and just bid for the North American rights. This was definitely an indie movie with a small budget.",
+                  "timestamp": "2026-08-01T06:36:36+00:00",
+                  "likes": 8,
+                  "dislikes": 0,
+                  "parent_comment_id": "p0zj5gg",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            },
+            {
+              "comment_id": "p0zvbt4",
+              "author": "reddit_user_62f2a2dd8fe4",
+              "author_karma": 0,
+              "content": "I’m starving for mid budget comedies. STARVING!",
+              "timestamp": "2026-08-01T02:17:27+00:00",
+              "likes": 23,
+              "dislikes": 0,
+              "parent_comment_id": "p0z5de3",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p10gtoo",
+                  "author": "reddit_user_a4e530290029",
+                  "author_karma": 0,
+                  "content": "Well that’s where they all went, this person ate them all!",
+                  "timestamp": "2026-08-01T04:37:45+00:00",
+                  "likes": 11,
+                  "dislikes": 0,
+                  "parent_comment_id": "p0zvbt4",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p12qn2w",
+                      "author": "reddit_user_62f2a2dd8fe4",
+                      "author_karma": 0,
+                      "content": "Ba dum tiss",
+                      "timestamp": "2026-08-01T14:29:28+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p10gtoo",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                },
+                {
+                  "comment_id": "p12klhv",
+                  "author": "reddit_user_408d21cbfb56",
+                  "author_karma": 0,
+                  "content": "I miss the mid budget movies of the 90s and early 2000s. ",
+                  "timestamp": "2026-08-01T13:58:22+00:00",
+                  "likes": 4,
+                  "dislikes": 0,
+                  "parent_comment_id": "p0zvbt4",
+                  "depth": 2,
+                  "replies": []
+                },
+                {
+                  "comment_id": "p12u7yp",
+                  "author": "reddit_user_7515990569e3",
+                  "author_karma": 0,
+                  "content": "I highly recommend Gail Daughtry and the Celebrity Sex Pass if it is screening anywhere near you.\n\nAbsolutely hilarious and made me think of classic 2000’s comedy.",
+                  "timestamp": "2026-08-01T14:47:23+00:00",
+                  "likes": 3,
+                  "dislikes": 0,
+                  "parent_comment_id": "p0zvbt4",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p12xcwr",
+                      "author": "reddit_user_62f2a2dd8fe4",
+                      "author_karma": 0,
+                      "content": "Thanks I’ll have to check it out. We have a historic theater that plays movies like this. I’ll just have to wait till they have a showing ",
+                      "timestamp": "2026-08-01T15:02:56+00:00",
+                      "likes": 2,
+                      "dislikes": 0,
+                      "parent_comment_id": "p12u7yp",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "comment_id": "p0zytko",
+              "author": "reddit_user_165c20d319bc",
+              "author_karma": 0,
+              "content": "It’s a remake of a film that was already a hit. It relies on the ingenuity of foreign talent. When you watch a lot of foreign movies, quality of commentary and dialog is usually miles better than that of American films. Just my opinion but Americans to love to remake those foreign movies which is a testament to how good foreign films are. Hollywood has been enshitified. ",
+              "timestamp": "2026-08-01T02:38:54+00:00",
+              "likes": -1,
+              "dislikes": 0,
+              "parent_comment_id": "p0z5de3",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p10485w",
+                  "author": "reddit_user_0750c175c49f",
+                  "author_karma": 0,
+                  "content": "It really isn't much like the original outside of the basic premise. ",
+                  "timestamp": "2026-08-01T03:12:55+00:00",
+                  "likes": 5,
+                  "dislikes": 0,
+                  "parent_comment_id": "p0zytko",
+                  "depth": 2,
+                  "replies": []
+                },
+                {
+                  "comment_id": "p13bdbr",
+                  "author": "reddit_user_9e9999bb6b04",
+                  "author_karma": 0,
+                  "content": "That's self-selection. They aren't remaking the dreck.\n\nHollywood remakes good foreign films because they think they can make money bringing them to a new market. And non-US companies remake good Hollywood films for the same reason. Although it's harder to find a small Hollywood film I suppose.\n\nBut when they select films they automatically are selecting the better ones because they rightly think they have a higher chance doing well.\n\nThis used to happen with music too. A song would get big in the US and it would be covered by bands in Europe and released in those markets. Even in the UK despite having a common language. And of course the US would have covers of big songs from Europe. It was big in the era were bands were buying songs anyway, not writing their own so doing this was pretty natural.",
+                  "timestamp": "2026-08-01T16:10:36+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p0zytko",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            },
+            {
+              "comment_id": "p12eukb",
+              "author": "reddit_user_a6b20b5755af",
+              "author_karma": 0,
+              "content": "Agreed ",
+              "timestamp": "2026-08-01T13:27:34+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p0z5de3",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p14bh3y",
+              "author": "[deleted]",
+              "author_karma": 0,
+              "content": "[removed]",
+              "timestamp": "2026-08-01T19:03:16+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p0z5de3",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p0z6tc8",
+          "author": "reddit_user_9624003cbcec",
+          "author_karma": 0,
+          "content": "My husband and I really enjoyed it. We missed seeing movies like this at the theater. Our 1st movie was Superbad.",
+          "timestamp": "2026-07-31T23:53:39+00:00",
+          "likes": 118,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0zooki",
+              "author": "reddit_user_6146d4b6810f",
+              "author_karma": 0,
+              "content": "One Night Only is pretty good and releases next weekend, and I Want Your Sex came out today.",
+              "timestamp": "2026-08-01T01:37:10+00:00",
+              "likes": 15,
+              "dislikes": 0,
+              "parent_comment_id": "p0z6tc8",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p11vq39",
+              "author": "reddit_user_c3fc52ed0f0d",
+              "author_karma": 0,
+              "content": "I remember joining friends last minute at the cinema to watch 21 Jump Street. Had absolutely no idea what it was about, the genre, actors etc. - went in completely blind.\n\nOne of the best cinema experiences of my life.",
+              "timestamp": "2026-08-01T11:29:04+00:00",
+              "likes": 3,
+              "dislikes": 0,
+              "parent_comment_id": "p0z6tc8",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p12nyz1",
+              "author": "reddit_user_4e10adaec375",
+              "author_karma": 0,
+              "content": "Superbad is a perfect example of the kind of movie that feels almost nonexistent anymore",
+              "timestamp": "2026-08-01T14:15:51+00:00",
+              "likes": 3,
+              "dislikes": 0,
+              "parent_comment_id": "p0z6tc8",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p0z7zah",
+          "author": "reddit_user_ef6ce9e7f689",
+          "author_karma": 0,
+          "content": "This movie was great. Super entertaining and fucking hilarious ",
+          "timestamp": "2026-08-01T00:00:13+00:00",
+          "likes": 19,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0z8xbc",
+              "author": "reddit_user_64ede996a9f6",
+              "author_karma": 0,
+              "content": "And it got serious without going to far.  Its really terrific. ",
+              "timestamp": "2026-08-01T00:05:35+00:00",
+              "likes": 14,
+              "dislikes": 0,
+              "parent_comment_id": "p0z7zah",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p0z8ec0",
+          "author": "reddit_user_731ef7562f62",
+          "author_karma": 0,
+          "content": "My biggest takeaway from the movie is that I would totally do Edward Norton if he were my neighbor. Too bad they didn’t finish it.💀 I was rooting for them!",
+          "timestamp": "2026-08-01T00:02:35+00:00",
+          "likes": 21,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0zko3d",
+              "author": "[deleted]",
+              "author_karma": 0,
+              "content": "[removed]",
+              "timestamp": "2026-08-01T01:13:30+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p0z8ec0",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p0z94pj",
+          "author": "reddit_user_d452422ca692",
+          "author_karma": 0,
+          "content": "First time im hearing about it must have saved some money on marketing.",
+          "timestamp": "2026-08-01T00:06:45+00:00",
+          "likes": 8,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0zcb47",
+              "author": "reddit_user_42bf12456a93",
+              "author_karma": 0,
+              "content": "I only saw it because I already had tickets to The Odyssey but was getting cinema fomo and wanted to watch something haha. \n\nIt's an amazing movie. It's actually my favourite of the year. So fucking funny. ",
+              "timestamp": "2026-08-01T00:24:48+00:00",
+              "likes": 7,
+              "dislikes": 0,
+              "parent_comment_id": "p0z94pj",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p0zecgb",
+                  "author": "reddit_user_d452422ca692",
+                  "author_karma": 0,
+                  "content": "I'll definitely check it out! Thanks for the recommendation.",
+                  "timestamp": "2026-08-01T00:36:43+00:00",
+                  "likes": 2,
+                  "dislikes": 0,
+                  "parent_comment_id": "p0zcb47",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            },
+            {
+              "comment_id": "p0ziywe",
+              "author": "reddit_user_9349dbbdd0f8",
+              "author_karma": 0,
+              "content": "I laughed through the entire thing (until it got too real at the end). \n\nAlso, Penelope Cruz was oozing sex appeal. ",
+              "timestamp": "2026-08-01T01:03:33+00:00",
+              "likes": 6,
+              "dislikes": 0,
+              "parent_comment_id": "p0z94pj",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p0zp0d5",
+                  "author": "reddit_user_076096f6acd2",
+                  "author_karma": 0,
+                  "content": "She and Edward Norton were brilliantly cast. ",
+                  "timestamp": "2026-08-01T01:39:09+00:00",
+                  "likes": 3,
+                  "dislikes": 0,
+                  "parent_comment_id": "p0ziywe",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p0zf2y7",
+          "author": "reddit_user_b53edc0b30ae",
+          "author_karma": 0,
+          "content": "It's a dramedy because that's still the best we can do. Not just some goofball comedy, we need to add drama and make you feel like shit by the end. Plus it's not exactly new, it's based off a play from 10 years ago that was made into a movie in 2020. \n\nIs it good? Yeah, and has its funny moments. But I'm still not ringing the bell that Hollywood is caring about new comedy projects either.",
+          "timestamp": "2026-08-01T00:40:59+00:00",
+          "likes": -6,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p11v3kc",
+              "author": "reddit_user_533cb261fa0a",
+              "author_karma": 0,
+              "content": "You didn’t see it did you?",
+              "timestamp": "2026-08-01T11:24:34+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p0zf2y7",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p12m6jc",
+                  "author": "reddit_user_b53edc0b30ae",
+                  "author_karma": 0,
+                  "content": "I did, did you? What about it wasn't a dramedy? You go to the wiki it says it's a comedy drama. It is about a marriage falling apart ",
+                  "timestamp": "2026-08-01T14:06:39+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p11v3kc",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            },
+            {
+              "comment_id": "p13brou",
+              "author": "reddit_user_9e9999bb6b04",
+              "author_karma": 0,
+              "content": "> Plus it's not exactly new, it's based off a play from 10 years ago that was made into a movie in 2020.\n\nWait until you look into Odyssey...",
+              "timestamp": "2026-08-01T16:12:31+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p0zf2y7",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p0zj78g",
+          "author": "reddit_user_2169b4a3581f",
+          "author_karma": 0,
+          "content": "Damn I thought people hated everything she did. Glad to see she finally got a hit ",
+          "timestamp": "2026-08-01T01:04:55+00:00",
+          "likes": 48,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0zoebq",
+              "author": "reddit_user_a9527fb67c5f",
+              "author_karma": 0,
+              "content": "Booksmart was very well received! I think it was just Don’t Worry Darling (both all of the backstage drama and the film itself) that people had soured on",
+              "timestamp": "2026-08-01T01:35:28+00:00",
+              "likes": 46,
+              "dislikes": 0,
+              "parent_comment_id": "p0zj78g",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p0zorw3",
+                  "author": "reddit_user_684245be3aef",
+                  "author_karma": 0,
+                  "content": "Which honestly had the bones of a very good movie with a cool premise. Just needed a bit more ",
+                  "timestamp": "2026-08-01T01:37:44+00:00",
+                  "likes": 19,
+                  "dislikes": 0,
+                  "parent_comment_id": "p0zoebq",
+                  "depth": 2,
+                  "replies": []
+                },
+                {
+                  "comment_id": "p0zwbn5",
+                  "author": "reddit_user_9624003cbcec",
+                  "author_karma": 0,
+                  "content": "Don't Worry Darling was mostly annoying because of the press around it imo. ",
+                  "timestamp": "2026-08-01T02:23:33+00:00",
+                  "likes": 13,
+                  "dislikes": 0,
+                  "parent_comment_id": "p0zoebq",
+                  "depth": 2,
+                  "replies": []
+                },
+                {
+                  "comment_id": "p10f2dz",
+                  "author": "reddit_user_a2a87c640efb",
+                  "author_karma": 0,
+                  "content": "Yeah booksmart was awesome \n\nAnd I feel like i know everything about dont worry darling except for the movie itself \n\nBut I will give this one a shot \n\nIt aint easy to make a comedy and she pulled it off with booksmart, so kudos to her ",
+                  "timestamp": "2026-08-01T04:25:20+00:00",
+                  "likes": 6,
+                  "dislikes": 0,
+                  "parent_comment_id": "p0zoebq",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            },
+            {
+              "comment_id": "p14bxza",
+              "author": "reddit_user_e626b7327951",
+              "author_karma": 0,
+              "content": "I wasn't a big fan of hers going into this. Probably because of the earlier drama with the other movie. I thought it started off a tad clunky and then nailed it. I think the beginning was even necessary for the rest of the movie. Besides the witty dialogue that had me laughing aloud, the tension not knowing the direction the movie was taking, added to a very enjoyable experience. I also though Olivia's acting jobs were incredible in this. Looking forward to her next film.",
+              "timestamp": "2026-08-01T19:05:31+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p0zj78g",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p0zjbf0",
+          "author": "reddit_user_14d737d71c19",
+          "author_karma": 0,
+          "content": "This was such an incredible surprise. We went in just knowing A24/Seth Rogan and were locked the fuck in for the entire run time. Dialogue is nothing short of incredible and always a huge fan of awkward situational comedy.",
+          "timestamp": "2026-08-01T01:05:36+00:00",
+          "likes": 79,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0zobwa",
+              "author": "reddit_user_0970be913bfd",
+              "author_karma": 0,
+              "content": "Haha yeah this was a good movie to come in blind for. I did the same.",
+              "timestamp": "2026-08-01T01:35:04+00:00",
+              "likes": 10,
+              "dislikes": 0,
+              "parent_comment_id": "p0zjbf0",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p0zjs2f",
+          "author": "reddit_user_29f8bf41da4c",
+          "author_karma": 0,
+          "content": "I saw it. Really funny movie and I was pleasantly surprised ",
+          "timestamp": "2026-08-01T01:08:19+00:00",
+          "likes": 6,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0znaio",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-01T01:28:54+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0znv48",
+          "author": "reddit_user_1a147933edb7",
+          "author_karma": 0,
+          "content": "Phenomenal movie…start to end.  ",
+          "timestamp": "2026-08-01T01:32:16+00:00",
+          "likes": 5,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0zormf",
+          "author": "reddit_user_076096f6acd2",
+          "author_karma": 0,
+          "content": "I just saw this last night in San Francisco. The theater was packed and the audience was rolling laughing throughout. I was surprised honestly! Glad to see a film like this be successful. ",
+          "timestamp": "2026-08-01T01:37:41+00:00",
+          "likes": 20,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0zr0z0",
+          "author": "reddit_user_cdf9bb5eaf46",
+          "author_karma": 0,
+          "content": "Honestly my movie of the year, outside horror ",
+          "timestamp": "2026-08-01T01:51:13+00:00",
+          "likes": 13,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0zrnab",
+          "author": "reddit_user_3858d3ba9231",
+          "author_karma": 0,
+          "content": "It was so good. Uncomfortable but funny. It was great watching it with a group of people . ",
+          "timestamp": "2026-08-01T01:54:58+00:00",
+          "likes": 4,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0zthpa",
+          "author": "reddit_user_e6601e27b8e4",
+          "author_karma": 0,
+          "content": "Lol Clark swingless and on base love to see it",
+          "timestamp": "2026-08-01T02:06:10+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0zv825",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-01T02:16:48+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0zwhb9",
+          "author": "reddit_user_8aa248e25447",
+          "author_karma": 0,
+          "content": "It's a fantastic film.",
+          "timestamp": "2026-08-01T02:24:31+00:00",
+          "likes": 4,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0zy7h6",
+          "author": "reddit_user_41709574924c",
+          "author_karma": 0,
+          "content": "She is my celebrity hall pass ",
+          "timestamp": "2026-08-01T02:35:06+00:00",
+          "likes": 0,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p101auf",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-01T02:54:19+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p10fdr5",
+          "author": "reddit_user_6a858a0f98a2",
+          "author_karma": 0,
+          "content": "What an enjoyable movie. Funny, witty and capturing of the audience's attention  from beginning to end. Don't get me wrong, I enjoy a comic book movie but The Invite was a surprising breath of fresh air. Totally not what the wife thought it was when she suggested it.",
+          "timestamp": "2026-08-01T04:27:30+00:00",
+          "likes": 3,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p10fowz",
+          "author": "reddit_user_9a4a92bf39a1",
+          "author_karma": 0,
+          "content": "I had to see it in a hurry as it came late and went early here so that number seems absolutely fantastic for that type of window. I'd have seen it again if i could've, in my top 3 of the year so far.",
+          "timestamp": "2026-08-01T04:29:40+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p10gpe6",
+          "author": "reddit_user_709275ad24fc",
+          "author_karma": 0,
+          "content": "My wife and I saw this for a date night and it was fucking hilarious! Emotional rollercoaster to be sure but hilarious!",
+          "timestamp": "2026-08-01T04:36:54+00:00",
+          "likes": 6,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p10s6gq",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-01T06:02:54+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p115xag",
+          "author": "reddit_user_553d91acfbb9",
+          "author_karma": 0,
+          "content": "I preferred The Odyssey, but by all means this has a claim to be the best film of the year so far ",
+          "timestamp": "2026-08-01T07:55:26+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p11v5rw",
+              "author": "reddit_user_533cb261fa0a",
+              "author_karma": 0,
+              "content": "Comedy film newt",
+              "timestamp": "2026-08-01T11:25:01+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p115xag",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p15uec0",
+              "author": "reddit_user_945043b88f1b",
+              "author_karma": 0,
+              "content": "I didn’t realize the Odyssey was a comedy. I’ll need to reread it for those laugh out loud moments. ",
+              "timestamp": "2026-08-01T23:51:04+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p115xag",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p11m0h0",
+          "author": "reddit_user_09ac0d716ce6",
+          "author_karma": 0,
+          "content": "It used to be 3 mill was the sweet spot no matter how well it did in the cinema or streaming you’d make you money back in dvd sales. No media sales means it’s less viable at that price point so cheap cheap slop or name actors and cinema draw.",
+          "timestamp": "2026-08-01T10:13:53+00:00",
+          "likes": 3,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p12etpv",
+          "author": "reddit_user_a6b20b5755af",
+          "author_karma": 0,
+          "content": "Wow good for her ",
+          "timestamp": "2026-08-01T13:27:26+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p12twav",
+          "author": "reddit_user_c37a552d53cf",
+          "author_karma": 0,
+          "content": "I was concerned because I loved this movie and was nervous the big blockbusters made it invisible. I hope it gets Olivia Wilde a best director nod ",
+          "timestamp": "2026-08-01T14:45:47+00:00",
+          "likes": 6,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p12v42q",
+          "author": "reddit_user_7515990569e3",
+          "author_karma": 0,
+          "content": "I honestly didn’t think it was that funny. I feel like it existed in a similar space as The Drama, which I think I enjoyed a lot more.\n\nIt’s also weird seeing people refer to it as solely a comedy when imo it was more of a drama/comedy.\n\nIt reminded me of the story Who’s Afraid of Virginia Woolf, which has some funny moments, but overall I wouldn’t call it a comedy.",
+          "timestamp": "2026-08-01T14:51:51+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1cwzvz",
+              "author": "reddit_user_7f77d37e6a6f",
+              "author_karma": 0,
+              "content": "i wanted to watch it but my cousin went with her bf and they thought it wasnt good. They said Seth Rogen was annoyingly yelling/loud throughout most of it. ",
+              "timestamp": "2026-08-03T00:43:25+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p12v42q",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1cxi9b",
+                  "author": "reddit_user_7515990569e3",
+                  "author_karma": 0,
+                  "content": "Yeah, it’s pretty much just Seth Rogen being Seth Rogen, an annoying pothead klutz.\n\nAnd again, it really wasn’t THAT funny, so im really thrown off by the people saying it’s the “hardest they’ve laughed in the theater in a long time” and stuff like that.",
+                  "timestamp": "2026-08-03T00:46:14+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1cwzvz",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1dbklk",
+                      "author": "reddit_user_7f77d37e6a6f",
+                      "author_karma": 0,
+                      "content": "ok good to know thank you. i’m not a movie watcher (only documentaries can keep my attention) but this one looked decent from the IG clips and i like PC, until my cousin warned me. Havent watched a SR before so wouldnt know what to expect; no way i can sit through alot of yelling lol. May try the Spanish version (from Spain) instead as i do like foreign flicks specially ones with Javier Bardem and PC once in a while.",
+                      "timestamp": "2026-08-03T02:07:37+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1cxi9b",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p136s0a",
+          "author": "reddit_user_04d60ba2d4f5",
+          "author_karma": 0,
+          "content": "I normally cannot stand Seth Rogan. I have never thought he was funny… until he played opposite Wilde. The tension they were able to create in the first 20 minutes was hilarious.",
+          "timestamp": "2026-08-01T15:48:38+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p13g6be",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-01T16:33:38+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p13kev3",
+          "author": "reddit_user_c691fd167787",
+          "author_karma": 0,
+          "content": "I wanted to see it, but when I finally got the chance it wasn’t playing near me anymore 😔",
+          "timestamp": "2026-08-01T16:54:00+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p143zow",
+          "author": "reddit_user_4f3dade49777",
+          "author_karma": 0,
+          "content": "It was very entertaining. Penelope Cruz was outstanding. She delivered an Oscar Award performance as did Olivia Wilde. Seth Rogan, well he was Seth Rogan. ",
+          "timestamp": "2026-08-01T18:27:25+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p17ciiq",
+          "author": "reddit_user_6d77676b1b80",
+          "author_karma": 0,
+          "content": "I guess these actors did the movie as a favor for cheap? A budget of 6 million in a movie starring 4 well known actors. \n\nI know they're not commanding 20 million a role or anything, but you’re telling me the total budget of the film was 6 million? ",
+          "timestamp": "2026-08-02T05:41:09+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run007_post01_seed036",
+      "post_slot": 1,
+      "seed_index": 36,
+      "source_raw_post_id": "1vc6bh0",
+      "source_product_dir": "Fauxmoi",
+      "source_file": "https://www.reddit.com/r/Fauxmoi/comments/1vc6bh0/theres_a_scramble_underway_over_a_barbie_sequel/",
+      "post_type": "FILM-MOI (MOVIES/TV)",
+      "title": "There’s a Scramble Underway Over a ‘Barbie’ Sequel",
+      "author": "reddit_user_33799307055d",
+      "author_karma": 0,
+      "content": "There’s a Scramble Underway Over a ‘Barbie’ Sequel",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p0yzct8",
+          "author": "reddit_user_23fe9f4112f8",
+          "author_karma": 0,
+          "content": "Full story https://archive.is/20260731110016/https://www.nytimes.com/2026/07/31/business/media/barbie-sequel-warner-bros-mattel.html",
+          "timestamp": "2026-07-31T23:12:22+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0yze7p",
+          "author": "reddit_user_20ff0d9108b6",
+          "author_karma": 0,
+          "content": "Hi OP: your post has been removed due to Rule 4: Posting Format & Guidelines! \n\n&nbsp;\n\n___\n\n&nbsp;\n\n**The media you have uploaded appears to be poor resolution (i.e. blurry or bad audio),** and/or you have not included enough pictures in your post for it to be approved. \n\n&nbsp; \n\nPlease try your best to upload high quality versions of any media you are sharing, and make full use of the image carousel/gallery wherever possible. \n\n&nbsp;\n\n___",
+          "timestamp": "2026-07-31T23:12:35+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0z030c",
+          "author": "reddit_user_e8988dbe071c",
+          "author_karma": 0,
+          "content": "i don't think we need a Barbie sequel",
+          "timestamp": "2026-07-31T23:16:18+00:00",
+          "likes": 664,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0z13mb",
+              "author": "reddit_user_00ee3016f26c",
+              "author_karma": 0,
+              "content": "I think that given the social climate that we are nowadays, it's definitely needed.",
+              "timestamp": "2026-07-31T23:21:51+00:00",
+              "likes": -71,
+              "dislikes": 0,
+              "parent_comment_id": "p0z030c",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p0z1d7b",
+                  "author": "reddit_user_5abc0581a212",
+                  "author_karma": 0,
+                  "content": "But they don’t need Barbie to do that. Make an original IP with themes of what everyday women experience. ",
+                  "timestamp": "2026-07-31T23:23:19+00:00",
+                  "likes": 105,
+                  "dislikes": 0,
+                  "parent_comment_id": "p0z13mb",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            },
+            {
+              "comment_id": "p0z2nvd",
+              "author": "reddit_user_7701efc5fe4a",
+              "author_karma": 0,
+              "content": "We didn’t need a 5th shrek either. I know it’s a big thing that people aren’t going to the movies as much nowadays but we don’t need spin off, sequel, trilogy etc slop to pull people in imo ",
+              "timestamp": "2026-07-31T23:30:24+00:00",
+              "likes": 127,
+              "dislikes": 0,
+              "parent_comment_id": "p0z030c",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p10rlvt",
+                  "author": "reddit_user_95989f89e2f8",
+                  "author_karma": 0,
+                  "content": "Yeah same as Toy Story 5.",
+                  "timestamp": "2026-08-01T05:58:23+00:00",
+                  "likes": 20,
+                  "dislikes": 0,
+                  "parent_comment_id": "p0z2nvd",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p12ssem",
+                      "author": "reddit_user_7701efc5fe4a",
+                      "author_karma": 0,
+                      "content": "True as shit. That announcement really had me rolling my eyes ",
+                      "timestamp": "2026-08-01T14:40:13+00:00",
+                      "likes": 3,
+                      "dislikes": 0,
+                      "parent_comment_id": "p10rlvt",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p0z084h",
+          "author": "reddit_user_871a5e837402",
+          "author_karma": 0,
+          "content": "Nope. I hate that they are doing this. Just leave well enough alone. It won’t ever be as good as the original. ",
+          "timestamp": "2026-07-31T23:17:04+00:00",
+          "likes": 47,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0z0ce9",
+          "author": "reddit_user_4bf72c0906e1",
+          "author_karma": 0,
+          "content": "They just need to make animated movies again",
+          "timestamp": "2026-07-31T23:17:42+00:00",
+          "likes": 119,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0z2o1f",
+              "author": "reddit_user_9391c09f5ac4",
+              "author_karma": 0,
+              "content": "I think they still do! (Barbie animated movies)",
+              "timestamp": "2026-07-31T23:30:26+00:00",
+              "likes": 25,
+              "dislikes": 0,
+              "parent_comment_id": "p0z0ce9",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p0z0ivk",
+          "author": "reddit_user_a9aad86bd342",
+          "author_karma": 0,
+          "content": "Margot is a great actress but this does not need a sequel. ",
+          "timestamp": "2026-07-31T23:18:42+00:00",
+          "likes": 271,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0z6smy",
+              "author": "[deleted]",
+              "author_karma": 0,
+              "content": "[removed]",
+              "timestamp": "2026-07-31T23:53:33+00:00",
+              "likes": -19,
+              "dislikes": 0,
+              "parent_comment_id": "p0z0ivk",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p0z9hnq",
+                  "author": "reddit_user_f2138b0f60f1",
+                  "author_karma": 0,
+                  "content": "Are you saying this based on something she said? ",
+                  "timestamp": "2026-08-01T00:08:49+00:00",
+                  "likes": 16,
+                  "dislikes": 0,
+                  "parent_comment_id": "p0z6smy",
+                  "depth": 2,
+                  "replies": []
+                },
+                {
+                  "comment_id": "p0zkham",
+                  "author": "reddit_user_7359ae0c7e6d",
+                  "author_karma": 0,
+                  "content": "Pray tell, how did you become privy to such information? ",
+                  "timestamp": "2026-08-01T01:12:25+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p0z6smy",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p0zn1cp",
+                      "author": "reddit_user_363d6f67d203",
+                      "author_karma": 0,
+                      "content": "What’d they say 👀",
+                      "timestamp": "2026-08-01T01:27:23+00:00",
+                      "likes": 14,
+                      "dislikes": 0,
+                      "parent_comment_id": "p0zkham",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "p0ztot0",
+                          "author": "[deleted]",
+                          "author_karma": 0,
+                          "content": "[removed]",
+                          "timestamp": "2026-08-01T02:07:21+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "p0zn1cp",
+                          "depth": 4,
+                          "replies": []
+                        }
+                      ]
+                    },
+                    {
+                      "comment_id": "p0zt7nu",
+                      "author": "reddit_user_fd0e5e763711",
+                      "author_karma": 0,
+                      "content": "Share with the class 👀",
+                      "timestamp": "2026-08-01T02:04:27+00:00",
+                      "likes": 5,
+                      "dislikes": 0,
+                      "parent_comment_id": "p0zkham",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "comment_id": "p11uce4",
+              "author": "reddit_user_b894d4ef8f76",
+              "author_karma": 0,
+              "content": "The movie ended on such a good place. It does not need one.",
+              "timestamp": "2026-08-01T11:19:04+00:00",
+              "likes": 27,
+              "dislikes": 0,
+              "parent_comment_id": "p0z0ivk",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p12iddh",
+                  "author": "reddit_user_e48f01b4bfda",
+                  "author_karma": 0,
+                  "content": "They could jusy cast a different barbie and ken,  o need for margot or ryan to return",
+                  "timestamp": "2026-08-01T13:46:38+00:00",
+                  "likes": 3,
+                  "dislikes": 0,
+                  "parent_comment_id": "p11uce4",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p13fkfn",
+                      "author": "reddit_user_77803d31575c",
+                      "author_karma": 0,
+                      "content": "Someone doesn’t understand deal-making…",
+                      "timestamp": "2026-08-01T16:30:40+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p12iddh",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p0z0tp1",
+          "author": "reddit_user_97233582cce1",
+          "author_karma": 0,
+          "content": "![gif](giphy|ef0Azu8HC8qtKGMqiJ)  \n\\* old IP into new movies",
+          "timestamp": "2026-07-31T23:20:20+00:00",
+          "likes": 59,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0z12zd",
+          "author": "reddit_user_07b6f9660630",
+          "author_karma": 0,
+          "content": "didn’t Ryan get an offer to do a Ken movie shortly after Barbie came out and he asked for like $50million cause he didn’t want to do it? i wonder if they’re asking for too much on purpose cause they don’t want a sequel. ",
+          "timestamp": "2026-07-31T23:21:45+00:00",
+          "likes": 59,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0z1kc6",
+              "author": "reddit_user_23fe9f4112f8",
+              "author_karma": 0,
+              "content": "He's asking for $20 million, which is his going rate now and probably explains a lot of his recent film choices. ",
+              "timestamp": "2026-07-31T23:24:24+00:00",
+              "likes": 34,
+              "dislikes": 0,
+              "parent_comment_id": "p0z12zd",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p0z591f",
+                  "author": "reddit_user_6ff7e10160b6",
+                  "author_karma": 0,
+                  "content": "![gif](giphy|LXzdnJTNfSvMCd9oFG)",
+                  "timestamp": "2026-07-31T23:44:48+00:00",
+                  "likes": 21,
+                  "dislikes": 0,
+                  "parent_comment_id": "p0z1kc6",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            },
+            {
+              "comment_id": "p0zb2s3",
+              "author": "[deleted]",
+              "author_karma": 0,
+              "content": "[removed]",
+              "timestamp": "2026-08-01T00:17:44+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p0z12zd",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p0zd7qq",
+              "author": "reddit_user_6320dd64b848",
+              "author_karma": 0,
+              "content": "I imagine the physical requirements to play Ken at his age aren’t easy and can feel like objectification. For Margot too. It’s like that Miss Congeniality scene times 100. Just to look like a doll as closely as possible! I’d ask for 50 million too.   \n![gif](giphy|ya5zR5fOLvSxO)",
+              "timestamp": "2026-08-01T00:30:05+00:00",
+              "likes": 21,
+              "dislikes": 0,
+              "parent_comment_id": "p0z12zd",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p0zdq1v",
+                  "author": "reddit_user_07b6f9660630",
+                  "author_karma": 0,
+                  "content": "that’s fair, I remember him making a reference to himself barely eating during the filming of Barbie ",
+                  "timestamp": "2026-08-01T00:33:04+00:00",
+                  "likes": 11,
+                  "dislikes": 0,
+                  "parent_comment_id": "p0zd7qq",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p0z156f",
+          "author": "reddit_user_3023b945eb70",
+          "author_karma": 0,
+          "content": "Please don’t, I’m so so tired of the fucking sequel obsession ",
+          "timestamp": "2026-07-31T23:22:05+00:00",
+          "likes": 139,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0z1cjc",
+          "author": "reddit_user_03f529f01356",
+          "author_karma": 0,
+          "content": "This just tells me how poorly Warner Bros is run.\n\nOne of Marvel's biggest regrets is selling Spiderman to Sony (and X-Men to Fox, but Disney resolved that by buying Fox Entertainment). Marvel would love the rights to revert back to them but Sony is damn diligent about releasing Spiderman movies on a standard schedule.\n\nHell will have fully frozen over for Marvel to ever get the Spiderman film rights back.",
+          "timestamp": "2026-07-31T23:23:13+00:00",
+          "likes": 29,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0z7hey",
+              "author": "reddit_user_f44703508f77",
+              "author_karma": 0,
+              "content": "😭",
+              "timestamp": "2026-07-31T23:57:26+00:00",
+              "likes": 3,
+              "dislikes": 0,
+              "parent_comment_id": "p0z1cjc",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p0zaupf",
+              "author": "reddit_user_08d54574c28f",
+              "author_karma": 0,
+              "content": "This is how we ended up with that Roger Corman Fantastic Four flick back in the early '90s. That movie was never (officially) released, but the studio had to make the film by \"x\" date or the rights would revert, so they threw something together so cheap and bad they wouldn't even put it on VHS.",
+              "timestamp": "2026-08-01T00:16:27+00:00",
+              "likes": 5,
+              "dislikes": 0,
+              "parent_comment_id": "p0z1cjc",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p13g8r9",
+              "author": "reddit_user_77803d31575c",
+              "author_karma": 0,
+              "content": "EXACTLY.",
+              "timestamp": "2026-08-01T16:33:58+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p0z1cjc",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p0z1wrv",
+          "author": "reddit_user_2956889d3247",
+          "author_karma": 0,
+          "content": "i loved the original but even watching it now, it's already aging kinda poorly so maybe we just don't",
+          "timestamp": "2026-07-31T23:26:16+00:00",
+          "likes": 3,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0z22eb",
+          "author": "reddit_user_6d8f4c591edc",
+          "author_karma": 0,
+          "content": "I don’t really understand what story would be left to tell for Margot/Ryan’s characters. Their character arcs came to a good end in the film and anything else would take away from that character development.",
+          "timestamp": "2026-07-31T23:27:07+00:00",
+          "likes": 117,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0zwqfn",
+              "author": "reddit_user_c2a257429088",
+              "author_karma": 0,
+              "content": "It's just a movie about Alan.",
+              "timestamp": "2026-08-01T02:26:05+00:00",
+              "likes": 41,
+              "dislikes": 0,
+              "parent_comment_id": "p0z22eb",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p0zwrfv",
+              "author": "reddit_user_c2a257429088",
+              "author_karma": 0,
+              "content": "It's just a movie about Alan.",
+              "timestamp": "2026-08-01T02:26:16+00:00",
+              "likes": 2,
+              "dislikes": 0,
+              "parent_comment_id": "p0z22eb",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p10u1ft",
+              "author": "reddit_user_572c81d90d95",
+              "author_karma": 0,
+              "content": "I dunno if any sequel is necessarily there, but as a thought exercise...\n\niirc didn't Barbie essentially become real in the end? Wonder if there could be a continuation that brings it full circle involving the next generation. Barbie's story being about leaving that world, but perhaps a young girl she knows, has that opposite experience in a moderated way through playing with toys. This kinda thing might feel too similar to how the Lego Movies handled it though.\n\nMy thinking being, if the young character is say, a friend's daughter, it'd avoid needing to railroad Barbie into having to be a mother in order for a kid to be around to tell that story. I'd imagine a lot of people would dislike that. And if Barbie is a close friend of the mother, it could serve as an allegory for kids that play with Barbies, that she's in her life and is the conduit to that kid exploring her imagination.",
+              "timestamp": "2026-08-01T06:17:34+00:00",
+              "likes": 3,
+              "dislikes": 0,
+              "parent_comment_id": "p0z22eb",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p0z30lm",
+          "author": "reddit_user_485319d6c554",
+          "author_karma": 0,
+          "content": "I've heard Gerwig was, and might be, bursting at the seams with ideas for a sequel, but I'm stumped as to how many avenues they can explore.\n\nMaybe more radical feminism instead of white/corporate feminism? Maybe focus on the intersections with class and race? Oh I don't know...",
+          "timestamp": "2026-07-31T23:32:21+00:00",
+          "likes": 33,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0z9if3",
+              "author": "[deleted]",
+              "author_karma": 0,
+              "content": "[removed]",
+              "timestamp": "2026-08-01T00:08:56+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p0z30lm",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p0z337h",
+          "author": "reddit_user_053363e88140",
+          "author_karma": 0,
+          "content": "Only if Oppenheimer sequels simultaneously ",
+          "timestamp": "2026-07-31T23:32:44+00:00",
+          "likes": 76,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0z6q45",
+              "author": "reddit_user_572c81d90d95",
+              "author_karma": 0,
+              "content": "What if it releases at the same time as the next James Bond, which prominently features Q?\n\nBarbieQ, 2029",
+              "timestamp": "2026-07-31T23:53:10+00:00",
+              "likes": 39,
+              "dislikes": 0,
+              "parent_comment_id": "p0z337h",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p0zd1rz",
+                  "author": "reddit_user_32a9962cc907",
+                  "author_karma": 0,
+                  "content": "This took me too long to get, I hate to admit, but you cooked with this comment. ",
+                  "timestamp": "2026-08-01T00:29:08+00:00",
+                  "likes": 4,
+                  "dislikes": 0,
+                  "parent_comment_id": "p0z6q45",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p10gepg",
+                      "author": "reddit_user_572c81d90d95",
+                      "author_karma": 0,
+                      "content": "Haha thanks.",
+                      "timestamp": "2026-08-01T04:34:47+00:00",
+                      "likes": 2,
+                      "dislikes": 0,
+                      "parent_comment_id": "p0zd1rz",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "comment_id": "p0z7vde",
+              "author": "reddit_user_207e6a53bb12",
+              "author_karma": 0,
+              "content": "Honestly- if that were to happen, I'm in. It might just be crazy enough to work. 🤣",
+              "timestamp": "2026-07-31T23:59:38+00:00",
+              "likes": 13,
+              "dislikes": 0,
+              "parent_comment_id": "p0z337h",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p0z34gv",
+          "author": "reddit_user_83f49498f64b",
+          "author_karma": 0,
+          "content": "![gif](giphy|fXnRObM8Q0RkOmR5nf)",
+          "timestamp": "2026-07-31T23:32:56+00:00",
+          "likes": 11,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0z3mtj",
+          "author": "reddit_user_392198ccf555",
+          "author_karma": 0,
+          "content": "Do a Sindy movie, cowards",
+          "timestamp": "2026-07-31T23:35:44+00:00",
+          "likes": 3,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0z4j7m",
+          "author": "reddit_user_477787738d1d",
+          "author_karma": 0,
+          "content": "I watched the movie well after the hype died down, and while it was entertaining, it wasnt nearly as good as I expected based on the response to it. Its not nearly as memorable as a movie needs to be to have staying power. Most of the characters are very one dimensional and forgettable as is most of the dialogue. Its a fun to look at movie for sure, though",
+          "timestamp": "2026-07-31T23:40:46+00:00",
+          "likes": 40,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0z88ct",
+              "author": "reddit_user_2bd08710e4c5",
+              "author_karma": 0,
+              "content": "I also expected something else, but I really liked that it was easily understandable for broader audience of different ages/interests/education etc.",
+              "timestamp": "2026-08-01T00:01:38+00:00",
+              "likes": 9,
+              "dislikes": 0,
+              "parent_comment_id": "p0z4j7m",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p0z9sa2",
+                  "author": "reddit_user_477787738d1d",
+                  "author_karma": 0,
+                  "content": "It was so hyped as a feminist masterpiece but its just...not? Its a cute movie, I dont think its bad by any means, but its not as advertised and its not particularly quotable or anything like that",
+                  "timestamp": "2026-08-01T00:10:28+00:00",
+                  "likes": 19,
+                  "dislikes": 0,
+                  "parent_comment_id": "p0z88ct",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p11xl9l",
+                      "author": "reddit_user_4d9937d39bb9",
+                      "author_karma": 0,
+                      "content": "It’s an extended commercial for a massive corporation. \n\nBlows my mind that people think there’s one single solitary feminist thing about that. ",
+                      "timestamp": "2026-08-01T11:42:11+00:00",
+                      "likes": 2,
+                      "dislikes": 0,
+                      "parent_comment_id": "p0z9sa2",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "comment_id": "p0zwml9",
+              "author": "reddit_user_c2a257429088",
+              "author_karma": 0,
+              "content": "I think there are some deep flaws to the movie that the hype overshadowed. It was fun and fine, but what sort of bothered me in the packed theater **really** bothered me when watching at home...",
+              "timestamp": "2026-08-01T02:25:25+00:00",
+              "likes": 2,
+              "dislikes": 0,
+              "parent_comment_id": "p0z4j7m",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p0z4jx7",
+          "author": "reddit_user_40d9fc342596",
+          "author_karma": 0,
+          "content": "God I hope not. I'm tired of sequels. Plus, I know this is an unpopular opinion around here, I didn't like the \"first\" one. ",
+          "timestamp": "2026-07-31T23:40:53+00:00",
+          "likes": 15,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0z72o2",
+              "author": "reddit_user_af7815a8c19d",
+              "author_karma": 0,
+              "content": "I liked the first twenty minutes :) ",
+              "timestamp": "2026-07-31T23:55:07+00:00",
+              "likes": 6,
+              "dislikes": 0,
+              "parent_comment_id": "p0z4jx7",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p0z50nd",
+          "author": "reddit_user_a3354a2fdeb8",
+          "author_karma": 0,
+          "content": "I don’t know.  I think this is a stand-alone.  Maybe if they focus on another Barbie?  Weird Barbie, for example.  Even then, I’m not sure.  ",
+          "timestamp": "2026-07-31T23:43:30+00:00",
+          "likes": 8,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0z72v7",
+          "author": "reddit_user_15e614755b4e",
+          "author_karma": 0,
+          "content": "the genius move would be a shot for shot live action remake of a barbie fairy movie",
+          "timestamp": "2026-07-31T23:55:09+00:00",
+          "likes": 8,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0zb1yb",
+              "author": "reddit_user_08d54574c28f",
+              "author_karma": 0,
+              "content": "Yeah, because that worked out so well for Moana",
+              "timestamp": "2026-08-01T00:17:36+00:00",
+              "likes": 2,
+              "dislikes": 0,
+              "parent_comment_id": "p0z72v7",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p0z79pd",
+          "author": "reddit_user_644578b9030b",
+          "author_karma": 0,
+          "content": "They were always going to do a sequel - the whole point of the original was to cash in on a known brand that can also sell more toys. They were taking cues from the MCU, and Greta Gerwig - beloved as she is - kinda sold out by lending her credibility and a false pretense of heavy handed “irony” to the movie. The marketing campaign cost more than the actual movie",
+          "timestamp": "2026-07-31T23:56:14+00:00",
+          "likes": 3,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0zbp41",
+              "author": "reddit_user_08d54574c28f",
+              "author_karma": 0,
+              "content": "I just read a book on the MCU from the '90s through 2024, and its early days were basically the marketing arm of Toy Biz, which made the action figures. (Which is why there were no black- or female-led MCU movies until Marvel was sold to Disney; according to Marvel's president, those types of toys \"don't sell\".)",
+              "timestamp": "2026-08-01T00:21:17+00:00",
+              "likes": 4,
+              "dislikes": 0,
+              "parent_comment_id": "p0z79pd",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p0z7mwg",
+          "author": "reddit_user_1687e41ed341",
+          "author_karma": 0,
+          "content": "I'm not sure if I'm being overly optimistic because I love Greta Gerwig, but this is a rare case in which I'd be okay with a sequel. Candidly, I didn't like the first film from a story perspective. It felt flat in that regard, but everything else was amazing. Set design, costume, casting, cinematography, the music, the iconic dance scene. The only real thing holding the film back was the story - it was too simplistic, buzzfeedy dialogue and Gosling's Ken got all the juice.   \n  \nI get the point was to have 'babys first feminist experience' typa shtick, but girl we saw Little Women and Lady Bird. We know you can do better than that and you should too. Sharpen that pencil and perspective and try again.\n\nI sincerely think there's more to say and the story could be improved on. Take what worked last time + take the criticism + get the band back together and make something special. ",
+          "timestamp": "2026-07-31T23:58:18+00:00",
+          "likes": 6,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0z7off",
+          "author": "reddit_user_207e6a53bb12",
+          "author_karma": 0,
+          "content": "I LOVED Barbie. Please don't cheapen it with a sequel. I hate the sequel obsession. Come up with something new!!!!!",
+          "timestamp": "2026-07-31T23:58:32+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0z93u6",
+          "author": "reddit_user_0a98b143bfe6",
+          "author_karma": 0,
+          "content": "No, thank you. ♥️",
+          "timestamp": "2026-08-01T00:06:37+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0z9owl",
+          "author": "reddit_user_cfcbeef3c4cd",
+          "author_karma": 0,
+          "content": "Please don't and I'm saying this as someone who cried at the first one ",
+          "timestamp": "2026-08-01T00:09:57+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0z9vrg",
+          "author": "reddit_user_3796a6c4492f",
+          "author_karma": 0,
+          "content": "That’s a hilariously meta story lol.\n\nGET BACK IN THE BOX",
+          "timestamp": "2026-08-01T00:11:01+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0zbu36",
+          "author": "reddit_user_b577a04a2c21",
+          "author_karma": 0,
+          "content": "We don't need this. A movie like this loses its value when you tack on sequels. Let the story be and don't ruin it with hastily written cheap scripts ",
+          "timestamp": "2026-08-01T00:22:05+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0zeozt",
+          "author": "reddit_user_56397bdcb8a4",
+          "author_karma": 0,
+          "content": "If there's a sequel, wait until Margot Robbie in her 50-60s, and it's about how Barbie requestioned her decision of becoming human cause now she's old meanwhile the other Barbies and Ken still young. Recast all Barbies and Kens with the exception of Margot Robbie ",
+          "timestamp": "2026-08-01T00:38:44+00:00",
+          "likes": 3,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0zjutk",
+          "author": "reddit_user_6469a5681dc8",
+          "author_karma": 0,
+          "content": "Do a Midge movie 🤰🏼",
+          "timestamp": "2026-08-01T01:08:45+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0zkfce",
+          "author": "reddit_user_05b7422d65ad",
+          "author_karma": 0,
+          "content": "Somehow I have a feeling if this wasn’t a woman driven film zaslav wouldn’t be calling their budget demands “too generous.”",
+          "timestamp": "2026-08-01T01:12:05+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0zsz1j",
+          "author": "reddit_user_81e1915e375c",
+          "author_karma": 0,
+          "content": "This movie was great but we do not need a full on sequel. A short? Maybe, that would be cute, but not a full length movie.",
+          "timestamp": "2026-08-01T02:02:59+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0zuahv",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-01T02:11:04+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p109wi7",
+          "author": "reddit_user_580f9c458d63",
+          "author_karma": 0,
+          "content": "This doesn't need a sequel, that being said if Margot Robbie and Ryan Gosling come back, I'll definitely go watch it",
+          "timestamp": "2026-08-01T03:50:18+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p10hgpm",
+          "author": "reddit_user_e43956abe480",
+          "author_karma": 0,
+          "content": "I get why they would want to make a sequel. Quick cash grab. But I don’t have high hopes for it. I think the first was done right and should be left as is. ",
+          "timestamp": "2026-08-01T04:42:19+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p10j0kc",
+          "author": "reddit_user_75a4e63d1285",
+          "author_karma": 0,
+          "content": "Why? The first movie isn't a movie that warrants or deserves a sequel. It wasn't that rebolutionary to begin with, other than Robbie being super pretty and getting \"What Was I Made For\" to cry to.",
+          "timestamp": "2026-08-01T04:53:27+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p11cyv5",
+          "author": "reddit_user_21313ad52a23",
+          "author_karma": 0,
+          "content": "Ah yes, a scramble to make an unnecessary thing always produces great work",
+          "timestamp": "2026-08-01T08:55:52+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p11smc2",
+          "author": "reddit_user_cb315ad09715",
+          "author_karma": 0,
+          "content": "These greedy people don’t even care about what Barbie and her flats wanted!",
+          "timestamp": "2026-08-01T11:06:26+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p13eue8",
+          "author": "reddit_user_77803d31575c",
+          "author_karma": 0,
+          "content": "WBD and David Zaslav are extremely bigoted behind the scenes. It does not surprise me that they want to (a) shaft the license holders (Mattel), (b) shaft the talent acting, directing, writing, and making the movie, and (c) think that giving millions to the people making them billions is “too generous”.",
+          "timestamp": "2026-08-01T16:27:13+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p144xiv",
+          "author": "reddit_user_4a8720a1134d",
+          "author_karma": 0,
+          "content": "I've always thought the box office numbers for Barbie were inflated. It was an ok movie and a lot of screenings were half empty. WB not ponying up for the sequel tracks w that. ",
+          "timestamp": "2026-08-01T18:31:55+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1byugf",
+          "author": "reddit_user_462184e3bb91",
+          "author_karma": 0,
+          "content": "NO!!!!!!!!!!! pls leave it",
+          "timestamp": "2026-08-02T21:41:20+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run007_post02_seed037",
+      "post_slot": 2,
+      "seed_index": 37,
+      "source_raw_post_id": "1vc6tv8",
+      "source_product_dir": "Fauxmoi",
+      "source_file": "https://www.reddit.com/r/Fauxmoi/comments/1vc6tv8/gianni_infantino_has_scrapped_plans_to_sell_off_a/",
+      "post_type": "SPORTS SECTION",
+      "title": "Gianni Infantino has scrapped plans to sell off a stake in the World Cup",
+      "author": "reddit_user_33799307055d",
+      "author_karma": 0,
+      "content": "Gianni Infantino has scrapped plans to sell off a stake in the World Cup",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p0z2kws",
+          "author": "reddit_user_afb91a0528be",
+          "author_karma": 0,
+          "content": "🤣🤣🤣🤣🤣",
+          "timestamp": "2026-07-31T23:29:56+00:00",
+          "likes": 69,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0z2yj7",
+          "author": "reddit_user_57bb9ad4d47e",
+          "author_karma": 0,
+          "content": "https://i.redd.it/vtkwlov9hngh1.gif\n\n",
+          "timestamp": "2026-07-31T23:32:02+00:00",
+          "likes": 65,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0z5if0",
+              "author": "reddit_user_7282ac196e9e",
+              "author_karma": 0,
+              "content": "Indubitably ",
+              "timestamp": "2026-07-31T23:46:16+00:00",
+              "likes": 14,
+              "dislikes": 0,
+              "parent_comment_id": "p0z2yj7",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p0z38ks",
+          "author": "reddit_user_1ce5f84f42db",
+          "author_karma": 0,
+          "content": "Wish this bozo would resign. Disgustingly corrupt bastard and doesn't even try to hide it anymore",
+          "timestamp": "2026-07-31T23:33:34+00:00",
+          "likes": 606,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0z6cqp",
+              "author": "reddit_user_b2a5c7b9cfd6",
+              "author_karma": 0,
+              "content": "Did he ever try and hide it?",
+              "timestamp": "2026-07-31T23:51:05+00:00",
+              "likes": 87,
+              "dislikes": 0,
+              "parent_comment_id": "p0z38ks",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p0z6tb1",
+                  "author": "reddit_user_1ce5f84f42db",
+                  "author_karma": 0,
+                  "content": "I mean not really but all the bullshit with sucking up to Trump, the high ticket prices, the ad breaks disguised as hydration breaks, and now trying to sell-out to private equity investors is next level. Fuck this guy ",
+                  "timestamp": "2026-07-31T23:53:39+00:00",
+                  "likes": 114,
+                  "dislikes": 0,
+                  "parent_comment_id": "p0z6cqp",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p0zbm6q",
+                      "author": "reddit_user_8e9b0504b758",
+                      "author_karma": 0,
+                      "content": "I men, there’s a reason why “as incorruptible as the head of a sports governing body” isn’t a household phrase but Infantino is either particularly shameless or particularly stupid (possibly both tbf)",
+                      "timestamp": "2026-08-01T00:20:49+00:00",
+                      "likes": 25,
+                      "dislikes": 0,
+                      "parent_comment_id": "p0z6tb1",
+                      "depth": 3,
+                      "replies": []
+                    },
+                    {
+                      "comment_id": "p0zzs90",
+                      "author": "reddit_user_a9fb043e9636",
+                      "author_karma": 0,
+                      "content": "Peace prize just for Trump ",
+                      "timestamp": "2026-08-01T02:44:51+00:00",
+                      "likes": 2,
+                      "dislikes": 0,
+                      "parent_comment_id": "p0z6tb1",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "comment_id": "p0zgw37",
+              "author": "reddit_user_c707c3acdc3d",
+              "author_karma": 0,
+              "content": "I get where you're coming from, but FIFA is an incredibly corrupt organisation because it was built that way, it should just be destroyed and replaced. It will always be unfit for purpose. ",
+              "timestamp": "2026-08-01T00:51:27+00:00",
+              "likes": 40,
+              "dislikes": 0,
+              "parent_comment_id": "p0z38ks",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p0zjxp7",
+                  "author": "reddit_user_5f1a5d21425b",
+                  "author_karma": 0,
+                  "content": "There's a [Netflix Docu-Series](https://www.netflix.com/title/80221113) (It was released AHEAD of the 2022 FIFA World Cup) that details the history of Corruption within FIFA!!!",
+                  "timestamp": "2026-08-01T01:09:14+00:00",
+                  "likes": 16,
+                  "dislikes": 0,
+                  "parent_comment_id": "p0zgw37",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            },
+            {
+              "comment_id": "p0zizwt",
+              "author": "reddit_user_fb3df19b5b3f",
+              "author_karma": 0,
+              "content": "FIFA is a massive criminal organization. Some of its leaders are better at the job than others, and can hide those crimes in plain sight. The same is true, unsurprisingly, of the U.S. government.  ",
+              "timestamp": "2026-08-01T01:03:43+00:00",
+              "likes": 17,
+              "dislikes": 0,
+              "parent_comment_id": "p0z38ks",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p1072c7",
+              "author": "reddit_user_3b3ee24413d0",
+              "author_karma": 0,
+              "content": "He didn't try to hide it because he thought everyone was going to jump on board but since he's the only one on the ship, it looks much worse",
+              "timestamp": "2026-08-01T03:31:27+00:00",
+              "likes": 3,
+              "dislikes": 0,
+              "parent_comment_id": "p0z38ks",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p0z4bqy",
+          "author": "reddit_user_485319d6c554",
+          "author_karma": 0,
+          "content": "LOOOOOL GET FUCKED",
+          "timestamp": "2026-07-31T23:39:36+00:00",
+          "likes": 53,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0z4ffm",
+          "author": "reddit_user_410c493ee5d4",
+          "author_karma": 0,
+          "content": "A few people in Europe paid him a visit 🤣🤣🤣🤣",
+          "timestamp": "2026-07-31T23:40:11+00:00",
+          "likes": 8,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0z5uzl",
+          "author": "reddit_user_949a5754a5ac",
+          "author_karma": 0,
+          "content": "https://preview.redd.it/6u92xhp6kngh1.jpeg?width=1320&format=pjpg&auto=webp&s=24e050365ada95519083facdd38782bbc2c31a37",
+          "timestamp": "2026-07-31T23:48:16+00:00",
+          "likes": 166,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0z5vt5",
+          "author": "reddit_user_50c68b04a86e",
+          "author_karma": 0,
+          "content": "Good. Now he should resign ",
+          "timestamp": "2026-07-31T23:48:24+00:00",
+          "likes": 26,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0zqufe",
+              "author": "reddit_user_11f924ce3130",
+              "author_karma": 0,
+              "content": "This rapid backflip is probably aimed at saving his job.",
+              "timestamp": "2026-08-01T01:50:06+00:00",
+              "likes": 6,
+              "dislikes": 0,
+              "parent_comment_id": "p0z5vt5",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p0z5wgx",
+          "author": "reddit_user_e48f01b4bfda",
+          "author_karma": 0,
+          "content": "He will try it again soon",
+          "timestamp": "2026-07-31T23:48:30+00:00",
+          "likes": 27,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0z7dq8",
+              "author": "reddit_user_d2a26188e2fc",
+              "author_karma": 0,
+              "content": "Unless he doesn’t get reelected ",
+              "timestamp": "2026-07-31T23:56:51+00:00",
+              "likes": 2,
+              "dislikes": 0,
+              "parent_comment_id": "p0z5wgx",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p0z6169",
+          "author": "reddit_user_8e9b0504b758",
+          "author_karma": 0,
+          "content": "LOL, proper Scooby Doo villain “and I would have got away with it if it wasn’t for those meddling European national federations” stuff ",
+          "timestamp": "2026-07-31T23:49:14+00:00",
+          "likes": 117,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1141wu",
+              "author": "reddit_user_c377458cb1d9",
+              "author_karma": 0,
+              "content": "The best response 😂 thank you for making my morning better   ❤️ ",
+              "timestamp": "2026-08-01T07:39:34+00:00",
+              "likes": 3,
+              "dislikes": 0,
+              "parent_comment_id": "p0z6169",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p12alyy",
+              "author": "reddit_user_e4281debb700",
+              "author_karma": 0,
+              "content": "Legitimately pissed off almost every region's soccer organization like what a brain dead move",
+              "timestamp": "2026-08-01T13:03:47+00:00",
+              "likes": 6,
+              "dislikes": 0,
+              "parent_comment_id": "p0z6169",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p0z6bkv",
+          "author": "reddit_user_cc63b6086b5f",
+          "author_karma": 0,
+          "content": "![gif](giphy|x0npYExCGOZeo)  \nNow he can resign ✨",
+          "timestamp": "2026-07-31T23:50:53+00:00",
+          "likes": 21,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0z8f62",
+          "author": "reddit_user_d36b22f66c6e",
+          "author_karma": 0,
+          "content": "I really don't think UEFA will leave it at that. That statement was something else. They want him gone. ",
+          "timestamp": "2026-08-01T00:02:43+00:00",
+          "likes": 44,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0z92aj",
+          "author": "reddit_user_f8ba549917ec",
+          "author_karma": 0,
+          "content": "Weird, stop the sale of something that was about to be worthless ",
+          "timestamp": "2026-08-01T00:06:22+00:00",
+          "likes": 3,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0z9hhf",
+          "author": "reddit_user_5ce5b4ba73dc",
+          "author_karma": 0,
+          "content": "Because the world knows Trump's family is involved and he is a shitstain on everything he touches ",
+          "timestamp": "2026-08-01T00:08:47+00:00",
+          "likes": 54,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0zb2qw",
+              "author": "reddit_user_bfdeefd8ebcd",
+              "author_karma": 0,
+              "content": "The Mierdas Touch is undefeated ",
+              "timestamp": "2026-08-01T00:17:44+00:00",
+              "likes": 25,
+              "dislikes": 0,
+              "parent_comment_id": "p0z9hhf",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p0zdd2x",
+                  "author": "reddit_user_5ce5b4ba73dc",
+                  "author_karma": 0,
+                  "content": "![gif](giphy|GpyS1lJXJYupG)",
+                  "timestamp": "2026-08-01T00:30:58+00:00",
+                  "likes": 3,
+                  "dislikes": 0,
+                  "parent_comment_id": "p0zb2qw",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p0zbh8e",
+          "author": "reddit_user_b0dd35d0587d",
+          "author_karma": 0,
+          "content": "Bullying works ",
+          "timestamp": "2026-08-01T00:20:01+00:00",
+          "likes": 3,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0zbu7i",
+          "author": "reddit_user_09b39bd0163c",
+          "author_karma": 0,
+          "content": "Fuck private equity and fuck the Kushners, glad everyone was against this. ",
+          "timestamp": "2026-08-01T00:22:06+00:00",
+          "likes": 75,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0zcbev",
+          "author": "reddit_user_7a7e12a53885",
+          "author_karma": 0,
+          "content": "Another L for midget bald “men”",
+          "timestamp": "2026-08-01T00:24:50+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0zdave",
+          "author": "reddit_user_5caa8a353357",
+          "author_karma": 0,
+          "content": "Well, gee, I wonder why.?",
+          "timestamp": "2026-08-01T00:30:35+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0zdr25",
+          "author": "reddit_user_09abc378e016",
+          "author_karma": 0,
+          "content": "Sack him",
+          "timestamp": "2026-08-01T00:33:14+00:00",
+          "likes": 7,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0zecfu",
+          "author": "reddit_user_05306c600356",
+          "author_karma": 0,
+          "content": "Next is he needs to stand down.",
+          "timestamp": "2026-08-01T00:36:43+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0zf3dv",
+          "author": "reddit_user_8cd675d56a15",
+          "author_karma": 0,
+          "content": "Meh. Completely unsurprised. Once UEFA boycotted, this became untenable. You can't have Europe boycott the next men's World Cup... When the next one is mostly in Spain and Portugal.",
+          "timestamp": "2026-08-01T00:41:03+00:00",
+          "likes": 3,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0zh9tr",
+          "author": "reddit_user_89ceac87fceb",
+          "author_karma": 0,
+          "content": "![gif](giphy|jJGIOTa7KurdxfZW7L)",
+          "timestamp": "2026-08-01T00:53:40+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0zjcuz",
+          "author": "reddit_user_3cb1cb03b019",
+          "author_karma": 0,
+          "content": "All everyone has to do now is hold position until Infantino is forced to resign",
+          "timestamp": "2026-08-01T01:05:49+00:00",
+          "likes": 4,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0zk0nw",
+          "author": "reddit_user_42a8b404d925",
+          "author_karma": 0,
+          "content": "The really disgusting part of all this to me is that while Palestinian athletes were being mass murdered by that blue and white flag entity, not a single one of these nations pressured him the way they did in this regard to ban that entity. For them is above everything else. Regardless of that, this man needs to resign, he is more corrupt than the previous FIFA chief.",
+          "timestamp": "2026-08-01T01:09:43+00:00",
+          "likes": 17,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0zpag3",
+          "author": "reddit_user_81f83e0572b1",
+          "author_karma": 0,
+          "content": "If he resigns I’ll take an interest in soccer and start watching for the first time in my life. Until then, just causally following this train wreck of a sport.",
+          "timestamp": "2026-08-01T01:40:50+00:00",
+          "likes": 0,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0zsd50",
+          "author": "reddit_user_afaad0e4d618",
+          "author_karma": 0,
+          "content": "don’t ever let them tell you that bullying doesn’t work",
+          "timestamp": "2026-08-01T01:59:17+00:00",
+          "likes": 8,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p103jma",
+              "author": "reddit_user_25958b68a098",
+              "author_karma": 0,
+              "content": "sure, but given it works... maybe we should all be asking why it is seemingly applied selectively to protest changes that impact UEFA's bottom line...\n\nUEFA are not good guys here. It's a good outcome sure, but don't for a second believe they did it to stop FIFA 'selling out football'.\n\nUEFA have overseen the mass selloff and privatisation of European football clubs, so anyone falling for this schtick they're pulling to make out they're *for the people* needs to take a moment.\n\nThey have the power to stop anything FIFA does if they want. So judge them by what they've allowed to happen under Infantino. Quatar, huh. Trump weirdness, huh. Banning Europe from bidding for the world cup so the US would get it, huh.\n\nAll that they had the power to stop... they didn't. Those were the things that would have been stopped if they were anything remotely like the good guys.",
+              "timestamp": "2026-08-01T03:08:34+00:00",
+              "likes": -2,
+              "dislikes": 0,
+              "parent_comment_id": "p0zsd50",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1282je",
+                  "author": "reddit_user_fb1c21863cc6",
+                  "author_karma": 0,
+                  "content": "UEFA are certainly not the good guys. They’ve threatened the Football Association of Ireland (FAI). If Ireland dies not against Isr\\*\\*l, then Ireland will face with forfeiture, ranking relegation and potentially, disqualification from the Euros. The FAI petitioned UEFA to suspend the aforementioned other nation, like Russia has been suspended, but no. At best, they have “allowed” Ireland’s home games against *them* to be played in Hungary “as a neutral venue”. \n\nThere’s still debate in Ireland as to whether we should play or not with the majority siding with “don’t play”. Sanction Ireland then. Relegate us. Suspend us. Fcuk UEFA. \n\nUEFA and FIFA have always been up to shady shit, and that’s putting it mildly. UEFA tried that super league bullshit and almost split the entire organisation. Sepp Blatter (previous FIFA president) was banned for corruption. Hosting the World Cup in Qatar was another example. They eventually, with reluctance, agreed to hold it in December because it would kill players and fans to have games in the middle of the desert in June. The list goes on and on. \n\nAnd now, the Kushners and Trump’s greasy little fingers are all over the World Cup. Vomitous behaviour from them all. The utter GALL of Infantino to sell what isn’t his to sell.\n\nTypical of people who know the price of everything but the value of nothing. ",
+                  "timestamp": "2026-08-01T12:48:51+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p103jma",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p0zvqky",
+          "author": "reddit_user_6f5abbef3f18",
+          "author_karma": 0,
+          "content": "He has flown too close to the sun. The Saudi World Cup was outrageous. He was really pushing it with his World Cup behavior, pandering to Trump. But this is just so blatant ",
+          "timestamp": "2026-08-01T02:19:57+00:00",
+          "likes": 8,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1013ko",
+              "author": "reddit_user_25958b68a098",
+              "author_karma": 0,
+              "content": "What's disappointing is UEFA not choosing to threaten to boycott or object to either of these quite blatantly corrupt appointments of the world cup tbh.\n\n5 or 6 years ago FIFA we're doing a PR push to have the world cup every 2 years instead of four... and it was UEFA that had the power to stop that from happening. Very quickly they just put paid to it and all talk immediately stopped.\n\nSo UEFA know they are the only federation that has the ability to influence FIFA - to the point it is very clear they very much hold the reins. We know that from 6 years ago when they shut down the 2 year world cup proposal.\n\nSo we know this. We know they know this. And yet since then, they only step in when the corruption threatens to impact their bottom line?!\n\nSo for me, seeing UEFA being lauded for taking bold action to 'protect the spirit of football as belonging to all the people across the world equally' or whatever just makes me want to spew.\n\nThey are no more the good guys than FIFA. Don't believe the spin. Understand this just shows us that they can stop FIFA anytime they want. And ask why they aren't stopping them more often perhaps.",
+              "timestamp": "2026-08-01T02:53:02+00:00",
+              "likes": 4,
+              "dislikes": 0,
+              "parent_comment_id": "p0zvqky",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p0zx3sq",
+          "author": "reddit_user_5e7383668a07",
+          "author_karma": 0,
+          "content": "Don't worry, something else will come up.",
+          "timestamp": "2026-08-01T02:28:21+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p10b3sq",
+          "author": "reddit_user_0d0cc37d007d",
+          "author_karma": 0,
+          "content": "For now ",
+          "timestamp": "2026-08-01T03:58:18+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p10l7ti",
+          "author": "reddit_user_46ad0ea5a750",
+          "author_karma": 0,
+          "content": "Let us not forget the other Kushner boy's involvement with this nonsense. ",
+          "timestamp": "2026-08-01T05:09:29+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p10rsa8",
+          "author": "reddit_user_944e5fb3b2cd",
+          "author_karma": 0,
+          "content": "His days at the top of FIFA are numbered after this debacle. His antics in the World Cup offended most football fans and he was on thin ice after that, this was just the final straw. ",
+          "timestamp": "2026-08-01T05:59:47+00:00",
+          "likes": 4,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p10unea",
+          "author": "reddit_user_921bcb7de041",
+          "author_karma": 0,
+          "content": "Would be fun if UEFA just found a way to host their own World Cup, forcing FIFA out of existence. But then again, UEFA is also quite corrupt.",
+          "timestamp": "2026-08-01T06:22:25+00:00",
+          "likes": 3,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p10xwcc",
+          "author": "reddit_user_2fa96d3d549c",
+          "author_karma": 0,
+          "content": "And we thank the journalist (Martyn Zeiglee) who broke the story about this whole initiative in the first place. It didn't allow Infantino to make a spin on it. \n\nMind you, Financial Times released this story about 2 or 3 days after Gianni Infantino went on a rant about his haters.",
+          "timestamp": "2026-08-01T06:48:37+00:00",
+          "likes": 13,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p11188n",
+          "author": "reddit_user_6ece054587ab",
+          "author_karma": 0,
+          "content": "And the resignation when? ",
+          "timestamp": "2026-08-01T07:15:47+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p11aosj",
+          "author": "reddit_user_ce3806c5ec2e",
+          "author_karma": 0,
+          "content": "now scrap infantino\n\n![gif](giphy|iDJuQR0UmiqOI)",
+          "timestamp": "2026-08-01T08:36:13+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p11uihw",
+          "author": "reddit_user_dc8994641e26",
+          "author_karma": 0,
+          "content": "UEFA wants guarantees this wont happen again. They still hungry and I can't wait to see if they are able somehow to get him to resign.",
+          "timestamp": "2026-08-01T11:20:19+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1842mw",
+          "author": "reddit_user_f604278bd3cf",
+          "author_karma": 0,
+          "content": "Direction action (or threats thereof) always gets the goods",
+          "timestamp": "2026-08-02T09:28:50+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run007_post03_seed038",
+      "post_slot": 3,
+      "seed_index": 38,
+      "source_raw_post_id": "1vc9zpq",
+      "source_product_dir": "entertainment",
+      "source_file": "https://www.reddit.com/r/entertainment/comments/1vc9zpq/trump_doj_moves_to_drop_olympian_david_hearns/",
+      "post_type": "Removed: off-topic",
+      "title": "Trump DOJ Moves to Drop Olympian David Hearn’s Vandalism Charges, Admits Reflecting Pool Damage Was from ‘Flawed’ Renovation",
+      "author": "reddit_user_33799307055d",
+      "author_karma": 0,
+      "content": "Trump DOJ Moves to Drop Olympian David Hearn’s Vandalism Charges, Admits Reflecting Pool Damage Was from ‘Flawed’ Renovation",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p0zqy92",
+          "author": "reddit_user_9bcb2a0bd230",
+          "author_karma": 0,
+          "content": "Department of Jackasses",
+          "timestamp": "2026-08-01T01:50:45+00:00",
+          "likes": 18,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0zwzfg",
+          "author": "reddit_user_edeb899a4ad0",
+          "author_karma": 0,
+          "content": "I am Jack’s complete lack of surprise\n",
+          "timestamp": "2026-08-01T02:27:36+00:00",
+          "likes": 0,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0zx72q",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-01T02:28:55+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p102ejy",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-01T03:01:15+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p104y1y",
+          "author": "reddit_user_82ab3e3074de",
+          "author_karma": 0,
+          "content": "Wait… David Hearn didn’t cut a football field’s length gash in…what did DONALD TRUMP HIMSELF SAY? Oh, right, this:\n\n“This will last for at least 50 years,” Trump said in May. “You’ll never have a leak. It’s very strong. You couldn’t, if you had a knife — I don’t want to give anybody ideas — if you had a knife, you can’t even cut it. It’s so strong, so powerful. It’s like powerful rubber.”",
+          "timestamp": "2026-08-01T03:17:35+00:00",
+          "likes": 50,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p107y22",
+              "author": "reddit_user_f800ca4b926b",
+              "author_karma": 0,
+              "content": "Watching this dude funnel our tax dollars into his croneys pockets makes me irrationally French. ",
+              "timestamp": "2026-08-01T03:37:18+00:00",
+              "likes": 39,
+              "dislikes": 0,
+              "parent_comment_id": "p104y1y",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p10d6k5",
+                  "author": "reddit_user_f0a8c58ba928",
+                  "author_karma": 0,
+                  "content": "Its not irrational at all.",
+                  "timestamp": "2026-08-01T04:12:22+00:00",
+                  "likes": 9,
+                  "dislikes": 0,
+                  "parent_comment_id": "p107y22",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p10z8g5",
+                      "author": "reddit_user_6011199ce5ff",
+                      "author_karma": 0,
+                      "content": "Is there such a thing as rationally French?",
+                      "timestamp": "2026-08-01T06:59:30+00:00",
+                      "likes": 3,
+                      "dislikes": 0,
+                      "parent_comment_id": "p10d6k5",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "p11b5pu",
+                          "author": "reddit_user_d098e1872c1e",
+                          "author_karma": 0,
+                          "content": "A early 2000s Renault 5?",
+                          "timestamp": "2026-08-01T08:40:18+00:00",
+                          "likes": 4,
+                          "dislikes": 0,
+                          "parent_comment_id": "p10z8g5",
+                          "depth": 4,
+                          "replies": [
+                            {
+                              "comment_id": "p11m8zo",
+                              "author": "[deleted]",
+                              "author_karma": 0,
+                              "content": "[removed]",
+                              "timestamp": "2026-08-01T10:15:50+00:00",
+                              "likes": 1,
+                              "dislikes": 0,
+                              "parent_comment_id": "p11b5pu",
+                              "depth": 5,
+                              "replies": []
+                            }
+                          ]
+                        },
+                        {
+                          "comment_id": "p11m8ap",
+                          "author": "[deleted]",
+                          "author_karma": 0,
+                          "content": "[removed]",
+                          "timestamp": "2026-08-01T10:15:41+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "p10z8g5",
+                          "depth": 4,
+                          "replies": []
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "comment_id": "p11wn4g",
+                  "author": "reddit_user_25410af088f5",
+                  "author_karma": 0,
+                  "content": "Ah! ça ira, ça ira, ça ira…",
+                  "timestamp": "2026-08-01T11:35:36+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p107y22",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            },
+            {
+              "comment_id": "p10gwgg",
+              "author": "reddit_user_745c508ddc4d",
+              "author_karma": 0,
+              "content": "another Deep State coverup.  gotta protect that proprietary Antifa brand technology in the knife.",
+              "timestamp": "2026-08-01T04:38:17+00:00",
+              "likes": 2,
+              "dislikes": 0,
+              "parent_comment_id": "p104y1y",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p10jfw5",
+              "author": "reddit_user_d241eeb92d06",
+              "author_karma": 0,
+              "content": "This is the minor part about the story.  The administration was fully willing to take this case to trial.  This course of action stopped abruptly when the defense asked the judge for the transcript from the grand jury hearing, or at minimum for the judge to be able to read the transcript without counsel present in order to determine if any improper instructions were provided to the grand jury.  As we know that the case was complete bs and there was never any evidence of David damaging anything, let alone enough to warrant a felony charge, it is interesting to know what exactly the DoJ told or presented to the grand jury that resulted in a majority of them determining that there was sufficient evidence of the crime occurring.  \n\nObviously not wanting that to happen, the charges were dropped.  Had the charges not been dropped, I would have to assume that there would be legitimate charges for the prosecution and several attorneys reported to the DC, Virginia, Maryland and NY bar.",
+              "timestamp": "2026-08-01T04:56:30+00:00",
+              "likes": 9,
+              "dislikes": 0,
+              "parent_comment_id": "p104y1y",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p11oxhd",
+              "author": "reddit_user_540f91e1507a",
+              "author_karma": 0,
+              "content": "Trump lies every time he opens his mouth!",
+              "timestamp": "2026-08-01T10:38:00+00:00",
+              "likes": 4,
+              "dislikes": 0,
+              "parent_comment_id": "p104y1y",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p121chf",
+              "author": "reddit_user_2306f5948842",
+              "author_karma": 0,
+              "content": "It will never cease to amaze me how he can sound like such a goddamn fucking idiot *while at the same time* commanding the rapt attention of 70,000,000 people in ",
+              "timestamp": "2026-08-01T12:07:10+00:00",
+              "likes": 2,
+              "dislikes": 0,
+              "parent_comment_id": "p104y1y",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p109kok",
+          "author": "reddit_user_631629b333ee",
+          "author_karma": 0,
+          "content": "David Hearn needs to sue the fuck out of them. ",
+          "timestamp": "2026-08-01T03:48:08+00:00",
+          "likes": 41,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p115gyi",
+              "author": "reddit_user_2065a3b141e5",
+              "author_karma": 0,
+              "content": "Sure does ",
+              "timestamp": "2026-08-01T07:51:34+00:00",
+              "likes": 3,
+              "dislikes": 0,
+              "parent_comment_id": "p109kok",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p11obu2",
+              "author": "reddit_user_0131893f21d0",
+              "author_karma": 0,
+              "content": "Did the court order the prosecution to pay court costs and Hearn’s legal costs?",
+              "timestamp": "2026-08-01T10:33:08+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p109kok",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p109re2",
+          "author": "reddit_user_49d3760e2a05",
+          "author_karma": 0,
+          "content": "Imagine if we were being lead by an absolute abhorrent, lying and narcissistic twatwaffle? \n\nEighty six forty seven. ",
+          "timestamp": "2026-08-01T03:49:22+00:00",
+          "likes": 11,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p10b1sr",
+          "author": "reddit_user_c98670c15e1e",
+          "author_karma": 0,
+          "content": "So, wait.  He lied about something?",
+          "timestamp": "2026-08-01T03:57:56+00:00",
+          "likes": 3,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p10bgdw",
+          "author": "reddit_user_a5c57a195a41",
+          "author_karma": 0,
+          "content": "So is it legal now to charge innocent people with crimes to cover your own crimes and mistakes? ",
+          "timestamp": "2026-08-01T04:00:39+00:00",
+          "likes": 16,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p11q850",
+              "author": "[deleted]",
+              "author_karma": 0,
+              "content": "[removed]",
+              "timestamp": "2026-08-01T10:48:16+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p10bgdw",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p10bpob",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-01T04:02:24+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p10ect4",
+          "author": "reddit_user_5c8062f3a411",
+          "author_karma": 0,
+          "content": "After becoming Indian",
+          "timestamp": "2026-08-01T04:20:22+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p10ew03",
+          "author": "reddit_user_dfa6fa62f7b7",
+          "author_karma": 0,
+          "content": "Defamation case against Trump?",
+          "timestamp": "2026-08-01T04:24:06+00:00",
+          "likes": 6,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p10n7bc",
+              "author": "[deleted]",
+              "author_karma": 0,
+              "content": "[removed]",
+              "timestamp": "2026-08-01T05:24:29+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p10ew03",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p10ixkv",
+          "author": "reddit_user_07f6005fbff4",
+          "author_karma": 0,
+          "content": "Green Water Solutions (company who worked on the project) really did live up their name minus the solutions ",
+          "timestamp": "2026-08-01T04:52:52+00:00",
+          "likes": 4,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p10l2dr",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-01T05:08:21+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p10lqms",
+          "author": "reddit_user_fb27e0cfeb43",
+          "author_karma": 0,
+          "content": "How much money is spent on pointless lawsuits, and how many lives are scarred or shattered? Make America Great Again.",
+          "timestamp": "2026-08-01T05:13:23+00:00",
+          "likes": 3,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p10nm5x",
+          "author": "reddit_user_83d3072c71f4",
+          "author_karma": 0,
+          "content": "I wonder if we will ever recover from this insane administration.  I thought the 2020 Covid year was the twilight zone, but that almost seems like the good old days.",
+          "timestamp": "2026-08-01T05:27:35+00:00",
+          "likes": 7,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p10xb96",
+              "author": "[deleted]",
+              "author_karma": 0,
+              "content": "[removed]",
+              "timestamp": "2026-08-01T06:43:51+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p10nm5x",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p10nosc",
+          "author": "reddit_user_8577d0fb0ff1",
+          "author_karma": 0,
+          "content": "All this just to mentally torture anyone that came along. All of it just to play out in Trump's fantasy.",
+          "timestamp": "2026-08-01T05:28:08+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p10ppnq",
+          "author": "reddit_user_b4a9fdc299e6",
+          "author_karma": 0,
+          "content": "What? It's not TACO Tuesday yet. ",
+          "timestamp": "2026-08-01T05:43:35+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p10sihb",
+          "author": "reddit_user_1ed65261aece",
+          "author_karma": 0,
+          "content": "Trump is a mental case surround by clown cars and he can’t hide it.",
+          "timestamp": "2026-08-01T06:05:32+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p10y1bz",
+          "author": "reddit_user_3494d5929b28",
+          "author_karma": 0,
+          "content": "I'm curious. Does anyone know if Hitler had a problem like this? They lied about a lot of things to the German people. Did anything come back like this or is this a good sign?",
+          "timestamp": "2026-08-01T06:49:45+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p10yd8o",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-01T06:52:24+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p115dwl",
+          "author": "reddit_user_2065a3b141e5",
+          "author_karma": 0,
+          "content": "I hope he sues the gov for false arrest ",
+          "timestamp": "2026-08-01T07:50:51+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p11erpm",
+          "author": "reddit_user_c5109fa702b8",
+          "author_karma": 0,
+          "content": "Another trump fiasco. If he would LEAVE THINGS ALONE, so much money would be saved. ",
+          "timestamp": "2026-08-01T09:11:31+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p11kkd7",
+          "author": "reddit_user_20cf7bb8d349",
+          "author_karma": 0,
+          "content": "Can he sue them for this ?",
+          "timestamp": "2026-08-01T10:01:51+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p11lnc5",
+          "author": "reddit_user_29d9ad312672",
+          "author_karma": 0,
+          "content": "Flawed administration is the issue",
+          "timestamp": "2026-08-01T10:10:53+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p11oraa",
+          "author": "reddit_user_540f91e1507a",
+          "author_karma": 0,
+          "content": "When are they going to bring charges against the contractor?",
+          "timestamp": "2026-08-01T10:36:37+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p11r7kl",
+          "author": "reddit_user_97cce4c6c2b8",
+          "author_karma": 0,
+          "content": "And TACO in the White House won’t say one word",
+          "timestamp": "2026-08-01T10:55:55+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p11u2nq",
+          "author": "reddit_user_9868b3b0447f",
+          "author_karma": 0,
+          "content": "Fox news must be reporting on this NON STOP!",
+          "timestamp": "2026-08-01T11:17:05+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p11vy4n",
+          "author": "reddit_user_4d456ff204ea",
+          "author_karma": 0,
+          "content": "So they presented the case to the grand jury before they had all the evidence. Sounds like a perfect lawsuit. ",
+          "timestamp": "2026-08-01T11:30:41+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p11ycan",
+          "author": "reddit_user_e91a6e9ce5c9",
+          "author_karma": 0,
+          "content": "Yep, confirmed. Everything Trump touches turns to shit. ",
+          "timestamp": "2026-08-01T11:47:17+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p11zk1n",
+          "author": "reddit_user_aa88f78172ca",
+          "author_karma": 0,
+          "content": "But not the giant ass motorcade that Trump just HAD to have drive over the unfinished lining like a dipshit. ",
+          "timestamp": "2026-08-01T11:55:24+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run007_post04_seed039",
+      "post_slot": 4,
+      "seed_index": 39,
+      "source_raw_post_id": "1vcaouh",
+      "source_product_dir": "Fauxmoi",
+      "source_file": "https://www.reddit.com/r/Fauxmoi/comments/1vcaouh/governor_of_new_york_kathy_hochul_beefing_with/",
+      "post_type": "CELEBRITY CAPITALISM",
+      "title": "Governor of New York Kathy Hochul beefing with NBA's Kyle Kuzma",
+      "author": "reddit_user_33799307055d",
+      "author_karma": 0,
+      "content": "Governor of New York Kathy Hochul beefing with NBA's Kyle Kuzma",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p0zyfem",
+          "author": "reddit_user_bd139e5c8f70",
+          "author_karma": 0,
+          "content": "You can so clearly see what parts are a.i. and which this moron typed himself.",
+          "timestamp": "2026-08-01T02:36:28+00:00",
+          "likes": 346,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p10788d",
+              "author": "reddit_user_c3338ac10187",
+              "author_karma": 0,
+              "content": "He loosed his dictionary ",
+              "timestamp": "2026-08-01T03:32:32+00:00",
+              "likes": 16,
+              "dislikes": 0,
+              "parent_comment_id": "p0zyfem",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p1095uz",
+              "author": "reddit_user_28cf1a656aab",
+              "author_karma": 0,
+              "content": "From \"loosing the plot\" to \"derivative markets\". It's like his IQ is swinging from a flat 70 to a 110. \n\nWhat a joker. ",
+              "timestamp": "2026-08-01T03:45:26+00:00",
+              "likes": 110,
+              "dislikes": 0,
+              "parent_comment_id": "p0zyfem",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p10b4c2",
+              "author": "reddit_user_13d46029fbdd",
+              "author_karma": 0,
+              "content": "tEnS oF biLLiOnS     \na mOntH     \niN vOLuMe     \n🤖",
+              "timestamp": "2026-08-01T03:58:24+00:00",
+              "likes": 33,
+              "dislikes": 0,
+              "parent_comment_id": "p0zyfem",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p0zyr5k",
+          "author": "reddit_user_88baa83ab84c",
+          "author_karma": 0,
+          "content": "If only he was good enough to be known more for his game than his idiotic tendency to mouth off on the internet about things he doesn’t know shit about",
+          "timestamp": "2026-08-01T02:38:29+00:00",
+          "likes": 80,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0zz01w",
+              "author": "reddit_user_add4e528f3cf",
+              "author_karma": 0,
+              "content": "Derivatives market .. lol  ",
+              "timestamp": "2026-08-01T02:40:01+00:00",
+              "likes": 28,
+              "dislikes": 0,
+              "parent_comment_id": "p0zyr5k",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p10579d",
+              "author": "reddit_user_01641febea73",
+              "author_karma": 0,
+              "content": "Yeah at least Kyrie and JB can ball. Kuz, meanwhile...\n\nhttps://preview.redd.it/50hfv6islogh1.jpeg?width=405&format=pjpg&auto=webp&s=de9d4ba829a885d39452ed377e1b123b96b81ab0",
+              "timestamp": "2026-08-01T03:19:15+00:00",
+              "likes": 63,
+              "dislikes": 0,
+              "parent_comment_id": "p0zyr5k",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p106f74",
+                  "author": "reddit_user_54f6c91007ae",
+                  "author_karma": 0,
+                  "content": "You, sir are fucking spot on!",
+                  "timestamp": "2026-08-01T03:27:10+00:00",
+                  "likes": 6,
+                  "dislikes": 0,
+                  "parent_comment_id": "p10579d",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p10fj6z",
+                      "author": "[deleted]",
+                      "author_karma": 0,
+                      "content": "[removed]",
+                      "timestamp": "2026-08-01T04:28:33+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p106f74",
+                      "depth": 3,
+                      "replies": []
+                    },
+                    {
+                      "comment_id": "p122qts",
+                      "author": "reddit_user_01641febea73",
+                      "author_karma": 0,
+                      "content": "![gif](giphy|o0UwVNvnWkBUNTsz4B)",
+                      "timestamp": "2026-08-01T12:16:08+00:00",
+                      "likes": 3,
+                      "dislikes": 0,
+                      "parent_comment_id": "p106f74",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p0zz3rj",
+          "author": "reddit_user_c98df2632448",
+          "author_karma": 0,
+          "content": "Kuzma peaked in ‘23 tbh. Hochul still balling ",
+          "timestamp": "2026-08-01T02:40:39+00:00",
+          "likes": 23,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0zzk0a",
+          "author": "reddit_user_811e289bac7f",
+          "author_karma": 0,
+          "content": "> Derivative markets are now a lot more interesting and happy to see one of my portfolio companies leading the charge to revolutionize finance in America\n\nThe creation of sentence alone should be enough to ban AI",
+          "timestamp": "2026-08-01T02:43:27+00:00",
+          "likes": 180,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1004ai",
+          "author": "reddit_user_ac613615b980",
+          "author_karma": 0,
+          "content": "How about ban it all?  I'm sure gambling has ruined a lot more lives than it has made better. Meanwhile making some soulless motherfucker rich.\n\nUnless you're an orange pedo nazi idiot that is too stupid he can't even keep a casino afloat with people willing to throw money away.",
+          "timestamp": "2026-08-01T02:46:56+00:00",
+          "likes": 46,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p10zldc",
+              "author": "reddit_user_bc0c63e7fad6",
+              "author_karma": 0,
+              "content": "Kickbacks,  it's *always* kickbacks. \n\nThat and it's a good distraction, bread and circuses.",
+              "timestamp": "2026-08-01T07:02:24+00:00",
+              "likes": 3,
+              "dislikes": 0,
+              "parent_comment_id": "p1004ai",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p11fqu7",
+              "author": "reddit_user_c12e8150a0ec",
+              "author_karma": 0,
+              "content": "It is insane to me how normalized and ubiquitous gambling has become. I suspect in the coming years it's going to continue developing as one of the great social ills. I think it is one already, but I also think we're still in the, \"4 out of 5 doctors recommend Camels\" stage where people are still largely in denial.",
+              "timestamp": "2026-08-01T09:20:05+00:00",
+              "likes": 4,
+              "dislikes": 0,
+              "parent_comment_id": "p1004ai",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p101yin",
+          "author": "reddit_user_6857264ab9f0",
+          "author_karma": 0,
+          "content": "He’s so fucking dumb he can’t spell ‘losing’ correctly. Stick to basketball! Oh wait, he sucks at that, too. ",
+          "timestamp": "2026-08-01T02:58:27+00:00",
+          "likes": 75,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p10bsuf",
+              "author": "reddit_user_a99479609471",
+              "author_karma": 0,
+              "content": "Why didn’t he let ai write that part too? 😭",
+              "timestamp": "2026-08-01T04:02:59+00:00",
+              "likes": 17,
+              "dislikes": 0,
+              "parent_comment_id": "p101yin",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p102w6b",
+          "author": "reddit_user_3fca90139a34",
+          "author_karma": 0,
+          "content": "Fun fact, I was on a boat ride in Ireland last year and the captain of the boat casually told me he was her cousin ",
+          "timestamp": "2026-08-01T03:04:23+00:00",
+          "likes": 10,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p102y7h",
+          "author": "reddit_user_baf6be8b0da6",
+          "author_karma": 0,
+          "content": "**\\*** L O S I N G",
+          "timestamp": "2026-08-01T03:04:44+00:00",
+          "likes": 8,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p103784",
+          "author": "reddit_user_85ac2c8759c7",
+          "author_karma": 0,
+          "content": "Kyle Kuzma is such a goddamn clown.",
+          "timestamp": "2026-08-01T03:06:20+00:00",
+          "likes": 19,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1044zn",
+          "author": "reddit_user_01641febea73",
+          "author_karma": 0,
+          "content": "Kuzma is not talented enough to be beefing with the governor of NY lmao.",
+          "timestamp": "2026-08-01T03:12:21+00:00",
+          "likes": 12,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p104xa9",
+          "author": "reddit_user_1a2eb746019e",
+          "author_karma": 0,
+          "content": "Winnie Harlow, girl…you’ve got yourself a *real* dummy",
+          "timestamp": "2026-08-01T03:17:26+00:00",
+          "likes": 11,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p105hq5",
+          "author": "reddit_user_29502190c6b1",
+          "author_karma": 0,
+          "content": "Gambling has the highest rate of suicide of any addiction. I'm surprised Kalshi doesn't let you bet on the amount of deaths it will cause at this point.",
+          "timestamp": "2026-08-01T03:21:07+00:00",
+          "likes": 5,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p106sae",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-01T03:29:36+00:00",
+          "likes": -6,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p117k7z",
+              "author": "reddit_user_dcfdf6b50a43",
+              "author_karma": 0,
+              "content": "That’s because it does defend the roughly 70,000 New York jobs tied to the legal gaming industry.\n\nThe CEO of the American Gaming Association also pointed out the financial impact, estimating that “prediction market” platforms evading state and tribal gaming law have diverted more than $1.2 billion in gaming tax revenue away from community programs across the country. ",
+              "timestamp": "2026-08-01T08:09:18+00:00",
+              "likes": 3,
+              "dislikes": 0,
+              "parent_comment_id": "p106sae",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p11m4rj",
+                  "author": "reddit_user_25958b68a098",
+                  "author_karma": 0,
+                  "content": "But it is a conspiracy theory to suggest that is *why* she NY is suing them, right?\n\nRather than the fact it is breaking NY laws around gambling all up. There's a way to spin this is my point. They want to shut it down, the same they'd want to shut down a more traditional gambling setup that employed people if that was breaking licensing laws, right?",
+                  "timestamp": "2026-08-01T10:14:52+00:00",
+                  "likes": 0,
+                  "dislikes": 0,
+                  "parent_comment_id": "p117k7z",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p11ocp0",
+                      "author": "reddit_user_dcfdf6b50a43",
+                      "author_karma": 0,
+                      "content": "But it’d be legal? Because it follows the legal gaming laws of NY.",
+                      "timestamp": "2026-08-01T10:33:20+00:00",
+                      "likes": 2,
+                      "dislikes": 0,
+                      "parent_comment_id": "p11m4rj",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "p11r5kh",
+                          "author": "reddit_user_25958b68a098",
+                          "author_karma": 0,
+                          "content": "She isn't suing them to shut them down, she is suing them because they are evading NY rules that govern gambling by claiming they are not a gambling company;\n\nhttps://ag.ny.gov/press-release/2026/governor-hochul-and-attorney-general-james-announce-new-york-has-sued-kalshi\n\nLike the fact she isn't explaining this while there's folks like this guy making out she wants to shut them down when she just wants them to follow the same rules everyone else to is kind of my point lol",
+                          "timestamp": "2026-08-01T10:55:30+00:00",
+                          "likes": 0,
+                          "dislikes": 0,
+                          "parent_comment_id": "p11ocp0",
+                          "depth": 4,
+                          "replies": [
+                            {
+                              "comment_id": "p11vlcc",
+                              "author": "reddit_user_dcfdf6b50a43",
+                              "author_karma": 0,
+                              "content": "Yeah I get it, you’re right. The lawsuit’s complaining that Kalshi never got licensed by the NY Gaming Commission so it sidesteps paying taxes like licensed casinos and mobile sports gambling platforms do. Hochul just wants them to comply with this law (+fines and restitutions).\n\nBut it **also** says Kalshi lets 18-20 year olds trade, when NY requires 21+ for sports betting, which would mean they would somehow have to completely change their product. Even if it’s about compliance of NY laws, and they don’t want to shut Kalshi down here, they might force Kalshi to shut down because Kalshi simply refuses to subject to state’s laws or change their product, because they say that because they’re a federally regulated (CFTC) exchange, they claim that state gambling law is preempted. \n\nOn top of that, states sports betting doesn’t include *election* betting so idk they might shut down if Kalshi doesn’t find a legal pathway for that part of their product or change.  ",
+                              "timestamp": "2026-08-01T11:28:08+00:00",
+                              "likes": 2,
+                              "dislikes": 0,
+                              "parent_comment_id": "p11r5kh",
+                              "depth": 5,
+                              "replies": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p10758c",
+          "author": "reddit_user_0d064c4e401a",
+          "author_karma": 0,
+          "content": "Let me just put it this way. If you agree with Kuzna... you're wrong. \n\nDoesn't matter the topic",
+          "timestamp": "2026-08-01T03:31:59+00:00",
+          "likes": 6,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p107xx9",
+          "author": "reddit_user_19ea33849da2",
+          "author_karma": 0,
+          "content": "I miss last week when I'd never heard of Kyle Kuzma.",
+          "timestamp": "2026-08-01T03:37:17+00:00",
+          "likes": 7,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p109a83",
+          "author": "reddit_user_d3ff48e6258c",
+          "author_karma": 0,
+          "content": "\"For those not deep into market structure and derivates\", like all of us? ",
+          "timestamp": "2026-08-01T03:46:14+00:00",
+          "likes": 17,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p12aoou",
+              "author": "reddit_user_bb0e6a9b613f",
+              "author_karma": 0,
+              "content": "Ironically, I spend a lot of time drafting derivatives contracts but am barred from the prediction markets by my employer.",
+              "timestamp": "2026-08-01T13:04:13+00:00",
+              "likes": 2,
+              "dislikes": 0,
+              "parent_comment_id": "p109a83",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p109g7n",
+          "author": "reddit_user_afaad0e4d618",
+          "author_karma": 0,
+          "content": "losing\\*",
+          "timestamp": "2026-08-01T03:47:19+00:00",
+          "likes": 5,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p10a74v",
+          "author": "reddit_user_74294adfa2fd",
+          "author_karma": 0,
+          "content": "Kyle Kuzma I dare you to go Live and correctly spell and then define the word derivative \n\nBecause I'd internet gamble on him not being able to do either ",
+          "timestamp": "2026-08-01T03:52:14+00:00",
+          "likes": 20,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p10b9pf",
+          "author": "reddit_user_804b8e7bb124",
+          "author_karma": 0,
+          "content": "Trump is a pedophile ",
+          "timestamp": "2026-08-01T03:59:23+00:00",
+          "likes": 5,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p10htsb",
+          "author": "reddit_user_bfca856ab563",
+          "author_karma": 0,
+          "content": "Capitalists really are parasites holy fuck. His greed sickens me",
+          "timestamp": "2026-08-01T04:44:55+00:00",
+          "likes": 8,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p10x1dp",
+          "author": "reddit_user_38f8a8b36be9",
+          "author_karma": 0,
+          "content": "Kuzma should just \"Shut up and dribble\"",
+          "timestamp": "2026-08-01T06:41:38+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p10xur8",
+          "author": "reddit_user_e472ab5b53d8",
+          "author_karma": 0,
+          "content": "What is bro even talking about ",
+          "timestamp": "2026-08-01T06:48:16+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p110a8t",
+          "author": "reddit_user_ff861663b25b",
+          "author_karma": 0,
+          "content": "that 10B is a fraction of the money they steal from gambling addicts",
+          "timestamp": "2026-08-01T07:08:03+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p11a47v",
+          "author": "reddit_user_2333b25f8efd",
+          "author_karma": 0,
+          "content": "Kuz’s last sentence has shades of Elon Musk…",
+          "timestamp": "2026-08-01T08:31:15+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p11afa2",
+          "author": "reddit_user_ce3806c5ec2e",
+          "author_karma": 0,
+          "content": "oh, so he's an investor 😂",
+          "timestamp": "2026-08-01T08:33:56+00:00",
+          "likes": 3,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p11b7at",
+          "author": "reddit_user_10288934eef0",
+          "author_karma": 0,
+          "content": "Imagine the governor clapping back at you like this. Embarrassing man. ",
+          "timestamp": "2026-08-01T08:40:40+00:00",
+          "likes": 3,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p11pr71",
+          "author": "reddit_user_88320b242a83",
+          "author_karma": 0,
+          "content": "Does this guy have a contact yet?",
+          "timestamp": "2026-08-01T10:44:33+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p11qyuh",
+          "author": "reddit_user_91af6098864c",
+          "author_karma": 0,
+          "content": "Hated on him since the lakers days, glad I was right. He was a pretentious man even back then where his closest teammates stopped being friends with him ",
+          "timestamp": "2026-08-01T10:54:05+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p11vj80",
+          "author": "reddit_user_8f072a137cb6",
+          "author_karma": 0,
+          "content": "Kuzma is so random for this. He must have signed away his twitter account in the Kalshi deal lol",
+          "timestamp": "2026-08-01T11:27:43+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p11yzzs",
+          "author": "reddit_user_6cf91199e94e",
+          "author_karma": 0,
+          "content": "If Kalihi is able to offer NY $10bn in funding for schools for just NY, that speaks to how fucked of a problem that Kalshi is encouraging. ",
+          "timestamp": "2026-08-01T11:51:42+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1297sm",
+          "author": "reddit_user_f3abdb5ab9f2",
+          "author_karma": 0,
+          "content": "What screw broke loose in this dudes head that I have had to hear his idiotic ramblings on issues so frequently lately?",
+          "timestamp": "2026-08-01T12:55:37+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p12ws7a",
+          "author": "reddit_user_5b9513a72cd3",
+          "author_karma": 0,
+          "content": "Hochul gotta be one of the biggest surprises of Trump 2.0. I never expected her to be this locked tf in.",
+          "timestamp": "2026-08-01T15:00:07+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    }
+  ]
+}

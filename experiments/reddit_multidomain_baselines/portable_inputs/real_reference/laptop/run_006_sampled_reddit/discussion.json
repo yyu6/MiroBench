@@ -1,0 +1,293 @@
+{
+  "meta": {
+    "product_category": "laptop",
+    "baseline": "real_reddit_reference",
+    "run_id": "run_006_sampled_reddit"
+  },
+  "posts": [
+    {
+      "post_id": "real_run006_post00_seed030",
+      "post_slot": 0,
+      "seed_index": 30,
+      "source_raw_post_id": "1vcilmy",
+      "source_product_dir": "chromeos",
+      "source_file": "https://www.reddit.com/r/chromeos/comments/1vcilmy/my_project_is_to_get_halo_ce_running_i_need_help/",
+      "post_type": "Discussion",
+      "title": "my project is to get Halo CE running. I need help with DirectX drivers",
+      "author": "reddit_user_d8691634ac1e",
+      "author_karma": 0,
+      "content": "my project is to get Halo CE running. I need help with DirectX drivers\n\nso I been putting Halo Combat Evolved on my Chromebook and just need to figure out drivers for DirectX that's it so far. any ideas on what to do for DirectX",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p11jpl0",
+          "author": "reddit_user_478fff038224",
+          "author_karma": 0,
+          "content": "Try DXVK maybe? I remember that although bit buggy it does work on Windows.",
+          "timestamp": "2026-08-01T09:54:37+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p17uc4s",
+          "author": "reddit_user_e1b151562f2a",
+          "author_karma": 0,
+          "content": "If I recall your previous post correctly you're trying to do this in Wine. If so I think you're be better off asking the following question in Google: \"how to setup directx in Wine to support halo combat evolution\"?\n\nI haven't seen in any post of comments where your hardware platform or Linux environment is mentioned. If you're trying to do this with anything less than x64 Chromebook Plus specs and a freshly installed Baguette environment I think it's fair to say any results will be disappointing.",
+          "timestamp": "2026-08-02T08:05:19+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run006_post01_seed031",
+      "post_slot": 1,
+      "seed_index": 31,
+      "source_raw_post_id": "1vcm9f9",
+      "source_product_dir": "laptops",
+      "source_file": "https://www.reddit.com/r/laptops/comments/1vcm9f9/how_do_i_fix_this/",
+      "post_type": "Software",
+      "title": "How do I fix this?",
+      "author": "reddit_user_d8691634ac1e",
+      "author_karma": 0,
+      "content": "How do I fix this?\n\nI need help getting past this. I'm already frustrated at it",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p127l7a",
+          "author": "reddit_user_b330240b6e48",
+          "author_karma": 0,
+          "content": "sometimes resetting the CMOS clears these, try pulling the battery and then booting",
+          "timestamp": "2026-08-01T12:45:59+00:00",
+          "likes": 0,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p127qou",
+              "author": "reddit_user_b330240b6e48",
+              "author_karma": 0,
+              "content": "also, i see a service/asset tag.  was this secondhand from a business?  that might complicate things",
+              "timestamp": "2026-08-01T12:46:54+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p127l7a",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p12bbdp",
+                  "author": "reddit_user_8fc91b3aef43",
+                  "author_karma": 0,
+                  "content": "I've already done the cmos thing. It didn't work. And yes, second hand from my brother but even he doesn't know it, and can't contact anyone from wherever he got it",
+                  "timestamp": "2026-08-01T13:07:48+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p127qou",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "post_id": "real_run006_post02_seed032",
+      "post_slot": 2,
+      "seed_index": 32,
+      "source_raw_post_id": "1vcmnmt",
+      "source_product_dir": "laptops",
+      "source_file": "https://www.reddit.com/r/laptops/comments/1vcmnmt/laptop_for_uni/",
+      "post_type": "Buying help",
+      "title": "Laptop for uni",
+      "author": "reddit_user_d8691634ac1e",
+      "author_karma": 0,
+      "content": "Laptop for uni\n\nSo I’m an civil engineering student and I already have a pc at home but I need a laptop to carry, what are some good or decent laptops that aren’t expensive, money is a huge factor   \n(New or second hand)",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p12m8kg",
+          "author": "reddit_user_d58a0ad800c4",
+          "author_karma": 0,
+          "content": "I'd look at a refurbished HP ZBook Studio, Lenovo P1, or a Dell Precision. You'll want 32 GB of RAM, 10th Gen or newer processor, and probably a TB of storage. If you just want a laptop to take notes in class and a great battery life, just get a Chromebook Plus with 8GB of RAM",
+          "timestamp": "2026-08-01T14:06:56+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run006_post03_seed033",
+      "post_slot": 3,
+      "seed_index": 33,
+      "source_raw_post_id": "1vcmre4",
+      "source_product_dir": "laptops",
+      "source_file": "https://www.reddit.com/r/laptops/comments/1vcmre4/is_a_macbook_air_m3_16gb_ram_512gb_ssd_still/",
+      "post_type": "Review",
+      "title": "Is a MacBook Air M3 (16GB RAM / 512GB SSD) still worth buying in 2026?",
+      "author": "reddit_user_d8691634ac1e",
+      "author_karma": 0,
+      "content": "Is a MacBook Air M3 (16GB RAM / 512GB SSD) still worth buying in 2026?\n\nHi everyone,  \nI’m considering buying a **MacBook Air M3 with 16GB of RAM and a 512GB SSD**, and I’m wondering if it’s still a good purchase in 2026.\n\nWould you still recommend the M3, or is it worth spending more for an M4 or waiting for newer models?\n\nI’d love to hear from people who are still using the M3. How has it held up in terms of performance, battery life, and overall value?  \nThanks in advance!",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p12n14r",
+          "author": "reddit_user_e78bf90629e2",
+          "author_karma": 0,
+          "content": "M1 Pro holds up well, so m3 is probably better",
+          "timestamp": "2026-08-01T14:11:03+00:00",
+          "likes": 3,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p12nll6",
+          "author": "reddit_user_c5d27fbba144",
+          "author_karma": 0,
+          "content": "Yes, it’s perfectly fine. It’ll last you another three or four years at least. ",
+          "timestamp": "2026-08-01T14:13:56+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p12nwsk",
+          "author": "reddit_user_a42360ac44b3",
+          "author_karma": 0,
+          "content": "I have an M3 and it works great ",
+          "timestamp": "2026-08-01T14:15:32+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p12vb84",
+          "author": "reddit_user_ee6b6cf7d871",
+          "author_karma": 0,
+          "content": "Yes absolutely. Even for an $150-200 save over the M4 it’s worth it. \n\nBattery life would be the same as the m4. Performance? In the air you cannot notice the difference. Any difference would be noticeable only in multicore extended tasks. You cannot run these tasks on an air anyways. ",
+          "timestamp": "2026-08-01T14:52:51+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p13irk6",
+          "author": "reddit_user_c1565dc4fc41",
+          "author_karma": 0,
+          "content": "I'd only recommend spending extra on an M4 if the price difference is small or if you need the latest features and plan to keep it for many years. Otherwise, the M3 offers fantastic value, especially if you can find it on sale.",
+          "timestamp": "2026-08-01T16:46:06+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p13r7tw",
+          "author": "reddit_user_d58a0ad800c4",
+          "author_karma": 0,
+          "content": "How much are you going to pay for it?",
+          "timestamp": "2026-08-01T17:26:22+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p149u1j",
+          "author": "reddit_user_978d7eaf17da",
+          "author_karma": 0,
+          "content": "That depends entirely on how much it is",
+          "timestamp": "2026-08-01T18:55:24+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p14rqq7",
+          "author": "reddit_user_8daff93189d5",
+          "author_karma": 0,
+          "content": "Depends entirely what you’re using it for. I still use my m3 MBA daily. It does everything I ask of it really well, other than moderate gaming (which was never expected). Choosing a newer processor is dependent upon your needs and the price difference, neither of which were mentioned. ",
+          "timestamp": "2026-08-01T20:23:59+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run006_post04_seed034",
+      "post_slot": 4,
+      "seed_index": 34,
+      "source_raw_post_id": "1vcmt98",
+      "source_product_dir": "SuggestALaptop",
+      "source_file": "https://www.reddit.com/r/SuggestALaptop/comments/1vcmt98/updated_post_suggest_laptops_to_this_undecided/",
+      "post_type": "Laptop Request US",
+      "title": "Updated post: suggest laptops to this undecided major! US, 700-850 USD",
+      "author": "reddit_user_d8691634ac1e",
+      "author_karma": 0,
+      "content": "Updated post: suggest laptops to this undecided major! US, 700-850 USD\n\nCountry\n\nUS/India\n\nBudget\n\n700-850 dollars\n\nAre you open to refurbs/used options?\n\nNo\n\nScreen size\n\nAny\n\nWeight limit\n\nAny\n\nPurpose\n\nFor schoolwork! I am going to attend a liberal arts college in the US and I'm deciding between Biology and History as a major so I want a laptop that would work well for either majors requirements :D\n\nForm factor\n\nStandard ig, I'm not very picky about these things.\n\nIntended usage\n\nSchoolwork-- I would certainly need to write a lot of essays each month, I would also need to do my lab work here if it has any online components. My school has computers with downloaded software for labs to use if needed but I'm assuming it's ideal to have a laptop that supports this stuff since they also offer paying for such softwares for our laptops. \n\nDesired battery life\n\nI think 4-6 would be good enough since that's how long online exams take. \n\nPlease list, in order of most important to least important, the priority between Size, Weight, Performance, Battery life\n\nBattery life, performance. I don't care about size or weight at all. \n\nInfo/Requirements\n\nNothing else really. If anyone has any suggestions on how and when to avail student discounts though, I'd very much appreciate it :D\n\nThank you guys!!",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p16rfmo",
+          "author": "reddit_user_e27dffd2ffdc",
+          "author_karma": 0,
+          "content": "> Edit: just curious if y'all think that the same model of a laptop would be better quality if bought from the US than from India?\n\nI don't there will be difference in quality, but for sure there will be difference in price. I would recommend  this deal [Acer Aspire Go](https://www.amazon.com/Aspire-Copilot-WUXGA-Display-Processor/dp/B0DWNLQLL6/?tag=lonerim2-20)**  because it comes with : \n\n**Specs:**\n\n* Screen: 14\" WUXGA  \n* CPU : Core Ultra 7 \n* Ram : 16GB LPDDR4X\n* Storage : 1TB SSD\n\nAnd I have recommended this because of\n\n* Long battery life .\n\n* Powerful CPU for  digital art and can run your games smoothly .\n* Great value for money.\n* Lightweight  like you want.\n \n\nPlease note I'm using affiliate links which means I'll receive a small percent of the purchase if you use this link at no extra cost to you",
+          "timestamp": "2026-08-02T03:11:48+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p19rjev",
+          "author": "reddit_user_e0a6e95ffb06",
+          "author_karma": 0,
+          "content": "For school in this price range\tI would advise you to check this laptop\n\t\nlaptop name\t| [Acer Aspire](https://www.amazon.com/Aspire-Copilot-WUXGA-Display-Processor/dp/B0DWNLQLL6/?tag=adviser100-20/)\n---\t|----\nCPU\t| Intel Core Ultra 7 Processor\nScreen\t\"| 14\"\" Full HD IPS\"\nRam\t| 16 GB\nSSD\t| 1 TB\nHDD\t| 0\nWeight\t| 3.88 Lbs.\nBattery life\t| 9.5 Hrs.\nPros\t| Great battery life.\nPros\t| The CPU is very good.\nPros\t| Has 16GB of ram.\n\nPlease note I'm using affiliate links which means I'll receive a small percent of the purchase if you use this link at no extra cost to you",
+          "timestamp": "2026-08-02T15:35:47+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    }
+  ]
+}

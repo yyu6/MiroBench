@@ -1,0 +1,450 @@
+{
+  "meta": {
+    "product_category": "cellphone",
+    "baseline": "real_reddit_reference",
+    "run_id": "run_013_sampled_reddit"
+  },
+  "posts": [
+    {
+      "post_id": "real_run013_post00_seed065",
+      "post_slot": 0,
+      "seed_index": 65,
+      "source_raw_post_id": "1vcz3cj",
+      "source_product_dir": "samsung",
+      "source_file": "https://www.reddit.com/r/samsung/comments/1vcz3cj/g90xh_release_date/",
+      "post_type": "Display",
+      "title": "G90XH release date?",
+      "author": "reddit_user_0fe413d0e398",
+      "author_karma": 0,
+      "content": "G90XH release date?\n\n[removed]",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p16yl5e",
+          "author": "reddit_user_123a7f1be8d8",
+          "author_karma": 0,
+          "content": "Same, I check 3 times a week and nothing new D:",
+          "timestamp": "2026-08-02T03:59:40+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1764qy",
+          "author": "reddit_user_ab3bbfe12f59",
+          "author_karma": 0,
+          "content": "A 3D display in 2026? Feels a decade too late tbh",
+          "timestamp": "2026-08-02T04:52:40+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run013_post01_seed066",
+      "post_slot": 1,
+      "seed_index": 66,
+      "source_raw_post_id": "1vczny5",
+      "source_product_dir": "Android",
+      "source_file": "https://www.reddit.com/r/Android/comments/1vczny5/the_champion/",
+      "post_type": "News",
+      "title": "The champion",
+      "author": "reddit_user_0fe413d0e398",
+      "author_karma": 0,
+      "content": "The champion\n\n[removed]",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p157cid",
+          "author": "reddit_user_65884126434e",
+          "author_karma": 0,
+          "content": "Sorry [REDDIT_USER], but your submission was removed as you included a post body within your submission. The body text is often used to insert bias/opinion which violates Rule 6 in direct link submissions. Feel free to repost without the post body.\n\n\n*I am a bot, and this action was performed automatically. Please [contact the moderators of this subreddit](/message/compose/?to=/r/Android) if you have any questions or concerns.*",
+          "timestamp": "2026-08-01T21:43:35+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run013_post02_seed067",
+      "post_slot": 2,
+      "seed_index": 67,
+      "source_raw_post_id": "1vd07qo",
+      "source_product_dir": "iphone",
+      "source_file": "https://www.reddit.com/r/iphone/comments/1vd07qo/iphone_4_retrieving_photos/",
+      "post_type": "Support",
+      "title": "iPhone 4 - Retrieving photos",
+      "author": "reddit_user_0fe413d0e398",
+      "author_karma": 0,
+      "content": "iPhone 4 - Retrieving photos\n\nI’ve managed to find an old iPhone4 and want to retrieve a bunch of old photos. What’s a method I could transfer the photos or send the photos since iCloud and other apps aren’t available or supported anymore?",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p15dqvx",
+          "author": "reddit_user_49479aa3117a",
+          "author_karma": 0,
+          "content": "Do you have a Mac or PC? What year of Mac if you have one?",
+          "timestamp": "2026-08-01T22:18:00+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p15k6a6",
+              "author": "reddit_user_7bb9fbabb704",
+              "author_karma": 0,
+              "content": "I’ve got a macbook (M4 Chip) and pc ",
+              "timestamp": "2026-08-01T22:53:16+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p15dqvx",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1ab0el",
+                  "author": "reddit_user_49479aa3117a",
+                  "author_karma": 0,
+                  "content": "Lots of options out there, but from my personal experience.\n\nFor MacOS I recommend imazing. \nhttps://imazing.com/downloads\n\nFor Windows 10 I recommend ifunbox.  \nhttps://www.i-funbox.com/en/index.html",
+                  "timestamp": "2026-08-02T17:04:32+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p15k6a6",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "post_id": "real_run013_post03_seed068",
+      "post_slot": 3,
+      "seed_index": 68,
+      "source_raw_post_id": "1vd08pc",
+      "source_product_dir": "Smartphones",
+      "source_file": "https://www.reddit.com/r/Smartphones/comments/1vd08pc/switched_to_android_anything_i_should_know/",
+      "post_type": "reddit_post",
+      "title": "Switched to Android, anything I should know?",
+      "author": "reddit_user_0fe413d0e398",
+      "author_karma": 0,
+      "content": "Switched to Android, anything I should know?\n\nFinally got a new phone after so long and got the Honor Magic V6. \n\nI'm liking the freedom with apps and extensions I have now, but is there anything I should know / do since this is my first time with an Android phone?",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p15g3g8",
+          "author": "reddit_user_879885ba6471",
+          "author_karma": 0,
+          "content": "Get ready for popups!",
+          "timestamp": "2026-08-01T22:30:51+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p15qevh",
+              "author": "reddit_user_e7320995f11c",
+              "author_karma": 0,
+              "content": "in-app popups are the fault of the app, not your phone\n\nhome screen popups are your fault, you allowed a website to send you notifications or installed malware",
+              "timestamp": "2026-08-01T23:28:26+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p15g3g8",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p15t01s",
+                  "author": "reddit_user_879885ba6471",
+                  "author_karma": 0,
+                  "content": "Doesn’t happen on iPhone.  Weird. ",
+                  "timestamp": "2026-08-01T23:43:06+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p15qevh",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p15taja",
+                      "author": "reddit_user_e7320995f11c",
+                      "author_karma": 0,
+                      "content": "just don't install malware 🤷",
+                      "timestamp": "2026-08-01T23:44:46+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p15t01s",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "p15tgtr",
+                          "author": "reddit_user_879885ba6471",
+                          "author_karma": 0,
+                          "content": "Many android apps allow automatic downloads of apps based on “non exit” clicks from ads. Apple doesn’t do this. ",
+                          "timestamp": "2026-08-01T23:45:46+00:00",
+                          "likes": 0,
+                          "dislikes": 0,
+                          "parent_comment_id": "p15taja",
+                          "depth": 4,
+                          "replies": [
+                            {
+                              "comment_id": "p161dpo",
+                              "author": "reddit_user_e7320995f11c",
+                              "author_karma": 0,
+                              "content": "Don't give them permissions to do that then, though I've never seen this so maybe I'm not guessing what you're talking about right",
+                              "timestamp": "2026-08-02T00:31:47+00:00",
+                              "likes": 1,
+                              "dislikes": 0,
+                              "parent_comment_id": "p15tgtr",
+                              "depth": 5,
+                              "replies": [
+                                {
+                                  "comment_id": "p161vqu",
+                                  "author": "reddit_user_879885ba6471",
+                                  "author_karma": 0,
+                                  "content": "I work on them for a living.  Daily I get three or more people that have been sent by their bank after their bank account gets hacked.  Not once, ever, has it been an iPhone.  Always android based. ",
+                                  "timestamp": "2026-08-02T00:34:45+00:00",
+                                  "likes": 1,
+                                  "dislikes": 0,
+                                  "parent_comment_id": "p161dpo",
+                                  "depth": 6,
+                                  "replies": [
+                                    {
+                                      "comment_id": "p1671tl",
+                                      "author": "reddit_user_e7320995f11c",
+                                      "author_karma": 0,
+                                      "content": "Android gives you control over your phone, so if you misuse it and install malware of course it'll be all Androids coming in. That's the users fault though, just like on PC.",
+                                      "timestamp": "2026-08-02T01:05:27+00:00",
+                                      "likes": 1,
+                                      "dislikes": 0,
+                                      "parent_comment_id": "p161vqu",
+                                      "depth": 7,
+                                      "replies": [
+                                        {
+                                          "comment_id": "p168hv3",
+                                          "author": "reddit_user_879885ba6471",
+                                          "author_karma": 0,
+                                          "content": "Those same people survive perfectly in iOS. ",
+                                          "timestamp": "2026-08-02T01:13:58+00:00",
+                                          "likes": 1,
+                                          "dislikes": 0,
+                                          "parent_comment_id": "p1671tl",
+                                          "depth": 8,
+                                          "replies": [
+                                            {
+                                              "comment_id": "p169avh",
+                                              "author": "reddit_user_e7320995f11c",
+                                              "author_karma": 0,
+                                              "content": "Because it doesn't treat you as an owner. You are telling OP to prepare for something that is very unlikely to actually happen if OP has a basic understanding of security. \n\nAgain, if this is happening on your device, something is very wrong and you need to do something about it.",
+                                              "timestamp": "2026-08-02T01:18:45+00:00",
+                                              "likes": 1,
+                                              "dislikes": 0,
+                                              "parent_comment_id": "p168hv3",
+                                              "depth": 9,
+                                              "replies": [
+                                                {
+                                                  "comment_id": "p16akpp",
+                                                  "author": "reddit_user_879885ba6471",
+                                                  "author_karma": 0,
+                                                  "content": "Three customers per day, AT LEAST. ",
+                                                  "timestamp": "2026-08-02T01:26:23+00:00",
+                                                  "likes": 1,
+                                                  "dislikes": 0,
+                                                  "parent_comment_id": "p169avh",
+                                                  "depth": 10,
+                                                  "replies": []
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "comment_id": "p18wbue",
+                  "author": "reddit_user_daafc4db6acd",
+                  "author_karma": 0,
+                  "content": "Yeah I've had a ton of tutorials pop ups but definitely not any ads. I'm not the type to download stuff at random without checking it out online first",
+                  "timestamp": "2026-08-02T12:55:59+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p15qevh",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            },
+            {
+              "comment_id": "p17omrw",
+              "author": "reddit_user_4663c29a6aab",
+              "author_karma": 0,
+              "content": "None in the os dude, unless there is malware on phone",
+              "timestamp": "2026-08-02T07:18:08+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p15g3g8",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p16n75l",
+          "author": "reddit_user_21a22dacbc20",
+          "author_karma": 0,
+          "content": "Download fdroid for open source apps",
+          "timestamp": "2026-08-02T02:44:16+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run013_post04_seed069",
+      "post_slot": 4,
+      "seed_index": 69,
+      "source_raw_post_id": "1vd2ib4",
+      "source_product_dir": "iphone",
+      "source_file": "https://www.reddit.com/r/iphone/comments/1vd2ib4/i_want_these_red_green_fb_lite_apps_on_my_ios/",
+      "post_type": "App",
+      "title": "i want these red & green fb lite apps on my ios !",
+      "author": "reddit_user_0fe413d0e398",
+      "author_karma": 0,
+      "content": "i want these red & green fb lite apps on my ios !\n\nhello guys i want these green and red fb lite 2 apps on my iphone 13 pro max can someone guide me please i saw these apps on a fb group",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p15vgbc",
+          "author": "reddit_user_8f965a624517",
+          "author_karma": 0,
+          "content": "You cant. Theyre probably just custom shortcut icons. ",
+          "timestamp": "2026-08-01T23:57:13+00:00",
+          "likes": 7,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p15zeyh",
+              "author": "reddit_user_b7720c7f2c62",
+              "author_karma": 0,
+              "content": "no these are clone apps you just research \" 11 fb lite \" for android but i want for ios ",
+              "timestamp": "2026-08-02T00:20:14+00:00",
+              "likes": -3,
+              "dislikes": 0,
+              "parent_comment_id": "p15vgbc",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p15vohr",
+          "author": "reddit_user_15cff6ab28c2",
+          "author_karma": 0,
+          "content": "It doesn’t exist on iOS anymore. Android only. ",
+          "timestamp": "2026-08-01T23:58:33+00:00",
+          "likes": 4,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p15zh0h",
+              "author": "reddit_user_b7720c7f2c62",
+              "author_karma": 0,
+              "content": "😭😭",
+              "timestamp": "2026-08-02T00:20:34+00:00",
+              "likes": -1,
+              "dislikes": 0,
+              "parent_comment_id": "p15vohr",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1613m3",
+          "author": "reddit_user_fdd60dde469c",
+          "author_karma": 0,
+          "content": "iOS is pretty locked down compared to Android, so you're stuck with whatever Meta decides to push to the App Store. Your best bet is just using the regular Facebook app and disabling notifications for the stuff you don't care about.",
+          "timestamp": "2026-08-02T00:30:06+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p162ufb",
+              "author": "reddit_user_b7720c7f2c62",
+              "author_karma": 0,
+              "content": "*thanks for your suggestion 🌹✨*",
+              "timestamp": "2026-08-02T00:40:26+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1613m3",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p162rws",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[deleted]",
+          "timestamp": "2026-08-02T00:40:01+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p17ch34",
+          "author": "reddit_user_a5a30234c8f8",
+          "author_karma": 0,
+          "content": "Must foster a relevant discussion",
+          "timestamp": "2026-08-02T05:40:51+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    }
+  ]
+}

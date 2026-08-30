@@ -1,0 +1,1042 @@
+{
+  "meta": {
+    "product_category": "camera",
+    "baseline": "real_reddit_reference",
+    "run_id": "run_015_sampled_reddit"
+  },
+  "posts": [
+    {
+      "post_id": "real_run015_post00_seed075",
+      "post_slot": 0,
+      "seed_index": 75,
+      "source_raw_post_id": "1vcy5fb",
+      "source_product_dir": "AskPhotography",
+      "source_file": "https://www.reddit.com/r/AskPhotography/comments/1vcy5fb/why_is_this_jogger_blurry/",
+      "post_type": "Technical Help/Camera Settings",
+      "title": "Why is this jogger blurry?",
+      "author": "reddit_user_4349d3bfee00",
+      "author_karma": 0,
+      "content": "Why is this jogger blurry?\n\nf/8\n\n1/1000\n\nISO 400\n\n\n\nFor this photo I put my focus point on that yellow crane which is about 1 mile away. By using f/8 I expected the photo to be sharp throughout, however, the jogger in the foreground is blurry and out of focus. \n\nThe shutter speed of 1/000 is more than fast enough to freeze someone jogging and the crane and other buildings seems sharp, so can anyone please explain why these settings haven't captured a jogger that is sharp? \n\nTIA",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p14vfqw",
+          "author": "reddit_user_fa24def4a9d7",
+          "author_karma": 0,
+          "content": "You answered your question. Your focus point was on the crane. ",
+          "timestamp": "2026-08-01T20:42:26+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p14vpnw",
+              "author": "reddit_user_38fa4a497065",
+              "author_karma": 0,
+              "content": "So what f stop should I use to ensure it is sharp throughout? I thought a low value like f/2 would create that effect but not f/8",
+              "timestamp": "2026-08-01T20:43:48+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p14vfqw",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p14vzc1",
+                  "author": "reddit_user_fa24def4a9d7",
+                  "author_karma": 0,
+                  "content": "I would go to at least F/11. Go experiment if you have access to a similar location. ",
+                  "timestamp": "2026-08-01T20:45:10+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p14vpnw",
+                  "depth": 2,
+                  "replies": []
+                },
+                {
+                  "comment_id": "p14w4lp",
+                  "author": "reddit_user_80af23566d53",
+                  "author_karma": 0,
+                  "content": "You might want to use a [DoF calculator ](https://www.photopills.com/calculators/dof)for that, though those usually assume something like A4 sized prints at hand held distance.\n\n",
+                  "timestamp": "2026-08-01T20:45:55+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p14vpnw",
+                  "depth": 2,
+                  "replies": []
+                },
+                {
+                  "comment_id": "p14w5r6",
+                  "author": "reddit_user_38567f28b99e",
+                  "author_karma": 0,
+                  "content": "On what lens? Yall really need to learn that f/8 on a 20mm is so incredibly different than f/8 on a 1000mm. ",
+                  "timestamp": "2026-08-01T20:46:05+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p14vpnw",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p14wnyy",
+                      "author": "reddit_user_38fa4a497065",
+                      "author_karma": 0,
+                      "content": "Camera: Nikon Z50ii, lens: 50-250mm, focal length: 180mm.",
+                      "timestamp": "2026-08-01T20:48:37+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p14w5r6",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "p14ylfk",
+                          "author": "reddit_user_6116349a170e",
+                          "author_karma": 0,
+                          "content": "Using a DoF calculator:\n\nAt 180mm f/8 on APS-C crop focused 1 mile away everything should be in focus from 200 yards away to infinity.\n\nAt f/22 it would be 75 yards to infinity.\n\nAt f/8, if you focused half a mile away, everything from 175 yards to infinity would be in focus.\n\nIf you focused 220 yards away at f/8, everything from 110 yards to infinity would be in focus.\n\nIf you focused at 115 yards away at f/16, everything from 55 yards to infinity would be in focus.\n\nIf you focused at 82 yards away at f/22, everything from 40 yards to infinity would be in focus",
+                          "timestamp": "2026-08-01T20:58:21+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "p14wnyy",
+                          "depth": 4,
+                          "replies": [
+                            {
+                              "comment_id": "p14z24t",
+                              "author": "reddit_user_38fa4a497065",
+                              "author_karma": 0,
+                              "content": "This is excellent, thank you",
+                              "timestamp": "2026-08-01T21:00:44+00:00",
+                              "likes": 1,
+                              "dislikes": 0,
+                              "parent_comment_id": "p14ylfk",
+                              "depth": 5,
+                              "replies": [
+                                {
+                                  "comment_id": "p14zkvm",
+                                  "author": "reddit_user_6116349a170e",
+                                  "author_karma": 0,
+                                  "content": "Glad to help!\n\nThe biggest hole is the focus distance - 2/3 of the in-focus distance of the image will be behind the focus point, so you can focus quite a bit forward of that and still have what you want in focus.\n\nThe downside there is, as you focus closer, your in-focus area shrinks, but in this case it started very large.\n\nSmaller f/stops help too, of course, but do note that f/22 (or even f/32, which is probably an option on your camera) will look a bit softer everywhere",
+                                  "timestamp": "2026-08-01T21:03:26+00:00",
+                                  "likes": 1,
+                                  "dislikes": 0,
+                                  "parent_comment_id": "p14z24t",
+                                  "depth": 6,
+                                  "replies": [
+                                    {
+                                      "comment_id": "p152kky",
+                                      "author": "reddit_user_38fa4a497065",
+                                      "author_karma": 0,
+                                      "content": "Cheers, I've gotten it the wrong way round, I thought the majority of the focus would be in front of the focus point and not beyond. I thought by focussing that far in to the image would serve me well for the jogger",
+                                      "timestamp": "2026-08-01T21:18:46+00:00",
+                                      "likes": 1,
+                                      "dislikes": 0,
+                                      "parent_comment_id": "p14zkvm",
+                                      "depth": 7,
+                                      "replies": []
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "comment_id": "p14wcol",
+                  "author": "reddit_user_39bca997f4c4",
+                  "author_karma": 0,
+                  "content": "You’d probably need a lens capable of f/32 to 64 yo be able to get everything sharp from infinity to the jogger. Probably would become a soft photo overall due to diffraction though.",
+                  "timestamp": "2026-08-01T20:47:02+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p14vpnw",
+                  "depth": 2,
+                  "replies": []
+                },
+                {
+                  "comment_id": "p14weon",
+                  "author": "reddit_user_7cf7c1c17558",
+                  "author_karma": 0,
+                  "content": "Use a [hyperfocal table](https://www.photopills.com/calculators/hyperfocal-table) to figure out depth of field.  ",
+                  "timestamp": "2026-08-01T20:47:19+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p14vpnw",
+                  "depth": 2,
+                  "replies": []
+                },
+                {
+                  "comment_id": "p150u98",
+                  "author": "reddit_user_650029931605",
+                  "author_karma": 0,
+                  "content": "Focusing nearer helps a lot too. The area behind the focus point that's acceptably sharp is much larger than the area in front of it.",
+                  "timestamp": "2026-08-01T21:09:55+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p14vpnw",
+                  "depth": 2,
+                  "replies": []
+                },
+                {
+                  "comment_id": "p151lbb",
+                  "author": "reddit_user_72a39c08d12a",
+                  "author_karma": 0,
+                  "content": "If you plan to do zone focusing, remember: things won't be perfectly sharp, only sharp enough, depth of field is subjective and depends on what you consider sharp enough",
+                  "timestamp": "2026-08-01T21:13:46+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p14vpnw",
+                  "depth": 2,
+                  "replies": []
+                },
+                {
+                  "comment_id": "p15mivb",
+                  "author": "reddit_user_f2622a819046",
+                  "author_karma": 0,
+                  "content": "I would have done the focus and recompose method.  I would have half-pressed the shutter on the white sign at the bottom of the crosswalk pole.  Then recomposed the image.  The runner and everything behind her would have been in focus.  Maybe bump it up to f11 just to be certain.  I've never owned a lens longer than 135mm, so I'm not 100% certain on how the aperture impacts the DOF when introducing a lot more compression.  I usually shoot a 28mm, so my method would work without any issue.  I guess that's a disclaimer, maybe someone can shed a little more insight.  ",
+                  "timestamp": "2026-08-01T23:06:26+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p14vpnw",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p18tvuc",
+                      "author": "reddit_user_38fa4a497065",
+                      "author_karma": 0,
+                      "content": "Thank you very much for taking the time to explain. Some people were saying to focus on the jogger but I thought I'd sacrifice my composition as I've be aiming at the jogger and panning the camera as they moved along the road therefore by the time the jogger was in the perfect location my composition would be wrong as I'd be aiming too high or too low. I thought I'd compose first and wait for a person to enter the frame. But what you've said makes a lot of sense as the white sign at the bottom is close to where I wanted focussed so yeah I could have focussed on it first then composed the shot. ",
+                      "timestamp": "2026-08-02T12:41:28+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p15mivb",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "p1agxh5",
+                          "author": "reddit_user_f2622a819046",
+                          "author_karma": 0,
+                          "content": "That's exactly what I try to do.  You can see the shot coming together with the runner entering your frame, so you predict where you want that runner to be when you press the shutter.  So I would again, lock the focus on that white sign because I know that's roughly where I want the runner to be, and as long as I keep the shutter button half-pressed, the camera will keep that focus point locked until I fully press the button and take the photo.  \n\nI don't know how common it is of a technique in 2026, but the 'focus and recompose' was how we always got by with mediocre autofocus.  I'm still stuck in the past with a Canon 6D, where the only reliable AF point is the center one, so I still shoot that way.  I do have a mirrorless camera that has a million reliable AF points, but I go back and fourth as it's a fixed lens camera (Leica Q).  But this is how you would get reliable focus on old film P&S cameras from the 80s and 90s, as they only had a center AF point, but allowed you to lock the focus with a half-press of the shutter.  It will lock that focus until you let your finger off the button, or you completely press it.  The people that didn't know how to do this would always have portraits with the background in focus and the person blurry, which is sort of what you've got going on here.  \n\nI'm happy to help if I can.  Re-reading your reply above, you totally understand what I was saying and I probably didn't need to type all of that out - lol.  But once you start doing this I think it's going to quickly become habit.  Cheers.  ",
+                          "timestamp": "2026-08-02T17:31:03+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "p18tvuc",
+                          "depth": 4,
+                          "replies": [
+                            {
+                              "comment_id": "p1bzubk",
+                              "author": "reddit_user_38fa4a497065",
+                              "author_karma": 0,
+                              "content": "I use back button focus, so instead of doing the half- press and keeping my finger on the button awaiting for a jogger to run past I can just focus on the white sign once then leave the buttons altogether until a person appears. \n\nBut then this method only works when you have something like a white sign to focus on. If there's nothing to pre-focus on then it's difficult to focus on something that comes and goes quite quickly. There's little chance to focus on it and gain the composition you want. ",
+                              "timestamp": "2026-08-02T21:46:20+00:00",
+                              "likes": 1,
+                              "dislikes": 0,
+                              "parent_comment_id": "p1agxh5",
+                              "depth": 5,
+                              "replies": [
+                                {
+                                  "comment_id": "p1cfgbu",
+                                  "author": "reddit_user_f2622a819046",
+                                  "author_karma": 0,
+                                  "content": "I used the rear focus button for a brief period, but went back. \n\nAnyhow, if you don't happen to have a physical object like the sign, I would then look for a place on the ground where I think the subject might also be on that same focal plane - wider lenses make this easier to do.  ",
+                                  "timestamp": "2026-08-02T23:06:55+00:00",
+                                  "likes": 1,
+                                  "dislikes": 0,
+                                  "parent_comment_id": "p1bzubk",
+                                  "depth": 6,
+                                  "replies": []
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "comment_id": "p16qpjn",
+                  "author": "reddit_user_a49c62bd7d73",
+                  "author_karma": 0,
+                  "content": "Check out figure 3 here:\n\n[https://www.strollswithmydog.com/dof-and-diffraction-24mm-landscape/](https://www.strollswithmydog.com/dof-and-diffraction-24mm-landscape/)\n\nIt's not exactly the same situation as yours, but qualitatively, it'll tell you that foreground out of focus objects tend to be way blurrier than background ones.  In other words, err on the side of focusing towards you from the intended subject, not behind it.",
+                  "timestamp": "2026-08-02T03:06:58+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p14vpnw",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p14w1zw",
+          "author": "reddit_user_e9bc84d0457e",
+          "author_karma": 0,
+          "content": "Your point of focus is the crane, which is a large distance from the runner. Notice the traffic lights and anything else at a similar distance as the runner are also blurry.\n\nA higher f-stop (smaller aperture, bigger number) will make the plane of focus larger. As would using a wider lens/zooming out.",
+          "timestamp": "2026-08-01T20:45:32+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p14w5x1",
+          "author": "reddit_user_467039093cd1",
+          "author_karma": 0,
+          "content": "What camera and lens are you using?\n\n",
+          "timestamp": "2026-08-01T20:46:06+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p14wn65",
+              "author": "reddit_user_38fa4a497065",
+              "author_karma": 0,
+              "content": "Camera: Nikon Z50ii, lens: 50-250mm, focal length: 180mm.",
+              "timestamp": "2026-08-01T20:48:30+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p14w5x1",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p14xusw",
+                  "author": "reddit_user_467039093cd1",
+                  "author_karma": 0,
+                  "content": "Your 'in focus' zone is roughly 600ft to infinity when you focus at 1 mile on f/8 at 180mm.\n\nI suspect the runner was closer than 600ft.",
+                  "timestamp": "2026-08-01T20:54:36+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p14wn65",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p14yy08",
+                      "author": "reddit_user_38fa4a497065",
+                      "author_karma": 0,
+                      "content": "Thanks for this, very informative",
+                      "timestamp": "2026-08-01T21:00:09+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p14xusw",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p14wett",
+          "author": "reddit_user_fe34168b42a3",
+          "author_karma": 0,
+          "content": "If the blur is in all directions (which seems to be the case but hard to say because it's low resolution for us) -> focus is somewhere else (like you said, it's on the crane). \n\n\nIf the blur is one direction (the direction of motion) -> motion blur. Unlikely to be the case here since shutter speed is pretty high. \n\n\nOnly option is to focus on the jogger or close down the aperture even more. ",
+          "timestamp": "2026-08-01T20:47:20+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p14wgak",
+          "author": "reddit_user_e825f608d3b1",
+          "author_karma": 0,
+          "content": "Tu punto de enfoque se fue a la grúa. \n\nTendrías que revisar las opciones de enfoque que tiene tu cámara, si puedes enfocar por zona, ancho, al centro y cuál se amolda mejor a tus necesidades. \n\nGente que hace fotografía de países o astrofotografía prefieren el enfoque manual al autoenfoque. ",
+          "timestamp": "2026-08-01T20:47:33+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p14whmf",
+          "author": "reddit_user_03c290442990",
+          "author_karma": 0,
+          "content": "Jogger is out of focus, not just blurry. Focus on the subject and be aware of back focus. ",
+          "timestamp": "2026-08-01T20:47:44+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p14wndu",
+          "author": "reddit_user_d641e0842f27",
+          "author_karma": 0,
+          "content": "They may be a phantom partly residing in a featureless void. ",
+          "timestamp": "2026-08-01T20:48:32+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p14x372",
+              "author": "reddit_user_38fa4a497065",
+              "author_karma": 0,
+              "content": "I don't know what this means but I love it",
+              "timestamp": "2026-08-01T20:50:45+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p14wndu",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p152i7x",
+                  "author": "reddit_user_d641e0842f27",
+                  "author_karma": 0,
+                  "content": "I mean it’s a common issue with focus problems that no one is really comfortable talking about. ",
+                  "timestamp": "2026-08-01T21:18:27+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p14x372",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p14x1wm",
+          "author": "reddit_user_d6671fff9a1e",
+          "author_karma": 0,
+          "content": "You need to find a DoF that is deep enough for the crane & jogger to be within.      \nEven f8 has a threshold. ",
+          "timestamp": "2026-08-01T20:50:34+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p14xmwb",
+          "author": "reddit_user_76eda568b093",
+          "author_karma": 0,
+          "content": "Both depth of field and motion blur",
+          "timestamp": "2026-08-01T20:53:30+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p14xo00",
+          "author": "reddit_user_f7ca88209ab7",
+          "author_karma": 0,
+          "content": "The jogger is outside the hyperfocal distance… ",
+          "timestamp": "2026-08-01T20:53:39+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p14yvck",
+          "author": "reddit_user_0a914722be17",
+          "author_karma": 0,
+          "content": "At longer focal lengths, the same aperture gives a shallower depth of field. For instance if this was shot at 35mm f8, you’d likely see everything in focus. At longer focal lengths, you need to stop down even more if you want to get everything in focus. Either that or do focus stacking, which is a longer and more involved process.",
+          "timestamp": "2026-08-01T20:59:47+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p14z1ta",
+          "author": "reddit_user_5871a5c91cfc",
+          "author_karma": 0,
+          "content": "Next time focus on the near jogger instead of the distant crane. ",
+          "timestamp": "2026-08-01T21:00:41+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p14z9e7",
+              "author": "reddit_user_38fa4a497065",
+              "author_karma": 0,
+              "content": "And stick to f/8? Would that create a sharp image from front to back?",
+              "timestamp": "2026-08-01T21:01:46+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p14z1ta",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p15c6lz",
+                  "author": "reddit_user_5871a5c91cfc",
+                  "author_karma": 0,
+                  "content": "Maybe go up to f/11. I’d look at a DOF chart and see.  Focus area is usually 1/3 in front and 2/3 behind. ",
+                  "timestamp": "2026-08-01T22:09:30+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p14z9e7",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p18tcc7",
+                      "author": "reddit_user_38fa4a497065",
+                      "author_karma": 0,
+                      "content": "Brilliant, thanks for taking the time to reply and explain",
+                      "timestamp": "2026-08-02T12:38:14+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p15c6lz",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p14zpx7",
+          "author": "reddit_user_2d024e0c2b35",
+          "author_karma": 0,
+          "content": "Does AI need to be told this? ",
+          "timestamp": "2026-08-01T21:04:09+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p152000",
+              "author": "reddit_user_38fa4a497065",
+              "author_karma": 0,
+              "content": "Eh?",
+              "timestamp": "2026-08-01T21:15:50+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p14zpx7",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p150pu5",
+          "author": "reddit_user_004b45cc88bf",
+          "author_karma": 0,
+          "content": "Hello fellow Belfaster! ",
+          "timestamp": "2026-08-01T21:09:17+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1521eq",
+              "author": "reddit_user_38fa4a497065",
+              "author_karma": 0,
+              "content": "Greetings traveller!",
+              "timestamp": "2026-08-01T21:16:03+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p150pu5",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p152jn0",
+                  "author": "reddit_user_004b45cc88bf",
+                  "author_karma": 0,
+                  "content": "Is this the Belmont / Holywood Road area? ",
+                  "timestamp": "2026-08-01T21:18:39+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1521eq",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p15d4pg",
+                      "author": "reddit_user_2fd434395011",
+                      "author_karma": 0,
+                      "content": "I'm 90% certain it's looking down past the strand cinema.\n\nAlso I think \"that yellow crane\" is Goliath.\n\nAs to OPs question, this is a depth of field thing, jogger just isn't in the plane of focus. \nDropping down to f/22 etc might help. \nBut other than the diminishing returns of image quality at smaller apertures it also just isn't worth it.",
+                      "timestamp": "2026-08-01T22:14:38+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p152jn0",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p1558ov",
+          "author": "reddit_user_68be887b2211",
+          "author_karma": 0,
+          "content": "F/8 is not supposed to have throughout sharpness at almost any focal length, you're looking for something f/16 and above for that ",
+          "timestamp": "2026-08-01T21:32:35+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p156v8k",
+          "author": "reddit_user_f8164d9fc8c0",
+          "author_karma": 0,
+          "content": "Why was this shot taken to begin with?",
+          "timestamp": "2026-08-01T21:41:06+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p18sy5q",
+              "author": "reddit_user_38fa4a497065",
+              "author_karma": 0,
+              "content": "I don't know how to answer this",
+              "timestamp": "2026-08-02T12:35:51+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p156v8k",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1a88nv",
+                  "author": "reddit_user_f8164d9fc8c0",
+                  "author_karma": 0,
+                  "content": "Was this a test shot or were you choosing this composition?",
+                  "timestamp": "2026-08-02T16:52:06+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p18sy5q",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1bz02c",
+                      "author": "reddit_user_38fa4a497065",
+                      "author_karma": 0,
+                      "content": "The latter. Was hoping to get someone walking past the crane ",
+                      "timestamp": "2026-08-02T21:42:06+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1a88nv",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p15704h",
+          "author": "reddit_user_6806b05e8493",
+          "author_karma": 0,
+          "content": "As others have said, f/8 will never give you sharpness front to back like you're trying to get hereb and you've made it even harder by choosing the crane as your focal point. \n\nStop your aperture down much further, as much as you can while avoiding motion blur, and try focusing about a third of the way into your from. That's a good rule of thumb we were taught in college.\n\nIf you've got a tripod and time, then you can setup your photo and work out the hyperfocal distance and get a dof calculator out but who can be arsed really? ",
+          "timestamp": "2026-08-01T21:41:47+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p18t80a",
+              "author": "reddit_user_38fa4a497065",
+              "author_karma": 0,
+              "content": "Thank you very much. I've probably gotten confused about focussing a third of the way in as I was aiming to focus two thirds of the way in. But yes, also stopping aperture down!",
+              "timestamp": "2026-08-02T12:37:30+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p15704h",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p159ij3",
+          "author": "reddit_user_e6144dafb53f",
+          "author_karma": 0,
+          "content": "I didn't think I'd see Belfast here lol. I studied at Queen's for three years. Had alot of memories and I thought I hated it there but now looking back I miss it.",
+          "timestamp": "2026-08-01T21:55:03+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p18t1mz",
+              "author": "reddit_user_38fa4a497065",
+              "author_karma": 0,
+              "content": "It's ok, I hate it too",
+              "timestamp": "2026-08-02T12:36:27+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p159ij3",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p15asad",
+          "author": "reddit_user_3c4dd5a47959",
+          "author_karma": 0,
+          "content": "out of focus",
+          "timestamp": "2026-08-01T22:01:51+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p15n9vs",
+          "author": "reddit_user_a0a2df8ccf14",
+          "author_karma": 0,
+          "content": "Did you shoot this on a warm day? Because IMO the crane isn't perfectly sharp either. Looks a bit like heat haze to me.",
+          "timestamp": "2026-08-01T23:10:41+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p18u5oj",
+              "author": "reddit_user_38fa4a497065",
+              "author_karma": 0,
+              "content": "It was around 6am when it wasn't hot. Maybe I just havent focussed well on anything!",
+              "timestamp": "2026-08-02T12:43:07+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p15n9vs",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p15r8kr",
+          "author": "reddit_user_a4bd8e9358bf",
+          "author_karma": 0,
+          "content": "Learn about hyperfocal distance to answer your question.",
+          "timestamp": "2026-08-01T23:33:09+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run015_post01_seed076",
+      "post_slot": 1,
+      "seed_index": 76,
+      "source_raw_post_id": "1vcyk8b",
+      "source_product_dir": "photography",
+      "source_file": "https://www.reddit.com/r/photography/comments/1vcyk8b/how_to_photograph_solar_eclipse/",
+      "post_type": "Technique",
+      "title": "how to photograph solar eclipse",
+      "author": "reddit_user_4349d3bfee00",
+      "author_karma": 0,
+      "content": "how to photograph solar eclipse\n\nHi,\n\n  \ni'm looking for any tips about how to photograph solar eclipse.\n\nI have APS-C DSLR (canon eos 90d) together with EF 70-200 L 2/8. Maybe not long enough, but i don't have any longer lenses :)\n\nI'm planning to use the variable ND filter. Should i also use UV filter? CPL?\n\nAny technical or compositional tips about what should i do or what should i try to avoid?\n\n  \nThanks",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p14yuso",
+          "author": "reddit_user_6116349a170e",
+          "author_karma": 0,
+          "content": "You will need more than just a variable ND.\n\n[https://www.reddit.com/r/photography/comments/1vaxsi3/how\\_to\\_photograph\\_an\\_eclipse\\_without\\_something/](https://www.reddit.com/r/photography/comments/1vaxsi3/how_to_photograph_an_eclipse_without_something/)",
+          "timestamp": "2026-08-01T20:59:42+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p14zlhw",
+              "author": "reddit_user_303be8f378a7",
+              "author_karma": 0,
+              "content": "thanks",
+              "timestamp": "2026-08-01T21:03:31+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p14yuso",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "post_id": "real_run015_post02_seed077",
+      "post_slot": 2,
+      "seed_index": 77,
+      "source_raw_post_id": "1vczp28",
+      "source_product_dir": "AskPhotography",
+      "source_file": "https://www.reddit.com/r/AskPhotography/comments/1vczp28/is_this_good_for_a_13_year_old_photographer/",
+      "post_type": "Technical Help/Camera Settings",
+      "title": "Is this good for a 13 year old photographer?",
+      "author": "reddit_user_4349d3bfee00",
+      "author_karma": 0,
+      "content": "Is this good for a 13 year old photographer?",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p1584al",
+          "author": "reddit_user_e05746ef45ee",
+          "author_karma": 0,
+          "content": "This is great. But always remember your photo is your photo in the end, always be proud of your photography because the only person you should worry about pleasing is yourself. Peptalk aside this is a great photo ",
+          "timestamp": "2026-08-01T21:47:37+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p158c55",
+              "author": "reddit_user_aa7288ebbb91",
+              "author_karma": 0,
+              "content": "Yea this for sure. Be open to technical input/tips as you learn but always find pride and joy from within! Photography is subjective, as is all art. ",
+              "timestamp": "2026-08-01T21:48:47+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1584al",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1586fc",
+          "author": "reddit_user_3b8e583e8f33",
+          "author_karma": 0,
+          "content": "Really rad man, looks like a collage of pics layered. Nice shot!",
+          "timestamp": "2026-08-01T21:47:56+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1588er",
+          "author": "reddit_user_cf82f904d8e3",
+          "author_karma": 0,
+          "content": "So cool ",
+          "timestamp": "2026-08-01T21:48:14+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p158ha2",
+          "author": "reddit_user_b0c5dd92693d",
+          "author_karma": 0,
+          "content": "First time I see a partial piss filter",
+          "timestamp": "2026-08-01T21:49:33+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p159259",
+          "author": "reddit_user_bc77299be09a",
+          "author_karma": 0,
+          "content": "Hell yeah. Awesome definition! ",
+          "timestamp": "2026-08-01T21:52:38+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p15a6nd",
+          "author": "reddit_user_ee31764e35b8",
+          "author_karma": 0,
+          "content": "Not to say you don't have any skill yet, but this image doesn't demonstrate it. \n\nLet's see 3-4 shots of you composing something, *anything*, that doesn't fit the category of \"JC take a photo of the sky it's so pretty!\"",
+          "timestamp": "2026-08-01T21:58:37+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p15al8m",
+          "author": "reddit_user_3c4dd5a47959",
+          "author_karma": 0,
+          "content": "it's visually interesting but i'm not sure age has much to do with it",
+          "timestamp": "2026-08-01T22:00:48+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p15ayy9",
+          "author": "reddit_user_46c68c5be5dc",
+          "author_karma": 0,
+          "content": "I mean, if you were 12 when you took this I would have been impressed...\n\nThat's sarcasm.  Yes, I like your picture.",
+          "timestamp": "2026-08-01T22:02:51+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p15b880",
+          "author": "reddit_user_6c1d60a0af4c",
+          "author_karma": 0,
+          "content": "Please note that this sub does not allow requests seeking critique or feedback on photos and edits. For those posts, please head over to r/photocritique or r/postprocessing. Critique for prints, framing/matting. publishing and competition selections are also not allowed. Thanks.",
+          "timestamp": "2026-08-01T22:04:14+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run015_post03_seed078",
+      "post_slot": 3,
+      "seed_index": 78,
+      "source_raw_post_id": "1vczsyd",
+      "source_product_dir": "AskPhotography",
+      "source_file": "https://www.reddit.com/r/AskPhotography/comments/1vczsyd/what_is_the_cheapest_laptop_i_could_get_used_to/",
+      "post_type": "Editing/Post Processing",
+      "title": "What is the cheapest laptop I could get used to do professional photo editing?",
+      "author": "reddit_user_4349d3bfee00",
+      "author_karma": 0,
+      "content": "What is the cheapest laptop I could get used to do professional photo editing?\n\nMy 2013 MacBook Pro is dead, need something newer with a good screen, over 16gb ram, a decent GPU and built quality that can survive two kids in the house who will probably step on it at some point. I don’t care if it’s a few years old but I would love to spend under $2k, preferably under $1k if possible. Any suggestions for new or used laptops I should be hunting would be greatly appreciated thanks!",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p158wbj",
+          "author": "reddit_user_cd346337ddce",
+          "author_karma": 0,
+          "content": "Any m series mac with 16 gigs of ram. ",
+          "timestamp": "2026-08-01T21:51:45+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p15cx7e",
+          "author": "reddit_user_4a392ef1a8cd",
+          "author_karma": 0,
+          "content": "My 2014 i5 13\" MBP with 8GB of RAM still works. I probably won't use it for something big, but it still works for smaller shoots as long as it's used \"appropriately\" (no massive imports and heavy RAW processing and PS work of large compatible files).  \n  \nI do food photography for restaurants, food trucks, cafes, and working kitchens. Similar with your kids in the house situation - If I were to do a \"simple shoot\" in a sus area (a sidewalk where someone can easily grab  my laptop and run away with it), I'd have no issues using this. ",
+          "timestamp": "2026-08-01T22:13:29+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p15mhjo",
+          "author": "reddit_user_0c98c171a268",
+          "author_karma": 0,
+          "content": "I would try to grab a refurbished m4 MacBook Air with at least 512gb of storage. Apples M chips are no joke and can do powerful things with much less power than the older Intel based laptops. Look up some reviews. ",
+          "timestamp": "2026-08-01T23:06:13+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p15ozer",
+          "author": "reddit_user_f4928c861958",
+          "author_karma": 0,
+          "content": "get a M1 machine with 16gb ram ",
+          "timestamp": "2026-08-01T23:20:20+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run015_post04_seed079",
+      "post_slot": 4,
+      "seed_index": 79,
+      "source_raw_post_id": "1vd0fsm",
+      "source_product_dir": "SonyAlpha",
+      "source_file": "https://www.reddit.com/r/SonyAlpha/comments/1vd0fsm/i_just_bought_a_a7cii_50mm_f12_did_i_make_a/",
+      "post_type": "Critique Wanted",
+      "title": "I just bought a a7cii + 50mm f/1.2 - did I make a mistake?",
+      "author": "reddit_user_4349d3bfee00",
+      "author_karma": 0,
+      "content": "I just bought a a7cii + 50mm f/1.2 - did I make a mistake?\n\nSo I’ve come from a variety of brands. Started with a Nikon d5000 in the early 2000s then went to Olympus then to Fuji xt3. I enjoyed landscape and Astro photography. My goal was always Sony but the price was out of reach.   \nI’ve finally decided to treat myself. I like portability and the a7cii seemed to fit that bill. I don’t carry a bunch of lenses when I travel usually because my bag is half full of kids snacks etc. I remember the 50mm and 35mm on my Fuji were my favourite focal lengths (when not doing landscape and Astro) so I decided to go with 50 again as a start. There was a deal for $400 cash back which brought the f/1.2 within $20 of the f/1.4 so I figured solid!  \nI’ve just clicked buy (in Australia) and now I’m doing that usual thing where I second guess after getting excited and diving more into reviews and seeing the usual “should you buy in 2026”.   \nSomeone with this setup or similar please tell me it’s worked out for you!  \nI’m taking more and more photos of the kids these days but they’re getting into bushwalking and so again something small and portable is still my goal.",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p15ebkz",
+          "author": "reddit_user_355f32406458",
+          "author_karma": 0,
+          "content": "A7cii is an incredible camera and will be competitive for at least a few years, but usable for at least 10. I personally like 35mm more than 50. I use the 35 1.4. ",
+          "timestamp": "2026-08-01T22:21:08+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p15evob",
+          "author": "reddit_user_1d32aa6813db",
+          "author_karma": 0,
+          "content": "I've owned and used the 24mm 1.4 gm, 35mm 1.4 gm and 50mm 1.4 gm as well as the 50mm 1.2 gm which is the only one out of the four i currently own, because it's my absolute favorite. When you want the absolute best and unique images, I think it's unbeatable. Compact no, but you can complement it with something that is actually small like the 40mm 2.5 G lens, instead of having something in between sizes. The 50mm 1.2 gm is not that big when you get used to it though. I prefer the Sony A7V over the A7CII, but it's still an absolute beast having owned that one prior. You can't really go wrong with it. I've heard tons of people selling their other lenses in favor of the 50mm 1.2 gm so enjoy! 👏",
+          "timestamp": "2026-08-01T22:24:07+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    }
+  ]
+}

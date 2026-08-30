@@ -1,0 +1,295 @@
+{
+  "meta": {
+    "product_category": "cellphone",
+    "baseline": "real_reddit_reference",
+    "run_id": "run_015_sampled_reddit"
+  },
+  "posts": [
+    {
+      "post_id": "real_run015_post00_seed075",
+      "post_slot": 0,
+      "seed_index": 75,
+      "source_raw_post_id": "1vd74qe",
+      "source_product_dir": "iphone",
+      "source_file": "https://www.reddit.com/r/iphone/comments/1vd74qe/replaced_internal_says_the_seller_but_theres_no/",
+      "post_type": "Discussion",
+      "title": "Replaced internal says the seller but there’s no parts and service??",
+      "author": "reddit_user_0fe413d0e398",
+      "author_karma": 0,
+      "content": "Replaced internal says the seller but there’s no parts and service??\n\nI bought this iphone 12 mini in fb marketplace, after checking the imei and serial number everything checks up with the right color and other information but the seller says that some internals are replaced but with a genuine one . \n\nalthough the parts and service isnt showing up in my settings? Did they do something so the parts and service isnt showing up??",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p16v06a",
+          "author": "reddit_user_3ee8c7f19bd5",
+          "author_karma": 0,
+          "content": "Entirely depends what they replaced. Not every part is serialised. ",
+          "timestamp": "2026-08-02T03:35:46+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p16v24p",
+              "author": "reddit_user_e49657710cb2",
+              "author_karma": 0,
+              "content": "the battery is said to be replaced",
+              "timestamp": "2026-08-02T03:36:07+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p16v06a",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p16v5lf",
+              "author": "reddit_user_e49657710cb2",
+              "author_karma": 0,
+              "content": "Even if you reset the iphone the parts and service would still appear right?",
+              "timestamp": "2026-08-02T03:36:46+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p16v06a",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p16vjce",
+                  "author": "reddit_user_3ee8c7f19bd5",
+                  "author_karma": 0,
+                  "content": "If a serialised part was changed, yes. ",
+                  "timestamp": "2026-08-02T03:39:21+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p16v5lf",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p172yh8",
+          "author": "reddit_user_c03645f0de65",
+          "author_karma": 0,
+          "content": "Regardless, you could probably ask Apple Support for an MRI. Pretty sure it can also be done for you remotely from the Support app. It would essentially blip anything phony.",
+          "timestamp": "2026-08-02T04:29:40+00:00",
+          "likes": 3,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1746fd",
+              "author": "reddit_user_e49657710cb2",
+              "author_karma": 0,
+              "content": "Well,  the support app doesnt say anything suspicious, I even download rhe 3utools, checked this iphone and everything seems okay, except for the battery\n\nThe battery is 100%  replaced, 3utools says no cycle count and only been charged twice, although I still wonder how the seller trick the phone into not giving the parts and service option on settings. The phone is usable anyways, can last for 3-4 and half hours SOT in ios 26. ",
+              "timestamp": "2026-08-02T04:38:29+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p172yh8",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p175wyz",
+                  "author": "reddit_user_c03645f0de65",
+                  "author_karma": 0,
+                  "content": "If nothing came up in the Apple support scan you should be golden. In my experience most certified shops should turn you away from a repair if a scan shows part warnings (screen was a common one from what I saw.) Apple however, I’m not sure how they handle case by case cases. They might bend the rules if you’re nice enough.",
+                  "timestamp": "2026-08-02T04:51:04+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1746fd",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p18goz7",
+          "author": "reddit_user_44b2c10086d2",
+          "author_karma": 0,
+          "content": "Puede haber cambiado batería y pantalla sin mensaje ",
+          "timestamp": "2026-08-02T11:12:16+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p18n9vt",
+          "author": "reddit_user_505c80c283c4",
+          "author_karma": 0,
+          "content": "try to boot diagnostics mode and see what it says there",
+          "timestamp": "2026-08-02T11:59:38+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run015_post01_seed076",
+      "post_slot": 1,
+      "seed_index": 76,
+      "source_raw_post_id": "1vd7wzn",
+      "source_product_dir": "iphone",
+      "source_file": "https://www.reddit.com/r/iphone/comments/1vd7wzn/by_the_sea_side_alarm_so_bad/",
+      "post_type": "Discussion",
+      "title": "by the sea side alarm so bad",
+      "author": "reddit_user_0fe413d0e398",
+      "author_karma": 0,
+      "content": "by the sea side alarm so bad\n\nIt’s super annoying and scary i used the alarm and I got a nightmare where I was in a dark room and the alarm kept going off 0/10 alarm.",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p1716ry",
+          "author": "reddit_user_6776ccac4357",
+          "author_karma": 0,
+          "content": "Of course we have our own preferences, but it turns out it is my favorite ringtone to use for either alarms or timers. I think it’s because of how bouncy the tune is. Also I feel the last couple measures of the tune works well with the “time’s up” aspect of the timer.",
+          "timestamp": "2026-08-02T04:17:12+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p172hs6",
+          "author": "reddit_user_a67aa3b79b6d",
+          "author_karma": 0,
+          "content": "Ok",
+          "timestamp": "2026-08-02T04:26:23+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p172r07",
+          "author": "reddit_user_83d55e201abb",
+          "author_karma": 0,
+          "content": "😂",
+          "timestamp": "2026-08-02T04:28:11+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p17d9rg",
+          "author": "reddit_user_a5a30234c8f8",
+          "author_karma": 0,
+          "content": "Must foster a relevant discussion",
+          "timestamp": "2026-08-02T05:47:06+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run015_post02_seed077",
+      "post_slot": 2,
+      "seed_index": 77,
+      "source_raw_post_id": "1vd90mm",
+      "source_product_dir": "Android",
+      "source_file": "https://www.reddit.com/r/Android/comments/1vd90mm/does_anyone_else_miss_when_google_app_icons_were/",
+      "post_type": "image",
+      "title": "Does Anyone Else Miss When Google App Icons Were Actually Different?",
+      "author": "reddit_user_0fe413d0e398",
+      "author_karma": 0,
+      "content": "Does Anyone Else Miss When Google App Icons Were Actually Different?\n\n[removed]",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p178bz0",
+          "author": "reddit_user_65884126434e",
+          "author_karma": 0,
+          "content": "Sorry [REDDIT_USER], but your submission was removed as you included a post body within your submission. The body text is often used to insert bias/opinion which violates Rule 6 in direct link submissions. Feel free to repost without the post body.\n\n\n*I am a bot, and this action was performed automatically. Please [contact the moderators of this subreddit](/message/compose/?to=/r/Android) if you have any questions or concerns.*",
+          "timestamp": "2026-08-02T05:08:59+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run015_post03_seed078",
+      "post_slot": 3,
+      "seed_index": 78,
+      "source_raw_post_id": "1vd9fhu",
+      "source_product_dir": "iphone",
+      "source_file": "https://www.reddit.com/r/iphone/comments/1vd9fhu/should_i_update_my_iphone_to_266_guys17pm/",
+      "post_type": "Discussion",
+      "title": "Should I update my iphone to 26.6 guys?(17PM)",
+      "author": "reddit_user_0fe413d0e398",
+      "author_karma": 0,
+      "content": "Should I update my iphone to 26.6 guys?(17PM)",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p17cy6q",
+          "author": "reddit_user_a5a30234c8f8",
+          "author_karma": 0,
+          "content": "**Frequently asked question:** Your submission has been deemed as a question very frequently asked that often does not have a change in answer. Please use our search bar",
+          "timestamp": "2026-08-02T05:44:34+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run015_post04_seed079",
+      "post_slot": 4,
+      "seed_index": 79,
+      "source_raw_post_id": "1vdaj7l",
+      "source_product_dir": "Android",
+      "source_file": "https://www.reddit.com/r/Android/comments/1vdaj7l/i_finally_released_my_first_game_brick_blast/",
+      "post_type": "image",
+      "title": "I finally released my first game – Brick Blast! Looking for feedback",
+      "author": "reddit_user_0fe413d0e398",
+      "author_karma": 0,
+      "content": "I finally released my first game – Brick Blast! Looking for feedback\n\n[removed]",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p17iwbz",
+          "author": "reddit_user_65884126434e",
+          "author_karma": 0,
+          "content": "Sorry [REDDIT_USER], but your submission was removed as you included a post body within your submission. The body text is often used to insert bias/opinion which violates Rule 6 in direct link submissions. Feel free to repost without the post body.\n\n\n*I am a bot, and this action was performed automatically. Please [contact the moderators of this subreddit](/message/compose/?to=/r/Android) if you have any questions or concerns.*",
+          "timestamp": "2026-08-02T06:31:52+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1213 @@
+{
+  "meta": {
+    "product_category": "camera",
+    "baseline": "real_reddit_reference",
+    "run_id": "run_005_sampled_reddit"
+  },
+  "posts": [
+    {
+      "post_id": "real_run005_post00_seed025",
+      "post_slot": 0,
+      "seed_index": 25,
+      "source_raw_post_id": "1vaxsi3",
+      "source_product_dir": "photography",
+      "source_file": "https://www.reddit.com/r/photography/comments/1vaxsi3/how_to_photograph_an_eclipse_without_something/",
+      "post_type": "Technique",
+      "title": "How to Photograph an Eclipse (Without Something Going Wrong)",
+      "author": "reddit_user_4349d3bfee00",
+      "author_karma": 0,
+      "content": "How to Photograph an Eclipse (Without Something Going Wrong)",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p0pp2ek",
+          "author": "reddit_user_7b643249031a",
+          "author_karma": 0,
+          "content": "Good info here without getting into overwhelming technical nitty gritty.\n\n  \nI was lucky enough to be in the totality path for the April 2024 eclipse. I had my Canon R6 and Sigma 150-600mm lens. I didn't have a solar filter so I didn't take any shots during partial, and once totality hit, I took a bunch of shots at different shutter speeds lol. This one was at 600mm, aperture wide open at f/6.3 and 1/15s shutter.\n\nhttps://preview.redd.it/25z2k1s0negh1.jpeg?width=4026&format=pjpg&auto=webp&s=40fb0af8e0264be1da911a0fdab5790dd3e65146\n\n",
+          "timestamp": "2026-07-30T17:48:30+00:00",
+          "likes": 23,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0pp5lr",
+              "author": "reddit_user_7b643249031a",
+              "author_karma": 0,
+              "content": "And this one was 1/250s, everything else the same.\n\nhttps://preview.redd.it/za6jxvc5negh1.jpeg?width=2717&format=pjpg&auto=webp&s=4a9eaa3f3a45a948b1089296160303ec6833f005\n\n",
+              "timestamp": "2026-07-30T17:48:53+00:00",
+              "likes": 6,
+              "dislikes": 0,
+              "parent_comment_id": "p0pp2ek",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p0qanjz",
+                  "author": "reddit_user_436cd3f34d00",
+                  "author_karma": 0,
+                  "content": "Iso?",
+                  "timestamp": "2026-07-30T19:20:25+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p0pp5lr",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p0qbz0e",
+                      "author": "reddit_user_7b643249031a",
+                      "author_karma": 0,
+                      "content": "400 for both, forgot to include that",
+                      "timestamp": "2026-07-30T19:26:10+00:00",
+                      "likes": 2,
+                      "dislikes": 0,
+                      "parent_comment_id": "p0qanjz",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                },
+                {
+                  "comment_id": "p0qxkd8",
+                  "author": "reddit_user_552a8f83857d",
+                  "author_karma": 0,
+                  "content": "Jesus, can you imagine how large those coronal mass ejections are??",
+                  "timestamp": "2026-07-30T20:59:24+00:00",
+                  "likes": 2,
+                  "dislikes": 0,
+                  "parent_comment_id": "p0pp5lr",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p0qycw6",
+                      "author": "reddit_user_301bf74da6de",
+                      "author_karma": 0,
+                      "content": "Miles and miles large!",
+                      "timestamp": "2026-07-30T21:02:57+00:00",
+                      "likes": 2,
+                      "dislikes": 0,
+                      "parent_comment_id": "p0qxkd8",
+                      "depth": 3,
+                      "replies": []
+                    },
+                    {
+                      "comment_id": "p0rtea1",
+                      "author": "reddit_user_7b643249031a",
+                      "author_karma": 0,
+                      "content": "b i g",
+                      "timestamp": "2026-07-30T23:35:50+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p0qxkd8",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                },
+                {
+                  "comment_id": "p0rss3g",
+                  "author": "reddit_user_4c5172043d36",
+                  "author_karma": 0,
+                  "content": "Love that you can see the solar flares on this one. \n\nWas not expecting to see those with the naked eye.",
+                  "timestamp": "2026-07-30T23:32:37+00:00",
+                  "likes": 2,
+                  "dislikes": 0,
+                  "parent_comment_id": "p0pp5lr",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            },
+            {
+              "comment_id": "p0q4kt3",
+              "author": "reddit_user_141d213a811c",
+              "author_karma": 0,
+              "content": "Thanks for posting the settings. \n\nI look forward to my chances being ruined by clouds. ",
+              "timestamp": "2026-07-30T18:54:09+00:00",
+              "likes": 7,
+              "dislikes": 0,
+              "parent_comment_id": "p0pp2ek",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p0q690t",
+                  "author": "reddit_user_cafdbc52c9a9",
+                  "author_karma": 0,
+                  "content": "You can use a website like https://www.windy.com to plan for a cloud free viewing location.",
+                  "timestamp": "2026-07-30T19:01:18+00:00",
+                  "likes": 3,
+                  "dislikes": 0,
+                  "parent_comment_id": "p0q4kt3",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p0q7gc8",
+                      "author": "reddit_user_141d213a811c",
+                      "author_karma": 0,
+                      "content": "I'm well aware of that. \n\nI'm also aware that there's usually 70-80% cloud coverage in the area I'll be throughout August. \n\nMost of the viewing area is over the sea, so options are somewhat limited. ",
+                      "timestamp": "2026-07-30T19:06:31+00:00",
+                      "likes": 2,
+                      "dislikes": 0,
+                      "parent_comment_id": "p0q690t",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                },
+                {
+                  "comment_id": "p0x204g",
+                  "author": "reddit_user_94ceacaf4465",
+                  "author_karma": 0,
+                  "content": "I was in totality and drove another 6 hours to avoid clouds, only to be told right around the eclipse the clouds parted and everyone had a perfect view where I started. I was a little angry that 6 hour drive back home lol",
+                  "timestamp": "2026-07-31T17:47:43+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p0q4kt3",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p0x2alc",
+                      "author": "reddit_user_141d213a811c",
+                      "author_karma": 0,
+                      "content": "Ouch. I'm looking at a 3-4 hour drive to the best location. \n\n1-2 hour drive to an ok location with less time in totality. \n\nI'll have to judge the forecast on the day and decide which option is worth it. ",
+                      "timestamp": "2026-07-31T17:48:58+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p0x204g",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "p0x6vvb",
+                          "author": "reddit_user_94ceacaf4465",
+                          "author_karma": 0,
+                          "content": "Definitely chose more totality if possible, it's such a rare thing to experience that it's worth it",
+                          "timestamp": "2026-07-31T18:08:42+00:00",
+                          "likes": 2,
+                          "dislikes": 0,
+                          "parent_comment_id": "p0x2alc",
+                          "depth": 4,
+                          "replies": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "comment_id": "p0s12pi",
+              "author": "reddit_user_d3a2e8f01048",
+              "author_karma": 0,
+              "content": "Is this cropped from 600mm? Or was this the full frame on your r6? \n\nI am debating if I should get a 1.4xTC for my rf 100-500 on my r5ii",
+              "timestamp": "2026-07-31T00:16:39+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p0pp2ek",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p0s1kbf",
+                  "author": "reddit_user_33893a9b53fb",
+                  "author_karma": 0,
+                  "content": "The shot in the article is my eclipse photo from 2024. It was 500mm on an R5. I wouldn't recommend a teleconverter unless you really want to lose the outer Corona and focus just on stuff near the surface. Especially on an R5ii, you will likely have plenty of pixels to crop in to for the inner detail. ",
+                  "timestamp": "2026-07-31T00:19:20+00:00",
+                  "likes": 2,
+                  "dislikes": 0,
+                  "parent_comment_id": "p0s12pi",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p0s2u30",
+                      "author": "reddit_user_d3a2e8f01048",
+                      "author_karma": 0,
+                      "content": "What do you mean by outer and inner detail? In my country we are only getting partial eclipse up to 90%. I won't be seeing the totality. ",
+                      "timestamp": "2026-07-31T00:26:18+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p0s1kbf",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "p0s5cha",
+                          "author": "reddit_user_33893a9b53fb",
+                          "author_karma": 0,
+                          "content": "Ah my mistake. This is cropped in on the full disk.  If you *have* a TC, by all means throw it on. But the features you're likely to resolve on the sun are pretty big, and 500mm is already more than enough to accurately capture the partial eclipse.\n\nhttps://preview.redd.it/vk6ix25ioggh1.jpeg?width=3840&format=pjpg&auto=webp&s=76aeb4ddd288a7d9d60b6665b036a720b4f8d220",
+                          "timestamp": "2026-07-31T00:40:01+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "p0s2u30",
+                          "depth": 4,
+                          "replies": []
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "comment_id": "p0sby2r",
+                  "author": "reddit_user_7b643249031a",
+                  "author_karma": 0,
+                  "content": "It's cropped, not hugely though. I can check the raw when I get home if you want more specifics. That said I think 500mm will be plenty on its own.",
+                  "timestamp": "2026-07-31T01:16:26+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p0s12pi",
+                  "depth": 2,
+                  "replies": []
+                },
+                {
+                  "comment_id": "p0w3nhr",
+                  "author": "reddit_user_fd6283d5a552",
+                  "author_karma": 0,
+                  "content": "Don't forget that the sun moves! Faster than you think. 500mm and 1.4x TC means that your field of view is 3 degrees wide and 2 degrees tall. Sun is about half a degree wide. That means the sun will only be fully in frame for a few minutes without repositioning. Just something to remember, logistically. ",
+                  "timestamp": "2026-07-31T15:20:43+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p0s12pi",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p0wac52",
+                      "author": "reddit_user_d3a2e8f01048",
+                      "author_karma": 0,
+                      "content": "Noted. I am planing to have one r5ii do video for the 2ish hours which will be at 320mm on a tripod. I'lld reposition it every so often. The other r5ii and rf 100-500 + 1.4xTC will be handheld for photos, so I should be fine with the moving sun. Thanks for the heads up tho. ",
+                      "timestamp": "2026-07-31T15:49:30+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p0w3nhr",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p0ueqhh",
+          "author": "reddit_user_1b840283cc03",
+          "author_karma": 0,
+          "content": "Uncropped, unedited jpeg. Sony a1 600 f4 2x tc. ( Resulting in f8) 1/1600\n\nhttps://preview.redd.it/0cz2ljfxfjgh1.jpeg?width=8640&format=pjpg&auto=webp&s=d705eb3b813a77fb2a2032034cae31c3663843b0",
+          "timestamp": "2026-07-31T09:57:17+00:00",
+          "likes": 5,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0z29d2",
+          "author": "reddit_user_f5b153cabf81",
+          "author_karma": 0,
+          "content": "https://preview.redd.it/8kq66rfdgngh1.jpeg?width=1000&format=pjpg&auto=webp&s=3cbfc7fce80cb3aeb9c37d90e86cef9c9a225fe2\n\nI genuinely don't remember my camera settings.  I was messing around with several in the small window of time.  But this was on a canon t6 rebel and the 75-300mm kit lens.",
+          "timestamp": "2026-07-31T23:28:10+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p18qvyq",
+          "author": "reddit_user_4c6bbbf02140",
+          "author_karma": 0,
+          "content": "One planning thing I’d add: a long-range cloud percentage is more of a climate hint than a forecast. I’d pick a couple of legal, reachable spots with an open view toward the eclipse direction, then compare the short-range forecast closer to the day before deciding whether a long drive is worth it. I built SunEclipses for checking the timing, altitude and azimuth at an exact pin (disclosure: it’s mine): [https://suneclipses.com/planner](https://suneclipses.com/planner) — useful for the geometry, but I’d still use a weather model and check access separately.",
+          "timestamp": "2026-08-02T12:23:08+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run005_post01_seed026",
+      "post_slot": 1,
+      "seed_index": 26,
+      "source_raw_post_id": "1vb4hsu",
+      "source_product_dir": "photography",
+      "source_file": "https://www.reddit.com/r/photography/comments/1vb4hsu/selling_photos/",
+      "post_type": "Technique",
+      "title": "Selling photos",
+      "author": "reddit_user_4349d3bfee00",
+      "author_karma": 0,
+      "content": "Selling photos\n\nHi I've recently been invited into a gallery and was told I'd be able to sell photos but what I'm confused on is how do I go about that? I have many photos I can sell but to sell photos of people I'm not certain how that goes. Is there a type of shooting I should focus on? I feel I've only ever shot for editorials if that makes sense. Can anyone point me to a good photographer to look at",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p0qkzk2",
+          "author": "reddit_user_cdffaf067a57",
+          "author_karma": 0,
+          "content": "How were you invited to the gallery? What kind of gallery is it? what work do they generally sell? I would imagine their staff can give you the best insight based on their clientele because they're going to want your stuff to move.",
+          "timestamp": "2026-07-30T20:04:56+00:00",
+          "likes": 13,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0quw6f",
+              "author": "reddit_user_858d7af66d0b",
+              "author_karma": 0,
+              "content": "I guess it's an art show to be more specific but they know I'm a photographer and they contacted me to display my work and I was told they don't take any of the profits I'm just uncertain what to display/sell",
+              "timestamp": "2026-07-30T20:47:39+00:00",
+              "likes": 0,
+              "dislikes": 0,
+              "parent_comment_id": "p0qkzk2",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p0rfri4",
+                  "author": "reddit_user_2b80ddfad7cb",
+                  "author_karma": 0,
+                  "content": "How much are they charging you for this 'opportunity'?   Because this smells pretty scammy to me. ",
+                  "timestamp": "2026-07-30T22:25:29+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p0quw6f",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p0rme1u",
+                      "author": "reddit_user_858d7af66d0b",
+                      "author_karma": 0,
+                      "content": "It's free from my understanding",
+                      "timestamp": "2026-07-30T22:59:05+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p0rfri4",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p0qo8f7",
+          "author": "reddit_user_bab65748832c",
+          "author_karma": 0,
+          "content": "Something smells funky OP. Sum sheet mad sus.\n\nThese are not typical questions someone who’s been sought out to display work in a gallery would be asking……is the gallery asking you to pay anything to display your work?",
+          "timestamp": "2026-07-30T20:18:53+00:00",
+          "likes": 6,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0quhul",
+              "author": "reddit_user_858d7af66d0b",
+              "author_karma": 0,
+              "content": "Not at all it's an event and they're tryna get some locals in. There's a theme I've been told ",
+              "timestamp": "2026-07-30T20:45:56+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p0qo8f7",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p0qv6hj",
+                  "author": "reddit_user_bab65748832c",
+                  "author_karma": 0,
+                  "content": "You’ve been told there’s a theme but not what the theme is?",
+                  "timestamp": "2026-07-30T20:48:54+00:00",
+                  "likes": 4,
+                  "dislikes": 0,
+                  "parent_comment_id": "p0quhul",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p0rm9qo",
+                      "author": "[deleted]",
+                      "author_karma": 0,
+                      "content": "[deleted]",
+                      "timestamp": "2026-07-30T22:58:28+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p0qv6hj",
+                      "depth": 3,
+                      "replies": []
+                    },
+                    {
+                      "comment_id": "p0rmcou",
+                      "author": "reddit_user_858d7af66d0b",
+                      "author_karma": 0,
+                      "content": "Theme is shades of brown ",
+                      "timestamp": "2026-07-30T22:58:54+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p0qv6hj",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "post_id": "real_run005_post02_seed027",
+      "post_slot": 2,
+      "seed_index": 27,
+      "source_raw_post_id": "1vb54bq",
+      "source_product_dir": "photography",
+      "source_file": "https://www.reddit.com/r/photography/comments/1vb54bq/how_did_you_get_your_first_clients_as_a/",
+      "post_type": "Business",
+      "title": "How did you get your first clients as a commercial photographer?",
+      "author": "reddit_user_4349d3bfee00",
+      "author_karma": 0,
+      "content": "How did you get your first clients as a commercial photographer?\n\nI'm a 26-year-old commercial photographer. I studied photography for three years at an academy, and during that time I worked as a print assistant for a sports photographer for about three years on weekends, mainly covering sporting events. I also assisted in two commercial studios: one for a month and another for about a year.\n\nI eventually decided to go freelance after I started getting a few clients almost by chance. Unfortunately, I ended up hating the type of work I was doing, so I quit, moved back to my hometown, and decided to start over.\n\nI now live about 20 minutes from a small city (around 130,000 inhabitants) and about an hour from a larger city (around 400,000 inhabitants).\n\nI specialize in commercial photography, particularly jewelry, and I've built a small portfolio over the years that I'm still expanding. I don't think my photography is the problem. What I'm struggling with is finding clients.\n\nI've contacted pretty much every communication and marketing agency in both cities. Some kept my contact information, but nothing came from it. I know it's summer, so that probably doesn't help. I've also reached out to many jewelry stores, since jewelry is my specialization, but I haven't had any success so far.\n\nI've been visiting businesses in person, handing out business cards, and I'm considering approaching larger manufacturing companies in the area directly. I already have a professional website and a business email, but I feel like I'm missing something.\n\nFor those of you who make a living from commercial photography: what would you do if you had to start from scratch in my situation? How did you get your first consistent clients? Is there a strategy that worked particularly well for you?\n\nI'd really appreciate any advice or experiences you're willing to share.",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p0qrgao",
+          "author": "reddit_user_3206dbc6f90d",
+          "author_karma": 0,
+          "content": "Word of mouth and hard work.  I used to spend much more time getting clients than actually taking pictures.",
+          "timestamp": "2026-07-30T20:32:40+00:00",
+          "likes": 15,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0qt5z3",
+              "author": "reddit_user_f6deb49a522b",
+              "author_karma": 0,
+              "content": "the jewelry niche is tricky, most stores already have their supplier shots and dont see the value in custom work until you show them what theyre missing\n\n  \nwalk in with a tablet not a business card, show them a side by side of a typical catalog shot versus your version of the same piece on the spot, let them hold the tablet and swipe through, you need them to feel the difference not just hear about it\n\n  \nalso hit up the small manufacturing companies you mentioned, nobody ever thinks to do b2b industrial work and those clients stick around forever because the barrier to entry is high, consistent product shots for catalogs and spec sheets pays the bills while you chase the shiny stuff",
+              "timestamp": "2026-07-30T20:40:05+00:00",
+              "likes": 8,
+              "dislikes": 0,
+              "parent_comment_id": "p0qrgao",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p0qtrht",
+              "author": "reddit_user_a78eac8564a1",
+              "author_karma": 0,
+              "content": "What do you advise, to go in person? Cause im calling rn, and usually i say \"Hi, I'm (my name and last name), I am a photographer, I would like to know if you are looking for a photographer to collaborate with\" ",
+              "timestamp": "2026-07-30T20:42:42+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p0qrgao",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p0qv2b7",
+          "author": "reddit_user_3bb7e6b028c5",
+          "author_karma": 0,
+          "content": "Thumbtack\n\nYou pay for leads so you gotta be able to eat some upfront costs.",
+          "timestamp": "2026-07-30T20:48:24+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0qv8za",
+              "author": "reddit_user_a78eac8564a1",
+              "author_karma": 0,
+              "content": "Wdym?",
+              "timestamp": "2026-07-30T20:49:13+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p0qv2b7",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p0qwb7b",
+                  "author": "reddit_user_3bb7e6b028c5",
+                  "author_karma": 0,
+                  "content": "Thunbtack is a website/app that you list with, and people who need work (event photos, a plumber, realtor headshots, whatever you set yourself as) will see you.\n\nThumbtack then charges you $20-50 for qualified leads (a warm direct message with an interested client who has already come to the site for this purpose) and you make your offer with them.\n\nI've been hired to shoot auto repair shops, commercial property, realtor testimonial videos, many senior pictures, etc.\n\nIt's expensive but it is a way to get hot leads.",
+                  "timestamp": "2026-07-30T20:53:50+00:00",
+                  "likes": 4,
+                  "dislikes": 0,
+                  "parent_comment_id": "p0qv8za",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p0tat3f",
+                      "author": "reddit_user_dda70b2f25b7",
+                      "author_karma": 0,
+                      "content": "Hmm. If the leads are good then it sounds like it’s worth it to be honest",
+                      "timestamp": "2026-07-31T04:47:01+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p0qwb7b",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "p0tb7ou",
+                          "author": "reddit_user_3bb7e6b028c5",
+                          "author_karma": 0,
+                          "content": "It depends a lot on your published prices, market, marketing  etc. \n\nYMMV",
+                          "timestamp": "2026-07-31T04:49:51+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "p0tat3f",
+                          "depth": 4,
+                          "replies": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p0qwpr8",
+          "author": "reddit_user_6e7569293398",
+          "author_karma": 0,
+          "content": "Honestly, I’d go back through everyone you met while assisting and let them know you’re freelancing now. People pass jobs along all the time when they’re booked or something isn’t a good fit for them. Also try approaching fewer businesses, but with an actual idea for their products. You could show how you’d approach their current photos differently or suggest a shoot concept that would fit their brand",
+          "timestamp": "2026-07-30T20:55:38+00:00",
+          "likes": 7,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0r3dca",
+          "author": "reddit_user_ef7aefb25845",
+          "author_karma": 0,
+          "content": "The first few clients just invited me to shoot for them, since then I became a commercial photographer. Maybe those photos I posted before were good enough and inspired them",
+          "timestamp": "2026-07-30T21:25:43+00:00",
+          "likes": 3,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0r61ax",
+          "author": "reddit_user_f79b46c23d6c",
+          "author_karma": 0,
+          "content": "I opened a tiny studio in a market at a shopping mall. \n\nWhile setting it up, a couple with a kid walked in. I shot a baby shoot.\n\n18 years later I did that kids wedding and then the newborn.\n\nI now feel old lol",
+          "timestamp": "2026-07-30T21:38:03+00:00",
+          "likes": 14,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0tapbc",
+              "author": "reddit_user_dda70b2f25b7",
+              "author_karma": 0,
+              "content": "Wow",
+              "timestamp": "2026-07-31T04:46:16+00:00",
+              "likes": 2,
+              "dislikes": 0,
+              "parent_comment_id": "p0r61ax",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p0rpztr",
+          "author": "reddit_user_810b6ebcdb26",
+          "author_karma": 0,
+          "content": "Shoot weddings if you want a career in photography. Thats my advice ",
+          "timestamp": "2026-07-30T23:17:55+00:00",
+          "likes": -3,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0rq3wp",
+              "author": "reddit_user_a78eac8564a1",
+              "author_karma": 0,
+              "content": "Never!",
+              "timestamp": "2026-07-30T23:18:32+00:00",
+              "likes": 4,
+              "dislikes": 0,
+              "parent_comment_id": "p0rpztr",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p0utr0u",
+                  "author": "reddit_user_90b3c999c5f2",
+                  "author_karma": 0,
+                  "content": "So glad I'm not alone with this :D",
+                  "timestamp": "2026-07-31T11:39:14+00:00",
+                  "likes": 2,
+                  "dislikes": 0,
+                  "parent_comment_id": "p0rq3wp",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p0s1uaf",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-07-31T00:20:50+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0swgug",
+          "author": "reddit_user_4a392ef1a8cd",
+          "author_karma": 0,
+          "content": "Craigslist 😅",
+          "timestamp": "2026-07-31T03:13:44+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0tookp",
+              "author": "reddit_user_5537f78f35dd",
+              "author_karma": 0,
+              "content": "I literally posted an ad on Craigslist about 3 weeks ago \"New photographer, looking for business\" blah blah blah. 9 responses - all gay men over 60 asking to be photographed nude.  LoL",
+              "timestamp": "2026-07-31T06:29:46+00:00",
+              "likes": 2,
+              "dislikes": 0,
+              "parent_comment_id": "p0swgug",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p0u55q5",
+                  "author": "reddit_user_c9eddbbb6d3f",
+                  "author_karma": 0,
+                  "content": "Did you take the work? That sounds like it’s probably a decent job and with a decent chance of getting more by word of mouth. It’s not the niche I’d choose but damn could you specialise in that and do well! ",
+                  "timestamp": "2026-07-31T08:41:09+00:00",
+                  "likes": 3,
+                  "dislikes": 0,
+                  "parent_comment_id": "p0tookp",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p0uputd",
+                      "author": "reddit_user_de6e53b03c26",
+                      "author_karma": 0,
+                      "content": "Agree! Freelancing is also lots of \"sidequesting\" and grabbing what you find and making the best from it.\n\n",
+                      "timestamp": "2026-07-31T11:14:45+00:00",
+                      "likes": 2,
+                      "dislikes": 0,
+                      "parent_comment_id": "p0u55q5",
+                      "depth": 3,
+                      "replies": []
+                    },
+                    {
+                      "comment_id": "p0uqkka",
+                      "author": "reddit_user_5537f78f35dd",
+                      "author_karma": 0,
+                      "content": "I did not, lol.  Being brand new at this, I may have overthought it and was worried it would start me off on the wrong foot.",
+                      "timestamp": "2026-07-31T11:19:19+00:00",
+                      "likes": 2,
+                      "dislikes": 0,
+                      "parent_comment_id": "p0u55q5",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "p0vmrqj",
+                          "author": "reddit_user_c9eddbbb6d3f",
+                          "author_karma": 0,
+                          "content": "I absolutely understand, I’d have to think hard about it. Clearly it’s an underserved market though!",
+                          "timestamp": "2026-07-31T14:06:54+00:00",
+                          "likes": 2,
+                          "dislikes": 0,
+                          "parent_comment_id": "p0uqkka",
+                          "depth": 4,
+                          "replies": [
+                            {
+                              "comment_id": "p0wlmwv",
+                              "author": "reddit_user_5537f78f35dd",
+                              "author_karma": 0,
+                              "content": "I mean....it would for sure be experience gained lol",
+                              "timestamp": "2026-07-31T16:37:40+00:00",
+                              "likes": 1,
+                              "dislikes": 0,
+                              "parent_comment_id": "p0vmrqj",
+                              "depth": 5,
+                              "replies": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "comment_id": "p0vg05g",
+                  "author": "reddit_user_4a392ef1a8cd",
+                  "author_karma": 0,
+                  "content": "Haha mine was from responding to a job post 17 years ago. I reckon CL is a bit different nowadays. ",
+                  "timestamp": "2026-07-31T13:36:03+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p0tookp",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p0tuf2i",
+          "author": "reddit_user_80b8de0c4bdb",
+          "author_karma": 0,
+          "content": "You are a small, young business. Approach other small, young businesses. Coffee shops, bars...anything really. They are much more likely to take a punt on you but remember your prices need to reflect your experience. Build a base a go from there! Look after your working relationship with the people you do work for and don't forget to reward their loyalty every now and then. Free additional pictures here and there, a hamper or gift card at Christmas to the person who gives you the work - see the rewards as an investment in your future as a commercial photograph and not \"a loss\". That stuff goes a very long way and when they move company they will take you with them. Good luck and remember to enjoy the ride! ",
+          "timestamp": "2026-07-31T07:14:07+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0u7zt5",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-07-31T09:04:11+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0ub1o4",
+          "author": "reddit_user_d18ca6060749",
+          "author_karma": 0,
+          "content": "I’d say it’s almost impossible to take advice from anyone established as they’re not competing with the same issues you are. \n\nEven someone setting up three or four years ago isn’t facing the same problem. \n\nNowadays, you can take a picture of the item with a phone, feed it in to chatGPT and ask it to take said item and make it look amazing. \n\nAll for free. ",
+          "timestamp": "2026-07-31T09:28:33+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0ucj57",
+              "author": "reddit_user_d18ca6060749",
+              "author_karma": 0,
+              "content": "https://preview.redd.it/qcgvfpoocjgh1.jpeg?width=4005&format=pjpg&auto=webp&s=8cff08869e0a93d1da1662f5233923a6b677dd36\n\n  \nI did this for example to prove a point. Took less than five minutes and cost me nothing. \n\nIs it perfect? \n\nAbsolutely not. \n\nBut is it good enough for most small businesses? \n\nAbsolutely. ",
+              "timestamp": "2026-07-31T09:40:19+00:00",
+              "likes": 4,
+              "dislikes": 0,
+              "parent_comment_id": "p0ub1o4",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p0uwjtk",
+                  "author": "reddit_user_a78eac8564a1",
+                  "author_karma": 0,
+                  "content": "Questo è uno dei problemi che mi preoccupa.\n\nHo iniziato ad utilizzare anch'io AI per scattare ma con modella, per poter fare risparmiare i clienti, funziona bene.\n\nMa non è a livelli di uno scatto vero.\nOra quello che andrei a fare in questo periodo, da come ho letto i consigli ma anche da idea mia, è arrivare a trovare una base di clienti base per poi andare alle grandi aziende.\n\nÈ un piano un po' in là, ovviamente è il punto finale ma son sicuro che ci sarà qualcuno con cui collaborare.",
+                  "timestamp": "2026-07-31T11:56:00+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p0ucj57",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p0v4tan",
+          "author": "reddit_user_8a2bb3490df1",
+          "author_karma": 0,
+          "content": "I started about 20 years ago. My best friend worked as a graphic designer at an ad agency. So he got me my first jobs with his agency. My wife also works at an agency and she helped to get me a few jobs with her clients. \n\nI was in house for a big department store for a few years and shot a ton of jewelry. After I left I reached out to a ton of jewelry designers, stores etc and never got a single gig from it. Then about 2-3 years ago I started gaining a ton of jewelry clients out of the blue. Not sure what made people start wanting the work. \n\nMy biggest source of clients is word of mouth. My website has great seo and I do a ton of marketing and networking. ",
+          "timestamp": "2026-07-31T12:41:10+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0veco6",
+          "author": "reddit_user_c414009222e9",
+          "author_karma": 0,
+          "content": "That entirely depends on your market demographics. I live in Miami, FL and everyone here wants everything for free. Only the wealthy buy from photographers or from art galleries. Everyone else steals your image with their smartphone. \n\nEvent venues rely more on front row ticket holders posting to their Instagram feed as the talent usually brings their own photographer. \n\nI have had several exhibitions where I showed some of my award winning stuff. Everyone thought it was beautiful but would not part with a nickel. \n\nIf you are a wedding photographer, sticker shock is part of the deal and most folks go with buying their nephew a camera than paying properly. \n\nSchool photos are locked up with big name photo studios like Fox, Herrf Jones, etc. I photographed small dance schools and the administration capped my prices and kept part of it. \n\nI am doing real estate now and the local realtors prefer to take their own smartphone shots because no photo fees means more money for them. ",
+          "timestamp": "2026-07-31T13:28:17+00:00",
+          "likes": 4,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p10krzf",
+          "author": "reddit_user_6b6b9eacf9f0",
+          "author_karma": 0,
+          "content": "I had been a stylist on a couple photoshoots. The photographer was a commercial beauty photographer.  At the time I also used to produce events and worked often with corporate sponsors.  The photographer I had shot with suddenly pulled out of shooting arrivals for a beauty brand activation I booked her for, and so I thought, well, I’ve seen her do it enough times…. So I went to the store and bought a shitty Nikon.  A year later I got a call to shoot social content because of it, and then not long after got to shoot a campaign. \n\nThe shots that originally got me the call were absolute garbage. Thankfully, by the time the person had thought of me, I had leveled up a bit in skill.  She never saw the initial work I did, just remembered seeing me at the event and liked my personality 🤣🤦🏻‍♂️\n\nSo, for me it was a combination of being in the right place at the right time, and getting there because I took a huge risk.  ",
+          "timestamp": "2026-08-01T05:06:14+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run005_post03_seed028",
+      "post_slot": 3,
+      "seed_index": 28,
+      "source_raw_post_id": "1vbbv54",
+      "source_product_dir": "photography",
+      "source_file": "https://www.reddit.com/r/photography/comments/1vbbv54/ive_been_working_on_a_project_and_i_need_your_help/",
+      "post_type": "Post Processing",
+      "title": "I've been working on a project and I need your help!",
+      "author": "reddit_user_4349d3bfee00",
+      "author_karma": 0,
+      "content": "I've been working on a project and I need your help!\n\n[removed]",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p0s85ol",
+          "author": "reddit_user_49d294cafcb0",
+          "author_karma": 0,
+          "content": "**Your post is pending manual review by the moderation team. This is a spam prevention measure.** Please be paitent as the moderation team checks your post. In the meanwhile, see if your post falls into one of these categories:\n\n* If you're looking for buying advice, first check out our extensive [Buying Guide](https://www.reddit.com/r/photography/wiki/buying).  \n\n* If you're a new photographer looking for advice on how to get started, [we've got you covered there, too!](https://www.reddit.com/r/photography/wiki/advice)\n\n* If you still have a question (purchasing advice, tech support etc.), hop over to our Questions Thread (pinned to the top of the sub) where knowledgable and dedicated users love to help.\n\n* If your post is a gear selection or other commonly asked question, it will not be approved. Use the resources above, instead.\n\n* If your post is a pricing or what should I charge question, please read the appropriate section of the [FAQ](https://www.reddit.com/r/photography/wiki/business#wiki_what_should_i_charge.3F) and/or ask in the Official Gear Purchasing and Troubleshooting Questions Thread stickied at the top of /r/photography.\n\n\n*If you have further questions, you may [message the mods](https://www.reddit.com/message/compose/?to=/r/photography), but know we are working on pending posts in the order in which they arrive.*\n\n\n*I am a bot, and this action was performed automatically. Please [contact the moderators of this subreddit](/message/compose/?to=/r/photography) if you have any questions or concerns.*",
+          "timestamp": "2026-07-31T00:55:29+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0sd7su",
+          "author": "reddit_user_60e133af51df",
+          "author_karma": 0,
+          "content": "Your submission has been removed from r/photography.\n\nSurveys, market research and advertising/commercial surveys are not permitted.\n\nFor any questions, [message the moderators](https://www.reddit.com/message/compose?to=%2Fr%2Fphotography).",
+          "timestamp": "2026-07-31T01:23:24+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run005_post04_seed029",
+      "post_slot": 4,
+      "seed_index": 29,
+      "source_raw_post_id": "1vbdlr8",
+      "source_product_dir": "photography",
+      "source_file": "https://www.reddit.com/r/photography/comments/1vbdlr8/can_a_firmware_update_change_the_way_wb_works/",
+      "post_type": "Technique",
+      "title": "Can a firmware update change the way WB works?",
+      "author": "reddit_user_4349d3bfee00",
+      "author_karma": 0,
+      "content": "Can a firmware update change the way WB works?\n\nI shoot with an old Nikon D600 that I've had for twelve years. Although it's not recommended, I've almost always shot with my WB set to \"Auto\" whether I was shooting with natural light or bounce flash, and I'd never had any problems. Yesterday, however, I did a studio shoot using studio lights. It was only the second shoot I had done with my new zoom lens. The images looked fine on the LCD screen as I was taking them, but when I transferred them to my laptop and opened them, they all had a magenta cast to them, which took me by surprise. I took some flash test shots to see if it was maybe an anomaly, but I got a magenta cast on those, too. Needless to say, I was rather alarmed. At first I thought there was something wrong with my camera (I actually started looking on eBay for a D780), but after some investigating and poking around, I discovered that setting the WB to \"Flash\" fortunately solved the problem. As I mentioned before, though, I've had the camera for twelve years, and I've done dozens of shoots involving flash photography and never had an issue with weird color casts. I wondered what could have possibly changed, and then I remembered that I did a firmware update on the camera last year because my new lens required it. The only other two shoots I'd done since the update were with natural light, so obviously, I didn't notice anything was off. In conclusion, as the title of the post indicates, my question is: could the firmware update from last year be responsible for me now having to set my WB to \"Flash\" if I'm doing any kind of flash photography? Any thoughts or sage advice would be appreciated.",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p0smro3",
+          "author": "reddit_user_e6dfa7ea653e",
+          "author_karma": 0,
+          "content": "in theory yes, I don't see why not\n\nin practice, no they don't",
+          "timestamp": "2026-07-31T02:17:03+00:00",
+          "likes": 3,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0sn5kb",
+              "author": "reddit_user_aac093ef6003",
+              "author_karma": 0,
+              "content": "I can't think of anything else they might have caused the change other than the fact that my camera is old now. ",
+              "timestamp": "2026-07-31T02:19:15+00:00",
+              "likes": 0,
+              "dislikes": 0,
+              "parent_comment_id": "p0smro3",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p0so1ki",
+                  "author": "reddit_user_e6dfa7ea653e",
+                  "author_karma": 0,
+                  "content": "Your awb setting can also have a tint applied to it in your camera settings, maybe that?\n\nFor example (I have a nikon ZF, so not 1:1, but close enough)\n\nI select AWB, hit down, I can now select A0 (keep white), A1 (keep overall atmosphere), A2 (keep warm). If I hit down \\*again\\* on either of those, I get a color selector where I can further adjust color. My guess is that might be accidentally pegged to the magenta side.\n\nBut if I'm being honest, I haven't used a nikon DSLR since the 810 came out. So I dunno.",
+                  "timestamp": "2026-07-31T02:24:18+00:00",
+                  "likes": 2,
+                  "dislikes": 0,
+                  "parent_comment_id": "p0sn5kb",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p0sof35",
+                      "author": "reddit_user_aac093ef6003",
+                      "author_karma": 0,
+                      "content": "Mine is Auto1, I think, but like I said, I'd never had any issues prior to this last shoot. ",
+                      "timestamp": "2026-07-31T02:26:29+00:00",
+                      "likes": 0,
+                      "dislikes": 0,
+                      "parent_comment_id": "p0so1ki",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "p0soich",
+                          "author": "reddit_user_e6dfa7ea653e",
+                          "author_karma": 0,
+                          "content": "Do your non flash photos on awb also look magenta?",
+                          "timestamp": "2026-07-31T02:27:00+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "p0sof35",
+                          "depth": 4,
+                          "replies": [
+                            {
+                              "comment_id": "p0sopr6",
+                              "author": "reddit_user_aac093ef6003",
+                              "author_karma": 0,
+                              "content": "No. As I mentioned, I did two shoots with natural light after the update, and those were fine.",
+                              "timestamp": "2026-07-31T02:28:09+00:00",
+                              "likes": 1,
+                              "dislikes": 0,
+                              "parent_comment_id": "p0soich",
+                              "depth": 5,
+                              "replies": [
+                                {
+                                  "comment_id": "p0sov28",
+                                  "author": "reddit_user_e6dfa7ea653e",
+                                  "author_karma": 0,
+                                  "content": "Have you tried doing a reset of the camera settings?",
+                                  "timestamp": "2026-07-31T02:28:59+00:00",
+                                  "likes": 1,
+                                  "dislikes": 0,
+                                  "parent_comment_id": "p0sopr6",
+                                  "depth": 6,
+                                  "replies": [
+                                    {
+                                      "comment_id": "p0spedu",
+                                      "author": "reddit_user_aac093ef6003",
+                                      "author_karma": 0,
+                                      "content": "I haven't, but that would be the nuclear option. I'll have to set my WB to Flash from now on if I'm shooting with any kind of flash, which is fine. I can live with that, and I probably should have been doing that in the first place. I was just puzzled as to how I got to this point.",
+                                      "timestamp": "2026-07-31T02:32:03+00:00",
+                                      "likes": 1,
+                                      "dislikes": 0,
+                                      "parent_comment_id": "p0sov28",
+                                      "depth": 7,
+                                      "replies": [
+                                        {
+                                          "comment_id": "p15re7z",
+                                          "author": "reddit_user_86d0d1721c3e",
+                                          "author_karma": 0,
+                                          "content": "You can save and restore your camera settings to a SD card. Make a backup, reset and see if anything changes. I started using 'daylight' for most stuff, which is also what your flash color is, because I find auto too neutral. Hope you figure it out. ",
+                                          "timestamp": "2026-08-01T23:34:03+00:00",
+                                          "likes": 2,
+                                          "dislikes": 0,
+                                          "parent_comment_id": "p0spedu",
+                                          "depth": 8,
+                                          "replies": []
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p0so7ze",
+          "author": "reddit_user_aac093ef6003",
+          "author_karma": 0,
+          "content": "Mine is Auto1, I think, but like I said, I'd never had any issues prior to this recent shoot.",
+          "timestamp": "2026-07-31T02:25:21+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0t1hiy",
+          "author": "reddit_user_21de5eddf9dc",
+          "author_karma": 0,
+          "content": "If you're shooting RAW and not using JPG, this is entirely fixable in your editing software. The white balance is purely a bit of information in the file's metadata. If you're shooting JPGs, I'd strongly suggest shooting RAW. It might be possible to readjust the WB in your editing software, but the results won't be as good as adjustments from a RAW file. ",
+          "timestamp": "2026-07-31T03:45:19+00:00",
+          "likes": 10,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0t3nwl",
+              "author": "reddit_user_aac093ef6003",
+              "author_karma": 0,
+              "content": "I shoot JPEG Fine. I probably should shoot RAW, but I like the in-camera image processing for the former, so it saves me the extra work, not to mention space. I'll see if my software has an option to adjust WB, though.",
+              "timestamp": "2026-07-31T03:59:16+00:00",
+              "likes": -4,
+              "dislikes": 0,
+              "parent_comment_id": "p0t1hiy",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p0v6hrt",
+                  "author": "reddit_user_cdd86e7fa261",
+                  "author_karma": 0,
+                  "content": "Nikon’s free NX studio software can process raws into the exact same JPEGs, but you get the benefits of raw too. You don’t have to pick one or the other.",
+                  "timestamp": "2026-07-31T12:49:47+00:00",
+                  "likes": 3,
+                  "dislikes": 0,
+                  "parent_comment_id": "p0t3nwl",
+                  "depth": 2,
+                  "replies": []
+                },
+                {
+                  "comment_id": "p0w218m",
+                  "author": "reddit_user_8a0311c455c2",
+                  "author_karma": 0,
+                  "content": "Just shoot RAW + JPEG. Nikon cameras shoot JPEG fine in this mode, and give you RAW for exactly this case where you need to fix it. It's not rocket science, just do it, harddrives are dirt cheap.",
+                  "timestamp": "2026-07-31T15:13:39+00:00",
+                  "likes": 2,
+                  "dislikes": 0,
+                  "parent_comment_id": "p0t3nwl",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p0w33mi",
+                      "author": "reddit_user_aac093ef6003",
+                      "author_karma": 0,
+                      "content": "I don't shoot anywhere near as much as I used to, but I think I'm going to start doing that, especially now that I finally started using a second SD card as backup.",
+                      "timestamp": "2026-07-31T15:18:18+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p0w218m",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p0t6np4",
+          "author": "reddit_user_8dfac76c7c75",
+          "author_karma": 0,
+          "content": "I reckon camera is metering for ambient which could be ccfl lights or similar. Because you are using studio lights which don’t pre-flash for TTL metering the camera doesn’t know that light source exists.  \nWhen you use a flash on your body with TTL then the pre-flash helps the camera calculate exposure and auto white balance.",
+          "timestamp": "2026-07-31T04:18:41+00:00",
+          "likes": 5,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0tgaqj",
+          "author": "reddit_user_ddb852531d57",
+          "author_karma": 0,
+          "content": "Btw, it's a lot easier for us to read if you could write in paragraphs.",
+          "timestamp": "2026-07-31T05:26:26+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0tlxwp",
+          "author": "reddit_user_6bb513978893",
+          "author_karma": 0,
+          "content": "You are doing studio work (so, presumably paid) and shooting in JPEG? That's so curious. \n\nI don't have relevant advice, beyond using a grey card, I guess. Personally I keep my cameras on auto and fully don't care what WB they select for me, because I am always adjusting everything in post (I work in RAW only).",
+          "timestamp": "2026-07-31T06:09:02+00:00",
+          "likes": 3,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0v87f8",
+              "author": "reddit_user_aac093ef6003",
+              "author_karma": 0,
+              "content": "It wasn't a paid shoot. They were just some shots for a former model of mine that I hadn't seen in several years. The studio belonged to another photographer friend of hers. My exposure is usually dead-on (at least I think so), so I haven't really had a pressing need to shoot RAW, but in a rare instance like this, it definitely would have helped. At least I resolved the problem, so hopefully, I won't have to worry about it again.",
+              "timestamp": "2026-07-31T12:58:22+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p0tlxwp",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p0v9b71",
+                  "author": "reddit_user_6bb513978893",
+                  "author_karma": 0,
+                  "content": "RAW is not just exposure, though, but lots and lots of detail editing when it comes to portraiture. Of course, it's all subjective. What works for you works for you, I just find it curious.",
+                  "timestamp": "2026-07-31T13:03:54+00:00",
+                  "likes": 2,
+                  "dislikes": 0,
+                  "parent_comment_id": "p0v87f8",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            },
+            {
+              "comment_id": "p116qln",
+              "author": "reddit_user_e6dfa7ea653e",
+              "author_karma": 0,
+              "content": ">You are doing studio work (so, presumably paid) and shooting in JPEG? That's so curious.\n\nYou'd be shocked at the number of (generally older) photographers who refuse to shoot raw. It's insanely common.",
+              "timestamp": "2026-08-01T08:02:21+00:00",
+              "likes": 2,
+              "dislikes": 0,
+              "parent_comment_id": "p0tlxwp",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p0u5jjs",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-07-31T08:44:17+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    }
+  ]
+}

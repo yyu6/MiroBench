@@ -1,0 +1,2578 @@
+{
+  "meta": {
+    "product_category": "movies",
+    "baseline": "real_reddit_reference",
+    "run_id": "run_023_sampled_reddit"
+  },
+  "posts": [
+    {
+      "post_id": "real_run023_post00_seed115",
+      "post_slot": 0,
+      "seed_index": 115,
+      "source_raw_post_id": "1vek809",
+      "source_product_dir": "movies",
+      "source_file": "https://www.reddit.com/r/movies/comments/1vek809/christy/",
+      "post_type": "Discussion",
+      "title": "Christy",
+      "author": "reddit_user_f403d059ef4c",
+      "author_karma": 0,
+      "content": "Christy\n\nGood evening everybody.  \nI am writing here to vent a little bit about German naming convention of movies, and how weird they can be.   \nThe movie mentioned above prompted this, because even though I maybe understand why the changed the title, why they changed it so drastic and nonsensically, is what gets me.\n\nFirst of all, I live in Germany and going to the cinema is my biggest hobby.   \nThe naming conventions have bothered me sometimes, but it’s something I can get behind, when we don’t change the name, I am even more fine with that.   \nAnyway.  \nWhat makes me wonder about this movie and the way it’s titled is, I don’t get why…\n\nI even checked on ImdB to see, if other countries had changed the name of the movie, and most of them had Christy as the title, maybe in the language that it was in and some had add ons, like we have here   \nThree countries changed the title, but to something logical and fits to the movie.   \nI’ve seen it over VPN, that’s why I know that. \n\nIn Germany, we have decided to call Christy: That’s why the Lady is a Champ. I guess, because in Germany no one had heard of Christy, and I guess it makes sense, but to be honest, I would rather see a movie that’s titled Christy, then this convoluted English! title, that for me is just stupid. \n\nIf we had at least used a German name for the movie, or something like that, I would be fine with it. But renaming it in English? Why do that?   \nFor me that just detracts people from going to see the movie, because it’s a mouthful to say.\n\nYeah, so that’s my words to it. Just weird naming conventions, here.",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p1hmvpc",
+          "author": "reddit_user_1e6555daa8d7",
+          "author_karma": 0,
+          "content": "I'm American and I had no idea who tf Christy was. Had to look it up.\n\nYeah that's a terrible title. I'm not sure if you're aware, but \"champ\" is a bad pun on \"tramp\" (alluding to an old song), so it's not only stupid, but distasteful.\n\nThings often get renamed for international markets. I think you're right that the new title is ineptly trying to convey to audiences that it's a sports film. Nothing more to it.",
+          "timestamp": "2026-08-03T17:45:10+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1hmw96",
+          "author": "reddit_user_d45d487010b1",
+          "author_karma": 0,
+          "content": "Yeah Germany is sometimes funny with that. My favorite example is Captain America: the Winter Soldier. Because that character is pretty much unknown around here they retitled it as The Return Of The First Avenger.",
+          "timestamp": "2026-08-03T17:45:14+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1hr1ot",
+              "author": "reddit_user_9111f4bd0cfa",
+              "author_karma": 0,
+              "content": "Oh I think Thor: The Dark World being renamed Thor: The Dark Kingdom is much funnier as a title change ",
+              "timestamp": "2026-08-03T18:02:25+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1hmw96",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p1ibflw",
+              "author": "reddit_user_24171e73ddd6",
+              "author_karma": 0,
+              "content": "That's interesting, because I definitely don't think The Winter Soldier was \"well-known\" outside of the comic space in America, either. ",
+              "timestamp": "2026-08-03T19:30:14+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1hmw96",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1j96oo",
+                  "author": "reddit_user_a8795ca569bd",
+                  "author_karma": 0,
+                  "content": "Yea but it is a reference to a Thomas Paine essay, which while not super popular in America would have literally 0 relevance in German.",
+                  "timestamp": "2026-08-03T22:01:49+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1ibflw",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p1hn0fe",
+          "author": "reddit_user_61a709516b42",
+          "author_karma": 0,
+          "content": "k",
+          "timestamp": "2026-08-03T17:45:42+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1hn522",
+          "author": "reddit_user_6744453533c4",
+          "author_karma": 0,
+          "content": "Nahrungsmittelunverträglichkeit is a German word for food intolerance. Maybe they thought the title being a mouthful would be a selling point. ",
+          "timestamp": "2026-08-03T17:46:14+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1hqsj7",
+              "author": "reddit_user_9111f4bd0cfa",
+              "author_karma": 0,
+              "content": "Oh I know what words we use, some of them like Nahrungsunverträglichkeitsmittel are also very fun.   \nI don’t think that’s the reason, but it would be fun if it actually was 😂",
+              "timestamp": "2026-08-03T18:01:20+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1hn522",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1hsowo",
+          "author": "reddit_user_3b1f9ecd8eb8",
+          "author_karma": 0,
+          "content": "Wait till you see the German book titles of translated books. It’s driving me insane. Some examples:\n\nEnglish original: Never let me go  \nGerman: Alles, was wir geben mussten (Everything we had to give)\n\nEnglish original: Remarkably Bright Creatures  \nGerman: Das Glück hat acht Arme (Happiness/Luck has eight arms) \n\nEnglish original: The Covenant of Water  \nGerman: Die Träumenden von Madras (the dreamers of Madras) \n\nEnglish: Drive your Plow over the Bones of the Dead (the English title is a direct translation of the original Polish)   \nGerman: Gesang der Fledermäuse (Song of the Bats) - No, singing bats do not play any role whatsoever in the plot of this book.\n\nEnglish: Norwegian Wood (again, the English is faithful to the original Japanese)  \nGerman: Naokos Lächeln (Naoko‘s smile) \n\nMeanwhile most translations into languages other than German are direct translations of the original title. I have started to be surprised when a German book title is actually a faithful translation. ",
+          "timestamp": "2026-08-03T18:09:20+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1i69i2",
+              "author": "reddit_user_c90424b08a48",
+              "author_karma": 0,
+              "content": "Yeah, book titles are the worst, there's an endless list of bad examples. And the worst part is having to use them when talking to people who only know the German version.\n\n Some of my \"favourites\":\n\nJohn Green - The Fault in Our Stars -> Das Schicksal ist ein mieser Verräter (Fate is a lousy traitor)\n\nDavid Levithan - Every Day -> Letztendlich sind wir dem Universum egal (In the end, the universe doesn't care about us) \n\nStephen King - The Waste Lands -> tot. (dead.) Yes, the fucking full stop is part of the fucking title. \n\n",
+              "timestamp": "2026-08-03T19:07:40+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1hsowo",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1ig88j",
+                  "author": "reddit_user_3b1f9ecd8eb8",
+                  "author_karma": 0,
+                  "content": "Okay, „tot.“ is fucking hilarious",
+                  "timestamp": "2026-08-03T19:51:21+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1i69i2",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p1huahj",
+          "author": "reddit_user_49c92e098125",
+          "author_karma": 0,
+          "content": "That's an easy one: There is another movie with the title \"Christy\" from earlier in 2025 from Ireland. \n\nIn Germany, two movies cannot have the same title, to rule out any confusion. This means that movies sometimes _have_ to get a new title. \n\nAnother example: \"Sinners\" was renamed \"Blood & Sinners\" for the same reason: There was already a movie with the same name in the database. \n\nIn a similar yet different way, the American Screen Actors Guild has a rule stating that no two _people_ can work under the same professional name, which is why a lot of actors actually work under a pseudonym. \n\n",
+          "timestamp": "2026-08-03T18:16:10+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1j5pob",
+              "author": "reddit_user_ef00dd930a65",
+              "author_karma": 0,
+              "content": "Sure, the movies can have the same name. There are plenty examples, like Carrie. ",
+              "timestamp": "2026-08-03T21:45:22+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1huahj",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1jcabi",
+                  "author": "reddit_user_49c92e098125",
+                  "author_karma": 0,
+                  "content": "It's a bit different when it's a remake because the trademark is still owned by the same studio. There is no legal conflict of interest.\n\nGerman publishers often change the titles of movies or add a subheading to differentiate them from pre-existing films. This way they ensure there's no viewer confusion and they avoid any legal grounds for claims of \"stealing the title\" or riding the coattails of the previous work. It's called \"Titelschutzanzeige\", in case you want to read about it. ",
+                  "timestamp": "2026-08-03T22:16:47+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1j5pob",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p1i0zzp",
+          "author": "reddit_user_cc4516bae9c6",
+          "author_karma": 0,
+          "content": "Agreed.  The titling nonsense runs in both directions too.  Der Himmel uber Berlin (German original, forgive my not having an umlaut on this device) is so much better than Wings of Desire, the English title which spoils the movie's plot.",
+          "timestamp": "2026-08-03T18:45:06+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1igsr7",
+              "author": "reddit_user_3b1f9ecd8eb8",
+              "author_karma": 0,
+              "content": "If you don’t have access to umlauts on your keyboard, the correct spelling is to put an e behind the vowel. Ueber = über, and the same with ae = ä and oe = ö",
+              "timestamp": "2026-08-03T19:53:52+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1i0zzp",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1iq59d",
+                  "author": "reddit_user_cc4516bae9c6",
+                  "author_karma": 0,
+                  "content": "Thank you.",
+                  "timestamp": "2026-08-03T20:34:46+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1igsr7",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p1i312k",
+          "author": "reddit_user_ec2c7cf9ba94",
+          "author_karma": 0,
+          "content": "\"That's why the lady is a champ\"  sounds like a Simpsons/Troy McClure movie title.  \n",
+          "timestamp": "2026-08-03T18:53:47+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1i459a",
+          "author": "reddit_user_04528300f7ef",
+          "author_karma": 0,
+          "content": "The French do it too\n\nhttps://www.reddit.com/r/movies/comments/17ztur/french_are_not_so_good_with_english_so_they_like/",
+          "timestamp": "2026-08-03T18:58:34+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1i7pgr",
+          "author": "reddit_user_ed6968afacb2",
+          "author_karma": 0,
+          "content": "“pirates of the caribbean” being renamed “curse of the Caribbean” is my personal favorite.",
+          "timestamp": "2026-08-03T19:13:58+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1ihbvo",
+          "author": "reddit_user_6db5463296e7",
+          "author_karma": 0,
+          "content": "Germany has a long tradition of renaming or rebranding movie titles. Often to make it easier to grasp.   \nTo catch a thief became “über den Dächern von Nizza“ meaning on the rooftops of Nice. Which quite correctly describes the movie. \n\nIn the late 80s English titles began to be considered cool. Leathal Weapon premiered in Germany under that title, just getting a German byline. Despite a large amount of the population were twisting their tongue to ask for tickets. English was cool after all. \n\nWhich is also true for invented terms „Handy“ means something very different for my German countrymen than for my American neighbors. \n\nI wholeheartedly agree with OP‘s annoyance on this topic, but it’s hardly anything new. ",
+          "timestamp": "2026-08-03T19:56:11+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1iklop",
+              "author": "reddit_user_9111f4bd0cfa",
+              "author_karma": 0,
+              "content": "Oh yeah I agree. It’s hardly anything new.  \nI think I am just annoyed, because there could’ve been better ways of getting a different title   \nWhat we did with Obsession I think just using an additional tags work well enough.   \nJust using an English title that’s just not really logical, because of other titles, I just don’t like it",
+              "timestamp": "2026-08-03T20:10:31+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1ihbvo",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1izst7",
+          "author": "reddit_user_94ae4747a634",
+          "author_karma": 0,
+          "content": "When I was a kid, around 11 or so,  I stayed with friends on Germany. The movie child's play was on TV. No idea how they let me see it. But I remember it was basically called \"Chucky the murdering puppet\". Was hilarious as it was such a giveaway as to the plot.",
+          "timestamp": "2026-08-03T21:18:00+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run023_post01_seed116",
+      "post_slot": 1,
+      "seed_index": 116,
+      "source_raw_post_id": "1vekdp8",
+      "source_product_dir": "boxoffice",
+      "source_file": "https://www.reddit.com/r/boxoffice/comments/1vekdp8/that_sound_you_just_heard_was/",
+      "post_type": ":worldwide: Worldwide",
+      "title": "That sound you just heard was #SpiderManBrandNewDay smashing the ONE BILLION DOLLAR mark today while still in its FIRST WEEK!! Updated global opening wknd #boxoffice was $932M and MON will add another $100M or so! Heading for TWO BILLION and beyond!!",
+      "author": "reddit_user_f403d059ef4c",
+      "author_karma": 0,
+      "content": "That sound you just heard was #SpiderManBrandNewDay smashing the ONE BILLION DOLLAR mark today while still in its FIRST WEEK!! Updated global opening wknd #boxoffice was $932M and MON will add another $100M or so! Heading for TWO BILLION and beyond!!",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p1hp94k",
+          "author": "reddit_user_0785cb235248",
+          "author_karma": 0,
+          "content": "Nature is healing ",
+          "timestamp": "2026-08-03T17:54:56+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1hmuwd",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1hpbp6",
+          "author": "reddit_user_59b01447e655",
+          "author_karma": 0,
+          "content": "2B+ here we come, but how far above is the question ",
+          "timestamp": "2026-08-03T17:55:13+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1hr0y7",
+              "author": "reddit_user_d92cda1f0a8d",
+              "author_karma": 0,
+              "content": "2.5B+",
+              "timestamp": "2026-08-03T18:02:19+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1hpbp6",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1hpcmg",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[deleted]",
+          "timestamp": "2026-08-03T17:55:20+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1hpeat",
+          "author": "reddit_user_d7a718e9f0c3",
+          "author_karma": 0,
+          "content": "What are the chances it beats Force Awakens domestic and Way of Water worldwide? ",
+          "timestamp": "2026-08-03T17:55:31+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1hpiov",
+          "author": "reddit_user_510c67874010",
+          "author_karma": 0,
+          "content": "![gif](giphy|9HQRIttS5C4Za)",
+          "timestamp": "2026-08-03T17:56:01+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1hpj5y",
+          "author": "reddit_user_4101b512c479",
+          "author_karma": 0,
+          "content": "I loved Andrew Garfield in the role, but the movies themselves just weren’t very good. Not his fault, he deserved better movies.",
+          "timestamp": "2026-08-03T17:56:05+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1ho3kz",
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1hyc91",
+              "author": "reddit_user_afe6fed7b92c",
+              "author_karma": 0,
+              "content": "I still hold that he’s too hot to be a good Peter Parker, but he had excellent athleticism and build for spidey",
+              "timestamp": "2026-08-03T18:33:32+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1hpj5y",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p1hzph9",
+              "author": "reddit_user_feeb75ee61e6",
+              "author_karma": 0,
+              "content": "Love Andrew but both his movies were kinda stale even for 2011 and 2013. Only good thing was his chemistry with Emma. ",
+              "timestamp": "2026-08-03T18:39:31+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1hpj5y",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1hpjtt",
+          "author": "reddit_user_d2119e764b0c",
+          "author_karma": 0,
+          "content": "Even after all these years, seeing Endgame hit the 1 billion mark in just the opening weekend alone is still crazy. ",
+          "timestamp": "2026-08-03T17:56:09+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1hok49",
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1hqwza",
+              "author": "reddit_user_0785cb235248",
+              "author_karma": 0,
+              "content": "The fact it did more than captain marvel in its OW is just bonkers ",
+              "timestamp": "2026-08-03T18:01:51+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1hpjtt",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1hpl9i",
+          "author": "reddit_user_d7a718e9f0c3",
+          "author_karma": 0,
+          "content": "I'm going with 750 million. ",
+          "timestamp": "2026-08-03T17:56:19+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1hmys9",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1hpna5",
+          "author": "reddit_user_494885c9a381",
+          "author_karma": 0,
+          "content": "People were called crazy for saying this would outgross NWH a few months ago lmao",
+          "timestamp": "2026-08-03T17:56:33+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1hwn2q",
+              "author": "reddit_user_43009b2966e9",
+              "author_karma": 0,
+              "content": "Crazy is definitely a bit much, but I can fully admit that I did not think this film would beat NWH. So glad to be wrong now that I’ve seen it. ",
+              "timestamp": "2026-08-03T18:26:12+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1hpna5",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1hpp7q",
+          "author": "reddit_user_0785cb235248",
+          "author_karma": 0,
+          "content": "What's more relatable than that? ",
+          "timestamp": "2026-08-03T17:56:46+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1hn3zg",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1hppza",
+          "author": "reddit_user_aa336e978931",
+          "author_karma": 0,
+          "content": "I had Doomsday being the highest grossing film of 2026 at the beginning of the year, then when i saw the insane numbers for Spidey, I starting to think that Spidey will be the highest grossing film of 2026.",
+          "timestamp": "2026-08-03T17:56:52+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1hpxf3",
+          "author": "reddit_user_72939ba32170",
+          "author_karma": 0,
+          "content": "Well I’m not from the US so I guess that makes sense ",
+          "timestamp": "2026-08-03T17:57:44+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1hp4mh",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1hpz5k",
+          "author": "reddit_user_c7a3179470b1",
+          "author_karma": 0,
+          "content": "Well deserved, this movie had a lot of heart.",
+          "timestamp": "2026-08-03T17:57:56+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1hqd8i",
+              "author": "reddit_user_1839025005cd",
+              "author_karma": 0,
+              "content": "It really did. It was one of my favourites for this reason and certainly Tom’s best ",
+              "timestamp": "2026-08-03T17:59:35+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1hpz5k",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1hrjg2",
+                  "author": "reddit_user_c7a3179470b1",
+                  "author_karma": 0,
+                  "content": "The emotional beats are too good. Got me going several times throughout the movie, especially the final scene.",
+                  "timestamp": "2026-08-03T18:04:29+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1hqd8i",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1hxpdo",
+                      "author": "reddit_user_02f03e3d8afb",
+                      "author_karma": 0,
+                      "content": "The very final scene was so so good, there were multiple moments throughout the film that had me holding back man-tears",
+                      "timestamp": "2026-08-03T18:30:46+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1hrjg2",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p1hpzn8",
+          "author": "reddit_user_e32f9eb18990",
+          "author_karma": 0,
+          "content": "A lot less. Splitting the movie in two killed hype and momentum ",
+          "timestamp": "2026-08-03T17:57:59+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1hmys9",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1hpzud",
+          "author": "reddit_user_af361f434ae9",
+          "author_karma": 0,
+          "content": "https://preview.redd.it/evj0u2kf87hh1.jpeg?width=960&format=pjpg&auto=webp&s=7b4f5f52345fe18399f0a8472862ff724fafdf5c",
+          "timestamp": "2026-08-03T17:58:01+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1hn05h",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1hq4s1",
+          "author": "reddit_user_f18186cebb1c",
+          "author_karma": 0,
+          "content": "Should be around 1.8B by 2nd weekend, maybe can close on NWH.... in 2 weeks is absolute insanity.",
+          "timestamp": "2026-08-03T17:58:36+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1hrn5x",
+              "author": "reddit_user_0785cb235248",
+              "author_karma": 0,
+              "content": "I really hope this beats avatar 2",
+              "timestamp": "2026-08-03T18:04:55+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1hq4s1",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1hxt7k",
+                  "author": "reddit_user_02f03e3d8afb",
+                  "author_karma": 0,
+                  "content": "This may beat Avatar 1",
+                  "timestamp": "2026-08-03T18:31:14+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1hrn5x",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            },
+            {
+              "comment_id": "p1ht8gl",
+              "author": "reddit_user_b6b6994e39e1",
+              "author_karma": 0,
+              "content": "Wait what how ?",
+              "timestamp": "2026-08-03T18:11:38+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1hq4s1",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p1hz7m3",
+              "author": "reddit_user_feeb75ee61e6",
+              "author_karma": 0,
+              "content": "Hope James Cameron understands now his Avatar 3 was a bomb, and no one wants more sequels. So he can make an original to beat all the movies.",
+              "timestamp": "2026-08-03T18:37:23+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1hq4s1",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1hq70k",
+          "author": "reddit_user_1839025005cd",
+          "author_karma": 0,
+          "content": "![gif](giphy|1qErVv5GVUac8uqBJU)  \nApex Superhero ",
+          "timestamp": "2026-08-03T17:58:51+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1hq9ak",
+          "author": "reddit_user_9175704144a0",
+          "author_karma": 0,
+          "content": "Executive meddling by Sony didn't do it any favors.",
+          "timestamp": "2026-08-03T17:59:07+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1ho3kz",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1hqcqy",
+          "author": "reddit_user_af361f434ae9",
+          "author_karma": 0,
+          "content": "Is there a fictional character more beloved than him. Sure the hello kittys and Marios sell more merch but I struggle to think any other character being on this level ",
+          "timestamp": "2026-08-03T17:59:32+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1hmii4",
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1hqm04",
+              "author": "reddit_user_0785cb235248",
+              "author_karma": 0,
+              "content": "I mean cinematically I don't think so sure Mario and hello kitty are bigger brands but even Mario's movie was smaller ",
+              "timestamp": "2026-08-03T18:00:35+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1hqcqy",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p1hszjv",
+              "author": "reddit_user_abce051f06f0",
+              "author_karma": 0,
+              "content": "There are some that are bigger AS SYMBOLS, but not necessarily as characters.\n\nLike.... Pikachu and Mario are probably bigger, but Pikachu is a stand-in for Pokemon itself, NOT the actual character of Pikachu. \n\nMario is a stand-in for Nintendo or video games itself, NOT the actual character of Mario, who of course doesn't have much of a character at all beyond \"friendly heroic guy\" since he's meant to be a stand-in that others can project themselves onto.\n\nMickey Mouse is popular as a symbol for Disney but I highly doubt even the best Mickey Mouse movie possible would be this popular, and like Mario he doesn't really have much of an actual character beyond \"friendly heroic guy\" -- he's more of a stand-in.\n\n Hell, there's some anecdotal evidence that the Superman S is one of the most recognizable non-religious images on Earth, but Superman himself hasn't been the most popular superhero on Earth since at least the late 1970s -- it's just the symbolism that remains among the most popular. It's like how people in countries where baseball isn't popular still will recognize Yankees or Dodgers hats because they'd just become identifiers for New York and LA by osmosis. \n\nAs far as actual character, and not just as a symbol or recognizable brand... yeah, I imagine Spider-Man may well be the most popular fictional character on earth.",
+              "timestamp": "2026-08-03T18:10:35+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1hqcqy",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1hvuzj",
+                  "author": "reddit_user_56d5608554e0",
+                  "author_karma": 0,
+                  "content": "Superman is one of the most recognized characters in the world but as you said it’s more as a symbol. He’s probably not in the top ten most popular comic book movie characters at this point ",
+                  "timestamp": "2026-08-03T18:22:55+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1hszjv",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1hwd3l",
+                      "author": "reddit_user_abce051f06f0",
+                      "author_karma": 0,
+                      "content": "> Superman is one of the most recognized characters in the world but as you said it’s more as a symbol.\n\nExactly. He's far more popular as a symbol than as an actual character. Same applies to Mickey Mouse, Pikachu, Mario, etc. That's what I was getting at.",
+                      "timestamp": "2026-08-03T18:25:01+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1hvuzj",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                },
+                {
+                  "comment_id": "p1hwsmi",
+                  "author": "reddit_user_5c326e23c3c6",
+                  "author_karma": 0,
+                  "content": "You can argue that Spider-man (and all superheroes) are more symbols than characters. It's why he can be anything from Nicholas Hammond to Tobey Maguire to Andrew Garfield to Tom Holland. His origin story of \"Uncle dies, becomes crime fighter\" can be told over and over and over again in different ways in different eras precisely because the character himself is changeable as long as you keep the core of \"has dead uncle, gets bit by a radioactive spider, fights supervillains with his powers\".",
+                  "timestamp": "2026-08-03T18:26:51+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1hszjv",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1hzgz6",
+                      "author": "reddit_user_db81f94887b8",
+                      "author_karma": 0,
+                      "content": "Apparently, even the dead uncle isn't strictly necessary.",
+                      "timestamp": "2026-08-03T18:38:30+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1hwsmi",
+                      "depth": 3,
+                      "replies": []
+                    },
+                    {
+                      "comment_id": "p1hzkyb",
+                      "author": "reddit_user_abce051f06f0",
+                      "author_karma": 0,
+                      "content": "I kind of get what you're getting at here, but I think what you are saying is more about an archtype or a story, not as a symbol.\n\nLike, Mickey Mouse's popularity is largely because he *is* Disney. Pikachu's popularity is because he *is* Pokemon. Mario's popularity is because he *is* Nintendo. Superman's popularity comes from being the first major superhero (and thus sort of a stand-in for the whole genre) mixed with what wearing the S stands for to people: That you're super, that you can do anything if you put your mind to it, that you feel invincible. \n\nBut Spider-Man's popularity isn't entirely what he represents. He *can* serve as a stand-in for Marvel in general, sure, but it's nowhere near as universal a usage as say Mickey Mouse for Disney or Mario for Nintendo. Instead, what has helped make Spider-Man popular is his character: not just the story, but the wisecracks, the costume, the supporting cast, etc.",
+                      "timestamp": "2026-08-03T18:38:58+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1hwsmi",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "comment_id": "p1ht1dk",
+              "author": "reddit_user_6125205da3b2",
+              "author_karma": 0,
+              "content": "I doubt mario sell more merch lol",
+              "timestamp": "2026-08-03T18:10:48+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1hqcqy",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1hqpq0",
+          "author": "reddit_user_21ce4a85667f",
+          "author_karma": 0,
+          "content": "Recasting Spiderman was the best thing they did. Merging Andrew would’ve sucked ",
+          "timestamp": "2026-08-03T18:01:01+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1hp4mh",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1hqrea",
+          "author": "reddit_user_0785cb235248",
+          "author_karma": 0,
+          "content": "Oh yeah it's going to get the highest grossing movie of the year today no? Lol",
+          "timestamp": "2026-08-03T18:01:12+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1hn7ds",
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1hua16",
+              "author": "reddit_user_45f2ba5ef872",
+              "author_karma": 0,
+              "content": "What ",
+              "timestamp": "2026-08-03T18:16:07+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1hqrea",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1hw475",
+                  "author": "reddit_user_56d5608554e0",
+                  "author_karma": 0,
+                  "content": "It will become the highest grossing movie of the year today ",
+                  "timestamp": "2026-08-03T18:23:59+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1hua16",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1hwdj5",
+                      "author": "reddit_user_45f2ba5ef872",
+                      "author_karma": 0,
+                      "content": "No it wont \n\nIf its getting only 100m worldwide \n\nThat puts it at 1,032B ,TS5 has 1,065B",
+                      "timestamp": "2026-08-03T18:25:04+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1hw475",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "p1hwsaq",
+                          "author": "reddit_user_02f03e3d8afb",
+                          "author_karma": 0,
+                          "content": "Ah. Tomorrows then",
+                          "timestamp": "2026-08-03T18:26:49+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "p1hwdj5",
+                          "depth": 4,
+                          "replies": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "comment_id": "p1hvy7b",
+              "author": "reddit_user_56d5608554e0",
+              "author_karma": 0,
+              "content": "Yes ",
+              "timestamp": "2026-08-03T18:23:18+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1hqrea",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1hqs4g",
+          "author": "reddit_user_9feaca0dd72e",
+          "author_karma": 0,
+          "content": "As an oursider, can someone explain what’s the big appeal of this movie? There’s been so many Spiderman movies out now, I would’ve assumed people would get tired of them.\n\nWhy is this so popular?",
+          "timestamp": "2026-08-03T18:01:17+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1hshsv",
+              "author": "reddit_user_0785cb235248",
+              "author_karma": 0,
+              "content": "The last one was well liked and left in a big question mark people were really excited about how it was going to resolve. Plus it's a good movie and we'll liked cast with what for a lot of people are the definitive versions of the character ",
+              "timestamp": "2026-08-03T18:08:30+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1hqs4g",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1htyh4",
+                  "author": "reddit_user_244271c0267c",
+                  "author_karma": 0,
+                  "content": "Exactly, and I like how this one wasn't trying to be \"bigger and better\" than No Way Home, and rather scaled back and simplified things and it really worked in the movie's favor. It has a lot of heart, and some big themes like loneliness that sadly a lot of us can relate to these days, but still ends on a hopeful note. It feels like it came out at the perfect time, just like No Way Home felt like it came out at the perfect time.",
+                  "timestamp": "2026-08-03T18:14:44+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1hshsv",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            },
+            {
+              "comment_id": "p1i09j3",
+              "author": "reddit_user_feeb75ee61e6",
+              "author_karma": 0,
+              "content": "The movie has heart, and simple. And is a good Spiderman movie. ",
+              "timestamp": "2026-08-03T18:41:54+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1hqs4g",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1hqy6x",
+          "author": "reddit_user_b7600f5a2960",
+          "author_karma": 0,
+          "content": "Comic Book movies are back on top lol",
+          "timestamp": "2026-08-03T18:02:00+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1hqzwo",
+          "author": "reddit_user_bc4ecccbc7c3",
+          "author_karma": 0,
+          "content": "Woah! Good luck with that Doomsday. *Walks away*",
+          "timestamp": "2026-08-03T18:02:12+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1hr6as",
+          "author": "reddit_user_d92cda1f0a8d",
+          "author_karma": 0,
+          "content": "1B+",
+          "timestamp": "2026-08-03T18:02:57+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1hmys9",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1hr9ad",
+          "author": "reddit_user_8c2b5c599b4d",
+          "author_karma": 0,
+          "content": ">Heading for TWO BILLION and beyond!!\n\nhttps://i.redd.it/gzfs2wcc97hh1.gif",
+          "timestamp": "2026-08-03T18:03:18+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1hzmwq",
+              "author": "reddit_user_6a8b4842cc60",
+              "author_karma": 0,
+              "content": "Yes word of mouth is very strong with this one and I think it’s going to have a lot of folks watching it more than once in theaters. ",
+              "timestamp": "2026-08-03T18:39:13+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1hr9ad",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1hr9i1",
+          "author": "reddit_user_b7600f5a2960",
+          "author_karma": 0,
+          "content": "Sony & Disney right now. ",
+          "timestamp": "2026-08-03T18:03:19+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1hnfsm",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1hr9yo",
+          "author": "reddit_user_e115633d4ba5",
+          "author_karma": 0,
+          "content": "This movie hit a billion before we got any actuals lol",
+          "timestamp": "2026-08-03T18:03:22+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1hrda7",
+          "author": "reddit_user_e1c966407d24",
+          "author_karma": 0,
+          "content": "They went for Toney, but I think a lot of people came away from that movie appreciating Andrew a lot more than they did going in. It helped that his character had a better arc.",
+          "timestamp": "2026-08-03T18:03:45+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1ho3kz",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1hrh0x",
+          "author": "reddit_user_349b9b93e022",
+          "author_karma": 0,
+          "content": "Here u go\n\nhttps://en.wikipedia.org/wiki/List\\_of\\_fastest-grossing\\_films",
+          "timestamp": "2026-08-03T18:04:12+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1hmxw8",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1hrxel",
+          "author": "reddit_user_2d392a8d651c",
+          "author_karma": 0,
+          "content": "Holy shit another million on Monday wtf ",
+          "timestamp": "2026-08-03T18:06:07+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1hs2fm",
+          "author": "reddit_user_320cadc8d400",
+          "author_karma": 0,
+          "content": "NGL you had me in the first half of your sentence!",
+          "timestamp": "2026-08-03T18:06:43+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1hnl9n",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1hs68s",
+          "author": "reddit_user_a74afbaa5c1f",
+          "author_karma": 0,
+          "content": "Big Potato ",
+          "timestamp": "2026-08-03T18:07:10+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1hseso",
+          "author": "reddit_user_36d3a2d9a50f",
+          "author_karma": 0,
+          "content": "The next biggest things coming out are The End of Oak Street and Paw Patrol both on the 14th",
+          "timestamp": "2026-08-03T18:08:09+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1hmzbj",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1hsiv0",
+          "author": "reddit_user_27b8c3e22b20",
+          "author_karma": 0,
+          "content": "https://preview.redd.it/2l5bn9sba7hh1.jpeg?width=640&format=pjpg&auto=webp&s=144146571bd235dfb5b078051d58f022fa9c8c5c",
+          "timestamp": "2026-08-03T18:08:38+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1hsla6",
+          "author": "reddit_user_6addf9ebbcfd",
+          "author_karma": 0,
+          "content": "Endgame was also released on Wednesday of its opening weekends in a number of markets. \n\n \"Avengers: Endgame was released on Wednesday, April 24, 2019, in several international markets—including China, Australia, France, Germany, and the Philippines—kicking off its historic global rollout two days ahead of its North American release.\"\n\nWhy would Spiderman be 6 days while Endgame is 5 days? ",
+          "timestamp": "2026-08-03T18:08:55+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1hok49",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1hsu5z",
+          "author": "reddit_user_8d48864f0a31",
+          "author_karma": 0,
+          "content": "Told ya! 😉👍🏾 #MarvelIsBack",
+          "timestamp": "2026-08-03T18:09:57+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1hswkm",
+          "author": "reddit_user_320cadc8d400",
+          "author_karma": 0,
+          "content": "With a trailer not revealing the main Big Bad, or even a hint of what the actual plot would be.\n\nJust the anitcipation of what happens next from the previous movie.",
+          "timestamp": "2026-08-03T18:10:14+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1hn3zg",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1hswm7",
+          "author": "reddit_user_5db2c453f78e",
+          "author_karma": 0,
+          "content": "Sony pissing themselves in joy. They still cant believe their luck",
+          "timestamp": "2026-08-03T18:10:14+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1ht5t8",
+          "author": "reddit_user_51aa9e6a11c8",
+          "author_karma": 0,
+          "content": "So basically standard comic spiderman then?",
+          "timestamp": "2026-08-03T18:11:19+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1hn3zg",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1htd4j",
+          "author": "reddit_user_51aa9e6a11c8",
+          "author_karma": 0,
+          "content": "The irony was I thought he was the best part of NWH. And Willem Dafoe of course.",
+          "timestamp": "2026-08-03T18:12:11+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1ho3kz",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1hufwc",
+          "author": "reddit_user_7618d98915cb",
+          "author_karma": 0,
+          "content": "I see people keep on remarking that this is due to Spider-Man's popularity, but didn't Amazing Spider-Man 2 (still a lot at like 700 million worldwide) make less than Spider-Man 3? I feel like the combination of having to wait to see Spider-Man on the big screen again after five years, Spider-Man's connection to the MCU, the Spider Home films being great, the NYC setting, and the mystery villain all lead to this phenomenal box office performance.",
+          "timestamp": "2026-08-03T18:16:48+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1hzp4l",
+              "author": "reddit_user_45c4a848ef75",
+              "author_karma": 0,
+              "content": "SM2 had a lot more competition that summer and there was less urgency to see a movie opening weekend 20 years ago.",
+              "timestamp": "2026-08-03T18:39:29+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1hufwc",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1huulh",
+          "author": "reddit_user_db243fd75ce1",
+          "author_karma": 0,
+          "content": "I think it is going to end up as a Top 3 All-Time performer at the global Box Office.\n\nUntil it actually slows down and stops breaking records...the sky is the limit. ",
+          "timestamp": "2026-08-03T18:18:34+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1huz95",
+          "author": "reddit_user_a52a6a689493",
+          "author_karma": 0,
+          "content": "Whoever decided for The Odyssey to open on July 17th instead of August 17th cost The Odyssey at least an additional $400mil.\n\nAnother mistake was not opening it simultaneously globally. \n\nWhilst The Odyssey is in the billion-dollar club, it could have easily done better than what's expected to do.\n\nMassive success still. ",
+          "timestamp": "2026-08-03T18:19:08+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1hvdk5",
+              "author": "reddit_user_d55a3f39a1fd",
+              "author_karma": 0,
+              "content": "August 17th would have been the worse time to release it not to mention a Monday.",
+              "timestamp": "2026-08-03T18:20:49+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1huz95",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1hw5zc",
+                  "author": "reddit_user_a52a6a689493",
+                  "author_karma": 0,
+                  "content": "Late August? ",
+                  "timestamp": "2026-08-03T18:24:12+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1hvdk5",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1hwihb",
+                      "author": "reddit_user_d55a3f39a1fd",
+                      "author_karma": 0,
+                      "content": "Nolan would have never accepted that, I think for him it was July or nothing.",
+                      "timestamp": "2026-08-03T18:25:40+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1hw5zc",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "p1hxzej",
+                          "author": "reddit_user_a52a6a689493",
+                          "author_karma": 0,
+                          "content": "Because of his insistence, Universal missed out on turning The Odyssey into its new highest grossing film ever. ",
+                          "timestamp": "2026-08-03T18:31:58+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "p1hwihb",
+                          "depth": 4,
+                          "replies": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p1hv2q9",
+          "author": "reddit_user_c10acceb25c5",
+          "author_karma": 0,
+          "content": "Insidious on the 21st probably overtakes it but then Spiderman claims it again the following 2 weeks.",
+          "timestamp": "2026-08-03T18:19:32+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1hmzbj",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1hvcoe",
+          "author": "reddit_user_43009b2966e9",
+          "author_karma": 0,
+          "content": "He can’t keep getting away with this! ",
+          "timestamp": "2026-08-03T18:20:43+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1hvew5",
+          "author": "reddit_user_56d5608554e0",
+          "author_karma": 0,
+          "content": "![gif](giphy|WjC34Pvw6pgRi)",
+          "timestamp": "2026-08-03T18:20:59+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1hvvki",
+          "author": "reddit_user_74ac3c6c34da",
+          "author_karma": 0,
+          "content": "Fahhhhh Tom u doin this till ya 90",
+          "timestamp": "2026-08-03T18:22:59+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1hn05h",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1hw29s",
+          "author": "reddit_user_a52a6a689493",
+          "author_karma": 0,
+          "content": "And it's already a few hours away from beating Avatar 3. ",
+          "timestamp": "2026-08-03T18:23:45+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1hmr6g",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1hw2hj",
+          "author": "reddit_user_c1200b8c353a",
+          "author_karma": 0,
+          "content": "imagine telling people 2B is the floor last month.",
+          "timestamp": "2026-08-03T18:23:47+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1hw3zj",
+          "author": "reddit_user_b3c89080e078",
+          "author_karma": 0,
+          "content": "So, Tom Holland’s Spidey ALWAYS appears in a billion dollar picture except for Homecoming. Civil War, Infinity War, Endgame, Far From Home, No Way Home, Brand New Day. Insanity",
+          "timestamp": "2026-08-03T18:23:58+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1hwadf",
+          "author": "reddit_user_3d0f63fef6a6",
+          "author_karma": 0,
+          "content": "Biiig movie",
+          "timestamp": "2026-08-03T18:24:43+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1howla",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1hwbym",
+          "author": "reddit_user_02f03e3d8afb",
+          "author_karma": 0,
+          "content": "Wow, what a bomb. Completely blew up all the records. Pffft",
+          "timestamp": "2026-08-03T18:24:54+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1hzs05",
+              "author": "reddit_user_afe6fed7b92c",
+              "author_karma": 0,
+              "content": "The unironic juxtaposition between normal people loving this and “reviewers” like drinker and mauler hating it. ",
+              "timestamp": "2026-08-03T18:39:49+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1hwbym",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1hwjbe",
+          "author": "reddit_user_c499ba496436",
+          "author_karma": 0,
+          "content": "This sub is a bit weird. Gloating that Disney executives are making millions ",
+          "timestamp": "2026-08-03T18:25:46+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1hx2se",
+              "author": "[deleted]",
+              "author_karma": 0,
+              "content": "[removed]",
+              "timestamp": "2026-08-03T18:28:04+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1hwjbe",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p1hzhg5",
+              "author": "[deleted]",
+              "author_karma": 0,
+              "content": "[deleted]",
+              "timestamp": "2026-08-03T18:38:34+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1hwjbe",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p1hzslx",
+              "author": "reddit_user_3d424fd45e65",
+              "author_karma": 0,
+              "content": "This is a box office sub man?",
+              "timestamp": "2026-08-03T18:39:54+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1hwjbe",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1hws1r",
+          "author": "reddit_user_e2d8abee80bf",
+          "author_karma": 0,
+          "content": "is there any chance it beats endgame? The gap between the 2-3 spots is huge, so not super confident.",
+          "timestamp": "2026-08-03T18:26:47+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1hy5jf",
+          "author": "reddit_user_c76fdbb55448",
+          "author_karma": 0,
+          "content": "I believed in this movie from the start but I still could not have predicted this. in roughly how many hours do monday actuals come out?",
+          "timestamp": "2026-08-03T18:32:42+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1hyaz8",
+          "author": "reddit_user_947fedb23ed4",
+          "author_karma": 0,
+          "content": "Post it when it crosses $1B.",
+          "timestamp": "2026-08-03T18:33:22+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1hyft9",
+          "author": "reddit_user_c5141956b1ff",
+          "author_karma": 0,
+          "content": "![gif](giphy|NR0NKy6xCigZKEIwKG)",
+          "timestamp": "2026-08-03T18:33:58+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1hnfsm",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1hyq8h",
+          "author": "reddit_user_afe6fed7b92c",
+          "author_karma": 0,
+          "content": "Can we please measure box office exclusively in morbius from now on ",
+          "timestamp": "2026-08-03T18:35:15+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1hor2a",
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1i1t4o",
+              "author": "reddit_user_02f03e3d8afb",
+              "author_karma": 0,
+              "content": "Brand New Day’s global opening was equivalent to 2 morbiuses, 3 Madame webs and 5 Kraven the Hunters",
+              "timestamp": "2026-08-03T18:48:35+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1hyq8h",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1i39ck",
+          "author": "reddit_user_dee18483c985",
+          "author_karma": 0,
+          "content": "Endgame also hit $2B in 11 days, while 13-14 is more likely for this because of China being less of a big player.",
+          "timestamp": "2026-08-03T18:54:47+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1ko0k4",
+          "author": "reddit_user_b45b4388ff21",
+          "author_karma": 0,
+          "content": "The big 3, far from home,no way home, Brand new dag",
+          "timestamp": "2026-08-04T02:33:00+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1hou5f",
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run023_post02_seed117",
+      "post_slot": 2,
+      "seed_index": 117,
+      "source_raw_post_id": "1vekdst",
+      "source_product_dir": "movies",
+      "source_file": "https://www.reddit.com/r/movies/comments/1vekdst/i_really_miss_movies_pre_2010/",
+      "post_type": "Media",
+      "title": "I really miss movies pre 2010",
+      "author": "reddit_user_f403d059ef4c",
+      "author_karma": 0,
+      "content": "I really miss movies pre 2010\n\nI recently watched Shaun of the dead because I haven’t watched it in a while, so I sat back watched it again and I enjoyed every second of it like I did the 1st time watching and it made me think \n\nThe only movies that truly do this to me is movies that were created prior to 2010 has that feeling.\n\nIdk how to explain it but it just got that feeling. \n\nThe pace of the movie   \nThe dialogue OH MY GOODNESS THE dialogue is so beautiful \n\nThe quietness of SCENES! \n\nNot everything being explained to you BY THE character \n\nI can’t really put it into words properly \n\nThe wittiness that doesn’t sound corny \n\nAnother example is pulp fiction my favorite scene of the whole movie s butch simply walking to his apartments \n\nSo much tension and you don’t have to say a word to the audience no music no nothing. \n\nMOVIES DONT DO THIS ANYMORE \n\nI’m tired of it someone has to explain to me what happened",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p1hmmjt",
+          "author": "reddit_user_df40e6159f27",
+          "author_karma": 0,
+          "content": "I think the culture changed when Hollywood starting focusing so much on superhero movies and franchise films. There was less emphasis on marketing directors and movie stars, which made for less films that were known as films themselves instead of just adaptations, and made people less interested in going into the movie business which reduced the talent flow.",
+          "timestamp": "2026-08-03T17:44:09+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1hq6hj",
+              "author": "reddit_user_46c61b0c1e3c",
+              "author_karma": 0,
+              "content": "Bingo",
+              "timestamp": "2026-08-03T17:58:48+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1hmmjt",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1hn0tw",
+          "author": "reddit_user_bb32d86b87ed",
+          "author_karma": 0,
+          "content": "Edgar Wright has made five movies since 2010.",
+          "timestamp": "2026-08-03T17:45:45+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1ho0vt",
+              "author": "reddit_user_38e045f15b89",
+              "author_karma": 0,
+              "content": "And a couple of them are pretty good, but none as good as Shaun of the Dead",
+              "timestamp": "2026-08-03T17:49:53+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1hn0tw",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1hq5ba",
+                  "author": "reddit_user_222cfaca903c",
+                  "author_karma": 0,
+                  "content": "I actually think Hot Fuzz is superior to Shaun of the Dead. ",
+                  "timestamp": "2026-08-03T17:58:40+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1ho0vt",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1huyom",
+                      "author": "reddit_user_4e4104fe609b",
+                      "author_karma": 0,
+                      "content": "But it is not one of the five post-2010 movies they’re talking about. Came out in 2007",
+                      "timestamp": "2026-08-03T18:19:04+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1hq5ba",
+                      "depth": 3,
+                      "replies": []
+                    },
+                    {
+                      "comment_id": "p1jju4y",
+                      "author": "reddit_user_38e045f15b89",
+                      "author_karma": 0,
+                      "content": "Hot Fuzz is an incredible movie, and that’s a valid opinion for sure. But that movie came out before 2010",
+                      "timestamp": "2026-08-03T22:54:55+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1hq5ba",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                },
+                {
+                  "comment_id": "p1hqlxp",
+                  "author": "reddit_user_284ef02710fa",
+                  "author_karma": 0,
+                  "content": "I like Shaun of the Dead but Hot Fuzz IMO is better. ",
+                  "timestamp": "2026-08-03T18:00:34+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1ho0vt",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            },
+            {
+              "comment_id": "p1hoqfs",
+              "author": "reddit_user_a4ded00fdccb",
+              "author_karma": 0,
+              "content": "He really lost his touch though.",
+              "timestamp": "2026-08-03T17:52:47+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1hn0tw",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p1hp4hs",
+              "author": "reddit_user_bdc3cf0d413d",
+              "author_karma": 0,
+              "content": "What does that prove? None of them are as good, and Running Man was an absolute mess of a film. ",
+              "timestamp": "2026-08-03T17:54:24+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1hn0tw",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1hn3g3",
+          "author": "reddit_user_cc5091eee143",
+          "author_karma": 0,
+          "content": ">The pace of the movie\n>The dialogue OH MY GOODNESS THE dialogue is so beautiful\n>The quietness of SCENES!\n>Not everything being explained to you BY THE character\n\nI feel the same way about Signs (2002). Except in that movie, everything IS explained to you BY THE character. And then explained again, in case you missed it the first time. And yet I forgive this because I love the idea of living in peace on that farmhouse. And I love how every shot is so perfectly composed, with no lazy images. Shyamalan knows you can get away with narrative \"murder\" if the film offers you a kind of \"compensation\" elsewhere. Flashlight in deeply atmospheric cornfield seeing spooky alien leg = compensation.",
+          "timestamp": "2026-08-03T17:46:03+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1hn4uw",
+          "author": "reddit_user_8a0f3d862faf",
+          "author_karma": 0,
+          "content": "I miss a lot of thing pre 2010 lol ",
+          "timestamp": "2026-08-03T17:46:13+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1hrnsu",
+              "author": "reddit_user_eaf8c1d75358",
+              "author_karma": 0,
+              "content": "Yeah, the world was just overall so much better. Even with the crash. ",
+              "timestamp": "2026-08-03T18:04:59+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1hn4uw",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p1i7r5l",
+              "author": "[deleted]",
+              "author_karma": 0,
+              "content": "[removed]",
+              "timestamp": "2026-08-03T19:14:10+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1hn4uw",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1hn734",
+          "author": "reddit_user_59388dfba4cc",
+          "author_karma": 0,
+          "content": "nostalgia will do that to you ",
+          "timestamp": "2026-08-03T17:46:28+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1hs8q7",
+              "author": "reddit_user_9ee74801d853",
+              "author_karma": 0,
+              "content": "Hell of a drug",
+              "timestamp": "2026-08-03T18:07:27+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1hn734",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1hncjq",
+          "author": "reddit_user_96bb76eee31e",
+          "author_karma": 0,
+          "content": "Branch out, maybe. Plenty of good movies still being made that don't hold your hand. I honestly think the 00s-10s were some bad times for film, specifically 2011-2015 or so",
+          "timestamp": "2026-08-03T17:47:06+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1hpbqd",
+              "author": "reddit_user_17648eca400a",
+              "author_karma": 0,
+              "content": "Right now I feel like horror and its sub genres are where the quality films are nowadays. ",
+              "timestamp": "2026-08-03T17:55:14+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1hncjq",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1hnnl3",
+          "author": "reddit_user_1e6555daa8d7",
+          "author_karma": 0,
+          "content": "Sounds like you're not trying very hard to find good recent stuff. Have you even seen Uncut Gems?",
+          "timestamp": "2026-08-03T17:48:22+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1hodvm",
+              "author": "[deleted]",
+              "author_karma": 0,
+              "content": "[removed]",
+              "timestamp": "2026-08-03T17:51:22+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1hnnl3",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p1hsc9a",
+              "author": "[deleted]",
+              "author_karma": 0,
+              "content": "[removed]",
+              "timestamp": "2026-08-03T18:07:52+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1hnnl3",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p1j8awd",
+              "author": "reddit_user_dfbe83c1cc8f",
+              "author_karma": 0,
+              "content": "That movie is 7 years old now ",
+              "timestamp": "2026-08-03T21:57:37+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1hnnl3",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1kq7r7",
+                  "author": "reddit_user_1e6555daa8d7",
+                  "author_karma": 0,
+                  "content": "Did it come out before or after 2010?",
+                  "timestamp": "2026-08-04T02:45:32+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1j8awd",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1kz1tk",
+                      "author": "reddit_user_dfbe83c1cc8f",
+                      "author_karma": 0,
+                      "content": "Is 2010 the bar for a “recent” good movie? Kids born that year will be registering for the draft next year ",
+                      "timestamp": "2026-08-04T03:39:50+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1kq7r7",
+                      "depth": 3,
+                      "replies": []
+                    },
+                    {
+                      "comment_id": "p1kz2m6",
+                      "author": "[deleted]",
+                      "author_karma": 0,
+                      "content": "[deleted]",
+                      "timestamp": "2026-08-04T03:39:58+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1kq7r7",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p1hosl2",
+          "author": "reddit_user_cc1f62deda94",
+          "author_karma": 0,
+          "content": "Paul Thomas Anderson has made 5 movies like this since 2010",
+          "timestamp": "2026-08-03T17:53:02+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1hovon",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[deleted]",
+          "timestamp": "2026-08-03T17:53:24+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1hp0ag",
+          "author": "reddit_user_222cfaca903c",
+          "author_karma": 0,
+          "content": "Nothing happened. \n\nFirst, you're cherry picking two films (Pulp Fiction and Shaun of the Dead) that aren't even typical of their time. Both were lauded by audiences and critics at their time of release for being far above average and for being unique in various ways. \n\nSecond, it's easy to say things have gone down hill retrospectively when the hits are all that you remember. Yeah, there's plenty of movies coming out these days with things to complain about, but that was true back then, too. The difference is that it's been long enough since 2010 and prior that you only really remember the good ones and the ones that absolutely bombed. The movies that suck without being godawful, and the movies that were average and forgettable, are just that--forgotten. ",
+          "timestamp": "2026-08-03T17:53:55+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1ijxkt",
+              "author": "reddit_user_bdc3cf0d413d",
+              "author_karma": 0,
+              "content": "So you don't think there are *any* negative forces working against film productions today that weren't there in the 90s/00s? ",
+              "timestamp": "2026-08-03T20:07:34+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1hp0ag",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1iljhu",
+                  "author": "reddit_user_222cfaca903c",
+                  "author_karma": 0,
+                  "content": "Of course there are. There's POSITIVE forces today that weren't there in the 90s/00s. Filmmaking is always evolving, with pros and cons to each era. But it's absurd to take this \"they don't make 'em like they used to\" attitude where you somehow feel good movies just don't get made anymore or that movies of yesteryear were all generally better than movies coming out today. That kind of perception is largely borne out of pretending it's not the case that EVERY decade in Hollywood is loaded with forgettable films and flops. \n\nAnd the OP isn't helping their case by pointing out two films that were both highly well-received by critics and audiences compared to contemporaneous films, even when first released. The films the OP pointed to are absolutely NOT indicative of the majority of what was getting made at the time. ",
+                  "timestamp": "2026-08-03T20:14:36+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1ijxkt",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1imzs1",
+                      "author": "reddit_user_bdc3cf0d413d",
+                      "author_karma": 0,
+                      "content": "I appreciate posts citing two classics are an invitation for opposition. But I firmly do believe that films aren't as good as they used to be. Of course there were terrible films before, and great ones now, but generally, I find there's an undefinable quality and rewatchability to older films that just isn't common anymore. ",
+                      "timestamp": "2026-08-03T20:20:55+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1iljhu",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "p1ipejk",
+                          "author": "reddit_user_9b3867d73d2c",
+                          "author_karma": 0,
+                          "content": "Tbh, even the “Good movies” of today in my opinion would be average movies back then.\n\nI think what this one guy posted about the market shifting from the USA and shifting to a more global  \nMarket was truly the change in atleast American movies. ",
+                          "timestamp": "2026-08-03T20:31:28+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "p1imzs1",
+                          "depth": 4,
+                          "replies": [
+                            {
+                              "comment_id": "p1iyl7a",
+                              "author": "reddit_user_bdc3cf0d413d",
+                              "author_karma": 0,
+                              "content": "Also, films that I remember getting 2-star reviews in Empire magazine back in the 90s, when I finally catch up to them now, will often be great watches. That awesome 'film' look. Even with a few cliches, tropes or predictability, there's just a quality to the performances. They're highly watchable. These days there's this weird self-consciousness where everything feels written, unnatural, performances are more like celebrities reading lines and trying to impress their fanbases. I think one of the main differences is that films used to be for the audience in a truer way, everything was in service of the story. It doesn't feel like that now, everyone is trying to be impressive while catering to short attention spans, so it all comes out self-conscious contrived junk. ",
+                              "timestamp": "2026-08-03T21:12:25+00:00",
+                              "likes": 1,
+                              "dislikes": 0,
+                              "parent_comment_id": "p1ipejk",
+                              "depth": 5,
+                              "replies": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "comment_id": "p1j9820",
+              "author": "reddit_user_dfbe83c1cc8f",
+              "author_karma": 0,
+              "content": "What’s the last wide release stoner comedy?\n\nWhat’s the last wide release reboot, sequel, remake, or cinematic universe installment?\n\nSure, good movies still get made. Once in a great while they even end up in theaters. But the landscape has changed, and if you don’t like CGI or sequels, it’s changed for the worse. An educated cinephile who carefully researches online may still find a few movies to plan for and look forward to, but you used to just be able to pick a weekend and go see something that wasn’t Fast & Furious or Pixar",
+              "timestamp": "2026-08-03T22:02:00+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1hp0ag",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1hpfo7",
+          "author": "reddit_user_1779d0323fe3",
+          "author_karma": 0,
+          "content": "I don't know how many times this needs to be said in these movie subs, but there are so many good movies being released right now that do the things you're saying they don't. This is such a circle jerk post.",
+          "timestamp": "2026-08-03T17:55:41+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1hwtej",
+              "author": "reddit_user_fce2226a3dda",
+              "author_karma": 0,
+              "content": "I haven't been in a movie theater since 10 Cloverfield lane. Suggest some movies my wife would not be interested in watching with me.",
+              "timestamp": "2026-08-03T18:26:56+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1hpfo7",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1hph82",
+          "author": "reddit_user_5382ce48df77",
+          "author_karma": 0,
+          "content": "🌹 👓 ",
+          "timestamp": "2026-08-03T17:55:51+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1hpl5c",
+          "author": "reddit_user_bdc3cf0d413d",
+          "author_karma": 0,
+          "content": "There are some occasional great films that are highly rewwatchable, but I agree for the most part there's something about modern life, social media, executive committees trying to please everyone, overall self-consciousness, that makes most films absolute shit in comparison to older films. ",
+          "timestamp": "2026-08-03T17:56:18+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1hpurf",
+          "author": "reddit_user_177370fb0c1b",
+          "author_karma": 0,
+          "content": "Lots has changed over the last 20 years, but a big factor is the globalization of box office revenues.\n\nBack in the 90s, for a typical US produced film, domestic box office accounted for 70% or so of total revenues.  That has since flipped.  The domestic US market only makes up 30% of proceeds.  \n\nSo films aren't really being targeted at US viewers anymore.  To maximize revenue they need to be watchable for a global audience that maybe isn't comfortable with nuanced dialog and dramatic complexity that would require some familiarity with US culture to really appreciate.  (This is not to say that, say, audiences in China can't handle psychological complexity and witty dialog -- they absolutely can, they just prefer to get it from Chinese productions).\n\nTo maximize global revenue, plots and characters are kept simple and action is prioritized over more serious drama or comedy that overseas viewers won't get.  Hence, the dominance of superhero genre and heavy reliance on CGI.  \n\n",
+          "timestamp": "2026-08-03T17:57:25+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1hqubk",
+              "author": "reddit_user_a4c12cf430de",
+              "author_karma": 0,
+              "content": "Wow this is an interesting take.  I heard Matt Damon's explanation about how streaming has killed mid budget movies, but never thought about the globalization factor when it comes to box office revenue. ",
+              "timestamp": "2026-08-03T18:01:33+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1hpurf",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1i55hb",
+                  "author": "reddit_user_177370fb0c1b",
+                  "author_karma": 0,
+                  "content": "I am sure it is multiple factors.  It does seem that character-heavy drama is doing just fine on streaming platforms.  ",
+                  "timestamp": "2026-08-03T19:02:51+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1hqubk",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            },
+            {
+              "comment_id": "p1hx4wa",
+              "author": "reddit_user_9b3867d73d2c",
+              "author_karma": 0,
+              "content": "I think this is the best explanation \n\nThat definitely explains it ",
+              "timestamp": "2026-08-03T18:28:19+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1hpurf",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1hrmtv",
+          "author": "reddit_user_4700e299eb43",
+          "author_karma": 0,
+          "content": "You’re simply not watching enough movies if you think there’s a high level of uniformity amongst films being made nowadays. If the style of big budget blockbusters is what bothers you, I’d recommend paying attention to the films that are receiving acclaim at the big film festivals. ",
+          "timestamp": "2026-08-03T18:04:53+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1hs5zr",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-03T18:07:08+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1hvlt3",
+          "author": "reddit_user_360c51dfa95b",
+          "author_karma": 0,
+          "content": "Yeah well blame Trump and conservatives.",
+          "timestamp": "2026-08-03T18:21:49+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1hw6ze",
+          "author": "reddit_user_fce2226a3dda",
+          "author_karma": 0,
+          "content": "Me and my kid watched men in black yesterday. It was great. A few days ago he watched the first transformers movie. WATERWORKS. He requests \"The knights of gondor\" every other month. ",
+          "timestamp": "2026-08-03T18:24:19+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1hxga9",
+          "author": "reddit_user_38538feb7a10",
+          "author_karma": 0,
+          "content": "I'm so tired of studios pushing for a sequel on every movie. ",
+          "timestamp": "2026-08-03T18:29:41+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1hxyq5",
+              "author": "reddit_user_9b3867d73d2c",
+              "author_karma": 0,
+              "content": "I’m so glad the actor of Shaun of the dead never wanted to do a sequel \n\nSome things really are best when left untouched \n\nOne movie series till this day I will never forvgive for making a thousand sequels is Saw \n\nIf SAW came out with just 1 movie and that was it \n\nI mean Saw is still of the best horror films of all time  \nBut it would be viewed in such a different light if it wasn’t made into 6 or 7 sequels. ",
+              "timestamp": "2026-08-03T18:31:53+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1hxga9",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1iifqv",
+          "author": "reddit_user_bdc3cf0d413d",
+          "author_karma": 0,
+          "content": "I know thats a common, predictable rebuttal to these discussions, but it might also be true that films aren't as good as they used to be. ",
+          "timestamp": "2026-08-03T20:00:58+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1hucpr",
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run023_post03_seed118",
+      "post_slot": 3,
+      "seed_index": 118,
+      "source_raw_post_id": "1vekp9j",
+      "source_product_dir": "TrueFilm",
+      "source_file": "https://www.reddit.com/r/TrueFilm/comments/1vekp9j/the_piano_teacher_if_nikki_in_obsession_was_just/",
+      "post_type": "reddit_post",
+      "title": "The Piano Teacher - if Nikki in Obsession was just her true self",
+      "author": "reddit_user_f403d059ef4c",
+      "author_karma": 0,
+      "content": "The Piano Teacher - if Nikki in Obsession was just her true self\n\nI finally watched this one. The reason why I avoided it whenever I heard it mentioned as something interesting was because I mixed it up with a pretty bad movie I saw as a kid, and thought it was some shitty romance. Then I realized it was from Haneke and got interested. I couldn’t have been more off in my expectations. \n\nI’m also making this review before I read anything about the movie, because my goal is not to analyze it much at this stage, just to share the strong reaction it left me with. I am very desensitized to most things, but this movie really repulsed me. I say this as a huge compliment, I guess. \n\nThe character of Erika made me very uncomfortable. I can’t say I understand her at all. But what the movie did so well is how it approached her. Just like that guy, we get to see her as a very hot, smart woman, who is a little weird but has her shit together. I found her very attractive in the first half of the movie. Even though we got to see some of her pervy side, I still took it as intriguing, although I thought hat if she wasn’t an attractive woman, a lot of it would be just grotesque. \n\nBut at the point when she revealed her wishes and then started acting so differently, she evoked a true sense of revulsion in me. In a way the movie made me feel exactly like that guy Walter, at first seeing her as someone idealized and then becoming disgusted, although of course that continued in a different direction. It was more effective than most horror movies, how she transformed. I have to give it to the actress. \n\nIn that specific aspect, it reminded me of Obsession, but while I can’t judge Nikki for her behavior caused by practically being possessed, the transformation in Erika is just her revealing her true wishes. As if the premise of Obsession was not that Nikki had to become possessed and incapacitated to act that way, but that the wish unleashed her true inner self and it was like that, and how horrifying would that be. \n\nBut then, how do you engage with that without hating her? I genuinely don’t understand people who are into this kind of shit, so maybe I’m not the best judge, but in a way I got it - if to be with her you have to do the things she wants, and that’s what those things are, how can you not end up thinking of her as repulsive and wanting to hurt her (since that’s what she wants…) \n\nI am completely confused by the ending. I don’t know if the final act was just Walter doing what she wanted, or if she really got hurt. I don’t really know what she wanted in the first place. The day after makes it seem she is pretty hurt and fucked up, which intuitively makes sense but not according to her logic. Did Walter do anything wrong? I truly have no idea. \n\n For me the scene was really hard to watch, but in a weird way where I didn’t feel pity for her but embarrassment. It was so uncomfortable, with her mom there, it gave me that real sense of anxiety and I don’t even know on whose behalf. \n\nSimilarly, the scene where she is trying to sexually assault her mother and they just keep lying next to each other, it’s mental but as bizarre as it is, it’s done so well that I believed it and that made it hard to stand. \n\nI watched Nymphomaniac before, I liked it a lot, but this movie is one of the most uncomfortable movies I’ve ever seen, and her character genuinely sickened me. I respect the actress for what she pulled off. \n\nI don’t understand what she wants at the end or why she stabs herself and leaves, what kind of reaction she wanted from him on that occasion. It is weird how a character who makes no sense to me managed to be so believable. \n\nOverall, a great movie, deserves its reputation. I have no idea what I think of the plot or the characters.",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p1hur0z",
+          "author": "reddit_user_9d60e44ac066",
+          "author_karma": 0,
+          "content": "I have only seen it once and it has been a couple years, but it left me with a vivid impression so I will give my thoughts. To me, Walter did rape her pretty unambiguously, because he did what he did out of revulsion and a desire to assert dominance over a fucked up situation that made him uncomfortable. Regardless of the content of her fantasy, it’s clear that she wants to be actually cared for in some way, she wants it to be for her at a deep level and not in spite of her when she is being treated in fucked up ways. He abuses her and throws her away, and the emotional fallout from it devastates her. Her perversions and complications make intimacy quite difficult for her but she actually wanted it, and I think that this go at it has broken her spirit brutally. She may never try to be intimate with someone again, if she doesn’t kill herself.",
+          "timestamp": "2026-08-03T18:18:08+00:00",
+          "likes": 4,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1hze3b",
+              "author": "reddit_user_1eac05cf602a",
+              "author_karma": 0,
+              "content": "> because he did what he did out of revulsion and a desire to assert dominance over a fucked up situation that made him uncomfortable. \n\nBut that is very understandable (not the rape but that she evoked this reaction, I felt it even as a viewer), still it is exactly what she said she wanted. \n\n>it’s clear that she wants to be actually cared for in some way, she wants it to be for her at a deep level and not in spite of her when she is being treated in fucked up ways\n\nI didnt really get this. I didnt understand what she wanted at all or what is the right approach aside from just getting the fuck away from her. And what do you mean \"not in spite of her\", the only way to care for her like that guy did at the start is to do it in spite of her. If you fulfill her wishes, you hurt her like at the end. So its impossible to care for her without totally disregarding what she wants. \n\n>and the emotional fallout from it devastates her.\n\nI genuinely didnt understand what reaction she wanted after that. ",
+              "timestamp": "2026-08-03T18:38:09+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1hur0z",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p1hzf7a",
+              "author": "reddit_user_1eac05cf602a",
+              "author_karma": 0,
+              "content": "> because he did what he did out of revulsion and a desire to assert dominance over a fucked up situation that made him uncomfortable. \n\nBut that is very understandable (not the rape but that she evoked this reaction, I felt it even as a viewer), still it is exactly what she said she wanted. \n\n>it’s clear that she wants to be actually cared for in some way, she wants it to be for her at a deep level and not in spite of her when she is being treated in fucked up ways\n\nI didnt really get this. I didnt understand what she wanted at all or what is the right approach aside from just getting the fuck away from her. And what do you mean \"not in spite of her\", the only way to care for her like that guy did at the start is to do it in spite of her. If you fulfill her wishes, you hurt her like at the end. So its impossible to care for her without totally disregarding what she wants. \n\n>and the emotional fallout from it devastates her.\n\nI genuinely didnt understand what reaction she wanted after that.",
+              "timestamp": "2026-08-03T18:38:17+00:00",
+              "likes": 2,
+              "dislikes": 0,
+              "parent_comment_id": "p1hur0z",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1i3qcz",
+                  "author": "reddit_user_9d60e44ac066",
+                  "author_karma": 0,
+                  "content": "Yes. No one could be intimate with this broken person in a normal way. She needed someone who would be willing to love her in an abnormal way, and that is very hard to come by in the world, and that is why the movie is a tragedy for her. Her stabbing herself is essentially her internalizing that she is unlovable.",
+                  "timestamp": "2026-08-03T18:56:48+00:00",
+                  "likes": 4,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1hzf7a",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1i54xa",
+                      "author": "reddit_user_1eac05cf602a",
+                      "author_karma": 0,
+                      "content": "Or maybe you can only love her by pretending she doesnt want what she says she wants (which may be true) and keep treating her with standard romantic love, like it's all some elaborate game for her just to see who persists. I mean its bizarre for anyone to want to do that, but I'm trying to figure out what she actually wants.",
+                      "timestamp": "2026-08-03T19:02:47+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1i3qcz",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p1i63ew",
+          "author": "reddit_user_5b364a43f526",
+          "author_karma": 0,
+          "content": "It sounds like you thought the film was great but it was an extremely uncomfortable watch, which I'd guess is exactly the reaction Haneke is trying to provoke. Apart from that, if you don't relate to Erika and found it hard to sympathise with her, I'd just take that and be glad. People who watch The Piano Teacher and DO relate to Erika - those are the people with the problem.",
+          "timestamp": "2026-08-03T19:06:55+00:00",
+          "likes": 3,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1i852c",
+              "author": "reddit_user_1eac05cf602a",
+              "author_karma": 0,
+              "content": "> It sounds like you thought the film was great but it was an extremely uncomfortable watch\n\nExactly that. I don't know how the impression it left will develop with time but right now it left an impact very few movies did in a sense of extreme discomfort, which i find impressive. \n\nIn terms of relating to someone, I almost felt like the reactions she provokes in the viewer (at least in me, I can only assume its generally applicable) match what Walter sees in her. I found her very attractive and appealing at first. Then that changed into revulsion and strong dislike. Now after everything i feel a type of pity. \n\n>those are the people with the problem\n\nDefinitely, but I wonder if anyone really is like her, and how many. Do I know anyone who is secretly like that? She may be the most unusual horror movie psycho, and she didn't even overtly hurt anyone but herself.",
+              "timestamp": "2026-08-03T19:15:50+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1i63ew",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1ispkz",
+                  "author": "reddit_user_5b364a43f526",
+                  "author_karma": 0,
+                  "content": "Erika is extreme, but yes there are many people like her. The novel the film is based on contains autobiographical elements. One interpretation is that both Erika and her mother have narcissistic personality disorder. Erika carries a deep wound that never heals. She experiences the pain of it every waking moment. Her sexual perversions and self harm are the only way she knows to relieve the pain. She lives in a constant state of utter desperation. She's the saddest film character I know of.",
+                  "timestamp": "2026-08-03T20:46:02+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1i852c",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1l1nn2",
+                      "author": "reddit_user_1eac05cf602a",
+                      "author_karma": 0,
+                      "content": "That's interesting, but why would narcissism make her feel constant pain and desperation? Does she just want her mom to love her or something along those lines, even the directions she gave that guy all stipulated that things they did had to take place in the room next to her mom.\n\nI appreciated that the movie didnt go too extreme with the hold her mom had on her, they didn't make it like Erika cant leave the house or show any explicit ways she controls her, she has a job and does her things and even fights back when her mom starts her shit but they're still so codependent. \n\n",
+                      "timestamp": "2026-08-04T03:56:39+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1ispkz",
+                      "depth": 3,
+                      "replies": []
+                    },
+                    {
+                      "comment_id": "p1l2nhc",
+                      "author": "[deleted]",
+                      "author_karma": 0,
+                      "content": "[deleted]",
+                      "timestamp": "2026-08-04T04:03:12+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1ispkz",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p1iku91",
+          "author": "reddit_user_b711279728df",
+          "author_karma": 0,
+          "content": "I love this comparison to Obsession. I just happened to see this for the first time after 20 years of meaning to, and I was thinking the same thing!  \n\nEven while watching Obsession, I was thinking what a lost opportunity it was to turn her into some kind of random flesh-eating zombie instead of a true psychological exploration of the social implications of extreme attachment/obsession. By comparison, Piano Teacher delivered the true psychological horror experience I was looking for!",
+          "timestamp": "2026-08-03T20:11:32+00:00",
+          "likes": 5,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1imkwr",
+              "author": "reddit_user_1eac05cf602a",
+              "author_karma": 0,
+              "content": "Im really glad someone likes the comparison. \n",
+              "timestamp": "2026-08-03T20:19:08+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1iku91",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p1imlm5",
+              "author": "reddit_user_1eac05cf602a",
+              "author_karma": 0,
+              "content": "Im really glad someone likes the comparison.",
+              "timestamp": "2026-08-03T20:19:13+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1iku91",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1jnap2",
+          "author": "reddit_user_f6529786ed9f",
+          "author_karma": 0,
+          "content": "> I finally watched this one. The reason why I avoided it whenever I heard it mentioned as something interesting was because I mixed it up with a pretty bad movie I saw as a kid, and thought it was some shitty romance.\n\nI hope the other film is not *The Piano* because if your recollection of it is \"some shitty romance\" (which, I suppose, I can see a kid thinking), you owe it a re-watch. I know that Jane Campion isn't everyone's cup of tea, and you might not enjoy *The Piano*, but this film deserves more than to be casually tossed aside based on a childhood impression.\n\nOr maybe you're thinking of some other film entirely and I've wasted a bunch of keystrokes.",
+          "timestamp": "2026-08-03T23:12:53+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1l2n6n",
+              "author": "reddit_user_1eac05cf602a",
+              "author_karma": 0,
+              "content": "Yes it was, I saw it as a kid and I vividly remember how much I disliked it as a whole, but I also remember the finger cutting scene. So for years whenever someone recommended the Piano Teacher to me, or I saw it mentioned as a great movie, I thought they talked about The Piano. And even assuming the movie is better than the kid me thought, it still isn't really my thing so I couldn't get myself to see it. It doesn't help that the Piano Teacher is described as Erotic Romance, this put me off for years.\n\nIt was just recently when I saw it was Haneke that I decided to finally check it out again, and my instant thought was that wasnt she supposed to be a mute or something. Then I realized.",
+              "timestamp": "2026-08-04T04:03:09+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1jnap2",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "post_id": "real_run023_post04_seed119",
+      "post_slot": 4,
+      "seed_index": 119,
+      "source_raw_post_id": "1velra5",
+      "source_product_dir": "boxoffice",
+      "source_file": "https://www.reddit.com/r/boxoffice/comments/1velra5/spiderman_brand_new_day_will_beat_star_wars_force/",
+      "post_type": ":domestic: Domestic",
+      "title": "Spider-Man: Brand New Day will beat Star Wars: Force Awakens domestic ($937M) (with proof)",
+      "author": "reddit_user_f403d059ef4c",
+      "author_karma": 0,
+      "content": "Spider-Man: Brand New Day will beat Star Wars: Force Awakens domestic ($937M) (with proof)\n\nThe movie opened to $360M DOM, meaning it \"only\" needs a 2.6x multiplier to pass The Force Awakens domestically.\n\nAccording to EmpireCity, the Monday is headed for $45M+. Keep it mind, the \"+\" can do a lot of work, but let's be conservative and say $45M. Using the first weekdays/first Monday ratio of other mega opener comic book movies released in July, that gives us **$160M** comp'ed with Deadpool 3, **$147M** comp'ed with The Dark Knight, **$149M** comp'ed with Dark Knight Rises. Let's just take the mid-point-ish and say a **$155M** set of first weekdays.\n\nThat would put it at **$515M** by the end of Thursday. \n\nNow, let's guess the second weekend. Deadpool & Wolverine's second weekend was about 11% higher than its set of first weekdays, and Superman (2025)'s second weekend was \\~10% higher than its set of first weekdays. With nothing new coming out next weekend and it also getting an IMAX release (let's fucking go lmao, can't wait to watch this movie in IMAX), I'll assume a similar ratio for BND, which would mean a **$165M** second weekend, and a **$680M**.\n\nFrom there, it \"only\" needs **$256M** for the rest of its run to top The Force Awakens domestically. Deadpool & Wolverine did **$241M** post-day 10. If this is running about 65-70% higher than Deadpool & Wolverine for the first 10 days, there's just no way on earth it can't even do 6% higher than it for the rest of its run.",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p1hy30y",
+          "author": "reddit_user_193b81c27da8",
+          "author_karma": 0,
+          "content": "![gif](giphy|XFaeLrHJGjtcmEmzcn)  \nIdk if you’re right but I see a bunch of calculations and I choose to believe you’re right! ",
+          "timestamp": "2026-08-03T18:32:24+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1i061f",
+              "author": "reddit_user_d1490ce93542",
+              "author_karma": 0,
+              "content": "I can do the same thing to \"prove\" coffee is made from Jupiter and you'd believe me because I used a bunch of calculations?",
+              "timestamp": "2026-08-03T18:41:29+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1hy30y",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1i13bd",
+                  "author": "reddit_user_193b81c27da8",
+                  "author_karma": 0,
+                  "content": "![gif](giphy|Maaawg3nDFAS5IvdKE)",
+                  "timestamp": "2026-08-03T18:45:29+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1i061f",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p1hy858",
+          "author": "reddit_user_c703530d4563",
+          "author_karma": 0,
+          "content": "end 2nd weekend total could be as high as 670M",
+          "timestamp": "2026-08-03T18:33:01+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1hy9kp",
+          "author": "reddit_user_b17779111f09",
+          "author_karma": 0,
+          "content": "It is certainly in a good place to try.",
+          "timestamp": "2026-08-03T18:33:12+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1hyelu",
+          "author": "reddit_user_21ce4a85667f",
+          "author_karma": 0,
+          "content": "The fact that a street level spiderman story has that potential is insane to me",
+          "timestamp": "2026-08-03T18:33:49+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1hyeyw",
+          "author": "reddit_user_4101b512c479",
+          "author_karma": 0,
+          "content": "At least there will still be two Star Wars characters in the highest domestic grosser",
+          "timestamp": "2026-08-03T18:33:52+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1hygg0",
+          "author": "reddit_user_3f28e7d7734b",
+          "author_karma": 0,
+          "content": "The real question is whether it can get to a billy domestically.",
+          "timestamp": "2026-08-03T18:34:03+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1hyggu",
+          "author": "reddit_user_aab24d08588a",
+          "author_karma": 0,
+          "content": "![gif](giphy|4Nq6L6m836paOHEjxy)",
+          "timestamp": "2026-08-03T18:34:03+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1hyqyn",
+          "author": "reddit_user_45f2ba5ef872",
+          "author_karma": 0,
+          "content": "Thats some math\n\n![gif](giphy|BmmfETghGOPrW)",
+          "timestamp": "2026-08-03T18:35:21+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1hyxl3",
+          "author": "reddit_user_f527ef9d7e8a",
+          "author_karma": 0,
+          "content": "It needs to beat Toy Story 5s 159.7m OW in its 2nd weekend for it to have the top 2 spots\n\nI was thinking it would do about $140-150m Weekdays and $150-160m 2nd weekend but with the reveal of IMAX I think it could do above $160m and maybe above $170m\n\nI would have rather they have waited for the third weekend so it could have a chance at beating TFA’s $90m record",
+          "timestamp": "2026-08-03T18:36:11+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1hyz2h",
+          "author": "reddit_user_5f3427771854",
+          "author_karma": 0,
+          "content": "Spiderman: Luke I'm your Father!",
+          "timestamp": "2026-08-03T18:36:22+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1hz54y",
+          "author": "reddit_user_8ea1f403914f",
+          "author_karma": 0,
+          "content": "Ehh you lost me at $680M after next weekend.\n\nEver since last night I’ve figured the most optimistic possibility was $500M by Thursday, $650M by Sunday.\n\nI do think beating TFA is possible but I don’t think $680M by Sunday is.",
+          "timestamp": "2026-08-03T18:37:05+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1i1ats",
+          "author": "reddit_user_d852d0e0f068",
+          "author_karma": 0,
+          "content": "It’s defiantly had the best shot of anything yet.   \n\nThere are 2 unknowns/factors that will play out.\n\nFirst the tail wind - is imax late in the run.   If people see value in repeat viewing on a bigger screen this time it could be huge.\n\nSecond is headwind - school staring back up.   With summer winding down we usually don’t see movies with great legs in August.  But also we usually don’t see $2B films opening in late July so we’re in uncharted territory here.   It may be a moot point though if it can earn enough in the first 3 weekends. ",
+          "timestamp": "2026-08-03T18:46:23+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    }
+  ]
+}

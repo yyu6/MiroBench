@@ -1,0 +1,600 @@
+{
+  "meta": {
+    "product_category": "health_issue",
+    "baseline": "real_reddit_reference",
+    "run_id": "run_007_sampled_reddit"
+  },
+  "posts": [
+    {
+      "post_id": "real_run007_post00_seed035",
+      "post_slot": 0,
+      "seed_index": 35,
+      "source_raw_post_id": "1vb78mf",
+      "source_product_dir": "medical",
+      "source_file": "https://www.reddit.com/r/medical/comments/1vb78mf/do_wrestler_neck_bridge_exercise_can_damage/",
+      "post_type": "General Question/Discussion",
+      "title": "Do wrestler neck bridge exercise can damage cervical discs in children ?",
+      "author": "reddit_user_7b7b220cf34f",
+      "author_karma": 0,
+      "content": "Do wrestler neck bridge exercise can damage cervical discs in children ?\n\n[removed]",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p0r714j",
+          "author": "reddit_user_e6719f73a9e4",
+          "author_karma": 0,
+          "content": "Your post contains a link that has been flagged by our link filters. We do not allow links to certain external domains to prevent spam and misinformation. A moderator will review your post as soon as possible.\n\nPlease review our [Rules](https://www.reddit.com/r/medical/wiki/rules), [Code of Conduct](https://www.reddit.com/r/medical/wiki/code_of_conduct/), and [Wiki](https://www.reddit.com/r/medical/wiki/index) for comprehensive information while you wait for your post to be approved. \n\n\n*I am a bot, and this action was performed automatically. Please [contact the moderators of this subreddit](/message/compose/?to=/r/medical) if you have any questions or concerns.*",
+          "timestamp": "2026-07-30T21:42:46+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0ttphl",
+          "author": "reddit_user_4ad593ef1323",
+          "author_karma": 0,
+          "content": "The post/comment has been removed as we're unable to verify the accuracy or reliability of the third-party website provided in this post/comment. \n\nThis is to ensure that the third-party websites shared within r/medical are trustworthy and factually accurate to avoid misinformation, prevent harm to users, and to protect our community from having their personal identifying information compromised or exposed.\n\nThis removal falls under Moderator and Community Manager's discretion and further information will not be provided.",
+          "timestamp": "2026-07-31T07:08:26+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run007_post01_seed036",
+      "post_slot": 1,
+      "seed_index": 36,
+      "source_raw_post_id": "1vb995u",
+      "source_product_dir": "Health",
+      "source_file": "https://www.reddit.com/r/Health/comments/1vb995u/the_real_antidepressant_crisis/",
+      "post_type": ":snoo: article",
+      "title": "The Real Antidepressant Crisis",
+      "author": "reddit_user_7b7b220cf34f",
+      "author_karma": 0,
+      "content": "The Real Antidepressant Crisis",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p0rn930",
+          "author": "reddit_user_c74c8959c825",
+          "author_karma": 0,
+          "content": "Richard A. Friedman: “Robert F. Kennedy Jr. is vocal about his view that Americans overuse psychiatric medications, particularly antidepressants. As a general rule, the Health and Human Services secretary is skeptical of pharmaceuticals, but he’s gone further in his critiques of SSRIs, suggesting without credible evidence that their use might be linked to violent behavior, including school shootings. This past spring, he announced plans to discourage doctors from prescribing antidepressants and encourage them to de-prescribe the drugs—that is, to help patients who have previously been prescribed SSRIs stop taking them. …\n\n“No national data prove that antidepressant overuse is rampant, though. The closest approximation we have is a landmark 2014 study that examined the health records of more than 1 million patients during one year of treatment and found that about 40 percent of antidepressant prescriptions were written without a documented psychiatric diagnosis. This, however, doesn’t prove that the prescriptions were medically unnecessary: Antidepressants are legitimately prescribed for other reasons, including pain, quitting smoking, and insomnia. And the fact that nearly a fifth of Americans are taking an antidepressant is in line with the actual burden of psychiatric illness in the general population: In the most recent national data available, which were published in 2005, 7 percent of survey respondents reported having major depressive disorder, 4 percent reported PTSD, and others reported additional diagnoses for which SSRIs can be appropriate.\n\n“Of course, some patients don’t like being on antidepressants, even if they experience an improvement in their mood. A small proportion of SSRI users experience side effects such as decreased libido, weight gain, and tiredness. Although these effects can understandably be distressing, they are also commonly transient and manageable. If Kennedy’s efforts lead to widespread de-prescribing of antidepressants, it would be a potentially harmful overreaction to a limited problem.”\n\nRead more: [https://theatln.tc/YCF40LAL](https://theatln.tc/YCF40LAL)",
+          "timestamp": "2026-07-30T23:03:34+00:00",
+          "likes": 21,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0tqeej",
+              "author": "reddit_user_a26ed42bfcad",
+              "author_karma": 0,
+              "content": ">in line with the actual burden of psychiatric illness in the general population: In the most recent national data available, which were published in 2005\n\nIt's wild that the most recent data about psychiatric illness in America is over 20 years old.",
+              "timestamp": "2026-07-31T06:42:56+00:00",
+              "likes": 14,
+              "dislikes": 0,
+              "parent_comment_id": "p0rn930",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p14wq10",
+              "author": "reddit_user_fe5c8e8e6d88",
+              "author_karma": 0,
+              "content": "My understanding is that about 70% of people have sexual side effects. That doesn't seem like a small percentage to me. ",
+              "timestamp": "2026-08-01T20:48:54+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p0rn930",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p0vn88q",
+          "author": "reddit_user_8afae86fdee6",
+          "author_karma": 0,
+          "content": "I was nervous about starting to take SSRIs but after I had done everything that I could own my own through therapy and whatnot, I gave it a shot to at least talk to a psychiatrist.\n\nI will say that I was rather surprised how easy and fast it was prescribed. Not sure why, but I figured it would be a few sessions before we landed on “ok, you’d be a good candidate, try this”. After the first session I was given my prescription. \n\nWhat else that was surprising was how little the onboarding side effects were talked about. I was told I might have some nausea and that would probably the worst of it. That first week was the wildest ride of my life. I was supposed to work up to my prescribed dosage but I’m still at my initial dosage, which is super small, about 7 months into it and feel great. \n\nI still have a little bit of anxiety but I can better manage it on my current dosage. SSRIs are a wild thing. ",
+          "timestamp": "2026-07-31T14:08:58+00:00",
+          "likes": 13,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p106fic",
+              "author": "reddit_user_17fb94177a92",
+              "author_karma": 0,
+              "content": "Sounds like a provider issue, it took me about 3 months of seeing a psychiatrist, testing multiple non-medication options, and then an extensive conversation about risks and side effects. ",
+              "timestamp": "2026-08-01T03:27:14+00:00",
+              "likes": 3,
+              "dislikes": 0,
+              "parent_comment_id": "p0vn88q",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1073st",
+                  "author": "reddit_user_8afae86fdee6",
+                  "author_karma": 0,
+                  "content": "I could see that. Either way it all ended up just fine and I’m in a much better place. It just felt like it was happening super fast and it was a rough week at first!",
+                  "timestamp": "2026-08-01T03:31:43+00:00",
+                  "likes": 3,
+                  "dislikes": 0,
+                  "parent_comment_id": "p106fic",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            },
+            {
+              "comment_id": "p14h3fm",
+              "author": "reddit_user_5c3ce666cb94",
+              "author_karma": 0,
+              "content": "I talked to a psych and explained that I have CPTSD and in an hour, she’s like no you have Bipolar 2 and you need to be on mood stabilizers forever even though my behavior isn’t erratic or last for the designated amount of time required for it to be actual mania.",
+              "timestamp": "2026-08-01T19:30:47+00:00",
+              "likes": 2,
+              "dislikes": 0,
+              "parent_comment_id": "p0vn88q",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1d6w4w",
+                  "author": "reddit_user_e16cf23beff0",
+                  "author_karma": 0,
+                  "content": "Did you take the mood stabilizers? ",
+                  "timestamp": "2026-08-03T01:39:56+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p14h3fm",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1dadr2",
+                      "author": "reddit_user_5c3ce666cb94",
+                      "author_karma": 0,
+                      "content": "Nope! I went to my therapist of 8 years and she agreed that she doesn’t think I have bp2.  \n\nI used to be insane because of the unprocessed trauma but now I’m literally 100000000x better and sober.  And that’s not how bipolar works.",
+                      "timestamp": "2026-08-03T02:00:32+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1d6w4w",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "comment_id": "p1feuh0",
+              "author": "reddit_user_2b98ac48e33c",
+              "author_karma": 0,
+              "content": "I'm on my 8th month, and the worst part is low libido. It's one of possible side effects of my medication, and I've \"pulled the short one\" 🤦🏻\n\nThis one thingy generally makes my life worse, but thanks God I'm alive 😅",
+              "timestamp": "2026-08-03T11:33:59+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p0vn88q",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p1geqbw",
+              "author": "reddit_user_7d39e92d3219",
+              "author_karma": 0,
+              "content": "May I ask what type of SSRIs you have? I started my prescription about 2 months ago, but the initial phase didn’t bother me much. Also I still have a lot of anxiety that comes out of nowhere and I can’t seem to predict how long it will last or when it comes.\n\nAlso how did your anxiety show itself if you don’t mind me asking? For me it’s the inability to eat anything and just tension through my body. \n\nI guess I’m just curious how it is for other people ",
+              "timestamp": "2026-08-03T14:39:13+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p0vn88q",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1hge22",
+                  "author": "reddit_user_8afae86fdee6",
+                  "author_karma": 0,
+                  "content": "Lexapro! \n\nThe initial onboarding was WILD for me. Luckily I had read a lot on r/lexapro so I knew what to expect from there instead of my psychiatrist. \n\nThe tricky thing for me is that my anxiety attacks don’t last very long. I just get a crazy rush of panic and fear and then we are good. Like I’ll be in such a panic that I stand up and freak out for like 10 seconds. Now I do have specific triggers for it so there is that and this will happen maybe once every few months now that I have started.  \n\nThere are times, and usually when I am tired from a poor night of sleep that I have a dull anxiety that lasts longer. But I’ve been better at recognizing that I am just tired when this happens. \n\nAgain, overall for me, lexapro has been very positive. Just the three or so days starting were a bit bumpy 😅.",
+                  "timestamp": "2026-08-03T17:18:36+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1geqbw",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1hq85a",
+                      "author": "reddit_user_7d39e92d3219",
+                      "author_karma": 0,
+                      "content": "Thank you for sharing! ",
+                      "timestamp": "2026-08-03T17:58:59+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1hge22",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p0yz7h4",
+          "author": "reddit_user_3041333ec05f",
+          "author_karma": 0,
+          "content": "When I was 19, I was prescribed an SNRI after I explained (with approximately three sentences) that I was sad and I cried a lot. I had been diagnosed with a chronic disease about 1 year before and it was a difficult time.\n\nI was told that the medication’s side effects might help me sleep and gain weight.\n\nWhat they didn’t tell me is that I would experience a plethora of side effects, become emotionally flat, and experience waking nightmares for years.\n\nIn cases like mine, these are too readily prescribed. Literally no attempt to help me understand and manage emotions. Just threw a script at me and called it good.\n\nI would certainly say it caused me more harm than good.",
+          "timestamp": "2026-07-31T23:11:33+00:00",
+          "likes": 5,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p12vl6d",
+              "author": "reddit_user_3595e7d04fe0",
+              "author_karma": 0,
+              "content": "Sounds like your doctor sucks and you needed to try someone/something different. What happened when you brought up all of your side effects?? \n\nOften, it takes a while for you and your doctor to figure out what works for you at what dosage. Your doctor should also be re-assessing your symptoms periodically to ensure that the medication that you are currently taking is effective for you. ",
+              "timestamp": "2026-08-01T14:54:14+00:00",
+              "likes": 3,
+              "dislikes": 0,
+              "parent_comment_id": "p0yz7h4",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p12xwkg",
+                  "author": "reddit_user_3041333ec05f",
+                  "author_karma": 0,
+                  "content": "My doctor was kind of old school. There was no follow-up scheduled. When I did see the doc again, I explained side effects and they were dismissed. No re-assessment or anything. I eventually just stopped taking it.\n\nI was not very good at advocating for myself at the time unfortunately. I simply trusted the doctor and followed their instructions.",
+                  "timestamp": "2026-08-01T15:05:38+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p12vl6d",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p128jiw",
+          "author": "reddit_user_1d2aefc60c0a",
+          "author_karma": 0,
+          "content": "These drugs ruined my life. Prescribed then for a simple breakup in college, proceeded to take them for 10 years without a further discussion with a doctor on if I should continue (partly my fault, but they should have asked at some point). Stopped taking them cold turkey at their discretion and it basically wrecked my entire brain and nervous system. 4 years later still not the same. ",
+          "timestamp": "2026-08-01T12:51:39+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p14nirk",
+              "author": "reddit_user_90f11583803c",
+              "author_karma": 0,
+              "content": "After experience with very small dose of benzodiazepine for sleep for 20 yrs wouldn’t recommend cold turkey for any drug.   ",
+              "timestamp": "2026-08-01T20:02:49+00:00",
+              "likes": 3,
+              "dislikes": 0,
+              "parent_comment_id": "p128jiw",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1571ov",
+                  "author": "reddit_user_1d2aefc60c0a",
+                  "author_karma": 0,
+                  "content": "Yeah, sure wasn’t wise on my part. ",
+                  "timestamp": "2026-08-01T21:42:01+00:00",
+                  "likes": 2,
+                  "dislikes": 0,
+                  "parent_comment_id": "p14nirk",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            },
+            {
+              "comment_id": "p16uylu",
+              "author": "reddit_user_b22be7ac128b",
+              "author_karma": 0,
+              "content": "My friend had severe side effects after just tapering off an antidepressant a decade ago. She told me to never touch that stuff. ",
+              "timestamp": "2026-08-02T03:35:29+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p128jiw",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p18s9v1",
+                  "author": "reddit_user_1d2aefc60c0a",
+                  "author_karma": 0,
+                  "content": "Yeah, I had completely numb genitals for 6 months. This was the least disturbing thing I dealt with. ",
+                  "timestamp": "2026-08-02T12:31:46+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p16uylu",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p13epvv",
+          "author": "reddit_user_a31131a8478a",
+          "author_karma": 0,
+          "content": "Wellbutrin/bupropion is the lighter antidepressant (non-SSRI) that (also?) helps with quitting smoking. It’s much easier to get off. ",
+          "timestamp": "2026-08-01T16:26:37+00:00",
+          "likes": 5,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run007_post02_seed037",
+      "post_slot": 2,
+      "seed_index": 37,
+      "source_raw_post_id": "1vb9fe6",
+      "source_product_dir": "medical",
+      "source_file": "https://www.reddit.com/r/medical/comments/1vb9fe6/i_wear_a_plastic_bracelet_for_my_teeth_to_not/",
+      "post_type": "Oral Health",
+      "title": "I wear a plastic bracelet for my teeth to not grind them over night..",
+      "author": "reddit_user_7b7b220cf34f",
+      "author_karma": 0,
+      "content": "I wear a plastic bracelet for my teeth to not grind them over night..\n\n.. when at night, after I brushed my teeth, I then put in the bracelet and after that drink carbonated water, will the acid in the water collect under the bracelet and damage my teeth over night?",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p0tdzcx",
+          "author": "reddit_user_5938ebbe9526",
+          "author_karma": 0,
+          "content": "It’s definitely not a good plan or good for your teeth.",
+          "timestamp": "2026-07-31T05:09:22+00:00",
+          "likes": 4,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0vf55h",
+              "author": "reddit_user_b10aa5f43a4b",
+              "author_karma": 0,
+              "content": "Does this also apply to still water or faucet water? I mean I have to drink something if I'm thirsty.. ",
+              "timestamp": "2026-07-31T13:32:01+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p0tdzcx",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p10c1il",
+                  "author": "reddit_user_5938ebbe9526",
+                  "author_karma": 0,
+                  "content": "No, just carbonated water. ",
+                  "timestamp": "2026-08-01T04:04:38+00:00",
+                  "likes": 2,
+                  "dislikes": 0,
+                  "parent_comment_id": "p0vf55h",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p12bgu5",
+                      "author": "reddit_user_b10aa5f43a4b",
+                      "author_karma": 0,
+                      "content": "Gotcha, thanks",
+                      "timestamp": "2026-08-01T13:08:40+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p10c1il",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p0u1c7t",
+          "author": "reddit_user_0f2b732a3b42",
+          "author_karma": 0,
+          "content": "I think it will",
+          "timestamp": "2026-07-31T08:10:07+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0uuj7v",
+          "author": "reddit_user_453d29990c98",
+          "author_karma": 0,
+          "content": "US dentists say brushing with prescription fluoride toothpaste & rinsing only once is the best environment for your enamel",
+          "timestamp": "2026-07-31T11:44:01+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0vfcju",
+              "author": "reddit_user_b10aa5f43a4b",
+              "author_karma": 0,
+              "content": "Thanks, my toothpaste does contain fluoride and I have a second paste with fluoride to use once a week",
+              "timestamp": "2026-07-31T13:32:58+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p0uuj7v",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p0vp1kv",
+          "author": "reddit_user_491a5366175b",
+          "author_karma": 0,
+          "content": "Is it like a retainer or those over the head cage thing? I wear a thick occlusal splint & always take it out to drink something but leave it in to drink water. ",
+          "timestamp": "2026-07-31T14:17:02+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0vwqnf",
+              "author": "reddit_user_b10aa5f43a4b",
+              "author_karma": 0,
+              "content": "Yes it's a retainer (didn't know the English word for it). It is clear plastic, formed from my teeth, that sit on the bottom jaw teeth during the night. \n\nI stay away from drinking sugary drinks once I have brushed my teeth, but only drink water then. But am unsure if the carbonation will damage the teeth and I should switch to still water or tap water for the night. ",
+              "timestamp": "2026-07-31T14:50:40+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p0vp1kv",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p0x2e0f",
+          "author": "reddit_user_c155f50062a4",
+          "author_karma": 0,
+          "content": "One off will do little damage. Dont make it the norm though. ",
+          "timestamp": "2026-07-31T17:49:22+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0x3evu",
+              "author": "reddit_user_b10aa5f43a4b",
+              "author_karma": 0,
+              "content": "Will still water be fine? Or should I completely stop drinking water as soon as the retainer is in? ",
+              "timestamp": "2026-07-31T17:53:45+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p0x2e0f",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p0x48n7",
+                  "author": "reddit_user_c155f50062a4",
+                  "author_karma": 0,
+                  "content": "Tap water will be fine. Don’t drink fizzy water with a brace in. You may wish to speak with your dentist but a one off won’t hurt your teeth ",
+                  "timestamp": "2026-07-31T17:57:17+00:00",
+                  "likes": 2,
+                  "dislikes": 0,
+                  "parent_comment_id": "p0x3evu",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p0x5tho",
+                      "author": "reddit_user_b10aa5f43a4b",
+                      "author_karma": 0,
+                      "content": "Thanks, I will ask my dentist the next time and will switch to tap water",
+                      "timestamp": "2026-07-31T18:04:03+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p0x48n7",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "p16ie1g",
+                          "author": "reddit_user_95f9ff960bbe",
+                          "author_karma": 0,
+                          "content": "if you drink fizzy water please gurgle with tap water at the very minimum",
+                          "timestamp": "2026-08-02T02:14:03+00:00",
+                          "likes": 2,
+                          "dislikes": 0,
+                          "parent_comment_id": "p0x5tho",
+                          "depth": 4,
+                          "replies": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "post_id": "real_run007_post03_seed038",
+      "post_slot": 3,
+      "seed_index": 38,
+      "source_raw_post_id": "1vbft4o",
+      "source_product_dir": "medical",
+      "source_file": "https://www.reddit.com/r/medical/comments/1vbft4o/throat_filling_up_with_phlegm_after_choking_and_a/",
+      "post_type": "General Question/Discussion",
+      "title": "Throat filling up with phlegm after choking and a coughing fit: normal or concerning?",
+      "author": "reddit_user_7b7b220cf34f",
+      "author_karma": 0,
+      "content": "Throat filling up with phlegm after choking and a coughing fit: normal or concerning?\n\nHello, I accidentally choked on water today (an unfortunately common thing for me). my throat was still feeling irritated afterwards leading to a cough fit where I started tasting blood, but when I spat it out it was just phlegm. Apparently phlegm having or tasting like blood is normal, but now my throat keeps filling with phlegm and mucus and I can’t find if thats normal for this situation or if I need to be concerned. Also my throat is still feeling irritated after and the phlegm is making me feel like I need to cough even more.",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p12hlkd",
+          "author": "reddit_user_95f9ff960bbe",
+          "author_karma": 0,
+          "content": "Concerning. Could be anything from a minor irritation to a small blood vessel rupture. \n\n\nPlease see a doc ASAP! \n\n(NAD, med student)",
+          "timestamp": "2026-08-01T13:42:30+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run007_post04_seed039",
+      "post_slot": 4,
+      "seed_index": 39,
+      "source_raw_post_id": "1vbj02b",
+      "source_product_dir": "Health",
+      "source_file": "https://www.reddit.com/r/Health/comments/1vbj02b/limiting_sugar_before_age_two_linked_to_better/",
+      "post_type": "Dynamic Paywall",
+      "title": "Limiting sugar before age two linked to better brain health",
+      "author": "reddit_user_7b7b220cf34f",
+      "author_karma": 0,
+      "content": "Limiting sugar before age two linked to better brain health",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p0tponj",
+          "author": "reddit_user_e6719f73a9e4",
+          "author_karma": 0,
+          "content": "This submission from bbc.com is behind a dynamic paywall and may be unavailable in the United States. On the 26th of June 2025, the BBC implented a dynamic paywall on [its website](https://www.bbc.com/news/articles/cx2vgkn7w10o). Articles posted to /r/Health must be freely accessible to all users. Please try to find another source.\n\n*I am a bot, and this action was performed automatically. Please [contact the moderators of this subreddit](/message/compose/?to=/r/Health) if you have any questions or concerns.*",
+          "timestamp": "2026-07-31T06:37:26+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    }
+  ]
+}

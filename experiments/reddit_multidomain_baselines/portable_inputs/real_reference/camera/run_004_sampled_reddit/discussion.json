@@ -1,0 +1,683 @@
+{
+  "meta": {
+    "product_category": "camera",
+    "baseline": "real_reddit_reference",
+    "run_id": "run_004_sampled_reddit"
+  },
+  "posts": [
+    {
+      "post_id": "real_run004_post00_seed020",
+      "post_slot": 0,
+      "seed_index": 20,
+      "source_raw_post_id": "1va595b",
+      "source_product_dir": "photography",
+      "source_file": "https://www.reddit.com/r/photography/comments/1va595b/software_recommendations_needed/",
+      "post_type": "Business",
+      "title": "Software Recommendations Needed",
+      "author": "reddit_user_4349d3bfee00",
+      "author_karma": 0,
+      "content": "Software Recommendations Needed\n\nHey guys! My question got lost in the questions thread with no answers :(  \nEssentially I’m looking for gallery sharing software that does not include 3rd party printing! I’ve only used Pixieset and it lets clients order their own prints without discussion and advice from me (and also excludes my preferred print lab.) I’m not sure if a custom website is my only option at this point, or if there is a good gallery service that doesn’t do printing. Any insight is appreciated! TIA!",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p0iwyxv",
+          "author": "reddit_user_2a7b6eebb0ae",
+          "author_karma": 0,
+          "content": "You can disable print fulfillment on Pixieset.",
+          "timestamp": "2026-07-29T18:59:55+00:00",
+          "likes": 3,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0mnbcd",
+          "author": "reddit_user_8d773a0de63c",
+          "author_karma": 0,
+          "content": "Wouldn't you be able to set one up yourself using SquareSpace?",
+          "timestamp": "2026-07-30T07:58:25+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0nvwxu",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-07-30T13:02:57+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0rgus4",
+          "author": "reddit_user_e0dc20408b7c",
+          "author_karma": 0,
+          "content": "I am not sure if this is exactly what you want, but I use Pixpa for my website.  And they have an option to link your images to a print lab of your choice, not just WHCC.  Also, you could have it done offline, where the order is placed, and it is up to you to handle everything. \n\nSo it might be worth looking into if that's what you are after.\nHope that helps give you an idea.",
+          "timestamp": "2026-07-30T22:30:55+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run004_post01_seed021",
+      "post_slot": 1,
+      "seed_index": 21,
+      "source_raw_post_id": "1va8oht",
+      "source_product_dir": "photography",
+      "source_file": "https://www.reddit.com/r/photography/comments/1va8oht/what_does_your_postshoot_workflow_look_like/",
+      "post_type": "Technique",
+      "title": "What does your post-shoot workflow look like?",
+      "author": "reddit_user_4349d3bfee00",
+      "author_karma": 0,
+      "content": "What does your post-shoot workflow look like?\n\nI’ve been thinking about how different everyone’s workflow is after a shoot, especially when dealing with hundreds or even thousands of photos.\n\nFor those of you who shoot pretty regularly, how long does it usually take to get everything off your SD cards, backed up, organized, edited, and delivered?\n\nWhat part of that whole process tends to take up the most time?\n\nI’m also curious how people who work with other photographers or editors handle moving and sharing large amounts of files.\n\nWould be interesting to hear what everyone’s workflow looks like and what parts you’ve found ways to make faster.",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p0lrr05",
+          "author": "reddit_user_92d8ce5da2b5",
+          "author_karma": 0,
+          "content": "I work for a large non-profit company that has a big convention every year. We have 15 or so photographers and we’re assigned specific events to take photos of. Deliverables are uploaded to the company’s Google Drive. \n\nI bring my laptop with me and multiple external drives. Every time I go back to my room, I offload all my photos and back them up. Other than copying them, I don’t really touch them until I get home.\n\nFor 2025, I took over 82k photos and for 2026 I took over 67k. These are all taken over 4 days.\n\nOrganizing, culling, and editing usually takes about a month. Culling and editing takes the most time for sure.\n\nThis year I switched culling programs and it saved me a lot of time. I break up my photos by event, which makes it feel like I’m getting more done.",
+          "timestamp": "2026-07-30T03:54:18+00:00",
+          "likes": 11,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0pslyt",
+              "author": "reddit_user_c6fe35b1dd6c",
+              "author_karma": 0,
+              "content": "> I work for a non-profit company that has a big convention every year. We have 15 or so photographers and we’re assigned specific events to take photos of. \n\nWow, thanks for sharing what your workflow is like when shooting on a large scale like that.\n\n>This year I switched culling programs and it saved me a lot of time. \n\nI'm intrigued. What culling software were you using before and what did you switch to? What makes it better?",
+              "timestamp": "2026-07-30T18:03:18+00:00",
+              "likes": 5,
+              "dislikes": 0,
+              "parent_comment_id": "p0lrr05",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p0vc7lj",
+                  "author": "reddit_user_92d8ce5da2b5",
+                  "author_karma": 0,
+                  "content": "You’re welcome. I’m glad to answer any other questions you have.\n\nFor previous years, I was loading all the photos into LRC, generating previews, then culling. Just generating previews for that many photos took 3 days on a very fast system. Once the previews were generated, it was taking LRC a couple seconds to load the file, and at that scale, it really slowed me down.  This year, I switched to FastRawViewer and I was able to start culling using the raw files immediately (it doesn’t use the preview). I selected my files and imported them into LRC. ",
+                  "timestamp": "2026-07-31T13:18:11+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p0pslyt",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p0xpr8w",
+                      "author": "reddit_user_c6fe35b1dd6c",
+                      "author_karma": 0,
+                      "content": "> This year, I switched to FastRawViewer and I was able to start culling using the raw files immediately (it doesn’t use the preview).\n\nAh my guess was Photo Mechanic. Will check out FastRawViewer.\n\n>I’m glad to answer any other questions you have.\n\nHmm, when managing 15 different photographers are there any tips you've learned to make things more efficient and smooth?\n\nFor example, do you have everyone synchronize their cameras to be the same?\n\nI know some wedding photographers will synch up cameras with their second shooters using Time.gov as the official U.S. time source.",
+                      "timestamp": "2026-07-31T19:31:58+00:00",
+                      "likes": 2,
+                      "dislikes": 0,
+                      "parent_comment_id": "p0vc7lj",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "p0y3c4g",
+                          "author": "reddit_user_92d8ce5da2b5",
+                          "author_karma": 0,
+                          "content": "Photo Mechanic was a consideration, but it has a lot of overlap with LRC and is much more expensive than FastRawViewer. I needed something to cull fast and it does that perfectly.\n\nWe have a style guide and deliverables requirement that leads create before the convention and everyone adheres to it. For important events, we run multiple photographers for backup and different angles. Generally, we don't synchronize settings since we trust people to do what works. For things like dance competitions, we do somewhat sync settings, but people are free to do what they want.",
+                          "timestamp": "2026-07-31T20:33:25+00:00",
+                          "likes": 2,
+                          "dislikes": 0,
+                          "parent_comment_id": "p0xpr8w",
+                          "depth": 4,
+                          "replies": [
+                            {
+                              "comment_id": "p0y4r4r",
+                              "author": "reddit_user_c6fe35b1dd6c",
+                              "author_karma": 0,
+                              "content": "> We have a style guide and deliverables requirement that leads create before the convention and everyone adheres to it. \n\nAh yes, standard operating procedures (SOPs) are not sexy but are so valuable in saving time and preventing confusion.\n\nGreat thing to point out.",
+                              "timestamp": "2026-07-31T20:39:55+00:00",
+                              "likes": 2,
+                              "dislikes": 0,
+                              "parent_comment_id": "p0y3c4g",
+                              "depth": 5,
+                              "replies": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p0ls4zl",
+          "author": "reddit_user_ff6652a8f229",
+          "author_karma": 0,
+          "content": "This largely depends on the genre/purpose for people.\n\nIf you're doing a portrait shoot, it can largely vary depending on if its paid, tfp, etc. If you're doing landscape stuff, there might not be a rush because you don't owe a mountain a photo of itself.\n\nI've worked with models frequently years now, and if i'm doing a tfp type of shoot i'm getting home that day and trying to upload to capture one, apply an auto adjustment for consistency across all proofs, then i'm culling duds only and leaving even just okay ones, exporting with a watermark identifying the file name (not my signature watermark) then putting a gallery up on pixieset.\n\nFor the watermark I only do it for 2 reasons. 1 if they were to post the unedited photo before I'm completely okay with it, it'll be tougher for them to  hide the watermark, so it effectively limits any early sharing or posting. 2 in case they don't pick photos in pixieset how I want them to, and they send me a screenshot I can immediately find the specific shot they want by searching the file name. Watermarks for stylistic reasons doesnt look good to me ever lol, purely for functional reasons at the proof stage.\n\nWhen I deliver a gallery, I think it's important to limit a selection so they aren't overwhelmed too. I first get rid of the ones that would be too much work for me to fix to be acceptable or are just bad moments/misfires. If there's a lot of good moments that feel similar, I try to get rid of some or all duplicates so they aren't looking at them like  'all 5 of these are the same'. If after all that, I have over 100 photos per look that are still good, i'll start getting rid of shots I don't particularly like just for the sake of reducing the amount of photos they look at. No one wants to see a folder of 500 photos and have to pick just 5.\n\nBut if i'm being 100% honest, the urgency isn't there for me when it isn't a paid job anymore, so it can take me days/weeks sometimes now for free shoots. When it's a paid job, its prioritized for sure. I also keep the final edits from engagements/weddings/etc on a dropbox/ google drive for a long time. I have photos from 6 years ago still on a drive even tho I know there's realistically no reason for me to keep them up there, but I do so for customer service reasons/having that reputation of always having backups for clients as long as I reasonably can.",
+          "timestamp": "2026-07-30T03:56:55+00:00",
+          "likes": 6,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0njyva",
+              "author": "reddit_user_155477c02abb",
+              "author_karma": 0,
+              "content": "A question regarding your watermarking: How do you set up an individual watermark for each file name? Do you manually enter each one, or is it a setting in your post-processing software?\n\nThanks!",
+              "timestamp": "2026-07-30T11:59:41+00:00",
+              "likes": 2,
+              "dislikes": 0,
+              "parent_comment_id": "p0ls4zl",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p0o0317",
+                  "author": "reddit_user_ff6652a8f229",
+                  "author_karma": 0,
+                  "content": "Capture one has the option to set watermarks based on variables. So you can have it set as file names, session names, dates, camera info, etc.\n\nI usually have mine set to the file name.",
+                  "timestamp": "2026-07-30T13:23:26+00:00",
+                  "likes": 5,
+                  "dislikes": 0,
+                  "parent_comment_id": "p0njyva",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            },
+            {
+              "comment_id": "p0o885q",
+              "author": "reddit_user_348c53c71b54",
+              "author_karma": 0,
+              "content": "As someone who finally downloaded my wedding photos from my photographers website 4 years later. I thank people like you",
+              "timestamp": "2026-07-30T14:01:26+00:00",
+              "likes": 5,
+              "dislikes": 0,
+              "parent_comment_id": "p0ls4zl",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p0puduj",
+              "author": "reddit_user_c6fe35b1dd6c",
+              "author_karma": 0,
+              "content": "> I've worked with models frequently years now, and if i'm doing a tfp type of shoot i'm getting home that day and trying to upload to capture one\n\nWas looking for an answer from someone shooting this type of thing. Thanks for sharing your insights.\n\nAbout the proofing process, how many selects do you allow a model to pick for a TFP photoshoot?\n\nAfter you deliver the edits, do you allow the models to request more editing? Or just one round of edits and that's it?",
+              "timestamp": "2026-07-30T18:10:52+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p0ls4zl",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p0pzkt1",
+                  "author": "reddit_user_ff6652a8f229",
+                  "author_karma": 0,
+                  "content": "I don't have self imposed rules. It's purely on how I worked with the model, how they reacted, if I want to put more effort in. \n\nGenerally if all went well, I give a gallery of something like 200 photos and there's usually 3 looks in there. So about 60 or so photos per look. I tell them pick as many as they like, and i'll pick my favorites from their favorites. If they ask, I tell them about 10 per outfit. My skin retouching process leans pretty heavy on AI now, so it isn't like i'm doing a ton of work in photoshop now and it's as time consuming as it was 5 years ago.\n\nI think it's important not to pick my favorites upfront when I cull because ultimately my goal with TFP shoots is to get the model excited and want to post my photos on their page. So by letting them pick as many as they want, then I make sure theyre happy first. If there's something they really want, i make sure i use that particular photo. Sometimes, if I know they arent going to care to pick, i'll just edit like 20 with AI skin retouching then give them those as finals.\n\nAs far as going back and fixing things I always send the download link saying something like 'Here's a link to retouched photos! Let me know what you think, I can always tweak them as needed! Hope you love them, I think we got some great shots!'\n\n99% of the time they're like 'wow thank you so much!' and it ends there.\n\nEven though its a trade, my goal is largely trying to get them happy for xyz reasons. Having models post your content, tag you, refer you to friends, etc can be pretty beneficial 'free marketing'.\n\nIf they're annoying about wanting things fixed 5 times, I'll likely just start getting annoyed. The only person i've ever really had ask me to fix things a lot was because I had generally no idea what she wanted for an album cover.",
+                  "timestamp": "2026-07-30T18:32:48+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p0puduj",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p0q35bl",
+                      "author": "reddit_user_c6fe35b1dd6c",
+                      "author_karma": 0,
+                      "content": "Appreciate your detailed answer. Exactly the stuff I was curious about.",
+                      "timestamp": "2026-07-30T18:48:02+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p0pzkt1",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p0lsbd2",
+          "author": "reddit_user_4d8027db87a7",
+          "author_karma": 0,
+          "content": "Generally, if I’m not shooting tethered, I get the cards dumped and backed up the minute I get back to the computer. SD cards aren’t stable long term storage so I make damn sure to get them onto my SSD and into my backup pipeline right away. \n\nI save the rest of the stuff until at least the next day. That way I don’t get caught up in the positive vibes from the shoot and I can be a little more objective about the quality of the work and what photos are worth working on. I clear out the garbage, do general exposure adjustments and so forth, and upload to my gallery software so the clients can pick their package images. I give myself 2 weeks to do that work in my contract, though in practice I try to finish it in a couple of days. When final selections are made, I give myself another two weeks to do retouching. Again, I usually manage that faster, but it depends on the amount of work I have to do, and how much other stuff is on my plate. \n\nThat is generally my process. ",
+          "timestamp": "2026-07-30T03:58:05+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0msyc5",
+          "author": "reddit_user_2b024de8365e",
+          "author_karma": 0,
+          "content": "Ingest and cull with Photo Mechanic, only edit selects in Capture One. ",
+          "timestamp": "2026-07-30T08:45:35+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0nasrh",
+          "author": "reddit_user_653758ac8463",
+          "author_karma": 0,
+          "content": "Within 24 hours:  \nI copy the files off the camera to computer. (leaving images on the card)  \nI sort through the images, selecting several dozen of my favourites.  \nI reduce the favourites down to 1200 pixels per longest side and upload to a cloud directory so the model can make a shortlist of their favourites.\n\nWithin a week:  \nI move all the images from the card to an external hard drive.  \nI select the best of that shortlist (and maybe one or two of the ones I like that the model didn't select) and edit up about a dozen images.  \nEach image usually requires just a crop, white balance, curves and maybe a distracting street sign cloned out - about 10 minutes per image.  \nI replace the previously uploaded images with the final edits in the preferred format (usually 1024 pixel jpg for Instagram, 2048 pixel PNG for facebook), inform the model then move all the \"good\" images to another external hard drive once they have notified me they are happy with the edits.  \n  \nThe edited images stay online until things get cluttered. (usually at least a year)\n\nThis process means I \\*always\\* have the images in two places at once. (except for the card in the camera, but I have been doing this for 20 years and never had a card fail me in that way)\n\nAnd having been doing this for over 20 years, I can usually get what I want SOOC so my post workflow is minimal.",
+          "timestamp": "2026-07-30T11:02:52+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0o1dr1",
+          "author": "reddit_user_efa1fa0888a1",
+          "author_karma": 0,
+          "content": "i have only two v90 cards, so that motivates me to keep photos off my camera. otherwise i have to use my collection of  slower cards, and in many cases they are sub-optimal",
+          "timestamp": "2026-07-30T13:29:37+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0o2qdq",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-07-30T13:36:03+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0o8kne",
+          "author": "reddit_user_2b80ddfad7cb",
+          "author_karma": 0,
+          "content": "My process varies depending on the shoot.  A paid shoot and an FTP do not get treated with the same priority.   \nBut initially, they are all treated the same at the end of the shoot. \n\nMy cards are uploaded to my computer asap.   \n   \nAfter import they get the basic corrections en masse.   lens profile, white balance, etc.   \n  \nSeconday files are created.  Jpeg, PSD, Web  \n  \nIf I have time. I'll do a cursory cull of misfires, etc.    \n  \nAt this point. It depends on the type of shoot.   \nI have one client that is a priority. Their work must be delivered within twenty-four hours.  The others are variable.   ",
+          "timestamp": "2026-07-30T14:03:02+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0ocs9r",
+          "author": "reddit_user_5e552dc60a37",
+          "author_karma": 0,
+          "content": "When I was doing volume, it'd be load images in to LR, grade each one using stars, 5 stars great, 3 meh, 1 lose it before it sees the light of day.  \n\nNow this was way before automations were really good/reliable, so pre-subscription tier.  Basically Balance levels, crop, level-alignment, export.  I don't want to be a photo editor, so it's quick, to the point, and done.",
+          "timestamp": "2026-07-30T14:22:05+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0oxnhn",
+          "author": "reddit_user_ca637483a97c",
+          "author_karma": 0,
+          "content": "get home from studio - grab a beer and dump card into a folder (folder has auto backup).. make originals sub folder where they all go untouched and outside of that I also dump the shoot.. I then go thru the non-originals and toss out all the bad ones...get another beer... then I will 'edit' 8-12 of the remaining and toss those into an 'up' sub folder and upload those to my online portfolio album site and send the subject a link to those that night if possible... then grab another beer and make dinner - I'll finish editing all the interesting ones from the non-originals during the next week and tossing them into the up folder after uploading to the portfolio album  site, and tossing out all the non-chosen ones..so I'll have a folder of originals untouched, and a folder of edited images when I'm done",
+          "timestamp": "2026-07-30T15:52:53+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0p8poo",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-07-30T16:39:52+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0pszk8",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-07-30T18:04:55+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0qw385",
+          "author": "reddit_user_7d442fd58312",
+          "author_karma": 0,
+          "content": "The best tip I've used for culling very large shoots is: Pick keepers, don't reject losers. It is a much faster system to get through the first pass. ",
+          "timestamp": "2026-07-30T20:52:52+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0sbu34",
+          "author": "reddit_user_a673b2cad404",
+          "author_karma": 0,
+          "content": "Im a doc phot student and I'm trying to work towards becoming a pro documentary photography/photo journalist \nUsually after a shoot I immediately sort thru my best images of whatever I've shot on my camera\nIf I'm far from home I'll usually bring my laptop along and then because I've already selected my best images and have a good idea on my intended edit style I usually have images out within 2-3 hours of the event or thing I've photographed ",
+          "timestamp": "2026-07-31T01:15:49+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0wavpu",
+          "author": "reddit_user_b5d3543e9000",
+          "author_karma": 0,
+          "content": "I usually try not to start working on the images immediately after a shoot. I’ll have a break for a few hours first, then when I get home I back everything up on two separate hard drives.\n\nFor paid work, I’ll usually export a low-res gallery for the client to review. For test shoots, I import everything into Capture One and make my own selection first.\n\nOnce I'm happy with the selection, I move into colour grading and retouching in Photoshop. I then export the final images into two folders, low-res and high-res JPEGs.\n\nOnce everything is finished, I upload the files to Nextcloud or SwissTransfer for delivery. For me, the most important part is having a solid backup system before I start editing.",
+          "timestamp": "2026-07-31T15:51:49+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run004_post02_seed022",
+      "post_slot": 2,
+      "seed_index": 22,
+      "source_raw_post_id": "1vacans",
+      "source_product_dir": "photography",
+      "source_file": "https://www.reddit.com/r/photography/comments/1vacans/issue_with_my_ricoh_gr_ii/",
+      "post_type": "Gear",
+      "title": "Issue with my Ricoh GR II..",
+      "author": "reddit_user_4349d3bfee00",
+      "author_karma": 0,
+      "content": "Issue with my Ricoh GR II..\n\n[removed]",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p0keuv3",
+          "author": "reddit_user_49d294cafcb0",
+          "author_karma": 0,
+          "content": "**Your post has been filtered for manual review.** This is an automatic spam-prevention measure. Filtered posts are checking in the order in which they are received. Please be patient as the mod team goes through the queue. \n   \n  If you are asking a troubleshooting, gear purchasing or newbie-related question, there's two great ways to get answers:\n   \n  - First, [read the photography FAQ](https://www.reddit.com/r/photography/wiki/introduction). We've got *tons* of info and many questions can be answered there!\n   \n  - If your post is a gear selection or other commonly asked question, it will not be approved. Use the resources above, instead.\n  \n  - If your post is a pricing or what should I charge question, please read the appropriate section of the [FAQ](https://www.reddit.com/r/photography/wiki/business#wiki_what_should_i_charge.3F) and/or ask in the Official Gear Purchasing and Troubleshooting Questions Thread stickied at the top of /r/photography.\n   \n  - If you still have a question that isn't answered in the FAQ, ask in the Official Gear Purchasing and Troubleshooting Questions Thread stickied at the top of /r/photography.\n  \n\n*I am a bot, and this action was performed automatically. Please [contact the moderators of this subreddit](/message/compose/?to=/r/photography) if you have any questions or concerns.*",
+          "timestamp": "2026-07-29T23:11:15+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0l2vj6",
+          "author": "reddit_user_60e133af51df",
+          "author_karma": 0,
+          "content": "Your submission has been removed from r/photography.\n\nAs this is a troubleshooting or help request, it is best suited to our [Questions Thread](https://www.reddit.com/r/photography/about/sticky) which you can find stickied at the top of the sub. Please post your question as a comment there.",
+          "timestamp": "2026-07-30T01:24:19+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run004_post03_seed023",
+      "post_slot": 3,
+      "seed_index": 23,
+      "source_raw_post_id": "1vajyo0",
+      "source_product_dir": "photography",
+      "source_file": "https://www.reddit.com/r/photography/comments/1vajyo0/just_a_random_day_turned_into_a_sick_day_because/",
+      "post_type": "Post Processing",
+      "title": "Just a random day turned into a sick day because of cold",
+      "author": "reddit_user_4349d3bfee00",
+      "author_karma": 0,
+      "content": "Just a random day turned into a sick day because of cold\n\n[removed]",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p0m1g93",
+          "author": "reddit_user_49d294cafcb0",
+          "author_karma": 0,
+          "content": "**Your post has been filtered for manual review.** This is an automatic spam-prevention measure. Filtered posts are checking in the order in which they are received. Please be patient as the mod team goes through the queue. \n   \n  If you are asking a troubleshooting, gear purchasing or newbie-related question, there's two great ways to get answers:\n   \n  - First, [read the photography FAQ](https://www.reddit.com/r/photography/wiki/introduction). We've got *tons* of info and many questions can be answered there!\n   \n  - If your post is a gear selection or other commonly asked question, it will not be approved. Use the resources above, instead.\n  \n  - If your post is a pricing or what should I charge question, please read the appropriate section of the [FAQ](https://www.reddit.com/r/photography/wiki/business#wiki_what_should_i_charge.3F) and/or ask in the Official Gear Purchasing and Troubleshooting Questions Thread stickied at the top of /r/photography.\n   \n  - If you still have a question that isn't answered in the FAQ, ask in the Official Gear Purchasing and Troubleshooting Questions Thread stickied at the top of /r/photography.\n  \n\n*I am a bot, and this action was performed automatically. Please [contact the moderators of this subreddit](/message/compose/?to=/r/photography) if you have any questions or concerns.*",
+          "timestamp": "2026-07-30T05:02:31+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run004_post04_seed024",
+      "post_slot": 4,
+      "seed_index": 24,
+      "source_raw_post_id": "1vapeup",
+      "source_product_dir": "photography",
+      "source_file": "https://www.reddit.com/r/photography/comments/1vapeup/bonjour/",
+      "post_type": "Business",
+      "title": "Bonjour 👋",
+      "author": "reddit_user_4349d3bfee00",
+      "author_karma": 0,
+      "content": "Bonjour 👋\n\n🇹🇳",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p0n3gsf",
+          "author": "reddit_user_b5dfa380da79",
+          "author_karma": 0,
+          "content": "Hey 👋 ",
+          "timestamp": "2026-07-30T10:11:20+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0n3jpt",
+              "author": "reddit_user_261ab407110e",
+              "author_karma": 0,
+              "content": "Hello bro 😎 ",
+              "timestamp": "2026-07-30T10:11:57+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p0n3gsf",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p0n3toc",
+                  "author": "reddit_user_b5dfa380da79",
+                  "author_karma": 0,
+                  "content": "Do you have any questions regarding photography you wanted to ask?",
+                  "timestamp": "2026-07-30T10:14:00+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p0n3jpt",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p0n42hw",
+                      "author": "reddit_user_261ab407110e",
+                      "author_karma": 0,
+                      "content": "Yes, I have pictures of her that I want to post here, but I haven't been able to post them. What is the reason for that?",
+                      "timestamp": "2026-07-30T10:15:48+00:00",
+                      "likes": 0,
+                      "dislikes": 0,
+                      "parent_comment_id": "p0n3toc",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "p0n45o5",
+                          "author": "reddit_user_91c52c96460e",
+                          "author_karma": 0,
+                          "content": "This sub is for photography discussion, not photo posts, you'll have to find a specific subreddit for this",
+                          "timestamp": "2026-07-30T10:16:26+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "p0n42hw",
+                          "depth": 4,
+                          "replies": [
+                            {
+                              "comment_id": "p0n4cm9",
+                              "author": "reddit_user_261ab407110e",
+                              "author_karma": 0,
+                              "content": "I know that, my friend, but I'm a new friend here and I want to get to know you all first.",
+                              "timestamp": "2026-07-30T10:17:51+00:00",
+                              "likes": -1,
+                              "dislikes": 0,
+                              "parent_comment_id": "p0n45o5",
+                              "depth": 5,
+                              "replies": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p0n4dyr",
+          "author": "reddit_user_f3cc81d5d198",
+          "author_karma": 0,
+          "content": "Ca va?",
+          "timestamp": "2026-07-30T10:18:08+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0n4j3l",
+              "author": "reddit_user_261ab407110e",
+              "author_karma": 0,
+              "content": "Oui ca va bien et toi ca va ?",
+              "timestamp": "2026-07-30T10:19:09+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p0n4dyr",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p0n584b",
+                  "author": "reddit_user_f3cc81d5d198",
+                  "author_karma": 0,
+                  "content": "Bien, merci ",
+                  "timestamp": "2026-07-30T10:24:13+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p0n4j3l",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p0n5hx0",
+                      "author": "reddit_user_261ab407110e",
+                      "author_karma": 0,
+                      "content": "Welcome, I'm proud to meet you❤️😍🌹🌹🌹",
+                      "timestamp": "2026-07-30T10:26:11+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p0n584b",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p0n6nt6",
+          "author": "reddit_user_43adfde5d6c3",
+          "author_karma": 0,
+          "content": "Bonjour jamel DJO Ca va ?",
+          "timestamp": "2026-07-30T10:34:35+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0n6x3n",
+              "author": "reddit_user_261ab407110e",
+              "author_karma": 0,
+              "content": "Bnjr oui cv merci et toi cv ?",
+              "timestamp": "2026-07-30T10:36:24+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p0n6nt6",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p0n72ck",
+                  "author": "reddit_user_43adfde5d6c3",
+                  "author_karma": 0,
+                  "content": "Cv bien merci Djo ",
+                  "timestamp": "2026-07-30T10:37:25+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p0n6x3n",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p0n73ux",
+                      "author": "reddit_user_261ab407110e",
+                      "author_karma": 0,
+                      "content": "🫡🫡🫡",
+                      "timestamp": "2026-07-30T10:37:43+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p0n72ck",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,2117 @@
+{
+  "meta": {
+    "product_category": "news",
+    "baseline": "real_reddit_reference",
+    "run_id": "run_024_sampled_reddit"
+  },
+  "posts": [
+    {
+      "post_id": "real_run024_post00_seed120",
+      "post_slot": 0,
+      "seed_index": 120,
+      "source_raw_post_id": "1vel8v3",
+      "source_product_dir": "worldnews",
+      "source_file": "https://www.reddit.com/r/worldnews/comments/1vel8v3/russia_says_seven_killed_and_40_injured_by/",
+      "post_type": "link",
+      "title": "Russia says seven killed and 40 injured by Ukrainian drone hitting busy beach",
+      "author": "reddit_user_bde1e90b951b",
+      "author_karma": 0,
+      "content": "Russia says seven killed and 40 injured by Ukrainian drone hitting busy beach",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p1htilu",
+          "author": "reddit_user_e320faca37f4",
+          "author_karma": 0,
+          "content": "Your submission has been automatically removed because your account does not meet the minimum karma or account age requirements for /r/worldnews. \n\nIf you are new to reddit, we suggest you read:\n\n* [reddit 101](http://www.reddit.com/r/help/comments/2bx3cj/reddit_101/)\n\n* [How reddit works](http://www.redditblog.com/2014/07/how-reddit-works.html)\n\n* [The rules of /r/worldnews](http://www.reddit.com/r/worldnews/wiki/rules)\n\nYou may also want to review the [Reddit guidelines regarding spam](http://www.reddit.com/help/faq#Whatconstitutesspam) and the [wiki on self-promotion on reddit](http://www.reddit.com/wiki/selfpromotion). \n\n*I am a bot, and this action was performed automatically. Please [contact the moderators of this subreddit](/message/compose/?to=/r/worldnews) if you have any questions or concerns.*",
+          "timestamp": "2026-08-03T18:12:50+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run024_post01_seed121",
+      "post_slot": 1,
+      "seed_index": 121,
+      "source_raw_post_id": "1vely9o",
+      "source_product_dir": "news",
+      "source_file": "https://www.reddit.com/r/news/comments/1vely9o/federal_judge_allows_dhs_border_wall_plan_through/",
+      "post_type": "link",
+      "title": "Federal judge allows DHS border wall plan through small Texas town’s levee system",
+      "author": "reddit_user_bde1e90b951b",
+      "author_karma": 0,
+      "content": "Federal judge allows DHS border wall plan through small Texas town’s levee system",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p1i0cu0",
+          "author": "reddit_user_d49fb243c9d7",
+          "author_karma": 0,
+          "content": "It flooded in 2008 and in 1978. This isn't some random \"what if\" scenario. It's common. \n\n>About 150 inmates brought in from low-security facilities elsewhere in West Texas filled rotund sandbags about as tall as tractor tires. They were to be carried to the base of a railroad trestle by CH-47 helicopters that Gov. Rick Perry’s office was sending.\n\n-[September 2008](https://www.nbcnews.com/id/wbna26790301)",
+          "timestamp": "2026-08-03T18:42:19+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1i8bpj",
+              "author": "reddit_user_1717bbdb2f93",
+              "author_karma": 0,
+              "content": "This is what I expect flooding in the area to look like. Meaning flash flooding north and south of the border during heavy rains.\n\n12 News (2021, August 31) Parts of Arizona’s newly built border wall damaged by monsoon floods. [Video] [YouTube] https://www.youtube.com/watch?v=c3i6kzdKaRM",
+              "timestamp": "2026-08-03T19:16:38+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1i0cu0",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p1icggm",
+              "author": "reddit_user_9bad8e628c5f",
+              "author_karma": 0,
+              "content": "Texas has had several instances of flooding where even children died because they declined to install warning systems. This is standard for Texas.",
+              "timestamp": "2026-08-03T19:34:46+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1i0cu0",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1ik8dk",
+                  "author": "reddit_user_bfb9d1b80fde",
+                  "author_karma": 0,
+                  "content": "The Texas way, guns and floods.",
+                  "timestamp": "2026-08-03T20:08:53+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1icggm",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1jw3nm",
+                      "author": "reddit_user_410e02f425ca",
+                      "author_karma": 0,
+                      "content": "And power outages. ",
+                      "timestamp": "2026-08-03T23:59:27+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1ik8dk",
+                      "depth": 3,
+                      "replies": []
+                    },
+                    {
+                      "comment_id": "p1jw5qk",
+                      "author": "reddit_user_410e02f425ca",
+                      "author_karma": 0,
+                      "content": "And power outages. ",
+                      "timestamp": "2026-08-03T23:59:46+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1ik8dk",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                },
+                {
+                  "comment_id": "p1jgfrt",
+                  "author": "[deleted]",
+                  "author_karma": 0,
+                  "content": "[removed]",
+                  "timestamp": "2026-08-03T22:37:32+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1icggm",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p1i0q15",
+          "author": "reddit_user_e17d423195d0",
+          "author_karma": 0,
+          "content": "Has IBWC been consulted about this? There have an entire department of civil engineers that I would assume can block this. I’m pretty sure they have an office in Presidio as well. ",
+          "timestamp": "2026-08-03T18:43:55+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1i3lob",
+              "author": "reddit_user_230de578dad8",
+              "author_karma": 0,
+              "content": "The engineers can't do shit. Political power absolutely trumps (pun intended) engineering or scientific knowledge.",
+              "timestamp": "2026-08-03T18:56:14+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1i0q15",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1i4264",
+                  "author": "reddit_user_e8713910db1c",
+                  "author_karma": 0,
+                  "content": "True.   But any engineer or geologist stamp that goes on the project plans that involve Removing levees should be held liable.    ",
+                  "timestamp": "2026-08-03T18:58:12+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1i3lob",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1i7dim",
+                      "author": "reddit_user_230de578dad8",
+                      "author_karma": 0,
+                      "content": "I was gonna say who in their right mind would stamp that, but then I remembered they somehow always manage to find themselves a minion willing to sacrifice themselves.",
+                      "timestamp": "2026-08-03T19:12:32+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1i4264",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "p1iaqn0",
+                          "author": "reddit_user_d49fb243c9d7",
+                          "author_karma": 0,
+                          "content": ">but then I remembered they somehow always manage to find a minion willing to sacrifice themselves.\n\nAll I have to say is, RIP Herman Cain.",
+                          "timestamp": "2026-08-03T19:27:10+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "p1i7dim",
+                          "depth": 4,
+                          "replies": [
+                            {
+                              "comment_id": "p1ieg4b",
+                              "author": "[deleted]",
+                              "author_karma": 0,
+                              "content": "[removed]",
+                              "timestamp": "2026-08-03T19:43:33+00:00",
+                              "likes": 1,
+                              "dislikes": 0,
+                              "parent_comment_id": "p1iaqn0",
+                              "depth": 5,
+                              "replies": []
+                            },
+                            {
+                              "comment_id": "p1jetuz",
+                              "author": "reddit_user_577d95e93f10",
+                              "author_karma": 0,
+                              "content": "honestly, nah, fuck herman cain ",
+                              "timestamp": "2026-08-03T22:29:25+00:00",
+                              "likes": 1,
+                              "dislikes": 0,
+                              "parent_comment_id": "p1iaqn0",
+                              "depth": 5,
+                              "replies": []
+                            },
+                            {
+                              "comment_id": "p1kbh0r",
+                              "author": "reddit_user_053fd5a90495",
+                              "author_karma": 0,
+                              "content": "Rip his soul out of his body and down to hell",
+                              "timestamp": "2026-08-04T01:23:08+00:00",
+                              "likes": 1,
+                              "dislikes": 0,
+                              "parent_comment_id": "p1iaqn0",
+                              "depth": 5,
+                              "replies": []
+                            }
+                          ]
+                        },
+                        {
+                          "comment_id": "p1izk7p",
+                          "author": "[deleted]",
+                          "author_karma": 0,
+                          "content": "[removed]",
+                          "timestamp": "2026-08-03T21:16:54+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "p1i7dim",
+                          "depth": 4,
+                          "replies": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p1i7izv",
+          "author": "reddit_user_4b7e9c661499",
+          "author_karma": 0,
+          "content": "The reason they wont tell the details of the wall is because when people find out that its just some cheap home depot stuff that will fall over soon as it rains, they might start to ask why it costs so much.",
+          "timestamp": "2026-08-03T19:13:11+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1j5m9e",
+              "author": "reddit_user_f93fa653942b",
+              "author_karma": 0,
+              "content": "Happened in trumps first term. Wind came along and trumps wall fell like Humpty Dumpty. ",
+              "timestamp": "2026-08-03T21:44:56+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1i7izv",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p1k905m",
+              "author": "reddit_user_f47c2afd09a8",
+              "author_karma": 0,
+              "content": "Only the finest warped pine will do",
+              "timestamp": "2026-08-04T01:09:32+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1i7izv",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p1l2p54",
+              "author": "reddit_user_0a60131b4460",
+              "author_karma": 0,
+              "content": "I just imagine some guy named Juan walking across that same border could do a 10x better job at 1/10th the price... but they would rather pay more for worse quality.",
+              "timestamp": "2026-08-04T04:03:30+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1i7izv",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1ieu8v",
+          "author": "reddit_user_a217e1f3ca47",
+          "author_karma": 0,
+          "content": "The amount of illegals crossing the boarder in this area annually is in the double digits at most.  We are spending about $1 million in tax dollars to stop each person from coming to US to work and pay taxes.  (and yes, they commit crimes at lower rates while working more hours than US citizens). ",
+          "timestamp": "2026-08-03T19:45:17+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1io0e9",
+              "author": "reddit_user_220df16a6ebb",
+              "author_karma": 0,
+              "content": "And often add to the economy while being ineligible for benefits for doing so.",
+              "timestamp": "2026-08-03T20:25:23+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1ieu8v",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p1it7fg",
+              "author": "reddit_user_79a7def4c0d6",
+              "author_karma": 0,
+              "content": "It's not *supposed* to be a good deal for the American people.  It's a combination of grift and racism.  Just like most other Trump policies, it exists to either harm people due to bigotry or turn a profit to the \"right\" people.  In this case, it's both.",
+              "timestamp": "2026-08-03T20:48:12+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1ieu8v",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p1j4l8q",
+              "author": "reddit_user_a5bf93fba8d0",
+              "author_karma": 0,
+              "content": "During the 2024 election, the GOP spent around a million dollars *per trans person* on anti-trans messaging. \n\nMoney isn't the limiting factor for them, they've got plenty. It's all about consolidating power. ",
+              "timestamp": "2026-08-03T21:40:09+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1ieu8v",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p1j4smi",
+              "author": "reddit_user_3688706bb5cf",
+              "author_karma": 0,
+              "content": "Now they will just take a different path to get here or just climb over them. It's just political theater. ",
+              "timestamp": "2026-08-03T21:41:07+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1ieu8v",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1ik9by",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-03T20:09:00+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1ileez",
+          "author": "reddit_user_6a83311b2931",
+          "author_karma": 0,
+          "content": "When the levee breaks, they’ll have no place to stay. ",
+          "timestamp": "2026-08-03T20:13:59+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1iousn",
+              "author": "reddit_user_aacceaac468e",
+              "author_karma": 0,
+              "content": "But they will probably blame Biden for it",
+              "timestamp": "2026-08-03T20:29:05+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1ileez",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1irtub",
+          "author": "reddit_user_4d331cf23b1b",
+          "author_karma": 0,
+          "content": "You get what you vote for Texas. ",
+          "timestamp": "2026-08-03T20:42:10+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1ivfn6",
+          "author": "reddit_user_3caf8b921226",
+          "author_karma": 0,
+          "content": "Judge evidently has a 2nd career as some kind of water engineer.",
+          "timestamp": "2026-08-03T20:58:07+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1j0t85",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-03T21:22:36+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1j1qzk",
+          "author": "reddit_user_381052fb160d",
+          "author_karma": 0,
+          "content": "You know that judge is trumper, bc how dumb do you have to be to allow that. ",
+          "timestamp": "2026-08-03T21:26:55+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1jedvn",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-03T22:27:11+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1jgegy",
+          "author": "reddit_user_e29d3f10097b",
+          "author_karma": 0,
+          "content": "Presidio County voted 64.66% Harris in 2024 (https://www.texascounties.net/statistics/presidentialelection2024.htm).  I guess this is payback.",
+          "timestamp": "2026-08-03T22:37:21+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run024_post02_seed122",
+      "post_slot": 2,
+      "seed_index": 122,
+      "source_raw_post_id": "1vem1nk",
+      "source_product_dir": "worldnews",
+      "source_file": "https://www.reddit.com/r/worldnews/comments/1vem1nk/new_iam_investigation_claims_btselem_report/",
+      "post_type": "Israel/Palestine",
+      "title": "New IAM investigation claims B'Tselem report ‘demonizes Israel by rebranding terrorists as minors’",
+      "author": "reddit_user_bde1e90b951b",
+      "author_karma": 0,
+      "content": "New IAM investigation claims B'Tselem report ‘demonizes Israel by rebranding terrorists as minors’",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p1i1382",
+          "author": "reddit_user_afa896554408",
+          "author_karma": 0,
+          "content": "So they are not denying that Israel killed kids, they’re complaining that it makes them look bad when someone points out that Israel killed kids? Interesting strategy.",
+          "timestamp": "2026-08-03T18:45:29+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1i1vqf",
+              "author": "reddit_user_6c1e3208d00a",
+              "author_karma": 0,
+              "content": "All you need is the headline (Reddit post's title) you don't need anything more than that.\n\nIs it okay to ask you to read a single sentence?",
+              "timestamp": "2026-08-03T18:48:54+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1i1382",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1i2s26",
+                  "author": "reddit_user_fcc235e03ae2",
+                  "author_karma": 0,
+                  "content": "When a group as biased as the Isreal Advocacy Group claims Isreal didn't kill innocent kids only terrorists who happened to be kids, its easy to read between the lines.",
+                  "timestamp": "2026-08-03T18:52:42+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1i1vqf",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1i7zq5",
+                      "author": "reddit_user_6c1e3208d00a",
+                      "author_karma": 0,
+                      "content": "Can you perform a counter investigation and prove them wrong?\n\nI watched their video.",
+                      "timestamp": "2026-08-03T19:15:12+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1i2s26",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "p1icqj4",
+                          "author": "reddit_user_d5c8b6f0726c",
+                          "author_karma": 0,
+                          "content": "i’m sure israel would be very accommodating in their counter investigation",
+                          "timestamp": "2026-08-03T19:36:01+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "p1i7zq5",
+                          "depth": 4,
+                          "replies": [
+                            {
+                              "comment_id": "p1iil8x",
+                              "author": "reddit_user_a9eb378325cc",
+                              "author_karma": 0,
+                              "content": "Ya know, Israel is the only country in the region with organizations that have records open to the public. It's such a double standard to hold Israel to the standard of performing a competent counter investigation, when the organizations surrounding Israel never bother with investigations in the first place. We only know about half the bad shit Israel does *because* of Israelis. ",
+                              "timestamp": "2026-08-03T20:01:37+00:00",
+                              "likes": 1,
+                              "dislikes": 0,
+                              "parent_comment_id": "p1icqj4",
+                              "depth": 5,
+                              "replies": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "comment_id": "p1i276r",
+              "author": "reddit_user_bfa8b004506a",
+              "author_karma": 0,
+              "content": "If your gonna threaten my family - especially at scale - I don’t care how old you are. I want my government to take you out. Israel, USA, anywhere.  ",
+              "timestamp": "2026-08-03T18:50:15+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1i1382",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1i34ou",
+                  "author": "reddit_user_9a1548bb4882",
+                  "author_karma": 0,
+                  "content": "Do you not see how this feeds into a cycle of violence? What would you do if someone killed your entire family? ",
+                  "timestamp": "2026-08-03T18:54:14+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1i276r",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1i4cwr",
+                      "author": "[deleted]",
+                      "author_karma": 0,
+                      "content": "[removed]",
+                      "timestamp": "2026-08-03T18:59:27+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1i34ou",
+                      "depth": 3,
+                      "replies": []
+                    },
+                    {
+                      "comment_id": "p1i6s7z",
+                      "author": "[deleted]",
+                      "author_karma": 0,
+                      "content": "[removed]",
+                      "timestamp": "2026-08-03T19:09:58+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1i34ou",
+                      "depth": 3,
+                      "replies": []
+                    },
+                    {
+                      "comment_id": "p1id5uo",
+                      "author": "reddit_user_6c1e3208d00a",
+                      "author_karma": 0,
+                      "content": "Was my family a bunch of terrorists in that scenario?",
+                      "timestamp": "2026-08-03T19:37:54+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1i34ou",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                },
+                {
+                  "comment_id": "p1i6kcd",
+                  "author": "reddit_user_6e56d3013ed1",
+                  "author_karma": 0,
+                  "content": "You do see how that kind of thought process is exactly what let's Youths subscribe to Hamas right? ",
+                  "timestamp": "2026-08-03T19:08:59+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1i276r",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1i8ybx",
+                      "author": "reddit_user_6c1e3208d00a",
+                      "author_karma": 0,
+                      "content": "If an individual joins a terrorist organization they will die.\n\nTheir age is a non-factor.\n\n",
+                      "timestamp": "2026-08-03T19:19:23+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1i6kcd",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "p1ic4w2",
+                          "author": "reddit_user_bfa8b004506a",
+                          "author_karma": 0,
+                          "content": "Any opposing opinion here is suicidal empathy. ",
+                          "timestamp": "2026-08-03T19:33:20+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "p1i8ybx",
+                          "depth": 4,
+                          "replies": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "comment_id": "p1i2j8y",
+              "author": "reddit_user_56ecf0286cc1",
+              "author_karma": 0,
+              "content": "How did you get this from the article?! \n\nCan you even read? \n\nJust this part:\n\n\"The investigation demonstrated that 63 percent of the casualties were 15 years of age or older, and only two were female\"\n\nSo not even kids. Majority are perfectly capable of performing military acts.",
+              "timestamp": "2026-08-03T18:51:41+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1i1382",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1i4ly3",
+                  "author": "reddit_user_d9700b718854",
+                  "author_karma": 0,
+                  "content": "37% are kids",
+                  "timestamp": "2026-08-03T19:00:31+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1i2j8y",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1i61ix",
+                      "author": "reddit_user_56ecf0286cc1",
+                      "author_karma": 0,
+                      "content": "I have to fucking read the article for you, don't I... \n\n\"78 percent were actively participating in hostilities against Israeli security forces or civilians, including gunfights, car rammings, and hurling improvised explosive devices, firebombs, or heavy concrete blocks.\"\n\n\"B'Tselem stated it could neither verify nor refute Israeli allegations regarding six individuals killed while throwing Molotov cocktails, the IAM report highlighted explicit IDF footage\" \n\n\"In the case of 15-year-old Muhammad Abu Ayash, Hamas martyr posters explicitly identified him as “its youth martyr” killed while throwing firebombs, Cohen said in a video on the investigation that such posters serve as \"a tacit admission that they recruit and use child soldiers,\" \"\n\n\"B'Tselem's text stated that 5 thirteen-year-olds were killed while their dataset records 3, and claimed 16 sixteen-year-olds while their charts showed 14\"",
+                      "timestamp": "2026-08-03T19:06:42+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1i4ly3",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                },
+                {
+                  "comment_id": "p1i6892",
+                  "author": "reddit_user_6e56d3013ed1",
+                  "author_karma": 0,
+                  "content": "The connection you make in your head is absurd.\n\n'They are fifteen years old, so they might be able to wield a weapon.'\n\nWhy not 14, 13 or 12 ?\nThey could also throw rocks and Molotow Cocktails. Is that reason enough to see them as combatants?\n\nThe same report states 80% were not affiliated with a militant organization. ",
+                  "timestamp": "2026-08-03T19:07:31+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1i2j8y",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1izrab",
+                      "author": "reddit_user_56ecf0286cc1",
+                      "author_karma": 0,
+                      "content": ">so they might be able to wield a weapon\n\nNot might - did.\n\nRead the article.\n\nYes teenagers can do militant violent acts. Yes, that makes them combatants.\n\nTerrorist organization are notoriously known for radicalizing and enlisting child soldiers.\n\nShow me where you saw that 80% figure.",
+                      "timestamp": "2026-08-03T21:17:48+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1i6892",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "p1jaq44",
+                          "author": "reddit_user_6e56d3013ed1",
+                          "author_karma": 0,
+                          "content": ">Show me where you saw that 80% figure\n\n'Read the article'",
+                          "timestamp": "2026-08-03T22:09:11+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "p1izrab",
+                          "depth": 4,
+                          "replies": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "comment_id": "p1i30lz",
+              "author": "reddit_user_199e332e0af0",
+              "author_karma": 0,
+              "content": "Reading is hard? They're complaining someone points out israel kills kids without pointing out said kids are also militants",
+              "timestamp": "2026-08-03T18:53:44+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1i1382",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p1i3gqv",
+              "author": "reddit_user_5367695bba95",
+              "author_karma": 0,
+              "content": "The blame lies with Hamas and other terrorist groups operating there for recruiting and deploying child soldiers. Each individual instance constitutes a war crime.",
+              "timestamp": "2026-08-03T18:55:39+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1i1382",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1i1atq",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-03T18:46:23+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1i3k20",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-03T18:56:03+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1i3nne",
+          "author": "reddit_user_417ef6854119",
+          "author_karma": 0,
+          "content": "The death of any child is a horrible thing that causes the future to be that much dimmer. However this is what happens when you have a terrorist organization who has become the governing body, and militant arm of Gaza, committing Perfidy on a constant basis while using human shields, and child soldiers. Which is why you don't fucking do those things.",
+          "timestamp": "2026-08-03T18:56:29+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1i4cyx",
+          "author": "reddit_user_9c649a4108fb",
+          "author_karma": 0,
+          "content": "As sad as it is, killing child soldiers in combat is justified. The war crime are the people recruiting, arming, and/or forcing these children into warfare. Its especially tragic when Hamas fights in civilian clothes (another war crime) because it makes it harder for the other side to distinguish combatant teenagers vs true civilians. All around tragic and both legally and morally at the foot of Hamas, PIJ, AAMB, and every other Palestinian terrorist group.\n\nA soldier during war cannot be expected to have to judge the age of whoever is shooting at them. ",
+          "timestamp": "2026-08-03T18:59:27+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1i4jpb",
+          "author": "reddit_user_1af7c37ed211",
+          "author_karma": 0,
+          "content": "I shouldn't be surprised that B'Tselem, an organization that refuses to call Hamas terrorists, would do something like this.",
+          "timestamp": "2026-08-03T19:00:15+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1i5500",
+          "author": "reddit_user_b909d7ed95c5",
+          "author_karma": 0,
+          "content": "I mean, these terrorist groups often use child solders, so technically both could be true. They could be terrorist combatants, and they could also be minors.\n\nThe problem is if you frame it dishonestly and try to frame these enemy combatants (or any combatants over 18) as innocent children. We've seen it happen. ",
+          "timestamp": "2026-08-03T19:02:47+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run024_post03_seed123",
+      "post_slot": 3,
+      "seed_index": 123,
+      "source_raw_post_id": "1vem3ot",
+      "source_product_dir": "news",
+      "source_file": "https://www.reddit.com/r/news/comments/1vem3ot/kmart_sells_out_of_lowcost_rival_to_meta_camera/",
+      "post_type": "link",
+      "title": "Kmart sells out of low-cost rival to Meta camera glasses across Australia amid warnings of ‘privacy nightmare’ | Consumer affairs",
+      "author": "reddit_user_bde1e90b951b",
+      "author_karma": 0,
+      "content": "Kmart sells out of low-cost rival to Meta camera glasses across Australia amid warnings of ‘privacy nightmare’ | Consumer affairs",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p1jabc9",
+          "author": "reddit_user_15d37b51b4da",
+          "author_karma": 0,
+          "content": "“I use this for fishing” is my new favorite phrase.",
+          "timestamp": "2026-08-03T22:07:14+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1jaidc",
+          "author": "reddit_user_50b96c441ed5",
+          "author_karma": 0,
+          "content": "It wasn’t separate when it started. It was majority owned by Kresge Co, the predecessor to the Kmart Corporation. Over the years, they slowly divested the ownership of the Australian chain until they eventually sold it entirely. ",
+          "timestamp": "2026-08-03T22:08:09+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1iftdd",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1japo2",
+          "author": "reddit_user_15d37b51b4da",
+          "author_karma": 0,
+          "content": "Many of us never stopped.",
+          "timestamp": "2026-08-03T22:09:07+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1ic7bv",
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1kagku",
+              "author": "[deleted]",
+              "author_karma": 0,
+              "content": "[removed]",
+              "timestamp": "2026-08-04T01:17:33+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1japo2",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1jbfnp",
+          "author": "reddit_user_8acc46b04927",
+          "author_karma": 0,
+          "content": "Yeah, this is Australia but there actually still is one in Florida.",
+          "timestamp": "2026-08-03T22:12:37+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1i338r",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1jbx15",
+          "author": "reddit_user_84d9827a7727",
+          "author_karma": 0,
+          "content": "Your phone absolutely is",
+          "timestamp": "2026-08-03T22:14:59+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1j8jkl",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1je3lf",
+          "author": "reddit_user_9fcd1772a1df",
+          "author_karma": 0,
+          "content": "Ok, sorry, Kmart still exists?",
+          "timestamp": "2026-08-03T22:25:45+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1jl7kh",
+              "author": "reddit_user_65d477992077",
+              "author_karma": 0,
+              "content": "In Australia. ",
+              "timestamp": "2026-08-03T23:01:57+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1je3lf",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p1k8kf9",
+              "author": "[deleted]",
+              "author_karma": 0,
+              "content": "[removed]",
+              "timestamp": "2026-08-04T01:07:10+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1je3lf",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1jflgm",
+          "author": "reddit_user_d8b0ee9b8f6a",
+          "author_karma": 0,
+          "content": "So why defend being creepy? Just because something is legal doesn't mean you can't be socially ostracized for doing it. ",
+          "timestamp": "2026-08-03T22:33:16+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1j1xvc",
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1jiqj0",
+              "author": "reddit_user_bcdd5726cb4f",
+              "author_karma": 0,
+              "content": "Im not defending being creepy. I simply pointed out in public its legal to record. Do you ever watch the first amendment auditors? And like I said previously just because its legal doesnt mean its not creepy. Its constitutionlly protected. ",
+              "timestamp": "2026-08-03T22:49:16+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1jflgm",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1jwvyd",
+                  "author": "reddit_user_436587f950e4",
+                  "author_karma": 0,
+                  "content": "Something being legal and something being ethical aren't always the same thing. ",
+                  "timestamp": "2026-08-04T00:03:43+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1jiqj0",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1kty0z",
+                      "author": "reddit_user_4d6922634a3b",
+                      "author_karma": 0,
+                      "content": "Hidden cameras exist and have for ages, these are \"in your face\" and have multiple protections to not be able to hide or disable the recording light.\n\nI agree its shit that everyone can record these days but as technology has improved its just inevitable that if someone wants to, they can. ",
+                      "timestamp": "2026-08-04T03:07:50+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1jwvyd",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "p1l4qke",
+                          "author": "reddit_user_436587f950e4",
+                          "author_karma": 0,
+                          "content": "Whoosh! Way to miss the point. ",
+                          "timestamp": "2026-08-04T04:17:08+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "p1kty0z",
+                          "depth": 4,
+                          "replies": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p1jgbm0",
+          "author": "reddit_user_37c593583b3d",
+          "author_karma": 0,
+          "content": "Yeah but for the actually perverted pictures you would probably notice someone sticking their face up your skirt before you noticed them holding their phone low.",
+          "timestamp": "2026-08-03T22:36:57+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1ig7rz",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1jhbj0",
+          "author": "reddit_user_021bc3f9fb73",
+          "author_karma": 0,
+          "content": "It’s time to break the glass on the emergency case: we need to bring back bullying.\n\nPervert Glasses. “Sorry I don’t hang out with people in Pervert Glasses” “oh dude, Pervert Glasses? Really?” “WOW look at John over there in the Pervert Glasses” \n\nThat and business owners, especially nightclub / concert venues etc need to make a clear no camera enabled glasses\n\nI hate smart phones as much as the next guy, but I can see their and when someone is filming it’s for the most part obvious. These glasses cross a line I don’t personally want around me. \n\nIf someone was holding a camera up to my face, id tell them to fuck off. This is the same thing ",
+          "timestamp": "2026-08-03T22:42:04+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1k0ged",
+              "author": "reddit_user_8b9353958955",
+              "author_karma": 0,
+              "content": "Fine for now, but the day someone manages to cram recording technology into contacts, then what?",
+              "timestamp": "2026-08-04T00:22:55+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1jhbj0",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1ji1as",
+          "author": "reddit_user_7fe47c5ae202",
+          "author_karma": 0,
+          "content": "I highly doubt these are decent in any way lmao. Have you seen what that price gets you at Kmart? I bought a camera for my kid and the quality is so awful I can literally take better photos with a banana. \n\nEven in perfect lighting they are 540 photos enlarged to 1080 and look like you use a watch camera from the 90s.\n\nHow would Kmart glasses even work? They aren’t meta.  I assume Bluetooth to a phone? ",
+          "timestamp": "2026-08-03T22:45:43+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1jin9j",
+          "author": "reddit_user_3ec6805b483b",
+          "author_karma": 0,
+          "content": "Just wear a gopro on your head?",
+          "timestamp": "2026-08-03T22:48:47+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1iato3",
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1k494k",
+              "author": "reddit_user_f82be241707e",
+              "author_karma": 0,
+              "content": "Go pro is just more cumbersome and awkward. This is an improvement on wearable camera tech and as it gets more features more and more people are gonna be wearing them daily.",
+              "timestamp": "2026-08-04T00:43:32+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1jin9j",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p1kaxse",
+              "author": "reddit_user_8b9353958955",
+              "author_karma": 0,
+              "content": "GoPros weigh more than glasses. Even if they're not *that* heavy, can still lead to balance issues.",
+              "timestamp": "2026-08-04T01:20:13+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1jin9j",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1jitgm",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-03T22:49:40+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1i3rd4",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1jiw21",
+          "author": "reddit_user_3ec6805b483b",
+          "author_karma": 0,
+          "content": "Depends on the country, in some countries it's very much illegal to do mass recordings in public because people can expect to have some degree of privacy even in public.",
+          "timestamp": "2026-08-03T22:50:03+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1i8uqk",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1jjakr",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-03T22:52:07+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1jjfgt",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-03T22:52:49+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1jkb0t",
+          "author": "reddit_user_629ed8a6d798",
+          "author_karma": 0,
+          "content": "There's one still open in Miami FL but it's been consolidated into the Garden Center. That's the last one on the mainland. And then Guam and St. Thomas. That's it for the US. \n\nThe Australian Kmart is a different company, but uses the name, and is evidently more successful since they have more than 3 stores. ",
+          "timestamp": "2026-08-03T22:57:18+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1i338r",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1jkcpo",
+          "author": "reddit_user_a1baecab47d2",
+          "author_karma": 0,
+          "content": "I used to love Kmart here in the states. Kinda wild they still exist! Good for them for keeping it together. ",
+          "timestamp": "2026-08-03T22:57:32+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1igy8d",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1jke3n",
+          "author": "reddit_user_924e698e30ed",
+          "author_karma": 0,
+          "content": "They are now pervert glasses",
+          "timestamp": "2026-08-03T22:57:44+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1i1i0x",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1jliga",
+          "author": "reddit_user_f76a33843f24",
+          "author_karma": 0,
+          "content": "Also theirs though, they just aren’t aware it will be a problem for them also yet.",
+          "timestamp": "2026-08-03T23:03:30+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1i23uk",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1jlqgb",
+          "author": "reddit_user_ba6acb0308d2",
+          "author_karma": 0,
+          "content": "And this is how I find out Kmart is still a thing outside the states. They all closed here because Wallyworld drove them out of business.",
+          "timestamp": "2026-08-03T23:04:39+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1jnvtw",
+              "author": "reddit_user_86b141c639e0",
+              "author_karma": 0,
+              "content": "We have Kmarts in Oz. They are basically another Big W/Target. Cheap (but good enough) junk mostly. ",
+              "timestamp": "2026-08-03T23:16:01+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1jlqgb",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1js5fo",
+                  "author": "reddit_user_48d85bbf0d47",
+                  "author_karma": 0,
+                  "content": "> Cheap (but good enough) junk mostly. \n\nOTOH, I resent paying for expensive junk, which everything is nowadays.\n\nThe $20 Anko stick mixer which replaced the $80 branded one which burned out has now lasted longer. The $40 Anko toaster has lasted longer than the $100 branded toaster it replaced. $8 t-shirts do the job - five of them will definitely last longer than the a $40 plain yet branded one (and I don't want to be a walking billboard anyway).\n\nIt's like a slightly more expensive Temu/ebay with some QC and the ability to return relatively easily.",
+                  "timestamp": "2026-08-03T23:38:18+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1jnvtw",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p1jmjbr",
+          "author": "reddit_user_1bf184a91c57",
+          "author_karma": 0,
+          "content": "Huh Kmart is still a thing. Good for them.",
+          "timestamp": "2026-08-03T23:08:52+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1k1qby",
+              "author": "reddit_user_8f77cab05781",
+              "author_karma": 0,
+              "content": "Pretty sure its not related to the former department store at all, some company just bought the brand name.",
+              "timestamp": "2026-08-04T00:29:48+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1jmjbr",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1jmz4t",
+          "author": "reddit_user_fecd924eff9b",
+          "author_karma": 0,
+          "content": "Wireframe glasses might become more popular to demonstrate you are not wearing these.",
+          "timestamp": "2026-08-03T23:11:11+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1jw1pp",
+              "author": "reddit_user_79425a018b01",
+              "author_karma": 0,
+              "content": "I had to choose new frames after my eye test last week and it took me forever to find a pair that suited me and didn’t look anything like the various styles of creep glasses.",
+              "timestamp": "2026-08-03T23:59:09+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1jmz4t",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1jo20m",
+          "author": "reddit_user_1b8ca03310d4",
+          "author_karma": 0,
+          "content": "Iit's too late to be concerned now. Idiots.",
+          "timestamp": "2026-08-03T23:16:54+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1jpnpy",
+          "author": "reddit_user_a362a30c1030",
+          "author_karma": 0,
+          "content": "Wesfarmers own both Kmart and Target along with Officeworks and Bunnings, they've got a complete stranglehold on that market basically.",
+          "timestamp": "2026-08-03T23:25:16+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1igy8d",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1jpre6",
+          "author": "reddit_user_4d19b474fdb1",
+          "author_karma": 0,
+          "content": "They are not rivals to the meta glasses, they are just plain camera glasses, something that's been around for about 15 20 years.",
+          "timestamp": "2026-08-03T23:25:47+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1jqlw9",
+          "author": "reddit_user_9edf6f4645a1",
+          "author_karma": 0,
+          "content": "What's the difference between being recorded by smart glasses and being recorded by several cameras the moment you go into public? Laws against filming in sensitive places already exist.",
+          "timestamp": "2026-08-03T23:30:13+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1l593o",
+              "author": "reddit_user_c6afa87cfc35",
+              "author_karma": 0,
+              "content": "Because surveillance cams don't upload your weak moments onto the internet for clout. This footage is going into the hands of people who decide what to do with it. \n\nI think another concern is when these start live feeding the Internet at all times (or if that starts getting done in the background). Then certain private companies will likely exponentially increase their data on the public. Now it's not just one angle, it's tens of angles, hundreds. Thousands? It's who knows where the train stops. ",
+              "timestamp": "2026-08-04T04:20:40+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1jqlw9",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1jqzyt",
+          "author": "reddit_user_6adc2d407ad8",
+          "author_karma": 0,
+          "content": "Doing something immorale because laws don't exist for it yet is twisted shit\n\nThe responsibility of not being a detriment to society lies in the hands of the people making the decisions to these kinds of tech\n\nThese aren't marketed as some kind of alternative to go pros, theyre marketed to recording your everyday life, which results in the recording of other people's lives without their consent. AKA spying ",
+          "timestamp": "2026-08-03T23:32:15+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1iojf9",
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1jt3tw",
+              "author": "reddit_user_dcd166b85509",
+              "author_karma": 0,
+              "content": "There’s nothing inherently immoral about owning a pair of sunglasses with a camera built in. The concern in how it can be abused.\n\nRecording your everyday life in public is already something that’s been happening for years. If you’re in public, you don’t have a right to privacy. It’s legal to film in public nearly everywhere.\n\nIf someone is determined to covertly film then there’s a multitude of options that have already been available to them for years.",
+              "timestamp": "2026-08-03T23:43:19+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1jqzyt",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1kiqfh",
+                  "author": "reddit_user_6e5ac3b18e13",
+                  "author_karma": 0,
+                  "content": "Just like there isn't anything inherently immoral in oening a machine designed exclusively to dice live puppies, I suppose.\n\nEveryone already has a device that records high quality video. It's called a phone, or if you need it head mounted, a GoPro or clone.\n\nThe only possible use case for these glasses, the only reason anyone would buy them, is to covertly record people without consent. They are morally identical to spy cameras, the kind that look like USB chargers or smoke alarms or such. Do not try to suggest they have any other intended purpose.",
+                  "timestamp": "2026-08-04T02:03:22+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1jt3tw",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1l4ipn",
+                      "author": "reddit_user_4b6d7f8b5f12",
+                      "author_karma": 0,
+                      "content": "> Just like there isn't anything inherently immoral in owning a machine designed exclusively to dice live puppies, I suppose.\n\nWhere you buying that?",
+                      "timestamp": "2026-08-04T04:15:40+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1kiqfh",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                },
+                {
+                  "comment_id": "p1kxats",
+                  "author": "reddit_user_6adc2d407ad8",
+                  "author_karma": 0,
+                  "content": "Look, we're likely going to disagree but I think banning something that can and will be abused to hurt others should be kept out of the hands of the public because of the actions a few will inevitably take. Much like guns, sure there are many more responsible owners and users, but they should be controlled and banned because some knucklehead WILL go and abuse it to hurt people\n\nI dont agree that you should be able to be recorded, even in public spaces. I believe you should only be able to be recorded if youre a public servant of some kind and thats because it lines up with me having security cameras in my office. You've missed my point by saying its legal as a defence when my comment was litterally pointing out that legality =/= morality. I feel like this is a VERY important distinction to make.\n\nNow with the modern recording in public spaces. Difference between that and this, is that its generally super obvious you are being recorded since no one holds their phone at a 90° angle for normal use, covert recordings can happen, but again, its generally pretty obvious what someone is doing. With these glasses, its just them wearing glasses, all the time with no real way of knowing you're being recorded at all. Oh its got indicator LED? what's to stop someone from smashing or snipping the LED to stop it from working\n\nAny situation you would actually possibly need these glasses for, can be covered by a Go Pro or other off brand camera where it is obvious recording is happening",
+                  "timestamp": "2026-08-04T03:28:37+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1jt3tw",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            },
+            {
+              "comment_id": "p1l4vds",
+              "author": "reddit_user_48e14fe38c22",
+              "author_karma": 0,
+              "content": "Who decides what’s immoral? ",
+              "timestamp": "2026-08-04T04:18:04+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1jqzyt",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1jr2va",
+          "author": "reddit_user_6a7dd1db50b2",
+          "author_karma": 0,
+          "content": "Dont tell him about mobile phones, \nsecurity cameras\nOr, god forbid someone with a pen and paper or a functioning memory.",
+          "timestamp": "2026-08-03T23:32:40+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1ja0c9",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1jr9ud",
+          "author": "reddit_user_436587f950e4",
+          "author_karma": 0,
+          "content": "When you're not the target of those creeps, it is easier to be philosophical about 'being filmed everywhere'. But for those of us who have been objectified since puberty, who have grown ass men sit in cars along your school route so they can jerk off to you in your uniform (yeah, that's an actual thing that happened at my school), where boys run into girls bathrooms and out again as a prank, where men record up our skirts and down our shirts, where men staring at your tits during conversation is so common that it is a punchline... the availability of these glasses and POV recording means something completely different. ",
+          "timestamp": "2026-08-03T23:33:42+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1j1xvc",
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1kagkn",
+              "author": "reddit_user_bcdd5726cb4f",
+              "author_karma": 0,
+              "content": "Yeah i agree 100 percent. Mfs are creepy. I dont agree with the glasses. Creepy people gonna find a way to be creepy regardless. ",
+              "timestamp": "2026-08-04T01:17:33+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1jr9ud",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1jrqtg",
+          "author": "reddit_user_436587f950e4",
+          "author_karma": 0,
+          "content": "It was 1978. ",
+          "timestamp": "2026-08-03T23:36:10+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1ja4ld",
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1jsbhv",
+              "author": "reddit_user_d838f0a5c789",
+              "author_karma": 0,
+              "content": "Close enough for jazz. Point stands that they were the same company.",
+              "timestamp": "2026-08-03T23:39:12+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1jrqtg",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1jwlh3",
+                  "author": "reddit_user_436587f950e4",
+                  "author_karma": 0,
+                  "content": "Totally still stands. Was just supplying a specific. Not trying to contradict. Sorry if it seemed that way. Which I can see now it did... 🤦",
+                  "timestamp": "2026-08-04T00:02:06+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1jsbhv",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1karen",
+                      "author": "reddit_user_8b9353958955",
+                      "author_karma": 0,
+                      "content": "At the same time, goes to show how those older time periods are starting to blend together in people's memories...",
+                      "timestamp": "2026-08-04T01:19:14+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1jwlh3",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p1jrxgg",
+          "author": "reddit_user_0a7b7aa2228e",
+          "author_karma": 0,
+          "content": "No, k—*mart*",
+          "timestamp": "2026-08-03T23:37:09+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1i3rd4",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1jukpn",
+          "author": "reddit_user_67fc502ef6ff",
+          "author_karma": 0,
+          "content": "This new age of spying combined with the rise of AI is just so tiring",
+          "timestamp": "2026-08-03T23:51:08+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1jxo6b",
+              "author": "[deleted]",
+              "author_karma": 0,
+              "content": "[removed]",
+              "timestamp": "2026-08-04T00:08:00+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1jukpn",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1jum1r",
+          "author": "reddit_user_79425a018b01",
+          "author_karma": 0,
+          "content": "Flunitrazepam for anyone interested. I was prescribed it for a while because it was the only thing that allowed my PTSD-riddled brain to sleep. ",
+          "timestamp": "2026-08-03T23:51:20+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1ic57q",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1juoew",
+          "author": "reddit_user_8d2edfb55177",
+          "author_karma": 0,
+          "content": "Dash cams are incredible and something everyone should own and use",
+          "timestamp": "2026-08-03T23:51:41+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1i8uqk",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1jx6wy",
+          "author": "reddit_user_a9c1d7d6134f",
+          "author_karma": 0,
+          "content": "K...mart...? *Eyes roll back into head while body visibly ages rapidly*",
+          "timestamp": "2026-08-04T00:05:24+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1jz9o9",
+          "author": "reddit_user_0e16391730d1",
+          "author_karma": 0,
+          "content": "A glimpse into the timeline where everything comes up Kmart and they win the retail war",
+          "timestamp": "2026-08-04T00:16:33+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1igy8d",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1k1cpy",
+          "author": "reddit_user_ca737af81b8a",
+          "author_karma": 0,
+          "content": "I love how when it’s an issue that benefits capitalism, such as this, the expectation is that people are fairly responsible on the whole. But when we ask for cannabis to be decriminalized to ease the burden on our legal system and enable resources to be used to combat real/violent crimes, we couldn’t possibly be trusted with that. ",
+          "timestamp": "2026-08-04T00:27:45+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1i1mxf",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1k1gkq",
+          "author": "reddit_user_78981493b20c",
+          "author_karma": 0,
+          "content": "We have both. Target is like Kmart with an existential crisis and sells almost all the same stuff",
+          "timestamp": "2026-08-04T00:28:19+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1j6ru0",
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1kfbrs",
+              "author": "reddit_user_1417eb85ca89",
+              "author_karma": 0,
+              "content": "It's literally all Anko. The exact same identical Chinese factories pump out identical products for both. You'll often pay a couple more dollars for the exact same thing at Target compared to K-Mart.",
+              "timestamp": "2026-08-04T01:44:26+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1k1gkq",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1k25c3",
+          "author": "reddit_user_5843e4b94898",
+          "author_karma": 0,
+          "content": "Hi yes they are. Your phone absolutely has that capability. But neither your phone nor the glasses were made expressly for the purpose you describe.   \nYour TV is constantly recording your actions and you ear buds are interacting with devices in your home to report when you are in fact in your home.   \n\nPlease go be bothered by an actual problem. Like flock cameras. ",
+          "timestamp": "2026-08-04T00:32:03+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1j8jkl",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1k3a0t",
+          "author": "reddit_user_f82be241707e",
+          "author_karma": 0,
+          "content": "These are going to be completely normal in 20 years max, but realistically I think they reach 25% adoption in 5 years and 50% in 10. These are the next cellphone.",
+          "timestamp": "2026-08-04T00:38:18+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1k3etr",
+          "author": "reddit_user_9461a0888cc1",
+          "author_karma": 0,
+          "content": "Are you bringing a cell phone around me? I will respond accordingly to you.",
+          "timestamp": "2026-08-04T00:39:01+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1i3f0m",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1k4246",
+          "author": "reddit_user_f82be241707e",
+          "author_karma": 0,
+          "content": "This is such a dumb take, these are very useful for many situations and by default they show when you are recording. Yes you can disable it, but there are a dozen more subtle ways to hide a camera and get a better angle than your eyeliner if you want to do something suspect. \n\nThese are gonna be 50% market pen in 10 years and you won't even remember having this dumb opinion",
+          "timestamp": "2026-08-04T00:42:29+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1i47hi",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1k4jf4",
+          "author": "reddit_user_f82be241707e",
+          "author_karma": 0,
+          "content": "They are the next cell phone, some people will use them to be creeps but the vast majority of users are using them for the intended use case. They don't even offer the ability to do anything inappropriate more discreet tech couldn't anyway.",
+          "timestamp": "2026-08-04T00:45:07+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1i1mxf",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1k4obn",
+          "author": "reddit_user_6fc55a1c6935",
+          "author_karma": 0,
+          "content": "There are still Kmarts around?! ",
+          "timestamp": "2026-08-04T00:45:52+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1kd3pg",
+              "author": "reddit_user_a032e6694d97",
+              "author_karma": 0,
+              "content": "In Australia and they are not the same company. ",
+              "timestamp": "2026-08-04T01:32:11+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1k4obn",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1k4v76",
+          "author": "reddit_user_f82be241707e",
+          "author_karma": 0,
+          "content": "No chance these get banned and that ban sticks. It would be like if a country banned iphones in 2007",
+          "timestamp": "2026-08-04T00:46:55+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1iojf9",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1k51cn",
+          "author": "reddit_user_f82be241707e",
+          "author_karma": 0,
+          "content": "Anyone with a phone in their pocket has given up far more already. These are going to be everywhere in 10 years. ",
+          "timestamp": "2026-08-04T00:47:51+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1i3f0m",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1k5b49",
+          "author": "reddit_user_f82be241707e",
+          "author_karma": 0,
+          "content": "Idiots think new tech bad, will repress memories of stupid thoughts in 5 years when they buy one so they aren't the only one of their friends without one. More news at 11 lol",
+          "timestamp": "2026-08-04T00:49:20+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1ja0c9",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1k5jqa",
+          "author": "reddit_user_f82be241707e",
+          "author_karma": 0,
+          "content": "Government aren't going to ban a tech that is going to develop into something as game changing as the iPhone, especially as they get better hud tech.",
+          "timestamp": "2026-08-04T00:50:37+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1i8uqk",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1k5sys",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-04T00:52:00+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1ibocc",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1k5ug3",
+          "author": "reddit_user_f82be241707e",
+          "author_karma": 0,
+          "content": "Obviously not.",
+          "timestamp": "2026-08-04T00:52:13+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1iqbk5",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1k602w",
+          "author": "reddit_user_c1fbe178e375",
+          "author_karma": 0,
+          "content": "Bring Kmart back to US shores, please!",
+          "timestamp": "2026-08-04T00:53:04+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1k60sg",
+          "author": "reddit_user_97f8bc293a6b",
+          "author_karma": 0,
+          "content": "In the Guthrie kidnapping case, the police \"recovered\" video from ring servers from a ring doorbell camera even though _they didn't have data preservation enabled_. I'd like to know more about exactly how that data happened to still exist, and how long \"unpreserved\" data is usually preserved.",
+          "timestamp": "2026-08-04T00:53:10+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1iquzu",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1k6gam",
+          "author": "reddit_user_f5b109a3e168",
+          "author_karma": 0,
+          "content": "That's okay. Whatever app they use to run their shitty device through and access the footage will stop working within a month. ",
+          "timestamp": "2026-08-04T00:55:32+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1k77ra",
+          "author": "reddit_user_50498739757e",
+          "author_karma": 0,
+          "content": "I’d call them Pervert Glasses but maybe that’s just me. ",
+          "timestamp": "2026-08-04T00:59:42+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1i1i0x",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1k7put",
+          "author": "reddit_user_b7c3de979ad3",
+          "author_karma": 0,
+          "content": "Kmart is still around?",
+          "timestamp": "2026-08-04T01:02:29+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1k8cls",
+              "author": "reddit_user_86ef6c890a15",
+              "author_karma": 0,
+              "content": "In Australia ",
+              "timestamp": "2026-08-04T01:05:58+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1k7put",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1kbpe0",
+          "author": "reddit_user_8e433b64e79b",
+          "author_karma": 0,
+          "content": "Don't tell them that EB Games is still thriving too or it'll blow their minds.",
+          "timestamp": "2026-08-04T01:24:25+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1i39kg",
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1kiy6k",
+              "author": "reddit_user_a00acd94844c",
+              "author_karma": 0,
+              "content": "I never liked the rebrand to Gamestop in the US. Time for me to move to Australia!",
+              "timestamp": "2026-08-04T02:04:36+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1kbpe0",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1kdfx5",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-04T01:34:04+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1kfk3s",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-04T01:45:42+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1j8jkl",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1kfn5k",
+          "author": "reddit_user_1b55ad42247e",
+          "author_karma": 0,
+          "content": "TIL Kmart still has physical stores. I thought they went away completely years ago.",
+          "timestamp": "2026-08-04T01:46:11+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1kjajd",
+              "author": "reddit_user_a1edb1f9be4f",
+              "author_karma": 0,
+              "content": "This is Australian Kmart, which no longer has any connection to the American one.",
+              "timestamp": "2026-08-04T02:06:30+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1kfn5k",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1kfpkq",
+          "author": "reddit_user_be4346b93e6f",
+          "author_karma": 0,
+          "content": "Forget the glasses… they still have K-Mart?!",
+          "timestamp": "2026-08-04T01:46:32+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1kfuvc",
+          "author": "reddit_user_725713735ecd",
+          "author_karma": 0,
+          "content": "It's too bad about the malls, when I moved to CDMX, I found they are bustling.  I have one I can see from my living room that has IMAX4D, an ice rink, a train station, Metro, grocery store, all the usual brands, plus DR's, dentists, two diagnostic labs, an arcade ('member those?), and bars.",
+          "timestamp": "2026-08-04T01:47:22+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1igy8d",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1kjlfr",
+          "author": "reddit_user_b94dbdd9643e",
+          "author_karma": 0,
+          "content": "Malls in Australia are not dying in the same way American ones are. Not by a long shot. And I’m guessing partly because Australian’malls’or as we call them, shopping centres- have at least a couple of supermarkets as well as medical centres post offices and banks. ",
+          "timestamp": "2026-08-04T02:08:12+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1igy8d",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1kjwyq",
+          "author": "reddit_user_b94dbdd9643e",
+          "author_karma": 0,
+          "content": "Amazing to think there’s a whole wide world out there that’s different isn’t it? \n\nAnd get this- Australia also has Woolworths and they’re one of our biggest supermarkets ",
+          "timestamp": "2026-08-04T02:09:59+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1i338r",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1kjz7c",
+          "author": "reddit_user_6e5ac3b18e13",
+          "author_karma": 0,
+          "content": "The issue isn't really recording in public, that cat is out of the bag and over the horizon at this point. The issue is these will be used the same as pinhole spy cameras are used.\n\nOops, I left my glasses on the bathroom vanity unit.  Short sighted and need them on for sex. Wear them into gym and sports changing rooms/showers. Around kids bathing. Anywhere were depraved individuals want to record but it is very taboo to do so.",
+          "timestamp": "2026-08-04T02:10:20+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1i8uqk",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1kkph4",
+          "author": "reddit_user_fccfb2241809",
+          "author_karma": 0,
+          "content": "No, kay-maht",
+          "timestamp": "2026-08-04T02:14:23+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1i3rd4",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1klhc4",
+          "author": "reddit_user_db7dd45345d7",
+          "author_karma": 0,
+          "content": "Kmart in the US is not completely gone. They still have 3 stores open.",
+          "timestamp": "2026-08-04T02:18:44+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1i7gvg",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1kppbl",
+          "author": "reddit_user_314809492dd6",
+          "author_karma": 0,
+          "content": "As a kid spy glasses meant they had mirrors on the side so you could see behind you",
+          "timestamp": "2026-08-04T02:42:34+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1i1i0x",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1ksri5",
+          "author": "reddit_user_e195efbee0f7",
+          "author_karma": 0,
+          "content": "If it was in Australia, it’d be ʇɹɐɯʞ.",
+          "timestamp": "2026-08-04T03:00:37+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1i3c2f",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1l0led",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-04T03:49:48+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1l2nzr",
+          "author": "reddit_user_9863f7e74a66",
+          "author_karma": 0,
+          "content": "It's pronounced Kay-mo",
+          "timestamp": "2026-08-04T04:03:18+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1i3rd4",
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run024_post04_seed124",
+      "post_slot": 4,
+      "seed_index": 124,
+      "source_raw_post_id": "1venoin",
+      "source_product_dir": "nottheonion",
+      "source_file": "https://www.reddit.com/r/nottheonion/comments/1venoin/how_jeffrey_epsteins_island_became_a_nightmare/",
+      "post_type": "reddit_post",
+      "title": "How Jeffrey Epstein's island became a nightmare for influencers",
+      "author": "reddit_user_bde1e90b951b",
+      "author_karma": 0,
+      "content": "How Jeffrey Epstein's island became a nightmare for influencers\n\n[removed]",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p1idvmy",
+          "author": "reddit_user_e320faca37f4",
+          "author_karma": 0,
+          "content": "[](/spikeholdup) Greetings, \\[REDDIT_USER]!  Your submission from businessinsider.com has been automatically removed because it violates Rule 4 (use original, reliable sources).  **The website that you submitted, businessinsider.com, is not allowed for one or more of the following reasons:**\n\n* **It frequently quotes other sources in its content, or is known to engage in content-theft.**\n\n* **It's not a reliable source. This could be because it's a news blog, tabloid, or is known to be overly slanted. If it was a local news affiliate and owned by Sinclair Group they are also not allowed.**\n\n* **It's an opinion or blog section of a regular news website, or the site is known to post opinion articles as fact.**\n\n* **It's a site for activism or promoting a certain POV.  Nothing wrong with that, but it's not a news site.**\n\nIf you'd like, you can review the article and resubmit from a better source.  If your article's source is linked in the article, you can try submitting from the original source.  [For more information on Rule 4, click here.](https://www.reddit.com/r/nottheonion/wiki/nto101#wiki_rule_4.3A__use_original.2C_reliable_sources.)  \n\nFor a complete list of domains that are not allowed, [click here](https://www.reddit.com/r/nottheonion/wiki/autoremoval).  If you're new to \\/r/NotTheOnion, you may want to check out [NTO101: An Introduction To \\/r/NotTheOnion](https://www.reddit.com/r/nottheonion/wiki/nto101) for more information on our rules and answers to frequently asked questions.\n\n*I am a bot, and this action was performed automatically. Please [contact the moderators of this subreddit](/message/compose/?to=/r/nottheonion) if you have any questions or concerns.*",
+          "timestamp": "2026-08-03T19:41:03+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    }
+  ]
+}

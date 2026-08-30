@@ -1,0 +1,647 @@
+{
+  "meta": {
+    "product_category": "cellphone",
+    "baseline": "real_reddit_reference",
+    "run_id": "run_011_sampled_reddit"
+  },
+  "posts": [
+    {
+      "post_id": "real_run011_post00_seed055",
+      "post_slot": 0,
+      "seed_index": 55,
+      "source_raw_post_id": "1vcwlei",
+      "source_product_dir": "GooglePixel",
+      "source_file": "https://www.reddit.com/r/GooglePixel/comments/1vcwlei/google_photos_help/",
+      "post_type": "reddit_post",
+      "title": "Google Photos Help",
+      "author": "reddit_user_0fe413d0e398",
+      "author_karma": 0,
+      "content": "Google Photos Help\n\nI have a Google Pixel 10A and I'm so confused on how Google Photos work. I used to have a Motorola and used Google Photos before, but for some reason, it's a little different on a Google phone. Every time I rotate a photo within the app, it doesn't save to my device, so it doesn't show up when I try to upload it anywhere. Sometimes, there is a download button I can press to make it save to my device, other times, there isn't. And it's pretty annoying that I even have to do that when all I've done is rotate the photo. Is there any way to make ALL my photos auto-save to device while also keeping them backed up to my cloud? Or does everything just go to the cloud automatically?",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p14tf53",
+          "author": "reddit_user_0db424667f97",
+          "author_karma": 0,
+          "content": "I click a photo I click edit I click rotate and then I click save.  I'm not able to replicate your problem.  Are you sure you're clicking the save button when it lights up blue after you've rotated it",
+          "timestamp": "2026-08-01T20:32:19+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1c0iz2",
+              "author": "reddit_user_ec2b177f41d5",
+              "author_karma": 0,
+              "content": "Yup, saving them normally. It's so odd. I reverted the image and it duplicated itself... It seems like a glitch, but why is it only happening to me 😭 resetting my phone rn",
+              "timestamp": "2026-08-02T21:49:46+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p14tf53",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1c696y",
+                  "author": "reddit_user_0db424667f97",
+                  "author_karma": 0,
+                  "content": "It must duplicate the picture to edit from the still frame of a moving clip file.  Try turning off auto motion for your future picture capturing, and it might help you with this problem, but even then I'm not really sure.  ",
+                  "timestamp": "2026-08-02T22:18:46+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1c0iz2",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p15gb4f",
+          "author": "reddit_user_03e523640698",
+          "author_karma": 0,
+          "content": "I never edit photos on my phone. Always upload to [photos.google.com](http://photos.google.com), and edit there. Except for changes like HDA, and a few others, all changes are reversible.\n\nI also don't use auto backup to the cloud. Half the photos I take are ephemeral, and half of those I do upload ultimately get pitched. I briefly and inadvertently turned on auto backup last year. It was a total disaster. My drive usage went up 20 gb, with thousands of duplicates. Sorting through them and getting rid of the dups took about a week. Never again.",
+          "timestamp": "2026-08-01T22:32:02+00:00",
+          "likes": 0,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run011_post01_seed056",
+      "post_slot": 1,
+      "seed_index": 56,
+      "source_raw_post_id": "1vcxt8y",
+      "source_product_dir": "Smartphones",
+      "source_file": "https://www.reddit.com/r/Smartphones/comments/1vcxt8y/i_would_like_an_advice/",
+      "post_type": "reddit_post",
+      "title": "I would like an advice",
+      "author": "reddit_user_0fe413d0e398",
+      "author_karma": 0,
+      "content": "I would like an advice\n\nI plan to buy Motorola signature but still deciding. I play heavy games like zenless zone zero and honkai star rail and was wondering if the battery is good or it would be better to change idea to other smartphones",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p17mdbk",
+          "author": "reddit_user_4663c29a6aab",
+          "author_karma": 0,
+          "content": "Other phones are better\n\nIf you especially need the performance and battery but worse cameras, consider the poco x8 pro max",
+          "timestamp": "2026-08-02T07:00:00+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p17nb7p",
+              "author": "reddit_user_bbb61d467b6d",
+              "author_karma": 0,
+              "content": "Let's say my choose is between Motorola signature with snapdragon 8 gen 5, Oppo find x9 pro with Mediatek dimensity 9500 and OnePlus 15 with snapdragon 8 elite gen 5. Still deciding too between which processor is better, I heard Mediatek is less battery Hungry than snapdragon 8 elite gen 5 with similar performances but would like a better advice ",
+              "timestamp": "2026-08-02T07:07:34+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p17mdbk",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p17nlk0",
+                  "author": "reddit_user_4663c29a6aab",
+                  "author_karma": 0,
+                  "content": "I don't game much, just gave my view on the battery and thing\n\nBut the oppo and vivo are definitely better than the motorola, as an alternative it would be better to consider the oneplus 15r instead",
+                  "timestamp": "2026-08-02T07:09:53+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p17nb7p",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p17ubyx",
+          "author": "reddit_user_32d2a4da0c19",
+          "author_karma": 0,
+          "content": "get something else, it'll overheat and lag",
+          "timestamp": "2026-08-02T08:05:17+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p17v2a2",
+              "author": "reddit_user_bbb61d467b6d",
+              "author_karma": 0,
+              "content": "So the One i am indecisive is between Motorola Signature, Oppo find x9 pro with Mediatek dimensity 9500 and OnePlus 15 with snapdragon 8 elite gen 5. I heard Mediatek dimensity 9500 is similar in performance compared to snapdragon 8 elite gen 5 but less battery Hungry and less heat, it's true?",
+              "timestamp": "2026-08-02T08:11:25+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p17ubyx",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p17vbgj",
+                  "author": "reddit_user_32d2a4da0c19",
+                  "author_karma": 0,
+                  "content": "the 9500 is not as good as the sd 8 elite gen 5 for games, not even close, it's closer to the normal sd 8 gen 5 when u take stability into account. honestly u're better off with an iphone 17 pro if u can afford an x9 pro since it handles heat way better",
+                  "timestamp": "2026-08-02T08:13:34+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p17v2a2",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "post_id": "real_run011_post02_seed057",
+      "post_slot": 2,
+      "seed_index": 57,
+      "source_raw_post_id": "1vcy3cc",
+      "source_product_dir": "Smartphones",
+      "source_file": "https://www.reddit.com/r/Smartphones/comments/1vcy3cc/what_phone_should_i_get/",
+      "post_type": "reddit_post",
+      "title": "What phone should i get?",
+      "author": "reddit_user_0fe413d0e398",
+      "author_karma": 0,
+      "content": "What phone should i get?\n\nI have an iphone 11 and I would like to change it because of the battery,space and heating issues. I have not tought of buying a newer iphone since a friend of mine who has an iphone 15 has been having problems with battery and heating and I also dont like the newer iphones since they seem to be the same as last years. My budget is max 800 euros and I have been eyeing the pixel 10 pro (128 GB version) or an s25/26 (with 256GB). As for the ecosystem I am not locked into apples since my laptop runs windows and I just have an ipad that i use for school and my airpods are old need to also be replaced. And finally one thing that im looking for is a smooth operating system since thats my only reasoning for owming an iphone",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p14wjcz",
+          "author": "reddit_user_3137b53cc0ba",
+          "author_karma": 0,
+          "content": "You should know - the s26 is essentially a rebranded s22 with slightly different specs. Really all of the major phone companies do that.",
+          "timestamp": "2026-08-01T20:47:58+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p14xgbj",
+              "author": "reddit_user_59583314c3ed",
+              "author_karma": 0,
+              "content": "You’re right but I am looking for a phone that will last me at least 5 years in software updates and whose battery i won’t have to replace after 2 years. I have also tought about buying an older ultra flagship but I dont really manage with big phones and i prefer a small phone",
+              "timestamp": "2026-08-01T20:52:35+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p14wjcz",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p14y2n8",
+                  "author": "reddit_user_3137b53cc0ba",
+                  "author_karma": 0,
+                  "content": "I personally like small phones too but both Samsung and google's offerings are mediocre. The iPhone 11 is almost 7 years old and still getting major software updates and all phone batteries deteriorate (it's a byproduct of the technology itself).\n\nThe Pixel 10 Pro has a bad processor and the s25/26 have bad cameras + they definitely get worse with updates (needed to replace s24 within 14 months due to 2hr battery life). ",
+                  "timestamp": "2026-08-01T20:55:41+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p14xgbj",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p14zcv4",
+                      "author": "reddit_user_59583314c3ed",
+                      "author_karma": 0,
+                      "content": "I also have not looked at what other companies offer but I remember when i was little (like 10) my parents got me a good huawei phone (p30 lite before the trump stuff) which i really enjoyed and later when it broke i had some realme 200 euro phone that worked miracles for its price",
+                      "timestamp": "2026-08-01T21:02:16+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p14y2n8",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p14ydck",
+          "author": "reddit_user_36fff449ecb0",
+          "author_karma": 0,
+          "content": "Can't go wrong with Pixel or Galaxy if you're looking for a change. Both have their own ecosystems that can replace your airpods. Samsung tends to have more case options tho",
+          "timestamp": "2026-08-01T20:57:12+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p152555",
+          "author": "reddit_user_ce6090a6c739",
+          "author_karma": 0,
+          "content": "Zostań z tym, mało sie zmieniło, serio",
+          "timestamp": "2026-08-01T21:16:34+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p15o4l5",
+          "author": "reddit_user_9920ab310f76",
+          "author_karma": 0,
+          "content": "I got a new s25+ 3 months ago and absolutely love it.\n\nThe processor is a beast the battery lasts me all day.\n\nI say go with an s25 unless you want the newest AI features coming out on the s26 line like gemini intelligence.\n\nYou likely wouldn't notice a difference in processing power between the s25 and s26. They are both beasts.\n\nPlus one UI is the most customizable android os.",
+          "timestamp": "2026-08-01T23:15:29+00:00",
+          "likes": 3,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p160r60",
+          "author": "reddit_user_84220f7872ee",
+          "author_karma": 0,
+          "content": "iPhone 17 base model or 17e depending on specific features you know you will use. Pro models today are actually for Pros and offer features that regular users will never use. ",
+          "timestamp": "2026-08-02T00:28:03+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p17ik66",
+              "author": "reddit_user_aed5877a1f96",
+              "author_karma": 0,
+              "content": "Not often that you see this advies. Lately I’m seeing people recommend the pro max for no reason lol. ",
+              "timestamp": "2026-08-02T06:29:11+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p160r60",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p16t4mq",
+          "author": "reddit_user_cc1d10199ac7",
+          "author_karma": 0,
+          "content": "I have never had an issue with my s24 ultra. Still runs solid and it's almost 3 years old. Could find some for a good deal now. ",
+          "timestamp": "2026-08-02T03:23:05+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p16ub7e",
+          "author": "reddit_user_32d2a4da0c19",
+          "author_karma": 0,
+          "content": "the 15 series is known to have heat issues, get the base 17, it's a massive upgrade over previous generations",
+          "timestamp": "2026-08-02T03:31:02+00:00",
+          "likes": 0,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p16w6gz",
+          "author": "reddit_user_ae6e1767885a",
+          "author_karma": 0,
+          "content": "If you really want to shift to Android - get oppo find x 9s .. don't even think about s26, battery life sucks .. if you want to stay in ios, get iphone 17, if you're using iPhone 11, upgrading to 17 is worth .. previously i was using both iphone 17 Pro and s25 ultra.. I had to charge s25 U twice in a day, battery life really sucks with Samsung phone.. I sold my s25 U and bought OPPO find x 9 U .. it's really nice phone .. you'll never be disappointed with oppo\n\nPS - i would rather suggest you to stay in iOS if you have been using ios as primary device since many years",
+          "timestamp": "2026-08-02T03:43:39+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run011_post03_seed058",
+      "post_slot": 3,
+      "seed_index": 58,
+      "source_raw_post_id": "1vcyf8j",
+      "source_product_dir": "iphone",
+      "source_file": "https://www.reddit.com/r/iphone/comments/1vcyf8j/is_this_normal/",
+      "post_type": "Support",
+      "title": "Is this normal",
+      "author": "reddit_user_0fe413d0e398",
+      "author_karma": 0,
+      "content": "Is this normal\n\nSo i bought today a new iphone and i was wondering because in the settings of you search p.ex for battery nothing will Show up",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p14xya5",
+          "author": "reddit_user_0f33d6326de8",
+          "author_karma": 0,
+          "content": "Yeah, long-running regression with search being terrible in Settings.",
+          "timestamp": "2026-08-01T20:55:05+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p14y3ze",
+              "author": "reddit_user_398a8909610c",
+              "author_karma": 0,
+              "content": "Is it gonna be fixed?",
+              "timestamp": "2026-08-01T20:55:52+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p14xya5",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p154ekz",
+          "author": "reddit_user_3a5191f08359",
+          "author_karma": 0,
+          "content": "What is this supposed to do?",
+          "timestamp": "2026-08-01T21:28:12+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p156t3b",
+              "author": "reddit_user_398a8909610c",
+              "author_karma": 0,
+              "content": "Show someting like battery and not no result found",
+              "timestamp": "2026-08-01T21:40:47+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p154ekz",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p156wso",
+                  "author": "reddit_user_3a5191f08359",
+                  "author_karma": 0,
+                  "content": "What does “p.ex” mean? ",
+                  "timestamp": "2026-08-01T21:41:19+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p156t3b",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1578xg",
+                      "author": "reddit_user_398a8909610c",
+                      "author_karma": 0,
+                      "content": "Per Exemple",
+                      "timestamp": "2026-08-01T21:43:04+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p156wso",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "p157n9o",
+                          "author": "reddit_user_3a5191f08359",
+                          "author_karma": 0,
+                          "content": "That’s a new one for me. Most people say eg. \n\nhttps://preview.redd.it/qruc2ykx2ugh1.jpeg?width=1290&format=pjpg&auto=webp&s=117ec642b45ff39cecbd84b2112153b7de6ca273\n\nAnyway works for me. Maybe the index that spotlight uses is still building as you say it’s a new phone.",
+                          "timestamp": "2026-08-01T21:45:10+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "p1578xg",
+                          "depth": 4,
+                          "replies": [
+                            {
+                              "comment_id": "p157wat",
+                              "author": "reddit_user_398a8909610c",
+                              "author_karma": 0,
+                              "content": "Ye i fixed it whit reseting the settings ",
+                              "timestamp": "2026-08-01T21:46:28+00:00",
+                              "likes": 1,
+                              "dislikes": 0,
+                              "parent_comment_id": "p157n9o",
+                              "depth": 5,
+                              "replies": []
+                            },
+                            {
+                              "comment_id": "p158219",
+                              "author": "reddit_user_398a8909610c",
+                              "author_karma": 0,
+                              "content": "And im german i learnd it so in school :)",
+                              "timestamp": "2026-08-01T21:47:18+00:00",
+                              "likes": 1,
+                              "dislikes": 0,
+                              "parent_comment_id": "p157n9o",
+                              "depth": 5,
+                              "replies": [
+                                {
+                                  "comment_id": "p158klz",
+                                  "author": "reddit_user_3a5191f08359",
+                                  "author_karma": 0,
+                                  "content": "I’m a 50+ yo Aussie and native English speakers use eg. ",
+                                  "timestamp": "2026-08-01T21:50:02+00:00",
+                                  "likes": 1,
+                                  "dislikes": 0,
+                                  "parent_comment_id": "p158219",
+                                  "depth": 6,
+                                  "replies": [
+                                    {
+                                      "comment_id": "p158qch",
+                                      "author": "reddit_user_398a8909610c",
+                                      "author_karma": 0,
+                                      "content": "Ok thanks i will use it in the future",
+                                      "timestamp": "2026-08-01T21:50:53+00:00",
+                                      "likes": 1,
+                                      "dislikes": 0,
+                                      "parent_comment_id": "p158klz",
+                                      "depth": 7,
+                                      "replies": []
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "post_id": "real_run011_post04_seed059",
+      "post_slot": 4,
+      "seed_index": 59,
+      "source_raw_post_id": "1vcyr4h",
+      "source_product_dir": "iphone",
+      "source_file": "https://www.reddit.com/r/iphone/comments/1vcyr4h/looking_for_an_app_that_tracks_cal_and_protein/",
+      "post_type": "Discussion",
+      "title": "Looking for an app that tracks cal and protein.",
+      "author": "reddit_user_0fe413d0e398",
+      "author_karma": 0,
+      "content": "Looking for an app that tracks cal and protein.\n\nI currently use lose it app. Pretty nice and free.  \nUnfortunately it does not count protein.   \nWhat’s a free app that I can use to track calories and protein.   \nThank you",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p151jrw",
+          "author": "reddit_user_21d9de53dda0",
+          "author_karma": 0,
+          "content": "I use the lose it app too. It very much counts protein, but you might have to add it to your quick view in the settings",
+          "timestamp": "2026-08-01T21:13:32+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p152bpl",
+          "author": "reddit_user_ebe3299e3a13",
+          "author_karma": 0,
+          "content": "FitBee ",
+          "timestamp": "2026-08-01T21:17:30+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p15dsua",
+              "author": "reddit_user_22f79d967f9b",
+              "author_karma": 0,
+              "content": "This. Mostly free and has a Swift UI.",
+              "timestamp": "2026-08-01T22:18:18+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p152bpl",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p153xhn",
+          "author": "reddit_user_7b09fe8178c0",
+          "author_karma": 0,
+          "content": "I use LoseIt and it does count macros, including protein.",
+          "timestamp": "2026-08-01T21:25:45+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1581wd",
+          "author": "reddit_user_1adbdb298c23",
+          "author_karma": 0,
+          "content": "Carb Manager",
+          "timestamp": "2026-08-01T21:47:17+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p15h8np",
+          "author": "reddit_user_e2aa54efdc13",
+          "author_karma": 0,
+          "content": "I use MyFitnessPal.",
+          "timestamp": "2026-08-01T22:37:08+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p15iehq",
+          "author": "reddit_user_0cccd322392a",
+          "author_karma": 0,
+          "content": "Foodnoms has a nice and clean design and easy way to quickly track calories and protein ",
+          "timestamp": "2026-08-01T22:43:31+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p15jjbh",
+          "author": "reddit_user_7c4d5849b09b",
+          "author_karma": 0,
+          "content": "Cronometer ",
+          "timestamp": "2026-08-01T22:49:46+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p15ql64",
+          "author": "reddit_user_81d42cac6138",
+          "author_karma": 0,
+          "content": "I like Lose It",
+          "timestamp": "2026-08-01T23:29:24+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p16jn9f",
+          "author": "reddit_user_001f28f1063d",
+          "author_karma": 0,
+          "content": "Lose it is my preference ",
+          "timestamp": "2026-08-02T02:21:56+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p177zjs",
+              "author": "reddit_user_510dd376b038",
+              "author_karma": 0,
+              "content": "Cheap, and easy to use. ",
+              "timestamp": "2026-08-02T05:06:23+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p16jn9f",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

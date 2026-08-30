@@ -1,0 +1,809 @@
+{
+  "meta": {
+    "product_category": "cellphone",
+    "baseline": "real_reddit_reference",
+    "run_id": "run_016_sampled_reddit"
+  },
+  "posts": [
+    {
+      "post_id": "real_run016_post00_seed080",
+      "post_slot": 0,
+      "seed_index": 80,
+      "source_raw_post_id": "1vdamsd",
+      "source_product_dir": "iphone",
+      "source_file": "https://www.reddit.com/r/iphone/comments/1vdamsd/distressed_and_still_not_over_how_my_phone_got/",
+      "post_type": "Support",
+      "title": "Distressed and still not over how my phone got stolen, and they disabled Find my without even my information. Like how",
+      "author": "reddit_user_0fe413d0e398",
+      "author_karma": 0,
+      "content": "Distressed and still not over how my phone got stolen, and they disabled Find my without even my information. Like how\n\nI worked hard to buy an iphone, my very first one after years of using an android. Literally 3 weeks later, it got stolen. What pisses me off is that when I was tracking it on Find My, it was in another city even went to the police and they were like we can't help you. \n\nThen the thieves disabled Find My, like how. How can someone disable Find My without my information?\n\nSigned a distressed and broke 21F student",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p17jl86",
+          "author": "reddit_user_65884126434e",
+          "author_karma": 0,
+          "content": "iPhone lost or stolen? See [this information](https://www.reddit.com/r/iphone/wiki/support-faq/#wiki_lost_or_stolen_iphone_.2F_activation_lock_.2F_remote_management) in the iPhone Support FAQs.\n\n*I am a bot, and this action was performed automatically. Please [contact the moderators of this subreddit](/message/compose/?to=/r/iphone) if you have any questions or concerns.*",
+          "timestamp": "2026-08-02T06:37:29+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p17k2w5",
+          "author": "reddit_user_b8875ac5964a",
+          "author_karma": 0,
+          "content": "i'm so sorry :(🫂",
+          "timestamp": "2026-08-02T06:41:26+00:00",
+          "likes": 0,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p17nrpu",
+              "author": "reddit_user_0bcaaafceb5e",
+              "author_karma": 0,
+              "content": "Thank you for the kind words",
+              "timestamp": "2026-08-02T07:11:15+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p17k2w5",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p17o2br",
+                  "author": "reddit_user_b8875ac5964a",
+                  "author_karma": 0,
+                  "content": "yeah of course homie. wish there was something i could do to help ",
+                  "timestamp": "2026-08-02T07:13:37+00:00",
+                  "likes": 0,
+                  "dislikes": 0,
+                  "parent_comment_id": "p17nrpu",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p17k7n4",
+          "author": "reddit_user_2424bc2e9d40",
+          "author_karma": 0,
+          "content": "Did they took it out of your hand unlocked on the street?",
+          "timestamp": "2026-08-02T06:42:30+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p17l2fh",
+              "author": "reddit_user_3ec32cc5ea7f",
+              "author_karma": 0,
+              "content": "Still not possible to disable Find My without Apple ID password. ",
+              "timestamp": "2026-08-02T06:49:29+00:00",
+              "likes": 2,
+              "dislikes": 0,
+              "parent_comment_id": "p17k7n4",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p17m6dt",
+                  "author": "reddit_user_b2b122d8005a",
+                  "author_karma": 0,
+                  "content": "Unless they knew her passcode and reset the password to Apple right then and there on her iPhone ",
+                  "timestamp": "2026-08-02T06:58:27+00:00",
+                  "likes": -1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p17l2fh",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p17n7b3",
+                      "author": "reddit_user_3ec32cc5ea7f",
+                      "author_karma": 0,
+                      "content": "I suppose it's possible. I'll have to check my iPhone when I get a chance. But IiRC the ability to change your Apple ID password from your phone's passcode would require you to have enabled that ability somewhere in the settings and isn't a default option, so most users don't have that set up. ",
+                      "timestamp": "2026-08-02T07:06:40+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p17m6dt",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                },
+                {
+                  "comment_id": "p17n4pe",
+                  "author": "reddit_user_2424bc2e9d40",
+                  "author_karma": 0,
+                  "content": "Yeah but some people have passwords in notes. They should not obviously but some do",
+                  "timestamp": "2026-08-02T07:06:06+00:00",
+                  "likes": 2,
+                  "dislikes": 0,
+                  "parent_comment_id": "p17l2fh",
+                  "depth": 2,
+                  "replies": []
+                },
+                {
+                  "comment_id": "p17ncl5",
+                  "author": "reddit_user_0bcaaafceb5e",
+                  "author_karma": 0,
+                  "content": "That's why I'm still confused. Because they disabled the following day. And it switched locations 3 times",
+                  "timestamp": "2026-08-02T07:07:52+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p17l2fh",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p17nq9f",
+                      "author": "reddit_user_89f2a5b8f379",
+                      "author_karma": 0,
+                      "content": "It's probably just turned off ",
+                      "timestamp": "2026-08-02T07:10:55+00:00",
+                      "likes": 0,
+                      "dislikes": 0,
+                      "parent_comment_id": "p17ncl5",
+                      "depth": 3,
+                      "replies": []
+                    },
+                    {
+                      "comment_id": "p17p8a5",
+                      "author": "reddit_user_3ec32cc5ea7f",
+                      "author_karma": 0,
+                      "content": "So it's actually been removed from your Find My or just isn't showing a location anymore and it's still listed? ",
+                      "timestamp": "2026-08-02T07:23:03+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p17ncl5",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "comment_id": "p17n94p",
+              "author": "reddit_user_0bcaaafceb5e",
+              "author_karma": 0,
+              "content": "Nooo\nThey stole it when I was in the bathroom, it was chaotic and I was a bit drunk",
+              "timestamp": "2026-08-02T07:07:05+00:00",
+              "likes": 0,
+              "dislikes": 0,
+              "parent_comment_id": "p17k7n4",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p17kncm",
+          "author": "reddit_user_00ec9005112e",
+          "author_karma": 0,
+          "content": "did you put it in the lost mode?",
+          "timestamp": "2026-08-02T06:46:03+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p17nk8y",
+              "author": "reddit_user_0bcaaafceb5e",
+              "author_karma": 0,
+              "content": "Yess",
+              "timestamp": "2026-08-02T07:09:35+00:00",
+              "likes": 0,
+              "dislikes": 0,
+              "parent_comment_id": "p17kncm",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p17knl3",
+          "author": "reddit_user_b2b122d8005a",
+          "author_karma": 0,
+          "content": "Was the phone unlocked when it was stolen? Even then, in order to turn off findmy you need to enter your Apple ID password. So is it possible they knew your password? ",
+          "timestamp": "2026-08-02T06:46:06+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p17niv7",
+              "author": "reddit_user_0bcaaafceb5e",
+              "author_karma": 0,
+              "content": "No it was not, they stole it. Turned it off because I kept on calling it with my friends phone and it was unavailable. Then I tracked with Find My, they switched locations like 3 times and then they finally disabled Find my",
+              "timestamp": "2026-08-02T07:09:18+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p17knl3",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p17kviv",
+          "author": "reddit_user_4d69f4556c38",
+          "author_karma": 0,
+          "content": "are you sure they disabled it or did they just shut off your device?",
+          "timestamp": "2026-08-02T06:47:53+00:00",
+          "likes": 9,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p17lbgi",
+              "author": "reddit_user_3ec32cc5ea7f",
+              "author_karma": 0,
+              "content": "Seems more likely. If it's still in his Find My account he can at least wipe his data but leave Find My enabled so they can't use it or sell it as unlocked. He should also watch for fake messages claiming someone bought his phone and it has all his data on it and she should remove it from Find My to wipe it. ",
+              "timestamp": "2026-08-02T06:51:32+00:00",
+              "likes": 2,
+              "dislikes": 0,
+              "parent_comment_id": "p17kviv",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p17n6am",
+              "author": "reddit_user_0bcaaafceb5e",
+              "author_karma": 0,
+              "content": "They disabled it so now no iphone is attached to my apple account. Idk if you understand what I'm saying ",
+              "timestamp": "2026-08-02T07:06:27+00:00",
+              "likes": 0,
+              "dislikes": 0,
+              "parent_comment_id": "p17kviv",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p17o278",
+                  "author": "reddit_user_4d69f4556c38",
+                  "author_karma": 0,
+                  "content": "basically what i’m asking you is if you log into [find my device/icloud on ANY computer](https://www.icloud.com/find), can you still see your device or is it gone?\n\n*if you can log in and see it* \\- great, your phone is probably just shut off so it stops pinging a location as frequently. put it in lost mode using the website and ignore any scary texts!\n\n*if you CAN’T see it/you can’t log in* \\- **not good!** you need to try to change your apple id log in credentials ASAP as it means whoever took your phone knows your apple ID details. assume any personal accounts you were logged into on your phone are compromised and change those passwords as well.",
+                  "timestamp": "2026-08-02T07:13:35+00:00",
+                  "likes": 5,
+                  "dislikes": 0,
+                  "parent_comment_id": "p17n6am",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p17oe5e",
+                      "author": "reddit_user_4b7f35b7ae0d",
+                      "author_karma": 0,
+                      "content": "The real concern if this is true is that they have the OP’s appleid.\n\nSorry to say, the phone is gone.  Protecting the appleid is damage control.",
+                      "timestamp": "2026-08-02T07:16:14+00:00",
+                      "likes": 2,
+                      "dislikes": 0,
+                      "parent_comment_id": "p17o278",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "p17oo5w",
+                          "author": "reddit_user_0bcaaafceb5e",
+                          "author_karma": 0,
+                          "content": "Yahh maybe they had my ID",
+                          "timestamp": "2026-08-02T07:18:28+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "p17oe5e",
+                          "depth": 4,
+                          "replies": [
+                            {
+                              "comment_id": "p17p5oz",
+                              "author": "reddit_user_4b7f35b7ae0d",
+                              "author_karma": 0,
+                              "content": "Get that password changed ASAP.",
+                              "timestamp": "2026-08-02T07:22:28+00:00",
+                              "likes": 1,
+                              "dislikes": 0,
+                              "parent_comment_id": "p17oo5w",
+                              "depth": 5,
+                              "replies": []
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "comment_id": "p17ogtw",
+                      "author": "reddit_user_0bcaaafceb5e",
+                      "author_karma": 0,
+                      "content": "Noo I can no longer see it\nAnd whenever I try to use Find My it's saying no iPhone is on this account what what",
+                      "timestamp": "2026-08-02T07:16:50+00:00",
+                      "likes": 0,
+                      "dislikes": 0,
+                      "parent_comment_id": "p17o278",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p17l9ov",
+          "author": "reddit_user_1799b27ba2b4",
+          "author_karma": 0,
+          "content": "Battery died. It’s simple as that. ",
+          "timestamp": "2026-08-02T06:51:08+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p17nn6c",
+              "author": "reddit_user_0bcaaafceb5e",
+              "author_karma": 0,
+              "content": "Noo\nIt was stolen, they even switched locations 3 times then later I got an email saying Find my was disabled ",
+              "timestamp": "2026-08-02T07:10:15+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p17l9ov",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p17m1u0",
+          "author": "reddit_user_b2b122d8005a",
+          "author_karma": 0,
+          "content": "Is the phone completely removed from findmy or it’s just not displaying a signal? If it’s not displaying a signal that just means they shut the phone off and/or put it in a faraday bag where it can’t ping a location, the phone is still technically useless to them/for parts at most only because as long as find my is on it it’s a bricked phone. \n\nIf they completely removed findmy that means they knew your device passcode and reset your password to Apple ID on your iPhone. They probably even deleted the password reset email confirmation to cover there tracks as they had access to your iPhone and Gmail/your e-mail app. Do you use the passcode feature a lot? And did the passcode you used was easily guessed? Was it 4 digits? Going forward you should have stolen device protection on! ",
+          "timestamp": "2026-08-02T06:57:27+00:00",
+          "likes": 0,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p17n1pu",
+              "author": "reddit_user_0bcaaafceb5e",
+              "author_karma": 0,
+              "content": "It was completely removed. And I am confused on how they would know because it was at a restaurant, and no my passcode was not easily guessed. It was a 6 digit passcode.q\nMay I ask, what is stolen device protection?",
+              "timestamp": "2026-08-02T07:05:26+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p17m1u0",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p17ooeq",
+                  "author": "reddit_user_b2b122d8005a",
+                  "author_karma": 0,
+                  "content": "If you are away from familiar locations (like your home or school) it adds extra biometric requirements and time delays. If you try to turn off findmy or even change Apple account password with stolen device protection on. The system forces a 1 hour time delay period  and it would need a Face ID check again. So if someone stole your iPhone and they knew your 6 digit passcode they would be shit out of luck to do anything. I also just realized, if it’s possible the thief knew your device passcode that means they also could access your passwords app which is most likely where you saved your Apple ID password. \n\nIf stolen device protection was on they wouldn’t be able to do any of that. In the future it’s best to turn it on. \n\nYou said you were at a restaurant. I would go back and see if they could help you with any info and if they can check their security cameras, you were most likely targeted as an easy mark and someone saw you enter your passcode and decided to steal your iPhone. Maybe the security cams saw someone linger around ",
+                  "timestamp": "2026-08-02T07:18:32+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p17n1pu",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p17p5ur",
+                      "author": "reddit_user_0bcaaafceb5e",
+                      "author_karma": 0,
+                      "content": "Yahh I went back to the restaurant, they couldn't help. Even the police, they couldn't help. And if I could, have gone to the place where Find My tracked my phone to be at but it was a town away and I genuinely didn't have that money to go there. But we live to learn, I still am confused on how they could have done that",
+                      "timestamp": "2026-08-02T07:22:30+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p17ooeq",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p17m5dx",
+          "author": "reddit_user_b5b35f131eb5",
+          "author_karma": 0,
+          "content": "Did you not have AppleCare theft and loss protection?",
+          "timestamp": "2026-08-02T06:58:14+00:00",
+          "likes": -1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p17nqhr",
+              "author": "reddit_user_0bcaaafceb5e",
+              "author_karma": 0,
+              "content": "No, and I will forever regret not having it. It's just that I never thought it could happen ",
+              "timestamp": "2026-08-02T07:10:59+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p17m5dx",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p17nyor",
+          "author": "reddit_user_52f399bf5614",
+          "author_karma": 0,
+          "content": "Would consider changing passwords of accounts connected to the iPhone ",
+          "timestamp": "2026-08-02T07:12:48+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p17p8g6",
+              "author": "reddit_user_0bcaaafceb5e",
+              "author_karma": 0,
+              "content": "Okay thank you ",
+              "timestamp": "2026-08-02T07:23:05+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p17nyor",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p17pdbc",
+          "author": "reddit_user_a5a30234c8f8",
+          "author_karma": 0,
+          "content": "Must foster a relevant discussion",
+          "timestamp": "2026-08-02T07:24:11+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run016_post01_seed081",
+      "post_slot": 1,
+      "seed_index": 81,
+      "source_raw_post_id": "1vdazk3",
+      "source_product_dir": "GooglePixel",
+      "source_file": "https://www.reddit.com/r/GooglePixel/comments/1vdazk3/apps_displaying_edge_to_edge/",
+      "post_type": "reddit_post",
+      "title": "Apps displaying edge to edge",
+      "author": "reddit_user_0fe413d0e398",
+      "author_karma": 0,
+      "content": "Apps displaying edge to edge\n\nHey, is the problem with some apps not showing content edge to edge still happening? I wanted to buy Pixel but if they still didn't fix it, there's no way I'm  paying single penny for it. \n\nFor people who own it and don't care - how do u accept such terrible UI overlook in such expensive phone?",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p17n4j4",
+          "author": "reddit_user_fa3cdd9f5b11",
+          "author_karma": 0,
+          "content": "I think different people have different definition of what is a problem, and also one that is big enough to warrant getting a different phone.\n\nAs someone who has been on Pixels 6, 8 and 10, I can't say I remember any app that I regularly use that has \"cosmetic\" issues that I have noticed or cared about. I generally find replacements for apps I don't like such as the default Google home screen.",
+          "timestamp": "2026-08-02T07:06:03+00:00",
+          "likes": 3,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p17ny72",
+          "author": "reddit_user_b997f17d77fb",
+          "author_karma": 0,
+          "content": "what do you mean, like a fullscreen video not spanning edge-to-edge?",
+          "timestamp": "2026-08-02T07:12:41+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p19c966",
+          "author": "reddit_user_29796fb6ef87",
+          "author_karma": 0,
+          "content": "The App must demand edge to edge from the phone OS. That is not pixel related but valid for all phones with a current Android version from SDK 35 up. There is an Android definition for this how the Apps have to do this. If \"some apps\" do not actively use the feature the phone won't do it for them. Apps fault then. I would not pay a single penny for such an App ;-)\n\n[https://developer.android.com/develop/ui/views/layout/edge-to-edge?hl=en](https://developer.android.com/develop/ui/views/layout/edge-to-edge?hl=en)",
+          "timestamp": "2026-08-02T14:21:57+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p19fcwu",
+              "author": "reddit_user_291cd4183f5c",
+              "author_karma": 0,
+              "content": "Google left option to \"opt out\" from this rule. Apple made strict rule thag noone can opt out from - easy.\nSecond thing, do you really think that on Samsung phones you also have that ugly stripe at the bottom? OneUI lets you force edge to edge regardless of how developers made it. ",
+              "timestamp": "2026-08-02T14:37:20+00:00",
+              "likes": 0,
+              "dislikes": 0,
+              "parent_comment_id": "p19c966",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p19sxoj",
+                  "author": "reddit_user_1759cd8ed47d",
+                  "author_karma": 0,
+                  "content": "If you force edge to edge and the app isn't designed for it then part of it will get cut off on the opposite edges.  It's like when you force Netflix or other videos apps to fullscreen but most videos are in 16:9, it has to chop the top and bottom of the video off to fill to the two sides.",
+                  "timestamp": "2026-08-02T15:42:19+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p19fcwu",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "post_id": "real_run016_post02_seed082",
+      "post_slot": 2,
+      "seed_index": 82,
+      "source_raw_post_id": "1vdbt4c",
+      "source_product_dir": "Smartphones",
+      "source_file": "https://www.reddit.com/r/Smartphones/comments/1vdbt4c/google_pixel_7_pro_to_iphone_17_pro_or_galaxy_s26/",
+      "post_type": "reddit_post",
+      "title": "Google pixel 7 pro to iPhone 17 (pro?) or Galaxy s26?",
+      "author": "reddit_user_0fe413d0e398",
+      "author_karma": 0,
+      "content": "Google pixel 7 pro to iPhone 17 (pro?) or Galaxy s26?\n\nHi everyone! I've been using the pixel 7 pro since it was released, and I'm due for an upgrade because I'm experiencing a lot of bugs, and my battery got really bad. \n\nI'm trying to decide between the iPhone 17 (or maybe the pro version?) and Samsung Galaxy s26. I would prefer a phone that's not too bulky so the 6.3 inch screen is perfect for me. From the stuff I've read online, there are equal amount of people saying each phone is better, so I guess it's really an individual experience. \n\nMy biggest concern about the iPhone: some people say iOS 26 is really buggy, but that iOS 27 is going to fix that. Is it really that bad, and if so will it really get fixed?\n\nMy biggest concern about the s26: in my region they sell the exynos version. I've read that it tends to heat up quickly and that the battery drains faster. Is that true?\n\nThings I need in a phone: \n\n\\-Good camera (for video more so than photos)\n\n\\-Good battery life \n\n\\-Long term usage (I would like for my new phone to be good for at least 4 years)\n\nI've used only Android phones my whole life, and I was always the type of person that would say \"you will never see me with an iPhone in my hand\", but I'm really torn between these two now. People always say the biggest benefit of an Android phone is being able to customize it and getting the \"free\" experience, but I've never really used it because of that. I don't even manage the app icons on my home screen lol. I just put some of them in folders and that's it.\n\nWhich one should I pick? Thanks to all of you who read it and were kind enough to leave a comment :)",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p17s807",
+          "author": "reddit_user_def1e1f25b41",
+          "author_karma": 0,
+          "content": "17 pro",
+          "timestamp": "2026-08-02T07:47:39+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p17u2w6",
+          "author": "reddit_user_6b1b20b32539",
+          "author_karma": 0,
+          "content": "S26 undoubtedly has better cameras",
+          "timestamp": "2026-08-02T08:03:09+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p17udno",
+          "author": "reddit_user_32d2a4da0c19",
+          "author_karma": 0,
+          "content": "17 pro",
+          "timestamp": "2026-08-02T08:05:40+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p17z03k",
+          "author": "reddit_user_57fd91e434b0",
+          "author_karma": 0,
+          "content": "I use Android and iOS, but definitely prefer Android. iOS always feels more restricted and dumbed down. Samsung Galaxy S phones have great cameras, so why not the Ultra?",
+          "timestamp": "2026-08-02T08:44:57+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p17zqp7",
+              "author": "reddit_user_534c93c1f5af",
+              "author_karma": 0,
+              "content": "The ultra is just way to big for me. Even s26+ is a bit too big. Also I just wouldn't use the S pen. I had the Galaxy note before the pixel, and I just never found anything to use it for really",
+              "timestamp": "2026-08-02T08:51:18+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p17z03k",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p183ttx",
+          "author": "reddit_user_3161d04b1d3d",
+          "author_karma": 0,
+          "content": "S26 is vanilla model (not pro)",
+          "timestamp": "2026-08-02T09:26:43+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p19bk63",
+          "author": "reddit_user_564e923a48e5",
+          "author_karma": 0,
+          "content": "17 < s26 < 17 pro < s26 ultra",
+          "timestamp": "2026-08-02T14:18:24+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p19ngah",
+          "author": "reddit_user_229850cce5f9",
+          "author_karma": 0,
+          "content": "Oppo find x9",
+          "timestamp": "2026-08-02T15:16:26+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p19nj9s",
+              "author": "reddit_user_534c93c1f5af",
+              "author_karma": 0,
+              "content": "Not available in my country :/",
+              "timestamp": "2026-08-02T15:16:50+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p19ngah",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p19wpr1",
+                  "author": "reddit_user_229850cce5f9",
+                  "author_karma": 0,
+                  "content": "What do you need in a phone? For battery life, best choice I know is poco x8 pro max, I believe iPhone is best at point and shoot, anything else for camera oppo or samsung",
+                  "timestamp": "2026-08-02T15:59:37+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p19nj9s",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "post_id": "real_run016_post03_seed083",
+      "post_slot": 3,
+      "seed_index": 83,
+      "source_raw_post_id": "1vdcaju",
+      "source_product_dir": "GooglePixel",
+      "source_file": "https://www.reddit.com/r/GooglePixel/comments/1vdcaju/pixelgallery_gallery_app_for_pixel_android_devices/",
+      "post_type": "self",
+      "title": "Pixel-Gallery: Gallery app for Pixel / Android Devices",
+      "author": "reddit_user_0fe413d0e398",
+      "author_karma": 0,
+      "content": "Pixel-Gallery: Gallery app for Pixel / Android Devices\n\nA privacy first Gallery app for Pixel Phones for local media. It has a lot of features: [https://play.google.com/store/apps/details?id=com.mk.pixel&hl=en](https://play.google.com/store/apps/details?id=com.mk.pixel&hl=en)",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p187854",
+          "author": "reddit_user_b6decda8db7a",
+          "author_karma": 0,
+          "content": "Man, congratulations! Finally a gallery app with decent M3E look.\n\nCan you share more about on-device AI? What APIs does it use?\n\nThank you!",
+          "timestamp": "2026-08-02T09:56:06+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p18a6ls",
+              "author": "reddit_user_b8264637567f",
+              "author_karma": 0,
+              "content": "Thanks so much! I'm really happy to hear that. It took a lot of work to get the app's current UI and UX to where it is today.. Over a 1 year passed already. 😄 \n\n👀 Very Long answer regarding AI: \n\nTo be clear, it won't be able to compete with Google Photos, Samsung Gallery, and similar apps when it comes to AI. Why: Everything is processed entirely on-device, with no internet connection, cloud services, or external servers involved. The app is a local-first gallery. So the AI + quality can never match cloud related models.\n\nWhen the device supports it, the app uses on-device AI for features like image captions and media summaries. After they're generated, they're stored locally as additional search context, so future searches become more accurate for media already viewed. The more metadata available, the better the search results.\n\nThere's also semantic search on supported devices. A local AI model can search based on what images and videos actually contain (\"Sunrise at beach\", \"Sky\"). It won't be perfect, but for search it's usually better to get a few imperfect matches than no results at all. This also builds on top of the existing local search and metadata filters, which are all stored encrypted on the device.\n\nFrom the beginning, the main focus was privacy. Now I'm gradually adding more features and AI where it makes sense and can stay completely local. I'm also working on a \"Store\" where users can download and enable additional AI models (some free, some paid). That way, people who don't need these features don't have to install them, while power users can get more advanced functionality without giving up privacy. One example is more detailed image categorization, NSFW detection and labeling, more smart & nice to have features due to better / smarter processing.\n\nThere are a lot more features in the works, but they'll take some time. The app is still early in its beta journey, and I want to gather more user feedback before adding new AI features. I'd rather build features that people actually find useful than just add AI slop. \n\n",
+              "timestamp": "2026-08-02T10:20:56+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p187854",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p18gx2m",
+          "author": "reddit_user_a1a7e76de99e",
+          "author_karma": 0,
+          "content": "Seems pretty minimalistic and to the point so far.....i use pixel 9 pro and comparing it with default gallery ...I would choose it everyday ....\nNot sure if it is lot...but do you have premium giveaway codes for early joiners like me....happy to share feedback over dm and ratings over playstore...",
+          "timestamp": "2026-08-02T11:13:56+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run016_post04_seed084",
+      "post_slot": 4,
+      "seed_index": 84,
+      "source_raw_post_id": "1vdce3n",
+      "source_product_dir": "GooglePixel",
+      "source_file": "https://www.reddit.com/r/GooglePixel/comments/1vdce3n/from_galaxy_a52s_to_pixel_10/",
+      "post_type": "reddit_post",
+      "title": "from Galaxy a52s to Pixel 10",
+      "author": "reddit_user_0fe413d0e398",
+      "author_karma": 0,
+      "content": "from Galaxy a52s to Pixel 10\n\nhi. i'm used to Samsung standard routines app. with it i can open/close apps using many trigger (Bluetooth connected/disconnected, earbuds connected/disconnected), and enlarge/shrink font size (for instance, in-car, out of car.  no Android auto in my car.)\n\nwith Google pixel there's nothing for it?",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p18chi7",
+          "author": "reddit_user_382668cee381",
+          "author_karma": 0,
+          "content": "I'm in the same position as you. Gone from a S24+ to a 10 Pro XL. \n\nOn the whole I prefer it BUT I do miss the ease with which Samsung does things with it's eco system, and I can change things to my liking. ",
+          "timestamp": "2026-08-02T10:39:46+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p18gp8f",
+              "author": "reddit_user_c5b909f1338d",
+              "author_karma": 0,
+              "content": "yep. pixel is a good Phone, but Samsung addressed many little things missing on stock Android.\ni'm on the way on configure Tasker for autostart/ close apps triggered by Bluetooth.\n",
+              "timestamp": "2026-08-02T11:12:19+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p18chi7",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p18rhd1",
+          "author": "reddit_user_fe65a3341763",
+          "author_karma": 0,
+          "content": "Samsung oneui and its app just had so much more time to mature.  There are so many things they took from other os I wish pixel os would take from them ",
+          "timestamp": "2026-08-02T12:26:53+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    }
+  ]
+}

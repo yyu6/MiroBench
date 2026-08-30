@@ -1,0 +1,208 @@
+{
+  "meta": {
+    "product_category": "health_issue",
+    "baseline": "real_reddit_reference",
+    "run_id": "run_018_sampled_reddit"
+  },
+  "posts": [
+    {
+      "post_id": "real_run018_post00_seed090",
+      "post_slot": 0,
+      "seed_index": 90,
+      "source_raw_post_id": "1vesrex",
+      "source_product_dir": "AskDocs",
+      "source_file": "https://www.reddit.com/r/AskDocs/comments/1vesrex/am_i_fine/",
+      "post_type": "reddit_post",
+      "title": "Am I fine?",
+      "author": "reddit_user_7b7b220cf34f",
+      "author_karma": 0,
+      "content": "Am I fine?\n\nI was climbing onto a chair and I accidentally hit a doorframe pretty hard about an hour and a half ago. I have a pretty big bump on my head where I hit the doorframe and slight pain on the bump. I was wondering whether I have a concussion and don't really have time to see a doctor in person unless it is really urgent. I currently have no symptoms other than the physical pain and I am feeling just slightly tired which is pretty normal. I don't feel dizzy, don't have a headache, and no confusion or brain fogginess so far. I have been pretty paranoid about it and would like some advice on what to do moving forward.\n\nFor more context: 14M, no medications or drugs, 5'5\", 140 lb, Asian ethnicity",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p1jk16s",
+          "author": "reddit_user_e6719f73a9e4",
+          "author_karma": 0,
+          "content": "Thank you for your submission. **Please note that a response does not constitute a doctor-patient relationship.** This subreddit is for informal second opinions and casual information. The mod team does their best to remove bad information, but we do not catch all of it. Always visit a doctor in real life if you have any concerns about your health. Never use this subreddit as your first and final source of information regarding your question. By posting, you are agreeing to our [Terms of Use](https://www.reddit.com/r/AskDocs/wiki/terms_of_use) and understand that all information is taken at your own risk.\n**Reply here if you are an unverified user wishing to give advice. Top level comments by laypeople are automatically removed.** \n\n*I am a bot, and this action was performed automatically. Please [contact the moderators of this subreddit](/message/compose/?to=/r/AskDocs) if you have any questions or concerns.*",
+          "timestamp": "2026-08-03T22:55:54+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run018_post01_seed091",
+      "post_slot": 1,
+      "seed_index": 91,
+      "source_raw_post_id": "1vess90",
+      "source_product_dir": "AskDocs",
+      "source_file": "https://www.reddit.com/r/AskDocs/comments/1vess90/is_my_freckle_concerning/",
+      "post_type": "image",
+      "title": "Is my freckle concerning?",
+      "author": "reddit_user_7b7b220cf34f",
+      "author_karma": 0,
+      "content": "Is my freckle concerning?\n\n35F, never-smoker, no history of health issues. I am of Scandinavian and Italian descent, and have several family members who have had melanoma. Does this freckle look worrisome? I obviously am going to call for a dermatologist exam, but we all know it takes months to get an appointment. Should I be concerned?",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p1jk7xo",
+          "author": "reddit_user_e6719f73a9e4",
+          "author_karma": 0,
+          "content": "Thank you for your submission. **Please note that a response does not constitute a doctor-patient relationship.** This subreddit is for informal second opinions and casual information. The mod team does their best to remove bad information, but we do not catch all of it. Always visit a doctor in real life if you have any concerns about your health. Never use this subreddit as your first and final source of information regarding your question. By posting, you are agreeing to our [Terms of Use](https://www.reddit.com/r/AskDocs/wiki/terms_of_use) and understand that all information is taken at your own risk.\n**Reply here if you are an unverified user wishing to give advice. Top level comments by laypeople are automatically removed.** \n\n*I am a bot, and this action was performed automatically. Please [contact the moderators of this subreddit](/message/compose/?to=/r/AskDocs) if you have any questions or concerns.*",
+          "timestamp": "2026-08-03T22:56:52+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1kcmb9",
+          "author": "reddit_user_8bb49752d355",
+          "author_karma": 0,
+          "content": "Given the border irregularity and color variegation, I want to examine it dermoscopically to determine whether a biopsy is needed to aid diagnosis.",
+          "timestamp": "2026-08-04T01:29:30+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run018_post02_seed092",
+      "post_slot": 2,
+      "seed_index": 92,
+      "source_raw_post_id": "1vesyfx",
+      "source_product_dir": "AskDocs",
+      "source_file": "https://www.reddit.com/r/AskDocs/comments/1vesyfx/sensitisation_allergy_so_what_is_the_point_of/",
+      "post_type": "reddit_post",
+      "title": "Sensitisation ≠ allergy. So what is the point of measuring sIgE?",
+      "author": "reddit_user_7b7b220cf34f",
+      "author_karma": 0,
+      "content": "Sensitisation ≠ allergy. So what is the point of measuring sIgE?\n\n28F. Medications are Sertraline, Ritalin SA, loratadine, depo provera injection. \n\nIve been dealing with chronic itchy girl syndrome for years, thought I finally better investigate it. I have a class II sensitivity to wheat and class III to a mould mix (Penicillium, Cladosporium, Aspergillus, Candida, Alternatia) according to results.\n\nAre these tests just telling me I have eczema? Or do I need to look into these for allergies? I’m confused lol",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p1jlkyh",
+          "author": "reddit_user_e6719f73a9e4",
+          "author_karma": 0,
+          "content": "Thank you for your submission. **Please note that a response does not constitute a doctor-patient relationship.** This subreddit is for informal second opinions and casual information. The mod team does their best to remove bad information, but we do not catch all of it. Always visit a doctor in real life if you have any concerns about your health. Never use this subreddit as your first and final source of information regarding your question. By posting, you are agreeing to our [Terms of Use](https://www.reddit.com/r/AskDocs/wiki/terms_of_use) and understand that all information is taken at your own risk.\n**Reply here if you are an unverified user wishing to give advice. Top level comments by laypeople are automatically removed.** \n\n*I am a bot, and this action was performed automatically. Please [contact the moderators of this subreddit](/message/compose/?to=/r/AskDocs) if you have any questions or concerns.*",
+          "timestamp": "2026-08-03T23:03:52+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run018_post03_seed093",
+      "post_slot": 3,
+      "seed_index": 93,
+      "source_raw_post_id": "1vesz4t",
+      "source_product_dir": "AskDocs",
+      "source_file": "https://www.reddit.com/r/AskDocs/comments/1vesz4t/age_18_swollen_tonsil_what_should_i_do/",
+      "post_type": "image",
+      "title": "Age 18- swollen tonsil what should I do",
+      "author": "reddit_user_7b7b220cf34f",
+      "author_karma": 0,
+      "content": "Age 18- swollen tonsil what should I do\n\nI’ve got a red swollen lump on my left tonsil I’ve never had anything like this before it showed up overnight and has been bleeding quite a bit which is unpleasant nothing I have seen online looks like it. I can barely swallow water and can’t eat and I’ve been spitting blood. I had unprotected oral sex two days ago but no other symptoms would indicate to an sti",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p1jlqkz",
+          "author": "reddit_user_e6719f73a9e4",
+          "author_karma": 0,
+          "content": "Thank you for your submission. **Please note that a response does not constitute a doctor-patient relationship.** This subreddit is for informal second opinions and casual information. The mod team does their best to remove bad information, but we do not catch all of it. Always visit a doctor in real life if you have any concerns about your health. Never use this subreddit as your first and final source of information regarding your question. By posting, you are agreeing to our [Terms of Use](https://www.reddit.com/r/AskDocs/wiki/terms_of_use) and understand that all information is taken at your own risk.\n**Reply here if you are an unverified user wishing to give advice. Top level comments by laypeople are automatically removed.** \n\n*I am a bot, and this action was performed automatically. Please [contact the moderators of this subreddit](/message/compose/?to=/r/AskDocs) if you have any questions or concerns.*",
+          "timestamp": "2026-08-03T23:04:40+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1k0foq",
+          "author": "reddit_user_f4eb26acc84c",
+          "author_karma": 0,
+          "content": "Warm salt water gargles and something like ibuprofen as directed can help with the discomfort.\n\nAlso consider folding regular STI testing into your sexual schedule. Oral sex is sex and everything is more fun when everyone knows they are as safe as possible. You don't know if you're free of STIs if you aren't tested.\n\nI would recommend you bite the bullet and waltz on over to an urgent care or your region's equivalent. Get someone to take a look at your throat and rule out something like strep.\n\n",
+          "timestamp": "2026-08-04T00:22:48+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run018_post04_seed094",
+      "post_slot": 4,
+      "seed_index": 94,
+      "source_raw_post_id": "1vet6o6",
+      "source_product_dir": "AskDocs",
+      "source_file": "https://www.reddit.com/r/AskDocs/comments/1vet6o6/possible_retrograde_ejaculation/",
+      "post_type": "image",
+      "title": "Possible retrograde ejaculation?",
+      "author": "reddit_user_7b7b220cf34f",
+      "author_karma": 0,
+      "content": "Possible retrograde ejaculation?\n\n31 M, 6'3\", about 220 lbs. Currently taking bupropion, Adderall, and propranolol periodically.\n\nHave seen white substance in urine infrequently. Urine could be described as cloudy at times. In the past when I have seen this I have taken a STD test which came back negative. I'm certainly not a doctor but if it's not some kind of UTI could it be retrograde ejaculation? I don't have painful urination but do sometimes have a messy or split stream when urinating. \n\nI have never really had dry orgasms or anything like that.\n\n(Yes I put some of it in my hands to try to get a better picture. I had pee hands. I'll admit it.)",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p1jndl8",
+          "author": "reddit_user_e6719f73a9e4",
+          "author_karma": 0,
+          "content": "Thank you for your submission. **Please note that a response does not constitute a doctor-patient relationship.** This subreddit is for informal second opinions and casual information. The mod team does their best to remove bad information, but we do not catch all of it. Always visit a doctor in real life if you have any concerns about your health. Never use this subreddit as your first and final source of information regarding your question. By posting, you are agreeing to our [Terms of Use](https://www.reddit.com/r/AskDocs/wiki/terms_of_use) and understand that all information is taken at your own risk.\n**Reply here if you are an unverified user wishing to give advice. Top level comments by laypeople are automatically removed.** \n\n*I am a bot, and this action was performed automatically. Please [contact the moderators of this subreddit](/message/compose/?to=/r/AskDocs) if you have any questions or concerns.*",
+          "timestamp": "2026-08-03T23:13:19+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1jng82",
+          "author": "reddit_user_0a0024c4d564",
+          "author_karma": 0,
+          "content": "https://preview.redd.it/04ifsw5rs8hh1.jpeg?width=4208&format=pjpg&auto=webp&s=b61d806fff21a840be1609aa9dabc6c38f567faa",
+          "timestamp": "2026-08-03T23:13:42+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1jnn33",
+              "author": "reddit_user_0a0024c4d564",
+              "author_karma": 0,
+              "content": "Some more pictures. I noticed that my pants had some spots afterwards as well.\n\nhttps://preview.redd.it/xxzt5frxs8hh1.jpeg?width=4208&format=pjpg&auto=webp&s=0a41867896d3d97cc951f7eccf22b171f4741dae",
+              "timestamp": "2026-08-03T23:14:44+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1jng82",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

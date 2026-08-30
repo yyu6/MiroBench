@@ -1,0 +1,802 @@
+{
+  "meta": {
+    "product_category": "cellphone",
+    "baseline": "real_reddit_reference",
+    "run_id": "run_000_sampled_reddit"
+  },
+  "posts": [
+    {
+      "post_id": "real_run000_post00_seed000",
+      "post_slot": 0,
+      "seed_index": 0,
+      "source_raw_post_id": "1v9co4p",
+      "source_product_dir": "samsung",
+      "source_file": "https://www.reddit.com/r/samsung/comments/1v9co4p/the_samsung_galaxy_fold8_fold8_ultra_and_flip8/",
+      "post_type": "Galaxy Z",
+      "title": "The Samsung Galaxy Fold8, Fold8 Ultra, and Flip8 have native USB webcam support",
+      "author": "reddit_user_0fe413d0e398",
+      "author_karma": 0,
+      "content": "The Samsung Galaxy Fold8, Fold8 Ultra, and Flip8 have native USB webcam support\n\nDisclosure: This was discovered on a Fold8, Fold8 Ultra, and Flip8 on loan from Samsung.",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p0cov6l",
+          "author": "reddit_user_ef58c4be6a5d",
+          "author_karma": 0,
+          "content": "Isn't this a standard Android feature? Why tf is Samsung gatekeeping it to S26 and Z8 series? Well I know why but it's still crazy",
+          "timestamp": "2026-07-28T22:02:12+00:00",
+          "likes": 18,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0cr4t0",
+              "author": "reddit_user_32049d9ad8a5",
+              "author_karma": 0,
+              "content": "To push Link For Windows.",
+              "timestamp": "2026-07-28T22:13:08+00:00",
+              "likes": 5,
+              "dislikes": 0,
+              "parent_comment_id": "p0cov6l",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p0cr8p0",
+                  "author": "reddit_user_ef58c4be6a5d",
+                  "author_karma": 0,
+                  "content": "And to make you buy a new device",
+                  "timestamp": "2026-07-28T22:13:40+00:00",
+                  "likes": -3,
+                  "dislikes": 0,
+                  "parent_comment_id": "p0cr4t0",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p0jjmu6",
+                      "author": "reddit_user_ef58c4be6a5d",
+                      "author_karma": 0,
+                      "content": "Ohhhhhhhhh looks like I upset Samsung Fanboys (I'm also a Samsung fan but not a fanboy, there's a big difference)",
+                      "timestamp": "2026-07-29T20:38:32+00:00",
+                      "likes": 0,
+                      "dislikes": 0,
+                      "parent_comment_id": "p0cr8p0",
+                      "depth": 3,
+                      "replies": []
+                    },
+                    {
+                      "comment_id": "p0kzq4n",
+                      "author": "reddit_user_7010f7d738a6",
+                      "author_karma": 0,
+                      "content": "Why would anyone buy a 1.5K phone instead of a webcam?",
+                      "timestamp": "2026-07-30T01:06:36+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p0cr8p0",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "comment_id": "p0crz89",
+              "author": "reddit_user_daa9f4823de0",
+              "author_karma": 0,
+              "content": "No it was only on the Google pixel",
+              "timestamp": "2026-07-28T22:17:13+00:00",
+              "likes": 5,
+              "dislikes": 0,
+              "parent_comment_id": "p0cov6l",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p0csq5o",
+                  "author": "reddit_user_8a0b97657379",
+                  "author_karma": 0,
+                  "content": "Specifically an Android 14 QPR1 feature. I thought Samsung devices would get it with Android 15 (One UI 7), but they never did until the S26 series (Android 16 QPR2 One UI 8.5).",
+                  "timestamp": "2026-07-28T22:20:51+00:00",
+                  "likes": 2,
+                  "dislikes": 0,
+                  "parent_comment_id": "p0crz89",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            },
+            {
+              "comment_id": "p0cs7v7",
+              "author": "reddit_user_8a0b97657379",
+              "author_karma": 0,
+              "content": "Yeah back when I spotted it on the S26 series, I assumed it was a One UI 8.5 feature.",
+              "timestamp": "2026-07-28T22:18:22+00:00",
+              "likes": 9,
+              "dislikes": 0,
+              "parent_comment_id": "p0cov6l",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p0d3q29",
+          "author": "reddit_user_1ab08cba2ad1",
+          "author_karma": 0,
+          "content": "I'm not sure if it's a bug, but for me, it doesn't work if it's set to webcam as default. If I change it to webcam after I plug it in, it works. I'm using it on a Mac.",
+          "timestamp": "2026-07-28T23:16:07+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0dfhhq",
+          "author": "reddit_user_c46a8ab553c5",
+          "author_karma": 0,
+          "content": "Finally, I can use my Switch 2 camera as God intended. ",
+          "timestamp": "2026-07-29T00:17:22+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0evuo3",
+              "author": "reddit_user_c6c18e6e0469",
+              "author_karma": 0,
+              "content": "There ya go for gamechat ",
+              "timestamp": "2026-07-29T05:37:39+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p0dfhhq",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p0jf8oe",
+          "author": "reddit_user_fb6af335d64a",
+          "author_karma": 0,
+          "content": "Huh? I plugged a USB camera into my note 9 back in 2018. ",
+          "timestamp": "2026-07-29T20:19:18+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0jjrz2",
+              "author": "reddit_user_ef58c4be6a5d",
+              "author_karma": 0,
+              "content": "This is for using the phone as a webcam",
+              "timestamp": "2026-07-29T20:39:11+00:00",
+              "likes": 2,
+              "dislikes": 0,
+              "parent_comment_id": "p0jf8oe",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p0jlemf",
+                  "author": "reddit_user_fb6af335d64a",
+                  "author_karma": 0,
+                  "content": "Oh. Well thats even dumber. We've been able to do that since forever. It took them this long to make it a native feature??",
+                  "timestamp": "2026-07-29T20:46:27+00:00",
+                  "likes": 4,
+                  "dislikes": 0,
+                  "parent_comment_id": "p0jjrz2",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p0kfxa2",
+          "author": "reddit_user_c12a732784c4",
+          "author_karma": 0,
+          "content": "Nothing new.",
+          "timestamp": "2026-07-29T23:17:00+00:00",
+          "likes": 3,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1dcypo",
+          "author": "reddit_user_f6121ffaf0f2",
+          "author_karma": 0,
+          "content": "Does s24 have this capability does anyone know",
+          "timestamp": "2026-08-03T02:15:59+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run000_post01_seed001",
+      "post_slot": 1,
+      "seed_index": 1,
+      "source_raw_post_id": "1v9gvkh",
+      "source_product_dir": "samsung",
+      "source_file": "https://www.reddit.com/r/samsung/comments/1v9gvkh/s26_ultra_vs_z_fold_8_8_ultra_6month_longterm/",
+      "post_type": "UNPACKED",
+      "title": "S26 Ultra vs Z Fold 8 & 8 Ultra (6-Month Long-Term Review): APV video thermals, SFC 3.0, and why I am switching.",
+      "author": "reddit_user_0fe413d0e398",
+      "author_karma": 0,
+      "content": "S26 Ultra vs Z Fold 8 & 8 Ultra (6-Month Long-Term Review): APV video thermals, SFC 3.0, and why I am switching.\n\nWith Unpacked wrapping up this week and the Z Fold 8 / Fold 8 Ultra officially out, I wanted to share my 6-month long-term verdict on the S26 Ultra—and how real-world testing against both the Z Fold 8 and Fold 8 Ultra shaped my final daily driver choice.\n\nThe S26 Ultra remains the benchmark for slab flagships, but comparing thermal headroom, aspect ratios, and daily productivity across all three devices reveals some unexpected trade-offs.\n\n---\n\n### 1. Privacy Display: The Remaining S26U Exclusive\n\nThe headline hardware change on the S26 Ultra is its built-in privacy display. While some users note slight screen diffusion/fuzziness, the real-world utility is undeniable:\n\n* **Privacy on Demand:** Open banking apps on flights or in public without manually lowering screen brightness, or browse in bed without disturbing your partner.\n\n* **Controls:** Toggling it via **One Hand Operation +** gestures or Bixby Routines (App + Network rules) is fast and seamless.\n\n* **Software Gap:** Samsung recently added privacy protection for YouTube Picture-in-Picture, but system-wide auto-activation when financial/sensitive fields appear on screen is still missing.\n\n---\n\n### 2. Video Performance, Thermals & Rig Accessories\n\nWhile the addition of **APV (Advanced Professional Video)** support and native sharpening toggles brings video quality parity across the S26U and Z Fold 8 series, thermal behavior under heavy video capture tells a different story:\n\n* **S26 Ultra Thermals & Accessories:** The S26U has zero thermal throttling issues during extended video sessions. More importantly, slab flagships uniquely support pro video rigs like the **Tilta Khronos system** (with an active cooling fan) for event filming—an accessory ecosystem that is physically impossible to mount on foldables.\n\n* **Z Fold 8 Thermal Tap-Out:** In hands-on video testing, the standard **Z Fold 8 tapped out due to thermal overheating** when recording standard 4k 30fps video with the cover screen closed.\n\n* **Z Fold 8 Ultra Thermal Stability:** The **Z Fold 8 Ultra** handled an overnight timelapse with zero overheating issues, matching the S26 Ultra's thermal headroom.\n\n---\n\n### 3. Display Mechanics: Aspect Ratios & Generational Crease Leaps\n\nCrease reduction on both the Z Fold 8 and Fold 8 Ultra represents a generational leap over the Z Fold 7, and I praised that model for closing the gap between Z and S series. In terms of daily display usability, aspect ratios play a huge role:\n\n| Feature / Device | S26 Ultra | Z Fold 8 | Z Fold 8 Ultra |\n\n| :--- | :--- | :--- | :--- |\n\n| **Cover Aspect Ratio** | Standard 19.5:9 (100% app compatibility) | Modern Wide | Narrow (Great 1-hand portrait typing) |\n\n| **Inner Orientation** | N/A | **Natively Landscape** | Square (Requires rotation for widescreen UI) |\n\n| **Generational Crease** | N/A | Major improvement over Fold 7 | Major improvement over Fold 7 |\n\n| **Pocket Weight** | Baseline Slab | Very close to S26U slab weight | Very close to S26U slab weight |\n\n* **The Z Fold 8 Advantage:** The standard Z Fold 8 unfolds natively into a landscape orientation. Communication apps like **Discord, Telegram, and Outlook** immediately open in full two-column landscape view without needing to physically rotate the device.\n\n* **The Z Fold 8 Ultra Trade-Off:** The Fold 8 Ultra retains a narrower cover screen that is fantastic for one-handed portrait typing, but unfolding it yields a squarer aspect ratio—forcing you to rotate the phone to get true widescreen landscape UI benefits.\n\n---\n\n### 4. Charging Speeds: SFC 3.0 vs. SFC 2.0\n\nBattery endurance on the S26 Ultra's 5000 mAh Li-Ion pack easily matches competitors using silicon-carbon batteries (backed by LTT Labs and GSMArena data). However, wired top-up speed is one key area where the S26 Ultra retains a clear win:\n\n| Device | Wired Charging | Wireless Charging | Tech Standard |\n\n| :--- | :--- | :--- | :--- |\n\n| **S26 Ultra** | **65W** | 25W | Super Fast Charging 3.0 |\n\n| **Z Fold 8 / 8 Ultra** | **25W** | 45W | Super Fast Charging 2.0 |\n\n* **The Crunch Top-Up:** Both lines share fast 25W wireless charging (ideal for desk and bedside Qi2/MagSafe mounts). However, in crunch scenarios where you need 0 to 60% in 15 minutes, the S26 Ultra's 65W Super Fast Charging 3.0 wired curve is noticeably faster than the Fold 8 series.\n\n---\n\n### Final Verdict: Where Does Each Device Fit?\n\nAfter 6 months with the S26 Ultra alongside testing the Fold 8 series, here is how the choice breaks down:\n\n**Pick the S26 Ultra if:** You need 65W crunch charging, absolute zero-scaling hassle, the built-in Privacy Display, or rely on pro video cages (like Tilta Khronos) with maximum thermal stability.\n\n**Pick the Z Fold 8 Ultra if:** You want sustained video recording thermals, prefer narrow one-handed cover screen typing, and don't mind rotating the device for landscape multi-window apps.\n\n**Pick the Z Fold 8 (My New Daily Driver):** The reduced pocket weight, major crease improvements, APV video quality, and native landscape unfolding for 2-column Discord/Telegram multi-tasking make it the most versatile daily driver for my workflow.\n\n---\n\n**What about you?** Now that Unpacked is over, are you sticking with the S-Ultra slab line or moving to foldables? If you record heavy video, are thermal tap-outs or missing 65W charging a dealbreaker for you on the Fold 8?",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p0dnqc3",
+          "author": "reddit_user_ca2d21b04854",
+          "author_karma": 0,
+          "content": "Oh boy this does look like ai generated ",
+          "timestamp": "2026-07-29T01:01:43+00:00",
+          "likes": 3,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0do0op",
+              "author": "reddit_user_22e8b200546e",
+              "author_karma": 0,
+              "content": "Im not even bothered by this complaint anymore. It's always someone. I only used \"AI\" to add the formatting for reddit markdown from ms word",
+              "timestamp": "2026-07-29T01:03:17+00:00",
+              "likes": -1,
+              "dislikes": 0,
+              "parent_comment_id": "p0dnqc3",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p0dp1tx",
+                  "author": "reddit_user_686d64764ebf",
+                  "author_karma": 0,
+                  "content": "Yeah and your LLM of choice royally botched it. The subtitles of each bullet point are a repeat of its content, making one of them redundant, and the table didn't work. It doesn't read like you asked it to add formatting for Reddit markdown. It reads like you just copy and pasted ChatGPT's work.",
+                  "timestamp": "2026-07-29T01:08:52+00:00",
+                  "likes": 2,
+                  "dislikes": 0,
+                  "parent_comment_id": "p0do0op",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p0dqgt0",
+                      "author": "reddit_user_22e8b200546e",
+                      "author_karma": 0,
+                      "content": "I dunno. overlaps 90% with the draft I fed it, obviously my draft didnt have all the markup notation. I also left the N/A sections of the tables blank, whereas the AI inserted N/A",
+                      "timestamp": "2026-07-29T01:16:38+00:00",
+                      "likes": 0,
+                      "dislikes": 0,
+                      "parent_comment_id": "p0dp1tx",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                },
+                {
+                  "comment_id": "p0dp23b",
+                  "author": "reddit_user_ca2d21b04854",
+                  "author_karma": 0,
+                  "content": "I wouldn't have cared at all if you didn't format the writing through AI",
+                  "timestamp": "2026-07-29T01:08:54+00:00",
+                  "likes": 3,
+                  "dislikes": 0,
+                  "parent_comment_id": "p0do0op",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "post_id": "real_run000_post02_seed002",
+      "post_slot": 2,
+      "seed_index": 2,
+      "source_raw_post_id": "1v9hih1",
+      "source_product_dir": "samsung",
+      "source_file": "https://www.reddit.com/r/samsung/comments/1v9hih1/galaxy_fold8_extended_firstimpressions/",
+      "post_type": "Galaxy Z",
+      "title": "Galaxy Fold8 Extended First-Impressions",
+      "author": "reddit_user_0fe413d0e398",
+      "author_karma": 0,
+      "content": "Galaxy Fold8 Extended First-Impressions\n\nI've been using the Fold8 for the better part of a week now, and wanted to share some of my impressions. Overall, I'm surprised by how much I like this form factor. Seeing the leaks, I had my reservations, but after actually using it I actually like it a lot.\n\nAs always, please feel free to ask me any questions you might have, and I'll do my best to answer. \n\nObligatory disclaimer: Samsung flew me out to an Unpacked event in NY and provided this review unit, but all opinions below are solely my own; Samsung did not have any input in or review of this content. \n\n\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\n\n**Form Factor**\n\nGoing into this, I wasn't sure how I was going to like the form factor. I thought we were going back to the old days of the Fold lineup, where outer display usability was compromised and forced you to open up the inner display for anything needing more than a quick glance. \n\nI was proven wrong. From the first moment I picked up this thing, I was shocked at just how nice the outer screen experience is. Apps scale well (minus the T-Mobile app, that's the only one I've noticed that letterboxes), there's enough space that you don't really feel cramped using the front screen, the keyboard is plenty wide now, the camera viewfinder isn't tiny. It's also just nice to use since most of the screen is within reach, and when you do need to shift your grip the phone is easier to keep balanced in your hand. Almost everyone I've handed the phone to has said something along the lines of \"Oh, wait, this is actually kinda nice.\" The only drawback that I've run into is when you're viewing a vertical picture heavy feed, like Instagram or photo-heavy subreddits, it's sometimes difficult to see the full photo + caption/title/description without scrolling. \n\nUnfold the phone, and the aspect ratio really shines. With a 4:3 aspect ratio, it feels like a proper tablet now, rather than a square in-between device. The obvious benefit is video now has more room to spread out with less letterboxing, but there are also some nice improvements elsewhere I've noticed:\n\n* Apps with dual pane tablet views work a lot better, since the right pane with your actual content has a lot more room to spread out. \n* Since most photos are shot in 4:3, they look stunning on this with minimal bezels and no letterboxing.\n* Vertical content has a ton of room to spread out if you use the device vertically while opened. \n* The reachability of buttons from the outer screen also translates to the inside, so you don't have to shift the device to hit buttons very often. \n\nOverall, I think this form factor is going to win a lot of people over. It's a lot more natural to use day-to-day, especially for content consumption. I think the taller style of the Ultra still has merit, particularly for productivity, but the Fold8's shape is going to be hard to argue with for a lot of people. \n\n**Displays**\n\nThere are 3 improvements I've noticed:\n\n1. Brighter inner display makes content a lot easier to view outdoors in bright sunlight. I pretty much had no issues viewing the screen. This is also helped by the...\n2. Anti-reflective coating - this is a god-send, and is a welcome improvement over the display of the Fold7. It's not quite S25U/S26U level, but it's makes a noticeable difference. The two caveats I've noticed are the coating is applied to the top protective layer, not the screen underneath, so the \\~1mm gap between the protective layer and bumper is more noticeable now, and that the protective layer has a tiny bit more friction when scrolling or dragging.\n3. Crease reduction. It's not quite creaseless, but it's basically impossible to see head on now, you have to tilt it to see it. More impressive to me though is how little you feel the crease when you run your finger across it. Time will tell if it holds up this well a year from now, because my Fold7's crease is definitely worse now than when I first got it. \n\nOne thing to note is flex mode is gone, both physically and in the software. Physically, the hinge now springs open past 90°, which is satisfying but it means you can't prop it open anymore. In the software, all the flex mode features are gone, and it looks like the hinge angle/state isn't exposed to apps anymore so even things like Foldy Bird don't work. \n\n**Cameras**\n\nWhile I haven't had time to properly test them, I am a little disappointed by the downgrade here. Going from a 200MP sensor on the Fold7 to a 50MP sensor that's also physically smaller is hard to swallow, and dropping the telephoto lens, even if it was a 3x 10MP unit, doesn't help soften the blow. This essentially has the same main camera as the S26 for double the price.  As an avid photographer is probably going to be the Achilles heal for this device for me. \n\nHere are a couple of camera samples:\n\nhttps://preview.redd.it/5u0qm29tk2gh1.jpg?width=4000&format=pjpg&auto=webp&s=006e82650248c3074c1d5a3e7743aa8abe948a1b\n\nhttps://preview.redd.it/gs8kd39tk2gh1.jpg?width=4000&format=pjpg&auto=webp&s=a79b22c8de071f2c1232958b7bdf26021d2c103c\n\nhttps://preview.redd.it/s7hmi29tk2gh1.jpg?width=3000&format=pjpg&auto=webp&s=0634d86cc028b8980ea4e07b24ff863b59d32b67\n\nhttps://preview.redd.it/k8j9v29tk2gh1.jpg?width=4000&format=pjpg&auto=webp&s=508fb8afdc9f5590dee1ce4dea57014bb2d18f28\n\nhttps://preview.redd.it/9rytq39tk2gh1.jpg?width=3000&format=pjpg&auto=webp&s=72df6854051ed858b75fe998bbc15208569ef8fc\n\n**Battery**\n\nIt's solid. At 4800 mAh, it beats even the Fold7 from last year (4400 mAh) and easily lasts a full day for me. It's not quite two day battery life, but I also don't have to worry about babying it to get it to the end of the day. The one day I kept track of my use I had about 50% left with 5 hours SOT, roughly 80/20% split between the outer and inner displays respectively. \n\nCharging also get a huge and welcome upgrade this year, with 45W wired and 20W wireless. It's not quite on the same level as Motorola or some of the other Chinese competitors, or even Samsung's own S26U, but it's much faster than the Fold7 from last year, and finally at a level where I feel like I can rely on a quick top up in a pinch. \n\nAs with other Samsung phones from the past couple of years, this is \"qi2 ready\", meaning it needs a case to use qi2 accessories, which is a bummer IMO. The Fold8's shorter body also means accessories like wallets or power banks hang off the bottom of the phone, which is less than ideal. I'm not a case person so I'm never gonna get the benefit, but even if you do use a case with magnets built in, this is really only useful for charging pucks (which was also the case with the S26 series because of the camera bump interfering with rectangular accessories). \n\nhttps://preview.redd.it/jx2830z4k2gh1.jpg?width=2521&format=pjpg&auto=webp&s=9c2b61bcd2909606b376e0114920fd7cd2b5c30b\n\n**Speakers**\n\nI would call the speakers good enough. They get plenty loud, they have a decent amount of bass, and they're clear and remain clear at higher volumes without getting tinny or muddy. They're about on par with the speakers in the Fold7, but compared to the speakers in the S26U or other candy bar style phones, they sound a little hollow, likely due to the thinness of these devices. \n\nOne thing that stood out is that the speakers are both on the left half of the phone when unfolded in landscape. This means no stereo separation, and the sound feels unbalanced. This is a wild oversight for something marketed for content consumption. I think they should've shifted the top speaker into the right half of the device, which would've allowed for stereo separation in all orientations except vertical while folded. \n\n**Misc.**\n\n* The slight bevel they added between the two halves + the changes to the hinge and magnets makes this *so much* easier to open then the Fold7. This applies to the Fold8 Ultra as well. \n* The Fold8 isn't quite as impossibly thin as the Fold7 and Fold8 Ultra, but it's still thin enough to not feel like a brick. \n* The weight savings are fantastic, and make it so much easier to use for longer sessions. \n* Even though it's technically lower than their other phones, the volume rocker takes some getting used to because of how high up it is relative to the phone's frame. Just a weird thing I noticed while using the phone.",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p0ds8n8",
+          "author": "reddit_user_017c22ab6c36",
+          "author_karma": 0,
+          "content": "👀",
+          "timestamp": "2026-07-29T01:26:21+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0dvu9d",
+          "author": "reddit_user_afb79524a40c",
+          "author_karma": 0,
+          "content": "They could have moved bottom speaker to the back half of the phone i.e. next to charging port.\n\nThis way when fold or unfold, speakers will always be on the both side of the screen",
+          "timestamp": "2026-07-29T01:46:21+00:00",
+          "likes": 6,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0dwijo",
+              "author": "reddit_user_017c22ab6c36",
+              "author_karma": 0,
+              "content": "It's the engineers choice according to the layouts of the components.\n\nIn which when your listening or watching from the cover screen both speakers will be side-by-side",
+              "timestamp": "2026-07-29T01:50:07+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p0dvu9d",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p0eg77d",
+                  "author": "reddit_user_267baa50f621",
+                  "author_karma": 0,
+                  "content": "Partially. It's the engineers choice vs the cost to implement the design and then to manufacture it and sell it in a market. \n\nThe balance between those things is what forces many of the design choices. It's not just engineers whims. ",
+                  "timestamp": "2026-07-29T03:47:39+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p0dwijo",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            },
+            {
+              "comment_id": "p0dzmi9",
+              "author": "reddit_user_d298d0229b52",
+              "author_karma": 0,
+              "content": "That too. I was thinking the top speaker moving to the right/back half would look nicer because it can stay centered, but I forgot it gets used by the earpiece too. ",
+              "timestamp": "2026-07-29T02:07:40+00:00",
+              "likes": 2,
+              "dislikes": 0,
+              "parent_comment_id": "p0dvu9d",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p0dz95c",
+          "author": "reddit_user_8b5211e3bb06",
+          "author_karma": 0,
+          "content": "The elephant in the room with all foldables is the inner screen. If your fingernail catches it, that’s permanent damage on a breathtakingly expensive device. It reminds me of the old resistive screens from 20+ years ago. ",
+          "timestamp": "2026-07-29T02:05:33+00:00",
+          "likes": -8,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0eftzp",
+              "author": "reddit_user_267baa50f621",
+              "author_karma": 0,
+              "content": "I had the fold 4, 5, 6, 7, and now I'll have the 8. I've never had a problem with this. ",
+              "timestamp": "2026-07-29T03:45:17+00:00",
+              "likes": 5,
+              "dislikes": 0,
+              "parent_comment_id": "p0dz95c",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p0e2yvn",
+          "author": "reddit_user_6a6117fdf774",
+          "author_karma": 0,
+          "content": "Looks good ",
+          "timestamp": "2026-07-29T02:26:43+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0e4q5g",
+          "author": "reddit_user_cdf3e8095e01",
+          "author_karma": 0,
+          "content": "How about thermal management and throttling when using intensive activities? I heard it can get hot when folded and charging",
+          "timestamp": "2026-07-29T02:36:52+00:00",
+          "likes": 3,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0e6689",
+              "author": "reddit_user_d298d0229b52",
+              "author_karma": 0,
+              "content": "I've noticed it got toasty a couple of times, but not any more than the Fold7 did. A colleague did have his overheat while recording video though. It's something I'm keeping an eye on. ",
+              "timestamp": "2026-07-29T02:45:19+00:00",
+              "likes": 4,
+              "dislikes": 0,
+              "parent_comment_id": "p0e4q5g",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p0ep05q",
+                  "author": "reddit_user_cdf3e8095e01",
+                  "author_karma": 0,
+                  "content": "Perhaps you can tell me about if it gets hot if used as a navigation device while charging/wireless charging in the car? No rush, just when you have a chance. \n\nSince the charging coils are only on one side, I'm assuming you can't use a QI2 Magnetic charger with a magnetic case to mount it open though, it has to be folded which can be a heat trap.",
+                  "timestamp": "2026-07-29T04:46:57+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p0e6689",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p0eq59n",
+          "author": "reddit_user_54f57064842d",
+          "author_karma": 0,
+          "content": "The no flex mode has me holding off. I have a flip 6. And I really like the whoe design and size of the new fold. But if I can't have it half flipped to watch something, kinda sucks. ",
+          "timestamp": "2026-07-29T04:55:00+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0fc3s3",
+              "author": "reddit_user_878193cd3a88",
+              "author_karma": 0,
+              "content": "U can use \"tent mode\" to watch on outter display. ",
+              "timestamp": "2026-07-29T07:47:26+00:00",
+              "likes": 3,
+              "dislikes": 0,
+              "parent_comment_id": "p0eq59n",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p0fdtsx",
+                  "author": "reddit_user_22e8b200546e",
+                  "author_karma": 0,
+                  "content": "Yes. But it springs open so nicely ill take the trade off",
+                  "timestamp": "2026-07-29T08:01:39+00:00",
+                  "likes": 2,
+                  "dislikes": 0,
+                  "parent_comment_id": "p0fc3s3",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            },
+            {
+              "comment_id": "p0grmfm",
+              "author": "reddit_user_b03e7a4625ca",
+              "author_karma": 0,
+              "content": "That was part of the allure for me as well. I currently have an S25U with a magnetic ring kick stand from UAG, which is pretty nice. However, if the fold can't use it's own physical characteristics to delete the need for a kickstand, then i am not sure i want it.",
+              "timestamp": "2026-07-29T13:30:15+00:00",
+              "likes": 2,
+              "dislikes": 0,
+              "parent_comment_id": "p0eq59n",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p0es2ph",
+          "author": "reddit_user_612b9cbd3200",
+          "author_karma": 0,
+          "content": "I just can't get past the speaker placement that will almost certainly be addressed in the Fold 9",
+          "timestamp": "2026-07-29T05:09:01+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0f2tb9",
+          "author": "reddit_user_eaef6e736099",
+          "author_karma": 0,
+          "content": "I’m really bummed out about the speaker implementation. That’s the one thing holding me back. Hopefully next generations improve.",
+          "timestamp": "2026-07-29T06:32:32+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0mmsvf",
+          "author": "reddit_user_da6bbf8e0440",
+          "author_karma": 0,
+          "content": "Man Samsung is really pushing this thing hard. \n\nNo you don't get paid or told what to say, but if you had lots of negatives you know they'd not invite you next time. And they did expect a q&a/review right?\n\nSo these reviews, along with many YouTuber reviews, are always spun positive. Especially considering that the reviews rarely include the aspect of having paid for the device, which is what the features should be measured against as well. \n\n",
+          "timestamp": "2026-07-30T07:54:06+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p195zw3",
+          "author": "reddit_user_d620e6ea58f3",
+          "author_karma": 0,
+          "content": "Hunters Point!",
+          "timestamp": "2026-08-02T13:49:40+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run000_post03_seed003",
+      "post_slot": 3,
+      "seed_index": 3,
+      "source_raw_post_id": "1v9ppjk",
+      "source_product_dir": "samsung",
+      "source_file": "https://www.reddit.com/r/samsung/comments/1v9ppjk/effective_screen_size_fold8_vs_fold8_ultra/",
+      "post_type": "Galaxy Z",
+      "title": "Effective screen size (Fold8 vs Fold8 Ultra)",
+      "author": "reddit_user_0fe413d0e398",
+      "author_karma": 0,
+      "content": "Effective screen size (Fold8 vs Fold8 Ultra)\n\n[removed]",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p0m3um7",
+          "author": "reddit_user_fbdb5188ea01",
+          "author_karma": 0,
+          "content": "They can resize keyboards ",
+          "timestamp": "2026-07-30T05:20:42+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0m4q2v",
+          "author": "reddit_user_0e76d640bf61",
+          "author_karma": 0,
+          "content": "Now, what is 16:9 and 21:9 on the Ultra once you flip it 90°?",
+          "timestamp": "2026-07-30T05:27:26+00:00",
+          "likes": 11,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0m5z86",
+          "author": "reddit_user_686d64764ebf",
+          "author_karma": 0,
+          "content": "> IMO the Fold8 destroys the Fold8 Ultra in every media consumption, videos and gaming (especially streaming). \n\nStrong words for a difference no more than 0.14-0.17\" (0.356-0.432 cm) in any of these common aspect ratios. It would be hard to see that difference in a true blind test.\n\nAlso, what about the speakers' placement when consuming such media? By the same exaggerating logic I could claim the Ultra \"destroys\" the wide Fold 8.",
+          "timestamp": "2026-07-30T05:37:16+00:00",
+          "likes": 6,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0m7gwu",
+          "author": "reddit_user_c4abe0061846",
+          "author_karma": 0,
+          "content": "What if you unfold and turn to landscape?",
+          "timestamp": "2026-07-30T05:49:04+00:00",
+          "likes": 4,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0ma0x7",
+          "author": "reddit_user_b4c4e417ddaa",
+          "author_karma": 0,
+          "content": "Did you forget we can rotate the screen? ",
+          "timestamp": "2026-07-30T06:09:34+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0ma573",
+          "author": "reddit_user_c4abe0061846",
+          "author_karma": 0,
+          "content": "https://preview.redd.it/nb0og7dk6bgh1.jpeg?width=326&format=pjpg&auto=webp&s=cc9375f694b19526075cc0e655980f4cd09d63a5",
+          "timestamp": "2026-07-30T06:10:33+00:00",
+          "likes": 9,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0mnmu2",
+          "author": "reddit_user_d21d1bd6c6f9",
+          "author_karma": 0,
+          "content": "It destroys the Ultra by being... Half a cm bigger?\n\nBuddy...",
+          "timestamp": "2026-07-30T08:01:05+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run000_post04_seed004",
+      "post_slot": 4,
+      "seed_index": 4,
+      "source_raw_post_id": "1v9ybp7",
+      "source_product_dir": "Android",
+      "source_file": "https://www.reddit.com/r/Android/comments/1v9ybp7/samsung_proves_microsoft_was_wrong_to_give_up_on/",
+      "post_type": "Article",
+      "title": "Samsung proves Microsoft was wrong to give up on Surface Duo so quickly: The new Galaxy Z Fold 8 is the Surface Duo 3 of my dreams",
+      "author": "reddit_user_0fe413d0e398",
+      "author_karma": 0,
+      "content": "Samsung proves Microsoft was wrong to give up on Surface Duo so quickly: The new Galaxy Z Fold 8 is the Surface Duo 3 of my dreams",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p0h9o4i",
+          "author": "reddit_user_89a59ac4c466",
+          "author_karma": 0,
+          "content": "Giving up on the Duo's dual-screen design at the price they were asking for it was prob wise. But the form factor could've worked in a foldable. As always though, Microsoft isn't great in the mobile space.",
+          "timestamp": "2026-07-29T14:50:52+00:00",
+          "likes": 5,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0h9tir",
+          "author": "reddit_user_98209b692359",
+          "author_karma": 0,
+          "content": "Do you really want a phone from the guys who managed to ruin every consumer product they have touched in the last 15 years?",
+          "timestamp": "2026-07-29T14:51:30+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0hahap",
+          "author": "reddit_user_d21d1bd6c6f9",
+          "author_karma": 0,
+          "content": "So... They were right? Because the author didn't want two slabs with a hinge and in fact wanted a Samsung Fold with a similar form factor?\n\nWhich only Samsung could make?",
+          "timestamp": "2026-07-29T14:54:18+00:00",
+          "likes": 6,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0hcjo9",
+              "author": "reddit_user_683fd72280c2",
+              "author_karma": 0,
+              "content": "The Surface Duo 3 was reported to be a more traditional folding phone, that would've had a similar aspect ratio to the Fold 8. ",
+              "timestamp": "2026-07-29T15:03:03+00:00",
+              "likes": 2,
+              "dislikes": 0,
+              "parent_comment_id": "p0hahap",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p0hdgow",
+                  "author": "reddit_user_d21d1bd6c6f9",
+                  "author_karma": 0,
+                  "content": "It also doesn't exist, which is an issue to anyone wanting to own one.\n\nMy point being Microsoft can't make good hardware or software at this point, Samsung do both, reliably.\n\nPeople don't want a Duo 3 from Microslop, they want a Fold from Samsung. ",
+                  "timestamp": "2026-07-29T15:06:57+00:00",
+                  "likes": 2,
+                  "dislikes": 0,
+                  "parent_comment_id": "p0hcjo9",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p0hbt6p",
+          "author": "reddit_user_0bfc942c578a",
+          "author_karma": 0,
+          "content": "So what the author is saying, is that the Surface Duo would have eventually lost its dual screen identity, and just become another foldable competing with other foldables out there there? Sounds like they made the right call to cancel it early tbh. ",
+          "timestamp": "2026-07-29T14:59:54+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0hc6c5",
+          "author": "reddit_user_ca24566fc6fe",
+          "author_karma": 0,
+          "content": "I applaud Microsoft for attempting it, and I still love my Duo 2, but they definitely gave up on it in a big way. I'm glad that we are coming back around to similar form factors again.",
+          "timestamp": "2026-07-29T15:01:28+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0hckca",
+          "author": "reddit_user_64967ff05f55",
+          "author_karma": 0,
+          "content": "Sorry, your submission was removed:\n\n> Rule 4\\. Developers may post their own apps, provided:  \n>   1- Their post must be a self post with a detailed description of their app.  \n>   2- The developer's account must be at least three months old AND have a reasonable posting history on r/Android.  \n>   3- The developer must interact with users in the thread. We do not allow developers to simply dump a link to their app and leave.  \n> Website/blog/YouTube channel owners are generally not allowed to post their own content.  \n> [See the wiki page for more information.](https://www.reddit.com/r/Android/wiki/rulesandregs#wiki_4._developer_self_promotion.)\n\nConsider reposting as a comment in the [weekly Saturday threads](https://www.reddit.com/r/Android/search/?q=Saturday+APPreciation+thread&type=posts&sort=new).\n\nYou may be interested in:\n\n- /r/AndroidDev's monthly threads for [showcasing your app](https://www.reddit.com/r/androiddev/search/?q=Interesting+Android+Apps).",
+          "timestamp": "2026-07-29T15:03:07+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0heynf",
+          "author": "reddit_user_12257848a038",
+          "author_karma": 0,
+          "content": "I feel like the Z Fold 8 and the Surface Duo are not at all \"the same form factor\". One has two screens with a hinge hinge between them and one has a single large screen.  \n\nI think that difference makes them far more unlike each other than the aspect ratio being roughly similar makes them equal.",
+          "timestamp": "2026-07-29T15:13:20+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0hk0yo",
+          "author": "reddit_user_df872ee96c62",
+          "author_karma": 0,
+          "content": "The Duo was most certainly not passport sized when closed. It was too wide, and too unweildy. Not to mention the crap software.",
+          "timestamp": "2026-07-29T15:34:50+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    }
+  ]
+}

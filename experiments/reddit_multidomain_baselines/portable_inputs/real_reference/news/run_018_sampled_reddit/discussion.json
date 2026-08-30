@@ -1,0 +1,3004 @@
+{
+  "meta": {
+    "product_category": "news",
+    "baseline": "real_reddit_reference",
+    "run_id": "run_018_sampled_reddit"
+  },
+  "posts": [
+    {
+      "post_id": "real_run018_post00_seed090",
+      "post_slot": 0,
+      "seed_index": 90,
+      "source_raw_post_id": "1ve7xmn",
+      "source_product_dir": "worldnews",
+      "source_file": "https://www.reddit.com/r/worldnews/comments/1ve7xmn/british_woman_found_dead_in_suitcase_suspect_said/",
+      "post_type": "link",
+      "title": "British woman found dead in suitcase: Suspect said he killed her for trying to convert his girlfriend to Christianity",
+      "author": "reddit_user_bde1e90b951b",
+      "author_karma": 0,
+      "content": "British woman found dead in suitcase: Suspect said he killed her for trying to convert his girlfriend to Christianity",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p1euim5",
+          "author": "reddit_user_c3c4b2af66c9",
+          "author_karma": 0,
+          "content": "Crumbs. ",
+          "timestamp": "2026-08-03T09:01:02+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1eunjq",
+          "author": "reddit_user_123fbe36966c",
+          "author_karma": 0,
+          "content": "Bullshit excuse, he killed her to rob her...\n\nA lie like this is to be expected from a man that comes from a region that justifies killing in the name of religion, so-called \"honour killings\".\n\nHe is only trying to make himself sound noble in front of the rest of his family back home.",
+          "timestamp": "2026-08-03T09:02:11+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1ev6k0",
+              "author": "reddit_user_410f9c972b4c",
+              "author_karma": 0,
+              "content": "What’s crazy is that this excuse comes off as more unhinged than just it being down to a robbery, and will probably just exacerbate his sentence. Insane really.",
+              "timestamp": "2026-08-03T09:06:36+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1eunjq",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1ez025",
+                  "author": "reddit_user_9eec4aa46278",
+                  "author_karma": 0,
+                  "content": "A lot of people raised in certain religious environments really don’t grasp that their more specific religious values aren’t as universal as they think they are.\n\nI, an American guy, had an Iraqi buddy try comparing the outrage over a Koran burning to burning the Bible. I don’t think he ever fully grasped that 1) I would not give a shit, and 2) the suggestion that I would be offended and have a similar reaction was far more offensive than any act of burning any type of book. He just could not imagine that was not a universal truth.\n\nThis is just an example from Islam, it happens in many if not all religions ",
+                  "timestamp": "2026-08-03T09:38:29+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1ev6k0",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1ezw7x",
+                      "author": "reddit_user_acf68b2845b4",
+                      "author_karma": 0,
+                      "content": "Plus to add to the comment you’re replying to theft is a sin in Islam as it is Christianity. This may be him trying to save face but killing someone due to a differ in religion is a sin in Islam too.",
+                      "timestamp": "2026-08-03T09:45:45+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1ez025",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "p1f2l6d",
+                          "author": "[deleted]",
+                          "author_karma": 0,
+                          "content": "[removed]",
+                          "timestamp": "2026-08-03T10:07:10+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "p1ezw7x",
+                          "depth": 4,
+                          "replies": []
+                        }
+                      ]
+                    },
+                    {
+                      "comment_id": "p1f47ad",
+                      "author": "reddit_user_7cae3eb06c18",
+                      "author_karma": 0,
+                      "content": "Here in Russia, we have a stupid law called \"On the Protection of Religious Feelings.\" People have been convicted under it for simply dancing and filming themselves in front of a church, or for catching Pokémon in a church.\n\nAnd the man who burned the Quran was not only convicted, but also sent to one of our most Islamic republics, where he was beaten in his cell by the son of the republic's leader. In the presence of the police and on video.",
+                      "timestamp": "2026-08-03T10:19:29+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1ez025",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                },
+                {
+                  "comment_id": "p1f5q8o",
+                  "author": "reddit_user_7180111fb425",
+                  "author_karma": 0,
+                  "content": "Nobody said it was a well thought out lie.",
+                  "timestamp": "2026-08-03T10:31:01+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1ev6k0",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            },
+            {
+              "comment_id": "p1f2btj",
+              "author": "reddit_user_4ac660c20e67",
+              "author_karma": 0,
+              "content": "What religion has NOT justified killing in the name of said religion? ",
+              "timestamp": "2026-08-03T10:05:11+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1eunjq",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1f3sal",
+                  "author": "reddit_user_044b7fa2f438",
+                  "author_karma": 0,
+                  "content": "Scientology XD /jk",
+                  "timestamp": "2026-08-03T10:16:19+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1f2btj",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1f4fz7",
+                      "author": "reddit_user_4ac660c20e67",
+                      "author_karma": 0,
+                      "content": "Don't Scientology people have to commit mass suicide on the end days or something?",
+                      "timestamp": "2026-08-03T10:21:19+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1f3sal",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "p1f4sef",
+                          "author": "reddit_user_044b7fa2f438",
+                          "author_karma": 0,
+                          "content": "I cant find any evidence of that. Besidds they are more money focused",
+                          "timestamp": "2026-08-03T10:23:54+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "p1f4fz7",
+                          "depth": 4,
+                          "replies": []
+                        },
+                        {
+                          "comment_id": "p1f5dok",
+                          "author": "reddit_user_f6532ab6db93",
+                          "author_karma": 0,
+                          "content": "Nah that was that other cult",
+                          "timestamp": "2026-08-03T10:28:24+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "p1f4fz7",
+                          "depth": 4,
+                          "replies": []
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "comment_id": "p1f4c3r",
+                  "author": "reddit_user_8100e2d9753b",
+                  "author_karma": 0,
+                  "content": "Jainism.",
+                  "timestamp": "2026-08-03T10:20:29+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1f2btj",
+                  "depth": 2,
+                  "replies": []
+                },
+                {
+                  "comment_id": "p1f5ksv",
+                  "author": "reddit_user_f6532ab6db93",
+                  "author_karma": 0,
+                  "content": "None. But also if you look up the CURRENT religions killing in the name of their religion, the list is a little more uh....unfavorable to certain religions.\n\nSure sure the crusades or the inquisition, but if you're going back to the middle ages instead of like idk the last 15 years that might be the point right there.",
+                  "timestamp": "2026-08-03T10:29:53+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1f2btj",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1f6yy4",
+                      "author": "reddit_user_4ac660c20e67",
+                      "author_karma": 0,
+                      "content": "If you are gonna be like that, i can asure you i will not struggle much to find a couple for cristianity.\n\nHell i could avoid the easy route of finding some religious transphobic murder on the last... year.\n\nThere is that one Mormon guy that stole Legos from someone that has been trying to plant excuses to murder a Youtuber for like the past 3 months.\n\nLet's not pretend all of this shit isn't the same, y'all aren't even actually different religions, that's all Abrahamic faith",
+                      "timestamp": "2026-08-03T10:40:20+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1f5ksv",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "p1htz7o",
+                          "author": "reddit_user_f6532ab6db93",
+                          "author_karma": 0,
+                          "content": "I don't have a dog in this race, I find all religions backwards. However, it's clear that one religion right now is way more willing to murder people than any other at the moment.\n\nIt wasn't always that way, it won't always be that way, but at the moment a certain religion has honor killings as part of their culture while most others do not. You can be killed for publicly depicting their guy. These things aren't rare and they happen more often.\n\nAlso it's not lost on me that the Mormon you bring up didn't kill anyone, they just \"want\" to.",
+                          "timestamp": "2026-08-03T18:14:50+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "p1f6yy4",
+                          "depth": 4,
+                          "replies": [
+                            {
+                              "comment_id": "p1l12t3",
+                              "author": "reddit_user_4ac660c20e67",
+                              "author_karma": 0,
+                              "content": ">I don't have a dog in this race, I find all religions backwards. However, it's clear that one religion right now is way more willing to murder people than any other at the moment.\n\nYeah and i don't think it's the one you think it is.\n\n>Also it's not lost on me that the Mormon you bring up didn't kill anyone, they just \"want\" to.\n\nNot yet, he is 100% planning that, he even prepared the groundfloor by getting the thumbs up on the police to get weapons.",
+                              "timestamp": "2026-08-04T03:52:56+00:00",
+                              "likes": 1,
+                              "dislikes": 0,
+                              "parent_comment_id": "p1htz7o",
+                              "depth": 5,
+                              "replies": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p1euqem",
+          "author": "reddit_user_aeb1b4098c16",
+          "author_karma": 0,
+          "content": "Ah, the traditional method of resolving differences in religious viewpoints. ",
+          "timestamp": "2026-08-03T09:02:52+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1f0h62",
+              "author": "reddit_user_4a563b35d9b5",
+              "author_karma": 0,
+              "content": "Just as god intended",
+              "timestamp": "2026-08-03T09:50:31+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1euqem",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p1f2hm3",
+              "author": "reddit_user_4ac660c20e67",
+              "author_karma": 0,
+              "content": "If anything, it's *too* traditional.",
+              "timestamp": "2026-08-03T10:06:25+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1euqem",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p1f51w5",
+              "author": "reddit_user_bfe16ced16f9",
+              "author_karma": 0,
+              "content": "Ah, the age old reddit tradition of pretending like Christianity and Islam are remotely equivalent.  Next someone will reply to this post saying \"but muh Crusades\" and engage in the equally time-honored tradition of pretending the Crusades weren't themselves a response to centuries of Muslim aggression.",
+              "timestamp": "2026-08-03T10:25:53+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1euqem",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1f6209",
+                  "author": "reddit_user_974e46e5befd",
+                  "author_karma": 0,
+                  "content": "No, they are not equivalent. But not because christianity is inherently better, but because of   Enlightenment and the freedom from religion Europe achieved.",
+                  "timestamp": "2026-08-03T10:33:28+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1f51w5",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1f6hch",
+                      "author": "reddit_user_8100e2d9753b",
+                      "author_karma": 0,
+                      "content": "The lack of a main (mortal) figure who was an out rapist, slaver, and proponent of torture-murder, probably helps. There this pattern of how religions who *lack* such figures tend towards better outcomes, than those religions that do center around such personages. ",
+                      "timestamp": "2026-08-03T10:36:40+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1f6209",
+                      "depth": 3,
+                      "replies": []
+                    },
+                    {
+                      "comment_id": "p1l6idf",
+                      "author": "reddit_user_bfe16ced16f9",
+                      "author_karma": 0,
+                      "content": "Do you think a continent dominated by Islam would ever have the conditions in place for something like the Enlightenment to take place?",
+                      "timestamp": "2026-08-04T04:29:20+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1f6209",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                },
+                {
+                  "comment_id": "p1f672j",
+                  "author": "reddit_user_974e46e5befd",
+                  "author_karma": 0,
+                  "content": "No, they are not equivalent. But not because christianity is inherently better, but because of   Enlightenment and the freedom from religion Europe achieved.",
+                  "timestamp": "2026-08-03T10:34:32+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1f51w5",
+                  "depth": 2,
+                  "replies": []
+                },
+                {
+                  "comment_id": "p1f68tk",
+                  "author": "reddit_user_974e46e5befd",
+                  "author_karma": 0,
+                  "content": "No, they are not equivalent. But not because christianity is inherently better, but because of   enlightenment and the freedom from religion Europe achieved.",
+                  "timestamp": "2026-08-03T10:34:54+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1f51w5",
+                  "depth": 2,
+                  "replies": []
+                },
+                {
+                  "comment_id": "p1f6bhe",
+                  "author": "reddit_user_ac8a7191243c",
+                  "author_karma": 0,
+                  "content": "I have absolutely no idea why there cant be an equating of the two religions as different systems that equally hype up people to be violent through justifications of ancient texts. \n\nAmericans and the west kill people with \"under god we trust\" on our money and enough religious programming during basic training to turn you into a \"warrior of god\" \n\nIt's both religions. It would be abhorrently absurd to say that one violent religion is above another, both are outdated and should be irrelevant to a modern society.\n\nBut fr lol, you cant just say the crusades didn't fucking count when incels nowadays use that to hype themselves up to enact violence against groups they see as othered ",
+                  "timestamp": "2026-08-03T10:35:26+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1f51w5",
+                  "depth": 2,
+                  "replies": []
+                },
+                {
+                  "comment_id": "p1f8oft",
+                  "author": "reddit_user_e7b155098d85",
+                  "author_karma": 0,
+                  "content": "Ok, then the St Bartholomew’s day massacre, the Michelade, the executions after the pilgrimage of grace, the thirty years war, and the Marian persecutions.",
+                  "timestamp": "2026-08-03T10:52:29+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1f51w5",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p1ev2ht",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-03T09:05:40+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1evono",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-03T09:10:49+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1ew2wn",
+          "author": "reddit_user_0b2900b8d822",
+          "author_karma": 0,
+          "content": "But takes her bank card ? ",
+          "timestamp": "2026-08-03T09:14:03+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1f36g6",
+              "author": "reddit_user_b63e7bd8c4d2",
+              "author_karma": 0,
+              "content": "Not like she needs it anymore/ s",
+              "timestamp": "2026-08-03T10:11:39+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1ew2wn",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p1f68nc",
+              "author": "reddit_user_bbd66d549f59",
+              "author_karma": 0,
+              "content": "Jesus gon go buck wild on they ass when he see dis shit",
+              "timestamp": "2026-08-03T10:34:51+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1ew2wn",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1ewr89",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-03T09:19:44+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1ewyia",
+          "author": "reddit_user_65ce46bff59a",
+          "author_karma": 0,
+          "content": "This headline is nonsense.\n\nFrom the article, the suspect had a wife not a girlfriend, and she never met the victim.\n\nHe claimed to his wife he did it because she kept talking about her religion, but told the police she was already dead when he got there. \n\n",
+          "timestamp": "2026-08-03T09:21:27+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1f1ul0",
+              "author": "reddit_user_a8244293cb6d",
+              "author_karma": 0,
+              "content": "....but she wasn't already dead. He killed her. Just clarifying.",
+              "timestamp": "2026-08-03T10:01:27+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1ewyia",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1f4mj2",
+                  "author": "reddit_user_c90e7e45092a",
+                  "author_karma": 0,
+                  "content": "And then accessed her bank account for several days afterward.\n\nCall me cynical, but the guy might just be a liar.",
+                  "timestamp": "2026-08-03T10:22:40+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1f1ul0",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1f511i",
+                      "author": "reddit_user_f6532ab6db93",
+                      "author_karma": 0,
+                      "content": "Funny that this guy is caught for murdering someone and thinks it's a more socially acceptable lie to say he killed her for religious reasons than for just trying to steal from her.\n\nMakes you wonder why he'd think killing for his religion was better....",
+                      "timestamp": "2026-08-03T10:25:42+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1f4mj2",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "p1f59x0",
+                          "author": "reddit_user_c90e7e45092a",
+                          "author_karma": 0,
+                          "content": "Many people try to justify the unjustifiable with religion.\n\nAlways have done so.",
+                          "timestamp": "2026-08-03T10:27:36+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "p1f511i",
+                          "depth": 4,
+                          "replies": []
+                        },
+                        {
+                          "comment_id": "p1f76yq",
+                          "author": "reddit_user_8100e2d9753b",
+                          "author_karma": 0,
+                          "content": "It helps when fairly mainstream Islamic preachers says there is nothing, *nothing*, worse than being a non-Muslim. Even [just missing prayers is worse than anything worldly](https://www.youtube.com/watch?v=LLCWHCgaJA8).",
+                          "timestamp": "2026-08-03T10:41:56+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "p1f511i",
+                          "depth": 4,
+                          "replies": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p1ex6t4",
+          "author": "reddit_user_9f452f23ec3e",
+          "author_karma": 0,
+          "content": "Your brain on religion.  ",
+          "timestamp": "2026-08-03T09:23:25+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1exdrp",
+              "author": "[deleted]",
+              "author_karma": 0,
+              "content": "[removed]",
+              "timestamp": "2026-08-03T09:25:02+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1ex6t4",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p1f270r",
+              "author": "[deleted]",
+              "author_karma": 0,
+              "content": "[removed]",
+              "timestamp": "2026-08-03T10:04:09+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1ex6t4",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1exnax",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-03T09:27:16+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1exy21",
+          "author": "reddit_user_cf692354cf03",
+          "author_karma": 0,
+          "content": "You cannot \"convert somebody\", conversion is not some passive thing that happens to you. You can convert, but nobody can make you somehow.",
+          "timestamp": "2026-08-03T09:29:46+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1eygfq",
+              "author": "reddit_user_bf83ac91912a",
+              "author_karma": 0,
+              "content": "Tell that to like the majority of Christian history.",
+              "timestamp": "2026-08-03T09:33:58+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1exy21",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1f2mz8",
+                  "author": "reddit_user_4ac660c20e67",
+                  "author_karma": 0,
+                  "content": "Yeah i think the holy crusades stand to... disagree.",
+                  "timestamp": "2026-08-03T10:07:33+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1eygfq",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            },
+            {
+              "comment_id": "p1eyojp",
+              "author": "reddit_user_79e44b53997c",
+              "author_karma": 0,
+              "content": "If you can covert, it stands to reason that being converted is possible. \n\nThis is action and reaction, but the influence (added pressure, forceful or situational) cannot be denied. I don’t know about this case specifically but as a general rule your argument doesn’t hold up. If what you say is true then a cult or brainwashing/re-education or indoctrination would be impossible.",
+              "timestamp": "2026-08-03T09:35:52+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1exy21",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p1f02zm",
+              "author": "reddit_user_cfe674eed524",
+              "author_karma": 0,
+              "content": "Yeah, you can... even full countries of people.\n\nThe concept of zikat : if you are Christian then you pay more taxes : it converted 80% of the population to islam in Egypt.\n\nChristian did forced conversion in central and south america.. destroying temples et killing alot.. ",
+              "timestamp": "2026-08-03T09:47:19+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1exy21",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1f3syj",
+                  "author": "reddit_user_b63e7bd8c4d2",
+                  "author_karma": 0,
+                  "content": "Temples where they cut your heart out though so its choosing between cholera and the plague",
+                  "timestamp": "2026-08-03T10:16:28+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1f02zm",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            },
+            {
+              "comment_id": "p1f5tgx",
+              "author": "reddit_user_f6532ab6db93",
+              "author_karma": 0,
+              "content": "I mean...Islam and Christianity both have stories histories of forced conversions. And also missionaries exist.",
+              "timestamp": "2026-08-03T10:31:42+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1exy21",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1eylbz",
+          "author": "reddit_user_4cba55d04d5d",
+          "author_karma": 0,
+          "content": "if you ever want to know what true evil is just look up the word religion. ",
+          "timestamp": "2026-08-03T09:35:06+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1f02x5",
+              "author": "[deleted]",
+              "author_karma": 0,
+              "content": "[removed]",
+              "timestamp": "2026-08-03T09:47:18+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1eylbz",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p1f1vjl",
+              "author": "reddit_user_a8244293cb6d",
+              "author_karma": 0,
+              "content": "Some worse than others though.",
+              "timestamp": "2026-08-03T10:01:40+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1eylbz",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1f55jw",
+                  "author": "reddit_user_f6532ab6db93",
+                  "author_karma": 0,
+                  "content": "At specific points in history? Absolutely. Averaged across the history of humanity? Eh....a lot less so.",
+                  "timestamp": "2026-08-03T10:26:40+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1f1vjl",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1f5jtz",
+                      "author": "reddit_user_8100e2d9753b",
+                      "author_karma": 0,
+                      "content": "In core rhetoric and foundational figures the followers are supposed to emulate, as well. An ideology where all the role models are explicitly rapists and slavers, is worse than those ideologies where none of the core figures are as implicated in various horrors. ",
+                      "timestamp": "2026-08-03T10:29:41+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1f55jw",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "comment_id": "p1f47z8",
+              "author": "reddit_user_5b6201177b99",
+              "author_karma": 0,
+              "content": "Misguided take at best.\n\nEvil is perpetrated culturally, religion is just an expression of that, in its absence we'd have other way to justify it. Or do you think generations of abusers and grifters would just settle down? If you keep fighting symptoms instead of the cause, you're effectively idle.",
+              "timestamp": "2026-08-03T10:19:38+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1eylbz",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1f5bk0",
+                  "author": "reddit_user_8100e2d9753b",
+                  "author_karma": 0,
+                  "content": "I get the sentiment, but as you said \"misguided at best\". Wherever the religious belief in witches waned or even got stomped out of existence, the public practice of burning women faded as well. Sometimes the death of the belief equals the death of the problem.",
+                  "timestamp": "2026-08-03T10:27:57+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1f47z8",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1f8y1f",
+                      "author": "[deleted]",
+                      "author_karma": 0,
+                      "content": "[removed]",
+                      "timestamp": "2026-08-03T10:54:21+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1f5bk0",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "comment_id": "p1f937m",
+              "author": "[deleted]",
+              "author_karma": 0,
+              "content": "[removed]",
+              "timestamp": "2026-08-03T10:55:23+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1eylbz",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1ezo8w",
+          "author": "reddit_user_df15b299549a",
+          "author_karma": 0,
+          "content": "Wut",
+          "timestamp": "2026-08-03T09:43:56+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1f26kn",
+          "author": "reddit_user_0ac0316db001",
+          "author_karma": 0,
+          "content": "Ngl, seems like a valid reason.",
+          "timestamp": "2026-08-03T10:04:03+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1f2l0z",
+              "author": "reddit_user_fe82e51c317a",
+              "author_karma": 0,
+              "content": "You sound like a muslim",
+              "timestamp": "2026-08-03T10:07:08+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1f26kn",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1f46l9",
+                  "author": "reddit_user_06b5b07b5c69",
+                  "author_karma": 0,
+                  "content": "Or like a tankie ",
+                  "timestamp": "2026-08-03T10:19:20+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1f2l0z",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1f77n3",
+                      "author": "[deleted]",
+                      "author_karma": 0,
+                      "content": "[removed]",
+                      "timestamp": "2026-08-03T10:42:04+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1f46l9",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                },
+                {
+                  "comment_id": "p1i175c",
+                  "author": "[deleted]",
+                  "author_karma": 0,
+                  "content": "[removed]",
+                  "timestamp": "2026-08-03T18:45:57+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1f2l0z",
+                  "depth": 2,
+                  "replies": []
+                },
+                {
+                  "comment_id": "p1irymg",
+                  "author": "[deleted]",
+                  "author_karma": 0,
+                  "content": "[removed]",
+                  "timestamp": "2026-08-03T20:42:45+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1f2l0z",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p1f2v7t",
+          "author": "reddit_user_985e55f832d7",
+          "author_karma": 0,
+          "content": "Islam, a relic of antiquity that just won’t die ",
+          "timestamp": "2026-08-03T10:09:17+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1f4rrz",
+              "author": "reddit_user_2208e9049042",
+              "author_karma": 0,
+              "content": "Along with Christianity Judaism and more...",
+              "timestamp": "2026-08-03T10:23:46+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1f2v7t",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p1f5lc2",
+              "author": "[deleted]",
+              "author_karma": 0,
+              "content": "[removed]",
+              "timestamp": "2026-08-03T10:30:00+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1f2v7t",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p1f6wsj",
+              "author": "reddit_user_54210298519e",
+              "author_karma": 0,
+              "content": "You can say that about every single religion. There is no rational reason to have any of them.",
+              "timestamp": "2026-08-03T10:39:53+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1f2v7t",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p1fbz0j",
+              "author": "[deleted]",
+              "author_karma": 0,
+              "content": "[removed]",
+              "timestamp": "2026-08-03T11:15:06+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1f2v7t",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1f57xi",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-03T10:27:11+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run018_post01_seed091",
+      "post_slot": 1,
+      "seed_index": 91,
+      "source_raw_post_id": "1ve971p",
+      "source_product_dir": "worldnews",
+      "source_file": "https://www.reddit.com/r/worldnews/comments/1ve971p/reform_uk_richard_tice_under_investigation_over/",
+      "post_type": "Behind Paywall",
+      "title": "Reform UK: Richard Tice under investigation over ‘failure to declare financial interest’",
+      "author": "reddit_user_bde1e90b951b",
+      "author_karma": 0,
+      "content": "Reform UK: Richard Tice under investigation over ‘failure to declare financial interest’",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p1f26ci",
+          "author": "reddit_user_e320faca37f4",
+          "author_karma": 0,
+          "content": "Hi Alarming-Safety3200. Your submission from telegraph.co.uk was removed for being behind a paywall. Articles posted to /r/worldnews must be accessible to the common redditor. Please use another source.\n\n*I am a bot, and this action was performed automatically. Please [contact the moderators of this subreddit](/message/compose/?to=/r/worldnews) if you have any questions or concerns.*",
+          "timestamp": "2026-08-03T10:04:00+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run018_post02_seed092",
+      "post_slot": 2,
+      "seed_index": 92,
+      "source_raw_post_id": "1ve990l",
+      "source_product_dir": "worldnews",
+      "source_file": "https://www.reddit.com/r/worldnews/comments/1ve990l/reform_uk_richard_tice_investigated_by/",
+      "post_type": "Dynamic Paywall",
+      "title": "Reform UK: Richard Tice investigated by parliamentary standards watchdog",
+      "author": "reddit_user_bde1e90b951b",
+      "author_karma": 0,
+      "content": "Reform UK: Richard Tice investigated by parliamentary standards watchdog",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p1f2ki9",
+          "author": "reddit_user_e320faca37f4",
+          "author_karma": 0,
+          "content": "This submission from bbc.co.uk is behind a dynamic paywall and may be unavailable in the United States. On the 26th of June 2025, the BBC implemented a dynamic paywall on [its website](https://www.bbc.com/news/articles/cx2vgkn7w10o). Articles posted to /r/worldnews should be accessible to everyone.\n\n*I am a bot, and this action was performed automatically. Please [contact the moderators of this subreddit](/message/compose/?to=/r/worldnews) if you have any questions or concerns.*",
+          "timestamp": "2026-08-03T10:07:02+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1f37pq",
+          "author": "reddit_user_aeb1b4098c16",
+          "author_karma": 0,
+          "content": "Investigation reveals Tice has no standards, more on this in the evening news with Clive Myrie. ",
+          "timestamp": "2026-08-03T10:11:55+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1f3zbb",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-03T10:17:48+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1f4egc",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-03T10:20:59+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1f5cfi",
+          "author": "reddit_user_4cdbc2dbed66",
+          "author_karma": 0,
+          "content": "Corrupt Elite Stooges of Foreign Billionaire Nonces Party is filled with corrupt elite stooges of foreign billionaire nonces?!",
+          "timestamp": "2026-08-03T10:28:08+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1f92rs",
+          "author": "reddit_user_ec0cac591605",
+          "author_karma": 0,
+          "content": "Was DOJ protecting American seniors from foreign scamming so only White Elite 1% can gain  that scammed money? Asking who is running Department of Justice as their own personal scam enforcement.",
+          "timestamp": "2026-08-03T10:55:18+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1fbj0w",
+              "author": "reddit_user_b68611aa559f",
+              "author_karma": 0,
+              "content": "WTF has that to do with this story?",
+              "timestamp": "2026-08-03T11:12:11+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1f92rs",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p1fbq9b",
+              "author": "reddit_user_9acae48811d2",
+              "author_karma": 0,
+              "content": "Forgot to take your grease?",
+              "timestamp": "2026-08-03T11:13:30+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1f92rs",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1fbxrw",
+                  "author": "reddit_user_ec0cac591605",
+                  "author_karma": 0,
+                  "content": "So it would seem.",
+                  "timestamp": "2026-08-03T11:14:53+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1fbq9b",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p1fa2y9",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-03T11:02:17+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1fbamn",
+          "author": "reddit_user_727f581e8190",
+          "author_karma": 0,
+          "content": "Convicted fraudster investigated for possible wire-fraud.",
+          "timestamp": "2026-08-03T11:10:38+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1fbc0b",
+          "author": "reddit_user_fe6485649143",
+          "author_karma": 0,
+          "content": "Shocker. ",
+          "timestamp": "2026-08-03T11:10:53+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1fbgv5",
+          "author": "reddit_user_465e8b5d79af",
+          "author_karma": 0,
+          "content": "So reforms 'leader' farage stepped down as an MP and is being investigated and now their second most senior MP is also being investigated \n\nthey have 8 mps? 5 of which were defected from another party ...so they have a single sitting MP not being investiaged that actually ran as a member of reform ...she won by 6 votes in a by-election \n\nloooooooooololol\n\nhow does anyone take these seriously",
+          "timestamp": "2026-08-03T11:11:47+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1feorx",
+              "author": "reddit_user_cd73057a1d3e",
+              "author_karma": 0,
+              "content": "Their current MPs are:\n\nEx-Tory 30p Lee who said meals could be provided for 30p a day\n\nRichard Tice, who is currently under a number of investigations\n\nSara Pochin who is just a garden variety lunatic\n\nEx-Tory Danny Kruger\n\nEx-Tory Robert Jenrick, famous for receiving a £10k donation from pornographer turned property developer Richard Desmond to avoid paying taxes and who is currently under investigation over money received when running for the Tory leadership\n\nEx-Tory Suella Braverman who was appointed Home Secretary by Liz Truss, before being forced out due to leaking classified information, somehow lasting less than Liz Truss.\n\nEx-Tory Andre Rosindell who was arrested by the Metropolitan Police on suspicion of indecent assault, sexual assault, rape, abuse of position of trust, and misconduct in public office, though there was insufficient evidence to prosecute. \n\nTheir former MPs are:\n\nNigel Farage\n\nRupert Lowe, who had a falling out with Farage and left the party to form his own further right party that is now taking a serious number of votes away from Reform.\n\nJames McMurdock who was convicted of assaulting his ex-girlfriend and who is currently suspending from the party while he is being investigated for COVID loan fraud.\n\nSo yes, truly the best people.",
+              "timestamp": "2026-08-03T11:32:57+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1fbgv5",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1flr2e",
+                  "author": "reddit_user_06bc73f4c480",
+                  "author_karma": 0,
+                  "content": "Anderson is also a former Labour MP. 3 parties deep and still on the con.\n\nPoachin is a disgraced former Magistrate who abused her position.\n\n",
+                  "timestamp": "2026-08-03T12:15:59+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1feorx",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1fracy",
+                      "author": "reddit_user_cd73057a1d3e",
+                      "author_karma": 0,
+                      "content": "He was never a Labour MP.\n\nHe was a member of the Labour party, and I think a Labour councillor at some point, but he was elected to parliament as a Tory",
+                      "timestamp": "2026-08-03T12:46:33+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1flr2e",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "p1frgpv",
+                          "author": "reddit_user_06bc73f4c480",
+                          "author_karma": 0,
+                          "content": "Ah fair enough - thank you.",
+                          "timestamp": "2026-08-03T12:47:31+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "p1fracy",
+                          "depth": 4,
+                          "replies": []
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "comment_id": "p1fp9l7",
+                  "author": "reddit_user_cc714edc04b6",
+                  "author_karma": 0,
+                  "content": "It’s telling that Lee Anderson is looking like the most honest, hardworking MP the party has.",
+                  "timestamp": "2026-08-03T12:35:41+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1feorx",
+                  "depth": 2,
+                  "replies": []
+                },
+                {
+                  "comment_id": "p1fqpay",
+                  "author": "reddit_user_17422f4e3131",
+                  "author_karma": 0,
+                  "content": "> Sara Pochin\n\nThe woman who went on socials and said that the rate of Domestic Violence spikes when the national team loses, which is true.\n\nShe followed that by saying \"so come on, England team, do your part to prevent DV\"",
+                  "timestamp": "2026-08-03T12:43:27+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1feorx",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1frn4d",
+                      "author": "reddit_user_cd73057a1d3e",
+                      "author_karma": 0,
+                      "content": "She also replaced one of the Handforth Parish Council elderly dickheads as Mayornof Eash Cheshire",
+                      "timestamp": "2026-08-03T12:48:27+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1fqpay",
+                      "depth": 3,
+                      "replies": []
+                    },
+                    {
+                      "comment_id": "p1gdekn",
+                      "author": "[deleted]",
+                      "author_karma": 0,
+                      "content": "[removed]",
+                      "timestamp": "2026-08-03T14:33:19+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1fqpay",
+                      "depth": 3,
+                      "replies": []
+                    },
+                    {
+                      "comment_id": "p1h9b12",
+                      "author": "reddit_user_d4b27c361692",
+                      "author_karma": 0,
+                      "content": "It also spikes when the National team wins… and draws.\n\nEvery time the National team plays, domestic violence spikes in that country.\n\n(It’s also the same with local teams. And tbf, so do health issues like heart attacks)",
+                      "timestamp": "2026-08-03T16:49:44+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1fqpay",
+                      "depth": 3,
+                      "replies": []
+                    },
+                    {
+                      "comment_id": "p1iahzy",
+                      "author": "reddit_user_85a4d68a64ab",
+                      "author_karma": 0,
+                      "content": "Her autocue broke during a streamed event in Scotland and she admitted her handlers worry when she goes off script.  Then proceeded to \"joke\" about having planned to coming on to do the speech in a tartan Burqa.",
+                      "timestamp": "2026-08-03T19:26:07+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1fqpay",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                },
+                {
+                  "comment_id": "p1gcmw1",
+                  "author": "reddit_user_8dacc5e3ed16",
+                  "author_karma": 0,
+                  "content": "Also important to note that Robert Jenrick and Suella Braverman were instrumental in the expansion of the conservative migrants hotel system, which is of course beloved by the reform party and their supporters.",
+                  "timestamp": "2026-08-03T14:29:50+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1feorx",
+                  "depth": 2,
+                  "replies": []
+                },
+                {
+                  "comment_id": "p1gd29u",
+                  "author": "reddit_user_00f61e666b65",
+                  "author_karma": 0,
+                  "content": "I'm disappointed you skipped over Braverman being Home secretary during the peak of small boat crossings",
+                  "timestamp": "2026-08-03T14:31:46+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1feorx",
+                  "depth": 2,
+                  "replies": []
+                },
+                {
+                  "comment_id": "p1gipl7",
+                  "author": "reddit_user_d3c02fe6443b",
+                  "author_karma": 0,
+                  "content": "Don't forget that Tice basically lives in Dubai to avoid paying tax here",
+                  "timestamp": "2026-08-03T14:56:45+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1feorx",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1i6l0n",
+                      "author": "reddit_user_cb5c10b38881",
+                      "author_karma": 0,
+                      "content": "Nothing says patriot more than flying in from the middle east at the taxpayer's expense.",
+                      "timestamp": "2026-08-03T19:09:04+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1gipl7",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "comment_id": "p1fg5u5",
+              "author": "reddit_user_0603ba60f09b",
+              "author_karma": 0,
+              "content": "Minor correction, they have 7 MPs, not 8. Because he stepped down, Farage isn't currently an MP.\n\nAlso, feels like there ought to be a rule in place that if you vacate your seat, you should be barred from running in the by-election caused by your vacancy. Farage isn't the first to do this (as articles talking about the ballot papers being 3ft long all mention the previous record for most candidates for a seat was when David Davis stepped down then ran in the by-election for the seat *he'd* just vacated back in 2008), and seems like a common sense thing to not have the dipshit who triggered the by-election in the first place be able to run for the seat they literally just vacated.",
+              "timestamp": "2026-08-03T11:42:24+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1fbgv5",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p1ficg4",
+              "author": "reddit_user_74c243244be9",
+              "author_karma": 0,
+              "content": "There is a reason they target the thick and the people who have absolutely no idea how politics or its various systems work.",
+              "timestamp": "2026-08-03T11:55:53+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1fbgv5",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1k3ff7",
+                  "author": "reddit_user_0157a9bd4d83",
+                  "author_karma": 0,
+                  "content": "Not nessessarily thick, just people with shit lives who'll do anything to fix it. They don't realise these parties will make things hell of a lot worse for them.",
+                  "timestamp": "2026-08-04T00:39:06+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1ficg4",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            },
+            {
+              "comment_id": "p1fn9sc",
+              "author": "reddit_user_b31be982fb08",
+              "author_karma": 0,
+              "content": "Ask the people of Clacton.  Journalists have been going around asking people who they intend to vote for, and a depressing number of them still intend to vote for Nige.  I genuinely don't understand what they see in him.",
+              "timestamp": "2026-08-03T12:24:41+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1fbgv5",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1fp5qx",
+                  "author": "reddit_user_c1239f03954f",
+                  "author_karma": 0,
+                  "content": "He says what they want to hear. That's all that matters to people like that. ",
+                  "timestamp": "2026-08-03T12:35:07+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1fn9sc",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1g35rq",
+                      "author": "reddit_user_01beaa20610a",
+                      "author_karma": 0,
+                      "content": "But then Restore are saying what they *really* want to hear…",
+                      "timestamp": "2026-08-03T13:46:09+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1fp5qx",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                },
+                {
+                  "comment_id": "p1g9khv",
+                  "author": "[deleted]",
+                  "author_karma": 0,
+                  "content": "[removed]",
+                  "timestamp": "2026-08-03T14:16:00+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1fn9sc",
+                  "depth": 2,
+                  "replies": []
+                },
+                {
+                  "comment_id": "p1gk22r",
+                  "author": "reddit_user_d3c02fe6443b",
+                  "author_karma": 0,
+                  "content": "They're balls deep into the Facebook and GBNews pipeline ",
+                  "timestamp": "2026-08-03T15:02:40+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1fn9sc",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1hn5k8",
+                      "author": "reddit_user_1db0604451da",
+                      "author_karma": 0,
+                      "content": "Are there some Ukrainian Special Forces guys who could do something about that pipeline? ",
+                      "timestamp": "2026-08-03T17:46:18+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1gk22r",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "comment_id": "p1ftlxx",
+              "author": "reddit_user_3d17147a8db2",
+              "author_karma": 0,
+              "content": "Yeah but it’s the “establishment” coming after them. 😂",
+              "timestamp": "2026-08-03T12:58:50+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1fbgv5",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p1fy8nb",
+              "author": "reddit_user_e9bb5d6c722f",
+              "author_karma": 0,
+              "content": ">how does anyone take these seriously\n\nThey provide easy answers if you don't think too hard, so the people for whom thoughts are in short supply take them very seriously ",
+              "timestamp": "2026-08-03T13:22:21+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1fbgv5",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p1g9x8k",
+              "author": "reddit_user_f4e264cd7cd1",
+              "author_karma": 0,
+              "content": "Because they have the same polling numbers as the ruling party? Arguably we didn't take these people seriously enough 15 years ago which led to the current political situation. Americans did the same in the 2010s with their politics",
+              "timestamp": "2026-08-03T14:17:38+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1fbgv5",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p1gbt60",
+              "author": "reddit_user_7affadb1d95f",
+              "author_karma": 0,
+              "content": "And that MP (sadly representing my old hometown) said that we should be wanting England to win more international matches to stop domestic abuse... rather than calling on men to not abuse their partners in the first place.",
+              "timestamp": "2026-08-03T14:26:09+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1fbgv5",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p1gyd3x",
+              "author": "reddit_user_3802f9282eb7",
+              "author_karma": 0,
+              "content": "It'd be really funny if they end up below the 6-seat threshold parties need to lay a wreath at the Cenotaph on Remembrance Day. Nigel was always SO salty about not being able to get that photo opportunity in particular, and they've only passed that number purely because three Tories defected to them.\n\nCan't quite see it happening in time for this year's one, but still, very funny considering he's been whinging about it since UKIP days.",
+              "timestamp": "2026-08-03T16:04:11+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1fbgv5",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1fbhur",
+          "author": "reddit_user_97258ff25cae",
+          "author_karma": 0,
+          "content": "Not really surprised honestly. Feels like these headlines about MPs and standards investigations pop up every other week now.",
+          "timestamp": "2026-08-03T11:11:58+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1fcd8e",
+          "author": "reddit_user_729a6bbb3643",
+          "author_karma": 0,
+          "content": "Quick, have another by election!",
+          "timestamp": "2026-08-03T11:17:41+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1fclyg",
+          "author": "reddit_user_97648022bf99",
+          "author_karma": 0,
+          "content": "Wondering how they will spin this news to make them seem more anti-establishment ",
+          "timestamp": "2026-08-03T11:19:17+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1fdju2",
+              "author": "reddit_user_b36fc1616c94",
+              "author_karma": 0,
+              "content": "Tice has already framed it as an anti-democratic establishment-led witch-hunt.",
+              "timestamp": "2026-08-03T11:25:28+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1fclyg",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1feo0w",
+                  "author": "reddit_user_5e4acad9179c",
+                  "author_karma": 0,
+                  "content": "I've yet to see one right wing politician who's not a weak and pathetic perpetual victim. I really wish they could stop crying for 5 minutes. If you can't stand the heat, get out of the kitchen. ",
+                  "timestamp": "2026-08-03T11:32:49+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1fdju2",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1fgm6z",
+                      "author": "reddit_user_b36fc1616c94",
+                      "author_karma": 0,
+                      "content": "I want politicians who will fearlessly submit themselves to scrutiny. I want our political representatives to be the best of us, including ethically. I want transparency. I want to know who funds them. What interests they represent. Who is benefiting from having legislation shaped in their favour. Because the ones who don’t want you to know? It ain’t us that’s benefiting.",
+                      "timestamp": "2026-08-03T11:45:13+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1feo0w",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "comment_id": "p1gm3ke",
+              "author": "reddit_user_7004702b554a",
+              "author_karma": 0,
+              "content": "We breakin all the rulez... of common decency.",
+              "timestamp": "2026-08-03T15:11:35+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1fclyg",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1fj92l",
+          "author": "reddit_user_4b43581eb773",
+          "author_karma": 0,
+          "content": "Remember Trump is their role model. They plan to grift like he does.",
+          "timestamp": "2026-08-03T12:01:17+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1fxed4",
+          "author": "reddit_user_39f73beb13ff",
+          "author_karma": 0,
+          "content": "Do I understand the article correctly: The allegation is that he he had a trip paid for by a pro-Israel lobby group, correctly registered the interest, but didn't explicitly mention the interest when making an Israel-related speech?",
+          "timestamp": "2026-08-03T13:18:10+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1ggz34",
+              "author": "reddit_user_e46a26db4d05",
+              "author_karma": 0,
+              "content": "Yes that's correct ",
+              "timestamp": "2026-08-03T14:49:07+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1fxed4",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1gjjes",
+                  "author": "reddit_user_39f73beb13ff",
+                  "author_karma": 0,
+                  "content": "Damn, out of all of the political scandals rolling round this one barely makes me look up from my copy of The Guardian...",
+                  "timestamp": "2026-08-03T15:00:22+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1ggz34",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p1gc5g5",
+          "author": "reddit_user_3f124073c804",
+          "author_karma": 0,
+          "content": "You love to see it!",
+          "timestamp": "2026-08-03T14:27:41+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1ggjjg",
+          "author": "reddit_user_1311569c4dec",
+          "author_karma": 0,
+          "content": "So... another Binface by-election?",
+          "timestamp": "2026-08-03T14:47:13+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1gy863",
+          "author": "reddit_user_2c261a6348c4",
+          "author_karma": 0,
+          "content": "As far as i can tell from outside there is only one trustworthy face in English politics. And he has a bin on his head",
+          "timestamp": "2026-08-03T16:03:36+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1j6btx",
+              "author": "reddit_user_1db0604451da",
+              "author_karma": 0,
+              "content": "Count Binface may turn out to be the first person to enter Westminster with honest intentions since Larry the Cat. ",
+              "timestamp": "2026-08-03T21:48:15+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1gy863",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1haclq",
+          "author": "reddit_user_0501da7a018f",
+          "author_karma": 0,
+          "content": "It's always the ones you most suspect.",
+          "timestamp": "2026-08-03T16:54:05+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1hxyfw",
+          "author": "reddit_user_b480ea6872e7",
+          "author_karma": 0,
+          "content": "No smoke without fire. Bent as a £7 note.",
+          "timestamp": "2026-08-03T18:31:51+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1hyh37",
+          "author": "reddit_user_ea8e70a77c53",
+          "author_karma": 0,
+          "content": "I bet £100 on \"found guilty; charges dropped\"",
+          "timestamp": "2026-08-03T18:34:07+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run018_post03_seed093",
+      "post_slot": 3,
+      "seed_index": 93,
+      "source_raw_post_id": "1ve9jjr",
+      "source_product_dir": "worldnews",
+      "source_file": "https://www.reddit.com/r/worldnews/comments/1ve9jjr/nauru_officially_changes_its_name_to_naoero/",
+      "post_type": "link",
+      "title": "Nauru officially changes its name to Naoero",
+      "author": "reddit_user_bde1e90b951b",
+      "author_karma": 0,
+      "content": "Nauru officially changes its name to Naoero",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p1g69ub",
+          "author": "reddit_user_7474818204f5",
+          "author_karma": 0,
+          "content": "still the only country comprised of a single island.  \n\ndon't trust the google AI, you can look in an atlas, or (ironically) zoom in on google maps.",
+          "timestamp": "2026-08-03T14:00:39+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1hahj0",
+              "author": "reddit_user_0ab55b1a6a30",
+              "author_karma": 0,
+              "content": "Bermuda and Dominica",
+              "timestamp": "2026-08-03T16:54:38+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1g69ub",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1hs0i7",
+                  "author": "reddit_user_335f614b40f4",
+                  "author_karma": 0,
+                  "content": "Dominica has a bunch of small islets surrounding it. Naoero doesn't even have a pebble that sticks above the surface outside of the island. I agree with Barbados, though.",
+                  "timestamp": "2026-08-03T18:06:29+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1hahj0",
+                  "depth": 2,
+                  "replies": []
+                },
+                {
+                  "comment_id": "p1jmp8m",
+                  "author": "reddit_user_7474818204f5",
+                  "author_karma": 0,
+                  "content": "not quite. Barbados has a minor island with a B&B.  Dominica has uninhabited offshore rock formations that do constitute separate landmasses!",
+                  "timestamp": "2026-08-03T23:09:45+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1hahj0",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p1g7mw2",
+          "author": "reddit_user_b02b5faecad1",
+          "author_karma": 0,
+          "content": "All the countries that existed for a long time have different names in different languages because that's what we used to do.\nAnd changes of name rarely work, Myanmar is still called Burma on regular and its been almost 40 years.",
+          "timestamp": "2026-08-03T14:07:00+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1g4qg4",
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1gh7hl",
+              "author": "reddit_user_c8ef5d25a985",
+              "author_karma": 0,
+              "content": "I’ve never heard anyone call Myanmar “Burma” except as a punchline in Seinfeld. Maybe it’s an older generation thing, but it’s been Myanmar my whole life and Burma sounds as archaic to me as Siam or Formosa.",
+              "timestamp": "2026-08-03T14:50:09+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1g7mw2",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1giyjt",
+                  "author": "reddit_user_c5faf08382d3",
+                  "author_karma": 0,
+                  "content": "The UK kept the name Burma because Myanmar was decided by the military junta in the late 80s. Yet to be seen how that shakes out. ",
+                  "timestamp": "2026-08-03T14:57:50+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1gh7hl",
+                  "depth": 2,
+                  "replies": []
+                },
+                {
+                  "comment_id": "p1gt86x",
+                  "author": "reddit_user_9361ddb49a2e",
+                  "author_karma": 0,
+                  "content": "In Italy it's still called Birmania.",
+                  "timestamp": "2026-08-03T15:42:21+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1gh7hl",
+                  "depth": 2,
+                  "replies": []
+                },
+                {
+                  "comment_id": "p1i2k4a",
+                  "author": "reddit_user_ab0d551279d9",
+                  "author_karma": 0,
+                  "content": "Burma and Myanmar derive from the same word, in fact they should both end in \"mah\" sounds but the final -r in Myanmar was taken from a non-rhotic British pronunciation where final -r are not pronounced, which led to an extra consonant in rhotic (eg North American) pronunciation.\n\nMyanmar should be pronounced something like \"Myanmah\", the new spelling actually made North American pronunciation further from the local pronunciation.",
+                  "timestamp": "2026-08-03T18:51:47+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1gh7hl",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1krwsg",
+                      "author": "reddit_user_f7737eae4e09",
+                      "author_karma": 0,
+                      "content": "You're right that the final -r is silent.\n\nAnd also \"mya\" is a single syllable. The \"my\" is pronounced like the **m** in **m**usic. Brits (including BBC announcers) often get this wrong, saying \"my-ann-mah\", while Americans usually say it right.",
+                      "timestamp": "2026-08-04T02:55:31+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1i2k4a",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p1g8apy",
+          "author": "reddit_user_0911bd787956",
+          "author_karma": 0,
+          "content": "Deutschland and Tyskland should be grouped together. They both have the same origin.",
+          "timestamp": "2026-08-03T14:10:07+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1fcc9i",
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1gughi",
+              "author": "reddit_user_04f52b571792",
+              "author_karma": 0,
+              "content": "And English uses its cognate for the Dutch.",
+              "timestamp": "2026-08-03T15:47:35+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1g8apy",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1g8hbj",
+          "author": "reddit_user_abbdc44f02b2",
+          "author_karma": 0,
+          "content": "Burma is complicated because IIRC Myanmar was chosen by the military junta, which has its own set of problems. So it's not universally supported by Burmese people either. It's not as straightforward as calling Bombay Mumbai because of post colonial changes. Or Peking Beijing.",
+          "timestamp": "2026-08-03T14:10:57+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1fu19l",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1g9lh5",
+          "author": "reddit_user_56854d2628b9",
+          "author_karma": 0,
+          "content": "Thought this said Naruto",
+          "timestamp": "2026-08-03T14:16:08+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1gap96",
+              "author": "reddit_user_c6cfe02a8442",
+              "author_karma": 0,
+              "content": "Then we also need hinata ",
+              "timestamp": "2026-08-03T14:21:12+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1g9lh5",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p1gt2vr",
+              "author": "reddit_user_bda72b76d052",
+              "author_karma": 0,
+              "content": "Yeah me too I thought they were trying to cash in 😂",
+              "timestamp": "2026-08-03T15:41:43+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1g9lh5",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1g9s7x",
+          "author": "reddit_user_be73efda220a",
+          "author_karma": 0,
+          "content": "Cote D’Ivoire still fighting the losing battle 40 years on :(",
+          "timestamp": "2026-08-03T14:17:00+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1f87a0",
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1gahva",
+              "author": "reddit_user_c5faf08382d3",
+              "author_karma": 0,
+              "content": "Well yeah precisely, I still usually hear Ivory Coast, and they didn’t even pick a particularly unpronounceable/spellable name ",
+              "timestamp": "2026-08-03T14:20:16+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1g9s7x",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p1gzt4u",
+              "author": "reddit_user_d9410ba32982",
+              "author_karma": 0,
+              "content": "I mean it is kind of funny to switch to the French spelling on English maps. We anglicise all country names so if they had their way and everyone said Cote D'Ivoire it would be an English sounding butchery of the name anyway.",
+              "timestamp": "2026-08-03T16:10:18+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1g9s7x",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p1gzus5",
+              "author": "reddit_user_d9410ba32982",
+              "author_karma": 0,
+              "content": "I mean it is kind of funny to switch to the French spelling on English maps. We anglicise all country names so if they had their way and everyone said Cote D'Ivoire it would be an English sounding butchery of the name anyway.",
+              "timestamp": "2026-08-03T16:10:30+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1g9s7x",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p1gzwgp",
+              "author": "reddit_user_d9410ba32982",
+              "author_karma": 0,
+              "content": "I mean it is kind of funny to switch to the French spelling on English maps. We anglicise all country names so if they had their way and everyone said Cote D'Ivoire it would be an English sounding butchery of the name anyway.",
+              "timestamp": "2026-08-03T16:10:42+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1g9s7x",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p1h85s6",
+              "author": "reddit_user_26687a7c7d2a",
+              "author_karma": 0,
+              "content": "Weird move for them to double down on a colonial name by really highlighting just how much they love their one particular colonial power and insisting that even English must use the French.\n\nRegardless, they’ll be the Ivory Coast to me until they become a respectable country that gets rids of their slavery issue.",
+              "timestamp": "2026-08-03T16:44:59+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1g9s7x",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1gafax",
+          "author": "reddit_user_5f0706913fc3",
+          "author_karma": 0,
+          "content": "How often do people mention Nauru anyways? I have a bigger issue with the demonym: dei-Naoero. Completely goes against any convention.",
+          "timestamp": "2026-08-03T14:19:57+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1f87a0",
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1jv9x7",
+              "author": "reddit_user_53b57bf64cb0",
+              "author_karma": 0,
+              "content": "A person from Vanuatu is known as a ni-Vanuatu and a person from Botswana is a Motswana",
+              "timestamp": "2026-08-03T23:54:56+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1gafax",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1gc182",
+          "author": "reddit_user_c5faf08382d3",
+          "author_karma": 0,
+          "content": "Are you suggesting a country changing its desired English name is analogous to a trans person assuming their true identity? Comparing a living person's identity to a geopolitical entity's English translation seems pretty belittling, honestly.",
+          "timestamp": "2026-08-03T14:27:09+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1g5hji",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1gcoj7",
+          "author": "reddit_user_c4c9e221064a",
+          "author_karma": 0,
+          "content": "Pronounce it as it is written, and not as you'd read it through the lens of English orthography",
+          "timestamp": "2026-08-03T14:30:02+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1faikk",
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1i5b09",
+              "author": "reddit_user_a6f4717b8f58",
+              "author_karma": 0,
+              "content": "Nay-oh-aero it is.",
+              "timestamp": "2026-08-03T19:03:30+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1gcoj7",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1iq9uc",
+                  "author": "reddit_user_c010c26715c2",
+                  "author_karma": 0,
+                  "content": "The \"ay\" sound (long a sound) isn't how \"a\" would be pronounced. Most languages would use the short vowel sound. That pronunciation is still an English interpretation of the word.",
+                  "timestamp": "2026-08-03T20:35:19+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1i5b09",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            },
+            {
+              "comment_id": "p1i6qhw",
+              "author": "reddit_user_5869c561c819",
+              "author_karma": 0,
+              "content": "Still a vague instruction to say \"as it's written. How about \"assign every vowel its short sound and don't combine any the way you do in English.\" You see an A, say \"ah\", you see an O, say \"oh\", you see an E, say \"eh.\" I imagine this would be easy for lots of non-English languages, from Spanish to Japanese.",
+              "timestamp": "2026-08-03T19:09:45+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1gcoj7",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1ghugj",
+          "author": "reddit_user_926a6a644ebd",
+          "author_karma": 0,
+          "content": "Why? I call them turkiye all the time since I saw the news about that",
+          "timestamp": "2026-08-03T14:52:57+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1fnxov",
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1gnus7",
+              "author": "reddit_user_e2906892e83d",
+              "author_karma": 0,
+              "content": "Why, though?\n\nPersonally speaking, I'll probably switch over when the Turkish people I know and respect and whose opinion I value switch over, but that hasn't happened yet.\n\nI guess the fact that this \"name change\" is being pushed by an authoritarian strongman while the general population doesn't give a flying fuck might be part of it.",
+              "timestamp": "2026-08-03T15:19:12+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1ghugj",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1gqr5z",
+                  "author": "reddit_user_926a6a644ebd",
+                  "author_karma": 0,
+                  "content": "It doesn't cost me anything, I'm from a country that struggles with the written from rather than the pronunciation, but foreigners always have to bend backwards to justify writing it they way they want to when the official name is different.",
+                  "timestamp": "2026-08-03T15:31:43+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1gnus7",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1h6e6e",
+                      "author": "reddit_user_e2906892e83d",
+                      "author_karma": 0,
+                      "content": "But why go along with the wishes of an authoritarian regime? What's the benefit other than submitting to the regime?\n\nForeigners don't have to justify anything. They don't speak Turkish, they don't live in Turkey, they're not subject to Turkish legislation or the Turkish regime, and I don't see how writing/pronouncing the name of the country one way rather than another way benefits the general population when the general population doesn't even demand that foreigners write/pronounce the name of their country a certain way.",
+                      "timestamp": "2026-08-03T16:37:43+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1gqr5z",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "p1hfyx6",
+                          "author": "reddit_user_926a6a644ebd",
+                          "author_karma": 0,
+                          "content": "I don't have Turkish friends like you to know if any of this is true, from my perspective it makes sense not wanting my country to be the butt of the joke because someone decided to name a bird Americans eat on a holiday the same way, I feel probably the only reason Turkish people reject the idea it's because it came from the dictatorship but if it had come from a democratic leadership they wouldn't be against it, but as I said that's just an assumption",
+                          "timestamp": "2026-08-03T17:16:54+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "p1h6e6e",
+                          "depth": 4,
+                          "replies": [
+                            {
+                              "comment_id": "p1hi49p",
+                              "author": "reddit_user_e2906892e83d",
+                              "author_karma": 0,
+                              "content": "> I feel probably the only reason Turkish people reject the idea it's because it came from the dictatorship but if it had come from a democratic leadership they wouldn't be against it, but as I said that's just an assumption\n\nThat may very well be true, but I would say that it makes all the difference.",
+                              "timestamp": "2026-08-03T17:25:38+00:00",
+                              "likes": 1,
+                              "dislikes": 0,
+                              "parent_comment_id": "p1hfyx6",
+                              "depth": 5,
+                              "replies": [
+                                {
+                                  "comment_id": "p1hk5jc",
+                                  "author": "reddit_user_926a6a644ebd",
+                                  "author_karma": 0,
+                                  "content": "I would have to know more about the context I guess, if you have any sources on why the Turkish people reject the turkiye name I would be interested ",
+                                  "timestamp": "2026-08-03T17:33:56+00:00",
+                                  "likes": 1,
+                                  "dislikes": 0,
+                                  "parent_comment_id": "p1hi49p",
+                                  "depth": 6,
+                                  "replies": [
+                                    {
+                                      "comment_id": "p1hs48u",
+                                      "author": "reddit_user_e2906892e83d",
+                                      "author_karma": 0,
+                                      "content": "It's not so much that they reject the name \"Türkiye,\" since that's simply the name of the country in Turkish. It's that they saw the weird rebranding campaign - forcing the Turkish name to be the name that gets used internationally - as pandering to ultranationalists and as an attempted distraction before the elections, at a time when Turkey was dealing with real problems like inflation and an economic crisis.\n\nPeople I know will obviously use the name \"Türkiye\" when they're speaking Turkish, but will simply use the established name in the other language whenever they're speaking that other language - e.g. they'll just use \"Turkey\" when speaking English.\n\nI don't have any more insight than that, but I guess there's enough information to be found online.",
+                                      "timestamp": "2026-08-03T18:06:56+00:00",
+                                      "likes": 1,
+                                      "dislikes": 0,
+                                      "parent_comment_id": "p1hk5jc",
+                                      "depth": 7,
+                                      "replies": []
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "comment_id": "p1i52u8",
+                  "author": "reddit_user_a6f4717b8f58",
+                  "author_karma": 0,
+                  "content": "Isn't it pronounced exactly the same?",
+                  "timestamp": "2026-08-03T19:02:32+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1gnus7",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            },
+            {
+              "comment_id": "p1gylcv",
+              "author": "reddit_user_2eb2ba78240d",
+              "author_karma": 0,
+              "content": "Because every country has different names in different languages. A country does not get to police other people's language.",
+              "timestamp": "2026-08-03T16:05:10+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1ghugj",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1h0ts7",
+                  "author": "reddit_user_926a6a644ebd",
+                  "author_karma": 0,
+                  "content": "If you think requesting it's the same as policing you might have a victim complex, you're gonna have to touch base with your therapist for that I can't help you",
+                  "timestamp": "2026-08-03T16:14:35+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1gylcv",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1h1tta",
+                      "author": "reddit_user_2eb2ba78240d",
+                      "author_karma": 0,
+                      "content": "Saying \"This is our name and what you should call it in your language.\" is very much policing other languages. They are free to call their country what they want in their language but no one will follow that.",
+                      "timestamp": "2026-08-03T16:18:47+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1h0ts7",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "p1h70ic",
+                          "author": "reddit_user_926a6a644ebd",
+                          "author_karma": 0,
+                          "content": "Seriously, victim complex, take it in consideration or something because what you're saying it's not normal, that is not policing at all. Are you from the us by any chance?",
+                          "timestamp": "2026-08-03T16:40:17+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "p1h1tta",
+                          "depth": 4,
+                          "replies": [
+                            {
+                              "comment_id": "p1hetma",
+                              "author": "reddit_user_2eb2ba78240d",
+                              "author_karma": 0,
+                              "content": "Maybe reflect a bit on yourself instead, there is a reason you are being downvoted. That being that you are completely wrong.\n\nI'm a left wing voter in Sweden for your information. Try to reflect over what you say instead of going to personal attacks when you can't argue against it.",
+                              "timestamp": "2026-08-03T17:12:18+00:00",
+                              "likes": 1,
+                              "dislikes": 0,
+                              "parent_comment_id": "p1h70ic",
+                              "depth": 5,
+                              "replies": [
+                                {
+                                  "comment_id": "p1hgy3d",
+                                  "author": "reddit_user_926a6a644ebd",
+                                  "author_karma": 0,
+                                  "content": "I'm reflecting on the definition of policing and I just can't find how requesting to be called turkiye instead of turkey could be policing in any way. By what means would the government enforce it to be policing? \n\nI get downvotean a lot, I get up voted even more you can see it in my karma, in my experience it doesn't really mean anything.\n\nLet's keep arguing though",
+                                  "timestamp": "2026-08-03T17:20:51+00:00",
+                                  "likes": 1,
+                                  "dislikes": 0,
+                                  "parent_comment_id": "p1hetma",
+                                  "depth": 6,
+                                  "replies": []
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p1ghx57",
+          "author": "reddit_user_3a52a902d014",
+          "author_karma": 0,
+          "content": "It is common for countries to be called something different in their own language/country.\n\nHowever, what is uncommon is whether that is the official name used in international relations.\n\nThere are very few countries that use the name of their country in their language as the official name of the country they request in an international context.\n\n\\- Germany (Federal Republic of Germany)\n\n\\- China (People’s Republic of China)\n\n\\- Ivory Coast (Côte d’Ivoire)\n\n\\- Cape Verde (Cabo Verde)\n\n\\- Turkey (Türkiye)\n\nThese are just a few off the top. But yeah, it is very much quite rare.\n\nHungary for instance changed their name from “Republic of Hungary” to just “Hungary” internationally. They don’t use the name in Hungarian.",
+          "timestamp": "2026-08-03T14:53:17+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1fap60",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1gic50",
+          "author": "reddit_user_cd27a7eecb12",
+          "author_karma": 0,
+          "content": "“No” as in “no you can’t live here please go home”",
+          "timestamp": "2026-08-03T14:55:08+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1g4248",
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1gua5l",
+              "author": "reddit_user_a1d24bc76cc5",
+              "author_karma": 0,
+              "content": "i mean that may also be true but more to the point have you ever heard an australian say the word no",
+              "timestamp": "2026-08-03T15:46:50+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1gic50",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p1h5iq3",
+              "author": "reddit_user_26687a7c7d2a",
+              "author_karma": 0,
+              "content": "We don’t mind the Nauruese. They even used to be a territory of Australia before they became independent. They’re also where *we* send people as they have refugee detainment facilities on their land.",
+              "timestamp": "2026-08-03T16:34:07+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1gic50",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p1h8urv",
+              "author": "reddit_user_acf55aed1ca1",
+              "author_karma": 0,
+              "content": "whoosh",
+              "timestamp": "2026-08-03T16:47:52+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1gic50",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1gm6k7",
+          "author": "reddit_user_60c230a15184",
+          "author_karma": 0,
+          "content": "Knowing how dumb English is, it's probably both.\n\nRemember that you can spell fish as ghoti.",
+          "timestamp": "2026-08-03T15:11:57+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1g00um",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1gqmbi",
+          "author": "reddit_user_d4fcc2b3b074",
+          "author_karma": 0,
+          "content": "I don’t know really. It’s hard to know if they’re intending to use an IPA transliteration or a standard English transliteration.\n\nThe ‘oe’ in ‘canoe’ is pronounced as the long ‘oo’ sound as in ‘loo’ or ‘stew’ or ‘shoe.’ So for all I know it really could be pronounced ‘nah-oo-roh’ or something.",
+          "timestamp": "2026-08-03T15:31:08+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1g00um",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1gskft",
+          "author": "reddit_user_2cd4e88a7ef9",
+          "author_karma": 0,
+          "content": "Is Czechia still a thing?",
+          "timestamp": "2026-08-03T15:39:30+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1hbmjl",
+              "author": "reddit_user_26687a7c7d2a",
+              "author_karma": 0,
+              "content": "Yes. Weirdly some minority of people push back on it even though going from “Czech Republic” to “Czechia” was just standardising it with every other country which doesn’t mention its political status in its official shorthand.",
+              "timestamp": "2026-08-03T16:59:16+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1gskft",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1i2pvs",
+                  "author": "reddit_user_c0deec69ef7d",
+                  "author_karma": 0,
+                  "content": "Hey, there are at least five of us. And yes, we do take issue with the name “Czechia” and yes, we’re largely the same group who takes issue with calling Saudi Arabia “Saudi”, but names matter. ",
+                  "timestamp": "2026-08-03T18:52:27+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1hbmjl",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1i6g3x",
+                      "author": "reddit_user_26687a7c7d2a",
+                      "author_karma": 0,
+                      "content": "I agree that names matter, but -ia means “Land of”. Czechia = Land of the Czechs. It’s a pretty accurate description of the country.",
+                      "timestamp": "2026-08-03T19:08:28+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1i2pvs",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "p1imym5",
+                          "author": "reddit_user_c0deec69ef7d",
+                          "author_karma": 0,
+                          "content": "Except legally, it’s the Czech Republic. I was only half joking, I really do have strong opinions about this. And that’s also not what that suffix means. Epstein’s island may have been entirely peopled with pedophiles, but it nobody calls it “Pedophilia,” although maybe that’s not the best example because that one kind of works. ",
+                          "timestamp": "2026-08-03T20:20:47+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "p1i6g3x",
+                          "depth": 4,
+                          "replies": [
+                            {
+                              "comment_id": "p1ivrsr",
+                              "author": "reddit_user_26687a7c7d2a",
+                              "author_karma": 0,
+                              "content": "\\-ia is really just the more anglo version of -istan. You can swap the suffixes around and the meaning never changes. Afghania, Bulgaristan, Turkmenia, etc.\n\nThe only thing that changes is the level of offence people have hearing them.",
+                              "timestamp": "2026-08-03T20:59:37+00:00",
+                              "likes": 1,
+                              "dislikes": 0,
+                              "parent_comment_id": "p1imym5",
+                              "depth": 5,
+                              "replies": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p1gt2ck",
+          "author": "reddit_user_2f8582e22ebb",
+          "author_karma": 0,
+          "content": "It also helps that the new name is so different than the previous one that it doesn't come off as \"making things more difficult out of pettyness\"",
+          "timestamp": "2026-08-03T15:41:39+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1fyxmk",
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1i3qqq",
+              "author": "reddit_user_ab0d551279d9",
+              "author_karma": 0,
+              "content": "In fact, they call themselves eSwatini, but said it was fine and normal for other languages to move the capital letter to the front, Eswatini, to fit their writing rules.",
+              "timestamp": "2026-08-03T18:56:51+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1gt2ck",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p1inf3u",
+              "author": "reddit_user_5e14909ee94c",
+              "author_karma": 0,
+              "content": "Also people are more inclined to change to the new name if there is a good justification. Eswatini: Colonization and ethnic tensions associated with the old name? Ok we can learn a new name. Turkey: Megalomaniac president is of the opinion that the perfectly normal anglicized name needs to change because he said so? Nah.",
+              "timestamp": "2026-08-03T20:22:46+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1gt2ck",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1gtn9d",
+          "author": "reddit_user_9361ddb49a2e",
+          "author_karma": 0,
+          "content": "Preisen ???",
+          "timestamp": "2026-08-03T15:44:09+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1fcc9i",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1gvcoa",
+          "author": "reddit_user_35eeabc4a14a",
+          "author_karma": 0,
+          "content": "Turkey was always Turkiye, they just asked everyone writing and speaking English to use that too.",
+          "timestamp": "2026-08-03T15:51:21+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1f5j5c",
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1hdqkx",
+              "author": "reddit_user_5b2d45438100",
+              "author_karma": 0,
+              "content": "Now watch what happens when England tells the world to change their languages so they all use 'England'. The Graun would have a field day; the grievance industry would dine out.",
+              "timestamp": "2026-08-03T17:07:53+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1gvcoa",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p1ks5x1",
+              "author": "reddit_user_f7737eae4e09",
+              "author_karma": 0,
+              "content": "\\* T*ü*rkiye.",
+              "timestamp": "2026-08-04T02:57:01+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1gvcoa",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1gw6ms",
+          "author": "reddit_user_5c6412206267",
+          "author_karma": 0,
+          "content": "From what I've seen, name changes like this where the pronunciation is more or less the same are less likely to be observed by the general public outside the country itself. Major name changes typically stick, spelling changes with similar pronunciations... not so much.",
+          "timestamp": "2026-08-03T15:54:53+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1g3llp",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1gwb40",
+          "author": "reddit_user_d9410ba32982",
+          "author_karma": 0,
+          "content": "Turkey's issue can probably be explained by it not being that much of a change and the addition of the ü makes English speakers second guess how to pronounce it. Zaire -> Congo imo works because it's easier to speak and is a significant enough change that anyone growing up only seeing Congo will be confused if you say Zaire.",
+          "timestamp": "2026-08-03T15:55:25+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1g3llp",
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1kq6q5",
+              "author": "reddit_user_f7737eae4e09",
+              "author_karma": 0,
+              "content": "The country has been called Congo for several centuries, except for about 30 years when it was Zaire. So both older people and younger people will have learned that name in school.",
+              "timestamp": "2026-08-04T02:45:23+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1gwb40",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1gy3tp",
+          "author": "reddit_user_0f2c3ee0ad85",
+          "author_karma": 0,
+          "content": "Crossword designers are reportedly thrilled",
+          "timestamp": "2026-08-03T16:03:05+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1gycy1",
+          "author": "reddit_user_d9410ba32982",
+          "author_karma": 0,
+          "content": "Yes also somewhere like China has unique names for countries or if with a Chinese work around pronunciation similar to how we anglicise country names. If I say Germany in English no Germans care but if I said it while speaking German it would be weird. ",
+          "timestamp": "2026-08-03T16:04:10+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1g4qg4",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1gyfum",
+          "author": "reddit_user_d9410ba32982",
+          "author_karma": 0,
+          "content": "Yes also somewhere like China has unique names for countries or if with a Chinese work around pronunciation similar to how we anglicise country names. If I say Germany in English no Germans care but if I said it while speaking German it would be weird. ",
+          "timestamp": "2026-08-03T16:04:31+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1g4qg4",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1gyjev",
+          "author": "reddit_user_d9410ba32982",
+          "author_karma": 0,
+          "content": "Yes also somewhere like China has unique names for countries or if with a Chinese work around pronunciation similar to how we anglicise country names. If I say Germany in English no Germans care but if I said it while speaking German it would be weird.",
+          "timestamp": "2026-08-03T16:04:57+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1g4qg4",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1gyy7s",
+          "author": "reddit_user_a2fc668a7bc4",
+          "author_karma": 0,
+          "content": "It says in the article dude",
+          "timestamp": "2026-08-03T16:06:42+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1f94mu",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1gz3yw",
+          "author": "reddit_user_1faf090f6179",
+          "author_karma": 0,
+          "content": "Oh god... the weebs are gonna have a field day with this name",
+          "timestamp": "2026-08-03T16:07:23+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1h3ybx",
+          "author": "reddit_user_165149ad6381",
+          "author_karma": 0,
+          "content": "the Dutch were much closer to England than Germany, so they got to keep the \"Deutsch\" label whilst Germany got given an old Roman name. Meanwhile the French called them Allemands after an ancient Germanic Tribe. ",
+          "timestamp": "2026-08-03T16:27:35+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1fecw0",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1h6pc3",
+          "author": "reddit_user_26687a7c7d2a",
+          "author_karma": 0,
+          "content": "To be fair, Japan actually can read and type latin script, which they call Romaji. It’s mostly used for acronyms, but it is still something they know how to roughly pronounce.",
+          "timestamp": "2026-08-03T16:39:02+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1fgbtx",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1h96av",
+          "author": "reddit_user_26687a7c7d2a",
+          "author_karma": 0,
+          "content": "If I was to go to Japan, I wouldn’t be mad if they spelt my name アシュリー (Ashurī) because the letter L just isn’t standard for them. It’s their language and as long as it vaguely represents me it’s fine.",
+          "timestamp": "2026-08-03T16:49:11+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1fbuar",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1ha6x5",
+          "author": "reddit_user_0ab55b1a6a30",
+          "author_karma": 0,
+          "content": "ok?",
+          "timestamp": "2026-08-03T16:53:25+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1ffd9p",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1hb7fh",
+          "author": "reddit_user_26687a7c7d2a",
+          "author_karma": 0,
+          "content": "The Philippines didn’t have an internal name before colonisation. They were a bunch of independent islands that only got collective names from outsiders.\n\nMauritius was uninhabited before colonisation, the colonial name is the only name.",
+          "timestamp": "2026-08-03T16:57:33+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1fj5js",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1hd4k2",
+          "author": "reddit_user_f3e41795c0f5",
+          "author_karma": 0,
+          "content": "Naoero has three vowels next to each other. Say it fast enough and it all blends into Nauru. I don't think this will stick.",
+          "timestamp": "2026-08-03T17:05:22+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1ffe06",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1hde19",
+          "author": "reddit_user_5b2d45438100",
+          "author_karma": 0,
+          "content": "is it really English though? It doesn't follow English phonetics, and has an umlaut, which doesn't exist in the English alphabet.",
+          "timestamp": "2026-08-03T17:06:27+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1g22ha",
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1hqj0u",
+              "author": "reddit_user_134d0f8ae2cf",
+              "author_karma": 0,
+              "content": "Yeah I guess it’s straight up Turkish alphabet and it’s everyone’s guess how to pronounce it. Pretty confusing change, and it doesn’t seem to affect any other language except English. In Ukrainian for example it’s Туреччина ",
+              "timestamp": "2026-08-03T18:00:15+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1hde19",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1hdz0i",
+          "author": "reddit_user_b2aa6e19699f",
+          "author_karma": 0,
+          "content": "I read Naruto instead of Nauru and I couldn’t understand why everyone was talking about an island on the other side of the world lol",
+          "timestamp": "2026-08-03T17:08:49+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1hgw6j",
+          "author": "reddit_user_7a6641e590df",
+          "author_karma": 0,
+          "content": "With cranberiye sauce ",
+          "timestamp": "2026-08-03T17:20:38+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1f5j5c",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1hoj71",
+          "author": "reddit_user_56ace0a65ab5",
+          "author_karma": 0,
+          "content": "Zaire used to be congo, then got its name changed by dictator mobutu, then changed back to congo. So it's more that people kept calling Zaire Congo rather than the other way around.",
+          "timestamp": "2026-08-03T17:51:58+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1g3llp",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1hpsmh",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[deleted]",
+          "timestamp": "2026-08-03T17:57:10+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1g3llp",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1hx0ti",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-03T18:27:50+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1flxda",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1i0vnt",
+          "author": "reddit_user_139b2d62bc4d",
+          "author_karma": 0,
+          "content": "That combination of vowels (to my knowledge) doesn't even exist in English and native English speakers won't be able to pronounce it easily. Most English speakers will just pronounce it like \"Nauru\" because that's how it is Anglicised. For that reason the name change (like the Türkiye one) doesn't really make any sense, except for trolling English speakers by adding even more words that are spelled differently to how they are pronounced.",
+          "timestamp": "2026-08-03T18:44:34+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1g00um",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1i1834",
+          "author": "reddit_user_8ef4da17dda4",
+          "author_karma": 0,
+          "content": "Congo was also only called Zaire for 26 years. ",
+          "timestamp": "2026-08-03T18:46:04+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1g3llp",
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1i9kje",
+              "author": "reddit_user_89ee7fd6b877",
+              "author_karma": 0,
+              "content": "Glad to know Zaire still exists. I've been wondering where it went. Ditto Kiev.\n\nShall we call Great Britain Albion?\n\nSo many place names in New Zealand have changed that it's become two countries with two different names!",
+              "timestamp": "2026-08-03T19:22:04+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1i1834",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1jte0c",
+                  "author": "[deleted]",
+                  "author_karma": 0,
+                  "content": "[removed]",
+                  "timestamp": "2026-08-03T23:44:47+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1i9kje",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p1i1yls",
+          "author": "reddit_user_a2b2ef19daa2",
+          "author_karma": 0,
+          "content": "Agreed, people didn’t care when Czechia changed, or The Netherlands said to stop calling them Holland, or when eSwatini changed… given that the only people who will be talking about Naoero are most likely geography nerds it shouldn’t be that difficult.",
+          "timestamp": "2026-08-03T18:49:14+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1fnlem",
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1inxtj",
+              "author": "reddit_user_0f52c9164cbd",
+              "author_karma": 0,
+              "content": "Nobody cared because those other examples are perfectly pronounceable in English without guessing. Notice how nearly every English speaker still says Turkey instead of Türkiye despite the country changing its official English name to Türkiye years ago. This is pretty much the same thing, and it isn't unique to English. Names are always gonna be adjusted by native speakers to be pronounceable by that language's common rules.",
+              "timestamp": "2026-08-03T20:25:04+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1i1yls",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1i31y2",
+          "author": "reddit_user_ab0d551279d9",
+          "author_karma": 0,
+          "content": "And the Japanese for Spain is スペイン supein from English \"Spain\". They seem to get a lot of country names in Europe from other languages' names for them.",
+          "timestamp": "2026-08-03T18:53:54+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1g3hxw",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1i3cud",
+          "author": "reddit_user_ab0d551279d9",
+          "author_karma": 0,
+          "content": "Polish Niemcy comes from \"niemy\" which means \"unable to speak\"",
+          "timestamp": "2026-08-03T18:55:11+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1fgujs",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1i7n0a",
+          "author": "reddit_user_fac148c068cd",
+          "author_karma": 0,
+          "content": "Listen, Turkey can change how its name is said internally all it wants, but it can't demand every other language change how they spell or pronounce it.\n\nThe Czechs call Great Britain \"Velká Británie\", but it would be extraordinarily improper (not to mention confusing) to insist they stop using \"Velká Británie\" just because that isn't what the Brits call themselves. ",
+          "timestamp": "2026-08-03T19:13:40+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1fp4ic",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1i7vmi",
+          "author": "reddit_user_be6a282761ba",
+          "author_karma": 0,
+          "content": "The Finnish word, Saksa, comes from Saxony.",
+          "timestamp": "2026-08-03T19:14:42+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1fgujs",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1ik1y0",
+          "author": "reddit_user_301c8cd3614a",
+          "author_karma": 0,
+          "content": "Nauru officially misunderstands the concept of an exonym and that it is impossible for Nauru to change its name in all of the globe's other languages.",
+          "timestamp": "2026-08-03T20:08:05+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1iz7ka",
+          "author": "reddit_user_c6bea1d3bc74",
+          "author_karma": 0,
+          "content": "I was in Swaziland when their president, on his birthday, changed the country name to Eswatini. The locals looked as puzzled as I was.",
+          "timestamp": "2026-08-03T21:15:16+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1j92so",
+          "author": "reddit_user_35e68255ba8a",
+          "author_karma": 0,
+          "content": "I don’t follow. Are you just talking about the way country names are translated in one place vs another? I wouldn’t call them different names really, just translations.",
+          "timestamp": "2026-08-03T22:01:19+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1g4qg4",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1k81uf",
+          "author": "reddit_user_de0816e613c9",
+          "author_karma": 0,
+          "content": "Australians debating how to say \"no.\"",
+          "timestamp": "2026-08-04T01:04:19+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run018_post04_seed094",
+      "post_slot": 4,
+      "seed_index": 94,
+      "source_raw_post_id": "1ve9s1t",
+      "source_product_dir": "worldnews",
+      "source_file": "https://www.reddit.com/r/worldnews/comments/1ve9s1t/my_only_son_was_shot_standing_up_for_justice/",
+      "post_type": "Dynamic Paywall",
+      "title": "'My only son was shot standing up for justice' - inside city gripped by deadly protests in Pakistan-administered Kashmir",
+      "author": "reddit_user_bde1e90b951b",
+      "author_karma": 0,
+      "content": "'My only son was shot standing up for justice' - inside city gripped by deadly protests in Pakistan-administered Kashmir",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p1f6e0o",
+          "author": "reddit_user_e320faca37f4",
+          "author_karma": 0,
+          "content": "This submission from bbc.com is behind a dynamic paywall and may be unavailable in the United States. On the 26th of June 2025, the BBC implemented a dynamic paywall on [its website](https://www.bbc.com/news/articles/cx2vgkn7w10o). Articles posted to /r/worldnews should be accessible to everyone.\n\n*I am a bot, and this action was performed automatically. Please [contact the moderators of this subreddit](/message/compose/?to=/r/worldnews) if you have any questions or concerns.*",
+          "timestamp": "2026-08-03T10:35:59+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    }
+  ]
+}

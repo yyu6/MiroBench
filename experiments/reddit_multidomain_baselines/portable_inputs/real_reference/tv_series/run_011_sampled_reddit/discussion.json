@@ -1,0 +1,756 @@
+{
+  "meta": {
+    "product_category": "tv_series",
+    "baseline": "real_reddit_reference",
+    "run_id": "run_011_sampled_reddit"
+  },
+  "posts": [
+    {
+      "post_id": "real_run011_post00_seed055",
+      "post_slot": 0,
+      "seed_index": 55,
+      "source_raw_post_id": "1vbwnbz",
+      "source_product_dir": "netflix",
+      "source_file": "https://www.reddit.com/r/netflix/comments/1vbwnbz/this_sounds_like_the_plot_of_nicolas_cage_movie/",
+      "post_type": "News Article",
+      "title": "This sounds like the plot of Nicolas Cage movie",
+      "author": "reddit_user_1f6880bf493c",
+      "author_karma": 0,
+      "content": "This sounds like the plot of Nicolas Cage movie",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p0wrf5f",
+          "author": "reddit_user_0809c3700c25",
+          "author_karma": 0,
+          "content": "Are we sure Nic Cage didn't do this himself?",
+          "timestamp": "2026-07-31T17:02:25+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0xozly",
+          "author": "reddit_user_3542894dbebb",
+          "author_karma": 0,
+          "content": "Someone made a caption out of my comment ",
+          "timestamp": "2026-07-31T19:28:31+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run011_post01_seed056",
+      "post_slot": 1,
+      "seed_index": 56,
+      "source_raw_post_id": "1vbymml",
+      "source_product_dir": "television",
+      "source_file": "https://www.reddit.com/r/television/comments/1vbymml/can_there_truly_not_be_a_sitcom_with_realistic/",
+      "post_type": "reddit_post",
+      "title": "Can There Truly Not Be A Sitcom With Realistic Human Communication?",
+      "author": "reddit_user_1f6880bf493c",
+      "author_karma": 0,
+      "content": "Can There Truly Not Be A Sitcom With Realistic Human Communication?\n\nSurely there has to be a way to write and script a sitcom where characters have actual direct communication and the titular situations aren't hinging on easily avoidable conflicts and unrealistic social interactions. Are sitcom writers just too dumb to come up with scenarios for jokes that don't rely on characters not being able to talk like genuine, common sense adults?",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p0x7v4y",
+          "author": "reddit_user_2d6cfc04bd5f",
+          "author_karma": 0,
+          "content": "I'm curious what you think titular means.\n\nAlso, having easily avoidable conflicts cause drama is realistic.",
+          "timestamp": "2026-07-31T18:12:57+00:00",
+          "likes": 20,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0x8m60",
+              "author": "reddit_user_809d14588b72",
+              "author_karma": 0,
+              "content": "Relating to a title, like situations in the TV show category of \"situational comedies\". ",
+              "timestamp": "2026-07-31T18:16:12+00:00",
+              "likes": -16,
+              "dislikes": 0,
+              "parent_comment_id": "p0x7v4y",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p0xa116",
+                  "author": "reddit_user_ac50c0e7a6dd",
+                  "author_karma": 0,
+                  "content": "That’s not titular unless the title of the show is “Situational Comedy”. A better bet would probably be “genre defining”.",
+                  "timestamp": "2026-07-31T18:22:19+00:00",
+                  "likes": 8,
+                  "dislikes": 0,
+                  "parent_comment_id": "p0x8m60",
+                  "depth": 2,
+                  "replies": []
+                },
+                {
+                  "comment_id": "p0xa8er",
+                  "author": "reddit_user_87cdeaaab650",
+                  "author_karma": 0,
+                  "content": "“I hate how none of the dialogue on Family Matters relates to the family mattering. It’s just about the loud neighbor child asking if he did that. I thought this was grounded in reality”",
+                  "timestamp": "2026-07-31T18:23:12+00:00",
+                  "likes": 7,
+                  "dislikes": 0,
+                  "parent_comment_id": "p0x8m60",
+                  "depth": 2,
+                  "replies": []
+                },
+                {
+                  "comment_id": "p0xa9iu",
+                  "author": "reddit_user_78513b0613ec",
+                  "author_karma": 0,
+                  "content": "I think you've been hard done by there, you used titular correctly.",
+                  "timestamp": "2026-07-31T18:23:20+00:00",
+                  "likes": -3,
+                  "dislikes": 0,
+                  "parent_comment_id": "p0x8m60",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p0xcsm4",
+                      "author": "reddit_user_85d2ea8375de",
+                      "author_karma": 0,
+                      "content": "They used it right here. They did not use it right, actually completely randomly, in their original post.",
+                      "timestamp": "2026-07-31T18:34:24+00:00",
+                      "likes": 2,
+                      "dislikes": 0,
+                      "parent_comment_id": "p0xa9iu",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "p0xd9x2",
+                          "author": "reddit_user_78513b0613ec",
+                          "author_karma": 0,
+                          "content": "Nah, they used it right in their post. The titular situation referred to the situation in the title of the post. I don't see what other possible title it could be referring to.",
+                          "timestamp": "2026-07-31T18:36:30+00:00",
+                          "likes": -1,
+                          "dislikes": 0,
+                          "parent_comment_id": "p0xcsm4",
+                          "depth": 4,
+                          "replies": []
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "comment_id": "p0xdaqm",
+                  "author": "reddit_user_2d6cfc04bd5f",
+                  "author_karma": 0,
+                  "content": "So you're looking for situational comedies that are not about situations?",
+                  "timestamp": "2026-07-31T18:36:36+00:00",
+                  "likes": 4,
+                  "dislikes": 0,
+                  "parent_comment_id": "p0x8m60",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            },
+            {
+              "comment_id": "p0x8yyz",
+              "author": "reddit_user_a17646daace1",
+              "author_karma": 0,
+              "content": "You know, the titular situations. Like the friends being Friends, the Cheers group doing Cheers, or in How I met your mother, when he met their mother. \n\n",
+              "timestamp": "2026-07-31T18:17:45+00:00",
+              "likes": 7,
+              "dislikes": 0,
+              "parent_comment_id": "p0x7v4y",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p0x80dz",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-07-31T18:13:35+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0x81xr",
+          "author": "reddit_user_7d7a5f774ee8",
+          "author_karma": 0,
+          "content": "You think that the characters being \"genuine, common sense adults\" would make it more realistic? Have you looked around lately?",
+          "timestamp": "2026-07-31T18:13:46+00:00",
+          "likes": 22,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0x9qtm",
+              "author": "reddit_user_0285eaa2776a",
+              "author_karma": 0,
+              "content": "most of what passes for small talk these days makes a sitcom misunderstanding look like a UN summit",
+              "timestamp": "2026-07-31T18:21:05+00:00",
+              "likes": 4,
+              "dislikes": 0,
+              "parent_comment_id": "p0x81xr",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p0x8fk4",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-07-31T18:15:25+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0x8h87",
+          "author": "reddit_user_934d2429202d",
+          "author_karma": 0,
+          "content": "Titular. Is that a bad word?? I think it’s ok. Just don’t shorten it.",
+          "timestamp": "2026-07-31T18:15:37+00:00",
+          "likes": -5,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0x8xi5",
+          "author": "reddit_user_87cdeaaab650",
+          "author_karma": 0,
+          "content": "I loved all of the specific examples you gave like \\_\\_\\_\\_ and \\_\\_\\_\\_ or \\_\\_\\_\\_\\_\\_ \\_ \\_\\_\\_\\_\\_\\_.\n\nI especially like how you quoted dialogue from these shows, like “\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_.”\n\nMan, it sure would be weird if you were to make a post like this and NOT include specific examples of what you’re talking about",
+          "timestamp": "2026-07-31T18:17:34+00:00",
+          "likes": 13,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0xazp6",
+              "author": "reddit_user_809d14588b72",
+              "author_karma": 0,
+              "content": "Ross and Rachel didn't immediately try to define what taking a break from their relationship meant. Monica and Chandler chose not to disclose their relationship to the group once it became about more than just sex, which eventually led to Rachel and Phoebe choosing not to outright confront the two of them about it and instead play some game of trying to catch them in a lie. Ross couldn't just admit that he didn't wanna read Rachel's 18 page letter at 5 in the morning. Chandler couldn't properly admit his feelings for Kathy to Joey until after he kissed her behind Joey's back. Ross didn't immediately come clean about not getting the annulment to his Vegas marriage with Rachel. Joey failed to explain that he wasn't actually proposing to Rachel after she gave birth to Emma. ",
+              "timestamp": "2026-07-31T18:26:31+00:00",
+              "likes": -6,
+              "dislikes": 0,
+              "parent_comment_id": "p0x8xi5",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p0xbd4x",
+                  "author": "reddit_user_87cdeaaab650",
+                  "author_karma": 0,
+                  "content": "So you would rather the show just be about nothing?",
+                  "timestamp": "2026-07-31T18:28:09+00:00",
+                  "likes": 2,
+                  "dislikes": 0,
+                  "parent_comment_id": "p0xazp6",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p0xblyp",
+                      "author": "reddit_user_809d14588b72",
+                      "author_karma": 0,
+                      "content": "No, because that would be Seinfeld, which I haven't seen. ",
+                      "timestamp": "2026-07-31T18:29:13+00:00",
+                      "likes": -4,
+                      "dislikes": 0,
+                      "parent_comment_id": "p0xbd4x",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "p0xbt3h",
+                          "author": "reddit_user_87cdeaaab650",
+                          "author_karma": 0,
+                          "content": "Sounds like this entire post is literally about you disliking the show Friends. You know you can stop watching, right?",
+                          "timestamp": "2026-07-31T18:30:05+00:00",
+                          "likes": 2,
+                          "dislikes": 0,
+                          "parent_comment_id": "p0xblyp",
+                          "depth": 4,
+                          "replies": [
+                            {
+                              "comment_id": "p0xc21x",
+                              "author": "reddit_user_809d14588b72",
+                              "author_karma": 0,
+                              "content": "Friends is my favorite sitcom behind the Simpsons, and that's only because of nostalgia. Doesn't mean I still can't be critical of it. ",
+                              "timestamp": "2026-07-31T18:31:11+00:00",
+                              "likes": -2,
+                              "dislikes": 0,
+                              "parent_comment_id": "p0xbt3h",
+                              "depth": 5,
+                              "replies": [
+                                {
+                                  "comment_id": "p0xd0p2",
+                                  "author": "reddit_user_87cdeaaab650",
+                                  "author_karma": 0,
+                                  "content": "You can be critical of it if you have something to criticize. “I don’t like how they don’t communicate well” is a weird take for what you consider your favorite sitcom when one could argue one of the core themes of the show is how people are bad at communicating with each other ",
+                                  "timestamp": "2026-07-31T18:35:23+00:00",
+                                  "likes": 3,
+                                  "dislikes": 0,
+                                  "parent_comment_id": "p0xc21x",
+                                  "depth": 6,
+                                  "replies": [
+                                    {
+                                      "comment_id": "p0xdclg",
+                                      "author": "reddit_user_809d14588b72",
+                                      "author_karma": 0,
+                                      "content": "And my point is that *that* as a core theme doesn't have to be intrinsic to the genre. ",
+                                      "timestamp": "2026-07-31T18:36:49+00:00",
+                                      "likes": -2,
+                                      "dislikes": 0,
+                                      "parent_comment_id": "p0xd0p2",
+                                      "depth": 7,
+                                      "replies": [
+                                        {
+                                          "comment_id": "p0xdoe6",
+                                          "author": "reddit_user_87cdeaaab650",
+                                          "author_karma": 0,
+                                          "content": "You aren’t talking about the entire genre. All of your examples were from a single show. \n\nYou complaining about communication when *THIS* is how you communicate is genuinely fucking hilarious ",
+                                          "timestamp": "2026-07-31T18:38:15+00:00",
+                                          "likes": 5,
+                                          "dislikes": 0,
+                                          "parent_comment_id": "p0xdclg",
+                                          "depth": 8,
+                                          "replies": []
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "comment_id": "p0xcolf",
+                  "author": "reddit_user_86c9971a1e4b",
+                  "author_karma": 0,
+                  "content": "I'm guessing you're pretty young.  (and probably also haven't dated much)  \nMany people in reality don't outright communicate as you're expecting them to. People suck, they hide things, miscommunicate, lie, stay vague, stay quiet, etc etc.   \nSitComs takes reality and make it exaggerated and funny.",
+                  "timestamp": "2026-07-31T18:33:56+00:00",
+                  "likes": 4,
+                  "dislikes": 0,
+                  "parent_comment_id": "p0xazp6",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p0xcxdw",
+                      "author": "reddit_user_809d14588b72",
+                      "author_karma": 0,
+                      "content": "I'm actually 30",
+                      "timestamp": "2026-07-31T18:34:59+00:00",
+                      "likes": -3,
+                      "dislikes": 0,
+                      "parent_comment_id": "p0xcolf",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "p0yigjb",
+                          "author": "reddit_user_27d04126eb14",
+                          "author_karma": 0,
+                          "content": "Yeah your age was def the most important takeaway from that comment.\n\njfc.",
+                          "timestamp": "2026-07-31T21:44:46+00:00",
+                          "likes": 2,
+                          "dislikes": 0,
+                          "parent_comment_id": "p0xcxdw",
+                          "depth": 4,
+                          "replies": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p0x9akz",
+          "author": "reddit_user_86fb74e6220a",
+          "author_karma": 0,
+          "content": "Doesn't sound like it would be much of a comedic situation if they talked like that",
+          "timestamp": "2026-07-31T18:19:07+00:00",
+          "likes": 6,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0xa1sa",
+          "author": "reddit_user_b083b1d8a868",
+          "author_karma": 0,
+          "content": "Rabbits ",
+          "timestamp": "2026-07-31T18:22:24+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0xa3bd",
+          "author": "reddit_user_27d04126eb14",
+          "author_karma": 0,
+          "content": "There are plenty of sitcoms that are like what you're looking for. None of them are multi-cam tradcoms with laugh tracks that air on CBS though.\n\nTry Hacks.",
+          "timestamp": "2026-07-31T18:22:36+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0xa8nk",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-07-31T18:23:14+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0xaed3",
+          "author": "reddit_user_062f393fecb4",
+          "author_karma": 0,
+          "content": "That would be fucking stupid and boring and no one would wanna watch it",
+          "timestamp": "2026-07-31T18:23:56+00:00",
+          "likes": 5,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0xafbv",
+          "author": "reddit_user_39ae061e6f7f",
+          "author_karma": 0,
+          "content": "I feel like this post was based on listicles written 14 years ago based on sitcoms from 30 years ago",
+          "timestamp": "2026-07-31T18:24:03+00:00",
+          "likes": 3,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0xbdk8",
+              "author": "reddit_user_809d14588b72",
+              "author_karma": 0,
+              "content": "Well I never saw anything newer than How I Met Your Mother ",
+              "timestamp": "2026-07-31T18:28:12+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p0xafbv",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p0xt0t8",
+                  "author": "reddit_user_3d0df432ea7c",
+                  "author_karma": 0,
+                  "content": "how i met your mother came out 20 years ago\n\nyou've missed out on 2 decades of sitcoms\n\nwhat shows are you even complaining about at this point?",
+                  "timestamp": "2026-07-31T19:46:40+00:00",
+                  "likes": 3,
+                  "dislikes": 0,
+                  "parent_comment_id": "p0xbdk8",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p0xb8fh",
+          "author": "reddit_user_9d7f19a7502c",
+          "author_karma": 0,
+          "content": "Are you German? ",
+          "timestamp": "2026-07-31T18:27:34+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0xbhny",
+              "author": "reddit_user_809d14588b72",
+              "author_karma": 0,
+              "content": "American, but autistic",
+              "timestamp": "2026-07-31T18:28:42+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p0xb8fh",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p0xdblp",
+                  "author": "reddit_user_86c9971a1e4b",
+                  "author_karma": 0,
+                  "content": "Unfortunately, this explains most of your view.   \nReality isn't neat and clean. Relationship are extremely messy.  \nTV is about comedy, it takes situations people can relate to and exaggerates them for laughs.  \nPeople act in those ways because it adds drama and humor.  \nIf it was straight reality, it would be a different show, and probably not watched.",
+                  "timestamp": "2026-07-31T18:36:42+00:00",
+                  "likes": 5,
+                  "dislikes": 0,
+                  "parent_comment_id": "p0xbhny",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p0xd2uk",
+          "author": "reddit_user_85d2ea8375de",
+          "author_karma": 0,
+          "content": "Go watch something like Red Dwarf.",
+          "timestamp": "2026-07-31T18:35:39+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0xfx8d",
+          "author": "reddit_user_5ec0c5a1c00f",
+          "author_karma": 0,
+          "content": "I don't know, comedy stems from conflict, so the healthier the communication between characters, the lower the conflict. You need that clash between communication styles, personalities, social skills, etc. in order to make a TV show worth watching.\n\nI'd add that since Friends is an example you used in a comment, multi-cams are inherently unrealistic in the rhythm and manner characters speak. Lots of set up-punchline dialogue, characters make jokes that nobody in the room laughs at, they have to pause to let the audience laugh, etc.",
+          "timestamp": "2026-07-31T18:48:11+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0xhmad",
+          "author": "reddit_user_528440a5e3d2",
+          "author_karma": 0,
+          "content": "“Comedy is a distortion of what is happening, and there will always be something happening.” - Steve Martin \n\nI think the good folks of Reddit have read you down enough. Sounds like you would be better entertained by dramas or documentaries. ",
+          "timestamp": "2026-07-31T18:55:43+00:00",
+          "likes": 4,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0xv4xv",
+          "author": "reddit_user_414a53b4cb46",
+          "author_karma": 0,
+          "content": "Reality is too boring. Not even “reality shows” offer true reality",
+          "timestamp": "2026-07-31T19:56:16+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0y1zzg",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-07-31T20:27:19+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0yq065",
+          "author": "reddit_user_4fbe3feb446c",
+          "author_karma": 0,
+          "content": "A sitcom where you remove the situations that produce the comedy\n\nIt's a dangerous gamble",
+          "timestamp": "2026-07-31T22:22:52+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0zblpk",
+          "author": "reddit_user_602dcd43b8a1",
+          "author_karma": 0,
+          "content": "This would be akin to the police procedural where everyone is just stuck at their desk doing paperwork.",
+          "timestamp": "2026-08-01T00:20:44+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0zg52n",
+          "author": "reddit_user_b42835a38150",
+          "author_karma": 0,
+          "content": "Malcolm in the Middle, early Roseanne seasons, Classic Simpsons,  M.A.S.H.  All come to mind. \n\n\nMaybe the genres you like don't attract talent.  Like watching Power Ranges (total garbage) vs Looney Tunes.",
+          "timestamp": "2026-08-01T00:47:07+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run011_post02_seed057",
+      "post_slot": 2,
+      "seed_index": 57,
+      "source_raw_post_id": "1vbznzr",
+      "source_product_dir": "netflix",
+      "source_file": "https://www.reddit.com/r/netflix/comments/1vbznzr/are_there_spinoffs_with_a_male_protagonist_of/",
+      "post_type": "Question",
+      "title": "Are there spin-offs with a male protagonist of Netflix shows or films or animation that were originally about girls?",
+      "author": "reddit_user_1f6880bf493c",
+      "author_karma": 0,
+      "content": "Are there spin-offs with a male protagonist of Netflix shows or films or animation that were originally about girls?\n\nSome examples \n\nAngel a spin off of Buffy the vampire slayer.\n\nThe Amazing Spiez, a spin-off of Totally Spies, about 3 young brothers who are spies however the boys take their only sister with them in their adventure, unlike the original show it was composed only of teen girls who are friends, I remember my female childhood friend smiling and saying you should watch the spies they brought boys now.\n\nGo, Diego, a spin off of Dora about the adventure of the cousin of Dora.\n\nWizards Beyond Waverly Place, spin off of Wizard of Waverly Place, Justin Russo sister Alex asks for his help with Billie, a young wizard-in-training, Justin returns to the magical world to mentor her while attempting to maintain his ordinary life.\n\nIn the second season, after Roman and Milo also become wizards, Justin is tasked with training all three children in preparation for the upcoming family wizard competition.\n\nCorey in the house a spin off of That's So Raven.",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p0xhsmn",
+          "author": "reddit_user_a07e76a33b4e",
+          "author_karma": 0,
+          "content": "Cory in the House spawned from That’s so Raven ",
+          "timestamp": "2026-07-31T18:56:30+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run011_post03_seed058",
+      "post_slot": 3,
+      "seed_index": 58,
+      "source_raw_post_id": "1vbzs1n",
+      "source_product_dir": "netflix",
+      "source_file": "https://www.reddit.com/r/netflix/comments/1vbzs1n/the_last_of_the_mohicans/",
+      "post_type": "Technical Support",
+      "title": "The Last of the Mohicans",
+      "author": "reddit_user_1f6880bf493c",
+      "author_karma": 0,
+      "content": "The Last of the Mohicans\n\nStarted watching at 11:00 PM on the last day to watch i.e. 31st July. Had to pause the movie after half the movie ended as I needed to go to the loo and when I came back and tried to resume the movie it says title unavailable to watch as it was past 12:00 am. It was my first time watching this movie and i don't want to leave it here. What can I do to continue watching?",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p0xiq7e",
+          "author": "reddit_user_a70d9f40567b",
+          "author_karma": 0,
+          "content": "If you have Amazon Prime it’s on there. ",
+          "timestamp": "2026-07-31T19:00:36+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0xoalb",
+              "author": "reddit_user_35ddce8836ba",
+              "author_karma": 0,
+              "content": "It's asking me to pay extra even though i have prime (location-India)",
+              "timestamp": "2026-07-31T19:25:26+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p0xiq7e",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p0y5y5e",
+                  "author": "reddit_user_a70d9f40567b",
+                  "author_karma": 0,
+                  "content": "Ugh bummer!! Stupid Amazon. 🙄",
+                  "timestamp": "2026-07-31T20:45:23+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p0xoalb",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p0zkzaz",
+          "author": "reddit_user_3398427b8b2c",
+          "author_karma": 0,
+          "content": "Love that movie.",
+          "timestamp": "2026-08-01T01:15:17+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run011_post04_seed059",
+      "post_slot": 4,
+      "seed_index": 59,
+      "source_raw_post_id": "1vc0fgh",
+      "source_product_dir": "television",
+      "source_file": "https://www.reddit.com/r/television/comments/1vc0fgh/byron_allens_latenight_ratings_superpower/",
+      "post_type": "Removed - Quota Limit",
+      "title": "[ Removed by moderator ]",
+      "author": "reddit_user_1f6880bf493c",
+      "author_karma": 0,
+      "content": "[ Removed by moderator ]\n\n[removed]",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p0xmdgw",
+          "author": "reddit_user_c92533906a0d",
+          "author_karma": 0,
+          "content": "Hi [REDDIT_USER]! Thanks for posting to /r/television. Unfortunately, [your submission](/r/television/comments/1vc0fgh/byron_allens_latenight_ratings_superpower/) was removed for the following reason:\n\n* We have a limit on the amount of posts that may be submitted by a user in 24 hours. You may only submit 1 posts within a 24 hour period. Please wait a while and try again!\n\nIf you have questions about this, please [contact our mods via moderator mail](https://www.reddit.com/message/compose?to=/r/television) rather than replying here. Thank you!",
+          "timestamp": "2026-07-31T19:16:52+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    }
+  ]
+}

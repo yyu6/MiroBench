@@ -1,0 +1,896 @@
+{
+  "meta": {
+    "product_category": "cellphone",
+    "baseline": "real_reddit_reference",
+    "run_id": "run_017_sampled_reddit"
+  },
+  "posts": [
+    {
+      "post_id": "real_run017_post00_seed085",
+      "post_slot": 0,
+      "seed_index": 85,
+      "source_raw_post_id": "1vdchjb",
+      "source_product_dir": "iphone",
+      "source_file": "https://www.reddit.com/r/iphone/comments/1vdchjb/photos_app_takes_a_lot_of_space_even_with_icloud/",
+      "post_type": "Discussion",
+      "title": "Photos app takes a lot of space even with iCloud sync turned on. Can I do anything to reduce its footprint?!",
+      "author": "reddit_user_0fe413d0e398",
+      "author_karma": 0,
+      "content": "Photos app takes a lot of space even with iCloud sync turned on. Can I do anything to reduce its footprint?!\n\n[removed]",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p189h9l",
+          "author": "reddit_user_ad8c811036ef",
+          "author_karma": 0,
+          "content": "Seems like it’s just a local miniatures of all photos/vids stored in iCloud. I’m also in that situation. Have 100 000 files and 30 000 of them are videos and local memory filled up for almost 30 gb with photos app. ",
+          "timestamp": "2026-08-02T10:15:04+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p18bqzu",
+              "author": "reddit_user_2f6979e7ed45",
+              "author_karma": 0,
+              "content": "Glad to hear it’s not just me. Not sure what to do to be honest. A couple of my other devices have run out of space now and I can’t update the OS anymore. ",
+              "timestamp": "2026-08-02T10:33:50+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p189h9l",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p18glhd",
+                  "author": "reddit_user_ad8c811036ef",
+                  "author_karma": 0,
+                  "content": "For me the easiest way is to clean the library. Start with big videos. Just trash all unnecessary files.\n\nAlso you can use shared albums. Not sure about proper methodology try to google it. Shared albums not cause your iCloud storage and you can create tens of hundreds of these.",
+                  "timestamp": "2026-08-02T11:11:31+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p18bqzu",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1atldw",
+                      "author": "reddit_user_2f6979e7ed45",
+                      "author_karma": 0,
+                      "content": "This is not the right approach though, especially when I have more than enough cloud storage available. A critical OS update blocked is just bonkers. ",
+                      "timestamp": "2026-08-02T18:27:23+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p18glhd",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                },
+                {
+                  "comment_id": "p18m4w9",
+                  "author": "reddit_user_f612c7e3859d",
+                  "author_karma": 0,
+                  "content": "offloading apps in storage will allow you to update then reinstall the apps , updating usually clears cache so you would have enough space to reinstall, just go to settings,general, iphone storage or ipad storage, ,click in some of your bigger app and press offload ( not uninstall) , update,then go back to storage, click on app you have offloaded and hit reinstall.\n\nif you have never went through all your apps and offloaded ,wait 5-10 second then hit reinstall you can save quite a lot of storage as this clears cache from each app , can free up a lot of storage ",
+                  "timestamp": "2026-08-02T11:51:53+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p18bqzu",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p18a49t",
+          "author": "reddit_user_171c38c0b0da",
+          "author_karma": 0,
+          "content": "You can sync photos in two ways:\n\n1. Originals are stored on your device and on icloud  \n2. Originals are offloaded to the icloud - most of the photos/videos are in full quality only in the cloud - your device have only a low quality preview and then you open it localy it have to be downlaoded again\n\nWhat you describe seems like option 1",
+          "timestamp": "2026-08-02T10:20:22+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p18bh72",
+              "author": "reddit_user_2f6979e7ed45",
+              "author_karma": 0,
+              "content": "I have optimised storage turned on. So technically it should offload the photos if I don’t have enough space on the device. ",
+              "timestamp": "2026-08-02T10:31:37+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p18a49t",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p18gxyy",
+          "author": "reddit_user_aa3990f16010",
+          "author_karma": 0,
+          "content": "Maybe its the new indexing for the next iOS 27, that was added in the latest release. Could be downloading originals to process them.",
+          "timestamp": "2026-08-02T11:14:07+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run017_post01_seed086",
+      "post_slot": 1,
+      "seed_index": 86,
+      "source_raw_post_id": "1vdcvvj",
+      "source_product_dir": "Smartphones",
+      "source_file": "https://www.reddit.com/r/Smartphones/comments/1vdcvvj/is_the_z_flip_8_worth_it/",
+      "post_type": "reddit_post",
+      "title": "Is the Z flip 8 worth it?",
+      "author": "reddit_user_0fe413d0e398",
+      "author_karma": 0,
+      "content": "Is the Z flip 8 worth it?\n\nFor context I have a Samsung A53 for four years ish abut now and I want to change it since it became slower plus the battery life is horrendous. \n\nI've been debating between the Z flip 8 and S 26 ultra. I never had a Z flip before and while I know S26 is superior I like the looks of the Z flip but I'm worried about battery and durability (I don't mind the specs so much) since I keep my phone for like 5+ years.\n\nIf you could choose only one which would you get? Especially since this might be last flip.",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p180a0b",
+          "author": "reddit_user_3377ca4057d0",
+          "author_karma": 0,
+          "content": "personally all fold phones are just gimmicks and i never get the draw of it, id just get the normal flagship",
+          "timestamp": "2026-08-02T08:55:54+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p183ec1",
+              "author": "reddit_user_1c673445859f",
+              "author_karma": 0,
+              "content": "Well maybe but I did so honestly make the choice a bit harder 😅 ",
+              "timestamp": "2026-08-02T09:22:56+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p180a0b",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p180o1d",
+          "author": "reddit_user_d13a1497dbf8",
+          "author_karma": 0,
+          "content": "I had the z fold 6 and after 5 months i got a dead pixel on the inner screen. Switched to the s24 ultra and its way better. Just get an ultra!",
+          "timestamp": "2026-08-02T08:59:15+00:00",
+          "likes": 3,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p183brg",
+              "author": "reddit_user_1c673445859f",
+              "author_karma": 0,
+              "content": "Damn honestly that's one of my concerns too. ",
+              "timestamp": "2026-08-02T09:22:20+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p180o1d",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p180x6a",
+          "author": "reddit_user_9a9cef99ac49",
+          "author_karma": 0,
+          "content": "honestly s26u is safer choice. As much as I like foldables, they have smaller batteries, more heat issues and not as durable screen. You can buy a used Samsung z flip 4/5/6/7 to try it as \"demo\" lol",
+          "timestamp": "2026-08-02T09:01:30+00:00",
+          "likes": 3,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1838cf",
+              "author": "reddit_user_1c673445859f",
+              "author_karma": 0,
+              "content": "True or just for z flip 8 to drop in price.",
+              "timestamp": "2026-08-02T09:21:31+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p180x6a",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p184605",
+          "author": "reddit_user_3fc48a5cc8c7",
+          "author_karma": 0,
+          "content": "Go with z flip 8 something different👍 you feel different 👍",
+          "timestamp": "2026-08-02T09:29:40+00:00",
+          "likes": 3,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p184i20",
+          "author": "reddit_user_efbb9978419e",
+          "author_karma": 0,
+          "content": "I'd chose the Ultra or the Fold 8 for the form factor. ",
+          "timestamp": "2026-08-02T09:32:32+00:00",
+          "likes": 3,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p186b5y",
+              "author": "reddit_user_1c673445859f",
+              "author_karma": 0,
+              "content": "Thing is I don't really like them to begin with.",
+              "timestamp": "2026-08-02T09:48:11+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p184i20",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p18p08x",
+          "author": "reddit_user_32d2a4da0c19",
+          "author_karma": 0,
+          "content": "just get the s26 tbh, the flips are kinda gimmicky",
+          "timestamp": "2026-08-02T12:11:05+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p19seas",
+          "author": "reddit_user_96ca653e1b85",
+          "author_karma": 0,
+          "content": "just get the Ultra bro but deals are better on S25 Ultra rn than 26",
+          "timestamp": "2026-08-02T15:39:48+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run017_post02_seed087",
+      "post_slot": 2,
+      "seed_index": 87,
+      "source_raw_post_id": "1vddq0n",
+      "source_product_dir": "Smartphones",
+      "source_file": "https://www.reddit.com/r/Smartphones/comments/1vddq0n/iphome_17_pro_1tb_or_s26_ultra_1tb_please_read/",
+      "post_type": "reddit_post",
+      "title": "Iphome 17 pro 1tb or S26 Ultra 1tb? Please read full description.",
+      "author": "reddit_user_0fe413d0e398",
+      "author_karma": 0,
+      "content": "Iphome 17 pro 1tb or S26 Ultra 1tb? Please read full description.\n\nI’ve been using Android phones... especially Samsung, since the S2 launch. Currently, I’ve been using the S24+ (512gb) for about 1.5 years, and it’s been a great phone with no issues at all.\n\nNow I’m planning to upgrade because I’ve started making Instagram Reels, and fortunately, it’s going really well. My main concerns are storage and camera performance.\n\nI’m deciding between the iPhone 17 Pro (1TB) and the Samsung S26 Ultra (1TB). I’d really appreciate suggestions from people who have actually used both. Which one has the better camera for Instagram Reels? Also, how is the stabilization—especially for driving and walking videos?\n\nI’ve watched a lot of videos, but I’d like to hear real user experiences. Thanks!",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p185o9f",
+          "author": "reddit_user_ae27ab76da03",
+          "author_karma": 0,
+          "content": "If your primary concern is camera stability and video quality, the iPhone is undoubtedly the better choice. However, the battery backup is not as impressive as that of Samsung, which is the only drawback. ",
+          "timestamp": "2026-08-02T09:42:45+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p186247",
+          "author": "reddit_user_8c6b611cb19d",
+          "author_karma": 0,
+          "content": "IPhone no doubt,best battery,best camera and historically the best one for social media ",
+          "timestamp": "2026-08-02T09:46:02+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p186l3m",
+          "author": "reddit_user_38415b679174",
+          "author_karma": 0,
+          "content": "S26 ultra for sure, it’s camera stabilization and battery life completely outweighs the iPhone 17 pro ",
+          "timestamp": "2026-08-02T09:50:36+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1871ot",
+          "author": "reddit_user_8949e1a573c8",
+          "author_karma": 0,
+          "content": "Stay with android. Camera's are just as good. It doesnt require you to rebuild a whole set up cause iPhone literally plays with nothing nicely except other apple. I have to use an iPhone at work and I fucking hate them. ",
+          "timestamp": "2026-08-02T09:54:33+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p187uaz",
+          "author": "reddit_user_93810a3308b6",
+          "author_karma": 0,
+          "content": "Honestly I dont even think you need to upgrade AT ALL. I'd wait for new releases from either side at this point.",
+          "timestamp": "2026-08-02T10:01:24+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p18al22",
+          "author": "reddit_user_37c4cb1bf9db",
+          "author_karma": 0,
+          "content": "You dont need 1TB of storage, at least not on your phone. Take some time every month or so to clean off the stuff from your phone and back it up in a secure place and you phone will not need as much space. You should be backing up the important data anyway, as a phone is somewhat prone to breakage or loss. You really only need enough storage on the phone for the stuff you are working on.",
+          "timestamp": "2026-08-02T10:24:15+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p18b59j",
+          "author": "reddit_user_de843153eff5",
+          "author_karma": 0,
+          "content": "Iphone makes best videos. I think its closer with pictures but for vids definitely Iphone. If i were you though I'd just get the 512gb and get 17 pro max ",
+          "timestamp": "2026-08-02T10:28:53+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p18bg8m",
+          "author": "reddit_user_171c38c0b0da",
+          "author_karma": 0,
+          "content": "iPhone, as the application support is better",
+          "timestamp": "2026-08-02T10:31:24+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p18bqus",
+          "author": "reddit_user_04d39ed865a2",
+          "author_karma": 0,
+          "content": "If you're making the reel directly in app: iphone, if you're recording and then sharing s26. \n\nApps made for iPhone are made for 1 sector of the market, high mid to high end, they target known devices rather than open blanket set of devices from a 100 euro device to a 3000euro device, as such they can have optimised high end settings. However the camera apps on each device are set for it not a general set and editing apps often are made to take however long but make use of the most on the device, as such a higher end android beats it's in this aspect.",
+          "timestamp": "2026-08-02T10:33:48+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p18dbbh",
+          "author": "reddit_user_526cc1a4cd88",
+          "author_karma": 0,
+          "content": "The S26 Ultra is the one I would recommend.  You are familiar with it and the video editing took a massive leap forward with OneUi 8.5 OS.  This includes video stability and different themes.  \n\nThe only advantage the iphone 17 Pro has is export time.  It's a night and day difference and a big advantage for iPhones.  If your posts need to be rushed, go with an iPhone.  If not, go with the S26 Ultra.",
+          "timestamp": "2026-08-02T10:46:21+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p18fkgj",
+          "author": "reddit_user_6121d6ca65b3",
+          "author_karma": 0,
+          "content": "If you're doing everything on one device, then get whatever iPhone Pro model is out when you're ready to upgrade. I upgraded from a iPhone 14 Pro to a 17 Pro and found the telephoto lens for instance is finally enough resolution for me to be able to use its footage with very minor editing and that's something I struggled with for years in the past.",
+          "timestamp": "2026-08-02T11:03:41+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p19283e",
+          "author": "reddit_user_95dc0c48d1f4",
+          "author_karma": 0,
+          "content": "Thanks, everyone, for the useful suggestions. I forgot to ask—which one works better in low light?",
+          "timestamp": "2026-08-02T13:29:20+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p199kui",
+          "author": "reddit_user_b02e482a2592",
+          "author_karma": 0,
+          "content": "Honestly, the iPhone does a significantly better job for social media apps like Instagram, even though it pains me to admit it because I personally think Samsung is far superior to what Apple is offering overall these days. Instagram’s video processing and camera integration (especially in-app upload compression, stabilization, and frame-rate consistency) are still noticeably better optimized on iOS. If creating Reels and social media content is your top priority, the iPhone will give you the most reliable result out of the box.",
+          "timestamp": "2026-08-02T14:08:16+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p19ylhr",
+          "author": "reddit_user_3067d89eb16c",
+          "author_karma": 0,
+          "content": "You don’t need to upgrade. Just learn how to use a cloud service to backup thing and that’s it. ",
+          "timestamp": "2026-08-02T16:08:08+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1cb9yf",
+          "author": "reddit_user_51d34fb7aae7",
+          "author_karma": 0,
+          "content": "The Samsung is a FAR superior machine in EVERY WAY. ",
+          "timestamp": "2026-08-02T22:44:50+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run017_post03_seed088",
+      "post_slot": 3,
+      "seed_index": 88,
+      "source_raw_post_id": "1vdfhne",
+      "source_product_dir": "iphone",
+      "source_file": "https://www.reddit.com/r/iphone/comments/1vdfhne/is_iphones_5g_modem_weaker_than_android_same_sim/",
+      "post_type": "Discussion",
+      "title": "Is iPhone’s 5G modem weaker than Android? Same SIM gets much better signal on OnePlus.",
+      "author": "reddit_user_0fe413d0e398",
+      "author_karma": 0,
+      "content": "Is iPhone’s 5G modem weaker than Android? Same SIM gets much better signal on OnePlus.\n\nI recently noticed something odd with iPhone’s network reception. then i tried in iphone 14,16 both a the models issue remains same,  \nI’m using the exact same SIM card. On my iPhone, the 5G signal usually sits at 1 bars and the data speed is poor. However, when I put that same SIM into my OnePlus phone at the exact same location, it immediately shows full or near-full 5G signal and performs much better. jio+iphone is a deadly combo.  \nhas anyone faced this issue.",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p18i40t",
+          "author": "reddit_user_7db36849f781",
+          "author_karma": 0,
+          "content": "Thanks for showing the oneplus‘s signal strength, not. ",
+          "timestamp": "2026-08-02T11:22:54+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p18i51q",
+          "author": "reddit_user_e444bef317a6",
+          "author_karma": 0,
+          "content": "qualcomm modem on iphone is worse than android because it’s a separate component from the chip where as android modem is integrated with the chip ",
+          "timestamp": "2026-08-02T11:23:07+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p18jak2",
+              "author": "reddit_user_2c91a85c6b87",
+              "author_karma": 0,
+              "content": "Why is that?",
+              "timestamp": "2026-08-02T11:31:35+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p18i51q",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p18k8c9",
+                  "author": "reddit_user_3bec701d5773",
+                  "author_karma": 0,
+                  "content": "Because Apple makes its own chip? And Qualcomm also makes its own chips?",
+                  "timestamp": "2026-08-02T11:38:26+00:00",
+                  "likes": 2,
+                  "dislikes": 0,
+                  "parent_comment_id": "p18jak2",
+                  "depth": 2,
+                  "replies": []
+                },
+                {
+                  "comment_id": "p18tynl",
+                  "author": "reddit_user_4a5107410e5e",
+                  "author_karma": 0,
+                  "content": "Qualcomm Modems are integrated into the Snapdragon SoCs which Apple doesn't use. Instead they use their own A18 SoC but with a standalone Qualcomm Modem.",
+                  "timestamp": "2026-08-02T12:41:57+00:00",
+                  "likes": 0,
+                  "dislikes": 0,
+                  "parent_comment_id": "p18jak2",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            },
+            {
+              "comment_id": "p18k65g",
+              "author": "reddit_user_56d48f895548",
+              "author_karma": 0,
+              "content": "Not really. Modem being part of the SoC or as independent module wont make any difference to signal reception \n\nOnly thing it will impact is bandwidth and latenct but the data speeds are not that fast anyway for this to have any real world impact",
+              "timestamp": "2026-08-02T11:37:59+00:00",
+              "likes": 10,
+              "dislikes": 0,
+              "parent_comment_id": "p18i51q",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p18i6ou",
+          "author": "reddit_user_da78d0b4be05",
+          "author_karma": 0,
+          "content": "yes it is.\n\nin my case, ip required much more stronger connection to perform some internet required tasks, where as in the same room, android did performed the task while sitting in the same room and condition.",
+          "timestamp": "2026-08-02T11:23:28+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p18ljp6",
+          "author": "reddit_user_2bd0f89b5c59",
+          "author_karma": 0,
+          "content": "Even when Apple use identical modems, they're underpowered compared to when those modems are used in Android phones. \n\nI live in the UK, and use EE; my iPhone 15 gets 1 bar of cellular reception yet putting my physical SIM into my cousin's Fairphone 4 yields 4 bars. \n\nBoth phones are a similar age too.",
+          "timestamp": "2026-08-02T11:47:47+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p18n4yr",
+              "author": "reddit_user_adbef91a7d89",
+              "author_karma": 0,
+              "content": "Is there are standard for how much signal strength one bar is? There didn’t used to be and different manufacturers used to game the bars by using different % signal strength to each other and even between bars on the same phone. I would be happy to find out that the industry had standardised since I last read a report of the differences between how manufacturers reported signal strength ",
+              "timestamp": "2026-08-02T11:58:42+00:00",
+              "likes": 2,
+              "dislikes": 0,
+              "parent_comment_id": "p18ljp6",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p19dxyc",
+                  "author": "reddit_user_2bd0f89b5c59",
+                  "author_karma": 0,
+                  "content": "I don't actually know if there is a standard though I'd be interested to find out.",
+                  "timestamp": "2026-08-02T14:30:23+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p18n4yr",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            },
+            {
+              "comment_id": "p18oaxt",
+              "author": "reddit_user_6797eadab25f",
+              "author_karma": 0,
+              "content": "uk, pixel 7 pro and iphone 17 pro max. same thing. iphone is struggling a lot more with reception even though it is newer. Apple has always been horrible with it, no idea how they never made it better",
+              "timestamp": "2026-08-02T12:06:29+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p18ljp6",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p19ecrv",
+                  "author": "reddit_user_2bd0f89b5c59",
+                  "author_karma": 0,
+                  "content": "I used to think it was purely due to lack of investment in the UK cellular network, but it isn't. \n\nApple needs to be better. ",
+                  "timestamp": "2026-08-02T14:32:24+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p18oaxt",
+                  "depth": 2,
+                  "replies": []
+                },
+                {
+                  "comment_id": "p19edjo",
+                  "author": "reddit_user_2bd0f89b5c59",
+                  "author_karma": 0,
+                  "content": "I used to think it was purely due to lack of investment in the UK cellular network, but it isn't. \n\nApple needs to be better.",
+                  "timestamp": "2026-08-02T14:32:31+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p18oaxt",
+                  "depth": 2,
+                  "replies": []
+                },
+                {
+                  "comment_id": "p19eh9a",
+                  "author": "reddit_user_2bd0f89b5c59",
+                  "author_karma": 0,
+                  "content": "I used to think it was purely due to lack of investment in the UK cellular network, but it isn't. \n\nApple needs to be better.",
+                  "timestamp": "2026-08-02T14:33:01+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p18oaxt",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p18lrfe",
+          "author": "reddit_user_1c8e94588c6b",
+          "author_karma": 0,
+          "content": "What app did you use to check the carrier signal in the first picture?",
+          "timestamp": "2026-08-02T11:49:18+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p18n42e",
+              "author": "reddit_user_e2c36a9f14f6",
+              "author_karma": 0,
+              "content": "Open your phone and call \\`3001#12345#**\\`**",
+              "timestamp": "2026-08-02T11:58:31+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p18lrfe",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p18qxxw",
+                  "author": "reddit_user_3847a39eedb4",
+                  "author_karma": 0,
+                  "content": "Incorrect. It’s \\**3001#12345#\\**",
+                  "timestamp": "2026-08-02T12:23:29+00:00",
+                  "likes": 0,
+                  "dislikes": 0,
+                  "parent_comment_id": "p18n42e",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p18r4ge",
+                      "author": "reddit_user_e2c36a9f14f6",
+                      "author_karma": 0,
+                      "content": "Ugh Reddit mobile automatically markdown’d my comment. That explains why it was in bold and I had to unfold it.",
+                      "timestamp": "2026-08-02T12:24:38+00:00",
+                      "likes": 4,
+                      "dislikes": 0,
+                      "parent_comment_id": "p18qxxw",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                },
+                {
+                  "comment_id": "p1ccsg6",
+                  "author": "reddit_user_1c8e94588c6b",
+                  "author_karma": 0,
+                  "content": "Thank you!",
+                  "timestamp": "2026-08-02T22:52:45+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p18n42e",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            },
+            {
+              "comment_id": "p1a51qg",
+              "author": "reddit_user_6ff0f485dee9",
+              "author_karma": 0,
+              "content": "I use ios shortcut to get this dashboard on mine. \n\nhttps://preview.redd.it/5ioeghi1pzgh1.png?width=1320&format=png&auto=webp&s=6b6b881a64506e01e8ab1e435a0e5d7b1e6880cc\n\n  \nJust a tap and it shows up, no need to remember & dial those codes.",
+              "timestamp": "2026-08-02T16:37:33+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p18lrfe",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p18lxmx",
+          "author": "reddit_user_e62d27778afc",
+          "author_karma": 0,
+          "content": "Yes, my s24u had great signal when iPhone struggled, my galaxy tab s9+ has better signal than iPhone. Not to mention changing carriers while crossing border, iPhone sometimes needs 10+ minutes to do that task (and sometimes fails when dual sim is enabled), while android does that almost instantly. ",
+          "timestamp": "2026-08-02T11:50:30+00:00",
+          "likes": 7,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p18mg3o",
+          "author": "reddit_user_a10686d2fe84",
+          "author_karma": 0,
+          "content": "Is there any connection between performance you are measuring and SARS ?? Would be interesting to know ",
+          "timestamp": "2026-08-02T11:54:01+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p18o21m",
+          "author": "reddit_user_76fad8ef1b67",
+          "author_karma": 0,
+          "content": "“Bars” is arbitrary and the software can assign whatever dB to however many bars it wants. You can’t just compare the number of bars, especially between different manufacturers. What was the dB on the oneplus? Which oneplus model specifically?\n\nAre the iPhones originally from your country or were they used or grey market phones from another country? It could be missing required network bands if they were not meant for your country. ",
+          "timestamp": "2026-08-02T12:04:51+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run017_post04_seed089",
+      "post_slot": 4,
+      "seed_index": 89,
+      "source_raw_post_id": "1vdg4rr",
+      "source_product_dir": "Smartphones",
+      "source_file": "https://www.reddit.com/r/Smartphones/comments/1vdg4rr/oneplus_15_or_s25_ultra/",
+      "post_type": "reddit_post",
+      "title": "Oneplus 15 or S25 Ultra",
+      "author": "reddit_user_0fe413d0e398",
+      "author_karma": 0,
+      "content": "Oneplus 15 or S25 Ultra\n\nHello everyone, I would be upgrading from an a56 since my aunt wants to buy mine. My other device is a tab S10 FE which I use mostly for school works and light gaming.\n\nI'd like to use my new phone for heavy gaming if possible like zzz or Wuwa, or something you tech bros call \"power user\"  (Im not very tech literate). But at the same time, I'd be using it as a daily driver.\n\nWhat do ya'll recommend? The software and ecosystem with S25 Ultra or the hardware powerhouse that is the Oneplus15?",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p18o7ba",
+          "author": "reddit_user_6b1b20b32539",
+          "author_karma": 0,
+          "content": "Op15 is solid",
+          "timestamp": "2026-08-02T12:05:49+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p18opd5",
+          "author": "reddit_user_4663c29a6aab",
+          "author_karma": 0,
+          "content": "Get the oneplus 15\n\nYou don't particularly need most features of the s25 ultra like the better camera, software features etc\n\nThe bigger battery, better chip etc are somethings which are useful for you",
+          "timestamp": "2026-08-02T12:09:07+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1a7a8v",
+              "author": "reddit_user_248fc447aa6b",
+              "author_karma": 0,
+              "content": "You don't need a better chip than S25U's, its as fast as a S26U in daily apps. Only in very heavy games it might be a 10-20 fps difference",
+              "timestamp": "2026-08-02T16:47:44+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p18opd5",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p18q0a4",
+          "author": "reddit_user_32d2a4da0c19",
+          "author_karma": 0,
+          "content": "s25 ultra, u don't want to deal with the op15's software. it got widespread bootloop issues in oxygenos 16.0.5 and 16.0.7, google it if u don't believe me, even oneplus themselves released a statement abt it",
+          "timestamp": "2026-08-02T12:17:33+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p190ao4",
+          "author": "reddit_user_30b64e2f1ee6",
+          "author_karma": 0,
+          "content": "S25 if you live in the USA and either way they stopped making phone or smth",
+          "timestamp": "2026-08-02T13:18:42+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p19x8sn",
+          "author": "reddit_user_b65e5d81ea52",
+          "author_karma": 0,
+          "content": "I love my Oneplus 15",
+          "timestamp": "2026-08-02T16:02:00+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1a74pm",
+          "author": "reddit_user_248fc447aa6b",
+          "author_karma": 0,
+          "content": "S25 Ultra, proud owner here for over 6 months",
+          "timestamp": "2026-08-02T16:47:03+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1dwzsi",
+          "author": "reddit_user_526cc1a4cd88",
+          "author_karma": 0,
+          "content": "S25 Ultra user, so a bit biased, but the S25 Ultra.  No one games 24/7 and security updates matter long-term.  Better screen, better main camera, better for video recording, nearly as good of a CPU/GPU for gaming, quicker security updates, and better software.\n\nOnePlus 15 has great battery life and great for gaming.  Gaming at 165hz is very rare.  Most games are capped at 120hz.  After those 2 strengths, it falls off as a smartphone.  It should be better for selfies on paper with 32 mp, but in real world it looks nearly the same as Samsung's S25 Ultra 12 mp selfie camera.  ",
+          "timestamp": "2026-08-03T04:27:26+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    }
+  ]
+}

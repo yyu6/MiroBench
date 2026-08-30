@@ -1,0 +1,725 @@
+{
+  "meta": {
+    "product_category": "cellphone",
+    "baseline": "real_reddit_reference",
+    "run_id": "run_021_sampled_reddit"
+  },
+  "posts": [
+    {
+      "post_id": "real_run021_post00_seed105",
+      "post_slot": 0,
+      "seed_index": 105,
+      "source_raw_post_id": "1vdmha1",
+      "source_product_dir": "GooglePixel",
+      "source_file": "https://www.reddit.com/r/GooglePixel/comments/1vdmha1/best_accessory_ever_pixelsnap_ring/",
+      "post_type": "reddit_post",
+      "title": "Best accessory ever => Pixelsnap Ring",
+      "author": "reddit_user_0fe413d0e398",
+      "author_karma": 0,
+      "content": "Best accessory ever => Pixelsnap Ring\n\nI just love it. My expectations were low based on a couple of tech review videos, but i am so pleasantly surprised by this thing that i can't use my P10P without it now. Its so versatile. Portrait or landscape at different angles, left or right hand when holding it, this ring does it all. Plus it can be removed and reattached since its all magnets. It improves the user experience so much that it is a must for me now. The tech reviewers have been utterly useless in reviewing this thing. Do you guys feel the same about this accessory?",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p1a42fy",
+          "author": "reddit_user_b0d21e8c665c",
+          "author_karma": 0,
+          "content": "It's cool but it's expensive for a magnet and there's lot of reports of it breaking after some time on Amazon reviews. Plus there's been cases for years that do essentially the same thing for half the price ",
+          "timestamp": "2026-08-02T16:33:03+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1a7swr",
+              "author": "reddit_user_4acc471403ca",
+              "author_karma": 0,
+              "content": "I have had it for 2 months and its as good as new. A case isnt the same thing. You have to try it to understand. The price is a different topic, i dont care about that.",
+              "timestamp": "2026-08-02T16:50:07+00:00",
+              "likes": -3,
+              "dislikes": 0,
+              "parent_comment_id": "p1a42fy",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1a89du",
+                  "author": "reddit_user_b0d21e8c665c",
+                  "author_karma": 0,
+                  "content": "Price is the same topic. No matter how cool a product is, if it's priced too high, people aren't going to recommend it. 2 months also isn't a long time, multiple reports of it breaking off at the screw. ",
+                  "timestamp": "2026-08-02T16:52:11+00:00",
+                  "likes": 2,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1a7swr",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1abbhn",
+                      "author": "reddit_user_4acc471403ca",
+                      "author_karma": 0,
+                      "content": "It has been 50% off for quite some time. Is 15€/$ too much for you?",
+                      "timestamp": "2026-08-02T17:05:56+00:00",
+                      "likes": 0,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1a89du",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "p1ac8we",
+                          "author": "reddit_user_b0d21e8c665c",
+                          "author_karma": 0,
+                          "content": "It's full price in Canada currently, not on sale, I also think it's quite dumb to spend double the price on this when you can get a case for half. Of course, to each their own.\n\nAnd You've used it for 2 months lol, you haven't used \"the shit out of it\". Get back in a year at least.",
+                          "timestamp": "2026-08-02T17:10:06+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "p1abbhn",
+                          "depth": 4,
+                          "replies": [
+                            {
+                              "comment_id": "p1addxt",
+                              "author": "reddit_user_4acc471403ca",
+                              "author_karma": 0,
+                              "content": "Some people are saying it breaks fast and im saying i havent got it off the phone at all. For me the 15€ price has been worth, since i spend that much having breakfast. I dont have to wait a year bcz sole people font hold their smartphones for that long. Still by the looks of it it will make it to 1 year.",
+                              "timestamp": "2026-08-02T17:15:14+00:00",
+                              "likes": 1,
+                              "dislikes": 0,
+                              "parent_comment_id": "p1ac8we",
+                              "depth": 5,
+                              "replies": [
+                                {
+                                  "comment_id": "p1aem0w",
+                                  "author": "reddit_user_b0d21e8c665c",
+                                  "author_karma": 0,
+                                  "content": "yea I'm just saying 2 months is too short to judge any product for durability. Pretty common sense tbh. And that's fine, I think smart people would rather spend half the price for a product that lasts longer, but as long as you're happy man, you do you",
+                                  "timestamp": "2026-08-02T17:20:44+00:00",
+                                  "likes": 1,
+                                  "dislikes": 0,
+                                  "parent_comment_id": "p1addxt",
+                                  "depth": 6,
+                                  "replies": []
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p1a47sg",
+          "author": "reddit_user_1eb4b311a4ca",
+          "author_karma": 0,
+          "content": "I think reviewers glossed over it because an accessory like the Pixelsnap Ring has been around forever and and is not something exclusive or designed for the Pixel. ",
+          "timestamp": "2026-08-02T16:33:44+00:00",
+          "likes": -1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1ab0m3",
+              "author": "reddit_user_4acc471403ca",
+              "author_karma": 0,
+              "content": "You got a point there, but i think this design by Google is perfect. ",
+              "timestamp": "2026-08-02T17:04:34+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1a47sg",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1a4ry5",
+          "author": "reddit_user_c10eb73e8a20",
+          "author_karma": 0,
+          "content": "Mine broke after two days of use.  Junk.",
+          "timestamp": "2026-08-02T16:36:17+00:00",
+          "likes": 5,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1a874g",
+              "author": "reddit_user_4acc471403ca",
+              "author_karma": 0,
+              "content": "2 months, using it all the time, as sturdy as when it was new. U can say i broke it, but the point more on the practicality of it.",
+              "timestamp": "2026-08-02T16:51:54+00:00",
+              "likes": -1,
+              "dislikes": 0,
+              "parent_comment_id": "p1a4ry5",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1a58tp",
+          "author": "reddit_user_9d97d55f5362",
+          "author_karma": 0,
+          "content": "Yea the screws holding the metal ring in place are torqued too tight or too small, they eventually snap in half",
+          "timestamp": "2026-08-02T16:38:26+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1a8gbv",
+              "author": "reddit_user_4acc471403ca",
+              "author_karma": 0,
+              "content": "Eventually all things break, but 2 months in and its as good as new. Feels sturdy tbh.",
+              "timestamp": "2026-08-02T16:53:04+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1a58tp",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1ae7x0",
+                  "author": "reddit_user_7f6923ef6e4d",
+                  "author_karma": 0,
+                  "content": "I'm almost full year with it and holding strong",
+                  "timestamp": "2026-08-02T17:19:00+00:00",
+                  "likes": 3,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1a8gbv",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            },
+            {
+              "comment_id": "p1b4xgz",
+              "author": "reddit_user_476c907ba4c1",
+              "author_karma": 0,
+              "content": "I've owned 2 and both broke this way. It also gets loose. It's honestly a flawed device. Google completely refunded me and I bought something 3rd party which I've had no issues with.",
+              "timestamp": "2026-08-02T19:19:16+00:00",
+              "likes": 4,
+              "dislikes": 0,
+              "parent_comment_id": "p1a58tp",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1a5cnd",
+          "author": "reddit_user_4788ccf8c96d",
+          "author_karma": 0,
+          "content": "It's good, but I like the Samsung 360-degree magnetic stand better. I have both, and the Pixel ring feels cheap and less functional compared to the Samsung one. And honestly, there are many better third-party options available if you look for them.",
+          "timestamp": "2026-08-02T16:38:56+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1a9fb9",
+              "author": "reddit_user_4acc471403ca",
+              "author_karma": 0,
+              "content": "Since u have both i have to take ur word for it. The ring is more versatile in ways it can be held compared to a solid extendable round piece.",
+              "timestamp": "2026-08-02T16:57:24+00:00",
+              "likes": -2,
+              "dislikes": 0,
+              "parent_comment_id": "p1a5cnd",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1a5lgj",
+          "author": "reddit_user_ea674424c74e",
+          "author_karma": 0,
+          "content": "I have no confidence in the magnet.  Maybe its my case belroy full leather, it just doesn't feel all that secure. ",
+          "timestamp": "2026-08-02T16:40:02+00:00",
+          "likes": 4,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1a9lg9",
+              "author": "reddit_user_4acc471403ca",
+              "author_karma": 0,
+              "content": "The grip is very strong, there is no worries there.",
+              "timestamp": "2026-08-02T16:58:11+00:00",
+              "likes": 0,
+              "dislikes": 0,
+              "parent_comment_id": "p1a5lgj",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p1agyla",
+              "author": "reddit_user_0cc231c2ff7b",
+              "author_karma": 0,
+              "content": "The bellroy leather case does have very weak magnets. I have one of the cases and stopped using it for that exact reason which sucks as I prefer leather cases typically. ",
+              "timestamp": "2026-08-02T17:31:11+00:00",
+              "likes": 2,
+              "dislikes": 0,
+              "parent_comment_id": "p1a5lgj",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1a6hei",
+          "author": "reddit_user_2b55af623dc3",
+          "author_karma": 0,
+          "content": "Overpriced. There are similar if not better magsafe products for cheaper ",
+          "timestamp": "2026-08-02T16:44:06+00:00",
+          "likes": 4,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1aaahs",
+              "author": "reddit_user_4acc471403ca",
+              "author_karma": 0,
+              "content": "Price is a different topic, but it can be found 50% off anyways and for that much its definitely worth it.",
+              "timestamp": "2026-08-02T17:01:17+00:00",
+              "likes": 0,
+              "dislikes": 0,
+              "parent_comment_id": "p1a6hei",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1bgnk2",
+                  "author": "reddit_user_80232aedd367",
+                  "author_karma": 0,
+                  "content": "Since when Google logo is a positive thing lmao.",
+                  "timestamp": "2026-08-02T20:13:58+00:00",
+                  "likes": -1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1aaahs",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1bmqtn",
+                      "author": "reddit_user_4acc471403ca",
+                      "author_karma": 0,
+                      "content": "Since 2016. ",
+                      "timestamp": "2026-08-02T20:42:36+00:00",
+                      "likes": 2,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1bgnk2",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p1aa6ew",
+          "author": "reddit_user_3c100a971781",
+          "author_karma": 0,
+          "content": "Bought mine new for 10$ and so far it's great. Never used something like that before but I really like it.",
+          "timestamp": "2026-08-02T17:00:47+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1ab4bq",
+          "author": "reddit_user_bd114090b6b2",
+          "author_karma": 0,
+          "content": "Mine broke within a couple weeks but then I got the Ohsnap Snap Grip 5 and it's been on my phone ever since with no issues. Absolutely would recommend it!",
+          "timestamp": "2026-08-02T17:05:02+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1aeowq",
+              "author": "reddit_user_4acc471403ca",
+              "author_karma": 0,
+              "content": "That doesnt look as elegant as the ring.",
+              "timestamp": "2026-08-02T17:21:05+00:00",
+              "likes": -2,
+              "dislikes": 0,
+              "parent_comment_id": "p1ab4bq",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1ahv23",
+          "author": "reddit_user_0cc231c2ff7b",
+          "author_karma": 0,
+          "content": "I tried it but got a refund when it broke after a few weeks. I prefer the magsafe pop sockets anyway so really wasn't any loss to me. ",
+          "timestamp": "2026-08-02T17:35:12+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1alz69",
+              "author": "reddit_user_4acc471403ca",
+              "author_karma": 0,
+              "content": "Mine is like brand new even after 2 months. The pop socket ones are not elegant and good looking.",
+              "timestamp": "2026-08-02T17:53:20+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1ahv23",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1aq20b",
+                  "author": "reddit_user_0cc231c2ff7b",
+                  "author_karma": 0,
+                  "content": "Looks are subjective. I don't really like the look of the pixelsnap ring over a pop socket, same can be said about both in favor of a ohsnap grip or even just not using a accessory at all. \n\nGlad you like it, but like many others, it broke pretty quickly for me so I don't personally think it's a good product. Maybe they will release a new version this year that's a bit better though. ",
+                  "timestamp": "2026-08-02T18:11:27+00:00",
+                  "likes": 3,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1alz69",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1ar395",
+                      "author": "reddit_user_4acc471403ca",
+                      "author_karma": 0,
+                      "content": "They better keep this thing around and improve it. Looks are subjective to a degree, so u r right about that.",
+                      "timestamp": "2026-08-02T18:16:05+00:00",
+                      "likes": 0,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1aq20b",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p1akx4e",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-02T17:48:40+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1arrqy",
+          "author": "reddit_user_4acc471403ca",
+          "author_karma": 0,
+          "content": "After reading the comments, i inspected it closely and noticed it has a little wobble. Google should improve the mechanism, but its still just as usable.",
+          "timestamp": "2026-08-02T18:19:10+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1bme10",
+          "author": "reddit_user_abb510d62a7b",
+          "author_karma": 0,
+          "content": "Idk I just bought a case that has a ring on it. Pixelsnap ring was too expensive and heard too many issues.",
+          "timestamp": "2026-08-02T20:40:53+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1boceu",
+              "author": "reddit_user_4acc471403ca",
+              "author_karma": 0,
+              "content": "Cases that have rings are a different accessory. The Pixelsnap ring can be obviously used without a case or removed if necessary. It is so smooth to the touch and feels premium. After 2 months of daily usage i noticed a lottle wobble and i tightened the screes just a little and back as new again. Thats the only thing. My critique is only the lack of color options. ",
+              "timestamp": "2026-08-02T20:50:13+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1bme10",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1c1joq",
+                  "author": "reddit_user_abb510d62a7b",
+                  "author_karma": 0,
+                  "content": "Yeah, but then you're not using a case. And now you have a protruding ring on the back that will snag on your pants as you pull it out of your pocket. \n\nJust is silly to me is all.",
+                  "timestamp": "2026-08-02T21:54:54+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1boceu",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1cct9c",
+                      "author": "reddit_user_4acc471403ca",
+                      "author_karma": 0,
+                      "content": "It doest protrude more than the cameras, even with the case on. Thats how i use it most of the time, with the official Google case on. The magnet is so strong that it needs quite a bit of force to come off. If you had used it instead of relying on your imagination, you would know how that is not an issue at all. If you want to make the argument that you want a ring that sits inside the case, then that is a different story. But then again thats a different product altogether. The ring can be used with any magnetic case or without one, which is nice when you you are at home.",
+                      "timestamp": "2026-08-02T22:52:52+00:00",
+                      "likes": 0,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1c1joq",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "p1chvip",
+                          "author": "reddit_user_abb510d62a7b",
+                          "author_karma": 0,
+                          "content": "Bro the entire deal of it protruding, causing it to snag pulling out of your pants is unavoidable. A 15 dollar case that comes with a flush sitting ring is better. I'm glad you like your ring, but it isn't ideal.",
+                          "timestamp": "2026-08-02T23:19:50+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "p1cct9c",
+                          "depth": 4,
+                          "replies": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p1dhehz",
+          "author": "reddit_user_685bf1ab4143",
+          "author_karma": 0,
+          "content": "So when you want to wirelessly charge, do you need to pull the ring off or can it stay on and you just put the entire thing on the wireless charger?",
+          "timestamp": "2026-08-03T02:42:39+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run021_post01_seed106",
+      "post_slot": 1,
+      "seed_index": 106,
+      "source_raw_post_id": "1vdmr6y",
+      "source_product_dir": "iphone",
+      "source_file": "https://www.reddit.com/r/iphone/comments/1vdmr6y/iphone_13_pro_screen_issue/",
+      "post_type": "Support",
+      "title": "iPhone 13 pro screen issue",
+      "author": "reddit_user_0fe413d0e398",
+      "author_karma": 0,
+      "content": "iPhone 13 pro screen issue\n\nMy phone screen keeps flickering sometimes, with no pattern or anything. Sometimes it flickers sometimes it doesn't.\n\nI have restarted the phone, but nothing changes.\n\nHere is the link to see the screen flickering: \n\nhttps://drive.google.com/file/d/1g\\_hyMNO\\_9vKS8E8kM4pZ4NIjPTp1ymaV/view?usp=drivesdk\n\nCan anyone guide me on what I should do.\n\nTIA",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p1a5ao5",
+          "author": "reddit_user_65884126434e",
+          "author_karma": 0,
+          "content": "If you're looking for help or support, you should search for your issue on Google, the [Apple Support Community](https://discussions.apple.com/welcome), r/iPhone and the [iPhone Support FAQs](https://www.reddit.com/r/iphone/wiki/support-faq/). We review submissions for quality, so basic support issues may be removed.\n\n*I am a bot, and this action was performed automatically. Please [contact the moderators of this subreddit](/message/compose/?to=/r/iphone) if you have any questions or concerns.*",
+          "timestamp": "2026-08-02T16:38:40+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run021_post02_seed107",
+      "post_slot": 2,
+      "seed_index": 107,
+      "source_raw_post_id": "1vdna0z",
+      "source_product_dir": "GooglePixel",
+      "source_file": "https://www.reddit.com/r/GooglePixel/comments/1vdna0z/google_messages_how_to_always_reply_from_same_sim/",
+      "post_type": "reddit_post",
+      "title": "Google Messages: How to always reply from same SIM card?",
+      "author": "reddit_user_0fe413d0e398",
+      "author_karma": 0,
+      "content": "Google Messages: How to always reply from same SIM card?\n\nI have two SIM cards.\n\nSometimes people send me a text messages to my second SIM card.\n\nI always want to reply using SIM card 1, regardless if text messages were sent to SIM card 1 or 2. \n\nIs there a setting somewhere to define SIM card 1 as the \"always reply from\" SIM card?",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p1ad2kt",
+          "author": "reddit_user_852012d8e74e",
+          "author_karma": 0,
+          "content": "You can do it under Settings -> Network & Internet -> SIMs -> Your primary SIMs\n\nSet your preferred SIM for text right there",
+          "timestamp": "2026-08-02T17:13:50+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1ah3t6",
+              "author": "reddit_user_2d5c2d72681c",
+              "author_karma": 0,
+              "content": "That only makes it the default SIM when sending a new message. \n\nBut if someone sends me a message to SIM 2, it still wants to use SIM 2 to reply. \n\nBy default I always want it to be SIM 1.",
+              "timestamp": "2026-08-02T17:31:50+00:00",
+              "likes": 2,
+              "dislikes": 0,
+              "parent_comment_id": "p1ad2kt",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1al87a",
+                  "author": "reddit_user_852012d8e74e",
+                  "author_karma": 0,
+                  "content": "You're right. Sorry I missunderstood that bit of your message. ",
+                  "timestamp": "2026-08-02T17:50:02+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1ah3t6",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p1aozpq",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-02T18:06:41+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1avb6e",
+          "author": "reddit_user_f68f3aba0ffa",
+          "author_karma": 0,
+          "content": "There is no setting that will make that behavior to be the default. It makes for a very confusing communication because there is no continuity in the thread.\n\nAnyhow, the 'Switch SIM' option is right there in the SMS app as you type in your reply, if you really want that.",
+          "timestamp": "2026-08-02T18:35:05+00:00",
+          "likes": 5,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run021_post03_seed108",
+      "post_slot": 3,
+      "seed_index": 108,
+      "source_raw_post_id": "1vdoksk",
+      "source_product_dir": "Android",
+      "source_file": "https://www.reddit.com/r/Android/comments/1vdoksk/time_was_too_short_to_live/",
+      "post_type": "image",
+      "title": "Time was too short to live",
+      "author": "reddit_user_0fe413d0e398",
+      "author_karma": 0,
+      "content": "Time was too short to live\n\n[removed]",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p1alh63",
+          "author": "reddit_user_65884126434e",
+          "author_karma": 0,
+          "content": "Sorry [REDDIT_USER], but your submission was removed as you included a post body within your submission. The body text is often used to insert bias/opinion which violates Rule 6 in direct link submissions. Feel free to repost without the post body.\n\n\n*I am a bot, and this action was performed automatically. Please [contact the moderators of this subreddit](/message/compose/?to=/r/Android) if you have any questions or concerns.*",
+          "timestamp": "2026-08-02T17:51:07+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run021_post04_seed109",
+      "post_slot": 4,
+      "seed_index": 109,
+      "source_raw_post_id": "1vdouvl",
+      "source_product_dir": "Smartphones",
+      "source_file": "https://www.reddit.com/r/Smartphones/comments/1vdouvl/what_phone_should_i_buy_recommendations/",
+      "post_type": "reddit_post",
+      "title": "What phone should i buy? recommendations",
+      "author": "reddit_user_0fe413d0e398",
+      "author_karma": 0,
+      "content": "What phone should i buy? recommendations\n\nHello. \n\nI was thinking of upgrading my phone, currently on xiaomi mi a2 for 8 years, the battery is not enough anymore and it started to restart at it's own sometimes and i need some recommendations. If i buy something i need it to last at least 5 years. i'm not interested in updates, for ref my mi a2 still runs android 8. \n\nI have searched many different posts and reviews from poco f8 ultra, oneplus 13 or xiaomi 17 ultra, redmi note 15 pro, nothing phones, samsung and so on. \n\nthought i make up my mind if i hear any opinions from people who have them and if the price paid for it is justified for you. \n\nThanks in advance",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p1auixx",
+          "author": "reddit_user_4663c29a6aab",
+          "author_karma": 0,
+          "content": "Without knowing about what you want/need, your price range etc there is no real answer",
+          "timestamp": "2026-08-02T18:31:34+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1b296q",
+          "author": "reddit_user_7897c626ee84",
+          "author_karma": 0,
+          "content": "Motorola is underrated, look into it",
+          "timestamp": "2026-08-02T19:06:55+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1c6bhj",
+              "author": "reddit_user_496566f0cf5f",
+              "author_karma": 0,
+              "content": "Only problem not updated to long k",
+              "timestamp": "2026-08-02T22:19:06+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1b296q",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1bp3wl",
+          "author": "reddit_user_01a939849223",
+          "author_karma": 0,
+          "content": "Maybe a Motorola.",
+          "timestamp": "2026-08-02T20:53:55+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    }
+  ]
+}

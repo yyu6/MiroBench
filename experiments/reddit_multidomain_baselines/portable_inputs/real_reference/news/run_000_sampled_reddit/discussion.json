@@ -1,0 +1,1162 @@
+{
+  "meta": {
+    "product_category": "news",
+    "baseline": "real_reddit_reference",
+    "run_id": "run_000_sampled_reddit"
+  },
+  "posts": [
+    {
+      "post_id": "real_run000_post00_seed000",
+      "post_slot": 0,
+      "seed_index": 0,
+      "source_raw_post_id": "1v1jn58",
+      "source_product_dir": "TrueReddit",
+      "source_file": "https://www.reddit.com/r/TrueReddit/comments/1v1jn58/on_this_nearly_deserted_alaska_island_you_pay_to/",
+      "post_type": "Technology",
+      "title": "On This Nearly Deserted Alaska Island, You Pay to Keep Hundreds of Empty Buildings Wired for Internet",
+      "author": "reddit_user_bde1e90b951b",
+      "author_karma": 0,
+      "content": "On This Nearly Deserted Alaska Island, You Pay to Keep Hundreds of Empty Buildings Wired for Internet",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "oynoxtg",
+          "author": "reddit_user_e320faca37f4",
+          "author_karma": 0,
+          "content": "\nRemember that TrueReddit is a place to engage in **high-quality and civil discussion**. Posts must meet certain content and title requirements. Additionally, **all posts must contain a submission statement.** See the rules [here](https://old.reddit.com/r/truereddit/about/rules/) or in the sidebar for details.  **To the OP: your post has not been deleted, but is being held in the queue and will be approved once a submission statement is posted.**\n\nComments or posts that don't follow the rules may be removed without warning. [Reddit's content policy](https://www.redditinc.com/policies/content-policy) will be strictly enforced, especially regarding hate speech and calls for / celebrations of violence, and may result in a restriction in your participation.  In addition, due to rampant rulebreaking, we are currently under a moratorium regarding topics related to the 10/7 terrorist attack in Israel and in regards to the assassination of the UnitedHealthcare CEO.\n\nIf an article is paywalled, please ***do not*** request or post its contents. Use [archive.ph](https://archive.ph/) or similar and link to that in your submission statement.\n\n*I am a bot, and this action was performed automatically. Please [contact the moderators of this subreddit](/message/compose/?to=/r/TrueReddit) if you have any questions or concerns.*",
+          "timestamp": "2026-07-20T12:07:00+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "oynp0x2",
+          "author": "reddit_user_255cb5398eef",
+          "author_karma": 0,
+          "content": "On an island 1,200 miles from Anchorage, Alaska, hundreds of buildings sit abandoned. It costs more than $340,000 per year to provide them with internet access that no one says they use.\n\nThe money being wasted is yours.\n\nIt comes from a fee added to nearly every American’s phone bill as part of a FCC subsidy program called the Universal Service Fund. Intended to bring fast, affordable internet to remote towns, the money actually pays for what often amounts to slow internet access for customers who no longer use it, our reporting with the Anchorage Daily News has found.\n\nFew places make the federal government’s failure to safeguard this money more obvious than the island of Adak. Once home to thousands of sailors and their families, it emptied after the base closed in 1997. Residents say only about two dozen people are left — meaning the federal internet subsidy to the local telecom would amount to about $14,000 a year per person.\n\nAnd, it turns out, there’s zero indication any of these people are benefiting from it. We know this because we flew to the island and visited every building that the company itself told regulators it serves. We knocked on every door. Talked to every person we could find. \n\nNot a single one told us they subscribe to the island’s subsidized internet service.\n\n**Here’s our full investigation:** [https://www.propublica.org/article/adak-island-alaska-internet-subsidy-fcc](https://www.propublica.org/article/adak-island-alaska-internet-subsidy-fcc)\n\nThe president of the telecom company, Adak Eagle, did not respond to our questions despite our multiple requests. Before hanging up on our first call, he did say this: that he is playing by the rules of the FCC’s subsidy program, and if we had questions, we should ask the agency.\n\nWe did. Repeatedly. The FCC never responded.",
+          "timestamp": "2026-07-20T12:07:31+00:00",
+          "likes": 145,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "oyounnd",
+              "author": "reddit_user_7fbfdbfc7663",
+              "author_karma": 0,
+              "content": "Smells like a grift",
+              "timestamp": "2026-07-20T15:31:52+00:00",
+              "likes": 38,
+              "dislikes": 0,
+              "parent_comment_id": "oynp0x2",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "oyqv5t8",
+                  "author": "reddit_user_f77c2694b5b2",
+                  "author_karma": 0,
+                  "content": "Because it is grift. ",
+                  "timestamp": "2026-07-20T20:45:57+00:00",
+                  "likes": 7,
+                  "dislikes": 0,
+                  "parent_comment_id": "oyounnd",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            },
+            {
+              "comment_id": "oypjbg8",
+              "author": "reddit_user_4f19250b482c",
+              "author_karma": 0,
+              "content": "Hey fiscally responsible republicans, look over here at this tiny amount of money being wasted while I pick your grandkids pocket of billions.  This is noise.  Ignore it.  ",
+              "timestamp": "2026-07-20T17:17:46+00:00",
+              "likes": 26,
+              "dislikes": 0,
+              "parent_comment_id": "oynp0x2",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "oyv5qnn",
+                  "author": "reddit_user_3f62396308c0",
+                  "author_karma": 0,
+                  "content": "And more then noise, it’ll be used as an excuse to cut a lot more then just the internet subsidy. ProPublica doing fine work here by highlighting this while the party in charge is the one maintaining the orphan-crushing machine. ",
+                  "timestamp": "2026-07-21T13:00:49+00:00",
+                  "likes": 6,
+                  "dislikes": 0,
+                  "parent_comment_id": "oypjbg8",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            },
+            {
+              "comment_id": "oyr7dba",
+              "author": "reddit_user_f06ec0e1e582",
+              "author_karma": 0,
+              "content": "Not only you’ve provided a paywall-free high quality and interesting article without any clickbait without glaringly annoying ads, chumboxes and other garbage, you also provided a summary of the article directly in the comments. \n\nI donated $25. It was easy. No upsells and just an Apple Pay button. \n\nOther journalist outfits: take note of how it’s done.  ",
+              "timestamp": "2026-07-20T21:41:51+00:00",
+              "likes": 18,
+              "dislikes": 0,
+              "parent_comment_id": "oynp0x2",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "oyrar69",
+                  "author": "reddit_user_255cb5398eef",
+                  "author_karma": 0,
+                  "content": "That's so kind! Thank you so much.",
+                  "timestamp": "2026-07-20T21:58:03+00:00",
+                  "likes": 5,
+                  "dislikes": 0,
+                  "parent_comment_id": "oyr7dba",
+                  "depth": 2,
+                  "replies": []
+                },
+                {
+                  "comment_id": "oyssyme",
+                  "author": "reddit_user_f9f297c8fed3",
+                  "author_karma": 0,
+                  "content": "Propublica is a nonprofit so they run quite differently. Most news organizations have to pay the bills with ads and subscriptions which has led to our current shitty world.  I doubt most news orgs would survive as a charity. \n\nThat said propublica is great",
+                  "timestamp": "2026-07-21T02:52:12+00:00",
+                  "likes": 4,
+                  "dislikes": 0,
+                  "parent_comment_id": "oyr7dba",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            },
+            {
+              "comment_id": "ozvauk1",
+              "author": "reddit_user_0bea9e70e42d",
+              "author_karma": 0,
+              "content": "Aren't they in the last year of a 10 contract? I bet the deal made sense 10 years ago. It doesn't now, but there's a contract.",
+              "timestamp": "2026-07-26T14:10:19+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "oynp0x2",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "oynuofy",
+          "author": "reddit_user_6745ff404031",
+          "author_karma": 0,
+          "content": "It’s nothing but corruption, grift, and kickbacks from the top down. The entire Trump administration is corrupt from the president down to his most insignificant underling. ",
+          "timestamp": "2026-07-20T12:39:34+00:00",
+          "likes": 21,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "oyolljz",
+              "author": "reddit_user_eceab4aeb9d9",
+              "author_karma": 0,
+              "content": "I can only assume you didnt read this article.",
+              "timestamp": "2026-07-20T14:51:15+00:00",
+              "likes": 2,
+              "dislikes": 0,
+              "parent_comment_id": "oynuofy",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "oyopnp9",
+              "author": "reddit_user_0a34bcc6434b",
+              "author_karma": 0,
+              "content": "You say that as if it’s the only administration like that. They’ve ALL been like that for many decades",
+              "timestamp": "2026-07-20T15:09:31+00:00",
+              "likes": 2,
+              "dislikes": 0,
+              "parent_comment_id": "oynuofy",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "oyuvksy",
+                  "author": "reddit_user_6745ff404031",
+                  "author_karma": 0,
+                  "content": "“Ooooh, boaf sides!!!”",
+                  "timestamp": "2026-07-21T12:06:23+00:00",
+                  "likes": -1,
+                  "dislikes": 0,
+                  "parent_comment_id": "oyopnp9",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "oyv0c52",
+                      "author": "reddit_user_0a34bcc6434b",
+                      "author_karma": 0,
+                      "content": "Indeed, the people with the authority are terrible people. Regardless of the nonsense labels you think somehow make a difference.",
+                      "timestamp": "2026-07-21T12:32:41+00:00",
+                      "likes": 2,
+                      "dislikes": 0,
+                      "parent_comment_id": "oyuvksy",
+                      "depth": 3,
+                      "replies": []
+                    },
+                    {
+                      "comment_id": "oyw9e4x",
+                      "author": "reddit_user_519508f5569d",
+                      "author_karma": 0,
+                      "content": "It's not \"boaf sides\" to recognize that the executive system is horribly corrupt and authoritarian regardless of who's in charge. I can acknowledge that the republican party is essentially an emergent new reich and also recognize that they have been empowered by exactly what LeatherRebel is pointing out.",
+                      "timestamp": "2026-07-21T15:59:19+00:00",
+                      "likes": 3,
+                      "dislikes": 0,
+                      "parent_comment_id": "oyuvksy",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "oynzap6",
+          "author": "reddit_user_6b0694b84c4d",
+          "author_karma": 0,
+          "content": "“I’m playing by the rules!” Yeah asshole, you’re exactly why we have government regulations that blot out the sun. Every time the government writes up a contract to supply say, chocolate chip cookies to the military, they end up having to produce an entire book of exact specifications for stuff like size and number of chips and other ingredients because the “god fearing patriotic businessmen” who fill the contracts are looking for every possible way to cheap out and increase their profits while still “playing by the rules” and then those same businessmen will say “government bureaucrats are crazy! Why do we need 50 pages of regulations about chocolate chip cookies!?”",
+          "timestamp": "2026-07-20T13:04:14+00:00",
+          "likes": 267,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "oyoj9zf",
+              "author": "reddit_user_ff7291ef3980",
+              "author_karma": 0,
+              "content": "This sort of thing is why the bakers' dozen exists, too.\n\nIf you were caught defrauding your customers, most famously being bread, apparently, you'd get flogged. Or some other very public, usually very corporal punishment.\n\nSo the bakers were all just like \"fuck it, a dozen is 13 now as far as I'm concerned.\" In order to not get their ass beat and lose all their business.",
+              "timestamp": "2026-07-20T14:40:41+00:00",
+              "likes": 88,
+              "dislikes": 0,
+              "parent_comment_id": "oynzap6",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "oyp2ekf",
+                  "author": "reddit_user_f6e34e6378be",
+                  "author_karma": 0,
+                  "content": "That's not the history of the baker's dozen at all.",
+                  "timestamp": "2026-07-20T16:05:38+00:00",
+                  "likes": -6,
+                  "dislikes": 0,
+                  "parent_comment_id": "oyoj9zf",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "oyq8ro0",
+                      "author": "reddit_user_d7b95b53e066",
+                      "author_karma": 0,
+                      "content": "Also probably batch sampling ",
+                      "timestamp": "2026-07-20T19:06:16+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "oyp2ekf",
+                      "depth": 3,
+                      "replies": []
+                    },
+                    {
+                      "comment_id": "oyqj65f",
+                      "author": "reddit_user_ff7291ef3980",
+                      "author_karma": 0,
+                      "content": "\"This thing I just read about is objectively wrong. Oops wait, probably not.\"\n\nNot to mention, it'd be really easy to get a couple of people who hate that one baker in town to start constantly claiming fraud if he fucks up a pastry here and there. So once again, a defense against claims of fraud.",
+                      "timestamp": "2026-07-20T19:52:22+00:00",
+                      "likes": 20,
+                      "dislikes": 0,
+                      "parent_comment_id": "oyp2ekf",
+                      "depth": 3,
+                      "replies": []
+                    },
+                    {
+                      "comment_id": "oyqpt9r",
+                      "author": "reddit_user_32373a438415",
+                      "author_karma": 0,
+                      "content": "Your example is the same thing g as what the person you're replying to said",
+                      "timestamp": "2026-07-20T20:22:05+00:00",
+                      "likes": 7,
+                      "dislikes": 0,
+                      "parent_comment_id": "oyp2ekf",
+                      "depth": 3,
+                      "replies": []
+                    },
+                    {
+                      "comment_id": "oyr4shx",
+                      "author": "reddit_user_1d3c20ffaf86",
+                      "author_karma": 0,
+                      "content": "yes that’s exactly what the person you disagreed with said ",
+                      "timestamp": "2026-07-20T21:29:40+00:00",
+                      "likes": 5,
+                      "dislikes": 0,
+                      "parent_comment_id": "oyp2ekf",
+                      "depth": 3,
+                      "replies": []
+                    },
+                    {
+                      "comment_id": "oyukxee",
+                      "author": "reddit_user_d57c0d9927f5",
+                      "author_karma": 0,
+                      "content": "Maybe take a second before replying next time",
+                      "timestamp": "2026-07-21T10:59:09+00:00",
+                      "likes": 0,
+                      "dislikes": 0,
+                      "parent_comment_id": "oyp2ekf",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                },
+                {
+                  "comment_id": "oyrdc6y",
+                  "author": "reddit_user_9912a085f212",
+                  "author_karma": 0,
+                  "content": "It was an extremely high fine. Bakers have always operated on Razor thin margins. Rather than risk that you had more undersized than oversized bread rolls in a dozen, you'd add one extra and be certain that you were over weight. IIRC, it's from like Elizabethan England.",
+                  "timestamp": "2026-07-20T22:10:39+00:00",
+                  "likes": 20,
+                  "dislikes": 0,
+                  "parent_comment_id": "oyoj9zf",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "oyre8wz",
+                      "author": "reddit_user_ff7291ef3980",
+                      "author_karma": 0,
+                      "content": "That's a little later than I actually expected.\n\nI guess that makes sense there'd be less flogging.",
+                      "timestamp": "2026-07-20T22:15:11+00:00",
+                      "likes": 4,
+                      "dislikes": 0,
+                      "parent_comment_id": "oyrdc6y",
+                      "depth": 3,
+                      "replies": []
+                    },
+                    {
+                      "comment_id": "oysdvpy",
+                      "author": "reddit_user_11fc903c05f9",
+                      "author_karma": 0,
+                      "content": "Betty’s Britain",
+                      "timestamp": "2026-07-21T01:25:33+00:00",
+                      "likes": 4,
+                      "dislikes": 0,
+                      "parent_comment_id": "oyrdc6y",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "comment_id": "oypoi46",
+              "author": "reddit_user_ef124cd09981",
+              "author_karma": 0,
+              "content": "You're not entirely wrong but it's a little more complicated than that. \n\nhttps://www.theglobeandmail.com/news/world/pentagons-brownie-guide-becomes-a-recipe-for-ridicule/article1367678/\n\n>\"One thing we like to say is 'What would happen if you cooked a meal, stored it in a stifling hot warehouse, dropped it out of an airplane, dragged it through the mud, left it out with bugs and vermin, and ate it three years later?'\" he said, noting that food made for the military must hold up under such conditions.",
+              "timestamp": "2026-07-20T17:39:43+00:00",
+              "likes": 23,
+              "dislikes": 0,
+              "parent_comment_id": "oynzap6",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "oyo3zxq",
+          "author": "reddit_user_f37b20d2dd5d",
+          "author_karma": 0,
+          "content": "GCI crews were in Larsen Bay, Kodiak 2 summers ago, installing fiber optic in the roads of the almost completely uninhabited village.  Probably in many other dwindling villages along the gulf as well.",
+          "timestamp": "2026-07-20T13:27:52+00:00",
+          "likes": 11,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "oyov5ju",
+              "author": "reddit_user_7fbfdbfc7663",
+              "author_karma": 0,
+              "content": "So strange, there are many rural areas in the US that barely have DSL.  ",
+              "timestamp": "2026-07-20T15:34:02+00:00",
+              "likes": 10,
+              "dislikes": 0,
+              "parent_comment_id": "oyo3zxq",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "oyoihnp",
+          "author": "reddit_user_c3d413f42cc5",
+          "author_karma": 0,
+          "content": "Weird how DOGE didn't find this little whoopsie daisy, but were able to secure confidential information on all Americans for unidentified parties.\n\nJust odd ",
+          "timestamp": "2026-07-20T14:37:06+00:00",
+          "likes": 60,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "oypousz",
+              "author": "reddit_user_ef124cd09981",
+              "author_karma": 0,
+              "content": "It actually is pretty weird since it is a competitor to starlink",
+              "timestamp": "2026-07-20T17:41:11+00:00",
+              "likes": 15,
+              "dislikes": 0,
+              "parent_comment_id": "oyoihnp",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "oyqqm8w",
+                  "author": "reddit_user_d8e0cd566fb6",
+                  "author_karma": 0,
+                  "content": "It's fine as long as they weren't investigating starlink. ",
+                  "timestamp": "2026-07-20T20:25:40+00:00",
+                  "likes": 7,
+                  "dislikes": 0,
+                  "parent_comment_id": "oypousz",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "oyoqllc",
+          "author": "reddit_user_fd290ba23a0f",
+          "author_karma": 0,
+          "content": "The problem with US regulation and subsidies are the thousands of loopholes they contain, not that they are bad. \n\nThis story  is a perfect example of intentional abuse of a system designed to assist areas where telecom companies do not want to provide service for because it doesn't have enough people to support a profitable business venture. This originated back in 1996... Really before the modern internet. So you have companies providing the minimum possible connections and charging the government exorbitant costs... It is legal, but only barely. \n\n\n",
+          "timestamp": "2026-07-20T15:13:48+00:00",
+          "likes": 15,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "oyovkjp",
+          "author": "reddit_user_e200255ed309",
+          "author_karma": 0,
+          "content": "What did DOGE find if not this mountain of irresponsibility? 🤠",
+          "timestamp": "2026-07-20T15:35:51+00:00",
+          "likes": 4,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "oypnru7",
+          "author": "reddit_user_47eb8739c621",
+          "author_karma": 0,
+          "content": "Do you know why DOGE didn't find this, because they weren't actually doing what they said they were doing.........why did elon need access to those voting machines too.",
+          "timestamp": "2026-07-20T17:36:37+00:00",
+          "likes": 3,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "oypslou",
+          "author": "reddit_user_a704f845905e",
+          "author_karma": 0,
+          "content": "Not to worry. It' won't be obsolete for long. We're also paying for fiber upgrades everywhere despite the availability of Star Link. ",
+          "timestamp": "2026-07-20T17:56:55+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "oyqswyb",
+          "author": "reddit_user_eaf23d534896",
+          "author_karma": 0,
+          "content": "AOL 9.0 Optimized, bitches. ",
+          "timestamp": "2026-07-20T20:35:56+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "oysffq3",
+          "author": "reddit_user_9e456404ceec",
+          "author_karma": 0,
+          "content": "I work in the telecom industry. There's ZERO chance this takes $340,000 a year to maintain. Fiber optic cables have very low to almost zero maintenance cost per year. They're not adding in new customers, so they're not adding equipment. Someone is pocketing the majority of that money. ",
+          "timestamp": "2026-07-21T01:34:19+00:00",
+          "likes": 3,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "oystorg",
+          "author": "reddit_user_aa0394243ac9",
+          "author_karma": 0,
+          "content": "honestly, this feels like a pretty minor example of waste in our current government. ",
+          "timestamp": "2026-07-21T02:56:38+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "oyt2d5a",
+          "author": "reddit_user_e0278822115a",
+          "author_karma": 0,
+          "content": "At last, one program DOGE could have cut that would have saved money and harmed no one.",
+          "timestamp": "2026-07-21T03:51:59+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "oyw84mw",
+          "author": "reddit_user_339e1ed6b65e",
+          "author_karma": 0,
+          "content": "This is good old fashioned American values.  We hate poor and vulnerable people who might somehow secure an extra couple hundred bucks thru welfare, but if you are a corporation scamming for hundreds of thousand or millions, that’s just fine.",
+          "timestamp": "2026-07-21T15:54:08+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run000_post01_seed001",
+      "post_slot": 1,
+      "seed_index": 1,
+      "source_raw_post_id": "1v1rk89",
+      "source_product_dir": "TrueReddit",
+      "source_file": "https://www.reddit.com/r/TrueReddit/comments/1v1rk89/digital_media_vs_physical_media_do_you_actually/",
+      "post_type": "Arts, Entertainment + Misc",
+      "title": "Digital Media vs. Physical Media: Do You Actually Own What You Buy?",
+      "author": "reddit_user_bde1e90b951b",
+      "author_karma": 0,
+      "content": "Digital Media vs. Physical Media: Do You Actually Own What You Buy?",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "oyphv1a",
+          "author": "reddit_user_e320faca37f4",
+          "author_karma": 0,
+          "content": "\nRemember that TrueReddit is a place to engage in **high-quality and civil discussion**. Posts must meet certain content and title requirements. Additionally, **all posts must contain a submission statement.** See the rules [here](https://old.reddit.com/r/truereddit/about/rules/) or in the sidebar for details.  **To the OP: your post has not been deleted, but is being held in the queue and will be approved once a submission statement is posted.**\n\nComments or posts that don't follow the rules may be removed without warning. [Reddit's content policy](https://www.redditinc.com/policies/content-policy) will be strictly enforced, especially regarding hate speech and calls for / celebrations of violence, and may result in a restriction in your participation.  In addition, due to rampant rulebreaking, we are currently under a moratorium regarding topics related to the 10/7 terrorist attack in Israel and in regards to the assassination of the UnitedHealthcare CEO.\n\nIf an article is paywalled, please ***do not*** request or post its contents. Use [archive.ph](https://archive.ph/) or similar and link to that in your submission statement.\n\n*I am a bot, and this action was performed automatically. Please [contact the moderators of this subreddit](/message/compose/?to=/r/TrueReddit) if you have any questions or concerns.*",
+          "timestamp": "2026-07-20T17:11:37+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "oypi1qq",
+          "author": "reddit_user_a838a6fdfa1e",
+          "author_karma": 0,
+          "content": "On July 1, 2026, Sony announced that it plans to discontinue physical discs for PlayStation games starting in January 2028. The move to a digital-only format means players can’t resell or lend out their copies and retailers won’t have a product to stock on their shelves. The loss of physical media brings up an important legal question: Do you own the digital versions of games, movies, and other content you purchase?",
+          "timestamp": "2026-07-20T17:12:24+00:00",
+          "likes": 5,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "oypmcwd",
+              "author": "reddit_user_83084bd56cdf",
+              "author_karma": 0,
+              "content": "I bought the PS5 with a CD drive even though it cost more.\n\nIf my PS6 games can only be digital, it must be time to finally set up a computer to stream onto my TV.\n\nWhy would I want the disadvantage of being locked to a console? The used games market was the last thread keeping that viable to me. Now, I may as well use a PC and pick up the occasional good deal while getting the same digital prices.",
+              "timestamp": "2026-07-20T17:30:37+00:00",
+              "likes": 3,
+              "dislikes": 0,
+              "parent_comment_id": "oypi1qq",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "oyq1ju6",
+          "author": "reddit_user_6634d8aadc3b",
+          "author_karma": 0,
+          "content": "If you don't own any of the media you buy, how is it considered \"stealing\" to pirate it?",
+          "timestamp": "2026-07-20T18:35:07+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "oyryu8j",
+          "author": "reddit_user_f3775706edde",
+          "author_karma": 0,
+          "content": "I loved Netflix and streaming in general when it first debuted, but I spent my younger years selling music and videos and I always suspected that the good times would be short-lived and eventually they’d take it all away and lock it behind subscriptions, paywalls and tiered access.\n\nI’m calling it right now: Disney is going to start “vaulting” their classic films behind a new subscription tier. ",
+          "timestamp": "2026-07-21T00:02:55+00:00",
+          "likes": 4,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "oytafof",
+          "author": "reddit_user_fd290ba23a0f",
+          "author_karma": 0,
+          "content": "Technically, you never owned the physical media you bought. ",
+          "timestamp": "2026-07-21T04:47:18+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run000_post02_seed002",
+      "post_slot": 2,
+      "seed_index": 2,
+      "source_raw_post_id": "1v285ew",
+      "source_product_dir": "TrueReddit",
+      "source_file": "https://www.reddit.com/r/TrueReddit/comments/1v285ew/the_murder_of_michael_jordans_father_and_what_my/",
+      "post_type": "Crime, Courts + War",
+      "title": "The Murder of Michael Jordan’s Father, and What My Family Did",
+      "author": "reddit_user_bde1e90b951b",
+      "author_karma": 0,
+      "content": "The Murder of Michael Jordan’s Father, and What My Family Did",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "oyt89nd",
+          "author": "reddit_user_e320faca37f4",
+          "author_karma": 0,
+          "content": "\nRemember that TrueReddit is a place to engage in **high-quality and civil discussion**. Posts must meet certain content and title requirements. Additionally, **all posts must contain a submission statement.** See the rules [here](https://old.reddit.com/r/truereddit/about/rules/) or in the sidebar for details.  **To the OP: your post has not been deleted, but is being held in the queue and will be approved once a submission statement is posted.**\n\nComments or posts that don't follow the rules may be removed without warning. [Reddit's content policy](https://www.redditinc.com/policies/content-policy) will be strictly enforced, especially regarding hate speech and calls for / celebrations of violence, and may result in a restriction in your participation.  In addition, due to rampant rulebreaking, we are currently under a moratorium regarding topics related to the 10/7 terrorist attack in Israel and in regards to the assassination of the UnitedHealthcare CEO.\n\nIf an article is paywalled, please ***do not*** request or post its contents. Use [archive.ph](https://archive.ph/) or similar and link to that in your submission statement.\n\n*I am a bot, and this action was performed automatically. Please [contact the moderators of this subreddit](/message/compose/?to=/r/TrueReddit) if you have any questions or concerns.*",
+          "timestamp": "2026-07-21T04:31:49+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "oyt8swg",
+          "author": "reddit_user_f35497bdcc27",
+          "author_karma": 0,
+          "content": "The 1993 murder of James Jordan produced two convictions in 1996, but a 2015 court filing pointed at something the trial never dealt with: a call from Jordan’s car phone to Hubert Deese, a cocaine trafficker who was also the sheriff’s illegitimate son. That sheriff was my great-uncle, Hubert Stone. This piece explores the evidence that was ignored, and presents new evidence of how Hubert Stone basically built a southern drug empire.",
+          "timestamp": "2026-07-21T04:35:36+00:00",
+          "likes": 28,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "oyvmzh1",
+              "author": "reddit_user_9138cc8f092f",
+              "author_karma": 0,
+              "content": "Will read it, most of my family is from Robeson County so anything about the area is always interesting.",
+              "timestamp": "2026-07-21T14:22:32+00:00",
+              "likes": 3,
+              "dislikes": 0,
+              "parent_comment_id": "oyt8swg",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "oz3xb34",
+              "author": "reddit_user_3d1c5ba3c559",
+              "author_karma": 0,
+              "content": "Thanks for sharing. A good read. ",
+              "timestamp": "2026-07-22T16:44:57+00:00",
+              "likes": 2,
+              "dislikes": 0,
+              "parent_comment_id": "oyt8swg",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "oyti7z4",
+          "author": "reddit_user_783de72d7c6d",
+          "author_karma": 0,
+          "content": "Wow, this is a heck of a read",
+          "timestamp": "2026-07-21T05:46:54+00:00",
+          "likes": 13,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "oyvq66a",
+          "author": "reddit_user_67f0b5b479ac",
+          "author_karma": 0,
+          "content": "“The jury that convicted Daniel Green of the murder never learned that Hubert Deese was the sheriff’s son” \n\nWhat? Who was Hubert Deese? He’s not mentioned before, and he’s not mentioned in the first section of the story. \n\nIf you’re going to throw a name into the story, explain who he is right after mentioning him. Otherwise, hint at what’s to come, but don’t leave your readers saying “Wait…Who’s Hubert Deese? What did I miss? Let me go back and read that again.”\n\n  “The jury who convicted Daniel Green of the murder of James Jordan never learned that a cocaine dealer whose phone number was called from James’ phone in the hours after his death was the son of Hubert Stone, the sheriff in charge of investigating James Jordan’s murder.” ",
+          "timestamp": "2026-07-21T14:36:45+00:00",
+          "likes": 7,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "oyvuiq0",
+              "author": "reddit_user_f35497bdcc27",
+              "author_karma": 0,
+              "content": "You know what, you’re right. People unfamiliar with the case and Robeson county won’t have a clue who he is. Deese shows up as a name before the reader knows who he is, which makes people stop and reread. I’m fixing it to introduce earlier. Appreciate you taking the time to spell it out.",
+              "timestamp": "2026-07-21T14:55:41+00:00",
+              "likes": 5,
+              "dislikes": 0,
+              "parent_comment_id": "oyvq66a",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "ozeewk2",
+                  "author": "reddit_user_0775f1b0c035",
+                  "author_karma": 0,
+                  "content": "Assuming anything will be posted to the to top of a thread in any sub is relatively unlikely. Most mods on Reddit are unpaid. Mods usually work around full-time jobs and private lives. In particular busy sub mods may or may not have time to read every long form article posted much less hundreds of comments. Mods always appreciate having items called to their attention using modmail -  except for false reports. Those are passed on to platform admins. ",
+                  "timestamp": "2026-07-24T01:27:21+00:00",
+                  "likes": 2,
+                  "dislikes": 0,
+                  "parent_comment_id": "oyvuiq0",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            },
+            {
+              "comment_id": "oyw6lyf",
+              "author": "reddit_user_f35497bdcc27",
+              "author_karma": 0,
+              "content": "I actually introduced Deese in the first comment of this thread, but your point on the article still stands. I assumed that comment would be pinned to the top.",
+              "timestamp": "2026-07-21T15:47:43+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "oyvq66a",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "oyvvokl",
+          "author": "reddit_user_064e315610a5",
+          "author_karma": 0,
+          "content": "What are your sources, other than the deeds you posted?\n\n>one dealer paid $300 per ounce of cocaine directly to Hubert Stone in order to move product through the county\n\nIs this an error?",
+          "timestamp": "2026-07-21T15:00:42+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "oyvxuee",
+              "author": "reddit_user_f35497bdcc27",
+              "author_karma": 0,
+              "content": "Unfortunately, no, it’s not an error. The rest of the sources are at the very bottom underneath the signup box. A deputy really testified that a dealer was paying $300 per ounce of cocaine sold to Stone in order to move product. ",
+              "timestamp": "2026-07-21T15:10:09+00:00",
+              "likes": 2,
+              "dislikes": 0,
+              "parent_comment_id": "oyvvokl",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "oyvyaf0",
+              "author": "reddit_user_f35497bdcc27",
+              "author_karma": 0,
+              "content": "https://www.jstor.org/content/oa\\_chapter\\_monograph/10.5149/9781469646398\\_lowery.11?seq=1",
+              "timestamp": "2026-07-21T15:12:06+00:00",
+              "likes": 3,
+              "dislikes": 0,
+              "parent_comment_id": "oyvvokl",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "oywgp1o",
+              "author": "reddit_user_f35497bdcc27",
+              "author_karma": 0,
+              "content": "Here is a full list of the sources: \n\nSouthern Coalition for Social Justice / Eddie Hatcher document  \n[https://cwis.org/wp-content/uploads/documents/edhatch.htm](https://cwis.org/wp-content/uploads/documents/edhatch.htm)\n\nDeadspin, “The Suffering and Corruption That Produced James Jordan”  \n[https://deadspin.com/the-suffering-and-corruption-that-produced-james-jordan-1796892112](https://deadspin.com/the-suffering-and-corruption-that-produced-james-jordan-1796892112)\n\nThe Stacks Reader, Scott Raab’s “Reasonable Doubt” (GQ, 1994)  \n[https://www.thestacksreader.com/reasonable-doubt/](https://www.thestacksreader.com/reasonable-doubt/)\n\nRobeson County Register of Deeds (deed records portal)  \n[https://robeson.bislandrecords.com/index.php](https://robeson.bislandrecords.com/index.php)\n\nJSTOR, Malinda Maynor Lowery, chapter from her book on the Lumbee (UNC Press)  \n[https://www.jstor.org/content/oa\\_chapter\\_monograph/10.5149/9781469646398\\_lowery.11](https://www.jstor.org/content/oa_chapter_monograph/10.5149/9781469646398_lowery.11)",
+              "timestamp": "2026-07-21T16:30:12+00:00",
+              "likes": 8,
+              "dislikes": 0,
+              "parent_comment_id": "oyvvokl",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "oyx1z99",
+                  "author": "reddit_user_064e315610a5",
+                  "author_karma": 0,
+                  "content": "Thank you.",
+                  "timestamp": "2026-07-21T18:00:17+00:00",
+                  "likes": 2,
+                  "dislikes": 0,
+                  "parent_comment_id": "oywgp1o",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "oyxcr4m",
+                      "author": "reddit_user_f35497bdcc27",
+                      "author_karma": 0,
+                      "content": "I couldn’t directly link the deed without uploading it somewhere that could host it. Happy to share with you. I discovered it by searching Hubert Larry Deese on Robeson County property deeds in 2003. Sure enough, a few months after he was released from prison, he was deeded 3.11 acres of land by H & K Stone Enterprises. And the president of that company, whose signature is on the deed anyway, was none other than my great-uncle Hubert. ",
+                      "timestamp": "2026-07-21T18:46:13+00:00",
+                      "likes": 3,
+                      "dislikes": 0,
+                      "parent_comment_id": "oyx1z99",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "oyzliwm",
+          "author": "reddit_user_61d4cf39fb3c",
+          "author_karma": 0,
+          "content": "Kinda sounds like the DEA likely stonewalled any efforts that may have complicated their informant, turning a blind eye to any other crimes he may have committed to ensure cooperation, etc.",
+          "timestamp": "2026-07-22T01:12:39+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "oyzmcz4",
+              "author": "reddit_user_f35497bdcc27",
+              "author_karma": 0,
+              "content": "My family has told me other stories that lead me to believe there’s a federal government connection we aren’t seeing. I only write about what I have sources for though. The truth is crazy enough. ",
+              "timestamp": "2026-07-22T01:17:15+00:00",
+              "likes": 3,
+              "dislikes": 0,
+              "parent_comment_id": "oyzliwm",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "oz0qrcf",
+                  "author": "reddit_user_61d4cf39fb3c",
+                  "author_karma": 0,
+                  "content": "I grew up in Richmond, and traveled the Carolinas often. This all sounds par for the course.\n\nAnd it also sounds like there was likely some kind of federal informant situation going on with the son, which would make sense with everything you’ve sourced and his seeming invisibility to the DA.",
+                  "timestamp": "2026-07-22T05:30:01+00:00",
+                  "likes": 2,
+                  "dislikes": 0,
+                  "parent_comment_id": "oyzmcz4",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "post_id": "real_run000_post03_seed003",
+      "post_slot": 3,
+      "seed_index": 3,
+      "source_raw_post_id": "1v28p5z",
+      "source_product_dir": "TrueReddit",
+      "source_file": "https://www.reddit.com/r/TrueReddit/comments/1v28p5z/spac_nation_assault_lawsuit_violence_how_they/",
+      "post_type": "Policy + Social Issues",
+      "title": "SPAC Nation: Assault Lawsuit, Violence & How They Brainwash Young People",
+      "author": "reddit_user_bde1e90b951b",
+      "author_karma": 0,
+      "content": "SPAC Nation: Assault Lawsuit, Violence & How They Brainwash Young People",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "oytc6ms",
+          "author": "reddit_user_e320faca37f4",
+          "author_karma": 0,
+          "content": "/r/TrueReddit is for high-quality reads,  and as such does not feature video content.\n\n*I am a bot, and this action was performed automatically. Please [contact the moderators of this subreddit](/message/compose/?to=/r/TrueReddit) if you have any questions or concerns.*",
+          "timestamp": "2026-07-21T05:00:11+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run000_post04_seed004",
+      "post_slot": 4,
+      "seed_index": 4,
+      "source_raw_post_id": "1v2idh0",
+      "source_product_dir": "TrueReddit",
+      "source_file": "https://www.reddit.com/r/TrueReddit/comments/1v2idh0/a_layerbylayer_teardown_of_the_most_intricate/",
+      "post_type": "Technology",
+      "title": "A layer-by-layer teardown of the most intricate machine you’ve ever held.",
+      "author": "reddit_user_bde1e90b951b",
+      "author_karma": 0,
+      "content": "A layer-by-layer teardown of the most intricate machine you’ve ever held.",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "oyvahmo",
+          "author": "reddit_user_e320faca37f4",
+          "author_karma": 0,
+          "content": "\nRemember that TrueReddit is a place to engage in **high-quality and civil discussion**. Posts must meet certain content and title requirements. Additionally, **all posts must contain a submission statement.** See the rules [here](https://old.reddit.com/r/truereddit/about/rules/) or in the sidebar for details.  **To the OP: your post has not been deleted, but is being held in the queue and will be approved once a submission statement is posted.**\n\nComments or posts that don't follow the rules may be removed without warning. [Reddit's content policy](https://www.redditinc.com/policies/content-policy) will be strictly enforced, especially regarding hate speech and calls for / celebrations of violence, and may result in a restriction in your participation.  In addition, due to rampant rulebreaking, we are currently under a moratorium regarding topics related to the 10/7 terrorist attack in Israel and in regards to the assassination of the UnitedHealthcare CEO.\n\nIf an article is paywalled, please ***do not*** request or post its contents. Use [archive.ph](https://archive.ph/) or similar and link to that in your submission statement.\n\n*I am a bot, and this action was performed automatically. Please [contact the moderators of this subreddit](/message/compose/?to=/r/TrueReddit) if you have any questions or concerns.*",
+          "timestamp": "2026-07-21T13:24:23+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "oyvajma",
+          "author": "reddit_user_77199ddd21cc",
+          "author_karma": 0,
+          "content": "Full disclosure, I wrote this. It's a detailed teardown of the smartphone and the history of its components, written to be read on the device it describes. Some layers demonstrate themselves as you scroll: the screen counts its own pixels, the touch sensor tracks your finger.\n\nIt fills a little-explored niche: I haven’t come across anything else that brings together this level of detail and (hopefully!) accessibility. I think it’s neat, I hope you do too.",
+          "timestamp": "2026-07-21T13:24:39+00:00",
+          "likes": 32,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "oywbeuf",
+              "author": "reddit_user_80b8f1a569cb",
+              "author_karma": 0,
+              "content": "Thanks so much for taking the time to write and share this, Op - it's both genuinely insightful and well written, so kudos! :) \n\nI particularly love the attention to detail, and I'm really pleased that I've even been able to learn a surprising amount of new things I didn't know about how smartphones work, as well as what inspired certain innovations. ",
+              "timestamp": "2026-07-21T16:07:46+00:00",
+              "likes": 8,
+              "dislikes": 0,
+              "parent_comment_id": "oyvajma",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "oywg6gj",
+                  "author": "reddit_user_77199ddd21cc",
+                  "author_karma": 0,
+                  "content": "Thank you! I'm so glad you like it. I'm planning a follow up (which actually was the original idea, but it was just too big) which charts all the precursor technologies that have been swallowed by the phone, and the smartphone's evolutionary history.   \n  \nIf you drop your email here I'll let you know when it's out [https://buttondown.com/theeverythingmachine](https://buttondown.com/theeverythingmachine), or you can follow people on reddit now which would work too as I'm bound to post it!",
+                  "timestamp": "2026-07-21T16:28:00+00:00",
+                  "likes": 6,
+                  "dislikes": 0,
+                  "parent_comment_id": "oywbeuf",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            },
+            {
+              "comment_id": "oz1oto1",
+              "author": "reddit_user_d570fb778d75",
+              "author_karma": 0,
+              "content": "What an amazing web page - beautiful, poetic, informative, understandable and full of joy and wonder. Thanks.",
+              "timestamp": "2026-07-22T10:04:37+00:00",
+              "likes": 3,
+              "dislikes": 0,
+              "parent_comment_id": "oyvajma",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "oyvmcy7",
+          "author": "reddit_user_003d4b5b54dd",
+          "author_karma": 0,
+          "content": "> \"Your phone is the most intricate machine you’ve ever held.\"\n\nYou don't know that.",
+          "timestamp": "2026-07-21T14:19:44+00:00",
+          "likes": 4,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "oyvnr5b",
+              "author": "reddit_user_77199ddd21cc",
+              "author_karma": 0,
+              "content": "What have you been holding? Only rival I can think of is a brand new GPU, and no one can get hands on those!",
+              "timestamp": "2026-07-21T14:25:59+00:00",
+              "likes": 5,
+              "dislikes": 0,
+              "parent_comment_id": "oyvmcy7",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "oyvng11",
+          "author": "reddit_user_b2470f9afffe",
+          "author_karma": 0,
+          "content": "Well done, fun to read.  \n\nAlso, you have torches in your phone? They must not allow that in my country, although it would be helpful for starting a BBQ or lighting a cigar. ",
+          "timestamp": "2026-07-21T14:24:35+00:00",
+          "likes": 3,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "oyvoool",
+              "author": "reddit_user_77199ddd21cc",
+              "author_karma": 0,
+              "content": "Thank you! I decided early on that I would stick to charming/confusing UK English. Fun fact that didn't make it in: ~~Torch~~ Flashlight is because the early ones could only flash rather than stay lit up.",
+              "timestamp": "2026-07-21T14:30:13+00:00",
+              "likes": 9,
+              "dislikes": 0,
+              "parent_comment_id": "oyvng11",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "oyvoy69",
+              "author": "reddit_user_003d4b5b54dd",
+              "author_karma": 0,
+              "content": "Noun\n\ntorch (*plural* torches)\n\n[...]\n\n(*by extension, Commonwealth*) *Ellipsis of* electric torch\n\nSynonym of flashlight (“a battery-powered hand-held light source”). \n\nSynonym: (*India, Malaysia, Nigeria, Singapore*) torchlight\n\n> Ernst slipped and dropped his torch on the flagstones, shattering the bulb and plunging us into darkness.",
+              "timestamp": "2026-07-21T14:31:22+00:00",
+              "likes": 2,
+              "dislikes": 0,
+              "parent_comment_id": "oyvng11",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "oywc3jv",
+                  "author": "reddit_user_104adb25fab7",
+                  "author_karma": 0,
+                  "content": "God damn it Ernst!",
+                  "timestamp": "2026-07-21T16:10:39+00:00",
+                  "likes": 2,
+                  "dislikes": 0,
+                  "parent_comment_id": "oyvoy69",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "oyvwuyg",
+          "author": "reddit_user_968acb416ceb",
+          "author_karma": 0,
+          "content": "And what is its purpose?\n\n  \n\"YOU SURF REDDIT\"\n\n  \n\"OH MY GOOOOOD\"",
+          "timestamp": "2026-07-21T15:05:50+00:00",
+          "likes": 5,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "oywdg80",
+          "author": "reddit_user_1a5944ad559b",
+          "author_karma": 0,
+          "content": "Cool read\n\nDisappointed it's very Apple-centric given that many innovations have come from Android",
+          "timestamp": "2026-07-21T16:16:23+00:00",
+          "likes": 5,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "oywgshi",
+              "author": "reddit_user_77199ddd21cc",
+              "author_karma": 0,
+              "content": "I'm on Android, but you have to hand it to Apple for lots of this stuff! there's a fascinating pre-iphone and android period too, [this](https://mobilephonemuseum.com/catalogue?collection=Firsts) is an interesting rundown from the Mobile Phone Museum.",
+              "timestamp": "2026-07-21T16:30:36+00:00",
+              "likes": 4,
+              "dislikes": 0,
+              "parent_comment_id": "oywdg80",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "oyxas82",
+                  "author": "reddit_user_c87c2c2f4b9d",
+                  "author_karma": 0,
+                  "content": "from an internal engineering and \"use of space\" perspective, the jump from iphone 5s to iphone 6 was really colossal. i was doing phone repair at the time, and the mainboard design changes over just a few years was truly actually insane to see play out in real time. the iphone X brought the two sided mainboard which was also pretty crazy.\n\nonly thing even remotely close was the jump from galaxy s7 to s8. both very impressive, but the iphone was something very impressive.",
+                  "timestamp": "2026-07-21T18:37:47+00:00",
+                  "likes": 5,
+                  "dislikes": 0,
+                  "parent_comment_id": "oywgshi",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "oyxd4uk",
+                      "author": "reddit_user_77199ddd21cc",
+                      "author_karma": 0,
+                      "content": "That's great to know thank you. I had real trouble deciding for the first phone with a system on a chip, maybe worth a honourable mention of the iPhone 6 in the next chapter",
+                      "timestamp": "2026-07-21T18:47:53+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "oyxas82",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "oyxfztq",
+          "author": "reddit_user_7faefd1d0fbe",
+          "author_karma": 0,
+          "content": "Best how-it-works article I’ve ever read, well documented and great presentation style too!  I eagerly await your next installment ",
+          "timestamp": "2026-07-21T19:00:05+00:00",
+          "likes": 4,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "oyxocio",
+          "author": "reddit_user_e05ab46eed64",
+          "author_karma": 0,
+          "content": "Thanks OP, I learned a lot. ",
+          "timestamp": "2026-07-21T19:36:37+00:00",
+          "likes": 4,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "oz3d921",
+          "author": "reddit_user_26dda2ecb936",
+          "author_karma": 0,
+          "content": "This is interesting but it made me think of another thing that would be interesting. If you had something like this but with layers you could page through, to see the insides in place (I remember a set of encyclopaedias my family had that had human body pages where you could turn through the layers, which is what this made me think of). ",
+          "timestamp": "2026-07-22T15:21:38+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    }
+  ]
+}

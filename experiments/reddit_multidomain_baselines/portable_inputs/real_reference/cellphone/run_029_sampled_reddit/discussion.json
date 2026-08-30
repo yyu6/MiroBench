@@ -1,0 +1,299 @@
+{
+  "meta": {
+    "product_category": "cellphone",
+    "baseline": "real_reddit_reference",
+    "run_id": "run_029_sampled_reddit"
+  },
+  "posts": [
+    {
+      "post_id": "real_run029_post00_seed145",
+      "post_slot": 0,
+      "seed_index": 145,
+      "source_raw_post_id": "1ve1n30",
+      "source_product_dir": "Android",
+      "source_file": "https://www.reddit.com/r/Android/comments/1ve1n30/what_app_is_this/",
+      "post_type": "image",
+      "title": "What app is this?",
+      "author": "reddit_user_0fe413d0e398",
+      "author_karma": 0,
+      "content": "What app is this?\n\n[removed]",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p1dl92c",
+          "author": "reddit_user_65884126434e",
+          "author_karma": 0,
+          "content": "Sorry [REDDIT_USER], but your submission was removed as you included a post body within your submission. The body text is often used to insert bias/opinion which violates Rule 6 in direct link submissions. Feel free to repost without the post body.\n\n\n*I am a bot, and this action was performed automatically. Please [contact the moderators of this subreddit](/message/compose/?to=/r/Android) if you have any questions or concerns.*",
+          "timestamp": "2026-08-03T03:06:55+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run029_post01_seed146",
+      "post_slot": 1,
+      "seed_index": 146,
+      "source_raw_post_id": "1ve26l5",
+      "source_product_dir": "GooglePixel",
+      "source_file": "https://www.reddit.com/r/GooglePixel/comments/1ve26l5/how_do_i_disable_volume_lowered_to_a_safer_level/",
+      "post_type": "reddit_post",
+      "title": "How do I disable \"Volume lowered to a safer level - Headphone volume has been high for longer than recommended\" message?",
+      "author": "reddit_user_0fe413d0e398",
+      "author_karma": 0,
+      "content": "How do I disable \"Volume lowered to a safer level - Headphone volume has been high for longer than recommended\" message?\n\nJust in case anybody hasn't figured this out yet, I've actually found the true way of doing it and it involves developer mode. If you're not sure how to get to developer mode on your Google pixel, follow these steps (steps by: https://support.google.com/pixelphone/thread/357735269/stop-lowering-my-volume-google?hl=en)\n\nStep 1: Enable Developer Options\n\nFirst, you need to make the \"Developer options\"\n\nmenu visible. If you have already done this, you can skip to Step 2.\n\n1. Open your phone's Settings app.\n\n2. Scroll down and tap on About phone.\n\n3. Scroll to the bottom and find the Build number.\n\n4.\n\nTap on Build number 7 times in a row. You will see a small pop-up message telling you how many taps are remaining. After the 7th tap, you will be asked to enter your phone's PIN, pattern, or password.\n\n5. Once you do, you'll see a message that says, \"You are now a developer!\"\n\nNow the main reason I decided to make this post. \n\nIn that same site from above, it'll mention something about going into networking but it's a little incorrect. It's the same steps as going into developer mode and going into networking but instead you have to go into the \"Bluetooth\" tab, scroll down and toggle \"Disable Auto Lowering Volume\". \n\nBeen dealing with this since I first got the phone a few months ago and I finally found the answer to my prayers. Hope this helps!",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p1dq0la",
+          "author": "reddit_user_3cd07f29c630",
+          "author_karma": 0,
+          "content": "I thought they fixed this in the latest update as long as you don't list the device as headphones under Bluetooth settings?",
+          "timestamp": "2026-08-03T03:38:36+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run029_post02_seed147",
+      "post_slot": 2,
+      "seed_index": 147,
+      "source_raw_post_id": "1ve2a9p",
+      "source_product_dir": "Android",
+      "source_file": "https://www.reddit.com/r/Android/comments/1ve2a9p/most_customizable_app_drawer_after_samsung/",
+      "post_type": "Filtered - rule 2",
+      "title": "Most customizable app drawer after samsung?",
+      "author": "reddit_user_0fe413d0e398",
+      "author_karma": 0,
+      "content": "Most customizable app drawer after samsung?\n\n[removed]",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p1dq5n6",
+          "author": "reddit_user_65884126434e",
+          "author_karma": 0,
+          "content": "#### Hey there clarence90, your post has been automatically filtered for further review for the mod team. It does not mean your post has been removed!\n\n> Rule 2\\. \"We welcome **discussion-promoting** posts that benefit the community (device reviews, guides, discussions and rumors) and not the individual (support questions, rants, customer service complaints, selling/trading devices, etc). Your post will be removed if it is part of the latter category.\"\n> [See the wiki page for more\n> information.](http://www.reddit.com/r/Android/wiki/rulesandregs#wiki_2._we_welcome_discussion-promoting_posts_that_benefit_the_community.2C_and_not_the_individual.)\n\nYou may be interested in:\n\n- [Our daily threads](https://www.reddit.com/r/Android/search/?q=daily+superthread&include_over_18=on&restrict_sr=on&t=all&sort=new) or /r/AndroidQuestions / [Your device's respective subreddit](http://www.reddit.com/r/Android/wiki/subreddits) or [xda-developers.com](http://forum.xda-developers.com/compact).\n- /r/PickAnAndroidForMe - Device recommendations. You could also look at our wiki where we recommend [entry-level](https://www.reddit.com/r/Android/wiki/affordable), [midrange](https://www.reddit.com/r/Android/wiki/midrange) and [flagship phones](https://www.reddit.com/r/Android/wiki/flagships)\n- The [Saturday Appreciation threads](https://www.reddit.com/r/Android/search/?q=saturday+appreciation&include_over_18=on&restrict_sr=on&t=all&sort=new) or /r/AndroidApps - App recommendations.\n- /r/AndroidGaming - For all things gaming on Android.\n- /r/AndroidThemes - Customizing your device.\n- /r/AndroidPreviews or /r/Android_Beta - Queries regarding Android betas/previews.\n- /r/Android/wiki/switchingfromios -If you're an iPhone user considering the switch from iOS to Android.\n- /r/androidafterlife - Finding uses for your old devices\n- /r/AndroidTV - For queries related to Android/Google TV\n- [The AOSP tracker](https://code.google.com/p/android/) - Reporting Android bugs/feature requests.\n- [eBay](http://www.ebay.com/), [Swappa](http://www.swappa.com/), [craigslist](http://www.craigslist.com/), or /r/hardwareswap - Selling, buying or trading devices.\n- Additionally, you might be interested in viewing our [IRC  or Telegram chat servers](https://www.reddit.com/r/Android/wiki/index#wiki_.2Fr.2Fandroid_chat_rooms). \n\nFeel free to message the moderators [here](https://www.reddit.com/message/compose?to=%2Fr%2Fandroid) if you want further information.\n\n\n*I am a bot, and this action was performed automatically. Please [contact the moderators of this subreddit](/message/compose/?to=/r/Android) if you have any questions or concerns.*",
+          "timestamp": "2026-08-03T03:39:33+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run029_post03_seed148",
+      "post_slot": 3,
+      "seed_index": 148,
+      "source_raw_post_id": "1ve2qd1",
+      "source_product_dir": "iphone",
+      "source_file": "https://www.reddit.com/r/iphone/comments/1ve2qd1/android_warned_us_my_iphone_didnt/",
+      "post_type": "Discussion",
+      "title": "Android warned us. My iPhone didn’t.",
+      "author": "reddit_user_0fe413d0e398",
+      "author_karma": 0,
+      "content": "Android warned us. My iPhone didn’t.\n\nToday we had a strong earthquake that woke me up in the middle of the night from the shaking.\n\nMy brothers got an earthquake notification about 30 seconds before it happened. They were already awake and knew how strong it was going to be and they got safety advice from Android’s earthquake alert system.\n\nMy iPhone didn’t send me shit. It actually made me feel like shit about my phone.\n\nThose few seconds can save your life.",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p1dtmqo",
+          "author": "reddit_user_33891f1dfc61",
+          "author_karma": 0,
+          "content": "Are you sure emergency alerts are turned on?",
+          "timestamp": "2026-08-03T04:03:27+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1duiu4",
+              "author": "reddit_user_dc2e2702281c",
+              "author_karma": 0,
+              "content": "There is no option i found called emergency alerts ",
+              "timestamp": "2026-08-03T04:09:41+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1dtmqo",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1durkr",
+                  "author": "reddit_user_01fdec542678",
+                  "author_karma": 0,
+                  "content": "Settings>notifications>emergency alerts (at the very bottom)",
+                  "timestamp": "2026-08-03T04:11:25+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1duiu4",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1dv0tb",
+                      "author": "reddit_user_dc2e2702281c",
+                      "author_karma": 0,
+                      "content": "https://preview.redd.it/38oqzxf753hh1.jpeg?width=1284&format=pjpg&auto=webp&s=67a8e6fce2326acd0ac7777e9f7e029a61367364\n\nAt the very bottom just more apps ",
+                      "timestamp": "2026-08-03T04:13:14+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1durkr",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "p1dv56t",
+                          "author": "reddit_user_01fdec542678",
+                          "author_karma": 0,
+                          "content": "Literally at the bottom. Scroll. ",
+                          "timestamp": "2026-08-03T04:14:05+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "p1dv0tb",
+                          "depth": 4,
+                          "replies": []
+                        },
+                        {
+                          "comment_id": "p1dvapt",
+                          "author": "reddit_user_2b5bb5769539",
+                          "author_karma": 0,
+                          "content": "https://preview.redd.it/76k3580m53hh1.jpeg?width=1320&format=pjpg&auto=webp&s=25eff246b8c621c12007d63044241bd66088c94e\n\n  \nIt’s supposed to look like this ",
+                          "timestamp": "2026-08-03T04:15:11+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "p1dv0tb",
+                          "depth": 4,
+                          "replies": [
+                            {
+                              "comment_id": "p1dvgl7",
+                              "author": "reddit_user_dc2e2702281c",
+                              "author_karma": 0,
+                              "content": "I don’t have those, seems to be related to the country or region, at the very bottom i have just more apps   \n\n\nhttps://preview.redd.it/mq9kioyt53hh1.jpeg?width=1284&format=pjpg&auto=webp&s=61534cc9681346a63d4180f347bb2ca8cf4d01b5",
+                              "timestamp": "2026-08-03T04:16:20+00:00",
+                              "likes": 1,
+                              "dislikes": 0,
+                              "parent_comment_id": "p1dvapt",
+                              "depth": 5,
+                              "replies": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "comment_id": "p1duzuh",
+                  "author": "reddit_user_e7818d7f61ed",
+                  "author_karma": 0,
+                  "content": "Go Settings > Notifications, and scroll all the way to the bottom to find Enhanced Safety Alerts. ",
+                  "timestamp": "2026-08-03T04:13:03+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1duiu4",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1dv4nd",
+                      "author": "reddit_user_dc2e2702281c",
+                      "author_karma": 0,
+                      "content": "I don’t have this option ",
+                      "timestamp": "2026-08-03T04:13:59+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1duzuh",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p1dvn6z",
+          "author": "reddit_user_b7812160ab1b",
+          "author_karma": 0,
+          "content": "Is the earthquake notification system phone-specific? That seems to be a terrible idea. ",
+          "timestamp": "2026-08-03T04:17:37+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1dvpug",
+              "author": "reddit_user_33891f1dfc61",
+              "author_karma": 0,
+              "content": "It’s carrier and region specific ",
+              "timestamp": "2026-08-03T04:18:09+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1dvn6z",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "post_id": "real_run029_post04_seed149",
+      "post_slot": 4,
+      "seed_index": 149,
+      "source_raw_post_id": "1ve2toh",
+      "source_product_dir": "iphone",
+      "source_file": "https://www.reddit.com/r/iphone/comments/1ve2toh/moisture_in_both_cameras/",
+      "post_type": "Support",
+      "title": "Moisture in both cameras",
+      "author": "reddit_user_0fe413d0e398",
+      "author_karma": 0,
+      "content": "Moisture in both cameras\n\nAs the title says, I got moisture in both of my cameras, it looks like I took a bunch of oil and smeared it over the camera, it’s on both the normal cameras (3 cameras) and selfie camera. \n\nThis literally happened overnight, my phone did take a good chest height fall the other day onto some gravel but nothing cracked and nothing got bent, the case took the damage(flat on its back with a little wear spot where it hit a rock) but I wouldn’t be surprised if that fall did end up damaging something not immediately visible. \n\nIt’s an iPhone 15 pro max I got on back market (the website) last year, I’ve had no other issues with waterproofing since I got it, is there possibility an easy fix for this? Or am I screwed? \n\nP.S I haven’t tried rice, I will be leaving it in a bag of desiccant tonight",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p1dvy5n",
+          "author": "reddit_user_33891f1dfc61",
+          "author_karma": 0,
+          "content": "Don’t put it in rice. Does using alcohol wipes do anything?",
+          "timestamp": "2026-08-03T04:19:50+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1dw5ze",
+              "author": "reddit_user_7ec5ece362e2",
+              "author_karma": 0,
+              "content": "Does nothing, sometimes I can see the droplets forming on the inside of the lens so it’s not something on the outside ",
+              "timestamp": "2026-08-03T04:21:24+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1dvy5n",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,760 @@
+{
+  "meta": {
+    "product_category": "news",
+    "baseline": "real_reddit_reference",
+    "run_id": "run_014_sampled_reddit"
+  },
+  "posts": [
+    {
+      "post_id": "real_run014_post00_seed070",
+      "post_slot": 0,
+      "seed_index": 70,
+      "source_raw_post_id": "1vdzhtt",
+      "source_product_dir": "worldnews",
+      "source_file": "https://www.reddit.com/r/worldnews/comments/1vdzhtt/magnitude_53_earthquake_strikes_egypt_with/",
+      "post_type": "link",
+      "title": "Magnitude 5.3 earthquake strikes Egypt, with shaking felt in Cairo and surrounding areas",
+      "author": "reddit_user_bde1e90b951b",
+      "author_karma": 0,
+      "content": "Magnitude 5.3 earthquake strikes Egypt, with shaking felt in Cairo and surrounding areas",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p1d5beg",
+          "author": "reddit_user_799994581cad",
+          "author_karma": 0,
+          "content": "A bit of activity around the Mediterranean the past week",
+          "timestamp": "2026-08-03T01:30:41+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1d69v3",
+              "author": "reddit_user_98fdd25cf224",
+              "author_karma": 0,
+              "content": "Spot on. The region has seen quite a bit of movement lately. When something like this hits relatively shallow near Suez, it's definitely going to wake people up and get everyone talking across the area",
+              "timestamp": "2026-08-03T01:36:19+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1d5beg",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1d88qx",
+          "author": "reddit_user_67cfdd567fc9",
+          "author_karma": 0,
+          "content": "Are the pyramids ok ?",
+          "timestamp": "2026-08-03T01:47:49+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1dbdv5",
+              "author": "reddit_user_457d4d6827d5",
+              "author_karma": 0,
+              "content": "Atlantis tech way too advance for earthquakes.\nof course the pyramids are still there.",
+              "timestamp": "2026-08-03T02:06:30+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1d88qx",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1dekx2",
+                  "author": "reddit_user_435f2f5db969",
+                  "author_karma": 0,
+                  "content": "They lifted off briefly to avoid the impact.",
+                  "timestamp": "2026-08-03T02:25:32+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1dbdv5",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1dhlhh",
+                      "author": "reddit_user_67cfdd567fc9",
+                      "author_karma": 0,
+                      "content": "Thank god we have slaves like you who work tirelessly to preserve these magnificent monuments.",
+                      "timestamp": "2026-08-03T02:43:51+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1dekx2",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "comment_id": "p1g6o6x",
+              "author": "reddit_user_5c710e50c2f4",
+              "author_karma": 0,
+              "content": "I'd be a lot more concerned about the shoddy apartment buildings all over Cairo. Those things were built to such a tight budget that they were left deliberately unfinished because only finished buildings pay taxes.",
+              "timestamp": "2026-08-03T14:02:31+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1d88qx",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1dbt1s",
+          "author": "reddit_user_04db4a9d6344",
+          "author_karma": 0,
+          "content": "Some large earthquakes have came out of the Mediterranean before. We dont need a foreshock ahead of anything. ",
+          "timestamp": "2026-08-03T02:09:01+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1dca8t",
+              "author": "reddit_user_98fdd25cf224",
+              "author_karma": 0,
+              "content": "True, the Mediterranean basin has a complex and active history. While this one was a moderate wake-up call, it's always a good reminder of how dynamic the region's tectonic activity can be",
+              "timestamp": "2026-08-03T02:11:53+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1dbt1s",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p1dr5ew",
+              "author": "reddit_user_bee243428265",
+              "author_karma": 0,
+              "content": "7.8 as recently as 2023 in southern Türkiye near the border with Syria. ",
+              "timestamp": "2026-08-03T03:46:22+00:00",
+              "likes": 3,
+              "dislikes": 0,
+              "parent_comment_id": "p1dbt1s",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p1dt7fc",
+              "author": "reddit_user_148414fed42f",
+              "author_karma": 0,
+              "content": "Yeah one quake doesn't automatically mean a bigger one is coming.",
+              "timestamp": "2026-08-03T04:00:31+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1dbt1s",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1ergyz",
+                  "author": "reddit_user_e4b50d2b57e9",
+                  "author_karma": 0,
+                  "content": "There is [about a 5% probability](https://www.usgs.gov/faqs/what-probability-earthquake-a-foreshock-a-larger-earthquake) that an earthquake is a foreshock to a larger earthquake within 1 week. So it is useful to be prepared for the possibility.",
+                  "timestamp": "2026-08-03T08:35:13+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1dt7fc",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p1dbv8c",
+          "author": "reddit_user_2c88c75bd207",
+          "author_karma": 0,
+          "content": "I’m betting… 12 hours before Egyptian officials blame Mossad. ",
+          "timestamp": "2026-08-03T02:09:23+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1f7clc",
+              "author": "[deleted]",
+              "author_karma": 0,
+              "content": "[removed]",
+              "timestamp": "2026-08-03T10:43:03+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1dbv8c",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p1fyv8t",
+              "author": "[deleted]",
+              "author_karma": 0,
+              "content": "[removed]",
+              "timestamp": "2026-08-03T13:25:28+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1dbv8c",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1dds5u",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-03T02:20:53+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1df9c1",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-03T02:29:37+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run014_post01_seed071",
+      "post_slot": 1,
+      "seed_index": 71,
+      "source_raw_post_id": "1vdzigk",
+      "source_product_dir": "nottheonion",
+      "source_file": "https://www.reddit.com/r/nottheonion/comments/1vdzigk/california_researchers_turn_to_onlyfans_as_their/",
+      "post_type": "link",
+      "title": "California researchers turn to OnlyFans as their funding dries up — OnlyMarms account promises near-daily photos and videos of chubby, personable marmots",
+      "author": "reddit_user_bde1e90b951b",
+      "author_karma": 0,
+      "content": "California researchers turn to OnlyFans as their funding dries up — OnlyMarms account promises near-daily photos and videos of chubby, personable marmots",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p1dkmvp",
+          "author": "reddit_user_a414013f41b7",
+          "author_karma": 0,
+          "content": "Thanks for your submission. This post was removed as it violated rule 2:\nBoth the title and body of your article should sound like something The Onion would write. This can be highly subjective - there's no one-size-fits-all guide to what fits here. Moderators may rule posts Not Oniony at their own discretion.\nPlease see https://www.reddit.com/r/nottheonion/wiki/done_to_death",
+          "timestamp": "2026-08-03T03:02:58+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run014_post02_seed072",
+      "post_slot": 2,
+      "seed_index": 72,
+      "source_raw_post_id": "1vdzym8",
+      "source_product_dir": "nottheonion",
+      "source_file": "https://www.reddit.com/r/nottheonion/comments/1vdzym8/bengvir_barred_from_using_crocodiles_to_guard/",
+      "post_type": "link",
+      "title": "Ben-Gvir barred from using crocodiles to guard terrorists, court announces",
+      "author": "reddit_user_bde1e90b951b",
+      "author_karma": 0,
+      "content": "Ben-Gvir barred from using crocodiles to guard terrorists, court announces",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p1dkm5o",
+          "author": "reddit_user_a414013f41b7",
+          "author_karma": 0,
+          "content": "Thanks for your submission. This post was removed as it violated rule 5: \nCheck for articles on the same story using the Search function and current posts. Do not post if your article is the same or similar to one that has already been posted. Frequent violators of this rule will lose their posting privileges.\nThe earliest submission remains. All other similar posts afterwards will be deleted.",
+          "timestamp": "2026-08-03T03:02:50+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run014_post03_seed073",
+      "post_slot": 3,
+      "seed_index": 73,
+      "source_raw_post_id": "1ve0eba",
+      "source_product_dir": "nottheonion",
+      "source_file": "https://www.reddit.com/r/nottheonion/comments/1ve0eba/calif_researchers_turn_to_onlyfans_as_their/",
+      "post_type": "link",
+      "title": "Calif. researchers turn to OnlyFans as their funding dries up",
+      "author": "reddit_user_bde1e90b951b",
+      "author_karma": 0,
+      "content": "Calif. researchers turn to OnlyFans as their funding dries up",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p1dbgjr",
+          "author": "reddit_user_e320faca37f4",
+          "author_karma": 0,
+          "content": "[](/spikeholdup) Greetings, \\[REDDIT_USER]!  Your submission from yahoo.com has been automatically removed because it violates Rule 4 (use original, reliable sources).  **The website that you submitted, yahoo.com, is not allowed for one or more of the following reasons:**\n\n* **It frequently quotes other sources in its content, or is known to engage in content-theft.**\n\n* **It's not a reliable source. This could be because it's a news blog, tabloid, or is known to be overly slanted. If it was a local news affiliate and owned by Sinclair Group they are also not allowed.**\n\n* **It's an opinion or blog section of a regular news website, or the site is known to post opinion articles as fact.**\n\n* **It's a site for activism or promoting a certain POV.  Nothing wrong with that, but it's not a news site.**\n\nIf you'd like, you can review the article and resubmit from a better source.  If your article's source is linked in the article, you can try submitting from the original source.  [For more information on Rule 4, click here.](https://www.reddit.com/r/nottheonion/wiki/nto101#wiki_rule_4.3A__use_original.2C_reliable_sources.)  \n\nFor a complete list of domains that are not allowed, [click here](https://www.reddit.com/r/nottheonion/wiki/autoremoval).  If you're new to \\/r/NotTheOnion, you may want to check out [NTO101: An Introduction To \\/r/NotTheOnion](https://www.reddit.com/r/nottheonion/wiki/nto101) for more information on our rules and answers to frequently asked questions.\n\n*I am a bot, and this action was performed automatically. Please [contact the moderators of this subreddit](/message/compose/?to=/r/nottheonion) if you have any questions or concerns.*",
+          "timestamp": "2026-08-03T02:06:57+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run014_post04_seed074",
+      "post_slot": 4,
+      "seed_index": 74,
+      "source_raw_post_id": "1ve14x5",
+      "source_product_dir": "TrueReddit",
+      "source_file": "https://www.reddit.com/r/TrueReddit/comments/1ve14x5/how_rogue_officers_turned_a_nationwide_camera/",
+      "post_type": "Crime, Courts + War",
+      "title": "How rogue officers turned a  nationwide camera network into a tool for stalking",
+      "author": "reddit_user_bde1e90b951b",
+      "author_karma": 0,
+      "content": "How rogue officers turned a  nationwide camera network into a tool for stalking",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p1di3gq",
+          "author": "reddit_user_0775f1b0c035",
+          "author_karma": 0,
+          "content": "Submission Statement: Flock surveillance cameras were sold to communities as a crime fighting solution that was then  turned into an aid for criminal behavior by rogue officers. Have I Been Flocked is a tool to check when someone knows everything you do. ",
+          "timestamp": "2026-08-03T02:46:58+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1dupvl",
+              "author": "reddit_user_72c92f3c155d",
+              "author_karma": 0,
+              "content": "Maybe I'm just cynical, but was there ever any other way this was going to go?\n\nWhat safeguards, exactly, were put into place to prevent this? The article says there are none - it's down to each individual precinct to police itself, which functionally means, no safeguards.\n\nYou collect all this data on people, it's going to get used for bad things. You don't put any safeguards in place, and it's going to get used for a lot of bad things.\n\nMeanwhile Flock makes a killing and is immune from liability, despite the fact that the cameras are the ones that made this problem in the first place with no currently demonstrable effect on crime rate.",
+              "timestamp": "2026-08-03T04:11:04+00:00",
+              "likes": 14,
+              "dislikes": 0,
+              "parent_comment_id": "p1di3gq",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1eym9t",
+                  "author": "reddit_user_bd1fff987445",
+                  "author_karma": 0,
+                  "content": "Police abusing database and surveillance access for personal grudges etc is common as muck, too. I would have bet literally anything that Flock would see the same abuse as everything else.",
+                  "timestamp": "2026-08-03T09:35:20+00:00",
+                  "likes": 7,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1dupvl",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1gcf3m",
+                      "author": "reddit_user_0775f1b0c035",
+                      "author_karma": 0,
+                      "content": "I think your point is on target. I don’t think anyone is arguing that Flock is a good idea. The posted article is actually arguing the opposite.\n\nBut, how would the average person know that police are abusing the surveillance system if they aren’t called out publicly? \nFor liability reasons among others investigative pieces don’t just call people out. They triple check every single piece of information and fact written. Which is exactly the kind of information courts need.\n\nIf you’ve never watched the movie Spotlight, I recommend it. ",
+                      "timestamp": "2026-08-03T14:28:53+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1eym9t",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                },
+                {
+                  "comment_id": "p1g42jn",
+                  "author": "reddit_user_0775f1b0c035",
+                  "author_karma": 0,
+                  "content": "I’m not throwing shade, but I think you missed the entire point of the investigative piece. \n\nThe topic is not a general overview of the problems with surveillance. \n\nInvestigative pieces like this one when look at one issue out of many and drill down. Kind of like a plate of one type of food is generally not considered an entire meal. But, it is one part.\n\nOne investigate piece generally takes months. Multiple reporters have to track down multiple subjects and sources and then cross reference and verify every tiny thing.  \n\nIf you want to read a book, then you need to read a book. This is just one chapter in a very large story. And it is every bit is important as any other chapter.\n\nThis is the fourth estate at work. The purpose of the fourth estate,  put forth in the constitution of the United States, is to hold power to account.\n\nDo you somehow think it’s not important to hold people who abuse positions of power accountable? If you do, then we have to agree to disagree.",
+                  "timestamp": "2026-08-03T13:50:25+00:00",
+                  "likes": 3,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1dupvl",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1h27g9",
+                      "author": "reddit_user_72c92f3c155d",
+                      "author_karma": 0,
+                      "content": "I'm not entirely sure where your objection to my post lies - I think it's a fine piece of journalism, sure, but we aren't limited to only discussing that. I'm glad it's there to confirm my suspicions, but\n in general, my position is, \"if it's there, it's gonna get used.\"\n\nIn this case, a big aggregate database that's actively tracking people. Saw a John Oliver segment on this very topic after reading this article, actually, and the implementation of this technology is terrifying. Audit trails are opaque and wildly difficult for people to get their hands on, officers and employees of these companies accessing cameras to peep on people is commonplace. Even when the tech isn't abused, it still results in dumb things like putting a 15-year-old whose only crime was stealing an ebike with a friend (and he was put on parole for 2 years) on a top 5 \"most likely to commit more crimes\" list, where they checked up on him to harass and not-so-subtly threaten and intimidate him for years (his friend got none of that, \"the algorithm\" told them this specific kid was a bad person).",
+                      "timestamp": "2026-08-03T16:20:22+00:00",
+                      "likes": 2,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1g42jn",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p1dj5hi",
+          "author": "reddit_user_b6d46c3773e6",
+          "author_karma": 0,
+          "content": "This feels like a very weak propaganda piece for Flock, to ease us into what they want, a surveillance state.\n\n“A few bad apples” didn’t ruin Flock. The examples just leapt to the actions that will eventually become systemwide. ",
+          "timestamp": "2026-08-03T02:53:34+00:00",
+          "likes": 74,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1dn47h",
+              "author": "reddit_user_0775f1b0c035",
+              "author_karma": 0,
+              "content": "I am not quite sure how bad actors using Flock to stalk women (which is a crime) would be considered propaganda for Flock. You might want to read the entire article as it goes into the issues the reporter is writing about - It’s not a general overview but, an in-depth investigative piece. ",
+              "timestamp": "2026-08-03T03:19:01+00:00",
+              "likes": -18,
+              "dislikes": 0,
+              "parent_comment_id": "p1dj5hi",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1dt2m5",
+                  "author": "reddit_user_a3caf30ccd10",
+                  "author_karma": 0,
+                  "content": "Calling them \"bad actors\" IS the propaganda.\n\nIt is substituting a moral failing (some morally \"bad actors\") for a systemic failing (a surveillance state, and a further failing, a privately held surveillance state).",
+                  "timestamp": "2026-08-03T03:59:36+00:00",
+                  "likes": 35,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1dn47h",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1g12ch",
+                      "author": "reddit_user_0775f1b0c035",
+                      "author_karma": 0,
+                      "content": "‘Bad actors’ is a colloquial term. My point is investigative pieces focus on one aspect of an issue. Ki \n\nIf you missed any of the dozens of pieces calling out surveillance for numerous different violations as well as pieces address the overall issues with Flock and Axon then you might want to broaden your  reading.  \n\nRecommend r/privacy. \nThere has been an ongoing conversation there for months. \nAnd that is just one sub where those convos addressing a variety of aspects are happening not the only one. \n\nIf you want to actively in oppose Flock there are several websites for different activities. \n\nIf you have an interest in investigative reporting there are numerous publications, but if you want to just try it out I always recommend ProPublica. ",
+                      "timestamp": "2026-08-03T13:36:09+00:00",
+                      "likes": -2,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1dt2m5",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "p1hfajd",
+                          "author": "reddit_user_a3caf30ccd10",
+                          "author_karma": 0,
+                          "content": "\"Bad apples\" is also a colloquial term.  Usually to absolve the broader police system of any accountability.",
+                          "timestamp": "2026-08-03T17:14:11+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "p1g12ch",
+                          "depth": 4,
+                          "replies": []
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "comment_id": "p1fmg03",
+                  "author": "reddit_user_470e6a68efac",
+                  "author_karma": 0,
+                  "content": "The entire article tries to blame bad actors for all of the issues people have with flock.\n\nThe problem is not people misusing it, the problem is that it exists at all. \n\nWhy the hell would I want to be recorded at all times everywhere I go? Literally no one wants that.",
+                  "timestamp": "2026-08-03T12:20:01+00:00",
+                  "likes": 10,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1dn47h",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            },
+            {
+              "comment_id": "p1eg6ff",
+              "author": "reddit_user_161cb915a73e",
+              "author_karma": 0,
+              "content": "Keep in mind this article is in a newspaper that's a sibling company to Ring",
+              "timestamp": "2026-08-03T06:59:40+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1dj5hi",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p1fi0fh",
+              "author": "reddit_user_703a7dea7d5d",
+              "author_karma": 0,
+              "content": "One of my local cities ended their contract with Flock and told them to turn their cameras off, only to find that they were still recording and gathering data when they went to double check later.",
+              "timestamp": "2026-08-03T11:53:52+00:00",
+              "likes": 13,
+              "dislikes": 0,
+              "parent_comment_id": "p1dj5hi",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1g5z5a",
+                  "author": "reddit_user_0775f1b0c035",
+                  "author_karma": 0,
+                  "content": "And that’s why investigative pieces are so important. They don’t just let a problem slide. \n\nOf course, investigated pieces are not the same thing as action. But if people don’t know, how are they going to act? Hopefully they did a recall election.\n\n",
+                  "timestamp": "2026-08-03T13:59:16+00:00",
+                  "likes": 4,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1fi0fh",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1g6d7s",
+                      "author": "reddit_user_703a7dea7d5d",
+                      "author_karma": 0,
+                      "content": "Flock were the ones who didn't turn off their cameras. Can't recall them.",
+                      "timestamp": "2026-08-03T14:01:04+00:00",
+                      "likes": 3,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1g5z5a",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "p1g6dbc",
+                          "author": "reddit_user_e320faca37f4",
+                          "author_karma": 0,
+                          "content": "The goal of TrueReddit is to have intelligent, insightful discussions. Users are required to read an entire article before submitting a comment. Your comment requires more substance to be permitted.\n\nDo not repost your comment with random letters to make it longer, or you will face a 28-day ban from TrueReddit for intentionally evading moderation filters.\n\n*I am a bot, and this action was performed automatically. Please [contact the moderators of this subreddit](/message/compose/?to=/r/TrueReddit) if you have any questions or concerns.*",
+                          "timestamp": "2026-08-03T14:01:05+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "p1g6d7s",
+                          "depth": 4,
+                          "replies": []
+                        },
+                        {
+                          "comment_id": "p1g9j2e",
+                          "author": "reddit_user_0775f1b0c035",
+                          "author_karma": 0,
+                          "content": "Of course Flock didn’t turn off their cameras -  that’s why investigative pieces bring this kind of thing into the light. Investigated pieces, put pressure on politicians to make changes, because people who had no idea this was being done are alerted.\n\nI rarely put my personal beliefs on this sub, but why would anyone believe a company who said they turned for profit cameras off? In my friend’s city they actually took the Flock cameras down.\n\nI also noticed after reading the thread that no one other than myself even mentioned that Flock it’s not the only company surveilling the  populace. Flock is just one company. There are so many companies tracking people.\n\nI hope that in your city voters start circulating a recall petition for the board of  supervisors and/or the mayor AND insist that all for profit surveillance companies are out of bounds. ",
+                          "timestamp": "2026-08-03T14:15:49+00:00",
+                          "likes": 3,
+                          "dislikes": 0,
+                          "parent_comment_id": "p1g6d7s",
+                          "depth": 4,
+                          "replies": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p1dwp4e",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-03T04:25:16+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1dwp5q",
+              "author": "reddit_user_e320faca37f4",
+              "author_karma": 0,
+              "content": "The goal of TrueReddit is to have intelligent, insightful discussions. Users are required to read an entire article before submitting a comment. Your comment requires more substance to be permitted.\n\nDo not repost your comment with random letters to make it longer, or you will face a 28-day ban from TrueReddit for intentionally evading moderation filters.\n\n*I am a bot, and this action was performed automatically. Please [contact the moderators of this subreddit](/message/compose/?to=/r/TrueReddit) if you have any questions or concerns.*",
+              "timestamp": "2026-08-03T04:25:17+00:00",
+              "likes": 0,
+              "dislikes": 0,
+              "parent_comment_id": "p1dwp4e",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1dyzl5",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-03T04:42:05+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1dyzm4",
+              "author": "reddit_user_e320faca37f4",
+              "author_karma": 0,
+              "content": "The goal of TrueReddit is to have intelligent, insightful discussions. Users are required to read an entire article before submitting a comment. Your comment requires more substance to be permitted.\n\nDo not repost your comment with random letters to make it longer, or you will face a 28-day ban from TrueReddit for intentionally evading moderation filters.\n\n*I am a bot, and this action was performed automatically. Please [contact the moderators of this subreddit](/message/compose/?to=/r/TrueReddit) if you have any questions or concerns.*",
+              "timestamp": "2026-08-03T04:42:05+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1dyzl5",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1fa3nq",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-03T11:02:25+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1fa3p8",
+              "author": "reddit_user_e320faca37f4",
+              "author_karma": 0,
+              "content": "The goal of TrueReddit is to have intelligent, insightful discussions. Users are required to read an entire article before submitting a comment. Your comment requires more substance to be permitted.\n\nDo not repost your comment with random letters to make it longer, or you will face a 28-day ban from TrueReddit for intentionally evading moderation filters.\n\n*I am a bot, and this action was performed automatically. Please [contact the moderators of this subreddit](/message/compose/?to=/r/TrueReddit) if you have any questions or concerns.*",
+              "timestamp": "2026-08-03T11:02:25+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1fa3nq",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1feyih",
+          "author": "reddit_user_4709ca15c691",
+          "author_karma": 0,
+          "content": "Good people dont decide to become cops, so its not surprising cops abuse these things.",
+          "timestamp": "2026-08-03T11:34:43+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1g1or3",
+              "author": "reddit_user_0775f1b0c035",
+              "author_karma": 0,
+              "content": "I take it you don’t know very many cops. Broad swipes at an entire class of people are generally false. Do you have a source? ",
+              "timestamp": "2026-08-03T13:39:08+00:00",
+              "likes": -5,
+              "dislikes": 0,
+              "parent_comment_id": "p1feyih",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1fwecs",
+          "author": "reddit_user_a65743f8f366",
+          "author_karma": 0,
+          "content": "This kind of data is just way too tempting. I’ve seen this kind of thing up close. I worked as a manager at a large identity access company. One of my employees confessed to me that he had been having trouble with an ex roommate who owed him money but had left and ghosted him. So the employee tracked him down using the logs for the identity system. \n\nYes we had guardrails in place to prevent this kind of thing. But for the people who built the guardrails it’s not that hard to work around them. It’s creepy stuff.  ",
+          "timestamp": "2026-08-03T13:13:10+00:00",
+          "likes": 12,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1g6uoq",
+              "author": "reddit_user_0775f1b0c035",
+              "author_karma": 0,
+              "content": "This is a great point. The investigated piece that people read actually calls out the problems involved in the guard rails. They didn’t call out this particular one, but it would definitely be part of it.",
+              "timestamp": "2026-08-03T14:03:21+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1fwecs",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1gndb1",
+          "author": "reddit_user_0775f1b0c035",
+          "author_karma": 0,
+          "content": "“\n But Eva Galperin, the director of cybersecurity at the advocacy group Electronic Frontier Foundation, said that abuse of the tool is “inevitable” and that the company’s approach to date, coupled with poor supervision by police leadership, has done little to protect women from abusive police officers.\n“Flock has already claimed that they have oversight, that they have guardrails, and we still see these kinds of abuses,” she said.\nOfficers’ searches are logged by police agencies, but only some of them have been made available through public-records requests, making it tough for people to find out whether their cars are being tracked. Some of the women said they learned of the surveillance only after they received calls from internal-affairs investigators or ran their plate numbers through third-party tools such as Have I Been Flocked.\nSome victims, such as Bakely, also say they’ve struggled to get their experiences taken seriously because the perpetrators are police, entrusted with broad authority to pursue investigations with operational secrecy and employed by the same agencies they were told to call for help.…”",
+          "timestamp": "2026-08-03T15:17:07+00:00",
+          "likes": 4,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1gqakp",
+          "author": "reddit_user_543570b2ea09",
+          "author_karma": 0,
+          "content": "> [How rogue officers turned a nationwide camera network into a tool for stalking](https://archive.ph/uAUUq)\n\nRogue officers?  Isn't Flock basically purpose-built for stalking?",
+          "timestamp": "2026-08-03T15:29:45+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1gu607",
+              "author": "reddit_user_55f6247f6e14",
+              "author_karma": 0,
+              "content": "I think the article makes that clear enough.  It repeatedly details the steps Flock *could* take to prevent misuse, like requiring a case id linked to each search or vetter yet, a warrant.  But Flock basically deflects to \"police policy\" and says its not their fault their technology built for stalking is being used by stalkers.",
+              "timestamp": "2026-08-03T15:46:21+00:00",
+              "likes": 5,
+              "dislikes": 0,
+              "parent_comment_id": "p1gqakp",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1gwsny",
+                  "author": "reddit_user_0775f1b0c035",
+                  "author_karma": 0,
+                  "content": "Great analogy! ",
+                  "timestamp": "2026-08-03T15:57:30+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1gu607",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p1gy8uf",
+          "author": "reddit_user_785377d2ea1e",
+          "author_karma": 0,
+          "content": "\"Turned into\" as though these cro-magnons did anything beyond using the system exactly as destined by typing letters into a box.\n\nFuck Flock.",
+          "timestamp": "2026-08-03T16:03:40+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    }
+  ]
+}

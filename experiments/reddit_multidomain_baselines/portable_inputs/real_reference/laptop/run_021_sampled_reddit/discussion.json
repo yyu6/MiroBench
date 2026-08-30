@@ -1,0 +1,398 @@
+{
+  "meta": {
+    "product_category": "laptop",
+    "baseline": "real_reddit_reference",
+    "run_id": "run_021_sampled_reddit"
+  },
+  "posts": [
+    {
+      "post_id": "real_run021_post00_seed105",
+      "post_slot": 0,
+      "seed_index": 105,
+      "source_raw_post_id": "1vdr2dx",
+      "source_product_dir": "thinkpad",
+      "source_file": "https://www.reddit.com/r/thinkpad/comments/1vdr2dx/thinkpad_for_linux_backing_up_my_physical_ps2/",
+      "post_type": "Buying Advice",
+      "title": "Thinkpad for Linux + Backing up my physical ps2 games",
+      "author": "reddit_user_d8691634ac1e",
+      "author_karma": 0,
+      "content": "Thinkpad for Linux + Backing up my physical ps2 games\n\nHello! It's as the title says, I wanna get a reliable laptop that won't cost me an arm and a leg and isn't like paper thin.\n\nI recently bought a PS2 and with Sony going full digital, I kind of want to back up my old games I have and dump them into blank discs or at least store them should my physical disks come to their end of life (if that's possible)\n\nI also kind of want a day to day use thinkpad that doesn't live off windows to do anything 😭",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p1b74d4",
+          "author": "reddit_user_77c3b13fae38",
+          "author_karma": 0,
+          "content": "One small other detail, if i can do some graphics designing on it like possibly snatch Photoshop or something similar and have it run without issues, that to would also be a big plus for me!",
+          "timestamp": "2026-08-02T19:29:24+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1bc456",
+          "author": "reddit_user_39d428e009c9",
+          "author_karma": 0,
+          "content": "All you need to back up ps2 games is a usb dvd drive. I believe you can make isos on Linux using the dd command but there’s probably both command line and gui tools that do the job better. ",
+          "timestamp": "2026-08-02T19:52:40+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1bcmte",
+              "author": "reddit_user_77c3b13fae38",
+              "author_karma": 0,
+              "content": "Interesting interesting \n\nI went thrift shopping and found an Asus cd rewriter or something along those line, \n\nBet, so I can just grab any random Thinkpad, no need to scour for absolutely specific models? Splendid, time to scour offer up and marketplace ",
+              "timestamp": "2026-08-02T19:55:05+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1bc456",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1buqi3",
+                  "author": "reddit_user_39d428e009c9",
+                  "author_karma": 0,
+                  "content": "Why would you need a specific Thinkpad to make ISOs of PS2 dvds? ",
+                  "timestamp": "2026-08-02T21:21:06+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1bcmte",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "post_id": "real_run021_post01_seed106",
+      "post_slot": 1,
+      "seed_index": 106,
+      "source_raw_post_id": "1vdra2f",
+      "source_product_dir": "laptops",
+      "source_file": "https://www.reddit.com/r/laptops/comments/1vdra2f/msi_crosshair_a17_or_hp_omen_16/",
+      "post_type": "Buying help",
+      "title": "MSI Crosshair A17 or HP Omen 16",
+      "author": "reddit_user_d8691634ac1e",
+      "author_karma": 0,
+      "content": "MSI Crosshair A17 or HP Omen 16\n\nI cant decide between this two laptops\n\n\\- MSI Crosshair A17 HX D8WFKG Ryzen 9 8940HX, RTX5060 8GB, 16 DDR5 RAM, 1TB\n\n\\- HP Omen 16-AM0073 Intel Core ultra 7 255H, RTX5060 8GB, 16 DDR5 RAM, 1 TB\n\nMy question is more focused on the quialty of the computer itself, not the components, I know ryzen 9 is way better than the core ultra 7, i want know about the platic quality, overheating, noice and durability, more than the specs. can someone help me?\n\n  \nMoney is not issue here, since both are in my budget. these are the best i could find available\n\n  \nThanks.",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p1bl3iw",
+          "author": "reddit_user_12d136c2ba67",
+          "author_karma": 0,
+          "content": "Gotta say, I've had good luck with MSI's plastic build quality over the years, but their cooling can run pretty loud under load. You betcha, if durability's your top concern, HP's design feels a tad more rigid in hand.",
+          "timestamp": "2026-08-02T20:34:48+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run021_post02_seed107",
+      "post_slot": 2,
+      "seed_index": 107,
+      "source_raw_post_id": "1vdrhfg",
+      "source_product_dir": "thinkpad",
+      "source_file": "https://www.reddit.com/r/thinkpad/comments/1vdrhfg/which_thinkpad_version_should_i_use/",
+      "post_type": "Question / Problem",
+      "title": "Which Thinkpad version should I use",
+      "author": "reddit_user_d8691634ac1e",
+      "author_karma": 0,
+      "content": "Which Thinkpad version should I use\n\nI'm making OSes and I'm tired of emulation and I wanna test on real hardware without corrupting my laptop so I want it to be easiest to fix and customize in hardware and software",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p1bc95e",
+          "author": "reddit_user_79b8b9d0b795",
+          "author_karma": 0,
+          "content": "T480 or a T440p which has a removable cpu",
+          "timestamp": "2026-08-02T19:53:19+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1bhsde",
+              "author": "reddit_user_a1eb1ddb8eb3",
+              "author_karma": 0,
+              "content": "Is it easy to fix and customize other parts in it?",
+              "timestamp": "2026-08-02T20:19:14+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1bc95e",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1bja2d",
+          "author": "reddit_user_79b8b9d0b795",
+          "author_karma": 0,
+          "content": "Both can use multiple types of storage and different configurations of ram ",
+          "timestamp": "2026-08-02T20:26:14+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1bm016",
+          "author": "reddit_user_36399283fc39",
+          "author_karma": 0,
+          "content": "This post either doesn't have enough details or has unrealistic expectations with the 'buying-advice' flair, or has the incorrect flair. \n\nSee https://www.reddit.com/r/thinkpad/comments/1kqcqgk/new_criteria_for_buying_advice_related_posts/ for the last criteria update.\n\nSee https://www.reddit.com/mod/thinkpad/wiki/index/buying/thinkpadbluebook for blue book values if you had unrealistic price expectations. \n\nSee https://www.reddit.com/r/thinkpad/comments/1m2erbl/for_the_people_who_are_asking_about_laptop/ if you don't know where to start for purchasing a Thinkpad.",
+          "timestamp": "2026-08-02T20:39:02+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run021_post03_seed108",
+      "post_slot": 3,
+      "seed_index": 108,
+      "source_raw_post_id": "1vdrn76",
+      "source_product_dir": "GamingLaptops",
+      "source_file": "https://www.reddit.com/r/GamingLaptops/comments/1vdrn76/new_alienware_15_r3_2nd_hand_ebay_buy/",
+      "post_type": ":table: Review",
+      "title": "New Alienware 15 R3 (2nd hand eBay buy)",
+      "author": "reddit_user_d8691634ac1e",
+      "author_karma": 0,
+      "content": "New Alienware 15 R3 (2nd hand eBay buy)\n\nHey guys, my Lenovo laptop’s hinge broke and it would’ve cost $150 to fix. I figured, why not just get a new/old Alienware instead? My Lenovo cost about $500 (before taxes) and only had 256GB storage, 8GB RAM (2x4GB DDR5), and no dedicated GPU. I just wanted to ask what problems you guys have run into with the 2017 Alienware 15 R3. Specs on the one I bought: 16GB DDR4 RAM, 1TB SSD + 1TB HDD, GTX 1060, i7-7700HQ. Comes with charger, screen works, battery was just replaced. One screw is missing on the bottom, which I can find at any hardware store and put in myself. Would love to hear about any common issues or things to watch out for!",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p1bc7cs",
+          "author": "reddit_user_614da5271794",
+          "author_karma": 0,
+          "content": "Its little much for me for that age...its like 10 year old now",
+          "timestamp": "2026-08-02T19:53:05+00:00",
+          "likes": 3,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1bidoc",
+              "author": "reddit_user_66c1efc54b56",
+              "author_karma": 0,
+              "content": "Yeah, I mean, it looks well-maintained. The battery was replaced, which is a big plus because most of the good deals I found either had a dead battery or one that wouldn’t hold a charge.",
+              "timestamp": "2026-08-02T20:21:59+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1bc7cs",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1bdeaz",
+          "author": "reddit_user_840215cb6980",
+          "author_karma": 0,
+          "content": "An upgrade is an upgrade..good deal for 350... I wouldnt want to get anything less than a 3070 at this stage though personally. Got a legion with one last year on marketplace",
+          "timestamp": "2026-08-02T19:58:42+00:00",
+          "likes": 0,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1bi6w8",
+              "author": "reddit_user_66c1efc54b56",
+              "author_karma": 0,
+              "content": "I did look at Marketplace, but they didn’t really provide enough information about what was wrong with the items or their specs. Also, the ones I was interested in were local pickup only. Since I’m a teen, I don’t have a driver’s license, and my family is usually busy, so yeah.",
+              "timestamp": "2026-08-02T20:21:06+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1bdeaz",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1blnag",
+                  "author": "reddit_user_66c1efc54b56",
+                  "author_karma": 0,
+                  "content": "Yeah, I did try to find newer GPUs, but they were all above my $350 budget. Since I have a job right now though, I could probably save up and get a really good one in about 8 months or so!",
+                  "timestamp": "2026-08-02T20:37:22+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1bi6w8",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p1bohtb",
+          "author": "reddit_user_336fe50ede3a",
+          "author_karma": 0,
+          "content": "I'd say it's not too bad for the price tbh. Sadly I think you'll feel the CPU limits you more than the GPU, the 6GB 1060 is still fine today in a lot of games when using FSR, obviously the latest and \"greatest\" titles might give you trouble (like Indiana Jones or Avowed, but they have shit optimization anyway). \n\nUnfortunately there's no FSR equivalent for an outdated CPU though. \n\nOverall, it's a well built laptop with a decent display, great keyboard, great speakers and good cooling. I'd be happy with this for the money you paid OP. Windows Hello is a nice touch as well.\n\nI used to have the 13R3 OLED and it's probably the longest I've ever kept (and used daily) a single laptop for. Even played Cyberpunk on it. Fantastic machine that held up way better than many other laptops from that time period.",
+          "timestamp": "2026-08-02T20:50:57+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1cad8h",
+              "author": "reddit_user_66c1efc54b56",
+              "author_karma": 0,
+              "content": "Hey yeah I’m happy with this money spend just wishes I knew about buying laptops from eBay before I bought that Lenovo $500 one lol here are the specs of my old laptop I’m not really a computer guy tbh all I know is ddr4 ram, ddr5 ram and storage. Here are the specs of the Lenovo one : **Component**  \n**Specification**  \n**Model**  \nLenovo 82VG  \n**CPU**  \nAMD Ryzen 5 7520U (4 cores, 8 threads, up to 4.3 GHz, 15W)  \n**GPU**  \nAMD Radeon 610M integrated graphics  \n**RAM**  \n8GB LPDDR5 (soldered)  \n**Storage**  \n256GB NVMe SSD  \n**Display**  \n15.6-inch Full HD (1920×1080)  \n**Operating System**  \nWindows 11 (typically Home)  \n**Wi-Fi**  \nWi-Fi 6  \n**Bluetooth**  \nBluetooth 5.1 or newer (varies slightly by configuration)  \n ",
+              "timestamp": "2026-08-02T22:40:10+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1bohtb",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1bwp6z",
+          "author": "reddit_user_5695771cc912",
+          "author_karma": 0,
+          "content": "The main issue with those are the fans failing, its very common on the 15 and 17. That being said you did overpay quite a bit on that, you can pretty easily get the 15 or 17 inch ones with a GTX 1070 for under $300. I bought a 15R4 with a GTX 1080 and the 4K screen a few months ago off ebay for $250, needed a new battery, but was otherwise in perfect condition.",
+          "timestamp": "2026-08-02T21:30:41+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1c7r1y",
+              "author": "reddit_user_66c1efc54b56",
+              "author_karma": 0,
+              "content": "I did try to find others they were either sold or had no battery most of them were for parts I wish there was something better to find on eBay I didn’t check marketplace because most good listings had either no info or local pick ups ",
+              "timestamp": "2026-08-02T22:26:29+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1bwp6z",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1c7ckp",
+          "author": "reddit_user_8c42e5736a94",
+          "author_karma": 0,
+          "content": "I mean a 1060 will run doom eternal, resident evil 8, read dead 2 … so you can still play some major triple A games for 350 I mean you could also do cloud gaming if you have a good internet connection; I think it seems like a solid deal ",
+          "timestamp": "2026-08-02T22:24:23+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1c7xml",
+              "author": "reddit_user_66c1efc54b56",
+              "author_karma": 0,
+              "content": "Yea the most work I do is learning how to make 3d models not really a big gamer guy I just like fps games when I heard it could run cs2 I was so excited I might check out rdr2 ",
+              "timestamp": "2026-08-02T22:27:26+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1c7ckp",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1c8wy1",
+                  "author": "reddit_user_66c1efc54b56",
+                  "author_karma": 0,
+                  "content": "And I mostly play Roblox, so I think this is a much better deal than my old laptop. CPU-wise and GPU-wise, it’s a nice upgrade. My old laptop had a newer CPU, but it wasn’t really meant for gaming. It was more of a power-efficient processor designed for office work.This laptop also has more RAM. Sure, it’s DDR4 instead of DDR5, but 16 GB is still a big upgrade over the 8 GB I had before. My old Lenovo only had integrated graphics, and it used about 2 GB of my RAM as VRAM. Even with that, it could run Roblox just fine while I had YouTube open in the background.Since I mostly play Roblox, I think this laptop will be able to handle everything I need and even more than what my old $500 laptop could do. I also watched a bunch of benchmark videos before buying it, so I feel pretty confident it’s a solid upgrade for the price.That said, I mostly just wanted to hear other people’s opinions. I already bought it, but it comes with a 30-day return guarantee, so if there ends up being an issue or it doesn’t perform as well as I expected, I can always return it.",
+                  "timestamp": "2026-08-02T22:32:31+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1c7xml",
+                  "depth": 2,
+                  "replies": []
+                },
+                {
+                  "comment_id": "p1cad3d",
+                  "author": "reddit_user_8c42e5736a94",
+                  "author_karma": 0,
+                  "content": "For the games with better graphics you might have to turn the settings down a bit or play with them, it will run those games though I ran all those surprisingly with a 3gb 1060 lol ",
+                  "timestamp": "2026-08-02T22:40:08+00:00",
+                  "likes": 2,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1c7xml",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1caqe2",
+                      "author": "reddit_user_66c1efc54b56",
+                      "author_karma": 0,
+                      "content": "Yea lol I don’t want my laptop to sound like a jet engine it will mostly be either low-medium settings here are the specs of my old one Lenovo one I don’t know if it’s a upgrade but 1tb ssd and 1tb hdd is good enough for me here is the Lenovo one :**Component**  \n**Specification**  \n**Model**  \nLenovo 82VG  \n**CPU**  \nAMD Ryzen 5 7520U (4 cores, 8 threads, up to 4.3 GHz, 15W)  \n**GPU**  \nAMD Radeon 610M integrated graphics  \n**RAM**  \n8GB LPDDR5 (soldered)  \n**Storage**  \n256GB NVMe SSD  \n**Display**  \n15.6-inch Full HD (1920×1080)  \n**Operating System**  \nWindows 11 (typically Home)  \n**Wi-Fi**  \nWi-Fi 6  \n**Bluetooth**  \nBluetooth 5.1 or newer (varies slightly by configuration)  \n ",
+                      "timestamp": "2026-08-02T22:42:04+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1cad3d",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "post_id": "real_run021_post04_seed109",
+      "post_slot": 4,
+      "seed_index": 109,
+      "source_raw_post_id": "1vdrowi",
+      "source_product_dir": "GamingLaptops",
+      "source_file": "https://www.reddit.com/r/GamingLaptops/comments/1vdrowi/msi_crosshair_a17_or_hp_omen_16/",
+      "post_type": ":snoo_thoughtful: Laptop Buying Advice",
+      "title": "MSI Crosshair A17 or HP Omen 16",
+      "author": "reddit_user_d8691634ac1e",
+      "author_karma": 0,
+      "content": "MSI Crosshair A17 or HP Omen 16\n\n[removed]",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p1bbtnv",
+          "author": "reddit_user_500c200c76d0",
+          "author_karma": 0,
+          "content": "Hey! Your post was removed because it is missing one or more **required Buying Advice fields**, or a required field was left empty.\n\nPlease resubmit using:\n\n    Budget: (e.g. $1200)\n    Country: (e.g. USA)\n    Use Case: (Gaming — which titles? / School / Editing / Mixed)\n    Preferred Specs: (Optional: GPU, CPU, RAM, storage)\n    Notes: (Optional: anything else we should know)\n\nThe required fields are **Budget**, **Country**, and **Use Case**.\n\nCheck our [Posting Guidelines](https://www.reddit.com/r/GamingLaptops/comments/1sppz97/read_before_posting/) before reposting.\n\n\n*I am a bot, and this action was performed automatically. Please [contact the moderators of this subreddit](/message/compose/?to=/r/GamingLaptops) if you have any questions or concerns.*",
+          "timestamp": "2026-08-02T19:51:17+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    }
+  ]
+}

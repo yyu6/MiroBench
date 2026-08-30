@@ -1,0 +1,207 @@
+{
+  "meta": {
+    "product_category": "laptop",
+    "baseline": "real_reddit_reference",
+    "run_id": "run_022_sampled_reddit"
+  },
+  "posts": [
+    {
+      "post_id": "real_run022_post00_seed110",
+      "post_slot": 0,
+      "seed_index": 110,
+      "source_raw_post_id": "1vds33k",
+      "source_product_dir": "laptops",
+      "source_file": "https://www.reddit.com/r/laptops/comments/1vds33k/battery_problem/",
+      "post_type": "Software",
+      "title": "Battery Problem",
+      "author": "reddit_user_d8691634ac1e",
+      "author_karma": 0,
+      "content": "Battery Problem\n\nGood afternoon. I'm writing to this forum with the following concern:\n\n\n\nI have an Acer Aspire E5-575G-55H4 that recently had its internal battery replaced (it has an AS16A5K battery). The problem I'm having, and the reason I'm writing this, is that sometimes, without any warning, the battery stops being recognized, but it still works: \"No battery detected.\" However, when it's plugged in, it works.\n\n\n\nI don't know what percentage is left, but whenever I unplug the charger, it says 100% \"Connected.\"\n\n\n\nI need help. I've already tried:\n\n1) Pressing the battery pinhole, which \"forcibly disconnects it from the motherboard and reconnects it\"\n\n2) Reinstalling the battery drivers\n\n3) Holding the power button for more than a minute to dissipate any static electricity.\n\n\n\nPlease, I'm asking for your help. I feel like the saying goes, \"the shoemaker's children go barefoot.\"",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p1brzxq",
+          "author": "reddit_user_a46c4af6417c",
+          "author_karma": 0,
+          "content": "Flash the BIOS. ",
+          "timestamp": "2026-08-02T21:07:51+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run022_post01_seed111",
+      "post_slot": 1,
+      "seed_index": 111,
+      "source_raw_post_id": "1vdsddp",
+      "source_product_dir": "laptops",
+      "source_file": "https://www.reddit.com/r/laptops/comments/1vdsddp/hp_omen_transcend_14_vs_acer_predator_helios_neo/",
+      "post_type": "Buying help",
+      "title": "HP Omen Transcend 14\" vs. Acer Predator Helios Neo 16S",
+      "author": "reddit_user_d8691634ac1e",
+      "author_karma": 0,
+      "content": "HP Omen Transcend 14\" vs. Acer Predator Helios Neo 16S\n\nBoth can be bought at Best Buy for $2100 until midnight tonight so I'm trying to make a quick decision. Both fulfill my main criteria (32GB of RAM, OLED screen, Nvidia GPU, metal chassis) but there are some differences for Acer vs HP:\n\n* 240Hz vs 120Hz, not practical for gaming but nice to have though the Acer is a bit lower resolution \n* 5070 Ti vs 5070 so 12GB of VRAM as opposed to 8GB plus 115W vs 75W\n* 24 core vs 16 core CPU, kinda excessive but you know\n* The Acer has lower speed RAM at 6400MHz as opposed to 7467MHz, though that's not that big a deal \n\nWhich is a better buy? The Acer obviously has better specs, but I'm worried it'll be lower quality. I want it to be premium feeling and durable, as long lasting as possible. Or, should I just skip both and look at another option or wait for a different sale?",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p1bkvs6",
+          "author": "reddit_user_e83899c0366e",
+          "author_karma": 0,
+          "content": "I don't think its close. The 12 gig of vram",
+          "timestamp": "2026-08-02T20:33:46+00:00",
+          "likes": 0,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1bqext",
+          "author": "reddit_user_041f05cd28fa",
+          "author_karma": 0,
+          "content": "please i beg go ryzen equivalent, they have such a better multiscore",
+          "timestamp": "2026-08-02T21:00:12+00:00",
+          "likes": 0,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1bt6tu",
+          "author": "reddit_user_34baa8716a85",
+          "author_karma": 0,
+          "content": "The predator is a godly laptop. It ticks all the boxes. But if this is in USD. If i'm not mistaken you are reaching the 5080 tier price range. If so just wait for some promotion sale that is below 2000. ",
+          "timestamp": "2026-08-02T21:13:34+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1c3a5c",
+          "author": "reddit_user_e7d6f05b3ce3",
+          "author_karma": 0,
+          "content": "that hp gpu will suffer more becoz of lower wattage and being lower than the 5070ti of acer . the neo s has decent build quality . just overall shit temps\n\n",
+          "timestamp": "2026-08-02T22:03:42+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1d9plv",
+          "author": "reddit_user_e34d1cecc9ff",
+          "author_karma": 0,
+          "content": "Go with the legion, hp and acer can’t build a laptop chassis to save their life and Lenovo has never let me down thus far.",
+          "timestamp": "2026-08-03T01:56:29+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run022_post02_seed112",
+      "post_slot": 2,
+      "seed_index": 112,
+      "source_raw_post_id": "1vdsi6x",
+      "source_product_dir": "GamingLaptops",
+      "source_file": "https://www.reddit.com/r/GamingLaptops/comments/1vdsi6x/should_i_buy_a_laptop_and_which/",
+      "post_type": ":snoo_thoughtful: Laptop Buying Advice",
+      "title": "Should I buy a laptop and which?",
+      "author": "reddit_user_d8691634ac1e",
+      "author_karma": 0,
+      "content": "Should I buy a laptop and which?\n\n[removed]",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p1bijrh",
+          "author": "reddit_user_500c200c76d0",
+          "author_karma": 0,
+          "content": "Hey! Your post was removed because it is missing one or more **required Buying Advice fields**, or a required field was left empty.\n\nPlease resubmit using:\n\n    Budget: (e.g. $1200)\n    Country: (e.g. USA)\n    Use Case: (Gaming — which titles? / School / Editing / Mixed)\n    Preferred Specs: (Optional: GPU, CPU, RAM, storage)\n    Notes: (Optional: anything else we should know)\n\nThe required fields are **Budget**, **Country**, and **Use Case**.\n\nCheck our [Posting Guidelines](https://www.reddit.com/r/GamingLaptops/comments/1sppz97/read_before_posting/) before reposting.\n\n\n*I am a bot, and this action was performed automatically. Please [contact the moderators of this subreddit](/message/compose/?to=/r/GamingLaptops) if you have any questions or concerns.*",
+          "timestamp": "2026-08-02T20:22:46+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run022_post03_seed113",
+      "post_slot": 3,
+      "seed_index": 113,
+      "source_raw_post_id": "1vdsj7b",
+      "source_product_dir": "GamingLaptops",
+      "source_file": "https://www.reddit.com/r/GamingLaptops/comments/1vdsj7b/hp_omen_transcend_14_vs_acer_predator_helios_neo/",
+      "post_type": ":snoo_thoughtful: Laptop Buying Advice",
+      "title": "HP Omen Transcend 14\" vs. Acer Predator Helios Neo 16S",
+      "author": "reddit_user_d8691634ac1e",
+      "author_karma": 0,
+      "content": "HP Omen Transcend 14\" vs. Acer Predator Helios Neo 16S\n\n[removed]",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p1bise6",
+          "author": "reddit_user_500c200c76d0",
+          "author_karma": 0,
+          "content": "Hey! Your post was removed because it is missing one or more **required Buying Advice fields**, or a required field was left empty.\n\nPlease resubmit using:\n\n    Budget: (e.g. $1200)\n    Country: (e.g. USA)\n    Use Case: (Gaming — which titles? / School / Editing / Mixed)\n    Preferred Specs: (Optional: GPU, CPU, RAM, storage)\n    Notes: (Optional: anything else we should know)\n\nThe required fields are **Budget**, **Country**, and **Use Case**.\n\nCheck our [Posting Guidelines](https://www.reddit.com/r/GamingLaptops/comments/1sppz97/read_before_posting/) before reposting.\n\n\n*I am a bot, and this action was performed automatically. Please [contact the moderators of this subreddit](/message/compose/?to=/r/GamingLaptops) if you have any questions or concerns.*",
+          "timestamp": "2026-08-02T20:23:54+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run022_post04_seed114",
+      "post_slot": 4,
+      "seed_index": 114,
+      "source_raw_post_id": "1vdslfq",
+      "source_product_dir": "thinkpad",
+      "source_file": "https://www.reddit.com/r/thinkpad/comments/1vdslfq/is_the_t14s_gen_1_amd_trackpad_the_same_as_the/",
+      "post_type": "Discussion / Information",
+      "title": "Is the T14S Gen 1 AMD trackpad the same as the T14S Gen 2 AMD?",
+      "author": "reddit_user_d8691634ac1e",
+      "author_karma": 0,
+      "content": "Is the T14S Gen 1 AMD trackpad the same as the T14S Gen 2 AMD?\n\nI’ve only used the T14S Gen 2. Is the T14S Gen 1 AMD trackpad the same? Same smoothness, etc? The PSREF says it’s the same material but some Mylar trackpads are smoother than others.\n\nAlso, can one replace the T14S Gen 1 stock trackpad with a glass one? If anyone had done this, was it worth the upgrade?",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p1cndvn",
+          "author": "reddit_user_79cbbb9c0156",
+          "author_karma": 0,
+          "content": "They’re not the same size but I think you can swap in the glass trackpad for an X1C g7/8. Check the dimensions. It’s not uncommon for Lenovo to have Mylar and glass ones that are interchangeable but they put the glass in an X because it’s premium. E.g. I upgraded my P14s with the glass trackpad made to fit an X1 Extreme. ",
+          "timestamp": "2026-08-02T23:50:03+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    }
+  ]
+}

@@ -17,3 +17,12 @@ __pycache__/
 .ruff_cache/
 .DS_Store
 .hf_models/
+
+# Fresh-machine baseline dependencies are cloned/downloaded by
+# experiments/reddit_multidomain_baselines/setup.sh.
+/SynthPAI/
+/third_party/MiroFish/
+/Stance_Rel/
+/bert_score-master/
+/detoxify/
+/.venv_reddit_baselines/

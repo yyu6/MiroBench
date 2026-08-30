@@ -1,0 +1,1875 @@
+{
+  "meta": {
+    "product_category": "headphones",
+    "baseline": "real_reddit_reference",
+    "run_id": "run_014_sampled_reddit"
+  },
+  "posts": [
+    {
+      "post_id": "real_run014_post00_seed070",
+      "post_slot": 0,
+      "seed_index": 70,
+      "source_raw_post_id": "1vc9su2",
+      "source_product_dir": "audiophile",
+      "source_file": "https://www.reddit.com/r/audiophile/comments/1vc9su2/why_does_15db_not_sound_like_enough_sound_is_it/",
+      "post_type": "Discussion",
+      "title": "Why does -15db not sound like enough sound. Is it because I am using Eversolo for my preamp?",
+      "author": "reddit_user_d43b8c7b6255",
+      "author_karma": 0,
+      "content": "Why does -15db not sound like enough sound. Is it because I am using Eversolo for my preamp?\n\n[](https://www.reddit.com/r/StereoAdvice/?f=flair_name%3A%22Source%20%7C%20Preamp%20%7C%20DAC%22)\n\nTrying to understand why my listening experience seems like I need more volume. I have my suspicion but would like to hear from the group. I believe its not having a true preamp but open to ideas. \n\nmy basic setup - Eversolo DMP-A8 - Rotel RB-1590 - PSB Synchrony one. 15x30 room in basement (man cave) location with some treatment.\n\nthoughts?",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p0zpzgo",
+          "author": "reddit_user_ae0050c5a644",
+          "author_karma": 0,
+          "content": "\\-15 dB isn't a volume.  Use an SPL meter.  How loud is it.  The loudness is the sum of all of the gains in your signal chain.  -15 dB can be quite soft if using a low voltage source (an old record player), using a preamp with no little or no gain and a low gain power amp (like some modern high SINAD amps).  -15 dB can be quite loud if using a high voltage source (a 4V XLR digital source), a high gain preamp and a high gain amp.",
+          "timestamp": "2026-08-01T01:44:57+00:00",
+          "likes": 10,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0zrhi1",
+              "author": "reddit_user_2bca95d02f8d",
+              "author_karma": 0,
+              "content": "I have connected it to both XLR and RCA to see if there is any difference and there wasnt. I adjusted the gain significantly (EQ) on the EverSolo to +5 as it stands currently. I also moved the -10 with only minor improvement. ",
+              "timestamp": "2026-08-01T01:54:00+00:00",
+              "likes": -6,
+              "dislikes": 0,
+              "parent_comment_id": "p0zpzgo",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1091no",
+                  "author": "reddit_user_97c2b271abba",
+                  "author_karma": 0,
+                  "content": "Your speakers and amp are not capable of playing louder - And trying So could damage them. Check speakers and amp specification. \n\nFor me at -30 is listenable volume. -20 for short Time. \n-15 is painful. \n\nAnd im using apollon audio amp at lowest gain and kef  r11 meta in 30 square meter room ",
+                  "timestamp": "2026-08-01T03:44:39+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p0zrhi1",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p12qmjt",
+                      "author": "reddit_user_2bca95d02f8d",
+                      "author_karma": 0,
+                      "content": "your reference is my past experience as well which I ended up here.  -30 listening, and -20 for cranking. \n\nI think from the other comments understanding the limitations of the Eversolo \"gain\" in combination with the sensitivity of the speakers are the factors why the current range of listening for is now -20 listening and -10 to -5 for short term \"cranking\". I recently added an amp upgrade to my system and assumed I would have much more \"headroom\" with Rotel RB 1590 at 350 watts. I may go the route of one commenter and eventually add a Schiit preamp. ",
+                      "timestamp": "2026-08-01T14:29:23+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1091no",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "p15elzm",
+                          "author": "reddit_user_97c2b271abba",
+                          "author_karma": 0,
+                          "content": "I don't think adding another preamp to the line will help. In my opinion your speakers amp combo don't have  capability of playing any louder no matter how much juice you will pump in to them. They gona clip even harder",
+                          "timestamp": "2026-08-01T22:22:40+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "p12qmjt",
+                          "depth": 4,
+                          "replies": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p0zqma1",
+          "author": "reddit_user_c22ceb4fb078",
+          "author_karma": 0,
+          "content": "\\-15 on the dial? That's only a meaningful number if you've calibrated it with a specific type of test tone that you know is a specific volume at 0.\n\nFor example there are test tones on blu-ray that are mastered at 75dB reference level (for movie content), so with an SPL meter you can calibrate channel levels to 75dB at 0, or 70dB at -5, 65dB at -10, and so on.\n\nOtherwise you can set your Eversolo output or amp gain, etc at whatever level so you have enough volume and headroom.\n\nFWIW, on my AVR I have it calibrated to 0 on the dial as reference level, and listen to music at -45 to -25 on the dial. And movies/TV at -25 to -15.  \nThe \"reference level\" is for movies, and music is mastered much louder, less dynamic range, so the volume doesn't have to be turned up nearly as high.",
+          "timestamp": "2026-08-01T01:48:45+00:00",
+          "likes": 4,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p12p90k",
+              "author": "reddit_user_2bca95d02f8d",
+              "author_karma": 0,
+              "content": "Thank you - this is a helpful reference and in past setups very close to what I am use to. In my current \"new\" set up I was listening 2 channel at average -20 to -15. My volume limit was set to -15 so technically that was \"full\" volume on my system. After input from this post I removed the volume limit and found -5 is about as loud as I will ever need. \n\nI think where I got stumped is that I have never had to play at near 100% volume level as -5 is roughly 99% of the volume signal. I think the combination of the Eversolo \"gain\" limitations and the \"sensitivity\" of my \"new to me\" speakers are a factor. ",
+              "timestamp": "2026-08-01T14:22:23+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p0zqma1",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p0zsi81",
+          "author": "reddit_user_24d4b5ba3b55",
+          "author_karma": 0,
+          "content": "I added a Schiit Saga 2 between my Eversolo and the Schiit Vidar 2f, fixed all the volume issues. ",
+          "timestamp": "2026-08-01T02:00:09+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p12n9lv",
+              "author": "reddit_user_2bca95d02f8d",
+              "author_karma": 0,
+              "content": "Very very interesting. spent a good amount of time researching and this may ultimately be a direction I go. The Freya+ F has me very intrigued considering it has a tube mode. thank you. ",
+              "timestamp": "2026-08-01T14:12:16+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p0zsi81",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p0zsq3d",
+          "author": "reddit_user_510bb3fcc777",
+          "author_karma": 0,
+          "content": "The eversolo is not the problem.  You have plenty of power.  Have you measured your SPL at your listening position?  How far are you?\n\nThe speakers could be the bottleneck, but it’s somewhat doubtful.\n\n\\-15db on the volume control doesn’t mean much.  I say you just turn it up a bit.    ",
+          "timestamp": "2026-08-01T02:01:29+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p12mryn",
+              "author": "reddit_user_2bca95d02f8d",
+              "author_karma": 0,
+              "content": "Ok, so ultimately in short that is what I did. I removed the \"volume limit\" which was set at -15 and found -5 is the loudest I will ever play. turning the \"passthrough\" off for a half second was really all I needed to realized there is way more headroom then initially thought. ",
+              "timestamp": "2026-08-01T14:09:45+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p0zsq3d",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p0zxloe",
+          "author": "reddit_user_136f4f5838bc",
+          "author_karma": 0,
+          "content": "So…turn it up?",
+          "timestamp": "2026-08-01T02:31:23+00:00",
+          "likes": 7,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p12maqq",
+              "author": "reddit_user_2bca95d02f8d",
+              "author_karma": 0,
+              "content": "I wasnt sure that was \"safe\" since -15 to -10 was nearing the 100% volume. I assumed it may be harmful to the system. Comments cleared up a few key misconceptions. ",
+              "timestamp": "2026-08-01T14:07:15+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p0zxloe",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p103l4a",
+          "author": "reddit_user_4e4bdd468a70",
+          "author_karma": 0,
+          "content": "Another thing is the sensitivity of your speakers. I’m not familiar with your speakers, but speakers with 3db of sensitivity over your speakers will sound 2x louder at that same -15db on your preamp volume. (I know this an incredibly simple explanation…. But it’s meant to be.) ",
+          "timestamp": "2026-08-01T03:08:49+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p10jq24",
+              "author": "reddit_user_55fb859606d2",
+              "author_karma": 0,
+              "content": "3dB only sounds a little bit louder. It’s generally considered that for something to sound twice as loud it needs a 10dB difference. \n\n3dB is twice as much power, 10db is 10x as much power; but we don’t hear it as such. ",
+              "timestamp": "2026-08-01T04:58:33+00:00",
+              "likes": 2,
+              "dislikes": 0,
+              "parent_comment_id": "p103l4a",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p10post",
+                  "author": "reddit_user_4e4bdd468a70",
+                  "author_karma": 0,
+                  "content": "You are absolutely correct. I don’t know what I was thinking by writing 3db but I’ve edited the post to reflect more accurate info. Thank you for pointing that out (and I’m sorry for being a dumb A. You are completely correct!) ",
+                  "timestamp": "2026-08-01T05:43:24+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p10jq24",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            },
+            {
+              "comment_id": "p12lueu",
+              "author": "reddit_user_2bca95d02f8d",
+              "author_karma": 0,
+              "content": "Ok, so this comment may have explained how I got here. The speakers I currently have PSB Synchrony One are lower sensitivity 88 and 4ohm which may explain why I am at nearing 100% volume limit. In past setups I was no where near 100% volume (usually closer to 50-70% when cranking). I followed some of the other comments suggestions and found that -5 is the loudest I will ever need.  ",
+              "timestamp": "2026-08-01T14:04:54+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p103l4a",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p10d79z",
+          "author": "reddit_user_45032487a796",
+          "author_karma": 0,
+          "content": "You're partially right. The preamp function used in Eversolo has zero gain. Some purist preamps also employ zero gain, but most stereo preamps have around 10 dB in gain on average. If your Eversolo has xlr outputs and Rotel amp has xlr balanced inputs, using xlr cables may help in your situation.",
+          "timestamp": "2026-08-01T04:12:30+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p10gjbh",
+          "author": "reddit_user_0e321ecfc607",
+          "author_karma": 0,
+          "content": "The Eversolo should give you way more than enough volume if you are using the internal player. \n\nAre you connecting your phone via Bluetooth and then using the Eversolo preamp after that? Because your phone would output a weak signal. \n\nIf you use the internal player (not Bluetooth,) go to settings and enable “volume passthrough” mode, then that will output a very strong signal. Even with very inefficient speakers that should be very loud. ",
+          "timestamp": "2026-08-01T04:35:42+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p12jywg",
+              "author": "reddit_user_2bca95d02f8d",
+              "author_karma": 0,
+              "content": "Very helpful answer and it gave me several reference points. First, yes I use the internal player (I should have mentioned) and the turned off \"replay gain\" and then enabled \"volume passthrough\" which blew me out of my chair and was immediately switched back. This tells me I am no where near the full sound capability of my setup. I ultimately removed the \"volume limit\" and found that -5 was as loud as I will ever play it \"cranked\". thank you. \n\nI think the post originated because it \"felt\" unsafe playing music at near 100% of the volume limit of a setup which I had never done in previous setups. This post/comments cleared up some misconceptions. Thank you!  ",
+              "timestamp": "2026-08-01T13:55:06+00:00",
+              "likes": 2,
+              "dislikes": 0,
+              "parent_comment_id": "p10gjbh",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p16eh76",
+                  "author": "reddit_user_0e321ecfc607",
+                  "author_karma": 0,
+                  "content": "Ok nice, glad you got it figured out. ",
+                  "timestamp": "2026-08-02T01:50:00+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p12jywg",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p10hknl",
+          "author": "reddit_user_010d639fb87c",
+          "author_karma": 0,
+          "content": "Volume is related more to mixing than the amp.\n\nTwo channel stereo is more likely to sound louder than surround sound at the same volume level. (Maybe not with streaming).\n",
+          "timestamp": "2026-08-01T04:43:07+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p11cwo2",
+          "author": "reddit_user_e30efa68ff09",
+          "author_karma": 0,
+          "content": "Because you want more?  Just turn it up! ",
+          "timestamp": "2026-08-01T08:55:21+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p11fmzl",
+          "author": "reddit_user_f2a64c0c484b",
+          "author_karma": 0,
+          "content": "So long as somewhere between -15 dB and 0 dB it's the volume you want to listen there is no problem.\n\nHow loud your system sounds for any pre-amp setting depends on the gain of the power amp, your speakers and your room/setup.",
+          "timestamp": "2026-08-01T09:19:08+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p12is17",
+              "author": "reddit_user_2bca95d02f8d",
+              "author_karma": 0,
+              "content": "Perfect. I think ultimately that is the answer I was looking for. I just removed the volume limit and 0 which is 100% volume. Actually -5 ended up being as loud as I will ever need it. Thank you! ",
+              "timestamp": "2026-08-01T13:48:48+00:00",
+              "likes": 2,
+              "dislikes": 0,
+              "parent_comment_id": "p11fmzl",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p12yu4b",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[deleted]",
+          "timestamp": "2026-08-01T15:10:12+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run014_post01_seed071",
+      "post_slot": 1,
+      "seed_index": 71,
+      "source_raw_post_id": "1vcc62c",
+      "source_product_dir": "audiophile",
+      "source_file": "https://www.reddit.com/r/audiophile/comments/1vcc62c/amazing_results_from_a_single_diy_acoustic_cloud/",
+      "post_type": "DIY",
+      "title": "Amazing results from a single DIY acoustic cloud!",
+      "author": "reddit_user_d43b8c7b6255",
+      "author_karma": 0,
+      "content": "Amazing results from a single DIY acoustic cloud!\n\n[1. Before](https://preview.redd.it/rqlyez4kdogh1.png?width=4560&format=png&auto=webp&s=c97cf011354ae6facab982a9800ca8452e6d5444)\n\n[2. After](https://preview.redd.it/3o0cy5ykdogh1.png?width=4532&format=png&auto=webp&s=222d693972fa87b569ff63c30ee742893c2a4aea)\n\n\n\n[3. Spectrum app initial testing to identify room mode.](https://preview.redd.it/w5dqi8pvkogh1.png?width=2556&format=png&auto=webp&s=7f045b46c9fdbfdb2ce89c7de29bc6472e9b1fff)\n\n[4. amhroc Room Mode Calculator results](https://preview.redd.it/hjdnfqpffogh1.png?width=2632&format=png&auto=webp&s=891057df4eab5436f3718b647a492ce401ff0a57)\n\n[5. amroc Pro results](https://preview.redd.it/tdghr9kofogh1.png?width=2678&format=png&auto=webp&s=63421b9afaaa2a979fdbe7eb348f13966637d526)\n\n*Processing img nlqq5metjogh1...*\n\nThis is my first time using REW and first time targeting a specific room mode with treatment, but it seemed to be pretty straight forward when taking a scientific approach. I have a very annoying 120 HZ room mode in this new large room with a cathedral ceiling being used as a workspace. The resonance was so bad that it would give me a headache from my own voice just talking. Here's how I tackled it:\n\n  \nDevices:\n\n* KEF LSX ii LT on 9\" stands on a 6' desk.\n* UMIK-1 to measure with REW.\n* I unplugged the 8\" Kanto Sub8 to fine-tune the speakers first, sub placement will come later.\n\n  \nIdentifying the room mode:\n\n1. I heard a loud resonance in the room when listening to music and when talking, so I used the \"Spectrum\" mobile app for a quick way to identify which frequencies were a problem (image 3). I played some pink noise and the app was pretty accurate at identifying 120 HZ and 180 HZ peaks.\n2. Played a 120 HZ tone through speakers and moved myself around the room to figure out which direction the mode was in. I noticed moving forward/back and left/right did not affect the amplitude I heard much, so I tried squatting down and stepping up on a stool which did have a major effect on the volume of the tone, so I got a hunch that it was a vertical room mode.\n3. I used amroc's free room mode simulator (image 4) which confirmed that it was likely a vertical room mode at 120 HZ. Since the room has a cathedral vaulted ceiling, I had to play around with the room height a bit till the chart showed room modes at \\~120 HZ.\n4. I also payed $5 to use amroc Pro to be able to use a non-rectangular room shape (image 5), but this didn't really give me much more information, nor was it as accurate at identifying the mode frequencies.\n5. I decided a large acoustic cloud suspended right above the desk and listening position would be the best move given the amroc graphic visuals. I needed to determine how far from the ceiling to hang it. For this, I did 1/4 of the 120 HZ wavelength of 9.38' which gave me a distance of 28\" from the ceiling. This would be the distance where the sound pressure is least but sound velocity is greatest, for this frequency. You want to avoid the blue and red areas in the amroc graphics for treatment because those are pressure maximas and velcoity minimas.\n\n\n\nI built the single 40\" x 60\" panel using the following:\n\n1. (1\" x 6\") common pine boards for the frame (I picked the lightest weight wood at Home Depot). Wood glued and screwed butt joints to make a 40\" x 60\" frame that was 5.5\" (6\") thick.\n2. 1\" x 2\" pine for 2 supports running parallel to the 40\" members against the front face so that the cotton batting doesn't slump down much from gravity.\n3. 100% cotton muslin fabric to wrap the wooden frame.\n4. 12 yards of 27\" wide 100% cotton upholstery batting which weighed 13 pounds from the \"onlinefabricstore.com\". Sound is never as important as avoiding the health risks from the industrial chemicals and materials used as insulation in homes. I folded the insulation over itself until it was the right height of \\~5.5 inches and had to make a cut length wise to get the width to stack up to the 40\" frame dimension I was planning for.\n5. Stapled fabric while pulling very taught.\n6. To hang, used 1/16\" wire rope from Home Depot to make four connection points with some screw hook hardware and added adjustable hook and loop turnbuckles to each of the four cables for leveling. Made the wire rope ends into loops using just ferrules I crimped with electrical pliers, no need for a swaging tool for this, I did double up on the ferrules at each loop just in case. Made sure to screw hooks into ceiling joists.\n\n\n\nThe online resources on YouTube, this subreddit, and r/audioengineering were very helpful, so I made this post in case it helps anyone else.\n\nThe 180 HZ room mode was not quite as loud, so I didn't bother targeting it, but it was also an axial vertical mode stemming from the 60 HZ base mode (multiply by 2 to get the 120 HZ main problem and by 3 to get the 180 HZ problem). Although I didn't mount the panel at the perfect height to target the 180 HZ node, it was good enough to also fix that issue for me.\n\n  \nI do have a question in case any experts are reading, why might now the loudest room mode resonance be 113 HZ? Image 2 shows this at the only red tear drop area I now have. In the before spectrogram graph, 113 HZ was not very high, but now it is the most excited frequency. Thanks.\n\n\n\nCons:\n\nnow I have a big shadow over the desk, off to r/lightingphile I go",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p10akav",
+          "author": "reddit_user_c22ceb4fb078",
+          "author_karma": 0,
+          "content": "Very nice! What does your RT60 before/after look like?",
+          "timestamp": "2026-08-01T03:54:40+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p10az4u",
+              "author": "reddit_user_cbab8d5efe76",
+              "author_karma": 0,
+              "content": "https://preview.redd.it/z2asbuldsogh1.png?width=4552&format=png&auto=webp&s=7f1d5871178e70b3de8d226203c83cf3d6eae2d7\n\nBefore",
+              "timestamp": "2026-08-01T03:57:26+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p10akav",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p10azvo",
+                  "author": "reddit_user_cbab8d5efe76",
+                  "author_karma": 0,
+                  "content": "https://preview.redd.it/83mm1ronsogh1.png?width=4572&format=png&auto=webp&s=53650f0033c51ae1386eaa2e30dc282de37e2694\n\nAfter",
+                  "timestamp": "2026-08-01T03:57:34+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p10az4u",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p10b5rb",
+                      "author": "reddit_user_cbab8d5efe76",
+                      "author_karma": 0,
+                      "content": "Average went down maybe 50 ms",
+                      "timestamp": "2026-08-01T03:58:40+00:00",
+                      "likes": 5,
+                      "dislikes": 0,
+                      "parent_comment_id": "p10azvo",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "p10gsix",
+                          "author": "reddit_user_c22ceb4fb078",
+                          "author_karma": 0,
+                          "content": "Not too shabby!",
+                          "timestamp": "2026-08-01T04:37:31+00:00",
+                          "likes": 3,
+                          "dislikes": 0,
+                          "parent_comment_id": "p10b5rb",
+                          "depth": 4,
+                          "replies": []
+                        },
+                        {
+                          "comment_id": "p113v9q",
+                          "author": "reddit_user_6c906dce3f27",
+                          "author_karma": 0,
+                          "content": "That is good result from a single broadband absorber. It is able to suppress so many sound paths and basically has fixed many aspects of the room by itself.",
+                          "timestamp": "2026-08-01T07:38:00+00:00",
+                          "likes": 2,
+                          "dislikes": 0,
+                          "parent_comment_id": "p10b5rb",
+                          "depth": 4,
+                          "replies": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p10ho34",
+          "author": "reddit_user_8e77eeb4588d",
+          "author_karma": 0,
+          "content": "Where is all your low frequency response below 50Hz?? Maybe it is different for you, but the genres I listen to definitely need that content in a big way. ",
+          "timestamp": "2026-08-01T04:43:47+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p10ltg1",
+              "author": "reddit_user_cbab8d5efe76",
+              "author_karma": 0,
+              "content": "This is with the subwoofer disabled, and these speakers have a frequency response down to 54 HZ, so not unexpected. Will be doing subwoofer integration next to crossover to at 80 HZ.",
+              "timestamp": "2026-08-01T05:13:58+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p10ho34",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p12m26v",
+          "author": "reddit_user_fde6bad6cad2",
+          "author_karma": 0,
+          "content": "Nice work!  Thanks for sharing your experience.  I'm in process on some DIY myself. \n\nI'm not an expert.  The long wavelengths of lower frequencies make absorption more difficult.  There are various approaches, from deep absorption using lighter materials, such as \"pink fluffy\" fiberglass, to targeted absorption such as tuned membrane absorbers.  It seems the progession is generally from sofit or \"superchunk\" style traps, to very deep absorption, to adding targeted tuned membrane absorption after using broadband. \n\nOne consideration as there is more and more absorption is potential fire risk.  That's why commercial applications use fireproof absorption materials and fire retardant fabrics.\n\nGood luck!",
+          "timestamp": "2026-08-01T14:06:01+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run014_post02_seed072",
+      "post_slot": 2,
+      "seed_index": 72,
+      "source_raw_post_id": "1vcegmp",
+      "source_product_dir": "audiophile",
+      "source_file": "https://www.reddit.com/r/audiophile/comments/1vcegmp/new_wilson_audio_flagship_speakers/",
+      "post_type": "Show & Tell",
+      "title": "New Wilson Audio Flagship Speakers",
+      "author": "reddit_user_d43b8c7b6255",
+      "author_karma": 0,
+      "content": "New Wilson Audio Flagship Speakers\n\nI had the great pleasure to be exposed to Wilson Audios new flagship speakers, the Autobiography.   I sat there in utter astonishment at how these speakers performed.  Breathtaking is all i can say.  But at $845,000 a pair, they had better sound like Miles Davis was playing right next me; and they did.  I don't know what more i can say.  The price not withstanding, I'm still not sure if it would be worth dropping that kind of money when in my opinion, the Bowers&Wilkins 801D5's sounds just a tad bit inferior, but a fraction of the cost at $70k a pair.\n\nBut I'd you have the opportunity to listen these speakers, do yourself a favor and yest drive them.  You won't be dissapointed.",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p12doir",
+          "author": "reddit_user_715621a4040a",
+          "author_karma": 0,
+          "content": "The front baffle is 57\" from the rear wall. The room is 26' long and 18' wide with a 10' ceiling. Plenty of space. As to why the speakers are where they are, there is a video on the WASP setup procedure that Wilson Audio uses (including this installation) that is worth watching. [https://www.youtube.com/watch?v=UOI8py0DAC8&t=5s](https://www.youtube.com/watch?v=UOI8py0DAC8&t=5s)",
+          "timestamp": "2026-08-01T13:21:07+00:00",
+          "likes": 4,
+          "dislikes": 0,
+          "parent_comment_id": "p11ojrz",
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p15qumm",
+              "author": "reddit_user_f02492c860c6",
+              "author_karma": 0,
+              "content": "I gladly stand corrected on that part, proof is proof definitely. I am man enough to apologize for any misrepresentation in my original comment. ",
+              "timestamp": "2026-08-01T23:30:55+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p12doir",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p12egcv",
+          "author": "reddit_user_7a70211574ed",
+          "author_karma": 0,
+          "content": "Sound Environment in Omaha, Nebraska recently announced that they’ll have the Wilson Autobiography in the store later this year. They also sell Rockport Technologies loudspeakers, so you can hear two of the very highest end lineups there. I expect they’ll lead with Gryphon for amplification, but D’agostino is also in the store.\n\nThe state-of-the-art room where they play the biggest Wilsons and Rockports can truly boggle the mind. However, their entry- and middle-level rooms sound very good with the smaller loudspeakers. I feel very fortunate to have been able to hear any number of great systems there, and I’ve been very happy with my purchases of less elite gear. ",
+          "timestamp": "2026-08-01T13:25:23+00:00",
+          "likes": 7,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p131zqj",
+              "author": "reddit_user_2d858dbce912",
+              "author_karma": 0,
+              "content": "Such a great store. They set up a pair of speakers for a private demo in one of their rooms for me. While they were dialing the room in I got to listen to the XVX paired with a gryphon front end.  It was an eye opening experience.  It was worth the 12 hour round trip drive, in a snow storm. ",
+              "timestamp": "2026-08-01T15:25:39+00:00",
+              "likes": 3,
+              "dislikes": 0,
+              "parent_comment_id": "p12egcv",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p160ye5",
+              "author": "reddit_user_b14197af657f",
+              "author_karma": 0,
+              "content": "Entertainment Technology in Westchester will be having them on display in the fall. Replacing their XVX.",
+              "timestamp": "2026-08-02T00:29:15+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p12egcv",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p12eswz",
+          "author": "reddit_user_80ed4f617f7c",
+          "author_karma": 0,
+          "content": "I have a pair of MAXX3s and driving them with dagastino amps. They sound fantastic and the whole set up cost a mint. Before this, I had a pair of klipsch RF83. Going from that to these speakers was a huge jump in every conceivable metric. But I doubt that going from these speakers to the autobiography would be that significant a jump. These are now my forever speakers. I’m totally content. ",
+          "timestamp": "2026-08-01T13:27:18+00:00",
+          "likes": 6,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p161bad",
+              "author": "reddit_user_b14197af657f",
+              "author_karma": 0,
+              "content": "Nice. I have Dags powering my Watt Puppy's. i hope not to upgrade (but I did add JL subs)",
+              "timestamp": "2026-08-02T00:31:22+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p12eswz",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p161o7h",
+                  "author": "reddit_user_80ed4f617f7c",
+                  "author_karma": 0,
+                  "content": "Yeah, I got one SB 17 R from SVS. And I really really like it. It added exactly what I wanted to my system and it’s very fast unlike their previous products. The dealer recommended well, but I just didn’t have the space for it but having this so I have no new regrets. I’m very happy with my set up. I’m sure you will be too.",
+                  "timestamp": "2026-08-02T00:33:29+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p161bad",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p12fkpg",
+          "author": "reddit_user_80ed4f617f7c",
+          "author_karma": 0,
+          "content": "Agree. I’m rediscovering my entire music collection on these MAXX 3s ",
+          "timestamp": "2026-08-01T13:31:32+00:00",
+          "likes": 3,
+          "dislikes": 0,
+          "parent_comment_id": "p113agy",
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1602uc",
+              "author": "reddit_user_b14197af657f",
+              "author_karma": 0,
+              "content": "I bit the bullet on the new WATT/Puppys, I can never see myself buying any other brand of speaker.",
+              "timestamp": "2026-08-02T00:24:06+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p12fkpg",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1607pi",
+                  "author": "reddit_user_80ed4f617f7c",
+                  "author_karma": 0,
+                  "content": "That’s fantastic!, What are you using for amplification and for your front end streaming?",
+                  "timestamp": "2026-08-02T00:24:53+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1602uc",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p12h3je",
+          "author": "reddit_user_865346ade572",
+          "author_karma": 0,
+          "content": "In aware of that. Still embarrassing.",
+          "timestamp": "2026-08-01T13:39:49+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1291lf",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p12h3xz",
+          "author": "reddit_user_fde6bad6cad2",
+          "author_karma": 0,
+          "content": "It gives gold leaf on cake",
+          "timestamp": "2026-08-01T13:39:52+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p12huqr",
+          "author": "reddit_user_c6cbad8901ad",
+          "author_karma": 0,
+          "content": "Somehow a Porsche GT3S is cheaper than this…",
+          "timestamp": "2026-08-01T13:43:51+00:00",
+          "likes": 3,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p14m79l",
+              "author": "reddit_user_715621a4040a",
+              "author_karma": 0,
+              "content": "You can listen to your stereo everyday and the maintenance is way lower than a GT3. On the other hand, if you can afford one you can probably afford both.",
+              "timestamp": "2026-08-01T19:56:14+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p12huqr",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p17751v",
+                  "author": "reddit_user_c6cbad8901ad",
+                  "author_karma": 0,
+                  "content": "I’m not arguing longevity but brotha if you think there is more material AND engineering to justify the cost over a GT3S…",
+                  "timestamp": "2026-08-02T05:00:03+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p14m79l",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p18tnmk",
+                      "author": "reddit_user_715621a4040a",
+                      "author_karma": 0,
+                      "content": "The only person that needs to justify a product's price is the buyer. ",
+                      "timestamp": "2026-08-02T12:40:07+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p17751v",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p12hv2l",
+          "author": "reddit_user_ce3189db0cc2",
+          "author_karma": 0,
+          "content": "saying the room has 9 acoustic treatments is like like walking into an art gallery and saying ‘i’d like 1 art please’ \n\nacoustic treatment is a calculated cohesive combination of methods to alter the amplitude and movement of redirected and absorbed sound waves (absorbed meaning transduce to heat energy instead of sound energy really).  \n\nwhat they have up there is a giant etsy made ‘diffuser’ that’s making things worse,  and some cheap absorbers with scatter plates up part of the corners that wouldn’t touch but a dB or 2 in a very narrow frequency range.   it’s likely making an equal amount worse as it is better,  more just shifting the problem areas to another direction. \n\njust remember one thing, and i mean this to be simply a fact of the human ability to hear. \n\nwhen you hear something,  in this case let’s call it ‘playback’ \n\nit is never just you and the playback,   nothing has been heard in isolation like that.   There is always a third variable, and all 3 variables share an equal role. \n\n1. The source (playback)   \n2. The listener  \n3. The space in between and around them\n\nall sound is perceived by humans thru the auditory lens of those 3 variables.   Each require equal consideration. ",
+          "timestamp": "2026-08-01T13:43:54+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": "p12bm81",
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p12jnbf",
+              "author": "reddit_user_715621a4040a",
+              "author_karma": 0,
+              "content": "I think Vicoustic would take issue with the \"Etsy made diffuser\" line. As for the rest of the acoustic treatments (also Vicoustic products), they were intentionally chosen for the room as was the speakers positioning and calibration.\n\nThe folks at Definitive know what they are doing and the speakers performed as intended. ",
+              "timestamp": "2026-08-01T13:53:24+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p12hv2l",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p12l2wm",
+                  "author": "reddit_user_ce3189db0cc2",
+                  "author_karma": 0,
+                  "content": "were they  chosen by an acoustician after reviewing the space the playback is in?     and fair, the etsy comment was a low blow and provided nothing but negativity to the comment.   That is on me, apologies.  ",
+                  "timestamp": "2026-08-01T14:00:54+00:00",
+                  "likes": 2,
+                  "dislikes": 0,
+                  "parent_comment_id": "p12jnbf",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p12m9l8",
+                      "author": "reddit_user_715621a4040a",
+                      "author_karma": 0,
+                      "content": "Vicoustic has the necessary people on staff to provide consultancy for any space. https://vicoustic.com/pages/project-request. No worries on the Etsy comment. I actually chuckled and that's a great, first thing in the morning!",
+                      "timestamp": "2026-08-01T14:07:05+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p12l2wm",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p12i0bv",
+          "author": "reddit_user_320fb1e9aafa",
+          "author_karma": 0,
+          "content": "Pretty sure he’s not crying about it. Everything could be upgraded. Get a Ferrari red on it and boom lot more money. ",
+          "timestamp": "2026-08-01T13:44:41+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p11uzx3",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p12llap",
+          "author": "reddit_user_9d84e1e695ab",
+          "author_karma": 0,
+          "content": "Everything you say is true, but at these echelons the price is wholly divorced from performance and it’s not a linear equation where more money = better performance. \n\nI’d argue that relationship probably breaks once you move above 10k / pair. Purchase decisions are then made based on other factors. ",
+          "timestamp": "2026-08-01T14:03:35+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p11ojrz",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p12mi40",
+          "author": "reddit_user_fff7f8fe8f7f",
+          "author_karma": 0,
+          "content": "I hope these things sound better than they look. Even if I had the money, these are not my cup of tea.",
+          "timestamp": "2026-08-01T14:08:18+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p12mpbg",
+          "author": "reddit_user_8357d8a35554",
+          "author_karma": 0,
+          "content": "They are out of my price range but I can't wait to hear them. ",
+          "timestamp": "2026-08-01T14:09:22+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p12on1d",
+          "author": "reddit_user_46c4e597cb39",
+          "author_karma": 0,
+          "content": "Transformers\nMore than meets the eye\nTransformers\nRobots in disguise",
+          "timestamp": "2026-08-01T14:19:15+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p12op2x",
+          "author": "reddit_user_1e38bf41f2e6",
+          "author_karma": 0,
+          "content": "Lol that is my end game.  Festival level bass with absolute clairity and stage.  Pk subs.  La tops",
+          "timestamp": "2026-08-01T14:19:33+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": "p11uzx3",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p12q14e",
+          "author": "reddit_user_e3524f5ffc5e",
+          "author_karma": 0,
+          "content": "I was offered to listen to the chronosonics when they first came out as I was buying some Cans and Mojo2  from Definitive Seattle and I declined and the salesman asked why?          \nMe: Because it will ruin me from anything  else I will ever buy as all will pale when compared to those. I will admit I did drool over the build quality ",
+          "timestamp": "2026-08-01T14:26:23+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p16ejbu",
+              "author": "reddit_user_acb140214840",
+              "author_karma": 0,
+              "content": "So do you also avoid live musical performances? There’s nothing wrong with hearing how good music can sound … gives us a target.",
+              "timestamp": "2026-08-02T01:50:21+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p12q14e",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p12v0d3",
+          "author": "reddit_user_0d25fde597f5",
+          "author_karma": 0,
+          "content": "Just is just me, but for $845,000 I'd be looking for something that doesn't look like something from  Transformer Cyberworld...",
+          "timestamp": "2026-08-01T14:51:21+00:00",
+          "likes": 3,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1629tg",
+              "author": "reddit_user_b14197af657f",
+              "author_karma": 0,
+              "content": "for 845k I wouldn't be looking at all, i'd be listening.",
+              "timestamp": "2026-08-02T00:37:04+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p12v0d3",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p133cf1",
+          "author": "reddit_user_ce3189db0cc2",
+          "author_karma": 0,
+          "content": "cool,  i’m glad this is shifting more productive and less of a sprinkling of me trolling around lol.    \n\nand sure vicoustic, gik, etc … they all provide consulting … but phone consulting is sorta like using a sawed off shotgun to make a hole in a sheet of paper.    \n\nyes… it will put a hole in that paper.    but it won’t put it where you asked lol.     \n\nInstead of ragging on OP, I’ll change my tune.  \n\nbased on the drop ceiling,  that’s a excellent opportunity to purchase either the acoustic drop ceiling tiles, or to be more effective,   to purchase some form of Owen’s Corning 703/705, or Rockwool roxul/60/80 and place it above the ceiling concentrating extra layers around the corners especially, but around the rim/edge of the room.   2-4” w 6” in the corners (if the weight supports it.. which it may not.  perhaps if the joists are above, they can be used to help support the weight from the other side.    Yes, that’s a lot of annoying work, but the general recommendation is to allocate 1/5th of your budget to acoustics roughly.   However lucky for this person… 1/5th is probably the equivalent of buying a small car, so like 1/30th the budget in this case haha.   \n\nthen,  those corner traps are the right idea,  but not nearly enough to handle, based on the size of the bottom of those speakers … the massive low end power those mammoth steampunk beasts can produce.    they’re going to need to have a lot more depth.   I would recommended just pulling the existing stuff forward and attaching the same materials as above to the back and then layer fabric… doesn’t have to be ‘acoustic fabric’  it just has to pass air when you breathe into it, but hold the fibers inside.    if they can do 2 fiber panels of different density stacked or more on the back of those , and leave a few inches of space before the wall, perfect.  \n\nNow ,  I get why they want that diffuser in the middle between the speakers.  as it scatters the center out from the speaker side and creates a sense of a wider ‘soundstage’, but at the expense of image precision.   \n\nassuming they can afford it,  they should look into ‘23-root two-dimensional primitive root diffuser (PRD) sequence’\n\nand a little in the middle at ear level, not the edges , on the speaker wall,  and a larger amount on the backwall center would be great.  \n\nThen the most important beyond the bass management in the corners … is addressing the early reflection points.  \n\ngrab a buddy or use a tape measure …. sit in the listening position,  and imagine a mirror on the walls to the left and right of the listener.    where would the mirror need to be for you to see the speakers in the mirror?   (i guess it’s a tall mirror lol).     now do the same for the ceiling (there are 3 axis in a room)    mark those 3 points.   those areas need something like what’s on the corners but with flat back and more perforation in the front diffuser baffle.     the ceiling just needs the already mentioned fiber board wrapped in fabric and hung at an angle that angles ehh 20\\* with the lower edge on the speaker side.   \n\nOh, shit.   the speaker wall… behind the speaker.. left and right of the vicoustic thing …. the same fiber board like the early reflection points,   but no reflective surface on the front,  just absorbing.     that one is a life saver.   \n\nthen there’s positions in the room.   the center is gonna feel the least bass heavy, standing in the corner of the room will be the  most bass sounding (try it at home).   but that’s dimensional and i can’t advise much there as it requires attention to calculated frequencies. \n\nis that all a freakin’ headache of boring not cool gear stuff related work?  yes if you DIY,  no if you pay someone.    my guess is they can afford to pay someone.  \n\nand i know the response.   ‘but muh room is not a recording studio and muh wife will absolutely hate it and its ugly’  .. first,  if they have a partner,  they are already okay with ugly, and that’s not a burn on OP, tho it would be a great one haha,   it’s that if you’re going to put that system in the room, you’ve already conceded the visual argument for ‘livable space’  plus,  all of this can be done with the treatment to look like artwork and can be made to any decor. \n\naaaand my thumbs hurt. \n\nboom,   trolling post turned into acoustic treatment 101.  \n\nreddit, uh,  finds a way.   ",
+          "timestamp": "2026-08-01T15:32:13+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p133jdg",
+          "author": "reddit_user_4e739d3e5212",
+          "author_karma": 0,
+          "content": "Back when Dynaudio drivers were sold through OEM channels, Dynaudio was recommending only first order filters due to natural driver rolloff.  I think Dynaudios might have been seen in early Wilsons before they started using Focal inverted dome tweeters but not sure of that.",
+          "timestamp": "2026-08-01T15:33:09+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p11jz89",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p13526j",
+          "author": "reddit_user_2621bece4ff7",
+          "author_karma": 0,
+          "content": "All that money, and I bet they won't measure accurate. I've seen a Wilson speaker that had good impulse response.",
+          "timestamp": "2026-08-01T15:40:27+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p161krf",
+              "author": "reddit_user_b14197af657f",
+              "author_karma": 0,
+              "content": "Funny, My macbook was telling me this exact thing the other day.  Luckily I have ears so I can measure through listening experience.",
+              "timestamp": "2026-08-02T00:32:55+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p13526j",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p163hul",
+                  "author": "reddit_user_2621bece4ff7",
+                  "author_karma": 0,
+                  "content": "What?",
+                  "timestamp": "2026-08-02T00:44:19+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p161krf",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p136xru",
+          "author": "reddit_user_2992f91d49e5",
+          "author_karma": 0,
+          "content": "WinAMP...🤣.  It really whips the llama's ass!!",
+          "timestamp": "2026-08-01T15:49:25+00:00",
+          "likes": 3,
+          "dislikes": 0,
+          "parent_comment_id": "p120pvv",
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p19m4uh",
+              "author": "reddit_user_dcd9ecf90e71",
+              "author_karma": 0,
+              "content": "Rock over, London!",
+              "timestamp": "2026-08-02T15:10:10+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p136xru",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1avuog",
+                  "author": "reddit_user_f08f34aed026",
+                  "author_karma": 0,
+                  "content": "You're in good hands with Allstate! *headbutts*",
+                  "timestamp": "2026-08-02T18:37:33+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p19m4uh",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p139n9c",
+          "author": "reddit_user_3b4f3eda3de4",
+          "author_karma": 0,
+          "content": "I do like that people are commenting on aesthetics. It says a lot about them. I hope they are as delightful as their price suggests.",
+          "timestamp": "2026-08-01T16:02:21+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p13lb4a",
+          "author": "reddit_user_e921189fa4c5",
+          "author_karma": 0,
+          "content": "I saw another thread that claimed Wilson asked for an additional $100k for certain finishes. That's not the Wilson Audio I know, and I knew Dave back in 1986, when the WATT was just coming out and I was one of his early customers. \n\nI inquired, and it is around 10k - 15k for custom finishes, not 100k. And Dave himself would never have stood for that kind of gouging. I had to have a WATT repaired once after it broke, and the repair charge was reasonable (for 1988 prices).\n\nAre people certain of their facts here? ",
+          "timestamp": "2026-08-01T16:58:14+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p11ojrz",
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p14atfl",
+              "author": "reddit_user_9c39af939553",
+              "author_karma": 0,
+              "content": "Note that calculating for inflation, $15k in 1986 is around $46k today. (Probably more than just the actual work involved.)",
+              "timestamp": "2026-08-01T19:00:06+00:00",
+              "likes": 2,
+              "dislikes": 0,
+              "parent_comment_id": "p13lb4a",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p15kk3x",
+                  "author": "reddit_user_e921189fa4c5",
+                  "author_karma": 0,
+                  "content": "I’m  referring to current pricing on custom colors, and I believe it’s on the Wilson audio site. It indicates  that speakers can be made in custom colors for an additional 10K to 15 K fee.",
+                  "timestamp": "2026-08-01T22:55:25+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p14atfl",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            },
+            {
+              "comment_id": "p160pmh",
+              "author": "reddit_user_b14197af657f",
+              "author_karma": 0,
+              "content": "100k?  i've seen 2-3K for certain finishes, but these are painted with auto-grade paint, so its expensive to create custom metallic flake paint jobs.\n\nPersonally I've never opted for an upgrade color as attractive as they are. It's one area i cant see dropping money.",
+              "timestamp": "2026-08-02T00:27:47+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p13lb4a",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p177d02",
+                  "author": "reddit_user_e921189fa4c5",
+                  "author_karma": 0,
+                  "content": "I agree with you, but for some people, as huge as the speaker is, it needs to fit into their room decor. And those are the people who will pay big money for custom colors.",
+                  "timestamp": "2026-08-02T05:01:41+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p160pmh",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p13m3wp",
+          "author": "reddit_user_8e91d765c97a",
+          "author_karma": 0,
+          "content": "Wow!!  I didn't realize this post woyld cause such emotional responses....lol",
+          "timestamp": "2026-08-01T17:02:04+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p13u7un",
+          "author": "reddit_user_8d61c489963f",
+          "author_karma": 0,
+          "content": "An expensive home for spiders.",
+          "timestamp": "2026-08-01T17:40:37+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p13x1r1",
+          "author": "reddit_user_7e21f89aaf3d",
+          "author_karma": 0,
+          "content": "I have no idea what these sound like but the looks and aura alone are 🔥",
+          "timestamp": "2026-08-01T17:54:06+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p13z0nb",
+          "author": "reddit_user_75dfaf1622c4",
+          "author_karma": 0,
+          "content": "I agree with some of your thoughts however having owned the Wilson Sophia II’s you could definitely see why the cost as much as they did. Amazing build quality and the best bass I have ever heard in my room. Having said that I found them too imposing for my living room and everything moved on the Devore’s with are far more efficient and better with touch, tone, texture of notes. ",
+          "timestamp": "2026-08-01T18:03:28+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p11ojrz",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p144kh1",
+          "author": "reddit_user_b6911d5c7ed3",
+          "author_karma": 0,
+          "content": "There are no specs anywhere.  It's bogus.",
+          "timestamp": "2026-08-01T18:30:12+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p11w1pf",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p144nml",
+          "author": "reddit_user_b6911d5c7ed3",
+          "author_karma": 0,
+          "content": "Wilson is a bogus sham of a speaker company.  I'm ashamed of anyone that buys them.",
+          "timestamp": "2026-08-01T18:30:37+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p153dky",
+          "author": "reddit_user_7c9e4f6a9b20",
+          "author_karma": 0,
+          "content": "Wall of Sound.. I think you could actually do it.",
+          "timestamp": "2026-08-01T21:22:53+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p11uzx3",
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p16h30n",
+              "author": "reddit_user_f08f34aed026",
+              "author_karma": 0,
+              "content": "The only way I would do that is if I could clone at least three Owsleys to run it.\n\nAnd then I'd have to actually like and not just tolerate the Grateful Dead.\n\nThat system was a nightmare to run by all accounts, and then the magic sauce really only worked if the Dead were playing it like an instrument using their fancy anti feedback double mics so they could stand out in front of it and all of that.\n\nI mean I guess we could tailor a Wall of Sound to a different band and do the same neat trick but at that point I'll just buy or rent a big fat linear array and a lot of Dante and Smaart and call it good.",
+              "timestamp": "2026-08-02T02:05:58+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p153dky",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1a09gq",
+                  "author": "reddit_user_f5407968815d",
+                  "author_karma": 0,
+                  "content": "Only tolerate? Guess not everyone likes licorice ",
+                  "timestamp": "2026-08-02T16:15:43+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p16h30n",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1avovj",
+                      "author": "reddit_user_f08f34aed026",
+                      "author_karma": 0,
+                      "content": "I mean I wouldn't say no to hearing the original lineup on the original wall of sound, but after space/drums I'm out of there and I'm going to go hang out in the parking lot.",
+                      "timestamp": "2026-08-02T18:36:49+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1a09gq",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p15mtb0",
+          "author": "reddit_user_cdaf67b83ab9",
+          "author_karma": 0,
+          "content": "No speaker is worth that much,. Not even 70k. Its BS",
+          "timestamp": "2026-08-01T23:08:05+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p15natc",
+          "author": "reddit_user_7ea87a059a0a",
+          "author_karma": 0,
+          "content": "And, people buy them. I wonder if they sell a dozen a year…",
+          "timestamp": "2026-08-01T23:10:51+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p11ojrz",
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p17qyvy",
+              "author": "reddit_user_38d39bcb9b0c",
+              "author_karma": 0,
+              "content": "Of course they do, there are plenty of people keen to demonstrate how much money they have, and plenty of ways to ostentatiously show it.  ",
+              "timestamp": "2026-08-02T07:37:16+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p15natc",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1b11cw",
+                  "author": "reddit_user_2f0f5cfac5d3",
+                  "author_karma": 0,
+                  "content": "I know a dealer that has sold one and expects to sell three more in the near future.",
+                  "timestamp": "2026-08-02T19:01:21+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p17qyvy",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p15x6rr",
+          "author": "reddit_user_24106da15714",
+          "author_karma": 0,
+          "content": "People buying these aren’t buying them for sonic reasons. I bet they measure and sound worse than some speakers 1/100th their cost. \n\nI’m with you. I’m going extravagant pro audio",
+          "timestamp": "2026-08-02T00:07:20+00:00",
+          "likes": 0,
+          "dislikes": 0,
+          "parent_comment_id": "p11uzx3",
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p161ltz",
+              "author": "reddit_user_2f0f5cfac5d3",
+              "author_karma": 0,
+              "content": "lol. Find me a speaker 8k that sounds better than these.",
+              "timestamp": "2026-08-02T00:33:05+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p15x6rr",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p16n169",
+                  "author": "reddit_user_2621bece4ff7",
+                  "author_karma": 0,
+                  "content": "Dunlavy SC-V? Look at the Stereophile measurements of the SC-VI. Stereophile didn't review the SC-Vs, but John Dunlavy said they were the most accurate speakers he ever built, and his favorites. https://www.stereophile.com/content/dunlavy-audio-labs-signature-sc-vi-loudspeaker-measurements",
+                  "timestamp": "2026-08-02T02:43:13+00:00",
+                  "likes": 2,
+                  "dislikes": 0,
+                  "parent_comment_id": "p161ltz",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p16sd5o",
+                      "author": "reddit_user_2f0f5cfac5d3",
+                      "author_karma": 0,
+                      "content": "A flat speaker doesn’t necessarily sound better. Have you heard Chronosonic XV or other Wilson speakers?  ",
+                      "timestamp": "2026-08-02T03:18:00+00:00",
+                      "likes": 0,
+                      "dislikes": 0,
+                      "parent_comment_id": "p16n169",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "p16vqnr",
+                          "author": "reddit_user_2621bece4ff7",
+                          "author_karma": 0,
+                          "content": "An inaccurate speaker will never be accurate. Wilson's never measure accurate, so they can't be accurate. Dunlavy's measured accurate, so they are accurate. A speaker's job is to reproduce as accurately as possible what's fe into it, not to make it sound 'better.' \n\nFrom the review:\n\n>Some audio pundits have come to the boneheaded conclusion that because many of their cherished recordings are flawed, a musically accurate system is one that makes the majority of these \"gems\" enjoyable to listen to. Bzzzt—wrong. \"Accuracy,\" as defined by Stereophile's founder and Chief Tester, J. Gordon Holt, is \"The degree to which the output signal from a component or system replicates the sonic qualities of its input signal. An accurate system reproduces what is on the recording, which may or may not be an accurate representation of the original sound.\" Please note that this does not mention perceived level of realism. If the source is realistic, the final result will be realistic, if—the big if—the rest of the system is accurate.",
+                          "timestamp": "2026-08-02T03:40:43+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "p16sd5o",
+                          "depth": 4,
+                          "replies": [
+                            {
+                              "comment_id": "p1av0lg",
+                              "author": "reddit_user_f08f34aed026",
+                              "author_karma": 0,
+                              "content": "I swear, some audiophools think that comb filtering adds warmth.\n\nI suspect these are the same nerds that do smiley-face or frowny-face on a 16 band EQ and think they're being scientific.",
+                              "timestamp": "2026-08-02T18:33:46+00:00",
+                              "likes": 1,
+                              "dislikes": 0,
+                              "parent_comment_id": "p16vqnr",
+                              "depth": 5,
+                              "replies": [
+                                {
+                                  "comment_id": "p1cr46d",
+                                  "author": "reddit_user_2621bece4ff7",
+                                  "author_karma": 0,
+                                  "content": "It makes you wonder. Even though I fell in love with the Dunlavy 'sound' right-away, it took me a while to get used to their way of exposing the good and bad of recordings. If it's a bad recording, they show no mercy, and you hear everything wrong; but on good recordings, they are amazing.",
+                                  "timestamp": "2026-08-03T00:10:44+00:00",
+                                  "likes": 1,
+                                  "dislikes": 0,
+                                  "parent_comment_id": "p1av0lg",
+                                  "depth": 6,
+                                  "replies": []
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "comment_id": "p1auddr",
+                          "author": "reddit_user_f08f34aed026",
+                          "author_karma": 0,
+                          "content": "Have you heard of the law of diminishing returns?\n\nThere is no $800,000 speaker that sounds 1000x better than an $8,000 speaker.\n\nIf you believe this I have some shiny holographic room mode balancing pebbles that I would like to sell you at $1000 each. They come in packs of ten.\n\nOh, you want REAL sonic accuracy and clarity? For over three quarters of a million bucks you could spend $1000 every day on hiring musicians to play whater music you want, every single day for two years and STILL have enough change left over for really nice pro ADAM setup and still have enough left over to buy more music or streaming than you could listen to for the rest of your life. \n\nHell, there might even be enough change left after all that for a nice vacation.",
+                          "timestamp": "2026-08-02T18:30:53+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "p16sd5o",
+                          "depth": 4,
+                          "replies": [
+                            {
+                              "comment_id": "p1av8y4",
+                              "author": "reddit_user_2f0f5cfac5d3",
+                              "author_karma": 0,
+                              "content": "Who said it sounds 1000x better? I said find one that sounds better generally. You won’t. ",
+                              "timestamp": "2026-08-02T18:34:48+00:00",
+                              "likes": 1,
+                              "dislikes": 0,
+                              "parent_comment_id": "p1auddr",
+                              "depth": 5,
+                              "replies": [
+                                {
+                                  "comment_id": "p1ayz6u",
+                                  "author": "reddit_user_f08f34aed026",
+                                  "author_karma": 0,
+                                  "content": "I would put a number of pro audio solutions in the same watt/displacement class up against Wilsons all day. L-Acoustics, Danley, KV2, Paraflex and even studio/home systems like ADAMs.\n\nWe can measure accuracy and A/B blind test them, too.\n\nBut if your yardstick is only \"these sound better to me, I win!\" then that's just you being subjective about sticker price and brand names.",
+                                  "timestamp": "2026-08-02T18:51:54+00:00",
+                                  "likes": 1,
+                                  "dislikes": 0,
+                                  "parent_comment_id": "p1av8y4",
+                                  "depth": 6,
+                                  "replies": [
+                                    {
+                                      "comment_id": "p1b0ess",
+                                      "author": "reddit_user_2f0f5cfac5d3",
+                                      "author_karma": 0,
+                                      "content": "If you honestly think a $8k pro audio solution is going to sound better than the $800k Wilson, you are the fool.",
+                                      "timestamp": "2026-08-02T18:58:28+00:00",
+                                      "likes": 1,
+                                      "dislikes": 0,
+                                      "parent_comment_id": "p1ayz6u",
+                                      "depth": 7,
+                                      "replies": [
+                                        {
+                                          "comment_id": "p1b4hk8",
+                                          "author": "reddit_user_f08f34aed026",
+                                          "author_karma": 0,
+                                          "content": "I'm not the one claiming that a 1000x price increase sounds that much better to justify that cost. They don't. They're using off the shelf drivers.\n\nIf I put you in a treated room with something like a properly tuned and configured L Acoustics rig in the same displacement class - I would bet that you would choose the L Acoustics rig and not the mechanically time-domain corrected Wilsons in the post.\n\nThe only thing that you get when you buy speakers in this price range is a nice finish and bragging rights that you spent that much on home audio with an extra large side of snake oil.",
+                                          "timestamp": "2026-08-02T19:17:13+00:00",
+                                          "likes": 1,
+                                          "dislikes": 0,
+                                          "parent_comment_id": "p1b0ess",
+                                          "depth": 8,
+                                          "replies": []
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "comment_id": "p1cw5gy",
+                                  "author": "reddit_user_24106da15714",
+                                  "author_karma": 0,
+                                  "content": "What do you think sounds better coming out of that monstrosity? The imaging? Or the holes in the response for phase issues or the dictation points? That speaker is a status symbol. ",
+                                  "timestamp": "2026-08-03T00:38:41+00:00",
+                                  "likes": 1,
+                                  "dislikes": 0,
+                                  "parent_comment_id": "p1av8y4",
+                                  "depth": 6,
+                                  "replies": [
+                                    {
+                                      "comment_id": "p1cxnw9",
+                                      "author": "reddit_user_2f0f5cfac5d3",
+                                      "author_karma": 0,
+                                      "content": "Have you heard this speaker? Or are you talking out your ass to justify your DIY shit boxes.",
+                                      "timestamp": "2026-08-03T00:47:06+00:00",
+                                      "likes": 1,
+                                      "dislikes": 0,
+                                      "parent_comment_id": "p1cw5gy",
+                                      "depth": 7,
+                                      "replies": [
+                                        {
+                                          "comment_id": "p1d0oky",
+                                          "author": "reddit_user_24106da15714",
+                                          "author_karma": 0,
+                                          "content": "Who brought up DIY? I asked you a question and you’re deflecting. \n\nThey’re obviously well made and while not my thing a conversation piece and status symbol. Unless you’re showing me blind AB testing where you pick this one out as the better speaker over an 8k like 9/10 times, I’ll remain skeptical. \n\nI’ve listened to enough speakers to know I prefer a relatively flat response with good directivity. You can get that for pretty cheap. It would just be missing dynamics. Thats where the price increases come into play. Flat, good dynamics and off axis can be had for 8-10k ",
+                                          "timestamp": "2026-08-03T01:04:07+00:00",
+                                          "likes": 1,
+                                          "dislikes": 0,
+                                          "parent_comment_id": "p1cxnw9",
+                                          "depth": 8,
+                                          "replies": []
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p15ztuu",
+          "author": "reddit_user_b14197af657f",
+          "author_karma": 0,
+          "content": "The WAMM is still supposed to be the top of their model lineup. It will be getting a revamp but it comes with the subwoofers and crossover.",
+          "timestamp": "2026-08-02T00:22:40+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p10xc33",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1613ou",
+          "author": "reddit_user_b14197af657f",
+          "author_karma": 0,
+          "content": "Cant have a wilson adio thread without someone commenting on their appearance 🤣",
+          "timestamp": "2026-08-02T00:30:07+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p10vg7z",
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p161h80",
+              "author": "reddit_user_38382fd3de33",
+              "author_karma": 0,
+              "content": "Well duh we arnt blind.",
+              "timestamp": "2026-08-02T00:32:21+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1613ou",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p162aoh",
+          "author": "reddit_user_008bc97f0165",
+          "author_karma": 0,
+          "content": "Solid flex would be to have these as your surround backs with a pair of Boulder mono-block.",
+          "timestamp": "2026-08-02T00:37:12+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p165q8b",
+          "author": "reddit_user_ae7747ac82fe",
+          "author_karma": 0,
+          "content": "Crazy! These are 1,142,600.00 CAD at Audio Excellence Canada. The WAMM Master Chronosonics are 1,406,500.00. The Bowers & Wilkins 801D5's are a bargain at 65 to 90K CAD. ",
+          "timestamp": "2026-08-02T00:57:37+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p16b0st",
+          "author": "reddit_user_4cd3e4cf5055",
+          "author_karma": 0,
+          "content": "And L'Acoustics makes in home systems that kick ass, I believe they are around ~15k per speaker. Sounds amazing tho.",
+          "timestamp": "2026-08-02T01:29:05+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p11vzi5",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p16bf2s",
+          "author": "reddit_user_c0f06fa2c43e",
+          "author_karma": 0,
+          "content": "What do you mean? Wilsons have been measured many times.",
+          "timestamp": "2026-08-02T01:31:31+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p128qkg",
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p16ekag",
+              "author": "reddit_user_356bcc914ed2",
+              "author_karma": 0,
+              "content": "I guess these days I want to see polar plots, distortion, and compression. Individual driver measurements would be good too. ",
+              "timestamp": "2026-08-02T01:50:31+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p16bf2s",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p16o54w",
+              "author": "reddit_user_2621bece4ff7",
+              "author_karma": 0,
+              "content": "That phase and impedance graph is a mess!",
+              "timestamp": "2026-08-02T02:50:16+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p16bf2s",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1860wp",
+                  "author": "reddit_user_c0f06fa2c43e",
+                  "author_karma": 0,
+                  "content": "Yea. That's why they needs absurdly beefy amplification. ",
+                  "timestamp": "2026-08-02T09:45:45+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p16o54w",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p19qxnc",
+                      "author": "reddit_user_2621bece4ff7",
+                      "author_karma": 0,
+                      "content": "Definitely. My Dunlavy's are pretty easy to drive since they're basically a 4-ohm resistor with no wild dips, peaks or wild phase angles.",
+                      "timestamp": "2026-08-02T15:32:57+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1860wp",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "p1cckyz",
+                          "author": "reddit_user_c0f06fa2c43e",
+                          "author_karma": 0,
+                          "content": "Same thing with my Urei 809 coaxials. 95db. Easy peazie",
+                          "timestamp": "2026-08-02T22:51:39+00:00",
+                          "likes": 2,
+                          "dislikes": 0,
+                          "parent_comment_id": "p19qxnc",
+                          "depth": 4,
+                          "replies": [
+                            {
+                              "comment_id": "p1cmyoq",
+                              "author": "reddit_user_2621bece4ff7",
+                              "author_karma": 0,
+                              "content": "Mine are rated at 91 dB, which is pretty good for a sealed speaker.",
+                              "timestamp": "2026-08-02T23:47:42+00:00",
+                              "likes": 2,
+                              "dislikes": 0,
+                              "parent_comment_id": "p1cckyz",
+                              "depth": 5,
+                              "replies": [
+                                {
+                                  "comment_id": "p1cu30t",
+                                  "author": "reddit_user_c0f06fa2c43e",
+                                  "author_karma": 0,
+                                  "content": "Do you find they have a narrow sweet spot?\n\nA pair of IV's came up for sale here in Brooklyn for 1k earlier this year, but I live an apt with kids, so proper towers on addition to two systems was a non-starter.",
+                                  "timestamp": "2026-08-03T00:27:01+00:00",
+                                  "likes": 1,
+                                  "dislikes": 0,
+                                  "parent_comment_id": "p1cmyoq",
+                                  "depth": 6,
+                                  "replies": [
+                                    {
+                                      "comment_id": "p1cvq5w",
+                                      "author": "reddit_user_2621bece4ff7",
+                                      "author_karma": 0,
+                                      "content": "It's not as narrow as many people seem to think in most situations. John Dunlavy liked the speakers to be up to 120 degrees apart, which is really wide, and toe'd-in drastically to be aimed right at your head, which made for a narrow sweet spot. In my living room I'm sitting 10-1/2 ft from the plane of the drivers, have them aimed at my head, and it's right at 60 degrees separation. The phantom-center is so good that you'd swear there's a hidden center channel speaker, and as long as I'm not wildly moving around it's fine; it's not head-in-vise.",
+                                      "timestamp": "2026-08-03T00:36:17+00:00",
+                                      "likes": 1,
+                                      "dislikes": 0,
+                                      "parent_comment_id": "p1cu30t",
+                                      "depth": 7,
+                                      "replies": [
+                                        {
+                                          "comment_id": "p1cxq8s",
+                                          "author": "reddit_user_c0f06fa2c43e",
+                                          "author_karma": 0,
+                                          "content": "Very cool. Dunlavys and Thiels are on my 'to own' bucket list.",
+                                          "timestamp": "2026-08-03T00:47:28+00:00",
+                                          "likes": 1,
+                                          "dislikes": 0,
+                                          "parent_comment_id": "p1cvq5w",
+                                          "depth": 8,
+                                          "replies": [
+                                            {
+                                              "comment_id": "p1cych4",
+                                              "author": "reddit_user_2621bece4ff7",
+                                              "author_karma": 0,
+                                              "content": "I've never heard a properly setup pair of Thiel, but read good things about them over the years. The only drawback to Dunlavy speakers is their size.",
+                                              "timestamp": "2026-08-03T00:50:57+00:00",
+                                              "likes": 1,
+                                              "dislikes": 0,
+                                              "parent_comment_id": "p1cxq8s",
+                                              "depth": 9,
+                                              "replies": []
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p186720",
+          "author": "reddit_user_575ad7559449",
+          "author_karma": 0,
+          "content": "Con quella cifra credo che potrei permettermi musicisti che suonano dal vivo. Molto più realistico e ricostruzione scenica ai massimi livelli. :)",
+          "timestamp": "2026-08-02T09:47:13+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p186hnh",
+              "author": "reddit_user_8e91d765c97a",
+              "author_karma": 0,
+              "content": "😅🤣😂",
+              "timestamp": "2026-08-02T09:49:45+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p186720",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p192oia",
+          "author": "reddit_user_ddfcd52e2311",
+          "author_karma": 0,
+          "content": "Ah yes. The Wilson Audio Scan-speaks. You’d think a company charging upwards of 850k would make their own drivers. ",
+          "timestamp": "2026-08-02T13:31:50+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p195175",
+              "author": "reddit_user_8e91d765c97a",
+              "author_karma": 0,
+              "content": "Wait, what?",
+              "timestamp": "2026-08-02T13:44:32+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p192oia",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p19rcuw",
+                  "author": "reddit_user_ddfcd52e2311",
+                  "author_karma": 0,
+                  "content": "The midrange drivers are all made by Scanspeak. Possible the bass drivers as well. Scanspeak ellipticor and Scanspeak Revelators. ",
+                  "timestamp": "2026-08-02T15:34:56+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p195175",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p19rs0x",
+                      "author": "reddit_user_8e91d765c97a",
+                      "author_karma": 0,
+                      "content": "That does seem pretty lame for $800k speakers.  At least they could design there own drivers....dissapointing to hear 😒",
+                      "timestamp": "2026-08-02T15:36:55+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p19rcuw",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "p19udmr",
+                          "author": "reddit_user_ddfcd52e2311",
+                          "author_karma": 0,
+                          "content": "People defend them and say “yeah but they do their own tweaks to them”. Ok but they’re probably 90 plus percent similar. World class drivers don’t get me wrong, just can’t imagine the up charge ",
+                          "timestamp": "2026-08-02T15:48:59+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "p19rs0x",
+                          "depth": 4,
+                          "replies": [
+                            {
+                              "comment_id": "p19ujas",
+                              "author": "reddit_user_8e91d765c97a",
+                              "author_karma": 0,
+                              "content": "That's exactly what i'm thinking",
+                              "timestamp": "2026-08-02T15:49:42+00:00",
+                              "likes": 1,
+                              "dislikes": 0,
+                              "parent_comment_id": "p19udmr",
+                              "depth": 5,
+                              "replies": []
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "comment_id": "p1alggg",
+                      "author": "reddit_user_715621a4040a",
+                      "author_karma": 0,
+                      "content": "Ellipticor drivers have elliptical dust caps or an elliptical dome. ",
+                      "timestamp": "2026-08-02T17:51:02+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p19rcuw",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "post_id": "real_run014_post03_seed073",
+      "post_slot": 3,
+      "seed_index": 73,
+      "source_raw_post_id": "1vceoi7",
+      "source_product_dir": "HeadphoneAdvice",
+      "source_file": "https://www.reddit.com/r/HeadphoneAdvice/comments/1vceoi7/which_are_good_replacement_pads_for_the_hd560s/",
+      "post_type": "Headphones - Open Back",
+      "title": "Which are good replacement pads for the HD560s?",
+      "author": "reddit_user_d43b8c7b6255",
+      "author_karma": 0,
+      "content": "Which are good replacement pads for the HD560s?\n\nGreetings!\n\n  \nI've been trying to find posts on this before, so I'm writing this in hopes of getting a response about this. \n\nI've been using my HD560s for around 3 years, and the pads have started peeling off... I wanted to buy stock pads from Sennheiser themselves, but after going to both Europe and US websites for replacement parts, I realized none of them ship the replacement parts to my country (Mexico), and Mexico's website doesn't have the pads.  \nSo my question is, does anybody know any good pad brands that are close in sound/look to 560s stock pads? I tried checking for the Pads on Dekoni and they seem to only have Leather ones. (it makes me worry on the pads changing the sound...)\n\nThe closest I've seen look like the stock ones are the GEEKRIA comfort ones, but some reviews say they don't fit?\n\n I would love to see if anybody has recommendations!\n\nThanks in advance for seeing this post; have a nice day! :3",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p10p6sd",
+          "author": "reddit_user_56c0bcf5fd80",
+          "author_karma": 0,
+          "content": "Thanks for your [submission](https://www.reddit.com/r/HeadphoneAdvice/comments/1vceoi7/which_are_good_replacement_pads_for_the_hd560s/) to r/HeadphoneAdvice. If someone helps answer your question, please reward them by including the phrase `!thanks` in your comment. \n\nThis will add +1 Ω to that users flair. This subreddit is powered entirely by volunteers and a little recognition goes a long way. Good luck on your search for headphones!\n\n\n*I am a bot, and this action was performed automatically. Please [contact the moderators of this subreddit](/message/compose/?to=/r/HeadphoneAdvice) if you have any questions or concerns.*",
+          "timestamp": "2026-08-01T05:39:37+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p115djy",
+          "author": "reddit_user_987982fb60a2",
+          "author_karma": 0,
+          "content": "I'd stick with velour pads if you want to keep the stock sound. Leather pads tend to change the tuning. OEM is ideal, but velour is probably your best alternative.",
+          "timestamp": "2026-08-01T07:50:46+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p11chvi",
+          "author": "reddit_user_dea32b52d336",
+          "author_karma": 0,
+          "content": "You could use myus.com to ship from USA to Mexico ",
+          "timestamp": "2026-08-01T08:51:49+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p11dx65",
+          "author": "reddit_user_1c409ab706a9",
+          "author_karma": 0,
+          "content": "Soulwit cool gel pads are my favourite. Comfortable and look great. \n\nThey do alter the sound signature and open up the upper mids which helps remove the HD veil to my ears any way. ",
+          "timestamp": "2026-08-01T09:04:06+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run014_post04_seed074",
+      "post_slot": 4,
+      "seed_index": 74,
+      "source_raw_post_id": "1vcfok9",
+      "source_product_dir": "HeadphoneAdvice",
+      "source_file": "https://www.reddit.com/r/HeadphoneAdvice/comments/1vcfok9/moondrop_space_travel_2_vs_realme_buds_t500_pro/",
+      "post_type": "Headphones - IEM/Earbud",
+      "title": "Moondrop Space Travel 2 vs realme Buds T500 Pro at around 35 USD, which would you pick? (Open to alternatives)",
+      "author": "reddit_user_d43b8c7b6255",
+      "author_karma": 0,
+      "content": "Moondrop Space Travel 2 vs realme Buds T500 Pro at around 35 USD, which would you pick? (Open to alternatives)\n\nHey everyone,\n\nA bit of context: I already own wired IEMs (my best and favorite pair is the CrinEar Daybreak) and I'm happy with them, but I want a cheap daily-driver TWS pair for when wired isn't practical.\n\nI've narrowed it down to two and I'm torn. The Moondrop Space Travel 2 I'm leaning toward for sound, since Moondrop's tuning tends to be more audiophile-friendly and the app's DSP/PEQ plus the solid default tuning are a big plus. The realme Buds T500 Pro I'm leaning toward for overall UX, since the build quality, ANC, and connectivity/multipoint feel more mature.\n\nConstraints: budget is around 35 USD, I'm in Mexico so availability and pricing matter (happy to share local listings if useful, I can also order in AliExpress but I'd rather use Amazon or Mercado Libre), and I'll mainly use them for music, workouts, road trips and casual gaming, nothing competitive. :P\n\nMy questions: between these two, which gives the best overall experience for my use case? And at this budget, is there something better I'm missing?\n\nThanks in advance! :)",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p10w2r9",
+          "author": "reddit_user_56c0bcf5fd80",
+          "author_karma": 0,
+          "content": "Thanks for your [submission](https://www.reddit.com/r/HeadphoneAdvice/comments/1vcfok9/moondrop_space_travel_2_vs_realme_buds_t500_pro/) to r/HeadphoneAdvice. If someone helps answer your question, please reward them by including the phrase `!thanks` in your comment. \n\nThis will add +1 Ω to that users flair. This subreddit is powered entirely by volunteers and a little recognition goes a long way. Good luck on your search for headphones!\n\n\n*I am a bot, and this action was performed automatically. Please [contact the moderators of this subreddit](/message/compose/?to=/r/HeadphoneAdvice) if you have any questions or concerns.*",
+          "timestamp": "2026-08-01T06:33:51+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p111y6h",
+          "author": "reddit_user_46b44153e2e3",
+          "author_karma": 0,
+          "content": "Sound quality wise the Space Travel have no competition until you spend 10x what they cost.",
+          "timestamp": "2026-08-01T07:21:48+00:00",
+          "likes": 0,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p17pas5",
+          "author": "reddit_user_15f70c6b880a",
+          "author_karma": 0,
+          "content": "i'd personally just go  for the buds t500 and use wavelet eq ",
+          "timestamp": "2026-08-02T07:23:37+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    }
+  ]
+}

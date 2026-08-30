@@ -1,0 +1,598 @@
+{
+  "meta": {
+    "product_category": "cellphone",
+    "baseline": "real_reddit_reference",
+    "run_id": "run_012_sampled_reddit"
+  },
+  "posts": [
+    {
+      "post_id": "real_run012_post00_seed060",
+      "post_slot": 0,
+      "seed_index": 60,
+      "source_raw_post_id": "1vcyspw",
+      "source_product_dir": "GooglePixel",
+      "source_file": "https://www.reddit.com/r/GooglePixel/comments/1vcyspw/pixel_10_network_issues/",
+      "post_type": "reddit_post",
+      "title": "Pixel 10 Network Issues??",
+      "author": "reddit_user_0fe413d0e398",
+      "author_karma": 0,
+      "content": "Pixel 10 Network Issues??\n\nHi, I encountered a very strange issue today with the Pixel 10 today. I was traveling and as usual I was using my data pack on my pixel 10 and all of a sudden even with a complete 5G network availability - I was not able to connect to the internet. Restarted the device 3 times, switched to airplane mode, reset network settings and even with all those things - no luck. \n\nAnd, the 4th time I tried restarting and there - it started working. \n\nComing from Pixel 7 pro, I knew the issue was there on the Pixel 7 series. But my research on Pixel 10 (based on tech videos, reviews and blogs) told me that there were no such issues that should exist in the pixel 10. \n\nI am a bit confused and surprised - anyone else with similar issues on the Pixel 10?",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p1515x1",
+          "author": "reddit_user_adaebff644a4",
+          "author_karma": 0,
+          "content": "Me who's planning to upgrade to 10 and reading this 🫪",
+          "timestamp": "2026-08-01T21:11:34+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p15gb76",
+              "author": "reddit_user_49af414d1327",
+              "author_karma": 0,
+              "content": "May be it's just my device. ",
+              "timestamp": "2026-08-01T22:32:03+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1515x1",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p15vvlc",
+          "author": "reddit_user_eb27101d324d",
+          "author_karma": 0,
+          "content": "Up until the Pixel 10, Google uses a Samsung modem, which sucks compared to Qualcomm found in all other flagship devices. If you want a great cell network you need to use a Snapdragon CPU which comes with a Qualcomm modem. Google used to use these up until they switched to a Tensor/Samsung CPU and modem starting in the Pixel 6. The Pixel 11 is going to use a new MediaTek modem, and I've never even hard of them making a modem, so I guess time will tell how the Pixel 11 is network wise.",
+          "timestamp": "2026-08-01T23:59:42+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p17yyva",
+          "author": "reddit_user_1979264a47b6",
+          "author_karma": 0,
+          "content": "I've had similar on my Pixel 10, starting about 24 hours ago.\n\nI get connectivity issues in certain apps, but things work fine in others. Happened on 5g, but now also on home WiFi. ",
+          "timestamp": "2026-08-02T08:44:40+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run012_post01_seed061",
+      "post_slot": 1,
+      "seed_index": 61,
+      "source_raw_post_id": "1vcyvv0",
+      "source_product_dir": "iphone",
+      "source_file": "https://www.reddit.com/r/iphone/comments/1vcyvv0/ist_das_normal/",
+      "post_type": "Support",
+      "title": "Ist das normal?",
+      "author": "reddit_user_0fe413d0e398",
+      "author_karma": 0,
+      "content": "Ist das normal?\n\nSo i bought a new iphone today and i noticed that when i search up p.ex battery or brightniss it wont appear it Shows there wo no result found is this normal? I bought it in the apple store btw so it cant be a fake",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p16byca",
+          "author": "reddit_user_39432da059a9",
+          "author_karma": 0,
+          "content": "No, that’s not supposed to happen.   However, there is a bug where searching does not work properly but I don’t know how to fix that. \n\nAlso, searching depends upon a search index having been properly created, and indexing can take anywhere from hours to days depending upon how many photos, messages, emails, etc. you have.   This indexing happens whenever you get a new iPhone or sometimes when you upgrade iOS.  If you try searching while the index is being created, you will get no results.  (The upcoming iOS 27 finally tells you if indexing is occurring.)",
+          "timestamp": "2026-08-02T01:34:44+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run012_post02_seed062",
+      "post_slot": 2,
+      "seed_index": 62,
+      "source_raw_post_id": "1vcywkn",
+      "source_product_dir": "iphone",
+      "source_file": "https://www.reddit.com/r/iphone/comments/1vcywkn/best_screen_covers/",
+      "post_type": "Discussion",
+      "title": "Best screen covers?",
+      "author": "reddit_user_0fe413d0e398",
+      "author_karma": 0,
+      "content": "Best screen covers?\n\nI’ll admit I’m buying the cheapest screen cover possible on Amazon, but the reason is I never drop my phone. Despite not dropping my phone, when I pull my phone out of my pocket sometimes the screen cover is cracked. Is there any specific screen you would recommend that might be tougher than what I’m getting?",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p152cie",
+          "author": "reddit_user_498e79b3b98d",
+          "author_karma": 0,
+          "content": "The spigen ones you can get on amazon are fantastic, used them for ages and had no issues ",
+          "timestamp": "2026-08-01T21:17:37+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1594i4",
+              "author": "reddit_user_f60c41f1a810",
+              "author_karma": 0,
+              "content": "Sounds like Spigen is my best choice based off all these responses, thank you! I tried using the search beforehand but wasn’t getting a clear answer. The answer seems pretty clear now on what to go with! ",
+              "timestamp": "2026-08-01T21:52:59+00:00",
+              "likes": 2,
+              "dislikes": 0,
+              "parent_comment_id": "p152cie",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p1697mn",
+              "author": "reddit_user_d619d41f9a04",
+              "author_karma": 0,
+              "content": "I use the ones from FloLab. \n\nThe clarity is noticeably better than anything from the cheaper brands. \n\nI had the Spigen ones and found that their coatings wear off fast and things didn’t look as crisp.",
+              "timestamp": "2026-08-02T01:18:12+00:00",
+              "likes": 2,
+              "dislikes": 0,
+              "parent_comment_id": "p152cie",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p18ck3a",
+              "author": "reddit_user_187ebb740a9c",
+              "author_karma": 0,
+              "content": "Spigen and ESR are my goto options for under 20€",
+              "timestamp": "2026-08-02T10:40:22+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p152cie",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p153hct",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-01T21:23:26+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p153hf5",
+              "author": "reddit_user_65884126434e",
+              "author_karma": 0,
+              "content": "Your comment has been removed because your message contained an Amazon link. Amazon links are removed to reduce advertising spam. Please submit your updated message in a new comment. Your account is still active and in good standing. Please check your notifications for more information!\n\n*I am a bot, and this action was performed automatically. Please [contact the moderators of this subreddit](/message/compose/?to=/r/iphone) if you have any questions or concerns.*",
+              "timestamp": "2026-08-01T21:23:26+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p153hct",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1549x1",
+          "author": "reddit_user_95dc42333e21",
+          "author_karma": 0,
+          "content": "Highly reccomend the MAYtobe screen protectors.\n\nThey feel smooth, don't crack, nor do they show fingerprints that easily.",
+          "timestamp": "2026-08-01T21:27:32+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p155cpc",
+          "author": "reddit_user_cc74c93a4355",
+          "author_karma": 0,
+          "content": "Spigen are my favorite ",
+          "timestamp": "2026-08-01T21:33:11+00:00",
+          "likes": 4,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p15778d",
+          "author": "reddit_user_ba4dd17f4216",
+          "author_karma": 0,
+          "content": "Spigen",
+          "timestamp": "2026-08-01T21:42:49+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p15bqgm",
+          "author": "reddit_user_f12cf23c7bff",
+          "author_karma": 0,
+          "content": "Spigen EZFit - I never use anything else. I've tried numerous (mainly ESR, Jtech etc) but none match Spigen's quality",
+          "timestamp": "2026-08-01T22:07:00+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p187r7y",
+              "author": "reddit_user_40602f62192c",
+              "author_karma": 0,
+              "content": "Had mine since September 2023 on my 15 pro max. It is in pretty much perfect condition, can just about see a light scratch in the right light with the screen turned off but otherwise it is like new. ",
+              "timestamp": "2026-08-02T10:00:40+00:00",
+              "likes": 2,
+              "dislikes": 0,
+              "parent_comment_id": "p15bqgm",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p15nxg9",
+          "author": "reddit_user_f688345dfcf1",
+          "author_karma": 0,
+          "content": "i get zagg! the uv protection one",
+          "timestamp": "2026-08-01T23:14:23+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p15uakh",
+          "author": "reddit_user_f15232073930",
+          "author_karma": 0,
+          "content": "The jimmy john axe guy!",
+          "timestamp": "2026-08-01T23:50:28+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p15w0tt",
+          "author": "reddit_user_f9fcb8734cc1",
+          "author_karma": 0,
+          "content": "Just got the ESR armorlite after watching some YouTube reviews, would definitely recommend as apparently it’s the best for glare reduction",
+          "timestamp": "2026-08-02T00:00:32+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p15xj81",
+          "author": "reddit_user_2c0e40b876cc",
+          "author_karma": 0,
+          "content": "Zagg, guaranteed and even just bad scratches. Mine fell on concrete aggregate \\[concrete with roundish rocks imbedded and protruding ",
+          "timestamp": "2026-08-02T00:09:20+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p16067a",
+          "author": "reddit_user_a7bfa77e5528",
+          "author_karma": 0,
+          "content": "We use JETech from Amazon for all our phones and iPads. ",
+          "timestamp": "2026-08-02T00:24:39+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p164mae",
+          "author": "reddit_user_16e48b5c2c2b",
+          "author_karma": 0,
+          "content": "Soiegn",
+          "timestamp": "2026-08-02T00:50:56+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p16cmej",
+          "author": "reddit_user_13a4c009beeb",
+          "author_karma": 0,
+          "content": "I just use JTECH cheapies. They work. They're only meant to be there to break instead of your screen when you drop it. I don't invest too much in them.",
+          "timestamp": "2026-08-02T01:38:45+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p16xtg4",
+              "author": "reddit_user_dfb8860e0f6e",
+              "author_karma": 0,
+              "content": "I recently got a Jtech matte screen protector from Amazon and am very pleased with it. It prevents glare — great for the outdoors. It was easy to put on, and best of all, the price was right. ",
+              "timestamp": "2026-08-02T03:54:31+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p16cmej",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p16k48r",
+          "author": "reddit_user_92efe8eff03c",
+          "author_karma": 0,
+          "content": "AmFilm are great. I’ve used them for years. I used to use Spigen but had a bad experience and switched. I love the AmFilm ones. ",
+          "timestamp": "2026-08-02T02:24:55+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p16onvf",
+              "author": "reddit_user_e8e36ff46d79",
+              "author_karma": 0,
+              "content": "AmFilm is great. I am noticing though that the one I have on my phone currently is making it so that there’s like a green/magenta color at the top and I think that’s just the screen protector clashing with the built in screen protector part of my case so I might change it to an ESR and see if that makes any difference otherwise I like amFilm a lot. ",
+              "timestamp": "2026-08-02T02:53:35+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p16k48r",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p16o973",
+          "author": "reddit_user_e8e36ff46d79",
+          "author_karma": 0,
+          "content": "I get ESR or amFilm",
+          "timestamp": "2026-08-02T02:50:59+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p16s3qn",
+          "author": "reddit_user_56da9cadbe0a",
+          "author_karma": 0,
+          "content": "i’ve been using Flolab for a couple of years now. they’re the best in terms of clarity and no fingerprints ",
+          "timestamp": "2026-08-02T03:16:16+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p17uwsq",
+          "author": "reddit_user_e76bdb07fede",
+          "author_karma": 0,
+          "content": "I’ve just always used JETech screen protectors. Not too long ago I replaced my old one after it developed a small crack and it had lasted nearly two years",
+          "timestamp": "2026-08-02T08:10:08+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p189edp",
+          "author": "reddit_user_442a5a1fc061",
+          "author_karma": 0,
+          "content": "i’m using a generic one off Shopee, it was $10 for a 3 pack, still on the first one. it’s pretty scratched up but no cracks yet. paired it with an ESR case. ",
+          "timestamp": "2026-08-02T10:14:25+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1cgvqe",
+          "author": "reddit_user_f0179a76f097",
+          "author_karma": 0,
+          "content": "You should try a matte screen protector. I love them once I started using them. Mothca and Ambison are popular brands on Amazon. ",
+          "timestamp": "2026-08-02T23:14:30+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1cqohg",
+          "author": "reddit_user_99de543e2b48",
+          "author_karma": 0,
+          "content": "The screen protector isn't going to help you much against a drop - its primary function is to protect against scratches.  That's why it's worthwhile to get a decent one.\n\nIn light of that, if you get one and install it poorly (with air bubbles), you will be disappointed with it from day 1.  That's why I always buy what they're selling at the Apple store, and let them do the install for you.  If they fuck it up, they get to re-do it at their own expense.",
+          "timestamp": "2026-08-03T00:08:24+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run012_post03_seed063",
+      "post_slot": 3,
+      "seed_index": 63,
+      "source_raw_post_id": "1vcz237",
+      "source_product_dir": "iphone",
+      "source_file": "https://www.reddit.com/r/iphone/comments/1vcz237/am_i_blocked/",
+      "post_type": "Discussion",
+      "title": "Am I blocked?",
+      "author": "reddit_user_0fe413d0e398",
+      "author_karma": 0,
+      "content": "Am I blocked?\n\nThey are from Canada and I’m fro USA does it make a difference?",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p152r9a",
+          "author": "reddit_user_0d8a3e33fcc0",
+          "author_karma": 0,
+          "content": "Yes",
+          "timestamp": "2026-08-01T21:19:43+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1530sr",
+              "author": "reddit_user_3f7e2872132f",
+              "author_karma": 0,
+              "content": "Someone says no and you said yes pls bro",
+              "timestamp": "2026-08-01T21:21:04+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p152r9a",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p152sjg",
+          "author": "reddit_user_e23314926d79",
+          "author_karma": 0,
+          "content": "It says delivered and read you’re not",
+          "timestamp": "2026-08-01T21:19:54+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1533qb",
+          "author": "reddit_user_6fe39f0601b1",
+          "author_karma": 0,
+          "content": "No, they just havent read it.",
+          "timestamp": "2026-08-01T21:21:29+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1536id",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[deleted]",
+          "timestamp": "2026-08-01T21:21:52+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p16s6q6",
+          "author": "reddit_user_a5a30234c8f8",
+          "author_karma": 0,
+          "content": "Your post has been removed as it breaks one of the following Support rules:\n\n- Posts regarding support issues that can be answered by the [iPhone Support FAQ page](https://www.reddit.com/r/iphone/wiki/support-faq), or by searching Reddit/Google/[Apple Support Community](https://discussions.apple.com/welcome), are not allowed.\n\n- Posts must directly relate to iPhone; we do not provide support for services such as iCloud, other Apple devices, accessories, or third-party apps.\n\n- Issues that can only be resolved by Apple, such as hardware faults, iCloud access or Activation lock, should be sent to [Apple Support](https://support.apple.com/).\n\n- We do not provide support for battery, storage, or overheating issues. See the [iPhone Support FAQ](https://www.reddit.com/r/iphone/wiki/support-faq).\n\nRemoved posts should be directed to /r/iOS, /r/AppleHelp, or [Apple Support[(https://support.apple.com/).",
+          "timestamp": "2026-08-02T03:16:49+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run012_post04_seed064",
+      "post_slot": 4,
+      "seed_index": 64,
+      "source_raw_post_id": "1vcz312",
+      "source_product_dir": "iphone",
+      "source_file": "https://www.reddit.com/r/iphone/comments/1vcz312/iphone_16_in_pool/",
+      "post_type": "Support",
+      "title": "iPhone 16 in pool",
+      "author": "reddit_user_0fe413d0e398",
+      "author_karma": 0,
+      "content": "iPhone 16 in pool\n\nI accidentally left my iPhone 16 in my pocket and got into a choline pool, I had it in there for about 7 minutes and it never went deeper than maybe 2 feet I turned it off and set it out to dry by a fan and angled down to let the water out and tapped it against my hand lightly, it’s been about 6 hours and seems to be working fine but I am now seeing after googling it I should have rinse it off because of the chlorine before it dried, it’s obviously very dry now how big of a deal is it that I didn’t rinse it under the sink?",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p1544ij",
+          "author": "reddit_user_35f69ca872e2",
+          "author_karma": 0,
+          "content": "Apple has considered this and you should be fine. Rinse with fresh water and let it air dry in front of a fan in an open space for a few hours. \n\nYou’ll be good to go ",
+          "timestamp": "2026-08-01T21:26:46+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p157fif",
+          "author": "reddit_user_2d30c50a647f",
+          "author_karma": 0,
+          "content": "Your phone is water resistant. It’s not necessarily resistant to chemicals such as chlorine drying and remaining on those seals long term. Fill your sink with a few inches deep of clean water, give it a gentle dunk for a few seconds and dry it off again. ",
+          "timestamp": "2026-08-01T21:44:02+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p16rync",
+          "author": "reddit_user_b161db24a696",
+          "author_karma": 0,
+          "content": "Don’t use tapwater! Buy yourself some distilled water. ",
+          "timestamp": "2026-08-02T03:15:20+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    }
+  ]
+}

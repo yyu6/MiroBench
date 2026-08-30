@@ -1,0 +1,284 @@
+{
+  "meta": {
+    "product_category": "health_issue",
+    "baseline": "real_reddit_reference",
+    "run_id": "run_004_sampled_reddit"
+  },
+  "posts": [
+    {
+      "post_id": "real_run004_post00_seed020",
+      "post_slot": 0,
+      "seed_index": 20,
+      "source_raw_post_id": "1v8w2n1",
+      "source_product_dir": "medical",
+      "source_file": "https://www.reddit.com/r/medical/comments/1v8w2n1/if_iv_access_is_very_difficult_for_some_reason/",
+      "post_type": "General Question/Discussion",
+      "title": "If IV access is very difficult for some reason, why not just do an IO?",
+      "author": "reddit_user_7b7b220cf34f",
+      "author_karma": 0,
+      "content": "If IV access is very difficult for some reason, why not just do an IO?\n\nI used to know someone who was in the hospital and IV access was getting very difficult due to him having so many IVs for weeks. The hospital staff were putting IVs into increasingly uncomfortable places like the armpits. Looking back on this, why didn't they just do an IO in that situation?",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p08wtpg",
+          "author": "reddit_user_37a6c9118b3d",
+          "author_karma": 0,
+          "content": "You're actively destroying the trebeculae structure of the bone when youre doing an IO. They are also extremely painful initially. Also flow rates can vary with IO compared to IV. The needle can bend extremely easy with an IO if placed in the humeral head and they move their arm. Its just not really well suited for long term. If they continue to get a ton of IVs, then maybe it is time for them to talk about a PICC line placement depending on their situation. ",
+          "timestamp": "2026-07-28T11:55:46+00:00",
+          "likes": 20,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p08zbk9",
+              "author": "reddit_user_693f1ab419eb",
+              "author_karma": 0,
+              "content": "Thank you for the explanation. ",
+              "timestamp": "2026-07-28T12:09:49+00:00",
+              "likes": 4,
+              "dislikes": 0,
+              "parent_comment_id": "p08wtpg",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p08xnyl",
+          "author": "reddit_user_806d64ee7219",
+          "author_karma": 0,
+          "content": "Hurts a lot. ",
+          "timestamp": "2026-07-28T12:00:33+00:00",
+          "likes": 23,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0asrkb",
+              "author": "reddit_user_6b2ead398697",
+              "author_karma": 0,
+              "content": "Why say many words when few words do trick <3",
+              "timestamp": "2026-07-28T17:03:57+00:00",
+              "likes": 10,
+              "dislikes": 0,
+              "parent_comment_id": "p08xnyl",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p0thrko",
+                  "author": "reddit_user_e2ee8ed30067",
+                  "author_karma": 0,
+                  "content": "Kevin? Are you okay buddy?",
+                  "timestamp": "2026-07-31T05:37:26+00:00",
+                  "likes": 2,
+                  "dislikes": 0,
+                  "parent_comment_id": "p0asrkb",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p08zrbc",
+          "author": "reddit_user_c08a6494f60d",
+          "author_karma": 0,
+          "content": "Higher complication rate, eg bone infection, risk of breaking bone, etc\n\nAlso lab results aren't all that useful from marrow sample. \n\nVein is fine. Use an ultrasound.\n\nYou use IO when access is time critical and the benefits outweigh the risks, as listed above. \n\nEmerg Doc.",
+          "timestamp": "2026-07-28T12:12:13+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0902dp",
+              "author": "reddit_user_c08a6494f60d",
+              "author_karma": 0,
+              "content": "Also, as drewdrewmd said, injecting into marrow hurts a lot. ",
+              "timestamp": "2026-07-28T12:13:54+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p08zrbc",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p098hdq",
+              "author": "reddit_user_4ad593ef1323",
+              "author_karma": 0,
+              "content": "Unflaired users **may not** claim or imply medical expertise.\n\nIf you are a medical professional (including retired) or student and would like to contribute in that capacity, you’re welcome to get verified and receive a user flair.\n\n***How To Get Verified***\n\n> Please message the r/Medical team via [ModMail](https://new.reddit.com/message/compose?to=%2Fr%2Fmedical) with an image link to a valid medical ID, diploma, or credential.  Imgbb.com is convenient, but you may host anywhere. *Please censor personal information such as name and picture. Your handwritten Reddit username must also be visible in the image.*\n\n> We do not accept digital forms of identification.\n\nHere is what a flair might look like: **[Physician Flair](https://ibb.co/NjV1JdD)**\n\n**Verified users are held to a higher standard. Any misuse of credentials, harassment, or spread of misinformation will result in flair removal and a ban.**",
+              "timestamp": "2026-07-28T12:57:43+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p08zrbc",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p0avr53",
+          "author": "reddit_user_dd75c5758951",
+          "author_karma": 0,
+          "content": "IOs are reserved for when you need big access, and you need it *right freaking now*\n\nIn all other cases, there is time to A) dig for a suitable PIV or b) talk about a central line",
+          "timestamp": "2026-07-28T17:16:15+00:00",
+          "likes": 8,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0cul2j",
+          "author": "reddit_user_4ae4700f5c72",
+          "author_karma": 0,
+          "content": "I had an io while unconscious..... it woke me up but I was still disoriented ",
+          "timestamp": "2026-07-28T22:29:58+00:00",
+          "likes": 3,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run004_post01_seed021",
+      "post_slot": 1,
+      "seed_index": 21,
+      "source_raw_post_id": "1v9enw2",
+      "source_product_dir": "medical",
+      "source_file": "https://www.reddit.com/r/medical/comments/1v9enw2/how_bad_is_my_body_dysmorphia_i_need_a_genuine/",
+      "post_type": "TW [Trigger Warning]",
+      "title": "How bad is my body dysmorphia I need a genuine medical opinion because I change my mind every other day on whether I look emaciated or normal (see the full picture) and need someone to be straightforward",
+      "author": "reddit_user_7b7b220cf34f",
+      "author_karma": 0,
+      "content": "How bad is my body dysmorphia I need a genuine medical opinion because I change my mind every other day on whether I look emaciated or normal (see the full picture) and need someone to be straightforward\n\n[removed]",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p0d4b84",
+          "author": "reddit_user_e6719f73a9e4",
+          "author_karma": 0,
+          "content": "Hi karenthecoo, thank you for posting to r/medical!\n\n  **Please review our [Rules](https://www.reddit.com/r/medical/wiki/rules); [Code of Conduct](https://www.reddit.com/r/medical/wiki/code_of_conduct/); and [WIKI](https://www.reddit.com/r/medical/wiki/index)** for comprehensive information.\n  \n  - OP, **When a user answers your post, please reply in the comments !answered** which will automatically adjust the post flair and mark it as answered.\n\n  - The Moderators and Community Managers of r/medical reserve the right to take any action that is in the best interests of the subreddit or its community.\n\n  - **Remember, Reddit isn't a substitute for professional medical care. Contact your primary care provider for health issues.**\n\n  - **If it's a medical emergency, call Emergency Medical Services or go to your local hospital.**\n\n  - The r/Medical Moderation Team\n\n*I am a bot, and this action was performed automatically. Please [contact the moderators of this subreddit](/message/compose/?to=/r/medical) if you have any questions or concerns.*",
+          "timestamp": "2026-07-28T23:19:11+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run004_post02_seed022",
+      "post_slot": 2,
+      "seed_index": 22,
+      "source_raw_post_id": "1v9gsrz",
+      "source_product_dir": "HealthAnxiety",
+      "source_file": "https://www.reddit.com/r/HealthAnxiety/comments/1v9gsrz/going_out_tomorrow_need_some_advice_or_support/",
+      "post_type": "Discussion (tw <EDIT THIS> )",
+      "title": "Going out tomorrow, need some advice or support.",
+      "author": "reddit_user_7b7b220cf34f",
+      "author_karma": 0,
+      "content": "Going out tomorrow, need some advice or support.\n\nI haven't posted here in a while but since being on 20mg prozac for a month my health anxiety has returned with a vengeance. I thought I'd beaten it back in 2022 but really I had just conquered my agoraphobia, which still flares from time to time. I have OCD which I am again in therapy for and General Anxiety mostly about poisons, accidentally swallowing objects and my health. \n\nI'm UK based and I want to go to a lunch tomorrow and get back out in general. I've done a few walks and been outside myself since but had to beat back the anxiety and intrusive thoughts. But when I do decide to go somewhere on my own but the worst symptoms appear convincing me I'm either going to die on the spot or at least be very sick. I have a fear of a sudden medical episode that means I'll have to wait for an ambulance and they might not get to me in time. This has never happened before but every time I have left the house myself for 2 years now it has at some point in the day crossed my mind. I have no history of severe physical illness or inherited ones. Although it's been 4 years since I got bloodwork the results came up clear or satisfactory every time. \n\nThe first week on prozac was the worst and while most of the side effects have subsided a lot of the anxiety has not, but I know if I raise the dose now the side effects will start again and I really want to feel good for going back to work which I've been off from since April. I have \"safety people\" when I go places and my anxiety is flaring, like my parents. When I am alone or with someone that isn't them and I'm going through an anxious period I struggle to divert away from the fear I will have a sudden anxiety attack or medical episode with no one to calm me down and I don't want to put my friends in an awkward position even though I know they'd be supportive. \n\nSo far I've continued to take my prozac, battled the feelings, sensations or thoughts and taken Gaviscon anti nausea tablets after eating. But every time I leave the house the intrusive thoughts start that I either poisoned myself or am really ill with an underlying medical condition and today's the day it's going to kill me. What I'm most afraid of is the idea that I could tear my throat, lose breath or have my insides start burning. I still feel like nothing works and I think about what's happening in my body at least 5 times a day.",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p0dsl9r",
+          "author": "reddit_user_4e89cab986a1",
+          "author_karma": 0,
+          "content": "To be fair. Suddenly dying is a terrifying concept. I think even people that are comfortable with death would agree that it’s scary. Unfortunately the anxiety part spins us up and makes it feel like it’ll for sure happen. Something that helped me get back out was to think about how uncommon it is for someone to randomly collapse.  I’ve never seen it happen in person. Even when I was at a concert with 60k other people I didn’t see any health emergencies. So if it is that uncommon, why should I be so lucky as to suffer that unfortunate fate?  Could it happen? Sure! Should it stop you from going out and enjoying a nice meal? No! Chose something nice and low key. Even if you have a panic attack and need to literally crawl home. At least you went out and tried",
+          "timestamp": "2026-07-29T01:28:17+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0e83ch",
+              "author": "reddit_user_587a2f0bbbb2",
+              "author_karma": 0,
+              "content": "This is an interesting perspective and I appreciate it. You’re right- I’ve never seen anyone just collapse from a medical emergency and I’ve worked with the public my whole life. I’ve never even met anyone who has had a heart attack (my biggest fear). I know it happens, but truly, how commonplace is it? Thank you for this!",
+              "timestamp": "2026-07-29T02:56:42+00:00",
+              "likes": 2,
+              "dislikes": 0,
+              "parent_comment_id": "p0dsl9r",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "post_id": "real_run004_post03_seed023",
+      "post_slot": 3,
+      "seed_index": 23,
+      "source_raw_post_id": "1v9j03a",
+      "source_product_dir": "HealthAnxiety",
+      "source_file": "https://www.reddit.com/r/HealthAnxiety/comments/1v9j03a/starting_lexapro_need_some_encouragement/",
+      "post_type": "[Need support/advice] ➡️ Rule2: Use Megathread. Thank you!",
+      "title": "starting lexapro (need some encouragement?)",
+      "author": "reddit_user_7b7b220cf34f",
+      "author_karma": 0,
+      "content": "starting lexapro (need some encouragement?)\n\n[removed]",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p0e2qoc",
+          "author": "reddit_user_e6719f73a9e4",
+          "author_karma": 0,
+          "content": "Hello [REDDIT_USER],\n\nThank you for your submission. It has been automatically removed because the flair you selected indicates that the content is best suited for one of our dedicated megathreads.\n\nWe use megathreads to create a focused and safe space for content that can be triggering or is highly repetitive, making sure that those who wish to engage with it can do so on their own terms.\n\nBased on the flair you chose, please post your content in the appropriate thread:\n\n* **For Vents, Worries, Fixations, Reassurance, or Symptom-focused posts:** Please use the **Daily Support & Fixation Megathread**.\n* **For Progress Stories:** Please share your success in the **Positivity Megathread**\n\nWe also have an active and supportive discord that you can join here: https://discord.com/invite/QXRru4SF9y.\n\n\n*I am a bot, and this action was performed automatically. Please [contact the moderators of this subreddit](/message/compose/?to=/r/HealthAnxiety) if you have any questions or concerns.*",
+          "timestamp": "2026-07-29T02:25:24+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run004_post04_seed024",
+      "post_slot": 4,
+      "seed_index": 24,
+      "source_raw_post_id": "1v9n0up",
+      "source_product_dir": "HealthAnxiety",
+      "source_file": "https://www.reddit.com/r/HealthAnxiety/comments/1v9n0up/the_worst_part_is_not_knowing/",
+      "post_type": "[Venting] ➡️ Rule2: Use Megathread. Thank you!",
+      "title": "The worst part is not knowing",
+      "author": "reddit_user_7b7b220cf34f",
+      "author_karma": 0,
+      "content": "The worst part is not knowing\n\n[removed]",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p0ew4rw",
+          "author": "reddit_user_e6719f73a9e4",
+          "author_karma": 0,
+          "content": "Hello [REDDIT_USER],\n\nThank you for your submission. It has been automatically removed because the flair you selected indicates that the content is best suited for one of our dedicated megathreads.\n\nWe use megathreads to create a focused and safe space for content that can be triggering or is highly repetitive, making sure that those who wish to engage with it can do so on their own terms.\n\nBased on the flair you chose, please post your content in the appropriate thread:\n\n* **For Vents, Worries, Fixations, Reassurance, or Symptom-focused posts:** Please use the **Daily Support & Fixation Megathread**.\n* **For Progress Stories:** Please share your success in the **Positivity Megathread**\n\nWe also have an active and supportive discord that you can join here: https://discord.com/invite/QXRru4SF9y.\n\n\n*I am a bot, and this action was performed automatically. Please [contact the moderators of this subreddit](/message/compose/?to=/r/HealthAnxiety) if you have any questions or concerns.*",
+          "timestamp": "2026-07-29T05:39:49+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    }
+  ]
+}

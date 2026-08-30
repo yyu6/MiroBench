@@ -1,0 +1,892 @@
+{
+  "meta": {
+    "product_category": "movies",
+    "baseline": "real_reddit_reference",
+    "run_id": "run_027_sampled_reddit"
+  },
+  "posts": [
+    {
+      "post_id": "real_run027_post00_seed135",
+      "post_slot": 0,
+      "seed_index": 135,
+      "source_raw_post_id": "1vetzu1",
+      "source_product_dir": "boxoffice",
+      "source_file": "https://www.reddit.com/r/boxoffice/comments/1vetzu1/474895195_worldwide_for_obsession/",
+      "post_type": ":worldwide: Worldwide",
+      "title": "$474,895,195 Worldwide for Obsession",
+      "author": "reddit_user_f403d059ef4c",
+      "author_karma": 0,
+      "content": "$474,895,195 Worldwide for Obsession",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p1juda2",
+          "author": "reddit_user_d50967cd9705",
+          "author_karma": 0,
+          "content": "honestly insane",
+          "timestamp": "2026-08-03T23:50:01+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1julic",
+          "author": "reddit_user_c09ed6b4a44c",
+          "author_karma": 0,
+          "content": "Best preforming original movie of the 2020s\n",
+          "timestamp": "2026-08-03T23:51:15+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1jutra",
+          "author": "reddit_user_025d1d3693c4",
+          "author_karma": 0,
+          "content": "![gif](giphy|o6CM1paFf4sEnoJVTP)",
+          "timestamp": "2026-08-03T23:52:30+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run027_post01_seed136",
+      "post_slot": 1,
+      "seed_index": 136,
+      "source_raw_post_id": "1veup2x",
+      "source_product_dir": "boxoffice",
+      "source_file": "https://www.reddit.com/r/boxoffice/comments/1veup2x/the_imax_spidermanodyssey_split_at_my_local/",
+      "post_type": ":domestic: Domestic",
+      "title": "The IMAX Spiderman/Odyssey split at my local theater on its first day...",
+      "author": "reddit_user_f403d059ef4c",
+      "author_karma": 0,
+      "content": "The IMAX Spiderman/Odyssey split at my local theater on its first day...",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p1jzrj8",
+          "author": "reddit_user_aab24d08588a",
+          "author_karma": 0,
+          "content": "That is not a split. ",
+          "timestamp": "2026-08-04T00:19:11+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1kczdn",
+              "author": "reddit_user_bc3a1e324fad",
+              "author_karma": 0,
+              "content": "Show one movie on the left half and the other on the right half, you cowards!",
+              "timestamp": "2026-08-04T01:31:31+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1jzrj8",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1khvrb",
+                  "author": "reddit_user_be28e234a54c",
+                  "author_karma": 0,
+                  "content": "Maybe one on top half & one on bottom",
+                  "timestamp": "2026-08-04T01:58:36+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1kczdn",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p1jzsc9",
+          "author": "reddit_user_025d1d3693c4",
+          "author_karma": 0,
+          "content": "![gif](giphy|BWD3CtcudWL28)",
+          "timestamp": "2026-08-04T00:19:18+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1k09fx",
+          "author": "reddit_user_3d424fd45e65",
+          "author_karma": 0,
+          "content": "It is what it is, Spider-Mania right now.",
+          "timestamp": "2026-08-04T00:21:52+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1k14vs",
+          "author": "reddit_user_67d1ea5be247",
+          "author_karma": 0,
+          "content": "Nolan not gonna like this lol ",
+          "timestamp": "2026-08-04T00:26:34+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1k2dx8",
+          "author": "reddit_user_6c29f04384a0",
+          "author_karma": 0,
+          "content": "# THERE IS NO OTHER GOD THAN SPIDER-MAN",
+          "timestamp": "2026-08-04T00:33:21+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1k42hu",
+          "author": "reddit_user_6a2fc31b584e",
+          "author_karma": 0,
+          "content": "Surprised its only 3 showings. You could easily do another. ",
+          "timestamp": "2026-08-04T00:42:33+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1k8ysz",
+          "author": "reddit_user_f2b61343d1ad",
+          "author_karma": 0,
+          "content": "I just checked and the AMC by me kept all IMAX slots for the Odyssey (TBF there are more Dolby and 3D slots for Spidey than the Odyssey has in total)",
+          "timestamp": "2026-08-04T01:09:19+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1kamck",
+          "author": "reddit_user_8ea1f403914f",
+          "author_karma": 0,
+          "content": "Only two shows and they’re not almost full yet? SMH what a flop!",
+          "timestamp": "2026-08-04T01:18:27+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1kbfm5",
+          "author": "reddit_user_674707a138ae",
+          "author_karma": 0,
+          "content": "Nolan is never going to work with Tom and Zendaya again lol",
+          "timestamp": "2026-08-04T01:22:55+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1khif0",
+          "author": "reddit_user_16ca6f918104",
+          "author_karma": 0,
+          "content": "lol and there was a post saying that the odyssey wasn’t losing any imax showings, they were just making new ones for spider-man",
+          "timestamp": "2026-08-04T01:56:33+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1kj9te",
+              "author": "reddit_user_e7992f236c13",
+              "author_karma": 0,
+              "content": "its only losing *some* the vast majority have odyssey allocated. dont take OP anecdote as generalisation. odyssey held up very well against bnd opening weekend which was the hardest part over",
+              "timestamp": "2026-08-04T02:06:23+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1khif0",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1ku893",
+                  "author": "reddit_user_bfc163b132a7",
+                  "author_karma": 0,
+                  "content": "I mean all the AMC IMAX around me are the same as well. One 1pm showing for Odyssey and the other two are for Spider Man. They’re not pulling Odyssey from IMAX in the theaters but the theaters are choosing to prioritize BND on a potential $100m second weekend so it makes sense I guess",
+                  "timestamp": "2026-08-04T03:09:35+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1kj9te",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            },
+            {
+              "comment_id": "p1ktu4v",
+              "author": "reddit_user_77546971074a",
+              "author_karma": 0,
+              "content": "What they didn't tell you was that other than the IMAX 70mm showtimes, none of the other IMAX were scheduled yet. So all the new showtimes were scheduled today (with some tomorrow). So they were correct. Odyssey didn't lose any showtimes, because they were never scheduled in the first place.",
+              "timestamp": "2026-08-04T03:07:10+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1khif0",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1khyp5",
+          "author": "reddit_user_be28e234a54c",
+          "author_karma": 0,
+          "content": "Nolan be like:-\n\nFriendship ended with Imax now Screen X is my new friend",
+          "timestamp": "2026-08-04T01:59:03+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1kjiyl",
+              "author": "reddit_user_d76f6baed72b",
+              "author_karma": 0,
+              "content": "And there is always Infinity Vision 😄",
+              "timestamp": "2026-08-04T02:07:49+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1khyp5",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1l2yzq",
+                  "author": "reddit_user_f81166d850fe",
+                  "author_karma": 0,
+                  "content": "In theory infinity vision would certify imax based on its criteria, except that imax won’t apply, right?",
+                  "timestamp": "2026-08-04T04:05:20+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1kjiyl",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p1kiizp",
+          "author": "reddit_user_d0f0a8506a23",
+          "author_karma": 0,
+          "content": "You on the North Shore, brother?",
+          "timestamp": "2026-08-04T02:02:11+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run027_post02_seed137",
+      "post_slot": 2,
+      "seed_index": 137,
+      "source_raw_post_id": "1veuvey",
+      "source_product_dir": "movies",
+      "source_file": "https://www.reddit.com/r/movies/comments/1veuvey/what_is_the_original_movie_which_inspired_the/",
+      "post_type": "Question",
+      "title": "What is the ORIGINAL MOVIE which inspired the Spanish Danish Cuckold Dark Comedy Torremolinos 73 (2003)",
+      "author": "reddit_user_f403d059ef4c",
+      "author_karma": 0,
+      "content": "What is the ORIGINAL MOVIE which inspired the Spanish Danish Cuckold Dark Comedy Torremolinos 73 (2003)\n\nMads Mikelsen talks about being a 14 year old teen when the so called original movie came out. Actress Candela Peña who played the Cuckold wife Carmen Garcia actually said in this interview she wanted to talk to the original Carmen but was not allowed to.\n\nQuestion what is the name of the Original flick described in the interview?\n\nWhere can I see it?\n\nhttps://youtu.be/0WPmtFZXYNY?is=-qf9tdXnH16rMefF\n\nTorremolinos 73 is a 2003 Spanish comedy film directed by Pablo Berger, set in 1973 Spain, about a struggling encyclopedia salesman, Alfredo, who starts making \"educational\" erotic films with his wife, Carmen, for a Scandinavian distributor to make ends meet. The film humorously follows their unexpected rise as an amateur director and a sex symbol, while exploring themes of love, ambition, and the changing times under Franco's regime, with a notable cameo by Mads Mikkelsen as Death. \n\nKey aspects\n\nPlot: \n\nAlfredo's boss offers him a deal to film \"scientific\" sex education movies for the Scandinavian market, which unexpectedly turns Carmen into a star and Alfredo into an aspiring filmmaker, much to Carmen's desire for a baby. \n\nGenre: \n\nA comedy that blends arthouse aesthetics with the low-budget sex comedy of the era, often compared to Boogie Nights. \n\nDirector: \n\nPablo Berger. \n\nStars: \n\nJavier Cámara as Alfredo and Candela Peña as Carmen, with Mads Mikkelsen in a memorable role. \n\nThemes: \n\nAmbition, love, the transition from the Franco era, and the clash between high art (Alfredo's love for Ingmar Bergman) and low-brow entertainment. \n\nReception: \n\nPraised for its humor, performances, and unique blend of styles, it's considered a charming and clever film that avoids tastelessness.",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p1kcpyl",
+          "author": "reddit_user_f05892dd3735",
+          "author_karma": 0,
+          "content": "I *think* it is based on a real life story. The “original,  Carmen” probably refers to the woman involved in the actual events.\n\nMan, in Mexico this was called “Por no quedar pobre”, a literal “to not end up poor” but a slight wordplay on “Porno”.  I remember going to watch it randomly with lady friends because “it’s a comedy” not knowing anything about it. Fun times. ",
+          "timestamp": "2026-08-04T01:30:04+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1kcy0s",
+              "author": "reddit_user_316e6855209a",
+              "author_karma": 0,
+              "content": "Thank you",
+              "timestamp": "2026-08-04T01:31:19+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1kcpyl",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "post_id": "real_run027_post03_seed138",
+      "post_slot": 3,
+      "seed_index": 138,
+      "source_raw_post_id": "1vevazu",
+      "source_product_dir": "boxoffice",
+      "source_file": "https://www.reddit.com/r/boxoffice/comments/1vevazu/spiderman_brand_new_day_has_become_the_3/",
+      "post_type": ":india: India",
+      "title": "Spider-Man Brand New Day has become the #3 highest-grossing\nHollywood film of all time in India in just four days of release.\n1. ﻿﻿﻿Avatar 2 - 461CR ($48.36M)\n2. ﻿﻿﻿Avengers: End Game - 400CR ($42M)\n3. ﻿﻿Brand New Day 310CR ($32.5M)",
+      "author": "reddit_user_f403d059ef4c",
+      "author_karma": 0,
+      "content": "Spider-Man Brand New Day has become the #3 highest-grossing\nHollywood film of all time in India in just four days of release.\n1. ﻿﻿﻿Avatar 2 - 461CR ($48.36M)\n2. ﻿﻿﻿Avengers: End Game - 400CR ($42M)\n3. ﻿﻿Brand New Day 310CR ($32.5M)\n\nAnother record on the way for spidey this time topping Avatar",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p1k5ugw",
+          "author": "reddit_user_025d1d3693c4",
+          "author_karma": 0,
+          "content": "![gif](giphy|ReaBkv2sLr9SQWrvii)",
+          "timestamp": "2026-08-04T00:52:14+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1k5wkk",
+          "author": "reddit_user_9286e418bf97",
+          "author_karma": 0,
+          "content": "https://preview.redd.it/lfxb38wda9hh1.jpeg?width=1290&format=pjpg&auto=webp&s=70f5e3354eb02d15fbb01c4d913171a3ed959c0b",
+          "timestamp": "2026-08-04T00:52:32+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1k5xr1",
+          "author": "reddit_user_be28e234a54c",
+          "author_karma": 0,
+          "content": "Monday hold is real good. Gotta top avatar by end of this week only... won't be surprised even if it crosses 600 cr gross ",
+          "timestamp": "2026-08-04T00:52:43+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1kw17s",
+              "author": "reddit_user_6e6120365b06",
+              "author_karma": 0,
+              "content": "It not going to happen it going end between 520-535Cr gross because Currently BND is underperformeing in Tier 2,3 Cities and South State's like Tamil Nadu and AP/TL",
+              "timestamp": "2026-08-04T03:20:43+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1k5xr1",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1k6l63",
+          "author": "reddit_user_915d738c1e7d",
+          "author_karma": 0,
+          "content": "The USD number is wrong ",
+          "timestamp": "2026-08-04T00:56:15+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1kb431",
+              "author": "reddit_user_41dfd9b5bf6d",
+              "author_karma": 0,
+              "content": "No it’s correct ",
+              "timestamp": "2026-08-04T01:21:10+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1k6l63",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1keyss",
+                  "author": "reddit_user_37bea1e784bb",
+                  "author_karma": 0,
+                  "content": "No, you Just converted based on current exchange rates.  Endgame made 64m in 2019 and Avatar 2 59m in 2022.",
+                  "timestamp": "2026-08-04T01:42:29+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1kb431",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1ki5pj",
+                      "author": "reddit_user_41dfd9b5bf6d",
+                      "author_karma": 0,
+                      "content": "Fair point! I used today exchange rates for consistency across the list. But you’re right that historical conversation rates give higher totals to endgame and avatar when they released \n",
+                      "timestamp": "2026-08-04T02:00:08+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1keyss",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "p1kjpi3",
+                          "author": "reddit_user_b680ead944d2",
+                          "author_karma": 0,
+                          "content": "Why are you posting slop accounts that have been frequently caught peddling misinformation? All this account does is repost stuff blindly and engagement farm. There are lots of proper sources out there. ",
+                          "timestamp": "2026-08-04T02:08:50+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "p1ki5pj",
+                          "depth": 4,
+                          "replies": []
+                        },
+                        {
+                          "comment_id": "p1kvev8",
+                          "author": "reddit_user_6e6120365b06",
+                          "author_karma": 0,
+                          "content": "Spiderman BND could have become highest grossing Hollywood in opening Weekend itself Currently Spiderman BND is underperformeing in Tier 2,3 Cities and in South State's like Tamil Nadu and AP/TL there BND is Tracking behind Avartar-2 if BND had performed in Tier 2,3 Cities it's opening Weekend could have been 55-65M and other reason it's underperformeing because BND has average reviews in india Compair other Countries main due to Action because it's Action is very Similar to Tipical Indian movie like Slow- mo ",
+                          "timestamp": "2026-08-04T03:16:54+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "p1ki5pj",
+                          "depth": 4,
+                          "replies": [
+                            {
+                              "comment_id": "p1kxpw6",
+                              "author": "reddit_user_be28e234a54c",
+                              "author_karma": 0,
+                              "content": "![gif](giphy|glmRyiSI3v5E4)",
+                              "timestamp": "2026-08-04T03:31:16+00:00",
+                              "likes": 1,
+                              "dislikes": 0,
+                              "parent_comment_id": "p1kvev8",
+                              "depth": 5,
+                              "replies": [
+                                {
+                                  "comment_id": "p1kycq7",
+                                  "author": "reddit_user_6e6120365b06",
+                                  "author_karma": 0,
+                                  "content": "I think you doesn't know how indian market Works Majority Hollywood movie's box office Comes from the Metro Cities Hollywood movie's Struggle to Sell Tickets in Tier 2,3 Cities Special Hollywood movie's majority of Box-office are Contribute by South Indian State's, Hollywood movie's has very less Market share in North Indian state's which is the biggest box office market in india that why i said BND is currently underperformeing in Tier 2, 3 Cities ",
+                                  "timestamp": "2026-08-04T03:35:20+00:00",
+                                  "likes": 1,
+                                  "dislikes": 0,
+                                  "parent_comment_id": "p1kxpw6",
+                                  "depth": 6,
+                                  "replies": []
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "comment_id": "p1l2wte",
+                          "author": "reddit_user_630c5f420967",
+                          "author_karma": 0,
+                          "content": "No it doesn't make consistent lol , if you gonna use current exchange rates then you have to factor in inflation ",
+                          "timestamp": "2026-08-04T04:04:56+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "p1ki5pj",
+                          "depth": 4,
+                          "replies": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p1k7tjl",
+          "author": "reddit_user_d6578841db6d",
+          "author_karma": 0,
+          "content": "Curious to see how these numbers compare to Local film records ",
+          "timestamp": "2026-08-04T01:03:02+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1k8s6s",
+              "author": "reddit_user_7aa9b3ffcf26",
+              "author_karma": 0,
+              "content": "Bahubali 2 is 1400 crores iirc.",
+              "timestamp": "2026-08-04T01:08:21+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1k7tjl",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1kcg2d",
+                  "author": "reddit_user_d6578841db6d",
+                  "author_karma": 0,
+                  "content": "Wow the domination! ",
+                  "timestamp": "2026-08-04T01:28:31+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1k8s6s",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1ke7pz",
+                      "author": "reddit_user_64b168f8749d",
+                      "author_karma": 0,
+                      "content": "Brand New Day is expected to end up in top 15 should it end around double that number (600 to 700 crores). ",
+                      "timestamp": "2026-08-04T01:38:22+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1kcg2d",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "comment_id": "p1kem8l",
+              "author": "reddit_user_fbc35dc94fcf",
+              "author_karma": 0,
+              "content": "Pushpa 2 - 1450cr+\nBaahubali 2 - 1400cr+ \nDhurandhar 2 - 1370cr+\nDhurandhar - 1000cr+\nKgf 2 - 1000cr+",
+              "timestamp": "2026-08-04T01:40:35+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1k7tjl",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p1kfjfq",
+              "author": "reddit_user_41dfd9b5bf6d",
+              "author_karma": 0,
+              "content": "Indian films domestic grossers are much more \n\nSome top grossers 👇🏽\n\nBaahuabli 2 1417 CR - $148M\nDhurandhar 2 1375 CR - $144M\nPushpa 2 1471 CR - $154M\nDhurandhar 1007 CR - $105M\nRRR 915 CR - $96M\nKGF 2 1000 CR - $105M",
+              "timestamp": "2026-08-04T01:45:36+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1k7tjl",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1khrdr",
+                  "author": "reddit_user_d6578841db6d",
+                  "author_karma": 0,
+                  "content": "I wonder if Spider-Man or Avengers or some other Hollywood film could ever top the 1000cr mark. considering the heights of end game Spider-Man and avatar haven’t even come remotely close until now, what would it take. ",
+                  "timestamp": "2026-08-04T01:57:56+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1kfjfq",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1kj11m",
+                      "author": "reddit_user_fbc35dc94fcf",
+                      "author_karma": 0,
+                      "content": "If Doomsday does what infinity war did then secret wars has a chance or tom Hollands spider man 5 in which he's gonna fight the whole symbiote army ",
+                      "timestamp": "2026-08-04T02:05:02+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1khrdr",
+                      "depth": 3,
+                      "replies": []
+                    },
+                    {
+                      "comment_id": "p1kk7d5",
+                      "author": "reddit_user_41dfd9b5bf6d",
+                      "author_karma": 0,
+                      "content": "I think a Hollywood film will eventually break 1000CR mark.. but it has to speak to all of India though. I thought before a future avatar sequel would crack that but after avatar 3 performance I don’t think it will. Maybe a marvel film will. Let’s see",
+                      "timestamp": "2026-08-04T02:11:36+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1khrdr",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "p1kwntg",
+                          "author": "reddit_user_6e6120365b06",
+                          "author_karma": 0,
+                          "content": "For that to happen Hollywood movie's need to do over 300Cr nett from Hindi market only Way it can happen Hollywood movie have to perform in Tier 2,3 Cities State's like UP, Bihar, Rajasthan, Odisha,MP, Punjab and other Tier 2 State's because Majority of The Hollywood movie's in show's Tier 1 Cities are listed in English ",
+                          "timestamp": "2026-08-04T03:24:37+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "p1kk7d5",
+                          "depth": 4,
+                          "replies": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p1kb9ot",
+          "author": "reddit_user_674707a138ae",
+          "author_karma": 0,
+          "content": "Avatar 2 being #1 is so random lol",
+          "timestamp": "2026-08-04T01:22:01+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1khuye",
+              "author": "reddit_user_72d50ab92f86",
+              "author_karma": 0,
+              "content": "Legs👍",
+              "timestamp": "2026-08-04T01:58:29+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1kb9ot",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p1kjept",
+              "author": "reddit_user_41dfd9b5bf6d",
+              "author_karma": 0,
+              "content": "Indians loved avatar 1 and 2 was highly anticipated, just like the rest of the world ",
+              "timestamp": "2026-08-04T02:07:09+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1kb9ot",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1kl3l1",
+                  "author": "reddit_user_674707a138ae",
+                  "author_karma": 0,
+                  "content": "I was just surprised it wasn’t either Avatar 1 or Endgame. I expected it high on the list but below the two behemoths",
+                  "timestamp": "2026-08-04T02:16:34+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1kjept",
+                  "depth": 2,
+                  "replies": []
+                },
+                {
+                  "comment_id": "p1kxdoe",
+                  "author": "reddit_user_6e6120365b06",
+                  "author_karma": 0,
+                  "content": "Avarta-2 is has more fan following South Indian State's in india box office are get counted in to 2 Tier's North India which is the biggest Box office market in india then South India which has Telugu,Tamil Nadu kind which are 2,3 biggest Box office market and 80% of Avarta-2 collection come from South Indian State's basically Avartar-2 flopped in North India which is the biggest box office market in india ",
+                  "timestamp": "2026-08-04T03:29:06+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1kjept",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p1kd9vh",
+          "author": "reddit_user_2942e5efc125",
+          "author_karma": 0,
+          "content": "Could go for $65M USD finish. ",
+          "timestamp": "2026-08-04T01:33:08+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1kj8lk",
+          "author": "reddit_user_d76f6baed72b",
+          "author_karma": 0,
+          "content": "And its not even a week since its been out. BND is going to take that top spot.",
+          "timestamp": "2026-08-04T02:06:12+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1ktjn2",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-04T03:05:25+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run027_post04_seed139",
+      "post_slot": 4,
+      "seed_index": 139,
+      "source_raw_post_id": "1vevy41",
+      "source_product_dir": "flicks",
+      "source_file": "https://www.reddit.com/r/flicks/comments/1vevy41/meta_should_this_sub_allow_image_posts/",
+      "post_type": "Poll",
+      "title": "META: Should this sub allow image posts?",
+      "author": "reddit_user_f403d059ef4c",
+      "author_karma": 0,
+      "content": "META: Should this sub allow image posts?\n\nThere has been some discourse about the content of this sub. So here’s a poll regarding image posts. I would imagine they also have to follow the standard posting rules also. \n\nIf there’s any other thing you would like to see implemented on the sub leave a comment.",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p1k9gem",
+          "author": "reddit_user_6c9ec28e8a64",
+          "author_karma": 0,
+          "content": "Welcome to r/flicks!\n\n• No piracy.\n• Mark spoilers.\n• Be respectful.\n• Keep discussions movie-related.\n\nReport rule-breaking content to help the moderation team.\n\n\n*I am a bot, and this action was performed automatically. Please [contact the moderators of this subreddit](/message/compose/?to=/r/flicks) if you have any questions or concerns.*",
+          "timestamp": "2026-08-04T01:12:01+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1k9tzg",
+          "author": "reddit_user_59359c842b0a",
+          "author_karma": 0,
+          "content": "We would really like to hear what everyone thinks. Please vote in the poll and leave a comment if you have any suggestions.The goal is to build the subreddit around what the community actually wants. Whatever the majority prefers, that is the direction we will take.\n\nThanks for helping shape r/flicks ",
+          "timestamp": "2026-08-04T01:14:05+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1kbge9",
+          "author": "reddit_user_80d0e7741569",
+          "author_karma": 0,
+          "content": "Film is an art form. It would be great if we can show great images from movies we love. An argument could be made that if that is the goal other subreddits may be better, but that’s just driving people to other subreddits.",
+          "timestamp": "2026-08-04T01:23:03+00:00",
+          "likes": 4,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1kly9r",
+              "author": "reddit_user_bb9f182b2a42",
+              "author_karma": 0,
+              "content": "That’s a great point. ",
+              "timestamp": "2026-08-04T02:21:21+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1kbge9",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1l2kjs",
+                  "author": "reddit_user_80d0e7741569",
+                  "author_karma": 0,
+                  "content": "You can always establish rules (no memes allowed, this thread only for screenshots, etc) it wouldn’t have to be all or nothing. Admittedly this increases mod support so that is also a factor.",
+                  "timestamp": "2026-08-04T04:02:40+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1kly9r",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p1kdbyw",
+          "author": "reddit_user_9435645c2d3d",
+          "author_karma": 0,
+          "content": "I really think it devolves quickly. Unless the mods are willing to police the hell out of this, I think it would be much simpler to just say \"no\".",
+          "timestamp": "2026-08-04T01:33:27+00:00",
+          "likes": 8,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1kertk",
+          "author": "reddit_user_cbc336388d37",
+          "author_karma": 0,
+          "content": "The bot posts with random screenshots with open ended nothingburger questions in every sub is unbearable.",
+          "timestamp": "2026-08-04T01:41:24+00:00",
+          "likes": 7,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1kkmsy",
+              "author": "reddit_user_96cb709a28dd",
+              "author_karma": 0,
+              "content": "Agreed. It's such an invitation to low effort content baiting to train the LLM. ",
+              "timestamp": "2026-08-04T02:13:58+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1kertk",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p1klgtz",
+              "author": "reddit_user_bb9f182b2a42",
+              "author_karma": 0,
+              "content": "I agree. They are obviously bots when they don’t even bother engaging with the answers to a question they asked. \n\nBut allowing people to post an image and comment on the cinematography for example could be good. ",
+              "timestamp": "2026-08-04T02:18:39+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1kertk",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

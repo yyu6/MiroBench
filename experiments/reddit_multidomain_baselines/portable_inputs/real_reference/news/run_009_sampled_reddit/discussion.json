@@ -1,0 +1,3207 @@
+{
+  "meta": {
+    "product_category": "news",
+    "baseline": "real_reddit_reference",
+    "run_id": "run_009_sampled_reddit"
+  },
+  "posts": [
+    {
+      "post_id": "real_run009_post00_seed045",
+      "post_slot": 0,
+      "seed_index": 45,
+      "source_raw_post_id": "1vclp8i",
+      "source_product_dir": "UpliftingNews",
+      "source_file": "https://www.reddit.com/r/UpliftingNews/comments/1vclp8i/a_200000_donation_from_the_arconic_foundation/",
+      "post_type": "reddit_post",
+      "title": "A $200,000 donation from the Arconic Foundation wiped out nearly $30 million in medical debt for more than 26,000 people across five states, with Undue Medical Debt’s penny-on-the-dollar model and letters telling recipients the debt is gone",
+      "author": "reddit_user_bde1e90b951b",
+      "author_karma": 0,
+      "content": "A $200,000 donation from the Arconic Foundation wiped out nearly $30 million in medical debt for more than 26,000 people across five states, with Undue Medical Debt’s penny-on-the-dollar model and letters telling recipients the debt is gone",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p12jutr",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-01T13:54:30+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p12jvox",
+          "author": "reddit_user_9117fc79a29c",
+          "author_karma": 0,
+          "content": "How does $200k wipe out $30 million?! The math ain’t mathing",
+          "timestamp": "2026-08-01T13:54:37+00:00",
+          "likes": 0,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p12knrg",
+              "author": "reddit_user_00501926e867",
+              "author_karma": 0,
+              "content": "It’s literally in the title…",
+              "timestamp": "2026-08-01T13:58:42+00:00",
+              "likes": 10,
+              "dislikes": 0,
+              "parent_comment_id": "p12jvox",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p12ob2y",
+                  "author": "reddit_user_9117fc79a29c",
+                  "author_karma": 0,
+                  "content": "They can write it all they want. It still doesn’t make cents(sense).",
+                  "timestamp": "2026-08-01T14:17:34+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p12knrg",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p12qpbg",
+                      "author": "reddit_user_a91d3ccbf0e7",
+                      "author_karma": 0,
+                      "content": "Yo bro would you rather have 0 dollars or 1 dollar? I know you were expecting 5. But, again, your options are 0 dollars, or 1 dollar.\n\nThey only do this for stuff they are pretty darn certain they are getting 0.",
+                      "timestamp": "2026-08-01T14:29:47+00:00",
+                      "likes": 3,
+                      "dislikes": 0,
+                      "parent_comment_id": "p12ob2y",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "p139hao",
+                          "author": "reddit_user_9117fc79a29c",
+                          "author_karma": 0,
+                          "content": "So you’re telling me they’re charging outrageous prices to begin with and make people fault on their loans possibly bankrupt and whatever else goes along with it and in the end they are like “yeah I’ll take that dollar” and everyone is ok with that?! Did I get that right?! This is the healthcare system?",
+                          "timestamp": "2026-08-01T16:01:34+00:00",
+                          "likes": 2,
+                          "dislikes": 0,
+                          "parent_comment_id": "p12qpbg",
+                          "depth": 4,
+                          "replies": [
+                            {
+                              "comment_id": "p139x28",
+                              "author": "reddit_user_a91d3ccbf0e7",
+                              "author_karma": 0,
+                              "content": "This is a very standard practice for any kind of debt. It's not exclusive to healthcare at all.",
+                              "timestamp": "2026-08-01T16:03:39+00:00",
+                              "likes": 1,
+                              "dislikes": 0,
+                              "parent_comment_id": "p139hao",
+                              "depth": 5,
+                              "replies": []
+                            },
+                            {
+                              "comment_id": "p13g1u6",
+                              "author": "reddit_user_0f58304e4051",
+                              "author_karma": 0,
+                              "content": "\"...they are charging outrageous prices to begin with...\" \n\nNot just in the healthcare system.  Think those $20 music CDs and $50 vinyl LPs cost more than $2 to make?  The $90 RL polo shirt costs $4 to make...  It is everywhere.",
+                              "timestamp": "2026-08-01T16:33:02+00:00",
+                              "likes": 2,
+                              "dislikes": 0,
+                              "parent_comment_id": "p139hao",
+                              "depth": 5,
+                              "replies": []
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "comment_id": "p12tsrh",
+                      "author": "reddit_user_00501926e867",
+                      "author_karma": 0,
+                      "content": "If someone owed you $100 and they didn’t pay and you know they aren’t going to pay it.  You can maybe get the money back but you’ll have to spend money to attempt to get it back.  Then someone said I’ll buy the debt for $5.  You’d take the $5.  You write off the loss so you don’t owe tax against it.  It makes you closer to whole but you still lose money, but you lose a lot less than you would have.",
+                      "timestamp": "2026-08-01T14:45:18+00:00",
+                      "likes": 4,
+                      "dislikes": 0,
+                      "parent_comment_id": "p12ob2y",
+                      "depth": 3,
+                      "replies": []
+                    },
+                    {
+                      "comment_id": "p12tub7",
+                      "author": "reddit_user_2ac395675566",
+                      "author_karma": 0,
+                      "content": "There is this whole pipeline of debt, after the hospital fails to get their money in 90/whatever amount of days it is sold to a debt collector. That first debt collector may only pay 10-15% of what the total collectable amount is. They then try and collect that money and hopefully make a profit. For all the accounts they have that didn't pay they then bundle those up and sell them to smaller/scummyer debt collectors for maybe 1% of the debt value. The cycle repeats like this until someone stops buying the debt or it just expires due to various laws that keep debt from sticking around forever.",
+                      "timestamp": "2026-08-01T14:45:31+00:00",
+                      "likes": 3,
+                      "dislikes": 0,
+                      "parent_comment_id": "p12ob2y",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p12k6n1",
+          "author": "reddit_user_8193cb31673f",
+          "author_karma": 0,
+          "content": "Hey $200,000 was just a bit more than our new borns NICU bill for 11 days",
+          "timestamp": "2026-08-01T13:56:13+00:00",
+          "likes": 91,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p12n0h8",
+              "author": "reddit_user_e08be8565f77",
+              "author_karma": 0,
+              "content": "Congratulations on the new baby! ",
+              "timestamp": "2026-08-01T14:10:58+00:00",
+              "likes": 13,
+              "dislikes": 0,
+              "parent_comment_id": "p12k6n1",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p13rx6w",
+              "author": "reddit_user_46c753910007",
+              "author_karma": 0,
+              "content": "We spent 115 days in the NICU. Nearly $2 million \"billed\" to the insurance, not including our child's birth and emergency c-section. Not sure what the insurance actually paid for it, luckily we didn't have to pay anything beyond our deductible which we had already hit prior. ",
+              "timestamp": "2026-08-01T17:29:43+00:00",
+              "likes": 38,
+              "dislikes": 0,
+              "parent_comment_id": "p12k6n1",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p12mty1",
+          "author": "reddit_user_e08be8565f77",
+          "author_karma": 0,
+          "content": "So your visit to the PCP that's normally around $100 without insurance should be $0.67? ",
+          "timestamp": "2026-08-01T14:10:02+00:00",
+          "likes": 6,
+          "dislikes": 0,
+          "parent_comment_id": "p125ju4",
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p12oohx",
+              "author": "reddit_user_e6389ad0464a",
+              "author_karma": 0,
+              "content": "Yeah….",
+              "timestamp": "2026-08-01T14:19:28+00:00",
+              "likes": -1,
+              "dislikes": 0,
+              "parent_comment_id": "p12mty1",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p12ytv2",
+              "author": "reddit_user_036cf3851d24",
+              "author_karma": 0,
+              "content": "A visit with a pcp costs insurance closer to 500 to 600",
+              "timestamp": "2026-08-01T15:10:10+00:00",
+              "likes": 0,
+              "dislikes": 0,
+              "parent_comment_id": "p12mty1",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p130jyi",
+                  "author": "reddit_user_e08be8565f77",
+                  "author_karma": 0,
+                  "content": "As a PCP, I promise you 99214 and 99204 pay about $125 in most US markets. ",
+                  "timestamp": "2026-08-01T15:18:37+00:00",
+                  "likes": 2,
+                  "dislikes": 0,
+                  "parent_comment_id": "p12ytv2",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p134xin",
+                      "author": "reddit_user_036cf3851d24",
+                      "author_karma": 0,
+                      "content": "Do you mean you get $125 for your RVU? I just reviewed an EOB for 99214 and my insurance paid out $385",
+                      "timestamp": "2026-08-01T15:39:50+00:00",
+                      "likes": 0,
+                      "dislikes": 0,
+                      "parent_comment_id": "p130jyi",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "p137zry",
+                          "author": "reddit_user_e08be8565f77",
+                          "author_karma": 0,
+                          "content": "The national average reimbursement for 99214 is $135.61.  I stand corrected. \n\nPrimary care docs definitely don't make $100+ per rvu.\n\nYour plan may have been billed $385, but they didn't pay that out, even if you paid zero. It could also be a bundled line item that included labs or other testing (like an ecg or vision screening). ",
+                          "timestamp": "2026-08-01T15:54:28+00:00",
+                          "likes": 3,
+                          "dislikes": 0,
+                          "parent_comment_id": "p134xin",
+                          "depth": 4,
+                          "replies": [
+                            {
+                              "comment_id": "p14mh40",
+                              "author": "reddit_user_036cf3851d24",
+                              "author_karma": 0,
+                              "content": "My clinic charged 440 and paid 385, I know how to read an eob lol",
+                              "timestamp": "2026-08-01T19:57:35+00:00",
+                              "likes": 0,
+                              "dislikes": 0,
+                              "parent_comment_id": "p137zry",
+                              "depth": 5,
+                              "replies": []
+                            },
+                            {
+                              "comment_id": "p14wn0u",
+                              "author": "reddit_user_036cf3851d24",
+                              "author_karma": 0,
+                              "content": "[https://imgur.com/a/QxrU1mO](https://imgur.com/a/QxrU1mO)",
+                              "timestamp": "2026-08-01T20:48:29+00:00",
+                              "likes": 0,
+                              "dislikes": 0,
+                              "parent_comment_id": "p137zry",
+                              "depth": 5,
+                              "replies": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "comment_id": "p1322r6",
+              "author": "reddit_user_0e04f65e3eba",
+              "author_karma": 0,
+              "content": "More like normally hospital bills 250 to insurance, you pay 100 to insurance. Without insurance industry would be 30 (25 cost, 5 profit) but the hospital has 50 people not paying which is costing them 25 x 50 = 1250. If they sell the original debt of 250 for 0.6% you get 250 x 50 x 0.006 = 84 dollars. 84 is better than zero so you take what you can, probably covers the cost of all the mail they sent out before going to collections.\n\nAll made up numbers but a doctor visit is never going to cost  $0.67",
+              "timestamp": "2026-08-01T15:26:03+00:00",
+              "likes": 4,
+              "dislikes": 0,
+              "parent_comment_id": "p12mty1",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p13356y",
+                  "author": "reddit_user_2e4a73809c53",
+                  "author_karma": 0,
+                  "content": "No, but 30 is more in line with where it should be. Daughter had a bill for like $450. Just so happened, she had lost her insurance we thought was still there. Called doctor office, told them, they put me hold. Came back with an \"adjustment\" down to $54. ",
+                  "timestamp": "2026-08-01T15:31:14+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1322r6",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p12narb",
+          "author": "reddit_user_caf2c2c9b8f5",
+          "author_karma": 0,
+          "content": "**Illinois has erased a significant amount of medical debt.** Through the **Illinois Medical Debt Relief Program**, launched in 2024 in partnership with the nonprofit **Undue Medical Debt**, the state has eliminated more than **$1.1 billion** in debt for over **500,000 residents** as of early 2026.",
+          "timestamp": "2026-08-01T14:12:25+00:00",
+          "likes": 8,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p12pllx",
+          "author": "reddit_user_05f49638289e",
+          "author_karma": 0,
+          "content": "The market value of the debt is completely different from the cost of the medical care.\n\nThey are buying the debt of those least likely to be able to pay it back. The debt is trading so cheap because nobody expects to be able to collect the debt value, so it's worth very little on the open market. This has no connection to how much the medical treatment cost which created the debt.",
+          "timestamp": "2026-08-01T14:24:09+00:00",
+          "likes": 129,
+          "dislikes": 0,
+          "parent_comment_id": "p125ju4",
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p12q8h1",
+              "author": "reddit_user_2ac395675566",
+              "author_karma": 0,
+              "content": "Yeah I feel that while it's framed as this altruistic \"freeing\" from debt the reality is 99% of those people were never going to pay so all we are really doing is lining the pockets of debt collectors.",
+              "timestamp": "2026-08-01T14:27:25+00:00",
+              "likes": 44,
+              "dislikes": 0,
+              "parent_comment_id": "p12pllx",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p12r1uh",
+                  "author": "reddit_user_05f49638289e",
+                  "author_karma": 0,
+                  "content": "Yeah. It does help people's credit score and removes one source of stress from their lives though.",
+                  "timestamp": "2026-08-01T14:31:31+00:00",
+                  "likes": 74,
+                  "dislikes": 0,
+                  "parent_comment_id": "p12q8h1",
+                  "depth": 2,
+                  "replies": []
+                },
+                {
+                  "comment_id": "p1304nd",
+                  "author": "reddit_user_401e065c879f",
+                  "author_karma": 0,
+                  "content": "You misunderstand how Undue Medical Debt works. They go directly into the debt market, purchase the rights to collect the debt for next to nothing and then mark the debt as paid/forgiven. Undue *is* the debt collector.",
+                  "timestamp": "2026-08-01T15:16:33+00:00",
+                  "likes": 44,
+                  "dislikes": 0,
+                  "parent_comment_id": "p12q8h1",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p14ouhz",
+                      "author": "reddit_user_f77285b346b9",
+                      "author_karma": 0,
+                      "content": "> purchase the rights to collect the debt for next to nothing\n\nAnd they purchase the rights from...? Not directly from the hospital, but from another debt collector.",
+                      "timestamp": "2026-08-01T20:09:30+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1304nd",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                },
+                {
+                  "comment_id": "p159ly4",
+                  "author": "reddit_user_26e19b11b5d8",
+                  "author_karma": 0,
+                  "content": "Still feels altruistic\n\nWhat's better for these people that can't pay this debt? To have it or to not have it",
+                  "timestamp": "2026-08-01T21:55:33+00:00",
+                  "likes": 14,
+                  "dislikes": 0,
+                  "parent_comment_id": "p12q8h1",
+                  "depth": 2,
+                  "replies": []
+                },
+                {
+                  "comment_id": "p1ggceb",
+                  "author": "reddit_user_eaf5750aaf7f",
+                  "author_karma": 0,
+                  "content": "Hey there, I work at Undue. None of the money raised for debt relief goes to insurance companies, but Undue does work with hospitals to purchase and eliminate medical debt for patients. We buy from debt collectors sometimes too. All of this debt is bought for pennies on the dollar because you're right, patients just can't afford to pay. Debt relief is definitely not the solution to our broken healthcare system, but it provides some support to families who've had their credit impacted and have debt hanging over their heads. Part of Undue's work is also advocating for policies that prevent medical debt in the first place. When we partner with hospitals, we help them identify upstream opportunities to protect patients from medical debt like improving their financial assistance policies. Let me know if you have any questions about how debt relief works.",
+                  "timestamp": "2026-08-03T14:46:21+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p12q8h1",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            },
+            {
+              "comment_id": "p13uxxg",
+              "author": "reddit_user_3681b218e5da",
+              "author_karma": 0,
+              "content": "Yes and no even the original amount fluxes so much insurance or different facility or generic vs name brand. There is a variety of things that can modify the price by multiplicative amount.\n\nLike imagine if car dealers same exact car. Where simply going to another dealer made it 100 times more expensive. Or using another lender made it 100 times more expensive. Or removing the logo of manufacturer made it 10 times cheaper.\n\nThe amount is so subjective and changes there really are not any other goods or services remotely the same in how much they fluctuate for minor reasons.",
+              "timestamp": "2026-08-01T17:44:03+00:00",
+              "likes": 2,
+              "dislikes": 0,
+              "parent_comment_id": "p12pllx",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p13vwv0",
+              "author": "reddit_user_303c3d0d8202",
+              "author_karma": 0,
+              "content": "This all sounds like convoluted bullshit to make Americans pay out the ass for healthcare most of the world subsidizes with taxes.",
+              "timestamp": "2026-08-01T17:48:41+00:00",
+              "likes": 10,
+              "dislikes": 0,
+              "parent_comment_id": "p12pllx",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p13x9rr",
+                  "author": "reddit_user_05f49638289e",
+                  "author_karma": 0,
+                  "content": "Debt markets exist in all parts of the world. It's the same thing as trading bonds. It's not something specific to healthcare at all.",
+                  "timestamp": "2026-08-01T17:55:09+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p13vwv0",
+                  "depth": 2,
+                  "replies": []
+                },
+                {
+                  "comment_id": "p17a2d2",
+                  "author": "reddit_user_87df70624fe8",
+                  "author_karma": 0,
+                  "content": "It’s not convoluted at all actually, debt is bought and sold constantly around the world.",
+                  "timestamp": "2026-08-02T05:22:09+00:00",
+                  "likes": 2,
+                  "dislikes": 0,
+                  "parent_comment_id": "p13vwv0",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p12qg2z",
+          "author": "reddit_user_05f49638289e",
+          "author_karma": 0,
+          "content": "Only for those who are unlike to ever pay it back.\n\nThis debt is so cheap on the open market because nobody expects be able to collect on it, so the debt has very little value. For borrowers who are like to be able to pay back the debt or partially or at it back, the market value it much higher and the leverage of buying it and forgiving the loan isn't there.",
+          "timestamp": "2026-08-01T14:28:29+00:00",
+          "likes": 8,
+          "dislikes": 0,
+          "parent_comment_id": "p1284xq",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p12qp50",
+          "author": "reddit_user_01d904228f79",
+          "author_karma": 0,
+          "content": "This is a very misleading comment.  \n\n“They’re happy getting anything at all” come on. Everything they do is calculated, and this debt was sold several times before being bought cheaply.  The healthcare systems charge as much as they can whenever they can, has nothing to do with “I’m happy getting anything I can.”\n\nIt also has NOTHING to do with “wage ceilings” that’s not even 1% of the pricing issue.  The issue is monopoly and lobbying, corporate power not wage ceilings. ",
+          "timestamp": "2026-08-01T14:29:45+00:00",
+          "likes": 18,
+          "dislikes": 0,
+          "parent_comment_id": "p12be9j",
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1378mc",
+              "author": "reddit_user_d0f0ad6a77d2",
+              "author_karma": 0,
+              "content": "This is a very misleading comment.\n\nAs a European, walking out of a hospital with less than €50 to pay regardless of whether it's a bandaid or lengthy stay after surgery should not be in any way diminished. Stop sucking corporate propaganda cock idiot, the rest of the world has free healthcare and you need to wake the fuck up",
+              "timestamp": "2026-08-01T15:50:51+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p12qp50",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p138pya",
+                  "author": "reddit_user_e9603d787462",
+                  "author_karma": 0,
+                  "content": "The U.S. can afford healthcare. Their politicians choose not to so they can campaign on it ad nauseam as they do with immigration, abortion, drugs, crime, and other social issues. ",
+                  "timestamp": "2026-08-01T15:57:56+00:00",
+                  "likes": 6,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1378mc",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            },
+            {
+              "comment_id": "p13adwg",
+              "author": "reddit_user_886d57ef8d86",
+              "author_karma": 0,
+              "content": "You have no idea how compensation and costs in healthcare work and you’re just throwing dumb comments out. There is absolutely an artificial ceiling on how much insurances are willing to compensate hospitals for physician labor that is well below market rate. So hospitals make up for that difference by charging more for dumb “facilities” and supply fees which partially get diverted to pay for salaries. In addition, Medicare reimburses at a shockingly low rate BUT any state/federal funded hospital is required to take their patients. This means that you have to operate at a loss with those pts BUT you’re not allowed to charge people different amounts based on what insurance they have so the alternative is to charge an artificially higher rate knowing you can do that uthat you won’t get most of it back and private insurance will end up covering the costs Medicare won’t pay for.\n\nThis means people without insurance wind up seeing these crazy numbers because (as stated before) they can’t charge a different price based on what insurance (if any) they have. The solution is socialized healthcare where costs/reimbursement is standardized across the board and bloated medication prices get evened out. It’ll also likely lead to more balanced medical training costs and hopefully more physician training spots to fill the gaps we currently have. People complain about the problem with medicine being greed and “oh the doctors make too much” or “oh the hospitals are intentionally scamming us with bloated prices”. The problem is at the structural level with how the system balances compensation. If we change that then we can avoid all of the negative consequences that come with the “adaptations” that were made to balance out costs from the broken system",
+              "timestamp": "2026-08-01T16:05:53+00:00",
+              "likes": 6,
+              "dislikes": 0,
+              "parent_comment_id": "p12qp50",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p12utgu",
+          "author": "reddit_user_578e51cba155",
+          "author_karma": 0,
+          "content": "A major loss? Sure bud",
+          "timestamp": "2026-08-01T14:50:24+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": "p12canr",
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p13ofzg",
+              "author": "reddit_user_5e05ca2bd464",
+              "author_karma": 0,
+              "content": "Penny-on-the-dollar\n\n>When it comes to buying or selling something, we often hear the phrase “pennies on the dollar”. This idiom refers to a situation where an item is being sold for a fraction of its original value. It suggests that the buyer is getting a great deal because they are paying much less than what the item is actually worth.\n\nThat is what it is called in this piece, if you can prove otherwise be my guest, but the burden of proof is on your side.",
+              "timestamp": "2026-08-01T17:13:13+00:00",
+              "likes": 0,
+              "dislikes": 0,
+              "parent_comment_id": "p12utgu",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p14qklp",
+                  "author": "reddit_user_524aada5126f",
+                  "author_karma": 0,
+                  "content": "I think what they're saying is that the medical fees were likely significantly higher than necessary in the first place. Which is usually the case when you compare US medical care to the comparable care in other countries.  ",
+                  "timestamp": "2026-08-01T20:18:09+00:00",
+                  "likes": 2,
+                  "dislikes": 0,
+                  "parent_comment_id": "p13ofzg",
+                  "depth": 2,
+                  "replies": []
+                },
+                {
+                  "comment_id": "p15080c",
+                  "author": "reddit_user_578e51cba155",
+                  "author_karma": 0,
+                  "content": "My side? Bro go touch grass",
+                  "timestamp": "2026-08-01T21:06:44+00:00",
+                  "likes": 0,
+                  "dislikes": 0,
+                  "parent_comment_id": "p13ofzg",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p12ylme",
+          "author": "reddit_user_23133a442aaf",
+          "author_karma": 0,
+          "content": "every time something like this happens, it's not my medical debt that's been crippling me that gets hit. maybe next time. I'm really happy for everyone who got the help though",
+          "timestamp": "2026-08-01T15:09:03+00:00",
+          "likes": 4,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1350xc",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-01T15:40:17+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p137a8f",
+          "author": "reddit_user_1a31096fda7a",
+          "author_karma": 0,
+          "content": "Feels more like r/OrphanCrushingMachine content. If the system worked FOR the people, the USA wouldn't HAVE medical debt in the first place.",
+          "timestamp": "2026-08-01T15:51:04+00:00",
+          "likes": 20,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1gi4g4",
+              "author": "reddit_user_eaf5750aaf7f",
+              "author_karma": 0,
+              "content": "Hey, I work at Undue - totally agree with you. I can see why it's frustrating for debt relief to be framed as uplifting, because medical debt shouldn't exist. The system isn't working for patients at all. The fact that the debt relief model works shows how broken the system is. Undue also works on advocating for solutions that would keep people out of medical debt in the first place like affordable, comprehensive coverage and stronger financial assistance policies.",
+              "timestamp": "2026-08-03T14:54:12+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p137a8f",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p137gp5",
+          "author": "reddit_user_91cbf2918124",
+          "author_karma": 0,
+          "content": ">set wage ceilings for medical professionals\n\nI would specify that it's actually because of the lack of medical administrator/CEO income caps, not the providers. Medical providers are often still drowning in student loan debt, and medical interns/residents especially are broke af. But yes, all this is a symptom of everything else you mentioned, so I agree.",
+          "timestamp": "2026-08-01T15:51:56+00:00",
+          "likes": 18,
+          "dislikes": 0,
+          "parent_comment_id": "p12be9j",
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p13mpm5",
+              "author": "reddit_user_c8766fe8acc3",
+              "author_karma": 0,
+              "content": "Why punish someone in a high stress job, where you might have to see someone lose a family member by saying \"you're worth only $X, no more\"? \n\nWe should set a wage ceiling for you as well... Unless you're already in a group that has a glass ceiling, then you're already there",
+              "timestamp": "2026-08-01T17:04:57+00:00",
+              "likes": 2,
+              "dislikes": 0,
+              "parent_comment_id": "p137gp5",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p13oup9",
+                  "author": "reddit_user_5e05ca2bd464",
+                  "author_karma": 0,
+                  "content": "I have no idea what you're saying..? Are you angry, agreeing, explaining?",
+                  "timestamp": "2026-08-01T17:15:10+00:00",
+                  "likes": 5,
+                  "dislikes": 0,
+                  "parent_comment_id": "p13mpm5",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p13p8uz",
+                      "author": "reddit_user_c8766fe8acc3",
+                      "author_karma": 0,
+                      "content": "No one should be in a pay ceiling, it's stupid. People should be allowed to get paid what the market allows, and for high skill positions, you get paid a lot for a reason ",
+                      "timestamp": "2026-08-01T17:17:03+00:00",
+                      "likes": -1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p13oup9",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "p13sa5f",
+                          "author": "reddit_user_5e05ca2bd464",
+                          "author_karma": 0,
+                          "content": "Great arguments! Poor doctors, losing family members because they can't afford healthcare, or something...",
+                          "timestamp": "2026-08-01T17:31:26+00:00",
+                          "likes": 0,
+                          "dislikes": 0,
+                          "parent_comment_id": "p13p8uz",
+                          "depth": 4,
+                          "replies": [
+                            {
+                              "comment_id": "p13tc1v",
+                              "author": "reddit_user_c8766fe8acc3",
+                              "author_karma": 0,
+                              "content": "No, I was thinking more \"overworked, stressed out, losing patients because there aren't enough doctors and nurses to care for them, so let's tell them \" fuck you, you can only make $50k/year\"\n\n",
+                              "timestamp": "2026-08-01T17:36:26+00:00",
+                              "likes": 2,
+                              "dislikes": 0,
+                              "parent_comment_id": "p13sa5f",
+                              "depth": 5,
+                              "replies": [
+                                {
+                                  "comment_id": "p144oqx",
+                                  "author": "reddit_user_91cbf2918124",
+                                  "author_karma": 0,
+                                  "content": "Who? ",
+                                  "timestamp": "2026-08-01T18:30:46+00:00",
+                                  "likes": 4,
+                                  "dislikes": 0,
+                                  "parent_comment_id": "p13tc1v",
+                                  "depth": 6,
+                                  "replies": []
+                                },
+                                {
+                                  "comment_id": "p14x0xn",
+                                  "author": "reddit_user_5e05ca2bd464",
+                                  "author_karma": 0,
+                                  "content": "I think you haven't been outside the US much in your life, or at least have no idea how the rest of the world works, it's so hard to follow your arguments. \n\nHere in the Netherlands, we have a pay ceiling and we have plenty of doctors (the pay ceiling is about 260k, don't hyperbole with your 50k, that would indeed make no sense). While in the US, you have no pay ceiling and an actual brain drain going on. Life is not all about money, not by a long shot. You've just been fed too much propaganda by rich people whose arguments you're now making: \"The rich have to be even richer or we will die in the streets!\" It's just BS, and you're eating it up.",
+                                  "timestamp": "2026-08-01T20:50:26+00:00",
+                                  "likes": 3,
+                                  "dislikes": 0,
+                                  "parent_comment_id": "p13tc1v",
+                                  "depth": 6,
+                                  "replies": [
+                                    {
+                                      "comment_id": "p14xpwf",
+                                      "author": "reddit_user_c8766fe8acc3",
+                                      "author_karma": 0,
+                                      "content": "260K/year is post all the taxes, I'd hope?",
+                                      "timestamp": "2026-08-01T20:53:55+00:00",
+                                      "likes": 2,
+                                      "dislikes": 0,
+                                      "parent_comment_id": "p14x0xn",
+                                      "depth": 7,
+                                      "replies": [
+                                        {
+                                          "comment_id": "p14zknh",
+                                          "author": "reddit_user_5e05ca2bd464",
+                                          "author_karma": 0,
+                                          "content": "Why would you hope that? Because otherwise your world view might be incorrect, and not everything is about income?",
+                                          "timestamp": "2026-08-01T21:03:24+00:00",
+                                          "likes": 1,
+                                          "dislikes": 0,
+                                          "parent_comment_id": "p14xpwf",
+                                          "depth": 8,
+                                          "replies": []
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "comment_id": "p16lklj",
+                  "author": "reddit_user_750d502ea69f",
+                  "author_karma": 0,
+                  "content": "Oh no the high stress… administrator job? Please.",
+                  "timestamp": "2026-08-02T02:34:02+00:00",
+                  "likes": 2,
+                  "dislikes": 0,
+                  "parent_comment_id": "p13mpm5",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            },
+            {
+              "comment_id": "p14avos",
+              "author": "reddit_user_5529c43c5b69",
+              "author_karma": 0,
+              "content": "The single largest % of a healthcare providers’ costs are direct care delivery staff, by a long shot. Capping the administrators wages would do very little to lower the cost of healthcare. We would need to address physician and nurse wages, and to do that in a fair way, we’d need to reduce requirements for expensive advanced degrees. No more “pre-med” in college - that becomes the bulk of med school. ",
+              "timestamp": "2026-08-01T19:00:24+00:00",
+              "likes": 0,
+              "dislikes": 0,
+              "parent_comment_id": "p137gp5",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p14d5we",
+                  "author": "reddit_user_91cbf2918124",
+                  "author_karma": 0,
+                  "content": "A quarter of healthcare costs are just administrative costs like dealing with insurance companies, which costs us an estimated $1 trillion \ndollars. This is absolutely unnecessary spending, and all of it should be reined in.\n\nI didn't just mean their salaries, but the fact that United had one CEO shot and still had several more really just shows how wasteful the non-medicine side of the medical field really is.\n\nhttps://jamanetwork.com/journals/jama/fullarticle/2785479",
+                  "timestamp": "2026-08-01T19:11:26+00:00",
+                  "likes": 6,
+                  "dislikes": 0,
+                  "parent_comment_id": "p14avos",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p14dt0v",
+                      "author": "reddit_user_5529c43c5b69",
+                      "author_karma": 0,
+                      "content": "Yeah. I mean - if I could get paid without filing a claim, that would be great. RCM is a crazy inefficient process. But it still happens the same way when I’m billing Medicare, Medicaid, or a private insurance company, single payor doesn’t fix it. And they all reject claims. Until I can guarantee I get paid, the first time, in full, by all payors, I’m gonna keep my “admin” RCM team. And that’s my single largest non care delivery team, besides the people at the front desk who check you in and schedule you.",
+                      "timestamp": "2026-08-01T19:14:34+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p14d5we",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "p14g25r",
+                          "author": "reddit_user_91cbf2918124",
+                          "author_karma": 0,
+                          "content": "I feel like you're willfully misunderstanding my point. Insurance CEOs aren't the people doing anything useful for you, they're the ones making your job harder than it has to be.\n\nI grew up in a country with universal healthcare: they still had admins there to send the claims to the government, they just were not obscenely wealthy while patients and doctors suffered. Everyone got paid, because care was delivered without a for-profit third party needlessly meddling in the process.\n\nA broken arm in the ER costs $140 there because no one has to go and argue with the money-grubbing middlemen that are insurance companies. It's roughly $10k here. \n\nTLDR all y'all are being robbed.",
+                          "timestamp": "2026-08-01T19:25:39+00:00",
+                          "likes": 4,
+                          "dislikes": 0,
+                          "parent_comment_id": "p14dt0v",
+                          "depth": 4,
+                          "replies": [
+                            {
+                              "comment_id": "p14lhmk",
+                              "author": "reddit_user_5529c43c5b69",
+                              "author_karma": 0,
+                              "content": "I understand your point, I just think it’s incomplete. \n\nI dislike the for profit insurance companies (especially as the guy in charge of negotiating the insurance plan for our organization, they’ve increased costs on us nearly 50% over the last 3 years). But they don’t increase the administrative burden for me (as a healthcare provider organization) any more than the state-run version of health insurance that I also work with. And they don’t consistently pay us more or less than the for profit companies for the same services.\n\nThe other big cost inflator is pharma - and some of that is regulating pricing, which other countries have done better than the US. But some of that are biologics and rare disease treatments for conditions that would have been death sentences 20-30 years ago. Do we let those people suffer / die to lower the cost of the broken arms? Maybe - that’s the “greatest good for the the greatest number”. But even government insurance has to make trade-offs on what they will and won’t cover, and for whom.",
+                              "timestamp": "2026-08-01T19:52:40+00:00",
+                              "likes": -1,
+                              "dislikes": 0,
+                              "parent_comment_id": "p14g25r",
+                              "depth": 5,
+                              "replies": [
+                                {
+                                  "comment_id": "p14rs1j",
+                                  "author": "reddit_user_91cbf2918124",
+                                  "author_karma": 0,
+                                  "content": ">But even government insurance has to make trade-offs on what they will and won’t cover, and for whom.\n\nComparing a federalized, universal medical to your localized system, which has been systematically throttled by the oligarchs for decades, just proves that you *don't* understand my point. US local, state, as well as the federal government have been forced to not run effectively for decades while insurance companies siphon money from the system. This isn't a secret, nor is how they muddy the waters to make the government systems look ineffective so people think the world's most expensive medical system is the only way it can work here. ",
+                                  "timestamp": "2026-08-01T20:24:10+00:00",
+                                  "likes": 3,
+                                  "dislikes": 0,
+                                  "parent_comment_id": "p14lhmk",
+                                  "depth": 6,
+                                  "replies": [
+                                    {
+                                      "comment_id": "p1b0mvm",
+                                      "author": "[deleted]",
+                                      "author_karma": 0,
+                                      "content": "[removed]",
+                                      "timestamp": "2026-08-02T18:59:29+00:00",
+                                      "likes": 1,
+                                      "dislikes": 0,
+                                      "parent_comment_id": "p14rs1j",
+                                      "depth": 7,
+                                      "replies": []
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "comment_id": "p14t1ll",
+                      "author": "[deleted]",
+                      "author_karma": 0,
+                      "content": "[removed]",
+                      "timestamp": "2026-08-01T20:30:26+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p14d5we",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p137z0w",
+          "author": "reddit_user_91cbf2918124",
+          "author_karma": 0,
+          "content": "Biden tried to wipe student loan debt out, but the oligarchs didn't like it, so... no. ",
+          "timestamp": "2026-08-01T15:54:22+00:00",
+          "likes": 9,
+          "dislikes": 0,
+          "parent_comment_id": "p1284xq",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p138t0r",
+          "author": "reddit_user_98cc10a82027",
+          "author_karma": 0,
+          "content": "One of the cheapest (and best) healthcare experiences I've ever had was from a 100% unionized integrated system. \n\nHealthcare insurance is provably the root of the US's expensive healthcare. From simply being able to take the insurance you introduce dozens of people in overhead to navigate insurance claims for each company and having to communicate with the companies at all. Instead of doctors prescribing a treatment prior authorization balloons the time and effort required to receive care that is required. This gets exponentially worse as second opinions are required or (as in my case once) you are required BY INSURANCE to \"fail\" \"cheaper\" treatment options first. This allows disease progression which in my case ended up requiring tens of thousands of dollars of additional care *so far*. \n\nThis doesn't even touch that providers are incentivized to drive prices up so the negotiated lower prices still provide a profit, medical supplies are bought from private manufacturers that can simply choose to raise prices for fun, or how the US uses a system of patents and monopolies where patents can't exist in order to fix prices higher than if the equivalent items/prescriptions were bought in other countries.\n\nInsurance companies and prescription manufacturers are killing us. I like my doctors well compensated, I could do without the random insurance company telling me it's in **their** best interest for me to risk disease progression.",
+          "timestamp": "2026-08-01T15:58:21+00:00",
+          "likes": 6,
+          "dislikes": 0,
+          "parent_comment_id": "p12be9j",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p13a5ne",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[deleted]",
+          "timestamp": "2026-08-01T16:04:47+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p13gdfb",
+          "author": "reddit_user_e6647d2d1b1a",
+          "author_karma": 0,
+          "content": "But, how do we solve the problem of not having that debt in the first place?",
+          "timestamp": "2026-08-01T16:34:35+00:00",
+          "likes": 7,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p14p4fb",
+              "author": "reddit_user_15185401b597",
+              "author_karma": 0,
+              "content": "*If only there were other countries the USA could find inspiration from.*",
+              "timestamp": "2026-08-01T20:10:53+00:00",
+              "likes": 6,
+              "dislikes": 0,
+              "parent_comment_id": "p13gdfb",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p13k6ru",
+          "author": "reddit_user_86ee4522c319",
+          "author_karma": 0,
+          "content": "Great but the real tragedy is that we need this in the first place.   \nNo one should be burdened with insane amounts of medical debt or go bankrupt. \n\nVote accordingly ",
+          "timestamp": "2026-08-01T16:52:55+00:00",
+          "likes": 28,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1avgg6",
+              "author": "reddit_user_dd65cac04b74",
+              "author_karma": 0,
+              "content": "votations were rigged. ",
+              "timestamp": "2026-08-02T18:35:45+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p13k6ru",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p13s2ly",
+          "author": "reddit_user_3f3ff481eae2",
+          "author_karma": 0,
+          "content": "Interesting. I've had this random thought before. If the debt is so cheap for debt collectors to buy, would a charity be able to buy a ton of it with relatively little money? Or buy your own debt for cheap and forgive it yourself? ",
+          "timestamp": "2026-08-01T17:30:27+00:00",
+          "likes": 4,
+          "dislikes": 0,
+          "parent_comment_id": "p124m8n",
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p147bhr",
+              "author": "reddit_user_a8abf21cfb2b",
+              "author_karma": 0,
+              "content": "That's exactly what this charity does",
+              "timestamp": "2026-08-01T18:43:23+00:00",
+              "likes": 17,
+              "dislikes": 0,
+              "parent_comment_id": "p13s2ly",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1483nd",
+                  "author": "reddit_user_3f3ff481eae2",
+                  "author_karma": 0,
+                  "content": "Nice",
+                  "timestamp": "2026-08-01T18:47:08+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p147bhr",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p13sfhr",
+          "author": "reddit_user_ab6ec2e9ca5c",
+          "author_karma": 0,
+          "content": "Wonderful.  But philanthropists need to pour money into a fund to get corrupt whores for the insurance and medical industries out of our government.",
+          "timestamp": "2026-08-01T17:32:09+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p13t5yd",
+          "author": "reddit_user_1997ba2da62e",
+          "author_karma": 0,
+          "content": "That shows you how much things actually cost vs what they're charging you. We live in hell.",
+          "timestamp": "2026-08-01T17:35:38+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p13vnhv",
+          "author": "reddit_user_d23fa149ae40",
+          "author_karma": 0,
+          "content": "so, they just spent it on stamps?",
+          "timestamp": "2026-08-01T17:47:27+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p13y396",
+          "author": "reddit_user_aa5dc9a208e0",
+          "author_karma": 0,
+          "content": "I just got diagnosed with lipedema and had to get leggings to help with it. They’re pretty normal leggings, but they have a nubby texture to stimulate lymph flow. They billed my insurance $1,011!",
+          "timestamp": "2026-08-01T17:59:03+00:00",
+          "likes": 3,
+          "dislikes": 0,
+          "parent_comment_id": "p125ju4",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p14223p",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-01T18:18:08+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p144xzh",
+          "author": "reddit_user_578f67531e63",
+          "author_karma": 0,
+          "content": "I will still choose to blame immigrants and the trans ",
+          "timestamp": "2026-08-01T18:31:59+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p125ju4",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p14m50v",
+          "author": "reddit_user_ec6e9597e263",
+          "author_karma": 0,
+          "content": "The care provider probably sold this debt to a collection agency for significantly more than that margin, but still a fraction of the billed amount. ",
+          "timestamp": "2026-08-01T19:55:55+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p125ju4",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p14neh0",
+          "author": "reddit_user_eccf2c6005d2",
+          "author_karma": 0,
+          "content": "\"Medical debt\" is such a horrible concept. Health should be a right, not a privilege.",
+          "timestamp": "2026-08-01T20:02:13+00:00",
+          "likes": 4,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p14q8ji",
+          "author": "reddit_user_7686fbd6b1d8",
+          "author_karma": 0,
+          "content": "do they also report to credit agencies the debt is paid and to erase any negative marks?   They need to do that step also.",
+          "timestamp": "2026-08-01T20:16:28+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p14x4u5",
+              "author": "reddit_user_ec60f884ef59",
+              "author_karma": 0,
+              "content": "the owner of the debt had to do that.\n\nan outside payer can't change credit reports ",
+              "timestamp": "2026-08-01T20:50:59+00:00",
+              "likes": 5,
+              "dislikes": 0,
+              "parent_comment_id": "p14q8ji",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p1gjgci",
+              "author": "reddit_user_eaf5750aaf7f",
+              "author_karma": 0,
+              "content": "Hey there, I work at Undue. I've heard from a lot of debt relief recipients that once Undue erased their debt, their credit score went back up.",
+              "timestamp": "2026-08-03T15:00:00+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p14q8ji",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p14zntz",
+          "author": "reddit_user_1cb51d4a20cf",
+          "author_karma": 0,
+          "content": "Insurance companies are low hanging fruit when it comes to blame but the whole system needs to burn.",
+          "timestamp": "2026-08-01T21:03:51+00:00",
+          "likes": 3,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p15igxt",
+          "author": "reddit_user_fd697b89ebd8",
+          "author_karma": 0,
+          "content": "Well there's this\n\nhttps://edfinancial.studentaid.gov/income-driven-repaymentinformation-center/ibr\n\nPeople pay their loans based on their income, and then whatever remains is forgiven in 20-25 years. ",
+          "timestamp": "2026-08-01T22:43:53+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1284xq",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p15roch",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-01T23:35:36+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p121u9r",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1613jl",
+          "author": "reddit_user_a3b32ea773ec",
+          "author_karma": 0,
+          "content": "Wouldn't Universal Health Care be even better? USA was the only country in the FIFA World Cup this summer out of all those countries without it. Just think about that.",
+          "timestamp": "2026-08-02T00:30:05+00:00",
+          "likes": 5,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p16pj8o",
+          "author": "reddit_user_5614235048f9",
+          "author_karma": 0,
+          "content": "I hate that the internet gives any idiot a forum to say dumb stuff\n\nYour care is more expensive because of others who didn't pay",
+          "timestamp": "2026-08-02T02:59:13+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p125ju4",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p16ya4n",
+          "author": "reddit_user_1a50e6178392",
+          "author_karma": 0,
+          "content": "I'm from the area and the river cities trader is absolute trash. It used to be kind of hippie local stories and highlighted music and entertainment in the area. Now they push anti-vax bullshit and are far right but jobs. This should NOT be getting the clicks it is getting.",
+          "timestamp": "2026-08-02T03:57:38+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p170grj",
+          "author": "reddit_user_8c9f21fa20c1",
+          "author_karma": 0,
+          "content": "Let me see if I've got this straight:\n\nRun up medical \"debt\".\n\nAllow medical \"debt\" to lapse and be sent to collections.\n\nCollections reaches out to individual stakeholders to collect \"debt\".\n\nMedical charity steps in to reduce \"debt\" to $150 per person.\n\nSo: how is universal healthcare NOT better?",
+          "timestamp": "2026-08-02T04:12:16+00:00",
+          "likes": 4,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p18zba1",
+          "author": "reddit_user_2565c0afedd4",
+          "author_karma": 0,
+          "content": "It's like a glass of water that doesn't remove the thirst.\n\nIf US citizens disagree with such system, they can always vote for a party who wants to change it. ",
+          "timestamp": "2026-08-02T13:13:11+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p19wvie",
+          "author": "reddit_user_4eaf3e683a81",
+          "author_karma": 0,
+          "content": "It saddens me that this kind of story gets treated as some kind of feel-good tale, when it's really a story about untold numbers of people sickening and/or dying because of corporate greed.",
+          "timestamp": "2026-08-02T16:00:20+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1avb1q",
+          "author": "reddit_user_dd65cac04b74",
+          "author_karma": 0,
+          "content": "how 200'000$ can whipe 30 Milions of debt ? ",
+          "timestamp": "2026-08-02T18:35:04+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1d9wec",
+              "author": "reddit_user_7b8df975cbea",
+              "author_karma": 0,
+              "content": "Welcome to the insurance scam.",
+              "timestamp": "2026-08-03T01:57:38+00:00",
+              "likes": 2,
+              "dislikes": 0,
+              "parent_comment_id": "p1avb1q",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1hk74p",
+          "author": "reddit_user_631699b4cc1c",
+          "author_karma": 0,
+          "content": "“A a debt collector sold $30,000,000 of debt deemed to be uncollectible for $200,000.” ",
+          "timestamp": "2026-08-03T17:34:08+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run009_post01_seed046",
+      "post_slot": 1,
+      "seed_index": 46,
+      "source_raw_post_id": "1vcm41d",
+      "source_product_dir": "UpliftingNews",
+      "source_file": "https://www.reddit.com/r/UpliftingNews/comments/1vcm41d/natures_antivenom_by_unlocking_the_snakes_own/",
+      "post_type": "reddit_post",
+      "title": "Nature’s antivenom: By unlocking the snake’s own natural immunity, scientists are crafting a powerful new generation of antivenoms that could save millions of lives worldwide.",
+      "author": "reddit_user_bde1e90b951b",
+      "author_karma": 0,
+      "content": "Nature’s antivenom: By unlocking the snake’s own natural immunity, scientists are crafting a powerful new generation of antivenoms that could save millions of lives worldwide.\n\n***Snakebite affects at least 1.7 million people annually, causing approximately 100,000 deaths and 400,000 disabilities***\n\nSnakebite remains an undertreated tropical disease that affects over one million people annually, and new therapeutic approaches are needed. \n\nScientists developed an approach to viper antivenoms inspired by the observations that these snakes are typically resistant to the hemorrhagic and lethal effects of their own venoms and that this resistance can be transferred to experimental animals through snake sera. We show that a small set of serum metalloproteinase inhibitors from the \n\nWestern Diamondback rattlesnake are potent inhibitors of the lethality of its own venom, and able to block the lethality of other rattlesnakes and evolutionarily distant vipers. Recombinant natural antitoxins offer a promising approach for formulating more potent viper antivenoms.",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p124oyy",
+          "author": "reddit_user_e320faca37f4",
+          "author_karma": 0,
+          "content": "Reminder: this subreddit is meant to be a place free of excessive cynicism, negativity and bitterness. Toxic attitudes are not welcome here.  \n\nAll Negative comments will be removed and will possibly result in a ban.\n---\n\nImportant: If this post is hidden behind a paywall, please assign it the \"Paywall\" flair and include a comment with a relevant part of the article. \n\nPlease report this post if it is hidden behind a paywall and not flaired corrently. We suggest using \"Reader\" mode to bypass most paywalls.\n\n---\n\n*I am a bot, and this action was performed automatically. Please [contact the moderators of this subreddit](/message/compose/?to=/r/UpliftingNews) if you have any questions or concerns.*",
+          "timestamp": "2026-08-01T12:28:15+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p13w2nu",
+          "author": "reddit_user_da41aacee090",
+          "author_karma": 0,
+          "content": "Neat, but haven't we had antivenom for generations? We even know that we only need two types in North America, one for coral sakes, and one for all the rest. So if you get bit, it's mainly important to know if was a coral snake or not--just need to know if it had bright red bands. You will know if it was the nonvenomous lookalike pretty quickly, so no need for silly rhymes.",
+          "timestamp": "2026-08-01T17:49:27+00:00",
+          "likes": 4,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p15nwej",
+              "author": "reddit_user_dd49eb438bf0",
+              "author_karma": 0,
+              "content": "it says in the abstract that this should work for “evolutionarily distant” vipers. \n\nthe united states is not the region that needs this- largely as a result of global inequality, snakebite heavily impacts regions like subsaharan africa and the indian subcontinent. several antivenom manufacturers that in the past served subsaharan africa shuttered their doors when the antivenom was not profitable, and combined with local and regional issues in infrastructure and government, that has led to a shortage of antivenom in the area.\n\nas a result, african countries began to rely on other manufacturers. there is not really universal quality control for antivenom and efficacy ranges dramatically. some of the antivenom being imported was meant for indian snakes and was not effective on subsaharan species. if this method works even on distantly related species, then the concern of importing venom that is ineffective against local species could be lessened.\n\nsubsaharan africa has a lot of non-viper venomous snakes, mostly elapids but also the stiletto snakes and some rear-fanged colubrids, but the bitis genus has some heavy hitters and i think atheris snakes are responsible for some deaths too, so that’s a situation where antivenom that is useful across evolutionary lines would be useful. ",
+              "timestamp": "2026-08-01T23:14:13+00:00",
+              "likes": 3,
+              "dislikes": 0,
+              "parent_comment_id": "p13w2nu",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "post_id": "real_run009_post02_seed047",
+      "post_slot": 2,
+      "seed_index": 47,
+      "source_raw_post_id": "1vcp38x",
+      "source_product_dir": "UpliftingNews",
+      "source_file": "https://www.reddit.com/r/UpliftingNews/comments/1vcp38x/willie_nelson_says_ai_data_center_is_the_last/",
+      "post_type": "reddit_post",
+      "title": "Willie Nelson Says AI Data Center Is ‘the Last Thing’ His Texas Hometown Needs",
+      "author": "reddit_user_bde1e90b951b",
+      "author_karma": 0,
+      "content": "Willie Nelson Says AI Data Center Is ‘the Last Thing’ His Texas Hometown Needs",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p12sawp",
+          "author": "reddit_user_e320faca37f4",
+          "author_karma": 0,
+          "content": "Reminder: this subreddit is meant to be a place free of excessive cynicism, negativity and bitterness. Toxic attitudes are not welcome here.  \n\nAll Negative comments will be removed and will possibly result in a ban.\n---\n\nImportant: If this post is hidden behind a paywall, please assign it the \"Paywall\" flair and include a comment with a relevant part of the article. \n\nPlease report this post if it is hidden behind a paywall and not flaired corrently. We suggest using \"Reader\" mode to bypass most paywalls.\n\n---\n\n*I am a bot, and this action was performed automatically. Please [contact the moderators of this subreddit](/message/compose/?to=/r/UpliftingNews) if you have any questions or concerns.*",
+          "timestamp": "2026-08-01T14:37:47+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p12utxa",
+          "author": "reddit_user_1069a5089022",
+          "author_karma": 0,
+          "content": "If you want power bills higher than Willie Nelson, vote \"Yes\" on data centers.",
+          "timestamp": "2026-08-01T14:50:28+00:00",
+          "likes": 97,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p12wfmi",
+              "author": "reddit_user_b3692fde8105",
+              "author_karma": 0,
+              "content": "A. The world has been building data centers for 50 years.  From 2000-2020 the world spend $2.5-3T on data centers. \n\nB. From 2025-2028, the world will install less than 100GW of AI data centers. However from 2025-2028 the world will install 3TW of solar and over 1TW of battery storage. \n\nTexas itself has a massive pipeline of clean energy by 2029. As of June 2025, battery energy storage represents the largest component of ERCOT's generation interconnection queue. Among a total of 420,381 MW of proposed generation capacity, battery projects account for 177,929 MW. This surpasses solar, which comprises 161,677 MW; wind, with 41,414 MW; and natural gas, which accounts for 35,260 MW.",
+              "timestamp": "2026-08-01T14:58:24+00:00",
+              "likes": -94,
+              "dislikes": 0,
+              "parent_comment_id": "p12utxa",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p131a4b",
+                  "author": "reddit_user_84b39066cbe6",
+                  "author_karma": 0,
+                  "content": "Adding solar in other parts of the world doesn’t impact utility prices locally a whole lot.  Data centers have big local impacts.",
+                  "timestamp": "2026-08-01T15:22:09+00:00",
+                  "likes": 27,
+                  "dislikes": 0,
+                  "parent_comment_id": "p12wfmi",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p132sbq",
+                      "author": "reddit_user_cf1d398410ef",
+                      "author_karma": 0,
+                      "content": "You'll be happy to know that Texas is adding tons of solar capacity then",
+                      "timestamp": "2026-08-01T15:29:29+00:00",
+                      "likes": -14,
+                      "dislikes": 0,
+                      "parent_comment_id": "p131a4b",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "p135o7e",
+                          "author": "reddit_user_b3692fde8105",
+                          "author_karma": 0,
+                          "content": "It's literally what I wrote! ",
+                          "timestamp": "2026-08-01T15:43:22+00:00",
+                          "likes": -14,
+                          "dislikes": 0,
+                          "parent_comment_id": "p132sbq",
+                          "depth": 4,
+                          "replies": []
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "comment_id": "p131ofg",
+                  "author": "reddit_user_4cb1be2fd0b9",
+                  "author_karma": 0,
+                  "content": "Are the local grids sufficient? Will local energy bills be un-influenced?",
+                  "timestamp": "2026-08-01T15:24:06+00:00",
+                  "likes": 44,
+                  "dislikes": 0,
+                  "parent_comment_id": "p12wfmi",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p136o4e",
+                      "author": "reddit_user_b3692fde8105",
+                      "author_karma": 0,
+                      "content": "If you want cheaper energy bills the solution isn't less demand. The solution is more supply.  Every time.  It's the same NIMBY arguments the Republicans make saying housing prices will go down if with get rid of all the immigrants.  And you see actual places where instead they build massive amounts of housing supply (Austin, Minneapolis) and prices are declining.  \n\nThe politicians who are saying stop build data centers are addressing the demand side and really should be addressing the supply side. ",
+                      "timestamp": "2026-08-01T15:48:07+00:00",
+                      "likes": -59,
+                      "dislikes": 0,
+                      "parent_comment_id": "p131ofg",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "p136yts",
+                          "author": "reddit_user_4cb1be2fd0b9",
+                          "author_karma": 0,
+                          "content": "All true, but rather not the answer to my question.",
+                          "timestamp": "2026-08-01T15:49:33+00:00",
+                          "likes": 30,
+                          "dislikes": 0,
+                          "parent_comment_id": "p136o4e",
+                          "depth": 4,
+                          "replies": []
+                        },
+                        {
+                          "comment_id": "p16uet8",
+                          "author": "reddit_user_7685b3f95d2e",
+                          "author_karma": 0,
+                          "content": "Let’s build a data center in this guys backyard. ",
+                          "timestamp": "2026-08-02T03:31:45+00:00",
+                          "likes": 0,
+                          "dislikes": 0,
+                          "parent_comment_id": "p136o4e",
+                          "depth": 4,
+                          "replies": [
+                            {
+                              "comment_id": "p1a01e3",
+                              "author": "reddit_user_195f47492ddc",
+                              "author_karma": 0,
+                              "content": "He's a data center troll. ",
+                              "timestamp": "2026-08-02T16:14:41+00:00",
+                              "likes": 1,
+                              "dislikes": 0,
+                              "parent_comment_id": "p16uet8",
+                              "depth": 5,
+                              "replies": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "comment_id": "p13ybvu",
+                  "author": "reddit_user_e671c0d12648",
+                  "author_karma": 0,
+                  "content": "Speaking as someone fighting a data center in my local community, I don't give a crap about the numbers you've spouted. If the data center companies don't stop trying to place these next to residences (or in my town's situation, right next to a low income retirement community!), then they're never going to be accepted by the public. There's plenty of other places to put these damn things - the problem is that the companies want to piggyback off of local utilities and don't give a shit about how it affects the residents. They have the money, they should build the necessary infrastructure themselves AWAY from where people live. That's the real argument about data centers and communities - if they built them elsewhere, people wouldn't give a crap.",
+                  "timestamp": "2026-08-01T18:00:12+00:00",
+                  "likes": 20,
+                  "dislikes": 0,
+                  "parent_comment_id": "p12wfmi",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1403hg",
+                      "author": "reddit_user_b3692fde8105",
+                      "author_karma": 0,
+                      "content": "That's nieve at best.  There are already 4709 data centers in 50 states in USA (America). They have been out there for the past 50 years. \n\nhttps://www.datacentermap.com/usa/",
+                      "timestamp": "2026-08-01T18:08:42+00:00",
+                      "likes": -20,
+                      "dislikes": 0,
+                      "parent_comment_id": "p13ybvu",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "p14ld24",
+                          "author": "reddit_user_e671c0d12648",
+                          "author_karma": 0,
+                          "content": "And you're being obtuse. Nobody gives a shit about the small scale data centers. It's the hyperscale ones used for data mining and AI that people are up in arms about - there's about 450-500 of those that exist, under construction, or planned. That's what my community is fighting against.\n\nSo fucking sick of shills like you who try to obscure the discussion and sit here and see defend these shitty companies ruining rural small towns with their data center bullshit. As is everybody else, judging by your downvotes.",
+                          "timestamp": "2026-08-01T19:52:02+00:00",
+                          "likes": 20,
+                          "dislikes": 0,
+                          "parent_comment_id": "p1403hg",
+                          "depth": 4,
+                          "replies": [
+                            {
+                              "comment_id": "p16chz9",
+                              "author": "reddit_user_b3692fde8105",
+                              "author_karma": 0,
+                              "content": "You are the one being obtuse. There are currently 57GW of data centers.  I'm not a shill. I'm for lower energy prices for all people. I'm trying to be realistic on how to get there. The supply side is the equation.  I'm a yellow dog Democrat.  If you don't like my answer bury your head in the sand and don't try to find an actual solution. But you don't get to complain when prices keep going higher.  Because it's a supply demand issue and you need massively more supply. Even without data centers, climate change is increasing the need for electricity.",
+                              "timestamp": "2026-08-02T01:38:01+00:00",
+                              "likes": -1,
+                              "dislikes": 0,
+                              "parent_comment_id": "p14ld24",
+                              "depth": 5,
+                              "replies": [
+                                {
+                                  "comment_id": "p1a08ze",
+                                  "author": "reddit_user_195f47492ddc",
+                                  "author_karma": 0,
+                                  "content": "\"I'm not a shill\", says the shill.",
+                                  "timestamp": "2026-08-02T16:15:39+00:00",
+                                  "likes": 2,
+                                  "dislikes": 0,
+                                  "parent_comment_id": "p16chz9",
+                                  "depth": 6,
+                                  "replies": []
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "comment_id": "p18i5eu",
+                          "author": "reddit_user_76588efa1f89",
+                          "author_karma": 0,
+                          "content": "Bad bot.",
+                          "timestamp": "2026-08-02T11:23:11+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "p1403hg",
+                          "depth": 4,
+                          "replies": [
+                            {
+                              "comment_id": "p18ih9k",
+                              "author": "reddit_user_b3692fde8105",
+                              "author_karma": 0,
+                              "content": "It's a 12 year old account.... ",
+                              "timestamp": "2026-08-02T11:25:37+00:00",
+                              "likes": 1,
+                              "dislikes": 0,
+                              "parent_comment_id": "p18i5eu",
+                              "depth": 5,
+                              "replies": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "comment_id": "p17a9sk",
+                  "author": "[deleted]",
+                  "author_karma": 0,
+                  "content": "[removed]",
+                  "timestamp": "2026-08-02T05:23:46+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p12wfmi",
+                  "depth": 2,
+                  "replies": []
+                },
+                {
+                  "comment_id": "p18yjyk",
+                  "author": "reddit_user_190d7e29a5c9",
+                  "author_karma": 0,
+                  "content": "What really makes me believe this is the lack of sources. ",
+                  "timestamp": "2026-08-02T13:08:54+00:00",
+                  "likes": 2,
+                  "dislikes": 0,
+                  "parent_comment_id": "p12wfmi",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p193n43",
+                      "author": "reddit_user_b3692fde8105",
+                      "author_karma": 0,
+                      "content": "If I list the sources will you change you mind? ",
+                      "timestamp": "2026-08-02T13:37:03+00:00",
+                      "likes": 0,
+                      "dislikes": 0,
+                      "parent_comment_id": "p18yjyk",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                },
+                {
+                  "comment_id": "p19ztbk",
+                  "author": "reddit_user_195f47492ddc",
+                  "author_karma": 0,
+                  "content": "This guy is a data center propagandist who posts this shit everywhere.",
+                  "timestamp": "2026-08-02T16:13:39+00:00",
+                  "likes": 2,
+                  "dislikes": 0,
+                  "parent_comment_id": "p12wfmi",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p1318dv",
+          "author": "reddit_user_1e0661669c6d",
+          "author_karma": 0,
+          "content": "What America really needs, according to CAL Ranch, is more CAL Ranch stores...",
+          "timestamp": "2026-08-01T15:21:55+00:00",
+          "likes": 0,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p13m2d9",
+          "author": "reddit_user_b4c0429aeb60",
+          "author_karma": 0,
+          "content": "Data centers are the last thing anyone needs.",
+          "timestamp": "2026-08-01T17:01:52+00:00",
+          "likes": 58,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p13t64u",
+          "author": "reddit_user_9110fdaec2c9",
+          "author_karma": 0,
+          "content": "I would imagine Willie’s other concern is with the hemp based thc ban in Texas these days.\n\nHe should hold the biggest pro-weed free concert in the state, declare “smoke ‘em if you got ‘em” and then laugh at the frivolity of it all. ",
+          "timestamp": "2026-08-01T17:35:39+00:00",
+          "likes": 11,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p190viw",
+              "author": "reddit_user_58b3d56c9c80",
+              "author_karma": 0,
+              "content": "Has he said alot about it?",
+              "timestamp": "2026-08-02T13:21:54+00:00",
+              "likes": 0,
+              "dislikes": 0,
+              "parent_comment_id": "p13t64u",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p142onx",
+          "author": "reddit_user_fd240367e1fa",
+          "author_karma": 0,
+          "content": " Nothing uplifting about Ludditism.",
+          "timestamp": "2026-08-01T18:21:09+00:00",
+          "likes": -20,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p148u2f",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-01T18:50:38+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p159bgu",
+          "author": "reddit_user_a30b5ed69bd4",
+          "author_karma": 0,
+          "content": "They'll just build it anyway. You can't fight these things. ",
+          "timestamp": "2026-08-01T21:54:00+00:00",
+          "likes": -4,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p15fcxd",
+          "author": "reddit_user_b9374903eb5a",
+          "author_karma": 0,
+          "content": "I mean....was there a doubt that's how he'd feel.",
+          "timestamp": "2026-08-01T22:26:45+00:00",
+          "likes": 3,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p16agh8",
+          "author": "reddit_user_c8f9836daf07",
+          "author_karma": 0,
+          "content": "Greedy ceos and corrupt city officials say otherwise",
+          "timestamp": "2026-08-02T01:25:42+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p18njka",
+          "author": "reddit_user_f7dedbd239ea",
+          "author_karma": 0,
+          "content": "Hell yeah, glad to see that 93 year old Willie is keeping up with the latest technology.  \n\nI do wonder if he worries at all about ceding the RSI race to China?",
+          "timestamp": "2026-08-02T12:01:26+00:00",
+          "likes": 0,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p19w8k9",
+          "author": "reddit_user_272eaefa5e0a",
+          "author_karma": 0,
+          "content": "One thing's for certain - Willie Nelson always smokes killer weed",
+          "timestamp": "2026-08-02T15:57:27+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1clbvr",
+          "author": "reddit_user_f93bb298abd4",
+          "author_karma": 0,
+          "content": "I genuinely do not give a single fuck what Willie Nelson thinks about anything.",
+          "timestamp": "2026-08-02T23:38:40+00:00",
+          "likes": 0,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1dm1fr",
+          "author": "reddit_user_5b105aec9407",
+          "author_karma": 0,
+          "content": "No one needs AI data centers. ",
+          "timestamp": "2026-08-03T03:11:58+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run009_post03_seed048",
+      "post_slot": 3,
+      "seed_index": 48,
+      "source_raw_post_id": "1vcqkey",
+      "source_product_dir": "TrueReddit",
+      "source_file": "https://www.reddit.com/r/TrueReddit/comments/1vcqkey/the_secret_thrill_of_paying_to_open_someone_elses/",
+      "post_type": "Arts, Entertainment + Misc",
+      "title": "The Secret Thrill of Paying to Open Someone Else’s Unwanted Package",
+      "author": "reddit_user_bde1e90b951b",
+      "author_karma": 0,
+      "content": "The Secret Thrill of Paying to Open Someone Else’s Unwanted Package",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p134qh9",
+          "author": "reddit_user_e320faca37f4",
+          "author_karma": 0,
+          "content": "\nThank you for posting on r/TrueReddit. Your post will become public once you add a submission statement, which is a comment that explains why you think an article is insightful, rather than simply quoting from it. If you're thinking about leaving a comment, please remember to read the entire article first, and say something meaningful.\n\nIf you post a paywalled article intentionally, you will be permanently banned unless you provide a non-paywall link in your submission statement, such as [archive.ph](https://archive.ph/).\n\n*I am a bot, and this action was performed automatically. Please [contact the moderators of this subreddit](/message/compose/?to=/r/TrueReddit) if you have any questions or concerns.*",
+          "timestamp": "2026-08-01T15:38:54+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p134rr8",
+          "author": "reddit_user_bde030d79aa1",
+          "author_karma": 0,
+          "content": "*Stores selling returned mystery packages across Europe combine the excitement of blind-box collectibles with a growing interest in sustainability.*  \n  \n*Hannah Docter-Loeb for Bloomberg News*  \n  \nThe Mystery Parcels store at Amsterdam’s Waterlooplein flea market has the air of a circus attraction. Sitting among rows of unopened packages, founder Jules Kenbeek — wearing a literal ringmaster’s jacket — beckons to a group of tourists, encouraging them to take their pick.  \n  \n“I’m addicted to this kind of stuff,” says Figo van der Kraan, a student in his 20s, as he’s guided to a ceremonial red couch to unbox two mystery parcels. He picked them after carefully handling several others, trying to gauge the shape and heft of the items inside. Visiting with friends from Hannover, Germany, van der Kraan was intrigued when he spotted the store. He’d seen similar mystery-box offers online, but he says experiencing one in person was a novelty he couldn’t resist. “I’m always attracted to things like this because it’s a gamble and I like the dopamine rush.”  \n  \nThe group gathers around for the reveal. “It seems like a toolbox,” says van der Kraan, who spent €15 ($17) on the first parcel. He’s close: It’s a pipe expander set that usually retails for €70. “Maybe I need it one day in my life,” he remarks. His second package, bought for €20 as it was slightly heavier, is a bit more useful but comes with a sting in the tail: a mattress topper worth €50, which he will have to lug around the whole day.  \n  \nIn recent months, stores selling mystery packages have sprung up across the Netherlands. It has become an international trend too: King Colis, a French company, has been running pop-up stores in the UK, Ireland, Spain and the Czech Republic, fueling a pan-European buzz through promotion on social media platforms. The company did not respond to a request for more detail about how it operates.  \n  \n[Read the full story here.](https://www.bloomberg.com/news/features/2026-07-31/why-amsterdam-s-mystery-parcel-shops-are-spreading-across-europe?accessToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzb3VyY2UiOiJTdWJzY3JpYmVyR2lmdGVkQXJ0aWNsZSIsImlhdCI6MTc4NTQ5MzEyNywiZXhwIjoxNzg2MDk3OTI3LCJhcnRpY2xlSWQiOiJUSjEyNDJLR1pBSlYwMCIsImJjb25uZWN0SWQiOiJEMzU0MUJFQjhBQUY0QkUwQkFBOUQzNkI3QjlCRjI4OCJ9.Z3GAT69o0k_IGiIMze1F7j3WmtA4mBPdArY6Trk0pao)",
+          "timestamp": "2026-08-01T15:39:04+00:00",
+          "likes": 7,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p13sxv6",
+          "author": "reddit_user_5a503790073e",
+          "author_karma": 0,
+          "content": "There is zero chance those vendors did not open each package to see whether it contained anything of value before repackaging it for sale.",
+          "timestamp": "2026-08-01T17:34:34+00:00",
+          "likes": 59,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p13vbtn",
+              "author": "reddit_user_37a21f05e703",
+              "author_karma": 0,
+              "content": "My understanding is because of privacy laws (your personal information could be on a piece of paper inside the package) that all packages must be opened before being re-sold, so for sure all the actually valuable finds have been skimmed off before all the junk is put up for sale.",
+              "timestamp": "2026-08-01T17:45:54+00:00",
+              "likes": 39,
+              "dislikes": 0,
+              "parent_comment_id": "p13sxv6",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p141ewm",
+                  "author": "reddit_user_772a054442f9",
+                  "author_karma": 0,
+                  "content": "There is always the risk that there's something illegal/dangerous inside- imagine if you open up, then get drugs, arms, parts of endangered animals or rotten/expired cheese. \n\nI get the thrill- my supermarket strated to make blind boxes and I had to watch some unboxing videos to convince myself there's nothing of value there. ",
+                  "timestamp": "2026-08-01T18:15:01+00:00",
+                  "likes": 7,
+                  "dislikes": 0,
+                  "parent_comment_id": "p13vbtn",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p141eym",
+                      "author": "reddit_user_e320faca37f4",
+                      "author_karma": 0,
+                      "content": "The goal of TrueReddit is to have intelligent, insightful discussions. Users are required to read an entire article before submitting a comment. Your comment requires more substance to be permitted.\n\nDo not repost your comment with random letters to make it longer, or you will face a 28-day ban from TrueReddit for intentionally evading moderation filters.\n\n*I am a bot, and this action was performed automatically. Please [contact the moderators of this subreddit](/message/compose/?to=/r/TrueReddit) if you have any questions or concerns.*",
+                      "timestamp": "2026-08-01T18:15:01+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p141ewm",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p14ub28",
+          "author": "reddit_user_00fbdc944669",
+          "author_karma": 0,
+          "content": "It's all useless junk ...the vendors have already taken the good stuff ",
+          "timestamp": "2026-08-01T20:36:47+00:00",
+          "likes": 4,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p14ub4o",
+              "author": "reddit_user_e320faca37f4",
+              "author_karma": 0,
+              "content": "The goal of TrueReddit is to have intelligent, insightful discussions. Users are required to read an entire article before submitting a comment. Your comment requires more substance to be permitted.\n\nDo not repost your comment with random letters to make it longer, or you will face a 28-day ban from TrueReddit for intentionally evading moderation filters.\n\n*I am a bot, and this action was performed automatically. Please [contact the moderators of this subreddit](/message/compose/?to=/r/TrueReddit) if you have any questions or concerns.*",
+              "timestamp": "2026-08-01T20:36:47+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p14ub28",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1518j3",
+          "author": "reddit_user_8a321f75114d",
+          "author_karma": 0,
+          "content": "\"One man's trash is another man's trash, so why not sell it to him using gambling psychology instead?\"\n\nI hate this timeline.",
+          "timestamp": "2026-08-01T21:11:56+00:00",
+          "likes": 18,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p16xm82",
+          "author": "reddit_user_9b09580b5ff9",
+          "author_karma": 0,
+          "content": "> Mystery parcels **may tempt shoppers by tempting them** with an element of gambling, but there’s one key difference, says Caroline Goukens, a professor of consumer behavior at Maastricht University. “Consumers still walk away with a product, regardless of whether the contents exceed their expectations,” she says. “The purchase therefore combines uncertainty with guaranteed consumption value.”\n\n[emphasis mine]\n\nYup, 100% written by a human...",
+          "timestamp": "2026-08-02T03:53:10+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1703w5",
+              "author": "reddit_user_df2c92d75e3c",
+              "author_karma": 0,
+              "content": "Having brain-farted into writing similar redundancies myself I do find that to be reassuring a human was asleep behind the wheel. Clanker grammar would never.",
+              "timestamp": "2026-08-02T04:09:52+00:00",
+              "likes": 3,
+              "dislikes": 0,
+              "parent_comment_id": "p16xm82",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p1b8o33",
+              "author": "reddit_user_436b164ddecc",
+              "author_karma": 0,
+              "content": "This is why that article about Mamdani not banning snowball fights had to say \"frosty orbs\" in the headline.",
+              "timestamp": "2026-08-02T19:36:38+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p16xm82",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "post_id": "real_run009_post04_seed049",
+      "post_slot": 4,
+      "seed_index": 49,
+      "source_raw_post_id": "1vcqr7c",
+      "source_product_dir": "news",
+      "source_file": "https://www.reddit.com/r/news/comments/1vcqr7c/convicted_oakland_chinatown_attacker_charged_in/",
+      "post_type": "link",
+      "title": "Convicted Oakland Chinatown attacker charged in new assault spree targeting elderly women",
+      "author": "reddit_user_bde1e90b951b",
+      "author_karma": 0,
+      "content": "Convicted Oakland Chinatown attacker charged in new assault spree targeting elderly women",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p14jmam",
+          "author": "reddit_user_393c00ec60ae",
+          "author_karma": 0,
+          "content": "[The vast majority of hate crimes against Asian people are by white people.](https://cde.ucr.cjis.gov/LATEST/webapp/#/pages/explorer/crime/hate-crime) \n\nThis data is reported from thousands of law enforcement agencies throughout the country and then provided to the FBI. \n\nObviously this is not indicative of all white people or all white men, but I am so sick of every minority being judged by their worst actors while people judge white people by their best actors and write blatantly wrong things like this. ",
+          "timestamp": "2026-08-01T19:43:20+00:00",
+          "likes": -24,
+          "dislikes": 0,
+          "parent_comment_id": "p14fmev",
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p14m3zc",
+              "author": "reddit_user_6abc2f91cc0e",
+              "author_karma": 0,
+              "content": "From your source:\n\nOffender race:\n\nWhite: 923 \n\nBlack or African American: 598\n\nBlack Americans (13.5% of US population) clearly commit crimes at a higher rate against Asians than White Americans (72.3%) do.",
+              "timestamp": "2026-08-01T19:55:46+00:00",
+              "likes": 55,
+              "dislikes": 0,
+              "parent_comment_id": "p14jmam",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p14s97a",
+                  "author": "reddit_user_393c00ec60ae",
+                  "author_karma": 0,
+                  "content": "The claim was not “rate”\n\nThe claim was “the majority”\n\nWhat I said is correct. Black people have a higher incidence of crime ***in general*** so it is not particularly notable for them to appear more in a particular category. What you are describing is called a feature of statistics. They are also on average poorer, less educated, more policed, and over prosecuted.  \n\nIt’s like knowing that institutional investors have the most stock holdings and then being surprised that they have more holdings in a random small cap company. \n\nBlack people are also *the most likely to be hate crimed.* ",
+                  "timestamp": "2026-08-01T20:26:33+00:00",
+                  "likes": -41,
+                  "dislikes": 0,
+                  "parent_comment_id": "p14m3zc",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p14ycdc",
+                      "author": "reddit_user_6abc2f91cc0e",
+                      "author_karma": 0,
+                      "content": "The claim was \"the vast majority\" and that's not even close to correct, it's flat out wrong. White based hate crime rate against Asians isn't even at 50%. It isn't even \"the majority.\" It just more. \n\nNone of what you said in the second half of your comment is even relevant, much less correct. Black people having a \"higher incidence of crime in general\" has little bearing on the conversation at hand. Incidence rate among populations is not \"just a feature of statistics,\" it's literally how we talk about epidemiology and crime statistics. You also seem to not understand the difference between causation and correlation. ",
+                      "timestamp": "2026-08-01T20:57:04+00:00",
+                      "likes": 30,
+                      "dislikes": 0,
+                      "parent_comment_id": "p14s97a",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "comment_id": "p14myhn",
+              "author": "reddit_user_fcd1c3657327",
+              "author_karma": 0,
+              "content": "Correct me if I'm wrong but I was under the impression that those statistics included both nonviolent hate crimes like racial slurs with violent crimes, like beating the shit out of elderly ladies, and that if you only look at the violent subset, the numbers paint a different picture",
+              "timestamp": "2026-08-01T20:00:00+00:00",
+              "likes": 21,
+              "dislikes": 0,
+              "parent_comment_id": "p14jmam",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p14qmuf",
+                  "author": "reddit_user_393c00ec60ae",
+                  "author_karma": 0,
+                  "content": "They define it here [on their site.](https://www.fbi.gov/how-we-can-help-you/more-fbi-services-and-information/ucr/hate-crime)  \n\nAnd if you cannot determine a motivation for it, that would just be considered crime. If more crime is perpetuated by a demographic to begin with, it will stand to reason that they’d be over expressed in crime against every demographic. That doesn’t make their expression in a particular demographic more notable. That’s a feature of statistics, not an innate feature of a demographic. ",
+                  "timestamp": "2026-08-01T20:18:27+00:00",
+                  "likes": -30,
+                  "dislikes": 0,
+                  "parent_comment_id": "p14myhn",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p14rfry",
+                      "author": "reddit_user_fcd1c3657327",
+                      "author_karma": 0,
+                      "content": "Did you even read your own link? It does not address my point and may even strengthen it, since calling someone a racial slur is by definition racially motivated. Meanwhile the link makes no distinguish between violent and nonviolent crimes.",
+                      "timestamp": "2026-08-01T20:22:28+00:00",
+                      "likes": 20,
+                      "dislikes": 0,
+                      "parent_comment_id": "p14qmuf",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "p14t6g1",
+                          "author": "reddit_user_393c00ec60ae",
+                          "author_karma": 0,
+                          "content": "I did, I don’t think you read the link. \n\nIt explicitly says “Hate itself is not a crime”\n\n“The most common hate crimes reported to the data collection are destruction/damage/vandalism, intimidation, and simple assault.”\n\nSimply calling someone a slur doesn’t constitute a crime. Yelling a slur and then committing violence or threatening violence would be a hate crime. You can name call someone or disseminate flyers about their inferiority and it is still not a crime, nor is it a hate crime. \n\nAnd even if that weren’t the case - you wouldn’t have any corpus of data to demonstrate otherwise, right. This is directly from the FBI sourced directly from nearly every law agency in the country. The claims of “well if you source it for just violence” do not exist beyond this data collection. ",
+                          "timestamp": "2026-08-01T20:31:07+00:00",
+                          "likes": -16,
+                          "dislikes": 0,
+                          "parent_comment_id": "p14rfry",
+                          "depth": 4,
+                          "replies": [
+                            {
+                              "comment_id": "p14ugo7",
+                              "author": "[deleted]",
+                              "author_karma": 0,
+                              "content": "[removed]",
+                              "timestamp": "2026-08-01T20:37:34+00:00",
+                              "likes": 1,
+                              "dislikes": 0,
+                              "parent_comment_id": "p14t6g1",
+                              "depth": 5,
+                              "replies": []
+                            },
+                            {
+                              "comment_id": "p14uk1q",
+                              "author": "[deleted]",
+                              "author_karma": 0,
+                              "content": "[removed]",
+                              "timestamp": "2026-08-01T20:38:02+00:00",
+                              "likes": 1,
+                              "dislikes": 0,
+                              "parent_comment_id": "p14t6g1",
+                              "depth": 5,
+                              "replies": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "comment_id": "p1538ne",
+              "author": "[deleted]",
+              "author_karma": 0,
+              "content": "[removed]",
+              "timestamp": "2026-08-01T21:22:11+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p14jmam",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p14jthp",
+          "author": "reddit_user_4c4ce9538516",
+          "author_karma": 0,
+          "content": "This is just ignorant nonsense. Restorative justice isn't the problem here. ",
+          "timestamp": "2026-08-01T19:44:20+00:00",
+          "likes": -25,
+          "dislikes": 0,
+          "parent_comment_id": "p14e2uq",
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p14k3jp",
+              "author": "reddit_user_a4786cd6574c",
+              "author_karma": 0,
+              "content": "What part of it is ignorance?",
+              "timestamp": "2026-08-01T19:45:44+00:00",
+              "likes": 15,
+              "dislikes": 0,
+              "parent_comment_id": "p14jthp",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p15j9rt",
+                  "author": "reddit_user_1a4ee610f676",
+                  "author_karma": 0,
+                  "content": "Because prisons in the US don’t operate to reform prisoners?",
+                  "timestamp": "2026-08-01T22:48:20+00:00",
+                  "likes": 0,
+                  "dislikes": 0,
+                  "parent_comment_id": "p14k3jp",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p15jiwo",
+                      "author": "reddit_user_a4786cd6574c",
+                      "author_karma": 0,
+                      "content": "Where did I say that they do? ",
+                      "timestamp": "2026-08-01T22:49:42+00:00",
+                      "likes": 7,
+                      "dislikes": 0,
+                      "parent_comment_id": "p15j9rt",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "p15ls5j",
+                          "author": "reddit_user_1a4ee610f676",
+                          "author_karma": 0,
+                          "content": "When you said restorative justice had failed. There was none.",
+                          "timestamp": "2026-08-01T23:02:14+00:00",
+                          "likes": 2,
+                          "dislikes": 0,
+                          "parent_comment_id": "p15jiwo",
+                          "depth": 4,
+                          "replies": [
+                            {
+                              "comment_id": "p15lv85",
+                              "author": "reddit_user_a4786cd6574c",
+                              "author_karma": 0,
+                              "content": "I didn't say restorative justice failed. ",
+                              "timestamp": "2026-08-01T23:02:42+00:00",
+                              "likes": 2,
+                              "dislikes": 0,
+                              "parent_comment_id": "p15ls5j",
+                              "depth": 5,
+                              "replies": [
+                                {
+                                  "comment_id": "p15mc4z",
+                                  "author": "reddit_user_1a4ee610f676",
+                                  "author_karma": 0,
+                                  "content": "> Restorative justice has failed, \n\nYes you did. The above quote is from you.",
+                                  "timestamp": "2026-08-01T23:05:21+00:00",
+                                  "likes": 1,
+                                  "dislikes": 0,
+                                  "parent_comment_id": "p15lv85",
+                                  "depth": 6,
+                                  "replies": []
+                                },
+                                {
+                                  "comment_id": "p15mcr4",
+                                  "author": "reddit_user_1a4ee610f676",
+                                  "author_karma": 0,
+                                  "content": "> Restorative justice has failed, \n\nYes you did. The above quote is from you.",
+                                  "timestamp": "2026-08-01T23:05:27+00:00",
+                                  "likes": 1,
+                                  "dislikes": 0,
+                                  "parent_comment_id": "p15lv85",
+                                  "depth": 6,
+                                  "replies": [
+                                    {
+                                      "comment_id": "p15t7u4",
+                                      "author": "reddit_user_a4786cd6574c",
+                                      "author_karma": 0,
+                                      "content": "That was a different user. You need to pay attention, buddy. ",
+                                      "timestamp": "2026-08-01T23:44:21+00:00",
+                                      "likes": 1,
+                                      "dislikes": 0,
+                                      "parent_comment_id": "p15mcr4",
+                                      "depth": 7,
+                                      "replies": [
+                                        {
+                                          "comment_id": "p15vm1c",
+                                          "author": "reddit_user_1a4ee610f676",
+                                          "author_karma": 0,
+                                          "content": "True. \n\nWe agree on this issue. ",
+                                          "timestamp": "2026-08-01T23:58:09+00:00",
+                                          "likes": 1,
+                                          "dislikes": 0,
+                                          "parent_comment_id": "p15t7u4",
+                                          "depth": 8,
+                                          "replies": []
+                                        },
+                                        {
+                                          "comment_id": "p15vmpx",
+                                          "author": "reddit_user_1a4ee610f676",
+                                          "author_karma": 0,
+                                          "content": "True. \n\nWe agree on this issue.",
+                                          "timestamp": "2026-08-01T23:58:16+00:00",
+                                          "likes": 3,
+                                          "dislikes": 0,
+                                          "parent_comment_id": "p15t7u4",
+                                          "depth": 8,
+                                          "replies": [
+                                            {
+                                              "comment_id": "p15w9ok",
+                                              "author": "reddit_user_a4786cd6574c",
+                                              "author_karma": 0,
+                                              "content": "What a nice thing to realize ",
+                                              "timestamp": "2026-08-02T00:01:56+00:00",
+                                              "likes": 1,
+                                              "dislikes": 0,
+                                              "parent_comment_id": "p15vmpx",
+                                              "depth": 9,
+                                              "replies": []
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "comment_id": "p15posx",
+                      "author": "reddit_user_1be7b4de5d74",
+                      "author_karma": 0,
+                      "content": "Just do what China does.  ",
+                      "timestamp": "2026-08-01T23:24:18+00:00",
+                      "likes": 3,
+                      "dislikes": 0,
+                      "parent_comment_id": "p15j9rt",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p14kdzv",
+          "author": "reddit_user_12c1e9666e50",
+          "author_karma": 0,
+          "content": "They need resources so people can be educated, mentally well, and ready to rejoin society.\n\nIt's insane that people aren't given bus passes when released.",
+          "timestamp": "2026-08-01T19:47:11+00:00",
+          "likes": -1,
+          "dislikes": 0,
+          "parent_comment_id": "p14g0i9",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p14kmqd",
+          "author": "reddit_user_12c1e9666e50",
+          "author_karma": 0,
+          "content": "Yup. Ironically, they are networking conventions complete with criminal training and personal development to accel in future criminal enterprises.\n\n",
+          "timestamp": "2026-08-01T19:48:24+00:00",
+          "likes": 5,
+          "dislikes": 0,
+          "parent_comment_id": "p14jlaj",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p14kpdl",
+          "author": "reddit_user_e3530d66ac40",
+          "author_karma": 0,
+          "content": "100%, it's their job to make sure every single possibility is explored. When cases like this go against their morals they're able to justify it by saying they wanted to do as best as they could to ensure this person couldn't get released on appeal in the future. Yeah it can be shitty sometimes to see certain types of people get defended that well, but every single person is guaranteed the right to a fair trial.",
+          "timestamp": "2026-08-01T19:48:46+00:00",
+          "likes": 17,
+          "dislikes": 0,
+          "parent_comment_id": "p13w74v",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p14liq9",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-01T19:52:49+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p14lini",
+          "author": "reddit_user_15d6278eb904",
+          "author_karma": 0,
+          "content": " Why is he walking free ??????? ",
+          "timestamp": "2026-08-01T19:52:49+00:00",
+          "likes": 286,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p14rxrp",
+              "author": "[deleted]",
+              "author_karma": 0,
+              "content": "[removed]",
+              "timestamp": "2026-08-01T20:24:58+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p14lini",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p14s8ad",
+              "author": "[deleted]",
+              "author_karma": 0,
+              "content": "[removed]",
+              "timestamp": "2026-08-01T20:26:25+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p14lini",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p15c58d",
+              "author": "[deleted]",
+              "author_karma": 0,
+              "content": "[removed]",
+              "timestamp": "2026-08-01T22:09:17+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p14lini",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p15k50b",
+              "author": "reddit_user_5d2265730fe0",
+              "author_karma": 0,
+              "content": "Eh, you know why",
+              "timestamp": "2026-08-01T22:53:04+00:00",
+              "likes": 147,
+              "dislikes": 0,
+              "parent_comment_id": "p14lini",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p163dyt",
+                  "author": "[deleted]",
+                  "author_karma": 0,
+                  "content": "[removed]",
+                  "timestamp": "2026-08-02T00:43:41+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p15k50b",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p14ljmx",
+          "author": "reddit_user_14d70656d611",
+          "author_karma": 0,
+          "content": "[ Removed by Reddit ]",
+          "timestamp": "2026-08-01T19:52:57+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1448an",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p14mjds",
+          "author": "reddit_user_111c31b7d57f",
+          "author_karma": 0,
+          "content": "I don't make the laws. They believe that they have the chance to reform so no prison time for them so they are set loose to terrorize the community. ",
+          "timestamp": "2026-08-01T19:57:53+00:00",
+          "likes": -14,
+          "dislikes": 0,
+          "parent_comment_id": "p14bio2",
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p14z1w2",
+              "author": "reddit_user_cba33310916d",
+              "author_karma": 0,
+              "content": "I'm saying that's not reformative justice. That's the catch and release BS system that lazy politicians make. Reformative justice takes a lot more effort than what public officials in the U.S. are willing to puut in. ",
+              "timestamp": "2026-08-01T21:00:42+00:00",
+              "likes": 24,
+              "dislikes": 0,
+              "parent_comment_id": "p14mjds",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p14nv47",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-01T20:04:34+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p14rpep",
+          "author": "reddit_user_a5098f836dfd",
+          "author_karma": 0,
+          "content": "Remember Stop Asian Hate stopped being a thing when everyone realized who was committing the assaults ",
+          "timestamp": "2026-08-01T20:23:48+00:00",
+          "likes": 351,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p14znc3",
+              "author": "reddit_user_3f295ebcee12",
+              "author_karma": 0,
+              "content": "Yeah, white folk. The vast majority of hate crimes and racism against Asian Americans was committed by white folk, SPECIFICALLY young white men. Go figure.",
+              "timestamp": "2026-08-01T21:03:47+00:00",
+              "likes": -240,
+              "dislikes": 0,
+              "parent_comment_id": "p14rpep",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1523o5",
+                  "author": "reddit_user_0a1007a3b88c",
+                  "author_karma": 0,
+                  "content": "Really? Because the FBI says otherwise   \nhttps://cde.ucr.cjis.gov/LATEST/webapp/#/pages/explorer/crime/hate-crime",
+                  "timestamp": "2026-08-01T21:16:22+00:00",
+                  "likes": 200,
+                  "dislikes": 0,
+                  "parent_comment_id": "p14znc3",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p15i2oi",
+                      "author": "reddit_user_1a4ee610f676",
+                      "author_karma": 0,
+                      "content": "Really? Because the data doesn’t say that at all: https://www.nbcnews.com/news/asian-america/viral-images-show-people-color-anti-asian-perpetrators-misses-big-n1270821",
+                      "timestamp": "2026-08-01T22:41:42+00:00",
+                      "likes": -126,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1523o5",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "p15kyg3",
+                          "author": "reddit_user_f93f53e61720",
+                          "author_karma": 0,
+                          "content": "And if you look into the cited data, it says\n\n>The majority of these incidents consist of “verbal harassment” (65%) and “shunning” (18%)\n\nAnd when you filter by only **violent** hate crimes, you get:\n\n>[Official law enforcement statistics](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7790522/) compiled by Dr. Yan Zhang and colleagues in a study published in 2021 show that compared to the proportion of offenders in anti-Black and anti-Latinx hate crimes the proportion of offenders in **violent** anti-Asian hate crimes are more likely to be **non-white**",
+                          "timestamp": "2026-08-01T22:57:39+00:00",
+                          "likes": 142,
+                          "dislikes": 0,
+                          "parent_comment_id": "p15i2oi",
+                          "depth": 4,
+                          "replies": [
+                            {
+                              "comment_id": "p15nu8f",
+                              "author": "reddit_user_1a4ee610f676",
+                              "author_karma": 0,
+                              "content": "From the article I posted: \n\n“A misread of a frequently cited study from this year, published in the American Journal of Criminal Justice, likely contributed to the spread of erroneous narratives, Wong said. The study, which examined hate crime data from 1992 to 2014, found that compared to anti-Black and anti-Latino hate crimes, a higher proportion of perpetrators of anti-Asian hate crimes were people of color. Still, 75 percent of perpetrators were white.\n\nOther studies confirm the findings, Wong wrote. She pointed to separate research from the University of Michigan Virulent Hate Project, which examined media reports about anti-Asian incidents last year and found that upward of 75 percentof news stories identified perpetrators as male and white in instances of physical or verbal assault and harassment when the race of the perpetrator was confirmed. Wong said the numbers could even be an underestimate.\n\n\"This is really how crime is framed in the United States — it's framed as the source is Black,\" Wong said.“\n\nEven the PI of the article you quoted disagrees with you.",
+                              "timestamp": "2026-08-01T23:13:52+00:00",
+                              "likes": -69,
+                              "dislikes": 0,
+                              "parent_comment_id": "p15kyg3",
+                              "depth": 5,
+                              "replies": [
+                                {
+                                  "comment_id": "p15ptr9",
+                                  "author": "reddit_user_f93f53e61720",
+                                  "author_karma": 0,
+                                  "content": "And the NBC new article is being deliberately disingenuous hack by cherrypicking her words to conflate **all** hate crimes with specifically **violent** hate crimes, which she acknowledges in her own research.\n\n[https://docs.google.com/document/d/19llMUCDHX-hLKru-cnDCq0BirlpNgF07W3f-q0J0ko4](https://docs.google.com/document/d/19llMUCDHX-hLKru-cnDCq0BirlpNgF07W3f-q0J0ko4)\n\nWould you rather be called a slur or physically beaten up? Guess you think they're all the same?",
+                                  "timestamp": "2026-08-01T23:25:05+00:00",
+                                  "likes": 82,
+                                  "dislikes": 0,
+                                  "parent_comment_id": "p15nu8f",
+                                  "depth": 6,
+                                  "replies": []
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "comment_id": "p15m7wc",
+                          "author": "reddit_user_0a1007a3b88c",
+                          "author_karma": 0,
+                          "content": "The article you posted identified 16 attacks and associated 12 with white perpetrators. 16 is not an effective sample size. The FBI uses thousands of",
+                          "timestamp": "2026-08-01T23:04:42+00:00",
+                          "likes": 56,
+                          "dislikes": 0,
+                          "parent_comment_id": "p15i2oi",
+                          "depth": 4,
+                          "replies": [
+                            {
+                              "comment_id": "p15moav",
+                              "author": "reddit_user_1a4ee610f676",
+                              "author_karma": 0,
+                              "content": "Wow, where did you get that from? You’re wrong. She looked at several studies.",
+                              "timestamp": "2026-08-01T23:07:18+00:00",
+                              "likes": -35,
+                              "dislikes": 0,
+                              "parent_comment_id": "p15m7wc",
+                              "depth": 5,
+                              "replies": [
+                                {
+                                  "comment_id": "p15n83s",
+                                  "author": "reddit_user_0a1007a3b88c",
+                                  "author_karma": 0,
+                                  "content": "The google doc is linked in the second page of the article. I wish I could send screenshots in here, but she links the full chart in the Google doc. 16 total incidents",
+                                  "timestamp": "2026-08-01T23:10:25+00:00",
+                                  "likes": 42,
+                                  "dislikes": 0,
+                                  "parent_comment_id": "p15moav",
+                                  "depth": 6,
+                                  "replies": [
+                                    {
+                                      "comment_id": "p15nn7j",
+                                      "author": "reddit_user_1a4ee610f676",
+                                      "author_karma": 0,
+                                      "content": "You really should read the article I posted.",
+                                      "timestamp": "2026-08-01T23:12:48+00:00",
+                                      "likes": -7,
+                                      "dislikes": 0,
+                                      "parent_comment_id": "p15n83s",
+                                      "depth": 7,
+                                      "replies": [
+                                        {
+                                          "comment_id": "p15ns59",
+                                          "author": "reddit_user_0a1007a3b88c",
+                                          "author_karma": 0,
+                                          "content": "That’s the article I’m referring to? Have you read it?",
+                                          "timestamp": "2026-08-01T23:13:33+00:00",
+                                          "likes": 45,
+                                          "dislikes": 0,
+                                          "parent_comment_id": "p15nn7j",
+                                          "depth": 8,
+                                          "replies": [
+                                            {
+                                              "comment_id": "p15nyzs",
+                                              "author": "reddit_user_1a4ee610f676",
+                                              "author_karma": 0,
+                                              "content": "Yes, I have. Or you high or drunk or something? You’re not making any sense.",
+                                              "timestamp": "2026-08-01T23:14:37+00:00",
+                                              "likes": 0,
+                                              "dislikes": 0,
+                                              "parent_comment_id": "p15ns59",
+                                              "depth": 9,
+                                              "replies": []
+                                            },
+                                            {
+                                              "comment_id": "p15nzv8",
+                                              "author": "reddit_user_1a4ee610f676",
+                                              "author_karma": 0,
+                                              "content": "Yes, I have. Or you high or drunk or something? You’re not making any sense.",
+                                              "timestamp": "2026-08-01T23:14:45+00:00",
+                                              "likes": -12,
+                                              "dislikes": 0,
+                                              "parent_comment_id": "p15ns59",
+                                              "depth": 9,
+                                              "replies": [
+                                                {
+                                                  "comment_id": "p15o8ry",
+                                                  "author": "reddit_user_0a1007a3b88c",
+                                                  "author_karma": 0,
+                                                  "content": "Click your link. Click the attached Google doc linked on the second paragraph. See the exact statistics I am referring to. I have no idea what you are arguing about at this point",
+                                                  "timestamp": "2026-08-01T23:16:09+00:00",
+                                                  "likes": 22,
+                                                  "dislikes": 0,
+                                                  "parent_comment_id": "p15nzv8",
+                                                  "depth": 10,
+                                                  "replies": [
+                                                    {
+                                                      "comment_id": "p15oh6a",
+                                                      "author": "reddit_user_1a4ee610f676",
+                                                      "author_karma": 0,
+                                                      "content": "This is what I am talking about: \n\n“Wong examined nine sources and four types of data about anti-Asian hate incidents, including from the reporting forum Stop AAPI Hate, Pew Research, as well as official law enforcement statistics, the majority of them spanning the year and a half when the #StopAAPIHate hashtag was trending. She found major contradictions in the prevailing narrative around perpetrators, victims, and the general environment of racism toward Asian Americans during the coronavirus pandemic. She said such misleading conclusions could be attributed to the lack of context around images, the failure to amplify all aspects of the data or misinterpretations of the research.”",
+                                                      "timestamp": "2026-08-01T23:17:28+00:00",
+                                                      "likes": -2,
+                                                      "dislikes": 0,
+                                                      "parent_comment_id": "p15o8ry",
+                                                      "depth": 11,
+                                                      "replies": [
+                                                        {
+                                                          "comment_id": "p15ootw",
+                                                          "author": "reddit_user_0a1007a3b88c",
+                                                          "author_karma": 0,
+                                                          "content": "I saw that. Look at the actually studies she analyzed. She links them all in the article on the second page",
+                                                          "timestamp": "2026-08-01T23:18:39+00:00",
+                                                          "likes": 20,
+                                                          "dislikes": 0,
+                                                          "parent_comment_id": "p15oh6a",
+                                                          "depth": 12,
+                                                          "replies": [
+                                                            {
+                                                              "comment_id": "p15pdvm",
+                                                              "author": "reddit_user_1a4ee610f676",
+                                                              "author_karma": 0,
+                                                              "content": "So what is your point? Do you think your analysis trumps hers? And where did you get this idea that she was only looking at 16 cases?",
+                                                              "timestamp": "2026-08-01T23:22:34+00:00",
+                                                              "likes": -4,
+                                                              "dislikes": 0,
+                                                              "parent_comment_id": "p15ootw",
+                                                              "depth": 13,
+                                                              "replies": [
+                                                                {
+                                                                  "comment_id": "p15pnjq",
+                                                                  "author": "reddit_user_0a1007a3b88c",
+                                                                  "author_karma": 0,
+                                                                  "content": "The table she links that breaks down all 16. It’s her analysis not mine",
+                                                                  "timestamp": "2026-08-01T23:24:07+00:00",
+                                                                  "likes": 16,
+                                                                  "dislikes": 0,
+                                                                  "parent_comment_id": "p15pdvm",
+                                                                  "depth": 14,
+                                                                  "replies": []
+                                                                }
+                                                              ]
+                                                            }
+                                                          ]
+                                                        }
+                                                      ]
+                                                    },
+                                                    {
+                                                      "comment_id": "p15otqg",
+                                                      "author": "reddit_user_1a4ee610f676",
+                                                      "author_karma": 0,
+                                                      "content": "I clicked on the Google doc. She did not look at just 16 cases. JC.",
+                                                      "timestamp": "2026-08-01T23:19:25+00:00",
+                                                      "likes": -1,
+                                                      "dislikes": 0,
+                                                      "parent_comment_id": "p15o8ry",
+                                                      "depth": 11,
+                                                      "replies": [
+                                                        {
+                                                          "comment_id": "p15paeo",
+                                                          "author": "reddit_user_0a1007a3b88c",
+                                                          "author_karma": 0,
+                                                          "content": "Ok believe what you want LMAO. If only there was a source with data in front of you",
+                                                          "timestamp": "2026-08-01T23:22:02+00:00",
+                                                          "likes": 20,
+                                                          "dislikes": 0,
+                                                          "parent_comment_id": "p15otqg",
+                                                          "depth": 12,
+                                                          "replies": [
+                                                            {
+                                                              "comment_id": "p15pneu",
+                                                              "author": "reddit_user_1a4ee610f676",
+                                                              "author_karma": 0,
+                                                              "content": "Yeah there is and I can read so I have the advantage there.\n\nShe looked at several studies and a lot of data over the years. But apparently that doesn’t fit your racist narrative and so you will remain ignorant.",
+                                                              "timestamp": "2026-08-01T23:24:05+00:00",
+                                                              "likes": -1,
+                                                              "dislikes": 0,
+                                                              "parent_comment_id": "p15paeo",
+                                                              "depth": 13,
+                                                              "replies": []
+                                                            }
+                                                          ]
+                                                        }
+                                                      ]
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "comment_id": "p157unz",
+                  "author": "reddit_user_2c8040bd20c5",
+                  "author_karma": 0,
+                  "content": "Dang you got schooled. How many other things are you wrong about, per day?",
+                  "timestamp": "2026-08-01T21:46:14+00:00",
+                  "likes": 96,
+                  "dislikes": 0,
+                  "parent_comment_id": "p14znc3",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p15ixc1",
+                      "author": "reddit_user_1a4ee610f676",
+                      "author_karma": 0,
+                      "content": "Got schooled how? They’re right.\n\n“ Janelle Wong, a professor of American Studies at the University of Maryland, College Park, released analysis last week that drew on previously published studies on anti-Asian bias. She found official crime statistics and other studies revealed more than three-quarters of offenders of anti-Asian hate crimes and incidents, from both before and during the pandemic, have been white, contrary to many of the images circulating online.”\n\nhttps://www.nbcnews.com/news/asian-america/viral-images-show-people-color-anti-asian-perpetrators-misses-big-n1270821",
+                      "timestamp": "2026-08-01T22:46:26+00:00",
+                      "likes": -29,
+                      "dislikes": 0,
+                      "parent_comment_id": "p157unz",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                },
+                {
+                  "comment_id": "p158s7b",
+                  "author": "reddit_user_d9f71f11b3bf",
+                  "author_karma": 0,
+                  "content": "This isn’t the stone ages. These are things we can all look up and see you’re just purposely lying about. Why do you feel so comfortable lying about basic facts? ",
+                  "timestamp": "2026-08-01T21:51:09+00:00",
+                  "likes": 9,
+                  "dislikes": 0,
+                  "parent_comment_id": "p14znc3",
+                  "depth": 2,
+                  "replies": []
+                },
+                {
+                  "comment_id": "p15bs81",
+                  "author": "reddit_user_bb00602c63e7",
+                  "author_karma": 0,
+                  "content": "By that logic, the vast majority of victims of police brutality are white men. ",
+                  "timestamp": "2026-08-01T22:07:17+00:00",
+                  "likes": 59,
+                  "dislikes": 0,
+                  "parent_comment_id": "p14znc3",
+                  "depth": 2,
+                  "replies": []
+                },
+                {
+                  "comment_id": "p15ev9l",
+                  "author": "reddit_user_6afa34b591c1",
+                  "author_karma": 0,
+                  "content": "[https://www.sfgate.com/bayarea/nevius/article/Dirty-secret-of-black-on-Asian-violence-is-out-3265760.php](https://www.sfgate.com/bayarea/nevius/article/Dirty-secret-of-black-on-Asian-violence-is-out-3265760.php)",
+                  "timestamp": "2026-08-01T22:24:03+00:00",
+                  "likes": 4,
+                  "dislikes": 0,
+                  "parent_comment_id": "p14znc3",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            },
+            {
+              "comment_id": "p15icy0",
+              "author": "reddit_user_1a4ee610f676",
+              "author_karma": 0,
+              "content": "I presume you mean white people, since that’s who committed most of the assaults.",
+              "timestamp": "2026-08-01T22:43:17+00:00",
+              "likes": -104,
+              "dislikes": 0,
+              "parent_comment_id": "p14rpep",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p15ssgb",
+              "author": "reddit_user_1a4ee610f676",
+              "author_karma": 0,
+              "content": "So when did Stop Asian Hate stop being a thing?",
+              "timestamp": "2026-08-01T23:41:53+00:00",
+              "likes": -74,
+              "dislikes": 0,
+              "parent_comment_id": "p14rpep",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p162w5h",
+              "author": "reddit_user_23bc6418a57e",
+              "author_karma": 0,
+              "content": "Idk if you paid attention but a lot of Asians used stop Asian hate to hate on black people, despite white people committing the majority of anti Asian hate crimes. I would know, I’m an Asian and who spends time in predominantly Asian communities and unfortunately I’ve heard what is said behind closed doors. The race of the perpetrators does not matter but rather the structures and material realities that exacerbate these crimes. Unfortunately people just wanna be racist towards black people instead of approaching these things with nuance.\n\nhttps://www.tandfonline.com/doi/full/10.1080/15564886.2024.2353787 ",
+              "timestamp": "2026-08-02T00:40:44+00:00",
+              "likes": -125,
+              "dislikes": 0,
+              "parent_comment_id": "p14rpep",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p14rsxg",
+          "author": "reddit_user_6e90e762cc24",
+          "author_karma": 0,
+          "content": "AH used the \"I'm dead\" excuse",
+          "timestamp": "2026-08-01T20:24:18+00:00",
+          "likes": 30,
+          "dislikes": 0,
+          "parent_comment_id": "p13z06c",
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p15ztxc",
+              "author": "reddit_user_c94a5fc85f76",
+              "author_karma": 0,
+              "content": "And then he was swiftly whisked away to Argentina.",
+              "timestamp": "2026-08-02T00:22:40+00:00",
+              "likes": 9,
+              "dislikes": 0,
+              "parent_comment_id": "p14rsxg",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p14rzoz",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-01T20:25:14+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p14s5d6",
+          "author": "reddit_user_c5069f1d7e44",
+          "author_karma": 0,
+          "content": "Do you have a link to the paperwork?",
+          "timestamp": "2026-08-01T20:26:01+00:00",
+          "likes": 6,
+          "dislikes": 0,
+          "parent_comment_id": "p14gqgk",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p14srj9",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-01T20:29:03+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p14tuic",
+          "author": "reddit_user_3ead74e5e259",
+          "author_karma": 0,
+          "content": "Lol and since the \"condition\" is racism I think there's no chance for reforming this guy.",
+          "timestamp": "2026-08-01T20:34:29+00:00",
+          "likes": 16,
+          "dislikes": 0,
+          "parent_comment_id": "p13se6x",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p14vrit",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-01T20:44:04+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p14hywn",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p14xqg2",
+          "author": "reddit_user_2e66018dc395",
+          "author_karma": 0,
+          "content": "Nah it's not racism if it's Asian people bring attacked, he was probably just joking around. If the 'attacker' said teehee as their Asian heads bounced off the concrete that's how you know it's just a joke. \n\nWhat real racism actually looks like is when elderly Asians are being visibly wary of black people, because there is no good reason at all for them to cautious around them. That's the real racism that we need to call out. ",
+          "timestamp": "2026-08-01T20:53:59+00:00",
+          "likes": 60,
+          "dislikes": 0,
+          "parent_comment_id": "p145nmh",
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p15m7qq",
+              "author": "[deleted]",
+              "author_karma": 0,
+              "content": "[removed]",
+              "timestamp": "2026-08-01T23:04:41+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p14xqg2",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p15yu22",
+              "author": "reddit_user_3564d8fc9ded",
+              "author_karma": 0,
+              "content": "It probably is racism. The fact that some attacker exists or some attacks are real, doesn’t mean fear isn’t based in racism. You could make a similar observation about terrorists and Muslims. Islamic terror groups are real. And Muslims are overwhelmingly not terrorists.    \n    \nI’m around some Asians, and some of them have clearly racist ideas about black people. And some of them have had real encounters with black perpetrators. That doesn’t mean that their racism is rational or their fear is proportionate. People are really bad at estimating risk, and racism helps them close the gap.  ",
+              "timestamp": "2026-08-02T00:16:52+00:00",
+              "likes": -40,
+              "dislikes": 0,
+              "parent_comment_id": "p14xqg2",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p14xr0q",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-01T20:54:04+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p14fmev",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1501zc",
+          "author": "reddit_user_f4e264cd7cd1",
+          "author_karma": 0,
+          "content": "His name literally means \"John Muslim\" lmao",
+          "timestamp": "2026-08-01T21:05:54+00:00",
+          "likes": 72,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p150fua",
+          "author": "reddit_user_2345f9f5ad5d",
+          "author_karma": 0,
+          "content": "Yeah keeping a guy locked up with no actual mental health or substance abuse aid is real reformative.",
+          "timestamp": "2026-08-01T21:07:52+00:00",
+          "likes": -2,
+          "dislikes": 0,
+          "parent_comment_id": "p13uael",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p151luh",
+          "author": "reddit_user_6584883353db",
+          "author_karma": 0,
+          "content": "A rapist of a minor got his case dropped.\n\nThe prosecutor drop the case in the interest of justice. \n\nhttps://www.kaaltv.com/news/rochester-sexual-assault-case-dismissed/",
+          "timestamp": "2026-08-01T21:13:50+00:00",
+          "likes": 24,
+          "dislikes": 0,
+          "parent_comment_id": "p141tl7",
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p15lg58",
+              "author": "reddit_user_c5069f1d7e44",
+              "author_karma": 0,
+              "content": "How is that related to this case?",
+              "timestamp": "2026-08-01T23:00:22+00:00",
+              "likes": -6,
+              "dislikes": 0,
+              "parent_comment_id": "p151luh",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p158j44",
+          "author": "reddit_user_d9f71f11b3bf",
+          "author_karma": 0,
+          "content": "A lot of Asians I meet are prejudice against African Americans. I don’t blame them. Many of them have been harassed and attacked by African Americans. These are Asians from Asia, they weren’t born into institutional racism so you can’t even say they learned it. It’s from their experiences as Asians in America. ",
+          "timestamp": "2026-08-01T21:49:48+00:00",
+          "likes": 23,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p15cjv6",
+              "author": "reddit_user_7b8545ec34ef",
+              "author_karma": 0,
+              "content": "Yeah dude, Asian Americans are totally being oppressed by African Americans. That's the real racism in America. Dumbass.",
+              "timestamp": "2026-08-01T22:11:29+00:00",
+              "likes": -28,
+              "dislikes": 0,
+              "parent_comment_id": "p158j44",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p15krjv",
+                  "author": "reddit_user_d9f71f11b3bf",
+                  "author_karma": 0,
+                  "content": "Literally proving my point. You’re mocking Asian immigrants. People who don’t even have family here or don’t even speak our language as their first language. Yet their struggles are a joke to you. You’re genuinely an evil scumbag ",
+                  "timestamp": "2026-08-01T22:56:35+00:00",
+                  "likes": 15,
+                  "dislikes": 0,
+                  "parent_comment_id": "p15cjv6",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            },
+            {
+              "comment_id": "p15cxnk",
+              "author": "reddit_user_7b8545ec34ef",
+              "author_karma": 0,
+              "content": "Story about a mentally ill black man. How do I make this about ALL black people. Dumb fuck.",
+              "timestamp": "2026-08-01T22:13:34+00:00",
+              "likes": -25,
+              "dislikes": 0,
+              "parent_comment_id": "p158j44",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p15kkt6",
+                  "author": "reddit_user_d9f71f11b3bf",
+                  "author_karma": 0,
+                  "content": "Literally look at statistics. Plus I’m telling you about the experiences of real people. Do you think they’re lying or something? ",
+                  "timestamp": "2026-08-01T22:55:32+00:00",
+                  "likes": 10,
+                  "dislikes": 0,
+                  "parent_comment_id": "p15cxnk",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            },
+            {
+              "comment_id": "p15dd86",
+              "author": "reddit_user_7b8545ec34ef",
+              "author_karma": 0,
+              "content": "Fuck you, btw.",
+              "timestamp": "2026-08-01T22:15:55+00:00",
+              "likes": -25,
+              "dislikes": 0,
+              "parent_comment_id": "p158j44",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p15ku0u",
+                  "author": "reddit_user_d9f71f11b3bf",
+                  "author_karma": 0,
+                  "content": "Say it to my Asian wife’s face. Send me your info pussy. I dare you to ",
+                  "timestamp": "2026-08-01T22:56:58+00:00",
+                  "likes": 4,
+                  "dislikes": 0,
+                  "parent_comment_id": "p15dd86",
+                  "depth": 2,
+                  "replies": []
+                },
+                {
+                  "comment_id": "p15m1x3",
+                  "author": "[deleted]",
+                  "author_karma": 0,
+                  "content": "[removed]",
+                  "timestamp": "2026-08-01T23:03:46+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p15dd86",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p15d0i0",
+          "author": "reddit_user_b26e37ac6738",
+          "author_karma": 0,
+          "content": "Welcome to alameda county",
+          "timestamp": "2026-08-01T22:14:00+00:00",
+          "likes": 6,
+          "dislikes": 0,
+          "parent_comment_id": "p13i532",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p15d5jr",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-01T22:14:45+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p13ry45",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p15ewx7",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-01T22:24:19+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p15fs8p",
+          "author": "reddit_user_0a486c22c93a",
+          "author_karma": 0,
+          "content": "I think the mental illness is the explanation for his random acts of violence, TBH\n\nIs it racially motivated? Appears to be, yeah\n\nIs the violence part of a mental break/schizophrenic loss of control? Courts seemed to think so\n\nShout out to the the Oakland resident who said \"\"They should go back to prison or manner school,\" though, lol\n\n",
+          "timestamp": "2026-08-01T22:29:06+00:00",
+          "likes": -41,
+          "dislikes": 0,
+          "parent_comment_id": "p13z06c",
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p15tt53",
+              "author": "reddit_user_335f6f0bc851",
+              "author_karma": 0,
+              "content": "Everytime a racist white dude kills a black person is the excuse ever \"mental illness?\"",
+              "timestamp": "2026-08-01T23:47:43+00:00",
+              "likes": 44,
+              "dislikes": 0,
+              "parent_comment_id": "p15fs8p",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p15vstn",
+                  "author": "reddit_user_0a486c22c93a",
+                  "author_karma": 0,
+                  "content": "You can be racist and also mentally unwell and that seems to be the case here\n\nYes the dude is targeting Asians but also he has a history of mental illness\n\nYou get that in the homeless camps around here too, dudes walking up and down the Alameda screaming slurs at things that aren't there",
+                  "timestamp": "2026-08-01T23:59:15+00:00",
+                  "likes": -22,
+                  "dislikes": 0,
+                  "parent_comment_id": "p15tt53",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p15n5lk",
+          "author": "reddit_user_169829ea9863",
+          "author_karma": 0,
+          "content": "Ir attacking people in front of mma gyms ",
+          "timestamp": "2026-08-01T23:10:01+00:00",
+          "likes": 12,
+          "dislikes": 0,
+          "parent_comment_id": "p14foxl",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p15u0z4",
+          "author": "reddit_user_335f6f0bc851",
+          "author_karma": 0,
+          "content": "Those judges live in the hills Piedmont, Montclair, even Kensington so they don't give a flying fuck what happens to the people living quite literally beneath them.",
+          "timestamp": "2026-08-01T23:48:57+00:00",
+          "likes": 35,
+          "dislikes": 0,
+          "parent_comment_id": "p13umbt",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p15u8j5",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-01T23:50:09+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p14698e",
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    }
+  ]
+}

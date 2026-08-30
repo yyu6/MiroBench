@@ -1,0 +1,1542 @@
+{
+  "meta": {
+    "product_category": "sports",
+    "baseline": "real_reddit_reference",
+    "run_id": "run_020_sampled_reddit"
+  },
+  "posts": [
+    {
+      "post_id": "real_run020_post00_seed100",
+      "post_slot": 0,
+      "seed_index": 100,
+      "source_raw_post_id": "1verhe6",
+      "source_product_dir": "soccer",
+      "source_file": "https://www.reddit.com/r/soccer/comments/1verhe6/how_gianni_infantino_will_be_framing_his_battle/",
+      "post_type": ":n_opinion: Opinion Piece",
+      "title": "How Gianni Infantino will be framing his battle to remain FIFA president? There is a concerted push from UEFA to oust him but there is not a united front globally to achieve regime change. The numbers are not there.",
+      "author": "reddit_user_79ff14d8816f",
+      "author_karma": 0,
+      "content": "How Gianni Infantino will be framing his battle to remain FIFA president? There is a concerted push from UEFA to oust him but there is not a united front globally to achieve regime change. The numbers are not there.\n\nInteresting piece by Rob Harris who is one of the most well known and knowledgeable journos out there and works for Sky News and before that worked for AP and often appears as an analyst for multiple news channels across the world.",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p1ja1bz",
+          "author": "reddit_user_61a409583f7f",
+          "author_karma": 0,
+          "content": "Hopefully UEFA and its members are strongly considering maintaining the boycott as long as Infantino is in power.",
+          "timestamp": "2026-08-03T22:05:54+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1ja5ur",
+              "author": "reddit_user_b76514a66186",
+              "author_karma": 0,
+              "content": "No uefa no cup. They could make it happen.",
+              "timestamp": "2026-08-03T22:06:29+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1ja1bz",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p1jag1f",
+              "author": "reddit_user_4c9d098cccc3",
+              "author_karma": 0,
+              "content": "As long as UEFA continues the boycott they hold the strongest cards. \n\n",
+              "timestamp": "2026-08-03T22:07:51+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1ja1bz",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1jlr2j",
+                  "author": "reddit_user_e77e3e6d454c",
+                  "author_karma": 0,
+                  "content": "True, but UEFA needs to be careful how they use the boycott. If they use the boycott to influence an election outcome, it will piss off the other confederations. They need to find a good alternative candidate and make the case to the smaller countries to abandon Infantino.",
+                  "timestamp": "2026-08-03T23:04:44+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1jag1f",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1jo8ug",
+                      "author": "reddit_user_5d9bfa074984",
+                      "author_karma": 0,
+                      "content": "They need to use it to change the voting system, the current one makes no sense, countries should have varying voting power based on size of fan base footballing investment and historic results",
+                      "timestamp": "2026-08-03T23:17:55+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1jlr2j",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "p1jp6he",
+                          "author": "reddit_user_e77e3e6d454c",
+                          "author_karma": 0,
+                          "content": "So, Brazil and Argentina would have a lot, which would keep Infantino in power...? ",
+                          "timestamp": "2026-08-03T23:22:47+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "p1jo8ug",
+                          "depth": 4,
+                          "replies": [
+                            {
+                              "comment_id": "p1jpgst",
+                              "author": "reddit_user_5d9bfa074984",
+                              "author_karma": 0,
+                              "content": "Not enough, also the smaller countries will still participate ",
+                              "timestamp": "2026-08-03T23:24:16+00:00",
+                              "likes": 1,
+                              "dislikes": 0,
+                              "parent_comment_id": "p1jp6he",
+                              "depth": 5,
+                              "replies": [
+                                {
+                                  "comment_id": "p1jqq5f",
+                                  "author": "reddit_user_e77e3e6d454c",
+                                  "author_karma": 0,
+                                  "content": "why would they? like genuinely what would the incentive be for them to spend money and resources on NTs? without a vote, they would likely get minimal resources from FIFA. so why bother?",
+                                  "timestamp": "2026-08-03T23:30:50+00:00",
+                                  "likes": 1,
+                                  "dislikes": 0,
+                                  "parent_comment_id": "p1jpgst",
+                                  "depth": 6,
+                                  "replies": [
+                                    {
+                                      "comment_id": "p1jtwmf",
+                                      "author": "reddit_user_5d9bfa074984",
+                                      "author_karma": 0,
+                                      "content": "Because they still win money at tournaments? They just don't get bribed for their vote like now",
+                                      "timestamp": "2026-08-03T23:47:32+00:00",
+                                      "likes": 1,
+                                      "dislikes": 0,
+                                      "parent_comment_id": "p1jqq5f",
+                                      "depth": 7,
+                                      "replies": [
+                                        {
+                                          "comment_id": "p1jungm",
+                                          "author": "reddit_user_e77e3e6d454c",
+                                          "author_karma": 0,
+                                          "content": "What if they don't make a tournament? How do you convince teams to play in qualifiers? ",
+                                          "timestamp": "2026-08-03T23:51:33+00:00",
+                                          "likes": 1,
+                                          "dislikes": 0,
+                                          "parent_comment_id": "p1jtwmf",
+                                          "depth": 8,
+                                          "replies": [
+                                            {
+                                              "comment_id": "p1jus9e",
+                                              "author": "reddit_user_5d9bfa074984",
+                                              "author_karma": 0,
+                                              "content": "The same as always",
+                                              "timestamp": "2026-08-03T23:52:16+00:00",
+                                              "likes": 1,
+                                              "dislikes": 0,
+                                              "parent_comment_id": "p1jungm",
+                                              "depth": 9,
+                                              "replies": [
+                                                {
+                                                  "comment_id": "p1juwty",
+                                                  "author": "reddit_user_e77e3e6d454c",
+                                                  "author_karma": 0,
+                                                  "content": "What incentive does any team have to participate in the qualifiers if they are not usually good enough to make it? They don't get money from it. Why would they do it?",
+                                                  "timestamp": "2026-08-03T23:52:58+00:00",
+                                                  "likes": 1,
+                                                  "dislikes": 0,
+                                                  "parent_comment_id": "p1jus9e",
+                                                  "depth": 10,
+                                                  "replies": [
+                                                    {
+                                                      "comment_id": "p1jv740",
+                                                      "author": "reddit_user_5d9bfa074984",
+                                                      "author_karma": 0,
+                                                      "content": "They still get money? TV rights, tickets, prizes money also they had the same incentive before the reworking of fifa after the 22 bid",
+                                                      "timestamp": "2026-08-03T23:54:31+00:00",
+                                                      "likes": 1,
+                                                      "dislikes": 0,
+                                                      "parent_comment_id": "p1juwty",
+                                                      "depth": 11,
+                                                      "replies": [
+                                                        {
+                                                          "comment_id": "p1jvi68",
+                                                          "author": "reddit_user_e77e3e6d454c",
+                                                          "author_karma": 0,
+                                                          "content": "Will they? I mean, if they don't get a vote, why wouldn't the bigger nations just vote to keep all the money for themselves? Why would Brazil take money out of its own pocket to give to Uzbekistan?",
+                                                          "timestamp": "2026-08-03T23:56:10+00:00",
+                                                          "likes": 1,
+                                                          "dislikes": 0,
+                                                          "parent_comment_id": "p1jv740",
+                                                          "depth": 12,
+                                                          "replies": []
+                                                        }
+                                                      ]
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "comment_id": "p1l632l",
+                          "author": "[deleted]",
+                          "author_karma": 0,
+                          "content": "[removed]",
+                          "timestamp": "2026-08-04T04:26:24+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "p1jo8ug",
+                          "depth": 4,
+                          "replies": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "comment_id": "p1jbu4v",
+              "author": "reddit_user_392922884c34",
+              "author_karma": 0,
+              "content": "I’m hoping for a boycott right now as the best possible option. Spain-morocco wc bound to be a mess, fuck the saudi wc and the plan was probably to bring it back to america after that since we had the tripple confederation wc. \n\nI prefer five straight euros. ",
+              "timestamp": "2026-08-03T22:14:35+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1ja1bz",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1jcog0",
+                  "author": "reddit_user_4c9d098cccc3",
+                  "author_karma": 0,
+                  "content": "Having a euros followed by a \"euros + friends\" would become better than the world cup easily. ",
+                  "timestamp": "2026-08-03T22:18:43+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1jbu4v",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1jfrrf",
+                      "author": "reddit_user_392922884c34",
+                      "author_karma": 0,
+                      "content": "I get it but I honestly hate the idea of adding invites. It makes it too impure and takes spots from smaller European teams who also would love to be there. ",
+                      "timestamp": "2026-08-03T22:34:09+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1jcog0",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "p1jhtt9",
+                          "author": "reddit_user_ab74e4b0d075",
+                          "author_karma": 0,
+                          "content": "Tbf Copa America and Gold Cup do that",
+                          "timestamp": "2026-08-03T22:44:41+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "p1jfrrf",
+                          "depth": 4,
+                          "replies": [
+                            {
+                              "comment_id": "p1jj5ta",
+                              "author": "reddit_user_392922884c34",
+                              "author_karma": 0,
+                              "content": "I know and I’ve always resented them for it. Micky mouse tournament shit",
+                              "timestamp": "2026-08-03T22:51:27+00:00",
+                              "likes": 1,
+                              "dislikes": 0,
+                              "parent_comment_id": "p1jhtt9",
+                              "depth": 5,
+                              "replies": []
+                            },
+                            {
+                              "comment_id": "p1kuxgw",
+                              "author": "reddit_user_7c41bbe729d4",
+                              "author_karma": 0,
+                              "content": "We only do so in Copa America because we just don't have enough teams in the confederation to fill a small tournament.",
+                              "timestamp": "2026-08-04T03:13:54+00:00",
+                              "likes": 1,
+                              "dislikes": 0,
+                              "parent_comment_id": "p1jhtt9",
+                              "depth": 5,
+                              "replies": []
+                            }
+                          ]
+                        },
+                        {
+                          "comment_id": "p1jobwo",
+                          "author": "reddit_user_5d9bfa074984",
+                          "author_karma": 0,
+                          "content": "The first world cups were invited based",
+                          "timestamp": "2026-08-03T23:18:22+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "p1jfrrf",
+                          "depth": 4,
+                          "replies": []
+                        },
+                        {
+                          "comment_id": "p1jvspy",
+                          "author": "reddit_user_0888f690400d",
+                          "author_karma": 0,
+                          "content": "Well you could create a qualifying tournament for a new global championship held every 4 years….",
+                          "timestamp": "2026-08-03T23:57:48+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "p1jfrrf",
+                          "depth": 4,
+                          "replies": []
+                        }
+                      ]
+                    },
+                    {
+                      "comment_id": "p1jia12",
+                      "author": "reddit_user_13a7b54ce80f",
+                      "author_karma": 0,
+                      "content": "INB4 Brazil win 4 Euros in a row",
+                      "timestamp": "2026-08-03T22:46:56+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1jcog0",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "p1jjwex",
+                          "author": "reddit_user_6ba15ea50c2b",
+                          "author_karma": 0,
+                          "content": "We'd have to beat several Europeans in knockout matches. \n\nNot happening.",
+                          "timestamp": "2026-08-03T22:55:14+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "p1jia12",
+                          "depth": 4,
+                          "replies": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "comment_id": "p1jeaft",
+              "author": "reddit_user_d8b3256750c1",
+              "author_karma": 0,
+              "content": "Well thats actually along the lines of what I've been considering. \n\nIf FIFA continues with such corruption it's actually the perfect opportunity for UEFA to just create their own world cup. It will generate far more revenue than whoever is leftover in FIFA and as such, FIFA will lose power and the countries supporting Infantino will receive far less funding. \n\nFrom a UEFA point of view, if they want to continue growing their revenues, this is an opportune time to make the gamble. It's kind of a win win for them. Either they oust Infantino successfully, or for one \"world cup\" they will make more money than usual because they eat at FIFAS market share. Only possible risk is if players or individual countries in UEFA revolt, the former seems unlikely, the latter is probably not financially incentivized to rock the boat. \n\n",
+              "timestamp": "2026-08-03T22:26:42+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1ja1bz",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1jojy6",
+                  "author": "reddit_user_5d9bfa074984",
+                  "author_karma": 0,
+                  "content": "Yes, this is a critical time for uefa, ceding ground could give fifa a much larger share of world football with what they are trying with the club world cup",
+                  "timestamp": "2026-08-03T23:19:31+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1jeaft",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1jx1qs",
+                      "author": "reddit_user_d8b3256750c1",
+                      "author_karma": 0,
+                      "content": "I wonder what idiot downvoted me 😂😂\n\nMust have been Infantino ",
+                      "timestamp": "2026-08-04T00:04:37+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1jojy6",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p1ja7qw",
+          "author": "reddit_user_930d2148e1e7",
+          "author_karma": 0,
+          "content": "I think we can safely say it’ll be classless and whiny ",
+          "timestamp": "2026-08-03T22:06:45+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1jaag3",
+          "author": "reddit_user_85698c7cc982",
+          "author_karma": 0,
+          "content": "He will bribe all the small nations that will have no choice to oblige because it will be game changing money for them. FIFA needs to get rid of this stupid voting system and make it based on sporting relevancy, similar to the UN security council.",
+          "timestamp": "2026-08-03T22:07:07+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1jbf9h",
+              "author": "reddit_user_d79ef9f7e438",
+              "author_karma": 0,
+              "content": "Actually, FIFA \"security council\" is a great idea. That would balance the dominance of small federations.",
+              "timestamp": "2026-08-03T22:12:34+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1jaag3",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1jvn8l",
+                  "author": "reddit_user_0888f690400d",
+                  "author_karma": 0,
+                  "content": "Need a seperate lock system where sides who have played in recent World cups have to vote as a majority too, otherwise you just get idk the Vatican and the North Pole voting for expansion proposals which will they will never see any downside of",
+                  "timestamp": "2026-08-03T23:56:57+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1jbf9h",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            },
+            {
+              "comment_id": "p1jccaj",
+              "author": "reddit_user_e9caca5acb21",
+              "author_karma": 0,
+              "content": "Because the Veto has worked out so well in the UN",
+              "timestamp": "2026-08-03T22:17:04+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1jaag3",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p1jep58",
+              "author": "reddit_user_4a31f0e42ca2",
+              "author_karma": 0,
+              "content": "Just saying, the UN Security Council is *definitely* not a great example. It's pretty much perpetually deadlocked and unable to do anything because the main beligirents of current big conflicts have permanent seats on it with veto power. And that's by design - remember, the UNSC's sole purpose and reason for existence is to prevent nuclear powers from going to war against each other. Nothing else. And it has succeeded to that end.",
+              "timestamp": "2026-08-03T22:28:46+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1jaag3",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1jot4v",
+                  "author": "reddit_user_5d9bfa074984",
+                  "author_karma": 0,
+                  "content": "A better system would be to give every country  a score from 1 to 100 base don football fan base, talent and club investment and historic results, then each country gets that number of votes",
+                  "timestamp": "2026-08-03T23:20:51+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1jep58",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            },
+            {
+              "comment_id": "p1jgptf",
+              "author": "reddit_user_191ee1f80b05",
+              "author_karma": 0,
+              "content": "Yes.\n\nUEFA’s previous candidate: Sepp Blatter - corrupt.\n\nUEFA’s current candidate: Gianni Infantino - corrupt\n\nUEFA’s proposed candidate: PSG owner guy - corrupt.\n\nRedditors: why are the small/poor nations doing this? It’s all their fault. Let’s give UEFA more voting power and clean up this mess that UEFA definitely didn’t create…",
+              "timestamp": "2026-08-03T22:38:58+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1jaag3",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1jioqs",
+                  "author": "reddit_user_392922884c34",
+                  "author_karma": 0,
+                  "content": "The both operated by convincing the likes of Tonga and Bhutan. The system is broken, or rather faulty. Time to just brexit tf out of there",
+                  "timestamp": "2026-08-03T22:49:00+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1jgptf",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1jvcar",
+                      "author": "reddit_user_0888f690400d",
+                      "author_karma": 0,
+                      "content": "Aside from the obvious pork barrelling, you can get 100 odd tiny countries to vote on proposals which will never affect them.\n\nAsk them to vote on a 64 team world cup where everyone plays each other once over a 8 month period and you will give them 100 million each they say yes.\n\nThey are effectively voting for proposals where they never have to face the consequences of their vote and get money for doing so.",
+                      "timestamp": "2026-08-03T23:55:17+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1jioqs",
+                      "depth": 3,
+                      "replies": []
+                    },
+                    {
+                      "comment_id": "p1k2bhw",
+                      "author": "reddit_user_0f41d51aa18f",
+                      "author_karma": 0,
+                      "content": "Tonga / Bhutan didn't nominate Infantino in the last election. UEFA did. \n\nGuess which federation Infantino was secretary general of before he took over FIFA?",
+                      "timestamp": "2026-08-04T00:32:58+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1jioqs",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "comment_id": "p1juxlk",
+              "author": "reddit_user_0888f690400d",
+              "author_karma": 0,
+              "content": "He can do what he like with the small nations, hell 180 could vote for him. If even 10 top European nations said fuck off we boycott its game over for the World Cup and makes fifa tournaments worthless.\n\nThink of it like FIBA taking on the NBA in basketball or the ICC taking on the BCCI in cricket. They would laugh their asses off if you told them they must abide by a plan because Tonga, Lesotho, Malawi, the Maldives and Myanmar created a voting bloc against them.",
+              "timestamp": "2026-08-03T23:53:05+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1jaag3",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1jagrs",
+          "author": "reddit_user_996ce472f826",
+          "author_karma": 0,
+          "content": "How can there be no front when three continental federations are working together? You also can't forget that lawsuits against Infantino himself are likely to be filed by Wall Street.",
+          "timestamp": "2026-08-03T22:07:57+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1jchi9",
+              "author": "reddit_user_392922884c34",
+              "author_karma": 0,
+              "content": "They aren’t really working together, it’s uefa against the rest. Asia and concacaf are just rats jumping the ship who are now trying to reorient themselves. ",
+              "timestamp": "2026-08-03T22:17:46+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1jagrs",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1jpw8h",
+                  "author": "reddit_user_e9caca5acb21",
+                  "author_karma": 0,
+                  "content": "Asia and Concacaf are divided to say the least because I bet between them there is about at least 50 odd nations who will back Infantino (30 from Asia and 20 from Concacaf).",
+                  "timestamp": "2026-08-03T23:26:29+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1jchi9",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p1jakbr",
+          "author": "reddit_user_c1e2ef788263",
+          "author_karma": 0,
+          "content": "This is why I don't get the begging Trump. He only needs like 20 countries from NA/Europe/Asia to vote for him and he wins and there's plenty of small counrties within those and they like him.",
+          "timestamp": "2026-08-03T22:08:25+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1k5cxb",
+              "author": "reddit_user_3c9c7d484fc5",
+              "author_karma": 0,
+              "content": "If the congress was next week I'd agree with you. But given the time left, I don't think Infantino can ride this out. Most of his support relies on providing funds to smaller federations (he provides the same amount to all countries, but a handful of millions make no difference to major federations). If UEFA carries out its implied threat to boycott and organise an extended EURO + global teams in 2030 instead, the patronage Infantino can hand out to smaller federations dries out...",
+              "timestamp": "2026-08-04T00:49:36+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1jakbr",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1jaubj",
+          "author": "reddit_user_b06d7ea72367",
+          "author_karma": 0,
+          "content": "It seems CAF will continue to back him. As long as UEFA and CONCACAF stay on the same page it all falls on the AFC and they seemed divided. OFC and Conmebol offer little in voting power but can come in clutch if ends up being a UEFA + CONCACAF vs AFC + CAF",
+          "timestamp": "2026-08-03T22:09:45+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1kkrp3",
+              "author": "reddit_user_5d812431cdbd",
+              "author_karma": 0,
+              "content": "> it all falls on the AFC and they seem divided. \n\nThat is how Infantino won in 2016 to begin his reign as well.\n\nSince 1970s global football politics runs through CAF + AFC power block. Havelange & Blatter had this as their core power base (NOT Europeans FAs/UEFA, which acted as a counter balancer to them).\n\nInfantino (as a European FA/UEFA candidate) split AFC votes in 2016 (in part due to non-footballing geopolitical maneuvering as often happens with FIFA backroom deal makings) and that made him super powerful because there was no counter-balancing block anymore. \n\nThis is what slowly escalated over the years (esp post 2022) for him to do one weird thing after another. Because there was no check on him since there was no opposition.\n\nThis is why having a European FAs/UEFA supported candidate winning FIFA Presidency is unhealthy for global game & FIFA. They are better when in opposition, the balance works more effectively that way.",
+              "timestamp": "2026-08-04T02:14:44+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1jaubj",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1jbjx4",
+          "author": "reddit_user_811fb8a713b7",
+          "author_karma": 0,
+          "content": "it doesn't really matter if he remains president if UEFA maintain their threat and actually boycott the World Cup. \n\nYou want a 64 team world cup with Sri Lanka vs. Lesotho in the quarters, go right ahead, see how well that works out. ",
+          "timestamp": "2026-08-03T22:13:13+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1jd893",
+              "author": "reddit_user_4a31f0e42ca2",
+              "author_karma": 0,
+              "content": "I guess the plan is to buy enough time for WC2030 qualification to start, and then dare UEFA nations to follow through on their threat. I somehow doubt all 55 of them would be willing to boycott once the consequences of it become clear.",
+              "timestamp": "2026-08-03T22:21:26+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1jbjx4",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1jf4i0",
+                  "author": "reddit_user_9fd6b6874089",
+                  "author_karma": 0,
+                  "content": "Just the FAs governing the few top leagues would be enough.\n\nCan you imagine the disruption if the English FA stepped out of FIFA, and their clubs then not being obliged anymore to release their players to he World Cup?",
+                  "timestamp": "2026-08-03T22:30:54+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1jd893",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1jfm89",
+                      "author": "reddit_user_4a31f0e42ca2",
+                      "author_karma": 0,
+                      "content": "As long as nations can still assemble full rosters (of any quality), it won't matter. Vast majority of people root for the flag, not the individuals playing under it.",
+                      "timestamp": "2026-08-03T22:33:22+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1jf4i0",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "p1jhrti",
+                          "author": "reddit_user_24596d777b94",
+                          "author_karma": 0,
+                          "content": "Everyone is talking about how the World Cup is over without UEFA, but i think people are also overestimating the draw a Global Nations League or whatever. \n\nIn the end everyone loses",
+                          "timestamp": "2026-08-03T22:44:24+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "p1jfm89",
+                          "depth": 4,
+                          "replies": [
+                            {
+                              "comment_id": "p1jieih",
+                              "author": "reddit_user_4a31f0e42ca2",
+                              "author_karma": 0,
+                              "content": "Oh, absolutely. No organizational split in top-level sports has ever gone well for anyone, not stakeholders and definitely not fans. And I maintain that an organization like FIFA should exist for the greater good of the game globally. Its purpose is sound, even if the current leadership does its best to sully it.",
+                              "timestamp": "2026-08-03T22:47:34+00:00",
+                              "likes": 1,
+                              "dislikes": 0,
+                              "parent_comment_id": "p1jhrti",
+                              "depth": 5,
+                              "replies": [
+                                {
+                                  "comment_id": "p1jz3cp",
+                                  "author": "reddit_user_24596d777b94",
+                                  "author_karma": 0,
+                                  "content": "UEFA isn't working out of kindness and sportive integrity, they _will_ eventually overstep the line, and the result will be them having a bigger piece of a smaller pie. \n\nIf they close themselves too much for too long they may end up falling behind, the home nations did something similar when they started doing world cups and the result was very very bad in the long term. English club football took almost a whole century to be as dominant as it was back then",
+                                  "timestamp": "2026-08-04T00:15:36+00:00",
+                                  "likes": 1,
+                                  "dislikes": 0,
+                                  "parent_comment_id": "p1jieih",
+                                  "depth": 6,
+                                  "replies": [
+                                    {
+                                      "comment_id": "p1k4qjs",
+                                      "author": "reddit_user_3c9c7d484fc5",
+                                      "author_karma": 0,
+                                      "content": "Nothing UEFA has done in this case is about grabbing anything, though. The main source of football in the World is European club football, so this effectively provides UEFA with a veto if they have the guts...",
+                                      "timestamp": "2026-08-04T00:46:13+00:00",
+                                      "likes": 1,
+                                      "dislikes": 0,
+                                      "parent_comment_id": "p1jz3cp",
+                                      "depth": 7,
+                                      "replies": [
+                                        {
+                                          "comment_id": "p1k760e",
+                                          "author": "reddit_user_24596d777b94",
+                                          "author_karma": 0,
+                                          "content": "Nothing _yet_\n\n>The main source of football in the World is European club football\n\nAnd UEFA has historically acted entitled as fuck even when that wasn't even the truth ",
+                                          "timestamp": "2026-08-04T00:59:26+00:00",
+                                          "likes": 1,
+                                          "dislikes": 0,
+                                          "parent_comment_id": "p1k4qjs",
+                                          "depth": 8,
+                                          "replies": []
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "comment_id": "p1jtzaw",
+                              "author": "reddit_user_0888f690400d",
+                              "author_karma": 0,
+                              "content": "UEFA would eventually get everyone onside with offers of greater access to their ecosystem etc.",
+                              "timestamp": "2026-08-03T23:47:56+00:00",
+                              "likes": 1,
+                              "dislikes": 0,
+                              "parent_comment_id": "p1jhrti",
+                              "depth": 5,
+                              "replies": []
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "comment_id": "p1jfuf8",
+                      "author": "reddit_user_3ae6e990b90a",
+                      "author_karma": 0,
+                      "content": "The players won't take it so likely especially the south american ones. Playing for their country is a source of pride for them you would create hell in Football landscape if you fuck with players playing for their nations ",
+                      "timestamp": "2026-08-03T22:34:31+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1jf4i0",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "p1jh194",
+                          "author": "reddit_user_e9caca5acb21",
+                          "author_karma": 0,
+                          "content": "Especially with the South American FAs supporting Infantino anyway.",
+                          "timestamp": "2026-08-03T22:40:35+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "p1jfuf8",
+                          "depth": 4,
+                          "replies": []
+                        },
+                        {
+                          "comment_id": "p1jl8s7",
+                          "author": "reddit_user_24596d777b94",
+                          "author_karma": 0,
+                          "content": "Brasileirão would be the biggest winner in this clustefuck lol",
+                          "timestamp": "2026-08-03T23:02:07+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "p1jfuf8",
+                          "depth": 4,
+                          "replies": []
+                        },
+                        {
+                          "comment_id": "p1k042b",
+                          "author": "reddit_user_0d64663f10ce",
+                          "author_karma": 0,
+                          "content": "And what would be the outcome? They will be mad but what? The clubs are still paying them. They dont have much choice here imo. Collateral damage but I cant see what they will do. \n\nRefuse to play for club? I assume they could play crap and get dropped and still get paid but that could also hurt their careers",
+                          "timestamp": "2026-08-04T00:21:03+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "p1jfuf8",
+                          "depth": 4,
+                          "replies": [
+                            {
+                              "comment_id": "p1kn6jp",
+                              "author": "reddit_user_f1341d512218",
+                              "author_karma": 0,
+                              "content": "They say the clubs broke their contracts by refusing to release them for international fixtures and join other teams.",
+                              "timestamp": "2026-08-04T02:28:14+00:00",
+                              "likes": 1,
+                              "dislikes": 0,
+                              "parent_comment_id": "p1k042b",
+                              "depth": 5,
+                              "replies": []
+                            },
+                            {
+                              "comment_id": "p1kwn7p",
+                              "author": "reddit_user_c167eaa3bc2b",
+                              "author_karma": 0,
+                              "content": "Move to enforce clause 6.1.9 of their contracts:\n\n> 6.1 The Club shall: […]\n> 6.1.9 release the Player as required for the purposes of fulfilling the obligations in respect of representative matches to his national association pursuant to the statutes and regulations of FIFA.",
+                              "timestamp": "2026-08-04T03:24:30+00:00",
+                              "likes": 1,
+                              "dislikes": 0,
+                              "parent_comment_id": "p1k042b",
+                              "depth": 5,
+                              "replies": []
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "comment_id": "p1k4dje",
+                      "author": "reddit_user_c167eaa3bc2b",
+                      "author_karma": 0,
+                      "content": "> Can you imagine the disruption if the English FA stepped out of FIFA, and their clubs then would not be obliged anymore to release their players for the World Cup?\n\nPremier League contracts explicitly require the club to release the player for international duty *under FIFA regulations*. The FA could leave FIFA, but players from FIFA countries still have a contractual right to take part in FIFA national team activities.",
+                      "timestamp": "2026-08-04T00:44:13+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1jf4i0",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                },
+                {
+                  "comment_id": "p1jt5ks",
+                  "author": "reddit_user_31d0d725b2b7",
+                  "author_karma": 0,
+                  "content": "> I somehow doubt all 55 of them would be willing to boycott\n\n55 is enough to trigger a vote of no confidence, and while that obviously doesn't mean a change of leadership it'd be a measure to avoid a boycott.",
+                  "timestamp": "2026-08-03T23:43:34+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1jd893",
+                  "depth": 2,
+                  "replies": []
+                },
+                {
+                  "comment_id": "p1jtnw1",
+                  "author": "reddit_user_0888f690400d",
+                  "author_karma": 0,
+                  "content": "Nah they’d stick to it, just create a global championship in 2030 and invite US, Canada, Mexico, Saudi, Japan, South Korea, Australia etc see how excited Brazil and Argentina are to play Malawi and Vanuatu in the group stage of the apparently official World Cup.",
+                  "timestamp": "2026-08-03T23:46:14+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1jd893",
+                  "depth": 2,
+                  "replies": []
+                },
+                {
+                  "comment_id": "p1k42x8",
+                  "author": "reddit_user_3c9c7d484fc5",
+                  "author_karma": 0,
+                  "content": "UEFA doesn't have to rely on all of its members boycotting. UEFA organises the qualifications from Europe, so if a majority of UEFA members agree to boycotting, there won't be any qualified teams from Europe...",
+                  "timestamp": "2026-08-04T00:42:36+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1jd893",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            },
+            {
+              "comment_id": "p1ji181",
+              "author": "reddit_user_13a7b54ce80f",
+              "author_karma": 0,
+              "content": "They could be really bold and invite Brazil to play in the Euros ",
+              "timestamp": "2026-08-03T22:45:42+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1jbjx4",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1jktnv",
+                  "author": "reddit_user_24596d777b94",
+                  "author_karma": 0,
+                  "content": "Brazil is _very proud_ of being the only country that played in all world cups, even if CBF accepts it the backlash of withdrawing from \"the real world cup\" would the terrible even if it's against Sri Lanka and Lesotho ",
+                  "timestamp": "2026-08-03T22:59:57+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1ji181",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1jqq08",
+                      "author": "reddit_user_d0361392606f",
+                      "author_karma": 0,
+                      "content": "Withdrawing would save them from a 7-1 scudding off Lesotho though.",
+                      "timestamp": "2026-08-03T23:30:49+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1jktnv",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "p1jrri8",
+                          "author": "reddit_user_24596d777b94",
+                          "author_karma": 0,
+                          "content": "A world cup without European teams is Brazil's wet dream lol, specially if it is also without UEFA players",
+                          "timestamp": "2026-08-03T23:36:16+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "p1jqq08",
+                          "depth": 4,
+                          "replies": []
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "comment_id": "p1k3qle",
+                  "author": "reddit_user_3c9c7d484fc5",
+                  "author_karma": 0,
+                  "content": "There are already talks...",
+                  "timestamp": "2026-08-04T00:40:47+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1ji181",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            },
+            {
+              "comment_id": "p1jsaiq",
+              "author": "reddit_user_ce8184b58e76",
+              "author_karma": 0,
+              "content": "They won’t actually be boycotting the WC. Especially when that specific WC will be hosted by 2/3 UEFA AND the THREE prohibitive favorites will be UEFA (England, Spain, France). There’s probably never been a WC in history where it’s basically a 100% guarantee that a European nation wins it as there is with 2030. They’ll strong arm his ouster but they’re not boycotting a WC let alone THAT one  ",
+              "timestamp": "2026-08-03T23:39:03+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1jbjx4",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1ju1cz",
+                  "author": "reddit_user_811fb8a713b7",
+                  "author_karma": 0,
+                  "content": "I would be surprised if they actually boycott anything. They've yet to put their money where their mouth is but I think in the end, this gets resolved with Infantino still being president after making some concessions. Then everything goes on with business as usual.",
+                  "timestamp": "2026-08-03T23:48:14+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1jsaiq",
+                  "depth": 2,
+                  "replies": []
+                },
+                {
+                  "comment_id": "p1k3ltm",
+                  "author": "reddit_user_3c9c7d484fc5",
+                  "author_karma": 0,
+                  "content": "If UEFA takes steps to boycott the World Cup, Infantino is done and they won't have to carry through. IF the rest of FIFA tries to call their bluff, they will HAVE to follow through, and there are already talks with other confederations about organising an expanded EUROS+ in Spain and Portugal in 2030 instead of the World Cup.\n\nThat would be a disaster for FIFA, so the likelihood of UEFA having to actually follow through is close to zero...",
+                  "timestamp": "2026-08-04T00:40:05+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1jsaiq",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1ki7yb",
+                      "author": "reddit_user_f08680c5445a",
+                      "author_karma": 0,
+                      "content": "It’s my personal wet dream for both this to happen and for fifa to make Morocco host their 64 team tournament alone. Looking forward to the Seychelles v French Guiana match in a dirt lot in Western Sahara ",
+                      "timestamp": "2026-08-04T02:00:29+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1k3ltm",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "comment_id": "p1jt1tf",
+              "author": "reddit_user_31d0d725b2b7",
+              "author_karma": 0,
+              "content": "Issue around the boycott isn't just the Men's World Cup, though - FIFA are organising some 200 tournaments in a four-year cycle, and there's stuff like youth tournaments and Women's World Cup qualifiers coming up quite soon that'll be impacted by that boycott as well. \n\nThose will need to be part of the boycott as well, but that'll come at a serious cost.",
+              "timestamp": "2026-08-03T23:43:00+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1jbjx4",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1klj43",
+                  "author": "reddit_user_5d812431cdbd",
+                  "author_karma": 0,
+                  "content": "That's a political asset of sorts for European FAs in a way. \n\nSure I'd disrupt their youth & women's game programs for 1-2 years but in relative terms politically it makes sense to escalate by using these smaller FIFA competitions to come good on your threat to build credibility on the threat.\n\nNo need to wait till WC Qualification begin or let alone WC itself after European Teams having qualified.",
+                  "timestamp": "2026-08-04T02:19:00+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1jt1tf",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            },
+            {
+              "comment_id": "p1k8idz",
+              "author": "reddit_user_30a0631406d9",
+              "author_karma": 0,
+              "content": "UEFA only threatened to boycott if FIFA Forward Enterprise went through, which it did not. They haven’t threatened to boycott merely if Infantino gets reelected.",
+              "timestamp": "2026-08-04T01:06:51+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1jbjx4",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p1kgn61",
+              "author": "reddit_user_a5f473dcdac9",
+              "author_karma": 0,
+              "content": "Oh man imagine paying $1500k USD for that man match ",
+              "timestamp": "2026-08-04T01:51:43+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1jbjx4",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1jbn3b",
+          "author": "reddit_user_811fb8a713b7",
+          "author_karma": 0,
+          "content": "it doesn't really matter if he remains president if UEFA maintain their threat and actually boycott the World Cup. \n\nYou want a 64 team world cup with Sri Lanka vs. Lesotho in the quarters, go right ahead, see how well that works out. ",
+          "timestamp": "2026-08-03T22:13:38+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1jbozt",
+          "author": "reddit_user_46769e299f31",
+          "author_karma": 0,
+          "content": "<Narrator> The numbers were there.",
+          "timestamp": "2026-08-03T22:13:53+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1jc3nq",
+          "author": "reddit_user_33754c0f0c7d",
+          "author_karma": 0,
+          "content": "It'll happen or, if UEFA has any balls and truly wishes him to get the boot, the European nations will fuck off from FIFA competitions. Then the organisation will be dead in the water.",
+          "timestamp": "2026-08-03T22:15:53+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1jd1u5",
+          "author": "reddit_user_ca0d53dc14bd",
+          "author_karma": 0,
+          "content": "What else does he need to do for there to be a united front against him?",
+          "timestamp": "2026-08-03T22:20:33+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1jds3j",
+          "author": "reddit_user_b00e9710767e",
+          "author_karma": 0,
+          "content": "If UEFA just hold their nerve, he’s done. It’s years out from the next World Cup and the whole of FIFA is absolutely nothing without the big European teams.\n\nThreaten them with a Cambodia vs Dominican Republic World Cup and the cash cow will dry up immediately. Fucking Sri Lanka having the same voting power as France is an absolute farce anyway.",
+          "timestamp": "2026-08-03T22:24:10+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1jvb1z",
+              "author": "reddit_user_6e8634143812",
+              "author_karma": 0,
+              "content": "The next FIFA competition is September 5th.  Then the next senior competition is next June.",
+              "timestamp": "2026-08-03T23:55:06+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1jds3j",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1jwilq",
+                  "author": "reddit_user_b00e9710767e",
+                  "author_karma": 0,
+                  "content": "The mens World Cup is the flagship and the one that makes the money.\n\nMy team is literally in the next large mens FIFA event  and I couldn’t give a fuck if we risk missing it to get rid of this slug.",
+                  "timestamp": "2026-08-04T00:01:40+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1jvb1z",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p1jeott",
+          "author": "reddit_user_04a2935257bd",
+          "author_karma": 0,
+          "content": "what happened to the emergency vote of no confidence",
+          "timestamp": "2026-08-03T22:28:43+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1jgpqj",
+              "author": "reddit_user_077e1439705f",
+              "author_karma": 0,
+              "content": "Won't happen, imo. The numbers still aren't there. UEFA and CONCACAF don't have enough votes and that's if they all vote as a unified bloc. They must convince federations who haven't committed yet. ",
+              "timestamp": "2026-08-03T22:38:57+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1jeott",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1jff32",
+          "author": "reddit_user_4c5b87126175",
+          "author_karma": 0,
+          "content": "What a month with Trump does to an already rotten corrupted human being. ",
+          "timestamp": "2026-08-03T22:32:22+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1jfnac",
+          "author": "reddit_user_892700ea2a0d",
+          "author_karma": 0,
+          "content": "His plan is to win the elections and be the FIFA president four more years, after that he can't anymore, he's only eligible until 2031 this would be his last term. In the meantime sell the World Cup to private entities and be the comissioner of the World Cup after his FIFA presidency ends. The reports were that his salary as a World Cup comissioner would improve from 6 million USD annual that he has as a FIFA president to 30 million.",
+          "timestamp": "2026-08-03T22:33:31+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1jfzy2",
+          "author": "reddit_user_3ae6e990b90a",
+          "author_karma": 0,
+          "content": "It won't happen because at the end of the day alot of the other Federations know that UEFA is also a snake in the grass and they just want to install their own leader who will favor them. ",
+          "timestamp": "2026-08-03T22:35:19+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1jjre8",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-03T22:54:31+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1jmvt4",
+          "author": "reddit_user_b46ac456000b",
+          "author_karma": 0,
+          "content": "Good thing Tahiti can cancel the vote of Spain.\n\nReally good system, totally not designed to be rigged to shit. ",
+          "timestamp": "2026-08-03T23:10:42+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1jq9tr",
+          "author": "reddit_user_9dfb9b0fae82",
+          "author_karma": 0,
+          "content": "The numbers aren’t there until are they are. Stay steadfast and call out Infantino on his corruption and the dominoes will fall. He’s toast.",
+          "timestamp": "2026-08-03T23:28:27+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1jt99f",
+          "author": "reddit_user_0888f690400d",
+          "author_karma": 0,
+          "content": "Nah without Europe and North America Infantino is dead, also considering he seems to have Asia onside too. Anyone thinking it’s a numbers game only is very naive. Even if he got 106 votes, world cups without Europe would be worthless. And Europe and co could just create their own tournaments.",
+          "timestamp": "2026-08-03T23:44:06+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1k2n8t",
+          "author": "reddit_user_b3bd8045c8b9",
+          "author_karma": 0,
+          "content": "Poorer FAs will continue to back him because he gave them more money than any other president in FIFA's history.\n\nTo make his position untenable, it will take all the biggest revenue generators boycotting and leave him with only scraps to distribute.",
+          "timestamp": "2026-08-04T00:34:46+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1k513r",
+          "author": "reddit_user_1df8f9cdc209",
+          "author_karma": 0,
+          "content": "If UEFA dosen't budge, I don't think he can stay.\n\nHe can survive in his job for a couple months, but there's a loooong time until march. You can't have open war at the top of FIFA and UEFA has a lot of to way to screw things up.\n\nHis support will erode over time, other people can (and will) offer smaller countries FIFA's money without all the headaches.",
+          "timestamp": "2026-08-04T00:47:48+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1kydbf",
+          "author": "reddit_user_3f9da7b24cf8",
+          "author_karma": 0,
+          "content": "This guy needs to go based on clogging my feed alone.",
+          "timestamp": "2026-08-04T03:35:27+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run020_post01_seed101",
+      "post_slot": 1,
+      "seed_index": 101,
+      "source_raw_post_id": "1vernq8",
+      "source_product_dir": "nfl",
+      "source_file": "https://www.reddit.com/r/nfl/comments/1vernq8/los_angeles_rams_offseason_review/",
+      "post_type": "reddit_post",
+      "title": "Los Angeles Rams Offseason Review",
+      "author": "reddit_user_79ff14d8816f",
+      "author_karma": 0,
+      "content": "Los Angeles Rams Offseason Review\n\nLos Angeles Rams Offseason Review\n\n\\# Los Angeles Rams\n\n\\*Division: NFC-W\\*\n\nRecord: 2025 Season 12-5 // 2nd NFC-W\n\n\\*Draft Picks\\*\n\n· Round 1, Pick 13: Ty Simpson, QB, Alabama\n\n· Round 2, Pick 61 (via trade with Eagles): Max Klare, TE, Ohio State\n\n· Round 3, Pick 93: Keagen Trost, OT/OG, Missouri\n\n· Round 6, Pick 197: CJ Daniels, WR, Miami\n\n· Round 7, Pick 232: Tim Keenan III, DT, Alabama\n\n\\*\\*Free Agents\\*\\*\n\n\\*Signed\\*\n\n· Jaylen Watson Cornerback (former Kansas City Chiefs) 3 years, $51,000,000\n\n· Graunt Staurd Linebacker (former Detroit Lions) 2 years $4,450,000\n\n· Joe Cardona Long Snapper (Former Miami Dolphin) 2 years $3,450,000\n\n· Ronnie Rivers Running back (Retained Ram) 1 year $1,215,000\n\n· Larrell Murchison Defensive Line (Retained Ram) 1 year $1,215,000\n\n\\*Trades\\*\n\n· Trent McDuffie Cornerback\n\n· Myles Garrett Defensive End\n\n\\*Let walk\\*\n\n· Decobie Durant, Cornerback; Signed with Dallas Cowboys\n\n· Ahkello Witherspoon, Cornerback; Signed with Washington Warriors\n\n· Roger McCreary, Cornerback; Signed with Detroit Lions\n\n· Derion Kendrick, Cornerback; Signed with Dallas Cowboys\n\n· Nick Hampton, Edge, Signed with Carolina Panthers.\n\n· Jimmy Garappolo, Quarterback; Retired\n\n· D.J. Humphries, LT; Current Free Agent\n\n· Jake McQuaide, LS; Current Free Agent\n\n· Nick Vannett, TE; Current Free Agent\n\n· Troy Reeder, LB; Current Free Agent\n\n\\*\\*General\\*\\*\n\nThe Rams have Super Bowl or bust energy this season. The Rams have made it no secret they intend to push their chips in every year the Super Bowl is in Los Angeles. It is hard to assert fandom in Los Angeles. Winning titles matters in that city. With the trades and offseason moves plus having the reigning MVP, Matthew Stafford, and 2025 Defensive player of the year, Myles Garrett on the same team the over/under win totals is 11.5 to 13 wins. ESPN believes 13 is the number the Rams will win specifically. Rams are coming into training camp with significant expectations. I suspect the superstars will get a lot of rest prior to the start of the season. I also expect the Rams to have training camp battles against three teams this year. The two obvious are Dallas Cowboys and the New Orleans Saints. The third team is the question. My guess is The Los Angeles Chargers will be the third training camp battle because they are local. Also, if the Rams have a winning record do not be surprised if Aaron Donald leaves retirement to be the late pick up like Von Miller was during the 2020 season. Another additional late season could be a wide receiver like what the 2020 Rams did with Odell Beckham Jr. The Rams have a method for their Super Bowl runs.\n\n· Week 1: [REDDIT_USER] vs San Francisco 49ers. There are a lot of variables to this game. Nick Bosa, 49ers, is still recovering from an ACL tear. George Kittle torn Achilles is recovering. Isaac Guerendo has a torn pectoral muscle. Both teams fly a great distance to play. Alaric Jackson, Left Tackle of the Rams, will likely have a suspension as he did the last time he had a domestic violence charge. I do think with the 49ers being short handed and the Rams having so many stars I believe the\n\nRams will win as both teams will be still growing into their peak performances. There is risk however because of Jackson affecting the quality of play on the offensive line.\n\no Rams Win 1-0\n\n· Week 2 [REDDIT_USER] Angeles vs New York Giants. The over/under for this team is 7.5 to 8.5 due to the Harbaugh signing. This team has very few stars with Malik Nabers being the most significant. This team has limited reasons for optimism if Malik Nabers knee injury and scar tissue removal doesn’t resolve by week 2. This team is projected to have a strong offensive line headlined by Andrew Thomas. This gives second year Jackson Dart a real chance to play his game. I don’t know how they will match up against the Rams defensive line. If Nabers is not active and Cam Skattebo, returning from a season ending injury, are both not 100% available I do not think they can compete with the Rams.\n\no Rams Win 2-0\n\n· Week 3 [REDDIT_USER] vs Denver Broncos. This team is dependent on their players’ health as well. Although Bo Nix is expected to be fully cleared during training camp. How much he can run and plant his ankle will affect his quality of play? Additionally, his center Alex Forsyth is sidelined. It is hard to win in Denver to start, and I think Denver is good. I would not be surprised if we lost but I think Sean Payton will try to protect Nix which limits their offensive strength. This allows the defense to tighten up to the line further, limiting Denver’s options.\n\no Rams win 3-0\n\n· Week 4 [REDDIT_USER] vs Philadelphia Eagles. Even with Philadelphia going through changes offensively the Eagles have had our number. Since 2020 the Eagles have won 4 of 5 contests. I do not think that will change specifically because of historical context and how good Vic Fangio is.\n\no Rams lose 3-1\n\n· Week 5@Los Angeles vs Buffalo Bills. Buffalo Bills also are a team with leadership and player changes. The addition of DJ Moore, Gardner-Johnson and Bradley Chubb makes the team look a lot better on paper. If the Rams lose to Philadelphia they will come back home with more intensity. I think the Rams stars, at home, are going to play with something to prove.\n\no Rams win 4-1\n\n· Week 6@Los Angeles vs Arizona Cardinals. Having Mike LaFleur makes things difficult because he will know the Rams system inside and out. That makes his game planning against the Rams better. Problem is the Cardinals have only bridge quarterbacks and very few stars except Trey McBride and stars with injury histories. I don’t think the Cardinals have a real chance.\n\no Rams win 5-1\n\n· Week 7@Las Vegas vs Las Vegas Raiders. New everything with that team. Las Vegas has them over/under 5.5. This team, on paper, has very limited special players. Additionally, their new draft pick quarterback Fernando Mendoza will likely be pressured to start by the fan base at this point. If that happens, Myles Garrett is going to eat.\n\no Rams win 6-1\n\n· Week 8 [REDDIT_USER] Angeles vs Los Angeles Chargers. To improve the team, they changed offensive coordinator and offensive line coach. They are also moving to a wide-zone blocking scheme to help the O-line. Besides retaining Rashawn Slater and Joe Alt they added additions to the interior like Tyler Biadasz, Cole Strange, and Kayode Awosika. That means the interior is all new. Depending on how much their o-line improves could be a deciding factor. If the interior is weak, rotating Myles Garrett to work the middle could be a problem for the Chargers. I think the Rams have better talent and will win and the Rams ownership don’t like to see their team lose against the Chargers in Los Angeles.\n\no Rams win 7-1\n\n· Week 9 [REDDIT_USER] vs Washington Commanders. Over under for the Commanders is 7.5. The offensive coordinator changed and the lack of weapons in the passing game makes this game a good bet Rams win.\n\no Rams win 8-1\n\n· Week 10@Arizona vs Arizona Cardinals. A team with a lack of talent and a winning quarterback. Rams win. Rams have won 17 out of 21 competitions against the Cardinals since Sean McVay became head coach.\n\no Rams win 9-1\n\n· Week 11 BYE\n\n· Week 12@Los Angeles vs Greenback Packards. This team has also had the Rams number. They have won 5 out of 5 games since Matt LaFleur became head coach. Regardless of players, the Rams struggle to navigate them. Based on history I think they will lose again.\n\no Rams lose 9-2\n\n· Week 13@Los Angeles vs Kansas City Chiefs. This game should be fireworks. The Chiefs cornerbacks should be wanting to prove their worth after leaving the Chiefs. If the Chiefs win this game it has to be Walker and the Chiefs offensive line running it down the Rams’ throats. I do think Myles Garrett, Poonah Ford, Kobe Turner will make the necessary plays to win. Additionally, Chiefs will be starting a new draft pick cornerback Mansoor Delane who will have to match up against Puka Nacua. Tough challenge for a first year cornerback. I think we, on paper, are proven more.\n\no Rams win 10-2\n\n· Week 14@San Francisco vs 49ers. Over the last 5 years or so the Rams have split the season with the 49ers. At San Francisco I think they will take this win.\n\no Rams lose 10-3\n\n· Week 15@Los Angeles vs Dallas Cowboys. Over under per Las Vegas is 9.5. No player in addition free agency was a super star. The draft picks are not at premier positions. I don’t think they match up against the Rams team.\n\no Rams win 11-3\n\n· Week 16@Seattle vs Seahawks. Seahawks cannot be underestimated as they were last season. They lost their superstar running back Kenneth Walker but at that point in the season they will know what they have and how to use it. The concern is the change in offensive coordinator. Klint Kubiak did a great job on offense. I think they can beat the Rams and typically the Rams split contests in season against the Seahawks. 12 Nation will be loud so late in the season at Seattle.\n\no Rams lose 12-4\n\n· Week 17@Tampa Bay vs Buccaneers. Las Vegas has the Buccaneers as a middling team of 8.5. They lost Mike Evans who was the heartbeat of the team. The players they added are solid but not elite. By then they will know if Rueben Bain Jr is a superstar or not, but the Rams are the stronger team across all positions. Also, under duress Baker Mayfield can throw some interceptions.\n\no Rams win 13-4\n\n· Week 18@Los Angeles vs Seahawks. Same competition but at home. Rams win and will be hungry to win against the Seahawks because of my projected loss prior.\n\no Rams win 14-4\n\n\\*\\*Review of New Additions\\*\\*\n\n\\*\\*Draft Picks\\*\\*\n\n· 1st Round Pick 13: Ty Simpson, Quarterback Alabama. This is the most talked about pick especially with players like Makai Lemon available. Per the Rams leadership the pick was done because they do feel he is a first-round talent and his pick was the key towards future moves. The Rams did not think they would be drafting in the early part of the first round for many years so to have a clear answer for the team after Stafford’s eventual transition from QB1 they selected Ty Simpson. This also opened future first round picks to complete their ongoing discussion with the Cleveland Browns for Myles Garrett. Lance Zierlein projects Ty Simpson as eventually being a plus starter. He has intelligence and approved authority at the college level to change protections at the line. Most college QBs are not allowed to\n\ndo so. He is mobile enough to move around pressures and was able to scramble for first downs. He rarely misses throws between the numbers. Weaknesses are only one year of play at the college level, had a 57% completion rate over final four games, average arm talent, and held the ball too long. Overall weaknesses could be managed by being able to sit behind Matthew Stafford, who is under contract for 2 more seasons.\n\n· 2nd Round Pick 61: Max Klare, Tight End Ohio State. Another surprise pick. With the Rams already having four tight ends under contract. Compounding that with the Rams selecting a tight end early in the second-round last year continues the trend. Max Klare is another Move Tight End “F” like Terrence Ferguson. These two players are expected to be able to flex out to wide receiver. He also will eventually be a plus starter per Lanze Zierlein. He is a below average blocker and had ball security issues. Max Klare and Terrence Ferguson are a part of the Rams trend of moving more towards a 13 personnel team which really changed the math last season. Three tight ends sets make defenses play base personnel due to presenting an eight-man blocking surface.\n\n· 3rd Round Pick 93: Keagen Trost, Offensive Tackle, Missouri. Guy has played a lot of football. He has played college football for 7 years. In that time, he played left tackle, right tackle, and right guard. Rams prioritizes position flexibility in offensive line selection. This guy does that. With Alaric Jackson likely receiving punishment from the NFL for his behavior this offseason, he may end up being the right tackle. He was drafted for injuries on the starting offensive line but may end up being active. Lance Zierlein sees him as a good back up which may develop into a starter.\n\n· 6th Round Pick 197: CJ Daniels, Wide Receiver, Miami: A Rams receiver through and through. Lance Zierlein rated both as average backups or special teamers. CJ Daniels is about the same weight and height as Puka Nacua. Both players have consistent focus. Difference CJ Daniels, like Devante Adams, is really good at contested catches, whereas Puka Nacua is better at bully ball run-after-the-catch yards. Do not be surprised if he jumps the roster due to his profile.\n\n· 7th Round Pick 232: Time Keenan III, Defensive Tackle, Alabama: Best friend of Ty Simpson on his college team. Lance Zierlein sees him as an average backup or special teamer. He is a gap filling player like Poona Ford, who is on his final year of his contract. Keenan III is a taller player, at 6’2” comparatively to 5’11” and weighs nearly the same at 320 to 314 respectively. He will be a back up for Poona Ford and Ty Hamilton.\n\n\\*\\*Free Agents\\*\\*\n\n· Trade: Rams gave Chiefs 2026th 29th pick, 2026 fifth round pick, 2026 sixth round pick, and 2027 third round pick for Trent McDuffie. Rams have a system they developed during the 2020 Super Bowl Run. The Rams believe in a “four-weight bearing wall model”. To win a Super Bowl, per the Rams, you need a superstar cornerback, a superstar edge rusher, a superstar receiver, and a superstar quarterback. The superstars of the 2020 team were Jalen Ramsey, Aaron Donald, Cooper Kupp, and Matthew Stafford. Due to these individuals’ greatness, they lift everyone else up to be better. McDuffie is expected to be that for this season. McDuffie has position flexibility as earlier in his career he played as a man corner, slot corner, zone corner and outside corner. He is a willing tackler and in his last two seasons had up to one sack. This gives him a “Joker” ability that the Rams can utilize by moving him into nebulous positions which masks their defensive play. He has won the Super Bowl twice.\n\n· Jaylen Watson: The other Chiefs outside cornerback. He is an outside corner only but is very good at the position. He is also a willing tackler and had two sacks last year. Jaylen Watson is also fundamental to the weight bearing walls plan the Rams use as they signed two cornerbacks during the Super Bowl run. At the time the second was Darious Williams who was also an outside cornerback only player. He has won the Super Bowl twice.\n\n· Joe Cardona: Long Snapper. He is a part of the Special Teams plan to improve overall Special Teams results. He is important because of his experience of winning the Super Bowl twice with the New England Patriots. Also, a Navy officer which improves his leadership qualities.\n\n· Trade: Rams traded Jared Verse, a 2027 first-round pick, a 2028 second-round pick, and a 2029 third-round pick for Myles Garrett. This was only possible, per the Rams leadership, because they feel they have solved the future Quarterback problem. This player is a hall of famer. He closed games alone on Cleaveland Browns teams. With our defensive line and Byron Young continuing to develop this gives a very powerful defensive front.\n\n· Grant Stuard Linebacker. He is set to raise the floor on special teams. During the 2025 season he got an 83.0 special teams’ grade per Pro Football Focus. It is expected he will be a large upgrade over the Troy Reeder play the Rams had last year.\n\n· Rams prioritized Super Bowl for experienced players.\n\n\\*\\*Discuss Potential Losses\\*\\*\n\nThe Rams let four Cornerbacks go. Although Decobie Durant showed promise Trent McDuffie and Watson more than make up for it. Those two cornerbacks are better than\n\nall four lost. The two greatest losses are Jared Verse and Jimmy Garappolo. Jared Verse was a star and losing him as he is still ascending hurts. Peak Myles Garrett is better but it’s unclear how long he will be able to maintain his current level of play. Jimmy Garappolo is a quarterback who helped run the scout team for the Rams and, as a backup, could win a game or two if Matthew Stafford could not play. Both Stetson Bennett and Ty Simpson have limited to no starting experience. That is risky as Stafford does get hurt a lot.\n\n!\\[img\\](5nqfu780lr7h1 \"PROJECTED OFFENSE\")\n\n!\\[img\\](7waf5rvvlr7h1 \"PROJECTED DEFENSE\")\n\n!\\[img\\](e80z2ejwlr7h1 \"PROJECTED SPECIAL TEAMS\")\n\n!\\[img\\](gcz34e2xlr7h1)\n\n\\*\\*Coaching Staff Review\\*\\*\n\nComing into 2026 the Rams there were minimal changes in the coaching staff. For the most part the Rams coaching staff had minimal changes, however the changes that occurred are significant.\n\nOn the Offense side Mike LaFleur, the younger brother of Matt LaFleur, was selected to be the Head Coach of the Arizona Cardinals. During the 2025 season the LA Rams was number one in Offense by Yards per Game (394.6 per The Football Database). His replacement is Nathan Scheelhaase. He was the pass game coordinator for the Rams last two seasons and likely would have left if he did not receive a promotion. During the 2026 interview cycle he received prominent interviews with many teams including the Baltimore Ravens, the Cleveland Browns and Pittsburgh Steelers. Rams brought him up to the NFL from The Ohio State as he was a very intelligent coach especially in running back coaching and running game coordination. He was also a wide receiver coach. He is recognized by NFL coaching circles as directly contributing to Matthew Staffords best season, helping Puka Nacua reach another level, and is seen as one of NFL’s fast-rising stars.\n\nKliff Kingsbury who also was named Assistant Head Coach. Kliff Kingsbury has been a head coach and offensive coordinator for several stops. In 2025 Kliff Kingsbury’s was the offensive coordinator for the Washington Commanders with a yards per game score of 318.8 which was 22nd (per The Football Database). There are caveats to the results. The Commanders were riddled with injuries to include Jayden Daniels playing only 7 games. In the previous year, 2024, the Commanders were 7th in yards/game at 369.6. McVay likes to have coordinators he can trust, rely on, and have a real friendship with. McVay is an emotional coach. Kingsbury is someone McVay feels he can collaborate with, counts him as a good friend, and specifically Kingsbury has been highly successful at implementing one of the league’s most efficient run games in 2025. They were fifth in yards per rush (4.7), ninth in fourth-down conversion rate (61.5%) and fourth in red-zone efficiency 63.2%) (per\n\nNFL.com). The red zone conversion rate is particularly important because the Rams struggled especially early in the year with converting. Washington was nearly a full 1% higher than the Rams.\n\n\\*\\*Other notable Offensive coaching changes:\\*\\*\n\n· Brian Allen (prior center for Rams) is now an assistant offensive line coach. He was with the Rams during the Super Bowl winning season.\n\n· Rob Calabrese succeeded Eric Yarber as wide receiver coach.\n\n· Eric Yarber, who has been the Wide Receiver Coach for years, was promoted to senior offensive assistant/wide receivers coach (Pay raise ultimately with more responsibilities)\n\n· Robert Woods is now the assistant wide receiver’s coach. He was with the Rams during the Super Bowl winning season.\n\n· Quarterback coach Dave Ragone was retained and added title of associate coordinator (pay raise)\n\n· Brian Johnson was hired to be senior Offensive Assistant who replaced Alex Van Pelt who went to Atlanta Falcons. He worked well with Kliff Kingsbury in Washington and followed Kliff over.\n\nDefensively change the Rams made one significant change. They elected not to retain in any manner Aubrey Pleasant. Aubrey Pleasant was the Assistant Head Coach and had the additional title of Pass Game Coordinator. To get Kliff Kingsbury the Assistant Head Coach title was required. Aubrey Pleasant would have had to been demoted to be retained. They decided to let him walk.\n\nMost importantly Chris Shula, who was a hot name during the hiring cycle, was retained.\n\nJimmy Lake was promoted to pass game coordinator after Audrey Pleasant’s departure. Note: Jimmy Lake was the defensive back coach of Trent McDuffie during the Huskies 2021 season. That success led Jimmy to becoming the head coach of the Huskies in 2020.\n\nSpecial Teams had the second most changes. Rams were near the bottom at most special teams’ metrics with a dead-last rating of -169.68 in expected points lost due to special teams. To correct, the Rams hired Ray “Bubba” Ventrone and Kyle Hoke. These two are a tandem as they have coached together at the Cleveland Browns. During 2020 he had the fourth best special teams, 2nd best special team in 2021, and 8th best in 2022. Cleaveland was abysmal in special teams in 2025, however the team had challenges on all phases of the ball. They are hoping Ray Ventrone will raise the team to an average special team’s result. The best Chase Blackburn (prior Special Teams Coordinator) ever coached was 16th in 2020.\n\n\\*\\*Overall Roster\\*\\*\n\nThe roster is stacked. The key questions that will define this year are:\n\n· If Alaric Jackson is suspended who takes the left tackle position? My guess is Warren McClendon Jr takes the left tackle position leaving Keagan Trost as right tackle which is his natural position from college. This has risks which includes a Matthew Stafford injury.\n\n· Will Matthew Stafford continue his MVP level of performance? No one has been able to do back-to-back MVPs since Aaron Rodgers in 2020 and 2021. Matthew Stafford is an immobile quarterback with a history of injuries. It will be paramount to keep Stafford upright.\n\n· Who will be the sideline-to-sideline linebacker for the Rams? Our linebackers are not the best at coverage and that is a hole an opposing team can target.\n\n· Who will be WR 3? The Rams have Puka Nacua with a bullet (although he may suffer NFL corrective action due to his activities outside of the game), Devante Adams (who suffered an injury last year), and then a glut of wide receivers. If one of them goes down who can take those meaningful snaps?\n\n· This is the first year in years we did not draft a running back. We have Kyren Williams and Blake Corum which is a good duo but not spectacular. Beyond them they have drafted but never played Jarquez Hunter. It will be problematic if Kyren goes down because he is an excellent pass protector.\n\n· With minimal additions will Special team stop costing the Rams games. Did the coaching changes and 2 free agent additions do enough?\n\nBeyond those points the team has plenty of plus players to win most of the season.\n\n\\*\\*Final Thoughts\\*\\*\n\nThe Rams went all in to hoist the trophy once again in Los Angeles. Last year they were a play or two away from competing in the Super Bowl. The results of the Super Bowl were Seattle easily beat New England. If the Rams went to the Super Bowl last year New England would have had the same result. Top to bottom this roster is better than what we had last year. I expect the Rams to win their third Super Bowl.\n\nIf and when AD99 comes back the Rams will be defensively nuts.",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p1jbc2x",
+          "author": "reddit_user_edf8c83bf3b5",
+          "author_karma": 0,
+          "content": "Contenders without a doubt but I am expecting a slow start. Brutal brutal opening month, then the schedule opens and you’ll have found your footing.",
+          "timestamp": "2026-08-03T22:12:08+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1jemuh",
+          "author": "reddit_user_abfa75e94467",
+          "author_karma": 0,
+          "content": "Definitely contenders even though I hate them. Just like Seattle and SF, they have to beat out a meat grinder in division just to have a shot, so it's inherently harder for them (and us) than most teams have it. But, iron sharpens iron and I'd never count them out.",
+          "timestamp": "2026-08-03T22:28:26+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1jjivi",
+          "author": "reddit_user_7fb0bab8e8d0",
+          "author_karma": 0,
+          "content": "We are ready for round 3.",
+          "timestamp": "2026-08-03T22:53:18+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1khdxu",
+          "author": "reddit_user_5c920c0b4a14",
+          "author_karma": 0,
+          "content": "If we go 14-4 in 17 games then I'd certainly be surprised",
+          "timestamp": "2026-08-04T01:55:52+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1kiz4g",
+              "author": "reddit_user_dab949a8bf05",
+              "author_karma": 0,
+              "content": "Ya mb. I put it for people to edit on a different thread and no one caught that. Thx for bringing it to my attention. ",
+              "timestamp": "2026-08-04T02:04:45+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1khdxu",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1khtc2",
+          "author": "reddit_user_eb73a7b0f403",
+          "author_karma": 0,
+          "content": "Easily 2026 favorites. The best team on paper right now, and with excellent coaching.",
+          "timestamp": "2026-08-04T01:58:14+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1kmdu1",
+          "author": "reddit_user_b2a3e79a2106",
+          "author_karma": 0,
+          "content": "The Rams are really loading up this year",
+          "timestamp": "2026-08-04T02:23:46+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run020_post02_seed102",
+      "post_slot": 2,
+      "seed_index": 102,
+      "source_raw_post_id": "1verse4",
+      "source_product_dir": "nba",
+      "source_file": "https://www.reddit.com/r/nba/comments/1verse4/anthony_davis_pranks_cooper_flagg_with_awkward/",
+      "post_type": "rich:video",
+      "title": "Anthony Davis Pranks Cooper Flagg With Awkward Rookie Symposium",
+      "author": "reddit_user_79ff14d8816f",
+      "author_karma": 0,
+      "content": "Anthony Davis Pranks Cooper Flagg With Awkward Rookie Symposium",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p1jcron",
+          "author": "reddit_user_7037e043e3b1",
+          "author_karma": 0,
+          "content": "Didn't even realize AD had a show ",
+          "timestamp": "2026-08-03T22:19:09+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1jflrq",
+              "author": "reddit_user_9989d14b643b",
+              "author_karma": 0,
+              "content": "he has some gems. his pranks on draymond and daiyan henley are great",
+              "timestamp": "2026-08-03T22:33:18+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1jcron",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1jd3az",
+          "author": "reddit_user_137ecec38a21",
+          "author_karma": 0,
+          "content": "That still frame is pushing me not to watch",
+          "timestamp": "2026-08-03T22:20:45+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1jg0so",
+              "author": "reddit_user_e5bda2387917",
+              "author_karma": 0,
+              "content": "I’m actually gonna swipe off right after replying to you.",
+              "timestamp": "2026-08-03T22:35:26+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1jd3az",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1jkwn6",
+                  "author": "reddit_user_3b8cdd853c96",
+                  "author_karma": 0,
+                  "content": "Yo’ur so cool",
+                  "timestamp": "2026-08-03T23:00:23+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1jg0so",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p1jdu26",
+          "author": "reddit_user_89ba410a15cd",
+          "author_karma": 0,
+          "content": "Soon after this, Cooper's mom called Patrick Dumont and insisted that AD get traded",
+          "timestamp": "2026-08-03T22:24:26+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1jpxgw",
+          "author": "reddit_user_2e356b918396",
+          "author_karma": 0,
+          "content": "Coop looks like the only professional person here. This entire thing is completely unprofessional. Imagine a workplace where they prank you with a candid camera. I hope he mentions this episode when he decides to sign the QO and leave the Mavs with nothing after his rookie deal",
+          "timestamp": "2026-08-03T23:26:40+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1ku39s",
+          "author": "reddit_user_ba770b269118",
+          "author_karma": 0,
+          "content": "no wonder one got traded and one got fired",
+          "timestamp": "2026-08-04T03:08:43+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run020_post03_seed103",
+      "post_slot": 3,
+      "seed_index": 103,
+      "source_raw_post_id": "1verweo",
+      "source_product_dir": "soccer",
+      "source_file": "https://www.reddit.com/r/soccer/comments/1verweo/_/",
+      "post_type": ":n_oc: OC",
+      "title": "🎇",
+      "author": "reddit_user_79ff14d8816f",
+      "author_karma": 0,
+      "content": "🎇\n\n[removed]",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p1jd0g4",
+          "author": "reddit_user_e8d8c99d18e1",
+          "author_karma": 0,
+          "content": "Emoji aren't allowed in submission titles. Please make a new submission with just the plain text as the title.  \n\nYou can also remove @ and # and replace them by what they represent\n\n*I am a bot, and this action was performed automatically. Please [contact the moderators of this subreddit](/message/compose/?to=/r/soccer) if you have any questions or concerns.*",
+          "timestamp": "2026-08-03T22:20:21+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run020_post04_seed104",
+      "post_slot": 4,
+      "seed_index": 104,
+      "source_raw_post_id": "1verwip",
+      "source_product_dir": "soccer",
+      "source_file": "https://www.reddit.com/r/soccer/comments/1verwip/the_youth_are_credible/",
+      "post_type": ":n_opinion: Opinion Piece",
+      "title": "The Youth are Credible",
+      "author": "reddit_user_79ff14d8816f",
+      "author_karma": 0,
+      "content": "The Youth are Credible\n\n[removed]",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p1jd00o",
+          "author": "reddit_user_e8d8c99d18e1",
+          "author_karma": 0,
+          "content": "This post has been removed by AutoModerator.\n\nOpinion pieces aren't allowed in r/soccer unless they're genuinely valuable and insightful. To meet that threshold, they should be comparable in length to opinion articles from professional media. Your post does not meet that requirement, so it should be shared as a comment in the Daily Discussion instead.\n\n*I am a bot, and this action was performed automatically. Please [contact the moderators of this subreddit](/message/compose/?to=/r/soccer) if you have any questions or concerns.*",
+          "timestamp": "2026-08-03T22:20:17+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    }
+  ]
+}

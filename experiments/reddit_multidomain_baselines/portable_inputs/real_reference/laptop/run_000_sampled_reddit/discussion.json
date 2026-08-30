@@ -1,0 +1,1135 @@
+{
+  "meta": {
+    "product_category": "laptop",
+    "baseline": "real_reddit_reference",
+    "run_id": "run_000_sampled_reddit"
+  },
+  "posts": [
+    {
+      "post_id": "real_run000_post00_seed000",
+      "post_slot": 0,
+      "seed_index": 0,
+      "source_raw_post_id": "1v6uibv",
+      "source_product_dir": "chromeos",
+      "source_file": "https://www.reddit.com/r/chromeos/comments/1v6uibv/is_this_a_good_chromebook_i_can_get_it_for_cheap/",
+      "post_type": "Buying Advice",
+      "title": "Is this a good chromebook? i can get it for cheap and i want to use it for streaming, checking email, and basic web searches",
+      "author": "reddit_user_d8691634ac1e",
+      "author_karma": 0,
+      "content": "Is this a good chromebook? i can get it for cheap and i want to use it for streaming, checking email, and basic web searches",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "oztbbwp",
+          "author": "reddit_user_2d99b48d8713",
+          "author_karma": 0,
+          "content": "It will do that more than perfectly.",
+          "timestamp": "2026-07-26T05:31:56+00:00",
+          "likes": 7,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "oztf5c3",
+          "author": "reddit_user_e78bf90629e2",
+          "author_karma": 0,
+          "content": "No! You need it plugged in always because of the Intel chip. Get a mediatek it runs YouTube better with all day battery ",
+          "timestamp": "2026-07-26T06:02:00+00:00",
+          "likes": -6,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "oztlji2",
+          "author": "reddit_user_b80f24919f52",
+          "author_karma": 0,
+          "content": "As you mentioned streaming the speakers are pretty poor on those devices. Ive had an acer spin and whilst it was very fast and capable the sound was very bad. other than the speakers, it's fine for basic browsing ",
+          "timestamp": "2026-07-26T06:53:36+00:00",
+          "likes": 0,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "ozuq2im",
+          "author": "reddit_user_1f4e486279d7",
+          "author_karma": 0,
+          "content": "That's a good one except for battery life.",
+          "timestamp": "2026-07-26T12:15:55+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "ozv0mkg",
+          "author": "reddit_user_c9a87b8f4745",
+          "author_karma": 0,
+          "content": "How much?  I purchased a Chromebook Plus from Costco a few years ago during Black Friday sale and it was like $189 with touchscreen.  It is sometimes a bit slow but for travel laptop, it's been great!",
+          "timestamp": "2026-07-26T13:17:32+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "ozvzv74",
+          "author": "reddit_user_8acb42c66807",
+          "author_karma": 0,
+          "content": "if you don't mind buying used, look on eBay for dragonfly elite Chromebooks.  you can find them for <$200, and they're amazing devices ",
+          "timestamp": "2026-07-26T16:08:38+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0vqlp0",
+              "author": "reddit_user_e8840dd73554",
+              "author_karma": 0,
+              "content": "Can you fill me in more on the dragonfly elite Chromebooks? I’m also looking to upgrade my HP Chromebook and I need battery life. It’s mostly for online college. ",
+              "timestamp": "2026-07-31T14:23:55+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "ozvzv74",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p0vrtd9",
+                  "author": "reddit_user_8acb42c66807",
+                  "author_karma": 0,
+                  "content": "the dragonfly Chromebook I got has 82% battery health and terrible battery life (about 4 hours youtube playback) so it's not going to be great.  if you search around on eBay, you can find some listings for under $200\n\nhttps://preview.redd.it/a12hr94gskgh1.png?width=1070&format=png&auto=webp&s=433b05f20a0aad4a5c7aa4b58cacf060332083f9",
+                  "timestamp": "2026-07-31T14:29:13+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p0vqlp0",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "ozz73jw",
+          "author": "reddit_user_249d97000ab8",
+          "author_karma": 0,
+          "content": "How much are you paying? It’s perfectly good, but for the price I think you can get a better refurbished laptop like a Thinkpad or even a refurbished Macbook.",
+          "timestamp": "2026-07-27T01:38:49+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0kmaya",
+          "author": "reddit_user_dc372904d1c7",
+          "author_karma": 0,
+          "content": "You guys deleted my Google Play store and apps even though I didn't opt in for extended updates 😡",
+          "timestamp": "2026-07-29T23:51:43+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run000_post01_seed001",
+      "post_slot": 1,
+      "seed_index": 1,
+      "source_raw_post_id": "1v6yo9u",
+      "source_product_dir": "chromeos",
+      "source_file": "https://www.reddit.com/r/chromeos/comments/1v6yo9u/lenovo_vs_asus_chromebook_plus/",
+      "post_type": "Buying Advice",
+      "title": "Lenovo vs Asus chromebook plus",
+      "author": "reddit_user_d8691634ac1e",
+      "author_karma": 0,
+      "content": "Lenovo vs Asus chromebook plus\n\nHi! Deciding between Lenovo Chromebook plus 14” and Asus cx54 Chromebook plus 14”, both non touch.\n\nWill be using it for work - mainly on Google workspace. Wanted to get views from anyone who has tried / weighed the 2 :)\n\nHigh level view: Lenovo seems the lighter, portable option, but not sure if it is at the expense of productivity that Asus could provide (and by how much)\n\nConsiderations  \n**- Fan/heat:** prefer just closing the lid instead of shutting down, will Asus overheat/battery drain?  \n\\- **Processing power**: Asus seems to be stronger but wondering if most of my work is Google workspace (e.g sheets), if ARM MediaTek of intel core ultra is better   \n\\- **Ports**: Lenovo has 5Gbps USBC vs Asus thunderbolt 4 40Gbps - is there a real difference if driving just one monitor?  \n\\- Battery life: Lenovo claims 17h and Asus 10h - any real world benchmarks?",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "ozuqqen",
+          "author": "reddit_user_f36b7f754a40",
+          "author_karma": 0,
+          "content": "I own the Lenovo. I noticed limited resolution over USB-C, so if that's your main use case, you should be aware of these limitations.\n\nApart from that I'm very happy, it's a performing mobile powerhouse with a strong CPU that won't leave anything to be desired and excellent battery life.\n\nThe RAM is more than enough, and the hard disk is faster than what's usually found in Chromebooks.\n\nI'm not speculating about AluminumOS, but I'm also not excited for it.",
+          "timestamp": "2026-07-26T12:20:04+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p08efn0",
+              "author": "reddit_user_2e1a148f269d",
+              "author_karma": 0,
+              "content": "Did you experience that resolution when plugging to multiple displays or just 1? Understand the right side port should give 4k 60Hz while left side is 4K 30Hz",
+              "timestamp": "2026-07-28T09:43:24+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "ozuqqen",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p18h1xn",
+                  "author": "reddit_user_f36b7f754a40",
+                  "author_karma": 0,
+                  "content": "Just one, but it might be dependent on the port (the side of the laptop). I rarely use the laptop plugged into a screen.",
+                  "timestamp": "2026-08-02T11:14:57+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p08efn0",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "post_id": "real_run000_post02_seed002",
+      "post_slot": 2,
+      "seed_index": 2,
+      "source_raw_post_id": "1v706if",
+      "source_product_dir": "chromeos",
+      "source_file": "https://www.reddit.com/r/chromeos/comments/1v706if/please_help_my_chromebook_updated_removed_the/",
+      "post_type": "Troubleshooting",
+      "title": "PLEASE help. My Chromebook updated, removed the play store and important apps like Ibis Paint X, including Play files against my will.",
+      "author": "reddit_user_d8691634ac1e",
+      "author_karma": 0,
+      "content": "PLEASE help. My Chromebook updated, removed the play store and important apps like Ibis Paint X, including Play files against my will.\n\nBeginning a few days ago, my Chromebook has had a pop-up that said \"extended security updates available\", which I decided to avoid with everything because of the fact I never wanted to lose the ability to install apps and lose Ibis  PaintX, which, in recent months, I spent HOURS of work on art, specifically one which I was desperate to finish and looked actually great so far.\n\nAfter turning on my Chromebook today, however, I was in absolute shock when Ibis Paint X, along with a sandbox app from 2021, were ENTIRELY GONE, along with Play files. To be clear, all it did was update as it would usually do. I did NOT agree to the extended security updates that would remove any installed apps.\n\nI am at a deep loss. It may sound stupid at first, but imagine losing HOURS of work, including art and video projects as far back as 2022, possibly including more files (which maybe explains the extended storage space from 4.2 GB left to 12.4 GB). This is what I get for procrastinating for months. This is my punishment: losing what I struggled to finish and important past projects, including ones that were meant to be finished; I could never remake them exactly. Is it possible to recover en enable anything?",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "ozudg9n",
+          "author": "reddit_user_2e05608ecaea",
+          "author_karma": 0,
+          "content": "I am sorry that happened to you. \n\nI would try to install the play-store apps and see if the data is still available.\n\nI lost my crostini / linux development environment once and when I re-installed it it turned out my old container and data still existed.   But I do not know if that may work with the play-store too. \n\nAlways make backups. SSDs typically fail without any warning, so you can lose data at any time. Backup to cloud is most common.   \n\n\n",
+          "timestamp": "2026-07-26T10:46:44+00:00",
+          "likes": 5,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "ozuftec",
+              "author": "reddit_user_14001919d796",
+              "author_karma": 0,
+              "content": "Google Play Store is completely gone. I cannot reinstall it; there's no setting to enable it because it, along with the 2 installed apps, is gone. I don't use Google Cloud, just my files and Drive, which, by the way, was where I had files from any installed apps saved, in a Play files folder. What's weird was when I visited the Play Store on the web and went to Ibis Paint X, it said it was already installed (on \"Google Grunt\"), leading me to keep stupidly holding on to that little frail strand of hope of getting everything back. ",
+              "timestamp": "2026-07-26T11:04:46+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "ozudg9n",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "ozughhc",
+                  "author": "reddit_user_2e05608ecaea",
+                  "author_karma": 0,
+                  "content": "Cannot install the play store?  Weird. I'd look into that. \n\nIf you store your files on a device only, you gamble that the device-storage will not fail. That is not recommended. Check out 3-2-1 backup schemes. \n\n ",
+                  "timestamp": "2026-07-26T11:09:47+00:00",
+                  "likes": 6,
+                  "dislikes": 0,
+                  "parent_comment_id": "ozuftec",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "ozumk4x",
+                      "author": "reddit_user_20be3f6bfd49",
+                      "author_karma": 0,
+                      "content": "With extended update the Play Store will be gone",
+                      "timestamp": "2026-07-26T11:53:02+00:00",
+                      "likes": 10,
+                      "dislikes": 0,
+                      "parent_comment_id": "ozughhc",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "ozv844k",
+                          "author": "reddit_user_2e05608ecaea",
+                          "author_karma": 0,
+                          "content": "Wow. I just read up and  indeed android gets fully removed when you activate extended support.   ",
+                          "timestamp": "2026-07-26T13:56:45+00:00",
+                          "likes": 5,
+                          "dislikes": 0,
+                          "parent_comment_id": "ozumk4x",
+                          "depth": 4,
+                          "replies": [
+                            {
+                              "comment_id": "ozvjsgn",
+                              "author": "reddit_user_e1b151562f2a",
+                              "author_karma": 0,
+                              "content": "This has been the case with all extended support-eligible devices that reached AUE since June 2024.",
+                              "timestamp": "2026-07-26T14:53:30+00:00",
+                              "likes": 8,
+                              "dislikes": 0,
+                              "parent_comment_id": "ozv844k",
+                              "depth": 5,
+                              "replies": [
+                                {
+                                  "comment_id": "ozwnkba",
+                                  "author": "reddit_user_2e05608ecaea",
+                                  "author_karma": 0,
+                                  "content": "I did not know. thanks. ",
+                                  "timestamp": "2026-07-26T17:56:00+00:00",
+                                  "likes": 2,
+                                  "dislikes": 0,
+                                  "parent_comment_id": "ozvjsgn",
+                                  "depth": 6,
+                                  "replies": []
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "comment_id": "p0dyhyw",
+                  "author": "reddit_user_dc372904d1c7",
+                  "author_karma": 0,
+                  "content": "same here 😭\n\nhttps://preview.redd.it/uq5m9t4ws2gh1.png?width=1366&format=png&auto=webp&s=e5b4c93b1142ddba1a254b5986eb08e7a0cb3324\n\n",
+                  "timestamp": "2026-07-29T02:01:18+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "ozuftec",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "ozuivy5",
+          "author": "reddit_user_5c1ab33d696c",
+          "author_karma": 0,
+          "content": "Re-enabling the Play StoreOpen Settings by clicking the time at the bottom-right corner of your screen.Select Apps on the left menu.Look for Google Play Store and click Turn on if the option is available.Follow the on-screen steps to accept the terms.Checking for Extended Update ConflictsIf your device reached its end-of-life AUE date, choosing extended updates disables Android apps permanently on that profile [0.15].Verify your device status in Settings > About ChromeOS > Additional details.\n\n\nHopefully this helps. I've seen this before. Just a copy and paste possible solution. ",
+          "timestamp": "2026-07-26T11:27:18+00:00",
+          "likes": -2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "ozuloy9",
+              "author": "reddit_user_14001919d796",
+              "author_karma": 0,
+              "content": "Kind of confused about what you mean by that. The additional details showing the \"About version\" aren't editable code, plus Google Play Store and its installed apps are completely gone, meaning it's not in apps and therefore unable to be enabled.",
+              "timestamp": "2026-07-26T11:47:09+00:00",
+              "likes": 2,
+              "dislikes": 0,
+              "parent_comment_id": "ozuivy5",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "ozuohpk",
+                  "author": "reddit_user_5c1ab33d696c",
+                  "author_karma": 0,
+                  "content": "It was a shot in the dark. I've never seen this issue. ",
+                  "timestamp": "2026-07-26T12:05:54+00:00",
+                  "likes": 2,
+                  "dislikes": 0,
+                  "parent_comment_id": "ozuloy9",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p0077p8",
+                      "author": "reddit_user_152469a5ccb0",
+                      "author_karma": 0,
+                      "content": "i have gotten the same issue dont know how to fix this i played minecraft through mojo launcher from androida nd got a whopping 100 fps with all the mods was haveing fun but when this 150 chromeos update came it ruined everything i am so sick of it i tried linux for minecraft but was hell setting it up and when finally did with all the previous mods it was 1 to 3 fps\n\njust livin a sad life i got nothin except his chromebook (a complete normal life in Pakistan) just frustrating google is doing somethin i would kill it for but what can i do honestly like there should ba na optio to disable extended security updates",
+                      "timestamp": "2026-07-27T05:31:57+00:00",
+                      "likes": 2,
+                      "dislikes": 0,
+                      "parent_comment_id": "ozuohpk",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "p0gwdv1",
+                          "author": "reddit_user_b41f91a3a8ba",
+                          "author_karma": 0,
+                          "content": "were you able to roll back your chromeOS? i faced the same issue i really want play store back",
+                          "timestamp": "2026-07-29T13:52:27+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "p0077p8",
+                          "depth": 4,
+                          "replies": [
+                            {
+                              "comment_id": "p1a875e",
+                              "author": "[deleted]",
+                              "author_karma": 0,
+                              "content": "[removed]",
+                              "timestamp": "2026-08-02T16:51:54+00:00",
+                              "likes": 1,
+                              "dislikes": 0,
+                              "parent_comment_id": "p0gwdv1",
+                              "depth": 5,
+                              "replies": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "ozul3lo",
+          "author": "reddit_user_11f8c03d0975",
+          "author_karma": 0,
+          "content": "I am sorry this happened to you. I know exactly how you feel. I lost months of work when a hard drive failed.\n\nI hope you can recover your files. In the future, keep backups. Something like this will happen again. ",
+          "timestamp": "2026-07-26T11:43:02+00:00",
+          "likes": 5,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "ozuq0j8",
+              "author": "reddit_user_14001919d796",
+              "author_karma": 0,
+              "content": "The thing is, I was keeping backups of any saved artwork in the Play folder until it got removed without warning. ",
+              "timestamp": "2026-07-26T12:15:34+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "ozul3lo",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "ozur5nz",
+          "author": "reddit_user_4ec1e31ead4b",
+          "author_karma": 0,
+          "content": "on a Chromebook and not saving \"important data\" into a cloud drive or USB? IMO if you didn't backup in ANY way it wasn't truly important to you.",
+          "timestamp": "2026-07-26T12:22:42+00:00",
+          "likes": 3,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "ozus21b",
+              "author": "reddit_user_14001919d796",
+              "author_karma": 0,
+              "content": "If I had been warned beforehand, then I would have moved all play files onto a USB stick. That's the problem; it was something I thought wouldn't happen as long as I didn't opt into extended security updates, which would remove any installed apps and the ability to do so.",
+              "timestamp": "2026-07-26T12:28:12+00:00",
+              "likes": 3,
+              "dislikes": 0,
+              "parent_comment_id": "ozur5nz",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p0dzgbh",
+                  "author": "reddit_user_dc372904d1c7",
+                  "author_karma": 0,
+                  "content": "same here",
+                  "timestamp": "2026-07-29T02:06:41+00:00",
+                  "likes": 2,
+                  "dislikes": 0,
+                  "parent_comment_id": "ozus21b",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            },
+            {
+              "comment_id": "ozv6v50",
+              "author": "reddit_user_9674c52f86bf",
+              "author_karma": 0,
+              "content": "It’s hard not to back up to the cloud on a Chromebook on my experience",
+              "timestamp": "2026-07-26T13:50:27+00:00",
+              "likes": 3,
+              "dislikes": 0,
+              "parent_comment_id": "ozur5nz",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "ozzn89b",
+              "author": "reddit_user_a471b6083fc0",
+              "author_karma": 0,
+              "content": "Isn't this the *WHOLE POINT* of Chrome OS? That everything goes to the cloud thoughtlessly?  OP was actively working against themself?",
+              "timestamp": "2026-07-27T03:13:12+00:00",
+              "likes": 2,
+              "dislikes": 0,
+              "parent_comment_id": "ozur5nz",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p02wt4p",
+                  "author": "reddit_user_eed42242a571",
+                  "author_karma": 0,
+                  "content": "ChromeOS and its apps, and of course anything that's just \"cloud\" anyway (Google Docs etc).\n\nHowever, does not necessarily include Android apps, and not likely any local media storage at all. ",
+                  "timestamp": "2026-07-27T15:45:57+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "ozzn89b",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "ozuwcz7",
+          "author": "reddit_user_1f4e486279d7",
+          "author_karma": 0,
+          "content": "You had to have clicked update. It warns you before it goes into extended updates.\n",
+          "timestamp": "2026-07-26T12:53:45+00:00",
+          "likes": 10,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "ozuyacd",
+              "author": "reddit_user_14001919d796",
+              "author_karma": 0,
+              "content": "No. Once again, to be clear, I did not click update on anything. It was only yesterday evening when the pop-up saying \"New update available; restart your computer for the latest update\" came up, as it would occasionally do. Then after I was finished with the Chromebook, I turned it off, and today I turned it back on to see it had done the extended security updates without being prompted to do so, despite choosing to avoid it for the last few days.",
+              "timestamp": "2026-07-26T13:04:35+00:00",
+              "likes": -5,
+              "dislikes": 0,
+              "parent_comment_id": "ozuwcz7",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "ozvz5ru",
+                  "author": "reddit_user_9507d5e4fc1a",
+                  "author_karma": 0,
+                  "content": "Sadly..\n  Whatever - it is over.",
+                  "timestamp": "2026-07-26T16:05:21+00:00",
+                  "likes": 4,
+                  "dislikes": 0,
+                  "parent_comment_id": "ozuyacd",
+                  "depth": 2,
+                  "replies": []
+                },
+                {
+                  "comment_id": "p008c79",
+                  "author": "reddit_user_82c36227d7c6",
+                  "author_karma": 0,
+                  "content": "You turned it off then on, that's a reboot, the update had already downloaded when you turned it back the update was applied",
+                  "timestamp": "2026-07-27T05:40:37+00:00",
+                  "likes": 2,
+                  "dislikes": 0,
+                  "parent_comment_id": "ozuyacd",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            },
+            {
+              "comment_id": "p0sd884",
+              "author": "reddit_user_8f1c78bf9d09",
+              "author_karma": 0,
+              "content": "Didn't seem to warn me.  I even powerwashed the thing and sat there watching - shot straight to this extended support without prompting.",
+              "timestamp": "2026-07-31T01:23:28+00:00",
+              "likes": 2,
+              "dislikes": 0,
+              "parent_comment_id": "ozuwcz7",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "ozvaxxa",
+          "author": "reddit_user_e1b151562f2a",
+          "author_karma": 0,
+          "content": "The kind of behavior you've described has happened previously with models transitioning to extended support but typically only when they were running the beta or dev channels. When in stable there should be a clear set of UI dialogs that you have to click through (see attached). If you are now on v.150 or higher you are not running stable. If you perform a full recovery with the current v.149 recovery image you can get Play Store/Android support back - however if you go that route never press update. Once grunt devices move to the LTS channel (this coming October with v.150) there will be no way to go back to stable.\n\nhttps://preview.redd.it/eg4j13yk0lfh1.jpeg?width=840&format=pjpg&auto=webp&s=47bf2803998edc53b23389e2e6058a3d0f7484a4\n\n",
+          "timestamp": "2026-07-26T14:10:46+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "ozwh67t",
+          "author": "reddit_user_a667c1aa68fe",
+          "author_karma": 0,
+          "content": "There are options - but you're going to have to familiarize yourself with sideloading and flushing out the current operating system.\n\nThe way I see it, there is 2 options for you to go. Three if you want a more nuclear option - but it's there. \n\n(1. Download ChromeOS Flex. It's an OS for legacy Chromebooks that maintain the flexibility and software of your Laptop. I'm not entirely sure of the support for Android Apps and Linux - but I imagine there is something/someone who knows a thing or two about modding it.\n\n(2. FydeOS - which is an OS based on ChromeOS UI - which will allow you to download the Android Apps you were using. I'm not as familiar with this, but someone from Reddit told me about it the other day. This will involve flushing out the current software for that, same as Flex - but would offer a solution to get the apps back.\n\n(3. You would have to buy a separate Chromebook, unfortunately. It's hard to get past the parameters and guidelines to keep your current OS without the extended security updates. I have one of these, and it is a very real and present danger with working with EOL devices. I got mine for $50 on Woot, and I imagine you could do a Trade in on a site like Back Market and then get another device with similar performance to yours.\n\nI hope this helps. ",
+          "timestamp": "2026-07-26T17:27:30+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "ozyfbgb",
+              "author": "reddit_user_244fc10c4bad",
+              "author_karma": 0,
+              "content": "I must say that FydeOS sounds amazing, based on the \"What is FydeOS?\" video. I will have to do more research on this software. Thanks for the tip.\n\nFor OP I will say that I flashed the firmware of my EOL chromebook to install Linux and I experienced no downsides. I find it much preferable to ChromeOS.  [https://docs.mrchromebox.tech/docs/getting-started.html](https://docs.mrchromebox.tech/docs/getting-started.html)",
+              "timestamp": "2026-07-26T23:01:17+00:00",
+              "likes": 3,
+              "dislikes": 0,
+              "parent_comment_id": "ozwh67t",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "ozwjstv",
+          "author": "reddit_user_ddcb58fd9624",
+          "author_karma": 0,
+          "content": "Just ran into this issue with my father in law’s chromebook.\n\nHe definitely didn’t agree to the extended security updates because the notification telling him to do so is still there.\n\nSo ChromeOS will just remove the Play store because a device is too old? Instead of just keeping an older version of Play? Absolute joke.",
+          "timestamp": "2026-07-26T17:39:12+00:00",
+          "likes": 3,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "ozz73su",
+              "author": "reddit_user_33c303b226dd",
+              "author_karma": 0,
+              "content": "This just happened to my daughter yesterday.  All of her movies are gone.  So sad!",
+              "timestamp": "2026-07-27T01:38:52+00:00",
+              "likes": 6,
+              "dislikes": 0,
+              "parent_comment_id": "ozwjstv",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "ozzs7qg",
+              "author": "reddit_user_a667c1aa68fe",
+              "author_karma": 0,
+              "content": "I ran into an issue where Android Apps refused to update on my end - but we're still there and working. It said there was no storage space though I left half of my 32 GB open for that. \n\nI uninstalled and reinstalled Google Play on the Laptop and it seems to be working now. Hopefully it's a situation like that. ",
+              "timestamp": "2026-07-27T03:45:38+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "ozwjstv",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p02xx9q",
+                  "author": "reddit_user_ddcb58fd9624",
+                  "author_karma": 0,
+                  "content": "Play just doesn’t exist on the Chromebook anymore. Apparently this was a “glitch” forcing this at 5 years instead of 10 (sun setting the Play store after 10 years still seems absolutely absurd to me).\n\nMy only option is to try a manual rollback with a USB stick, I just didn’t have my laptop on me to do it yesterday.",
+                  "timestamp": "2026-07-27T15:50:40+00:00",
+                  "likes": 2,
+                  "dislikes": 0,
+                  "parent_comment_id": "ozzs7qg",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p030ke3",
+                      "author": "reddit_user_a667c1aa68fe",
+                      "author_karma": 0,
+                      "content": "I didn't know you could do a rollback this way, that would definitely do the trick if true. \n\nI remember my very first Chromebook, a Samsung Galaxy Chromebook 3, and it would almost always crap out with Android Apps around the time it updated. I would get it back up and running within a few days but the next update would essentially nullify it. It would still be there in my App Drawer, but it wouldn't open - neither would any of my other apps. \n\nThis might just be a legacy issue with ChromeOS. I'm interested to see how AluminumOS fixes things with it being Android first. ",
+                      "timestamp": "2026-07-27T16:01:48+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p02xx9q",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "p0dz6oz",
+                          "author": "reddit_user_dc372904d1c7",
+                          "author_karma": 0,
+                          "content": "it still updates back to the glitched version though.",
+                          "timestamp": "2026-07-29T02:05:10+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "p030ke3",
+                          "depth": 4,
+                          "replies": []
+                        }
+                      ]
+                    },
+                    {
+                      "comment_id": "p0dzlvk",
+                      "author": "reddit_user_dc372904d1c7",
+                      "author_karma": 0,
+                      "content": "it would still update back to the glitched version, though.",
+                      "timestamp": "2026-07-29T02:07:34+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p02xx9q",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "p0h19kz",
+                          "author": "reddit_user_ddcb58fd9624",
+                          "author_karma": 0,
+                          "content": "Is there no way to stop it from updating back? I know there’s a setting for it to be on a Stable version somewhere",
+                          "timestamp": "2026-07-29T14:14:33+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "p0dzlvk",
+                          "depth": 4,
+                          "replies": [
+                            {
+                              "comment_id": "p0htiob",
+                              "author": "reddit_user_dc372904d1c7",
+                              "author_karma": 0,
+                              "content": "Yeah, it just reverts back when you restart it\n\nThey did make it possible to prevent it from updating through a Google workspace Admin account, but it's locked behind a stupid paywall 😡",
+                              "timestamp": "2026-07-29T16:14:43+00:00",
+                              "likes": 1,
+                              "dislikes": 0,
+                              "parent_comment_id": "p0h19kz",
+                              "depth": 5,
+                              "replies": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "comment_id": "p0dyywy",
+              "author": "reddit_user_dc372904d1c7",
+              "author_karma": 0,
+              "content": "same also happened to me:\n\nhttps://preview.redd.it/1dkw157nt2gh1.png?width=1366&format=png&auto=webp&s=61c6a48516e88eee93ce96f304d09864680ffef0\n\n",
+              "timestamp": "2026-07-29T02:03:56+00:00",
+              "likes": 2,
+              "dislikes": 0,
+              "parent_comment_id": "ozwjstv",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "ozxra88",
+          "author": "reddit_user_bd50aee82fb7",
+          "author_karma": 0,
+          "content": "I was going to say you could potentially pull the hard drive and try data recovery but it's probably just a chip soldered to the motherboard. \n\nThis isn't specifically why I'm moving away from Chromebooks (and not planning to adopt Googlebooks either) but it's another sign that it's the right call.",
+          "timestamp": "2026-07-26T20:58:22+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "ozyj3n6",
+          "author": "reddit_user_3e201a2f5947",
+          "author_karma": 0,
+          "content": "You need to update to a new Chromebook .",
+          "timestamp": "2026-07-26T23:22:08+00:00",
+          "likes": 3,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "ozyn2fk",
+              "author": "reddit_user_14001919d796",
+              "author_karma": 0,
+              "content": "That's what I was considering for the future, yeah.",
+              "timestamp": "2026-07-26T23:44:12+00:00",
+              "likes": 2,
+              "dislikes": 0,
+              "parent_comment_id": "ozyj3n6",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p128m4m",
+                  "author": "reddit_user_c5eee60dbb87",
+                  "author_karma": 0,
+                  "content": "What you need to do is never buy a Chromebook again. Chromebooks aren't even real computers. They are poorly designed cell phone guts in a laptop body. Windows and Apple may have own set of faults but, at least they allow you to continue to keep your work and programs on your device once security updates are over. I have lost all of my files every time there is an update ever since they started forcing this AI garbage into it. Never again will I own a Chromebook. Never again.",
+                  "timestamp": "2026-08-01T12:52:04+00:00",
+                  "likes": 2,
+                  "dislikes": 0,
+                  "parent_comment_id": "ozyn2fk",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "ozzjkbq",
+          "author": "reddit_user_31b6f4d3f674",
+          "author_karma": 0,
+          "content": "For me the prompt to set up the extended update is still there yet my playstore is gone",
+          "timestamp": "2026-07-27T02:50:47+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p01t0p4",
+          "author": "reddit_user_2ee4c877023f",
+          "author_karma": 0,
+          "content": "Even if a user ignores the ESU opt-in prompt initially, clicking the standard \"Restart to Update\" notification once the AUE build milestone lands will trigger the ESU transition, taking the user by surprise. And all locally stored stuff is gone, gone, gone. ",
+          "timestamp": "2026-07-27T12:41:54+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0dzc3v",
+              "author": "reddit_user_dc372904d1c7",
+              "author_karma": 0,
+              "content": "that's illeagal",
+              "timestamp": "2026-07-29T02:06:00+00:00",
+              "likes": 2,
+              "dislikes": 0,
+              "parent_comment_id": "p01t0p4",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p045338",
+          "author": "reddit_user_b9508ad4db30",
+          "author_karma": 0,
+          "content": "This just happened to me today and I havent stopped crying the last two hours , everything's gone around 200 artworks of mine and animations just deleted and idk what to do now. My Chromebook for some reason says ibis paint x is still installed so I cant even try to reinstall it on the playstore but it wont let me uninstall it either. Idk what going on. And I cant find any awnsers to help me.",
+          "timestamp": "2026-07-27T18:50:23+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0kahcg",
+              "author": "reddit_user_14001919d796",
+              "author_karma": 0,
+              "content": "That's just heartbreaking. All of those animations and art gone without a warning. :'(  \n  \nIt was only later after making this post that I learned what happened: when a Chromebook notifies you of extended security updates and the occasional pop-up that a new update is available, once you turn it off as usual, it forces the update regardless of your decision and permanently wipes your Google Play folder,  including the ability to install and use apps from the Play Store or any Android apps.\n\nThe best thing to do is to try to get a new Chromebook, or to find a way to \"bypass\" the restrictions, though I probably know as much as you do.",
+              "timestamp": "2026-07-29T22:48:16+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p045338",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p0e0q3l",
+          "author": "reddit_user_dc372904d1c7",
+          "author_karma": 0,
+          "content": "you can't even turn off automatic updates either.\n\nthey of course make it possible to turn off automatic updates; But you have to pay a monthly subscription to do so. (Google workspace Admin)",
+          "timestamp": "2026-07-29T02:13:56+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0elnm4",
+          "author": "reddit_user_064f387e70f7",
+          "author_karma": 0,
+          "content": "Oh my goodness. I've faced the same thing and I'm trying out so many things. How can I get it back i really need google play store",
+          "timestamp": "2026-07-29T04:23:44+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0gvh4z",
+          "author": "reddit_user_b41f91a3a8ba",
+          "author_karma": 0,
+          "content": "dude same happened to me, please tell me if you found a way to get it back please. I use my chromebook solely for note taking, and the app squid is gone now honestly it is so gross how can they even do this. i do download and transfer notes to my phone after completing them so yeah i lost my one mid-process notes, i dont mind if i dont get notes back i just want android back again like pleasee",
+          "timestamp": "2026-07-29T13:48:15+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0kb6u0",
+              "author": "reddit_user_14001919d796",
+              "author_karma": 0,
+              "content": "I've currently been trying to find a solution for this, but all I find are dead ends",
+              "timestamp": "2026-07-29T22:51:58+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p0gvh4z",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p0nlv4x",
+          "author": "reddit_user_60152e92cf5a",
+          "author_karma": 0,
+          "content": "Guys, should we just wait until Google makes an update?",
+          "timestamp": "2026-07-30T12:10:29+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0scxf6",
+          "author": "reddit_user_8f1c78bf9d09",
+          "author_karma": 0,
+          "content": "Ran into this today with the HP 14-db0020nr I bought in 2020 (it was a 2019 release).  Had it in storage after a move but rediscovered it and thought I'd hand it down to the youngling.  Everything set up just right and we got the games they were after, but it seems to have updated today and clicked over to the \"long term support channel\".\n\nI tried a powerwash, but it looks like it opts back in to that track without prompting (not that I saw it the first time), so no good there.  I seem to have the option to  change channel between \"Stable\", \"Beta\", and \"Developer - unstable\".  I don't imagine any of these would bring the store back?",
+          "timestamp": "2026-07-31T01:21:49+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0tzt6c",
+              "author": "reddit_user_68cb2c432815",
+              "author_karma": 0,
+              "content": "I just finagled with this on the Chromebook my son is using. If you set it to channel \"stable\" it won't do anything and looking at the updater logs it seems to be because the \"stable\" channel version is older than \"ltc\" and it won't roll back.\n\nI had success by switching to beta and letting that update fully, and then switching it back to stable and then letting that download and install. It required a power wash. ARC/the play store was back.\n\nI do fear it will just update automatically again though so I don't really think this is a fix.",
+              "timestamp": "2026-07-31T07:57:43+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p0scxf6",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p0vf08f",
+                  "author": "reddit_user_8f1c78bf9d09",
+                  "author_karma": 0,
+                  "content": "Thanks; interestingly *now* the Chromebook is talking about opting in to the extended updates - the button that used to allow me to change those settings is now the \"Set up\" button for it.  Play Store is still nowhere to be seen, though.\n\nIn your case you power washed, then set it to Beta?  ",
+                  "timestamp": "2026-07-31T13:31:22+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p0tzt6c",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p0we5rr",
+                      "author": "reddit_user_68cb2c432815",
+                      "author_karma": 0,
+                      "content": "Yes, the first thing I had tried when the play store was missing was a power wash, which did not help.\n\nI then changed in settings to the stable channel which appeared to do nothing at all. No download or restart.\n\nWhen that did nothing I changed it to beta channel which immediately prompted a download into a restart. No power wash. I could see it properly changed to beta channel and had installed a different version but there was still no play store.\n\nOnce on the beta channel version, I was able to swap back to stable channel which then downloaded and it prompted another power wash. After that it reverted to the version where the play store is working.\n\nThe device does recognize there is an update available however and I suspect that performing that update will install the broken version once again... and these things are so stubbornly unconfigurable that I can't turn off auto-update.",
+                      "timestamp": "2026-07-31T16:05:47+00:00",
+                      "likes": 2,
+                      "dislikes": 0,
+                      "parent_comment_id": "p0vf08f",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p12blad",
+          "author": "reddit_user_4a3263baceca",
+          "author_karma": 0,
+          "content": "bro my chromebook is from 2026 but i dont see play store fix this chromebook i tried everything i powerwshed i even asked gemini but nothing worked if is like this im never buying chromebooksi even went on chrome://flagg an i  even allowed Enable ARC attestation i enabled but nothing worked please fix this\n\n",
+          "timestamp": "2026-08-01T13:09:22+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run000_post03_seed003",
+      "post_slot": 3,
+      "seed_index": 3,
+      "source_raw_post_id": "1v70xes",
+      "source_product_dir": "chromeos",
+      "source_file": "https://www.reddit.com/r/chromeos/comments/1v70xes/how_do_i_move_downloaded_videosfiles_from_vlc_app/",
+      "post_type": "Discussion",
+      "title": "How do I move downloaded videos/files from VLC app to a USB drive on a Chromebook?",
+      "author": "reddit_user_d8691634ac1e",
+      "author_karma": 0,
+      "content": "How do I move downloaded videos/files from VLC app to a USB drive on a Chromebook?\n\nHey everyone,  \nI downloaded a series on my Chromebook, but the standard media player won't play the files (just gives me a black screen, probably due to the HEVC 10-bit MKV format).  \nI installed VLC for Android to watch them, but now I want to transfer these video files onto a USB flash drive.  \nWhere exactly are the VLC / Android app files stored in the ChromeOS Files app, and what's the best way to copy them over to my USB stick?  \nAny help or step-by-step guidance would be appreciated! Thanks!",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "ozuuooc",
+          "author": "reddit_user_e1b151562f2a",
+          "author_karma": 0,
+          "content": "I presume you used a torrent client to download the files. If so, the mkv files will be wherever the torrent client saves to.",
+          "timestamp": "2026-07-26T12:43:57+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "ozuxg4n",
+          "author": "reddit_user_689bdc49a699",
+          "author_karma": 0,
+          "content": "Press the chrome search key (where caps lock usually is) and type *files*\n\nSee how you go",
+          "timestamp": "2026-07-26T12:59:55+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run000_post04_seed004",
+      "post_slot": 4,
+      "seed_index": 4,
+      "source_raw_post_id": "1v73eud",
+      "source_product_dir": "chromeos",
+      "source_file": "https://www.reddit.com/r/chromeos/comments/1v73eud/got_my_first_chromebook/",
+      "post_type": "Review",
+      "title": "got my first Chromebook",
+      "author": "reddit_user_d8691634ac1e",
+      "author_karma": 0,
+      "content": "got my first Chromebook\n\nI bought a secondhand Lenovo E14 Chromebook with an Intel N100 processor, 4GB RAM, and 64GB eMMC storage for only 4,500 Php (\\~$76 USD). The battery health is great, too—it only had 11 cycles on it!\n\nI've been using it for about 5 days now, and I’m enjoying it so much. Even though it's an entry-level device, I can run my daily workflow without any hassle. I use it for office work with massive Excel files on Office.com, inventory tracking via Odoo, annotating PDFs, Google Docs, Teams, and Google Chat. I also use Google Sheets to manage our family business.\n\nThe only real downside is the poor TN screen display, but I fixed that by hooking it up to an IPS portable monitor. I also wish Viber had a proper web app; my workaround for now is using my phone to transfer files directly to OneDrive or Google Drive.\n\nAs for battery life, it's excellent. I timed it at 8 hours and 22 minutes of continuous heavy use (doing all the tasks mentioned above) before it dropped from 100% down to 30%. Highly recommend this budget setup!",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "ozvkvhv",
+          "author": "reddit_user_a667c1aa68fe",
+          "author_karma": 0,
+          "content": "That's a great deal! I've been living out of a Lenovo 300e 2nd Gen AMD. And I got it for 51 dollars on Woot in refurbished quality. It's in great shape besides some wearing on the hinge. \n\nFor light/intermediate internet and streaming use - it works perfectly. Even EOL, everything is still snappy and working properly and I have a Dual Boot USB for Linux to expand its capacity. \n\nWelcome to the club! ",
+          "timestamp": "2026-07-26T14:58:34+00:00",
+          "likes": 3,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "ozvpwkl",
+          "author": "reddit_user_d95b1453cbcb",
+          "author_karma": 0,
+          "content": "i tried linux on it too and install viber but sadly its taking too much ram. so i decided too deactivate it. and deactivate playstore as well. ",
+          "timestamp": "2026-07-26T15:22:20+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0098wp",
+          "author": "reddit_user_4e0dc685db0c",
+          "author_karma": 0,
+          "content": "Lenovo loves TN.",
+          "timestamp": "2026-07-27T05:47:44+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p03fp8g",
+              "author": "reddit_user_db5a5e495ffb",
+              "author_karma": 0,
+              "content": "Arent the Chinese trying to buy all our farms too?",
+              "timestamp": "2026-07-27T17:05:02+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p0098wp",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p00hoqb",
+          "author": "reddit_user_e78bf90629e2",
+          "author_karma": 0,
+          "content": "Arm is better ",
+          "timestamp": "2026-07-27T06:54:52+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p00vgne",
+              "author": "reddit_user_d95b1453cbcb",
+              "author_karma": 0,
+              "content": "I agree. Actually I was choosing between lenovo Chromebook ideapad slim 3 with kampanio 520. it has a better ips screen display and better efficiency. i just can't find a better deal that beat the price with the one i bought. ",
+              "timestamp": "2026-07-27T08:48:50+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p00hoqb",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p17zr8u",
+          "author": "reddit_user_6ed16f19d6b8",
+          "author_karma": 0,
+          "content": "Well you should try looking for old but awesome pixelbook go, I got mine for 5k on fb marketplace.",
+          "timestamp": "2026-08-02T08:51:26+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p191i27",
+              "author": "reddit_user_d95b1453cbcb",
+              "author_karma": 0,
+              "content": "Is it close to its auto-update expiration date?",
+              "timestamp": "2026-08-02T13:25:23+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p17zr8u",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1dcm22",
+                  "author": "reddit_user_6ed16f19d6b8",
+                  "author_karma": 0,
+                  "content": "June 2029",
+                  "timestamp": "2026-08-03T02:13:52+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p191i27",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,656 @@
+{
+  "meta": {
+    "product_category": "headphones",
+    "baseline": "real_reddit_reference",
+    "run_id": "run_010_sampled_reddit"
+  },
+  "posts": [
+    {
+      "post_id": "real_run010_post00_seed050",
+      "post_slot": 0,
+      "seed_index": 50,
+      "source_raw_post_id": "1vbtej7",
+      "source_product_dir": "audiophile",
+      "source_file": "https://www.reddit.com/r/audiophile/comments/1vbtej7/ever_been_let_down_by_a_recording/",
+      "post_type": "Discussion",
+      "title": "Ever been let down by a recording?",
+      "author": "reddit_user_d43b8c7b6255",
+      "author_karma": 0,
+      "content": "Ever been let down by a recording?\n\nOne of my biggest disappointments is when I buy an album I love on vinyl and the album cover I've been staring at on my phone/iPod/whatever all these years is just a low-quality JPEG blown up to 12x12\".\n\nHas anyone experienced the audio equivalent of this? Like, a cherished album actually sounds flat and low-quality on nice speakers, and there's nothing you can do about it because the problem is the original recording?",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p0vzzyb",
+          "author": "reddit_user_fd441ef8844d",
+          "author_karma": 0,
+          "content": "It happens more than I care to admit! In addition to original recording quality, there’s mastering and pressing that has a significant impact on the playback. ",
+          "timestamp": "2026-07-31T15:04:49+00:00",
+          "likes": 9,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0w030d",
+          "author": "reddit_user_a22366230f24",
+          "author_karma": 0,
+          "content": "All of the Motown recordings",
+          "timestamp": "2026-07-31T15:05:11+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0w0lm4",
+          "author": "reddit_user_f4ce24dcafdf",
+          "author_karma": 0,
+          "content": "Lots of amazing music is hindered this way.  I’ll still listen to those albums on my dedicated stereo.  However, roadtrips are the best for albums like that given the noise floor in the car and not caring about much other than the music itself.",
+          "timestamp": "2026-07-31T15:07:28+00:00",
+          "likes": 3,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0w0sjh",
+          "author": "reddit_user_b4853aa1b21d",
+          "author_karma": 0,
+          "content": "yes.  especially in hip hop, it seems like the recording quality is atrocious.  Makes me pull my airpods back out just so I don't have to feel so angry about it.",
+          "timestamp": "2026-07-31T15:08:17+00:00",
+          "likes": 0,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0w4yxv",
+              "author": "reddit_user_d0cda573e51c",
+              "author_karma": 0,
+              "content": "Hip hop is the antithesis to vinyl best practices. For example, heavy sub bass in music came around post-vinyl because vinyl is terrible at reproducing it due to the physical limitations of the medium. The sonic characteristics of music have always been very much constrained by the medium they are conveyed by, and eventually the capability of digital playback nullified nearly all barriers and enabled the “crazy” (sonically) sounds of today. ",
+              "timestamp": "2026-07-31T15:26:30+00:00",
+              "likes": 3,
+              "dislikes": 0,
+              "parent_comment_id": "p0w0sjh",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p0w0tun",
+          "author": "reddit_user_f48ffddaf3aa",
+          "author_karma": 0,
+          "content": "This may controversial but it's nonetheless true. \n\nMy copy of Bat out of Hell sounds shite on vinyl. No idea if it's just this one or they are all like it. But every time I put it on I go \"yuk\" and can't finish it. \n\nWeird",
+          "timestamp": "2026-07-31T15:08:27+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0w1dgi",
+          "author": "reddit_user_0e3a516802a9",
+          "author_karma": 0,
+          "content": "More often than not",
+          "timestamp": "2026-07-31T15:10:48+00:00",
+          "likes": 7,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0w3zg2",
+          "author": "reddit_user_d0cda573e51c",
+          "author_karma": 0,
+          "content": "Modern music isn’t mastered for vinyl. The amount of artists who care to remaster for it are probably a rounding error. New production of vinyl isn’t a product of artistry it’s a cash grab.\n\nThere are some infamous examples, such as one vinyl press that inexplicably had a computer error popup sound in the middle of the playback.\n\nMastering as a field initially existed because the physical limitations of vinyl and others required certain practices to maintain good listenability, and it’s a lost art now that vinyl is more just a gimmick.\n\nIMO if you’re buying new production vinyl you’re getting ripped off 99/100 times for nostalgia bait.",
+          "timestamp": "2026-07-31T15:22:10+00:00",
+          "likes": 0,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0wrxzn",
+              "author": "reddit_user_49d5e3294d81",
+              "author_karma": 0,
+              "content": "https://www.deutschegrammophon.com/en/artists/diverse-kuenstler/news/the-original-source-series-expert-discussion-270506",
+              "timestamp": "2026-07-31T17:04:42+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p0w3zg2",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p0xjlto",
+                  "author": "reddit_user_d0cda573e51c",
+                  "author_karma": 0,
+                  "content": "Cool cherry pick but the vast majority of people buying new vinyl are getting stuff like Olivia Rodrigo from urban outfitters",
+                  "timestamp": "2026-07-31T19:04:31+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p0wrxzn",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p0yk48h",
+                      "author": "reddit_user_49d5e3294d81",
+                      "author_karma": 0,
+                      "content": "Quote..... Modern music isn’t mastered for vinyl. The amount of artists who care to remaster for it are probably a rounding error. New production of vinyl isn’t a product of artistry it’s a cash grab.\n\nMaybe cherry picked but it shows your answer is wrong. Also there are others.",
+                      "timestamp": "2026-07-31T21:52:59+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p0xjlto",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "p0zt4t5",
+                          "author": "reddit_user_d0cda573e51c",
+                          "author_karma": 0,
+                          "content": "That’s why I used the “rounding error” qualifier you conveniently ignore. If you want to be pedantic and ignore the intent of the message thats on you",
+                          "timestamp": "2026-08-01T02:03:58+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "p0yk48h",
+                          "depth": 4,
+                          "replies": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p0w5364",
+          "author": "reddit_user_9125fa95382e",
+          "author_karma": 0,
+          "content": "I was really disappointed going back to My Beautiful Dark Twisted Fantasy not too long ago. Incredibly inventive and cool production, but sadly just isn't mastered that well at all. I knew to expect this from his stuff that came out after Life of Pablo, but expected better from his earlier stuff.",
+          "timestamp": "2026-07-31T15:27:00+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0w7ijt",
+          "author": "reddit_user_d711a338064c",
+          "author_karma": 0,
+          "content": "Certainly on Vinyl, sometimes the vinyl is just bad, sometimes the recording is just too quiet or sounds almost mono.",
+          "timestamp": "2026-07-31T15:37:27+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0w7kxd",
+          "author": "reddit_user_b6add5815d4f",
+          "author_karma": 0,
+          "content": "LP records can sound incredibly good, or they can be crap, it is all down to the mastering, and the aftereffects of the loudness war.   \n\ngo to ebay and type   \"original master recording vinyl\"    you will see a bunch of mfsl   records.\n\nMake sure that you do not buy one of these records because you will realize how extremely bad the mastering on all your other albums is.  \n",
+          "timestamp": "2026-07-31T15:37:44+00:00",
+          "likes": 4,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0wflm5",
+          "author": "reddit_user_7408b61e5474",
+          "author_karma": 0,
+          "content": "Back in the day recording studios would supply an edited master copy or slave copy to the mass duplication industry. The slaves would best replicate the original edited master’s dynamic range with a boosted loudness mix applied for turntable cartridge turning at 33.3 rpm. The industry would be sure that the albums they mass duplicated sounded best on a stylus cartridge turntable. They boosted bass and loudness for our cartridges and pick up needle. Sorry if I missed anything very disheartening writing this. I use to work in the video duplication industry. ",
+          "timestamp": "2026-07-31T16:11:55+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0zt3z0",
+              "author": "reddit_user_3cddfdf162d5",
+              "author_karma": 0,
+              "content": "Not at all, lol. I'm realizing there are levels to this.\n\nI was wondering about *the original recording itself* but seems like people here consider mastering to be a much bigger issue... also I didn't actually specify vinyl in my original post, vinyl was just my album art example :)",
+              "timestamp": "2026-08-01T02:03:49+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p0wflm5",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p0whp6y",
+          "author": "reddit_user_59aa86838bb4",
+          "author_karma": 0,
+          "content": "Paul Simon's Graceland album. The mastering is just terrible. Zero dynamic range, drums have no impact, horrible sibilance throughout. I really wish MFSL could rescue this, but I have a feeling the recording is just bad, period. ",
+          "timestamp": "2026-07-31T16:20:49+00:00",
+          "likes": 0,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0xmeqx",
+              "author": "reddit_user_0f22f8022d70",
+              "author_karma": 0,
+              "content": "Whaaaaaaaa?? What pressing do you have? Graceland is an incredible sounding record ",
+              "timestamp": "2026-07-31T19:17:01+00:00",
+              "likes": 2,
+              "dislikes": 0,
+              "parent_comment_id": "p0whp6y",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p0xx0oz",
+                  "author": "reddit_user_06d2ccce1e76",
+                  "author_karma": 0,
+                  "content": "Agreed, my copy of Graceland sounds positively spine tingling at times. It is an early pressing, but not sure why later pressings would loose so much as described.",
+                  "timestamp": "2026-07-31T20:04:47+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p0xmeqx",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p0wwhn4",
+          "author": "reddit_user_d3ebc17e3114",
+          "author_karma": 0,
+          "content": "Morning story degli Oasis su vinile,una cosa oscena",
+          "timestamp": "2026-07-31T17:24:09+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0x72ul",
+          "author": "reddit_user_72ce1f1f9c26",
+          "author_karma": 0,
+          "content": "Modern recordings pressed to vinyl are usually done just to say its on vinyl bs actually giving 2 shits about SQ. \n\n“Played on a crosley? Ill press it like a crosley!”",
+          "timestamp": "2026-07-31T18:09:33+00:00",
+          "likes": 4,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0xb3k5",
+          "author": "reddit_user_7116edcebf05",
+          "author_karma": 0,
+          "content": "Yes, I wanted to get a pressing of Faith No More's album The Real Thing.  Long out of print, except for a release in Argentina.  So I bought it, got one new/sealed.  It's not a bootleg but it clearly did not go through any quality checks.  The artwork on the front was a scan of the CD cover that was enlarged.  Instead of a proper inner sleeve, the record shipped in a thin poly baggie stuffed inside the outer sleeve, I shit you not.  But then there was the pressing.  It sounded like it had been made out of recycled tupperware containers rather than vinyl.\n\nThe problem wasn't the original recording in this case, it was the mastering and vinyl production.",
+          "timestamp": "2026-07-31T18:26:58+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0y3smh",
+          "author": "reddit_user_b392b250e465",
+          "author_karma": 0,
+          "content": "A TON is shitty like this. Mastered by deaf people who used too much earbud. Just go digital man. At least you can just easily replace it",
+          "timestamp": "2026-07-31T20:35:31+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0ycp3d",
+          "author": "reddit_user_0070327c06a2",
+          "author_karma": 0,
+          "content": "Yes.  Almost ALL CD's till the mid 90's or so.",
+          "timestamp": "2026-07-31T21:16:51+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0zuedd",
+              "author": "reddit_user_3cddfdf162d5",
+              "author_karma": 0,
+              "content": "Why do you think this is? recording trends?",
+              "timestamp": "2026-08-01T02:11:43+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p0ycp3d",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p125oz8",
+                  "author": "reddit_user_0070327c06a2",
+                  "author_karma": 0,
+                  "content": "Crappy digital equipment mostly.",
+                  "timestamp": "2026-08-01T12:34:30+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p0zuedd",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p0z9gq2",
+          "author": "reddit_user_b0d5b7ba0bc9",
+          "author_karma": 0,
+          "content": "If a recoding was made digitally, which is what I assume you're talking about, why would it (or could it) ever sound better on vinyl?",
+          "timestamp": "2026-08-01T00:08:40+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0zuxsv",
+              "author": "reddit_user_3cddfdf162d5",
+              "author_karma": 0,
+              "content": "I'm not talking specifically about digital recordings, nor about vinyl. I am wondering about loving an album on non-hifi equipment (maybe from earlier in your life, or before getting interested in hifi) and then listening to it on decent equipment and being disappointed with the result.",
+              "timestamp": "2026-08-01T02:15:03+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p0z9gq2",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p0zvyln",
+                  "author": "reddit_user_b0d5b7ba0bc9",
+                  "author_karma": 0,
+                  "content": ">One of my biggest disappointments is when I buy an album I love **on vinyl**\n\nI'm confused. You specifically stated vinyl. I was assuming you were going from digital to vinyl. \n\nYes, I'm guessing most of us have had that disappointment when we heard music we loved for the first time on a good system and realized that while the music is good, the recording was terrible. ",
+                  "timestamp": "2026-08-01T02:21:19+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p0zuxsv",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p107qjy",
+                      "author": "reddit_user_3cddfdf162d5",
+                      "author_karma": 0,
+                      "content": "It was an analogy.\n\n1. \"album I love on vinyl and the album cover [...] is just a low-quality JPEG blown up\" i.e. talking about album art, on vinyl, specifically\n2. \"Has anyone experienced the audio equivalent of this?\" i.e., transition to audio through this analogy.\n\nI get that people read pretty quickly though so I'll take responsibility for the confusion.",
+                      "timestamp": "2026-08-01T03:35:54+00:00",
+                      "likes": 2,
+                      "dislikes": 0,
+                      "parent_comment_id": "p0zvyln",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "p10gfqt",
+                          "author": "reddit_user_b0d5b7ba0bc9",
+                          "author_karma": 0,
+                          "content": "Got it. My bad. ",
+                          "timestamp": "2026-08-01T04:34:59+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "p107qjy",
+                          "depth": 4,
+                          "replies": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p0zdn34",
+          "author": "reddit_user_12ce9bd1d215",
+          "author_karma": 0,
+          "content": "Bought a used copy of Mike Oldfield's Tubular Bells today. The music is all there and it's a clean copy with no pops and not much surface noise, but dynamics are flat AF. Disappointing, but I paid only $5 so it could be worse.\n\nAll it takes is a CBD gummy to make it sound amazing. :-)",
+          "timestamp": "2026-08-01T00:32:36+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p13slz9",
+          "author": "reddit_user_ff2b9b09640b",
+          "author_karma": 0,
+          "content": "For me it is a copy of Abbey Road I just got that was remixed by Giles Martin, George Martin’s son. I read about them, watched some videos, and thought “why not, I’ll give it a try!” I did an A/B test with an original copy I have (but don’t have a cover) and the remix, though sounding balanced throughout, felt flat. There was no life to it. The original felt in the room. The vocals felt more raw. Yeah, the drums and bass are better on the remix, but the energy just wasn’t there. ",
+          "timestamp": "2026-08-01T17:33:01+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p18sr4d",
+          "author": "reddit_user_8c305d873e8f",
+          "author_karma": 0,
+          "content": "I listen to a lot of post hardcore, metalcore, 80's metal, post punk, goth, emo, etc; so yes. \n\nSome things actually sound unexpectedly good, but there is much that sounds better to me on AirPods or in the car than on my $20k lounge room system. What makes it worse is also both the expectations I have, as obviously one expects something to sound better on a higher quality and more expensive setup, and the fact that I'm not about to be critically listening if I'm driving or in the gym. ",
+          "timestamp": "2026-08-02T12:34:41+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run010_post01_seed051",
+      "post_slot": 1,
+      "seed_index": 51,
+      "source_raw_post_id": "1vbto4g",
+      "source_product_dir": "audiophile",
+      "source_file": "https://www.reddit.com/r/audiophile/comments/1vbto4g/tip_modifying_a_chinese_ear_834_phono/",
+      "post_type": "Show & Tell",
+      "title": "Tip! Modifying a Chinese ear 834 phono",
+      "author": "reddit_user_d43b8c7b6255",
+      "author_karma": 0,
+      "content": "Tip! Modifying a Chinese ear 834 phono\n\nI’ve been tinkering with these Chinese ear834 phono kits for the last year or so and I’m really surprised by how good they can be if you modify them correctly.  \nThere are a lot of kits out there but I found this one to be the best. Especially in respect to the layout which makes modifications very easy.   \nAlso this is a double mono kit which I personally like.   \n    \nOut of the box this phono sounds okay. That’s largely because of the cheap caps and resistors. \n\nAfter the complete modification it sounds insanely good especially for the price.   \nI’ve tested it in a side by side comparison with some 5 k dollar phono stages and the difference was definitely not worth the extra 4700 dollar\n\nIf you’re looking for the best bang for buck phono I would highly recommend building something like this . The value is very very good.\n\nFirst two slides is the modified version, the 3rd picture is the stock board with the cheap components and the last slides is the outside.",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p0w43yy",
+          "author": "reddit_user_5bfb1fb111ca",
+          "author_karma": 0,
+          "content": "Which one is this? I'd be interested in tinkering on one! ",
+          "timestamp": "2026-07-31T15:22:44+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0w4am6",
+              "author": "reddit_user_5bfb1fb111ca",
+              "author_karma": 0,
+              "content": "NVM I found it on aliexpress- [Here](https://www.aliexpress.us/item/3256804090590839.html?spm=a2g0o.productlist.main.9.6393498eU7oHCP&algo_pvid=80e0a412-9cb5-4ac2-9aac-e70243f8cf38&algo_exp_id=80e0a412-9cb5-4ac2-9aac-e70243f8cf38-8&pdp_ext_f=%7B%22order%22%3A%225%22%2C%22eval%22%3A%221%22%2C%22fromPage%22%3A%22search%22%7D&pdp_npi=6%40dis%21USD%21124.00%21124.00%21%21%21124.00%21124.00%21%402101c28d17855110656042158e1042%2112000028600650636%21sea%21US%210%21ABX%211%210%21n_tag%3A-29910%3Bd%3A6b486e6e%3Bm03_new_user%3A-29895&curPageLogUid=ZP0UaHmvEQW7&utparam-url=scene%3Asearch%7Cquery_from%3A%7Cx_object_id%3A1005004276905591%7C_p_origin_prod%3A)",
+              "timestamp": "2026-07-31T15:23:33+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p0w43yy",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p0w55zr",
+                  "author": "reddit_user_f65fe0fc4a10",
+                  "author_karma": 0,
+                  "content": "Yes that’s the one…",
+                  "timestamp": "2026-07-31T15:27:20+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p0w4am6",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p0waxko",
+          "author": "reddit_user_67a6c2accdae",
+          "author_karma": 0,
+          "content": "Can you also post your parts list?",
+          "timestamp": "2026-07-31T15:52:02+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0weh25",
+              "author": "reddit_user_f65fe0fc4a10",
+              "author_karma": 0,
+              "content": "I don’t have a parts list because I already had all these parts laying around. But for a good start I would change all resistors with non magnetic wirewounds and the electrolytes caps with nishicon. If you’re looking for want to take it further you can change the ecc83 with a ecc82 but you have to change some values. ",
+              "timestamp": "2026-07-31T16:07:08+00:00",
+              "likes": -1,
+              "dislikes": 0,
+              "parent_comment_id": "p0waxko",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p0wxwgz",
+          "author": "reddit_user_2a5c16574ea4",
+          "author_karma": 0,
+          "content": "Gold capacitors!  That is cool looking.",
+          "timestamp": "2026-07-31T17:30:06+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run010_post02_seed052",
+      "post_slot": 2,
+      "seed_index": 52,
+      "source_raw_post_id": "1vbtwlt",
+      "source_product_dir": "audiophile",
+      "source_file": "https://www.reddit.com/r/audiophile/comments/1vbtwlt/bang_olufsen_brushed_aluminum_storage_cabinet/",
+      "post_type": "Deal Alert",
+      "title": "Bang & Olufsen Brushed Aluminum Storage Cabinet",
+      "author": "reddit_user_d43b8c7b6255",
+      "author_karma": 0,
+      "content": "Bang & Olufsen Brushed Aluminum Storage Cabinet\n\nWhat a deal can’t believe i was able to snag this from Facebook market place for free! I was not aware that B&O made these type of furniture. I can’t find out what era this piece is from but now i want to build a whole set up & i know it’s going to be expensive",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p0w9b9r",
+          "author": "reddit_user_8cf76298bf8f",
+          "author_karma": 0,
+          "content": "Fun fact, B&O had a huge business selling store furniture/display cases. ",
+          "timestamp": "2026-07-31T15:45:08+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run010_post03_seed053",
+      "post_slot": 3,
+      "seed_index": 53,
+      "source_raw_post_id": "1vbtz1l",
+      "source_product_dir": "audiophile",
+      "source_file": "https://www.reddit.com/r/audiophile/comments/1vbtz1l/about_flac_downloads/",
+      "post_type": "Music",
+      "title": "About FLAC downloads",
+      "author": "reddit_user_d43b8c7b6255",
+      "author_karma": 0,
+      "content": "About FLAC downloads\n\nIs Qobuz a good source to download FLAC files of Indian music? \n\nQobuz is not available in India, So I used SpotiFLAC to download them. \n\nI am using Poweramp to play FLAC files. \n\nI am new to this, I don't know the perfect settings to get the best quality music from my IEMs. \n\nI bought the Tangzu Warner SG2 Redmi Lion Edition as my first IEM.",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p0w41t1",
+          "author": "reddit_user_c181600e3616",
+          "author_karma": 0,
+          "content": "**This submission was flagged as \"Off Topic\", and has been removed.**\n\n> **Rule 7**: No off-topic or headphone content\n\nWhile the term audiophile applies to many, many areas, *this particular subreddit* is for high quality home speaker systems. There are other, similar subreddits dedicated to other areas, such as:\n\n* r/HeadphoneAdvice for portable audio purchase advice\n* r/Headphones for general portable audio discussion\n* r/CarAv - for automotive audio\n* r/HomeTheater - for home cinema sound discussion\n* r/Bluetooth_Speakers\n* r/AudioEngineering/about/sticky for professional audio production\n* r/WeAreTheMusicMakers\n* r/LiveSound - professional Live Sound world\n* r/microphone\n* r/Beatmatch - for DJs to learn the basics\n* r/Audio - a catch all for all types of audio",
+          "timestamp": "2026-07-31T15:22:28+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run010_post04_seed054",
+      "post_slot": 4,
+      "seed_index": 54,
+      "source_raw_post_id": "1vbutnh",
+      "source_product_dir": "headphones",
+      "source_file": "https://www.reddit.com/r/headphones/comments/1vbutnh/love_these_new_headphones/",
+      "post_type": "Review",
+      "title": "Love these new headphones",
+      "author": "reddit_user_d43b8c7b6255",
+      "author_karma": 0,
+      "content": "Love these new headphones\n\nThese AirPods Max 2 headphones are so amazing. I love the sound quality, especially over usb c. I highly recommend these headphones to anyone.",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p0wb6oy",
+          "author": "reddit_user_c181600e3616",
+          "author_karma": 0,
+          "content": "Your image post is currently hidden from other redditors.\n\n***To complete the submission processes, please respond to your post with a 55+ word comment in the next hour or two. No AI slop!***  This message will disappear shortly after your comment has been added.\n\n>***Rule 3***: _Image posts must be accompanied by a comment with impressions or details that add value to the post. The comment does not need to be exhaustive, but should strive to give enough information to start the discussion._\n\n***Need some more ideas?***\n\n* How is the sound, fit, or build quality?\n\n* How does it compare to what you've owned or used before?\n\n* Were there any surprises or lessons learned that you'd like to share?\n\n* What components are in your system and how did you come to own them?\n\n* What's up next for your rig?\n\n* Anything else that you think others might find interesting?\n\n***Is your post flair correct?***\n\n* If not, submit a _new_ post and be sure to choose the appropriate flair before clicking submit\n\n***Just want to share photos?***\n\n* Check out r/headphoneporn\n\n***Why so much work?***\n\n* The r/headphones community really appreciates a good discussion",
+          "timestamp": "2026-07-31T15:53:08+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0wbjvk",
+          "author": "reddit_user_a175de65dc08",
+          "author_karma": 0,
+          "content": "Love the lavender! Cool style you have going there. ",
+          "timestamp": "2026-07-31T15:54:41+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    }
+  ]
+}

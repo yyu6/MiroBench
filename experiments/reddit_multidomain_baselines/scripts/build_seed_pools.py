@@ -20,6 +20,7 @@ from common import REPO_ROOT, count_comments, load_jsonl, read_json, write_json
 
 DEFAULT_DATA_ROOT = REPO_ROOT / "data" / "reddit_domain_posts 2"
 DEFAULT_OUTPUT_ROOT = REPO_ROOT / "artifacts" / "reddit_multidomain_baselines" / "inputs"
+PORTABLE_INPUT_ROOT = REPO_ROOT / "experiments" / "reddit_multidomain_baselines" / "portable_inputs"
 
 
 def parse_args() -> argparse.Namespace:
@@ -36,11 +37,15 @@ def parse_args() -> argparse.Namespace:
 
 
 def available_domains(data_root: Path) -> list[str]:
-    return sorted(
-        path.name
-        for path in data_root.iterdir()
-        if path.is_dir() and (path / f"{path.name}.jsonl").exists()
-    )
+    if data_root.is_dir():
+        domains = sorted(
+            path.name
+            for path in data_root.iterdir()
+            if path.is_dir() and (path / f"{path.name}.jsonl").exists()
+        )
+        if domains:
+            return domains
+    return sorted(path.stem for path in (PORTABLE_INPUT_ROOT / "seed_pools").glob("*.json"))
 
 
 def main() -> None:
@@ -78,18 +83,22 @@ def build_domain(
 
     if max_seeds < 1 or posts_per_run < 1:
         raise ValueError("--max-seeds and --posts-per-run must be positive")
-    domain_dir = data_root / domain
-    posts_path = domain_dir / f"{domain}.jsonl"
-    comments_path = domain_dir / f"{domain}.comments.jsonl"
-    manifest_path = domain_dir / f"{domain}.comments_manifest.json"
-    if not posts_path.exists() or not comments_path.exists():
-        raise FileNotFoundError(f"Missing posts/comments JSONL for domain={domain}: {domain_dir}")
-
     pool_path = output_root / "seed_pools" / f"{domain}.json"
     reference_root = output_root / "real_reference" / domain
     if pool_path.exists() and (reference_root / "reference_manifest.json").exists() and not force:
         print(f"[skip] domain={domain} -> {pool_path}")
         return pool_path
+
+    domain_dir = data_root / domain
+    posts_path = domain_dir / f"{domain}.jsonl"
+    comments_path = domain_dir / f"{domain}.comments.jsonl"
+    manifest_path = domain_dir / f"{domain}.comments_manifest.json"
+    if not posts_path.exists() or not comments_path.exists():
+        raise FileNotFoundError(
+            f"Missing posts/comments JSONL for domain={domain}: {domain_dir}. "
+            "On a fresh clone, run experiments/reddit_multidomain_baselines/setup.sh "
+            "to install the committed portable inputs first."
+        )
     if force and reference_root.exists():
         # The caller explicitly requested replacement. Keeping stale higher run
         # numbers would silently add old threads to later evaluation.

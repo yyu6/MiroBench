@@ -33,6 +33,31 @@ METADATA_COLUMNS = {
     "_product_dir",
 }
 
+# The benchmark specification has four families.  Scorers may emit additional
+# diagnostics, but the statistical comparison is intentionally restricted to
+# these predeclared core outputs.
+CORE_METRICS = {
+    # Structure
+    "length_std",
+    "length_cv",
+    "avg_depth",
+    "structural_virality",
+    # Uniformity
+    "self_bleu_2",
+    "self_bleu_3",
+    "self_bleu_4",
+    "self_bertscore_mean_f1",
+    "semantic_mean_cosine",
+    # Behavior
+    "hard_disagree_rate",
+    "impolite_rate",
+    "neutral_rate",
+    "polite_rate",
+    # Expression
+    "mean_story_probability",
+    "emotion_entropy",
+}
+
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description=__doc__)
@@ -40,7 +65,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--domains", nargs="*")
     parser.add_argument("--models", nargs="*")
     parser.add_argument("--baselines", nargs="*")
-    parser.add_argument("--device", default="mps", choices=["cpu", "cuda", "mps", "auto"])
+    parser.add_argument("--device", default="auto", choices=["cpu", "cuda", "mps", "auto"])
     parser.add_argument("--metric-parallel", type=int, default=2)
     parser.add_argument("--force", action="store_true")
     parser.add_argument("--dry-run", action="store_true")
@@ -170,7 +195,11 @@ def _expected_seeds(reference_root: Path) -> int:
 def compare_score_csvs(real_csv: Path, generated_csv: Path) -> list[dict[str, Any]]:
     real_rows = _read_csv(real_csv)
     generated_rows = _read_csv(generated_csv)
-    metric_names = sorted(set(_numeric_columns(real_rows)) & set(_numeric_columns(generated_rows)))
+    metric_names = sorted(
+        set(_numeric_columns(real_rows))
+        & set(_numeric_columns(generated_rows))
+        & CORE_METRICS
+    )
     try:
         from scipy.stats import ks_2samp, mannwhitneyu, wasserstein_distance
     except ImportError as exc:  # pragma: no cover - declared in pyproject.toml.

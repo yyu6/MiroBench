@@ -1,0 +1,1155 @@
+{
+  "meta": {
+    "product_category": "health_issue",
+    "baseline": "real_reddit_reference",
+    "run_id": "run_016_sampled_reddit"
+  },
+  "posts": [
+    {
+      "post_id": "real_run016_post00_seed080",
+      "post_slot": 0,
+      "seed_index": 80,
+      "source_raw_post_id": "1veimak",
+      "source_product_dir": "ChronicIllness",
+      "source_file": "https://www.reddit.com/r/ChronicIllness/comments/1veimak/is_mold_detox_etc_scam/",
+      "post_type": "Question",
+      "title": "Is mold detox etc scam?",
+      "author": "reddit_user_7b7b220cf34f",
+      "author_karma": 0,
+      "content": "Is mold detox etc scam?\n\nWhat should you do then?",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p1h7rhs",
+          "author": "reddit_user_213ae3969e52",
+          "author_karma": 0,
+          "content": "Yes it is a scam. If you have working kidneys and a liver then your body doesn't need anything more to detox toxins from the body. All the mold tests are scams as well. I'm sorry you're suffering but please don't waste money on these \"wellness\" grifters. What they're doing to chronically ill people is beyond words in cruelty. ",
+          "timestamp": "2026-08-03T16:43:22+00:00",
+          "likes": 12,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1h8fxs",
+              "author": "reddit_user_4c4c965734a8",
+              "author_karma": 0,
+              "content": "So how do people heal ? Just move out",
+              "timestamp": "2026-08-03T16:46:10+00:00",
+              "likes": -3,
+              "dislikes": 0,
+              "parent_comment_id": "p1h7rhs",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1h9vo6",
+                  "author": "reddit_user_213ae3969e52",
+                  "author_karma": 0,
+                  "content": "If you are living in a place with a mold problem like black mold then probably moving would be best but not everyone has that ability. If you're renting then the landlord should be taking care of getting rid of it. ",
+                  "timestamp": "2026-08-03T16:52:08+00:00",
+                  "likes": 11,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1h8fxs",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p1h8vej",
+          "author": "reddit_user_7907aa2eb064",
+          "author_karma": 0,
+          "content": "I am unsure what detox is for mold lol but the mold blood tests are legit.",
+          "timestamp": "2026-08-03T16:47:57+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1h9h6j",
+              "author": "reddit_user_36331345b2cb",
+              "author_karma": 0,
+              "content": "In compliance with Reddit rules relating to health misinformation, posts and comments like this require a reputable source. \n\nIf you have any further questions, please contact the moderators of r/chronicillness through modmail.",
+              "timestamp": "2026-08-03T16:50:27+00:00",
+              "likes": 2,
+              "dislikes": 0,
+              "parent_comment_id": "p1h8vej",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1hd90o",
+          "author": "reddit_user_32620b13cfa6",
+          "author_karma": 0,
+          "content": "It's a [myth](https://pubmed.ncbi.nlm.nih.gov/31608429/). \n\nIf you have certain respiratory conditions (asthma, COPD, etc) living with mold is suboptimal and might trigger symptoms. Once the mold is removed, you should recover. There's no need to \"detox.\" ",
+          "timestamp": "2026-08-03T17:05:53+00:00",
+          "likes": 16,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1hmy47",
+              "author": "reddit_user_4c4c965734a8",
+              "author_karma": 0,
+              "content": "Thanks bro",
+              "timestamp": "2026-08-03T17:45:27+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1hd90o",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p1hmzs4",
+              "author": "reddit_user_4c4c965734a8",
+              "author_karma": 0,
+              "content": "But there is mold everywhere",
+              "timestamp": "2026-08-03T17:45:38+00:00",
+              "likes": -4,
+              "dislikes": 0,
+              "parent_comment_id": "p1hd90o",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1huwy8",
+                  "author": "reddit_user_60200b2b0ff7",
+                  "author_karma": 0,
+                  "content": "Not the dangerous kinds. The really dangerous stuff, like true Black Mold (which is not every mold that happens to be black) is less common than you think, by a long I shot. polio \n\nThe mold that’s everywhere is only a concern if you’re allergic, like I am. Then you go through a lot more tissues when it’s wet, like most of this spring/summer has been in my locale. I’m so tired of sneezing and snot, ugh.  ",
+                  "timestamp": "2026-08-03T18:18:51+00:00",
+                  "likes": 5,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1hmzs4",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1hvur4",
+                      "author": "reddit_user_4c4c965734a8",
+                      "author_karma": 0,
+                      "content": "I heard hepa filter air purifer help",
+                      "timestamp": "2026-08-03T18:22:53+00:00",
+                      "likes": 0,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1huwy8",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p1hfjl7",
+          "author": "reddit_user_ca06585711f0",
+          "author_karma": 0,
+          "content": "You can only “detox” from mold by getting away from, or removing it from wherever you are living. ",
+          "timestamp": "2026-08-03T17:15:10+00:00",
+          "likes": 7,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1hmnku",
+              "author": "reddit_user_4c4c965734a8",
+              "author_karma": 0,
+              "content": "People say it is not enough ",
+              "timestamp": "2026-08-03T17:44:15+00:00",
+              "likes": -4,
+              "dislikes": 0,
+              "parent_comment_id": "p1hfjl7",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1hq8j9",
+                  "author": "reddit_user_a3d2af4ee8cf",
+                  "author_karma": 0,
+                  "content": "Yes the people who want to sell you their “cure” say it’s not enough, but science and medicine say it is enough. ",
+                  "timestamp": "2026-08-03T17:59:01+00:00",
+                  "likes": 5,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1hmnku",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p1hkr8r",
+          "author": "reddit_user_5d5cf24bc57f",
+          "author_karma": 0,
+          "content": "Yes, the wellness influencer \"mold detox\" nonsense is a scam. As other people mentioned, as long as you have a functioning immune system, kidneys/liver, don't have MTHFR, etc, then your body will tag/remove the biotoxins from your body and your natural detox pathways will be enough for you to heal when you remove yourself from exposure. \n\nHOWEVER, if you have a genetic susceptibility (via a specific HLA-DR genotype), then removing yourself from exposure won't be enough to get well, as your immune system cannot recognize, tag, and remove the biotoxins from your system. In that case, the \"mold detox\" stuff is still a scam, and you need to see someone who can properly treat Chronic Inflammatory Response Syndrome. Diagnosis involves a series of blood tests/biomarkers, genetic testing, a specialized MRI, etc, and treatment requires specific medications in a specific order to recover from the damage. \n",
+          "timestamp": "2026-08-03T17:36:25+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1hms5g",
+              "author": "reddit_user_4c4c965734a8",
+              "author_karma": 0,
+              "content": "But how do people know if they have that gene or not i dont want to check that ",
+              "timestamp": "2026-08-03T17:44:46+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1hkr8r",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1hnqiy",
+                  "author": "reddit_user_5d5cf24bc57f",
+                  "author_karma": 0,
+                  "content": "Are you still severely ill after moving out of exposure? If so, that would be a good indicator that you may have the genotype.  ",
+                  "timestamp": "2026-08-03T17:48:41+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1hms5g",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1hnz43",
+                      "author": "reddit_user_4c4c965734a8",
+                      "author_karma": 0,
+                      "content": "What should you do then? I only have sinus problems i have indoor allergies thats why. Brain fog etc fatigue but i dont know ",
+                      "timestamp": "2026-08-03T17:49:40+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1hnqiy",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "p1hoxzu",
+                          "author": "reddit_user_5d5cf24bc57f",
+                          "author_karma": 0,
+                          "content": "If you want to see if your body will heal on its own, just support your detox pathways the best you can- i.e. make sure you're pooping at least once a day. If it's been months and there's been no improvement and you believe it's from the mold exposure, I would check out survivingmold.com ",
+                          "timestamp": "2026-08-03T17:53:39+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "p1hnz43",
+                          "depth": 4,
+                          "replies": [
+                            {
+                              "comment_id": "p1htbd7",
+                              "author": "reddit_user_4c4c965734a8",
+                              "author_karma": 0,
+                              "content": "Willl hepa filter help? I dont know if im sensitive to mold or dust etc",
+                              "timestamp": "2026-08-03T18:11:58+00:00",
+                              "likes": 1,
+                              "dislikes": 0,
+                              "parent_comment_id": "p1hoxzu",
+                              "depth": 5,
+                              "replies": [
+                                {
+                                  "comment_id": "p1hv0xu",
+                                  "author": "reddit_user_5d5cf24bc57f",
+                                  "author_karma": 0,
+                                  "content": "I imagine if you're nonsusceptible or the issue is allergies, the hepa filter would help, but unfortunately if it's CIRS and your home has known mold issues, then a hepa filter isn't going to do much except maybe slow the worsening of your symptoms. ",
+                                  "timestamp": "2026-08-03T18:19:19+00:00",
+                                  "likes": 1,
+                                  "dislikes": 0,
+                                  "parent_comment_id": "p1htbd7",
+                                  "depth": 6,
+                                  "replies": [
+                                    {
+                                      "comment_id": "p1hvwu2",
+                                      "author": "reddit_user_4c4c965734a8",
+                                      "author_karma": 0,
+                                      "content": "What is cirs?",
+                                      "timestamp": "2026-08-03T18:23:08+00:00",
+                                      "likes": 1,
+                                      "dislikes": 0,
+                                      "parent_comment_id": "p1hv0xu",
+                                      "depth": 7,
+                                      "replies": []
+                                    },
+                                    {
+                                      "comment_id": "p1hycjm",
+                                      "author": "reddit_user_36331345b2cb",
+                                      "author_karma": 0,
+                                      "content": "In compliance with Reddit rules relating to health misinformation, posts and comments like this require a reputable source. \n\nIf you have any further questions, please contact the moderators of r/chronicillness through modmail.",
+                                      "timestamp": "2026-08-03T18:33:34+00:00",
+                                      "likes": 1,
+                                      "dislikes": 0,
+                                      "parent_comment_id": "p1hv0xu",
+                                      "depth": 7,
+                                      "replies": []
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "comment_id": "p1hye50",
+                              "author": "reddit_user_36331345b2cb",
+                              "author_karma": 0,
+                              "content": "In compliance with Reddit rules relating to health misinformation, posts and comments like this require a reputable source. \n\nIf you have any further questions, please contact the moderators of r/chronicillness through modmail.",
+                              "timestamp": "2026-08-03T18:33:46+00:00",
+                              "likes": 1,
+                              "dislikes": 0,
+                              "parent_comment_id": "p1hoxzu",
+                              "depth": 5,
+                              "replies": []
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "comment_id": "p1hu269",
+                      "author": "reddit_user_58b8623d1459",
+                      "author_karma": 0,
+                      "content": "This is the right advice. You can also see an integrative doctor or similar who can order the bloodwork and get it at any labcorp. But the most important thing is getting out of exposure, getting into a better environment, and seeing if that helps your symptoms ",
+                      "timestamp": "2026-08-03T18:15:11+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1hnqiy",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "p1hvcvw",
+                          "author": "reddit_user_5d5cf24bc57f",
+                          "author_karma": 0,
+                          "content": "Agreed, the key is just getting out of exposure as soon as you can.\n",
+                          "timestamp": "2026-08-03T18:20:45+00:00",
+                          "likes": 2,
+                          "dislikes": 0,
+                          "parent_comment_id": "p1hu269",
+                          "depth": 4,
+                          "replies": []
+                        },
+                        {
+                          "comment_id": "p1hy9we",
+                          "author": "reddit_user_36331345b2cb",
+                          "author_karma": 0,
+                          "content": "In compliance with Reddit rules relating to health misinformation, posts and comments like this require a reputable source. \n\nIf you have any further questions, please contact the moderators of r/chronicillness through modmail.",
+                          "timestamp": "2026-08-03T18:33:14+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "p1hu269",
+                          "depth": 4,
+                          "replies": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "comment_id": "p1hy0dd",
+              "author": "reddit_user_36331345b2cb",
+              "author_karma": 0,
+              "content": "In compliance with Reddit rules relating to health misinformation, posts and comments like this require a reputable source. \n\nIf you have any further questions, please contact the moderators of r/chronicillness through modmail.",
+              "timestamp": "2026-08-03T18:32:05+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1hkr8r",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1hn80b",
+          "author": "reddit_user_0514ea897ec4",
+          "author_karma": 0,
+          "content": "it’s a scam unless you have a condition that sensitises you to mould ",
+          "timestamp": "2026-08-03T17:46:35+00:00",
+          "likes": 4,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1ht3qu",
+              "author": "reddit_user_4c4c965734a8",
+              "author_karma": 0,
+              "content": "Indoor allergies?",
+              "timestamp": "2026-08-03T18:11:05+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1hn80b",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1holp4",
+          "author": "reddit_user_9289ec3009e3",
+          "author_karma": 0,
+          "content": "There is plenty of reputable medical literature from quality journals across immunology and toxicology on the health effects of mycotoxins from mould, not just respiratory issues but they are a potent endocrine disrupter, are cytotoxic, cause mitochondrial dysfunction, cross the blood brain barrier and can also cause neurological effects. This is all scientifically valid. \n\nHowever, there is no one agreed medical way to ‘detox’ from mold (binders etc and certain strains of probiotics are mentioned in literature as well as anti fungals, but there is no one agreed effective method). \n\nWhat I’d be more concerned about is the actual effects of the exposure to mould - did it cause endocrine issues, chronic fatigue syndrome etc, and diagnosing and treating that rather than trying to chase ‘detox’, because even if you do excrete them, the disease-causing effects of them can remain. ",
+          "timestamp": "2026-08-03T17:52:16+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run016_post01_seed081",
+      "post_slot": 1,
+      "seed_index": 81,
+      "source_raw_post_id": "1vej615",
+      "source_product_dir": "ChronicIllness",
+      "source_file": "https://www.reddit.com/r/ChronicIllness/comments/1vej615/im_not_sure_if_im_in_the_right_place_but_maybe/",
+      "post_type": "Question",
+      "title": "I'm not sure if I'm in the right place, but... Maybe there are people here who have encountered something similar?",
+      "author": "reddit_user_7b7b220cf34f",
+      "author_karma": 0,
+      "content": "I'm not sure if I'm in the right place, but... Maybe there are people here who have encountered something similar?\n\n&#x200B;\n\nAround spring I started to experience something that I can describe as \"increased skin sensitivity\", but back then it was easy to confuse it with a reaction to \"uncomfortable\" clothing or just a slight sensitivity. I would wear different clothes and it would get better... but not now.\n\nSo, it appears on different parts of the body, without any visible dermatological problems, sometimes it seems to migrate from one part of the body to another (for example, 2 days it was on my right breast; the next 2 days - on my legs and now it has started in the genital area; sometimes several areas can be disturbed at the same time, and sometimes one area returns to normal and the discomfort appears in another area).\n\nWith this sensitivity, I can be irritated by shirt sleeves (even loose ones), underwear, just by running my hand over my skin (it feels 4-5 times stronger than on normal skin areas and it's unpleasant, it can feel a bit like tickling, I don't know how else to describe it), hair in the intimate area, etc. Avene cicalfate helps relieve symptoms, but it just relieves symptoms for a while - then they return again, although sometimes there are periods without them (for some reason, symptoms can disappear for a few days, but then they gradually start to return).\n\nMore observations:\n\n1. If you remove the irritants, it gets better. For example, replace clothes with long sleeves with short ones or go without underwear when possible. Sometimes the problem almost completely disappears in this case.\n\n2. In the intimate area (and it causes the most discomfort, because there is always some friction there due to walking, hair, underwear, etc.) all unpleasant sensations stop when I don't move. I can sit, lie down, just stand and not even think about that area, but as soon as I start moving, this \"sensitivity\" starts to drive me crazy.\n\n3. Since winter and spring I have had a lot of stress and sleep problems, maybe it's somehow related.\n\n4. When I first started having some problems of this type (roughly in spring), it was on a smaller scale and got worse over time. For example, at first I was irritated only by certain clothes or underwear and when I put on another one, I felt better. But then everything started to irritate me. What seemed comfortable, now is not comfortable.\n\n5. It's a bit difficult for me to describe the sensation, but I'll try: I would say that all the parts of the body where this problem occurs (inner parts of the shoulders and forearms, thighs, lower legs, vulva, abdomen, breasts) are united by hypersensitivity, when a light touch is felt several times stronger than it was before or is on normal areas of the skin. Sometimes I remove my hand, and the unpleasant sensation is still there for 1-2-3 seconds. As for the vulva area, it seems to me that I feel every touch, prick of hair or tissue during movement. On the hands, even without touching, there may be a feeling of some itching, as if something invisible is irritating the skin.\n\nI went to a dermatologist and took some tests. The doctor did not see any dermatological problems, no allergic cause, no parasitic causes. Blood tests are normal.\n\nIn the end, the doctor suggested that the cause could be neurological, related to prolonged stress, and advised me to consult a neurologist.\n\nI will definitely go to the consultation, but I am very worried. I have never heard of such diseases or conditions that resemble what is happening to me. And I am also afraid that this will stay with me forever...\n\nMaybe there are people here who have encountered something similar?",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p1hcw1f",
+          "author": "reddit_user_36331345b2cb",
+          "author_karma": 0,
+          "content": "No one in this subreddit is a verified healthcare professional. While diagnosis can be challenging, these types of posts are removed under our Always Consult A Doctor rule since we do not allow posts asking for diagnosis.\n\nExamples of these types of posts include: “Is this xyz condition?” or \"what condition is this?\" [lists symptoms or images of manual measurements], “What do my test results mean?” [shares results or images of results of a medical examination/test], “Do I have something other than xyz condition?”\n\n*Making posts containing these same details, even without directly asking what's wrong, will not be allowed.*\n\nWe highly suggest consulting a healthcare professional. Or, if you’d like to simply discuss your symptoms without asking what is causing them, please rephrase your post accordingly.\n\nIf you have any questions please message mod mail.",
+          "timestamp": "2026-08-03T17:04:25+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run016_post02_seed082",
+      "post_slot": 2,
+      "seed_index": 82,
+      "source_raw_post_id": "1vejf3c",
+      "source_product_dir": "ChronicIllness",
+      "source_file": "https://www.reddit.com/r/ChronicIllness/comments/1vejf3c/three_years_fighting_for_ssdi/",
+      "post_type": "JUST Support",
+      "title": "Three years fighting for SSDI",
+      "author": "reddit_user_7b7b220cf34f",
+      "author_karma": 0,
+      "content": "Three years fighting for SSDI",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p1he2qd",
+          "author": "reddit_user_36331345b2cb",
+          "author_karma": 0,
+          "content": "Posts of this nature need to be marked as **NSFW** and **Spoiler** along with having a **content warning (CW) in the title** to be allowed in this sub. \n\nCWs should be formatted as “CW: [brief description of the sensitive content in your post]”, for example: “CW: discussion of weight and calories” “CW: suicidal ideation” or “CW: sex”. \n\nThis allows other users to decide whether the content of your post is suitable for them to read. Thank you for your help with keeping this subreddit a safe place for everyone.",
+          "timestamp": "2026-08-03T17:09:14+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run016_post03_seed083",
+      "post_slot": 3,
+      "seed_index": 83,
+      "source_raw_post_id": "1velemx",
+      "source_product_dir": "ChronicIllness",
+      "source_file": "https://www.reddit.com/r/ChronicIllness/comments/1velemx/what_to_have_when_you_cant_eat_drinkmeal/",
+      "post_type": "Discussion",
+      "title": "what to have when you can’t eat? (drink/meal suggestions wanted)",
+      "author": "reddit_user_7b7b220cf34f",
+      "author_karma": 0,
+      "content": "what to have when you can’t eat? (drink/meal suggestions wanted)\n\ni’m losing my ability to eat without being sick or having it go right through me. what do you all find helpful to stay alive when you can’t keep it in? i’m trying plant based protein drinks, and electrolytes, but it’s so hard to drink so much liquid…any suggestions?",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p1hvxzj",
+          "author": "reddit_user_d3835fcd28c8",
+          "author_karma": 0,
+          "content": "soup?",
+          "timestamp": "2026-08-03T18:23:16+00:00",
+          "likes": 5,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1hw7a0",
+              "author": "reddit_user_cf9f5c3dca14",
+              "author_karma": 0,
+              "content": "i’ve been trying soup, really basic chicken noodle, and it makes me feel so sick still, and i can barely eat any…it’s just been really difficult",
+              "timestamp": "2026-08-03T18:24:21+00:00",
+              "likes": 3,
+              "dislikes": 0,
+              "parent_comment_id": "p1hvxzj",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1hwlbj",
+                  "author": "reddit_user_d3835fcd28c8",
+                  "author_karma": 0,
+                  "content": "That sounds rough, I hope you can figure something out",
+                  "timestamp": "2026-08-03T18:26:00+00:00",
+                  "likes": 3,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1hw7a0",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p1hw7lr",
+          "author": "reddit_user_e6cf3f4ea201",
+          "author_karma": 0,
+          "content": "What worked for me at least was foods that toed the line of being liquid, like mac n cheese and refried beans",
+          "timestamp": "2026-08-03T18:24:23+00:00",
+          "likes": 5,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1hxbr1",
+              "author": "reddit_user_cf9f5c3dca14",
+              "author_karma": 0,
+              "content": "oh how i miss refried beans…one of my favourite foods but it unfortunately is a no-go for me right now :( same thing with mac and cheese, but ill keep the ‘soft food’ rule in my mind",
+              "timestamp": "2026-08-03T18:29:08+00:00",
+              "likes": 3,
+              "dislikes": 0,
+              "parent_comment_id": "p1hw7lr",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1hwdgd",
+          "author": "reddit_user_4a8bcec33869",
+          "author_karma": 0,
+          "content": "Last time I couldn't eat, I survived off of Ensure and Ramen. I have no idea why Ramen was deemed acceptable by my stomach. ",
+          "timestamp": "2026-08-03T18:25:04+00:00",
+          "likes": 11,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1hwlb1",
+              "author": "reddit_user_cf9f5c3dca14",
+              "author_karma": 0,
+              "content": "i’m really hoping i’ll find that magical food that my body decides to tolerate soon…the protein drinks are helping a bit but still difficult ",
+              "timestamp": "2026-08-03T18:26:00+00:00",
+              "likes": 3,
+              "dislikes": 0,
+              "parent_comment_id": "p1hwdgd",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1jdn85",
+                  "author": "reddit_user_36ce51abbc11",
+                  "author_karma": 0,
+                  "content": "Keep some positivity if you can. Your current status doesn’t have to be your forever. I know that’s hard to think of when you’re in the thick of it. I was on so many limited foods and was taking baby food pouches and Sperri replacement shakes as my main nutrition. I was miserable and in a lot of distress. Today I can tolerate most foods and have hunger sensations and all that jazz. ",
+                  "timestamp": "2026-08-03T22:23:30+00:00",
+                  "likes": 2,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1hwlb1",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            },
+            {
+              "comment_id": "p1i0b8j",
+              "author": "reddit_user_36ce51abbc11",
+              "author_karma": 0,
+              "content": "I would use the ramen seasoning package in water and sip that when I couldn’t do any solids. ",
+              "timestamp": "2026-08-03T18:42:07+00:00",
+              "likes": 6,
+              "dislikes": 0,
+              "parent_comment_id": "p1hwdgd",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1hwlvk",
+          "author": "reddit_user_d0af938b86d5",
+          "author_karma": 0,
+          "content": "I suggest bread or carbs of sort. My digestive system was messed up a couple months ago pre gallbladder removal for a hyperkinetic gallbladder. Apparently veggies take longer to digest, so plain white bread (not whole wheat, this helps with passing stools) is your best bet for quick energy and easy on the stomach if gluten doesn’t cause issues for ya! Hope you get to feeling better soon :(",
+          "timestamp": "2026-08-03T18:26:04+00:00",
+          "likes": 3,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1hwvx5",
+              "author": "reddit_user_cf9f5c3dca14",
+              "author_karma": 0,
+              "content": "i’ll definitely try sticking with pieces of bread! i’ve found Ritz crackers are an okay snack, but i can only have 3-5 before i start feeling unwell again. it’s been the safest thing so far",
+              "timestamp": "2026-08-03T18:27:15+00:00",
+              "likes": 3,
+              "dislikes": 0,
+              "parent_comment_id": "p1hwlvk",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1hxvvk",
+          "author": "reddit_user_88aade9eb1db",
+          "author_karma": 0,
+          "content": "I was really sick last week and I survived off of:\nChicken and broth (boiled a rotisserie chicken in water with a ton of salt and seasonings), plain white toast, congee, Gatorade, and apple sauce. It sucked and after a week all i wanted was something crunchy. I hated how bloated I felt with all of the liquids but at least the food wasn't going through me both ways while I was doing it. ",
+          "timestamp": "2026-08-03T18:31:32+00:00",
+          "likes": 3,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1hzl8n",
+          "author": "reddit_user_5a2c28aa6611",
+          "author_karma": 0,
+          "content": "I've been on soup, low fat yoghurt with no fruit pieces or rice pudding for months on end now. Can't lie, it is getting really tedious now but am better than I was",
+          "timestamp": "2026-08-03T18:39:01+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1hzoi0",
+          "author": "reddit_user_9000223e414e",
+          "author_karma": 0,
+          "content": "Mashed potatoes? They’re pretty bland so they might stay down.",
+          "timestamp": "2026-08-03T18:39:24+00:00",
+          "likes": 16,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1inatu",
+              "author": "reddit_user_4e4f6e477113",
+              "author_karma": 0,
+              "content": "I live on a rotation of mashed/boiled potatoes, rice, cottage cheese, I use feta as well.  I need the added salt because I am super dizzy and low pressure.  My GI doesn’t let anything stay anyway BUT I seem to let some of this stay for small amounts of time.  ",
+              "timestamp": "2026-08-03T20:22:15+00:00",
+              "likes": 6,
+              "dislikes": 0,
+              "parent_comment_id": "p1hzoi0",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1isins",
+                  "author": "reddit_user_9000223e414e",
+                  "author_karma": 0,
+                  "content": "Mashed potatoes really are the best! Whenever my husband says he’s making them I get so excited. The microwave ones just aren’t the same. \n\nI’m glad you’ve found some foods that work for you! It can be so tough.",
+                  "timestamp": "2026-08-03T20:45:11+00:00",
+                  "likes": 2,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1inatu",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1j3cck",
+                      "author": "reddit_user_4e4f6e477113",
+                      "author_karma": 0,
+                      "content": "🤗🥰",
+                      "timestamp": "2026-08-03T21:34:20+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1isins",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p1hzzr7",
+          "author": "reddit_user_8e2d52c50ac6",
+          "author_karma": 0,
+          "content": "My partner is dealing with pretty much the same issue. They have been living off of crackers, cheese, carrots and pepperoni. They still get sick from eating these but not as bad. \nI know cheese would be a no go for you cuz of the lactose but idk the other stuff might be worth a try.\nI'm so sorry this is happening to you and I hope that you find something ANYTHING that won't make you feel like this. ",
+          "timestamp": "2026-08-03T18:40:44+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1i0ui6",
+              "author": "reddit_user_8e2d52c50ac6",
+              "author_karma": 0,
+              "content": "Oh also maybe try liquid IV? If you try this don't do a full packet into your water bottle (and trust me use a water bottle. You need a good bit of water to water drown the salty taste but it helps my partner a good bit so it may help you). \nAgain I really hope you find something to help. ",
+              "timestamp": "2026-08-03T18:44:26+00:00",
+              "likes": 5,
+              "dislikes": 0,
+              "parent_comment_id": "p1hzzr7",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1i05q2",
+          "author": "reddit_user_36ce51abbc11",
+          "author_karma": 0,
+          "content": "I would keep hunting for purred food pouches that work with your diet. They can be such a game changer on days you struggle to get anything in. Having puréed food pouches really helped me when I was super unwell for two years. I hope you can find one that works. Keep looking. There are so many more brands and not all are aimed at babies. However my favourite is Love Child Organic pear lol. ",
+          "timestamp": "2026-08-03T18:41:27+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1i0azr",
+          "author": "reddit_user_e6f303d5b4d4",
+          "author_karma": 0,
+          "content": "these are things that have worked for me specifically so proceed with caution…y’all know this but sometimes I like to add that reminder. \n\norange juice frozen into popsicles   \nsmoothies frozen into popsicles    \nswanson sipping chicken bone broth   \ndried seaweed snacks   \nsometimes I can handle mashed potatoes   \nfrozen coca cola   \ncold pasta, usually just do this plain but sometimes w olive oil   \nfrozen watermelon   \nbread, mainly white bread that’s super soft but sometimes sourdough is really nice ",
+          "timestamp": "2026-08-03T18:42:05+00:00",
+          "likes": 3,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1i0jsv",
+          "author": "reddit_user_796352353ac3",
+          "author_karma": 0,
+          "content": "I use Kate Farms. There is no milk at all in the ones I use(Standard and Peptide)! I’m also allergic to milk",
+          "timestamp": "2026-08-03T18:43:09+00:00",
+          "likes": 4,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1invju",
+              "author": "reddit_user_4e4f6e477113",
+              "author_karma": 0,
+              "content": "I had to order Peptamen I needed it almost “predigested”.  😂😂",
+              "timestamp": "2026-08-03T20:24:47+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1i0jsv",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1i0vdp",
+          "author": "reddit_user_58f124df1cf4",
+          "author_karma": 0,
+          "content": "When I am having trouble eating I will have a cup of jello or a couple of pretzels, the jello helps take away that gnawing stomach feeling and allows me to get some soup. ",
+          "timestamp": "2026-08-03T18:44:32+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1i5d43",
+          "author": "reddit_user_9c2d95ab66fd",
+          "author_karma": 0,
+          "content": "I used to drink Cold vanilla boost it tastes like a milkshake ",
+          "timestamp": "2026-08-03T19:03:45+00:00",
+          "likes": 3,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1i5rg9",
+          "author": "reddit_user_5932915f1f92",
+          "author_karma": 0,
+          "content": "my go tos the past couple months w sma and gastroparesis:  \n\\- miso soup  \n\\- tofu  \n\\- fruit puree cups  \n\\- electrolyte popsicles  \n\\- saltines  \n\\- rice krispie treats (weird one ik but works for me lol)  \n\\- rice (sushi rice if i want a bit of extra flavour)  \n\\- cream of wheat  \n\\- ice chips (for the crunch)  \n\\- hard candies (just for flavour)  \n\\- ensures (clear ones if you can’t do dairy)  \n\\- white bread   \n\\- tortillas with a bit of butter ",
+          "timestamp": "2026-08-03T19:05:29+00:00",
+          "likes": 7,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1i84le",
+          "author": "reddit_user_830f470ce921",
+          "author_karma": 0,
+          "content": "Sugar free popsicles and sugar free 7up.",
+          "timestamp": "2026-08-03T19:15:46+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1i917w",
+          "author": "reddit_user_746c45dbd89a",
+          "author_karma": 0,
+          "content": "plain pasta or ramen without the sauce. bread and butter. anything really beige!",
+          "timestamp": "2026-08-03T19:19:44+00:00",
+          "likes": 3,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1ic121",
+          "author": "reddit_user_7bec58629416",
+          "author_karma": 0,
+          "content": "I use protein shakes mixed with vanilla flavored soy or almond milk. But im not sure if that's helpful. ",
+          "timestamp": "2026-08-03T19:32:51+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1icwze",
+          "author": "reddit_user_67ffdc07e2a6",
+          "author_karma": 0,
+          "content": "Smoothies-you can add protein to them, freeze them or drink them as is \nCould probably blend fruit and freeze it to make a kind of fruit ice cream\n\nAre you gluten sensitive? You said with crackers you can only have 3-5 at a time.",
+          "timestamp": "2026-08-03T19:36:49+00:00",
+          "likes": 3,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1imz9i",
+          "author": "reddit_user_c6933c465bc0",
+          "author_karma": 0,
+          "content": "Before I was diagnosed with celiac and pernicious anemia, I got down to 91 pounds and was sooooooo sick but I knew I had to force myself to eat so I started forcing myself to eat a lot of the foods others already mentioned. Part of it for me was the fear that people thought I was on drugs because my mother and sister both were and even though I had nothing to do with them, I was triggered by the association.  \nI would have the biggest frown on my face and tears streaming down my face just gagging and forcing whatever down my throat. I could no longer sit up at one point and my kids would feed me scrambled eggs or a bite of their corn dog etc. Smells and the thought of food was enough to make me gag and dry heave… it was awful but I eventually started to put on weight. Even before diagnosis. Now I’m gluten free and unfortunately 260 lbs smh … I feel for you. Find the easiest things to eat and take as many bites you can in a day even if it’s candy or something bad for you and vitamins. It took about a year before my body got used to food again but forcing myself was the only way for me personally to get better. ❤️‍🩹 Sorry you’re having such a hard time. 😭  \nPotatoes and rice are my go tos now when I’m sick but back then nothing was good, I was wasting away. Hope you can get back to being able to eat soon.",
+          "timestamp": "2026-08-03T20:20:52+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1ix59m",
+          "author": "reddit_user_b10aa5f43a4b",
+          "author_karma": 0,
+          "content": "In my country pharmacies sell high caloric drinks with the consistency of a yogurt drink. They come in different flavors and you have to consume way less volume, as they are so calory dense. \n\nMaybe you could even get a doctor to get you a prescription for that and your health insurance pays it (depending on your country of course) ",
+          "timestamp": "2026-08-03T21:05:51+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1j10bj",
+          "author": "reddit_user_3dcbd2fdcd9c",
+          "author_karma": 0,
+          "content": "Broth all day. ",
+          "timestamp": "2026-08-03T21:23:31+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1j1s2j",
+          "author": "reddit_user_757cc12078d1",
+          "author_karma": 0,
+          "content": "My go-tos are instant mashed potatoes, baby food, protein drinks, and congee. McDonalds French fries once I branch out to solid food. Also, pedialyte makes Otter Pops. \n\nWhen I get like that, instead of meals, I just carry a protein drink around with me to sip on all day. ",
+          "timestamp": "2026-08-03T21:27:04+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1j4clg",
+          "author": "reddit_user_4ee5198ac23c",
+          "author_karma": 0,
+          "content": "I'd probably suggest mash potatoes, small cup of soup or plain crackers. Something light on the stomach. I've had those moments where I can't stomach anything, it sucks:( I hope you feel better",
+          "timestamp": "2026-08-03T21:39:02+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1j7ax6",
+          "author": "reddit_user_c725b061f44c",
+          "author_karma": 0,
+          "content": "I survived on lots of hard candy when I had a serious gut problem.  Calories with no bulk.  ",
+          "timestamp": "2026-08-03T21:52:51+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1jddjp",
+          "author": "reddit_user_0e4ea10604da",
+          "author_karma": 0,
+          "content": "I meal prep congee and all you’d need to do is add toppings. You can freeze it in portions. Congee is specifically good for upset stomachs. I add an egg, soy sauce and sriratcha if I can handle it. ",
+          "timestamp": "2026-08-03T22:22:10+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1je16n",
+          "author": "reddit_user_476559552438",
+          "author_karma": 0,
+          "content": "Lately I been having jello lol. \n\nI am on fodmap diet currently cause of my bad pain annoying gas. Plus the fact I throw up more this last year then I ever have in my life expect that one time throwing up and not being able to stop landed me in icu.",
+          "timestamp": "2026-08-03T22:25:25+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1jokx0",
+          "author": "reddit_user_654370963701",
+          "author_karma": 0,
+          "content": "I eat Saltines every morning due to heartburn, and they help.",
+          "timestamp": "2026-08-03T23:19:40+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1jor02",
+          "author": "reddit_user_0c5fd2df8571",
+          "author_karma": 0,
+          "content": "Peanut butter.  It has fat and protein.  ",
+          "timestamp": "2026-08-03T23:20:33+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1kc1ib",
+          "author": "reddit_user_b25104ec7340",
+          "author_karma": 0,
+          "content": "Plain toast. Peanut butter toast if I’m feeling adventurous ",
+          "timestamp": "2026-08-04T01:26:16+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1kfjck",
+          "author": "reddit_user_489d87ad7e8a",
+          "author_karma": 0,
+          "content": "I have a crap time with my food too. I have gastroparesis and delayed gastric emptying, that seems to fluctuate between partially not working and a flat out nope. \n\nCan you speak to your doctor? Mine prescribed Fortijuice and Fortisip drinks for when it's really bad. It's only like 400mls a day but at least gives me enough nutrients to not keel over.",
+          "timestamp": "2026-08-04T01:45:35+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run016_post04_seed084",
+      "post_slot": 4,
+      "seed_index": 84,
+      "source_raw_post_id": "1veo29y",
+      "source_product_dir": "ChronicIllness",
+      "source_file": "https://www.reddit.com/r/ChronicIllness/comments/1veo29y/unbearable_pain/",
+      "post_type": "Vent",
+      "title": "Unbearable Pain",
+      "author": "reddit_user_7b7b220cf34f",
+      "author_karma": 0,
+      "content": "Unbearable Pain\n\nAnyone else in unbearable pain right now? This really sucks and I can't do anything about it unfortunately, I wish I had a way out.",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p1iin6z",
+          "author": "reddit_user_d488d000fbd7",
+          "author_karma": 0,
+          "content": "I'm sorry Op. I wouldn't say I'm an unbearable pain, more like extreme fatigue. Since last Thursday all I feel like I can do is the absolute bare minimum and then I crash. I've been in bed, barely can eat anything which of course makes you more fatigued. \n\nI'm wondering if it's something like fibromyalgia. I scheduled a drs appt. Idk how to bring it up tho. ",
+          "timestamp": "2026-08-03T20:01:51+00:00",
+          "likes": 3,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1ij92o",
+              "author": "reddit_user_b976eebb7add",
+              "author_karma": 0,
+              "content": "I hope you can get some answers soon, I can relate to feeling fatigued all the time, pain just sucks your energy away it seems.",
+              "timestamp": "2026-08-03T20:04:33+00:00",
+              "likes": 2,
+              "dislikes": 0,
+              "parent_comment_id": "p1iin6z",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1ijh3x",
+                  "author": "reddit_user_d488d000fbd7",
+                  "author_karma": 0,
+                  "content": "Same op. What are you dealing with? Pain wise ",
+                  "timestamp": "2026-08-03T20:05:33+00:00",
+                  "likes": 2,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1ij92o",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1imy72",
+                      "author": "reddit_user_b976eebb7add",
+                      "author_karma": 0,
+                      "content": "There's a lot of stuff but the most obvious right now is this burning, stinging, throbbing pain radiating from my right ankle, the bottom of my feet still hurts from sitting in my chair for so long, scoliosis doesn't make any of this better either.",
+                      "timestamp": "2026-08-03T20:20:44+00:00",
+                      "likes": 2,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1ijh3x",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p1il2ki",
+          "author": "reddit_user_35a075a07312",
+          "author_karma": 0,
+          "content": "Yep constant nerve pain. GI issues so I can't take pain pills but it's centralized pain so they probably wouldn't work anyway, been constant pain stuck above a 5/10 every single damn day for 11 weeks straight without a moment of real relief, the only time I can really breathe is when I'm high or sleeping. It's hell.",
+          "timestamp": "2026-08-03T20:12:33+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1inc8g",
+              "author": "reddit_user_b976eebb7add",
+              "author_karma": 0,
+              "content": "I can relate to that, not the GI issues thankfully but OTC pain meds don't seem to do anything for my pain anyways, I wish I was allowed to get high sometimes ngl, it would help take the edge off for sure. Sending you strength and hugs if you want them.",
+              "timestamp": "2026-08-03T20:22:25+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1il2ki",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1iy314",
+          "author": "reddit_user_5bf017da71dc",
+          "author_karma": 0,
+          "content": "Yes... i feel you, not literally 😆 i cant even deal with clothing on my skin at the moment. Spinal cord issues for me are absolute hell. And ever so fun when they decide to misfire and some how have absolute no (touch/temp) sensation and all the pain at the same time.. ",
+          "timestamp": "2026-08-03T21:10:07+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1iz0lz",
+              "author": "reddit_user_b976eebb7add",
+              "author_karma": 0,
+              "content": "It really, really sucks, I hope things get better for us both soon.",
+              "timestamp": "2026-08-03T21:14:23+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1iy314",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1j004i",
+                  "author": "reddit_user_5bf017da71dc",
+                  "author_karma": 0,
+                  "content": "Well i just had an extra bowl and broke out thr cbd gummies I'll be back to baseline \"just kill me now\" tomorrow.  My pain (progressive, degenerative spine) will never go away, but its not always throwing a sucker punch like this. ",
+                  "timestamp": "2026-08-03T21:18:56+00:00",
+                  "likes": 2,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1iz0lz",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1j17r1",
+                      "author": "reddit_user_b976eebb7add",
+                      "author_karma": 0,
+                      "content": "CBD gummies sound so nice right about now, I hope I can live in a place with legal medical marijuana in the future.",
+                      "timestamp": "2026-08-03T21:24:28+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1j004i",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "p1j1wtt",
+                          "author": "reddit_user_5bf017da71dc",
+                          "author_karma": 0,
+                          "content": "Take a vacation? Like who said you had to live here. Canada there are more dispensaries than Tims/Starbucks take a week, enjoy our fantastic scenery higher than a kite for a week before going home. (You cannot bring it across the border home,....sorry)",
+                          "timestamp": "2026-08-03T21:27:41+00:00",
+                          "likes": 2,
+                          "dislikes": 0,
+                          "parent_comment_id": "p1j17r1",
+                          "depth": 4,
+                          "replies": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

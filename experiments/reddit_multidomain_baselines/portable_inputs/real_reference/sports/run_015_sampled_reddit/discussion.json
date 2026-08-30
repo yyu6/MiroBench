@@ -1,0 +1,4007 @@
+{
+  "meta": {
+    "product_category": "sports",
+    "baseline": "real_reddit_reference",
+    "run_id": "run_015_sampled_reddit"
+  },
+  "posts": [
+    {
+      "post_id": "real_run015_post00_seed075",
+      "post_slot": 0,
+      "seed_index": 75,
+      "source_raw_post_id": "1vel3gk",
+      "source_product_dir": "nfl",
+      "source_file": "https://www.reddit.com/r/nfl/comments/1vel3gk/new_cleveland_stadium_will_have_artificial_turf/",
+      "post_type": "link",
+      "title": "New Cleveland stadium will have artificial turf for Browns games",
+      "author": "reddit_user_79ff14d8816f",
+      "author_karma": 0,
+      "content": "New Cleveland stadium will have artificial turf for Browns games",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p1i14vg",
+          "author": "reddit_user_c0b533fcefc8",
+          "author_karma": 0,
+          "content": "Oof",
+          "timestamp": "2026-08-03T18:45:41+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1hshar",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1i15u7",
+          "author": "reddit_user_e55b5bb35479",
+          "author_karma": 0,
+          "content": "Yeah, and as that data shows, not only are there more injuries on artificial turf than on real grass, but ***the severity*** of the injuries on artificial turf is much higher than injuries on grass turf. ",
+          "timestamp": "2026-08-03T18:45:47+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1hz3rr",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1i18y8",
+          "author": "reddit_user_e1136695e1b6",
+          "author_karma": 0,
+          "content": "I don’t disagree. I’m just pointing out that the players can negotiate for it but it’s going to come at a cost. That’s how collective bargaining works. ",
+          "timestamp": "2026-08-03T18:46:10+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1i10jm",
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1i7equ",
+              "author": "reddit_user_15d0d74b8639",
+              "author_karma": 0,
+              "content": "It’s also going to be a big cost. Owners really value the ability to have concerts and conventions in their stadium without having to bother with field maintenance. Players have one massive chip in adding an 18th game, but idk if they’re going to be willing to use it on this. ",
+              "timestamp": "2026-08-03T19:12:40+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1i18y8",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p1k143m",
+              "author": "reddit_user_04754057d4b5",
+              "author_karma": 0,
+              "content": "Also the players refuse to strike for different reasons. Giving up your own leverage will undermine your position every time",
+              "timestamp": "2026-08-04T00:26:27+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1i18y8",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1i1eh7",
+          "author": "reddit_user_a30857d49691",
+          "author_karma": 0,
+          "content": "This is the same psychology that results in the Browns being the #1 most popular and discussed team in Cleveland even though the Cavs and Guardians have been two of the most successful teams in their leagues for 20+ years",
+          "timestamp": "2026-08-03T18:46:49+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1hux1z",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1i1rfi",
+          "author": "reddit_user_e55b5bb35479",
+          "author_karma": 0,
+          "content": "FYI, “turf” just refers to playing surface. Real grass is still turf. You’re talking about artificial turf vs grass turf. \n\nAnd as others have said, the data shows there are statistically more injuries on artificial turf than on grass, and the severity of injuries on artificial turf is, on average, higher than the severity of injuries on grass. ",
+          "timestamp": "2026-08-03T18:48:23+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1hvvi5",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1i20mh",
+          "author": "reddit_user_644c3c4d0c41",
+          "author_karma": 0,
+          "content": "The Browns play football?  Who knew.",
+          "timestamp": "2026-08-03T18:49:28+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1i29hc",
+          "author": "reddit_user_6c51c97f2ac5",
+          "author_karma": 0,
+          "content": "So they're moving from an open air stadium in the city with grass to a dome in the suburbs with turf. Just a massive downgrade in every aspect.",
+          "timestamp": "2026-08-03T18:50:31+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1jmn8d",
+              "author": "reddit_user_b27c74d3506a",
+              "author_karma": 0,
+              "content": "To be fair, the open field on a man-made peninsula sticking out into the shallowest/iciest and windiest Great Lake was a bad idea\n\nAnd a dome is a good idea because nobody builds a football team to win 2 random-number generator games a year, reduce variance at all costs\n\nTurf is bad, the Browns are cursed enough",
+              "timestamp": "2026-08-03T23:09:27+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1i29hc",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1i3eg5",
+          "author": "reddit_user_b7f1e57df048",
+          "author_karma": 0,
+          "content": "Let’s flee to the Cleve. 🎼 \nWhere the jet set swing \nwith hepper cats ♪\n ♪ Shop at Higbee's, \nthen we'll hit the Flats 🎶 ",
+          "timestamp": "2026-08-03T18:55:23+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1hv0g5",
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1ka0b5",
+              "author": "reddit_user_b94cfdad35a0",
+              "author_karma": 0,
+              "content": "They're finally getting that Ikea!",
+              "timestamp": "2026-08-04T01:15:02+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1i3eg5",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1kkqcm",
+                  "author": "reddit_user_b7f1e57df048",
+                  "author_karma": 0,
+                  "content": "I’ll move to Cleveland when you get that IKEA. Never!\n\n🥳",
+                  "timestamp": "2026-08-04T02:14:31+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1ka0b5",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p1i4ggu",
+          "author": "reddit_user_ea2c9ad41925",
+          "author_karma": 0,
+          "content": "Why is this worded like they'll be tearing out real grass and planting turf for each Browns game?",
+          "timestamp": "2026-08-03T18:59:52+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1ir7o1",
+              "author": "reddit_user_04d1c69a0ed6",
+              "author_karma": 0,
+              "content": "Im not sure what wording youre reading, other than that the field has the capacity to swap to grass for things like soccer games",
+              "timestamp": "2026-08-03T20:39:28+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1i4ggu",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1i5234",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-03T19:02:27+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1hsfe4",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1i60rw",
+          "author": "reddit_user_bfd64f4b13e8",
+          "author_karma": 0,
+          "content": "Bruh",
+          "timestamp": "2026-08-03T19:06:36+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1i68f6",
+          "author": "reddit_user_e0722a8c7aef",
+          "author_karma": 0,
+          "content": "The linked research only covers 2 seasons, and in 1 of those seasons, they literally showed their were more injuries on grass than turf (2021).\n\n\nIt also doesn't show the difference between the various turf types used in the NFL currently and instead groups them all together.\n\n\nFurthermore, the article claims weather/age/week of injury occurance and history of prior injury did not influence the odds of the season ending surgerys, but doesn't provide an explanation or evidence to support that claim. ",
+          "timestamp": "2026-08-03T19:07:32+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1i05f7",
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1iaome",
+              "author": "reddit_user_2e9a9159a997",
+              "author_karma": 0,
+              "content": "Dude, just admit you are full of shit and move on.",
+              "timestamp": "2026-08-03T19:26:55+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1i68f6",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1ict6i",
+                  "author": "reddit_user_e0722a8c7aef",
+                  "author_karma": 0,
+                  "content": "What point that I just highlighted, is wrong?\n\n\n\nIt was 1 research paper, with a small sample size, that had glaring issues as I highlighted above.\n",
+                  "timestamp": "2026-08-03T19:36:20+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1iaome",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1ieepm",
+                      "author": "reddit_user_c8245c8911e3",
+                      "author_karma": 0,
+                      "content": ">The 2021 and 2022 NFL seasons of our analysis demonstrated a higher incidence rate of injuries on artificial turf surfaces compared with natural grass surfaces.",
+                      "timestamp": "2026-08-03T19:43:22+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1ict6i",
+                      "depth": 3,
+                      "replies": []
+                    },
+                    {
+                      "comment_id": "p1ikenl",
+                      "author": "reddit_user_d8dcae4e9cd2",
+                      "author_karma": 0,
+                      "content": "The only claim you made that has any merit is the fact they dont include the actual P values for the age/previous injury/weather categories. Even then its a minor complaint, it can be inferred they were greater than .05 and therefore statistically insignificant. That said I would love to know what the actual P values were.\n\nDoes this study prove once and for all that turf is worse? No, but its pretty damning and definitely warrants further study.\n\nIf you're so sure its bullshit why not back it up with your own study? In the discussion section of this study they even mention other studies that suggest different outcomes, and comment on why they disagree with their findings.",
+                      "timestamp": "2026-08-03T20:09:40+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1ict6i",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "p1im7zi",
+                          "author": "reddit_user_e0722a8c7aef",
+                          "author_karma": 0,
+                          "content": "Becuase I have a full time job and It is waste of my time trying to argue that the injury variance justifys spending millions more on fields/up keep would make more than a marginal difference in injuries through the league( not to mention that some places like New York could arguably be worse of with grass due to the weather and beating the field takes with its usage. \n\n\n",
+                          "timestamp": "2026-08-03T20:17:33+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "p1ikenl",
+                          "depth": 4,
+                          "replies": []
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "comment_id": "p1igtv9",
+                  "author": "reddit_user_1564ae95a578",
+                  "author_karma": 0,
+                  "content": "He’s a cowboys fan. It’s a requirement. ",
+                  "timestamp": "2026-08-03T19:54:00+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1iaome",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            },
+            {
+              "comment_id": "p1iibmj",
+              "author": "reddit_user_d8dcae4e9cd2",
+              "author_karma": 0,
+              "content": "Only two season but the sample covers 718 total injuries, thats a perfectly acceptable sample size. \n\nWhy does it need to? The goal was to compare grass vs artificial surfaces, just because all artificial surfaces arent created equal doesnt mean its meaningless, it just means that based on these findings further comparison of specific artificial surfaces may be warranted. That said comparing different types of artificial turf to each other would be a separate study.\n\nThey state they performed a multivariable logistic reggression with a P < .05 considered significant. The study didnt link the raw data (but did include summaries), it can be inferred when they say those variables didnt increase the odds of injury that means for those variables P > .05, meaning it was not statistically significant.",
+              "timestamp": "2026-08-03T20:00:29+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1i68f6",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1i6ydj",
+          "author": "reddit_user_cf1e289eb1af",
+          "author_karma": 0,
+          "content": "It's easy for other fans to say this. Y'all can tune out when the Browns and Saints are playing in 50mph winds in November and the score is 3-0 going into the 4th quarter  \n  \nWe can't. Bring on the dome",
+          "timestamp": "2026-08-03T19:10:42+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1ht4ym",
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1i89lq",
+              "author": "reddit_user_535c045d9f32",
+              "author_karma": 0,
+              "content": "I watched those browns for almost 2 decades. No dome ",
+              "timestamp": "2026-08-03T19:16:22+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1i6ydj",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1i7dpg",
+          "author": "reddit_user_e6d739f354a1",
+          "author_karma": 0,
+          "content": "Natural grass for the World Cup",
+          "timestamp": "2026-08-03T19:12:33+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1hshar",
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1i9j4n",
+              "author": "reddit_user_afb91a5cab79",
+              "author_karma": 0,
+              "content": "I don't think that's a viable option to host a WC game. ",
+              "timestamp": "2026-08-03T19:21:54+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1i7dpg",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1irsum",
+                  "author": "reddit_user_7f84dc04a549",
+                  "author_karma": 0,
+                  "content": "It is when they move the Browns to Portugal ",
+                  "timestamp": "2026-08-03T20:42:03+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1i9j4n",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p1i8k4o",
+          "author": "reddit_user_f363801c8f73",
+          "author_karma": 0,
+          "content": "Boooo",
+          "timestamp": "2026-08-03T19:17:39+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1i8xzy",
+          "author": "reddit_user_4d81ee26340a",
+          "author_karma": 0,
+          "content": "I dont understand how any team can decide to use turf over grass in any new stadium these days. We have the technology to grow grass in a dome. Dont waste players' health.",
+          "timestamp": "2026-08-03T19:19:20+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1i98u2",
+          "author": "reddit_user_27841a8cb928",
+          "author_karma": 0,
+          "content": "🎶our main export is crippling depression🎶",
+          "timestamp": "2026-08-03T19:20:39+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1hv0g5",
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1ibzkj",
+              "author": "reddit_user_934627ddd663",
+              "author_karma": 0,
+              "content": "🎶We see the sun almost three times a year🎶",
+              "timestamp": "2026-08-03T19:32:40+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1i98u2",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1idanw",
+                  "author": "reddit_user_45d4f76e3073",
+                  "author_karma": 0,
+                  "content": "Our economy's based on LeBron James ",
+                  "timestamp": "2026-08-03T19:38:29+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1ibzkj",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1k8b8j",
+                      "author": "reddit_user_3092fa81cf07",
+                      "author_karma": 0,
+                      "content": "Sounds like the exported their economy years ago lol",
+                      "timestamp": "2026-08-04T01:05:45+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1idanw",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p1ib4kz",
+          "author": "reddit_user_2e0d887ce831",
+          "author_karma": 0,
+          "content": "Haslamic State",
+          "timestamp": "2026-08-03T19:28:53+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1hvbap",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1ibchh",
+          "author": "reddit_user_2e0d887ce831",
+          "author_karma": 0,
+          "content": "they're a parasite on the city. if they did something right, they'd be a symbiote at best",
+          "timestamp": "2026-08-03T19:29:51+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1hws1h",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1ibhcr",
+          "author": "reddit_user_ca94006c3ed4",
+          "author_karma": 0,
+          "content": ">tickets in the club seats for over a decade\n>Maybe he’s just a psycho\n\ncase closed",
+          "timestamp": "2026-08-03T19:30:26+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1hux1z",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1ibl3n",
+          "author": "reddit_user_29e1b183296e",
+          "author_karma": 0,
+          "content": "They misunderstood the assignment",
+          "timestamp": "2026-08-03T19:30:54+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1hvqii",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1ibwcl",
+          "author": "reddit_user_8768732379f0",
+          "author_karma": 0,
+          "content": "The Soul of the Browns was already gone. They were reborn as ghosts as Jon Bois eloquently said ",
+          "timestamp": "2026-08-03T19:32:16+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1ht4ym",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1ig1ka",
+          "author": "reddit_user_fe1811e1d689",
+          "author_karma": 0,
+          "content": "The team in white jerseys will be pros, probably.",
+          "timestamp": "2026-08-03T19:50:33+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1hshar",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1igbx9",
+          "author": "reddit_user_fe1811e1d689",
+          "author_karma": 0,
+          "content": "Should be a major issue for them every time around.",
+          "timestamp": "2026-08-03T19:51:48+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1ht3ix",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1igkyc",
+          "author": "reddit_user_e4a168571a33",
+          "author_karma": 0,
+          "content": "they seem allergic to making any kind of good decisions or decisions that would be popular. ",
+          "timestamp": "2026-08-03T19:52:54+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1jnl5o",
+              "author": "reddit_user_cceb2f65d896",
+              "author_karma": 0,
+              "content": "What do you expect? Haslam is a trust fund baby. He's never built shit in his life. His money and \"success\" come from a company his dad founded.",
+              "timestamp": "2026-08-03T23:14:26+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1igkyc",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1igm6y",
+          "author": "reddit_user_fe1811e1d689",
+          "author_karma": 0,
+          "content": "Deshaun is the only one that got a quarter billion dollars.",
+          "timestamp": "2026-08-03T19:53:04+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1hvbap",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1iie3g",
+          "author": "reddit_user_476e94d32d58",
+          "author_karma": 0,
+          "content": "Artificial turf and a dome...can we just throw them out of the AFC North?",
+          "timestamp": "2026-08-03T20:00:46+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1iie1h",
+          "author": "reddit_user_b7ea9d85ad2a",
+          "author_karma": 0,
+          "content": "> The odds of a season-ending surgery were found to be significantly higher on artificial turf compared with natural grass (odds ratio = 1.60; 95% CI, 1.28-1.99; P < .05)\n\nThis is the part that seems most significant to me.  The injury rate was 1.2 to 1.4 for grass vs turf, but having a 60% higher chance of season ending injury on turf should matter to fans, players, coaches, and team owners.\n\nThe only downside to this study is that they're looking at every injury over a 2 season stretch, which is only 718 injuries.  Ideally this research could be expanded across a larger timeframe to increase the sample size.",
+          "timestamp": "2026-08-03T20:00:46+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1hz3rr",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1in14j",
+          "author": "reddit_user_e4c2cb8db6fe",
+          "author_karma": 0,
+          "content": "Why is the Browns strategy to do the exact opposite of what everyone wants and knows is right",
+          "timestamp": "2026-08-03T20:21:05+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1infp8",
+              "author": "reddit_user_2e4973f62606",
+              "author_karma": 0,
+              "content": "$$$",
+              "timestamp": "2026-08-03T20:22:51+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1in14j",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1inqo7",
+          "author": "reddit_user_63eab0f2e8cb",
+          "author_karma": 0,
+          "content": "The dumbest possible outcome, which is I suppose to be expected when we're talking about thre Browns.",
+          "timestamp": "2026-08-03T20:24:11+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1ipzzb",
+          "author": "reddit_user_c85a9d6c4c50",
+          "author_karma": 0,
+          "content": "As much as I love SoFi, there was something magical about watching Rams games on television at the Coliseum. Of course, I have heard the conditions there were not always the greatest when the heat hit.",
+          "timestamp": "2026-08-03T20:34:06+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1hvh96",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1iq3n4",
+          "author": "reddit_user_04d1c69a0ed6",
+          "author_karma": 0,
+          "content": "Is that a stab at the browns?",
+          "timestamp": "2026-08-03T20:34:34+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1hshar",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1iqe4j",
+          "author": "reddit_user_2aa76fdd5a66",
+          "author_karma": 0,
+          "content": "Nobody plays for free",
+          "timestamp": "2026-08-03T20:35:51+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1hvqii",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1iqjmr",
+          "author": "reddit_user_04d1c69a0ed6",
+          "author_karma": 0,
+          "content": "Don't they collectively bargain?",
+          "timestamp": "2026-08-03T20:36:31+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1hx20l",
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1kuk6z",
+              "author": "reddit_user_f52243173808",
+              "author_karma": 0,
+              "content": "Not for this kind of grass.",
+              "timestamp": "2026-08-04T03:11:37+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1iqjmr",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1isjot",
+          "author": "reddit_user_ddfe4392c308",
+          "author_karma": 0,
+          "content": "$600 million being taken from us to pay for a SERIAL sexual predator getting $250million is what this deal is paying for. Jimmy Haslam and his paying fanbase are *disgusting* people.",
+          "timestamp": "2026-08-03T20:45:18+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1ito4i",
+          "author": "reddit_user_e001b298cd37",
+          "author_karma": 0,
+          "content": "Is there any actual indication it affects player safety? I mean, maybe, but there was a time that everyone was excited to replace the ~~mud~~ grass fields with turf because the players slipped on the mud and fucked their ligaments up. Good grass is probably better than turf, but bad grass in the northern winter has to be just about the worst possible surface. It always ends up just being mud and/or coming up in clumps.",
+          "timestamp": "2026-08-03T20:50:15+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1htke9",
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1iui0v",
+              "author": "reddit_user_f76cf433ae16",
+              "author_karma": 0,
+              "content": "Only every single NFLPA survey, modern biomechanics study, and the non contact injury data from the last decade but sure... besides that zero indication. ",
+              "timestamp": "2026-08-03T20:53:57+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1ito4i",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1ivjtx",
+                  "author": "reddit_user_e001b298cd37",
+                  "author_karma": 0,
+                  "content": "FWIW that was an actual question, not trying to \"gotcha\" into anything.\n\nThat said, I still can't imagine that mud/shitty grass is better. But I'm not a grassologist, obviously.",
+                  "timestamp": "2026-08-03T20:58:37+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1iui0v",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1jsd99",
+                      "author": "reddit_user_782160d785ec",
+                      "author_karma": 0,
+                      "content": "The idea is that teams spend the money to keep the grass not-shitty. Of course, they could probably use better turf at that rate",
+                      "timestamp": "2026-08-03T23:39:27+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1ivjtx",
+                      "depth": 3,
+                      "replies": []
+                    },
+                    {
+                      "comment_id": "p1jszui",
+                      "author": "reddit_user_782160d785ec",
+                      "author_karma": 0,
+                      "content": "The idea is that teams spend the money to keep the grass not-shitty. Of course, they could probably use better turf at that rate",
+                      "timestamp": "2026-08-03T23:42:43+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1ivjtx",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "comment_id": "p1j0rms",
+              "author": "reddit_user_d8dcae4e9cd2",
+              "author_karma": 0,
+              "content": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11363235/\n\nThis was linked elsewhere in the thread. Basically injury rates are roughly the same but injury severity (measured in amount of time missed/surgery needed) was significantly higher on turf.\n\nIf you read the discussion about mechanics it theorizes that the interaction between cleats and turf puts higher stress on lower body joints. If that theory is true then mud, while not great would release the cleat even easier than grass. Now slipping around in mud might put you at higher risk of other types of injuries, that wasn't part of the study.",
+              "timestamp": "2026-08-03T21:22:24+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1ito4i",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1jns41",
+                  "author": "reddit_user_d1813d31b289",
+                  "author_karma": 0,
+                  "content": "I watched Pittsburgh and Miami play a game in the mud. It was very entertaining in a car crash kinda way",
+                  "timestamp": "2026-08-03T23:15:28+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1j0rms",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1k4utf",
+                      "author": "reddit_user_3b9bf9a90562",
+                      "author_karma": 0,
+                      "content": "During a game (supposedly an MLB All-Star Game, but I thought it was an NFL game), Curt Gowdy saw a large puddle on the field and said, \"If there's a pileup, they'll have to give some of the players artificial insemination.\"",
+                      "timestamp": "2026-08-04T00:46:52+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1jns41",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "p1k65tf",
+                          "author": "reddit_user_b2dde5f8650c",
+                          "author_karma": 0,
+                          "content": "I don’t get it ",
+                          "timestamp": "2026-08-04T00:53:55+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "p1k4utf",
+                          "depth": 4,
+                          "replies": [
+                            {
+                              "comment_id": "p1kej0g",
+                              "author": "reddit_user_3b9bf9a90562",
+                              "author_karma": 0,
+                              "content": "Back then, reviving someone who drowned was called artificial respiration. Gowdy just bloopered the hell out of that phrase. ",
+                              "timestamp": "2026-08-04T01:40:06+00:00",
+                              "likes": 1,
+                              "dislikes": 0,
+                              "parent_comment_id": "p1k65tf",
+                              "depth": 5,
+                              "replies": [
+                                {
+                                  "comment_id": "p1ko9aj",
+                                  "author": "reddit_user_b2dde5f8650c",
+                                  "author_karma": 0,
+                                  "content": "Lmao that’s a good one! ",
+                                  "timestamp": "2026-08-04T02:34:22+00:00",
+                                  "likes": 1,
+                                  "dislikes": 0,
+                                  "parent_comment_id": "p1kej0g",
+                                  "depth": 6,
+                                  "replies": []
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "comment_id": "p1ki4xs",
+              "author": "reddit_user_aa298dae500d",
+              "author_karma": 0,
+              "content": "Tell me you’ve never played a game of football on both grass and turf without saying you’ve never played a game of football on both grass and turf",
+              "timestamp": "2026-08-04T02:00:01+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1ito4i",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1ky7tq",
+                  "author": "reddit_user_2a2c486d0c47",
+                  "author_karma": 0,
+                  "content": "A lot of players say a lot of dumb things. Data is a lot more useful than anecdotes from players.",
+                  "timestamp": "2026-08-04T03:34:28+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1ki4xs",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1kyc8p",
+                      "author": "reddit_user_aa298dae500d",
+                      "author_karma": 0,
+                      "content": "Moron",
+                      "timestamp": "2026-08-04T03:35:15+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1ky7tq",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "p1kyzfu",
+                          "author": "reddit_user_2a2c486d0c47",
+                          "author_karma": 0,
+                          "content": "Ah yes, anecdotes and insults. You are truly a master of persuasive arguments. I am in awe of your impeccable logic.",
+                          "timestamp": "2026-08-04T03:39:24+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "p1kyc8p",
+                          "depth": 4,
+                          "replies": [
+                            {
+                              "comment_id": "p1kzkbq",
+                              "author": "reddit_user_aa298dae500d",
+                              "author_karma": 0,
+                              "content": "Moron",
+                              "timestamp": "2026-08-04T03:43:08+00:00",
+                              "likes": 1,
+                              "dislikes": 0,
+                              "parent_comment_id": "p1kyzfu",
+                              "depth": 5,
+                              "replies": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p1iudvc",
+          "author": "reddit_user_fab37d081f46",
+          "author_karma": 0,
+          "content": "The Onion couldn’t write this. Browns build a new stadium but only soccer teams can use the real grass. Amazing ",
+          "timestamp": "2026-08-03T20:53:26+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1hsfe4",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1iy3hs",
+          "author": "reddit_user_86c881fa0a96",
+          "author_karma": 0,
+          "content": "Of course it will, wasted too much $$$ on that Watson contract!",
+          "timestamp": "2026-08-03T21:10:11+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1izs52",
+          "author": "reddit_user_46f8003cf8aa",
+          "author_karma": 0,
+          "content": "The browns are a social experiment",
+          "timestamp": "2026-08-03T21:17:54+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1j1v21",
+          "author": "reddit_user_737584582518",
+          "author_karma": 0,
+          "content": "I'm not, the players union in recent years has become a shadow of itself, which was already the weakest of the 4 major sports. \n\nThey're lead by a former player who resigned from his previous role after it came out the guy he hand picked to be executive director was out expensing trips to strip clubs. ",
+          "timestamp": "2026-08-03T21:27:27+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1hv4bt",
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1jbu2c",
+              "author": "reddit_user_9c2c797982ea",
+              "author_karma": 0,
+              "content": "And the previous leader basically worked for the owners... They need to actually stick together and have a real lockout to show they are willing to do it.  \nTill then the owners get whatever they want including people coming here and saying the players should pay for it.",
+              "timestamp": "2026-08-03T22:14:34+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1j1v21",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p1kgitp",
+              "author": "reddit_user_3092fa81cf07",
+              "author_karma": 0,
+              "content": "Lol idk a lot of movies show business meetings happening at strip clubs 😂😂",
+              "timestamp": "2026-08-04T01:51:04+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1j1v21",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1j3mok",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-03T21:35:41+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1j95jy",
+          "author": "reddit_user_4b36e3ed2193",
+          "author_karma": 0,
+          "content": "1 owner did pay for it. ",
+          "timestamp": "2026-08-03T22:01:41+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1hz7rp",
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1kg67z",
+              "author": "reddit_user_3092fa81cf07",
+              "author_karma": 0,
+              "content": "Mark Davis? Ya I think more than one owner pay for grass upkeep just not in a new stadium",
+              "timestamp": "2026-08-04T01:49:08+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1j95jy",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1jbh2s",
+          "author": "reddit_user_9c2c797982ea",
+          "author_karma": 0,
+          "content": "> The statistics didn’t show it as that much safer than turf. \nPretty much all the studies I saw said the opposite curious if you got a link to read on it.",
+          "timestamp": "2026-08-03T22:12:49+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1i10ot",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1jdeq2",
+          "author": "reddit_user_1d4f24050c28",
+          "author_karma": 0,
+          "content": "Absolutely. Outside of the start of September (summer really gets going in August and Sept), the weather is perfect.",
+          "timestamp": "2026-08-03T22:22:19+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1hvh96",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1jm3mk",
+          "author": "reddit_user_b27c74d3506a",
+          "author_karma": 0,
+          "content": "No worries there, the Browns don’t play pro football",
+          "timestamp": "2026-08-03T23:06:35+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1hshar",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1jmp6p",
+          "author": "reddit_user_cceb2f65d896",
+          "author_karma": 0,
+          "content": "Browns and Reds fighting for the worst run professional sports team in Ohio.",
+          "timestamp": "2026-08-03T23:09:44+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1jn6f3",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[deleted]",
+          "timestamp": "2026-08-03T23:12:15+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1hubb2",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1jrjg0",
+          "author": "reddit_user_ff8ecfd366c6",
+          "author_karma": 0,
+          "content": "Why. MetLife and Sofi use the excuse of hosting multiple teams, but what other sports team is using that field period. Are the Cav's using it for suicides after practice or something? Greedy ass owners would rather risk losing the thing that earns them their money (the players) than pay for a few groundskeepers. Eat the rich",
+          "timestamp": "2026-08-03T23:35:06+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1jt2yz",
+          "author": "reddit_user_89b91e54edf1",
+          "author_karma": 0,
+          "content": "Making a working class city pay for a shitty ass dome with Astro turf. Haslem is a football terrorist. ",
+          "timestamp": "2026-08-03T23:43:11+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1k1oa0",
+          "author": "reddit_user_6e991eb9a690",
+          "author_karma": 0,
+          "content": "Who cares, they suck.",
+          "timestamp": "2026-08-04T00:29:29+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1k7j13",
+          "author": "reddit_user_f9977a20a5d2",
+          "author_karma": 0,
+          "content": "we're two CBAs away from having a weed field playing surface",
+          "timestamp": "2026-08-04T01:01:26+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1hxbpy",
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1k9ix7",
+              "author": "reddit_user_77176249cabe",
+              "author_karma": 0,
+              "content": "I'm torn, on the one hand, weedfield football. On the other hand, holy fuck they're trampling the fucking weed.",
+              "timestamp": "2026-08-04T01:12:24+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1k7j13",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1k87ng",
+          "author": "reddit_user_3092fa81cf07",
+          "author_karma": 0,
+          "content": "It's all about perspective, like a broken bottle can look just like a diamond ring",
+          "timestamp": "2026-08-04T01:05:12+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1htm3v",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1k8aah",
+          "author": "reddit_user_8c64173d1f9f",
+          "author_karma": 0,
+          "content": "fucking dumb ",
+          "timestamp": "2026-08-04T01:05:36+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1k8hrg",
+          "author": "reddit_user_3092fa81cf07",
+          "author_karma": 0,
+          "content": "They said grass, cash, or ass, but I guess people got confused",
+          "timestamp": "2026-08-04T01:06:45+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1hvqii",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1k9wgt",
+          "author": "reddit_user_b94cfdad35a0",
+          "author_karma": 0,
+          "content": "This train is carrying jobs out of Cleveland",
+          "timestamp": "2026-08-04T01:14:27+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1hv0g5",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1kda6n",
+          "author": "reddit_user_dd0761366f9e",
+          "author_karma": 0,
+          "content": "Hello ACL injuries ",
+          "timestamp": "2026-08-04T01:33:11+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1kgajs",
+          "author": "reddit_user_c6938c441a65",
+          "author_karma": 0,
+          "content": "And an additional 1.5% of the revenue split, which is a huge amount of money. Nobody ever mentions that part",
+          "timestamp": "2026-08-04T01:49:48+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1huy1t",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1l0iep",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-04T03:49:16+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1hv4bt",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1l3psa",
+          "author": "reddit_user_3ca4d686280c",
+          "author_karma": 0,
+          "content": "The last PA CBA really missed a chance to bargain for all new stadiums to have infrastructure in place to maintain natural grass like newer European stadiums have. What with all the grow lights, underground light farms, retractable grass and shit. If it’s about making something useable year round, that doesn’t have to mean using the same exact base surface for everything. ",
+          "timestamp": "2026-08-04T04:10:16+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1htl1o",
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run015_post01_seed076",
+      "post_slot": 1,
+      "seed_index": 76,
+      "source_raw_post_id": "1vel4oy",
+      "source_product_dir": "nba",
+      "source_file": "https://www.reddit.com/r/nba/comments/1vel4oy/do_you_miss_the_breenjvgmark_jackson_commentary/",
+      "post_type": "reddit_post",
+      "title": "Do you miss the Breen/JVG/Mark Jackson commentary trio?",
+      "author": "reddit_user_79ff14d8816f",
+      "author_karma": 0,
+      "content": "Do you miss the Breen/JVG/Mark Jackson commentary trio?\n\nThey called 15 Finals together from 2007 to 2023 (Mark Jackson stopped for 2012 and 2013 when he was Warriors coach).",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p1i22ep",
+          "author": "reddit_user_d30a0b70bb3f",
+          "author_karma": 0,
+          "content": "We need more moments like when Van Gundy asked Mike Breen what does second cousin mean",
+          "timestamp": "2026-08-03T18:49:41+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1i26cg",
+          "author": "reddit_user_0a033d60bddb",
+          "author_karma": 0,
+          "content": "You cannot disrespect the caterpillar and rave about the butterfly.",
+          "timestamp": "2026-08-03T18:50:09+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1huv71",
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1i71yz",
+              "author": "reddit_user_fec17aad03cc",
+              "author_karma": 0,
+              "content": "U cant lie, that quote is tough",
+              "timestamp": "2026-08-03T19:11:09+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1i26cg",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1i2fps",
+          "author": "reddit_user_0a033d60bddb",
+          "author_karma": 0,
+          "content": "Van Grundy sounds like a Batman villain",
+          "timestamp": "2026-08-03T18:51:16+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1hszn4",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1i2iwr",
+          "author": "reddit_user_66d7986e9efc",
+          "author_karma": 0,
+          "content": "Marv, Walton, Steve \"Snapper\" Jones was a good trio",
+          "timestamp": "2026-08-03T18:51:39+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1hsyao",
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1ibnda",
+              "author": "reddit_user_3915d2b2f869",
+              "author_karma": 0,
+              "content": "Good old times. Bob Costas was great too. ",
+              "timestamp": "2026-08-03T19:31:10+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1i2iwr",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1ibqfw",
+                  "author": "reddit_user_3915d2b2f869",
+                  "author_karma": 0,
+                  "content": "Oh and can’t forget about Al Michaels. ",
+                  "timestamp": "2026-08-03T19:31:33+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1ibnda",
+                  "depth": 2,
+                  "replies": []
+                },
+                {
+                  "comment_id": "p1ibt62",
+                  "author": "reddit_user_66d7986e9efc",
+                  "author_karma": 0,
+                  "content": "[https://www.youtube.com/watch?v=gtVJUv\\_oP14](https://www.youtube.com/watch?v=gtVJUv_oP14)",
+                  "timestamp": "2026-08-03T19:31:53+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1ibnda",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1ieqt8",
+                      "author": "reddit_user_3915d2b2f869",
+                      "author_karma": 0,
+                      "content": "Gold memories. We gettin old guys. ",
+                      "timestamp": "2026-08-03T19:44:52+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1ibt62",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "comment_id": "p1izdu0",
+              "author": "reddit_user_aa8e08831679",
+              "author_karma": 0,
+              "content": "How did Marv not end up with the Snapper nickname?",
+              "timestamp": "2026-08-03T21:16:05+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1i2iwr",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1i2ti1",
+          "author": "reddit_user_2282e612cba4",
+          "author_karma": 0,
+          "content": "No ",
+          "timestamp": "2026-08-03T18:52:52+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1i32j0",
+          "author": "reddit_user_d395ee9e32ad",
+          "author_karma": 0,
+          "content": "this is so overblown, jackson is a dick but he worked perfectly with them. They were elite commentary.",
+          "timestamp": "2026-08-03T18:53:58+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1hsxil",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1i3e18",
+          "author": "reddit_user_a04656dc686c",
+          "author_karma": 0,
+          "content": "He’s also a psychopathic religious fundamentalist freak.",
+          "timestamp": "2026-08-03T18:55:20+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1hszn4",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1i3evk",
+          "author": "reddit_user_b7d0b1faa9b4",
+          "author_karma": 0,
+          "content": "Yes.",
+          "timestamp": "2026-08-03T18:55:26+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1i3hiq",
+          "author": "reddit_user_d395ee9e32ad",
+          "author_karma": 0,
+          "content": "Right? I like JVG but his role was basically to bitch while Mark did the more traditional color.  Reddit hates mark because he’s a religious psycho (fair) but they act like he wasn’t integral to that team.",
+          "timestamp": "2026-08-03T18:55:45+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1hzxgs",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1i3w7z",
+          "author": "reddit_user_5b7204f3e82c",
+          "author_karma": 0,
+          "content": "Absolutely Not.  Breen and JVG are great.  Mark Jackson is a tool.",
+          "timestamp": "2026-08-03T18:57:30+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1i3z6s",
+          "author": "reddit_user_4c038d8a54c2",
+          "author_karma": 0,
+          "content": "I miss JVG and Breen, don't miss Mark Jackson",
+          "timestamp": "2026-08-03T18:57:51+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1i4xgc",
+          "author": "reddit_user_66d7986e9efc",
+          "author_karma": 0,
+          "content": "2002 Finals with Marv, Walton, Steve \"Snapper\" Jones was nice\n\nDid you see their last segment?\n\n[https://www.youtube.com/watch?v=gtVJUv\\_oP14](https://www.youtube.com/watch?v=gtVJUv_oP14)",
+          "timestamp": "2026-08-03T19:01:53+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1i2185",
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1kgo3l",
+              "author": "reddit_user_125f5f7c23c3",
+              "author_karma": 0,
+              "content": "It's been years!  Thank you for that trip down memory lane.",
+              "timestamp": "2026-08-04T01:51:51+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1i4xgc",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1i5qrb",
+          "author": "reddit_user_cb23dda167bc",
+          "author_karma": 0,
+          "content": "This is the way",
+          "timestamp": "2026-08-03T19:05:24+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1hsxil",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1i8jsg",
+          "author": "reddit_user_60489abfb430",
+          "author_karma": 0,
+          "content": "It's very funny how people miss them but they were pretty much hated by everyone their last couple years ",
+          "timestamp": "2026-08-03T19:17:36+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1i91a7",
+          "author": "reddit_user_6b4e8cf7cc3b",
+          "author_karma": 0,
+          "content": "The three of them were classic commentating. I didn’t like MJ unless he had JVG to play off of. And Breen kept them focused when JVG would go off. Honestly though, I miss Hubie Brown with Mike Breen and Tirico.",
+          "timestamp": "2026-08-03T19:19:44+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1i9hpa",
+              "author": "reddit_user_66d7986e9efc",
+              "author_karma": 0,
+              "content": "Hubie and Tirico were nice:\n\n[https://www.youtube.com/watch?v=sOaaO5rENns](https://www.youtube.com/watch?v=sOaaO5rENns)",
+              "timestamp": "2026-08-03T19:21:44+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1i91a7",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1ialtz",
+          "author": "reddit_user_81bc2c59f32d",
+          "author_karma": 0,
+          "content": "On a random regular season game for 2 teams I don’t care about: sure \n\nAny game I’m watching where I actually care about the basketball being played: not at all",
+          "timestamp": "2026-08-03T19:26:35+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1ifchj",
+              "author": "reddit_user_2f65e6cd7aba",
+              "author_karma": 0,
+              "content": "Great way to put it",
+              "timestamp": "2026-08-03T19:47:31+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1ialtz",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1iaylu",
+          "author": "reddit_user_d8a968f0835e",
+          "author_karma": 0,
+          "content": "Yea. They had enough banter to make bad games watchable because they’d give you something to laugh at or just good conversations. None of the newer commentators can keep a bad game watchable. Just boring and a lot of times monotone. Like we could tell JVG and them were bored just like the people now, but they were at least funny in their boredom",
+          "timestamp": "2026-08-03T19:28:09+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1ibpgq",
+          "author": "reddit_user_80fc6b7f43c2",
+          "author_karma": 0,
+          "content": "Van Gundy was hilarious.",
+          "timestamp": "2026-08-03T19:31:25+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1i09rs",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1ibvum",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[deleted]",
+          "timestamp": "2026-08-03T19:32:12+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1hzxgs",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1ic7s4",
+          "author": "reddit_user_80fc6b7f43c2",
+          "author_karma": 0,
+          "content": ">he's impeachable as a basketball coach\n\nI know you meant unimpeachable, but it's a fun misconception because he was a terrible coach.",
+          "timestamp": "2026-08-03T19:33:42+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1hzxgs",
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1iuhju",
+              "author": "reddit_user_55996e2d72ec",
+              "author_karma": 0,
+              "content": "You're a non ball knower lol. Warriors were one of the top teams in net rating the year before he got canned",
+              "timestamp": "2026-08-03T20:53:53+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1ic7s4",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1idnd3",
+          "author": "reddit_user_749e6955aef4",
+          "author_karma": 0,
+          "content": "I prefer game insights from RJ and Legler. Never was really a fan of the Jackson and JVG commentary, but they had iconic voices and better than Doris Burke.",
+          "timestamp": "2026-08-03T19:40:03+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1k21xx",
+              "author": "reddit_user_5606b4fc4348",
+              "author_karma": 0,
+              "content": "I can't stand RJs voice though, I don't know if it is just me or if others have that issue but to me his voice is just grating and makes it hard to listen to him.",
+              "timestamp": "2026-08-04T00:31:32+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1idnd3",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1idz94",
+          "author": "reddit_user_b8095312f9ef",
+          "author_karma": 0,
+          "content": "Absolutely not. ",
+          "timestamp": "2026-08-03T19:41:29+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1iesdl",
+          "author": "reddit_user_2f65e6cd7aba",
+          "author_karma": 0,
+          "content": "#NO! \nThey were very annoying the way they ignored the game in front of them and talked about football, baseball, some random high school coach or some other crap at length , during fourth quarters. And they NEVER stopped whining. I'm very glad they are gone. They became so awful ",
+          "timestamp": "2026-08-03T19:45:03+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1iygn9",
+              "author": "reddit_user_b835a39d7739",
+              "author_karma": 0,
+              "content": "Banter is a key part of broadcasts and one of the reasons Doris Burke is so boring, she just doesn’t have it.  \n\nI’d much rather have banter in a blowout over generic platitudes.",
+              "timestamp": "2026-08-03T21:11:51+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1iesdl",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1ifk52",
+          "author": "reddit_user_2f65e6cd7aba",
+          "author_karma": 0,
+          "content": "\"they were excellent at breaking down nuances in gameplans and strategies that weren’t always apparent to the casual viewers eye. \".\n..\nWHAT??????\n.I couldn't disagree more . They were so very terrible at that. \nHubie was the best",
+          "timestamp": "2026-08-03T19:48:27+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1huvxu",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1ifs36",
+          "author": "reddit_user_60ef212b80d5",
+          "author_karma": 0,
+          "content": "Good defense, better offense by “(four syllable name)”",
+          "timestamp": "2026-08-03T19:49:24+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1huv71",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1ihpoe",
+          "author": "reddit_user_e4f01f144482",
+          "author_karma": 0,
+          "content": "[Mark Jackson absurdly long outro](https://youtu.be/eOtZ7eXwT7o?is=mSHtiGK4RgcZO6Eq)",
+          "timestamp": "2026-08-03T19:57:51+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1ikfba",
+          "author": "reddit_user_cdc5770d7e86",
+          "author_karma": 0,
+          "content": "Van Gundy complained about flopping and long video reviews, he cares about the game and the viewing experience at the end of the day",
+          "timestamp": "2026-08-03T20:09:44+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1i09rs",
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1iuosd",
+              "author": "reddit_user_55996e2d72ec",
+              "author_karma": 0,
+              "content": "He had WAY more complaints than just two lol",
+              "timestamp": "2026-08-03T20:54:48+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1ikfba",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1k3xn2",
+                  "author": "reddit_user_fd635b210ceb",
+                  "author_karma": 0,
+                  "content": "And he was usually right",
+                  "timestamp": "2026-08-04T00:41:49+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1iuosd",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1kdvg3",
+                      "author": "reddit_user_91d1f8652785",
+                      "author_karma": 0,
+                      "content": "You can be right and still be irritating as hell",
+                      "timestamp": "2026-08-04T01:36:26+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1k3xn2",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "p1kg7uy",
+                          "author": "reddit_user_fd635b210ceb",
+                          "author_karma": 0,
+                          "content": "Fair. I loved him lol but I am a skeptic by nature as well ",
+                          "timestamp": "2026-08-04T01:49:23+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "p1kdvg3",
+                          "depth": 4,
+                          "replies": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p1ikhev",
+          "author": "reddit_user_103f82928600",
+          "author_karma": 0,
+          "content": "He could be replaced with a soundboard ",
+          "timestamp": "2026-08-03T20:10:00+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1hud5l",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1ikjxx",
+          "author": "reddit_user_3c0e46a1f2b0",
+          "author_karma": 0,
+          "content": "Yes. Especially since Richard Jefferson is an insufferable shill",
+          "timestamp": "2026-08-03T20:10:18+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1ilczd",
+          "author": "reddit_user_f4656376c9fd",
+          "author_karma": 0,
+          "content": "Now they’re saying he had a foot on the line",
+          "timestamp": "2026-08-03T20:13:48+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1hsyao",
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1jfaxt",
+              "author": "reddit_user_b2f8e5a5471b",
+              "author_karma": 0,
+              "content": "On the most obvious mid range jumper you’ve ever seen.",
+              "timestamp": "2026-08-03T22:31:48+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1ilczd",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1imom3",
+          "author": "reddit_user_df3838298b5d",
+          "author_karma": 0,
+          "content": "Breen & JVG, yes. MJ, hell no. ",
+          "timestamp": "2026-08-03T20:19:35+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1inkxf",
+          "author": "reddit_user_c2d74ebebb6d",
+          "author_karma": 0,
+          "content": "Marv Albert from the 90s-2000s absolutely. Marv Albert from the 2010s onward felt like I was watching a different game vs what he was calling",
+          "timestamp": "2026-08-03T20:23:29+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1hsyao",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1io59s",
+          "author": "reddit_user_29adf57ef901",
+          "author_karma": 0,
+          "content": "Good point. This goes to show it’s more than sheer repetition. I grew up listening to Chick Hearn. The greatest ever. I never got tired of the chick-isms: yo-yo-ing up and down, caught with his hand in the cookie jar, into the popcorn machine, etc., not to mention that he invented “slam dunk” and “airball.”\n\nMark Jackson was unlistenable. Just awful.\n\nMaybe play by play guys can get away with some catchphrases because they are saying a lot more during the game.",
+          "timestamp": "2026-08-03T20:25:59+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1hxbdl",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1iscty",
+          "author": "reddit_user_426e644bf93c",
+          "author_karma": 0,
+          "content": "Yes. Loved how open and honest they were. They shat on the game when it deserved it instead of having bullshit yesmen we have now. The game deserves shit and some real emotion. ",
+          "timestamp": "2026-08-03T20:44:29+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1ismnk",
+          "author": "reddit_user_07f120b03de3",
+          "author_karma": 0,
+          "content": "Nope. Jackson sucks. Not sure why people like him, but I never did.",
+          "timestamp": "2026-08-03T20:45:40+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1itd0z",
+          "author": "reddit_user_d587e0ed73db",
+          "author_karma": 0,
+          "content": "Yes. I miss them whenever I watch a game",
+          "timestamp": "2026-08-03T20:48:53+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1itd4e",
+          "author": "reddit_user_55996e2d72ec",
+          "author_karma": 0,
+          "content": "Mark Jackson didn't get hired because of non-Xs and Os reasons",
+          "timestamp": "2026-08-03T20:48:54+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1i155z",
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1jh1tr",
+              "author": "reddit_user_ad48f8af2f2b",
+              "author_karma": 0,
+              "content": "Doesn’t that make him a shitty coach still?",
+              "timestamp": "2026-08-03T22:40:40+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1itd4e",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1iuz69",
+          "author": "reddit_user_ee33a695ff9c",
+          "author_karma": 0,
+          "content": "no",
+          "timestamp": "2026-08-03T20:56:05+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1ivuxy",
+          "author": "reddit_user_8944d50e2a2f",
+          "author_karma": 0,
+          "content": "No",
+          "timestamp": "2026-08-03T21:00:01+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1ivvar",
+          "author": "reddit_user_235f2fc39270",
+          "author_karma": 0,
+          "content": "hell na.  jvg and Mark were terrible af..",
+          "timestamp": "2026-08-03T21:00:04+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1iwbv4",
+          "author": "reddit_user_6861624ec84f",
+          "author_karma": 0,
+          "content": "Yes absolutely. They had a great chemistry and unique personalities. Plus JVG knew his ball",
+          "timestamp": "2026-08-03T21:02:09+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1ix2y2",
+          "author": "reddit_user_1755938f26c4",
+          "author_karma": 0,
+          "content": "He also criticized the rules of the game more than he talked about the actual game, which always pissed me off. He was a complainer ",
+          "timestamp": "2026-08-03T21:05:33+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1hudk7",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1iyb6c",
+          "author": "reddit_user_397a71f5de62",
+          "author_karma": 0,
+          "content": "No. Van Gundy was good.",
+          "timestamp": "2026-08-03T21:11:08+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1iymlr",
+          "author": "reddit_user_d95f32879161",
+          "author_karma": 0,
+          "content": "like where is the line there?",
+          "timestamp": "2026-08-03T21:12:36+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1hti17",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1j0ku0",
+          "author": "reddit_user_d664fba37187",
+          "author_karma": 0,
+          "content": "Yeah I was tired of JVG by the end of his stint. He hated the product and was causing me not to like it as much either. You can only take so much complaining. ",
+          "timestamp": "2026-08-03T21:21:33+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1hudk7",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1j1cwz",
+          "author": "reddit_user_f100251c03ad",
+          "author_karma": 0,
+          "content": "Nope",
+          "timestamp": "2026-08-03T21:25:07+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1j1e7a",
+          "author": "reddit_user_f100251c03ad",
+          "author_karma": 0,
+          "content": "Nope",
+          "timestamp": "2026-08-03T21:25:17+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1j1guc",
+          "author": "reddit_user_7acba6db9519",
+          "author_karma": 0,
+          "content": "Steve Kerr turned a second round team into one of greatest dynasties ever. Jackson sucked",
+          "timestamp": "2026-08-03T21:25:38+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1hzxgs",
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1j4fyz",
+              "author": "reddit_user_55996e2d72ec",
+              "author_karma": 0,
+              "content": "Team was near the top of the NBA in net rating but Jackson sucked. Yall don't even think before you comment",
+              "timestamp": "2026-08-03T21:39:28+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1j1guc",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1j4pul",
+                  "author": "reddit_user_7acba6db9519",
+                  "author_karma": 0,
+                  "content": "Net rating and winning are different.\n\nAnalytically mark Jackson should have been playing against this year's Cavs in the finals ",
+                  "timestamp": "2026-08-03T21:40:46+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1j4fyz",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1jjjno",
+                      "author": "reddit_user_55996e2d72ec",
+                      "author_karma": 0,
+                      "content": "They won 51 games lmao. You have 0 idea what you're talking about",
+                      "timestamp": "2026-08-03T22:53:25+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1j4pul",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "p1k6dhl",
+                          "author": "reddit_user_7acba6db9519",
+                          "author_karma": 0,
+                          "content": "In spite of, not because of Jackson ",
+                          "timestamp": "2026-08-04T00:55:06+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "p1jjjno",
+                          "depth": 4,
+                          "replies": [
+                            {
+                              "comment_id": "p1kedfp",
+                              "author": "reddit_user_55996e2d72ec",
+                              "author_karma": 0,
+                              "content": "That's ... really stupid. Yes, Kerr's system was better suited for the team. Doesn't make Jackson trash. Stop being a sorry ass hater",
+                              "timestamp": "2026-08-04T01:39:14+00:00",
+                              "likes": 1,
+                              "dislikes": 0,
+                              "parent_comment_id": "p1k6dhl",
+                              "depth": 5,
+                              "replies": [
+                                {
+                                  "comment_id": "p1ki8on",
+                                  "author": "reddit_user_7acba6db9519",
+                                  "author_karma": 0,
+                                  "content": "He's middling at best, get off his jock. He had an all time level team and won 51 games and got bounced in the second round. That's not the mark of a good coach.",
+                                  "timestamp": "2026-08-04T02:00:35+00:00",
+                                  "likes": 1,
+                                  "dislikes": 0,
+                                  "parent_comment_id": "p1kedfp",
+                                  "depth": 6,
+                                  "replies": []
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p1j3e7o",
+          "author": "reddit_user_bac4f0b82620",
+          "author_karma": 0,
+          "content": "I hate Breen too",
+          "timestamp": "2026-08-03T21:34:35+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1hxbdl",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1j4q9l",
+          "author": "reddit_user_4823ee614cf8",
+          "author_karma": 0,
+          "content": "HAND DOWN, MAN DOWN!",
+          "timestamp": "2026-08-03T21:40:49+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1j68vy",
+          "author": "reddit_user_e6bb53f67723",
+          "author_karma": 0,
+          "content": "No ",
+          "timestamp": "2026-08-03T21:47:53+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1j72v9",
+          "author": "reddit_user_1bd908f163c6",
+          "author_karma": 0,
+          "content": "Absolutely not. Jackson was just bad. Breen is the most overhyped commentator ever. He wishes he was Christopher Walken the way he talks. JVG was great though.",
+          "timestamp": "2026-08-03T21:51:46+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1j7vm6",
+          "author": "reddit_user_f5529a0e6737",
+          "author_karma": 0,
+          "content": "Yes. Modem day commentators suck imo. The only good ones are the older ones",
+          "timestamp": "2026-08-03T21:55:35+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1jczev",
+              "author": "reddit_user_66d7986e9efc",
+              "author_karma": 0,
+              "content": "You don't like Stu Lantz and Bill MacDonald?",
+              "timestamp": "2026-08-03T22:20:12+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1j7vm6",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1j831q",
+          "author": "reddit_user_86a1066fe6f2",
+          "author_karma": 0,
+          "content": "Not Jackson otherwise yeah",
+          "timestamp": "2026-08-03T21:56:34+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1jah9q",
+          "author": "reddit_user_1eec81311905",
+          "author_karma": 0,
+          "content": "HAND DOWN? MAN DOWN!",
+          "timestamp": "2026-08-03T22:08:01+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1hud5l",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1jaw6e",
+          "author": "reddit_user_f6732ca56096",
+          "author_karma": 0,
+          "content": "I like Mark more than JVG but they’re both in the same range. Breen carries ",
+          "timestamp": "2026-08-03T22:10:00+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1jdbpr",
+          "author": "reddit_user_7c4fb39c11fa",
+          "author_karma": 0,
+          "content": "I missed them back when they were still doing it but had long lost their mojo. ",
+          "timestamp": "2026-08-03T22:21:55+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1jdpnc",
+          "author": "reddit_user_1b9278620ac1",
+          "author_karma": 0,
+          "content": "not really, Mark Jackson sucked and JVG while good at times was a whiner the other times. Breen is top-2 alongside Harlan",
+          "timestamp": "2026-08-03T22:23:50+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1jdtzq",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[deleted]",
+          "timestamp": "2026-08-03T22:24:25+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1jdu5o",
+          "author": "reddit_user_5ca2103429d6",
+          "author_karma": 0,
+          "content": "Jefferino Hot Dog Buddy???",
+          "timestamp": "2026-08-03T22:24:27+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1jhprj",
+          "author": "reddit_user_07e778f9b228",
+          "author_karma": 0,
+          "content": "Mark Jackson was the worst. The other 2 guys were good",
+          "timestamp": "2026-08-03T22:44:06+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1jiqml",
+          "author": "reddit_user_336cbeb69f5c",
+          "author_karma": 0,
+          "content": "It's hard not feeling nostalgic about them when the group called so many iconic games together. Even Mark Jackson. It's weird to say this, but even though I don't like Mark Jackson and would never want him back, I honestly can't imagine anyone else calling those games as part of the trio. ",
+          "timestamp": "2026-08-03T22:49:16+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1jjmhl",
+          "author": "reddit_user_22ede52c5b51",
+          "author_karma": 0,
+          "content": "Yes. ",
+          "timestamp": "2026-08-03T22:53:49+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1jo0lf",
+          "author": "reddit_user_0716e2fc1bed",
+          "author_karma": 0,
+          "content": "Very much. They are the best",
+          "timestamp": "2026-08-03T23:16:42+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1jokjw",
+          "author": "reddit_user_0716e2fc1bed",
+          "author_karma": 0,
+          "content": "The difference between the old trio and the new trio is that Breen, JVG and Jackson are friends off court that truly hang out.  They have the chemistry and know each other's tendency and understand how far can a joke go without pissing off each other. RJ doesnt know that at all and keep saying weirdo stuff and thinks he's funny",
+          "timestamp": "2026-08-03T23:19:36+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1huvxu",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1jvtg8",
+          "author": "reddit_user_de6e39908500",
+          "author_karma": 0,
+          "content": "No, because Mark Jackson fucking sucks.",
+          "timestamp": "2026-08-03T23:57:55+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1jwg5n",
+          "author": "reddit_user_eee106c2ab81",
+          "author_karma": 0,
+          "content": "Yes. They were the best we’ve ever had & the most entertaining as well ",
+          "timestamp": "2026-08-04T00:01:18+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1k0as5",
+          "author": "reddit_user_14275c6a7fcd",
+          "author_karma": 0,
+          "content": "Breen is judicious with it and only uses it at epic moments. ",
+          "timestamp": "2026-08-04T00:22:04+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1hxbdl",
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1k77is",
+              "author": "reddit_user_60fd7ce9645d",
+              "author_karma": 0,
+              "content": "Mike Breen would say bang if he saw Brunson dip his spoon into a bowl of cereal",
+              "timestamp": "2026-08-04T00:59:40+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1k0as5",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1k13bb",
+          "author": "reddit_user_5606b4fc4348",
+          "author_karma": 0,
+          "content": "I wish they found someone to keep JVG on task, if they found someone who could he would be great, but alas, he got paired with Mark Jackson.",
+          "timestamp": "2026-08-04T00:26:20+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1hudk7",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1k1qnu",
+          "author": "reddit_user_5606b4fc4348",
+          "author_karma": 0,
+          "content": "one word punctuating a big play as a catch phrase is fine (you see this with baseball radio announcers having a catch phrase for when their team hits a homer), having a bunch of catch phrases that are constantly repeated on replays instead of you know, talking about the play is not.  Bang in the moment of emotion of a big play happening is great, hearing \"momma, there goes that man\" on the short replay clip going to commercial every single time is not.",
+          "timestamp": "2026-08-04T00:29:51+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1hxbdl",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1k51ll",
+          "author": "reddit_user_49239b66fb0e",
+          "author_karma": 0,
+          "content": "Nope",
+          "timestamp": "2026-08-04T00:47:53+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1k67zt",
+          "author": "reddit_user_c9530dc115bc",
+          "author_karma": 0,
+          "content": "No. Mark Jackson was terrible. Van Gundy was okay. The hate for him is overblown because he has a whiny voice. His actual analysis was good.",
+          "timestamp": "2026-08-04T00:54:15+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1kbb6g",
+          "author": "reddit_user_e70a4983e153",
+          "author_karma": 0,
+          "content": "I do. JVG specifically. I know some people didn't like his style, but I really like when he would complain about rules and also wander into strange territory when talking. Made me laugh.",
+          "timestamp": "2026-08-04T01:22:15+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1kvuhf",
+          "author": "reddit_user_e70a4983e153",
+          "author_karma": 0,
+          "content": "I do. JVG specifically. I know some people didn't like his style, but I really like when he would complain about rules and also wander into strange territory when talking. Made me laugh",
+          "timestamp": "2026-08-04T03:19:33+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run015_post02_seed077",
+      "post_slot": 2,
+      "seed_index": 77,
+      "source_raw_post_id": "1veljgj",
+      "source_product_dir": "nfl",
+      "source_file": "https://www.reddit.com/r/nfl/comments/1veljgj/schefter_bears_safety_coby_bryant_is_expected_to/",
+      "post_type": "Rumor",
+      "title": "[Schefter] Bears safety Coby Bryant is expected to be sidelined 8-10 weeks due to a hyperextended knee, bone bruise and small fracture that he suffered at today’s practice, per sources. No surgery is expected to be needed.",
+      "author": "reddit_user_79ff14d8816f",
+      "author_karma": 0,
+      "content": "[Schefter] Bears safety Coby Bryant is expected to be sidelined 8-10 weeks due to a hyperextended knee, bone bruise and small fracture that he suffered at today’s practice, per sources. No surgery is expected to be needed.",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p1hwb1x",
+          "author": "reddit_user_c47aa7032d48",
+          "author_karma": 0,
+          "content": "Damn not my goat :(",
+          "timestamp": "2026-08-03T18:24:48+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1hwbjg",
+          "author": "reddit_user_2efb9ed096c1",
+          "author_karma": 0,
+          "content": "That fucking sucks. Hope he recovers quickly.",
+          "timestamp": "2026-08-03T18:24:51+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1hwdy5",
+          "author": "reddit_user_2241e840cfaf",
+          "author_karma": 0,
+          "content": "Sucks for Coby but a much better outcome than what could have been ",
+          "timestamp": "2026-08-03T18:25:07+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1hx7up",
+              "author": "reddit_user_59d6e804f27a",
+              "author_karma": 0,
+              "content": "The scene at camp made it seem like it was an ACL or something ",
+              "timestamp": "2026-08-03T18:28:40+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1hwdy5",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1hyzve",
+                  "author": "reddit_user_e0489bb96c56",
+                  "author_karma": 0,
+                  "content": "I mean, he probably thought it was a season ender. All he probably thought was \"my knee is in pain, and it can't support weight\".",
+                  "timestamp": "2026-08-03T18:36:27+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1hx7up",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1i41an",
+                      "author": "reddit_user_2bddd12dd726",
+                      "author_karma": 0,
+                      "content": "As someone that has had both bad knee and ankle injuries, this is 100% the case. My knee was extremely painful but I was able to come back and play in a couple weeks with no surgery until the off-season. ",
+                      "timestamp": "2026-08-03T18:58:06+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1hyzve",
+                      "depth": 3,
+                      "replies": []
+                    },
+                    {
+                      "comment_id": "p1j2e8x",
+                      "author": "reddit_user_3092fa81cf07",
+                      "author_karma": 0,
+                      "content": "Ya it's rough I always think about Jaelen Phillips's reaction on hard knocks when I see these injurjes now. It fuckin sucks when you put in all that effort and have it all fuck up out of your control. Phillips was really lucky he's been able to bounce back and get that contract with Philli, super happy for the guy. The worst example I can think of is Rondale Moore. I'm sure there was more going on with the injuries, but that shit definitely fucked him up",
+                      "timestamp": "2026-08-03T21:29:56+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1hyzve",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "p1jhht0",
+                          "author": "reddit_user_8465b038b2db",
+                          "author_karma": 0,
+                          "content": "He's in Carolina now, but yes still got a good contract. Looking forward to watching him play!",
+                          "timestamp": "2026-08-03T22:42:59+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "p1j2e8x",
+                          "depth": 4,
+                          "replies": [
+                            {
+                              "comment_id": "p1jzqgk",
+                              "author": "reddit_user_3092fa81cf07",
+                              "author_karma": 0,
+                              "content": "Weird I totally spaced on that for some reason and was thinking the Eagles gave him an extension. Anyways I hope he kills it, he's always been right on the door of greatness",
+                              "timestamp": "2026-08-04T00:19:01+00:00",
+                              "likes": 1,
+                              "dislikes": 0,
+                              "parent_comment_id": "p1jhht0",
+                              "depth": 5,
+                              "replies": []
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "comment_id": "p1jfllz",
+                      "author": "reddit_user_83dc4a0a39d9",
+                      "author_karma": 0,
+                      "content": "Dislocating my kneecap was more painful than anything I've ever felt in my life before or since. I absolutely thought I had torn every ligament I had",
+                      "timestamp": "2026-08-03T22:33:17+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1hyzve",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                },
+                {
+                  "comment_id": "p1hz5nm",
+                  "author": "reddit_user_1b9496f174e2",
+                  "author_karma": 0,
+                  "content": "Don’t forget the hysterical reporting when Bridgewater hurt his knee at Vikings practice.  Reporters were claiming players saw the knee and threw up in horror.",
+                  "timestamp": "2026-08-03T18:37:09+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1hx7up",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1i0jfw",
+                      "author": "reddit_user_c7545ec62a98",
+                      "author_karma": 0,
+                      "content": "Was it not a super gnarly injury?",
+                      "timestamp": "2026-08-03T18:43:07+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1hz5nm",
+                      "depth": 3,
+                      "replies": []
+                    },
+                    {
+                      "comment_id": "p1i0l3a",
+                      "author": "reddit_user_73e2638da4d3",
+                      "author_karma": 0,
+                      "content": "That one seemed like one of the only reports that actually was justified though.",
+                      "timestamp": "2026-08-03T18:43:19+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1hz5nm",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "p1i910t",
+                          "author": "reddit_user_1b9496f174e2",
+                          "author_karma": 0,
+                          "content": "Good old Rap said that the players threw up and then tweeted out that they didn’t.\n\nhttps://www.nbcsports.com/nfl/profootballtalk/rumor-mill/news/report-teammates-threw-up-seeing-gruesome-bridgewater-injury",
+                          "timestamp": "2026-08-03T19:19:42+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "p1i0l3a",
+                          "depth": 4,
+                          "replies": []
+                        }
+                      ]
+                    },
+                    {
+                      "comment_id": "p1i87oh",
+                      "author": "reddit_user_874de94eb59f",
+                      "author_karma": 0,
+                      "content": "Bro Bridgewater dislocated his knee. Those camp reports were absolutely justified. ",
+                      "timestamp": "2026-08-03T19:16:09+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1hz5nm",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "p1i8p1d",
+                          "author": "reddit_user_1b9496f174e2",
+                          "author_karma": 0,
+                          "content": "…except players, and other reporters, said that no player vomited, and, after the initial concern, they moved on.",
+                          "timestamp": "2026-08-03T19:18:15+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "p1i87oh",
+                          "depth": 4,
+                          "replies": []
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "comment_id": "p1i0cfr",
+                  "author": "reddit_user_6fa9649d163b",
+                  "author_karma": 0,
+                  "content": "It’s still 8-10 weeks of the season and when you feel the pain as a player, you really don’t know what type of injury it is til confirmed by team doctors. Also players just see their teammate go down, so it makes sense his reaction and their reaction",
+                  "timestamp": "2026-08-03T18:42:16+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1hx7up",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1il1ih",
+                      "author": "reddit_user_7369ace157cf",
+                      "author_karma": 0,
+                      "content": "I think it's 8-10 weeks starting now.  So return between September 27th and October 11th",
+                      "timestamp": "2026-08-03T20:12:25+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1i0cfr",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "p1k26p7",
+                          "author": "reddit_user_158d9fd8b602",
+                          "author_karma": 0,
+                          "content": "So back for week 3 or 4 game Is my guess.",
+                          "timestamp": "2026-08-04T00:32:16+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "p1il1ih",
+                          "depth": 4,
+                          "replies": []
+                        }
+                      ]
+                    },
+                    {
+                      "comment_id": "p1j1rip",
+                      "author": "[deleted]",
+                      "author_karma": 0,
+                      "content": "[removed]",
+                      "timestamp": "2026-08-03T21:27:00+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1i0cfr",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                },
+                {
+                  "comment_id": "p1i0hj8",
+                  "author": "reddit_user_73e2638da4d3",
+                  "author_karma": 0,
+                  "content": "Just a lesson learned is to never believe anything until the reports become official. \n\nCamp injuries are largely hard to judge.",
+                  "timestamp": "2026-08-03T18:42:53+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1hx7up",
+                  "depth": 2,
+                  "replies": []
+                },
+                {
+                  "comment_id": "p1i8o8r",
+                  "author": "reddit_user_13e0b2b50bce",
+                  "author_karma": 0,
+                  "content": "Hyperextensions are very painful and usually look especially bad because your knee gets bent the wrong direction, so it’s understandable that emotions were low. Especially considering it was a hyperextension PLUS some other not so great stuff.",
+                  "timestamp": "2026-08-03T19:18:09+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1hx7up",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1ip9yz",
+                      "author": "reddit_user_2e7b2c42d65e",
+                      "author_karma": 0,
+                      "content": "It feels super unstable and unnatural, which is scary when you've got adrenaline and you have no idea how bad it is actually yet.",
+                      "timestamp": "2026-08-03T20:30:55+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1i8o8r",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                },
+                {
+                  "comment_id": "p1i9bza",
+                  "author": "reddit_user_5daab1bc9f67",
+                  "author_karma": 0,
+                  "content": "Well it's not like he could've known that while being carted off the field.",
+                  "timestamp": "2026-08-03T19:21:02+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1hx7up",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            },
+            {
+              "comment_id": "p1hxpf3",
+              "author": "reddit_user_3da62c9c2ec9",
+              "author_karma": 0,
+              "content": "Like a helicopter crash? ",
+              "timestamp": "2026-08-03T18:30:47+00:00",
+              "likes": 0,
+              "dislikes": 0,
+              "parent_comment_id": "p1hwdy5",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1hyirp",
+                  "author": "reddit_user_d1c943d0b06e",
+                  "author_karma": 0,
+                  "content": "Oh god that took me a second ",
+                  "timestamp": "2026-08-03T18:34:20+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1hxpf3",
+                  "depth": 2,
+                  "replies": []
+                },
+                {
+                  "comment_id": "p1i0qo4",
+                  "author": "reddit_user_73e2638da4d3",
+                  "author_karma": 0,
+                  "content": "I think this joke was a little too dark, even for Reddit. Shoulda stayed in the drafts.",
+                  "timestamp": "2026-08-03T18:43:59+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1hxpf3",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            },
+            {
+              "comment_id": "p1hyaqg",
+              "author": "reddit_user_c1c9cf41e5f4",
+              "author_karma": 0,
+              "content": "Back Week 3-5 of this is the TL.\n\nWeek 5 is GB. So big win based on initial reports",
+              "timestamp": "2026-08-03T18:33:20+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1hwdy5",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1id5pc",
+                  "author": "reddit_user_884fbb378dde",
+                  "author_karma": 0,
+                  "content": "Coby vs Micah: The Battle of the Knees",
+                  "timestamp": "2026-08-03T19:37:53+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1hyaqg",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1k9dek",
+                      "author": "reddit_user_34fd4df9591b",
+                      "author_karma": 0,
+                      "content": "Be pretty shocked if Micah is back by week 5.",
+                      "timestamp": "2026-08-04T01:11:32+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1id5pc",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                },
+                {
+                  "comment_id": "p1ky6n0",
+                  "author": "reddit_user_fcd275d9fe30",
+                  "author_karma": 0,
+                  "content": "there is a big ramp up for injuries like that i am 100% sure he will not play week 5 ",
+                  "timestamp": "2026-08-04T03:34:15+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1hyaqg",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            },
+            {
+              "comment_id": "p1hyb6y",
+              "author": "reddit_user_98307d3cadd4",
+              "author_karma": 0,
+              "content": "Our rookie Chris Brazzel got the same treatment plan for an injury of 8 weeks, and then it was announced the next day he's getting season-ending surgery. We'll see.",
+              "timestamp": "2026-08-03T18:33:24+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1hwdy5",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p1hytmh",
+              "author": "reddit_user_29d9267a9405",
+              "author_karma": 0,
+              "content": "I mean we gotta see how he responds to rehab and treatment.   This could easily get extended if bruising takes longer to heal ",
+              "timestamp": "2026-08-03T18:35:41+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1hwdy5",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1hwe0u",
+          "author": "reddit_user_5f21c40392b6",
+          "author_karma": 0,
+          "content": "MJ would have played through this. ",
+          "timestamp": "2026-08-03T18:25:07+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1hwed6",
+          "author": "reddit_user_33b0b0f6ec45",
+          "author_karma": 0,
+          "content": "John Schneider can't keep getting away with this",
+          "timestamp": "2026-08-03T18:25:10+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1hwep5",
+          "author": "reddit_user_cf0fa1d404b4",
+          "author_karma": 0,
+          "content": "8-10 is tough, hope his recovery goes well ",
+          "timestamp": "2026-08-03T18:25:13+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1hweua",
+          "author": "reddit_user_a535114a6ca6",
+          "author_karma": 0,
+          "content": "RIP Bryant/Thieneman stack 2026-2026",
+          "timestamp": "2026-08-03T18:25:14+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1hxqhg",
+              "author": "reddit_user_cb20400180a1",
+              "author_karma": 0,
+              "content": "Reminds me of the great Jones/Jacobs stack we had in 2024 for about 45 minutes.",
+              "timestamp": "2026-08-03T18:30:54+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1hweua",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p1hydq4",
+              "author": "reddit_user_1b18f0098311",
+              "author_karma": 0,
+              "content": "Don't bury that casket, brother, Bryant/Thieneman stack for 2026 is still alive.",
+              "timestamp": "2026-08-03T18:33:42+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1hweua",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1hwgcf",
+          "author": "reddit_user_e8c7f8945020",
+          "author_karma": 0,
+          "content": "Considering looked like it was gonna en \"out till 2027\" October is better lol",
+          "timestamp": "2026-08-03T18:25:24+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1hw356",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1hwgvz",
+          "author": "reddit_user_7a8b846af2eb",
+          "author_karma": 0,
+          "content": "So best case scenario right? the way the other articles were redacted made it seem like he'd torn his fucking ACL",
+          "timestamp": "2026-08-03T18:25:28+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1hwl9q",
+          "author": "reddit_user_f5e98273c8cc",
+          "author_karma": 0,
+          "content": "not too bad all things considering\n\nIt initially sounded like an ACL tear / season ending injury",
+          "timestamp": "2026-08-03T18:26:00+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1hwnfw",
+          "author": "reddit_user_97fc66c23bd8",
+          "author_karma": 0,
+          "content": "Caleb winning mvp anyway. You can’t hurt me football gods ",
+          "timestamp": "2026-08-03T18:26:15+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1hwotj",
+          "author": "reddit_user_7c1d359a124e",
+          "author_karma": 0,
+          "content": "Son of bitch",
+          "timestamp": "2026-08-03T18:26:24+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1hwtop",
+          "author": "reddit_user_7aa9770b870d",
+          "author_karma": 0,
+          "content": "Week 3 vs Eagles, week 4 vs Jets, Week 5 @ packers",
+          "timestamp": "2026-08-03T18:26:58+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": "p1hw7fp",
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1hx9cg",
+              "author": "reddit_user_510b93b44e4a",
+              "author_karma": 0,
+              "content": "Probably starts on IR with return designation and misses 4 weeks minimum.",
+              "timestamp": "2026-08-03T18:28:50+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1hwtop",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1hy1tf",
+                  "author": "reddit_user_7aa9770b870d",
+                  "author_karma": 0,
+                  "content": "There’s a pretty good chance. If he’s looking closer to 8 weeks, they might try and get him back for the Eagles game, and hold the roster spot",
+                  "timestamp": "2026-08-03T18:32:16+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1hx9cg",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1iopcw",
+                      "author": "reddit_user_7642daefbc29",
+                      "author_karma": 0,
+                      "content": "they should let him chill till week 4 me thinks",
+                      "timestamp": "2026-08-03T20:28:26+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1hy1tf",
+                      "depth": 3,
+                      "replies": []
+                    },
+                    {
+                      "comment_id": "p1jgv5v",
+                      "author": "reddit_user_559920ea1647",
+                      "author_karma": 0,
+                      "content": "Why rush? They should let him rest for as long as he needs.",
+                      "timestamp": "2026-08-03T22:39:43+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1hy1tf",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "comment_id": "p1hytbx",
+              "author": "reddit_user_550898a37944",
+              "author_karma": 0,
+              "content": "On the one hand, you won't need him for the Jets\n\nOn the other, that's a nice little warmup",
+              "timestamp": "2026-08-03T18:35:39+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1hwtop",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1hwupj",
+          "author": "reddit_user_2d71930168e5",
+          "author_karma": 0,
+          "content": "Better than being out all year",
+          "timestamp": "2026-08-03T18:27:06+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1hwwm7",
+          "author": "reddit_user_aa6da245f99c",
+          "author_karma": 0,
+          "content": "Well, in relative terms, it could have been a whole lot worse.\n\nProbably looking at missing the first month of the regular season, it looks like?",
+          "timestamp": "2026-08-03T18:27:20+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1i5pev",
+              "author": "reddit_user_d662cd76155f",
+              "author_karma": 0,
+              "content": "Yeah, this timeline technically has him back week 3 on the shorter end, but my guess is they will put him on IR, so he will probably return week 5. ",
+              "timestamp": "2026-08-03T19:05:14+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1hwwm7",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1kyxo1",
+                  "author": "reddit_user_fcd275d9fe30",
+                  "author_karma": 0,
+                  "content": "i don't think theres a chance he plays week 5 outside of a miracle ",
+                  "timestamp": "2026-08-04T03:39:05+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1i5pev",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p1hwy7k",
+          "author": "reddit_user_4e6e5dc7a5c9",
+          "author_karma": 0,
+          "content": "But also not as bad as I was expecting. ",
+          "timestamp": "2026-08-03T18:27:31+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": "p1hwauv",
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1i1uzc",
+              "author": "reddit_user_3befebf45403",
+              "author_karma": 0,
+              "content": "Honestly all things considered with the injury happening, I'd say this is pretty close to ideal. ",
+              "timestamp": "2026-08-03T18:48:48+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1hwy7k",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1kbypv",
+                  "author": "reddit_user_6faf81d049b0",
+                  "author_karma": 0,
+                  "content": "Who is your third safety who steps in in the meantime?",
+                  "timestamp": "2026-08-04T01:25:50+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1i1uzc",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1kc5iz",
+                      "author": "reddit_user_3befebf45403",
+                      "author_karma": 0,
+                      "content": "Currently there are no healthy safeties that have taken a single NFL snap. 🫠\n\nIt would be Elijah Hicks but he’s on the PUP. \n\nMy guess is we sign a FA safety as a backstop while he heals up.",
+                      "timestamp": "2026-08-04T01:26:53+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1kbypv",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "comment_id": "p1i4zjd",
+              "author": "reddit_user_71af5d2c17d2",
+              "author_karma": 0,
+              "content": "3.6 Roentgens",
+              "timestamp": "2026-08-03T19:02:08+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1hwy7k",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1hx0ab",
+          "author": "reddit_user_acacd6a7c595",
+          "author_karma": 0,
+          "content": "I know it’s obvious, but training camp injuries are bummers. If they were a person, they’d be the guy wearing Tapout shirts and bedazzled jeans from Buckle level of lame. ",
+          "timestamp": "2026-08-03T18:27:46+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1hx2em",
+          "author": "reddit_user_aa6da245f99c",
+          "author_karma": 0,
+          "content": "Yeah, I was already expecting a torn ACL at this point, so to see he is probably only gonna miss the first month or so of the season is a relative positive ",
+          "timestamp": "2026-08-03T18:28:01+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1hw356",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1hx2jp",
+          "author": "reddit_user_60041bb08f73",
+          "author_karma": 0,
+          "content": "Well shit, that’s terrible. Absolutely hate this for him. Speedy recovery, Coby! ",
+          "timestamp": "2026-08-03T18:28:02+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1hx8np",
+          "author": "reddit_user_b51c60a1f289",
+          "author_karma": 0,
+          "content": "Man that sucks, I wanted to watch Bears fans fall in love with him.",
+          "timestamp": "2026-08-03T18:28:45+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1kstun",
+              "author": "[deleted]",
+              "author_karma": 0,
+              "content": "[removed]",
+              "timestamp": "2026-08-04T03:01:01+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1hx8np",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1hx9mf",
+          "author": "reddit_user_22b010e55ecb",
+          "author_karma": 0,
+          "content": "Best case scenario was probably a 4-week hyperextension. \n\nThis still beats the torn ACL everyone thought it was an hour ago. \n\nPuts him on track to return week 5 vs GB. ",
+          "timestamp": "2026-08-03T18:28:52+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1hy3k8",
+              "author": "reddit_user_5bec62ddb6c7",
+              "author_karma": 0,
+              "content": "Isn’t parsons coming back that game too?",
+              "timestamp": "2026-08-03T18:32:28+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1hx9mf",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1hyr99",
+                  "author": "reddit_user_22b010e55ecb",
+                  "author_karma": 0,
+                  "content": "Too soon to say. \n\nHe is rightfully taking it slow and as of today I’m guessing he returns the week after vs Dallas. \n\nI want more than nothing for him to be available vs Chicago but rather wait an extra week if it lowers risk of re-Injury. ",
+                  "timestamp": "2026-08-03T18:35:23+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1hy3k8",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1i1lem",
+                      "author": "reddit_user_5bec62ddb6c7",
+                      "author_karma": 0,
+                      "content": "Facts ",
+                      "timestamp": "2026-08-03T18:47:40+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1hyr99",
+                      "depth": 3,
+                      "replies": []
+                    },
+                    {
+                      "comment_id": "p1i4gpz",
+                      "author": "[deleted]",
+                      "author_karma": 0,
+                      "content": "[removed]",
+                      "timestamp": "2026-08-03T18:59:54+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1hyr99",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p1hxrxq",
+          "author": "reddit_user_3dad83ee7dbe",
+          "author_karma": 0,
+          "content": "Lol what? If you're a Bears fan your defense was still gonna be a major problem even with him",
+          "timestamp": "2026-08-03T18:31:04+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1hw62k",
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1hyn6j",
+              "author": "reddit_user_1161d79b2afd",
+              "author_karma": 0,
+              "content": "“I think X is going to be bad so making X worse has no effect because I don’t understand that good/bad  are not binary and that performance exists on a gradient”",
+              "timestamp": "2026-08-03T18:34:52+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1hxrxq",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1hxt06",
+          "author": "reddit_user_510b93b44e4a",
+          "author_karma": 0,
+          "content": "Best case scenario after the initial reporting, was sounding like a season ender.",
+          "timestamp": "2026-08-03T18:31:12+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1hxy4t",
+          "author": "reddit_user_e13d72a5c1c8",
+          "author_karma": 0,
+          "content": "Thank you for saving his knee Dr Odunze",
+          "timestamp": "2026-08-03T18:31:49+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1i7q8t",
+              "author": "reddit_user_5d236f4331e9",
+              "author_karma": 0,
+              "content": "~~Mr.~~  Dr. Bright Clinician ",
+              "timestamp": "2026-08-03T19:14:03+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1hxy4t",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1jkalp",
+                  "author": "reddit_user_96c43d4942f4",
+                  "author_karma": 0,
+                  "content": "Dr Been Counceled",
+                  "timestamp": "2026-08-03T22:57:14+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1i7q8t",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p1hxy74",
+          "author": "reddit_user_073c92900652",
+          "author_karma": 0,
+          "content": "Not great, not terrible. ",
+          "timestamp": "2026-08-03T18:31:49+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1hy0jx",
+          "author": "reddit_user_5bec62ddb6c7",
+          "author_karma": 0,
+          "content": "Well I guess lol",
+          "timestamp": "2026-08-03T18:32:06+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1hyche",
+          "author": "reddit_user_928085519b7d",
+          "author_karma": 0,
+          "content": "Jesus that’s awful",
+          "timestamp": "2026-08-03T18:33:33+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1hyvuw",
+          "author": "reddit_user_c606d28e1625",
+          "author_karma": 0,
+          "content": "Damn man :(",
+          "timestamp": "2026-08-03T18:35:58+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1hzkrx",
+          "author": "reddit_user_8404f8b36a70",
+          "author_karma": 0,
+          "content": "That bears fan got his wish",
+          "timestamp": "2026-08-03T18:38:57+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1hzvds",
+              "author": "reddit_user_71126d4edd97",
+              "author_karma": 0,
+              "content": "Was thinking the same thing ",
+              "timestamp": "2026-08-03T18:40:13+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1hzkrx",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1i0js9",
+          "author": "reddit_user_9f0781198313",
+          "author_karma": 0,
+          "content": "Keep him outta Colorado",
+          "timestamp": "2026-08-03T18:43:09+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1i2g6l",
+          "author": "reddit_user_e68a77c35756",
+          "author_karma": 0,
+          "content": "We're so back",
+          "timestamp": "2026-08-03T18:51:19+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1i4i3j",
+          "author": "reddit_user_778b8816e962",
+          "author_karma": 0,
+          "content": "8-10 weeks.  not great not terrible.",
+          "timestamp": "2026-08-03T19:00:04+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1i59ac",
+          "author": "reddit_user_bfd64f4b13e8",
+          "author_karma": 0,
+          "content": "Brutal but great news that it isn't a tear",
+          "timestamp": "2026-08-03T19:03:18+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1i6dsa",
+          "author": "reddit_user_6511ebca4ef5",
+          "author_karma": 0,
+          "content": "That sucks, I never want to have any players injured on any nfl team because that just ruins the competitiveness especially for those high stakes games against the bears.",
+          "timestamp": "2026-08-03T19:08:10+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1i6xqh",
+          "author": "reddit_user_34367ef9731e",
+          "author_karma": 0,
+          "content": "Back in October! Could have been much worse ",
+          "timestamp": "2026-08-03T19:10:37+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1i96qv",
+          "author": "reddit_user_bae053d8ed9c",
+          "author_karma": 0,
+          "content": "Not good. But also not terrible.",
+          "timestamp": "2026-08-03T19:20:24+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1i9giw",
+          "author": "reddit_user_0c20f1c94003",
+          "author_karma": 0,
+          "content": "10 weeks from today is October 12th.  \n\nso he'll likely miss:\n\n@ Carolina\n\nvs. Minnesota\n\nvs. Philly\n\nvs. NYJ\n\n@ Green Bay\n\nOther than the Jets, this is kind of tough.  Even Minnesota plays the Bears tough.  But hopefully Caleb took another leap and they could at least go 3-2.",
+          "timestamp": "2026-08-03T19:21:35+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1ijjl5",
+          "author": "reddit_user_ac09c8f1bd87",
+          "author_karma": 0,
+          "content": "Look on the bright side, at least he didn't orchestrate a kidnapping.",
+          "timestamp": "2026-08-03T20:05:51+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1ik8fb",
+          "author": "reddit_user_3a3830c19ded",
+          "author_karma": 0,
+          "content": "How could the niners substation do this?? Unbelievable. ",
+          "timestamp": "2026-08-03T20:08:53+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1ilxg6",
+          "author": "reddit_user_f0e4a2d28807",
+          "author_karma": 0,
+          "content": "inb4 comeback player of the year ",
+          "timestamp": "2026-08-03T20:16:18+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1inrjo",
+          "author": "reddit_user_41fc7d1f9be4",
+          "author_karma": 0,
+          "content": "grammer madders.",
+          "timestamp": "2026-08-03T20:24:18+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1hw7i3",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1ipdzb",
+          "author": "reddit_user_4cf5ec296eab",
+          "author_karma": 0,
+          "content": "Really lucked out with that.",
+          "timestamp": "2026-08-03T20:31:24+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1iqa4y",
+          "author": "reddit_user_4c3e1a313a02",
+          "author_karma": 0,
+          "content": "No surgery is a great outcome given the early concerns. Sucks real bad, but at least it's seemingly not a year-ender.",
+          "timestamp": "2026-08-03T20:35:21+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1iwg2d",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-03T21:02:41+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1izmrw",
+          "author": "reddit_user_8d6689dfb690",
+          "author_karma": 0,
+          "content": "Way better than destroying his knee though ",
+          "timestamp": "2026-08-03T21:17:13+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1hwauv",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1jhrx3",
+          "author": "reddit_user_00459b59382c",
+          "author_karma": 0,
+          "content": "Not ideal for a new comer learning a bunch but better than for the season!",
+          "timestamp": "2026-08-03T22:44:25+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1js33n",
+          "author": "reddit_user_c2cf14a4e655",
+          "author_karma": 0,
+          "content": "This guys name was a meme a few years ago and he’s still going strong ",
+          "timestamp": "2026-08-03T23:37:57+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1kb10v",
+          "author": "reddit_user_ffed4c55610c",
+          "author_karma": 0,
+          "content": "Impossible. Rome told me he’s fine.",
+          "timestamp": "2026-08-04T01:20:43+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run015_post03_seed078",
+      "post_slot": 3,
+      "seed_index": 78,
+      "source_raw_post_id": "1velk72",
+      "source_product_dir": "nba",
+      "source_file": "https://www.reddit.com/r/nba/comments/1velk72/dell_curry_hits_3_in_game_7_2001/",
+      "post_type": "hosted:video",
+      "title": "Dell Curry hits 3 in Game 7 (2001)",
+      "author": "reddit_user_79ff14d8816f",
+      "author_karma": 0,
+      "content": "Dell Curry hits 3 in Game 7 (2001)",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p1hw56m",
+          "author": "reddit_user_e8d8c99d18e1",
+          "author_karma": 0,
+          "content": "Hi! Unfortunately, we do not allow v.reddit posts on r/nba. Please instead upload your post to a more user friendly site like Streamable, gfycat, or YouTube for longer videos. For highlights please make sure it follows our [highlight rules](https://www.reddit.com/r/nba/wiki/rules).\n\n*I am a bot, and this action was performed automatically. Please [contact the moderators of this subreddit](/message/compose/?to=/r/nba) if you have any questions or concerns.*",
+          "timestamp": "2026-08-03T18:24:06+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1hw7rm",
+          "author": "reddit_user_109b57161942",
+          "author_karma": 0,
+          "content": "[Source](https://www.youtube.com/watch?v=zIy4Y8w1Ulk)",
+          "timestamp": "2026-08-03T18:24:24+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run015_post04_seed079",
+      "post_slot": 4,
+      "seed_index": 79,
+      "source_raw_post_id": "1velmlo",
+      "source_product_dir": "nfl",
+      "source_file": "https://www.reddit.com/r/nfl/comments/1velmlo/highlight_jonathon_bostic_lays_a_hit_on_san_diego/",
+      "post_type": "Highlight",
+      "title": "[Highlight] Jonathon Bostic lays a hit on San Diego WR Mike Willie in Preseason Week 2, 2013",
+      "author": "reddit_user_79ff14d8816f",
+      "author_karma": 0,
+      "content": "[Highlight] Jonathon Bostic lays a hit on San Diego WR Mike Willie in Preseason Week 2, 2013",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p1hxvmk",
+          "author": "reddit_user_5d413215825a",
+          "author_karma": 0,
+          "content": "On March 10, 2016, Willie was assigned to the [Los Angeles KISS](https://en.wikipedia.org/wiki/Los_Angeles_KISS). On May 14, 2016, Willie was placed on reassignment. On May 18, 2016, Willie was assigned to the KISS once again.",
+          "timestamp": "2026-08-03T18:31:31+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1hy0et",
+          "author": "reddit_user_c377a50ec525",
+          "author_karma": 0,
+          "content": "Side note relocating the Chargers to San Diego is pure souless greed, San Diego is a significantly better football town and now they are just a little brother franchise to the Rams",
+          "timestamp": "2026-08-03T18:32:05+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1i2w55",
+              "author": "reddit_user_7084ef0e7719",
+              "author_karma": 0,
+              "content": "Cosigned.",
+              "timestamp": "2026-08-03T18:53:12+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1hy0et",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1hy2yf",
+          "author": "reddit_user_cc250b7342e4",
+          "author_karma": 0,
+          "content": "this would be a penalty if it happened this year. not passing judgement on that, just stating a fact",
+          "timestamp": "2026-08-03T18:32:24+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1hzqld",
+              "author": "reddit_user_76e84ee0c4a5",
+              "author_karma": 0,
+              "content": "He would be flagged for taunting as well with the way he hovered over Willie after\n\nIn fact I think the NFL later highlighted this play as an example of what not to do in when they tightened up taunting ",
+              "timestamp": "2026-08-03T18:39:39+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1hy2yf",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1i14ko",
+                  "author": "reddit_user_cc250b7342e4",
+                  "author_karma": 0,
+                  "content": "didnt even catch that. wouldve been a suspension probably with the targeting/defenseless reciever/taunting wombo combo",
+                  "timestamp": "2026-08-03T18:45:39+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1hzqld",
+                  "depth": 2,
+                  "replies": []
+                },
+                {
+                  "comment_id": "p1ip19q",
+                  "author": "reddit_user_ee4f31f1583f",
+                  "author_karma": 0,
+                  "content": "I thought he got flagged/fined for unnecessary roughness",
+                  "timestamp": "2026-08-03T20:29:52+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1hzqld",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p1hy6i3",
+          "author": "reddit_user_5b8c5f838e4b",
+          "author_karma": 0,
+          "content": "Head on a swivel ",
+          "timestamp": "2026-08-03T18:32:49+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1hy6g4",
+          "author": "reddit_user_45772b8287ff",
+          "author_karma": 0,
+          "content": "I remember this play getting me pumped about his future prospects and not worrying so much about a post-Urlacher/Briggs era\n\nThat was a mistake. This is basically the highlight of Bostic's career and the Bears defense was historically terrible in '13 and '14\n\n",
+          "timestamp": "2026-08-03T18:32:49+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1i0qhz",
+              "author": "reddit_user_ceac716d5cfe",
+              "author_karma": 0,
+              "content": "I really thought he and Khaseem Greene could've been something when we drafted them together",
+              "timestamp": "2026-08-03T18:43:58+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1hy6g4",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p1ibwn6",
+              "author": "reddit_user_e68a77c35756",
+              "author_karma": 0,
+              "content": "Back-to-back 50-burgers with the latter coming at the hands of Green Bay. In primetime. ",
+              "timestamp": "2026-08-03T19:32:18+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1hy6g4",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p1isq8w",
+              "author": "reddit_user_fcde7226d870",
+              "author_karma": 0,
+              "content": "The one hit on Teddy Bridgewater in college is his really only career highlight lol",
+              "timestamp": "2026-08-03T20:46:07+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1hy6g4",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1i018k",
+          "author": "reddit_user_08fde9f2be56",
+          "author_karma": 0,
+          "content": "I remember this play making me think he’d be good. He was not good",
+          "timestamp": "2026-08-03T18:40:55+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1i9w8w",
+          "author": "reddit_user_87fad7d9d6d4",
+          "author_karma": 0,
+          "content": "I love how so many of us watched this and thought, “there’s our next pro bowler”",
+          "timestamp": "2026-08-03T19:23:29+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1ikui4",
+          "author": "reddit_user_88b94dc50c89",
+          "author_karma": 0,
+          "content": "Only thing I remember about Bostic is his massive hits. On madden he was like in the 70's but his hit power was insane. ",
+          "timestamp": "2026-08-03T20:11:34+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1j4qn6",
+          "author": "reddit_user_2daf03bd1bbb",
+          "author_karma": 0,
+          "content": "Was convinced this meant he'd be the next Lance Briggs.\n\nOof. Hence why you never get excited about preseason 'highlights'.",
+          "timestamp": "2026-08-03T21:40:52+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    }
+  ]
+}

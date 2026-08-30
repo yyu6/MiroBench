@@ -1,0 +1,918 @@
+{
+  "meta": {
+    "product_category": "movies",
+    "baseline": "real_reddit_reference",
+    "run_id": "run_006_sampled_reddit"
+  },
+  "posts": [
+    {
+      "post_id": "real_run006_post00_seed030",
+      "post_slot": 0,
+      "seed_index": 30,
+      "source_raw_post_id": "1v33fi9",
+      "source_product_dir": "MovieDetails",
+      "source_file": "https://www.reddit.com/r/MovieDetails/comments/1v33fi9/silo_2023_uses_crummy_ai_background_rendering/",
+      "post_type": "⏱️ Continuity",
+      "title": "Silo (2023) Uses crummy AI background rendering?",
+      "author": "reddit_user_f403d059ef4c",
+      "author_karma": 0,
+      "content": "Silo (2023) Uses crummy AI background rendering?",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "oz02b3g",
+          "author": "reddit_user_1cc6540946eb",
+          "author_karma": 0,
+          "content": "no?",
+          "timestamp": "2026-07-22T02:46:49+00:00",
+          "likes": 27,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "oz02fzw",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[deleted]",
+          "timestamp": "2026-07-22T02:47:36+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "oz02gh1",
+          "author": "reddit_user_19f5483d0daf",
+          "author_karma": 0,
+          "content": "No",
+          "timestamp": "2026-07-22T02:47:40+00:00",
+          "likes": 14,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "oz02hjf",
+          "author": "reddit_user_2c04b3704d29",
+          "author_karma": 0,
+          "content": "Are you asking? I have not seen the scene in question as this is a still image but why do you think it's AI?",
+          "timestamp": "2026-07-22T02:47:51+00:00",
+          "likes": 15,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "oz02idv",
+          "author": "reddit_user_d308c779ae1a",
+          "author_karma": 0,
+          "content": "What on earth are you talking about lol? Also, wrong subreddit. ",
+          "timestamp": "2026-07-22T02:47:59+00:00",
+          "likes": 12,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "oz02k3c",
+          "author": "reddit_user_54e5e715ab2a",
+          "author_karma": 0,
+          "content": "Think those are cracked paint marking on the sign, not AI artifacts",
+          "timestamp": "2026-07-22T02:48:16+00:00",
+          "likes": 20,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "oz03g9i",
+              "author": "reddit_user_6617b2e7d619",
+              "author_karma": 0,
+              "content": "they're not. Go back and watch season 1, ep. 1, 17:10 and tell me what you think?",
+              "timestamp": "2026-07-22T02:53:33+00:00",
+              "likes": -21,
+              "dislikes": 0,
+              "parent_comment_id": "oz02k3c",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "oz06bab",
+                  "author": "reddit_user_f7553ab42502",
+                  "author_karma": 0,
+                  "content": "You made the post, bro.",
+                  "timestamp": "2026-07-22T03:10:56+00:00",
+                  "likes": 4,
+                  "dislikes": 0,
+                  "parent_comment_id": "oz03g9i",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "oz06ypc",
+                      "author": "reddit_user_6617b2e7d619",
+                      "author_karma": 0,
+                      "content": "Yeah. Go back and watch season 1, ep. 1, 17:10 and tell me what you think.",
+                      "timestamp": "2026-07-22T03:14:58+00:00",
+                      "likes": -6,
+                      "dislikes": 0,
+                      "parent_comment_id": "oz06bab",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "oz02kf7",
+          "author": "reddit_user_009d73b2d6ed",
+          "author_karma": 0,
+          "content": "Bad =/= AI ",
+          "timestamp": "2026-07-22T02:48:19+00:00",
+          "likes": 10,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "oz02nx9",
+          "author": "reddit_user_3e308a78a5c9",
+          "author_karma": 0,
+          "content": "Not everything is AI",
+          "timestamp": "2026-07-22T02:48:53+00:00",
+          "likes": 10,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "oz032g8",
+          "author": "reddit_user_03a36fe350f0",
+          "author_karma": 0,
+          "content": "Probably easier to just make the sign. ",
+          "timestamp": "2026-07-22T02:51:15+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "oz036ct",
+          "author": "reddit_user_27e928992269",
+          "author_karma": 0,
+          "content": "In 2023?",
+          "timestamp": "2026-07-22T02:51:54+00:00",
+          "likes": 6,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "oz037o2",
+          "author": "reddit_user_9f4737fbc622",
+          "author_karma": 0,
+          "content": "I have no idea what you’re referring to",
+          "timestamp": "2026-07-22T02:52:07+00:00",
+          "likes": 5,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "oz03nj6",
+              "author": "reddit_user_6617b2e7d619",
+              "author_karma": 0,
+              "content": "Season 1, Ep. 1, 17:50-17:20 or so. Look at at the posters on the walls. It's clearly AI/gibberish.",
+              "timestamp": "2026-07-22T02:54:44+00:00",
+              "likes": -4,
+              "dislikes": 0,
+              "parent_comment_id": "oz037o2",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "oz046e9",
+                  "author": "reddit_user_9f4737fbc622",
+                  "author_karma": 0,
+                  "content": "Do you mean the sign on the left? “Danger do not reach lean or climb over the rail”",
+                  "timestamp": "2026-07-22T02:57:51+00:00",
+                  "likes": 7,
+                  "dislikes": 0,
+                  "parent_comment_id": "oz03nj6",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "oz03c5l",
+          "author": "reddit_user_6617b2e7d619",
+          "author_karma": 0,
+          "content": "A few seconds later, Rashida walks past more posters on the wall, which are clearly gibberish. Go back and watch season 1, ep. 1, around 17:10.",
+          "timestamp": "2026-07-22T02:52:52+00:00",
+          "likes": -7,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "oz04e7j",
+              "author": "reddit_user_e31670cb378b",
+              "author_karma": 0,
+              "content": "AI wasn’t advanced enough to be used like that in 2023(really 2022 when it was filmed)",
+              "timestamp": "2026-07-22T02:59:10+00:00",
+              "likes": 4,
+              "dislikes": 0,
+              "parent_comment_id": "oz03c5l",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "oz04v6u",
+                  "author": "reddit_user_6617b2e7d619",
+                  "author_karma": 0,
+                  "content": "That's not true.",
+                  "timestamp": "2026-07-22T03:02:02+00:00",
+                  "likes": -2,
+                  "dislikes": 0,
+                  "parent_comment_id": "oz04e7j",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "oz064mu",
+                      "author": "reddit_user_e31670cb378b",
+                      "author_karma": 0,
+                      "content": "https://www.reddit.com/r/agi/s/DAgJ4bhrlE this was AI in 2023. That’s not remotely close to being usable in tv production",
+                      "timestamp": "2026-07-22T03:09:47+00:00",
+                      "likes": 2,
+                      "dislikes": 0,
+                      "parent_comment_id": "oz04v6u",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "oz07gd0",
+                          "author": "reddit_user_6617b2e7d619",
+                          "author_karma": 0,
+                          "content": "I politely disagree. You're sharing some crap clip of Will Smith eating spaghetti. I've been doing digital production for two decades. The background in this scene is shit AI from the early days when it couldn't spell correctly. Go back and watch the scene, and then compare it to anything pre 2019, and tell me the background quality is the same. It ain't.",
+                          "timestamp": "2026-07-22T03:17:57+00:00",
+                          "likes": 0,
+                          "dislikes": 0,
+                          "parent_comment_id": "oz064mu",
+                          "depth": 4,
+                          "replies": [
+                            {
+                              "comment_id": "oz085z3",
+                              "author": "[deleted]",
+                              "author_karma": 0,
+                              "content": "[removed]",
+                              "timestamp": "2026-07-22T03:22:22+00:00",
+                              "likes": 1,
+                              "dislikes": 0,
+                              "parent_comment_id": "oz07gd0",
+                              "depth": 5,
+                              "replies": []
+                            },
+                            {
+                              "comment_id": "oz08bec",
+                              "author": "reddit_user_c8c756f20868",
+                              "author_karma": 0,
+                              "content": "Bro you act like you know what you’re talking about when you don’t. You posted this in r/MovieDetails. This is a TV show. You clearly can’t comprehend titles of subreddits nor even read the subreddit rules.",
+                              "timestamp": "2026-07-22T03:23:18+00:00",
+                              "likes": 2,
+                              "dislikes": 0,
+                              "parent_comment_id": "oz07gd0",
+                              "depth": 5,
+                              "replies": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "comment_id": "oz04gx0",
+              "author": "reddit_user_87ed24ddcb14",
+              "author_karma": 0,
+              "content": "Idk what you're talking about man, that sign reads clear as day to me...\n\nhttps://preview.redd.it/9uwq8aa75peh1.jpeg?width=1080&format=pjpg&auto=webp&s=8147883bc020dc39a128e033d896b9bd91ed365b",
+              "timestamp": "2026-07-22T02:59:37+00:00",
+              "likes": 8,
+              "dislikes": 0,
+              "parent_comment_id": "oz03c5l",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "oz04qee",
+                  "author": "[deleted]",
+                  "author_karma": 0,
+                  "content": "[removed]",
+                  "timestamp": "2026-07-22T03:01:12+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "oz04gx0",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            },
+            {
+              "comment_id": "oz0fs4l",
+              "author": "reddit_user_88937d75ab42",
+              "author_karma": 0,
+              "content": "\"No stopping on or loitering on the landings.\"\n\nJust because something isn't incredibly clear to read doesn't mean it's AI, but based on your absolutely unhinged responses,  you might be.  ",
+              "timestamp": "2026-07-22T04:11:33+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "oz03c5l",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "oz0i4rs",
+                  "author": "reddit_user_6617b2e7d619",
+                  "author_karma": 0,
+                  "content": "Will you please look at the spacing of the bars in this cell? It's all over this whole damn show. Humans would never do set design like this. \nhttps://imgur.com/a/43Dds5P",
+                  "timestamp": "2026-07-22T04:27:28+00:00",
+                  "likes": 0,
+                  "dislikes": 0,
+                  "parent_comment_id": "oz0fs4l",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "oz1z8ue",
+                      "author": "reddit_user_88937d75ab42",
+                      "author_karma": 0,
+                      "content": "Dawg, the bars are fine,  the cell door is overlapping  with the static bars on the left because the door is open.  You are losing it.  Seek medical attention.  ",
+                      "timestamp": "2026-07-22T11:17:23+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "oz0i4rs",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "oz03jpx",
+          "author": "reddit_user_05e045feb4ed",
+          "author_karma": 0,
+          "content": "You're telling me that Will Smith eating spaghetti and this scene were created around the same time with A.I.?\n\n",
+          "timestamp": "2026-07-22T02:54:07+00:00",
+          "likes": 4,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "oz03n5x",
+          "author": "reddit_user_8d6ac671849e",
+          "author_karma": 0,
+          "content": "This isn't even a movie.",
+          "timestamp": "2026-07-22T02:54:41+00:00",
+          "likes": 3,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "oz03oz5",
+          "author": "reddit_user_1b2bf9787e8b",
+          "author_karma": 0,
+          "content": "No you can easily read all that as English.\n\n![gif](giphy|10qkeDd5f2enS0)",
+          "timestamp": "2026-07-22T02:54:59+00:00",
+          "likes": 5,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "oz045ug",
+              "author": "reddit_user_6617b2e7d619",
+              "author_karma": 0,
+              "content": "heeeeey nice job mocking Black people. That slogan came from an old white lady from text alert advertisements in the 1980's.",
+              "timestamp": "2026-07-22T02:57:45+00:00",
+              "likes": -8,
+              "dislikes": 0,
+              "parent_comment_id": "oz03oz5",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "oz05552",
+                  "author": "reddit_user_5deabea0dc56",
+                  "author_karma": 0,
+                  "content": "What.",
+                  "timestamp": "2026-07-22T03:03:42+00:00",
+                  "likes": 8,
+                  "dislikes": 0,
+                  "parent_comment_id": "oz045ug",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "oz05hjp",
+                      "author": "reddit_user_6617b2e7d619",
+                      "author_karma": 0,
+                      "content": "\"I've fallen, and I can't get up\" is a slogan from Life Alert tv ads from the 80's. If you want to mock my post, which is fine, use the original. https://www.youtube.com/watch?v=KwaCJfGWyU0",
+                      "timestamp": "2026-07-22T03:05:50+00:00",
+                      "likes": -4,
+                      "dislikes": 0,
+                      "parent_comment_id": "oz05552",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "oz0ap1a",
+                          "author": "reddit_user_9f4737fbc622",
+                          "author_karma": 0,
+                          "content": "I think they’re wondering how they’re mocking black people by using a gif",
+                          "timestamp": "2026-07-22T03:38:26+00:00",
+                          "likes": 3,
+                          "dislikes": 0,
+                          "parent_comment_id": "oz05hjp",
+                          "depth": 4,
+                          "replies": []
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "comment_id": "oz0belg",
+                  "author": "reddit_user_1b2bf9787e8b",
+                  "author_karma": 0,
+                  "content": "Hiding the pain behind anything and everything, huh? Just admit you were wrong and move on with your life. It was the first gif in the MILLIONS of not BILLIONS of gods out there. Want to blame someone? Blame the fucking script writers from the Fresh Prince fourty fucking years ago. ",
+                  "timestamp": "2026-07-22T03:43:01+00:00",
+                  "likes": 2,
+                  "dislikes": 0,
+                  "parent_comment_id": "oz045ug",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "oz0bvzx",
+                      "author": "reddit_user_6617b2e7d619",
+                      "author_karma": 0,
+                      "content": "Gods?",
+                      "timestamp": "2026-07-22T03:46:08+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "oz0belg",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "oz33446",
+                          "author": "reddit_user_1b2bf9787e8b",
+                          "author_karma": 0,
+                          "content": "Have you nothing better to do than find the one thing that you could have used fucking context clues for? Must just be that American school system at work again. ",
+                          "timestamp": "2026-07-22T14:38:28+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "oz0bvzx",
+                          "depth": 4,
+                          "replies": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "oz040t5",
+          "author": "reddit_user_8c75bd04974c",
+          "author_karma": 0,
+          "content": "![gif](giphy|l0IylOPCNkiqOgMyA)",
+          "timestamp": "2026-07-22T02:56:56+00:00",
+          "likes": 3,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "oz04x2p",
+          "author": "reddit_user_fa276e3cec69",
+          "author_karma": 0,
+          "content": "Could always be post processing on your TV. Many smart tvs have AI image enhancement now ",
+          "timestamp": "2026-07-22T03:02:21+00:00",
+          "likes": 4,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run006_post01_seed031",
+      "post_slot": 1,
+      "seed_index": 31,
+      "source_raw_post_id": "1v34s0u",
+      "source_product_dir": "MovieDetails",
+      "source_file": "https://www.reddit.com/r/MovieDetails/comments/1v34s0u/heat_the_meetup/",
+      "post_type": "❓ Trivia",
+      "title": "Heat - The Meet-Up",
+      "author": "reddit_user_f403d059ef4c",
+      "author_karma": 0,
+      "content": "Heat - The Meet-Up\n\n[removed]",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "oz0c7lh",
+          "author": "reddit_user_6c9ec28e8a64",
+          "author_karma": 0,
+          "content": "\nHi [Phonus-Balonus-37]([REDDIT_USER]), thanks for your submission to /r/MovieDetails. Unfortunately, it's been removed for the following reason(s):\n\n* **Rule 4** - All titles must be include the movie release year.\n\n---\n\n*I am a bot, and this action was performed automatically. Please [contact the moderators of this subreddit](/message/compose/?to=/r/MovieDetails) if you have any questions or concerns.*",
+          "timestamp": "2026-07-22T03:48:12+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "oz0tbpp",
+          "author": "reddit_user_7c596a7f25e3",
+          "author_karma": 0,
+          "content": "Hi, thanks for your post to /r/MovieDetails. Unfortunately, it's been removed for the following reason(s):\n\n* **Rule 8** - Movie mistakes, special effects, minor roles of famous actors, behind the scenes clips and images, script details, and production trivia are not allowed here. See the sidebar for more appropriate subreddits. \n\n---",
+          "timestamp": "2026-07-22T05:49:40+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run006_post02_seed032",
+      "post_slot": 2,
+      "seed_index": 32,
+      "source_raw_post_id": "1v3msuv",
+      "source_product_dir": "MovieDetails",
+      "source_file": "https://www.reddit.com/r/MovieDetails/comments/1v3msuv/a_new_detail_i_noticed_in_the_shining_of_1980/",
+      "post_type": "🥚 Easter Egg",
+      "title": "a new detail I noticed in The Shining of 1980",
+      "author": "reddit_user_f403d059ef4c",
+      "author_karma": 0,
+      "content": "a new detail I noticed in The Shining of 1980\n\nIn the 1980 movie The Shining, note that the axe Jack wields is the same one Charles Grady (the previous caretaker of the hotel) used to kill his family.",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "oz47e4p",
+          "author": "reddit_user_7c596a7f25e3",
+          "author_karma": 0,
+          "content": "Hi, thanks for your post to /r/MovieDetails. Unfortunately, it's been removed for the following reason(s):\n\n* **Rule 1** - Details must be obscure, specific and intentional.\n* More of a theory not a detail.\n\n---",
+          "timestamp": "2026-07-22T17:25:55+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "oz47gxu",
+          "author": "reddit_user_536ce1451a23",
+          "author_karma": 0,
+          "content": "Sometimes a reused prop, is just a reused prop",
+          "timestamp": "2026-07-22T17:26:14+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "oz47sgm",
+              "author": "reddit_user_eebd0ae912b6",
+              "author_karma": 0,
+              "content": "Not in a Kubrick movie. ",
+              "timestamp": "2026-07-22T17:27:31+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "oz47gxu",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "oz48jah",
+                  "author": "reddit_user_536ce1451a23",
+                  "author_karma": 0,
+                  "content": "Unless you get a direct quote from cast and/or crew that this is intentional then it needs to remain as a theory. Yes, the intent to murder with an axe is the same, but it to be ‘the exact same one’ is theoretical",
+                  "timestamp": "2026-07-22T17:30:31+00:00",
+                  "likes": 2,
+                  "dislikes": 0,
+                  "parent_comment_id": "oz47sgm",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            },
+            {
+              "comment_id": "oz47w5d",
+              "author": "reddit_user_963fb8032fa3",
+              "author_karma": 0,
+              "content": "From Danny Torrence himself.",
+              "timestamp": "2026-07-22T17:27:55+00:00",
+              "likes": 2,
+              "dislikes": 0,
+              "parent_comment_id": "oz47gxu",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "oz48pi4",
+                  "author": "reddit_user_536ce1451a23",
+                  "author_karma": 0,
+                  "content": "All work and no play etc",
+                  "timestamp": "2026-07-22T17:31:12+00:00",
+                  "likes": 2,
+                  "dislikes": 0,
+                  "parent_comment_id": "oz47w5d",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "post_id": "real_run006_post03_seed033",
+      "post_slot": 3,
+      "seed_index": 33,
+      "source_raw_post_id": "1v4iuzb",
+      "source_product_dir": "MovieDetails",
+      "source_file": "https://www.reddit.com/r/MovieDetails/comments/1v4iuzb/in_the_opening_credits_of_mary_and_max_2009_marys/",
+      "post_type": "👥 Foreshadowing",
+      "title": "In the opening credits of Mary and Max (2009), Mary's name is \"handwritten\" while Max's is \"typed\", which reflects the methods they use for writing their letters throughout the movie",
+      "author": "reddit_user_f403d059ef4c",
+      "author_karma": 0,
+      "content": "In the opening credits of Mary and Max (2009), Mary's name is \"handwritten\" while Max's is \"typed\", which reflects the methods they use for writing their letters throughout the movie",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "ozbaxi3",
+          "author": "reddit_user_6f501f45dd6b",
+          "author_karma": 0,
+          "content": "I have not heard of this movie, but this shot is so cute. ",
+          "timestamp": "2026-07-23T16:43:28+00:00",
+          "likes": 30,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "ozbb8dz",
+              "author": "reddit_user_50db127915a0",
+              "author_karma": 0,
+              "content": "The whole movie is. But also VERY depressing at certain moments",
+              "timestamp": "2026-07-23T16:44:43+00:00",
+              "likes": 45,
+              "dislikes": 0,
+              "parent_comment_id": "ozbaxi3",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "ozbco76",
+                  "author": "reddit_user_6f501f45dd6b",
+                  "author_karma": 0,
+                  "content": "I'll check it outwhen I'm in the mood for some sadness. Thanks for sharing :)",
+                  "timestamp": "2026-07-23T16:50:37+00:00",
+                  "likes": 9,
+                  "dislikes": 0,
+                  "parent_comment_id": "ozbb8dz",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "ozbcmh6",
+          "author": "reddit_user_d3a356f78ff7",
+          "author_karma": 0,
+          "content": "This was a fabulous, beautiful film, but oh man it hit me in the feels",
+          "timestamp": "2026-07-23T16:50:26+00:00",
+          "likes": 107,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "ozbeblu",
+          "author": "reddit_user_54e93f3aebe4",
+          "author_karma": 0,
+          "content": "One of my favorites. Heartbreaking and poignant.",
+          "timestamp": "2026-07-23T16:57:25+00:00",
+          "likes": 44,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "ozbo5mu",
+          "author": "reddit_user_abdd26f0d8f0",
+          "author_karma": 0,
+          "content": "This movie got me to cry only with its very last line. I remained strong, but it still got me in the very end.\n\nGreat movie. Also check out Memoir of a Snail.",
+          "timestamp": "2026-07-23T17:38:10+00:00",
+          "likes": 28,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "ozboy70",
+          "author": "reddit_user_fd380e4ca7a0",
+          "author_karma": 0,
+          "content": "I really need to rewatch this one, I remember it being so good.",
+          "timestamp": "2026-07-23T17:41:27+00:00",
+          "likes": 8,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "ozfoc2r",
+              "author": "reddit_user_110136d4a184",
+              "author_karma": 0,
+              "content": "do it, just block off an afternoon because you will not be in a functional state afterward",
+              "timestamp": "2026-07-24T06:26:16+00:00",
+              "likes": 3,
+              "dislikes": 0,
+              "parent_comment_id": "ozboy70",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "ozccfhd",
+          "author": "reddit_user_a1ef03925540",
+          "author_karma": 0,
+          "content": "I've watched this movie so many times over the years. It's the only movie I've ever shared with my boyfriend that he refuses to watch again as it absolutely broke him. Definitely one you need to be mentally prepared for, that's for sure. I love it though, so so much.",
+          "timestamp": "2026-07-23T19:20:11+00:00",
+          "likes": 9,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "ozdpf4d",
+              "author": "reddit_user_219d3669dc55",
+              "author_karma": 0,
+              "content": "You should let him watch Grave of the Fireflies /s",
+              "timestamp": "2026-07-23T23:05:49+00:00",
+              "likes": 3,
+              "dislikes": 0,
+              "parent_comment_id": "ozccfhd",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "ozy2o1h",
+                  "author": "reddit_user_b2dd6a701610",
+                  "author_karma": 0,
+                  "content": "Everybody should watch that movie once, and only once. Nobody needs to be broken that hard multiple times, holy moly",
+                  "timestamp": "2026-07-26T21:54:13+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "ozdpf4d",
+                  "depth": 2,
+                  "replies": []
+                },
+                {
+                  "comment_id": "p044wnq",
+                  "author": "reddit_user_ddc81b14b4af",
+                  "author_karma": 0,
+                  "content": "Requiem for a Dream is another one ",
+                  "timestamp": "2026-07-27T18:49:37+00:00",
+                  "likes": 3,
+                  "dislikes": 0,
+                  "parent_comment_id": "ozdpf4d",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "oze63av",
+          "author": "reddit_user_6b99acf1a5fd",
+          "author_karma": 0,
+          "content": "I watched this movie for the first time a few weeks ago. I both have autism and a friend in the united states while I’m in Australia where we exchange cultural differences when we chat. Very moving, highly recommend to anyone. Not to mention the absolute artistry and love and care that goes into any claymation film deserves all the praise it can get.",
+          "timestamp": "2026-07-24T00:37:29+00:00",
+          "likes": 8,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "ozfjz9o",
+          "author": "reddit_user_210cb08cd0b1",
+          "author_karma": 0,
+          "content": "This reminds me about 6 years ago when I discovered that the font for Parasite also does the same thing. It merges two type faces into one, symbolizing the merging the two different families into one house.",
+          "timestamp": "2026-07-24T05:52:39+00:00",
+          "likes": 3,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "ozhaenp",
+          "author": "reddit_user_d9a522e1e938",
+          "author_karma": 0,
+          "content": "this movie absolutely destroyed me, i was sobbing",
+          "timestamp": "2026-07-24T13:13:24+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "ozlphm5",
+          "author": "reddit_user_7f061ba15573",
+          "author_karma": 0,
+          "content": "Wow I watched this movie in middle school and it was the weirdest movie I had ever seen. Did not enjoy. All these comments are making me wonder what I missed lol",
+          "timestamp": "2026-07-25T01:32:51+00:00",
+          "likes": 3,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "ozmx9us",
+          "author": "reddit_user_4c183f5be1ee",
+          "author_karma": 0,
+          "content": "Watched this movie at 14 with my mom. I still think about it and how much it wrecked me. An amazing movie I will only watch once. ",
+          "timestamp": "2026-07-25T06:37:29+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run006_post04_seed034",
+      "post_slot": 4,
+      "seed_index": 34,
+      "source_raw_post_id": "1v4kvo8",
+      "source_product_dir": "MovieDetails",
+      "source_file": "https://www.reddit.com/r/MovieDetails/comments/1v4kvo8/another_curious_detail_i_noticed_in_the_shining/",
+      "post_type": "🥚 Easter Egg",
+      "title": "Another curious detail I noticed in the shining (1980)",
+      "author": "reddit_user_f403d059ef4c",
+      "author_karma": 0,
+      "content": "Another curious detail I noticed in the shining (1980)\n\n[removed]",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "ozdne01",
+          "author": "reddit_user_11e19161f1e9",
+          "author_karma": 0,
+          "content": "Hi [ArtichokeSilent1709]([REDDIT_USER]), thanks for your submission to /r/MovieDetails. Unfortunately, it's been removed for the following reason(s):\r\n\r\n>**Rule 1** - Details must be obscure, relevant and intentional. \r\n\r\n>> * More of a theory not a detail.\r\n\r\n\r\n\r\n\r\n---\r\n\r\n\r\n*If you feel this was removed in error please read our expanded [rules from our wiki page](/r/moviedetails/wiki/rules_and_bans) and  [message the moderators](https://www.reddit.com/message/compose?to=%2Fr%2FMovieDetails&subject=&message=Link%20to%20submission:%20https://www.reddit.com/r/MovieDetails/comments/1v4kvo8/-/) if you are still unsure.*",
+          "timestamp": "2026-07-23T22:55:09+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    }
+  ]
+}

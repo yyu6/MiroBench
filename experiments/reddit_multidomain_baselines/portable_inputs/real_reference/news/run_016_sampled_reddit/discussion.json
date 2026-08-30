@@ -1,0 +1,3018 @@
+{
+  "meta": {
+    "product_category": "news",
+    "baseline": "real_reddit_reference",
+    "run_id": "run_016_sampled_reddit"
+  },
+  "posts": [
+    {
+      "post_id": "real_run016_post00_seed080",
+      "post_slot": 0,
+      "seed_index": 80,
+      "source_raw_post_id": "1ve5ljb",
+      "source_product_dir": "news",
+      "source_file": "https://www.reddit.com/r/news/comments/1ve5ljb/baby_dies_after_military_delays_ambulance_bbc/",
+      "post_type": "link",
+      "title": "Baby Dies After Military Delays Ambulance - BBC",
+      "author": "reddit_user_bde1e90b951b",
+      "author_karma": 0,
+      "content": "Baby Dies After Military Delays Ambulance - BBC",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p1edq6w",
+          "author": "reddit_user_70480823cdfe",
+          "author_karma": 0,
+          "content": "Text synopsis for people who don't want to watch Sky News content?",
+          "timestamp": "2026-08-03T06:39:19+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1edwbv",
+              "author": "reddit_user_781dc8a7a3be",
+              "author_karma": 0,
+              "content": "Sorry, not sure why I said it was BBC. Sky is a respected, reliable news outlets and no one should object to seeing their coverage. ",
+              "timestamp": "2026-08-03T06:40:44+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1edq6w",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1ee41j",
+                  "author": "reddit_user_70480823cdfe",
+                  "author_karma": 0,
+                  "content": "I object to their sensationalist reporting style. Everything is worded for emotional impact rather than conveying facts.\n\nEvery news outlet does it. I'm not against sky alone. ",
+                  "timestamp": "2026-08-03T06:42:31+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1edwbv",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1eef2y",
+                      "author": "reddit_user_781dc8a7a3be",
+                      "author_karma": 0,
+                      "content": "The video does a good job of conveying the facts. I've found Sky to be more reliable, accurate, and prompt than major US outlets while being considerably less biased. ",
+                      "timestamp": "2026-08-03T06:45:04+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1ee41j",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "p1egrz8",
+                          "author": "[deleted]",
+                          "author_karma": 0,
+                          "content": "[removed]",
+                          "timestamp": "2026-08-03T07:04:35+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "p1eef2y",
+                          "depth": 4,
+                          "replies": []
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "comment_id": "p1eednb",
+                  "author": "reddit_user_d546ba659638",
+                  "author_karma": 0,
+                  "content": "Sky is far from a respected, reliable news outlet. It’s a far right pandering sensationalist media conglomerate. ",
+                  "timestamp": "2026-08-03T06:44:44+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1edwbv",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1eel6p",
+                      "author": "reddit_user_781dc8a7a3be",
+                      "author_karma": 0,
+                      "content": "Perhaps in relation to domestic news. I only really follow international stories from them, they're better than the US equivalents.",
+                      "timestamp": "2026-08-03T06:46:27+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1eednb",
+                      "depth": 3,
+                      "replies": []
+                    },
+                    {
+                      "comment_id": "p1ehb1y",
+                      "author": "[deleted]",
+                      "author_karma": 0,
+                      "content": "[removed]",
+                      "timestamp": "2026-08-03T07:09:00+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1eednb",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                },
+                {
+                  "comment_id": "p1eeejc",
+                  "author": "[deleted]",
+                  "author_karma": 0,
+                  "content": "[removed]",
+                  "timestamp": "2026-08-03T06:44:57+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1edwbv",
+                  "depth": 2,
+                  "replies": []
+                },
+                {
+                  "comment_id": "p1eeqyb",
+                  "author": "reddit_user_e4f91935bb67",
+                  "author_karma": 0,
+                  "content": "Respected by who?  It’s right leaning and sensationalist.  To say it’s more respected than BBC News is just wrong.",
+                  "timestamp": "2026-08-03T06:47:47+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1edwbv",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1eex39",
+                      "author": "reddit_user_781dc8a7a3be",
+                      "author_karma": 0,
+                      "content": "I didn't say more respected than BBC. I mistakenly named BBC because I also had a BBC tab open. ",
+                      "timestamp": "2026-08-03T06:49:13+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1eeqyb",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                },
+                {
+                  "comment_id": "p1eesd4",
+                  "author": "reddit_user_bf0406517e5e",
+                  "author_karma": 0,
+                  "content": "A respected, reliable news outlet owned by a corporation that donated a million $ to Trump’s 2025 inauguration and backed his destruction of the White House for his ballroom. Aye, right. \n\nWing, that is. ",
+                  "timestamp": "2026-08-03T06:48:06+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1edwbv",
+                  "depth": 2,
+                  "replies": []
+                },
+                {
+                  "comment_id": "p1egkh1",
+                  "author": "[deleted]",
+                  "author_karma": 0,
+                  "content": "[removed]",
+                  "timestamp": "2026-08-03T07:02:51+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1edwbv",
+                  "depth": 2,
+                  "replies": []
+                },
+                {
+                  "comment_id": "p1egnc2",
+                  "author": "reddit_user_f53dce9ab328",
+                  "author_karma": 0,
+                  "content": "Since you realized the mistake within 3 min surely you could’ve deleted and reposted correctly",
+                  "timestamp": "2026-08-03T07:03:30+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1edwbv",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1ehmc2",
+                      "author": "reddit_user_781dc8a7a3be",
+                      "author_karma": 0,
+                      "content": "I corrected it in a comment. Anyway, as soon as people go to the video link they'll see it's from Sky. ",
+                      "timestamp": "2026-08-03T07:11:33+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1egnc2",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "comment_id": "p1ee2en",
+              "author": "reddit_user_ff801bae3905",
+              "author_karma": 0,
+              "content": "IDF stops ambulance carrying a sick baby. Baby dies. ",
+              "timestamp": "2026-08-03T06:42:08+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1edq6w",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1ef20d",
+                  "author": "reddit_user_0213686d74e8",
+                  "author_karma": 0,
+                  "content": "Then lies about delaying the ambulance and says it never happened.",
+                  "timestamp": "2026-08-03T06:50:22+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1ee2en",
+                  "depth": 2,
+                  "replies": []
+                },
+                {
+                  "comment_id": "p1egwwf",
+                  "author": "reddit_user_3129e6bc9a16",
+                  "author_karma": 0,
+                  "content": "Ofc it was the IDF. Why did I even bother wondering where this was. ",
+                  "timestamp": "2026-08-03T07:05:44+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1ee2en",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1ei8c9",
+                      "author": "reddit_user_5217e309207f",
+                      "author_karma": 0,
+                      "content": "Yeah, I was pretty sure i knew where it was gonna be.",
+                      "timestamp": "2026-08-03T07:16:38+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1egwwf",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "p1eixp6",
+                          "author": "[deleted]",
+                          "author_karma": 0,
+                          "content": "[removed]",
+                          "timestamp": "2026-08-03T07:22:34+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "p1ei8c9",
+                          "depth": 4,
+                          "replies": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "comment_id": "p1eeoi6",
+              "author": "reddit_user_781dc8a7a3be",
+              "author_karma": 0,
+              "content": "Posted in comments as it won't let me edit the post.",
+              "timestamp": "2026-08-03T06:47:13+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1edq6w",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p1eezqc",
+              "author": "reddit_user_2ac83c0b956c",
+              "author_karma": 0,
+              "content": "You could Google it, there’s different sites that have reported on this",
+              "timestamp": "2026-08-03T06:49:50+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1edq6w",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p1efsth",
+              "author": "reddit_user_d6fedbd1d2f2",
+              "author_karma": 0,
+              "content": "Why are we boycotting sky news? ",
+              "timestamp": "2026-08-03T06:56:32+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1edq6w",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1ehpuk",
+                  "author": "reddit_user_5871f50eaf29",
+                  "author_karma": 0,
+                  "content": "You have to ask? ",
+                  "timestamp": "2026-08-03T07:12:21+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1efsth",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1ejlj2",
+                      "author": "reddit_user_d6fedbd1d2f2",
+                      "author_karma": 0,
+                      "content": "Yes, that's why I asked",
+                      "timestamp": "2026-08-03T07:28:12+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1ehpuk",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p1ee99w",
+          "author": "reddit_user_781dc8a7a3be",
+          "author_karma": 0,
+          "content": "Sky News, not BBC. Sorry for that! \n\nThis video directly contradicts the IDF statement that they didn't stop and delay an ambulance in the West Bank. The ambulance was carrying a pregnant woman who had been badly injured. The delays amounted to over 20 minutes and resulted in the death of the baby, as confirmed by EMS and hospital staff. IDF claims this never happened, the video tells a different story.",
+          "timestamp": "2026-08-03T06:43:43+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1eea1s",
+          "author": "reddit_user_d30cedbbe246",
+          "author_karma": 0,
+          "content": "What Israeli soldiers did want from a pregnant woman and an unborn child?",
+          "timestamp": "2026-08-03T06:43:54+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1ees7f",
+              "author": "[deleted]",
+              "author_karma": 0,
+              "content": "[removed]",
+              "timestamp": "2026-08-03T06:48:04+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1eea1s",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p1ef0ig",
+              "author": "reddit_user_2c080986b00c",
+              "author_karma": 0,
+              "content": "Hate to be that guy but:\n\n\n\nUnfortunately Hamas has frequently used ambulances as transport vehicles . ",
+              "timestamp": "2026-08-03T06:50:01+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1eea1s",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1ef62c",
+                  "author": "reddit_user_1745ea80967f",
+                  "author_karma": 0,
+                  "content": "Then don't be that guy if you hate it",
+                  "timestamp": "2026-08-03T06:51:18+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1ef0ig",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1egr51",
+                      "author": "reddit_user_177f08eda9f1",
+                      "author_karma": 0,
+                      "content": "They never hate it, they only hate Palestinians.",
+                      "timestamp": "2026-08-03T07:04:23+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1ef62c",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                },
+                {
+                  "comment_id": "p1efal7",
+                  "author": "reddit_user_d30cedbbe246",
+                  "author_karma": 0,
+                  "content": "That’s correct actually. But didn’t those soldiers see the pregnant woman? Still a huge humanity crime.",
+                  "timestamp": "2026-08-03T06:52:21+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1ef0ig",
+                  "depth": 2,
+                  "replies": []
+                },
+                {
+                  "comment_id": "p1efpa7",
+                  "author": "reddit_user_6ee229ee52f6",
+                  "author_karma": 0,
+                  "content": "Hate to be that guy but: This is a post about the death of a baby, not Hamas.",
+                  "timestamp": "2026-08-03T06:55:43+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1ef0ig",
+                  "depth": 2,
+                  "replies": []
+                },
+                {
+                  "comment_id": "p1efqf1",
+                  "author": "reddit_user_32660fbcce97",
+                  "author_karma": 0,
+                  "content": "Unfortunately that's the excuse Israel uses to commit war crimes, so it doesn't really fly. ",
+                  "timestamp": "2026-08-03T06:55:59+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1ef0ig",
+                  "depth": 2,
+                  "replies": []
+                },
+                {
+                  "comment_id": "p1efr0i",
+                  "author": "reddit_user_fc1191f20243",
+                  "author_karma": 0,
+                  "content": "And turning off the woman's oxygen and monitors prevents that?",
+                  "timestamp": "2026-08-03T06:56:07+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1ef0ig",
+                  "depth": 2,
+                  "replies": []
+                },
+                {
+                  "comment_id": "p1efvyx",
+                  "author": "reddit_user_f3319593ebc3",
+                  "author_karma": 0,
+                  "content": "As far as I am aware Hamas do not operate in the West Bank.",
+                  "timestamp": "2026-08-03T06:57:16+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1ef0ig",
+                  "depth": 2,
+                  "replies": []
+                },
+                {
+                  "comment_id": "p1eg1cd",
+                  "author": "reddit_user_aaecd925363f",
+                  "author_karma": 0,
+                  "content": "It doesn't take twenty minutes to realise there's just a pregnant woman there. And why was her oxygen forced off. And why lie and say none of it happened.\n\nI'm wondering if you'll hate to be that guy again and try something else as an answer?",
+                  "timestamp": "2026-08-03T06:58:29+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1ef0ig",
+                  "depth": 2,
+                  "replies": []
+                },
+                {
+                  "comment_id": "p1eg6ar",
+                  "author": "reddit_user_beaa112e90b6",
+                  "author_karma": 0,
+                  "content": "This happened in the West Bank, where Hamas doesn’t operate. Seems like you don’t hate excusing war crimes all that much.",
+                  "timestamp": "2026-08-03T06:59:38+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1ef0ig",
+                  "depth": 2,
+                  "replies": []
+                },
+                {
+                  "comment_id": "p1ei29p",
+                  "author": "reddit_user_f2d8140288f5",
+                  "author_karma": 0,
+                  "content": "Gee, I’m sure that dead baby’s sacrifice was worth it then.",
+                  "timestamp": "2026-08-03T07:15:12+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1ef0ig",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            },
+            {
+              "comment_id": "p1ef0nd",
+              "author": "reddit_user_9e7b7cb59bed",
+              "author_karma": 0,
+              "content": "Fewer Palestinians I am afraid.",
+              "timestamp": "2026-08-03T06:50:03+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1eea1s",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p1ef0oe",
+              "author": "reddit_user_82a70b952971",
+              "author_karma": 0,
+              "content": "Duh. They're terrorists obviously.\n\n\n/s just in case.",
+              "timestamp": "2026-08-03T06:50:04+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1eea1s",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p1ef17y",
+              "author": "reddit_user_6ee229ee52f6",
+              "author_karma": 0,
+              "content": "For them to die.",
+              "timestamp": "2026-08-03T06:50:11+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1eea1s",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1eejsx",
+          "author": "reddit_user_e66142633bcd",
+          "author_karma": 0,
+          "content": "If yall want to see the true israel go check out r/israelcrimes",
+          "timestamp": "2026-08-03T06:46:08+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1ef9xr",
+              "author": "reddit_user_61382f4b3e66",
+              "author_karma": 0,
+              "content": "I don’t have the budget for therapy .. I took me to many months to accept the killing of the world’s kitchen volunteers will go unpunished and Ignored by my government that claims to be for the free world and law and order. ",
+              "timestamp": "2026-08-03T06:52:12+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1eejsx",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1eeocp",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-03T06:47:11+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1ef3e7",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-03T06:50:41+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1efqnl",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-03T06:56:02+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1ege70",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-03T07:01:25+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1eh06s",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-03T07:06:29+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1eh2km",
+          "author": "reddit_user_f5f8a76fb3fb",
+          "author_karma": 0,
+          "content": "I knew it was IDF by the headline.",
+          "timestamp": "2026-08-03T07:07:02+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1ehb5r",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-03T07:09:01+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1ehqv6",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-03T07:12:35+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run016_post01_seed081",
+      "post_slot": 1,
+      "seed_index": 81,
+      "source_raw_post_id": "1ve5xmt",
+      "source_product_dir": "news",
+      "source_file": "https://www.reddit.com/r/news/comments/1ve5xmt/new_york_files_36_billion_lawsuit_against_kalshi/",
+      "post_type": "link",
+      "title": "New York files $36 billion lawsuit against Kalshi, alleging it's running an \"illegal gambling operation\"",
+      "author": "reddit_user_bde1e90b951b",
+      "author_karma": 0,
+      "content": "New York files $36 billion lawsuit against Kalshi, alleging it's running an \"illegal gambling operation\"",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p1eg8wy",
+          "author": "reddit_user_bcf31dfc768d",
+          "author_karma": 0,
+          "content": "$5 says they win the suit",
+          "timestamp": "2026-08-03T07:00:14+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1egded",
+              "author": "reddit_user_0a4b1fd0647c",
+              "author_karma": 0,
+              "content": "Pump the brakes there Rockefeller",
+              "timestamp": "2026-08-03T07:01:14+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1eg8wy",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1eh7hv",
+                  "author": "reddit_user_df15b299549a",
+                  "author_karma": 0,
+                  "content": "Wait doesn't, nvm.",
+                  "timestamp": "2026-08-03T07:08:10+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1egded",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            },
+            {
+              "comment_id": "p1egsxs",
+              "author": "reddit_user_c210177e5fc2",
+              "author_karma": 0,
+              "content": "Wait a minute…",
+              "timestamp": "2026-08-03T07:04:49+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1eg8wy",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p1ei3mz",
+              "author": "reddit_user_bbe4c9500ffa",
+              "author_karma": 0,
+              "content": "What's the prediction on it?",
+              "timestamp": "2026-08-03T07:15:31+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1eg8wy",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p1exu4k",
+              "author": "reddit_user_538a69c65abe",
+              "author_karma": 0,
+              "content": "Listen you…",
+              "timestamp": "2026-08-03T09:28:51+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1eg8wy",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p1exvyf",
+              "author": "reddit_user_e75f6275848a",
+              "author_karma": 0,
+              "content": "Oh, man. I came here to make that joke. Crud. Good for you. ",
+              "timestamp": "2026-08-03T09:29:17+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1eg8wy",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p1f02uu",
+              "author": "reddit_user_2ea99b01091f",
+              "author_karma": 0,
+              "content": "I bet, before this is over, you could make that very  bet on both Kalshi and Polymarket. ",
+              "timestamp": "2026-08-03T09:47:17+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1eg8wy",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1f5he0",
+                  "author": "reddit_user_308bd320025f",
+                  "author_karma": 0,
+                  "content": "I'll make it now!",
+                  "timestamp": "2026-08-03T10:29:11+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1f02uu",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p1eilxz",
+          "author": "reddit_user_01456550538c",
+          "author_karma": 0,
+          "content": "The prediction market crap is so insane when you consider how regulated gambling was before it arrived. Its obviously illegal and exploiting loopholes and lack of legal cases to even exist as it does right now.",
+          "timestamp": "2026-08-03T07:19:50+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1ekrxl",
+              "author": "reddit_user_7944a1f58681",
+              "author_karma": 0,
+              "content": "I mean it’s worse than that - it’s just a contract… then why is it regulated as gambling. \n\nIf it’s just contracts between parties then there should be no insider trading laws arrests.  It should just be a civil matter between contractual parties for breach of contract.  \n\nIt’s so obvious illegal it’s insane.   But the American dream died and got replaced by a gambling economy. ",
+              "timestamp": "2026-08-03T07:38:15+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1eilxz",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1f07qd",
+                  "author": "reddit_user_baf36b85c89a",
+                  "author_karma": 0,
+                  "content": "Welcome to crypto and stock markets full of derivatives ",
+                  "timestamp": "2026-08-03T09:48:23+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1ekrxl",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            },
+            {
+              "comment_id": "p1ekz8l",
+              "author": "reddit_user_556dec0e22d8",
+              "author_karma": 0,
+              "content": "They are paying off the right people. Trump is getting his cut. ",
+              "timestamp": "2026-08-03T07:39:58+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1eilxz",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1eouvb",
+                  "author": "reddit_user_f25fb001d41a",
+                  "author_karma": 0,
+                  "content": "[Donald Trump Jr. Joins Prediction Market Kalshi](https://www.forbes.com/sites/mollybohannon/2025/01/13/donald-trump-jr-joins-prediction-market-kalshi/)\n\nJan 13, 2025",
+                  "timestamp": "2026-08-03T08:12:51+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1ekz8l",
+                  "depth": 2,
+                  "replies": []
+                },
+                {
+                  "comment_id": "p1f91kf",
+                  "author": "reddit_user_95b11561a3b7",
+                  "author_karma": 0,
+                  "content": "Bro Don Jr is a senior advisor to both Kalshi and Polymarket, the president is literally making money off a gambling racket",
+                  "timestamp": "2026-08-03T10:55:03+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1ekz8l",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            },
+            {
+              "comment_id": "p1f33en",
+              "author": "reddit_user_587aebe66e0f",
+              "author_karma": 0,
+              "content": "They’ve abandoned all pretense of prediction market.  Is there another human trading your 25 leg 50 cent parlay??",
+              "timestamp": "2026-08-03T10:11:02+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1eilxz",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1emgex",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-03T07:52:27+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1ewjcp",
+          "author": "reddit_user_a4db40a4aad5",
+          "author_karma": 0,
+          "content": "It is gambling and anyone who says otherwise is either an idiot or in on the scam. ",
+          "timestamp": "2026-08-03T09:17:53+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1f0jl9",
+              "author": "reddit_user_ab14fb99799d",
+              "author_karma": 0,
+              "content": "Your prediction is trading at 56% ",
+              "timestamp": "2026-08-03T09:51:04+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1ewjcp",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1f3fg2",
+                  "author": "reddit_user_22fcd26146d2",
+                  "author_karma": 0,
+                  "content": "Take my dubloons",
+                  "timestamp": "2026-08-03T10:13:34+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1f0jl9",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p1f0fne",
+          "author": "reddit_user_8a501329dd0f",
+          "author_karma": 0,
+          "content": "This will decide if popularity beats law. If kalshi wins than any popular stupid thing is legal. ",
+          "timestamp": "2026-08-03T09:50:10+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1f2mj4",
+          "author": "reddit_user_aa521ea5b040",
+          "author_karma": 0,
+          "content": "I really hope NY wins this",
+          "timestamp": "2026-08-03T10:07:28+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1f8b7t",
+          "author": "reddit_user_77c17dcc16e2",
+          "author_karma": 0,
+          "content": "New York State again showing it is the best state in the union. So glad to be born and raised there.",
+          "timestamp": "2026-08-03T10:49:55+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run016_post02_seed082",
+      "post_slot": 2,
+      "seed_index": 82,
+      "source_raw_post_id": "1ve69uk",
+      "source_product_dir": "news",
+      "source_file": "https://www.reddit.com/r/news/comments/1ve69uk/spiderman_brand_new_day_makes_debut_to_927m_box/",
+      "post_type": "link",
+      "title": "Spider-Man: Brand New Day makes debut to $927m box office to land second biggest opening weekend in history",
+      "author": "reddit_user_bde1e90b951b",
+      "author_karma": 0,
+      "content": "Spider-Man: Brand New Day makes debut to $927m box office to land second biggest opening weekend in history",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p1ewm8e",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-03T09:18:34+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1erb4j",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1ewnqp",
+          "author": "reddit_user_d7abb4e993b8",
+          "author_karma": 0,
+          "content": "He should be so lucky. There's probably a group of lawyers meeting right now to draw up a contract to replace him with AI going forward.",
+          "timestamp": "2026-08-03T09:18:54+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1emago",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1ewok0",
+          "author": "reddit_user_9fdfe29159c5",
+          "author_karma": 0,
+          "content": "Only way Batman comes close is if Nolan directs another Batman trilogy. I'd argue Batman films only became popular due to Nolan's prestige and reputation.",
+          "timestamp": "2026-08-03T09:19:06+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1ev525",
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1eywgv",
+              "author": "reddit_user_01d45b3fab6d",
+              "author_karma": 0,
+              "content": "While not as good, the 1989 Batman made bank and the 90’s ones waned profit. Batman has always made good money even with the 90’s ones being campy ",
+              "timestamp": "2026-08-03T09:37:39+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1ewok0",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1ewpem",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-03T09:19:19+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1exdiq",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-03T09:24:59+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1eq860",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1exixq",
+          "author": "reddit_user_64c5b306477d",
+          "author_karma": 0,
+          "content": "\"I'm too old for this shit.\"",
+          "timestamp": "2026-08-03T09:26:14+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1es3fy",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1exk2h",
+          "author": "reddit_user_71c4c551cc6e",
+          "author_karma": 0,
+          "content": "He has earned it! Dude's fantastic as Peter and as Spiderman and it helps that he is likeable as a person",
+          "timestamp": "2026-08-03T09:26:30+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1emago",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1exnoy",
+          "author": "reddit_user_2c3fefc6b71e",
+          "author_karma": 0,
+          "content": "Almost makes you Spiderman 4: Another day home, you know?",
+          "timestamp": "2026-08-03T09:27:21+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1erb4j",
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1ey4j7",
+              "author": "reddit_user_22beaf037676",
+              "author_karma": 0,
+              "content": "I'm waiting for Spiderman 6:  It's my day off, leave me alone",
+              "timestamp": "2026-08-03T09:31:14+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1exnoy",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1eyuee",
+                  "author": "reddit_user_2c3fefc6b71e",
+                  "author_karma": 0,
+                  "content": "Followed by Spider-Man 7: Home Alone, which is just a Spider-Man suit CGI on top of Macaulay Culkin’s original performance.",
+                  "timestamp": "2026-08-03T09:37:12+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1ey4j7",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p1exqgi",
+          "author": "reddit_user_adf82a8b0da4",
+          "author_karma": 0,
+          "content": "Part of the story here is that while Sony retains the film rights, Marvel owns the Spider-Man merchandising rights. That's why there's so much product placement in these movies: Sony makes money off everything you see onscreen (except for Avengers etc), but Marvel makes money when your kid buys an action figure.\n\nThe partnership will keep going so long as being part of the MCU remains profitable for the box office. And they're surely aware by now that Spider-Man doesn't have a deep roster of great villains, so there's only so much you can do with him solo. Whereas Brand New Day shows how expansive and profitable these movies can be when you let Spider-Man be part of a wider universe.",
+          "timestamp": "2026-08-03T09:28:00+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1escvy",
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1ey33y",
+              "author": "reddit_user_4591b1b8268d",
+              "author_karma": 0,
+              "content": "Spiderman has some (or at least enough) of the great villains to go for a few more movies if they wanted to go solo. But they won't because it's high risk and probably would end up costing more than it makes",
+              "timestamp": "2026-08-03T09:30:55+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1exqgi",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1ez762",
+                  "author": "reddit_user_adf82a8b0da4",
+                  "author_karma": 0,
+                  "content": "But they've already done, what, a dozen Spider-Man villains onscreen? And I doubt they'd be able to just recast the Green Goblin, say, without audiences turning on it.\n\nThey could definitely survive for a bit if they went solo, but there's basically infinite stories you can do with the current set-up and its soap opera-esque drama (in a good way). Hell, you could make a whole trilogy of films about Peter being a father figure as we transition to Miles Morales.",
+                  "timestamp": "2026-08-03T09:40:06+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1ey33y",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1f13ht",
+                      "author": "reddit_user_4591b1b8268d",
+                      "author_karma": 0,
+                      "content": "They literally did recast the green goblin in Amazing Spider-Man 2, that wasn't the issue with the movie. \n\nIt's a little harder for them since they made a lot of the 5 original Spiderman film villains as MCU canon in No Way Home, but there are plenty of ways around that with the multiverse (we haven't even seen this universe's version of any of them)",
+                      "timestamp": "2026-08-03T09:55:32+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1ez762",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "p1f1oea",
+                          "author": "reddit_user_adf82a8b0da4",
+                          "author_karma": 0,
+                          "content": "Well, the Harry Osborn version, sure. Who's already just a second-rate version of the Norman original. \n\nI'm not saying they *can't* recast, I'm just not convinced that doing, like, Tom Holland versus a recast Doc Ock or a new Electro would be a huge box office draw.",
+                          "timestamp": "2026-08-03T10:00:08+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "p1f13ht",
+                          "depth": 4,
+                          "replies": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p1exxne",
+          "author": "reddit_user_f30fa67ac77b",
+          "author_karma": 0,
+          "content": "Followed up with Spider-Man: Retirement Home",
+          "timestamp": "2026-08-03T09:29:40+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1es3fy",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1ey1r2",
+          "author": "reddit_user_79db8281c202",
+          "author_karma": 0,
+          "content": "This is probably the first superhero movie I’m gonna watch in the cinema since endgame",
+          "timestamp": "2026-08-03T09:30:35+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1emnwo",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1eydzh",
+          "author": "reddit_user_adf82a8b0da4",
+          "author_karma": 0,
+          "content": "The direction in general was surprisingly great too. It looked like a real movie, with attention to shadows, lighting, colour, shot placement, blocking, etc.",
+          "timestamp": "2026-08-03T09:33:25+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1eu4dk",
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1f3t3a",
+              "author": "reddit_user_192355ee352c",
+              "author_karma": 0,
+              "content": "The cinematography was greatly improved this time around.",
+              "timestamp": "2026-08-03T10:16:30+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1eydzh",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p1f6dz1",
+              "author": "reddit_user_00c5720591f5",
+              "author_karma": 0,
+              "content": "Yeah, the colours and lighting this time were gorgeous. Even comparing the trailers for this movie to doomsday is light and day - or light and sunset to hide blue screen comping ",
+              "timestamp": "2026-08-03T10:35:58+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1eydzh",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1eyh09",
+          "author": "reddit_user_8b05acccdb77",
+          "author_karma": 0,
+          "content": "I expected this film to be a smashing success, but this is nuts! I personally love this for Tom Holland, I think he's the perfect casting for this, he's the only actor that's ever given life to a superhero from it's origins growing along with the role. Plus he's by all accounts a quality human being. ",
+          "timestamp": "2026-08-03T09:34:07+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1eymy9",
+          "author": "reddit_user_adf82a8b0da4",
+          "author_karma": 0,
+          "content": "Spider-Man 2 and BND feel roughly equivalent for me, and this one clearly took lots of cues from it. They're mirror images, with 2 being about Peter trying to give up the Spider-Man identity, whereas BND is about Peter trying to give up being Peter Parker.",
+          "timestamp": "2026-08-03T09:35:29+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1eriax",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1ez49b",
+          "author": "reddit_user_dcd166b85509",
+          "author_karma": 0,
+          "content": "Spider-Man is the perfect superhero.\n\nInteresting superpowers + grounded and relatable.\n\nI can’t relate with a Norse God, the king of a sci-fi African nation or the billionaire playboy, but I can’t relate understand navigating normal relationships and working a bullshit job",
+          "timestamp": "2026-08-03T09:39:27+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1ev525",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1ezccw",
+          "author": "reddit_user_a8514c1732e8",
+          "author_karma": 0,
+          "content": "Spider-Man: Groundhog Day",
+          "timestamp": "2026-08-03T09:41:17+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1evm2y",
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1f2qp9",
+              "author": "reddit_user_fb7b6e359b7e",
+              "author_karma": 0,
+              "content": "I think I’m funny and unique, and then read MY comment made by someone else.",
+              "timestamp": "2026-08-03T10:08:21+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1ezccw",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p1f48ys",
+              "author": "reddit_user_3218d55d5d9c",
+              "author_karma": 0,
+              "content": "Spider-man: Doomsday",
+              "timestamp": "2026-08-03T10:19:51+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1ezccw",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1f5ft9",
+                  "author": "reddit_user_01bc3fb7210b",
+                  "author_karma": 0,
+                  "content": "Spider-man: Daylight Savings Time",
+                  "timestamp": "2026-08-03T10:28:51+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1f48ys",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1f7714",
+                      "author": "reddit_user_3218d55d5d9c",
+                      "author_karma": 0,
+                      "content": "Spider-man: Days of future past",
+                      "timestamp": "2026-08-03T10:41:57+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1f5ft9",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p1ezggc",
+          "author": "reddit_user_c6791a19931f",
+          "author_karma": 0,
+          "content": "You see a lot of people say that Batman is the most relateable super hero because he has no powers, but it's actually Spiderman cause he's literally just a guy",
+          "timestamp": "2026-08-03T09:42:12+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1ein1m",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1ezjkc",
+          "author": "reddit_user_b8238d185b8a",
+          "author_karma": 0,
+          "content": "Spiderman: Monday  \nSpiderman: Tuesday   \n….",
+          "timestamp": "2026-08-03T09:42:53+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1eue6x",
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1f4mlk",
+              "author": "reddit_user_ce508996d3b4",
+              "author_karma": 0,
+              "content": "Spiderman:  Wednesday   \nSpiderman:  Thursday  \nSpiderman:  Friday   \nSpiderman:  Saturday Saturday to Sunday",
+              "timestamp": "2026-08-03T10:22:41+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1ezjkc",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1ezpmn",
+          "author": "reddit_user_609ba5b19b73",
+          "author_karma": 0,
+          "content": "\"Until you're 90...\"",
+          "timestamp": "2026-08-03T09:44:15+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1emago",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1ezv8g",
+          "author": "reddit_user_e8deecd8666c",
+          "author_karma": 0,
+          "content": "jesus christ, almost a $1b in the opening weekend? that's insane",
+          "timestamp": "2026-08-03T09:45:31+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1f03p6",
+          "author": "reddit_user_c110581b2b4b",
+          "author_karma": 0,
+          "content": "Eh, Batman’s had multiple successful movies, video games, appearances in wider “universe” films. I think there’s a lot of similarities.\n\nI remember how far people were travelling to see one of the Batman movies when it came out; I don’t recall that for any other individual superhero movies of the time, only the ensemble avengers ones.",
+          "timestamp": "2026-08-03T09:47:28+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1ev525",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1f04u4",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-03T09:47:43+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1esyjk",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1f0770",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-03T09:48:16+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1f08xu",
+          "author": "reddit_user_f02b906da75e",
+          "author_karma": 0,
+          "content": "I watched Brand New Day and 2 hours later The Odyssey. Felt a bit strange to see the same actors in different roles only a few hours apart. Still, I really enjoyed both movies and had a really good time. Bernthal, Holland and Zendaya are all fantastic actors",
+          "timestamp": "2026-08-03T09:48:39+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1eig6a",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1f0gay",
+          "author": "reddit_user_f62c5f0421ab",
+          "author_karma": 0,
+          "content": "I am unaware of tens of big budget blockbuster style romcoms that have been released in the past couple years",
+          "timestamp": "2026-08-03T09:50:18+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1esvze",
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1f45gr",
+              "author": "reddit_user_14ad64a310b9",
+              "author_karma": 0,
+              "content": "Apologies, I wasn’t aware fatigue was only applicable if the movie budget is of a certain size, my bad. /s",
+              "timestamp": "2026-08-03T10:19:06+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1f0gay",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1f17rn",
+          "author": "reddit_user_01e46d70d6f7",
+          "author_karma": 0,
+          "content": "He’s certainly my favorite.\n\nHe’s not a super soldier.  He’s not a god.  He’s not an alien.  He’s not a spirit.  He’s not a mutant.  He doesn’t have super weapons.  He’s not rich.\n\nHe’s just a dude who’s real strong, sticks to surfaces, and has really good reflexes.  He can get shot and die.  He can be cut in half.  He faces every-day problems on top of his hero business.  He’s a great super hero.",
+          "timestamp": "2026-08-03T09:56:29+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1ein1m",
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1f5ey9",
+              "author": "reddit_user_29f4455f4ca7",
+              "author_karma": 0,
+              "content": "> he's not a mutant \n\nWhat's wrong with being a mutant? Their powers start manifesting in early adolescence, just like Spider-Man's, the inly difference being that he got bit by a spider. Not much would change about him if was a mutant tbh",
+              "timestamp": "2026-08-03T10:28:40+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1f17rn",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1f1igf",
+          "author": "reddit_user_df95bd49988e",
+          "author_karma": 0,
+          "content": "deserved, the best Holland spider-man movie so far ",
+          "timestamp": "2026-08-03T09:58:50+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1f2apc",
+          "author": "reddit_user_e34ace3b7ee3",
+          "author_karma": 0,
+          "content": "I'm happy because they realize Spider Man doesn't need other Marvel heroes shoved in there for people to see it. The worst parts of the previous movies was the MCU, it distracted from the personal story.\nHopefully from now on they'll continue doing Spider Man centric movies ",
+          "timestamp": "2026-08-03T10:04:57+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1f5ulf",
+              "author": "reddit_user_a15fe4dcd638",
+              "author_karma": 0,
+              "content": "Clearly haven't seen it yet.",
+              "timestamp": "2026-08-03T10:31:56+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1f2apc",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p1f6p9s",
+              "author": "reddit_user_95d2e2df4a6c",
+              "author_karma": 0,
+              "content": "Casting has the hulk and punisher characters listed. ",
+              "timestamp": "2026-08-03T10:38:19+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1f2apc",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1f2imd",
+          "author": "reddit_user_6c8aa58751c8",
+          "author_karma": 0,
+          "content": "Old Man Parker!\n\nPeter PArker, now 58, physically suffering because of the injuries during his crime fighting years, lives with his best friend Frank in hiding, hunted by a private military of a global company. Suddenly a young boy appears with the same powers as Peter.\n\nWill he come out of the shadow, and help the boy, or does he continue to cower in fear?\n\n",
+          "timestamp": "2026-08-03T10:06:38+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1es3fy",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1f2mvp",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-03T10:07:32+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1eoa0l",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1f2n1h",
+          "author": "reddit_user_ac30f4a122fb",
+          "author_karma": 0,
+          "content": "At the very least they’ll force him to do a hand off movie if he is adamant on quitting. \n\nHe’s not stopping being spider man unless he dies on screen ",
+          "timestamp": "2026-08-03T10:07:34+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1emago",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1f2zwd",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-03T10:10:17+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1f34if",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-03T10:11:15+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1emago",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1f3agk",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-03T10:12:30+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1eja85",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1f3toj",
+          "author": "reddit_user_9180d367a86f",
+          "author_karma": 0,
+          "content": "Tom Holland and Zendaya are, at this time, two of the most marketable young stars in the world. . .And they're married.\n\nWhether or not Sony will ever let him get away from Spider-Man movies really depends on just how motivated he is by money - Like sure everyone likes a big paycheck but they're still young enough for us to not really be sure if, at a time where he no longer wants to do it, having more millions is enough of a motivator.",
+          "timestamp": "2026-08-03T10:16:37+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1emago",
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1f7e72",
+              "author": "reddit_user_77ad2bec2756",
+              "author_karma": 0,
+              "content": "The only way they lose Tom (and Zendaya) is if they refuse to let him do other projects he wants to do. I don't just mean let him do other jobs, but they will likely have to bankroll whatever he wants to do for the foreseeable future if he so chooses",
+              "timestamp": "2026-08-03T10:43:23+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1f3toj",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1f7w32",
+                  "author": "reddit_user_9180d367a86f",
+                  "author_karma": 0,
+                  "content": "Yea - I mean I think what I'm trying to say is that he's still in a young phase of acting where he's *likely* still exploring and *likely* enjoying the projects that he's doing. \n\nYou can certainly tell when an actor starts taking more and more jobs just to pay for their 3rd house, even though their heart isn't in that particular project, and I think he has a ways to go until he's there.\n\nBut for all we know he's another Daniel Radcliffe, who got what he needed financially and seemingly just does the projects that he finds enjoyable.",
+                  "timestamp": "2026-08-03T10:46:56+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1f7e72",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1f8atb",
+                      "author": "reddit_user_77ad2bec2756",
+                      "author_karma": 0,
+                      "content": "Oh yeah, I wasn't disagreeing with you. Either of them are money printers",
+                      "timestamp": "2026-08-03T10:49:50+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1f7w32",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p1f46bf",
+          "author": "reddit_user_fbf4c9a7c7ae",
+          "author_karma": 0,
+          "content": "How are you people not sick and tired of all these Superhero movies??",
+          "timestamp": "2026-08-03T10:19:17+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1f5b6h",
+              "author": "reddit_user_e6b461a71a1c",
+              "author_karma": 0,
+              "content": "Because they're a fun escape from the monotony of everyday life for a couple of hours. It's really not that astonishing. ",
+              "timestamp": "2026-08-03T10:27:52+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1f46bf",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1f5thr",
+                  "author": "reddit_user_fbf4c9a7c7ae",
+                  "author_karma": 0,
+                  "content": "There are tons of things that can accomplish that. Including mindless fun. I’m not saying you only have to do or watch intellectually stimulating stuff. Dumb entertainment is totally fine.\n\nI don’t get how people can still watch this never ending barrage of movies that are all the same, though. They’re all the same. They can basically be made by AI by now, that’s how utterly predictable and formulaic they are,",
+                  "timestamp": "2026-08-03T10:31:42+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1f5b6h",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1f64ur",
+                      "author": "reddit_user_e6b461a71a1c",
+                      "author_karma": 0,
+                      "content": "A billion in one weekend just tells me people aren't anywhere near as fatigued with super heroes as others make out. \n\nSpiderman is also ultra popular/likeable as is Tom Holland 🤷‍♂️",
+                      "timestamp": "2026-08-03T10:34:04+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1f5thr",
+                      "depth": 3,
+                      "replies": []
+                    },
+                    {
+                      "comment_id": "p1f8cdv",
+                      "author": "reddit_user_1ba3ce50501f",
+                      "author_karma": 0,
+                      "content": "Because they’re not all the same lmfao",
+                      "timestamp": "2026-08-03T10:50:09+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1f5thr",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "comment_id": "p1f5m6c",
+              "author": "reddit_user_39bff33ead0a",
+              "author_karma": 0,
+              "content": "what do you mean \"you people\"",
+              "timestamp": "2026-08-03T10:30:11+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1f46bf",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1f5wqq",
+                  "author": "reddit_user_fbf4c9a7c7ae",
+                  "author_karma": 0,
+                  "content": "Erm… the people that watch these movies 🤷‍♂️",
+                  "timestamp": "2026-08-03T10:32:23+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1f5m6c",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1f72i2",
+                      "author": "reddit_user_39bff33ead0a",
+                      "author_karma": 0,
+                      "content": "you realise that it comes across as dismissive and insulting?\n\nthat there are spiderman fans wholly independant to Avengers/MCU fans didnt occur to you ?\n\ndo you ask the same derogatory question of sports fans ?  \"Hey Nascar fans, how do you people enjoy 500 laps of left turns?\"\n\nof coffee drinkers ? of religion ?\n\n  \ntheres about 8 billion souls on the planet, let em enjoy what they enjoy wiithout chucking rocks at em friend.",
+                      "timestamp": "2026-08-03T10:41:03+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1f5wqq",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p1f46pz",
+          "author": "reddit_user_4922cc6ae20c",
+          "author_karma": 0,
+          "content": "I did find it odd him casually wandering around in the full suit. Like when he goes to Damage Control for a meeting and spends 10 minutes on a tour of the department. In his suit. ",
+          "timestamp": "2026-08-03T10:19:22+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1eu4dk",
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1f5682",
+              "author": "reddit_user_febc5abdfbf0",
+              "author_karma": 0,
+              "content": "To me it felt very much like a comic book issue in that way. Spidey always has his suit on when he's \"on the job\"",
+              "timestamp": "2026-08-03T10:26:48+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1f46pz",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p1f75v5",
+              "author": "reddit_user_565c2e336f62",
+              "author_karma": 0,
+              "content": "It makes sense because the NYC Mayor gives Spiderman the key to the city, and he gets the key in his full suit, so it's almost people are okay with a guy dressed up in a spider costume wandering around the streets and helping people.",
+              "timestamp": "2026-08-03T10:41:43+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1f46pz",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p1f7hf5",
+              "author": "reddit_user_1ba3ce50501f",
+              "author_karma": 0,
+              "content": "I think that’s brilliant, it shows how Peter has tried to completely erase himself, he just is Spider-Man, no one who knows him sees him without his suit ",
+              "timestamp": "2026-08-03T10:44:01+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1f46pz",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1f478i",
+          "author": "reddit_user_898e35163675",
+          "author_karma": 0,
+          "content": "This one felt like a filler. It was just good throughout the movie. It introduced a new character and that's about it. No big pay off. Everything just felt fine. ",
+          "timestamp": "2026-08-03T10:19:29+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1ejbqf",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1f4h66",
+          "author": "reddit_user_618cf007f9eb",
+          "author_karma": 0,
+          "content": "I don't think how good the movie is really factors in much in the case of Spider-Man specifically. Especially opening weekend visits are usually sold out before the reviews (from both critics and the public) come in, and that's the case whether or not the movie turns out good. \n\nI'm not saying the movie _isn't_ good, I'm saying that Spider-Man is one of those cash cows that would sell well in its first weekend either way.",
+          "timestamp": "2026-08-03T10:21:33+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1eja85",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1f4kjf",
+          "author": "reddit_user_42ae84f05c78",
+          "author_karma": 0,
+          "content": "Millie Bobbie Brown is temu Sadie Sink",
+          "timestamp": "2026-08-03T10:22:15+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1elssq",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1f4uyn",
+          "author": "reddit_user_be2e549b316d",
+          "author_karma": 0,
+          "content": "Spider-Man 28: 28 Movies Later",
+          "timestamp": "2026-08-03T10:24:26+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1ew98i",
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1f5obq",
+              "author": "reddit_user_298f5be39529",
+              "author_karma": 0,
+              "content": "Spider-Man\n\n(re-re-reboot)",
+              "timestamp": "2026-08-03T10:30:37+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1f4uyn",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1f51et",
+          "author": "reddit_user_39bff33ead0a",
+          "author_karma": 0,
+          "content": "Spiderman : Days of Pearly Spencer.",
+          "timestamp": "2026-08-03T10:25:47+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1eue6x",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1f55vq",
+          "author": "reddit_user_1881b7b643ad",
+          "author_karma": 0,
+          "content": "Spiderman: One more Day\nSpiderman: Nah fuck it it, let's keep going .. day",
+          "timestamp": "2026-08-03T10:26:44+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1eue6x",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1f58u6",
+          "author": "reddit_user_8bec78e2481c",
+          "author_karma": 0,
+          "content": "Started off a bit rough and clanky with too much goofy forced exposition but got great half way and ended amazing. 3 Swims!",
+          "timestamp": "2026-08-03T10:27:22+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1f59cf",
+          "author": "reddit_user_39bff33ead0a",
+          "author_karma": 0,
+          "content": "\\*Bernthal grunt\\*",
+          "timestamp": "2026-08-03T10:27:29+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1em29q",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1f5nhp",
+          "author": "reddit_user_8c8717d6d893",
+          "author_karma": 0,
+          "content": "That’s so silly. The movies are not the same in any capacity just because you’re bored of them. ",
+          "timestamp": "2026-08-03T10:30:27+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1emnwo",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1f5qea",
+          "author": "reddit_user_29f4455f4ca7",
+          "author_karma": 0,
+          "content": "She's easily the best out of all the kid actors in Stranger Things ",
+          "timestamp": "2026-08-03T10:31:03+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1elssq",
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1f73vf",
+              "author": "[deleted]",
+              "author_karma": 0,
+              "content": "[removed]",
+              "timestamp": "2026-08-03T10:41:19+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1f5qea",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1f5qw0",
+          "author": "reddit_user_8c8717d6d893",
+          "author_karma": 0,
+          "content": "No. \n\nIt was new and interesting. \n\nNo. \n\nOk. ",
+          "timestamp": "2026-08-03T10:31:09+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1euioz",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1f6p84",
+          "author": "reddit_user_d78f9d00567b",
+          "author_karma": 0,
+          "content": "Brand New Arthritis ",
+          "timestamp": "2026-08-03T10:38:19+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1emago",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1f6x9q",
+          "author": "reddit_user_475504c0b9a1",
+          "author_karma": 0,
+          "content": "Why this movie so popular?",
+          "timestamp": "2026-08-03T10:39:59+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1f7ru1",
+              "author": "reddit_user_df15b299549a",
+              "author_karma": 0,
+              "content": "Yeah it actually sucked. People wanted to see movies/younger gen? Idk",
+              "timestamp": "2026-08-03T10:46:06+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1f6x9q",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p1f8e4m",
+              "author": "reddit_user_1ba3ce50501f",
+              "author_karma": 0,
+              "content": "Cause it’s really good?",
+              "timestamp": "2026-08-03T10:50:29+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1f6x9q",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1f756z",
+          "author": "reddit_user_b0179063798f",
+          "author_karma": 0,
+          "content": "As it should have. It's cringe that it's still going despite the following movies are still good. Narratively speaking it should have just ended",
+          "timestamp": "2026-08-03T10:41:34+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1ekuia",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1f79re",
+          "author": "reddit_user_a753f786881c",
+          "author_karma": 0,
+          "content": "Spider-Man: Die Another Day",
+          "timestamp": "2026-08-03T10:42:29+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1eue6x",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1f7h79",
+          "author": "reddit_user_025c47d060bd",
+          "author_karma": 0,
+          "content": "Yeah the fight scene with Scorpion I was like “hell fucking yeah” ",
+          "timestamp": "2026-08-03T10:43:59+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1elc4p",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1f7t2a",
+          "author": "reddit_user_1ba3ce50501f",
+          "author_karma": 0,
+          "content": " Batman is nowhere near as relatable to ordinary people (I mean hes a fucking billionaire while Peter is broke lol) and imo doesn’t have as much appeal to kids, or his films dont anyway ",
+          "timestamp": "2026-08-03T10:46:21+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1ev525",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1f849b",
+          "author": "reddit_user_05bc551420dc",
+          "author_karma": 0,
+          "content": "Yes, that was like the first thing I noticed! The beginning of the movie with the montage of him doing his day to day Spider-Man-ing felt ripped straight out of the games, in a good way. The camera angles, the way he was using his gadgets, the different costumes he wears... They even do the boxers and mask costume! I was feeling like Leo pointing at the screen the whole time. ",
+          "timestamp": "2026-08-03T10:48:32+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1elc4p",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1f858u",
+          "author": "reddit_user_1ba3ce50501f",
+          "author_karma": 0,
+          "content": "Tom Holland’s Spider-Man, Sadie Sink’s >!Jean grey!< and Hugh Jackmans wolverine…\n\nLikely alongside the debut of the rest of the MCU’s Xmen, that film might just beat avatar if doomsday is good enough to hype it up…",
+          "timestamp": "2026-08-03T10:48:45+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1ele64",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1f8drx",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-03T10:50:25+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1f8kye",
+          "author": "reddit_user_b8ee06af5ce6",
+          "author_karma": 0,
+          "content": "I mean it’s him and Batman, and Spidey is probably way ahead with how relatable he is like with the Parker Luck. Look at the games too, the PlayStation Spidey Series has sold 50 million copies. Spidey is insane",
+          "timestamp": "2026-08-03T10:51:49+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1ein1m",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1f8oaa",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-03T10:52:27+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1f8ohc",
+          "author": "reddit_user_80ad099c9ba0",
+          "author_karma": 0,
+          "content": "Zendaya with a crazy year: Odyssey, BND and Dune3. ",
+          "timestamp": "2026-08-03T10:52:29+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1eig6a",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1f8q8u",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-03T10:52:50+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1euvtr",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1f92mg",
+          "author": "reddit_user_b8ee06af5ce6",
+          "author_karma": 0,
+          "content": "I like the Raimi ones more still since NYC feels like a character with all the small side characters in those films. BND is the closest to matching that for sure. Also the Raimi films are self contained. You don’t have to anticipate part of the movie trying to set up like the Avengers for future films ",
+          "timestamp": "2026-08-03T10:55:16+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1ep71b",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1f9548",
+          "author": "reddit_user_eb7c1d840d1e",
+          "author_karma": 0,
+          "content": "Naw they’ll transition him to uncle Ben role at 85 I’m hearing ",
+          "timestamp": "2026-08-03T10:55:45+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1eoa0l",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1f9ar3",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-03T10:56:49+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1ein1m",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1f9cpa",
+          "author": "reddit_user_6034b1fa2eb1",
+          "author_karma": 0,
+          "content": "Spiderman: Two Days Before the Day After Tomorrow",
+          "timestamp": "2026-08-03T10:57:11+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1eue6x",
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run016_post03_seed083",
+      "post_slot": 3,
+      "seed_index": 83,
+      "source_raw_post_id": "1ve6g4c",
+      "source_product_dir": "worldnews",
+      "source_file": "https://www.reddit.com/r/worldnews/comments/1ve6g4c/british_band_massive_attack_barred_from_singapore/",
+      "post_type": "Israel/Palestine",
+      "title": "British band Massive Attack barred from Singapore over Palestinian flag display",
+      "author": "reddit_user_bde1e90b951b",
+      "author_karma": 0,
+      "content": "British band Massive Attack barred from Singapore over Palestinian flag display",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p1ejnbe",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-03T07:28:38+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1ek8ht",
+          "author": "reddit_user_feac8e1408fe",
+          "author_karma": 0,
+          "content": "I never really believed that the Jewish people controlled everything, cuz that would be crazy. \n\nThen ive seen what happens when you openly disagree with Isreal in the US, Canada, England, Singapore, France and Germany. And its all coming from officials and law enforcement. We haven't even gotten into the individuals who act like you supporting a certain people is the same as saying death to the jews. ",
+          "timestamp": "2026-08-03T07:33:38+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1ela0f",
+              "author": "reddit_user_38f19014dfca",
+              "author_karma": 0,
+              "content": "This right here to any one curious - is when your \"Anti-Israel\" turns into straight anti-semitism.\n\n>Singapore, known for its tough laws on public speech and assembly, bans the open display of all foreign flags, national emblems or banners without a permit.\n\nThis has nothing to do with Israel or the Jewish people and everything to do with fairly applying their laws (however misguided you think they may be). ",
+              "timestamp": "2026-08-03T07:42:30+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1ek8ht",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p1elaea",
+              "author": "reddit_user_f7bde912c4ba",
+              "author_karma": 0,
+              "content": "\"I didn't believe it now but I've seen the truth, this crazy conspiracy is real\"\n\nor maybe you *are* just crazy",
+              "timestamp": "2026-08-03T07:42:35+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1ek8ht",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p1elbxs",
+              "author": "reddit_user_4eba3302815f",
+              "author_karma": 0,
+              "content": "Usually advocating for dictatorships and theocracies at the expense of democracies is a losing battle.  ",
+              "timestamp": "2026-08-03T07:42:57+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1ek8ht",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p1eljft",
+              "author": "reddit_user_538077911901",
+              "author_karma": 0,
+              "content": "Yeah, you are crazy.",
+              "timestamp": "2026-08-03T07:44:43+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1ek8ht",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1eka9l",
+          "author": "reddit_user_c02ff2248092",
+          "author_karma": 0,
+          "content": "Fuck Singapore ",
+          "timestamp": "2026-08-03T07:34:03+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1ekgqy",
+              "author": "reddit_user_76f66d8c8c42",
+              "author_karma": 0,
+              "content": "Rules have to be applied consistently and fairly. If the rule is \"no politics\", then no politics.\n\nReddit downvote machine - begin!",
+              "timestamp": "2026-08-03T07:35:35+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1eka9l",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1en4dj",
+                  "author": "reddit_user_2e1c4335bd66",
+                  "author_karma": 0,
+                  "content": "True. Your values should also be applied consistently and fairly. I take it that you're also okay with your own government restricting free speech to such a degree that all foreign flags need a permit to be displayed publicly. I'm assuming you're also okay with your own government selectively enforcing that rule to crack down on speech it doesn't like?\n\nAfterall we would hate to not be consistent or fair.",
+                  "timestamp": "2026-08-03T07:58:07+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1ekgqy",
+                  "depth": 2,
+                  "replies": []
+                },
+                {
+                  "comment_id": "p1enokd",
+                  "author": "reddit_user_355f44e7ef09",
+                  "author_karma": 0,
+                  "content": "\"No Politics\" unless \"Reddit-approved politics\". ",
+                  "timestamp": "2026-08-03T08:02:54+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1ekgqy",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            },
+            {
+              "comment_id": "p1ekic5",
+              "author": "reddit_user_b514093e6c2f",
+              "author_karma": 0,
+              "content": "Fuck the british. Follow the law! If you dont want to then you're not welcome. ",
+              "timestamp": "2026-08-03T07:35:58+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1eka9l",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1els2w",
+                  "author": "reddit_user_74d320e09ebe",
+                  "author_karma": 0,
+                  "content": "This isn't \"The British\". It's 2 musicians, who are British.",
+                  "timestamp": "2026-08-03T07:46:44+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1ekic5",
+                  "depth": 2,
+                  "replies": []
+                },
+                {
+                  "comment_id": "p1emlpr",
+                  "author": "reddit_user_d6b17bf135a7",
+                  "author_karma": 0,
+                  "content": "What nation are you from?\n\nYou know, so we can attack you for the actions of 4 random people from your country.",
+                  "timestamp": "2026-08-03T07:53:43+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1ekic5",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1g1mrj",
+                      "author": "reddit_user_bd45bf294433",
+                      "author_karma": 0,
+                      "content": "Presumably Singapore, you know which is known to be a fair and compassionate place to live. Affordable as hell too /s",
+                      "timestamp": "2026-08-03T13:38:51+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1emlpr",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "comment_id": "p1elxeu",
+              "author": "reddit_user_1c5a599b3a5b",
+              "author_karma": 0,
+              "content": "Yeah fuck Singapore because it’s a dictatorship without free speech and with \nCorporal\n Punishment as a Form of Punishment\n \n\nBut you don’t care about that don’t you ? \n\nIt’s only about virtue signaling for Palestine the rest isn’t important huh. ",
+              "timestamp": "2026-08-03T07:48:00+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1eka9l",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p1en31c",
+              "author": "reddit_user_103b2e4df1de",
+              "author_karma": 0,
+              "content": "Respect to Singapore they don't tolerate any nonsense. ",
+              "timestamp": "2026-08-03T07:57:48+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1eka9l",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1enzxt",
+                  "author": "[deleted]",
+                  "author_karma": 0,
+                  "content": "[removed]",
+                  "timestamp": "2026-08-03T08:05:36+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1en31c",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            },
+            {
+              "comment_id": "p1en4el",
+              "author": "[deleted]",
+              "author_karma": 0,
+              "content": "[removed]",
+              "timestamp": "2026-08-03T07:58:08+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1eka9l",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p1en4ps",
+              "author": "reddit_user_bd45bf294433",
+              "author_karma": 0,
+              "content": "Reddit hates unfair draconian rules except when it comes to Singapore I’ve noticed ",
+              "timestamp": "2026-08-03T07:58:12+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1eka9l",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1ekebm",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-03T07:35:01+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1elewz",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-03T07:43:39+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1elgsf",
+          "author": "reddit_user_538077911901",
+          "author_karma": 0,
+          "content": "Performative performance gets consequences. What is the point of doing it in Singapore who has nothing to do with the situation.",
+          "timestamp": "2026-08-03T07:44:05+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1emw8b",
+              "author": "[deleted]",
+              "author_karma": 0,
+              "content": "[removed]",
+              "timestamp": "2026-08-03T07:56:11+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1elgsf",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p1enf43",
+              "author": "reddit_user_bba1284d0334",
+              "author_karma": 0,
+              "content": "Performative in what way?",
+              "timestamp": "2026-08-03T08:00:38+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1elgsf",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1enufq",
+                  "author": "reddit_user_42cc94389114",
+                  "author_karma": 0,
+                  "content": "Moral support and dissent is offensive, don't you know",
+                  "timestamp": "2026-08-03T08:04:18+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1enf43",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            },
+            {
+              "comment_id": "p1enm4k",
+              "author": "reddit_user_bc80742f889e",
+              "author_karma": 0,
+              "content": "Well it’s made headlines, and you’re commenting on it. So I guess that was the point?  I’m sure the guys are fine skipping Singapore from now on too.  Mezzanine is an all time classic so the Singaporeans will be missing out.  ",
+              "timestamp": "2026-08-03T08:02:18+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1elgsf",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1eotoe",
+                  "author": "reddit_user_4bd4dc24b321",
+                  "author_karma": 0,
+                  "content": "Getting banned from a country, that too one well governed like Singapore, is not something I would be proud about.\n\nAny publicity is not good publicity.",
+                  "timestamp": "2026-08-03T08:12:34+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1enm4k",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1erze6",
+                      "author": "reddit_user_bc80742f889e",
+                      "author_karma": 0,
+                      "content": "Lol, these comments are very bot-like. ‘There is great shame in being banned by a country as honorable and respected as Singapore. I for one agree fully with this decision. End transmission.’",
+                      "timestamp": "2026-08-03T08:39:37+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1eotoe",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "p1f21lu",
+                          "author": "reddit_user_4bd4dc24b321",
+                          "author_karma": 0,
+                          "content": "Lamo.. New gas-lighting technique unlocked. Anybody that does not agree with me is a bot. ",
+                          "timestamp": "2026-08-03T10:02:58+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "p1erze6",
+                          "depth": 4,
+                          "replies": [
+                            {
+                              "comment_id": "p1fuddg",
+                              "author": "reddit_user_bd45bf294433",
+                              "author_karma": 0,
+                              "content": "Keep simping for Singapore. Maybe yall have a caning fetish or something",
+                              "timestamp": "2026-08-03T13:02:48+00:00",
+                              "likes": 1,
+                              "dislikes": 0,
+                              "parent_comment_id": "p1f21lu",
+                              "depth": 5,
+                              "replies": [
+                                {
+                                  "comment_id": "p1fwg36",
+                                  "author": "reddit_user_4bd4dc24b321",
+                                  "author_karma": 0,
+                                  "content": "Keep Hating Singapore. Maybe yall like a drug addicted society or something. ",
+                                  "timestamp": "2026-08-03T13:13:25+00:00",
+                                  "likes": 1,
+                                  "dislikes": 0,
+                                  "parent_comment_id": "p1fuddg",
+                                  "depth": 6,
+                                  "replies": [
+                                    {
+                                      "comment_id": "p1fxexm",
+                                      "author": "reddit_user_bd45bf294433",
+                                      "author_karma": 0,
+                                      "content": "Maybe yall like fascism and being spanked. To each their own. I’d rather be in a society with genuine compassion and people exploring life than one that punishes and beats people for being curious. If I want to use drugs that should be my right. It’s somehow fine when it’s alcohol or tobacco or caffeine, the first two of which contribute to lots of deaths on their own. Keep licking the boots of your wannabe-fascist Signapore",
+                                      "timestamp": "2026-08-03T13:18:15+00:00",
+                                      "likes": 1,
+                                      "dislikes": 0,
+                                      "parent_comment_id": "p1fwg36",
+                                      "depth": 7,
+                                      "replies": []
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "comment_id": "p1epfv7",
+                  "author": "reddit_user_f391b966eef5",
+                  "author_karma": 0,
+                  "content": ">So I guess that was the point?\n\nTo stay relevant and sell albums. \n\n>m sure the guys are fine skipping Singapore from now on \n\nThey were happy enough to play in Moscow in 2018 even when the Russians had invaded the Donbas. Their moral are about what youd expect from that kind of group. ",
+                  "timestamp": "2026-08-03T08:17:49+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1enm4k",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            },
+            {
+              "comment_id": "p1eo89p",
+              "author": "reddit_user_cf735ef7c787",
+              "author_karma": 0,
+              "content": "I kinda love this comment on multiple levels.",
+              "timestamp": "2026-08-03T08:07:33+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1elgsf",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1em5x8",
+          "author": "reddit_user_0a3f1126d143",
+          "author_karma": 0,
+          "content": "I used to have a dim view of Singapore and their restrictions such as around protests etc but i get it now. They don't want an unproductive clown show in their country. I mean who would? ",
+          "timestamp": "2026-08-03T07:50:01+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1emyq7",
+              "author": "[deleted]",
+              "author_karma": 0,
+              "content": "[removed]",
+              "timestamp": "2026-08-03T07:56:47+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1em5x8",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p1enjcs",
+              "author": "reddit_user_bba1284d0334",
+              "author_karma": 0,
+              "content": "Caring about Palestine is a clown show?",
+              "timestamp": "2026-08-03T08:01:38+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1em5x8",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1enwn4",
+                  "author": "reddit_user_bd45bf294433",
+                  "author_karma": 0,
+                  "content": "Right like what the fuck are these comments. Caring about and speaking against atrocities when you have a platform that can communicate that message broadly and quickly is suddenly clownish?",
+                  "timestamp": "2026-08-03T08:04:48+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1enjcs",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1eoczk",
+                      "author": "reddit_user_c4bcd0a43b45",
+                      "author_karma": 0,
+                      "content": "fans of massive attack know about the situation, i guess every band should just virtue signal as much as they can so more people buy their tickets ",
+                      "timestamp": "2026-08-03T08:08:39+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1enwn4",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "p1frqqk",
+                          "author": "[deleted]",
+                          "author_karma": 0,
+                          "content": "[removed]",
+                          "timestamp": "2026-08-03T12:48:59+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "p1eoczk",
+                          "depth": 4,
+                          "replies": []
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "comment_id": "p1enycn",
+                  "author": "reddit_user_2b5ef25ab0e3",
+                  "author_karma": 0,
+                  "content": "Yes, unlessassive attck donate all proceeds to the cause",
+                  "timestamp": "2026-08-03T08:05:13+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1enjcs",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1eogv6",
+                      "author": "reddit_user_42cc94389114",
+                      "author_karma": 0,
+                      "content": "Unless you are personally donating your entire income to some cause, by your own reasoning, your own opinion on anything is hypocritical and therefore invalid",
+                      "timestamp": "2026-08-03T08:09:34+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1enycn",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                },
+                {
+                  "comment_id": "p1enyi4",
+                  "author": "reddit_user_42cc94389114",
+                  "author_karma": 0,
+                  "content": "Moral support and dissent is offensive, don't you know",
+                  "timestamp": "2026-08-03T08:05:15+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1enjcs",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            },
+            {
+              "comment_id": "p1ep5x6",
+              "author": "reddit_user_81b48e4422b9",
+              "author_karma": 0,
+              "content": "Hopefully that means next time Massive Attack will come here instead.",
+              "timestamp": "2026-08-03T08:15:27+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1em5x8",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1en3eu",
+          "author": "reddit_user_10cea15f37ab",
+          "author_karma": 0,
+          "content": "It’s not like massive attack tours often, and the message got air time. It’s also massive attack. Most people’s takes in here are surface level critical thinking and quite funny.",
+          "timestamp": "2026-08-03T07:57:54+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1eo5qw",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-03T08:06:58+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1eo6vs",
+          "author": "reddit_user_57247089f2de",
+          "author_karma": 0,
+          "content": "Good for Singapore, applying rules fairly ",
+          "timestamp": "2026-08-03T08:07:14+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1eoiz3",
+          "author": "reddit_user_f391b966eef5",
+          "author_karma": 0,
+          "content": "Nothing to do with Palestine, they could have been flying a Greenland flag and the same would have happened. \n\n",
+          "timestamp": "2026-08-03T08:10:04+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1eolvq",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-03T08:10:45+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1ep9wl",
+          "author": "reddit_user_5826164617c2",
+          "author_karma": 0,
+          "content": "It’s like displaying Russian flag in a concert for no reason.",
+          "timestamp": "2026-08-03T08:16:24+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1eru1v",
+          "author": "reddit_user_f681a3a34bf0",
+          "author_karma": 0,
+          "content": "Take your provocations somewhere else ",
+          "timestamp": "2026-08-03T08:38:21+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run016_post04_seed084",
+      "post_slot": 4,
+      "seed_index": 84,
+      "source_raw_post_id": "1ve6hvd",
+      "source_product_dir": "worldnews",
+      "source_file": "https://www.reddit.com/r/worldnews/comments/1ve6hvd/winter_is_coming_ukraine_fears_its_toughest_test/",
+      "post_type": "Russia/Ukraine",
+      "title": "'Winter is coming': Ukraine fears its toughest test since Russia's full-scale invasion",
+      "author": "reddit_user_bde1e90b951b",
+      "author_karma": 0,
+      "content": "'Winter is coming': Ukraine fears its toughest test since Russia's full-scale invasion",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p1el06y",
+          "author": "reddit_user_8db14ce2ce36",
+          "author_karma": 0,
+          "content": "It’s going to be a shitty winter for everyone in the region",
+          "timestamp": "2026-08-03T07:40:11+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1el7cb",
+          "author": "reddit_user_b4c9b3499869",
+          "author_karma": 0,
+          "content": "Works both ways though.\nRussias oil issues affect bringing crops in, generators for power and gwtting around in the freezing cold.\n",
+          "timestamp": "2026-08-03T07:41:53+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1f0hg9",
+              "author": "reddit_user_4dbfd262de5e",
+              "author_karma": 0,
+              "content": "Yes but russia is a dictatorship, so it's less affected as long as it doesn't completely collapse. ",
+              "timestamp": "2026-08-03T09:50:35+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1el7cb",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p1f4w7z",
+              "author": "[deleted]",
+              "author_karma": 0,
+              "content": "[removed]",
+              "timestamp": "2026-08-03T10:24:42+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1el7cb",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1eympz",
+          "author": "reddit_user_d7ac9f00ba57",
+          "author_karma": 0,
+          "content": "Ukraine is like a feral cat because you give it something, it thinks it's THE place to get more.  Ukraine needs to request support from nations that haven't given them any yet.\n\nIt appears the current supporters have already given ample support.  The USA is $188 billion deep and that number is from this past Spring.  \n\nThen Ukraine will have it's hand out to rebuild, so it's time to start saying no now.",
+          "timestamp": "2026-08-03T09:35:26+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1ezrd0",
+              "author": "reddit_user_00c426574dc0",
+              "author_karma": 0,
+              "content": "Your mom should have said no to your dad.",
+              "timestamp": "2026-08-03T09:44:38+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1eympz",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1f0lky",
+                  "author": "reddit_user_d7ac9f00ba57",
+                  "author_karma": 0,
+                  "content": "Feel free to donate your own money or get your country to donate more. ",
+                  "timestamp": "2026-08-03T09:51:30+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1ezrd0",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1f13rc",
+                      "author": "[deleted]",
+                      "author_karma": 0,
+                      "content": "[removed]",
+                      "timestamp": "2026-08-03T09:55:36+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1f0lky",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "comment_id": "p1f09n3",
+              "author": "reddit_user_15c9a7226b3b",
+              "author_karma": 0,
+              "content": "Feral cat, huh?  What a Russian sounding metaphor.  \n\n$188 billion is a meaningless number, because the money isn’t actually going to Ukraine, it’s going to American defense contractors and weapons manufacturers.  It’s no different than the trillion we dumped onto blowing shit up in Iran for no reason.",
+              "timestamp": "2026-08-03T09:48:48+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1eympz",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1f1d6v",
+          "author": "reddit_user_a329f0831e58",
+          "author_karma": 0,
+          "content": "It will not be tougher than the first winter, when Russia crushed our energy and heating facilities. Now many are prepared much better. ",
+          "timestamp": "2026-08-03T09:57:41+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1f7z7x",
+              "author": "reddit_user_f2c62e147549",
+              "author_karma": 0,
+              "content": "Debatable. It can always be way, way worse. Many power plants are barely holding on after the previous attacks. And who's prepared? Certainly not the government lol. And there's only so much you can do as a regular city resident living in a highrise - provided you're wealthy enough to do something, and it's a pretty small percentage of the population.",
+              "timestamp": "2026-08-03T10:47:34+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1f1d6v",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

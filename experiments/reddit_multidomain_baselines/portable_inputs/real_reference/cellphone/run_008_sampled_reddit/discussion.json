@@ -1,0 +1,519 @@
+{
+  "meta": {
+    "product_category": "cellphone",
+    "baseline": "real_reddit_reference",
+    "run_id": "run_008_sampled_reddit"
+  },
+  "posts": [
+    {
+      "post_id": "real_run008_post00_seed040",
+      "post_slot": 0,
+      "seed_index": 40,
+      "source_raw_post_id": "1vcq183",
+      "source_product_dir": "GooglePixel",
+      "source_file": "https://www.reddit.com/r/GooglePixel/comments/1vcq183/security_flaw/",
+      "post_type": "reddit_post",
+      "title": "Security flaw",
+      "author": "reddit_user_0fe413d0e398",
+      "author_karma": 0,
+      "content": "Security flaw\n\nThe other day, I accidentally lost all of my saved passwords, and recovering them was a huge hassle.\n\nI use a Google Pixel, and something about this doesn't make sense to me. If I want to access my saved passwords, I have to open the Password Manager and verify with my fingerprint. Yet anyone who has access to my unlocked phone can go into Chrome, clear browsing data, and delete all saved passwords without any additional verification?\n\nIn my case, my partner was trying to clear browsing data because I asked her to, but the \"Passwords\" option was checked and she didn't notice.\n\nWhy is the \"Saved Passwords\" option included in the browsing data deletion menu in the first place? Deleting passwords is a major action and should require an extra confirmation or biometric authentication.\n\nTo prevent this from happening in the future, I have logged out of Chrome browser. I put it aside and I started using Firefox.",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p135vwg",
+          "author": "reddit_user_02441f6a7bdf",
+          "author_karma": 0,
+          "content": "Holy shit what ? Damn",
+          "timestamp": "2026-08-01T15:44:23+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p136qcb",
+          "author": "reddit_user_4c9e69757f66",
+          "author_karma": 0,
+          "content": "That sucks, but I'd suggest switching to a third party password manager like Bitwarden (free, open source). That way, your passwords arent tied to your Google account or chrome browser. ",
+          "timestamp": "2026-08-01T15:48:25+00:00",
+          "likes": 15,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p137zmo",
+              "author": "reddit_user_6f29d51a00fb",
+              "author_karma": 0,
+              "content": "I used an iPhone for 10 years before switching to a Pixel this year. iOS isn't designed that way, and there's nothing wrong with using Apple's Password Manager.\n\nPersonally, I don't use third-party password managers because I don't fully trust any company with my passwords. No matter what level of encryption they claim to have, I assume there is always some form of access or vulnerability. Google and Apple may have access under certain circumstances as well, but I'd rather trust large, established platform providers than hand over all of my credentials to just a company! They all have backdoors or data leaks at some point.",
+              "timestamp": "2026-08-01T15:54:27+00:00",
+              "likes": -11,
+              "dislikes": 0,
+              "parent_comment_id": "p136qcb",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p139wz2",
+                  "author": "reddit_user_4c9e69757f66",
+                  "author_karma": 0,
+                  "content": "The reason Bitwarden being open source is important is that it allows for total transparency and independent security audits. It's super popular and the world's most knowledgeable cyber security professionals are able to continuously look through all the code to search for backdoors, malicious code, etc. Bitwarden essentially has real-time crowd sourced security and verifiable privacy.\n \nThat's not the case with closed source password managers from Google or Apple. ",
+                  "timestamp": "2026-08-01T16:03:38+00:00",
+                  "likes": 10,
+                  "dislikes": 0,
+                  "parent_comment_id": "p137zmo",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p13pd13",
+                      "author": "reddit_user_3c6910331114",
+                      "author_karma": 0,
+                      "content": "Adding on to this, Bitwarden can also be self hosted with basic features for free. ",
+                      "timestamp": "2026-08-01T17:17:36+00:00",
+                      "likes": 3,
+                      "dislikes": 0,
+                      "parent_comment_id": "p139wz2",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                },
+                {
+                  "comment_id": "p13oi1z",
+                  "author": "reddit_user_254ac19b1ff0",
+                  "author_karma": 0,
+                  "content": "If Google or apple leak people's passwords it would be news for a week then everything would go back to normal. If bitwarden leaked people's passwords they would go out of business.\n\nAll major password managers encrypt your data client side so even if they had a major leak, your passwords are still secure if you are using a strong master password.\n\nAccounts don't get hacked from compromised password management services. They get hacked from weak passwords, reused passwords and phishing.",
+                  "timestamp": "2026-08-01T17:13:30+00:00",
+                  "likes": 3,
+                  "dislikes": 0,
+                  "parent_comment_id": "p137zmo",
+                  "depth": 2,
+                  "replies": []
+                },
+                {
+                  "comment_id": "p13va3y",
+                  "author": "reddit_user_0491c1cfcd5e",
+                  "author_karma": 0,
+                  "content": "Um... You were saving your passwords in Chrome up until now. You do know that Chrome is Google, right? And your solution is to switch to Firefox, presumably without an account, so no password syncing, so if your Firefox profile gets corrupted, your passwords will likely be gone again.",
+                  "timestamp": "2026-08-01T17:45:40+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p137zmo",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p13nv3v",
+          "author": "reddit_user_0f8ef21bbce1",
+          "author_karma": 0,
+          "content": "The security flaw is you in this scenario unfortunately, that does suck",
+          "timestamp": "2026-08-01T17:10:28+00:00",
+          "likes": 8,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p13rs3q",
+          "author": "reddit_user_9a296f4b79f8",
+          "author_karma": 0,
+          "content": "OP, I’m saying this as an iPhone owner: calling this a Pixel “security flaw” is borderline idiotic.\n\nThis has absolutely nothing to do with the Pixel.\n\nChrome is an application, Google Password Manager is a service, and both are available on iPhones. An iPhone running Chrome can also delete passwords stored in Google Password Manager. The precise menus may differ but the manufacturer of the phone is irrelevant. You could have created essentially the same disaster on an iPhone.\n\nYour Pixel did not malfunction or expose your credentials. You handed someone your unlocked phone, instructed her to perform a destructive operation, and neither of you read the options before confirming it. The device then did exactly what it was told.\n\nThat person literally had to click \"Chrome → Delete browsing data → **More options → Saved passwords → Delete data**\"\n\nThe fingerprint requirement prevents someone from viewing, copying, or using your passwords. Deletion is a separate operation. There is a legitimate argument that Chrome should place a stronger warning or biometric checkpoint in front of mass password deletion. That would be a criticism of Chrome’s interface. It is not, under any remotely coherent definition, a Pixel security vulnerability.\n\nYou had one effective repository for important credentials, no tested recovery process, another person operating your unlocked device, and apparently nobody involved who could be bothered to read a checkbox before authorizing permanent deletion.\n\nThen, instead of identifying Chrome as the software involved or questioning your own credential-management practices, you blamed the logo on the back of the phone.\n\nThis is why people dog on us for being iPhone owners.",
+          "timestamp": "2026-08-01T17:29:02+00:00",
+          "likes": 15,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p191su6",
+              "author": "reddit_user_2f9d8e094178",
+              "author_karma": 0,
+              "content": "There were a few more clicks actually. He also had to click \"Time Range\" --> \"All time\"",
+              "timestamp": "2026-08-02T13:27:02+00:00",
+              "likes": 2,
+              "dislikes": 0,
+              "parent_comment_id": "p13rs3q",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p13t5wr",
+          "author": "reddit_user_760b3a37fc39",
+          "author_karma": 0,
+          "content": "Selecting \"Passwords\" when clearing data is not a security flaw or bug",
+          "timestamp": "2026-08-01T17:35:37+00:00",
+          "likes": 3,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p13tolb",
+          "author": "reddit_user_f68f3aba0ffa",
+          "author_karma": 0,
+          "content": "I use Keepass as my password manager. I make backups of the password file, both offline and online.",
+          "timestamp": "2026-08-01T17:38:06+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p15wi1o",
+          "author": "reddit_user_fe791e39dbca",
+          "author_karma": 0,
+          "content": "doesnt chrome ask for your fingerprint when you try to clear browsing data",
+          "timestamp": "2026-08-02T00:03:18+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p163l3a",
+              "author": "reddit_user_6f29d51a00fb",
+              "author_karma": 0,
+              "content": "No it doesn't.\nBut passwords shouldn't be in the list anyways! ",
+              "timestamp": "2026-08-02T00:44:51+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p15wi1o",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "post_id": "real_run008_post01_seed041",
+      "post_slot": 1,
+      "seed_index": 41,
+      "source_raw_post_id": "1vcqqt7",
+      "source_product_dir": "Android",
+      "source_file": "https://www.reddit.com/r/Android/comments/1vcqqt7/how_the_devs_made_this_game_in_2012_to_run_in_an/",
+      "post_type": "Video",
+      "title": "How the devs made this game in 2012 to run in an iphone 4 and galaxy s3 with these graphics?",
+      "author": "reddit_user_0fe413d0e398",
+      "author_karma": 0,
+      "content": "How the devs made this game in 2012 to run in an iphone 4 and galaxy s3 with these graphics?\n\n[removed]",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p136c5k",
+          "author": "reddit_user_65884126434e",
+          "author_karma": 0,
+          "content": "Sorry [REDDIT_USER], but your submission was removed as you included a post body within your submission. The body text is often used to insert bias/opinion which violates Rule 6 in direct link submissions. Feel free to repost without the post body.\n\n\n*I am a bot, and this action was performed automatically. Please [contact the moderators of this subreddit](/message/compose/?to=/r/Android) if you have any questions or concerns.*",
+          "timestamp": "2026-08-01T15:46:31+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run008_post02_seed042",
+      "post_slot": 2,
+      "seed_index": 42,
+      "source_raw_post_id": "1vcrvd9",
+      "source_product_dir": "iphone",
+      "source_file": "https://www.reddit.com/r/iphone/comments/1vcrvd9/is_already_august_why_not_announce_the_new_iphone/",
+      "post_type": "Discussion",
+      "title": "Is already August, why not announce the new iPhone yet, what is the point?",
+      "author": "reddit_user_0fe413d0e398",
+      "author_karma": 0,
+      "content": "Is already August, why not announce the new iPhone yet, what is the point?\n\n🤷‍♂️",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p13fzlt",
+          "author": "reddit_user_80060520a66a",
+          "author_karma": 0,
+          "content": "Because everyone is on holidays and not ready to spend money on a new phone. When they get back from holidays and back into normal routine some retail therapy is what they’re looking for to fight the gloom of reality. ",
+          "timestamp": "2026-08-01T16:32:43+00:00",
+          "likes": 6,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p13g8gw",
+              "author": "reddit_user_ebaaca183d3c",
+              "author_karma": 0,
+              "content": "What..? Lol ",
+              "timestamp": "2026-08-01T16:33:55+00:00",
+              "likes": 0,
+              "dislikes": 0,
+              "parent_comment_id": "p13fzlt",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p13gh22",
+                  "author": "reddit_user_80060520a66a",
+                  "author_karma": 0,
+                  "content": "If you don’t believe they time the market you’re lost. ",
+                  "timestamp": "2026-08-01T16:35:04+00:00",
+                  "likes": 4,
+                  "dislikes": 0,
+                  "parent_comment_id": "p13g8gw",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p13q8w5",
+                      "author": "reddit_user_ebaaca183d3c",
+                      "author_karma": 0,
+                      "content": "What the fuck is a holiday, some euro trash, lol?",
+                      "timestamp": "2026-08-01T17:21:47+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p13gh22",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "comment_id": "p13gclm",
+              "author": "reddit_user_ae3edecb3341",
+              "author_karma": 0,
+              "content": "Sht the system proves to be 100 steps head every time",
+              "timestamp": "2026-08-01T16:34:28+00:00",
+              "likes": -3,
+              "dislikes": 0,
+              "parent_comment_id": "p13fzlt",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p13gw2f",
+                  "author": "reddit_user_c3e11e6df1ea",
+                  "author_karma": 0,
+                  "content": "I know not much about marketing or sales, but what I do know is the amount of psychology involved in both is absolutely fascinating",
+                  "timestamp": "2026-08-01T16:37:04+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p13gclm",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p13g8yk",
+          "author": "reddit_user_5b3252eec1b2",
+          "author_karma": 0,
+          "content": "It’s not ready to be released yet. Would be ready by September. Apple typically announces it then has it ready for delivery the following week. ",
+          "timestamp": "2026-08-01T16:33:59+00:00",
+          "likes": 9,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p13h3ub",
+          "author": "reddit_user_33891f1dfc61",
+          "author_karma": 0,
+          "content": "Because it comes out in September?",
+          "timestamp": "2026-08-01T16:38:05+00:00",
+          "likes": 6,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p13hanj",
+          "author": "reddit_user_fd66089e41e3",
+          "author_karma": 0,
+          "content": "See the Osborne effect  \nhttps://en.wikipedia.org/wiki/Osborne\\_effect",
+          "timestamp": "2026-08-01T16:39:01+00:00",
+          "likes": 4,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p13i7fo",
+              "author": "reddit_user_ae3edecb3341",
+              "author_karma": 0,
+              "content": "That makes sense, that explains why at work people have bought the iphone 17 recently instead of waiting for the iphone 18",
+              "timestamp": "2026-08-01T16:43:24+00:00",
+              "likes": 2,
+              "dislikes": 0,
+              "parent_comment_id": "p13hanj",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p13hl9f",
+          "author": "reddit_user_f6ee81dccf9f",
+          "author_karma": 0,
+          "content": "yeah, a real shame, apple being apple as usual",
+          "timestamp": "2026-08-01T16:40:25+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p13hptn",
+          "author": "reddit_user_de08bceb92df",
+          "author_karma": 0,
+          "content": "They always announce in September. ",
+          "timestamp": "2026-08-01T16:41:02+00:00",
+          "likes": 4,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p13hz9u",
+          "author": "reddit_user_7e1a64fe9156",
+          "author_karma": 0,
+          "content": "Because it's not September. If they did it in August this year, you'd be complaining next year why not announce it in July.",
+          "timestamp": "2026-08-01T16:42:19+00:00",
+          "likes": 3,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p13obb4",
+          "author": "reddit_user_5f0659d60eb8",
+          "author_karma": 0,
+          "content": "Why would they do that earlier? It is the same time every year.",
+          "timestamp": "2026-08-01T17:12:36+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run008_post03_seed043",
+      "post_slot": 3,
+      "seed_index": 43,
+      "source_raw_post_id": "1vcrzps",
+      "source_product_dir": "iphone",
+      "source_file": "https://www.reddit.com/r/iphone/comments/1vcrzps/is_it_possible_to_muteunmute_pinned_conversations/",
+      "post_type": "Discussion",
+      "title": "Is it possible to mute/unmute pinned conversations in messages app?",
+      "author": "reddit_user_0fe413d0e398",
+      "author_karma": 0,
+      "content": "Is it possible to mute/unmute pinned conversations in messages app?\n\nThe internet is not helpful....",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p13ju9u",
+          "author": "reddit_user_82f28e705dac",
+          "author_karma": 0,
+          "content": "Yes, just hold the conversation in conversation select screen and click hide alerts/ show alerts ",
+          "timestamp": "2026-08-01T16:51:16+00:00",
+          "likes": 3,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run008_post04_seed044",
+      "post_slot": 4,
+      "seed_index": 44,
+      "source_raw_post_id": "1vcsjs3",
+      "source_product_dir": "iphone",
+      "source_file": "https://www.reddit.com/r/iphone/comments/1vcsjs3/car_bluetooth_issues/",
+      "post_type": "Support",
+      "title": "Car Bluetooth issues",
+      "author": "reddit_user_0fe413d0e398",
+      "author_karma": 0,
+      "content": "Car Bluetooth issues\n\nKind of annoying how starting out of no where, every time I start my car and my phone automatically connects via Bluetooth (not CarPlay, standard Bluetooth) something different happens each time.\n\nSometimes Spotify automatically plays\n\nSometimes nothing automatically plays\n\nSometimes Apple Music automatically plays (their free radio station as I do not have an Apple Music subscription)\n\nIt all started out of nowhere. No new car. No new phone. Disconnecting and reconnecting the device doesn’t help\n\nIt also doesn’t even matter what my last music app used was or whether it was cleared or not. What happens each time is different\n\nThere’s been times where there’s no music app opened in the background and again sometimes Spotify plays, sometimes Apple Music plays, and sometimes nothing plays.\n\nOne time I had Spotify in the background opened and Apple Music starts playing. \n\nIt’s inconsistent, that’s the problem",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p13tjl0",
+          "author": "reddit_user_fdd60dde469c",
+          "author_karma": 0,
+          "content": "Have you tried unpairing and re-pairing it? Sometimes the car's Bluetooth stack just gets confused and a fresh connection fixes it instantly.",
+          "timestamp": "2026-08-01T17:37:26+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p13tsw0",
+              "author": "reddit_user_a6fa56fe9194",
+              "author_karma": 0,
+              "content": "Yes multiple times",
+              "timestamp": "2026-08-01T17:38:39+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p13tjl0",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p15zidu",
+          "author": "reddit_user_f7c6c06c5af8",
+          "author_karma": 0,
+          "content": "I’m having this same issue. A lot of times Audible starts even though I have definitely closed the app and I’m not currently listening to a book. Sometimes when Spotify starts it’s not what I was last listening to. ",
+          "timestamp": "2026-08-02T00:20:47+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p165i6z",
+              "author": "reddit_user_a6fa56fe9194",
+              "author_karma": 0,
+              "content": "Same. I think there’s an issue with iOS. It started out of the blue for me around a month ago",
+              "timestamp": "2026-08-02T00:56:16+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p15zidu",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

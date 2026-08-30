@@ -1,0 +1,1446 @@
+{
+  "meta": {
+    "product_category": "tv_series",
+    "baseline": "real_reddit_reference",
+    "run_id": "run_025_sampled_reddit"
+  },
+  "posts": [
+    {
+      "post_id": "real_run025_post00_seed125",
+      "post_slot": 0,
+      "seed_index": 125,
+      "source_raw_post_id": "1ve4xo8",
+      "source_product_dir": "television",
+      "source_file": "https://www.reddit.com/r/television/comments/1ve4xo8/i_love_this_app_for_ranking_shows/",
+      "post_type": "reddit_post",
+      "title": "I love this app for ranking shows.",
+      "author": "reddit_user_1f6880bf493c",
+      "author_karma": 0,
+      "content": "I love this app for ranking shows.\n\nFor a while now, I had been looking for an app to help rank my favorite shows. I found it too hard to do manually, as I might like show A more than show B, show B more than show C, yet show C more than show A, etc. So I wanted one that would allow me to choose one over the other while having them face off against each other. I'm not sure how well known it is here,  but it's called \\[Preference Revealer\\](https://czeckd.github.io/preference-revealer/dist/)\n\nHere is how it ranked my top 50 after a few minutes of head-up voting. I didn't include any shows that don't currently have multiple seasons, as it was too hard for me to choose between a great single-season show and a very good show with a bunch of seasons. I'll include those at the end. \n\nThe hardest show for me to rank was True Detective, as the first season is in the conversation for the best seasons of television I've ever watched, but none of the subsequent seasons were close to the same level.\n\nIf anyone ends up doing their own list, I would be interested in seeing it, so feel free to post it in the comments! 👍🏻\n\n1. Succession\n\n2. Game of Thrones\n\n3. Money Heist\n\n4. The Last of Us\n\n5. Severance\n\n6. Mayor of Kingstown\n\n7. Ozark\n\n8. Peaky Blinders\n\n9. Breaking Bad\n\n10. House of the Dragon\n\n11. Billions\n\n12. The Newsroom\n\n13. The Boys\n\n14. Westworld\n\n15. Banshee\n\n16. Beef\n\n17. Better Call Saul\n\n18. The Walking Dead\n\n19. True Detective\n\n20. Dark\n\n21. Squid Game\n\n22. Euphoria\n\n23. The Wire\n\n24. Black Mirror\n\n25. Your Friends & Neighbors\n\n26. Ted Lasso\n\n27. The Leftovers\n\n28. Entourage\n\n29. The Punisher\n\n30. The White Lotus\n\n31. Silo\n\n32. The Night Agent\n\n33. Nip/Tuck\n\n34. Loki\n\n35. Sons of Anarchy\n\n36. The Lincoln Lawyer\n\n37. Stranger Things\n\n38. Your Honor \n\n39. Master of None\n\n40. Paradise\n\n41. Californication\n\n42. Mr. Robot\n\n43. Dave\n\n44. Barry\n\n45. House of Cards\n\n46. The Mosquito Coast\n\n47. Sneaky Pete\n\n48. The Umbrella Academy\n\n49. Tulsa King\n\n50. Fauda\n\nMy favorite single-season shows: (Some of which have more seasons coming)\n\nChernobyl\n\nThe Queen's Gambit\n\nJury Duty: Company Retreat \n\nShogun\n\nA Knight of the Seven Kingdoms\n\nBodyguard \n\nThe Night of \n\nTask\n\nDope Thief\n\nPluribus\n\nWe Own this City \n\nThe Outsider \n\nDept. Q\n\n3 Body Problem\n\nThe Gentleman \n\nHis & Hers\n\nThe Penguin \n\nBlack Rabbit\n\nThe Falcon and The Winter Soldier\n\nWatchmen\n\nLovecraft Country\n\nMare of Easttown \n\nThe Terminal List",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p1eb2t4",
+          "author": "reddit_user_a3027abd36c7",
+          "author_karma": 0,
+          "content": "that face-off method is perfect for breaking those weird circular preference loops, i used something similar to sort my top 20 albums a while back. seeing better call saul at 17 hurts a little but i respect the process",
+          "timestamp": "2026-08-03T06:17:22+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1ek4i3",
+              "author": "reddit_user_594f95e90c42",
+              "author_karma": 0,
+              "content": "Yeah, I wouldn't say I think there are 16 shows in my list that are objectively better than Better Call Saul. I just found some parts of the earlier seasons a bit boring. I was very happy when the arc of one of the main characters ended in the Season 3 finale (spoilers, but you know who).\n\nI originally did it with all the listed shows included, but how do I objectively choose between my favorite single-season shows like Chernobyl, Shogun, The Queen's Gambit, etc., and a show with six seasons like BCS or Peaky Blinders, etc.?\n\nI wouldn't mind an even more thorough voting process, although I understand why they chose not to make it longer. If it actually required you to choose between all 50 shows 1v1, it would have taken 1225 tries. That would have taken over an hour, and that's assuming you're insta-clicking!",
+              "timestamp": "2026-08-03T07:32:42+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1eb2t4",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1egs8p",
+          "author": "reddit_user_f6ec3788e8c8",
+          "author_karma": 0,
+          "content": "Ranking is a good hook, but the useful part is seeing how it changes your next watch. Pairwise comparisons, separate completed versus sampled shows, and an explanation for why a title moved would make it more than a one-off list. Episode progress and upcoming releases could create a reason to return.",
+          "timestamp": "2026-08-03T07:04:39+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run025_post01_seed126",
+      "post_slot": 1,
+      "seed_index": 126,
+      "source_raw_post_id": "1ve6d7w",
+      "source_product_dir": "netflix",
+      "source_file": "https://www.reddit.com/r/netflix/comments/1ve6d7w/cannes_breakout_gentle_monster_starring_léa/",
+      "post_type": "News Article",
+      "title": "Cannes breakout ‘Gentle Monster’ starring Léa Seydoux to open in select cinemas October 30 and streaming on Netflix November 18",
+      "author": "reddit_user_1f6880bf493c",
+      "author_karma": 0,
+      "content": "Cannes breakout ‘Gentle Monster’ starring Léa Seydoux to open in select cinemas October 30 and streaming on Netflix November 18",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p1eiqyq",
+          "author": "reddit_user_5b33c07f253c",
+          "author_karma": 0,
+          "content": ">Seydoux stars as Lucy, a concert pianist who has just moved her family to a country house in hopes of easing the severe burnout of her husband Philip (Laurence Rupp). Before they can settle in, an early morning visit from police upends their lives, leaving Lucy caught between the man she loves and her fear of what he may have done. As her world comes apart, she is left to face the fallout alone. The cast also includes Jella Haase and Oscar nominee Catherine Deneuve.",
+          "timestamp": "2026-08-03T07:20:59+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1gnx0m",
+          "author": "reddit_user_b3745c234e26",
+          "author_karma": 0,
+          "content": "It was a Cannes breakout? Has pretty middling reviews.",
+          "timestamp": "2026-08-03T15:19:28+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run025_post02_seed127",
+      "post_slot": 2,
+      "seed_index": 127,
+      "source_raw_post_id": "1ve6jxu",
+      "source_product_dir": "netflix",
+      "source_file": "https://www.reddit.com/r/netflix/comments/1ve6jxu/wh_wont_my_payment_cancel/",
+      "post_type": "Question",
+      "title": "Wh won’t my payment cancel",
+      "author": "reddit_user_1f6880bf493c",
+      "author_karma": 0,
+      "content": "Wh won’t my payment cancel\n\nI’ve tried canceling my payment for my account about 5 times now and it’s STILL taking money out of my bank how can I get it to fully stop\n\n(Why do I need 200 letters to ask a question that’s so dumb)",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p1f4t0s",
+          "author": "reddit_user_f2d2d0cbad99",
+          "author_karma": 0,
+          "content": "This happened to me with amc.  You have to call them. Ask them for your money back. They will probably only give you a month back but somethings better than nothing. ",
+          "timestamp": "2026-08-03T10:24:02+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1kk773",
+              "author": "reddit_user_3ae5c9d5eb41",
+              "author_karma": 0,
+              "content": "How can I call them I can’t find their number on Google ",
+              "timestamp": "2026-08-04T02:11:34+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1f4t0s",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1kygbp",
+                  "author": "reddit_user_2a75cfa6fd1b",
+                  "author_karma": 0,
+                  "content": "help.netflix.com/en/contactus",
+                  "timestamp": "2026-08-04T03:35:59+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1kk773",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "post_id": "real_run025_post03_seed128",
+      "post_slot": 3,
+      "seed_index": 128,
+      "source_raw_post_id": "1ve81us",
+      "source_product_dir": "netflix",
+      "source_file": "https://www.reddit.com/r/netflix/comments/1ve81us/be_feel_good_movies_on_netflix/",
+      "post_type": "Question",
+      "title": "Be feel good movies on Netflix?",
+      "author": "reddit_user_1f6880bf493c",
+      "author_karma": 0,
+      "content": "Be feel good movies on Netflix?\n\nCan anyone suggest feel good movies on Netflix? My parents are both sick at this stage, so i really need some recommendations that will make them feel better.",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p1euqt1",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[deleted]",
+          "timestamp": "2026-08-03T09:02:58+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run025_post04_seed129",
+      "post_slot": 4,
+      "seed_index": 129,
+      "source_raw_post_id": "1ve9mof",
+      "source_product_dir": "television",
+      "source_file": "https://www.reddit.com/r/television/comments/1ve9mof/conan_obrien_must_go_season_3_to_premier_on/",
+      "post_type": "link",
+      "title": "Conan O’Brien Must Go Season 3 to Premier on Friday, August 21st on HBO.",
+      "author": "reddit_user_1f6880bf493c",
+      "author_karma": 0,
+      "content": "Conan O’Brien Must Go Season 3 to Premier on Friday, August 21st on HBO.",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p1f7j2u",
+          "author": "reddit_user_dde0e9cbf1e7",
+          "author_karma": 0,
+          "content": "There's a whole seasons worth of content of Conan and Jordan on that podcast alone 😅\n\nSo much Conan to go around!",
+          "timestamp": "2026-08-03T10:44:21+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1f7avu",
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1fdr5u",
+              "author": "reddit_user_fa41c2183b01",
+              "author_karma": 0,
+              "content": "Not to mention Conan without borders",
+              "timestamp": "2026-08-03T11:26:48+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1f7j2u",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1f7yii",
+          "author": "reddit_user_5eb9e2c7a928",
+          "author_karma": 0,
+          "content": "Let’s goooo ",
+          "timestamp": "2026-08-03T10:47:26+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1f98rx",
+          "author": "reddit_user_f03a074d0d47",
+          "author_karma": 0,
+          "content": "How is this show?",
+          "timestamp": "2026-08-03T10:56:27+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1f9o5f",
+              "author": "reddit_user_f487b4f1e0c5",
+              "author_karma": 0,
+              "content": "Quite funny if you like his kind of comedy. He is always meeting fans in the places he travels to, which is always weird in a wholesome and funny way.\n\nIt also shows some pretty Travel content. ",
+              "timestamp": "2026-08-03T10:59:24+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1f98rx",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1f9wv2",
+                  "author": "reddit_user_f03a074d0d47",
+                  "author_karma": 0,
+                  "content": "Thanks — does he try out the cuisines and go to touristy places?",
+                  "timestamp": "2026-08-03T11:01:06+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1f9o5f",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1fauan",
+                      "author": "reddit_user_f487b4f1e0c5",
+                      "author_karma": 0,
+                      "content": "Yes definitely, he also goes to some less touristy places though. So it’s not just city content. ",
+                      "timestamp": "2026-08-03T11:07:31+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1f9wv2",
+                      "depth": 3,
+                      "replies": []
+                    },
+                    {
+                      "comment_id": "p1ffmq0",
+                      "author": "reddit_user_4c64451ce691",
+                      "author_karma": 0,
+                      "content": "Oh yeah. And he does it up Conan style.",
+                      "timestamp": "2026-08-03T11:39:02+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1f9wv2",
+                      "depth": 3,
+                      "replies": []
+                    },
+                    {
+                      "comment_id": "p1fh96h",
+                      "author": "reddit_user_4c468bbf810e",
+                      "author_karma": 0,
+                      "content": "Kind of, but not really. It's not really a travel show in that sense. Conan has said his viewers will learn nothing from watching the show.",
+                      "timestamp": "2026-08-03T11:49:14+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1f9wv2",
+                      "depth": 3,
+                      "replies": []
+                    },
+                    {
+                      "comment_id": "p1fp7ty",
+                      "author": "reddit_user_8eafe6555d7b",
+                      "author_karma": 0,
+                      "content": "Food isn't really prominent on his shows more cultural things because food isn't really comedy material or it's just low hanging fruit.",
+                      "timestamp": "2026-08-03T12:35:25+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1f9wv2",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "p1g1tz2",
+                          "author": "reddit_user_579c7696c9e4",
+                          "author_karma": 0,
+                          "content": "He's also apparently not an adventurous eater and a real meat and threes kind of guy. He sticks to what he knows from what I've seen on the podcast.",
+                          "timestamp": "2026-08-03T13:39:49+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "p1fp7ty",
+                          "depth": 4,
+                          "replies": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "comment_id": "p1fd7hi",
+              "author": "reddit_user_fd95ba2f2c9e",
+              "author_karma": 0,
+              "content": "I loved the first season!\n\n\nSecond season I thought Conan \"turned it on\" too hard if you know what I mean. I like his casual quipy persona more than his hyper/loud on-stage one which I thought s2 was more of. I'm in the minority though and most people loved it as much as first. ",
+              "timestamp": "2026-08-03T11:23:13+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1f98rx",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1fghy7",
+                  "author": "reddit_user_184efdc177e5",
+                  "author_karma": 0,
+                  "content": "Totally agree. I wanna see more genuine interactions rather than bit after bit. ",
+                  "timestamp": "2026-08-03T11:44:29+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1fd7hi",
+                  "depth": 2,
+                  "replies": []
+                },
+                {
+                  "comment_id": "p1fn070",
+                  "author": "reddit_user_53a42972f449",
+                  "author_karma": 0,
+                  "content": "Thank you for this take, now I know why I didn’t like S2 as much",
+                  "timestamp": "2026-08-03T12:23:11+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1fd7hi",
+                  "depth": 2,
+                  "replies": []
+                },
+                {
+                  "comment_id": "p1fxf1f",
+                  "author": "reddit_user_8a48f0edb71a",
+                  "author_karma": 0,
+                  "content": "It definitely turned too much into the people and cultures just being props for his wacky comedy and them being too simple to understand him being the awkward punchline gets a little uncomfortable.",
+                  "timestamp": "2026-08-03T13:18:15+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1fd7hi",
+                  "depth": 2,
+                  "replies": []
+                },
+                {
+                  "comment_id": "p1g4j7h",
+                  "author": "reddit_user_a048be49b49c",
+                  "author_karma": 0,
+                  "content": "Agreed. I couldn't watch after the second episode.",
+                  "timestamp": "2026-08-03T13:52:36+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1fd7hi",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            },
+            {
+              "comment_id": "p1fod26",
+              "author": "reddit_user_7d6a5d561d02",
+              "author_karma": 0,
+              "content": "Its usually like his podcast but out in the wild - so wholesome funny is a good way to say it.",
+              "timestamp": "2026-08-03T12:30:45+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1f98rx",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p1fqntb",
+              "author": "reddit_user_b653a72250cd",
+              "author_karma": 0,
+              "content": "I remember being super excited for the first season and then I couldn't even make it through the whole thing. Just wasn't that great IMO. I didn't even know there was a second season.",
+              "timestamp": "2026-08-03T12:43:14+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1f98rx",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p1fum8d",
+              "author": "reddit_user_022545526ad6",
+              "author_karma": 0,
+              "content": "It's OK. Not quite as funny as the remotes were during the show but still worth a watch. ",
+              "timestamp": "2026-08-03T13:04:04+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1f98rx",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p1gb99f",
+              "author": "reddit_user_567c4c37f11f",
+              "author_karma": 0,
+              "content": "Absolutely fantastic!!!",
+              "timestamp": "2026-08-03T14:23:42+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1f98rx",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p1gvm00",
+              "author": "reddit_user_9ab84997b4f5",
+              "author_karma": 0,
+              "content": "Very entertaining and fun.  \n   \nAlso IMO some of the best TV I've seen is when relatively goofy/comedian type people are traveling and there are these little poignant moments where there is no joke, they are generally left speechless or have this pure sense of wonderment in the place and/or people they are highlighting. Those moments play so nicely off the humor bits. \n  \nThis show, Phil Rosenthal's two travel/food shows, and Clarkson/Hammond/May from Top Gear/Grand tour all come to mind. A lighthearted but satisfying window to how cool our world (and its people) really is.",
+              "timestamp": "2026-08-03T15:52:27+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1f98rx",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1fazv2",
+          "author": "reddit_user_b688b6e1384e",
+          "author_karma": 0,
+          "content": "India and the Philippines should be incredible. Conan does his best work when the surroundings are loud, crowded and moving much faster than he is.",
+          "timestamp": "2026-08-03T11:08:36+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1f68pr",
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1fcusc",
+              "author": "reddit_user_fa41c2183b01",
+              "author_karma": 0,
+              "content": "lol he’s going to stand out so much in the Philippines. ",
+              "timestamp": "2026-08-03T11:20:54+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1fazv2",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1foe7i",
+                  "author": "reddit_user_117536b7a90e",
+                  "author_karma": 0,
+                  "content": "But the craziness is in cities.",
+                  "timestamp": "2026-08-03T12:30:55+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1fcusc",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1fq8w4",
+                      "author": "reddit_user_fa41c2183b01",
+                      "author_karma": 0,
+                      "content": "It would but I feel a lot will know him. The provinces will be like wtf. ",
+                      "timestamp": "2026-08-03T12:41:00+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1foe7i",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p1fc6uz",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-03T11:16:32+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1f6vxm",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1fdiup",
+          "author": "reddit_user_fa41c2183b01",
+          "author_karma": 0,
+          "content": "And has a family and a job here. This isn’t a travel channel show. It’s always been an offshoot of his tbs show from ten years ago. ",
+          "timestamp": "2026-08-03T11:25:17+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1f7avu",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1ffg4b",
+          "author": "reddit_user_4c64451ce691",
+          "author_karma": 0,
+          "content": "Netherlands is gonna be right up Conedogs alley.\n\nI’m so glad he didn’t just disappear with his cash after the show ended.",
+          "timestamp": "2026-08-03T11:37:52+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1f6vxm",
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1fuw06",
+              "author": "reddit_user_718055b730fc",
+              "author_karma": 0,
+              "content": "He has absolutely thrived since leaving and will probably be Sirius' flagship when Howard goes.",
+              "timestamp": "2026-08-03T13:05:29+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1ffg4b",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1ffku8",
+          "author": "reddit_user_22fbbda668f7",
+          "author_karma": 0,
+          "content": "I hope Jordan Schlansky makes an appearance ",
+          "timestamp": "2026-08-03T11:38:42+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1fku9u",
+              "author": "reddit_user_f9b7d87360be",
+              "author_karma": 0,
+              "content": "He will be busy doing his various tasks",
+              "timestamp": "2026-08-03T12:10:43+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1ffku8",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1fs5s1",
+                  "author": "reddit_user_d54c036c7570",
+                  "author_karma": 0,
+                  "content": "He’s preparing his body in various ways",
+                  "timestamp": "2026-08-03T12:51:12+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1fku9u",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1hae9e",
+                      "author": "reddit_user_baae873b8646",
+                      "author_karma": 0,
+                      "content": "He shaved part of it.",
+                      "timestamp": "2026-08-03T16:54:16+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1fs5s1",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                },
+                {
+                  "comment_id": "p1gp6n0",
+                  "author": "reddit_user_978c8285fb53",
+                  "author_karma": 0,
+                  "content": "Oh man, you just made me realize he would be great on Taskmaster ",
+                  "timestamp": "2026-08-03T15:24:57+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1fku9u",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1h9mp5",
+                      "author": "reddit_user_41a04978a5e9",
+                      "author_karma": 0,
+                      "content": "The very first time someone did the task successfully in a not straightforward way he would lose his mind arguing that it's not the way it's supposed to be done!",
+                      "timestamp": "2026-08-03T16:51:06+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1gp6n0",
+                      "depth": 3,
+                      "replies": []
+                    },
+                    {
+                      "comment_id": "p1hx08h",
+                      "author": "reddit_user_b4d5097e4515",
+                      "author_karma": 0,
+                      "content": "what is this, a crossover episode?",
+                      "timestamp": "2026-08-03T18:27:46+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1gp6n0",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "p1i4f4j",
+                          "author": "reddit_user_978c8285fb53",
+                          "author_karma": 0,
+                          "content": "Doggy Doggy what now?",
+                          "timestamp": "2026-08-03T18:59:43+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "p1hx08h",
+                          "depth": 4,
+                          "replies": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "comment_id": "p1fv7ry",
+              "author": "reddit_user_83c4aa4f5a19",
+              "author_karma": 0,
+              "content": "I was just thinking about that guy. Not the character Jordan Schlansky, but the actual person. He's probably the most similar to a Redditor. Any of us would probably enjoy spending time with Jordan \\*more\\* than even Conan or Sona. Conan would goof on everything you said, and Sona would jump on any opening you presented. But Jordan would be like, \"Oh. Yeah. That remaster actually \\*is\\* a shitshow. I'd advise you pick up the 2003 remasters and forget the 2016.\" :-)",
+              "timestamp": "2026-08-03T13:07:10+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1ffku8",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p1fyg1t",
+              "author": "reddit_user_0ccb263404f6",
+              "author_karma": 0,
+              "content": "Explaining the intricacies of espresso to a monkey",
+              "timestamp": "2026-08-03T13:23:23+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1ffku8",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p1gbs7t",
+              "author": "reddit_user_87a75bd3568e",
+              "author_karma": 0,
+              "content": "Oh man, I'd love to see Jordan with Conan in India",
+              "timestamp": "2026-08-03T14:26:02+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1ffku8",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1fgfyh",
+          "author": "reddit_user_56e5f98c4a08",
+          "author_karma": 0,
+          "content": "Ngl, I thought this show got canceled a while ago—guess it just went on a really long coffee break! Can't wait to see what trouble Conan gets into this time.",
+          "timestamp": "2026-08-03T11:44:08+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1fn8sx",
+          "author": "reddit_user_491ac883fd61",
+          "author_karma": 0,
+          "content": "I guess I’ll cut off my nose to spite my face and ask… why is this comment getting downvoted? ",
+          "timestamp": "2026-08-03T12:24:32+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1f6d6d",
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1glavz",
+              "author": "reddit_user_5f21ef79a68a",
+              "author_karma": 0,
+              "content": "It’s Reddit mate. Any time India is mentioned (or China) it’s downvote central, even if it’s just an inoffensive comment. ",
+              "timestamp": "2026-08-03T15:08:08+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1fn8sx",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1fnwnu",
+          "author": "reddit_user_7d6a5d561d02",
+          "author_karma": 0,
+          "content": "Woo hoo! That's always a fun series. I haven't even seen it yet and want many more.",
+          "timestamp": "2026-08-03T12:28:14+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1fopob",
+          "author": "reddit_user_4f22e5bead4f",
+          "author_karma": 0,
+          "content": "I love Conan's humor but in a travel context he can't seem to pull it off without making the culture the butt of the joke. ",
+          "timestamp": "2026-08-03T12:32:40+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1fvgqr",
+              "author": "reddit_user_16e4f0cd4c1b",
+              "author_karma": 0,
+              "content": "I've always viewed it as Conan make himself the butt of the joke in trying to pick up other cultures.",
+              "timestamp": "2026-08-03T13:08:26+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1fopob",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1fwum9",
+                  "author": "reddit_user_8a48f0edb71a",
+                  "author_karma": 0,
+                  "content": "That’s for sure what he’s going for but recently it just veers too much into “these simple folks don’t understand comedy” and he’s kinda just using them as props for his bits that they aren’t really in on. ",
+                  "timestamp": "2026-08-03T13:15:28+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1fvgqr",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1g8a6v",
+                      "author": "reddit_user_4f22e5bead4f",
+                      "author_karma": 0,
+                      "content": "Yeah that really only works when you're playing a character who is a buffoon, but he's just being himself. Running around waving to people in italy shouting out noodle shapes, or wearing a traditional historic outfit around town isn't really making himself the butt of the joke.",
+                      "timestamp": "2026-08-03T14:10:03+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1fwum9",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p1funib",
+          "author": "reddit_user_d07bc32c2697",
+          "author_karma": 0,
+          "content": "I loved season 1. Season 2 seemed kinda off to me, so I hope season 3 is a return to form ",
+          "timestamp": "2026-08-03T13:04:15+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1fv8lz",
+              "author": "reddit_user_815b5f9de703",
+              "author_karma": 0,
+              "content": "Both of his parents died within a week of each other while filming season two. That's probably why. ",
+              "timestamp": "2026-08-03T13:07:17+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1funib",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1g8gfd",
+                  "author": "reddit_user_4494c16de880",
+                  "author_karma": 0,
+                  "content": "Bateman!",
+                  "timestamp": "2026-08-03T14:10:50+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1fv8lz",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1gudw4",
+                      "author": "reddit_user_4d9719959c41",
+                      "author_karma": 0,
+                      "content": "I was actually listening to Conan Needs a Friend with Nathan Lane and Conan also accuses Lane of killing his mom too.  It's right at the interview open and it's hilarious.",
+                      "timestamp": "2026-08-03T15:47:17+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1g8gfd",
+                      "depth": 3,
+                      "replies": []
+                    },
+                    {
+                      "comment_id": "p1gzrz1",
+                      "author": "reddit_user_8245a933c7cb",
+                      "author_karma": 0,
+                      "content": "\"Bateman wants to know your sister's address\"",
+                      "timestamp": "2026-08-03T16:10:10+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1g8gfd",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "p1hy8ht",
+                          "author": "reddit_user_7c584cd573fd",
+                          "author_karma": 0,
+                          "content": "OK to give?",
+                          "timestamp": "2026-08-03T18:33:04+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "p1gzrz1",
+                          "depth": 4,
+                          "replies": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "comment_id": "p1gec5w",
+              "author": "reddit_user_dea59ea40332",
+              "author_karma": 0,
+              "content": "I agree. Felt like they didn't edit much out and we just got everything raw.",
+              "timestamp": "2026-08-03T14:37:29+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1funib",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p1hcbgc",
+              "author": "reddit_user_2c837fb17d87",
+              "author_karma": 0,
+              "content": "I agree, did not enjoy season 2 at all",
+              "timestamp": "2026-08-03T17:02:04+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1funib",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p1hcwxa",
+              "author": "reddit_user_55ae7766e9b1",
+              "author_karma": 0,
+              "content": "I didnt even like season 1 so I guess Ill just watch him visit my country and skip the rest.",
+              "timestamp": "2026-08-03T17:04:31+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1funib",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1hw3y4",
+                  "author": "reddit_user_a6a7a5107f0c",
+                  "author_karma": 0,
+                  "content": "yeah i love conan and his old travel remotes but this show just seems a bit forced",
+                  "timestamp": "2026-08-03T18:23:58+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1hcwxa",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p1fyfyt",
+          "author": "reddit_user_87ded1ddd122",
+          "author_karma": 0,
+          "content": "As far as Late Night comedians go, I think he's the funniest. The others are also valuable, but they've adapted into social critics to a considerable degree.",
+          "timestamp": "2026-08-03T13:23:23+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1f7cxo",
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1g75xl",
+              "author": "reddit_user_fee572a4848e",
+              "author_karma": 0,
+              "content": "Craig Ferguson at his peak rivaled Conan but he was so burnt out from it that after his show ended he left Hollywood for like a decade and is only just now starting to really show up in things again.\n\nHe tried doing what Conan did and he started a podcast with celebrity friends as guests, but I found it unlistenable due to how cynical and depressed Craig sounded throughout.",
+              "timestamp": "2026-08-03T14:04:49+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1fyfyt",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1gbscq",
+                  "author": "reddit_user_7c006598aff7",
+                  "author_karma": 0,
+                  "content": "Craig also benefited heavily from the absolute force of nature that is Jeff.",
+                  "timestamp": "2026-08-03T14:26:03+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1g75xl",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1go4xh",
+                      "author": "reddit_user_a497dec4966a",
+                      "author_karma": 0,
+                      "content": "What does he do in both New Orleans *and* Edinburgh?",
+                      "timestamp": "2026-08-03T15:20:26+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1gbscq",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "p1gu4ft",
+                          "author": "reddit_user_4d9719959c41",
+                          "author_karma": 0,
+                          "content": "throw beads... take off all our clothes... go swimming...",
+                          "timestamp": "2026-08-03T15:46:10+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "p1go4xh",
+                          "depth": 4,
+                          "replies": [
+                            {
+                              "comment_id": "p1iq1ff",
+                              "author": "reddit_user_7c006598aff7",
+                              "author_karma": 0,
+                              "content": "*Oooohh* hell yeah.\n\n>*[Harmonica noises]*",
+                              "timestamp": "2026-08-03T20:34:17+00:00",
+                              "likes": 1,
+                              "dislikes": 0,
+                              "parent_comment_id": "p1gu4ft",
+                              "depth": 5,
+                              "replies": [
+                                {
+                                  "comment_id": "p1jo6ew",
+                                  "author": "reddit_user_4d9719959c41",
+                                  "author_karma": 0,
+                                  "content": "balls",
+                                  "timestamp": "2026-08-03T23:17:33+00:00",
+                                  "likes": 1,
+                                  "dislikes": 0,
+                                  "parent_comment_id": "p1iq1ff",
+                                  "depth": 6,
+                                  "replies": []
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "comment_id": "p1gfidr",
+                  "author": "reddit_user_5d2dcfb28839",
+                  "author_karma": 0,
+                  "content": "I enjoyed his podcast when he did a few months of just tweets and emails, it was nice to just hear his musings like the old days. ",
+                  "timestamp": "2026-08-03T14:42:38+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1g75xl",
+                  "depth": 2,
+                  "replies": []
+                },
+                {
+                  "comment_id": "p1hbwb3",
+                  "author": "reddit_user_87ded1ddd122",
+                  "author_karma": 0,
+                  "content": "I can imagine that happening. It's exhausting enough, as a comedian, performing for four drunks and a homeless guy at a bar. If Hollywood is involved, I could see it aging people a couple decades ahead.\n\nThat second thing has happened to a lot of comedians, seemingly. It's hard to be funny when the world around you is a joke.",
+                  "timestamp": "2026-08-03T17:00:21+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1g75xl",
+                  "depth": 2,
+                  "replies": []
+                },
+                {
+                  "comment_id": "p1hsae0",
+                  "author": "reddit_user_2c71c84a41aa",
+                  "author_karma": 0,
+                  "content": "Ironically, his podcast got a lot better when he was so burned out that he was just recording episodes by himself in hotel rooms and the like.",
+                  "timestamp": "2026-08-03T18:07:39+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1g75xl",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            },
+            {
+              "comment_id": "p1i5iic",
+              "author": "reddit_user_1b3874c1cc95",
+              "author_karma": 0,
+              "content": "I agree with this take, well said.\n\nFor this reason, most of what Conan does is evergreen since it isn’t “timebound” like most of the others. The other Late Night people are enjoyable *in the moment* but you can’t go back and revisit much of it since it ages rapidly compared to Conan.",
+              "timestamp": "2026-08-03T19:04:24+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1fyfyt",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1fysam",
+          "author": "reddit_user_6f30739e606e",
+          "author_karma": 0,
+          "content": "I can’t stand this show. He ends up belittling the people he talks to",
+          "timestamp": "2026-08-03T13:25:04+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1g0ijp",
+          "author": "reddit_user_841f7aaa4a33",
+          "author_karma": 0,
+          "content": "I love Conan... I *love* Conan ",
+          "timestamp": "2026-08-03T13:33:30+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1f7cxo",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1g0isp",
+          "author": "reddit_user_0af2223b102d",
+          "author_karma": 0,
+          "content": "He should be with Sonia in morocco they did part of the podcast there",
+          "timestamp": "2026-08-03T13:33:32+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1f68pr",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1g0jdb",
+          "author": "reddit_user_9fe6290aa099",
+          "author_karma": 0,
+          "content": "I'd love to see the uncut Abby Howells segment from NZ",
+          "timestamp": "2026-08-03T13:33:36+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1g1jw5",
+          "author": "reddit_user_f6ddf32dd90c",
+          "author_karma": 0,
+          "content": "He's recently mentioned Jaipur being one, so I'm guessing he's been around Rajasthan, and probably Agra and New Delhi.",
+          "timestamp": "2026-08-03T13:38:29+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1f6d6d",
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1gqave",
+              "author": "reddit_user_aed7392e8134",
+              "author_karma": 0,
+              "content": "Ugh. Agra is a must but hoped he’d head down to Goa or the Southern states as well  ",
+              "timestamp": "2026-08-03T15:29:46+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1g1jw5",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1g25bm",
+          "author": "reddit_user_c22c0fc4e657",
+          "author_karma": 0,
+          "content": "Wait there was a season 2? Completely went by me. I know what Im watching next.",
+          "timestamp": "2026-08-03T13:41:20+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1g4pi3",
+          "author": "reddit_user_a155cc478500",
+          "author_karma": 0,
+          "content": "Is he going to the Netherlands to collect chestnuts for Grukelgragiz Day?",
+          "timestamp": "2026-08-03T13:53:25+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1f68pr",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1g55d2",
+          "author": "reddit_user_899547fb2bec",
+          "author_karma": 0,
+          "content": "Behold, the defiler...",
+          "timestamp": "2026-08-03T13:55:28+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1g5c1k",
+          "author": "reddit_user_979eb1c723ae",
+          "author_karma": 0,
+          "content": "I love that they used the song he made in Norway as his entrance music",
+          "timestamp": "2026-08-03T13:56:20+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1f6vxm",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1gbg16",
+          "author": "reddit_user_567c4c37f11f",
+          "author_karma": 0,
+          "content": "YESSSS!!!!! Can't wait!",
+          "timestamp": "2026-08-03T14:24:31+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1gk2jm",
+          "author": "reddit_user_08aeb43f694d",
+          "author_karma": 0,
+          "content": "My sleep deprived brain read this as Chief O'Brien Must Go and was upset I missed two seasons of a Chief O'Brien show.",
+          "timestamp": "2026-08-03T15:02:43+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1gulgt",
+              "author": "reddit_user_9ab84997b4f5",
+              "author_karma": 0,
+              "content": "> Chief O'Brien Must Go\n\nO'Brien Must ~~Suffer~~ Go",
+              "timestamp": "2026-08-03T15:48:10+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1gk2jm",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1hlhe5",
+                  "author": "reddit_user_08aeb43f694d",
+                  "author_karma": 0,
+                  "content": "Hahaha. I now really want to see Colm Meaney on Conan's podcast.",
+                  "timestamp": "2026-08-03T17:39:26+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1gulgt",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p1gm516",
+          "author": "reddit_user_d26b7bff532a",
+          "author_karma": 0,
+          "content": "I like Conan when he travels, but what I really miss from his late night shows are the remotes when he visits different workplaces (Intel, Guinness, Lucasfilm, Chinese Food in NYC, Coffee Tasting w/ Jordan, etc.). I’d watch a “Conan O’Brien Must Work” series easily.",
+          "timestamp": "2026-08-03T15:11:45+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1gok60",
+              "author": "reddit_user_a497dec4966a",
+              "author_karma": 0,
+              "content": "Conan O'Brien Needs a Job would be must watch television.",
+              "timestamp": "2026-08-03T15:22:16+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1gm516",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p1gq9hi",
+              "author": "reddit_user_a3bc6f14bd21",
+              "author_karma": 0,
+              "content": "I'd pay a hefty subscription fee to watch a show that's just Conan and Jordan going places and doing things on a smaller scale, just random shit ",
+              "timestamp": "2026-08-03T15:29:37+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1gm516",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p1hym18",
+              "author": "reddit_user_7c584cd573fd",
+              "author_karma": 0,
+              "content": "He needs to go back to Old Bethpage.",
+              "timestamp": "2026-08-03T18:34:44+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1gm516",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p1i3h66",
+              "author": "[deleted]",
+              "author_karma": 0,
+              "content": "[removed]",
+              "timestamp": "2026-08-03T18:55:42+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1gm516",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p1icg7t",
+              "author": "reddit_user_ce75c1aed907",
+              "author_karma": 0,
+              "content": "I would also watch a million episodes of Murderville w/Conan as the guest",
+              "timestamp": "2026-08-03T19:34:44+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1gm516",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1gttfl",
+          "author": "reddit_user_4d9719959c41",
+          "author_karma": 0,
+          "content": "CUT TO: Jason Bateman attaching a bomb to Conan's plane",
+          "timestamp": "2026-08-03T15:44:52+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1gx4bf",
+          "author": "reddit_user_e22a0f329ae7",
+          "author_karma": 0,
+          "content": "\\* premiere\n\n(But I'm certainly amenable to Conan O'Brien being elected as a head of government in some capacity as the press conferences would be lit.)",
+          "timestamp": "2026-08-03T15:58:53+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1h4n61",
+          "author": "reddit_user_3307aba77adf",
+          "author_karma": 0,
+          "content": "Im Dutch: I’m reeeeaaaaalllyy excited!",
+          "timestamp": "2026-08-03T16:30:27+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1f68pr",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1h9ue9",
+          "author": "reddit_user_9cf9211e62f6",
+          "author_karma": 0,
+          "content": "I stopped consuming anything he puts out after he tried to normalize Bill Burr going to Saudi.",
+          "timestamp": "2026-08-03T16:51:59+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1jucr8",
+              "author": "reddit_user_9cf9211e62f6",
+              "author_karma": 0,
+              "content": "Nice to see where people's priorities lie with the downvotes lol.",
+              "timestamp": "2026-08-03T23:49:56+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1h9ue9",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1haekb",
+          "author": "reddit_user_286bbc04fcf0",
+          "author_karma": 0,
+          "content": "Can someone who has seen his new show give me maybe the top 5 best episodes? i want to get into this show",
+          "timestamp": "2026-08-03T16:54:18+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1i2lb6",
+              "author": "reddit_user_fd112e112d45",
+              "author_karma": 0,
+              "content": "Well, considering the entire show so far is six episodes that means you could probably randomly skip one.",
+              "timestamp": "2026-08-03T18:51:55+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1haekb",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1hoz4p",
+          "author": "reddit_user_ff300b08131f",
+          "author_karma": 0,
+          "content": "So excited for the PH episode.",
+          "timestamp": "2026-08-03T17:53:47+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1htayp",
+          "author": "reddit_user_98e132b9b5ab",
+          "author_karma": 0,
+          "content": "Wonder when he’s going to china. ",
+          "timestamp": "2026-08-03T18:11:55+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1j2sgc",
+          "author": "reddit_user_a535bf89703c",
+          "author_karma": 0,
+          "content": "Oooo, wow, I hope it’s another 3 episode season.",
+          "timestamp": "2026-08-03T21:31:47+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1j66to",
+          "author": "reddit_user_45e382a4b12b",
+          "author_karma": 0,
+          "content": "Lowkey is it bad if I say I can’t fully enjoy these without the laugh tracks (audience) that he had on his Late Night show when he aired remotes?",
+          "timestamp": "2026-08-03T21:47:36+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    }
+  ]
+}

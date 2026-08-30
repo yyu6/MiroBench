@@ -1,0 +1,399 @@
+{
+  "meta": {
+    "product_category": "laptop",
+    "baseline": "real_reddit_reference",
+    "run_id": "run_014_sampled_reddit"
+  },
+  "posts": [
+    {
+      "post_id": "real_run014_post00_seed070",
+      "post_slot": 0,
+      "seed_index": 70,
+      "source_raw_post_id": "1vd9o5e",
+      "source_product_dir": "thinkpad",
+      "source_file": "https://www.reddit.com/r/thinkpad/comments/1vd9o5e/would_you_spend_135_extra_for_the_t14s_gen_3_amd/",
+      "post_type": "Discussion / Information",
+      "title": "Would you spend $135 extra for the T14S Gen 3 AMD vs the T14S Gen 2 AMD?",
+      "author": "reddit_user_d8691634ac1e",
+      "author_karma": 0,
+      "content": "Would you spend $135 extra for the T14S Gen 3 AMD vs the T14S Gen 2 AMD?\n\nIf you wanted to buy a used one of either of those machines, both having 16GB RAM and the 300 nits display, would you spend an extra $135 to get the gen 3?  They have the 5650U and the 6650U. I don’t do graphics-intensive work.",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p17f4vv",
+          "author": "reddit_user_40bbc577fec9",
+          "author_karma": 0,
+          "content": "I would! That little upgrade that costs a bit today will make the machine last longer tomorrow. :-)",
+          "timestamp": "2026-08-02T06:02:02+00:00",
+          "likes": 4,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p17hcgh",
+          "author": "reddit_user_4f30c4f250bb",
+          "author_karma": 0,
+          "content": "6650U has WAY better integrated graphics.",
+          "timestamp": "2026-08-02T06:19:26+00:00",
+          "likes": 3,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p17mq7d",
+              "author": "reddit_user_18353354eaaf",
+              "author_karma": 0,
+              "content": "Not to mention a much more modern chassis design and 16:10 aspect ratio. The T14 g3 AMD seems like a very well rounded package overall. Modern design, both the CPU and GPU were on new-ish architectures (T14 g2a was on Vega, g2i was using quad core CPUs, g3i has poor battery life).",
+              "timestamp": "2026-08-02T07:02:52+00:00",
+              "likes": 3,
+              "dislikes": 0,
+              "parent_comment_id": "p17hcgh",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p17nq8m",
+                  "author": "reddit_user_4f30c4f250bb",
+                  "author_karma": 0,
+                  "content": "Good points and I agree. Thanks for mentioning these.",
+                  "timestamp": "2026-08-02T07:10:55+00:00",
+                  "likes": 2,
+                  "dislikes": 0,
+                  "parent_comment_id": "p17mq7d",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p17wyfo",
+          "author": "reddit_user_2992ad1c3146",
+          "author_karma": 0,
+          "content": "I was in this almost exact predicament before, only in my case the gen 2 was a T14. I chose the newer gen T14s and constantly doubting if i made the right choice.\n\n1. Keyboard. The t14s g3 keyboard is a good keyboard but the Gen 2 is WAY superior. I kept frustating myself over how the keyboard isnt as good, like intentionally bottoming out when typing just to prove to myself which led to not so pleasant experience\n2. The 16:10 display is sweet and was the main factor when i chose the gen 3. But i found its not as significant a factor as the keyboard.\n3. If these were ryzen 7 then with dual channel the gen 3 performance should be miles better for light gaming. But these are ryzen 5 I would've guessed theyre comparable for what they can do\n\nSo for extra $135 i dont think the pluses outweigh the minuses in my case coming from an older keyboard Thinkpad. But even if youre not partial to the old keyboard, i don't think its worth the $ just for a slight performance bump. Unless you get a ryzen 7",
+          "timestamp": "2026-08-02T08:27:28+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1bji4r",
+              "author": "reddit_user_2c646e34c4ba",
+              "author_karma": 0,
+              "content": "Did the T14S series ever gain back any key travel lost in Gen 3?",
+              "timestamp": "2026-08-02T20:27:17+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p17wyfo",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1ck8px",
+                  "author": "reddit_user_2992ad1c3146",
+                  "author_karma": 0,
+                  "content": "No. I just googled it and the T14s already lost it since gen 2 actually (the t14 lost it in gen 3). T14s gen 1 still has the 1.8mm key travel, all later t14s have 1.5mm",
+                  "timestamp": "2026-08-02T23:32:42+00:00",
+                  "likes": 2,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1bji4r",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "post_id": "real_run014_post01_seed071",
+      "post_slot": 1,
+      "seed_index": 71,
+      "source_raw_post_id": "1vday31",
+      "source_product_dir": "laptops",
+      "source_file": "https://www.reddit.com/r/laptops/comments/1vday31/optimizations_for_a_new_laptop/",
+      "post_type": "General question",
+      "title": "Optimizations for a new laptop",
+      "author": "reddit_user_d8691634ac1e",
+      "author_karma": 0,
+      "content": "Optimizations for a new laptop\n\nWhat are the best optimizations for a new hp windows 11 laptop to make it faster and more battery effiecient without hindering the performance. GIVE ME EVERYTHING YOU KNOW!",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p17mtp1",
+          "author": "reddit_user_a46c4af6417c",
+          "author_karma": 0,
+          "content": "We need to educate more people about battery life and performance. Have one but not the other.\n\nFirst in power and battery, power mode: switch to best power efficiency when on battery as well as energy saver on battery.\n\nUse a browser like duck duck go or Bing. If you have a dgpu, disable that when on battery and bring a 30000mah power bank so you don’t randomly die.",
+          "timestamp": "2026-08-02T07:03:39+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p19vtb2",
+              "author": "reddit_user_8840106ce647",
+              "author_karma": 0,
+              "content": "Ty",
+              "timestamp": "2026-08-02T15:55:32+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p17mtp1",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p17pzy5",
+          "author": "reddit_user_adb561e77860",
+          "author_karma": 0,
+          "content": "I personally run all the recommended settings in O&Osu10, stick to edge with uBlock for browser and uninstall the pre installed Microsoft 365 and office and get an offline version.  \nAfter that, doing a telemetry purge , tweaking power plans for battery and plugged in mode for max power.",
+          "timestamp": "2026-08-02T07:29:20+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p19w7my",
+              "author": "reddit_user_8840106ce647",
+              "author_karma": 0,
+              "content": "Ty",
+              "timestamp": "2026-08-02T15:57:20+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p17pzy5",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "post_id": "real_run014_post02_seed072",
+      "post_slot": 2,
+      "seed_index": 72,
+      "source_raw_post_id": "1vdb5i9",
+      "source_product_dir": "thinkpad",
+      "source_file": "https://www.reddit.com/r/thinkpad/comments/1vdb5i9/what_would_you_do_water_damage/",
+      "post_type": "Question / Problem",
+      "title": "What would you do (water damage)",
+      "author": "reddit_user_d8691634ac1e",
+      "author_karma": 0,
+      "content": "What would you do (water damage)\n\nOkay, we've had a pin holed mains water pipe flood a small corner of a room very slowly, my t410 was in a briefcase made of cloth and cardboard which wicked the water up creating a humid trap for my T410. \n\nWhen I discovered the nightmare mould had set in, so I kicked into damage control, stripped everything and allowed it to dry in the sun. I waited a further 3 days before a full tear down and clean with IPA yesterday. The mag alloy frame was a bit crusty in places but otherwise cleaned up okay. The motherboard was clean apart from one crusty spot on the back of the northbridge.\n\nLast night full reassembled the laptop first had a blinking amber battery indicator that turned green after 15min, but the power button does nothing. Could it be a keyboard replacement or should I cut my losses and avoid the ship of theseus project unfolding with eBay parts",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p186n19",
+          "author": "reddit_user_03fa515fc006",
+          "author_karma": 0,
+          "content": "You already did the best you can. Time for another laptop. ",
+          "timestamp": "2026-08-02T09:51:04+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p18n75h",
+              "author": "reddit_user_24e699b16935",
+              "author_karma": 0,
+              "content": "I think your right. Whats annoying is that it was in mint condition. I had it as a windows 7 machine with my auto diagnostic kit (Saab Tech-2), so it's all era correct, but lacked a serial port.\n\nSo this morning I started looking at my P14s to take on this rare use case and will consign the T410 to the recycler :(",
+              "timestamp": "2026-08-02T11:59:07+00:00",
+              "likes": 2,
+              "dislikes": 0,
+              "parent_comment_id": "p186n19",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "post_id": "real_run014_post03_seed073",
+      "post_slot": 3,
+      "seed_index": 73,
+      "source_raw_post_id": "1vddih0",
+      "source_product_dir": "laptops",
+      "source_file": "https://www.reddit.com/r/laptops/comments/1vddih0/screen_flickering_non_stop_at_every_refresh_rate/",
+      "post_type": "Buying help",
+      "title": "Screen flickering non stop at every refresh rate",
+      "author": "reddit_user_d8691634ac1e",
+      "author_karma": 0,
+      "content": "Screen flickering non stop at every refresh rate\n\nI tried to fix it by setting the refresh rate from 144hz to 60hz but it didn't help. \n\nI tried reinstalling windows\n\nIt didn't help too \n\nIdk what will help",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p186p1e",
+          "author": "reddit_user_67cdfa918f11",
+          "author_karma": 0,
+          "content": "Looks like a loose or broken display cable. Try to connect your laptop to a second screen (TV) and if it disappears the problem is the cable if it’s still there you could have issues with the graphics card but I think it’s unlikely. I wish you luck!",
+          "timestamp": "2026-08-02T09:51:33+00:00",
+          "likes": 5,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p186ulm",
+              "author": "reddit_user_9f8eb5783d08",
+              "author_karma": 0,
+              "content": "I don't have a second screen \nI'll take to repair shop then ",
+              "timestamp": "2026-08-02T09:52:52+00:00",
+              "likes": 2,
+              "dislikes": 0,
+              "parent_comment_id": "p186p1e",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p187u6t",
+                  "author": "reddit_user_67cdfa918f11",
+                  "author_karma": 0,
+                  "content": "No. Don’t do that most of them scam and go there if you know what’s the problem is. Ask a friend or idk find somewhere where you can plug in you laptop. ",
+                  "timestamp": "2026-08-02T10:01:22+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p186ulm",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p18wzjw",
+          "author": "reddit_user_d05d315d44ea",
+          "author_karma": 0,
+          "content": "your display is cooked need to replace with new one.",
+          "timestamp": "2026-08-02T12:59:48+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run014_post04_seed074",
+      "post_slot": 4,
+      "seed_index": 74,
+      "source_raw_post_id": "1vde1cc",
+      "source_product_dir": "thinkpad",
+      "source_file": "https://www.reddit.com/r/thinkpad/comments/1vde1cc/any_tips_for_the_battery_on_my_t430s/",
+      "post_type": "Question / Problem",
+      "title": "Any tips for the battery on my T430s?",
+      "author": "reddit_user_d8691634ac1e",
+      "author_karma": 0,
+      "content": "Any tips for the battery on my T430s?\n\nI have a thinkpad t430s, absolutely beautiful build quality and I would love to use it for learning to program C and I love everything about it except the battery is just bad. It has 49% original capacity and a new battery (or optical drive battery) cost 3 times as the laptop itself. I will obviously use debian with a lightweight DE. Any suggestions like tlp or how to set it up? And I cannot get a new one for price reasons.",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p18ayh2",
+          "author": "reddit_user_e519bb9c5adc",
+          "author_karma": 0,
+          "content": "Tlp and powertop may help but you're dealing with possibly a 13 year old battery . Not much can be done in the face of that . ",
+          "timestamp": "2026-08-02T10:27:19+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p18b8kt",
+          "author": "reddit_user_4766aaa89dd5",
+          "author_karma": 0,
+          "content": "I love my t430. When the original battery died a couple of years ago I bought a cheap Chinese compatible replacement on AliExpress for €25. It's still going strong.",
+          "timestamp": "2026-08-02T10:29:39+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p18ksww",
+              "author": "reddit_user_ea8c1986146f",
+              "author_karma": 0,
+              "content": "A regular T430 does not allow for a battery in the optical drive however the slimmer T430s does.  I also get my third party batteries off aliexpress, so far i've had a good experience with it in my T430 ($32) and even charges with the whitelist intact.  ",
+              "timestamp": "2026-08-02T11:42:31+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p18b8kt",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p18hdz9",
+          "author": "reddit_user_03fa515fc006",
+          "author_karma": 0,
+          "content": "There's really nothing else you can do besides rebuild the battery yourself. ",
+          "timestamp": "2026-08-02T11:17:31+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1ailli",
+              "author": "reddit_user_581f06fa9499",
+              "author_karma": 0,
+              "content": "Are you talking about the optical bay battery? Because its very easy to find third party main batteries. ",
+              "timestamp": "2026-08-02T17:38:27+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p18hdz9",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1aizu8",
+                  "author": "reddit_user_03fa515fc006",
+                  "author_karma": 0,
+                  "content": "Mostly. You can certainly rebuild main batteries with better cells but it's usually not worth it. ",
+                  "timestamp": "2026-08-02T17:40:11+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1ailli",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p18rxfe",
+          "author": "reddit_user_5350928e4b8f",
+          "author_karma": 0,
+          "content": "bite the bullet spend the $30, it's well worth it. heck go crazy and spend $60 and replace both batteries. Crazy I know, but its like repairing a classic vintage car, a labor of love.",
+          "timestamp": "2026-08-02T12:29:40+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    }
+  ]
+}

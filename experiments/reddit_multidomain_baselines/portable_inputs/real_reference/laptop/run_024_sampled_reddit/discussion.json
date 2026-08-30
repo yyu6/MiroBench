@@ -1,0 +1,654 @@
+{
+  "meta": {
+    "product_category": "laptop",
+    "baseline": "real_reddit_reference",
+    "run_id": "run_024_sampled_reddit"
+  },
+  "posts": [
+    {
+      "post_id": "real_run024_post00_seed120",
+      "post_slot": 0,
+      "seed_index": 120,
+      "source_raw_post_id": "1vdu3nq",
+      "source_product_dir": "GamingLaptops",
+      "source_file": "https://www.reddit.com/r/GamingLaptops/comments/1vdu3nq/are_asus_laptops_detrimental/",
+      "post_type": ":snoo_sad: Support",
+      "title": "are asus laptops detrimental?",
+      "author": "reddit_user_d8691634ac1e",
+      "author_karma": 0,
+      "content": "are asus laptops detrimental?\n\n[](https://www.reddit.com/r/GamingLaptops/?f=flair_name%3A%22%3Asnoo_thoughtful%3A%20Laptop%20Buying%20Advice%22)  \n\n\nI'm in a laptop discord server, and I'm told that ASUS has so much problems, primarily though in their laptops, such as failing motherboards and stuttering problems, to the point that they don’t recommend ANY of their devices. However, recently, I found a refurbished g14 for £1250 with a AMD Ryzen 9 270 and a RTX 5050, and its basically my only option, and i just want to know if its a genuine problem or just a minority projecting their stand-alone issues, any g14 users for 1+ years able to confirm anything would help!",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p1bx27p",
+          "author": "reddit_user_72e5a709773d",
+          "author_karma": 0,
+          "content": "Sounds like a very good discord server because they are correct.",
+          "timestamp": "2026-08-02T21:32:27+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1bxzqv",
+              "author": "reddit_user_9dc1e46eec28",
+              "author_karma": 0,
+              "content": "Shld I just get a loq with a 5060 instead then ",
+              "timestamp": "2026-08-02T21:37:04+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1bx27p",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1byyxa",
+                  "author": "reddit_user_72e5a709773d",
+                  "author_karma": 0,
+                  "content": "No, I won't recommend any Lenovo product until I receive confirmation that Lenovo has stopped using their black goop under the BGA chips. From a brief image search it seems that Lenovo still uses the same goop, avoid like pleague similar to ASUS. ",
+                  "timestamp": "2026-08-02T21:41:56+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1bxzqv",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1cb8dv",
+                      "author": "reddit_user_9dc1e46eec28",
+                      "author_karma": 0,
+                      "content": "Dawg wtf do I get then",
+                      "timestamp": "2026-08-02T22:44:37+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1byyxa",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p1c5j9y",
+          "author": "reddit_user_2f8bd2f4a0e2",
+          "author_karma": 0,
+          "content": "People say this for every brand FWIW",
+          "timestamp": "2026-08-02T22:15:01+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1cb9r1",
+              "author": "reddit_user_9dc1e46eec28",
+              "author_karma": 0,
+              "content": "Tbh that’s what I was thinking ",
+              "timestamp": "2026-08-02T22:44:48+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1c5j9y",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p1d6ce9",
+              "author": "reddit_user_d931d074d29a",
+              "author_karma": 0,
+              "content": "Good luck with their customer service, though. GamersNexus has multiple videos about how shitry their CS is.",
+              "timestamp": "2026-08-03T01:36:43+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1c5j9y",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1dvyfz",
+                  "author": "reddit_user_44de335dc081",
+                  "author_karma": 0,
+                  "content": "It really depends where you're from. I'm in Europe, had some issue with wifi. I sent it for repair 2 weeks ago, it arrived to them te same day, they took around 5 days to repair and replace parts and the next day it was with me again, customer service was super nice.",
+                  "timestamp": "2026-08-03T04:19:53+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1d6ce9",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p1c6mrm",
+          "author": "reddit_user_5f3e1ef6e522",
+          "author_karma": 0,
+          "content": "Every laptop manufacturer has issues, and the people who have problems with their laptops are the most vocal.\n\nMy old 3070 Ti Zephyrus performed as expected until I spilled an energy drink on it and I used my store credit to buy another Asus laptop. I think the only one I'd flat out refuse to buy is a Gigabyte laptop.",
+          "timestamp": "2026-08-02T22:20:44+00:00",
+          "likes": 3,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1ccfic",
+              "author": "reddit_user_9dc1e46eec28",
+              "author_karma": 0,
+              "content": "I didn’t rlly think about the stigma and just looked exclusively for omen 16s and legion 5s but honestly it’s so expensive and from reviews the g14 seems like everything I’d ever want, minus the problems listed but honestly looking through other people’s experiences and seeing that most people either had random or inconsistent problems or perfectly fine experiences (minus battery degrading which won’t be a big problem for me) I’m kinda tempted to buy it ",
+              "timestamp": "2026-08-02T22:50:51+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1c6mrm",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1c8sg5",
+          "author": "reddit_user_9de03b4ac624",
+          "author_karma": 0,
+          "content": "Had an MSI, HP, Asus, Lenovo laptop. MSI had faulty screen and their service center failed to fix it. Had to sell it as parts only. HP's is like buying a laptop and two other appliance at once, an oven toaster and a flat iron. The ASUS laptop and Lenovo never had any issues. Got my self a strix G16 this week.",
+          "timestamp": "2026-08-02T22:31:52+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1cbude",
+          "author": "reddit_user_0985842ac5af",
+          "author_karma": 0,
+          "content": "Jesus christ some of you people are the worst. OP wanted a genuine answer on one laptop and there’s like 3 different answers saying this one bad, no that one bad hur dur. Personally I’ve never had any issue with any Asus products I’ve owned, same with Legion. I’ve only really ever had one bad laptop and that was an HP from like 15 years ago, so say what you will about that",
+          "timestamp": "2026-08-02T22:47:48+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1cda3f",
+              "author": "reddit_user_9dc1e46eec28",
+              "author_karma": 0,
+              "content": "Yea tbh I’m just gonna go get it and take genuine care of it, won’t be stressing it too much anyways ",
+              "timestamp": "2026-08-02T22:55:20+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1cbude",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1cf2yy",
+                  "author": "reddit_user_0985842ac5af",
+                  "author_karma": 0,
+                  "content": "Hell yeah, more power to you. Good luck and enjoy :)",
+                  "timestamp": "2026-08-02T23:04:54+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1cda3f",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p1cf7wz",
+          "author": "reddit_user_e14bba1d4084",
+          "author_karma": 0,
+          "content": "i have a g16 for 2 years almost and no issues",
+          "timestamp": "2026-08-02T23:05:39+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1clje1",
+          "author": "reddit_user_9b059c998b92",
+          "author_karma": 0,
+          "content": "Aside from repasting, my Asus Scar 15 (2021) never gave a single issue.\n\nIt still works to this day.\n\n\nSpecs:\n\nRyzen 9 5900HX, 32GB RAM, 3070 8GB, 2TB Storage (1TB added extra by me)",
+          "timestamp": "2026-08-02T23:39:49+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1cqc4o",
+              "author": "reddit_user_9dc1e46eec28",
+              "author_karma": 0,
+              "content": "Good to hear! ",
+              "timestamp": "2026-08-03T00:06:32+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1clje1",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1cn4x8",
+          "author": "reddit_user_a6ce551d0bf5",
+          "author_karma": 0,
+          "content": "Out of all the technical support, Asus is (apparently) the absolute worst.\n\n  \nIf you never have to talk to them, that's perfect.  If you do, just be prepared for them to not honor their own warranty, or worse, damage your stuff.",
+          "timestamp": "2026-08-02T23:48:40+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1cq8ta",
+              "author": "reddit_user_9dc1e46eec28",
+              "author_karma": 0,
+              "content": "Yes I’ve seen the absolute Horrors, them trying to charge for scratches and dents when u ask for a screen repair or fixes for a faulty part and overall being hard to communicate with but as long as I don’t gotta deal with that for atleast a year or two I’m chilling ",
+              "timestamp": "2026-08-03T00:06:02+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1cn4x8",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1cq2kd",
+          "author": "reddit_user_aaed0d98c095",
+          "author_karma": 0,
+          "content": "I had an asus tuf that served me very well during my college days, with heavy gaming pretty much everyday. Now it passed it down to my little brother, and in total the laptop is running with no issues for 5 years.\n\nI recently switched to an ROG strix g16 2025, and that one is still running fantastic with no issue. ",
+          "timestamp": "2026-08-03T00:05:05+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1cs70v",
+          "author": "reddit_user_af57a3e64983",
+          "author_karma": 0,
+          "content": "Asus used to be great quality but shitty warranty/RMA.  Now they are mediocre quality with the same shitty warranty/RMA.",
+          "timestamp": "2026-08-03T00:16:35+00:00",
+          "likes": 0,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1d62ta",
+          "author": "reddit_user_d931d074d29a",
+          "author_karma": 0,
+          "content": "They have shit customer service if something does go wrong with their laptops and pc components. ",
+          "timestamp": "2026-08-03T01:35:10+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run024_post01_seed121",
+      "post_slot": 1,
+      "seed_index": 121,
+      "source_raw_post_id": "1vducat",
+      "source_product_dir": "GamingLaptops",
+      "source_file": "https://www.reddit.com/r/GamingLaptops/comments/1vducat/snagged_it_for_1000_usd_asus_rog_strix_g18_2024/",
+      "post_type": ":snoo_putback: Deal",
+      "title": "Snagged it for 1000 USD (Asus ROG Strix G18 (2024) G814)",
+      "author": "reddit_user_d8691634ac1e",
+      "author_karma": 0,
+      "content": "Snagged it for 1000 USD (Asus ROG Strix G18 (2024) G814)\n\nhttps://preview.redd.it/8yho76ls51hh1.png?width=1444&format=png&auto=webp&s=bc8ba8a156e4e237ae5f9bb07f1d40ad1809f941\n\n  \n CPU : Intel Core i9 processor 14900HX  \nGraphics Card :   \n[NVIDIA RTX 4080 (notebook)](https://benchmarks.ul.com/hardware/gpu/NVIDIA+RTX+4080+%28notebook%29/review)  \nMemory\n\n32,768 MB\n\n16,384 MB Samsung DDR5 @ 5,586 MHz\n\n16,384 MB Samsung DDR5 @ 5,586 MHz\n\nHard drive model\n\n2,048 GB NVMe WD PC SN740 SDDPNQE-2T00-1102\n\nAlso a 18-inch 2k Display at 240Hz\n\nIs it worth repasting it?",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p1c1diz",
+          "author": "reddit_user_d6c1249d3ca8",
+          "author_karma": 0,
+          "content": "Good deal",
+          "timestamp": "2026-08-02T21:54:02+00:00",
+          "likes": 3,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1c244v",
+          "author": "reddit_user_abf1f25f0222",
+          "author_karma": 0,
+          "content": "Too early to repaste it, just watch temps and check if they’re inline with what they should be. \n\nConsider getting a cooler/chill pad for underneath it for home. (One that plugs in via usb and has extra fans) ",
+          "timestamp": "2026-08-02T21:57:46+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1c8lb0",
+          "author": "reddit_user_3217a0652c0a",
+          "author_karma": 0,
+          "content": "You  might consider it if you are have temp issues like everyone seems to have.  After re-applying the LM it will stay comfortably in the 70s with a 240w cross load.\n\nhttps://preview.redd.it/ootv1kq6g1hh1.png?width=2548&format=png&auto=webp&s=ef765c70a21c5f25f13493faa65f4c95262f1648",
+          "timestamp": "2026-08-02T22:30:49+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1crf0q",
+          "author": "reddit_user_8cd06ef475e9",
+          "author_karma": 0,
+          "content": "How much vram does this have? I got a 2025 model Rog Strix G16 ultra 9 5060 for $850 like a month ago, I wish I’d of known before that a lot of older models had more vram, but what I got for $850 is still a great deal so I’ve read ",
+          "timestamp": "2026-08-03T00:12:20+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1crk4n",
+              "author": "reddit_user_0ee6d6463fb0",
+              "author_karma": 0,
+              "content": "12 gb",
+              "timestamp": "2026-08-03T00:13:05+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1crf0q",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p1csg01",
+              "author": "reddit_user_0ee6d6463fb0",
+              "author_karma": 0,
+              "content": "do you have timespy benchmarks?",
+              "timestamp": "2026-08-03T00:17:56+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1crf0q",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p1dkhoo",
+              "author": "reddit_user_d33a32daf1c8",
+              "author_karma": 0,
+              "content": "The only \"older\" models with more VRAM would need to have a 3080, 4080, or 4090.",
+              "timestamp": "2026-08-03T03:02:02+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1crf0q",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "post_id": "real_run024_post02_seed122",
+      "post_slot": 2,
+      "seed_index": 122,
+      "source_raw_post_id": "1vducdj",
+      "source_product_dir": "thinkpad",
+      "source_file": "https://www.reddit.com/r/thinkpad/comments/1vducdj/double_entendre_meme/",
+      "post_type": "Thinkstagram Picture",
+      "title": "Double entendre meme.",
+      "author": "reddit_user_d8691634ac1e",
+      "author_karma": 0,
+      "content": "Double entendre meme.\n\nWe need a \"meme\" flair",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p1c0k54",
+          "author": "reddit_user_e1ca1b137641",
+          "author_karma": 0,
+          "content": "My gosh, read the rules. Memes are not allowed",
+          "timestamp": "2026-08-02T21:49:55+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run024_post03_seed123",
+      "post_slot": 3,
+      "seed_index": 123,
+      "source_raw_post_id": "1vdurnr",
+      "source_product_dir": "laptops",
+      "source_file": "https://www.reddit.com/r/laptops/comments/1vdurnr/how_much_would_it_cost_to_fix_this_laptop/",
+      "post_type": "General question",
+      "title": "How much would it cost to fix this laptop?",
+      "author": "reddit_user_d8691634ac1e",
+      "author_karma": 0,
+      "content": "How much would it cost to fix this laptop?\n\nI think it’s only the screen that’s broken? The laptop is only a year old I really hope it won’t be too pricey",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p1c2f10",
+          "author": "reddit_user_67cdfa918f11",
+          "author_karma": 0,
+          "content": "Ig 100€-200€ you can replace it yourself just need to google your model and screen replacement and watch a yt video to it",
+          "timestamp": "2026-08-02T21:59:19+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1c2ozs",
+          "author": "reddit_user_22b21daf3105",
+          "author_karma": 0,
+          "content": "First depends if your doing it yourself or having simeone do it for you, If the latter get a quote for a screen replacement in your model. If your doing it yourself you can either type in the laptop model and find a compatible screen on ebay or to save some extra money take the screen out and check the back for serial numbers. Finding similar or identical serial numbers can lower the price by alot but be sure to fact check the screens are the say (pin layout on the leads at the bottom and size etc) ",
+          "timestamp": "2026-08-02T22:00:43+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1c5ngc",
+          "author": "reddit_user_df0c23095f48",
+          "author_karma": 0,
+          "content": "Depends on what the model is. You could probably get a replacement screen on eBay for $60–90.",
+          "timestamp": "2026-08-02T22:15:37+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run024_post04_seed124",
+      "post_slot": 4,
+      "seed_index": 124,
+      "source_raw_post_id": "1vduvt4",
+      "source_product_dir": "laptops",
+      "source_file": "https://www.reddit.com/r/laptops/comments/1vduvt4/i_spilled_a_damn_mcdonalds_foam_pop/",
+      "post_type": "General question",
+      "title": "I spilled a damn McDonald's foam pop",
+      "author": "reddit_user_d8691634ac1e",
+      "author_karma": 0,
+      "content": "I spilled a damn McDonald's foam pop\n\nAs said it spilled all over my laptop any help sooner than later please I instantly disconnect it and shut it off",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p1c30u3",
+          "author": "reddit_user_cb44996cb7fb",
+          "author_karma": 0,
+          "content": "I'm having a major feeling you're fucked....\nTake it to any hp service centre and get it checked ASAP ",
+          "timestamp": "2026-08-02T22:02:23+00:00",
+          "likes": 3,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1c3kdo",
+              "author": "reddit_user_6adcd535a07e",
+              "author_karma": 0,
+              "content": "Im cleaning it with a toothpick n paper towel pieces rn im praying to not pay cuz if it needs to be repaired I dont have funds for that at the moment",
+              "timestamp": "2026-08-02T22:05:09+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1c30u3",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1ca0m1",
+          "author": "reddit_user_61c752b7b2a8",
+          "author_karma": 0,
+          "content": "Buy a lot of isopropyl alcohol and start cleaning that shit off with a micro fib3r cloth.\n\nIdts it would get inside the laptop but just to be sure pull the board out and wipe the under side also.",
+          "timestamp": "2026-08-02T22:38:17+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1cbur2",
+              "author": "reddit_user_6adcd535a07e",
+              "author_karma": 0,
+              "content": "Recommend how i genuinely dk where to start you rec doing spritz n wipes or just cover the cloth n slow wipes\n",
+              "timestamp": "2026-08-02T22:47:51+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1ca0m1",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1ccnyv",
+                  "author": "[deleted]",
+                  "author_karma": 0,
+                  "content": "[removed]",
+                  "timestamp": "2026-08-02T22:52:05+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1cbur2",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p1ciku8",
+          "author": "reddit_user_659f10b2c896",
+          "author_karma": 0,
+          "content": "Lol",
+          "timestamp": "2026-08-02T23:23:39+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1clsc3",
+          "author": "reddit_user_7bd848c8886c",
+          "author_karma": 0,
+          "content": "if you know how to open your laptop and clean it inside, do it. otherwise bring it to a technician as soon as possible. more time passes, more damage it does to the electronics inside",
+          "timestamp": "2026-08-02T23:41:11+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1cnwq9",
+          "author": "reddit_user_45dde371f149",
+          "author_karma": 0,
+          "content": "New laptop literally ",
+          "timestamp": "2026-08-02T23:53:02+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1csea6",
+              "author": "reddit_user_6adcd535a07e",
+              "author_karma": 0,
+              "content": "Im choosing to do a lil work and pray to the almighty machine gods to just let it run ",
+              "timestamp": "2026-08-03T00:17:40+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1cnwq9",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1cyll5",
+          "author": "reddit_user_a4a48978534b",
+          "author_karma": 0,
+          "content": "Unless you open it. Your doomed. ",
+          "timestamp": "2026-08-03T00:52:22+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1dg22s",
+          "author": "reddit_user_487f492c9462",
+          "author_karma": 0,
+          "content": "Take out the motherboard. Buy 500 or 1000 ml iso-propanol. Pour it slowly over the keyboard (make sure to not get any on your screen). Let it soak for 3 or 4 mins. Then soak up the remaining liquid with a sponge (a lot of it would've just evaporated by now). Do this a total of 2 times.\n\nCuz no matter how hard you try to clean the surface, the sugary goop will still be there inside the keyboard. It'll attract ants (speaking from experience here) and make the key switches rust. And trust me, you don't want them near your laptop.",
+          "timestamp": "2026-08-03T02:34:27+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1dghel",
+          "author": "reddit_user_a8bcc7739451",
+          "author_karma": 0,
+          "content": "Rice isn't going to do anything.",
+          "timestamp": "2026-08-03T02:37:04+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    }
+  ]
+}

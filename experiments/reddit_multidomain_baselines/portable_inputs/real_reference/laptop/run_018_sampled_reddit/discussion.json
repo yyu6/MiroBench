@@ -1,0 +1,459 @@
+{
+  "meta": {
+    "product_category": "laptop",
+    "baseline": "real_reddit_reference",
+    "run_id": "run_018_sampled_reddit"
+  },
+  "posts": [
+    {
+      "post_id": "real_run018_post00_seed090",
+      "post_slot": 0,
+      "seed_index": 90,
+      "source_raw_post_id": "1vdnrj6",
+      "source_product_dir": "laptops",
+      "source_file": "https://www.reddit.com/r/laptops/comments/1vdnrj6/is_570_a_good_deal_for_a_16gb_1tb_storage_acer/",
+      "post_type": "Buying help",
+      "title": "Is 570 a good deal for a 16gb 1tb storage acer aspire go 15?",
+      "author": "reddit_user_d8691634ac1e",
+      "author_karma": 0,
+      "content": "Is 570 a good deal for a 16gb 1tb storage acer aspire go 15?\n\nneed a laptop for college in a couple weeks and found this deal at my local microcenter. I was looking at cheaper 8gb and low storage options but comparing to the specs of others this seems like a great deal. what yall think",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p1afjfz",
+          "author": "reddit_user_0e9bc3e2acba",
+          "author_karma": 0,
+          "content": "Aspires are cheaply built and will only last you a year or two until the hinges fail. Look at the MacBook Neo ",
+          "timestamp": "2026-08-02T17:24:49+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1aqtvg",
+              "author": "reddit_user_03755b24c100",
+              "author_karma": 0,
+              "content": "Yea this was already pushing the budget hard that’s way too much for me ",
+              "timestamp": "2026-08-02T18:14:55+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1afjfz",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1aka6j",
+          "author": "reddit_user_299d051b19b2",
+          "author_karma": 0,
+          "content": "The 7520u is a Zen2 mobile CPU with architecture from 2020 and similar performance to the AMD 4000u CPUs. \n\nYou can find a more modern machine for similar money. ",
+          "timestamp": "2026-08-02T17:45:52+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1ar9v5",
+              "author": "reddit_user_03755b24c100",
+              "author_karma": 0,
+              "content": "Where can I find a similar more powerful machine for less? Everything I look at the laptops are expensive for anything near this. The next best thing I was gonna get was a Lenovo ideapad 3i from 2023",
+              "timestamp": "2026-08-02T18:16:55+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1aka6j",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1asuyc",
+                  "author": "reddit_user_724261d7b9ba",
+                  "author_karma": 0,
+                  "content": "Yea if those your options just go ahead and waste your money on the aspire 😭you aren’t even looking to get a good system just ragebait",
+                  "timestamp": "2026-08-02T18:24:05+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1ar9v5",
+                  "depth": 2,
+                  "replies": []
+                },
+                {
+                  "comment_id": "p1asxy6",
+                  "author": "reddit_user_724261d7b9ba",
+                  "author_karma": 0,
+                  "content": "Yea if those your options just go ahead and waste your money on the aspire 😭you aren’t even looking to get a good system just ragebait",
+                  "timestamp": "2026-08-02T18:24:27+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1ar9v5",
+                  "depth": 2,
+                  "replies": []
+                },
+                {
+                  "comment_id": "p1axq4p",
+                  "author": "reddit_user_c92661088344",
+                  "author_karma": 0,
+                  "content": "For something sold at a physical retailer:   \n[HP OmniBook X Flip 2 in 1 14\" 2K OLED Touchscreen Laptop AMD Ryzen AI 5 430 (2026) 16GB Memory 512GB SSD Copilot+ Deep Espresso 14-KC0013DX/D31MHUA#ABA - Best Buy](https://www.bestbuy.com/product/hp-omnibook-x-flip-2-in-1-14-2k-oled-touchscreen-laptop-amd-ryzen-ai-5-430-2026-16gb-memory-512gb-ssd-copilot-deep-espresso/JJGWKYZY27)  This is $650 at Bestbuy.   \n\n\nFrom MicroCenter, Refurbished with 90 day warranty, $530: [HP OmniBook X Flip Next Gen AI Copilot+ PC 16-ar0013dx 16\" 2-in-1 Laptop Computer (Refurbished) - Meteor Silver - Micro Center](https://www.microcenter.com/product/702320/hp-omnibook-x-flip-next-gen-ai-copilot-pc-16-ar0013dx-16-2-in-1-laptop-computer-(refurbished)-meteor-silver-aluminum)  \nYou can add 1 year warranty for $70.   \n\n\nThe Omnibook X is HP's higher end consumer brand, and should have better build quality. I just would not go around being careless with the 360 degree hinges.    \n  \nPersonally, though, I would rather buy an Open Box/Refurbished business laptop with warranty from a reputable sellers.  These tend to have much more robust construction quality-- something that matters if I plan on carrying the laptop around rather than mostly using it in one location. \n\nYou can find plenty on eBay.  Also, a personal favorite for older hardware is Wisetek Markets-- some of their older model laptops are \"Refurbished-Premium\" in like new condition with like new battery performance-- likely ones that corporate IT bought/lease but were hardly ever deployed. \n\nThis for example, is an HP Elitebook 845 G7 at $220, with an Ryzen 3 4450U (essentially the same processor with the same architecture as the 7520u), 16gb ram and 512 gb SSD [HP Elitebook 845 G7 14\" 16GB 512GB SSD AMD Ryzen™ 3 Pro 4450U 2.5GHz W](https://www.wisetekmarket.com/products/hp-elitebook-845-g7-14-16gb-512gb-ssd-amd-ryzen%E2%84%A2-3-pro-4450u-2-5ghz-win11p-natural-silver-refurbished-premium).  It has an all metal chassis. Premium Refurbished with 1 year warranty. \n\nHere's something a year newer and faster for $230:  [Dell Latitude 5421 14\" 16GB 512GB SSD Core™ i5-11500H 2.9GHz WIN11P, S](https://www.wisetekmarket.com/products/dell-latitude-5421-14-16gb-512gb-ssd-core%E2%84%A2-i5-11500h-2-9ghz-win11p-silver-refurbished-premium)\n\n\n\n\n\n  ",
+                  "timestamp": "2026-08-02T18:46:12+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1ar9v5",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1b2gpu",
+                      "author": "reddit_user_03755b24c100",
+                      "author_karma": 0,
+                      "content": "I mean I guess I’ll try but I have terrible luck with anything used, that’s how I got stuck using pen and paper in my lectures for my associates for 2 years refurbished laptop crapped out in a month🤣",
+                      "timestamp": "2026-08-02T19:07:52+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1axq4p",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "p1b3h7l",
+                          "author": "reddit_user_299d051b19b2",
+                          "author_karma": 0,
+                          "content": "The new Omnibook X from Bestbuy will be a better choice for the extra $80. \n\nOr you can afford to buy 2 of the refurbished Elitebook and Latitude and have one as a backup and still have some money left over. ",
+                          "timestamp": "2026-08-02T19:12:34+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "p1b2gpu",
+                          "depth": 4,
+                          "replies": []
+                        },
+                        {
+                          "comment_id": "p1d8xz9",
+                          "author": "reddit_user_7d642cbcd823",
+                          "author_karma": 0,
+                          "content": "I bought the hp Omni book x flip 14 inch got it open box excellent from Best Buy for 556$ it’s really decent.",
+                          "timestamp": "2026-08-03T01:51:57+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "p1b2gpu",
+                          "depth": 4,
+                          "replies": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p1akkwi",
+          "author": "reddit_user_73c8e01db3b1",
+          "author_karma": 0,
+          "content": "No. I'd avoid any laptop with the 7520U. It's based on a 7yr old CPU architecture & the 7520U is essentially just a glorified Ryzen 3 7320U with 200MHz higher clocks.",
+          "timestamp": "2026-08-02T17:47:10+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1arl4k",
+              "author": "reddit_user_03755b24c100",
+              "author_karma": 0,
+              "content": "What is a better recommendation around this same price point or hopefully cheaper then? Everything I look at around this price is significantly worse just on first glance",
+              "timestamp": "2026-08-02T18:18:21+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1akkwi",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1atluf",
+          "author": "reddit_user_9752a5fa3ff1",
+          "author_karma": 0,
+          "content": "in this price bracket i personally would only really consider used/refurbished laptops",
+          "timestamp": "2026-08-02T18:27:27+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run018_post01_seed091",
+      "post_slot": 1,
+      "seed_index": 91,
+      "source_raw_post_id": "1vdo34b",
+      "source_product_dir": "GamingLaptops",
+      "source_file": "https://www.reddit.com/r/GamingLaptops/comments/1vdo34b/budget_gaming_laptops_real_world_lifespan/",
+      "post_type": ":snoo_thoughtful: Laptop Buying Advice",
+      "title": "Budget gaming laptops real world lifespan?",
+      "author": "reddit_user_d8691634ac1e",
+      "author_karma": 0,
+      "content": "Budget gaming laptops real world lifespan?\n\n[removed]",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p1ah0sr",
+          "author": "reddit_user_500c200c76d0",
+          "author_karma": 0,
+          "content": "Hey! Your post was removed because it is missing one or more **required Buying Advice fields**, or a required field was left empty.\n\nPlease resubmit using:\n\n    Budget: (e.g. $1200)\n    Country: (e.g. USA)\n    Use Case: (Gaming — which titles? / School / Editing / Mixed)\n    Preferred Specs: (Optional: GPU, CPU, RAM, storage)\n    Notes: (Optional: anything else we should know)\n\nThe required fields are **Budget**, **Country**, and **Use Case**.\n\nCheck our [Posting Guidelines](https://www.reddit.com/r/GamingLaptops/comments/1sppz97/read_before_posting/) before reposting.\n\n\n*I am a bot, and this action was performed automatically. Please [contact the moderators of this subreddit](/message/compose/?to=/r/GamingLaptops) if you have any questions or concerns.*",
+          "timestamp": "2026-08-02T17:31:28+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run018_post02_seed092",
+      "post_slot": 2,
+      "seed_index": 92,
+      "source_raw_post_id": "1vdo8nh",
+      "source_product_dir": "GamingLaptops",
+      "source_file": "https://www.reddit.com/r/GamingLaptops/comments/1vdo8nh/which_budget_gaming_laptop_under_1000/",
+      "post_type": ":snoo_thoughtful: Laptop Buying Advice",
+      "title": "Which Budget gaming laptop under £1000",
+      "author": "reddit_user_d8691634ac1e",
+      "author_karma": 0,
+      "content": "Which Budget gaming laptop under £1000\n\n[removed]",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p1aidlw",
+          "author": "reddit_user_500c200c76d0",
+          "author_karma": 0,
+          "content": "Hey! Your post was removed because it is missing one or more **required Buying Advice fields**, or a required field was left empty.\n\nPlease resubmit using:\n\n    Budget: (e.g. $1200)\n    Country: (e.g. USA)\n    Use Case: (Gaming — which titles? / School / Editing / Mixed)\n    Preferred Specs: (Optional: GPU, CPU, RAM, storage)\n    Notes: (Optional: anything else we should know)\n\nThe required fields are **Budget**, **Country**, and **Use Case**.\n\nCheck our [Posting Guidelines](https://www.reddit.com/r/GamingLaptops/comments/1sppz97/read_before_posting/) before reposting.\n\n\n*I am a bot, and this action was performed automatically. Please [contact the moderators of this subreddit](/message/compose/?to=/r/GamingLaptops) if you have any questions or concerns.*",
+          "timestamp": "2026-08-02T17:37:29+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run018_post03_seed093",
+      "post_slot": 3,
+      "seed_index": 93,
+      "source_raw_post_id": "1vdob3z",
+      "source_product_dir": "thinkpad",
+      "source_file": "https://www.reddit.com/r/thinkpad/comments/1vdob3z/is_this_anything_to_be_concerned_about/",
+      "post_type": "Question / Problem",
+      "title": "Is this anything to be concerned about?",
+      "author": "reddit_user_d8691634ac1e",
+      "author_karma": 0,
+      "content": "Is this anything to be concerned about?\n\nGot a free Thinkpad X1 Gen 6 from a yard sale and it looks like someone stripped this screw and scratched this area\n\nIs this anything to be concerned about?",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p1ajvgw",
+          "author": "reddit_user_b99e55aae533",
+          "author_karma": 0,
+          "content": "It should be ok I don't see pcb copper traces on this side, \n\nSince the screw was stripped it would be good idea to check the other side on the back if there's pcb traces and if they're scratched, but normally you should be good they don't print them near screw hole",
+          "timestamp": "2026-08-02T17:44:05+00:00",
+          "likes": 3,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1akrhi",
+              "author": "reddit_user_68e599a7d956",
+              "author_karma": 0,
+              "content": "Thank you!",
+              "timestamp": "2026-08-02T17:47:58+00:00",
+              "likes": 2,
+              "dislikes": 0,
+              "parent_comment_id": "p1ajvgw",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1ajwv9",
+          "author": "reddit_user_65413d755678",
+          "author_karma": 0,
+          "content": "Return it for your money back ",
+          "timestamp": "2026-08-02T17:44:15+00:00",
+          "likes": -1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1akd0t",
+              "author": "reddit_user_98611766ab15",
+              "author_karma": 0,
+              "content": "\\>free Thinkpad X1 Gen 6",
+              "timestamp": "2026-08-02T17:46:13+00:00",
+              "likes": 5,
+              "dislikes": 0,
+              "parent_comment_id": "p1ajwv9",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1aqfxr",
+                  "author": "reddit_user_b7c36912f63b",
+                  "author_karma": 0,
+                  "content": "Then ask for double your money back!!!!",
+                  "timestamp": "2026-08-02T18:13:11+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1akd0t",
+                  "depth": 2,
+                  "replies": []
+                },
+                {
+                  "comment_id": "p1dswev",
+                  "author": "reddit_user_65413d755678",
+                  "author_karma": 0,
+                  "content": "Nerds ",
+                  "timestamp": "2026-08-03T03:58:26+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1akd0t",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p1aklo8",
+          "author": "reddit_user_98611766ab15",
+          "author_karma": 0,
+          "content": "use needle nose pliers to grab the side of the screw head and carefully twist it out",
+          "timestamp": "2026-08-02T17:47:16+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1aljfo",
+              "author": "reddit_user_68e599a7d956",
+              "author_karma": 0,
+              "content": "Thanks ",
+              "timestamp": "2026-08-02T17:51:24+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1aklo8",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "post_id": "real_run018_post04_seed094",
+      "post_slot": 4,
+      "seed_index": 94,
+      "source_raw_post_id": "1vdp60t",
+      "source_product_dir": "thinkpad",
+      "source_file": "https://www.reddit.com/r/thinkpad/comments/1vdp60t/maxing_out_a_lenovo_thinkpad_p53_vs_thinkpad_x201/",
+      "post_type": "Buying Advice",
+      "title": "Maxing out a Lenovo ThinkPad P53  vs ThinkPad X201 has been installed with a X201s",
+      "author": "reddit_user_d8691634ac1e",
+      "author_karma": 0,
+      "content": "Maxing out a Lenovo ThinkPad P53  vs ThinkPad X201 has been installed with a X201s\n\nI've been struggling to compare which one to buy and my budget has no restrictions for daily use carrying around and good battery with the least amount of struggle for demanding tasks",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p1asvq4",
+          "author": "reddit_user_16ddedbaaaed",
+          "author_karma": 0,
+          "content": "X201s close to unusable these days?",
+          "timestamp": "2026-08-02T18:24:11+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1blu0i",
+              "author": "reddit_user_c796e28d97b5",
+              "author_karma": 0,
+              "content": "I have been using an X201s recently while traveling.  It's running Fedora 43, and nearly everything works, but see below.  I upgraded the hard disk to an SSD and bumped up the memory to 8GB, which helped a lot.\n\nDespite this, I ended up replacing it with an X270.  The X201s runs hot and the fan comes on after a few minutes even when CPU usage is very low.  The screen isn't great either: 1440x900 and poor range of viewing angles.  I also ran into a hotel wi-fi that the machine just couldn't seem to connect to properly, forcing me to USB-tether to an Android phone. Finally, ghostty wouldn't run because it requires a newer OpenGL than is supported by the old Intel GPU.\n\nSo yes, I'd stay from the X201s these days except as a hobby project or an emergency backup when everything else fails.",
+              "timestamp": "2026-08-02T20:38:15+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1asvq4",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1ayouw",
+          "author": "reddit_user_71933fd8ce98",
+          "author_karma": 0,
+          "content": "Neither, X201 are old with low RAM and P53 is heavy. Try to get a T14 Gen 2 AMD or newer.",
+          "timestamp": "2026-08-02T18:50:36+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1b7it6",
+              "author": "reddit_user_1062430b97b3",
+              "author_karma": 0,
+              "content": "ok",
+              "timestamp": "2026-08-02T19:31:16+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1ayouw",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1b1mqv",
+          "author": "reddit_user_79b8b9d0b795",
+          "author_karma": 0,
+          "content": "Get a thinkpad x1 carbon or X13",
+          "timestamp": "2026-08-02T19:04:06+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1d1jrf",
+          "author": "reddit_user_7c82d61ad2d8",
+          "author_karma": 0,
+          "content": "You gotta choose. Do you want the most power (and how much should that be?)? Or portability and battery life?",
+          "timestamp": "2026-08-03T01:08:57+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    }
+  ]
+}

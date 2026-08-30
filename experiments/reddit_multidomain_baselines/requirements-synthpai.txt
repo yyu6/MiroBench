@@ -1,0 +1,9 @@
+# Minimal environment for the pinned SynthPAI THREAD path. Optional providers
+# are lazy-imported by vendor_overrides/SynthPAI/src/models/model_factory.py.
+openai==0.28.1
+numpy>=1.24,<3
+scipy>=1.10,<2
+PyYAML>=6,<7
+pydantic>=2,<3
+tqdm>=4.66,<5
+PyInputPlus==0.2.12

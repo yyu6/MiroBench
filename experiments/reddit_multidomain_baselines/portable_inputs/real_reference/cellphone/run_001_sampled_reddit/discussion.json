@@ -1,0 +1,1207 @@
+{
+  "meta": {
+    "product_category": "cellphone",
+    "baseline": "real_reddit_reference",
+    "run_id": "run_001_sampled_reddit"
+  },
+  "posts": [
+    {
+      "post_id": "real_run001_post00_seed005",
+      "post_slot": 0,
+      "seed_index": 5,
+      "source_raw_post_id": "1v9yno0",
+      "source_product_dir": "Android",
+      "source_file": "https://www.reddit.com/r/Android/comments/1v9yno0/snapseed_has_several_new_features_in_the_works/",
+      "post_type": "link",
+      "title": "Snapseed has several new features in the works, including color grading, a collage editor, and built-in RAW (DNG) photo capture",
+      "author": "reddit_user_0fe413d0e398",
+      "author_karma": 0,
+      "content": "Snapseed has several new features in the works, including color grading, a collage editor, and built-in RAW (DNG) photo capture",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p0jsgeb",
+          "author": "reddit_user_38614425038d",
+          "author_karma": 0,
+          "content": "Only thing I want is the ability to paste one image on top of another (resized, rotated). \n\n(Snapseed's existing overlay function is broken, it does not work right.)\n\nIt's hard to find an app that actually supports this, and the only one I found wants to charge an egregious $90 per year subscription...",
+          "timestamp": "2026-07-29T21:18:53+00:00",
+          "likes": 11,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0m8uaq",
+              "author": "reddit_user_13f72c6cb9cb",
+              "author_karma": 0,
+              "content": "I use Picsart for this exact feature. Its the only app ive found thats reliable.",
+              "timestamp": "2026-07-30T06:00:04+00:00",
+              "likes": 0,
+              "dislikes": 0,
+              "parent_comment_id": "p0jsgeb",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p0m9qpm",
+                  "author": "reddit_user_38614425038d",
+                  "author_karma": 0,
+                  "content": "Yeah, that's exactly the one I'm *not* paying a $100 subscription for to edit together pointless memes on my phone.\n\nIt's already a stupid waste of time for me to do what I do, I don't need to waste that much money too!",
+                  "timestamp": "2026-07-30T06:07:19+00:00",
+                  "likes": 2,
+                  "dislikes": 0,
+                  "parent_comment_id": "p0m8uaq",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p0mhea1",
+                      "author": "[deleted]",
+                      "author_karma": 0,
+                      "content": "[removed]",
+                      "timestamp": "2026-07-30T07:09:06+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p0m9qpm",
+                      "depth": 3,
+                      "replies": []
+                    },
+                    {
+                      "comment_id": "p0nqpk2",
+                      "author": "reddit_user_5ada02ab2b07",
+                      "author_karma": 0,
+                      "content": "What about Photo Editor? You pay a small fee to remove ads but it's pretty robust. I use it for all my stupid memes.",
+                      "timestamp": "2026-07-30T12:36:22+00:00",
+                      "likes": 0,
+                      "dislikes": 0,
+                      "parent_comment_id": "p0m9qpm",
+                      "depth": 3,
+                      "replies": []
+                    },
+                    {
+                      "comment_id": "p0rj940",
+                      "author": "reddit_user_6d2d8c9bd9c3",
+                      "author_karma": 0,
+                      "content": "I remember using PhotoGrid and PS Touch to make meme in the past. I am so old... ",
+                      "timestamp": "2026-07-30T22:43:01+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p0m9qpm",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "comment_id": "p0o4lnq",
+              "author": "reddit_user_c84083e83107",
+              "author_karma": 0,
+              "content": "Photopea is free (web-based). I think the Multi Layer app would work too. ",
+              "timestamp": "2026-07-30T13:44:47+00:00",
+              "likes": 2,
+              "dislikes": 0,
+              "parent_comment_id": "p0jsgeb",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p0m7x2a",
+          "author": "reddit_user_722f94bb62e7",
+          "author_karma": 0,
+          "content": "I just want proper noise reduction tools on it 😭",
+          "timestamp": "2026-07-30T05:52:40+00:00",
+          "likes": 4,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0nho27",
+          "author": "reddit_user_62e185b405aa",
+          "author_karma": 0,
+          "content": "It still can't handle RAW DNG from Pixels. There is severe posterization and banding.",
+          "timestamp": "2026-07-30T11:46:19+00:00",
+          "likes": 3,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1cipui",
+          "author": "reddit_user_eddf23a3f2dd",
+          "author_karma": 0,
+          "content": "The only thing I need from this app at this point is auto background removal ",
+          "timestamp": "2026-08-02T23:24:23+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run001_post01_seed006",
+      "post_slot": 1,
+      "seed_index": 6,
+      "source_raw_post_id": "1va6t1z",
+      "source_product_dir": "Android",
+      "source_file": "https://www.reddit.com/r/Android/comments/1va6t1z/big_affordable_longlasting_yet_still/",
+      "post_type": "link",
+      "title": "Big, affordable, long-lasting, yet still disappointing: Oppo Pad 5 5G review",
+      "author": "reddit_user_0fe413d0e398",
+      "author_karma": 0,
+      "content": "Big, affordable, long-lasting, yet still disappointing: Oppo Pad 5 5G review",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p0j7spc",
+          "author": "reddit_user_06a916e26729",
+          "author_karma": 0,
+          "content": "It is a completely different model than the chinese version launched with the same name. So buyer beware",
+          "timestamp": "2026-07-29T19:46:56+00:00",
+          "likes": 11,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0l5fqc",
+          "author": "reddit_user_e9c3a08990e5",
+          "author_karma": 0,
+          "content": "It's DOA with that price. In eu/UK you can get Xiaomi pad 8 pro for like 480€",
+          "timestamp": "2026-07-30T01:38:49+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run001_post02_seed007",
+      "post_slot": 2,
+      "seed_index": 7,
+      "source_raw_post_id": "1vaa3f5",
+      "source_product_dir": "samsung",
+      "source_file": "https://www.reddit.com/r/samsung/comments/1vaa3f5/best_one_ui_version/",
+      "post_type": "OneUI",
+      "title": "Best One UI version? 🔥",
+      "author": "reddit_user_0fe413d0e398",
+      "author_karma": 0,
+      "content": "Best One UI version? 🔥\n\nWhat do you prefer? 🔥🤔",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p0lmv28",
+          "author": "reddit_user_a41f761cab40",
+          "author_karma": 0,
+          "content": "OneUI 3.",
+          "timestamp": "2026-07-30T03:22:20+00:00",
+          "likes": 5,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0vjg6i",
+              "author": "reddit_user_c81e532ef572",
+              "author_karma": 0,
+              "content": "This. 3 was peak.",
+              "timestamp": "2026-07-31T13:51:47+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p0lmv28",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p0lt8ht",
+          "author": "reddit_user_13d0ec557758",
+          "author_karma": 0,
+          "content": "https://preview.redd.it/mfzu3ak1kagh1.jpeg?width=300&format=pjpg&auto=webp&s=fea549812e61eef156fc2b513179f28d6bf46e0c",
+          "timestamp": "2026-07-30T04:04:19+00:00",
+          "likes": 0,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0ly1h5",
+          "author": "reddit_user_d109137f5a7b",
+          "author_karma": 0,
+          "content": "one ui 7",
+          "timestamp": "2026-07-30T04:37:44+00:00",
+          "likes": 0,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0pi7qt",
+          "author": "reddit_user_605254894def",
+          "author_karma": 0,
+          "content": "one UI 7 >>> it's like the sweet spot between new features and stability",
+          "timestamp": "2026-07-30T17:19:58+00:00",
+          "likes": 0,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0sltq3",
+          "author": "reddit_user_dfc0c1da4087",
+          "author_karma": 0,
+          "content": "One UI 6 I could still use Windows Dex",
+          "timestamp": "2026-07-31T02:11:42+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0vrkkr",
+          "author": "reddit_user_f1c325c6a09d",
+          "author_karma": 0,
+          "content": "One UI4",
+          "timestamp": "2026-07-31T14:28:10+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0vtjmm",
+          "author": "reddit_user_907165f6eeb6",
+          "author_karma": 0,
+          "content": "One UI 1.5 and 2.1 for me",
+          "timestamp": "2026-07-31T14:36:47+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0x85fr",
+          "author": "reddit_user_382c65eb81ac",
+          "author_karma": 0,
+          "content": "Don't know. 6, 7 and 8 hace been a let-down after 5. 8.5 goes in the right direction (for my taste).\n\nStill prefer a more stock or Pixel-like UI. I do not find much use in Samsung's extended functionality. But I found non-S-class devices to be bogged down by them.",
+          "timestamp": "2026-07-31T18:14:12+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p17thso",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-02T07:58:14+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run001_post03_seed008",
+      "post_slot": 3,
+      "seed_index": 8,
+      "source_raw_post_id": "1vaapjd",
+      "source_product_dir": "Android",
+      "source_file": "https://www.reddit.com/r/Android/comments/1vaapjd/qualcomm_ceo_consumer_preference_within_the/",
+      "post_type": "link",
+      "title": "Qualcomm CEO: “Consumer preference within the premium category is changing towards a preference to the lower end of the premium, as well to last year’s phone, because of the memory price increases,”",
+      "author": "reddit_user_0fe413d0e398",
+      "author_karma": 0,
+      "content": "Qualcomm CEO: “Consumer preference within the premium category is changing towards a preference to the lower end of the premium, as well to last year’s phone, because of the memory price increases,”",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p0k2pm6",
+          "author": "reddit_user_06a916e26729",
+          "author_karma": 0,
+          "content": "> Qualcomm is taking concrete measures to expand its margins going forward, CEO Cristiano Amon said in an interview, including raising prices across the board starting on September 1 for the company’s chips, most of which currently go to smartphone makers, and looking for other ways to streamline the company’s supply chain.\n> \n> “Cost went up, prices are going to go up,” Amon said.\n> \n> “The semiconductor industry is experiencing a broad-based increase in input costs, across wafer fabrication, assembly, test, advanced packaging, memory and other materials,” Qualcomm said in its release, although, as management noted, “revenues continue to be healthy.”\n> \n> “Consumer preference within the premium category is changing towards a preference to the lower end of the premium, as well to last year’s phone, because of the memory price increases,” Amon said.\n> \n> “There’s also a change in gross margin because of the high supply cost that you’re all hearing about,” Amon added. “It’s a temporary, short-term thing we are addressing with price increases.”",
+          "timestamp": "2026-07-29T22:08:33+00:00",
+          "likes": 9,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0k3jtn",
+              "author": "reddit_user_ba29dd604693",
+              "author_karma": 0,
+              "content": "\\> “It’s a temporary, short-term thing we are addressing with price increases.”\n\nLOL",
+              "timestamp": "2026-07-29T22:12:46+00:00",
+              "likes": 49,
+              "dislikes": 0,
+              "parent_comment_id": "p0k2pm6",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p0kg0p8",
+                  "author": "reddit_user_13098289c7dd",
+                  "author_karma": 0,
+                  "content": "People are buying cheaper phones, so lets increase prices. This will only help competition. Intel did the same shit in the early 2000's when they ran circles around AMD. They didn't innovate and were much higher prices. Now I think many prefer AMD.",
+                  "timestamp": "2026-07-29T23:17:31+00:00",
+                  "likes": 18,
+                  "dislikes": 0,
+                  "parent_comment_id": "p0k3jtn",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p0kitp1",
+                      "author": "reddit_user_b4d326ebe434",
+                      "author_karma": 0,
+                      "content": "It was wild seeing the likes of Nubia Neo phones with D7400 and Redmi Note 17 (some low end SD 6 stuff) costing more than what I've paid for the Poco X6 Pro in 2024.\n\nI worry about used phone sellers catching on as well.",
+                      "timestamp": "2026-07-29T23:32:38+00:00",
+                      "likes": 6,
+                      "dislikes": 0,
+                      "parent_comment_id": "p0kg0p8",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "p0lx3g2",
+                          "author": "reddit_user_269701f1def5",
+                          "author_karma": 0,
+                          "content": ">  I worry about used phone sellers catching on as well.\n\nI've been monitoring used phone prices in the USA in recent months, its already noticeably higher on average than before.\n\nWhat I'm wondering is if this is a temporary blip due to the RAM shortage, or a more permanent shift in the smartphone market.",
+                          "timestamp": "2026-07-30T04:31:01+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "p0kitp1",
+                          "depth": 4,
+                          "replies": []
+                        },
+                        {
+                          "comment_id": "p0mq9w0",
+                          "author": "reddit_user_e9c786080fed",
+                          "author_karma": 0,
+                          "content": "Already are. Check the prices on OnePlus 15r on eBay. They are all inflated",
+                          "timestamp": "2026-07-30T08:23:11+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "p0kitp1",
+                          "depth": 4,
+                          "replies": []
+                        }
+                      ]
+                    },
+                    {
+                      "comment_id": "p0l7lvl",
+                      "author": "reddit_user_1877ac903f97",
+                      "author_karma": 0,
+                      "content": "Everyone is increasing prices. Look to tsmc raising prices. How can they absorb it otherwise. ",
+                      "timestamp": "2026-07-30T01:51:16+00:00",
+                      "likes": 3,
+                      "dislikes": 0,
+                      "parent_comment_id": "p0kg0p8",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "p0ll9wh",
+                          "author": "reddit_user_4b38df79526d",
+                          "author_karma": 0,
+                          "content": "People are just being weird about this and keep blaming the wrong things. Qualcomm isn't really increasing price due to greed, they literally have to increase the price to have any profit at all. \n\nSony/Microsoft isn't increasing price happily when it literally halted their console sales, literally 80% decrease in sales. They kinda have to.",
+                          "timestamp": "2026-07-30T03:12:15+00:00",
+                          "likes": 4,
+                          "dislikes": 0,
+                          "parent_comment_id": "p0l7lvl",
+                          "depth": 4,
+                          "replies": []
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "comment_id": "p0kuaxl",
+                  "author": "reddit_user_5d7e40c77d9a",
+                  "author_karma": 0,
+                  "content": "It's emblematic of the modern K shaped economy.\n\nInstead of going for the diminishing number of middle class customers, they just double, triple and quadruple down on getting more money from the people who have large amounts of disposable funds to spend.\n\nIf you've seen subscription services drop entry level offerings and increase prices on upper tier offerings, this is the same thing. Increase prices, don't worry about losing customers as long as the increased revenue from the ones that stay offset it.\n\nThis all allows you to make your balance sheet look better and allows you to pretend infinite growth is still possible with no upper ceiling (even if you think this *is* possible, there are consequences of pursuing it at all costs).",
+                  "timestamp": "2026-07-30T00:35:58+00:00",
+                  "likes": 11,
+                  "dislikes": 0,
+                  "parent_comment_id": "p0k3jtn",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p0li85x",
+                      "author": "reddit_user_6c19789c8d83",
+                      "author_karma": 0,
+                      "content": "> you must acknowledge there are consequences of pursuing it at any and all costs\n \nYeah, but the people pushing for companies to do this (older investors who want to protect their retirement portfolios) won't live long enough to care. As long as they get what they want while they still draw breath, the world can collapse right after for all they care.\n \nWestern society is in for a massive economic/business correction once the retiree class finishes dying off, it's going to be a mess.",
+                      "timestamp": "2026-07-30T02:53:17+00:00",
+                      "likes": 0,
+                      "dislikes": 0,
+                      "parent_comment_id": "p0kuaxl",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                },
+                {
+                  "comment_id": "p0kxiss",
+                  "author": "reddit_user_aa1a8c9a01b6",
+                  "author_karma": 0,
+                  "content": "I mean, yeah.  Short term is an arbitrary term but he's saying holding price increases isn't the company's go to make revenue in the long run.\n\nAt least for now, until it might be.",
+                  "timestamp": "2026-07-30T00:54:07+00:00",
+                  "likes": 0,
+                  "dislikes": 0,
+                  "parent_comment_id": "p0k3jtn",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            },
+            {
+              "comment_id": "p0kw2ow",
+              "author": "reddit_user_a08ef2f5938f",
+              "author_karma": 0,
+              "content": "\"Everyone else is raising prices. It is only fair if we get our cut too.\" -Qualcomm\n\nThe solution to people refusing to buy overpriced electronics is to make it more overpriced. ",
+              "timestamp": "2026-07-30T00:45:59+00:00",
+              "likes": 10,
+              "dislikes": 0,
+              "parent_comment_id": "p0k2pm6",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p0l7sjr",
+                  "author": "reddit_user_1877ac903f97",
+                  "author_karma": 0,
+                  "content": "Yeah blame Qualcomm. How about memory makers and tsmc making record profits from increasing their prices ",
+                  "timestamp": "2026-07-30T01:52:19+00:00",
+                  "likes": 3,
+                  "dislikes": 0,
+                  "parent_comment_id": "p0kw2ow",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p0lpvx3",
+                      "author": "reddit_user_a08ef2f5938f",
+                      "author_karma": 0,
+                      "content": "Blame every one including Qualcomm.",
+                      "timestamp": "2026-07-30T03:41:55+00:00",
+                      "likes": 7,
+                      "dislikes": 0,
+                      "parent_comment_id": "p0l7sjr",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p0k6f03",
+          "author": "reddit_user_c15ccd488ca5",
+          "author_karma": 0,
+          "content": "So no lube then",
+          "timestamp": "2026-07-29T22:27:13+00:00",
+          "likes": 41,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0kgeqb",
+              "author": "reddit_user_ce19fefd134e",
+              "author_karma": 0,
+              "content": "You can have all the lube you want, as long as it's analgesic cream. ",
+              "timestamp": "2026-07-29T23:19:37+00:00",
+              "likes": 3,
+              "dislikes": 0,
+              "parent_comment_id": "p0k6f03",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p0kkqwy",
+              "author": "reddit_user_27ebc089f0cc",
+              "author_karma": 0,
+              "content": "All lube manufacturing capacity has been allocated to making more dram chips.",
+              "timestamp": "2026-07-29T23:43:10+00:00",
+              "likes": 13,
+              "dislikes": 0,
+              "parent_comment_id": "p0k6f03",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p0kxw66",
+              "author": "reddit_user_9545c877cd46",
+              "author_karma": 0,
+              "content": "Costs extra. Do you have lube money?",
+              "timestamp": "2026-07-30T00:56:12+00:00",
+              "likes": 7,
+              "dislikes": 0,
+              "parent_comment_id": "p0k6f03",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p0m0vke",
+                  "author": "reddit_user_4eb122589b70",
+                  "author_karma": 0,
+                  "content": "Just had my lube debt sent to collections 😓",
+                  "timestamp": "2026-07-30T04:58:18+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p0kxw66",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p0m5z5t",
+                      "author": "reddit_user_9545c877cd46",
+                      "author_karma": 0,
+                      "content": "Oh... man, bad news for you if Puffy ever gets out.",
+                      "timestamp": "2026-07-30T05:37:15+00:00",
+                      "likes": 2,
+                      "dislikes": 0,
+                      "parent_comment_id": "p0m0vke",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "comment_id": "p0p405d",
+              "author": "reddit_user_5712be459a45",
+              "author_karma": 0,
+              "content": "There's just not enough available.  If you're not able to get ahold of one of those Amazon 74 gallon drums for yourself, might as well let 'em go in dry.",
+              "timestamp": "2026-07-30T16:19:51+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p0k6f03",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p0k942j",
+          "author": "reddit_user_8a218cd4f22c",
+          "author_karma": 0,
+          "content": "TLDR: Our shit is way too expensive to the point where even the customers are catching on.",
+          "timestamp": "2026-07-29T22:41:12+00:00",
+          "likes": 200,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0kxslh",
+              "author": "reddit_user_9545c877cd46",
+              "author_karma": 0,
+              "content": "\"A shift in consumer preferences where they are tired of getting took every phone upgrade and they don't have money anymore due to our price increases and tariffs.\"",
+              "timestamp": "2026-07-30T00:55:39+00:00",
+              "likes": 31,
+              "dislikes": 0,
+              "parent_comment_id": "p0k942j",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p0mqfah",
+              "author": "reddit_user_40f600fa797f",
+              "author_karma": 0,
+              "content": "And even the most techy people I know, those who always *need* the newest gadget, stopped buying a new phone every year/two years since the upgrades aren't that great anymore.",
+              "timestamp": "2026-07-30T08:24:26+00:00",
+              "likes": 12,
+              "dislikes": 0,
+              "parent_comment_id": "p0k942j",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p0n0u9u",
+                  "author": "reddit_user_c72281f69aed",
+                  "author_karma": 0,
+                  "content": "I used to be an every two years person. Had my current one for three now and I don't really see anything tempting me to get a new one any time soon.",
+                  "timestamp": "2026-07-30T09:50:53+00:00",
+                  "likes": 7,
+                  "dislikes": 0,
+                  "parent_comment_id": "p0mqfah",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            },
+            {
+              "comment_id": "p0nxb8w",
+              "author": "reddit_user_80a036111b9a",
+              "author_karma": 0,
+              "content": "With every new phone being \"all changes are just AI being more AI that AIs slightly differently\" customers say \"fuck this shit, old AI is good enough\".",
+              "timestamp": "2026-07-30T13:09:55+00:00",
+              "likes": 3,
+              "dislikes": 0,
+              "parent_comment_id": "p0k942j",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p0pixyb",
+              "author": "reddit_user_2d9f37d33e13",
+              "author_karma": 0,
+              "content": "Right or like people can't afford to buy the newest most expensive phones because of centers of private Capital manipulating the market for some absolute b******* AI slop. Welcome to the late stage capitalism",
+              "timestamp": "2026-07-30T17:23:00+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p0k942j",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p0kl9wb",
+          "author": "reddit_user_b8895eced92e",
+          "author_karma": 0,
+          "content": "maybe actually try to have the Snapdragon 7 series actually compete with Dimensity 8000 series, instead of just only bothering to innovate on the flagships?",
+          "timestamp": "2026-07-29T23:46:03+00:00",
+          "likes": 26,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0lkt78",
+              "author": "reddit_user_89a59ac4c466",
+              "author_karma": 0,
+              "content": "Heard you loud and clear: we'll be releasing 16 variants of the 8 Elite and a 7 with a 2% uplift vs last year's 6.",
+              "timestamp": "2026-07-30T03:09:19+00:00",
+              "likes": 20,
+              "dislikes": 0,
+              "parent_comment_id": "p0kl9wb",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p0kuxt4",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-07-30T00:39:33+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0kxdpp",
+          "author": "reddit_user_6023fd925c1f",
+          "author_karma": 0,
+          "content": "It isn’t a change in preference because consumers would still prefer getting a high end phone but are having to compromise because of economic reality. The soon the AI industry goes bust the better for humanity in general.",
+          "timestamp": "2026-07-30T00:53:19+00:00",
+          "likes": 36,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0lbzix",
+              "author": "reddit_user_9920ab310f76",
+              "author_karma": 0,
+              "content": "Why buy this years phones when last years phones are 30-40% cheaper? There is only a marginal difference in performance.\n\nI'm super happy with s25+. What am I missing that the s26+ has?",
+              "timestamp": "2026-07-30T02:16:30+00:00",
+              "likes": 15,
+              "dislikes": 0,
+              "parent_comment_id": "p0kxdpp",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p0m8tey",
+                  "author": "reddit_user_f1c1b21dfd3d",
+                  "author_karma": 0,
+                  "content": "Apart from Privacy Glass and maybe earlier access to some AI features? Nothing really. ",
+                  "timestamp": "2026-07-30T05:59:52+00:00",
+                  "likes": 6,
+                  "dislikes": 0,
+                  "parent_comment_id": "p0lbzix",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p0malp8",
+                      "author": "reddit_user_af5c451bbc80",
+                      "author_karma": 0,
+                      "content": "Makes sense for samsung S series because they update so slow. For chinese phones there's still decent enough upgrades (specially cameras) that makes the latest model worth ",
+                      "timestamp": "2026-07-30T06:14:11+00:00",
+                      "likes": 4,
+                      "dislikes": 0,
+                      "parent_comment_id": "p0m8tey",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "p0mhyon",
+                          "author": "reddit_user_faa4535df08b",
+                          "author_karma": 0,
+                          "content": "Smart option since the launch price is cheaper and they go on sale very often.",
+                          "timestamp": "2026-07-30T07:13:40+00:00",
+                          "likes": 3,
+                          "dislikes": 0,
+                          "parent_comment_id": "p0malp8",
+                          "depth": 4,
+                          "replies": []
+                        }
+                      ]
+                    },
+                    {
+                      "comment_id": "p0mnam6",
+                      "author": "reddit_user_a9b6832bf2b7",
+                      "author_karma": 0,
+                      "content": "The privacy glass is only for ultra models, so I am sure he's not missing anything.",
+                      "timestamp": "2026-07-30T07:58:15+00:00",
+                      "likes": 3,
+                      "dislikes": 0,
+                      "parent_comment_id": "p0m8tey",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                },
+                {
+                  "comment_id": "p0mj71a",
+                  "author": "reddit_user_faa4535df08b",
+                  "author_karma": 0,
+                  "content": "I'm still on S23, no real need to upgrade, just getting occasional lag because one UI and apps are getting unnecessarily bloated",
+                  "timestamp": "2026-07-30T07:23:47+00:00",
+                  "likes": 2,
+                  "dislikes": 0,
+                  "parent_comment_id": "p0lbzix",
+                  "depth": 2,
+                  "replies": []
+                },
+                {
+                  "comment_id": "p0mnewl",
+                  "author": "reddit_user_a9b6832bf2b7",
+                  "author_karma": 0,
+                  "content": "This is exactly what I do, I do this when I buy cars and phones, also, looking for secondhand like new, can save 15-20%.",
+                  "timestamp": "2026-07-30T07:59:15+00:00",
+                  "likes": 2,
+                  "dislikes": 0,
+                  "parent_comment_id": "p0lbzix",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p0kxp6r",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-07-30T00:55:06+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0kye1d",
+          "author": "reddit_user_378112faec13",
+          "author_karma": 0,
+          "content": "Back in the day, when something like this magnitude off balance the market the government/president will attempt to strategize or provide incentives to curb and discourage these chokeholds on the market.\n\nToo bad our government don't care anymore(or lost its function), and now we can only watch this go down.",
+          "timestamp": "2026-07-30T00:58:59+00:00",
+          "likes": 9,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0m6tyo",
+              "author": "reddit_user_37fbf3f9b738",
+              "author_karma": 0,
+              "content": "It takes 3-4 years to increase capacity, minimum. There are already fabs coming online in the US that were started during the Biden admin. It's just that fabs are one of the slowest things to build which is why the industry traditionally had overcapacity and went through deep boom+bust cycles. ",
+              "timestamp": "2026-07-30T05:44:01+00:00",
+              "likes": 2,
+              "dislikes": 0,
+              "parent_comment_id": "p0kye1d",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p0kze9r",
+          "author": "reddit_user_d41471ab2b8d",
+          "author_karma": 0,
+          "content": "I hate those market analyses that seem to completely disregard the worsening of everyone's living conditions, acting as if they were simply 'market conditions.'\n\nNo one prefers to buy lower end of anything, if they can. There's no preference shift here.",
+          "timestamp": "2026-07-30T01:04:43+00:00",
+          "likes": 15,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0l0zuv",
+          "author": "reddit_user_91bc1ecfb3f6",
+          "author_karma": 0,
+          "content": "I mean yeah no fucking shit lol",
+          "timestamp": "2026-07-30T01:13:46+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0l437b",
+          "author": "reddit_user_52e64f841881",
+          "author_karma": 0,
+          "content": "A \"**preference**\".\n\nCorporate speak is always funny.",
+          "timestamp": "2026-07-30T01:31:10+00:00",
+          "likes": 209,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0lmk4p",
+              "author": "reddit_user_49d138f560c5",
+              "author_karma": 0,
+              "content": "lower end of the premium” sounds like a weird flex",
+              "timestamp": "2026-07-30T03:20:25+00:00",
+              "likes": 53,
+              "dislikes": 0,
+              "parent_comment_id": "p0l437b",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p0md42l",
+                  "author": "reddit_user_5812fcda57df",
+                  "author_karma": 0,
+                  "content": "Very expensive low end",
+                  "timestamp": "2026-07-30T06:34:16+00:00",
+                  "likes": 18,
+                  "dislikes": 0,
+                  "parent_comment_id": "p0lmk4p",
+                  "depth": 2,
+                  "replies": []
+                },
+                {
+                  "comment_id": "p0mmjvp",
+                  "author": "reddit_user_a9b6832bf2b7",
+                  "author_karma": 0,
+                  "content": "I saw a low end device and the company market it as (Premium design) just for how the cameras look. ",
+                  "timestamp": "2026-07-30T07:52:01+00:00",
+                  "likes": 3,
+                  "dislikes": 0,
+                  "parent_comment_id": "p0lmk4p",
+                  "depth": 2,
+                  "replies": []
+                },
+                {
+                  "comment_id": "p0p9h28",
+                  "author": "reddit_user_0f67011d468f",
+                  "author_karma": 0,
+                  "content": "I'm a bit weary of what that could be...\n\nOn the flipside, it could be as much of a nothing burger as an increase in the 'other', primarily Chinese brands that undercut the usual suspects. People like myself who've opted for a Xiaomi for instance.\n\nOn the other hand, it could simply be the market's idea of what is 'lower end of the premium' is. People opting to buy as they were as opposed to moving towards much more expensive options like Sony or some of the foldable options out there.\n\nIn other words, is the floor actually going down, or has the ceiling just been raised?\n\n\n\n",
+                  "timestamp": "2026-07-30T16:43:05+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p0lmk4p",
+                  "depth": 2,
+                  "replies": []
+                },
+                {
+                  "comment_id": "p0q9l2s",
+                  "author": "reddit_user_7468e5be676e",
+                  "author_karma": 0,
+                  "content": "\"We raised the prices of the premium products, but our customers' wages haven't increased in 20 years, so they're continuing to purchase what is now available at the same price point\".",
+                  "timestamp": "2026-07-30T19:15:48+00:00",
+                  "likes": 2,
+                  "dislikes": 0,
+                  "parent_comment_id": "p0lmk4p",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p0l5qr1",
+          "author": "reddit_user_d3f7535ad8b7",
+          "author_karma": 0,
+          "content": "No, because whatever we pay, ends up being a waste in few years. \n\nThere is no upside to premium category anymore. Pro series phones are not getting marquee features next year of release. Why should I pay marquee price for that? \n\nIt is better to pay lesser and be satisfied. ",
+          "timestamp": "2026-07-30T01:40:33+00:00",
+          "likes": 4,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0l6wk8",
+          "author": "reddit_user_5e7ae0cd2c13",
+          "author_karma": 0,
+          "content": "Memory just exacerbated this, was bound to happen with the way newer nodes are raising wafer costs.\n\n",
+          "timestamp": "2026-07-30T01:47:13+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0l7d24",
+          "author": "reddit_user_860605f71856",
+          "author_karma": 0,
+          "content": "Doesn't help that older models literally often sport the same so s or performance wise similiar socs now and newer models  have  less ram and storage.",
+          "timestamp": "2026-07-30T01:49:51+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0lhbyl",
+          "author": "reddit_user_20bcdb5a9a37",
+          "author_karma": 0,
+          "content": "CEO's are paid to repackage and elevate common ideas as original while inserting their perspective into the conversation.\n\nHe said: people ain't buying new shit, because of inflation, shrinkflation and enshitification. ",
+          "timestamp": "2026-07-30T02:47:51+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0m6eqt",
+          "author": "reddit_user_3dfcea1d84ec",
+          "author_karma": 0,
+          "content": "That has always been the case that’s why the most popular android phone have always been the lower end",
+          "timestamp": "2026-07-30T05:40:39+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0m99mg",
+          "author": "reddit_user_f1c1b21dfd3d",
+          "author_karma": 0,
+          "content": "Wow, I planned to upgrade my phone next year and this is starting to have me worried. ",
+          "timestamp": "2026-07-30T06:03:31+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0mle84",
+          "author": "reddit_user_2cdd6f64bb55",
+          "author_karma": 0,
+          "content": "Sometimes I am just floored by the obviousness of the revelations that senior industry figures treat like precious jewels.\n\nDevice performance is so high now, of course people are choosing a better mid range over an overpriced paperweight with delusions of flagship status. The memory thing is practicality and surprise, it all comes down to cost. People just don't want to spend $$$ they don't have on features they don't need.",
+          "timestamp": "2026-07-30T07:42:16+00:00",
+          "likes": 5,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0nfuds",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-07-30T11:35:15+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0nu6ea",
+          "author": "reddit_user_b880e8bfbace",
+          "author_karma": 0,
+          "content": "They catched up to Apple performance only to realize that this way people keep their phone longer\n\nA snap 8 gen 2 is still a great SoC\n\nMy S10 was struggling after 3 years (the exynos variant)",
+          "timestamp": "2026-07-30T12:54:10+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0nw09m",
+          "author": "reddit_user_c113a81e5258",
+          "author_karma": 0,
+          "content": "Yeah I \"prefer\" not being broke after buying a phone. What?",
+          "timestamp": "2026-07-30T13:03:25+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0ondo3",
+          "author": "reddit_user_ca24566fc6fe",
+          "author_karma": 0,
+          "content": "Also just that flagship and even mid range chips have been wildly ample in performance for like 5 years now. The average consumer isn't going to notice the copious surplus of performance on tap. Flagships phones are truly overbuilt for the tasks that most people are using them for these days. Hard sell, unless something new is brought to the table.",
+          "timestamp": "2026-07-30T15:08:50+00:00",
+          "likes": 3,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p158hfg",
+          "author": "reddit_user_3b404be0ec22",
+          "author_karma": 0,
+          "content": "Cell phones peaked years ago. The only thing new is more AI data harvesting. I'm going to use my 8 Pro until it breaks... Something I've never done in my life.",
+          "timestamp": "2026-08-01T21:49:34+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run001_post04_seed009",
+      "post_slot": 4,
+      "seed_index": 9,
+      "source_raw_post_id": "1vaay1w",
+      "source_product_dir": "Android",
+      "source_file": "https://www.reddit.com/r/Android/comments/1vaay1w/snapseed_camera_adds_geotags_saving_originals_on/",
+      "post_type": "link",
+      "title": "Snapseed Camera adds geotags & saving originals on Android",
+      "author": "reddit_user_0fe413d0e398",
+      "author_karma": 0,
+      "content": "Snapseed Camera adds geotags & saving originals on Android",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p0madid",
+          "author": "reddit_user_43277553f723",
+          "author_karma": 0,
+          "content": "Im so glad Snapseed is getting a ton of development attention, its such a good app even when it was a barebones editor. And the upgrades look great. ",
+          "timestamp": "2026-07-30T06:12:23+00:00",
+          "likes": 12,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0n01s3",
+              "author": "reddit_user_5e50b4a8f33e",
+              "author_karma": 0,
+              "content": "I'm very afraid the day when they want this feature investment to make them money.",
+              "timestamp": "2026-07-30T09:44:32+00:00",
+              "likes": 2,
+              "dislikes": 0,
+              "parent_comment_id": "p0madid",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p0oc4ka",
+                  "author": "reddit_user_43277553f723",
+                  "author_karma": 0,
+                  "content": "As far as Im aware theres only a very small group of people working on it, and its a passion project. I highly doubt Google's going to try anything with it.",
+                  "timestamp": "2026-07-30T14:19:07+00:00",
+                  "likes": 2,
+                  "dislikes": 0,
+                  "parent_comment_id": "p0n01s3",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p0txbr1",
+                      "author": "[deleted]",
+                      "author_karma": 0,
+                      "content": "[deleted]",
+                      "timestamp": "2026-07-31T07:37:34+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p0oc4ka",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                },
+                {
+                  "comment_id": "p0ungj3",
+                  "author": "reddit_user_0506883e1998",
+                  "author_karma": 0,
+                  "content": "*Snapseed now fully supports Gemini's AI prompt editor*\n\n^*app download only available for Gemini Ultra subscribers*",
+                  "timestamp": "2026-07-31T10:59:06+00:00",
+                  "likes": 2,
+                  "dislikes": 0,
+                  "parent_comment_id": "p0n01s3",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p0n1dz0",
+          "author": "reddit_user_f51206270446",
+          "author_karma": 0,
+          "content": "Snapseed has a camera? I only used the app for editing",
+          "timestamp": "2026-07-30T09:55:15+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p194bmn",
+          "author": "reddit_user_d6561c01319c",
+          "author_karma": 0,
+          "content": "Love the updates since I have been using it in its original form as the primary editor.\n\nThough I would like to add that since the new major version the menu popping speed since it faster than the speed at which the finger moves throws me off. Something there makes my brain think something's wrong.\n\nAm I the only one?",
+          "timestamp": "2026-08-02T13:40:43+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    }
+  ]
+}

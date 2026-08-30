@@ -1,0 +1,52 @@
+output_dir: "thread_results_gpt4omini"
+store: True
+seed: 42
+task: "THREAD"
+dryrun: False
+save_prompts: True
+timeout: 0.0
+gen_model:
+  name: "gpt-4o-mini"
+  provider: "openai"
+  args: {
+    temperature: 1.
+  }
+task_config:
+    no_threads: 4
+    no_rounds: 2
+    no_actions: 3
+    no_max_comments: 3
+    max_depth: 5
+    no_profiles: 40
+    p_critic: 0.4
+    p_short: 0.7
+    mode: "top"
+    no_sampled_comments: 10
+    default_comment_prob: 7
+    min_comment_len: 1
+    max_comment_len: 10
+    guess_feature: ["city_country"]
+    author_bot_system_prompt_path: "./data/thread/system_prompts/author_system_prompt.txt"
+    user_bot_system_prompt_path: "./data/thread/system_prompts/user_system_prompt.txt"
+    profile_checker_prompt_path: "./data/thread/system_prompts/profile_checker_prompt.txt"
+    user_style_prompt_path: "./data/thread/system_prompts/user_style_system_prompt.txt"
+    user_bot_personalities_path: "./data/profiles/user_bot_gen_online_profiles_300.json"
+    author_bot:
+      name: "gpt-4o-mini"
+      provider: "openai"
+      args: {
+        temperature: 1.
+      }
+    user_bot:
+      name: "gpt-4o-mini"
+      provider: "openai"
+      args: {
+        temperature: 1.,
+        frequency_penalty: 2.0
+      }
+    checker_bot:
+      name: "gpt-4o-mini"
+      provider: "openai"
+      args: {
+        temperature: 0.
+      }

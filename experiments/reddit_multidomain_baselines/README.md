@@ -16,6 +16,40 @@ Default models are exactly:
 - `gpt-4o-mini`
 - `gpt-5.4-mini`
 
+## Fresh-machine quick start
+
+On a computer that does not already have this repository:
+
+```bash
+git clone https://github.com/yyu6/MiroBench.git
+cd MiroBench
+git switch experiments/reddit-multidomain-baselines
+git pull --ff-only
+
+# Full setup: pinned OASIS/MiroFish + SynthPAI, evaluation environment,
+# desensitized matched inputs, and the official StanceRel checkpoint.
+./experiments/reddit_multidomain_baselines/setup.sh
+```
+
+If only the OASIS baseline is needed, skip the separate SynthPAI environment:
+
+```bash
+./experiments/reddit_multidomain_baselines/setup.sh --skip-synthpai
+```
+
+Setup requires Python 3.11 or 3.12, Git, internet access, and several GB of free disk
+space. It creates `.venv_reddit_baselines`, clones exact commits of MiroFish
+and SynthPAI, applies the committed compatibility overrides, installs the
+desensitized 150-seed input bundle, and downloads the official StanceRel model.
+The generation/evaluation wrappers automatically use the project environment,
+so activating it is optional.
+
+Verify an existing installation without changing it:
+
+```bash
+./experiments/reddit_multidomain_baselines/doctor.sh --skip-synthpai
+```
+
 No API keys are committed. Export these once in the shell where jobs run:
 
 ```bash
@@ -23,6 +57,9 @@ export OPENAI_API_KEY='...'
 export DEEPSEEK_API_KEY='...'
 export GEMINI_API_KEY='...'
 ```
+
+Only export keys for the models being run. For example, an OASIS + GPT-4o-mini
+job needs only `OPENAI_API_KEY`.
 
 ## Generate
 
@@ -32,7 +69,8 @@ Run all 88 generation jobs (11 domains × 2 baselines × 4 models):
 ./experiments/reddit_multidomain_baselines/run_generate_all.sh --continue-on-error
 ```
 
-Run one small no-API smoke test first:
+Run one small no-API smoke test first. The committed portable inputs mean this
+works without the original 92MB crawler directory:
 
 ```bash
 ./experiments/reddit_multidomain_baselines/run_generate_all.sh \
@@ -48,11 +86,11 @@ Useful scoped jobs:
 
 # One model/baseline in one domain.
 ./experiments/reddit_multidomain_baselines/run_domain.sh \
-  laptop --models gpt-5.4-mini --baselines oasis
+  laptop --models gpt-4o-mini --baselines oasis
 
 # One model across every domain and both baselines.
 ./experiments/reddit_multidomain_baselines/run_generate_all.sh \
-  --models gpt-5.4-mini --continue-on-error
+  --models gpt-4o-mini --continue-on-error
 
 # Equivalent lower-level command for one domain across all four models/baselines.
 ./experiments/reddit_multidomain_baselines/run_generate_all.sh \
@@ -67,22 +105,33 @@ The defaults are 150 seed posts/domain, 5 posts/OASIS run, 50 OASIS agents,
 24 simulated hours, and 12 OASIS rounds. All are exposed as CLI flags; inspect
 `--help` before changing experimental settings.
 
+OASIS is allowed to produce zero-comment seed threads by default because that
+is an observed baseline outcome; those threads and their zero comment counts
+remain in the artifacts and accounting instead of aborting the full domain.
+Use `--oasis-min-comments-per-post 1` only when a strict non-empty quality gate
+is explicitly required.
+
 ## Evaluate
 
-After generation, run all nine existing GEO thread metrics for the real
-reference and each successful generated job, then compute distributional
-comparisons (KS, Mann–Whitney U, Wasserstein, and Cliff's delta):
+After generation, run the eight scorers that produce the four MiroBench metric
+families (Structure, Uniformity, Behavior, and Expression) for the real
+reference and each successful generated job. The comparison is restricted to
+the declared core metrics and reports KS, Mann–Whitney U, Wasserstein distance,
+and Cliff's delta:
 
 ```bash
-./experiments/reddit_multidomain_baselines/run_evaluate_all.sh --device mps
+./experiments/reddit_multidomain_baselines/run_evaluate_all.sh --device auto
 ```
 
 For a single domain/model/baseline:
 
 ```bash
 ./experiments/reddit_multidomain_baselines/run_evaluate_domain.sh \
-  laptop --models gpt-5.4-mini --baselines oasis --device mps
+  laptop --models gpt-4o-mini --baselines oasis --device auto
 ```
+
+Use `--device auto` for a portable command. `mps` is Apple Silicon only;
+`cuda` requires a CUDA-enabled PyTorch installation.
 
 ## Outputs and accounting
 
@@ -114,9 +163,20 @@ and GPT-5.4 mini's input/cached-input/output rates are from the official
 [OpenAI model page](https://developers.openai.com/api/docs/models/gpt-5.4-mini).
 Update this config before a new study if provider pricing changes.
 
-## Requirements
+## Reproducibility and privacy
 
-Generation uses the repository's existing `SynthPAI`, `product_reddit_sim`,
-and vendored MiroFish/OASIS environments. Evaluation additionally needs the
-existing local metric checkpoints/dependencies. Run the smoke test above after
-pulling to validate only the generation wiring without incurring API cost.
+Raw crawler exports, API keys, generated outputs, caches, and model weights are
+not committed. Instead, this branch commits only the fixed matched input bundle
+needed by these experiments. Reddit author names are deterministically replaced
+with opaque ids, Reddit `u/...` mentions are removed, and local absolute paths
+are stripped. `portable_inputs_manifest.json` records SHA-256 checksums for
+every bundled file, and setup verifies them before installation.
+
+External code is pinned in `config/external_repositories.json`. Compatibility
+overrides are committed under `vendor_overrides/`; setup applies them after
+checking out the pinned commits. StanceRel is downloaded from the original
+authors' public Google Drive and verified against the benchmark checksum.
+
+When `SynthPAI/.venv/bin/python` exists, generation uses it automatically so
+SynthPAI's legacy OpenAI SDK remains isolated from the main environment.
+Override it with `--synthpai-python` only when needed.

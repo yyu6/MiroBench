@@ -1,0 +1,579 @@
+{
+  "meta": {
+    "product_category": "camera",
+    "baseline": "real_reddit_reference",
+    "run_id": "run_027_sampled_reddit"
+  },
+  "posts": [
+    {
+      "post_id": "real_run027_post00_seed135",
+      "post_slot": 0,
+      "seed_index": 135,
+      "source_raw_post_id": "1vdvx2l",
+      "source_product_dir": "AskPhotography",
+      "source_file": "https://www.reddit.com/r/AskPhotography/comments/1vdvx2l/help_with_picture_quality/",
+      "post_type": "Technical Help/Camera Settings",
+      "title": "help with picture quality?",
+      "author": "reddit_user_4349d3bfee00",
+      "author_karma": 0,
+      "content": "help with picture quality?\n\nI'm new to photography and I went out shooting with my friend one day. I have a Canon EOS Rebel XSi. My friend and I used the same settings but mine consistently turned out more blurry than his. I think the first pic was ISO 400, 1/250 and the second pic was something similar, both using 100-300mm lens. I thought maybe the mirror on the inside of the camera was dusty but looked clean when I checked inside. does anyone have an idea of what could be the cause of difference in picture quality? thanks!",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p1ckp10",
+          "author": "reddit_user_9ca3f6e2d488",
+          "author_karma": 0,
+          "content": "\"Your friend and you used the same settings\"...but did you use the same camera and lens?\n\nIf so, it's down to you not holding the camera as steady as him. Your shutter speed is not high enough to use with a 300mm lens handheld, even on full frame (which yours is not). So hold the camera more steady at 1/500 second and get back to us.",
+          "timestamp": "2026-08-02T23:35:10+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1d3iz9",
+              "author": "reddit_user_f9f14e178c78",
+              "author_karma": 0,
+              "content": "not same camera or lens. my friend tried on my camera and still came out slightly blurry on every pic so i don't think it's steadiness. i tried faster shutter speeds but pics came out too dark. is it possible could be camera issue?",
+              "timestamp": "2026-08-03T01:20:17+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1ckp10",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1dgtb7",
+                  "author": "reddit_user_9ca3f6e2d488",
+                  "author_karma": 0,
+                  "content": "You are so new to cameras that you don't seem to know that a higher shutter speed will make things darker, so it's more likely to be a user issue relating to the autofocus.\n\nRead the focus part of the manual and keep the camera on Auto until you learn about the exposure triangle.",
+                  "timestamp": "2026-08-03T02:39:02+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1d3iz9",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p1d903c",
+          "author": "reddit_user_3c4dd5a47959",
+          "author_karma": 0,
+          "content": "1/250s is kind of slow for 100-300mm. the first photo is focused far away and dark while the second photo is focused much closer and brighter. that is a difference right there.\n\nmany telephoto lenses are softer the more you zoom in. that's just the nature of zoom lenses. 1/250s is risking motion blur from the camera shaking in your hands at longer focal lengths --- a steady person might have better luck than someone else. darker subjects are more difficult for your camera to focus on than brighter subjects, which increases the risk of blurriness due to being out of focus. the atmosphere also has volume to it --- shooting a distant object has a lot of \"soup\" to shoot through, while shooting at a nearer object reduces haze due in the atmosphere. \n\nthe point is that there are a LOT of factors that go into whether or not a photo is \"sharp\" and this isn't really enough to make a firm judgement for one reason or another. but just keep practicing and comparing.",
+          "timestamp": "2026-08-03T01:52:19+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run027_post01_seed136",
+      "post_slot": 1,
+      "seed_index": 136,
+      "source_raw_post_id": "1vdw767",
+      "source_product_dir": "AskPhotography",
+      "source_file": "https://www.reddit.com/r/AskPhotography/comments/1vdw767/err_20_on_canon_r7/",
+      "post_type": "Technical Help/Camera Settings",
+      "title": "Err 20 on Canon R7?",
+      "author": "reddit_user_4349d3bfee00",
+      "author_karma": 0,
+      "content": "Err 20 on Canon R7?\n\nHello everyone, I recently posted this on the Canon page, but thought I would post it here as well. Somewhat of a new photographer and I have the Canon R7 with the Canon 24–70 F/2.8 lens. I’m running into an issue when turning on my camera and trying to take photos. This screen pops up when I try to take some photos and it makes me turn my camera off and on and or reinstall the battery but when I do that multiple times, it still shows this screen. I tried to take my lens on and off and clean it and even try to use my other lens to see if it’s a lens issue, but it still does it. I will kind of mess with it for a little while until it randomly fixes itself, and then the screen won’t pop up anymore and I can take pictures like normal. But I have no idea why it does this and why it fixes itself. I’m just looking for some answers because I’m supposed to be taking photos coming up soon and I don’t wanna run into this problem.",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p1cg2eq",
+          "author": "reddit_user_75a5d639169c",
+          "author_karma": 0,
+          "content": "Canon Err20 is typically shutter failure.",
+          "timestamp": "2026-08-02T23:10:12+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1cnqqf",
+          "author": "reddit_user_489a3735a331",
+          "author_karma": 0,
+          "content": "This has been answered in countless other threads.  This even happened to me with my R5.  I didn’t ask the Internet.\n\nIt’s a shutter failure.  Simple as that.  I sent it in to Canon.  Got it back a week later.  Mine was out of warranty so it costed me about $400(usd)  \nI had close to 100K actuations so for what it’s worth, I essentially got a new camera.\n\nJust send it in.",
+          "timestamp": "2026-08-02T23:52:05+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run027_post02_seed137",
+      "post_slot": 2,
+      "seed_index": 137,
+      "source_raw_post_id": "1vdwrnq",
+      "source_product_dir": "SonyAlpha",
+      "source_file": "https://www.reddit.com/r/SonyAlpha/comments/1vdwrnq/nuclear_sunrise/",
+      "post_type": "Photo share",
+      "title": "Nuclear Sunrise",
+      "author": "reddit_user_4349d3bfee00",
+      "author_karma": 0,
+      "content": "Nuclear Sunrise",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p1ci6gl",
+          "author": "reddit_user_57897c136475",
+          "author_karma": 0,
+          "content": "a7iii",
+          "timestamp": "2026-08-02T23:21:28+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1cl0le",
+              "author": "reddit_user_062d72df6d22",
+              "author_karma": 0,
+              "content": "Which lens?",
+              "timestamp": "2026-08-02T23:36:56+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1ci6gl",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1cnoha",
+                  "author": "reddit_user_57897c136475",
+                  "author_karma": 0,
+                  "content": "This is with my old 24-70mm Sigma DGDN ART",
+                  "timestamp": "2026-08-02T23:51:44+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1cl0le",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p1d2tt7",
+          "author": "reddit_user_230567d3e4f2",
+          "author_karma": 0,
+          "content": "I’m all for putting emphasis on the subject however this one was rough, your background and the foreground elements just don’t match and the brightness of the car is intense.",
+          "timestamp": "2026-08-03T01:16:16+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1d3smm",
+              "author": "reddit_user_40a4fa2dfd79",
+              "author_karma": 0,
+              "content": "Folk 😭",
+              "timestamp": "2026-08-03T01:21:50+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1d2tt7",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p1d3zrb",
+              "author": "reddit_user_57897c136475",
+              "author_karma": 0,
+              "content": "Thanks for the feedback!",
+              "timestamp": "2026-08-03T01:22:58+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1d2tt7",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1d9i40",
+          "author": "reddit_user_40a4fa2dfd79",
+          "author_karma": 0,
+          "content": "Genuinely one of the best car photos ive seen",
+          "timestamp": "2026-08-03T01:55:15+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1del8g",
+          "author": "reddit_user_47de1d39bade",
+          "author_karma": 0,
+          "content": "This is so good i thought it was photoshopped into the scene, well done",
+          "timestamp": "2026-08-03T02:25:36+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1df0yx",
+          "author": "reddit_user_1d62486afe5f",
+          "author_karma": 0,
+          "content": "Foreground and background do not match, almost feels like a 3d render I am surprised because this looks 3d. ",
+          "timestamp": "2026-08-03T02:28:13+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run027_post03_seed138",
+      "post_slot": 3,
+      "seed_index": 138,
+      "source_raw_post_id": "1vdx920",
+      "source_product_dir": "SonyAlpha",
+      "source_file": "https://www.reddit.com/r/SonyAlpha/comments/1vdx920/hello_everyone/",
+      "post_type": "Gear",
+      "title": "Hello everyone!!!",
+      "author": "reddit_user_4349d3bfee00",
+      "author_karma": 0,
+      "content": "Hello everyone!!!\n\nI've recently gotten a Sony a7V with the fe2.8 24-50mm Sony lens due to it being the recommendation from JB hi Fi in Australia after I said I wanted a camera for my trip to Japan coming up. \n\nI'm absolutely in love with the camera and quality of shots I've been able to get with it keeping in mind its my first camera so I really don't know what I'm doing yet 😅. But I'm eagerly learning!!!. \n\nHowever as I continue to try take photos of different things (mainly outside nature or cityscape ect.) I am beginning to realise that 50mm may not be enough reach and wish the store member did not talk me out of the 24 - 70 due to \"it's too heavy as a travel lens\". \n\nBecause I already own the 24-50 I'm now inclined to reach for maybe something like the 70 - 200 and it's a very attractive lens. If only lenses were not so expensive 🥲, Anywho enough rambling. Hello again everyone!!!",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p1cm1ad",
+          "author": "reddit_user_411827c3a3f4",
+          "author_karma": 0,
+          "content": "I knew basically nothing about cameras and lenses when the sales person sold me this set. Now I've seen my limitations and done some research I'm feeling limited by 50mm",
+          "timestamp": "2026-08-02T23:42:33+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1cmyr5",
+          "author": "reddit_user_8f0a67e3c6bf",
+          "author_karma": 0,
+          "content": "A good option is a tamron 35-100mm ",
+          "timestamp": "2026-08-02T23:47:43+00:00",
+          "likes": 3,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1cno33",
+          "author": "reddit_user_1f4e96d4b238",
+          "author_karma": 0,
+          "content": "I sold my 24-50 and got the 20-70 f/4. The 20-24 range sounds small but it’s almost the difference between 50-70 on the wide end, super useful. 70 is great of course for reach and compression. Depth of field at 70 f/4 is nearly identical to 50 f/2.8 when you need it. F/4 is a stop slower but with modern full frame sensors and AI denoise in Lightroom I haven’t missed it when using my 20-70 as a general purpose travel lens. It’s perfect and better than a 24-70 2.8 for me. ",
+          "timestamp": "2026-08-02T23:51:40+00:00",
+          "likes": 3,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1csq39",
+              "author": "reddit_user_17a1dcb58a43",
+              "author_karma": 0,
+              "content": "I am one trip to the local camera store away from impulse buying the 20-70, haha. I keep talking myself out of it due to already having the 24-50 as my main lens. ",
+              "timestamp": "2026-08-03T00:19:29+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1cno33",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1cnqb6",
+          "author": "reddit_user_82c712d70a5f",
+          "author_karma": 0,
+          "content": "For travel lenses, nothing beats the Tamron 25-200mm or the Sigma 20-200mm which I prefer.\n\nYou can supplement those zoomes with a prime like a 35mm f1.8 or something.",
+          "timestamp": "2026-08-02T23:52:01+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1cozrp",
+              "author": "reddit_user_411827c3a3f4",
+              "author_karma": 0,
+              "content": "I hear that change comes into effect in October which is right after I get back!!! \n\nWhat kinda cost are those lenses in Japan ? \n",
+              "timestamp": "2026-08-02T23:59:10+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1cnqb6",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1cqlb8",
+                  "author": "reddit_user_82c712d70a5f",
+                  "author_karma": 0,
+                  "content": "I got my Tamron 28-75mm G2 and Sigma 35mm f2 there I think. I costed me about 130,000 yen ($1170 AUD) for both after tax free which was pretty decent.",
+                  "timestamp": "2026-08-03T00:07:55+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1cozrp",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1cryra",
+                      "author": "reddit_user_411827c3a3f4",
+                      "author_karma": 0,
+                      "content": "😮",
+                      "timestamp": "2026-08-03T00:15:19+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1cqlb8",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p1cr60a",
+          "author": "reddit_user_51e403772470",
+          "author_karma": 0,
+          "content": "70-200 doesn't make a lot of sense as a travel lens. \n\n20-70 f4 or 24-105 f4 tend to be good normal travel lenses. ",
+          "timestamp": "2026-08-03T00:11:00+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1csqho",
+          "author": "reddit_user_2e0650abe331",
+          "author_karma": 0,
+          "content": "I wouldn’t recommend the 70-200mm for your trip. It t will be heavy and probably expensive. \n\nI think an 85mm lens would suit you well. I would suggest avoiding the heavy f/1.4 versions and choose something around f/1.8. The Sony f/1.8 is a good performer and isn’t too expensive. Other brands are available.\n\nAfter your trip you will be well placed to choose a long term combination of lenses based on experience.",
+          "timestamp": "2026-08-03T00:19:33+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1cv7lj",
+          "author": "reddit_user_4d5fc1b096bc",
+          "author_karma": 0,
+          "content": "Bah, JB HiFi staff .....\n\nAlso, pretty wild spend on a first a camera, nice one. Very nice rig.\n\nOn a 3 week trip to Japan I took a 20mm F1.8, a 35mm F1.4 and an 85mm F1.8 and took 90% of my shots on with the 35mm. The 85 was used the rest of the time apart from a couple of shots using the 20mm.\n\nI think buying and taking a 70-200 would be a mistake. I would be considering a bigger aperture night time lens. Japan's cities are so cool at night.\n\n",
+          "timestamp": "2026-08-03T00:33:20+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1dhtoj",
+              "author": "reddit_user_411827c3a3f4",
+              "author_karma": 0,
+              "content": "I'll have to try using 35mm more with my current lens to see how I feel about it. I've mainly just been using the 50mm aspect and sometimes 24 for a wider landscape shot",
+              "timestamp": "2026-08-03T02:45:17+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1cv7lj",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1d1r6g",
+          "author": "reddit_user_4956424d8769",
+          "author_karma": 0,
+          "content": "Hey mate, I have the 24-50 as well as an a7iv. As you've said this is your first camera I'm gunna write you a big wall of text because it seems like people are just offering other lenses as the solution to your problem. \n\nHere's the thing, as it's your first camera, you should learn to use what you have, don't fall into the trap of buying new gear. You have a VERY VERY solid and capable kit already with that camera and lens. The JB Staff didn't snake oil you.\n\nIf you're feeling specifically limited by 50mm, you can always turn any of the custom buttons (including the one on your lens) to turn your camera into '35mm crop mode' This will essentially zoom in your photo 1.5x, so your 50mm, now becomes a 75mm reach in frame. \n\nUnless your reaallllyyy keen on having a super long telephoto like 200mm or longer, don't worry about it. You're going to be travelling as a new photographer and more than 1 lens will be felt in the clunkiness and weight you carry with you every day. the 24-50 is such a nice weight and size for multi purpose travel photography.",
+          "timestamp": "2026-08-03T01:10:08+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1dhhpl",
+              "author": "reddit_user_411827c3a3f4",
+              "author_karma": 0,
+              "content": "I appreciate the reassurance! Didn't know I had the option to crop in like that outside of doing so in Lightroom. Still so much about this camera I need to learn! ",
+              "timestamp": "2026-08-03T02:43:12+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1d1r6g",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1dx2ac",
+          "author": "reddit_user_11014b0553c8",
+          "author_karma": 0,
+          "content": "Congratulations, you‘ve got a fantastic travel set! I bought the same on purpose as a second system to my Nikon kit with lenses from 14 to 600mm, because when traveling I wanted something smaller while still being very capable. The 24-50/2.8 is a fantastic compromise between size and features, as it has enough zoom for most travel situations while also being bright enough for most travel situations, all in a very small package and without the need for a second lens. That’s why I preferred it against a 24-105 or 20-70 or against traveling with two lenses. There are only very few situations on vacation where I absolutely would have needed more reach to get a good photo and in those cases I just crop. So I‘d say just enjoy your great kit and upcoming trip! ",
+          "timestamp": "2026-08-03T04:27:57+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run027_post04_seed139",
+      "post_slot": 4,
+      "seed_index": 139,
+      "source_raw_post_id": "1vdxg9c",
+      "source_product_dir": "AskPhotography",
+      "source_file": "https://www.reddit.com/r/AskPhotography/comments/1vdxg9c/how_can_i_achieve_a_vintage_look_while_also/",
+      "post_type": "Editing/Post Processing",
+      "title": "How can I achieve a vintage look while also bringing out the colors?",
+      "author": "reddit_user_4349d3bfee00",
+      "author_karma": 0,
+      "content": "How can I achieve a vintage look while also bringing out the colors?",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p1cogmr",
+          "author": "reddit_user_ad464dab97cb",
+          "author_karma": 0,
+          "content": "I would start completely flat, like this. Then probably slap a film simulation lut on it. ([example](http://www.andpfilmstyles.com)).\n\nWouls leave contrast and saturation for last, as fine tuning.",
+          "timestamp": "2026-08-02T23:56:09+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1cp98s",
+          "author": "reddit_user_cd346337ddce",
+          "author_karma": 0,
+          "content": "Define vintage look",
+          "timestamp": "2026-08-03T00:00:37+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1cq63z",
+          "author": "reddit_user_74ef06695935",
+          "author_karma": 0,
+          "content": "Sepia filter.",
+          "timestamp": "2026-08-03T00:05:37+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1crysr",
+          "author": "reddit_user_1728287e04da",
+          "author_karma": 0,
+          "content": "No  sepia won’t do.  Honestly I would chat gpt this. Op is going for a classic feel. So color should pop in certain places and not be overstated like Red for instance.  Pop the image into chat gpt and ask how you can edit it look like a Coke classic commercial or similar.   ",
+          "timestamp": "2026-08-03T00:15:19+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1d6689",
+              "author": "reddit_user_fcd5cad2ccef",
+              "author_karma": 0,
+              "content": "Booooo.",
+              "timestamp": "2026-08-03T01:35:43+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1crysr",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1cu21v",
+          "author": "reddit_user_9ca3f6e2d488",
+          "author_karma": 0,
+          "content": "Mask the sky and desaturate a bit so it doesn't overpower the building. Then mask the building and turn up saturation/vibrance a bit, perhaps a touch of dehaze and shadow boost.",
+          "timestamp": "2026-08-03T00:26:51+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1d6ej5",
+          "author": "reddit_user_fcd5cad2ccef",
+          "author_karma": 0,
+          "content": "\"Vintage\" can mean so many things. Is there a photographer, or movie or just an image you're thinking of?",
+          "timestamp": "2026-08-03T01:37:05+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1d8f23",
+          "author": "reddit_user_3c4dd5a47959",
+          "author_karma": 0,
+          "content": "(in photoshop) control-L boost contrast control-U boost saturation",
+          "timestamp": "2026-08-03T01:48:51+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1dgla2",
+          "author": "reddit_user_cbc75c3f317a",
+          "author_karma": 0,
+          "content": "Nothing about this seems vintage ",
+          "timestamp": "2026-08-03T02:37:43+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    }
+  ]
+}

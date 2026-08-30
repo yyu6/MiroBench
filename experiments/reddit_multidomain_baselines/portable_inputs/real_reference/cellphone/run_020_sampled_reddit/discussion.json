@@ -1,0 +1,727 @@
+{
+  "meta": {
+    "product_category": "cellphone",
+    "baseline": "real_reddit_reference",
+    "run_id": "run_020_sampled_reddit"
+  },
+  "posts": [
+    {
+      "post_id": "real_run020_post00_seed100",
+      "post_slot": 0,
+      "seed_index": 100,
+      "source_raw_post_id": "1vdkqcv",
+      "source_product_dir": "iphone",
+      "source_file": "https://www.reddit.com/r/iphone/comments/1vdkqcv/need_immediate_iphone_repair_help/",
+      "post_type": "Support",
+      "title": "Need immediate iPhone repair help",
+      "author": "reddit_user_0fe413d0e398",
+      "author_karma": 0,
+      "content": "Need immediate iPhone repair help\n\nI'm currently working at a seasonal pool job, and today I accidentally fell into the pool along with my iPhone SE model. I got back into the pool to fish it out almost immediately, and while I was trying to dry it off the screen suddenly started flashing green static before turning black. Now the phone won't turn on or off, or even much of anything for that matter. \n\nI am currently at work (writing this from my personal laptop I had someone bring to me) and will not be able to get to any Apple or phone support store for help. What should I do in the meantime, and where should I go to assess the damage once I get off the clock?",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p19nsu0",
+          "author": "reddit_user_65884126434e",
+          "author_karma": 0,
+          "content": "If you're looking for help or support, you should search for your issue on Google, the [Apple Support Community](https://discussions.apple.com/welcome), r/iPhone and the [iPhone Support FAQs](https://www.reddit.com/r/iphone/wiki/support-faq/). We review submissions for quality, so basic support issues may be removed.\n\n*I am a bot, and this action was performed automatically. Please [contact the moderators of this subreddit](/message/compose/?to=/r/iphone) if you have any questions or concerns.*",
+          "timestamp": "2026-08-02T15:18:05+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p19qccg",
+          "author": "reddit_user_b4207af6f42a",
+          "author_karma": 0,
+          "content": "With that kind of behavior after being submerged that phone is a goner. You can try to let it dry out and see what happens but it’s not hopeful. \n\nDehumidifier or silica packets. Most people use rice but that can cause issues down the line with rice dust causing corrosion. At this point though it’s worth a shot. ",
+          "timestamp": "2026-08-02T15:30:07+00:00",
+          "likes": 5,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p19r9ab",
+              "author": "reddit_user_10b0ab0477cd",
+              "author_karma": 0,
+              "content": "What about the SIM card and personal stuff (contacts, text messages, photos, etc), can those be salvaged somehow? I was already going to upgrade to a new iPhone model so I can get new hardware, but losing all of my data and having no way to recover it is my biggest concern right now. I'm far from a tech guy so I don't know much about what is possible ",
+              "timestamp": "2026-08-02T15:34:28+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p19qccg",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p19xi6p",
+                  "author": "reddit_user_d91931949b4a",
+                  "author_karma": 0,
+                  "content": "This is a life lesson for sure … to make sure that that I portray data is properly backed up ",
+                  "timestamp": "2026-08-02T16:03:10+00:00",
+                  "likes": 2,
+                  "dislikes": 0,
+                  "parent_comment_id": "p19r9ab",
+                  "depth": 2,
+                  "replies": []
+                },
+                {
+                  "comment_id": "p19zdtq",
+                  "author": "reddit_user_b4207af6f42a",
+                  "author_karma": 0,
+                  "content": "SIM card is just your phone number at this point. Media isn’t stored on it. Hopefully you have an iCloud backup or a backup to your computer because if the phone is not turning on you’re most likely not getting that data back. \n\nI have had water damaged phones/laptops come back to life, some didn’t. Your best bet is to not plug it in and don’t try to turn it on for as long as you can/when you don’t see any liquid. Any device I had I let dry out for at least a week before trying anything. Left them in front of air conditioners (dehumidifier) or in a baggie with a lot of silica packets. ",
+                  "timestamp": "2026-08-02T16:11:42+00:00",
+                  "likes": 2,
+                  "dislikes": 0,
+                  "parent_comment_id": "p19r9ab",
+                  "depth": 2,
+                  "replies": []
+                },
+                {
+                  "comment_id": "p19zwe8",
+                  "author": "reddit_user_b0eb1383f71b",
+                  "author_karma": 0,
+                  "content": "If u paid for iCloud you should be ok. If not contacts are fine by texts and photos are a maybe. ",
+                  "timestamp": "2026-08-02T16:14:03+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p19r9ab",
+                  "depth": 2,
+                  "replies": []
+                },
+                {
+                  "comment_id": "p1ag406",
+                  "author": "reddit_user_7b09fe8178c0",
+                  "author_karma": 0,
+                  "content": "No data is saved on the SIM card other than your carrier info.\nAll other data should be on an iCloud backup if you were backing up your phone.",
+                  "timestamp": "2026-08-02T17:27:22+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p19r9ab",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p1aaw4c",
+          "author": "reddit_user_e7d31ec31fd3",
+          "author_karma": 0,
+          "content": "No iCloud backup at even a minimum? That’s kinda on you…sorry to say.",
+          "timestamp": "2026-08-02T17:04:00+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run020_post01_seed101",
+      "post_slot": 1,
+      "seed_index": 101,
+      "source_raw_post_id": "1vdl2lb",
+      "source_product_dir": "GooglePixel",
+      "source_file": "https://www.reddit.com/r/GooglePixel/comments/1vdl2lb/pixel_9_pro_issues_getting_out_of_hand/",
+      "post_type": "Filtered - Rule #9\n",
+      "title": "Pixel 9 Pro Issues getting out of hand",
+      "author": "reddit_user_0fe413d0e398",
+      "author_karma": 0,
+      "content": "Pixel 9 Pro Issues getting out of hand\n\n[removed]",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p1a1t17",
+          "author": "reddit_user_ae8fb684ad3a",
+          "author_karma": 0,
+          "content": "Yeah I think you got a lemon there OP ",
+          "timestamp": "2026-08-02T16:22:45+00:00",
+          "likes": 0,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1a43vg",
+          "author": "reddit_user_64632f4e836d",
+          "author_karma": 0,
+          "content": "factory reset or search if any of your apps have known issues with the newest android 99.99% of the time if you have drastic issues after an update it's an app bug or a setting you had got changed and your settings need reset to default. ",
+          "timestamp": "2026-08-02T16:33:14+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1a6k20",
+          "author": "reddit_user_4434d68f376c",
+          "author_karma": 0,
+          "content": "My Pixel 10 Pro often overheats in the summer, too. So I don't think getting a 10 Pro will necessarily solve it.\n\nIdk, I have had Pixels for a long time and I do enjoy them, but they have a lot of problems. I've gotten two of them repaired or replaced under warranty, and they weren't that old and it wasn't due to user error. I'm not at the point of fleeing to another brand yet, but I wouldn't discourage someone else from doing it if they think it might be better.",
+          "timestamp": "2026-08-02T16:44:26+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1aavsi",
+          "author": "reddit_user_3c28824c72ef",
+          "author_karma": 0,
+          "content": "Current Pixels are much worse than the older ones, and CS for fixing their own issues is down the pan. It's a real shame. ",
+          "timestamp": "2026-08-02T17:03:58+00:00",
+          "likes": 0,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1abp82",
+          "author": "reddit_user_551ab2372e71",
+          "author_karma": 0,
+          "content": "In terms of the battery life and thermal management Pixel 9 Pro sucks rat's ass. Pixel 10 series should be slightly better. Maybe finally Pixel 11 will bring us proper battery life and thermals.",
+          "timestamp": "2026-08-02T17:07:38+00:00",
+          "likes": 0,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1ajyun",
+              "author": "reddit_user_969f5ef77000",
+              "author_karma": 0,
+              "content": "Highly disagree, I've had mine for 2 years, my battery health is at 87%, and my phone has never overheated once...and I'm a heavy user.",
+              "timestamp": "2026-08-02T17:44:30+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1abp82",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1an2mx",
+                  "author": "reddit_user_551ab2372e71",
+                  "author_karma": 0,
+                  "content": "Mine can get around 40°C just by browsing web on LTE (5G disabled). Not a good thing. I also have had mine for 2 years. And I'm not a heavy user. I just wonder why it's so much different from user to user?",
+                  "timestamp": "2026-08-02T17:58:11+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1ajyun",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1duzo9",
+                      "author": "reddit_user_3d667e131a0b",
+                      "author_karma": 0,
+                      "content": "> I just wonder why it's so much different from user to user?\n\nThe weather patterns where you live, and your user patterns including the software on the device and whatever else you do with the phone.\n  \nThese things often vary ***dramatically*** from one person to another.\n  \nFor example a lot of people in India say that they cannot even consider a Pixel because the inadequate cooling issues in the weather environment in much of that country are disastrous.",
+                      "timestamp": "2026-08-03T04:13:01+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1an2mx",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p1adylh",
+          "author": "reddit_user_05e0b15fc6b4",
+          "author_karma": 0,
+          "content": "My 9 pro runs like a champ",
+          "timestamp": "2026-08-02T17:17:50+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1amvtt",
+          "author": "reddit_user_7214914e4a77",
+          "author_karma": 0,
+          "content": "I've gotten the 10 pro xl after my 6pro died after a Google software update. It's my last pixel. I'm underwhelmed.. the price doesn't justify the device. I'm going Chinese!",
+          "timestamp": "2026-08-02T17:57:21+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1aohjb",
+          "author": "reddit_user_67a7c56e063c",
+          "author_karma": 0,
+          "content": "I'm switching from P9 pro to oppo find x9 ultra very soon. I have lost my patience. ",
+          "timestamp": "2026-08-02T18:04:24+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1b7qrc",
+          "author": "reddit_user_3c6910331114",
+          "author_karma": 0,
+          "content": "Don't get the 10 Pro. It's basically the same as the 9 Pro and has similar issues. My 10 Pro has GPS accuracy issues and others on here have mentioned the 9 Pro having the same issues since both phones use the same crappy chip. ",
+          "timestamp": "2026-08-02T19:32:18+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1bzud1",
+          "author": "reddit_user_5221c33efd6d",
+          "author_karma": 0,
+          "content": "Vertical green line is a known issue and Google has an extended 3 year warranty to replace the screen if it happens to you. My wife had hers fixed at a Ubreakifix in about 2 hours, no charge.",
+          "timestamp": "2026-08-02T21:46:20+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1dhocv",
+              "author": "reddit_user_8710cf314fc6",
+              "author_karma": 0,
+              "content": "Sadly it wasn't covered for me since I had a physical crack on my screen 😔",
+              "timestamp": "2026-08-03T02:44:20+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1bzud1",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "post_id": "real_run020_post02_seed102",
+      "post_slot": 2,
+      "seed_index": 102,
+      "source_raw_post_id": "1vdlgix",
+      "source_product_dir": "iphone",
+      "source_file": "https://www.reddit.com/r/iphone/comments/1vdlgix/apple_event/",
+      "post_type": "Discussion",
+      "title": "Apple event",
+      "author": "reddit_user_0fe413d0e398",
+      "author_karma": 0,
+      "content": "Apple event\n\nIs there any news on the next apple event for iPhones? I tried looking it up and got nothing. I know the new phones release sep/October.",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p19ueqt",
+          "author": "reddit_user_5b36dd994b9c",
+          "author_karma": 0,
+          "content": "News? No. Rumors? Tons of them.",
+          "timestamp": "2026-08-02T15:49:08+00:00",
+          "likes": 5,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p19uv9j",
+          "author": "reddit_user_f7d06d2230a6",
+          "author_karma": 0,
+          "content": "https://letmegooglethat.com/?q=iphone+18+rumors",
+          "timestamp": "2026-08-02T15:51:13+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p19v900",
+              "author": "reddit_user_5d15fda44608",
+              "author_karma": 0,
+              "content": "omg this is a glorious website, i’m stealing it",
+              "timestamp": "2026-08-02T15:52:58+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p19uv9j",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p19v0kf",
+          "author": "reddit_user_8aa3fc3af7b9",
+          "author_karma": 0,
+          "content": "There will be one.",
+          "timestamp": "2026-08-02T15:51:54+00:00",
+          "likes": 4,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p19vz5l",
+          "author": "reddit_user_8f965a624517",
+          "author_karma": 0,
+          "content": "It is rumored to take place between today and the beginning of 2027. ",
+          "timestamp": "2026-08-02T15:56:16+00:00",
+          "likes": 5,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p19yb6r",
+          "author": "reddit_user_a39b2b65d6fd",
+          "author_karma": 0,
+          "content": "Every year, the iPhone announcement is on the first or second week of September. Rumors are saying September 9th for 2026.",
+          "timestamp": "2026-08-02T16:06:49+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run020_post03_seed103",
+      "post_slot": 3,
+      "seed_index": 103,
+      "source_raw_post_id": "1vdlxdz",
+      "source_product_dir": "Smartphones",
+      "source_file": "https://www.reddit.com/r/Smartphones/comments/1vdlxdz/should_i_buy_samsung_s26_ultra_or_iphone_17_if/",
+      "post_type": "reddit_post",
+      "title": "Should i buy Samsung S26 Ultra or Iphone 17 if they are both around the same price ?",
+      "author": "reddit_user_0fe413d0e398",
+      "author_karma": 0,
+      "content": "Should i buy Samsung S26 Ultra or Iphone 17 if they are both around the same price ?",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p19z4wb",
+          "author": "reddit_user_9336535c28cb",
+          "author_karma": 0,
+          "content": "any iphone pro max that has decent battery life and condition, not the base",
+          "timestamp": "2026-08-02T16:10:35+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1a1cmj",
+              "author": "reddit_user_9db7214eb8c9",
+              "author_karma": 0,
+              "content": "is 17 base model not good ? ( brand new )  \nand also for the same price i can also get s26 ultra \n\n",
+              "timestamp": "2026-08-02T16:20:40+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p19z4wb",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1b523k",
+                  "author": "reddit_user_9336535c28cb",
+                  "author_karma": 0,
+                  "content": "not saying it's not good, personally i would prefer 15 PM/16PM over base 17 assuming they are in mint condition ",
+                  "timestamp": "2026-08-02T19:19:52+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1a1cmj",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p1a1mtt",
+          "author": "reddit_user_8bbbbca37585",
+          "author_karma": 0,
+          "content": "Apple over samsung every-time. ",
+          "timestamp": "2026-08-02T16:21:57+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1a20bh",
+              "author": "reddit_user_aadcee5a6ecd",
+              "author_karma": 0,
+              "content": "Why?",
+              "timestamp": "2026-08-02T16:23:39+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1a1mtt",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1a3va3",
+                  "author": "reddit_user_8bbbbca37585",
+                  "author_karma": 0,
+                  "content": "I have a Samsung Fold 4, Samsung S23 Ultra, and an iPhone 14. The iPhone is still unmatched—it hasn't hung even once. The Samsung S23 Ultra was great for the first year, but after that, its performance started to decline, just like many other Android devices.\n\nI stopped updating my iPhone, and it still works like a charm. It never hangs, the photos are still excellent, and it feels just as smooth as it did on day one.\n\nNow I'm using the Samsung S26 Ultra and the iPhone 17 Pro Max, and the iPhone wins every time. Whether it's app responsiveness, speakers, camera (this can be subjective because Samsung is also excellent and offers some extra features), gaming (iPhone wins every time), or the ecosystem (Apple is simply unmatched), the overall experience is better for me.\n\nThose are the main reasons why I choose Apple every time.",
+                  "timestamp": "2026-08-02T16:32:09+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1a20bh",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p1a1yon",
+          "author": "reddit_user_aadcee5a6ecd",
+          "author_karma": 0,
+          "content": "Samsung 100%. Nobody enjoys an iPhone when it's pretty much been the same since an iPhone 3",
+          "timestamp": "2026-08-02T16:23:28+00:00",
+          "likes": 0,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1atj6m",
+              "author": "reddit_user_be655da6e1f0",
+              "author_karma": 0,
+              "content": "\\^\\^ THIS \\^\\^\n\nIn typical Apple fashion, the iPhone hasn't seen much improvement in recent years. Meanwhile, Google has significantly improved Android in terms of both usability and stability. And it has always had the advantage in customizability. Meanwhile, Apple's attention is on building the walls of its wallet garden ever higher.\n\nApple makes great hardware, and their silicon is truly amazing. But their software (especially iOS) kinda stinks.",
+              "timestamp": "2026-08-02T18:27:06+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1a1yon",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1azxrx",
+                  "author": "reddit_user_aadcee5a6ecd",
+                  "author_karma": 0,
+                  "content": "Would he lost without galaxy ai!!! ",
+                  "timestamp": "2026-08-02T18:56:17+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1atj6m",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p1akklb",
+          "author": "reddit_user_d9d6273d27e5",
+          "author_karma": 0,
+          "content": "If apple releases a 17 Ultra , then sure .",
+          "timestamp": "2026-08-02T17:47:08+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1aytc0",
+          "author": "reddit_user_8949e1a573c8",
+          "author_karma": 0,
+          "content": "My neutral side states get what ever you currently have. If iPhone get iPhone. If android get s26u. Doing the switch will be an invasive life disruption. \n\nMy personal bias side says get s26u. Iphones and apple in general are shit. ",
+          "timestamp": "2026-08-02T18:51:10+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1cstbk",
+          "author": "reddit_user_8a1cbecfc349",
+          "author_karma": 0,
+          "content": "Ultra, without a single doubt ",
+          "timestamp": "2026-08-03T00:19:58+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run020_post04_seed104",
+      "post_slot": 4,
+      "seed_index": 104,
+      "source_raw_post_id": "1vdmes1",
+      "source_product_dir": "iphone",
+      "source_file": "https://www.reddit.com/r/iphone/comments/1vdmes1/iphone_usage_at_night/",
+      "post_type": "Discussion",
+      "title": "iPhone usage at night",
+      "author": "reddit_user_0fe413d0e398",
+      "author_karma": 0,
+      "content": "iPhone usage at night\n\nAnyone else struggles with their iPhone screen being way too bright at night? \n\nMine is on night mode with the screen light at its lowest. Yet, when I use my phone before bedtime (I know it isn’t recommended) or wake up during the night and look at the clock, it seems way too bright. \n\nIs there some settings I can change to make it less bright when used in a dark room or after a certain time?",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p1a2ji4",
+          "author": "reddit_user_807d2485808c",
+          "author_karma": 0,
+          "content": "Reduce white point",
+          "timestamp": "2026-08-02T16:26:05+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1a2q94",
+              "author": "reddit_user_1b951757837d",
+              "author_karma": 0,
+              "content": "Can I do that so it only applies at a certain time of day? I would prefer not to have to update it night and morning.",
+              "timestamp": "2026-08-02T16:26:56+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1a2ji4",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1a32np",
+                  "author": "reddit_user_c2ad6ed7f63b",
+                  "author_karma": 0,
+                  "content": "Yes, the setting is called night shift.",
+                  "timestamp": "2026-08-02T16:28:30+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1a2q94",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1a64gw",
+                      "author": "reddit_user_bd3113892529",
+                      "author_karma": 0,
+                      "content": "Night shift doesn’t reduce white point, it doesn’t even make it less bright it just makes it warmer on the color spectrum to reduce blue light.",
+                      "timestamp": "2026-08-02T16:42:27+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1a32np",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                },
+                {
+                  "comment_id": "p1a35rz",
+                  "author": "reddit_user_807d2485808c",
+                  "author_karma": 0,
+                  "content": "Not to my knowledge. Might want to try a dark screen protector. I personally feel like the screen is pretty dark at its lowest level, but I definitely understand because it does feel brighter than it is sometimes",
+                  "timestamp": "2026-08-02T16:28:54+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1a2q94",
+                  "depth": 2,
+                  "replies": []
+                },
+                {
+                  "comment_id": "p1a53ry",
+                  "author": "reddit_user_2c1f0de7be11",
+                  "author_karma": 0,
+                  "content": "Maybe a shortcut",
+                  "timestamp": "2026-08-02T16:37:48+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1a2q94",
+                  "depth": 2,
+                  "replies": []
+                },
+                {
+                  "comment_id": "p1a82om",
+                  "author": "reddit_user_0645299dc2b6",
+                  "author_karma": 0,
+                  "content": "Shortcuts. Create Automation. Set White Point on/off. make sure toggle on the “run immediately” and toggle off “notify when run”",
+                  "timestamp": "2026-08-02T16:51:21+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1a2q94",
+                  "depth": 2,
+                  "replies": []
+                },
+                {
+                  "comment_id": "p1a9t21",
+                  "author": "reddit_user_e7d31ec31fd3",
+                  "author_karma": 0,
+                  "content": "Siri shortcut automation. I have mine automatically set white point when my sleep focus wind down time begins, and turns it off when waking up.",
+                  "timestamp": "2026-08-02T16:59:08+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1a2q94",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p1a4kf6",
+          "author": "reddit_user_a6387c4b43bf",
+          "author_karma": 0,
+          "content": "go to a total black room. turn of auto light sensor and then turn it on, Go to control center and pull screen brightness all the way down. this will make the screen really low when auto brightness is on",
+          "timestamp": "2026-08-02T16:35:21+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1a4wjh",
+          "author": "reddit_user_2fe6a4f33816",
+          "author_karma": 0,
+          "content": "What model? My 17Pro gets nice and dim but I have noticed that sometimes the auto dimming stops working and I have to toggle the auto dimming in the Accessibility setting. I think it’s affected by watching Netflix or something because it may be overriding the auto dim feature. ",
+          "timestamp": "2026-08-02T16:36:52+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1a6qhk",
+          "author": "reddit_user_b2986114d122",
+          "author_karma": 0,
+          "content": "If you haven’t already, try reducing the white point under Accessibility, Display & Text Size. It can make the screen noticeably dimmer than the normal brightness slider allows. I also use night shift and Dark Mode together, and that combination is much easier on my eyes at night.",
+          "timestamp": "2026-08-02T16:45:15+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    }
+  ]
+}

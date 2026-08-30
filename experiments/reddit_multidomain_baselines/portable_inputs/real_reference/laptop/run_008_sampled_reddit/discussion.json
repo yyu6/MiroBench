@@ -1,0 +1,234 @@
+{
+  "meta": {
+    "product_category": "laptop",
+    "baseline": "real_reddit_reference",
+    "run_id": "run_008_sampled_reddit"
+  },
+  "posts": [
+    {
+      "post_id": "real_run008_post00_seed040",
+      "post_slot": 0,
+      "seed_index": 40,
+      "source_raw_post_id": "1vcowkb",
+      "source_product_dir": "laptops",
+      "source_file": "https://www.reddit.com/r/laptops/comments/1vcowkb/acer_aspire_3_only_stays_on_if_im_constantly/",
+      "post_type": "Buying help",
+      "title": "Acer Aspire 3 only stays on if I'm constantly pressing keys – power button doesn't work",
+      "author": "reddit_user_d8691634ac1e",
+      "author_karma": 0,
+      "content": "Acer Aspire 3 only stays on if I'm constantly pressing keys – power button doesn't work\n\nHi everyone,\n\nI'm having a very strange issue with my Acer Aspire 3 and I'm hoping someone has seen this before.\n\n\\- The power button no longer works.\n\n\\- I can turn the laptop on by pressing the Enter key (or another key), but once it's on, I have to keep pressing keys continuously to keep it alive.\n\n\\- If I stop pressing the keyboard for even a second, the laptop immediately shuts off completely.\n\n\\- This happens even in the BIOS, so it doesn't seem to be a Windows or software issue.\n\n\\- The SSD is almost full, but I don't think that's the cause.\n\nHas anyone experienced something like this? Could this be a faulty power button, keyboard, embedded controller (EC), or a motherboard/power management issue?\n\nAny advice or troubleshooting steps would be greatly appreciated. Thank you!",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p12v484",
+          "author": "reddit_user_7bb8c9653510",
+          "author_karma": 0,
+          "content": "Dm",
+          "timestamp": "2026-08-01T14:51:53+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p13iq36",
+          "author": "reddit_user_e45df07d87a5",
+          "author_karma": 0,
+          "content": "Try disconnecting and reconnecting the battery.  Once you've disconnected it, hold down the power button for ~ 15-20s to drain any power in the system, then re-connect it and hope for the best.  It could also just be that your fans / heatsink are clogged up (overheating before POST).",
+          "timestamp": "2026-08-01T16:45:55+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p13qe0j",
+          "author": "reddit_user_2076aa138b5e",
+          "author_karma": 0,
+          "content": "There's probably a short with power button on your keyboard.",
+          "timestamp": "2026-08-01T17:22:27+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run008_post01_seed041",
+      "post_slot": 1,
+      "seed_index": 41,
+      "source_raw_post_id": "1vcpxhv",
+      "source_product_dir": "laptops",
+      "source_file": "https://www.reddit.com/r/laptops/comments/1vcpxhv/want_a_recommendation_for_a_cooling_pad_for_yoga/",
+      "post_type": "Hardware",
+      "title": "Want a recommendation for a cooling pad for Yoga Pro 9 16IMH9",
+      "author": "reddit_user_d8691634ac1e",
+      "author_karma": 0,
+      "content": "Want a recommendation for a cooling pad for Yoga Pro 9 16IMH9\n\n&#x200B;\n\nAs the title says, I got yoga pro 9 with core ultra 9 185, rtx 4070 and 64gbs of ram. But even during mediocre tasks as watching netflix or browsing internet it's fans start ramping up and it gets very hot pretty quick. So yeah, I'm looking for a cooling pad or at least some suggestions to make it behave better, cuz I am a photographer and I wanna use that laptop to edit photos and for now it doesn't seem it will handle that workload well\n\nPS sorry for the inadequate written post but if u got any questions I'm here to answer. Thank you!",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p13lc4u",
+          "author": "reddit_user_d58a0ad800c4",
+          "author_karma": 0,
+          "content": "If it's getting hot, maybe there's dust built up on the heatsink. Blow some compressed air through the cooling vents of the laptop to clear out any dust and lint",
+          "timestamp": "2026-08-01T16:58:22+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run008_post02_seed042",
+      "post_slot": 2,
+      "seed_index": 42,
+      "source_raw_post_id": "1vcqins",
+      "source_product_dir": "laptops",
+      "source_file": "https://www.reddit.com/r/laptops/comments/1vcqins/should_i_always_keep_my_laptop_plugged_in_while/",
+      "post_type": "General question",
+      "title": "Should I always keep my laptop plugged in while using it?",
+      "author": "reddit_user_d8691634ac1e",
+      "author_karma": 0,
+      "content": "Should I always keep my laptop plugged in while using it?\n\nI bought this new HP Omnibook 5 16-ag1070wm exactly a month ago (loving it so far!). Ever since then, I have done a lot of research on how to treat laptop battery for best performance and longevity. But, I have found rather conflicting views online. \n\nSome people say it's better to keep it plugged in wherever you have the facility. Others say it's harmful if you keep your battery 100% all the time. Another piece of advice I have come across is to enable a \"battery charge limiter\" sort of thing where the laptop doesn't let it charge more than 80-ish%. This setting is typically available in the BIOS of the laptop. I have checked my laptop's BIOS and it doesn't have this feature. The closest thing I could find is this Adaptive Battery Optimizer (enabled already) which does NOT limit the battery to some XX% but optimises it some other way. I have also deeply checked all the 10 HP apps that came with the laptop and none of them have the feature to enable/disable some kind of battery limiter.\n\nSince I am a rising sophomore and on my summer break, my laptop is at home all the time and frankly, it hasn't moved an inch out of my room since purchase. So it's just sitting on my desk, conveniently close to a power supply. I have been using it while it's plugged in all day (I typically shut it down at night). Also, during the day, there are several hours where its lid is either closed (sleep mode) or its on the lock screen. So in the past 14 days, it has almost always been at 100%.\n\n  \nI'm hella confused if I'm preserving my battery's life or just straight up axing it.\n\n  \n(idk if I have to state this but by \"life\", I mean the actual lifespan of the battery after which it dies due to chemical degradation)\n\nhttps://preview.redd.it/2l7u0cnh6sgh1.png?width=962&format=png&auto=webp&s=2dadb1b4d2244202101db2db80d6a78272cc0bec",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p13etw2",
+          "author": "reddit_user_e54724aa77fe",
+          "author_karma": 0,
+          "content": "Apparently, manual battery limiter isn't available in the Omnibook line. It uses the Adaptive manager you've already enabled, so that's your solution. \n\nModern laptops use Li-On batteries, so don't deal with \"memory\" like older Ni-Cad batteries. You're fine leaving it plugged in. \n\nIn Li-On batteries, you're more vulnerable to heat as a battery wear issue. Make sure the unit is always elevated from the desktop and don't use it on fabric or anything that blocks the vents. \n\nI'd invest in a \"cooling pad\" - ie, laptop stand with fans for added cooling. Or, I just use a small desk fan blowing across the keyboard, which works fine for the laptop and myself, as my home workspace is not near any windows and has no airflow. \n\nYou can also enable various \"power savings\" options in the OS to reduce power draw, and thus heat generation. ",
+          "timestamp": "2026-08-01T16:27:09+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p13sk1l",
+              "author": "reddit_user_3b416bacbf9b",
+              "author_karma": 0,
+              "content": "Yup, I have been using a laptop stand since day 1, neither used it on fabric/lap nor intend to do so in the future. I have also been monitoring battery thermals twice or thrice everyday and it's always 32-37 °C.\n\nAnd thanks for your input!",
+              "timestamp": "2026-08-01T17:32:46+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p13etw2",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p13qus4",
+          "author": "reddit_user_31cb2f5d4954",
+          "author_karma": 0,
+          "content": "If it doesn't have a charge setting, which many laptops still haven't implemented, there's nothing you can do. You can unplug it after shutting down. That can help a little bit.",
+          "timestamp": "2026-08-01T17:24:39+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p13sp6s",
+              "author": "reddit_user_3b416bacbf9b",
+              "author_karma": 0,
+              "content": "Yes I always unplug after shutting down.\n\nThanks",
+              "timestamp": "2026-08-01T17:33:26+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p13qus4",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "post_id": "real_run008_post03_seed043",
+      "post_slot": 3,
+      "seed_index": 43,
+      "source_raw_post_id": "1vcqle3",
+      "source_product_dir": "SuggestALaptop",
+      "source_file": "https://www.reddit.com/r/SuggestALaptop/comments/1vcqle3/need_help_choosing_a_laptop_for_university/",
+      "post_type": "Laptop Request -Others ",
+      "title": "Need help choosing a laptop for university.",
+      "author": "reddit_user_d8691634ac1e",
+      "author_karma": 0,
+      "content": "Need help choosing a laptop for university.\n\nHey everyone,\n\nI’m going to start university soon (Mechanical Engineering) and I need help choosing a laptop. I already have a powerful desktop at home for heavy simulations, so this laptop is mainly for everyday use, multitasking, ect.\n\nI prefer Lenovo’s design the most, but performance matters more.  \nMy budget is ideally around **€600**, but I can stretch to **€750** if the performance jump is worth it.\n\nHere are the laptops I’m considering:\n\n# 1. Lenovo IdeaPad Slim 3 — €749\n\n* **Intel Core i7‑13620H**\n* **16GB RAM**\n* **512GB SSD**   [https://www.bol.com/nl/nl/p/lenovo-ideapad-slim-3-15irh10-intel-core-i7-i7-13620h-laptop-38-9-cm-wuxga-16-gb-ddr5-sdram-512-gb-ssd-wi-fi-6-windows-11-home-engels-grijs/9300000234099227/](https://www.bol.com/nl/nl/p/lenovo-ideapad-slim-3-15irh10-intel-core-i7-i7-13620h-laptop-38-9-cm-wuxga-16-gb-ddr5-sdram-512-gb-ssd-wi-fi-6-windows-11-home-engels-grijs/9300000234099227/?utm_source=copilot.com)\n\n# 2. Lenovo V14 G5 — €599\n\n* **Intel Core i5‑13420H**\n* **16GB RAM**\n* **512GB SSD**   [https://www.bol.com/nl/nl/p/lenovo-v14-g5-irl-14-full-hd-intel-core-i5-13420h-16gb-ddr5-512gb-ssd-w11-pro/9300000263004684/](https://www.bol.com/nl/nl/p/lenovo-v14-g5-irl-14-full-hd-intel-core-i5-13420h-16gb-ddr5-512gb-ssd-w11-pro/9300000263004684/?utm_source=copilot.com)\n\n# 3. Lenovo V15 G5 — €599\n\n* **Intel Core i5‑13420H**\n* **16GB RAM**\n* **512GB SSD**   [https://www.bol.com/nl/nl/p/lenovo-v15-g5-irl-i5-13420h-16gb-512gb-w11p-3-jaar-garantie/9300000242257585/](https://www.bol.com/nl/nl/p/lenovo-v15-g5-irl-i5-13420h-16gb-512gb-w11p-3-jaar-garantie/9300000242257585/?utm_source=copilot.com)\n\n# 4. ASUS Vivobook 15 — €649\n\n* **AMD Ryzen 7 170**\n* **16GB RAM**\n* **512GB SSD**   [https://www.bol.com/nl/nl/p/asus-vivobook-15-m1502naq-bq050w-15-60hz-r7-170-16gb-512gb-w11/9300000247144385/](https://www.bol.com/nl/nl/p/asus-vivobook-15-m1502naq-bq050w-15-60hz-r7-170-16gb-512gb-w11/9300000247144385/?utm_source=copilot.com)\n\n# 5. HP Omnibook 3 — €699\n\n* **AMD Ryzen AI 5 330**\n* **16GB RAM**\n* **512GB SSD**   [https://www.bol.com/nl/nl/p/hp-omnibook-3-ngai-15-fn0050nd-copilot-pc-amd-ryzen-ai-5-330-laptop-39-6-cm-full-hd-16-gb-ddr5-sdram-512-gb-ssd-wi-fi-6-windows-11-home-zilver/9300000235236757/](https://www.bol.com/nl/nl/p/hp-omnibook-3-ngai-15-fn0050nd-copilot-pc-amd-ryzen-ai-5-330-laptop-39-6-cm-full-hd-16-gb-ddr5-sdram-512-gb-ssd-wi-fi-6-windows-11-home-zilver/9300000235236757/?utm_source=copilot.com)\n\n# 6. Lenovo IdeaPad Slim 3 (16-inch) — €699\n\n* **AMD Ryzen 7 170**\n* **16GB RAM**\n* **1TB SSD**   [https://www.bol.com/nl/nl/p/lenovo-ideapad-slim-3-16arp10-laptop-16-inch-ryzen-7-16gb-1tb/9300000251047023/](https://www.bol.com/nl/nl/p/lenovo-ideapad-slim-3-16arp10-laptop-16-inch-ryzen-7-16gb-1tb/9300000251047023/?utm_source=copilot.com)\n\n# Which one would be the best choice?\n\nIs it worth paying closer to **€750** for the i7 or Ryzen 7 models, or should I stick to the **€600** options?\n\nThanks in advance!",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p19y7v7",
+          "author": "reddit_user_85e1a28f6932",
+          "author_karma": 0,
+          "content": "im in your sME POSITION\n\n",
+          "timestamp": "2026-08-02T16:06:24+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1cej5e",
+              "author": "reddit_user_8736205a9023",
+              "author_karma": 0,
+              "content": "Gng what does this mean!?!",
+              "timestamp": "2026-08-02T23:01:57+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p19y7v7",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "post_id": "real_run008_post04_seed044",
+      "post_slot": 4,
+      "seed_index": 44,
+      "source_raw_post_id": "1vcqmdi",
+      "source_product_dir": "laptops",
+      "source_file": "https://www.reddit.com/r/laptops/comments/1vcqmdi/engineering_student_laptop_recommendation/",
+      "post_type": "Buying help",
+      "title": "Engineering student laptop recommendation",
+      "author": "reddit_user_d8691634ac1e",
+      "author_karma": 0,
+      "content": "Engineering student laptop recommendation\n\nIma be a mechanical engineering student this fall in the US, and I was struggling to figure out what laptop to get. Id say my budget goes up to $1500, so im looking at a mid-range model that should last me all 4 years and meet the specs i need, however my budget can shift a little if its unrealistic for what i want.\n\nRight now im between a lenovo thinkpad t series or an asus rog strix, with a couple of builds in mind, but Im not sure.\n\nSome of the builds ive seen have nvidia rtx 5xxx, intel core i7, 16gb memory (which can always be upgraded later if i need it), storage around from 512 to 1tb (as the mimumum for the builds ive seen).\n\nIll be running CAD and SolidWorks\n\nI don't care as much for weight or battery life at the moment.\n\nanybody got any recommendations?\n\n(also, this is my first time asking for a laptop recommendation so idk if this is the right way to ask)",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p15eq0u",
+          "author": "reddit_user_63e0e43fe362",
+          "author_karma": 0,
+          "content": "I have been using asus zenbook ux-3404 comes with an nvidia rtx3050 , 12th gen and i9. I enjoy it but gets a bit hot sometimes otherwise works perfectly. Never lags",
+          "timestamp": "2026-08-01T22:23:16+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    }
+  ]
+}

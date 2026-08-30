@@ -1,0 +1,259 @@
+{
+  "meta": {
+    "product_category": "cellphone",
+    "baseline": "real_reddit_reference",
+    "run_id": "run_022_sampled_reddit"
+  },
+  "posts": [
+    {
+      "post_id": "real_run022_post00_seed110",
+      "post_slot": 0,
+      "seed_index": 110,
+      "source_raw_post_id": "1vdp2t2",
+      "source_product_dir": "iphone",
+      "source_file": "https://www.reddit.com/r/iphone/comments/1vdp2t2/bought_a_sealed_locked_16_pro_max/",
+      "post_type": "Support",
+      "title": "Bought a sealed locked 16 pro max",
+      "author": "reddit_user_0fe413d0e398",
+      "author_karma": 0,
+      "content": "Bought a sealed locked 16 pro max",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p1apr7z",
+          "author": "reddit_user_65884126434e",
+          "author_karma": 0,
+          "content": "It looks like you might be posting about buying/upgrading/trade-in or comparisons between models, in which case you should comment in the [What Should I Buy](http://reddit.com/r/iphone/about/sticky?num=1) thread. We will review your post - there is no need to message moderators.\n\n*I am a bot, and this action was performed automatically. Please [contact the moderators of this subreddit](/message/compose/?to=/r/iphone) if you have any questions or concerns.*",
+          "timestamp": "2026-08-02T18:10:07+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run022_post01_seed111",
+      "post_slot": 1,
+      "seed_index": 111,
+      "source_raw_post_id": "1vdp6mw",
+      "source_product_dir": "iphone",
+      "source_file": "https://www.reddit.com/r/iphone/comments/1vdp6mw/is_my_camera_focus_broken_or_meant_to_work_like/",
+      "post_type": "Support",
+      "title": "Is my camera focus broken or meant to work like this?",
+      "author": "reddit_user_0fe413d0e398",
+      "author_karma": 0,
+      "content": "Is my camera focus broken or meant to work like this?",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p1aqmw0",
+          "author": "reddit_user_65884126434e",
+          "author_karma": 0,
+          "content": "If you're looking for help or support, you should search for your issue on Google, the [Apple Support Community](https://discussions.apple.com/welcome), r/iPhone and the [iPhone Support FAQs](https://www.reddit.com/r/iphone/wiki/support-faq/). We review submissions for quality, so basic support issues may be removed.\n\n*I am a bot, and this action was performed automatically. Please [contact the moderators of this subreddit](/message/compose/?to=/r/iphone) if you have any questions or concerns.*",
+          "timestamp": "2026-08-02T18:14:03+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1awgz6",
+          "author": "reddit_user_5c86a0dc32dc",
+          "author_karma": 0,
+          "content": "what exactly is broken? you’re using a third party camera app with focus peaking ",
+          "timestamp": "2026-08-02T18:40:24+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1ay33m",
+              "author": "reddit_user_13a1a1bcee20",
+              "author_karma": 0,
+              "content": "I can’t seem to set the focus to infinity. Setting focus to .83 was the closest I could get to a sharp image and even then the lights had bokeh and the image was blurry \n\nhttps://imgur.com/muMordM",
+              "timestamp": "2026-08-02T18:47:49+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1awgz6",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1b02by",
+          "author": "reddit_user_fdd60dde469c",
+          "author_karma": 0,
+          "content": "Have you tried tapping on a different part of the screen to manually focus, or does it refuse to lock on anything specific? Could also be a software hiccup - try force-closing the Camera app and restarting your phone before assuming it's hardware.",
+          "timestamp": "2026-08-02T18:56:52+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1b2zso",
+              "author": "reddit_user_13a1a1bcee20",
+              "author_karma": 0,
+              "content": "Yes I tried that. Automatic focus struggles in the dark so this only made the image more blurry. \n\nI am more concerned with the focus range seeming parabolic in nature without ever fully focusing on the subject",
+              "timestamp": "2026-08-02T19:10:19+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1b02by",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "post_id": "real_run022_post02_seed112",
+      "post_slot": 2,
+      "seed_index": 112,
+      "source_raw_post_id": "1vdp957",
+      "source_product_dir": "iphone",
+      "source_file": "https://www.reddit.com/r/iphone/comments/1vdp957/how_do_i_get_rid_of_system_data_in_storage/",
+      "post_type": "Support",
+      "title": "How do I get rid of \"system data\" in storage",
+      "author": "reddit_user_0fe413d0e398",
+      "author_karma": 0,
+      "content": "How do I get rid of \"system data\" in storage\n\n[removed]",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p1ar7pc",
+          "author": "reddit_user_65884126434e",
+          "author_karma": 0,
+          "content": "Storage problem? You might find [this](https://www.reddit.com/r/iphone/wiki/support-faq/#wiki_storage_issues) helpful.\n\n*I am a bot, and this action was performed automatically. Please [contact the moderators of this subreddit](/message/compose/?to=/r/iphone) if you have any questions or concerns.*",
+          "timestamp": "2026-08-02T18:16:39+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1b6pr7",
+          "author": "reddit_user_a5a30234c8f8",
+          "author_karma": 0,
+          "content": "**Frequently asked question:** Your submission has been deemed as a question very frequently asked that often does not have a change in answer. Please use our search bar",
+          "timestamp": "2026-08-02T19:27:32+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run022_post03_seed113",
+      "post_slot": 3,
+      "seed_index": 113,
+      "source_raw_post_id": "1vdpger",
+      "source_product_dir": "GooglePixel",
+      "source_file": "https://www.reddit.com/r/GooglePixel/comments/1vdpger/whats_the_best_way_to_take_good_photos_i_have/",
+      "post_type": "reddit_post",
+      "title": "What's the best way to take good photos? I have Google pixel 10 normal",
+      "author": "reddit_user_0fe413d0e398",
+      "author_karma": 0,
+      "content": "What's the best way to take good photos? I have Google pixel 10 normal\n\n[removed]",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p1b1tj3",
+          "author": "reddit_user_1759cd8ed47d",
+          "author_karma": 0,
+          "content": "I personally keep both of those on. ",
+          "timestamp": "2026-08-02T19:04:58+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1bbqtk",
+          "author": "reddit_user_760b3a37fc39",
+          "author_karma": 0,
+          "content": "HDR won't do any harm because it isn't a post processing thing, it's like Dolby Vision, it'll look HDR on supported apps/displays and I'll look SDR on unsupported apps/displays without adding or taking details.",
+          "timestamp": "2026-08-02T19:50:55+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1be1v0",
+              "author": "[deleted]",
+              "author_karma": 0,
+              "content": "[removed]",
+              "timestamp": "2026-08-02T20:01:45+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1bbqtk",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1d48rz",
+                  "author": "reddit_user_760b3a37fc39",
+                  "author_karma": 0,
+                  "content": "4K 30 HDR, it's better for low light, higher the fps it needs more light for the same \"brightness\"\n\nIf you are using Google Photos auto upload you can try video boost or video night sight, that uploads a raw file for post processing in the cloud",
+                  "timestamp": "2026-08-03T01:24:26+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1be1v0",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "post_id": "real_run022_post04_seed114",
+      "post_slot": 4,
+      "seed_index": 114,
+      "source_raw_post_id": "1vdpjm9",
+      "source_product_dir": "iphone",
+      "source_file": "https://www.reddit.com/r/iphone/comments/1vdpjm9/i_made_it_guys_white_borders_se3/",
+      "post_type": "Discussion",
+      "title": "I made it guys White Borders SE3",
+      "author": "reddit_user_0fe413d0e398",
+      "author_karma": 0,
+      "content": "I made it guys White Borders SE3\n\nWhat’s your opinion on this customization?",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p1b6h6v",
+          "author": "reddit_user_a5a30234c8f8",
+          "author_karma": 0,
+          "content": "Your post has been removed as it falls under one of the following categories:\n\n- Photography, see /r/iPhoneography or /r/shot_on_iPhone\n\n- Battery posts, see [this Megathread]http://reddit.com/r/iphone/about/sticky?num=2)\n\n- Bugs caused by iOS Beta, see /r/iOSBeta instead\n\n- Pictures of iPhones, cases, skins or boxes\n\nApp release notes (iOS relase notes are permitted)\n\n- Screenshots of the Homescreen or Lockscreen  or Control Center use r/iOSSetups instead\n\n-Screenshot of purchase\n\nA full description of this rule can be found in our [Guidelines wiki](https://www.reddit.com/r/iphone/about/wiki/guidelines/).",
+          "timestamp": "2026-08-02T19:26:26+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    }
+  ]
+}

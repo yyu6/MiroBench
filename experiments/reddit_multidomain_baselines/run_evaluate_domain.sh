@@ -7,7 +7,7 @@ if [[ $# -lt 1 || "$1" == "-h" || "$1" == "--help" ]]; then
 Usage: run_evaluate_domain.sh <domain> [evaluation options]
 
 Examples:
-  ./experiments/reddit_multidomain_baselines/run_evaluate_domain.sh laptop --device mps
+  ./experiments/reddit_multidomain_baselines/run_evaluate_domain.sh laptop --device auto
   ./experiments/reddit_multidomain_baselines/run_evaluate_domain.sh news --models gpt-4o-mini --baselines oasis
 
 The first argument is the only domain to evaluate. Remaining options are

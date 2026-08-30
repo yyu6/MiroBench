@@ -1,0 +1,557 @@
+{
+  "meta": {
+    "product_category": "laptop",
+    "baseline": "real_reddit_reference",
+    "run_id": "run_015_sampled_reddit"
+  },
+  "posts": [
+    {
+      "post_id": "real_run015_post00_seed075",
+      "post_slot": 0,
+      "seed_index": 75,
+      "source_raw_post_id": "1vdenx1",
+      "source_product_dir": "SuggestALaptop",
+      "source_file": "https://www.reddit.com/r/SuggestALaptop/comments/1vdenx1/suggestion_for_uni/",
+      "post_type": "Laptop Request -Others ",
+      "title": "Suggestion for uni",
+      "author": "reddit_user_d8691634ac1e",
+      "author_karma": 0,
+      "content": "Suggestion for uni\n\nIm looking at a macbook neo, most reviews praise it for its bang for your buck. I live in the eu, so it costs abour 900 usd, for the 256 gb version.   \nI will only be using the Neo for university related things, not for gaming. So idk if i need the 512 gb. Does anyone have any input on storage and such? How much does one need?  \nIm also studying law, so i dont need any engineering related programmes.",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p18hn8m",
+          "author": "reddit_user_3bf91e1896ea",
+          "author_karma": 0,
+          "content": "512gb will always be a better option than  256.  Storage is one of those things you think you dont need it but you eventually do. Bare minimum should always be 512gb. ",
+          "timestamp": "2026-08-02T11:19:26+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p18j4r1",
+          "author": "reddit_user_a0c5fb32c8e1",
+          "author_karma": 0,
+          "content": "Does that price already take into account Apple Education Store pricing, which you are eligible to as an enrolled law student?\n\nFor a law student, I’d expect most of your files to be documents, which tend to be small compared to other files such as batches of videos/photos. I wouldn’t consider the 256GB to be a dealbreaker in your case, though 512GB is great. ",
+          "timestamp": "2026-08-02T11:30:24+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1apqmi",
+              "author": "reddit_user_c7142332374f",
+              "author_karma": 0,
+              "content": "Wow thank you so much, you mightve just saved me 200 bucks!! Seeing as i was ready to spend the full price, i can now go for the 512gb at virtually no extra cost. Cant thank you enough!",
+              "timestamp": "2026-08-02T18:10:02+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p18j4r1",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1aql8b",
+                  "author": "reddit_user_a0c5fb32c8e1",
+                  "author_karma": 0,
+                  "content": "I’m very happy to hear that! You’re welcome! 😄",
+                  "timestamp": "2026-08-02T18:13:51+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1apqmi",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p1dslbe",
+          "author": "reddit_user_501dd2f039be",
+          "author_karma": 0,
+          "content": "Never a bad thing to have more storage",
+          "timestamp": "2026-08-03T03:56:18+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run015_post01_seed076",
+      "post_slot": 1,
+      "seed_index": 76,
+      "source_raw_post_id": "1vdf5yx",
+      "source_product_dir": "laptops",
+      "source_file": "https://www.reddit.com/r/laptops/comments/1vdf5yx/laptop_lost_function_after_battery_replacement/",
+      "post_type": "General question",
+      "title": "Laptop lost function after battery replacement",
+      "author": "reddit_user_d8691634ac1e",
+      "author_karma": 0,
+      "content": "Laptop lost function after battery replacement\n\nI recently got the battery in my Dell latitude 7280 replaced as I’ve had it for a few years and it got to the point where it drained completely within an hour. The first week or so after I had my laptop back it was working alright, and then a week ago it was shutting down every few minutes, and when I had it on charge, the charging light would be flashing, which it has never done before. It got up to 100% and when I unplugged it, it instantly drained to about 3%, I plugged it back in and it kept the laptop on but the charging light was still flashing and the charge percentage wasn’t increasing. This happened a few times, so I took it to another computer place hoping it’d be a quick fix/they’d have advice, and they told me the new battery isn’t a genuine Dell one and that Dell computers especially are very fussy with batteries. They also acknowledged the laptop wasn’t charging properly, but did a “BIOS software upgrade” and it seemed to work after that and got up to 100%. When I got home, it was working, but when I turned it on a few hours later after not having touched it, it completely drained again and now the charging light is flashing again and the charge isn’t going up. I had none of these issues before I got the battery replaced, and I’ve now spent $300 (aud) trying to get it fixed. Does anyone have any advice as to where to go from here? I just don’t want to replace it as I like using item until they’re completely ruined, and would be so happy if there’s a way to fix this that doesn’t involve spending too much more money. I’ve asked the original person who replaced the battery if I can get a refund and he said I cannot",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p18fu3s",
+          "author": "reddit_user_9a0bdef8a16e",
+          "author_karma": 0,
+          "content": "Get OEM parts. Only way to go about it.",
+          "timestamp": "2026-08-02T11:05:43+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p18i5p8",
+          "author": "reddit_user_412aff0e6b7b",
+          "author_karma": 0,
+          "content": "If battery is not charging properly, it might have something to do with the alternator?",
+          "timestamp": "2026-08-02T11:23:15+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p18qbg1",
+          "author": "reddit_user_2af84dceba3b",
+          "author_karma": 0,
+          "content": "It just sounds like a bad battery tbh. If you use it while charging do you see the same issues? ",
+          "timestamp": "2026-08-02T12:19:32+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p19o3ko",
+              "author": "reddit_user_f5ab5d013cce",
+              "author_karma": 0,
+              "content": "The laptop stays on when it’s plugged in, but permanently stays on 7%? Like it says it’s charging but obviously isn’t, it’s also when the charging light flashes too. But yeah doesn’t get past 7%, sometimes it’ll go to 100% but after having it unplugged for a few minutes it’ll completely drain again",
+              "timestamp": "2026-08-02T15:19:29+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p18qbg1",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p19ojpr",
+                  "author": "reddit_user_2af84dceba3b",
+                  "author_karma": 0,
+                  "content": "Battery is dead. That's all. You can check the price from dell, it usually ain't too bad for dell batteries compared to other brands. Install it yourself if you need to, there's usually video guides. ",
+                  "timestamp": "2026-08-02T15:21:36+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p19o3ko",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "post_id": "real_run015_post02_seed077",
+      "post_slot": 2,
+      "seed_index": 77,
+      "source_raw_post_id": "1vdf7j2",
+      "source_product_dir": "thinkpad",
+      "source_file": "https://www.reddit.com/r/thinkpad/comments/1vdf7j2/is_this_a_good_deal_and_does_it_suit_my_needs/",
+      "post_type": "Buying Advice",
+      "title": "Is this a good deal and does it suit my needs?",
+      "author": "reddit_user_d8691634ac1e",
+      "author_karma": 0,
+      "content": "Is this a good deal and does it suit my needs?\n\nLenovo ThinkPad P14s Gen 2a | Ryzen 7 PRO |\n\n32GB RAM | 1TB SSD | Windows 11 Pro\n\nIm starting to study mechatronics in 2 months and really need a new Laptop. Mainly for CAD (PTC Creo, Solidworks, Autocad) and other relevant softwares like Automationstudio, Robstudio... + some programming and normal office use. I had a Ideapad 510 before and these programs were running on it but over the time it got slower and slower so im looking for an upgrade. I found this thinkpad used for 589€ (679$) is this a good deal and does it suits my needs, ofc im on a budget so i dont want to spend lots of money.\n\n\\* AMD Ryzen 7 PRO 5850U (8 cores / 16 threads)\n\n\\* 32 GB RAM\n\n\\* 1 TB SSD\n\n\\* 14\" Full HD display (1920 × 1080)\n\n\\* AMD Radeon Graphics\n\n\\* Windows 11 Pro pre-installed and activated (valid license on the device)\n\nCondition\n\n\\* Cosmetic: very good condition, no scratches\n\n\\* Battery: approx. 90% of original capacity (45,430 mWh out of 50,450 mWh)\n\n\\* Technical: flawless\n\nIncluded items\n\n\\* Lenovo ThinkPad P14s Gen 2a\n\n\\* Original Lenovo power adapter",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p18gyp7",
+          "author": "reddit_user_e519bb9c5adc",
+          "author_karma": 0,
+          "content": "Nice specs but that's kinda expensive . I feel like it would be better around 450-500 ( considering the ram and name prices these days ) . Where are you in the eu ?\n\nhttps://www.leboncoin.fr/ad/ordinateurs/3187505775  ( i mean, 16gb and 512gb less but same CPU, for 200 less )",
+          "timestamp": "2026-08-02T11:14:16+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p18jd8l",
+              "author": "reddit_user_a4afff4c7034",
+              "author_karma": 0,
+              "content": "Thanks for your comment, im from Austria only place to look i know is \"Willhaben.at\"",
+              "timestamp": "2026-08-02T11:32:07+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p18gyp7",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1cgyz7",
+                  "author": "reddit_user_2c92fa87c0c8",
+                  "author_karma": 0,
+                  "content": "ebay oder [AFB.at](http://AFB.at) oder andere Refurbished Händler in AT/DE schon geschaut?",
+                  "timestamp": "2026-08-02T23:14:59+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p18jd8l",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p18gzx0",
+          "author": "reddit_user_2c9e426f0a23",
+          "author_karma": 0,
+          "content": "why is this NSFW ? ",
+          "timestamp": "2026-08-02T11:14:32+00:00",
+          "likes": 3,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p18jkrc",
+              "author": "reddit_user_a38327d2311a",
+              "author_karma": 0,
+              "content": "Windows",
+              "timestamp": "2026-08-02T11:33:39+00:00",
+              "likes": 4,
+              "dislikes": 0,
+              "parent_comment_id": "p18gzx0",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1b61n5",
+                  "author": "reddit_user_7da7bf350f56",
+                  "author_karma": 0,
+                  "content": "not safe for windows 😮",
+                  "timestamp": "2026-08-02T19:24:27+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p18jkrc",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            },
+            {
+              "comment_id": "p1arhms",
+              "author": "reddit_user_46367e66e6a7",
+              "author_karma": 0,
+              "content": "It shows up for any RAM over 8gb.",
+              "timestamp": "2026-08-02T18:17:54+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p18gzx0",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p18jujx",
+          "author": "reddit_user_e33ac13f2fcc",
+          "author_karma": 0,
+          "content": "I remember someone posting their thinkpad and also on their profile they had their schlong out, so I was a bit weary to open this post... ",
+          "timestamp": "2026-08-02T11:35:39+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1azkfh",
+              "author": "reddit_user_71d550f326fe",
+              "author_karma": 0,
+              "content": "Sauce",
+              "timestamp": "2026-08-02T18:54:36+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p18jujx",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p1baqjj",
+              "author": "reddit_user_bd9e524cd992",
+              "author_karma": 0,
+              "content": "Man have I seen some stuff. Someone warned us not to click on OPS profile I click it anyways OP on his knees in a construction belt naked. Man what a day.",
+              "timestamp": "2026-08-02T19:46:12+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p18jujx",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p18lwiz",
+          "author": "reddit_user_43617c783cff",
+          "author_karma": 0,
+          "content": "Personally I wouldnt buy it for that price at all, especially considering the fact that it has no dGPU (which might come in handy for your use case).\n\nFor reference, I bought my P15 Gen1 in February with similar specs BUT it also had a dGPU (Which I need both for gaming and 3D modeling) for 60 euros less than this offer.",
+          "timestamp": "2026-08-02T11:50:18+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p18njf4",
+          "author": "reddit_user_93d41c36e0c4",
+          "author_karma": 0,
+          "content": "I'd probably not buy it, the T14 is preferred over the T14s and it's a bit expensive. I'd rather find a T14 gen 2 or 3 for less than half the price that is upgradable.",
+          "timestamp": "2026-08-02T12:01:25+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p19dbg7",
+          "author": "reddit_user_403ac0470681",
+          "author_karma": 0,
+          "content": "I think the graphics might be a bit too pedestrian for CAD",
+          "timestamp": "2026-08-02T14:27:18+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p19gccv",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[deleted]",
+          "timestamp": "2026-08-02T14:42:11+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1agaeh",
+          "author": "reddit_user_80828c642eb8",
+          "author_karma": 0,
+          "content": "Probably yes, I use way weaker one:)",
+          "timestamp": "2026-08-02T17:28:11+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run015_post03_seed078",
+      "post_slot": 3,
+      "seed_index": 78,
+      "source_raw_post_id": "1vdfg31",
+      "source_product_dir": "thinkpad",
+      "source_file": "https://www.reddit.com/r/thinkpad/comments/1vdfg31/lenovo_thinkpad_thunderbolt_5_smart_dock_7500/",
+      "post_type": "Buying Advice",
+      "title": "Lenovo ThinkPad Thunderbolt 5 Smart Dock 7500",
+      "author": "reddit_user_d8691634ac1e",
+      "author_karma": 0,
+      "content": "Lenovo ThinkPad Thunderbolt 5 Smart Dock 7500\n\nHi, I'm planning on buying a new dock for my home setup. I currently use a P16s Gen 1 with a Dell WD19TB Dock and a single FHD Monitor(I plan on upgrading to a bigger 4K monitor but I won't be needing more than one). I'm thinking about upgrading my dock to the new TB 5 dock.\n\nI don't really need all the functions of a TB5 dock, I mostly want it for it's bigger PD and so I can use the power button of the dock and therefore can tuck away the laptop. I also bought a cheap used Lenovo TB3 dock for this reason but this one only provides 60W to the notebook.  The Dell does shed out 90W (it could feed my old Dell XPS 15 with 130W), which is enough for my current needs but I'd like to have some headroom for a future upgrade. \n\nDoes it make sense to buy the TB5 dock if I can get it for a good price (not much higher than the TB4) or should I stay away from these gen 1 TB5 docks if I don't really need it because they still have issues?",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p19qimh",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-02T15:30:57+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run015_post04_seed079",
+      "post_slot": 4,
+      "seed_index": 79,
+      "source_raw_post_id": "1vdfsnv",
+      "source_product_dir": "laptops",
+      "source_file": "https://www.reddit.com/r/laptops/comments/1vdfsnv/charged_a_laptop_with_the_wrong_charger_is_it/",
+      "post_type": "Hardware",
+      "title": "Charged a laptop with the wrong charger. Is it safe to continue to ues it?",
+      "author": "reddit_user_d8691634ac1e",
+      "author_karma": 0,
+      "content": "Charged a laptop with the wrong charger. Is it safe to continue to ues it?\n\nSo I have an Asus D509 Laptop but I lost the charger for it. I was in a rush and needed the laptop so I charged it with a spare charger from a different laptop. During the charging I downloaded a game until I had a blue screen with a S.M.A.R.T error. That happend after around 2hours.   \nAfter some investigation I realized that the charger I was using had an output voltage of **20V** but the laptops normal charger had an output of **19V**   \nI am now wondering whether Charging my laptop with the wrong charger caused the S.M.A.R.T error or if the error was unrelated. Also I don't know whether something else is damaged. I am worried that maybe the battery got damaged and want to know whether it is safe to continue to use the laptop with the normal charger and a new SSD.  \nSo far I haven't touched the laptop for a Month and also didn't charge it since the incident.\n\nTLDR: Can I continue to use my laptop that I charged with the wrong Charger/Voltage without it beeing a fire hassard?",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p18ns8f",
+          "author": "reddit_user_82c2d3209882",
+          "author_karma": 0,
+          "content": "What was the smart error and does it require changing the SSD? \n\nIf you now use the correct charger are there any other issues with the laptop or battery? If not it may be fine. You should be able to check the battery status. ",
+          "timestamp": "2026-08-02T12:03:03+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p18p67g",
+              "author": "reddit_user_937e260c1f1e",
+              "author_karma": 0,
+              "content": "The error was smart status bad, backup and replace. \n\nI ordered a new compatible charger cause i still cant find the old one. Unfortunately it didnt arrive yet, so I cant really say how the battery/laptop behaves now",
+              "timestamp": "2026-08-02T12:12:11+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p18ns8f",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p19779d",
+                  "author": "reddit_user_f03f39e53d01",
+                  "author_karma": 0,
+                  "content": "Smart is an error on your hard disk, the message means backup your data because your disk is going belly up ",
+                  "timestamp": "2026-08-02T13:55:59+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p18p67g",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p18p0vj",
+          "author": "reddit_user_e44bc7409360",
+          "author_karma": 0,
+          "content": "Es un 1V de diferencia  asi que es seguro ,pero cuando puedas compra el cargador correcto asi evitamos posibles problemas a futuro mas que nada por la calidad del cargador suplente que supongo que sera barato y dudo que tenga las protecciones correspondientes ",
+          "timestamp": "2026-08-02T12:11:12+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p18pfy6",
+              "author": "reddit_user_937e260c1f1e",
+              "author_karma": 0,
+              "content": "The spare charger I used was the original charger from a Lenovo laptop",
+              "timestamp": "2026-08-02T12:13:56+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p18p0vj",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p18pt6p",
+                  "author": "reddit_user_e44bc7409360",
+                  "author_karma": 0,
+                  "content": "A esta bien entonces,como dije al electrónica interna de la laptop trabaja con un pelin mas de potencia y calor pero nada del otro mundo",
+                  "timestamp": "2026-08-02T12:16:17+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p18pfy6",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p18pntb",
+          "author": "reddit_user_2af84dceba3b",
+          "author_karma": 0,
+          "content": "Nah the acceptable difference in voltage is usually +-10% before devices start to complain or act weird. \n\nIn this case it makes no difference, if it wasn't compatible it would have fried the laptop immediately. ",
+          "timestamp": "2026-08-02T12:15:21+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p18ulgh",
+          "author": "reddit_user_31cb2f5d4954",
+          "author_karma": 0,
+          "content": "Yes, it's safe. It was just a bad coincidence ",
+          "timestamp": "2026-08-02T12:45:44+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p18vza0",
+          "author": "reddit_user_45dde371f149",
+          "author_karma": 0,
+          "content": "Old laptop I would probably just get a whole new laptop at this point. That was an entry level model at best when it was new. ",
+          "timestamp": "2026-08-02T12:53:57+00:00",
+          "likes": 0,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p18zb8u",
+          "author": "reddit_user_2171fcabb200",
+          "author_karma": 0,
+          "content": "It's best to use the correct charger, but if it fits it fits.",
+          "timestamp": "2026-08-02T13:13:11+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p194oy8",
+              "author": "reddit_user_db7e548e53fb",
+              "author_karma": 0,
+              "content": "If it fits and has the right voltage. ",
+              "timestamp": "2026-08-02T13:42:41+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p18zb8u",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

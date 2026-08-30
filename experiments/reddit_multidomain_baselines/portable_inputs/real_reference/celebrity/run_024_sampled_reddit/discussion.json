@@ -1,0 +1,2250 @@
+{
+  "meta": {
+    "product_category": "celebrity",
+    "baseline": "real_reddit_reference",
+    "run_id": "run_024_sampled_reddit"
+  },
+  "posts": [
+    {
+      "post_id": "real_run024_post00_seed120",
+      "post_slot": 0,
+      "seed_index": 120,
+      "source_raw_post_id": "1vdlg9r",
+      "source_product_dir": "Fauxmoi",
+      "source_file": "https://www.reddit.com/r/Fauxmoi/comments/1vdlg9r/hadestown_on_broadway_has_cast_noted_transphobe/",
+      "post_type": "STAGE-MOI",
+      "title": "‘Hadestown’ on Broadway has cast noted transphobe Geno Segers as Hades. Segers has a years-long history of posting and sharing anti-trans and sexist videos on his personal YouTube channel and social media.",
+      "author": "reddit_user_33799307055d",
+      "author_karma": 0,
+      "content": "‘Hadestown’ on Broadway has cast noted transphobe Geno Segers as Hades. Segers has a years-long history of posting and sharing anti-trans and sexist videos on his personal YouTube channel and social media.",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p19wwqa",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-02T16:00:29+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1a1a32",
+              "author": "[deleted]",
+              "author_karma": 0,
+              "content": "[removed]",
+              "timestamp": "2026-08-02T16:20:21+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p19wwqa",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1as0fq",
+                  "author": "reddit_user_f495fab9a9c7",
+                  "author_karma": 0,
+                  "content": "Highly recommend The Devil You Know podcast. It covers this topic from 70s through to today.",
+                  "timestamp": "2026-08-02T18:20:16+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1a1a32",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            },
+            {
+              "comment_id": "p1a3ix6",
+              "author": "[deleted]",
+              "author_karma": 0,
+              "content": "[removed]",
+              "timestamp": "2026-08-02T16:30:35+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p19wwqa",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1apbbl",
+                  "author": "[deleted]",
+                  "author_karma": 0,
+                  "content": "[removed]",
+                  "timestamp": "2026-08-02T18:08:08+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1a3ix6",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p19xi6n",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-02T16:03:10+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1a4v2e",
+              "author": "reddit_user_d3c26e63a544",
+              "author_karma": 0,
+              "content": "If you're talking about James Woods, I wouldn't really call it \"in a row\" ",
+              "timestamp": "2026-08-02T16:36:41+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p19xi6n",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1a5lns",
+                  "author": "reddit_user_bbf6628ce688",
+                  "author_karma": 0,
+                  "content": "I think they mean specifically in Hadestown. Prior to this, Gary Dourdan was also cast as Hades which was controversial due to his history of domestic violence. ",
+                  "timestamp": "2026-08-02T16:40:04+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1a4v2e",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1a5s1k",
+                      "author": "[deleted]",
+                      "author_karma": 0,
+                      "content": "[removed]",
+                      "timestamp": "2026-08-02T16:40:53+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1a5lns",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "p1aaw5a",
+                          "author": "[deleted]",
+                          "author_karma": 0,
+                          "content": "[removed]",
+                          "timestamp": "2026-08-02T17:04:00+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "p1a5s1k",
+                          "depth": 4,
+                          "replies": []
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "comment_id": "p1bk15u",
+                  "author": "[deleted]",
+                  "author_karma": 0,
+                  "content": "[removed]",
+                  "timestamp": "2026-08-02T20:29:47+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1a4v2e",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1dli3f",
+                      "author": "[deleted]",
+                      "author_karma": 0,
+                      "content": "[removed]",
+                      "timestamp": "2026-08-03T03:08:32+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1bk15u",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "comment_id": "p1aaowc",
+              "author": "[deleted]",
+              "author_karma": 0,
+              "content": "[removed]",
+              "timestamp": "2026-08-02T17:03:06+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p19xi6n",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1alch7",
+                  "author": "[deleted]",
+                  "author_karma": 0,
+                  "content": "[removed]",
+                  "timestamp": "2026-08-02T17:50:34+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1aaowc",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1apeka",
+                      "author": "[deleted]",
+                      "author_karma": 0,
+                      "content": "[removed]",
+                      "timestamp": "2026-08-02T18:08:33+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1alch7",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p19y0ps",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-02T16:05:30+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p19y9tk",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-02T16:06:39+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1a78mx",
+              "author": "[deleted]",
+              "author_karma": 0,
+              "content": "[removed]",
+              "timestamp": "2026-08-02T16:47:32+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p19y9tk",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1aiwei",
+                  "author": "[deleted]",
+                  "author_karma": 0,
+                  "content": "[removed]",
+                  "timestamp": "2026-08-02T17:39:46+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1a78mx",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p19yyls",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-02T16:09:47+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p19z2s6",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-02T16:10:19+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p19zpqt",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-02T16:13:12+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p19zxgu",
+          "author": "reddit_user_b908b7e3a14f",
+          "author_karma": 0,
+          "content": "I blocked Geno Segers years ago on Instagram because he was nonstop posting condescending, anti-trans video. He’s a fucking loser. ",
+          "timestamp": "2026-08-02T16:14:11+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1a15lu",
+          "author": "reddit_user_60d4935c55f1",
+          "author_karma": 0,
+          "content": "Okay, but like, has he changed or not? Last I heard he was trying to apologize?",
+          "timestamp": "2026-08-02T16:19:47+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1aajck",
+              "author": "[deleted]",
+              "author_karma": 0,
+              "content": "[removed]",
+              "timestamp": "2026-08-02T17:02:24+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1a15lu",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1auqat",
+                  "author": "[deleted]",
+                  "author_karma": 0,
+                  "content": "[removed]",
+                  "timestamp": "2026-08-02T18:32:29+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1aajck",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p1a22hu",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-02T16:23:55+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1a39kf",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-02T16:29:23+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1aapxk",
+              "author": "reddit_user_28b48af1542e",
+              "author_karma": 0,
+              "content": "Oh, excellent news! This makes me very happy. Thank you",
+              "timestamp": "2026-08-02T17:03:14+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1a39kf",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p1ajkbe",
+              "author": "[deleted]",
+              "author_karma": 0,
+              "content": "[removed]",
+              "timestamp": "2026-08-02T17:42:43+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1a39kf",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p1apzlb",
+              "author": "[deleted]",
+              "author_karma": 0,
+              "content": "[removed]",
+              "timestamp": "2026-08-02T18:11:09+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1a39kf",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1b1rdu",
+                  "author": "[deleted]",
+                  "author_karma": 0,
+                  "content": "[removed]",
+                  "timestamp": "2026-08-02T19:04:42+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1apzlb",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            },
+            {
+              "comment_id": "p1btafe",
+              "author": "[deleted]",
+              "author_karma": 0,
+              "content": "[removed]",
+              "timestamp": "2026-08-02T21:14:03+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1a39kf",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p1c4nll",
+              "author": "[deleted]",
+              "author_karma": 0,
+              "content": "[removed]",
+              "timestamp": "2026-08-02T22:10:34+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1a39kf",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p1c9qqb",
+              "author": "[deleted]",
+              "author_karma": 0,
+              "content": "[removed]",
+              "timestamp": "2026-08-02T22:36:50+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1a39kf",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1a3k46",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-02T16:30:44+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1a3sx1",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-02T16:31:51+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1a451y",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-02T16:33:23+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1a46m3",
+          "author": "reddit_user_84c6d0d508eb",
+          "author_karma": 0,
+          "content": "Just announced that he would NOT be appearing in hadestown. \"Mutual\" decision.",
+          "timestamp": "2026-08-02T16:33:35+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1acdfo",
+              "author": "[deleted]",
+              "author_karma": 0,
+              "content": "[removed]",
+              "timestamp": "2026-08-02T17:10:39+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1a46m3",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1a4jay",
+          "author": "reddit_user_b3cb0540a6a2",
+          "author_karma": 0,
+          "content": "It was announced he won’t be in it anymore. Good riddance. ",
+          "timestamp": "2026-08-02T16:35:12+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1a4lfg",
+          "author": "reddit_user_fcfb9826b554",
+          "author_karma": 0,
+          "content": "How hard is it to cast people that AREN’T awful ?",
+          "timestamp": "2026-08-02T16:35:29+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1afwm2",
+              "author": "[deleted]",
+              "author_karma": 0,
+              "content": "[removed]",
+              "timestamp": "2026-08-02T17:26:27+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1a4lfg",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1a4p9f",
+          "author": "reddit_user_ffdda63662f5",
+          "author_karma": 0,
+          "content": "At like 11:20 am central time Sunday, Broadway world reports that producers have announced he’s no longer joining the cast due to backlash based on Segers’ transphobic social media habits. ",
+          "timestamp": "2026-08-02T16:35:57+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1a5ora",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-02T16:40:27+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1a5wqx",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-02T16:41:29+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1a8bf5",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-02T16:52:27+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1a8ifg",
+          "author": "reddit_user_4bffe0e1cf98",
+          "author_karma": 0,
+          "content": "Given what I know of this show's fanbase, aside from being deeply ideologically horrible this is also just a really stupid decision that will backfire tremendously ",
+          "timestamp": "2026-08-02T16:53:19+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1aalfb",
+              "author": "[deleted]",
+              "author_karma": 0,
+              "content": "[removed]",
+              "timestamp": "2026-08-02T17:02:39+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1a8ifg",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1aqwii",
+                  "author": "reddit_user_4bffe0e1cf98",
+                  "author_karma": 0,
+                  "content": "Yay! We love a happy ending ❤️",
+                  "timestamp": "2026-08-02T18:15:15+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1aalfb",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            },
+            {
+              "comment_id": "p1aawuk",
+              "author": "[deleted]",
+              "author_karma": 0,
+              "content": "[removed]",
+              "timestamp": "2026-08-02T17:04:05+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1a8ifg",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1a8ihx",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-02T16:53:20+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1a8n75",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-02T16:53:54+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1aada6",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-02T17:01:38+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1aaj9y",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-02T17:02:23+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1aapj5",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-02T17:03:11+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1adsie",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-02T17:17:05+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1af7z6",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-02T17:23:27+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1ahk1n",
+          "author": "reddit_user_b28c4dd64290",
+          "author_karma": 0,
+          "content": "Typecasting ",
+          "timestamp": "2026-08-02T17:33:50+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1akyws",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-02T17:48:53+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1aqyik",
+              "author": "[deleted]",
+              "author_karma": 0,
+              "content": "[removed]",
+              "timestamp": "2026-08-02T18:15:30+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1akyws",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1amns3",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-02T17:56:21+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1amx3l",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-02T17:57:30+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1apx19",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-02T18:10:50+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1azhtk",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-02T18:54:16+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1b02kw",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-02T18:56:54+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1b1xqs",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-02T19:05:29+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1bp62x",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-02T20:54:13+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1cv4qb",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-03T00:32:53+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1dehyb",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-03T02:25:03+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run024_post01_seed121",
+      "post_slot": 1,
+      "seed_index": 121,
+      "source_raw_post_id": "1vdlr82",
+      "source_product_dir": "Fauxmoi",
+      "source_file": "https://www.reddit.com/r/Fauxmoi/comments/1vdlr82/giants_suspend_pay_to_injured_harrison_bader/",
+      "post_type": "SPORTS SECTION",
+      "title": "Giants suspend pay to injured Harrison Bader after scooter crash",
+      "author": "reddit_user_33799307055d",
+      "author_karma": 0,
+      "content": "Giants suspend pay to injured Harrison Bader after scooter crash",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p19zi01",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-02T16:12:13+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1a0ik0",
+          "author": "reddit_user_da554c229a36",
+          "author_karma": 0,
+          "content": "2nd scooter accident ",
+          "timestamp": "2026-08-02T16:16:52+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1a2qg0",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-02T16:26:57+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1a2y28",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-02T16:27:55+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1a3sxj",
+          "author": "reddit_user_af2cbc883e66",
+          "author_karma": 0,
+          "content": "Isn’t it in their contracts that they can’t engage in certain activities? Given that he crashed a scooter before I’m sure he signed something saying he can’t be on one.",
+          "timestamp": "2026-08-02T16:31:51+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1aupfu",
+              "author": "reddit_user_17e2013e76be",
+              "author_karma": 0,
+              "content": "Several people have also said that he had been drinking prior to the incident, which is an even bigger issue. But idk if that's actually been confirmed. Given that he crashed into a fucking fire truck, it definitely seems likely that he was inebriated.",
+              "timestamp": "2026-08-02T18:32:23+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1a3sxj",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1a7zt7",
+          "author": "reddit_user_393caf2703b5",
+          "author_karma": 0,
+          "content": "I used to like him as player before he played for Israel in the WBC, now he can go to hell",
+          "timestamp": "2026-08-02T16:50:59+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1c0gts",
+              "author": "reddit_user_adafcf6fcc6a",
+              "author_karma": 0,
+              "content": "Probably best to not ask a pro baseball player what his politics are",
+              "timestamp": "2026-08-02T21:49:28+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1a7zt7",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1c8zp6",
+                  "author": "[deleted]",
+                  "author_karma": 0,
+                  "content": "[removed]",
+                  "timestamp": "2026-08-02T22:32:54+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1c0gts",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p1a9877",
+          "author": "reddit_user_4b1d8c66c184",
+          "author_karma": 0,
+          "content": "I’m sorry but crashing your scooter into a fire truck then getting your injured foot run over by said fire truck is hilarious. ",
+          "timestamp": "2026-08-02T16:56:32+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1c4ip4",
+              "author": "reddit_user_6f94c5d99c0f",
+              "author_karma": 0,
+              "content": "it's not even his first intoxicated-scooter-accident!",
+              "timestamp": "2026-08-02T22:09:53+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1a9877",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1abvey",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-02T17:08:25+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1acrr8",
+          "author": "reddit_user_9e8555a59211",
+          "author_karma": 0,
+          "content": "He’s the cousin of a guy from Vampire weekend so I was excited when we signed him\n\nHe was actually good when he played but he hasn’t played in forever",
+          "timestamp": "2026-08-02T17:12:27+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1albr3",
+              "author": "reddit_user_837b3c9c7787",
+              "author_karma": 0,
+              "content": "Omg wait THIS guy is the one who’s baios cousin? Good lord ",
+              "timestamp": "2026-08-02T17:50:28+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1acrr8",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1av296",
+                  "author": "reddit_user_9e8555a59211",
+                  "author_karma": 0,
+                  "content": "Yep",
+                  "timestamp": "2026-08-02T18:33:59+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1albr3",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p1aom6f",
+          "author": "reddit_user_9b53fb8af856",
+          "author_karma": 0,
+          "content": "As a Cardinals fan, I am well aware of his reputation and shenanigans prior to this and ah… not surprised.\n\nI love the sport of baseball, but the players are zero good times at this point. I feel like I’ve outgrown Major League Baseball and between the owners, the players, the gambling, this economy, and the imminent lockout in 2027, I super don’t care.",
+          "timestamp": "2026-08-02T18:04:59+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1ayadc",
+          "author": "reddit_user_04ca05cefaee",
+          "author_karma": 0,
+          "content": "and it’s not even his first scooter related incident, i’m pretty sure he was suspended from a ton of games in college after a scooter dui. liked him when he played for the phils but found out about him representing israel and was pretty okay when he left philly. ",
+          "timestamp": "2026-08-02T18:48:45+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1btoox",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-02T21:16:00+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run024_post02_seed122",
+      "post_slot": 2,
+      "seed_index": 122,
+      "source_raw_post_id": "1vdmqbz",
+      "source_product_dir": "Fauxmoi",
+      "source_file": "https://www.reddit.com/r/Fauxmoi/comments/1vdmqbz/sen_bernie_moreno_says_former_soninlaw_max_miller/",
+      "post_type": "POLITICS",
+      "title": "Sen. Bernie Moreno says former son-in-law Max Miller should not serve in the House",
+      "author": "reddit_user_33799307055d",
+      "author_karma": 0,
+      "content": "Sen. Bernie Moreno says former son-in-law Max Miller should not serve in the House",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p1a666w",
+          "author": "reddit_user_4d09661c90ef",
+          "author_karma": 0,
+          "content": "it took wayyyyy too long for him to say anything imo",
+          "timestamp": "2026-08-02T16:42:41+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1aqhm8",
+              "author": "reddit_user_427ea3cc50c9",
+              "author_karma": 0,
+              "content": "Especially because Max Miller had previous public abuse allegations in 2021.",
+              "timestamp": "2026-08-02T18:13:23+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1a666w",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p1bhonh",
+              "author": "reddit_user_74167b8fadf1",
+              "author_karma": 0,
+              "content": "I truly think if Miller was polling better, he never would have said anything. ",
+              "timestamp": "2026-08-02T20:18:45+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1a666w",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p1c6a3x",
+              "author": "reddit_user_e7986a279ef5",
+              "author_karma": 0,
+              "content": "He isnt my favorite person but in the senators defense, his primary concern is probably on his family and his daughters and granddaughters safety. Not the politics around it. This kind of statement could easily become part of their divorce litigation and the father could try to restrict custody or time with the grand daughter if he can prove alienation. Also, where DV is concerned- leaving is the scariest and most violent time. Things can really escalate when the abuser starts to lose control of his victims. And bc they have a child- they will always have to interact with this guy.  The family were probably told to say absolutely nothing by both lawyers and DV advocates.  ",
+              "timestamp": "2026-08-02T22:18:54+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1a666w",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1cw2vu",
+                  "author": "reddit_user_4d09661c90ef",
+                  "author_karma": 0,
+                  "content": "i can absolutely hold space for this",
+                  "timestamp": "2026-08-03T00:38:17+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1c6a3x",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p1a7di5",
+          "author": "reddit_user_5f1a5d21425b",
+          "author_karma": 0,
+          "content": "Max Miller just responded to Senator Bernie Moreno’s (his ex-father-in-law) public statement on Twitter:   \n\n\nhttps://preview.redd.it/zhbw7i61rzgh1.jpeg?width=1170&format=pjpg&auto=webp&s=db915f2fe5ce6f6ce1e648ad4e9deb8d4a01d7d1",
+          "timestamp": "2026-08-02T16:48:09+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1aacok",
+              "author": "reddit_user_10bb17b05e23",
+              "author_karma": 0,
+              "content": "1. I do think it makes sense for Moreno to have waited a bit, per his daughter's safety. When women leave they're more likely to get murdered.\n\n2. I wonder whether Emily asked her dad not to make allegations super public.\n\n3. When there was media reporting, Moreno should have said things immediately.",
+              "timestamp": "2026-08-02T17:01:33+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1a7di5",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p1arlvl",
+              "author": "reddit_user_56a7c95c5d88",
+              "author_karma": 0,
+              "content": "I hope Bernie speaks more on it \n\nThis statement is a start but hang this max out to dry with whatever accounts/interactions you are mentioning ",
+              "timestamp": "2026-08-02T18:18:26+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1a7di5",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p1b7tu4",
+              "author": "reddit_user_0232bc6a8c86",
+              "author_karma": 0,
+              "content": "All of this is basically true and none of it is exonerating to Miller at all. Both Miller and Moreno are monsters. ",
+              "timestamp": "2026-08-02T19:32:42+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1a7di5",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1a8no2",
+          "author": "reddit_user_20d0070ad8c6",
+          "author_karma": 0,
+          "content": "Tick tock for you too, Cory Mills!",
+          "timestamp": "2026-08-02T16:53:58+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1aa8ek",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-02T17:01:01+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1aypvh",
+              "author": "reddit_user_392cfe340c54",
+              "author_karma": 0,
+              "content": "I can't even imagine how crushing it must be as a woman, to see your father taking sides with your abuser against you.",
+              "timestamp": "2026-08-02T18:50:43+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1aa8ek",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1bd21p",
+                  "author": "[deleted]",
+                  "author_karma": 0,
+                  "content": "[removed]",
+                  "timestamp": "2026-08-02T19:57:06+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1aypvh",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p1ac999",
+          "author": "reddit_user_cc1ee73baf7e",
+          "author_karma": 0,
+          "content": "Is he gonna out him now? Like he said he would?",
+          "timestamp": "2026-08-02T17:10:08+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1ad2tv",
+          "author": "reddit_user_c455edaa7650",
+          "author_karma": 0,
+          "content": "Democeacy Now coverage \n\nhttps://youtu.be/t1EW6RC38io\n\nRepublican Congressmember Max Miller of Ohio is facing allegations of domestic abuse as he runs for reelection. Miller's ex-wife Emily Moreno, daughter of Ohio Republican Senator Bernie Moreno, claims that Miller burned her by throwing hot water at her, held a gun to her head and fractured their 2-year-old daughter's collarbone. Miller is also accused of abuse by former Trump White House Press Secretary Stephanie Grisham, who was in a relationship with Miller prior to his marriage to Moreno.\n",
+          "timestamp": "2026-08-02T17:13:51+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1ad7ze",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-02T17:14:30+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1agooy",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-02T17:29:58+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1aklva",
+          "author": "reddit_user_71ec9f053722",
+          "author_karma": 0,
+          "content": "I don’t know which scumbag I should takes sides with ",
+          "timestamp": "2026-08-02T17:47:17+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1awyyg",
+              "author": "[deleted]",
+              "author_karma": 0,
+              "content": "[removed]",
+              "timestamp": "2026-08-02T18:42:43+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1aklva",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p1beeov",
+              "author": "reddit_user_55f2df561da5",
+              "author_karma": 0,
+              "content": "![gif](giphy|qKV8U3Gl3bWVi)",
+              "timestamp": "2026-08-02T20:03:26+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1aklva",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1al9kj",
+          "author": "reddit_user_123ae6752227",
+          "author_karma": 0,
+          "content": "lol after getting called out in public the good Senator wants to now protect his family.  what a fucking guy.",
+          "timestamp": "2026-08-02T17:50:12+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1ald26",
+          "author": "reddit_user_bac02b304f53",
+          "author_karma": 0,
+          "content": "Only after having his cage significantly rattled. His daughter didn’t stand a chance of finding a decent man with that POS for a father. ",
+          "timestamp": "2026-08-02T17:50:38+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1ar0p7",
+              "author": "reddit_user_128dc35f2033",
+              "author_karma": 0,
+              "content": "She works for some Republican organization called America first policy initiative or something like that so she’s right there in the thick of the GOP slime. Her father was mainly the owner of a bunch of car dealerships for a long time. \n\nAlthough nothing excuses the behavior of her ex-husband and her father, for being silent until now and anything else that seeks to downplay or ignore the abuse allegations.",
+              "timestamp": "2026-08-02T18:15:46+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1ald26",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1avqd2",
+                  "author": "reddit_user_bac02b304f53",
+                  "author_karma": 0,
+                  "content": "Ugh. It’s awful, but not surprising that she carries water for the patriarchy. I keep thinking about that poor little girl growing up and realizing her father broke her collar bone when she was a toddler. 😢",
+                  "timestamp": "2026-08-02T18:37:00+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1ar0p7",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p1am74v",
+          "author": "reddit_user_85ac2c8759c7",
+          "author_karma": 0,
+          "content": "I'm worried that this is going to make people who are unfamiliar with Bernie Moreno think he is worth a fuck, because he's not. ",
+          "timestamp": "2026-08-02T17:54:18+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1amcc9",
+          "author": "reddit_user_5c5828150fb1",
+          "author_karma": 0,
+          "content": "Maybe Moreno should lead by example and leave the Senate.",
+          "timestamp": "2026-08-02T17:54:57+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1aml6k",
+          "author": "reddit_user_cb8e7a55a24d",
+          "author_karma": 0,
+          "content": "I automatically side-eye any statement that starts with \"As a father and husband...\"",
+          "timestamp": "2026-08-02T17:56:02+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1aqj5t",
+              "author": "reddit_user_b7323712785e",
+              "author_karma": 0,
+              "content": "It’s like pushing your pregnant wife in front of you at the WHC dinner “shooting.” Or blaming your daughters for going to Cancun while Texas is freezing. ",
+              "timestamp": "2026-08-02T18:13:35+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1aml6k",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1b7l0v",
+                  "author": "reddit_user_8f22c733bff5",
+                  "author_karma": 0,
+                  "content": "conservative men 🤝 using the women and girls in their lives as literal and figurative meat shields",
+                  "timestamp": "2026-08-02T19:31:33+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1aqj5t",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p1angpo",
+          "author": "reddit_user_a807aafd3e46",
+          "author_karma": 0,
+          "content": "Did all this just come to light now or when Moreno made headlines with his absurd political theater against Fauci? ",
+          "timestamp": "2026-08-02T17:59:55+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1aq6it",
+              "author": "reddit_user_5f1a5d21425b",
+              "author_karma": 0,
+              "content": "The story broke like a day or two PRIOR to Senator Moreno cussing out Dr. Fauci at that Senate hearing!!! ",
+              "timestamp": "2026-08-02T18:12:01+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1angpo",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p1aqsxt",
+              "author": "reddit_user_b7323712785e",
+              "author_karma": 0,
+              "content": "I think it was brewing before the Fauci thing but the absurd bravado from Moreno really turned it into a crisis. ",
+              "timestamp": "2026-08-02T18:14:48+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1angpo",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1apjjk",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-02T18:09:10+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1awtvq",
+              "author": "[deleted]",
+              "author_karma": 0,
+              "content": "[removed]",
+              "timestamp": "2026-08-02T18:42:04+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1apjjk",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1atbst",
+          "author": "reddit_user_6b5e8cae7807",
+          "author_karma": 0,
+          "content": "Ohio is in shambles. This and the gubernatorial race between Thiel Puppet Vivek and Dr. Amy “Jk Rowling” Acton, I can’t. ",
+          "timestamp": "2026-08-02T18:26:11+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1b1hle",
+          "author": "reddit_user_97832c99915e",
+          "author_karma": 0,
+          "content": "He was busy screaming at Fauci last week. ",
+          "timestamp": "2026-08-02T19:03:27+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1b3ifc",
+          "author": "reddit_user_99d2095f84b9",
+          "author_karma": 0,
+          "content": "I want to hear what Trump and Ohioan JD Vance think.",
+          "timestamp": "2026-08-02T19:12:43+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1ca1fs",
+              "author": "reddit_user_b253891dd086",
+              "author_karma": 0,
+              "content": "pedo be \n\nhttps://preview.redd.it/7jgc8mgjh1hh1.png?width=1080&format=png&auto=webp&s=e4804a730fc67aecd97cc5f9625f18d59b38fa55\n\n",
+              "timestamp": "2026-08-02T22:38:24+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1b3ifc",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1b992w",
+          "author": "reddit_user_a91184793daf",
+          "author_karma": 0,
+          "content": "I’m worried the systematic abuse of women will never end in my lifetime. Or the lifetimes of many children around me who innocently believe in the world.",
+          "timestamp": "2026-08-02T19:39:20+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1bip29",
+          "author": "reddit_user_9adac559554b",
+          "author_karma": 0,
+          "content": "That dude is a fuck too",
+          "timestamp": "2026-08-02T20:23:27+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1bjpk4",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-02T20:28:15+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1cn86d",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-02T23:49:10+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run024_post03_seed123",
+      "post_slot": 3,
+      "seed_index": 123,
+      "source_raw_post_id": "1vdo4l9",
+      "source_product_dir": "entertainment",
+      "source_file": "https://www.reddit.com/r/entertainment/comments/1vdo4l9/sheri_moon_zombie_releases_antiai_debut_single_i/",
+      "post_type": "link",
+      "title": "Sheri Moon Zombie releases anti-AI debut single \"I Love My Robot\"",
+      "author": "reddit_user_33799307055d",
+      "author_karma": 0,
+      "content": "Sheri Moon Zombie releases anti-AI debut single \"I Love My Robot\"",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p1ajdbl",
+          "author": "reddit_user_1ce4681bbbe1",
+          "author_karma": 0,
+          "content": "I love them both, but oof. ",
+          "timestamp": "2026-08-02T17:41:51+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1awbfe",
+          "author": "reddit_user_3f2eb7467d6c",
+          "author_karma": 0,
+          "content": "It's worse than I thought it would be.",
+          "timestamp": "2026-08-02T18:39:41+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1b2a5o",
+          "author": "reddit_user_c49d8aac9900",
+          "author_karma": 0,
+          "content": "Most 55-year-olds I know are really into AI.",
+          "timestamp": "2026-08-02T19:07:03+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1cs5n0",
+              "author": "reddit_user_47d9c28d87a0",
+              "author_karma": 0,
+              "content": "AI and oatmeal.",
+              "timestamp": "2026-08-03T00:16:21+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1b2a5o",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1byvn9",
+          "author": "reddit_user_806831606357",
+          "author_karma": 0,
+          "content": "Oh dear. I definitely like her and Rob. But thats the most cringe thing I've seen in a while",
+          "timestamp": "2026-08-02T21:41:30+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1c3osn",
+          "author": "reddit_user_8b01acf76aae",
+          "author_karma": 0,
+          "content": "Well, I appreciate the sentiment. AI does suck. This feels very old-school grrl riot to me. ",
+          "timestamp": "2026-08-02T22:05:45+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1c7gqd",
+          "author": "reddit_user_9284699ecb36",
+          "author_karma": 0,
+          "content": "That was terrible!  I couldn’t even get through it. ",
+          "timestamp": "2026-08-02T22:24:59+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1cu3l3",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-03T00:27:06+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1dd1dm",
+          "author": "reddit_user_fc6d7ffea1e2",
+          "author_karma": 0,
+          "content": "Just because you can doesn’t mean you should ",
+          "timestamp": "2026-08-03T02:16:26+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run024_post04_seed124",
+      "post_slot": 4,
+      "seed_index": 124,
+      "source_raw_post_id": "1vdom63",
+      "source_product_dir": "Fauxmoi",
+      "source_file": "https://www.reddit.com/r/Fauxmoi/comments/1vdom63/dua_lipa_shared_new_post_on_instagram_i_dont/",
+      "post_type": "STAN / ANTI SHIELD",
+      "title": "Dua Lipa shared new post on Instagram: i don’t wanna leave and they’re making me go home",
+      "author": "reddit_user_33799307055d",
+      "author_karma": 0,
+      "content": "Dua Lipa shared new post on Instagram: i don’t wanna leave and they’re making me go home",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p1aqgyz",
+          "author": "reddit_user_da9badc5d802",
+          "author_karma": 0,
+          "content": "I just think she's neat!!!",
+          "timestamp": "2026-08-02T18:13:18+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1as6tt",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-02T18:21:04+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1bom45",
+              "author": "[deleted]",
+              "author_karma": 0,
+              "content": "[removed]",
+              "timestamp": "2026-08-02T20:51:32+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1as6tt",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1ci8jw",
+                  "author": "[deleted]",
+                  "author_karma": 0,
+                  "content": "[removed]",
+                  "timestamp": "2026-08-02T23:21:47+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1bom45",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1cl7re",
+                      "author": "[deleted]",
+                      "author_karma": 0,
+                      "content": "[removed]",
+                      "timestamp": "2026-08-02T23:38:03+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1ci8jw",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "p1cmus1",
+                          "author": "[deleted]",
+                          "author_karma": 0,
+                          "content": "[removed]",
+                          "timestamp": "2026-08-02T23:47:06+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "p1cl7re",
+                          "depth": 4,
+                          "replies": []
+                        }
+                      ]
+                    },
+                    {
+                      "comment_id": "p1clj8r",
+                      "author": "[deleted]",
+                      "author_karma": 0,
+                      "content": "[removed]",
+                      "timestamp": "2026-08-02T23:39:48+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1ci8jw",
+                      "depth": 3,
+                      "replies": []
+                    },
+                    {
+                      "comment_id": "p1cmvvc",
+                      "author": "reddit_user_fffa1d34b279",
+                      "author_karma": 0,
+                      "content": "She is.",
+                      "timestamp": "2026-08-02T23:47:17+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1ci8jw",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "comment_id": "p1dp68p",
+              "author": "[deleted]",
+              "author_karma": 0,
+              "content": "[removed]",
+              "timestamp": "2026-08-03T03:32:52+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1as6tt",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1asowv",
+          "author": "reddit_user_3cbb744a70b9",
+          "author_karma": 0,
+          "content": "\\*but they’re making me go home \n\nThat’s what I heard at least ",
+          "timestamp": "2026-08-02T18:23:19+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1at3vf",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-02T18:25:11+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1b3o8h",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-02T19:13:28+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1bb0x3",
+              "author": "[deleted]",
+              "author_karma": 0,
+              "content": "[removed]",
+              "timestamp": "2026-08-02T19:47:33+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1b3o8h",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1b4s3c",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-02T19:18:35+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1bhxv9",
+              "author": "[deleted]",
+              "author_karma": 0,
+              "content": "[removed]",
+              "timestamp": "2026-08-02T20:19:57+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1b4s3c",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1cp2a3",
+                  "author": "[deleted]",
+                  "author_karma": 0,
+                  "content": "[removed]",
+                  "timestamp": "2026-08-02T23:59:32+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1bhxv9",
+                  "depth": 2,
+                  "replies": []
+                },
+                {
+                  "comment_id": "p1cw2xa",
+                  "author": "[deleted]",
+                  "author_karma": 0,
+                  "content": "[removed]",
+                  "timestamp": "2026-08-03T00:38:17+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1bhxv9",
+                  "depth": 2,
+                  "replies": []
+                },
+                {
+                  "comment_id": "p1d2d2c",
+                  "author": "[deleted]",
+                  "author_karma": 0,
+                  "content": "[removed]",
+                  "timestamp": "2026-08-03T01:13:36+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1bhxv9",
+                  "depth": 2,
+                  "replies": []
+                },
+                {
+                  "comment_id": "p1deg7h",
+                  "author": "[deleted]",
+                  "author_karma": 0,
+                  "content": "[removed]",
+                  "timestamp": "2026-08-03T02:24:45+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1bhxv9",
+                  "depth": 2,
+                  "replies": []
+                },
+                {
+                  "comment_id": "p1dgr93",
+                  "author": "reddit_user_5ba0f851c9b0",
+                  "author_karma": 0,
+                  "content": "I don't understand why this isn't what all celebrities are doing, especially the ones who are instead spending their time having shitty takes and ranting on social media. There's so many opportunities for seriously fun fun when you're rich! ",
+                  "timestamp": "2026-08-03T02:38:42+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1bhxv9",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            },
+            {
+              "comment_id": "p1caveu",
+              "author": "[deleted]",
+              "author_karma": 0,
+              "content": "[removed]",
+              "timestamp": "2026-08-02T22:42:47+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1b4s3c",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1b6var",
+          "author": "reddit_user_6e02facd0bad",
+          "author_karma": 0,
+          "content": "It’s Leo season 🤷🏻‍♀️",
+          "timestamp": "2026-08-02T19:28:14+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1c882m",
+              "author": "[deleted]",
+              "author_karma": 0,
+              "content": "[removed]",
+              "timestamp": "2026-08-02T22:28:56+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1b6var",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1cvmou",
+                  "author": "[deleted]",
+                  "author_karma": 0,
+                  "content": "[removed]",
+                  "timestamp": "2026-08-03T00:35:44+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1c882m",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p1bbnyg",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-02T19:50:33+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1bmcpa",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-02T20:40:42+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1bw4xg",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-02T21:27:54+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1bxqtb",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-02T21:35:51+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1by4v0",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-02T21:37:46+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1c2nvs",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-02T22:00:34+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1cgiql",
+              "author": "reddit_user_e79e7dae0d5b",
+              "author_karma": 0,
+              "content": "Give Service 95 a Google, she seems to have found her lane as far as giving back. ",
+              "timestamp": "2026-08-02T23:12:34+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1c2nvs",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p1d92zd",
+              "author": "[deleted]",
+              "author_karma": 0,
+              "content": "[removed]",
+              "timestamp": "2026-08-03T01:52:47+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1c2nvs",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1c5chd",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-02T22:14:02+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1cky5h",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-02T23:36:34+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1cv3l6",
+          "author": "reddit_user_0a2f7892d86e",
+          "author_karma": 0,
+          "content": "![gif](giphy|dXlinRcBAu9IlPNOmR)",
+          "timestamp": "2026-08-03T00:32:42+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1cw7o8",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-03T00:39:02+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    }
+  ]
+}

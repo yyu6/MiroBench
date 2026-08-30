@@ -1,0 +1,586 @@
+{
+  "meta": {
+    "product_category": "headphones",
+    "baseline": "real_reddit_reference",
+    "run_id": "run_000_sampled_reddit"
+  },
+  "posts": [
+    {
+      "post_id": "real_run000_post00_seed000",
+      "post_slot": 0,
+      "seed_index": 0,
+      "source_raw_post_id": "1v8jz05",
+      "source_product_dir": "headphones",
+      "source_file": "https://www.reddit.com/r/headphones/comments/1v8jz05/dt_770_pro_x_sounds_hollowphasey_while_compared/",
+      "post_type": "Discussion",
+      "title": "DT 770 PRO X sounds hollow/phasey while compared with HyperX Cloud II, can't fix it",
+      "author": "reddit_user_d43b8c7b6255",
+      "author_karma": 0,
+      "content": "DT 770 PRO X sounds hollow/phasey while compared with HyperX Cloud II, can't fix it\n\nI recently bought the DT 770 PRO X, 48 ohm. or music, they sound clearly better than my old HyperX Cloud II, however the problem is gaming. Footsteps, gunfire, landing sounds and some ground impacts sound hollow, phasey and diffuse, almost as though virtual surround is on (its not I checked in windows settings). The sounds have clear detail, but they lack physical body I guess (I'm new to this so my description on sounds can sound like giberish, sorry).\n\n\n\n I'm using a Sound Blaster 3 usb DAC, idk if thats the problem? I don't know if EQ can fix it, I have had little success in trying to understand what frequencies to tune. I'd like to avoid sending these back, clearly they should be better than the Hyper X 2's. but I just have this annoying feeling that something is \"off\", when gaming. Should I send these back because its just how they are tuned?",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p06i45k",
+          "author": "reddit_user_c181600e3616",
+          "author_karma": 0,
+          "content": "This submission has been automatically removed due to the following rule:\n\n>***Rule 7***: Ask tech support and general questions in the _[Shopping, Setup, and Technical Help Desk](/r/headphones/comments/1v80s51/rheadphones_shopping_setup_and_technical_help_desk/)_\n>\n> Requests for tech support and general setup help must be made in the dedicated _[Shopping, Setup, and Technical Help Desk](/r/headphones/comments/1v80s51/rheadphones_shopping_setup_and_technical_help_desk/)_ instead of a new post.\n\n***Have you contacted the manufacturer?***\n\n* You should. For product support, please first contact the manufacturer. Reddit can't do much about broken or faulty products.\n\n***FAQ***\n\n* [Do you need an external DAC?](https://www.audioholics.com/frequent-questions/dac-do-you-need-an-external-digital-to-analog-converter)\n\n* [How much power do my headphones require?](https://www.headphonesty.com/headphone-power-calculator/)\n\n***Why does this rule even exist?***\n\n* In short, this is a large subreddit with a high volume. We want to help, but it's important to keep things organized to keep the sub fun. Thanks for your understanding.",
+          "timestamp": "2026-07-28T01:37:07+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run000_post01_seed001",
+      "post_slot": 1,
+      "seed_index": 1,
+      "source_raw_post_id": "1v8uak2",
+      "source_product_dir": "headphones",
+      "source_file": "https://www.reddit.com/r/headphones/comments/1v8uak2/if_you_are_on_linux_pipewire_settings_is_a_damn/",
+      "post_type": "Discussion",
+      "title": "If you are on Linux \"Pipewire settings\" is a damn awesome little tool to change the sampling rate of your device",
+      "author": "reddit_user_d43b8c7b6255",
+      "author_karma": 0,
+      "content": "If you are on Linux \"Pipewire settings\" is a damn awesome little tool to change the sampling rate of your device\n\nJust for those who don't want to change it in the terminal for what ever reason. Also it opens automatic when you start Linux and adds a nice little icon in the taskbar",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p08ss24",
+          "author": "reddit_user_ccfb04c4642d",
+          "author_karma": 0,
+          "content": "That's true though unlike on Windows, on Linux you can just edit the pipewire config file to allow for dynamic sample rate switching. So unlike Windows you don't have to set a 48khz sample rate for example, you can just choose the highest sampling rate(96khz for example) and then if the content you're playing is 44.1 khz it will switch to that automatically which completely eliminates the need for downsampling/upsampling.",
+          "timestamp": "2026-07-28T11:30:23+00:00",
+          "likes": 5,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p08tu54",
+              "author": "reddit_user_29d6ff2225dd",
+              "author_karma": 0,
+              "content": "That is intresting. Why doesn't Windows do that?",
+              "timestamp": "2026-07-28T11:37:52+00:00",
+              "likes": 2,
+              "dislikes": 0,
+              "parent_comment_id": "p08ss24",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p08v4sv",
+                  "author": "reddit_user_ccfb04c4642d",
+                  "author_karma": 0,
+                  "content": "Windows' audio backend is full of outdated code. I guess Microsoft just didn't bother to add such a functionality. Then again, by this point their upsampling/downsampling algorithm is good enough for there not to be much audio degradation so even if the system has to upsample a 44.1khz track to 48khz/96khz if you have that set as the default, the end result will sound more or less the same as if it weren't upsampled at all. Used to degrade the audio quite a lot on older Windows versions but that's no longer the case. Still, sample rate switching is a better solution but I imagine Microsoft just doesn't want to bother.",
+                  "timestamp": "2026-07-28T11:46:05+00:00",
+                  "likes": 2,
+                  "dislikes": 0,
+                  "parent_comment_id": "p08tu54",
+                  "depth": 2,
+                  "replies": []
+                },
+                {
+                  "comment_id": "p095pms",
+                  "author": "reddit_user_342ce9e8f16f",
+                  "author_karma": 0,
+                  "content": "Switching sampling rates while something is playing isn't seamless and can sometimes cause glitches or distortions. One solution to that is to automatically pause whatever content you are currently watching or listening to when the sampling rate changes. None of these are great for the user and the \"losses\" from just resampling are so minimal that 99% of people wouldn't even notice, let alone care, so it's a better user experience to just set a sampling rate once and resample as needed.\n\nThe only time I'd bother changing sampling rate is if I'm actually doing audio production, in which case I'd match whatever I set for the project. Otherwise I just set it to 48 kHz and move on with my life.",
+                  "timestamp": "2026-07-28T12:43:46+00:00",
+                  "likes": 3,
+                  "dislikes": 0,
+                  "parent_comment_id": "p08tu54",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p0c179i",
+          "author": "reddit_user_feaa00610bef",
+          "author_karma": 0,
+          "content": "that sounds so much easier than wrestling with config files lmao",
+          "timestamp": "2026-07-28T20:09:59+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0f2lrx",
+          "author": "reddit_user_92978b35c0ca",
+          "author_karma": 0,
+          "content": "https://github.com/AntonSiMal/Dolby-Atmos-Linux",
+          "timestamp": "2026-07-29T06:30:51+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1b61hx",
+          "author": "reddit_user_b6b86ff90670",
+          "author_karma": 0,
+          "content": "pipewire controller is goated",
+          "timestamp": "2026-08-02T19:24:26+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run000_post02_seed002",
+      "post_slot": 2,
+      "seed_index": 2,
+      "source_raw_post_id": "1v92o14",
+      "source_product_dir": "headphones",
+      "source_file": "https://www.reddit.com/r/headphones/comments/1v92o14/right_so_how_do_i_clean_out_my_headset/",
+      "post_type": "Discussion",
+      "title": "Right, so, how do I clean out my headset?",
+      "author": "reddit_user_d43b8c7b6255",
+      "author_karma": 0,
+      "content": "Right, so, how do I clean out my headset?\n\nI've had a headset for a while now, nothing fancy, but it has a long battery life and I really can't complain about it. However, recently, it has smelt *wretched*, to the point where if you put your nose to it you'd feel the urge to vomit. It's a weird smell, but one that'll make you gag. I'm not exactly a full-on gamer, I play on a laptop, but I've been on break and VCing with friends a lot, which has led me to wear them a lot more than usual. I assume this smell is sweat, so I've tried to wash it out, aggressively, and more passively. I just tried to cover it up with some spray at first, but the smells just mixed together into some horrid concoction that just spread the smell to something intense that you can notice even while just wearing them.  \nI've tried to wash the ear pads with water and soap, at first a lot more aggressively by dunking it into the soapy water and rinsing and draining the water out to get all the soap off several times, and then I just tried to dunk them in said water and let them dry overnight on a towel. Both times seemed to reduce the smell, but it still smells wicked, and they didn't reduce it to a noticeable enough degree to be worth doing it over and over.  \nWhat the hell am I supposed to do to get rid of this smell?",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p0aejr7",
+          "author": "reddit_user_639b8a2e0de7",
+          "author_karma": 0,
+          "content": "Wash you earpads with some vinegar in the water, and just kind of wipe down your headphones with that  too, it will smell like vinegar for an hour or so but it will get rid of the smell ",
+          "timestamp": "2026-07-28T16:05:03+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0aix8m",
+          "author": "reddit_user_b6b21e37a749",
+          "author_karma": 0,
+          "content": "Well if you can buy replacement ear pads, that could help",
+          "timestamp": "2026-07-28T16:23:30+00:00",
+          "likes": 4,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0ajtwv",
+          "author": "reddit_user_7e0b52b8c10f",
+          "author_karma": 0,
+          "content": "I wash my ear pads in the washer with clothes, in a bra bag. Maybe following Apple's instructions on cleaning the headband would be a good idea, too. ",
+          "timestamp": "2026-07-28T16:27:16+00:00",
+          "likes": 3,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0ap075",
+          "author": "reddit_user_54a1e7fbfc3b",
+          "author_karma": 0,
+          "content": "But once mold has spread into the foam, washing won't help at all - the only solution then would be to burn the headphones completely... or replace the ear pads. 🤷🏻‍♂️😉🙂",
+          "timestamp": "2026-07-28T16:48:38+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0ashz5",
+          "author": "reddit_user_4042c8a583fe",
+          "author_karma": 0,
+          "content": "put it in the dish washer on sterilize setting. (just what needs to be clean not the sensitive parts) if you don't have a dish washer. you can also wash them in a pot of warm water and dish soap.",
+          "timestamp": "2026-07-28T17:02:51+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0av0di",
+          "author": "reddit_user_beb2189d41a7",
+          "author_karma": 0,
+          "content": "maybe try to put them into the hydrogen peroxide for some time about an hour, I use that method to get rid of smell from my sneakers, so it could help you. just control that any of electronic parts don't touch the peroxide",
+          "timestamp": "2026-07-28T17:13:13+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0aw68d",
+          "author": "reddit_user_fedea7f7e6f3",
+          "author_karma": 0,
+          "content": "White Vinegar diluted with water",
+          "timestamp": "2026-07-28T17:17:58+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0ax4xf",
+          "author": "reddit_user_f37597fd9ef6",
+          "author_karma": 0,
+          "content": "You take off the ear pads and throw them in the washing machine",
+          "timestamp": "2026-07-28T17:21:53+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0b1lnd",
+          "author": "reddit_user_2f65452d9d7f",
+          "author_karma": 0,
+          "content": "Unplug from devices, wipe with isopropyl alcohol \\[pads\\], let dry.",
+          "timestamp": "2026-07-28T17:40:04+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0e019k",
+          "author": "reddit_user_1abcd398611e",
+          "author_karma": 0,
+          "content": "Removable earpads put into a mesh laundry bag (the ones used for delicates) and into the washer. Let it air dry as a dryer may damage it especially if there's plastic on the back that hooks onto the headphones. And then for the headphones themselves a good wipe with some alcohol wipes does the trick.",
+          "timestamp": "2026-07-29T02:09:59+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0e4hk5",
+          "author": "reddit_user_9602a22cea26",
+          "author_karma": 0,
+          "content": "This seems abnormal...velour and suede pads tend to pickup the most skin oil etc but it shouldnt sound rancid unless there is bacteria growing inside something. Does it smell when you remove the pads?",
+          "timestamp": "2026-07-29T02:35:29+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run000_post03_seed003",
+      "post_slot": 3,
+      "seed_index": 3,
+      "source_raw_post_id": "1v9kjew",
+      "source_product_dir": "audiophile",
+      "source_file": "https://www.reddit.com/r/audiophile/comments/1v9kjew/what_do_you_think_of_my_favorite_test_track/",
+      "post_type": "Discussion",
+      "title": "What do you think of my favorite test track?",
+      "author": "reddit_user_d43b8c7b6255",
+      "author_karma": 0,
+      "content": "What do you think of my favorite test track?\n\nI would like some feedback on my favorite test track.\n\n\\>Erykah Badu - Other side of the game (live)\n\nFrom her live album called \"Live\". I don't want to say anything as to why so it does not influence your response.\n\nWhat's your favorite test track that nobody else uses? I would like to listen to it.",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p0eefye",
+          "author": "reddit_user_56c0bcf5fd80",
+          "author_karma": 0,
+          "content": "**In case you're requesting test tracks**\n\nYou can find many old discussions with the flair `Music` - [here is a link to search results](https://reddit.com/r/audiophile/search?q=flair_name%3A%22Music%22&restrict_sr=1&sort=comments)\n\nAdditionally, r/AudiophileMusic is dedicated to well mastered songs that people have found.\n\nRock on, audiophile.\n\n\n*I am a bot, and this action was performed automatically. Please [contact the moderators of this subreddit](/message/compose/?to=/r/audiophile) if you have any questions or concerns.*",
+          "timestamp": "2026-07-29T03:36:24+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0egujk",
+          "author": "reddit_user_ff1ffef2e971",
+          "author_karma": 0,
+          "content": "I like to test with spencer the rover from cara dillon.  \nBut depends \"what\" to test...",
+          "timestamp": "2026-07-29T03:51:50+00:00",
+          "likes": 3,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0ehoky",
+          "author": "reddit_user_f40d9fb1a762",
+          "author_karma": 0,
+          "content": "Not Tyrone?!\n\nQuick story: My brother-in-law was at a nightclub with friends and there was a black jazz singer and small combo and at one point she got playful and asked if anyone had any requests. He yellowed out “Tyrone” (after hearing it a million times because of my sister). The singer did the song in full and it was a huge hit that night.\n\nONE of my top test tracks: “Stimela” by Hugh Masekela off of the live album Hope.",
+          "timestamp": "2026-07-29T03:57:16+00:00",
+          "likes": 4,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0elalm",
+          "author": "reddit_user_b2bd5ebaa45b",
+          "author_karma": 0,
+          "content": "I just think it's important to always keep in mind that there's a real distinction between a good test track and a good demo track. The former's job is to reveal as much about the system's particular strengths and shortcomings as possible while the latter's job is simply to be impressive and make the system sound as good as possible.\n\nA test track also absolutely doesn't have to be well-recorded or well-mastered in the slightest, in fact sometimes the least audiophilic music is the best music for revealing a system's true sonic character. Of course a test track should always be a song that you're intimately familiar with and have heard many times, and generally be of the types of music you usually listen to. And, quite critically, it's best to have an arsenal of tracks to use that are particularly revealing of one or two elements rather than trying to find a single song to do it all.\n\nAll that said, some of my favorite songs to use as test tracks are:\n\nThe Pixies - Hey, for dynamics and transient impact\n\nThe Sundays - What Do You Think (or really most of the songs on that album), for vocal clarity (album is not well mixed and Harriet's voice is often a bit hard to discern over everything else)\n\nFleet Foxes - Quiet Air / Gioia, for imaging and soundstage\n\nCowboy Junkies - To Love Is To Bury, for a sense of emotional impact (this song is frequently one to make me tear up, lol) as well as \"air\" and \"space\" (the whole album was recorded single-mic live to tape in a church, lots of beautiful natural reverb)\n\nLauryn Hill - Doo Wop (That Thing) for bass impact and extension\n\nUncle Tupelo - Acuff-Rose for upper midrange/lower treble tonality and \"liveness\" (can sound a bit harsh on some systems, lots of energy in the upper registers, fast and hard with them there fiddles)\n\nTricky - We Don't Die, for soundstage width (the synthesized strings on this song seem to sit well outside the speaker)\n\nTracy Chapman - Across The Lines, for general tonality and timbral richness \n\nDepeche Mode - Personal Jesus, for kind of everything?",
+          "timestamp": "2026-07-29T04:21:17+00:00",
+          "likes": 13,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0f61in",
+          "author": "reddit_user_12ce9bd1d215",
+          "author_karma": 0,
+          "content": "Tian Bo, \"Ancestral Prosperity\"",
+          "timestamp": "2026-07-29T06:58:08+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0gdeuw",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-07-29T12:18:22+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0h6lst",
+          "author": "reddit_user_5f916a504c2d",
+          "author_karma": 0,
+          "content": "Massive attack and Tracey Thorn   'Protection'",
+          "timestamp": "2026-07-29T14:37:50+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0hrnoj",
+          "author": "reddit_user_4df9f1c2a22b",
+          "author_karma": 0,
+          "content": "I saw her live once while visiting North Carolina. She’s such a vibe.",
+          "timestamp": "2026-07-29T16:06:53+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0jmhwc",
+          "author": "reddit_user_dd243951d843",
+          "author_karma": 0,
+          "content": "Not wanting to be a contrarian, but -\n\n***Carlos Santana - Maria Maria -***\n\n[https://www.youtube.com/watch?v=nPLV7lGbmT4](https://www.youtube.com/watch?v=nPLV7lGbmT4)\n\nSweet Guitar and very controlled but intense Bass. \n\nAs to your Test Track, well recorded, clean, tight, low compression, clear with a good separation. What more could a person ask for?",
+          "timestamp": "2026-07-29T20:51:19+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0kdfwv",
+          "author": "reddit_user_7827e6b6a7c7",
+          "author_karma": 0,
+          "content": "**Hedflux** | Corvid Phase",
+          "timestamp": "2026-07-29T23:03:45+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0pu06k",
+          "author": "reddit_user_80cc68da3cd7",
+          "author_karma": 0,
+          "content": "Ugh it’s such a good track. But not sure I’d be using it as a system test track.",
+          "timestamp": "2026-07-30T18:09:15+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run000_post04_seed004",
+      "post_slot": 4,
+      "seed_index": 4,
+      "source_raw_post_id": "1v9osj2",
+      "source_product_dir": "headphones",
+      "source_file": "https://www.reddit.com/r/headphones/comments/1v9osj2/some_photos_and_first_impressions_of_fiio_snowsky/",
+      "post_type": "Show & Tell",
+      "title": "Some photos and first impressions of FiiO Snowsky Nature Headphones",
+      "author": "reddit_user_d43b8c7b6255",
+      "author_karma": 0,
+      "content": "Some photos and first impressions of FiiO Snowsky Nature Headphones\n\nIt's honestly amazing how good these headphones sound for just **$45**. (I actually paid **under $30** on AliExpress thanks to a few coupons.)\n\nI'm not great at describing sound, sorry. These definitely have a bright sound signature. The bass is excellent to my ears as well. I'm using them with FiiO DM15 R2R.\n\nTo keep it simple, there are tracks where they can genuinely hold their own against my primary B&W Px7 S2. On the other hand, there are also tracks where they fall far behind. Nature  isn't made for metalcore and other such heavy music (at least without any EQ adjustments). For example, I don't really enjoy listening to \"Count Your Blessings | Repented\" album with them. Lighter genres, EDM, and classical music, on the other hand, are a pleasure for this price.\n\nA few words about the build. The materials and overall feel are well above what you'd expect at this price. No creaks, no wobble, nothing feels loose. The earcups don't swivel and are made of plastic with a wood-grain finish. It actually looks quite nice in person and doesn't feel cheap. It tends to pick up fingerprints (The Apricot version should be more practical). The upside is that the headphones are very lightweight and incredibly comfortable - possibly even more comfortable than my favorite in comfort, Bose QC45.\n\nThe headband adjustment uses metal sliders, but as someone else already mentioned in another review, it's difficult to quickly return to your preferred setting because there aren't distinct click stops. The headband itself is padded on both the top and bottom and wrapped in soft faux leather.\n\nMy only real complaint is the earpads. My ears are about average in size, but the ear openings feel a little too small. As a result, my ears end up pressing against the inner mesh rather than the soft outer padding.\n\nOverall, for around **$40**, I don't think anyone would regret buying these. I'm certainly very happy with my purchase. Even if they cost around $100, I would be just as happy with the sound.",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p0nu1lx",
+          "author": "reddit_user_54a1e7fbfc3b",
+          "author_karma": 0,
+          "content": "!thanks for sharing your experiences! 👍🏻🍻",
+          "timestamp": "2026-07-30T12:53:29+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0oiz5j",
+          "author": "reddit_user_0143cc6d8318",
+          "author_karma": 0,
+          "content": "im waiting mine to arrive 39.99 in amazon\n\n",
+          "timestamp": "2026-07-30T14:49:29+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0oj7pf",
+          "author": "reddit_user_0143cc6d8318",
+          "author_karma": 0,
+          "content": "gain using in your fiio dac? ",
+          "timestamp": "2026-07-30T14:50:32+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0optis",
+              "author": "reddit_user_26c29a6f43b8",
+              "author_karma": 0,
+              "content": "There’s no gain control on DM15.",
+              "timestamp": "2026-07-30T15:19:30+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p0oj7pf",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p0oueub",
+                  "author": "reddit_user_0143cc6d8318",
+                  "author_karma": 0,
+                  "content": "my bad! ",
+                  "timestamp": "2026-07-30T15:39:09+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p0optis",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p0ryfnj",
+          "author": "reddit_user_55dde4339543",
+          "author_karma": 0,
+          "content": "Are the earpads depth too shallow for your ears?",
+          "timestamp": "2026-07-31T00:02:24+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0tiubq",
+              "author": "reddit_user_26c29a6f43b8",
+              "author_karma": 0,
+              "content": "It’s hard to say when my ears don’t even fit completely inside the earpads. But no, I wouldn’t say the earcups are too deep.",
+              "timestamp": "2026-07-31T05:45:33+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p0ryfnj",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p0zgzw6",
+                  "author": "reddit_user_55dde4339543",
+                  "author_karma": 0,
+                  "content": "thanks!",
+                  "timestamp": "2026-08-01T00:52:03+00:00",
+                  "likes": 2,
+                  "dislikes": 0,
+                  "parent_comment_id": "p0tiubq",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p0tbinj",
+          "author": "reddit_user_25b164fd6487",
+          "author_karma": 0,
+          "content": "Is there any EQ you did for it? ",
+          "timestamp": "2026-07-31T04:51:57+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0tgwps",
+              "author": "reddit_user_26c29a6f43b8",
+              "author_karma": 0,
+              "content": "Not yet",
+              "timestamp": "2026-07-31T05:30:57+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p0tbinj",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

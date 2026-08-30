@@ -1,0 +1,10 @@
+# Runtime packages for the four MiroBench metric families.
+# Torch itself is left unpinned across patch releases so pip can select the
+# appropriate CPU/macOS wheel. CUDA users may install their preferred torch
+# wheel before running setup.sh; pip will reuse a compatible installation.
+torch>=2.2,<3
+transformers>=4.48,<5
+# camel-oasis 0.2.5 pins this version; it also supports the semantic-cosine scorer.
+sentence-transformers==3.0.0
+bert-score==0.3.13
+gdown==5.2.0

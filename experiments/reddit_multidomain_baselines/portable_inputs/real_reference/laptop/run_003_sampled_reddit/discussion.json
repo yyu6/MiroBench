@@ -1,0 +1,753 @@
+{
+  "meta": {
+    "product_category": "laptop",
+    "baseline": "real_reddit_reference",
+    "run_id": "run_003_sampled_reddit"
+  },
+  "posts": [
+    {
+      "post_id": "real_run003_post00_seed015",
+      "post_slot": 0,
+      "seed_index": 15,
+      "source_raw_post_id": "1vazcv3",
+      "source_product_dir": "chromeos",
+      "source_file": "https://www.reddit.com/r/chromeos/comments/1vazcv3/installed_linux_on_old_arm_chromebook/",
+      "post_type": "Linux (Crostini)",
+      "title": "Installed Linux on old arm Chromebook",
+      "author": "reddit_user_d8691634ac1e",
+      "author_karma": 0,
+      "content": "Installed Linux on old arm Chromebook\n\nChromebook was struggling with basic web browsing due to old software. So I installed linux and now it's a light weight notebook, good for watching movies or typing.",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p0pju3o",
+          "author": "reddit_user_f203d283a600",
+          "author_karma": 0,
+          "content": "How'd you do it? I read it's really not that straightforward on ARM versus Intel/AMD Chromebooks. ",
+          "timestamp": "2026-07-30T17:26:41+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0pkiv2",
+              "author": "reddit_user_4f5d489b7f55",
+              "author_karma": 0,
+              "content": "it was a pain in the ahh but I was determined. https://github.com/hexdump0815/linux-mainline-on-arm-chromebooks",
+              "timestamp": "2026-07-30T17:29:33+00:00",
+              "likes": 5,
+              "dislikes": 0,
+              "parent_comment_id": "p0pju3o",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p0rvpo1",
+                  "author": "reddit_user_11f8c03d0975",
+                  "author_karma": 0,
+                  "content": "I love the Linux terminal on Chrome OS. Crostini ",
+                  "timestamp": "2026-07-30T23:47:59+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p0pkiv2",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p0tmnvv",
+                      "author": "reddit_user_490481390013",
+                      "author_karma": 0,
+                      "content": "From my experience it performs very well, though it does eat up a lot of your drive. Its also a bit weird when it comes to some network stuff (again from my experience, it could've been better for someone else).",
+                      "timestamp": "2026-07-31T06:14:32+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p0rvpo1",
+                      "depth": 3,
+                      "replies": []
+                    },
+                    {
+                      "comment_id": "p0u9uoo",
+                      "author": "reddit_user_4f5d489b7f55",
+                      "author_karma": 0,
+                      "content": "I removed the Chrome OS entirely. Idle ram consumption is 300mb/4gb. Performs decent with web browsing.",
+                      "timestamp": "2026-07-31T09:19:00+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p0rvpo1",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "comment_id": "p0ut653",
+              "author": "reddit_user_6c642a1b1f39",
+              "author_karma": 0,
+              "content": "I have a Samsung Chromebook Plus v1 (v2 was Intel). I will keep this in mind.",
+              "timestamp": "2026-07-31T11:35:39+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p0pju3o",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p0pmtsa",
+          "author": "reddit_user_28fe87313e02",
+          "author_karma": 0,
+          "content": "That's great and all, but IS THAT AN NVIDIA TEGRA K1? Dude those things were MASSIVE back in 2014! They outperformed flagship mobile chips, destroyed Celeron chromebooks and had a 192-core GPU that still supports modern direct x. Though it is basically obsolete by modern standards, it's nice seeing an old legend. If only Nvidia brought powerful GPU arm chips back for budget devices.....",
+          "timestamp": "2026-07-30T17:39:11+00:00",
+          "likes": 16,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0pt0it",
+              "author": "reddit_user_4f5d489b7f55",
+              "author_karma": 0,
+              "content": "good old times when Nvidia cared about budget devices lol. https://www.youtube.com/watch?v=xDWyyP8UAac",
+              "timestamp": "2026-07-30T18:05:02+00:00",
+              "likes": 6,
+              "dislikes": 0,
+              "parent_comment_id": "p0pmtsa",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p0uuair",
+                  "author": "reddit_user_28fe87313e02",
+                  "author_karma": 0,
+                  "content": "ikr",
+                  "timestamp": "2026-07-31T11:42:33+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p0pt0it",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p0pvxql",
+          "author": "reddit_user_2105fdb2beb8",
+          "author_karma": 0,
+          "content": "Well shit, I'm gonna have to try again, I guess. ASUS Flip C100P.",
+          "timestamp": "2026-07-30T18:17:24+00:00",
+          "likes": 3,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0pxujx",
+              "author": "reddit_user_4f5d489b7f55",
+              "author_karma": 0,
+              "content": "https://github.com/velvet-os/imagebuilder/blob/main/systems/chromebook_veyron/readme.md",
+              "timestamp": "2026-07-30T18:25:27+00:00",
+              "likes": 2,
+              "dislikes": 0,
+              "parent_comment_id": "p0pvxql",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p0qjxlv",
+          "author": "reddit_user_77ef3e3402b6",
+          "author_karma": 0,
+          "content": "this is amazing, i have xiaomi pad 1 with tegra k1 processor, i wonder if linux could be installed onto it",
+          "timestamp": "2026-07-30T20:00:24+00:00",
+          "likes": 5,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0r82n3",
+          "author": "reddit_user_a0e96a11295a",
+          "author_karma": 0,
+          "content": "Thanks; just the inspiration for me to try again.\n\nASUS Flip C101P.\n\nI had some success with ALARM last year, but an update broke my installation. I'm not good enough with Arch to do that level of troubleshooting.",
+          "timestamp": "2026-07-30T21:47:40+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0rc71d",
+              "author": "reddit_user_4f5d489b7f55",
+              "author_karma": 0,
+              "content": "https://github.com/velvet-os/imagebuilder/blob/main/systems/chromebook_gru/readme.md",
+              "timestamp": "2026-07-30T22:07:37+00:00",
+              "likes": 2,
+              "dislikes": 0,
+              "parent_comment_id": "p0r82n3",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p15ommb",
+                  "author": "reddit_user_a0e96a11295a",
+                  "author_karma": 0,
+                  "content": "Thanks - and thanks again for the original post.\n\nGetting to a bootable SD card was really easy. A bit of tuning left to do...",
+                  "timestamp": "2026-08-01T23:18:18+00:00",
+                  "likes": 2,
+                  "dislikes": 0,
+                  "parent_comment_id": "p0rc71d",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            },
+            {
+              "comment_id": "p0utci3",
+              "author": "reddit_user_6c642a1b1f39",
+              "author_karma": 0,
+              "content": "Isn't this the 2-in-1 10\", which makes it unique among Chromebooks?",
+              "timestamp": "2026-07-31T11:36:44+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p0r82n3",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p0w2825",
+                  "author": "reddit_user_a0e96a11295a",
+                  "author_karma": 0,
+                  "content": "I don't know if it's unique - but that's the form factor, yes. Nice build quality, too, and one of the only compact keyboards I really like.\n\nThat's why I don't want to retire it!",
+                  "timestamp": "2026-07-31T15:14:28+00:00",
+                  "likes": 2,
+                  "dislikes": 0,
+                  "parent_comment_id": "p0utci3",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p0rq6ri",
+          "author": "reddit_user_e78bf90629e2",
+          "author_karma": 0,
+          "content": "Tegra is in jetson Orin agx too",
+          "timestamp": "2026-07-30T23:18:57+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0tz6hq",
+          "author": "reddit_user_1f1691b150e0",
+          "author_karma": 0,
+          "content": "Nice! I have HP Chromebook 14 G3  with broken screen and last couple of days I try to install Posmarket OS on it. It has same nvidia K1 like yours. Did you try any other distro and did you manage to make everything working ? Can you share tutorial also ? ",
+          "timestamp": "2026-07-31T07:52:34+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0ualeu",
+              "author": "reddit_user_4f5d489b7f55",
+              "author_karma": 0,
+              "content": "Yea various distro images are available. Trixie seemed to be the latest so I went with it. Most of the things work, brightness, volume, wifi, Bluetooth. There is limited support of Nvidia drivers on linux so hardware acceleration isn't working, i.e it doesn't utilize the Tegra K1. Only Cpu.\nhttps://github.com/velvet-os/imagebuilder/blob/main/systems/chromebook_nyan/readme.md",
+              "timestamp": "2026-07-31T09:24:57+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p0tz6hq",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p0uekwo",
+                  "author": "reddit_user_1f1691b150e0",
+                  "author_karma": 0,
+                  "content": "Unfortunately I don't think there is distro with working hardware acceleration. I will test this, because have problems with latest stable Postmarket OS. ",
+                  "timestamp": "2026-07-31T09:56:06+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p0ualeu",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "post_id": "real_run003_post01_seed016",
+      "post_slot": 1,
+      "seed_index": 16,
+      "source_raw_post_id": "1vbhy1u",
+      "source_product_dir": "chromeos",
+      "source_file": "https://www.reddit.com/r/chromeos/comments/1vbhy1u/new_chrome_updates/",
+      "post_type": "Troubleshooting",
+      "title": "New Chrome updates??",
+      "author": "reddit_user_d8691634ac1e",
+      "author_karma": 0,
+      "content": "New Chrome updates??\n\nI just opened my laptop after maybe 3 or 4 days to run one of my apps and they've all disappeared. I went online to figure out whats happened and why my playstore is gone only to find there is a new update going around that completely cuts off android apps???\n\nI had it set up normally and it had been flagging me to update (because i had it running it wouldn't auto even on wifi) and was working with apps open fine last time even though i left it closed on sleep for a few hours.\n\nAll of a sudden now after days of it being completely shut off and not approving an update manually its just done it on its own?? What am I supposed to do I frequently use app on it.\n\nI've seen people say its irreversible but I just need help. Is there a way to change or fix this? why did it do it either while the laptop was shut off (not possible???) or the last time I was one it (running app plus chrome no problem)? What in the world is this.",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p0tizbi",
+          "author": "reddit_user_9507d5e4fc1a",
+          "author_karma": 0,
+          "content": "https://reddit.com/r/chromeos/comments/1v8wnnf/attention_chromebook_grunt_device_owners_amd/\n\nIs this your model?",
+          "timestamp": "2026-07-31T05:46:37+00:00",
+          "likes": 3,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p15rvbj",
+              "author": "reddit_user_5b874bb6394d",
+              "author_karma": 0,
+              "content": "I'm having similar issues to OP and this seems to be the answer. Attempting to roll back to see if that fixes it",
+              "timestamp": "2026-08-01T23:36:42+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p0tizbi",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p0tkacy",
+          "author": "reddit_user_50d8440f1754",
+          "author_karma": 0,
+          "content": "This is normal for devices that have reached the eol date. And yes, Chrome OS updates are always automatic. ",
+          "timestamp": "2026-07-31T05:56:31+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p15rnf2",
+              "author": "reddit_user_5b874bb6394d",
+              "author_karma": 0,
+              "content": "Problem is that while they're asking if you want to opt in to extended updates they automatically update to the next OS which means you get all the problems of extended updates without having opted in. Its a bug that has come up before and appears to be happening again",
+              "timestamp": "2026-08-01T23:35:28+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p0tkacy",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "post_id": "real_run003_post02_seed017",
+      "post_slot": 2,
+      "seed_index": 17,
+      "source_raw_post_id": "1vbists",
+      "source_product_dir": "chromeos",
+      "source_file": "https://www.reddit.com/r/chromeos/comments/1vbists/why_does_chromeos_forbid_basic_control_of_android/",
+      "post_type": "Discussion",
+      "title": "Why Does ChromeOS Forbid Basic Control of Android Permissions?",
+      "author": "reddit_user_d8691634ac1e",
+      "author_karma": 0,
+      "content": "Why Does ChromeOS Forbid Basic Control of Android Permissions?\n\nI want to be able to exercise full and tight control of every Android permission granted to every Android application.   Why does ChromeOS make this so unbearably difficult, and actually just impossible?    When you go to Apps in ChromeOS and find your Android app of interest, you have essentially no control over most of the permissions.  When you go to the three dots ... you can select \"All Permissions\" but this brings you to a read only view, and what is worse it's not even a consistent view of permissions because each app shows a slightly modified group of permissions and not a consistent or complete view.\n\n  \nWhy is it so difficult to just give me the ability to set whether a given application has access to my various storage systems, USB-mounted devices, or cloud storage?   It seems extremely basic, and the inability to do this at times makes ChromeOS almost unusable.",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p0tp2rd",
+          "author": "reddit_user_cbf2dba271ea",
+          "author_karma": 0,
+          "content": "Because Android is not part of ChromeOS, it's more of an add-on.",
+          "timestamp": "2026-07-31T06:32:48+00:00",
+          "likes": 5,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0tqgyz",
+              "author": "reddit_user_d0f65beccf68",
+              "author_karma": 0,
+              "content": "But it isn't really much better under Android.   Under my Samsung Android tablet, when I take family photos on a USB stick to the tablet, I cannot even give my imaging applications (all of them!) access to the USB stick for seamless viewing and editing.   Half of those applications get to some level of functionality using the mounted file system, but most do not.    Interactions between the Android apps and cloud storage is also incredibly buggy.\n\nWhy can't we just have a uniform consistent view of permissions and the ability to fully control those permissions for each individual application.   Android Apps pretends like we do have this, but it doesn't actually deliver on it.",
+              "timestamp": "2026-07-31T06:43:29+00:00",
+              "likes": 0,
+              "dislikes": 0,
+              "parent_comment_id": "p0tp2rd",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p15j4l2",
+                  "author": "reddit_user_a2ea5a1bf90e",
+                  "author_karma": 0,
+                  "content": "ironically your not getting that level of control unless you buy a Pixel product.  Imma just wait until Motorola makes an American Graphene Device which should be next year 2027.  There are models I could do that with now, but they are quite underpowered.  And I'm not asking for a lot of power, just a smooth expirence and make calls lolz.  Til then, just accept Android and Chrome OS for what they are.  unless your device can install Linux?  neither of my can, so I'm on here learning to max them out!",
+                  "timestamp": "2026-08-01T22:47:33+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p0tqgyz",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            },
+            {
+              "comment_id": "p0tqpt0",
+              "author": "reddit_user_d0f65beccf68",
+              "author_karma": 0,
+              "content": "And by the way, the fact that Android is an add-on to ChromeOS isn't really an excuse for not giving us some basic administration interfaces.  If anything, the fact that ChromeOS sits above Android means they could have overcome Android's own limitations by giving the ability to control Android internals from outside Android.",
+              "timestamp": "2026-07-31T06:45:24+00:00",
+              "likes": 0,
+              "dislikes": 0,
+              "parent_comment_id": "p0tp2rd",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p0u62i4",
+                  "author": "reddit_user_be30777f29df",
+                  "author_karma": 0,
+                  "content": "That's not really how any of this works. It's not an Android emulator it's a VM.",
+                  "timestamp": "2026-07-31T08:48:32+00:00",
+                  "likes": 5,
+                  "dislikes": 0,
+                  "parent_comment_id": "p0tqpt0",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p115lok",
+                      "author": "reddit_user_d0f65beccf68",
+                      "author_karma": 0,
+                      "content": "That shouldn't matter.  Google knows the internals of Android and  what settings would need to be modified to support administration tasks like giving apps permissions.",
+                      "timestamp": "2026-08-01T07:52:42+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p0u62i4",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                },
+                {
+                  "comment_id": "p0vhadv",
+                  "author": "reddit_user_3be6cd474ca3",
+                  "author_karma": 0,
+                  "content": "Do you honestly think that Google is going to read your post and then give you those permissions?\n\nLike others have explained it is not possible due to the way the VM works. Another thing you fail to realize is that developers don't want this fine grained permissions. Otherwise every damn person will download the cracked version of a game or install demo and then disable the network or something and use it forever.\n\n\nThis is also the reason now Google is kind of moving towards so-called Google books. That is completely android based so you will get all sorts of bells and whistles.",
+                  "timestamp": "2026-07-31T13:42:00+00:00",
+                  "likes": 2,
+                  "dislikes": 0,
+                  "parent_comment_id": "p0tqpt0",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1172q0",
+                      "author": "reddit_user_d0f65beccf68",
+                      "author_karma": 0,
+                      "content": "It's not reasonable to say we shouldn't complain about a ChromeOS feature because Google won't read our complaints or act on them.   If something is broken, that's a fair topic for discussion.\n\nI understand that they use ARCVM for running Android.   But Google controls every element of the stack.  They wrote Android.  They wrote ChromeOS.  They wrote the interfaces between them.   If Google cared about these problems, Google would and could fix them.\n\nI very much want to send my Windows boxes into the abyss, but how can I do that when Android and ChromeOS make it nearly impossible to do very simple things, like give an image application access to a USB mounted storage system?    How can it be okay that I cannot easily share a cloud storage file between different Android applications seamlessly.   It's not okay to excuse these things by saying that's just the way they implemented things in ARCVM.",
+                      "timestamp": "2026-08-01T08:05:11+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p0vhadv",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "p183l5j",
+                          "author": "reddit_user_b7672516b6cb",
+                          "author_karma": 0,
+                          "content": "Nobody in this sub says you should not complain \n\nIt is just that it will fall in abyss.\n\n\n> Google controls every element of the stack.  They wrote Android.  They wrote ChromeOS.  They wrote the interfaces between them.  Google cared about these problems, Google would and could fix them.\n\nThis could be said to every country, company etc. it doesn't work that way. Companies do what they want.\n\n\nIdeally you learn or move to Linux. Anything you want you can do there.",
+                          "timestamp": "2026-08-02T09:24:35+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "p1172q0",
+                          "depth": 4,
+                          "replies": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p0vf26i",
+          "author": "reddit_user_df5dbf25d7f1",
+          "author_karma": 0,
+          "content": "You may be able to manage the permission from the native Android Settings app.\n\nGo to Settings > Apps > Manage Google Play Preferences > Android Settings.  Once open, you can right click on the Android Settings app icon to pin it to the task bar for faster access.",
+          "timestamp": "2026-07-31T13:31:38+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p115s4p",
+              "author": "reddit_user_d0f65beccf68",
+              "author_karma": 0,
+              "content": "As I said in the original post, I did try to change permissions using the Android app settings, and also the advanced \"all settings\", and they only give you read-only views of most of the settings.",
+              "timestamp": "2026-08-01T07:54:12+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p0vf26i",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "post_id": "real_run003_post03_seed018",
+      "post_slot": 3,
+      "seed_index": 18,
+      "source_raw_post_id": "1vbkhni",
+      "source_product_dir": "SuggestALaptop",
+      "source_file": "https://www.reddit.com/r/SuggestALaptop/comments/1vbkhni/what_brand_and_model_of_internal_hard_drive/",
+      "post_type": "Tech Support 🔧⚙️",
+      "title": "What brand and model of internal hard drive should I buy?",
+      "author": "reddit_user_d8691634ac1e",
+      "author_karma": 0,
+      "content": "What brand and model of internal hard drive should I buy?\n\nI'm prioritizing reliability and anti-planned obsolescence over speed. I could do the research myself, but you all have days and months of research on these topics. This is the first time I've encountered this problem [https://i.imgur.com/gwbNYN5.png](https://i.imgur.com/gwbNYN5.png) ; this is my laptop. [https://support.lenovo.com/us/en/solutions/pd104614-product-overview-legion-y520-15ikbn](https://support.lenovo.com/us/en/solutions/pd104614-product-overview-legion-y520-15ikbn)\n\nIf there were an internal hard drive for my laptop model that was military-grade and/or anti-apocalyptic, that would be great.",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p0u62zh",
+          "author": "reddit_user_696de27266f2",
+          "author_karma": 0,
+          "content": "It apparently has an M.2 slot so definitely get a SSD. There are only marginal differences before you get into enterpise HW and the price becomes crazy. Solidigm P44 Pro has probably the best write lifespan rating. WD\\_BLACK SN850X has the best MTBF rating. But TBH they're worth more than the laptop and will very likely outlive all other components so I wouldn't obsess over it.",
+          "timestamp": "2026-07-31T08:48:39+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0x4f1o",
+          "author": "reddit_user_472eaddaa4da",
+          "author_karma": 0,
+          "content": "Any m.2.nvme ssd from the major manufacturers would do. Samsung, WD/Sandisk, Kioxia, Crucial/Micron, SkHynix, Kingston etc. look for the TBW rating, higher the better and more expensive it's gonna get. \n\nIf you're specifically looking for mechanical hard drives, those are not in anyway anti-apocalyptic. A drop from like 5ft while it's spinning would kill any hard disk 99% of the time. A bit higher drop while not spinning would definitely kill it or affect its life span.",
+          "timestamp": "2026-07-31T17:58:02+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p12fyza",
+              "author": "reddit_user_42c1d5b20d2c",
+              "author_karma": 0,
+              "content": "Thank you so much, I need answers like yours.\n\nI'm looking for an internal hard drive that's resistant to continuous use, not necessarily drops. Long service life without deliberate planned obsolescence, like the Hilti brand in tools.",
+              "timestamp": "2026-08-01T13:33:43+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p0x4f1o",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p12g8qk",
+                  "author": "reddit_user_472eaddaa4da",
+                  "author_karma": 0,
+                  "content": "Why are you still looking for a mechanical hard drive of you want reliability ? ",
+                  "timestamp": "2026-08-01T13:35:11+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p12fyza",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p12innq",
+                      "author": "reddit_user_42c1d5b20d2c",
+                      "author_karma": 0,
+                      "content": "No, I never said I wanted a mechanical hard drive, HDD or SSD, whatever, as long as it's reliable.",
+                      "timestamp": "2026-08-01T13:48:10+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p12g8qk",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "p12jj0j",
+                          "author": "reddit_user_472eaddaa4da",
+                          "author_karma": 0,
+                          "content": "You keep saying hard drive. By definition, hard drive is mechanical. Change your wordings. You need an SSD. Not a hard drive or HDD",
+                          "timestamp": "2026-08-01T13:52:45+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "p12innq",
+                          "depth": 4,
+                          "replies": [
+                            {
+                              "comment_id": "p12kp8d",
+                              "author": "reddit_user_42c1d5b20d2c",
+                              "author_karma": 0,
+                              "content": "Any specific model(s)? Not all SSDs are the same; some should have a longer lifespan than others.",
+                              "timestamp": "2026-08-01T13:58:55+00:00",
+                              "likes": 1,
+                              "dislikes": 0,
+                              "parent_comment_id": "p12jj0j",
+                              "depth": 5,
+                              "replies": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "comment_id": "p12vrch",
+              "author": "reddit_user_42c1d5b20d2c",
+              "author_karma": 0,
+              "content": "TBW Very Thanks. You forgot to tell me about the DWPD.  https://www.kingston.com/en/blog/servers-and-data-centers/understanding-ssd-endurance-tbw-dwpd",
+              "timestamp": "2026-08-01T14:55:06+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p0x4f1o",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p12wbxb",
+                  "author": "reddit_user_472eaddaa4da",
+                  "author_karma": 0,
+                  "content": "DWPD is only used for enterprise grade drives. No comsumer is buying those in this economy ",
+                  "timestamp": "2026-08-01T14:57:53+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p12vrch",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "post_id": "real_run003_post04_seed019",
+      "post_slot": 4,
+      "seed_index": 19,
+      "source_raw_post_id": "1vbnaet",
+      "source_product_dir": "SuggestALaptop",
+      "source_file": "https://www.reddit.com/r/SuggestALaptop/comments/1vbnaet/uk_basic_laptop_around_400/",
+      "post_type": "Laptop Request UK",
+      "title": "UK basic laptop around £400",
+      "author": "reddit_user_d8691634ac1e",
+      "author_karma": 0,
+      "content": "UK basic laptop around £400\n\n**LAPTOP QUESTIONNAIRE**     \n\n\n\n* **Country**\n\nUK  \n\n\n* **Budget**\n\nTry to keep it under £400 ($537), but can stretch to £500 ($672).  \n\n\n* **Are you open to refurbs/used options?**\n\nNo.  \n\n\n* **Screen size**\n\nIdeally 15.6\" or above, smaller screens are fine too.   \n\n\n* **Weight limit**\n\nNot important.  \n\n\n* **Purpose**\n\nStreaming 1080p video, web browsing, very light gaming.  \n\n\n* **Form factor**\n\nStandard/Clamshell  \n\n\n* **Intended usage**\n\nPrimary use is streaming and web browsing with minimal lag and decent load times, connecting it to the living room TV to stream youtube, netflix, that sort of thing. Gaming would be limited to minecraft with performance mods, old school runescape and other things in that vein- I have a better desktop for gaming so this isnt too important.   \n\n\n* **Desired battery life**\n\nWill almost always be used within reach of an outlet, so this isnt important. Longer the better of course, but put it at the bottom of the priority list.  \n\n\n* **Please list, in order of most important to least important, the priority between Size, Weight, Performance, Battery life**\n\nPerformance >Size (15.6\"+) > battery life. Weight is not an important factor.   \n\n\n* **Info/Requirements**\n\nAbsolutely must have a HDMI out port. Must run windows 10/11. Quality speakers not important, will be using bluetooth headphones or external speakers. Webcam not needed.  \n  \nNice to haves, in order of most to least desired:   \n  \nGood quality screen   \nBacklit keyboard   \n512+GB storage   \n16gb ram  \nDecent integrated graphics\n\nObviously not expecting a miracle in this price range just some stuff to look out for.  \n\n\nThanks for taking the time to read!",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p0ul5vp",
+          "author": "reddit_user_b5cc5c0150b6",
+          "author_karma": 0,
+          "content": "16gb ram in that price range, in this economy?\n\nYou might want to look at that being more of a suggestion, maybe looking for a device with 2 sodimm sockets with 1 used with 8gb & then upgrade when memory prices get less... Umm... hectic",
+          "timestamp": "2026-07-31T10:43:40+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0uwr8t",
+              "author": "reddit_user_66e2aff2dfeb",
+              "author_karma": 0,
+              "content": "hence why it low down in the \"nice to haves\" section ",
+              "timestamp": "2026-07-31T11:57:12+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p0ul5vp",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p0vlvl9",
+          "author": "reddit_user_19830967809f",
+          "author_karma": 0,
+          "content": "Hey! I could be worth checking out the ASUS Vivobook S 15 OLED (S5507) which is £429.99 on the ASUS website.   \nIt has a 15.6\" screen, 16GB RAM and 512GB SSD so everything you are after. It runs the Snapdragon X Elite, which is way more than you need for YouTube/Netflix/Minecraft, plus HDMI out for the TV. Battery's great too, even though you said that wasn't a priority.\n\nThe only potential issue with it though is that its multi-core CPU performance is just okay, rated 43/100 on my site. So it'll be fine for what you're doing now, but it might feel slow if you move to heavier stuff down the line. Can't tell you how it handles OSRS specifically, or judge screen quality past the spec sheet, but on paper it checks your boxes.\n\nYou can find the full spec breakdown here: [https://plample.com/spec/gb/asus-vivobook-s-15-oled-s5507/9](https://plample.com/spec/gb/asus-vivobook-s-15-oled-s5507/9)   \n  \n(disclosure: I built the site that generated this match)",
+          "timestamp": "2026-07-31T14:02:50+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0y45p4",
+              "author": "reddit_user_66e2aff2dfeb",
+              "author_karma": 0,
+              "content": "Thank you for your input, I'll definitely be taking a look ",
+              "timestamp": "2026-07-31T20:37:10+00:00",
+              "likes": 2,
+              "dislikes": 0,
+              "parent_comment_id": "p0vlvl9",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p11w0vf",
+                  "author": "reddit_user_19830967809f",
+                  "author_karma": 0,
+                  "content": "no problem :) ",
+                  "timestamp": "2026-08-01T11:31:14+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p0y45p4",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p18bg12",
+          "author": "reddit_user_83359b2465a6",
+          "author_karma": 0,
+          "content": "Does it have to be brand new? \n\nI got a Dell Vostro 7510 with a i7-11800H / 16GB RAM / 512GB SSD / RTX 3050 on eBay for £240 (had to buy a charger at a cost of £25) but it's in perfect working order and very snappy, can even game well. \n\nOf course brand new has the added cushion of warranty and returns that second hand does not, but there are some real bargains to be had. ",
+          "timestamp": "2026-08-02T10:31:21+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p18s5xf",
+              "author": "reddit_user_66e2aff2dfeb",
+              "author_karma": 0,
+              "content": "I suppose not, I just didnt want the faff of dealing with a used laptop that ends up having a faulty screen or keyboard or battery or whatever. 95% of its usage will just be for streaming video, so i dont necessarily NEED an insane machine anyway- just something that will load web pages and video responsively. \n\nI did see a used Legion 5, 144hz/ Ryzen 7 4800H/ 16GB/ RTX 2060/ 512GB, on ebay for £440 in good condition, but im apprehensive about buying hardware thats been in usage for potentially 6 years now. ",
+              "timestamp": "2026-08-02T12:31:06+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p18bg12",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

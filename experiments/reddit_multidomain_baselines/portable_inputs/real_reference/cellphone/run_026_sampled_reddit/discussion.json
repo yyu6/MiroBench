@@ -1,0 +1,345 @@
+{
+  "meta": {
+    "product_category": "cellphone",
+    "baseline": "real_reddit_reference",
+    "run_id": "run_026_sampled_reddit"
+  },
+  "posts": [
+    {
+      "post_id": "real_run026_post00_seed130",
+      "post_slot": 0,
+      "seed_index": 130,
+      "source_raw_post_id": "1vdvbfr",
+      "source_product_dir": "iphone",
+      "source_file": "https://www.reddit.com/r/iphone/comments/1vdvbfr/laggy_typing_the_longer_the_slower/",
+      "post_type": "Discussion",
+      "title": "Laggy typing. The longer the slower.",
+      "author": "reddit_user_0fe413d0e398",
+      "author_karma": 0,
+      "content": "Laggy typing. The longer the slower.",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p1c5yu9",
+          "author": "reddit_user_65884126434e",
+          "author_karma": 0,
+          "content": "If you're looking for help or support, you should search for your issue on Google, the [Apple Support Community](https://discussions.apple.com/welcome), r/iPhone and the [iPhone Support FAQs](https://www.reddit.com/r/iphone/wiki/support-faq/). We review submissions for quality, so basic support issues may be removed.\n\n*I am a bot, and this action was performed automatically. Please [contact the moderators of this subreddit](/message/compose/?to=/r/iphone) if you have any questions or concerns.*",
+          "timestamp": "2026-08-02T22:17:16+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1cami1",
+          "author": "reddit_user_1a2eb24095b9",
+          "author_karma": 0,
+          "content": "Worth narrowing it down before trying any fixes: does it happen everywhere, or in one particular app or one particular conversation?\n\nIf it's one place, it's probably the length of what you're typing into rather than the keyboard itself. Text layout gets recalculated as the field grows, so a very long note, or a message thread with years of history in it, gets progressively heavier with every keystroke. Open a brand new note or a fresh thread and type there. If that's instant, you've found it.\n\nIf it really is everywhere, two things worth doing. Turn off any third-party keyboard, because one with Full Access sits in the path of every key you press. Then reset the keyboard dictionary: Settings, General, Transfer or Reset iPhone, Reset, Reset Keyboard Dictionary. That clears learned words that can accumulate over years. You lose your learned autocorrect and nothing else.",
+          "timestamp": "2026-08-02T22:41:30+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1d33wd",
+              "author": "reddit_user_d666f1630c53",
+              "author_karma": 0,
+              "content": "it happens everywhere. I tried keyboard reset and dictionary reset. but neither do anything. Plus doing dictionary reset doesn't reset that AutoCorrect dictionary, I'm thinking somehow resetting the keyboard settings doesn't do a reset either since dictionary reset didn't do anything ",
+              "timestamp": "2026-08-03T01:17:52+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1cami1",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "post_id": "real_run026_post01_seed131",
+      "post_slot": 1,
+      "seed_index": 131,
+      "source_raw_post_id": "1vdvrkc",
+      "source_product_dir": "GooglePixel",
+      "source_file": "https://www.reddit.com/r/GooglePixel/comments/1vdvrkc/the_order_of_the_alarms_list_makes_me_mad/",
+      "post_type": "Filtered - Rule #9\n",
+      "title": "The order of the alarms list makes me mad",
+      "author": "reddit_user_0fe413d0e398",
+      "author_karma": 0,
+      "content": "The order of the alarms list makes me mad\n\n[removed]",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p1dpvld",
+          "author": "reddit_user_2bde8b87279d",
+          "author_karma": 0,
+          "content": "Ya they also need a way to group them all and mass turn them off. And if you wanna pause them, have it ask if they want it to turn on the next scheduled time or turn off indefinitely. \n\nTBH though I like them in order based on time. \n\nKind alike Samsung's clocks ",
+          "timestamp": "2026-08-03T03:37:38+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run026_post02_seed132",
+      "post_slot": 2,
+      "seed_index": 132,
+      "source_raw_post_id": "1vdvsdj",
+      "source_product_dir": "iphone",
+      "source_file": "https://www.reddit.com/r/iphone/comments/1vdvsdj/notification_sounds/",
+      "post_type": "Support",
+      "title": "Notification sounds",
+      "author": "reddit_user_0fe413d0e398",
+      "author_karma": 0,
+      "content": "Notification sounds\n\nDoes anybody know if there is a way to have notifications sounds off for all apps except for phone calls and maybe even messages?   \nI still want to receive all notifications. But I get too many to keep the sound on and I’m missing too many phone calls at the minute.  \nAny help appreciated",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p1caehl",
+          "author": "reddit_user_0f33d6326de8",
+          "author_karma": 0,
+          "content": "Settings > Notifications > [app]. Toggle off Sounds.",
+          "timestamp": "2026-08-02T22:40:21+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1ccg2h",
+          "author": "reddit_user_776d7db743a0",
+          "author_karma": 0,
+          "content": "Good lord, I have notifications turned off for everything, for my sanity.",
+          "timestamp": "2026-08-02T22:50:56+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1cee8r",
+              "author": "reddit_user_3f6aa77bdf79",
+              "author_karma": 0,
+              "content": "I turn all notifications off for Witter (X), Facebook, and Mail. I use VIP mail notifications. The rest doesn't matter. ",
+              "timestamp": "2026-08-02T23:01:13+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1ccg2h",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "post_id": "real_run026_post03_seed133",
+      "post_slot": 3,
+      "seed_index": 133,
+      "source_raw_post_id": "1vdvvi0",
+      "source_product_dir": "GooglePixel",
+      "source_file": "https://www.reddit.com/r/GooglePixel/comments/1vdvvi0/help_turning_off_bluetooth_on_night_setting/",
+      "post_type": "reddit_post",
+      "title": "Help- turning off Bluetooth on night setting",
+      "author": "reddit_user_0fe413d0e398",
+      "author_karma": 0,
+      "content": "Help- turning off Bluetooth on night setting\n\nI have a pixel 10 pro. I switched from an s22. There are only 2 settings I miss, one is having the Bluetooth switch off automatically over night. (I fall asleep with an earbud, and I'd like the Bluetooth to turn off)\n\nCan anyone help me get that to work? It doesn't seem to be in overnight settings.",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p1cb5z9",
+          "author": "reddit_user_e9f6ae1dfd59",
+          "author_karma": 0,
+          "content": "Setting doesn't exist. ",
+          "timestamp": "2026-08-02T22:44:16+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1cgl26",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[deleted]",
+          "timestamp": "2026-08-02T23:12:54+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1chdz4",
+          "author": "reddit_user_0db424667f97",
+          "author_karma": 0,
+          "content": "Create a custom Google Assistant command in the Google Assistant settings, Under routines for your assistant. \n\nCustom command it to \"turn off Bluetooth\", and create a second routine to enable Bluetooth in the morning. \n\nYou're welcome",
+          "timestamp": "2026-08-02T23:17:13+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1cmcan",
+              "author": "reddit_user_036e26ad9135",
+              "author_karma": 0,
+              "content": "Thank you!!",
+              "timestamp": "2026-08-02T23:44:15+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1chdz4",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "post_id": "real_run026_post04_seed134",
+      "post_slot": 4,
+      "seed_index": 134,
+      "source_raw_post_id": "1vdwko7",
+      "source_product_dir": "iphone",
+      "source_file": "https://www.reddit.com/r/iphone/comments/1vdwko7/did_google_leak_the_new_iphone/",
+      "post_type": "Discussion",
+      "title": "did google leak the new iphone?",
+      "author": "reddit_user_0fe413d0e398",
+      "author_karma": 0,
+      "content": "did google leak the new iphone?\n\nas far as i know youtube is owned by google and they just gave me this screen where you can clearly see apple iphone fold ultra did they leak it?",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p1cgnhe",
+          "author": "reddit_user_fff54c06fc21",
+          "author_karma": 0,
+          "content": "No. They just follow the rumors. ",
+          "timestamp": "2026-08-02T23:13:17+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1ch6n1",
+          "author": "reddit_user_1533276efc0d",
+          "author_karma": 0,
+          "content": "They didn’t leak anything. It’s been rumored and talked about in what seems like forever. ",
+          "timestamp": "2026-08-02T23:16:08+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1ciec8",
+              "author": "reddit_user_ef484df2cce6",
+              "author_karma": 0,
+              "content": "Well, a leak is an unintentional dissemination of real information. Whereas rumors can just be totally made up.",
+              "timestamp": "2026-08-02T23:22:41+00:00",
+              "likes": 0,
+              "dislikes": 0,
+              "parent_comment_id": "p1ch6n1",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1ci2rj",
+          "author": "reddit_user_da8fc7095bca",
+          "author_karma": 0,
+          "content": "https://preview.redd.it/xbl323k4p1hh1.png?width=200&format=png&auto=webp&s=8ae2b7fe78d9c16582de0e0ada6f0995ff470cbc\n\n",
+          "timestamp": "2026-08-02T23:20:55+00:00",
+          "likes": 0,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1ci2wd",
+          "author": "reddit_user_0f33d6326de8",
+          "author_karma": 0,
+          "content": "As it says on the bottom left, it's a YouTube advertiser survey. In other words, the advertiser selected these options, not Google. As others have said, rumors are everywhere about the device, so it makes sense companies would ask about it.",
+          "timestamp": "2026-08-02T23:20:56+00:00",
+          "likes": 3,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1cj1r8",
+              "author": "reddit_user_537efe0df4f9",
+              "author_karma": 0,
+              "content": "Exactly. This is probably Samsung or the Google Pixel team doing audience/brand research and they just put a random name for an Apple foldable to see what the responses were",
+              "timestamp": "2026-08-02T23:26:11+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1ci2wd",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1cq983",
+          "author": "reddit_user_790a7491d42e",
+          "author_karma": 0,
+          "content": "The name was rumored for months anyways lol.",
+          "timestamp": "2026-08-03T00:06:06+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1ct4dv",
+          "author": "reddit_user_713a86262ba7",
+          "author_karma": 0,
+          "content": "if the name ends up being accurate, “Fold Ultra” implies the existence of a future base model fold",
+          "timestamp": "2026-08-03T00:21:40+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1dgf1r",
+              "author": "reddit_user_c32f42f16a1d",
+              "author_karma": 0,
+              "content": "Still waiting for my Vision Air, Mini or Nano or shuffle. ",
+              "timestamp": "2026-08-03T02:36:40+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1ct4dv",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

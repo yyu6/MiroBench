@@ -1,0 +1,1762 @@
+{
+  "meta": {
+    "product_category": "sports",
+    "baseline": "real_reddit_reference",
+    "run_id": "run_016_sampled_reddit"
+  },
+  "posts": [
+    {
+      "post_id": "real_run016_post00_seed080",
+      "post_slot": 0,
+      "seed_index": 80,
+      "source_raw_post_id": "1velsmc",
+      "source_product_dir": "soccer",
+      "source_file": "https://www.reddit.com/r/soccer/comments/1velsmc/ferran_torres_i_have_a_contract_with_barcelona/",
+      "post_type": ":n_media: Media",
+      "title": "Ferran Torres: \"I have a contract with Barcelona, but in football you never know. I'm waiting to make the right decision. I still don't know.”",
+      "author": "reddit_user_79ff14d8816f",
+      "author_karma": 0,
+      "content": "Ferran Torres: \"I have a contract with Barcelona, but in football you never know. I'm waiting to make the right decision. I still don't know.”",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p1hyugn",
+          "author": "reddit_user_babc8b63bf20",
+          "author_karma": 0,
+          "content": "The dream club is obviously Ipswich Town.",
+          "timestamp": "2026-08-03T18:35:48+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1i12a3",
+              "author": "reddit_user_6d875bdeed8a",
+              "author_karma": 0,
+              "content": "It is everyone's dream to play alongside the great Jacob Greaves",
+              "timestamp": "2026-08-03T18:45:22+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1hyugn",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1i17m1",
+                  "author": "reddit_user_b97d591dd637",
+                  "author_karma": 0,
+                  "content": "And he likes tractor boys",
+                  "timestamp": "2026-08-03T18:46:00+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1i12a3",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            },
+            {
+              "comment_id": "p1i3k2l",
+              "author": "reddit_user_9494f86e687e",
+              "author_karma": 0,
+              "content": "Where’s [[REDDIT_USER]]([REDDIT_USER])?",
+              "timestamp": "2026-08-03T18:56:03+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1hyugn",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p1inmf2",
+              "author": "reddit_user_334cd96a2c69",
+              "author_karma": 0,
+              "content": "[they already have a rightwing striker](https://i.guim.co.uk/img/media/ad5817a662744823230f831c677ae13ae59b297b/138_98_1138_911/master/1138.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=8e6e032bd3d9153c95341a2c97e2e11c)",
+              "timestamp": "2026-08-03T20:23:40+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1hyugn",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p1jy258",
+              "author": "reddit_user_d2571c98b717",
+              "author_karma": 0,
+              "content": "with my friend Maeda ",
+              "timestamp": "2026-08-04T00:10:06+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1hyugn",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1hyxps",
+          "author": "reddit_user_b4e0e63c9acb",
+          "author_karma": 0,
+          "content": "Did they ask about the hat",
+          "timestamp": "2026-08-03T18:36:12+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1hza1c",
+              "author": "reddit_user_e3b59f4e3704",
+              "author_karma": 0,
+              "content": "What's there to ask, by all accounts hes just a pretty far right leaning person...",
+              "timestamp": "2026-08-03T18:37:41+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1hyxps",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1i02gb",
+                  "author": "reddit_user_63bf163277ef",
+                  "author_karma": 0,
+                  "content": "There was a lot of talk about whether the hat was satirical. Certainly there are a lot of ways to interpret it, however the most obvious is that he supports the MAGA movement to the extent it applies to Spain. A question may have clarified this speculation however likely he would have known enough to dodge a proper response with something like “I thought it was fun” which could continue to be interpreted either way. ",
+                  "timestamp": "2026-08-03T18:41:03+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1hza1c",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1i4ue5",
+                      "author": "reddit_user_8f37f9d74998",
+                      "author_karma": 0,
+                      "content": "I don’t think you’re going to get any hard hitting questions from programming like this",
+                      "timestamp": "2026-08-03T19:01:31+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1i02gb",
+                      "depth": 3,
+                      "replies": []
+                    },
+                    {
+                      "comment_id": "p1i6702",
+                      "author": "reddit_user_c0e0af461059",
+                      "author_karma": 0,
+                      "content": "I don't know about Spain specifically, but in my experience in Western European countries MAGA and Trump are treated as a joke even by far right supporters.\n\nIf I saw a hat like that and the person wearing it didn't look like a lunatic, I'd assume it's a joke every single time.\n\nBut obviously Americans are going to interpret it differently.",
+                      "timestamp": "2026-08-03T19:07:22+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1i02gb",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "p1i8a5s",
+                          "author": "reddit_user_7a4a633c011a",
+                          "author_karma": 0,
+                          "content": "In this sub people were saying it was just a joke playing off the maga hat until they zoomed in on his bracelet and it was some symbol for a fascist regiment in the Spanish Civil War lmao",
+                          "timestamp": "2026-08-03T19:16:26+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "p1i6702",
+                          "depth": 4,
+                          "replies": []
+                        },
+                        {
+                          "comment_id": "p1is03g",
+                          "author": "reddit_user_96f1918d6f7b",
+                          "author_karma": 0,
+                          "content": "I don’t think you can name a single European (or at least EU) country where the mainstream far-right party are not massive Trump fanboys and imitators. I’m talking about the AfD in Germany, Vox in Spain, PVV in the Netherlands, Restore Britain. Maybe RN in France?",
+                          "timestamp": "2026-08-03T20:42:56+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "p1i6702",
+                          "depth": 4,
+                          "replies": []
+                        }
+                      ]
+                    },
+                    {
+                      "comment_id": "p1imfsz",
+                      "author": "[deleted]",
+                      "author_karma": 0,
+                      "content": "[removed]",
+                      "timestamp": "2026-08-03T20:18:31+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1i02gb",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p1hyz3c",
+          "author": "reddit_user_960ff29c6de4",
+          "author_karma": 0,
+          "content": "he's already on the last year of his contract, that's actual solid leverage",
+          "timestamp": "2026-08-03T18:36:22+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1hyip0",
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1hziba",
+              "author": "reddit_user_719847fe63f3",
+              "author_karma": 0,
+              "content": "Just scored the winner in the final as well, don’t think his value will ever be higher ",
+              "timestamp": "2026-08-03T18:38:40+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1hyz3c",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1hzqvs",
+                  "author": "reddit_user_960ff29c6de4",
+                  "author_karma": 0,
+                  "content": "yup, him leaving now is probably the best outcome for both barca and ferran since they'd both cash out on his wc goal",
+                  "timestamp": "2026-08-03T18:39:41+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1hziba",
+                  "depth": 2,
+                  "replies": []
+                },
+                {
+                  "comment_id": "p1i6asa",
+                  "author": "reddit_user_ce57df562908",
+                  "author_karma": 0,
+                  "content": "I mean, true, but also he had an absolutely terrible WC.  Looked completely lost and incapable of scoring until that moment.\n\nI don’t think his value is any higher now because of that one goal in an overall awful tournament",
+                  "timestamp": "2026-08-03T19:07:49+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1hziba",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1io71b",
+                      "author": "reddit_user_66c7a2a1bbfd",
+                      "author_karma": 0,
+                      "content": "Meh, I don't think he played bad but he wasn't great either for sure. He provided the game winning assist verse Portugal as well. The issue is that he doesn't have a specifici positon he's elite at. He was developed originally as a RW but doesn't have the dribbling ability to take on players at an elite level and he's not a pure striker either. Off the bench as a super sub though he's extremely hand to have because of that versatility.",
+                      "timestamp": "2026-08-03T20:26:12+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1i6asa",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p1hz2xo",
+          "author": "reddit_user_4753c1011729",
+          "author_karma": 0,
+          "content": "I can sympathize with Ferran. The way some fans has treated him over the years, coupled with the fact that his role in Flicks system is at best unclear, and that he's not a guaranteed starter so playtime has to be a concern for him at his age. \n\nI don't think he's guaranteed anything at PSG either so I can understand why it's a tough decision. Does he go for potentially a clearer role and more playtime or does he accept to be a rotation player out of position at Barca? If he chooses to stay, then he will have to deal with those fans that now will call him a glory hunter, overpaid etc. Etc. \n\nI have no doubt he loves playing for Barca and he seems to be well liked by his teammates, but again, regular playtime in whatever his position is has to be a priority for him. \n\nCome to think of it our striker situation is serious with or without Ferran on the team. There doesn't really seem to be a plan at the moment. ",
+          "timestamp": "2026-08-03T18:36:49+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1hzxa7",
+              "author": "reddit_user_5ab3022eb92b",
+              "author_karma": 0,
+              "content": "“The grass is not always greener on the other side” would be my warning to him. Enrique has an ultra competitive squad that is already loaded with talent, so there are no guarantees with a move. \n\nA certain big money move of a Barcelona player going to PSG in 2018 comes to mind, and he lived to deeply regret it. ",
+              "timestamp": "2026-08-03T18:40:27+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1hz2xo",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1i0egl",
+                  "author": "reddit_user_4753c1011729",
+                  "author_karma": 0,
+                  "content": "Without comparing Ferran to Neymar I agree with you. I don't think he would get any guarantees playing for Enrique either. ",
+                  "timestamp": "2026-08-03T18:42:31+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1hzxa7",
+                  "depth": 2,
+                  "replies": []
+                },
+                {
+                  "comment_id": "p1i4ih0",
+                  "author": "reddit_user_f301d45053c1",
+                  "author_karma": 0,
+                  "content": "Who? ",
+                  "timestamp": "2026-08-03T19:00:06+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1hzxa7",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1i4y9q",
+                      "author": "reddit_user_5ab3022eb92b",
+                      "author_karma": 0,
+                      "content": "Srs?",
+                      "timestamp": "2026-08-03T19:01:59+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1i4ih0",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "p1i57px",
+                          "author": "reddit_user_f301d45053c1",
+                          "author_karma": 0,
+                          "content": "Yeah lol",
+                          "timestamp": "2026-08-03T19:03:07+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "p1i4y9q",
+                          "depth": 4,
+                          "replies": [
+                            {
+                              "comment_id": "p1i79m2",
+                              "author": "reddit_user_5ab3022eb92b",
+                              "author_karma": 0,
+                              "content": "Bruh\n\nNeymar?",
+                              "timestamp": "2026-08-03T19:12:04+00:00",
+                              "likes": 1,
+                              "dislikes": 0,
+                              "parent_comment_id": "p1i57px",
+                              "depth": 5,
+                              "replies": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "comment_id": "p1i56iq",
+                  "author": "reddit_user_f665573b41f6",
+                  "author_karma": 0,
+                  "content": "Last Barcelona player with a polarizing support came here to earn a Ballon D'or 🤷‍♂️",
+                  "timestamp": "2026-08-03T19:02:58+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1hzxa7",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            },
+            {
+              "comment_id": "p1i0y98",
+              "author": "reddit_user_e6786810db17",
+              "author_karma": 0,
+              "content": "Alright I agree that we treated him harshly sometimes but we ALSO made his pr insanely good. The \"shark mentality\" gimmick pushed his pr and popularity thourgh the roof. We celebrated his goals like a madman even though he missed 50 before that. Don't act like we did not push for him. Him not utilizing that is on him.\n\nLook at gerrard martin. We were harsh with him but also kept him one of our own with the \"maldini\" gimmick and look at him now. One of the most trusted players by flick. Obviously we will be harsh on you if you're ass. Don't act surprised but y'all are acting like we never treated ferran like one of our very own. Stop this nonsense.\n\nAlso I don't mind if he wants to leave. I'm not mad and not even with those \"he betrayed us\" type shit. If he thinks leaving is better and he can't handle the pressure that really fine but don't act like it's our fault. How do you possibly want to be prioritized as the \"main no 9\" after that season? Yeah surely we treated him bad.",
+              "timestamp": "2026-08-03T18:44:53+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1hz2xo",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1i4l4x",
+                  "author": "reddit_user_4753c1011729",
+                  "author_karma": 0,
+                  "content": "You sound a bit mad though. \n\nI'm not acting like it's our fault. I'm saying I can understand it's a difficult situation to be in. I'm sure Ferran wants as much playing time as possible and he's not getting that in Barca for numerous reasons. So if he think he can't get it elsewhere then fine, but as someone else said: The grass isn't always greener on the other side.\n\nAt the end of the day Ferran has never been a 9. Not before Barca and not since he arrived at Barca, but somehow the club insists on putting him at the 9 position getting him compared with one of the best strikers in history (Lewa). Flick has not been able to transform him into a 9, but I think that's more on the club because his position in Barca has never really been consistent. \nAnd I think despite not being a regular 9 he's done quite well and I wish he could be more clinical in front of goal as well. ",
+                  "timestamp": "2026-08-03T19:00:25+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1i0y98",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1jaqkz",
+                      "author": "reddit_user_e6786810db17",
+                      "author_karma": 0,
+                      "content": "Oh he's a 9. Him as a lw is awful. He's a decent striker. Flick is the one who made him think what he is now. Before that he was nowhere to be seen. Flick's system allows him to score this many goals and people based on those \"stats\" argue him to be a very good player. Flick basically gave him a new career.",
+                      "timestamp": "2026-08-03T22:09:14+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1i4l4x",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                },
+                {
+                  "comment_id": "p1i50nj",
+                  "author": "reddit_user_f301d45053c1",
+                  "author_karma": 0,
+                  "content": "He would really be nothing more than a rotational player for us. If he really values being an important player, he should stay at Barca.  Doué will be ahead of him because there’s no chance he can take a spot from Dembouz and Kvara. He should also be looking for Mayulu as I’m sure the kid will have a breakthrough season",
+                  "timestamp": "2026-08-03T19:02:16+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1i0y98",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1i9t4u",
+                      "author": "reddit_user_72696f30add7",
+                      "author_karma": 0,
+                      "content": "I honestly don't know what he's thinking other than maybe hoping he can get some kind of old school PSG contract with insane wages. His current wages would already put him higher than a bunch of your more important players.. and he's not going to have a role that reflects that importance in your team.\n\nBut yeah, to your point he's not benching anyone. He'll have the same role he's had at Barca the whole time.",
+                      "timestamp": "2026-08-03T19:23:07+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1i50nj",
+                      "depth": 3,
+                      "replies": []
+                    },
+                    {
+                      "comment_id": "p1ij6o5",
+                      "author": "reddit_user_b848fd02fa99",
+                      "author_karma": 0,
+                      "content": "The system would suit him better as a false 9 and as a sub for Dembele he would probably get a lot of playtime",
+                      "timestamp": "2026-08-03T20:04:15+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1i50nj",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "p1j6rwq",
+                          "author": "reddit_user_554cb0a9e234",
+                          "author_karma": 0,
+                          "content": "He's not a good enough playmaker to be a false 9 and if you're a 26 year old striker would you rather be a sub for prime Dembele or sub for 37 year old Lewandowski? This is all just for money. Makes no sense twerking to leave if he cares about being a key player for a contending European side. ",
+                          "timestamp": "2026-08-03T21:50:21+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "p1ij6o5",
+                          "depth": 4,
+                          "replies": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p1hzchg",
+          "author": "reddit_user_a5cfa62ba8e1",
+          "author_karma": 0,
+          "content": "I mean if I were him this time would be his best to get the fattest check possible in his career given his WC winning goal and all.\n\n",
+          "timestamp": "2026-08-03T18:37:58+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1ie8ye",
+              "author": "reddit_user_49bd771f09c4",
+              "author_karma": 0,
+              "content": "There's no \"all\", Just that world cup winning goal.",
+              "timestamp": "2026-08-03T19:42:39+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1hzchg",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1ihr4a",
+                  "author": "reddit_user_1f1d9c35a35c",
+                  "author_karma": 0,
+                  "content": "16 goals and 2 assists in Laliga, in 15 starts and 18 sub appearances.\n\nHe is an amazing player to have on the bench. Barca doesnt even have a starting striker, we really need him tbh unless we sign some replacements",
+                  "timestamp": "2026-08-03T19:58:02+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1ie8ye",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1j62h7",
+                      "author": "reddit_user_554cb0a9e234",
+                      "author_karma": 0,
+                      "content": "I mean, if we sell him, we're obviously bringing in SOMEBODY. And let's not act like he's been lighting it up either. I've obviously very much cherished him but he's the streakiest player I've ever seen. Can score 10 goals in 8 games and then 2 in 14. And now, if he's so clearly not committed to the club, no need for him and I hope we can get a good fee. ",
+                      "timestamp": "2026-08-03T21:47:02+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1ihr4a",
+                      "depth": 3,
+                      "replies": []
+                    },
+                    {
+                      "comment_id": "p1jg2i9",
+                      "author": "reddit_user_d45925710612",
+                      "author_karma": 0,
+                      "content": "Everyone can score in this Barcelona team, his number is not unusual",
+                      "timestamp": "2026-08-03T22:35:40+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1ihr4a",
+                      "depth": 3,
+                      "replies": []
+                    },
+                    {
+                      "comment_id": "p1jla8k",
+                      "author": "reddit_user_edad6d5e63cd",
+                      "author_karma": 0,
+                      "content": "Doesn't seem bad and I think he's gotten better. Still those numbers don't tell you anything when you consider all the chances he got served by the other players. \nYou could make a long video of Lamine being frustrated with ferran missing or not being able to control a simple pass. \nHe's wasting waaay too much for a striker in his prime years.",
+                      "timestamp": "2026-08-03T23:02:19+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1ihr4a",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                },
+                {
+                  "comment_id": "p1ijqxe",
+                  "author": "reddit_user_17aa6967c3d3",
+                  "author_karma": 0,
+                  "content": "He is a very good player.",
+                  "timestamp": "2026-08-03T20:06:45+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1ie8ye",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p1hzfu6",
+          "author": "reddit_user_b76514a66186",
+          "author_karma": 0,
+          "content": "Wouldn't mind a cheeky Torres signing for liverpool.",
+          "timestamp": "2026-08-03T18:38:22+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1i0ek5",
+              "author": "reddit_user_56e604ed0b0a",
+              "author_karma": 0,
+              "content": "Ewww",
+              "timestamp": "2026-08-03T18:42:31+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1hzfu6",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1hzs98",
+          "author": "reddit_user_ec0547ee065b",
+          "author_karma": 0,
+          "content": "very polar bear in arlington texas",
+          "timestamp": "2026-08-03T18:39:51+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1hykot",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1i0w83",
+          "author": "reddit_user_1ef19f623481",
+          "author_karma": 0,
+          "content": "What a WC does to a mf.\n\nr/ferrantorresballondor",
+          "timestamp": "2026-08-03T18:44:39+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1hykot",
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1ije5z",
+              "author": "reddit_user_77b56ac644ce",
+              "author_karma": 0,
+              "content": "I forgot to visit that sub after the final, must have been fun",
+              "timestamp": "2026-08-03T20:05:11+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1i0w83",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1i1die",
+          "author": "reddit_user_a584a2fa60bd",
+          "author_karma": 0,
+          "content": "Go with the wind, you little right-wing weirdo! ",
+          "timestamp": "2026-08-03T18:46:42+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1i1gqv",
+          "author": "reddit_user_59340447ade0",
+          "author_karma": 0,
+          "content": "Come to us lad ",
+          "timestamp": "2026-08-03T18:47:05+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1i1p66",
+          "author": "reddit_user_06683e90a36c",
+          "author_karma": 0,
+          "content": "god please sell him ",
+          "timestamp": "2026-08-03T18:48:07+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1i2ige",
+          "author": "reddit_user_0d7b243008d2",
+          "author_karma": 0,
+          "content": "Barca: I offered you friendship and you spat in my face",
+          "timestamp": "2026-08-03T18:51:35+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1i2ze6",
+          "author": "reddit_user_30835fb626a9",
+          "author_karma": 0,
+          "content": "Majority of the fanbase wants him gone anyway, it will hurt us this season but long term it's good for us ",
+          "timestamp": "2026-08-03T18:53:35+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1hycmm",
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1jzn5v",
+              "author": "reddit_user_178500878d0c",
+              "author_karma": 0,
+              "content": "So why not just keep him for another year and let his contract expire? The amount of money you could get now won't be worth it",
+              "timestamp": "2026-08-04T00:18:31+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1i2ze6",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1k45nh",
+                  "author": "reddit_user_bdf0c4cfa501",
+                  "author_karma": 0,
+                  "content": "They’re a poverty franchise they need the quid ",
+                  "timestamp": "2026-08-04T00:43:01+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1jzn5v",
+                  "depth": 2,
+                  "replies": []
+                },
+                {
+                  "comment_id": "p1k8cv0",
+                  "author": "reddit_user_dffd3cf5a69b",
+                  "author_karma": 0,
+                  "content": "If they can get 30 million for Ferran that would be like signing someone 5 years at 150 million. Ferran Torres isn’t a 150 million player, before that WC winning goal or after. ",
+                  "timestamp": "2026-08-04T01:06:00+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1jzn5v",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p1i3b2d",
+          "author": "reddit_user_02a57de0451d",
+          "author_karma": 0,
+          "content": "He is far into the right. Good riddance.",
+          "timestamp": "2026-08-03T18:54:59+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1j2hmb",
+              "author": "reddit_user_bf1b1a096cc5",
+              "author_karma": 0,
+              "content": "Yeah him and Yamal can't play together, he's always drifting too much into space where Yamal wants to play.",
+              "timestamp": "2026-08-03T21:30:23+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1i3b2d",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1j8k3l",
+                  "author": "reddit_user_02a57de0451d",
+                  "author_karma": 0,
+                  "content": "You are very witty. Lol good one. ",
+                  "timestamp": "2026-08-03T21:58:50+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1j2hmb",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1k0b2u",
+                      "author": "reddit_user_f59bac13159c",
+                      "author_karma": 0,
+                      "content": "On top of witti he was also right lol. Before Barcelona Ferran played exactly in Lamine's position.\n\n  \n10/10 comment.",
+                      "timestamp": "2026-08-04T00:22:06+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1j8k3l",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p1i43ya",
+          "author": "reddit_user_2c934ba80872",
+          "author_karma": 0,
+          "content": "Hes not good enough for Barca",
+          "timestamp": "2026-08-03T18:58:24+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1ially",
+              "author": "reddit_user_bb4d7a5c5cc1",
+              "author_karma": 0,
+              "content": "I think his relationships with players like Pedri or Gavi are the only argument to keep him because he's quite likeable overall. But he's inconsistent (that 15-games or something dry spell was just painful to watch) and rightly was benched by hundred years old Lewy. \n\nBarcelona is right still looking for starting striker, because Ferran's 23G/A are rotational player's numbers.",
+              "timestamp": "2026-08-03T19:26:33+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1i43ya",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1iiu6x",
+                  "author": "reddit_user_2c934ba80872",
+                  "author_karma": 0,
+                  "content": "Im not just talking about him scoring goals. I watched him play in Spain in world cup and he would mess up the flow of the play with incorrect passing or a bad decision most of the time, he doesn't fit the Barca playing system.",
+                  "timestamp": "2026-08-03T20:02:43+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1ially",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p1i4gr2",
+          "author": "reddit_user_b01af0e9dd24",
+          "author_karma": 0,
+          "content": "He’s all over r/ufc and not for great reasons",
+          "timestamp": "2026-08-03T18:59:54+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1jbg4q",
+              "author": "reddit_user_7f2de37b3eea",
+              "author_karma": 0,
+              "content": "He partied with Ilia Topuria on the offseason?",
+              "timestamp": "2026-08-03T22:12:41+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1i4gr2",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1i4t7d",
+          "author": "reddit_user_2067d50694c9",
+          "author_karma": 0,
+          "content": "Damn I thought it was a Spanish version or something lol that hat went far for him I guess",
+          "timestamp": "2026-08-03T19:01:23+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1hykot",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1i5237",
+          "author": "reddit_user_be1c43f8a775",
+          "author_karma": 0,
+          "content": "He's gonna sky a ball into the 10th row in his first game and PSG fans are going to want to lynch him.",
+          "timestamp": "2026-08-03T19:02:27+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1i553g",
+          "author": "reddit_user_5145cc2acfd2",
+          "author_karma": 0,
+          "content": "Average player for a team like Barca. Also, with his MAGA shit he can go. I hope he goes and we can buy someone actually good like Osimhen or some other top striker. He misses too many sitters. ",
+          "timestamp": "2026-08-03T19:02:48+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1i57qu",
+          "author": "reddit_user_0f996efed14e",
+          "author_karma": 0,
+          "content": "If you have second thoughts about being in Barcelona then you should leave",
+          "timestamp": "2026-08-03T19:03:07+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1hycmm",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1i5xxs",
+          "author": "reddit_user_54886da6e520",
+          "author_karma": 0,
+          "content": "Anything over 80m and Barca should sell him ",
+          "timestamp": "2026-08-03T19:06:16+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1i6luu",
+          "author": "reddit_user_bac7146f8cca",
+          "author_karma": 0,
+          "content": "SS Lazio?",
+          "timestamp": "2026-08-03T19:09:10+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1i8ml5",
+              "author": "reddit_user_ba8b7c4449a2",
+              "author_karma": 0,
+              "content": "Minus the \"Lazio\" bit?",
+              "timestamp": "2026-08-03T19:17:57+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1i6luu",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1i7v3z",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-03T19:14:39+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1ia9t1",
+          "author": "reddit_user_867d669a386b",
+          "author_karma": 0,
+          "content": "Yeah Barca need striker but not backup striker as Torres. He is not material for first eleven. So they need to buy starter or both starter and new backup if Ferran leaves.",
+          "timestamp": "2026-08-03T19:25:08+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1hyip0",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1ian39",
+          "author": "reddit_user_3019699457be",
+          "author_karma": 0,
+          "content": "Time to say goodbye to Ferran and move on ",
+          "timestamp": "2026-08-03T19:26:44+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1ib4q9",
+          "author": "reddit_user_da61a353e7b6",
+          "author_karma": 0,
+          "content": "He should still be high on that goal.",
+          "timestamp": "2026-08-03T19:28:54+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1id03v",
+          "author": "reddit_user_f3f6ee2dd4ea",
+          "author_karma": 0,
+          "content": "When a player has a dream the club has to allow him #FreeFerran #Dreamersclub",
+          "timestamp": "2026-08-03T19:37:12+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1idk7e",
+          "author": "reddit_user_2f151af76d7e",
+          "author_karma": 0,
+          "content": "Go to Arsenal GOAT",
+          "timestamp": "2026-08-03T19:39:39+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1ig7l7",
+          "author": "reddit_user_57974ecc6d57",
+          "author_karma": 0,
+          "content": "I had to double check ",
+          "timestamp": "2026-08-03T19:51:17+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1hykot",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1ild17",
+          "author": "reddit_user_5bdde76ac8c7",
+          "author_karma": 0,
+          "content": "Did I miss something? I thought people were saying the MSGA hat was being ironic, now everyone’s saying he’s right wing ",
+          "timestamp": "2026-08-03T20:13:49+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1j6dxt",
+              "author": "[deleted]",
+              "author_karma": 0,
+              "content": "[removed]",
+              "timestamp": "2026-08-03T21:48:32+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1ild17",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p1jokbb",
+              "author": "reddit_user_bc1ad8c0c230",
+              "author_karma": 0,
+              "content": "I think I saw a post about him following a certain journalist ...nvm, let me just find the thread.",
+              "timestamp": "2026-08-03T23:19:34+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1ild17",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1jp3ov",
+                  "author": "reddit_user_5bdde76ac8c7",
+                  "author_karma": 0,
+                  "content": "Just read another comment saying he was also wearing like a pro-fascist bracelet from the Spanish civil war ",
+                  "timestamp": "2026-08-03T23:22:23+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1jokbb",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1jpwj8",
+                      "author": "reddit_user_bc1ad8c0c230",
+                      "author_karma": 0,
+                      "content": "Yeah, that too. The hat on its own might have been satirical, but there is too much smoke.\n\nHere is the [thread I mentioned.](https://www.reddit.com/r/Barca/comments/1v62irt/ferran_torres_started_following_a_journalist_that/)\n\n",
+                      "timestamp": "2026-08-03T23:26:32+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1jp3ov",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "comment_id": "p1jv59o",
+              "author": "reddit_user_ce773322c642",
+              "author_karma": 0,
+              "content": "That was all cope. He’s definitely right wing. Spanish right wing party Vox used MSGA as a slogan, uses those hat (both red and green), and Ferran was spotted wearing a Spanish Legion bracelet in addition to recently following a far-right Spanish political activist on Instagram",
+              "timestamp": "2026-08-03T23:54:14+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1ild17",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1imuq9",
+          "author": "reddit_user_309021c1296f",
+          "author_karma": 0,
+          "content": "Good riddance buddy",
+          "timestamp": "2026-08-03T20:20:19+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1inen7",
+          "author": "reddit_user_66c7a2a1bbfd",
+          "author_karma": 0,
+          "content": "Ferran was already cocky before this WC goal, now he think he's Zidane. Deco should stand firm at only renewing him at his current wages, we can't be giving outrageous wages to a player who is best used as a super sub.",
+          "timestamp": "2026-08-03T20:22:43+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1ipjc7",
+          "author": "reddit_user_666e92b53827",
+          "author_karma": 0,
+          "content": "Sell the guy. He's 🗑. His 1 WC goal doesnt change that fact ",
+          "timestamp": "2026-08-03T20:32:04+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1ippq7",
+          "author": "reddit_user_15f0c6c64b3a",
+          "author_karma": 0,
+          "content": "We need a 9 who can actually score",
+          "timestamp": "2026-08-03T20:32:51+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1hyip0",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1iwt9p",
+          "author": "reddit_user_285e6be13e15",
+          "author_karma": 0,
+          "content": "Illia topuria knows where he’s going, and have gone. ",
+          "timestamp": "2026-08-03T21:04:20+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1iz3g0",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-03T21:14:45+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1j5tw9",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-03T21:45:55+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1jld2y",
+          "author": "reddit_user_e0527b11ff90",
+          "author_karma": 0,
+          "content": "the red hat will be perfect for Lazio ",
+          "timestamp": "2026-08-03T23:02:44+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1jntv7",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-03T23:15:44+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1jpmwn",
+          "author": "reddit_user_40eeb925babb",
+          "author_karma": 0,
+          "content": "\"Look, I'm all about loyalty. In fact, I feel like part of what I'm being paid for here is my loyalty. But if there were somewhere else that valued loyalty more highly… I'm going wherever they value loyalty the most.\" ",
+          "timestamp": "2026-08-03T23:25:08+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1jsxb0",
+          "author": "reddit_user_15b140730b5b",
+          "author_karma": 0,
+          "content": "The today show is now a more reputable source than Fabrizio ",
+          "timestamp": "2026-08-03T23:42:21+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1hykot",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1k0jqq",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-04T00:23:26+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1ke3nz",
+          "author": "reddit_user_ba795617bbbb",
+          "author_karma": 0,
+          "content": "He gone. ",
+          "timestamp": "2026-08-04T01:37:44+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1kj5mc",
+          "author": "reddit_user_748431f0aa71",
+          "author_karma": 0,
+          "content": "Probably went to go secretly meet his idol trump and his maga hat signed ",
+          "timestamp": "2026-08-04T02:05:45+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1hykot",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1kpaoo",
+          "author": "reddit_user_f9a0ae956c34",
+          "author_karma": 0,
+          "content": "He’s gotta wait for his boyfriend to help him make the decision. ",
+          "timestamp": "2026-08-04T02:40:15+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1kvr2b",
+          "author": "reddit_user_a36d73a2488d",
+          "author_karma": 0,
+          "content": "wear an idiotic grin, wear the silly hat, don't care about anyone else and 'just be happy'. Yeah, checks out",
+          "timestamp": "2026-08-04T03:18:58+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1l6nlo",
+          "author": "reddit_user_4c1f4e66210e",
+          "author_karma": 0,
+          "content": "I think we saw the rise, and we will see the fall.",
+          "timestamp": "2026-08-04T04:30:21+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run016_post01_seed081",
+      "post_slot": 1,
+      "seed_index": 81,
+      "source_raw_post_id": "1vem0p9",
+      "source_product_dir": "soccer",
+      "source_file": "https://www.reddit.com/r/soccer/comments/1vem0p9/i_built_a_football_prediction_app_no_realmoney/",
+      "post_type": ":n_discussion: Discussion",
+      "title": "I built a football prediction app (no real-money betting) — looking for feedback from fellow fans",
+      "author": "reddit_user_79ff14d8816f",
+      "author_karma": 0,
+      "content": "I built a football prediction app (no real-money betting) — looking for feedback from fellow fans\n\n[removed]",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p1hzy5w",
+          "author": "reddit_user_e8d8c99d18e1",
+          "author_karma": 0,
+          "content": "This post has been removed by AutoModerator.\n\nBecause of the sheer number of submissions the subreddit receives each day, standalone Discussion threads aren't allowed in r/soccer unless they are **relevant** because of broad interest or clear context, **valuable** because they add to the community's knowledge or raise a genuinely interesting point, and **well-presented** by the OP. To meet that threshold, the post should be comparable in length to articles from professional media. Your post does not reach that bar, so it should be shared as a comment in the Daily Discussion instead.\n\nIf you think your Discussion post still meets those requirements despite its length, feel free to send a modmail so we can review it manually. Otherwise, please discuss it in the Daily Discussion.\n\n\n*I am a bot, and this action was performed automatically. Please [contact the moderators of this subreddit](/message/compose/?to=/r/soccer) if you have any questions or concerns.*",
+          "timestamp": "2026-08-03T18:40:33+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1hzy9a",
+          "author": "reddit_user_e8d8c99d18e1",
+          "author_karma": 0,
+          "content": "Because of the sheer number of submissions r/soccer daily receives, standalone Discussion Threads aren't allowed in r/soccer unless they're **relevant** because of global interest or pertinent context, **valuable** because of its benefit to the community's knowledge or genuinely interesting point to discuss, and **well-presented** by the OP who wants to start it. If you think this thread didn't meet those requisites, please report it for low-effort content. \n\nUse the [Daily Discussion](https://www.reddit.com/r/soccer/search?sort=new&restrict_sr=on&q=flair%3ADaily%2BDiscussion) for discussions that don't deserve a standalone thread. Also, remember that you can use the \"Serious Discussion\" flair if you only want to receive long and serious replies to your Discussion thread.     \n\n*I am a bot, and this action was performed automatically. Please [contact the moderators of this subreddit](/message/compose/?to=/r/soccer) if you have any questions or concerns.*",
+          "timestamp": "2026-08-03T18:40:34+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run016_post02_seed082",
+      "post_slot": 2,
+      "seed_index": 82,
+      "source_raw_post_id": "1vemeph",
+      "source_product_dir": "nfl",
+      "source_file": "https://www.reddit.com/r/nfl/comments/1vemeph/buddy_went_to_niners_camp_today/",
+      "post_type": "image",
+      "title": "Buddy went to Niners camp today",
+      "author": "reddit_user_79ff14d8816f",
+      "author_karma": 0,
+      "content": "Buddy went to Niners camp today\n\n[removed]",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p1i6btr",
+          "author": "reddit_user_8a3d5bff6099",
+          "author_karma": 0,
+          "content": "Thank you for posting to /r/NFL. Unfortunately, your submission has been removed due to the following rule:\n\nThe following kinds of posts are not allowed:\n\n* Self Posts Without Content (AskReddit style posts) - If you find information that you think would be interesting, please work on a more descriptive title and fill in the information in the text of the post.  Examples of restricted posts: \n* Is ____ a HOF?\n* Would you rather...\n* TIL/\"Stolen From\"\n* Either/or posts - Player X or Y?\n* Who should I root for? [Link to wiki](https://www.reddit.com/r/nfl/wiki/new/pickateam) / Convince me to root for your team\n* Posts about fandom \n* Personal rankings or predictions without any accompanying analysis\n* Commonly/Frequently Asked Questions - [Example](http://i.imgur.com/FEznoUJ.jpg), [Example]    \n* Meta posts about the sub (Requests for changes/additions, mods or users) - use [modmail](http://www.reddit.com/message/compose?to=%2Fr%2Fnfl)\n\nIf you have any questions about this removal, please [message the moderators.](https://www.reddit.com/message/compose?to=%2Fr%2Fnfl)   \n\nThis post was removed by a human moderator; this comment was left by a bot.",
+          "timestamp": "2026-08-03T19:07:57+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run016_post03_seed083",
+      "post_slot": 3,
+      "seed_index": 83,
+      "source_raw_post_id": "1vemmnj",
+      "source_product_dir": "soccer",
+      "source_file": "https://www.reddit.com/r/soccer/comments/1vemmnj/augsburg_rejected_two_hull_city_bids_of_8m_and_9m/",
+      "post_type": ":n_transfer: Transfer News",
+      "title": "Augsburg rejected two Hull City bids of €8m and €9m for midfielder Mert Kömür, Augsburg want €13-14 million plus bonuses plus a share of future resale profits",
+      "author": "reddit_user_79ff14d8816f",
+      "author_karma": 0,
+      "content": "Augsburg rejected two Hull City bids of €8m and €9m for midfielder Mert Kömür, Augsburg want €13-14 million plus bonuses plus a share of future resale profits",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p1i52mu",
+          "author": "reddit_user_e8d8c99d18e1",
+          "author_karma": 0,
+          "content": "\nTo reduce the spam of reports regarding the same move during transfer windows we try to allow **only one submission about each transfer saga per day**. The submission in question also needs to contain relevant new information regarding the potential move, and not just being a \"no/minor developments\" report.   \n\nIf there are important/official developments or new valuable information about a saga, we will allow extra threads in the same day, but for the rest of minor news please just comment them as a reply to this comment. Please help us reporting unnecessary threads for being duplicates. \n\n*I am a bot, and this action was performed automatically. Please [contact the moderators of this subreddit](/message/compose/?to=/r/soccer) if you have any questions or concerns.*",
+          "timestamp": "2026-08-03T19:02:31+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1i5zcw",
+          "author": "reddit_user_2fca177b9252",
+          "author_karma": 0,
+          "content": "I love how we are approaching sales this summer. We are communicating early in the process what kind of numbers we have in mind and either you pay that or you have to move on. I have nothing against Matsima and Kömür both being here for another season at the club",
+          "timestamp": "2026-08-03T19:06:26+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1i7btm",
+          "author": "reddit_user_3ad45bf47a0c",
+          "author_karma": 0,
+          "content": "Oh come on man not even 10m is disrespectful, I get that he's not a nailed on starter but he's still only 21 and has considerable Bundesliga experience.",
+          "timestamp": "2026-08-03T19:12:20+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1i93le",
+          "author": "reddit_user_dd41ef6e7f41",
+          "author_karma": 0,
+          "content": "Oi, Hull, you have to pay PL tax now",
+          "timestamp": "2026-08-03T19:20:01+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run016_post04_seed084",
+      "post_slot": 4,
+      "seed_index": 84,
+      "source_raw_post_id": "1vemxyd",
+      "source_product_dir": "nba",
+      "source_file": "https://www.reddit.com/r/nba/comments/1vemxyd/2015_wcsf_game_6_down_19_in_the_third_quarter/",
+      "post_type": "rich:video",
+      "title": "2015 WCSF Game 6: Down 19 in the third quarter Josh Smith and Corey Brewer help the Rockets go on a 49-18 run to stun the Lob City Clippers",
+      "author": "reddit_user_79ff14d8816f",
+      "author_karma": 0,
+      "content": "2015 WCSF Game 6: Down 19 in the third quarter Josh Smith and Corey Brewer help the Rockets go on a 49-18 run to stun the Lob City Clippers",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p1i8ef6",
+          "author": "reddit_user_f42ee3910611",
+          "author_karma": 0,
+          "content": "A Doc Rivers special ",
+          "timestamp": "2026-08-03T19:16:58+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1j75oi",
+              "author": "reddit_user_909e78b4a2ac",
+              "author_karma": 0,
+              "content": "He played crawford heavy minutes every single year and didnt learn to bench him once in 6 years lmao",
+              "timestamp": "2026-08-03T21:52:09+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1i8ef6",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1i8n4l",
+          "author": "reddit_user_639667274ded",
+          "author_karma": 0,
+          "content": "Name a better duo than Doc Rivers and blowing 3-1 series leads ",
+          "timestamp": "2026-08-03T19:18:01+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1j30cv",
+              "author": "reddit_user_77b918812bbc",
+              "author_karma": 0,
+              "content": "Do rivers is a terrorist ",
+              "timestamp": "2026-08-03T21:32:48+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1i8n4l",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p1j541o",
+              "author": "reddit_user_59027e59e243",
+              "author_karma": 0,
+              "content": "He's done it with like 3 different ones. Has the record",
+              "timestamp": "2026-08-03T21:42:36+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1i8n4l",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p1j61tf",
+              "author": "reddit_user_635c9041b034",
+              "author_karma": 0,
+              "content": "Josh Smith & Corey Brewer ",
+              "timestamp": "2026-08-03T21:46:57+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1i8n4l",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1i94yb",
+          "author": "reddit_user_d99444136e41",
+          "author_karma": 0,
+          "content": "This was LAC best chance at going far. Could have matchup up with GSW,  but they tricked it off. ",
+          "timestamp": "2026-08-03T19:20:11+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1ia3tc",
+          "author": "reddit_user_ca97f7b6f718",
+          "author_karma": 0,
+          "content": "At least Doc learned a valuable lesson after this series and made sure to sign Josh Smith.",
+          "timestamp": "2026-08-03T19:24:25+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1iavpo",
+          "author": "reddit_user_4202e7f5db9a",
+          "author_karma": 0,
+          "content": "Watching this live was hilarious. Harden on the bench just watching the whole thing, Corey Brewer going ultra instinct mode, straight cinema",
+          "timestamp": "2026-08-03T19:27:47+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1jcy0b",
+              "author": "reddit_user_5301f65d68c8",
+              "author_karma": 0,
+              "content": "Most stars had a #2 option to share the load with and bail them out and nobody bats an eye.\n\nHarden, gassed near the end of a huge carryjob season gets bailed by roleplayers and all of a sudden people act like him carrying 99.9% of that season is a demerit against him",
+              "timestamp": "2026-08-03T22:20:01+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1iavpo",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1ib379",
+          "author": "reddit_user_bab2ea0fd399",
+          "author_karma": 0,
+          "content": "Doc rivers is like roberto Martinez. Ruining golden generations",
+          "timestamp": "2026-08-03T19:28:42+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1ib9uc",
+          "author": "reddit_user_58eff76051b2",
+          "author_karma": 0,
+          "content": "This was after the Clips beat the reigning champs Spurs in a super close 7 game series that came down to the wire. It felt like it was gonna be their year, but I guess they took their eyes off the ball after defeating San Antonio. The fact that Kevin McHale took his team to the WCF before Doc did is hilarious. ",
+          "timestamp": "2026-08-03T19:29:32+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1k122c",
+              "author": "reddit_user_4a6a4c5633b1",
+              "author_karma": 0,
+              "content": "I think the Warriors still would have spanked us. They completely owned us after that 2014 series",
+              "timestamp": "2026-08-04T00:26:09+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1ib9uc",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1iba11",
+          "author": "reddit_user_81c72383db8f",
+          "author_karma": 0,
+          "content": "I remember falling asleep and thinking the clippers won, so for 3 days until Sunday I thought LA won but then my cousin was asking me if I was watching the clippers game. I couldn’t believe him just because the 3-1 comeback and the game 6 comeback itself. I still think the clippers had a chance to beat GSW if they had won ",
+          "timestamp": "2026-08-03T19:29:33+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1icilu",
+          "author": "reddit_user_ef627c97e5ef",
+          "author_karma": 0,
+          "content": "They didn't try anymore, they knew the title wasn't going to be respected... oh wait that was 5 years later",
+          "timestamp": "2026-08-03T19:35:01+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1id9d8",
+          "author": "reddit_user_2107fc70c982",
+          "author_karma": 0,
+          "content": "This comeback tanked our entire 2016 season. They brought these two clowns back who never played this well again, they held on to Dwight when his trade value was at its absolute peak and McHale was fired about 16 games into the season. ",
+          "timestamp": "2026-08-03T19:38:20+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1jgqyu",
+              "author": "reddit_user_79284453b775",
+              "author_karma": 0,
+              "content": "Getting clapped in the WCF should’ve told us that team was far from being actually competitive. Smith was committing bball terrorism that series ",
+              "timestamp": "2026-08-03T22:39:07+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1id9d8",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1ifxbm",
+          "author": "reddit_user_357e2223dc98",
+          "author_karma": 0,
+          "content": "This reminds of me that insane run the clips went on against the grizzlies in the playoffs where Eric Bledsoe and Nick Young decided to just go fucking insane from 3’s. ",
+          "timestamp": "2026-08-03T19:50:03+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1igcb5",
+          "author": "reddit_user_bf53d266efeb",
+          "author_karma": 0,
+          "content": "I’ll always love brewer after seeing his 51 pt game as a kid. Always seemed like a nice guy too for how much he could ball out when the stars align.",
+          "timestamp": "2026-08-03T19:51:51+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1ii60f",
+          "author": "reddit_user_f2dc3d81a98d",
+          "author_karma": 0,
+          "content": "One of my favorite games , Josh Smith Corey Brewer and the corpse of Jason Terry leading a comeback while James Harden was benched was an insane outcome ",
+          "timestamp": "2026-08-03T19:59:49+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1j682n",
+              "author": "reddit_user_635c9041b034",
+              "author_karma": 0,
+              "content": "Same.. Unreal to watch it go down live ",
+              "timestamp": "2026-08-03T21:47:46+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1ii60f",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1ilj4b",
+          "author": "reddit_user_5c74f837f398",
+          "author_karma": 0,
+          "content": "Smoov was so annoying in Detroit but I will always love that guy. ",
+          "timestamp": "2026-08-03T20:14:33+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1intzf",
+          "author": "reddit_user_30e19a6eecb0",
+          "author_karma": 0,
+          "content": "This is what we doing today???",
+          "timestamp": "2026-08-03T20:24:36+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1it48c",
+              "author": "reddit_user_8549f84cbbc0",
+              "author_karma": 0,
+              "content": "it got posted last week also. I always read the comments and never watch the video",
+              "timestamp": "2026-08-03T20:47:49+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1intzf",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1j8pxl",
+                  "author": "reddit_user_30e19a6eecb0",
+                  "author_karma": 0,
+                  "content": "I seen that one too. I watched the video. Wish I hadn't. ",
+                  "timestamp": "2026-08-03T21:59:37+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1it48c",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p1ipji6",
+          "author": "reddit_user_4993288bba9d",
+          "author_karma": 0,
+          "content": "A lot of Dic Rivers talk, but none for players letting Corey Brewer (super underrated bucket in the league, but still) and washed Josh Smith run roughshod. ",
+          "timestamp": "2026-08-03T20:32:05+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1juhvx",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-03T23:50:42+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1keny3",
+          "author": "reddit_user_c60608cb97b1",
+          "author_karma": 0,
+          "content": "This was just a stunning comeback. ",
+          "timestamp": "2026-08-04T01:40:50+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    }
+  ]
+}

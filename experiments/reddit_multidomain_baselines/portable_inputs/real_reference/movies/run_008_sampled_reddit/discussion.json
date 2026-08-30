@@ -1,0 +1,684 @@
+{
+  "meta": {
+    "product_category": "movies",
+    "baseline": "real_reddit_reference",
+    "run_id": "run_008_sampled_reddit"
+  },
+  "posts": [
+    {
+      "post_id": "real_run008_post00_seed040",
+      "post_slot": 0,
+      "seed_index": 40,
+      "source_raw_post_id": "1v691xd",
+      "source_product_dir": "MovieDetails",
+      "source_file": "https://www.reddit.com/r/MovieDetails/comments/1v691xd/in_o_agente_secreto_2025_the_secret_agent/",
+      "post_type": "👥 Foreshadowing",
+      "title": "In “O Agente Secreto”, 2025 (“The Secret Agent”) …",
+      "author": "reddit_user_f403d059ef4c",
+      "author_karma": 0,
+      "content": "In “O Agente Secreto”, 2025 (“The Secret Agent”) …\n\nThe fate of Gabriel Leone’s character (hitman Bobby Borba) is foreshadowed by his shirt.",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "ozolt5o",
+          "author": "reddit_user_7fb91a73eae3",
+          "author_karma": 0,
+          "content": "I just could not get into this movie..",
+          "timestamp": "2026-07-25T13:58:06+00:00",
+          "likes": 12,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "ozom1t4",
+              "author": "reddit_user_10688fe030ff",
+              "author_karma": 0,
+              "content": "Me neither but I had to finish it so I ended up paying more attention to small details and overall visuals and sets (all pretty good)…",
+              "timestamp": "2026-07-25T13:59:19+00:00",
+              "likes": -5,
+              "dislikes": 0,
+              "parent_comment_id": "ozolt5o",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "ozopi26",
+              "author": "reddit_user_b699402d7b09",
+              "author_karma": 0,
+              "content": "Felt the same while watching it, read a bunch about it afterwards trying to figure out what I was missing, and on a rewatch I was very impressed with it. I had 2 other friends who did something similar so that might be the case for you as well if you care to give it another shot",
+              "timestamp": "2026-07-25T14:16:47+00:00",
+              "likes": 13,
+              "dislikes": 0,
+              "parent_comment_id": "ozolt5o",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "ozpl661",
+              "author": "reddit_user_3a1c40fbcd99",
+              "author_karma": 0,
+              "content": "I’m with you. I saw the symbolism, i just didn’t know what all of it was referring to. ",
+              "timestamp": "2026-07-25T16:52:25+00:00",
+              "likes": 2,
+              "dislikes": 0,
+              "parent_comment_id": "ozolt5o",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p0vtbqq",
+              "author": "reddit_user_2201f9cc83cc",
+              "author_karma": 0,
+              "content": "I think the problem people have with this film is exactly that it is supposed to be \"underwhelming\". It uses all of the tropes of an action spy thriller while at the same time intentionally not being one, so the thrill is kinda not there.\n\nIts always playing with the audience, almost getting there, almost being James Bond, almost being Mission Impossible, but never doing so, because its about real life, a real story of an average guy that all of a sudden has to try and escape the country, and he isn't really prepared to do any of the action movie stuff (that's even why the ending is so underwhelming).\n\nEven the villains fit this premise as well, they aren't even doing the killing themselves. Not my favorite movie but I get what it was going for.",
+              "timestamp": "2026-07-31T14:35:49+00:00",
+              "likes": 4,
+              "dislikes": 0,
+              "parent_comment_id": "ozolt5o",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p0wux93",
+                  "author": "reddit_user_c856f233e681",
+                  "author_karma": 0,
+                  "content": "I agree. I found it confusing with the little information on his background and all the jumps and didn’t understand the two girls who are listening to the tapes at first.\n\nBut the fact that we only learn about his fate through one of the girls really makes you think about how many people just disappear or die without a real explanation in a dictatorship.\n\nI also liked how the end is actually pretty good, considering he didn’t make it, because the son who grew up without any real information about what happened to his father suddenly gets a bunch of information handed to him with tapes of his fathers voice and all.",
+                  "timestamp": "2026-07-31T17:17:27+00:00",
+                  "likes": 2,
+                  "dislikes": 0,
+                  "parent_comment_id": "p0vtbqq",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "ozolwlc",
+          "author": "reddit_user_79ffb636b092",
+          "author_karma": 0,
+          "content": "In *The Sixth Sense* there was something predominantly red in every scene where a ghost is present, it'd be cool if they did it in an action movie - like, only characters who get murdered wear earrings, and nobody else ",
+          "timestamp": "2026-07-25T13:58:35+00:00",
+          "likes": 11,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "ozomwgy",
+              "author": "reddit_user_10688fe030ff",
+              "author_karma": 0,
+              "content": "The Departed did something similar to this:\n\nhttps://www.reddit.com/r/MovieDetails/comments/6kgqan/in_the_departed_an_x_on_the_screen_forshaddows/",
+              "timestamp": "2026-07-25T14:03:40+00:00",
+              "likes": 2,
+              "dislikes": 0,
+              "parent_comment_id": "ozolwlc",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "ozomyti",
+              "author": "reddit_user_1b20224444bb",
+              "author_karma": 0,
+              "content": "So you’ve just never seen *The Departed*, huh",
+              "timestamp": "2026-07-25T14:04:00+00:00",
+              "likes": 5,
+              "dislikes": 0,
+              "parent_comment_id": "ozolwlc",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "ozpkxh9",
+              "author": "reddit_user_3a1c40fbcd99",
+              "author_karma": 0,
+              "content": "Bad guys cant use iPhones was something a director previously talked about. And of course the X’s in the departed. ",
+              "timestamp": "2026-07-25T16:51:17+00:00",
+              "likes": 4,
+              "dislikes": 0,
+              "parent_comment_id": "ozolwlc",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "ozu2vx1",
+                  "author": "reddit_user_afa02a782dd2",
+                  "author_karma": 0,
+                  "content": "I don't know if he's the only one to mention it, but Rian Johnson once pointed it out and said it was an unintentional clue to the killer's identity in *Knives Out*.",
+                  "timestamp": "2026-07-26T09:18:33+00:00",
+                  "likes": 2,
+                  "dislikes": 0,
+                  "parent_comment_id": "ozpkxh9",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "ozvsim5",
+                      "author": "reddit_user_72d9d62a3d55",
+                      "author_karma": 0,
+                      "content": "And in order to get around that in *Glass Onion*, >!they imply, but don't show ~~Elon~~ Miles tossing Benoit an iPad!<",
+                      "timestamp": "2026-07-26T15:34:32+00:00",
+                      "likes": 2,
+                      "dislikes": 0,
+                      "parent_comment_id": "ozu2vx1",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "ozzbc88",
+                          "author": "reddit_user_afa02a782dd2",
+                          "author_karma": 0,
+                          "content": "And of course, >!Miles himself doesn't use a phone at all.!<",
+                          "timestamp": "2026-07-27T02:03:30+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "ozvsim5",
+                          "depth": 4,
+                          "replies": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "comment_id": "ozr7gnl",
+              "author": "reddit_user_2ae0a6af2037",
+              "author_karma": 0,
+              "content": "Why?",
+              "timestamp": "2026-07-25T21:41:17+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "ozolwlc",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "ozon44z",
+          "author": "reddit_user_73288ace7cfd",
+          "author_karma": 0,
+          "content": "![gif](giphy|lOrQ4RM66Hyqky5st2)",
+          "timestamp": "2026-07-25T14:04:44+00:00",
+          "likes": 94,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "ozp0han",
+          "author": "reddit_user_f7c299102953",
+          "author_karma": 0,
+          "content": "Yeah, no",
+          "timestamp": "2026-07-25T15:11:49+00:00",
+          "likes": -1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p127k1q",
+              "author": "reddit_user_9b099f22c607",
+              "author_karma": 0,
+              "content": "Big reach",
+              "timestamp": "2026-08-01T12:45:47+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "ozp0han",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "ozvjpx2",
+          "author": "reddit_user_0da1653b4809",
+          "author_karma": 0,
+          "content": "Oh wow drop dead being in a movie that I like is a when worlds collide moment for me. ",
+          "timestamp": "2026-07-26T14:53:11+00:00",
+          "likes": 8,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0x3jf2",
+              "author": "reddit_user_2cce11eac9ee",
+              "author_karma": 0,
+              "content": "As both a Drop Dead stan (Oli's brand) of which I own a lot of stuff, and a Brazilian, this Drop Dead here is a Brazilian skateboard brand that exists since 1991, which actually makes the movie wrong as fuck as it happens in the 70s. [https://dropdead.com.br](https://dropdead.com.br)\n\nFun fact, Oli tried to establish a leg of Drop Dead in Brazil but had to cease operations because it clashed with the existing brand, it then became Lobo Bobo.\n\n",
+              "timestamp": "2026-07-31T17:54:17+00:00",
+              "likes": 4,
+              "dislikes": 0,
+              "parent_comment_id": "ozvjpx2",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p0xwqsi",
+                  "author": "reddit_user_0da1653b4809",
+                  "author_karma": 0,
+                  "content": "Wow. This is a Today I Learned moment. Very cool but also embarrassing to not already know that lol. Thanks for the trivia, Stranger!",
+                  "timestamp": "2026-07-31T20:03:32+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p0x3jf2",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p0y1urd",
+                      "author": "reddit_user_2cce11eac9ee",
+                      "author_karma": 0,
+                      "content": "don't be hard on yourself, no way you would know it if you weren't Brazilian and into Drop Dead haha",
+                      "timestamp": "2026-07-31T20:26:40+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p0xwqsi",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "post_id": "real_run008_post01_seed041",
+      "post_slot": 1,
+      "seed_index": 41,
+      "source_raw_post_id": "1v69l51",
+      "source_product_dir": "MovieDetails",
+      "source_file": "https://www.reddit.com/r/MovieDetails/comments/1v69l51/in_mickeys_twice_upon_a_christmas_2004_there_is_a/",
+      "post_type": "🥚 Easter Egg",
+      "title": "IN MICKEYS TWICE UPON A CHRISTMAS 2004 THERE IS A DETAIL IN THE INTRO THAT SHOWED A LIVING ROOM AND A CHRISTMAS TREE..... IS THE STORY SETTING OUTSIDE OF THE BOOK MICKEYS HOUSE OR NOT JUST LIKE THE 1998 MICKEYS ONCE UPON A CHRISTMAS MOVIE?",
+      "author": "reddit_user_f403d059ef4c",
+      "author_karma": 0,
+      "content": "IN MICKEYS TWICE UPON A CHRISTMAS 2004 THERE IS A DETAIL IN THE INTRO THAT SHOWED A LIVING ROOM AND A CHRISTMAS TREE..... IS THE STORY SETTING OUTSIDE OF THE BOOK MICKEYS HOUSE OR NOT JUST LIKE THE 1998 MICKEYS ONCE UPON A CHRISTMAS MOVIE?\n\n[removed]",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "ozopfiu",
+          "author": "reddit_user_6c9ec28e8a64",
+          "author_karma": 0,
+          "content": "The above submission by [REDDIT_USER] was removed because user has less than minimum karma or is too new.\n\n*I am a bot, and this action was performed automatically. Please [contact the moderators of this subreddit](/message/compose/?to=/r/MovieDetails) if you have any questions or concerns.*",
+          "timestamp": "2026-07-25T14:16:26+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run008_post02_seed042",
+      "post_slot": 2,
+      "seed_index": 42,
+      "source_raw_post_id": "1v6khxh",
+      "source_product_dir": "MovieDetails",
+      "source_file": "https://www.reddit.com/r/MovieDetails/comments/1v6khxh/in_disclosure_day_emily_blunts_face_is_so_full_of/",
+      "post_type": "❓ Trivia",
+      "title": "In Disclosure Day, Emily Blunt's face is so full of botox, you can see she's desparately trying to make her eyebrows work",
+      "author": "reddit_user_f403d059ef4c",
+      "author_karma": 0,
+      "content": "In Disclosure Day, Emily Blunt's face is so full of botox, you can see she's desparately trying to make her eyebrows work\n\n[removed]",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "ozr4y5c",
+          "author": "reddit_user_6c9ec28e8a64",
+          "author_karma": 0,
+          "content": "\nHi [Zu_Qarnine]([REDDIT_USER]), thanks for your submission to /r/MovieDetails. Unfortunately, it's been removed for the following reason(s):\n\n* **Rule 4** - All titles must be include the movie release year.\n\n---\n\n*I am a bot, and this action was performed automatically. Please [contact the moderators of this subreddit](/message/compose/?to=/r/MovieDetails) if you have any questions or concerns.*",
+          "timestamp": "2026-07-25T21:28:05+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run008_post03_seed043",
+      "post_slot": 3,
+      "seed_index": 43,
+      "source_raw_post_id": "1v79e8j",
+      "source_product_dir": "MovieDetails",
+      "source_file": "https://www.reddit.com/r/MovieDetails/comments/1v79e8j/7_minutes_and_20_seconds_into_toy_story_1995/",
+      "post_type": "🥚 Easter Egg",
+      "title": "7 minutes and 20 seconds into toy story (1995), theres a book behind woody called \"reds dream\"",
+      "author": "reddit_user_f403d059ef4c",
+      "author_karma": 0,
+      "content": "7 minutes and 20 seconds into toy story (1995), theres a book behind woody called \"reds dream\"\n\nReds dream is also the name of a (very very incredibly creepy) short on disney about a unicycle in a pawn shop that wants to be owned and used by a clown. Also an inanimate object with thoughts and feelings, just like all the characters in toy story, lol",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "ozwiysp",
+          "author": "reddit_user_3a7ff45bf877",
+          "author_karma": 0,
+          "content": "There are references to a bunch of Pixar’s early shorts in Andy’s room.  IIRC the main character from *Tin Toy* (which very much seems like the inspiration for *Toy Story)* is also in the background at one point.",
+          "timestamp": "2026-07-26T17:35:29+00:00",
+          "likes": 79,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "ozxoq8w",
+              "author": "reddit_user_8e9534ebdc57",
+              "author_karma": 0,
+              "content": "And most of those shorts are playing on the TV in *Toy Story 2* when Rex and Hamm are flipping through the channels.",
+              "timestamp": "2026-07-26T20:46:37+00:00",
+              "likes": 24,
+              "dislikes": 0,
+              "parent_comment_id": "ozwiysp",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p01y0mg",
+              "author": "reddit_user_a380cdc7dddd",
+              "author_karma": 0,
+              "content": "I think he showed up in 4 as well right ",
+              "timestamp": "2026-07-27T13:08:00+00:00",
+              "likes": 5,
+              "dislikes": 0,
+              "parent_comment_id": "ozwiysp",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p0qxtmg",
+              "author": "reddit_user_4b9fddb7eb67",
+              "author_karma": 0,
+              "content": "My kid flipped on Tin Toy on Disney+ the other day and it legitimately freaked me out when the baby came out ",
+              "timestamp": "2026-07-30T21:00:31+00:00",
+              "likes": 3,
+              "dislikes": 0,
+              "parent_comment_id": "ozwiysp",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p0uwxy0",
+                  "author": "reddit_user_3a7ff45bf877",
+                  "author_karma": 0,
+                  "content": "Yeah… you can see why they chose to focus on the toys rather than the people for their first feature film.  The rendering tech has come a LONG way.",
+                  "timestamp": "2026-07-31T11:58:17+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p0qxtmg",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "ozwjogz",
+          "author": "reddit_user_7a8c3aa1f863",
+          "author_karma": 0,
+          "content": "The actual Easter egg is that “Red’s Dream” is Pixar’s third short film ever from 1987 and John Lasseter’s second after Luxo Jr (1986). It was also referenced in Monsters Inc, Up, Wall-E, and Toy Story 4.  ",
+          "timestamp": "2026-07-26T17:38:40+00:00",
+          "likes": 47,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "ozx02on",
+              "author": "reddit_user_0e97ed79a02b",
+              "author_karma": 0,
+              "content": "Idk who that is but thats awesome!",
+              "timestamp": "2026-07-26T18:52:28+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "ozwjogz",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "ozxbhxt",
+                  "author": "reddit_user_caff07683d13",
+                  "author_karma": 0,
+                  "content": "John Lasseter was one of the founders of Pixar and was the director of Toy Story.",
+                  "timestamp": "2026-07-26T19:45:11+00:00",
+                  "likes": 20,
+                  "dislikes": 0,
+                  "parent_comment_id": "ozx02on",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "ozwvywt",
+          "author": "reddit_user_c23b745550e9",
+          "author_karma": 0,
+          "content": "https://preview.redd.it/u5cxi9hfbmfh1.jpeg?width=1080&format=pjpg&auto=webp&s=393e65c23b3a84b2b18a5d83bb4824da5bce8ea4\n\n  \nAlmost all of the books are names of Pixar shorts",
+          "timestamp": "2026-07-26T18:33:42+00:00",
+          "likes": 209,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "ozynvyv",
+              "author": "reddit_user_5e73d49c4f00",
+              "author_karma": 0,
+              "content": "John Lassetter (derogatory) is also the director of Toy Story and the short, Tin Toy, where is he credited as the author. ",
+              "timestamp": "2026-07-26T23:48:49+00:00",
+              "likes": 24,
+              "dislikes": 0,
+              "parent_comment_id": "ozwvywt",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "ozxzcal",
+          "author": "reddit_user_78c7904541b4",
+          "author_karma": 0,
+          "content": "Is it creepy or is it just horny? Adults been making horny art forever, Dr Seuss had work in Playboy lol",
+          "timestamp": "2026-07-26T21:37:25+00:00",
+          "likes": -14,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "ozylzcf",
+              "author": "reddit_user_2fee04aef8b9",
+              "author_karma": 0,
+              "content": "Not that kind of creepy, man. Creepy as in, the clown looks like this.\n\nhttps://preview.redd.it/velcy58ttnfh1.jpeg?width=1280&format=pjpg&auto=webp&s=8223913c60a2beacbcbf383307d6a4b5d9f73149",
+              "timestamp": "2026-07-26T23:38:06+00:00",
+              "likes": 6,
+              "dislikes": 0,
+              "parent_comment_id": "ozxzcal",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "ozyustu",
+                  "author": "reddit_user_0e97ed79a02b",
+                  "author_karma": 0,
+                  "content": "Yes exactly",
+                  "timestamp": "2026-07-27T00:28:03+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "ozylzcf",
+                  "depth": 2,
+                  "replies": []
+                },
+                {
+                  "comment_id": "p01sjvb",
+                  "author": "reddit_user_5bf53df2e625",
+                  "author_karma": 0,
+                  "content": "Oh hey isn't there a ball in Toy Story with that star on it, same colors? ",
+                  "timestamp": "2026-07-27T12:39:23+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "ozylzcf",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p0rb0lg",
+                      "author": "reddit_user_d0251814891d",
+                      "author_karma": 0,
+                      "content": "Not just Toy Story. That yellow ball with the red star is a recurring piece of imagery in tons of Pixar movies. It’s about as close as they get to a mascot, honestly.",
+                      "timestamp": "2026-07-30T22:01:47+00:00",
+                      "likes": 3,
+                      "dislikes": 0,
+                      "parent_comment_id": "p01sjvb",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "ozybbn2",
+          "author": "reddit_user_d2cd19fbe38e",
+          "author_karma": 0,
+          "content": "Red’s Dream was a 1987 4-minute PIXAR demonstration short written and directed by John Lasseter. It was shown at a computer graphics conference. It’s available in a PIXAR video collection. ",
+          "timestamp": "2026-07-26T22:39:33+00:00",
+          "likes": 7,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p039jks",
+          "author": "reddit_user_39b60ef658d7",
+          "author_karma": 0,
+          "content": "I thought Red's dream was Zihuatanejo with Andy?",
+          "timestamp": "2026-07-27T16:39:37+00:00",
+          "likes": 6,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p04o6yh",
+              "author": "reddit_user_0e97ed79a02b",
+              "author_karma": 0,
+              "content": "What???",
+              "timestamp": "2026-07-27T20:11:16+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p039jks",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p04qzho",
+                  "author": "reddit_user_39b60ef658d7",
+                  "author_karma": 0,
+                  "content": "![gif](giphy|4GAUIfDrn0HFm)",
+                  "timestamp": "2026-07-27T20:23:14+00:00",
+                  "likes": 5,
+                  "dislikes": 0,
+                  "parent_comment_id": "p04o6yh",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            },
+            {
+              "comment_id": "p0qez1m",
+              "author": "reddit_user_9ed6b053df30",
+              "author_karma": 0,
+              "content": "Well done. Well done. ",
+              "timestamp": "2026-07-30T19:39:12+00:00",
+              "likes": 3,
+              "dislikes": 0,
+              "parent_comment_id": "p039jks",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p0s2uga",
+              "author": "reddit_user_807cf5e2e78a",
+              "author_karma": 0,
+              "content": "Damn that was good. ",
+              "timestamp": "2026-07-31T00:26:21+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p039jks",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p0vodkb",
+          "author": "reddit_user_e12b30e7d926",
+          "author_karma": 0,
+          "content": ".",
+          "timestamp": "2026-07-31T14:14:04+00:00",
+          "likes": 0,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run008_post04_seed044",
+      "post_slot": 4,
+      "seed_index": 44,
+      "source_raw_post_id": "1v7p60s",
+      "source_product_dir": "MovieDetails",
+      "source_file": "https://www.reddit.com/r/MovieDetails/comments/1v7p60s/the_screwball_comedy_ruthless_people_1986_and_the/",
+      "post_type": "❓ Trivia",
+      "title": "The screwball comedy Ruthless People (1986) and the psychological thriller White Of The Eye (1987) share a number of coincidental similarities, while having no known overlap in production (details in text)",
+      "author": "reddit_user_f403d059ef4c",
+      "author_karma": 0,
+      "content": "The screwball comedy Ruthless People (1986) and the psychological thriller White Of The Eye (1987) share a number of coincidental similarities, while having no known overlap in production (details in text)\n\n[removed]",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "ozzrsp6",
+          "author": "reddit_user_6c9ec28e8a64",
+          "author_karma": 0,
+          "content": "\nHi [AlexReynard]([REDDIT_USER]), thanks for your submission to /r/MovieDetails. Unfortunately, it's been removed for the following reason(s):\n\n * **Rule 8** - No memes, meta posts or questions (try r/moviequestions for general questions or r/tipofmytongue if you're looking for a specific movie).\n\n*I am a bot, and this action was performed automatically. Please [contact the moderators of this subreddit](/message/compose/?to=/r/MovieDetails) if you have any questions or concerns.*",
+          "timestamp": "2026-07-27T03:42:51+00:00",
+          "likes": 0,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "ozzs128",
+              "author": "reddit_user_ac7c587d3240",
+              "author_karma": 0,
+              "content": "This is a lie. This post is not a meme, meta post, or a question. You are bad at your job and you should be ashamed of yourself.",
+              "timestamp": "2026-07-27T03:44:24+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "ozzrsp6",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

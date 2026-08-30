@@ -1,0 +1,3657 @@
+{
+  "meta": {
+    "product_category": "news",
+    "baseline": "real_reddit_reference",
+    "run_id": "run_023_sampled_reddit"
+  },
+  "posts": [
+    {
+      "post_id": "real_run023_post00_seed115",
+      "post_slot": 0,
+      "seed_index": 115,
+      "source_raw_post_id": "1vej5ju",
+      "source_product_dir": "news",
+      "source_file": "https://www.reddit.com/r/news/comments/1vej5ju/two_deaths_linked_to_cyclosporiasis_in_michigan/",
+      "post_type": "link",
+      "title": "Two Deaths Linked to Cyclosporiasis in Michigan",
+      "author": "reddit_user_bde1e90b951b",
+      "author_karma": 0,
+      "content": "Two Deaths Linked to Cyclosporiasis in Michigan",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p1k1sgm",
+          "author": "reddit_user_a2bef582ccf3",
+          "author_karma": 0,
+          "content": "Was it from Taylor farms lettuce ? ",
+          "timestamp": "2026-08-04T00:30:07+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1hhm2k",
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1k2953",
+              "author": "reddit_user_946f09dfa38a",
+              "author_karma": 0,
+              "content": "I don't believe so. I'm not the salad type.",
+              "timestamp": "2026-08-04T00:32:38+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1k1sgm",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1k2dn5",
+                  "author": "reddit_user_a2bef582ccf3",
+                  "author_karma": 0,
+                  "content": "I wonder from what . ",
+                  "timestamp": "2026-08-04T00:33:18+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1k2953",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1k48e4",
+                      "author": "reddit_user_946f09dfa38a",
+                      "author_karma": 0,
+                      "content": "We'll never know because the Trump administration gutted the agencies that investigate these things",
+                      "timestamp": "2026-08-04T00:43:26+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1k2dn5",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p1k1y36",
+          "author": "reddit_user_ced54725b7ae",
+          "author_karma": 0,
+          "content": "Oh, I hate cilantro. It would be splendid if cilantro were the culprit\n\nSoapy ass shit.",
+          "timestamp": "2026-08-04T00:30:57+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1hlzny",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1k21j3",
+          "author": "reddit_user_196114592f96",
+          "author_karma": 0,
+          "content": "Hmmmm, there may be something to this because I notice these attacks predominantly in the autumn and early spring— so right at the beginning of a drop in seasonal vitamin d and then later on at peak deprivation… I’m going to buy a bottle. Thanks for the recommendation, it definitely doesn’t hurt to try!  ",
+          "timestamp": "2026-08-04T00:31:28+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1jzykg",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1k24sh",
+          "author": "reddit_user_617922719d42",
+          "author_karma": 0,
+          "content": "I understand your sentiment, but as someone who worked for this company, I will never have anything good to say about them, unless they return stolen wages to folks wronged by them.",
+          "timestamp": "2026-08-04T00:31:58+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1k17op",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1k2akl",
+          "author": "reddit_user_ced54725b7ae",
+          "author_karma": 0,
+          "content": "Just stop testing for it and it will go away. /s",
+          "timestamp": "2026-08-04T00:32:50+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1hlv16",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1k39bh",
+          "author": "reddit_user_efb593bd95f5",
+          "author_karma": 0,
+          "content": "Just for perspective, people. Reminder that this is not a fatal illness. These people already will have had one foot in the grave and would just as likely have died from a common cold, staph food poisoning, or an under-chewed sandwich.",
+          "timestamp": "2026-08-04T00:38:11+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1l4v5r",
+              "author": "reddit_user_92c7de630cad",
+              "author_karma": 0,
+              "content": "Sounding just like the covid deniers. Always justify people getting insanely ill, dying, or something else. As long as the killer that is responsible for loose health restrictions has the big R next to their name their deeds are just and we can close our eyes.",
+              "timestamp": "2026-08-04T04:18:01+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1k39bh",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1k3n7z",
+          "author": "reddit_user_e492a20e6f0f",
+          "author_karma": 0,
+          "content": "There's nothing enraging about this?",
+          "timestamp": "2026-08-04T00:40:17+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1jtxaz",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1k3rhx",
+          "author": "reddit_user_0a78eb7ed83a",
+          "author_karma": 0,
+          "content": "Oh been there! First weekend away with my now husband I got a horrible migraine attack and was lying on the hotel bathroom floor between vomiting spells. Poor guy desperately wanted to help but there’s nothing you can do. ",
+          "timestamp": "2026-08-04T00:40:55+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1hyyjv",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1k4wgh",
+          "author": "reddit_user_a52b374762b6",
+          "author_karma": 0,
+          "content": "I know that most people will probably not want to go through the hassle of doing this, but lettuce is really easy to grow and it can be done in smaller containers. So even in urban/apartment environments, if you have a patio or balcony you can definitely grow lettuce.\n\nI'm currently growing spinach and arugula in separate containers.",
+          "timestamp": "2026-08-04T00:47:07+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1hho7r",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1k4wun",
+          "author": "reddit_user_20d3698ba259",
+          "author_karma": 0,
+          "content": "It's always \"fear mongering\", we've learned absolutely nothing from COVID it seems.",
+          "timestamp": "2026-08-04T00:47:10+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1j6y9a",
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1k5alr",
+              "author": "reddit_user_d8a75aa2e5b2",
+              "author_karma": 0,
+              "content": "then you don't know what fear mongering means",
+              "timestamp": "2026-08-04T00:49:15+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1k4wun",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p1k5bgz",
+              "author": "reddit_user_d8a75aa2e5b2",
+              "author_karma": 0,
+              "content": "then you don't know what fear mongering means",
+              "timestamp": "2026-08-04T00:49:23+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1k4wun",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1k69f5",
+                  "author": "reddit_user_20d3698ba259",
+                  "author_karma": 0,
+                  "content": "I think you need to re-read what I wrote, I wasn't saying you were fear mongering.",
+                  "timestamp": "2026-08-04T00:54:28+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1k5bgz",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1k6f3i",
+                      "author": "reddit_user_d8a75aa2e5b2",
+                      "author_karma": 0,
+                      "content": "Understood. Didn't read the quotation marks.",
+                      "timestamp": "2026-08-04T00:55:21+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1k69f5",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "comment_id": "p1k7qdv",
+              "author": "reddit_user_12f6913c7cd6",
+              "author_karma": 0,
+              "content": "The hospitals are really filling up with this huh? Even though it's by nature not contagious and only a supply chain issue, and even though something like norovirus kills 2-3 Americans every single day?\n\nIt's a political and systemic issue brought about by shit government process yes, but using loaded language like \"This is the largest outbreak in US history\" is why people are out here not eating lettuce even though the risk of the average person getting sick after eating it at a restaurant is not significantly higher on an individual basis than it's ever been.",
+              "timestamp": "2026-08-04T01:02:34+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1k4wun",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1k50no",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-04T00:47:45+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1hnnm0",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1k59vz",
+          "author": "reddit_user_28377d533889",
+          "author_karma": 0,
+          "content": "At a Costco in the Twin Cities metro of MN, not one package of TF was touched.  Our local greenhouse lettuce, Revol, on the other hand, received business.",
+          "timestamp": "2026-08-04T00:49:09+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1hmr19",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1k5rfx",
+          "author": "reddit_user_28377d533889",
+          "author_karma": 0,
+          "content": "If you can get it near you, Revol Greens or Gotham Greens are local (ish) and greenhouse grown.  ",
+          "timestamp": "2026-08-04T00:51:46+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1hflq6",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1k5u5o",
+          "author": "reddit_user_0a78eb7ed83a",
+          "author_karma": 0,
+          "content": "When is a good time to plant lettuce? Im in zone 7b and have a new garden but I know it’s too hot now. ",
+          "timestamp": "2026-08-04T00:52:11+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1iegf3",
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1k8byg",
+              "author": "reddit_user_fb1e69efa80e",
+              "author_karma": 0,
+              "content": "Honestly your zone doesn't matter too much, lettuce grows fast provided it gets water and stays nice and cool.  \n\nOn our farm in Ohio we plant lettuce from March-June, and then start again in late August, but August is always a crapshoot.  September is better! ",
+              "timestamp": "2026-08-04T01:05:52+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1k5u5o",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1kr9vb",
+                  "author": "reddit_user_c3ab3972c838",
+                  "author_karma": 0,
+                  "content": "lettuce ... crapshoot\n\nphrasing?",
+                  "timestamp": "2026-08-04T02:51:44+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1k8byg",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1ktqeg",
+                      "author": "[deleted]",
+                      "author_karma": 0,
+                      "content": "[removed]",
+                      "timestamp": "2026-08-04T03:06:33+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1kr9vb",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p1k5z8n",
+          "author": "reddit_user_28377d533889",
+          "author_karma": 0,
+          "content": "If you can get it near you, Revol Greens or Gotham Greens are local (ish) and greenhouse grown.",
+          "timestamp": "2026-08-04T00:52:57+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1hii1v",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1k6iml",
+          "author": "reddit_user_4d85bad78cd2",
+          "author_karma": 0,
+          "content": "I'm surprised the public hasn't over reacted and stopped buying lettuce and all other kinds of leafy greens entirely.",
+          "timestamp": "2026-08-04T00:55:53+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1hf75g",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1k6iu2",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-04T00:55:54+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1hcblr",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1k6vyu",
+          "author": "reddit_user_2b5b9365fd0f",
+          "author_karma": 0,
+          "content": "Americans are so full of shit that they're literally dying of it.",
+          "timestamp": "2026-08-04T00:57:54+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1k704x",
+          "author": "reddit_user_3db37cf5372b",
+          "author_karma": 0,
+          "content": "Probably due to how the produce was distributed/processed. Hard to know for sure though since the investigative arm of the government has been destroyed ",
+          "timestamp": "2026-08-04T00:58:32+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1hswll",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1k747i",
+          "author": "reddit_user_f256a46e8054",
+          "author_karma": 0,
+          "content": "Especially when this isn't their first rodeo with corrupted lettuce...",
+          "timestamp": "2026-08-04T00:59:10+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1hf75g",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1k76sj",
+          "author": "reddit_user_f256a46e8054",
+          "author_karma": 0,
+          "content": "Knock on wood, but I'm glad we don't have to fret too much about this in Canada.",
+          "timestamp": "2026-08-04T00:59:33+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1k8ikb",
+          "author": "reddit_user_ebf5bfe44950",
+          "author_karma": 0,
+          "content": "Taylor farms is huge - their temporary worker budget is something around 100 million ",
+          "timestamp": "2026-08-04T01:06:52+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1hf75g",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1k8ki2",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-04T01:07:10+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1k8qm6",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-04T01:08:07+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1k8zyx",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-04T01:09:30+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1k90ca",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-04T01:09:33+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1hcvg4",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1k9k4r",
+          "author": "reddit_user_ec732e172d73",
+          "author_karma": 0,
+          "content": "So this is all a result of not providing port-a-potties to agriculture workers?  \nThey work for low wages.   \nThey work in hot weather   \nThey don’t get vacation or sick leave  \nAnd Big Ag can’t provide toilet facilities. ",
+          "timestamp": "2026-08-04T01:12:36+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1kkb9d",
+              "author": "reddit_user_390923f85c47",
+              "author_karma": 0,
+              "content": "YAY! Unregulated capitalism is such a brilliant idea, right? RIGHT?!",
+              "timestamp": "2026-08-04T02:12:11+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1k9k4r",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1kakp0",
+          "author": "reddit_user_5e8d32dad05f",
+          "author_karma": 0,
+          "content": "They also *have* to test to be able to report it right? I know people who got prescribed Bactrim based on symptoms, trust and risk factor. I doubt any of those are reported.",
+          "timestamp": "2026-08-04T01:18:11+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1i9xwn",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1kb629",
+          "author": "reddit_user_61696e71d530",
+          "author_karma": 0,
+          "content": "Well shit. I appreciate the first hand account. Guess I'm scheduling an appointment.",
+          "timestamp": "2026-08-04T01:21:28+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1hza4q",
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1kft94",
+              "author": "reddit_user_946f09dfa38a",
+              "author_karma": 0,
+              "content": ">Well shit.\n\nToo soon bro. Too soon.",
+              "timestamp": "2026-08-04T01:47:07+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1kb629",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1kb69c",
+          "author": "reddit_user_331f19f99454",
+          "author_karma": 0,
+          "content": "They also think the entirety of the pandemic happened under Biden's administration.\n\nIgnoring the fact that the worst of it happened under Trump's mismanagement.",
+          "timestamp": "2026-08-04T01:21:30+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1iin7y",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1kbebz",
+          "author": "reddit_user_63fddb17d002",
+          "author_karma": 0,
+          "content": "Stupid question, but why electrolyte drinks over regular water? ",
+          "timestamp": "2026-08-04T01:22:44+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1holeq",
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1kdujy",
+              "author": "reddit_user_196114592f96",
+              "author_karma": 0,
+              "content": "You become extremely dehydrated from repeatedly vomiting and it raises your core temperature so you tend to excessively sweat as well. Your body needs the electrolytes in addition to fluids to help fight dehydration. ",
+              "timestamp": "2026-08-04T01:36:18+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1kbebz",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p1ki1lu",
+              "author": "reddit_user_946f09dfa38a",
+              "author_karma": 0,
+              "content": "To add to what Citrus said, it's about Osmosis.\n\nWhen you put pure water in your body, it tends to flush electrolytes. \n\nWhen you put electrolytes in your body, osmosis causes your body to attract water.\n\nIf your body is losing electrolytes faster than it's gaining them, then you will eventually die of dehydration, no matter how much water you drink.",
+              "timestamp": "2026-08-04T01:59:30+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1kbebz",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1kc4n8",
+          "author": "reddit_user_50e979e03864",
+          "author_karma": 0,
+          "content": "You gotta be shitting me!",
+          "timestamp": "2026-08-04T01:26:45+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1kcbta",
+          "author": "reddit_user_bc7d6fe231ab",
+          "author_karma": 0,
+          "content": "It was horrific. I’d say I had two days of bad diarrhea (a loose BM every two to three hours) before it really set in. \n\nI had non-stop pure water running out of me almost constantly. I could sit on a toilet for 2 hours and not stop and would puke 2-3 times a day for good measure. Eventually, I got diapers so I could at least be free from the bathroom for a little bit. After four days of this madness and being told by my doctor to just let the stomach bug pass, I called literally sobbing because I was so weak I could barely move and they decided to test me for it. Obviously it was positive. \n\nThe first dose of antibiotics made me feel semi human again and I was completely back on my feet in 36 hours. It still took about two weeks for my appetite to return and I dropped 15lbs. ",
+          "timestamp": "2026-08-04T01:27:52+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1hwg2c",
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1l222w",
+              "author": "reddit_user_61696e71d530",
+              "author_karma": 0,
+              "content": "Good Lord. I'm sorry you went through that. I'm super hopeful that I just have good poisoning... Which is a terrifying thought. I pray you have a speedy recovery, including with the weight loss.",
+              "timestamp": "2026-08-04T03:59:17+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1kcbta",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1kcdlu",
+          "author": "reddit_user_c7a2f38ff0ca",
+          "author_karma": 0,
+          "content": "Sloth would never!",
+          "timestamp": "2026-08-04T01:28:09+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1hgxo4",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1ke5y5",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-04T01:38:06+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1kfcud",
+          "author": "reddit_user_aed9e3769914",
+          "author_karma": 0,
+          "content": "Thanks for this. I used to buy Taylor Farms stuff all the time at the grocery store but after seeing your post, I don't plan on buying their products ever again. ",
+          "timestamp": "2026-08-04T01:44:36+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1hh1lp",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1kfd3s",
+          "author": "reddit_user_683cb158a3c1",
+          "author_karma": 0,
+          "content": "That's insane! Hope you're doing much better. So are the symptoms just non-stop diarrhea? Do you know how you got it?",
+          "timestamp": "2026-08-04T01:44:39+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1hhm2k",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1kfeh7",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-04T01:44:51+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1hlfao",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1kfnsb",
+          "author": "reddit_user_70023dcf9db6",
+          "author_karma": 0,
+          "content": "i was thinking like pedialyte ",
+          "timestamp": "2026-08-04T01:46:16+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1jqd07",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1kfu4k",
+          "author": "reddit_user_39c04427846f",
+          "author_karma": 0,
+          "content": "Hey sorry, I hope you're alright, but as someone who has a compromised immune system and have gotten Covid quite a bit, please take my advice. Try to move around a little bit when you can. When it sticks in my lungs that's the only thing that seems to help me improve and recover quicker. Be careful, get better. ",
+          "timestamp": "2026-08-04T01:47:15+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1htgrx",
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1kj8aj",
+              "author": "reddit_user_97c68ae6653d",
+              "author_karma": 0,
+              "content": "Yeah I noticed that right away. After the fever and all was done and I started to feel better it’s just sticking around in my lungs. Laying down all day made me feel awful.",
+              "timestamp": "2026-08-04T02:06:09+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1kfu4k",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1kgb72",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-04T01:49:54+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1hf75g",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1kgbd7",
+          "author": "reddit_user_04487f101759",
+          "author_karma": 0,
+          "content": "Decaying meat sludge caking the walls.",
+          "timestamp": "2026-08-04T01:49:55+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1j8e4v",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1kgq2x",
+          "author": "reddit_user_aed9e3769914",
+          "author_karma": 0,
+          "content": "I feel fortunate to be able to shop at my local farmers market but it's *much* more expensive than shopping at the big chain grocery store, so unfortunately it's not an option for a lot of people who are struggling financially.",
+          "timestamp": "2026-08-04T01:52:10+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1hm02g",
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1kpksh",
+              "author": "reddit_user_fb1e69efa80e",
+              "author_karma": 0,
+              "content": "It is more expensive...but that's because us local farmers need to make enough to survive.  We have to eat a lot of costs that the huge factory farms don't really have to worry about.  We have extremely thin margins, and for most of us, we barely make enough to earn a living.\n\nWe're all aware that people can't afford to shop with us all the time, and we really do try our best to make our stuff available to everyone...but it's just always going to be more expensive.  I have customers who can only spend $5 a week with me, and that's just fine.  Their support means a lot to me. \n\nTons, if not mostmarkets have ways to use foodstamps, too.  We're happy to accept them!  It's still less food for the money, but it does support local businesses.  We used to have produce perks, where foodstamps were doubled in value in order to not only support local growers, but also get fresh, healthy food to the people who need it most.  Fucking Elon did away with that.\n\n",
+              "timestamp": "2026-08-04T02:41:50+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1kgq2x",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1khih4",
+          "author": "reddit_user_1c8edc713b5b",
+          "author_karma": 0,
+          "content": "And there it is. People shitting themselves to death like it's a South Park episode.",
+          "timestamp": "2026-08-04T01:56:34+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1ki7bi",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-04T02:00:23+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1hcblr",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1kiyj8",
+          "author": "reddit_user_65b3e2800197",
+          "author_karma": 0,
+          "content": "After 1918 flu so many people eventually got long term health complications it became part of the ascendency of fascism to blame them for economic issues. Similar happening now. ",
+          "timestamp": "2026-08-04T02:04:39+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1hqei8",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1kj6r7",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-04T02:05:55+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1jquac",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1kjjl5",
+          "author": "reddit_user_65b3e2800197",
+          "author_karma": 0,
+          "content": "Im. absolutely fucking APPALLED this is still happenning",
+          "timestamp": "2026-08-04T02:07:54+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1hlfao",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1kk9sh",
+          "author": "reddit_user_1b8db1988d4c",
+          "author_karma": 0,
+          "content": "Sorry to hear all of these totally preventable tragic stories.   Rest of this sub is….Hey let’s make excuses for shitty politicians not supporting scientists who would get ahead of this. ",
+          "timestamp": "2026-08-04T02:11:58+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1hcblr",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1kkh8d",
+          "author": "reddit_user_8b74a621f05f",
+          "author_karma": 0,
+          "content": "This reminds me of wwii story of dry papaya leaves. I can't believe human evolved to be this weak",
+          "timestamp": "2026-08-04T02:13:06+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1koagr",
+              "author": "reddit_user_838a6de304c3",
+              "author_karma": 0,
+              "content": "OR, and hear me out on this, there are several parasites and bacteria that can cause you to literally shit yourself to death. They've been documented for fucking CENTURIES, so it's not a recent thing. And the only things protecting us are A) relative scarcity, which we've conveniently sidestepped with mass production and supply chains, ans B) food safety guidelines, which are clearly becoming less and less standard as companies scramble to cut more corners.\n\nBut yeah, let's just do it your way and assume everyone who died was a pussy. ",
+              "timestamp": "2026-08-04T02:34:33+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1kkh8d",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1kkng8",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[deleted]",
+          "timestamp": "2026-08-04T02:14:04+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1hokt8",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1kkq6h",
+          "author": "reddit_user_caea0b20bc79",
+          "author_karma": 0,
+          "content": "Publix just issued a recall for E coli in frozen berries",
+          "timestamp": "2026-08-04T02:14:30+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1jbzwc",
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1kleoq",
+              "author": "reddit_user_a8b9311eebcb",
+              "author_karma": 0,
+              "content": "Frozen berries have never been implicated in a cyclosporiasis outbreak. Sorry, I thought that was obvious from context. E. Coli is everywhere, every year. ",
+              "timestamp": "2026-08-04T02:18:18+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1kkq6h",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1kl2k7",
+          "author": "reddit_user_cdf74b3cee50",
+          "author_karma": 0,
+          "content": "I work in a funeral home, and I’ve been working there since before the pandemic. The amount of people who died from covid was truly overwhelming. We were overwhelmed where I am, of course, and I had coworkers who left in the thick of it to travel to states all the way across the country, which were experiencing the crisis more acutely than we were, in order to help with the sheer amount of decedents other funeral homes were inundated with. It was unbelievable. It makes me so fucking angry when people deny it.",
+          "timestamp": "2026-08-04T02:16:25+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1hqei8",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1km1mm",
+          "author": "reddit_user_5d560644bd83",
+          "author_karma": 0,
+          "content": "**In my entire life, I’ve never gotten sick from grocery store produce in the U.S. until this summer.**  \nI didn’t even eat lettuce to get the parasite. So who the hell knows what the sources are. I was having lot of raw veggies & fruits until I heard about the parasite on July 13. Switched to cooked food only. Got very, very sick about 2 weeks later. Like someone else said, it’s not just pooping your brains out (10x a day). I couldn’t work (and I WFH) because I was so nauseas, had migraines, a low grade fever, chills. I was diagnosed on Day 3, started bactrim immediately, and wasn’t back to normal until about a week and half later. Unpleasant is a massive understatement, and I’m otherwise “healthy.” Completely ruined July. Still ruining summer because I’m afraid to eat any fresh food now. ",
+          "timestamp": "2026-08-04T02:21:53+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1kmz06",
+          "author": "reddit_user_01d452134b78",
+          "author_karma": 0,
+          "content": "I've been toughing it out personally. On day 10 now. Missed a day of work. Some days I vomit and its mostly stomach issues, other days I can shit through a N-95 mask without turning it brown. And then randomly feel great for a day. I have great insurance and all I just cant be fucked with doctors unless I'm about to die.",
+          "timestamp": "2026-08-04T02:27:03+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1i9xwn",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1kod54",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-04T02:34:57+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1kpv15",
+          "author": "reddit_user_4ea4fb3938f0",
+          "author_karma": 0,
+          "content": "I had a severe vomiting stretch and I started throwing up blood.  Actually ended up calling for an ambulance (next time I’ll call a Lyft, that was so expensive) and spent a few days in the hospital.  \n\nThis parasite sounds terrifying.  ",
+          "timestamp": "2026-08-04T02:43:30+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1holeq",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1kqc7d",
+          "author": "reddit_user_196096115ccb",
+          "author_karma": 0,
+          "content": "Yeah, not as bad as the lettuce, but people just aren’t buying much of any produce right now, it’s rotting on the shelves.",
+          "timestamp": "2026-08-04T02:46:15+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1jmobu",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1kqi98",
+          "author": "reddit_user_0ba0e7962a90",
+          "author_karma": 0,
+          "content": "So the restaurant I work for is still serving Taylor Farms lettuce, and I got cyclospora from eating it, but if I understand it right, reporting this to authorities won't actually do anything since they recinded the recall declaration?\n\n",
+          "timestamp": "2026-08-04T02:47:14+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1kqlfi",
+          "author": "reddit_user_196096115ccb",
+          "author_karma": 0,
+          "content": "I know my wife’s store has been specifically NOT giving away lettuce in donations, but they try to make it up with other produce that isn’t being bought just due to general stress about produce even if it’s safe. ",
+          "timestamp": "2026-08-04T02:47:45+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1je2pe",
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1kwned",
+              "author": "reddit_user_1061f9590a6e",
+              "author_karma": 0,
+              "content": "I'm sure the lettuce they're donating mostly isnt taylor farms. i dont think theyre trying to kill the homeless. it's just skeptical not to be hard on all lettuce right now with 0 trust in the government or fda. Pretty sure it would be a liability if they were donating specifically recalled food, but like I said, how do you even know theyre recalling foods they should right now?",
+              "timestamp": "2026-08-04T03:24:32+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1kqlfi",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1kqzmf",
+          "author": "reddit_user_1584bfe4ff2c",
+          "author_karma": 0,
+          "content": "and 2 billion dollars paid out to corporations as “tariff refunds,” since the corporations totally paid all of those themselves of course /s ",
+          "timestamp": "2026-08-04T02:50:03+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1hyaze",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1kryu2",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-04T02:55:52+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1if8dr",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1ksbff",
+          "author": "reddit_user_4bb81c99591b",
+          "author_karma": 0,
+          "content": "Any chance that this could be a Iran or? sabotage?",
+          "timestamp": "2026-08-04T02:57:56+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1ktbh5",
+          "author": "reddit_user_d1c844fec197",
+          "author_karma": 0,
+          "content": "This needs to be spread far and wide for people to understand how much this company is getting away with. ",
+          "timestamp": "2026-08-04T03:04:02+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1ixcod",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1ku7t1",
+          "author": "reddit_user_0a23756a9301",
+          "author_karma": 0,
+          "content": "I hope ALL MAGA eats lettuce. But I know they're all chauvinist pigs who hate vegetables and shit on their pants like their rapist god-president. Shame. ",
+          "timestamp": "2026-08-04T03:09:30+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1kuwn7",
+          "author": "reddit_user_63fddb17d002",
+          "author_karma": 0,
+          "content": "I’ve gotten it 9 times despite being vaccinated. I’ve got asthma now and am constantly tired, I was pretty healthy/rarely ill before. I’m early 40s but still trying to improve my lung and cardiac health after catching it so many times. \n\nAlso if you can get up, try walking outside even short distances, it really helps with breathing later. Also vitamin D seems to help a little as well, but take it as early in the day as possible (it interferes with melatonin production) ",
+          "timestamp": "2026-08-04T03:13:46+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1htgrx",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1kv81w",
+          "author": "reddit_user_63fddb17d002",
+          "author_karma": 0,
+          "content": "I caught Covid three separate times, 6 weeks apart each time, from coworkers coming in sick, no masks. The third time I wept I was so upset to get it again. ",
+          "timestamp": "2026-08-04T03:15:44+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1ihrj6",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1kw7w0",
+          "author": "reddit_user_d179fd14b189",
+          "author_karma": 0,
+          "content": "Dehydration triggers nausea and vomiting even if you originally got dehydrated via  diarrhoea or excess sweating.\n\nAt that point it’s very hard to recover without IV fluids\n because you’ve layered some extra vomiting on top of whatever made you dehydrated in the first place.\n\nYou have to drink the Gatorade *before* you’re dehydrated. \n\n",
+          "timestamp": "2026-08-04T03:21:51+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1hsukg",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1l00cz",
+          "author": "reddit_user_2d6adb3068e5",
+          "author_karma": 0,
+          "content": "Meijer has Taylor Farms bagged salads ON SALE 😳🤬 so more people eat it and get sick 🤷🏻‍♀️ WTF",
+          "timestamp": "2026-08-04T03:46:02+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1i96m6",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1l04fb",
+          "author": "reddit_user_9f78d22b65c5",
+          "author_karma": 0,
+          "content": "I need facts and a link on this one. News proven?",
+          "timestamp": "2026-08-04T03:46:47+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1hgxo4",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1l0o5j",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-04T03:50:18+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1ixdwf",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1l0xn7",
+          "author": "reddit_user_08bfdffd79f8",
+          "author_karma": 0,
+          "content": "Thanks to Trump we got people literally shitting themselves to death.",
+          "timestamp": "2026-08-04T03:52:01+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1l1zcw",
+          "author": "reddit_user_0eb0aa6a4973",
+          "author_karma": 0,
+          "content": "oh no that's awful.  I've had diverticulitis and it would suck to go through that with just that.  Glad to hear she is doing better.",
+          "timestamp": "2026-08-04T03:58:48+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1hcblr",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1l25ap",
+          "author": "reddit_user_0eb0aa6a4973",
+          "author_karma": 0,
+          "content": "If this stuff does get all traced back and it is from Taylor Farms I'll definitely keep an eye out.  I mean shit happens, I get it.  But that's why we have FDA investigators and recalls.  If that's all getting delayed due to corrupt collusions between the food provider and this administration.... we're in for a lot of shit",
+          "timestamp": "2026-08-04T03:59:52+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1l2eil",
+          "author": "reddit_user_52e18e57ff38",
+          "author_karma": 0,
+          "content": "If only people could stop shitting in the fields. ",
+          "timestamp": "2026-08-04T04:01:32+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1l3jlh",
+          "author": "reddit_user_3cdd18346bfc",
+          "author_karma": 0,
+          "content": "Hell my Mom died from it 1.5 years ago. Covid is still taking people out now, it's just not at a newsworthy level. She had other health issues but covid pushed her over the edge.",
+          "timestamp": "2026-08-04T04:09:07+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1hqei8",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1l3z2q",
+          "author": "reddit_user_e2e634b9fad7",
+          "author_karma": 0,
+          "content": "Get Sloth's name out of your damn, dirty mouth! Sloth is kind and loving.",
+          "timestamp": "2026-08-04T04:11:59+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1hgxo4",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1l44i2",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-04T04:12:59+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1imfut",
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run023_post01_seed116",
+      "post_slot": 1,
+      "seed_index": 116,
+      "source_raw_post_id": "1vejf8k",
+      "source_product_dir": "nottheonion",
+      "source_file": "https://www.reddit.com/r/nottheonion/comments/1vejf8k/israeli_court_halts_crocodile_transfer_to/",
+      "post_type": "link",
+      "title": "Israeli court halts crocodile transfer to Palestinian prison over animal welfare concerns",
+      "author": "reddit_user_bde1e90b951b",
+      "author_karma": 0,
+      "content": "Israeli court halts crocodile transfer to Palestinian prison over animal welfare concerns",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p1hev33",
+          "author": "reddit_user_ec38add5cac7",
+          "author_karma": 0,
+          "content": "*plans...to install crocodile-filled moats around Ketziot Prison*\n\nThat's some medieval plans right there. Who cooks up this kind of crazy shit?",
+          "timestamp": "2026-08-03T17:12:27+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1hgsgc",
+              "author": "reddit_user_e1d2527ffab4",
+              "author_karma": 0,
+              "content": "Have we already forgotten about Alligator Alcatraz? We know exactly who cooks up shit like this",
+              "timestamp": "2026-08-03T17:20:13+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1hev33",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1hh9ru",
+                  "author": "reddit_user_ec38add5cac7",
+                  "author_karma": 0,
+                  "content": "Alligator Alcatraz was just a nickname for a concentration camp in Florida, they didn't actually have a moat full of alligators guarding it. (Right? We'd have heard more about that kind of thing if that was in the design, I'm sure)",
+                  "timestamp": "2026-08-03T17:22:11+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1hgsgc",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1hi71f",
+                      "author": "reddit_user_f4d1f95ce210",
+                      "author_karma": 0,
+                      "content": "It's Florida.  If there is an ankle deep puddle there's an aligator.  To be fair I believe the mosquitos probably would be responsible for more deaths then the gators, probably followed up by the snakes.",
+                      "timestamp": "2026-08-03T17:25:56+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1hh9ru",
+                      "depth": 3,
+                      "replies": []
+                    },
+                    {
+                      "comment_id": "p1hiior",
+                      "author": "reddit_user_561102259897",
+                      "author_karma": 0,
+                      "content": "They called it that because the camp was in the fucking ***Everglades***. Thank Christ they closed the place down. ",
+                      "timestamp": "2026-08-03T17:27:15+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1hh9ru",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "p1l1wrt",
+                          "author": "reddit_user_331f19f99454",
+                          "author_karma": 0,
+                          "content": "Didn't they \"lose\" a bunch of detainees from that concentration camp?",
+                          "timestamp": "2026-08-04T03:58:20+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "p1hiior",
+                          "depth": 4,
+                          "replies": []
+                        }
+                      ]
+                    },
+                    {
+                      "comment_id": "p1hj5di",
+                      "author": "reddit_user_e1d2527ffab4",
+                      "author_karma": 0,
+                      "content": "It was built in the dead center of the Everglades, [home of over 200,000 alligators.](https://evergladesactivities.com/blog/wild-animals-florida-everglades/) Not necessarily a moat but a 2,400 square mile marshland isn’t much better",
+                      "timestamp": "2026-08-03T17:29:50+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1hh9ru",
+                      "depth": 3,
+                      "replies": []
+                    },
+                    {
+                      "comment_id": "p1hpa3y",
+                      "author": "reddit_user_eb103125ca97",
+                      "author_karma": 0,
+                      "content": "It didn't need to it was in the middle of the Everglades which is basically a huge moat with alligators and pythons in it",
+                      "timestamp": "2026-08-03T17:55:03+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1hh9ru",
+                      "depth": 3,
+                      "replies": []
+                    },
+                    {
+                      "comment_id": "p1ht8q7",
+                      "author": "reddit_user_6a7c7e6fd78e",
+                      "author_karma": 0,
+                      "content": "No alligators, just a plain old concentration camp. Nothing to worry about folks! ",
+                      "timestamp": "2026-08-03T18:11:40+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1hh9ru",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "p1hu1to",
+                          "author": "reddit_user_ec38add5cac7",
+                          "author_karma": 0,
+                          "content": "This guy gets it.",
+                          "timestamp": "2026-08-03T18:15:08+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "p1ht8q7",
+                          "depth": 4,
+                          "replies": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "comment_id": "p1hgvq1",
+              "author": "reddit_user_6c25162548c9",
+              "author_karma": 0,
+              "content": "Adults with the logic of immature hate filled children. ",
+              "timestamp": "2026-08-03T17:20:35+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1hev33",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p1hh4vk",
+              "author": "reddit_user_046f7bdf3094",
+              "author_karma": 0,
+              "content": "Netanyahu's coalition is far, far right wing. ",
+              "timestamp": "2026-08-03T17:21:37+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1hev33",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1hiykn",
+                  "author": "reddit_user_0e8b30b2893d",
+                  "author_karma": 0,
+                  "content": "Itamar Ben Gvir literally had a framed picture of Baruch Goldstein in his living room for many years. For anyone wondering who the latter is, Goldstein was a Zionist terrorist who shot & killed 29 Palestinians as they prayed during Ramadan. I feel compelled to mention that he was born in Brooklyn.",
+                  "timestamp": "2026-08-03T17:29:04+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1hh4vk",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1hsgx2",
+                      "author": "reddit_user_6da54c24d1c2",
+                      "author_karma": 0,
+                      "content": "Meir Kahane, the modern father of all of this, was an American too.",
+                      "timestamp": "2026-08-03T18:08:24+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1hiykn",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "p1hv7z6",
+                          "author": "reddit_user_da8a590f3c5f",
+                          "author_karma": 0,
+                          "content": "How fitting!",
+                          "timestamp": "2026-08-03T18:20:10+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "p1hsgx2",
+                          "depth": 4,
+                          "replies": []
+                        },
+                        {
+                          "comment_id": "p1hy5aq",
+                          "author": "reddit_user_54c63ba4f093",
+                          "author_karma": 0,
+                          "content": "Kind of explains why America is so ride-and-die for Israel.",
+                          "timestamp": "2026-08-03T18:32:40+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "p1hsgx2",
+                          "depth": 4,
+                          "replies": [
+                            {
+                              "comment_id": "p1ip429",
+                              "author": "reddit_user_ec9d42cadf81",
+                              "author_karma": 0,
+                              "content": "Good read on the topic here if you’re interested. [Israel: The Mercenary State and Its Master.](https://open.substack.com/pub/realdialectical/p/israel-the-mercenary-state-and-its)",
+                              "timestamp": "2026-08-03T20:30:12+00:00",
+                              "likes": 1,
+                              "dislikes": 0,
+                              "parent_comment_id": "p1hy5aq",
+                              "depth": 5,
+                              "replies": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "comment_id": "p1hjf2d",
+                  "author": "reddit_user_ec9d42cadf81",
+                  "author_karma": 0,
+                  "content": "It’s not Netanyahu. The entire government and the vast majority of the people there (80%+) overwhelmingly support such measures. The idea that the daily horrors Palestinians have been enduring for decades are unique to Netanyahu is erroneous. ",
+                  "timestamp": "2026-08-03T17:30:55+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1hh4vk",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1i3ya7",
+                      "author": "reddit_user_ed181b72d7b0",
+                      "author_karma": 0,
+                      "content": "\"overwhelmingly support such measures\" is just false. This is by Itamar Ben Gvir, that have the support of \\~5% of the population. most of the population see him as a dangerous extremist. ",
+                      "timestamp": "2026-08-03T18:57:44+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1hjf2d",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "p1i91im",
+                          "author": "reddit_user_00ea52f5192a",
+                          "author_karma": 0,
+                          "content": "That’s cool but I don’t think the person you responded to was referring solely to support for Ben Gvir. They were probably talking about the 30% who think Israel’s responses in Gaza and Lebanon were “about right” and the further 30% who think they didn’t go far enough. The rot in Israeli society is deep. Like, look at the positions on Palestine that any mainstream Israeli party has, they aren’t materially different than Netanyahu or Ben Gvir ",
+                          "timestamp": "2026-08-03T19:19:46+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "p1i3ya7",
+                          "depth": 4,
+                          "replies": [
+                            {
+                              "comment_id": "p1inlok",
+                              "author": "reddit_user_ec9d42cadf81",
+                              "author_karma": 0,
+                              "content": "\\> The rot in Israeli society is deep. Like, look at the positions on Palestine that any mainstream Israeli party has, they aren’t materially different than Netanyahu or Ben Gvir\n\nYou nailed it perfectly. And of course, [plenty of polls demonstrate exactly that.](https://www.reddit.com/r/nottheonion/s/YCO4kbuxEd) ",
+                              "timestamp": "2026-08-03T20:23:35+00:00",
+                              "likes": 1,
+                              "dislikes": 0,
+                              "parent_comment_id": "p1i91im",
+                              "depth": 5,
+                              "replies": []
+                            }
+                          ]
+                        },
+                        {
+                          "comment_id": "p1im6f5",
+                          "author": "reddit_user_ec9d42cadf81",
+                          "author_karma": 0,
+                          "content": "The idea that the entity has a “Netanyahu problem” or a “Ben Gvir” problem is completely wrong. What they are doing to Palestinians in Gaza and the West Bank has majority support across the board there, and even particularly horrific atrocities routinely get cheered on. [This is a country that had their own January 6 style riot after soldiers were held at Sde Teiman for RAPING prisoners on video — a riot IN SUPPORT of those rapists.](https://www.bbc.com/news/articles/c2q07kd3ld6o) \n\nBut if you want polls:\n\n[**Poll: 82% of Jewish Israelis Back Expelling Gazans**](https://www.haaretz.com/israel-news/2025-05-28/ty-article-magazine/.premium/yes-to-transfer-82-of-jewish-israelis-back-expelling-gazans/00000197-12a4-df22-a9d7-9ef6af930000)\n\n[**Poll: Overwhelming majority of Jewish Israelis share genocidal belief there are ‘no innocent people in Gaza’**](https://mondoweiss.net/2025/07/poll-overwhelming-majority-of-jewish-israelis-share-genocidal-belief-there-are-no-innocent-people-in-gaza/) \n\nLest you think these are recent aberrations, here’s a major March 2016 poll showing majority support for Palestinian ethnic cleansing: [**50% of Israeli Jews Support Population Transfer**](https://mail.hlrn.org/activitydetails.php?id=pXFlaw==)",
+                          "timestamp": "2026-08-03T20:17:22+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "p1i3ya7",
+                          "depth": 4,
+                          "replies": [
+                            {
+                              "comment_id": "p1ju3ho",
+                              "author": "reddit_user_ec9d42cadf81",
+                              "author_karma": 0,
+                              "content": "All the dude can do is downvote us lol zero attempt to actually engage on the issues. ",
+                              "timestamp": "2026-08-03T23:48:33+00:00",
+                              "likes": 1,
+                              "dislikes": 0,
+                              "parent_comment_id": "p1im6f5",
+                              "depth": 5,
+                              "replies": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "comment_id": "p1jx0p5",
+                  "author": "reddit_user_a77baaa5417d",
+                  "author_karma": 0,
+                  "content": "> Many of its current ministers have been in Israeli prisons...\n\nWho? I'd like to see many of them in prison but I'm pretty sure they haven't been there yet. Possibly arrested and in jail but not actually imprisoned. (Der'i isn't a minister for this reason).",
+                  "timestamp": "2026-08-04T00:04:27+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1hh4vk",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            },
+            {
+              "comment_id": "p1hm4pf",
+              "author": "reddit_user_561c7d45adbd",
+              "author_karma": 0,
+              "content": "They took the idea from the US.",
+              "timestamp": "2026-08-03T17:42:06+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1hev33",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1i3f9r",
+                  "author": "reddit_user_2551eea4b92f",
+                  "author_karma": 0,
+                  "content": "Strangely, so did Hitler. \n\nBirds of A feather . . .",
+                  "timestamp": "2026-08-03T18:55:29+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1hm4pf",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1iomkz",
+                      "author": "reddit_user_ec9d42cadf81",
+                      "author_karma": 0,
+                      "content": "Hitler literally commended America’s genocide of the native Americans and openly modeled the so-called “final solution” after America’s approach. [It’s literally the meme.](https://www.reddit.com/r/LateStageCapitalism/comments/1q920hi/the_us_keeps_copying_its_own_homework/)",
+                      "timestamp": "2026-08-03T20:28:05+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1i3f9r",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "comment_id": "p1hp1xw",
+              "author": "reddit_user_39cf37e32904",
+              "author_karma": 0,
+              "content": "I would use pigs. Just have some Christian Israelis tend to them. ",
+              "timestamp": "2026-08-03T17:54:07+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1hev33",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p1hpokm",
+              "author": "reddit_user_cd73057a1d3e",
+              "author_karma": 0,
+              "content": "https://youtu.be/INFavIUmhcE",
+              "timestamp": "2026-08-03T17:56:42+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1hev33",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p1i2fep",
+              "author": "reddit_user_2551eea4b92f",
+              "author_karma": 0,
+              "content": "There was a proposal to dig a most by the US-Mexico border wall and stock it with alligators.\n\n>Donald Trump discussed shooting migrants in the legs to slow them down, after ordering advisers to shut down the entire US-Mexico border, the New York Times reported on Tuesday.\n\n>The president also suggested electrifying the border wall and fortifying it with spikes, and deterring migrants with a moat stocked with snakes or alligators, according to the Times, which excerpted the upcoming book Border Wars: Inside Trump’s Assault on Immigration.\n\nhttps://www.theguardian.com/us-news/2019/oct/01/snakes-spikes-bullets-trump-reportedly-floated-extreme-measures-to-stop-migrants\n",
+              "timestamp": "2026-08-03T18:51:14+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1hev33",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1i32yv",
+                  "author": "reddit_user_ec38add5cac7",
+                  "author_karma": 0,
+                  "content": "Well, that's a dumb idea. I'm not surprised at all.",
+                  "timestamp": "2026-08-03T18:54:01+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1i2fep",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            },
+            {
+              "comment_id": "p1ifkgr",
+              "author": "reddit_user_a6cbdd81ad61",
+              "author_karma": 0,
+              "content": "America",
+              "timestamp": "2026-08-03T19:48:30+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1hev33",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p1ilz38",
+              "author": "reddit_user_ed04860bae6e",
+              "author_karma": 0,
+              "content": "He’s just trying to be funny. The crocodiles aren’t really adding anything to the security of the prison.",
+              "timestamp": "2026-08-03T20:16:29+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1hev33",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p1jayb6",
+              "author": "reddit_user_ecb478a70977",
+              "author_karma": 0,
+              "content": "Itamir Ben-Gvir does.  \n\n\"Fill a moat with crocodiles like a literal Bond villain\" is actually one of his *less* disturbing ideas.  He's usually cooking up worse.  ",
+              "timestamp": "2026-08-03T22:10:18+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1hev33",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p1kap57",
+              "author": "reddit_user_479c23208ba7",
+              "author_karma": 0,
+              "content": "Israel's most insane man",
+              "timestamp": "2026-08-04T01:18:54+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1hev33",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1hew59",
+          "author": "reddit_user_927a352f2abf",
+          "author_karma": 0,
+          "content": "Yes, it's the animals we should be concerned about. ",
+          "timestamp": "2026-08-03T17:12:34+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1hkxtl",
+              "author": "reddit_user_87c2b0e90aad",
+              "author_karma": 0,
+              "content": "It's striking that if it's about eating people, nothing happens, but if it's about animals suffering, then we stop everything.",
+              "timestamp": "2026-08-03T17:37:10+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1hew59",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1hez5h",
+          "author": "reddit_user_e26b92463da5",
+          "author_karma": 0,
+          "content": "Don't know whether to laugh or cry?",
+          "timestamp": "2026-08-03T17:12:54+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1hg6iy",
+          "author": "reddit_user_7789cc903207",
+          "author_karma": 0,
+          "content": "I guess it doesn’t matter how you get there…as long as you get there.",
+          "timestamp": "2026-08-03T17:17:45+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1hhhgx",
+          "author": "reddit_user_353ac917a26a",
+          "author_karma": 0,
+          "content": "Truly, the most deranged, depraved, and repulsive place on earth ",
+          "timestamp": "2026-08-03T17:23:03+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1hj0ps",
+              "author": "reddit_user_ec9d42cadf81",
+              "author_karma": 0,
+              "content": "It truly is singular in the absolute most heinous respects. ",
+              "timestamp": "2026-08-03T17:29:18+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1hhhgx",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1hhle9",
+          "author": "reddit_user_6a78ad51a874",
+          "author_karma": 0,
+          "content": "Could they honestly get any more disgusting. ",
+          "timestamp": "2026-08-03T17:23:30+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1hiwhz",
+              "author": "reddit_user_59b4fa889620",
+              "author_karma": 0,
+              "content": "Don't say that too loud... they will see it as a challenge....",
+              "timestamp": "2026-08-03T17:28:49+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1hhle9",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1hiboe",
+          "author": "reddit_user_2ac9282439b8",
+          "author_karma": 0,
+          "content": "It's the previous post.\n\nhttps://reddit.com/comments/1veie1u",
+          "timestamp": "2026-08-03T17:26:27+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1hje13",
+          "author": "reddit_user_bc0fa958f424",
+          "author_karma": 0,
+          "content": "The entire story is a \"dead cat maneuver\", or shorter \"deadcatting\". [https://en.wikipedia.org/wiki/Dead\\_cat\\_strategy](https://en.wikipedia.org/wiki/Dead_cat_strategy)",
+          "timestamp": "2026-08-03T17:30:48+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1hjmu4",
+              "author": "reddit_user_ec9d42cadf81",
+              "author_karma": 0,
+              "content": "Brilliant and correct. ",
+              "timestamp": "2026-08-03T17:31:49+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1hje13",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p1i5ofh",
+              "author": "reddit_user_ed181b72d7b0",
+              "author_karma": 0,
+              "content": "unfortunately, the minister that made this plan is adamant to see it happening, he actually pushing to it even when there's no reason to - there's very few cases of escape, crocs aren't good in guarding prisons in the first place and the whole deal is just stupid pr stunt. He is mainly just looking for ways to clash with the high court before the coming election.",
+              "timestamp": "2026-08-03T19:05:07+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1hje13",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1hmghv",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[deleted]",
+          "timestamp": "2026-08-03T17:43:27+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1hpnsx",
+          "author": "reddit_user_05da6df11e3c",
+          "author_karma": 0,
+          "content": "I heard that their order of Sharks with freaking laser beams was delayed",
+          "timestamp": "2026-08-03T17:56:37+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1i9s5j",
+              "author": "reddit_user_00ea52f5192a",
+              "author_karma": 0,
+              "content": "I don’t think even Dr. Evil does business with Israel anymore. He’s got an image to worry about, too",
+              "timestamp": "2026-08-03T19:23:00+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1hpnsx",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1hqty9",
+          "author": "reddit_user_72d6307583b4",
+          "author_karma": 0,
+          "content": "To hell with the dehumanized inmates the gators will attack, right Bibi?",
+          "timestamp": "2026-08-03T18:01:30+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1htaaj",
+          "author": "reddit_user_7d43334ab2d7",
+          "author_karma": 0,
+          "content": "you know this sub sometimes gets misused for news that are just a little bit absurd but this headline is just something the Onion would've written a week ago if they locked the fuck in ",
+          "timestamp": "2026-08-03T18:11:51+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1hw6dg",
+          "author": "reddit_user_b6d2a274af25",
+          "author_karma": 0,
+          "content": "It's really something that this is being halted on *animal welfare* grounds. I mean, sure. Yeah. It's not the *main* reason not to do it, but I guess it's on the list. ",
+          "timestamp": "2026-08-03T18:24:15+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1hw74n",
+          "author": "reddit_user_b5696438fbc9",
+          "author_karma": 0,
+          "content": "Can we just take a moment to acknowledge that the IDF was 100% going to feed prisoners to crocodiles?",
+          "timestamp": "2026-08-03T18:24:20+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1i8amv",
+          "author": "reddit_user_888cbdaca961",
+          "author_karma": 0,
+          "content": "Hey Israelis why don’t you just build the gas chambers?",
+          "timestamp": "2026-08-03T19:16:30+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1kkr5q",
+              "author": "[deleted]",
+              "author_karma": 0,
+              "content": "[removed]",
+              "timestamp": "2026-08-04T02:14:39+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1i8amv",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1ilwt4",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-03T20:16:13+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1ilwve",
+              "author": "reddit_user_e320faca37f4",
+              "author_karma": 0,
+              "content": "Sorry, but your account is too new to post.  Your account needs to be either 2 weeks old or have at least 250 combined link and comment karma.  Don't modmail us about this, just wait it out or get more karma.\n\n\n*I am a bot, and this action was performed automatically. Please [contact the moderators of this subreddit](/message/compose/?to=/r/nottheonion) if you have any questions or concerns.*",
+              "timestamp": "2026-08-03T20:16:13+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1ilwt4",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1imxcg",
+          "author": "reddit_user_8f00c3810605",
+          "author_karma": 0,
+          "content": "Child welfare was established in US law on animal abuse laws as there were laws yet to protect children, but were laws on whipping or torturing dogs and horses. ",
+          "timestamp": "2026-08-03T20:20:38+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1iwx06",
+          "author": "reddit_user_6ca29c38a8da",
+          "author_karma": 0,
+          "content": "A sick society in the truest sense ",
+          "timestamp": "2026-08-03T21:04:49+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1jt8en",
+          "author": "reddit_user_0f1e599b49db",
+          "author_karma": 0,
+          "content": "Over the ANIMAL'S welfare???",
+          "timestamp": "2026-08-03T23:43:58+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1kfx88",
+          "author": "reddit_user_e00cd6681adb",
+          "author_karma": 0,
+          "content": "Arab news dot com lmao they might as well be the onion these fake stories give people plausible deniability on actual atrocities ",
+          "timestamp": "2026-08-04T01:47:44+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run023_post02_seed117",
+      "post_slot": 2,
+      "seed_index": 117,
+      "source_raw_post_id": "1vekhtu",
+      "source_product_dir": "nottheonion",
+      "source_file": "https://www.reddit.com/r/nottheonion/comments/1vekhtu/pakistan_bans_al_jazeera_over_pok_reporting/",
+      "post_type": "link",
+      "title": "Pakistan bans Al Jazeera over PoK reporting, accuses it of ‘yellow journalism’",
+      "author": "reddit_user_bde1e90b951b",
+      "author_karma": 0,
+      "content": "Pakistan bans Al Jazeera over PoK reporting, accuses it of ‘yellow journalism’",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p1idzrb",
+          "author": "reddit_user_227e7fb06b6d",
+          "author_karma": 0,
+          "content": "Prosperous in Amnesty International concerns? Most def.\n\nhttps://www.amnesty.org/en/latest/news/2024/09/india-authorities-must-end-repression-of-dissent-in-jammu-and-kashmir/",
+          "timestamp": "2026-08-03T19:41:33+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1ibx3i",
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1igi4c",
+              "author": "reddit_user_e50381a6780f",
+              "author_karma": 0,
+              "content": "Amnesty internation as a source lmfao 😭",
+              "timestamp": "2026-08-03T19:52:33+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1idzrb",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1ie3f0",
+          "author": "reddit_user_b73da84bbf9b",
+          "author_karma": 0,
+          "content": "Oh the Islamic brotherhood is about religion now? And Al Jazeera is the beacon of freedom of speech? And the Saudi guy is islamphobic now lmao",
+          "timestamp": "2026-08-03T19:41:59+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1icorl",
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1ilxia",
+              "author": "reddit_user_ec65ce8efc24",
+              "author_karma": 0,
+              "content": "Wtf are you saying brother ",
+              "timestamp": "2026-08-03T20:16:18+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1ie3f0",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1ie4d4",
+          "author": "reddit_user_7b2763c0a14e",
+          "author_karma": 0,
+          "content": "Aren't they like funded by Qatar ?",
+          "timestamp": "2026-08-03T19:42:07+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1i3k2h",
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1ih2ei",
+              "author": "reddit_user_39b4a3cb411b",
+              "author_karma": 0,
+              "content": "Yes. What they said still stands, except Qatar is a bit of an exception. ",
+              "timestamp": "2026-08-03T19:55:02+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1ie4d4",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1ivg9x",
+                  "author": "reddit_user_fd7004a5a2e0",
+                  "author_karma": 0,
+                  "content": "Exception to what corruption? lol, AJ is their mouthpiece.... ",
+                  "timestamp": "2026-08-03T20:58:12+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1ih2ei",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1iz8t1",
+                      "author": "reddit_user_36182b33cf9a",
+                      "author_karma": 0,
+                      "content": "Exception to the rule that the most corrupt countries tend to ban al jazeera.\n\nThis some piss on the poor level reading comprehension",
+                      "timestamp": "2026-08-03T21:15:26+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1ivg9x",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "p1j1dse",
+                          "author": "reddit_user_fd7004a5a2e0",
+                          "author_karma": 0,
+                          "content": "AJ is Owned by the Qatari Royal Family, thus it isn't an exception to anything... ",
+                          "timestamp": "2026-08-03T21:25:14+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "p1iz8t1",
+                          "depth": 4,
+                          "replies": [
+                            {
+                              "comment_id": "p1j3blv",
+                              "author": "reddit_user_36182b33cf9a",
+                              "author_karma": 0,
+                              "content": "Good job\n\nNow read what I typed slowly",
+                              "timestamp": "2026-08-03T21:34:15+00:00",
+                              "likes": 1,
+                              "dislikes": 0,
+                              "parent_comment_id": "p1j1dse",
+                              "depth": 5,
+                              "replies": [
+                                {
+                                  "comment_id": "p1j4skk",
+                                  "author": "reddit_user_fd7004a5a2e0",
+                                  "author_karma": 0,
+                                  "content": "No one would expect Qatar to ban AJ any more than they would expect Russia to ban RTR, that doesn't make Qatar and exception in the middle east.  ",
+                                  "timestamp": "2026-08-03T21:41:06+00:00",
+                                  "likes": 1,
+                                  "dislikes": 0,
+                                  "parent_comment_id": "p1j3blv",
+                                  "depth": 6,
+                                  "replies": [
+                                    {
+                                      "comment_id": "p1jbi00",
+                                      "author": "reddit_user_b2ae69165a99",
+                                      "author_karma": 0,
+                                      "content": "Exactly, which makes it an exception to the rule 'every corrupt country bans AJ' as Qatar is both corrupt and won't ban AJ. This is why he made the reading comprehension comment btw. ",
+                                      "timestamp": "2026-08-03T22:12:57+00:00",
+                                      "likes": 1,
+                                      "dislikes": 0,
+                                      "parent_comment_id": "p1j4skk",
+                                      "depth": 7,
+                                      "replies": [
+                                        {
+                                          "comment_id": "p1jchxa",
+                                          "author": "reddit_user_fd7004a5a2e0",
+                                          "author_karma": 0,
+                                          "content": "Nothing to do with reading comprehension, no one would expect Qatar to ban their own mouthpiece regardless if they are corrupt or not.",
+                                          "timestamp": "2026-08-03T22:17:49+00:00",
+                                          "likes": 1,
+                                          "dislikes": 0,
+                                          "parent_comment_id": "p1jbi00",
+                                          "depth": 8,
+                                          "replies": [
+                                            {
+                                              "comment_id": "p1jdit1",
+                                              "author": "reddit_user_b2ae69165a99",
+                                              "author_karma": 0,
+                                              "content": "Okay I guess I fell for your bait, congratulations. ",
+                                              "timestamp": "2026-08-03T22:22:53+00:00",
+                                              "likes": 1,
+                                              "dislikes": 0,
+                                              "parent_comment_id": "p1jchxa",
+                                              "depth": 9,
+                                              "replies": []
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "comment_id": "p1kjo5g",
+                  "author": "reddit_user_07657cf4ec34",
+                  "author_karma": 0,
+                  "content": "Except Qatar it’s a bit of an exception is the point. If I only talk about your faults and problems and not mine, I can make a narrative that you are exceptional and uniquely bad and not like just same as other countries. But generally, yeah Al-Jazeera english is quite balanced, with some exceptionally biased views on Middle East. I will give it a 8/10 for the rest of the world but 4/10 of MEA. It’s not lying but it’s definitely involved in spinning and presenting very obviously. ",
+                  "timestamp": "2026-08-04T02:08:38+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1ih2ei",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            },
+            {
+              "comment_id": "p1ivf3d",
+              "author": "reddit_user_44cbea6ccaa3",
+              "author_karma": 0,
+              "content": "Run by Qatar. Their current chairman is a prince",
+              "timestamp": "2026-08-03T20:58:03+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1ie4d4",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1iz5ay",
+                  "author": "reddit_user_3b7f1cae5ef0",
+                  "author_karma": 0,
+                  "content": "Israel censors and blocks 1000s of news articles every year. They always say it’s to protect the military, but I find it hard to believe 6,265 articles in one year were all censored because of secret military details.",
+                  "timestamp": "2026-08-03T21:14:59+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1ivf3d",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1kuele",
+                      "author": "reddit_user_05827231b909",
+                      "author_karma": 0,
+                      "content": "Rent free huh",
+                      "timestamp": "2026-08-04T03:10:40+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1iz5ay",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "comment_id": "p1iwzmu",
+              "author": "reddit_user_30a628d3138f",
+              "author_karma": 0,
+              "content": "It's like saying how any news organization in america is funded by a sleazy billionaire or how the bbc is funded by the UK.",
+              "timestamp": "2026-08-03T21:05:08+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1ie4d4",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1l4kh0",
+                  "author": "reddit_user_2a47584d7406",
+                  "author_karma": 0,
+                  "content": ">It's okay when we do it, but not them brown folks\n\n90% of US media including news networks are owned by 6 companies ",
+                  "timestamp": "2026-08-04T04:16:00+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1iwzmu",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            },
+            {
+              "comment_id": "p1j8t05",
+              "author": "reddit_user_23079bcb38dc",
+              "author_karma": 0,
+              "content": "All Jazeera sucks, it's ok only for npc's that don't understand about imperialism/geopolitics",
+              "timestamp": "2026-08-03T22:00:01+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1ie4d4",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p1jshjc",
+              "author": "reddit_user_407793f08c1f",
+              "author_karma": 0,
+              "content": "yes, the middle east countries banned them for using al jazeera to push the ikhwani overthrow of their governments after what happened in egypt",
+              "timestamp": "2026-08-03T23:40:04+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1ie4d4",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p1ks9kc",
+              "author": "reddit_user_8b862db88ead",
+              "author_karma": 0,
+              "content": "Their Arabian service is pretty much straight up propaganda, where as their english service tried to at least appear unbiased. But even that is changing.",
+              "timestamp": "2026-08-04T02:57:38+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1ie4d4",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p1ksij3",
+              "author": "reddit_user_e95407fed3ca",
+              "author_karma": 0,
+              "content": "This isn't a gotcha. Qatar is obviously a blind spot but they have allowed AJ to operate independently in the rest of the world to international critical acclaim.\n\nIt may be weird but especially in that part of the world they have been a staple of courageous investigative journalism.\n\nWhy would they do that and not just lie is a statement on decaying western moral standing. AJ was allowed to work because a lot of autocrats were under the sadly very wrong impression that the US and western public cared about journalistic freedom. Qatar saw a niche in that area to raise its own standing.\n\nThe Arab Spring and even more recently Gaza has made clear that there is a hierarchy and the middle east is a \"conditional freedom\" part of the world to the West. \n\nAnd to preempt any rebuttal along the lines thay they aligned themselves with terrorists, no other journalistic outfit has ventured as many or lost as many journalists to those groups.\n\nI do international medical trips and I have ran into some AJ correspondents. They have impressed me more than any BBC crew I've ever met. ",
+              "timestamp": "2026-08-04T02:59:07+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1ie4d4",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1l6xk6",
+                  "author": "reddit_user_95b7fda508f7",
+                  "author_karma": 0,
+                  "content": "Fuck Al Jazeera,  fuck the Qatari slum lords, for abusing and exploiting millions of migrant labors. Biased piece of shit news organization. You never hear them report on the pain and suffering of migrants. ",
+                  "timestamp": "2026-08-04T04:32:16+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1ksij3",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p1ie7vt",
+          "author": "reddit_user_9d663714b25d",
+          "author_karma": 0,
+          "content": "The people in kashmir, balochistan, hell anyone that dares to protest is shot down. Basically people go out for protest and instead of trying to come to a deal, the army (you could argue its the government and not army but army controls the government with an iron fist) orders to shoot at them with live ammo. Dozens die each time and then protests fizzle out or a supposed new deal is made (which achieves nothing), rinse and repeat.\n\nThe anti army sentiment is growing, we're pretty close to a boiling point. I would give maybe a few years before everything boils over if the overall situation doesnt get better in pakistan.",
+          "timestamp": "2026-08-03T19:42:32+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1i4pyb",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1igv6u",
+          "author": "reddit_user_11b8ae83598c",
+          "author_karma": 0,
+          "content": "Could be cached",
+          "timestamp": "2026-08-03T19:54:10+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1icorl",
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1imiiq",
+              "author": "reddit_user_ec65ce8efc24",
+              "author_karma": 0,
+              "content": "I don’t think so, I can see the live news and updates. Both on broadband and mobile data ",
+              "timestamp": "2026-08-03T20:18:50+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1igv6u",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1ih3wm",
+          "author": "reddit_user_35ec9fac3c6e",
+          "author_karma": 0,
+          "content": "So, genocide on the other side but not your side. Got it.",
+          "timestamp": "2026-08-03T19:55:13+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1icy0s",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1ijwqf",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-03T20:07:27+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1ijwsu",
+              "author": "reddit_user_e320faca37f4",
+              "author_karma": 0,
+              "content": "Sorry, but your account is too new to post.  Your account needs to be either 2 weeks old or have at least 250 combined link and comment karma.  Don't modmail us about this, just wait it out or get more karma.\n\n\n*I am a bot, and this action was performed automatically. Please [contact the moderators of this subreddit](/message/compose/?to=/r/nottheonion) if you have any questions or concerns.*",
+              "timestamp": "2026-08-03T20:07:28+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1ijwqf",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1ik6nd",
+          "author": "reddit_user_44cbea6ccaa3",
+          "author_karma": 0,
+          "content": "Egypt, Pakistan, Israel, Saudi Arabia, Bahrain, Jordan, UAE, Iraq, Kuwait are the ones with bans",
+          "timestamp": "2026-08-03T20:08:40+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1iajlb",
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1il5ql",
+              "author": "reddit_user_1f4d0802af5a",
+              "author_karma": 0,
+              "content": "This is literally horseshit. I was on a call two days ago with my mom and dad who are literally in Saudi Arabia and we were literally chatting about the Al Jazeera segment that was playing on their TV. Al Jazeera is definitely not banned in Saudi Arabia. This makes me doubt the rest of the countries banning AJ.\n\nYou might be referring to the temporary ban that Egypt, Pakistan, KSA and others instituted because of the temporary diplomatic tension that happened between these countries and Qatar? Those diplomatic spats are over and AJ is back again.\n\nYou're trying to delegitimize the reporting AJ does based on these countries banning it, but you don't realize that the bans took place at different times for entirely different reasons?\n\nAlso, why should I view these countries banning AJ as a sign that they are bad for news? AJ is not banned in the rest of the world.",
+              "timestamp": "2026-08-03T20:12:55+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1ik6nd",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1ilkl2",
+                  "author": "reddit_user_44cbea6ccaa3",
+                  "author_karma": 0,
+                  "content": "My mistake. Al Jazeera reports when they are banned but generally doesn’t report when their bans are removed\n\nhttps://www.aljazeera.com/amp/news/2017/6/9/saudi-arabia-bans-al-jazeera-channels-in-hotels\n\nI assumed Al Jazeera would be a reliable source on these bans.",
+                  "timestamp": "2026-08-03T20:14:44+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1il5ql",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1ilzj3",
+                      "author": "reddit_user_1f4d0802af5a",
+                      "author_karma": 0,
+                      "content": "I appreciate your clarification and willingness to own up to your mistakes. Sorry for the unnecessary aggression!",
+                      "timestamp": "2026-08-03T20:16:32+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1ilkl2",
+                      "depth": 3,
+                      "replies": []
+                    },
+                    {
+                      "comment_id": "p1inai8",
+                      "author": "reddit_user_8d38efa5e845",
+                      "author_karma": 0,
+                      "content": "You didn't even read your source, though.\n\nIt **very** specifically refers to hotels and tourist locations, presumably because it could otherwise be critical of SA considering your own article specifies those area would now only be permitted to show state sponsored channels.\n\nI'm not one to say al jazeera is super reliable, but you didn't even read it.",
+                      "timestamp": "2026-08-03T20:22:13+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1ilkl2",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "p1inq1u",
+                          "author": "reddit_user_44cbea6ccaa3",
+                          "author_karma": 0,
+                          "content": "You are right that this article doesn’t say thay. Here’s a different article by a Saudi news outlet where Saudi Arabia closes the Al Jazeera branch there\n\n[https://english.alarabiya.net/media/television-and-radio/2017/06/05/Saudi-Arabia-shuts-down-Al-Jazeera-s-Riyadh-bureau](https://english.alarabiya.net/media/television-and-radio/2017/06/05/Saudi-Arabia-shuts-down-Al-Jazeera-s-Riyadh-bureau)\n\nAnd a Turkish one\n\nhttps://www.aa.com.tr/en/middle-east/saudi-arabia-shuts-al-jazeera-office-amid-row-with-doha/835147",
+                          "timestamp": "2026-08-03T20:24:07+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "p1inai8",
+                          "depth": 4,
+                          "replies": [
+                            {
+                              "comment_id": "p1ip5qk",
+                              "author": "reddit_user_8d38efa5e845",
+                              "author_karma": 0,
+                              "content": "> “Al Jazeera is hardly a perfect news organisation,” but much of its reporting “hews to international journalistic standards, provides a unique view on events in the Middle East and serves as a vital news source for millions who live under antidemocratic rule,” the NYT wrote.\n\n> “Those are reasons enough for the monarchs and dictators attacking Qatar to silence Al Jazeera. And reason enough to condemn their action.”\n\nFrom the AA article.\n\nThe Turkish article goes into more detail and claims encouraging people to leave Saudi Arabia and supporting Iranian rebel groups is a threat to the Saudi crown. Couple this with the initial article you cited and we can confirm my suspicion: content not curated by the Saudi government is getting punished.",
+                              "timestamp": "2026-08-03T20:30:24+00:00",
+                              "likes": 1,
+                              "dislikes": 0,
+                              "parent_comment_id": "p1inq1u",
+                              "depth": 5,
+                              "replies": [
+                                {
+                                  "comment_id": "p1ipiob",
+                                  "author": "reddit_user_44cbea6ccaa3",
+                                  "author_karma": 0,
+                                  "content": "And yet the comment above states that their Saudi Arabian aunt is an avid watcher of Al Jazeera.\n\nSo Al Jazeera is both oppressed by speech killing censorship regimes and also claims of them being banned are grossly exaggerated.",
+                                  "timestamp": "2026-08-03T20:31:59+00:00",
+                                  "likes": 1,
+                                  "dislikes": 0,
+                                  "parent_comment_id": "p1ip5qk",
+                                  "depth": 6,
+                                  "replies": [
+                                    {
+                                      "comment_id": "p1isx3z",
+                                      "author": "reddit_user_8d38efa5e845",
+                                      "author_karma": 0,
+                                      "content": "Let me clarify: I commented because you tried to defend yourself by citing a ban from hotels is a nationwide ban and a result of Al Jazeera being unreliable.\n\nI'm not interested in the other commenter, but yes, either they are lying or Al Jazeera, Turkey, and Saudi Arabia are lying *if* we assume the channels are inaccessible. The articles specifically stated the offices are closed, not that their news and broadcasts are unavailable. Is it likely that their broadcasts got cut? Absolutely, but none of the 3 articles mention it.",
+                                      "timestamp": "2026-08-03T20:46:57+00:00",
+                                      "likes": 1,
+                                      "dislikes": 0,
+                                      "parent_comment_id": "p1ipiob",
+                                      "depth": 7,
+                                      "replies": []
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p1ilttd",
+          "author": "reddit_user_48215b1e680a",
+          "author_karma": 0,
+          "content": "the american victim complex should be a matter of academic investigation ",
+          "timestamp": "2026-08-03T20:15:51+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1ib1bz",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1inumg",
+          "author": "reddit_user_e508ef20aa78",
+          "author_karma": 0,
+          "content": "\"I think you should stop cosplaying as an expert on Kashmiri politics\"\n\nThat was you. You said that.",
+          "timestamp": "2026-08-03T20:24:41+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1i6vjl",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1io67v",
+          "author": "reddit_user_bf16dc61b954",
+          "author_karma": 0,
+          "content": "Lol sky is also at the bottom of the barrel ",
+          "timestamp": "2026-08-03T20:26:06+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1ia2cy",
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1ioo7g",
+              "author": "reddit_user_36c974833ae1",
+              "author_karma": 0,
+              "content": "That's what I thought too, but it's better out of the 3 I figured. \n\nI just don't know why there's so much ass kissing of that Saudi news org, and was trying to understand their point. ",
+              "timestamp": "2026-08-03T20:28:17+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1io67v",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1iqqf0",
+          "author": "reddit_user_cf8448fa5572",
+          "author_karma": 0,
+          "content": "Which is roughly the same situation as literally every other country in the world, no matter how \"independent\" the press is. As an American exposed to mainly US news outlets, I'd trust Al Jazeera over 99% of our media stations when it comes to most issues, although they do have a significant liberal slant when it comes to domestic US issues (same as every other mainstream outlet though). ",
+          "timestamp": "2026-08-03T20:37:20+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1ib0of",
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1j0r6u",
+              "author": "reddit_user_c6628a9f4ecd",
+              "author_karma": 0,
+              "content": "If you trust Al Jazeera over their coverage of anything remotely considered anti-muslim you're an idiot. \n\nIn general their coverage is not worth much in any case they can lie by omission and lie by selective reporting. \n\n",
+              "timestamp": "2026-08-03T21:22:21+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1iqqf0",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1jwtm5",
+                  "author": "reddit_user_3ca38b9a0cb8",
+                  "author_karma": 0,
+                  "content": "Name on mainstream outlet that doesn't do those things?",
+                  "timestamp": "2026-08-04T00:03:22+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1j0r6u",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1k3ga7",
+                      "author": "reddit_user_19b1f6e88a55",
+                      "author_karma": 0,
+                      "content": "The difference is in the West you can consume multiple outlets to get a clearer picture. That's freedom of the Press. In countries, like Qatar, you can't.",
+                      "timestamp": "2026-08-04T00:39:14+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1jwtm5",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "p1l1fis",
+                          "author": "reddit_user_c669b1264e90",
+                          "author_karma": 0,
+                          "content": "I don't think any of the big western news outlets are blocked in Qatar. You can pick and choose whichever media outlet you want to follow. \n\nPorn is blocked, though... ",
+                          "timestamp": "2026-08-04T03:55:13+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "p1k3ga7",
+                          "depth": 4,
+                          "replies": [
+                            {
+                              "comment_id": "p1l4iwv",
+                              "author": "reddit_user_19b1f6e88a55",
+                              "author_karma": 0,
+                              "content": "1) News outlets reporting about Qatar from Qatar are blocked. Journalists can't just write the leader of Qatar sucks literal dick.\n\n  \n2) News reports covering certain topics can almost certainly be blocked or censored. Even if they are international news. Sure you can get around this with a VPN or the like, but then you run the risk of running afoul of the laws.",
+                              "timestamp": "2026-08-04T04:15:42+00:00",
+                              "likes": 1,
+                              "dislikes": 0,
+                              "parent_comment_id": "p1l1fis",
+                              "depth": 5,
+                              "replies": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "comment_id": "p1kfwdw",
+                  "author": "reddit_user_b3d47d39b6ee",
+                  "author_karma": 0,
+                  "content": "“You’re an idiot if you believe things I don’t believe” ",
+                  "timestamp": "2026-08-04T01:47:36+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1j0r6u",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            },
+            {
+              "comment_id": "p1jstlm",
+              "author": "reddit_user_407793f08c1f",
+              "author_karma": 0,
+              "content": "you trust a state-run media outlet over the free press we have in the west? the qataris have an absolute monarchy. you want them to tell you what to think? like wtf",
+              "timestamp": "2026-08-03T23:41:50+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1iqqf0",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1k1orr",
+                  "author": "reddit_user_583242480626",
+                  "author_karma": 0,
+                  "content": "The US does not have a free press. Sure, it may be free from direct government control, but most of the press is a mouthpiece for US corporations. Among Western nations, the US is almost dead last for press freedom. ",
+                  "timestamp": "2026-08-04T00:29:34+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1jstlm",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1k2t99",
+                      "author": "reddit_user_19b1f6e88a55",
+                      "author_karma": 0,
+                      "content": "lmao",
+                      "timestamp": "2026-08-04T00:35:42+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1k1orr",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "p1k3v2y",
+                          "author": "reddit_user_583242480626",
+                          "author_karma": 0,
+                          "content": "You can go look at the press freedom index and compare the US to other Western nations for yourself. Sure you may have a variety of places where you can get the news, but that doesn’t help when there’s a perverse relationship between ad revenue and the corporations that pay for it. ",
+                          "timestamp": "2026-08-04T00:41:26+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "p1k2t99",
+                          "depth": 4,
+                          "replies": [
+                            {
+                              "comment_id": "p1k49u3",
+                              "author": "reddit_user_19b1f6e88a55",
+                              "author_karma": 0,
+                              "content": ">You can go look at the press freedom index and compare the US to other Western nations for yourself.\n\nThe index is horseshit. In the US, a paper can easily say \"Trump shit himself\" or any manner of things in public. A German court prosecuted a person for calling a fat politician \"fatty.\"",
+                              "timestamp": "2026-08-04T00:43:39+00:00",
+                              "likes": 1,
+                              "dislikes": 0,
+                              "parent_comment_id": "p1k3v2y",
+                              "depth": 5,
+                              "replies": [
+                                {
+                                  "comment_id": "p1k76b1",
+                                  "author": "reddit_user_583242480626",
+                                  "author_karma": 0,
+                                  "content": "And there it is. Whenever you show some actual data, people like you throw your hands in the air and claim it’s BS but never have any actual explanation as to why. Trump has repeatedly gone after journalists over saying things he didn’t like. [This was him at the recent correspondent’s dinner.](https://youtu.be/4bfCmnO0aW0?is=8zz1uxC4nAfJE25n) I bet you’d be cheering for Trump in that clip too. ",
+                                  "timestamp": "2026-08-04T00:59:29+00:00",
+                                  "likes": 1,
+                                  "dislikes": 0,
+                                  "parent_comment_id": "p1k49u3",
+                                  "depth": 6,
+                                  "replies": [
+                                    {
+                                      "comment_id": "p1l3s6u",
+                                      "author": "reddit_user_19b1f6e88a55",
+                                      "author_karma": 0,
+                                      "content": ">Whenever you show some actual data,\n\nExcept it isn't actual data. It is a subjective index.",
+                                      "timestamp": "2026-08-04T04:10:43+00:00",
+                                      "likes": 1,
+                                      "dislikes": 0,
+                                      "parent_comment_id": "p1k76b1",
+                                      "depth": 7,
+                                      "replies": []
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "comment_id": "p1k98wl",
+                              "author": "reddit_user_407793f08c1f",
+                              "author_karma": 0,
+                              "content": "the very fact that you can read al jazeera in the united states despite it being counter to US national security interests is all the proof you need. ",
+                              "timestamp": "2026-08-04T01:10:51+00:00",
+                              "likes": 1,
+                              "dislikes": 0,
+                              "parent_comment_id": "p1k3v2y",
+                              "depth": 5,
+                              "replies": [
+                                {
+                                  "comment_id": "p1k9qjz",
+                                  "author": "reddit_user_583242480626",
+                                  "author_karma": 0,
+                                  "content": "I’d argue the pro-Israel stance that many US media organizations have is a bigger counter to US national security interests. ",
+                                  "timestamp": "2026-08-04T01:13:33+00:00",
+                                  "likes": 1,
+                                  "dislikes": 0,
+                                  "parent_comment_id": "p1k98wl",
+                                  "depth": 6,
+                                  "replies": [
+                                    {
+                                      "comment_id": "p1k9x3y",
+                                      "author": "[deleted]",
+                                      "author_karma": 0,
+                                      "content": "[removed]",
+                                      "timestamp": "2026-08-04T01:14:33+00:00",
+                                      "likes": 1,
+                                      "dislikes": 0,
+                                      "parent_comment_id": "p1k9qjz",
+                                      "depth": 7,
+                                      "replies": []
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "comment_id": "p1k8frl",
+                      "author": "reddit_user_407793f08c1f",
+                      "author_karma": 0,
+                      "content": "bezos does not own the wall street journal. fox news isn't classified as news - it's classified as entertainment. read a book on the constitution instead of consuming tiktok my brother",
+                      "timestamp": "2026-08-04T01:06:26+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1k1orr",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "p1k9acp",
+                          "author": "reddit_user_583242480626",
+                          "author_karma": 0,
+                          "content": "I meant The Washington Post, not WSJ. I know the entertainment line is what Fox News had to pull to protect themselves in a lawsuit, so why then are they invited to White House press events and regularly invites Trump and Republican politicians? The Tiktok statement is ironic coming from you.  ",
+                          "timestamp": "2026-08-04T01:11:05+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "p1k8frl",
+                          "depth": 4,
+                          "replies": [
+                            {
+                              "comment_id": "p1k9ryw",
+                              "author": "reddit_user_407793f08c1f",
+                              "author_karma": 0,
+                              "content": ">I know the entertainment line is what Fox News had to pull to protect themselves in a lawsuit, so why then are they invited to White House press events and regularly invites Trump and Republican politicians?\n\nentertainers are invited. that's why the cast of vanderpump rules attended the dinner.\n\nand non-news outlets can host politicians. for example, zohran mamdani was recently on sesame street - do you think elmo does news?",
+                              "timestamp": "2026-08-04T01:13:46+00:00",
+                              "likes": 1,
+                              "dislikes": 0,
+                              "parent_comment_id": "p1k9acp",
+                              "depth": 5,
+                              "replies": [
+                                {
+                                  "comment_id": "p1kaopg",
+                                  "author": "reddit_user_583242480626",
+                                  "author_karma": 0,
+                                  "content": "Do entertainment organizations run political polls? Do they have live reporters at political events? Fox News is a news media organization that uses the entertainment loophole to protect themselves from regular journalistic standards that other news organizations are held to. It’s blatantly obvious, and it’s telling that a conservative news network needs to do that in the first place. ",
+                                  "timestamp": "2026-08-04T01:18:49+00:00",
+                                  "likes": 1,
+                                  "dislikes": 0,
+                                  "parent_comment_id": "p1k9ryw",
+                                  "depth": 6,
+                                  "replies": [
+                                    {
+                                      "comment_id": "p1kc57d",
+                                      "author": "reddit_user_407793f08c1f",
+                                      "author_karma": 0,
+                                      "content": "ok but what does this have to do with freedom of the press? fox is still allowed to be on tv, that just proves that the US isn't censoring people. YOU are the one arguing that we should censor conservative entertainment outlets in order to. bc censorship will ensure freedom of the press i guess? words have meanings",
+                                      "timestamp": "2026-08-04T01:26:50+00:00",
+                                      "likes": 1,
+                                      "dislikes": 0,
+                                      "parent_comment_id": "p1kaopg",
+                                      "depth": 7,
+                                      "replies": [
+                                        {
+                                          "comment_id": "p1kcl9o",
+                                          "author": "reddit_user_583242480626",
+                                          "author_karma": 0,
+                                          "content": "That’s not what I said, stop putting words in my mouth. My original comment has highlighting that press freedom is more than just freedom from government control. Corporation influence needs to be counted too. ",
+                                          "timestamp": "2026-08-04T01:29:20+00:00",
+                                          "likes": 1,
+                                          "dislikes": 0,
+                                          "parent_comment_id": "p1kc57d",
+                                          "depth": 8,
+                                          "replies": [
+                                            {
+                                              "comment_id": "p1kdfgz",
+                                              "author": "[deleted]",
+                                              "author_karma": 0,
+                                              "content": "[removed]",
+                                              "timestamp": "2026-08-04T01:33:59+00:00",
+                                              "likes": 1,
+                                              "dislikes": 0,
+                                              "parent_comment_id": "p1kcl9o",
+                                              "depth": 9,
+                                              "replies": []
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "comment_id": "p1jzqge",
+              "author": "reddit_user_390297113dc9",
+              "author_karma": 0,
+              "content": ">Which is roughly the same situation as literally every other country in the world\n\nOkay so this is a verifiable statement. Do you know how much public funding NYT gets? Or how much influence does the government have to it?",
+              "timestamp": "2026-08-04T00:19:01+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1iqqf0",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1k1uk4",
+                  "author": "reddit_user_583242480626",
+                  "author_karma": 0,
+                  "content": "You do realize that government funding isn’t the only form of control a media organization can have right?",
+                  "timestamp": "2026-08-04T00:30:26+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1jzqge",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1k2nbr",
+                      "author": "reddit_user_390297113dc9",
+                      "author_karma": 0,
+                      "content": "You can always elaborate. Sure, a media organization is obviously influenced by whoever owns it. But in this way there's no free press then: everything is equally unreliable.\n\nSo there should at least be an operational standard of what you consider to be reliable news sources and why you think somehow a Qatar-run agency known to promote Holocaust denialism in the past is more reliable than the often conflicting news agencies in the US. ",
+                      "timestamp": "2026-08-04T00:34:47+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1k1uk4",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "p1k3aox",
+                          "author": "reddit_user_583242480626",
+                          "author_karma": 0,
+                          "content": "The standard I usually go by is to trust pieces from organizations on topics that they would have a neutral stance on, or at least as close as possible to neutral. If Al Jazerra is reporting something on US-Canada relations, I’ll tend to trust it over US news. ",
+                          "timestamp": "2026-08-04T00:38:24+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "p1k2nbr",
+                          "depth": 4,
+                          "replies": [
+                            {
+                              "comment_id": "p1k3uwk",
+                              "author": "reddit_user_390297113dc9",
+                              "author_karma": 0,
+                              "content": ">I'd trust Al Jazeera **over 99% of our media stations when it comes to most issues**\n\nYour words, not mine.\n\nSo you think Qatar is neutral in most affairs the United States is involved in, which I think perhaps isn't truly a wise estimation. ",
+                              "timestamp": "2026-08-04T00:41:25+00:00",
+                              "likes": 1,
+                              "dislikes": 0,
+                              "parent_comment_id": "p1k3aox",
+                              "depth": 5,
+                              "replies": [
+                                {
+                                  "comment_id": "p1k4035",
+                                  "author": "reddit_user_583242480626",
+                                  "author_karma": 0,
+                                  "content": "No? You might want to check who you’re replying to. ",
+                                  "timestamp": "2026-08-04T00:42:11+00:00",
+                                  "likes": 1,
+                                  "dislikes": 0,
+                                  "parent_comment_id": "p1k3uwk",
+                                  "depth": 6,
+                                  "replies": []
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "comment_id": "p1kptkq",
+              "author": "reddit_user_1301c385cc13",
+              "author_karma": 0,
+              "content": "So you decide to believe the state media outlet of a muslim brotherhood aligned country? Lmao, what an idiot",
+              "timestamp": "2026-08-04T02:43:16+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1iqqf0",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1j0nil",
+          "author": "reddit_user_23722ef098b7",
+          "author_karma": 0,
+          "content": "Good. If only people in the west & on social media were smart enough to know that Al Jazeera anti west propaganda for the Qatari royal family. Unfortunately, the Qatari royal family seems to be doing a great job at deceive and brainwashing young western leftists on social media sites.  \n\n. ",
+          "timestamp": "2026-08-03T21:21:54+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1jmk2e",
+              "author": "reddit_user_477f6a94aa2a",
+              "author_karma": 0,
+              "content": "LMFAOOOOOOOOOOO",
+              "timestamp": "2026-08-03T23:08:59+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1j0nil",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p1l6hgp",
+              "author": "reddit_user_9938c1a3b77d",
+              "author_karma": 0,
+              "content": "I wouldn't call Qatari journalism as anti-western. It's pro-qatar interests which sometimes align with the west and sometimes don't.",
+              "timestamp": "2026-08-04T04:29:09+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1j0nil",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1j6bnv",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-03T21:48:14+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1i60h4",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1jmo8q",
+          "author": "reddit_user_477f6a94aa2a",
+          "author_karma": 0,
+          "content": "New management? ",
+          "timestamp": "2026-08-03T23:09:36+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1i8bq8",
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1k2wvn",
+              "author": "reddit_user_505a0d328593",
+              "author_karma": 0,
+              "content": "my bad, that was bad wording (had the meme in mind)\n\nmore like different management but both have the same treatment of the locals. personally i believe the only real solution is for kashmir to be ruled indigenously by the locals alone.\n\nbut both pak and india are too selfish and egotistic to let that happen.\n\ntheyd kill every local and half their own armies before they even think of such a resolution",
+              "timestamp": "2026-08-04T00:36:16+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1jmo8q",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1k53t1",
+                  "author": "reddit_user_3b913efc08a2",
+                  "author_karma": 0,
+                  "content": "Do you also include the Kashmiri hindus who are refugees in India as locals due to Pak genocide ? ",
+                  "timestamp": "2026-08-04T00:48:13+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1k2wvn",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1kb428",
+                      "author": "reddit_user_505a0d328593",
+                      "author_karma": 0,
+                      "content": "im not sure if im missing something here. \n\nwhy would their hindus be relevant?\n\nwere they originally kashmiris or not?\nif they are then they should stay and be involved in the government",
+                      "timestamp": "2026-08-04T01:21:10+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1k53t1",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "p1kvdml",
+                          "author": "reddit_user_3b913efc08a2",
+                          "author_karma": 0,
+                          "content": "Oh my sweet summer child! ",
+                          "timestamp": "2026-08-04T03:16:41+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "p1kb428",
+                          "depth": 4,
+                          "replies": []
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "comment_id": "p1l7669",
+                  "author": "[deleted]",
+                  "author_karma": 0,
+                  "content": "[removed]",
+                  "timestamp": "2026-08-04T04:33:58+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1k2wvn",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p1jmrtx",
+          "author": "reddit_user_477f6a94aa2a",
+          "author_karma": 0,
+          "content": "Unfortunately the entire world seems to headed in that direction. ",
+          "timestamp": "2026-08-03T23:10:08+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1i0ou1",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1jq7su",
+          "author": "reddit_user_95b09446db12",
+          "author_karma": 0,
+          "content": "Qatar, who runs it, is among the most corrupt.",
+          "timestamp": "2026-08-03T23:28:10+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1i3k2h",
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1jspt1",
+              "author": "reddit_user_407793f08c1f",
+              "author_karma": 0,
+              "content": "i mean, it's not really corrupt if you're ruled by an absolute monarchy doing whatever they want. that's sort of their system of government. if you think about it, doing democracy might actually be corruption under their system.",
+              "timestamp": "2026-08-03T23:41:16+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1jq7su",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1ju0j1",
+                  "author": "reddit_user_95b09446db12",
+                  "author_karma": 0,
+                  "content": "An absolute monarchy is corrupt almost by definition.",
+                  "timestamp": "2026-08-03T23:48:07+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1jspt1",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1jufl7",
+                      "author": "reddit_user_407793f08c1f",
+                      "author_karma": 0,
+                      "content": "i guess my point is in a democracy, you do things to subvert the democracy for profit, that's corruption. in an absolute monachy, you literally cannot subvert the government - you are the government and the government is yours. so technically, the only way you could be corrupt is to subvert the monarchy for the people. does that make sense? it was sort of a joke but i agree with you generally. i'm just saying that qatar isn't being corrupt pushing the viewpoints of the qatari royal family. that's their system. however, it is possible for OUR systems of government to be corrupted by them. ",
+                      "timestamp": "2026-08-03T23:50:22+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1ju0j1",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "p1k0c01",
+                          "author": "reddit_user_95b09446db12",
+                          "author_karma": 0,
+                          "content": "I understand what you're saying but one person ruling by force (which is how all monarchs rule) over many other people is inherently corrupt.  They loot the country's wealth and use it to pay their cronies who use violence to stay in power.\n\nThe whole \"divine right of kings\" thing is an attempt to whitewash this inherently corrupt setup.",
+                          "timestamp": "2026-08-04T00:22:15+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "p1jufl7",
+                          "depth": 4,
+                          "replies": [
+                            {
+                              "comment_id": "p1k1e09",
+                              "author": "reddit_user_407793f08c1f",
+                              "author_karma": 0,
+                              "content": "no i totally agree it's inherently corrupt. my point is that you can't really corrupt what's already corrupt. ",
+                              "timestamp": "2026-08-04T00:27:57+00:00",
+                              "likes": 1,
+                              "dislikes": 0,
+                              "parent_comment_id": "p1k0c01",
+                              "depth": 5,
+                              "replies": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p1k4f4b",
+          "author": "reddit_user_3b913efc08a2",
+          "author_karma": 0,
+          "content": "Yes the genocide and expulsion of hindus in last 100 years from Kashmir ",
+          "timestamp": "2026-08-04T00:44:28+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1hykop",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1k65oy",
+          "author": "reddit_user_3db00910e86f",
+          "author_karma": 0,
+          "content": "Does this qualify as the Cunningham's law?",
+          "timestamp": "2026-08-04T00:53:54+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1i925u",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1k6psl",
+          "author": "reddit_user_583242480626",
+          "author_karma": 0,
+          "content": "And there it is. Whenever you show some actual data, people like you throw your hands in the air and claim it’s BS but never have any actual explanation as to why. Trump has repeatedly gone after journalists over saying things he didn’t like. [This was at the recent White House correspondent’s dinner.](https://youtu.be/4bfCmnO0aW0?is=q7mi5B-Oq34uxsFO) ",
+          "timestamp": "2026-08-04T00:56:58+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1kg295",
+          "author": "reddit_user_b3d47d39b6ee",
+          "author_karma": 0,
+          "content": "Al Jazeera’s documentaries on the MidEast in the 2000s and 10s were freaking gold. \n\nJust don’t trust anything they say about Qatar and you’re good.",
+          "timestamp": "2026-08-04T01:48:31+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1ib0of",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1kll6o",
+          "author": "reddit_user_3bd8ee55d99b",
+          "author_karma": 0,
+          "content": "Pakistan As a state has a propaganda unit and it’s quite visible in social media if you look closely, I don’t know if it’s scary or sad.",
+          "timestamp": "2026-08-04T02:19:20+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1ksoz5",
+          "author": "reddit_user_0a9b24e7e67d",
+          "author_karma": 0,
+          "content": "News outlet? Where lol? ",
+          "timestamp": "2026-08-04T03:00:12+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1hocd7",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1kx7sv",
+          "author": "reddit_user_d3ef34c5439d",
+          "author_karma": 0,
+          "content": "Al Jazeera isn't banned in India ",
+          "timestamp": "2026-08-04T03:28:05+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p1i0ou1",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1l5yj4",
+          "author": "reddit_user_606818e01495",
+          "author_karma": 0,
+          "content": "Anyone else find themselves reading it as ai jazeerah at first glance ",
+          "timestamp": "2026-08-04T04:25:31+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run023_post03_seed118",
+      "post_slot": 3,
+      "seed_index": 118,
+      "source_raw_post_id": "1vekxqo",
+      "source_product_dir": "nottheonion",
+      "source_file": "https://www.reddit.com/r/nottheonion/comments/1vekxqo/alamo_drafthouse_austin_theater_to_be_renamed/",
+      "post_type": "link",
+      "title": "Alamo Drafthouse Austin Theater To Be Renamed Matthew McConaughey Cinema",
+      "author": "reddit_user_bde1e90b951b",
+      "author_karma": 0,
+      "content": "Alamo Drafthouse Austin Theater To Be Renamed Matthew McConaughey Cinema",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p1hqts1",
+          "author": "reddit_user_e320faca37f4",
+          "author_karma": 0,
+          "content": "[](/spikeholdup) Greetings, \\[REDDIT_USER]!  Your submission from deadline.com has been automatically removed because it violates Rule 4 (use original, reliable sources).  **The website that you submitted, deadline.com, is not allowed for one or more of the following reasons:**\n\n* **It frequently quotes other sources in its content, or is known to engage in content-theft.**\n\n* **It's not a reliable source. This could be because it's a news blog, tabloid, or is known to be overly slanted. If it was a local news affiliate and owned by Sinclair Group they are also not allowed.**\n\n* **It's an opinion or blog section of a regular news website, or the site is known to post opinion articles as fact.**\n\n* **It's a site for activism or promoting a certain POV.  Nothing wrong with that, but it's not a news site.**\n\nIf you'd like, you can review the article and resubmit from a better source.  If your article's source is linked in the article, you can try submitting from the original source.  [For more information on Rule 4, click here.](https://www.reddit.com/r/nottheonion/wiki/nto101#wiki_rule_4.3A__use_original.2C_reliable_sources.)  \n\nFor a complete list of domains that are not allowed, [click here](https://www.reddit.com/r/nottheonion/wiki/autoremoval).  If you're new to \\/r/NotTheOnion, you may want to check out [NTO101: An Introduction To \\/r/NotTheOnion](https://www.reddit.com/r/nottheonion/wiki/nto101) for more information on our rules and answers to frequently asked questions.\n\n*I am a bot, and this action was performed automatically. Please [contact the moderators of this subreddit](/message/compose/?to=/r/nottheonion) if you have any questions or concerns.*",
+          "timestamp": "2026-08-03T18:01:29+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run023_post04_seed119",
+      "post_slot": 4,
+      "seed_index": 119,
+      "source_raw_post_id": "1vel00o",
+      "source_product_dir": "nottheonion",
+      "source_file": "https://www.reddit.com/r/nottheonion/comments/1vel00o/alamo_drafthouse_to_rename_mueller_location_after/",
+      "post_type": "link",
+      "title": "Alamo Drafthouse to rename Mueller location after Matthew McConaughey",
+      "author": "reddit_user_bde1e90b951b",
+      "author_karma": 0,
+      "content": "Alamo Drafthouse to rename Mueller location after Matthew McConaughey",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p1hs6re",
+          "author": "reddit_user_8bb7683584ea",
+          "author_karma": 0,
+          "content": "r/nottheonion",
+          "timestamp": "2026-08-03T18:07:14+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1htrca",
+              "author": "reddit_user_dad62d564d2c",
+              "author_karma": 0,
+              "content": "r/lostredditors ",
+              "timestamp": "2026-08-03T18:13:53+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1hs6re",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p1hy2np",
+              "author": "reddit_user_d64489b14515",
+              "author_karma": 0,
+              "content": "Um. You know where you are, right?",
+              "timestamp": "2026-08-03T18:32:21+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1hs6re",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1hzskb",
+                  "author": "[deleted]",
+                  "author_karma": 0,
+                  "content": "[deleted]",
+                  "timestamp": "2026-08-03T18:39:53+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1hy2np",
+                  "depth": 2,
+                  "replies": []
+                },
+                {
+                  "comment_id": "p1hzz06",
+                  "author": "reddit_user_8bb7683584ea",
+                  "author_karma": 0,
+                  "content": "exactly i do. i love the guy fine. But this is cartoonish for many immediate minister of culture reasons.\n\nI’d be totally in line with a Mike Judge theater.\n\n",
+                  "timestamp": "2026-08-03T18:40:39+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1hy2np",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1i3vh5",
+                      "author": "reddit_user_0f42576ab8a8",
+                      "author_karma": 0,
+                      "content": "...are you a bot? This is /r/notheonion. Why would be surprising to find such a heading here? As you suggests, that's what goes on here.",
+                      "timestamp": "2026-08-03T18:57:25+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1hzz06",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "p1i47fh",
+                          "author": "reddit_user_8bb7683584ea",
+                          "author_karma": 0,
+                          "content": "in your goal at humor you misspelled the subreddit",
+                          "timestamp": "2026-08-03T18:58:48+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "p1i3vh5",
+                          "depth": 4,
+                          "replies": [
+                            {
+                              "comment_id": "p1i4m5i",
+                              "author": "reddit_user_0f42576ab8a8",
+                              "author_karma": 0,
+                              "content": "Oh no, spelling mistake. Least it shows i am not a bot.",
+                              "timestamp": "2026-08-03T19:00:32+00:00",
+                              "likes": 1,
+                              "dislikes": 0,
+                              "parent_comment_id": "p1i47fh",
+                              "depth": 5,
+                              "replies": [
+                                {
+                                  "comment_id": "p1i4qgv",
+                                  "author": "reddit_user_8bb7683584ea",
+                                  "author_karma": 0,
+                                  "content": "you were claiming to be the subreddit itself",
+                                  "timestamp": "2026-08-03T19:01:03+00:00",
+                                  "likes": 1,
+                                  "dislikes": 0,
+                                  "parent_comment_id": "p1i4m5i",
+                                  "depth": 6,
+                                  "replies": [
+                                    {
+                                      "comment_id": "p1i5055",
+                                      "author": "reddit_user_0f42576ab8a8",
+                                      "author_karma": 0,
+                                      "content": "You'll have to point to where i said that lmao",
+                                      "timestamp": "2026-08-03T19:02:13+00:00",
+                                      "likes": 1,
+                                      "dislikes": 0,
+                                      "parent_comment_id": "p1i4qgv",
+                                      "depth": 7,
+                                      "replies": [
+                                        {
+                                          "comment_id": "p1i59hm",
+                                          "author": "reddit_user_8bb7683584ea",
+                                          "author_karma": 0,
+                                          "content": "my error and apologies.\n\nheavily sleep deprived! \n\ndeleting and laughing at self, pardon",
+                                          "timestamp": "2026-08-03T19:03:19+00:00",
+                                          "likes": 1,
+                                          "dislikes": 0,
+                                          "parent_comment_id": "p1i5055",
+                                          "depth": 8,
+                                          "replies": []
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p1hsndy",
+          "author": "reddit_user_2ac9282439b8",
+          "author_karma": 0,
+          "content": "People just throw anything at the wall and hope it sticks.",
+          "timestamp": "2026-08-03T18:09:09+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1hwkkm",
+          "author": "reddit_user_c03b7b30cc31",
+          "author_karma": 0,
+          "content": "alright, alright, alright",
+          "timestamp": "2026-08-03T18:25:55+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1hyiwf",
+          "author": "reddit_user_f80d0d957446",
+          "author_karma": 0,
+          "content": "Better than Jared Leto or Woody Allen 🤷‍♂️",
+          "timestamp": "2026-08-03T18:34:21+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1i3vbp",
+          "author": "reddit_user_fc88e7a3afa0",
+          "author_karma": 0,
+          "content": "Eh new development relatively small theatre in Austin. Who cares. ",
+          "timestamp": "2026-08-03T18:57:23+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1ibpmf",
+          "author": "reddit_user_03e08894b824",
+          "author_karma": 0,
+          "content": "How is this supposed to be oniony?",
+          "timestamp": "2026-08-03T19:31:26+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1iv1x5",
+              "author": "reddit_user_de5f338d07ab",
+              "author_karma": 0,
+              "content": "Naming a theater after one of the most famous actors from the city seems pretty normal to me. ",
+              "timestamp": "2026-08-03T20:56:26+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1ibpmf",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1izbst",
+                  "author": "reddit_user_5b1a1ac9c6db",
+                  "author_karma": 0,
+                  "content": "I feel like changing the name *AWAY* from a famous person involved in your city would be more Oniony.\n\nLike, “Richardson Hospital (named after most famous brain surgeon from hospital) to be renamed ‘St. Dismas Hospital’ after much more successful Saint”",
+                  "timestamp": "2026-08-03T21:15:49+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1iv1x5",
+                  "depth": 2,
+                  "replies": []
+                },
+                {
+                  "comment_id": "p1j8f6a",
+                  "author": "reddit_user_2484c8037f1a",
+                  "author_karma": 0,
+                  "content": "He’s from Uvalde not Austin. I don’t care but naming it after Ethan Hawke would be more fitting ",
+                  "timestamp": "2026-08-03T21:58:11+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1iv1x5",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1jafex",
+                      "author": "reddit_user_de5f338d07ab",
+                      "author_karma": 0,
+                      "content": "How does someone who moved away to NYC as a child (and remained a New Yorker ever since) have more claim? ",
+                      "timestamp": "2026-08-03T22:07:46+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1j8f6a",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "p1jbm8j",
+                          "author": "reddit_user_2484c8037f1a",
+                          "author_karma": 0,
+                          "content": "Like i said i don’t really care, but he was born here. Maybe we can meet in the middle and vote for Stone Cold Steve Austin, who was born here too. ",
+                          "timestamp": "2026-08-03T22:13:31+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "p1jafex",
+                          "depth": 4,
+                          "replies": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p1izu4h",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-03T21:18:10+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1izuap",
+              "author": "reddit_user_e320faca37f4",
+              "author_karma": 0,
+              "content": "Sorry, but your account is too new to post.  Your account needs to be either 2 weeks old or have at least 250 combined link and comment karma.  Don't modmail us about this, just wait it out or get more karma.\n\n\n*I am a bot, and this action was performed automatically. Please [contact the moderators of this subreddit](/message/compose/?to=/r/nottheonion) if you have any questions or concerns.*",
+              "timestamp": "2026-08-03T21:18:12+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1izu4h",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1jfn94",
+          "author": "reddit_user_78c7e61f138f",
+          "author_karma": 0,
+          "content": "Boooooooo!",
+          "timestamp": "2026-08-03T22:33:31+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    }
+  ]
+}

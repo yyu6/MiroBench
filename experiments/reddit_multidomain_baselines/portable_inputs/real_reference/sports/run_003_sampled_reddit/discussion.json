@@ -1,0 +1,3879 @@
+{
+  "meta": {
+    "product_category": "sports",
+    "baseline": "real_reddit_reference",
+    "run_id": "run_003_sampled_reddit"
+  },
+  "posts": [
+    {
+      "post_id": "real_run003_post00_seed015",
+      "post_slot": 0,
+      "seed_index": 15,
+      "source_raw_post_id": "1vb5hbr",
+      "source_product_dir": "sports",
+      "source_file": "https://www.reddit.com/r/sports/comments/1vb5hbr/concacaf_rejects_infantinos_plan_to_sell_stakes/",
+      "post_type": ":soccer: Soccer",
+      "title": "CONCACAF rejects Infantino’s plan to sell stakes in the World Cup to private equity investors",
+      "author": "reddit_user_79ff14d8816f",
+      "author_karma": 0,
+      "content": "CONCACAF rejects Infantino’s plan to sell stakes in the World Cup to private equity investors",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p0rqre1",
+          "author": "reddit_user_e8d8c99d18e1",
+          "author_karma": 0,
+          "content": "Your submission was automatically removed due to the amount of comments surrounding this subject which violate subreddit Rule 5. If approved, it will be presented as a read-only post without comments enabled.\n\n*I am a bot, and this action was performed automatically. Please [contact the moderators of this subreddit](/message/compose/?to=/r/sports) if you have any questions or concerns.*",
+          "timestamp": "2026-07-30T23:21:57+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p0rqra3",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0rrd8p",
+          "author": "reddit_user_865e1b461dfa",
+          "author_karma": 0,
+          "content": "They don't want to boycott as if they let UEFA boycott the upcoming u20(?) championship which is around the time of the vote then they can get a bye on a couple of games and an easy win at a minor trophy. Then Fifa folds because UEFA followed through with their threat, and nobody remembers why a European team wasn't in the final of that championship in a decades time. ",
+          "timestamp": "2026-07-30T23:25:09+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": "p0rounv",
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0s3swr",
+              "author": "reddit_user_b88586abec33",
+              "author_karma": 0,
+              "content": "It's not exactly common for a UEFA team to win the u20 World Cup. European teams don't really care about it and favor the u21 euros over it. Out of the past 12 they have only won 4 and two of those were Ukraine and Serbia, not power house countries.",
+              "timestamp": "2026-07-31T00:31:34+00:00",
+              "likes": 2,
+              "dislikes": 0,
+              "parent_comment_id": "p0rrd8p",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p0rrjad",
+          "author": "reddit_user_bfd8c2f3a257",
+          "author_karma": 0,
+          "content": "UEFA (55 members) is already out, Concacaf (35 members) is not positive and AFC (Asia, 46 members) also does not seem happy. Without at least one those three you are dead in the water with any proposal, since Conmebol (10 members), CAF (Africa, 54 members) and OFC (Oceania, 11 members) can not make up the needed votes (you need half plus one to change things, or 107 in actual numbers).",
+          "timestamp": "2026-07-30T23:26:02+00:00",
+          "likes": 71,
+          "dislikes": 0,
+          "parent_comment_id": "p0qwhn4",
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0sy43x",
+              "author": "reddit_user_96ebc6ee4e1d",
+              "author_karma": 0,
+              "content": "To be blunt, you're dead in the water the moment UEFA says \"No\". 6 out of 8 quarter finalists at this year's world cup were European teams. That tells you everything to know about the relative balance of power in football.",
+              "timestamp": "2026-07-31T03:23:49+00:00",
+              "likes": 35,
+              "dislikes": 0,
+              "parent_comment_id": "p0rrjad",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p0tc71y",
+                  "author": "reddit_user_bfd8c2f3a257",
+                  "author_karma": 0,
+                  "content": "Yes but no. Without Europe you can still force something through, although it will most likely have consequences. But then again I do think it will come down to a game of chicken between FIFA and UEFA.",
+                  "timestamp": "2026-07-31T04:56:35+00:00",
+                  "likes": -17,
+                  "dislikes": 0,
+                  "parent_comment_id": "p0sy43x",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p0tdvds",
+                      "author": "[deleted]",
+                      "author_karma": 0,
+                      "content": "[removed]",
+                      "timestamp": "2026-07-31T05:08:34+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p0tc71y",
+                      "depth": 3,
+                      "replies": []
+                    },
+                    {
+                      "comment_id": "p0topih",
+                      "author": "reddit_user_c7582218008f",
+                      "author_karma": 0,
+                      "content": "The game of chicken is alredy over if UEFA keeps their members in line. Those private investors will not have interest in a wc with 70% less revenue, whether the vote goes through or not.",
+                      "timestamp": "2026-07-31T06:29:58+00:00",
+                      "likes": 23,
+                      "dislikes": 0,
+                      "parent_comment_id": "p0tc71y",
+                      "depth": 3,
+                      "replies": []
+                    },
+                    {
+                      "comment_id": "p0ty1j5",
+                      "author": "reddit_user_c99bb87a3226",
+                      "author_karma": 0,
+                      "content": "Nothing to vote on if Uefa leaves. There won't be anything left",
+                      "timestamp": "2026-07-31T07:43:21+00:00",
+                      "likes": 7,
+                      "dislikes": 0,
+                      "parent_comment_id": "p0tc71y",
+                      "depth": 3,
+                      "replies": []
+                    },
+                    {
+                      "comment_id": "p0vvtp0",
+                      "author": "reddit_user_96ebc6ee4e1d",
+                      "author_karma": 0,
+                      "content": "The consequences will be *much* fewer viewers.",
+                      "timestamp": "2026-07-31T14:46:42+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p0tc71y",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "comment_id": "p0szqb6",
+              "author": "reddit_user_d5b982f0c3c2",
+              "author_karma": 0,
+              "content": "UEFA alone is enough to kill the World Cup. No need to vote. ",
+              "timestamp": "2026-07-31T03:33:59+00:00",
+              "likes": 52,
+              "dislikes": 0,
+              "parent_comment_id": "p0rrjad",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p0we46z",
+              "author": "reddit_user_356a3637f552",
+              "author_karma": 0,
+              "content": "UEFA alone would be better football than the rest of FIFA ",
+              "timestamp": "2026-07-31T16:05:35+00:00",
+              "likes": 3,
+              "dislikes": 0,
+              "parent_comment_id": "p0rrjad",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p0rrq00",
+          "author": "reddit_user_06c1a8c51ff0",
+          "author_karma": 0,
+          "content": "How is it possible that this guy overplayed his hand so much? Like, I cannot conceive of how much g\noodwill from the World Cup he has managed to squander and turn into negative political equity so fast.",
+          "timestamp": "2026-07-30T23:27:01+00:00",
+          "likes": 3,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0tanyq",
+              "author": "[deleted]",
+              "author_karma": 0,
+              "content": "[removed]",
+              "timestamp": "2026-07-31T04:46:01+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p0rrq00",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p0u1aab",
+              "author": "reddit_user_a08cd65be684",
+              "author_karma": 0,
+              "content": "TBF a lot of football fans thought a)the World Cup was great despite Infantino and b)he was responsible for allowing or enabling the most concerning aspects of the Cup - bending the rules and allowing the exclusion of Iranian footballers (forced to stay overnight outside the US) and the Somalian referee.",
+              "timestamp": "2026-07-31T08:09:42+00:00",
+              "likes": 2,
+              "dislikes": 0,
+              "parent_comment_id": "p0rrq00",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p0rs071",
+          "author": "reddit_user_bfd8c2f3a257",
+          "author_karma": 0,
+          "content": "Conmebol does not really matter in a game of numbers. While they have some of the biggest names in football, they have just 10 members and thus 10 votes. The UK on its own has as more votes than all of South America. (The 4 home nations, Gibraltar and their six Caribbean FIFA members).",
+          "timestamp": "2026-07-30T23:28:30+00:00",
+          "likes": 21,
+          "dislikes": 0,
+          "parent_comment_id": "p0qycuu",
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0ruimh",
+              "author": "reddit_user_6c04db0caafd",
+              "author_karma": 0,
+              "content": "That's not how it works though - the UK home nations and Gibraltar are in UEFA and I'll admit I'm not sure where the Caribbean nations lie off the top of my head but I'm going to take a swing and say they're in CONCACAF",
+              "timestamp": "2026-07-30T23:41:43+00:00",
+              "likes": 5,
+              "dislikes": 0,
+              "parent_comment_id": "p0rs071",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p0rw8mi",
+                  "author": "reddit_user_bfd8c2f3a257",
+                  "author_karma": 0,
+                  "content": "Yes. So the UK as a whole has 11 votes while all of CONMEBOL has 10. So the UK can outvote all of CONMEBOL on its own.",
+                  "timestamp": "2026-07-30T23:50:46+00:00",
+                  "likes": 11,
+                  "dislikes": 0,
+                  "parent_comment_id": "p0ruimh",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p0rx68b",
+                      "author": "reddit_user_6c04db0caafd",
+                      "author_karma": 0,
+                      "content": "...but those votes are already included as part of UEFA and CONCACAF already saying they're boycotting. But keep on banging the Britannia rules the waves drums (and I'm English too)",
+                      "timestamp": "2026-07-30T23:55:39+00:00",
+                      "likes": -19,
+                      "dislikes": 0,
+                      "parent_comment_id": "p0rw8mi",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "p0rz41v",
+                          "author": "reddit_user_bfd8c2f3a257",
+                          "author_karma": 0,
+                          "content": "Those votes don't go by confederation, but by nation. So even if a confederation wants to vote one way their members can instead vote another way. \n\nIn terms of importance South America is second after Europe, in terms of votes they are last.",
+                          "timestamp": "2026-07-31T00:06:05+00:00",
+                          "likes": 6,
+                          "dislikes": 0,
+                          "parent_comment_id": "p0rx68b",
+                          "depth": 4,
+                          "replies": []
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "comment_id": "p0yjxue",
+                  "author": "[deleted]",
+                  "author_karma": 0,
+                  "content": "[removed]",
+                  "timestamp": "2026-07-31T21:52:07+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p0ruimh",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            },
+            {
+              "comment_id": "p0s1eqm",
+              "author": "reddit_user_b511c8546d4f",
+              "author_karma": 0,
+              "content": "It may be a numbers game as far as resolutions and some changes like the hydration breaks and other smaller stuff. But if the top \\~5 European teams boycott this then it’s dead. Imagine a WC without France, Spain, England, Germany, and the Netherlands for example. ",
+              "timestamp": "2026-07-31T00:18:28+00:00",
+              "likes": 14,
+              "dislikes": 0,
+              "parent_comment_id": "p0rs071",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p0swq7t",
+                  "author": "reddit_user_dabe9e7e47a9",
+                  "author_karma": 0,
+                  "content": "Imagine a World Cup without Italy ! Wait a minute...",
+                  "timestamp": "2026-07-31T03:15:19+00:00",
+                  "likes": 17,
+                  "dislikes": 0,
+                  "parent_comment_id": "p0s1eqm",
+                  "depth": 2,
+                  "replies": []
+                },
+                {
+                  "comment_id": "p0yjree",
+                  "author": "[deleted]",
+                  "author_karma": 0,
+                  "content": "[removed]",
+                  "timestamp": "2026-07-31T21:51:14+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p0s1eqm",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            },
+            {
+              "comment_id": "p0s2nip",
+              "author": "reddit_user_b88586abec33",
+              "author_karma": 0,
+              "content": "CONCACAF has more votes but Conmebol could have more power over this, if Brazil and Argentina say they will boycott the World Cup with UEFA then this is fully dead in the water.",
+              "timestamp": "2026-07-31T00:25:18+00:00",
+              "likes": 7,
+              "dislikes": 0,
+              "parent_comment_id": "p0rs071",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p0rua4s",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-07-30T23:40:29+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0ruhcf",
+          "author": "reddit_user_06dd3d0dc762",
+          "author_karma": 0,
+          "content": "What does that have to do with anything? It's more about symbolism and optics. FIFA would definitely still feel UEFA and CONCACAF's absence, even if it's the women's world cup.",
+          "timestamp": "2026-07-30T23:41:32+00:00",
+          "likes": 7,
+          "dislikes": 0,
+          "parent_comment_id": "p0rmm4s",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0ruyqm",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-07-30T23:44:05+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p0rb4ae",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0ruzz2",
+          "author": "reddit_user_dfba3f3b3d73",
+          "author_karma": 0,
+          "content": "Spain and portugal, being UEFA members, are hosting the next tournament. It's hardly an idle threat under that circumstance.",
+          "timestamp": "2026-07-30T23:44:16+00:00",
+          "likes": 5,
+          "dislikes": 0,
+          "parent_comment_id": "p0qvzpd",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0rvm5m",
+          "author": "reddit_user_bc2a44ca723c",
+          "author_karma": 0,
+          "content": "CONCACAF will still vote in favour because they will get like 20 million dollars for that, just like the rest.",
+          "timestamp": "2026-07-30T23:47:29+00:00",
+          "likes": -4,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0rvsgb",
+              "author": "reddit_user_f676f6ca53a2",
+              "author_karma": 0,
+              "content": "It's not worth that much anymore",
+              "timestamp": "2026-07-30T23:48:23+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p0rvm5m",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p0rwiwn",
+                  "author": "reddit_user_bc2a44ca723c",
+                  "author_karma": 0,
+                  "content": "There's no chance the presidents of the COCACAF will reject that money.",
+                  "timestamp": "2026-07-30T23:52:14+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p0rvsgb",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            },
+            {
+              "comment_id": "p0v2l3k",
+              "author": "reddit_user_fe3142661379",
+              "author_karma": 0,
+              "content": "20 million ain't much in 2026.",
+              "timestamp": "2026-07-31T12:29:25+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p0rvm5m",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p0rwrmj",
+          "author": "reddit_user_ced30f084d2d",
+          "author_karma": 0,
+          "content": "We need this today",
+          "timestamp": "2026-07-30T23:53:30+00:00",
+          "likes": 5,
+          "dislikes": 0,
+          "parent_comment_id": "p0rhs1n",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0rxrxz",
+          "author": "reddit_user_8036917b7f45",
+          "author_karma": 0,
+          "content": "It's a vote, you don't need to boycott anything. UEFA are just taking a much bigger stance because they have a lot of power behind them.",
+          "timestamp": "2026-07-30T23:58:51+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": "p0r69hz",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0ryuyf",
+          "author": "reddit_user_8036917b7f45",
+          "author_karma": 0,
+          "content": "It's a vote, you don't need to take actions, just that UEFA are taking a much bigger stance on it.",
+          "timestamp": "2026-07-31T00:04:42+00:00",
+          "likes": 6,
+          "dislikes": 0,
+          "parent_comment_id": "p0qyp5p",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0s1is8",
+          "author": "reddit_user_3e0545e0bb9f",
+          "author_karma": 0,
+          "content": "He’s going to.",
+          "timestamp": "2026-07-31T00:19:05+00:00",
+          "likes": 0,
+          "dislikes": 0,
+          "parent_comment_id": "p0r6kaj",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0s1qsb",
+          "author": "reddit_user_96b52dc90fe4",
+          "author_karma": 0,
+          "content": "what are the chances this actually means anything at all? this has to end up being a giant nothingburger, there's too much money involved, and fifa has been so corrupt for so long, there's no way it doesn't still happen.",
+          "timestamp": "2026-07-31T00:20:18+00:00",
+          "likes": 0,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0s1vug",
+          "author": "reddit_user_3eb9169462ed",
+          "author_karma": 0,
+          "content": "It’s not 3am yet",
+          "timestamp": "2026-07-31T00:21:04+00:00",
+          "likes": 0,
+          "dislikes": 0,
+          "parent_comment_id": "p0r6kaj",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0s29dn",
+          "author": "reddit_user_e999cec7e1f7",
+          "author_karma": 0,
+          "content": "You think Trump has the required loyalty to keep him around after hes lost his power over FIFA?",
+          "timestamp": "2026-07-31T00:23:08+00:00",
+          "likes": 3,
+          "dislikes": 0,
+          "parent_comment_id": "p0r4c2r",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0s2i8p",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-07-31T00:24:30+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p0r6kaj",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0s5lc8",
+          "author": "reddit_user_7b8e8f442fcc",
+          "author_karma": 0,
+          "content": "I don't see what the big deal bring on private investors. It's not like there's a long list of things that these groups of people destroying societal institutions.\n\nI bet people couldn't name one",
+          "timestamp": "2026-07-31T00:41:21+00:00",
+          "likes": -2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0u23ld",
+              "author": "reddit_user_a08cd65be684",
+              "author_karma": 0,
+              "content": "*Why*? All they're going to do is hike prices, sell the hosting to the highest bidder, monetise TV viewers by going pay-per-view, sell future profits that should be going into football investments already, and bribe small footballing federations for votes.",
+              "timestamp": "2026-07-31T08:16:17+00:00",
+              "likes": 2,
+              "dislikes": 0,
+              "parent_comment_id": "p0s5lc8",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p0s9bd6",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-07-31T01:01:55+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p0rj65z",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0s9xfj",
+          "author": "reddit_user_14f3504e4d99",
+          "author_karma": 0,
+          "content": "Correction… sell off the World Cup to the Trump crime family",
+          "timestamp": "2026-07-31T01:05:18+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0sa1b6",
+          "author": "reddit_user_14f3504e4d99",
+          "author_karma": 0,
+          "content": "By “family” we really know it’s him. He just tries to hide behind his “family” holdings.",
+          "timestamp": "2026-07-31T01:05:54+00:00",
+          "likes": 0,
+          "dislikes": 0,
+          "parent_comment_id": "p0r6kaj",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0safa2",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-07-31T01:08:02+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p0rb4ae",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0sd4ar",
+          "author": "reddit_user_f8ae2096e6de",
+          "author_karma": 0,
+          "content": "3:00am rage post on truth socidl incoming. ",
+          "timestamp": "2026-07-31T01:22:52+00:00",
+          "likes": 4,
+          "dislikes": 0,
+          "parent_comment_id": "p0rb4ae",
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0snud5",
+              "author": "[deleted]",
+              "author_karma": 0,
+              "content": "[removed]",
+              "timestamp": "2026-07-31T02:23:10+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p0sd4ar",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p0sd89g",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-07-31T01:23:28+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p0r6kaj",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0sdgvj",
+          "author": "reddit_user_fab6f27909b2",
+          "author_karma": 0,
+          "content": "Remember private equity ruins everything they buy.",
+          "timestamp": "2026-07-31T01:24:49+00:00",
+          "likes": 3,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0sdh88",
+          "author": "reddit_user_65f80a6e3dbc",
+          "author_karma": 0,
+          "content": "Yeah it'll start around 2am tonight",
+          "timestamp": "2026-07-31T01:24:52+00:00",
+          "likes": 62,
+          "dislikes": 0,
+          "parent_comment_id": "p0raw8x",
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0sojbt",
+              "author": "reddit_user_566bbb95e918",
+              "author_karma": 0,
+              "content": "After a diaper change ",
+              "timestamp": "2026-07-31T02:27:09+00:00",
+              "likes": 35,
+              "dislikes": 0,
+              "parent_comment_id": "p0sdh88",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p0t8ddr",
+                  "author": "reddit_user_8923d78d6674",
+                  "author_karma": 0,
+                  "content": "Or after he gets that tent stake rotated up there. I hear it helps keep things in tact. ",
+                  "timestamp": "2026-07-31T04:30:08+00:00",
+                  "likes": 2,
+                  "dislikes": 0,
+                  "parent_comment_id": "p0sojbt",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p0sg9av",
+          "author": "reddit_user_5c9c8d295475",
+          "author_karma": 0,
+          "content": "Why does he have a job ",
+          "timestamp": "2026-07-31T01:40:11+00:00",
+          "likes": 4,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0shcx7",
+          "author": "reddit_user_ec752d0fa530",
+          "author_karma": 0,
+          "content": "No UEFA would also mean no Spain or Portugal, WHO ARE HOSTING in 2030.",
+          "timestamp": "2026-07-31T01:46:18+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": "p0r0fkp",
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0slyv4",
+              "author": "reddit_user_cfec1f4c46db",
+              "author_karma": 0,
+              "content": "Yeah that’s not a big deal is it!",
+              "timestamp": "2026-07-31T02:12:31+00:00",
+              "likes": 0,
+              "dislikes": 0,
+              "parent_comment_id": "p0shcx7",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p0vu78u",
+                  "author": "reddit_user_8a179e427e9e",
+                  "author_karma": 0,
+                  "content": "actually, this did get my conspiracy hat going.",
+                  "timestamp": "2026-07-31T14:39:37+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p0slyv4",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p0shqig",
+          "author": "reddit_user_ec752d0fa530",
+          "author_karma": 0,
+          "content": "In the US, the World Cup television contract is up for bidding, and experts were predicting a deal of more than $2 billion. I doubt that happens without England, Norway, Spain, etc.",
+          "timestamp": "2026-07-31T01:48:25+00:00",
+          "likes": 5,
+          "dislikes": 0,
+          "parent_comment_id": "p0rfa6s",
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0uzf52",
+              "author": "reddit_user_ec9323e4f215",
+              "author_karma": 0,
+              "content": "With this level of naked corruption, I would expect CBS to get a no bid contract for US broadcast rights after Fox and NBC balk.",
+              "timestamp": "2026-07-31T12:12:18+00:00",
+              "likes": 2,
+              "dislikes": 0,
+              "parent_comment_id": "p0shqig",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p0sil6c",
+          "author": "reddit_user_12cb6b89ba59",
+          "author_karma": 0,
+          "content": "Every football/soccer league organization in the world need to all get together and create a New International Football Association Football Association and have a new international tournament every four years, for the International Cup, and completely ignore that FIFA ever existed. ",
+          "timestamp": "2026-07-31T01:53:13+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0sip4o",
+          "author": "reddit_user_fe3142661379",
+          "author_karma": 0,
+          "content": "Everyone needs to stand up to the Trumpization of everything.",
+          "timestamp": "2026-07-31T01:53:50+00:00",
+          "likes": 6,
+          "dislikes": 0,
+          "parent_comment_id": "p0qtrhr",
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0skbri",
+              "author": "reddit_user_070aa033411e",
+              "author_karma": 0,
+              "content": "Thanks! A new synonym for Enshitification!",
+              "timestamp": "2026-07-31T02:03:06+00:00",
+              "likes": 5,
+              "dislikes": 0,
+              "parent_comment_id": "p0sip4o",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p0sixdq",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-07-31T01:55:09+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0sko5e",
+          "author": "reddit_user_5db323a7904f",
+          "author_karma": 0,
+          "content": "I like your style. If i had a genie lamp one of my wishes would be “the third time anyone abandons a shopping cart in a parking lot they get shot into the sun”. Can’t abide by the most basic social contract? We don’t need you participating in society.",
+          "timestamp": "2026-07-31T02:05:05+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": "p0r7b6f",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0snfyo",
+          "author": "reddit_user_ddec6cace08d",
+          "author_karma": 0,
+          "content": "People act like these are virtuous revolts. I suspect that they just don’t think they’ll get a big enough cut. ",
+          "timestamp": "2026-07-31T02:20:54+00:00",
+          "likes": -3,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0tgmti",
+              "author": "reddit_user_37bd919dc7c2",
+              "author_karma": 0,
+              "content": "No! You mean no one liked the hike in ticket prices at the US World Cup?",
+              "timestamp": "2026-07-31T05:28:54+00:00",
+              "likes": 0,
+              "dislikes": 0,
+              "parent_comment_id": "p0snfyo",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p0spmwb",
+          "author": "reddit_user_3eeaf2036e58",
+          "author_karma": 0,
+          "content": "Can someone ELI5?  \nI don’t really understand what he’s trying to do, isn’t FIFA already run by private interests? ",
+          "timestamp": "2026-07-31T02:33:24+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0t5fid",
+              "author": "reddit_user_d96d62a0b459",
+              "author_karma": 0,
+              "content": "No, FIFA is a Sports association made up of its 211 member associations. It's technically a non-profit. \n\nThey're grouped by geographic area in what are called Confederations. UEFA represents Europe. CONCACAF represents North America, the Carribean and a few nations in South America. There are others like the CAF (Africa), the OFC (Oceania) and the AFC (Australia and Asia)\n\nGenerally FIFA operates on a one nation/one vote system. If enough of the associations push back it's unlikely that it will pass. \n\nThe issue with FIFA is the same with the Olympics: \n\n* Both are technically nonprofits. The profits from events like the World Cup and the Olympics are supposed to flow back to the member associations to promote sportsmanship. \n\n* Both have suffered from very public corruption. Because of the huge amounts of money involved with putting on these events and sponsorship many officials (like Infantino's predecessor Sepp Bladder) have been accused with taking bribes or living large on FIFA's dime. \n\nThe issue is that Infantino wants to sell a stake in the World Cup and other events to a group of private investors in exchange for a larger amount of money for the Confederations. \n\nBut the whole thing is very suspect. The whole thing is being put together by Joshua Kushner (Jared's brother). Infantino is very friendly with Trump (see 'FIFA Peace Prize') and it's widely believed he put his thumb on the scale to get an American Player reinstated from a Red Card when Trump wined about it. \n\nIn short, the whole thing stinks. Hopefully the other Confederations push back on the idea and it dies in short order.",
+              "timestamp": "2026-07-31T04:10:35+00:00",
+              "likes": 3,
+              "dislikes": 0,
+              "parent_comment_id": "p0spmwb",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p0ss6gm",
+          "author": "reddit_user_83f7bea6acca",
+          "author_karma": 0,
+          "content": "Let infantino do it. Let fifa burn. \n\nWe'll make a new fifa, with morals and virtues. ",
+          "timestamp": "2026-07-31T02:48:07+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0szkin",
+              "author": "reddit_user_e476a63b7444",
+              "author_karma": 0,
+              "content": "Like the failed attempt of The Rebel Clubs (Twelve elite European clubs)?\n\nBetter get rid of Infantino + his clique and keep FIFA!",
+              "timestamp": "2026-07-31T03:32:56+00:00",
+              "likes": 2,
+              "dislikes": 0,
+              "parent_comment_id": "p0ss6gm",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p0su3e9",
+          "author": "reddit_user_fd5c541fb32f",
+          "author_karma": 0,
+          "content": "Its more like 7 of the top 10 best nations, Morocco, Argentina and Brazil are ranked top 10 in FIFA rankings. Argentina, Colombia and Brazil were ranked in the top 10 in ELO ratings. ",
+          "timestamp": "2026-07-31T02:59:23+00:00",
+          "likes": 4,
+          "dislikes": 0,
+          "parent_comment_id": "p0r0fkp",
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0sw8kb",
+              "author": "reddit_user_cfec1f4c46db",
+              "author_karma": 0,
+              "content": "Sure but we all know neither Colombia nor Brazil aren’t the same caliber as the Europeans. Morocco and Argentina are the only two teams consistently very good in recent years. \n\nRegardless, 7 or 9 doesn’t change the fact that the very top of the game is dominated by European teams, and Europe brings a substantial portion of revenue to the World Cup. \n\nEurope is also the center of football, with all the best players playing their best years in Europe. Not a single player has emerged as one of the best without playing in a major European league in past decades ",
+              "timestamp": "2026-07-31T03:12:21+00:00",
+              "likes": 4,
+              "dislikes": 0,
+              "parent_comment_id": "p0su3e9",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p0sznhr",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-07-31T03:33:28+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p0rohm7",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0t03xl",
+          "author": "reddit_user_fb3c14b349dc",
+          "author_karma": 0,
+          "content": "jibe*",
+          "timestamp": "2026-07-31T03:36:26+00:00",
+          "likes": 4,
+          "dislikes": 0,
+          "parent_comment_id": "p0r7pkn",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0t04zq",
+          "author": "reddit_user_fb3c14b349dc",
+          "author_karma": 0,
+          "content": "jibe*",
+          "timestamp": "2026-07-31T03:36:37+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p0r7pkn",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0t2wv8",
+          "author": "reddit_user_e524200900d3",
+          "author_karma": 0,
+          "content": "Private equity is ruining the world. ",
+          "timestamp": "2026-07-31T03:54:29+00:00",
+          "likes": 6,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0t8a5i",
+          "author": "reddit_user_8923d78d6674",
+          "author_karma": 0,
+          "content": "México (FMF) wouldn’t commit against it. Since they play all their games in USA and burnt any bridge with their domestic fans. Between pissing off their fans or trump, they made their choice. ",
+          "timestamp": "2026-07-31T04:29:32+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p0r6kaj",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0tap12",
+          "author": "reddit_user_025f27a9442d",
+          "author_karma": 0,
+          "content": "The United States has never had an adversary such the radical COVFEFE…..",
+          "timestamp": "2026-07-31T04:46:13+00:00",
+          "likes": 5,
+          "dislikes": 0,
+          "parent_comment_id": "p0raw8x",
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0tqrp7",
+              "author": "reddit_user_5b8d89c24413",
+              "author_karma": 0,
+              "content": "Maybe COVFEFE is the new federation they are planning.",
+              "timestamp": "2026-07-31T06:45:48+00:00",
+              "likes": 8,
+              "dislikes": 0,
+              "parent_comment_id": "p0tap12",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p0tceqt",
+          "author": "reddit_user_b5fadd09eb63",
+          "author_karma": 0,
+          "content": "FIFA should be abolished and a new agency should be made with changing directors every 4 years. \n\nFIFA is corrupt to the core and all the bureaucrats think alike. Only solution is abolish FIFA.",
+          "timestamp": "2026-07-31T04:58:04+00:00",
+          "likes": 4,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0tdwh6",
+          "author": "reddit_user_0ff3745b72ef",
+          "author_karma": 0,
+          "content": "Nothing. They're just mad they weren't consulted first ",
+          "timestamp": "2026-07-31T05:08:47+00:00",
+          "likes": -1,
+          "dislikes": 0,
+          "parent_comment_id": "p0qtx9n",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0tg4w4",
+          "author": "reddit_user_0019678cf4d4",
+          "author_karma": 0,
+          "content": "It seems the Kushner name is as popular in football as it is in Albania.",
+          "timestamp": "2026-07-31T05:25:14+00:00",
+          "likes": 3,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0tizn1",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-07-31T05:46:41+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p0qth9i",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0tnj3o",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-07-31T06:21:06+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0ttj20",
+          "author": "reddit_user_2a5320f3b2cd",
+          "author_karma": 0,
+          "content": "What would really change? FIFA is already corporate as it gets.",
+          "timestamp": "2026-07-31T07:07:02+00:00",
+          "likes": -1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0tu7lh",
+          "author": "reddit_user_fe56c7f9dc9c",
+          "author_karma": 0,
+          "content": "They still haven’t told him",
+          "timestamp": "2026-07-31T07:12:27+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p0r6kaj",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0u4trr",
+          "author": "reddit_user_057b3622ef13",
+          "author_karma": 0,
+          "content": "Meanwhile CONMEBOL is holding hands with Infantino… what a bunch of fucking corrupt clowns.",
+          "timestamp": "2026-07-31T08:38:28+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0u5ify",
+          "author": "reddit_user_e360900199fa",
+          "author_karma": 0,
+          "content": "He'll send out a tweet to call them sore losers any minute now",
+          "timestamp": "2026-07-31T08:44:02+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p0r6kaj",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0ughfs",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-07-31T10:10:24+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p0r6kaj",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0umy8r",
+          "author": "reddit_user_436663b5c61e",
+          "author_karma": 0,
+          "content": "He's a little low on votes for the midterms.",
+          "timestamp": "2026-07-31T10:55:41+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p0r6kaj",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0uuix5",
+          "author": "reddit_user_5fa497f66a11",
+          "author_karma": 0,
+          "content": "Technically if UEFA makes their own world cup and at least some of CONCACAF and AFC join it would already be more valuable cup with more viewership and most of the best teams",
+          "timestamp": "2026-07-31T11:43:58+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0uun86",
+          "author": "reddit_user_9dea24d4ea31",
+          "author_karma": 0,
+          "content": "Yeah, let’s make the World Cup even more out of reach financially.\n\nThat sounds like a fantastic idea.",
+          "timestamp": "2026-07-31T11:44:42+00:00",
+          "likes": 4,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0v3gmk",
+          "author": "reddit_user_fe3142661379",
+          "author_karma": 0,
+          "content": "I wish.  \n\nWith the Trumpization of everything, billionaire jerks never seem to face consequences.",
+          "timestamp": "2026-07-31T12:34:05+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p0qy7hr",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0w6fsq",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-07-31T15:32:50+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p0rfl9w",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0w8qt4",
+          "author": "reddit_user_a991c576e279",
+          "author_karma": 0,
+          "content": "Didn’t take long to make it about Trump ",
+          "timestamp": "2026-07-31T15:42:43+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p0r6kaj",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0who3j",
+          "author": "reddit_user_0bfd59dde20a",
+          "author_karma": 0,
+          "content": "Without UEFA and CONCACAF, FIFA is a pointless organisation. They really should just work together to build FIFAs successor whether or not they plan to sell to private investors. There’s no trust left in that vile organisation even if this halts the investment ",
+          "timestamp": "2026-07-31T16:20:41+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p0qtrhr",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0x01da",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-07-31T17:39:15+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0yd77r",
+          "author": "reddit_user_5abecbe37900",
+          "author_karma": 0,
+          "content": "I don't think you understand how big the backlash would be. It would be suicide for UEFA, no amount of money Fifa could give them would be worth losing what they already have. \n\nThe backlash against the super league showed that Europeans don't let you fuck with their domestic football, what do you think would happen if you threatened the international game? \n\nUEFA aren't heroes, they just know when to not kick the hornets nest and keep printing money, Infantino got too greedy and flew too close to the sun, I don't think he'll survive this. ",
+          "timestamp": "2026-07-31T21:19:16+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p0r5dco",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0ykn3q",
+          "author": "reddit_user_61ff3fa42772",
+          "author_karma": 0,
+          "content": "Absolute turd of a human being. He’ll probably pop up in some Saudi league or something as an advisor. ",
+          "timestamp": "2026-07-31T21:55:36+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p0quzba",
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run003_post01_seed016",
+      "post_slot": 1,
+      "seed_index": 16,
+      "source_raw_post_id": "1vbi5b7",
+      "source_product_dir": "sports",
+      "source_file": "https://www.reddit.com/r/sports/comments/1vbi5b7/italian_footbal_legend_franco_baresi_passed_away/",
+      "post_type": ":soccer: Soccer",
+      "title": "Italian footbal legend Franco Baresi passed away",
+      "author": "reddit_user_79ff14d8816f",
+      "author_karma": 0,
+      "content": "Italian footbal legend Franco Baresi passed away",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p0tkveu",
+          "author": "reddit_user_e41f656dcc31",
+          "author_karma": 0,
+          "content": "RIP legend. Absolute tank of a defender. Such a shame he saw AC Milan and Italy in their most shambolic state in his final days.",
+          "timestamp": "2026-07-31T06:00:57+00:00",
+          "likes": 99,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0umgp6",
+              "author": "reddit_user_15ffba1a9498",
+              "author_karma": 0,
+              "content": "Calcio will come back. Mark my words.",
+              "timestamp": "2026-07-31T10:52:27+00:00",
+              "likes": 9,
+              "dislikes": 0,
+              "parent_comment_id": "p0tkveu",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p0tllgd",
+          "author": "reddit_user_652d7f9f98bf",
+          "author_karma": 0,
+          "content": "One of the best to ever do it RIP Franco",
+          "timestamp": "2026-07-31T06:06:24+00:00",
+          "likes": 28,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0tm1n6",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-07-31T06:09:50+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0tmonk",
+          "author": "reddit_user_b4561dcadc2a",
+          "author_karma": 0,
+          "content": "Greatest tackler in history. RIP",
+          "timestamp": "2026-07-31T06:14:42+00:00",
+          "likes": 21,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0tn28p",
+          "author": "reddit_user_37730c80b74f",
+          "author_karma": 0,
+          "content": "Absolute legend of the game. ",
+          "timestamp": "2026-07-31T06:17:34+00:00",
+          "likes": 5,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0tn9nh",
+          "author": "reddit_user_532c703fa4a0",
+          "author_karma": 0,
+          "content": "RIP Italian Legend",
+          "timestamp": "2026-07-31T06:19:07+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0to9of",
+          "author": "reddit_user_ef994ae3aa49",
+          "author_karma": 0,
+          "content": "Legend XI. What a player. RIP",
+          "timestamp": "2026-07-31T06:26:38+00:00",
+          "likes": 10,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0tpyii",
+          "author": "reddit_user_7166c73061d9",
+          "author_karma": 0,
+          "content": "One of the names on my all time XI. Rest in peace. ",
+          "timestamp": "2026-07-31T06:39:32+00:00",
+          "likes": 4,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0tq3di",
+          "author": "reddit_user_78a380571b06",
+          "author_karma": 0,
+          "content": "Rest in Peace, A True Libero.",
+          "timestamp": "2026-07-31T06:40:34+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0tquj0",
+          "author": "reddit_user_ee7139cf88be",
+          "author_karma": 0,
+          "content": "Fuck. He is on my all time 11. RIP",
+          "timestamp": "2026-07-31T06:46:24+00:00",
+          "likes": 3,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0tr6qe",
+          "author": "reddit_user_73b88ff7b274",
+          "author_karma": 0,
+          "content": "Franchino 😭\n\nA real football legend, loved and respected by everyone, included the opponents. The very first sport jersey I had in my life was his number 6 jersey, which made me fall in love with AC Milan when I was a kid. \n\nHe got quite unlucky, he's been fighting with the disease for quite a while and in the end he died at only 66 😢 now he can finally rest, knowing that he'll be remembered forever in the sport world. ",
+          "timestamp": "2026-07-31T06:49:03+00:00",
+          "likes": 22,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0u8z98",
+              "author": "reddit_user_22d402c54d39",
+              "author_karma": 0,
+              "content": "Yes I grew up watching that ac Milan team they had the best defence in Europe he was at the heart of their success ",
+              "timestamp": "2026-07-31T09:12:05+00:00",
+              "likes": 6,
+              "dislikes": 0,
+              "parent_comment_id": "p0tr6qe",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p0trx18",
+          "author": "reddit_user_06e38c6180ac",
+          "author_karma": 0,
+          "content": "A well respected rival. RIP from Madrid. ",
+          "timestamp": "2026-07-31T06:54:38+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0trxvz",
+          "author": "reddit_user_06e38c6180ac",
+          "author_karma": 0,
+          "content": "A well respected rival. RIP from Madrid. ",
+          "timestamp": "2026-07-31T06:54:49+00:00",
+          "likes": 4,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0tt0mz",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-07-31T07:03:04+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0txa6v",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-07-31T07:37:13+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0u0drt",
+          "author": "reddit_user_84276481ddf6",
+          "author_karma": 0,
+          "content": "rip legend",
+          "timestamp": "2026-07-31T08:02:23+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0u2zf9",
+          "author": "reddit_user_6257e43e2454",
+          "author_karma": 0,
+          "content": "Sad loss. Probably the best game reading defender of all time.RIP",
+          "timestamp": "2026-07-31T08:23:28+00:00",
+          "likes": 6,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0u3070",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-07-31T08:23:39+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0u4511",
+          "author": "reddit_user_b0f9f6e0217f",
+          "author_karma": 0,
+          "content": "Bless his soul.",
+          "timestamp": "2026-07-31T08:32:53+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0u68bh",
+          "author": "reddit_user_4cd9398df724",
+          "author_karma": 0,
+          "content": "What a player he was ",
+          "timestamp": "2026-07-31T08:49:51+00:00",
+          "likes": 5,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0uajtw",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-07-31T09:24:36+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0ulh0q",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-07-31T10:45:46+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0uv17o",
+          "author": "reddit_user_a683713cfa60",
+          "author_karma": 0,
+          "content": "Absolute legend of AC Milan and the italian football team.\n\nI met him once, I just said hi and shook his hand. His name will be forever tied to the glorious triumphs of the Rossoneri.",
+          "timestamp": "2026-07-31T11:47:02+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0v6y2f",
+          "author": "reddit_user_04a6f631808e",
+          "author_karma": 0,
+          "content": "💔❤️‍🩹",
+          "timestamp": "2026-07-31T12:52:04+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0v8ymt",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-07-31T13:02:08+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0vbfcg",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-07-31T13:14:21+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0wxtvh",
+          "author": "reddit_user_ad0f8d50ca11",
+          "author_karma": 0,
+          "content": "[https://www.youtube.com/watch?v=39CyUAnKUso](https://www.youtube.com/watch?v=39CyUAnKUso)",
+          "timestamp": "2026-07-31T17:29:48+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0xhmhr",
+          "author": "reddit_user_49aa40918e8b",
+          "author_karma": 0,
+          "content": "Lol",
+          "timestamp": "2026-07-31T18:55:44+00:00",
+          "likes": -3,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0zwtbu",
+          "author": "reddit_user_ada468badff6",
+          "author_karma": 0,
+          "content": "Rip! One of the greats!",
+          "timestamp": "2026-08-01T02:26:35+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p10o9a9",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-01T05:32:28+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run003_post02_seed017",
+      "post_slot": 2,
+      "seed_index": 17,
+      "source_raw_post_id": "1vbjhjo",
+      "source_product_dir": "sports",
+      "source_file": "https://www.reddit.com/r/sports/comments/1vbjhjo/lets_talk_about_vargentina_wc2026/",
+      "post_type": ":soccer: Soccer",
+      "title": "Let's Talk About VARgentina | WC2026",
+      "author": "reddit_user_79ff14d8816f",
+      "author_karma": 0,
+      "content": "Let's Talk About VARgentina | WC2026\n\nIn this video I explain why Argentina didn't deserve to reach the 2026 FIFA World Cup Final. I present clear evidence of FIFA favoritism toward Argentina, along with numerous examples of the Argentine team's lack of professionalism throughout the tournament.  \n  \nFIFA President Gianni Infantino sent a congratulatory letter to the AFA praising Argentina's \"professionalism\". I find that ironic given the conduct documented throughout this video.",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p0ttid0",
+          "author": "reddit_user_e41f656dcc31",
+          "author_karma": 0,
+          "content": "Let it go man. They are out and Messi with retire. They will be in a deep trench without him for a very long time. ",
+          "timestamp": "2026-07-31T07:06:53+00:00",
+          "likes": 6,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0tu0yc",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-07-31T07:10:59+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0tu7y0",
+          "author": "reddit_user_543bdd147be2",
+          "author_karma": 0,
+          "content": "Happy to ignore them until the next one",
+          "timestamp": "2026-07-31T07:12:31+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0tvxrc",
+          "author": "reddit_user_2d3af7f13f2b",
+          "author_karma": 0,
+          "content": "Every World Cup has controversial moments, but reducing a team's entire run to VAR decisions ignores the years of consistency, mentality and quality that got them there.",
+          "timestamp": "2026-07-31T07:26:23+00:00",
+          "likes": -1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0tz9vs",
+          "author": "reddit_user_4570f1d27797",
+          "author_karma": 0,
+          "content": "Let's talk about RETARgentina\n\n[https://imgresizer.eurosport.com/unsafe/2560x1440/filters:format(jpeg)/origin-imgresizer.eurosport.com/2022/12/18/3510844-71564048-2560-1440.jpg](https://imgresizer.eurosport.com/unsafe/2560x1440/filters:format(jpeg)/origin-imgresizer.eurosport.com/2022/12/18/3510844-71564048-2560-1440.jpg)",
+          "timestamp": "2026-07-31T07:53:21+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run003_post03_seed018",
+      "post_slot": 3,
+      "seed_index": 18,
+      "source_raw_post_id": "1vblkhq",
+      "source_product_dir": "sports",
+      "source_file": "https://www.reddit.com/r/sports/comments/1vblkhq/the_asian_football_confederation_joins_europe_and/",
+      "post_type": ":soccer: Soccer",
+      "title": "The Asian Football Confederation joins Europe and North America in saying FIFA should not proceed with privatising its business through and calls for \"FIFA to undertake an urgent review of its governance\"",
+      "author": "reddit_user_79ff14d8816f",
+      "author_karma": 0,
+      "content": "The Asian Football Confederation joins Europe and North America in saying FIFA should not proceed with privatising its business through and calls for \"FIFA to undertake an urgent review of its governance\"",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p0uc1aw",
+          "author": "reddit_user_aa99fdd69c60",
+          "author_karma": 0,
+          "content": "Good ",
+          "timestamp": "2026-07-31T09:36:26+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0ucrrs",
+          "author": "reddit_user_26116bd7448b",
+          "author_karma": 0,
+          "content": "You might want to have a look at the teams interested in a European super league, it’s a lot more than you think. The reality is most nations in Europe don’t have a great league and only have one or two big clubs. They’d jump at the chance to get a bigger audience and grow with the money it brings in. -",
+          "timestamp": "2026-07-31T09:42:12+00:00",
+          "likes": -36,
+          "dislikes": 0,
+          "parent_comment_id": "p0uaip9",
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0udng6",
+              "author": "reddit_user_507dea2dffb8",
+              "author_karma": 0,
+              "content": "Do you know that this already happened once? UEFA then updated the Champions League format getting concessions from every big team involved (after public pressure it was only Real Madrid, Barcelona and Juventus left). After this Madrid and Barcelona committed in a legally binding manner to not pursue a super league. Just like the others. \nThere is no danger of a super league drawing away European teams. ",
+              "timestamp": "2026-07-31T09:48:58+00:00",
+              "likes": 17,
+              "dislikes": 0,
+              "parent_comment_id": "p0ucrrs",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p0uh5h8",
+                  "author": "reddit_user_c40b27cd633e",
+                  "author_karma": 0,
+                  "content": "And you can be damn sure the fans of the big clubs will rather burn down their own stadiums than join Infantino's Super duper league",
+                  "timestamp": "2026-07-31T10:15:17+00:00",
+                  "likes": 16,
+                  "dislikes": 0,
+                  "parent_comment_id": "p0udng6",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p0v0okq",
+                      "author": "reddit_user_fc375183258b",
+                      "author_karma": 0,
+                      "content": "Exactly, national team fans are mostly some casuals, but fucking with some big club fan clubs? As you've said, they would burn down everything to the ground",
+                      "timestamp": "2026-07-31T12:19:14+00:00",
+                      "likes": 10,
+                      "dislikes": 0,
+                      "parent_comment_id": "p0uh5h8",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                },
+                {
+                  "comment_id": "p0uhnmd",
+                  "author": "reddit_user_26116bd7448b",
+                  "author_karma": 0,
+                  "content": "I do know, it’s why I replied to you as it seemed you didn’t - still now you’ve searched it, you know too ",
+                  "timestamp": "2026-07-31T10:18:57+00:00",
+                  "likes": -15,
+                  "dislikes": 0,
+                  "parent_comment_id": "p0udng6",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p0v1snx",
+                      "author": "reddit_user_507dea2dffb8",
+                      "author_karma": 0,
+                      "content": "What? I live in Europe and I follow a local club here. I was right in the middle when that came up, so to say. \nI acted like 'no chance in hell' exactly because I know what happened a few years back. The protests from local fan groups and clubs was massive. \nI guess that didn't come across properly in my message. \n\n",
+                      "timestamp": "2026-07-31T12:25:13+00:00",
+                      "likes": 6,
+                      "dislikes": 0,
+                      "parent_comment_id": "p0uhnmd",
+                      "depth": 3,
+                      "replies": []
+                    },
+                    {
+                      "comment_id": "p0wq03v",
+                      "author": "reddit_user_039b82859382",
+                      "author_karma": 0,
+                      "content": "Go back to eating crayons.",
+                      "timestamp": "2026-07-31T16:56:21+00:00",
+                      "likes": 5,
+                      "dislikes": 0,
+                      "parent_comment_id": "p0uhnmd",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "p0xlrg7",
+                          "author": "reddit_user_26116bd7448b",
+                          "author_karma": 0,
+                          "content": "Hush moron ",
+                          "timestamp": "2026-07-31T19:14:09+00:00",
+                          "likes": -4,
+                          "dislikes": 0,
+                          "parent_comment_id": "p0wq03v",
+                          "depth": 4,
+                          "replies": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p0ucwtz",
+          "author": "reddit_user_a1e66b49e85b",
+          "author_karma": 0,
+          "content": "Let's fucking go!!!\n\nSuck a thumb Infantino, you disgraceful rodent. ",
+          "timestamp": "2026-07-31T09:43:17+00:00",
+          "likes": 18,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0udr24",
+              "author": "reddit_user_626e3611ca6a",
+              "author_karma": 0,
+              "content": "He'd have to remove Trumps cock first, so its doubtful he'd do that!",
+              "timestamp": "2026-07-31T09:49:44+00:00",
+              "likes": 6,
+              "dislikes": 0,
+              "parent_comment_id": "p0ucwtz",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p0ux3pu",
+                  "author": "reddit_user_3ae77c13dd13",
+                  "author_karma": 0,
+                  "content": "As if there isnt enough room.",
+                  "timestamp": "2026-07-31T11:59:12+00:00",
+                  "likes": 5,
+                  "dislikes": 0,
+                  "parent_comment_id": "p0udr24",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p0udkjb",
+          "author": "reddit_user_626e3611ca6a",
+          "author_karma": 0,
+          "content": "This has Trump all over it, they will go ahead regardless of any protests or opposition.\n\nLets hope unlike Trump they actually see some consequences though. ",
+          "timestamp": "2026-07-31T09:48:20+00:00",
+          "likes": 8,
+          "dislikes": 0,
+          "parent_comment_id": "p0u8x91",
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0ug7ip",
+              "author": "[deleted]",
+              "author_karma": 0,
+              "content": "[removed]",
+              "timestamp": "2026-07-31T10:08:26+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p0udkjb",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p0v0oyq",
+              "author": "reddit_user_1923abeacfd2",
+              "author_karma": 0,
+              "content": "Trump is too stupid to think of something like this. \n\nThis has to be that greasy rat Jared Kushner. ",
+              "timestamp": "2026-07-31T12:19:17+00:00",
+              "likes": 14,
+              "dislikes": 0,
+              "parent_comment_id": "p0udkjb",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p0vea3o",
+                  "author": "reddit_user_79f906ef72d9",
+                  "author_karma": 0,
+                  "content": "It's actually Joshua Kishner who is behind the PE vehicle that is slated to invest",
+                  "timestamp": "2026-07-31T13:27:58+00:00",
+                  "likes": 4,
+                  "dislikes": 0,
+                  "parent_comment_id": "p0v0oyq",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p0udos5",
+          "author": "reddit_user_d104b95a70da",
+          "author_karma": 0,
+          "content": "Can't wait for the next world cup with 64 participants including such hopeful underdogs as eSwatini and St Kitts and Nevis.",
+          "timestamp": "2026-07-31T09:49:15+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0uejtb",
+          "author": "reddit_user_6af4fd1df2c1",
+          "author_karma": 0,
+          "content": "I’ve been hoping for the best for the past ten years and it has all gone to shit. I have no more optimism left in me. ",
+          "timestamp": "2026-07-31T09:55:52+00:00",
+          "likes": 12,
+          "dislikes": 0,
+          "parent_comment_id": "p0u84rr",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0uep3o",
+          "author": "reddit_user_91efc71df504",
+          "author_karma": 0,
+          "content": "Watch CAF disappoint me and back Gianni",
+          "timestamp": "2026-07-31T09:56:58+00:00",
+          "likes": 4,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0uepol",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-07-31T09:57:06+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0ufmrc",
+          "author": "reddit_user_eff2be3c0ac5",
+          "author_karma": 0,
+          "content": "Good to see this. ",
+          "timestamp": "2026-07-31T10:04:07+00:00",
+          "likes": 3,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0ufpbr",
+          "author": "reddit_user_e76f7d48a6f1",
+          "author_karma": 0,
+          "content": "Bollocks they are. A world cup with no European nations isn't worth anything.",
+          "timestamp": "2026-07-31T10:04:39+00:00",
+          "likes": 38,
+          "dislikes": 0,
+          "parent_comment_id": "p0u8o65",
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0v1w9y",
+              "author": "reddit_user_7e1fd5bc7f9c",
+              "author_karma": 0,
+              "content": "And no players from other nations that play in Europe",
+              "timestamp": "2026-07-31T12:25:45+00:00",
+              "likes": 12,
+              "dislikes": 0,
+              "parent_comment_id": "p0ufpbr",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p0uga7d",
+          "author": "reddit_user_cd17519f0992",
+          "author_karma": 0,
+          "content": "Unfortunately there is always another sleazy scum bag waiting in the wings",
+          "timestamp": "2026-07-31T10:08:58+00:00",
+          "likes": 4,
+          "dislikes": 0,
+          "parent_comment_id": "p0u84rr",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0ugg1l",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-07-31T10:10:08+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p0u8o65",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0ujlpd",
+          "author": "reddit_user_973627a60415",
+          "author_karma": 0,
+          "content": "Ok South America, don't disappoint us now.",
+          "timestamp": "2026-07-31T10:32:49+00:00",
+          "likes": 6,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0ybhc3",
+              "author": "reddit_user_85ce03397552",
+              "author_karma": 0,
+              "content": "😂😂😂 wait for it 🤣🤣🤣",
+              "timestamp": "2026-07-31T21:11:07+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p0ujlpd",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p0ymlld",
+              "author": "reddit_user_cb08b88513b4",
+              "author_karma": 0,
+              "content": "There’s a reason why they’ve not said anything yet and it’s not because it’s good reason.",
+              "timestamp": "2026-07-31T22:05:24+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p0ujlpd",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p0uksns",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-07-31T10:41:10+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0umzxi",
+          "author": "reddit_user_744a585d390a",
+          "author_karma": 0,
+          "content": "With the backlash of this will it jeopardise Infatino's position/ his re election for FIFA president? \n\nFrom what I've read online he was going for the presidency unopposed. In light of this though and I'm assuming the rest of the federations will continue oppose this. \n\nknowing how corrupt FIFA are though what will happen now because of this",
+          "timestamp": "2026-07-31T10:56:00+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0unguw",
+          "author": "reddit_user_d6f36beba4f4",
+          "author_karma": 0,
+          "content": "It’ll be like the US calling themselves world champions when it’s just the domestic champions in baseball or football. ",
+          "timestamp": "2026-07-31T10:59:10+00:00",
+          "likes": 9,
+          "dislikes": 0,
+          "parent_comment_id": "p0u924r",
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0ux4io",
+              "author": "reddit_user_cc3ec84e5f02",
+              "author_karma": 0,
+              "content": "The US is entirely correct in doing so, because their leagues are the top level of competition in those respective sports. There are no organized baseball, football, basketball, or hockey teams anywhere in the world that have any chance of beating the American teams, because the best players from around the world already left their country to play in America. ",
+              "timestamp": "2026-07-31T11:59:20+00:00",
+              "likes": -21,
+              "dislikes": 0,
+              "parent_comment_id": "p0unguw",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p0vgt4q",
+                  "author": "[deleted]",
+                  "author_karma": 0,
+                  "content": "[removed]",
+                  "timestamp": "2026-07-31T13:39:49+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p0ux4io",
+                  "depth": 2,
+                  "replies": []
+                },
+                {
+                  "comment_id": "p0vne4l",
+                  "author": "reddit_user_c6077ea25443",
+                  "author_karma": 0,
+                  "content": "> There are no organized baseball, football, basketball, or hockey teams anywhere in the world that have any chance of beating the American teams, because the best players from around the world already left their country to play in America.\n\nSo...you kind of think that you win by default because you're just so awesome that there's no point in even playing?\n\nHoly sodding exceptionalism, Batman...",
+                  "timestamp": "2026-07-31T14:09:42+00:00",
+                  "likes": 2,
+                  "dislikes": 0,
+                  "parent_comment_id": "p0ux4io",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p0wc12o",
+                      "author": "reddit_user_cc3ec84e5f02",
+                      "author_karma": 0,
+                      "content": "I dont know what you’re doing in r/sports if you genuinely think that there are other baseball, football, or basketball leagues that can compete in any way with the North American leagues.",
+                      "timestamp": "2026-07-31T15:56:41+00:00",
+                      "likes": -5,
+                      "dislikes": 0,
+                      "parent_comment_id": "p0vne4l",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "p0wehhd",
+                          "author": "reddit_user_c6077ea25443",
+                          "author_karma": 0,
+                          "content": "I'd recommend you read what I wrote carefully.",
+                          "timestamp": "2026-07-31T16:07:11+00:00",
+                          "likes": 3,
+                          "dislikes": 0,
+                          "parent_comment_id": "p0wc12o",
+                          "depth": 4,
+                          "replies": [
+                            {
+                              "comment_id": "p0wgmua",
+                              "author": "reddit_user_cc3ec84e5f02",
+                              "author_karma": 0,
+                              "content": "I recommend you stop pretending to know anything about sports lmfao",
+                              "timestamp": "2026-07-31T16:16:18+00:00",
+                              "likes": -3,
+                              "dislikes": 0,
+                              "parent_comment_id": "p0wehhd",
+                              "depth": 5,
+                              "replies": [
+                                {
+                                  "comment_id": "p0wiz1o",
+                                  "author": "reddit_user_c6077ea25443",
+                                  "author_karma": 0,
+                                  "content": "Must have chafed to have been spanked by Germany and Canada at the last FIBA. \n\nOh, wait...",
+                                  "timestamp": "2026-07-31T16:26:16+00:00",
+                                  "likes": 3,
+                                  "dislikes": 0,
+                                  "parent_comment_id": "p0wgmua",
+                                  "depth": 6,
+                                  "replies": [
+                                    {
+                                      "comment_id": "p0wk4xx",
+                                      "author": "reddit_user_cc3ec84e5f02",
+                                      "author_karma": 0,
+                                      "content": "Oh shit you’re a European, that makes sense haha. Nobody gives a shit about FIBA outside of Europe.",
+                                      "timestamp": "2026-07-31T16:31:15+00:00",
+                                      "likes": 2,
+                                      "dislikes": 0,
+                                      "parent_comment_id": "p0wiz1o",
+                                      "depth": 7,
+                                      "replies": [
+                                        {
+                                          "comment_id": "p0x8zo0",
+                                          "author": "reddit_user_c6077ea25443",
+                                          "author_karma": 0,
+                                          "content": "Yeah, nobody in the US cares about FIBA since you started getting your arses kicked on the regular lmfao",
+                                          "timestamp": "2026-07-31T18:17:49+00:00",
+                                          "likes": 0,
+                                          "dislikes": 0,
+                                          "parent_comment_id": "p0wk4xx",
+                                          "depth": 8,
+                                          "replies": [
+                                            {
+                                              "comment_id": "p0xn5hb",
+                                              "author": "reddit_user_cc3ec84e5f02",
+                                              "author_karma": 0,
+                                              "content": "A Norwegian thinking he can gaslight an American into thinking America isn’t the best at basketball is pretty wild",
+                                              "timestamp": "2026-07-31T19:20:22+00:00",
+                                              "likes": 1,
+                                              "dislikes": 0,
+                                              "parent_comment_id": "p0x8zo0",
+                                              "depth": 9,
+                                              "replies": [
+                                                {
+                                                  "comment_id": "p11grfm",
+                                                  "author": "reddit_user_c6077ea25443",
+                                                  "author_karma": 0,
+                                                  "content": "Best at getting your arse kicked at basketball, maybe.",
+                                                  "timestamp": "2026-08-01T09:28:55+00:00",
+                                                  "likes": 1,
+                                                  "dislikes": 0,
+                                                  "parent_comment_id": "p0xn5hb",
+                                                  "depth": 10,
+                                                  "replies": []
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "comment_id": "p0wfczg",
+                          "author": "reddit_user_507dea2dffb8",
+                          "author_karma": 0,
+                          "content": "Germany won the basketball world championship against NBA stars. Other nations have done it before. It's not impossible. \nJapan won the World Baseball Classic several times. Venezuela did it last. \nAnd don't come with 'who did the US sent' - because that's also part of the issue. You want to prove you are the best in the world, just go out and prove it. \nI think it's harder to argue on a club level. The Florida Panthers and the Carolina Hurricanes will never win a Stanley Cup without their Canadian players. At the same time the Toronto Raptors won the NBA finals in 2019 because of Kawhi, Kyle Lowry (two Americans), Pascal Siakam (Cameroon) and OG Anunoby (British). Also not every team has the same financial means. ",
+                          "timestamp": "2026-07-31T16:10:54+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "p0wc12o",
+                          "depth": 4,
+                          "replies": [
+                            {
+                              "comment_id": "p0wh8g1",
+                              "author": "reddit_user_cc3ec84e5f02",
+                              "author_karma": 0,
+                              "content": "Half of your comment is proving my point right though lol? The Canadians, Cameroonians, English, and Americans ALL play in the NA leagues, because they are far and away the best lol\n\nNothing has to be proven because everybody universally agrees that the NBA, NHL, MLB, and NFL are the best leagues in their sport.",
+                              "timestamp": "2026-07-31T16:18:50+00:00",
+                              "likes": 0,
+                              "dislikes": 0,
+                              "parent_comment_id": "p0wfczg",
+                              "depth": 5,
+                              "replies": [
+                                {
+                                  "comment_id": "p0wmhyo",
+                                  "author": "reddit_user_507dea2dffb8",
+                                  "author_karma": 0,
+                                  "content": "Club level on a global competition comparison matters zero, because every team has different players, and different economic means. I'm arguing about one country's national selection against another country's national selection. \nThe US won the Olympic games in hockey with Olympic rules, but lost to Canada in the 4 Nations with NHL rules. In Basketball the US lost to Germany. In the hockey worlds' Finland won actually. The world is more than just your money filled entertainment leagues (I'm a NHL fan however). ",
+                                  "timestamp": "2026-07-31T16:41:21+00:00",
+                                  "likes": 3,
+                                  "dislikes": 0,
+                                  "parent_comment_id": "p0wh8g1",
+                                  "depth": 6,
+                                  "replies": [
+                                    {
+                                      "comment_id": "p0wn4hg",
+                                      "author": "reddit_user_cc3ec84e5f02",
+                                      "author_karma": 0,
+                                      "content": "Literally everything I’ve said is about club competition, you cant just change the topic of the conversation lmfao",
+                                      "timestamp": "2026-07-31T16:44:02+00:00",
+                                      "likes": 1,
+                                      "dislikes": 0,
+                                      "parent_comment_id": "p0wmhyo",
+                                      "depth": 7,
+                                      "replies": [
+                                        {
+                                          "comment_id": "p0wnndb",
+                                          "author": "reddit_user_507dea2dffb8",
+                                          "author_karma": 0,
+                                          "content": "The main topic is about the World Cup, which then drifted off into a hypothetical suggestion about the dead super league and you continue about billionaire owned clubs. Let's return to a nation v nation competition topic. \nOtherwise this is becoming moot. \n",
+                                          "timestamp": "2026-07-31T16:46:17+00:00",
+                                          "likes": 0,
+                                          "dislikes": 0,
+                                          "parent_comment_id": "p0wn4hg",
+                                          "depth": 8,
+                                          "replies": []
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "comment_id": "p0wqhp7",
+                          "author": "reddit_user_039b82859382",
+                          "author_karma": 0,
+                          "content": "Japan would beat America in a baseball game.",
+                          "timestamp": "2026-07-31T16:58:27+00:00",
+                          "likes": 0,
+                          "dislikes": 0,
+                          "parent_comment_id": "p0wc12o",
+                          "depth": 4,
+                          "replies": [
+                            {
+                              "comment_id": "p0wzttu",
+                              "author": "reddit_user_cc3ec84e5f02",
+                              "author_karma": 0,
+                              "content": "And what league do Japan’s best players play in?",
+                              "timestamp": "2026-07-31T17:38:21+00:00",
+                              "likes": 0,
+                              "dislikes": 0,
+                              "parent_comment_id": "p0wqhp7",
+                              "depth": 5,
+                              "replies": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "comment_id": "p0wxfds",
+                  "author": "reddit_user_7d10c0566be3",
+                  "author_karma": 0,
+                  "content": "> because their leagues are the top level of competition in those respective sports\n\n> The Premier league, La Liga, Ligue 1 etc. cant claim that, because other leagues and competitions do rival their skill level.\n\nBy your logic, Champions League is the top level of competition in football.\n\nAnd yet the winner of UCL does not stoop to the USA level of calling themselves World Champs. Theyre only the European Champion.",
+                  "timestamp": "2026-07-31T17:28:06+00:00",
+                  "likes": 3,
+                  "dislikes": 0,
+                  "parent_comment_id": "p0ux4io",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p0wy3fm",
+                      "author": "reddit_user_cc3ec84e5f02",
+                      "author_karma": 0,
+                      "content": "Because they have the world cup lol",
+                      "timestamp": "2026-07-31T17:30:55+00:00",
+                      "likes": -4,
+                      "dislikes": 0,
+                      "parent_comment_id": "p0wxfds",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "p0wz67o",
+                          "author": "reddit_user_7d10c0566be3",
+                          "author_karma": 0,
+                          "content": "World Cup is for National Teams.\n\nSo by this point, non of the 4 american sports team should be World Champions",
+                          "timestamp": "2026-07-31T17:35:32+00:00",
+                          "likes": 3,
+                          "dislikes": 0,
+                          "parent_comment_id": "p0wy3fm",
+                          "depth": 4,
+                          "replies": [
+                            {
+                              "comment_id": "p0x08gt",
+                              "author": "reddit_user_cc3ec84e5f02",
+                              "author_karma": 0,
+                              "content": "No, they have the Club World Cup. Every single person arguing with me here clearly does not know anything about sports hahaha",
+                              "timestamp": "2026-07-31T17:40:05+00:00",
+                              "likes": -3,
+                              "dislikes": 0,
+                              "parent_comment_id": "p0wz67o",
+                              "depth": 5,
+                              "replies": [
+                                {
+                                  "comment_id": "p0x17mc",
+                                  "author": "reddit_user_7d10c0566be3",
+                                  "author_karma": 0,
+                                  "content": "That proves my point even further.\n\n\nThe American clubs having only won the UCL-equivalent CANNOT call themselves World Champion. Is there a CWC equivalent every season for American sports?",
+                                  "timestamp": "2026-07-31T17:44:18+00:00",
+                                  "likes": 2,
+                                  "dislikes": 0,
+                                  "parent_comment_id": "p0x08gt",
+                                  "depth": 6,
+                                  "replies": [
+                                    {
+                                      "comment_id": "p0x1nc4",
+                                      "author": "reddit_user_cc3ec84e5f02",
+                                      "author_karma": 0,
+                                      "content": "No, because there **ISNT ANY COMPETITION FOR IT**",
+                                      "timestamp": "2026-07-31T17:46:10+00:00",
+                                      "likes": 0,
+                                      "dislikes": 0,
+                                      "parent_comment_id": "p0x17mc",
+                                      "depth": 7,
+                                      "replies": []
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p0usnk3",
+          "author": "reddit_user_df41e345abc8",
+          "author_karma": 0,
+          "content": "PLEASE ASIA BOYCOTT",
+          "timestamp": "2026-07-31T11:32:28+00:00",
+          "likes": 8,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0uuto0",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-07-31T11:45:45+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p0u9ca7",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0uvg21",
+          "author": "reddit_user_13effa49bb0e",
+          "author_karma": 0,
+          "content": "“Good morning and welcome to News from 30 Feet Away.”",
+          "timestamp": "2026-07-31T11:49:30+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0uz46m",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-07-31T12:10:36+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0uzb0y",
+          "author": "reddit_user_90fdfb33fb5f",
+          "author_karma": 0,
+          "content": "Africa Vs South America world cup!",
+          "timestamp": "2026-07-31T12:11:40+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p0u8x91",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0v212r",
+          "author": "reddit_user_b5ae3f913958",
+          "author_karma": 0,
+          "content": "Now to vote infantile out",
+          "timestamp": "2026-07-31T12:26:28+00:00",
+          "likes": 3,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0v74x5",
+          "author": "reddit_user_74579c4e274b",
+          "author_karma": 0,
+          "content": "2030 World Cup final between Maldives and Turkmenistan gonna be lit!",
+          "timestamp": "2026-07-31T12:53:01+00:00",
+          "likes": 3,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0vgxnp",
+              "author": "reddit_user_abdbc6551dca",
+              "author_karma": 0,
+              "content": "Turkmenistan is presumably part of the Asian Football Confederation so not even that 😂 ",
+              "timestamp": "2026-07-31T13:40:24+00:00",
+              "likes": 6,
+              "dislikes": 0,
+              "parent_comment_id": "p0v74x5",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p0yyrqa",
+              "author": "reddit_user_32db28a6a22f",
+              "author_karma": 0,
+              "content": "The ones protesting are Europe, North America, and Asia. So, Argentina Vs Brazil would be the most likely final.",
+              "timestamp": "2026-07-31T23:09:11+00:00",
+              "likes": 2,
+              "dislikes": 0,
+              "parent_comment_id": "p0v74x5",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p0v811x",
+          "author": "reddit_user_3c45c5ee4c82",
+          "author_karma": 0,
+          "content": "FIFA going the way of LIV golf",
+          "timestamp": "2026-07-31T12:57:29+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0v9rc4",
+          "author": "reddit_user_cbe38088161a",
+          "author_karma": 0,
+          "content": "Glad to see some solidarity against this BS.",
+          "timestamp": "2026-07-31T13:06:09+00:00",
+          "likes": 3,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0vfnwb",
+          "author": "reddit_user_40d52552ceb5",
+          "author_karma": 0,
+          "content": "They didn’t really say we shouldn’t privatize… they said it was communicated poorly.",
+          "timestamp": "2026-07-31T13:34:27+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0vfs9x",
+          "author": "reddit_user_40d52552ceb5",
+          "author_karma": 0,
+          "content": "How is reelecting Blatter going to accomplish that? ;)",
+          "timestamp": "2026-07-31T13:35:01+00:00",
+          "likes": 0,
+          "dislikes": 0,
+          "parent_comment_id": "p0u84rr",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0vlbca",
+          "author": "reddit_user_740f1427dc0f",
+          "author_karma": 0,
+          "content": "Im waiting for the Oceania Football Confederation response to the FIFA privatising being. \n\n\"Hooray, we have been asked about somthing\"",
+          "timestamp": "2026-07-31T14:00:17+00:00",
+          "likes": 4,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0vqljp",
+          "author": "reddit_user_c19e1722b921",
+          "author_karma": 0,
+          "content": "here comes the 300% tariffs on EU 🫩 ",
+          "timestamp": "2026-07-31T14:23:54+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0vrt7o",
+          "author": "reddit_user_7f7b321876e1",
+          "author_karma": 0,
+          "content": "Does FA mean something other than the association that governs soccer in England? If not, then I wholeheartedly disagree that they should be able to take over for what FIFA is currently governing.",
+          "timestamp": "2026-07-31T14:29:12+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": "p0u9fdn",
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0w6mu6",
+              "author": "reddit_user_5e33523494f3",
+              "author_karma": 0,
+              "content": "FA is just short for Football Association. the KNVB in the dutch FA and well the FA is the English FA, and so on for each country.",
+              "timestamp": "2026-07-31T15:33:40+00:00",
+              "likes": 6,
+              "dislikes": 0,
+              "parent_comment_id": "p0vrt7o",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p0w98yu",
+                  "author": "reddit_user_7f7b321876e1",
+                  "author_karma": 0,
+                  "content": "Yeah, but the governing body of soccer in England is just called \"The Football Association.\" Googling \"football association\" brings up information only about the one in England.",
+                  "timestamp": "2026-07-31T15:44:51+00:00",
+                  "likes": -5,
+                  "dislikes": 0,
+                  "parent_comment_id": "p0w6mu6",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p0wqbw6",
+                      "author": "reddit_user_039b82859382",
+                      "author_karma": 0,
+                      "content": "Yeah but we are speaking in English so the spanish FA will be called something different in their home tongue but it is still the Spanish FA. Fish and Poisson are the same thing just in two different languages. ",
+                      "timestamp": "2026-07-31T16:57:45+00:00",
+                      "likes": 7,
+                      "dislikes": 0,
+                      "parent_comment_id": "p0w98yu",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "p0x5b73",
+                          "author": "reddit_user_7f7b321876e1",
+                          "author_karma": 0,
+                          "content": "But the Spanish association that governs soccer is the Royal Spanish Football Federation, or Real Federacion Espanola de Futbol. The Argentinian association is called the Argentine Football Association, or Asociacion del Futbol Argentino. The Mexican association is called the Mexican Football Federation, or Federacion Mexicana de Futbol Asociacion. I could go on, but the point is that not a single primarily Spanish speaking country has a soccer association called Asociacion de Futbol. The English (as in England the country, not English the language) association is literally called The Football Association. There is no reference to England in the title. So when someone says Football Association, or, even more specific to what OP said, the FA, it refers to the specific governing body of soccer in England. It is not a generic term, especially as OP used it.",
+                          "timestamp": "2026-07-31T18:01:50+00:00",
+                          "likes": -6,
+                          "dislikes": 0,
+                          "parent_comment_id": "p0wqbw6",
+                          "depth": 4,
+                          "replies": [
+                            {
+                              "comment_id": "p0yxzxt",
+                              "author": "reddit_user_3b32f2ee559d",
+                              "author_karma": 0,
+                              "content": "Well, most people outside of the UK (or even outside of England) do not use the term that way. You are being overly pedantic.",
+                              "timestamp": "2026-07-31T23:05:01+00:00",
+                              "likes": 1,
+                              "dislikes": 0,
+                              "parent_comment_id": "p0x5b73",
+                              "depth": 5,
+                              "replies": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p0vs8ed",
+          "author": "reddit_user_b51d5c9d91a0",
+          "author_karma": 0,
+          "content": "Because we aren’t allowed to openly talk about what needs to happen to spark change.",
+          "timestamp": "2026-07-31T14:31:03+00:00",
+          "likes": 8,
+          "dislikes": 0,
+          "parent_comment_id": "p0u8o65",
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0yglxx",
+              "author": "reddit_user_9b0a582b0a40",
+              "author_karma": 0,
+              "content": "*La Marseillaise intensifies*",
+              "timestamp": "2026-07-31T21:35:41+00:00",
+              "likes": 2,
+              "dislikes": 0,
+              "parent_comment_id": "p0vs8ed",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p0vscqf",
+          "author": "reddit_user_2fdfbdfb66bd",
+          "author_karma": 0,
+          "content": "America will and then act like they’re the champions of the world! ",
+          "timestamp": "2026-07-31T14:31:34+00:00",
+          "likes": -1,
+          "dislikes": 0,
+          "parent_comment_id": "p0u924r",
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0vwgiv",
+              "author": "reddit_user_507dea2dffb8",
+              "author_karma": 0,
+              "content": "Even without Europe that would never happen. Haha \nArgentina, Brazil, Colombia, Morocco, Japan, Egypt, Ivory Coast, Senegal  are all better and probably will stay better. ",
+              "timestamp": "2026-07-31T14:49:28+00:00",
+              "likes": 2,
+              "dislikes": 0,
+              "parent_comment_id": "p0vscqf",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p0vyns3",
+          "author": "reddit_user_21aa63dc71fa",
+          "author_karma": 0,
+          "content": "Guarantee Donald gave baldy the idea of selling something he doesn't own.",
+          "timestamp": "2026-07-31T14:58:57+00:00",
+          "likes": 3,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0vzisg",
+          "author": "reddit_user_8c162447a380",
+          "author_karma": 0,
+          "content": "I have Lilly Allen in my head singing FUCK YOU. \n\nIt's nice. ",
+          "timestamp": "2026-07-31T15:02:44+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0w2m1y",
+          "author": "reddit_user_8601c33b5be4",
+          "author_karma": 0,
+          "content": "> How Is it that the corrupt just do what they want and walk away? FIFA is apparently moving ahead. \n\nEven if they somehow win the vote, which seems very unlikely at the moment, a world cup without UEFA nations means that Infantino wont get the money he promised. No investor would pay as much for a world cup without Europe.",
+          "timestamp": "2026-07-31T15:16:09+00:00",
+          "likes": 6,
+          "dislikes": 0,
+          "parent_comment_id": "p0u8o65",
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0y7ksb",
+              "author": "reddit_user_97aaafafd24e",
+              "author_karma": 0,
+              "content": "This is the dream.  We can't depend on Infantino to do the right thing, he wouldn't know the right thing if it bit him in the ass.\n\nWe're hoping the investors follow the money, and removing major federations devalues the investment.",
+              "timestamp": "2026-07-31T20:52:52+00:00",
+              "likes": 2,
+              "dislikes": 0,
+              "parent_comment_id": "p0w2m1y",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p0w5zgp",
+          "author": "reddit_user_d1d23c79bad2",
+          "author_karma": 0,
+          "content": "Not as strongly worded as UEFA's statement but they've definitely picked a side, for now.",
+          "timestamp": "2026-07-31T15:30:52+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0wljgl",
+          "author": "reddit_user_fc3e50ef8593",
+          "author_karma": 0,
+          "content": "In Europe, as well (for the most part anyways). Weird to see 15 nations going at it in probably half empty stadiums if it got to that point",
+          "timestamp": "2026-07-31T16:37:16+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p0u924r",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0wtnbh",
+          "author": "reddit_user_d7e0e8de7170",
+          "author_karma": 0,
+          "content": "CONMEBOL is taking their sweet time.",
+          "timestamp": "2026-07-31T17:12:00+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0wypat",
+          "author": "reddit_user_7bb2be44baed",
+          "author_karma": 0,
+          "content": "I read \"recommends an urgent review of its governance\" and I heard \"Check yourself before you wreck yourself.\"",
+          "timestamp": "2026-07-31T17:33:31+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0xak2o",
+          "author": "reddit_user_12d7eb6a35a6",
+          "author_karma": 0,
+          "content": "TL:DR FIFA Forward Enterprise (FFE), to sell minority, non-controlling stakes to investors, including a venture capital firm led by Joshua Kushner, the brother of Donald Trump’s son-in-law Jared Kushner.\n\nFrom Sports Illustrated: \"FIFA confirmed that Thrive Eternal will “lead the proposed investor group.” Joshua Kushner is the founder and managing partner of the venture capital firm as well as being the younger brother of Jared Kushner, U.S. President Donald Trump’s son-in-law. *The Times* claim that “figures close to the Donald Trump administration” have been consulted about this proposal.\"",
+          "timestamp": "2026-07-31T18:24:37+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0z09ci",
+              "author": "[deleted]",
+              "author_karma": 0,
+              "content": "[removed]",
+              "timestamp": "2026-07-31T23:17:15+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p0xak2o",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p0xkiij",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-07-31T19:08:33+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0xn8m3",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-07-31T19:20:45+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0xnz9l",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-07-31T19:24:03+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": "p0ubivm",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0y5ygh",
+          "author": "reddit_user_8f87713c2e8c",
+          "author_karma": 0,
+          "content": "CONMEBOL still in it\n\nArgentina gonna run it back 😆",
+          "timestamp": "2026-07-31T20:45:26+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0ybahi",
+          "author": "reddit_user_85ce03397552",
+          "author_karma": 0,
+          "content": "Meanwhile CONMEBOL  💰💰💰💰💸💸💸💸💰💰💰💰 ",
+          "timestamp": "2026-07-31T21:10:13+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0yk5za",
+          "author": "reddit_user_d8415f603b24",
+          "author_karma": 0,
+          "content": "It’s almost like a group of collectives can come together and put their foot down to madness, exert pressure, and tell the powers that be they aren’t going to participate in their BS. Imagine that. ",
+          "timestamp": "2026-07-31T21:53:13+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0yrc24",
+          "author": "reddit_user_031262011c26",
+          "author_karma": 0,
+          "content": "I invite you all to take a look at Jared Kushner’s brother and what he owns and does…\n\nIn case you don’t already know this is another money-making scheme by the president of the United States",
+          "timestamp": "2026-07-31T22:29:48+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0z25ht",
+          "author": "reddit_user_f3e8b1b906c9",
+          "author_karma": 0,
+          "content": "Would privatizing FIFA make it so they have to pay taxes? ",
+          "timestamp": "2026-07-31T23:27:34+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p13uvzc",
+          "author": "reddit_user_40dbc08e6e9b",
+          "author_karma": 0,
+          "content": "They don't have the ability to do this in the way you're suggesting. \n\nEven if they convinced a number of club teams to gamble on the success of a new venture, the European national associations would stay with UEFA.\n\nUltimately UEFA has the power to cripple anything FIFA tries to do, because the European football economy is comfortably self-sustaining, while the rest of the global football economy is not.",
+          "timestamp": "2026-08-01T17:43:48+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": "p0u9fdn",
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1erwt3",
+          "author": "reddit_user_a5f6b74877d9",
+          "author_karma": 0,
+          "content": "Corrupt",
+          "timestamp": "2026-08-03T08:38:59+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run003_post04_seed019",
+      "post_slot": 4,
+      "seed_index": 19,
+      "source_raw_post_id": "1vbmyz0",
+      "source_product_dir": "sports",
+      "source_file": "https://www.reddit.com/r/sports/comments/1vbmyz0/fifa_adviser_on_white_houses_world_cup_panel/",
+      "post_type": ":soccer: Soccer",
+      "title": "FIFA adviser on White House's World Cup panel resigns to protest Infantino private equity plan",
+      "author": "reddit_user_79ff14d8816f",
+      "author_karma": 0,
+      "content": "FIFA adviser on White House's World Cup panel resigns to protest Infantino private equity plan",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p0uivz7",
+          "author": "reddit_user_ccbf5720d74e",
+          "author_karma": 0,
+          "content": "They have rugpulled Infantino? I don’t understand how someone in his position can try to do something like this without securing certain support first.",
+          "timestamp": "2026-07-31T10:27:46+00:00",
+          "likes": 615,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0ulrfc",
+              "author": "reddit_user_26ea4ab049b2",
+              "author_karma": 0,
+              "content": "He secured a financial position...not the support of the member federations. \n\nHe figured with the Kushner's, with Trump, with Middle East money, that would be all he needed. ",
+              "timestamp": "2026-07-31T10:47:44+00:00",
+              "likes": 411,
+              "dislikes": 0,
+              "parent_comment_id": "p0uivz7",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p0ut2xm",
+                  "author": "reddit_user_a0117f2cc422",
+                  "author_karma": 0,
+                  "content": "Also, he was trying to bounce the whole thing through in remarkably short time, in the positive afterglow of a successful (and lucrative) World Cup, with no rivals and 100s of endorsements (inc from most European feds) for his presidency, and greasing things with the promise of large windfalls to every voting fed, for many of whom 40 million would represent a fortune.\n\nHe gave them until Sept 19th to accept, and he dangled the money directly by saying - take this 20 mill now and you will get a further 20 when the deal is done. Don’t take it and you will ‘only’ get 10 mill. So the ‘development funds’/bribes were metaphorically laid right there in front of executives and fed presidents not exactly known for turning their nose up at free no strings cash.\n\nIt’s the height of summer, post-WC lull, and maybe Infantino counted on such a sluggish response that things would’ve been almost wrapped up by the time UEFA coordinated a response (if they even could). \n\nBut perhaps he miscalculated. UEFA, CONCACAF and the AFC seem to have coordinated their responses. And UEFA even bit the bullet on the nuclear option: boycotting FIFA tournaments starting with the women’s WC next years. \n\nYou’d have to think that threat alone would be enough to make any investors reassess any offer since no European teams drastically reducing the commercial value of future WC rights. Just the threat alone might be enough to sour things.\n\nBut allow me to be cynical for a second. Western politicians and leaders know how this goes - it’s not their first rodeo. Republicans in the US, for example, are infamous for promoting some horrible proposal to gut some department or defund some vital federal service. Cue shock, outrage and fear. Opposition mounts, Dems step in to (mis)lead, disappearing to ‘negotiate’ behind closed doors. Everyone comes out looking happy and declaring that thanks to the brave popular opposition, Republicans have abandoned their plans and instead they can all sing kumbaya together over the new proposals that…cut 20 rather than 60%, reduce funding rather than cutting it altogether, or whatever it might be.\n\nVictory for mature politics, compromise and consensus? Or a scripted dance where you raise fears with a terrible proposal only to offer the relief of a slightly less terrible one…?\n\nSo - what if Infantino offered this proposal not because he seriously thought it would get through, but to normalise the possibility, to groom us into not being shocked when a previously taboo suggestion (private ownership of non-profit sports admin)? Or maybe to distract to a different kind of corrupt exploitative plan that they have prepared, so that while everyone is outraged at the outrageousness, they quietly press on with something only marginally better, or just as bad but packaged more subtly???",
+                  "timestamp": "2026-07-31T11:35:07+00:00",
+                  "likes": 165,
+                  "dislikes": 0,
+                  "parent_comment_id": "p0ulrfc",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p0v14s5",
+                      "author": "reddit_user_371fc9f72d73",
+                      "author_karma": 0,
+                      "content": "Could be true, sadly. \n\nHappens like clockwork every year with a utility company locally in the US. “We have to raise rates by 10% to remain solvent!” Cue the outrage and public outcry. Meeting and negotiations held, news stories posted. Then a few weeks later they emerge with an amended plan, “after consultation with public leaders, we are happy to announce that the rate increase will be cut by 50%.” That 10% becomes 5%, a few people celebrate beating The Man, and everyone else goes back to business as usual, now paying 5% more, when the goal was likely 2%. ",
+                      "timestamp": "2026-07-31T12:21:40+00:00",
+                      "likes": 43,
+                      "dislikes": 0,
+                      "parent_comment_id": "p0ut2xm",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "p0v4f2a",
+                          "author": "reddit_user_a0117f2cc422",
+                          "author_karma": 0,
+                          "content": "Exactly. Sadly I wouldn’t be surprised, especially since Infantino is clearly coordinating above all with the US - meaning Trump, the Kushners, and the other despicable oligarchs that coagulate around his pustular presidency.",
+                          "timestamp": "2026-07-31T12:39:06+00:00",
+                          "likes": 17,
+                          "dislikes": 0,
+                          "parent_comment_id": "p0v14s5",
+                          "depth": 4,
+                          "replies": []
+                        },
+                        {
+                          "comment_id": "p0vqzyl",
+                          "author": "reddit_user_2fe8706ec731",
+                          "author_karma": 0,
+                          "content": "https://www.predictivehistory.com/hegels-dialectic/",
+                          "timestamp": "2026-07-31T14:25:39+00:00",
+                          "likes": 8,
+                          "dislikes": 0,
+                          "parent_comment_id": "p0v14s5",
+                          "depth": 4,
+                          "replies": [
+                            {
+                              "comment_id": "p0wl4wf",
+                              "author": "reddit_user_371fc9f72d73",
+                              "author_karma": 0,
+                              "content": "I had to brush up on college philosophy for that one. But yes! I would probably call it a manufactured crisis. I was thinking “Overton Window” but that’s different.",
+                              "timestamp": "2026-07-31T16:35:33+00:00",
+                              "likes": 3,
+                              "dislikes": 0,
+                              "parent_comment_id": "p0vqzyl",
+                              "depth": 5,
+                              "replies": [
+                                {
+                                  "comment_id": "p0wnrxa",
+                                  "author": "reddit_user_36da692bd465",
+                                  "author_karma": 0,
+                                  "content": "Hey man, I recently opened a micro tasks website, and it told me to DM you about some kind of free AI tool\n\n\nBe prepared for the onslaught of greedy people\n\n\"Hey! I saw you are also a business owner!\n\nYou probably know that nowadays people ask ChatGPT more than they google.... That's why I have created this FREE tool that checks how visible your business is on ChatGPT and how to improve it. It's 100% free, hopefully you find it useful: https://babylovegrowth.ai/free-tools/ai-search-audit (used by 5,000+ business owners)\"\n\n\nIs the exact script they told me to spam you",
+                                  "timestamp": "2026-07-31T16:46:49+00:00",
+                                  "likes": 1,
+                                  "dislikes": 0,
+                                  "parent_comment_id": "p0wl4wf",
+                                  "depth": 6,
+                                  "replies": []
+                                },
+                                {
+                                  "comment_id": "p0xd2sj",
+                                  "author": "reddit_user_12152f6ac9f0",
+                                  "author_karma": 0,
+                                  "content": "They are similar from a mechanical standpoint - move the needle on the issues you're financially interested in from 'unacceptable in any way, shape or form' to 'this smaller version is for everyone's own good, just look at the alternative'. This part of [REDDIT_USER]'s reply is quite telling, that said:\n\n> Cue shock, outrage and fear. Opposition mounts, Dems step in to (mis)lead, disappearing to ‘negotiate’ behind closed doors. \n\nJust like the Dems are, where it matters the most, controlled/loyal opposition, these large governing bodies are also fundamentally corrupt and money-hungry. Such a rapid, concerted response, with such vehemence, can conceal a 'sweeten the pot', or it can just be a step toward pushing some form of this or another in the future.",
+                                  "timestamp": "2026-07-31T18:35:38+00:00",
+                                  "likes": 3,
+                                  "dislikes": 0,
+                                  "parent_comment_id": "p0wl4wf",
+                                  "depth": 6,
+                                  "replies": []
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "comment_id": "p0w1ksf",
+                          "author": "[deleted]",
+                          "author_karma": 0,
+                          "content": "[removed]",
+                          "timestamp": "2026-07-31T15:11:42+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "p0v14s5",
+                          "depth": 4,
+                          "replies": []
+                        }
+                      ]
+                    },
+                    {
+                      "comment_id": "p0v3er6",
+                      "author": "reddit_user_4b2ab2c64fb9",
+                      "author_karma": 0,
+                      "content": "Permanent tv timeouts for commercials.",
+                      "timestamp": "2026-07-31T12:33:50+00:00",
+                      "likes": 5,
+                      "dislikes": 0,
+                      "parent_comment_id": "p0ut2xm",
+                      "depth": 3,
+                      "replies": []
+                    },
+                    {
+                      "comment_id": "p0vh3ha",
+                      "author": "[deleted]",
+                      "author_karma": 0,
+                      "content": "[removed]",
+                      "timestamp": "2026-07-31T13:41:08+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p0ut2xm",
+                      "depth": 3,
+                      "replies": []
+                    },
+                    {
+                      "comment_id": "p0vqxqn",
+                      "author": "reddit_user_2fe8706ec731",
+                      "author_karma": 0,
+                      "content": "> Victory for mature politics, compromise and consensus? Or a scripted dance where you raise fears with a terrible proposal only to offer the relief of a slightly less terrible one…?\n\nhttps://www.predictivehistory.com/hegels-dialectic/",
+                      "timestamp": "2026-07-31T14:25:23+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p0ut2xm",
+                      "depth": 3,
+                      "replies": []
+                    },
+                    {
+                      "comment_id": "p0w5skf",
+                      "author": "reddit_user_1570661018d7",
+                      "author_karma": 0,
+                      "content": "If UEFA sticks by their statement, the boycott is effective immediately and includes the U-20 and U-17 tournaments later this year. They state they won’t lift the boycott until this proposal is quashed AND there’s written assurance a similar proposal of private ownership will not be brought up again",
+                      "timestamp": "2026-07-31T15:30:02+00:00",
+                      "likes": 15,
+                      "dislikes": 0,
+                      "parent_comment_id": "p0ut2xm",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "p0yoiig",
+                          "author": "reddit_user_73a56a42d67a",
+                          "author_karma": 0,
+                          "content": "You'd think it'd be written into the bylaws of a nonprofit that they could never switch to for profit. In theory nonprofits are primarily mission-driven. To have the ability to switch to for profit is in direct conflict with said mission.",
+                          "timestamp": "2026-07-31T22:15:12+00:00",
+                          "likes": 2,
+                          "dislikes": 0,
+                          "parent_comment_id": "p0w5skf",
+                          "depth": 4,
+                          "replies": []
+                        }
+                      ]
+                    },
+                    {
+                      "comment_id": "p0wzeyu",
+                      "author": "reddit_user_118ea4e03074",
+                      "author_karma": 0,
+                      "content": "Sometimes I wonder if most redditors are like bots trying in a very discreet and smart way try to frame it as Trump is just like any other president. \n\nIn a way creating hate towards USA instead of the administration. And the other way around. \n\nThere is a lot of youtubers this week from the \"left\" that pushes this narrative that Europeans are bad people. \n\nIts interesting to see how something like propaganda is getting pushed in popular \"political\" channels online. \n\nAnd all of them seems to aim towards breaking the west. Like the alternative would be better. \n\nLike some kind of left version of tucker Carlsson going to china and talk about the groceries. \n\nBut now its youtubers going to rich places in China and sell it like its some kind of utopia. \n\nInteresting times.",
+                      "timestamp": "2026-07-31T17:36:35+00:00",
+                      "likes": -7,
+                      "dislikes": 0,
+                      "parent_comment_id": "p0ut2xm",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "p0x3ytm",
+                          "author": "reddit_user_cc875370c3d8",
+                          "author_karma": 0,
+                          "content": "what?",
+                          "timestamp": "2026-07-31T17:56:07+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "p0wzeyu",
+                          "depth": 4,
+                          "replies": []
+                        },
+                        {
+                          "comment_id": "p0x57ec",
+                          "author": "reddit_user_a0117f2cc422",
+                          "author_karma": 0,
+                          "content": "I’m sorry I don’t quite understand the point you are trying to make. \n\nThere are lots of Reddit bots but you are speaking about something very specific and I’m not sure I recognise it.\n\nThere are also some leftists who overly romanticise other, non-western countries. It has always been that way, as they search for some kind of readymade alternative.\n\nAt the same time, China has been doing things that are akin to what Europe and America, with the benefit of imperialism, did in the 19th and 20rh centuries. It’s not socialism but it is legitimate to wonder why countries not just like China, but Vietnam, can invest so much in the development of their cities, infrastructure and education, while the headline story of Western capitalism is disintegration. \n\nBut that’s just what a bot would write, right???",
+                          "timestamp": "2026-07-31T18:01:23+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "p0wzeyu",
+                          "depth": 4,
+                          "replies": []
+                        }
+                      ]
+                    },
+                    {
+                      "comment_id": "p0z3vgm",
+                      "author": "[deleted]",
+                      "author_karma": 0,
+                      "content": "[removed]",
+                      "timestamp": "2026-07-31T23:37:05+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p0ut2xm",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                },
+                {
+                  "comment_id": "p0vg3s2",
+                  "author": "reddit_user_f244e0bfecdd",
+                  "author_karma": 0,
+                  "content": "Its a hard sell he was hoping to bully his way into. From my understanding, small nations tend to toe the line with FIFA for free money, and they all have equal vote weight.",
+                  "timestamp": "2026-07-31T13:36:31+00:00",
+                  "likes": 6,
+                  "dislikes": 0,
+                  "parent_comment_id": "p0ulrfc",
+                  "depth": 2,
+                  "replies": []
+                },
+                {
+                  "comment_id": "p0vkcw6",
+                  "author": "[deleted]",
+                  "author_karma": 0,
+                  "content": "[removed]",
+                  "timestamp": "2026-07-31T13:55:54+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p0ulrfc",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            },
+            {
+              "comment_id": "p0um7y7",
+              "author": "reddit_user_7d2faed5a4fd",
+              "author_karma": 0,
+              "content": "Infantino has always seemed like a “price of everything, value of nothing” kinda guy, so this total bungle job is on brand tbh. ",
+              "timestamp": "2026-07-31T10:50:51+00:00",
+              "likes": 37,
+              "dislikes": 0,
+              "parent_comment_id": "p0uivz7",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p0uoz65",
+              "author": "reddit_user_85154d4fe7a0",
+              "author_karma": 0,
+              "content": "He knows it will fail he just wants out of this bc of all the pressure from the backdoor dealing he did. ",
+              "timestamp": "2026-07-31T11:09:07+00:00",
+              "likes": -14,
+              "dislikes": 0,
+              "parent_comment_id": "p0uivz7",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p0w95li",
+              "author": "reddit_user_bee53cb7d1d7",
+              "author_karma": 0,
+              "content": "because of cocktail drugs that the rich can afford.",
+              "timestamp": "2026-07-31T15:44:27+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p0uivz7",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p0wpgfx",
+              "author": "reddit_user_690475ba530c",
+              "author_karma": 0,
+              "content": "Because positions of power also often insulates you from facts and makes you feel infallabale because of all the prior \"successes\". ",
+              "timestamp": "2026-07-31T16:54:01+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p0uivz7",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p0xnibd",
+              "author": "reddit_user_6d58b6eb7b2c",
+              "author_karma": 0,
+              "content": "He thinks the support of trump is enought",
+              "timestamp": "2026-07-31T19:21:59+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p0uivz7",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p0yv9d0",
+              "author": "reddit_user_7dce103446ec",
+              "author_karma": 0,
+              "content": "Trump/kushners team have been whispering in his ear. It’s no risk for them. If he lands it, they make bank. If he doesn’t, it’s his career. He’s the simp. ",
+              "timestamp": "2026-07-31T22:50:24+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p0uivz7",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p143xld",
+              "author": "reddit_user_3e94584798fa",
+              "author_karma": 0,
+              "content": "I'd bet everything I own that it was Trump's idea and suggested to Infantino that he do it.",
+              "timestamp": "2026-08-01T18:27:08+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p0uivz7",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p0uj51z",
+          "author": "reddit_user_543bdd147be2",
+          "author_karma": 0,
+          "content": "Why does the one part of the US government have a FIFA representative?",
+          "timestamp": "2026-07-31T10:29:33+00:00",
+          "likes": 59,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0ukcpk",
+              "author": "reddit_user_f78cb79b8bba",
+              "author_karma": 0,
+              "content": "Read the article? But Ok it could have been more clear.\n\nAnyway, it says: «Senior FIFA adviser Carlos Cordeiro, who represented the soccer body on the White House Task Force for the [World Cup](https://apnews.com/hub/fifa-world-cup), resigned Friday in protest at its [private equity plan](https://apnews.com/article/world-cup-fifa-investors-kushner-infantino-uefa-8345e0864e3a217632733810c232b423).» \n\nSo he was a FIFA senior advisor, who previously served advising the USA on the World Cup (representing FIFA). \n\nHe quit his job with FIFA. He would maybe have gone on to advice Spain/Portugal/Morocco next, who knows? But its quite normal for FIFA to advice a task force on the WC in a country that is hosting the WC",
+              "timestamp": "2026-07-31T10:38:06+00:00",
+              "likes": 60,
+              "dislikes": 0,
+              "parent_comment_id": "p0uj51z",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p0unv2k",
+                  "author": "reddit_user_67542ab08bd1",
+                  "author_karma": 0,
+                  "content": "By the way Cordeiro cut his teeth at Goldman Sachs.  Then he was USSF President until he had to resign for bungling the Women's National Team equal pay lawsuit because the legal arguments so tone deaf.  When this guy thinks you've jumped the shark . . . ",
+                  "timestamp": "2026-07-31T11:01:45+00:00",
+                  "likes": 25,
+                  "dislikes": 0,
+                  "parent_comment_id": "p0ukcpk",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p0uo9dv",
+                      "author": "reddit_user_f78cb79b8bba",
+                      "author_karma": 0,
+                      "content": "Yeah… most FIFA people are \"something\" alright. But still, it made sense he was on the taskforce in question.",
+                      "timestamp": "2026-07-31T11:04:25+00:00",
+                      "likes": 3,
+                      "dislikes": 0,
+                      "parent_comment_id": "p0unv2k",
+                      "depth": 3,
+                      "replies": []
+                    },
+                    {
+                      "comment_id": "p0w66yb",
+                      "author": "[deleted]",
+                      "author_karma": 0,
+                      "content": "[removed]",
+                      "timestamp": "2026-07-31T15:31:46+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p0unv2k",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                },
+                {
+                  "comment_id": "p0ya8kj",
+                  "author": "reddit_user_d5e026eadac4",
+                  "author_karma": 0,
+                  "content": "I thought this was pretty obvious ",
+                  "timestamp": "2026-07-31T21:05:14+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p0ukcpk",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            },
+            {
+              "comment_id": "p0upgqu",
+              "author": "[deleted]",
+              "author_karma": 0,
+              "content": "[deleted]",
+              "timestamp": "2026-07-31T11:12:15+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p0uj51z",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p0ul36s",
+          "author": "reddit_user_abbf32d6d908",
+          "author_karma": 0,
+          "content": "Either the rats are leaving the ship, or he's a fuse ",
+          "timestamp": "2026-07-31T10:43:10+00:00",
+          "likes": 27,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0umnkb",
+          "author": "reddit_user_2e698d9809ad",
+          "author_karma": 0,
+          "content": "Still can't believe this \"plan\"\n\nThis whole thing just reeks of Trump securing himself a slice of World Cup income. And how any national association with even the most basic financial knowledge would take an immediate payment over the existing steady revenue of the FIFA competitions is beyond me.",
+          "timestamp": "2026-07-31T10:53:44+00:00",
+          "likes": 255,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0unna8",
+              "author": "reddit_user_0e3e906d6226",
+              "author_karma": 0,
+              "content": "Corruption.  Some of the smaller nations would love an instant infusion of $20 million.\n\nInfantino is pushing for a 50% vote to change instead of the normal 75%.  \n\nI’m sure he can buy off 50% of the 211 members with an instant payout. \n\nPlus there is also an additional 20 million over the next 4 years under the FIFA forward program.  ",
+              "timestamp": "2026-07-31T11:00:20+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p0umnkb",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p0uqc2v",
+              "author": "reddit_user_9e596d49ef14",
+              "author_karma": 0,
+              "content": "The average national association is a poor corrupt piece of shit. Low payments, low budget etc.. And yeah they get a steady stream, but if you're small the steady stream is also small. Now they suddenly can get a lump sum of 20 million USD immediately, that is a fortune for most associations, and they will be in control of that money. And they will syphon that as much as they can off to themselves. Raising their salaries, nice company Mercedes etc.. Infantino knows this of course so he is using Fifa's money to buy support for his plan that will make him even richer.",
+              "timestamp": "2026-07-31T11:17:49+00:00",
+              "likes": 57,
+              "dislikes": 0,
+              "parent_comment_id": "p0umnkb",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p0w71hb",
+                  "author": "reddit_user_1ac05bd35795",
+                  "author_karma": 0,
+                  "content": "Why youth sports have become pay-to-play too.",
+                  "timestamp": "2026-07-31T15:35:26+00:00",
+                  "likes": 10,
+                  "dislikes": 0,
+                  "parent_comment_id": "p0uqc2v",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p0w7mqc",
+                      "author": "reddit_user_9e596d49ef14",
+                      "author_karma": 0,
+                      "content": "People organise things for several reasons, earning money unfortunately is the most common one.",
+                      "timestamp": "2026-07-31T15:37:57+00:00",
+                      "likes": 3,
+                      "dislikes": 0,
+                      "parent_comment_id": "p0w71hb",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "comment_id": "p0us89h",
+              "author": "reddit_user_e2f802894635",
+              "author_karma": 0,
+              "content": "Its the Saudi. They tried to buy in before and it got rejected.  They're using the kushners, who are known to work for them, as a front so infantino, who is also buddies with the Saudi, can pretend its not them.",
+              "timestamp": "2026-07-31T11:29:49+00:00",
+              "likes": 68,
+              "dislikes": 0,
+              "parent_comment_id": "p0umnkb",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p0uueqd",
+              "author": "reddit_user_3ae77c13dd13",
+              "author_karma": 0,
+              "content": "And knowing americans they will ruin it with in a year. This plan is doomed to fail no matter if it go through or not.",
+              "timestamp": "2026-07-31T11:43:16+00:00",
+              "likes": -1,
+              "dislikes": 0,
+              "parent_comment_id": "p0umnkb",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p0v21gx",
+              "author": "reddit_user_75cd2b053cbf",
+              "author_karma": 0,
+              "content": "> And how any national association with even the most basic financial knowledge would take an immediate payment over the existing steady revenue of the FIFA competitions is beyond me.\n\nEven the United States Soccer Federation is woefully underfunded. It's primary revenue stream is profits off of advertising for the USMNT and USWNT.\n\nMeanwhile, The FA (as an example) has Wembley and The FA Cup that generate revenue for them. \n\nMost national FA's would receive a 4-40x boost with this money. Though it seems even that it's enough.",
+              "timestamp": "2026-07-31T12:26:31+00:00",
+              "likes": 12,
+              "dislikes": 0,
+              "parent_comment_id": "p0umnkb",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p0vswkt",
+                  "author": "reddit_user_f45d736beb48",
+                  "author_karma": 0,
+                  "content": "For a brief period of time they would, IIRC I read every association would receive $80 million dollars in installments up to 2037, and for a lot of associations that would be significantly more than their annual budget now\n\nHowever, that would stop after 2037. So for a few years it would look like a great idea because the poorer associations would be able to invest more into their programs which would probably produce more talent and more competitive matches with some of the bigger associations for a lot of them\n\nAnd that’s how they’d try to get the public. “See, look at the results, it’s been a great!” And then after 2037 everything would return to the status quo and from then on it’s just extracting money with no benefit to the associations competing\n ",
+                  "timestamp": "2026-07-31T14:33:59+00:00",
+                  "likes": 5,
+                  "dislikes": 0,
+                  "parent_comment_id": "p0v21gx",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            },
+            {
+              "comment_id": "p0v2szs",
+              "author": "[deleted]",
+              "author_karma": 0,
+              "content": "[removed]",
+              "timestamp": "2026-07-31T12:30:36+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p0umnkb",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p0ur9y2",
+          "author": "reddit_user_66638f212cd2",
+          "author_karma": 0,
+          "content": "Arsene Wenger needs to resign next.",
+          "timestamp": "2026-07-31T11:23:47+00:00",
+          "likes": 4,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0utrh0",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-07-31T11:39:18+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0uyvcf",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-07-31T12:09:15+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0v0fab",
+          "author": "reddit_user_f18f3c70dbc0",
+          "author_karma": 0,
+          "content": "Can’t imagine the World Cup panel will have anything left to do now anyway ",
+          "timestamp": "2026-07-31T12:17:49+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0v2ro6",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-07-31T12:30:24+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0v3xcl",
+          "author": "reddit_user_bdd8e1e5e488",
+          "author_karma": 0,
+          "content": "Giving 40 million to each fed unfortunately might change their minds. Ugh ",
+          "timestamp": "2026-07-31T12:36:31+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0v45dt",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-07-31T12:37:42+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0vate5",
+          "author": "reddit_user_3baed9483d5b",
+          "author_karma": 0,
+          "content": "It seems some people in the org understand how the FIFA sausage is made. UEFA pumps money into the competition, providing (often pays as well through the domestic leagues) the players who make it competitive and viable. Without them, the system falls apart from underneath FIFA's greedy nose. From here, the nail in the coffin will be if CONMEBOL takes similar measures to UEFA. Infantino can bribe micro and small federations all he wants, but if the mainstay and big shows with the big audience pull aren't playing, then he doesn't have a World Cup.",
+          "timestamp": "2026-07-31T13:11:24+00:00",
+          "likes": 21,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0vt63k",
+          "author": "reddit_user_49bd3eb2c7f8",
+          "author_karma": 0,
+          "content": "Infantino is like Edwin Aukfo on Ted Lasso. ",
+          "timestamp": "2026-07-31T14:35:08+00:00",
+          "likes": 0,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0w2mei",
+          "author": "reddit_user_675eb8ea35cd",
+          "author_karma": 0,
+          "content": "Infantino is giving Blatter a run for his money in the corruption stakes.",
+          "timestamp": "2026-07-31T15:16:12+00:00",
+          "likes": 6,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0wbvfe",
+              "author": "[deleted]",
+              "author_karma": 0,
+              "content": "[removed]",
+              "timestamp": "2026-07-31T15:56:02+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p0w2mei",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p0w7t69",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-07-31T15:38:44+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0wbibb",
+          "author": "reddit_user_4570f1d27797",
+          "author_karma": 0,
+          "content": "USSA wants to own everything ",
+          "timestamp": "2026-07-31T15:54:30+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0wdttp",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-07-31T16:04:21+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0wfs4a",
+          "author": "reddit_user_ce885b5e9cf3",
+          "author_karma": 0,
+          "content": "An advisor to the WH. The same WH that will never be part of the WC in their lifetime.  Strong move... 🤦‍♂️",
+          "timestamp": "2026-07-31T16:12:41+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0wgs3x",
+          "author": "reddit_user_a77a7008ad0c",
+          "author_karma": 0,
+          "content": "Football should NEVER be leveraged for money and it certainly is NOT for Donald Trump and his family to enjoy.  the only thing they should enjoy is the least comfy jail cells in the joint",
+          "timestamp": "2026-07-31T16:16:55+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0wnozx",
+          "author": "reddit_user_32465fa830d2",
+          "author_karma": 0,
+          "content": "Do they still have the office and Trump tower? I bet he’s part of the deal.",
+          "timestamp": "2026-07-31T16:46:28+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0x7avx",
+          "author": "reddit_user_2783e8cb2570",
+          "author_karma": 0,
+          "content": "God damn America is just doing so much winning lately.\n\nLook at everything they are bringing to the great game of Fifa! Nobody has done more for the beautiful game than the beautiful country of America and of course the best president DJT. Obviously Sleepy Joe couldn't have done this and brought the Fifa to America. Of course because Trump is the greatest athlete in his youth. He was the fittest of all presidents and of course wore an onion on his belt, which was the style at the time.\n\nEvery day I wake up and just find watching America is [just like this.](https://www.youtube.com/watch?v=Lbz7avu5gAk)",
+          "timestamp": "2026-07-31T18:10:31+00:00",
+          "likes": 0,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0x89q5",
+          "author": "reddit_user_0b4381afe4eb",
+          "author_karma": 0,
+          "content": "Face it. He's been hanging around with Trump too much. ",
+          "timestamp": "2026-07-31T18:14:43+00:00",
+          "likes": 3,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0xm2pt",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-07-31T19:15:32+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0xuu9u",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-07-31T19:54:55+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0xymkd",
+          "author": "reddit_user_565bd65b3672",
+          "author_karma": 0,
+          "content": "I'll never understand resigning in protest when it just means the next person is likely to go along with the thing you are protesting.",
+          "timestamp": "2026-07-31T20:12:07+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0yf1f0",
+          "author": "reddit_user_a87ed0ea217a",
+          "author_karma": 0,
+          "content": "Resigning when Trump lobbied to get the red card overturned might have sent an actual message...  lol",
+          "timestamp": "2026-07-31T21:28:03+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0ygdj4",
+          "author": "reddit_user_2fe8706ec731",
+          "author_karma": 0,
+          "content": "Like his resignation will change anything....",
+          "timestamp": "2026-07-31T21:34:33+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0yrp2r",
+          "author": "reddit_user_2ecd8917c66a",
+          "author_karma": 0,
+          "content": "This is r/nottheonion material.",
+          "timestamp": "2026-07-31T22:31:42+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    }
+  ]
+}

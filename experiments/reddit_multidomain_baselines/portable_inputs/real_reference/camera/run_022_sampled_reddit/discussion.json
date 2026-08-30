@@ -1,0 +1,529 @@
+{
+  "meta": {
+    "product_category": "camera",
+    "baseline": "real_reddit_reference",
+    "run_id": "run_022_sampled_reddit"
+  },
+  "posts": [
+    {
+      "post_id": "real_run022_post00_seed110",
+      "post_slot": 0,
+      "seed_index": 110,
+      "source_raw_post_id": "1vdjywt",
+      "source_product_dir": "AskPhotography",
+      "source_file": "https://www.reddit.com/r/AskPhotography/comments/1vdjywt/how_do_i_know_whether_or_not_to_shoot_brackets/",
+      "post_type": "Editing/Post Processing",
+      "title": "How do I know whether or not to shoot brackets and hdr merge?",
+      "author": "reddit_user_4349d3bfee00",
+      "author_karma": 0,
+      "content": "How do I know whether or not to shoot brackets and hdr merge?\n\nfor the company I work for I normally shoot real estate photography. I have a decent bit of experience on that side and I almost always shoot brackets and then merge them in Lightroom. now I'm also shooting for a fancy restaurant they own that has a dark and ambient vibe. I've tried several things with my editing for those photos but just haven't gotten anything to come out quite how I want. it's much different from real estate where the goal is mostly the same with editing every time. This is much more artsy. I've been shooting brackets and then merging them for these photos too but would it be better just to shoot one shot?",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p19inwz",
+          "author": "reddit_user_2a3d3a1efc3e",
+          "author_karma": 0,
+          "content": "You have the camera and files?   Work on one of your raws that you would normally merge and see how it comes out.  We can’t answer this for you. \n\nThe beauty of brackets is you have a range of single exposures to work with. ",
+          "timestamp": "2026-08-02T14:53:28+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p19k4ke",
+              "author": "reddit_user_e0256ac5b37d",
+              "author_karma": 0,
+              "content": "That's fair. I hadn't thought about that. I've always just figured if I shot the brackets I may as well use them. ",
+              "timestamp": "2026-08-02T15:00:33+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p19inwz",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p19ipkx",
+          "author": "reddit_user_daad6820b50b",
+          "author_karma": 0,
+          "content": "Not much technical information (like e.g. your gear), but anyway.\n\nLet say you have a camera, you shoot a photo, you can see the result on the display, you can see, if there are some clipped highlights or shadows\n\n\\- if yes - bracket and hdr\n\n\\- if no - no need",
+          "timestamp": "2026-08-02T14:53:42+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p19kc8r",
+              "author": "reddit_user_e0256ac5b37d",
+              "author_karma": 0,
+              "content": "Thanks for that info. That helps to have kind of a general rule. And I forgot to say in the post but I'm shooting on a canon eos R50",
+              "timestamp": "2026-08-02T15:01:34+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p19ipkx",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p19l6og",
+                  "author": "reddit_user_daad6820b50b",
+                  "author_karma": 0,
+                  "content": "there is and can't be any general rule - every single scene will have different lightning, different highlights and shadows\n\nyou really have to learn to decide on the location - no shortcuts\n\nbut with experiences it will be easier...",
+                  "timestamp": "2026-08-02T15:05:37+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p19kc8r",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p19j3lf",
+          "author": "reddit_user_cd346337ddce",
+          "author_karma": 0,
+          "content": "You only need to bracket when your camera can't handle the dynamic range. ",
+          "timestamp": "2026-08-02T14:55:35+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p19jbk9",
+          "author": "reddit_user_daad6820b50b",
+          "author_karma": 0,
+          "content": "bonus tip: if you bracket every time, you can choose at home in post, if the hdr will or will not be necessary or if you just choose one single well exposed photo from the selection...\n\nof course generally shoot RAW, which may reduce the necessity of it",
+          "timestamp": "2026-08-02T14:56:40+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p19kidt",
+              "author": "reddit_user_e0256ac5b37d",
+              "author_karma": 0,
+              "content": "Thanks for the info. I've been shooting in raw and jpeg while I get used to the new style so I have something to look at for reference. ",
+              "timestamp": "2026-08-02T15:02:24+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p19jbk9",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p19ov8n",
+          "author": "reddit_user_65d768524f21",
+          "author_karma": 0,
+          "content": "Your camera’s sensor can record more range than you’re capable of displaying.    \n\nAbobe Lightroom can recover this information from the RAW file with a single exposure.  In my experience, this is good enough for 90% of daylight photography. \n\nWith HDR, less is more. Many will be satisfied with a single raw exposure technique. \n\nDuring dusk and dawn,  it isn’t a bad idea to run brackets of three plus or minus a stop or two anyway.   \n\nBracketing for HDR absolutely requires a tripod with remote or timed release.   This can be really obtrusive to spontaneous photography.   \n\nBoth my Nikon D7500 and Nikon 800E can shoot multiple exposure HDR in camera.    Twenty years ago,  this would have required Photoshop and multiple plug-ins.  \n\nGood luck. ",
+          "timestamp": "2026-08-02T15:23:06+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p19v60l",
+          "author": "reddit_user_f84cbdba3a5f",
+          "author_karma": 0,
+          "content": "Look at your histogram. It will tell you if you crush your blacks and/or blow your highlights. If both, bracket and merge. ",
+          "timestamp": "2026-08-02T15:52:36+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1cv54t",
+          "author": "reddit_user_7fe8f4f76c8b",
+          "author_karma": 0,
+          "content": "Just me, but checking your [histogram](https://photographylife.com/understanding-histograms-in-photography) can tell you if you need to cover more dynamic range with bracketing or not. If the data is causing pileups at the left or right edges of the histogram, then you probably need at least one more exposure to cover the missing \"end\" of the data.\n\nBut. To get mood and atmosphere, it's probably better to [know how to light](https://strobist.blogspot.com/2013/09/my-week-with-heisler-pt-2.html). Using a strobe is the other way to compress the dynamic range in a scene so it can be captured in a single shot. But with good lighting gear, knowledge, and skills, you can really *create* the light and mood you want, and it's why movies have lighting crews. Granted, doing it [at the level of a Greg Heisler](https://www.youtube.com/watch?v=cncQ0FgwpqY) is rare. ",
+          "timestamp": "2026-08-03T00:32:57+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run022_post01_seed111",
+      "post_slot": 1,
+      "seed_index": 111,
+      "source_raw_post_id": "1vdk6jk",
+      "source_product_dir": "SonyAlpha",
+      "source_file": "https://www.reddit.com/r/SonyAlpha/comments/1vdk6jk/osaka_nights_sony_a7c_with_40mm_f25g_lens/",
+      "post_type": "Photo share",
+      "title": "Osaka Nights 🇯🇵 | Sony A7C with 40mm f2.5g lens",
+      "author": "reddit_user_4349d3bfee00",
+      "author_karma": 0,
+      "content": "Osaka Nights 🇯🇵 | Sony A7C with 40mm f2.5g lens\n\nClicked these during my last trip to Osaka. Such a beautiful city for street photography.",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p19ngl5",
+          "author": "reddit_user_47de1d39bade",
+          "author_karma": 0,
+          "content": "Nice shots! Were you using a mist filter for that haze?",
+          "timestamp": "2026-08-02T15:16:28+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1af1mm",
+              "author": "reddit_user_759ceea97481",
+              "author_karma": 0,
+              "content": "Thank you! Yes they were shot on a 1/4 mist filter. The shots really get a great vibe in night time with the filter. ",
+              "timestamp": "2026-08-02T17:22:40+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p19ngl5",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1bq5aw",
+          "author": "reddit_user_bd568f26c149",
+          "author_karma": 0,
+          "content": "I love that lens!",
+          "timestamp": "2026-08-02T20:58:55+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run022_post02_seed112",
+      "post_slot": 2,
+      "seed_index": 112,
+      "source_raw_post_id": "1vdkc11",
+      "source_product_dir": "SonyAlpha",
+      "source_file": "https://www.reddit.com/r/SonyAlpha/comments/1vdkc11/niche_question/",
+      "post_type": "Gear",
+      "title": "Niche question",
+      "author": "reddit_user_4349d3bfee00",
+      "author_karma": 0,
+      "content": "Niche question\n\nHave someone tested the lowlight stills at high iso for the A7rVI versus the a1 mark ii? \n\nMy a1 got stolen and now think of replacing it, I don’t shoot sports but I still did enjoy its effortless shoots and simplicity",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p19nvel",
+          "author": "reddit_user_1e468b97d6df",
+          "author_karma": 0,
+          "content": "1.  Sorry to hear that, sucks!\n\n2.  I have not done this with respect to the a1ii, but maybe this is close enough: I have tested the a7iv and a1 mark 1. I think the a7iv is equal to, if not at times perhaps superior to, the a1 for lowlight high ISO stills regardless of what any specs may say. It is a phenom in that situation. I can only imaging the a7rVI is just as good, if not better and can match the a1ii. But that is just an educated guess.",
+          "timestamp": "2026-08-02T15:18:25+00:00",
+          "likes": 0,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p19xswb",
+          "author": "reddit_user_bcb5775d89b8",
+          "author_karma": 0,
+          "content": "The question is, how you define \"lowlight\" and high iso. \n\nI have tested the RVI under normal lighting conditions up to ISO 3200 and would say it's a tie with a slight advantage for the RVI, but if I could see a difference, it's minimal. As I didn't make a scientific test with exactly the same frames on both cameras, it's hard to be more precise.\n\nBoth perform very well, imho.",
+          "timestamp": "2026-08-02T16:04:31+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1a1u52",
+          "author": "reddit_user_569d1474310c",
+          "author_karma": 0,
+          "content": "> lowlight stills at high iso for the A7rVI versus the a1 mark ii?\n\nthey have similar pdr at high iso, so they should look about the same in that range: [https://www.photonstophotos.net/Charts/PDR.htm#Sony%20ILCE-1M2,Sony%20ILCE-7RM6](https://www.photonstophotos.net/Charts/PDR.htm#Sony%20ILCE-1M2,Sony%20ILCE-7RM6)\n\nif you are under iso636 or so tho, with the mechanical shutter it's a different story because of DGO... the a7rvi also has a slight mp advantage at a given frame size, modern denoising software likes mp.\n\nof course the a1ii has it's own huge advantages, due to the stacked sensor. ",
+          "timestamp": "2026-08-02T16:22:53+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1bs5fj",
+          "author": "reddit_user_cbfac88659b3",
+          "author_karma": 0,
+          "content": "Measurements show them as almost identical when using the electronic shutter. With mechanical shutter at or below ISO 400, the a7R VI has a roughly 1-stop PDR edge.\n\nIn actual practice, the difference is close enough that I have not yet encountered a situation where I thought \"I really should have taken the a7R VI over the a1 II to get that extra dynamic range\".\n\nAt this point, the choice of which one to take (if I'm not taking both) comes down to whether or not I expect to shoot fast-moving subjects: birds, vehicles, sports, etc. The a7R VI has essentially taken over as my default camera in most situations and the a1 II has moved into being a specialist action body, largely because of power efficiency: it's an unusual day if I need more than one battery for the a7R VI, while I don't leave the house with the a1 II without at least a couple of spares.",
+          "timestamp": "2026-08-02T21:08:34+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1cc5e7",
+          "author": "reddit_user_05aebf9ebec9",
+          "author_karma": 0,
+          "content": "I don't think low light stills are among the factors distinguishing these cameras. Resolution, price, and sensor speed are sufficiently different to consider one over the other.",
+          "timestamp": "2026-08-02T22:49:23+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run022_post03_seed113",
+      "post_slot": 3,
+      "seed_index": 113,
+      "source_raw_post_id": "1vdkk8t",
+      "source_product_dir": "AskPhotography",
+      "source_file": "https://www.reddit.com/r/AskPhotography/comments/1vdkk8t/shadow_on_sensor_at_wide_aperture/",
+      "post_type": "Discussion/General",
+      "title": "Shadow on sensor at wide aperture?",
+      "author": "reddit_user_4349d3bfee00",
+      "author_karma": 0,
+      "content": "Shadow on sensor at wide aperture?\n\nDoes anyone know why a shadow sometimes appears on the left (pt) or top side (ls)? It’s more pronounced at a wider aperture (most of those are f/2.8), at first i thought maybe a loose aperture blade, but most other photos are perfect and nothing appears damaged. Then I wondered about relative position to the sun causing a slight shadow on the sensor, but it only appears on the same side so idk. Any ideas as to what is going on or am I going crazy?\n\nIf it helps:  \nSony A7CII + Meike 85mm 1.8 II",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p19ndfs",
+          "author": "reddit_user_1042668d1db1",
+          "author_karma": 0,
+          "content": "Do you hold your camera with your hand on the lens? Lens hood? Using a filter on the lens?\n\nVignette is common shooting wide open and can be anything from a common trait of that lens to something on or near it consistently.",
+          "timestamp": "2026-08-02T15:16:03+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p19qhgm",
+              "author": "reddit_user_2fed9241b740",
+              "author_karma": 0,
+              "content": "It’s done it too without the lens hood but I had wondered that as well. No filter either, maybe it’s because it is a cheaper lens. Would a Sony brand version of a similar price (there’s not much between them) likely have the same issue?",
+              "timestamp": "2026-08-02T15:30:48+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p19ndfs",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p19twjn",
+                  "author": "reddit_user_1042668d1db1",
+                  "author_karma": 0,
+                  "content": "Most f/1.8 lenses arent going to have this issue shooting at f/2.8. Just noticed now that you stated the aperture. \n\nThis lens is either damaged or insanely cheap if its pickimg up the inside of the lens barrel at f/2.8 for an f/1.8 capable lens.",
+                  "timestamp": "2026-08-02T15:46:48+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p19qhgm",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p19nqji",
+          "author": "reddit_user_81f42c174de0",
+          "author_karma": 0,
+          "content": "i bet your lens hood isnt attached correctly",
+          "timestamp": "2026-08-02T15:17:46+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p19qcfj",
+          "author": "reddit_user_ce5abe8e4b90",
+          "author_karma": 0,
+          "content": "Were you using high shutter speeds? EFCS at higher shutter speeds can introduce an issue exactly like this. A wider aperture in bright light would necessitate higher shutter speeds which means this issue would be likely to show up. You could disable EFCS and use full mechanical shutter or stop shooting wide open in bright daylight because you just don't need to do that most of the time. If you want to shoot wide open in bright light get a three stop ND filter.",
+          "timestamp": "2026-08-02T15:30:08+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p19sbkh",
+              "author": "reddit_user_2fed9241b740",
+              "author_karma": 0,
+              "content": "It’s either efcs or full electronic on this camera and it’s done it on both, but not going so wide in the day is something I can do from now on ",
+              "timestamp": "2026-08-02T15:39:27+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p19qcfj",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1a4n99",
+                  "author": "reddit_user_fadf958429de",
+                  "author_karma": 0,
+                  "content": "I highly recommend testing for this again with fully electronic (silent) shutter, because you shouldn’t see any issue with that simply by virtue of there being nothing to cause a shadow.",
+                  "timestamp": "2026-08-02T16:35:42+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p19sbkh",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p19tekb",
+          "author": "reddit_user_d4d447f0ecd7",
+          "author_karma": 0,
+          "content": "TL;DR an inherent problem with EFCS at high speed.\n\nPeople rarely talk about this, but the Electronic First Curtain Shutter (EFCS) at high speed (1/1000s and faster) would usually make the image have an exposure gradient (as seen here) because despite the camera's best effort, there's still a speed difference between the electronic (rolling) shutter with the mechanical shutter, a bit out-of-sync.\n\nFor context, the so-called mechanical shutter has two sets of curtains, when you click the shutter button, all the photosites on the sensor are activated, the first curtain set expose the sensor and followed by the 2nd set to cover the sensor. The gap between the 1st curtain to the 2nd one is determined by the shutter speed.\n\nEFCS removes the first curtain set and instead activate the photosites per row as you hit the shutter button, then followed by the bottom curtain set. This is done primarily to reduce the shutter shock.\n\nBut on very compact full frame mirrorless cameras like the Canon EOS RP (the first that did it), the subsequent R8, and the Sony A7C series, the first curtain set is not fit in to make the camera body compact. The \"mechanical\" shutter option is really just EFCS.\n\nYou can mitigate this problem on your camera by using Electronic Shutter. But I suggest to only use it outdoor with minimum artificial light (mitigating banding) and not for action shots (mitigating [rolling shutter](https://en.wikipedia.org/wiki/Rolling_shutter)).\n\nWhen I said the exposure gradient effect is rarely talked about, it's because it's rather overshadowed by another drawback of EFCS, weird bokeh shape. And honestly, not many people have tested EFCS on high shutter speed to notice the exposure gradient; but I have.",
+          "timestamp": "2026-08-02T15:44:30+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1cc0z0",
+              "author": "reddit_user_2fed9241b740",
+              "author_karma": 0,
+              "content": "This is it! Tyvm\n\nI did some testing, a shutter speed up to 1/1000 is pretty safe, 1/1000-2000 you need to be aware, 1/2000+ proceed with caution and if possible switch to silent/electronic. The effect seems to be stronger when the sun or strong source of light is behind you to your 5-7 o’clock. Electronic shutter does appear to negate this entirely with no issue. Im yet to see this indoors but will keep this all in mind.\n\nI’ll use electronic shutter a bit more often now, even buy a good nd filter for during the day to avoid high speeds.\n\nIf anyone visits this thread in the future, be aware of this and other effects of an EFCS before purchasing a compact camera. To me this isn’t an issue as such, just something to be aware of and compensate for.",
+              "timestamp": "2026-08-02T22:48:44+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p19tekb",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1an788",
+          "author": "reddit_user_369878352d80",
+          "author_karma": 0,
+          "content": "that's not a curtain issue, it's as if something in the outer portion of your lens internally is hanging down when you shoot vertically but not horizontal ,,,whatever that something is, a blade loose? I'm guessing  without looking directly through that lens ....that's a very strange smudge in that position and possibly on the sensor screen, did you open it up and give it a good blow",
+          "timestamp": "2026-08-02T17:58:45+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1aq2d9",
+          "author": "reddit_user_c246c33add88",
+          "author_karma": 0,
+          "content": "Belfast!!!!!!!",
+          "timestamp": "2026-08-02T18:11:30+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1dd0g3",
+          "author": "reddit_user_86a484eb0342",
+          "author_karma": 0,
+          "content": "If you’re super concerned, get a piece of white plexi and shoot it in front of/cover your lens to make an LCC. CaptureOne. Thank me later. ",
+          "timestamp": "2026-08-03T02:16:17+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run022_post04_seed114",
+      "post_slot": 4,
+      "seed_index": 114,
+      "source_raw_post_id": "1vdl3yh",
+      "source_product_dir": "Cameras",
+      "source_file": "https://www.reddit.com/r/Cameras/comments/1vdl3yh/remember_when_cameras_would_come_with_a_dvd/",
+      "post_type": "Video",
+      "title": "Remember when cameras would come with a DVD ?",
+      "author": "reddit_user_4349d3bfee00",
+      "author_karma": 0,
+      "content": "Remember when cameras would come with a DVD ?\n\nCause Olympus e3 was a “professional” DSLR. It might be with you on a river, or you might be  archeologist, or professional wildlife photographer. There was even a part where if you were a journalist in an active war zone.",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p19su48",
+          "author": "reddit_user_597c206dfa1a",
+          "author_karma": 0,
+          "content": "I never knew my E3 could be so good. Now it backfocuses a lot lmao",
+          "timestamp": "2026-08-02T15:41:52+00:00",
+          "likes": 3,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1angp4",
+          "author": "reddit_user_3e242fb22e4b",
+          "author_karma": 0,
+          "content": "My Canon 7D came with some tutorial DVD but not an official one",
+          "timestamp": "2026-08-02T17:59:55+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1b2qr5",
+          "author": "reddit_user_394f395c19bb",
+          "author_karma": 0,
+          "content": "I have some of these for the Pen and budget E series. Pretty fun stuff.  ",
+          "timestamp": "2026-08-02T19:09:09+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1d7j3c",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-03T01:43:41+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    }
+  ]
+}

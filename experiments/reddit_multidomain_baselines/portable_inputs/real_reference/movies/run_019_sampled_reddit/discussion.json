@@ -1,0 +1,726 @@
+{
+  "meta": {
+    "product_category": "movies",
+    "baseline": "real_reddit_reference",
+    "run_id": "run_019_sampled_reddit"
+  },
+  "posts": [
+    {
+      "post_id": "real_run019_post00_seed095",
+      "post_slot": 0,
+      "seed_index": 95,
+      "source_raw_post_id": "1vd5m30",
+      "source_product_dir": "flicks",
+      "source_file": "https://www.reddit.com/r/flicks/comments/1vd5m30/what_tv_role_is_so_iconic_that_you_cannot_see_the/",
+      "post_type": "Question",
+      "title": "What TV role is so iconic that you cannot see the actor as anyone else?",
+      "author": "reddit_user_f403d059ef4c",
+      "author_karma": 0,
+      "content": "What TV role is so iconic that you cannot see the actor as anyone else?",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p16k4o9",
+          "author": "reddit_user_689821537637",
+          "author_karma": 0,
+          "content": "Mike Ehrmantraut, BrBa & BCS",
+          "timestamp": "2026-08-02T02:25:00+00:00",
+          "likes": 4,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p16kp2a",
+              "author": "reddit_user_236d7f9bceec",
+              "author_karma": 0,
+              "content": "Jonathan Banks disappeared into that role so completely that it never felt like acting. Even after Better Call Saul expanded Mike's story, he was still just as believable and unforgettable.",
+              "timestamp": "2026-08-02T02:28:34+00:00",
+              "likes": 2,
+              "dislikes": 0,
+              "parent_comment_id": "p16k4o9",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p16kz5s",
+          "author": "reddit_user_e75de626664a",
+          "author_karma": 0,
+          "content": "There were a bunch of these “stuck for life” cases in 1960s TV. Leonard Nimoy / Spock, Adam West / Batman, Fred Gwynne / Herman Munster, Barbara Eden / Jeannie. All great actors who couldn’t make people forget their most famous characters, even though some only played them for a couple of years. ",
+          "timestamp": "2026-08-02T02:30:19+00:00",
+          "likes": 3,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p16lhn9",
+              "author": "reddit_user_236d7f9bceec",
+              "author_karma": 0,
+              "content": "Bryan Cranston is a great example. He has had plenty of other roles, but the moment you see him, your brain still goes straight to Walter White.",
+              "timestamp": "2026-08-02T02:33:32+00:00",
+              "likes": -3,
+              "dislikes": 0,
+              "parent_comment_id": "p16kz5s",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p177eeq",
+                  "author": "reddit_user_f53aa871d1b2",
+                  "author_karma": 0,
+                  "content": "Malcoms dad would like a word",
+                  "timestamp": "2026-08-02T05:01:59+00:00",
+                  "likes": 5,
+                  "dislikes": 0,
+                  "parent_comment_id": "p16lhn9",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p17068k",
+          "author": "reddit_user_b9c10bdeef0e",
+          "author_karma": 0,
+          "content": "Lance Reddick as Daniels in The Wire. I ended up trying Fringe after I watched that show, and it was impossible not to see Reddick as Daniels in that show too.",
+          "timestamp": "2026-08-02T04:10:18+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p171zxp",
+          "author": "reddit_user_f91aa9c80aeb",
+          "author_karma": 0,
+          "content": "Soup Nazi",
+          "timestamp": "2026-08-02T04:22:50+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p19qset",
+          "author": "reddit_user_af5339a968a8",
+          "author_karma": 0,
+          "content": "James Garner - Rockford ",
+          "timestamp": "2026-08-02T15:32:15+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1krdki",
+          "author": "reddit_user_e7f27bb65070",
+          "author_karma": 0,
+          "content": "James Gandolfini - Tony Soprano ",
+          "timestamp": "2026-08-04T02:52:20+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run019_post01_seed096",
+      "post_slot": 1,
+      "seed_index": 96,
+      "source_raw_post_id": "1vd7gh9",
+      "source_product_dir": "TrueFilm",
+      "source_file": "https://www.reddit.com/r/TrueFilm/comments/1vd7gh9/another_nolans_odyssey_review_but_centered_on_the/",
+      "post_type": "reddit_post",
+      "title": "Another Nolan's Odyssey Review, but Centered on the Writing and Cinematography",
+      "author": "reddit_user_f403d059ef4c",
+      "author_karma": 0,
+      "content": "Another Nolan's Odyssey Review, but Centered on the Writing and Cinematography\n\n*The Odyssey* was not a bad movie. I enjoyed it. The acting was strong, most of the characters were compelling, and the production felt refreshingly physical. Rather than building the entire world out of CGI, the film used tangible sets, landscapes, and locations that gave the journey weight. The cities looked closer to modest settlements and rocky strongholds than enormous marble metropolises, which felt right for the Bronze Age. The costumes were not especially accurate, but the world itself still felt lived in.\n\nMy largest problem was not the casting or the American accents. It was the gap between how the writing described Odysseus and how he actually behaved.\n\nEveryone repeatedly calls him cunning, conniving, and exceptionally intelligent. We hear that he devised the Trojan Horse and that he was Agamemnon's cleverest general. However, the film rarely lets us witness that intelligence for ourselves. Characters praise his mind, but the plot supplies almost no evidence to support them.\n\nThe Cyclops sequence exposes the problem most clearly. In the original story, Odysseus tells Polyphemus that his name is \"Nobody,\" allowing the wounded Cyclops to tell the others that nobody is attacking him. He also intoxicates him with lotus-infused wine before blinding him, which helps establish the sleepy/amnesiac effects of the lotus flowers. These choices establish the defining qualities as he manipulates language, plans ahead, and understands his enemy.\n\nThe film removes that strategy. Instead of a battle of wits, the Cyclops is a nameless, lumbering beast that just attacks them when they enter his cave and then unceremoniously falls asleep. Instead of watching him improvise a brilliant escape, we watch another dangerous encounter happen around him. Removing these details strips Odysseus of the intelligence the screenplay keeps insisting that he possesses.\n\nMuch of the journey follows an \"and then\" structure. The men wash onto an island, encounter something terrible, flee, and arrive somewhere else to be attacked again. Events accumulate, but Odysseus is not the one leading his men so much as the narrative. \n\nThe real problem is how little urgency Odysseus shows after Tiresias tells him that every member of his crew will die. He does not desperately fight the prophecy or push himself to find some way around it. He mostly sits there warning them in an almost bored tone that something is dangerous and that they are all going to die. They ignore him, the disaster happens, and he responds with the same weary “I told you this would not work” attitude before they move on to the next catastrophe A stronger film would have made the prophecy a source of conflict, with Odysseus fighting to outwit it only to discover his attempts were helping fulfil it. His intelligence could have become both his greatest weapon and the mechanism of his destruction. Instead, the prophecy mostly functions as advance notice for scenes the audience already knows will end badly.\n\nThe deaths also lack emotional weight because the crew remains largely anonymous. We hear fragments suggesting some of these men have families, fears, or histories, but the film rarely develops them as individuals. Their relationship with Odysseus never feels deep enough to justify the grief their deaths are meant to carry. The *Lord of the Rings* gives Legolas, Gimli, Aragorn, Boromir, and the hobbits separate loyalties, conflicts, histories, and ways of seeing the world. Odysseus's crew, by contrast, feels like a large group of exhausted comrades travelling home after a raid. We understand they are tired and that Odysseus has lost his men, but we do not feel that specific people have been lost.\n\nThe retrospective structure also weakens the story. Beginning with Telemachus and telling Odysseus's journey through recollection creates distance from the suffering that supposedly defines him. We never experience the grinding ten-year siege of Troy, never see the Greeks repeatedly fail to take the city, and never watch the frustration and brutality that produced the rage Odysseus later claims helped doom their world. Even two minutes showing the Greeks trapped on the beach, exhausted by years of failed assaults, would have given his anger a foundation.\n\nSome of the dialogue becomes especially clunky near the end. Odysseus referring to \"this age of bronze of ours\" was jarring, since people living during the period would not have understood themselves as inhabitants of a historical category invented later by scholars. Similar language about the end of civilization feels equally artificial. The characters could certainly have feared the destruction of their kingdoms, gods, and customs. They would not likely have spoken with the detached historical awareness of people already reading about the Bronze Age collapse in a textbook.\n\nThe pacing also felt uneven. Some cuts were jarring, and the shaky camera work occasionally blurred action that needed clarity. Shots that called for a wide or low angle were often replaced by close-ups, and moments meant to show us what a character was seeing were reduced to shots of a face and the reaction. The lighting fared better and was a genuine strength, especially during the storm sequences.\n\nMy biggest issue, though, is Athena. In the original poem she is Odysseus's patron and long-time protector, drawn to him because his cunning mirrors her own, and the text takes care to establish why she keeps intervening on his behalf. That relationship has a history, even if most viewers have never read the poem and would not recognize her without help. The film never bothers with that groundwork. Athena simply begins appearing to Odysseus and speaking to him as though the two share some connection, with nothing shown to explain why.\n\nDespite these problems, I still enjoyed the film. Its physical production, performances, atmosphere, and willingness to portray the ancient world as rough and human rather than impossibly grand gave it real value. It often felt like an older kind of historical epic, one where the actors were standing inside a world rather than floating in front of one.",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p16yag1",
+          "author": "reddit_user_a72f3e18dcfc",
+          "author_karma": 0,
+          "content": "“Written and Directed by Christopher Nolan” appears on the dark screen and there was more than scattered applause; I joined them, to do otherwise would have been churlish. That mine was three-quarter-hearted was hopefully lost in the scramble of SOME people leaving as the credits started to roll. Now, that's churlish.\n\nAn Epic that isn't grand, isn't epic, just long? Yeah. A modern screenplay of a Bronze-age classic about Greek heroes, gods and monsters in a-little-too-modern English? In the parlance of the script, “OK.” Yes, Telemachus calls his mother, the queen, “mom,” and speaks of his long lost hero father, Odysseus, as “dad” and answers more than once, “OK.”\n\nWhy not just go full Bill and Ted, full Wayne and Garth?\n\nPerhaps I am a churl, after all. No, no, I am a member of the theater-going audience for film. The peanut gallery, if you will, and that's what we do, we bust nuts.\n\nBut you do feel sorry for Odysseus, OK? The gods sought to punish him just for the hades of it. He was tooling around the Mediterranean, looking to make land – and it's snowing? Appears the gods sent him to the Outer Hebrides, or some such bleak archipelago off Scotland. Oh yeah – they also filmed in Iceland.\n\nThere is some good acting in the film. I loved Samantha Morton as Circe, including her workingman approach turning Odysseus' men into pigs – by hand. John Leguizamo should get plenty of award nods for being almost unrecognizable (in a really good way) as Odysseus' blind loyal swineherd Eumaeus. More of this Leguizamo, please! I liked Tom Holland as the son Telemachus, he took the role seriously, and I thought he was quite more than OK.\n\nWhy were so many of the male actors wearing pants? I haven't seen any Bronze Age representations anywhere of men in pants. Oh duh, HangOn – the Outer Hebrides and Iceland, OK? You don't want to freeze your peanut gallery off.\n\n",
+          "timestamp": "2026-08-02T03:57:41+00:00",
+          "likes": -6,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p18456y",
+              "author": "[deleted]",
+              "author_karma": 0,
+              "content": "[removed]",
+              "timestamp": "2026-08-02T09:29:28+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p16yag1",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p185awy",
+              "author": "reddit_user_7dd511cf85be",
+              "author_karma": 0,
+              "content": "Bro are you high ",
+              "timestamp": "2026-08-02T09:39:31+00:00",
+              "likes": 4,
+              "dislikes": 0,
+              "parent_comment_id": "p16yag1",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1886gy",
+                  "author": "reddit_user_721d282d98a8",
+                  "author_karma": 0,
+                  "content": "Just doesn’t want to be churlish alright?",
+                  "timestamp": "2026-08-02T10:04:14+00:00",
+                  "likes": 3,
+                  "dislikes": 0,
+                  "parent_comment_id": "p185awy",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p174y21",
+          "author": "reddit_user_34bf54fea18b",
+          "author_karma": 0,
+          "content": "Just got done rewatching the Prestige...maybe not a perfect film, but very, very good. The Odyssey is mediocre Nolan at best.\n\nSocial media has seemingly destroyed people's ability to critique and evaluate film; waaayyyy too many average flicks are overhyped these days, The Odyssey being one of them.",
+          "timestamp": "2026-08-02T04:44:01+00:00",
+          "likes": 22,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p17jmkg",
+              "author": "reddit_user_a43089ad1f3e",
+              "author_karma": 0,
+              "content": "The thing with all his screenplays, even the better ones, is you can feel a writer behind it all. I’m not sure what writerly magic frees us of that feeling, but Nolan doesn’t have it. ",
+              "timestamp": "2026-08-02T06:37:47+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p174y21",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p183z4f",
+              "author": "[deleted]",
+              "author_karma": 0,
+              "content": "[removed]",
+              "timestamp": "2026-08-02T09:28:00+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p174y21",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p18qcrg",
+              "author": "reddit_user_d8769dea7bec",
+              "author_karma": 0,
+              "content": "Yeah I rewatched Memento the other day - another brilliant film that nonetheless has a few minor issues - and wondered “What the hell happened to Nolan?” \n\nI sometimes wonder how much reliance he had on other writers (eg his brother?) to come up with some of his more original movies. I could be wrong though. ",
+              "timestamp": "2026-08-02T12:19:46+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p174y21",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p1bn15y",
+              "author": "reddit_user_a7269a255a4e",
+              "author_karma": 0,
+              "content": "Based on his last few films, I feel like Nolan has picked the lane where he is going to deliver to audiences “original” movies that have at least some level of meaning to them. It might be just surface level, but there’s something there. \n\nIn this current era where almost all media is either big budget CGI mindless content or lower budget deep meaning movies with layers, that middle ground for the most part has become a void. \n\nI think audiences crave that and they trust that a Nolan movie is going to be big budget, original, well made, and at least have some kind of surface level meaning behind it. And that’s why he’s had the success he’s had. ",
+              "timestamp": "2026-08-02T20:43:57+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p174y21",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p17922c",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-02T05:14:28+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p17dhws",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-02T05:48:54+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p17j8kq",
+          "author": "reddit_user_47be9dcd1295",
+          "author_karma": 0,
+          "content": "I prefer the Athena of the poem too, but I do understand why Nolan didn't do that. The story he's trying to tell is that Odysseus defied the gods with his actions in Troy, so now the gods are punishing him. In Nolan's version, the gods are upholding an ideal moral order, much like God in Christianity. Showing them as a petty assholes who fight among each other and play favorites with mortals all the time, like Homer does, would undermine the story Nolan is trying to tell. So instead we get an Athena who's mainly showing how disappointed she is in Odysseus.",
+          "timestamp": "2026-08-02T06:34:36+00:00",
+          "likes": 11,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p17ldbw",
+          "author": "reddit_user_5ea165d817e0",
+          "author_karma": 0,
+          "content": "Half of the cinematography was adequate and the other half was poor. I get it that the IMAX camera is a beast but that still shouldn't prevent Nolan from composing shots in a creative fashion. The dialogue scenes were the worst and maybe he just needed to rush through those scenes since the action scenes were going to consume much of the shooting schedule. The compositions certainly didn't help to distract from the poor dialogue.\n\nIt was an empty shell of a film that had a lot of potential but needed a different director to pull it off. Of the popular mainstream directors today, I actually think that Denis V. would have given us a much more compelling film that would do more than try and modernize the story a bit and deliver some interesting action/set pieces.",
+          "timestamp": "2026-08-02T06:51:57+00:00",
+          "likes": 3,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p184cyx",
+              "author": "[deleted]",
+              "author_karma": 0,
+              "content": "[removed]",
+              "timestamp": "2026-08-02T09:31:20+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p17ldbw",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p17whzq",
+          "author": "reddit_user_ba165aaf1e28",
+          "author_karma": 0,
+          "content": "Agree with this wholeheartedly, and interesting ideas about us not caring as viewers about the deaths of his crew because we don’t get to see them as individuals. Like you said, a 2 minute scene would’ve been enough on the beach for the Greek soldiers to establish the failing siege of Troy, I feel like more desperate reactions of the soldiers in the face of the cyclops for example would have been apt. If we aren’t made to care, at least we can feel empathy for people that are desperate and on their last leg. But that’s not what we got. They were almost stoic in their response, like they already knew what needed to be done from start to finish.\n\nI don’t mind that the cyclops didn’t speak to them, as I liked the explanation - you don’t speak with ants either. I can imagine that in a grounded world, a large scary cyclops simply talking might be a bit silly, or is hard to make feel grounded.\n\nThe arrow he shoots before they run off is also very dumb. I don’t understand what the idea was there, but it was the opposite of cunning.",
+          "timestamp": "2026-08-02T08:23:35+00:00",
+          "likes": 5,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1b4qdr",
+              "author": "reddit_user_e1eea71246bf",
+              "author_karma": 0,
+              "content": ">The arrow he shoots before they run off is also very dumb. I don’t understand what the idea was there, but it was the opposite of cunning.\n\nOdysseus does the equivalent in the poem. As he's about to sail off, he cannot resist shouting to Polyphemos that the guy who blinded him was Odysseus of Ithaca, even as his men yell at him to please shut up.\n\nPolyphemos then proclaims that he will curse Odysseus to his father Poseidon, and Poseidon will ensure he either doesn't make it home, or if he does, all his men will have died and he'll find trouble in his house (basically a super-awkward preview of the rest of the poem in the form of a prophecy).\n\nIn the film, he's angry because his men were killed by the cyclops; in the poem, it's because of his own arrogance and hubris, so a bit similar in both cases.",
+              "timestamp": "2026-08-02T19:18:21+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p17whzq",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p17xedp",
+          "author": "reddit_user_6226cd8920dc",
+          "author_karma": 0,
+          "content": "A lot of people complain that Nolan made lots of changes to the source material but let me tell you - the same people would absolutely hate a faithful adaptation of the material:\n\n1. Nolan's Odysseus is much more intelligent and more tricky than Homer's. In the poem, tricking Polyphemus is basically the only deceit that Odysseus comes up with and he ruins it himself at the end. All of his other clever tricks (Sirens, Scylla, Circe, disguising himself as a beggar..) are suggested to him by divine beings. Circe, Theresias, Hermes and Athena explain to him (in great detail) what will happen and what he should do. He frequently makes stupid decisions that bring people in danger.\n\n2. Athena could never work in a serious, dramatic movie like Nolan's if her role was the same as it is in the poem. The simple reason for that is that Athena takes too much agency from Odysseus and Telemachus. Continuous Deus ex Machina intervention would seem very weird to modern audiences.\n\n3. Movie Athena and movie Odysseus share a connection because Athena is basically a manifestation of Odysseus' guilt regarding the priestess of Athena who was killed by the Achaeans during the sacking of Troy. The film shows this and makes it obvious through symbolism and flashbacks that \"Athena\" is not the actual goddess Athena. Also notice how \"Athena\" never really helps Odysseus in the movie. She never outright gives him information - she is there to help him reflect.\n\n4. The \"And then...\" structure is just as bad in the poem. Even more so, because Odysseus' journey has even more parts to it.\n\n5. Nolan explained in an interview that he tried many times to make the \"Nobody\" word-play work but it never sat right with the tone of the movie. It seems out of place in a tragic anti-war drama.\n\nTl;dr: Many of the perceived flaws of the movie or just flaws of the source material. The difference is that they are not as much of an issue when they come in the form of a poem.",
+          "timestamp": "2026-08-02T08:31:17+00:00",
+          "likes": 10,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1897t2",
+              "author": "reddit_user_e3578997769a",
+              "author_karma": 0,
+              "content": "Not saying this about OP but I get the feeling a lot of people complaining about changes to the source material have never actually read it…",
+              "timestamp": "2026-08-02T10:12:53+00:00",
+              "likes": 7,
+              "dislikes": 0,
+              "parent_comment_id": "p17xedp",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1ipvfi",
+                  "author": "reddit_user_52677f04e0fe",
+                  "author_karma": 0,
+                  "content": "And wait until they hear about Joyce's Ulysses",
+                  "timestamp": "2026-08-03T20:33:32+00:00",
+                  "likes": 2,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1897t2",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            },
+            {
+              "comment_id": "p1byjwb",
+              "author": "reddit_user_5d020834c641",
+              "author_karma": 0,
+              "content": "I think the problem for me was that the juice of adapting the story this way, wasn’t worth the squeeze. \n\nThere’s room for a story about trama, returning home, and perceived moral degradation. But the scope of the Odyssey simply didn’t serve this perspective - there wasn’t enough depth and nuance of these themes for the nearly 3 hour runtime. And it definitely wasn’t worth removing the swashbuckling passion of the world of the poem for a colourless and much more grounded version of the world to support the perspective.",
+              "timestamp": "2026-08-02T21:39:51+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p17xedp",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p185qju",
+          "author": "reddit_user_89addc76765e",
+          "author_karma": 0,
+          "content": ">Everyone repeatedly calls him cunning, conniving, and exceptionally intelligent. We hear that he devised the Trojan Horse and that he was Agamemnon's cleverest general. However, the film rarely lets us witness that intelligence for ourselves. Characters praise his mind, but the plot supplies almost no evidence to support them.\n\nSidenote: this reminds me of a cliche in film, often of female characters, who are described or positioned as one of the smartest people in a field (astrophysicist? linguist? I don't know) or even on Earth (!), but then never get to actually do or say anything with much intelligence. Did Odysseus get the \"genius female character\" treatment? ",
+          "timestamp": "2026-08-02T09:43:17+00:00",
+          "likes": 3,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p187m76",
+          "author": "reddit_user_e3578997769a",
+          "author_karma": 0,
+          "content": "Odysseus actually does come up with a scheme to outwit the cyclops and shows his intelligence in the cave. Firstly he is the only one to realise they can’t kill the cyclops until the boulder is lifted. Then he tells his men what to do to escape the cave, and half of them escape but Odysseus returns into the cave to rescue the rest. He realises there’s too many men for his plan to work and instructs two of them they’ll have to leave. He then comes up with the plan to blind the cyclops and strap straw to their back so they’ll feel like sheep as they escape the cave. Yes it’s not world play like the nobody scene but to say there’s no brilliant escape and a dangerous encounter just happens around him is clearly wrong. It’s through his decisions and his plan that they don’t just all die in that cave.\n\nSimilarly, the cyclops is not just a lumbering beast as shown by when he starts pleading with his father Poseidon and Odysseus’s right hand man says maybe they should have tried reasoning with it. The whole point of that scene is that they treat him like a beast when they might’ve been better off not doing that. If anything the cyclops is treated more like a child especially in his sobbing after he has been blinded.",
+          "timestamp": "2026-08-02T09:59:28+00:00",
+          "likes": 5,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1b3f8f",
+          "author": "reddit_user_e1eea71246bf",
+          "author_karma": 0,
+          "content": ">The Cyclops sequence exposes the problem most clearly. In the original story, Odysseus tells Polyphemus that his name is \"Nobody,\" allowing the wounded Cyclops to tell the others that nobody is attacking him. He also intoxicates him with lotus-infused wine before blinding him, which helps establish the sleepy/amnesiac effects of the lotus flowers. These choices establish the defining qualities as he manipulates language, plans ahead, and understands his enemy.\n\nWhen you read the passage, it might work in the poem, but it's utter nonsense if you think about it for even two seconds. You could not make this work in a film.\n\nFirst off, the cyclops feels perfectly fine going to sleep after eating two of Odysseus' men drinking nothing more than milk. He just does not care or think that the men can hurt him.\n\nThen Odysseus does the Nobody thing and stabs him in the eye. Then Polyphemus yells for help and all the other cyclops show up in the cave. They ask who hurt him, and he says Nobody. They all say, you're alone, you should pray to your father, Poseidon. He says nothing, and they leave. \n\nWhy doesn't Polyphemus say - look at all the men in this cave, one of them said his name was Nobody, and they stabbed me in the eye?\n\nWhy don't any of the other cyclops look around the cave?\n\nIt doesn't make any sense, unless you accept that Polyphemus is a complete idiot or the other Cyclops are blind.  Maybe this punning worked 3000 years ago. It sure as heck doesn't work visually now. Similary Nolan has the Greeks tie grass to their armor to cloak themselves as sheep rather than tying themselves to the bellies of the sheep and having the sheep somehow carry men out of the cave as in the poem. ",
+          "timestamp": "2026-08-02T19:12:18+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run019_post02_seed097",
+      "post_slot": 2,
+      "seed_index": 97,
+      "source_raw_post_id": "1vd80nt",
+      "source_product_dir": "flicks",
+      "source_file": "https://www.reddit.com/r/flicks/comments/1vd80nt/i_just_wanted_to_share_this_funny_crossover/",
+      "post_type": "image",
+      "title": "I just wanted to share this funny crossover",
+      "author": "reddit_user_f403d059ef4c",
+      "author_karma": 0,
+      "content": "I just wanted to share this funny crossover",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p171hrd",
+          "author": "reddit_user_236d7f9bceec",
+          "author_karma": 0,
+          "content": "The real miracle is that Titanic made it to Middle-earth before the Rohirrim.",
+          "timestamp": "2026-08-02T04:19:19+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p172fpa",
+              "author": "reddit_user_b9c10bdeef0e",
+              "author_karma": 0,
+              "content": "It took a shortcut through the Helcaraxe",
+              "timestamp": "2026-08-02T04:25:58+00:00",
+              "likes": 2,
+              "dislikes": 0,
+              "parent_comment_id": "p171hrd",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p171t5l",
+          "author": "reddit_user_01b057b4904d",
+          "author_karma": 0,
+          "content": "DEEEEEAAAAATTHHH!",
+          "timestamp": "2026-08-02T04:21:31+00:00",
+          "likes": 3,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p174yw6",
+          "author": "reddit_user_f0c8964ef2b7",
+          "author_karma": 0,
+          "content": "\"I'm going to sink this bitch!\"   \n  \n(IFYKYK)",
+          "timestamp": "2026-08-02T04:44:11+00:00",
+          "likes": 0,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p18djcc",
+          "author": "reddit_user_2aef97d51fb0",
+          "author_karma": 0,
+          "content": "I just ordered the last boilers lit full speed ahead! ",
+          "timestamp": "2026-08-02T10:48:05+00:00",
+          "likes": 3,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1iefxc",
+          "author": "reddit_user_a953de376a94",
+          "author_karma": 0,
+          "content": "... and my tiller ! ",
+          "timestamp": "2026-08-03T19:43:31+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run019_post03_seed098",
+      "post_slot": 3,
+      "seed_index": 98,
+      "source_raw_post_id": "1vd9sx0",
+      "source_product_dir": "flicks",
+      "source_file": "https://www.reddit.com/r/flicks/comments/1vd9sx0/felt_nothing_watching_the_odyssey/",
+      "post_type": "Movie Discussion",
+      "title": "Felt nothing watching the Odyssey",
+      "author": "reddit_user_f403d059ef4c",
+      "author_karma": 0,
+      "content": "Felt nothing watching the Odyssey\n\nI watched The Odyssey for a second time tonight, this time on IMAX 70mm. Visually it looked stunning, especially in IMAX, and some of the sequences (the Cyclops scene) break new heights cinematically, I feel.\n\nBut having said that, I felt nothing emotionally both times I watched it. I had hoped that after the first watch, having known the narrative mechanisms, I could sit and feel the story more this time around, but nope, it felt more like an intellectual exercise to decipher the message of the movie rather than feel it. Second time around, the flaws were more apparent: lots of exposition, clunky dialogue, rushed scenes (especially the Ithaca ones), mediocre characterizations.\n\nThe biggest flaw I felt both times is that he doesn’t let the scenes breathe more, compared to say something like Lord of the Rings (thinking of Sam’s speech), which gives moments of reflection for the characters (and for the audience) to take in all the epic stuff happening on screen.\n\nDespite all this, of course it’s worth watching (on the biggest screen possible), and its commentary on Zeus’s law and turning the Trojan horse story on its head to be the cause of end of civilization is still brilliant. But I wish that whatever he seems interested in narratively, he’d add a bit more heart and emotion to it instead of a cold intellectual one.",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p17dtjz",
+          "author": "reddit_user_6c9ec28e8a64",
+          "author_karma": 0,
+          "content": "Welcome to r/flicks!\n\n• No piracy.\n• Mark spoilers.\n• Be respectful.\n• Keep discussions movie-related.\n\nReport rule-breaking content to help the moderation team.\n\n\n*I am a bot, and this action was performed automatically. Please [contact the moderators of this subreddit](/message/compose/?to=/r/flicks) if you have any questions or concerns.*",
+          "timestamp": "2026-08-02T05:51:28+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p17ell4",
+          "author": "reddit_user_59f9cc175fbe",
+          "author_karma": 0,
+          "content": "Ya know, I watched the Odyssey last week, and Spider-Man this week. \n\nGuess which one got me teary-eyed. And the even had the same cast!",
+          "timestamp": "2026-08-02T05:57:40+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p17f3iu",
+          "author": "reddit_user_e2f29d6cfe70",
+          "author_karma": 0,
+          "content": "I just think that it comes down to the fact that Nolan doesn’t allow anyone to help him write his scripts. And that’s why the dilation is corny and  full of cliches. All that clunky dialogue you were talking about, alll written by him. I feel like if he could just let a couple really good writers in to help him with the script the movies would be much better.",
+          "timestamp": "2026-08-02T06:01:43+00:00",
+          "likes": 4,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p17fsnp",
+              "author": "reddit_user_1af61e1d7cdb",
+              "author_karma": 0,
+              "content": "Ya he seems to be more focused on overall structure of the script than the individual dialogues or moments. Like the some of scenes ( Circe, cyclops, first flashback of Troy) are all done very well, but that seems more strength of his direction than his screenplay",
+              "timestamp": "2026-08-02T06:07:16+00:00",
+              "likes": 3,
+              "dislikes": 0,
+              "parent_comment_id": "p17f3iu",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p17f8qr",
+          "author": "reddit_user_6c33addd8fa3",
+          "author_karma": 0,
+          "content": "Can’t fix clunky dialogue but there’s a solid chance, Nolan was forced to cut scenes to make it more commercial. I bet there’s a solid hour worth of build up that he didn’t get to use",
+          "timestamp": "2026-08-02T06:02:53+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p17g286",
+              "author": "reddit_user_1af61e1d7cdb",
+              "author_karma": 0,
+              "content": "I doubt he would be forced given that he is coming fresh off an Oscar win. It was the same with Oppenheimer as well. For some reason he seems to have taken a liking for fast paced editing",
+              "timestamp": "2026-08-02T06:09:21+00:00",
+              "likes": 2,
+              "dislikes": 0,
+              "parent_comment_id": "p17f8qr",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p17fe9e",
+          "author": "reddit_user_20d07166642d",
+          "author_karma": 0,
+          "content": "Not even during the Cyclops scene? Seeing a human get eaten didn't fill you with dread?",
+          "timestamp": "2026-08-02T06:04:06+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p17gg70",
+              "author": "reddit_user_1af61e1d7cdb",
+              "author_karma": 0,
+              "content": "I mentioned it in the post, I think it’s the best scene in the movie, I really did feel the dread and felt sorry for the monster. I wish we had more of those in the movie",
+              "timestamp": "2026-08-02T06:12:23+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p17fe9e",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p17frsl",
+          "author": "reddit_user_adeacfef4713",
+          "author_karma": 0,
+          "content": "I find all of Nolan’s work to be emotionally distant and clinical. His style just isn’t for me. ",
+          "timestamp": "2026-08-02T06:07:05+00:00",
+          "likes": 3,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p17gyzo",
+              "author": "reddit_user_1af61e1d7cdb",
+              "author_karma": 0,
+              "content": "Same. I think Dunkirk is his best film for this reason. It’s stripped off all the disadvantages ( less dialogue , exposition, characterization) and focuses only on his strengths( pure visual narration, set pieces) just a surprisingly emotional tale of survival",
+              "timestamp": "2026-08-02T06:16:29+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p17frsl",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p17qbnc",
+          "author": "reddit_user_570795bf258e",
+          "author_karma": 0,
+          "content": "That's just Nolan for me, haven't liked anything since Memento.",
+          "timestamp": "2026-08-02T07:31:58+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p17vbi7",
+          "author": "reddit_user_db5f0132f121",
+          "author_karma": 0,
+          "content": "Nolan either does not fully understand or fully care about individual human emotions. This is the weakness in all his movies. He is more focused on concepts and plot.\n\nFor me this makes his movies interesting and thought provoking, but not gripping. This is a generalization of course since I think some of his movies break this. The Prestige and Interstellar come to mind. But I suspect thats because other people influenced these aspects.",
+          "timestamp": "2026-08-02T08:13:35+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run019_post04_seed099",
+      "post_slot": 4,
+      "seed_index": 99,
+      "source_raw_post_id": "1vdm9xv",
+      "source_product_dir": "flicks",
+      "source_file": "https://www.reddit.com/r/flicks/comments/1vdm9xv/which_movie_to_watch_with_my_family_for_my/",
+      "post_type": "Poll",
+      "title": "Which movie to watch with my family for my birthday today?",
+      "author": "reddit_user_f403d059ef4c",
+      "author_karma": 0,
+      "content": "Which movie to watch with my family for my birthday today?\n\nI selected a few of my favorite movies (excluding the ones I rewatched recently and also the ones my 11-year-old brother can't watch). I made sure to pick ones my parents wouldn't hate *too* much xD ended up with these 5 movies, but I can't decide which one to pick!\n\n•Corpse Bride \n\n•Hocus Pocus\n\n•Scooby-Doo on Zombie Island \n\n•Spirited Away\n\n•Wolfwalkers",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p1a5o18",
+          "author": "reddit_user_629c5abf5a03",
+          "author_karma": 0,
+          "content": "Wolfwalkers, easily. Genuinely gorgeous animation and works for basically any age in the room without feeling like a \"kids only\" pick, whole family can actually enjoy it together instead of just tolerating it",
+          "timestamp": "2026-08-02T16:40:22+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    }
+  ]
+}

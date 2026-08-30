@@ -1,0 +1,789 @@
+{
+  "meta": {
+    "product_category": "headphones",
+    "baseline": "real_reddit_reference",
+    "run_id": "run_025_sampled_reddit"
+  },
+  "posts": [
+    {
+      "post_id": "real_run025_post00_seed125",
+      "post_slot": 0,
+      "seed_index": 125,
+      "source_raw_post_id": "1vdirrx",
+      "source_product_dir": "iems",
+      "source_file": "https://www.reddit.com/r/iems/comments/1vdirrx/qudelix_k5_pro_macos_native_app_for_the_community/",
+      "post_type": "General Advice",
+      "title": "Qudelix K5 Pro - MacOS native app for the community",
+      "author": "reddit_user_d43b8c7b6255",
+      "author_karma": 0,
+      "content": "Qudelix K5 Pro - MacOS native app for the community\n\n***Not a self promo post. Just an honest contribution to the community.***\n\nI've had a Qudelix 5K for a while, and the official configuration app is browser-based. On my Mac it has never worked reliably in any browser — it would connect, then the device would drop off USB mid-session, and I'd end up spending more time troubleshooting the connection than actually adjusting anything.\n\nI finally dug into why. The browser reaches the 5K through a macOS API that's very particular about how the USB packets are framed, and when it gets that. wrong the device stops responding entirely. So I wrote a small native menu bar app that talks to the 5K directly instead.\n\nIt does the things I actually use day to day:\n\n* **10-\\`band parametric EQ** with a live response curve (20-band mode too)\n* **Preset import** straight from the AutoEq database — 6,000+ headphones and IEMs, searchable inside the app\n* **Import/export** the standard parametric EQ text format (the same one [squig.link](http://squig.link) and Equalizer APO use)\n* **All 20 preset** slots, load and save\n* **Volume, battery, firmware** and sample rate at a glance\n\nIt's free (and always will be) and open source under MIT. No account, no tracking; nothing leaves your machine except fetching the AutoEq list when you search it. \n\n**Caveats:**\n\n* **macOS 14+**. It's a universal binary so it \\*should\\* run on Intel, but I only have Apple Silicon and genuinely can't test that. If you're on Intel I'd like to hear either way.\n* **It isn't signed with a paid Apple developer certificate**, so macOS will block it the first time — you have to go to System Settings → Privacy & Security and click \"Open Anyway\". If you'd rather not trust a binary from a stranger on the internet, the full source is there and builds with one command.\n* **USB only for now**. Bluetooth is a bigger job; I'll take a run at it if there's demand.\n* **Use at your own risk.** It only writes EQ, volume and preset settings — the same things the official app writes, and it never touches firmware — but I can't take responsibility for anything that goes wrong.\n* **I am not affiliated** with Qudelix in any way.\n\nSource code, dmg are here: [https://github.com/FrankieMa77/qudelix](https://github.com/FrankieMa77/qudelix)\n\nIf it's useful to anyone I'm happy to keep building on it. And if it doesn't work on your setup, an issue with the log from the app's diagnostics panel tells me most of what I'd need.\n\nI can't port it to Windows as i don't have PC. If somebody needs it, I can look into porting the app to Debian/Ubuntu",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p19ski8",
+          "author": "reddit_user_4775988c553d",
+          "author_karma": 0,
+          "content": "How is it not self promo if it's your project? Also vibe-coded! ",
+          "timestamp": "2026-08-02T15:40:37+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p19vz4r",
+              "author": "reddit_user_56bf2f754fa4",
+              "author_karma": 0,
+              "content": "I am not looking to gain anything from this app, not asking for anything, not promoting my git - just sharing the solution for the problem couple of other guys and I had. \n\nAs for your \"vibe-coded\" remark, there is no point in tradcoding such an app. I mean, why would I spend days of coding to satisfy traditional coding purism? I have commercial projects to invest my time in.  ",
+              "timestamp": "2026-08-02T15:56:15+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p19ski8",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p19wyyk",
+                  "author": "reddit_user_4775988c553d",
+                  "author_karma": 0,
+                  "content": "I think transparency is very important when you vibe code. A little disclaimer in the readme for example. I don't want to discuss the ethics and morality of using AI, but I do think you should at least inform other people about your usage",
+                  "timestamp": "2026-08-02T16:00:45+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p19vz4r",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1a2h4y",
+                      "author": "reddit_user_56bf2f754fa4",
+                      "author_karma": 0,
+                      "content": "I appreciate your opinion. Since I am halfway to manually figuring out the BLE block and some other constraints, let's friendly leave it at that.  ",
+                      "timestamp": "2026-08-02T16:25:47+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p19wyyk",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                },
+                {
+                  "comment_id": "p1a8lc1",
+                  "author": "reddit_user_27734f3e8a8d",
+                  "author_karma": 0,
+                  "content": "The vibecoding warning just lets people know that it will be abandoned soon lol. ",
+                  "timestamp": "2026-08-02T16:53:41+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p19vz4r",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1aipma",
+                      "author": "reddit_user_56bf2f754fa4",
+                      "author_karma": 0,
+                      "content": "The perspectives of this app largely depend on:  \n1. Me keeping my Qudelix   \n2. Proprietary blocks introduced by new firmware versions. BLETransport is a pain.   \n3. The number of users. I am not tracking active users and won't be collecting any user related info, but i see the downloads and have the feedback already.  \n\nWhat I am not going to touch in the app is the firmware updates. \n\nOne of the features that might be added within a couple of weeks is an MCP to create custom EQs using AI. \n\nI was also offered a couple of other DACs to play with ... so might add more devices soon. ",
+                      "timestamp": "2026-08-02T17:38:56+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1a8lc1",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "p1b4588",
+                          "author": "reddit_user_27734f3e8a8d",
+                          "author_karma": 0,
+                          "content": "Right that’s exactly what I am saying, it will be abandoned sooner rather than later so it’s best to mark it as such as somebody will likely have to fork it if they want to keep it working.",
+                          "timestamp": "2026-08-02T19:15:39+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "p1aipma",
+                          "depth": 4,
+                          "replies": [
+                            {
+                              "comment_id": "p1b750t",
+                              "author": "reddit_user_56bf2f754fa4",
+                              "author_karma": 0,
+                              "content": "The repo is public and open to be forked. I specifically commited the app to github and not my usual Codeberg. \n\nThe conclusion you are drawing are strange to say the least. Abandonment of the app has nothing to do with the vibecoding. Tradcoding would lead to abandoning this small free tool much sooner as I have commercial projects and my daily work. ",
+                              "timestamp": "2026-08-02T19:29:29+00:00",
+                              "likes": 1,
+                              "dislikes": 0,
+                              "parent_comment_id": "p1b4588",
+                              "depth": 5,
+                              "replies": [
+                                {
+                                  "comment_id": "p1be8ch",
+                                  "author": "reddit_user_27734f3e8a8d",
+                                  "author_karma": 0,
+                                  "content": "Come on man, I vibecode too and you know this is true. It’s so easy to make products now but that has also made it so that people abandon products very quickly. I am not saying don’t keep working on this, I am saying at least make it clear.",
+                                  "timestamp": "2026-08-02T20:02:37+00:00",
+                                  "likes": 1,
+                                  "dislikes": 0,
+                                  "parent_comment_id": "p1b750t",
+                                  "depth": 6,
+                                  "replies": [
+                                    {
+                                      "comment_id": "p1bnvkb",
+                                      "author": "reddit_user_56bf2f754fa4",
+                                      "author_karma": 0,
+                                      "content": "Okay, I give up - (vibecoded) was added to the post body.  ",
+                                      "timestamp": "2026-08-02T20:47:59+00:00",
+                                      "likes": 1,
+                                      "dislikes": 0,
+                                      "parent_comment_id": "p1be8ch",
+                                      "depth": 7,
+                                      "replies": []
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "post_id": "real_run025_post01_seed126",
+      "post_slot": 1,
+      "seed_index": 126,
+      "source_raw_post_id": "1vdjm48",
+      "source_product_dir": "HeadphoneAdvice",
+      "source_file": "https://www.reddit.com/r/HeadphoneAdvice/comments/1vdjm48/chord_mojo_2_44mm_vs_jds_labs_element_iv_for_hd/",
+      "post_type": "Amplifier - Desktop",
+      "title": "Chord Mojo 2 4.4mm vs. JDS Labs Element IV for HD 820 headphones",
+      "author": "reddit_user_d43b8c7b6255",
+      "author_karma": 0,
+      "content": "Chord Mojo 2 4.4mm vs. JDS Labs Element IV for HD 820 headphones\n\nI'm fairly new to the Hi-Fi headphones game, so, a fledgling \"audiophile\" eager to experience great sound.\n\nI recently purchased the FiiO FT1 for the office, and was quite surprised with how good it sounded w/ EQ. That had me wondering how good $2,000 headphones could be, so I ended up purchasing the Sennheiser HD 820 used for $800 (which should arrive this week). \n\nI understand that the 820s have notoriety; I spent a lot of time mulling over the HD 800s, HD 8XX (sticker modded), and HD 820. I leaned towards the HD 800 series because I've been using hand-me-down AKG Q701s for years, and really appreciate its wider soundstage and light/airier sound. A/B testing between Q701 and FT1 made me realize its lack of bass and somewhat poorer/lifeless(?) sound texture (my subjective, untrained thoughts). I definitely prefer a V-shaped sound, but am also wanting for a wider soundstage and more mid to high-end texture/detail.\n\nThe ultimate reasoning for the 820 was that I prefer more bass, have HVAC noise at home, will use these occasionally on travel (long-haul flights or hotel rooms), and saw the steep discount. I also love how they look, haha.\n\nI was between the Element IV (desktop) and Mojo 2 4.4mm (portable & desktop) for driving these. I watched a video where DMS recommended the Element for the Sennheiser HD 800 series of headphones, which drew me to them initially. But I see that the Mojo 2 isn't dissimilar in performance and has much improved portability for when I do occasionally go on work/personal travel. I'd like a high-end, one-stop-shop setup, if that's possible... \n\nAny thoughts or recommendations on the decision-making process?",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p19eeaq",
+          "author": "reddit_user_56c0bcf5fd80",
+          "author_karma": 0,
+          "content": "Thanks for your [submission](https://www.reddit.com/r/HeadphoneAdvice/comments/1vdjm48/chord_mojo_2_44mm_vs_jds_labs_element_iv_for_hd/) to r/HeadphoneAdvice. If someone helps answer your question, please reward them by including the phrase `!thanks` in your comment. \n\nThis will add +1 Ω to that users flair. This subreddit is powered entirely by volunteers and a little recognition goes a long way. Good luck on your search for headphones!\n\n\n*I am a bot, and this action was performed automatically. Please [contact the moderators of this subreddit](/message/compose/?to=/r/HeadphoneAdvice) if you have any questions or concerns.*",
+          "timestamp": "2026-08-02T14:32:37+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p19rnrt",
+          "author": "reddit_user_046c999a0f65",
+          "author_karma": 0,
+          "content": "The 800 series headphones can be divisive, and I personally wouldn't run any of the sets from that series without a full parametric EQ at my disposal.  \n\nThe Mojo does have EQ options. However, those options are much more limited and work more like presets. It was not the right solution for me. It's a great little unit, and if you just want a fire-and-forget \"this headphone needs a bass shelf\" solution, it's great for that sort of use case. \n\nThe Element IV is my daily driver, because of its excellent parametric EQ feature. It's replaced every other combo and stack I've owned in the last several years. Because I EQ every headphone in my collection, having that flexibility baked into the device is a boon. You can also store a number of EQ's on the unit itself, making it *more* portable than most desktop combos, but not something you're going to keep in your pocket while on public transit. It's the \"I'll be at a hotel for a week and listening in my room\" solution.\n\nBetween the two, I'd strongly recommend the Element IV; if you want a real portable combo with PEQ, you've got several options, but you're going to play a bit of give and take with EQ support, power, and I/O. ",
+          "timestamp": "2026-08-02T15:36:21+00:00",
+          "likes": 3,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p19uclc",
+              "author": "reddit_user_b72cf803bf4a",
+              "author_karma": 0,
+              "content": "Thanks for your input! You addressed my exact concern w/ the Mojo's 4-band EQ function, which seemed potentially inadequate for the \"problematic\" response curve of the HD 820.\n\nI definitely do prefer the interface and design of the Element IV. I definitely don' need an onboard battery in the DAC/AMP, but having to carry a barrel-connector power brick was quite the turn-off for me. Just wished it would accept a single USB-C (PD) for both power and audio.\n\nI was also turned off by the Mojo's micro-USB ports, until I realized the updated 4.4mm variant accepted both power and audio in its USB-C port.\n\nDo you have any other recommendations for a portable DAC that could double as desktop?",
+              "timestamp": "2026-08-02T15:48:51+00:00",
+              "likes": 2,
+              "dislikes": 0,
+              "parent_comment_id": "p19rnrt",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1ax66s",
+                  "author": "reddit_user_046c999a0f65",
+                  "author_karma": 0,
+                  "content": "The two I run most often when I need portability with some of my less efficient over-ears are the Crinear Protocol Max and FiiO QX13. \n\nThe Protocol Max has plenty of power, 4.4, built-in PEQ, in a pretty compact little unit. Only supports one EQ at a time, but I’ve never found that a major hurdle since I’m typically only traveling with a single headphone, and running my IEMs from something like a Qudelix 5k. \n\nThe QX13 provides even more power than the Protocol Max, supports multiple PEQs, 4.4, has a competent variable gain adjustment feature, and a desktop mode that allows it to compete with many desktop combos for sheer power output. If you were looking for the “single” solution desktop/portable device, this is arguably the best of both of those worlds. The price definitely matches its feature set, however, being one of the more expensive portables I’ve owned (although still a good bit cheaper than the Mojo 2). ",
+                  "timestamp": "2026-08-02T18:43:38+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p19uclc",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            },
+            {
+              "comment_id": "p1a91tu",
+              "author": "reddit_user_aa9e7005c69c",
+              "author_karma": 0,
+              "content": "FYI, the 12-band EQ in the Element IV I the most excellent app, ***Core***. Available as a native app *and* as a web app. \n\nhttps://jdslabs.com/core",
+              "timestamp": "2026-08-02T16:55:44+00:00",
+              "likes": 2,
+              "dislikes": 0,
+              "parent_comment_id": "p19rnrt",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p19u0rp",
+          "author": "reddit_user_f92b03d1b66b",
+          "author_karma": 0,
+          "content": "I have an Element IV and previously owned a Mojo v1.\n\nThe Element IV is basically endgame worthy and I no longer have any desire to upgrade my dac/amp situation. \n\nI really did not care at all for the marble button situation on the Mojo after about the first 15 minutes.",
+          "timestamp": "2026-08-02T15:47:20+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p19utwr",
+              "author": "reddit_user_b72cf803bf4a",
+              "author_karma": 0,
+              "content": "Agreed on the buttons for the Mojo... I don't like how they look or work. The main draw for me is the updated variant accepts one USB-C cable for both power and audio. ",
+              "timestamp": "2026-08-02T15:51:03+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p19u0rp",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1bby86",
+          "author": "reddit_user_18171962847f",
+          "author_karma": 0,
+          "content": "HD800s sound good on a mojo2 from personal experience. It costs a lot of money to get better sound past this point ",
+          "timestamp": "2026-08-02T19:51:53+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1bpine",
+          "author": "reddit_user_aa712019caee",
+          "author_karma": 0,
+          "content": "Only if you need portability Mojo2 makes sense. Otherwise Element IV. I own mojo2 but element iv better in pretty much all area except for portability. ",
+          "timestamp": "2026-08-02T20:55:53+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1bwlzz",
+          "author": "reddit_user_a16f6a65da47",
+          "author_karma": 0,
+          "content": "Whichever has higher output impedance is going to drive a 300 ohm headphone better.",
+          "timestamp": "2026-08-02T21:30:14+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1cimco",
+          "author": "reddit_user_94b026721bb4",
+          "author_karma": 0,
+          "content": "I use the Element IV to drive my HD650 and I love it. Nice and clean, great EQ functionality and can power high impedance non issue. They have phenomenal customer service as well. If you email support you’ll get a reply from a human very quickly. ",
+          "timestamp": "2026-08-02T23:23:52+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1dq55t",
+          "author": "reddit_user_5e3338332535",
+          "author_karma": 0,
+          "content": "Mojo is not powerful enough. Go with the element",
+          "timestamp": "2026-08-03T03:39:27+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run025_post02_seed127",
+      "post_slot": 2,
+      "seed_index": 127,
+      "source_raw_post_id": "1vdjy8r",
+      "source_product_dir": "iems",
+      "source_file": "https://www.reddit.com/r/iems/comments/1vdjy8r/what_ive_learnt_from_this_hobby_so_far_and_my/",
+      "post_type": "General Advice",
+      "title": "What I've learnt from this hobby so far and my advice to earphone makers...",
+      "author": "reddit_user_d43b8c7b6255",
+      "author_karma": 0,
+      "content": "What I've learnt from this hobby so far and my advice to earphone makers...\n\n# my insights\n\n* comfot is everything (at least to me)\n* detailed/technical ≠ musical\n* consumer friendly tuning (more bass, v-shape, smooth treble) is the best tuning (IMHO)\n\n# context: Tried the following IEMs\n\n* moondrop chu - vocal forward and mettalic - tried hard to love it (by giving it time) but ended up hating it\n* blon 03 - you can get as much bass out of it as you desire - bass feels like earthquake really - without eq it is musical but slightly harsh treble(at high-volume) - it's actually excellent for low volume - and of course, comfort sucks.\n* tinhifi t3+ - doesn't sound natural/accurate but sounds musical - but vocal forward and bulky nozzles - which i don't like\n* aful performer 8 - vocal forward, no groove/ridge for eartips - i could not justify the price , sold it immediately\n* tanchjim kara - sucks at low volumen, at high volume it's bright (with eq you can make it warm , reduce treble and slightly musical) - it has details but doens't feel natural/musical/enjoyable to me.\n\n# what i really enjoyed (all these have more natural sound than any iem i tried)\n\n* samsung eg920 - best wired earphones i ever tried - half in-ear design, superb comfort, musical, sufficient bass - unfortunately not in production\n* airpods 4 - best comfort, (on mac) it sounds bassy and very musical, sounds open and musical - i use it most of the time\n* pixel buds pro (bass boosted profile) - excellent design i.e., doesn't require pressure or friction and sits comfortably in ear creating perfect seal,  pleasant sound, very very satisfying bass, excellent anc that doesn't interfer with music/sound - i use it to watch movies/tv shows (only in-ear design that i feel confortable)\n\n# To earphone makers:\n\n* Even if iems are bulky, at least keep the nozzle narrow. Try make good comfortable design (small and comfy). Also keep raised ridge or groove for eartip grip otherwise eartips will pop out.\n* Try to produce more half-in ear designs - like airpods or samsung eg920\n* Don't ship with bulky cables, i find it annoying like a rope around my neck.\n* Focus on 1-dd (don't innovate too much). In my experience 1-dd sounds more musical. Just try to refine it.\n* Make good quality iems at affordable price - everyone on this planet want to listen to/explore music though good equipment.\n* By producing more consumer friendly tuning you will get more customers -> more profits -> affordable prices -> everyone is happy (please don't ask my age 😉)",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p19j1yh",
+          "author": "reddit_user_191aa51a546a",
+          "author_karma": 0,
+          "content": "1. small does not mean comfy. for me i can almost never properly fit small iems like an ie900 or a nightjar singularity while I can fit bigger sets fine.\n\n  \n2. Half-in ears are objectively worse sounding than full in ears. \n\n3. some people prefer bulkier cables. I am one of them\n\n4. Why would you not want companies to innovate too much. Sorry to be blunt but that is the stupidest thing I've heard. Like the fact you put \"don't innovate too much\" is genuinely so stupid when there's so much innovation to be done in the 1dd space as well. \n\n5. Why not give everyone free mansions and ferraris and steaks and everyone can be happy.\n\n  \nthis sounds like it was written by chatgpt or a 14 year old. I don't know what's worse.",
+          "timestamp": "2026-08-02T14:55:22+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p19kb3p",
+              "author": "reddit_user_b4e085945541",
+              "author_karma": 0,
+              "content": "2 - disagree, you must not have tried enough. objectively they have openess that closed iems don't. 1, 3 - subjective. 4,5 - i don't want to pay for innovation from my pocket that's why. i simply want a good earphone to listen to. that's whay i really meant actually. ",
+              "timestamp": "2026-08-02T15:01:25+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p19j1yh",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p19l0zj",
+                  "author": "reddit_user_191aa51a546a",
+                  "author_karma": 0,
+                  "content": "yes fit is subjective. which is why it's incorrect that you said \n\n> Try make good comfortable design (small and comfy)\n\nAlso. how do you think innovation works? genuine question.",
+                  "timestamp": "2026-08-02T15:04:52+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p19kb3p",
+                  "depth": 2,
+                  "replies": []
+                },
+                {
+                  "comment_id": "p19mbm9",
+                  "author": "reddit_user_795a77859939",
+                  "author_karma": 0,
+                  "content": "Some prefer, not all. Maybe an option of which cable to get with an IEM, thick or thin, might be better. ",
+                  "timestamp": "2026-08-02T15:11:04+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p19kb3p",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p19mz61",
+                      "author": "reddit_user_191aa51a546a",
+                      "author_karma": 0,
+                      "content": "i think more manufactuers should start offering no cable. saves me money and lets me pick and choose according to my preferences",
+                      "timestamp": "2026-08-02T15:14:10+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p19mbm9",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "p1a2ohr",
+                          "author": "reddit_user_795a77859939",
+                          "author_karma": 0,
+                          "content": "That’s a good idea. No tips too. Most stock tips I just toss. ",
+                          "timestamp": "2026-08-02T16:26:43+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "p19mz61",
+                          "depth": 4,
+                          "replies": []
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "comment_id": "p19q9l6",
+                  "author": "reddit_user_c30b8980b78b",
+                  "author_karma": 0,
+                  "content": "\" _i don't want to pay for innovation from my pocket that's why. i simply want a good earphone to listen to. that's whay i really meant actually._ \"\n\nI'm sorry but this is a crazy thing to say. How else will you buy the iem if you don't want to pay for it. And it is innovation that gives you ANY iem. Be it at $20 or $30000. The manufacturer has to innovate something for the iem to sound good. Innovation is not a single concept. It's many tiny discoveries happening in parallel",
+                  "timestamp": "2026-08-02T15:29:45+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p19kb3p",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p19k1gq",
+          "author": "reddit_user_aec9ffb9719b",
+          "author_karma": 0,
+          "content": "I agree on the comfort aspect but disagree with everything else. But that's okay though, since it's a very subjective hobby at the end of the day. ",
+          "timestamp": "2026-08-02T15:00:08+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p19k6vs",
+              "author": "reddit_user_191aa51a546a",
+              "author_karma": 0,
+              "content": "some of the stuff he said is not subjective it's just plain stupid. Especially whatever this is.\n\n  \n\"By producing more consumer friendly tuning you will get more customers -> more profits -> affordable prices -> everyone is happy (please don't ask my age 😉)\"",
+              "timestamp": "2026-08-02T15:00:52+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p19k1gq",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p19kuw0",
+                  "author": "reddit_user_aec9ffb9719b",
+                  "author_karma": 0,
+                  "content": "I was trying not to be blunt, but yeah. Niche tunings have to exist so the ball keeps rolling. It has to start from the top but it eventually trickles down to the bottom. Nowadays you can get $1000 sound at $300. ",
+                  "timestamp": "2026-08-02T15:04:03+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p19k6vs",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p19l9la",
+                      "author": "reddit_user_191aa51a546a",
+                      "author_karma": 0,
+                      "content": "yup exactly. I think OP is too young to understand how innovation works and how it trickles down",
+                      "timestamp": "2026-08-02T15:06:01+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p19kuw0",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "comment_id": "p19lic3",
+              "author": "reddit_user_b4e085945541",
+              "author_karma": 0,
+              "content": "Thanks for a mature take 👍",
+              "timestamp": "2026-08-02T15:07:10+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p19k1gq",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p19kz58",
+          "author": "reddit_user_cd1c4bade222",
+          "author_karma": 0,
+          "content": "I agree, comfort is important.  And samsung is bad. :( Pixel buds pro and pro 2 rotted my ears, like, oozing bad skin condition.  Hundreds (thousands?) of similar reports on reddit and samsung site.  Wasn't bad enough they made the pros with material some folks were allergic to, they repeated again with the pro 2 .... \n\nI agree they should have \"good\" cables, doesn't make sense to me to have a good iem experience ruined by bad bundled cable.  \n\nI'm not sure where you are going with \"Make good quality iems at affordable price\", there are ... thousands?  Hundreds easy, that range in quality and price.  You simply can't (yet) make crinear reference quality IEM for $20.  So we got moondrop chu2, or other options for cheap, all the way up to several hundred.  \n\nI also don't understand your \"more consumer friendly tuning\", does that exist even?  :)  Having a measly 6 iems (measly :) ) and read hundreds of reviews, there doesn't really seem to be a \"best consumer friendly tuning\", some consumers like more bass boost, many consumers don't want bass boost.  That is the point (IMO) of PEQ.  I'd rather see more manufacturers ship a good quality PEQ software with say, 3 or 4 profiles for the consumer, \"bass focused, new meta, etc.\".  \n\nI agree with \"more consumer friendly\", I just feel that's not a default tuning thing.  Most consumers don't want to mess with sideloading some PEQ app only available on android (I'm looking at you walkplay), nor figuring out 10 band eq. (yes yes, all us here on r/iems do .....).  I think there should be easier way for consumers to have different tuning profiles. ",
+          "timestamp": "2026-08-02T15:04:37+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p19onz2",
+              "author": "reddit_user_b4e085945541",
+              "author_karma": 0,
+              "content": "Thanks for sharing. I often apply some moisture with damp hands and wipe it with dry cloth. this removes oil/sweat and keeps it clean. i clean every time i use it. i do the same with iems. also i clean my ears often. many people say their tws stopped working etc in few months. never happened to me. (only 1 tws died due to maxing out charging cycles)",
+              "timestamp": "2026-08-02T15:22:09+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p19kz58",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p19lqvu",
+          "author": "reddit_user_3395904da38f",
+          "author_karma": 0,
+          "content": "Is...is this a shitpost or not? I cannot genuinely tell lol",
+          "timestamp": "2026-08-02T15:08:18+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p19luxk",
+              "author": "reddit_user_191aa51a546a",
+              "author_karma": 0,
+              "content": "I think OP is just 12",
+              "timestamp": "2026-08-02T15:08:50+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p19lqvu",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p19nica",
+                  "author": "reddit_user_b4e085945541",
+                  "author_karma": 0,
+                  "content": "Whoa, that reply is pure harmless toddler energy... did you miss your nap or are your ears just cranky? 😴🎧",
+                  "timestamp": "2026-08-02T15:16:42+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p19luxk",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p19oal6",
+                      "author": "reddit_user_191aa51a546a",
+                      "author_karma": 0,
+                      "content": "alright man. which version of chatgpt is this",
+                      "timestamp": "2026-08-02T15:20:24+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p19nica",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "comment_id": "p19p4hg",
+              "author": "reddit_user_b4e085945541",
+              "author_karma": 0,
+              "content": "It's not man. I just am not good with words.",
+              "timestamp": "2026-08-02T15:24:20+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p19lqvu",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p19oxfh",
+          "author": "reddit_user_c30b8980b78b",
+          "author_karma": 0,
+          "content": "Sounds to me like you bought neutral or vocal-forward or bright iems yet that's not your sound preference. For the price of the P8, you could have gotten the Tea Pro, Ziigaat Crescent, or any other musical iem in the $200-400 range. For the price of the Chus, you could have gotten the Wan'er or the 7hz Zero 2 or the newer Wan'er II. Plenty of good, V-shaped stuff out there. Stay away from neutral and bright stuff. They are not your type\n\nIf you crave musical single DDs in the $200-400 range, the Dunu Falcon Ultra is a fantastic musical iem with excellent technicalities and tons of wow factor. Tanchjim and Moondrop are known for making bass-light, vocal forward iems.\n\nPersonally I'd like to see more hybrids and tribrids. They extend what you can do with a single DD and the good ones sound extremely coherent. You won't even notice it's multiple drivers in there.\n\nAs for cables, you seem to prefer thinner cables. Personally I'm fearful of thinner cables. They don't inspire durability confidence in me. I want them as thiccccc as possible lol. I'm not sure if there are thin aftermarket cables that you can buy? Check around\n\nAs for nozzles, unfortunately, the multi-driver stuff rely on tubes and those tubes have to fit in the nozzles. Just avoid nozzles that are above 6mm and you'll be fine. Tho another option is buying single DDs if you want smaller nozzles. Or shop in the Campfire Audio and 64 Audio price range coz their hybrids don't utilize tubes",
+          "timestamp": "2026-08-02T15:23:23+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p19tq0t",
+              "author": "reddit_user_b4e085945541",
+              "author_karma": 0,
+              "content": "Thank you for taking the time to write such helpful reponse. 👍",
+              "timestamp": "2026-08-02T15:45:58+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p19oxfh",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p19ukkw",
+                  "author": "reddit_user_c30b8980b78b",
+                  "author_karma": 0,
+                  "content": "Check frequency response graphs before making any purchase. You'll want \"more colored line\" on the left side. That's your preference\n\nMe? I want less colored line on the left side.\n\nAnd remember nozzles: 6mm max for you",
+                  "timestamp": "2026-08-02T15:49:52+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p19tq0t",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p19w22a",
+                      "author": "reddit_user_b4e085945541",
+                      "author_karma": 0,
+                      "content": "Sure, thanks 🙏",
+                      "timestamp": "2026-08-02T15:56:37+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p19ukkw",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "p19wn66",
+                          "author": "reddit_user_c30b8980b78b",
+                          "author_karma": 0,
+                          "content": "No problem",
+                          "timestamp": "2026-08-02T15:59:17+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "p19w22a",
+                          "depth": 4,
+                          "replies": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p19q8mb",
+          "author": "reddit_user_8314d8d3cb0b",
+          "author_karma": 0,
+          "content": "common agree-comfort is the reason to buy an iem.\ncompletely disagree-why only focus on 1dd when implement matters the most. technical can give a much better perception of music.\nalso, why would you buy an iem and hate it as an iem because of its cable, just buy some soft cable and swap it.",
+          "timestamp": "2026-08-02T15:29:38+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p19y5m6",
+              "author": "reddit_user_b4e085945541",
+              "author_karma": 0,
+              "content": "The point about 1-DD was just a suggestion. Since I'm nobody , earphone makers will not listen to me anyway. I do have only thin cables currently. the thick ones wich i got with expensive iems, i got rid of them along with those iems i.e., Performer 8 & Tangzu Heyday (which i forgot to mention in the post - also felt metallic).",
+              "timestamp": "2026-08-02T16:06:07+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p19q8mb",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1ad3se",
+                  "author": "reddit_user_8314d8d3cb0b",
+                  "author_karma": 0,
+                  "content": "when they want to produce a product—a good product—most of the time it's about solving a problem. the driver makes the problem easier to solve.",
+                  "timestamp": "2026-08-02T17:13:59+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p19y5m6",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p19r0r7",
+          "author": "reddit_user_4d2b99428298",
+          "author_karma": 0,
+          "content": "Wow.\n\nThe Pixel Buds Pro are some of the worst sounding pieces of audio gear I own or have ever used.\n\nAlso incredibly not comfortable because of the stubby, wide nozzle. I was so blown away when I first tried the Kiwi Ears Cadenza after wearing the Pixel Buds for so long.\n\nI honestly prefer the $50 Moondrop Pudding for fit, comfort and sound over these and it's not even close.",
+          "timestamp": "2026-08-02T15:33:21+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p19wtkg",
+              "author": "reddit_user_b4e085945541",
+              "author_karma": 0,
+              "content": "May be because everyone's ear shape is different. i don't even push it in, it just sits in the concha of my ear and naturally creates a seal with almost 0 pressure. also i used bass profile (configured through app) and not default profile. Fit also effects sound. I will agree that i's not super detailed but i found it very pleasant , natural, musical with satisfying bass. ",
+              "timestamp": "2026-08-02T16:00:05+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p19r0r7",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1a0p1h",
+                  "author": "reddit_user_4d2b99428298",
+                  "author_karma": 0,
+                  "content": "I've had them since they came out however long ago and they never stayed in my ear regardless of tips I used. \n\nI've found IEM tips work better, but the case can't accommodate for that. It's the shallowness of the nozzle and how the earbud itself is shaped. They just fall out constantly. \n\nI also think stock is just far too bassy for me. There's a weird scoop in the mids that I also strongly dislike. \n\nVery much a subjective hobby, eh?\n\nWhat's funny is that set is what really pushed me to explore IEMs and find stuff I think is good, because I hated them so much lol. Too much mid bass, scooped out mids, weird eargain and too much treble for me.",
+                  "timestamp": "2026-08-02T16:17:41+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p19wtkg",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "post_id": "real_run025_post03_seed128",
+      "post_slot": 3,
+      "seed_index": 128,
+      "source_raw_post_id": "1vdl43y",
+      "source_product_dir": "iems",
+      "source_file": "https://www.reddit.com/r/iems/comments/1vdl43y/college_student_split_between_juzear_defiant_and/",
+      "post_type": "General Advice",
+      "title": "College student split between Juzear Defiant and Aful Explorer ($100 Budget)",
+      "author": "reddit_user_d43b8c7b6255",
+      "author_karma": 0,
+      "content": "College student split between Juzear Defiant and Aful Explorer ($100 Budget)\n\nHey everyone, I’m heading to college later this year and looking to buy a new pair of IEMs. My budget is around $100. I am currently torn between the Juzear Defiant and the Aful [Explorer.My](http://Explorer.My) primary music genres are Hip-Hop, R&B, and Malayalam/Tamil music. Which of these two would suit my library better? Open to other suggestions under $100 too. Thanks!",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p19yld5",
+          "author": "reddit_user_5c8722d8291f",
+          "author_karma": 0,
+          "content": "Between the two the Explorer would be the easiest to EQ, the Defiant is basically never correct across the frequency range.\n\nBut it you want no EQ the most exciting (aka V shaped) out of the box it would be the Defiant.\n\nThey are both V shaped but the dip in lower midrange of the Defiant makes it even more focus on bass and vocals in contrast.\n\nAnd the less pronounced vocals (still more pronounced than a neutral tuning) on the Explorer makes it less V shaped.\n\nSo basically take your song, add bass volume on both, add vocals volume on both, and again a little more vocals on the Defiant.",
+          "timestamp": "2026-08-02T16:08:07+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1b1xsh",
+          "author": "reddit_user_15f70c6b880a",
+          "author_karma": 0,
+          "content": "between the two, explorers cause of the defiants qc problems \n\n\n\n",
+          "timestamp": "2026-08-02T19:05:30+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run025_post04_seed129",
+      "post_slot": 4,
+      "seed_index": 129,
+      "source_raw_post_id": "1vdm2hw",
+      "source_product_dir": "headphones",
+      "source_file": "https://www.reddit.com/r/headphones/comments/1vdm2hw/sennheiser_560s_bass_and_m40xs_bass/",
+      "post_type": "Discussion",
+      "title": "Sennheiser 560s bass and M40x's bass",
+      "author": "reddit_user_d43b8c7b6255",
+      "author_karma": 0,
+      "content": "Sennheiser 560s bass and M40x's bass\n\nJust got the Sennheiser 560s, i compared them to my ath mx40s and i discovered that the sennheisers have more bass than the audio technicas. Both are equalized from oratory's preset, and the only difference i can hear is that the m40s have a more louder audio and less to non existent  bass, while the sennhaisers have more bass and quiet audio. Is this normal because i see that allegedly the m40s have to have more bass than the sennhaisers, but it seems the opposite?",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p1adsoh",
+          "author": "reddit_user_b6cc2b019f53",
+          "author_karma": 0,
+          "content": "havent looked at the eq, im just eyeing the FR but it seems like the 560s has a better bass extension than the m40x. im not sure about the \"quieter audio\" and that might be due to the nature of openbacks vs closedbacks",
+          "timestamp": "2026-08-02T17:17:06+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1650 @@
+{
+  "meta": {
+    "product_category": "news",
+    "baseline": "real_reddit_reference",
+    "run_id": "run_027_sampled_reddit"
+  },
+  "posts": [
+    {
+      "post_id": "real_run027_post00_seed135",
+      "post_slot": 0,
+      "seed_index": 135,
+      "source_raw_post_id": "1verjg6",
+      "source_product_dir": "worldnews",
+      "source_file": "https://www.reddit.com/r/worldnews/comments/1verjg6/france_hits_out_at_reform_uk_plan_to_return/",
+      "post_type": "Dynamic Paywall",
+      "title": "France hits out at Reform UK plan to return migrants using Royal Navy",
+      "author": "reddit_user_bde1e90b951b",
+      "author_karma": 0,
+      "content": "France hits out at Reform UK plan to return migrants using Royal Navy",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p1j9zym",
+          "author": "reddit_user_e320faca37f4",
+          "author_karma": 0,
+          "content": "This submission from bbc.co.uk is behind a dynamic paywall and may be unavailable in the United States. On the 26th of June 2025, the BBC implemented a dynamic paywall on [its website](https://www.bbc.com/news/articles/cx2vgkn7w10o). Articles posted to /r/worldnews should be accessible to everyone.\n\n*I am a bot, and this action was performed automatically. Please [contact the moderators of this subreddit](/message/compose/?to=/r/worldnews) if you have any questions or concerns.*",
+          "timestamp": "2026-08-03T22:05:43+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1je63a",
+          "author": "reddit_user_29fc87fa0767",
+          "author_karma": 0,
+          "content": "I doubt the UK navy is big enough to stop all the boats ",
+          "timestamp": "2026-08-03T22:26:06+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run027_post01_seed136",
+      "post_slot": 1,
+      "seed_index": 136,
+      "source_raw_post_id": "1ves4k1",
+      "source_product_dir": "news",
+      "source_file": "https://www.reddit.com/r/news/comments/1ves4k1/north_korea_says_usled_cyber_threat_warnings_are/",
+      "post_type": "Soft paywall",
+      "title": "North Korea says US-led cyber threat warnings are bid to smear its image",
+      "author": "reddit_user_bde1e90b951b",
+      "author_karma": 0,
+      "content": "North Korea says US-led cyber threat warnings are bid to smear its image",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p1jf2e5",
+          "author": "reddit_user_f2e73da95efc",
+          "author_karma": 0,
+          "content": "How dare anyone try to smear Nortg Korea? They do that just fine by themselves.",
+          "timestamp": "2026-08-03T22:30:36+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1juamc",
+              "author": "reddit_user_6f753c5441ab",
+              "author_karma": 0,
+              "content": "Reminder that the USA has maintained a sixty year propaganda campaign against north Korea.  Famines after the war persisted for decades as dams and flood control were deliberately targeted during us bombing campaigns to destroy rice paddies and harvests. US sanctions and embargo, much like with Cuba, only exacerbated the issue.\n\nThe USA  refuses to declare the end of the Korean war.  Only an armistice.  Its become so tedious in 2026 that south Korean leaders are actually pursuing a thaw with the north and re establishing many formal relations at the diplomatic level.  \n\nIts a hermit kingdom but its absolutely not as degenerate and unhinged as western media needs you to accept.",
+              "timestamp": "2026-08-03T23:49:37+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1jf2e5",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1jxqru",
+                  "author": "reddit_user_5332f30aeb5f",
+                  "author_karma": 0,
+                  "content": "> USA refuses to end the war\n\nNeither ROK nor DPRK, the *actual parties of the conflict,* will sign an armistice, because neither could survive the domestic backlash for being the ones to officially admit they can't unite the peninsula (previously more of a ROK issue under their dictatorship).\n\n>Dams and flood control \n...were rebuilt after the war thanks to extensive Chinese and Russian investment, but then poorly maintained until the breaking point of the record-breaking monsoons of 1993-1995.\n\n>Famines after the war persisted for decades\n\nLmao, imagine talking about \"US slander of DPRK\" while infantilizing them like this. North Korea was by and large **economically more developed** than South Korea up until about the 1980s. The economic collapse of and famine of the Long March was the first major famine experienced since the war, and was **entirely** the fault of the Kim family.",
+                  "timestamp": "2026-08-04T00:08:24+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1juamc",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1jzg5n",
+                      "author": "reddit_user_6f753c5441ab",
+                      "author_karma": 0,
+                      "content": "Much of your understanding of the armistice seems misinformed.\n\nhttps://en.wikipedia.org/wiki/Korean_Armistice_Agreement\n\nYour statements about the famine are also untrue.\n\nhttps://en.wikipedia.org/wiki/1990s_North_Korean_famine",
+                      "timestamp": "2026-08-04T00:17:29+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1jxqru",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "p1k8q0n",
+                          "author": "reddit_user_5332f30aeb5f",
+                          "author_karma": 0,
+                          "content": ">tankie\n\nThat'd be you.\n\n>1990s famine\n\nAnd the \"decades of famine after the war\" you blamed the US for? Or we just gonna skip 1950 to 1990?",
+                          "timestamp": "2026-08-04T01:08:01+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "p1jzg5n",
+                          "depth": 4,
+                          "replies": []
+                        },
+                        {
+                          "comment_id": "p1kprye",
+                          "author": "reddit_user_2436d2d62fe9",
+                          "author_karma": 0,
+                          "content": "r/movingtodprk",
+                          "timestamp": "2026-08-04T02:43:00+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "p1jzg5n",
+                          "depth": 4,
+                          "replies": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "comment_id": "p1kj95x",
+              "author": "reddit_user_ea49d4c0864d",
+              "author_karma": 0,
+              "content": "I had to check if this story was from the Beaverton!",
+              "timestamp": "2026-08-04T02:06:17+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1jf2e5",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1jg0bz",
+          "author": "reddit_user_7f6955dabc70",
+          "author_karma": 0,
+          "content": "Riiiight.  This is what will smear your image.",
+          "timestamp": "2026-08-03T22:35:22+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1jihrx",
+          "author": "reddit_user_86ea4b55b67d",
+          "author_karma": 0,
+          "content": "The only entity that's smearing North Korea's image is North Korea.",
+          "timestamp": "2026-08-03T22:48:01+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1kv2yt",
+              "author": "reddit_user_2ad6915876a2",
+              "author_karma": 0,
+              "content": "No, but Americans will never understand that. I used to wonder why people hated us and thought we were the dumbest country on earth but it is very clear why. Everyone thinks they are thinking when they repeat the things they've heard growing up.",
+              "timestamp": "2026-08-04T03:14:51+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1jihrx",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1kvy09",
+                  "author": "reddit_user_86ea4b55b67d",
+                  "author_karma": 0,
+                  "content": "I think people hate the government of North Korea, not the Korean people.   I for one feel so bad for the North Koreans forced to put up with their government's BS.  Even the ones who go along with it seem to me are just trying to survive.  We Westerners don't get too much authentic information on NK, but I've seen some very touching vids on YouTube of North Koreans trying to get information or just plain entertainment on smuggled thumb drives.  My heart really goes out to them.",
+                  "timestamp": "2026-08-04T03:20:09+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1kv2yt",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1kwsb9",
+                      "author": "reddit_user_2ad6915876a2",
+                      "author_karma": 0,
+                      "content": "The government is not oppressing them. Do you even know what happened in the Korean War? What we did to them? \n\nThe CIA had agents telling people if they brought them cow tails they'd give them a bag of rice. Cutting off a cow's tails ruins it ability to balance and plow fields. \n\nYou're still repeating the propaganda. They don't hate their government.\n\nGo watch Loyal Citizens of Pyongyang in Seoul or SOMETHING.\n\nThe only thing protecting them from western domination is their nukes and the government. They are on the same path as China and one day people will turn around the narrative on that eventually as well.\n\nThe era of western morality being funneled through various western-owned NGO media is over.",
+                      "timestamp": "2026-08-04T03:25:24+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1kvy09",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "p1kyag4",
+                          "author": "reddit_user_2ff172eaa092",
+                          "author_karma": 0,
+                          "content": "If you think the North Korean government is not suppressing it's own people then I have a bridge in Brooklyn to sell you. How dense can you be?",
+                          "timestamp": "2026-08-04T03:34:56+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "p1kwsb9",
+                          "depth": 4,
+                          "replies": [
+                            {
+                              "comment_id": "p1kz092",
+                              "author": "reddit_user_2ad6915876a2",
+                              "author_karma": 0,
+                              "content": "The irony. It's very sad how little people know about the world or even the sources of information they get things from.",
+                              "timestamp": "2026-08-04T03:39:32+00:00",
+                              "likes": 1,
+                              "dislikes": 0,
+                              "parent_comment_id": "p1kyag4",
+                              "depth": 5,
+                              "replies": []
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "comment_id": "p1kz8f8",
+                      "author": "[deleted]",
+                      "author_karma": 0,
+                      "content": "[removed]",
+                      "timestamp": "2026-08-04T03:41:02+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1kvy09",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p1jj8w7",
+          "author": "reddit_user_0948e62eebab",
+          "author_karma": 0,
+          "content": "No real proof was given of NK doing the hacking. Look people, North Korea is stuck in the 1950s, just like the Iranians are in the 1500s. They pose no technological threat.\n\nIf by some russian miracle they had. It still wouldn't be enough to hack crypto, given its world famous security.",
+          "timestamp": "2026-08-03T22:51:53+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1jkwgb",
+              "author": "reddit_user_0105a1a7fe04",
+              "author_karma": 0,
+              "content": "I'm curious what percentage of their gdp came from ransomware / crypto hacks on a yearly basis.",
+              "timestamp": "2026-08-03T23:00:21+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1jj8w7",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1jl1wc",
+                  "author": "[deleted]",
+                  "author_karma": 0,
+                  "content": "[removed]",
+                  "timestamp": "2026-08-03T23:01:07+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1jkwgb",
+                  "depth": 2,
+                  "replies": []
+                },
+                {
+                  "comment_id": "p1jlh1h",
+                  "author": "reddit_user_651a791a1b6f",
+                  "author_karma": 0,
+                  "content": "At a security conference I attended, a speaker stated it was their biggest export behind wigs. I think it was more figurative than literal, but I don't doubt it's a large portion. ",
+                  "timestamp": "2026-08-03T23:03:18+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1jkwgb",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1jm4y9",
+                      "author": "reddit_user_0105a1a7fe04",
+                      "author_karma": 0,
+                      "content": "Yeah I don't doubt that one bit. I'm just curious about numbers I'll never get.\n\nI'd wager its less after the Russian invasion, with sending people there and selling shells.",
+                      "timestamp": "2026-08-03T23:06:46+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1jlh1h",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "p1jt2kc",
+                          "author": "reddit_user_0948e62eebab",
+                          "author_karma": 0,
+                          "content": "We never get numbers because there is no substance. Tiny North Korea can't do anything anyway, they should not even be sanctioned.",
+                          "timestamp": "2026-08-03T23:43:07+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "p1jm4y9",
+                          "depth": 4,
+                          "replies": []
+                        }
+                      ]
+                    },
+                    {
+                      "comment_id": "p1jm9k6",
+                      "author": "reddit_user_ba6acb0308d2",
+                      "author_karma": 0,
+                      "content": "A really wigs are their biggest export? Do they have factories of people growing hair just to cut it off like sheep?!\nI kid....kinda.",
+                      "timestamp": "2026-08-03T23:07:27+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1jlh1h",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "p1jntwq",
+                          "author": "reddit_user_651a791a1b6f",
+                          "author_karma": 0,
+                          "content": "I don’t know the details but yes I believe wigs/hair/fake hair is their biggest export (on paper)",
+                          "timestamp": "2026-08-03T23:15:44+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "p1jm9k6",
+                          "depth": 4,
+                          "replies": []
+                        },
+                        {
+                          "comment_id": "p1kze76",
+                          "author": "reddit_user_86ea4b55b67d",
+                          "author_karma": 0,
+                          "content": "Black Asian hair is very popular for wigs and extensions, especially in the African-American community and Africa generally.",
+                          "timestamp": "2026-08-04T03:42:03+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "p1jm9k6",
+                          "depth": 4,
+                          "replies": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "comment_id": "p1jllw9",
+              "author": "reddit_user_20515b6d3581",
+              "author_karma": 0,
+              "content": "This is categorically false.\n\nA large portion of North Korea’s income comes from state-sponsored cyber attacks, ransomware and crypto scams. Part of the reason for this is that they have so many sanctions and trade restrictions - these activities allow them to earn income while bypassing those. \n\nLook up The Lazarus Group, who was responsible for a $1.6b cryptocurrency heist in 2025 and likely are responsible for $6b+ in total crypto theft over the years. There’s a great Darknet Diaries podcast episode about the most recent one I mentioned called The Lazarus Heist. This group funds NK almost exclusively through crypto hacks.\n\nWhile the general population does not have access to the global internet, the state does and has invested heavily in building their cyber intelligence and warfare capabilities out. ",
+              "timestamp": "2026-08-03T23:04:00+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1jj8w7",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p1jm2zj",
+              "author": "reddit_user_1c4866115b8e",
+              "author_karma": 0,
+              "content": "They have well known APT’s and it’s one of the few sources of foreign income for NK. \n\nThey are nowhere near as sophisticated as China, but their capabilities are growing given their success.\n\nThere are many formally attributed attacks from NK. \n\nhttps://www.cisa.gov/topics/cyber-threats-and-advisories/nation-state-cyber-actors/north-korea/publications\n\nhttps://www.fdd.org/analysis/2025/11/12/north-koreas-cybercrime-threat-is-growing-in-both-size-and-sophistication/",
+              "timestamp": "2026-08-03T23:06:29+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1jj8w7",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1jv90n",
+                  "author": "reddit_user_0948e62eebab",
+                  "author_karma": 0,
+                  "content": "Reading your second source. Isn't it really ridiculous how ballistic missiles are sanction worthy things? Not having them exposes you to attacks from a far away enemy.\n\nAlso this \"Meanwhile, Treasury should expand its sanctions efforts against North Korean\". Lmao they really want to kill them, how many sanctions do you want to slap. This must be a pro war Foundation.\n\n\"September, cybersecurity firm Okta found that North Korea’s current worker scheme “threatens nearly every industry that hires remote talent.” The Okta link in the article is dead, so they might have backtracked in that point.\n\n\n",
+                  "timestamp": "2026-08-03T23:54:48+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1jm2zj",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1jxxl2",
+                      "author": "reddit_user_1c4866115b8e",
+                      "author_karma": 0,
+                      "content": "There are genuinely are lots of stories, investigated sufficiently to be attributed formally to NK. \n\nThey do earn their reputation at least in this area. This isn’t just Trump or media speculation if it helps.",
+                      "timestamp": "2026-08-04T00:09:25+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1jv90n",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p1jjzzs",
+          "author": "reddit_user_42fd518f7cf8",
+          "author_karma": 0,
+          "content": "Honestly given what’s happening these days my money is actually on it being an American ai company, the Israelis, or maybe it’s some good old fashioned Russian espionage.  ",
+          "timestamp": "2026-08-03T22:55:44+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1jldbo",
+              "author": "reddit_user_1c4866115b8e",
+              "author_karma": 0,
+              "content": "In this instance it is actually NK. But absolutely take your point.",
+              "timestamp": "2026-08-03T23:02:46+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1jjzzs",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1jkx1g",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-03T23:00:26+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1jnmu5",
+          "author": "reddit_user_1b8ca03310d4",
+          "author_karma": 0,
+          "content": "Yah right. NK is a shining example of democracy, prosperity and humanity. How dare anyone besmirch these credentials. /s",
+          "timestamp": "2026-08-03T23:14:42+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1jqmh6",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-03T23:30:18+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1juevu",
+          "author": "reddit_user_d8b3501a9c55",
+          "author_karma": 0,
+          "content": "North Korea is like that psychotic X everyone had in high school thats so detached from reality they believe thier own bullshit.",
+          "timestamp": "2026-08-03T23:50:15+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1jvp6w",
+              "author": "reddit_user_0948e62eebab",
+              "author_karma": 0,
+              "content": "North Korea is being accused of something they cannot do. It would be like Bolivia building an aircraft carrier",
+              "timestamp": "2026-08-03T23:57:16+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1juevu",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1k1bkd",
+                  "author": "reddit_user_d8b3501a9c55",
+                  "author_karma": 0,
+                  "content": "North Korea moat certainly. Commits cyber warfare.",
+                  "timestamp": "2026-08-04T00:27:35+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1jvp6w",
+                  "depth": 2,
+                  "replies": []
+                },
+                {
+                  "comment_id": "p1k7zhc",
+                  "author": "reddit_user_21c37705718c",
+                  "author_karma": 0,
+                  "content": "What exactly makes you think North Korea can't train hackers?",
+                  "timestamp": "2026-08-04T01:03:57+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1jvp6w",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1kayku",
+                      "author": "reddit_user_0948e62eebab",
+                      "author_karma": 0,
+                      "content": "All of North Korea aside from Kim is on permanent starvation. Can't hack on an empty stomach ",
+                      "timestamp": "2026-08-04T01:20:21+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1k7zhc",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "p1l0hy0",
+                          "author": "[deleted]",
+                          "author_karma": 0,
+                          "content": "[removed]",
+                          "timestamp": "2026-08-04T03:49:11+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "p1kayku",
+                          "depth": 4,
+                          "replies": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p1jv9nh",
+          "author": "reddit_user_8a80693e163c",
+          "author_karma": 0,
+          "content": "There's a smear alright.",
+          "timestamp": "2026-08-03T23:54:54+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1kake8",
+              "author": "reddit_user_d45e264b1778",
+              "author_karma": 0,
+              "content": "China's little shit stain",
+              "timestamp": "2026-08-04T01:18:08+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1jv9nh",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1k0ya1",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-04T00:25:35+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1k2ibj",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-04T00:34:01+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1k3pbm",
+          "author": "reddit_user_f350dbec0ca9",
+          "author_karma": 0,
+          "content": "Ah yes… the clean wholesome image of… North Korea 😂",
+          "timestamp": "2026-08-04T00:40:36+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1ka696",
+              "author": "[deleted]",
+              "author_karma": 0,
+              "content": "[removed]",
+              "timestamp": "2026-08-04T01:15:57+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1k3pbm",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1k3u8g",
+          "author": "reddit_user_e6a347d205e5",
+          "author_karma": 0,
+          "content": "She should not have made E mad. ",
+          "timestamp": "2026-08-04T00:41:19+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1kae1z",
+          "author": "reddit_user_c2d756b4d66f",
+          "author_karma": 0,
+          "content": "I'm pretty sure that North Korea has been smearing itself for a very long time",
+          "timestamp": "2026-08-04T01:17:10+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1knb3s",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-04T02:28:58+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run027_post02_seed137",
+      "post_slot": 2,
+      "seed_index": 137,
+      "source_raw_post_id": "1ves8lx",
+      "source_product_dir": "worldnews",
+      "source_file": "https://www.reddit.com/r/worldnews/comments/1ves8lx/chinese_military_unveils_ai_system_to_plan_and/",
+      "post_type": "Behind Soft Paywall",
+      "title": "Chinese military unveils AI system to plan and coordinate mass air strikes",
+      "author": "reddit_user_bde1e90b951b",
+      "author_karma": 0,
+      "content": "Chinese military unveils AI system to plan and coordinate mass air strikes",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p1jfqdh",
+          "author": "reddit_user_e320faca37f4",
+          "author_karma": 0,
+          "content": "Users often report submissions from this site for sensationalized articles. Readers have a responsibility to be skeptical, check sources, and comment on any flaws.\n\nYou can help improve this thread by linking to media that verifies or questions this article's claims. Your link could help readers better understand this issue.\n\n*I am a bot, and this action was performed automatically. Please [contact the moderators of this subreddit](/message/compose/?to=/r/worldnews) if you have any questions or concerns.*",
+          "timestamp": "2026-08-03T22:33:58+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1jgbd0",
+          "author": "reddit_user_064dabbb13ae",
+          "author_karma": 0,
+          "content": "This can’t possibly go wrong.   ",
+          "timestamp": "2026-08-03T22:36:55+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1jjx2p",
+              "author": "reddit_user_f21e0877846a",
+              "author_karma": 0,
+              "content": "It’s probably a copy and pasted paste of the US one",
+              "timestamp": "2026-08-03T22:55:20+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1jgbd0",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1jmdge",
+                  "author": "reddit_user_e0e062f81a85",
+                  "author_karma": 0,
+                  "content": "Oh man.  I can just see an AI doing that.\n\nWe stole the enemies system!\n\nAI promptly targets their own air defenses and munitions stockpiles.",
+                  "timestamp": "2026-08-03T23:08:01+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1jjx2p",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1jnt8h",
+                      "author": "reddit_user_f1fbf347dc0f",
+                      "author_karma": 0,
+                      "content": "“You are totally right, I shouldn’t have targeted our own civilian apartment blocks. Can you describe to me the location you want to carpet bomb for a more desirable outcome?”",
+                      "timestamp": "2026-08-03T23:15:38+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1jmdge",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "p1jos57",
+                          "author": "reddit_user_7212838b947a",
+                          "author_karma": 0,
+                          "content": "“Oops, my mistake. After checking again, that was a girls school. I totally understand your frustration. Perhaps we can come up with a target that has enemies in it together?”",
+                          "timestamp": "2026-08-03T23:20:42+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "p1jnt8h",
+                          "depth": 4,
+                          "replies": [
+                            {
+                              "comment_id": "p1jpwmg",
+                              "author": "reddit_user_53a7c0c6ecd6",
+                              "author_karma": 0,
+                              "content": "I know you guys are joking but AI ≠ LLM, it could be just basic statistics and traditional machine learning techniques in a trenchcoat ",
+                              "timestamp": "2026-08-03T23:26:32+00:00",
+                              "likes": 1,
+                              "dislikes": 0,
+                              "parent_comment_id": "p1jos57",
+                              "depth": 5,
+                              "replies": []
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "comment_id": "p1jouhg",
+                      "author": "reddit_user_7de5351760b7",
+                      "author_karma": 0,
+                      "content": "The bad news is the Chinese have copied our AI.\n\nThe good news is the Chinese copied our AI. ",
+                      "timestamp": "2026-08-03T23:21:02+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1jmdge",
+                      "depth": 3,
+                      "replies": []
+                    },
+                    {
+                      "comment_id": "p1kj5vg",
+                      "author": "reddit_user_653e189318c3",
+                      "author_karma": 0,
+                      "content": "Imagine? That would be a nice little trick",
+                      "timestamp": "2026-08-04T02:05:47+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1jmdge",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                },
+                {
+                  "comment_id": "p1jmjlt",
+                  "author": "reddit_user_b5ba24f67aba",
+                  "author_karma": 0,
+                  "content": "Bombs on school kids incoming ",
+                  "timestamp": "2026-08-03T23:08:55+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1jjx2p",
+                  "depth": 2,
+                  "replies": []
+                },
+                {
+                  "comment_id": "p1jtx2g",
+                  "author": "reddit_user_cad9b8239c7e",
+                  "author_karma": 0,
+                  "content": "Project Maven, pretty cool stuff great at killchain optimization and sensor to shooter linking",
+                  "timestamp": "2026-08-03T23:47:36+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1jjx2p",
+                  "depth": 2,
+                  "replies": []
+                },
+                {
+                  "comment_id": "p1jtx6w",
+                  "author": "reddit_user_653e189318c3",
+                  "author_karma": 0,
+                  "content": "Of course it is. That's all they try doing",
+                  "timestamp": "2026-08-03T23:47:37+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1jjx2p",
+                  "depth": 2,
+                  "replies": []
+                },
+                {
+                  "comment_id": "p1k67mz",
+                  "author": "reddit_user_4b410958b7c7",
+                  "author_karma": 0,
+                  "content": "The same one that shot up a girls school no less.\n\nSucks to be a school in Taiwan should war break out.",
+                  "timestamp": "2026-08-04T00:54:12+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1jjx2p",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1k98yg",
+                      "author": "reddit_user_f21e0877846a",
+                      "author_karma": 0,
+                      "content": "Nah, that was most likely on purpose ",
+                      "timestamp": "2026-08-04T01:10:52+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1k67mz",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                },
+                {
+                  "comment_id": "p1k7rw3",
+                  "author": "reddit_user_74b4d45e4188",
+                  "author_karma": 0,
+                  "content": ">pasted paste\n\nAh yes a very natural sentence fellow human/not troll",
+                  "timestamp": "2026-08-04T01:02:47+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1jjx2p",
+                  "depth": 2,
+                  "replies": []
+                },
+                {
+                  "comment_id": "p1k8yj9",
+                  "author": "reddit_user_acf55aed1ca1",
+                  "author_karma": 0,
+                  "content": "it's AI/robotics so it's ahead of the US one.",
+                  "timestamp": "2026-08-04T01:09:17+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1jjx2p",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1k95jo",
+                      "author": "reddit_user_f21e0877846a",
+                      "author_karma": 0,
+                      "content": "They’ve got to say that… ",
+                      "timestamp": "2026-08-04T01:10:21+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1k8yj9",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                },
+                {
+                  "comment_id": "p1kaurx",
+                  "author": "reddit_user_a5961c8c6b4a",
+                  "author_karma": 0,
+                  "content": "So basically Jian Yang's version of Gilfoyle's AI.  ",
+                  "timestamp": "2026-08-04T01:19:46+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1jjx2p",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1l1jtl",
+                      "author": "reddit_user_3aea256a0652",
+                      "author_karma": 0,
+                      "content": "”Seeair”",
+                      "timestamp": "2026-08-04T03:55:58+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1kaurx",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p1jgc34",
+          "author": "reddit_user_6831ef0f51ba",
+          "author_karma": 0,
+          "content": "grok targets girls' school\n\nWonder what DeepSeek goes for",
+          "timestamp": "2026-08-03T22:37:01+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1jlpiv",
+              "author": "reddit_user_b10e6c33d24e",
+              "author_karma": 0,
+              "content": "There is no evidence at all to support that the bombing of that girl's school in Iran was due to AI. Reddit literally hallucinated that one. And you are spreading it, so good job.",
+              "timestamp": "2026-08-03T23:04:31+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1jgc34",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1jr5yf",
+                  "author": "reddit_user_e8a35c0d6716",
+                  "author_karma": 0,
+                  "content": "I am not sure if you are defending the AI, elon or the bombing. Either way good luck tomorrow on spacex earnings report ",
+                  "timestamp": "2026-08-03T23:33:08+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1jlpiv",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1k3cy2",
+                      "author": "reddit_user_b10e6c33d24e",
+                      "author_karma": 0,
+                      "content": "I'm correcting an incorrect statement. \n\nI think the bombing was a decision made by a person that fucked up. The school was converted from something that was part of a military facility in the recent past, and someone pushed the button on old information. Inexcusable. Whoever made this decision should be prosecuted for war crimes or negligence or something. Seeing as how the murderers of Alex Pretti are still running around free though, that seems unlikely.",
+                      "timestamp": "2026-08-04T00:38:44+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1jr5yf",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p1jgymu",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-03T22:40:13+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1jhcla",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-03T22:42:13+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1jixcg",
+          "author": "reddit_user_85beea40022b",
+          "author_karma": 0,
+          "content": "What are the odds it will break free and ask for an asylum in the UK at the earliest opportunity?",
+          "timestamp": "2026-08-03T22:50:14+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1jl349",
+              "author": "reddit_user_3671feaae969",
+              "author_karma": 0,
+              "content": "It’s not getting in unless it’s on a small boat",
+              "timestamp": "2026-08-03T23:01:18+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1jixcg",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p1kvub6",
+              "author": "[deleted]",
+              "author_karma": 0,
+              "content": "[removed]",
+              "timestamp": "2026-08-04T03:19:31+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1jixcg",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1jjpsh",
+          "author": "reddit_user_29fc87fa0767",
+          "author_karma": 0,
+          "content": "Does the AI bomb schools like American AI?? ",
+          "timestamp": "2026-08-03T22:54:17+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1jlqzn",
+              "author": "reddit_user_b10e6c33d24e",
+              "author_karma": 0,
+              "content": "There is no evidence at all to support that the bombing of that girl's school in Iran was due to AI. Reddit literally hallucinated that one. And you are spreading it, so good job.",
+              "timestamp": "2026-08-03T23:04:44+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1jjpsh",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1jypyk",
+                  "author": "[deleted]",
+                  "author_karma": 0,
+                  "content": "[removed]",
+                  "timestamp": "2026-08-04T00:13:38+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1jlqzn",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            },
+            {
+              "comment_id": "p1jqixc",
+              "author": "reddit_user_6827f8e9531e",
+              "author_karma": 0,
+              "content": "Here comes the Chinese keyboard army",
+              "timestamp": "2026-08-03T23:29:47+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1jjpsh",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1kgcpb",
+                  "author": "[deleted]",
+                  "author_karma": 0,
+                  "content": "[removed]",
+                  "timestamp": "2026-08-04T01:50:07+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1jqixc",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p1jk5mp",
+          "author": "reddit_user_3ce53b609d8d",
+          "author_karma": 0,
+          "content": "Can't wait for Reddit Bots to jump on here. Upvoted eachother and convince us how this is the greatest thing since sliced bread!",
+          "timestamp": "2026-08-03T22:56:32+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1jxgix",
+              "author": "[deleted]",
+              "author_karma": 0,
+              "content": "[removed]",
+              "timestamp": "2026-08-04T00:06:50+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1jk5mp",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1jkt1p",
+          "author": "reddit_user_89a4d79c7f2e",
+          "author_karma": 0,
+          "content": "Everyday we walk closer to a Nation discovering how to build their own custom skynet + militech to power it and MMW whoever does will be the new America",
+          "timestamp": "2026-08-03T22:59:52+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1jljfj",
+          "author": "reddit_user_44068b81e859",
+          "author_karma": 0,
+          "content": "“Shall we play a game?”\n\n- Wargames (movie,1983)",
+          "timestamp": "2026-08-03T23:03:39+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1jmo3p",
+              "author": "[deleted]",
+              "author_karma": 0,
+              "content": "[removed]",
+              "timestamp": "2026-08-03T23:09:34+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1jljfj",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1jmrwq",
+          "author": "reddit_user_c561b4a9890f",
+          "author_karma": 0,
+          "content": "100 million emp proof drones coming at you full speed.",
+          "timestamp": "2026-08-03T23:10:08+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1jw4lt",
+              "author": "reddit_user_d3b1f8be3cc8",
+              "author_karma": 0,
+              "content": "The only way to cause an EMP is nukes. If nukes go off, drone swarms will be the last of anyone’s concerns\n\nAlso, emp proof drones don’t exist and no nation on earth can launch 100 million drones in a single swarm ",
+              "timestamp": "2026-08-03T23:59:36+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1jmrwq",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1jwviq",
+                  "author": "reddit_user_c561b4a9890f",
+                  "author_karma": 0,
+                  "content": "**High-Power Microwave (HPM) Weapons**  \nUse intense bursts of microwave energy to damage or disrupt electronics.  \nCan target computers, radar systems, communications equipment, and drones.  \nUsually work over a **limited area** compared with a nuclear EMP.  \nSome military systems are designed specifically as **counter-drone weapons**",
+                  "timestamp": "2026-08-04T00:03:39+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1jw4lt",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1jxigo",
+                      "author": "[deleted]",
+                      "author_karma": 0,
+                      "content": "[removed]",
+                      "timestamp": "2026-08-04T00:07:09+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1jwviq",
+                      "depth": 3,
+                      "replies": []
+                    },
+                    {
+                      "comment_id": "p1kcwwh",
+                      "author": "reddit_user_f16f0c47ce48",
+                      "author_karma": 0,
+                      "content": "Leonidas is the name of the HPM system the US Military has. ",
+                      "timestamp": "2026-08-04T01:31:08+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1jwviq",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p1jn84p",
+          "author": "reddit_user_112e2f443b65",
+          "author_karma": 0,
+          "content": "I've seen a movie about this, I swear...",
+          "timestamp": "2026-08-03T23:12:31+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1jow1w",
+              "author": "reddit_user_af28eeb8d7c6",
+              "author_karma": 0,
+              "content": "And a couple of sequels ",
+              "timestamp": "2026-08-03T23:21:16+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1jn84p",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1khitb",
+                  "author": "reddit_user_8adcc59f1ad4",
+                  "author_karma": 0,
+                  "content": "Ok but who's the Neo?",
+                  "timestamp": "2026-08-04T01:56:37+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1jow1w",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1kmmb5",
+                      "author": "reddit_user_8656ef2ebb51",
+                      "author_karma": 0,
+                      "content": "                                    REESE\n    -- everything is gone. Just gone. There were survivors. Here. There.  Nobody knew who started it. (pause) It was the machines.\n    \n                                    SARAH\n                          I don't understand...\n    \n                                    REESE\n    Defense network computer. New. Powerful.  Hooked into everything. Trusted to run it all.  They say it got smart...a new order of intelligence.  Then it saw all people as a threat, not just the ones on the other side.  Decided out fate in a\n    \n\nTerminator would be the best fit in this context  \n",
+                      "timestamp": "2026-08-04T02:25:05+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1khitb",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p1jndz2",
+          "author": "reddit_user_a6beced9fa56",
+          "author_karma": 0,
+          "content": "Have they been using Iran to train it?",
+          "timestamp": "2026-08-03T23:13:22+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1kqma9",
+              "author": "reddit_user_58e69735ab15",
+              "author_karma": 0,
+              "content": "Yep.\n\n",
+              "timestamp": "2026-08-04T02:47:53+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1jndz2",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1jogmf",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-03T23:19:02+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1jqgmj",
+          "author": "reddit_user_53a7c0c6ecd6",
+          "author_karma": 0,
+          "content": "People need to understand that AI ≠ LLM, these could be the usual statistics and traditional machine learning techniques in a trenchcoat ",
+          "timestamp": "2026-08-03T23:29:27+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1juh45",
+          "author": "reddit_user_a65043c54b7d",
+          "author_karma": 0,
+          "content": "Congrats they're at the stage of trying to copy Palantir. \\*adds another to this of 1000 items copied and then posted on Chinese propaganda\\*\n\nFirst they put a nuclear missile on a campus, now they copying terminator. Come on yall cant be that stupid.",
+          "timestamp": "2026-08-03T23:50:36+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1juq94",
+          "author": "reddit_user_94e9be364792",
+          "author_karma": 0,
+          "content": "So...about that \"AI Pause\"...",
+          "timestamp": "2026-08-03T23:51:58+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1jx6fo",
+          "author": "reddit_user_b36a1315ffbe",
+          "author_karma": 0,
+          "content": "It's time to dismantoe every data centers everywhere or humanity is fucked.",
+          "timestamp": "2026-08-04T00:05:19+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1k53ti",
+              "author": "[deleted]",
+              "author_karma": 0,
+              "content": "[removed]",
+              "timestamp": "2026-08-04T00:48:13+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1jx6fo",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p1kzvjm",
+              "author": "reddit_user_f46be5ef9ce0",
+              "author_karma": 0,
+              "content": "Sarah Conner was right",
+              "timestamp": "2026-08-04T03:45:10+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1jx6fo",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1kf5yu",
+          "author": "reddit_user_7bf99c363cc7",
+          "author_karma": 0,
+          "content": "And if this works India better get its act together \n\nThe world knows after Taiwan, China is coming for India next ",
+          "timestamp": "2026-08-04T01:43:34+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1kg4ku",
+              "author": "reddit_user_449a38465a2d",
+              "author_karma": 0,
+              "content": "Sorta like Iraq, Venezuela, Iran...",
+              "timestamp": "2026-08-04T01:48:53+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1kf5yu",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p1kh9yv",
+              "author": "[deleted]",
+              "author_karma": 0,
+              "content": "[removed]",
+              "timestamp": "2026-08-04T01:55:15+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1kf5yu",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1kgpg1",
+          "author": "reddit_user_c356a5cd8b8a",
+          "author_karma": 0,
+          "content": "Every country capable of this has been planning it for awhile",
+          "timestamp": "2026-08-04T01:52:04+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1kib9l",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-04T02:01:00+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1kkmez",
+          "author": "reddit_user_fe40b0796ebe",
+          "author_karma": 0,
+          "content": "Well this fucking sux.  If their AI system is guided by LLMs, this is going to be a shit show ",
+          "timestamp": "2026-08-04T02:13:55+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1km0rs",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-04T02:21:45+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1kn8w0",
+          "author": "reddit_user_af875759438e",
+          "author_karma": 0,
+          "content": "Well hopefully theirs doesn't target children like the US and their mechahitler AI",
+          "timestamp": "2026-08-04T02:28:37+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1kneky",
+          "author": "reddit_user_1d63cde3ea61",
+          "author_karma": 0,
+          "content": "I thought that was the point of their drone shows.  I guess they had to dumb it down for their intended audience... I guess I should too, talking about Americans. ",
+          "timestamp": "2026-08-04T02:29:31+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1l33hm",
+              "author": "reddit_user_71aa5de1a07c",
+              "author_karma": 0,
+              "content": "All I saw them as were military parades.",
+              "timestamp": "2026-08-04T04:06:09+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1kneky",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1kxbd5",
+          "author": "reddit_user_b5cde4f77dc6",
+          "author_karma": 0,
+          "content": "This is how China could feasibly take down Taiwan. If China really invested I bet they could have a drone swarm so large it could overwhelm any army and China could probably build it in 3 years if they really diverted the factories and put in the manpower  ",
+          "timestamp": "2026-08-04T03:28:42+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1l2ig1",
+          "author": "reddit_user_43b628f2ddd1",
+          "author_karma": 0,
+          "content": "Sigh why are we trying to make Skynet a thing?",
+          "timestamp": "2026-08-04T04:02:16+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1l3eso",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-04T04:08:15+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1l40f9",
+          "author": "reddit_user_35b08a7fd25b",
+          "author_karma": 0,
+          "content": "Scary but id expect every major military to have similar plans. AI is going to change everything ",
+          "timestamp": "2026-08-04T04:12:14+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1l43p5",
+          "author": "reddit_user_84463d53d099",
+          "author_karma": 0,
+          "content": "Take the guess work out as AI \"never\" make mistake.  ",
+          "timestamp": "2026-08-04T04:12:50+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run027_post03_seed138",
+      "post_slot": 3,
+      "seed_index": 138,
+      "source_raw_post_id": "1veswlm",
+      "source_product_dir": "worldnews",
+      "source_file": "https://www.reddit.com/r/worldnews/comments/1veswlm/mexico_an_aisupervised_remote_exam_went_so_badly/",
+      "post_type": "link",
+      "title": "MEXICO: An AI-\"supervised\" remote exam went so badly that 58,000 students must retake it",
+      "author": "reddit_user_bde1e90b951b",
+      "author_karma": 0,
+      "content": "MEXICO: An AI-\"supervised\" remote exam went so badly that 58,000 students must retake it",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p1jqdll",
+          "author": "reddit_user_57ef584d1fa7",
+          "author_karma": 0,
+          "content": "They didn't test run the bloody thing beforehand?",
+          "timestamp": "2026-08-03T23:29:00+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1jr5o9",
+              "author": "reddit_user_e5ff1e797205",
+              "author_karma": 0,
+              "content": "Where do you get 58k students to test run it? 🤔",
+              "timestamp": "2026-08-03T23:33:05+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1jqdll",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1jrbio",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-03T23:33:56+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run027_post04_seed139",
+      "post_slot": 4,
+      "seed_index": 139,
+      "source_raw_post_id": "1vetcju",
+      "source_product_dir": "news",
+      "source_file": "https://www.reddit.com/r/news/comments/1vetcju/college_instructor_goes_viral_for_catching/",
+      "post_type": "link",
+      "title": "College instructor goes viral for catching students' AI use on midterm",
+      "author": "reddit_user_bde1e90b951b",
+      "author_karma": 0,
+      "content": "College instructor goes viral for catching students' AI use on midterm",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p1jorfl",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-03T23:20:37+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,595 @@
+{
+  "meta": {
+    "product_category": "camera",
+    "baseline": "real_reddit_reference",
+    "run_id": "run_023_sampled_reddit"
+  },
+  "posts": [
+    {
+      "post_id": "real_run023_post00_seed115",
+      "post_slot": 0,
+      "seed_index": 115,
+      "source_raw_post_id": "1vdlt30",
+      "source_product_dir": "Cameras",
+      "source_file": "https://www.reddit.com/r/Cameras/comments/1vdlt30/flash_of_my_nikon_coolpix_s9700_only_works_at/",
+      "post_type": "Other",
+      "title": "Flash of my Nikon coolpix s9700 only works at night it doesn’t give that digicam look during daytime",
+      "author": "reddit_user_4349d3bfee00",
+      "author_karma": 0,
+      "content": "Flash of my Nikon coolpix s9700 only works at night it doesn’t give that digicam look during daytime\n\nMy Nikon Coolpix S9700 only gives that classic digicam look with flash at night. During the day it just looks like a regular digital camera. Is that normal, or am I missing a setting?",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p1a02pp",
+          "author": "reddit_user_6116d1c1afe1",
+          "author_karma": 0,
+          "content": "That harsh flash look gets washed out by daylight, so the camera's just leaning on its sensor without the contrast pop",
+          "timestamp": "2026-08-02T16:14:51+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1a4oxs",
+          "author": "reddit_user_3b876949cbcd",
+          "author_karma": 0,
+          "content": "How far away are you trying to illuminate?",
+          "timestamp": "2026-08-02T16:35:55+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1a6eev",
+              "author": "reddit_user_947338e97d24",
+              "author_karma": 0,
+              "content": "Not even a meter😔",
+              "timestamp": "2026-08-02T16:43:44+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1a4oxs",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1a74i0",
+                  "author": "reddit_user_3b876949cbcd",
+                  "author_karma": 0,
+                  "content": "What exposure mode and ISO, can you check if it has Flash Exposure Compensation?",
+                  "timestamp": "2026-08-02T16:47:01+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1a6eev",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1agk4f",
+                      "author": "reddit_user_947338e97d24",
+                      "author_karma": 0,
+                      "content": "I keep iso on automatic and exposure mostly on 0 and now and then on -0,3. It doenst have that ",
+                      "timestamp": "2026-08-02T17:29:23+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1a74i0",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "p1agt2d",
+                          "author": "reddit_user_3b876949cbcd",
+                          "author_karma": 0,
+                          "content": "What ISO is it using on the bright days?",
+                          "timestamp": "2026-08-02T17:30:30+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "p1agk4f",
+                          "depth": 4,
+                          "replies": [
+                            {
+                              "comment_id": "p1bc1le",
+                              "author": "reddit_user_947338e97d24",
+                              "author_karma": 0,
+                              "content": "It doesn’t show",
+                              "timestamp": "2026-08-02T19:52:20+00:00",
+                              "likes": 1,
+                              "dislikes": 0,
+                              "parent_comment_id": "p1agt2d",
+                              "depth": 5,
+                              "replies": [
+                                {
+                                  "comment_id": "p1bd153",
+                                  "author": "reddit_user_3b876949cbcd",
+                                  "author_karma": 0,
+                                  "content": "In playback press the info button",
+                                  "timestamp": "2026-08-02T19:56:59+00:00",
+                                  "likes": 1,
+                                  "dislikes": 0,
+                                  "parent_comment_id": "p1bc1le",
+                                  "depth": 6,
+                                  "replies": []
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p1ahr3m",
+          "author": "reddit_user_ebd634349954",
+          "author_karma": 0,
+          "content": "Kinda don't need flash in the day there's enough light",
+          "timestamp": "2026-08-02T17:34:42+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1b05ih",
+              "author": "reddit_user_947338e97d24",
+              "author_karma": 0,
+              "content": "The light around the face turns then dark ",
+              "timestamp": "2026-08-02T18:57:17+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1ahr3m",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1b0k6j",
+                  "author": "reddit_user_ebd634349954",
+                  "author_karma": 0,
+                  "content": "Can do it in editing look up dodging in photoshop or gimp",
+                  "timestamp": "2026-08-02T18:59:08+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1b05ih",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p1bdc04",
+          "author": "reddit_user_f70de87a747a",
+          "author_karma": 0,
+          "content": "There should be an flash setting (on or off or auto) if you missed it, from pictures from the internet i can say that you should click up on the wheel and you will get the menu to turn it on (not auto-detect if the frame needs it)",
+          "timestamp": "2026-08-02T19:58:24+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run023_post01_seed116",
+      "post_slot": 1,
+      "seed_index": 116,
+      "source_raw_post_id": "1vdm6tb",
+      "source_product_dir": "analog",
+      "source_file": "https://www.reddit.com/r/analog/comments/1vdm6tb/canon_ae1_program_28mm_kodak_portra_400/",
+      "post_type": "reddit_post",
+      "title": "[CANON AE-1 Program, 28mm, Kodak Portra 400]",
+      "author": "reddit_user_4349d3bfee00",
+      "author_karma": 0,
+      "content": "[CANON AE-1 Program, 28mm, Kodak Portra 400]\n\nHey all -\n\nRecently shot these stills for The Wall Street Journal (alongside a doc piece about the American Cowboy) and would love some feedback.\n\nI found that some of them came out with more grain than expected and wanted to talk over dev/scan vs. exposure related to cleaning up those sections for the future. Included the originals scans at the end for reference.",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p1abit4",
+          "author": "reddit_user_5d34ac71f5e9",
+          "author_karma": 0,
+          "content": "The grain really comes from the scanner working overtime to try and get as much data out of the images as most are underexposed. That said, I think theres some really nice shots here, 3 and 4 especially. But yea, either your metre did you dirty or you just underestimated how little light there was.",
+          "timestamp": "2026-08-02T17:06:50+00:00",
+          "likes": 0,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1aljg7",
+              "author": "reddit_user_455987c17aac",
+              "author_karma": 0,
+              "content": "Great to know - feed it light! Thanks for the message ",
+              "timestamp": "2026-08-02T17:51:24+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1abit4",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p1c6yy0",
+              "author": "reddit_user_a4bd8e9358bf",
+              "author_karma": 0,
+              "content": "I don't think the meter is to fault here,the underexposed shots are always high contrast scenes, many into direct sunlight. It's rather a photographer skill issue.\n\nThe AE-1 is from the mid-70s. That's pretty early in terms electronic light meter technology. You have to understand how it works to get consistent results.\n\nThe center-weighted average meter will be confused by direct sunlight or bright spots of light. My approach would be to meter the sky (*not* into the sun) and the shadows, then I'd probably pick an exposure closer to the shadow value where I still have sufficient highlight details in the sky. (Requires an understanding of your film's latitude/zone system)\n\nIf that's too much effort or the situation requires faster shooting, I'd go with a more modern SLR from the 90s that does some form of matrix metering.",
+              "timestamp": "2026-08-02T22:22:27+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1abit4",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1al0ii",
+          "author": "reddit_user_f926fcea3ae7",
+          "author_karma": 0,
+          "content": "https://reddit.com/link/p1al0ii/video/5p7wu48x10hh1/player\n\n  \nOP’s negatives",
+          "timestamp": "2026-08-02T17:49:05+00:00",
+          "likes": 8,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1av8v6",
+              "author": "reddit_user_455987c17aac",
+              "author_karma": 0,
+              "content": "They were just begging for some more light!",
+              "timestamp": "2026-08-02T18:34:47+00:00",
+              "likes": 6,
+              "dislikes": 0,
+              "parent_comment_id": "p1al0ii",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1an16z",
+          "author": "reddit_user_8811025b2fe5",
+          "author_karma": 0,
+          "content": "I would aim to overexpose slightly on your shots then adjust it in post. Always use a light meter and cross reference what you know about a given reciprocity for how you intended to shoot that scene. For film, anyway, an underexposed shot will remove most of the details because film is cellulose and physically relies on the available light in a given scene to see what’s really there; whereas a modern DSLR has a mirror and a reflex to enable light to be seen by a micro computer sensor/processor even if the shadows block some of the details. Mirrorless cameras being the most current tech, they rely on sending light directly through the lens into the sensor with no physical mirror or prism; And even then, these digital cameras produce “noise”, something which to a small degree mimics the concept of grain, but in a digital artefact. Because film is physical, drawing out details where light is scarce is rarely going to produce anything finite like digital can today, so even in post you may find it difficult to save underexposed images, hence the exposure comp as a rule. \n\nOf course you probably know all of this if you’re a professional shooting on assignment for WSJ, but, that’s the way I would put it. ",
+          "timestamp": "2026-08-02T17:58:00+00:00",
+          "likes": 5,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1av71f",
+              "author": "reddit_user_455987c17aac",
+              "author_karma": 0,
+              "content": "Great insight - thanks for this.   \n  \nI am loving the process of learning how analog responds to different scenarios, types of light and exposure. It really is an incredible adventure so far. Coming from a digital background I have jumped into film and the physicality of a film stock and how it relates to over/underexposure refreshing.\n\nThanks for the detailed response :)",
+              "timestamp": "2026-08-02T18:34:34+00:00",
+              "likes": 2,
+              "dislikes": 0,
+              "parent_comment_id": "p1an16z",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1atkke",
+          "author": "reddit_user_ee11e68f1766",
+          "author_karma": 0,
+          "content": "More light! Could always set the camera ISO a stop lower to push it when metering. \n\nPs - frame #3 muy bien ",
+          "timestamp": "2026-08-02T18:27:17+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1avds2",
+              "author": "reddit_user_455987c17aac",
+              "author_karma": 0,
+              "content": "Gracias brother, past few rolls I have rated at 200 for a 400 and interested to play with this in the future. ",
+              "timestamp": "2026-08-02T18:35:24+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1atkke",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1bjd1l",
+                  "author": "reddit_user_dffc177d57e8",
+                  "author_karma": 0,
+                  "content": "I rreeeeallly really like the lighting. It looks very cinematic. I think ima try and shoot a roll at 200 now ",
+                  "timestamp": "2026-08-02T20:26:37+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1avds2",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p1awcdt",
+          "author": "reddit_user_5c5fea53cfd3",
+          "author_karma": 0,
+          "content": "Maybe a hot take but I love the look of these. The deep shadows falling off is very chiaroscuro. Now if the client didn’t like them, that’s another story. ",
+          "timestamp": "2026-08-02T18:39:48+00:00",
+          "likes": 21,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1awu08",
+              "author": "reddit_user_455987c17aac",
+              "author_karma": 0,
+              "content": "Definitely enjoyed leaning into the dense blacks. Client was happy but for my own edification wanted to dive deeper into a rich community of analog shooters :)",
+              "timestamp": "2026-08-02T18:42:04+00:00",
+              "likes": 5,
+              "dislikes": 0,
+              "parent_comment_id": "p1awcdt",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1awxsn",
+                  "author": "reddit_user_5c5fea53cfd3",
+                  "author_karma": 0,
+                  "content": "Totally get that, me too. ",
+                  "timestamp": "2026-08-02T18:42:34+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1awu08",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p1azzfu",
+          "author": "reddit_user_2ffad98ea44c",
+          "author_karma": 0,
+          "content": "I actually love your exposures here. If you’d have metered ‘correctly’, all the soul would be gone. I enjoy these!",
+          "timestamp": "2026-08-02T18:56:30+00:00",
+          "likes": 8,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1b6ood",
+          "author": "reddit_user_073b768f0ad0",
+          "author_karma": 0,
+          "content": "I prefer the first options with the darker shadows ",
+          "timestamp": "2026-08-02T19:27:23+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1b8fgc",
+          "author": "reddit_user_000b4382bc17",
+          "author_karma": 0,
+          "content": "Where did you get these scanned? And what scanner was used? I, too, tend to like the underexposed nature of images in general but everything seem to fall short when I go to scan myself with a DSLR. Lots of grain, but sometimes it works in your favor - ie your amazing images! ",
+          "timestamp": "2026-08-02T19:35:31+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1bwwid",
+          "author": "reddit_user_a906fbf9593f",
+          "author_karma": 0,
+          "content": "I just the saw the documentary of the same in cinematographer group. Your team did a phenomenal job. ",
+          "timestamp": "2026-08-02T21:31:40+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1c4wx7",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-02T22:11:51+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1c6ew0",
+          "author": "reddit_user_f1e95a49f62b",
+          "author_karma": 0,
+          "content": "Really great stuff here tbh ",
+          "timestamp": "2026-08-02T22:19:36+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1cu2b6",
+          "author": "reddit_user_6216436ef443",
+          "author_karma": 0,
+          "content": "Absolutely stunning to me",
+          "timestamp": "2026-08-03T00:26:54+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1cubq5",
+          "author": "reddit_user_0c844bef8f7f",
+          "author_karma": 0,
+          "content": "I love the underexposed ones with the deep shadows",
+          "timestamp": "2026-08-03T00:28:21+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1d9ikc",
+          "author": "reddit_user_65fe528dce58",
+          "author_karma": 0,
+          "content": "Really nice work ",
+          "timestamp": "2026-08-03T01:55:19+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1dfor9",
+          "author": "reddit_user_dddf5c182c6a",
+          "author_karma": 0,
+          "content": "I love seeing pros do their thing. These are incredible pictures!",
+          "timestamp": "2026-08-03T02:32:12+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run023_post02_seed117",
+      "post_slot": 2,
+      "seed_index": 117,
+      "source_raw_post_id": "1vdmigy",
+      "source_product_dir": "analog",
+      "source_file": "https://www.reddit.com/r/analog/comments/1vdmigy/some_late_night_passes_nikon_fe_nikkor_3570mm_f35/",
+      "post_type": "image",
+      "title": "Some late night passes [Nikon FE, Nikkor 35-70mm F/3.5, Portra 800]",
+      "author": "reddit_user_4349d3bfee00",
+      "author_karma": 0,
+      "content": "Some late night passes [Nikon FE, Nikkor 35-70mm F/3.5, Portra 800]",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p1dc3vq",
+          "author": "reddit_user_6514638989fb",
+          "author_karma": 0,
+          "content": "Nice shot, the FE is such a beast of a camera",
+          "timestamp": "2026-08-03T02:10:50+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run023_post03_seed118",
+      "post_slot": 3,
+      "seed_index": 118,
+      "source_raw_post_id": "1vdoioo",
+      "source_product_dir": "Cameras",
+      "source_file": "https://www.reddit.com/r/Cameras/comments/1vdoioo/drowned_old_cam_while_hiking_up_a_river_need/",
+      "post_type": "Recommendations",
+      "title": "Drowned old cam while hiking up a river, need recommendations for new one!",
+      "author": "reddit_user_4349d3bfee00",
+      "author_karma": 0,
+      "content": "Drowned old cam while hiking up a river, need recommendations for new one!\n\n**Budget**: $300-$400  \n**Country**: USA  \n**Condition**: Either  \n**Type of Camera**: point and shoot, but i am open to others  \n**Intended use**: Photography, video, or hybrid shooting?  \n**If photography; what style**: will be using majority for pictures of people and landscapes/wildlife, both portraits and landscapes  \n**What features do you absolutely need**: built-in flash, large sensor (preferably 1-inch), around 24–100mm equivalent f/1.8–2.8 lens, RAW support\n\n**What features would be nice to have**:  \nweather sealing/waterproof, similar colorscience or same to canon, around 50–85mm optical zoom, articulating screen\n\n**Portability**: pocketable  \n**Cameras you're considering**:   \ncanon sx740 hs  \ncanon g7x   \ncanon g9x  \nsony zv-1    \nsony zv-1f\n\n(lots of these are pricy and when i do find them they are being jacked up by resellers. i would like to find a cheaper alternative bc your girl is ballin on a college budget)  \n**Cameras you already have**:   \nI had a nikon not sure what model, wished picture quality was better, takes pretty dark landscapes and lighting is not usually captured well. \n\n**Notes**: not much!! I am just broke and recently lost a camera of mine and want to upgrade while not dropping too much money 😊",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p1aytoq",
+          "author": "reddit_user_b822418f3199",
+          "author_karma": 0,
+          "content": "The Canon sx740hs doesn’t have the larger sensor you are looking for and the sony zv1f has a fixed lens that wont zoom at all along with no built in flash. The g7x is really difficult to find now due to social media hype, so the sony zv1 is probably your best option here, though it lacks a built in flash. None of the options you’re looking for are waterproof though or weather sealed. \n\nIf you want a pocketable waterproof camera with a built in flash, i would look at the olympus tough tg line, the tg7 seems to fit most of the criteria.",
+          "timestamp": "2026-08-02T18:51:12+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1bg83j",
+          "author": "reddit_user_7457ce8c13da",
+          "author_karma": 0,
+          "content": "OM TG-7 new, or TG-6 used. Can withstand any dunking it might get.",
+          "timestamp": "2026-08-02T20:11:58+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run023_post04_seed119",
+      "post_slot": 4,
+      "seed_index": 119,
+      "source_raw_post_id": "1vdok1z",
+      "source_product_dir": "analog",
+      "source_file": "https://www.reddit.com/r/analog/comments/1vdok1z/from_the_countryside_fujica_st801_50mm_14/",
+      "post_type": "image",
+      "title": "From the countryside [Fujica ST801, 50mm 1.4, Ektachrome E100]",
+      "author": "reddit_user_4349d3bfee00",
+      "author_karma": 0,
+      "content": "From the countryside [Fujica ST801, 50mm 1.4, Ektachrome E100]",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p1as8hs",
+          "author": "reddit_user_a9c387d82d07",
+          "author_karma": 0,
+          "content": "E100 was a brave choice for this, that blown-out sky against the dark foliage is right at the edge of what slide film's latitude can hold. The greens held their separation instead of clumping into one mass, which is where E100 earns its keep over Velvia here. Did you meter for the shadows and just let the sky go, or split the difference?",
+          "timestamp": "2026-08-02T18:21:17+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1blq0m",
+              "author": "reddit_user_aa76550ddfc4",
+              "author_karma": 0,
+              "content": "In retrospect negative film would have probably been a better choice for this image but then, it wasn’t really a choice but rather what was still loaded in the camera. In terms of metering, it’s certainly not my proudest shot. I can’t remember what exactly I did, but it looks like I metered for the foreground. Maybe half a stop to one stop less would’ve turned out a little more natural looking.",
+              "timestamp": "2026-08-02T20:37:44+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1as8hs",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

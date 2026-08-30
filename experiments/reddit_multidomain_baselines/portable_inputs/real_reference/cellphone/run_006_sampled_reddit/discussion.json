@@ -1,0 +1,1668 @@
+{
+  "meta": {
+    "product_category": "cellphone",
+    "baseline": "real_reddit_reference",
+    "run_id": "run_006_sampled_reddit"
+  },
+  "posts": [
+    {
+      "post_id": "real_run006_post00_seed030",
+      "post_slot": 0,
+      "seed_index": 30,
+      "source_raw_post_id": "1vcc0u9",
+      "source_product_dir": "Android",
+      "source_file": "https://www.reddit.com/r/Android/comments/1vcc0u9/i_built_a_localized_hdr_qr_renderer_only_the_qr/",
+      "post_type": "hosted:video",
+      "title": "I built a localized HDR QR renderer: only the QR gets maximum brightness, not the whole screen",
+      "author": "reddit_user_0fe413d0e398",
+      "author_karma": 0,
+      "content": "I built a localized HDR QR renderer: only the QR gets maximum brightness, not the whole screen\n\n[removed]",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p10686o",
+          "author": "reddit_user_65884126434e",
+          "author_karma": 0,
+          "content": "Sorry [REDDIT_USER], but your submission was removed as you included a post body within your submission. The body text is often used to insert bias/opinion which violates Rule 6 in direct link submissions. Feel free to repost without the post body.\n\n\n*I am a bot, and this action was performed automatically. Please [contact the moderators of this subreddit](/message/compose/?to=/r/Android) if you have any questions or concerns.*",
+          "timestamp": "2026-08-01T03:25:54+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run006_post01_seed031",
+      "post_slot": 1,
+      "seed_index": 31,
+      "source_raw_post_id": "1vceji7",
+      "source_product_dir": "GooglePixel",
+      "source_file": "https://www.reddit.com/r/GooglePixel/comments/1vceji7/customize_pin_screen/",
+      "post_type": "reddit_post",
+      "title": "Customize Pin Screen?",
+      "author": "reddit_user_0fe413d0e398",
+      "author_karma": 0,
+      "content": "Customize Pin Screen?\n\nJust got a Pixel 10 and overall really like it but I have one question I cannot seem to find an answer to. \n\nWhen I enter my pin to unlock my phone it's just a plain black screen with the number keypad on it. Having had Samsungs for the past 2-3 phones I'm used to it blurring my lock screen pic when I enter my pin. It added a little extra character to it as opposed to just a black screen with numbers. Is there an option for this that I'm just not seeing? I've been pouring over Display and Lock Screen options and can't find anything. \n\nNot a deal breaker but still it's one of those little things I've grown accustomed to",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p10oluw",
+          "author": "reddit_user_6c45f48013e3",
+          "author_karma": 0,
+          "content": "make sure Reduce Blur Effects in accessibility settings is off",
+          "timestamp": "2026-08-01T05:35:08+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p10omqw",
+              "author": "reddit_user_6c45f48013e3",
+              "author_karma": 0,
+              "content": "and battery saver off",
+              "timestamp": "2026-08-01T05:35:19+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p10oluw",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p10qdxg",
+              "author": "reddit_user_4af957605312",
+              "author_karma": 0,
+              "content": "I'm not seeing any option in Accessibility about Blur Effects ",
+              "timestamp": "2026-08-01T05:48:47+00:00",
+              "likes": 2,
+              "dislikes": 0,
+              "parent_comment_id": "p10oluw",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p11b77j",
+                  "author": "reddit_user_6c45f48013e3",
+                  "author_karma": 0,
+                  "content": "i'm glad you fixed it!!",
+                  "timestamp": "2026-08-01T08:40:39+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p10qdxg",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p12hb0l",
+                      "author": "reddit_user_4af957605312",
+                      "author_karma": 0,
+                      "content": "My guess is it was still installing/updating post activation cause way more settings are available after restarting lol",
+                      "timestamp": "2026-08-01T13:40:55+00:00",
+                      "likes": 2,
+                      "dislikes": 0,
+                      "parent_comment_id": "p11b77j",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "post_id": "real_run006_post02_seed032",
+      "post_slot": 2,
+      "seed_index": 32,
+      "source_raw_post_id": "1vcgqfn",
+      "source_product_dir": "Android",
+      "source_file": "https://www.reddit.com/r/Android/comments/1vcgqfn/samsung_galaxy_z_fold8_ultra_review/",
+      "post_type": "Review",
+      "title": "Samsung Galaxy Z Fold8 Ultra review",
+      "author": "reddit_user_0fe413d0e398",
+      "author_karma": 0,
+      "content": "Samsung Galaxy Z Fold8 Ultra review",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p11384n",
+          "author": "reddit_user_54c60c899a63",
+          "author_karma": 0,
+          "content": "TLDR:      \nPros\n\n* Competitively thin, lightweight and durable design.\n* Improved inner display - anti-reflective coating, smaller crease, higher resolution.\n* Excellent main camera performance.\n* Finally competitive fast charging solution.\n* Notably improved battery life\n* Feature-rich software with great multitasking functionality with Galaxy AI at its core.\n* Launches with Android 17/OneUI 9, entitled to 7 major OS upgrades.\n* Extensive video recording features, DeX and USB video output.\n\n# Cons\n\n* Battery life is still behind the curve.\n* The loudspeakers sound worse than before\n* The telephoto camera leaves more to be desired.\n\n",
+          "timestamp": "2026-08-01T07:32:31+00:00",
+          "likes": 33,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1147xn",
+              "author": "reddit_user_77bdda0481a6",
+              "author_karma": 0,
+              "content": "This phone is really tempting",
+              "timestamp": "2026-08-01T07:41:00+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p11384n",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p127oq4",
+              "author": "reddit_user_668ee75415d6",
+              "author_karma": 0,
+              "content": "Isn't battery life tested on folds using the inner screen? I imagine there would be quite a difference depending on which screen you use.",
+              "timestamp": "2026-08-01T12:46:34+00:00",
+              "likes": 8,
+              "dislikes": 0,
+              "parent_comment_id": "p11384n",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p12jgma",
+                  "author": "reddit_user_b7aab9bd3c72",
+                  "author_karma": 0,
+                  "content": "I don't know if this is tested consistently, but I feel like they need to test both. I use my Razr folder most of the time and I get outstanding battery life. But according to most testing it is just ok.",
+                  "timestamp": "2026-08-01T13:52:25+00:00",
+                  "likes": 11,
+                  "dislikes": 0,
+                  "parent_comment_id": "p127oq4",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p12q57i",
+                      "author": "reddit_user_495818dfe345",
+                      "author_karma": 0,
+                      "content": "Exactly. A lot of it depends on how you optimize your phone as well (what you have syncing, app load out, brightness, Bluetooth, etc.). ",
+                      "timestamp": "2026-08-01T14:26:57+00:00",
+                      "likes": 3,
+                      "dislikes": 0,
+                      "parent_comment_id": "p12jgma",
+                      "depth": 3,
+                      "replies": []
+                    },
+                    {
+                      "comment_id": "p130ov7",
+                      "author": "reddit_user_668ee75415d6",
+                      "author_karma": 0,
+                      "content": "Just comparing the s26 ultra to the fold 8 ultra, the s26 ultra seems to get approximately 2x the battery life according phone arena. Worse in browsing, better in gaming, which to me implies they were using the 8 inch screen on the fold.",
+                      "timestamp": "2026-08-01T15:19:17+00:00",
+                      "likes": 4,
+                      "dislikes": 0,
+                      "parent_comment_id": "p12jgma",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "p13ba7s",
+                          "author": "reddit_user_b7aab9bd3c72",
+                          "author_karma": 0,
+                          "content": "Yeah that's silly to rate it that way, especially on the folds. They should at least do 50% with the outer screen, or do two ratings.",
+                          "timestamp": "2026-08-01T16:10:11+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "p130ov7",
+                          "depth": 4,
+                          "replies": []
+                        },
+                        {
+                          "comment_id": "p13nnco",
+                          "author": "reddit_user_b18b98c27ef9",
+                          "author_karma": 0,
+                          "content": "You still believe Phonearena's battery life tests? Lol. I remember their battery life tests being complete bs. Also, haven't  thought of Phonarena in a very long time.",
+                          "timestamp": "2026-08-01T17:09:26+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "p130ov7",
+                          "depth": 4,
+                          "replies": [
+                            {
+                              "comment_id": "p142m2f",
+                              "author": "reddit_user_668ee75415d6",
+                              "author_karma": 0,
+                              "content": "Honestly I don't believe anyone's battery life tests. They're all just random bullshit that whoever is testing feels like adding in.\n\nPoint is, most sites have the folds at half the battery life as the regular ultra and I just don't buy it. They have the same internals, so they should get similar battery life if you don't use the 8\" screen.",
+                              "timestamp": "2026-08-01T18:20:48+00:00",
+                              "likes": 1,
+                              "dislikes": 0,
+                              "parent_comment_id": "p13nnco",
+                              "depth": 5,
+                              "replies": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "comment_id": "p13l8u7",
+                  "author": "reddit_user_4cf953848e81",
+                  "author_karma": 0,
+                  "content": "In their test charts they have unfolded and folded both tested.",
+                  "timestamp": "2026-08-01T16:57:56+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p127oq4",
+                  "depth": 2,
+                  "replies": []
+                },
+                {
+                  "comment_id": "p13yt41",
+                  "author": "reddit_user_70e93a1cb2e9",
+                  "author_karma": 0,
+                  "content": "Why don't you actually read the review?",
+                  "timestamp": "2026-08-01T18:02:28+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p127oq4",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1408k6",
+                      "author": "reddit_user_668ee75415d6",
+                      "author_karma": 0,
+                      "content": "If you had read the article yourself you would know that there is no mention of battery life, much less a comparison to other phones or a companion of front vs folding screen. It's just a fluff article.\n\nIf you're going to be an asshole you should at least make sure you're correct first.",
+                      "timestamp": "2026-08-01T18:09:22+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p13yt41",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "p14vdwm",
+                          "author": "reddit_user_217c1753eb5d",
+                          "author_karma": 0,
+                          "content": "Page 4?  I am not sure what link you mean. It’s all there. Graphs and all. ",
+                          "timestamp": "2026-08-01T20:42:12+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "p1408k6",
+                          "depth": 4,
+                          "replies": []
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "comment_id": "p14uvep",
+                  "author": "reddit_user_217c1753eb5d",
+                  "author_karma": 0,
+                  "content": "If you read the review. They do both ",
+                  "timestamp": "2026-08-01T20:39:37+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p127oq4",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            },
+            {
+              "comment_id": "p138ce8",
+              "author": "reddit_user_5fc90c15d3eb",
+              "author_karma": 0,
+              "content": "Oh god, how can the loud speaker be worse than the fold7. I seriously don't get why they make it so thin that the USB-C port protrudes. Seriously its not like ill be using it opened with one hand? Can't they make it slightly more thicker so that its aligned perfect with the USB-C port? \n\nEven aligned with the goddam camera lens so its protrusion wouldn't be so bad would be good... far out.",
+              "timestamp": "2026-08-01T15:56:08+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p11384n",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p119r3f",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-01T08:28:03+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p11q12r",
+          "author": "reddit_user_7c76a6e24a74",
+          "author_karma": 0,
+          "content": "I think the Fold 8 Wide is getting most of the hype this generation, and honestly, I get why. The inner display's aspect ratio is fantastic and probably the closest we've seen to making a foldable feel like a proper tablet.\n\nThat said, I still think the Wide form factor needs another couple of generations before it really clicks for me. Right now, the Fold 8 Ultra just makes more sense in day to day use. Folded, it feels like a normal phone with the tall aspect ratio we're all used to, and a lot of apps are still better optimized for that shape. Then, whenever you actually need the extra screen, you just unfold it.\n\nI also think the Ultra is much easier to use one-handed. The Wide is... well, too wide for me. The keyboard takes up almost the entire display, and switching to one-handed keyboard mode feels more like a workaround than a solution.\n\nReally looking forward to my Fold 8 Ultra arriving. Maybe in a few years the Wide design will mature enough that it'll be the obvious choice, but for now I still think the Ultra strikes the better balance.",
+          "timestamp": "2026-08-01T10:46:45+00:00",
+          "likes": 15,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p122ire",
+              "author": "reddit_user_99c2b593c289",
+              "author_karma": 0,
+              "content": "Agreed I think the ultra makes more sense. I think the 8 wide is just getting more hype because it's new. \n\nAlthough I personally think the razr fold is an even better choice than the ultra. \n\nOne other thing, I know there's a lot of comments about the anti reflective coating  which is definitely a nice feature... But this is likely just the screen protector right?",
+              "timestamp": "2026-08-01T12:14:42+00:00",
+              "likes": 0,
+              "dislikes": 0,
+              "parent_comment_id": "p11q12r",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p13276y",
+                  "author": "reddit_user_3e74e0c4e57f",
+                  "author_karma": 0,
+                  "content": "yeah, it's the same screen protector with anti reflective stuff they used on the trifold, it is genuinely good, but not new.",
+                  "timestamp": "2026-08-01T15:26:39+00:00",
+                  "likes": 2,
+                  "dislikes": 0,
+                  "parent_comment_id": "p122ire",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            },
+            {
+              "comment_id": "p123jko",
+              "author": "reddit_user_b5344a9d41c8",
+              "author_karma": 0,
+              "content": "I'd disagree almost on all fronts. I've had majority of all the Samsung folds and I had the og pixel. The og pixel, even with its heft and clunkyness, was a much better experience for me than the really tall fold series. It is definitely more manageable in one hand than the fold series and mostly all the early reviews say the same thing about the wide. I just hate that it doesn't have a dedicated telephoto cam. ",
+              "timestamp": "2026-08-01T12:21:09+00:00",
+              "likes": 0,
+              "dislikes": 0,
+              "parent_comment_id": "p11q12r",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p12fay1",
+              "author": "reddit_user_f4fa67f3dbb3",
+              "author_karma": 0,
+              "content": "MKBHD just did a video on the pros and cons of it and you're right. It's still a bit awkward on the table. Also you can't quite have it open in the L shape if you like doing that with your fold. And the fact that this and the fold 8 ultra don't have Qi2 suck. Especially with the wide, even if you get a case, if you have a L platform charger, it would be too small. ",
+              "timestamp": "2026-08-01T13:30:02+00:00",
+              "likes": 5,
+              "dislikes": 0,
+              "parent_comment_id": "p11q12r",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p13xdlb",
+              "author": "reddit_user_275d7a446f19",
+              "author_karma": 0,
+              "content": "Apps work WAY better on the Fold 8 wide cover screen. You clearly haven't tested that form factor before. \n\nYou'd be shocked how much better a short and wide cover display is, that's the main selling point of the Fold 8 wide, not the inner display lol. ",
+              "timestamp": "2026-08-01T17:55:39+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p11q12r",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p144k54",
+                  "author": "reddit_user_7c76a6e24a74",
+                  "author_karma": 0,
+                  "content": "Well, at least when I tried it in the store, one-handed typing on the Wide was basically impossible for me, and the one-handed keyboard mode was really bad. The narrower cover screen on the 8 Ultra just makes a lot more sense if you type one-handed a lot, like I do. As for app compatibility, MKBHD's review even shows an example of an app that's simply not usable because of the Wide's screen aspect ratio",
+                  "timestamp": "2026-08-01T18:30:09+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p13xdlb",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p134way",
+          "author": "reddit_user_09cb280715ba",
+          "author_karma": 0,
+          "content": "I fail to see what’s so ultra about it. ",
+          "timestamp": "2026-08-01T15:39:40+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p13dem1",
+              "author": "reddit_user_6039ffa534a3",
+              "author_karma": 0,
+              "content": "It's ultra expensive",
+              "timestamp": "2026-08-01T16:20:20+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p134way",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p13e0ov",
+                  "author": "[deleted]",
+                  "author_karma": 0,
+                  "content": "[removed]",
+                  "timestamp": "2026-08-01T16:23:17+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p13dem1",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            },
+            {
+              "comment_id": "p13skwn",
+              "author": "reddit_user_31de7291cdaf",
+              "author_karma": 0,
+              "content": "well you see, they gave the ultrawide camera a 50mp sensor up from 10mp from fold7 and new colors, so its... _ultra_\n\n^(i know theres inner screen and hinge stuff thats been improved too but cmon the shell hasnt changed since last year)",
+              "timestamp": "2026-08-01T17:32:52+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p134way",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p136sjp",
+          "author": "reddit_user_3010f29ac2fb",
+          "author_karma": 0,
+          "content": "Is this showing the wider Zfold 8 getting way better battery life while folded?? 17+ hours? Compared to 12+ for the Ultra? Or am I reading this wrong. Right now battery life is the most important to me and I have been going back and forth on which one I want more.",
+          "timestamp": "2026-08-01T15:48:43+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p13i04e",
+          "author": "reddit_user_38cd549f48e8",
+          "author_karma": 0,
+          "content": "Do the fold still break in half after the first month?  I'm asking cuz mine did for work.  Then they didn't get me a fold again.",
+          "timestamp": "2026-08-01T16:42:26+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p13vsb2",
+              "author": "reddit_user_e6bc0a97d786",
+              "author_karma": 0,
+              "content": "Well, if you were given one for work, then presumably several of your colleagues were too. How are theirs holding up?",
+              "timestamp": "2026-08-01T17:48:04+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p13i04e",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p15qcpi",
+              "author": "reddit_user_bc46ced02abd",
+              "author_karma": 0,
+              "content": "You think they would be on their eight iteration of this device if they regularly broke in half after a month? People wouldn’t even put up with that years into the device.",
+              "timestamp": "2026-08-01T23:28:06+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p13i04e",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p18n2sq",
+                  "author": "reddit_user_f89be662ac27",
+                  "author_karma": 0,
+                  "content": "its bait",
+                  "timestamp": "2026-08-02T11:58:17+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p15qcpi",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            },
+            {
+              "comment_id": "p1b9w85",
+              "author": "reddit_user_3151dca0997b",
+              "author_karma": 0,
+              "content": "WILL SMITH DID WHAT?!",
+              "timestamp": "2026-08-02T19:42:18+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p13i04e",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p13nx13",
+          "author": "reddit_user_38103a0c0883",
+          "author_karma": 0,
+          "content": "Obviously it’s a sweet device, but the price is hard to swallow. Samsung even offered me $850 trade in on S24U and the remains balance would be higher than any phone I’ve ever bought.  Still I an on the fence, or maybe the Fold 8 fat version. The price difference isn’t that much, so Ultra probably better choice of two new Folds.  The creasei s better, but still not quite there imho.  But I guess you got to pay to play…",
+          "timestamp": "2026-08-01T17:10:43+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p140y7y",
+              "author": "reddit_user_33bdbae967bc",
+              "author_karma": 0,
+              "content": "I took the $850 for the 24Ultra. Used the PayPal code for $100 off on Samsung Website. Picking up the 8 Wide on release date at my local Best Buy. I will miss the Zoom camera and the in-display fingerprint scanner. ",
+              "timestamp": "2026-08-01T18:12:46+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p13nx13",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p14sxpf",
+                  "author": "reddit_user_4aa999820fba",
+                  "author_karma": 0,
+                  "content": "I'm never getting rid of my Bluetooth pen. Getting a fold and giving my 24 a nice nap for a year or so",
+                  "timestamp": "2026-08-01T20:29:54+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p140y7y",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p14v1sh",
+                      "author": "reddit_user_33bdbae967bc",
+                      "author_karma": 0,
+                      "content": "I have an 11” iPad Pro with Pencil just in case.  I also have an iPhone 17 Pro Max so I still will have a quality camera on me at all times. Upgrading my Pixel 8 Pro to Fold 8 Wide. Cannot be more excited. But yes a couple downgrades. Also upgrading an S24Ultra to Fold 8 Ultra. ",
+                      "timestamp": "2026-08-01T20:40:30+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p14sxpf",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p1558ie",
+          "author": "reddit_user_8712cf8a50de",
+          "author_karma": 0,
+          "content": "I mean, for its capacity compared to its competition its just about right now? 4800mah compared to 6000mah is going to net a 20% battery life difference, and it does.",
+          "timestamp": "2026-08-01T21:32:33+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p15xy8m",
+          "author": "reddit_user_d336291e3113",
+          "author_karma": 0,
+          "content": "Finally ordered mine today. Played with both 8 and 8U in the store…zero chance I’d ever use the 8, but the ultra was dope.",
+          "timestamp": "2026-08-02T00:11:44+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run006_post03_seed033",
+      "post_slot": 3,
+      "seed_index": 33,
+      "source_raw_post_id": "1vcjg5k",
+      "source_product_dir": "GooglePixel",
+      "source_file": "https://www.reddit.com/r/GooglePixel/comments/1vcjg5k/is_pixel_10_pro_really_that_bad_for_everyday_use/",
+      "post_type": "reddit_post",
+      "title": "Is Pixel 10 Pro really that bad for everyday use?",
+      "author": "reddit_user_0fe413d0e398",
+      "author_karma": 0,
+      "content": "Is Pixel 10 Pro really that bad for everyday use?\n\nHi! \n\nI am considering to buy the Pixel 10 Pro. I have already seen the phone and had it in my hands at one of the shops, which had it on display. I was convinced to buy it until I opened this subreddit a week ago. Since then I have seen numerous posts saying that buying this phone would be a big mistake. Is the phone really that bad?\n\nTo clarify my needs. I am interested in Pixel primarily because of its camera. I have currently an older Sony Xperia phone, which works fine for me, but its camera is too old and doesn't make nice photos by nowadays standards. I use my phone mainly for browsing Internet, texting, watching videos and taking photos and videos of course, but mostly photos. I do not play games on my mobile. I want my phone to be pocket size, which pixel fits nicely and to last at least one day on single charge. \n\nAre you happy with your Pixel 10 Pro or would you rather recommend me some other phone as alternative? Since my entire Eco-system is android based, I do want to transfer to IPhone and IoS.\n\nThanks",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p11lxf9",
+          "author": "reddit_user_685bf1ab4143",
+          "author_karma": 0,
+          "content": "Phone should be fine for your usage. I'd only not recommend it if you play high-end games and need a processor that handles that well, which the Pixel will not.\n\nAlso, I don't think it's video recording capabilities are very good either.",
+          "timestamp": "2026-08-01T10:13:10+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p11m0qt",
+          "author": "reddit_user_dbaf5b5cfb30",
+          "author_karma": 0,
+          "content": " Pixel10proを使ってるけど、全く困る事はないよ!!バッテリー待ちもいいし（前の機種はiphone15promax）だったけど、自分の使い方だと体感はiphonwの時と同等な患者だし、カメラもいい!!",
+          "timestamp": "2026-08-01T10:13:56+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p11m2zx",
+          "author": "reddit_user_284bd51ed396",
+          "author_karma": 0,
+          "content": "what could disappoint u are battery life, video recording and heat management ",
+          "timestamp": "2026-08-01T10:14:28+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p11mqbi",
+              "author": "[deleted]",
+              "author_karma": 0,
+              "content": "[deleted]",
+              "timestamp": "2026-08-01T10:19:55+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p11m2zx",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p11njrc",
+              "author": "reddit_user_4acc471403ca",
+              "author_karma": 0,
+              "content": "The Pixel 10 Pro doesn't overheat. Video recording is a bit better most of the time on Iphone and Samsung but its not a disappointment at all. If u turn off some features unnecessary features the battery life will be good.",
+              "timestamp": "2026-08-01T10:26:43+00:00",
+              "likes": 0,
+              "dislikes": 0,
+              "parent_comment_id": "p11m2zx",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p11nvad",
+                  "author": "reddit_user_284bd51ed396",
+                  "author_karma": 0,
+                  "content": "are you just going to completely ignore all the results that come out when u search \"pixel 10 pro overheating\"?",
+                  "timestamp": "2026-08-01T10:29:23+00:00",
+                  "likes": -2,
+                  "dislikes": 0,
+                  "parent_comment_id": "p11njrc",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p11p9b3",
+                      "author": "reddit_user_4acc471403ca",
+                      "author_karma": 0,
+                      "content": "People dont know what overheating means. It does heat up but not overheat. Overheating is when the phone gets too hot and drops calls, becomes sluggish to use, some apps might crash etc. i have recorded 4k video for 30 min while charging it wirelessly and it didnt overheat, which is crazy. In games like PUBG it does get hot but performance stays the same. Thats not overheating.",
+                      "timestamp": "2026-08-01T10:40:38+00:00",
+                      "likes": 4,
+                      "dislikes": 0,
+                      "parent_comment_id": "p11nvad",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "p11q1hc",
+                          "author": "reddit_user_16b2ca5eecec",
+                          "author_karma": 0,
+                          "content": "I fell asleep watching a video with my pixel 10 charging in a 68° room and woke up on an forced shutdown overheating brick underneath me ",
+                          "timestamp": "2026-08-01T10:46:50+00:00",
+                          "likes": 3,
+                          "dislikes": 0,
+                          "parent_comment_id": "p11p9b3",
+                          "depth": 4,
+                          "replies": [
+                            {
+                              "comment_id": "p11s5y7",
+                              "author": "reddit_user_4acc471403ca",
+                              "author_karma": 0,
+                              "content": "That has never happened to me even with the Pixel 7 which i had since launch. We are talking about the 10 Pro to be exact, it has even better thermal management than the 10. Anyway, if the phone doesnt overheat during intense tasks how can it overheat playing youtube?",
+                              "timestamp": "2026-08-01T11:03:06+00:00",
+                              "likes": 0,
+                              "dislikes": 0,
+                              "parent_comment_id": "p11q1hc",
+                              "depth": 5,
+                              "replies": [
+                                {
+                                  "comment_id": "p11vahl",
+                                  "author": "reddit_user_16b2ca5eecec",
+                                  "author_karma": 0,
+                                  "content": "I had the 6, 8, and now the 10 and never had this issue until the 10 as well. I have the XL and have had more heat issues on this phone than any other phone I've had in my life. \n\nMaybe the pro is different, but I definitely have read similar things from other people saying it's overheated in their AC'd car just using maps and music. \n\nI likely think it's a quality control issue because there are quite a few users like yourself who have no issues. ",
+                                  "timestamp": "2026-08-01T11:25:57+00:00",
+                                  "likes": 5,
+                                  "dislikes": 0,
+                                  "parent_comment_id": "p11s5y7",
+                                  "depth": 6,
+                                  "replies": [
+                                    {
+                                      "comment_id": "p13ze30",
+                                      "author": "reddit_user_1ab9d62a2bf9",
+                                      "author_karma": 0,
+                                      "content": "My 10 is fine for battery heat and signal. Maybe look at an RMA but there's a good chance they'll send a refurb",
+                                      "timestamp": "2026-08-01T18:05:17+00:00",
+                                      "likes": 1,
+                                      "dislikes": 0,
+                                      "parent_comment_id": "p11vahl",
+                                      "depth": 7,
+                                      "replies": []
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "comment_id": "p11r3a5",
+                          "author": "reddit_user_284bd51ed396",
+                          "author_karma": 0,
+                          "content": "ok then",
+                          "timestamp": "2026-08-01T10:55:01+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "p11p9b3",
+                          "depth": 4,
+                          "replies": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p11mc4g",
+          "author": "reddit_user_644eab216a78",
+          "author_karma": 0,
+          "content": "I've been using the Pixel 10 pro xl since release day. All day, every day for work and life and everything. You name it, I probably use this phone for it. I've had zero problems whatsoever. Your question baffles me - \" is it that bad?\" No, it's pretty freaking great.",
+          "timestamp": "2026-08-01T10:16:34+00:00",
+          "likes": 46,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p11ntp5",
+              "author": "reddit_user_19dc2772ec86",
+              "author_karma": 0,
+              "content": "The reason for these questions is because online communities tend to cluster around complaints. When using something and it's working, there's no real reason to post about it. When something goes wrong, as it does with anything, we'll post online. Complaints and negativity tends to become more visible. Soon the community turns into an echo chamber. Newcomers see this and are confused, which leads to these questions. ",
+              "timestamp": "2026-08-01T10:29:01+00:00",
+              "likes": 9,
+              "dislikes": 0,
+              "parent_comment_id": "p11mc4g",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p11ry5o",
+              "author": "reddit_user_a12c74e05ad3",
+              "author_karma": 0,
+              "content": "As I mention in the post, based on the parameters and YouTube reviews I was convinced to buy it, but the amount of negative reviews on this subreddit made me hesitant. However, based on the replies to this post, it is a great phone, which is amazing news for me ",
+              "timestamp": "2026-08-01T11:01:31+00:00",
+              "likes": -2,
+              "dislikes": 0,
+              "parent_comment_id": "p11mc4g",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p11wag9",
+                  "author": "reddit_user_6f7d08fe76fe",
+                  "author_karma": 0,
+                  "content": "Actually a lot of reviewers on YouTube praise the phone, don't exactly know what you're talking about, stop watching mainstream biased channels and just focus on quality content, you'll find out that's an amazing device.",
+                  "timestamp": "2026-08-01T11:33:08+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p11ry5o",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p128ewo",
+                      "author": "reddit_user_a12c74e05ad3",
+                      "author_karma": 0,
+                      "content": "You misunderstood, I said that YouTube reviews said it was good, but this subreddit said it was bad, that was why I made the post ",
+                      "timestamp": "2026-08-01T12:50:54+00:00",
+                      "likes": -1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p11wag9",
+                      "depth": 3,
+                      "replies": []
+                    },
+                    {
+                      "comment_id": "p1730lm",
+                      "author": "reddit_user_77bdda0481a6",
+                      "author_karma": 0,
+                      "content": "It isn't ",
+                      "timestamp": "2026-08-02T04:30:07+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p11wag9",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p11mgqq",
+          "author": "reddit_user_382668cee381",
+          "author_karma": 0,
+          "content": "I use the 10XL Pro and I find it's a great phone. No issues at all, including battery ones. \n\nMy only downside is, coming from the Samsung family, it's not as customisable unless using a 3rd party launcher",
+          "timestamp": "2026-08-01T10:17:39+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p11mitq",
+          "author": "reddit_user_fa5b9a1d1a7d",
+          "author_karma": 0,
+          "content": "It will be great for pretty much everything except gaming and battery life is not good.\n\nCamera is stellar though. And agree on the form factor, there aren't many options out there with this small size",
+          "timestamp": "2026-08-01T10:18:10+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p11mnmk",
+          "author": "reddit_user_8dca85a6b3a4",
+          "author_karma": 0,
+          "content": "I have the XL version, so it's not exactly the same, but it's been great. The cameras are good, the performance snappy, the OS nice to use etc. Even the battery life, which I see a lot of complaints about, has been fine.\n\nAlso, a very much underrated feature is having Pixel Snap/Magsafe. It's something I wouldn't want to go without now.",
+          "timestamp": "2026-08-01T10:19:18+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p11ms02",
+          "author": "reddit_user_9d88c474bbf7",
+          "author_karma": 0,
+          "content": "I am on the same boat as you, but since the 11 drops in 12th August I am going to wait to see what kind of upgrades it brings. From what I’ve read here and other pixel subreddits, I think we only get the shade of the bad part which is mostly the problem with the tensor chip. Although Pixel always was more of a software making more with less capable hardware and since in the P10Pro the best hardware is the camera, for that use is killer for sure",
+          "timestamp": "2026-08-01T10:20:19+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p11p6hj",
+              "author": "[deleted]",
+              "author_karma": 0,
+              "content": "[removed]",
+              "timestamp": "2026-08-01T10:40:00+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p11ms02",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p11reme",
+              "author": "reddit_user_a12c74e05ad3",
+              "author_karma": 0,
+              "content": "Yes, I am also waiting for August 12th to check what will the 11 bring and whether it is worth the extra money. Great, glad to hear that, the camera is the main reason, why I want it! ",
+              "timestamp": "2026-08-01T10:57:24+00:00",
+              "likes": 3,
+              "dislikes": 0,
+              "parent_comment_id": "p11ms02",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p11xl0g",
+                  "author": "reddit_user_9d88c474bbf7",
+                  "author_karma": 0,
+                  "content": "Me too I mostly use the phone to take pictures, WhatsApp and Reddit I will also keep an eye out for the regular 11 since if it has the same cameras has the 10 pro might be worth the extra year of updates",
+                  "timestamp": "2026-08-01T11:42:08+00:00",
+                  "likes": 2,
+                  "dislikes": 0,
+                  "parent_comment_id": "p11reme",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p11mswh",
+          "author": "reddit_user_70e6e401cdfd",
+          "author_karma": 0,
+          "content": "This is Reddit. You'll have plenty swearing up and down you should be seeking a refurbished Pixel 6 Pro to avoid the apocalyptic existence you'll be thrust into by getting a superb phone that doesn't represent much of a difference with the previous 9 series. It's more than fine for your stated purpose.",
+          "timestamp": "2026-08-01T10:20:32+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p11y345",
+              "author": "reddit_user_a4cd63beb242",
+              "author_karma": 0,
+              "content": "If my 6 pro was the size of my 9 pro I'd still be using it :( too many issues with the 9, but the 6 still runs like a dream. But I want a one handed phone which is apparently difficult to do these days.",
+              "timestamp": "2026-08-01T11:45:35+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p11mswh",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p12bo3q",
+                  "author": "reddit_user_70e6e401cdfd",
+                  "author_karma": 0,
+                  "content": "I switched to a 9 pro XL with more storage and it has been pretty much flawless experience. The eight was much better in the hand with that fantastic rounded back. The only negative I have experienced is the random lag shooting in 50 MP which can sometimes crop up at inopportune moments. other than that, all good.",
+                  "timestamp": "2026-08-01T13:09:48+00:00",
+                  "likes": 0,
+                  "dislikes": 0,
+                  "parent_comment_id": "p11y345",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p11mzru",
+          "author": "reddit_user_45424d334a53",
+          "author_karma": 0,
+          "content": "So I play Wild Rift along with other less demanding games on my 10 Pro XL.  I don't shoot video but I do take a lot of pictures. Also watch a lot of movies. My only complaint is battery life so I pretty much keep battery saver turned on all the time.",
+          "timestamp": "2026-08-01T10:22:07+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p11rqep",
+              "author": "reddit_user_260d3711070f",
+              "author_karma": 0,
+              "content": "Hey! What graphics settings are available on the phone for wild rift? Been trying to find this out for ages! ",
+              "timestamp": "2026-08-01T10:59:54+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p11mzru",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p12gb8r",
+                  "author": "reddit_user_45424d334a53",
+                  "author_karma": 0,
+                  "content": "DM me I'll send you the screen shots of all the graphic settings.",
+                  "timestamp": "2026-08-01T13:35:34+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p11rqep",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p11n6at",
+          "author": "reddit_user_c7dc35a2634d",
+          "author_karma": 0,
+          "content": "No",
+          "timestamp": "2026-08-01T10:23:40+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p11n7sd",
+          "author": "reddit_user_d5dd42ea2267",
+          "author_karma": 0,
+          "content": "Yes it's great. Battery life is great, the phone is blazing fast, videos are great, no overheating. Don't trust review bots.",
+          "timestamp": "2026-08-01T10:24:01+00:00",
+          "likes": 0,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p11nb7n",
+          "author": "reddit_user_448cdf6a81b7",
+          "author_karma": 0,
+          "content": "Had it for a few months. Zero issues ",
+          "timestamp": "2026-08-01T10:24:47+00:00",
+          "likes": 0,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p11nd00",
+          "author": "reddit_user_97576a501e14",
+          "author_karma": 0,
+          "content": "I have the Pixel 10 Pro for 2 weeks now and I can tell you that is an amazing device. Snappy, premium, excellent cameras. Go for it.",
+          "timestamp": "2026-08-01T10:25:11+00:00",
+          "likes": 9,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p11npoo",
+          "author": "reddit_user_8f05dabd982b",
+          "author_karma": 0,
+          "content": "Can't you return it if you don't like it?",
+          "timestamp": "2026-08-01T10:28:06+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p11o8z4",
+          "author": "reddit_user_cab0bfd0414d",
+          "author_karma": 0,
+          "content": "If you don't need to record videos it's a great phone. I have P9P and I have zero issues. ",
+          "timestamp": "2026-08-01T10:32:30+00:00",
+          "likes": 0,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p11obyf",
+          "author": "reddit_user_4acc471403ca",
+          "author_karma": 0,
+          "content": "Its a very good smartphone. Everytime i use my iPhone i miss its features and multitasking. Apart from gaming which has had some driver issues in the past but have since been patched, plus the biggest driver update will come next month, i have never seen it stutter or have connection problems or overheat. Its a premium smartphone and the cameras are great.",
+          "timestamp": "2026-08-01T10:33:10+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p11one6",
+          "author": "reddit_user_e60e32302163",
+          "author_karma": 0,
+          "content": "10 pro is an excellent phone. Camera is one of the best. Subreddits are there to complain and they will about every 0.5% difference to the very best. \n\nIt's amazing. get it and be happy. (Speaking as someone who had to switch to Iphone 17 Pro due to ecosystem needs)",
+          "timestamp": "2026-08-01T10:35:46+00:00",
+          "likes": 0,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p11oynh",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-01T10:38:16+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p11r7ju",
+          "author": "reddit_user_1dc35c66aa7e",
+          "author_karma": 0,
+          "content": "Try it out yourself. Why would you listen to people on Reddit. Remember this is the internet. People straight up lie. The other day one guy commented that he owned every nexus and pixel up to the 9 and everyone of them failed on him giving him issues and all sorts. So tell me why would the keep buying if the first Google phone failed you, then the 2nd failed you, then the 3rd one then the 4th one and so on. So, yeah, don't believe everything on this sub. ",
+          "timestamp": "2026-08-01T10:55:55+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p11rno0",
+          "author": "reddit_user_d72c93724444",
+          "author_karma": 0,
+          "content": "Since switching to Android almost a decade ago, I've head a Pixel 3 XL, a Samsung Galaxy S22 Ultra, and switched back to a Pixel 10 Pro because while I loved the S22U, I have a young kid now and Samsung just can't seem to figure out taking photos of moving objects (and kids never stop moving). \n\nIt's not bad, I'm just continuously disappointed and what it can't do. I've had this thing since launch and while the camera does exactly what I need it to (take photos of things in motion without them being blurry), I feel like this is a step down from my S22U. Can't natively turn parts of photos into stickers or use stickers to edit photos. Pushing AI in everything when it doesn't need to be. The screen can't get as dim as the S22U for when I'm using it when in bed. I miss the customization built into Samsung phones. \n\nIt's not a bad phone. I'm just kind of frustrated at the options right now. After this, I probably won't get another Pixel. ",
+          "timestamp": "2026-08-01T10:59:19+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p11rt5g",
+          "author": "reddit_user_d6faf55e76f3",
+          "author_karma": 0,
+          "content": "i had the S25 ultra , and i sell  it and got pixel 9 pro xl, not even the 10 , and it is better in every way ",
+          "timestamp": "2026-08-01T11:00:29+00:00",
+          "likes": 0,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1734i1",
+              "author": "reddit_user_77bdda0481a6",
+              "author_karma": 0,
+              "content": "No, it isn't ",
+              "timestamp": "2026-08-02T04:30:52+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p11rt5g",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p11srgr",
+          "author": "reddit_user_e96d77993f5d",
+          "author_karma": 0,
+          "content": "I have the Pixel 9 had it, since it came out.  Performance wise it's good, had a battery issue at one point and clearing the play store storage and cache fixed it. It was weird.  Overall good. ",
+          "timestamp": "2026-08-01T11:07:29+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p11t1d3",
+          "author": "reddit_user_c29cebfe7485",
+          "author_karma": 0,
+          "content": "Next month will be a year that I've had mine. The only issue I have is the volume reduction in bluetooth every 2-15 minutes.  The camera is great and would recommend it solely on that, but I will be going back to the Samsung S series as soon as I see a deal through Verizon. ",
+          "timestamp": "2026-08-01T11:09:30+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p11t2up",
+          "author": "reddit_user_ccda93fe1255",
+          "author_karma": 0,
+          "content": "Honestly, this is the best phone you can grab for everyday use. What people say about the user experience is true.",
+          "timestamp": "2026-08-01T11:09:49+00:00",
+          "likes": 0,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p11t86r",
+          "author": "reddit_user_b25351ba2425",
+          "author_karma": 0,
+          "content": "I know a lot of comments regarding poor video, but isn't enabling video boost at least a fix to make it decent enough to compare to iPhone?\n\nI know it's a bit of a quirk where have to enable it every time, it takes a while to complete to send to Google etc, but results are apparently decent?",
+          "timestamp": "2026-08-01T11:10:54+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p11txj6",
+          "author": "reddit_user_c1727ca7fc47",
+          "author_karma": 0,
+          "content": "I love mine. I do everything with it for work and private. No issues at all.",
+          "timestamp": "2026-08-01T11:16:02+00:00",
+          "likes": 0,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p11ucce",
+          "author": "reddit_user_1910bec1c728",
+          "author_karma": 0,
+          "content": "Great phone. We are just mostly tired of the inconsistent battery life 🙃",
+          "timestamp": "2026-08-01T11:19:04+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p13usus",
+              "author": "reddit_user_74c78f50bc6a",
+              "author_karma": 0,
+              "content": "I'd like to say that I don't have this issue. \n\nAlthough I'm usually within very close distance of a charger so maybe I just don't notice it.",
+              "timestamp": "2026-08-01T17:43:23+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p11ucce",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p13ypy3",
+              "author": "reddit_user_1ab9d62a2bf9",
+              "author_karma": 0,
+              "content": "March/April/May ish was bad but it's a lot better now. Stopped using 80% as well because it drains so much faster for some reason. It's more like 55/60% ",
+              "timestamp": "2026-08-01T18:02:03+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p11ucce",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p11upoq",
+          "author": "reddit_user_c2784945bf1f",
+          "author_karma": 0,
+          "content": "10 Pro is fantastic.",
+          "timestamp": "2026-08-01T11:21:47+00:00",
+          "likes": 3,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p11uzgc",
+          "author": "reddit_user_c742e1cea5f9",
+          "author_karma": 0,
+          "content": "It's great for AI too.  You cannot beat this phone for voice to text ... Which is something I use constantly for texts, dictating emails, AI research, etc.    It's the best there is for that.  Great camera too.  ",
+          "timestamp": "2026-08-01T11:23:44+00:00",
+          "likes": 0,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p11vzfl",
+          "author": "reddit_user_399cb9bf30ba",
+          "author_karma": 0,
+          "content": "I own this phone and this is the first I'm hearing people don't like it. I don't keep up with commentary, tbf, but I haven't had a single issue.",
+          "timestamp": "2026-08-01T11:30:57+00:00",
+          "likes": 0,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p11w0jn",
+          "author": "reddit_user_e76c82620dfe",
+          "author_karma": 0,
+          "content": "It's great for everyday use. Been using it along with my Leica Leitzphone. Love built-in VPN and other features. Not as good as Asian flagships for photography though.",
+          "timestamp": "2026-08-01T11:31:11+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p18b9hg",
+              "author": "reddit_user_a12c74e05ad3",
+              "author_karma": 0,
+              "content": "What Asian flagship would you recommend for photography? ",
+              "timestamp": "2026-08-02T10:29:52+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p11w0jn",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p18fso6",
+                  "author": "reddit_user_e76c82620dfe",
+                  "author_karma": 0,
+                  "content": "There are quite a few to choose from this year: OPPO X9 Ultra, Xiaomi 17 Ultra, and Vivo X300 Ultra. All have global versions and support US bands along with eSIM.",
+                  "timestamp": "2026-08-02T11:05:25+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p18b9hg",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p11wrpb",
+          "author": "reddit_user_6f7d08fe76fe",
+          "author_karma": 0,
+          "content": "Not really sure why the punitive approach, it's literally one of the best smartphones around, been using it since day 1 and it never stopped being an amazing device, so no it's way far from being \"that\" bad for everyday use.",
+          "timestamp": "2026-08-01T11:36:28+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p18b69b",
+              "author": "reddit_user_a12c74e05ad3",
+              "author_karma": 0,
+              "content": "As I mention in the post, I got the impression that the phone was bad based on the posts on this subreddit, so I wanted to know the opinion of the community before buying it ",
+              "timestamp": "2026-08-02T10:29:07+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p11wrpb",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p11wzr1",
+          "author": "reddit_user_f32e0c148702",
+          "author_karma": 0,
+          "content": "I have the xl no issues. Though I did switch the OS for a bit more privacy",
+          "timestamp": "2026-08-01T11:38:02+00:00",
+          "likes": 0,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p11xdri",
+          "author": "reddit_user_0b2079ef1f4d",
+          "author_karma": 0,
+          "content": "Pixel has some great features natively like call screening and circle to search and select text that I use constantly. Coming from Xperia I think you'll find it a good fit. My recommendation is to use wireless charging to keep the USB-C pristine as long as possible. \n\n",
+          "timestamp": "2026-08-01T11:40:45+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p12b49f",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-01T13:06:41+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p136mqp",
+          "author": "reddit_user_4f58705fc1cc",
+          "author_karma": 0,
+          "content": "Do not dismiss the issues with Pixel phones. They are very real. This is the worst phone I've ever owned. If nothing else the inconsistent experiences do not bode well for QC and stability. Literally can't understand how people have had \"zero issues ever\". Seems impossible.",
+          "timestamp": "2026-08-01T15:47:56+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p18azfe",
+              "author": "reddit_user_a12c74e05ad3",
+              "author_karma": 0,
+              "content": "What issues did you personally had with the phone? ",
+              "timestamp": "2026-08-02T10:27:32+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p136mqp",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p19hkai",
+                  "author": "reddit_user_4f58705fc1cc",
+                  "author_karma": 0,
+                  "content": "See other posts",
+                  "timestamp": "2026-08-02T14:48:11+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p18azfe",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p13ilgr",
+          "author": "reddit_user_0f8e4f1858e8",
+          "author_karma": 0,
+          "content": "Pixel 10 Pro XL,   Performance has been fine, when you have a strong signal or on wi-fi.    After Android 17 update,   I have lost the cell signal at my house and have tried most of the supposed fixes.   Ran a speed test Fri.   it was only 1/2 meg download.    Cell service is not great at my house,  was 4-5 meg.  but at least it worked.    Now if I go outside I have to walk 1 block before I get cell service.   ",
+          "timestamp": "2026-08-01T16:45:18+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p13sx8f",
+          "author": "reddit_user_3b68e8019a63",
+          "author_karma": 0,
+          "content": "I've been using mine since launch. Other than Gemini ruining my routines and phone being unusable in heat, it's been pretty decent. I like Pixelsnap but wireless charging sucks on it. Phone heats up too much for it to charge. I like it dispite of these quirks, although would have enjoyed it more if they didn't exist 😄",
+          "timestamp": "2026-08-01T17:34:29+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p13uo30",
+          "author": "reddit_user_74c78f50bc6a",
+          "author_karma": 0,
+          "content": "I have a Pixel 10 Pro XL purchased from the Google Store. I also have the Pixel Watch to go with it.\n\nI love this phone! I've had nothing but iPhones since the iPhone 5S and I am thoroughly pleased with my experience on this Pixel. \n\nI would recommend it, but definitely do your research!",
+          "timestamp": "2026-08-01T17:42:46+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p16ddmm",
+          "author": "reddit_user_798f73c156ef",
+          "author_karma": 0,
+          "content": "I want to make the switch but concerned about the battery life. Everyone is complaining about a battery drain bug.",
+          "timestamp": "2026-08-02T01:43:21+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p172uuj",
+          "author": "reddit_user_77bdda0481a6",
+          "author_karma": 0,
+          "content": "If you have low expectations, the phone is fine. If you expect a premium experience like you get with a Samsung or other flagship devices, you won't find it.",
+          "timestamp": "2026-08-02T04:28:57+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p18avdu",
+              "author": "reddit_user_a12c74e05ad3",
+              "author_karma": 0,
+              "content": "I expect the camera to be awesome experience worth the money. I am used to android eco system, so I don't expect many surprises there. \n\nWhat do you like more on Samsung over Pixel 10 Pro? ",
+              "timestamp": "2026-08-02T10:26:38+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p172uuj",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p19hisj",
+                  "author": "reddit_user_77bdda0481a6",
+                  "author_karma": 0,
+                  "content": "Samsung Galaxy phones are faster, smoother, have better battery life, better cameras, more features, more customizability, better build quality, etc. Everything.",
+                  "timestamp": "2026-08-02T14:47:58+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p18avdu",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p1bwguy",
+          "author": "reddit_user_a00740d5a3fc",
+          "author_karma": 0,
+          "content": "No, it's not bad at all. I've had it since it released pretty much (went from P8 Pro to P10 Pro XL) and it's been fantastic! Great daily driver",
+          "timestamp": "2026-08-02T21:29:32+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1c32uc",
+          "author": "reddit_user_c8c23e554a70",
+          "author_karma": 0,
+          "content": "It's not a bad device. It's overpriced at full price for what you get. ",
+          "timestamp": "2026-08-02T22:02:40+00:00",
+          "likes": 0,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1c3k28",
+          "author": "reddit_user_4f52947f5536",
+          "author_karma": 0,
+          "content": "Love my pixel 10 pro and i use it for everyday use with no issues over all of my other devices ",
+          "timestamp": "2026-08-02T22:05:06+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1c5fsp",
+          "author": "reddit_user_403c2dc73852",
+          "author_karma": 0,
+          "content": "No",
+          "timestamp": "2026-08-02T22:14:31+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1c5voc",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[removed]",
+          "timestamp": "2026-08-02T22:16:49+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1di56a",
+          "author": "reddit_user_8c2328f6ba03",
+          "author_karma": 0,
+          "content": "I've been using a pixel 10 pro for the past 3 months. I also had a S24, S25 and all the iPhones including the 17 Pro which I had previous to the pixel.\n\nIt's a great phone. I also don't game. I jump around a lot between different phones and even with the 11 series about to drop this is the first time I have no motivation to switch.\n\nI don't feel you will regret your decision but that's just my opinion. ",
+          "timestamp": "2026-08-03T02:47:16+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1dut6t",
+          "author": "reddit_user_d5aab3cfc203",
+          "author_karma": 0,
+          "content": "It's not bad, it has its quirks. I still can't get over the lack of customization on a pure android phone. iOS has more options for customization than a pixel ",
+          "timestamp": "2026-08-03T04:11:43+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1dwuih",
+          "author": "reddit_user_dd8b23c6ecb7",
+          "author_karma": 0,
+          "content": "I've been using the 10 Pro XL since it came out and it's been perfect.\n\nWhen people buy a product that they expect to work without issue and it does as such, they don't go writing positive reviews everywhere unless they're a dedicated reviewer.\n\nHowever, when you experience issues with something that shouldn't have them, you'll be angry and write angry reviews and complaints. It's this way for most products and media, including games.",
+          "timestamp": "2026-08-03T04:26:22+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run006_post04_seed034",
+      "post_slot": 4,
+      "seed_index": 34,
+      "source_raw_post_id": "1vcjk2p",
+      "source_product_dir": "Android",
+      "source_file": "https://www.reddit.com/r/Android/comments/1vcjk2p/do_we_need_a_more_secure_messenger/",
+      "post_type": "image",
+      "title": "Do We Need a More Secure Messenger?",
+      "author": "reddit_user_0fe413d0e398",
+      "author_karma": 0,
+      "content": "Do We Need a More Secure Messenger?\n\n[removed]",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p11m782",
+          "author": "reddit_user_65884126434e",
+          "author_karma": 0,
+          "content": "Sorry [REDDIT_USER], but your submission was removed as you included a post body within your submission. The body text is often used to insert bias/opinion which violates Rule 6 in direct link submissions. Feel free to repost without the post body.\n\n\n*I am a bot, and this action was performed automatically. Please [contact the moderators of this subreddit](/message/compose/?to=/r/Android) if you have any questions or concerns.*",
+          "timestamp": "2026-08-01T10:15:27+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    }
+  ]
+}

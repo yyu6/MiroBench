@@ -1,0 +1,9 @@
+{
+  "domain": "sports",
+  "seed_pool": "seed_pools/sports.json",
+  "seed_count": 150,
+  "posts_per_run": 5,
+  "run_count": 30,
+  "real_comment_count": 5984,
+  "portable_source": true
+}

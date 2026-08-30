@@ -1,0 +1,1537 @@
+{
+  "meta": {
+    "product_category": "camera",
+    "baseline": "real_reddit_reference",
+    "run_id": "run_009_sampled_reddit"
+  },
+  "posts": [
+    {
+      "post_id": "real_run009_post00_seed045",
+      "post_slot": 0,
+      "seed_index": 45,
+      "source_raw_post_id": "1vc03tr",
+      "source_product_dir": "AskPhotography",
+      "source_file": "https://www.reddit.com/r/AskPhotography/comments/1vc03tr/whats_the_difference_between_fstops_on_camera_vs/",
+      "post_type": "Technical Help/Camera Settings",
+      "title": "What's the difference between Fstops on Camera vs Lens?",
+      "author": "reddit_user_4349d3bfee00",
+      "author_karma": 0,
+      "content": "What's the difference between Fstops on Camera vs Lens?\n\nHi all, Okay so why is it on my lens (Nikkor AF-S 55-200mm) it's printed \"1:4-5.6\"  \nFirst off....what is the deal with the colon? I THINK the 1: is just another way to write 'f' ? But why even do this??  \n\n\nSo if that's correct it's f4-f5.6... but the fstops on the camera itself can go from f 4-22? Why is this? Why does the lens itself only say f4 to 5.6 ?",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p0xki51",
+          "author": "reddit_user_80af23566d53",
+          "author_karma": 0,
+          "content": "Yes, 1:4 has the same meaning as f/4. I think the german lenses of looong time ago used that notation.\n\nAnd it's not f4. It's not multiplication, but division - focal length divided by a number.\n\nThe reason why lens sayus f/4 - f/5.6 on the zoom is that the largest aperture (small f-number) in the wide end if f/4, and at the maximum focal length it's f/5.6. The smallest aperture isn't that relevant for marketing so it's never really mentioned outside of possible aperture control ring (and possibly DoF scale if it exists).\n\n",
+          "timestamp": "2026-07-31T19:08:30+00:00",
+          "likes": 15,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0xld9u",
+              "author": "reddit_user_d1f890d719de",
+              "author_karma": 0,
+              "content": "This describes it perfectly. Also the reason why if you see a lens that says a single number on a zoom (like f/4 vs f/4-5.6) it'll be a more expensive lens. It takes more parts and more cost to make a lense that doesnt get a less open maximum apeture on the longest zoom of a lens.  ",
+              "timestamp": "2026-07-31T19:12:24+00:00",
+              "likes": 3,
+              "dislikes": 0,
+              "parent_comment_id": "p0xki51",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p0xwxv9",
+                  "author": "reddit_user_37a57aca3c9d",
+                  "author_karma": 0,
+                  "content": "Or a prime lens with only one focal length will only have a single minimum aperture printed",
+                  "timestamp": "2026-07-31T20:04:25+00:00",
+                  "likes": 2,
+                  "dislikes": 0,
+                  "parent_comment_id": "p0xld9u",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p0xksad",
+          "author": "reddit_user_e63a5519a981",
+          "author_karma": 0,
+          "content": "1: represents a ratio. It's a ratio of the aperture diameter to focal length. But yes, it's the f-stop. \n\nIt's 4.5-5.6 because it's representing the widest it can open but can't maintain the maximum width throughout the focal range. Basically, at 18mm, the widest it can open is f/4.5. as you zoom to say 55mm, the widest is can open is f/5.6. It can close down to f/22 at any focal length. There's nothing limiting that so there's no need to indicate that on the front. ",
+          "timestamp": "2026-07-31T19:09:46+00:00",
+          "likes": 4,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0xnrat",
+              "author": "reddit_user_aa5be6992d77",
+              "author_karma": 0,
+              "content": "okay so this is going ot be a very silly follow up...but what is \"stopping\" it from opening wider...? You say 4.5-5.6 is the widest the aperature can open...why? lol what's physically stopping all lens from just opening totally? what am I missing here? I see diagrams of the sliding blade aperture, and it may stop at 4 and there's still room clearly, for it to keep opening wider...why can't it?",
+              "timestamp": "2026-07-31T19:23:05+00:00",
+              "likes": -1,
+              "dislikes": 0,
+              "parent_comment_id": "p0xksad",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p0xongq",
+                  "author": "reddit_user_e63a5519a981",
+                  "author_karma": 0,
+                  "content": "F-stops measure a ratio. As you zoom, that ratio changes. That's part of it. The physical limitation of the lens diameter also limits how wide it can open. The iris, the mechanisms that move the iris blades, other lens hardware all take up room. If a lens could physically open wider, it would. Everyone wants to maximize aperture diameter for the most light gathered in the lens, even manufacturers. Artificially limiting this would be ridiculous. ",
+                  "timestamp": "2026-07-31T19:27:01+00:00",
+                  "likes": 3,
+                  "dislikes": 0,
+                  "parent_comment_id": "p0xnrat",
+                  "depth": 2,
+                  "replies": []
+                },
+                {
+                  "comment_id": "p0xpmfp",
+                  "author": "reddit_user_bba45c9536bc",
+                  "author_karma": 0,
+                  "content": "If they could open it wider, they would, because larger apertures are a desirable feature. There is a lot of other stuff going on inside a modern lens, it all takes room, safe to say even if it looks like it could open more, that it actually cant, and you just arent understanding all that it entails. ",
+                  "timestamp": "2026-07-31T19:31:21+00:00",
+                  "likes": 6,
+                  "dislikes": 0,
+                  "parent_comment_id": "p0xnrat",
+                  "depth": 2,
+                  "replies": []
+                },
+                {
+                  "comment_id": "p0xqqne",
+                  "author": "reddit_user_2a3d3a1efc3e",
+                  "author_karma": 0,
+                  "content": "Because that lens design, by function of the diameter of the barrel, can only physically open to f/4 or f/5.6 or whatever.  \n\nIt’s like asking why your hose isn’t bigger around to let more water through.  A garden hose physically cannot let through as much water as a fire hose.  ",
+                  "timestamp": "2026-07-31T19:36:25+00:00",
+                  "likes": 7,
+                  "dislikes": 0,
+                  "parent_comment_id": "p0xnrat",
+                  "depth": 2,
+                  "replies": []
+                },
+                {
+                  "comment_id": "p0xvdab",
+                  "author": "reddit_user_05aebf9ebec9",
+                  "author_karma": 0,
+                  "content": "This is a classic subject of study when it comes to lens design (zoom lenses in particular). A full and complete answer is beyond the scope of reddit. It starts with definitions:\n\n* **f/stop** is the ratio of the focal length to the size of the entrance pupil\n* **entrance pupil** is the size of the aperture as viewed through the front of the lens (often not the same as the physical size of the aperture)",
+                  "timestamp": "2026-07-31T19:57:19+00:00",
+                  "likes": 2,
+                  "dislikes": 0,
+                  "parent_comment_id": "p0xnrat",
+                  "depth": 2,
+                  "replies": []
+                },
+                {
+                  "comment_id": "p0xwiw6",
+                  "author": "reddit_user_fa046c27062d",
+                  "author_karma": 0,
+                  "content": "That is all the lens. It's can't open any wider. It would have to be built wider to be wider. That's why larger apertures (lower numbers) cost more",
+                  "timestamp": "2026-07-31T20:02:32+00:00",
+                  "likes": 2,
+                  "dislikes": 0,
+                  "parent_comment_id": "p0xnrat",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p0xy3v7",
+                      "author": "reddit_user_f1c4faaab900",
+                      "author_karma": 0,
+                      "content": "Agreed. Wider apertures also require more glass, more space so they are heavier & more expensive. Still, I'll take my 24-70mm f2.8 and 70-200mm f2.8 any day over my spouse's 24-200mm F4-6.3. They are the same brand, but the image quality is superior.",
+                      "timestamp": "2026-07-31T20:09:46+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p0xwiw6",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "p0y9tm0",
+                          "author": "reddit_user_aa5be6992d77",
+                          "author_karma": 0,
+                          "content": "ohh right...okay so I was thinking that it was something physical, like mechanical..okay so it's possible but that size would just be more expensive and bigger..got it..  So is 2.8 the absolute largest ratio you can get? is there a 2? or something in the 1's?",
+                          "timestamp": "2026-07-31T21:03:16+00:00",
+                          "likes": 2,
+                          "dislikes": 0,
+                          "parent_comment_id": "p0xy3v7",
+                          "depth": 4,
+                          "replies": [
+                            {
+                              "comment_id": "p0ygwi1",
+                              "author": "reddit_user_a911369f467d",
+                              "author_karma": 0,
+                              "content": "The fastest lens made (i.e. the widest aperture) was a 50mm f0.7 -  this means that the aperture was wider than the focal length.\n\nIf you fancy getting one this fast - you are going to need an astronomical budget as they were custom made for NASA by [Zeis ](https://en.wikipedia.org/wiki/Carl_Zeiss_Planar_50mm_f/0.7)\\- although Stanley Kubrick used them in order to film a movie by candle light.\n\nAs you can see, the wider the aperture the more expensive the lens.  f0.95 is probably the fastest lenses commercially available by the likes of TT Artisans or Noctilux",
+                              "timestamp": "2026-07-31T21:37:07+00:00",
+                              "likes": 2,
+                              "dislikes": 0,
+                              "parent_comment_id": "p0y9tm0",
+                              "depth": 5,
+                              "replies": [
+                                {
+                                  "comment_id": "p0ylx4z",
+                                  "author": "reddit_user_f1c4faaab900",
+                                  "author_karma": 0,
+                                  "content": "I think Nikon made an f 0.95 as well.",
+                                  "timestamp": "2026-07-31T22:02:00+00:00",
+                                  "likes": 1,
+                                  "dislikes": 0,
+                                  "parent_comment_id": "p0ygwi1",
+                                  "depth": 6,
+                                  "replies": []
+                                }
+                              ]
+                            },
+                            {
+                              "comment_id": "p0ynfxn",
+                              "author": "reddit_user_f1c4faaab900",
+                              "author_karma": 0,
+                              "content": "There are plenty of f 1.4's out there from many manufacturers. When you shoot with a lens using a very wide open aperture, you also get a greatly reduced depth of field which is great for portraits when you want to focus on the face and have the foreground and backround blurry. A similar film experience can be seen in the movie \"Project Hail Mary\". There is a scene when Ryan Gosling is lying down. You see him from the side and the camera is focused on his left eye. As he rolls to his right side you see the focus follow his left eye.",
+                              "timestamp": "2026-07-31T22:09:42+00:00",
+                              "likes": 1,
+                              "dislikes": 0,
+                              "parent_comment_id": "p0y9tm0",
+                              "depth": 5,
+                              "replies": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "comment_id": "p0zho12",
+                  "author": "reddit_user_2ebc80ba1081",
+                  "author_karma": 0,
+                  "content": "If a door is 3' wide, what's stopping it from opening 4' wide? It's literally just not that big.",
+                  "timestamp": "2026-08-01T00:55:57+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p0xnrat",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p0xkvp2",
+          "author": "reddit_user_37f240e16c8f",
+          "author_karma": 0,
+          "content": "That’s because it’s a variable aperture lens and it lists its max aperture. \n\nSo the fastest the lens can go is f4 but that’s only at the widest end. When you zoom the lens in, it can only go from f5.6 so think of it as a 4-5.6-22 \n\nA lens that just has f4 means it can go from f4 at anywhere in the zoom range. ",
+          "timestamp": "2026-07-31T19:10:12+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0xlacr",
+          "author": "reddit_user_6e759dd5f088",
+          "author_karma": 0,
+          "content": "It's a ratio of the size of the lens openings. so 1:2 is a one-to-two ratio, etc.   \nIn this case, your lens's widest aperture at 55mm is f4. But at 200mm, it's widest aperture is f5.6. You can always close the aperture even further (just because your lens can open up to f4, you may want to set it to f8 to get a wider depth of field, or block out some overly-bright sunlight, for example). So the numbers printed on the lens are just the maximum values. You may choose to adjust the exposure to something other than maximum aperture in camera to get the shot you want.  \nSome lenses have the same maximum aperture throughout their zoom range, such as the common 24-70 or 70-200 f2.8's. In that case, the lens would only show \"2.8\" printed on it. Again, you may choose to shoot any particular shot at any particular aperture value higher than 2.8.",
+          "timestamp": "2026-07-31T19:12:02+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0xlooj",
+          "author": "reddit_user_f00818adaa9f",
+          "author_karma": 0,
+          "content": "Camera bodies do not have an aperture or fstop.  The lens does.  You see the 1 colon whatever because fstop is how aperture is measured and since it is a relation between the aperture and focal length it is a fraction.  The aperture range you see printed on the lens is the lens aperture performance.  Which means if you have a f3.5-4.5 lens.  If you are are at 3.5 and zoom in the aperture will automatically change to 4.5 at a certain focal length.  If the fstop is printed like f2.8 and no range the aperture is constant throughout the range of focal lengths. ",
+          "timestamp": "2026-07-31T19:13:49+00:00",
+          "likes": 3,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0xrpf7",
+          "author": "reddit_user_10b3b153feeb",
+          "author_karma": 0,
+          "content": "F Stop is because it’s the ratio of Focal Length to the physical diameter of the aperture opening. The : is because of that ratio, you express ratios as 1:4 which means the diameter of the aperture opening is 1/4 the size of the focal length. Every just uses the shorthand of F4.\n\nThe aperture listed on your lenses is the maximum aperture of that lens. An aperture of1:4-5.6 means the lens has a maximum aperture of F4 on the short end of your zoom and decreases to F5.6 on the long end.\n\nThe camera can open the aperture to the lens’ maximum aperture or you can stop down to a minimum aperture.\n\nF4 = 1:4 = 1/4  \nF8 = 1:8 = 1/8  \n1/4 is a bigger number than 1/8.",
+          "timestamp": "2026-07-31T19:40:44+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0y05bv",
+              "author": "reddit_user_80af23566d53",
+              "author_karma": 0,
+              "content": ">F Stop is because it’s the ratio of Focal Length to the physical diameter of the aperture opening.\n\nNot quite. Physical diameter of aperture is irrelvant. It's the diameter of entrance pupil, or the (usually virtual) image of aperture when viewed from the front.\n\n>Every just uses the shorthand of F4.\n\nIt's a pity that that notation is popular - it implies multiplication. f/4 is much preferred.",
+              "timestamp": "2026-07-31T20:18:57+00:00",
+              "likes": 0,
+              "dislikes": 0,
+              "parent_comment_id": "p0xrpf7",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p0yauxx",
+                  "author": "reddit_user_aa5be6992d77",
+                  "author_karma": 0,
+                  "content": "I mean ...maybe it's because I'm not math inclined...but me seeing f4  OR f/4 I don't think multiplication or division, lol that didnt' even come to mind until someone here said it. Yea I can see that it's a ratio once explained but if you had showed me f/4 I would just have thought it was a lazy persons way of just abbreviating focal length 4 or something lol. ",
+                  "timestamp": "2026-07-31T21:08:11+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p0y05bv",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p146w9e",
+                      "author": "reddit_user_3c4dd5a47959",
+                      "author_karma": 0,
+                      "content": "it's not so much about math but just about the language of lenses and cameras. f/4 is a common way to denote an aperture size. when people are talking about focal length they would say \"4mm\".",
+                      "timestamp": "2026-08-01T18:41:21+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p0yauxx",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p0yeakj",
+          "author": "reddit_user_a911369f467d",
+          "author_karma": 0,
+          "content": "the aperture is the ratio of the focal length to the width of the aperture as seen through lens.  The  1 bit represents the focal length and the number after the colon is the number of times the aperture would fit into the focal length.  Ratios are written with a colon in between the two numbers.\n\n  \nSo if a 100mm focal length lens had a wide open aperture size of 50mm then two of the apertures would fit into the 100mm focal length giving an aperture of F1:2.  I the aperture was 25mm wide then it would be F1:4 (as 25 goes into 100 4 times).  If the aperture was 4.5mm then it would be F1:22\n\nAs the 1: bit is constant these now tend to get dropped off as people recognise the F2, F4 and F22 bits.\n\nWhen a lens has the aperture printed on the the lens then this if the widest the aperture can go.  \n\nIf it is a zoom then it will have the widest aperture at the wide end and the widest at the telephoto end (with different parts of the zoom having a value somewhere in between).  \n\nIf a zoom only has one aperture then it will have a constant aperture throughout the zoom range.\n\nSo hen the zoom says F4-5.6 it is F4 at the widest aperture of the shortest focal length and F5.6 at the widest aperture at it's longest focal length.",
+          "timestamp": "2026-07-31T21:24:28+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0ymed3",
+          "author": "reddit_user_e6f954ee6360",
+          "author_karma": 0,
+          "content": "I think it's written because F stop is actually the reciprocal of the actual opening. The lens of a Zoom lens has a range because there's a maximum F stop for the different focal lengths available to you. On the other hand, a prime lens like a 60 mm F2.8 has a single minimum F stop (maximum opening).\n\nThe word aperture means the opening size., Whereas the F as I've said, is the reciprocal of that opening",
+          "timestamp": "2026-07-31T22:04:24+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0yvjlh",
+          "author": "reddit_user_d9f85a8ead9a",
+          "author_karma": 0,
+          "content": "https://en.wikipedia.org/wiki/F-number",
+          "timestamp": "2026-07-31T22:51:52+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p146dj1",
+          "author": "reddit_user_3c4dd5a47959",
+          "author_karma": 0,
+          "content": "1:4-5.6 is just a different way of writing \"f/4-5.6\"\n\nthat is the maximum aperture. f/4 @ 55mm, f/5.6 @ 200mm.\n\nthe lens can stop down further than that. it will have a minimum aperture but this is usually not specified on the lens because more people are interested in the maximum aperture more than the minimum.",
+          "timestamp": "2026-08-01T18:38:52+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run009_post01_seed046",
+      "post_slot": 1,
+      "seed_index": 46,
+      "source_raw_post_id": "1vc0bf9",
+      "source_product_dir": "AskPhotography",
+      "source_file": "https://www.reddit.com/r/AskPhotography/comments/1vc0bf9/what_zoom_on_my_phones_back_camera_is_actually/",
+      "post_type": "Technical Help/Camera Settings",
+      "title": "What ×zoom on my phone's back camera is ACTUALLY the closest to a professional movie camera?",
+      "author": "reddit_user_4349d3bfee00",
+      "author_karma": 0,
+      "content": "What ×zoom on my phone's back camera is ACTUALLY the closest to a professional movie camera?\n\nI'm looking to become an actor, and I want to know how my face (more specifically my face SHAPE) would look on a professional movie camera. I know its obviously not on 1× zoom from my phone's front camera...or even it's back camera...but is it maybe 2× zoom? 3× zoom? Hell, 7× zoom? I'm asking this because whenever I ask Google, it gives me different answers. I just want to know which ×zoom on the back phone camera closely replicates a professional movie cameras lens (or what lens they USUALLY use.) if someone who is experienced in cinematography, or knows anything about professional cameras used in movies could somehow answer, that would be great. Thanks!",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p0xn1zn",
+          "author": "reddit_user_e63a5519a981",
+          "author_karma": 0,
+          "content": "That's not how this works at all... Movie cameras can use any number of lenses at differing focal lengths. In a nutshell, movie cameras can be 1x, 2x, 5x etc too. \n\nBut I get your point... The 1x camera at arm's length or further or 2x further away would be what you're looking for. This should help you understand the effect you're concerned about https://fstoppers.com/architecture/how-lens-compression-and-perspective-distortion-work-251737",
+          "timestamp": "2026-07-31T19:19:56+00:00",
+          "likes": 9,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0xnk1w",
+              "author": "reddit_user_e75f908f7e4c",
+              "author_karma": 0,
+              "content": "Thank you! I'm aware they can use all kinds of focal lengths, I just want to know which ones they use the most. ",
+              "timestamp": "2026-07-31T19:22:11+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p0xn1zn",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p0xnw0q",
+                  "author": "reddit_user_e63a5519a981",
+                  "author_karma": 0,
+                  "content": "That's still not how it works. It depends on the movie, scene. Director, director of photography. \n\nPlease look at the resource I shared... It doesn't answer your question but should help address your primary concern. ",
+                  "timestamp": "2026-07-31T19:23:39+00:00",
+                  "likes": 3,
+                  "dislikes": 0,
+                  "parent_comment_id": "p0xnk1w",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p0xo0rx",
+                      "author": "reddit_user_e75f908f7e4c",
+                      "author_karma": 0,
+                      "content": "Okay thank you again",
+                      "timestamp": "2026-07-31T19:24:14+00:00",
+                      "likes": 2,
+                      "dislikes": 0,
+                      "parent_comment_id": "p0xnw0q",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                },
+                {
+                  "comment_id": "p0xo540",
+                  "author": "reddit_user_71fcfa6ffd3e",
+                  "author_karma": 0,
+                  "content": "Pick a specific scene from a movie and then we can give you an idea.",
+                  "timestamp": "2026-07-31T19:24:46+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p0xnk1w",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p0xn5ai",
+          "author": "reddit_user_ce5abe8e4b90",
+          "author_karma": 0,
+          "content": "\"Zoom\" has nothing to do with this and it also doesn't mean what you think it does. It's a combination of focal length and your distance from the lens. It's actually mostly your distance from the lens that makes you look different with any focal length but you're obviously going to be bigger in the frame at longer distances with longer focal lengths which is why 50mm and longer tend to be considered more \"natural\". You will look the same with a 20mm lens from the same distance, just a lot smaller. Movie cameras use a huge variety of focal lengths so it's kind of a strange question. Home alone used 16, 35, 50, 85 and 200mm or something like that. Which one of those is *actually* professional movie focal length? All of them, and more besides. Potentially any focal length can be professional movie focal lengths if they are used in a movie. Ya dig?",
+          "timestamp": "2026-07-31T19:20:21+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0xntc8",
+              "author": "reddit_user_e75f908f7e4c",
+              "author_karma": 0,
+              "content": "Oh okay thank you 😭",
+              "timestamp": "2026-07-31T19:23:20+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p0xn5ai",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p0xn6nh",
+          "author": "reddit_user_2229fe439563",
+          "author_karma": 0,
+          "content": "This completely depends on the focal length used when shooting the movie. If you want to look your best, shoot from far away with the highest zoom.",
+          "timestamp": "2026-07-31T19:20:31+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0xnm0l",
+              "author": "reddit_user_e75f908f7e4c",
+              "author_karma": 0,
+              "content": "Thank you :)",
+              "timestamp": "2026-07-31T19:22:27+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p0xn6nh",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p0y2b6h",
+          "author": "reddit_user_72a39c08d12a",
+          "author_karma": 0,
+          "content": "1x on a phone camera lens means absolutely nothing, it's not standardized, could be 24mm could be 35mm. As for how your face looks it all depends on the distance to the camera, if the camera is 10cm from your face your nose will look 1.5-2x larger than your ears only because it's 1.5-2x closer to the camera. To see how you would look like in a movie stand 1-2m away from a mirror, or get someone to take a couple of photos from 2-5m away",
+          "timestamp": "2026-07-31T20:28:46+00:00",
+          "likes": 3,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0yk8g3",
+          "author": "reddit_user_f5e46538e9cb",
+          "author_karma": 0,
+          "content": "Looking at my Samsung camera, it's about x2 to get equivalent 35mm look (my favourite lens is 35mm) and x3 to get a classic \"portrait\" 50mm look. But in films they use everything :) ",
+          "timestamp": "2026-07-31T21:53:34+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p12vre1",
+          "author": "reddit_user_bf6a9609ac26",
+          "author_karma": 0,
+          "content": "Another thing to keep in mind is that most films shot before 2018 (and even the majority since then) were shot in Super 35, which is an approximate 1.5 crop from full frame. A 35mm lens is equivalent to about 52mm in angle of view. So if you have a scene from a film and the technical details say it was shot with a 35mm lens, you have to multiply by 1.5 to get the equivalent angle of view. And I'm not even sure what the crop factor is on a phone's tiny sensor.\n\nThere are apps, such as Cadrage, that might be useful for you. The Cadrage app has loads of different formats and aspect ratios that allow you to frame scenes for cinema; a lot of cinematographers use it: [https://www.cadrage.app/](https://www.cadrage.app/)",
+          "timestamp": "2026-08-01T14:55:06+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run009_post02_seed047",
+      "post_slot": 2,
+      "seed_index": 47,
+      "source_raw_post_id": "1vc0i7g",
+      "source_product_dir": "AskPhotography",
+      "source_file": "https://www.reddit.com/r/AskPhotography/comments/1vc0i7g/out_of_focus_shots_on_a7iv_what_am_i_doing_wrong/",
+      "post_type": "Technical Help/Camera Settings",
+      "title": "Out of focus shots on A7IV, what am I doing wrong?",
+      "author": "reddit_user_4349d3bfee00",
+      "author_karma": 0,
+      "content": "Out of focus shots on A7IV, what am I doing wrong?\n\nI am pretty sure I do something wrong, but I cannot figure out what it is. I do outdoor portraits with my family and friends for fun and a lot of the pictures Turn out out of focus and I don’t know why.  \nI am using an A7IV with a Sigmal 24-70 II 2.8. I shoot manually, with Shutter Speed about 1/250, mostly even higher. Aperture is mostly at the highest except for bigger groups, but apart from that for one or two people I use 2.8 most of the time.  \nFocus mode: Continous AF  \nFocus area: Mostly „Wide“  \nFace/Eye priority in AF is „On“\n\nI press lightly on the button to focus, then fully to take the shot. Still, many of my pictures turn out out of focus and it makes me so sad and kind of irritated with myself why I cannot figure out why they do.  \nI never had these issues with my old Nikon DSLR, so am at a loss.  What could be the problem",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p0xoaic",
+          "author": "reddit_user_e96a589d7760",
+          "author_karma": 0,
+          "content": "A7IV has issues with eye AF. There was a firmware update, but some users says it has never resolved it. \n\nhttps://www.reddit.com/r/SonyAlpha/comments/13jv1vp/sony_a7_iv_eye_autofocus_issues_going_crazy/",
+          "timestamp": "2026-07-31T19:25:26+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0y1ni1",
+              "author": "reddit_user_d426d41e7fce",
+              "author_karma": 0,
+              "content": "Ok will look if I have the latest updates!   \nI mostly do one person or sometimes couples, so it’s never more than two people :)   \nI think one major issue is when there are plants or anything distracting in front of the subject, but Inthought the Eye/Face detection should still focus on the person, not the thing nearest to me. ",
+              "timestamp": "2026-07-31T20:25:45+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p0xoaic",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p0y2l2v",
+                  "author": "reddit_user_e96a589d7760",
+                  "author_karma": 0,
+                  "content": "> I think one major issue is when there are plants or anything distracting in front of the subjec\n\nIn this case the Wide focus area isn't the best.",
+                  "timestamp": "2026-07-31T20:30:01+00:00",
+                  "likes": 2,
+                  "dislikes": 0,
+                  "parent_comment_id": "p0y1ni1",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p0y82h2",
+                      "author": "reddit_user_d426d41e7fce",
+                      "author_karma": 0,
+                      "content": "Thanks, then I will try to set it to a smaller area next time! But shouldn‘t the Eye/Face AF still focus on the person? Does this only work of the person looks directly at you or do you need to track them as soon as they face sideways or away from you? Maybe I am just too optimistic what my camera is able to do 😅",
+                      "timestamp": "2026-07-31T20:55:08+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p0y2l2v",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "p0ycuwr",
+                          "author": "reddit_user_660ebdd918a5",
+                          "author_karma": 0,
+                          "content": "Try smallest focus area  and back-button focus as mentioned . Can you try and get focus magnify on , don't know if poss with AF .",
+                          "timestamp": "2026-07-31T21:17:39+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "p0y82h2",
+                          "depth": 4,
+                          "replies": [
+                            {
+                              "comment_id": "p118r3y",
+                              "author": "reddit_user_d426d41e7fce",
+                              "author_karma": 0,
+                              "content": "Thanks, that seems to be the way :) Thank you for your answer, it really helps! Maybe stupid question, but if I use back button focus, can I still use Eye AF additionally. So if I put my focus area above a person or face etc. will it still focus on the eye if my depth of field is very shallow (e.g. Aperture 2.8)? ",
+                              "timestamp": "2026-08-01T08:19:26+00:00",
+                              "likes": 1,
+                              "dislikes": 0,
+                              "parent_comment_id": "p0ycuwr",
+                              "depth": 5,
+                              "replies": [
+                                {
+                                  "comment_id": "p123mnk",
+                                  "author": "reddit_user_660ebdd918a5",
+                                  "author_karma": 0,
+                                  "content": "I don't know , worth asking seperately  , only have old sony .\n\nA friend with press pass , mostly football incl. premier league , says they all use back-button focus . He still uses dslrs inc. d500 and d5 - cameras known for their focus abilities - he just says the focus is ok . . .  Maybe the A7iv eye focus is ok at best or has issues as mentioned ?  Maybe try af single and take lots shots ",
+                                  "timestamp": "2026-08-01T12:21:40+00:00",
+                                  "likes": 1,
+                                  "dislikes": 0,
+                                  "parent_comment_id": "p118r3y",
+                                  "depth": 6,
+                                  "replies": []
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p0xoqu5",
+          "author": "reddit_user_6e759dd5f088",
+          "author_karma": 0,
+          "content": "Can you post some examples?\n\nWhen you press the button to focus, do you see a green square show up over one of the people's eyes/faces (to indicate focus)?\n\nAlso, keep in mind that at f2.8 your depth of field will be pretty shallow. If you're taking photos of groups of people, it's highly likely that only the person you've focused on (and anyone standing perfectly even with them) will be in focus, while everyone else who is a step closer / farther from you will be out of focus. You'd likely need to stop down to f4, f8, etc. to get more of the group in focus.",
+          "timestamp": "2026-07-31T19:27:27+00:00",
+          "likes": 4,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0xuys8",
+              "author": "reddit_user_9ca3f6e2d488",
+              "author_karma": 0,
+              "content": "These are all great suggestions, to which I will add that (since there seems to be a problem with eye detect) you might experiment with AF-S rather than continuous. Also try turning off eye detect, using a smaller focus point, and using your joystick to position it over a convenient eye manually.",
+              "timestamp": "2026-07-31T19:55:29+00:00",
+              "likes": 2,
+              "dislikes": 0,
+              "parent_comment_id": "p0xoqu5",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p0y2b6q",
+              "author": "reddit_user_d426d41e7fce",
+              "author_karma": 0,
+              "content": "Thank you!   \nI mostly photograph one person or couples, so that should not be the issue I think.\n\nI think one major issue is when there are plants or anything distracting in front of the subject, but Inthought the Eye/Face detection should still focus on the person, not the thing nearest to me.  \n\nThe green square is there sometimes for sure, but I am honestly not perfectly sure if it is there all the time.   \nThe switch is definitely on Focus AF",
+              "timestamp": "2026-07-31T20:28:46+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p0xoqu5",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p0y49fe",
+                  "author": "reddit_user_6e759dd5f088",
+                  "author_karma": 0,
+                  "content": "Are your camera and lens updated to their latest firmware?  \nCan you test the lens on another camera? Can you test another lens on this camera?\n\nWithout examples (a couple of photos along with the shutter/aperture settings) to see if it's motion blur or something with your technique, you just have to try eliminating variables to hone in on the problem.",
+                  "timestamp": "2026-07-31T20:37:39+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p0y2b6q",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p0y7850",
+                      "author": "reddit_user_d426d41e7fce",
+                      "author_karma": 0,
+                      "content": "Hi, I will try to post some tomorrow, just need to sort through which friends would be ok with me posting them. \n\nUnfortunately I only have this lens and this camera. Maybe I could borrow another lens from a friend, but most use other systems.  \nI will check. Lens is definitely up to date, the body is I think on version 6.0, so from a quick google search I could upgrade to 6.02, but it ist pretty up to date still ",
+                      "timestamp": "2026-07-31T20:51:15+00:00",
+                      "likes": 0,
+                      "dislikes": 0,
+                      "parent_comment_id": "p0y49fe",
+                      "depth": 3,
+                      "replies": []
+                    },
+                    {
+                      "comment_id": "p0zorn8",
+                      "author": "reddit_user_6e759dd5f088",
+                      "author_karma": 0,
+                      "content": "Also try a Tracking focus area (scroll down past Wide, Center, Spot, etc and you’ll see Tracking Wide, Tracking Center, and so on). That will let you lock on to a subject and maintain focus as they move around the frame. ",
+                      "timestamp": "2026-08-01T01:37:42+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p0y49fe",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p0ybii1",
+          "author": "reddit_user_d84d82ce5227",
+          "author_karma": 0,
+          "content": "One thing that helped me a lot was switching to back button AF. Separating the focus and shutter helps a lot in these types of situations. You just set the focus once then you should be good unless the distance or focal length changes.",
+          "timestamp": "2026-07-31T21:11:16+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0ycaar",
+          "author": "reddit_user_ffed8b077a63",
+          "author_karma": 0,
+          "content": "Use auto and then analyze what the camera chose. Then only change one thing at a time. I’m sure you’ll see the camera chose 5.6 or f8. Your depth of field is probably not deep enough",
+          "timestamp": "2026-07-31T21:14:54+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p11t7xq",
+              "author": "reddit_user_2c0a7f148cab",
+              "author_karma": 0,
+              "content": "The A7IV had and still has one of the best AFs out there. Coupled with this great lens, it should easily be able to have the Iris of the subject in focus 99,9% of the time on a portrait shoot. This sound like something is off with OP‘s setup, because this body and lens combination should be super reliable at f2.8. Even at 1.4. ",
+              "timestamp": "2026-08-01T11:10:51+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p0ycaar",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p14e5ao",
+                  "author": "reddit_user_ffed8b077a63",
+                  "author_karma": 0,
+                  "content": "Yeah but I never shoot portraits at less than F8. I’m not a shallow depth of field portrait guy at all",
+                  "timestamp": "2026-08-01T19:16:15+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p11t7xq",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p145upi",
+          "author": "reddit_user_3c4dd5a47959",
+          "author_karma": 0,
+          "content": "> Focus mode: Continous AF\n\ntry switching to single shot AF. continuous AF will find focus but then it will keep looking for focus. if your subjects are moving this is good because the camera is primed to change focus when eneded. but if your subjects are stationary this can cause problems because the camera is anticipating movement when there is none.",
+          "timestamp": "2026-08-01T18:36:21+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run009_post03_seed048",
+      "post_slot": 3,
+      "seed_index": 48,
+      "source_raw_post_id": "1vc1eos",
+      "source_product_dir": "AskPhotography",
+      "source_file": "https://www.reddit.com/r/AskPhotography/comments/1vc1eos/photographers_shooting_in_this_style/",
+      "post_type": "Discussion/General",
+      "title": "Photographers shooting in this style?",
+      "author": "reddit_user_4349d3bfee00",
+      "author_karma": 0,
+      "content": "Photographers shooting in this style?\n\nThis low contrast black in white in ”grey scale” together with the Kodachrome abstract look of Ernst Haas and Saul Leiter are my favorite styles as of right now. \n\nI’m looking for more photographers shooting in this style, the images above are from the IG’s of; Bryan Schutmaat, C.m. Thomas, Bryan Birks and Vincent Glielmi. \n\nAnd is there a name for this type of style?",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p0xvd6h",
+          "author": "reddit_user_651d5f6bf08d",
+          "author_karma": 0,
+          "content": "A particular black and white tone isn't really a style.",
+          "timestamp": "2026-07-31T19:57:18+00:00",
+          "likes": 6,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0xwohp",
+              "author": "reddit_user_1255a79658a3",
+              "author_karma": 0,
+              "content": "Well its the look of it (low contrast in grey scale - medium grey to darker gray to dark gray to very dark grey), often show in soft light and almost a bit underexposed. Its not a look I see, if I did I would follow those photographers.\n\nAnd the second part are the subjects, its a bit Americana but with some more nature/landscapes/portraits added into the mix.",
+              "timestamp": "2026-07-31T20:03:14+00:00",
+              "likes": 4,
+              "dislikes": 0,
+              "parent_comment_id": "p0xvd6h",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p0y4syd",
+                  "author": "reddit_user_af00d23ed934",
+                  "author_karma": 0,
+                  "content": "It’s not “low contrast.” It looks like proper black and white exposure. If that’s what you’re after, you’re after the \\[zone system\\](https://en.wikipedia.org/wiki/Zone\\_System)",
+                  "timestamp": "2026-07-31T20:40:09+00:00",
+                  "likes": 3,
+                  "dislikes": 0,
+                  "parent_comment_id": "p0xwohp",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            },
+            {
+              "comment_id": "p12z94o",
+              "author": "reddit_user_4a02f38ef1f4",
+              "author_karma": 0,
+              "content": "Theres a lot more differentiation here than just bw. ",
+              "timestamp": "2026-08-01T15:12:15+00:00",
+              "likes": 2,
+              "dislikes": 0,
+              "parent_comment_id": "p0xvd6h",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p0xw752",
+          "author": "reddit_user_ae14124d80a8",
+          "author_karma": 0,
+          "content": "Horizon isn't straight in that second photo is irking me. \n\nTo respond to your post tho, why? Why are you looking for photographers with this style. It looks like you have found a couple of them names in your post. ",
+          "timestamp": "2026-07-31T20:01:02+00:00",
+          "likes": -4,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0xww32",
+              "author": "reddit_user_1255a79658a3",
+              "author_karma": 0,
+              "content": "Because I love this style. Yes, I’ve found 4 photographers so far. I want more, I guess its inspiration and satisfaction looking at images such as these.",
+              "timestamp": "2026-07-31T20:04:12+00:00",
+              "likes": 5,
+              "dislikes": 0,
+              "parent_comment_id": "p0xw752",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p0xxglq",
+              "author": "reddit_user_ff0a82696d74",
+              "author_karma": 0,
+              "content": "It‘s straight it just isn‘t even..",
+              "timestamp": "2026-07-31T20:06:49+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p0xw752",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p0y7nh7",
+                  "author": "reddit_user_b5b1cee99ef3",
+                  "author_karma": 0,
+                  "content": "I think they meant the 3rd picture ",
+                  "timestamp": "2026-07-31T20:53:13+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p0xxglq",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p0yxo41",
+                      "author": "reddit_user_ff0a82696d74",
+                      "author_karma": 0,
+                      "content": "That's not the horizon that's a fog bank lol. ",
+                      "timestamp": "2026-07-31T23:03:16+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p0y7nh7",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p0xx64g",
+          "author": "reddit_user_c0790631a91b",
+          "author_karma": 0,
+          "content": "First one reminds of Sally Mann",
+          "timestamp": "2026-07-31T20:05:28+00:00",
+          "likes": 23,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0xxplu",
+              "author": "reddit_user_c185d7109159",
+              "author_karma": 0,
+              "content": "I was gonna say the exact same thing, but it really doesn't have the raw emotion and loving eye of Immediate Family. Very few photography series do, TBF. I fucking love that woman. If you haven't read her book, I can't recommend it highly enough.",
+              "timestamp": "2026-07-31T20:07:57+00:00",
+              "likes": 3,
+              "dislikes": 0,
+              "parent_comment_id": "p0xx64g",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p153vmt",
+                  "author": "reddit_user_3f52dd8f5dcc",
+                  "author_karma": 0,
+                  "content": "Agree. No photographer has moved me like her. ",
+                  "timestamp": "2026-08-01T21:25:29+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p0xxplu",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p15c8ri",
+                      "author": "reddit_user_c185d7109159",
+                      "author_karma": 0,
+                      "content": "Proud Flesh literally brings tears to my eyes. ",
+                      "timestamp": "2026-08-01T22:09:49+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p153vmt",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p0xxdvk",
+          "author": "reddit_user_ae17fe0b008d",
+          "author_karma": 0,
+          "content": "looks like staining developer (ie: pyro) on large format",
+          "timestamp": "2026-07-31T20:06:27+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0y2gjx",
+              "author": "reddit_user_1255a79658a3",
+              "author_karma": 0,
+              "content": "I dont know what the developer part means but yes, I know that Bryan Birks shoots large format and I think the others do as well. ",
+              "timestamp": "2026-07-31T20:29:26+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p0xxdvk",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p0ysr28",
+                  "author": "reddit_user_a4bd8e9358bf",
+                  "author_karma": 0,
+                  "content": "In analog black and white photography, the choice of film developer chemsitry has an effect on the look of the negative. It affects mainly grain, acutance, contrast and more.",
+                  "timestamp": "2026-07-31T22:37:16+00:00",
+                  "likes": 2,
+                  "dislikes": 0,
+                  "parent_comment_id": "p0y2gjx",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p0xxnro",
+          "author": "reddit_user_0a7e01a8316c",
+          "author_karma": 0,
+          "content": "Kinda Hedi Slimane? He mostly does portraits tho ",
+          "timestamp": "2026-07-31T20:07:44+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0xyvm4",
+          "author": "reddit_user_703d71dc7cf8",
+          "author_karma": 0,
+          "content": "Feels kind of film noir adjacent.\n\nMy buddy has a similar style, he’s @stillframes ",
+          "timestamp": "2026-07-31T20:13:16+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0y25rk",
+              "author": "reddit_user_1255a79658a3",
+              "author_karma": 0,
+              "content": "The shot from Trillium lake 19/10/2024 and the waterfall on 3/11/2024 looks quite similar! Nice shots. \n\nThe rest is more urban street style with more deep black tones/heavier contrast. This style I’m enjoying is very rural, its mountains/waterfalls/flags/fields/old buildings/churches/motels/portraits of rural people/trees/horses/cows/cars and so forth. ",
+              "timestamp": "2026-07-31T20:28:04+00:00",
+              "likes": 2,
+              "dislikes": 0,
+              "parent_comment_id": "p0xyvm4",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p0y4ua2",
+                  "author": "reddit_user_703d71dc7cf8",
+                  "author_karma": 0,
+                  "content": "I was talking with him the other day, I think that’s going to be his evolution tbh, he’s out of the city and near a lot of natural beauty.\n\nEither way love the pieces you shared going to follow the igs for sure, great inspiration pieces, I have a tough time framing without a person as the subject so really appreciate the talents in others I lack lol. ",
+                  "timestamp": "2026-07-31T20:40:19+00:00",
+                  "likes": 2,
+                  "dislikes": 0,
+                  "parent_comment_id": "p0y25rk",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p0y2cm3",
+          "author": "reddit_user_80d7f869300b",
+          "author_karma": 0,
+          "content": "Emmet Gowin",
+          "timestamp": "2026-07-31T20:28:56+00:00",
+          "likes": 5,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0y61zy",
+          "author": "reddit_user_ed63e3a3a118",
+          "author_karma": 0,
+          "content": "Some of this stuff reminds me of Alec Soth? ",
+          "timestamp": "2026-07-31T20:45:53+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0y9atr",
+              "author": "reddit_user_1255a79658a3",
+              "author_karma": 0,
+              "content": "I’ve looked through Sleeping by the Mississippi once and the rural melancholic/moody feeling is the same but If I recall correctly he shot in color and mostly interiors? \n\nIm not familiar with his other work. ",
+              "timestamp": "2026-07-31T21:00:50+00:00",
+              "likes": 2,
+              "dislikes": 0,
+              "parent_comment_id": "p0y61zy",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1286m7",
+                  "author": "reddit_user_ed63e3a3a118",
+                  "author_karma": 0,
+                  "content": "Yeah sorry, just re-read your post and you were specifically asking about low contrast black and white - maybe not as good a match in that way. ",
+                  "timestamp": "2026-08-01T12:49:32+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p0y9atr",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p0y7vk0",
+          "author": "reddit_user_d12cb43fe7ed",
+          "author_karma": 0,
+          "content": "The tires/big landscapes has a bit of an Edward Burtynsky aesthetic you might check out.",
+          "timestamp": "2026-07-31T20:54:14+00:00",
+          "likes": 5,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0y8joa",
+          "author": "reddit_user_e986fb7e57ca",
+          "author_karma": 0,
+          "content": "If you haven’t looked up Phillip Montgomery, here’s a working photographer for the NYTimes and others, he is amazing. I believe only black and white, not sure about contrast. Thank me later. ",
+          "timestamp": "2026-07-31T20:57:21+00:00",
+          "likes": 3,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0y9hh9",
+          "author": "reddit_user_7306a456459b",
+          "author_karma": 0,
+          "content": "HORIZON LEVEL PEOPLE!!!! PLEASE🙏🙏🙏🙏🙏",
+          "timestamp": "2026-07-31T21:01:41+00:00",
+          "likes": -2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p0z6j2p",
+              "author": "reddit_user_845a5aa5869c",
+              "author_karma": 0,
+              "content": "Lord of the rings guy: \"no\" ",
+              "timestamp": "2026-07-31T23:52:03+00:00",
+              "likes": 2,
+              "dislikes": 0,
+              "parent_comment_id": "p0y9hh9",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p0ybliz",
+          "author": "reddit_user_9bf6c00d297e",
+          "author_karma": 0,
+          "content": "Phillip Montgomery is a really good photojournalist who shoots in low contrast monochrome ",
+          "timestamp": "2026-07-31T21:11:39+00:00",
+          "likes": 3,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0ycwbd",
+          "author": "reddit_user_2bef60c89ff0",
+          "author_karma": 0,
+          "content": "Mathew Genitempo and Henry O’head also shoot in this style. ",
+          "timestamp": "2026-07-31T21:17:49+00:00",
+          "likes": 3,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0yd3a3",
+          "author": "reddit_user_b1b50d2a49d6",
+          "author_karma": 0,
+          "content": "Matthew genitempo",
+          "timestamp": "2026-07-31T21:18:45+00:00",
+          "likes": 3,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0yh8tn",
+          "author": "reddit_user_801d1f6e53ad",
+          "author_karma": 0,
+          "content": "Any photographer that shoots in black and white. \n\nI’m not seeing a “style”.",
+          "timestamp": "2026-07-31T21:38:48+00:00",
+          "likes": -3,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0yls39",
+          "author": "reddit_user_aa57a691f871",
+          "author_karma": 0,
+          "content": "[Dorothea Lange](https://en.wikipedia.org/wiki/Dorothea_Lange)?  Not really soft light but her work documenting the Depression years is excellent.\n\nhttps://preview.redd.it/3zc3j8n11ngh1.jpeg?width=250&format=pjpg&auto=webp&s=1f1b7b11270d7883df962fb99cc666ca740955ce",
+          "timestamp": "2026-07-31T22:01:18+00:00",
+          "likes": 5,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0yq7yc",
+          "author": "reddit_user_382c244a8123",
+          "author_karma": 0,
+          "content": "Shelby Lee Adams?",
+          "timestamp": "2026-07-31T22:23:59+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0z6aq7",
+          "author": "reddit_user_845a5aa5869c",
+          "author_karma": 0,
+          "content": "Mark Stienmetz",
+          "timestamp": "2026-07-31T23:50:45+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p10qj77",
+              "author": "reddit_user_1255a79658a3",
+              "author_karma": 0,
+              "content": "Nah, I like Steinmetz (have his ”Chicago” photobook) but even if he shoots low contrast his images look different. They are much brighter in daylight, his b&w goes from very white - still pretty white - light grey. \n\nSchutmaat and co shoot in softer light and in more dark grey tonality.",
+              "timestamp": "2026-08-01T05:49:55+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p0z6aq7",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p0zcmgw",
+          "author": "reddit_user_a693e55668ae",
+          "author_karma": 0,
+          "content": "Mimi Plumb and Sage Sohier ",
+          "timestamp": "2026-08-01T00:26:38+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0zjd19",
+          "author": "reddit_user_94173cb89a8b",
+          "author_karma": 0,
+          "content": "Hiroshi Sugimoto for the ocean pic ",
+          "timestamp": "2026-08-01T01:05:51+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0zqd80",
+          "author": "reddit_user_d6671fff9a1e",
+          "author_karma": 0,
+          "content": "First photo reminds me of Richard Renaldi.      \nHis book *Fall River Boys* is so good. ",
+          "timestamp": "2026-08-01T01:47:13+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0zqq14",
+          "author": "reddit_user_23309693955a",
+          "author_karma": 0,
+          "content": "When I was in my second stage of photography, I swear underexposed photographs were my muse. Not anymore ",
+          "timestamp": "2026-08-01T01:49:22+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p10ryhe",
+              "author": "reddit_user_1255a79658a3",
+              "author_karma": 0,
+              "content": "You are a sophisticated gentleman these days and I’m a simple rookie in stage 2.",
+              "timestamp": "2026-08-01T06:01:08+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p0zqq14",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p10b4kw",
+          "author": "reddit_user_1d35e0cfa0fd",
+          "author_karma": 0,
+          "content": "as if im not seeing photos, I'm seeing photographers loneliness...",
+          "timestamp": "2026-08-01T03:58:26+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p10t882",
+          "author": "reddit_user_9e56c6c07df7",
+          "author_karma": 0,
+          "content": "I work in a similar rural style to a few of those shots, albeit in the SW of the UK so the landscapes are not quite as dramatic. @benjaminwesleymorgan\n\nAlso maybe check out Allan Salas, Martin Amis, John Thake, Ben Osborne, Heather Boneham, Larry G Stuart, and Sotiris Lamprou.",
+          "timestamp": "2026-08-01T06:11:11+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p10ur19",
+              "author": "reddit_user_1255a79658a3",
+              "author_karma": 0,
+              "content": "Martin Amis and Ben Osborne shoot in the style I’m looking for :) I was already following Martin but Ben was new. Cheers.",
+              "timestamp": "2026-08-01T06:23:13+00:00",
+              "likes": 2,
+              "dislikes": 0,
+              "parent_comment_id": "p10t882",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p10w5hr",
+          "author": "reddit_user_fc3d45e45667",
+          "author_karma": 0,
+          "content": "James Nachtwey",
+          "timestamp": "2026-08-01T06:34:27+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p10z73o",
+          "author": "reddit_user_cf5305a416b4",
+          "author_karma": 0,
+          "content": "Check out Matt Eich, he doesn't exclusively shoot black and white but a lot of his work is B&W and even his color work is similar to this style",
+          "timestamp": "2026-08-01T06:59:11+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p115qfl",
+          "author": "reddit_user_bfa2d2cc2a90",
+          "author_karma": 0,
+          "content": "fan ho\n\nsally mann",
+          "timestamp": "2026-08-01T07:53:49+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p11wk8t",
+          "author": "reddit_user_c37e2e0d5f34",
+          "author_karma": 0,
+          "content": "Black and white can be interesting.  Often, it's full spectrum with specific filters that let you find detail in the scene that would have been obscured by the colors the sensor is most sensitive too.\n\n[Guggenheim Museum Bilbao full spectrum black and white #8 Photograph by Matthew Drinkall - Fine Art America](https://fineartamerica.com/featured/8-guggenheim-museum-bilbao-full-spectrum-black-and-white-matthew-drinkall.html)\n\nThe lower contrast come from the filters.",
+          "timestamp": "2026-08-01T11:35:03+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p126bra",
+          "author": "reddit_user_d72d478e95cc",
+          "author_karma": 0,
+          "content": "Personally, I think the contrast is way too grey in your photos. Sally Mann’s most famous work is on large format cameras printed with obvious flaws - soft focus, scratches etc - but the prints generally lots of greys with a proper black. ",
+          "timestamp": "2026-08-01T12:38:21+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p133ox8",
+          "author": "reddit_user_166466d77845",
+          "author_karma": 0,
+          "content": "Mark steinmetz",
+          "timestamp": "2026-08-01T15:33:53+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p143yh6",
+          "author": "reddit_user_3a426ad06ebf",
+          "author_karma": 0,
+          "content": "It looks a bit like old school orthochromatic imagery. Very blue sensitive, so sky is light, skin is dark. You can emulate it digitally in the channel mixer. ",
+          "timestamp": "2026-08-01T18:27:15+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p14fm5h",
+          "author": "reddit_user_8f86ccd3495d",
+          "author_karma": 0,
+          "content": "It's just underexposed. ",
+          "timestamp": "2026-08-01T19:23:27+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p18kk4z",
+          "author": "reddit_user_f749a64b5d80",
+          "author_karma": 0,
+          "content": "I really love that look, so atmospheric ! 👍",
+          "timestamp": "2026-08-02T11:40:47+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p18sz8m",
+          "author": "reddit_user_f584b1e8d1a2",
+          "author_karma": 0,
+          "content": "Love #2. Perhaps it’s just all you!",
+          "timestamp": "2026-08-02T12:36:03+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p194rex",
+              "author": "reddit_user_1255a79658a3",
+              "author_karma": 0,
+              "content": "All me? What does that mean.",
+              "timestamp": "2026-08-02T13:43:03+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p18sz8m",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1d7bp4",
+          "author": "reddit_user_a6d52d841fc7",
+          "author_karma": 0,
+          "content": "Usually these kinds of photos play a part in a sequence for a story of sorts, so they don't really stand alone and are stronger together.",
+          "timestamp": "2026-08-03T01:42:29+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run009_post04_seed049",
+      "post_slot": 4,
+      "seed_index": 49,
+      "source_raw_post_id": "1vc45mi",
+      "source_product_dir": "AskPhotography",
+      "source_file": "https://www.reddit.com/r/AskPhotography/comments/1vc45mi/newborn_photography_question/",
+      "post_type": "Gear/Accessories",
+      "title": "Newborn photography question?",
+      "author": "reddit_user_4349d3bfee00",
+      "author_karma": 0,
+      "content": "Newborn photography question?\n\nNot a photographer at all but highly considering doing my own photos with a professional camera. Babies almost a month old though. All I really want is a few photos of them in a pink swaddle with a headband, on a tan background and then potentially some in a basket with like fur covering it. \n\nWhat size basket is ok? I’m considering one that’s 16 inches long from Walmart for $7. https://www.walmart.com/ip/37649316?sid=7B208C6B-2313-4501-B3A2-B64C2C7BADF9",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p0yl88j",
+          "author": "reddit_user_10b3b153feeb",
+          "author_karma": 0,
+          "content": "All that to ask what size basket you should get. It depends on how big the baby is.",
+          "timestamp": "2026-07-31T21:58:33+00:00",
+          "likes": 9,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0z1oq5",
+          "author": "reddit_user_9ca3f6e2d488",
+          "author_karma": 0,
+          "content": "Don't use flash is my only tip.",
+          "timestamp": "2026-07-31T23:25:03+00:00",
+          "likes": 2,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p0ziuae",
+          "author": "reddit_user_14df89e47b1d",
+          "author_karma": 0,
+          "content": "People that do this have yards to tooled or muslin and strings of flowers rolled up in for textures and color. \n\nHave mom hold the infant with the cloth covering her arms...the baby's butt on her palm thumb between the legs. The other hand making a saddle to cradle the head. This gives secure control of the infant with out mom in the photo but makes it easy to bring it closer for a two some.",
+          "timestamp": "2026-08-01T01:02:49+00:00",
+          "likes": 0,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    }
+  ]
+}

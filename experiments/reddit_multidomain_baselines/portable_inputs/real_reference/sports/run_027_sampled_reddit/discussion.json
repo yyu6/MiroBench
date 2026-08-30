@@ -1,0 +1,900 @@
+{
+  "meta": {
+    "product_category": "sports",
+    "baseline": "real_reddit_reference",
+    "run_id": "run_027_sampled_reddit"
+  },
+  "posts": [
+    {
+      "post_id": "real_run027_post00_seed135",
+      "post_slot": 0,
+      "seed_index": 135,
+      "source_raw_post_id": "1vexpyc",
+      "source_product_dir": "baseball",
+      "source_file": "https://www.reddit.com/r/baseball/comments/1vexpyc/highlight_the_pirates_take_game_one_in_milwaukee/",
+      "post_type": "hosted:video",
+      "title": "[Highlight] The Pirates take game one in Milwaukee after Henry Davis earns strike three on an ABS challenge!",
+      "author": "reddit_user_79ff14d8816f",
+      "author_karma": 0,
+      "content": "[Highlight] The Pirates take game one in Milwaukee after Henry Davis earns strike three on an ABS challenge!",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p1knslh",
+          "author": "reddit_user_e8d8c99d18e1",
+          "author_karma": 0,
+          "content": "Please reply to this comment with any additional videos/angles of this highlight.\n*If you would like this comment automatically added to your highlight posts, please include [Highlight] in your post title.*\n\n\n*I am a bot, and this action was performed automatically. Please [contact the moderators of this subreddit](/message/compose/?to=/r/baseball) if you have any questions or concerns.*",
+          "timestamp": "2026-08-04T02:31:44+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1knyta",
+          "author": "reddit_user_c6fec47ba009",
+          "author_karma": 0,
+          "content": "If Henry Davis was even a quarter as good a hitter as he was a catcher, he’d be a very serviceable starter ",
+          "timestamp": "2026-08-04T02:32:43+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1ko79o",
+              "author": "reddit_user_7ce20a2629b7",
+              "author_karma": 0,
+              "content": "Bro he’d be a borderline all star his profile has completely flipped since coming out of college it’s kinda funny",
+              "timestamp": "2026-08-04T02:34:03+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1knyta",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p1ko81s",
+              "author": "reddit_user_23a0c59cc3be",
+              "author_karma": 0,
+              "content": "Someone tell him to imagine everyone ~~naked~~ in a minor league jersey",
+              "timestamp": "2026-08-04T02:34:10+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1knyta",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p1kof1f",
+              "author": "reddit_user_4ded2582febe",
+              "author_karma": 0,
+              "content": "He’s improved every season tbh",
+              "timestamp": "2026-08-04T02:35:15+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1knyta",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p1kve88",
+              "author": "reddit_user_8008eca39493",
+              "author_karma": 0,
+              "content": "Hed a career with the Yanks if wells wasnt there",
+              "timestamp": "2026-08-04T03:16:47+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1knyta",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1knz3u",
+          "author": "reddit_user_6097810d4f4d",
+          "author_karma": 0,
+          "content": "Hoerner can learn from this",
+          "timestamp": "2026-08-04T02:32:46+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1koqua",
+              "author": "reddit_user_26d475e784ff",
+              "author_karma": 0,
+              "content": "How can I make this about my team",
+              "timestamp": "2026-08-04T02:37:07+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1knz3u",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1kpvxt",
+                  "author": "reddit_user_6097810d4f4d",
+                  "author_karma": 0,
+                  "content": "Lmfao fair enough ",
+                  "timestamp": "2026-08-04T02:43:39+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1koqua",
+                  "depth": 2,
+                  "replies": []
+                },
+                {
+                  "comment_id": "p1kq1lx",
+                  "author": "reddit_user_e0b175a88c81",
+                  "author_karma": 0,
+                  "content": "From the dude at the bottom of every Cubs highlight making it about the Cardinals?",
+                  "timestamp": "2026-08-04T02:44:34+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1koqua",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1krg9w",
+                      "author": "reddit_user_44b04681b65a",
+                      "author_karma": 0,
+                      "content": "Fuck the Cardinals, Fuck the Cubs, okay!? Now kiss ",
+                      "timestamp": "2026-08-04T02:52:46+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1kq1lx",
+                      "depth": 3,
+                      "replies": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p1ko7s8",
+          "author": "reddit_user_4ded2582febe",
+          "author_karma": 0,
+          "content": "Henry Davis will never be an above average hitter, but dude is a very good game manager \n\nHe’ll have a 12 year career regardless ",
+          "timestamp": "2026-08-04T02:34:08+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1komh3",
+              "author": "reddit_user_23a0c59cc3be",
+              "author_karma": 0,
+              "content": "The White Martin Maldonado ",
+              "timestamp": "2026-08-04T02:36:25+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1ko7s8",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p1kpaws",
+              "author": "reddit_user_b84b65acc614",
+              "author_karma": 0,
+              "content": "The ideal kind of career, really. If you mess up at the plate, it's the manager's fault for leaving you in, but every team needs a good game manager or backup catcher",
+              "timestamp": "2026-08-04T02:40:17+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1ko7s8",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1kpy8m",
+                  "author": "reddit_user_fbbded63e81e",
+                  "author_karma": 0,
+                  "content": "He'll also likely have plenty of opportunities at a ring, because contenders are the type of teams that most value his profile.",
+                  "timestamp": "2026-08-04T02:44:01+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1kpaws",
+                  "depth": 2,
+                  "replies": []
+                },
+                {
+                  "comment_id": "p1krh2y",
+                  "author": "reddit_user_c79cb2cf4625",
+                  "author_karma": 0,
+                  "content": "The type of career that lands you on Dancing with the Stars",
+                  "timestamp": "2026-08-04T02:52:54+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1kpaws",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p1kob7d",
+          "author": "reddit_user_270fda836f11",
+          "author_karma": 0,
+          "content": "Chourio knew it lol",
+          "timestamp": "2026-08-04T02:34:40+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1kp7w6",
+              "author": "reddit_user_44b04681b65a",
+              "author_karma": 0,
+              "content": "Davis knew it too ",
+              "timestamp": "2026-08-04T02:39:48+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1kob7d",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1kobs5",
+          "author": "reddit_user_d39fdacfeb29",
+          "author_karma": 0,
+          "content": "This is how the Phillies Nats game ended tonight too. ",
+          "timestamp": "2026-08-04T02:34:45+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1kojoa",
+          "author": "reddit_user_367bd5d7e35d",
+          "author_karma": 0,
+          "content": "![gif](giphy|tMNB9Tyh1qsqA5tpEx)",
+          "timestamp": "2026-08-04T02:35:59+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1kopgh",
+          "author": "reddit_user_8ff9b5f0e0a3",
+          "author_karma": 0,
+          "content": "That sinker is fucking insane. Wow.",
+          "timestamp": "2026-08-04T02:36:54+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1kpl9j",
+          "author": "reddit_user_eaa3ca607c06",
+          "author_karma": 0,
+          "content": "That chest protector is dope. ",
+          "timestamp": "2026-08-04T02:41:54+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1kq0lk",
+          "author": "reddit_user_0788038da17b",
+          "author_karma": 0,
+          "content": "That was a fucking nasty last pitch ",
+          "timestamp": "2026-08-04T02:44:24+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1l3758",
+              "author": "reddit_user_63e1e1fb213f",
+              "author_karma": 0,
+              "content": "Montgomery has always had electric stuff, especially on his fastball variants - top 10-15 in all of baseball in 2025. Problem is he couldn't locate to save his life, which he's been a fair bit better at in Pittsburgh - as demonstrated.",
+              "timestamp": "2026-08-04T04:06:49+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1kq0lk",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1l7fht",
+                  "author": "reddit_user_25e94044a3ef",
+                  "author_karma": 0,
+                  "content": "He just added this 2 seamer recently as well (broadcast says Sinker but he has said it’s a 2 seamer) \n\nDude has taken it to the next level over the past few weeks ",
+                  "timestamp": "2026-08-04T04:35:49+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1l3758",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p1kr9vt",
+          "author": "reddit_user_9fceb2d1b1d8",
+          "author_karma": 0,
+          "content": "There's something so electric about an ABS challenge resulting in the final out of the game - saw one earlier this year at Wrigley and it was awesome",
+          "timestamp": "2026-08-04T02:51:44+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1l7jtr",
+              "author": "reddit_user_25e94044a3ef",
+              "author_karma": 0,
+              "content": "2 seamer that he just recently added. It’s been unhittable ",
+              "timestamp": "2026-08-04T04:36:40+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1kr9vt",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1ks3zt",
+          "author": "reddit_user_b5f10e3f4796",
+          "author_karma": 0,
+          "content": "Thank the baseball gods we live in an era of ABS.",
+          "timestamp": "2026-08-04T02:56:43+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1ksz68",
+          "author": "reddit_user_2d71930168e5",
+          "author_karma": 0,
+          "content": "Thanks buccos",
+          "timestamp": "2026-08-04T03:01:56+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1kvwzz",
+          "author": "reddit_user_05de3b357c9d",
+          "author_karma": 0,
+          "content": "The movement on that pitch, just wow 🧑‍🍳💋",
+          "timestamp": "2026-08-04T03:19:58+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1kw5k5",
+          "author": "reddit_user_bfd64f4b13e8",
+          "author_karma": 0,
+          "content": "Brewers lose? What sorcery is this",
+          "timestamp": "2026-08-04T03:21:27+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1l0prc",
+              "author": "reddit_user_24be226b722e",
+              "author_karma": 0,
+              "content": "We are now 6-1 against them this year.",
+              "timestamp": "2026-08-04T03:50:35+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1kw5k5",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1l628x",
+                  "author": "reddit_user_34061c9eb7e8",
+                  "author_karma": 0,
+                  "content": "Pirates seem to be our kryptonite this year. ",
+                  "timestamp": "2026-08-04T04:26:15+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1l0prc",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p1l5s5s",
+          "author": "reddit_user_d2f3d3dac2fb",
+          "author_karma": 0,
+          "content": "Get fucked.",
+          "timestamp": "2026-08-04T04:24:18+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run027_post01_seed136",
+      "post_slot": 1,
+      "seed_index": 136,
+      "source_raw_post_id": "1vexq0j",
+      "source_product_dir": "baseball",
+      "source_file": "https://www.reddit.com/r/baseball/comments/1vexq0j/highlight_the_pirates_beat_the_brewers_on_an_abs/",
+      "post_type": "Video",
+      "title": "[Highlight] The Pirates beat the Brewers on an ABS challenge strikeout!",
+      "author": "reddit_user_79ff14d8816f",
+      "author_karma": 0,
+      "content": "[Highlight] The Pirates beat the Brewers on an ABS challenge strikeout!",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p1kntj3",
+          "author": "reddit_user_e8d8c99d18e1",
+          "author_karma": 0,
+          "content": "Please reply to this comment with any additional videos/angles of this highlight.\n*If you would like this comment automatically added to your highlight posts, please include [Highlight] in your post title.*\n\n\n*I am a bot, and this action was performed automatically. Please [contact the moderators of this subreddit](/message/compose/?to=/r/baseball) if you have any questions or concerns.*",
+          "timestamp": "2026-08-04T02:31:52+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1ko9ah",
+          "author": "reddit_user_270fda836f11",
+          "author_karma": 0,
+          "content": "Chourio knew he got got",
+          "timestamp": "2026-08-04T02:34:22+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run027_post02_seed137",
+      "post_slot": 2,
+      "seed_index": 137,
+      "source_raw_post_id": "1vexvmq",
+      "source_product_dir": "nba",
+      "source_file": "https://www.reddit.com/r/nba/comments/1vexvmq/22_vintage_basketball_magazines_slam_kobe_jordan/",
+      "post_type": "image",
+      "title": "22 Vintage Basketball Magazines SLAM Kobe Jordan AI Penny Shaq Rare 1994-2002",
+      "author": "reddit_user_79ff14d8816f",
+      "author_karma": 0,
+      "content": "22 Vintage Basketball Magazines SLAM Kobe Jordan AI Penny Shaq Rare 1994-2002\n\n[removed]",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p1kp2fj",
+          "author": "reddit_user_e8d8c99d18e1",
+          "author_karma": 0,
+          "content": "Hi! Unfortunately, we do not allow direct image posts on r/nba. Memes, photoshops, \"funny video edits\", pictures that are posted that only serve to show a player/coach/fan/etc.'s face/posture/position, merch or memorabilia are not allowed. Any such posts should be posted in the daily thread. If your post is an infographic or stats image, please create a self post with your image, context, and source in the body, as outlined in our [stats post rules](https://www.reddit.com/r/nba/wiki/rules).\n\n*I am a bot, and this action was performed automatically. Please [contact the moderators of this subreddit](/message/compose/?to=/r/nba) if you have any questions or concerns.*",
+          "timestamp": "2026-08-04T02:38:56+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run027_post03_seed138",
+      "post_slot": 3,
+      "seed_index": 138,
+      "source_raw_post_id": "1vey0dz",
+      "source_product_dir": "nba",
+      "source_file": "https://www.reddit.com/r/nba/comments/1vey0dz/besides_steve_nash_who_is_the_best_player_to/",
+      "post_type": "reddit_post",
+      "title": "Besides Steve Nash, who is the best player to never make the Finals?",
+      "author": "reddit_user_79ff14d8816f",
+      "author_karma": 0,
+      "content": "Besides Steve Nash, who is the best player to never make the Finals?",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p1kq5fb",
+          "author": "reddit_user_e8d8c99d18e1",
+          "author_karma": 0,
+          "content": "Your post was removed because it is a short self post. You should try to start the discussion by talking about what you think, not just asking a question, submitting a phrase or a stat line. Any self-post with less than 100 characters in the body will be removed.\n\n*I am a bot, and this action was performed automatically. Please [contact the moderators of this subreddit](/message/compose/?to=/r/nba) if you have any questions or concerns.*",
+          "timestamp": "2026-08-04T02:45:10+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    },
+    {
+      "post_id": "real_run027_post04_seed139",
+      "post_slot": 4,
+      "seed_index": 139,
+      "source_raw_post_id": "1vey19s",
+      "source_product_dir": "soccer",
+      "source_file": "https://www.reddit.com/r/soccer/comments/1vey19s/alex_iwobi_my_champions_league_debut_was_against/",
+      "post_type": ":n_media: Media",
+      "title": "Alex Iwobi “My Champions League debut was against Barcelona’s MSN. Everyone was scared to tackle Messi, so I thought, ‘I’ll do it.’ His first touch sent me flying. That dribble is still all over YouTube, and I even changed my hairstyle so people wouldn’t recognize me.”",
+      "author": "reddit_user_79ff14d8816f",
+      "author_karma": 0,
+      "content": "Alex Iwobi “My Champions League debut was against Barcelona’s MSN. Everyone was scared to tackle Messi, so I thought, ‘I’ll do it.’ His first touch sent me flying. That dribble is still all over YouTube, and I even changed my hairstyle so people wouldn’t recognize me.”",
+      "timestamp": "",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [
+        {
+          "comment_id": "p1kqch4",
+          "author": "reddit_user_e8d8c99d18e1",
+          "author_karma": 0,
+          "content": "**Mirrors / Alternative Angles**\n  \n\n*I am a bot, and this action was performed automatically. Please [contact the moderators of this subreddit](/message/compose/?to=/r/soccer) if you have any questions or concerns.*",
+          "timestamp": "2026-08-04T02:46:18+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1kqll8",
+          "author": "reddit_user_018b1db3d64a",
+          "author_karma": 0,
+          "content": "Iwobi were no sabi mark at all won mark Messi?",
+          "timestamp": "2026-08-04T02:47:47+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1krvbp",
+              "author": "reddit_user_1dd504236de8",
+              "author_karma": 0,
+              "content": "Messi is definitely something else. I wonder how Boateng feels. Can’t wait for that interview. 🤣",
+              "timestamp": "2026-08-04T02:55:16+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1kqll8",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1kxby2",
+                  "author": "reddit_user_59e0d215984b",
+                  "author_karma": 0,
+                  "content": "I don't think anyone should give a single fuck about that vile human being's feelings.",
+                  "timestamp": "2026-08-04T03:28:48+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1krvbp",
+                  "depth": 2,
+                  "replies": [
+                    {
+                      "comment_id": "p1ky5sa",
+                      "author": "reddit_user_51db5f8cd920",
+                      "author_karma": 0,
+                      "content": "OOTL on this, what did he do?",
+                      "timestamp": "2026-08-04T03:34:06+00:00",
+                      "likes": 1,
+                      "dislikes": 0,
+                      "parent_comment_id": "p1kxby2",
+                      "depth": 3,
+                      "replies": [
+                        {
+                          "comment_id": "p1l0x1m",
+                          "author": "reddit_user_7a1263dac7ad",
+                          "author_karma": 0,
+                          "content": "Domestic violence and extended psychological abuse against partners, including at least one case of serious assault. One ex-partner committed suicide. Iirc he was convicted for some of these things and heavily fined, but well, he was a professional footballer so the fine was peanuts. ",
+                          "timestamp": "2026-08-04T03:51:55+00:00",
+                          "likes": 1,
+                          "dislikes": 0,
+                          "parent_comment_id": "p1ky5sa",
+                          "depth": 4,
+                          "replies": [
+                            {
+                              "comment_id": "p1l7i1u",
+                              "author": "reddit_user_cf1d247da84f",
+                              "author_karma": 0,
+                              "content": "holy shit, when did all this come out? I could have sworn Kevin-Prince was the controversial one back when they were playing",
+                              "timestamp": "2026-08-04T04:36:19+00:00",
+                              "likes": 1,
+                              "dislikes": 0,
+                              "parent_comment_id": "p1l0x1m",
+                              "depth": 5,
+                              "replies": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "comment_id": "p1l2i14",
+                  "author": "reddit_user_e0d22d732c13",
+                  "author_karma": 0,
+                  "content": "Boateng bossed Messi at the World Cup final though 😏",
+                  "timestamp": "2026-08-04T04:02:11+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1krvbp",
+                  "depth": 2,
+                  "replies": []
+                },
+                {
+                  "comment_id": "p1l3ejk",
+                  "author": "reddit_user_db4ee25ecfb6",
+                  "author_karma": 0,
+                  "content": "Obligatory fuck Jerome Boateng",
+                  "timestamp": "2026-08-04T04:08:12+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1krvbp",
+                  "depth": 2,
+                  "replies": []
+                },
+                {
+                  "comment_id": "p1l502k",
+                  "author": "reddit_user_fe859185cbef",
+                  "author_karma": 0,
+                  "content": "James Milner desperately trying to close his legs is still my favorite",
+                  "timestamp": "2026-08-04T04:18:57+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1krvbp",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "comment_id": "p1kr9p7",
+          "author": "reddit_user_e41f656dcc31",
+          "author_karma": 0,
+          "content": "Honesty is not the best policy in this case. Hairstyle change, lmao.",
+          "timestamp": "2026-08-04T02:51:42+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1krlum",
+              "author": "reddit_user_5403e75b1aec",
+              "author_karma": 0,
+              "content": "Another one of Messi's achievements then , made a player change his hairstyle permanently ",
+              "timestamp": "2026-08-04T02:53:42+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1kr9p7",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1kt4tx",
+                  "author": "reddit_user_e41f656dcc31",
+                  "author_karma": 0,
+                  "content": "Hairstyle dribbler, you’d never sing that.",
+                  "timestamp": "2026-08-04T03:02:53+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1krlum",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            },
+            {
+              "comment_id": "p1kxd2j",
+              "author": "reddit_user_659cb3642782",
+              "author_karma": 0,
+              "content": "Disagree, the honesty makes it an interesting, good and frankly hilarious story. ",
+              "timestamp": "2026-08-04T03:29:00+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1kr9p7",
+              "depth": 1,
+              "replies": [
+                {
+                  "comment_id": "p1kzje6",
+                  "author": "reddit_user_b5213ab2a1c6",
+                  "author_karma": 0,
+                  "content": "True. More respect for Iwobi to say he got embarrassed. More of a man than the person who would lie about it. ",
+                  "timestamp": "2026-08-04T03:42:58+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1kxd2j",
+                  "depth": 2,
+                  "replies": []
+                },
+                {
+                  "comment_id": "p1l2e0w",
+                  "author": "reddit_user_77e77345928c",
+                  "author_karma": 0,
+                  "content": "And looking at the tackle, looks like he just slipped.  Idk that happens to all players sometimes and it's not like he let Messi score because of it\n\nWasn't that bad imo",
+                  "timestamp": "2026-08-04T04:01:27+00:00",
+                  "likes": 1,
+                  "dislikes": 0,
+                  "parent_comment_id": "p1kxd2j",
+                  "depth": 2,
+                  "replies": []
+                }
+              ]
+            },
+            {
+              "comment_id": "p1l1qgv",
+              "author": "reddit_user_de69ccb1cbdb",
+              "author_karma": 0,
+              "content": "I mean seems like he is joking. ",
+              "timestamp": "2026-08-04T03:57:10+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1kr9p7",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1ks7qu",
+          "author": "reddit_user_74b8ca27f43f",
+          "author_karma": 0,
+          "content": "The tackle in question\n\nhttps://youtu.be/JUCR8HARVPY?si=tqPnnHV642M9KjKB\n",
+          "timestamp": "2026-08-04T02:57:20+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": [
+            {
+              "comment_id": "p1ktgg5",
+              "author": "reddit_user_76f265783e1b",
+              "author_karma": 0,
+              "content": "Shit genuinely looked like he was going for a squat ",
+              "timestamp": "2026-08-04T03:04:52+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1ks7qu",
+              "depth": 1,
+              "replies": []
+            },
+            {
+              "comment_id": "p1ktwq2",
+              "author": "reddit_user_5403e75b1aec",
+              "author_karma": 0,
+              "content": "I would have acted like i was injured and just slipped ",
+              "timestamp": "2026-08-04T03:07:37+00:00",
+              "likes": 1,
+              "dislikes": 0,
+              "parent_comment_id": "p1ks7qu",
+              "depth": 1,
+              "replies": []
+            }
+          ]
+        },
+        {
+          "comment_id": "p1ksmmn",
+          "author": "[deleted]",
+          "author_karma": 0,
+          "content": "[deleted]",
+          "timestamp": "2026-08-04T02:59:48+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1kz59r",
+          "author": "reddit_user_0c407e01a0ed",
+          "author_karma": 0,
+          "content": "this is killing me ",
+          "timestamp": "2026-08-04T03:40:27+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1kzhv2",
+          "author": "reddit_user_da7a660ab903",
+          "author_karma": 0,
+          "content": "Iwobinho is a baller on and off the pitch tbf",
+          "timestamp": "2026-08-04T03:42:43+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1l1xj7",
+          "author": "reddit_user_9495393c7daa",
+          "author_karma": 0,
+          "content": "Anyone defending against players like Messi, Ronaldinho etc really need to get over all the embarrassment quickly. I mean seriously, how many players got nutmeg and stuff from any of those guys? Paper bag over the head is an option of course...",
+          "timestamp": "2026-08-04T03:58:28+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1l2i49",
+          "author": "reddit_user_77e77345928c",
+          "author_karma": 0,
+          "content": "Just changing his hair to honor the goat\n\nI see nothing problematic with that",
+          "timestamp": "2026-08-04T04:02:12+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1l4afe",
+          "author": "reddit_user_77b56ac644ce",
+          "author_karma": 0,
+          "content": "This is legit frying me. Messi sent him straight to the barbershops.",
+          "timestamp": "2026-08-04T04:14:05+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        },
+        {
+          "comment_id": "p1l4nxe",
+          "author": "reddit_user_9c52affd0837",
+          "author_karma": 0,
+          "content": "He really went \"nah, I'd win\" lol",
+          "timestamp": "2026-08-04T04:16:39+00:00",
+          "likes": 1,
+          "dislikes": 0,
+          "parent_comment_id": null,
+          "depth": 0,
+          "replies": []
+        }
+      ]
+    }
+  ]
+}
