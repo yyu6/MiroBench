@@ -545,7 +545,7 @@ CORE_FILES = {
     ),
     "thread_metric_suite": (
         "generalized_card/generalized_card/thread_metric_suite.py",
-        "0032e510a64cd0082cd643483028908100730d5237d34667124e1c9092a08897",
+        "d848dc6eb6c906a195c5cd61e8a8cfe1554b199234b92cae203aec2ac935e8c2",
     ),
     "content_profile_runner": (
         "generalized_card/scripts/compare_content_profile.py",
@@ -569,7 +569,7 @@ CORE_FILES = {
     ),
     "score_self_bertscore": (
         "scripts/evaluation/score_thread_self_bertscore.py",
-        "fd8d6c3d53a1de1577216aacccd7e316f85932a5e1e2457943cc0b05a4f393f8",
+        "a33b9b2a7807762e7d41507b03935d9d6a9462fd225d64d1284ebc92e68f1371",
     ),
     "score_semantic_uniformity": (
         "scripts/evaluation/score_thread_semantic_uniformity.py",
