@@ -159,6 +159,15 @@ def main() -> None:
     seed_everything(args.seed)
     _override_model(cfg, args.model)
 
+    user_bot_frequency_penalty = cfg.task_config.user_bot.args.get(
+        "frequency_penalty"
+    )
+    print(
+        "[synthpai-model-config] "
+        f"model={args.model} "
+        f"user_bot_frequency_penalty={user_bot_frequency_penalty}"
+    )
+
     author = get_model(cfg.task_config.author_bot)
     user = get_model(cfg.task_config.user_bot)
     checker = get_model(cfg.task_config.checker_bot)

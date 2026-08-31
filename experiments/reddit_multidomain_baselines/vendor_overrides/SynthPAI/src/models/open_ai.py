@@ -40,7 +40,8 @@ class OpenAIGPT(BaseModel):
             self.config.args.pop("temperature", None)
             self.config.args.pop("frequency_penalty", None)
         elif "gemini" in self.config.name.lower():
-            self.config.args.pop("frequency_penalty", None)
+            # Keep SynthPAI's configured frequency_penalty and forward it to
+            # Gemini's OpenAI-compatible endpoint.
             self.config.args.setdefault("max_tokens", 600)
         elif "max_tokens" not in self.config.args.keys():
             self.config.args["max_tokens"] = 600

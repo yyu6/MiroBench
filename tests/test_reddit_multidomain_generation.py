@@ -11,6 +11,16 @@ import pytest
 
 ROOT = Path(__file__).resolve().parents[1]
 SCRIPTS = ROOT / "experiments" / "reddit_multidomain_baselines" / "scripts"
+SYNTHPAI_OVERRIDE = (
+    ROOT
+    / "experiments"
+    / "reddit_multidomain_baselines"
+    / "vendor_overrides"
+    / "SynthPAI"
+    / "src"
+    / "models"
+    / "open_ai.py"
+)
 
 
 def load_run_generation():
@@ -61,6 +71,16 @@ def test_only_gemini_synthpai_strips_base_url_trailing_slash() -> None:
         )
         == gemini_url
     )
+
+
+def test_gemini_synthpai_preserves_frequency_penalty() -> None:
+    source = SYNTHPAI_OVERRIDE.read_text(encoding="utf-8")
+    gemini_branch = source.split(
+        'elif "gemini" in self.config.name.lower():', maxsplit=1
+    )[1].split('elif "max_tokens" not in self.config.args.keys():', maxsplit=1)[0]
+
+    assert 'pop("frequency_penalty"' not in gemini_branch
+    assert 'setdefault("max_tokens", 600)' in gemini_branch
 
 
 def test_keyboard_interrupt_is_not_recorded_as_success(
