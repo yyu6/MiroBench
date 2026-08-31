@@ -155,9 +155,19 @@ def run_job(
     previous: dict[str, Any] = {}
     if report_path.exists() and not args.force and not args.force_template:
         previous = read_json(report_path)
-        if previous.get("status") == "success" and bool(previous.get("dry_run")) == bool(args.dry_run):
+        report_is_complete = args.dry_run or int(previous.get("thread_count") or 0) >= args.max_seeds
+        if (
+            previous.get("status") == "success"
+            and bool(previous.get("dry_run")) == bool(args.dry_run)
+            and report_is_complete
+        ):
             print(f"[skip] completed baseline={baseline} model={model} domain={domain}")
             return
+        if previous.get("status") == "success" and not report_is_complete:
+            print(
+                f"[resume] incomplete success report baseline={baseline} model={model} "
+                f"domain={domain} threads={int(previous.get('thread_count') or 0)}/{args.max_seeds}"
+            )
     job_root.mkdir(parents=True, exist_ok=True)
     generated_root = job_root / "generated"
     usage_path = job_root / "token_usage.jsonl"
@@ -236,6 +246,22 @@ def run_job(
                 str(args.oasis_min_comments_per_post),
             ]
         elif baseline == "synthpai":
+            posts_per_run = effective_posts_per_run(
+                baseline=baseline,
+                model=model,
+                requested=args.posts_per_run,
+            )
+            base_url = effective_base_url(
+                baseline=baseline,
+                model=model,
+                configured=str(model_spec["base_url"]),
+            )
+            if posts_per_run != args.posts_per_run:
+                print(
+                    f"[model-override] baseline=synthpai model={model} "
+                    f"posts_per_run={posts_per_run} (requested={args.posts_per_run})",
+                    flush=True,
+                )
             command = [
                 str(_synthpai_python(args)),
                 str(REPO_ROOT / "scripts" / "run_synthpai_matched_seed_generator.py"),
@@ -250,11 +276,11 @@ def run_job(
                 "--model",
                 model,
                 "--base-url",
-                str(model_spec["base_url"]),
+                base_url,
                 "--max-seeds",
                 str(args.max_seeds),
                 "--posts-per-run",
-                str(args.posts_per_run),
+                str(posts_per_run),
                 "--seed",
                 str(args.seed),
                 "--thread-retries",
@@ -273,6 +299,10 @@ def run_job(
         _run_logged(command, env=env, log_path=log_path, label=f"{baseline}_generator")
         if baseline == "oasis":
             _normalize_oasis_domain_metadata(generated_root, domain)
+    except KeyboardInterrupt:
+        status = "interrupted"
+        error_text = "KeyboardInterrupt: interrupted by user"
+        raise
     except Exception as exc:
         status = "failed"
         error_text = "".join(traceback.format_exception_only(type(exc), exc)).strip()
@@ -293,7 +323,12 @@ def run_job(
             "model": model,
             "domain": domain,
             "model_key_env": model_spec.get("key_env"),
-            "base_url": model_spec.get("base_url"),
+            "base_url": effective_base_url(
+                baseline=baseline,
+                model=model,
+                configured=str(model_spec["base_url"]),
+            ),
+            "configured_base_url": model_spec.get("base_url"),
             "pricing_basis": model_spec.get("pricing_basis"),
             "seed_pool": str(seed_pool),
             "generated_root": str(generated_root),
@@ -309,6 +344,12 @@ def run_job(
                 if baseline == "oasis"
                 else args.synthpai_min_comments_per_post
             ),
+            "posts_per_run": effective_posts_per_run(
+                baseline=baseline,
+                model=model,
+                requested=args.posts_per_run,
+            ),
+            "requested_posts_per_run": args.posts_per_run,
             "request_count": usage_summary["requests"],
             "prompt_tokens": usage_summary["prompt_tokens"],
             "cached_prompt_tokens": usage_summary["cached_prompt_tokens"],
@@ -374,6 +415,22 @@ def _synthpai_python(args: argparse.Namespace) -> Path:
     if dedicated.is_file():
         return dedicated
     return Path(sys.executable)
+
+
+def effective_posts_per_run(*, baseline: str, model: str, requested: int) -> int:
+    """Return the artifact batch size, forcing Gemini SynthPAI to one seed/run."""
+
+    if baseline == "synthpai" and model.strip().lower().startswith("gemini-"):
+        return 1
+    return requested
+
+
+def effective_base_url(*, baseline: str, model: str, configured: str) -> str:
+    """Avoid a legacy OpenAI-SDK double slash on Gemini's compatible endpoint."""
+
+    if baseline == "synthpai" and model.strip().lower().startswith("gemini-"):
+        return configured.rstrip("/")
+    return configured
 
 
 def _run_logged(command: list[str], *, env: dict[str, str], log_path: Path, label: str) -> None:
