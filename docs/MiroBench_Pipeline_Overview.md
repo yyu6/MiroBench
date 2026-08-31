@@ -1,4 +1,4 @@
-#  Pipeline Overview
+# MiroBench Pipeline Overview
 
 ## 1. Purpose and scope
 
@@ -60,62 +60,149 @@ Each normalized thread contains:
 - one root post, including title and body;
 - zero or more comments;
 - reply-tree structure through parent identifiers;
-- non-identifying metadata required by the benchmark, such as domain and
-  relative comment depth.
+- benchmark metadata required for matching and evaluation, such as domain,
+  source IDs, and relative comment depth.
 
-### 2.2 Desensitization and privacy requirements
+### 2.2 Operational definitions of the four preparation stages
 
-The benchmark-ready dataset must not expose Reddit usernames or direct source
-links. Desensitization should be deterministic so that repeated activity by
-the same account can be represented consistently without revealing the
-original username.
+The terms **normalized**, **deduplicated**, **desensitized**, and
+**quality-filtered** refer to different operations. They are not interchangeable
+and none of them means that a record has been manually verified as true.
 
-Required transformations include:
+| Term | Operational meaning in MiroBench | What the term does **not** mean |
+|---|---|---|
+| **Normalized** | Source-specific fields are mapped to one thread schema; Reddit parent identifiers are converted into one reply tree; text encoding and missing-value representations are made consistent. | Metric values are not statistically normalized, and post/comment wording is not rewritten. |
+| **Deduplicated** | Exact repeated roots and comments are identified by stable source IDs within a domain and retained once in the frozen benchmark. | Semantic near-duplicates, cross-posts with different IDs, and paraphrases are not automatically merged. |
+| **Desensitized** | Direct username fields are replaced with opaque pseudonyms, deleted users retain a deletion marker, explicit Reddit user mentions are masked, and local machine paths are removed. | This is not a guarantee that every person, place, link, or indirect identifier has been removed from free text. |
+| **Quality-filtered** | Records must satisfy explicit machine-checkable requirements for schema validity, usable root content, comment availability, and metric eligibility. | It is not a subjective judgment that a discussion is high quality, correct, civil, or representative. |
 
-| Source field | Benchmark representation |
+#### 2.2.1 Normalized
+
+The normalized benchmark representation uses the following contract:
+
+- a root post has `source_raw_post_id`, domain metadata, `title`, `body`, and
+  `content`, where `content` is the non-empty combination of title and body;
+- a comment has `comment_id`, `parent_comment_id`, `author`, `content`,
+  timestamp/score metadata when available, and a recursively nested `replies`
+  list;
+- Reddit `t1_<id>` parent identifiers are converted to comment IDs, while a
+  `t3_<post_id>` parent becomes a top-level comment with no parent comment;
+- comments whose referenced parent is unavailable are retained as roots of
+  the available comment forest instead of inventing a missing comment;
+- top-level comments use depth 0 in the stored `discussion.json`; metric code
+  derives its own documented depth convention from the parent graph;
+- domain labels, run indices, post slots, and seed indices use the same schema
+  for real references, OASIS, and SynthPAI.
+
+Normalization is structural. Apart from Unicode/whitespace handling required
+by a metric loader, it does not paraphrase Reddit text or alter its meaning.
+
+#### 2.2.2 Deduplicated
+
+Deduplication uses identifiers rather than text similarity:
+
+- root-post key: `(domain, source_raw_post_id)`;
+- comment key: `(domain, source_raw_post_id, comment_id)`;
+- duplicate keys are retained once before the benchmark is frozen;
+- the legacy `credit_cards` importer explicitly merges repeated comment rows
+  by `comment_id` and normalizes their parent links before tree construction;
+- the final portable bundle is audited for unique root and comment IDs within
+  every domain.
+
+The current frozen bundle contains 1,800 unique selected root IDs (150 in each
+of 12 domains) and 35,551 retained comments with unique comment IDs within
+each domain. This exact-ID rule does not detect two different Reddit IDs
+containing the same article, copied text, or equivalent questions.
+
+#### 2.2.3 Desensitized
+
+The committed portable-input bundle currently applies these transformations:
+
+| Source value | Current portable representation |
 |---|---|
-| Reddit username | Secret-keyed pseudonym such as `reddit_user_000001` |
-| Deleted account | Preserve as `[deleted]` |
-| Post/comment ID | Internal benchmark ID |
-| Permalink and URL | Remove from release artifacts |
-| Reddit fullname | Remove or replace with an internal ID |
-| Free-text direct identifiers | Remove, mask, or exclude after privacy review |
+| Non-deleted Reddit `author` | `reddit_user_<12 hex characters>` derived deterministically from `SHA256(domain:username)` |
+| Empty or deleted account | `[deleted]` |
+| Free-text `/u/name` or `u/name` mention | `[REDDIT_USER]` |
+| Local absolute paths in seed metadata/manifests | Removed |
 
-A secret-keyed mapping, such as an HMAC-based mapping, is preferable to a plain
-hash because Reddit usernames are enumerable and vulnerable to dictionary
-lookup. The mapping key and lookup table must never be committed or released.
+The same source username maps consistently within a domain, while including
+the domain in the hash avoids intentionally linking an identity across
+domains. The raw local crawl retains original provenance and must not be
+treated as desensitized data. OASIS/SynthPAI identities belong to generated
+outputs rather than the real-data desensitization process and must be labeled
+as synthetic identities.
 
-> **Current implementation status:** the raw source data intentionally retains
-> provenance, and some existing real-reference comment artifacts still retain
-> original Reddit usernames, IDs, and permalinks. They are **not yet suitable
-> for public release**. A sanitized export and privacy audit are required before
-> publishing MiroBench data. Generated OASIS/SynthPAI usernames are synthetic,
-> but should still be labeled as generated identities.
+The current transformation has important limits:
 
-### 2.3 Filtering
+- it is a plain deterministic hash, not a secret-keyed HMAC;
+- original Reddit post/comment IDs remain as provenance identifiers;
+- the 11 new-domain seed records currently retain source permalinks;
+- arbitrary names, locations, contact details, and indirect identifiers inside
+  free text are not removed by a general named-entity or PII detector.
 
-Filtering removes records that cannot support reliable or responsible
-evaluation. The benchmark construction stage should:
+Consequently, **desensitized** in the current pipeline means
+*username-desensitized for controlled benchmark use*, not fully anonymized or
+irreversibly de-identified. A public data release requires a separate privacy
+review, removal or controlled access for source links/IDs, free-text PII
+screening, and preferably secret-keyed pseudonyms whose key is never released.
 
-- remove duplicate Reddit post IDs;
-- remove missing, deleted, or unusable root-post content;
-- remove deleted/removed comment bodies from metric inputs;
-- remove spam, bot-generated content, and crawl failures where detectable;
-- apply the benchmark's safety and sensitive-content policy;
-- retain reply relationships only when their parent identifiers can be
-  normalized safely;
-- record zero-comment threads instead of silently discarding them, unless a
-  metric-specific inclusion rule requires comments;
-- record every filtering decision in a manifest.
+#### 2.2.4 Quality-filtered
 
-For the 11 newly collected domains, the current seed-selection rule requires
-at least one fetched real comment. The legacy credit-card seed pool was created
-with a different rule and contains four zero-comment seeds among the first 150
-(146 of the 150 roots have captured comments).
-This protocol difference must be retained in provenance and harmonized before
-a final benchmark freeze if strict cross-domain identity is required.
+Quality filtering occurs at two distinct points:
 
-### 2.4 Domain selection
+1. **Construction-time eligibility** determines whether a root can enter the
+   fixed seed pool.
+2. **Metric-time eligibility** determines which retained comments or pairs can
+   contribute to a particular metric.
+
+Current construction-time rules are:
+
+- a root must have a non-empty title/body-derived `content` value and a stable
+  source post ID;
+- every JSONL input line must parse as a JSON object; malformed JSON aborts the
+  build instead of being silently accepted, and roots without an ID or usable
+  content are ineligible;
+- each of the 11 newly collected domains requires at least one fetched comment
+  before a root is eligible, after which 150 roots are sampled
+  deterministically with seed `20260828`;
+- the legacy `credit_cards` pool follows its earlier fixed ordering: the first
+  150 of 154 stored seeds are used, 146 have captured comments, and four have
+  zero captured comments;
+- unavailable parents do not cause an otherwise usable comment to be dropped;
+  the available reply forest is preserved.
+
+Current metric-time rules include:
+
+- empty, `[deleted]`, and `[removed]` text is converted to an unusable/empty
+  metric input;
+- the shared comment loader requires at least two whitespace-delimited tokens
+  for a comment to enter most text and structure scorers;
+- hard disagreement requires a parent of at least three tokens and a reply of
+  at least two tokens;
+- pairwise Uniformity metrics require at least two eligible comments, and
+  coverage is reported when a thread has too few comments or pairs.
+
+The frozen `discussion.json` references may still retain `[deleted]`,
+`[removed]`, short comments, moderator boilerplate, or bot-like content for
+provenance; metric loaders exclude only according to their declared rules.
+There is currently no benchmark-wide semantic spam classifier, factuality
+filter, toxicity filter, or comprehensive safety/PII filter. These must not be
+claimed as completed quality-filtering steps unless their implementation,
+thresholds, and removal counts are added to the manifest.
+
+The implementation anchors for these definitions are:
+
+- normalization and new-domain eligibility:
+  `experiments/reddit_multidomain_baselines/scripts/build_seed_pools.py`;
+- legacy credit-card normalization/deduplication:
+  `experiments/reddit_multidomain_baselines/scripts/import_legacy_credit_cards.py`;
+- username desensitization and portable manifests:
+  `experiments/reddit_multidomain_baselines/scripts/package_portable_inputs.py`;
+- metric-time comment filtering:
+  `scripts/evaluation/score_thread_semantic_uniformity.py` and
+  `scripts/evaluation/score_thread_disagreement.py`.
+
+### 2.3 Domain selection
 
 The current benchmark contains 12 domains:
 
@@ -137,7 +224,7 @@ comment coverage, interpretable domain boundaries, and enough data to support
 the same target sample size. Domain membership is stored as metadata; it is
 not an additional experimental control condition.
 
-### 2.5 Current data scale
+### 2.4 Current data scale
 
 The table below reports the current benchmark-construction inventory. A
 **comment-eligible thread** is a usable real root thread with at least one
@@ -166,7 +253,7 @@ plus 100 additional seeds, but the standardized benchmark uses the first 150.
 The complete credit-card train-plus-test source contains 2,664 deduplicated,
 usable real threads; it is not all used in the matched benchmark.
 
-### 2.6 Seed selection and matched references
+### 2.5 Seed selection and matched references
 
 Seed selection must be deterministic and reproducible:
 
