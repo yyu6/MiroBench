@@ -55,3 +55,11 @@ fi
 echo
 echo "########## GEO v137ds -- domain=$domain  writer=$writer ##########"
 "$PY" "$ROOT/generalized_card/analysis/self_similarity/combined_eval.py" --dedupe --tags "${tags[@]}"
+
+# Land the same numbers in the shared summary the baselines use, so one file
+# answers "how did every generator do on every domain". Rows merge on
+# (baseline, model, domain, test, metric): re-running one cohort replaces only
+# its own rows.
+echo
+"$PY" "$ROOT/experiments/geo_v137ds/matched_pair_table.py" \
+  --cohort "$domain" "$writer" --tags "${tags[@]}"

@@ -33,6 +33,26 @@ def write_json(path: Path, payload: Any) -> None:
     path.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
 
+def merge_csv(path: Path, rows: Iterable[dict[str, Any]], key: tuple[str, ...]) -> int:
+    """Rewrite `path` with `rows` replacing same-key rows, keeping the rest.
+
+    `write_csv` truncates, so evaluating one baseline rewrote the summary with
+    only that baseline's rows and silently dropped every other result already
+    measured. Merging on an identity key makes a narrow run additive, which is
+    what a summary of many independent jobs has to be.
+    """
+
+    rows = list(rows)
+    existing: list[dict[str, Any]] = []
+    if path.exists():
+        with path.open(newline="", encoding="utf-8") as handle:
+            existing = list(csv.DictReader(handle))
+    incoming = {tuple(str(row.get(k, "")) for k in key) for row in rows}
+    kept = [r for r in existing if tuple(str(r.get(k, "")) for k in key) not in incoming]
+    write_csv(path, kept + rows)
+    return len(kept)
+
+
 def write_csv(path: Path, rows: Iterable[dict[str, Any]]) -> None:
     rows = list(rows)
     path.parent.mkdir(parents=True, exist_ok=True)

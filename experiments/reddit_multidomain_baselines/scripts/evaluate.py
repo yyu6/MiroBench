@@ -16,7 +16,7 @@ import sys
 from pathlib import Path
 from typing import Any
 
-from common import REPO_ROOT, read_json, write_csv, write_json
+from common import merge_csv, REPO_ROOT, read_json, write_csv, write_json
 
 
 DEFAULT_RUN_ROOT = REPO_ROOT / "artifacts" / "reddit_multidomain_baselines"
@@ -126,7 +126,12 @@ def main() -> None:
         )
         rows.extend(comparison_rows)
     if not args.dry_run:
-        write_csv(run_root / "summary" / "evaluation_summary.csv", rows)
+        kept = merge_csv(
+            run_root / "summary" / "evaluation_summary.csv",
+            rows,
+            key=("baseline", "model", "domain", "metric"),
+        )
+        print(f"[summary] {len(rows)} rows written, {kept} earlier rows kept")
         write_json(
             run_root / "summary" / "evaluation_summary.json",
             {"comparison_rows": rows, "comparison_count": len(rows)},
