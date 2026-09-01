@@ -1,0 +1,55 @@
+{
+  "domain_id": "celebrity_geo",
+  "display_name": "celebrity",
+  "community_context": "Reddit r/Fauxmoi, r/popculturechat, r/entertainment, r/Celebs",
+  "raw_discussions_dir": "data/raw/discussions/celebrity_geo",
+  "real_scores_csv": "artifacts/baselines/celebrity_geo/real/thread_scores.csv",
+  "min_comments": 5,
+  "topic_facets": [
+    "discussion in r/Fauxmoi",
+    "discussion in r/popculturechat",
+    "discussion in r/entertainment",
+    "discussion in r/Celebs"
+  ],
+  "technical_terms": [
+    "bipoc",
+    "bigotry",
+    "barbie",
+    "spill",
+    "woman-dominated",
+    "civil-discussion-only",
+    "abide",
+    "olivia",
+    "holland",
+    "avengers",
+    "britney",
+    "grammys",
+    "emma",
+    "skeletor",
+    "nepo",
+    "participating"
+  ],
+  "protected_entity_terms": [
+    "Brand New Day",
+    "Olivia Rodrigo",
+    "Ariana Grande",
+    "Samara Weaving",
+    "Jameela Jamil",
+    "Vincent Pastore",
+    "Step Back",
+    "Dua Lipa",
+    "Tom Holland",
+    "The Sopranos",
+    "Wonder Man",
+    "Ariana Grande Is",
+    "After Tour",
+    "Public Scrutiny Intensifies"
+  ],
+  "persona_expertise_dimensions": [],
+  "_generated_by": "experiments/geo_v137ds/enable_domain.sh",
+  "_corpus": {
+    "threads": 554,
+    "eligible_threads": 306,
+    "comments": 13183
+  }
+}
