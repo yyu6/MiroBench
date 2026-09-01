@@ -109,8 +109,9 @@ The defaults are 150 seed posts/domain, 5 posts/OASIS run, 50 OASIS agents,
 
 For `SynthPAI + Gemini` only, the runner automatically overrides
 `posts_per_run` to 1 and normalizes Gemini's OpenAI-compatible base URL for the
-legacy SDK. It preserves the SynthPAI YAML's `user_bot` generation setting
-`frequency_penalty: 2.0`, and writes the effective value to `generation.log`.
+legacy SDK. It removes the SynthPAI YAML's `frequency_penalty` because Gemini's
+OpenAI-compatible chat endpoint rejects that field, and writes the effective
+value (`None`) to `generation.log`.
 Other SynthPAI models and all OASIS jobs keep the requested batch size.
 Interrupting a job records `status=interrupted`; rerunning the same command
 resumes its completed seeds unless `--force` is supplied.

@@ -73,13 +73,13 @@ def test_only_gemini_synthpai_strips_base_url_trailing_slash() -> None:
     )
 
 
-def test_gemini_synthpai_preserves_frequency_penalty() -> None:
+def test_gemini_synthpai_removes_unsupported_frequency_penalty() -> None:
     source = SYNTHPAI_OVERRIDE.read_text(encoding="utf-8")
     gemini_branch = source.split(
         'elif "gemini" in self.config.name.lower():', maxsplit=1
     )[1].split('elif "max_tokens" not in self.config.args.keys():', maxsplit=1)[0]
 
-    assert 'pop("frequency_penalty"' not in gemini_branch
+    assert 'pop("frequency_penalty"' in gemini_branch
     assert 'setdefault("max_tokens", 600)' in gemini_branch
 
 
