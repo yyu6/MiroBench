@@ -165,6 +165,16 @@ count, and recursively counted generated comments. Cost is recalculated from
 API response usage metadata. It is therefore an estimate and the provider
 invoice is authoritative.
 
+`billable_output_tokens` is provider-aware. For Gemini 2.5 Flash it includes
+hidden thinking tokens inferred from `total_tokens - prompt_tokens`; for OpenAI
+and DeepSeek, the provider-reported completion/output count is already the
+billable output total. To reprice existing reports from their saved usage logs
+without making any API calls, run:
+
+```bash
+./experiments/reddit_multidomain_baselines/recalculate_costs.sh
+```
+
 Prices live in [`config/models.json`](config/models.json). Gemini's standard
 text rates are from the [Gemini API pricing page](https://ai.google.dev/gemini-api/docs/pricing);
 DeepSeek's per-response peak/off-peak rate is selected from the published

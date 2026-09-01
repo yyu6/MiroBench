@@ -354,9 +354,15 @@ def run_job(
             "prompt_tokens": usage_summary["prompt_tokens"],
             "cached_prompt_tokens": usage_summary["cached_prompt_tokens"],
             "completion_tokens": usage_summary["completion_tokens"],
+            "reasoning_tokens": usage_summary["reasoning_tokens"],
+            "billable_output_tokens": usage_summary["billable_output_tokens"],
             "total_tokens": usage_summary["total_tokens"],
             "estimated_cost_usd": round(float(usage_summary["estimated_cost_usd"]), 8),
             "unknown_cost_requests": usage_summary["unknown_cost_requests"],
+            "cost_accounting_version": 2,
+            "cost_accounting_note": (
+                "Provider-aware billed output; Gemini includes inferred thinking tokens."
+            ),
             **artifact_counts,
             "error": error_text,
         }
@@ -489,6 +495,12 @@ def write_generation_summary(output_root: Path) -> None:
         "elapsed_seconds": round(sum(float(row.get("elapsed_seconds") or 0.0) for row in rows), 3),
         "estimated_cost_usd": round(sum(float(row.get("estimated_cost_usd") or 0.0) for row in rows), 8),
         "request_count": sum(int(row.get("request_count") or 0) for row in rows),
+        "prompt_tokens": sum(int(row.get("prompt_tokens") or 0) for row in rows),
+        "cached_prompt_tokens": sum(int(row.get("cached_prompt_tokens") or 0) for row in rows),
+        "completion_tokens": sum(int(row.get("completion_tokens") or 0) for row in rows),
+        "reasoning_tokens": sum(int(row.get("reasoning_tokens") or 0) for row in rows),
+        "billable_output_tokens": sum(int(row.get("billable_output_tokens") or 0) for row in rows),
+        "total_tokens": sum(int(row.get("total_tokens") or 0) for row in rows),
         "thread_count": sum(int(row.get("thread_count") or 0) for row in rows),
         "comment_count": sum(int(row.get("comment_count") or 0) for row in rows),
     }

@@ -59,6 +59,22 @@ def record_openai_usage(
         cached_tokens = _cached_prompt_tokens(usage)
         if cached_tokens > prompt_tokens:
             cached_tokens = 0
+        reasoning_tokens = _reasoning_tokens(usage)
+        if "gemini" in model.lower():
+            # Gemini's OpenAI-compatible response reports visible text in
+            # completion_tokens while total_tokens also includes billable
+            # thinking tokens. OpenAI/DeepSeek completion tokens already
+            # include their billable model output, so this inference must be
+            # provider-specific to avoid double charging reasoning tokens.
+            inferred_reasoning_tokens = max(
+                0, total_tokens - prompt_tokens - completion_tokens
+            )
+            reasoning_tokens = max(reasoning_tokens, inferred_reasoning_tokens)
+            billable_output_tokens = max(
+                completion_tokens, total_tokens - prompt_tokens
+            )
+        else:
+            billable_output_tokens = completion_tokens
 
         pricing = price_for_model(model)
         estimated_cost = None
@@ -67,7 +83,7 @@ def record_openai_usage(
             estimated_cost = (
                 input_tokens * pricing["input"]
                 + cached_tokens * pricing["cached_input"]
-                + completion_tokens * pricing["output"]
+                + billable_output_tokens * pricing["output"]
             ) / 1_000_000
 
         record = {
@@ -79,6 +95,8 @@ def record_openai_usage(
             "prompt_tokens": prompt_tokens,
             "cached_prompt_tokens": cached_tokens,
             "completion_tokens": completion_tokens,
+            "reasoning_tokens": reasoning_tokens,
+            "billable_output_tokens": billable_output_tokens,
             "total_tokens": total_tokens,
             "estimated_cost_usd": estimated_cost,
         }
@@ -159,7 +177,26 @@ def _float_env(name: str) -> float | None:
 
 
 def _cached_prompt_tokens(usage: Any) -> int:
+    direct = _first_present(
+        usage,
+        "prompt_cache_hit_tokens",
+        "cache_read_input_tokens",
+        "cached_prompt_tokens",
+    )
+    if direct is not None:
+        return _int_value(direct)
     details = _first_present(usage, "prompt_tokens_details", "input_tokens_details")
     if details is None:
         return 0
     return _int_value(_first_present(details, "cached_tokens", "cached_prompt_tokens"))
+
+
+def _reasoning_tokens(usage: Any) -> int:
+    details = _first_present(
+        usage, "completion_tokens_details", "output_tokens_details"
+    )
+    if details is None:
+        return 0
+    return _int_value(
+        _first_present(details, "reasoning_tokens", "thinking_tokens")
+    )

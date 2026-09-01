@@ -127,6 +127,8 @@ def summarize_usage(path: Path, model_spec: dict[str, Any]) -> dict[str, Any]:
         "prompt_tokens": 0,
         "cached_prompt_tokens": 0,
         "completion_tokens": 0,
+        "reasoning_tokens": 0,
+        "billable_output_tokens": 0,
         "total_tokens": 0,
         "estimated_cost_usd": 0.0,
         "unknown_cost_requests": 0,
@@ -138,6 +140,8 @@ def summarize_usage(path: Path, model_spec: dict[str, Any]) -> dict[str, Any]:
             "prompt_tokens": 0,
             "cached_prompt_tokens": 0,
             "completion_tokens": 0,
+            "reasoning_tokens": 0,
+            "billable_output_tokens": 0,
             "total_tokens": 0,
             "estimated_cost_usd": 0.0,
             "unknown_cost_requests": 0,
@@ -146,6 +150,7 @@ def summarize_usage(path: Path, model_spec: dict[str, Any]) -> dict[str, Any]:
     for record in records:
         component = str(record.get("component") or "unknown")
         bucket = by_component[component]
+        reasoning_tokens, billable_output_tokens = _output_token_counts(record)
         for target in (totals, bucket):
             target["requests"] += 1
             for key in (
@@ -155,6 +160,8 @@ def summarize_usage(path: Path, model_spec: dict[str, Any]) -> dict[str, Any]:
                 "total_tokens",
             ):
                 target[key] += _safe_int(record.get(key))
+            target["reasoning_tokens"] += reasoning_tokens
+            target["billable_output_tokens"] += billable_output_tokens
         cost = estimate_record_cost(record, model_spec)
         for target in (totals, bucket):
             if cost is None:
@@ -171,7 +178,7 @@ def estimate_record_cost(record: dict[str, Any], model_spec: dict[str, Any]) -> 
         return None
     prompt_tokens = _safe_int(record.get("prompt_tokens"))
     cached_tokens = min(prompt_tokens, _safe_int(record.get("cached_prompt_tokens")))
-    output_tokens = _safe_int(record.get("completion_tokens"))
+    _reasoning_tokens, output_tokens = _output_token_counts(record)
     try:
         input_price = float(pricing["input_per_million_usd"])
         cached_price = float(pricing.get("cached_input_per_million_usd", input_price))
@@ -183,6 +190,35 @@ def estimate_record_cost(record: dict[str, Any], model_spec: dict[str, Any]) -> 
         + cached_tokens * cached_price
         + output_tokens * output_price
     ) / 1_000_000
+
+
+def _output_token_counts(record: dict[str, Any]) -> tuple[int, int]:
+    """Return informative reasoning tokens and provider-billed output tokens.
+
+    Gemini's OpenAI-compatible API currently excludes hidden thinking tokens
+    from completion_tokens but includes them in total_tokens. OpenAI and
+    DeepSeek include billable reasoning in their completion/output count, so
+    only Gemini needs the total-minus-prompt fallback.
+    """
+
+    prompt_tokens = _safe_int(record.get("prompt_tokens"))
+    completion_tokens = _safe_int(record.get("completion_tokens"))
+    total_tokens = _safe_int(record.get("total_tokens"))
+    explicit_reasoning_tokens = _safe_int(record.get("reasoning_tokens"))
+    explicit_billable_output = _safe_int(record.get("billable_output_tokens"))
+    if explicit_billable_output > 0:
+        return explicit_reasoning_tokens, explicit_billable_output
+
+    model = str(record.get("model") or "").lower()
+    if "gemini" not in model:
+        return explicit_reasoning_tokens, completion_tokens
+
+    inferred_reasoning_tokens = max(
+        0, total_tokens - prompt_tokens - completion_tokens
+    )
+    reasoning_tokens = max(explicit_reasoning_tokens, inferred_reasoning_tokens)
+    billable_output_tokens = max(completion_tokens, total_tokens - prompt_tokens)
+    return reasoning_tokens, billable_output_tokens
 
 
 def _pricing_for_timestamp(timestamp: Any, model_spec: dict[str, Any]) -> dict[str, Any] | None:

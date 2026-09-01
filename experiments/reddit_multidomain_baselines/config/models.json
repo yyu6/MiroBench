@@ -1,9 +1,11 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "currency": "USD",
   "pricing_notes": [
     "Costs are estimates from API response usage metadata; provider invoices remain authoritative.",
     "All listed jobs use synchronous Chat Completions, not provider batch/flex pricing.",
+    "Gemini billed output includes hidden thinking tokens inferred from total minus prompt tokens.",
+    "OpenAI and DeepSeek completion/output token counts already include their billable model output.",
     "DeepSeek rates are selected per API-response timestamp using the published weekday peak window (01:00-04:00 and 06:00-10:00 UTC)."
   ],
   "models": {
