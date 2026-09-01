@@ -180,10 +180,11 @@ if [[ "$do_score" == "1" ]]; then
   echo
   echo "scoring real threads (local models, no API; this is the slow part)"
   mkdir -p "$(dirname "$scores")"
-  HF_HUB_OFFLINE=1 "$PY" "$ROOT/scripts/evaluation/run_baseline_evaluation.py" \
-    --category-dir "$ROOT/data/raw/discussions/${domain}_geo" \
-    --output-dir "$ROOT/artifacts/baselines/${domain}_geo" \
-    --device "$device" --real-only 2>&1 | tail -20
+  # NOT run_baseline_evaluation.py: it has no --real-only and its second phase
+  # runs simulations, which spends API money. score_real_threads.py calls that
+  # script's phase-1 function directly, so this is local compute only.
+  HF_HUB_OFFLINE=1 "$PY" "$ROOT/experiments/geo_v137ds/score_real_threads.py" \
+    "$domain" --device "$device" 2>&1 | tail -20
 else
   echo
   echo "real thread scores NOT built. Generation works without them; evaluation does not."

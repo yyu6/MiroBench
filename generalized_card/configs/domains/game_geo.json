@@ -1,0 +1,56 @@
+{
+  "domain_id": "game_geo",
+  "display_name": "game",
+  "community_context": "Reddit r/gaming, r/Games, r/pcgaming, r/GamingLeaksAndRumours",
+  "raw_discussions_dir": "data/raw/discussions/game_geo",
+  "real_scores_csv": "artifacts/baselines/game_geo/real/thread_scores.csv",
+  "min_comments": 5,
+  "topic_facets": [
+    "discussion in r/gaming",
+    "discussion in r/Games",
+    "discussion in r/pcgaming",
+    "discussion in r/GamingLeaksAndRumours",
+    "discussion in r/patientgamers"
+  ],
+  "technical_terms": [
+    "disc",
+    "playstation",
+    "multiplayer",
+    "xbox",
+    "devs",
+    "halo",
+    "gameplay",
+    "remaster",
+    "rockstar",
+    "gamers",
+    "alan",
+    "ubisoft",
+    "gears",
+    "gamepass",
+    "indie",
+    "co-op"
+  ],
+  "protected_entity_terms": [
+    "HexaDome Tactics",
+    "Tomb Raider",
+    "One More Plate",
+    "Jez Corden",
+    "Project Helix",
+    "Automated Fix",
+    "Kingdom Come Deliverance",
+    "Final Fantasy",
+    "Dream Game",
+    "Era Kingdom Hearts",
+    "One Small Wish",
+    "Anomaly President",
+    "Phew Phew Games",
+    "Chaotic Presidential Roguelike"
+  ],
+  "persona_expertise_dimensions": [],
+  "_generated_by": "experiments/geo_v137ds/enable_domain.sh",
+  "_corpus": {
+    "threads": 559,
+    "eligible_threads": 249,
+    "comments": 13389
+  }
+}

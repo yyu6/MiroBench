@@ -45,6 +45,8 @@ done
 case "$domain" in
   camera) mdd="camera" ;; cell_phone) mdd="cellphone" ;;
   headphone) mdd="headphones" ;; laptop) mdd="laptop" ;;
+  # enable_domain.sh names a domain <name>_geo; the harness knows it as <name>.
+  *_geo)  mdd="${domain%_geo}" ;;
   *) echo "ERROR: no multidomain name for GEO domain '$domain'" >&2; exit 2 ;;
 esac
 MD="$ROOT/artifacts/reddit_multidomain_baselines"

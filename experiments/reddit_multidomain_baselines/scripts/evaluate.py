@@ -129,6 +129,8 @@ def main() -> None:
             },
         )
         rows.extend(comparison_rows)
+        if report["baseline"] == "geo":
+            _geo_matched_pair(report, run_root, args)
     if not args.dry_run:
         summary_path = run_root / "summary" / "evaluation_summary.csv"
         kept, merged_rows = merge_evaluation_summary(
@@ -198,6 +200,35 @@ def _load_completed_reports(run_root: Path, args: argparse.Namespace) -> list[tu
             continue
         reports.append((path, report))
     return reports
+
+
+def _geo_matched_pair(report: dict[str, Any], run_root: Path, args) -> None:
+    """Also record GEO's matched-pair test, which the two-sample one cannot replace.
+
+    two_sample scores generated threads against a shared real reference, which is
+    what makes oasis, synthpai and geo comparable. matched_pair scores each
+    generated thread against the real thread it was built from, which is the test
+    GEO is designed for and the only one that answers "is this thread
+    indistinguishable from its own source". Both belong in the summary; the
+    `test` column keeps them apart.
+    """
+
+    tags = list(report.get("source_tags") or [])
+    if not tags:
+        print(f"[matched-pair] {report['model']}/{report['domain']}: report lists no "
+              "source_tags; export_to_multidomain.sh records them", flush=True)
+        return
+    command = [
+        sys.executable,
+        str(REPO_ROOT / "experiments" / "geo_v137ds" / "matched_pair_table.py"),
+        "--cohort", str(report["domain"]), str(report["model"]),
+        "--out", str(run_root / "summary" / "evaluation_summary.csv"),
+        "--tags", *tags,
+    ]
+    if args.dry_run:
+        print("[matched-pair dry-run] " + " ".join(command[:8]) + " ...", flush=True)
+        return
+    subprocess.run(command, cwd=REPO_ROOT, check=False)
 
 
 def _score_artifact(

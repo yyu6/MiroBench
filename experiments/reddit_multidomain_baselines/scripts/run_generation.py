@@ -32,7 +32,10 @@ from common import (
 
 
 DEFAULT_OUTPUT_ROOT = REPO_ROOT / "artifacts" / "reddit_multidomain_baselines"
-BASELINES = ("oasis", "synthpai")
+
+# GEO domains whose config predates the multidomain adapter and keeps a bare name.
+GEO_NATIVE_DOMAINS = ("camera", "cell_phone", "headphone", "laptop")
+BASELINES = ("oasis", "synthpai", "geo")
 
 
 def parse_args() -> argparse.Namespace:
@@ -75,6 +78,14 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--retry-delay", type=float, default=60.0)
     parser.add_argument("--force-seeds", action="store_true")
     parser.add_argument("--force-template", action="store_true")
+    parser.add_argument("--geo-planner", default="",
+                        help="Planner for baseline=geo. Empty uses --models, "
+                             "i.e. one model at both ends; the pinned v137ds arm "
+                             "is --geo-planner gpt-5.4-mini with a DeepSeek writer.")
+    parser.add_argument("--geo-shard-size", type=int, default=3)
+    parser.add_argument("--geo-max-parallel", type=int, default=8,
+                        help="Concurrent GEO shards. Memory-bound, not API-bound: "
+                             "each shard is ~0.4GB once the domain profile is shared.")
     parser.add_argument("--force", action="store_true", help="Pass --force to the baseline generator.")
     parser.add_argument("--dry-run", action="store_true", help="Validate all generation plumbing without API calls.")
     parser.add_argument(
@@ -290,6 +301,23 @@ def run_job(
                 "--min-comments-per-post",
                 str(args.synthpai_min_comments_per_post),
             ]
+        elif baseline == "geo":
+            # GEO owns its own domain configs, seed pools and pinned arm set, so
+            # this delegates rather than reimplementing the flag list. The domain
+            # name differs: the harness calls it `celebrity`, GEO's config is
+            # `celebrity_geo`, because GEO's corpus adapter lives beside the
+            # product-thread domains that already used the bare names.
+            geo_domain = domain if domain in GEO_NATIVE_DOMAINS else f"{domain}_geo"
+            planner = args.geo_planner or model
+            command = [
+                str(EXPERIMENT_ROOT.parent / "geo_v137ds" / "run_geo_domain.sh"),
+                geo_domain,
+                "--planner", planner,
+                "--writer", model,
+                "--shard-size", str(args.geo_shard_size),
+                "--max-parallel", str(args.geo_max_parallel),
+                "--tag-prefix", f"geo_{domain}_{model.replace('.','')}_{args.seed}",
+            ]
         else:  # pragma: no cover - argparse restricts the set.
             raise ValueError(f"Unsupported baseline: {baseline}")
         if args.dry_run:
@@ -299,6 +327,21 @@ def run_job(
         _run_logged(command, env=env, log_path=log_path, label=f"{baseline}_generator")
         if baseline == "oasis":
             _normalize_oasis_domain_metadata(generated_root, domain)
+        elif baseline == "geo":
+            # GEO writes into artifacts/generalized_card/runs/<tag>/; the harness
+            # expects generated/run_*_sampled_reddit under its own layout. The
+            # export links the threads across, dedupes on source post, and writes
+            # the report this job's evaluation reads -- including source_tags,
+            # which is what lets the matched-pair test find the shards later.
+            _run_logged(
+                [
+                    str(EXPERIMENT_ROOT.parent / "geo_v137ds" / "export_to_multidomain.sh"),
+                    geo_domain,
+                    "--writer", model,
+                    "--planner", args.geo_planner or model,
+                ],
+                env=env, log_path=log_path, label="geo_export",
+            )
     except KeyboardInterrupt:
         status = "interrupted"
         error_text = "KeyboardInterrupt: interrupted by user"
