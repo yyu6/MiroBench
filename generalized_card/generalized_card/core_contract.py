@@ -249,7 +249,7 @@ CORE_FILES = {
     ),
     "token_usage_tracker": (
         "scripts/token_usage_tracker.py",
-        "296675ce356ad102de410a9187fa9c6ccd145570fdfd06ccc0382ec542f3ede7",
+        "93cb0791c6d262e2bef3f8a5d4cfeb96885e43addaefb65f01089d6ad3614579",
     ),
     "token_usage_summarizer": (
         "scripts/summarize_token_usage.py",
