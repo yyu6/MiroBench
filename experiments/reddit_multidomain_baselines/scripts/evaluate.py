@@ -16,7 +16,7 @@ import sys
 from pathlib import Path
 from typing import Any
 
-from common import merge_csv, REPO_ROOT, read_json, write_csv, write_json
+from common import REPO_ROOT, read_json, write_csv, write_json
 
 
 DEFAULT_RUN_ROOT = REPO_ROOT / "artifacts" / "reddit_multidomain_baselines"
@@ -57,6 +57,9 @@ CORE_METRICS = {
     "mean_story_probability",
     "emotion_entropy",
 }
+
+SUMMARY_KEY = ("baseline", "model", "domain", "test", "metric")
+TWO_SAMPLE_TEST = "two_sample"
 
 
 def parse_args() -> argparse.Namespace:
@@ -108,6 +111,7 @@ def main() -> None:
                     "model": report["model"],
                     "domain": domain,
                     "generation_report": str(report_path),
+                    "test": TWO_SAMPLE_TEST,
                 }
             )
         write_csv(comparison_dir / "metric_comparison.csv", comparison_rows)
@@ -126,17 +130,58 @@ def main() -> None:
         )
         rows.extend(comparison_rows)
     if not args.dry_run:
-        kept = merge_csv(
-            run_root / "summary" / "evaluation_summary.csv",
+        summary_path = run_root / "summary" / "evaluation_summary.csv"
+        kept, merged_rows = merge_evaluation_summary(
+            summary_path,
             rows,
-            key=("baseline", "model", "domain", "metric"),
         )
         print(f"[summary] {len(rows)} rows written, {kept} earlier rows kept")
         write_json(
             run_root / "summary" / "evaluation_summary.json",
-            {"comparison_rows": rows, "comparison_count": len(rows)},
+            {
+                "comparison_rows": merged_rows,
+                "comparison_count": len(merged_rows),
+            },
         )
-        print(f"[complete] {run_root / 'summary' / 'evaluation_summary.csv'}")
+        print(f"[complete] {summary_path}")
+
+
+def merge_evaluation_summary(
+    path: Path,
+    rows: list[dict[str, Any]],
+) -> tuple[int, list[dict[str, Any]]]:
+    """Merge one evaluation run without conflating distinct test protocols.
+
+    Older two-sample rows had an empty ``test`` column. Normalize those rows
+    before keying so a rerun replaces its own result, while a GEO
+    ``matched_pair`` result for the same model/domain/metric remains separate.
+    The returned full table is also used for JSON so CSV and JSON cannot drift.
+    """
+
+    existing: list[dict[str, Any]] = []
+    if path.exists():
+        with path.open(newline="", encoding="utf-8") as handle:
+            existing = list(csv.DictReader(handle))
+    for row in [*existing, *rows]:
+        row["test"] = str(row.get("test") or TWO_SAMPLE_TEST)
+    incoming = {
+        tuple(str(row.get(column, "")) for column in SUMMARY_KEY)
+        for row in rows
+    }
+    kept = [
+        row
+        for row in existing
+        if tuple(str(row.get(column, "")) for column in SUMMARY_KEY) not in incoming
+    ]
+    merged = kept + rows
+    merged.sort(
+        key=lambda row: tuple(
+            str(row.get(column, ""))
+            for column in ("domain", "baseline", "model", "test", "metric")
+        )
+    )
+    write_csv(path, merged)
+    return len(kept), merged
 
 
 def _load_completed_reports(run_root: Path, args: argparse.Namespace) -> list[tuple[Path, dict[str, Any]]]:

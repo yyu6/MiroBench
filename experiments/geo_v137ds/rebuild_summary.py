@@ -27,6 +27,11 @@ for f in sorted(MD.glob("evaluation/*/*/*/metric_comparison.csv")):
     print(f"  {baseline}/{model}/{domain}: {len(rows)} metrics")
 
 existing = list(csv.DictReader(open(OUT))) if OUT.exists() else []
+# Before ``test`` became part of the summary identity, two-sample rows left
+# this column blank.  Normalize them so rebuilding does not preserve a second,
+# legacy copy beside the recovered ``test=two_sample`` row.
+for row in existing:
+    row["test"] = row.get("test") or "two_sample"
 incoming = {tuple(str(r.get(k, "")) for k in KEY) for r in recovered}
 kept = [r for r in existing if tuple(str(r.get(k, "")) for k in KEY) not in incoming]
 allrows = kept + recovered

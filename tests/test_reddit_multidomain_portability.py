@@ -99,6 +99,57 @@ def test_evaluation_core_metric_whitelist_matches_four_families() -> None:
     assert module.CORE_METRICS == EXPECTED_CORE_METRICS
 
 
+def test_evaluation_summary_keeps_matched_pair_and_two_sample_rows(tmp_path: Path) -> None:
+    sys.path.insert(0, str(EXPERIMENT / "scripts"))
+    module = load_module(
+        "reddit_multidomain_evaluate_summary_merge",
+        EXPERIMENT / "scripts" / "evaluate.py",
+    )
+    path = tmp_path / "evaluation_summary.csv"
+    identity = {
+        "baseline": "geo",
+        "model": "gpt-5.4-mini",
+        "domain": "camera",
+        "metric": "avg_depth",
+    }
+    module.write_csv(path, [{**identity, "test": "matched_pair", "real_mean": 2.2}])
+
+    kept, merged = module.merge_evaluation_summary(
+        path,
+        [{**identity, "test": "two_sample", "real_mean": 1.3}],
+    )
+
+    assert kept == 1
+    assert len(merged) == 2
+    assert {row["test"] for row in merged} == {"matched_pair", "two_sample"}
+
+
+def test_evaluation_summary_normalizes_legacy_blank_two_sample_rows(tmp_path: Path) -> None:
+    sys.path.insert(0, str(EXPERIMENT / "scripts"))
+    module = load_module(
+        "reddit_multidomain_evaluate_legacy_summary_merge",
+        EXPERIMENT / "scripts" / "evaluate.py",
+    )
+    path = tmp_path / "evaluation_summary.csv"
+    identity = {
+        "baseline": "oasis",
+        "model": "gpt-5.4-mini",
+        "domain": "camera",
+        "metric": "avg_depth",
+    }
+    module.write_csv(path, [{**identity, "test": "", "real_mean": 1.0}])
+
+    kept, merged = module.merge_evaluation_summary(
+        path,
+        [{**identity, "test": "two_sample", "real_mean": 2.0}],
+    )
+
+    assert kept == 0
+    assert len(merged) == 1
+    assert merged[0]["test"] == "two_sample"
+    assert merged[0]["real_mean"] == 2.0
+
+
 def collect_values(value, key: str):
     if isinstance(value, dict):
         for child_key, child in value.items():
