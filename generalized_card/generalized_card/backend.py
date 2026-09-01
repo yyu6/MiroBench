@@ -1608,9 +1608,43 @@ def _run_generalized_self_test(module: ModuleType, config: DomainConfig) -> None
             for index in range(1, 13)
         }
         assert any(_closing_line(item) for item in long_closes)
-        # The verdict suppression is measured at 0.014, so nearly every slot
-        # carries it; the concrete-close cue is drawn, so the rules must differ.
-        assert len({_closing_line(item) for item in long_closes}) > 1
+        # The contract is that a slot draws each move at ITS OWN domain's
+        # measured share -- not that any fixed number of slots disagree.
+        # Asserting 12 draws must differ silently encodes camera's rate: at
+        # camera's 12-14% own-concrete share a dozen slots vary, but a domain
+        # measured at 2% draws zero in twelve and the rule is identically
+        # suppressed for all of them, which is the correct realization of a 2%
+        # corpus, not a failure. Sample wide enough for the draw to show, and
+        # check the realized rate against the profile the domain itself
+        # produced.
+        _band = closing_move.band_row(
+            closing_move.ACTIVE_CLOSING_PROFILE, 150
+        ) or {}
+        _shares = _band.get("shares") or {}
+        _drawn = {
+            name: sum(
+                closing_move.slot_uses_move(
+                    closing_move.ACTIVE_CLOSING_PROFILE,
+                    slot_key=f"selftest:{index}",
+                    move=name,
+                    word_count=150,
+                )
+                for index in range(400)
+            )
+            / 400.0
+            for name in _shares
+        }
+        for _name, _share in _shares.items():
+            # Binomial sd at n=400 is at most 0.025; 4x that is a wide band that
+            # still catches a draw wired to the wrong share or ignoring it.
+            assert abs(_drawn[_name] - _share) < 0.1, (
+                f"closing move {_name}: drew {_drawn[_name]:.3f} "
+                f"against a measured share of {_share:.3f}"
+            )
+        # Where a move is common enough that a dozen slots should disagree, they
+        # must; where it is rare, identical rules across twelve slots are right.
+        if any(share >= 0.1 for share in _shares.values()):
+            assert len({_closing_line(item) for item in long_closes}) > 1
         # Silent below the measurement floor: a 12-word slot has no closing move
         # separate from its body.
         short = module.build_writer_prompt(
