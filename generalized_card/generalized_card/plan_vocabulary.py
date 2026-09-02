@@ -230,7 +230,16 @@ def _expected_position_sentence(real_positions: int) -> str:
     )
 
 
-def named_lens_block(prior_plans, *, limit: int = 24) -> str:
+# A thread cannot name more lenses than it has slots, and the largest celebrity
+# thread is 97 comments, so this bounds the list without ever truncating a real
+# one. The first version capped it at 24 -- another number I invented -- and by
+# batch 12 of a 97-comment thread 19 of the 43 named lenses were hidden from the
+# planner that was being asked not to duplicate them. It duplicated them:
+# batches 11 and 12 added 7 new lenses each after batch 10 had added 1.
+_MAX_LISTED_LENSES = 150
+
+
+def named_lens_block(prior_plans, *, limit: int = _MAX_LISTED_LENSES) -> str:
     """The lenses this thread has already named, for the REPLY planner.
 
     Root slots and reply slots are planned by two different prompts. The root
@@ -260,8 +269,16 @@ def named_lens_block(prior_plans, *, limit: int = 24) -> str:
         counts[key] = (label, seen + 1)
     if not counts:
         return ""
-    rows = sorted(counts.values(), key=lambda item: (-item[1], item[0]))[:limit]
+    ranked = sorted(counts.values(), key=lambda item: (-item[1], item[0]))
+    rows = ranked[:limit]
     listed = "\n".join(f"- {label} (used {seen}x)" for label, seen in rows)
+    if len(ranked) > len(rows):
+        # Say so rather than presenting a partial list as complete: a planner
+        # told not to duplicate a list it cannot see will duplicate it.
+        listed += (
+            f"\n- ... and {len(ranked) - len(rows)} more not shown; avoid "
+            f"renaming a position even if it is not listed here"
+        )
     return (
         "\nLenses this thread has already named, with how many slots each one "
         "holds:\n"

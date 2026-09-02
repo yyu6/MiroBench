@@ -268,7 +268,7 @@ CORE_FILES = {
     # slot is asked for.
     "plan_vocabulary": (
         "generalized_card/generalized_card/plan_vocabulary.py",
-        "c2f5473a119fa9b39b664205c64568a7af36a1a12f589f5b10edd1d9dd2f5899",
+        "8d5daa5f782b21bdb16fff681da7236ba8a6736eb7b796cabb85d5c0a9f60e86",
     ),
     "planning_quality": (
         "generalized_card/generalized_card/planning_quality.py",

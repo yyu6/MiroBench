@@ -302,3 +302,38 @@ class RealPositionCountTest(unittest.TestCase):
             self.assertNotIn("five to twelve", pv.abstraction_block("", 34))
         finally:
             pv.set_plan_vocabulary("closed")
+
+
+class LensListCompletenessTest(unittest.TestCase):
+    """A planner told not to duplicate a list it cannot see will duplicate it.
+
+    The block capped its list at 24 named lenses. On a 97-comment thread the
+    root batches named 36, so the first reply batch was shown 24 of them and
+    added 1 new lens -- the fix working -- and the next two batches, shown 24 of
+    37 and 24 of 43, added 7 each. The cap was the leak.
+    """
+
+    def setUp(self) -> None:
+        pv.set_plan_vocabulary("open")
+
+    def tearDown(self) -> None:
+        pv.set_plan_vocabulary("closed")
+
+    def test_a_realistic_thread_is_never_truncated(self) -> None:
+        plans = [{"perspective_id": f"lens number {i}"} for i in range(97)]
+        block = pv.named_lens_block(plans)
+        self.assertNotIn("not shown", block)
+        for i in (0, 50, 96):
+            self.assertIn(f"lens number {i} ", block)
+
+    def test_truncation_is_disclosed_when_it_happens(self) -> None:
+        plans = [{"perspective_id": f"lens number {i}"} for i in range(200)]
+        block = pv.named_lens_block(plans)
+        self.assertIn("more not shown", block)
+        self.assertIn("even if it is not listed here", block)
+
+    def test_most_used_lenses_survive_a_truncation(self) -> None:
+        plans = [{"perspective_id": "dominant one"}] * 5
+        plans += [{"perspective_id": f"rare {i}"} for i in range(200)]
+        block = pv.named_lens_block(plans, limit=3)
+        self.assertIn("dominant one (used 5x)", block)
