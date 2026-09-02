@@ -17,7 +17,26 @@
 | **v141iso** | `iso2_20260902_p*` | celebrity | 50 | 跑中 | v139mp + `--isolation-quota measured --fixed-isolation`，全域固定 12% |
 | **v142isopt** | `isopt_20260902_p*` | celebrity | 50 | 跑中 | v141iso 去掉 `--fixed-isolation`：每条 thread 用它自己真实 thread 量出的孤立比例。已核对两支的 profile 除该字段外逐字节一致 |
 | **v143obs** | `obs_20260902_p*` `obsb_*` | celebrity | 50 | 跑中 | v139mp + `--adopt-observations`：采纳 profile 自己已经测出来、却被硬编码常数顶掉的 8 个行为率（short 0.18→0.48、calm 0.78→0.29 等） |
-| **v144win** | `win_20260902_p*` | celebrity | 50 | 跑中 | v143obs + `--reference-window measured`：Planner 的参考例句按参考库自身长度分布取，而不是 BM25 前 N 条 |
+| **v144win2** | `win2_20260902_p*` | celebrity | 50 | 跑中 | v138ref + `--reference-window measured`：Planner 的参考例句按参考库自身长度分布取，档内仍按 BM25 排 |
+| **v146raw2** | `raw2_20260902_p*` | celebrity | 50 | 跑中 | v138ref + `--reference-window unranked`：完全不按词汇相关度排，等价于从参考库随机抽 |
+| **v145** | `iso3_20260902_p*` | celebrity | 50 | 跑中 | v139mp + 逐 thread 孤立配额，且配额不再自带词数范围 |
+
+### v141iso 读数（N=13，`iso2_*` + `iso2b_*`，16 个 shard）
+
+11/12 PASS，但**这是 N 撑出来的**：N=13 时 Cliff d 的标准差是 0.23，几乎测不出显著。
+唯一能比的是效应量：
+
+| 指标 | v138ref (N=48) | v141iso (N=13) |
+|---|---|---|
+| `self_bertscore` | d +0.37 | d **+0.42** |
+| `semantic_mean_cosine` | d +0.54 | d **+0.53** |
+
+**配额执行了但没转化**：thread 内孤立比例 16.5% → 20.6%（真实 24.9%），
+两个目标指标的效应量原地不动。参照检验其实已经预告了一半——
+`self_bertscore` 与孤立度的相关只有 -0.274，本来就弱。
+
+担心的副作用没有出现：`self_bleu_4` d -0.16，`length_cv`、`emotion_entropy` 都在。
+所以这一支是无害无效，不是有害。
 
 ### Planner 被堵死在哪里
 
