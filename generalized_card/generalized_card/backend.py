@@ -24,6 +24,7 @@ from .actor_conditioning import (
     assignment_key,
     enrich_normalized_plans,
 )
+from . import branch_routing as _branch_routing
 from .branch_routing import (
     set_branch_dictation,
     parent_slot_schedule,
@@ -2834,8 +2835,17 @@ def _annotate_plan_metadata(
             # Branch ownership is structural Planner metadata, not a candidate
             # choice. Keep it attached even when the Comment Planner uses a
             # shorter local decision-boundary wording.
-            plan["owned_decision_subject"] = plan["_required_branch_subject"]
-            plan["perspective_id"] = plan["_required_branch_perspective"]
+            #
+            # Under `--branch-dictation structural` these two assignments are
+            # skipped. They overwrite whatever the Comment Planner chose with
+            # the branch's subject and lens, which makes every slot in a branch
+            # an angle on one subject no matter what the prompt asks for -- and
+            # it is why `perspective_id` came back `seed_local` in 0 of 1,878
+            # slots even after the schema and the brief both offered it. The
+            # branch id itself is still forced above, because that is topology.
+            if _branch_routing.BRANCH_DICTATION_MODE != "structural":
+                plan["owned_decision_subject"] = plan["_required_branch_subject"]
+                plan["perspective_id"] = plan["_required_branch_perspective"]
         parent_sample = parent_slots.get(int(sample_id))
         if parent_sample is not None:
             plan["_required_parent_sample_id"] = str(parent_sample)

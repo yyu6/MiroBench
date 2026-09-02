@@ -207,7 +207,7 @@ CORE_FILES = {
     ),
     "generator_adapter": (
         "generalized_card/generalized_card/backend.py",
-        "f588ae9745428715a3b2feabd2146ee7a58e066e0c3a9df21873c0402b0c04df",
+        "3b627175abd4460154ee3f670c980c7ea10bb4982251f52aac4e1df52b290e4f",
     ),
     "data_boundary": (
         "generalized_card/generalized_card/data.py",
