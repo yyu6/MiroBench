@@ -2420,3 +2420,18 @@ persona 一直用的是 `matraix-persona-dev-sample` —— 名字里就写着 d
 **规则:任何以第三方数据集为前提的结论,写下之前先读那个数据集的 manifest 和 README,
 确认用的不是 smoke/dev/sample 切片。文件名和 manifest 里的 `count`/`parent_pool` 字段
 就是答案,五分钟能查清。**
+
+## 2026-09-02 — 启动长任务的两个坑（都让我丢了一次运行）
+
+### `nohup cmd & ; until ...` 在同一个 Bash 调用里 = 超时会连带杀掉后台任务
+我写 `nohup ./run.sh ... & ` 然后在同一个命令里 `until <条件>; do sleep 10; done` 等它。
+Bash 工具 120s 超时 → 整个**进程组**收到 SIGTERM → `nohup` 只挡 SIGHUP，挡不住 SIGTERM，
+后台的 run.sh 一起死。表现是：日志停在 self-test 之后，没有 traceback，run_state.json 不存在。
+
+### macOS 没有 `setsid`
+接着我用 `setsid ./run.sh ... &` 想脱离进程组。macOS 上 `setsid` 不存在，
+命令直接 `command not found`，而我看到的是**上一次运行残留的日志**，误以为它在跑。
+
+**规则：启动长任务一律用 Bash 工具的 `run_in_background: true` 直接跑那条命令本身，
+不要 `nohup`＋前台等待，也不要用 `setsid`。等待用另一个独立的 `run_in_background`
+调用做 `until` 轮询。删掉旧 run 目录时**连日志一起删**，否则残留日志会让人误判。
