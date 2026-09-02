@@ -184,6 +184,15 @@ class MatraixPersonaRuntime:
         # seed_index -> persona_ids already handed to a speaker in that thread.
         # Only read under `--persona-draw exhaust`.
         self._thread_used: dict[int, set[str]] = {}
+        # Captured at construction, never re-read from the module global.
+        # `public_config()` renders every eligible persona to report length
+        # statistics, which fills `_system_cache`; if the projection were read
+        # per call and changed afterwards, that cache would hold identities
+        # built under a different projection and nothing would report it. It
+        # also makes an instance self-consistent regardless of what the process
+        # does to the globals later, which is what `run_config` records.
+        self.projection = PERSONA_PROJECTION_MODE
+        self.draw = PERSONA_DRAW_MODE
         self.commit = "disabled"
         self.template_path: Path | None = None
         self._official = None
@@ -304,7 +313,7 @@ class MatraixPersonaRuntime:
             )
         )
         chosen = candidates[0].persona_id
-        if PERSONA_DRAW_MODE == "exhaust":
+        if self.draw == "exhaust":
             used = self._thread_used.setdefault(int(seed_index), set())
             for persona in candidates:
                 if persona.persona_id not in used:
@@ -327,6 +336,7 @@ class MatraixPersonaRuntime:
         selected = _project_dimensions(
             persona.dimensions,
             expertise_dimensions=self.expertise_dimensions,
+            projection=self.projection,
         )
         rendered_persona = persona
         if self.mode == MODE_PROJECTED:
@@ -384,8 +394,8 @@ class MatraixPersonaRuntime:
             "dataset_personas": len(self._personas_by_id),
             "eligible_personas": len(self._eligible),
             "assignment_seed": self.assignment_seed,
-            "projection": PERSONA_PROJECTION_MODE,
-            "draw": PERSONA_DRAW_MODE,
+            "projection": self.projection,
+            "draw": self.draw,
             "expertise_dimensions": list(self.expertise_dimensions),
             "template_path": str(self.template_path),
             "template_source": "official-matraix-persona-system",
@@ -672,8 +682,11 @@ def _project_dimensions(
     dimensions: dict[str, Any],
     *,
     expertise_dimensions: Iterable[str],
+    projection: str | None = None,
 ) -> dict[str, str]:
-    register_mode = PERSONA_PROJECTION_MODE == "register"
+    register_mode = (
+        PERSONA_PROJECTION_MODE if projection is None else projection
+    ) == "register"
     if register_mode:
         ordered = (
             *_REGISTER_FIRST,

@@ -188,3 +188,57 @@ class ProvenanceTest(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class RuntimeCapturesItsOwnModeTest(unittest.TestCase):
+    """An instance must not change behaviour when a global moves under it.
+
+    `public_config()` renders every eligible persona to report length
+    statistics, filling `_system_cache`. When the projection was read per call,
+    a setter that ran after construction left the cache holding identities
+    built under the previous projection while `run_config` reported the new
+    one. The v152 probe recorded `persona_projection: register` at the top
+    level and `persona_conditioning.projection: default` inside it, from the
+    same run, and neither the manifest nor any artifact could say which one the
+    Writer actually saw.
+    """
+
+    def tearDown(self) -> None:
+        PB.set_persona_projection("default")
+        PB.set_persona_draw("replace")
+
+    def test_instance_keeps_its_construction_time_modes(self) -> None:
+        PB.set_persona_projection("register")
+        PB.set_persona_draw("exhaust")
+        runtime = _runtime(DEV)
+        PB.set_persona_projection("default")
+        PB.set_persona_draw("replace")
+        self.assertEqual("register", runtime.projection)
+        self.assertEqual("exhaust", runtime.draw)
+        self.assertEqual("register", runtime.public_config()["projection"])
+        self.assertEqual("exhaust", runtime.public_config()["draw"])
+
+    def test_rendering_follows_the_instance_not_the_global(self) -> None:
+        PB.set_persona_projection("register")
+        runtime = _runtime(DEV)
+        PB.set_persona_projection("default")
+        rendered = runtime.assignment_for_id(
+            runtime._eligible[0].persona_id
+        ).system_prompt
+        plain = _runtime(DEV)  # built under `default`
+        self.assertNotEqual(
+            plain.assignment_for_id(plain._eligible[0].persona_id).system_prompt,
+            rendered,
+        )
+
+    def test_draw_follows_the_instance_not_the_global(self) -> None:
+        PB.set_persona_draw("exhaust")
+        runtime = _runtime(DEV)
+        PB.set_persona_draw("replace")
+        got = {
+            runtime.assign(
+                seed_index=3, task=_task(i + 1), speaker_id=f"S{i + 1:03d}"
+            ).persona_id
+            for i in range(30)
+        }
+        self.assertEqual(30, len(got))

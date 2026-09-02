@@ -1157,6 +1157,13 @@ def main() -> None:
         args.matraix_dataset
         or matraix_root / "persona" / "datasets" / "matraix-persona-dev-sample"
     )
+    # BEFORE build_runtime, not after. The runtime captures both modes at
+    # construction and `public_config()` renders every eligible persona to
+    # report length statistics, so a setter called later leaves `run_config`
+    # and the persona manifest claiming the shipped defaults for a run that
+    # used the arms -- which is exactly what the v152 probe recorded.
+    set_persona_projection(args.persona_projection)
+    set_persona_draw(args.persona_draw)
     persona_runtime = build_runtime(
         mode=args.persona_conditioning,
         matraix_root=matraix_root,
@@ -1231,10 +1238,6 @@ def main() -> None:
     set_matched_text(args.matched_text)
     set_branch_dictation(args.branch_dictation)
     set_plan_vocabulary(args.plan_vocabulary)
-    # The parent builds the domain profile and the manifest; the subprocess
-    # renders the prompts. Both need these, so both are set (G189).
-    set_persona_projection(args.persona_projection)
-    set_persona_draw(args.persona_draw)
     set_slot_grid(args.slot_grid)
     set_planner_distribution(args.planner_distribution)
     set_isolation_quota(args.isolation_quota)

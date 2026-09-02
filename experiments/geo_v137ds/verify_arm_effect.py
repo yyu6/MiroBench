@@ -36,9 +36,21 @@ def _run_persona_config(prefix):
         f = d / "run_config.json"
         if not f.exists():
             continue
-        cfg = json.load(open(f)).get("persona_conditioning") or {}
-        if cfg.get("mode") and cfg.get("mode") != "none":
-            return cfg
+        raw = json.load(open(f))
+        cfg = dict(raw.get("persona_conditioning") or {})
+        if not cfg.get("mode") or cfg.get("mode") == "none":
+            continue
+        # Runs before the setters were moved ahead of `build_runtime` recorded
+        # the shipped defaults inside `persona_conditioning` while the top-level
+        # fields held what was actually requested. Prefer the top level, which
+        # is written straight from argv.
+        for key, top in (("projection", "persona_projection"), ("draw", "persona_draw")):
+            if raw.get(top):
+                if cfg.get(key) and cfg[key] != raw[top]:
+                    print(f"  警告: run_config 内外不一致 ({key}: "
+                          f"{cfg[key]} vs {raw[top]})；按顶层的 {raw[top]} 重建")
+                cfg[key] = raw[top]
+        return cfg
     return {}
 
 

@@ -241,7 +241,7 @@ CORE_FILES = {
     ),
     "generation_runner": (
         "generalized_card/scripts/run_generate.py",
-        "a4ce8924eca731e2f8b12788a4aa6856e46f60cf8825fea6b952d53578c11437",
+        "8904a8efd636d70756809e514022b7246c93a5bd5937d97114ced2338de9899e",
     ),
     "generation_backend_runner": (
         "generalized_card/scripts/run_generator_backend.py",
@@ -484,7 +484,7 @@ CORE_FILES = {
     ),
     "persona_bridge": (
         "generalized_card/generalized_card/persona_bridge.py",
-        "82b17ab94f0eed66d48d0453e075bad44e7e3c94cbdd82c7727512c71d0bd3c1",
+        "10d6206475a3c90425c78c9ccf21404d90b9893f04d854798c941cf338396a6e",
     ),
     "selfbert_controller": (
         "generalized_card/scripts/run_selfbert_revision_controller.py",
