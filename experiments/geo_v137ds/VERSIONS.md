@@ -69,7 +69,31 @@ p=0.073 擦过去的 PASS，而 d=+0.42，放到 N=48 必然 FAIL。
    | v144win 之后 | 0.152 | 47.2% | 16 |
 
    BM25 按词汇重叠打分，短句 token 少排不上去——跑题的和短的是同一批评论
-   （真实孤立评论 70% 不到 10 词）。v144win 修这一条。
+   （真实孤立评论 70% 不到 10 词）。v144win2 / v146raw2 修这一条。
+
+   **两种挑法实际发出去的内容**（celebrity seed 7，帖子是 Mahershala Ali 谈 Marvel
+   没拍 Blade）。两边都是 36 条散装评论，不是完整 thread；差别只在挑法：
+
+   BM25 挑的（36 条来自 24 个 thread）——全在往帖子话题上贴，而且全是在论证：
+   ```
+   [ 3词] VERY disappointed!!!! SMH
+   [12词] Marvel: Ok but where do I fit Thor, Cap and Iron Man?
+   [41词] .....no CGI? You're kidding right? There isn't a shot in DD BA...
+   [45词] Apparently S2 of Born Again dropped a lot of viewers...
+   ```
+
+   不排序挑的（36 条来自 32 个 thread）——就是真人随口说的话：
+   ```
+   [ 6词] He was fantastic in that movie.
+   [13词] I'm extremely here for the renaissance of the 90s comic hotties (Lillard, Fraser).
+   [ 8词] Gonna need a pic to prove that cheif
+   [ 9词] Glad someone remains an icon in these trying times.
+   ```
+
+   提示词要 Planner 做的是「从例句里抽取真人做了什么对话动作，套到当前帖子上」。
+   喂一堆论证进去，它就规划出一堆论证，于是整个 thread 围着同一个论点转。
+   不排序还顺带把来源从 24 个 thread 提到 32 个——BM25 会把话题相近的帖子
+   里的评论整批顶上来。
 3. **`short_max_share` 卡 0.18，实测 0.48**。结构上禁止了那种散落短句。
    v143obs 修这一条。
 
