@@ -34,6 +34,7 @@ from generalized_card.domain_profile import (  # noqa: E402
     CARD_CONTEXT_JITTER_RATE,
     build_domain_profile,
     load_domain_profile,
+    set_reference_min_comments,
 )
 from generalized_card.core_contract import (  # noqa: E402
     CORE_POLICY_VERSION,
@@ -322,6 +323,19 @@ def build_parser() -> argparse.ArgumentParser:
             "which emitted typographic apostrophes, quotes, em dashes, and "
             "ellipsis on every comment. The self-BLEU tokenizer reads \"it's\" as "
             "one token and the typographic form as three."
+        ),
+    )
+    parser.add_argument(
+        "--reference-floor",
+        choices=["measured", "off"],
+        default="off",
+        help=(
+            "Hold the reference corpus to the seed pool's own comment floor when "
+            "measuring the domain profile. `off` reproduces every release to date, "
+            "where the profile measured behaviour over threads too small to carry a "
+            "discussion: on celebrity 61%% of the reference corpus sat under five "
+            "comments against a seed median of 34, moving every affect target by "
+            "30-100%%. No effect where the corpus has few small threads."
         ),
     )
     parser.add_argument(
@@ -1071,6 +1085,9 @@ def main() -> None:
             exclude_keys=exclude_keys or None,
         )
 
+    # Must be set before build_domain_profile runs; it selects the reference corpus.
+    set_reference_min_comments(args.reference_floor)
+
     domain_profile_path = (
         args.domain_profile.expanduser().resolve()
         if args.domain_profile
@@ -1223,6 +1240,7 @@ def main() -> None:
         "digit_cue_guard": args.digit_cue_guard,
         "register_realization": args.register_realization,
         "closing_move": args.closing_move,
+        "reference_floor": args.reference_floor,
         "verdict_close_guard": args.verdict_close_guard,
         "semantic_coverage_nonrepeat": args.semantic_coverage_nonrepeat,
         "opening_move": args.opening_move,
@@ -1821,6 +1839,7 @@ RUN_EXPERIMENT_FIELDS = (
     "digit_cue_guard",
     "register_realization",
     "closing_move",
+    "reference_floor",
     "verdict_close_guard",
     "semantic_coverage_nonrepeat",
     "opening_move",

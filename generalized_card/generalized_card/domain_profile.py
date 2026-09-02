@@ -77,6 +77,19 @@ from .viewpoint_bank import build_reference_viewpoints
 # reference URLs per carrying comment). An older profile simply lacks them and
 # both arms fall back to a count of one, which is the pre-v116 behaviour.
 PROFILE_SCHEMA_VERSION = 23
+# Whether the reference corpus is held to the same comment floor as the seed
+# pool. Set by `set_reference_min_comments`; off reproduces every release to date.
+REFERENCE_MIN_COMMENTS_ENABLED = False
+
+
+def set_reference_min_comments(mode: str) -> bool:
+    """`measured` holds the reference corpus to the seed pool's own floor."""
+
+    global REFERENCE_MIN_COMMENTS_ENABLED
+    REFERENCE_MIN_COMMENTS_ENABLED = str(mode or "off").strip().lower() == "measured"
+    return REFERENCE_MIN_COMMENTS_ENABLED
+
+
 CARD_CONTEXT_DROPOUT_RATE = 0.42
 CARD_CONTEXT_JITTER_RATE = 0.32
 CARD_GENERATION_CONTROLS = {
@@ -109,10 +122,25 @@ def build_domain_profile(
         for row in seed_payload.get("seed_posts") or []
         if isinstance(row, dict)
     }
+    # The seed pool only admits threads with at least `config.min_comments`
+    # comments, because a two-comment stub cannot carry a generated discussion.
+    # The reference corpus had no such floor, so the profile measured the
+    # domain's behaviour over a different population than the one it generates
+    # and is judged on. On celebrity that was 61% of the reference corpus at
+    # under five comments, median two, against a seed median of 34, and it moved
+    # every affect target by 30-100%: emotion_entropy measured 0.82 where the
+    # threads actually generated sit at 1.70. Applying the seed pool's own floor
+    # brings all six checked metrics inside 5% of the evaluation population.
+    # `REFERENCE_MIN_COMMENTS_ENABLED = False` reproduces every release to date.
+    floor = config.min_comments if REFERENCE_MIN_COMMENTS_ENABLED else 0
     unique: dict[str, dict[str, Any]] = {}
+    skipped_small = 0
     for thread in load_real_thread_bank(config.raw_discussions_dir):
         post_id = str(thread.get("post_id") or "").strip()
         if not post_id or post_id in excluded_ids:
+            continue
+        if floor and int(thread.get("comment_count") or 0) < floor:
+            skipped_small += 1
             continue
         old = unique.get(post_id)
         if old is None or int(thread.get("comment_count") or 0) > int(old.get("comment_count") or 0):
@@ -153,6 +181,8 @@ def build_domain_profile(
             "seed_pool": str(seed_pool_path.resolve()),
             "excluded_seed_count": len(excluded_ids),
             "reference_thread_count": len(reference_threads),
+            "reference_min_comments": floor,
+            "reference_threads_below_floor": skipped_small,
             "reference_comment_count": sum(len(row.get("comments") or []) for row in reference_threads),
             "reference_viewpoint_count": len(reference_viewpoints),
             "seed_ids_sha256": _id_set_hash(excluded_ids),

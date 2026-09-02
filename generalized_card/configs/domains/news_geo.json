@@ -1,0 +1,56 @@
+{
+  "domain_id": "news_geo",
+  "display_name": "news",
+  "community_context": "Reddit r/news, r/worldnews, r/TrueReddit, r/UpliftingNews",
+  "raw_discussions_dir": "data/raw/discussions/news_geo",
+  "real_scores_csv": "artifacts/baselines/news_geo/real/thread_scores.csv",
+  "min_comments": 5,
+  "topic_facets": [
+    "discussion in r/news",
+    "discussion in r/worldnews",
+    "discussion in r/TrueReddit",
+    "discussion in r/UpliftingNews",
+    "discussion in r/nottheonion"
+  ],
+  "technical_terms": [
+    "insightful",
+    "evading",
+    "ukraine",
+    "coal",
+    "israel",
+    "cuba",
+    "putin",
+    "civilians",
+    "emissions",
+    "infrastructure",
+    "terrorist",
+    "letters",
+    "iran",
+    "renewables",
+    "russia",
+    "debt"
+  ],
+  "protected_entity_terms": [
+    "Capital One",
+    "RFK Jr",
+    "Forced Labor",
+    "Vincent Pastore",
+    "New York",
+    "RFK Jr.",
+    "The Diarrhea Lettuce",
+    "Company Has Been",
+    "Trump Organization",
+    "Middle East",
+    "New Zealand",
+    "Trump Organization's",
+    "North Korea",
+    "Twin Falls In-N-Out"
+  ],
+  "persona_expertise_dimensions": [],
+  "_generated_by": "experiments/geo_v137ds/enable_domain.sh",
+  "_corpus": {
+    "threads": 472,
+    "eligible_threads": 275,
+    "comments": 13295
+  }
+}
