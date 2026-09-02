@@ -12,14 +12,15 @@ set -uo pipefail
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
 RUNS="$ROOT/artifacts/generalized_card/runs"
 printf '%-10s %-6s %-6s %s\n' arm 完成 在跑 tag
-for pair in "iso2 iso2b" "isopt isoptb" "obs obsb" "win win"; do
+for pair in "iso2 iso2b" "isopt isoptb" "obs obsb" "iso3 iso3b" "win2 win2" "raw2 raw2"; do
   set -- $pair; a="$1"; b="$2"
   pat="^(${a}|${b})_20260902_p[0-9]+$"
   tags=$(ls "$RUNS" 2>/dev/null | grep -E "$pat" | sort -u)
   done_n=0; list=""
   for t in $tags; do
-    if [ -f "$RUNS/$t/generated/run_00_sampled_reddit/discussion.json" ]; then
-      done_n=$((done_n + 1)); list="$list$t
+    k=$(find "$RUNS/$t/generated" -name discussion.json 2>/dev/null | wc -l | tr -d ' ')
+    if [ "$k" != "0" ]; then
+      done_n=$((done_n + k)); list="$list$t
 "
     fi
   done
