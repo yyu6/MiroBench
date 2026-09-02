@@ -45,7 +45,10 @@
     "After Tour",
     "Public Scrutiny Intensifies"
   ],
-  "persona_expertise_dimensions": [],
+  "persona_expertise_dimensions": [
+    "fam_film_studies",
+    "ind_entertainment"
+  ],
   "_generated_by": "experiments/geo_v137ds/enable_domain.sh",
   "_corpus": {
     "threads": 554,

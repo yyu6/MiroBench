@@ -96,6 +96,9 @@ class MatraixPersonaRuntime:
         self._personas_by_id: dict[str, Any] = {}
         self._eligible: list[Any] = []
         self._system_cache: dict[str, PersonaAssignment] = {}
+        # (seed_index, speaker_id) -> persona_id, so a recurring author keeps
+        # the persona scored against their first slot.
+        self._speaker_choice: dict[tuple[int, str], str] = {}
         self.commit = "disabled"
         self.template_path: Path | None = None
         self._official = None
@@ -172,25 +175,34 @@ class MatraixPersonaRuntime:
     ) -> PersonaAssignment | None:
         if not self.enabled:
             return None
-        if speaker_id:
-            # One person, one voice. Role compatibility is scored against the
-            # SLOT's role and tone, so a speaker holding several slots would
-            # score a different candidate set for each and end up sounding like
-            # a different person every turn -- measured at 56 of 326 speakers on
-            # v128's structure. A real commenter does not change personality to
-            # play a role, so when the roster gives us a speaker the persona is
-            # drawn from the whole eligible population and the plan keeps
-            # control of the speech act.
-            candidates = list(self._eligible)
-        else:
-            scored = [
-                (_compatibility_score(persona.dimensions, task, self.expertise_dimensions), persona)
-                for persona in self._eligible
-            ]
-            best = max(score for score, _persona in scored)
-            # Keep a broad near-best set so role compatibility does not collapse
-            # the population to a few repeated profiles.
-            candidates = [persona for score, persona in scored if score >= best - 1]
+        # One person, one voice, AND a persona that suits what they do.
+        #
+        # These were treated as exclusive: scoring compatibility against the
+        # SLOT's role and tone gives a speaker holding several slots a different
+        # candidate set per turn, so they sound like a different person each
+        # time -- 56 of 326 speakers on v128's structure. The previous fix
+        # dropped compatibility entirely whenever a speaker existed, which under
+        # `--speaker-identity matched` is every speaker, so the scoring below
+        # never ran at all and the persona was a deterministic draw from the
+        # whole eligible population.
+        #
+        # It is not a real conflict. 85% of authors in a generated thread post
+        # exactly once, and the most prolific posts three times, so for the vast
+        # majority a per-speaker decision IS a per-slot decision. Score on the
+        # speaker's first slot and hold it for every later slot they take: the
+        # single-comment majority gets full compatibility scoring, and a
+        # recurring author keeps one voice across their turns.
+        cached = self._speaker_choice.get((int(seed_index), speaker_id)) if speaker_id else None
+        if cached is not None:
+            return self.assignment_for_id(cached)
+        scored = [
+            (_compatibility_score(persona.dimensions, task, self.expertise_dimensions), persona)
+            for persona in self._eligible
+        ]
+        best = max(score for score, _persona in scored)
+        # Keep a broad near-best set so role compatibility does not collapse the
+        # population to a few repeated profiles.
+        candidates = [persona for score, persona in scored if score >= best - 1]
         # Key on the SPEAKER, not the slot. A real thread is a small cast --
         # 45 comments from ~20 people -- so a per-slot key invents a new person
         # for every turn and makes a recurring author sound like a stranger to
@@ -206,7 +218,10 @@ class MatraixPersonaRuntime:
                 self.assignment_seed, seed_index, key, persona.persona_id
             )
         )
-        return self.assignment_for_id(candidates[0].persona_id)
+        chosen = candidates[0].persona_id
+        if speaker_id:
+            self._speaker_choice[(int(seed_index), speaker_id)] = chosen
+        return self.assignment_for_id(chosen)
 
     def assignment_for_id(self, persona_id: str) -> PersonaAssignment:
         cached = self._system_cache.get(persona_id)
