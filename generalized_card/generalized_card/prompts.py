@@ -128,6 +128,43 @@ def _planner_orientation_block() -> str:
         "to do with each other, plan two slots that have nothing to do with each "
         "other.",
         "",
+        "READ THE REAL COMMENTS FIRST, ALONG THESE FIVE AXES:",
+        "- Do this before planning anything. The matched slots below each show "
+        "the real comment that occupied that position. Characterise the thread "
+        "on each axis, then plan slots that sit where you found it -- not where "
+        "a well-organised discussion would sit.",
+        "- SEMANTIC SPREAD. Are these people discussing one thing or several "
+        "unrelated things? Test it slot by slot: for each real comment, is there "
+        "another real comment it is actually engaging with, or is it off on its "
+        "own? Count roughly how many are on their own. If most of them are, this "
+        "thread is a set of parallel monologues and your plans should be too. If "
+        "they genuinely converge on one question, plan it that way.",
+        "- EMOTION. What emotions are present, and how far apart are they? A "
+        "real thread often holds delight, contempt, boredom and anger at once, "
+        "with nothing in between mediating them. Note whether the extremes are "
+        "occupied or whether everyone is mild. Assign affect per slot from what "
+        "you see, not from an average.",
+        "- STORYTELLING. How many of these people tell a personal story, and how "
+        "well-formed is it? Real asides are often half a story -- a fragment "
+        "with one beat, trailing off, or a detail with no point attached. A "
+        "thread with two rambling anecdotes and six one-liners is not the same "
+        "as one with eight tidy datapoints.",
+        "- PLAINNESS. How much of this thread is doing no work at all? Count the "
+        "bare agreements, the one-word reactions, the jokes with no argument, the "
+        "replies that only address another commenter. These are usually the "
+        "majority, and they are the hardest thing to plan deliberately because "
+        "each one looks like a wasted slot. They are not.",
+        "- WORDING. How do these specific people write? Sentence fragments or "
+        "full sentences; punctuation or none; slang, in-jokes, community terms; "
+        "capitals for emphasis; how blunt the openings are. Carry the register "
+        "across, not the words -- never reuse their phrases or their facts.",
+        "- Then say it in the plan. Your per-slot fields are where these "
+        "observations have to land: a thread you read as scattered has to come "
+        "out as slots with unrelated local_topic values, and a thread you read "
+        "as emotionally split has to come out as slots with affect labels far "
+        "apart. An accurate reading that plans a tidy thread anyway is no better "
+        "than not reading.",
+        "",
         "CASES THAT ARE EASY TO GET WRONG:",
         "- A slot whose real comment is three words. It can carry a reaction, a "
         "fragment, a bare acknowledgement, a joke or a narrow question, and it "
@@ -138,6 +175,11 @@ def _planner_orientation_block() -> str:
         "argument at all. Do not upgrade it. A real thread's least substantial "
         "comments are load-bearing: they are most of what makes it not read like "
         "an essay in parts.",
+        "- A slot whose real comment is only an image, a GIF or a bare link. "
+        "Plan text for it. Plan the shortest, least substantial text the slot "
+        "can carry -- a bare reaction with no argument -- because that is the "
+        "nearest thing in words to contributing an image, and it is what that "
+        "position does to the thread.",
         "- A deep reply. Its real counterpart is usually answering the comment "
         "directly above it, not the post -- often about something the post never "
         "raised. A deep slot planned as another take on the post's main question "
