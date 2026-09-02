@@ -49,6 +49,223 @@ def slot_grid_mode() -> str:
     return planner_distribution.SLOT_GRID_MODE
 
 
+# Each of these replaces a rule that, under --slot-grid free, either points at
+# machinery that is no longer delivered or contradicts the brief. A dangling
+# rule is not harmless: "every S# not explicitly assigned a story_mode in the
+# slot schedule is fixed to no_story" reads, with the schedule withheld, as
+# every slot being no_story, which would destroy a metric that currently passes.
+def _free(text: str, default: str) -> str:
+    return text if slot_grid_mode() == "free" else default
+
+
+def _affect_role_schema() -> str:
+    return _free(
+        "one GoEmotions label, chosen by you for this slot",
+        "one GoEmotions label listed in the frozen target",
+    )
+
+
+def _local_topic_schema() -> str:
+    return _free(
+        "what this comment is actually about. It may be grounded in the seed or "
+        "the parent, and it may be something neither raised -- an incidental "
+        "detail, an aside, a remark aimed at another commenter -- because real "
+        "comments frequently are",
+        "seed-grounded topic or generic parent-local topic",
+    )
+
+
+def _detail_focus_schema() -> str:
+    return _free(
+        "the detail this comment fixes on. Usually seed-visible; it may instead "
+        "be a detail only this commenter would care about",
+        "seed-visible detail to use, or a generic detail type if no fact is visible",
+    )
+
+
+def _template_contract_rule() -> str:
+    return _free(
+        "- No labels are prescribed for any S#. Choose every field yourself and "
+        "keep the set coherent within a slot.",
+        "- A label explicitly listed for an S# is a fixed template contract. Select a\n"
+        "  compatible role, payload, stance, and evidence mode in this first plan; do\n"
+        "  not expect a later stage to replace it. For a field absent from the S# list,\n"
+        "  choose a natural compatible label while satisfying the whole-thread target.",
+    )
+
+
+def _remaining_counts_rule() -> str:
+    return _free(
+        "- There are no remaining counts to satisfy. Let the thread's tone and "
+        "affect fall where the conversation puts them, including at the "
+        "extremes.",
+        "- Satisfy only the remaining story, tone_class, and affect_role counts that\n"
+        "  have compatible slots. If the template says a label is unavailable, omit it\n"
+        "  rather than attaching it to an unrelated substantive claim. Choose labels\n"
+        "  that fit each comment's discourse role; do not change its claim to fit a\n"
+        "  label.",
+    )
+
+
+def _story_schedule_rule() -> str:
+    return _free(
+        "- No story schedule is supplied. Decide per slot whether a comment "
+        "tells a personal story, at roughly the rate the matched thread shows. "
+        "Do not add a story to make a plan sound richer, and do not suppress "
+        "one the slot naturally carries.",
+        "- Every S# not explicitly assigned a story_mode in the slot schedule is fixed\n"
+        "  to no_story. Do not create an extra story to make a local plan sound richer.",
+    )
+
+
+def _branch_contract_rules() -> str:
+    return _free(
+        "- No branch goal, required perspective, exclusion or owned subject is "
+        "supplied. What each slot is about is yours to decide.",
+        "- Treat the displayed ``branch_goal`` as a semantic contract, not background\n"
+        "  inspiration: ``semantic_move``, ``domain_intent``, and\n"
+        "  ``decision_boundary`` must directly develop that goal. A comment that could\n"
+        "  instead belong to another displayed B# is invalid.\n"
+        "- ``required_perspective`` and ``branch_exclusion`` are also fixed controls.\n"
+        "  The former selects the reasoning lens; the latter forbids the adjacent\n"
+        "  decision axis already owned by another root branch.\n"
+        "- ``owned_decision_subject`` is a fixed branch contract. Establish only that\n"
+        "  condition for this chain; do not substitute one of the listed forbidden\n"
+        "  subjects just because it is salient in the seed.",
+    )
+
+
+def _branch_axis_rule() -> str:
+    return _free(
+        "- The branch route is fixed as SHAPE only: keep each slot in its "
+        "assigned branch and let replies inherit their parent's. A branch is a "
+        "position in the thread, not a topic it owns -- two roots in different "
+        "branches need not be discussing related things at all.",
+        "- The required branch route is also fixed. Each root discussion chain owns a\n"
+        "  distinct decision axis; replies inherit their parent chain's branch. Do not\n"
+        "  switch to another branch merely because its topic is easier to write.",
+    )
+
+
+def _register_pairing_rule() -> str:
+    return _free(
+        "  A register is how a slot speaks, not what it concludes: a ``polite`` "
+        "slot can disagree courteously and an ``impolite`` one can be "
+        "enthusiastic about something. What is invalid is a move whose manner "
+        "contradicts its register.",
+        "  Never pair ``polite`` with ``correction_caveat`` or a disagreeing stance, and\n"
+        "  never pair ``impolite`` with gratitude or endorsement.",
+    )
+
+
+def _claim_reuse_rule() -> str:
+    return _free(
+        "- Reuse an earlier claim only for a direct reply relation that needs "
+        "it. Otherwise move somewhere else entirely -- a different branch, "
+        "detail, stance or social function, and it does not have to be "
+        "seed-grounded.",
+        "- Reuse an earlier claim only for a direct reply relation that needs it."
+        " Otherwise move to a different seed-grounded branch, detail, stance, or"
+        " social function.",
+    )
+
+
+def _opener_rules() -> str:
+    """No opener_type is assigned when the grid is withheld.
+
+    The measurement the default rule rests on stays true and stays useful --
+    the Writer opens 23% of comments with a bare agreement token against 4% in
+    the real thread -- so under `free` it becomes a tendency to counter using
+    the real comment's own opening, rather than a contract with a value that no
+    longer arrives.
+    """
+
+    return _free(
+        "- No opener type is assigned. Take each slot's entry grammar from how"
+        " its own real comment opens, and vary it across nearby slots. One"
+        " tendency to counter: left alone, the Writer opens about 23% of"
+        " comments with a bare agreement token against 4% in real threads,"
+        " while under-producing content-first and first-person entries.\n"
+        "- Whatever entry you choose, the rest of the row has to be able to"
+        " start that way. An opening question needs"
+        " ``comment_function=question_followup`` and"
+        " ``payload_type=narrow_question``; an imperative needs a recommending"
+        " row; an address needs a row that speaks to the person it replies to."
+        " Measured over 520 slots, openers assigned against an incompatible row"
+        " were realized 0 of 23 times for questions and 0 of 10 for"
+        " imperatives. Choose the function and payload so the entry is"
+        " writable.",
+        "- ``opener_type`` is a fixed grammatical contract measured from real threads of\n"
+        "  this domain. Write ``opening_style`` as a concrete route that begins the way\n"
+        "  that type requires. Measured on one matched pair, the Writer opened 23% of\n"
+        "  comments with a bare agreement token against 4% in the real thread while\n"
+        "  under-producing content-first and first-person entries, so this is the entry\n"
+        "  grammar, not a suggestion.\n"
+        "- The rest of the row has to be able to start that way. An assigned\n"
+        "  ``opener_type`` of ``question`` needs ``comment_function=question_followup``\n"
+        "  and ``payload_type=narrow_question``; ``imperative`` needs a recommending row\n"
+        "  (``payload_type=advice`` with ``comment_function=recommendation_advice``);\n"
+        "  ``address`` needs a row that speaks to the person it replies to. Measured over\n"
+        "  520 slots, an assigned opener was realized 43.8% of the time overall but 0 of\n"
+        "  23 times for ``question`` and 0 of 10 for ``imperative``, because the rest of\n"
+        "  the row made that opening ungrammatical. Choose the row's function and payload\n"
+        "  so the assigned entry is writable, rather than keeping both and losing one.",
+    )
+
+
+def _development_plan_trigger() -> str:
+    return _free(
+        "For a slot long enough to carry several connected beats,",
+        "For a slot\n  whose schedule says ``development_plan`` is required,",
+    )
+
+
+def _gratitude_rule_opening() -> str:
+    return _free(
+        "If you give a slot ``affect_role=gratitude`` or ``affect_role=relief``,",
+        "If an S# is assigned ``affect_role=gratitude`` or ``affect_role=relief`` by\n"
+        "  the template schedule,",
+    )
+
+
+def _reference_row_framing() -> str:
+    """The R# rows are a bank, not a per-slot partner.
+
+    The default text says to pair each displayed slot with a different R# row
+    in order, which is a one-to-one mapping onto comments from an unrelated
+    thread -- the same slot-filling the brief exists to stop.
+    """
+
+    if slot_grid_mode() == "free":
+        return (
+            "REFERENCE COMMENTS FROM OTHER THREADS (a bank, browse it):\n"
+            "The R# rows are real comments from evaluation-excluded threads,"
+            " shown so you can see how people in this community actually write."
+            " They are not partners for your slots and there is no order to"
+            " follow. Use one when it genuinely illuminates a slot; ignore the"
+            " rest. Never reuse their wording, facts or named entities."
+        )
+    return (
+        "NON-TEST REFERENCE COMMENTS FOR SEMANTIC ABSTRACTION:\n"
+        "The R# rows come from evaluation-excluded threads. Pair each displayed"
+        " S# with\na different R# row in order when the viewpoint pattern fits."
+        " Abstract the tiny\nsemantic/discourse move and adapt it to the visible"
+        " seed or parent."
+    )
+
+
+def _distribution_heading() -> str:
+    if slot_grid_mode() == "free":
+        return "Whole-thread label counts:"
+    return "Frozen whole-thread distribution target:"
+
+
+def _slot_label_heading() -> str:
+    if slot_grid_mode() == "free":
+        return "Per-slot labels:"
+    return "Required template-derived labels for these displayed slots:"
+
+
 def _planner_opening() -> str:
     """The first sentence, which sets the frame everything after it is read in.
 
@@ -1150,10 +1367,7 @@ Each P## states how a comment reasons about the local topic. It is not the topic
 entity, product, feature, event, or claim itself. Derive the actual local move
 from the visible seed/parent and the non-test reference-comment pattern below.
 
-NON-TEST REFERENCE COMMENTS FOR SEMANTIC ABSTRACTION:
-The R# rows come from evaluation-excluded threads. Pair each displayed S# with
-a different R# row in order when the viewpoint pattern fits. Abstract the tiny
-semantic/discourse move and adapt it to the visible seed or parent.
+{_reference_row_framing()}
 {claim_knowledge}
 {reference_viewpoints}
 
@@ -1181,10 +1395,10 @@ Thread target:
 - max_depth_goal: {target.max_depth_goal}
 - shape_label: {target.shape_label}
 
-Frozen whole-thread distribution target:
+{_distribution_heading()}
 {distribution_target}
 
-Required template-derived labels for these displayed slots:
+{_slot_label_heading()}
 {slot_distribution}
 
 Tone class definitions. These are social registers observed in real threads of
@@ -1219,14 +1433,14 @@ Return strict JSON:
       "evidence_mode": "none_assertion | firsthand_experience | technical_or_policy_reasoning | calculation_math | hearsay_consensus | link_quote_reference | small_observation",
       "story_mode": "no_story | tiny_personal_context | specific_personal_story | messy_multi_step_story",
       "tone_class": "polite | somewhat_polite | neutral | impolite",
-      "affect_role": "one GoEmotions label listed in the frozen target",
+      "affect_role": "{_affect_role_schema()}",
       "voice": "blunt | casual_neutral | polite_soft | sarcastic | annoyed | uncertain | grateful",
       "speaker_role": "advisor | confused_asker | op_followup | gratitude_reply | jokester | mod_meta | contrarian | datapoint_only | ranter | side_observer",
       "semantic_move": "one concrete but non-verbatim action for the generated comment",
-      "local_topic": "seed-grounded topic or generic parent-local topic",
+      "local_topic": "{_local_topic_schema()}",
       "reply_relation": "relation to the seed post using answers_parent | challenges_parent | asks_narrow_followup | adds_datapoint | jokes_aside | corrects_detail | shifts_to_side_detail",
       "stance": "agree | disagree | mixed | uncertain | joking | neutral",
-      "detail_focus": "seed-visible detail to use, or a generic detail type if no fact is visible",
+      "detail_focus": "{_detail_focus_schema()}",
       "avoid_repeating": "nearby discourse move to avoid",
       "claim_family": "{families}",
       "claim_key": "short abstract semantic key",
@@ -1253,17 +1467,10 @@ Rules:
 - Use controlled vocabulary values exactly.
 - {semantic_grounding_rule}
 - Never copy a hidden matched-real anecdote, username, URL, or seed-specific fact.
-- A label explicitly listed for an S# is a fixed template contract. Select a
-  compatible role, payload, stance, and evidence mode in this first plan; do
-  not expect a later stage to replace it. For a field absent from the S# list,
-  choose a natural compatible label while satisfying the whole-thread target.
+{_template_contract_rule()}
 - Equivalent local claims should share ``claim_key``; different claims must not.
 - Compare every new plan against the earlier-batch ledger. Do not hide a repeated semantic move behind a new ``claim_key`` or different wording.
-- Satisfy only the remaining story, tone_class, and affect_role counts that
-  have compatible slots. If the template says a label is unavailable, omit it
-  rather than attaching it to an unrelated substantive claim. Choose labels
-  that fit each comment's discourse role; do not change its claim to fit a
-  label.
+{_remaining_counts_rule()}
 - A slot's ``tone_class`` constrains its whole plan, not just its wording. The
   semantic move has to be the kind of move that register makes:
   a ``polite`` slot agrees, corroborates from experience, endorses with a
@@ -1273,16 +1480,14 @@ Rules:
   an ``impolite`` slot contradicts, limits, complains, or corrects;
   a ``neutral`` slot states one fact or reference with no evaluation;
   a ``somewhat_polite`` slot half-agrees with a qualification.
-  Never pair ``polite`` with ``correction_caveat`` or a disagreeing stance, and
-  never pair ``impolite`` with gratitude or endorsement. A plan whose move
+{_register_pairing_rule()} A plan whose move
   contradicts its register is invalid; change the move, not the register.
 - Do not make every substantive slot an ``advisor``. Real discussions of this
   kind are mostly participants reporting their own experience, reacting, and
   asking, with advisors a minority. Reserve ``advisor`` for slots whose plan is
   genuinely a recommendation.
 {claim_rules}
-- Every S# not explicitly assigned a story_mode in the slot schedule is fixed
-  to no_story. Do not create an extra story to make a local plan sound richer.
+{_story_schedule_rule()}
 - Story is a joint evidence contract. A `no_story` row must not use
   `firsthand_experience` or `personal_story`; it may use a present-state
   first-person appraisal or one small observation, but not a past action,
@@ -1291,19 +1496,8 @@ Rules:
   personal-story or fragment-datapoint payload. The semantic move itself must
   describe that narrative evidence rather than advice or abstract analysis.
   {SYNTHETIC_STORY_PLANNER_BOUNDARY}
-- The required branch route is also fixed. Each root discussion chain owns a
-  distinct decision axis; replies inherit their parent chain's branch. Do not
-  switch to another branch merely because its topic is easier to write.
-- Treat the displayed ``branch_goal`` as a semantic contract, not background
-  inspiration: ``semantic_move``, ``domain_intent``, and
-  ``decision_boundary`` must directly develop that goal. A comment that could
-  instead belong to another displayed B# is invalid.
-- ``required_perspective`` and ``branch_exclusion`` are also fixed controls.
-  The former selects the reasoning lens; the latter forbids the adjacent
-  decision axis already owned by another root branch.
-- ``owned_decision_subject`` is a fixed branch contract. Establish only that
-  condition for this chain; do not substitute one of the listed forbidden
-  subjects just because it is salient in the seed.
+{_branch_axis_rule()}
+{_branch_contract_rules()}
 - A displayed ``root_branch_instance`` marks several independent root comments
   routed to the same semantic axis. Keep that axis, but vary the independent
   root's discourse contribution: for example, a concise verdict, causal reason,
@@ -1317,7 +1511,7 @@ Rules:
 - Non-dependent substantive comments must not collapse to the same recommendation,
   tradeoff, verdict, or explanation. Repetition is allowed only for a direct
   reply that changes the relation, evidence, stance, or local detail.
-- Reuse an earlier claim only for a direct reply relation that needs it. Otherwise move to a different seed-grounded branch, detail, stance, or social function.
+{_claim_reuse_rule()}
 - Use a frozen ``perspective_id`` only when it fits the visible seed or parent; otherwise use ``seed_local``.
 - Nearby comments should not reuse the same perspective and claim key unless the reply relation directly requires it.
 - Write ``semantic_move`` as the exact new contribution made by this slot, not
@@ -1330,26 +1524,11 @@ Rules:
 - Write ``avoid_repeating`` as one specific already-covered proposition or
   sentence route that this slot must not reproduce. Do not use generic values
   such as "avoid repetition" or "be different."
-- ``opener_type`` is a fixed grammatical contract measured from real threads of
-  this domain. Write ``opening_style`` as a concrete route that begins the way
-  that type requires. Measured on one matched pair, the Writer opened 23% of
-  comments with a bare agreement token against 4% in the real thread while
-  under-producing content-first and first-person entries, so this is the entry
-  grammar, not a suggestion.
-- The rest of the row has to be able to start that way. An assigned
-  ``opener_type`` of ``question`` needs ``comment_function=question_followup``
-  and ``payload_type=narrow_question``; ``imperative`` needs a recommending row
-  (``payload_type=advice`` with ``comment_function=recommendation_advice``);
-  ``address`` needs a row that speaks to the person it replies to. Measured over
-  520 slots, an assigned opener was realized 43.8% of the time overall but 0 of
-  23 times for ``question`` and 0 of 10 for ``imperative``, because the rest of
-  the row made that opening ungrammatical. Choose the row's function and payload
-  so the assigned entry is writable, rather than keeping both and losing one.
+{_opener_rules()}
 - Write ``opening_style`` as a concrete one-use realization route, not one of a
   small fixed label set. Vary clause order and discourse entry across nearby
   rows; do not repeat routes such as "question first" or "direct answer."
-- Use the anonymous slot word count as a content-capacity cue. For a slot
-  whose schedule says ``development_plan`` is required, return roughly the
+- Use the anonymous slot word count as a content-capacity cue. {_development_plan_trigger()} return roughly the
   displayed number of distinct connected beats separated by ``||``. That
   number comes from the same capacity function as validation; do not replace it
   with a different words-per-beat rule or fixed ceiling. Under-planning a long
@@ -1371,8 +1550,7 @@ Rules:
 - Generate the complete semantic plan in this response, plus actor fields only
   when the schema requests them. The Writer will realize it once; do not rely
   on later candidate sampling for diversity.
-- If an S# is assigned ``affect_role=gratitude`` or ``affect_role=relief`` by
-  the template schedule, it must be a genuine social close: use
+- {_gratitude_rule_opening()} it must be a genuine social close: use
   ``speaker_role=gratitude_reply`` and ``comment_function=reaction``. Its
   semantic move may only acknowledge the visible local help; it may not carry
   a second explanation, recommendation, or correction. For every other affect

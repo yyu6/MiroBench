@@ -37,6 +37,9 @@ from generalized_card.viewpoint_bank import set_reference_window  # noqa: E402
 from generalized_card.prompts import set_matched_text  # noqa: E402
 from generalized_card.branch_routing import set_branch_dictation  # noqa: E402
 from generalized_card.planner_distribution import set_slot_grid  # noqa: E402
+from generalized_card.generation_distribution import (  # noqa: E402
+    set_planner_distribution,
+)
 from generalized_card.domain_profile import (  # noqa: E402
     CARD_CONTEXT_DROPOUT_RATE,
     CARD_CONTEXT_JITTER_RATE,
@@ -343,6 +346,18 @@ def build_parser() -> argparse.ArgumentParser:
             "from the POST: that gap measures 1.1x on the current configuration "
             "while intra-thread nearest-neighbour cosine is 0.526 against a real "
             "0.487. `off` reproduces every release to date."
+        ),
+    )
+    parser.add_argument(
+        "--planner-distribution",
+        choices=["off", "full"],
+        default="full",
+        help=(
+            "`off` stops handing the Planner exact whole-thread tone_class, "
+            "affect_role and story counts. Those counts are taken from a "
+            "different, same-size evaluation-excluded thread, and imposing one "
+            "unrelated thread's affect distribution is the likely mechanism "
+            "behind three affect metrics low and neutral_rate high."
         ),
     )
     parser.add_argument(
@@ -1163,6 +1178,7 @@ def main() -> None:
     set_matched_text(args.matched_text)
     set_branch_dictation(args.branch_dictation)
     set_slot_grid(args.slot_grid)
+    set_planner_distribution(args.planner_distribution)
     set_isolation_quota(args.isolation_quota)
 
     domain_profile_path = (
@@ -1328,6 +1344,7 @@ def main() -> None:
         "matched_text": args.matched_text,
         "branch_dictation": args.branch_dictation,
         "slot_grid": args.slot_grid,
+        "planner_distribution": args.planner_distribution,
         "isolation_quota": args.isolation_quota,
         "verdict_close_guard": args.verdict_close_guard,
         "semantic_coverage_nonrepeat": args.semantic_coverage_nonrepeat,
@@ -1932,6 +1949,7 @@ RUN_EXPERIMENT_FIELDS = (
     "matched_text",
     "branch_dictation",
     "slot_grid",
+    "planner_distribution",
     "isolation_quota",
     "verdict_close_guard",
     "semantic_coverage_nonrepeat",

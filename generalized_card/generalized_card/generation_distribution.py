@@ -262,6 +262,22 @@ def apply_planner_distribution_fields(task: Any, plan: dict[str, Any]) -> Any:
     return _replace_supported(task, **updates)
 
 
+# v149. The counts below are exact and validator-enforced, and they come from a
+# DIFFERENT thread -- "one deterministic, same-size evaluation-excluded real
+# metric template". Handing the Planner another thread's exact tone_class and
+# affect_role counts is the likely mechanism behind the affect failures: three
+# metrics low and neutral_rate high is one narrow distribution imposed from
+# outside, not four independent defects. It also contradicts a brief that tells
+# the Planner to decide affect per slot, and an enforced count beats prose.
+PLANNER_DISTRIBUTION_MODE = "full"
+
+
+def set_planner_distribution(mode: str) -> bool:
+    global PLANNER_DISTRIBUTION_MODE
+    PLANNER_DISTRIBUTION_MODE = str(mode or "full").strip().lower()
+    return PLANNER_DISTRIBUTION_MODE == "off"
+
+
 def render_planner_distribution_target(
     template: dict[str, Any] | None,
     *,
@@ -270,6 +286,12 @@ def render_planner_distribution_target(
 ) -> str:
     """Render exact whole-thread and remaining text-free label counts."""
 
+    if PLANNER_DISTRIBUTION_MODE == "off":
+        return (
+            "- withheld on purpose. No tone, affect or story counts are imposed"
+            " on this thread. Decide each slot's tone and affect from the"
+            " conversation the matched thread turns out to be."
+        )
     if not template or total_comments <= 0:
         return "- unavailable; preserve the matched structural slots and vary labels naturally"
     story_target = _scaled_count(
