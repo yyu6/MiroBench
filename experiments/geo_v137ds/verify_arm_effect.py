@@ -54,22 +54,47 @@ def _run_persona_config(prefix):
     return {}
 
 
-def _render(cfg, persona_ids):
-    """Render each recorded persona_id exactly as the run's own config did."""
+def _projected(cfg, persona_ids):
+    """The dimensions the projection actually kept, per persona."""
     if not cfg or not persona_ids:
         return {}
     sys.path.insert(0, str(REPO / "generalized_card"))
     import generalized_card.persona_bridge as PB
 
+    runtime = _runtime_for(cfg)
+    out = {}
+    for pid in persona_ids:
+        persona = runtime._personas_by_id.get(pid)
+        if persona is None:
+            continue
+        out[pid] = PB._project_dimensions(
+            persona.dimensions,
+            expertise_dimensions=runtime.expertise_dimensions,
+            projection=runtime.projection,
+        )
+    return out
+
+
+def _runtime_for(cfg):
+    sys.path.insert(0, str(REPO / "generalized_card"))
+    import generalized_card.persona_bridge as PB
+
     PB.set_persona_projection(cfg.get("projection", "default"))
     PB.set_persona_draw(cfg.get("draw", "replace"))
-    runtime = PB.build_runtime(
+    return PB.build_runtime(
         mode=cfg["mode"],
         matraix_root=Path(cfg["matraix_root"]),
         dataset_dir=Path(cfg["dataset_dir"]),
         assignment_seed=int(cfg.get("assignment_seed", 42)),
         expertise_dimensions=tuple(cfg.get("expertise_dimensions") or ()),
     )
+
+
+def _render(cfg, persona_ids):
+    """Render each recorded persona_id exactly as the run's own config did."""
+    if not cfg or not persona_ids:
+        return {}
+    runtime = _runtime_for(cfg)
     out = {}
     for pid in persona_ids:
         try:
@@ -133,12 +158,19 @@ def report(prefix):
         if rendered:
             axes = ("english_proficiency", "multilingualism", "neurotype",
                     "skill_writing", "skill_storytelling")
+            # Check the PROJECTION, not the rendered text. The official
+            # template relabels fields -- `skill_writing` renders as
+            # "Skill: Writing", `tone_expected` as "Expected tone" -- so
+            # grepping `axis.replace("_", " ")` reports 0% for axes that are
+            # present on 284 and 192 of 400 personas. Guessing a field's
+            # display form is how this script twice measured its own regex
+            # instead of the artifact.
+            projected = _projected(cfg, set(personas))
             hit = collections.Counter()
             for pid in personas:
-                text = rendered.get(pid, "")
+                dims = projected.get(pid) or {}
                 for axis in axes:
-                    label = axis.replace("_", " ")
-                    if re.search(label, text, re.I):
+                    if dims.get(axis):
                         hit[axis] += 1
             print(f"  writer 收到的身份里含语域轴 (按 slot):")
             for axis in axes:
