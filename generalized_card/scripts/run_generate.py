@@ -326,6 +326,18 @@ def build_parser() -> argparse.ArgumentParser:
         ),
     )
     parser.add_argument(
+        "--isolation-quota",
+        choices=["measured", "off"],
+        default="off",
+        help=(
+            "Ask the Planner for a measured share of slots unrelated to every "
+            "sibling slot. Distinct from --outsider-quota, which asks for distance "
+            "from the POST: that gap measures 1.1x on the current configuration "
+            "while intra-thread nearest-neighbour cosine is 0.526 against a real "
+            "0.487. `off` reproduces every release to date."
+        ),
+    )
+    parser.add_argument(
         "--reference-floor",
         choices=["measured", "off"],
         default="off",
@@ -1087,6 +1099,7 @@ def main() -> None:
 
     # Must be set before build_domain_profile runs; it selects the reference corpus.
     set_reference_min_comments(args.reference_floor)
+    set_isolation_quota(args.isolation_quota)
 
     domain_profile_path = (
         args.domain_profile.expanduser().resolve()
@@ -1241,6 +1254,7 @@ def main() -> None:
         "register_realization": args.register_realization,
         "closing_move": args.closing_move,
         "reference_floor": args.reference_floor,
+        "isolation_quota": args.isolation_quota,
         "verdict_close_guard": args.verdict_close_guard,
         "semantic_coverage_nonrepeat": args.semantic_coverage_nonrepeat,
         "opening_move": args.opening_move,
@@ -1840,6 +1854,7 @@ RUN_EXPERIMENT_FIELDS = (
     "register_realization",
     "closing_move",
     "reference_floor",
+    "isolation_quota",
     "verdict_close_guard",
     "semantic_coverage_nonrepeat",
     "opening_move",

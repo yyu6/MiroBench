@@ -38,7 +38,7 @@ from .length_policy import local_move_scope_guidance, soft_length_guidance
 from .opener_profile import OPENER_INSTRUCTIONS
 from .evaluative_register import active_evaluative_guidance
 from .opening_move import active_opening_guidance, forbidden_opening_tokens
-from .planning_quality import outsider_quota_block
+from .planning_quality import isolation_quota_block, outsider_quota_block
 from .long_form_planning import (
     development_plan_word_threshold,
     expected_development_beats,
@@ -735,6 +735,13 @@ def comment_planner_prompt(
     # The rate is a thread property; the instruction has to be a batch one.
     _outsider = outsider_quota_block(len(comments))
     outsider_block = f"\n{_outsider}\n" if _outsider else ""
+    # Sized against the batch for the same reason, and stated separately: the
+    # outsider quota asks for distance from the post, this asks for distance
+    # from the sibling slots, and on the current configuration only the second
+    # gap is still open.
+    _isolation = isolation_quota_block(len(comments))
+    if _isolation:
+        outsider_block = f"{outsider_block}\n{_isolation}\n"
     actor_enabled = (
         str(getattr(backend, "GENERALIZED_ACTOR_MODE", "") or "") == MODE_DOMAIN_DERIVED
     )

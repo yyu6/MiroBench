@@ -1323,6 +1323,84 @@ def outsider_quota_enabled() -> bool:
     return OUTSIDER_QUOTA_MODE == "measured"
 
 
+# --------------------------------------------------------------------------- #
+# v141 arm: the intra-thread isolation quota
+# --------------------------------------------------------------------------- #
+# Not the same thing as the outsider quota, and aimed at a gap that one cannot
+# reach. The outsider quota targets distance from the POST; on celebrity under
+# the current configuration that gap is closed -- comments with post-cosine
+# < 0.10 are 15.3% generated against 17.4% real, 1.1x, where G97 measured 2.8x.
+# What is still open is distance from the OTHER COMMENTS: each generated comment
+# can find a close neighbour in its own thread where a real one often cannot.
+# Nearest-neighbour cosine within a thread runs 0.526 generated against 0.487
+# real, and the share of comments whose nearest neighbour sits below 0.35 is
+# 13.4% against 20.9%.
+#
+# The deficit is not in short comments and not in the length distribution, both
+# of which were checked and match: by length band the nearest-neighbour excess
+# is -0.049 at 1-5 words (generated is MORE isolated), -0.009 at 5-10, +0.038 at
+# 10-20, +0.039 at 20-40 and +0.009 at 40+, and realized lengths track real
+# within a point per band. The gap is entirely mid-length comments that each
+# make a distinct point inside one shared argument.
+#
+# So the quota is stated on intra-thread relatedness and aimed at the mid band.
+# Simulated by forcing a share of 10-40 word slots to nearest-neighbour 0.15,
+# `semantic_mean_cosine` moves 0.2168 -> 0.1934 at 10% and 0.1841 at 15% against
+# a real 0.1914, which sizes the target at ~12%.
+ISOLATION_QUOTA_MODE = "off"
+ISOLATION_SHARE = 0.12
+ISOLATION_MIN_WORDS = 10
+ISOLATION_MAX_WORDS = 40
+
+
+def set_isolation_quota(mode: str) -> None:
+    global ISOLATION_QUOTA_MODE
+    value = str(mode or "off").strip().lower()
+    if value not in {"off", "measured"}:
+        raise ValueError(f"unknown isolation-quota mode {mode!r}; expected off|measured")
+    ISOLATION_QUOTA_MODE = value
+
+
+def isolation_quota_enabled() -> bool:
+    return ISOLATION_QUOTA_MODE == "measured"
+
+
+def isolation_quota_block(slot_count: int) -> str:
+    """Ask for a measured share of slots that relate to no other slot.
+
+    Sized against THIS BATCH for the reason recorded above the outsider quota:
+    a thread-sized target inside a batch of 8 is unsatisfiable and gets ignored.
+    """
+
+    if not isolation_quota_enabled() or slot_count < 4:
+        return ""
+    target = max(1, round(slot_count * ISOLATION_SHARE))
+    if target > slot_count // 2:
+        return ""
+    return "\n".join(
+        [
+            "INTRA-THREAD ISOLATION QUOTA (measured against real threads in this domain):",
+            f"- Exactly {target} of these {slot_count} slots must be unrelated to "
+            "EVERY OTHER slot in this batch. Not unrelated to the post -- these "
+            "may well be about the post -- but sharing no claim, no evidence and "
+            "no line of argument with any sibling.",
+            f"- Put them in the {ISOLATION_MIN_WORDS}-{ISOLATION_MAX_WORDS} word "
+            "range. Real threads already match us on very short and very long "
+            "comments; the deficit is entirely mid-length ones that each add a "
+            "distinct point to one shared argument.",
+            "- What real isolated comments do: react to one incidental detail "
+            "nobody else picked up, tell a personal aside the thread did not ask "
+            "for, address another commenter rather than the topic, or comment on "
+            "the thread itself.",
+            "- An isolated slot is exempt from its branch's owned subject and "
+            "from the batch's coverage plan.",
+            "- Do not satisfy it by rephrasing a sibling's point, by agreeing, or "
+            "by taking the opposite side of a point another slot already makes -- "
+            "a counter-argument is still the same argument.",
+        ]
+    )
+
+
 def outsider_quota_block(slot_count: int) -> str:
     """Ask the Planner for a measured share of comments that leave the topic.
 
