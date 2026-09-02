@@ -19,6 +19,7 @@ from .domain_claim import (
 from .long_form_planning import expected_development_beats
 from .plan_vocabulary import (
     content_angle_schema_hint,
+    named_lens_block,
     reply_shared_field_lines,
 )
 from .planner_schema import parse_sample_id
@@ -411,6 +412,7 @@ it out of a limit, failure, or counter-condition.
 Required template-derived labels for these slots:
 {slot_distribution}
 
+{named_lens_block(prior_plans)}
 Anonymous direct-reply slots and committed parent-plan exclusions:
 {chr(10).join(parent_rows)}
 {feedback}

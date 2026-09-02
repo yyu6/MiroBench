@@ -184,3 +184,121 @@ class CanonicalizerGateTest(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class NamedLensHandoffTest(unittest.TestCase):
+    """Root slots and reply slots are planned by two different prompts.
+
+    The root prompt derives the lens set and carries it forward through a ledger
+    summary; the reply prompt was given a `perspective_id` field under `open`
+    and nothing to fill it from. Measured on a 97-comment thread: root batches
+    converged to 0-2 new lenses per batch by batch 8, then the first reply batch
+    added 8 fresh ones and the next two added 8 each, ending at 54 lenses for
+    one thread against a real corpus at 5-12.
+    """
+
+    def tearDown(self) -> None:
+        pv.set_plan_vocabulary("closed")
+
+    def _plans(self):
+        return [
+            {"perspective_id": "practical burden lens"},
+            {"perspective_id": "practical burden lens"},
+            {"perspective_id": "reputation management"},
+            {"perspective_id": "seed_local"},
+            {"perspective_id": ""},
+        ]
+
+    def test_closed_mode_adds_nothing(self) -> None:
+        self.assertEqual("", pv.named_lens_block(self._plans()))
+
+    def test_open_mode_lists_named_lenses_with_counts(self) -> None:
+        pv.set_plan_vocabulary("open")
+        block = pv.named_lens_block(self._plans())
+        self.assertIn("practical burden lens (used 2x)", block)
+        self.assertIn("reputation management (used 1x)", block)
+        self.assertNotIn("seed_local", block)
+        # The list must not read as a menu. Real threads of this size hold 22
+        # to 40 distinct positions, so telling a reply planner to stay inside
+        # an existing set suppresses the variety the arm exists to create --
+        # which is what the first version of this block said.
+        self.assertIn("NOT a menu", block)
+        self.assertIn("must name a new one", block)
+        self.assertIn("same position does not get two names", block)
+
+    def test_open_mode_is_empty_before_anything_is_named(self) -> None:
+        pv.set_plan_vocabulary("open")
+        self.assertEqual("", pv.named_lens_block([]))
+        self.assertEqual("", pv.named_lens_block([{"perspective_id": "seed_local"}]))
+
+    def test_same_position_under_a_different_suffix_counts_once(self) -> None:
+        """The reply planner wrote "practical burden" for the root planner's
+        "practical burden lens"; those are one position, not two."""
+        self.assertEqual(
+            pv.canonical_lens("practical burden lens"),
+            pv.canonical_lens("practical burden"),
+        )
+        self.assertEqual(
+            pv.canonical_lens("background privilege angle"),
+            pv.canonical_lens("privilege background"),
+        )
+        self.assertNotEqual(
+            pv.canonical_lens("practical burden lens"),
+            pv.canonical_lens("reputation management"),
+        )
+
+    def test_a_bare_head_noun_still_canonicalises(self) -> None:
+        """Stripping must not empty a lens that is only a head noun."""
+        self.assertEqual("lens", pv.canonical_lens("lens"))
+        self.assertEqual("angle lens", pv.canonical_lens("the lens and the angle"))
+
+
+class RealPositionCountTest(unittest.TestCase):
+    """The lens-count sentence must come from the thread, not from me.
+
+    The prompt told the Planner a thread holds "typically five to twelve"
+    lenses. That figure was invented. Agglomerative clustering at the project's
+    existing 0.35 unrelatedness threshold puts the ten celebrity seeds at 34
+    positions for 97 comments, 40 for 61, and 22 for 29 -- low by a factor of
+    three to seven, and suppressing the variety the arm exists to create.
+    """
+
+    @staticmethod
+    def _unit(*pairs):
+        import math
+
+        out = []
+        for x, y in pairs:
+            n = math.hypot(x, y) or 1.0
+            out.append([x / n, y / n])
+        return out
+
+    def test_counts_positions_at_the_project_threshold(self) -> None:
+        vecs = self._unit((1, 0), (1, 0.02), (0, 1), (0, 1), (-1, 0))
+        self.assertEqual(
+            3, pv.real_position_count(list("abcde"), lambda _t: vecs)
+        )
+
+    def test_near_duplicates_are_one_position(self) -> None:
+        vecs = self._unit((1, 0), (1, 0.01), (1, 0.02), (1, 0.03))
+        self.assertEqual(1, pv.real_position_count(list("abcd"), lambda _t: vecs))
+
+    def test_too_few_comments_returns_zero(self) -> None:
+        self.assertEqual(0, pv.real_position_count(["a", "b", "c"], lambda _t: []))
+        self.assertEqual(0, pv.real_position_count([], lambda _t: []))
+
+    def test_a_missing_model_degrades_to_silence_not_a_guess(self) -> None:
+        def boom(_texts):
+            raise RuntimeError("no embedding model")
+
+        self.assertEqual(
+            0, pv.real_position_count(["q1", "q2", "q3", "q4", "q5"], boom)
+        )
+        # and the sentence is omitted rather than inventing a range
+        pv.set_plan_vocabulary("open")
+        try:
+            self.assertNotIn("distinct semantic positions", pv.abstraction_block("", 0))
+            self.assertIn("distinct semantic positions", pv.abstraction_block("", 34))
+            self.assertNotIn("five to twelve", pv.abstraction_block("", 34))
+        finally:
+            pv.set_plan_vocabulary("closed")

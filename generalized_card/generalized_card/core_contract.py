@@ -268,7 +268,7 @@ CORE_FILES = {
     # slot is asked for.
     "plan_vocabulary": (
         "generalized_card/generalized_card/plan_vocabulary.py",
-        "8c435f282f0be0f0c2da59f7de0b7df1439bd8c0b480441b81f2b3c5e2c5447d",
+        "c2f5473a119fa9b39b664205c64568a7af36a1a12f589f5b10edd1d9dd2f5899",
     ),
     "planning_quality": (
         "generalized_card/generalized_card/planning_quality.py",
@@ -476,11 +476,11 @@ CORE_FILES = {
     ),
     "domain_prompt_adapter": (
         "generalized_card/generalized_card/prompts.py",
-        "c2a44d88ab67f3ffbd9c8d48828923ee39f3b61cbc843d5d2251734843ecf214",
+        "ca230d662804a1511d502b431b6db4f79a97d51969477279771999f83d4b85e5",
     ),
     "reply_planning": (
         "generalized_card/generalized_card/reply_planning.py",
-        "8749f2f4a55e4314f57c81f2d780d5a008f9ecf5ffbc34b9e0772a2b4aafc36d",
+        "07a43d525469a8581d5c70fd63081946dc912721fc05a636a6bbecc8816ea887",
     ),
     "persona_bridge": (
         "generalized_card/generalized_card/persona_bridge.py",

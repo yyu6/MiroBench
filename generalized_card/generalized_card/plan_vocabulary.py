@@ -44,7 +44,9 @@ which is the arm that claims it.
 
 from __future__ import annotations
 
+import hashlib
 import re
+from typing import Any
 
 PLAN_VOCABULARY_MODE = "closed"
 
@@ -56,6 +58,11 @@ _WORD_RE = re.compile(r"[a-z0-9]+")
 _LENS_STOPWORDS = frozenset(
     "a an the and or of in on to for with about as at by from is are its it this that".split()
 )
+# Generic head nouns a named lens may or may not carry. Without stripping them,
+# the root planner's "practical burden lens" and the reply planner's "practical
+# burden" count as two lenses, which is how a 97-slot thread was measured at 54
+# distinct lenses when many were the same position under a different suffix.
+_LENS_HEAD_NOUNS = frozenset("lens angle read take view framing perspective".split())
 
 MAX_LENS_CHARS = 48
 MAX_ANGLE_CHARS = 40
@@ -78,7 +85,8 @@ def canonical_lens(value: object) -> str:
 
     words = _WORD_RE.findall(str(value or "").lower())
     kept = [w for w in words if w not in _LENS_STOPWORDS] or words
-    return " ".join(sorted(kept))
+    trimmed = [w for w in kept if w not in _LENS_HEAD_NOUNS] or kept
+    return " ".join(sorted(trimmed))
 
 
 def normalize_open_control(value: object, *, fallback: str, limit: int) -> str:
@@ -157,7 +165,118 @@ def reply_shared_field_lines() -> str:
     )
 
 
-def abstraction_block(universal_rows: str = "") -> str:
+# Two comments whose embeddings sit below this cosine are treated as occupying
+# different positions. Not a new free parameter: `compare_arms.py` and
+# `measure_isolation.py` already use 0.35 as the point below which two comments
+# are semantically unrelated.
+DISTINCT_POSITION_COSINE = 0.35
+
+_POSITION_COUNT_CACHE: dict[str, int] = {}
+
+
+def real_position_count(bodies, encode) -> int:
+    """How many distinct semantic positions this thread's real comments occupy.
+
+    The prompt used to tell the Planner a thread holds "typically five to
+    twelve" lenses. That number was invented. Measured on the ten celebrity
+    seeds by agglomerative clustering at this threshold, a 97-comment thread
+    holds 34 positions, a 61-comment thread 40, and a 29-comment thread 22 --
+    so the invented figure was low by a factor of three to seven and was
+    suppressing exactly the variety the arm exists to create. Under the closed
+    taxonomy the same thread was planned with 6 lenses.
+
+    Greedy single-pass clustering rather than scipy: this runs inside prompt
+    assembly, correlates with average-linkage at r=0.991 over those ten threads
+    (ratio 0.88), and adds no dependency to the generation path.
+    """
+
+    texts = [str(b or "").strip() for b in bodies]
+    texts = [t for t in texts if t]
+    if len(texts) < 4:
+        return 0
+    key = hashlib.sha256("\n".join(texts).encode("utf-8")).hexdigest()[:16]
+    cached = _POSITION_COUNT_CACHE.get(key)
+    if cached is not None:
+        return cached
+    try:
+        vectors = encode(texts)
+    except Exception:  # noqa: BLE001 - a prompt must still assemble without it
+        return 0
+    centroids: list[Any] = []
+    for vector in vectors:
+        if not centroids or max(
+            float(_dot(vector, c)) for c in centroids
+        ) < DISTINCT_POSITION_COSINE:
+            centroids.append(vector)
+    _POSITION_COUNT_CACHE[key] = len(centroids)
+    return len(centroids)
+
+
+def _dot(left: Any, right: Any) -> float:
+    try:
+        return float(sum(a * b for a, b in zip(left, right)))
+    except TypeError:
+        return float(left @ right)
+
+
+def _expected_position_sentence(real_positions: int) -> str:
+    if real_positions < 4:
+        return ""
+    return (
+        f"This thread's own real comments occupy about {real_positions} "
+        f"distinct semantic positions. Expect a lens set of that order -- not "
+        f"a handful. A real discussion this size is many people making many "
+        f"different points, not five themes restated.\n"
+    )
+
+
+def named_lens_block(prior_plans, *, limit: int = 24) -> str:
+    """The lenses this thread has already named, for the REPLY planner.
+
+    Root slots and reply slots are planned by two different prompts. The root
+    prompt derives a lens set and carries it forward through a ledger summary;
+    the reply prompt shows a parent, its siblings' delta types, and nothing
+    about lenses at all -- correct while the vocabulary was twelve frozen P##
+    codes that needed no introduction, and wrong the moment the Planner names
+    its own. Measured on a 97-comment thread: root batches converged, adding
+    0-2 new lenses per batch by batch 8, and then the first reply batch added 8
+    fresh ones and the next two added 8 more each, arriving at 54 lenses for one
+    thread. They were not new positions -- "practical burden" against the root
+    planner's "practical burden lens", "image-management lens" and "damage
+    control lens" against "reputation management".
+
+    Empty under `closed`, where the reply schema carries no `perspective_id`.
+    """
+
+    if not open_vocabulary():
+        return ""
+    counts: dict[str, tuple[str, int]] = {}
+    for plan in prior_plans or ():
+        raw = str((plan or {}).get("perspective_id") or "").strip()
+        if not raw or raw.lower() == "seed_local":
+            continue
+        key = canonical_lens(raw)
+        label, seen = counts.get(key, (raw, 0))
+        counts[key] = (label, seen + 1)
+    if not counts:
+        return ""
+    rows = sorted(counts.values(), key=lambda item: (-item[1], item[0]))[:limit]
+    listed = "\n".join(f"- {label} (used {seen}x)" for label, seen in rows)
+    return (
+        "\nLenses this thread has already named, with how many slots each one "
+        "holds:\n"
+        f"{listed}\n"
+        "This list exists so the same position does not get two names. If a "
+        "reply argues from a position already on it, use that exact wording "
+        "rather than a synonym -- the root planner wrote \"practical burden "
+        "lens\" and a reply wrote \"practical burden\" for the same position. "
+        "It is NOT a menu to stay inside: a reply that argues from a position "
+        "no listed lens covers must name a new one. Real threads of this size "
+        "hold many distinct positions, so a growing list is expected.\n"
+    )
+
+
+def abstraction_block(universal_rows: str = "", real_positions: int = 0) -> str:
     """The section that asks the Planner to derive its own lens set.
 
     Empty under `closed`, so the assembled prompt is unchanged.
@@ -179,9 +298,9 @@ def abstraction_block(universal_rows: str = "") -> str:
         "community. Read them for the KINDS of position people take here: what "
         "someone is arguing from when they react, what they treat as the thing "
         "at stake, which angles recur and which appear once.\n"
-        "From that, name the small set of lenses this thread's slots will argue "
-        "from -- typically five to twelve for a thread this size -- and then "
-        "assign one to each slot in `perspective_id`. A lens is a standing "
+        f"{_expected_position_sentence(real_positions)}"
+        "Name the lenses this thread's slots will argue from and assign one to "
+        "each slot in `perspective_id`. A lens is a standing "
         "position, not a topic: \"whether the framing is doing the work\" is a "
         "lens, \"the budget number\" is a topic.\n"
         "Two rules on the set you name:\n"

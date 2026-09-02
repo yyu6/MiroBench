@@ -42,6 +42,7 @@ from .branch_routing import BRANCH_DICTATION_MODE as _BDM  # noqa: F401
 from .planning_quality import isolation_quota_block, outsider_quota_block
 from .plan_vocabulary import (
     abstraction_block,
+    real_position_count,
     content_angle_schema_hint,
     domain_intent_schema_hint,
     open_vocabulary,
@@ -336,6 +337,23 @@ def _perspective_field_rule() -> str:
     return (
         "Use a frozen ``perspective_id`` only when it fits the visible seed or "
         "parent; otherwise use ``seed_local``."
+    )
+
+
+def _real_position_count(backend: Any, rows: list[dict[str, Any]]) -> int:
+    """Count the matched real thread's distinct semantic positions.
+
+    The embedding model the plan-quality gate already loads is reused, so this
+    adds no model and no dependency. Returns 0 when embeddings are off, and the
+    sentence that consumes it is then omitted rather than falling back to a
+    guess -- an invented number is what this replaces.
+    """
+
+    index = getattr(backend, "GENERALIZED_PLAN_SEMANTIC_INDEX", None)
+    if index is None:
+        return 0
+    return real_position_count(
+        [row.get("body") for row in rows or ()], index.encode_texts
     )
 
 
@@ -1465,7 +1483,7 @@ Domain: {config.display_name}
 {_sec('B', 'HOW THIS COMMUNITY WRITES -- REFERENCE BANK')}{_reference_row_framing()}
 {claim_knowledge}
 {reference_viewpoints}
-{abstraction_block(perspectives)}
+{abstraction_block(perspectives, _real_position_count(backend, all_comments or comments))}
 
 {_sec('C', 'OBJECTIVES')}Objectives:
 - Preserve each supplied slot's depth, parent relation, approximate information density, and surface roughness.
