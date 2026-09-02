@@ -33,6 +33,9 @@ ap.add_argument("domain")
 ap.add_argument("--base", required=True, help="an already-built domain_profile.json")
 ap.add_argument("--seeds", nargs="+", type=int, required=True)
 ap.add_argument("--out-dir", required=True)
+ap.add_argument("--isolation-csv", default="artifacts/geo_v137ds/isolation/{domain}.csv",
+                help="output of measure_isolation.py; {domain} is substituted. "
+                     "Omit with '' to leave thread_isolation_share unset.")
 a = ap.parse_args()
 
 dom = a.domain if a.domain.endswith("_geo") or "_" in a.domain else f"{a.domain}_geo"
@@ -45,6 +48,21 @@ pool_name = {"celebrity_geo": "celebrity_geo_150_seed907",
              "camera": "camera_product_150_seed907"}.get(dom, f"{dom}_150_seed907")
 pool = json.load(open(REPO / "artifacts/generalized_card/seed_pools" / f"{pool_name}.json"))
 seed_of = {int(r["seed_index"]): str(r["source_raw_post_id"]) for r in pool["seed_posts"]}
+
+# Per-thread isolation share, measured on each seed's OWN matched real thread.
+# A domain-wide constant is wrong for half the corpus: celebrity threads run
+# from 0.04 to 1.00, so a fixed quota tells the Planner to scatter threads whose
+# humans did not, and to stay focused in threads whose humans scattered totally.
+iso_by_thread = {}
+if a.isolation_csv:
+    iso_path = REPO / a.isolation_csv.replace("{domain}", dom)
+    if iso_path.exists():
+        iso_by_thread = {r["thread_id"]: float(r["isolation_share"])
+                         for r in csv.DictReader(open(iso_path))}
+        print(f"孤立比例来自 {iso_path.name}  ({len(iso_by_thread)} 个 thread)")
+    else:
+        print(f"警告: 没有 {iso_path}，thread_isolation_share 不写入 "
+              f"(Planner 会退回域级常数)")
 
 base = json.load(open(a.base))
 out = Path(a.out_dir); out.mkdir(parents=True, exist_ok=True)
@@ -63,6 +81,10 @@ for i in a.seeds:
         bt[target] = max(lo, min(hi, float(v)))
         applied[target] = round(bt[target], 4)
     p["behavior_targets"] = bt
+    iso = iso_by_thread.get(rid)
+    if iso is not None:
+        p["thread_isolation_share"] = round(iso, 4)
+        applied["isolation_share"] = p["thread_isolation_share"]
     p["matched_profile"] = {"seed_index": i, "source_raw_post_id": rid, "applied": applied}
     # The profile carries an integrity hash; editing the payload invalidates it.
     p.pop("profile_sha256", None)

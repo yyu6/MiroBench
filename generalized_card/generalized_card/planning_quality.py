@@ -1348,7 +1348,13 @@ def outsider_quota_enabled() -> bool:
 # `semantic_mean_cosine` moves 0.2168 -> 0.1934 at 10% and 0.1841 at 15% against
 # a real 0.1914, which sizes the target at ~12%.
 ISOLATION_QUOTA_MODE = "off"
+# Fallback when the thread's own share is unknown. A fixed share is the wrong
+# shape for this arm: a thread whose real comments all pull on one argument
+# should be generated that way, and forcing 12% isolation into it is as much an
+# error as leaving a scattered thread focused. `set_thread_isolation_share`
+# overrides this per thread from that thread's own matched real comments.
 ISOLATION_SHARE = 0.12
+THREAD_ISOLATION_SHARE: float | None = None
 ISOLATION_MIN_WORDS = 10
 ISOLATION_MAX_WORDS = 40
 
@@ -1365,6 +1371,17 @@ def isolation_quota_enabled() -> bool:
     return ISOLATION_QUOTA_MODE == "measured"
 
 
+def set_thread_isolation_share(share: float | None) -> None:
+    """Set the share for the thread now being planned, or None for the default."""
+
+    global THREAD_ISOLATION_SHARE
+    THREAD_ISOLATION_SHARE = None if share is None else max(0.0, min(0.5, float(share)))
+
+
+def active_isolation_share() -> float:
+    return ISOLATION_SHARE if THREAD_ISOLATION_SHARE is None else THREAD_ISOLATION_SHARE
+
+
 def isolation_quota_block(slot_count: int) -> str:
     """Ask for a measured share of slots that relate to no other slot.
 
@@ -1374,8 +1391,12 @@ def isolation_quota_block(slot_count: int) -> str:
 
     if not isolation_quota_enabled() or slot_count < 4:
         return ""
-    target = max(1, round(slot_count * ISOLATION_SHARE))
-    if target > slot_count // 2:
+    share = active_isolation_share()
+    # A thread measured at no isolation gets no instruction at all, rather than
+    # a floor of one slot: "make one of these unrelated" is wrong for a thread
+    # whose real comments genuinely all pull together.
+    target = int(round(slot_count * share))
+    if target < 1 or target > slot_count // 2:
         return ""
     return "\n".join(
         [

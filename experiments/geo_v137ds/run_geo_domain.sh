@@ -14,7 +14,7 @@ PY="${GEO_PYTHON:-/Users/yaoningyu/.pyenv/versions/3.11.8/bin/python3}"
 domain="${1:-}"; shift || true
 writer="deepseek-v4-flash"; planner="$GEO_V137DS_PLANNER"
 shard=3; jobs=0; pool=""; seed=""; date_tag="$(date +%Y%m%d)"
-dry=0; seeds_spec=""; tag_prefix=""; extra=()
+dry=0; seeds_spec=""; tag_prefix=""; matched=0; matched_dir=""; extra=()
 while [[ $# -gt 0 ]]; do
   case "$1" in
     --writer)      writer="$2"; shift 2 ;;
@@ -27,6 +27,7 @@ while [[ $# -gt 0 ]]; do
     --date)        date_tag="$2"; shift 2 ;;
     --seeds)       seeds_spec="$2"; shift 2 ;;
     --tag-prefix)  tag_prefix="$2"; shift 2 ;;
+    --matched-profiles) matched=1; shift ;;
     --dry-run)     dry=1; shift ;;
     -h|--help)     grep '^#' "$0" | sed 's/^# \{0,1\}//'; exit 0 ;;
     *)             extra+=("$1"); shift ;;
@@ -115,12 +116,45 @@ gen --tag "${prefix}_preflight" --prepare-only 2>&1 | tee "$LOGS/preflight.log" 
 # shard, so sharing it is also the only correct thing to do.
 PROFILE="$ROOT/artifacts/generalized_card/runs/${prefix}_preflight/domain_profile.json"
 if [[ -f "$PROFILE" ]]; then
-  extra+=(--domain-profile "$PROFILE")
+  # Under --matched-profiles each shard names its own profile instead; adding
+  # the shared one here too would leave two --domain-profile flags on the same
+  # command line and make correctness depend on argparse's last-wins ordering.
+  if [[ "$matched" != "1" ]]; then
+    extra+=(--domain-profile "$PROFILE")
+  fi
   echo "  shards will reuse $(basename "$(dirname "$PROFILE")")/domain_profile.json"
 else
   echo "  WARNING: preflight left no domain_profile.json; each shard will build" >&2
   echo "           its own. Drop --max-parallel to 4 or fewer or the machine" >&2
   echo "           will swap." >&2
+fi
+
+# --matched-profiles: each seed gets behaviour targets read off ITS OWN matched
+# real thread instead of the domain aggregate.  The aggregate sits 0.77 sd from
+# any single thread, a property of thread-to-thread variance that no amount of
+# aggregate refinement removes, so runs built this way are labelled
+# `matched_profile` and must never be pooled with held-out-target runs.
+# Shard size is forced to 1 because a shard carries one profile.
+if [[ "$matched" == "1" ]]; then
+  [[ -f "$PROFILE" ]] || { echo "ERROR: --matched-profiles needs the preflight profile as its base." >&2; exit 2; }
+  if [[ "$shard" != "1" ]]; then
+    echo "  --matched-profiles: forcing --shard-size 1 (one profile per shard)"
+    shard=1
+  fi
+  matched_dir="$ROOT/artifacts/generalized_card/matched_profiles/${prefix}"
+  if [[ -n "$seeds_spec" ]]; then
+    mseeds=""
+    for sp in $seeds_spec; do
+      st="${sp%%:*}"; ct="${sp##*:}"
+      for k in $(seq "$st" $((st + ct - 1))); do mseeds="$mseeds $k"; done
+    done
+  else
+    mseeds="$(seq 0 $((pool - 1)) | tr '\n' ' ')"
+  fi
+  echo "  building per-seed profiles -> $(basename "$matched_dir")"
+  "$PY" "$ROOT/experiments/geo_v137ds/matched_profile.py" "$did" \
+      --base "$PROFILE" --out-dir "$matched_dir" --seeds $mseeds \
+      2>&1 | tail -4
 fi
 
 # --seeds "6:9 23:2" generates exactly those ranges instead of sweeping the pool.
@@ -140,8 +174,17 @@ running=0
 for sp in $plan; do
   start="${sp%%:*}"; count="${sp##*:}"
   tag="${prefix}_p${start}"
+  perseed=()
+  if [[ -n "$matched_dir" ]]; then
+    if [[ -f "$matched_dir/seed_${start}.json" ]]; then
+      perseed=(--domain-profile "$matched_dir/seed_${start}.json")
+    else
+      echo "  SKIP $tag: no matched profile for seed $start (real thread unscored)" >&2
+      continue
+    fi
+  fi
   ( gen --tag "$tag" --max-posts "$count" --start-seed-index "$start" --resume \
-      > "$LOGS/${tag}.log" 2>&1 ) &
+      "${perseed[@]+"${perseed[@]}"}" > "$LOGS/${tag}.log" 2>&1 ) &
   echo "  $tag  seeds ${start}-$((start + count - 1))  pid $!"
   # macOS ships bash 3.2, which has no `wait -n`; poll the job table instead.
   while [ "$(jobs -pr | wc -l | tr -d ' ')" -ge "$jobs" ]; do sleep 1; done

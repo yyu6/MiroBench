@@ -241,7 +241,7 @@ CORE_FILES = {
     ),
     "generation_runner": (
         "generalized_card/scripts/run_generate.py",
-        "64f5cbdee35bea179560fcdeebaaaf15de6d9dd4fa8a0408e7873c331baa4e51",
+        "81052d42f7cebbe9d8d1d5c5824233acdf2b011a61de868d98010e9fb216c3ef",
     ),
     "generation_backend_runner": (
         "generalized_card/scripts/run_generator_backend.py",
@@ -265,7 +265,7 @@ CORE_FILES = {
     ),
     "planning_quality": (
         "generalized_card/generalized_card/planning_quality.py",
-        "8a0d4476cc9a5d4af500dba04867a2f234c5b1a82cab4e3d39d4c565e4f3fe79",
+        "50c449d1fe10307bab40dd71eb9cd08f9ff546d9c14342e51b0b144897e0e36c",
     ),
     "planner_contract": (
         "generalized_card/generalized_card/planner_contract.py",

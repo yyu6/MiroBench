@@ -13,6 +13,26 @@
 | **v138ref** | `celebv2_20260902_*` | celebrity | 48 | **8/12** | `--reference-floor measured`：参考语料加上和种子池一样的 ≥5 条评论门槛 |
 | **v139mp** | `mprof_20260902_s*` | celebrity | 50 | 10/12 (N=15) | 每个 seed 用它自己匹配的真实 thread 的 polite/impolite/story 作为目标。**泄露 arm**，不可与上面各版并列比较 |
 | **v140out** | `outq_20260902_*` | celebrity | 50 | 待测 | v139mp + `--outsider-quota measured` |
+| **v139mp** | `mprof_20260902_s*` | celebrity | **46** | **7/12** | 同上，跑满 N=50 后复测。tone 组全过，`self_bertscore` d +0.39 / `semantic_mean_cosine` d +0.55 纹丝不动 |
+| **v141iso** | `iso2_20260902_s*` | celebrity | 50 | 待测 | v139mp + `--isolation-quota measured`，全域固定 12% |
+| **v142isopt** | `isopt_20260902_s*` | celebrity | 50 | 待测 | v141iso + 每条 thread 用它自己真实 thread 量出的孤立比例（`measure_isolation.py`），而不是固定 12% |
+
+### 为什么要有 isolation quota
+
+真实语料内部自己的规律（80 条 celebrity thread，孤立=最近邻余弦 < 0.35）：
+
+| 指标 | 与该 thread 孤立比例的 Spearman | p |
+|---|---|---|
+| `semantic_mean_cosine` | **-0.570** | 0.0000 |
+| `self_bertscore` | -0.274 | 0.0140 |
+| `self_bleu_4` | **+0.300** | 0.0068 |
+
+所以话题散开确实压低前两个指标 —— 这是真实语料自己的性质，不是我们假设的。
+但 `self_bleu_4` 是反号，它现在 d -0.01 完美通过，**是这个 arm 要盯的副作用**。
+
+孤立比例在真实 thread 之间差异极大（中位 0.255，范围 0.04~1.00），
+所以全域固定 12% 对一半 thread 是错的：有的 thread 真人几乎全在各说各的，
+有的几乎完全聚焦。v141iso 和 v142isopt 就是在测这个差别值不值。
 
 ## 复现任意一版
 

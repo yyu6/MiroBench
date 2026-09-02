@@ -29,6 +29,10 @@ from generalized_card.actor_conditioning import (  # noqa: E402
     MODE_DOMAIN_DERIVED,
 )
 from generalized_card.data import build_seed_pool  # noqa: E402
+from generalized_card.planning_quality import (  # noqa: E402
+    set_isolation_quota,
+    set_thread_isolation_share,
+)
 from generalized_card.domain_profile import (  # noqa: E402
     CARD_CONTEXT_DROPOUT_RATE,
     CARD_CONTEXT_JITTER_RATE,
@@ -1118,6 +1122,12 @@ def main() -> None:
         raise RuntimeError(
             f"Domain profile is for {domain_profile.get('domain_id')!r}, expected {config.domain_id!r}"
         )
+    # A per-thread isolation share, when the profile carries one, overrides the
+    # domain default. matched_profile.py measures it from that seed's own real
+    # comments, so a thread whose real discussion genuinely pulls together is
+    # generated that way instead of having a fixed quota forced into it.
+    set_thread_isolation_share(domain_profile.get("thread_isolation_share"))
+
     behavior_targets = dict(domain_profile.get("behavior_targets") or {})
     if args.context_dropout_rate is None:
         args.context_dropout_rate = float(
