@@ -85,8 +85,11 @@ def _detail_focus_schema() -> str:
 
 def _template_contract_rule() -> str:
     return _free(
-        "- No labels are prescribed for any S#. Choose every field yourself and "
-        "keep the set coherent within a slot.",
+        "- Nothing is prescribed for any S#: no labels, no tone or affect "
+        "counts, no story schedule, no branch goal, perspective or exclusion, "
+        "no opener type. Every field is yours. Keep the set coherent within a "
+        "slot, and let the thread's tone and affect fall where the conversation "
+        "puts them, including at the extremes.",
         "- A label explicitly listed for an S# is a fixed template contract. Select a\n"
         "  compatible role, payload, stance, and evidence mode in this first plan; do\n"
         "  not expect a later stage to replace it. For a field absent from the S# list,\n"
@@ -96,9 +99,7 @@ def _template_contract_rule() -> str:
 
 def _remaining_counts_rule() -> str:
     return _free(
-        "- There are no remaining counts to satisfy. Let the thread's tone and "
-        "affect fall where the conversation puts them, including at the "
-        "extremes.",
+        "",
         "- Satisfy only the remaining story, tone_class, and affect_role counts that\n"
         "  have compatible slots. If the template says a label is unavailable, omit it\n"
         "  rather than attaching it to an unrelated substantive claim. Choose labels\n"
@@ -109,10 +110,9 @@ def _remaining_counts_rule() -> str:
 
 def _story_schedule_rule() -> str:
     return _free(
-        "- No story schedule is supplied. Decide per slot whether a comment "
-        "tells a personal story, at roughly the rate the matched thread shows. "
-        "Do not add a story to make a plan sound richer, and do not suppress "
-        "one the slot naturally carries.",
+        "- Decide per slot whether a comment tells a personal story, at roughly "
+        "the rate the matched thread shows. Do not add one to make a plan sound "
+        "richer, and do not suppress one the slot naturally carries.",
         "- Every S# not explicitly assigned a story_mode in the slot schedule is fixed\n"
         "  to no_story. Do not create an extra story to make a local plan sound richer.",
     )
@@ -120,8 +120,7 @@ def _story_schedule_rule() -> str:
 
 def _branch_contract_rules() -> str:
     return _free(
-        "- No branch goal, required perspective, exclusion or owned subject is "
-        "supplied. What each slot is about is yours to decide.",
+        "",
         "- Treat the displayed ``branch_goal`` as a semantic contract, not background\n"
         "  inspiration: ``semantic_move``, ``domain_intent``, and\n"
         "  ``decision_boundary`` must directly develop that goal. A comment that could\n"
@@ -168,6 +167,28 @@ def _claim_reuse_rule() -> str:
         " Otherwise move to a different seed-grounded branch, detail, stance, or"
         " social function.",
     )
+
+
+def _sec(letter: str, title: str) -> str:
+    """Number the blocks between the brief and the rules.
+
+    Those blocks arrive as an unlabelled pile -- lenses, a reference bank,
+    objectives, the post, targets, registers, shape, slots, schema -- and a
+    reader cannot tell which are inputs, which are constraints, and which is the
+    thing being planned. Lettered so they cannot be confused with the brief's
+    numbered sections.
+    """
+
+    return f"\n--- {letter}. {title} ---\n" if slot_grid_mode() == "free" else ""
+
+
+def _rule_group(title: str) -> str:
+    """A heading between rule groups, so 34 flat bullets read as seven topics.
+
+    Emitted only under `free`; the default list keeps its exact original shape.
+    """
+
+    return f"\n{title}\n" if slot_grid_mode() == "free" else ""
 
 
 def _opener_rules() -> str:
@@ -1361,17 +1382,17 @@ specific situation. A fact about the seed post itself still cannot be invented."
 {_brief_at_top()}
 Domain: {config.display_name}
 
-{_lens_framing()}
+{_sec('A', 'VOCABULARY AVAILABLE TO YOU')}{_lens_framing()}
 {perspectives}
 Each P## states how a comment reasons about the local topic. It is not the topic,
 entity, product, feature, event, or claim itself. Derive the actual local move
 from the visible seed/parent and the non-test reference-comment pattern below.
 
-{_reference_row_framing()}
+{_sec('B', 'HOW THIS COMMUNITY WRITES -- REFERENCE BANK')}{_reference_row_framing()}
 {claim_knowledge}
 {reference_viewpoints}
 
-Objectives:
+{_sec('C', 'OBJECTIVES')}Objectives:
 - Preserve each supplied slot's depth, parent relation, approximate information density, and surface roughness.
 - {_choose_from_objective()}
 - Produce a reusable instruction, not a comment.
@@ -1384,29 +1405,27 @@ Objectives:
   claim. A short slot can add one narrow observation or question, but not a
   multi-step story. This does not require the Writer to match an exact count.
 
-Seed post title:
+{_sec('D', 'THE POST')}Seed post title:
 {seed_post.title}
 
 Seed post body:
 {backend.compact(seed_post.body or seed_post.content, 2200)}
 
-Thread target:
+{_sec('E', 'THE THREAD TO BUILD')}Thread target:
 - target_comments: {target.target_comments}
 - max_depth_goal: {target.max_depth_goal}
 - shape_label: {target.shape_label}
 
-{_distribution_heading()}
+{_sec('F', 'LABELS -- NONE IMPOSED HERE')}{_distribution_heading()}
 {distribution_target}
 
 {_slot_label_heading()}
 {slot_distribution}
 
-Tone class definitions. These are social registers observed in real threads of
-this kind, not degrees of manners. Assign the label whose register the slot can
-actually carry:
+{_sec('G', 'TONE REGISTERS')}Tone class definitions. These are social registers observed in real threads of this kind, not degrees of manners. Assign the label whose register the slot can actually carry:
 {_tone_class_definitions()}
 
-Available branch controls:
+{_sec('H', 'THREAD SHAPE')}Available branch controls:
 {branches_block}
 
 Required structural branch routes:
@@ -1417,10 +1436,10 @@ Plans already assigned in earlier batches of this same thread:
 {feedback_block}
 {outsider_block}
 
-Matched-real structural slots. Use the displayed global S# values exactly:
+{_sec('I', 'THE SLOTS, AND THE REAL COMMENTS THAT FILLED THEM')}Matched-real structural slots. Use the displayed global S# values exactly:
 {real_sample}
 
-Return strict JSON:
+{_sec('J', 'WHAT TO RETURN')}Return strict JSON:
 {{
   "comment_plans": [
     {{
@@ -1458,8 +1477,8 @@ Return strict JSON:
   ]
 }}
 
-Rules:
-- Output one plan per displayed S#.
+{_sec('K', 'RULES')}Rules:
+{_rule_group('OUTPUT MECHANICS')}- Output one plan per displayed S#.
 - The ``sample_id`` value shown in the JSON schema is an example from this
   request, not a fixed constant. Return exactly these global IDs once each:
   {", ".join(f"S{sample_id}" for sample_id in requested_sample_ids)}.
@@ -1467,11 +1486,11 @@ Rules:
 - Use controlled vocabulary values exactly.
 - {semantic_grounding_rule}
 - Never copy a hidden matched-real anecdote, username, URL, or seed-specific fact.
-{_template_contract_rule()}
-- Equivalent local claims should share ``claim_key``; different claims must not.
+{_rule_group('WHAT YOU DECIDE')}{_template_contract_rule()}
+{_rule_group('KEEPING SLOTS DISTINCT FROM EACH OTHER')}- Equivalent local claims should share ``claim_key``; different claims must not.
 - Compare every new plan against the earlier-batch ledger. Do not hide a repeated semantic move behind a new ``claim_key`` or different wording.
 {_remaining_counts_rule()}
-- A slot's ``tone_class`` constrains its whole plan, not just its wording. The
+{_rule_group('KEEPING ONE SLOT COHERENT')}- A slot's ``tone_class`` constrains its whole plan, not just its wording. The
   semantic move has to be the kind of move that register makes:
   a ``polite`` slot agrees, corroborates from experience, endorses with a
   reason, or thanks, so pair it with ``stance=agree``, a ``speaker_role`` of
@@ -1496,7 +1515,7 @@ Rules:
   personal-story or fragment-datapoint payload. The semantic move itself must
   describe that narrative evidence rather than advice or abstract analysis.
   {SYNTHETIC_STORY_PLANNER_BOUNDARY}
-{_branch_axis_rule()}
+{_rule_group('STRUCTURE TO PRESERVE')}{_branch_axis_rule()}
 {_branch_contract_rules()}
 - A displayed ``root_branch_instance`` marks several independent root comments
   routed to the same semantic axis. Keep that axis, but vary the independent
@@ -1512,7 +1531,7 @@ Rules:
   tradeoff, verdict, or explanation. Repetition is allowed only for a direct
   reply that changes the relation, evidence, stance, or local detail.
 {_claim_reuse_rule()}
-- Use a frozen ``perspective_id`` only when it fits the visible seed or parent; otherwise use ``seed_local``.
+{_rule_group('HOW TO WRITE SPECIFIC FIELDS')}- Use a frozen ``perspective_id`` only when it fits the visible seed or parent; otherwise use ``seed_local``.
 - Nearby comments should not reuse the same perspective and claim key unless the reply relation directly requires it.
 - Write ``semantic_move`` as the exact new contribution made by this slot, not
   as a topic label or a paraphrase of the thread's current conclusion.
@@ -1542,7 +1561,7 @@ Rules:
   density. Incidental humor, a link, a quote, or a question may be embedded in
   that turn; it must not turn the whole plan into ``joke``,
   ``meta_or_template``, ``low_info_reaction``, or ``narrow_question``.
-- Before returning JSON, compare every row with every earlier row in this
+{_rule_group('BEFORE YOU RETURN')}- Before returning JSON, compare every row with every earlier row in this
   response and the earlier-batch ledger. Resolve repeated answers, verdicts,
   tradeoffs, and evidence roles in this first response; the Writer will not
   sample alternate semantic plans.
