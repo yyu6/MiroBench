@@ -38,7 +38,15 @@ from .length_policy import local_move_scope_guidance, soft_length_guidance
 from .opener_profile import OPENER_INSTRUCTIONS
 from .evaluative_register import active_evaluative_guidance
 from .opening_move import active_opening_guidance, forbidden_opening_tokens
+from .branch_routing import BRANCH_DICTATION_MODE as _BDM  # noqa: F401
 from .planning_quality import isolation_quota_block, outsider_quota_block
+
+
+def branch_dictation_mode() -> str:
+    """Read the flag at call time; importing the value would freeze it at off."""
+    from . import branch_routing
+
+    return branch_routing.BRANCH_DICTATION_MODE
 from .long_form_planning import (
     development_plan_word_threshold,
     expected_development_beats,
@@ -742,6 +750,32 @@ def comment_planner_prompt(
     _isolation = isolation_quota_block(len(comments))
     if _isolation:
         outsider_block = f"{outsider_block}\n{_isolation}\n"
+    # v148: with the routes stripped to structure, say what replaces them. This
+    # is not another quota -- the quotas were tried and moved the realized
+    # isolation rate without moving the metric. It names the real comment as the
+    # authority the routes used to be, which is the one input never given that
+    # standing before.
+    if branch_dictation_mode() == "structural":
+        outsider_block = (
+            f"{outsider_block}\n"
+            "WHERE EACH SLOT'S DIRECTION COMES FROM:\n"
+            "- The routes above now carry only shape: which branch a slot sits "
+            "in, its parent, its siblings. They no longer tell you what the "
+            "comment is about, which perspective it takes, or what it may not "
+            "touch. That is deliberate.\n"
+            "- Each matched slot below shows the real comment that occupied it. "
+            "Read what that person actually did -- what they picked up on, how "
+            "far they wandered from the post, who they were talking to, how "
+            "blunt or warm they were -- and plan a slot that makes an equally "
+            "distinct move. Do not reproduce their words or their facts.\n"
+            "- Real commenters in a thread are often not discussing the same "
+            "thing. Where the real comments at two slots have nothing to do with "
+            "each other, your plans for those slots should have nothing to do "
+            "with each other either.\n"
+            "- `perspective_id` accepts `seed_local`. Use it whenever no P## "
+            "honestly fits what the real comment did; forcing a lens that does "
+            "not fit is worse than declining one.\n"
+        )
     actor_enabled = (
         str(getattr(backend, "GENERALIZED_ACTOR_MODE", "") or "") == MODE_DOMAIN_DERIVED
     )

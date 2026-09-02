@@ -62,6 +62,28 @@ def parent_slot_schedule(comments: Iterable[dict[str, Any]]) -> dict[int, int]:
     return _parent_slots(list(comments))
 
 
+# v148 arm. Each routed slot normally arrives carrying its direction already
+# decided: a branch goal, a required perspective, an exclusion, an owned subject,
+# and the list of subjects it may not touch. The Planner is then filling in a
+# grid rather than deciding anything, and the measurements say it feels the grid:
+# `perspective_id` offers `seed_local` as an escape and it is used in 0.0% of
+# 1,878 slots, while `content_angle` -- eight shopping categories -- takes
+# `unclear_mixed` for 66.9% of them. The Planner is already reporting that the
+# taxonomy does not fit this domain, and is routed into it anyway.
+#
+# `structural` keeps only what the thread's shape requires -- which branch, which
+# parent, which siblings -- and drops every field that decides what the comment
+# is about. Paired with the matched real text, the slot's own real comment
+# becomes the guide instead.
+BRANCH_DICTATION_MODE = "full"
+
+
+def set_branch_dictation(mode: str) -> bool:
+    global BRANCH_DICTATION_MODE
+    BRANCH_DICTATION_MODE = str(mode or "full").strip().lower()
+    return BRANCH_DICTATION_MODE == "structural"
+
+
 def render_branch_requirements(
     schedule: dict[int, int],
     *,
@@ -93,18 +115,19 @@ def render_branch_requirements(
         if sample_id not in schedule:
             continue
         branch_id = schedule[sample_id]
-        goal = str((branch_goals or {}).get(branch_id) or "").strip()
+        structural = BRANCH_DICTATION_MODE == "structural"
+        goal = "" if structural else str((branch_goals or {}).get(branch_id) or "").strip()
         parent = (parent_slots or {}).get(sample_id)
         row = f"- S{sample_id}: required_branch=B{branch_id}"
         if goal:
             row += f"; branch_goal={goal}"
-        perspective = str((branch_perspectives or {}).get(branch_id) or "").strip()
+        perspective = "" if structural else str((branch_perspectives or {}).get(branch_id) or "").strip()
         if perspective:
             row += f"; required_perspective={perspective}"
-        exclusion = str((branch_exclusions or {}).get(branch_id) or "").strip()
+        exclusion = "" if structural else str((branch_exclusions or {}).get(branch_id) or "").strip()
         if exclusion:
             row += f"; branch_exclusion={exclusion}"
-        subject = str((branch_subjects or {}).get(branch_id) or "").strip()
+        subject = "" if structural else str((branch_subjects or {}).get(branch_id) or "").strip()
         if subject:
             other_subjects = [
                 value

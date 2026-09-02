@@ -35,6 +35,7 @@ from generalized_card.planning_quality import (  # noqa: E402
 )
 from generalized_card.viewpoint_bank import set_reference_window  # noqa: E402
 from generalized_card.prompts import set_matched_text  # noqa: E402
+from generalized_card.branch_routing import set_branch_dictation  # noqa: E402
 from generalized_card.domain_profile import (  # noqa: E402
     CARD_CONTEXT_DROPOUT_RATE,
     CARD_CONTEXT_JITTER_RATE,
@@ -341,6 +342,19 @@ def build_parser() -> argparse.ArgumentParser:
             "from the POST: that gap measures 1.1x on the current configuration "
             "while intra-thread nearest-neighbour cosine is 0.526 against a real "
             "0.487. `off` reproduces every release to date."
+        ),
+    )
+    parser.add_argument(
+        "--branch-dictation",
+        choices=["structural", "full"],
+        default="full",
+        help=(
+            "`structural` strips the branch routes down to shape -- which "
+            "branch, which parent, which siblings -- and drops the branch goal, "
+            "required perspective, exclusion and owned subject that normally "
+            "decide a slot's direction before the Planner sees it. Pair with "
+            "--matched-text measured, which puts the slot's own real comment "
+            "there instead. LEAK ARM for the same reason --matched-text is."
         ),
     )
     parser.add_argument(
@@ -1133,6 +1147,7 @@ def main() -> None:
     set_reference_min_comments(args.reference_floor)
     set_reference_window(args.reference_window)
     set_matched_text(args.matched_text)
+    set_branch_dictation(args.branch_dictation)
     set_isolation_quota(args.isolation_quota)
 
     domain_profile_path = (
@@ -1296,6 +1311,7 @@ def main() -> None:
         "reference_floor": args.reference_floor,
         "reference_window": args.reference_window,
         "matched_text": args.matched_text,
+        "branch_dictation": args.branch_dictation,
         "isolation_quota": args.isolation_quota,
         "verdict_close_guard": args.verdict_close_guard,
         "semantic_coverage_nonrepeat": args.semantic_coverage_nonrepeat,
@@ -1898,6 +1914,7 @@ RUN_EXPERIMENT_FIELDS = (
     "reference_floor",
     "reference_window",
     "matched_text",
+    "branch_dictation",
     "isolation_quota",
     "verdict_close_guard",
     "semantic_coverage_nonrepeat",
