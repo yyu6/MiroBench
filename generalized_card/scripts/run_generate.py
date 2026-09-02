@@ -344,7 +344,7 @@ def build_parser() -> argparse.ArgumentParser:
     )
     parser.add_argument(
         "--reference-window",
-        choices=["measured", "off"],
+        choices=["measured", "unranked", "off"],
         default="off",
         help=(
             "Fill the Planner's reference-example window at the reference bank's "

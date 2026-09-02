@@ -98,6 +98,17 @@ def build_reference_viewpoints(
 # window across bands at the bank's own shares. Nothing is fitted to a p-value:
 # the target distribution is the reference bank's, and the bank is built only
 # from threads excluded from the seed pool.
+# `unranked` drops the lexical ranking entirely. The prompt introducing these
+# rows says what they are for -- "Abstract the tiny semantic/discourse move and
+# adapt it to the visible seed or parent" -- so their job is to show what a real
+# commenter DOES, not what a real commenter is talking about; the topic is
+# replaced on the way in. Ranking them by word overlap with the seed post
+# therefore selects on an axis the examples are not being read for, and selects
+# against short comments as a side effect, since a short comment has few tokens
+# to match. Under `unranked` every candidate scores alike and the deterministic
+# per-seed tie-break orders them, which is a reproducible random draw from the
+# bank. The role round-robin still runs: that one sorts on discourse role, which
+# IS the axis the rows are read for.
 REFERENCE_WINDOW_MODE = "off"
 # Word-count bands. The boundaries are the isolation analysis's own: under ten
 # words is where the real isolated comments live, and 40 is where the quota's
@@ -179,7 +190,11 @@ def retrieve_reference_viewpoints(
     query_bigrams = set(zip(query_tokens, query_tokens[1:]))
     seed_key = hashlib.sha256(f"{seed_title}\n{seed_body}".encode("utf-8")).hexdigest()
     ranked: list[tuple[float, float, dict[str, Any]]] = []
+    unranked = REFERENCE_WINDOW_MODE == "unranked"
     for row in references:
+        if unranked:
+            ranked.append((0.0, _stable_fraction(f"{seed_key}:{row.get('reference_id')}"), row))
+            continue
         title_tokens = set(row["_title_tokens"])
         context_tokens = set(row["_context_tokens"])
         comment_tokens = set(row["_comment_tokens"])

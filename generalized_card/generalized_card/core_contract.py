@@ -241,7 +241,7 @@ CORE_FILES = {
     ),
     "generation_runner": (
         "generalized_card/scripts/run_generate.py",
-        "9d567d7701118d1fcca8698f4be3891cc22842e32cb46aa8a7cbc8def6b412f4",
+        "cd48e36f121f919e0cfbaa3aebd6e6b13058b2286f9b356da5923f3117ba2d3b",
     ),
     "generation_backend_runner": (
         "generalized_card/scripts/run_generator_backend.py",
@@ -261,7 +261,7 @@ CORE_FILES = {
     ),
     "viewpoint_bank": (
         "generalized_card/generalized_card/viewpoint_bank.py",
-        "9fe019c9e0c223a99f130868b4cd5c2b2f72956e0e4a150392888714a0b832b8",
+        "b2fd44cfaa514a0264d5e9b7023d211a1f80cacc9e4987eec3dba26b3db9b1a3",
     ),
     "planning_quality": (
         "generalized_card/generalized_card/planning_quality.py",
