@@ -241,7 +241,7 @@ CORE_FILES = {
     ),
     "generation_runner": (
         "generalized_card/scripts/run_generate.py",
-        "cd48e36f121f919e0cfbaa3aebd6e6b13058b2286f9b356da5923f3117ba2d3b",
+        "cff53e8ff076fd0d1fece02616a60b19a206c4e974b73ccd16a5674d275be162",
     ),
     "generation_backend_runner": (
         "generalized_card/scripts/run_generator_backend.py",
@@ -469,7 +469,7 @@ CORE_FILES = {
     ),
     "domain_prompt_adapter": (
         "generalized_card/generalized_card/prompts.py",
-        "cc4745a422a2687fa4b262e453fab6873d82339ffa9cb994565aa21423d34a8a",
+        "c87348c6983de06d62eaf0c9bdf3e6759e06ec79679ac2d5ce1aae3edd2cb097",
     ),
     "reply_planning": (
         "generalized_card/generalized_card/reply_planning.py",

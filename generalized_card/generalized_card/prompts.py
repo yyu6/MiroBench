@@ -2573,6 +2573,32 @@ def _writer_visible_anchors(values: Any) -> list[str]:
     return anchors
 
 
+# v147 arm. Until now the Planner saw the matched real thread only as shape:
+# depth, parent, word count, and a surface label per slot -- never a word of what
+# those people actually said. Every attempt to teach it how scattered, how blunt,
+# how short real comments are went through proxies instead: a behaviour target
+# distilled to one number, a quota phrased as an instruction, a window of
+# comments from OTHER threads. The thread it is reproducing was sitting right
+# there, unread.
+#
+# `measured` renders the matched comment bodies alongside the structure. This is
+# the one thing ORIENTATION.md s7 forbids -- "The Writer never sees matched
+# evaluation comment text" -- so a run with it on is a LEAK ARM: it cannot be
+# pooled with, or compared against, any held-out release, and it can never be
+# the shipped configuration. It answers one question only: with the real thread
+# in front of it, can the Planner reproduce the scatter, and how much of the gap
+# does that close? The Writer is a separate model and still never sees this text;
+# it reaches only the Planner.
+MATCHED_TEXT_MODE = "off"
+MATCHED_TEXT_MAX_WORDS = 60
+
+
+def set_matched_text(mode: str) -> bool:
+    global MATCHED_TEXT_MODE
+    MATCHED_TEXT_MODE = str(mode or "off").strip().lower()
+    return MATCHED_TEXT_MODE == "measured"
+
+
 def _render_matched_structure(
     thread: dict[str, Any] | None,
     *,
@@ -2599,10 +2625,17 @@ def _render_matched_structure(
             if parent_raw in id_to_slot
             else "outside_sample"
         )
-        lines.append(
+        line = (
             f"S{index}: depth={int(row.get('depth') or 0)}; parent={parent}; "
             f"words={len(body.split())}; surface={_surface_only_label(body)}"
         )
+        if MATCHED_TEXT_MODE == "measured" and body:
+            words = body.split()
+            shown = " ".join(words[:MATCHED_TEXT_MAX_WORDS])
+            if len(words) > MATCHED_TEXT_MAX_WORDS:
+                shown += " ..."
+            line += f"; text={shown}"
+        lines.append(line)
     return "\n".join(lines) or "(matched structural sample empty)"
 
 

@@ -17,9 +17,9 @@ MODEL = "sentence-transformers/all-mpnet-base-v2"
 ARMS = [("真实", None),
         ("v139mp 基准", ("mprof_",)),
         ("v141iso", ("iso2_", "iso2b_")),
-        ("v142isopt", ("isopt_", "isoptb_")),
-        ("v143obs", ("obs_", "obsb_")),
-        ("v144win", ("win_",))]
+        ("v145isopt", ("iso3_", "iso3b_")),
+        ("v144win2 半拿掉", ("win2_",)),
+        ("v146raw2 全拿掉", ("raw2_",))]
 
 
 def walk(nodes):
