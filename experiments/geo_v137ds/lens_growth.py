@@ -25,6 +25,38 @@ sys.path.insert(0, str(REPO / "generalized_card"))
 from generalized_card.plan_vocabulary import canonical_lens  # noqa: E402
 
 
+def _real_positions(run_name: str) -> int:
+    """The matched real thread's own position count, measured.
+
+    This line used to print "真人 thread 一般 5-12 种" -- a range I invented,
+    and the same invented range that was in the Planner prompt and that led me
+    to call a correct result an explosion. A tool that prints a made-up
+    baseline will mislead the next reading of it too.
+    """
+    import re
+
+    m = re.match(r"(.+)_p(\d+)$", run_name)
+    if not m:
+        return 0
+    seed = int(m.group(2))
+    try:
+        sys.path.insert(0, str(REPO / "experiments/geo_v137ds"))
+        from surface_vs_content import real_by_seed
+
+        from generalized_card.planning_quality import PlanSemanticIndex
+        from generalized_card.plan_vocabulary import real_position_count
+
+        bodies = (real_by_seed().get(seed) or [])
+        if len(bodies) < 4:
+            return 0
+        index = PlanSemanticIndex(
+            model_name="sentence-transformers/all-mpnet-base-v2", device="cpu"
+        )
+        return real_position_count(bodies, index.encode_texts)
+    except Exception:  # noqa: BLE001
+        return 0
+
+
 def main() -> None:
     prefix = sys.argv[1] if len(sys.argv) > 1 else "v153_20260903"
     for d in sorted((REPO / "artifacts/generalized_card/runs").glob(f"{prefix}_p*")):
@@ -50,7 +82,9 @@ def main() -> None:
             print(f"{r[0]:>4}{r[1]:>6}{r[2]:>9}{r[3]:>9}{r[4]:>9}{r[5]:>8}")
         slots = sum(r[1] for r in rows)
         print(f"\n  {slots} slot -> {rows[-1][4]} 个不同 lens（归一后 {rows[-1][5]}）")
-        print(f"  每 slot 新增 lens: {rows[-1][4]/slots:.2f}   (真人 thread 一般 5-12 种)")
+        real = _real_positions(d.name)
+        target = f"真实 thread 实测 {real} 个位置" if real else "真实位置数未知"
+        print(f"  每 slot 新增 lens: {rows[-1][4]/slots:.2f}   ({target})")
         counts = collections.Counter()
         for line in log.read_text().splitlines():
             for p in (json.loads(line).get("selected_plans") or {}).values():
