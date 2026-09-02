@@ -62,12 +62,34 @@ def _planner_orientation_block() -> str:
     """
 
     return "\n".join([
+        "HOW THIS PIPELINE WORKS:",
+        "- Stage 1, a structural pass, copies the skeleton of one real thread: "
+        "how many comments, at what depth, under which parent, at roughly what "
+        "length. Those slots are fixed before you see them and are not yours to "
+        "change.",
+        "- Stage 2 is you. You see the slots in batches of eight, in order, "
+        "with the plans you already produced for earlier batches of the same "
+        "thread visible to you. You emit one set of private controls per slot.",
+        "- Stage 3 validates your batch and can hand it back to you up to three "
+        "times with specific complaints -- two slots planning the same move, one "
+        "perspective taking too large a share. Repairs cost quality, so plan "
+        "distinct slots the first time rather than relying on the repair pass.",
+        "- Stage 4 is the Writer, a DIFFERENT model, called once per slot. It "
+        "sees your controls for THAT slot, the seed post, and its parent "
+        "comment. It does not see your other slots, the other comments, or your "
+        "reasoning. Consequently it cannot tell that two slots are about to say "
+        "the same thing, and it cannot introduce variety you did not plan.",
+        "- The Writer's view of the post is deliberately degraded: for about 42% "
+        "of slots it is shown a truncated version of the seed post, and for "
+        "about 32% a reordered one. This mimics real commenters who skim or "
+        "misread. It also means a plan that depends on a specific detail deep in "
+        "the post may reach a Writer that cannot see that detail, so anchor a "
+        "plan on something the Writer will plausibly still have.",
+        "",
         "YOUR ROLE, AND WHAT THIS THREAD WILL BE JUDGED ON:",
-        "- You are the Planner in a two-model pipeline. You never write comment "
-        "text. You emit private per-slot controls, and a separate Writer model "
-        "turns each one into a comment without seeing your other slots. So "
-        "whatever variety this thread ends up having, you have to put it in "
-        "here: the Writer cannot add spread it was not planned.",
+        "- You are the Planner. You never write comment text. Whatever variety "
+        "this thread ends up having, you have to put it in here: the Writer "
+        "cannot add spread it was not planned.",
         "- The finished thread is compared against one real Reddit thread on "
         "twelve thread-level statistics, two-sided, and it passes only where the "
         "distributions are indistinguishable. What each one is sensitive to:",
@@ -105,6 +127,31 @@ def _planner_orientation_block() -> str:
         "post's main question. Where you can see two real comments had nothing "
         "to do with each other, plan two slots that have nothing to do with each "
         "other.",
+        "",
+        "CASES THAT ARE EASY TO GET WRONG:",
+        "- A slot whose real comment is three words. It can carry a reaction, a "
+        "fragment, a bare acknowledgement, a joke or a narrow question, and it "
+        "cannot carry a story, a datapoint, advice or a multi-step claim. "
+        "Planning substance into a micro slot is how a thread loses the short "
+        "comments that are half of a real one.",
+        "- A slot whose real comment is off-topic, or trivial, or makes no "
+        "argument at all. Do not upgrade it. A real thread's least substantial "
+        "comments are load-bearing: they are most of what makes it not read like "
+        "an essay in parts.",
+        "- A deep reply. Its real counterpart is usually answering the comment "
+        "directly above it, not the post -- often about something the post never "
+        "raised. A deep slot planned as another take on the post's main question "
+        "is both wrong and one more comment orbiting the same subject.",
+        "- Two slots under the same parent. Real siblings frequently disagree "
+        "with each other, or talk past each other entirely, rather than each "
+        "adding a tidy increment to a shared answer.",
+        "- A slot addressed to another commenter rather than to the topic. Real "
+        "threads are full of these and they contribute almost nothing to the "
+        "post's subject, which is exactly why they matter here.",
+        "- A thread whose real comments genuinely do all discuss one thing. Some "
+        "do. Then plan it that way. Do not manufacture scatter that its own real "
+        "thread does not have.",
+        "",
         "- Nothing above is a quota to hit. It is what the thread you are "
         "reproducing is like. Read each slot's own real comment and decide.",
     ])
