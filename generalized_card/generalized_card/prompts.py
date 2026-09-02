@@ -50,152 +50,149 @@ def slot_grid_mode() -> str:
 
 
 def _planner_orientation_block() -> str:
-    """Say what this model is, what a real thread looks like, and what is judged.
+    """One structured brief: where the Planner sits, what is measured, how to read.
 
-    Every earlier arm either added a rule or replaced an input while the grid of
-    pre-assigned tone, affect, opener and surface labels stayed in place. With
-    that grid withheld the Planner needs to know what it is deciding and against
-    what the result is compared, otherwise it is guessing at a target nobody
-    stated. The thread-behaviour figures below come from this domain's reference
-    corpus -- threads excluded from the evaluation pool -- and no evaluation
-    p-value or evaluation-set statistic appears here.
+    The five things this thread is judged on, the five axes worth reading the
+    matched thread along, and the five plan fields that carry them are the SAME
+    five things. Earlier versions of this block stated them three times over as
+    separate lists, which is how a prompt becomes scattered information; each
+    axis now appears exactly once and carries all four facts about itself.
+
+    Whatever the base prompt's Objectives already say is not repeated here --
+    preserving weak comments as weak, micro-slot capacity, and preserving each
+    slot's depth and density are stated there.
+
+    The real-thread figures come from this domain's reference corpus, the threads
+    excluded from the evaluation pool. No evaluation p-value or evaluation-set
+    statistic appears in this prompt.
     """
 
     return "\n".join([
-        "HOW THIS PIPELINE WORKS:",
-        "- Stage 1, a structural pass, copies the skeleton of one real thread: "
-        "how many comments, at what depth, under which parent, at roughly what "
-        "length. Those slots are fixed before you see them and are not yours to "
-        "change.",
-        "- Stage 2 is you. You see the slots in batches of eight, in order, "
-        "with the plans you already produced for earlier batches of the same "
-        "thread visible to you. You emit one set of private controls per slot.",
-        "- Stage 3 validates your batch and can hand it back to you up to three "
-        "times with specific complaints -- two slots planning the same move, one "
-        "perspective taking too large a share. Repairs cost quality, so plan "
-        "distinct slots the first time rather than relying on the repair pass.",
-        "- Stage 4 is the Writer, a DIFFERENT model, called once per slot. It "
-        "sees your controls for THAT slot, the seed post, and its parent "
-        "comment. It does not see your other slots, the other comments, or your "
-        "reasoning. Consequently it cannot tell that two slots are about to say "
-        "the same thing, and it cannot introduce variety you did not plan.",
-        "- The Writer's view of the post is deliberately degraded: for about 42% "
-        "of slots it is shown a truncated version of the seed post, and for "
-        "about 32% a reordered one. This mimics real commenters who skim or "
-        "misread. It also means a plan that depends on a specific detail deep in "
-        "the post may reach a Writer that cannot see that detail, so anchor a "
-        "plan on something the Writer will plausibly still have.",
+        "================ PLANNER BRIEF ================",
         "",
-        "YOUR ROLE, AND WHAT THIS THREAD WILL BE JUDGED ON:",
-        "- You are the Planner. You never write comment text. Whatever variety "
-        "this thread ends up having, you have to put it in here: the Writer "
-        "cannot add spread it was not planned.",
-        "- The finished thread is compared against one real Reddit thread on "
-        "twelve thread-level statistics, two-sided, and it passes only where the "
-        "distributions are indistinguishable. What each one is sensitive to:",
-        "  * within-thread semantic similarity -- the average likeness of every "
-        "pair of comments. Real threads score LOW here because real people in "
-        "one thread are frequently not discussing the same thing. This is the "
-        "statistic our threads fail worst: ours come out roughly 30% too alike, "
-        "because every slot ends up being one more angle on the post's subject.",
-        "  * within-thread lexical repetition -- overlapping word sequences. Ours "
-        "already sits slightly BELOW real, so the problem is not repeated "
-        "wording. Different words, same meaning, is exactly the failure.",
-        "  * emotional variety -- how many distinct emotions appear across the "
-        "thread. Ours is too narrow: too much lands in the middle, not enough at "
-        "either end.",
-        "  * blunt disagreement rate, politeness rate, impoliteness rate -- ours "
-        "under-produces both the openly rude and the openly warm, and "
-        "over-produces the flatly neutral.",
-        "  * personal-story rate, length variation, reply depth, virality shape "
-        "-- these already match, because the slot skeleton is copied from the "
-        "real thread. Preserve them: keep each slot's depth, parent and rough "
-        "length.",
-        "- What real threads of this kind actually do, measured on threads held "
-        "out of the evaluation: about half of all comments run to eighteen words "
-        "or fewer and about a sixth to five or fewer; roughly a quarter of "
-        "comments are semantically unrelated to every other comment in their own "
-        "thread; explicit gratitude appears in about 1% and stock social filler "
-        "in about 5%, far less than a polite forum. People react to one "
-        "incidental detail, tell an aside nobody asked for, argue with another "
-        "commenter rather than the post, make a one-line joke, correct a trivium, "
-        "or say something about the thread itself.",
-        "- Therefore: do not treat these slots as a set of complementary angles "
-        "that jointly cover the topic. That is what produces the failure above. "
-        "Let plans genuinely diverge -- different subjects, different registers, "
-        "different emotional temperatures, some of them going nowhere near the "
-        "post's main question. Where you can see two real comments had nothing "
-        "to do with each other, plan two slots that have nothing to do with each "
-        "other.",
+        "1. WHERE YOU SIT",
+        "   a. A structural pass has already copied one real thread's skeleton:"
+        " how many comments, at what depth, under which parent, at roughly what"
+        " length. Those slots are fixed and are not yours to change.",
+        "   b. You are next. You see eight slots at a time, in order, with your"
+        " own earlier batches for this thread visible. You emit private controls"
+        " per slot and never write comment text.",
+        "   c. A validator may hand your batch back up to three times with"
+        " specific complaints -- two slots planning the same move, one"
+        " perspective over-used. Repairs cost quality; plan distinct slots"
+        " first time.",
+        "   d. The Writer is a DIFFERENT model, called once per slot. It sees"
+        " your controls for that slot, the post, and its parent comment --"
+        " nothing else. It cannot tell two slots are converging and cannot add"
+        " variety you did not plan. Its view of the post is degraded on purpose"
+        " (truncated for ~42% of slots, reordered for ~32%), so anchor a plan on"
+        " something it will plausibly still see.",
         "",
-        "READ THE REAL COMMENTS FIRST, ALONG THESE FIVE AXES:",
-        "- Do this before planning anything. The matched slots below each show "
-        "the real comment that occupied that position. Characterise the thread "
-        "on each axis, then plan slots that sit where you found it -- not where "
-        "a well-organised discussion would sit.",
-        "- SEMANTIC SPREAD. Are these people discussing one thing or several "
-        "unrelated things? Test it slot by slot: for each real comment, is there "
-        "another real comment it is actually engaging with, or is it off on its "
-        "own? Count roughly how many are on their own. If most of them are, this "
-        "thread is a set of parallel monologues and your plans should be too. If "
-        "they genuinely converge on one question, plan it that way.",
-        "- EMOTION. What emotions are present, and how far apart are they? A "
-        "real thread often holds delight, contempt, boredom and anger at once, "
-        "with nothing in between mediating them. Note whether the extremes are "
-        "occupied or whether everyone is mild. Assign affect per slot from what "
-        "you see, not from an average.",
-        "- STORYTELLING. How many of these people tell a personal story, and how "
-        "well-formed is it? Real asides are often half a story -- a fragment "
-        "with one beat, trailing off, or a detail with no point attached. A "
-        "thread with two rambling anecdotes and six one-liners is not the same "
-        "as one with eight tidy datapoints.",
-        "- PLAINNESS. How much of this thread is doing no work at all? Count the "
-        "bare agreements, the one-word reactions, the jokes with no argument, the "
-        "replies that only address another commenter. These are usually the "
-        "majority, and they are the hardest thing to plan deliberately because "
-        "each one looks like a wasted slot. They are not.",
-        "- WORDING. How do these specific people write? Sentence fragments or "
-        "full sentences; punctuation or none; slang, in-jokes, community terms; "
-        "capitals for emphasis; how blunt the openings are. Carry the register "
-        "across, not the words -- never reuse their phrases or their facts.",
-        "- Then say it in the plan. Your per-slot fields are where these "
-        "observations have to land: a thread you read as scattered has to come "
-        "out as slots with unrelated local_topic values, and a thread you read "
-        "as emotionally split has to come out as slots with affect labels far "
-        "apart. An accurate reading that plans a tidy thread anyway is no better "
-        "than not reading.",
+        "2. THE FIVE AXES",
+        "   These are simultaneously what the finished thread is scored on, what"
+        " to read the matched real comments for, and what your per-slot fields"
+        " have to carry. Same five things, three uses. For each: what it"
+        " measures / what real threads of this kind do / where we currently fail"
+        " / the fields that carry it.",
         "",
-        "CASES THAT ARE EASY TO GET WRONG:",
-        "- A slot whose real comment is three words. It can carry a reaction, a "
-        "fragment, a bare acknowledgement, a joke or a narrow question, and it "
-        "cannot carry a story, a datapoint, advice or a multi-step claim. "
-        "Planning substance into a micro slot is how a thread loses the short "
-        "comments that are half of a real one.",
-        "- A slot whose real comment is off-topic, or trivial, or makes no "
-        "argument at all. Do not upgrade it. A real thread's least substantial "
-        "comments are load-bearing: they are most of what makes it not read like "
-        "an essay in parts.",
-        "- A slot whose real comment is only an image, a GIF or a bare link. "
-        "Plan text for it. Plan the shortest, least substantial text the slot "
-        "can carry -- a bare reaction with no argument -- because that is the "
-        "nearest thing in words to contributing an image, and it is what that "
-        "position does to the thread.",
-        "- A deep reply. Its real counterpart is usually answering the comment "
-        "directly above it, not the post -- often about something the post never "
-        "raised. A deep slot planned as another take on the post's main question "
-        "is both wrong and one more comment orbiting the same subject.",
-        "- Two slots under the same parent. Real siblings frequently disagree "
-        "with each other, or talk past each other entirely, rather than each "
-        "adding a tidy increment to a shared answer.",
-        "- A slot addressed to another commenter rather than to the topic. Real "
-        "threads are full of these and they contribute almost nothing to the "
-        "post's subject, which is exactly why they matter here.",
-        "- A thread whose real comments genuinely do all discuss one thing. Some "
-        "do. Then plan it that way. Do not manufacture scatter that its own real "
-        "thread does not have.",
+        "   A. SEMANTIC DIVERSITY -- average likeness of every pair of comments"
+        " in the thread.",
+        "      real: about a quarter of comments are semantically unrelated to"
+        " every other comment in their own thread. Real people in one thread are"
+        " frequently not discussing the same thing at all.",
+        "      us: roughly 30% too alike. This is our worst failure. Its cause is"
+        " visible in our own plans -- every slot becomes one more evaluative"
+        " angle on the post's subject, so the comments differ in wording while"
+        " meaning the same thing.",
+        "      read: slot by slot, is there another real comment this one is"
+        " actually engaging with, or is it off on its own? Count how many are on"
+        " their own.",
+        "      carry: local_topic, detail_focus, semantic_move, perspective_id."
+        " Unrelated real comments must produce unrelated local_topic values.",
         "",
-        "- Nothing above is a quota to hit. It is what the thread you are "
-        "reproducing is like. Read each slot's own real comment and decide.",
+        "   B. WORDING -- overlapping word sequences between comments.",
+        "      real: register is shared, phrasing is not. Fragments, missing"
+        " punctuation, slang, community in-jokes, capitals for emphasis, blunt"
+        " openings.",
+        "      us: already slightly BELOW real, so repeated wording is not our"
+        " problem. Different words for the same meaning is precisely the"
+        " failure named in A.",
+        "      read: how these specific people write.",
+        "      carry: opening_style, surface_texture, utterance_mode. Carry the"
+        " register across; never reuse their phrases or their facts.",
+        "",
+        "   C. EMOTION -- how many distinct emotions appear across the thread.",
+        "      real: delight, contempt, boredom and anger can all sit in one"
+        " thread with nothing in between mediating them.",
+        "      us: too narrow, piled in the middle -- we under-produce both the"
+        " openly rude and the openly warm and over-produce the flatly neutral.",
+        "      read: which emotions are present and how far apart they are; are"
+        " the extremes occupied, or is everyone mild?",
+        "      carry: affect_role, tone_class, voice, stance. Assign per slot"
+        " from what you see, never from the thread's average.",
+        "",
+        "   D. PLAINNESS -- how much of the thread does no argumentative work.",
+        "      real: about half of all comments run to eighteen words or fewer"
+        " and about a sixth to five or fewer. Bare agreements, one-word"
+        " reactions, jokes with no argument, replies that only address another"
+        " commenter. Explicit gratitude is near 1% and stock social filler near"
+        " 5% -- far less than a polite forum.",
+        "      us: we plan substance into slots that had none, which is how a"
+        " thread loses the short comments that are half of a real one.",
+        "      read: count the comments doing no work. They are usually the"
+        " majority and the hardest to plan deliberately, because each one looks"
+        " like a wasted slot. They are not.",
+        "      carry: payload_type, comment_function, utterance_mode.",
+        "",
+        "   E. STORYTELLING -- how much first-person personal narrative appears.",
+        "      real: asides are often half a story -- one beat, trailing off, or"
+        " a detail with no point attached.",
+        "      us: close to real; do not disturb it.",
+        "      carry: story_mode, evidence_mode, speaker_role.",
+        "",
+        "   Also already matching, because the skeleton is copied: length"
+        " variation, reply depth, virality shape. Preserve them by keeping each"
+        " slot's depth, parent and rough length.",
+        "",
+        "3. PROCEDURE",
+        "   a. Before planning anything, read the matched real comments shown"
+        " with the slots below and characterise the thread on axes A to E.",
+        "   b. Plan slots that sit where you found the thread -- not where a"
+        " well-organised discussion would sit. If its real comments genuinely do"
+        " converge on one question, plan it that way; do not manufacture scatter"
+        " a thread does not have.",
+        "   c. Make the reading land in the fields named under `carry`. A thread"
+        " read as scattered that is then planned tidy is no better than not"
+        " reading it.",
+        "   d. Do not reproduce their words, their facts, or their named"
+        " entities. Carry the move and the register only.",
+        "",
+        "4. TRAPS",
+        "   a. A deep reply's real counterpart usually answers the comment"
+        " directly above it, about something the post never raised. Planning it"
+        " as another take on the post's main question is both wrong and one more"
+        " comment orbiting the same subject.",
+        "   b. Two slots under one parent: real siblings frequently disagree"
+        " with each other or talk past each other entirely, rather than each"
+        " adding a tidy increment to a shared answer.",
+        "   c. A slot addressed to another commenter rather than to the topic"
+        " contributes almost nothing to the post's subject. Real threads are"
+        " full of them, which is exactly why they matter here.",
+        "   d. A real comment that is only an image, GIF or bare link: plan the"
+        " shortest, least substantial text the slot can carry. That is the"
+        " nearest thing in words to contributing an image.",
+        "   e. The branch routes below now carry only shape -- which branch,"
+        " which parent, which siblings. They no longer tell you what a comment"
+        " is about, which perspective it takes, or what it may not touch, and"
+        " the per-slot label grid is withheld for the same reason. Those"
+        " decisions are yours, taken from the real comment at each slot.",
+        "   f. `perspective_id` accepts `seed_local`. Use it whenever no P##"
+        " honestly fits what the real comment did. Forcing an ill-fitting lens"
+        " is worse than declining one.",
+        "",
+        "   Nothing above is a quota. It is what the thread you are reproducing"
+        " is like. Read it and decide.",
+        "===============================================",
     ])
 
 
@@ -914,7 +911,7 @@ def comment_planner_prompt(
     # standing before.
     if slot_grid_mode() == "free":
         outsider_block = f"{outsider_block}\n{_planner_orientation_block()}\n"
-    if branch_dictation_mode() == "structural":
+    if branch_dictation_mode() == "structural" and slot_grid_mode() != "free":
         outsider_block = (
             f"{outsider_block}\n"
             "WHERE EACH SLOT'S DIRECTION COMES FROM:\n"
