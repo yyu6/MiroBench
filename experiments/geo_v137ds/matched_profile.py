@@ -33,6 +33,9 @@ ap.add_argument("domain")
 ap.add_argument("--base", required=True, help="an already-built domain_profile.json")
 ap.add_argument("--seeds", nargs="+", type=int, required=True)
 ap.add_argument("--out-dir", required=True)
+ap.add_argument("--adopt-observations", action="store_true",
+                help="use the profile's own behavior_observations for the knobs "
+                     "measured on the same scale they are enforced on")
 ap.add_argument("--isolation-csv", default="artifacts/geo_v137ds/isolation/{domain}.csv",
                 help="output of measure_isolation.py; {domain} is substituted. "
                      "Omit with '' to leave thread_isolation_share unset.")
@@ -65,6 +68,26 @@ if a.isolation_csv:
               f"(Planner 会退回域级常数)")
 
 base = json.load(open(a.base))
+
+# build_domain_profile measures ten behaviour rates off the reference corpus,
+# stores them as behavior_observations, and then discards them: behavior_targets
+# starts from a hardcoded dict and only story and polite are overwritten. On
+# celebrity the discarded numbers are far from the constants that replaced them
+# -- short_max_share 0.48 measured against 0.18 enforced, micro 0.171 against
+# 0.070 -- and a thread capped at 18% short comments cannot produce the brief
+# scattered replies that carry 70% of the real corpus's isolated comments.
+#
+# Only the knobs whose observation is on the same scale as the enforcement are
+# adopted. harsh and polite are NOT: the observation counts regex hits (harsh
+# 0.048) while the enforcement, and the matched target above, are the politeness
+# classifier's rate (impolite 0.588). Mixing those two scales would undo the one
+# change that made impolite pass.
+ADOPT = ("short_max_share", "micro_target_share", "question_max_share",
+         "social_noise_min_share", "gratitude_min_share", "advisor_max_share",
+         "tone_calm_min_share", "tone_personal_min_share")
+obs = base.get("behavior_observations") or {}
+if a.adopt_observations and not obs:
+    sys.exit("--adopt-observations: 这个 profile 里没有 behavior_observations")
 out = Path(a.out_dir); out.mkdir(parents=True, exist_ok=True)
 written = 0
 for i in a.seeds:
@@ -75,6 +98,10 @@ for i in a.seeds:
     p = json.loads(json.dumps(base))
     bt = dict(p.get("behavior_targets") or {})
     applied = {}
+    if a.adopt_observations:
+        for k in ADOPT:
+            if k in obs:
+                bt[k] = round(float(obs[k]), 6)
     for target, (metric, lo, hi) in TARGET_FROM_METRIC.items():
         v = row.get(metric)
         if v in (None, "", "nan"): continue

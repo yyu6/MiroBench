@@ -19,6 +19,7 @@ dry=0; seeds_spec=""; tag_prefix=""; matched=0; matched_dir=""; extra=()
 # the domain-wide constant instead, which is the only difference between the
 # v141iso and v142isopt arms.
 iso_csv="artifacts/geo_v137ds/isolation/{domain}.csv"
+adopt=""
 while [[ $# -gt 0 ]]; do
   case "$1" in
     --writer)      writer="$2"; shift 2 ;;
@@ -33,6 +34,7 @@ while [[ $# -gt 0 ]]; do
     --tag-prefix)  tag_prefix="$2"; shift 2 ;;
     --matched-profiles) matched=1; shift ;;
     --fixed-isolation)  iso_csv=""; shift ;;
+    --adopt-observations) adopt="--adopt-observations"; shift ;;
     --dry-run)     dry=1; shift ;;
     -h|--help)     grep '^#' "$0" | sed 's/^# \{0,1\}//'; exit 0 ;;
     *)             extra+=("$1"); shift ;;
@@ -159,7 +161,7 @@ if [[ "$matched" == "1" ]]; then
   echo "  building per-seed profiles -> $(basename "$matched_dir")"
   "$PY" "$ROOT/experiments/geo_v137ds/matched_profile.py" "$did" \
       --base "$PROFILE" --out-dir "$matched_dir" --seeds $mseeds \
-      --isolation-csv "$iso_csv" 2>&1 | tail -4
+      --isolation-csv "$iso_csv" $adopt 2>&1 | tail -4
 fi
 
 # --seeds "6:9 23:2" generates exactly those ranges instead of sweeping the pool.
