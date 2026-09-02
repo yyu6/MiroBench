@@ -64,6 +64,8 @@ class ProjectionArmTest(unittest.TestCase):
             "intent": "Debate",
             "query_complexity": "Complex",
             "time_pressure": "None",
+            "urbanicity": "Suburban",
+            "socioeconomic_band": "Low income",
             "lstyle_commute_mode": "Bicycle",
             "lstyle_work_schedule": "Night shift",
             "trait_adaptability": "High",
@@ -77,7 +79,13 @@ class ProjectionArmTest(unittest.TestCase):
         PB.set_persona_projection("default")
         out = PB._project_dimensions(self.dims, expertise_dimensions=DIMS)
         self.assertEqual(PB._MAX_PROJECTED_DIMENSIONS, len(out))
-        for axis in ("english_proficiency", "multilingualism", "neurotype"):
+        for axis in (
+            "english_proficiency",
+            "multilingualism",
+            "neurotype",
+            "urbanicity",
+            "socioeconomic_band",
+        ):
             self.assertNotIn(axis, out)
 
     def test_register_mode_renders_the_writing_axes(self) -> None:
@@ -90,6 +98,10 @@ class ProjectionArmTest(unittest.TestCase):
             "neurotype",
             "skill_writing",
             "skill_storytelling",
+            # The two the selector stratifies on. Without them the set is
+            # spread along axes the Writer never sees.
+            "urbanicity",
+            "socioeconomic_band",
         ):
             self.assertIn(axis, out, f"{axis} must reach the Writer under register")
 

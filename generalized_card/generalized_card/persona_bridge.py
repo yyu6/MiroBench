@@ -33,7 +33,7 @@ _ENGLISH_OK = {"Native", "Fluent (C1-C2)", "Intermediate (B1-B2)"}
 _MAX_PROJECTED_DIMENSIONS = 10
 # `register` widens that budget, because 10 is what starved the axis this
 # project is failing on. See `set_persona_projection`.
-_MAX_PROJECTED_DIMENSIONS_REGISTER = 16
+_MAX_PROJECTED_DIMENSIONS_REGISTER = 18
 
 # Arm. `default` reproduces every release through v150.
 PERSONA_PROJECTION_MODE = "default"
@@ -45,6 +45,13 @@ PERSONA_DRAW_MODE = "replace"
 # None of them is a statable fact: proficiency, multilingualism and neurotype
 # shape word choice and sentence shape, and the official template already
 # forbids stating the profile or inventing biography from it.
+# `urbanicity` and `socioeconomic_band` are the two axes the selector
+# stratifies on that the projection was still not rendering, so the set was
+# being spread along axes the Writer never saw. They are also the whole of what
+# `matraix-full` adds over this projection on the selected bank, apart from
+# `political_lean` and a "You are persona-0001." self-reference. `political_lean`
+# stays out: on a celebrity corpus a preset lean would compete with the stance
+# the Planner assigns per slot, which is where a comment's position belongs.
 _REGISTER_FIRST = (
     "register",
     "english_proficiency",
@@ -52,6 +59,8 @@ _REGISTER_FIRST = (
     "skill_writing",
     "skill_storytelling",
     "neurotype",
+    "urbanicity",
+    "socioeconomic_band",
     "tone_expected",
     "dominant_trait",
     "emotional_state",

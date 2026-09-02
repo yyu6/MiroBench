@@ -484,7 +484,7 @@ CORE_FILES = {
     ),
     "persona_bridge": (
         "generalized_card/generalized_card/persona_bridge.py",
-        "10d6206475a3c90425c78c9ccf21404d90b9893f04d854798c941cf338396a6e",
+        "56bd65af145ce617af9c6b3abb919ce1cacbe5c52ba98686b5b063e3f1798720",
     ),
     "selfbert_controller": (
         "generalized_card/scripts/run_selfbert_revision_controller.py",
