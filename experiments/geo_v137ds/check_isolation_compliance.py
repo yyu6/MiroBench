@@ -32,8 +32,16 @@ rows = []
 for r in runs:
     for disc in sorted(r.glob("generated/**/discussion.json")):
         d = json.loads(disc.read_text())
-        bodies = [c.get("body", "").strip() for c in d.get("comments", [])]
-        bodies = [b for b in bodies if b]
+        # Comments hang off posts[0], carry their text in `content`, and nest
+        # their own children under `replies`; a flat read of d["comments"] finds
+        # nothing at all and reports the run as empty.
+        def walk(nodes):
+            for c in nodes or []:
+                t = str(c.get("content") or c.get("body") or "").strip()
+                if t:
+                    yield t
+                yield from walk(c.get("replies"))
+        bodies = [t for post in d.get("posts") or [] for t in walk(post.get("comments"))]
         if len(bodies) < 4:
             continue
         seed = r.name.rsplit("_p", 1)[-1]

@@ -78,6 +78,83 @@ def build_reference_viewpoints(
     return records
 
 
+# v144 arm. The Planner's picture of "what a real comment looks like" comes from
+# this window, and ranking it purely by lexical relevance to the seed post makes
+# that picture unrepresentative in two ways at once. Measured on celebrity seed 7
+# against the 1,217-comment bank the window is drawn from:
+#
+#                       relatedness to post   off-topic (<0.10)   median words
+#   full bank                       0.083            62.7%              12
+#   what the Planner sees           0.190            27.8%              34
+#
+# BM25 scores by token overlap, so a short comment has few tokens to match and
+# ranks low; the window therefore drops both the off-topic examples and the short
+# ones. Those are the same comments -- 70% of the real corpus's semantically
+# isolated comments are under ten words -- so the Planner is shown a corpus that
+# is more coherent and three times wordier than the one it is meant to imitate,
+# and then asked to produce scatter it has never been shown.
+#
+# `measured` keeps relevance as the ranking WITHIN each length band but fills the
+# window across bands at the bank's own shares. Nothing is fitted to a p-value:
+# the target distribution is the reference bank's, and the bank is built only
+# from threads excluded from the seed pool.
+REFERENCE_WINDOW_MODE = "off"
+# Word-count bands. The boundaries are the isolation analysis's own: under ten
+# words is where the real isolated comments live, and 40 is where the quota's
+# range ends.
+_LENGTH_BANDS = ((0, 5), (6, 10), (11, 20), (21, 40), (41, 10**9))
+
+
+def set_reference_window(mode: str) -> bool:
+    global REFERENCE_WINDOW_MODE
+    REFERENCE_WINDOW_MODE = str(mode or "off").strip().lower()
+    return REFERENCE_WINDOW_MODE == "measured"
+
+
+def _band_of(word_count: int) -> int:
+    for index, (low, high) in enumerate(_LENGTH_BANDS):
+        if low <= word_count <= high:
+            return index
+    return len(_LENGTH_BANDS) - 1
+
+
+def _distribution_matched_order(
+    ranked: list[tuple[float, float, dict[str, Any]]],
+) -> list[tuple[float, float, dict[str, Any]]]:
+    """Re-order by relevance within length band, interleaved at bank shares.
+
+    Emitting the band that is furthest below its share makes every prefix of the
+    result approximately bank-shaped, so a later request for a wider window
+    cannot reorder the rows an earlier Planner batch already saw.
+    """
+
+    queues: list[list[tuple[float, float, dict[str, Any]]]] = [[] for _ in _LENGTH_BANDS]
+    for item in ranked:
+        queues[_band_of(len(item[2].get("_comment_tokens") or []))].append(item)
+    total = sum(len(q) for q in queues)
+    if not total:
+        return ranked
+    shares = [len(q) / total for q in queues]
+    cursors = [0] * len(queues)
+    emitted = [0] * len(queues)
+    out: list[tuple[float, float, dict[str, Any]]] = []
+    for _ in range(total):
+        best, best_debt = -1, None
+        for index, queue in enumerate(queues):
+            if cursors[index] >= len(queue) or shares[index] <= 0.0:
+                continue
+            # How far this band is behind where its share says it should be.
+            debt = emitted[index] - shares[index] * len(out)
+            if best_debt is None or debt < best_debt:
+                best, best_debt = index, debt
+        if best < 0:
+            break
+        out.append(queues[best][cursors[best]])
+        cursors[best] += 1
+        emitted[best] += 1
+    return out
+
+
 def retrieve_reference_viewpoints(
     profile: dict[str, Any],
     *,
@@ -182,7 +259,12 @@ def retrieve_reference_viewpoints(
                 break
         if len(selected) >= limit:
             break
-    for _score, _tie, indexed in ranked:
+    fill = (
+        _distribution_matched_order(ranked)
+        if REFERENCE_WINDOW_MODE == "measured"
+        else ranked
+    )
+    for _score, _tie, indexed in fill:
         if len(selected) >= limit:
             break
         append(indexed)

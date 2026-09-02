@@ -33,6 +33,7 @@ from generalized_card.planning_quality import (  # noqa: E402
     set_isolation_quota,
     set_thread_isolation_share,
 )
+from generalized_card.viewpoint_bank import set_reference_window  # noqa: E402
 from generalized_card.domain_profile import (  # noqa: E402
     CARD_CONTEXT_DROPOUT_RATE,
     CARD_CONTEXT_JITTER_RATE,
@@ -339,6 +340,19 @@ def build_parser() -> argparse.ArgumentParser:
             "from the POST: that gap measures 1.1x on the current configuration "
             "while intra-thread nearest-neighbour cosine is 0.526 against a real "
             "0.487. `off` reproduces every release to date."
+        ),
+    )
+    parser.add_argument(
+        "--reference-window",
+        choices=["measured", "off"],
+        default="off",
+        help=(
+            "Fill the Planner's reference-example window at the reference bank's "
+            "own length distribution instead of taking the lexical top-N. `off` "
+            "reproduces every release to date, where BM25 ranking handed the "
+            "Planner a window 3x wordier and less than half as off-topic as the "
+            "bank it is drawn from, then asked it to produce scatter it had "
+            "never been shown."
         ),
     )
     parser.add_argument(
@@ -1103,6 +1117,7 @@ def main() -> None:
 
     # Must be set before build_domain_profile runs; it selects the reference corpus.
     set_reference_min_comments(args.reference_floor)
+    set_reference_window(args.reference_window)
     set_isolation_quota(args.isolation_quota)
 
     domain_profile_path = (
@@ -1264,6 +1279,7 @@ def main() -> None:
         "register_realization": args.register_realization,
         "closing_move": args.closing_move,
         "reference_floor": args.reference_floor,
+        "reference_window": args.reference_window,
         "isolation_quota": args.isolation_quota,
         "verdict_close_guard": args.verdict_close_guard,
         "semantic_coverage_nonrepeat": args.semantic_coverage_nonrepeat,
@@ -1864,6 +1880,7 @@ RUN_EXPERIMENT_FIELDS = (
     "register_realization",
     "closing_move",
     "reference_floor",
+    "reference_window",
     "isolation_quota",
     "verdict_close_guard",
     "semantic_coverage_nonrepeat",
