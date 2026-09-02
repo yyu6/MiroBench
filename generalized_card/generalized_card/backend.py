@@ -25,6 +25,7 @@ from .actor_conditioning import (
     enrich_normalized_plans,
 )
 from .branch_routing import (
+    set_branch_dictation,
     parent_slot_schedule,
     required_branch_count,
     root_branch_schedule,
@@ -43,6 +44,7 @@ from .opener_profile import OPENER_TYPES
 from .domain_profile import load_domain_profile
 from .first_pass_policy import generation_coverage, retain_explicitly_planned_tasks
 from .generation_distribution import (
+    set_planner_distribution,
     allocate_story_and_affect,
     apply_planner_distribution_fields,
     enrich_distribution_plan_fields,
@@ -79,10 +81,14 @@ from .reference_link import (
 from .tone_donor import require_donor_inventory, set_tone_donor_mode
 from .tone_realization import set_tone_quota_mode
 from .planner_distribution import (
+    set_slot_grid,
     apply_slot_distribution_schedule,
     build_slot_distribution_schedule,
 )
+from .prompts import set_matched_text
+from .viewpoint_bank import set_reference_window
 from .planning_quality import (
+    set_isolation_quota,
     BLOCKING_PLAN_ISSUES,
     PlanSemanticIndex,
     evaluate_plan_batch,
@@ -669,6 +675,43 @@ def configure_generator_backend(
         or "off"
     )
     set_outsider_quota(module.GENERALIZED_OUTSIDER_QUOTA)
+    # These five reach generation only through the environment. `run_generate`
+    # calls their setters too, but that is the PARENT process, which builds the
+    # domain profile and then launches `run_generator_backend.py` as a
+    # subprocess -- and the Planner prompt is assembled in the subprocess. A
+    # setter called in the parent leaves the prompt untouched, silently. That is
+    # why v149's first run produced plans that ignored a brief verified to be in
+    # the template.
+    module.GENERALIZED_ISOLATION_QUOTA = (
+        os.environ.get("GENERALIZED_CARD_ISOLATION_QUOTA", "off").strip().lower()
+        or "off"
+    )
+    set_isolation_quota(module.GENERALIZED_ISOLATION_QUOTA)
+    module.GENERALIZED_MATCHED_TEXT = (
+        os.environ.get("GENERALIZED_CARD_MATCHED_TEXT", "off").strip().lower()
+        or "off"
+    )
+    set_matched_text(module.GENERALIZED_MATCHED_TEXT)
+    module.GENERALIZED_BRANCH_DICTATION = (
+        os.environ.get("GENERALIZED_CARD_BRANCH_DICTATION", "full").strip().lower()
+        or "full"
+    )
+    set_branch_dictation(module.GENERALIZED_BRANCH_DICTATION)
+    module.GENERALIZED_SLOT_GRID = (
+        os.environ.get("GENERALIZED_CARD_SLOT_GRID", "full").strip().lower()
+        or "full"
+    )
+    set_slot_grid(module.GENERALIZED_SLOT_GRID)
+    module.GENERALIZED_PLANNER_DISTRIBUTION = (
+        os.environ.get("GENERALIZED_CARD_PLANNER_DISTRIBUTION", "full").strip().lower()
+        or "full"
+    )
+    set_planner_distribution(module.GENERALIZED_PLANNER_DISTRIBUTION)
+    module.GENERALIZED_REFERENCE_WINDOW = (
+        os.environ.get("GENERALIZED_CARD_REFERENCE_WINDOW", "off").strip().lower()
+        or "off"
+    )
+    set_reference_window(module.GENERALIZED_REFERENCE_WINDOW)
     module.GENERALIZED_SENTENCE_PACING = (
         os.environ.get("GENERALIZED_CARD_SENTENCE_PACING", "off").strip().lower()
         or "off"

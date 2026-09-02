@@ -207,7 +207,7 @@ CORE_FILES = {
     ),
     "generator_adapter": (
         "generalized_card/generalized_card/backend.py",
-        "d97ad0c7adc73cf2601417ea2ca097bf62d92394edb5fc8634aa1239dd27ac1c",
+        "f588ae9745428715a3b2feabd2146ee7a58e066e0c3a9df21873c0402b0c04df",
     ),
     "data_boundary": (
         "generalized_card/generalized_card/data.py",
@@ -241,7 +241,7 @@ CORE_FILES = {
     ),
     "generation_runner": (
         "generalized_card/scripts/run_generate.py",
-        "dcf014844fcd303f96b60f3e0d5938720dd29147a42b29f468bc6f0265cb3afe",
+        "cf478859825d595f3df772ee41ecba163cdb773670b0f3d18867e3efb8e57661",
     ),
     "generation_backend_runner": (
         "generalized_card/scripts/run_generator_backend.py",

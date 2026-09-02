@@ -1586,6 +1586,16 @@ def main() -> None:
     env["GENERALIZED_CARD_TONE_QUOTA"] = args.tone_quota
     env["GENERALIZED_CARD_PLAN_MOVE_LEDGER"] = args.plan_move_ledger
     env["GENERALIZED_CARD_OUTSIDER_QUOTA"] = args.outsider_quota
+    # Generation happens in run_generator_backend.py, a subprocess. The setters
+    # called in main() configure THIS process, which builds the domain profile;
+    # the Planner prompt is assembled on the other side of this boundary, so a
+    # flag that does not appear here does not reach the prompt at all.
+    env["GENERALIZED_CARD_ISOLATION_QUOTA"] = args.isolation_quota
+    env["GENERALIZED_CARD_MATCHED_TEXT"] = args.matched_text
+    env["GENERALIZED_CARD_BRANCH_DICTATION"] = args.branch_dictation
+    env["GENERALIZED_CARD_SLOT_GRID"] = args.slot_grid
+    env["GENERALIZED_CARD_PLANNER_DISTRIBUTION"] = args.planner_distribution
+    env["GENERALIZED_CARD_REFERENCE_WINDOW"] = args.reference_window
     env["GENERALIZED_CARD_RECURRING_PHRASE_LEDGER"] = str(
         args.recurring_phrase_ledger
     )
