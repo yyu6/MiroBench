@@ -14,8 +14,8 @@
 | **v139mp** | `mprof_20260902_s*` | celebrity | 50 | 10/12 (N=15) | 每个 seed 用它自己匹配的真实 thread 的 polite/impolite/story 作为目标。**泄露 arm**，不可与上面各版并列比较 |
 | **v140out** | `outq_20260902_*` | celebrity | 50 | 待测 | v139mp + `--outsider-quota measured` |
 | **v139mp** | `mprof_20260902_s*` | celebrity | **46** | **7/12** | 同上，跑满 N=50 后复测。tone 组全过，`self_bertscore` d +0.39 / `semantic_mean_cosine` d +0.55 纹丝不动 |
-| **v141iso** | `iso2_20260902_s*` | celebrity | 50 | 待测 | v139mp + `--isolation-quota measured`，全域固定 12% |
-| **v142isopt** | `isopt_20260902_s*` | celebrity | 50 | 待测 | v141iso + 每条 thread 用它自己真实 thread 量出的孤立比例（`measure_isolation.py`），而不是固定 12% |
+| **v141iso** | `iso2_20260902_p*` | celebrity | 50 | 跑中 | v139mp + `--isolation-quota measured --fixed-isolation`，全域固定 12% |
+| **v142isopt** | `isopt_20260902_p*` | celebrity | 50 | 跑中 | v141iso 去掉 `--fixed-isolation`：每条 thread 用它自己真实 thread 量出的孤立比例。已核对两支的 profile 除该字段外逐字节一致 |
 
 ### 为什么要有 isolation quota
 
@@ -49,6 +49,14 @@
 - **新 domain 的语料字段缺失**：多域抓取写 `id`/`fullname`，scorer 读
   `comment_id`/`comment_fullname`，且缺 `depth`。不修的话打分静默产出退化值
   （polite 100%、emotion 只有 1 类）。用 `fix_corpus_depth.py` 修。
+- **arm 之间必须只差一个 flag**：v141iso 第一次启动时漏了 `--reference-floor
+  measured`，而那是把 celebrity 从 4/12 拉到 8/12 的修复，等于和 v139mp 差了两个
+  flag，归因作废。启动后用 preflight 日志里的 `--tone-polite-min-share` 核对：
+  过滤后是 0.219，未过滤是 0.406。
+- **调用加了但 import 没加**，两者都是运行时解析，语法检查通不过不了这一关。
+  第一次 isolation 跑的 50 个 shard 全部在 preflight 崩于
+  `NameError: set_isolation_quota is not defined`，`gen.done` 照样写了 DONE。
+  改完 `run_generate.py` 后 grep 一次 import 再启动。
 - **outsider quota 的历史**：G99 记录它是第一个同时改善两个目标指标的 arm，
   但 Planner 只按 1.9% 执行（目标 12%）；G102 调整批次大小后仍只有 0.66%，被否决；
   G104 测出即使完美执行，天花板也只有差距的 ~36%。v140out 是在换了 writer、
