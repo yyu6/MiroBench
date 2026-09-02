@@ -355,27 +355,28 @@ def _choose_from_objective() -> str:
 
 
 def _planner_orientation_block() -> str:
-    """One structured brief for a Planner that has been given the grid back.
+    """One brief, read as a document rather than grown by appending to it.
 
-    Written against three failure modes seen in earlier drafts of it.
+    Three faults that came from patching it in place, all now fixed here rather
+    than answered with another paragraph.
 
-    It must not read as a form to complete. A brief that says "read the real
-    comment at slot i and plan slot i to match" produces exactly the behaviour
-    measured as our worst failure: every slot becomes one more evaluative angle
-    on the post's subject. What transfers from a real thread is the kind of
-    conversation it is; the invention is the Planner's.
+    It contradicted itself on `seed_local`: section 1 said forcing an ill-fitting
+    lens was worse than declining one, and axis A said declining was worse. Both
+    were written to fix a different observed failure -- the first when the lens
+    was being overwritten downstream, the second when freeing it sent 78-100% of
+    slots to `seed_local` and within-thread similarity went to 83.8% above real.
+    The position that covers both is stated once, in axis A, where spread is the
+    subject.
 
-    It must not repeat itself. The five statistics the thread is scored on, the
-    five things worth reading the real thread for, and the five groups of plan
-    fields are the same five things, and stating them as three lists is how a
-    prompt becomes scattered. Each appears once, carrying every fact about
-    itself.
+    Its axes had stopped sharing a shape, A carrying five sub-entries and C
+    carrying a pre-return check that belongs in the procedure. Each axis is four
+    lines: what it measures, what real threads do, how we get it wrong, which
+    fields carry it.
 
-    Its example is an illustration, not a menu. It comes from a thread outside
-    the evaluation pool, and it is labelled as one instance of a general point
-    so that it widens the space considered rather than narrowing it.
+    And section 2 said the same thing twice, the second time forward-referencing
+    an axis that had not been introduced.
 
-    Reference figures come from this domain's reference corpus -- threads
+    Reference figures come from this domain's reference corpus, the threads
     excluded from the evaluation pool. No evaluation-set statistic or p-value
     appears in this prompt.
     """
@@ -383,7 +384,7 @@ def _planner_orientation_block() -> str:
     return "\n".join([
         "================ PLANNER BRIEF ================",
         "",
-        "1. THE PIPELINE, AND WHAT IS ALREADY DECIDED",
+        "1. WHERE YOU SIT",
         "   a. A structural pass has copied one real thread's skeleton: how many"
         " comments, at what depth, under which parent, at roughly what length."
         " That is fixed. Keep it -- it is why our threads already match real ones"
@@ -399,13 +400,11 @@ def _planner_orientation_block() -> str:
         " cannot add variety you did not plan. Its view of the post is degraded"
         " on purpose: truncated for ~42% of slots, reordered for ~32%. Anchor a"
         " plan on something it will plausibly still have.",
-        "   e. Two things that used to be decided for you are now yours. The"
-        " branch routes carry only shape -- which branch, which parent, which"
-        " siblings -- and no longer name a subject, a perspective or a"
-        " prohibition. The per-slot label grid that used to fix tone, affect,"
-        " story mode, opener and surface form is withheld. `perspective_id`"
-        " accepts `seed_local`; use it whenever no P## honestly fits, because"
-        " forcing an ill-fitting lens is worse than declining one.",
+        "   e. Withheld from you on purpose, because these decisions are now"
+        " yours: the branch routes carry only shape -- which branch, which"
+        " parent, which siblings -- and name no subject, perspective or"
+        " prohibition; the per-slot grid that used to fix tone, affect, story"
+        " mode, opener and surface form; and the whole-thread label counts.",
         "",
         "2. WHAT YOU ARE MAKING",
         "   a. Not a set of complementary angles that jointly cover the topic."
@@ -418,13 +417,10 @@ def _planner_orientation_block() -> str:
         "   c. You are not filling in a template from the real comments. The real"
         " thread tells you what KIND of conversation this was -- how far apart"
         " its people were, how hard they were pushing, how little most of them"
-        " bothered. Take that and invent freely. You may plan subjects the post"
-        " never raised, because real commenters do.",
-        "   d. Freedom here means the slots may go anywhere, not that they may"
-        " all go to the same place. A thread where every slot carries the same"
-        " register and circles one subject is the failure in axis A, whether it"
-        " got there by following a template or by being left alone.",
-        "   e. Do not reproduce their words, their facts, or their named"
+        " bothered. Take that and invent freely: you may plan subjects the post"
+        " never raised, because real commenters do. Freedom means the slots may"
+        " go anywhere, not that they may all go to the same place.",
+        "   d. Do not reproduce their words, their facts, or their named"
         " entities. What transfers is the character of the conversation.",
         "",
         "3. THE FIVE AXES",
@@ -439,17 +435,18 @@ def _planner_orientation_block() -> str:
         " frequently not discussing the same thing at all.",
         "      our tendency: to make every slot another evaluative angle on the"
         " post's subject, so comments differ in wording while meaning the same"
-        " thing. This is our largest gap.",
-        "      carry: local_topic and detail_focus above all -- two slots are"
-        " far apart when they are ABOUT different things, and near when they"
-        " are not, whatever labels they wear.",
-        "      a warning, measured: pairs of slots sharing one perspective"
-        " realize a text similarity of 0.28; pairs on different perspectives"
-        " realize 0.1953, against a real 0.18. So spreading the lenses is worth"
-        " most of the gap -- and `seed_local` is not a lens, it is the absence"
-        " of one. Putting every slot on `seed_local` gives you no spread at all,"
-        " which is worse than an imperfect lens. Use it for the slot that"
-        " genuinely fits nothing, not as a default.",
+        " thing. This is our largest gap, and it has been reached from both"
+        " directions -- once by giving every slot a prescribed subject, once by"
+        " prescribing nothing and letting every slot default to the same lens.",
+        "      carry: local_topic and detail_focus above all, because two slots"
+        " are far apart when they are ABOUT different things and near when they"
+        " are not, whatever labels they wear. `perspective_id` is the lever that"
+        " moves them: pairs sharing a perspective realize 0.28 similarity, pairs"
+        " on different perspectives 0.1953, against a real 0.18. So vary it"
+        " deliberately. `seed_local` is not a lens but the absence of one -- right"
+        " for the occasional slot that genuinely fits no P##, and a failure state"
+        " if most of the thread lands there, since a thread on one lens has no"
+        " spread at all.",
         "",
         "   B. WORDING -- overlapping word sequences between comments.",
         "      real: register is shared, phrasing is not. Fragments, missing"
@@ -463,12 +460,11 @@ def _planner_orientation_block() -> str:
         "   C. EMOTION -- how many distinct emotions appear across the thread.",
         "      real: delight, contempt, boredom and anger can sit in one thread"
         " with nothing in between mediating them.",
-        "      our tendency: to pile everything in the middle -- too few openly"
-        " rude, too few openly warm, too many flatly neutral.",
-        "      carry: affect_role, tone_class, voice, stance. Decide these per"
-        " slot, never from an average -- and check the spread before you"
-        " return: a thread that came out entirely `impolite`, or entirely one"
-        " affect label, has the same defect as one piled in the middle.",
+        "      our tendency: to collapse onto one setting -- usually everything"
+        " piled in the middle, but a thread that comes out entirely `impolite` is"
+        " the same defect wearing different clothes.",
+        "      carry: affect_role, tone_class, voice, stance, decided per slot"
+        " and never from the thread's average.",
         "",
         "   D. PLAINNESS -- how much of the thread does no argumentative work.",
         "      real: about half of all comments run to eighteen words or fewer,"
@@ -476,9 +472,9 @@ def _planner_orientation_block() -> str:
         " jokes carrying no argument, replies that only address another"
         " commenter. Explicit gratitude near 1%, stock social filler near 5% --"
         " far less than a polite forum.",
-        "      our tendency: to plan substance into slots that should carry"
-        " none. Each empty slot looks like a wasted one. It is not: these are"
-        " most of what keeps a thread from reading like an essay in parts.",
+        "      our tendency: to plan substance into slots that should carry none."
+        " Each empty slot looks like a wasted one. It is not: these are most of"
+        " what keeps a thread from reading like an essay in parts.",
         "      carry: payload_type, comment_function, utterance_mode.",
         "",
         "   E. STORYTELLING -- how much first-person personal narrative appears.",
@@ -487,6 +483,10 @@ def _planner_orientation_block() -> str:
         "      our tendency: none material; we are close to real. Do not disturb"
         " it while working on the others.",
         "      carry: story_mode, evidence_mode, speaker_role.",
+        "",
+        "   Also already matching, because the skeleton is copied: length"
+        " variation, reply depth, virality shape. Preserve them by keeping each"
+        " slot's depth, parent and rough length.",
         "",
         "4. ONE ILLUSTRATION",
         "   From a real thread in this domain, on a post about a film producer"
@@ -498,8 +498,8 @@ def _planner_orientation_block() -> str:
         "      - a pun on the producer's surname",
         "      - a weary one-liner about industry bookkeeping",
         "      - a movie quote riffed into the situation",
-        "      - a joke with no connection to anything: 'a drum and a cymbal fell"
-        " down a cliff'",
+        "      - a joke connected to nothing: 'a drum and a cymbal fell down a"
+        " cliff'",
         "      - another block quote from the indictment",
         "   Three of the nine engage the news. The rest are people amusing"
         " themselves and each other. This is one instance of a general point, not"
@@ -507,10 +507,11 @@ def _planner_orientation_block() -> str:
         " completely different directions, and some threads genuinely do stay on"
         " one subject throughout. Read the one in front of you.",
         "",
-        "5. HOW TO USE THIS",
+        "5. PROCEDURE",
         "   a. Read the whole matched thread first and decide what kind of"
         " conversation it was, on axes A to E. Then plan.",
-        "   b. Some cases that are easy to misjudge, again as illustration:",
+        "   b. Cases that are easy to misjudge, again as illustration rather"
+        " than a list to work through:",
         "      - a deep reply usually answers the comment above it, about"
         " something the post never raised;",
         "      - two slots under one parent often disagree with each other or"
@@ -519,7 +520,12 @@ def _planner_orientation_block() -> str:
         " post's subject, which is exactly why it belongs;",
         "      - a real comment that is only an image, GIF or link: plan the"
         " shortest, least substantial text the slot can carry.",
-        "   c. Do not manufacture scatter a thread does not have, and do not"
+        "   c. Before returning, look at the batch as a set. Are the"
+        " `local_topic` values about different things? Is more than one"
+        " `perspective_id` in use? Do the tone and affect labels span a range,"
+        " rather than repeating one value? A batch that fails those is the"
+        " failure in axes A and C, however good each row looks alone.",
+        "   d. Do not manufacture scatter a thread does not have, and do not"
         " treat any figure above as a quota. They describe what threads of this"
         " kind are like. The thread in front of you is the authority.",
         "===============================================",

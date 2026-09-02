@@ -469,7 +469,7 @@ CORE_FILES = {
     ),
     "domain_prompt_adapter": (
         "generalized_card/generalized_card/prompts.py",
-        "ebafc41af9c574c3e4af97714e0c9cd19b213acf95b6a965ea9ab91c3823b92f",
+        "44c12dc3c4c04ec89d0f8150f62682b8a920cb2a07a81454465dfca66a7f62d6",
     ),
     "reply_planning": (
         "generalized_card/generalized_card/reply_planning.py",
