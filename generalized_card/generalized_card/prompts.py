@@ -420,7 +420,11 @@ def _planner_orientation_block() -> str:
         " its people were, how hard they were pushing, how little most of them"
         " bothered. Take that and invent freely. You may plan subjects the post"
         " never raised, because real commenters do.",
-        "   d. Do not reproduce their words, their facts, or their named"
+        "   d. Freedom here means the slots may go anywhere, not that they may"
+        " all go to the same place. A thread where every slot carries the same"
+        " register and circles one subject is the failure in axis A, whether it"
+        " got there by following a template or by being left alone.",
+        "   e. Do not reproduce their words, their facts, or their named"
         " entities. What transfers is the character of the conversation.",
         "",
         "3. THE FIVE AXES",
@@ -436,7 +440,16 @@ def _planner_orientation_block() -> str:
         "      our tendency: to make every slot another evaluative angle on the"
         " post's subject, so comments differ in wording while meaning the same"
         " thing. This is our largest gap.",
-        "      carry: local_topic, detail_focus, semantic_move, perspective_id.",
+        "      carry: local_topic and detail_focus above all -- two slots are"
+        " far apart when they are ABOUT different things, and near when they"
+        " are not, whatever labels they wear.",
+        "      a warning, measured: pairs of slots sharing one perspective"
+        " realize a text similarity of 0.28; pairs on different perspectives"
+        " realize 0.1953, against a real 0.18. So spreading the lenses is worth"
+        " most of the gap -- and `seed_local` is not a lens, it is the absence"
+        " of one. Putting every slot on `seed_local` gives you no spread at all,"
+        " which is worse than an imperfect lens. Use it for the slot that"
+        " genuinely fits nothing, not as a default.",
         "",
         "   B. WORDING -- overlapping word sequences between comments.",
         "      real: register is shared, phrasing is not. Fragments, missing"
@@ -453,7 +466,9 @@ def _planner_orientation_block() -> str:
         "      our tendency: to pile everything in the middle -- too few openly"
         " rude, too few openly warm, too many flatly neutral.",
         "      carry: affect_role, tone_class, voice, stance. Decide these per"
-        " slot from the conversation you are making, never from an average.",
+        " slot, never from an average -- and check the spread before you"
+        " return: a thread that came out entirely `impolite`, or entirely one"
+        " affect label, has the same defect as one piled in the middle.",
         "",
         "   D. PLAINNESS -- how much of the thread does no argumentative work.",
         "      real: about half of all comments run to eighteen words or fewer,"
