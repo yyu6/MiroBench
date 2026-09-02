@@ -49,6 +49,50 @@ def slot_grid_mode() -> str:
     return planner_distribution.SLOT_GRID_MODE
 
 
+def _planner_opening() -> str:
+    """The first sentence, which sets the frame everything after it is read in.
+
+    The default opens `Assign per-comment semantic and social controls to
+    matched-real structural slots`, which defines the task as filling a form
+    before any other instruction is read. A brief arriving fifty lines later
+    that says to invent instead does not undo it: a probe run under the full
+    brief still produced nine plans about one shirt, two of them identical.
+    """
+
+    if slot_grid_mode() == "free":
+        return (
+            "Plan a Reddit discussion: decide what each person in this thread "
+            "is doing and why they bothered to type.\n\n"
+            "You are not assigning labels to slots. You are deciding what kind "
+            "of conversation this is and then populating it. Read the brief "
+            "below before anything else in this prompt, including the lenses "
+            "and the schema -- those are vocabulary for recording your "
+            "decisions, not the decisions."
+        )
+    return (
+        "Assign per-comment semantic and social controls to matched-real "
+        "structural slots."
+    )
+
+
+def _brief_at_top() -> str:
+    """Deliver the brief first, or the frame is set before it is read."""
+
+    return f"\n{_planner_orientation_block()}\n" if slot_grid_mode() == "free" else ""
+
+
+def _lens_framing() -> str:
+    """Demote the lenses from frame to vocabulary when the Planner is free."""
+
+    if slot_grid_mode() == "free":
+        return (
+            "Available decision lenses (a vocabulary, not a set of angles to "
+            "cover; `seed_local` is always available and is the right answer "
+            "whenever none of these honestly fits):"
+        )
+    return "Frozen domain-neutral decision lenses:"
+
+
 def _choose_from_objective() -> str:
     """Name the inputs that actually carry direction under the active flags.
 
@@ -942,8 +986,6 @@ def comment_planner_prompt(
     # isolation rate without moving the metric. It names the real comment as the
     # authority the routes used to be, which is the one input never given that
     # standing before.
-    if slot_grid_mode() == "free":
-        outsider_block = f"{outsider_block}\n{_planner_orientation_block()}\n"
     if branch_dictation_mode() == "structural" and slot_grid_mode() != "free":
         outsider_block = (
             f"{outsider_block}\n"
@@ -1098,11 +1140,11 @@ specific situation. A fact about the seed post itself still cannot be invented."
             "semantic_move, local_topic, and detail_focus must be supported by "
             "the visible seed or remain generic."
         )
-    return f"""Assign per-comment semantic and social controls to matched-real structural slots.
-
+    return f"""{_planner_opening()}
+{_brief_at_top()}
 Domain: {config.display_name}
 
-Frozen domain-neutral decision lenses:
+{_lens_framing()}
 {perspectives}
 Each P## states how a comment reasons about the local topic. It is not the topic,
 entity, product, feature, event, or claim itself. Derive the actual local move
