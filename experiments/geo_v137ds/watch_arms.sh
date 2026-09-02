@@ -12,7 +12,7 @@ set -uo pipefail
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
 RUNS="$ROOT/artifacts/generalized_card/runs"
 printf '%-10s %-6s %-6s %s\n' arm 完成 在跑 tag
-for pair in "iso2 iso2b" "isopt isoptb" "obs obsb" "real real"; do
+for pair in "iso2 iso2b" "isopt isoptb" "obs obsb" "a1gpt a1gpt" "a4fit a4fit"; do
   set -- $pair; a="$1"; b="$2"
   pat="^(${a}|${b})_20260902_p[0-9]+$"
   tags=$(ls "$RUNS" 2>/dev/null | grep -E "$pat" | sort -u)
