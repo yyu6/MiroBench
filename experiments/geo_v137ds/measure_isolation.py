@@ -28,6 +28,9 @@ ap.add_argument("--threshold", type=float, default=0.35)
 ap.add_argument("--min-comments", type=int, default=4)
 ap.add_argument("--max-comments", type=int, default=120,
                 help="cap per thread; the tail is a cost sink, not a signal")
+ap.add_argument("--pool", default="",
+                help="seed pool json; restricts the measurement to that pool's "
+                     "own threads instead of the whole corpus")
 ap.add_argument("--out", required=True)
 a = ap.parse_args()
 
@@ -49,25 +52,43 @@ for f in jl:
             by_post[str(c.get("post_id"))].append(body)
 
 threads = {p: c[: a.max_comments] for p, c in by_post.items() if len(c) >= a.min_comments}
+if a.pool:
+    pf = Path(a.pool)
+    if not pf.is_absolute():
+        pf = REPO / "artifacts/generalized_card/seed_pools" / pf
+    want = {str(r["source_raw_post_id"]) for r in json.loads(pf.read_text())["seed_posts"]}
+    threads = {p: c for p, c in threads.items() if p in want}
+    print(f"限定在 {pf.name} 的 {len(want)} 条种子帖 -> 命中 {len(threads)} 个")
 print(f"{len(threads)} 个 thread (>= {a.min_comments} 条评论)，开始编码…")
 
 from sentence_transformers import SentenceTransformer
 import numpy as np
 
 m = SentenceTransformer(MODEL, device="cpu")
+
+# One encode call for the whole corpus, then slice per thread. Encoding thread
+# by thread instead costs one model-dispatch round trip per thread, which on CPU
+# dominates the arithmetic and made a ten-minute job open-ended.
+order = sorted(threads.items())
+flat, bounds, off = [], [], 0
+for pid, bodies in order:
+    flat.extend(bodies)
+    bounds.append((pid, off, off + len(bodies)))
+    off += len(bodies)
+print(f"共 {len(flat)} 条评论，一次性编码…")
+emb = m.encode(flat, normalize_embeddings=True, show_progress_bar=False,
+               batch_size=128, convert_to_numpy=True)
+
 rows = []
-for n, (pid, bodies) in enumerate(sorted(threads.items()), 1):
-    e = m.encode(bodies, normalize_embeddings=True, show_progress_bar=False,
-                 batch_size=64, convert_to_numpy=True)
+for pid, lo, hi in bounds:
+    e = emb[lo:hi]
     sim = e @ e.T
     np.fill_diagonal(sim, -1.0)          # a comment is never its own neighbour
     nn = sim.max(axis=1)
     rows.append({"thread_id": pid,
-                 "comment_count": len(bodies),
+                 "comment_count": hi - lo,
                  "isolation_share": round(float((nn < a.threshold).mean()), 4),
                  "nn_cosine_mean": round(float(nn.mean()), 4)})
-    if n % 50 == 0:
-        print(f"  {n}/{len(threads)}")
 
 out = REPO / a.out
 out.parent.mkdir(parents=True, exist_ok=True)

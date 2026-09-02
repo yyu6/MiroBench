@@ -15,6 +15,10 @@ domain="${1:-}"; shift || true
 writer="deepseek-v4-flash"; planner="$GEO_V137DS_PLANNER"
 shard=3; jobs=0; pool=""; seed=""; date_tag="$(date +%Y%m%d)"
 dry=0; seeds_spec=""; tag_prefix=""; matched=0; matched_dir=""; extra=()
+# Per-seed isolation share by default; --fixed-isolation holds the Planner at
+# the domain-wide constant instead, which is the only difference between the
+# v141iso and v142isopt arms.
+iso_csv="artifacts/geo_v137ds/isolation/{domain}.csv"
 while [[ $# -gt 0 ]]; do
   case "$1" in
     --writer)      writer="$2"; shift 2 ;;
@@ -28,6 +32,7 @@ while [[ $# -gt 0 ]]; do
     --seeds)       seeds_spec="$2"; shift 2 ;;
     --tag-prefix)  tag_prefix="$2"; shift 2 ;;
     --matched-profiles) matched=1; shift ;;
+    --fixed-isolation)  iso_csv=""; shift ;;
     --dry-run)     dry=1; shift ;;
     -h|--help)     grep '^#' "$0" | sed 's/^# \{0,1\}//'; exit 0 ;;
     *)             extra+=("$1"); shift ;;
@@ -154,7 +159,7 @@ if [[ "$matched" == "1" ]]; then
   echo "  building per-seed profiles -> $(basename "$matched_dir")"
   "$PY" "$ROOT/experiments/geo_v137ds/matched_profile.py" "$did" \
       --base "$PROFILE" --out-dir "$matched_dir" --seeds $mseeds \
-      2>&1 | tail -4
+      --isolation-csv "$iso_csv" 2>&1 | tail -4
 fi
 
 # --seeds "6:9 23:2" generates exactly those ranges instead of sweeping the pool.
