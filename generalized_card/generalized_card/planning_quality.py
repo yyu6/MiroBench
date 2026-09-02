@@ -1355,8 +1355,13 @@ ISOLATION_QUOTA_MODE = "off"
 # overrides this per thread from that thread's own matched real comments.
 ISOLATION_SHARE = 0.12
 THREAD_ISOLATION_SHARE: float | None = None
-ISOLATION_MIN_WORDS = 10
-ISOLATION_MAX_WORDS = 40
+# The quota carried a 10-40 word range until v145. It was sized off a band
+# analysis showing our isolation deficit sat in the mid-length bands, but a range
+# in the instruction competes with the slot schedule, which already carries the
+# matched real comment's own length -- and the schedule is right: it asks for
+# 39.9% of slots at ten words or fewer, exactly the real corpus's share. The
+# range cost 8-21 points of that fidelity and pushed the very comments the quota
+# wants away from the form real isolated comments take.
 
 
 def set_isolation_quota(mode: str) -> None:
@@ -1405,10 +1410,14 @@ def isolation_quota_block(slot_count: int) -> str:
             "EVERY OTHER slot in this batch. Not unrelated to the post -- these "
             "may well be about the post -- but sharing no claim, no evidence and "
             "no line of argument with any sibling.",
-            f"- Put them in the {ISOLATION_MIN_WORDS}-{ISOLATION_MAX_WORDS} word "
-            "range. Real threads already match us on very short and very long "
-            "comments; the deficit is entirely mid-length ones that each add a "
-            "distinct point to one shared argument.",
+            "- Keep each one at the length its own slot asks for. The word range "
+            "this quota used to impose fought the slot schedule, which already "
+            "carries the matched real comment's length: the share of slots asking "
+            "for ten words or fewer that came back at ten words or fewer fell from "
+            "81% without this quota to 60-73% with it. Real isolated comments are "
+            "mostly short -- roughly seven in ten are under ten words -- so an "
+            "isolated micro slot is a reaction, an aside or a one-line joke, not a "
+            "mid-length argument.",
             "- What real isolated comments do: react to one incidental detail "
             "nobody else picked up, tell a personal aside the thread did not ask "
             "for, address another commenter rather than the topic, or comment on "
