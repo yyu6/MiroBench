@@ -74,7 +74,34 @@ VOICE_AXES = (
 # Strata are built from a subset -- the full product of eight axes would give
 # more buckets than rows and degrade to "one row per bucket", which is just a
 # shuffle. These four carry most of the writing variance.
-STRATUM_AXES = ("register", "english_proficiency", "age_bracket", "region")
+# `english_proficiency` is deliberately NOT a stratum axis: the runtime keeps
+# only three of its values, so stratifying on it buys three buckets and spends
+# the budget that `urbanicity` and `socioeconomic_band` -- both free to vary --
+# would otherwise get.
+STRATUM_AXES = ("register", "age_bracket", "urbanicity", "socioeconomic_band")
+
+# The runtime discards personas before they can ever be drawn:
+# `persona_bridge._eligible_for_english_reddit` drops minors, and drops anyone
+# whose `english_proficiency` is outside {Native, Fluent, Intermediate} unless
+# that field is missing AND no conflicting primary language is recorded. A first
+# pass selected for spread ACROSS proficiency and language and then watched the
+# runtime throw 196 of 400 rows away -- selecting for diversity that cannot
+# survive to generation. These mirror the runtime's rule; if it changes, this
+# must change with it, and `test_selector_matches_runtime_eligibility` fails if
+# it does not.
+MINOR_AGES = {"Under 5", "5-12", "13-17"}
+ENGLISH_OK = {"Native", "Fluent (C1-C2)", "Intermediate (B1-B2)"}
+
+
+def runtime_eligible(vals: dict) -> bool:
+    if vals.get("age_bracket") in MINOR_AGES:
+        return False
+    english = vals.get("english_proficiency", "__missing__")
+    primary = vals.get("primary_language", "__missing__")
+    if english in ENGLISH_OK:
+        return True
+    return english == "__missing__" and primary in {"__missing__", "English"}
+
 
 SOURCE_RANK = {
     "real_human_survey": 0, "gss": 1, "prism": 2,
@@ -120,8 +147,8 @@ def main() -> int:
     ap.add_argument("--out", default="")
     a = ap.parse_args()
 
+    import duckdb
     import numpy as np
-    import pyarrow.parquet as pq
 
     codec = load_codec()
     index_of = {f: i for i, f in enumerate(codec.field_ids)}
@@ -144,12 +171,19 @@ def main() -> int:
     buckets: dict[tuple, list] = collections.defaultdict(list)
     seen = kept = 0
     src_counts = collections.Counter()
+    # pyarrow 19 raises "Repetition level histogram size mismatch" on some of
+    # these shards -- a known reader bug against the writer that produced them,
+    # not corruption; duckdb reads the same bytes. Reading through duckdb also
+    # pushes the column projection down so only the seven needed columns are
+    # materialised out of 12.
+    con = duckdb.connect()
     for shard in shards:
-        pf = pq.ParquetFile(shard)
-        for batch in pf.iter_batches(batch_size=4096,
-                                     columns=["source", "source_record_id", "attributes",
-                                              "null_bitmap", "attribute_overrides",
-                                              "populated_attribute_count", "metadata_json"]):
+        reader = con.execute(
+            "SELECT source, source_record_id, attributes, null_bitmap, "
+            "attribute_overrides, populated_attribute_count "
+            f"FROM read_parquet('{shard}')"
+        ).fetch_record_batch(4096)
+        for batch in reader:
             d = batch.to_pydict()
             for k in range(batch.num_rows):
                 seen += 1
@@ -178,6 +212,8 @@ def main() -> int:
                         fid = codec.field_ids[fi]
                         if fid in rev and ov.get("value"):
                             vals[fid] = str(ov["value"])
+                if not runtime_eligible(vals):
+                    continue
                 if not has(vals, "register"):
                     # `register` is the axis the failing metric is about; a row
                     # without it cannot contribute to the spread this set exists

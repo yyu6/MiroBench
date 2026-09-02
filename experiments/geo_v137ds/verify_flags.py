@@ -41,6 +41,13 @@ CHECKS = [
     # generalized_card side leaves the fold in place.
     ("GENERALIZED_CARD_PLAN_VOCABULARY", "open",
      "@generator", "GENERALIZED_PLAN_VOCABULARY", "open"),
+    # The persona arms are applied inside `runtime_from_env`, which the
+    # subprocess calls; a setter run only in run_generate.py would render the
+    # shipped projection and the shipped draw while run_config recorded the arm.
+    ("GENERALIZED_CARD_PERSONA_PROJECTION", "register",
+     "generalized_card.persona_bridge", "PERSONA_PROJECTION_MODE", "register"),
+    ("GENERALIZED_CARD_PERSONA_DRAW", "exhaust",
+     "generalized_card.persona_bridge", "PERSONA_DRAW_MODE", "exhaust"),
 ]
 
 SNIPPET = """
@@ -51,6 +58,11 @@ from generalized_card.domain import load_domain_from_env
 cfg = load_domain_from_env()
 gen = load_generator_backend()
 configure_generator_backend(gen, cfg)
+if os.environ.get("GENERALIZED_CARD_PERSONA_PROJECTION") or os.environ.get("GENERALIZED_CARD_PERSONA_DRAW"):
+    # These are applied by `runtime_from_env`, so the probe has to build it.
+    os.environ.setdefault("GENERALIZED_CARD_PERSONA_MODE", "matraix-projected")
+    from generalized_card.persona_bridge import runtime_from_env
+    runtime_from_env()
 m = gen if {mod!r} == "@generator" else importlib.import_module({mod!r})
 print(getattr(m, {attr!r}, "(缺这个属性)"))
 """

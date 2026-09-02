@@ -37,6 +37,10 @@ from generalized_card.viewpoint_bank import set_reference_window  # noqa: E402
 from generalized_card.prompts import set_matched_text  # noqa: E402
 from generalized_card.branch_routing import set_branch_dictation  # noqa: E402
 from generalized_card.plan_vocabulary import set_plan_vocabulary  # noqa: E402
+from generalized_card.persona_bridge import (  # noqa: E402
+    set_persona_draw,
+    set_persona_projection,
+)
 from generalized_card.planner_distribution import set_slot_grid  # noqa: E402
 from generalized_card.generation_distribution import (  # noqa: E402
     set_planner_distribution,
@@ -1029,6 +1033,34 @@ def build_parser() -> argparse.ArgumentParser:
         default=REPO_ROOT / "third_party" / "MatrAIx-Persona-8B",
     )
     parser.add_argument("--matraix-dataset", type=Path)
+    parser.add_argument(
+        "--persona-projection",
+        choices=["register", "default"],
+        default="default",
+        help=(
+            "Which persona dimensions reach the Writer. The shipped budget is "
+            "ten dimensions spent on a list that never named the register axes, "
+            "so `english_proficiency`, `multilingualism`, `urbanicity`, "
+            "`age_bracket`, `neurotype` and `political_lean` render on 0%% of "
+            "personas while `lstyle_commute_mode` renders on 19 of 123. "
+            "`register` puts the writing axes first, spends `lstyle_*` last, "
+            "and widens the budget to 16. Selecting a register-diverse persona "
+            "set does nothing without this."
+        ),
+    )
+    parser.add_argument(
+        "--persona-draw",
+        choices=["exhaust", "replace"],
+        default="replace",
+        help=(
+            "`replace` lets two speakers in one thread draw the same persona, "
+            "which is the dominant loss of identity variety and is arithmetic: "
+            "~30 speakers drawing independently from a band of ~55 yield 21.5 "
+            "distinct personas, measured 21.7, against a real corpus at ~29. "
+            "`exhaust` takes the highest-ranked candidate the thread has not "
+            "used, giving min(speakers, band)."
+        ),
+    )
     parser.add_argument("--persona-seed", type=int, default=42)
     parser.add_argument("--price-input-per-1m", type=float)
     parser.add_argument("--price-cached-input-per-1m", type=float)
@@ -1199,6 +1231,10 @@ def main() -> None:
     set_matched_text(args.matched_text)
     set_branch_dictation(args.branch_dictation)
     set_plan_vocabulary(args.plan_vocabulary)
+    # The parent builds the domain profile and the manifest; the subprocess
+    # renders the prompts. Both need these, so both are set (G189).
+    set_persona_projection(args.persona_projection)
+    set_persona_draw(args.persona_draw)
     set_slot_grid(args.slot_grid)
     set_planner_distribution(args.planner_distribution)
     set_isolation_quota(args.isolation_quota)
@@ -1366,6 +1402,8 @@ def main() -> None:
         "matched_text": args.matched_text,
         "branch_dictation": args.branch_dictation,
         "plan_vocabulary": args.plan_vocabulary,
+        "persona_projection": args.persona_projection,
+        "persona_draw": args.persona_draw,
         "slot_grid": args.slot_grid,
         "planner_distribution": args.planner_distribution,
         "isolation_quota": args.isolation_quota,
@@ -1643,6 +1681,8 @@ def main() -> None:
     env["GENERALIZED_CARD_MATRAIX_ROOT"] = str(matraix_root)
     env["GENERALIZED_CARD_PERSONA_DATASET"] = str(matraix_dataset)
     env["GENERALIZED_CARD_PERSONA_SEED"] = str(args.persona_seed)
+    env["GENERALIZED_CARD_PERSONA_PROJECTION"] = args.persona_projection
+    env["GENERALIZED_CARD_PERSONA_DRAW"] = args.persona_draw
     env["GENERALIZED_CARD_PERSONA_EXPERTISE_DIMENSIONS"] = ",".join(
         config.persona_expertise_dimensions
     )
@@ -1983,6 +2023,8 @@ RUN_EXPERIMENT_FIELDS = (
     "matched_text",
     "branch_dictation",
     "plan_vocabulary",
+    "persona_projection",
+    "persona_draw",
     "slot_grid",
     "planner_distribution",
     "isolation_quota",

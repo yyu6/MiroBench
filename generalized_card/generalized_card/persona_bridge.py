@@ -31,6 +31,88 @@ _MINOR_AGES = {"Under 5", "5-12", "13-17"}
 _ENGLISH_OK = {"Native", "Fluent (C1-C2)", "Intermediate (B1-B2)"}
 
 _MAX_PROJECTED_DIMENSIONS = 10
+# `register` widens that budget, because 10 is what starved the axis this
+# project is failing on. See `set_persona_projection`.
+_MAX_PROJECTED_DIMENSIONS_REGISTER = 16
+
+# Arm. `default` reproduces every release through v150.
+PERSONA_PROJECTION_MODE = "default"
+
+# Arm. `replace` reproduces every release through v150.
+PERSONA_DRAW_MODE = "replace"
+
+# The dimensions that decide how a person WRITES, in the order they are spent.
+# None of them is a statable fact: proficiency, multilingualism and neurotype
+# shape word choice and sentence shape, and the official template already
+# forbids stating the profile or inventing biography from it.
+_REGISTER_FIRST = (
+    "register",
+    "english_proficiency",
+    "multilingualism",
+    "skill_writing",
+    "skill_storytelling",
+    "neurotype",
+    "tone_expected",
+    "dominant_trait",
+    "emotional_state",
+)
+# `lstyle_*` is spent LAST under `register` rather than sharing one pool with
+# the behavioural traits. Measured on the shipped projection, commute mode and
+# work schedule took 48 of the 123 personas' ten slots between them; neither
+# has any bearing on how a Reddit comment is written, and every slot they take
+# is one the register axes do not get.
+_REGISTER_DEPRIORITIZED_PREFIXES = ("lstyle_",)
+
+
+def set_persona_draw(mode: str) -> bool:
+    """Select whether one thread may hand the same persona to two speakers.
+
+    The shipped draw is with replacement: each speaker independently hash-sorts
+    the near-best band and takes the top row, so two speakers can and do land on
+    the same persona. That is the dominant loss of identity variety, and it is
+    arithmetic rather than a defect in the scoring -- a 36-comment thread has
+    ~30 speakers drawing from a band of ~55, so the expected number of DISTINCT
+    personas is 55*(1-(1-1/55)^30) = 21.5. Measured on a5dsfit: 21.7. The real
+    corpus runs 81% distinct authors per thread, about 29.
+
+    `exhaust` takes the highest-ranked candidate this thread has not used yet,
+    which yields min(speakers, band) distinct personas -- 29 of 29 at these
+    sizes. It falls back to the ordinary top row once the band is exhausted, so
+    a thread with more speakers than candidates still completes.
+
+    This introduces order-dependent state, which was previously unsafe: `assign`
+    ran a second time after generation to rebuild provenance, and the two
+    traversals differ. `annotate_generated_outputs` now reads the marker the
+    Writer prompt recorded instead of replaying, so the assignment that ran is
+    the assignment that is reported.
+    """
+
+    global PERSONA_DRAW_MODE
+    PERSONA_DRAW_MODE = str(mode or "replace").strip().lower()
+    return PERSONA_DRAW_MODE == "exhaust"
+
+
+def set_persona_projection(mode: str) -> bool:
+    """Select which persona dimensions reach the Writer.
+
+    The shipped projection spends a ten-dimension budget on a list that never
+    named the register axes. Measured over both persona sets, the result is that
+    `english_proficiency`, `multilingualism`, `urbanicity`, `socioeconomic_band`,
+    `age_bracket`, `region`, `neurotype` and `political_lean` render on **0%**
+    of personas -- the data carries them, the projection never asks. What does
+    render is `tech_savviness` (59/123), `lstyle_work_schedule` (29) and
+    `lstyle_commute_mode` (19).
+
+    That is why selecting a register-diverse persona SET is not enough on its
+    own: the axes it was selected for cannot reach the Writer. `register` puts
+    them first, spends `lstyle_*` last, and widens the budget to 16. The system
+    prompt stays far under `_MAX_SYSTEM_PROMPT_CHARS`, so the v67 prompt
+    dilution failure is not reopened.
+    """
+
+    global PERSONA_PROJECTION_MODE
+    PERSONA_PROJECTION_MODE = str(mode or "default").strip().lower()
+    return PERSONA_PROJECTION_MODE == "register"
 # A persona whose description dwarfs the task is not a persona, it is noise.
 # `matraix-full` renders the whole record, and the length distribution has a
 # small extreme tail: p90 is 7,698 chars against a p95 of 22,246. The Writer's
@@ -99,6 +181,9 @@ class MatraixPersonaRuntime:
         # (seed_index, speaker_id) -> persona_id, so a recurring author keeps
         # the persona scored against their first slot.
         self._speaker_choice: dict[tuple[int, str], str] = {}
+        # seed_index -> persona_ids already handed to a speaker in that thread.
+        # Only read under `--persona-draw exhaust`.
+        self._thread_used: dict[int, set[str]] = {}
         self.commit = "disabled"
         self.template_path: Path | None = None
         self._official = None
@@ -219,6 +304,15 @@ class MatraixPersonaRuntime:
             )
         )
         chosen = candidates[0].persona_id
+        if PERSONA_DRAW_MODE == "exhaust":
+            used = self._thread_used.setdefault(int(seed_index), set())
+            for persona in candidates:
+                if persona.persona_id not in used:
+                    chosen = persona.persona_id
+                    break
+            # Reached only when every near-best candidate is spent; the thread
+            # then repeats rather than failing.
+            used.add(chosen)
         if speaker_id:
             self._speaker_choice[(int(seed_index), speaker_id)] = chosen
         return self.assignment_for_id(chosen)
@@ -290,6 +384,8 @@ class MatraixPersonaRuntime:
             "dataset_personas": len(self._personas_by_id),
             "eligible_personas": len(self._eligible),
             "assignment_seed": self.assignment_seed,
+            "projection": PERSONA_PROJECTION_MODE,
+            "draw": PERSONA_DRAW_MODE,
             "expertise_dimensions": list(self.expertise_dimensions),
             "template_path": str(self.template_path),
             "template_source": "official-matraix-persona-system",
@@ -319,6 +415,15 @@ def build_runtime(
 @lru_cache(maxsize=1)
 def runtime_from_env() -> MatraixPersonaRuntime:
     mode = os.environ.get("GENERALIZED_CARD_PERSONA_MODE", MODE_NONE).strip() or MODE_NONE
+    # Generation runs in run_generator_backend.py, a separate process from the
+    # one run_generate.py's setters configure. A persona arm set only in the
+    # parent renders nothing here and reports no error -- the failure that
+    # invalidated six arms (G189). Both are applied before the runtime is built,
+    # because the projection decides what `assignment_for_id` caches.
+    set_persona_projection(
+        os.environ.get("GENERALIZED_CARD_PERSONA_PROJECTION", "default")
+    )
+    set_persona_draw(os.environ.get("GENERALIZED_CARD_PERSONA_DRAW", "replace"))
     repo_root = Path(__file__).resolve().parents[2]
     matraix_root = Path(
         os.environ.get(
@@ -384,11 +489,47 @@ def inject_persona_system(messages: list[dict[str, str]]) -> list[dict[str, str]
     return revised
 
 
+def recorded_persona_ids(post: dict[str, Any]) -> dict[int, str]:
+    """The persona each comment was ACTUALLY written with, read off its prompt.
+
+    Provenance used to be reconstructed by calling `assign` again after
+    generation. That is a replay, not a record, and it was wrong for 5-7% of
+    comments on every run that used the per-speaker cache: the cache scores a
+    speaker on their FIRST slot, "first" means first in traversal order, and
+    the two traversals differ -- generation walks tasks by `local_task_id`
+    (1, 2, 3, ...) while `_walk_comments` is depth-first (1, 14, 28, 38, ...).
+    A speaker holding several slots was therefore scored against a different
+    slot in each pass and could land on a different persona. Measured across
+    a4fit, a5dsfit and a3both: 43 of 1,092 comments carried a manifest
+    persona_id that was never used to write them.
+
+    The Writer prompt embeds the marker, and `generation_records` keeps that
+    prompt verbatim, so the assignment that actually ran is on disk. Reading it
+    back makes the manifest a record and removes the requirement that any
+    future assignment rule be traversal-order-independent -- which is what lets
+    `assign` draw without replacement per thread.
+    """
+
+    out: dict[int, str] = {}
+    for record in post.get("generation_records") or []:
+        comment = record.get("comment")
+        if not isinstance(comment, dict):
+            continue
+        match = _MARKER_RE.search(str(record.get("prompt") or ""))
+        if match is None:
+            continue
+        try:
+            out[int(comment.get("comment_id") or 0)] = match.group("persona_id")
+        except (TypeError, ValueError):
+            continue
+    return out
+
+
 def annotate_generated_outputs(
     generated_root: Path,
     runtime: MatraixPersonaRuntime,
 ) -> dict[str, Any]:
-    """Persist deterministic per-comment persona provenance after generation."""
+    """Persist per-comment persona provenance recorded during generation."""
 
     if not runtime.enabled or not generated_root.exists():
         return {"mode": runtime.mode, "comments": 0}
@@ -396,21 +537,31 @@ def annotate_generated_outputs(
     prompt_lengths: list[int] = []
     comment_count = 0
     file_count = 0
+    replayed = 0
     for path in sorted(generated_root.glob("run_*_sampled_reddit/discussion.json")):
         payload = json.loads(path.read_text(encoding="utf-8"))
         changed = False
         by_comment_id: dict[int, dict[str, Any]] = {}
         for post in payload.get("posts") or []:
             seed_index = int(post.get("seed_index") or 0)
+            recorded = recorded_persona_ids(post)
             for comment in _walk_comments(post.get("comments") or []):
                 comment_id = int(comment.get("comment_id") or 0)
-                proxy = dict(comment)
-                proxy["local_task_id"] = comment_id % 10000
-                assignment = runtime.assign(
-                    seed_index=seed_index,
-                    task=proxy,
-                    speaker_id=_speaker_id_from_author(comment.get("author")),
-                )
+                persona_id = recorded.get(comment_id)
+                if persona_id is not None:
+                    assignment = runtime.assignment_for_id(persona_id)
+                else:
+                    # No marker on disk: a run predating this, or a comment with
+                    # no generation record. Replay, and count it, so a manifest
+                    # that is partly reconstructed says so.
+                    replayed += 1
+                    proxy = dict(comment)
+                    proxy["local_task_id"] = comment_id % 10000
+                    assignment = runtime.assign(
+                        seed_index=seed_index,
+                        task=proxy,
+                        speaker_id=_speaker_id_from_author(comment.get("author")),
+                    )
                 if assignment is None:
                     continue
                 meta = _assignment_meta(runtime, assignment)
@@ -438,6 +589,9 @@ def annotate_generated_outputs(
         "discussion_files": file_count,
         "comments": comment_count,
         "unique_personas_used": len(persona_counts),
+        # Non-zero means some comments had no recorded marker and their
+        # provenance was reconstructed rather than read.
+        "replayed_assignments": replayed,
         "persona_comment_counts": dict(sorted(persona_counts.items())),
         "assigned_system_chars_min": min(prompt_lengths) if prompt_lengths else 0,
         "assigned_system_chars_max": max(prompt_lengths) if prompt_lengths else 0,
@@ -519,23 +673,38 @@ def _project_dimensions(
     *,
     expertise_dimensions: Iterable[str],
 ) -> dict[str, str]:
-    ordered = (
-        "register",
-        "tone_expected",
-        "expertise_gap",
-        *tuple(expertise_dimensions),
-        "decision_style",
-        "trust_level",
-        "risk_tolerance",
-        "emotional_state",
-        "tech_savviness",
-        "time_pressure",
-        "skill_writing",
-        "skill_storytelling",
-        "dominant_trait",
-        "intent",
-        "query_complexity",
-    )
+    register_mode = PERSONA_PROJECTION_MODE == "register"
+    if register_mode:
+        ordered = (
+            *_REGISTER_FIRST,
+            "expertise_gap",
+            *tuple(expertise_dimensions),
+            "trust_level",
+            "decision_style",
+            "risk_tolerance",
+            "tech_savviness",
+            "intent",
+            "query_complexity",
+            "time_pressure",
+        )
+    else:
+        ordered = (
+            "register",
+            "tone_expected",
+            "expertise_gap",
+            *tuple(expertise_dimensions),
+            "decision_style",
+            "trust_level",
+            "risk_tolerance",
+            "emotional_state",
+            "tech_savviness",
+            "time_pressure",
+            "skill_writing",
+            "skill_storytelling",
+            "dominant_trait",
+            "intent",
+            "query_complexity",
+        )
     # `ordered` covers ~16 of the 85+ dimensions a record can carry, and 23 of
     # 147 personas hold none of them -- they rendered an empty identity, which
     # is how a fifth of all slots ended up sharing one system prompt. Spend any
@@ -546,9 +715,19 @@ def _project_dimensions(
     behavioural = sorted(
         key for key in dimensions if key.startswith(("trait_", "skill_", "lstyle_"))
     )
+    if register_mode:
+        behavioural = sorted(
+            behavioural,
+            key=lambda key: (key.startswith(_REGISTER_DEPRIORITIZED_PREFIXES), key),
+        )
+    budget = (
+        _MAX_PROJECTED_DIMENSIONS_REGISTER
+        if register_mode
+        else _MAX_PROJECTED_DIMENSIONS
+    )
     selected: dict[str, str] = {}
     for key in (*ordered, *behavioural):
-        if len(selected) >= _MAX_PROJECTED_DIMENSIONS:
+        if len(selected) >= budget:
             break
         if key in selected:
             continue
