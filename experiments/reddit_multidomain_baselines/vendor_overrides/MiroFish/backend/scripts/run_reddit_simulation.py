@@ -466,9 +466,14 @@ class RedditSimulationRunner:
 
         print(f"LLM配置: model={llm_model}, base_url={llm_base_url[:40] if llm_base_url else '默认'}...")
 
+        model_config = None
+        if str(llm_model).strip().lower() == "gemini-2.5-flash":
+            model_config = {"reasoning_effort": "none"}
+
         return ModelFactory.create(
             model_platform=ModelPlatformType.OPENAI,
             model_type=llm_model,
+            model_config_dict=model_config,
         )
 
     def _get_active_agents_for_round(

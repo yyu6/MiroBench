@@ -43,7 +43,10 @@ def _supports_custom_temperature(model: str) -> bool:
 def _resolve_reasoning_effort(model: str) -> str | None:
     """Return the configured reasoning effort for simulation-side LLM calls."""
 
-    if not model.strip().lower().startswith("gpt-5"):
+    normalized_model = model.strip().lower()
+    if normalized_model == "gemini-2.5-flash":
+        return "none"
+    if not normalized_model.startswith("gpt-5"):
         return None
     effort = os.environ.get("LLM_REASONING_EFFORT", "").strip().lower()
     if effort == "none":

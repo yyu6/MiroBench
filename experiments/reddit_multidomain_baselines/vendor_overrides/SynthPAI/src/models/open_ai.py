@@ -44,6 +44,10 @@ class OpenAIGPT(BaseModel):
             # OpenAI-compatible chat endpoint rejects frequency_penalty.
             self.config.args.pop("frequency_penalty", None)
             self.config.args.setdefault("max_tokens", 600)
+            if self.config.name.strip().lower() == "gemini-2.5-flash":
+                # Google maps reasoning_effort="none" to thinking_budget=0
+                # for Gemini 2.5 Flash.  Do not apply this to other models.
+                self.config.args["reasoning_effort"] = "none"
         elif "max_tokens" not in self.config.args.keys():
             self.config.args["max_tokens"] = 600
 

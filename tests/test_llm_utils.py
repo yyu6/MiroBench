@@ -52,3 +52,18 @@ def test_non_gpt5_completion_does_not_use_reasoning_effort_env(monkeypatch):
     kwargs = client.chat.completions.kwargs
     assert kwargs["temperature"] == 0.3
     assert "reasoning_effort" not in kwargs
+
+
+def test_gemini_25_flash_disables_thinking() -> None:
+    client = _FakeClient()
+
+    create_json_object_completion(
+        client=client,
+        model="gemini-2.5-flash",
+        prompt="Return JSON",
+        temperature=0.3,
+    )
+
+    kwargs = client.chat.completions.kwargs
+    assert kwargs["reasoning_effort"] == "none"
+    assert kwargs["temperature"] == 0.3

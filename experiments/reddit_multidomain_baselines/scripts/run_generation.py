@@ -442,6 +442,11 @@ def _job_env(
         env["OPENAI_API_KEY"] = api_key
     env["LLM_MODEL_NAME"] = model
     env["LLM_BASE_URL"] = str(model_spec["base_url"])
+    if model.strip().lower() == "gemini-2.5-flash":
+        # Gemini 2.5 Flash enables dynamic thinking by default.  Keep this
+        # benchmark's generation cost/latency bounded by disabling it through
+        # Google's OpenAI-compatible reasoning_effort mapping.
+        env["LLM_REASONING_EFFORT"] = "none"
     env["TOKEN_USAGE_LOG_JSONL"] = str(usage_path)
     env["TOKEN_USAGE_AUTOPATCH"] = "1"
     env["TOKEN_USAGE_RUN_TAG"] = f"{baseline}:{model}:{domain}"

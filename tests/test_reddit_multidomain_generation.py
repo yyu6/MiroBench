@@ -81,6 +81,38 @@ def test_gemini_synthpai_removes_unsupported_frequency_penalty() -> None:
 
     assert 'pop("frequency_penalty"' in gemini_branch
     assert 'setdefault("max_tokens", 600)' in gemini_branch
+    assert 'self.config.args["reasoning_effort"] = "none"' in gemini_branch
+
+
+def test_only_gemini_25_flash_job_env_disables_thinking(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    module = load_run_generation()
+    monkeypatch.delenv("LLM_REASONING_EFFORT", raising=False)
+    model_spec = {
+        "key_env": "GEMINI_API_KEY",
+        "base_url": "https://generativelanguage.googleapis.com/v1beta/openai",
+    }
+
+    gemini_env = module._job_env(
+        model="gemini-2.5-flash",
+        model_spec=model_spec,
+        usage_path=tmp_path / "gemini.jsonl",
+        baseline="synthpai",
+        domain="camera",
+        allow_missing_key=True,
+    )
+    flash_lite_env = module._job_env(
+        model="gemini-2.5-flash-lite",
+        model_spec=model_spec,
+        usage_path=tmp_path / "flash-lite.jsonl",
+        baseline="synthpai",
+        domain="camera",
+        allow_missing_key=True,
+    )
+
+    assert gemini_env["LLM_REASONING_EFFORT"] == "none"
+    assert "LLM_REASONING_EFFORT" not in flash_lite_env
 
 
 def test_keyboard_interrupt_is_not_recorded_as_success(
