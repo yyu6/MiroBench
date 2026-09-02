@@ -20,7 +20,11 @@ while [[ $# -gt 0 ]]; do
     *) shift ;;
   esac
 done
-LOG="$ROOT/artifacts/geo_v137ds_logs/chain_${prefix}.log"
+# `prefix` may be an alternation covering an arm's original and refill prefixes,
+# e.g. "(iso2|iso2b)_20260902". Both uses below are ERE, so that works as-is --
+# but the alternation must not reach a filename.
+slug="$(printf '%s' "$prefix" | tr -cd '[:alnum:]_')"
+LOG="$ROOT/artifacts/geo_v137ds_logs/chain_${slug}.log"
 say() { echo "[$(date +%H:%M:%S)] $*" | tee -a "$LOG"; }
 
 say "waiting for shards matching ${prefix}_p* to finish generating"
