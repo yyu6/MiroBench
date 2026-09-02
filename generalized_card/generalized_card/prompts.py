@@ -42,6 +42,74 @@ from .branch_routing import BRANCH_DICTATION_MODE as _BDM  # noqa: F401
 from .planning_quality import isolation_quota_block, outsider_quota_block
 
 
+def slot_grid_mode() -> str:
+    """Read the flag at call time, not at import, or it freezes at `full`."""
+    from . import planner_distribution
+
+    return planner_distribution.SLOT_GRID_MODE
+
+
+def _planner_orientation_block() -> str:
+    """Say what this model is, what a real thread looks like, and what is judged.
+
+    Every earlier arm either added a rule or replaced an input while the grid of
+    pre-assigned tone, affect, opener and surface labels stayed in place. With
+    that grid withheld the Planner needs to know what it is deciding and against
+    what the result is compared, otherwise it is guessing at a target nobody
+    stated. The thread-behaviour figures below come from this domain's reference
+    corpus -- threads excluded from the evaluation pool -- and no evaluation
+    p-value or evaluation-set statistic appears here.
+    """
+
+    return "\n".join([
+        "YOUR ROLE, AND WHAT THIS THREAD WILL BE JUDGED ON:",
+        "- You are the Planner in a two-model pipeline. You never write comment "
+        "text. You emit private per-slot controls, and a separate Writer model "
+        "turns each one into a comment without seeing your other slots. So "
+        "whatever variety this thread ends up having, you have to put it in "
+        "here: the Writer cannot add spread it was not planned.",
+        "- The finished thread is compared against one real Reddit thread on "
+        "twelve thread-level statistics, two-sided, and it passes only where the "
+        "distributions are indistinguishable. What each one is sensitive to:",
+        "  * within-thread semantic similarity -- the average likeness of every "
+        "pair of comments. Real threads score LOW here because real people in "
+        "one thread are frequently not discussing the same thing. This is the "
+        "statistic our threads fail worst: ours come out roughly 30% too alike, "
+        "because every slot ends up being one more angle on the post's subject.",
+        "  * within-thread lexical repetition -- overlapping word sequences. Ours "
+        "already sits slightly BELOW real, so the problem is not repeated "
+        "wording. Different words, same meaning, is exactly the failure.",
+        "  * emotional variety -- how many distinct emotions appear across the "
+        "thread. Ours is too narrow: too much lands in the middle, not enough at "
+        "either end.",
+        "  * blunt disagreement rate, politeness rate, impoliteness rate -- ours "
+        "under-produces both the openly rude and the openly warm, and "
+        "over-produces the flatly neutral.",
+        "  * personal-story rate, length variation, reply depth, virality shape "
+        "-- these already match, because the slot skeleton is copied from the "
+        "real thread. Preserve them: keep each slot's depth, parent and rough "
+        "length.",
+        "- What real threads of this kind actually do, measured on threads held "
+        "out of the evaluation: about half of all comments run to eighteen words "
+        "or fewer and about a sixth to five or fewer; roughly a quarter of "
+        "comments are semantically unrelated to every other comment in their own "
+        "thread; explicit gratitude appears in about 1% and stock social filler "
+        "in about 5%, far less than a polite forum. People react to one "
+        "incidental detail, tell an aside nobody asked for, argue with another "
+        "commenter rather than the post, make a one-line joke, correct a trivium, "
+        "or say something about the thread itself.",
+        "- Therefore: do not treat these slots as a set of complementary angles "
+        "that jointly cover the topic. That is what produces the failure above. "
+        "Let plans genuinely diverge -- different subjects, different registers, "
+        "different emotional temperatures, some of them going nowhere near the "
+        "post's main question. Where you can see two real comments had nothing "
+        "to do with each other, plan two slots that have nothing to do with each "
+        "other.",
+        "- Nothing above is a quota to hit. It is what the thread you are "
+        "reproducing is like. Read each slot's own real comment and decide.",
+    ])
+
+
 def branch_dictation_mode() -> str:
     """Read the flag at call time; importing the value would freeze it at off."""
     from . import branch_routing
@@ -755,6 +823,8 @@ def comment_planner_prompt(
     # isolation rate without moving the metric. It names the real comment as the
     # authority the routes used to be, which is the one input never given that
     # standing before.
+    if slot_grid_mode() == "free":
+        outsider_block = f"{outsider_block}\n{_planner_orientation_block()}\n"
     if branch_dictation_mode() == "structural":
         outsider_block = (
             f"{outsider_block}\n"

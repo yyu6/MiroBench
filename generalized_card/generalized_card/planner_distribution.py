@@ -192,6 +192,22 @@ def apply_slot_distribution_schedule(
     return plans
 
 
+# v149 arm. Each slot normally arrives with its tone, affect label, story mode,
+# opener route, length bucket, surface texture and utterance mode already chosen,
+# so the Planner is completing a grid rather than deciding how a comment should
+# sound. `free` withholds the grid and lets the Planner assign those fields
+# itself from the slot's own real comment. The schedule is still computed and
+# still recorded -- only its delivery to the prompt is suppressed -- so a run can
+# be compared field by field against one that received it.
+SLOT_GRID_MODE = "full"
+
+
+def set_slot_grid(mode: str) -> bool:
+    global SLOT_GRID_MODE
+    SLOT_GRID_MODE = str(mode or "full").strip().lower()
+    return SLOT_GRID_MODE == "free"
+
+
 def render_slot_distribution_schedule(
     schedule: dict[str, Any] | None,
     *,
@@ -199,6 +215,12 @@ def render_slot_distribution_schedule(
 ) -> str:
     """Render only the contracts for the displayed Planner slots."""
 
+    if SLOT_GRID_MODE == "free":
+        return (
+            "(withheld on purpose -- you assign tone, affect, story mode, opener "
+            "route and surface form yourself, from what the real comment at each "
+            "slot actually did)"
+        )
     assignments = (schedule or {}).get("assignments") or {}
     rows = []
     for sample_id in sample_ids:
