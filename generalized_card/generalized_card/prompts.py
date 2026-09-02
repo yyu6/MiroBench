@@ -40,6 +40,13 @@ from .evaluative_register import active_evaluative_guidance
 from .opening_move import active_opening_guidance, forbidden_opening_tokens
 from .branch_routing import BRANCH_DICTATION_MODE as _BDM  # noqa: F401
 from .planning_quality import isolation_quota_block, outsider_quota_block
+from .plan_vocabulary import (
+    abstraction_block,
+    content_angle_schema_hint,
+    domain_intent_schema_hint,
+    open_vocabulary,
+    perspective_schema_hint,
+)
 
 
 def slot_grid_mode() -> str:
@@ -319,9 +326,50 @@ def _brief_at_top() -> str:
     return f"\n{_planner_orientation_block()}\n" if slot_grid_mode() == "free" else ""
 
 
+def _perspective_field_rule() -> str:
+    if open_vocabulary():
+        return (
+            "Write ``perspective_id`` as the lens you named for this slot, in "
+            "your own words. Never ``seed_local``, never a P##, never a branch "
+            "or slot identifier."
+        )
+    return (
+        "Use a frozen ``perspective_id`` only when it fits the visible seed or "
+        "parent; otherwise use ``seed_local``."
+    )
+
+
+def _lens_note() -> str:
+    """The paragraph under section A's lens list."""
+
+    if open_vocabulary():
+        return (
+            "Each row states how a comment REASONS about the local topic -- not "
+            "the topic, entity, event, or claim itself. That distinction is the "
+            "only thing to carry over from these rows."
+        )
+    return (
+        "Each P## states how a comment reasons about the local topic. It is not "
+        "the topic,\nentity, product, feature, event, or claim itself. Derive the "
+        "actual local move\nfrom the visible seed/parent and the non-test "
+        "reference-comment pattern below."
+    )
+
+
 def _lens_framing() -> str:
     """Demote the lenses from frame to vocabulary when the Planner is free."""
 
+    if open_vocabulary():
+        # Under `open` the twelve are not the vocabulary, they are an example of
+        # what a lens is. Naming them "available" is what produced 45% seed_local
+        # on a domain none of them fit (G205).
+        return (
+            "Twelve lenses from a product-shopping discussion, shown only so the "
+            "SHAPE of a lens is unambiguous. This discussion is not about buying "
+            "anything, so most of these will not apply and you are expected to "
+            "name your own instead (section B says how). Do not treat this as a "
+            "menu and do not use a P## label in your output:"
+        )
     if slot_grid_mode() == "free":
         return (
             "Available decision lenses (a vocabulary, not a set of angles to "
@@ -1033,7 +1081,7 @@ Return strict JSON:
       "branch_id": 1,
       "anchor_quote": "short seed-post anchor or abstract local hook",
       "branch_goal": "one narrow branch goal",
-      "perspective_id": "one P## from the frozen domain profile",
+      "perspective_id": "{perspective_schema_hint(allow_seed_local=False)}",
       "decision_boundary": "the one decision condition, consequence, or uncertainty this branch owns",
       "owned_decision_subject": "one concrete seed-derived condition or variable owned only by this branch, not a P## label",
       "branch_exclusion": "the adjacent decision axis owned by another branch that this branch must not cover"
@@ -1262,9 +1310,16 @@ def comment_planner_prompt(
             "thing. Where the real comments at two slots have nothing to do with "
             "each other, your plans for those slots should have nothing to do "
             "with each other either.\n"
-            "- `perspective_id` accepts `seed_local`. Use it whenever no P## "
-            "honestly fits what the real comment did; forcing a lens that does "
-            "not fit is worse than declining one.\n"
+            + (
+                "- Name the lens each slot argues from yourself, in 3-6 words. "
+                "There is no `seed_local` and no P## to fall back on: if no lens "
+                "you have named fits what the real comment did, the answer is a "
+                "lens you have not named yet, not the absence of one.\n"
+                if open_vocabulary()
+                else "- `perspective_id` accepts `seed_local`. Use it whenever "
+                "no P## honestly fits what the real comment did; forcing a lens "
+                "that does not fit is worse than declining one.\n"
+            )
         )
     actor_enabled = (
         str(getattr(backend, "GENERALIZED_ACTOR_MODE", "") or "") == MODE_DOMAIN_DERIVED
@@ -1405,13 +1460,12 @@ Domain: {config.display_name}
 
 {_sec('A', 'VOCABULARY AVAILABLE TO YOU')}{_lens_framing()}
 {perspectives}
-Each P## states how a comment reasons about the local topic. It is not the topic,
-entity, product, feature, event, or claim itself. Derive the actual local move
-from the visible seed/parent and the non-test reference-comment pattern below.
+{_lens_note()}
 
 {_sec('B', 'HOW THIS COMMUNITY WRITES -- REFERENCE BANK')}{_reference_row_framing()}
 {claim_knowledge}
 {reference_viewpoints}
+{abstraction_block(perspectives)}
 
 {_sec('C', 'OBJECTIVES')}Objectives:
 - Preserve each supplied slot's depth, parent relation, approximate information density, and surface roughness.
@@ -1469,7 +1523,7 @@ Plans already assigned in earlier batches of this same thread:
       "branch_id": 1,
       "payload_type": "low_info_reaction | bare_answer | fragment_datapoint | soft_helpful | correction | narrow_question | personal_story | rant | joke | side_tangent | meta_or_template | advice",
       "comment_function": "reaction | question_followup | correction_caveat | personal_datapoint | recommendation_advice | verdict_evaluation | explanation_analysis | offtopic_noise",
-      "content_angle": "cost_value | rules_constraints | risk_reliability_support | comparison_alternative | setup_troubleshooting | availability_timing | fit_use_case | unclear_mixed",
+      "content_angle": "{content_angle_schema_hint('cost_value | rules_constraints | risk_reliability_support | comparison_alternative | setup_troubleshooting | availability_timing | fit_use_case | unclear_mixed')}",
       "evidence_mode": "none_assertion | firsthand_experience | technical_or_policy_reasoning | calculation_math | hearsay_consensus | link_quote_reference | small_observation",
       "story_mode": "no_story | tiny_personal_context | specific_personal_story | messy_multi_step_story",
       "tone_class": "polite | somewhat_polite | neutral | impolite",
@@ -1484,8 +1538,8 @@ Plans already assigned in earlier batches of this same thread:
       "avoid_repeating": "nearby discourse move to avoid",
       "claim_family": "{families}",
       "claim_key": "short abstract semantic key",
-      "perspective_id": "one P## from the frozen domain profile, or seed_local",
-      "domain_intent": "one short domain-grounded intent that does not import a hidden fact",
+      "perspective_id": "{perspective_schema_hint()}",
+      "domain_intent": "{domain_intent_schema_hint()}",
       "domain_claim": "{claim_schema}",
       "decision_boundary": "the one decision condition, consequence, or uncertainty this independent slot owns",
       "reply_delta": "none",
@@ -1552,7 +1606,7 @@ Plans already assigned in earlier batches of this same thread:
   tradeoff, verdict, or explanation. Repetition is allowed only for a direct
   reply that changes the relation, evidence, stance, or local detail.
 {_claim_reuse_rule()}
-{_rule_group('HOW TO WRITE SPECIFIC FIELDS')}- Use a frozen ``perspective_id`` only when it fits the visible seed or parent; otherwise use ``seed_local``.
+{_rule_group('HOW TO WRITE SPECIFIC FIELDS')}- {_perspective_field_rule()}
 - Nearby comments should not reuse the same perspective and claim key unless the reply relation directly requires it.
 - Write ``semantic_move`` as the exact new contribution made by this slot, not
   as a topic label or a paraphrase of the thread's current conclusion.

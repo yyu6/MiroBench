@@ -155,7 +155,7 @@ CORE_FILES = {
     # pinned, so a change anywhere in the engine is still reviewed.
     "generator_generalized_v2": (
         "scripts/sampling_generator/run_sampled_reddit_generator.py",
-        "6244cd391cf98bb915ebd4c4c5649a08b6917409274f22544e7e4bce662e9327",
+        "090f27213f8e8e05ac79cb878ce086e6d56e19976914854b56d58303f8ee03b1",
     ),
     "engine_vocabulary": (
         "scripts/sampling_generator/engine/vocabulary.py",
@@ -207,7 +207,7 @@ CORE_FILES = {
     ),
     "generator_adapter": (
         "generalized_card/generalized_card/backend.py",
-        "3b627175abd4460154ee3f670c980c7ea10bb4982251f52aac4e1df52b290e4f",
+        "62cb480e88aaa4921651dd077dd6833138d874bd7a3fdb0aeb587e540eccbd7b",
     ),
     "data_boundary": (
         "generalized_card/generalized_card/data.py",
@@ -241,7 +241,7 @@ CORE_FILES = {
     ),
     "generation_runner": (
         "generalized_card/scripts/run_generate.py",
-        "cf478859825d595f3df772ee41ecba163cdb773670b0f3d18867e3efb8e57661",
+        "bab4fce8e92b6f33165fa058144ced1939f9c361705c6a14b9270858e90fb10d",
     ),
     "generation_backend_runner": (
         "generalized_card/scripts/run_generator_backend.py",
@@ -262,6 +262,13 @@ CORE_FILES = {
     "viewpoint_bank": (
         "generalized_card/generalized_card/viewpoint_bank.py",
         "b2fd44cfaa514a0264d5e9b7023d211a1f80cacc9e4987eec3dba26b3db9b1a3",
+    ),
+    # The Planner's control vocabularies. Pinned because both planner schemas
+    # render their field hints from here, so a change to it changes what every
+    # slot is asked for.
+    "plan_vocabulary": (
+        "generalized_card/generalized_card/plan_vocabulary.py",
+        "8c435f282f0be0f0c2da59f7de0b7df1439bd8c0b480441b81f2b3c5e2c5447d",
     ),
     "planning_quality": (
         "generalized_card/generalized_card/planning_quality.py",
@@ -469,11 +476,11 @@ CORE_FILES = {
     ),
     "domain_prompt_adapter": (
         "generalized_card/generalized_card/prompts.py",
-        "44c12dc3c4c04ec89d0f8150f62682b8a920cb2a07a81454465dfca66a7f62d6",
+        "c2a44d88ab67f3ffbd9c8d48828923ee39f3b61cbc843d5d2251734843ecf214",
     ),
     "reply_planning": (
         "generalized_card/generalized_card/reply_planning.py",
-        "8e2b4382ad6d146f10a8d6665555b23fa68c8bfb9e55eda6f5fa986f28b09719",
+        "8749f2f4a55e4314f57c81f2d780d5a008f9ecf5ffbc34b9e0772a2b4aafc36d",
     ),
     "persona_bridge": (
         "generalized_card/generalized_card/persona_bridge.py",
@@ -634,6 +641,7 @@ GENERATION_ADAPTER_CORE_NAMES = (
     "planning_quality",
     "planner_contract",
     "plan_repair",
+    "plan_vocabulary",
     "generation_distribution",
     "planner_distribution",
     "branch_routing",

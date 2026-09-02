@@ -2390,3 +2390,33 @@ grep the analysis directories, not just the package. `analysis/*/` in this repo 
 working tools, not only throwaway scripts — `build_calibration_pool.py`,
 `fit_tone_matrix.py` and `cap_decision.py` are all part of the tone workflow and are
 referenced from `tone_realization.py`'s own docstring, which I had read.
+
+## 2026-09-02 — 两个教训
+
+### 1. `ps aux | grep -c '[x]pattern'` 在这个环境里会骗人
+我用 `ps aux | grep -c '[r]un_generator_backend'` 判断进程是否还在,它返回 `0`,我据此认定
+a5dsfit 的 p1 shard 死了,于是重启了一个**已经在跑**的任务。结果两个进程并发写同一个
+run 目录,浪费了一个 thread 的 API 花费(约 $2.4),而且把 token 日志搞成两个进程混合的,
+不能再当进度用。
+
+真实情况:`pgrep -fl 'run_generate.py|run_generator_backend'` 显示 4 个进程都活着。
+`ps aux` 的输出在这个环境里被 rtk 钩子改写过,`grep -c` 的结果不可信。
+
+**规则:判断进程存活只用 `pgrep -fl <pattern>`,并且要看到实际的命令行,不要只看计数。**
+在重启任何长任务之前,必须先 `pgrep -fl` 看到零匹配 **并且** 确认没有新的输出写入
+(比较日志的 mtime / 行数两次)。
+
+### 2. 第三方数据集要先读它自己的文档和 manifest,再拿来当结论的依据
+persona 一直用的是 `matraix-persona-dev-sample` —— 名字里就写着 dev sample,manifest 里
+`count: 200`、`parent_pool: persona/datasets/matraix-persona-1m`、
+`hf_repo: MatrAIx2026/MatrAIx_Persona_1M_Public_Release`。官方文档第 230 行明确说大规模研究
+要用那个 100 万的公开 coreset。
+
+我在这个 200 行的样本上量出"123 个 persona 的 system prompt 两两相似度 0.809,17 个完全重复",
+然后写进 DECISIONS 说"persona 层没有空间"(G201)。那个结论是**样本的性质,不是方法的性质**:
+在 100 万库里,`register` 覆盖率 26%→64%、取值 3→6 种,`primary_language` 4→45 种,
+每行填的维度中位数 68→510。
+
+**规则:任何以第三方数据集为前提的结论,写下之前先读那个数据集的 manifest 和 README,
+确认用的不是 smoke/dev/sample 切片。文件名和 manifest 里的 `count`/`parent_pool` 字段
+就是答案,五分钟能查清。**

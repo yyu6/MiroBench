@@ -17,6 +17,10 @@ from .domain_claim import (
     render_selective_claim_schedule,
 )
 from .long_form_planning import expected_development_beats
+from .plan_vocabulary import (
+    content_angle_schema_hint,
+    reply_shared_field_lines,
+)
 from .planner_schema import parse_sample_id
 from .surface_contract import surface_only_label
 
@@ -417,7 +421,7 @@ Return strict JSON with exactly one row for each of {slot_ids}:
       "sample_id": "S{sample_ids[0]}",
       "payload_type": "bare_answer | fragment_datapoint | soft_helpful | correction | narrow_question | personal_story | rant | joke | side_tangent | meta_or_template | advice",
       "comment_function": "reaction | question_followup | correction_caveat | personal_datapoint | recommendation_advice | verdict_evaluation | explanation_analysis | offtopic_noise",
-      "content_angle": "one local angle",
+      "content_angle": "{content_angle_schema_hint('one local angle')}",{reply_shared_field_lines()}
       "evidence_mode": "none_assertion | firsthand_experience | technical_or_policy_reasoning | calculation_math | hearsay_consensus | link_quote_reference | small_observation",
       "story_mode": "copy the fixed story contract shown for this S#",
       "tone_class": "copy the fixed tone register shown for this S#",

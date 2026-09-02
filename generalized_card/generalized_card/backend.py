@@ -25,6 +25,7 @@ from .actor_conditioning import (
     enrich_normalized_plans,
 )
 from . import branch_routing as _branch_routing
+from . import plan_vocabulary as _plan_vocabulary
 from .branch_routing import (
     set_branch_dictation,
     parent_slot_schedule,
@@ -703,6 +704,16 @@ def configure_generator_backend(
         or "full"
     )
     set_slot_grid(module.GENERALIZED_SLOT_GRID)
+    # Generation runs in run_generator_backend.py, a SEPARATE process, so a
+    # setter called in run_generate.py never reaches the code that renders the
+    # prompt (G189 -- six arms were invalidated by exactly this). The value must
+    # travel as an environment variable and be applied here. `module` is the
+    # generator, whose own normalizer reads the global by name at call time.
+    module.GENERALIZED_PLAN_VOCABULARY = (
+        os.environ.get("GENERALIZED_CARD_PLAN_VOCABULARY", "closed").strip().lower()
+        or "closed"
+    )
+    _plan_vocabulary.set_plan_vocabulary(module.GENERALIZED_PLAN_VOCABULARY)
     module.GENERALIZED_PLANNER_DISTRIBUTION = (
         os.environ.get("GENERALIZED_CARD_PLANNER_DISTRIBUTION", "full").strip().lower()
         or "full"
@@ -2717,11 +2728,37 @@ def _canonicalize_plan_controls(
 
     allowed = {str(value).strip().upper() for value in perspective_ids}
     allowed.add("SEED_LOCAL")
+    open_vocab = _plan_vocabulary.open_vocabulary()
     events: list[dict[str, Any]] = []
     for sample_id, plan in sorted(plans.items()):
         raw = str(plan.get("perspective_id") or "seed_local").strip()
         normalized = raw.upper()
-        if normalized in allowed:
+        if open_vocab:
+            # THE GATE THIS ARM EXISTS TO OPEN. Mapping every unlisted lens to
+            # `seed_local` is correct while the twelve frozen lenses are the
+            # whole vocabulary; under `open` the Planner names its own, so the
+            # same line would delete the entire behaviour and leave a run that
+            # records `plan_vocabulary: open` and generated nothing new -- the
+            # inert-arm failure of v143obs. A bare identifier is still not a
+            # lens, and an empty value still has to become something.
+            repaired = _plan_vocabulary.normalize_open_control(
+                raw, fallback="", limit=_plan_vocabulary.MAX_LENS_CHARS
+            )
+            if repaired:
+                plan["perspective_id"] = repaired
+            else:
+                plan["perspective_id"] = "seed_local"
+                events.append(
+                    {
+                        "sample_id": int(sample_id),
+                        "field": "perspective_id",
+                        "raw_value": raw,
+                        "normalized_value": "seed_local",
+                        "reason": "unnamed_lens_under_open_vocabulary",
+                        "repair_attempt": int(repair_attempt),
+                    }
+                )
+        elif normalized in allowed:
             plan["perspective_id"] = (
                 "seed_local" if normalized == "SEED_LOCAL" else normalized
             )

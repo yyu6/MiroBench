@@ -36,6 +36,7 @@ from generalized_card.planning_quality import (  # noqa: E402
 from generalized_card.viewpoint_bank import set_reference_window  # noqa: E402
 from generalized_card.prompts import set_matched_text  # noqa: E402
 from generalized_card.branch_routing import set_branch_dictation  # noqa: E402
+from generalized_card.plan_vocabulary import set_plan_vocabulary  # noqa: E402
 from generalized_card.planner_distribution import set_slot_grid  # noqa: E402
 from generalized_card.generation_distribution import (  # noqa: E402
     set_planner_distribution,
@@ -371,6 +372,26 @@ def build_parser() -> argparse.ArgumentParser:
             "of this kind look like, and which statistics the thread is judged "
             "on. The schedule is still computed and recorded, so a free run can "
             "be diffed field by field against one that received it."
+        ),
+    )
+    parser.add_argument(
+        "--plan-vocabulary",
+        choices=["open", "closed"],
+        default="closed",
+        help=(
+            "`open` stops handing the Planner a closed taxonomy for the three "
+            "fields that decide what a comment is about. The frozen twelve "
+            "decision lenses and the eight content angles are product-shopping "
+            "categories -- `universal_decision_lens` is their own recorded "
+            "source -- so on a domain none of them fit the Planner takes the "
+            "escape hatch: 45%% `seed_local` and 62%% `unclear_mixed` on "
+            "celebrity top-level slots, and 100%% of both on replies, whose "
+            "schema did not carry the fields at all. Under `open` the Planner "
+            "abstracts its own lens set from the reference bank it already "
+            "sees, both schemas carry all three fields, `seed_local` is "
+            "withdrawn as an option, and the canonicalizer stops folding an "
+            "unlisted lens back to it. Unlike G191, which removed the grid and "
+            "left the escape hatch as the only answer, this removes the hatch."
         ),
     )
     parser.add_argument(
@@ -1177,6 +1198,7 @@ def main() -> None:
     set_reference_window(args.reference_window)
     set_matched_text(args.matched_text)
     set_branch_dictation(args.branch_dictation)
+    set_plan_vocabulary(args.plan_vocabulary)
     set_slot_grid(args.slot_grid)
     set_planner_distribution(args.planner_distribution)
     set_isolation_quota(args.isolation_quota)
@@ -1343,6 +1365,7 @@ def main() -> None:
         "reference_window": args.reference_window,
         "matched_text": args.matched_text,
         "branch_dictation": args.branch_dictation,
+        "plan_vocabulary": args.plan_vocabulary,
         "slot_grid": args.slot_grid,
         "planner_distribution": args.planner_distribution,
         "isolation_quota": args.isolation_quota,
@@ -1593,6 +1616,7 @@ def main() -> None:
     env["GENERALIZED_CARD_ISOLATION_QUOTA"] = args.isolation_quota
     env["GENERALIZED_CARD_MATCHED_TEXT"] = args.matched_text
     env["GENERALIZED_CARD_BRANCH_DICTATION"] = args.branch_dictation
+    env["GENERALIZED_CARD_PLAN_VOCABULARY"] = args.plan_vocabulary
     env["GENERALIZED_CARD_SLOT_GRID"] = args.slot_grid
     env["GENERALIZED_CARD_PLANNER_DISTRIBUTION"] = args.planner_distribution
     env["GENERALIZED_CARD_REFERENCE_WINDOW"] = args.reference_window
@@ -1958,6 +1982,7 @@ RUN_EXPERIMENT_FIELDS = (
     "reference_window",
     "matched_text",
     "branch_dictation",
+    "plan_vocabulary",
     "slot_grid",
     "planner_distribution",
     "isolation_quota",

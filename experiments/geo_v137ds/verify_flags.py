@@ -32,6 +32,15 @@ CHECKS = [
      "generalized_card.planning_quality", "ISOLATION_QUOTA_MODE", "measured"),
     ("GENERALIZED_CARD_REFERENCE_WINDOW", "unranked",
      "generalized_card.viewpoint_bank", "REFERENCE_WINDOW_MODE", "unranked"),
+    ("GENERALIZED_CARD_PLAN_VOCABULARY", "open",
+     "generalized_card.plan_vocabulary", "PLAN_VOCABULARY_MODE", "open"),
+    # The open arm also has to reach the GENERATOR module: `normalize_plan_rows`
+    # reads `GENERALIZED_PLAN_VOCABULARY` off it by name, and that is the line
+    # that decides whether a Planner-named content angle survives or is folded
+    # back to `unclear_mixed`. A setter that configures only the
+    # generalized_card side leaves the fold in place.
+    ("GENERALIZED_CARD_PLAN_VOCABULARY", "open",
+     "@generator", "GENERALIZED_PLAN_VOCABULARY", "open"),
 ]
 
 SNIPPET = """
@@ -40,9 +49,10 @@ sys.path.insert(0, {pkg!r})
 from generalized_card.backend import configure_generator_backend, load_generator_backend
 from generalized_card.domain import load_domain_from_env
 cfg = load_domain_from_env()
-configure_generator_backend(load_generator_backend(), cfg)
-m = importlib.import_module({mod!r})
-print(getattr(m, {attr!r}))
+gen = load_generator_backend()
+configure_generator_backend(gen, cfg)
+m = gen if {mod!r} == "@generator" else importlib.import_module({mod!r})
+print(getattr(m, {attr!r}, "(缺这个属性)"))
 """
 
 def main() -> int:
@@ -59,7 +69,8 @@ def main() -> int:
         got = out.stdout.strip().splitlines()[-1] if out.stdout.strip() else f"(错误) {out.stderr.strip()[-160:]}"
         ok = got == expect
         bad += not ok
-        print(f"  {'OK  ' if ok else 'FAIL'} {var}={value} -> {mod.split('.')[-1]}.{attr} = {got}")
+        where = "generator" if mod == "@generator" else mod.split(".")[-1]
+        print(f"  {'OK  ' if ok else 'FAIL'} {var}={value} -> {where}.{attr} = {got}")
     print(f"\n{len(CHECKS) - bad}/{len(CHECKS)} 个 flag 能穿过子进程边界")
     return 1 if bad else 0
 

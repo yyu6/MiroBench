@@ -206,6 +206,13 @@ from sampling_generator.engine.parent_alignment import (  # noqa: E402
 
 
 GENERATOR_NAME = "sampled_planner_gpt_writer_v54_constructive_polite_frame"
+
+# Set on this module by generalized_card.backend.configure_generator_backend
+# from GENERALIZED_CARD_PLAN_VOCABULARY. Read by name inside
+# `normalize_plan_rows`, so the value resolves at call time. `closed`
+# reproduces every release through v150; see
+# generalized_card/generalized_card/plan_vocabulary.py.
+GENERALIZED_PLAN_VOCABULARY = "closed"
 CLAIM_FAMILIES = (
     "low_limit_amount",
     "approval_datapoint",
@@ -584,7 +591,16 @@ def normalize_branch_plan(payload: dict[str, Any], *, target: ThreadTarget) -> l
             evidence_modes=normalize_vocab_list(row.get("evidence_modes"), EVIDENCE_MODES, ("none_assertion",)),
             tone_palette=normalize_vocab_list(row.get("tone_palette"), VOICE_MODES, ("casual_neutral",)),
             story_modes=normalize_vocab_list(row.get("story_modes"), STORY_MODES, ("no_story",)),
-            content_angles=normalize_vocab_list(row.get("content_angles"), CONTENT_ANGLES, ("unclear_mixed",)),
+            content_angles=(
+                tuple(
+                    compact(str(v).strip(), 40)
+                    for v in (row.get("content_angles") or ())
+                    if str(v).strip()
+                )
+                or ("unclear_mixed",)
+                if GENERALIZED_PLAN_VOCABULARY == "open"
+                else normalize_vocab_list(row.get("content_angles"), CONTENT_ANGLES, ("unclear_mixed",))
+            ),
             perspective_id=nonempty(row.get("perspective_id"), "seed_local"),
             decision_boundary=nonempty(
                 row.get("decision_boundary"),
@@ -767,7 +783,14 @@ def normalize_comment_move_plans(
             "branch_id": str(branch_id),
             "payload_type": normalize_vocab_value(row.get("payload_type"), PAYLOAD_TYPES, ""),
             "comment_function": normalize_vocab_value(row.get("comment_function"), COMMENT_FUNCTIONS, "reaction"),
-            "content_angle": normalize_vocab_value(row.get("content_angle"), CONTENT_ANGLES, "unclear_mixed"),
+            # Under the open arm the Planner names the angle, so folding an
+            # unlisted value to `unclear_mixed` would discard exactly the answer
+            # that was asked for -- the silent-gate failure of G205.
+            "content_angle": (
+                compact(nonempty(row.get("content_angle"), "unclear_mixed"), 40)
+                if GENERALIZED_PLAN_VOCABULARY == "open"
+                else normalize_vocab_value(row.get("content_angle"), CONTENT_ANGLES, "unclear_mixed")
+            ),
             "evidence_mode": normalize_vocab_value(row.get("evidence_mode"), EVIDENCE_MODES, "none_assertion"),
             "story_mode": normalize_vocab_value(row.get("story_mode"), STORY_MODES, "no_story"),
             "voice": normalize_vocab_value(row.get("voice"), VOICE_MODES, ""),
