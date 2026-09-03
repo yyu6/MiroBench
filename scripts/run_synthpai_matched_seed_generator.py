@@ -93,8 +93,11 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--min-comments-per-post",
         type=int,
-        default=1,
-        help="Retry or fail a seed when exported comments are below this count.",
+        default=0,
+        help=(
+            "Retry or fail a seed when exported comments are below this count. "
+            "The default preserves zero-comment threads and continues the run."
+        ),
     )
     parser.add_argument("--force", action="store_true")
     parser.add_argument("--dry-run", action="store_true")

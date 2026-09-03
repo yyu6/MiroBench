@@ -12,7 +12,7 @@
     "gemini-2.5-flash": {
       "key_env": "GEMINI_API_KEY",
       "base_url": "https://generativelanguage.googleapis.com/v1beta/openai/",
-      "pricing_basis": "Gemini API Standard text pricing, checked 2026-08-28",
+      "pricing_basis": "Gemini API Standard text pricing, verified 2026-09-04",
       "pricing": {
         "input_per_million_usd": 0.3,
         "cached_input_per_million_usd": 0.03,
@@ -22,7 +22,7 @@
     "deepseek-v4-flash": {
       "key_env": "DEEPSEEK_API_KEY",
       "base_url": "https://api.deepseek.com/v1",
-      "pricing_basis": "DeepSeek V4 Flash direct API pricing, checked 2026-08-28; peak/off-peak is calculated from each response timestamp",
+      "pricing_basis": "DeepSeek V4 Flash direct API pricing, verified 2026-09-04; peak/off-peak is calculated from each response timestamp",
       "pricing": {
         "peak_hours_utc": [1, 2, 3, 6, 7, 8, 9],
         "tiers": {
@@ -42,7 +42,7 @@
     "gpt-4o-mini": {
       "key_env": "OPENAI_API_KEY",
       "base_url": "https://api.openai.com/v1",
-      "pricing_basis": "OpenAI API text pricing",
+      "pricing_basis": "OpenAI GPT-4o mini text pricing, verified 2026-09-04",
       "pricing": {
         "input_per_million_usd": 0.15,
         "cached_input_per_million_usd": 0.075,
@@ -52,7 +52,7 @@
     "gpt-5.4-mini": {
       "key_env": "OPENAI_API_KEY",
       "base_url": "https://api.openai.com/v1",
-      "pricing_basis": "OpenAI GPT-5.4 mini text pricing, checked 2026-08-28",
+      "pricing_basis": "OpenAI GPT-5.4 mini text pricing, verified 2026-09-04",
       "pricing": {
         "input_per_million_usd": 0.75,
         "cached_input_per_million_usd": 0.075,

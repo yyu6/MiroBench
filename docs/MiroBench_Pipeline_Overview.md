@@ -231,21 +231,24 @@ The table below reports the current benchmark-construction inventory. A
 fetched real comment. A **benchmark seed** is a selected root post; every
 selected seed is expected to yield one generated thread per evaluated system.
 
-| Domain | Crawled records | Usable root threads | Comment-eligible threads | Benchmark seeds | Target generated threads/system |
-|---|---:|---:|---:|---:|---:|
-| `credit_cards` | 984 | 960 | 919 | 150 | 150 |
-| `camera` | 700 | 700 | 496 | 150 | 150 |
-| `celebrity` | 700 | 700 | 570 | 150 | 150 |
-| `cellphone` | 700 | 700 | 413 | 150 | 150 |
-| `game` | 700 | 700 | 563 | 150 | 150 |
-| `headphones` | 700 | 700 | 616 | 150 | 150 |
-| `health_issue` | 700 | 700 | 539 | 150 | 150 |
-| `laptop` | 700 | 700 | 447 | 150 | 150 |
-| `movies` | 700 | 700 | 532 | 150 | 150 |
-| `news` | 700 | 700 | 474 | 150 | 150 |
-| `sports` | 700 | 700 | 537 | 150 | 150 |
-| `tv_series` | 700 | 700 | 460 | 150 | 150 |
-| **Total** | **8,684** | **8,660** | **6,566** | **1,800** | **1,800** |
+| Domain | Source subreddits | Crawled records | Usable root threads | Comment-eligible threads | Benchmark seeds | Target generated threads/system |
+|---|---:|---:|---:|---:|---:|---:|
+| `credit_cards` | 4 | 984 | 960 | 919 | 150 | 150 |
+| `camera` | 5 | 700 | 700 | 496 | 150 | 150 |
+| `celebrity` | 4 | 700 | 700 | 570 | 150 | 150 |
+| `cellphone` | 5 | 700 | 700 | 413 | 150 | 150 |
+| `game` | 5 | 700 | 700 | 563 | 150 | 150 |
+| `headphones` | 4 | 700 | 700 | 616 | 150 | 150 |
+| `health_issue` | 5 | 700 | 700 | 539 | 150 | 150 |
+| `laptop` | 5 | 700 | 700 | 447 | 150 | 150 |
+| `movies` | 5 | 700 | 700 | 532 | 150 | 150 |
+| `news` | 5 | 700 | 700 | 474 | 150 | 150 |
+| `sports` | 5 | 700 | 700 | 537 | 150 | 150 |
+| `tv_series` | 5 | 700 | 700 | 460 | 150 | 150 |
+| **Total** | **57** | **8,684** | **8,660** | **6,566** | **1,800** | **1,800** |
+
+Here, a source subreddit is the operational subdomain. The 57 subreddits are
+distinct across the 12 domain collections in the current inventory.
 
 Credit-card counts above use the held-out test split used by the baseline
 experiments. Its stored seed pool contains 154 seeds, created as an initial 54
@@ -276,15 +279,16 @@ sets of prompts.
 
 ### 3.1 Metric-selection principles
 
-MiroBench defines four core metric families rather than treating every
+MiroBench defines five core metric families rather than treating every
 individual metric as a separate family:
 
 | Core metric family | Included metrics |
 |---|---|
-| **Structure** | Length, coefficient of variation (CV), average depth, and structural variability |
-| **Uniformity** | Soft BLEU, Soft BERTScore, and semantic cosine |
-| **Behavior** | Hard disagree rate, impolite rate, neutral rate, and polite rate |
+| **Uniformity** | Self-BLEU-4, Self-BERTScore, and semantic cosine |
 | **Expression** | Mean story probability and emotion entropy |
+| **Tone** | Polite rate, neutral rate, and impolite rate |
+| **Interaction** | Average depth, hard disagree rate, and structural virality |
+| **Form** | Comment-length coefficient of variation (CV) |
 
 Metrics are computed at the thread level first. Dataset-level summaries are
 then derived from the distribution of thread-level scores. A higher score is
@@ -300,54 +304,53 @@ to the benchmark specification.
 Let a thread contain comments \(C = \{c_1, \ldots, c_n\}\), and let
 \(P = \{(i,j): i < j\}\) be all unordered comment pairs.
 
-#### 3.2.1 Structure
+#### 3.2.1 Uniformity
 
 | Metric | Measurement and calculation | Interpretation |
 |---|---|---|
-| **Length** (`length_std`) | Count whitespace-delimited tokens in every comment and compute the population standard deviation of comment lengths within the thread. | Measures how much comment length varies within a discussion. |
-| **CV** (`length_cv`) | Divide the standard deviation of comment length by mean comment length: \(CV=\sigma_L/\bar{L}\). | Measures relative length variation while adjusting for a thread's typical comment length. |
-| **Average depth** (`avg_depth`) | Construct the parent–reply tree and compute comment depth by breadth-first search, with top-level comments at depth 1. Average the depths of all comments in the thread. | Higher values indicate deeper, more multi-level reply chains. |
-| **Structural variability** (`structural_virality`) | Treat parent–reply links as an undirected graph and average the shortest-path distance over connected unordered comment pairs. | Distinguishes shallow or star-shaped conversations from discussions that spread through longer interaction paths. |
-
-The conceptual name used in MiroBench is **structural variability**; the
-current implementation and output schema retain the existing field name
-`structural_virality`.
-
-#### 3.2.2 Uniformity
-
-| Metric | Measurement and calculation | Interpretation |
-|---|---|---|
-| **Soft BLEU** (`self_bleu_2`, `self_bleu_3`, `self_bleu_4`) | For each unordered comment pair, compute BLEU in both directions and average them: \(s_{ij}^{(k)}=[BLEU_k(c_i,c_j)+BLEU_k(c_j,c_i)]/2\). Average \(s_{ij}^{(k)}\) over all pairs for n-gram orders 2, 3, and 4. | Higher values indicate greater surface-form uniformity or repeated phrasing. |
-| **Soft BERTScore** (`self_bertscore_mean_f1`) | Compute pairwise BERTScore F1 using `microsoft/deberta-xlarge-mnli`, with `roberta-large` fallback, and average F1 over all unordered comment pairs. | Higher values indicate greater contextual or token-level semantic uniformity. |
+| **Self-BLEU-4** (`self_bleu_4`) | For each unordered comment pair, compute BLEU-4 in both directions and average them: \(s_{ij}=[BLEU_4(c_i,c_j)+BLEU_4(c_j,c_i)]/2\). Average \(s_{ij}\) over all pairs. | Higher values indicate more repeated phrasing. |
+| **Self-BERTScore** (`self_bertscore_mean_f1`) | Compute pairwise BERTScore F1 using `microsoft/deberta-xlarge-mnli`, with `roberta-large` fallback, and average F1 over all unordered comment pairs. | Higher values indicate greater contextual similarity. |
 | **Semantic cosine** (`semantic_mean_cosine`) | Encode comments with `sentence-transformers/all-mpnet-base-v2`, normalize the embeddings, compute cosine similarity for each unordered pair, and take the mean. | Higher values indicate that comments are more semantically similar to one another. |
 
-The current code uses the historical output names **Self-BLEU** and
-**Self-BERTScore** for the benchmark concepts named **Soft BLEU** and
-**Soft BERTScore** in this overview.
-
-#### 3.2.3 Behavior
+#### 3.2.2 Expression
 
 | Metric | Measurement and calculation | Interpretation |
 |---|---|---|
-| **Hard disagree rate** (`hard_disagree_rate`) | Extract parent-comment → reply-comment pairs, classify each pair with the local Stance_Rel RoBERTa model, and divide the number predicted as disagreement by the number of valid scored pairs. | Higher values indicate more explicit disagreement between replies and their parents. |
+| **Mean story probability** (`mean_story_probability`) | Apply `mariaantoniak/storyseeker` to every eligible comment and average the predicted probability that a comment contains a personal story. | Higher values indicate more personal experiences or narrative expression. |
+| **Emotion entropy** (`emotion_entropy`) | Use `SamLowe/roberta-base-go_emotions` to assign one dominant emotion to each eligible comment, form the empirical label distribution \(p_e\), and compute \(H=-\sum_e p_e\log p_e\). | Higher values indicate a wider range of dominant emotions within the thread. |
+
+#### 3.2.3 Tone
+
+| Metric | Measurement and calculation | Interpretation |
+|---|---|---|
 | **Impolite rate** (`impolite_rate`) | Classify every comment with `Intel/polite-guard` and compute `impolite_count / comment_count`. | Measures the share of comments classified as impolite. |
 | **Neutral rate** (`neutral_rate`) | Compute `neutral_count / comment_count` from the politeness classifier. | Measures the share of comments classified as neutral in interaction tone. |
 | **Polite rate** (`polite_rate`) | Compute `polite_count / comment_count` from the politeness classifier. | Measures the share of comments classified as polite. |
 
 `somewhat_polite_rate` may still be emitted by the classifier, but it is an
-auxiliary diagnostic rather than one of the four core Behavior metrics.
+auxiliary diagnostic rather than one of the three core Tone metrics. It stays
+in the denominator, so the three reported rates do not have to sum to one.
 
-#### 3.2.4 Expression
+#### 3.2.4 Interaction
 
 | Metric | Measurement and calculation | Interpretation |
 |---|---|---|
-| **Mean story probability** (`mean_story_probability`) | Apply `mariaantoniak/storyseeker` to every comment and average the predicted probability that a comment contains a personal story. | Higher values indicate a stronger presence of personal experiences or narrative expression. |
-| **Emotion entropy** (`emotion_entropy`) | Use `SamLowe/roberta-base-go_emotions` to assign dominant emotion labels, form the empirical label distribution \(p_e\), and compute Shannon entropy \(H=-\sum_e p_e\log p_e\). | Higher values indicate greater emotional diversity within the thread. |
+| **Average depth** (`avg_depth`) | Construct the parent–reply structure, assign depth 1 to top-level comments, and average comment depth within the thread. | Higher values indicate deeper reply chains. |
+| **Hard disagree rate** (`hard_disagree_rate`) | Extract valid parent–reply pairs, classify each pair with the local Stance_Rel RoBERTa model, and divide predicted disagreements by valid scored pairs. | Higher values indicate more direct disagreement between replies and their parents. |
+| **Structural virality** (`structural_virality`) | Treat parent–reply links as an undirected graph and average shortest-path distance over reachable unordered comment pairs. The root post is not a graph node in the current implementation. | Higher values indicate longer and more distributed reply paths. |
 
-Metrics requiring at least two comments, including Soft BLEU, Soft
-BERTScore, and semantic cosine, return a documented neutral or empty value for
-threads with insufficient pairs. Coverage counts must therefore be reported
-alongside metric values.
+#### 3.2.5 Form
+
+This family measures how comment length varies within a thread.
+
+| Metric | Measurement and calculation | Interpretation |
+|---|---|---|
+| **Length CV** (`length_cv`) | Count whitespace-delimited tokens in each eligible comment and divide the population standard deviation by the mean: \(CV=\sigma_L/\bar{L}\). | Higher values indicate more variation between short and long comments, relative to the thread's average comment length. |
+
+Metrics have different eligibility rules. Pairwise Uniformity metrics need at
+least two eligible comments, while hard disagreement needs at least one valid
+parent–reply pair. Coverage counts must therefore be reported with the metric
+values.
 
 ### 3.3 Metric output contract
 
@@ -427,7 +430,45 @@ as negligible (`< 0.147`), small (`< 0.33`), medium (`< 0.474`), or large
 (`>= 0.474`). These labels are interpretation aids, not thresholds implemented
 by the current evaluator.
 
-### 4.3 Multiple comparisons and cross-domain reporting
+### 4.3 Repeated real-vs.-real sanity check
+
+The sanity check uses the same 12 thread-level metric scores as the main
+evaluation. For each domain, it draws two independent bootstrap samples of
+150 threads from the fixed 150-thread real reference and compares them with
+the Mann–Whitney U and KS tests. This is repeated 200 times with recorded
+random seeds. The two samples are drawn with replacement, so the same source
+thread may appear more than once in a sample or in both samples.
+
+The check reports the percentage of repetitions with \(p\geq 0.05\), together
+with Wasserstein distance and absolute Cliff's delta. A pass means that the
+test did not detect a difference in that repetition. It does not prove that
+the samples are identical. The 95th percentiles of the real-vs.-real distance
+and effect-size distributions provide empirical reference limits for later
+generated-vs.-real comparisons.
+
+Using all 12 domains and 200 repeats per domain, the check produces 28,800
+domain-metric comparisons. The Mann--Whitney U pass rate is 95.10%, the KS
+pass rate is 96.97%, and both tests pass in 94.34% of comparisons. Across
+domains, the Mann--Whitney U pass rate ranges from 93.17% to 96.17%, while the
+KS pass rate ranges from 95.75% to 98.42%. These are calibration results under
+the bootstrap null, not evidence that any generated system matches Reddit.
+
+Each bootstrap group contains 150 sampled threads. A metric can have fewer
+than 150 valid values after sampling when some source threads do not meet that
+metric's eligibility rule. In particular, `hard_disagree_rate` requires at
+least one valid parent--reply pair.
+
+The reproducible command is:
+
+```bash
+./experiments/reddit_multidomain_baselines/run_real_sanity_check.sh \
+  --device auto --sample-size 150 --repeats 200
+```
+
+Metric inference is cached. To rerun only the statistical resampling without
+loading metric models, add `--skip-scoring`.
+
+### 4.4 Multiple comparisons and cross-domain reporting
 
 The current evaluator writes raw KS and Mann–Whitney p-values. Because the
 benchmark compares many metrics, models, baselines, and domains, publication
@@ -446,7 +487,7 @@ Missing metrics and zero-comment threads must be reported as coverage, not
 silently dropped. A system should not appear stronger merely because difficult
 or empty threads failed to produce scores.
 
-### 4.4 Reproducibility and artifacts
+### 4.5 Reproducibility and artifacts
 
 Generation accounting records elapsed time, estimated API cost, request/token
 counts, generated runs, generated threads, and recursively counted comments.
@@ -468,7 +509,12 @@ artifacts/reddit_multidomain_baselines/
 │   └── evaluation_manifest.json
 └── summary/
     ├── generation_summary.csv
-    └── evaluation_summary.csv
+    ├── evaluation_summary.csv
+    └── real_vs_real_sanity/
+        ├── repeated_real_vs_real_detail.csv
+        ├── repeated_real_vs_real_metric_summary.csv
+        ├── repeated_real_vs_real_domain_summary.csv
+        └── repeated_real_vs_real_overall_summary.csv
 ```
 
 An exact scoped evaluation can be run as:

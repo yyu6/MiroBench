@@ -1,0 +1,2 @@
+domain_count,metric_count,repeats_per_domain,sample_size_per_group,sampling,comparison_count,mwu_p_ge_alpha_pct,ks_p_ge_alpha_pct,both_p_ge_alpha_pct,mean_abs_cliffs_delta
+12,12,200,150,bootstrap,28800,95.10416666666667,96.96875,94.34375,0.05102269301429978

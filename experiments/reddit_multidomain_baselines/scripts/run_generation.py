@@ -72,7 +72,16 @@ def parse_args() -> argparse.Namespace:
             "when present, otherwise the current interpreter."
         ),
     )
-    parser.add_argument("--synthpai-min-comments-per-post", type=int, default=1)
+    parser.add_argument(
+        "--synthpai-min-comments-per-post",
+        type=int,
+        default=0,
+        help=(
+            "Minimum comments required on every SynthPAI seed thread. The default "
+            "records naturally empty or provider-empty threads instead of aborting "
+            "the remaining domain."
+        ),
+    )
     parser.add_argument("--thread-retries", type=int, default=1)
     parser.add_argument("--run-retries", type=int, default=1)
     parser.add_argument("--retry-delay", type=float, default=60.0)

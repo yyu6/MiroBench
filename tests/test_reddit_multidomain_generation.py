@@ -95,6 +95,33 @@ def test_gemini_synthpai_removes_unsupported_frequency_penalty() -> None:
     assert 'self.config.args["reasoning_effort"] = "none"' in gemini_branch
 
 
+def test_deepseek_v4_flash_synthpai_disables_thinking() -> None:
+    source = SYNTHPAI_OVERRIDE.read_text(encoding="utf-8")
+    deepseek_branch = source.split(
+        'elif self.config.name.strip().lower() == "deepseek-v4-flash":', maxsplit=1
+    )[1].split('elif "gemini" in self.config.name.lower():', maxsplit=1)[0]
+
+    assert 'self.config.args["thinking"] = {"type": "disabled"}' in deepseek_branch
+    assert 'setdefault("max_tokens", 600)' in deepseek_branch
+
+
+def test_synthpai_zero_comment_threads_are_allowed_by_default() -> None:
+    generation = load_run_generation()
+    generator = load_synthpai_generator()
+
+    old_argv = sys.argv
+    try:
+        sys.argv = ["run_generation.py"]
+        generation_args = generation.parse_args()
+        sys.argv = ["run_synthpai_matched_seed_generator.py", "--output-root", "out"]
+        generator_args = generator.parse_args()
+    finally:
+        sys.argv = old_argv
+
+    assert generation_args.synthpai_min_comments_per_post == 0
+    assert generator_args.min_comments_per_post == 0
+
+
 def test_only_gemini_25_flash_job_env_disables_thinking(
     tmp_path: Path, monkeypatch: pytest.MonkeyPatch
 ) -> None:

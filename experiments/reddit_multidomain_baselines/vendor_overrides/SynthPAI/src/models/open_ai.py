@@ -80,6 +80,15 @@ class OpenAIGPT(BaseModel):
             # gpt-5-mini only supports temperature=1
             self.config.args.pop("temperature", None)
             self.config.args.pop("frequency_penalty", None)
+        elif self.config.name.strip().lower() == "deepseek-v4-flash":
+            # DeepSeek V4 enables thinking by default.  SynthPAI needs short
+            # comments and classifier labels, not long chains of thought.  With
+            # the old 600-token cap, thinking often consumed the entire output
+            # budget and left message.content empty.  openai-python 0.28 passes
+            # unknown keyword arguments through to the provider, so this is the
+            # top-level `thinking` object expected by DeepSeek's compatible API.
+            self.config.args["thinking"] = {"type": "disabled"}
+            self.config.args.setdefault("max_tokens", 600)
         elif "gemini" in self.config.name.lower():
             # Gemini supports frequencyPenalty in its native API, but its
             # OpenAI-compatible chat endpoint rejects frequency_penalty.

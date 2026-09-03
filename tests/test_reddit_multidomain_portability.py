@@ -7,6 +7,8 @@ import re
 import sys
 from pathlib import Path
 
+import numpy as np
+
 
 ROOT = Path(__file__).resolve().parents[1]
 EXPERIMENT = ROOT / "experiments" / "reddit_multidomain_baselines"
@@ -26,21 +28,18 @@ EXPECTED_DOMAINS = {
     "tv_series",
 }
 EXPECTED_CORE_METRICS = {
-    "length_std",
-    "length_cv",
-    "avg_depth",
-    "structural_virality",
-    "self_bleu_2",
-    "self_bleu_3",
     "self_bleu_4",
     "self_bertscore_mean_f1",
     "semantic_mean_cosine",
-    "hard_disagree_rate",
+    "mean_story_probability",
+    "emotion_entropy",
     "impolite_rate",
     "neutral_rate",
     "polite_rate",
-    "mean_story_probability",
-    "emotion_entropy",
+    "avg_depth",
+    "hard_disagree_rate",
+    "structural_virality",
+    "length_cv",
 }
 
 
@@ -90,13 +89,47 @@ def test_portable_references_do_not_expose_reddit_authors_or_local_paths() -> No
             assert author_pattern.fullmatch(str(author)), (path, author)
 
 
-def test_evaluation_core_metric_whitelist_matches_four_families() -> None:
+def test_evaluation_core_metric_whitelist_matches_five_families() -> None:
     sys.path.insert(0, str(EXPERIMENT / "scripts"))
     module = load_module(
         "reddit_multidomain_evaluate",
         EXPERIMENT / "scripts" / "evaluate.py",
     )
     assert module.CORE_METRICS == EXPECTED_CORE_METRICS
+
+
+def test_real_vs_real_sanity_uses_exact_12_metric_contract() -> None:
+    module = load_module(
+        "reddit_multidomain_real_sanity",
+        EXPERIMENT / "scripts" / "real_vs_real_sanity.py",
+    )
+    assert len(module.METRICS) == 12
+    assert set(module.METRICS) == EXPECTED_CORE_METRICS
+    assert [family for family, _ in module.METRIC_FAMILIES] == [
+        "Uniformity",
+        "Expression",
+        "Tone",
+        "Interaction",
+        "Form",
+    ]
+
+
+def test_real_vs_real_sanity_sampling_contracts() -> None:
+    module = load_module(
+        "reddit_multidomain_real_sanity_sampling",
+        EXPERIMENT / "scripts" / "real_vs_real_sanity.py",
+    )
+    left, right = module.sample_indices(
+        150, 150, "bootstrap", np.random.default_rng(7)
+    )
+    assert len(left) == len(right) == 150
+    assert len(set(left)) < 150 or len(set(right)) < 150
+
+    left, right = module.sample_indices(
+        300, 150, "disjoint", np.random.default_rng(7)
+    )
+    assert len(left) == len(right) == 150
+    assert not (set(left) & set(right))
 
 
 def test_evaluation_summary_keeps_matched_pair_and_two_sample_rows(tmp_path: Path) -> None:
@@ -148,6 +181,34 @@ def test_evaluation_summary_normalizes_legacy_blank_two_sample_rows(tmp_path: Pa
     assert len(merged) == 1
     assert merged[0]["test"] == "two_sample"
     assert merged[0]["real_mean"] == 2.0
+
+
+def test_evaluation_summary_drops_retired_diagnostic_metrics(tmp_path: Path) -> None:
+    sys.path.insert(0, str(EXPERIMENT / "scripts"))
+    module = load_module(
+        "reddit_multidomain_evaluate_retired_metrics",
+        EXPERIMENT / "scripts" / "evaluate.py",
+    )
+    path = tmp_path / "evaluation_summary.csv"
+    base = {
+        "baseline": "oasis",
+        "model": "gpt-4o-mini",
+        "domain": "camera",
+        "test": "two_sample",
+    }
+    module.write_csv(
+        path,
+        [
+            {**base, "metric": "avg_depth", "real_mean": 1.2},
+            {**base, "metric": "length_std", "real_mean": 9.9},
+        ],
+    )
+    kept, merged = module.merge_evaluation_summary(
+        path,
+        [{**base, "metric": "self_bleu_4", "real_mean": 0.1}],
+    )
+    assert kept == 1
+    assert {row["metric"] for row in merged} == {"avg_depth", "self_bleu_4"}
 
 
 def collect_values(value, key: str):

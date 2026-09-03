@@ -1,0 +1,68 @@
+{
+  "protocol": "repeated_real_vs_real",
+  "domains": [
+    "camera",
+    "celebrity",
+    "cellphone",
+    "credit_cards",
+    "game",
+    "headphones",
+    "health_issue",
+    "laptop",
+    "movies",
+    "news",
+    "sports",
+    "tv_series"
+  ],
+  "families": {
+    "Uniformity": [
+      "self_bleu_4",
+      "self_bertscore_mean_f1",
+      "semantic_mean_cosine"
+    ],
+    "Expression": [
+      "mean_story_probability",
+      "emotion_entropy"
+    ],
+    "Tone": [
+      "polite_rate",
+      "neutral_rate",
+      "impolite_rate"
+    ],
+    "Interaction": [
+      "avg_depth",
+      "hard_disagree_rate",
+      "structural_virality"
+    ],
+    "Form": [
+      "length_cv"
+    ]
+  },
+  "metrics": [
+    "self_bleu_4",
+    "self_bertscore_mean_f1",
+    "semantic_mean_cosine",
+    "mean_story_probability",
+    "emotion_entropy",
+    "polite_rate",
+    "neutral_rate",
+    "impolite_rate",
+    "avg_depth",
+    "hard_disagree_rate",
+    "structural_virality",
+    "length_cv"
+  ],
+  "sample_size_per_group": 150,
+  "repeats_per_domain": 200,
+  "sampling": "bootstrap",
+  "sampling_note": "Two independent samples with replacement from each fixed real reference.",
+  "base_seed": 20260904,
+  "alpha": 0.05,
+  "pass_rule": "p >= alpha",
+  "detail_output": "The 28,800-row detail CSV is generated locally under the artifact run root.",
+  "published_outputs": [
+    "repeated_real_vs_real_metric_summary.csv",
+    "repeated_real_vs_real_domain_summary.csv",
+    "repeated_real_vs_real_overall_summary.csv"
+  ]
+}

@@ -1,0 +1,209 @@
+% Copy-ready revision of the MiroBench metrics and evaluation sections.
+% The benchmark-size sentence must match the released data. The current local
+% inventory has 8,684 crawled root posts and 57 source subreddits. It becomes
+% 8,400 only after the 700-post credit-card selection is materialized.
+
+\subsection{Benchmark Metrics}
+\label{sec:scores}
+
+MiroBench evaluates each discussion using 12 thread-level metrics organized
+into five families: Uniformity, Expression, Tone, Interaction, and Form.
+
+\textbf{Uniformity.}
+This family measures how strongly comments in the same thread repeat similar
+wording or meaning.
+\begin{itemize}
+    \item \texttt{self\_bleu\_4} averages symmetric pairwise BLEU-4 across
+    comments. Higher values indicate more repeated phrasing and lower lexical
+    diversity \citep{zhu2018texygen}.
+
+    \item \texttt{self\_bertscore\_mean\_f1} averages pairwise BERTScore F1
+    across comments. Higher values indicate stronger contextual similarity
+    even when the wording differs \citep{zhang2019bertscore,zhang2024improving}.
+
+    \item \texttt{semantic\_mean\_cosine} embeds comments with
+    \texttt{sentence-transformers/all-mpnet-base-v2} and averages pairwise
+    cosine similarity. Higher values indicate that comments discuss a narrower
+    range of meanings \citep{reimers2019sentence,song2020mpnet}.
+\end{itemize}
+
+\textbf{Expression.}
+This family measures personal storytelling and the range of emotions expressed
+within a thread.
+\begin{itemize}
+    \item \texttt{mean\_story\_probability} applies StorySeeker to each
+    eligible comment and averages its probability of containing a personal
+    story. Higher values indicate more first-person narratives
+    \citep{antoniak2024people}.
+
+    \item \texttt{emotion\_entropy} assigns each eligible comment its dominant
+    emotion using \texttt{SamLowe/roberta-base-go\_emotions} and computes
+    Shannon entropy over the label distribution. Higher values indicate a
+    wider range of emotions.
+\end{itemize}
+
+\textbf{Tone.}
+This family measures the interpersonal tone of comments.
+\begin{itemize}
+    \item \texttt{polite\_rate}, \texttt{neutral\_rate}, and
+    \texttt{impolite\_rate} are the proportions of eligible comments assigned
+    to the corresponding labels by \texttt{Intel/polite-guard}. The classifier
+    may also assign \texttt{somewhat\_polite}; therefore, the three reported
+    rates do not have to sum to one.
+\end{itemize}
+
+\textbf{Interaction.}
+This family measures reply depth, disagreement, and the shape of the reply
+network.
+\begin{itemize}
+    \item \texttt{avg\_depth} is the mean comment depth in the reply tree,
+    where top-level comments have depth 1. Higher values indicate deeper reply
+    chains.
+
+    \item \texttt{hard\_disagree\_rate} is the proportion of valid
+    parent--reply pairs classified as disagreement. It measures opposing stance
+    rather than surface politeness.
+
+    \item \texttt{structural\_virality} treats parent--reply links between
+    comments as an undirected graph and averages shortest-path distance over
+    reachable unordered comment pairs. Higher values indicate longer and more
+    distributed reply paths \citep{goel2016structural}.
+\end{itemize}
+
+\textbf{Form.}
+This family measures variation in comment length within a thread.
+\begin{itemize}
+    \item \texttt{length\_cv} is the coefficient of variation of comment
+    length. Higher values indicate more variation between short and long
+    comments relative to the thread's average comment length.
+\end{itemize}
+
+\subsection{Evaluation Protocol and Metric Formulas}
+\label{sec:eval_process}
+
+Let $t=(c_1,\ldots,c_{n_t})$ be a thread with $n_t$ eligible comments. Let
+$\mathcal{P}(t)=\{(i,j):1\leq i<j\leq n_t\}$ be its unordered comment pairs,
+and let $M_t=|\mathcal{P}(t)|$. For comment $c_i$, let $e_i$ be its sentence
+embedding, $\ell_i$ its token length, $d_i$ its reply depth, and $s_i$ its
+StorySeeker probability. Let $y_i$ be its dominant emotion and let $p_{t,e}$
+be the proportion of comments assigned emotion $e$. Let $z_{i,k}$ indicate
+whether comment $i$ receives tone label $k$. Finally, let $\mathcal{E}(t)$ be
+the set of valid parent--reply pairs and let $a_{ij}$ indicate whether pair
+$(i,j)$ is classified as disagreement.
+
+\begin{table}[H]
+\centering
+\scriptsize
+\setlength{\tabcolsep}{2.6pt}
+\renewcommand{\arraystretch}{1.08}
+\caption{Thread-level formulas for the 12 core metrics in MiroBench.}
+\label{tab:metric_formula_table}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{>{\raggedright\arraybackslash}p{2.2cm}
+                  >{\raggedright\arraybackslash}p{3.35cm}
+                  >{\raggedright\arraybackslash}p{8.9cm}}
+\toprule
+Family & Metric & Formula \\
+\midrule
+\multirow[t]{3}{2.2cm}{Uniformity}
+& \texttt{self\_bleu\_4}
+& $\displaystyle \frac{1}{M_t}\sum_{(i,j)\in\mathcal{P}(t)}
+   \frac{\mathrm{BLEU}_4(c_i,c_j)+\mathrm{BLEU}_4(c_j,c_i)}{2}$ \\
+& \texttt{self\_bertscore\_mean\_f1}
+& $\displaystyle \frac{1}{M_t}\sum_{(i,j)\in\mathcal{P}(t)}
+   \mathrm{BERTScore}_{F1}(c_i,c_j)$ \\
+& \texttt{semantic\_mean\_cosine}
+& $\displaystyle \frac{1}{M_t}\sum_{(i,j)\in\mathcal{P}(t)}
+   \cos(e_i,e_j)$ \\
+\midrule
+\multirow[t]{2}{2.2cm}{Expression}
+& \texttt{mean\_story\_probability}
+& $\displaystyle \frac{1}{n_t}\sum_{i=1}^{n_t}s_i$ \\
+& \texttt{emotion\_entropy}
+& $\displaystyle -\sum_{e:p_{t,e}>0}p_{t,e}\log p_{t,e}$ \\
+\midrule
+\multirow[t]{3}{2.2cm}{Tone}
+& \texttt{polite\_rate}
+& $\displaystyle \frac{1}{n_t}\sum_{i=1}^{n_t}z_{i,\mathrm{polite}}$ \\
+& \texttt{neutral\_rate}
+& $\displaystyle \frac{1}{n_t}\sum_{i=1}^{n_t}z_{i,\mathrm{neutral}}$ \\
+& \texttt{impolite\_rate}
+& $\displaystyle \frac{1}{n_t}\sum_{i=1}^{n_t}z_{i,\mathrm{impolite}}$ \\
+\midrule
+\multirow[t]{3}{2.2cm}{Interaction}
+& \texttt{avg\_depth}
+& $\displaystyle \frac{1}{n_t}\sum_{i=1}^{n_t}d_i$ \\
+& \texttt{hard\_disagree\_rate}
+& $\displaystyle \frac{1}{|\mathcal{E}(t)|}
+   \sum_{(i,j)\in\mathcal{E}(t)}a_{ij}$ \\
+& \texttt{structural\_virality}
+& $\displaystyle \frac{1}{|\mathcal{Q}(t)|}
+   \sum_{(i,j)\in\mathcal{Q}(t)}\operatorname{dist}_{G_t}(i,j)$ \\
+\midrule
+Form
+& \texttt{length\_cv}
+& $\displaystyle
+   \frac{\sqrt{\frac{1}{n_t}\sum_{i=1}^{n_t}(\ell_i-\bar{\ell}_t)^2}}
+        {\bar{\ell}_t}$ \\
+\bottomrule
+\end{tabular}%
+}
+\end{table}
+
+Here, $G_t$ is the undirected comment reply graph and $\mathcal{Q}(t)$ is the
+set of reachable unordered comment pairs in that graph. The root post is not a
+node in the current structural-virality implementation. Metrics have different
+eligibility rules. Pairwise Uniformity metrics require at least two eligible
+comments, while \texttt{hard\_disagree\_rate} requires at least one valid
+parent--reply pair. We report metric coverage with every comparison.
+
+For metric $f$, the real and generated thread-score distributions for domain
+$d$, baseline $b$, and model $m$ are
+\[
+R_f^{(d)}=\{f(t):t\in\mathcal{T}_{\mathrm{real}}^{(d)}\},\qquad
+G_f^{(d,b,m)}=\{f(t):t\in\mathcal{T}_{\mathrm{gen}}^{(d,b,m)}\}.
+\]
+We compare these distributions using two-sided Mann--Whitney U and
+Kolmogorov--Smirnov tests. We also report the first Wasserstein distance and
+absolute Cliff's delta:
+\[
+\begin{aligned}
+W_1(R_f,G_f)
+&=\int_{-\infty}^{\infty}|F_{R_f}(x)-F_{G_f}(x)|\,dx,\\
+|\delta_{\mathrm{Cliff}}(R_f,G_f)|
+&=\left|\frac{1}{|R_f||G_f|}
+\sum_{r\in R_f}\sum_{g\in G_f}\operatorname{sgn}(g-r)\right|.
+\end{aligned}
+\]
+
+We use $\alpha=0.05$. A value of $p\geq0.05$ means that the test does not
+detect a difference at this threshold; it does not prove that the two
+distributions are equal. Lower Wasserstein distance and lower absolute Cliff's
+delta indicate a smaller generated-vs.-real gap for every metric. Because
+Wasserstein distance uses each metric's original scale, it is compared only
+within the same metric. We report raw per-metric $p$-values and apply a declared
+multiple-testing correction when making aggregate significance claims.
+
+\subsection{Sanity Check: Repeated Real-vs.-Real Validation}
+\label{sec:real_real_sanity}
+
+We use repeated real-vs.-real comparisons to calibrate the evaluation. For
+each domain, we draw two independent bootstrap samples of 150 threads from the
+fixed 150-thread real reference. Sampling is with replacement, so a source
+thread may occur more than once within a sample or in both samples. We repeat
+this process 200 times for each of the 12 metrics and apply the same tests and
+distance measures used in the main evaluation.
+
+Across the 28,800 domain-metric comparisons, Mann--Whitney U $p$-values are at
+least 0.05 in 95.10\% of comparisons, and Kolmogorov--Smirnov $p$-values are at
+least 0.05 in 96.97\%. Both tests pass in 94.34\% of comparisons. Across the
+12 domains, the Mann--Whitney pass rate ranges from 93.17\% to 96.17\%, and the
+Kolmogorov--Smirnov pass rate ranges from 95.75\% to 98.42\%. These results
+show the expected false-positive behavior under the bootstrap null. They do
+not by themselves show that generated discussions match real Reddit data.
+
+We use the 95th percentile of each real-vs.-real Wasserstein and absolute
+Cliff's-delta distribution as an empirical reference limit for the same metric
+and domain. A generated-vs.-real value below this limit lies within the upper
+95\% of the observed real-vs.-real discrepancies. This comparison is a
+calibration aid, not a formal equivalence test.

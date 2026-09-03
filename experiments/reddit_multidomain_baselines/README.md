@@ -124,11 +124,11 @@ is explicitly required.
 
 ## Evaluate
 
-After generation, run the eight scorers that produce the four MiroBench metric
-families (Structure, Uniformity, Behavior, and Expression) for the real
+After generation, run the eight scorers that produce the five MiroBench metric
+families (Uniformity, Expression, Tone, Interaction, and Form) for the real
 reference and each successful generated job. The comparison is restricted to
-the declared core metrics and reports KS, Mann–Whitney U, Wasserstein distance,
-and Cliff's delta:
+the 12 declared core metrics and reports KS, Mann–Whitney U, Wasserstein
+distance, and Cliff's delta:
 
 ```bash
 ./experiments/reddit_multidomain_baselines/run_evaluate_all.sh --device auto
@@ -143,6 +143,27 @@ For a single domain/model/baseline:
 
 Use `--device auto` for a portable command. `mps` is Apple Silicon only;
 `cuda` requires a CUDA-enabled PyTorch installation.
+
+### Repeated real-vs.-real sanity check
+
+Run the same 12 metrics on the fixed real references, then compare two
+independent bootstrap samples of 150 real threads per domain over 200 repeats:
+
+```bash
+./experiments/reddit_multidomain_baselines/run_real_sanity_check.sh \
+  --device auto --sample-size 150 --repeats 200
+```
+
+Real thread scores are cached. Once all 12 real score CSVs exist, rerun only
+the statistical step with `--skip-scoring`. This check makes no LLM API calls.
+Compact 12-domain summary CSVs are also published under
+`experiments/reddit_multidomain_baselines/results/real_vs_real_sanity/` so they
+can be versioned with the paper; the full 28,800-row detail CSV remains under
+the ignored local artifact directory.
+
+For the current 12-domain run, MWU passes in 95.10% of comparisons, KS passes
+in 96.97%, and both pass in 94.34%. A pass means `p >= 0.05`; it is a failure
+to detect a difference, not proof that two distributions are identical.
 
 ## Outputs and accounting
 
@@ -165,6 +186,13 @@ request/token counts, estimated USD cost, generated run count, generated thread
 count, and recursively counted generated comments. Cost is recalculated from
 API response usage metadata. It is therefore an estimate and the provider
 invoice is authoritative.
+
+Both OASIS and SynthPAI preserve zero-comment seed threads by default, so one
+empty thread does not abort the rest of a domain. Use the corresponding
+`--*-min-comments-per-post 1` option only when a strict non-empty quality gate
+is intended. SynthPAI also disables thinking automatically for
+`deepseek-v4-flash` and `gemini-2.5-flash`; these baseline calls need short
+comments and labels rather than hidden reasoning tokens.
 
 `billable_output_tokens` is provider-aware. For Gemini 2.5 Flash it includes
 hidden thinking tokens inferred from `total_tokens - prompt_tokens`; for OpenAI

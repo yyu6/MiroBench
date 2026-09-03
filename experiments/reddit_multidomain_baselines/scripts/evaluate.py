@@ -33,29 +33,27 @@ METADATA_COLUMNS = {
     "_product_dir",
 }
 
-# The benchmark specification has four families.  Scorers may emit additional
-# diagnostics, but the statistical comparison is intentionally restricted to
-# these predeclared core outputs.
+# The benchmark specification has five families and exactly 12 core metrics.
+# Scorers may emit additional diagnostics, but the statistical comparison is
+# intentionally restricted to these predeclared outputs.
 CORE_METRICS = {
-    # Structure
-    "length_std",
-    "length_cv",
-    "avg_depth",
-    "structural_virality",
     # Uniformity
-    "self_bleu_2",
-    "self_bleu_3",
     "self_bleu_4",
     "self_bertscore_mean_f1",
     "semantic_mean_cosine",
-    # Behavior
-    "hard_disagree_rate",
-    "impolite_rate",
-    "neutral_rate",
-    "polite_rate",
     # Expression
     "mean_story_probability",
     "emotion_entropy",
+    # Tone
+    "impolite_rate",
+    "neutral_rate",
+    "polite_rate",
+    # Interaction
+    "avg_depth",
+    "hard_disagree_rate",
+    "structural_virality",
+    # Form
+    "length_cv",
 }
 
 SUMMARY_KEY = ("baseline", "model", "domain", "test", "metric")
@@ -164,6 +162,10 @@ def merge_evaluation_summary(
     if path.exists():
         with path.open(newline="", encoding="utf-8") as handle:
             existing = list(csv.DictReader(handle))
+    # Migrate summaries produced before the benchmark was fixed at 12 metrics.
+    # Otherwise the three retired diagnostic rows would survive every scoped
+    # evaluation simply because they are not present in the incoming key set.
+    existing = [row for row in existing if str(row.get("metric") or "") in CORE_METRICS]
     for row in [*existing, *rows]:
         row["test"] = str(row.get("test") or TWO_SAMPLE_TEST)
     incoming = {

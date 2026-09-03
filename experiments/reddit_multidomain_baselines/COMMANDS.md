@@ -48,6 +48,15 @@ column -s, -t < artifacts/reddit_multidomain_baselines/summary/generation_summar
 
 # 10. Check all evaluated metric rows.
 column -s, -t < artifacts/reddit_multidomain_baselines/summary/evaluation_summary.csv
+
+# 11. Score the fixed real references and run the 12-domain sanity check.
+# This makes no LLM API calls. Learned metric models run locally and are cached.
+./experiments/reddit_multidomain_baselines/run_real_sanity_check.sh \
+  --device auto --sample-size 150 --repeats 200
+
+# 12. Repeat only the statistical resampling after real scores already exist.
+./experiments/reddit_multidomain_baselines/run_real_sanity_check.sh \
+  --skip-scoring --sample-size 150 --repeats 200
 ```
 
 `run_domain.sh <domain>` and `run_evaluate_domain.sh <domain>` pin the job to
@@ -58,3 +67,19 @@ one domain. You may additionally supply `--models gpt-4o-mini` and
 OASIS records zero-comment seed threads instead of failing the remaining
 domain by default. Add `--oasis-min-comments-per-post 1` only for a strict
 non-empty-thread run.
+
+SynthPAI follows the same default. Add
+`--synthpai-min-comments-per-post 1` only when zero-comment threads should stop
+the run. For `deepseek-v4-flash` and `gemini-2.5-flash`, SynthPAI disables
+thinking automatically to avoid paying for reasoning that is not used in the
+exported discussion.
+
+The sanity check draws two independent bootstrap samples of 150 threads from
+each domain's fixed 150-thread real reference and repeats this 200 times. Its
+CSVs are written under
+`artifacts/reddit_multidomain_baselines/summary/real_vs_real_sanity/`; they do
+not replace `evaluation_summary.csv`.
+
+The committed summary from the current 12-domain, 200-repeat run contains
+28,800 comparisons: MWU pass rate 95.10%, KS pass rate 96.97%, and joint pass
+rate 94.34%.
