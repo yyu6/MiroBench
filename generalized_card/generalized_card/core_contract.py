@@ -207,7 +207,7 @@ CORE_FILES = {
     ),
     "generator_adapter": (
         "generalized_card/generalized_card/backend.py",
-        "62cb480e88aaa4921651dd077dd6833138d874bd7a3fdb0aeb587e540eccbd7b",
+        "0edfef3c48a3041b98d35f567206bccf2d26589549c39ba037e74312a850a124",
     ),
     "data_boundary": (
         "generalized_card/generalized_card/data.py",
@@ -241,7 +241,7 @@ CORE_FILES = {
     ),
     "generation_runner": (
         "generalized_card/scripts/run_generate.py",
-        "8904a8efd636d70756809e514022b7246c93a5bd5937d97114ced2338de9899e",
+        "d52e7a4dded20bf5b9fdf1a28d7474bb5353e66ba21dbcf29d8c4a05cd18ab03",
     ),
     "generation_backend_runner": (
         "generalized_card/scripts/run_generator_backend.py",
@@ -359,7 +359,7 @@ CORE_FILES = {
     ),
     "semantic_realization": (
         "generalized_card/generalized_card/semantic_realization.py",
-        "abca72adaa6d48ec14d48755ebe1300e3cd46656f1b549de27ccfa5d6ca1126a",
+        "a316d177284b5d45dba43ab5f55458cafdc1796b1efb43dd9b0003c8ac9820f8",
     ),
     "conversation_reference": (
         "generalized_card/generalized_card/conversation_reference.py",
@@ -483,7 +483,7 @@ CORE_FILES = {
     ),
     "domain_prompt_adapter": (
         "generalized_card/generalized_card/prompts.py",
-        "ca230d662804a1511d502b431b6db4f79a97d51969477279771999f83d4b85e5",
+        "64b85c6df4b25526ec06409a6b2ac151830ffc9e34e932378c5b4a084028130f",
     ),
     "reply_planning": (
         "generalized_card/generalized_card/reply_planning.py",
