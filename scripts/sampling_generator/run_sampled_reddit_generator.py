@@ -213,6 +213,21 @@ GENERATOR_NAME = "sampled_planner_gpt_writer_v54_constructive_polite_frame"
 # reproduces every release through v150; see
 # generalized_card/generalized_card/plan_vocabulary.py.
 GENERALIZED_PLAN_VOCABULARY = "closed"
+
+# Where to append each comment the moment it is written, or None to keep the
+# shipped behaviour of persisting only when a whole post is finished.
+#
+# `write_discussion_bundle` runs once per post, after every comment in it. A
+# 97-comment thread therefore holds 85 minutes of paid generation in memory and
+# writes nothing until the last one lands. Two runs were lost that way -- one
+# at 56 of 97, one with all 97 written and killed before the flush -- and both
+# produced a run directory containing logs and reproducibility snapshots but no
+# comments at all.
+#
+# This is a side-channel, not a replacement: the bundle is still written the
+# same way at the same time, so the artifact a completed run produces is
+# byte-identical. The jsonl exists so an interrupted run is recoverable.
+GENERALIZED_INCREMENTAL_RECORDS_PATH: Any = None
 CLAIM_FAMILIES = (
     "low_limit_amount",
     "approval_datapoint",
@@ -288,6 +303,10 @@ def main() -> None:
 
     for run_index in range(args.runs):
         run_dir = output_dir / f"run_{run_index:02d}_sampled_reddit"
+    global GENERALIZED_INCREMENTAL_RECORDS_PATH
+    if GENERALIZED_INCREMENTAL_RECORDS_PATH is None:
+        run_dir.mkdir(parents=True, exist_ok=True)
+        GENERALIZED_INCREMENTAL_RECORDS_PATH = run_dir / "records.partial.jsonl"
         discussion = load_or_init_discussion(
             run_dir=run_dir,
             run_index=run_index,
@@ -1326,6 +1345,29 @@ def finalize_rebalanced_task(task: CommentTask) -> CommentTask:
     )
 
 
+def _append_incremental_record(seed_index: int, record: dict[str, Any]) -> None:
+    """Append one finished comment to the crash-recovery log.
+
+    Failure here must never lose the comment that was just paid for, so every
+    error is swallowed: the in-memory record is already appended and the normal
+    bundle write is unaffected.
+    """
+
+    path = GENERALIZED_INCREMENTAL_RECORDS_PATH
+    if not path:
+        return
+    try:
+        with open(path, "a", encoding="utf-8") as handle:
+            handle.write(
+                json.dumps({"seed_index": int(seed_index), **record}, ensure_ascii=False)
+                + "\n"
+            )
+            handle.flush()
+            os.fsync(handle.fileno())
+    except Exception:  # noqa: BLE001
+        pass
+
+
 def generate_post_from_tasks(
     *,
     writer_client: Any,
@@ -1528,16 +1570,16 @@ def generate_post_from_tasks(
             parent_comment.setdefault("replies", []).append(comment)
         else:
             root_comments.append(comment)
-        records.append(
-            {
-                "task": task_to_dict(task),
-                "prompt": prompt,
-                "raw": raw,
-                "comment": comment,
-                "attempts": writer_result.get("attempts", []),
-                "backfilled_from": task_to_dict(original_task) if task != original_task else None,
-            }
-        )
+        record = {
+            "task": task_to_dict(task),
+            "prompt": prompt,
+            "raw": raw,
+            "comment": comment,
+            "attempts": writer_result.get("attempts", []),
+            "backfilled_from": task_to_dict(original_task) if task != original_task else None,
+        }
+        records.append(record)
+        _append_incremental_record(seed_index, record)
 
     post_id = f"sampled_run{run_index:02d}_post{post_slot:02d}_seed{seed_index:03d}"
     return {

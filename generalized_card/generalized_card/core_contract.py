@@ -155,7 +155,7 @@ CORE_FILES = {
     # pinned, so a change anywhere in the engine is still reviewed.
     "generator_generalized_v2": (
         "scripts/sampling_generator/run_sampled_reddit_generator.py",
-        "090f27213f8e8e05ac79cb878ce086e6d56e19976914854b56d58303f8ee03b1",
+        "555b9ce40e7ced8e97230796dc5d1f1fafc693d8be5758cc4b406c98c8c63380",
     ),
     "engine_vocabulary": (
         "scripts/sampling_generator/engine/vocabulary.py",
