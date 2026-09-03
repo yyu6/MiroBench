@@ -143,3 +143,38 @@ G97 说我们的同一作者对比不同作者高 5 倍。v156 上不成立：
 - `--plan-vocabulary open`：lens 涨 3.7 倍，计划语义散布只动 3%
 - `--offtopic-slots` / `--outsider-quota` 家族：本节
 - 同一作者重复自己：v156 上我们优于真人
+
+---
+
+# v159 (--writer-retries 3) — 机制成功，指标未过
+
+`semantic_overlap_high` 的检测器一直在工作但从不被执行：`--writer-retries`
+默认 0，而重试循环是它唯一的出口（帮助文本原话："it therefore does nothing
+unless --writer-retries is above 0"）。
+
+## 机制层面：确实修好了
+
+                        v157      v159
+最后仍不合格却留下      50.2%     18.7%
+重写救回来的             0.4%     25.8%
+semantic_overlap_high      50  →     29
+lexical_overlap_high        ?  →     13   <- 新出现
+
+## 指标层面：全部不显著
+
+配对 9 个 thread，没有一个指标 p<0.05：
+
+    semantic_mean_cosine   6/9 更好  p=0.164   <- 最接近
+    emotion_entropy        2/9       p=0.195   <- 最接近变差
+    其余 8 个              p>=0.25
+
+N=9 的 12 指标：11/12（semantic_mean_cosine FAIL，KS p=0.034）。
+
+## 结论
+
+**重写 4 次把内容推开了，但腔调叠加了 4 层。** 换了说什么，没换怎么说，
+所以 `emotion_entropy` 反而更集中（-19.5%）。
+
+不上线，但记录：**重试机制本身是通的且有力（救回 26%）**，问题在重写指令
+只针对语义，完全没管说话方式。若要再用，应配合逐指标的重写指令，
+而这正是 selfloop reviser 做的事。
