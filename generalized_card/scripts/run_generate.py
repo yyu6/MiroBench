@@ -37,6 +37,7 @@ from generalized_card.viewpoint_bank import set_reference_window  # noqa: E402
 from generalized_card.prompts import set_matched_text  # noqa: E402
 from generalized_card.branch_routing import set_branch_dictation  # noqa: E402
 from generalized_card.plan_vocabulary import set_plan_vocabulary  # noqa: E402
+from generalized_card.writer_plan_fields import set_writer_plan_fields  # noqa: E402
 from generalized_card.persona_bridge import (  # noqa: E402
     set_persona_draw,
     set_persona_projection,
@@ -376,6 +377,29 @@ def build_parser() -> argparse.ArgumentParser:
             "of this kind look like, and which statistics the thread is judged "
             "on. The schedule is still computed and recorded, so a free run can "
             "be diffed field by field against one that received it."
+        ),
+    )
+    parser.add_argument(
+        "--writer-plan-fields",
+        choices=["full", "angle_detail"],
+        default="full",
+        help=(
+            "`angle_detail` withholds `semantic_move`, `decision_boundary` and "
+            "`domain_intent` from the Writer, leaving `content_angle` and "
+            "`detail_focus`. Measured on v156's own stored Writer prompts, the "
+            "first three are finished sentences the Planner wrote and the "
+            "Planner writes similar ones for every slot of a thread: any subset "
+            "containing `semantic_move` or `domain_intent` prices at plan "
+            "cosine ~0.31, while `content_angle`+`detail_focus` reaches 0.2173. "
+            "With the run's own realization function (text = 0.384 x plan + "
+            "0.0665) that predicts 0.1500 against real's 0.1552, where the full "
+            "six predict 0.2070. The prediction is an EXTRAPOLATION: it was "
+            "fitted while the Writer could see everything, and a Writer with "
+            "less information invents the point from its own priors, which is "
+            "what the intercept measures. The intercept may rise and eat the "
+            "gain -- that is what the paid run tests. Guardrail: `self_bleu_4` "
+            "currently passes at d -0.02 and G181 measured it moving the other "
+            "way when comments are pushed apart."
         ),
     )
     parser.add_argument(
@@ -1238,6 +1262,7 @@ def main() -> None:
     set_matched_text(args.matched_text)
     set_branch_dictation(args.branch_dictation)
     set_plan_vocabulary(args.plan_vocabulary)
+    set_writer_plan_fields(args.writer_plan_fields)
     set_slot_grid(args.slot_grid)
     set_planner_distribution(args.planner_distribution)
     set_isolation_quota(args.isolation_quota)
@@ -1405,6 +1430,7 @@ def main() -> None:
         "matched_text": args.matched_text,
         "branch_dictation": args.branch_dictation,
         "plan_vocabulary": args.plan_vocabulary,
+        "writer_plan_fields": args.writer_plan_fields,
         "persona_projection": args.persona_projection,
         "persona_draw": args.persona_draw,
         "slot_grid": args.slot_grid,
@@ -1658,6 +1684,7 @@ def main() -> None:
     env["GENERALIZED_CARD_MATCHED_TEXT"] = args.matched_text
     env["GENERALIZED_CARD_BRANCH_DICTATION"] = args.branch_dictation
     env["GENERALIZED_CARD_PLAN_VOCABULARY"] = args.plan_vocabulary
+    env["GENERALIZED_CARD_WRITER_PLAN_FIELDS"] = args.writer_plan_fields
     env["GENERALIZED_CARD_SLOT_GRID"] = args.slot_grid
     env["GENERALIZED_CARD_PLANNER_DISTRIBUTION"] = args.planner_distribution
     env["GENERALIZED_CARD_REFERENCE_WINDOW"] = args.reference_window
@@ -2026,6 +2053,7 @@ RUN_EXPERIMENT_FIELDS = (
     "matched_text",
     "branch_dictation",
     "plan_vocabulary",
+    "writer_plan_fields",
     "persona_projection",
     "persona_draw",
     "slot_grid",

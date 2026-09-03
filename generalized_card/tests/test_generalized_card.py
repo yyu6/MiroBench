@@ -10612,3 +10612,100 @@ def test_length_ceiling_is_soft_so_an_exhausted_redraw_still_stores_the_slot():
     problem = f"{lf.CEILING_PREFIX}523w past the 300w ceiling"
     # Not hard -> the recovery-exhausted path stores the text instead of skipping.
     assert hard_realization_problems([problem]) == []
+
+
+class WriterPlanFieldsTest(unittest.TestCase):
+    """v157: withholding the Planner's own prose from the Writer.
+
+    The arm exists because three of the six meaning-bearing things the Writer
+    sees are finished sentences the Planner wrote, and one thread's sentences
+    resemble each other. Measured on v156's 364 stored Writer prompts, any
+    subset containing `semantic_move` or `domain_intent` prices at plan cosine
+    ~0.31 while `content_angle` + `detail_focus` reaches 0.2173 against the
+    0.2310 that the run's own realization function says real needs.
+    """
+
+    def test_full_is_the_default_and_hides_nothing(self) -> None:
+        from generalized_card import writer_plan_fields as wpf
+
+        self.assertEqual(wpf.WRITER_PLAN_FIELDS_MODE, "full")
+        self.assertFalse(wpf.active())
+        for field in ("semantic_move", "decision_boundary", "domain_intent",
+                      "content_angle", "detail_focus", "stance"):
+            self.assertFalse(wpf.hidden(field), field)
+
+    def test_angle_detail_hides_exactly_the_three_prose_fields(self) -> None:
+        from generalized_card import writer_plan_fields as wpf
+
+        try:
+            wpf.set_writer_plan_fields("angle_detail")
+            self.assertTrue(wpf.active())
+            for field in ("semantic_move", "decision_boundary", "domain_intent"):
+                self.assertTrue(wpf.hidden(field), field)
+            # The two dispersing fields, and every non-semantic control, stay:
+            # this arm must not become a general "tell the Writer less" change.
+            for field in ("content_angle", "detail_focus", "stance", "voice",
+                          "evidence_mode", "speaker_role", "reply_relation",
+                          "avoid_repeating", "opening_style", "reply_delta"):
+                self.assertFalse(wpf.hidden(field), field)
+        finally:
+            wpf.set_writer_plan_fields("full")
+
+    def test_substitute_names_the_detail_and_hands_back_the_point(self) -> None:
+        from generalized_card import writer_plan_fields as wpf
+
+        rows = wpf.substitute_route_lock("shirt as social statement")
+        self.assertIn("shirt as social statement", rows[0])
+        # The block has a header in three Writer templates, so it cannot be empty.
+        self.assertTrue(all(row.startswith("- ") for row in rows))
+        self.assertTrue(any("Decide for yourself" in row for row in rows))
+        # An empty detail must still leave an instruction rather than a bare header.
+        self.assertTrue(wpf.substitute_route_lock(""))
+
+    def test_unknown_mode_fails_at_configuration_time(self) -> None:
+        from generalized_card import writer_plan_fields as wpf
+
+        with self.assertRaises(ValueError):
+            wpf.set_writer_plan_fields("angle-detail")
+        self.assertEqual(wpf.WRITER_PLAN_FIELDS_MODE, "full")
+
+    def test_semantic_contract_path_honours_the_arm(self) -> None:
+        """The second Writer path must not leak a field the first one hides."""
+
+        from generalized_card import writer_plan_fields as wpf
+        from generalized_card.semantic_realization import semantic_contract_values
+
+        class _Task:
+            semantic_move = "Reject the shirt as a loud virtue signal."
+            detail_focus = "shirt as social statement"
+            domain_intent = "Push back on the gesture itself."
+            decision_boundary = ""
+            stance = "disagree"
+            reply_relation = ""
+            evidence_mode = "none_assertion"
+            owned_decision_subject = ""
+            forbidden_decision_subjects = ""
+            reply_delta = ""
+            reply_delta_type = ""
+            reply_novelty_anchor = ""
+            parent_semantic_move = ""
+            parent_decision_boundary = ""
+            branch_exclusion = ""
+            development_plan = ""
+            opening_style = ""
+            avoid_repeating = ""
+            comment_function = "verdict_evaluation"
+            payload_type = "rant"
+
+        labels = lambda: {label for label, _ in semantic_contract_values(_Task())}
+        self.assertIn("required contribution", labels())
+        self.assertIn("decision intent", labels())
+        try:
+            wpf.set_writer_plan_fields("angle_detail")
+            after = labels()
+            self.assertNotIn("required contribution", after)
+            self.assertNotIn("decision intent", after)
+            self.assertIn("local detail", after)
+            self.assertIn("stance", after)
+        finally:
+            wpf.set_writer_plan_fields("full")

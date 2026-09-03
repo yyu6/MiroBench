@@ -11,6 +11,8 @@ import re
 from typing import Any, Iterable
 
 
+from . import writer_plan_fields as _writer_plan_fields
+
 SEMANTIC_CONTRACT_FIELDS = (
     ("required contribution", "semantic_move"),
     ("local detail", "detail_focus"),
@@ -225,6 +227,10 @@ def semantic_contract_values(task: Any) -> list[tuple[str, str]]:
     rows: list[tuple[str, str]] = []
     for label, field in SEMANTIC_CONTRACT_FIELDS:
         if label in DECISION_BOUNDARY_FIELDS and not settles:
+            continue
+        # The same withholding as the two blocks in prompts.py: this is the
+        # other Writer path and must not leak the field back in.
+        if _writer_plan_fields.hidden(field):
             continue
         value = " ".join(str(getattr(task, field, "") or "").split())
         if field == "forbidden_decision_subjects":

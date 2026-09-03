@@ -26,6 +26,7 @@ from .actor_conditioning import (
 )
 from . import branch_routing as _branch_routing
 from . import plan_vocabulary as _plan_vocabulary
+from . import writer_plan_fields as _writer_plan_fields
 from .branch_routing import (
     set_branch_dictation,
     parent_slot_schedule,
@@ -714,6 +715,11 @@ def configure_generator_backend(
         or "closed"
     )
     _plan_vocabulary.set_plan_vocabulary(module.GENERALIZED_PLAN_VOCABULARY)
+    module.GENERALIZED_WRITER_PLAN_FIELDS = (
+        os.environ.get("GENERALIZED_CARD_WRITER_PLAN_FIELDS", "full").strip().lower()
+        or "full"
+    )
+    _writer_plan_fields.set_writer_plan_fields(module.GENERALIZED_WRITER_PLAN_FIELDS)
     module.GENERALIZED_PLANNER_DISTRIBUTION = (
         os.environ.get("GENERALIZED_CARD_PLANNER_DISTRIBUTION", "full").strip().lower()
         or "full"

@@ -270,6 +270,13 @@ CORE_FILES = {
         "generalized_card/generalized_card/plan_vocabulary.py",
         "8d5daa5f782b21bdb16fff681da7236ba8a6736eb7b796cabb85d5c0a9f60e86",
     ),
+    # Which plan fields the Writer is shown. Pinned because it gates three
+    # render sites across two modules, so a change to it changes every Writer
+    # prompt the pipeline emits.
+    "writer_plan_fields": (
+        "generalized_card/generalized_card/writer_plan_fields.py",
+        "cb4714f897d644afd9d87f88ae8ee0ba2b9b1dac10e3a1e5070256f79e85e6cf",
+    ),
     "planning_quality": (
         "generalized_card/generalized_card/planning_quality.py",
         "a11e6800f89ec23d2e2e61dd5fcbc9d6b7980ad772f5124299684658509cff45",
@@ -642,6 +649,7 @@ GENERATION_ADAPTER_CORE_NAMES = (
     "planner_contract",
     "plan_repair",
     "plan_vocabulary",
+    "writer_plan_fields",
     "generation_distribution",
     "planner_distribution",
     "branch_routing",

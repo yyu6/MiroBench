@@ -36,6 +36,7 @@ from .generation_distribution import (
 )
 from .length_policy import local_move_scope_guidance, soft_length_guidance
 from .opener_profile import OPENER_INSTRUCTIONS
+from . import writer_plan_fields as _writer_plan_fields
 from .evaluative_register import active_evaluative_guidance
 from .opening_move import active_opening_guidance, forbidden_opening_tokens
 from .branch_routing import BRANCH_DICTATION_MODE as _BDM  # noqa: F401
@@ -2400,6 +2401,8 @@ def _focused_slot_contract(
     rows: list[str] = []
     seen: set[str] = set()
     for label, field, humanize in fields:
+        if _writer_plan_fields.hidden(field):
+            continue
         value = _writer_safe_control_text(
             getattr(task, field, ""),
             domain_profile,
@@ -2837,7 +2840,16 @@ def _semantic_route_lock(
     # See `_route_lock_mode` for the measurement behind the two wordings. The
     # Planner hands over a finished sentence often enough that the verb in front
     # of it decides whether the Writer realizes it or transcribes it.
-    if _route_lock_mode(backend) == "say_only":
+    if _writer_plan_fields.hidden("semantic_move"):
+        # The arm's whole content: the Planner's finished sentence about what to
+        # argue is what glues one thread's slots together, so it is withheld and
+        # the point is handed back to the Writer.
+        rows = _writer_plan_fields.substitute_route_lock(
+            _writer_safe_control_text(
+                getattr(task, "detail_focus", ""), domain_profile
+            )
+        )
+    elif _route_lock_mode(backend) == "say_only":
         rows = [
             "- Say this, and only this: " + backend.compact(move, 260),
         ]
@@ -2846,7 +2858,11 @@ def _semantic_route_lock(
             "- The point this comment makes, in your own words: "
             + backend.compact(move, 260),
         ]
-    if boundary and turn_settles_a_question(task):
+    if (
+        boundary
+        and turn_settles_a_question(task)
+        and not _writer_plan_fields.hidden("decision_boundary")
+    ):
         rows.append(
             "- The question your turn settles: " + backend.compact(boundary, 240)
         )
