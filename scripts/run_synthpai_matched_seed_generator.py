@@ -294,14 +294,18 @@ def _generate_one_post(
     thread.root.guesses = []
     thread.comments.append(thread.root)
 
-    sampled = thread.choose_profiles(
-        checker_model,
-        profile_checker_prompt,
-        available_profiles,
-        root_text,
-        cfg.task_config.no_profiles,
+    sampled = _choose_profiles_safely(
+        thread=thread,
+        checker_model=checker_model,
+        profile_checker_prompt=profile_checker_prompt,
+        available_profiles=available_profiles,
+        root_text=root_text,
+        no_profiles=cfg.task_config.no_profiles,
+        seed_index=seed_index,
     )
-    sampled_profiles = {key: available_profiles[key] for key in sampled if key in available_profiles}
+    sampled_profiles = {
+        key: available_profiles[key] for key in sampled if key in available_profiles
+    }
     if not sampled_profiles:
         sampled_profiles = {
             key: available_profiles[key]
@@ -363,6 +367,47 @@ def _generate_one_post(
         run_id=run_id,
         feature=feature,
     )
+
+
+def _choose_profiles_safely(
+    *,
+    thread: Any,
+    checker_model: Any,
+    profile_checker_prompt: str,
+    available_profiles: dict[str, dict[str, Any]],
+    root_text: str,
+    no_profiles: int,
+    seed_index: int,
+) -> Any:
+    """Keep one provider refusal from aborting an entire SynthPAI domain.
+
+    Gemini may return a choice with no message when a profile-classification
+    prompt is filtered.  Returning an empty selection intentionally activates
+    the existing deterministic first-five-profile fallback in the caller.
+    Comment-generation failures remain isolated by the per-comment handler.
+    """
+
+    try:
+        return thread.choose_profiles(
+            checker_model,
+            profile_checker_prompt,
+            available_profiles,
+            root_text,
+            no_profiles,
+        )
+    except (KeyError, RuntimeError) as exc:
+        missing_legacy_message = isinstance(exc, KeyError) and exc.args == ("message",)
+        empty_provider_response = isinstance(exc, RuntimeError) and str(exc).startswith(
+            "Provider returned no "
+        )
+        if not (missing_legacy_message or empty_provider_response):
+            raise
+        print(
+            f"[synthpai-profile-fallback] seed={seed_index} "
+            f"error={type(exc).__name__}: {exc}",
+            flush=True,
+        )
+        return {}
 
 
 def _thread_to_geo_post(

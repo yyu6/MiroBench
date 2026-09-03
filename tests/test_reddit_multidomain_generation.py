@@ -35,6 +35,17 @@ def load_run_generation():
     return module
 
 
+def load_synthpai_generator():
+    spec = importlib.util.spec_from_file_location(
+        "matched_synthpai_generator",
+        ROOT / "scripts" / "run_synthpai_matched_seed_generator.py",
+    )
+    assert spec and spec.loader
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    return module
+
+
 def test_only_gemini_synthpai_forces_one_post_per_run() -> None:
     module = load_run_generation()
 
@@ -113,6 +124,50 @@ def test_only_gemini_25_flash_job_env_disables_thinking(
 
     assert gemini_env["LLM_REASONING_EFFORT"] == "none"
     assert "LLM_REASONING_EFFORT" not in flash_lite_env
+
+
+def test_profile_selection_failure_uses_empty_fallback(capsys) -> None:
+    module = load_synthpai_generator()
+
+    class RefusingThread:
+        def choose_profiles(self, *args, **kwargs):
+            raise RuntimeError(
+                "Provider returned no message content (finish_reason=content_filter)"
+            )
+
+    selected = module._choose_profiles_safely(
+        thread=RefusingThread(),
+        checker_model=object(),
+        profile_checker_prompt="checker",
+        available_profiles={"user_1": {}},
+        root_text="seed post",
+        no_profiles=1,
+        seed_index=21,
+    )
+
+    assert selected == {}
+    output = capsys.readouterr().out
+    assert "[synthpai-profile-fallback] seed=21" in output
+    assert "finish_reason=content_filter" in output
+
+
+def test_profile_selection_does_not_hide_unrelated_failure() -> None:
+    module = load_synthpai_generator()
+
+    class BrokenThread:
+        def choose_profiles(self, *args, **kwargs):
+            raise RuntimeError("database is unavailable")
+
+    with pytest.raises(RuntimeError, match="database is unavailable"):
+        module._choose_profiles_safely(
+            thread=BrokenThread(),
+            checker_model=object(),
+            profile_checker_prompt="checker",
+            available_profiles={"user_1": {}},
+            root_text="seed post",
+            no_profiles=1,
+            seed_index=21,
+        )
 
 
 def test_keyboard_interrupt_is_not_recorded_as_success(

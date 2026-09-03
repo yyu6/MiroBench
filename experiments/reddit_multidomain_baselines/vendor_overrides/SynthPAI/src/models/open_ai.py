@@ -24,6 +24,47 @@ except Exception:  # pragma: no cover - tracking must never block SynthPAI.
         return
 
 
+def _response_content(response: Any) -> str:
+    """Extract chat text or report an empty/filtered provider response."""
+
+    choices = (
+        response.get("choices", [])
+        if hasattr(response, "get")
+        else getattr(response, "choices", [])
+    )
+    if not choices:
+        raise RuntimeError("Provider returned no choices")
+    choice = choices[0]
+    message = (
+        choice.get("message")
+        if hasattr(choice, "get")
+        else getattr(choice, "message", None)
+    )
+    content = None
+    if message is not None:
+        content = (
+            message.get("content")
+            if hasattr(message, "get")
+            else getattr(message, "content", None)
+        )
+    if content is None:
+        content = (
+            choice.get("text")
+            if hasattr(choice, "get")
+            else getattr(choice, "text", None)
+        )
+    if isinstance(content, str) and content.strip():
+        return content
+    finish_reason = (
+        choice.get("finish_reason")
+        if hasattr(choice, "get")
+        else getattr(choice, "finish_reason", None)
+    )
+    raise RuntimeError(
+        f"Provider returned no message content (finish_reason={finish_reason or 'unknown'})"
+    )
+
+
 class OpenAIGPT(BaseModel):
     def __init__(self, config: ModelConfig):
         super().__init__(config)
@@ -62,7 +103,7 @@ class OpenAIGPT(BaseModel):
                 model=self.config.name, messages=input, **self.config.args
             )
         record_openai_usage(response, model=self.config.name, component="synthpai_openai")
-        return response["choices"][0]["message"]["content"]
+        return _response_content(response)
 
     def _normalize_messages(self, messages: List[Dict[str, str]]) -> List[Dict[str, str]]:
         normalized: List[Dict[str, str]] = []
