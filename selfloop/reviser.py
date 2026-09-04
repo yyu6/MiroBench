@@ -80,7 +80,7 @@ def build_prompt(
     parent_block = target.parent_text[:400] if target.parent_text else "(this replies to the post itself)"
     anchor_block = ", ".join(anchors) if anchors else "(none — it states no specific fact)"
     feedback_block = f"\nA previous attempt on this comment was rejected: {feedback}\n" if feedback else ""
-    return f"""You are rewriting one comment from a {community} discussion thread.
+    return f"""You are rewriting one comment from a discussion thread on {community}.
 
 THE COMMENT TO REWRITE:
 {target.text}
