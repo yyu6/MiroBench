@@ -385,23 +385,8 @@ def plot_family_radars(
             handletextpad=0.35,
             )
 
-    fig.suptitle(
-        "Repeated Real-vs.-Real Distance Reference Across 12 Domains",
-        fontsize=17,
-        fontweight="semibold",
-        y=0.985,
-    )
-    fig.text(
-        0.5,
-        0.012,
-        "Each axis is the unweighted mean across metrics in that family. Lower is better. "
-        "Raw Wasserstein values should be compared on the same family axis.",
-        ha="center",
-        fontsize=9,
-        color="#4F5661",
-    )
     fig.subplots_adjust(
-        left=0.035, right=0.985, top=0.91, bottom=0.075, hspace=0.54, wspace=0.30
+        left=0.035, right=0.985, top=0.96, bottom=0.055, hspace=0.52, wspace=0.30
     )
     for extension in ("png", "pdf"):
         fig.savefig(
