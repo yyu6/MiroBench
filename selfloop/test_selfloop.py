@@ -70,6 +70,16 @@ class JudgeTest(unittest.TestCase):
         # PASS -> FAIL is always a regression, even with |d| smaller
         self.assertEqual(1, len(J.regressions(before, {"a": mk(0.20, 0.01), "t": mk(0.6, 0.2)}, targets=["t"])))
 
+    def test_drift_inside_the_group_is_repairable(self) -> None:
+        """`regressions` exempts the targets, which is right for the accept rule
+        but left the subset search with nothing to drop threads for when a group
+        member drifted -- so the whole round was handed back instead of trimmed."""
+        mk = lambda d, p: J.MetricVerdict("m", 0, 0, p, p, d)
+        before = {"a": mk(0.50, 0.01), "b": mk(0.30, 0.02)}
+        after = {"a": mk(0.30, 0.01), "b": mk(0.45, 0.02)}
+        self.assertEqual([], J.regressions(before, after, targets=["a", "b"]))
+        self.assertEqual(1, len(J.group_drift(before, after, targets=["a", "b"])))
+
     def test_a_group_is_one_objective(self) -> None:
         """The whole point of a group: one round, three metrics, and a member
         that drifts the wrong way sinks the round even if the sum improves."""
@@ -389,9 +399,17 @@ class LocalScoreTest(unittest.TestCase):
             self.assertFalse(math.isnan(swapped), msg=f"{metric} candidate is NaN")
 
     def test_unrevisable_metrics_are_excluded_from_targets(self) -> None:
+        """Both are pairwise over the whole thread, so neither can be scored per
+        comment. self_bertscore is still fixed -- as a member of the similarity
+        group, carried by the two metrics that do have exact per-comment forms.
+        The stand-in it used to be optimized against got the direction of the
+        official metric right on 21 of 36 swaps, which is noise."""
         import controller as CTL
 
         self.assertNotIn("hard_disagree_rate", CTL.REVISABLE)
+        self.assertNotIn("self_bertscore_mean_f1", CTL.REVISABLE)
+        self.assertIn("self_bertscore_mean_f1", S.SIMILARITY)
+        self.assertFalse(hasattr(CTL, "bertscore_proxy"))
         for metric in CTL.REVISABLE:
             self.assertIn(metric, J.M12)
 

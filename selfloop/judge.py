@@ -146,6 +146,27 @@ def regressions(before: dict[str, MetricVerdict], after: dict[str, MetricVerdict
     return out
 
 
+def group_drift(before: dict[str, MetricVerdict], after: dict[str, MetricVerdict],
+                *, targets: Sequence[str], tolerance: float = D_TOLERANCE) -> list[str]:
+    """Members of the round's OWN group that moved away from zero.
+
+    `regressions` exempts the targets, which is right for the accept rule but
+    left the subset search blind: when a group member drifted it saw no damage
+    to repair, so it returned the whole round instead of dropping the threads
+    responsible for the drift. This gives it that handle.
+    """
+    out = []
+    for key in targets:
+        if key not in before or key not in after:
+            continue
+        old, new = before[key], after[key]
+        if old.passes and not new.passes:
+            out.append(f"{key}:PASS->FAIL")
+        elif abs(new.d) > abs(old.d) + tolerance:
+            out.append(f"{key}:|d| {abs(old.d):.2f}->{abs(new.d):.2f}")
+    return out
+
+
 def improved(before: dict[str, MetricVerdict], after: dict[str, MetricVerdict],
              *, targets: Sequence[str], min_gain: float = 0.0) -> bool:
     """Did the round move what it was spending on, without hurting the rest of

@@ -168,37 +168,6 @@ def thread_target(state: ThreadState, metric: str) -> float:
         return 0.0
 
 
-def bertscore_proxy(lexical: float, semantic: float) -> float:
-    """Stand-in for self_bertscore when ranking candidates.
-
-    One `bert_pair_f1` call scores n-1 pairs of deberta-xlarge and a round
-    evaluates over a hundred candidates; every attempt at that round was
-    SIGKILLed mid-loop. BERTScore is greedily aligned token similarity, and
-    lexical overlap plus embedding similarity rank the same comments: Spearman
-    +0.761 against the real per-comment ordering on a 42-comment thread
-    (2026-09-04).
-
-    It only RANKS. The round is still gated on the official self_bertscore
-    scorer, so a proxy that mis-ranks costs search quality and can never let a
-    regression through.
-    """
-    return 0.5 * lexical + 0.5 * semantic
-
-
-def local_target(state: ThreadState, metric: str) -> float:
-    """What a candidate should move this thread's local score toward.
-
-    Usually the matched real thread's own value. For `self_bertscore_mean_f1`
-    the local score is `bertscore_proxy`, which lives on a different scale, so
-    the target has to be that proxy evaluated on the real thread -- and both of
-    its inputs are already in the matched real row.
-    """
-    if metric != "self_bertscore_mean_f1":
-        return thread_target(state, metric)
-    return bertscore_proxy(thread_target(state, "self_bleu_4"),
-                           thread_target(state, "semantic_mean_cosine"))
-
-
 def _lexical(cache: C.ThreadCache, index: int, candidate: str | None) -> float:
     """Thread self-BLEU-4, with `index` optionally swapped for `candidate`."""
     if candidate is None:
@@ -218,7 +187,16 @@ def local_score(cache: C.ThreadCache, guard: C.GuardCache, metric: str,
     """The thread's target-metric value, with `index` optionally swapped.
 
     Everything routes through the two caches so a candidate costs a rank-one
-    update rather than a rescore. Returning NaN for an unhandled metric is not
+    update rather than a rescore. `self_bertscore_mean_f1` deliberately has no
+    entry: a cheap stand-in (0.5*self-BLEU + 0.5*cosine) predicts the direction
+    of the official metric's change at Spearman +0.279 (p=0.1) and gets the
+    sign right on 21 of 36 single-comment swaps -- 58%, which is noise, so
+    optimizing it spends the candidate budget on nothing. Lexical-plus-semantic
+    stays where it was actually validated, RANKING comments within a thread
+    (Spearman +0.761 against per-comment bert_pair_f1), and the metric itself
+    is carried by the round gate on the official scorer.
+
+    Returning NaN for an unhandled metric is not
     an option: `gain = base - abs(nan - want)` is NaN, `NaN <= 0` is False and
     `cost > best` is False, so the round silently applies nothing. That is
     exactly what round 5 did on `emotion_entropy` -- applied=0 with the API
@@ -228,9 +206,6 @@ def local_score(cache: C.ThreadCache, guard: C.GuardCache, metric: str,
         return _semantic(cache, index, candidate)
     if metric == "self_bleu_4":
         return _lexical(cache, index, candidate)
-    if metric == "self_bertscore_mean_f1":
-        return bertscore_proxy(_lexical(cache, index, candidate),
-                               _semantic(cache, index, candidate))
     values = guard.values(index, candidate) if candidate is not None else guard.values()
     if metric in values:
         return values[metric]
@@ -242,7 +217,14 @@ def local_score(cache: C.ThreadCache, guard: C.GuardCache, metric: str,
 # Metrics a round can actually optimise. `hard_disagree_rate` is excluded
 # because `local_score` cannot evaluate a candidate for it, and a target with
 # no local score applies nothing while still paying for the API calls.
-REVISABLE = tuple(m for m in S.STRATEGIES if m != "hard_disagree_rate")
+# `hard_disagree_rate` is pairwise over parent/child pairs and `self_bertscore`
+# is pairwise over the whole thread; neither has a per-comment form, so neither
+# can be a target on its own -- a target with no local score applies nothing
+# while still paying for the API calls. self_bertscore is still fixed, as a
+# member of the similarity group, whose objective is carried by the two metrics
+# that do have exact per-comment forms.
+REVISABLE = tuple(m for m in S.STRATEGIES
+                  if m not in ("hard_disagree_rate", "self_bertscore_mean_f1"))
 
 # Groups first, then whatever is left, worst |d| first. The similarity three
 # are what "indistinguishable text" means and they are fixed before anything
@@ -326,7 +308,12 @@ def choose_subset(states: list[ThreadState], before: dict[str, dict],
 
     for _ in range(len(changed) + 1):
         current = verdict_for(keep)
-        hurt = J.regressions(before_v, current, targets=metrics)
+        # Damage the search can repair by dropping threads: harm to any metric
+        # outside the group, and drift within it. The second half was missing,
+        # so a round where most threads moved correctly and a few pushed one
+        # group member the wrong way was handed back whole instead of trimmed.
+        hurt = (J.regressions(before_v, current, targets=metrics)
+                + J.group_drift(before_v, current, targets=metrics))
         gained = J.improved(before_v, current, targets=metrics)
         if not hurt:
             return (keep, [], gained) if gained else (set(), [], False)
@@ -338,7 +325,8 @@ def choose_subset(states: list[ThreadState], before: dict[str, dict],
         for tag in sorted(keep):
             trial = keep - {tag}
             trial_v = verdict_for(trial)
-            key = (len(J.regressions(before_v, trial_v, targets=metrics)),
+            key = (len(J.regressions(before_v, trial_v, targets=metrics))
+                   + len(J.group_drift(before_v, trial_v, targets=metrics)),
                    -sum(trial_v[m].quality() for m in metrics if m in trial_v))
             if best_key is None or key < best_key:
                 best_tag, best_key = tag, key
@@ -369,19 +357,17 @@ def run_round(states: list[ThreadState], *, api, model: str, target: str,
             guards[state.tag] = C.GuardCache(texts)
 
     proposal_targets: list[R.Target] = []
-    local_wants: dict[str, dict[str, float]] = {}
+    wants_by_tag: dict[str, dict[str, float]] = {}
     for state in states:
         cache = caches.get(state.tag)
         if cache is None:
             continue
         texts = state.thread.scored_texts
-        # Two want-dicts because they answer two questions. `real` is this
-        # thread's matched counterpart, which is what the model is shown and
-        # what the ranking aims at; `local` is what a candidate is scored
-        # against, and differs only for self_bertscore, whose local form is the
-        # cheap proxy and so needs the proxy's value on the real thread.
+        # This thread's matched real counterpart, one number per metric of the
+        # round. It is what the ranking aims at, what the model is shown, and
+        # what a candidate is scored against.
         real = {m: thread_target(state, m) for m in metrics}
-        local_wants[state.tag] = {m: local_target(state, m) for m in metrics}
+        wants_by_tag[state.tag] = real
         too_high = float(state.row.get(primary) or 0.0) > real[primary]
         order = SEL.rank(texts, target, too_high=too_high, cache=cache,
                          guard=guards[state.tag], wants=real)
@@ -416,7 +402,7 @@ def run_round(states: list[ThreadState], *, api, model: str, target: str,
         if not candidates or tag not in caches:
             continue
         state, cache, guard = by_tag[tag], caches[tag], guards[tag]
-        wants = local_wants[tag]
+        wants = wants_by_tag[tag]
         base_gap = composite_gap(cache, guard, metrics, wants, index)
         base_guard = guard_values(cache, guard)
         best, best_cost = None, 0.0
