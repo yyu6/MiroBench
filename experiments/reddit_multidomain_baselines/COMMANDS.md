@@ -83,3 +83,9 @@ not replace `evaluation_summary.csv`.
 The committed summary from the current 12-domain, 200-repeat run contains
 28,800 comparisons: MWU pass rate 95.10%, KS pass rate 96.97%, and joint pass
 rate 94.34%.
+
+```bash
+# 13. Recreate the paper heatmap and radar figures from the committed summary.
+./.venv_reddit_baselines/bin/python \
+  experiments/reddit_multidomain_baselines/scripts/plot_real_vs_real_sanity.py
+```

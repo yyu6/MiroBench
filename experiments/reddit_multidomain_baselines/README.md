@@ -165,6 +165,17 @@ For the current 12-domain run, MWU passes in 95.10% of comparisons, KS passes
 in 96.97%, and both pass in 94.34%. A pass means `p >= 0.05`; it is a failure
 to detect a difference, not proof that two distributions are identical.
 
+Regenerate the publication heatmap and family-level radar figure from the
+committed metric summary with:
+
+```bash
+./.venv_reddit_baselines/bin/python \
+  experiments/reddit_multidomain_baselines/scripts/plot_real_vs_real_sanity.py
+```
+
+The heatmap reads the per-domain/per-metric MWU and KS pass rates directly.
+The radar export also writes its exact family-level plotting values to CSV.
+
 ## Outputs and accounting
 
 Everything generated goes under `artifacts/reddit_multidomain_baselines/`:
