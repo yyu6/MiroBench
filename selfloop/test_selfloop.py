@@ -261,6 +261,51 @@ if __name__ == "__main__":
     unittest.main(verbosity=2)
 
 
+class StoredStateTest(unittest.TestCase):
+    """The per-comment values the loop needs are already on disk -- a thread's
+    polite_rate is the fraction of its comments the scorer labelled polite, so
+    the labels exist. Reading them must give exactly what recomputing gives, or
+    the ranking and the guard drift from the gate."""
+
+    def test_stored_state_equals_a_fresh_computation(self) -> None:
+        import candidate_scorer as C
+
+        texts = TH.load(SCORED).scored_texts
+        stored = C.stored_state(SCORED, texts)
+        self.assertIsNotNone(stored, "the scorers' own output should line up")
+        fresh = C.GuardCache(texts)
+        reused = C.GuardCache(texts, story=stored["story"], polite=stored["polite"],
+                              emotion=stored["emotion"])
+        a, b = fresh.values(), reused.values()
+        for key in a:
+            # 6 places, not 9: a transformer forward pass is not bit-reproducible
+            # across batchings. Measured on this thread, 3 of 9 comments come
+            # back identical and the rest differ by 1e-8 to 4e-7, while every
+            # LABEL matches. The stored numbers are the official scorer's own
+            # output, so reusing them agrees with the gate more closely than
+            # recomputing does, and 4e-7 sits nine orders below the 0.01 the
+            # round gate is decided on.
+            self.assertAlmostEqual(a[key], b[key], places=6, msg=key)
+        self.assertEqual(fresh.polite, reused.polite)
+        self.assertEqual(fresh.emotion, reused.emotion)
+
+        computed = C.ThreadCache(texts)
+        loaded = C.ThreadCache(texts, vectors=stored["vectors"])
+        self.assertAlmostEqual(C.semantic_mean_cosine(computed.vectors),
+                               C.semantic_mean_cosine(loaded.vectors), places=6)
+
+    def test_stored_state_refuses_text_it_does_not_describe(self) -> None:
+        """The scorer output is only reusable while it describes the text in the
+        directory. Silently trusting a stale file would feed the ranking and the
+        guard values for comments that no longer exist."""
+        import candidate_scorer as C
+
+        texts = list(TH.load(SCORED).scored_texts)
+        self.assertIsNotNone(C.stored_state(SCORED, texts))
+        texts[0] = "a completely different comment that was never scored here"
+        self.assertIsNone(C.stored_state(SCORED, texts))
+
+
 class ScorerMajorTest(unittest.TestCase):
     """Scoring a cohort one scorer at a time, freeing each model before the
     next, must give exactly the numbers scoring it one thread at a time gives.
@@ -552,6 +597,12 @@ class RoundSmokeTest(unittest.TestCase):
             self.assertEqual(before_disk[state.tag],
                              (state.work / "discussion.json").read_text(), msg=state.tag)
             self.assertEqual(before_rows[state.tag], state.row, msg=state.tag)
+            # and the score files must describe the restored text, or the next
+            # round cannot reuse them and pays three transformers to find out.
+            import candidate_scorer as C
+
+            self.assertIsNotNone(C.stored_state(state.work, state.thread.scored_texts),
+                                 msg=f"{state.tag}: scores left describing a discarded rewrite")
         self.assertTrue(feedback, "a rolled-back rewrite must be remembered")
 
 

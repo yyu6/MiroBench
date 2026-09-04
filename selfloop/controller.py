@@ -384,11 +384,22 @@ def run_round(states: list[ThreadState], *, api, model: str, target: str,
     # where the previous order paid for two of each.
     caches: dict[str, C.ThreadCache] = {}
     guards: dict[str, C.GuardCache] = {}
+    reused = 0
     for state in states:
         texts = state.thread.scored_texts
-        if len(texts) >= 4:
-            caches[state.tag] = C.ThreadCache(texts)
-            guards[state.tag] = C.GuardCache(texts)
+        if len(texts) < 4:
+            continue
+        stored = C.stored_state(state.work, texts)
+        reused += stored is not None
+        caches[state.tag] = C.ThreadCache(
+            texts, vectors=None if stored is None else stored["vectors"])
+        guards[state.tag] = C.GuardCache(
+            texts,
+            story=None if stored is None else stored["story"],
+            polite=None if stored is None else stored["polite"],
+            emotion=None if stored is None else stored["emotion"])
+    print(f"[selfloop] caches ready: {reused}/{len(caches)} read from the "
+          f"scorers' own per-comment output", flush=True)
 
     proposal_targets: list[R.Target] = []
     wants_by_tag: dict[str, dict[str, float]] = {}
@@ -479,6 +490,7 @@ def run_round(states: list[ThreadState], *, api, model: str, target: str,
     guards.clear()
     C.release_models()
     E.release()
+    scores_before = {s.tag: TH.snapshot_scores(s.work, TEXT_SENSITIVE) for s in changed}
     t1 = time.time()
     rescore_all(changed, only=TEXT_SENSITIVE, device=device)
     score_seconds = time.time() - t1
@@ -505,6 +517,7 @@ def run_round(states: list[ThreadState], *, api, model: str, target: str,
     for state in changed:
         if state.tag not in keep:
             TH.restore(state.thread, saved[state.tag])
+            TH.restore_scores(state.work, scores_before[state.tag])
             state.row = before[state.tag]
             dropped.append(state.tag)
     # Tell the next attempt on a rolled-back comment what was already tried, so

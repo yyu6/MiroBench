@@ -14,6 +14,7 @@ use, so the ranking is on the same scale as the gate.
 """
 from __future__ import annotations
 
+import json
 import sys
 from collections import Counter
 from pathlib import Path
@@ -120,6 +121,58 @@ def politeness_labels(texts: Sequence[str]) -> list[str]:
     return [str(row["pred_label"]) for row in rows]
 
 
+def stored_state(run_dir: Path, texts: Sequence[str]) -> dict[str, Any] | None:
+    """Per-comment values the official scorers already wrote for this thread.
+
+    A thread's `polite_rate` IS the fraction of its comments the scorer labelled
+    polite, so those labels have to exist -- and the pipeline persists them,
+    along with each comment's embedding, its story probability and its dominant
+    emotion, inside the run directory. Rebuilding them ran three transformers
+    and an embedder over the cohort's 4163 comments at the start of every round,
+    to arrive back at numbers already on disk.
+
+    Alignment is checked, never assumed: each file's stored rows must clean to
+    exactly `texts`, element for element. They will not after a rejected round
+    unless the caller also restored the score files, and returning None then is
+    the safe answer -- the caller recomputes. Verified on 2026-09-04: stored
+    embeddings are already normalized and agree with a fresh encode to 7.2e-07,
+    and the mean cosine they give equals the number the official scorer
+    reported.
+    """
+    from score_thread_semantic_uniformity import clean_text
+
+    want = list(texts)
+    files = {
+        "semantic_uniformity_results.json": ("embedding", "vectors"),
+        "politeness_results.json": ("pred_label", "polite"),
+        "storyseeker_results.json": ("story_probability", "story"),
+        "go_emotions_results.json": ("dominant_emotion", "emotion"),
+    }
+    out: dict[str, Any] = {}
+    for name, (field, key) in files.items():
+        path = Path(run_dir) / name
+        if not path.exists():
+            return None
+        try:
+            threads = json.loads(path.read_text()).get("threads") or []
+            rows = (threads[0] or {}).get("comments") or []
+        except (json.JSONDecodeError, IndexError, OSError):
+            return None
+        if [clean_text(str(r.get("text") or "")) for r in rows] != want:
+            return None
+        try:
+            out[key] = [r[field] for r in rows]
+        except KeyError:
+            return None
+    import numpy as np
+
+    out["vectors"] = np.asarray(out["vectors"], dtype="float32")
+    out["story"] = [float(v) for v in out["story"]]
+    out["polite"] = [str(v) for v in out["polite"]]
+    out["emotion"] = [str(v) for v in out["emotion"]]
+    return out
+
+
 # ---------------------------------------------------- incremental variants
 # Swapping one comment changes only the rows and pairs that touch it. Embedding
 # the whole thread per candidate cost 8s on a 96-comment thread, and a round
@@ -129,11 +182,11 @@ def politeness_labels(texts: Sequence[str]) -> list[str]:
 class ThreadCache:
     """Per-thread state that survives candidate evaluation."""
 
-    def __init__(self, texts: Sequence[str]) -> None:
+    def __init__(self, texts: Sequence[str], vectors: Any = None) -> None:
         import score_thread_self_bleu as sb
 
         self.texts = list(texts)
-        self.vectors = embed(self.texts)
+        self.vectors = embed(self.texts) if vectors is None else vectors
         self.tokens = [sb.tokenize(t) for t in self.texts]
         self._sb = sb
         n = len(self.texts)
@@ -241,11 +294,13 @@ class GuardCache:
     here would have been rejected at the gate.
     """
 
-    def __init__(self, texts: Sequence[str]) -> None:
+    def __init__(self, texts: Sequence[str], story: list[float] | None = None,
+                 polite: list[str] | None = None,
+                 emotion: list[str] | None = None) -> None:
         self.n = len(texts)
-        self.story = story_probability(texts)
-        self.polite = politeness_labels(texts)
-        self.emotion = dominant_emotions(texts)
+        self.story = story_probability(texts) if story is None else list(story)
+        self.polite = politeness_labels(texts) if polite is None else list(polite)
+        self.emotion = dominant_emotions(texts) if emotion is None else list(emotion)
         self.words = [len(t.split()) for t in texts]
 
     def _single(self, text: str) -> tuple[float, str, str]:

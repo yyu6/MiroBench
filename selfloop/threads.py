@@ -105,3 +105,26 @@ def restore(thread: Thread, texts: list[str]) -> None:
     for index, value in enumerate(texts):
         thread.set_text(index, value)
     save(thread)
+
+
+def snapshot_scores(run_dir: Path, names: tuple[str, ...]) -> dict[str, bytes]:
+    """The scorer outputs as they stand, so a rejected round can put them back.
+
+    `restore` puts the text back but the result JSONs would still describe the
+    rewrite that was thrown away -- a directory whose scores do not match its
+    own discussion.json. That is wrong on its own, and it also costs: the next
+    round checks those files against the text before reusing the per-comment
+    values they hold, so a stale one sends every rolled-back thread back through
+    three transformers.
+    """
+    out: dict[str, bytes] = {}
+    for name in (*names, "thread_metrics_summary.json", "thread_metrics_summary.csv"):
+        path = run_dir / name
+        if path.exists():
+            out[name] = path.read_bytes()
+    return out
+
+
+def restore_scores(run_dir: Path, saved: dict[str, bytes]) -> None:
+    for name, blob in saved.items():
+        (run_dir / name).write_bytes(blob)
