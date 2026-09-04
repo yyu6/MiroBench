@@ -321,75 +321,75 @@ def plot_family_radars(
         }
     )
     fig, axes = plt.subplots(
-        3,
         2,
-        figsize=(13.8, 15.4),
+        3,
+        figsize=(20.0, 11.4),
         subplot_kw={"projection": "polar"},
     )
     w1_raw_ticks = (0.01, 0.02, 0.05, 0.10, 0.15)
     w1_ticks = tuple(float(np.log10(value)) for value in w1_raw_ticks)
     cliff_ticks = (0.04, 0.05, 0.06)
 
-    for row, domains in enumerate(RADAR_GROUPS):
-        left, right = axes[row]
+    for column, domains in enumerate(RADAR_GROUPS):
+        top, bottom = axes[:, column]
         _style_radar(
-            left,
+            top,
             ticks=w1_ticks,
             tick_labels=tuple(f"{value:g}" for value in w1_raw_ticks),
             limits=(float(np.log10(0.009)), float(np.log10(0.16))),
         )
-        _plot_radar_lines(
-            left,
+        w1_handles = _plot_radar_lines(
+            top,
             family_table,
             domains,
             "mean_wasserstein_distance",
             log10=True,
         )
+        top.set_title(
+            "Raw family-mean Wasserstein distance",
+            fontsize=10,
+            fontweight="semibold",
+            pad=17,
+        )
 
         _style_radar(
-            right,
+            bottom,
             ticks=cliff_ticks,
             tick_labels=tuple(f"{value:.2f}" for value in cliff_ticks),
             limits=(0.034, 0.061),
         )
-        handles = _plot_radar_lines(
-            right,
+        cliff_handles = _plot_radar_lines(
+            bottom,
             family_table,
             domains,
             "mean_abs_cliffs_delta",
             log10=False,
         )
-        right.legend(
+        bottom.set_title(
+            "Raw family-mean |Cliff’s delta|",
+            fontsize=10,
+            fontweight="semibold",
+            pad=17,
+        )
+        for ax, handles in ((top, w1_handles), (bottom, cliff_handles)):
+            ax.legend(
             handles=handles,
             labels=[DOMAIN_LABELS[domain] for domain in domains],
-            loc="center left",
-            bbox_to_anchor=(1.17, 0.5),
+            loc="upper center",
+            bbox_to_anchor=(0.5, -0.15),
+            ncol=2,
             frameon=False,
-            fontsize=9,
+            fontsize=8,
             handlelength=1.5,
-        )
+            columnspacing=0.8,
+            handletextpad=0.35,
+            )
 
     fig.suptitle(
         "Repeated Real-vs.-Real Distance Reference Across 12 Domains",
         fontsize=17,
         fontweight="semibold",
         y=0.985,
-    )
-    fig.text(
-        0.27,
-        0.935,
-        "Raw family-mean Wasserstein distance",
-        ha="center",
-        fontsize=12,
-        fontweight="semibold",
-    )
-    fig.text(
-        0.67,
-        0.935,
-        "Raw family-mean |Cliff’s delta|",
-        ha="center",
-        fontsize=12,
-        fontweight="semibold",
     )
     fig.text(
         0.5,
@@ -400,7 +400,9 @@ def plot_family_radars(
         fontsize=9,
         color="#4F5661",
     )
-    fig.subplots_adjust(left=0.05, right=0.84, top=0.89, bottom=0.045, hspace=0.27, wspace=0.34)
+    fig.subplots_adjust(
+        left=0.035, right=0.985, top=0.91, bottom=0.075, hspace=0.54, wspace=0.30
+    )
     for extension in ("png", "pdf"):
         fig.savefig(
             output_dir / f"repeated_real_vs_real_family_radars_12_domains.{extension}",
