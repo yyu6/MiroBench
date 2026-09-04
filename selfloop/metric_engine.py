@@ -16,19 +16,21 @@ so the second call reuses the loaded model.  A reimplementation that drifted
 from the official scorer by 0.001 would silently invalidate every gate decision
 this engine is used for; wrapping cannot drift.
 
-Two further savings, both exact rather than approximate:
-  * per-comment classifier outputs are cached by sha256 of the comment text, so
-    a revision round only pays for the comments it actually rewrote;
-  * a thread is rescored only when its text changed.
+One further saving, exact rather than approximate: a thread is rescored only
+when its text changed, and only with the scorers whose output can move. The
+caller decides that; see `controller.TEXT_SENSITIVE`.
+
+Per-comment caching does exist, but not here -- the official scorers' `main()`
+reads a whole directory, and intercepting it per comment would mean
+reimplementing their loops. `candidate_scorer.GuardCache` does it for candidate
+evaluation instead, where nothing official is being reproduced.
 """
 from __future__ import annotations
 
-import hashlib
 import io
 import json
 import os
 import sys
-import time
 
 # Set BEFORE torch/transformers are imported anywhere in this process.
 # The loop holds ~8 GB of models resident; a fork at that size briefly doubles
@@ -41,7 +43,7 @@ os.environ.setdefault("OMP_NUM_THREADS", "4")
 os.environ.setdefault("MKL_NUM_THREADS", "4")
 from contextlib import redirect_stdout
 from pathlib import Path
-from typing import Any, Callable
+from typing import Any
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
 EVAL_DIR = REPO_ROOT / "scripts" / "evaluation"
@@ -126,15 +128,12 @@ def _load_module(name: str, loader_attr: str) -> Any:
 
     module = importlib.import_module(name)
     _limit_torch_threads()
+    # An empty `loader_attr` means the scorer loads no model at all -- self_bleu
+    # and thread_structure are pure Python. An earlier fallback searched three
+    # speculative class names here; none of them exists on any module in
+    # SCORERS, so it never ran.
     if loader_attr:
         _wrap_loader(module, loader_attr)
-    else:
-        # These build their model inside a method rather than at a module-level
-        # symbol, so cache the object that owns it instead.
-        for attribute in ("SemanticUniformityScorer", "ThreadEmbedder", "Scorer"):
-            if hasattr(module, attribute):
-                _wrap_loader(module, attribute)
-                break
     _MODULES[name] = module
     return module
 
@@ -215,11 +214,6 @@ def summarize(run_dir: Path) -> dict[str, float]:
         if str(row.get("thread_id")) != "__summary_mean__":
             return row
     return rows[0] if rows else {}
-
-
-def comment_digest(texts: list[str]) -> str:
-    payload = "\n\x00\n".join(texts).encode("utf-8")
-    return hashlib.sha256(payload).hexdigest()[:16]
 
 
 def loaded_models() -> int:

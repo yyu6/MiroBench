@@ -89,34 +89,52 @@ class ThreadState:
 
 
 def stage(tags: list[str], out: Path, *, force: bool) -> list[ThreadState]:
-    """Copy each run's cleaned artifact into the loop's own workspace."""
+    """Copy every scored thread of every run into the loop's own workspace.
+
+    A run directory is not one thread. Cohorts generated with `--shard-size 3`
+    hold `run_00_sampled_reddit` .. `run_03_sampled_reddit`, one thread each,
+    and the matched CSVs carry one row per run in the same order -- which is why
+    48 tags evaluate as 106 threads. Reading only `run_00` revised a quarter of
+    the cohort while the gate scored all of it; `_source_sim_dir` in the
+    generated CSV names each row's directory, so the mapping is read rather
+    than assumed.
+    """
     import csv
 
-    states = []
+    states: list[ThreadState] = []
     for tag in tags:
-        src = RUNS / tag / "cleaned/run_00_sampled_reddit"
-        if not src.exists():
-            print(f"[skip] {tag}: no cleaned artifact", flush=True)
-            continue
-        real_csv = RUNS / tag / "matched_evaluation/matched_real_thread_scores.csv"
-        if not real_csv.exists():
+        matched = RUNS / tag / "matched_evaluation"
+        gen_csv = matched / "matched_generated_thread_scores.csv"
+        real_csv = matched / "matched_real_thread_scores.csv"
+        if not (gen_csv.exists() and real_csv.exists()):
             print(f"[skip] {tag}: not matched-evaluated yet", flush=True)
             continue
-        real_row = next((r for r in csv.DictReader(real_csv.open())
-                         if not r["thread_id"].startswith("__")), None)
-        if real_row is None:
-            print(f"[skip] {tag}: matched real row missing", flush=True)
+        gen_rows = [r for r in csv.DictReader(gen_csv.open())
+                    if not r["thread_id"].startswith("__")]
+        real_rows = [r for r in csv.DictReader(real_csv.open())
+                     if not r["thread_id"].startswith("__")]
+        if len(gen_rows) != len(real_rows):
+            print(f"[skip] {tag}: {len(gen_rows)} generated rows against "
+                  f"{len(real_rows)} real rows", flush=True)
             continue
-        work = out / tag
-        if work.exists() and force:
-            shutil.rmtree(work)
-        if not work.exists():
-            work.mkdir(parents=True)
-            for f in src.iterdir():
-                if f.is_file():
-                    shutil.copy2(f, work / f.name)
-        states.append(ThreadState(tag=tag, work=work, thread=TH.load(work),
-                                  row={}, real=real_row))
+        for gen_row, real_row in zip(gen_rows, real_rows):
+            sim_dir = str(gen_row.get("_source_sim_dir") or "").strip()
+            name = Path(sim_dir).name if sim_dir else "run_00_sampled_reddit"
+            src = RUNS / tag / "cleaned" / name
+            if not (src / "discussion.json").exists():
+                print(f"[skip] {tag}/{name}: no cleaned artifact", flush=True)
+                continue
+            key = f"{tag}/{name}"
+            work = out / tag / name
+            if work.exists() and force:
+                shutil.rmtree(work)
+            if not work.exists():
+                work.mkdir(parents=True)
+                for f in src.iterdir():
+                    if f.is_file():
+                        shutil.copy2(f, work / f.name)
+            states.append(ThreadState(tag=key, work=work, thread=TH.load(work),
+                                      row={}, real=real_row))
     return states
 
 
@@ -129,34 +147,56 @@ def cohort_verdict(states: list[ThreadState]) -> dict[str, J.MetricVerdict]:
 
 
 def thread_target(state: ThreadState, metric: str) -> float:
-    """This thread's own matched real value for the metric.
-
-    For `self_bertscore_mean_f1` the local objective is a proxy on a different
-    scale, so the target has to be the proxy computed on the real thread's
-    counterpart quantities rather than its BERTScore. `real_proxy_target`
-    supplies that; here it is only the plain lookup.
-    """
+    """This thread's own matched real value for the metric, as reported."""
     try:
         return float(state.real.get(metric))
     except (TypeError, ValueError):
         return 0.0
 
 
-def local_target(state: ThreadState, metric: str) -> float:
-    if metric != "self_bertscore_mean_f1":
-        return thread_target(state, metric)
-    # The proxy is 0.5*self_bleu + 0.5*semantic, both of which the matched real
-    # row carries, so the real thread's proxy value is directly available.
-    lexical = _real_value(state, "self_bleu_4")
-    semantic = _real_value(state, "semantic_mean_cosine")
+def bertscore_proxy(lexical: float, semantic: float) -> float:
+    """Stand-in for self_bertscore when ranking candidates.
+
+    One `bert_pair_f1` call scores n-1 pairs of deberta-xlarge and a round
+    evaluates over a hundred candidates; every attempt at that round was
+    SIGKILLed mid-loop. BERTScore is greedily aligned token similarity, and
+    lexical overlap plus embedding similarity rank the same comments: Spearman
+    +0.761 against the real per-comment ordering on a 42-comment thread
+    (2026-09-04).
+
+    It only RANKS. The round is still gated on the official self_bertscore
+    scorer, so a proxy that mis-ranks costs search quality and can never let a
+    regression through.
+    """
     return 0.5 * lexical + 0.5 * semantic
 
 
-def _real_value(state: ThreadState, key: str) -> float:
-    try:
-        return float(state.real.get(key))
-    except (TypeError, ValueError):
-        return 0.0
+def local_target(state: ThreadState, metric: str) -> float:
+    """What a candidate should move this thread's local score toward.
+
+    Usually the matched real thread's own value. For `self_bertscore_mean_f1`
+    the local score is `bertscore_proxy`, which lives on a different scale, so
+    the target has to be that proxy evaluated on the real thread -- and both of
+    its inputs are already in the matched real row.
+    """
+    if metric != "self_bertscore_mean_f1":
+        return thread_target(state, metric)
+    return bertscore_proxy(thread_target(state, "self_bleu_4"),
+                           thread_target(state, "semantic_mean_cosine"))
+
+
+def _lexical(cache: C.ThreadCache, index: int, candidate: str | None) -> float:
+    """Thread self-BLEU-4, with `index` optionally swapped for `candidate`."""
+    if candidate is None:
+        return cache.bleu_total / cache.pair_count if cache.pair_count else 0.0
+    return cache.self_bleu_if(index, candidate)
+
+
+def _semantic(cache: C.ThreadCache, index: int, candidate: str | None) -> float:
+    """Thread mean pair cosine, with `index` optionally swapped."""
+    if candidate is None:
+        return C.semantic_mean_cosine(cache.vectors)
+    return cache.semantic_if(index, candidate)
 
 
 def local_score(cache: C.ThreadCache, guard: C.GuardCache, metric: str,
@@ -171,27 +211,12 @@ def local_score(cache: C.ThreadCache, guard: C.GuardCache, metric: str,
     already paid for -- before GuardCache was wired in here.
     """
     if metric == "semantic_mean_cosine":
-        return (C.semantic_mean_cosine(cache.vectors) if candidate is None
-                else cache.semantic_if(index, candidate))
+        return _semantic(cache, index, candidate)
     if metric == "self_bleu_4":
-        return (cache.bleu_total / cache.pair_count if cache.pair_count else 0.0
-                ) if candidate is None else cache.self_bleu_if(index, candidate)
+        return _lexical(cache, index, candidate)
     if metric == "self_bertscore_mean_f1":
-        # Proxy, not the model. One `bert_pair_f1` call scores n-1 pairs of
-        # deberta-xlarge; a round evaluates ~135 candidates, and every attempt
-        # at this round was SIGKILLed mid-loop. BERTScore is greedily aligned
-        # token similarity, and lexical overlap plus embedding similarity rank
-        # the same comments: Spearman +0.761 against the real per-comment
-        # ordering on a 42-comment thread (2026-09-04).
-        #
-        # This ranks candidates. The round is still gated on the official
-        # self_bertscore scorer, so a proxy that mis-ranks costs search quality
-        # and can never let a regression through.
-        lexical = (cache.bleu_total / cache.pair_count if cache.pair_count else 0.0
-                   ) if candidate is None else cache.self_bleu_if(index, candidate)
-        semantic = (C.semantic_mean_cosine(cache.vectors) if candidate is None
-                    else cache.semantic_if(index, candidate))
-        return 0.5 * lexical + 0.5 * semantic
+        return bertscore_proxy(_lexical(cache, index, candidate),
+                               _semantic(cache, index, candidate))
     values = guard.values(index, candidate) if candidate is not None else guard.values()
     if metric in values:
         return values[metric]
@@ -206,11 +231,6 @@ def local_score(cache: C.ThreadCache, guard: C.GuardCache, metric: str,
 REVISABLE = tuple(m for m in S.STRATEGIES if m != "hard_disagree_rate")
 
 
-# Cheap enough to evaluate on every candidate, and the two that a rewrite is
-# most likely to disturb: pushing text apart lowers lexical overlap, and
-# changing what a comment says moves its semantic distance to its neighbours.
-# G181 measured self_bleu_4 moving the wrong way whenever comments are pushed
-# apart, and the loop's first live round rejected on exactly that.
 # Every metric a text rewrite can move and that is cheap enough to evaluate on
 # each candidate. `self_bertscore_mean_f1` and `hard_disagree_rate` are absent
 # because both are pairwise over the whole thread; they stay protected by the
@@ -223,15 +243,10 @@ GUARD_METRICS = ("self_bleu_4", "semantic_mean_cosine", "mean_story_probability"
 
 def guard_values(cache: C.ThreadCache, guard: C.GuardCache,
                  index: int | None = None, candidate: str | None = None) -> dict[str, float]:
-    if candidate is None:
-        pairwise = {
-            "self_bleu_4": cache.bleu_total / cache.pair_count if cache.pair_count else 0.0,
-            "semantic_mean_cosine": C.semantic_mean_cosine(cache.vectors),
-        }
-    else:
-        pairwise = {"self_bleu_4": cache.self_bleu_if(index, candidate),
-                    "semantic_mean_cosine": cache.semantic_if(index, candidate)}
-    return {**pairwise, **guard.values(index, candidate)}
+    """Every guarded metric for this thread, with `index` optionally swapped."""
+    return {"self_bleu_4": _lexical(cache, index, candidate),
+            "semantic_mean_cosine": _semantic(cache, index, candidate),
+            **guard.values(index, candidate)}
 
 
 def guard_penalty(before: dict[str, float], after: dict[str, float],

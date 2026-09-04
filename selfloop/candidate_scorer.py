@@ -14,8 +14,6 @@ use, so the ranking is on the same scale as the gate.
 """
 from __future__ import annotations
 
-import math
-import re
 import sys
 from collections import Counter
 from pathlib import Path
@@ -82,13 +80,6 @@ def self_bleu_4(texts: Sequence[str]) -> float:
 
     tokenized = [sb.tokenize(t) for t in texts]
     return float(sb.pairwise_self_bleu_for_order(tokenized, 4))
-
-
-def self_bleu_4_delta(texts: Sequence[str], focus: int, candidate: str) -> float:
-    """Thread self-BLEU-4 if comment `focus` were replaced by `candidate`."""
-    swapped = list(texts)
-    swapped[focus] = candidate
-    return self_bleu_4(swapped)
 
 
 # ------------------------------------------------------------ per-comment
