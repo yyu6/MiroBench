@@ -508,6 +508,29 @@ class RoundSmokeTest(unittest.TestCase):
         self.assertTrue(feedback, "a rolled-back rewrite must be remembered")
 
 
+class DirectionTest(unittest.TestCase):
+    def test_direction_follows_the_widest_gap_not_the_first_member(self) -> None:
+        """28 of 106 celebrity threads had self_bertscore a hair below real
+        while semantic cosine sat far above it. Reading the direction off the
+        group's first member told the model to make those threads MORE alike."""
+        import controller as CTL
+
+        state = CTL.ThreadState(
+            tag="t", work=Path("."), thread=None,
+            row={"self_bertscore_mean_f1": 0.4698, "semantic_mean_cosine": 0.2291,
+                 "self_bleu_4": 0.0300},
+            real={"self_bertscore_mean_f1": 0.4756, "semantic_mean_cosine": 0.1397,
+                  "self_bleu_4": 0.0315})
+        real = {m: CTL.thread_target(state, m) for m in S.SIMILARITY}
+        dominant = CTL.dominant_metric(state, S.SIMILARITY, real)
+        self.assertEqual("semantic_mean_cosine", dominant)
+        self.assertTrue(float(state.row[dominant]) > real[dominant],
+                        "this thread is too self-similar and must be told so")
+        self.assertFalse(float(state.row["self_bertscore_mean_f1"])
+                         > real["self_bertscore_mean_f1"],
+                         "the first member alone would have said the opposite")
+
+
 class TargetOrderTest(unittest.TestCase):
     def test_similarity_group_comes_before_any_register_metric(self) -> None:
         import controller as CTL

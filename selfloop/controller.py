@@ -160,6 +160,28 @@ def _as_float(value: Any) -> float:
         return float("nan")
 
 
+def dominant_metric(state: ThreadState, metrics: tuple[str, ...],
+                    real: dict[str, float]) -> str:
+    """The group member this thread is furthest from its real counterpart on.
+
+    It decides which way the round tells the model to move, and it must not be
+    the group's first member. With `metrics[0]` -- self_bertscore -- 28 of 106
+    celebrity threads got the opposite instruction: self_bertscore sat a hair
+    BELOW its real value, so the round asked for "bring it back onto what the
+    thread is about" on a thread whose semantic cosine was 64% ABOVE real. The
+    gap is normalized so metrics on different scales are comparable.
+    """
+    best, best_gap = metrics[0], -1.0
+    for metric in metrics:
+        have, want = _as_float(state.row.get(metric)), real.get(metric, float("nan"))
+        if have != have or want != want:
+            continue
+        gap = abs(have - want) / (abs(want) or 1.0)
+        if gap > best_gap:
+            best, best_gap = metric, gap
+    return best
+
+
 def thread_target(state: ThreadState, metric: str) -> float:
     """This thread's own matched real value for the metric, as reported."""
     try:
@@ -340,7 +362,6 @@ def run_round(states: list[ThreadState], *, api, model: str, target: str,
               verbose: bool) -> dict[str, Any]:
     strategy = S.strategy_for(target)
     metrics = S.metrics_of(target)
-    primary = metrics[0]
     before = {s.tag: dict(s.row) for s in states}
     saved = {s.tag: TH.snapshot(s.thread) for s in states}
 
@@ -368,7 +389,8 @@ def run_round(states: list[ThreadState], *, api, model: str, target: str,
         # what a candidate is scored against.
         real = {m: thread_target(state, m) for m in metrics}
         wants_by_tag[state.tag] = real
-        too_high = float(state.row.get(primary) or 0.0) > real[primary]
+        dominant = dominant_metric(state, metrics, real)
+        too_high = _as_float(state.row.get(dominant)) > real[dominant]
         order = SEL.rank(texts, target, too_high=too_high, cache=cache,
                          guard=guards[state.tag], wants=real)
         instruction = strategy.high if too_high else strategy.low
