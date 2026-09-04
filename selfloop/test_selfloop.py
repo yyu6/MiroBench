@@ -383,3 +383,34 @@ class RoundSmokeTest(unittest.TestCase):
                     self.assertIn(key, result, msg=f"{metric}:{key}")
         finally:
             R.propose = original
+
+
+class BaselineReuseTest(unittest.TestCase):
+    """The staged baseline must equal what combined_eval.py reports, or the
+    loop starts from different numbers than the project does."""
+
+    def test_staged_rows_reproduce_the_published_verdict(self) -> None:
+        import csv
+        import controller as CTL
+
+        tags = [f"v157_20260903_p{i}" for i in range(10)]
+        out = Path("/tmp/selfloop_baseline")
+        if out.exists():
+            shutil.rmtree(out)
+        states = CTL.stage(tags, out, force=True)
+        if len(states) < 3:
+            self.skipTest("cohort not staged")
+        staged = J.verdict([s.row for s in states], [s.real for s in states])
+
+        gen, real = [], []
+        for tag in tags:
+            base = REPO / f"artifacts/generalized_card/runs/{tag}/matched_evaluation"
+            gen += [r for r in csv.DictReader((base / "matched_generated_thread_scores.csv").open())
+                    if not r["thread_id"].startswith("__")]
+            real += [r for r in csv.DictReader((base / "matched_real_thread_scores.csv").open())
+                     if not r["thread_id"].startswith("__")]
+        published = J.verdict(gen, real)
+        self.assertEqual(set(published), set(staged))
+        for key, item in published.items():
+            self.assertAlmostEqual(item.d, staged[key].d, places=6, msg=key)
+            self.assertEqual(item.passes, staged[key].passes, msg=key)

@@ -133,8 +133,15 @@ def stage(tags: list[str], out: Path, *, force: bool) -> list[ThreadState]:
                 for f in src.iterdir():
                     if f.is_file():
                         shutil.copy2(f, work / f.name)
+            # The generated row is the cohort's ALREADY-PUBLISHED score for
+            # this thread, carrying all twelve metrics. Rescoring 106 threads
+            # to recompute numbers the artifact already holds cost ~20 minutes
+            # and was where the run kept being killed. The loop rescores a
+            # thread the moment it edits it, so the only requirement is that
+            # this row is what the project reports -- and it is the same file
+            # `combined_eval.py` reads.
             states.append(ThreadState(tag=key, work=work, thread=TH.load(work),
-                                      row={}, real=real_row))
+                                      row=dict(gen_row), real=real_row))
     return states
 
 
@@ -513,12 +520,14 @@ def main() -> None:
     print(f"[selfloop] {len(states)} threads  model={args.model}  out={out}", flush=True)
     first_round, resumed_tried, attempts = _resume(states, out)
     t0 = time.time()
-    for state in states:
-        if not state.row:
-            rescore(state, only=(), device=args.device)
+    missing = [s for s in states if not s.row]
+    for state in missing:
+        rescore(state, only=(), device=args.device)
     _report_memory("baseline")
     baseline = cohort_verdict(states)
-    print(f"[selfloop] baseline scored in {time.time()-t0:.0f}s\n")
+    print(f"[selfloop] baseline ready in {time.time()-t0:.0f}s "
+          f"({len(states) - len(missing)} rows reused from the cohort's own "
+          f"matched evaluation, {len(missing)} rescored)\n")
     print(J.render(baseline, len(states)), flush=True)
     (out / "baseline.json").write_text(json.dumps(
         {k: asdict(v) for k, v in baseline.items()}, indent=1))
