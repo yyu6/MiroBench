@@ -129,8 +129,32 @@ def cohort_verdict(states: list[ThreadState]) -> dict[str, J.MetricVerdict]:
 
 
 def thread_target(state: ThreadState, metric: str) -> float:
+    """This thread's own matched real value for the metric.
+
+    For `self_bertscore_mean_f1` the local objective is a proxy on a different
+    scale, so the target has to be the proxy computed on the real thread's
+    counterpart quantities rather than its BERTScore. `real_proxy_target`
+    supplies that; here it is only the plain lookup.
+    """
     try:
         return float(state.real.get(metric))
+    except (TypeError, ValueError):
+        return 0.0
+
+
+def local_target(state: ThreadState, metric: str) -> float:
+    if metric != "self_bertscore_mean_f1":
+        return thread_target(state, metric)
+    # The proxy is 0.5*self_bleu + 0.5*semantic, both of which the matched real
+    # row carries, so the real thread's proxy value is directly available.
+    lexical = _real_value(state, "self_bleu_4")
+    semantic = _real_value(state, "semantic_mean_cosine")
+    return 0.5 * lexical + 0.5 * semantic
+
+
+def _real_value(state: ThreadState, key: str) -> float:
+    try:
+        return float(state.real.get(key))
     except (TypeError, ValueError):
         return 0.0
 
@@ -153,9 +177,21 @@ def local_score(cache: C.ThreadCache, guard: C.GuardCache, metric: str,
         return (cache.bleu_total / cache.pair_count if cache.pair_count else 0.0
                 ) if candidate is None else cache.self_bleu_if(index, candidate)
     if metric == "self_bertscore_mean_f1":
-        texts = cache.texts if candidate is None else (
-            cache.texts[:index] + [candidate] + cache.texts[index + 1:])
-        return C.bert_pair_f1(texts, index)
+        # Proxy, not the model. One `bert_pair_f1` call scores n-1 pairs of
+        # deberta-xlarge; a round evaluates ~135 candidates, and every attempt
+        # at this round was SIGKILLed mid-loop. BERTScore is greedily aligned
+        # token similarity, and lexical overlap plus embedding similarity rank
+        # the same comments: Spearman +0.761 against the real per-comment
+        # ordering on a 42-comment thread (2026-09-04).
+        #
+        # This ranks candidates. The round is still gated on the official
+        # self_bertscore scorer, so a proxy that mis-ranks costs search quality
+        # and can never let a regression through.
+        lexical = (cache.bleu_total / cache.pair_count if cache.pair_count else 0.0
+                   ) if candidate is None else cache.self_bleu_if(index, candidate)
+        semantic = (C.semantic_mean_cosine(cache.vectors) if candidate is None
+                    else cache.semantic_if(index, candidate))
+        return 0.5 * lexical + 0.5 * semantic
     values = guard.values(index, candidate) if candidate is not None else guard.values()
     if metric in values:
         return values[metric]
@@ -265,13 +301,14 @@ def run_round(states: list[ThreadState], *, api, model: str, metric: str,
     saved = {s.tag: TH.snapshot(s.thread) for s in states}
 
     targets: list[R.Target] = []
-    measured, targets_by_thread = {}, {}
+    measured, targets_by_thread, local_targets = {}, {}, {}
     for state in states:
         texts = state.thread.scored_texts
         value = float(state.row.get(metric) or 0.0)
         want = thread_target(state, metric)
         measured[state.tag] = value
         targets_by_thread[state.tag] = want
+        local_targets[state.tag] = local_target(state, metric)
         if len(texts) < 4:
             continue
         order = SEL.rank(texts, metric, too_high=value > want)
@@ -309,7 +346,7 @@ def run_round(states: list[ThreadState], *, api, model: str, metric: str,
         state = by_tag[tag]
         cache = caches[tag]
         guard = guards[tag]
-        want = targets_by_thread[tag]
+        want = local_targets[tag]
         base_gap = abs(local_score(cache, guard, metric, index) - want)
         base_guard = guard_values(cache, guard)
         best, best_cost = None, 0.0
@@ -390,8 +427,9 @@ def _next_target(verdicts: dict[str, J.MetricVerdict], tried: set[str]) -> str:
 
 
 def _checkpoint(states: list[ThreadState], out: Path, round_idx: int,
-                tried: set[str]) -> None:
+                tried: set[str], attempts: dict[str, int]) -> None:
     payload = {"round": round_idx, "tried": sorted(tried),
+               "attempts": attempts,
                "threads": {s.tag: {"texts": s.thread.scored_texts, "row": s.row}
                            for s in states}}
     tmp = out / "checkpoint.json.tmp"
@@ -399,7 +437,7 @@ def _checkpoint(states: list[ThreadState], out: Path, round_idx: int,
     tmp.replace(out / "checkpoint.json")
 
 
-def _resume(states: list[ThreadState], out: Path) -> tuple[int, set[str]]:
+def _resume(states: list[ThreadState], out: Path) -> tuple[int, set[str], dict[str, int]]:
     """Restore the text and scores a previous process reached.
 
     The loop is long-running and holds ~8 GB, and this machine has killed it
@@ -409,7 +447,7 @@ def _resume(states: list[ThreadState], out: Path) -> tuple[int, set[str]]:
     """
     path = out / "checkpoint.json"
     if not path.exists():
-        return 1, set()
+        return 1, set(), {}
     payload = json.loads(path.read_text())
     by_tag = {s.tag: s for s in states}
     for tag, saved in (payload.get("threads") or {}).items():
@@ -423,9 +461,10 @@ def _resume(states: list[ThreadState], out: Path) -> tuple[int, set[str]]:
             state.row = saved["row"]
     resumed = int(payload.get("round") or 0) + 1
     tried = set(payload.get("tried") or [])
+    attempts = {str(k): int(v) for k, v in (payload.get("attempts") or {}).items()}
     print(f"[resume] checkpoint found; continuing at round {resumed}"
           f"{'  already tried: ' + ','.join(sorted(tried)) if tried else ''}", flush=True)
-    return resumed, tried
+    return resumed, tried, attempts
 
 
 def main() -> None:
@@ -457,7 +496,7 @@ def main() -> None:
         raise SystemExit("need at least 3 matched-evaluated threads")
 
     print(f"[selfloop] {len(states)} threads  model={args.model}  out={out}", flush=True)
-    first_round, resumed_tried = _resume(states, out)
+    first_round, resumed_tried, attempts = _resume(states, out)
     t0 = time.time()
     for state in states:
         if not state.row:
@@ -481,6 +520,15 @@ def main() -> None:
         metric = args.metric or _next_target(current, tried)
         if not metric or metric not in S.STRATEGIES:
             print(f"[stop] no metric left to try"); break
+        # A metric whose round has been killed twice will be killed a third
+        # time; retire it rather than spend the run restarting into it.
+        attempts[metric] = attempts.get(metric, 0) + 1
+        if attempts[metric] > 2:
+            print(f"[skip] {metric}: {attempts[metric] - 1} attempts already died", flush=True)
+            tried.add(metric)
+            _checkpoint(states, out, round_idx - 1, tried, attempts)
+            continue
+        _checkpoint(states, out, round_idx - 1, tried, attempts)
         print(f"\n===== round {round_idx}  target={metric}  "
               f"d={current[metric].d:+.2f} {'PASS' if current[metric].passes else 'FAIL'} =====",
               flush=True)
@@ -501,11 +549,14 @@ def main() -> None:
         # soon as a round is accepted, since the cohort has changed.
         if result.get("accepted"):
             tried.clear()
+            attempts.clear()
         else:
             tried.add(metric)
+        # The round completed, so it did not die; clear its death count.
+        attempts[metric] = 0
         # Persist the revised text after every round, so a crash costs one
         # round rather than the whole run.
-        _checkpoint(states, out, round_idx, tried)
+        _checkpoint(states, out, round_idx, tried, attempts)
         history.append(result)
         (out / "history.json").write_text(json.dumps(history, indent=1))
         print(f"[round {round_idx}] {'ACCEPTED' if result['accepted'] else 'REJECTED'} "
