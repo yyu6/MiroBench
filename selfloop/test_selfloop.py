@@ -64,16 +64,26 @@ class JudgeTest(unittest.TestCase):
         mk = lambda d, p: J.MetricVerdict("m", 0, 0, p, p, d)
         before = {"a": mk(0.25, 0.7), "t": mk(0.75, 0.1)}
         # d unchanged, p worse -> not a regression
-        self.assertEqual([], J.regressions(before, {"a": mk(0.25, 0.4), "t": mk(0.6, 0.2)}, target="t"))
+        self.assertEqual([], J.regressions(before, {"a": mk(0.25, 0.4), "t": mk(0.6, 0.2)}, targets=["t"]))
         # |d| genuinely larger -> a regression
-        self.assertEqual(1, len(J.regressions(before, {"a": mk(0.40, 0.7), "t": mk(0.6, 0.2)}, target="t")))
+        self.assertEqual(1, len(J.regressions(before, {"a": mk(0.40, 0.7), "t": mk(0.6, 0.2)}, targets=["t"])))
         # PASS -> FAIL is always a regression, even with |d| smaller
-        self.assertEqual(1, len(J.regressions(before, {"a": mk(0.20, 0.01), "t": mk(0.6, 0.2)}, target="t")))
+        self.assertEqual(1, len(J.regressions(before, {"a": mk(0.20, 0.01), "t": mk(0.6, 0.2)}, targets=["t"])))
 
-    def test_target_is_the_worst_failing_metric(self) -> None:
+    def test_a_group_is_one_objective(self) -> None:
+        """The whole point of a group: one round, three metrics, and a member
+        that drifts the wrong way sinks the round even if the sum improves."""
         mk = lambda d, p: J.MetricVerdict("m", 0, 0, p, p, d)
-        v = {"passing_big_d": mk(0.9, 0.9), "failing_small_d": mk(0.2, 0.01)}
-        self.assertEqual("failing_small_d", J.worst_failing(v))
+        group = ["a", "b"]
+        before = {"a": mk(0.50, 0.01), "b": mk(0.30, 0.02)}
+        self.assertTrue(J.improved(before, {"a": mk(0.30, 0.01), "b": mk(0.28, 0.02)},
+                                   targets=group))
+        # sum falls 0.80 -> 0.65, but `b` moved away from zero
+        self.assertFalse(J.improved(before, {"a": mk(0.20, 0.01), "b": mk(0.45, 0.02)},
+                                    targets=group))
+        # neither member is a regression to the OTHER metrics' gate
+        self.assertEqual([], J.regressions(before, {"a": mk(0.9, 0.01), "b": mk(0.9, 0.02)},
+                                           targets=group))
 
 
 class ThreadViewTest(unittest.TestCase):
@@ -122,15 +132,33 @@ class StrategyTest(unittest.TestCase):
         missing = [m for m in J.M12 if m not in S.STRATEGIES and m not in J.STRUCTURAL]
         self.assertEqual([], missing)
 
+    def test_every_group_member_is_a_real_metric(self) -> None:
+        for name, members in S.GROUPS.items():
+            self.assertIn(name, S.GROUP_STRATEGY, msg=name)
+            for metric in members:
+                self.assertIn(metric, J.M12, msg=f"{name}:{metric}")
+        overlap = set(S.SIMILARITY) & set(S.REGISTER)
+        self.assertEqual(set(), overlap, "a metric in two groups gets two directions")
+
     def test_no_strategy_names_a_domain(self) -> None:
         """The CARD revisers said 'card/bank/APR/fee/SUB' and could not move domain."""
         banned = ("card", "bank", "apr", "camera", "lens", "laptop", "headphone",
                   "megapixel", "shutter", "phone", "product", "price", "warranty")
-        for name, strategy in S.STRATEGIES.items():
+        for name, strategy in {**S.STRATEGIES, **S.GROUP_STRATEGY}.items():
             blob = " ".join([strategy.high, strategy.low, strategy.keep]).lower()
             for word in banned:
                 self.assertNotIn(f" {word} ", f" {blob} ", msg=f"{name} names '{word}'")
         self.assertNotIn("card", S.SHARED_INVARIANTS.lower())
+
+    def test_anchors_drop_sentence_openers_but_keep_names(self) -> None:
+        """Every anchor is an instruction to preserve that span. Listing
+        "Honestly" told the model to keep the shared opener self_bleu_4 charges
+        for; measured on 12 celebrity cohorts, 1112 of these were being emitted
+        across 1159 comments."""
+        text = "Honestly the remaster sold me. Sophie said the same thing."
+        self.assertEqual([], S.anchors_in(text))
+        with_context = S.anchors_in(text, context=["I saw Sophie post about it"])
+        self.assertEqual(["Sophie"], with_context)
 
     def test_anchors_capture_facts_without_a_vocabulary(self) -> None:
         text = 'Paid $1,200 in 2019 and https://x.com/a called it "a total mess" — ask Olivia Rodrigo'
@@ -156,8 +184,43 @@ class SelectionTest(unittest.TestCase):
         texts = ["the shirt is a stunt", "the shirt is just a stunt",
                  "the shirt is only a stunt", "minnesota has not won since 1991",
                  "my dog ate my homework this morning"]
-        order = SEL.rank(texts, "self_bleu_4", too_high=True)
+        order = SEL.rank(texts, "similarity", too_high=True)
         self.assertIn(order[0], (0, 1, 2))
+
+    def test_evidence_names_the_comment_it_duplicates(self) -> None:
+        """The prompt has to say WHICH comment and WHICH words, or the model is
+        being told it is redundant and left to guess with what."""
+        texts = ["the shirt is a stunt and nothing more",
+                 "the shirt is a stunt and nothing else",
+                 "minnesota has not won a game since 1991",
+                 "my dog ate my homework this morning"]
+        block = SEL.evidence(texts, 0, "similarity", position=0)
+        self.assertIn(texts[1], block)          # the nearest one, in full
+        self.assertNotIn(texts[3], block)       # not an untargeted dump
+        self.assertIn("the shirt is a", block)  # the repeated 4-gram itself
+
+    def test_register_ranking_follows_the_gap(self) -> None:
+        """Direction is read off the gap, not assumed: the same thread ranks
+        opposite comments first depending on which way it has to move."""
+        class Guard:
+            n = 4
+            polite = ["neutral", "neutral", "polite", "impolite"]
+            story = [0.1, 0.1, 0.9, 0.1]
+            emotion = ["neutral", "neutral", "joy", "anger"]
+            words = [5, 5, 5, 5]
+
+            def values(self):
+                return {"polite_rate": 0.25, "impolite_rate": 0.25,
+                        "neutral_rate": 0.5, "mean_story_probability": 0.3,
+                        "emotion_entropy": 1.0, "length_cv": 0.0}
+
+        texts = ["a", "b", "c", "d"]
+        too_much_neutral = SEL.rank(texts, "register", too_high=True, guard=Guard(),
+                                    wants={"neutral_rate": 0.1})
+        self.assertIn(too_much_neutral[0], (0, 1))
+        too_little = SEL.rank(texts, "register", too_high=False, guard=Guard(),
+                              wants={"neutral_rate": 0.9})
+        self.assertIn(too_little[0], (2, 3))
 
 
 class ScorerEquivalenceTest(unittest.TestCase):
@@ -369,20 +432,88 @@ class RoundSmokeTest(unittest.TestCase):
         original = R.propose
         R.propose = fake_propose
         try:
-            for metric in ("semantic_mean_cosine", "self_bleu_4", "emotion_entropy",
-                           "polite_rate", "length_cv", "mean_story_probability"):
-                result = CTL.run_round(states, api=None, model="stub", metric=metric,
+            for target in ("similarity", "register", "impolite_rate", "length_cv"):
+                result = CTL.run_round(states, api=None, model="stub", target=target,
                                        community="Reddit", protected=[], device="cpu",
-                                       round_idx=1, workers=1, verbose=False)
-                self.assertNotIn("exception", str(result.get("reason", "")), msg=metric)
+                                       round_idx=1, workers=1, feedback={}, verbose=False)
+                self.assertNotIn("exception", str(result.get("reason", "")), msg=target)
                 # Every exit path must report the same shape, or the history
                 # file loses fields depending on which branch a round took.
                 for key in ("round", "metric", "accepted", "reason", "targets",
                             "applied", "threads_changed", "api_seconds",
                             "score_seconds"):
-                    self.assertIn(key, result, msg=f"{metric}:{key}")
+                    self.assertIn(key, result, msg=f"{target}:{key}")
         finally:
             R.propose = original
+
+    def test_a_rejected_round_leaves_the_previous_text_on_disk(self) -> None:
+        """The user's rule: a bad round is not built on. Round 4 continues from
+        round 2 when round 3 was rejected -- so a rejected round has to restore
+        the text AND the scores AND the file, not just the in-memory copy."""
+        import controller as CTL
+        import reviser as R
+
+        tags = [f"v157_20260903_p{i}" for i in (5, 7, 2, 4)]
+        out = Path("/tmp/selfloop_rollback")
+        if out.exists():
+            shutil.rmtree(out)
+        states = CTL.stage(tags, out, force=True)
+        if len(states) < 3:
+            self.skipTest("cohort not staged")
+        for state in states:
+            CTL.rescore(state, only=(), device="cpu")
+        before_rows = {s.tag: dict(s.row) for s in states}
+        before_disk = {s.tag: (s.work / "discussion.json").read_text() for s in states}
+
+        def fake_propose(api, targets, **kwargs):
+            return {(t.thread_id, t.index): [{"text": t.text + " Anyway.",
+                                              "what_changed": "appended"}]
+                    for t in targets}
+
+        propose, improved = R.propose, J.improved
+        R.propose = fake_propose
+        J.improved = lambda *a, **k: False      # force every subset to be rejected
+        feedback: dict[str, str] = {}
+        try:
+            result = CTL.run_round(states, api=None, model="stub", target="similarity",
+                                   community="Reddit", protected=[], device="cpu",
+                                   round_idx=1, workers=1, feedback=feedback,
+                                   verbose=False)
+        finally:
+            R.propose, J.improved = propose, improved
+        self.assertFalse(result["accepted"])
+        self.assertGreater(result["applied"], 0, "nothing was tried, so nothing was rolled back")
+        for state in states:
+            self.assertEqual(before_disk[state.tag],
+                             (state.work / "discussion.json").read_text(), msg=state.tag)
+            self.assertEqual(before_rows[state.tag], state.row, msg=state.tag)
+        self.assertTrue(feedback, "a rolled-back rewrite must be remembered")
+
+
+class TargetOrderTest(unittest.TestCase):
+    def test_similarity_group_comes_before_any_register_metric(self) -> None:
+        import controller as CTL
+
+        mk = lambda d, p: J.MetricVerdict("m", 0, 0, p, p, d)
+        v = {"self_bertscore_mean_f1": mk(0.21, 0.007),
+             "semantic_mean_cosine": mk(0.48, 0.0),
+             "self_bleu_4": mk(0.01, 0.9),
+             "polite_rate": mk(0.64, 0.0),        # much worse |d|, still second
+             "emotion_entropy": mk(0.61, 0.0),
+             "length_cv": mk(0.17, 0.035)}
+        self.assertEqual("similarity", CTL._next_target(v, set()))
+        self.assertEqual("register", CTL._next_target(v, {"similarity"}))
+        self.assertEqual("length_cv", CTL._next_target(v, {"similarity", "register"}))
+
+    def test_a_passing_group_is_skipped(self) -> None:
+        import controller as CTL
+
+        mk = lambda d, p: J.MetricVerdict("m", 0, 0, p, p, d)
+        v = {"self_bertscore_mean_f1": mk(0.02, 0.9),
+             "semantic_mean_cosine": mk(0.03, 0.8),
+             "self_bleu_4": mk(0.01, 0.9),
+             "polite_rate": mk(0.64, 0.0)}
+        self.assertEqual("register", CTL._next_target(v, set()))
 
 
 class BaselineReuseTest(unittest.TestCase):

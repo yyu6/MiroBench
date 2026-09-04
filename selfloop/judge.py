@@ -120,22 +120,23 @@ D_TOLERANCE = 0.01
 
 
 def regressions(before: dict[str, MetricVerdict], after: dict[str, MetricVerdict],
-                *, target: str, tolerance: float = D_TOLERANCE) -> list[str]:
+                *, targets: Sequence[str], tolerance: float = D_TOLERANCE) -> list[str]:
     """Metrics the round made worse, by the user's stated rule.
 
-    "修改就必须只提高 target，而不能让其他任何 metric 下降" -- so a PASS that
-    becomes a FAIL is a regression, and so is a real move of |d| away from zero
-    on any non-target metric. The target is exempt: it is what the round is
-    spending its budget on.
+    "不能修好一个却改坏更多" -- so a PASS that becomes a FAIL is a regression,
+    and so is a real move of |d| away from zero on any metric the round was not
+    spending on. The round's own targets are exempt here and judged by
+    `improved` instead.
 
     Deliberately NOT `quality()`: that carries a p-value tie-break, and a
     p-value moves under float noise while |d| cannot. A first version used
     quality() here and rejected a round for `impolite_rate: d +0.25 -> +0.25`,
     a metric that had not moved at all.
     """
+    exempt = set(targets)
     out = []
     for key, old in before.items():
-        if key == target or key not in after:
+        if key in exempt or key not in after:
             continue
         new = after[key]
         if old.passes and not new.passes:
@@ -146,17 +147,27 @@ def regressions(before: dict[str, MetricVerdict], after: dict[str, MetricVerdict
 
 
 def improved(before: dict[str, MetricVerdict], after: dict[str, MetricVerdict],
-             *, target: str, min_gain: float) -> bool:
-    if target not in before or target not in after:
-        return False
-    return after[target].quality() > before[target].quality() + min_gain
+             *, targets: Sequence[str], min_gain: float = 0.0) -> bool:
+    """Did the round move what it was spending on, without hurting the rest of
+    its own group?
 
+    A group is one objective, not several. The three similarity metrics are
+    three readings of the same pairwise redundancy, so a rewrite that helps one
+    usually helps all three; summing their |d| is what lets a single round fix
+    all three, and scoring them one at a time throws that away.
 
-def worst_failing(v: dict[str, MetricVerdict]) -> str:
-    """The metric a round should target: failing first, then largest |d|.
-
-    Keys, not `MetricVerdict.metric`: the dict key is what every caller looks
-    the strategy up by, and reading the field instead lets the two drift.
+    Same |d| basis as `regressions`, so accept and reject cannot disagree: no
+    member may drift further from zero, no member may fall out of PASS, and
+    either the group's total |d| drops or a member has newly passed.
     """
-    ranked = sorted(v.items(), key=lambda kv: (kv[1].passes, -abs(kv[1].d)))
-    return ranked[0][0] if ranked else ""
+    keys = [k for k in targets if k in before and k in after]
+    if not keys:
+        return False
+    if any(before[k].passes and not after[k].passes for k in keys):
+        return False
+    if any(abs(after[k].d) > abs(before[k].d) + D_TOLERANCE for k in keys):
+        return False
+    if any(not before[k].passes and after[k].passes for k in keys):
+        return True
+    return (sum(abs(after[k].d) for k in keys)
+            < sum(abs(before[k].d) for k in keys) - min_gain)

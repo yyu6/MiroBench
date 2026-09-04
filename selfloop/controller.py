@@ -153,6 +153,13 @@ def cohort_verdict(states: list[ThreadState]) -> dict[str, J.MetricVerdict]:
     return J.verdict([s.row for s in states], [s.real for s in states])
 
 
+def _as_float(value: Any) -> float:
+    try:
+        return float(value)
+    except (TypeError, ValueError):
+        return float("nan")
+
+
 def thread_target(state: ThreadState, metric: str) -> float:
     """This thread's own matched real value for the metric, as reported."""
     try:
@@ -237,6 +244,30 @@ def local_score(cache: C.ThreadCache, guard: C.GuardCache, metric: str,
 # no local score applies nothing while still paying for the API calls.
 REVISABLE = tuple(m for m in S.STRATEGIES if m != "hard_disagree_rate")
 
+# Groups first, then whatever is left, worst |d| first. The similarity three
+# are what "indistinguishable text" means and they are fixed before anything
+# else, because the register metrics can be bought with rewrites that make the
+# text MORE uniform -- courtesy and narrative arrive as repeated wording -- and
+# that quietly costs the three.
+PRIORITY = ("similarity", "register")
+
+
+def composite_gap(cache: C.ThreadCache, guard: C.GuardCache,
+                  metrics: tuple[str, ...], wants: dict[str, float],
+                  index: int, candidate: str | None = None) -> float:
+    """How far this thread sits from its real counterpart across the round's
+    metrics, each normalized by its own scale so semantic cosine (~0.2),
+    self-BLEU (~0.05) and the BERTScore proxy (~0.3) are comparable and one
+    candidate can be ranked on all three at once."""
+    total = 0.0
+    for metric in metrics:
+        want = wants[metric]
+        value = local_score(cache, guard, metric, index, candidate)
+        if value != value:  # NaN: no per-comment form for this metric
+            continue
+        total += abs(value - want) / (abs(want) or 1.0)
+    return total
+
 
 # Every metric a text rewrite can move and that is cheap enough to evaluate on
 # each candidate. `self_bertscore_mean_f1` and `hard_disagree_rate` are absent
@@ -257,13 +288,13 @@ def guard_values(cache: C.ThreadCache, guard: C.GuardCache,
 
 
 def guard_penalty(before: dict[str, float], after: dict[str, float],
-                  real: dict[str, Any], *, skip: str) -> float:
+                  real: dict[str, Any], *, skip: tuple[str, ...]) -> float:
     """How much a candidate moves the guard metrics AWAY from this thread's real
     counterpart. Zero when it moves them toward it, so a candidate that helps
     two metrics at once is preferred rather than merely tolerated."""
     total = 0.0
     for key in GUARD_METRICS:
-        if key == skip:
+        if key in skip:
             continue
         try:
             want = float(real.get(key))
@@ -277,7 +308,7 @@ def guard_penalty(before: dict[str, float], after: dict[str, float],
 
 def choose_subset(states: list[ThreadState], before: dict[str, dict],
                   changed: list[ThreadState], before_v: dict[str, J.MetricVerdict],
-                  metric: str) -> tuple[set[str], list[str], bool]:
+                  metrics: tuple[str, ...]) -> tuple[set[str], list[str], bool]:
     """Largest subset of the revised threads that gains without regressing.
 
     Once a thread is scored, trying a different subset costs a statistics
@@ -295,8 +326,8 @@ def choose_subset(states: list[ThreadState], before: dict[str, dict],
 
     for _ in range(len(changed) + 1):
         current = verdict_for(keep)
-        hurt = J.regressions(before_v, current, target=metric)
-        gained = J.improved(before_v, current, target=metric, min_gain=0.0)
+        hurt = J.regressions(before_v, current, targets=metrics)
+        gained = J.improved(before_v, current, targets=metrics)
         if not hurt:
             return (keep, [], gained) if gained else (set(), [], False)
         if not keep:
@@ -307,95 +338,111 @@ def choose_subset(states: list[ThreadState], before: dict[str, dict],
         for tag in sorted(keep):
             trial = keep - {tag}
             trial_v = verdict_for(trial)
-            key = (len(J.regressions(before_v, trial_v, target=metric)),
-                   -(trial_v[metric].quality() if metric in trial_v else 0.0))
+            key = (len(J.regressions(before_v, trial_v, targets=metrics)),
+                   -sum(trial_v[m].quality() for m in metrics if m in trial_v))
             if best_key is None or key < best_key:
                 best_tag, best_key = tag, key
         keep.discard(best_tag)
     return set(), ["subset_search_exhausted"], False
 
 
-def run_round(states: list[ThreadState], *, api, model: str, metric: str,
+def run_round(states: list[ThreadState], *, api, model: str, target: str,
               community: str, protected: list[str], device: str,
-              round_idx: int, workers: int, verbose: bool) -> dict[str, Any]:
-    strategy = S.STRATEGIES[metric]
+              round_idx: int, workers: int, feedback: dict[str, str],
+              verbose: bool) -> dict[str, Any]:
+    strategy = S.strategy_for(target)
+    metrics = S.metrics_of(target)
+    primary = metrics[0]
     before = {s.tag: dict(s.row) for s in states}
     saved = {s.tag: TH.snapshot(s.thread) for s in states}
 
-    targets: list[R.Target] = []
-    measured, targets_by_thread, local_targets = {}, {}, {}
+    # Built before the API calls, not after. The prompt's evidence and the
+    # ranking that decides what to send both read these, so building them here
+    # costs one embedding pass and one O(n^2) BLEU matrix per thread per round
+    # where the previous order paid for two of each.
+    caches: dict[str, C.ThreadCache] = {}
+    guards: dict[str, C.GuardCache] = {}
     for state in states:
         texts = state.thread.scored_texts
-        value = float(state.row.get(metric) or 0.0)
-        want = thread_target(state, metric)
-        measured[state.tag] = value
-        targets_by_thread[state.tag] = want
-        local_targets[state.tag] = local_target(state, metric)
-        if len(texts) < 4:
+        if len(texts) >= 4:
+            caches[state.tag] = C.ThreadCache(texts)
+            guards[state.tag] = C.GuardCache(texts)
+
+    proposal_targets: list[R.Target] = []
+    local_wants: dict[str, dict[str, float]] = {}
+    for state in states:
+        cache = caches.get(state.tag)
+        if cache is None:
             continue
-        order = SEL.rank(texts, metric, too_high=value > want)
-        k = SEL.budget(len(texts), strategy.max_share)
-        for position in order[:k]:
-            node_index = state.thread.scored[position]
-            targets.append(R.Target(
-                thread_id=state.tag, index=position,
-                comment_id=str(state.thread.nodes[node_index].get("comment_id") or position),
-                text=texts[position],
+        texts = state.thread.scored_texts
+        # Two want-dicts because they answer two questions. `real` is this
+        # thread's matched counterpart, which is what the model is shown and
+        # what the ranking aims at; `local` is what a candidate is scored
+        # against, and differs only for self_bertscore, whose local form is the
+        # cheap proxy and so needs the proxy's value on the real thread.
+        real = {m: thread_target(state, m) for m in metrics}
+        local_wants[state.tag] = {m: local_target(state, m) for m in metrics}
+        too_high = float(state.row.get(primary) or 0.0) > real[primary]
+        order = SEL.rank(texts, target, too_high=too_high, cache=cache,
+                         guard=guards[state.tag], wants=real)
+        instruction = strategy.high if too_high else strategy.low
+        for position, index in enumerate(order[:SEL.budget(len(texts), strategy.max_share)]):
+            node_index = state.thread.scored[index]
+            proposal_targets.append(R.Target(
+                thread_id=state.tag, index=index,
+                comment_id=str(state.thread.nodes[node_index].get("comment_id") or index),
+                text=texts[index],
                 parent_text=state.thread.parent_text(node_index),
-                neighbours=[t for i, t in enumerate(texts) if i != position],
+                instruction=instruction,
+                evidence=SEL.evidence(texts, index, target, position=position,
+                                      cache=cache, guard=guards[state.tag], wants=real),
+                anchors=S.anchors_in(texts[index], protected, context=texts),
             ))
-    if not targets:
-        return {"round": round_idx, "metric": metric, "accepted": False,
+    if not proposal_targets:
+        return {"round": round_idx, "metric": target, "accepted": False,
                 "reason": "no_targets", "targets": 0, "applied": 0,
                 "threads_changed": 0, "api_seconds": 0.0, "score_seconds": 0.0}
 
     t0 = time.time()
-    proposals = R.propose(api, targets, metric=metric, measured=measured,
-                          thread_target=targets_by_thread, community=community,
-                          protected=protected, model=model,
-                          candidates=strategy.candidates, workers=workers)
+    proposals = R.propose(api, proposal_targets, community=community,
+                          keep=strategy.keep, model=model,
+                          candidates=strategy.candidates, workers=workers,
+                          feedback=feedback)
     api_seconds = time.time() - t0
 
-    applied = 0
+    applied_text: dict[tuple[str, int], str] = {}
     by_tag = {s.tag: s for s in states}
-    caches = {s.tag: C.ThreadCache(s.thread.scored_texts)
-              for s in states if len(s.thread.scored_texts) >= 4}
-    guards = {tag: C.GuardCache(by_tag[tag].thread.scored_texts) for tag in caches}
-    proposals = {k: v for k, v in proposals.items() if k[0] in caches}
     for (tag, index), candidates in proposals.items():
-        if not candidates:
+        if not candidates or tag not in caches:
             continue
-        state = by_tag[tag]
-        cache = caches[tag]
-        guard = guards[tag]
-        want = local_targets[tag]
-        base_gap = abs(local_score(cache, guard, metric, index) - want)
+        state, cache, guard = by_tag[tag], caches[tag], guards[tag]
+        wants = local_wants[tag]
+        base_gap = composite_gap(cache, guard, metrics, wants, index)
         base_guard = guard_values(cache, guard)
         best, best_cost = None, 0.0
         for candidate in candidates:
             body = candidate["text"]
-            gain = base_gap - abs(local_score(cache, guard, metric, index, body) - want)
+            # `composite_gap` is already scale-normalized, so the gain and the
+            # penalty are in the same units and a candidate that buys the
+            # target by wrecking a guard is dropped here rather than costing
+            # the whole round at the gate.
+            gain = base_gap - composite_gap(cache, guard, metrics, wants, index, body)
             if gain <= 0:
                 continue
-            # Scale the gain the same way the penalty is scaled, so the two are
-            # comparable, then require the candidate to be net positive. A
-            # candidate that buys the target by wrecking a guard is dropped
-            # here rather than costing the whole round at the gate.
-            scaled_gain = gain / (abs(want) or 1.0)
-            cost = scaled_gain - guard_penalty(
-                base_guard, guard_values(cache, guard, index, body),
-                state.real, skip=metric)
+            cost = gain - guard_penalty(base_guard,
+                                        guard_values(cache, guard, index, body),
+                                        state.real, skip=metrics)
             if cost > best_cost:
                 best, best_cost = body, cost
         if best is not None:
             state.thread.set_text(state.thread.scored[index], best)
             cache.commit(index, best)
             guard.commit(index, best)
-            applied += 1
-    if applied == 0:
-        return {"round": round_idx, "metric": metric, "accepted": False,
+            applied_text[(tag, index)] = best
+    if not applied_text:
+        return {"round": round_idx, "metric": target, "accepted": False,
                 "reason": "no_candidate_improved_its_thread",
-                "targets": len(targets), "applied": 0, "threads_changed": 0,
+                "targets": len(proposal_targets), "applied": 0, "threads_changed": 0,
                 "api_seconds": round(api_seconds, 1), "score_seconds": 0.0}
 
     _report_memory(f"round{round_idx} after candidates")
@@ -409,49 +456,82 @@ def run_round(states: list[ThreadState], *, api, model: str, metric: str,
         rescore(state, only=TEXT_SENSITIVE, device=device)
     score_seconds = time.time() - t1
 
+    # What each edited thread's own numbers did, captured BEFORE the gate can
+    # roll them back. Without this a rejected round reports nothing at all, and
+    # "the rewrites did not move the metric" is indistinguishable from "they
+    # moved it and the cohort gate still said no".
+    per_thread = {
+        s.tag: {m: [_as_float(before[s.tag].get(m)), _as_float(s.row.get(m)),
+                    thread_target(s, m)] for m in metrics}
+        for s in changed}
+
     before_v = J.verdict([before[s.tag] for s in states], [s.real for s in states])
-    keep, hurt, gained = choose_subset(states, before, changed, before_v, metric)
+    keep, hurt, gained = choose_subset(states, before, changed, before_v, metrics)
     accepted = bool(keep) and gained
 
-    # Roll back every thread that is not in the kept subset. Threads outside
-    # `changed` were never edited, so this is a no-op for them.
+    # Roll back every thread outside the kept subset -- which, when the round is
+    # rejected, is all of them: `choose_subset` returns an empty set on every
+    # failure path, so the next round starts from the last ACCEPTED text, not
+    # from this one's. `TH.restore` writes the file, so disk agrees.
     dropped = []
     for state in changed:
         if state.tag not in keep:
             TH.restore(state.thread, saved[state.tag])
             state.row = before[state.tag]
             dropped.append(state.tag)
-    if not accepted:
-        for state in states:
-            TH.restore(state.thread, saved[state.tag])
-            state.row = before[state.tag]
+    # Tell the next attempt on a rolled-back comment what was already tried, so
+    # it re-rolls different dice instead of the same ones. A kept comment has
+    # no stale advice to carry.
+    for (tag, index), body in applied_text.items():
+        key = f"{tag}:{index}"
+        if tag in keep:
+            feedback.pop(key, None)
+        else:
+            feedback[key] = ("A previous rewrite of this comment was tried and did "
+                             "not survive the check. Produce nothing close to it:\n"
+                             + body[:300])
     after_v = cohort_verdict(states)
     return {
-        "round": round_idx, "metric": metric, "accepted": accepted,
+        "round": round_idx, "metric": target, "accepted": accepted,
         "reason": "" if accepted else ("no_gain" if not hurt else "regressed:" + ",".join(hurt)),
-        "targets": len(targets), "applied": applied,
+        "targets": len(proposal_targets), "applied": len(applied_text),
         "threads_changed": len(changed),
         "threads_kept": sorted(keep), "threads_dropped": sorted(dropped),
         "api_seconds": round(api_seconds, 1), "score_seconds": round(score_seconds, 1),
+        "per_thread": per_thread,
         "before": {k: round(v.d, 4) for k, v in before_v.items()},
         "after": {k: round(v.d, 4) for k, v in after_v.items()},
         "pass_before": J.pass_count(before_v), "pass_after": J.pass_count(after_v),
     }
 
 
-def _next_target(verdicts: dict[str, J.MetricVerdict], tried: set[str]) -> str:
-    """Worst failing metric, skipping ones that already failed to move twice."""
+def _next_target(verdicts: dict[str, J.MetricVerdict], tried: set[str],
+                 priority: tuple[str, ...] = PRIORITY) -> str:
+    """The group or single metric the next round should spend on.
+
+    A group is taken while any of its members is still failing, in `priority`
+    order, and its members are never targeted individually -- a round that
+    fixes self_bertscore alone while semantic_mean_cosine is free to drift is
+    exactly the sequential behaviour groups exist to replace.
+    """
+    for name in priority:
+        if name in tried:
+            continue
+        if any(k in verdicts and not verdicts[k].passes for k in S.metrics_of(name)):
+            return name
+    grouped = {m for name in priority for m in S.metrics_of(name)}
     ranked = sorted(verdicts.items(), key=lambda kv: (kv[1].passes, -abs(kv[1].d)))
     for key, _ in ranked:
-        if key in REVISABLE and key not in tried:
+        if key in REVISABLE and key not in tried and key not in grouped:
             return key
     return ""
 
 
 def _checkpoint(states: list[ThreadState], out: Path, round_idx: int,
-                tried: set[str], attempts: dict[str, int]) -> None:
+                tried: set[str], attempts: dict[str, int],
+                feedback: dict[str, str]) -> None:
     payload = {"round": round_idx, "tried": sorted(tried),
-               "attempts": attempts,
+               "attempts": attempts, "feedback": feedback,
                "threads": {s.tag: {"texts": s.thread.scored_texts, "row": s.row}
                            for s in states}}
     tmp = out / "checkpoint.json.tmp"
@@ -459,7 +539,8 @@ def _checkpoint(states: list[ThreadState], out: Path, round_idx: int,
     tmp.replace(out / "checkpoint.json")
 
 
-def _resume(states: list[ThreadState], out: Path) -> tuple[int, set[str], dict[str, int]]:
+def _resume(states: list[ThreadState], out: Path
+            ) -> tuple[int, set[str], dict[str, int], dict[str, str]]:
     """Restore the text and scores a previous process reached.
 
     The loop is long-running and holds ~8 GB, and this machine has killed it
@@ -469,7 +550,7 @@ def _resume(states: list[ThreadState], out: Path) -> tuple[int, set[str], dict[s
     """
     path = out / "checkpoint.json"
     if not path.exists():
-        return 1, set(), {}
+        return 1, set(), {}, {}
     payload = json.loads(path.read_text())
     by_tag = {s.tag: s for s in states}
     for tag, saved in (payload.get("threads") or {}).items():
@@ -484,9 +565,10 @@ def _resume(states: list[ThreadState], out: Path) -> tuple[int, set[str], dict[s
     resumed = int(payload.get("round") or 0) + 1
     tried = set(payload.get("tried") or [])
     attempts = {str(k): int(v) for k, v in (payload.get("attempts") or {}).items()}
+    feedback = {str(k): str(v) for k, v in (payload.get("feedback") or {}).items()}
     print(f"[resume] checkpoint found; continuing at round {resumed}"
           f"{'  already tried: ' + ','.join(sorted(tried)) if tried else ''}", flush=True)
-    return resumed, tried, attempts
+    return resumed, tried, attempts, feedback
 
 
 def main() -> None:
@@ -495,7 +577,11 @@ def main() -> None:
     ap.add_argument("--out", type=Path, default=REPO / "artifacts/selfloop")
     ap.add_argument("--rounds", type=int, default=6)
     ap.add_argument("--model", default=R.DEFAULT_MODEL)
-    ap.add_argument("--metric", default="", help="fix the target instead of auto-picking")
+    ap.add_argument("--target", default="",
+                    help="fix the round's target (a group name or a metric) "
+                         "instead of auto-picking")
+    ap.add_argument("--priority", nargs="*", default=list(PRIORITY),
+                    help="groups to exhaust before any single metric")
     ap.add_argument("--device", default="cpu")
     ap.add_argument("--workers", type=int, default=8)
     ap.add_argument("--domain", default="celebrity_geo")
@@ -518,7 +604,7 @@ def main() -> None:
         raise SystemExit("need at least 3 matched-evaluated threads")
 
     print(f"[selfloop] {len(states)} threads  model={args.model}  out={out}", flush=True)
-    first_round, resumed_tried, attempts = _resume(states, out)
+    first_round, resumed_tried, attempts, feedback = _resume(states, out)
     t0 = time.time()
     missing = [s for s in states if not s.row]
     for state in missing:
@@ -532,8 +618,9 @@ def main() -> None:
     (out / "baseline.json").write_text(json.dumps(
         {k: asdict(v) for k, v in baseline.items()}, indent=1))
 
+    priority = tuple(args.priority)
     if args.dry_run:
-        print(f"\n[dry-run] would target: {J.worst_failing(baseline)}")
+        print(f"\n[dry-run] would target: {_next_target(baseline, set(), priority)}")
         return
 
     api = R.client()
@@ -541,46 +628,50 @@ def main() -> None:
     tried: set[str] = set(resumed_tried)
     for round_idx in range(first_round, args.rounds + 1):
         current = cohort_verdict(states)
-        metric = args.metric or _next_target(current, tried)
-        if not metric or metric not in S.STRATEGIES:
-            print(f"[stop] no metric left to try"); break
-        # A metric whose round has been killed twice will be killed a third
+        target = args.target or _next_target(current, tried, priority)
+        if not target:
+            print("[stop] no target left to try")
+            break
+        # A target whose round has been killed twice will be killed a third
         # time; retire it rather than spend the run restarting into it.
-        attempts[metric] = attempts.get(metric, 0) + 1
-        if attempts[metric] > 2:
-            print(f"[skip] {metric}: {attempts[metric] - 1} attempts already died", flush=True)
-            tried.add(metric)
-            _checkpoint(states, out, round_idx - 1, tried, attempts)
+        attempts[target] = attempts.get(target, 0) + 1
+        if attempts[target] > 2:
+            print(f"[skip] {target}: {attempts[target] - 1} attempts already died", flush=True)
+            tried.add(target)
+            _checkpoint(states, out, round_idx - 1, tried, attempts, feedback)
             continue
-        _checkpoint(states, out, round_idx - 1, tried, attempts)
-        print(f"\n===== round {round_idx}  target={metric}  "
-              f"d={current[metric].d:+.2f} {'PASS' if current[metric].passes else 'FAIL'} =====",
-              flush=True)
+        _checkpoint(states, out, round_idx - 1, tried, attempts, feedback)
+        standing = "  ".join(
+            f"{m.replace('_mean_f1', '').replace('_rate', '')} {current[m].d:+.2f}"
+            f"{'' if current[m].passes else '!'}"
+            for m in S.metrics_of(target) if m in current)
+        print(f"\n===== round {round_idx}  target={target}   {standing} =====", flush=True)
         try:
-            result = run_round(states, api=api, model=args.model, metric=metric,
+            result = run_round(states, api=api, model=args.model, target=target,
                                community=community, protected=protected,
                                device=args.device, round_idx=round_idx,
-                               workers=args.workers, verbose=args.verbose)
+                               workers=args.workers, feedback=feedback,
+                               verbose=args.verbose)
         except Exception as exc:  # noqa: BLE001 - a bad round must not end the run
             import traceback
 
             traceback.print_exc()
-            result = {"round": round_idx, "metric": metric, "accepted": False,
+            result = {"round": round_idx, "metric": target, "accepted": False,
                       "reason": f"exception:{type(exc).__name__}: {exc}"}
-        # A metric that yielded nothing is not worth an immediate retry: the
-        # same selection and the same instruction would re-roll the same dice.
-        # Move the budget to the next worst metric, and reopen everything as
-        # soon as a round is accepted, since the cohort has changed.
+        # A target that yielded nothing is not worth an immediate retry with the
+        # same selection and the same instruction. Move the budget on, and
+        # reopen everything as soon as a round is accepted, since the cohort has
+        # changed underneath.
         if result.get("accepted"):
             tried.clear()
             attempts.clear()
         else:
-            tried.add(metric)
+            tried.add(target)
         # The round completed, so it did not die; clear its death count.
-        attempts[metric] = 0
+        attempts[target] = 0
         # Persist the revised text after every round, so a crash costs one
         # round rather than the whole run.
-        _checkpoint(states, out, round_idx, tried, attempts)
+        _checkpoint(states, out, round_idx, tried, attempts, feedback)
         history.append(result)
         (out / "history.json").write_text(json.dumps(history, indent=1))
         print(f"[round {round_idx}] {'ACCEPTED' if result['accepted'] else 'REJECTED'} "

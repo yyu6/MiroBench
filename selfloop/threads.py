@@ -90,8 +90,10 @@ def _scored_indices(nodes: list[dict[str, Any]]) -> list[int]:
 def save(thread: Thread) -> None:
     """Persist edits. `nodes` holds references into the payload, so the tree is
     already updated; this only rewrites the file."""
+    # The trailing newline matches what the generator writes, so a rejected
+    # round restores the file byte-for-byte rather than off by one character.
     (thread.run_dir / "discussion.json").write_text(
-        json.dumps(thread._payload, ensure_ascii=False, indent=2), encoding="utf-8"  # type: ignore[attr-defined]
+        json.dumps(thread._payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"  # type: ignore[attr-defined]
     )
 
 

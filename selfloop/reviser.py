@@ -39,7 +39,9 @@ class Target:
     comment_id: str
     text: str
     parent_text: str
-    neighbours: list[str]
+    instruction: str    # what to change, from the group's strategy
+    evidence: str       # why THIS comment, measured on its own thread
+    anchors: list[str]  # facts it already states, which a rewrite must keep
 
 
 def load_env(path: Path = REPO_ROOT / "third_party/MiroFish/.env") -> None:
@@ -61,48 +63,41 @@ def client(base_url: str = DEFAULT_BASE_URL, api_key_env: str = "LLM_API_KEY"):
     return OpenAI(api_key=key, base_url=base_url, timeout=300)
 
 
-def build_prompt(
-    target: Target,
-    *,
-    metric: str,
-    measured: float,
-    thread_target: float,
-    community: str,
-    protected: Sequence[str],
-    candidates: int,
-    feedback: str = "",
-) -> str:
-    strategy = S.STRATEGIES[metric]
-    anchors = S.anchors_in(target.text, protected)
-    neighbour_block = "\n".join(
-        f"  - {text[:220]}" for text in target.neighbours[:8]
-    ) or "  (none)"
-    parent_block = target.parent_text[:400] if target.parent_text else "(this replies to the post itself)"
-    anchor_block = ", ".join(anchors) if anchors else "(none — it states no specific fact)"
-    feedback_block = f"\nA previous attempt on this comment was rejected: {feedback}\n" if feedback else ""
+def build_prompt(target: Target, *, community: str, keep: str,
+                 candidates: int, feedback: str = "") -> str:
+    """One comment, one problem, one set of rules.
+
+    Five sections, and each earns its place: the comment, what it answers, what
+    is wrong with it (in prose, then in measurements), what must survive, and
+    the output shape. Two sections were removed rather than added to. The first
+    printed the metric name and two floats -- "semantic_mean_cosine = 0.2277,
+    a real thread sits at 0.1792" -- which a language model cannot act on. The
+    second dumped eight neighbours truncated at 220 characters, which both cut
+    off the overlapping spans and need not have contained the comment this one
+    was actually duplicating; `evidence` names the right ones in full instead.
+    """
+    anchor_block = ", ".join(target.anchors) if target.anchors else "(none — it states no specific fact)"
+    parent_block = target.parent_text[:400] if target.parent_text else "(it replies to the post itself)"
+    feedback_block = f"\n{feedback}\n" if feedback else ""
     return f"""You are rewriting one comment from a discussion thread on {community}.
 
-THE COMMENT TO REWRITE:
+THE COMMENT:
 {target.text}
 
-WHAT IT REPLIES TO:
+IT REPLIES TO:
 {parent_block}
 
-OTHER COMMENTS IN THE SAME THREAD (for what to differ from, never to copy):
-{neighbour_block}
-
 WHAT IS WRONG WITH IT:
-{strategy.high if measured > thread_target else strategy.low}
+{target.instruction}
 
-Measured on this thread: {metric} = {measured:.4f}, and a real thread of this
-kind sits at {thread_target:.4f}.
+{target.evidence}
 
-FACTS THIS COMMENT ALREADY STATES — keep the ones it used, add none:
+FACTS IT ALREADY STATES — keep the ones it used, add none:
 {anchor_block}
 
 RULES:
 {S.SHARED_INVARIANTS}
-{strategy.keep}
+{keep}
 {feedback_block}
 Return strict JSON and nothing else:
 {{"candidates": [{{"text": "<rewritten comment>", "what_changed": "<six words>"}}]}}
@@ -136,11 +131,8 @@ def propose(
     api,
     targets: Sequence[Target],
     *,
-    metric: str,
-    measured: dict[str, float],
-    thread_target: dict[str, float],
     community: str,
-    protected: Sequence[str],
+    keep: str,
     model: str = DEFAULT_MODEL,
     candidates: int = 5,
     workers: int = 8,
@@ -152,10 +144,7 @@ def propose(
 
     def one(target: Target) -> tuple[tuple[str, int], list[dict[str, str]]]:
         prompt = build_prompt(
-            target, metric=metric,
-            measured=measured.get(target.thread_id, 0.0),
-            thread_target=thread_target.get(target.thread_id, 0.0),
-            community=community, protected=protected, candidates=candidates,
+            target, community=community, keep=keep, candidates=candidates,
             feedback=feedback.get(f"{target.thread_id}:{target.index}", ""),
         )
         for attempt in range(3):

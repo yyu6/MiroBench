@@ -27,9 +27,31 @@ URL_RE = re.compile(r"https?://\S+")
 NUMBER_RE = re.compile(r"\b\d[\d,.:/%-]*\b")
 PROPER_RE = re.compile(r"\b[A-Z][a-zA-Z'&.-]+(?:\s+[A-Z][a-zA-Z'&.-]+){0,2}")
 QUOTED_RE = re.compile(r"[\"“”']([^\"“”']{3,60})[\"“”']")
+_SENTENCE_START = re.compile(r"(?:^|[.!?]\s+|\n\s*)$")
+_CAPITAL = re.compile(r"\b[A-Z][a-zA-Z'&.-]{3,}")
 
 
-def anchors_in(text: str, protected: Sequence[str] = ()) -> list[str]:
+def _mid_sentence_capitals(texts: Sequence[str]) -> set[str]:
+    """Words this thread capitalizes somewhere other than a sentence start.
+
+    A capitalized word opening a sentence is ambiguous -- "Honestly" and
+    "Sophie" look identical there -- and the thread itself resolves it: a name
+    gets capitalized mid-sentence too, a discourse marker does not. Measured on
+    12 celebrity cohorts (1159 comments, 2026-09-04): treating every
+    sentence-initial capital as an opener dropped 1112 spans; this recovers the
+    80 that are names (Charlie, Fergie, Trump, Netflix, Ariana, Sophie among
+    them) and leaves the other 1032 dropped.
+    """
+    out: set[str] = set()
+    for text in texts:
+        for match in _CAPITAL.finditer(text):
+            if not _SENTENCE_START.search(text[:match.start()]):
+                out.add(match.group(0).lower())
+    return out
+
+
+def anchors_in(text: str, protected: Sequence[str] = (),
+               context: Sequence[str] = ()) -> list[str]:
     """Concrete things a rewrite must not silently drop or invent around."""
     found: list[str] = []
     found += URL_RE.findall(text)
@@ -38,9 +60,20 @@ def anchors_in(text: str, protected: Sequence[str] = ()) -> list[str]:
     for term in protected:
         if term and term.lower() in text.lower():
             found.append(term)
-    for span in PROPER_RE.findall(text):
-        if span.lower() not in {f.lower() for f in found} and len(span) > 3:
-            found.append(span)
+    mid = _mid_sentence_capitals([text, *context])
+    for match in PROPER_RE.finditer(text):
+        span = match.group(0)
+        if len(span) <= 3 or span.lower() in {f.lower() for f in found}:
+            continue
+        # A lone capitalized word that opens a sentence is capitalization, not
+        # a name, unless the thread capitalizes it elsewhere too. Without this,
+        # "Honestly the remaster..." listed "Honestly" as a fact the rewrite had
+        # to preserve -- instructing the model to keep exactly the kind of
+        # shared opener self_bleu_4 penalises.
+        if (" " not in span and _SENTENCE_START.search(text[:match.start()])
+                and span.lower() not in mid):
+            continue
+        found.append(span)
     seen, out = set(), []
     for item in found:
         key = item.strip().lower()
@@ -199,3 +232,82 @@ def direction(measured: float, target: float) -> str:
 def instruction(metric: str, measured: float, target: float) -> str:
     strategy = STRATEGIES[metric]
     return strategy.high if direction(measured, target) == "high" else strategy.low
+
+
+# ---------------------------------------------------------------- groups
+# Metrics that read the same underlying quantity and therefore move together.
+# A round targets a whole group rather than one member.
+#
+# `SIMILARITY` is three readings of one thing -- how much a thread's comments
+# repeat each other: self_bleu_4 over exact word runs, semantic_mean_cosine
+# over embeddings, self_bertscore over soft token alignment, which sits between
+# the two. Targeting one and merely guarding the others throws away the fact
+# that a rewrite fixing one usually fixes all three.
+SIMILARITY = ("self_bertscore_mean_f1", "semantic_mean_cosine", "self_bleu_4")
+
+# `REGISTER` is how the comments sound rather than what they say. On a cohort
+# that reads flat these agree in direction -- less neutral, more feeling, more
+# lived detail -- and they FIGHT the similarity group, because courtesy and
+# narrative arrive as repeated wording. Hence a separate group and a separate
+# round; the guard is what keeps one from undoing the other.
+REGISTER = ("polite_rate", "neutral_rate", "emotion_entropy", "mean_story_probability")
+
+GROUPS: dict[str, tuple[str, ...]] = {"similarity": SIMILARITY, "register": REGISTER}
+
+# What a group asks for, when its members are all too HIGH / too LOW. The three
+# single-metric strategies contradict each other on purpose -- semantic says
+# "the claim has to change", self_bertscore says "do not change what it claims,
+# only how it is worded" -- because each was written to move its own metric
+# without disturbing the others. Targeted together that guard is unnecessary,
+# and the union is simply: both have to change.
+GROUP_STRATEGY: dict[str, Strategy] = {
+    "similarity": Strategy(
+        metric="similarity",
+        high=(
+            "This comment says the same thing as its neighbours, in the same "
+            "kind of language. Both have to change. Give it a genuinely "
+            "different contribution -- a different consequence, a different "
+            "condition under which it matters, a different kind of evidence, or "
+            "an aside the topic reminded the speaker of -- and type it the way "
+            "a different person would: different sentence shape, different "
+            "opening, different vocabulary for the same kind of idea. Reusing "
+            "the wording with a new point, or making the old point in new "
+            "words, is not enough on its own."
+        ),
+        low=(
+            "This comment reads as unrelated to the rest of the thread, in "
+            "subject and in phrasing. Bring it back onto what the thread is "
+            "about and into the way this community actually writes, while "
+            "keeping its own angle."
+        ),
+        keep="Do not turn it into a summary of the discussion.",
+        max_share=0.15,
+    ),
+    "register": Strategy(
+        metric="register",
+        high=(
+            "The thread is louder and more performed than real replies here. "
+            "Keep every point and let the comments settle: less evaluation "
+            "attached to each claim, fewer stacked feelings, less narration."
+        ),
+        low=(
+            "This comment is flat -- it states a position with no attitude, no "
+            "feeling and nothing lived behind it, and so do its neighbours. "
+            "Keep what it claims and let a real person say it: an actual "
+            "reaction to what the parent said, or one concrete thing that "
+            "happened, in the speaker's own voice. Invent no fact the original "
+            "does not already imply."
+        ),
+        keep="Do not change the stance, and do not add courtesy formulas.",
+        max_share=0.15,
+    ),
+}
+
+
+def strategy_for(target: str) -> Strategy:
+    """A round's target is either a group name or a single metric."""
+    return GROUP_STRATEGY[target] if target in GROUP_STRATEGY else STRATEGIES[target]
+
+
+def metrics_of(target: str) -> tuple[str, ...]:
+    return GROUPS.get(target, (target,))
