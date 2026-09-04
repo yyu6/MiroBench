@@ -169,7 +169,7 @@ def plot_pvalue_heatmap(frame: pd.DataFrame, output_dir: Path, dpi: int) -> None
             "ytick.labelsize": 9,
         }
     )
-    fig, axes = plt.subplots(1, 2, figsize=(20.0, 8.4), sharey=True)
+    fig, axes = plt.subplots(1, 2, figsize=(18.8, 7.0), sharey=True)
     images = []
     for panel_index, (ax, (title, column)) in enumerate(zip(axes, panels)):
         values = _pivot(frame, column)
@@ -213,14 +213,8 @@ def plot_pvalue_heatmap(frame: pd.DataFrame, output_dir: Path, dpi: int) -> None
         if panel_index == 0:
             ax.set_ylabel("Thread-level metric")
 
-    fig.suptitle(
-        "Repeated-Sample MWU and KS P-value Pass Rates Across 12 Domains",
-        fontsize=18,
-        fontweight="semibold",
-        y=0.985,
-    )
-    fig.subplots_adjust(left=0.15, right=0.885, top=0.88, bottom=0.19, wspace=0.10)
-    colorbar_ax = fig.add_axes((0.905, 0.19, 0.012, 0.69))
+    fig.subplots_adjust(left=0.145, right=0.895, top=0.955, bottom=0.175, wspace=0.075)
+    colorbar_ax = fig.add_axes((0.914, 0.175, 0.012, 0.78))
     colorbar = fig.colorbar(
         images[0], cax=colorbar_ax, ticks=(90, 92, 95, 97, 100)
     )
@@ -323,7 +317,7 @@ def plot_family_radars(
     fig, axes = plt.subplots(
         2,
         3,
-        figsize=(20.0, 11.4),
+        figsize=(20.0, 9.8),
         subplot_kw={"projection": "polar"},
     )
     w1_raw_ticks = (0.01, 0.02, 0.05, 0.10, 0.15)
@@ -376,17 +370,17 @@ def plot_family_radars(
             handles=handles,
             labels=[DOMAIN_LABELS[domain] for domain in domains],
             loc="upper center",
-            bbox_to_anchor=(0.5, -0.15),
+            bbox_to_anchor=(0.5, -0.095),
             ncol=2,
             frameon=False,
-            fontsize=8,
+            fontsize=7.7,
             handlelength=1.5,
             columnspacing=0.8,
             handletextpad=0.35,
             )
 
     fig.subplots_adjust(
-        left=0.035, right=0.985, top=0.96, bottom=0.055, hspace=0.52, wspace=0.30
+        left=0.035, right=0.985, top=0.965, bottom=0.04, hspace=0.40, wspace=0.30
     )
     for extension in ("png", "pdf"):
         fig.savefig(
