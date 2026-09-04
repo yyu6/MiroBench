@@ -71,8 +71,13 @@ SCORER_FOR = {
     "avg_depth": ("thread_structure_results.json",),
     "structural_virality": ("thread_structure_results.json",),
 }
-# Every scorer whose output can move when comment TEXT changes. `thread_structure`
-# is excluded on purpose and `test_structural_metrics_are_invariant` proves it.
+# Every scorer whose output can move when comment TEXT changes -- which is all
+# of them, `thread_structure` included: `avg_depth` and `structural_virality`
+# are functions of the reply tree and cannot move, but `length_cv` is scored in
+# the same file and is word counts, so it moves whenever a comment is rewritten.
+# What the filter buys is dropping the two structural METRICS from the rescore's
+# reasoning, not dropping a scorer; `test_structural_metrics_are_invariant`
+# proves those two do not move.
 TEXT_SENSITIVE = tuple(
     sorted({name for metric, names in SCORER_FOR.items() for name in names
             if metric not in J.STRUCTURAL})
