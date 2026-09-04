@@ -27,10 +27,8 @@ for path in (str(REPO_ROOT / "scripts"), str(EVAL_DIR)):
     sys.path.insert(0, path)
 
 SEMANTIC_MODEL = "sentence-transformers/all-mpnet-base-v2"
-BERTSCORE_MODEL = "microsoft/deberta-xlarge-mnli"
 
 _EMBEDDER: Any = None
-_BERT: Any = None
 _POLITE: Any = None
 _STORY: Any = None
 _EMOTION: Any = None
@@ -83,13 +81,36 @@ def self_bleu_4(texts: Sequence[str]) -> float:
 
 
 # ------------------------------------------------------------ per-comment
+def _shared_scorer(module_name: str, attribute: str, max_length: int) -> Any:
+    """One instance of a guard model, shared with the rescore.
+
+    Two problems, one cause. This module used to build its own scorer with
+    POSITIONAL arguments while the official `main()` builds one with KEYWORD
+    arguments; `metric_engine._cache_key` freezes args and kwargs separately, so
+    the keys never matched and every guard model was loaded twice -- three
+    duplicated transformers on a process the OS was already killing at ~8 GB.
+    And the positional call passed max_length=512 where the official default is
+    256 for politeness and go_emotions, so the guard truncated at a different
+    point than the gate: 49 of the cohort's 4163 comments (1.2%) are long enough
+    for the two to disagree.
+
+    Building it here, through the engine, with the official keyword arguments
+    and the official default length, fixes both at once.
+    """
+    import metric_engine as engine
+
+    module = engine._load_module(module_name, attribute)
+    return getattr(module, attribute)(
+        model_name=module.DEFAULT_MODEL, device="cpu", max_length=max_length)
+
+
 def politeness_labels(texts: Sequence[str]) -> list[str]:
     """Polite-guard labels, using the official scorer's own comment record."""
     global _POLITE
     import score_thread_politeness as mod
 
     if _POLITE is None:
-        _POLITE = mod.PolitenessScorer(mod.DEFAULT_MODEL, "cpu", 512)
+        _POLITE = _shared_scorer("score_thread_politeness", "PolitenessScorer", 256)
     comments = [
         mod.ThreadComment(thread_id="t", thread_title="", comment_id=str(i),
                           parent_id="", author="", text=text, depth=0)
@@ -97,45 +118,6 @@ def politeness_labels(texts: Sequence[str]) -> list[str]:
     ]
     rows = _POLITE.score_comments(comments, batch_size=16, include_text=False)
     return [str(row["pred_label"]) for row in rows]
-
-
-def shared_bert_scorer():
-    """Reuse the BERTScorer `metric_engine` already loaded.
-
-    deberta-xlarge-mnli is 2.6 GB resident. A second copy took the process from
-    4.5 GB to 7.1 GB and the first full-cohort run was killed by the OS during
-    round 1 with no traceback. The engine caches the official
-    `load_bert_scorer`, so its instance is reachable and identical.
-    """
-    import metric_engine as engine
-
-    for key, value in engine._MODEL_CACHE.items():
-        if key[1] == "load_bert_scorer":
-            # load_bert_scorer returns a tuple whose first element is the scorer
-            return value[0] if isinstance(value, tuple) else value
-    from bert_score import BERTScorer
-
-    return BERTScorer(model_type=BERTSCORE_MODEL, lang="en", idf=False,
-                      rescale_with_baseline=False, device="cpu")
-
-
-def bert_pair_f1(texts: Sequence[str], focus: int) -> float:
-    """Mean BERTScore F1 of one comment against the rest of its thread.
-
-    Only the pairs that touch `focus` are computed, which is what changes when a
-    single comment is rewritten.
-    """
-    global _BERT
-    if _BERT is None:
-        _BERT = shared_bert_scorer()
-    others = [t for i, t in enumerate(texts) if i != focus]
-    if not others:
-        return 0.0
-    cands = [texts[focus]] * len(others)
-    # batch_size 4, not 16: deberta-xlarge on a 96-comment thread spikes hard
-    # enough at 16 to get the process killed between rounds.
-    _, _, f1 = _BERT.score(cands, others, verbose=False, batch_size=4)
-    return float(f1.mean())
 
 
 # ---------------------------------------------------- incremental variants
@@ -214,7 +196,7 @@ def story_probability(texts: Sequence[str]) -> list[float]:
     import score_thread_storyseeker as mod
 
     if _STORY is None:
-        _STORY = mod.StorySeekerScorer(mod.DEFAULT_MODEL, "cpu", 512)
+        _STORY = _shared_scorer("score_thread_storyseeker", "StorySeekerScorer", 512)
     rows = _STORY.score_comments(_comments(texts), batch_size=16,
                                  threshold=0.5, include_text=False)
     return [float(r.get("story_probability", 0.0)) for r in rows]
@@ -226,7 +208,7 @@ def dominant_emotions(texts: Sequence[str]) -> list[str]:
     import score_thread_go_emotions as mod
 
     if _EMOTION is None:
-        _EMOTION = mod.GoEmotionsScorer(mod.DEFAULT_MODEL, "cpu", 512)
+        _EMOTION = _shared_scorer("score_thread_go_emotions", "GoEmotionsScorer", 256)
     rows = _EMOTION.score_comments(_comments(texts), batch_size=16,
                                    threshold=0.5, include_text=False)
     return [str(row["dominant_emotion"]) for row in rows]
@@ -302,3 +284,14 @@ def _cv(words: Sequence[int]) -> float:
     import score_thread_structure as st
 
     return float(st.compute_length_cv(sorted(words)))
+
+
+def release_models() -> None:
+    """Drop this module's references so the engine can actually free a model.
+
+    `metric_engine.release` deletes its cache entry, but these globals pin the
+    same objects, and a pinned model is not freed. The controller calls this
+    before the rescore, which then holds one model at a time instead of eight.
+    """
+    global _EMBEDDER, _POLITE, _STORY, _EMOTION
+    _EMBEDDER = _POLITE = _STORY = _EMOTION = None

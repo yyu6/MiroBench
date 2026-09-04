@@ -216,5 +216,56 @@ def summarize(run_dir: Path) -> dict[str, float]:
     return rows[0] if rows else {}
 
 
+def release(module_name: str = "") -> None:
+    """Free the cached model for one scorer, or for all of them.
+
+    Only useful together with `candidate_scorer.release_models`: that module
+    keeps its own references to the same objects and a pinned model is not
+    freed.
+    """
+    import gc
+
+    for key in [k for k in _MODEL_CACHE if not module_name or k[0] == module_name]:
+        del _MODEL_CACHE[key]
+    gc.collect()
+
+
+def score_run_dirs(
+    run_dirs: list[Path],
+    *,
+    device: str = "cpu",
+    only: tuple[str, ...] = (),
+    force: bool = False,
+    evict: bool = True,
+) -> dict[Path, dict[str, float]]:
+    """Score many directories scorer-major, freeing each model before the next.
+
+    `score_run_dir` walks the scorers inside one directory, so scoring a cohort
+    holds every model at once -- deberta-xlarge-mnli at 2.6 GB, plus stance,
+    go_emotions, politeness, storyseeker and the embedder. Measured on this
+    machine that peaks near 8 GB on the 106-thread celebrity cohort and the
+    process is killed with no traceback; it died twice in round 1 that way.
+
+    Going scorer-major and dropping each model after its pass makes the peak the
+    largest SINGLE model rather than the sum of eight. The cost is reloading
+    each model once per call, about fifteen seconds apiece, which is the price
+    of the round finishing at all. Results are identical: same scorers, same
+    arguments, same order within a directory.
+    """
+    for output, module_name, loader_attr, uses_device in SCORERS:
+        if only and output not in only:
+            continue
+        for run_dir in run_dirs:
+            target = run_dir / output
+            if target.exists() and not force:
+                continue
+            run_scorer(module_name, loader_attr, input_dir=run_dir,
+                       output_file=target, device=device,
+                       uses_device=uses_device)
+        if evict and loader_attr:
+            release(module_name)
+    return {run_dir: summarize(run_dir) for run_dir in run_dirs}
+
+
 def loaded_models() -> int:
     return len(_MODEL_CACHE)

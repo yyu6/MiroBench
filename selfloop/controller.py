@@ -154,6 +154,14 @@ def rescore(state: ThreadState, *, only: tuple[str, ...], device: str) -> None:
     state.row = E.score_run_dir(state.work, device=device, only=only, force=True)
 
 
+def rescore_all(states: list[ThreadState], *, only: tuple[str, ...], device: str) -> None:
+    """Rescore a batch scorer-major, so one model is resident at a time."""
+    rows = E.score_run_dirs([s.work for s in states], device=device,
+                            only=only, force=True)
+    for state in states:
+        state.row = rows.get(state.work, state.row)
+
+
 def cohort_verdict(states: list[ThreadState]) -> dict[str, J.MetricVerdict]:
     return J.verdict([s.row for s in states], [s.real for s in states])
 
@@ -464,10 +472,17 @@ def run_round(states: list[ThreadState], *, api, model: str, target: str,
         if TH.snapshot(state.thread) != saved[state.tag]:
             TH.save(state.thread)
             changed.append(state)
+    # Hand the memory back before the rescore. The caches hold every thread's
+    # embeddings and BLEU matrix, and `candidate_scorer` pins the three guard
+    # models; the rescore then loads its own, and the sum is what the OS kills.
+    caches.clear()
+    guards.clear()
+    C.release_models()
+    E.release()
     t1 = time.time()
-    for state in changed:
-        rescore(state, only=TEXT_SENSITIVE, device=device)
+    rescore_all(changed, only=TEXT_SENSITIVE, device=device)
     score_seconds = time.time() - t1
+    _report_memory(f"round{round_idx} after rescore")
 
     # What each edited thread's own numbers did, captured BEFORE the gate can
     # roll them back. Without this a rejected round reports nothing at all, and
@@ -645,10 +660,15 @@ def main() -> None:
         if not target:
             print("[stop] no target left to try")
             break
-        # A target whose round has been killed twice will be killed a third
-        # time; retire it rather than spend the run restarting into it.
+        # A target whose round keeps being killed will keep being killed;
+        # retire it rather than spend the run restarting into it. The limit is
+        # not 2: the kills seen so far were the OS reclaiming ~8 GB during the
+        # rescore, which is a property of this machine and not of the target,
+        # and retiring `similarity` for that reason would throw away the only
+        # group that matters. `score_run_dirs` is the actual fix; this is the
+        # margin for it being imperfect.
         attempts[target] = attempts.get(target, 0) + 1
-        if attempts[target] > 2:
+        if attempts[target] > 4:
             print(f"[skip] {target}: {attempts[target] - 1} attempts already died", flush=True)
             tried.add(target)
             _checkpoint(states, out, round_idx - 1, tried, attempts, feedback)

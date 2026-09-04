@@ -261,6 +261,53 @@ if __name__ == "__main__":
     unittest.main(verbosity=2)
 
 
+class ScorerMajorTest(unittest.TestCase):
+    """Scoring a cohort one scorer at a time, freeing each model before the
+    next, must give exactly the numbers scoring it one thread at a time gives.
+    The reordering exists only to cap peak memory: thread-major holds all eight
+    models and the OS killed the 106-thread run at ~8 GB, twice."""
+
+    def test_scorer_major_matches_thread_major(self) -> None:
+        import metric_engine as E
+
+        only = ("politeness_results.json", "self_bleu_results.json")
+        dirs = []
+        for i, tag in enumerate(TAGS[:2]):
+            src = REPO / f"artifacts/generalized_card/runs/{tag}/cleaned/run_00_sampled_reddit"
+            if not (src / "discussion.json").exists():
+                self.skipTest("cohort not present")
+            work = Path(f"/tmp/selfloop_order_{i}")
+            if work.exists():
+                shutil.rmtree(work)
+            work.mkdir(parents=True)
+            for f in src.iterdir():
+                if f.is_file():
+                    shutil.copy2(f, work / f.name)
+            dirs.append(work)
+
+        one_at_a_time = {d: E.score_run_dir(d, device="cpu", only=only, force=True)
+                         for d in dirs}
+        batched = E.score_run_dirs(dirs, device="cpu", only=only, force=True)
+        for d in dirs:
+            a, b = one_at_a_time[d], batched[d]
+            for key in ("polite_rate", "impolite_rate", "neutral_rate", "self_bleu_4"):
+                self.assertAlmostEqual(float(a[key]), float(b[key]), places=9,
+                                       msg=f"{d.name}:{key}")
+
+    def test_release_lets_a_model_go(self) -> None:
+        """A cache entry deleted while `candidate_scorer` still points at the
+        object frees nothing, which is why both sides have to let go."""
+        import candidate_scorer as C
+        import metric_engine as E
+
+        C.politeness_labels(["this is a fine comment", "and so is this one"])
+        self.assertGreater(E.loaded_models(), 0, "the guard must go through the engine")
+        C.release_models()
+        E.release()
+        self.assertEqual(0, E.loaded_models())
+        self.assertIsNone(C._POLITE)
+
+
 class IncrementalTest(unittest.TestCase):
     """The rank-one updates must equal the full recompute, or the loop is
     ranking candidates on a different quantity from the one it gates on."""
